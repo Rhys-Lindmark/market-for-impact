@@ -14,6 +14,17 @@ type SfCandidateUniverse = {
   interpretation: { denominator: string; identity: string; scale: string; recommendation: string };
 };
 
+type SfIrsUniverse = {
+  version: string; generatedAt: string;
+  source: { publisher: string; title: string; url: string; documentationUrl: string; dataDictionaryUrl: string; postingDate: string; retrievedAt: string; lastModified: string | null };
+  summary: { organizationCount: number; uniqueEinCount: number; subsection501c3Count: number; deductibleCode1Count: number; nteeClassifiedCount: number; nteeMissingCount: number; scorecardEinMatchCount: number; exactContractNameMatchCount: number; publishableRoomForFundingCount: number };
+  groups: Array<{ key: string; label: string; organizationCount: number }>;
+  subsections: Array<{ code: string; organizationCount: number }>;
+  interpretation: { denominator: string; status: string; identity: string; finance: string; recommendation: string };
+  pagination: { page: number; pageSize: number; total: number; pageCount: number };
+  organizations: Array<{ ein: string; name: string; address: { street: string | null; city: string; state: string; zip: string | null }; subsectionCode: string | null; deductibilityCode: string | null; taxPeriod: string | null; revenueAmountUsd: number | null; assetAmountUsd: number | null; nteeCode: string | null; nteeGroupKey: string; nteeGroup: string; scorecardKey: string | null; scorecardName: string | null; exactContractSourceName: string | null; exactContractCount: number; identityStatus: string; impactEvidenceStatus: string }>;
+};
+
 type CoefficientMarket = {
   source: { retrievedAt: string; coverageNote: string; url: string };
   summary: { grant_count: number; total_amount_usd: number; latest_decision_date: number; recipient_count: number };
@@ -363,6 +374,14 @@ export default function Home() {
   const [sfUniverseReview, setSfUniverseReview] = useState('all');
   const [sfUniverseSort, setSfUniverseSort] = useState<'authority' | 'alphabetical'>('authority');
   const [sfUniversePage, setSfUniversePage] = useState(1);
+  const [sfIrsUniverse, setSfIrsUniverse] = useState<SfIrsUniverse | null>(null);
+  const [sfIrsError, setSfIrsError] = useState(false);
+  const [sfIrsQuery, setSfIrsQuery] = useState('');
+  const [sfIrsNtee, setSfIrsNtee] = useState('all');
+  const [sfIrsSubsection, setSfIrsSubsection] = useState('all');
+  const [sfIrsIdentity, setSfIrsIdentity] = useState('all');
+  const [sfIrsSort, setSfIrsSort] = useState<'revenue' | 'alphabetical'>('revenue');
+  const [sfIrsPage, setSfIrsPage] = useState(1);
   const [charityQuery, setCharityQuery] = useState('');
   const [charityState, setCharityState] = useState('all');
   const [charityRating, setCharityRating] = useState('all');
@@ -403,6 +422,18 @@ export default function Home() {
       return response.json() as Promise<SfCandidateUniverse>;
     }).then(setSfUniverse).catch(() => setSfUniverseError(true));
   }, []);
+  useEffect(() => {
+    const params = new URLSearchParams({ q: sfIrsQuery, ntee: sfIrsNtee, subsection: sfIrsSubsection, identity: sfIrsIdentity, sort: sfIrsSort, page: String(sfIrsPage), pageSize: '12' });
+    const controller = new AbortController();
+    fetch(`/api/sf-irs-universe?${params}`, { signal: controller.signal }).then((response) => {
+      if (!response.ok) throw new Error('San Francisco IRS universe unavailable');
+      return response.json() as Promise<SfIrsUniverse>;
+    }).then((result) => { setSfIrsUniverse(result); setSfIrsError(false); }).catch((error) => {
+      if (error instanceof DOMException && error.name === 'AbortError') return;
+      setSfIrsError(true);
+    });
+    return () => controller.abort();
+  }, [sfIrsIdentity, sfIrsNtee, sfIrsPage, sfIrsQuery, sfIrsSort, sfIrsSubsection]);
   useEffect(() => {
     fetch('/api/data-quality').then((response) => {
       if (!response.ok) throw new Error('Data-quality dashboard unavailable');
@@ -901,6 +932,45 @@ export default function Home() {
         <div className="sf-universe-boundaries"><p><strong>Denominator.</strong> {sfUniverse.interpretation.denominator}</p><p><strong>Identity.</strong> {sfUniverse.interpretation.identity}</p><p><strong>Accounting.</strong> {sfUniverse.interpretation.scale}</p><p><strong>Decision.</strong> {sfUniverse.interpretation.recommendation}</p></div>
         <a className="sf-universe-source" href={sfUniverse.source.queryUrl ?? '#'} target="_blank" rel="noreferrer"><span>PRIMARY SOURCE</span><strong>{sfUniverse.source.publisher} · {sfUniverse.source.title}</strong><small>Snapshot {shortDay.format(new Date(`${sfUniverse.source.snapshotDate}T12:00:00Z`))} · exact query and retrieval preserved</small><b>↗</b></a>
         <p className="data-note">{sfUniverse.version} · contract scale is not impact · {integer.format(sfUniverse.summary.publishableRoomForFundingCount)} publishable marginal funding gaps</p>
+        </>}
+      </section>
+
+      <section className="sf-irs-section" id="sf-irs-universe">
+        <div className="sf-irs-heading">
+          <div><p className="kicker">SAN FRANCISCO · IRS IDENTITY LAYER</p><h2>6,688 EINs.<br />Still not 6,688 answers.</h2></div>
+          <p>The IRS universe widens discovery beyond city contractors and gives each registered organization a durable identity anchor. It tells us who has a San Francisco filing address—not who serves San Francisco well, or what another dollar would accomplish.</p>
+        </div>
+        {sfIrsError && <p className="sf-irs-loading error">The IRS identity universe is temporarily unavailable.</p>}
+        {!sfIrsUniverse && !sfIrsError && <p className="sf-irs-loading">Loading the San Francisco EIN universe…</p>}
+        {sfIrsUniverse && <>
+          <div className="sf-irs-summary" aria-label="San Francisco IRS exempt organization summary">
+            <div><span>IRS RECORDS</span><strong>{integer.format(sfIrsUniverse.summary.organizationCount)}</strong><small>Unique EINs with San Francisco filing addresses</small></div>
+            <div><span>501(c)(3)</span><strong>{integer.format(sfIrsUniverse.summary.subsection501c3Count)}</strong><small>IRS subsection code 03 · verify current eligibility</small></div>
+            <div><span>CITY-NAME OVERLAP</span><strong>{integer.format(sfIrsUniverse.summary.exactContractNameMatchCount)}</strong><small>Exact registered-name crosswalk · no fuzzy merges</small></div>
+            <div><span>SCORECARD EINS</span><strong>{integer.format(sfIrsUniverse.summary.scorecardEinMatchCount)}</strong><small>Exact EIN links into six initial diligence records</small></div>
+          </div>
+          <div className="sf-irs-controls">
+            <label><span>SEARCH</span><input aria-label="Search San Francisco IRS exempt organizations" placeholder="Name, EIN, ZIP, or NTEE" value={sfIrsQuery} onChange={(event) => { setSfIrsQuery(event.target.value); setSfIrsPage(1); }} /></label>
+            <label><span>CAUSE / NTEE</span><select aria-label="Filter IRS organizations by NTEE group" value={sfIrsNtee} onChange={(event) => { setSfIrsNtee(event.target.value); setSfIrsPage(1); }}><option value="all">All NTEE groups</option>{sfIrsUniverse.groups.map((group) => <option value={group.key} key={group.key}>{group.label} ({integer.format(group.organizationCount)})</option>)}</select></label>
+            <label><span>TAX SUBSECTION</span><select aria-label="Filter IRS organizations by tax subsection" value={sfIrsSubsection} onChange={(event) => { setSfIrsSubsection(event.target.value); setSfIrsPage(1); }}><option value="all">All subsections</option>{sfIrsUniverse.subsections.map((row) => <option value={row.code} key={row.code}>501(c)({Number(row.code)}) · {integer.format(row.organizationCount)}</option>)}</select></label>
+            <label><span>IDENTITY LINK</span><select aria-label="Filter IRS organizations by identity link" value={sfIrsIdentity} onChange={(event) => { setSfIrsIdentity(event.target.value); setSfIrsPage(1); }}><option value="all">All identity states</option><option value="scorecard">Exact EIN scorecard</option><option value="contract">Exact city-contract name</option><option value="unlinked">No accepted crosswalk</option></select></label>
+            <label><span>SORT</span><select aria-label="Sort IRS organizations" value={sfIrsSort} onChange={(event) => { setSfIrsSort(event.target.value as 'revenue' | 'alphabetical'); setSfIrsPage(1); }}><option value="revenue">Largest published revenue</option><option value="alphabetical">Organization A–Z</option></select></label>
+            <div><span>VISIBLE</span><strong>{integer.format(sfIrsUniverse.pagination.total)}</strong></div>
+          </div>
+          <div className="sf-irs-grid">
+            {sfIrsUniverse.organizations.map((organization) => <article key={organization.ein}>
+              <header><span>{organization.scorecardKey ? 'EIN-VERIFIED SCORECARD' : organization.exactContractSourceName ? 'EXACT CITY-NAME LINK' : 'IRS DISCOVERY ONLY'}</span><b>EIN {organization.ein.slice(0, 2)}-{organization.ein.slice(2)}</b></header>
+              <h3>{organization.name}</h3>
+              <p>{organization.nteeCode ? `${organization.nteeCode} · ${organization.nteeGroup}` : 'NTEE classification unpublished'}</p>
+              <dl><div><dt>Revenue</dt><dd>{organization.revenueAmountUsd == null ? 'Unpublished' : compactMoney.format(organization.revenueAmountUsd)}</dd></div><div><dt>Assets</dt><dd>{organization.assetAmountUsd == null ? 'Unpublished' : compactMoney.format(organization.assetAmountUsd)}</dd></div><div><dt>Tax period</dt><dd>{organization.taxPeriod || 'Unpublished'}</dd></div></dl>
+              <small>{organization.address.street ? `${organization.address.street} · ` : ''}{organization.address.city}, {organization.address.state} {organization.address.zip ?? ''}</small>
+              <footer><span>501(c)({organization.subsectionCode ? Number(organization.subsectionCode) : '?'}) · funding room unassessed</span>{organization.scorecardKey ? <a href="#sf-diligence" onClick={() => setSfCandidateKey(organization.scorecardKey!)}>Open scorecard →</a> : organization.exactContractSourceName ? <span>{organization.exactContractCount} city contracts</span> : <span>Impact unassessed</span>}</footer>
+            </article>)}
+          </div>
+          <div className="sf-irs-pagination"><button type="button" disabled={sfIrsUniverse.pagination.page <= 1} onClick={() => setSfIrsPage((page) => Math.max(1, page - 1))}>← Previous</button><span>Page {sfIrsUniverse.pagination.page} of {sfIrsUniverse.pagination.pageCount}</span><button type="button" disabled={sfIrsUniverse.pagination.page >= sfIrsUniverse.pagination.pageCount} onClick={() => setSfIrsPage((page) => Math.min(sfIrsUniverse.pagination.pageCount, page + 1))}>Next →</button></div>
+          <div className="sf-irs-boundaries"><p><strong>Denominator.</strong> {sfIrsUniverse.interpretation.denominator}</p><p><strong>Status.</strong> {sfIrsUniverse.interpretation.status}</p><p><strong>Identity.</strong> {sfIrsUniverse.interpretation.identity}</p><p><strong>Finance.</strong> {sfIrsUniverse.interpretation.finance}</p><p><strong>Decision.</strong> {sfIrsUniverse.interpretation.recommendation}</p></div>
+          <div className="sf-irs-sources"><a href={sfIrsUniverse.source.url} target="_blank" rel="noreferrer"><span>PRIMARY DATA</span><strong>{sfIrsUniverse.source.publisher} · California EO BMF CSV</strong><small>Official posting {sfIrsUniverse.source.postingDate} · retrieved {shortDay.format(new Date(sfIrsUniverse.source.retrievedAt))}</small><b>↗</b></a><a href={sfIrsUniverse.source.dataDictionaryUrl} target="_blank" rel="noreferrer"><span>DATA DICTIONARY</span><strong>IRS EO BMF information sheet</strong><small>Source field codes and official limitations</small><b>↗</b></a></div>
+          <p className="data-note">{sfIrsUniverse.version} · {integer.format(sfIrsUniverse.summary.nteeMissingCount)} records lack NTEE codes · {integer.format(sfIrsUniverse.summary.publishableRoomForFundingCount)} publishable marginal funding gaps</p>
         </>}
       </section>
 

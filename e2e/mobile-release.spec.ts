@@ -47,7 +47,8 @@ test('phone donors can distinguish Hamilton reported outcomes from external evid
   await expect(dossier.getByText('deeper diligence; recommendation blocked')).toBeVisible();
   await expect(dossier.getByRole('heading', { name: /What Hamilton says happened/ })).toBeVisible();
   await expect(dossier.getByText('results pending')).toBeVisible();
-  await expect(dossier.getByRole('heading', { name: /What still blocks a recommendation/ })).toBeVisible();
+  await expect(dossier.getByText('03 · What still blocks a recommendation')).toBeVisible();
+  await expect(dossier.getByRole('heading', { name: /price the next dollar/ })).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 

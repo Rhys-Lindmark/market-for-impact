@@ -105,6 +105,8 @@ npm run build
 
 Data changes should also be verified against a fresh database and a database migrated through every existing migration. The UI should be checked at desktop and mobile widths, including API-backed loading, filtering, error states, console errors, and horizontal overflow.
 
+Mobile changes must pass `npm run test:mobile`, which audits the homepage at 390 px and 768 px. Before release, use the production route matrix and manual checks in [docs/mobile-release-checklist.md](docs/mobile-release-checklist.md) so representative grant and organization pages receive the same overflow, touch-target, navigation, and evidence-legibility review.
+
 ## Data refresh workflows
 
 ### Coefficient Giving

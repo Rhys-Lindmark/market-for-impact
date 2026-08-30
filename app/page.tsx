@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState, type MouseEvent } from 'react';
 import giveWellSnapshot from '@/data/givewell/top-charities.json';
 import renPhilSnapshot from '@/data/renphil/ai-for-math-2025.json';
 import sfDiligence from '@/data/san-francisco/nonprofit-diligence-v1.json';
@@ -13,6 +13,11 @@ type SfCandidateUniverse = {
   organizations: Array<{ id: string; sourceName: string; contractCount: number; contractAuthorityUsd: number; paymentsMadeUsd: number; remainingAuthorityUsd: number; departments: string[]; outcomeKeys: string[]; diligenceKey: string | null; impactEvidenceStatus: string }>;
   interpretation: { denominator: string; identity: string; scale: string; recommendation: string };
 };
+
+function closeMobileMenu(event: MouseEvent<HTMLAnchorElement>) {
+  const menu = event.currentTarget.closest('details');
+  if (menu) menu.open = false;
+}
 
 type SfIrsUniverse = {
   version: string; generatedAt: string;
@@ -315,6 +320,10 @@ const grantPath = (source: string, sourceRecordId: string) => `/grants/${source}
 const organizationPath = (slug: string) => `/organizations/${encodeURIComponent(slug)}`;
 
 export default function Home() {
+  useEffect(() => {
+    document.documentElement.dataset.mfiHydrated = 'true';
+    return () => { delete document.documentElement.dataset.mfiHydrated; };
+  }, []);
   const [cause, setCause] = useState('All causes');
   const [query, setQuery] = useState('');
   const [coefficientMarket, setCoefficientMarket] = useState<CoefficientMarket | null>(null);
@@ -696,7 +705,7 @@ export default function Home() {
           <span className="brand-mark">M</span>
           <span>Market for Impact</span>
         </a>
-        <nav aria-label="Primary navigation">
+        <nav className="desktop-navigation" aria-label="Primary navigation">
           <a href="#portfolio">Build a portfolio</a>
           <a href="#lgbtq-discovery">LGBTQIA+ giving</a>
           <a href="#san-francisco">San Francisco</a>
@@ -706,7 +715,18 @@ export default function Home() {
           <a href="#flows">Funding flows</a>
           <a href="#data-quality">Data quality</a>
         </nav>
-        <button className="outline-button">Explore the market <span>↗</span></button>
+        <a className="outline-button" href="#opportunities">Explore the market <span>↗</span></a>
+        <details className="mobile-menu">
+          <summary>Explore <span aria-hidden="true">↓</span></summary>
+          <nav className="mobile-navigation" aria-label="Mobile navigation">
+            <a href="#portfolio" onClick={closeMobileMenu}>Build a portfolio <span>01</span></a>
+            <a href="#san-francisco" onClick={closeMobileMenu}>San Francisco <span>02</span></a>
+            <a href="#opportunities" onClick={closeMobileMenu}>Opportunities <span>03</span></a>
+            <a href="#evaluator-comparison" onClick={closeMobileMenu}>Compare evaluators <span>04</span></a>
+            <a href="#funding-curve" onClick={closeMobileMenu}>Funding room <span>05</span></a>
+            <a href="#data-quality" onClick={closeMobileMenu}>Data quality <span>06</span></a>
+          </nav>
+        </details>
       </header>
 
       <section className="hero" id="top">

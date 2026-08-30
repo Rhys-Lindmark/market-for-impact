@@ -173,6 +173,33 @@ type FundingTrancheMarket = {
   }>;
 };
 
+type GrantFlowMarket = {
+  version: string; generatedAt: string; acceptedSourceRowCount: number;
+  aggregationRules: { row: string; amount: string; roles: string; missingness: string; date: string };
+  excludedLedgers: Array<{ key: string; label: string; reason: string; rowCount: number; allRowsInAcceptedLedger: boolean }>;
+  sourceSummaries: Array<{
+    key: string; label: string; publisher: string; detailSource: string; sourceUrl: string; retrievedAt: string;
+    rowCount: number; publishedAmountUsd: number; statusSemantics: string;
+    missingAmountCount: number; missingDateCount: number; normalizedOriginatorCount: number;
+    normalizedAdvisorCount: number; namedRecipientCount: number; missingRestrictionCount: number; missingStageCount: number;
+  }>;
+  selectedSource: { key: string; label: string; publisher: string; sourceUrl: string; retrievedAt: string; rowCount: number; dateBasis: string };
+  facets: {
+    years: Array<{ value: number; count: number }>; causes: Array<{ value: string; count: number }>;
+    geographies: Array<{ value: string; count: number }>; statuses: Array<{ value: string; count: number }>;
+    restrictions: Array<{ value: string; count: number }>; stages: Array<{ value: string; count: number }>;
+    causeCountsAreNonAdditive: boolean;
+  };
+  pagination: { page: number; pageSize: number; total: number; pageCount: number };
+  flows: Array<{
+    sourceRecordId: string; sourceUrl: string | null; detailSource: string; amountUsd: number | null;
+    status: string; eventDate: string | null; dateBasis: string; purpose: string | null; intervention: string | null;
+    causeTags: string[]; geographies: string[]; stage: null; restriction: string | null;
+    originatingFunder: { name: string; slug: string } | null; advisingFunder: { name: string; slug: string } | null;
+    sourceListedFunders: string[]; recipients: Array<{ name: string; slug: string | null; normalized: boolean }>;
+  }>;
+};
+
 const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
 const compactMoney = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 2 });
 const integer = new Intl.NumberFormat('en-US');
@@ -231,6 +258,40 @@ export default function Home() {
   const [explorerQuery, setExplorerQuery] = useState('');
   const [explorerPage, setExplorerPage] = useState(1);
   const [explorerRefresh, setExplorerRefresh] = useState(0);
+  const [grantFlows, setGrantFlows] = useState<GrantFlowMarket | null>(null);
+  const [grantFlowsError, setGrantFlowsError] = useState(false);
+  const [grantFlowsLoading, setGrantFlowsLoading] = useState(true);
+  const [flowSource, setFlowSource] = useState('coefficient');
+  const [flowYear, setFlowYear] = useState('');
+  const [flowCause, setFlowCause] = useState('');
+  const [flowGeography, setFlowGeography] = useState('');
+  const [flowStatus, setFlowStatus] = useState('');
+  const [flowRestriction, setFlowRestriction] = useState('');
+  const [flowSort, setFlowSort] = useState<'recent' | 'largest'>('recent');
+  const [flowDraft, setFlowDraft] = useState('');
+  const [flowQuery, setFlowQuery] = useState('');
+  const [flowPage, setFlowPage] = useState(1);
+  const [flowRefresh, setFlowRefresh] = useState(0);
+  useEffect(() => {
+    const params = new URLSearchParams({ source: flowSource, page: String(flowPage), pageSize: '10', sort: flowSort });
+    if (flowYear) params.set('year', flowYear);
+    if (flowCause) params.set('cause', flowCause);
+    if (flowGeography) params.set('geography', flowGeography);
+    if (flowStatus) params.set('status', flowStatus);
+    if (flowRestriction) params.set('restriction', flowRestriction);
+    if (flowQuery) params.set('q', flowQuery);
+    const controller = new AbortController();
+    fetch(`/api/grant-flows?${params}`, { signal: controller.signal }).then((response) => {
+      if (!response.ok) throw new Error('Grant-flow explorer unavailable');
+      return response.json() as Promise<GrantFlowMarket>;
+    }).then((result) => {
+      setGrantFlows(result); setGrantFlowsLoading(false);
+    }).catch((error) => {
+      if (error instanceof DOMException && error.name === 'AbortError') return;
+      setGrantFlowsError(true); setGrantFlowsLoading(false);
+    });
+    return () => controller.abort();
+  }, [flowCause, flowGeography, flowPage, flowQuery, flowRefresh, flowRestriction, flowSort, flowSource, flowStatus, flowYear]);
   useEffect(() => {
     fetch('/api/funding-tranches').then((response) => {
       if (!response.ok) throw new Error('Funding tranches unavailable');
@@ -323,6 +384,13 @@ export default function Home() {
     setExplorerLoading(true);
     setExplorerError(false);
     setExplorerRefresh((value) => value + 1);
+  };
+  const beginFlowUpdate = () => {
+    setGrantFlowsLoading(true); setGrantFlowsError(false); setFlowRefresh((value) => value + 1);
+  };
+  const resetFlowFilters = (source = flowSource) => {
+    setGrantFlowsLoading(true); setGrantFlowsError(false); setFlowSource(source); setFlowYear(''); setFlowCause('');
+    setFlowGeography(''); setFlowStatus(''); setFlowRestriction(''); setFlowDraft(''); setFlowQuery(''); setFlowPage(1);
   };
   const acceptedOpportunities = useMemo(() => [...(giveWellMarket?.opportunities ?? []).map((opportunity) => ({
     name: opportunity.organization,
@@ -846,7 +914,71 @@ export default function Home() {
         <p className="data-note">{renPhilMarket ? `Accepted award rows retrieved ${day.format(new Date(renPhilMarket.source.retrievedAt))}` : renPhilError ? 'Accepted ledger temporarily unavailable' : 'Loading database freshness…'} · <a href={renPhilSnapshot.source.url} target="_blank" rel="noreferrer">Official winners page ↗</a></p>
       </section>
 
-      <section className="flows-section" id="flows">
+      <section className="grant-flow-section" id="flows">
+        <div className="grant-flow-heading">
+          <div><p className="kicker">TRACE THE CAPITAL CHAIN</p><h2>Follow one dollar without counting it twice.</h2></div>
+          <p>Choose one publisher ledger, then follow each source row from originating funder through adviser, grant, recipient, intervention, and cause. Unknown links stay unknown.</p>
+        </div>
+        <div className="grant-flow-stats">
+          <div><span>Accepted source rows</span><strong>{grantFlows ? integer.format(grantFlows.acceptedSourceRowCount) : '—'}</strong><p>Counts can be combined because source-row identities are distinct.</p></div>
+          <div><span>Publisher ledgers</span><strong>{grantFlows ? integer.format(grantFlows.sourceSummaries.length) : '—'}</strong><p>Dollar totals remain inside one selected ledger.</p></div>
+          <div><span>Overlap excluded</span><strong>{grantFlows ? integer.format(grantFlows.excludedLedgers[0]?.rowCount ?? 0) : '—'}</strong><p>Coefficient EGC rows already occur in its complete index.</p></div>
+          <div><span>Selected rows</span><strong>{grantFlows ? integer.format(grantFlows.pagination.total) : '—'}</strong><p>One row stays one flow, even with multiple recipients.</p></div>
+        </div>
+        <div className="flow-ledger-tabs" aria-label="Publisher ledger">
+          {(grantFlows?.sourceSummaries ?? []).map((source) => (
+            <button type="button" className={flowSource === source.key ? 'active' : ''} key={source.key} onClick={() => resetFlowFilters(source.key)}>
+              <span>{source.publisher}</span><strong>{integer.format(source.rowCount)} rows</strong>
+              <b>{source.missingAmountCount === source.rowCount ? 'Amounts not published' : compactMoney.format(source.publishedAmountUsd)}</b>
+            </button>
+          ))}
+        </div>
+        <div className="flow-boundary"><span>NON-ADDITIVE</span><p>{grantFlows?.aggregationRules.amount ?? 'Cross-publisher dollar totals stay separate because accepted publications may describe the same underlying funding.'}</p></div>
+        <form className="flow-filter-panel" onSubmit={(event) => { event.preventDefault(); beginFlowUpdate(); setFlowPage(1); setFlowQuery(flowDraft.trim()); }}>
+          <label className="flow-search"><span>Search</span><input value={flowDraft} onChange={(event) => setFlowDraft(event.target.value)} placeholder="Recipient or grant purpose" /></label>
+          <label><span>{grantFlows?.selectedSource.dateBasis ?? 'Event'} year</span><select value={flowYear} onChange={(event) => { beginFlowUpdate(); setFlowYear(event.target.value); setFlowPage(1); }}><option value="">All years</option>{(grantFlows?.facets.years ?? []).map((item) => <option value={item.value} key={item.value}>{item.value} · {integer.format(item.count)}</option>)}</select></label>
+          <label><span>Cause / source tag</span><select value={flowCause} onChange={(event) => { beginFlowUpdate(); setFlowCause(event.target.value); setFlowPage(1); }}><option value="">All published tags</option>{(grantFlows?.facets.causes ?? []).map((item) => <option value={item.value} key={item.value}>{item.value} · {integer.format(item.count)}</option>)}</select></label>
+          <label><span>Geography</span><select value={flowGeography} onChange={(event) => { beginFlowUpdate(); setFlowGeography(event.target.value); setFlowPage(1); }}><option value="">All geographies</option>{(grantFlows?.facets.geographies ?? []).map((item) => <option value={item.value} key={item.value}>{item.value} · {integer.format(item.count)}</option>)}</select></label>
+          <label><span>Source status</span><select value={flowStatus} onChange={(event) => { beginFlowUpdate(); setFlowStatus(event.target.value); setFlowPage(1); }}><option value="">All statuses</option>{(grantFlows?.facets.statuses ?? []).map((item) => <option value={item.value} key={item.value}>{item.value}</option>)}</select></label>
+          <label><span>Restriction</span><select value={flowRestriction} onChange={(event) => { beginFlowUpdate(); setFlowRestriction(event.target.value); setFlowPage(1); }}><option value="">All published states</option>{(grantFlows?.facets.restrictions ?? []).map((item) => <option value={item.value} key={item.value}>{item.value === 'not-published' ? 'Not published' : item.value[0].toUpperCase() + item.value.slice(1)} · {integer.format(item.count)}</option>)}</select></label>
+          <label><span>Stage</span><select value="not-published" disabled><option value="not-published">Not published by accepted sources</option></select></label>
+          <label><span>Sort</span><select value={flowSort} onChange={(event) => { beginFlowUpdate(); setFlowSort(event.target.value as 'recent' | 'largest'); setFlowPage(1); }}><option value="recent">Most recent</option><option value="largest">Largest amount</option></select></label>
+          <button type="submit">Trace flows →</button>
+        </form>
+        <div className="flow-query-status" aria-live="polite">
+          <span>{grantFlowsLoading ? 'Reconciling source rows…' : grantFlowsError ? 'The flow ledger is temporarily unavailable.' : `${integer.format(grantFlows?.pagination.total ?? 0)} matching ${grantFlows?.selectedSource.label ?? 'source'} rows`}</span>
+          {(flowYear || flowCause || flowGeography || flowStatus || flowRestriction || flowQuery) && <button type="button" onClick={() => resetFlowFilters()}>Clear filters</button>}
+        </div>
+        <div className="capital-flow-list">
+          {(grantFlows?.flows ?? []).map((flow) => (
+            <article className="capital-flow-card" key={`${flow.detailSource}:${flow.sourceRecordId}`}>
+              <div className="capital-flow-meta"><span>{flow.eventDate ? `${shortDay.format(new Date(flow.eventDate))} · ${flow.dateBasis}` : `${flow.dateBasis} not published`}</span><span>{flow.status}</span><strong>{flow.amountUsd == null ? 'Amount not published' : money.format(flow.amountUsd)}</strong></div>
+              <div className="capital-flow-chain">
+                <div><span>01 · ORIGINATOR</span><strong>{flow.originatingFunder?.name ?? 'Not normalized'}</strong><p>{flow.originatingFunder ? 'Source-backed organization role' : flow.sourceListedFunders.length ? `Source lists: ${flow.sourceListedFunders.join(' · ')}` : 'Source does not identify a normalized originating funder.'}</p></div>
+                <i aria-hidden="true">→</i>
+                <div><span>02 · ADVISER</span><strong>{flow.advisingFunder?.name ?? 'Not normalized'}</strong><p>{flow.advisingFunder ? 'Source-backed organization role' : 'Publisher is not automatically treated as adviser.'}</p></div>
+                <i aria-hidden="true">→</i>
+                <div><span>03 · GRANT</span><strong>{flow.purpose ?? 'Purpose not published'}</strong><p>One publisher source row</p></div>
+                <i aria-hidden="true">→</i>
+                <div><span>04 · RECIPIENT</span><strong>{flow.recipients.map((item) => item.name).join(' + ') || 'Not published'}</strong><p>{flow.recipients.some((item) => !item.normalized) ? 'Source-listed names; identity not normalized' : 'Normalized organization identities'}</p></div>
+                <i aria-hidden="true">→</i>
+                <div><span>05 · IMPACT PATH</span><strong>{flow.intervention ?? flow.causeTags[0] ?? 'Not published'}</strong><p>{flow.causeTags.length ? flow.causeTags.join(' · ') : 'Cause not published'}</p></div>
+              </div>
+              <div className="capital-flow-footer"><span>Geography: {flow.geographies.join(' · ') || 'not published'}</span><span>Stage: not published</span><span>Restriction: {flow.restriction ?? 'not published'}</span><a href={grantPath(flow.detailSource, flow.sourceRecordId)}>Open source record →</a></div>
+            </article>
+          ))}
+          {!grantFlowsLoading && !grantFlowsError && grantFlows?.flows.length === 0 && <p className="grant-no-results">No accepted source rows match those filters.</p>}
+        </div>
+        {grantFlows && grantFlows.pagination.pageCount > 1 && <div className="grant-pagination flow-pagination">
+          <button type="button" disabled={flowPage <= 1 || grantFlowsLoading} onClick={() => { beginFlowUpdate(); setFlowPage((page) => Math.max(1, page - 1)); }}>← Previous</button>
+          <span>Page {integer.format(grantFlows.pagination.page)} of {integer.format(grantFlows.pagination.pageCount)}</span>
+          <button type="button" disabled={flowPage >= grantFlows.pagination.pageCount || grantFlowsLoading} onClick={() => { beginFlowUpdate(); setFlowPage((page) => page + 1); }}>Next →</button>
+        </div>}
+        <div className="flow-method-notes"><p><strong>One row, one amount.</strong> {grantFlows?.aggregationRules.row ?? 'Recipient roles never duplicate a grant amount.'}</p><p><strong>Role discipline.</strong> {grantFlows?.aggregationRules.roles ?? 'Originating and advising funders remain separate.'}</p><p><strong>Missing stays missing.</strong> {grantFlows?.aggregationRules.missingness ?? 'Unsupported fields are never inferred.'}</p></div>
+        <p className="data-note">{grantFlows ? `${grantFlows.version} · selected source retrieved ${day.format(new Date(grantFlows.selectedSource.retrievedAt))}` : 'Loading source reconciliation…'} · cause-tag counts may overlap inside a ledger · <a href={grantFlows?.selectedSource.sourceUrl ?? '#flows'} target="_blank" rel="noreferrer">Publisher source ↗</a></p>
+      </section>
+
+      <section className="flows-section" id="published-signals">
         <div className="flow-copy">
           <p className="kicker">THE FLOW OF CAPITAL</p>
           <h2>See where impact funding is actually going.</h2>

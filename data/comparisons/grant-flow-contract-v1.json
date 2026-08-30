@@ -1,0 +1,112 @@
+{
+  "version": "grant-flow-contract-v0.1",
+  "generatedAt": "2026-08-30T08:47:30.552Z",
+  "defaultLedger": "coefficient",
+  "acceptedSourceRowCount": 3491,
+  "ledgers": [
+    {
+      "key": "coefficient",
+      "label": "Coefficient public index",
+      "publisher": "Coefficient Giving",
+      "detailSource": "coefficient",
+      "sourceUrl": "https://coefficientgiving.org/funds/",
+      "retrievedAt": "2026-08-30T02:01:04.483Z",
+      "rowCount": 2893,
+      "publishedAmountUsd": 4920357709,
+      "statusSemantics": "published",
+      "roleCoverage": {
+        "originatingFunder": "not-normalized",
+        "advisingFunder": "normalized",
+        "recipients": "normalized"
+      },
+      "fieldCoverage": {
+        "year": "award-date",
+        "geography": "not-published",
+        "stage": "not-published",
+        "restriction": "not-published"
+      }
+    },
+    {
+      "key": "givewell",
+      "label": "GiveWell grant export",
+      "publisher": "GiveWell",
+      "detailSource": "givewell",
+      "sourceUrl": "https://airtable.com/appaVhon0jdLt1rVs/shrixNMUWCSC5v1lh/tblykYPizxzYj3U1L/viwJ3DyqAUsL654Rm",
+      "retrievedAt": "2026-08-30T02:50:38.000Z",
+      "rowCount": 541,
+      "publishedAmountUsd": 2625949864,
+      "statusSemantics": "published grant; recommendation and payment timing not inferred",
+      "roleCoverage": {
+        "originatingFunder": "source-list-only",
+        "advisingFunder": "not-normalized",
+        "recipients": "normalized"
+      },
+      "fieldCoverage": {
+        "year": "decision-date",
+        "geography": "country-list",
+        "stage": "not-published",
+        "restriction": "not-published"
+      }
+    },
+    {
+      "key": "giving-green",
+      "label": "Giving Green 2025 cycle",
+      "publisher": "Giving Green",
+      "detailSource": "giving-green",
+      "sourceUrl": "https://www.givinggreen.earth/post/2025-2026-top-climate-nonprofits",
+      "retrievedAt": "2026-08-30T08:47:30.552Z",
+      "rowCount": 29,
+      "publishedAmountUsd": 26063000,
+      "statusSemantics": "planned Giving Green Fund grant announced for the 2025–2026 recommendation cycle; announcement is not proof of disbursement",
+      "roleCoverage": {
+        "originatingFunder": "normalized",
+        "advisingFunder": "normalized",
+        "recipients": "normalized"
+      },
+      "fieldCoverage": {
+        "year": "announcement-date",
+        "geography": "not-published",
+        "stage": "not-published",
+        "restriction": "not-published"
+      }
+    },
+    {
+      "key": "renphil",
+      "label": "RenPhil AI for Math",
+      "publisher": "Renaissance Philanthropy",
+      "detailSource": "renphil",
+      "sourceUrl": "https://www.renaissancephilanthropy.org/ai-for-math-fund-projects",
+      "retrievedAt": "2026-08-30T03:21:57.511Z",
+      "rowCount": 28,
+      "publishedAmountUsd": 0,
+      "statusSemantics": "published award; amount and payment timing not published",
+      "roleCoverage": {
+        "originatingFunder": "normalized",
+        "advisingFunder": "normalized",
+        "recipients": "source-list-only"
+      },
+      "fieldCoverage": {
+        "year": "announcement-date",
+        "geography": "not-published",
+        "stage": "not-published",
+        "restriction": "not-published"
+      }
+    }
+  ],
+  "excludedLedgers": [
+    {
+      "key": "coefficient-egc",
+      "label": "Coefficient Effective Giving & Careers subset",
+      "reason": "All 79 rows already occur in the complete Coefficient public index. Including this ledger would duplicate source records and amounts.",
+      "rowCount": 79,
+      "allRowsInAcceptedLedger": true
+    }
+  ],
+  "aggregationRules": {
+    "row": "One displayed flow equals one accepted publisher source row, regardless of recipient count or number of organization roles.",
+    "amount": "Dollar totals are computed only inside one selected publisher ledger. Cross-publisher totals are prohibited because the same underlying funding may appear in more than one publication.",
+    "roles": "Originating and advising funders are separate roles. A publisher or evaluator is not treated as the originating funder unless the accepted source says so.",
+    "missingness": "Unknown geography, stage, restriction, amount, or role remains unknown and is never inferred from a recipient, purpose, or evaluator.",
+    "date": "Year filters use each ledger’s declared date basis: award, decision, or announcement. The basis is shown on every row."
+  }
+}

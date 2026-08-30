@@ -114,13 +114,16 @@ export async function replaceGrantOrganizationRoles(sourceId: number, explicitRe
   await env.DB.batch([
     env.DB.prepare(`INSERT INTO grant_organization_roles (grant_id, organization_id, role, source_name, position)
       SELECT g.id, g.recipient_id, 'recipient', o.canonical_name, 0 FROM grants g
-      JOIN organizations o ON o.id = g.recipient_id WHERE g.source_id = ? AND g.recipient_id IS NOT NULL`).bind(sourceId),
+      JOIN organizations o ON o.id = g.recipient_id WHERE g.source_id = ? AND g.recipient_id IS NOT NULL
+      ON CONFLICT(grant_id, organization_id, role) DO UPDATE SET source_name = excluded.source_name, position = excluded.position`).bind(sourceId),
     env.DB.prepare(`INSERT INTO grant_organization_roles (grant_id, organization_id, role, source_name, position)
       SELECT g.id, g.advising_funder_id, 'advising-funder', o.canonical_name, 0 FROM grants g
-      JOIN organizations o ON o.id = g.advising_funder_id WHERE g.source_id = ? AND g.advising_funder_id IS NOT NULL`).bind(sourceId),
+      JOIN organizations o ON o.id = g.advising_funder_id WHERE g.source_id = ? AND g.advising_funder_id IS NOT NULL
+      ON CONFLICT(grant_id, organization_id, role) DO UPDATE SET source_name = excluded.source_name, position = excluded.position`).bind(sourceId),
     env.DB.prepare(`INSERT INTO grant_organization_roles (grant_id, organization_id, role, source_name, position)
       SELECT g.id, g.originating_funder_id, 'originating-funder', o.canonical_name, 0 FROM grants g
-      JOIN organizations o ON o.id = g.originating_funder_id WHERE g.source_id = ? AND g.originating_funder_id IS NOT NULL`).bind(sourceId),
+      JOIN organizations o ON o.id = g.originating_funder_id WHERE g.source_id = ? AND g.originating_funder_id IS NOT NULL
+      ON CONFLICT(grant_id, organization_id, role) DO UPDATE SET source_name = excluded.source_name, position = excluded.position`).bind(sourceId),
   ]);
   await inBatches(explicitRecipients.map((recipient) => {
     const grantId = grantIdByRecord.get(recipient.sourceRecordId);

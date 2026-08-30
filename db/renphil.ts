@@ -26,11 +26,11 @@ async function ensureRenPhilSnapshot() {
         epoch(snapshot.fundSignals.firstRoundAnnouncedAt), retrievedAt, snapshot.source.coverageNote),
     env.DB.prepare(`INSERT INTO organizations (canonical_name, slug, website_url, organization_type)
       VALUES (?, ?, ?, ?) ON CONFLICT(slug) DO UPDATE SET canonical_name = excluded.canonical_name,
-        website_url = excluded.website_url, organization_type = excluded.organization_type`)
+        website_url = excluded.website_url`)
       .bind('Renaissance Philanthropy', 'renaissance-philanthropy', 'https://www.renaissancephilanthropy.org/', 'funder-advisor'),
     env.DB.prepare(`INSERT INTO organizations (canonical_name, slug, website_url, organization_type)
       VALUES (?, ?, ?, ?) ON CONFLICT(slug) DO UPDATE SET canonical_name = excluded.canonical_name,
-        website_url = excluded.website_url, organization_type = excluded.organization_type`)
+        website_url = excluded.website_url`)
       .bind('XTX Markets', 'xtx-markets', 'https://www.xtxmarkets.com/', 'originating-funder'),
   ]);
   const [source, advisor, funder] = await Promise.all([

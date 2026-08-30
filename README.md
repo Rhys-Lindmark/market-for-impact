@@ -38,6 +38,7 @@ This is research infrastructure, not financial, tax, or individualized giving ad
 - A San Francisco outcome ontology defining eight local outcome families—housing stability, unsheltered days avoided, overdose deaths averted, mental-health stabilization, food security, educational attainment, violence reduction, and economic mobility—against ten official sources. Service outputs, administrative proxies, model inputs, causal attribution, equity cuts, and double-count boundaries remain separate; QALY and WELLBY conversion is blocked until a versioned local model exists.
 - A San Francisco public-funding baseline across the approved FY2026–2027 city budget and 1,784 nonprofit prime contracts active on August 30, 2026. It maps 388 contracts into the local outcome ontology with conservative, auditable text rules while keeping department envelopes, contract authority, outstanding purchase orders, payments, and remaining authority separate and explicitly non-additive.
 - A first six-candidate San Francisco diligence market spanning direct service, LGBTQ+ community support, housing advocacy, and elections. It reconciles 35 exact active city-contract matches, exposes one accepted Coefficient grant overlap, preserves Charity Navigator beacon coverage as a non-impact signal, and leaves every marginal funding gap and QALY/WELLBY conversion explicitly unresolved.
+- A first broad-cause discovery slice for LGBTQIA+ giving. It preserves Charity Navigator’s current 441-result `LGBTQ rights` universe and first ten default-ordered candidates, EINs, headquarters, ratings, completed beacons, advisories, and source tags while leaving service geography, impact evidence, rating dates, and marginal funding room explicitly unknown.
 - Renaissance Philanthropy’s 28 currently linked 2025 AI for Math awards, reconciled against its stated 29-award portfolio with one explicit coverage gap and no inferred row-level amounts.
 - Stable grant detail URLs across all current Coefficient, GiveWell, Giving Green, and RenPhil ledgers, plus organization profiles that separate received, advised, and originated funding roles and display evaluator evidence when available.
 - Auditable many-to-many grant/organization roles and source-specific name aliases, including all named recipients in Coefficient’s three multi-recipient records without splitting or duplicating grant amounts.
@@ -226,6 +227,17 @@ npm run data:sf:diligence:build  # update only after reviewing source evidence
 ```
 
 The scorecards separate native signals, causal evidence, public-funding overlap, donation vehicle, and marginal funding state. Charity Navigator scores retain their completed-beacon limitations and never become effectiveness rankings. No candidate advances to a recommendation until the project obtains a current next-dollar plan, validates implementation capacity, examines downside risks, and finds sufficient independent evidence for the claimed outcome.
+
+### Charity Navigator cause discovery
+
+The first broad-cause slice uses Charity Navigator’s live `LGBTQ rights` search as a discovery input. The snapshot retains the current result count and first default-ordered page, then fetches each profile to preserve EIN, headquarters, score, stars, completed-beacon count, advisory state, source tags, and profile publication timestamp.
+
+```bash
+npm run data:charity-navigator:check
+npm run data:charity-navigator:refresh  # review membership, ratings, and profile changes before committing
+```
+
+The import fails closed when the first-page semantic set or profile contract changes. It does not call search order a ranking, headquarters a service geography, a profile publication timestamp a rating date, or four completed beacons proof of cost-effectiveness. Candidates remain research leads until independent outcome evidence and current room for more funding are assessed.
 
 ### Evaluator comparison
 

@@ -1,0 +1,32 @@
+name: Charity Navigator source freshness
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/charity-navigator-source-check.yml'
+      - 'data/charity-navigator/**'
+      - 'scripts/refresh-charity-navigator.mjs'
+      - 'scripts/lib/charity-navigator.mjs'
+      - 'scripts/charity-navigator.test.mjs'
+  schedule:
+    - cron: '47 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: charity-navigator-source-freshness
+  cancel-in-progress: true
+
+jobs:
+  check-lgbtq-discovery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node --test scripts/charity-navigator.test.mjs
+      - run: node scripts/refresh-charity-navigator.mjs

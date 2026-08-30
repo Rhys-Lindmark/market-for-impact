@@ -27,6 +27,7 @@ This is research infrastructure, not financial, tax, or individualized giving ad
 - A versioned GiveDirectly comparison layer that keeps GiveWell’s 1× welfare anchor, 3–4× standard-program estimate, and 6× funding bar separate, with model-population, welfare-weight, currency-basis, and incompatibility warnings stored in D1.
 - Animal Charity Evaluators’ 10 current Recommended Charities, including five 2025 reviews and five retained 2024 recommendations, with 28 program-level native metrics, evaluation vintages, uncertainty ranges, annual funding capacity, and incremental room for more funding preserved in D1.
 - Giving Green’s five current 2025–2026 Top Climate Nonprofits and complete 29-row grant announcement, with strategy tags, qualitative evaluation cases, funding-need language, and $26.063M of planned grants preserved without treating grant size as rank or disbursement.
+- A Founders Pledge research matrix spanning 12 funds, programs, and published organization recommendations across education, climate, global health, and catastrophic risks, with current-vs-historical status and evaluation method kept explicit.
 - Renaissance Philanthropy’s 28 currently linked 2025 AI for Math awards, reconciled against its stated 29-award portfolio with one explicit coverage gap and no inferred row-level amounts.
 - Stable grant detail URLs across all current Coefficient, GiveWell, Giving Green, and RenPhil ledgers, plus organization profiles that separate received, advised, and originated funding roles and display evaluator evidence when available.
 - Auditable many-to-many grant/organization roles and source-specific name aliases, including all named recipients in Coefficient’s three multi-recipient records without splitting or duplicating grant amounts.
@@ -155,6 +156,17 @@ npm run data:giving-green:refresh  # review upstream changes before committing
 ```
 
 These amounts are planned Giving Green Fund grants, not proof of payment, unrestricted room for more funding, or an effectiveness ranking. Giving Green’s organization-level case is qualitative—scale, feasibility, and funding need—so the site does not manufacture emissions-per-dollar estimates. Project InnerSpace is the only current review with a numeric organization-level gap in the snapshot: $4M for the remainder of 2025 as of October 2025. That explicitly dated estimate remains visible as stale period-specific evidence, not current 2026 room. GitHub checks the official announcement hourly and fails into review when its 29-row semantic grant set changes.
+
+### Founders Pledge
+
+The Founders Pledge matrix tracks 12 opportunities across four requested cause areas. It distinguishes two currently accepting pooled funds, one current global-health program whose Catalytic Impact Fund is closed, nine still-live published organization recommendations, and one explicitly partner-derived GiveWell summary.
+
+```bash
+npm run data:founders-pledge:check
+npm run data:founders-pledge:refresh  # review upstream claims before committing
+```
+
+Only Imagine Worldwide carries an explicit GiveDirectly-relative estimate: 11× in Founders Pledge’s November 2023 education model. That figure is displayed with its model date and limitations, including the 17% replicability adjustment and assumptions about government take-up and persistence. TaRL Africa’s native learning-gain range remains in standard deviations per donated dollar, while pooled climate and catastrophic-risk funds retain qualitative, hits-based evidence. No numeric current funding gap is inferred for any matrix row. GitHub checks nine official pages hourly for the reviewed claims and recommendation set.
 
 ## Data and citation rules
 

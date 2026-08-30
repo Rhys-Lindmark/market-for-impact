@@ -1,0 +1,32 @@
+name: Founders Pledge source freshness
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/founders-pledge-source-check.yml'
+      - 'data/founders-pledge/**'
+      - 'scripts/refresh-founders-pledge.mjs'
+      - 'scripts/lib/founders-pledge.mjs'
+      - 'scripts/founders-pledge.test.mjs'
+  schedule:
+    - cron: '41 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: founders-pledge-source-freshness
+  cancel-in-progress: true
+
+jobs:
+  check-research-matrix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node --test scripts/founders-pledge.test.mjs
+      - run: node scripts/refresh-founders-pledge.mjs

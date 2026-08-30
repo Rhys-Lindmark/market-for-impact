@@ -9,6 +9,7 @@ import { ensureCurrentSnapshot } from '@/db/coefficient';
 import { ensureGiveWellSnapshot } from '@/db/givewell';
 import { ensureRenPhilSnapshot } from '@/db/renphil';
 import { ensureGivingGreenSnapshot } from '@/db/giving-green';
+import { ensureFoundersPledgeSnapshot } from '@/db/founders-pledge';
 import { grantPath, type GrantSourceKey, parseStringArray } from '@/db/detail-contract';
 
 const sourceDefinitions: Record<GrantSourceKey, { url: string; ensure: () => Promise<unknown> }> = {
@@ -145,6 +146,7 @@ async function ensureAllMarketData() {
   await ensureGiveWellSnapshot();
   await ensureRenPhilSnapshot();
   await ensureGivingGreenSnapshot();
+  await ensureFoundersPledgeSnapshot();
 }
 
 type Relationship = 'received' | 'advised' | 'originated';

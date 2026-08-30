@@ -12,10 +12,10 @@ const snapshot = buildSfMarginalPlanRequests({
 
 test('all organization requests cover every required field and gift size', () => {
   validateSfMarginalPlanRequests(snapshot);
-  assert.equal(snapshot.summary.packetCount, 3);
-  assert.equal(snapshot.summary.scenarioCount, 9);
-  assert.equal(snapshot.summary.questionCount, 24);
-  assert.equal(snapshot.summary.publicFactCount, 15);
+  assert.equal(snapshot.summary.packetCount, 4);
+  assert.equal(snapshot.summary.scenarioCount, 12);
+  assert.equal(snapshot.summary.questionCount, 32);
+  assert.equal(snapshot.summary.publicFactCount, 20);
   for (const packet of snapshot.packets) {
     assert.deepEqual(packet.scenarios.map((scenario) => scenario.amountUsd), [100000, 1000000, 10000000]);
     assert.equal(packet.questions.length, 8);
@@ -61,5 +61,17 @@ test('SF LGBT Center public prefill keeps reach, finances, paused enrollment, an
   assert.match(packet.questions.find((question) => question.key === 'outcomeForecast').publicContext, /248-participant formative evaluation/i);
   assert.match(packet.questions.find((question) => question.key === 'costAndAttribution').publicContext, /cost per retained living-wage job/i);
   assert.match(packet.decisionBoundary, /not.*cost per retained job/i);
+  assert.ok(packet.sources.every((source) => source.retrievedAt));
+});
+
+test('GLIDE public prefill keeps gateway services, consolidated finances, capacity, and outcomes separate', () => {
+  const packet = snapshot.packets.find((item) => item.candidateKey === 'glide');
+  assert.match(packet.publicFacts.find((fact) => fact.key === 'latest-signals').display, /620,513 meals served/);
+  assert.match(packet.publicFacts.find((fact) => fact.key === 'organization-finances').display, /\$10\.83M contract revenue/);
+  assert.match(packet.publicFacts.find((fact) => fact.key === 'public-funding').display, /14 exact prime-contractor matches/);
+  assert.match(packet.questions.find((question) => question.key === 'capacityConstraints').publicContext, /limited space and high demand/i);
+  assert.match(packet.questions.find((question) => question.key === 'fundingDisplacement').publicContext, /\$14\.12M future meal agreement/i);
+  assert.match(packet.questions.find((question) => question.key === 'outcomeForecast').publicContext, /treatment-retention/i);
+  assert.match(packet.decisionBoundary, /not.*cost per food-secure participant/i);
   assert.ok(packet.sources.every((source) => source.retrievedAt));
 });

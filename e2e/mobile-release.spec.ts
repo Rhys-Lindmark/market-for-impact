@@ -51,3 +51,35 @@ test('phone controls retain practical touch targets and wide tables scroll local
   expect(await table.evaluate((element) => element.scrollWidth > element.clientWidth)).toBe(true);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
+
+test('transient San Francisco discovery-feed failures recover without permanent error panels', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== 'phone-390');
+  const attempts = new Map<string, number>();
+  const routes = [
+    '/api/sf-candidate-universe',
+    '/api/sf-irs-universe',
+  ];
+
+  for (const apiRoute of routes) {
+    await page.route(`**${apiRoute}*`, async (route) => {
+      const attempt = (attempts.get(apiRoute) ?? 0) + 1;
+      attempts.set(apiRoute, attempt);
+      if (attempt === 1) {
+        await route.fulfill({
+          status: 503,
+          contentType: 'application/json',
+          body: JSON.stringify({ error: 'Simulated transient failure' }),
+        });
+        return;
+      }
+      await route.continue();
+    });
+  }
+
+  await page.goto('/#san-francisco', { waitUntil: 'domcontentloaded' });
+  await expect(page.locator('.sf-universe-summary strong').first()).not.toHaveText('—', { timeout: 20_000 });
+  await expect(page.locator('.sf-irs-summary strong').first()).not.toHaveText('—');
+  await expect(page.getByText('The San Francisco candidate universe is temporarily unavailable.')).toHaveCount(0);
+  await expect(page.getByText('The IRS identity universe is temporarily unavailable.')).toHaveCount(0);
+  for (const apiRoute of routes) expect(attempts.get(apiRoute)).toBeGreaterThanOrEqual(2);
+});

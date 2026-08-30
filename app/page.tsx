@@ -5,6 +5,7 @@ import giveWellSnapshot from '@/data/givewell/top-charities.json';
 import renPhilSnapshot from '@/data/renphil/ai-for-math-2025.json';
 import sfDiligence from '@/data/san-francisco/nonprofit-diligence-v1.json';
 import charityNavigatorDiscovery from '@/data/charity-navigator/lgbtq-rights-v1.json';
+import { fetchJson } from '@/app/lib/fetch-json';
 
 type SfCandidateUniverse = {
   version: string; source: { publisher: string; title: string; snapshotDate: string; queryUrl: string | null };
@@ -426,28 +427,24 @@ export default function Home() {
   const [qualityState, setQualityState] = useState('all');
   const [showAllQualitySources, setShowAllQualitySources] = useState(false);
   useEffect(() => {
-    fetch('/api/sf-candidate-universe').then((response) => {
-      if (!response.ok) throw new Error('San Francisco candidate universe unavailable');
-      return response.json() as Promise<SfCandidateUniverse>;
-    }).then(setSfUniverse).catch(() => setSfUniverseError(true));
+    fetchJson<SfCandidateUniverse>('/api/sf-candidate-universe', undefined, 'San Francisco candidate universe')
+      .then((result) => { setSfUniverse(result); setSfUniverseError(false); })
+      .catch(() => setSfUniverseError(true));
   }, []);
   useEffect(() => {
     const params = new URLSearchParams({ q: sfIrsQuery, ntee: sfIrsNtee, subsection: sfIrsSubsection, identity: sfIrsIdentity, sort: sfIrsSort, page: String(sfIrsPage), pageSize: '12' });
     const controller = new AbortController();
-    fetch(`/api/sf-irs-universe?${params}`, { signal: controller.signal }).then((response) => {
-      if (!response.ok) throw new Error('San Francisco IRS universe unavailable');
-      return response.json() as Promise<SfIrsUniverse>;
-    }).then((result) => { setSfIrsUniverse(result); setSfIrsError(false); }).catch((error) => {
+    fetchJson<SfIrsUniverse>(`/api/sf-irs-universe?${params}`, { signal: controller.signal }, 'San Francisco IRS universe')
+      .then((result) => { setSfIrsUniverse(result); setSfIrsError(false); }).catch((error) => {
       if (error instanceof DOMException && error.name === 'AbortError') return;
       setSfIrsError(true);
     });
     return () => controller.abort();
   }, [sfIrsIdentity, sfIrsNtee, sfIrsPage, sfIrsQuery, sfIrsSort, sfIrsSubsection]);
   useEffect(() => {
-    fetch('/api/data-quality').then((response) => {
-      if (!response.ok) throw new Error('Data-quality dashboard unavailable');
-      return response.json() as Promise<DataQuality>;
-    }).then(setDataQuality).catch(() => setDataQualityError(true));
+    fetchJson<DataQuality>('/api/data-quality', undefined, 'Data-quality dashboard')
+      .then((result) => { setDataQuality(result); setDataQualityError(false); })
+      .catch(() => setDataQualityError(true));
   }, []);
   useEffect(() => {
     const params = new URLSearchParams({ source: flowSource, page: String(flowPage), pageSize: '10', sort: flowSort });
@@ -458,11 +455,8 @@ export default function Home() {
     if (flowRestriction) params.set('restriction', flowRestriction);
     if (flowQuery) params.set('q', flowQuery);
     const controller = new AbortController();
-    fetch(`/api/grant-flows?${params}`, { signal: controller.signal }).then((response) => {
-      if (!response.ok) throw new Error('Grant-flow explorer unavailable');
-      return response.json() as Promise<GrantFlowMarket>;
-    }).then((result) => {
-      setGrantFlows(result); setGrantFlowsLoading(false);
+    fetchJson<GrantFlowMarket>(`/api/grant-flows?${params}`, { signal: controller.signal }, 'Grant-flow explorer').then((result) => {
+      setGrantFlows(result); setGrantFlowsError(false); setGrantFlowsLoading(false);
     }).catch((error) => {
       if (error instanceof DOMException && error.name === 'AbortError') return;
       setGrantFlowsError(true); setGrantFlowsLoading(false);
@@ -470,22 +464,19 @@ export default function Home() {
     return () => controller.abort();
   }, [flowCause, flowGeography, flowPage, flowQuery, flowRefresh, flowRestriction, flowSort, flowSource, flowStatus, flowYear]);
   useEffect(() => {
-    fetch('/api/funding-tranches').then((response) => {
-      if (!response.ok) throw new Error('Funding tranches unavailable');
-      return response.json() as Promise<FundingTrancheMarket>;
-    }).then(setFundingTranches).catch(() => setFundingTranchesError(true));
+    fetchJson<FundingTrancheMarket>('/api/funding-tranches', undefined, 'Funding tranches')
+      .then((result) => { setFundingTranches(result); setFundingTranchesError(false); })
+      .catch(() => setFundingTranchesError(true));
   }, []);
   useEffect(() => {
-    fetch('/api/sf-outcomes').then((response) => {
-      if (!response.ok) throw new Error('San Francisco outcome ontology unavailable');
-      return response.json() as Promise<SfOutcomeOntology>;
-    }).then(setSfOntology).catch(() => setSfOntologyError(true));
+    fetchJson<SfOutcomeOntology>('/api/sf-outcomes', undefined, 'San Francisco outcome ontology')
+      .then((result) => { setSfOntology(result); setSfOntologyError(false); })
+      .catch(() => setSfOntologyError(true));
   }, []);
   useEffect(() => {
-    fetch('/api/sf-public-funding').then((response) => {
-      if (!response.ok) throw new Error('San Francisco public-funding baseline unavailable');
-      return response.json() as Promise<SfPublicFunding>;
-    }).then(setSfFunding).catch(() => setSfFundingError(true));
+    fetchJson<SfPublicFunding>('/api/sf-public-funding', undefined, 'San Francisco public-funding baseline')
+      .then((result) => { setSfFunding(result); setSfFundingError(false); })
+      .catch(() => setSfFundingError(true));
   }, []);
   useEffect(() => {
     const controller = new AbortController();
@@ -503,67 +494,56 @@ export default function Home() {
     return () => controller.abort();
   }, [portfolioBudget, portfolioEvidence, portfolioGeography, portfolioHorizon, portfolioLiquidity, portfolioRisk, portfolioWeights]);
   useEffect(() => {
-    fetch('/api/comparable-impact').then((response) => {
-      if (!response.ok) throw new Error('Comparable-impact model unavailable');
-      return response.json() as Promise<ComparableImpact>;
-    }).then((result) => {
+    fetchJson<ComparableImpact>('/api/comparable-impact', undefined, 'Comparable-impact model').then((result) => {
       setComparableImpact(result);
+      setComparableImpactError(false);
       setQalySlug((current) => current || result.qalyOpportunities[0]?.slug || '');
     }).catch(() => setComparableImpactError(true));
   }, []);
   useEffect(() => {
-    fetch('/api/evaluator-comparison').then((response) => {
-      if (!response.ok) throw new Error('Evaluator comparison unavailable');
-      return response.json() as Promise<EvaluatorComparison>;
-    }).then(setEvaluatorComparison).catch(() => setEvaluatorComparisonError(true));
+    fetchJson<EvaluatorComparison>('/api/evaluator-comparison', undefined, 'Evaluator comparison')
+      .then((result) => { setEvaluatorComparison(result); setEvaluatorComparisonError(false); })
+      .catch(() => setEvaluatorComparisonError(true));
   }, []);
   useEffect(() => {
-    fetch('/api/ai-safety').then((response) => {
-      if (!response.ok) throw new Error('AI safety ecosystem unavailable');
-      return response.json() as Promise<AiSafetyMarket>;
-    }).then(setAiSafetyMarket).catch(() => setAiSafetyError(true));
+    fetchJson<AiSafetyMarket>('/api/ai-safety', undefined, 'AI safety ecosystem')
+      .then((result) => { setAiSafetyMarket(result); setAiSafetyError(false); })
+      .catch(() => setAiSafetyError(true));
   }, []);
   useEffect(() => {
-    fetch('/api/founders-pledge').then((response) => {
-      if (!response.ok) throw new Error('Founders Pledge matrix unavailable');
-      return response.json() as Promise<FoundersPledgeMarket>;
-    }).then(setFoundersPledgeMarket).catch(() => setFoundersPledgeError(true));
+    fetchJson<FoundersPledgeMarket>('/api/founders-pledge', undefined, 'Founders Pledge matrix')
+      .then((result) => { setFoundersPledgeMarket(result); setFoundersPledgeError(false); })
+      .catch(() => setFoundersPledgeError(true));
   }, []);
   useEffect(() => {
-    fetch('/api/giving-green').then((response) => {
-      if (!response.ok) throw new Error('Giving Green market unavailable');
-      return response.json() as Promise<GivingGreenMarket>;
-    }).then(setGivingGreenMarket).catch(() => setGivingGreenError(true));
+    fetchJson<GivingGreenMarket>('/api/giving-green', undefined, 'Giving Green market')
+      .then((result) => { setGivingGreenMarket(result); setGivingGreenError(false); })
+      .catch(() => setGivingGreenError(true));
   }, []);
   useEffect(() => {
-    fetch('/api/ace').then((response) => {
-      if (!response.ok) throw new Error('ACE market unavailable');
-      return response.json() as Promise<AceMarket>;
-    }).then(setAceMarket).catch(() => setAceError(true));
+    fetchJson<AceMarket>('/api/ace', undefined, 'ACE market')
+      .then((result) => { setAceMarket(result); setAceError(false); })
+      .catch(() => setAceError(true));
   }, []);
   useEffect(() => {
-    fetch('/api/coefficient-grants').then((response) => {
-      if (!response.ok) throw new Error('Grant market unavailable');
-      return response.json() as Promise<CoefficientMarket>;
-    }).then(setCoefficientMarket).catch(() => setCoefficientError(true));
+    fetchJson<CoefficientMarket>('/api/coefficient-grants', undefined, 'Grant market')
+      .then((result) => { setCoefficientMarket(result); setCoefficientError(false); })
+      .catch(() => setCoefficientError(true));
   }, []);
   useEffect(() => {
-    fetch('/api/renphil').then((response) => {
-      if (!response.ok) throw new Error('RenPhil market unavailable');
-      return response.json() as Promise<RenPhilMarket>;
-    }).then(setRenPhilMarket).catch(() => setRenPhilError(true));
+    fetchJson<RenPhilMarket>('/api/renphil', undefined, 'RenPhil market')
+      .then((result) => { setRenPhilMarket(result); setRenPhilError(false); })
+      .catch(() => setRenPhilError(true));
   }, []);
   useEffect(() => {
-    fetch('/api/givewell').then((response) => {
-      if (!response.ok) throw new Error('GiveWell market unavailable');
-      return response.json() as Promise<GiveWellMarket>;
-    }).then(setGiveWellMarket).catch(() => setGiveWellError(true));
+    fetchJson<GiveWellMarket>('/api/givewell', undefined, 'GiveWell market')
+      .then((result) => { setGiveWellMarket(result); setGiveWellError(false); })
+      .catch(() => setGiveWellError(true));
   }, []);
   useEffect(() => {
-    fetch('/api/givedirectly').then((response) => {
-      if (!response.ok) throw new Error('GiveDirectly benchmark unavailable');
-      return response.json() as Promise<GiveDirectlyBenchmark>;
-    }).then(setGiveDirectlyBenchmark).catch(() => setGiveDirectlyError(true));
+    fetchJson<GiveDirectlyBenchmark>('/api/givedirectly', undefined, 'GiveDirectly benchmark')
+      .then((result) => { setGiveDirectlyBenchmark(result); setGiveDirectlyError(false); })
+      .catch(() => setGiveDirectlyError(true));
   }, []);
   useEffect(() => {
     const params = new URLSearchParams({ page: String(explorerPage), pageSize: '12', sort: explorerSort });
@@ -571,11 +551,9 @@ export default function Home() {
     if (explorerYear) params.set('year', explorerYear);
     if (explorerQuery) params.set('q', explorerQuery);
     const controller = new AbortController();
-    fetch(`/api/coefficient-grants/all?${params}`, { signal: controller.signal }).then((response) => {
-      if (!response.ok) throw new Error('Complete grant ledger unavailable');
-      return response.json() as Promise<CoefficientExplorer>;
-    }).then((result) => {
+    fetchJson<CoefficientExplorer>(`/api/coefficient-grants/all?${params}`, { signal: controller.signal }, 'Complete grant ledger').then((result) => {
       setExplorer(result);
+      setExplorerError(false);
       setExplorerLoading(false);
     }).catch((error) => {
       if (error instanceof DOMException && error.name === 'AbortError') return;

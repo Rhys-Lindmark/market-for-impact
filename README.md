@@ -25,6 +25,7 @@ This is research infrastructure, not financial, tax, or individualized giving ad
 - A separate 79-record Coefficient Effective Giving & Careers ledger used for detailed reconciliation.
 - GiveWell’s 541-row public grant export and four current Top Charities, including evidence levels, delivery costs, historical reported cost per life saved, geography, model versions, and non-inferred funding-room status.
 - Renaissance Philanthropy’s 28 currently linked 2025 AI for Math awards, reconciled against its stated 29-award portfolio with one explicit coverage gap and no inferred row-level amounts.
+- Stable grant detail URLs across all current Coefficient, GiveWell, and RenPhil ledgers, plus organization profiles that separate received, advised, and originated funding roles and display evaluator evidence when available.
 - Content-addressed raw and normalized snapshots, idempotent D1 materialization, source caveats, and fail-closed import checks.
 
 The prioritized roadmap is in [BACKLOG.md](BACKLOG.md). It covers ACE, Giving Green, Founders Pledge, AI safety, comparable-impact modeling, funding-room curves, organization pages, and a San Francisco giving market.
@@ -51,6 +52,7 @@ Important paths:
 - `db/`: source-specific D1 materializers and query functions.
 - `app/api/`: public read APIs used by the site.
 - `app/page.tsx`: current donor-facing market view.
+- `app/grants/` and `app/organizations/`: source-traceable grant and organization detail routes.
 - `drizzle/`: ordered D1 migrations.
 - `.github/workflows/`: scheduled upstream-change checks.
 
@@ -134,6 +136,10 @@ Every data pull request should satisfy the definition of done in [BACKLOG.md](BA
 5. Reconcile UI totals to accepted records and disclose coverage gaps.
 
 Missing values stay missing. Publication does not imply payment. A recommendation does not imply an unrestricted organization-level funding gap. Historical estimates do not become current estimates merely because they are the newest public headline.
+
+The complete Coefficient index currently preserves recipients as source text because some rows name multiple recipients. Those records receive stable grant pages, but they are not attached to canonical organization pages until the schema supports explicit many-to-many grant relationships. The smaller Effective Giving & Careers ledger and GiveWell records already have canonical recipient links.
+
+Organization rollups count only records current in each source snapshot. Coefficient’s 79-record Effective Giving & Careers ledger is a fully overlapping subset of the complete 2,893-record public index, so adviser-level totals suppress those duplicates while recipient profiles retain the smaller ledger’s canonical links.
 
 ## GitHub and worktree workflow
 

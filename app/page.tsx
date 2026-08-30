@@ -8,7 +8,7 @@ import renPhilSnapshot from '@/data/renphil/ai-for-math-2025.json';
 type CoefficientMarket = {
   source: { retrievedAt: string; coverageNote: string; url: string };
   summary: { grant_count: number; total_amount_usd: number; latest_decision_date: number; recipient_count: number };
-  recent: Array<{ external_id: string; source_url: string | null; recipient: string; recipient_url: string | null; purpose: string; amount_usd: number; decision_date: number; status: string }>;
+  recent: Array<{ external_id: string; source_url: string | null; recipient: string; recipient_slug: string; recipient_url: string | null; purpose: string; amount_usd: number; decision_date: number; status: string }>;
 };
 
 type CoefficientExplorer = {
@@ -42,6 +42,8 @@ const month = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric',
 const day = new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 const shortDay = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 const awardYears = Array.from({ length: 15 }, (_, index) => 2026 - index);
+const grantPath = (source: string, sourceRecordId: string) => `/grants/${source}/${encodeURIComponent(sourceRecordId)}`;
+const organizationPath = (slug: string) => `/organizations/${encodeURIComponent(slug)}`;
 
 const flowMetrics = [
   { name: 'Coefficient Giving', amount: '$1B+', note: 'directed in 2025', width: 100, color: '#8e6cf0' },
@@ -209,7 +211,7 @@ export default function Home() {
           {giveWellSnapshot.opportunities.map((opportunity) => (
             <article className="givewell-card" key={opportunity.slug}>
               <div className="givewell-card-top"><span>{opportunity.evidenceLevel}</span><b>{money.format(opportunity.costPerLifeSavedUsd)} / life</b></div>
-              <h3>{opportunity.organization}</h3>
+              <h3><a href={organizationPath(opportunity.slug)}>{opportunity.organization}</a></h3>
               <p className="givewell-program">{opportunity.program}</p>
               <dl>
                 <div><dt>Delivery unit</dt><dd>{money.format(opportunity.costPerDeliveryUsd)} / {opportunity.deliveryUnit}</dd></div>
@@ -217,7 +219,7 @@ export default function Home() {
                 <div><dt>Funding room</dt><dd>{opportunity.fundingRoomStatus.replaceAll('-', ' ')}</dd></div>
               </dl>
               <p className="givewell-room">{opportunity.fundingRoomNote}</p>
-              <div className="givewell-card-links"><a href={opportunity.researchUrl} target="_blank" rel="noreferrer">Research review ↗</a><span>{opportunity.geographies.join(' · ')}</span></div>
+              <div className="givewell-card-links"><a href={organizationPath(opportunity.slug)}>Market profile →</a><a href={opportunity.researchUrl} target="_blank" rel="noreferrer">Research ↗</a><span>{opportunity.geographies.join(' · ')}</span></div>
             </article>
           ))}
         </div>
@@ -245,7 +247,7 @@ export default function Home() {
               <div className="renphil-grant-meta"><span>AWARD {String(index + 1).padStart(2, '0')}</span><b>AMOUNT NOT PUBLISHED</b></div>
               <h3>{award.project}</h3>
               <p>{award.purpose ?? 'The current project page does not publish a project description.'}</p>
-              <div className="renphil-grant-footer"><span>{award.recipientNames.length ? award.recipientNames.join(' · ') : 'Team biography available at source'}</span><a href={award.sourceUrl} target="_blank" rel="noreferrer">Project source ↗</a></div>
+              <div className="renphil-grant-footer"><span>{award.recipientNames.length ? award.recipientNames.join(' · ') : 'Team biography available at source'}</span><a href={grantPath('renphil', award.sourceRecordId)}>Trace this award →</a><a href={award.sourceUrl} target="_blank" rel="noreferrer">Source ↗</a></div>
             </article>
           ))}
         </div>
@@ -320,7 +322,7 @@ export default function Home() {
                 <div className="grant-result-meta"><span>{grant.awardDate ? `${new Date(grant.awardDate) > new Date(coefficientIndex.source.retrievedAt) ? 'Future-dated · ' : ''}${shortDay.format(new Date(grant.awardDate))}` : 'Award date not published'}</span><span>{grant.listedFunds[0] ?? grant.focusAreas[0] ?? 'No focus-area tag'}</span></div>
                 <h4>{grant.recipients.join(' + ') || 'Recipient not published'}</h4>
                 <p>{grant.purpose || 'Purpose not published'}</p>
-                <div className="grant-result-bottom"><strong>{grant.amountUsd == null ? 'Amount not published' : money.format(grant.amountUsd)}</strong>{grant.sourceUrl ? <a href={grant.sourceUrl} target="_blank" rel="noreferrer">Source record ↗</a> : <span>Source URL unavailable</span>}</div>
+                <div className="grant-result-bottom"><strong>{grant.amountUsd == null ? 'Amount not published' : money.format(grant.amountUsd)}</strong><a href={grantPath('coefficient', grant.sourceRecordId)}>Grant detail →</a></div>
               </article>
             ))}
             {!explorerLoading && !explorerError && explorer?.grants.length === 0 && <p className="grant-no-results">No source records match those filters.</p>}
@@ -350,8 +352,8 @@ export default function Home() {
             <div className="ledger-row ledger-labels"><span>Recipient</span><span>Purpose</span><span>Amount</span></div>
             {coefficientMarket?.recent.map((grant) => (
               <div className="ledger-row" key={grant.external_id}>
-                <span>{grant.recipient_url ? <a href={grant.recipient_url} target="_blank" rel="noreferrer">{grant.recipient} ↗</a> : grant.recipient}</span>
-                <span>{grant.source_url ? <a href={grant.source_url} target="_blank" rel="noreferrer">{grant.purpose} ↗</a> : grant.purpose}</span><strong>{money.format(grant.amount_usd)}</strong>
+                <span><a href={organizationPath(grant.recipient_slug)}>{grant.recipient} →</a></span>
+                <span><a href={grantPath('coefficient-egc', grant.external_id)}>{grant.purpose} →</a></span><strong>{money.format(grant.amount_usd)}</strong>
               </div>
             )) ?? <div className="ledger-loading">{coefficientError ? 'The live ledger is temporarily unavailable; the verified snapshot remains shown above.' : 'Loading the D1-backed ledger…'}</div>}
           </div>

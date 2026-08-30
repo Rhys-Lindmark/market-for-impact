@@ -59,6 +59,8 @@ export const grants = sqliteTable('grants', {
   uniqueIndex('grants_source_record_idx').on(table.sourceId, table.sourceRecordId),
   index('grants_cause_date_idx').on(table.cause, table.decisionDate),
   index('grants_recipient_idx').on(table.recipientId),
+  index('grants_advising_funder_idx').on(table.advisingFunderId),
+  index('grants_originating_funder_idx').on(table.originatingFunderId),
   index('grants_source_award_date_idx').on(table.sourceId, table.awardDate),
   index('grants_source_amount_idx').on(table.sourceId, table.amountUsd),
   index('grants_source_seen_idx').on(table.sourceId, table.lastSeenAt),

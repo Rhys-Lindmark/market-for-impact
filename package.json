@@ -10,7 +10,9 @@
     "build": "vinext build",
     "start": "vinext start",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
-    "db:generate": "drizzle-kit generate"
+    "db:generate": "drizzle-kit generate",
+    "data:coefficient": "node scripts/ingest-coefficient.mjs",
+    "test": "node --test scripts/*.test.mjs"
   },
   "dependencies": {
     "next": "16.2.6",

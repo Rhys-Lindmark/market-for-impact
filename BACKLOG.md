@@ -7,6 +7,9 @@ This backlog is ordered by donor value, data integrity, and dependency. Each ite
 - [x] **MFI-001 — Establish product direction and first opportunity market.** Create the public-facing thesis, first comparable opportunity table, funding signals, methodology, and source ledger.
 - [x] **MFI-002 — Define the canonical grant and assessment schema.** Represent funders, recipients, grants, source records, recommendations, native impact metrics, uncertainty, and room for more funding without erasing source semantics.
 - [ ] **MFI-003 — Build the Coefficient Giving ingestion pipeline.** Discover the current databases for each fund, retain source URLs and publication lag, ingest grants idempotently, and mark paid/committed/recommended status. Do not treat the public database as complete; Coefficient says it omits most non–Good Ventures advised funding.
+  - [x] Normalize and idempotently import all 79 currently published Effective Giving & Careers records into D1, retaining source/status semantics, stable IDs, content hashes, first/last-seen timestamps, and duplicate tests.
+  - [x] Expose reconciled D1 totals and recent grants on the homepage with a primary-source coverage note. Verified locally on 2026-08-29: 79 grants, $46,721,803, 51 recipients; two successive API reads returned the same totals.
+  - [ ] Automate refreshing the raw snapshot from a source-supported export or stable endpoint, then extend discovery and import coverage to every Coefficient fund. Until then, rendered-page retrieval remains a reviewed acquisition step rather than an unattended feed.
 - [ ] **MFI-004 — Build the GiveWell opportunity importer.** Import current Top Charities, grants spreadsheet rows, cost per outcome, evidence notes, location, and rolling room-for-more-funding decisions. Preserve estimate date and model version.
 - [ ] **MFI-005 — Ship organization and grant detail pages.** Add stable URLs, source citations, grant timeline, evaluator comparisons, metric provenance, and data freshness.
 - [ ] **MFI-006 — Replace homepage aggregates with database queries.** Make every displayed count and funding total traceable to accepted ledger rows; show coverage and last-refresh status.
@@ -37,7 +40,7 @@ This backlog is ordered by donor value, data integrity, and dependency. Each ite
 
 ## Operating tracks
 
-- [ ] Add automatic weekly source-change detection and human review queues.
+- [ ] Add automatic hourly source-change detection and human review queues; make unchanged snapshots a no-op and route semantic/schema changes to review.
 - [ ] Add source snapshots and diffs so historical claims remain auditable.
 - [ ] Add a corrections policy, conflicts disclosure, methodology changelog, and research red-team template.
 - [ ] Interview one Coefficient Giving researcher, one GiveWell-style evaluator, one large foundation staffer, and three AI-company donors; convert findings to issues.

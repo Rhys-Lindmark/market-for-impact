@@ -40,6 +40,8 @@ export const grants = sqliteTable('grants', {
   purpose: text('purpose'),
   restricted: integer('restricted', { mode: 'boolean' }),
   groupedGrant: integer('grouped_grant', { mode: 'boolean' }).notNull().default(false),
+  firstSeenAt: integer('first_seen_at', { mode: 'timestamp' }),
+  lastSeenAt: integer('last_seen_at', { mode: 'timestamp' }),
 }, (table) => [
   uniqueIndex('grants_source_external_idx').on(table.sourceId, table.externalId),
   index('grants_cause_date_idx').on(table.cause, table.decisionDate),

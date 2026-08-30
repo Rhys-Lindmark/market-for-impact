@@ -1,6 +1,14 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+
+type CoefficientMarket = {
+  source: { retrievedAt: string; coverageNote: string; url: string };
+  summary: { grant_count: number; total_amount_usd: number; latest_decision_date: number; recipient_count: number };
+  recent: Array<{ external_id: string; recipient: string; recipient_url: string | null; purpose: string; amount_usd: number; decision_date: number; status: string }>;
+};
+
+const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
 
 const flowMetrics = [
   { name: 'Coefficient Giving', amount: '$1B+', note: 'directed in 2025', width: 100, color: '#8e6cf0' },
@@ -21,6 +29,14 @@ const opportunities = [
 export default function Home() {
   const [cause, setCause] = useState('All causes');
   const [query, setQuery] = useState('');
+  const [coefficientMarket, setCoefficientMarket] = useState<CoefficientMarket | null>(null);
+  const [coefficientError, setCoefficientError] = useState(false);
+  useEffect(() => {
+    fetch('/api/coefficient-grants').then((response) => {
+      if (!response.ok) throw new Error('Grant market unavailable');
+      return response.json() as Promise<CoefficientMarket>;
+    }).then(setCoefficientMarket).catch(() => setCoefficientError(true));
+  }, []);
   const filtered = useMemo(() => opportunities.filter((item) =>
     (cause === 'All causes' || item.cause === cause) &&
     `${item.name} ${item.intervention} ${item.source}`.toLowerCase().includes(query.toLowerCase())
@@ -50,9 +66,9 @@ export default function Home() {
           <a className="text-link" href="#methodology">How we compare impact</a>
         </div>
         <div className="hero-stats" aria-label="Dataset summary">
-          <div><strong>6</strong><span>opportunities in v0.1</span></div>
-          <div><strong>$1B+</strong><span>directed by Coefficient in 2025</span></div>
-          <div><strong>5</strong><span>primary research sources</span></div>
+          <div><strong>79</strong><span>published EGC grants ingested</span></div>
+          <div><strong>$46.7M</strong><span>published EGC grant amounts</span></div>
+          <div><strong>51</strong><span>distinct EGC recipients</span></div>
           <div><strong>Aug 2026</strong><span>sources reviewed</span></div>
         </div>
       </section>
@@ -109,6 +125,38 @@ export default function Home() {
           </div>
           <div className="flow-insight"><span>!</span><p><strong>These numbers are intentionally not summed.</strong><br />They mix annual grants, announced allocations, and influenced giving. The grant ledger will separate each type.</p></div>
         </div>
+      </section>
+
+      <section className="ledger-section" id="grant-ledger">
+        <div className="ledger-heading">
+          <div><p className="kicker">FIRST LIVE GRANT LEDGER</p><h2>Inside one Coefficient fund.</h2></div>
+          <p>All 79 records currently displayed by the Effective Giving & Careers fund page, normalized without claiming that “published” means paid.</p>
+        </div>
+        <div className="ledger-stats">
+          <div><span>Published records</span><strong>{coefficientMarket?.summary.grant_count ?? 79}</strong></div>
+          <div><span>Published amounts</span><strong>{coefficientMarket ? money.format(coefficientMarket.summary.total_amount_usd) : '$46.7M'}</strong></div>
+          <div><span>Distinct recipients</span><strong>{coefficientMarket?.summary.recipient_count ?? 51}</strong></div>
+          <div><span>Latest decision month</span><strong>July 2026</strong></div>
+        </div>
+        <div className="ledger-grid">
+          <div className="ledger-table">
+            <div className="ledger-row ledger-labels"><span>Recipient</span><span>Purpose</span><span>Amount</span></div>
+            {coefficientMarket?.recent.map((grant) => (
+              <div className="ledger-row" key={grant.external_id}>
+                <span>{grant.recipient_url ? <a href={grant.recipient_url} target="_blank" rel="noreferrer">{grant.recipient} ↗</a> : grant.recipient}</span>
+                <span>{grant.purpose}</span><strong>{money.format(grant.amount_usd)}</strong>
+              </div>
+            )) ?? <div className="ledger-loading">{coefficientError ? 'The live ledger is temporarily unavailable; the verified snapshot remains shown above.' : 'Loading the D1-backed ledger…'}</div>}
+          </div>
+          <aside className="coverage-card">
+            <span className="tag">COVERAGE NOTE</span>
+            <h3>Published is not complete.</h3>
+            <p>Coefficient says entries can lag grantmaking by months, sensitive grants may be withheld, some rows group grants, and its database omits most funding advised for donors other than Good Ventures.</p>
+            <p>We therefore store “published” as its own status, leave the originating funder unknown, and never add this ledger to the $1B annual figure.</p>
+            <a className="text-link" href="https://coefficientgiving.org/grant-publishing-process/" target="_blank" rel="noreferrer">Read their publishing process ↗</a>
+          </aside>
+        </div>
+        <p className="data-note">Retrieved August 29, 2026 · Content-addressed snapshot · Stable grant IDs · Removed records remain detectable through last-seen timestamps.</p>
       </section>
 
       <section className="sources-section">

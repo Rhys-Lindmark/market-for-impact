@@ -1,5 +1,5 @@
 {
-  "version": "sf-nonprofit-diligence-config-v0.1",
+  "version": "sf-nonprofit-diligence-config-v0.2",
   "generatedAt": "2026-08-30T16:45:00.000Z",
   "geography": "San Francisco, California",
   "coverageNote": "An intentionally incomplete first diligence cohort chosen to test direct service, advocacy, LGBTQ+ community support, food security, housing, and multi-service models. Inclusion is not a recommendation.",
@@ -39,7 +39,95 @@
       "sources": [
         {"publisher": "Hamilton Families", "title": "Quarterly Report (April–June 2026)", "url": "https://hamiltonfamilies.org/quarterly-impact-reports/fy25-26-q4-impact-report", "publishedAt": null, "period": "2026-04-01 to 2026-06-30", "retrievedAt": "2026-08-30"},
         {"publisher": "Hamilton Families", "title": "Financials", "url": "https://hamiltonfamilies.org/financials", "publishedAt": null, "period": "FY2024–2025 documents available", "retrievedAt": "2026-08-30"}
-      ]
+      ],
+      "evidenceDossier": {
+        "reviewedAt": "2026-08-30",
+        "scope": "Hamilton Families' homelessness-prevention and rapid-rehousing work; not every program or every geography the organization serves.",
+        "decisionState": "deeper diligence; recommendation blocked",
+        "decisionSummary": "Hamilton reports substantial family-housing activity and has unusually relevant external research, but no accepted source yet identifies the durable, additional outcomes a new gift would buy. The evidence supports a serious diligence conversation, not a ranked recommendation.",
+        "organizationReported": {
+          "period": "FY2025",
+          "source": {"publisher": "Hamilton Families", "title": "2025 Annual Report", "url": "https://hamiltonfamilies.org/s/FINAL-Hamilton-Families-2025-Annual-Report.pdf", "publishedAt": null, "retrievedAt": "2026-08-30"},
+          "outcomes": [
+            {"label": "Families reported to have avoided homelessness", "value": "127", "claimType": "organization-reported outcome", "limitation": "No comparison group or counterfactual identifies how many families would otherwise have entered homelessness."},
+            {"label": "Families reported to have maintained housing", "value": "344", "claimType": "organization-reported outcome", "limitation": "The reviewed report does not provide a common follow-up window or comparison-group rate."},
+            {"label": "Newly housed within the maintained-housing count", "value": "157", "claimType": "organization-reported outcome", "limitation": "This is a subset of 344, not an additional outcome count."},
+            {"label": "Average intake-to-placement time", "value": "under 90 days", "comparison": "150 days previously", "claimType": "organization-reported operational outcome", "limitation": "The report does not isolate the drivers of the change or connect it to durable housing stability."}
+          ],
+          "financials": {
+            "revenueUsd": 17410740,
+            "governmentRevenueUsd": 11730764,
+            "privateRevenueUsd": 4596596,
+            "investmentAndOtherRevenueUsd": 1083380,
+            "expensesUsd": 18799001,
+            "programExpensesUsd": 13822877,
+            "fundraisingExpensesUsd": 1034715,
+            "administrationExpensesUsd": 3941409,
+            "boundary": "Organization-wide audited-period totals are scale and funding-mix context. They do not identify program-level marginal cost, room for more funding, or San Francisco-only spending."
+          }
+        },
+        "evidenceLayers": [
+          {
+            "scope": "Hamilton-specific",
+            "publisher": "Urban Institute",
+            "title": "Toward a Geographic Strategy for Rapid Re-housing",
+            "publishedAt": "2019-02-01",
+            "retrievedAt": "2026-08-30",
+            "design": "formative geographic market analysis",
+            "status": "published",
+            "finding": "The analysis examined where Hamilton's Heading Home Initiative might place families in a high-cost, low-vacancy region and documented the initiative's planned scale.",
+            "decisionUse": "Useful for testing placement strategy and whether evidence from easier housing markets transfers to the Bay Area.",
+            "transferLimit": "Hamilton funded the work with Salesforce.org support. It is not an outcome impact evaluation and provides no Hamilton-specific causal effect.",
+            "url": "https://www.urban.org/sites/default/files/publication/100078/toward_a_geographic_strategy_for_rapid_re-housing.pdf"
+          },
+          {
+            "scope": "Hamilton partner study",
+            "publisher": "Housing Solutions Lab",
+            "title": "Bay Area Thriving Families",
+            "publishedAt": "2026-08-12",
+            "retrievedAt": "2026-08-30",
+            "design": "randomized controlled trial; 450-family target, $1,000 versus $50 monthly for 12 months, two-year follow-up",
+            "status": "results pending",
+            "finding": "No outcome results were published on the accepted source as of the review date.",
+            "decisionUse": "The eventual results may clarify whether post-program unrestricted cash improves stability after rapid rehousing.",
+            "transferLimit": "The intervention is cash after rapid rehousing, not an evaluation of Hamilton's full service model.",
+            "url": "https://www.housingsolutionslab.org/research-partnership/bay-area-thriving-families/"
+          },
+          {
+            "scope": "external intervention evidence",
+            "publisher": "U.S. Department of Housing and Urban Development",
+            "title": "Family Options Study",
+            "publishedAt": "2016-10-01",
+            "retrievedAt": "2026-08-30",
+            "design": "multisite randomized controlled trial; 2,282 families across 12 communities",
+            "status": "published",
+            "finding": "Long-term housing subsidies produced the broadest benefits. Community-based rapid rehousing showed little broad improvement over usual care in housing stability and family wellbeing at the study's follow-ups.",
+            "decisionUse": "Raises the evidence bar for assuming that a time-limited rapid-rehousing offer creates durable gains beyond services otherwise available.",
+            "transferLimit": "This older, multisite study is not Hamilton-specific; implementation varied and the sites do not reproduce today's Bay Area housing market.",
+            "url": "https://www.huduser.gov/portal/family_options_study.html"
+          },
+          {
+            "scope": "external descriptive evidence",
+            "publisher": "U.S. Department of Housing and Urban Development",
+            "title": "Rapid Re-housing for Homeless Families Demonstration Programs Evaluation",
+            "publishedAt": null,
+            "retrievedAt": "2026-08-30",
+            "design": "23-grantee process and outcomes study; nonrandomized",
+            "status": "published",
+            "finding": "HUD reports that 10% returned to homelessness and 76% moved at least once within 12 months; programs varied substantially in assistance and services.",
+            "decisionUse": "Useful for choosing durability and residential-mobility measures for Hamilton-specific follow-up.",
+            "transferLimit": "Without a counterfactual, the reported rates do not establish program impact or predict Hamilton's results.",
+            "url": "https://www.huduser.gov/portal/rapid-rehousing-program.html"
+          }
+        ],
+        "missingForRecommendation": [
+          "A common 12- and 24-month housing-stability denominator, including returns to homelessness and moves.",
+          "Program-level cost per sustained housing outcome, with public and private funding reconciled.",
+          "A time-bounded marginal plan at $100,000, $1 million, and $10 million, including capacity constraints and displacement risk.",
+          "Evidence about which families are additional to public or usual-care pathways and what the next donor dollar changes.",
+          "Results from the Bay Area Thriving Families trial, interpreted only for its post-rapid-rehousing cash intervention."
+        ]
+      }
     },
     {
       "key": "sf-marin-food-bank",

@@ -39,6 +39,19 @@ test('phone donors can inspect a San Francisco diligence record', async ({ page 
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 
+test('phone donors can distinguish Hamilton reported outcomes from external evidence', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== 'phone-390');
+  await page.goto('/san-francisco#diligence', { waitUntil: 'domcontentloaded' });
+  const dossier = page.locator('.sf-evidence-dossier');
+  await expect(dossier.getByRole('heading', { name: 'Hamilton Families' })).toBeVisible();
+  await expect(dossier.getByText('deeper diligence; recommendation blocked')).toBeVisible();
+  await expect(dossier.getByRole('heading', { name: /What Hamilton says happened/ })).toBeVisible();
+  await expect(dossier.getByText('results pending')).toBeVisible();
+  await expect(dossier.getByText('03 · What still blocks a recommendation')).toBeVisible();
+  await expect(dossier.getByRole('heading', { name: /price the next dollar/ })).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
 test('phone controls retain practical touch targets and wide tables scroll locally', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'phone-390');
   await page.goto('/', { waitUntil: 'domcontentloaded' });

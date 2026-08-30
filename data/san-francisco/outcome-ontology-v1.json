@@ -112,14 +112,14 @@
       "coverageNote": "Provides local workforce-program participation and outcome reporting. Program completion and initial placement are not by themselves sustained economic mobility."
     },
     {
-      "key": "dol-wioa-performance-indicators",
-      "publisher": "U.S. Department of Labor Employment and Training Administration",
-      "title": "WIOA Performance Indicators and Measures",
-      "url": "https://www.dol.gov/agencies/eta/performance/performance-indicators",
-      "publishedAt": null,
-      "datePrecision": "living-page",
+      "key": "govinfo-wioa-performance-indicators",
+      "publisher": "U.S. Government Publishing Office",
+      "title": "2024 CFR Title 20 Part 677 — WIOA performance accountability",
+      "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title20-vol4/xml/CFR-2024-title20-vol4-part677.xml",
+      "publishedAt": "2024",
+      "datePrecision": "year",
       "retrievedAt": "2026-08-30T13:02:02.000Z",
-      "monitor": { "mode": "semantic-signals", "signals": ["Employment Rate - 4th Quarter After Exit", "Median Earnings - 2nd Quarter After Exit", "unsubsidized employment"] },
+      "monitor": { "mode": "binary-sha256", "sha256": "d616aa8018a42302ea0bdc8df6521456bcde217c2ed371ab1693bccee47003e8" },
       "coverageNote": "Defines employment, earnings, credential, skill-gain, and employer-retention indicators used by workforce programs."
     }
   ],
@@ -298,7 +298,7 @@
       "direction": "increase",
       "measurementState": "administrative-outcome",
       "attributionState": "counterfactual-required",
-      "sourceKeys": ["sf-oewd-workforce-outcomes-2023", "dol-wioa-performance-indicators"],
+      "sourceKeys": ["sf-oewd-workforce-outcomes-2023", "govinfo-wioa-performance-indicators"],
       "serviceOutputs": ["training completions", "credentials attempted", "career-coaching hours", "initial job placements"],
       "administrativeProxies": ["employment in Q2", "employment in Q4", "median Q2 earnings", "credential attainment", "measurable skill gain"],
       "requiredInputs": ["program exit date", "unsubsidized employment status", "quarterly wage records", "baseline earnings", "barriers to employment", "comparison or counterfactual", "out-of-state and self-employment coverage"],

@@ -6,6 +6,14 @@ import renPhilSnapshot from '@/data/renphil/ai-for-math-2025.json';
 import sfDiligence from '@/data/san-francisco/nonprofit-diligence-v1.json';
 import charityNavigatorDiscovery from '@/data/charity-navigator/lgbtq-rights-v1.json';
 
+type SfCandidateUniverse = {
+  version: string; source: { publisher: string; title: string; snapshotDate: string; queryUrl: string | null };
+  summary: { activeContractCount: number; sourceOrganizationNameCount: number; outcomeMappedOrganizationNameCount: number; unclassifiedOnlyOrganizationNameCount: number; deepDiligenceCount: number; deepDiligenceInUniverseCount: number; deepDiligenceOutsideUniverseCount: number; publishableRoomForFundingCount: number };
+  outcomes: Array<{ key: string; label: string; sourceOrganizationNameCount: number }>;
+  organizations: Array<{ id: string; sourceName: string; contractCount: number; contractAuthorityUsd: number; paymentsMadeUsd: number; remainingAuthorityUsd: number; departments: string[]; outcomeKeys: string[]; diligenceKey: string | null; impactEvidenceStatus: string }>;
+  interpretation: { denominator: string; identity: string; scale: string; recommendation: string };
+};
+
 type CoefficientMarket = {
   source: { retrievedAt: string; coverageNote: string; url: string };
   summary: { grant_count: number; total_amount_usd: number; latest_decision_date: number; recipient_count: number };
@@ -348,6 +356,13 @@ export default function Home() {
   const [sfFunding, setSfFunding] = useState<SfPublicFunding | null>(null);
   const [sfFundingError, setSfFundingError] = useState(false);
   const [sfCandidateKey, setSfCandidateKey] = useState(sfDiligence.candidates[0].key);
+  const [sfUniverse, setSfUniverse] = useState<SfCandidateUniverse | null>(null);
+  const [sfUniverseError, setSfUniverseError] = useState(false);
+  const [sfUniverseQuery, setSfUniverseQuery] = useState('');
+  const [sfUniverseOutcome, setSfUniverseOutcome] = useState('all');
+  const [sfUniverseReview, setSfUniverseReview] = useState('all');
+  const [sfUniverseSort, setSfUniverseSort] = useState<'authority' | 'alphabetical'>('authority');
+  const [sfUniversePage, setSfUniversePage] = useState(1);
   const [charityQuery, setCharityQuery] = useState('');
   const [charityState, setCharityState] = useState('all');
   const [charityRating, setCharityRating] = useState('all');
@@ -382,6 +397,12 @@ export default function Home() {
   const [qualitySource, setQualitySource] = useState('all');
   const [qualityState, setQualityState] = useState('all');
   const [showAllQualitySources, setShowAllQualitySources] = useState(false);
+  useEffect(() => {
+    fetch('/api/sf-candidate-universe').then((response) => {
+      if (!response.ok) throw new Error('San Francisco candidate universe unavailable');
+      return response.json() as Promise<SfCandidateUniverse>;
+    }).then(setSfUniverse).catch(() => setSfUniverseError(true));
+  }, []);
   useEffect(() => {
     fetch('/api/data-quality').then((response) => {
       if (!response.ok) throw new Error('Data-quality dashboard unavailable');
@@ -547,6 +568,15 @@ export default function Home() {
   const charityPageSize = 12;
   const charityPageCount = Math.max(1, Math.ceil(filteredCharities.length / charityPageSize));
   const visibleCharities = filteredCharities.slice((Math.min(charityPage, charityPageCount) - 1) * charityPageSize, Math.min(charityPage, charityPageCount) * charityPageSize);
+  const filteredSfUniverse = useMemo(() => (sfUniverse?.organizations ?? []).filter((row) => {
+    const searchable = `${row.sourceName} ${row.departments.join(' ')}`.toLowerCase();
+    const outcomeMatch = sfUniverseOutcome === 'all' || (sfUniverseOutcome === 'unclassified' ? row.outcomeKeys.length === 0 : row.outcomeKeys.includes(sfUniverseOutcome));
+    const reviewMatch = sfUniverseReview === 'all' || (sfUniverseReview === 'reviewed' ? row.diligenceKey !== null : row.diligenceKey === null);
+    return searchable.includes(sfUniverseQuery.trim().toLowerCase()) && outcomeMatch && reviewMatch;
+  }).sort((a, b) => sfUniverseSort === 'authority' ? b.contractAuthorityUsd - a.contractAuthorityUsd || a.sourceName.localeCompare(b.sourceName) : a.sourceName.localeCompare(b.sourceName)), [sfUniverse, sfUniverseOutcome, sfUniverseQuery, sfUniverseReview, sfUniverseSort]);
+  const sfUniversePageSize = 12;
+  const sfUniversePageCount = Math.max(1, Math.ceil(filteredSfUniverse.length / sfUniversePageSize));
+  const visibleSfUniverse = filteredSfUniverse.slice((Math.min(sfUniversePage, sfUniversePageCount) - 1) * sfUniversePageSize, Math.min(sfUniversePage, sfUniversePageCount) * sfUniversePageSize);
   const acceptedOpportunities = useMemo(() => [...(giveWellMarket?.opportunities ?? []).map((opportunity) => ({
     name: opportunity.organization,
     slug: opportunity.slug,
@@ -829,6 +859,48 @@ export default function Home() {
           </div>
           <div className="sf-funding-sources">{sfFunding.sources.map((source) => <a href={source.publicUrl} target="_blank" rel="noreferrer" key={source.key}><span>{source.publisher}</span><strong>{source.title}</strong><small>{integer.format(source.sourceRowCount)} accepted rows · data as of {source.dataAsOf ? shortDay.format(new Date(source.dataAsOf)) : 'unpublished'}</small><b>↗</b></a>)}</div>
           <p className="data-note">{sfFunding.version} · snapshot {shortDay.format(new Date(`${sfFunding.snapshotDate}T12:00:00Z`))} · {integer.format(sfFunding.summary.negativeRemainingCount)} contracts retain negative published remaining-authority values rather than silently repairing them</p>
+        </>}
+      </section>
+
+      <section className="sf-universe-section" id="sf-nonprofit-universe">
+        <div className="sf-universe-heading">
+          <div><p className="kicker">SAN FRANCISCO · CANDIDATE UNIVERSE</p><h2>Start with the field.<br />Then earn a recommendation.</h2></div>
+          <p>A major donor should see the denominator, not just a hand-picked shortlist. This first complete layer groups every nonprofit prime-contractor name in the active DataSF snapshot, then separates source discovery from real impact diligence.</p>
+        </div>
+        {sfUniverseError && <p className="sf-universe-loading error">The San Francisco candidate universe is temporarily unavailable.</p>}
+        {!sfUniverse && !sfUniverseError && <p className="sf-universe-loading">Loading the complete active-contract universe…</p>}
+        {sfUniverse && <>
+        <div className="sf-universe-summary" aria-label="San Francisco nonprofit universe summary">
+          <div><span>SOURCE NAMES</span><strong>{integer.format(sfUniverse.summary.sourceOrganizationNameCount)}</strong><small>Normalized contractor names · not EIN-verified entities</small></div>
+          <div><span>ACTIVE CONTRACTS</span><strong>{integer.format(sfUniverse.summary.activeContractCount)}</strong><small>Complete accepted DataSF snapshot</small></div>
+          <div><span>OUTCOME-MAPPED</span><strong>{integer.format(sfUniverse.summary.outcomeMappedOrganizationNameCount)}</strong><small>{integer.format(sfUniverse.summary.unclassifiedOnlyOrganizationNameCount)} names remain unclassified</small></div>
+          <div><span>DEEP SCORECARDS</span><strong>{integer.format(sfUniverse.summary.deepDiligenceCount)}</strong><small>{sfUniverse.summary.deepDiligenceInUniverseCount} in this ledger · {sfUniverse.summary.deepDiligenceOutsideUniverseCount} advocacy leads outside it</small></div>
+        </div>
+        <div className="sf-universe-outcomes" role="tablist" aria-label="Filter San Francisco organizations by outcome">
+          <button type="button" role="tab" aria-selected={sfUniverseOutcome === 'all'} className={sfUniverseOutcome === 'all' ? 'active' : ''} onClick={() => { setSfUniverseOutcome('all'); setSfUniversePage(1); }}><span>All source names</span><b>{integer.format(sfUniverse.summary.sourceOrganizationNameCount)}</b></button>
+          {sfUniverse.outcomes.map((outcome) => <button type="button" role="tab" aria-selected={sfUniverseOutcome === outcome.key} className={sfUniverseOutcome === outcome.key ? 'active' : ''} key={outcome.key} onClick={() => { setSfUniverseOutcome(outcome.key); setSfUniversePage(1); }}><span>{outcome.label}</span><b>{integer.format(outcome.sourceOrganizationNameCount)}</b></button>)}
+          <button type="button" role="tab" aria-selected={sfUniverseOutcome === 'unclassified'} className={sfUniverseOutcome === 'unclassified' ? 'active' : ''} onClick={() => { setSfUniverseOutcome('unclassified'); setSfUniversePage(1); }}><span>Unclassified</span><b>{integer.format(sfUniverse.summary.unclassifiedOnlyOrganizationNameCount)}</b></button>
+        </div>
+        <div className="sf-universe-controls">
+          <label><span>SEARCH</span><input aria-label="Search San Francisco nonprofit source names" placeholder="Organization or city department" value={sfUniverseQuery} onChange={(event) => { setSfUniverseQuery(event.target.value); setSfUniversePage(1); }} /></label>
+          <label><span>DILIGENCE</span><select aria-label="Filter San Francisco organizations by diligence status" value={sfUniverseReview} onChange={(event) => { setSfUniverseReview(event.target.value); setSfUniversePage(1); }}><option value="all">All evidence states</option><option value="reviewed">Initial scorecard</option><option value="unreviewed">Not yet assessed</option></select></label>
+          <label><span>SORT</span><select aria-label="Sort San Francisco organizations" value={sfUniverseSort} onChange={(event) => { setSfUniverseSort(event.target.value as 'authority' | 'alphabetical'); setSfUniversePage(1); }}><option value="authority">Largest contract authority</option><option value="alphabetical">Organization A–Z</option></select></label>
+          <div><span>VISIBLE</span><strong>{integer.format(filteredSfUniverse.length)}</strong></div>
+        </div>
+        <div className="sf-universe-grid">
+          {visibleSfUniverse.map((organization) => <article key={organization.id}>
+            <header><span>{organization.diligenceKey ? 'INITIAL SCORECARD' : 'DISCOVERY ONLY'}</span><b>{integer.format(organization.contractCount)} contracts</b></header>
+            <h3>{organization.sourceName}</h3>
+            <p>{organization.outcomeKeys.length ? organization.outcomeKeys.map((key) => sfUniverse.outcomes.find((outcome) => outcome.key === key)?.label ?? key).join(' · ') : 'No accepted outcome-text match'}</p>
+            <dl><div><dt>Authority</dt><dd>{compactMoney.format(organization.contractAuthorityUsd)}</dd></div><div><dt>Paid</dt><dd>{compactMoney.format(organization.paymentsMadeUsd)}</dd></div><div><dt>Remaining</dt><dd>{compactMoney.format(organization.remainingAuthorityUsd)}</dd></div></dl>
+            <small>{organization.departments.slice(0, 3).join(' · ')}{organization.departments.length > 3 ? ` · +${organization.departments.length - 3}` : ''}</small>
+            <footer><span>{organization.impactEvidenceStatus.replaceAll('-', ' ')}</span>{organization.diligenceKey ? <a href="#sf-diligence" onClick={() => setSfCandidateKey(organization.diligenceKey!)}>Open scorecard →</a> : <span>Funding room unassessed</span>}</footer>
+          </article>)}
+        </div>
+        <div className="sf-universe-pagination"><button type="button" disabled={sfUniversePage <= 1} onClick={() => setSfUniversePage((page) => Math.max(1, page - 1))}>← Previous</button><span>Page {Math.min(sfUniversePage, sfUniversePageCount)} of {sfUniversePageCount}</span><button type="button" disabled={sfUniversePage >= sfUniversePageCount} onClick={() => setSfUniversePage((page) => Math.min(sfUniversePageCount, page + 1))}>Next →</button></div>
+        <div className="sf-universe-boundaries"><p><strong>Denominator.</strong> {sfUniverse.interpretation.denominator}</p><p><strong>Identity.</strong> {sfUniverse.interpretation.identity}</p><p><strong>Accounting.</strong> {sfUniverse.interpretation.scale}</p><p><strong>Decision.</strong> {sfUniverse.interpretation.recommendation}</p></div>
+        <a className="sf-universe-source" href={sfUniverse.source.queryUrl ?? '#'} target="_blank" rel="noreferrer"><span>PRIMARY SOURCE</span><strong>{sfUniverse.source.publisher} · {sfUniverse.source.title}</strong><small>Snapshot {shortDay.format(new Date(`${sfUniverse.source.snapshotDate}T12:00:00Z`))} · exact query and retrieval preserved</small><b>↗</b></a>
+        <p className="data-note">{sfUniverse.version} · contract scale is not impact · {integer.format(sfUniverse.summary.publishableRoomForFundingCount)} publishable marginal funding gaps</p>
         </>}
       </section>
 

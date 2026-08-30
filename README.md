@@ -38,6 +38,7 @@ This is research infrastructure, not financial, tax, or individualized giving ad
 - A San Francisco outcome ontology defining eight local outcome families—housing stability, unsheltered days avoided, overdose deaths averted, mental-health stabilization, food security, educational attainment, violence reduction, and economic mobility—against ten official sources. Service outputs, administrative proxies, model inputs, causal attribution, equity cuts, and double-count boundaries remain separate; QALY and WELLBY conversion is blocked until a versioned local model exists.
 - A San Francisco public-funding baseline across the approved FY2026–2027 city budget and 1,784 nonprofit prime contracts active on August 30, 2026. It maps 388 contracts into the local outcome ontology with conservative, auditable text rules while keeping department envelopes, contract authority, outstanding purchase orders, payments, and remaining authority separate and explicitly non-additive.
 - A first six-candidate San Francisco diligence market spanning direct service, LGBTQ+ community support, housing advocacy, and elections. It reconciles 35 exact active city-contract matches, exposes one accepted Coefficient grant overlap, preserves Charity Navigator beacon coverage as a non-impact signal, and leaves every marginal funding gap and QALY/WELLBY conversion explicitly unresolved.
+- A complete IRS identity lens for all 6,688 unique exempt-organization EINs with San Francisco filing addresses, including subsection, NTEE, tax period, source-native financial fields, and missingness. Four records link to existing scorecards by exact EIN and 189 link to the city-contract source-name ledger by exact normalized registered name; neither crosswalk becomes an effectiveness claim.
 - A complete current broad-cause discovery universe for LGBTQIA+ giving. It paginates all 441 Charity Navigator `LGBTQ rights` results into a searchable, state- and rating-filterable explorer, preserves EINs, headquarters, ratings, advisories, and source tags, and retains deep profile fields for a reviewed first-ten cohort. Service geography, impact evidence, rating dates, and marginal funding room remain explicitly unknown; exact-name evaluator and grant crosswalks never become effectiveness claims.
 - Renaissance Philanthropy’s 28 currently linked 2025 AI for Math awards, reconciled against its stated 29-award portfolio with one explicit coverage gap and no inferred row-level amounts.
 - Stable grant detail URLs across all current Coefficient, GiveWell, Giving Green, and RenPhil ledgers, plus organization profiles that separate received, advised, and originated funding roles and display evaluator evidence when available.
@@ -218,6 +219,16 @@ npm run data:sf:funding:refresh  # review upstream changes before committing
 The committed snapshot preserves 54 department rows and 1,784 active nonprofit contracts. Ten broad department envelopes and 388 contracts map to the eight-outcome ontology; 1,396 contracts remain explicit abstentions. Twenty-one contracts map to more than one outcome, so outcome totals are intentionally non-additive. The source ledger retains 144 negative published remaining-authority values rather than silently repairing them. GitHub checks both DataSF datasets hourly and fails closed when either semantic row set changes.
 
 ### San Francisco nonprofit diligence
+
+The candidate market uses separate, overlapping denominators rather than pretending the 548 DataSF contractor names and 6,688 IRS EINs can be added into one nonprofit count. The IRS EO BMF describes filing addresses and federal exemption determinations; it does not establish current good standing, service geography, donation eligibility, effectiveness, or room for more funding. EIN links are exact. City-contract links require exact normalized registered-name equality and remain source-name crosswalks rather than silent legal-entity merges.
+
+```bash
+npm run data:sf:universe:check
+npm run data:sf:irs:check
+npm run data:sf:irs:refresh  # review official California EO BMF changes before committing
+```
+
+The committed IRS snapshot is filtered from the official California EO BMF CSV and retains the official posting, retrieval, and last-modified dates plus a semantic content hash. The donor-facing API applies search, NTEE, subsection, identity-state, sort, and pagination on the server so the complete multi-megabyte identity ledger is not shipped to every browser.
 
 The first diligence cohort is generated from `data/san-francisco/nonprofit-diligence-config-v1.json`, the accepted public-funding snapshot, and the four accepted grant ledgers. Exact identity aliases—not fuzzy names—connect candidates to city contracts and philanthropic grants.
 

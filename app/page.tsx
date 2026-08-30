@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import coefficientIndex from '@/data/normalized/coefficient-market-summary.json';
 import giveWellSnapshot from '@/data/givewell/top-charities.json';
+import renPhilSnapshot from '@/data/renphil/ai-for-math-2025.json';
 
 type CoefficientMarket = {
   source: { retrievedAt: string; coverageNote: string; url: string };
@@ -28,6 +29,10 @@ type CoefficientExplorer = {
 type GiveWellMarket = {
   source: { retrievedAt: string; url: string; coverageNote: string };
   summary: { grant_count: number; total_amount_usd: number; recipient_count: number; latest_decision_date: number; missing_amount_count: number };
+};
+
+type RenPhilMarket = {
+  summary: { award_count: number; declared_award_count: number; unlisted_award_count: number; missing_amount_count: number; missing_description_count: number };
 };
 
 const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
@@ -61,6 +66,9 @@ export default function Home() {
   const [coefficientError, setCoefficientError] = useState(false);
   const [giveWellMarket, setGiveWellMarket] = useState<GiveWellMarket | null>(null);
   const [giveWellError, setGiveWellError] = useState(false);
+  const [renPhilMarket, setRenPhilMarket] = useState<RenPhilMarket | null>(null);
+  const [renPhilError, setRenPhilError] = useState(false);
+  const [showAllRenPhil, setShowAllRenPhil] = useState(false);
   const [explorer, setExplorer] = useState<CoefficientExplorer | null>(null);
   const [explorerError, setExplorerError] = useState(false);
   const [explorerLoading, setExplorerLoading] = useState(true);
@@ -76,6 +84,12 @@ export default function Home() {
       if (!response.ok) throw new Error('Grant market unavailable');
       return response.json() as Promise<CoefficientMarket>;
     }).then(setCoefficientMarket).catch(() => setCoefficientError(true));
+  }, []);
+  useEffect(() => {
+    fetch('/api/renphil').then((response) => {
+      if (!response.ok) throw new Error('RenPhil market unavailable');
+      return response.json() as Promise<RenPhilMarket>;
+    }).then(setRenPhilMarket).catch(() => setRenPhilError(true));
   }, []);
   useEffect(() => {
     fetch('/api/givewell').then((response) => {
@@ -212,6 +226,35 @@ export default function Home() {
           <p><strong>Source discrepancy.</strong> Exported grant rows sum to $2,625,949,864, exactly $3 above Airtable’s displayed aggregate. Both are preserved; neither is silently “fixed.”</p>
         </div>
         <p className="data-note">Top Charities updated September 2025 · Cost-effectiveness framework updated May 2026 · Grant export retrieved August 2026 · {giveWellError ? 'The live D1 reconciliation is temporarily unavailable; verified snapshot figures remain visible.' : 'D1-backed grant totals reconcile on load.'} · <a href={giveWellSnapshot.source.url} target="_blank" rel="noreferrer">Primary source ↗</a></p>
+      </section>
+
+      <section className="renphil-section" id="renphil-market">
+        <div className="renphil-heading">
+          <div><p className="kicker">THE RENPHIL FRONTIER</p><h2>Funding the tools<br />behind discovery.</h2></div>
+          <p>Renaissance Philanthropy’s AI for Math Fund backs open research infrastructure that individual academic and industry labs may lack incentives to build. These are disclosed awards—not a cost-effectiveness ranking.</p>
+        </div>
+        <div className="renphil-overview" aria-label="Renaissance Philanthropy AI for Math fund summary">
+          <div><span>First-round commitment</span><strong>{compactMoney.format(renPhilSnapshot.fundSignals.firstRoundCommitmentUsd)}</strong><p>Announced September 2025; not allocated across rows.</p></div>
+          <div><span>Published portfolio</span><strong>{renPhilMarket?.summary.award_count ?? renPhilSnapshot.summary.awardCount} linked projects</strong><p>RenPhil declares 29 awards; one is not named on the current page.</p></div>
+          <div><span>Row-level amounts</span><strong>0 published</strong><p>Application caps and fund totals are never substituted.</p></div>
+          <div><span>Named funder</span><strong>XTX Markets</strong><p>RenPhil administers the fund and supports grantees.</p></div>
+        </div>
+        <div className="renphil-grants">
+          {renPhilSnapshot.records.slice(0, showAllRenPhil ? undefined : 8).map((award, index) => (
+            <article className="renphil-grant" key={award.sourceRecordId}>
+              <div className="renphil-grant-meta"><span>AWARD {String(index + 1).padStart(2, '0')}</span><b>AMOUNT NOT PUBLISHED</b></div>
+              <h3>{award.project}</h3>
+              <p>{award.purpose ?? 'The current project page does not publish a project description.'}</p>
+              <div className="renphil-grant-footer"><span>{award.recipientNames.length ? award.recipientNames.join(' · ') : 'Team biography available at source'}</span><a href={award.sourceUrl} target="_blank" rel="noreferrer">Project source ↗</a></div>
+            </article>
+          ))}
+        </div>
+        {!showAllRenPhil && <button className="renphil-reveal" type="button" onClick={() => setShowAllRenPhil(true)}>Show all {renPhilSnapshot.summary.awardCount} linked awards <span>↓</span></button>}
+        <div className="renphil-caveats">
+          <p><strong>Coverage conflict.</strong> RenPhil repeatedly states that the first round funded 29 projects, while its current winners page exposes 28 linked project records. The ledger records one unresolved gap rather than inventing the missing award.</p>
+          <p><strong>Capital signals stay separate.</strong> RenPhil reports {compactMoney.format(renPhilSnapshot.organizationSignals.catalyzedCapitalUsd)} catalyzed in its first two years—{compactMoney.format(renPhilSnapshot.organizationSignals.directlyRaisedUsd)} directly raised and {compactMoney.format(renPhilSnapshot.organizationSignals.unlockedForOtherOrganizationsUsd)} unlocked for others. None is treated as a grant-ledger total.</p>
+        </div>
+        <p className="data-note">Portfolio retrieved {day.format(new Date(renPhilSnapshot.source.retrievedAt))} · {renPhilSnapshot.source.contentHash.slice(0, 12)} content hash · {renPhilError ? 'Live D1 reconciliation unavailable; verified snapshot remains visible.' : 'D1-backed totals reconcile on load.'} · <a href={renPhilSnapshot.source.url} target="_blank" rel="noreferrer">Official winners page ↗</a></p>
       </section>
 
       <section className="flows-section" id="flows">

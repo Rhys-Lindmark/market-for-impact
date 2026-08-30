@@ -1,0 +1,34 @@
+name: RenPhil source freshness
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/renphil-source-check.yml'
+      - 'data/renphil/**'
+      - 'scripts/refresh-renphil.mjs'
+      - 'scripts/lib/renphil.mjs'
+      - 'scripts/renphil.test.mjs'
+  schedule:
+    - cron: '41 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: renphil-source-freshness
+  cancel-in-progress: true
+
+jobs:
+  check-ai-for-math-portfolio:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Test the source parser and completeness invariants
+        run: node --test scripts/renphil.test.mjs
+      - name: Compare the committed portfolio with RenPhil's current pages
+        run: node scripts/refresh-renphil.mjs

@@ -1,0 +1,292 @@
+{
+  "version": "data-quality-contract-v0.1",
+  "generatedAt": "2026-08-30T09:08:37.695Z",
+  "freshnessRules": [
+    {
+      "state": "current",
+      "maximumAgeDays": 14,
+      "label": "Retrieved within 14 days"
+    },
+    {
+      "state": "monitor",
+      "maximumAgeDays": 45,
+      "label": "Retrieved 15–45 days ago"
+    },
+    {
+      "state": "stale",
+      "maximumAgeDays": null,
+      "label": "Retrieved more than 45 days ago"
+    }
+  ],
+  "stateRules": [
+    {
+      "state": "conflict",
+      "rule": "A source’s own published totals or declared coverage disagree."
+    },
+    {
+      "state": "incomplete",
+      "rule": "At least one accepted row lacks an amount, canonical date, recipient name, purpose, or direct source URL."
+    },
+    {
+      "state": "documented-boundary",
+      "rule": "No row-level contradiction is open, but material publication or interpretation limits apply."
+    }
+  ],
+  "rowRules": {
+    "current": "A current row has last_seen_at equal to its source retrieval timestamp.",
+    "disappeared": "A disappeared row was present in an earlier accepted snapshot but is absent from the current one; this is not called a retraction without publisher evidence.",
+    "grouped": "Grouped status is counted only when a row explicitly carries it. Publisher-wide grouping caveats remain separate.",
+    "amounts": "Dollar totals are computed only inside one selected publisher ledger. Cross-publisher totals are prohibited because the same underlying funding may appear in more than one publication."
+  },
+  "ledgers": [
+    {
+      "key": "coefficient",
+      "label": "Coefficient public index",
+      "publisher": "Coefficient Giving",
+      "detailSource": "coefficient",
+      "sourceUrl": "https://coefficientgiving.org/funds/",
+      "retrievedAt": "2026-08-30T02:01:04.483Z",
+      "rowCount": 2893,
+      "publishedAmountUsd": 4920357709,
+      "statusSemantics": "published",
+      "roleCoverage": {
+        "originatingFunder": "not-normalized",
+        "advisingFunder": "normalized",
+        "recipients": "normalized"
+      },
+      "fieldCoverage": {
+        "year": "award-date",
+        "geography": "not-published",
+        "stage": "not-published",
+        "restriction": "not-published"
+      },
+      "canonicalDateField": "award_date",
+      "canonicalDateLabel": "award date",
+      "expected": {
+        "grantCount": 2893,
+        "totalPublishedAmountUsd": 4920357709,
+        "uniqueRecipientCount": 1133,
+        "listedFundCount": 14,
+        "grantsWithMultipleListedFunds": 7,
+        "grantsWithoutListedFund": 43,
+        "grantsWithoutFocusArea": 27,
+        "grantsWithoutPublishedAmount": 1,
+        "grantsWithoutRecipient": 8,
+        "grantsWithoutAwardDate": 2,
+        "futureDatedGrants": 1,
+        "earliestAwardDate": "2012-07-01T00:00:00.000Z",
+        "latestAwardDate": "2026-12-15T00:00:00.000Z"
+      },
+      "caveats": [
+        "Public entries can lag grantmaking by months and omit sensitive grants.",
+        "The public database omits most funding advised for donors other than Good Ventures.",
+        "Some source entries group similar grants, but grouping is not exposed consistently enough to infer row-level grouped status."
+      ]
+    },
+    {
+      "key": "givewell",
+      "label": "GiveWell grant export",
+      "publisher": "GiveWell",
+      "detailSource": "givewell",
+      "sourceUrl": "https://airtable.com/appaVhon0jdLt1rVs/shrixNMUWCSC5v1lh/tblykYPizxzYj3U1L/viwJ3DyqAUsL654Rm",
+      "retrievedAt": "2026-08-30T02:50:38.000Z",
+      "rowCount": 541,
+      "publishedAmountUsd": 2625949864,
+      "statusSemantics": "published grant; recommendation and payment timing not inferred",
+      "roleCoverage": {
+        "originatingFunder": "source-list-only",
+        "advisingFunder": "not-normalized",
+        "recipients": "normalized"
+      },
+      "fieldCoverage": {
+        "year": "decision-date",
+        "geography": "country-list",
+        "stage": "not-published",
+        "restriction": "not-published"
+      },
+      "canonicalDateField": "decision_date",
+      "canonicalDateLabel": "decision date",
+      "expected": {
+        "grantCount": 541,
+        "totalPublishedAmountUsd": 2625949864,
+        "airtableDisplayedTotalAmountUsd": 2625949861,
+        "displayedVsExportedDifferenceUsd": 3,
+        "uniqueRecipientCount": 129,
+        "grantsWithoutPublishedAmount": 0,
+        "grantsWithoutDecisionDate": 0,
+        "grantsWithoutSourceUrl": 170,
+        "earliestDecisionDate": "2014-01-01T00:00:00.000Z",
+        "latestDecisionDate": "2026-07-28T00:00:00.000Z"
+      },
+      "caveats": [
+        "Publication does not establish payment timing.",
+        "The public export names funding pools, but those labels are not normalized as originating-funder organizations.",
+        "A row-level source URL is not published for every grant."
+      ]
+    },
+    {
+      "key": "giving-green",
+      "label": "Giving Green 2025 cycle",
+      "publisher": "Giving Green",
+      "detailSource": "giving-green",
+      "sourceUrl": "https://www.givinggreen.earth/post/2025-2026-top-climate-nonprofits",
+      "retrievedAt": "2026-08-30T08:47:30.552Z",
+      "rowCount": 29,
+      "publishedAmountUsd": 26063000,
+      "statusSemantics": "planned Giving Green Fund grant announced for the 2025–2026 recommendation cycle; announcement is not proof of disbursement",
+      "roleCoverage": {
+        "originatingFunder": "normalized",
+        "advisingFunder": "normalized",
+        "recipients": "normalized"
+      },
+      "fieldCoverage": {
+        "year": "announcement-date",
+        "geography": "not-published",
+        "stage": "not-published",
+        "restriction": "not-published"
+      },
+      "canonicalDateField": "award_date",
+      "canonicalDateLabel": "disbursement date",
+      "expected": {
+        "topRecommendationCount": 5,
+        "otherGranteeCount": 24,
+        "grantRecordCount": 29,
+        "totalAnnouncedGrantUsd": 26063000,
+        "topAnnouncedGrantUsd": 14400000
+      },
+      "caveats": [
+        "The accepted table announces planned grants; it is not proof of payment or a disbursement date.",
+        "Grant size is not an effectiveness ranking or an organization funding gap."
+      ]
+    },
+    {
+      "key": "renphil",
+      "label": "RenPhil AI for Math",
+      "publisher": "Renaissance Philanthropy",
+      "detailSource": "renphil",
+      "sourceUrl": "https://www.renaissancephilanthropy.org/ai-for-math-fund-projects",
+      "retrievedAt": "2026-08-30T03:21:57.511Z",
+      "rowCount": 28,
+      "publishedAmountUsd": 0,
+      "statusSemantics": "published award; amount and payment timing not published",
+      "roleCoverage": {
+        "originatingFunder": "normalized",
+        "advisingFunder": "normalized",
+        "recipients": "source-list-only"
+      },
+      "fieldCoverage": {
+        "year": "announcement-date",
+        "geography": "not-published",
+        "stage": "not-published",
+        "restriction": "not-published"
+      },
+      "canonicalDateField": "decision_date",
+      "canonicalDateLabel": "award decision date",
+      "expected": {
+        "awardCount": 28,
+        "declaredAwardCount": 29,
+        "unlistedAwardCount": 1,
+        "awardsWithPublishedAmount": 0,
+        "awardsWithStructuredTeamNames": 26,
+        "awardsWithoutProjectDescription": 2,
+        "awardsWithoutPublishedTeamText": 0
+      },
+      "caveats": [
+        "Row-level award amounts and decision or payment dates are not published.",
+        "Two current award pages do not expose structured team names; source-listed project records remain accepted."
+      ]
+    }
+  ],
+  "knownIssues": [
+    {
+      "key": "givewell-displayed-exported-total",
+      "sourceKey": "givewell",
+      "state": "conflict",
+      "category": "source-conflict",
+      "count": 3,
+      "unit": "USD",
+      "title": "GiveWell displayed and exported totals differ",
+      "description": "The Airtable display is $2,625,949,861; exported rows sum to $2,625,949,864. Both remain visible."
+    },
+    {
+      "key": "renphil-declared-linked-gap",
+      "sourceKey": "renphil",
+      "state": "conflict",
+      "category": "coverage-conflict",
+      "count": 1,
+      "unit": "award",
+      "title": "RenPhil declared and linked portfolios do not reconcile",
+      "description": "RenPhil states 29 first-round awards while the current winners page exposes 28 linked records."
+    },
+    {
+      "key": "coefficient-future-dated",
+      "sourceKey": "coefficient",
+      "state": "monitor",
+      "category": "date-anomaly",
+      "count": 1,
+      "unit": "row",
+      "title": "Coefficient includes a future-dated award row",
+      "description": "The date is retained as published rather than rewritten; users can inspect the source record."
+    },
+    {
+      "key": "coefficient-private-coverage",
+      "sourceKey": "coefficient",
+      "state": "documented-boundary",
+      "category": "private-grant-caveat",
+      "count": null,
+      "unit": null,
+      "title": "Coefficient public coverage is intentionally partial",
+      "description": "Sensitive grants may be withheld, publication can lag, and most non–Good Ventures advised funding is outside the public database."
+    },
+    {
+      "key": "coefficient-grouping-unobservable",
+      "sourceKey": "coefficient",
+      "state": "documented-boundary",
+      "category": "granularity-caveat",
+      "count": null,
+      "unit": null,
+      "title": "Grouped-grant status is not reliably machine-observable",
+      "description": "Coefficient says some entries group similar grants. Zero observed grouped flags must not be interpreted as zero grouped grants."
+    },
+    {
+      "key": "coefficient-egc-overlap",
+      "sourceKey": "coefficient",
+      "state": "documented-boundary",
+      "category": "deduplication-boundary",
+      "count": 79,
+      "unit": "rows",
+      "title": "The EGC subset is excluded from portfolio totals",
+      "description": "All 79 rows already occur in the complete Coefficient public index. Including this ledger would duplicate source records and amounts."
+    },
+    {
+      "key": "giving-green-announcement-status",
+      "sourceKey": "giving-green",
+      "state": "documented-boundary",
+      "category": "payment-caveat",
+      "count": 29,
+      "unit": "rows",
+      "title": "Giving Green rows are announced plans, not verified payments",
+      "description": "All 29 accepted rows preserve the announcement semantics and leave disbursement dates unpublished."
+    },
+    {
+      "key": "funding-tranche-stale-gap",
+      "sourceKey": "funding-room",
+      "state": "monitor",
+      "category": "stale-evidence",
+      "count": 1,
+      "unit": "tranche",
+      "title": "A period-specific funding gap is stale",
+      "description": "Giving Green’s Project InnerSpace figure is retained with its 2025 period and excluded from current numeric room."
+    },
+    {
+      "key": "funding-tranche-closed",
+      "sourceKey": "funding-room",
+      "state": "documented-boundary",
+      "category": "closed-opportunity",
+      "count": 1,
+      "unit": "tranche",
+      "title": "A published funding route is closed or contact-required",
+      "description": "The Founders Pledge opportunity remains visible but is excluded from open funding room."
+    }
+  ]
+}

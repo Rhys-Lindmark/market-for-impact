@@ -9,11 +9,28 @@ type CoefficientMarket = {
   recent: Array<{ external_id: string; source_url: string | null; recipient: string; recipient_url: string | null; purpose: string; amount_usd: number; decision_date: number; status: string }>;
 };
 
+type CoefficientExplorer = {
+  pagination: { page: number; pageSize: number; total: number; pageCount: number };
+  grants: Array<{
+    sourceRecordId: string;
+    sourceUrl: string | null;
+    purpose: string | null;
+    amountUsd: number | null;
+    awardDate: string | null;
+    sourcePublishedAt: string | null;
+    recipients: string[];
+    focusAreas: string[];
+    listedFunds: string[];
+  }>;
+};
+
 const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
 const compactMoney = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 2 });
 const integer = new Intl.NumberFormat('en-US');
 const month = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
 const day = new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+const shortDay = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+const awardYears = Array.from({ length: 15 }, (_, index) => 2026 - index);
 
 const flowMetrics = [
   { name: 'Coefficient Giving', amount: '$1B+', note: 'directed in 2025', width: 100, color: '#8e6cf0' },
@@ -36,12 +53,46 @@ export default function Home() {
   const [query, setQuery] = useState('');
   const [coefficientMarket, setCoefficientMarket] = useState<CoefficientMarket | null>(null);
   const [coefficientError, setCoefficientError] = useState(false);
+  const [explorer, setExplorer] = useState<CoefficientExplorer | null>(null);
+  const [explorerError, setExplorerError] = useState(false);
+  const [explorerLoading, setExplorerLoading] = useState(true);
+  const [explorerFund, setExplorerFund] = useState('');
+  const [explorerYear, setExplorerYear] = useState('');
+  const [explorerSort, setExplorerSort] = useState<'recent' | 'largest'>('recent');
+  const [explorerDraft, setExplorerDraft] = useState('');
+  const [explorerQuery, setExplorerQuery] = useState('');
+  const [explorerPage, setExplorerPage] = useState(1);
+  const [explorerRefresh, setExplorerRefresh] = useState(0);
   useEffect(() => {
     fetch('/api/coefficient-grants').then((response) => {
       if (!response.ok) throw new Error('Grant market unavailable');
       return response.json() as Promise<CoefficientMarket>;
     }).then(setCoefficientMarket).catch(() => setCoefficientError(true));
   }, []);
+  useEffect(() => {
+    const params = new URLSearchParams({ page: String(explorerPage), pageSize: '12', sort: explorerSort });
+    if (explorerFund) params.set('fund', explorerFund);
+    if (explorerYear) params.set('year', explorerYear);
+    if (explorerQuery) params.set('q', explorerQuery);
+    const controller = new AbortController();
+    fetch(`/api/coefficient-grants/all?${params}`, { signal: controller.signal }).then((response) => {
+      if (!response.ok) throw new Error('Complete grant ledger unavailable');
+      return response.json() as Promise<CoefficientExplorer>;
+    }).then((result) => {
+      setExplorer(result);
+      setExplorerLoading(false);
+    }).catch((error) => {
+      if (error instanceof DOMException && error.name === 'AbortError') return;
+      setExplorerError(true);
+      setExplorerLoading(false);
+    });
+    return () => controller.abort();
+  }, [explorerFund, explorerPage, explorerQuery, explorerRefresh, explorerSort, explorerYear]);
+  const beginExplorerUpdate = () => {
+    setExplorerLoading(true);
+    setExplorerError(false);
+    setExplorerRefresh((value) => value + 1);
+  };
   const filtered = useMemo(() => opportunities.filter((item) =>
     (cause === 'All causes' || item.cause === cause) &&
     `${item.name} ${item.intervention} ${item.source}`.toLowerCase().includes(query.toLowerCase())
@@ -156,6 +207,39 @@ export default function Home() {
         <div className="index-caveats">
           <p><strong>Coverage, not certainty.</strong> {integer.format(coefficientIndex.summary.grantsWithoutListedFund)} records have no currently listed fund tag; {integer.format(coefficientIndex.summary.grantsWithMultipleListedFunds)} have multiple listed fund tags; {integer.format(coefficientIndex.summary.grantsWithoutFocusArea)} have no focus-area tag.</p>
           <p><strong>Amounts are partial.</strong> The unique-record total excludes {integer.format(coefficientIndex.summary.grantsWithoutPublishedAmount)} record without a published amount. “Published” does not mean paid, and one source award date is later than this snapshot’s retrieval date.</p>
+        </div>
+        <div className="grant-explorer">
+          <div className="grant-explorer-heading">
+            <div><span>QUERY THE LEDGER</span><h3>Trace individual grants.</h3></div>
+            <p>Filter the complete D1-backed source ledger without losing Coefficient’s own fund tags or published-record semantics.</p>
+          </div>
+          <form className="grant-explorer-controls" onSubmit={(event) => { event.preventDefault(); beginExplorerUpdate(); setExplorerPage(1); setExplorerQuery(explorerDraft.trim()); }}>
+            <label className="explorer-search"><span>Search</span><input value={explorerDraft} onChange={(event) => setExplorerDraft(event.target.value)} placeholder="Recipient or purpose" /></label>
+            <label><span>Fund</span><select value={explorerFund} onChange={(event) => { beginExplorerUpdate(); setExplorerFund(event.target.value); setExplorerPage(1); }}><option value="">All listed funds</option>{coefficientIndex.funds.map((fund) => <option value={fund.fund} key={fund.fund}>{fund.fund}</option>)}</select></label>
+            <label><span>Award year</span><select value={explorerYear} onChange={(event) => { beginExplorerUpdate(); setExplorerYear(event.target.value); setExplorerPage(1); }}><option value="">All years</option>{awardYears.map((year) => <option value={year} key={year}>{year}</option>)}</select></label>
+            <label><span>Sort</span><select value={explorerSort} onChange={(event) => { beginExplorerUpdate(); setExplorerSort(event.target.value as 'recent' | 'largest'); setExplorerPage(1); }}><option value="recent">Most recent</option><option value="largest">Largest amount</option></select></label>
+            <button type="submit">Search →</button>
+          </form>
+          <div className="grant-explorer-status" aria-live="polite">
+            <span>{explorerLoading ? 'Querying the ledger…' : explorerError ? 'The complete ledger is temporarily unavailable.' : `${integer.format(explorer?.pagination.total ?? 0)} matching source records`}</span>
+            {(explorerFund || explorerYear || explorerQuery) && <button type="button" onClick={() => { beginExplorerUpdate(); setExplorerFund(''); setExplorerYear(''); setExplorerDraft(''); setExplorerQuery(''); setExplorerPage(1); }}>Clear filters</button>}
+          </div>
+          <div className="grant-results">
+            {explorer?.grants.map((grant) => (
+              <article className="grant-result" key={grant.sourceRecordId}>
+                <div className="grant-result-meta"><span>{grant.awardDate ? `${new Date(grant.awardDate) > new Date(coefficientIndex.source.retrievedAt) ? 'Future-dated · ' : ''}${shortDay.format(new Date(grant.awardDate))}` : 'Award date not published'}</span><span>{grant.listedFunds[0] ?? grant.focusAreas[0] ?? 'No focus-area tag'}</span></div>
+                <h4>{grant.recipients.join(' + ') || 'Recipient not published'}</h4>
+                <p>{grant.purpose || 'Purpose not published'}</p>
+                <div className="grant-result-bottom"><strong>{grant.amountUsd == null ? 'Amount not published' : money.format(grant.amountUsd)}</strong>{grant.sourceUrl ? <a href={grant.sourceUrl} target="_blank" rel="noreferrer">Source record ↗</a> : <span>Source URL unavailable</span>}</div>
+              </article>
+            ))}
+            {!explorerLoading && !explorerError && explorer?.grants.length === 0 && <p className="grant-no-results">No source records match those filters.</p>}
+          </div>
+          {explorer && explorer.pagination.pageCount > 1 && <div className="grant-pagination">
+            <button type="button" disabled={explorerPage <= 1 || explorerLoading} onClick={() => { beginExplorerUpdate(); setExplorerPage((page) => Math.max(1, page - 1)); }}>← Previous</button>
+            <span>Page {integer.format(explorer.pagination.page)} of {integer.format(explorer.pagination.pageCount)}</span>
+            <button type="button" disabled={explorerPage >= explorer.pagination.pageCount || explorerLoading} onClick={() => { beginExplorerUpdate(); setExplorerPage((page) => page + 1); }}>Next →</button>
+          </div>}
         </div>
         <p className="data-note">Public index retrieved {day.format(new Date(coefficientIndex.source.retrievedAt))} · {coefficientIndex.source.contentHash.slice(0, 12)} content hash · <a href="https://coefficientgiving.org/funds/" target="_blank" rel="noreferrer">Fund taxonomy ↗</a></p>
       </section>

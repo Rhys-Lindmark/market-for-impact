@@ -28,7 +28,7 @@ export const grants = sqliteTable('grants', {
   sourceId: integer('source_id').notNull().references(() => sources.id),
   originatingFunderId: integer('originating_funder_id').references(() => organizations.id),
   advisingFunderId: integer('advising_funder_id').references(() => organizations.id),
-  recipientId: integer('recipient_id').notNull().references(() => organizations.id),
+  recipientId: integer('recipient_id').references(() => organizations.id),
   amountUsd: real('amount_usd'),
   amountOriginal: real('amount_original'),
   currency: text('currency'),
@@ -36,6 +36,11 @@ export const grants = sqliteTable('grants', {
   decisionDate: integer('decision_date', { mode: 'timestamp' }),
   awardDate: integer('award_date', { mode: 'timestamp' }),
   sourcePublishedAt: integer('source_published_at', { mode: 'timestamp' }),
+  sourcePostId: integer('source_post_id'),
+  recipientNamesJson: text('recipient_names_json').notNull().default('[]'),
+  recipientNamesText: text('recipient_names_text').notNull().default(''),
+  focusAreasJson: text('focus_areas_json').notNull().default('[]'),
+  listedFundsJson: text('listed_funds_json').notNull().default('[]'),
   startDate: integer('start_date', { mode: 'timestamp' }),
   endDate: integer('end_date', { mode: 'timestamp' }),
   cause: text('cause').notNull(),
@@ -51,6 +56,9 @@ export const grants = sqliteTable('grants', {
   uniqueIndex('grants_source_record_idx').on(table.sourceId, table.sourceRecordId),
   index('grants_cause_date_idx').on(table.cause, table.decisionDate),
   index('grants_recipient_idx').on(table.recipientId),
+  index('grants_source_award_date_idx').on(table.sourceId, table.awardDate),
+  index('grants_source_amount_idx').on(table.sourceId, table.amountUsd),
+  index('grants_source_seen_idx').on(table.sourceId, table.lastSeenAt),
 ]);
 
 export const assessments = sqliteTable('assessments', {

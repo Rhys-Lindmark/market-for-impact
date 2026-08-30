@@ -39,4 +39,6 @@ The full refresh partitions the index by award year so it can retrieve all recor
 
 The normalized market summary counts each source record once overall. Its 14 fund rows are intentionally non-additive because Coefficient's focus-area tags are many-to-many; legacy and sub-area tags remain available in the raw snapshot. Published records remain explicitly distinct from paid or committed grants, and Coefficient's stated publication-lag and coverage caveats are retained with every snapshot.
 
+The complete snapshot is materialized idempotently into D1 on the first request to `/api/coefficient-grants/all`. Each source record keeps its source ID, URL, post ID, exact recipient list, full focus-area and current-fund tag sets, publication status, content hash, and first/last-seen timestamps. The endpoint supports paginated recipient/purpose search plus fund, award-year, and recent/largest sorting. Missing recipients, amounts, and dates remain null; fund filtering uses tag membership and never duplicates an overlapping grant in the overall ledger.
+
 GitHub runs both non-writing checks hourly. A changed or suspicious snapshot fails the check and enters the human/Codex review queue; the workflow never accepts upstream data changes on its own.

@@ -67,7 +67,10 @@ export default async function GrantDetailPage({ params }: { params: Promise<Page
             <h2>Parties and purpose.</h2>
           </div>
           <dl className="detail-facts">
-            <div><dt>Recipient or team</dt><dd>{grant.recipient?.slug ? <Link href={organizationPath(grant.recipient.slug)}>{grant.recipient.name} →</Link> : names.length ? names.join(' · ') : 'Not published'}</dd></div>
+            <div><dt>Recipient or team</dt><dd>{grant.recipientOrganizations.length
+              ? grant.recipientOrganizations.map((recipient, index) => <span key={recipient.slug}>{index > 0 && ' · '}<Link href={organizationPath(recipient.slug)}>{recipient.sourceName} →</Link></span>)
+              : grant.recipient?.slug ? <Link href={organizationPath(grant.recipient.slug)}>{grant.recipient.name} →</Link>
+                : names.length ? names.join(' · ') : 'Not published'}</dd></div>
             <div><dt>Originating funder</dt><dd>{grant.originatingFunder?.slug ? <Link href={organizationPath(grant.originatingFunder.slug)}>{grant.originatingFunder.name} →</Link> : 'Not published'}</dd></div>
             <div><dt>Adviser or administrator</dt><dd>{grant.advisingFunder?.slug ? <Link href={organizationPath(grant.advisingFunder.slug)}>{grant.advisingFunder.name} →</Link> : 'Not published'}</dd></div>
             <div><dt>Cause</dt><dd>{grant.cause || 'Not classified'}</dd></div>

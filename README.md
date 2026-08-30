@@ -26,6 +26,7 @@ This is research infrastructure, not financial, tax, or individualized giving ad
 - GiveWell’s 541-row public grant export and four current Top Charities, including evidence levels, delivery costs, historical reported cost per life saved, geography, model versions, and non-inferred funding-room status.
 - Renaissance Philanthropy’s 28 currently linked 2025 AI for Math awards, reconciled against its stated 29-award portfolio with one explicit coverage gap and no inferred row-level amounts.
 - Stable grant detail URLs across all current Coefficient, GiveWell, and RenPhil ledgers, plus organization profiles that separate received, advised, and originated funding roles and display evaluator evidence when available.
+- Auditable many-to-many grant/organization roles and source-specific name aliases, including all named recipients in Coefficient’s three multi-recipient records without splitting or duplicating grant amounts.
 - Content-addressed raw and normalized snapshots, idempotent D1 materialization, source caveats, and fail-closed import checks.
 
 The prioritized roadmap is in [BACKLOG.md](BACKLOG.md). It covers ACE, Giving Green, Founders Pledge, AI safety, comparable-impact modeling, funding-room curves, organization pages, and a San Francisco giving market.
@@ -57,6 +58,8 @@ Important paths:
 - `.github/workflows/`: scheduled upstream-change checks.
 
 Raw source semantics remain source-specific. Generic fields such as topics, funders, and countries are additive; an importer must not force a publisher’s taxonomy into another publisher’s meaning.
+
+Organization identity is conservative. `organization_source_names` preserves each publisher’s exact display name and the basis for linking it to a canonical organization. `grant_organization_roles` records every recipient, adviser, and originating funder relationship without forcing a single recipient onto a multi-recipient grant. Exact Unicode-normalized source names merge automatically; other cross-source aliases require an explicit reviewed mapping. Amounts remain attached to grants and are never divided across recipient links.
 
 ## Local development
 
@@ -137,7 +140,7 @@ Every data pull request should satisfy the definition of done in [BACKLOG.md](BA
 
 Missing values stay missing. Publication does not imply payment. A recommendation does not imply an unrestricted organization-level funding gap. Historical estimates do not become current estimates merely because they are the newest public headline.
 
-The complete Coefficient index currently preserves recipients as source text because some rows name multiple recipients. Those records receive stable grant pages, but they are not attached to canonical organization pages until the schema supports explicit many-to-many grant relationships. The smaller Effective Giving & Careers ledger and GiveWell records already have canonical recipient links.
+The complete Coefficient index publishes 2,888 recipient mentions across 2,885 of 2,893 records. All named recipients now link through explicit many-to-many roles, including three records with two recipients each. Eight records publish no recipient name and remain unlinked rather than receiving an invented identity.
 
 Organization rollups count only records current in each source snapshot. Coefficient’s 79-record Effective Giving & Careers ledger is a fully overlapping subset of the complete 2,893-record public index, so adviser-level totals suppress those duplicates while recipient profiles retain the smaller ledger’s canonical links.
 

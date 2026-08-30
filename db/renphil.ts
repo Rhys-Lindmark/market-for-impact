@@ -1,7 +1,17 @@
 import { env } from 'cloudflare:workers';
 import snapshot from '@/data/renphil/ai-for-math-2025.json';
+import { organizationGraphComplete, replaceGrantOrganizationRoles } from '@/db/grant-organizations';
 
 type AwardRecord = (typeof snapshot.records)[number];
+const expectedRoleCount = snapshot.records.length * 2;
+
+async function ensureRenPhilOrganizationGraph(sourceId: number) {
+  if (await organizationGraphComplete(sourceId, expectedRoleCount, 0)) return;
+  await replaceGrantOrganizationRoles(sourceId);
+  if (!await organizationGraphComplete(sourceId, expectedRoleCount, 0)) {
+    throw new Error('RenPhil organization graph failed reconciliation.');
+  }
+}
 
 function epoch(value: string | null) {
   return value ? Math.floor(new Date(value).valueOf() / 1000) : null;
@@ -11,6 +21,7 @@ export async function ensureRenPhilSnapshot() {
   const current = await env.DB.prepare('SELECT id, content_hash, retrieved_at FROM sources WHERE url = ?')
     .bind(snapshot.source.url).first<{ id: number; content_hash: string | null; retrieved_at: number }>();
   if (current?.content_hash === snapshot.source.contentHash) {
+    await ensureRenPhilOrganizationGraph(current.id);
     return { sourceId: current.id, retrievedAt: current.retrieved_at };
   }
 
@@ -62,6 +73,7 @@ export async function ensureRenPhilSnapshot() {
   for (let index = 0; index < statements.length; index += 50) {
     await env.DB.batch(statements.slice(index, index + 50));
   }
+  await ensureRenPhilOrganizationGraph(source.id);
   await env.DB.batch([
     env.DB.prepare('UPDATE sources SET retrieved_at = ?, coverage_note = ?, content_hash = ? WHERE id = ?')
       .bind(retrievedAt, snapshot.source.coverageNote, snapshot.source.contentHash, source.id),

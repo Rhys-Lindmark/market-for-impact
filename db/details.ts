@@ -19,6 +19,7 @@ const sourceDefinitions: Record<GrantSourceKey, { url: string; ensure: () => Pro
 const sourceKeyByUrl = new Map(Object.entries(sourceDefinitions).map(([key, value]) => [value.url, key as GrantSourceKey]));
 
 type GrantRow = {
+  grant_id: number;
   source_record_id: string;
   source_url: string | null;
   amount_usd: number | null;
@@ -53,18 +54,20 @@ type GrantRow = {
   advising_funder_slug: string | null;
 };
 
+type LinkedOrganization = { name: string; slug: string; url: string | null; sourceName: string; position: number };
+
 function projectName(source: GrantSourceKey, sourceRecordId: string) {
   if (source !== 'renphil') return null;
   return renPhilSnapshot.records.find((record) => record.sourceRecordId === sourceRecordId)?.project ?? null;
 }
 
-function mapGrant(row: GrantRow, source: GrantSourceKey) {
+function mapGrant(row: GrantRow, source: GrantSourceKey, recipientOrganizations: LinkedOrganization[] = []) {
   const recipients = parseStringArray(row.recipient_names_json);
   return {
     source,
     sourceRecordId: row.source_record_id,
     path: grantPath(source, row.source_record_id),
-    title: projectName(source, row.source_record_id) ?? row.recipient_name ?? (recipients.join(' + ') || 'Published grant'),
+    title: projectName(source, row.source_record_id) ?? row.recipient_name ?? recipientOrganizations[0]?.name ?? (recipients.join(' + ') || 'Published grant'),
     sourceUrl: row.source_url,
     amountUsd: row.amount_usd,
     amountOriginal: row.amount_original,
@@ -74,6 +77,7 @@ function mapGrant(row: GrantRow, source: GrantSourceKey) {
     awardDate: row.award_date,
     sourcePublishedAt: row.source_published_at,
     recipients,
+    recipientOrganizations,
     recipient: row.recipient_name ? { name: row.recipient_name, slug: row.recipient_slug, url: row.recipient_url } : null,
     originatingFunder: row.originating_funder_name ? { name: row.originating_funder_name, slug: row.originating_funder_slug } : null,
     advisingFunder: row.advising_funder_name ? { name: row.advising_funder_name, slug: row.advising_funder_slug } : null,
@@ -97,7 +101,7 @@ function mapGrant(row: GrantRow, source: GrantSourceKey) {
   };
 }
 
-const grantSelect = `SELECT g.source_record_id, g.source_url, g.amount_usd, g.amount_original, g.currency,
+const grantSelect = `SELECT g.id AS grant_id, g.source_record_id, g.source_url, g.amount_usd, g.amount_original, g.currency,
   g.status, g.decision_date, g.award_date, g.source_published_at, g.recipient_names_json,
   g.focus_areas_json, g.listed_funds_json, g.topics_json, g.funders_json, g.countries_json,
   g.cause, g.intervention, g.geography, g.purpose, g.grouped_grant,
@@ -116,7 +120,19 @@ export async function getGrantDetail(source: GrantSourceKey, sourceRecordId: str
   const row = await env.DB.prepare(`${grantSelect}
     WHERE s.url = ? AND g.source_record_id = ? AND g.last_seen_at = s.retrieved_at LIMIT 1`)
     .bind(definition.url, sourceRecordId).first<GrantRow>();
-  return row ? mapGrant(row, source) : null;
+  if (!row) return null;
+  const recipients = await env.DB.prepare(`SELECT o.canonical_name AS name, o.slug, o.website_url AS url,
+    role.source_name, role.position FROM grant_organization_roles role
+    JOIN organizations o ON o.id = role.organization_id
+    WHERE role.grant_id = ? AND role.role = 'recipient' ORDER BY role.position, o.canonical_name`)
+    .bind(row.grant_id).all<{ name: string; slug: string; url: string | null; source_name: string; position: number }>();
+  return mapGrant(row, source, recipients.results.map((recipient) => ({
+    name: recipient.name,
+    slug: recipient.slug,
+    url: recipient.url,
+    sourceName: recipient.source_name,
+    position: recipient.position,
+  })));
 }
 
 async function ensureAllMarketData() {
@@ -129,29 +145,30 @@ async function ensureAllMarketData() {
 
 type Relationship = 'received' | 'advised' | 'originated';
 
-function relationshipColumn(relationship: Relationship) {
-  if (relationship === 'received') return 'recipient_id';
-  if (relationship === 'advised') return 'advising_funder_id';
-  return 'originating_funder_id';
+function relationshipRole(relationship: Relationship) {
+  if (relationship === 'received') return 'recipient';
+  if (relationship === 'advised') return 'advising-funder';
+  return 'originating-funder';
 }
 
 async function relationshipSummary(organizationId: number, relationship: Relationship) {
-  const column = relationshipColumn(relationship);
-  const dedupeSubset = relationship === 'received' ? '' : `AND NOT (s.url = ? AND EXISTS (
+  const role = relationshipRole(relationship);
+  const dedupeSubset = `AND NOT (s.url = ? AND EXISTS (
     SELECT 1 FROM grants superset JOIN sources superset_source ON superset_source.id = superset.source_id
     WHERE superset_source.url = ? AND superset.source_record_id = g.source_record_id
       AND superset.last_seen_at = superset_source.retrieved_at))`;
-  const bindings: Array<string | number> = relationship === 'received'
-    ? [organizationId]
-    : [organizationId, coefficientSnapshot.source.url, coefficientAllSnapshot.source.url];
+  const bindings: Array<string | number> = [organizationId, role, coefficientSnapshot.source.url, coefficientAllSnapshot.source.url];
   const summary = await env.DB.prepare(`SELECT COUNT(*) AS count, COALESCE(SUM(amount_usd), 0) AS known_amount_usd,
     SUM(CASE WHEN amount_usd IS NULL THEN 1 ELSE 0 END) AS missing_amount_count
-    FROM grants g JOIN sources s ON s.id = g.source_id
-    WHERE g.${column} = ? AND g.last_seen_at = s.retrieved_at ${dedupeSubset}`).bind(...bindings).first<{
+    FROM grant_organization_roles relationship JOIN grants g ON g.id = relationship.grant_id
+    JOIN sources s ON s.id = g.source_id
+    WHERE relationship.organization_id = ? AND relationship.role = ?
+      AND g.last_seen_at = s.retrieved_at ${dedupeSubset}`).bind(...bindings).first<{
       count: number; known_amount_usd: number; missing_amount_count: number;
     }>();
   const rows = await env.DB.prepare(`${grantSelect}
-    WHERE g.${column} = ? AND g.last_seen_at = s.retrieved_at ${dedupeSubset}
+    WHERE g.id IN (SELECT grant_id FROM grant_organization_roles
+      WHERE organization_id = ? AND role = ?) AND g.last_seen_at = s.retrieved_at ${dedupeSubset}
     ORDER BY COALESCE(g.award_date, g.decision_date, g.source_published_at) DESC,
       g.amount_usd DESC, g.source_record_id ASC LIMIT 24`).bind(...bindings).all<GrantRow>();
   return {
@@ -173,7 +190,7 @@ export async function getOrganizationDetail(slug: string) {
     }>();
   if (!organization) return null;
 
-  const [received, advised, originated, assessments] = await Promise.all([
+  const [received, advised, originated, assessments, sourceNames] = await Promise.all([
     relationshipSummary(organization.id, 'received'),
     relationshipSummary(organization.id, 'advised'),
     relationshipSummary(organization.id, 'originated'),
@@ -185,6 +202,16 @@ export async function getOrganizationDetail(slug: string) {
       FROM assessments a JOIN organizations evaluator ON evaluator.id = a.evaluator_id
       JOIN sources s ON s.id = a.source_id WHERE a.organization_id = ?
       ORDER BY a.assessment_date DESC`).bind(organization.id).all(),
+    env.DB.prepare(`SELECT alias.source_name, alias.normalized_name, alias.identity_basis,
+      s.publisher, s.title AS source_title, s.url AS source_url, s.retrieved_at
+      FROM organization_source_names alias JOIN sources s ON s.id = alias.source_id
+      WHERE alias.organization_id = ? ORDER BY s.publisher, alias.source_name`)
+      .bind(organization.id).all(),
   ]);
-  return { organization, relationships: [received, advised, originated], assessments: assessments.results };
+  return {
+    organization,
+    relationships: [received, advised, originated],
+    assessments: assessments.results,
+    sourceNames: sourceNames.results,
+  };
 }

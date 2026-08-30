@@ -1,13 +1,31 @@
 import { env } from 'cloudflare:workers';
 import snapshot from '@/data/normalized/coefficient-effective-giving-and-careers.json';
+import { organizationGraphComplete, replaceGrantOrganizationRoles, upsertOrganizationIdentities } from '@/db/grant-organizations';
 
 type GrantRecord = (typeof snapshot.records)[number];
+const recipientCount = new Set(snapshot.records.map((record) => record.recipientSlug)).size;
+const expectedRoleCount = snapshot.records.length * 2;
+
+async function ensureCoefficientFundOrganizationGraph(sourceId: number) {
+  if (await organizationGraphComplete(sourceId, expectedRoleCount, recipientCount)) return;
+  await upsertOrganizationIdentities(sourceId, snapshot.records.map((record) => ({
+    name: record.recipient,
+    slug: record.recipientSlug,
+    websiteUrl: record.recipientUrl,
+    organizationType: 'grantee',
+  })));
+  await replaceGrantOrganizationRoles(sourceId);
+  if (!await organizationGraphComplete(sourceId, expectedRoleCount, recipientCount)) {
+    throw new Error('Coefficient fund organization graph failed reconciliation.');
+  }
+}
 
 export async function ensureCurrentSnapshot() {
   const sourceUrl = snapshot.source.url;
   const current = await env.DB.prepare('SELECT id, content_hash, retrieved_at FROM sources WHERE url = ?')
     .bind(sourceUrl).first<{ id: number; content_hash: string | null; retrieved_at: number }>();
   if (current?.content_hash === snapshot.source.contentHash) {
+    await ensureCoefficientFundOrganizationGraph(current.id);
     return { sourceId: current.id, retrievedAt: current.retrieved_at };
   }
 
@@ -59,6 +77,7 @@ export async function ensureCurrentSnapshot() {
   for (let index = 0; index < grantStatements.length; index += 50) {
     await env.DB.batch(grantStatements.slice(index, index + 50));
   }
+  await ensureCoefficientFundOrganizationGraph(source.id);
   await env.DB.batch([
     env.DB.prepare(`UPDATE sources SET retrieved_at = ?, coverage_note = ?, content_hash = ? WHERE id = ?`)
       .bind(retrievedAt, snapshot.source.coverageNote, snapshot.source.contentHash, source.id),

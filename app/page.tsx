@@ -102,6 +102,18 @@ type FoundersPledgeMarket = {
   }>;
 };
 
+type AiSafetyMarket = {
+  taxonomyVersion: string;
+  generatedAt: string;
+  source: { url: string; retrievedAt: string };
+  summary: { grantCount: number; publishedAmountUsd: number; organizationCount: number; foundersPledgeOverlapCount: number; foundersPledgeOnlyCount: number };
+  categories: Array<{ key: string; label: string; description: string; grantCount: number; publishedAmountUsd: number; organizationCount: number }>;
+  organizations: Array<{ organization: string; slug: string; roles: string[]; primaryRole: string; grantCount: number; publishedAmountUsd: number; foundersPledgeStatus: string | null }>;
+  externalOnlyRecommendations: Array<{ organization: string; slug: string; status: string }>;
+  coverageNote: string;
+  classificationNote: string;
+};
+
 const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
 const compactMoney = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 2 });
 const integer = new Intl.NumberFormat('en-US');
@@ -129,6 +141,10 @@ export default function Home() {
   const [givingGreenError, setGivingGreenError] = useState(false);
   const [foundersPledgeMarket, setFoundersPledgeMarket] = useState<FoundersPledgeMarket | null>(null);
   const [foundersPledgeError, setFoundersPledgeError] = useState(false);
+  const [aiSafetyMarket, setAiSafetyMarket] = useState<AiSafetyMarket | null>(null);
+  const [aiSafetyError, setAiSafetyError] = useState(false);
+  const [aiRole, setAiRole] = useState('all');
+  const [aiQuery, setAiQuery] = useState('');
   const [showAllRenPhil, setShowAllRenPhil] = useState(false);
   const [explorer, setExplorer] = useState<CoefficientExplorer | null>(null);
   const [explorerError, setExplorerError] = useState(false);
@@ -140,6 +156,12 @@ export default function Home() {
   const [explorerQuery, setExplorerQuery] = useState('');
   const [explorerPage, setExplorerPage] = useState(1);
   const [explorerRefresh, setExplorerRefresh] = useState(0);
+  useEffect(() => {
+    fetch('/api/ai-safety').then((response) => {
+      if (!response.ok) throw new Error('AI safety ecosystem unavailable');
+      return response.json() as Promise<AiSafetyMarket>;
+    }).then(setAiSafetyMarket).catch(() => setAiSafetyError(true));
+  }, []);
   useEffect(() => {
     fetch('/api/founders-pledge').then((response) => {
       if (!response.ok) throw new Error('Founders Pledge matrix unavailable');
@@ -263,6 +285,10 @@ export default function Home() {
     return values.map((item) => ({ ...item, width: item.amount == null ? 0 : Math.max(3, (item.amount / maximum) * 100) }));
   }, [coefficientMarket, explorer, giveWellMarket, givingGreenMarket, renPhilMarket]);
   const reviewedAt = explorer?.source.retrievedAt ? month.format(new Date(explorer.source.retrievedAt)) : null;
+  const visibleAiOrganizations = useMemo(() => (aiSafetyMarket?.organizations ?? []).filter((organization) =>
+    (aiRole === 'all' || organization.roles.includes(aiRole)) &&
+    `${organization.organization} ${organization.roles.join(' ')}`.toLowerCase().includes(aiQuery.toLowerCase())
+  ).slice(0, 24), [aiQuery, aiRole, aiSafetyMarket]);
 
   return (
     <main>
@@ -490,6 +516,45 @@ export default function Home() {
           {!foundersPledgeMarket && <p className="market-loading">{foundersPledgeError ? 'The accepted Founders Pledge matrix is temporarily unavailable.' : 'Loading accepted Founders Pledge assessments…'}</p>}
         </div>
         <p className="data-note">{foundersPledgeMarket ? `Sources retrieved ${day.format(new Date(foundersPledgeMarket.retrievedAt))}` : 'Loading source freshness…'} · Current pooled funds are separated from older published recommendations · <a href="https://www.founderspledge.com/programs" target="_blank" rel="noreferrer">Founders Pledge Funds ↗</a></p>
+      </section>
+
+      <section className="ai-safety-section" id="ai-safety-market">
+        <div className="ai-safety-heading">
+          <div><p className="kicker">THE AI SAFETY ECOSYSTEM</p><h2>Follow the field,<br />without forcing a rank.</h2></div>
+          <p>Every accepted Coefficient grant in the Navigating Transformative AI fund is mapped into an auditable, multi-label role taxonomy. Founders Pledge recommendations are overlaid as a separate signal.</p>
+        </div>
+        <div className="ai-safety-overview" aria-label="AI safety ecosystem summary">
+          <div><span>Published grants</span><strong>{aiSafetyMarket ? integer.format(aiSafetyMarket.summary.grantCount) : '—'}</strong><p>Complete accepted Coefficient fund lens.</p></div>
+          <div><span>Published amount</span><strong>{aiSafetyMarket ? compactMoney.format(aiSafetyMarket.summary.publishedAmountUsd) : '—'}</strong><p>Historical row amounts, not funding room.</p></div>
+          <div><span>Named organizations</span><strong>{aiSafetyMarket ? integer.format(aiSafetyMarket.summary.organizationCount) : '—'}</strong><p>Recipient identities in the public index.</p></div>
+          <div><span>FP overlap</span><strong>{aiSafetyMarket ? `${aiSafetyMarket.summary.foundersPledgeOverlapCount} + ${aiSafetyMarket.summary.foundersPledgeOnlyCount}` : '—'}</strong><p>Five matched recommendations and one external-only.</p></div>
+        </div>
+        <div className="ai-safety-warning"><strong>Interpretation boundary.</strong> Published grant flow is neither an effectiveness score nor current room for more funding. Categories overlap, so category totals must not be added.</div>
+        <div className="ai-role-grid">
+          {(aiSafetyMarket?.categories ?? []).map((category) => (
+            <button className={aiRole === category.key ? 'active' : ''} type="button" key={category.key} onClick={() => setAiRole(aiRole === category.key ? 'all' : category.key)}>
+              <span>{category.label}</span><strong>{compactMoney.format(category.publishedAmountUsd)}</strong><small>{integer.format(category.organizationCount)} orgs · {integer.format(category.grantCount)} grants</small>
+            </button>
+          ))}
+        </div>
+        <div className="ai-directory-controls">
+          <label><span>SEARCH ORGANIZATIONS</span><input value={aiQuery} onChange={(event) => setAiQuery(event.target.value)} placeholder="Name or role" /></label>
+          <button type="button" onClick={() => { setAiRole('all'); setAiQuery(''); }}>Clear filters</button>
+        </div>
+        <div className="ai-directory">
+          {visibleAiOrganizations.map((organization) => (
+            <article key={organization.slug}>
+              <div><span>{organization.primaryRole.replaceAll('-', ' ')}</span>{organization.foundersPledgeStatus && <b>FOUNDERS PLEDGE</b>}</div>
+              <h3><a href={organizationPath(organization.slug)}>{organization.organization}</a></h3>
+              <p>{organization.roles.map((role) => role.replaceAll('-', ' ')).join(' · ')}</p>
+              <dl><div><dt>Published flow</dt><dd>{compactMoney.format(organization.publishedAmountUsd)}</dd></div><div><dt>Grant rows</dt><dd>{integer.format(organization.grantCount)}</dd></div></dl>
+              <a href={organizationPath(organization.slug)}>Trace organization →</a>
+            </article>
+          ))}
+          {!aiSafetyMarket && <p className="market-loading">{aiSafetyError ? 'The AI safety ecosystem is temporarily unavailable.' : 'Loading the accepted AI safety taxonomy…'}</p>}
+          {aiSafetyMarket && visibleAiOrganizations.length === 0 && <p className="market-loading">No organizations match this role and search.</p>}
+        </div>
+        <p className="data-note">{aiSafetyMarket ? `Taxonomy generated ${day.format(new Date(aiSafetyMarket.generatedAt))} · showing ${integer.format(visibleAiOrganizations.length)} of ${integer.format(aiSafetyMarket.organizations.length)} organizations` : 'Loading taxonomy freshness…'} · <a href="https://coefficientgiving.org/funds/navigating-transformative-ai/" target="_blank" rel="noreferrer">Coefficient fund ↗</a></p>
       </section>
 
       <section className="renphil-section" id="renphil-market">

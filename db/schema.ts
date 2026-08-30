@@ -119,6 +119,25 @@ export const assessments = sqliteTable('assessments', {
   index('assessments_evaluator_idx').on(table.evaluatorId),
 ]);
 
+export const aiSafetyOrganizationRoles = sqliteTable('ai_safety_organization_roles', {
+  id: integer('id').primaryKey({ autoIncrement: true }),
+  sourceId: integer('source_id').notNull().references(() => sources.id),
+  organizationId: integer('organization_id').notNull().references(() => organizations.id),
+  taxonomyVersion: text('taxonomy_version').notNull(),
+  roleKey: text('role_key').notNull(),
+  primaryRole: integer('primary_role', { mode: 'boolean' }).notNull().default(false),
+  evidenceBasisJson: text('evidence_basis_json').notNull().default('[]'),
+  sourceGrantCount: integer('source_grant_count').notNull(),
+  sourceAmountUsd: real('source_amount_usd').notNull(),
+  foundersPledgeStatus: text('founders_pledge_status'),
+  limitations: text('limitations').notNull(),
+  updatedAt: integer('updated_at', { mode: 'timestamp' }).notNull(),
+}, (table) => [
+  uniqueIndex('ai_safety_roles_org_taxonomy_role_idx').on(table.organizationId, table.taxonomyVersion, table.roleKey),
+  index('ai_safety_roles_role_amount_idx').on(table.roleKey, table.sourceAmountUsd),
+  index('ai_safety_roles_source_idx').on(table.sourceId),
+]);
+
 export const assessmentMetrics = sqliteTable('assessment_metrics', {
   id: integer('id').primaryKey({ autoIncrement: true }),
   assessmentId: integer('assessment_id').notNull().references(() => assessments.id),

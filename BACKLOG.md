@@ -29,7 +29,9 @@ This backlog is ordered by donor value, data integrity, and dependency. Each ite
 
 ## Next — cross-evaluator market
 
-- [ ] **MFI-007 — GiveDirectly benchmark layer.** Encode which comparisons genuinely use cash transfers as a baseline, the welfare assumptions behind them, and incompatibility warnings.
+- [x] **MFI-007 — GiveDirectly benchmark layer.** Encode which comparisons genuinely use cash transfers as a baseline, the welfare assumptions behind them, and incompatibility warnings.
+  - [x] Store three versioned comparison objects in D1: GiveWell’s November 2025 consumption-welfare anchor (1×), its October 2024 five-country estimate of GiveDirectly’s standard Cash for Poverty Relief program (3–4× the current anchor), and its May 2026 livelihoods funding bar (6×). The ledger retains effective date, model version and URL, currency and population basis, assumptions, and limitations rather than collapsing them into one “cash” number.
+  - [x] Publish donor-facing guidance that GiveDirectly is no longer the named benchmark and that the 3–4× program estimate, 6× funding threshold, pass-through percentage, claimed local-economy multiplier, and pilot-specific estimates do not share a denominator. Verified 2026-08-29 with three identical idempotent API rows on two successive reads; 25 tests, lint, production build, eight fresh D1 migrations, SQLite integrity/foreign-key checks, a 1,280 px browser pass with no horizontal overflow, and no browser console errors. The next ready item is MFI-008, the Animal Charity Evaluators pipeline.
 - [ ] **MFI-008 — Animal Charity Evaluators pipeline.** Import the 2025 recommended-charity set, native metrics, evaluation status/year, and room-for-more-funding capacity such as The Humane League’s stated 2026–27 capacity.
 - [ ] **MFI-009 — Giving Green pipeline.** Import 2025–26 top nonprofits, strategy tags, grant announcements, evaluation narratives, and funding-need language.
 - [ ] **MFI-010 — Founders Pledge research matrix.** Map recommendations by cause, including education, climate, global health, and catastrophic risks; expose when estimates are relative to GiveDirectly.

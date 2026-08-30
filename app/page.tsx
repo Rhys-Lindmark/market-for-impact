@@ -44,6 +44,17 @@ type GiveWellMarket = {
   }>;
 };
 
+type GiveDirectlyBenchmark = {
+  retrievedAt: string;
+  benchmarks: Array<{
+    benchmarkKey: string; name: string; benchmarkType: 'welfare-anchor' | 'program-estimate' | 'funding-bar';
+    effectiveAt: string; modelVersion: string; referenceBenchmarkKey: string | null;
+    estimateLow: number; estimateHigh: number; unitName: string; unitsPerUsd: number | null;
+    currencyBasis: string; populationBasis: string; assumptions: string[]; limitations: string[];
+    modelUrl: string; sourceUrl: string; sourceTitle: string;
+  }>;
+};
+
 type RenPhilMarket = {
   source: { retrievedAt: string; url: string; coverageNote: string };
   summary: { award_count: number; declared_award_count: number; unlisted_award_count: number; missing_amount_count: number; missing_description_count: number };
@@ -66,6 +77,8 @@ export default function Home() {
   const [coefficientError, setCoefficientError] = useState(false);
   const [giveWellMarket, setGiveWellMarket] = useState<GiveWellMarket | null>(null);
   const [giveWellError, setGiveWellError] = useState(false);
+  const [giveDirectlyBenchmark, setGiveDirectlyBenchmark] = useState<GiveDirectlyBenchmark | null>(null);
+  const [giveDirectlyError, setGiveDirectlyError] = useState(false);
   const [renPhilMarket, setRenPhilMarket] = useState<RenPhilMarket | null>(null);
   const [renPhilError, setRenPhilError] = useState(false);
   const [showAllRenPhil, setShowAllRenPhil] = useState(false);
@@ -96,6 +109,12 @@ export default function Home() {
       if (!response.ok) throw new Error('GiveWell market unavailable');
       return response.json() as Promise<GiveWellMarket>;
     }).then(setGiveWellMarket).catch(() => setGiveWellError(true));
+  }, []);
+  useEffect(() => {
+    fetch('/api/givedirectly').then((response) => {
+      if (!response.ok) throw new Error('GiveDirectly benchmark unavailable');
+      return response.json() as Promise<GiveDirectlyBenchmark>;
+    }).then(setGiveDirectlyBenchmark).catch(() => setGiveDirectlyError(true));
   }, []);
   useEffect(() => {
     const params = new URLSearchParams({ page: String(explorerPage), pageSize: '12', sort: explorerSort });
@@ -224,10 +243,28 @@ export default function Home() {
           <p>GiveWell’s current Top Charities share a funding bar, but not a single donor-ready rank. We preserve each program’s evidence, native delivery unit, model version, geography, and live funding-room process.</p>
         </div>
         <div className="givewell-benchmark">
-          <div><span>Current funding bar</span><strong>{giveWellSnapshot.source.benchmark.fundingBarMultiple}× GiveWell benchmark</strong><p>Since November 2025, the benchmark is consumption-based.</p></div>
-          <div><span>GiveDirectly estimate</span><strong>{giveWellSnapshot.source.benchmark.giveDirectlyEstimatedMultipleLow}–{giveWellSnapshot.source.benchmark.giveDirectlyEstimatedMultipleHigh}× benchmark</strong><p>GiveDirectly is a useful reference point, but no longer the benchmark itself.</p></div>
-          <div><span>Published grant ledger</span><strong>{giveWellMarket ? `${integer.format(giveWellMarket.summary.grant_count)} records` : '—'}</strong><p>{giveWellMarket ? `${compactMoney.format(giveWellMarket.summary.total_amount_usd)} in accepted row amounts through July 2026.` : 'Loading accepted ledger totals…'}</p></div>
+          {(giveDirectlyBenchmark?.benchmarks ?? []).map((benchmark) => (
+            <div key={benchmark.benchmarkKey}>
+              <span>{benchmark.benchmarkType.replace('-', ' ')}</span>
+              <strong>{benchmark.estimateLow === benchmark.estimateHigh ? `${benchmark.estimateLow}×` : `${benchmark.estimateLow}–${benchmark.estimateHigh}×`} {benchmark.name}</strong>
+              <p>{benchmark.benchmarkType === 'welfare-anchor' ? 'A normalized unit of welfare—not a charity.' : benchmark.benchmarkType === 'program-estimate' ? 'GiveWell’s model of the standard cash program—not all cash transfers.' : 'A changing grantmaking threshold—not a program estimate.'}</p>
+            </div>
+          ))}
+          {!giveDirectlyBenchmark && <div className="benchmark-loading"><span>Cash comparison</span><strong>—</strong><p>{giveDirectlyError ? 'Benchmark ledger temporarily unavailable.' : 'Loading versioned benchmark definitions…'}</p></div>}
         </div>
+        {giveDirectlyBenchmark && <div className="cash-benchmark-guide">
+          <div className="cash-guide-copy">
+            <p className="kicker">READ THE MULTIPLES CORRECTLY</p>
+            <h3>GiveDirectly is a comparator.<br />It is not “1× cash.”</h3>
+            <p>GiveWell replaced its named cash benchmark in November 2025 with a consumption-based welfare anchor. Its current 3–4× figure is a model of GiveDirectly’s standard Cash for Poverty Relief program; 6× is GiveWell’s current livelihoods funding bar. They answer different questions.</p>
+            <a href={giveDirectlyBenchmark.benchmarks[0].sourceUrl} target="_blank" rel="noreferrer">Read GiveWell’s benchmark change ↗</a>
+          </div>
+          <div className="cash-guide-details">
+            <article><span>MODEL POPULATION</span><p>{giveDirectlyBenchmark.benchmarks[1].populationBasis}</p><small>{giveDirectlyBenchmark.benchmarks[1].modelVersion}</small></article>
+            <article><span>WELFARE BASIS</span><p>{giveDirectlyBenchmark.benchmarks[0].populationBasis}</p><small>Approximately {giveDirectlyBenchmark.benchmarks[0].unitsPerUsd} units per dollar.</small></article>
+            <article className="cash-warning"><span>DO NOT CROSS THE UNITS</span><p>A donation pass-through percentage and GiveDirectly’s claimed $2.50 local-economy multiplier are not cost-effectiveness multiples. Pilot estimates also use different interventions and moral weights.</p><small>Comparing them as if they shared a denominator would be false precision.</small></article>
+          </div>
+        </div>}
         <div className="givewell-cards">
           {(giveWellMarket?.opportunities ?? []).map((opportunity) => (
             <article className="givewell-card" key={opportunity.slug}>
@@ -249,7 +286,7 @@ export default function Home() {
           <p><strong>Historical metric.</strong> Cost-per-life figures are GiveWell’s reported averages for 2022–2024 directed funding—not literal outputs of the newer location-specific models.</p>
           <p><strong>Source discrepancy.</strong> {giveWellMarket ? `Accepted grant rows sum to ${money.format(giveWellMarket.summary.total_amount_usd)}, exactly $3 above Airtable’s displayed aggregate.` : 'The accepted row sum is exactly $3 above Airtable’s displayed aggregate.'} Both are preserved; neither is silently “fixed.”</p>
         </div>
-        <p className="data-note">Top Charities updated September 2025 · Cost-effectiveness framework updated May 2026 · {giveWellMarket ? `Accepted grant rows retrieved ${day.format(new Date(giveWellMarket.source.retrievedAt))}` : giveWellError ? 'Accepted ledger temporarily unavailable' : 'Loading database freshness…'} · <a href={giveWellSnapshot.source.url} target="_blank" rel="noreferrer">Primary source ↗</a></p>
+        <p className="data-note">Top Charities updated September 2025 · Cost-effectiveness framework updated May 2026 · {giveWellMarket ? `Accepted grant rows retrieved ${day.format(new Date(giveWellMarket.source.retrievedAt))}` : giveWellError ? 'Accepted ledger temporarily unavailable' : 'Loading database freshness…'} · <a href={giveWellSnapshot.source.url} target="_blank" rel="noreferrer">Top Charities ↗</a>{giveDirectlyBenchmark && <> · <a href={giveDirectlyBenchmark.benchmarks[1].modelUrl} target="_blank" rel="noreferrer">GiveDirectly model ↗</a></>}</p>
       </section>
 
       <section className="renphil-section" id="renphil-market">
@@ -395,6 +432,7 @@ export default function Home() {
         <div className="source-list">
           <a href="https://coefficientgiving.org/grant-publishing-process/" target="_blank" rel="noreferrer"><span>Coefficient Giving</span><strong>Grant publishing process and coverage</strong><b>↗</b></a>
           <a href="https://www.givewell.org/charities/top-charities" target="_blank" rel="noreferrer"><span>GiveWell</span><strong>Top charities, updated Sep 2025</strong><b>↗</b></a>
+          <a href="https://www.givewell.org/how-we-work/our-criteria/cost-effectiveness/cost-effectiveness-models" target="_blank" rel="noreferrer"><span>GiveWell</span><strong>Benchmark semantics, updated May 2026</strong><b>↗</b></a>
           <a href="https://animalcharityevaluators.org/blog/announcing-our-2025-charity-recommendations/" target="_blank" rel="noreferrer"><span>ACE</span><strong>2025 recommended charities</strong><b>↗</b></a>
           <a href="https://www.givinggreen.earth/post/2025-2026-top-climate-nonprofits" target="_blank" rel="noreferrer"><span>Giving Green</span><strong>2025–26 climate recommendations</strong><b>↗</b></a>
           <a href="https://www.founderspledge.com/research/education-evidence-and-recommendations" target="_blank" rel="noreferrer"><span>Founders Pledge</span><strong>Education evidence & recommendations</strong><b>↗</b></a>

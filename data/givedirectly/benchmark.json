@@ -1,0 +1,115 @@
+{
+  "retrievedAt": "2026-08-30T00:00:00.000Z",
+  "sources": [
+    {
+      "publisher": "GiveWell",
+      "title": "Cost-effectiveness models",
+      "url": "https://www.givewell.org/how-we-work/our-criteria/cost-effectiveness/cost-effectiveness-models",
+      "publishedAt": "2026-05-01T00:00:00.000Z",
+      "coverageNote": "Current benchmark definition, historical cash-benchmark transition, GiveDirectly estimate, and funding bar. GiveWell reports the page as updated May 2026."
+    },
+    {
+      "publisher": "GiveWell",
+      "title": "GiveDirectly's Cash for Poverty Relief program",
+      "url": "https://www.givewell.org/international/technical/programs/givedirectly-cash-for-poverty-relief-program",
+      "publishedAt": "2024-10-01T00:00:00.000Z",
+      "coverageNote": "GiveWell's October 2024 model of the standard program, including welfare weights, duration assumptions, country weighting, and uncertainty."
+    },
+    {
+      "publisher": "GiveWell",
+      "title": "GiveDirectly — Pilots of cash transfer program variations",
+      "url": "https://www.givewell.org/research/grants/GiveDirectly-Pilots-of-Cash-Transfer-Program-Variations-November-2025",
+      "publishedAt": "2026-05-01T00:00:00.000Z",
+      "coverageNote": "Pilot-specific estimates and moral weights; retained only to prevent accidental comparison with the standard program estimate."
+    },
+    {
+      "publisher": "GiveDirectly",
+      "title": "Poverty Relief",
+      "url": "https://www.givedirectly.org/poverty-relief",
+      "publishedAt": null,
+      "coverageNote": "Current organization description, program footprint, donation pass-through statement, and local-economy multiplier claim. These are not GiveWell cost-effectiveness multiples."
+    }
+  ],
+  "benchmarks": [
+    {
+      "benchmarkKey": "givewell-consumption-benchmark-2025-11",
+      "sourceUrl": "https://www.givewell.org/how-we-work/our-criteria/cost-effectiveness/cost-effectiveness-models",
+      "name": "GiveWell consumption benchmark",
+      "benchmarkType": "welfare-anchor",
+      "effectiveAt": "2025-11-01T00:00:00.000Z",
+      "modelVersion": "November 2025",
+      "referenceBenchmarkKey": null,
+      "estimateLow": 1,
+      "estimateHigh": 1,
+      "unitName": "benchmark multiple",
+      "unitsPerUsd": 0.003,
+      "currencyBasis": "2017 purchasing-power-parity dollars; extreme-poverty reference consumption of $2.15 per person per day",
+      "populationBasis": "One unit of value is doubling one person's consumption for one year from the $2.15/day reference level.",
+      "assumptions": [
+        "Consumption has diminishing marginal utility.",
+        "A proportional consumption gain has the same welfare value at different starting consumption levels.",
+        "The published 0.003 units per US dollar is approximate."
+      ],
+      "limitations": [
+        "This is a normalized welfare anchor, not a charity or program estimate.",
+        "It replaced GiveDirectly as the named benchmark in November 2025.",
+        "GiveWell says the old 1x cash and new 1x benchmark are similar in absolute value for continuity, but they are not the same referent."
+      ],
+      "modelUrl": "https://docs.google.com/spreadsheets/d/1o0l0xucYBa8rjVKwDHh_K5PZTN6GeoenaKz77bTMXa4/edit?gid=1110574950"
+    },
+    {
+      "benchmarkKey": "givewell-givedirectly-cpr-2024",
+      "sourceUrl": "https://www.givewell.org/international/technical/programs/givedirectly-cash-for-poverty-relief-program",
+      "name": "GiveDirectly Cash for Poverty Relief",
+      "benchmarkType": "program-estimate",
+      "effectiveAt": "2024-10-01T00:00:00.000Z",
+      "modelVersion": "October 2024 five-country aggregate",
+      "referenceBenchmarkKey": "givewell-consumption-benchmark-2025-11",
+      "estimateLow": 3,
+      "estimateHigh": 4,
+      "unitName": "GiveWell benchmark multiple",
+      "unitsPerUsd": null,
+      "currencyBasis": "Modeled US-dollar program costs and consumption gains; compared with GiveWell's November 2025 consumption benchmark",
+      "populationBasis": "Expected marginal donations across modeled programs in Kenya, Malawi, Mozambique, Rwanda, and Uganda.",
+      "assumptions": [
+        "Household gains are shared evenly.",
+        "Consumption gains last ten years and fade over time.",
+        "Future consumption is discounted at 4% per year.",
+        "Under-five mortality benefits are valued at 116 consumption-doubling years in the standard model.",
+        "The aggregate is weighted by GiveWell's expectation of how marginal donations would be allocated across five countries."
+      ],
+      "limitations": [
+        "This is GiveWell's evaluator-model output, not GiveDirectly's own claim and not a result for every cash-transfer program.",
+        "The model predates GiveDirectly's current listing of the Democratic Republic of Congo in its flagship footprint.",
+        "The estimate is highly sensitive to uncertain long-run consumption effects and moral weights.",
+        "Do not compare it with GiveDirectly's donation pass-through percentage or claimed $2.50 local-economy multiplier; those measure different things.",
+        "Do not substitute the separate 4–6x pilot estimate or 12x pilot-optionality estimate; those use different interventions and moral weights."
+      ],
+      "modelUrl": "https://docs.google.com/spreadsheets/d/1LqkkwWCud9qGjSJmw9re6DIm5ocpPOaqOJ-KIEVLppk/edit?gid=1755045987"
+    },
+    {
+      "benchmarkKey": "givewell-livelihoods-funding-bar-2026-05",
+      "sourceUrl": "https://www.givewell.org/how-we-work/our-criteria/cost-effectiveness/cost-effectiveness-models",
+      "name": "GiveWell current funding bar",
+      "benchmarkType": "funding-bar",
+      "effectiveAt": "2026-05-01T00:00:00.000Z",
+      "modelVersion": "May 2026",
+      "referenceBenchmarkKey": "givewell-consumption-benchmark-2025-11",
+      "estimateLow": 6,
+      "estimateHigh": 6,
+      "unitName": "GiveWell benchmark multiple",
+      "unitsPerUsd": null,
+      "currencyBasis": "Same normalized welfare basis as the November 2025 consumption benchmark",
+      "populationBasis": "GiveWell's current marginal grantmaking threshold for livelihoods programs.",
+      "assumptions": [
+        "The bar reflects GiveWell's expected grantmaking funds and the opportunities available to it."
+      ],
+      "limitations": [
+        "This is a funding decision threshold, not an estimate of any program's impact.",
+        "GiveWell may change the bar as available funding or the opportunity set changes.",
+        "A multiple above or below the bar is not a precise rank and remains highly uncertain."
+      ],
+      "modelUrl": "https://docs.google.com/spreadsheets/d/1o0l0xucYBa8rjVKwDHh_K5PZTN6GeoenaKz77bTMXa4/edit?gid=1110574950"
+    }
+  ]
+}

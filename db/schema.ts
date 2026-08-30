@@ -201,3 +201,32 @@ export const impactConversionModels = sqliteTable('impact_conversion_models', {
   index('impact_conversion_models_status_target_idx').on(table.status, table.targetUnit),
   index('impact_conversion_models_evaluator_idx').on(table.evaluatorId),
 ]);
+
+export const fundingTranches = sqliteTable('funding_tranches', {
+  id: integer('id').primaryKey({ autoIncrement: true }),
+  assessmentId: integer('assessment_id').notNull().references(() => assessments.id),
+  trancheKey: text('tranche_key').notNull(),
+  evaluatorSlug: text('evaluator_slug').notNull(),
+  cause: text('cause').notNull(),
+  status: text('status').notNull(),
+  amountUsd: real('amount_usd'),
+  capacityUsd: real('capacity_usd'),
+  timeWindow: text('time_window').notNull(),
+  fundingUse: text('funding_use').notNull(),
+  confidenceLabel: text('confidence_label').notNull(),
+  confidenceBasis: text('confidence_basis').notNull(),
+  marginalMetricName: text('marginal_metric_name'),
+  marginalMetricValue: real('marginal_metric_value'),
+  marginalMetricUnit: text('marginal_metric_unit'),
+  likelyCounterfactualFunder: text('likely_counterfactual_funder'),
+  counterfactualBasis: text('counterfactual_basis').notNull(),
+  modelVersion: text('model_version').notNull(),
+  referenceUrl: text('reference_url').notNull(),
+  limitations: text('limitations').notNull(),
+  updatedAt: integer('updated_at', { mode: 'timestamp' }).notNull(),
+}, (table) => [
+  uniqueIndex('funding_tranches_key_idx').on(table.trancheKey),
+  index('funding_tranches_status_window_idx').on(table.status, table.timeWindow),
+  index('funding_tranches_evaluator_cause_idx').on(table.evaluatorSlug, table.cause),
+  index('funding_tranches_assessment_idx').on(table.assessmentId),
+]);

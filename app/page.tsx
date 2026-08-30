@@ -157,6 +157,22 @@ type ComparableImpact = {
   boundaries: Array<{ label: string; nativeUnit: string; status: string; reason: string }>;
 };
 
+type FundingTrancheMarket = {
+  version: string; updatedAt: string;
+  interpretation: { tranche: string; amount: string; curve: string; counterfactual: string };
+  methodologySources: Array<{ publisher: string; title: string; url: string }>;
+  summary: { trancheCount: number; currentNumericCount: number; amountUnpublishedCount: number; staleCount: number; closedCount: number };
+  periods: Array<{ timeWindow: string; trancheCount: number; amountUsd: number }>;
+  statuses: Array<{ status: string; trancheCount: number }>;
+  tranches: Array<{
+    trancheKey: string; evaluatorSlug: string; evaluator: string; organization: string; organizationSlug: string;
+    cause: string; status: string; amountUsd: number | null; capacityUsd: number | null; timeWindow: string;
+    use: string; confidenceLabel: string; confidenceBasis: string; marginalMetricName: string | null;
+    marginalMetricValue: number | null; marginalMetricUnit: string | null; likelyCounterfactualFunder: string | null;
+    counterfactualBasis: string; modelVersion: string; sourceUrl: string; limitations: string;
+  }>;
+};
+
 const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
 const compactMoney = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 2 });
 const integer = new Intl.NumberFormat('en-US');
@@ -199,6 +215,11 @@ export default function Home() {
   const [cgIncomeGain, setCgIncomeGain] = useState(10);
   const [cgYears, setCgYears] = useState(5);
   const [cgCost, setCgCost] = useState(100000);
+  const [fundingTranches, setFundingTranches] = useState<FundingTrancheMarket | null>(null);
+  const [fundingTranchesError, setFundingTranchesError] = useState(false);
+  const [fundingView, setFundingView] = useState<'numeric' | 'unpriced' | 'boundary'>('numeric');
+  const [fundingPeriod, setFundingPeriod] = useState('annual, 2026–2027');
+  const [fundingEvaluator, setFundingEvaluator] = useState('all');
   const [showAllRenPhil, setShowAllRenPhil] = useState(false);
   const [explorer, setExplorer] = useState<CoefficientExplorer | null>(null);
   const [explorerError, setExplorerError] = useState(false);
@@ -210,6 +231,12 @@ export default function Home() {
   const [explorerQuery, setExplorerQuery] = useState('');
   const [explorerPage, setExplorerPage] = useState(1);
   const [explorerRefresh, setExplorerRefresh] = useState(0);
+  useEffect(() => {
+    fetch('/api/funding-tranches').then((response) => {
+      if (!response.ok) throw new Error('Funding tranches unavailable');
+      return response.json() as Promise<FundingTrancheMarket>;
+    }).then(setFundingTranches).catch(() => setFundingTranchesError(true));
+  }, []);
   useEffect(() => {
     fetch('/api/comparable-impact').then((response) => {
       if (!response.ok) throw new Error('Comparable-impact model unavailable');
@@ -365,6 +392,14 @@ export default function Home() {
   const qalyHighCost = selectedQalyOpportunity ? selectedQalyOpportunity.costPerLifeSavedUsd / 20 : null;
   const cgValue = 50000 * cgPeople * Math.log1p(cgIncomeGain / 100) * cgYears;
   const cgSroi = cgValue / cgCost;
+  const visibleFundingTranches = useMemo(() => (fundingTranches?.tranches ?? []).filter((tranche) => {
+    if (fundingEvaluator !== 'all' && tranche.evaluatorSlug !== fundingEvaluator) return false;
+    if (fundingView === 'numeric') return tranche.status === 'published-numeric-current-period' && tranche.timeWindow === fundingPeriod;
+    if (fundingView === 'unpriced') return ['accepting-amount-unpublished', 'rolling-allocation-amount-unpublished', 'qualitative-need-amount-unpublished', 'published-recommendation-gap-unpublished'].includes(tranche.status);
+    return ['stale-published-gap', 'closed-or-contact-required'].includes(tranche.status);
+  }), [fundingEvaluator, fundingPeriod, fundingTranches, fundingView]);
+  const visibleFundingTotal = visibleFundingTranches.reduce((sum, tranche) => sum + (tranche.amountUsd ?? 0), 0);
+  const visibleFundingMax = Math.max(1, ...visibleFundingTranches.map((tranche) => tranche.amountUsd ?? 0));
 
   return (
     <main>
@@ -377,6 +412,7 @@ export default function Home() {
           <a href="#opportunities">Opportunities</a>
           <a href="#evaluator-comparison">Compare evaluators</a>
           <a href="#impact-lab">Translate impact</a>
+          <a href="#funding-curve">Funding room</a>
           <a href="#flows">Funding flows</a>
           <a href="#methodology">Methodology</a>
         </nav>
@@ -531,6 +567,56 @@ export default function Home() {
           <p className="data-note">D1 reconciled · model registry {comparableImpact.version} · retrieved {day.format(new Date(comparableImpact.updatedAt))} · formulas, assumptions, and boundaries are versioned independently of native assessment rows</p>
         </>}
         {!comparableImpact && <p className="market-loading">{comparableImpactError ? 'The comparable-impact registry is temporarily unavailable.' : 'Loading versioned formulas and native metrics…'}</p>}
+      </section>
+
+      <section className="funding-curve-section" id="funding-curve">
+        <div className="funding-curve-heading">
+          <div><p className="kicker">MARGINAL FUNDING CURVE · V0.1</p><h2>The next dollar needs<br />a specific job.</h2></div>
+          <p>Room for more funding is not one permanent organization score. Each row below is one source-backed amount, period, use, confidence statement, and counterfactual-funder field. Missing evidence stays missing.</p>
+        </div>
+        {fundingTranches && <>
+          <div className="funding-curve-summary" aria-label="Funding tranche coverage summary">
+            <div><span>TRANCHES MODELED</span><strong>{fundingTranches.summary.trancheCount}</strong><small>Across four evaluators</small></div>
+            <div><span>CURRENT NUMERIC</span><strong>{fundingTranches.summary.currentNumericCount}</strong><small>ACE annual room only</small></div>
+            <div><span>AMOUNT UNPUBLISHED</span><strong>{fundingTranches.summary.amountUnpublishedCount}</strong><small>Unknown is not zero</small></div>
+            <div><span>STALE / CLOSED</span><strong>{fundingTranches.summary.staleCount + fundingTranches.summary.closedCount}</strong><small>Excluded from live totals</small></div>
+          </div>
+          <div className="funding-curve-controls">
+            <div role="tablist" aria-label="Choose funding evidence state">
+              <button type="button" role="tab" aria-selected={fundingView === 'numeric'} className={fundingView === 'numeric' ? 'active' : ''} onClick={() => { setFundingView('numeric'); setFundingEvaluator('all'); }}>Numeric room</button>
+              <button type="button" role="tab" aria-selected={fundingView === 'unpriced'} className={fundingView === 'unpriced' ? 'active' : ''} onClick={() => { setFundingView('unpriced'); setFundingEvaluator('all'); }}>Amount unpublished</button>
+              <button type="button" role="tab" aria-selected={fundingView === 'boundary'} className={fundingView === 'boundary' ? 'active' : ''} onClick={() => { setFundingView('boundary'); setFundingEvaluator('all'); }}>Stale or closed</button>
+            </div>
+            <label>Evaluator<select aria-label="Filter funding tranches by evaluator" value={fundingEvaluator} onChange={(event) => setFundingEvaluator(event.target.value)}><option value="all">All represented</option>{[...new Map(fundingTranches.tranches.map((item) => [item.evaluatorSlug, item.evaluator])).entries()].map(([slug, name]) => <option value={slug} key={slug}>{name}</option>)}</select></label>
+          </div>
+          {fundingView === 'numeric' && <div className="funding-period-tabs" role="tablist" aria-label="Choose funding-room period">{fundingTranches.periods.map((period) => <button type="button" role="tab" aria-selected={fundingPeriod === period.timeWindow} className={fundingPeriod === period.timeWindow ? 'active' : ''} key={period.timeWindow} onClick={() => setFundingPeriod(period.timeWindow)}><span>{period.timeWindow}</span><strong>{compactMoney.format(period.amountUsd)}</strong><small>{period.trancheCount} separate annual tranches</small></button>)}</div>}
+          <div className="funding-curve-readout">
+            <div><span>{fundingView === 'numeric' ? 'DISCLOSED ROOM IN THIS PERIOD' : fundingView === 'unpriced' ? 'OPEN OR LIVE, AMOUNT NOT PUBLISHED' : 'NOT IN THE LIVE FUNDING TOTAL'}</span><strong>{fundingView === 'numeric' ? compactMoney.format(visibleFundingTotal) : integer.format(visibleFundingTranches.length)}</strong></div>
+            <p>{fundingView === 'numeric' ? 'This total stays inside one ACE annual period. It is not combined with the other cohort, stale climate evidence, grants, or annual capacity.' : fundingView === 'unpriced' ? 'These opportunities may be donor-relevant, but the accepted source does not support a numeric marginal tranche.' : 'A stale figure remains visible for auditability; a closed or contact-only vehicle is not shown as accepting donations.'}</p>
+          </div>
+          <div className="funding-tranche-list">
+            {visibleFundingTranches.map((tranche, index) => <article className={`funding-tranche ${tranche.status}`} key={tranche.trancheKey}>
+              <div className="tranche-index"><span>{String(index + 1).padStart(2, '0')}</span><b>{tranche.evaluator}</b></div>
+              <div className="tranche-main">
+                <div className="tranche-title"><div><span>{tranche.cause} · {tranche.status.replaceAll('-', ' ')}</span><h3>{tranche.organization}</h3></div><strong>{tranche.amountUsd == null ? 'Amount not published' : compactMoney.format(tranche.amountUsd)}</strong></div>
+                {tranche.amountUsd != null && <div className="tranche-bar" aria-label={`${tranche.organization} amount relative to largest visible tranche`}><i style={{ width: `${Math.max(3, tranche.amountUsd / visibleFundingMax * 100)}%` }} /></div>}
+                <dl>
+                  <div><dt>Time window</dt><dd>{tranche.timeWindow}</dd></div>
+                  <div><dt>Intended use</dt><dd>{tranche.use}</dd></div>
+                  <div><dt>Marginal evidence</dt><dd>{tranche.marginalMetricValue == null ? tranche.marginalMetricName ?? 'No numeric marginal metric published' : `${integer.format(tranche.marginalMetricValue)} ${tranche.marginalMetricUnit}`}</dd></div>
+                  <div><dt>Confidence</dt><dd>{tranche.confidenceLabel}</dd></div>
+                  <div><dt>Likely counterfactual funder</dt><dd>{tranche.likelyCounterfactualFunder ?? 'Not published'}</dd></div>
+                </dl>
+                <p>{tranche.counterfactualBasis}</p>
+                <a href={tranche.sourceUrl} target="_blank" rel="noreferrer">Inspect the source tranche ↗</a>
+              </div>
+            </article>)}
+            {visibleFundingTranches.length === 0 && <p className="funding-empty">No tranches match this evidence state and evaluator.</p>}
+          </div>
+          <div className="funding-curve-method"><span>CURVE RULES</span><p><strong>Tranche.</strong> {fundingTranches.interpretation.tranche}</p><p><strong>Amount.</strong> {fundingTranches.interpretation.amount}</p><p><strong>Counterfactual.</strong> {fundingTranches.interpretation.counterfactual}</p></div>
+          <p className="data-note">D1 reconciled · {fundingTranches.version} · refreshed {day.format(new Date(fundingTranches.updatedAt))} · period totals are deliberately non-additive</p>
+        </>}
+        {!fundingTranches && <p className="market-loading">{fundingTranchesError ? 'The funding-tranche market is temporarily unavailable.' : 'Reconciling marginal funding evidence…'}</p>}
       </section>
 
       <section className="givewell-section" id="givewell-market">

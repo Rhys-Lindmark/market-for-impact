@@ -28,6 +28,7 @@ This is research infrastructure, not financial, tax, or individualized giving ad
 - Animal Charity Evaluators’ 10 current Recommended Charities, including five 2025 reviews and five retained 2024 recommendations, with 28 program-level native metrics, evaluation vintages, uncertainty ranges, annual funding capacity, and incremental room for more funding preserved in D1.
 - Giving Green’s five current 2025–2026 Top Climate Nonprofits and complete 29-row grant announcement, with strategy tags, qualitative evaluation cases, funding-need language, and $26.063M of planned grants preserved without treating grant size as rank or disbursement.
 - A Founders Pledge research matrix spanning 12 funds, programs, and published organization recommendations across education, climate, global health, and catastrophic risks, with current-vs-historical status and evaluation method kept explicit.
+- An AI safety ecosystem map spanning all 630 accepted Coefficient Navigating Transformative AI grants, $972.185M in published row amounts, 285 named organizations, and seven auditable multi-label roles, with five matched and one external-only Founders Pledge organization recommendations shown separately.
 - Renaissance Philanthropy’s 28 currently linked 2025 AI for Math awards, reconciled against its stated 29-award portfolio with one explicit coverage gap and no inferred row-level amounts.
 - Stable grant detail URLs across all current Coefficient, GiveWell, Giving Green, and RenPhil ledgers, plus organization profiles that separate received, advised, and originated funding roles and display evaluator evidence when available.
 - Auditable many-to-many grant/organization roles and source-specific name aliases, including all named recipients in Coefficient’s three multi-recipient records without splitting or duplicating grant amounts.
@@ -167,6 +168,17 @@ npm run data:founders-pledge:refresh  # review upstream claims before committing
 ```
 
 Only Imagine Worldwide carries an explicit GiveDirectly-relative estimate: 11× in Founders Pledge’s November 2023 education model. That figure is displayed with its model date and limitations, including the 17% replicability adjustment and assumptions about government take-up and persistence. TaRL Africa’s native learning-gain range remains in standard deviations per donated dollar, while pooled climate and catastrophic-risk funds retain qualitative, hits-based evidence. No numeric current funding gap is inferred for any matrix row. GitHub checks nine official pages hourly for the reviewed claims and recommendation set.
+
+### AI safety ecosystem
+
+The AI safety snapshot classifies every accepted Coefficient grant tagged `Navigating Transformative AI` using visible purpose keywords and a reviewed organization-role map. Roles are multi-label—technical safety, governance and policy, evaluations and auditing, biosecurity overlap, field-building, effective careers, or unclassified—and category totals are intentionally non-additive.
+
+```bash
+npm run data:ai-safety:check
+npm run data:ai-safety:build  # review taxonomy changes before committing
+```
+
+Unmatched rows remain unclassified rather than receiving a guessed role. Historical published amounts describe the field’s disclosed funding flow; they are not effectiveness scores or current room for more funding. Founders Pledge recommendations are overlaid as a distinct signal, with reviewed aliases retained in the snapshot and its external-only IBBIS recommendation kept visible.
 
 ## Data and citation rules
 

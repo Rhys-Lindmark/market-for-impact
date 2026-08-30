@@ -25,6 +25,8 @@ const compactMoney = new Intl.NumberFormat('en-US', { style: 'currency', currenc
 
 const outcomeLabels = new Map(sfOutcomes.outcomes.map((outcome) => [outcome.key, outcome.label]));
 const candidates = [...sfDiligence.candidates].sort((a, b) => a.name.localeCompare(b.name));
+const hamiltonCandidate = sfDiligence.candidates.find((candidate) => candidate.key === 'hamilton-families');
+const hamiltonDossier = hamiltonCandidate && 'evidenceDossier' in hamiltonCandidate ? hamiltonCandidate.evidenceDossier : null;
 
 const researchGates = [
   { number: '01', title: 'Verify the entity', copy: 'Confirm the legal entity, donation vehicle, EIN, service geography, and which program a gift would support.' },
@@ -110,6 +112,51 @@ export default function SanFranciscoDonorPage() {
             </details>
           ))}
         </div>
+        {hamiltonDossier ? (
+          <article className="sf-evidence-dossier" aria-labelledby="hamilton-dossier-title">
+            <header>
+              <div><p className="kicker">FIRST DEEP EVIDENCE DOSSIER · NOT RANKED</p><h3 id="hamilton-dossier-title">Hamilton Families</h3></div>
+              <div className="sf-dossier-decision"><span>Decision state</span><strong>{hamiltonDossier.decisionState}</strong><small>Reviewed {hamiltonDossier.reviewedAt}</small></div>
+            </header>
+            <p className="sf-dossier-summary">{hamiltonDossier.decisionSummary}</p>
+
+            <section className="sf-dossier-reported" aria-labelledby="hamilton-reported-title">
+              <div className="sf-dossier-section-heading"><span>01 · Organization-reported</span><h4 id="hamilton-reported-title">What Hamilton says happened in {hamiltonDossier.organizationReported.period}</h4><p>These are decision inputs, not causal estimates. Open each metric’s limitation before comparing it with external evidence.</p></div>
+              <div className="sf-dossier-metrics">
+                {hamiltonDossier.organizationReported.outcomes.map((outcome) => (
+                  <div key={outcome.label}><strong>{outcome.value}</strong><h5>{outcome.label}</h5><small>{outcome.claimType}</small><p>{outcome.limitation}</p></div>
+                ))}
+              </div>
+              <div className="sf-dossier-financials">
+                <div><span>Revenue</span><strong>{compactMoney.format(hamiltonDossier.organizationReported.financials.revenueUsd)}</strong><small>{compactMoney.format(hamiltonDossier.organizationReported.financials.governmentRevenueUsd)} government · {compactMoney.format(hamiltonDossier.organizationReported.financials.privateRevenueUsd)} private</small></div>
+                <div><span>Expenses</span><strong>{compactMoney.format(hamiltonDossier.organizationReported.financials.expensesUsd)}</strong><small>{compactMoney.format(hamiltonDossier.organizationReported.financials.programExpensesUsd)} program · {compactMoney.format(hamiltonDossier.organizationReported.financials.administrationExpensesUsd)} administration</small></div>
+                <p>{hamiltonDossier.organizationReported.financials.boundary}</p>
+                <a href={hamiltonDossier.organizationReported.source.url} target="_blank" rel="noreferrer">Hamilton Families: 2025 Annual Report ↗</a>
+              </div>
+            </section>
+
+            <section className="sf-dossier-ladder" aria-labelledby="hamilton-ladder-title">
+              <div className="sf-dossier-section-heading"><span>02 · Evidence ladder</span><h4 id="hamilton-ladder-title">Relevant evidence is not interchangeable.</h4><p>Hamilton-specific research, a partner trial, and external intervention studies answer different questions. Transfer limits stay attached to every finding.</p></div>
+              <div className="sf-evidence-layers">
+                {hamiltonDossier.evidenceLayers.map((layer, index) => (
+                  <article key={layer.title}>
+                    <header><span>{String(index + 1).padStart(2, '0')} · {layer.scope}</span><b>{layer.status}</b></header>
+                    <h5>{layer.title}</h5>
+                    <small>{layer.publisher} · {layer.design}</small>
+                    <p>{layer.finding}</p>
+                    <dl><dt>Decision use</dt><dd>{layer.decisionUse}</dd><dt>Transfer limit</dt><dd>{layer.transferLimit}</dd></dl>
+                    <a href={layer.url} target="_blank" rel="noreferrer">Open source ↗</a>
+                  </article>
+                ))}
+              </div>
+            </section>
+
+            <section className="sf-dossier-gaps" aria-labelledby="hamilton-gaps-title">
+              <div><span>03 · What still blocks a recommendation</span><h4 id="hamilton-gaps-title">The next conversation needs to price the next dollar.</h4></div>
+              <ol>{hamiltonDossier.missingForRecommendation.map((gap) => <li key={gap}>{gap}</li>)}</ol>
+            </section>
+          </article>
+        ) : null}
         <p className="sf-brief-disclaimer"><strong>Important:</strong> inclusion means “selected for initial diligence,” not “recommended.” The cohort is intentionally small and does not yet represent the full Bay Area nonprofit field.</p>
       </section>
 

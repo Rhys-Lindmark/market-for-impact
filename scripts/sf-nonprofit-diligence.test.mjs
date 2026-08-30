@@ -42,3 +42,18 @@ test('accepted grant ledgers are cross-checked without fuzzy identity merging', 
   const hac = snapshot.candidates.find((row) => row.key === 'housing-action-coalition');
   assert.deepEqual(hac.acceptedGrantLedgerMatches, [{ publisher: 'Coefficient Giving', recordId: 'grants-36116-0', name: 'Housing Action Coalition' }]);
 });
+
+test('Hamilton dossier separates reported results from external evidence and unresolved donor questions', () => {
+  const hamilton = snapshot.candidates.find((row) => row.key === 'hamilton-families');
+  const dossier = hamilton.evidenceDossier;
+  assert.match(dossier.decisionState, /blocked/);
+  assert.equal(dossier.organizationReported.outcomes.length, 4);
+  assert.equal(dossier.organizationReported.financials.revenueUsd, 17410740);
+  assert.equal(dossier.organizationReported.financials.governmentRevenueUsd + dossier.organizationReported.financials.privateRevenueUsd + dossier.organizationReported.financials.investmentAndOtherRevenueUsd, dossier.organizationReported.financials.revenueUsd);
+  assert.equal(dossier.organizationReported.financials.programExpensesUsd + dossier.organizationReported.financials.fundraisingExpensesUsd + dossier.organizationReported.financials.administrationExpensesUsd, dossier.organizationReported.financials.expensesUsd);
+  assert.equal(dossier.evidenceLayers.length, 4);
+  assert.match(dossier.evidenceLayers.find((layer) => layer.publisher === 'Urban Institute').transferLimit, /not an outcome impact evaluation/i);
+  assert.equal(dossier.evidenceLayers.find((layer) => layer.publisher === 'Housing Solutions Lab').status, 'results pending');
+  assert.match(dossier.evidenceLayers.find((layer) => layer.title === 'Family Options Study').transferLimit, /not Hamilton-specific/i);
+  assert.ok(dossier.missingForRecommendation.some((gap) => /marginal plan/i.test(gap)));
+});

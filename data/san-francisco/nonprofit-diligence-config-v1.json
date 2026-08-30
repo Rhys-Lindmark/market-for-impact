@@ -1,6 +1,6 @@
 {
-  "version": "sf-nonprofit-diligence-config-v0.3",
-  "generatedAt": "2026-08-30T16:45:00.000Z",
+  "version": "sf-nonprofit-diligence-config-v0.4",
+  "generatedAt": "2026-08-30T20:15:00.000Z",
   "geography": "San Francisco, California",
   "coverageNote": "An intentionally incomplete first diligence cohort chosen to test direct service, advocacy, LGBTQ+ community support, food security, housing, and multi-service models. Inclusion is not a recommendation.",
   "rules": {
@@ -282,7 +282,105 @@
       "sources": [
         {"publisher": "SF LGBT Center", "title": "The Center: impact and financial transparency", "url": "https://www.sfcenter.org/the-center/", "publishedAt": null, "period": "Current page; 2025 review and FY2024 audit linked", "retrievedAt": "2026-08-30"},
         {"publisher": "SF LGBT Center", "title": "FY2024 audited financial statements", "url": "https://www.sfcenter.org/wp-content/uploads/2024/12/sf-lgbt-community-center-fy-2024-audited-financial-statements.pdf", "publishedAt": null, "period": "Year ended 2024-06-30", "retrievedAt": "2026-08-30"}
-      ]
+      ],
+      "evidenceDossier": {
+        "reviewedAt": "2026-08-30",
+        "reportingName": "the Center",
+        "scope": "The SF LGBT Center's employment, financial, housing-navigation, and youth mental-health services; not every cultural, community, facility, or advocacy activity.",
+        "decisionState": "deeper diligence; recommendation blocked",
+        "decisionSummary": "The Center publishes unusually legible service counts and has invested in a center-wide measurement framework. Its strongest reported economic outcomes—living-wage job placements and first-time home purchases—still lack common follow-up, comparison rates, program-level cost, and a marginal funding plan. External research supports testing specific employment and youth-housing components, not assigning impact to the Center's broad portfolio.",
+        "organizationReported": {
+          "period": "Calendar year 2024",
+          "source": {"publisher": "SF LGBT Center", "title": "2024 Year in Review", "url": "https://www.sfcenter.org/wp-content/uploads/2025/03/final-center-year-in-review-2024.pdf", "publishedAt": "2025-03-01", "retrievedAt": "2026-08-30"},
+          "outcomes": [
+            {"label": "LGBTQ+ job seekers receiving employment support", "value": "400+", "claimType": "organization-reported output", "limitation": "The report combines drop-in support, workshops, mentorship, and one-to-one assistance without a unique-service intensity or comparison-group denominator."},
+            {"label": "Community members securing living-wage employment", "value": "30+", "claimType": "organization-reported outcome", "limitation": "The report does not define the wage threshold, follow-up window, job retention, baseline placement rate, or which services preceded each placement."},
+            {"label": "First-time homebuyers", "value": "20", "claimType": "organization-reported outcome", "limitation": "The report does not identify the counterfactual purchase rate, time to close, Center-attributable contribution, or cost per additional homebuyer."},
+            {"label": "Gender-affirming youth mental-health support", "value": "1,000 hours", "claimType": "organization-reported output", "limitation": "Hours delivered are not a mental-health outcome; the report does not publish a validated symptom or well-being measure with follow-up."}
+          ],
+          "financials": {
+            "revenueUsd": 6541449,
+            "governmentGrantsUsd": 3624466,
+            "donationsUsd": 861473,
+            "foundationAndCorporateUsd": 981912,
+            "fundraisingEventsUsd": 216602,
+            "facilityRentalUsd": 832458,
+            "programRevenueUsd": 24538,
+            "expensesUsd": 6582045,
+            "programExpensesUsd": 4985851,
+            "fundraisingExpensesUsd": 1040197,
+            "administrationExpensesUsd": 555997,
+            "economicDevelopmentExpensesUsd": 1288262,
+            "communityProgramExpensesUsd": 1309922,
+            "buildingServicesExpensesUsd": 1136109,
+            "youthProgramExpensesUsd": 1251558,
+            "revenueNote": "$3.62M government grants · $2.06M donations/foundations/events · $0.86M facility and program revenue",
+            "expenseNote": "$4.99M program · $0.56M management · $1.04M fundraising",
+            "boundary": "FY2024 organization-wide audited totals allocate expenses across four broad program families. They do not reveal cost per retained job, additional homebuyer, sustained housing outcome, or improved youth mental health; government grants supplied 55% of reported revenue and require program-level displacement analysis."
+          }
+        },
+        "evidenceLayers": [
+          {
+            "scope": "organization-specific formative evaluation",
+            "publisher": "SF LGBT Center and Intention 2 Impact",
+            "title": "2024–2025 Monitoring, Evaluation, and Learning framework",
+            "publishedAt": null,
+            "retrievedAt": "2026-08-30",
+            "design": "center-wide theory-of-change process with surveys, focus groups, and interviews involving 248 community members",
+            "status": "published",
+            "finding": "Participants described the Center as safe, affirming, culturally competent, and important for connection; the process produced a theory of change and a commitment to collect and share outcomes regularly.",
+            "decisionUse": "Establishes participant-valued mechanisms and a concrete measurement roadmap that future grants can attach to.",
+            "transferLimit": "The Center commissioned and published the work; it is a formative, self-selected mixed-methods evaluation without a comparison group, quantified durable outcomes, program costs, or donor counterfactual.",
+            "url": "https://www.sfcenter.org/center-updates/theory-of-change/"
+          },
+          {
+            "scope": "external employment evidence",
+            "publisher": "Campbell Collaboration",
+            "title": "Interventions to improve the labour market outcomes of youth",
+            "publishedAt": "2017-12-04",
+            "retrievedAt": "2026-08-30",
+            "design": "systematic review of 107 experimental or quasi-experimental interventions in 31 countries",
+            "status": "published",
+            "finding": "Youth employment programs produced small average gains with substantial variation; entrepreneurship promotion and skills training showed positive effects, while employment-service effects were negligible or statistically insignificant on average.",
+            "decisionUse": "Supports separating the Center's training, entrepreneurship, coaching, career-fair, and placement components and measuring retained employment and earnings by component.",
+            "transferLimit": "The review was not LGBTQ+-specific, mixed high- and lower-income settings, and does not identify the effect of the Center's employment services or San Francisco labor-market context.",
+            "url": "https://www.campbellcollaboration.org/review/improving-youth-labour-market-outcomes/"
+          },
+          {
+            "scope": "external youth housing evidence",
+            "publisher": "Research on Social Work Practice",
+            "title": "Housing and Support Interventions for Homeless Youth in High-Income Countries",
+            "publishedAt": "2026-02-09",
+            "retrievedAt": "2026-08-30",
+            "design": "systematic review of five North American counterfactual studies reported across 19 papers",
+            "status": "published",
+            "finding": "Some interventions improved housing stability in the short term, but effects often diminished; health, social, education, and employment estimates were mixed or imprecise.",
+            "decisionUse": "Identifies durable housing stability, service intensity, fidelity, and 6- to 24-month follow-up as requirements for evaluating youth housing-navigation support.",
+            "transferLimit": "The studies had non-ignorable risk of bias, heterogeneous measures prevented synthesis, and subgroup evidence for gender and sexual minority youth remained insufficient; none evaluated the Center.",
+            "url": "https://journals.sagepub.com/doi/full/10.1177/10497315251415139"
+          },
+          {
+            "scope": "external discrimination-intervention evidence",
+            "publisher": "Human Resource Management Review",
+            "title": "A systematic review of experimental evidence on interventions against bias and discrimination in organizations",
+            "publishedAt": "2024-09-01",
+            "retrievedAt": "2026-08-30",
+            "design": "systematic review of 116 experimental papers covering 159 interventions from 2000–2022",
+            "status": "published",
+            "finding": "Structural interventions and structured procedures or interactions showed promise for reducing bias affecting sexual minorities; exposure interventions also produced positive effects in some settings.",
+            "decisionUse": "Suggests that employer-facing process changes may be a distinct intervention worth measuring alongside job-seeker coaching and placement.",
+            "transferLimit": "The review spans several protected characteristics, interventions, settings, and intermediate bias measures; it does not establish employment or earnings effects for the Center's clients.",
+            "url": "https://www.sciencedirect.com/science/article/pii/S1053482224000196"
+          }
+        ],
+        "missingForRecommendation": [
+          "Program-level unique-participant cohorts with baseline characteristics and common 6- and 12-month employment, earnings, housing, and mental-health outcomes.",
+          "Cost per retained living-wage job, additional homebuyer, sustained housing outcome, or validated youth mental-health improvement—not cost per contact or service hour.",
+          "A time-bounded marginal plan at $100,000, $1 million, and $10 million, including staff, employer, housing, facility, and referral capacity.",
+          "A reconciliation of private gifts with the five active city contracts, government grants, restricted funding, and likely displacement of other funders.",
+          "A credible counterfactual or phased evaluation for the specific employment, financial, housing, or youth intervention a donor would expand."
+        ]
+      }
     },
     {
       "key": "glide",

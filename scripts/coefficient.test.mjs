@@ -4,6 +4,9 @@ import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { normalizeSnapshot, parseDecisionMonth, parseUsd } from './lib/coefficient.mjs';
 import { buildSnapshotFromAlgolia, diffSnapshots } from './lib/coefficient-source.mjs';
+import {
+  buildAllGrantsSnapshot, buildCoefficientMarketSummary, diffAllGrantsSnapshots, fetchAllCoefficientGrantHits,
+} from './lib/coefficient-all-source.mjs';
 
 const fixture = JSON.parse(await readFile(resolve('data/coefficient/effective-giving-and-careers.json'), 'utf8'));
 
@@ -62,4 +65,52 @@ test('source refresh detects semantic additions and fails closed on truncation',
   updated.records[0].recipientUrl = 'https://new.example/';
   assert.equal(diffSnapshots(previous, updated).updated.length, 1);
   assert.throws(() => diffSnapshots({ records: fixture.records }, { records: fixture.records.slice(0, 20).map((record, index) => ({ ...record, sourceRecordId: String(index) })) }), /Failing closed/);
+});
+
+function allGrantHit(index, overrides = {}) {
+  return {
+    ...algoliaHit,
+    objectID: `all-grants-${index}`,
+    post_id: index,
+    title: `All-grants record ${index}`,
+    'focus-area': ['Navigating Transformative AI'],
+    ...overrides,
+  };
+}
+
+test('all-grants acquisition preserves missing fields and many-to-many fund tags', () => {
+  const hits = Array.from({ length: 2800 }, (_, index) => allGrantHit(index + 1));
+  hits[0] = allGrantHit(1, {
+    award_date: undefined, grant_amount: undefined, organization_name: undefined,
+    'focus-area': ['Navigating Transformative AI', 'Global Catastrophic Risks Opportunities'],
+  });
+  const snapshot = buildAllGrantsSnapshot(hits, '2026-08-30T00:00:00.000Z');
+  const summary = buildCoefficientMarketSummary(snapshot);
+  assert.equal(snapshot.records.length, 2800);
+  assert.equal(snapshot.records.at(-1).awardDate, null);
+  assert.equal(summary.summary.grantsWithoutAwardDate, 1);
+  assert.equal(summary.summary.grantsWithoutPublishedAmount, 1);
+  assert.equal(summary.summary.grantsWithoutRecipient, 1);
+  assert.equal(summary.summary.grantsWithMultipleListedFunds, 1);
+});
+
+test('all-grants fetch includes records missing award_year', async () => {
+  const mockFetch = async (_url, options) => {
+    const body = JSON.parse(options.body);
+    if (body.facets) return Response.json({ nbHits: 3, facets: { award_year: { 2025: 2 } } });
+    if (body.facetFilters.includes('award_year:2025')) return Response.json({ nbHits: 2, hits: [{ objectID: 'a' }, { objectID: 'b' }] });
+    return Response.json({ nbHits: 1, hits: [{ objectID: 'undated' }] });
+  };
+  const result = await fetchAllCoefficientGrantHits(mockFetch);
+  assert.equal(result.hits.length, 3);
+  assert.equal(result.hits.at(-1).objectID, 'undated');
+});
+
+test('all-grants diff detects edits and fails closed on mass removal', () => {
+  const records = Array.from({ length: 100 }, (_, index) => ({ sourceRecordId: String(index), purpose: `Grant ${index}` }));
+  const previous = { records };
+  const updated = structuredClone(previous);
+  updated.records[0].purpose = 'Changed';
+  assert.equal(diffAllGrantsSnapshots(previous, updated).updated.length, 1);
+  assert.throws(() => diffAllGrantsSnapshots(previous, { records: records.slice(0, 50) }), /Failing closed/);
 });

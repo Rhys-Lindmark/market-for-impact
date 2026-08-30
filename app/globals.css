@@ -69,6 +69,29 @@ tbody tr:hover { background:#f4f6e9; }
 .bar-track span { display:block; height:100%; min-width:3px; }
 .flow-insight { display:flex; gap:14px; margin-top:30px; padding-top:20px; border-top:1px solid var(--line); font-size:11px; line-height:1.5; }
 .flow-insight>span { color:#339464; font-size:20px; }.flow-insight p { margin:0; }
+.coefficient-market-section { padding:100px 4vw; background:#111e1b; color:#f8f6ee; border-bottom:1px solid #34423e; }
+.coefficient-market-heading { display:grid; grid-template-columns:1fr 420px; gap:6vw; align-items:end; margin-bottom:45px; }
+.coefficient-market-heading>p { color:#aebbb7; line-height:1.6; font-size:13px; }
+.coefficient-overview { display:grid; grid-template-columns:repeat(4,1fr); border:1px solid #5f706a; margin-bottom:24px; }
+.coefficient-overview div { padding:18px; border-right:1px solid #5f706a; }
+.coefficient-overview div:last-child { border-right:0; }
+.coefficient-overview span { display:block; font-size:9px; text-transform:uppercase; letter-spacing:.08em; color:#9faca8; }
+.coefficient-overview strong { display:block; font-family:Georgia,serif; font-size:29px; font-weight:400; margin-top:8px; }
+.fund-market-grid { display:grid; grid-template-columns:1fr 1fr; border-top:1px solid #53635e; }
+.fund-market-row { display:grid; grid-template-columns:minmax(0,1.5fr) 80px 76px 16px; gap:14px; align-items:center; padding:15px 12px; border-bottom:1px solid #34423e; color:#e9eee9; font-size:10px; }
+.fund-market-row:nth-child(odd) { border-right:1px solid #34423e; }
+.fund-market-row:hover { background:#192925; }
+.fund-market-row>span:first-child { display:flex; gap:8px; align-items:center; min-width:0; }
+.fund-market-row strong { font-size:11px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.fund-market-row em { color:#e7ad50; border:1px solid #765e37; border-radius:20px; padding:2px 6px; font-size:7px; font-style:normal; text-transform:uppercase; letter-spacing:.08em; }
+.fund-market-row>span:nth-child(2) { color:#9faca8; text-align:right; }
+.fund-market-row b { font-family:'Courier New',monospace; text-align:right; font-weight:400; }
+.fund-market-row i { font-style:normal; color:#79c49e; }
+.index-caveats { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:24px; padding:22px; background:#192925; color:#aebbb7; }
+.index-caveats p { margin:0; font-size:11px; line-height:1.6; }
+.index-caveats strong { color:#eef3ed; }
+.coefficient-market-section .data-note { color:#899894; }
+.coefficient-market-section .data-note a { color:#b9d8c6; }
 .ledger-section { padding:100px 4vw; background:#f8f7f1; border-bottom:1px solid var(--line); }
 .ledger-heading { display:grid; grid-template-columns:1fr 420px; gap:6vw; align-items:end; margin-bottom:45px; }
 .ledger-heading>p { color:#5f6d69; line-height:1.6; font-size:13px; }
@@ -107,4 +130,4 @@ footer { display:flex; justify-content:space-between; align-items:center; paddin
 footer p { color:#aebbb7; }
 
 @media(max-width:800px){
-  nav { display:none; }.outline-button { display:none; }.hero { padding-top:62px; min-height:auto; }.hero-stats,.ledger-stats { grid-template-columns:1fr 1fr; }.hero-stats div:nth-child(2),.ledger-stats div:nth-child(2){border-right:0}.ledger-stats div{border-bottom:1px solid var(--ink)}.ledger-heading,.ledger-grid{grid-template-columns:1fr}.section-heading{display:block}.section-heading>p{margin-top:20px}.filters{grid-template-columns:1fr}.search,.select-wrap{border-right:0;border-bottom:1px solid var(--ink)}.filter-button{padding:14px 16px}.flows-section,.sources-section{grid-template-columns:1fr}.flow-card{padding:22px}.metric-row{grid-template-columns:120px 1fr 50px}.ledger-row{grid-template-columns:1fr 1.3fr 80px;gap:10px}.method-grid{grid-template-columns:1fr 1fr}.method-grid article:nth-child(2){border-right:0}footer{align-items:flex-start;gap:25px;flex-direction:column}.hero-actions{align-items:flex-start;flex-direction:column}.market-section,.method-section,.flows-section,.sources-section,.ledger-section{padding-top:72px;padding-bottom:72px}}
+  nav { display:none; }.outline-button { display:none; }.hero { padding-top:62px; min-height:auto; }.hero-stats,.ledger-stats,.coefficient-overview { grid-template-columns:1fr 1fr; }.hero-stats div:nth-child(2),.ledger-stats div:nth-child(2),.coefficient-overview div:nth-child(2){border-right:0}.ledger-stats div{border-bottom:1px solid var(--ink)}.coefficient-overview div{border-bottom:1px solid #5f706a}.ledger-heading,.ledger-grid,.coefficient-market-heading{grid-template-columns:1fr}.fund-market-grid{grid-template-columns:1fr}.fund-market-row:nth-child(odd){border-right:0}.index-caveats{grid-template-columns:1fr}.section-heading{display:block}.section-heading>p{margin-top:20px}.filters{grid-template-columns:1fr}.search,.select-wrap{border-right:0;border-bottom:1px solid var(--ink)}.filter-button{padding:14px 16px}.flows-section,.sources-section{grid-template-columns:1fr}.flow-card{padding:22px}.metric-row{grid-template-columns:120px 1fr 50px}.ledger-row{grid-template-columns:1fr 1.3fr 80px;gap:10px}.method-grid{grid-template-columns:1fr 1fr}.method-grid article:nth-child(2){border-right:0}footer{align-items:flex-start;gap:25px;flex-direction:column}.hero-actions{align-items:flex-start;flex-direction:column}.market-section,.method-section,.flows-section,.sources-section,.ledger-section,.coefficient-market-section{padding-top:72px;padding-bottom:72px}}

@@ -10,7 +10,9 @@ This backlog is ordered by donor value, data integrity, and dependency. Each ite
   - [x] Normalize and idempotently import all 79 currently published Effective Giving & Careers records into D1, retaining source/status semantics, stable IDs, content hashes, first/last-seen timestamps, and duplicate tests.
   - [x] Expose reconciled D1 totals and recent grants on the homepage with a primary-source coverage note. Verified locally on 2026-08-29: 79 grants, $46,721,803, 51 recipients; two successive API reads returned the same totals.
   - [x] Automate the Effective Giving & Careers snapshot from Coefficient's public Algolia search index. The refresh command validates all records, fails closed on truncation or duplicate source IDs, reports additions/updates/removals, and is a no-op when unchanged. Verified 2026-08-29 against the rendered fund page and index: 79 records, $46,721,803, 51 recipients.
-  - [ ] Extend source discovery, refresh, and import coverage to every active and archived Coefficient fund; reconcile overlapping focus-area tags without double-counting.
+  - [x] Discover and snapshot Coefficient's complete public grant index across every currently listed fund. Verified 2026-08-29: 2,893 unique source records, $4,920,357,709 in published amounts, 1,133 exact recipient names, 14 current fund lenses, and 36 preserved focus-area tags. The year-partitioned refresh also captures undated records and fails closed on truncation, duplicates, or mass removal.
+  - [x] Publish a source-linked fund market with unique-record totals, non-additive fund aggregates, missingness, overlapping-tag, publication-status, and future-date caveats. Seven records currently carry multiple listed-fund tags and 43 carry no currently listed-fund tag.
+  - [ ] Import the full public index into D1 and add a grant/fund explorer; preserve legacy and sub-area tags while preventing double-counting across the many-to-many fund taxonomy.
 - [ ] **MFI-004 — Build the GiveWell opportunity importer.** Import current Top Charities, grants spreadsheet rows, cost per outcome, evidence notes, location, and rolling room-for-more-funding decisions. Preserve estimate date and model version.
 - [ ] **MFI-005 — Ship organization and grant detail pages.** Add stable URLs, source citations, grant timeline, evaluator comparisons, metric provenance, and data freshness.
 - [ ] **MFI-006 — Replace homepage aggregates with database queries.** Make every displayed count and funding total traceable to accepted ledger rows; show coverage and last-refresh status.
@@ -41,8 +43,8 @@ This backlog is ordered by donor value, data integrity, and dependency. Each ite
 
 ## Operating tracks
 
-- [ ] Add automatic hourly source-change detection and human review queues; GitHub now checks EGC hourly, no-ops when unchanged, and fails closed into review on changes or suspicious removals, but other sources still need coverage.
-- [ ] Add source snapshots and diffs so historical claims remain auditable; EGC now retains stable source IDs, canonical grant URLs, award dates, publication timestamps, content hashes, and first/last-seen timestamps.
+- [ ] Add automatic hourly source-change detection and human review queues; GitHub now checks the full Coefficient public grant index and EGC subset hourly, no-ops when unchanged, and fails closed into review on changes or suspicious removals, but other evaluators still need coverage.
+- [ ] Add source snapshots and diffs so historical claims remain auditable; the complete Coefficient snapshot now retains stable source IDs, canonical grant URLs, exact award dates, publication timestamps, all focus-area tags, and a content hash. D1 history currently covers the EGC subset; full-index first/last-seen history remains next.
 - [ ] Add a corrections policy, conflicts disclosure, methodology changelog, and research red-team template.
 - [ ] Interview one Coefficient Giving researcher, one GiveWell-style evaluator, one large foundation staffer, and three AI-company donors; convert findings to issues.
 - [ ] Maintain accessibility, mobile, performance, citation, and data-freshness checks in CI.

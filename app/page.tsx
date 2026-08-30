@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
+import coefficientIndex from '@/data/normalized/coefficient-market-summary.json';
 
 type CoefficientMarket = {
   source: { retrievedAt: string; coverageNote: string; url: string };
@@ -9,6 +10,8 @@ type CoefficientMarket = {
 };
 
 const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+const compactMoney = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 2 });
+const integer = new Intl.NumberFormat('en-US');
 const month = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
 const day = new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 
@@ -68,9 +71,9 @@ export default function Home() {
           <a className="text-link" href="#methodology">How we compare impact</a>
         </div>
         <div className="hero-stats" aria-label="Dataset summary">
-          <div><strong>79</strong><span>published EGC grants ingested</span></div>
-          <div><strong>$46.7M</strong><span>published EGC grant amounts</span></div>
-          <div><strong>51</strong><span>distinct EGC recipients</span></div>
+          <div><strong>{integer.format(coefficientIndex.summary.grantCount)}</strong><span>Coefficient grant records</span></div>
+          <div><strong>{compactMoney.format(coefficientIndex.summary.totalPublishedAmountUsd)}</strong><span>published grant amounts</span></div>
+          <div><strong>{coefficientIndex.summary.listedFundCount}</strong><span>currently listed funds</span></div>
           <div><strong>Aug 2026</strong><span>sources reviewed</span></div>
         </div>
       </section>
@@ -127,6 +130,34 @@ export default function Home() {
           </div>
           <div className="flow-insight"><span>!</span><p><strong>These numbers are intentionally not summed.</strong><br />They mix annual grants, announced allocations, and influenced giving. The grant ledger will separate each type.</p></div>
         </div>
+      </section>
+
+      <section className="coefficient-market-section" id="coefficient-market">
+        <div className="coefficient-market-heading">
+          <div><p className="kicker">THE COEFFICIENT MARKET</p><h2>One index. Fourteen fund lenses.</h2></div>
+          <p>{integer.format(coefficientIndex.summary.grantCount)} unique public grant records, classified against every fund on Coefficient’s current funds page. Overall totals count a source record once; fund rows are intentionally non-additive.</p>
+        </div>
+        <div className="coefficient-overview" aria-label="Coefficient public index summary">
+          <div><span>Published records</span><strong>{integer.format(coefficientIndex.summary.grantCount)}</strong></div>
+          <div><span>Published amounts</span><strong>{compactMoney.format(coefficientIndex.summary.totalPublishedAmountUsd)}</strong></div>
+          <div><span>Recipient names</span><strong>{integer.format(coefficientIndex.summary.uniqueRecipientCount)}</strong></div>
+          <div><span>Index coverage</span><strong>2012–2026</strong></div>
+        </div>
+        <div className="fund-market-grid">
+          {coefficientIndex.funds.map((fund) => (
+            <a href={fund.url} target="_blank" rel="noreferrer" className="fund-market-row" key={fund.fund}>
+              <span><strong>{fund.fund}</strong>{fund.status === 'closed' && <em>Closed</em>}</span>
+              <span>{integer.format(fund.grantCount)} grants</span>
+              <b>{compactMoney.format(fund.publishedAmountUsd)}</b>
+              <i>↗</i>
+            </a>
+          ))}
+        </div>
+        <div className="index-caveats">
+          <p><strong>Coverage, not certainty.</strong> {integer.format(coefficientIndex.summary.grantsWithoutListedFund)} records have no currently listed fund tag; {integer.format(coefficientIndex.summary.grantsWithMultipleListedFunds)} have multiple listed fund tags; {integer.format(coefficientIndex.summary.grantsWithoutFocusArea)} have no focus-area tag.</p>
+          <p><strong>Amounts are partial.</strong> The unique-record total excludes {integer.format(coefficientIndex.summary.grantsWithoutPublishedAmount)} record without a published amount. “Published” does not mean paid, and one source award date is later than this snapshot’s retrieval date.</p>
+        </div>
+        <p className="data-note">Public index retrieved {day.format(new Date(coefficientIndex.source.retrievedAt))} · {coefficientIndex.source.contentHash.slice(0, 12)} content hash · <a href="https://coefficientgiving.org/funds/" target="_blank" rel="noreferrer">Fund taxonomy ↗</a></p>
       </section>
 
       <section className="ledger-section" id="grant-ledger">

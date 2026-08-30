@@ -221,12 +221,16 @@ The committed snapshot preserves 54 department rows and 1,784 active nonprofit c
 
 The first diligence cohort is generated from `data/san-francisco/nonprofit-diligence-config-v1.json`, the accepted public-funding snapshot, and the four accepted grant ledgers. Exact identity aliases—not fuzzy names—connect candidates to city contracts and philanthropic grants.
 
+The broader discovery layer groups all 1,784 active nonprofit prime contracts into 548 Unicode-, whitespace-, and case-normalized DataSF contractor names. It maps 196 names to at least one local outcome under the accepted contract-text rules and leaves 352 names explicitly unclassified. These are source-name identities, not EIN-verified legal entities or a census of Bay Area nonprofits. Contract authority, payments, and remaining authority are public-accounting context—not evidence of effectiveness, capacity, or philanthropic room for more funding.
+
 ```bash
+npm run data:sf:universe:check
+npm run data:sf:universe:build  # rebuild from reviewed local source contracts
 npm run data:sf:diligence:check
 npm run data:sf:diligence:build  # update only after reviewing source evidence
 ```
 
-The scorecards separate native signals, causal evidence, public-funding overlap, donation vehicle, and marginal funding state. Charity Navigator scores retain their completed-beacon limitations and never become effectiveness rankings. No candidate advances to a recommendation until the project obtains a current next-dollar plan, validates implementation capacity, examines downside risks, and finds sufficient independent evidence for the claimed outcome.
+The cause-first explorer exposes the complete city-contract denominator with search, outcome, diligence-state, and sort controls plus local pagination. Four exact contractor aliases connect into the six initial scorecards; two advocacy candidates sit outside the contractor universe. The scorecards separate native signals, causal evidence, public-funding overlap, donation vehicle, and marginal funding state. Charity Navigator scores retain their completed-beacon limitations and never become effectiveness rankings. No candidate advances to a recommendation until the project obtains a current next-dollar plan, validates implementation capacity, examines downside risks, and finds sufficient independent evidence for the claimed outcome.
 
 ### Charity Navigator cause discovery
 

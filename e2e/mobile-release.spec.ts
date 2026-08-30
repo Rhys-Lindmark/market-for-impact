@@ -96,6 +96,30 @@ test('phone donors see the same honest decision fields across all six San Franci
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 
+test('phone donors can inspect the marginal-plan and grant-look-back research contract', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== 'phone-390');
+  await page.goto('/san-francisco#protocol', { waitUntil: 'domcontentloaded' });
+  await expect(page.getByRole('heading', { name: 'How an impact number earns its place.' })).toBeVisible();
+  const summary = page.locator('.sf-protocol-summary');
+  await expect(summary.locator('strong')).toHaveText(['18', '0', '0', '0']);
+  await expect(page.locator('.sf-protocol-contract>section')).toHaveCount(2);
+  await expect(page.locator('.sf-protocol-contract li')).toHaveCount(16);
+  const seed = page.locator('.sf-lookback-seed article');
+  await expect(seed).toHaveCount(1);
+  await expect(seed).toContainText('$120K');
+  await expect(seed).toContainText('Housing Action Coalition');
+  await expect(seed).toContainText('not-published');
+  await expect(seed).toContainText('not-yet-assessable');
+  const queue = page.locator('.sf-protocol-queue article');
+  await expect(queue).toHaveCount(6);
+  await expect(queue.locator('header b')).toHaveText(Array(6).fill('Not submitted'));
+  await expect(queue.first()).toContainText('$100K');
+  await expect(queue.first()).toContainText('$1M');
+  await expect(queue.first()).toContainText('$10M');
+  await expect(queue.first()).toContainText('Awaiting program-specific plan');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
 test('phone donors can inspect a San Francisco diligence record', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'phone-390');
   await page.goto('/san-francisco#diligence', { waitUntil: 'domcontentloaded' });

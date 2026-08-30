@@ -66,6 +66,31 @@ export const grants = sqliteTable('grants', {
   index('grants_source_seen_idx').on(table.sourceId, table.lastSeenAt),
 ]);
 
+export const organizationSourceNames = sqliteTable('organization_source_names', {
+  id: integer('id').primaryKey({ autoIncrement: true }),
+  sourceId: integer('source_id').notNull().references(() => sources.id),
+  organizationId: integer('organization_id').notNull().references(() => organizations.id),
+  sourceName: text('source_name').notNull(),
+  normalizedName: text('normalized_name').notNull(),
+  identityBasis: text('identity_basis').notNull(),
+}, (table) => [
+  uniqueIndex('organization_source_names_source_normalized_idx').on(table.sourceId, table.normalizedName),
+  index('organization_source_names_organization_idx').on(table.organizationId),
+]);
+
+export const grantOrganizationRoles = sqliteTable('grant_organization_roles', {
+  id: integer('id').primaryKey({ autoIncrement: true }),
+  grantId: integer('grant_id').notNull().references(() => grants.id),
+  organizationId: integer('organization_id').notNull().references(() => organizations.id),
+  role: text('role').notNull(),
+  sourceName: text('source_name').notNull(),
+  position: integer('position').notNull().default(0),
+}, (table) => [
+  uniqueIndex('grant_organization_roles_grant_org_role_idx').on(table.grantId, table.organizationId, table.role),
+  index('grant_organization_roles_organization_role_idx').on(table.organizationId, table.role, table.grantId),
+  index('grant_organization_roles_grant_role_idx').on(table.grantId, table.role, table.position),
+]);
+
 export const assessments = sqliteTable('assessments', {
   id: integer('id').primaryKey({ autoIncrement: true }),
   sourceId: integer('source_id').notNull().references(() => sources.id),

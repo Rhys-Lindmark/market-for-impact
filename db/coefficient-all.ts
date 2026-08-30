@@ -1,6 +1,8 @@
 import { env } from 'cloudflare:workers';
 import snapshot from '@/data/coefficient/all-grants.json';
 import marketSummary from '@/data/normalized/coefficient-market-summary.json';
+import { organizationGraphComplete, replaceGrantOrganizationRoles, upsertOrganizationIdentities } from '@/db/grant-organizations';
+import { organizationIdentityKey, uniqueOrganizationNames } from '@/db/organization-identity';
 
 type SnapshotRecord = (typeof snapshot.records)[number];
 
@@ -15,6 +17,8 @@ export type CoefficientGrantQuery = {
 
 const BATCH_SIZE = 50;
 const listedFunds = new Set(snapshot.listedFunds);
+const recipientNames = uniqueOrganizationNames(snapshot.records.flatMap((record) => record.recipients));
+const expectedRoleCount = snapshot.records.length + snapshot.records.reduce((sum, record) => sum + record.recipients.length, 0);
 
 function epoch(value: string | null) {
   return value ? Math.floor(new Date(value).valueOf() / 1000) : null;
@@ -24,11 +28,27 @@ function normalizedRecipientText(record: SnapshotRecord) {
   return record.recipients.map((name) => name.replace(/\s+/g, ' ').trim()).join(' · ');
 }
 
+async function ensureCoefficientOrganizationGraph(sourceId: number) {
+  if (await organizationGraphComplete(sourceId, expectedRoleCount, recipientNames.size)) return;
+  const organizationIds = await upsertOrganizationIdentities(sourceId,
+    [...recipientNames.values()].map((name) => ({ name, organizationType: 'source-listed-recipient' })));
+  const recipients = snapshot.records.flatMap((record) => record.recipients.map((name, position) => {
+    const organizationId = organizationIds.get(organizationIdentityKey(name));
+    if (!organizationId) throw new Error(`Coefficient recipient identity missing: ${name}`);
+    return { sourceRecordId: record.sourceRecordId, organizationId, sourceName: name, position };
+  }));
+  await replaceGrantOrganizationRoles(sourceId, recipients);
+  if (!await organizationGraphComplete(sourceId, expectedRoleCount, recipientNames.size)) {
+    throw new Error('Complete Coefficient organization graph failed reconciliation.');
+  }
+}
+
 export async function ensureAllCoefficientSnapshot() {
   const sourceUrl = snapshot.source.url;
   const current = await env.DB.prepare('SELECT id, content_hash, retrieved_at FROM sources WHERE url = ?')
     .bind(sourceUrl).first<{ id: number; content_hash: string | null; retrieved_at: number }>();
   if (current?.content_hash === marketSummary.source.contentHash) {
+    await ensureCoefficientOrganizationGraph(current.id);
     return { sourceId: current.id, retrievedAt: current.retrieved_at };
   }
 
@@ -74,6 +94,7 @@ export async function ensureAllCoefficientSnapshot() {
   for (let index = 0; index < grantStatements.length; index += BATCH_SIZE) {
     await env.DB.batch(grantStatements.slice(index, index + BATCH_SIZE));
   }
+  await ensureCoefficientOrganizationGraph(source.id);
 
   await env.DB.batch([
     env.DB.prepare('UPDATE sources SET retrieved_at = ?, coverage_note = ?, content_hash = ? WHERE id = ?')

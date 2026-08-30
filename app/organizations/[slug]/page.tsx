@@ -62,6 +62,20 @@ export default async function OrganizationDetailPage({ params }: { params: Promi
         ))}
       </section>
 
+      {result.sourceNames.length > 0 && <section className="detail-section identity-section">
+        <div><p className="kicker">IDENTITY TRAIL</p><h2>How sources name this entity.</h2><p>Names merge only through exact Unicode-normalized source text or a documented reviewed alias. Similar-looking names are not joined automatically.</p></div>
+        <div className="identity-list">
+          {result.sourceNames.map((identity, index) => (
+            <a href={String(identity.source_url)} target="_blank" rel="noreferrer" key={`${String(identity.source_url)}-${index}`}>
+              <span>{String(identity.publisher)}</span>
+              <strong>{String(identity.source_name)}</strong>
+              <p>{String(identity.identity_basis).replaceAll('-', ' ')}</p>
+              <b>{String(identity.source_title)} ↗</b>
+            </a>
+          ))}
+        </div>
+      </section>}
+
       {result.assessments.length > 0 && <section className="detail-section assessment-section">
         <div><p className="kicker">EVALUATOR EVIDENCE</p><h2>Current assessments.</h2></div>
         <div className="assessment-list">

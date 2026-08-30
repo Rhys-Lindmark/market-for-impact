@@ -1,11 +1,28 @@
 import { env } from 'cloudflare:workers';
 import grantSnapshot from '@/data/normalized/givewell-grants.json';
 import opportunitySnapshot from '@/data/givewell/top-charities.json';
+import { organizationGraphComplete, replaceGrantOrganizationRoles, upsertOrganizationIdentities } from '@/db/grant-organizations';
+import { canonicalOrganizationName } from '@/db/organization-identity';
 
 type GrantRecord = (typeof grantSnapshot.records)[number];
 type Opportunity = (typeof opportunitySnapshot.opportunities)[number];
 
 const BATCH_SIZE = 50;
+const grantRecipientCount = new Set(grantSnapshot.records.map((record) => record.recipientSlug)).size;
+
+async function ensureGiveWellOrganizationGraph(sourceId: number) {
+  if (await organizationGraphComplete(sourceId, grantSnapshot.records.length, grantRecipientCount)) return;
+  await upsertOrganizationIdentities(sourceId, grantSnapshot.records.map((record) => ({
+    name: record.recipient,
+    canonicalName: canonicalOrganizationName('givewell', record.recipient),
+    slug: record.recipientSlug,
+    organizationType: 'grantee',
+  })));
+  await replaceGrantOrganizationRoles(sourceId);
+  if (!await organizationGraphComplete(sourceId, grantSnapshot.records.length, grantRecipientCount)) {
+    throw new Error('GiveWell organization graph failed reconciliation.');
+  }
+}
 
 function epoch(value: string | null) {
   return value ? Math.floor(new Date(value).valueOf() / 1000) : null;
@@ -15,7 +32,12 @@ async function upsertOrganizations(records: GrantRecord[], opportunities: Opport
   const organizations = new Map<string, { name: string; slug: string; url: string | null; type: string }>();
   organizations.set('givewell', { name: 'GiveWell', slug: 'givewell', url: 'https://www.givewell.org/', type: 'evaluator' });
   for (const record of records) {
-    organizations.set(record.recipientSlug, { name: record.recipient, slug: record.recipientSlug, url: null, type: 'grantee' });
+    organizations.set(record.recipientSlug, {
+      name: canonicalOrganizationName('givewell', record.recipient),
+      slug: record.recipientSlug,
+      url: null,
+      type: 'grantee',
+    });
   }
   for (const opportunity of opportunities) {
     organizations.set(opportunity.slug, { name: opportunity.organization, slug: opportunity.slug, url: opportunity.researchUrl, type: 'recommended-charity' });
@@ -35,6 +57,7 @@ export async function ensureGiveWellSnapshot() {
   const current = await env.DB.prepare('SELECT id, content_hash, retrieved_at FROM sources WHERE url = ?')
     .bind(grantSourceUrl).first<{ id: number; content_hash: string | null; retrieved_at: number }>();
   if (current?.content_hash === grantSnapshot.source.contentHash) {
+    await ensureGiveWellOrganizationGraph(current.id);
     return { sourceId: current.id, retrievedAt: current.retrieved_at };
   }
 
@@ -87,6 +110,7 @@ export async function ensureGiveWellSnapshot() {
   for (let index = 0; index < grants.length; index += BATCH_SIZE) {
     await env.DB.batch(grants.slice(index, index + BATCH_SIZE));
   }
+  await ensureGiveWellOrganizationGraph(grantSource.id);
 
   const assessments = opportunitySnapshot.opportunities.map((opportunity) => {
     const organizationId = organizationIds.get(opportunity.slug);

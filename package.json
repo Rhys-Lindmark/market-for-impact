@@ -12,6 +12,10 @@
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "db:generate": "drizzle-kit generate",
     "data:coefficient": "node scripts/ingest-coefficient.mjs",
+    "data:coefficient:check": "node scripts/refresh-coefficient.mjs",
+    "data:coefficient:refresh": "node scripts/refresh-coefficient.mjs --write && node scripts/ingest-coefficient.mjs",
+    "data:coefficient:all:check": "node scripts/refresh-coefficient-all.mjs",
+    "data:coefficient:all:refresh": "node scripts/refresh-coefficient-all.mjs --write",
     "test": "node --test scripts/*.test.mjs"
   },
   "dependencies": {

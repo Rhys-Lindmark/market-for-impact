@@ -1,0 +1,36 @@
+name: Coefficient source freshness
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/coefficient-source-check.yml'
+      - 'data/coefficient/**'
+      - 'data/normalized/coefficient-market-summary.json'
+      - 'scripts/refresh-coefficient.mjs'
+      - 'scripts/refresh-coefficient-all.mjs'
+      - 'scripts/lib/coefficient-source.mjs'
+      - 'scripts/lib/coefficient-all-source.mjs'
+  schedule:
+    - cron: '23 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: coefficient-source-freshness
+  cancel-in-progress: true
+
+jobs:
+  check-effective-giving-careers:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Compare committed snapshot with Coefficient's public index
+        run: node scripts/refresh-coefficient.mjs
+      - name: Compare full public index with committed snapshot
+        run: node scripts/refresh-coefficient-all.mjs

@@ -14,7 +14,7 @@ test('SF diligence cohort is reproducible and keeps conversions blocked', () => 
   assert.equal(snapshot.candidates.length, 6);
   assert.equal(snapshot.summary.qalyBlockedCount, 6);
   assert.equal(snapshot.summary.candidatesWithPublishedMarginalGap, 0);
-  assert.equal(snapshot.summary.evidenceDossierCount, 3);
+  assert.equal(snapshot.summary.evidenceDossierCount, 4);
 });
 
 test('public-contract aliases reconcile exact accounting totals', () => {
@@ -89,5 +89,22 @@ test('SF LGBT Center dossier separates reported reach, audited allocation, and t
   assert.match(dossier.evidenceLayers.find((layer) => layer.publisher === 'SF LGBT Center and Intention 2 Impact').design, /248 community members/i);
   assert.match(dossier.evidenceLayers.find((layer) => layer.publisher === 'Campbell Collaboration').finding, /small average gains/i);
   assert.match(dossier.evidenceLayers.find((layer) => layer.publisher === 'Research on Social Work Practice').transferLimit, /gender and sexual minority youth/i);
+  assert.ok(dossier.missingForRecommendation.some((gap) => /\$100,000.*\$1 million.*\$10 million/i.test(gap)));
+});
+
+test('GLIDE dossier separates multi-service scale, public funding, and program evidence', () => {
+  const glide = snapshot.candidates.find((row) => row.key === 'glide');
+  const dossier = glide.evidenceDossier;
+  const finances = dossier.organizationReported.financials;
+  assert.match(dossier.decisionState, /blocked/);
+  assert.equal(dossier.organizationReported.outcomes.length, 4);
+  assert.equal(finances.contributionsGrantsAndSupportUsd + finances.contractRevenueUsd + finances.specialEventsNetUsd + finances.donatedGoodsAndServicesUsd + finances.otherIncomeUsd + finances.interestAndInvestmentIncomeUsd, finances.revenueUsd);
+  assert.equal(finances.programExpensesUsd + finances.churchExpensesUsd + finances.administrationExpensesUsd + finances.fundraisingExpensesUsd, finances.expensesUsd);
+  assert.match(finances.boundary, /consolidate the Foundation.*Church.*real-estate/i);
+  assert.equal(dossier.evidenceLayers.length, 4);
+  assert.match(dossier.evidenceLayers.find((layer) => layer.publisher === 'City and County of San Francisco').finding, /\$14\.12 million/i);
+  assert.match(dossier.evidenceLayers.find((layer) => layer.publisher === 'JAMA Health Forum').transferLimit, /does not estimate the effect of GLIDE/i);
+  assert.match(dossier.evidenceLayers.find((layer) => layer.publisher === 'Campbell Systematic Reviews').finding, /did not improve mental health/i);
+  assert.match(dossier.evidenceLayers.find((layer) => layer.publisher === 'JAMA Psychiatry').design, /74 randomized clinical trials/i);
   assert.ok(dossier.missingForRecommendation.some((gap) => /\$100,000.*\$1 million.*\$10 million/i.test(gap)));
 });

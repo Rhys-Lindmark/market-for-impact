@@ -1,7 +1,7 @@
 {
-  "version": "sf-nonprofit-diligence-v0.4",
-  "configVersion": "sf-nonprofit-diligence-config-v0.4",
-  "generatedAt": "2026-08-30T20:15:00.000Z",
+  "version": "sf-nonprofit-diligence-v0.5",
+  "configVersion": "sf-nonprofit-diligence-config-v0.5",
+  "generatedAt": "2026-08-30T20:45:00.000Z",
   "geography": "San Francisco, California",
   "coverageNote": "An intentionally incomplete first diligence cohort chosen to test direct service, advocacy, LGBTQ+ community support, food security, housing, and multi-service models. Inclusion is not a recommendation.",
   "rules": {
@@ -17,7 +17,7 @@
     "candidatesWithPublicContracts": 4,
     "candidatesWithPublishedMarginalGap": 0,
     "qalyBlockedCount": 6,
-    "evidenceDossierCount": 3,
+    "evidenceDossierCount": 4,
     "acceptedGrantLedgerMatchCount": 1
   },
   "candidates": [
@@ -703,10 +703,10 @@
       ],
       "theoryOfChange": "Low-barrier, integrated services can meet immediate needs and create pathways into housing, health, and family stability while advocacy addresses structural barriers.",
       "evidenceLevel": "organization-reported outputs and financials",
-      "evidenceSummary": "The FY2025 report describes a roughly $30.8M expense base and multiple frontline programs. Current city contracts link GLIDE to meals, housing navigation, youth, health, and ambassador services.",
+      "evidenceSummary": "The FY2025 report describes a $30.8M audited expense base and multiple frontline programs. Current city contracts link GLIDE to meals, housing navigation, youth, health, and ambassador services.",
       "causalBoundary": "Organization-wide service and financial totals cannot be assigned to one outcome. The accepted sources do not establish a donor counterfactual or cost per sustained local outcome.",
       "marginalFunding": "The report argues private unrestricted support enables responsiveness, but publishes no bounded gap, program capacity curve, or incremental outcome estimate.",
-      "downsideCase": "Breadth can dilute measurement and create double-counting across connected services; some reported FY2025 financials were marked pending final audit in the impact report.",
+      "downsideCase": "Breadth can dilute measurement and create double-counting across connected services; consolidated financials include program, church, and related real-estate entities rather than one donor-expandable intervention.",
       "contractAliases": [
         "GLIDE FOUNDATION"
       ],
@@ -725,22 +725,22 @@
       },
       "nativeSignals": [
         {
-          "label": "Reported revenue",
+          "label": "Audited consolidated revenue",
           "value": "$30.4M",
           "period": "FY2025",
-          "signalType": "financial; report marked pending final audit"
+          "signalType": "financial"
         },
         {
-          "label": "Reported expense",
+          "label": "Audited consolidated expense",
           "value": "$30.8M",
           "period": "FY2025",
-          "signalType": "financial; report marked pending final audit"
+          "signalType": "financial"
         },
         {
-          "label": "Reported city-contract revenue",
-          "value": "$9.0M",
+          "label": "Audited contract revenue",
+          "value": "$10.8M",
           "period": "FY2025",
-          "signalType": "organization-reported financial"
+          "signalType": "financial"
         }
       ],
       "sources": [
@@ -754,13 +754,134 @@
         },
         {
           "publisher": "GLIDE",
-          "title": "Financials and annual reports",
-          "url": "https://www.glide.org/financials-annual-reports/",
-          "publishedAt": null,
-          "period": "Current archive",
+          "title": "FY2025 audited consolidated financial statements",
+          "url": "https://www.glide.org/wp-content/uploads/2026/03/GLIDE-Foundation-2024-25-SA-FS-Final.pdf",
+          "publishedAt": "2026-03-11",
+          "period": "Year ended 2025-06-30",
           "retrievedAt": "2026-08-30"
         }
       ],
+      "evidenceDossier": {
+        "reviewedAt": "2026-08-30",
+        "reportingName": "GLIDE",
+        "scope": "GLIDE's Daily Free Meals, Welcome Center housing and benefits support, and Health Empowerment & Access Team; not every family, childcare, church, volunteer, or advocacy activity.",
+        "decisionState": "deeper diligence; recommendation blocked",
+        "decisionSummary": "GLIDE has exceptional reach across food, housing, benefits, and behavioral health, and several underlying intervention families have credible external evidence. Its FY2025 public reporting still combines service volume, administrative connections, multiple funding streams, and several distinct programs. No accepted source identifies which intervention a new private gift would expand or the durable, additional outcome it would buy.",
+        "organizationReported": {
+          "period": "FY2025",
+          "source": {
+            "publisher": "GLIDE",
+            "title": "FY2025 Impact Report",
+            "url": "https://www.glide.org/wp-content/uploads/2026/01/GLIDE-Impact-Report-2024-2025.pdf",
+            "publishedAt": "2026-01-01",
+            "retrievedAt": "2026-08-30"
+          },
+          "outcomes": [
+            {
+              "label": "Meals served",
+              "value": "620,513",
+              "claimType": "organization-reported output",
+              "limitation": "Meals are encounters rather than unique participants or a measured change in food insecurity, nutrition, health, or use of other services."
+            },
+            {
+              "label": "People receiving rental assistance",
+              "value": "317",
+              "claimType": "organization-reported administrative output",
+              "limitation": "The report does not publish assistance amounts, baseline risk, a comparison group, or a common 6- or 12-month housing-stability outcome."
+            },
+            {
+              "label": "People connected to CalFresh, SSI, or free transit",
+              "value": "2,422",
+              "claimType": "organization-reported administrative outcome",
+              "limitation": "A connection is not necessarily an approved or sustained benefit, and the three benefit types are pooled without attribution or counterfactual."
+            },
+            {
+              "label": "People enrolled in medication-assisted treatment",
+              "value": "56",
+              "claimType": "organization-reported output",
+              "limitation": "Enrollment does not establish treatment initiation, retention, adherence, reduced substance use, overdose prevention, or mortality impact."
+            }
+          ],
+          "financials": {
+            "revenueUsd": 30436763,
+            "contributionsGrantsAndSupportUsd": 16146294,
+            "contractRevenueUsd": 10826230,
+            "specialEventsNetUsd": 1222191,
+            "donatedGoodsAndServicesUsd": 377035,
+            "otherIncomeUsd": 234516,
+            "interestAndInvestmentIncomeUsd": 1630497,
+            "expensesUsd": 30766602,
+            "programExpensesUsd": 18342460,
+            "churchExpensesUsd": 1922106,
+            "administrationExpensesUsd": 7766659,
+            "fundraisingExpensesUsd": 2735377,
+            "revenueNote": "$16.15M contributions/grants · $10.83M contracts · $3.46M events, in-kind, other, and investment income",
+            "expenseNote": "$18.34M program · $1.92M church · $7.77M administration · $2.74M fund development",
+            "boundary": "FY2025 audited totals consolidate the Foundation, Glide Memorial Church, and related real-estate entities. They do not reveal cash cost per food-secure person, sustained tenancy, retained treatment participant, or other durable outcome, and $10.83 million of contract revenue requires program-level displacement analysis."
+          }
+        },
+        "evidenceLayers": [
+          {
+            "scope": "organization-specific public monitoring",
+            "publisher": "City and County of San Francisco",
+            "title": "FY2023–2024 Free Meals performance and proposed FY2026–2029 agreement",
+            "publishedAt": "2025-05-14",
+            "retrievedAt": "2026-08-30",
+            "design": "contract performance, fiscal monitoring, and participant-satisfaction objectives",
+            "status": "published",
+            "finding": "City staff reported that GLIDE met or exceeded all FY2023–2024 service and outcome objectives and had no major program-monitoring findings. The proposed four-year agreement sets a 439,803-meal annual target and a $14.12 million not-to-exceed public commitment.",
+            "decisionUse": "Confirms current public underwriting, delivery against contract targets, and the need to separate public-contract continuation from privately funded expansion.",
+            "transferLimit": "Contract compliance and participant satisfaction do not establish reduced food insecurity, health gains, additionality, or the causal effect of GLIDE relative to another meal provider; earlier monitoring relied on only 52 consumer responses.",
+            "url": "https://sfgov.legistar.com/View.ashx?GUID=4DC898CF-FA98-41E0-A86F-EDDE46A9CE45&ID=14202117&M=F"
+          },
+          {
+            "scope": "external food-assistance evidence",
+            "publisher": "JAMA Health Forum",
+            "title": "Interventions to Address Food Insecurity Among Adults in Canada and the US",
+            "publishedAt": "2021-09-03",
+            "retrievedAt": "2026-08-30",
+            "design": "systematic review and meta-analysis of 39 randomized and observational studies covering 170,605 participants",
+            "status": "published",
+            "finding": "Direct food provision and monetary assistance were associated with lower food-insecurity prevalence, while pooled health and healthcare-use effects were mixed and not statistically significant.",
+            "decisionUse": "Supports measuring food insecurity directly and keeping acute food access separate from downstream health claims.",
+            "transferLimit": "Interventions, populations, and designs were heterogeneous; the review does not estimate the effect of GLIDE's congregate meals, unique participants, gateway referrals, or next private dollar.",
+            "url": "https://jamanetwork.com/journals/jama-health-forum/fullarticle/2782895"
+          },
+          {
+            "scope": "external housing-navigation evidence",
+            "publisher": "Campbell Systematic Reviews",
+            "title": "Exploring the effect of case management in homelessness per components",
+            "publishedAt": "2023-06-01",
+            "retrievedAt": "2026-08-30",
+            "design": "systematic review, meta-analysis, and implementation synthesis of randomized and nonrandomized comparison studies",
+            "status": "published",
+            "finding": "Case management improved housing outcomes relative to usual care, especially in higher-intensity and Housing First models, but did not improve mental health, substance use, physical health, or employment on average.",
+            "decisionUse": "Supports following stable housing for rental-assistance and case-management cohorts while specifying intensity, housing component, caseload, and follow-up.",
+            "transferLimit": "GLIDE's Welcome Center combines light-touch navigation, benefits, direct assistance, and referrals; the review cannot be transferred without identifying which model and housing resource each participant receives.",
+            "url": "https://onlinelibrary.wiley.com/doi/10.1002/cl2.1329"
+          },
+          {
+            "scope": "external behavioral-health evidence",
+            "publisher": "JAMA Psychiatry",
+            "title": "Contingency Management for Patients Receiving Medication for Opioid Use Disorder",
+            "publishedAt": "2021-08-04",
+            "retrievedAt": "2026-08-30",
+            "design": "systematic review and meta-analysis of 74 randomized clinical trials with 10,444 adults",
+            "status": "published",
+            "finding": "Contingency management was associated with improved end-of-treatment abstinence, medication adherence, and treatment attendance among adults receiving medication for opioid use disorder.",
+            "decisionUse": "Provides an evidence benchmark for GLIDE's newly launched contingency-management and medication-treatment pathway if it reports fidelity, retention, and objective outcomes.",
+            "transferLimit": "The report gives only 56 GLIDE enrollments, not intervention assignment, fidelity, comparison outcomes, retention, or post-treatment effects; the meta-analysis does not evaluate GLIDE.",
+            "url": "https://jamanetwork.com/journals/jamapsychiatry/fullarticle/2782768"
+          }
+        ],
+        "missingForRecommendation": [
+          "Unique participant cohorts by program with common 6- and 12-month food-security, housing-stability, benefits-retention, treatment-retention, and validated well-being outcomes.",
+          "Program-level cash cost per additional food-secure participant, sustained tenancy, approved benefit, retained treatment participant, or other durable outcome.",
+          "A time-bounded marginal plan at $100,000, $1 million, and $10 million, identifying which program expands and the staff, food, housing, clinical, referral, and facility constraints.",
+          "A reconciliation of private gifts with 14 active city contracts, the new $14.12 million meal agreement, other government grants, donated goods, and likely displacement of public or private funders.",
+          "A credible comparison or phased evaluation for the specific GLIDE intervention a donor would fund, with cross-program participant deduplication and explicit gateway-service attribution."
+        ]
+      },
       "publicFunding": {
         "snapshotVersion": "sf-public-funding-v0.1",
         "snapshotDate": "2026-08-30",

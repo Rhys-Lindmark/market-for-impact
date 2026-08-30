@@ -106,6 +106,8 @@ export const assessments = sqliteTable('assessments', {
   benchmarkMultiple: real('benchmark_multiple'),
   fundingRoomUsd: real('funding_room_usd'),
   fundingRoomPeriod: text('funding_room_period'),
+  fundingCapacityUsd: real('funding_capacity_usd'),
+  fundingCapacityPeriod: text('funding_capacity_period'),
   confidenceLow: real('confidence_low'),
   confidenceHigh: real('confidence_high'),
   summary: text('summary'),
@@ -115,6 +117,22 @@ export const assessments = sqliteTable('assessments', {
   uniqueIndex('assessments_source_org_status_idx').on(table.sourceId, table.organizationId, table.recommendationStatus),
   index('assessments_org_date_idx').on(table.organizationId, table.assessmentDate),
   index('assessments_evaluator_idx').on(table.evaluatorId),
+]);
+
+export const assessmentMetrics = sqliteTable('assessment_metrics', {
+  id: integer('id').primaryKey({ autoIncrement: true }),
+  assessmentId: integer('assessment_id').notNull().references(() => assessments.id),
+  metricKey: text('metric_key').notNull(),
+  program: text('program').notNull(),
+  value: real('value').notNull(),
+  confidenceLow: real('confidence_low'),
+  confidenceHigh: real('confidence_high'),
+  unit: text('unit').notNull(),
+  modelVersion: text('model_version'),
+  limitations: text('limitations'),
+}, (table) => [
+  uniqueIndex('assessment_metrics_assessment_key_idx').on(table.assessmentId, table.metricKey),
+  index('assessment_metrics_assessment_idx').on(table.assessmentId),
 ]);
 
 export const impactBenchmarks = sqliteTable('impact_benchmarks', {

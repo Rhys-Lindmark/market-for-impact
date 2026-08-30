@@ -60,6 +60,20 @@ type RenPhilMarket = {
   summary: { award_count: number; declared_award_count: number; unlisted_award_count: number; missing_amount_count: number; missing_description_count: number };
 };
 
+type AceMarket = {
+  source: { retrievedAt: string; url: string; coverageNote: string };
+  summary: { recommendedCharityCount: number; awardedOrRenewedIn2025: number; retainedFrom2024: number; annualFundingRoomUsd: number; fundingRoomPeriodNote: string };
+  comparabilityWarning: string;
+  recommendations: Array<{
+    id: number; canonical_name: string; slug: string; website_url: string; evidence_level: string;
+    native_metric_name: string; native_metric_value: number; native_metric_unit: string;
+    funding_room_usd: number; funding_room_period: string; funding_capacity_usd: number;
+    summary: string; limitations: string; model_version: string; recommendationCohort: number;
+    geography: string; animalGroups: string[]; interventions: string[];
+    metrics: Array<{ metric_key: string; program: string; value: number; confidence_low: number | null; confidence_high: number | null; unit: string; model_version: string; limitations: string }>;
+  }>;
+};
+
 const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
 const compactMoney = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 2 });
 const integer = new Intl.NumberFormat('en-US');
@@ -81,6 +95,8 @@ export default function Home() {
   const [giveDirectlyError, setGiveDirectlyError] = useState(false);
   const [renPhilMarket, setRenPhilMarket] = useState<RenPhilMarket | null>(null);
   const [renPhilError, setRenPhilError] = useState(false);
+  const [aceMarket, setAceMarket] = useState<AceMarket | null>(null);
+  const [aceError, setAceError] = useState(false);
   const [showAllRenPhil, setShowAllRenPhil] = useState(false);
   const [explorer, setExplorer] = useState<CoefficientExplorer | null>(null);
   const [explorerError, setExplorerError] = useState(false);
@@ -92,6 +108,12 @@ export default function Home() {
   const [explorerQuery, setExplorerQuery] = useState('');
   const [explorerPage, setExplorerPage] = useState(1);
   const [explorerRefresh, setExplorerRefresh] = useState(0);
+  useEffect(() => {
+    fetch('/api/ace').then((response) => {
+      if (!response.ok) throw new Error('ACE market unavailable');
+      return response.json() as Promise<AceMarket>;
+    }).then(setAceMarket).catch(() => setAceError(true));
+  }, []);
   useEffect(() => {
     fetch('/api/coefficient-grants').then((response) => {
       if (!response.ok) throw new Error('Grant market unavailable');
@@ -140,8 +162,7 @@ export default function Home() {
     setExplorerError(false);
     setExplorerRefresh((value) => value + 1);
   };
-  const acceptedOpportunities = useMemo(() => (giveWellMarket?.opportunities ?? []).map((opportunity, index) => ({
-    rank: index + 1,
+  const acceptedOpportunities = useMemo(() => [...(giveWellMarket?.opportunities ?? []).map((opportunity) => ({
     name: opportunity.organization,
     slug: opportunity.slug,
     intervention: opportunity.program,
@@ -151,7 +172,17 @@ export default function Home() {
     room: opportunity.fundingRoomUsd == null ? opportunity.fundingRoomStatus.replaceAll('-', ' ') : money.format(opportunity.fundingRoomUsd),
     source: 'GiveWell',
     href: opportunity.researchUrl,
-  })), [giveWellMarket]);
+  })), ...(aceMarket?.recommendations ?? []).map((opportunity) => ({
+    name: opportunity.canonical_name,
+    slug: opportunity.slug,
+    intervention: opportunity.native_metric_name,
+    cause: 'Animal welfare',
+    evidence: opportunity.evidence_level,
+    impact: `${integer.format(opportunity.native_metric_value)} ${opportunity.native_metric_unit}`,
+    room: money.format(opportunity.funding_room_usd),
+    source: 'Animal Charity Evaluators',
+    href: opportunity.website_url,
+  }))].map((opportunity, index) => ({ ...opportunity, rank: index + 1 })), [aceMarket, giveWellMarket]);
   const filtered = useMemo(() => acceptedOpportunities.filter((item) =>
     (cause === 'All causes' || item.cause === cause) &&
     `${item.name} ${item.intervention} ${item.source}`.toLowerCase().includes(query.toLowerCase())
@@ -234,7 +265,7 @@ export default function Home() {
             </tbody>
           </table>
         </div>
-        <p className="data-note">This table contains only current assessments materialized in the accepted ledger. ACE, Giving Green, and Founders Pledge remain out of the comparison until their source pipelines are reviewed. Metrics preserve each evaluator’s native unit; funding room is not yet normalized.</p>
+        <p className="data-note">This table contains only current assessments materialized in the accepted ledger. Giving Green and Founders Pledge remain out until their source pipelines are reviewed. Metrics preserve each evaluator’s native unit; ACE’s animal, output, and SAD metrics are deliberately not collapsed into a universal score.</p>
       </section>
 
       <section className="givewell-section" id="givewell-market">
@@ -287,6 +318,39 @@ export default function Home() {
           <p><strong>Source discrepancy.</strong> {giveWellMarket ? `Accepted grant rows sum to ${money.format(giveWellMarket.summary.total_amount_usd)}, exactly $3 above Airtable’s displayed aggregate.` : 'The accepted row sum is exactly $3 above Airtable’s displayed aggregate.'} Both are preserved; neither is silently “fixed.”</p>
         </div>
         <p className="data-note">Top Charities updated September 2025 · Cost-effectiveness framework updated May 2026 · {giveWellMarket ? `Accepted grant rows retrieved ${day.format(new Date(giveWellMarket.source.retrievedAt))}` : giveWellError ? 'Accepted ledger temporarily unavailable' : 'Loading database freshness…'} · <a href={giveWellSnapshot.source.url} target="_blank" rel="noreferrer">Top Charities ↗</a>{giveDirectlyBenchmark && <> · <a href={giveDirectlyBenchmark.benchmarks[1].modelUrl} target="_blank" rel="noreferrer">GiveDirectly model ↗</a></>}</p>
+      </section>
+
+      <section className="ace-section" id="ace-market">
+        <div className="ace-heading">
+          <div><p className="kicker">THE ANIMAL WELFARE MARKET</p><h2>{aceMarket ? integer.format(aceMarket.summary.recommendedCharityCount) : 'Current'} recommendations.<br />Different animals, intact units.</h2></div>
+          <p>ACE’s current set spans corporate campaigns, policy, technology, food-system work, and wild-animal research. We preserve each program’s own denominator, evaluation vintage, and uncertainty instead of manufacturing one cross-species league table.</p>
+        </div>
+        <div className="ace-overview" aria-label="Animal Charity Evaluators recommendation summary">
+          <div><span>Current set</span><strong>{aceMarket ? integer.format(aceMarket.summary.recommendedCharityCount) : '—'}</strong><p>Recommended Charities in ACE’s 2025 set.</p></div>
+          <div><span>2025 reviews</span><strong>{aceMarket ? integer.format(aceMarket.summary.awardedOrRenewedIn2025) : '—'}</strong><p>Awarded or renewed using the newer model.</p></div>
+          <div><span>Retained 2024</span><strong>{aceMarket ? integer.format(aceMarket.summary.retainedFrom2024) : '—'}</strong><p>Still current under two-year status.</p></div>
+          <div><span>Published annual room</span><strong>{aceMarket ? compactMoney.format(aceMarket.summary.annualFundingRoomUsd) : '—'}</strong><p>Descriptive sum across two overlapping funding periods.</p></div>
+        </div>
+        <div className="ace-warning"><strong>Comparability boundary.</strong> {aceMarket?.comparabilityWarning ?? 'ACE metrics retain their original units and vintages; loading accepted assessments…'}</div>
+        <div className="ace-cards">
+          {(aceMarket?.recommendations ?? []).map((recommendation) => (
+            <article className="ace-card" key={recommendation.slug}>
+              <div className="ace-card-top"><span>ACE {recommendation.recommendationCohort}</span><b>{recommendation.model_version}</b></div>
+              <h3><a href={organizationPath(recommendation.slug)}>{recommendation.canonical_name}</a></h3>
+              <p className="ace-geography">{recommendation.geography}</p>
+              <div className="ace-headline"><strong>{integer.format(recommendation.native_metric_value)}</strong><span>{recommendation.native_metric_unit}</span><small>{recommendation.native_metric_name}</small></div>
+              <dl>
+                <div><dt>Incremental room</dt><dd>{compactMoney.format(recommendation.funding_room_usd)} / year</dd></div>
+                <div><dt>Funding capacity</dt><dd>{compactMoney.format(recommendation.funding_capacity_usd)} / year</dd></div>
+                <div><dt>Period</dt><dd>{recommendation.funding_room_period.replace('annual, ', '')}</dd></div>
+              </dl>
+              <p className="ace-limit">{recommendation.limitations}</p>
+              <div className="ace-card-links"><a href={organizationPath(recommendation.slug)}>Market profile →</a><a href={recommendation.website_url} target="_blank" rel="noreferrer">ACE review ↗</a></div>
+            </article>
+          ))}
+          {!aceMarket && <p className="market-loading">{aceError ? 'The accepted ACE ledger is temporarily unavailable.' : 'Loading accepted ACE assessments…'}</p>}
+        </div>
+        <p className="data-note">{aceMarket ? `Source retrieved ${day.format(new Date(aceMarket.source.retrievedAt))}` : 'Loading database freshness…'} · <a href="https://animalcharityevaluators.org/blog/announcing-our-2025-charity-recommendations/" target="_blank" rel="noreferrer">2025 recommendation announcement ↗</a></p>
       </section>
 
       <section className="renphil-section" id="renphil-market">

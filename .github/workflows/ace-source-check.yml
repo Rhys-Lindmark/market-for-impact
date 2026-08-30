@@ -1,0 +1,32 @@
+name: ACE source freshness
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/ace-source-check.yml'
+      - 'data/ace/**'
+      - 'scripts/refresh-ace.mjs'
+      - 'scripts/lib/ace.mjs'
+      - 'scripts/ace.test.mjs'
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ace-source-freshness
+  cancel-in-progress: true
+
+jobs:
+  check-recommendations:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node --test scripts/ace.test.mjs
+      - run: node scripts/refresh-ace.mjs

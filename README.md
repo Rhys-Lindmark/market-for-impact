@@ -25,6 +25,7 @@ This is research infrastructure, not financial, tax, or individualized giving ad
 - A separate 79-record Coefficient Effective Giving & Careers ledger used for detailed reconciliation.
 - GiveWell’s 541-row public grant export and four current Top Charities, including evidence levels, delivery costs, historical reported cost per life saved, geography, model versions, and non-inferred funding-room status.
 - A versioned GiveDirectly comparison layer that keeps GiveWell’s 1× welfare anchor, 3–4× standard-program estimate, and 6× funding bar separate, with model-population, welfare-weight, currency-basis, and incompatibility warnings stored in D1.
+- Animal Charity Evaluators’ 10 current Recommended Charities, including five 2025 reviews and five retained 2024 recommendations, with 28 program-level native metrics, evaluation vintages, uncertainty ranges, annual funding capacity, and incremental room for more funding preserved in D1.
 - Renaissance Philanthropy’s 28 currently linked 2025 AI for Math awards, reconciled against its stated 29-award portfolio with one explicit coverage gap and no inferred row-level amounts.
 - Stable grant detail URLs across all current Coefficient, GiveWell, and RenPhil ledgers, plus organization profiles that separate received, advised, and originated funding roles and display evaluator evidence when available.
 - Auditable many-to-many grant/organization roles and source-specific name aliases, including all named recipients in Coefficient’s three multi-recipient records without splitting or duplicating grant amounts.
@@ -131,6 +132,17 @@ npm run data:renphil:refresh  # review before committing changed upstream data
 ```
 
 RenPhil states that its first round contained 29 awards, while the current winners page exposes 28 linked project records. The snapshot imports those 28 and records one unresolved coverage gap. The $18M first-round commitment, later $13.5M commitment, application caps, and field-building allocations remain fund-level signals; none is divided across or summed from the grant rows. GitHub checks the source hourly and fails into review when the portfolio or project pages change.
+
+### Animal Charity Evaluators
+
+The ACE snapshot preserves the current 2025 recommendation set and links every record to its official charity review. Funding capacity and incremental room are separate annual fields; the displayed $12.456M room total spans two overlapping cohorts and is not a single-period portfolio target.
+
+```bash
+npm run data:ace:check
+npm run data:ace:refresh  # review upstream changes before committing
+```
+
+ACE’s selected-program estimates remain in their native units: animals helped or affected, meals replaced, people reached, research outputs, and suffering-adjusted days (SADs). They are stored as multiple program metrics rather than one organization score. ACE explicitly warns that 2025 SAD estimates are not directly comparable with earlier ACE estimates or other organizations’ SAD estimates, so Market for Impact does not rank across those model vintages. GitHub checks the live recommendation links hourly and fails into review when the set changes.
 
 ## Data and citation rules
 

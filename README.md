@@ -24,6 +24,7 @@ This is research infrastructure, not financial, tax, or individualized giving ad
 - Coefficient Giving’s complete public grant index: 2,893 unique source records across 14 current fund lenses, plus a searchable D1-backed explorer.
 - A separate 79-record Coefficient Effective Giving & Careers ledger used for detailed reconciliation.
 - GiveWell’s 541-row public grant export and four current Top Charities, including evidence levels, delivery costs, historical reported cost per life saved, geography, model versions, and non-inferred funding-room status.
+- Renaissance Philanthropy’s 28 currently linked 2025 AI for Math awards, reconciled against its stated 29-award portfolio with one explicit coverage gap and no inferred row-level amounts.
 - Content-addressed raw and normalized snapshots, idempotent D1 materialization, source caveats, and fail-closed import checks.
 
 The prioritized roadmap is in [BACKLOG.md](BACKLOG.md). It covers ACE, Giving Green, Founders Pledge, AI safety, comparable-impact modeling, funding-room curves, organization pages, and a San Francisco giving market.
@@ -110,6 +111,17 @@ npm test
 The importer fails on unexpected headers, malformed dates or amounts, duplicate identities, record-count drift, or exported-row-total drift. It preserves the known snapshot discrepancy: exported row amounts total $2,625,949,864, which is $3 above Airtable’s displayed $2,625,949,861 aggregate.
 
 GiveWell’s headline cost-per-life figures are labeled as reported averages for 2022–2024 GiveWell-directed funding. They are not presented as current location-specific model outputs. A numeric organization-wide room-for-more-funding gap remains null unless GiveWell publishes one for the current decision period.
+
+### Renaissance Philanthropy
+
+The RenPhil refresh reads the official AI for Math winners index and each linked project page, retaining compact project-purpose excerpts, structured team names where the prose supports them, whether team text is present, source-update metadata, and missingness.
+
+```bash
+npm run data:renphil:check
+npm run data:renphil:refresh  # review before committing changed upstream data
+```
+
+RenPhil states that its first round contained 29 awards, while the current winners page exposes 28 linked project records. The snapshot imports those 28 and records one unresolved coverage gap. The $18M first-round commitment, later $13.5M commitment, application caps, and field-building allocations remain fund-level signals; none is divided across or summed from the grant rows. GitHub checks the source hourly and fails into review when the portfolio or project pages change.
 
 ## Data and citation rules
 

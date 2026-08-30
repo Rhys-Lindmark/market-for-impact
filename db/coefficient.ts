@@ -32,7 +32,10 @@ async function ensureCurrentSnapshot() {
 
   const source = await env.DB.prepare('SELECT id FROM sources WHERE url = ?').bind(sourceUrl).first<{ id: number }>();
   const advisor = await env.DB.prepare('SELECT id FROM organizations WHERE slug = ?').bind('coefficient-giving').first<{ id: number }>();
-  const recipients = await env.DB.prepare("SELECT id, slug FROM organizations WHERE organization_type = 'grantee'").all<{ id: number; slug: string }>();
+  // Organizations can play multiple roles across sources (for example, a grantee in
+  // one ledger and an administering funder in another). Resolve recipients by stable
+  // slug rather than the legacy single-value organization_type field.
+  const recipients = await env.DB.prepare('SELECT id, slug FROM organizations').all<{ id: number; slug: string }>();
   if (!source || !advisor) throw new Error('Coefficient source initialization failed.');
   const recipientIds = new Map(recipients.results.map((recipient) => [recipient.slug, recipient.id]));
 

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+/* eslint-disable @next/next/no-html-link-for-pages -- Native anchors avoid a confirmed Vinext production prefetch runtime error on this server-rendered brief. */
 import candidateUniverse from '@/data/san-francisco/candidate-universe-v1.json';
 import irsUniverse from '@/data/san-francisco/irs-exempt-universe-v1.json';
 import sfDiligence from '@/data/san-francisco/nonprofit-diligence-v1.json';
@@ -38,13 +38,13 @@ export default function SanFranciscoDonorPage() {
   return (
     <main className="sf-brief-shell">
       <header className="detail-topbar sf-brief-topbar">
-        <Link className="brand" href="/"><span className="brand-mark">M</span><span>Market for Impact</span></Link>
+        <a className="brand" href="/"><span className="brand-mark">M</span><span>Market for Impact</span></a>
         <nav aria-label="San Francisco page navigation">
           <a href="#funnel">Evidence funnel</a>
           <a href="#diligence">Initial diligence</a>
           <a href="#research-gates">Research gates</a>
         </nav>
-        <Link className="detail-back" href="/">← Full market</Link>
+        <a className="detail-back" href="/">← Full market</a>
       </header>
 
       <section className="sf-brief-hero">
@@ -64,8 +64,8 @@ export default function SanFranciscoDonorPage() {
           <p>These layers answer different questions. They are not additive, and movement through the funnel is earned through identity, outcome, causal, and marginal-funding evidence.</p>
         </header>
         <div className="sf-funnel-grid">
-          <article><span>01 · Registered field</span><strong>{integer.format(irsUniverse.summary.organizationCount)}</strong><h3>SF filing-address EINs</h3><p>Identity and IRS classification only. A San Francisco address does not establish local service or impact.</p><Link href="/#sf-irs-universe">Explore IRS records →</Link></article>
-          <article><span>02 · Public footprint</span><strong>{integer.format(candidateUniverse.summary.sourceOrganizationNameCount)}</strong><h3>City-contractor names</h3><p>{integer.format(candidateUniverse.summary.activeContractCount)} active prime contracts provide public-funding context, not effectiveness or philanthropic room.</p><Link href="/#sf-candidate-universe">Explore city contractors →</Link></article>
+          <article><span>01 · Registered field</span><strong>{integer.format(irsUniverse.summary.organizationCount)}</strong><h3>SF filing-address EINs</h3><p>Identity and IRS classification only. A San Francisco address does not establish local service or impact.</p><a href="/#sf-irs-universe">Explore IRS records →</a></article>
+          <article><span>02 · Public footprint</span><strong>{integer.format(candidateUniverse.summary.sourceOrganizationNameCount)}</strong><h3>City-contractor names</h3><p>{integer.format(candidateUniverse.summary.activeContractCount)} active prime contracts provide public-funding context, not effectiveness or philanthropic room.</p><a href="/#sf-candidate-universe">Explore city contractors →</a></article>
           <article><span>03 · Initial diligence</span><strong>{integer.format(sfDiligence.summary.candidateCount)}</strong><h3>Organization scorecards</h3><p>Accepted sources cover identity, theory of change, native signals, causal limits, public overlap, and downside cases.</p><a href="#diligence">Review the six →</a></article>
           <article className="blocked"><span>04 · Recommendation-ready</span><strong>{integer.format(sfDiligence.summary.candidatesWithPublishedMarginalGap)}</strong><h3>Publishable opportunities</h3><p>No candidate yet has both independently credible marginal-impact evidence and a reviewed, time-bounded funding plan.</p><a href="#research-gates">See what is missing →</a></article>
         </div>
@@ -75,9 +75,9 @@ export default function SanFranciscoDonorPage() {
       <section className="sf-brief-context" aria-labelledby="sf-context-title">
         <div><p className="kicker">WHAT THE MARKET CAN ANSWER TODAY</p><h2 id="sf-context-title">Useful context. Explicit limits.</h2></div>
         <div className="sf-context-grid">
-          <article><span>Outcome contract</span><strong>{sfOutcomes.outcomes.length} local outcomes</strong><p>Housing, homelessness, overdose, mental health, food security, education, violence, and mobility have explicit units and attribution requirements.</p><Link href="/#san-francisco">Read the outcome definitions ↗</Link></article>
-          <article><span>Public baseline</span><strong>{compactMoney.format(sfFunding.summary.cityBudgetUsd)}</strong><p>Approved city spending is context. Contract authority, payments, and remaining authority stay separate and never become donation room.</p><Link href="/#sf-public-funding">Inspect public funding ↗</Link></article>
-          <article><span>Conversion boundary</span><strong>QALY / WELLBY blocked</strong><p>All six candidates lack the local counterfactual and versioned conversion model required for a defensible health or wellbeing estimate.</p><Link href="/#sf-diligence">Inspect the boundary ↗</Link></article>
+          <article><span>Outcome contract</span><strong>{sfOutcomes.outcomes.length} local outcomes</strong><p>Housing, homelessness, overdose, mental health, food security, education, violence, and mobility have explicit units and attribution requirements.</p><a href="/#san-francisco">Read the outcome definitions ↗</a></article>
+          <article><span>Public baseline</span><strong>{compactMoney.format(sfFunding.summary.cityBudgetUsd)}</strong><p>Approved city spending is context. Contract authority, payments, and remaining authority stay separate and never become donation room.</p><a href="/#sf-public-funding">Inspect public funding ↗</a></article>
+          <article><span>Conversion boundary</span><strong>QALY / WELLBY blocked</strong><p>All six candidates lack the local counterfactual and versioned conversion model required for a defensible health or wellbeing estimate.</p><a href="/#sf-diligence">Inspect the boundary ↗</a></article>
         </div>
       </section>
 
@@ -116,7 +116,7 @@ export default function SanFranciscoDonorPage() {
       <section className="sf-research-gates" id="research-gates" aria-labelledby="sf-gates-title">
         <header><div><p className="kicker">FROM SHORTLIST TO RECOMMENDATION</p><h2 id="sf-gates-title">Five gates before a large gift.</h2></div><p>The next research cycle should turn a broad organization into a specific, fundable program with a testable marginal case.</p></header>
         <div>{researchGates.map((gate) => <article key={gate.number}><span>{gate.number}</span><h3>{gate.title}</h3><p>{gate.copy}</p></article>)}</div>
-        <aside><strong>The current answer is honest but incomplete.</strong><p>Market for Impact can identify the field, surface research leads, and show why common proxies are insufficient. It cannot yet tell a donor to allocate $10 million among these organizations. That requires interviews, program-specific plans, independent outcome evidence, and explicit counterfactuals.</p><Link href="/#methodology">Read the full methodology →</Link></aside>
+        <aside><strong>The current answer is honest but incomplete.</strong><p>Market for Impact can identify the field, surface research leads, and show why common proxies are insufficient. It cannot yet tell a donor to allocate $10 million among these organizations. That requires interviews, program-specific plans, independent outcome evidence, and explicit counterfactuals.</p><a href="/#methodology">Read the full methodology →</a></aside>
       </section>
 
       <section className="sf-brief-sources">
@@ -124,11 +124,11 @@ export default function SanFranciscoDonorPage() {
         <div>
           <a href={irsUniverse.source.url} target="_blank" rel="noreferrer"><span>IRS</span><strong>California Exempt Organizations Business Master File</strong><small>Posted {irsUniverse.source.postingDate} · identity and classification</small><b>↗</b></a>
           <a href={sfFunding.sources.find((source) => source.key === 'datasf-supplier-contracts')?.publicUrl} target="_blank" rel="noreferrer"><span>DataSF</span><strong>Active nonprofit prime-contract snapshot</strong><small>{integer.format(candidateUniverse.summary.activeContractCount)} accepted contract rows · accounting context</small><b>↗</b></a>
-          <Link href="/#sf-diligence"><span>MFI</span><strong>Six-candidate diligence contract</strong><small>Primary organization sources, public crosswalks, and explicit evidence limits</small><b>→</b></Link>
+          <a href="/#sf-diligence"><span>MFI</span><strong>Six-candidate diligence contract</strong><small>Primary organization sources, public crosswalks, and explicit evidence limits</small><b>→</b></a>
         </div>
       </section>
 
-      <footer><strong>Market for Impact</strong><p>San Francisco research preview · sources retrieved August 30, 2026</p><Link href="/">Explore the full market →</Link></footer>
+      <footer><strong>Market for Impact</strong><p>San Francisco research preview · sources retrieved August 30, 2026</p><a href="/">Explore the full market →</a></footer>
     </main>
   );
 }

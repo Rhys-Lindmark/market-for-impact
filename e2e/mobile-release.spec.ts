@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-const routes = (process.env.MOBILE_AUDIT_ROUTES ?? '/').split(',').map((route) => route.trim()).filter(Boolean);
+const routes = (process.env.MOBILE_AUDIT_ROUTES ?? '/,/san-francisco').split(',').map((route) => route.trim()).filter(Boolean);
 
 for (const route of routes) {
   test(`${route} has no page-level horizontal overflow`, async ({ page }) => {
@@ -25,8 +25,18 @@ test('phone donors can reach the core market from the top bar', async ({ page },
   await expect(menu.getByRole('link', { name: /Build a portfolio/ })).toBeVisible();
   await expect(menu.getByRole('link', { name: /San Francisco/ })).toBeVisible();
   await menu.getByRole('link', { name: /San Francisco/ }).click();
-  await expect(page).toHaveURL(/#san-francisco$/);
-  await expect(menu).not.toHaveAttribute('open', '');
+  await expect(page).toHaveURL(/\/san-francisco$/);
+  await expect(page.getByRole('heading', { name: /Where can a major gift do the most good/ })).toBeVisible();
+});
+
+test('phone donors can inspect a San Francisco diligence record', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== 'phone-390');
+  await page.goto('/san-francisco#diligence', { waitUntil: 'domcontentloaded' });
+  const firstRecord = page.locator('.sf-brief-candidates details').first();
+  await firstRecord.locator('summary').click();
+  await expect(firstRecord).toHaveAttribute('open', '');
+  await expect(firstRecord.getByText('Causal boundary')).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 
 test('phone controls retain practical touch targets and wide tables scroll locally', async ({ page }, testInfo) => {

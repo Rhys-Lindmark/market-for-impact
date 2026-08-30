@@ -708,7 +708,7 @@ export default function Home() {
         <nav className="desktop-navigation" aria-label="Primary navigation">
           <a href="#portfolio">Build a portfolio</a>
           <a href="#lgbtq-discovery">LGBTQIA+ giving</a>
-          <a href="#san-francisco">San Francisco</a>
+          <a href="/san-francisco">San Francisco</a>
           <a href="#opportunities">Opportunities</a>
           <a href="#evaluator-comparison">Compare evaluators</a>
           <a href="#funding-curve">Funding room</a>
@@ -720,7 +720,7 @@ export default function Home() {
           <summary>Explore <span aria-hidden="true">↓</span></summary>
           <nav className="mobile-navigation" aria-label="Mobile navigation">
             <a href="#portfolio" onClick={closeMobileMenu}>Build a portfolio <span>01</span></a>
-            <a href="#san-francisco" onClick={closeMobileMenu}>San Francisco <span>02</span></a>
+            <a href="/san-francisco" onClick={closeMobileMenu}>San Francisco <span>02</span></a>
             <a href="#opportunities" onClick={closeMobileMenu}>Opportunities <span>03</span></a>
             <a href="#evaluator-comparison" onClick={closeMobileMenu}>Compare evaluators <span>04</span></a>
             <a href="#funding-curve" onClick={closeMobileMenu}>Funding room <span>05</span></a>

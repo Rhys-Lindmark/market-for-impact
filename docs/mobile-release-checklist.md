@@ -3,6 +3,7 @@
 Run the automated gate at both 390 px and 768 px before publishing:
 
 ```bash
+npx wrangler d1 migrations apply DB --local --config wrangler.mobile.jsonc --persist-to .wrangler/state
 npm run test:mobile
 ```
 

@@ -138,6 +138,25 @@ type EvaluatorComparison = {
   }>;
 };
 
+type ComparableImpact = {
+  version: string; updatedAt: string; nativeUnitRule: string;
+  models: Array<{
+    modelKey: string; name: string; status: string; sourceUnit: string; targetUnit: string;
+    formula: string; modelVersion: string; effectiveAt: string | null; evaluator: string | null;
+    parameters: Array<{ key: string; label: string; low: number; default: number; high: number; unit: string }>;
+    assumptions: string[]; limitations: string[]; sourceUrl: string; sourceTitle: string;
+  }>;
+  qalyOpportunities: Array<{
+    organization: string; slug: string; nativeMetricName: string; costPerLifeSavedUsd: number;
+    nativeMetricUnit: string; modelVersion: string; limitations: string;
+  }>;
+  benchmarkTranslations: Array<{
+    benchmarkKey: string; name: string; benchmarkType: string; multipleLow: number; multipleHigh: number;
+    unitsPerUsdAtLow: number; unitsPerUsdAtHigh: number; modelVersion: string;
+  }>;
+  boundaries: Array<{ label: string; nativeUnit: string; status: string; reason: string }>;
+};
+
 const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
 const compactMoney = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 2 });
 const integer = new Intl.NumberFormat('en-US');
@@ -172,6 +191,14 @@ export default function Home() {
   const [evaluatorComparison, setEvaluatorComparison] = useState<EvaluatorComparison | null>(null);
   const [evaluatorComparisonError, setEvaluatorComparisonError] = useState(false);
   const [comparisonCause, setComparisonCause] = useState('global-health');
+  const [comparableImpact, setComparableImpact] = useState<ComparableImpact | null>(null);
+  const [comparableImpactError, setComparableImpactError] = useState(false);
+  const [qalySlug, setQalySlug] = useState('');
+  const [qalyYield, setQalyYield] = useState(30);
+  const [cgPeople, setCgPeople] = useState(100);
+  const [cgIncomeGain, setCgIncomeGain] = useState(10);
+  const [cgYears, setCgYears] = useState(5);
+  const [cgCost, setCgCost] = useState(100000);
   const [showAllRenPhil, setShowAllRenPhil] = useState(false);
   const [explorer, setExplorer] = useState<CoefficientExplorer | null>(null);
   const [explorerError, setExplorerError] = useState(false);
@@ -183,6 +210,15 @@ export default function Home() {
   const [explorerQuery, setExplorerQuery] = useState('');
   const [explorerPage, setExplorerPage] = useState(1);
   const [explorerRefresh, setExplorerRefresh] = useState(0);
+  useEffect(() => {
+    fetch('/api/comparable-impact').then((response) => {
+      if (!response.ok) throw new Error('Comparable-impact model unavailable');
+      return response.json() as Promise<ComparableImpact>;
+    }).then((result) => {
+      setComparableImpact(result);
+      setQalySlug((current) => current || result.qalyOpportunities[0]?.slug || '');
+    }).catch(() => setComparableImpactError(true));
+  }, []);
   useEffect(() => {
     fetch('/api/evaluator-comparison').then((response) => {
       if (!response.ok) throw new Error('Evaluator comparison unavailable');
@@ -323,6 +359,12 @@ export default function Home() {
     `${organization.organization} ${organization.roles.join(' ')}`.toLowerCase().includes(aiQuery.toLowerCase())
   ).slice(0, 24), [aiQuery, aiRole, aiSafetyMarket]);
   const selectedComparison = evaluatorComparison?.causes.find((item) => item.key === comparisonCause) ?? evaluatorComparison?.causes[0] ?? null;
+  const selectedQalyOpportunity = comparableImpact?.qalyOpportunities.find((item) => item.slug === qalySlug) ?? comparableImpact?.qalyOpportunities[0] ?? null;
+  const qalyCost = selectedQalyOpportunity ? selectedQalyOpportunity.costPerLifeSavedUsd / qalyYield : null;
+  const qalyLowCost = selectedQalyOpportunity ? selectedQalyOpportunity.costPerLifeSavedUsd / 50 : null;
+  const qalyHighCost = selectedQalyOpportunity ? selectedQalyOpportunity.costPerLifeSavedUsd / 20 : null;
+  const cgValue = 50000 * cgPeople * Math.log1p(cgIncomeGain / 100) * cgYears;
+  const cgSroi = cgValue / cgCost;
 
   return (
     <main>
@@ -334,6 +376,7 @@ export default function Home() {
         <nav aria-label="Primary navigation">
           <a href="#opportunities">Opportunities</a>
           <a href="#evaluator-comparison">Compare evaluators</a>
+          <a href="#impact-lab">Translate impact</a>
           <a href="#flows">Funding flows</a>
           <a href="#methodology">Methodology</a>
         </nav>
@@ -438,6 +481,56 @@ export default function Home() {
         </>}
         {!evaluatorComparison && <p className="market-loading">{evaluatorComparisonError ? 'The evaluator comparison is temporarily unavailable.' : 'Reconciling five evaluator sources against the accepted database…'}</p>}
         <p className="data-note">{evaluatorComparison ? `D1 ${evaluatorComparison.database.status} · matrix generated ${day.format(new Date(evaluatorComparison.generatedAt))}` : 'Loading source reconciliation…'} · Absence is not a negative evaluation · Grant history is not a recommendation · Native outcome units remain incomparable</p>
+      </section>
+
+      <section className="impact-lab-section" id="impact-lab">
+        <div className="impact-lab-heading">
+          <div><p className="kicker">COMPARABLE IMPACT · V0.1</p><h2>Translate with assumptions.<br />Never erase the native unit.</h2></div>
+          <p>QALYs, WELLBYs, $CG, and cash-benchmark multiples are different models—not interchangeable labels. This lab exposes the formula and uncertainty, then refuses conversions whose required evidence is absent.</p>
+        </div>
+        {comparableImpact && <>
+          <div className="impact-rule"><span>SOURCE-OF-TRUTH RULE</span><strong>{comparableImpact.nativeUnitRule}</strong><b>{comparableImpact.models.length} versioned models · {comparableImpact.boundaries.length} explicit boundaries</b></div>
+          <div className="impact-calculators">
+            <article className="impact-calculator qaly-calculator">
+              <div className="impact-model-label"><span>ILLUSTRATIVE</span><b>Life saved → QALY</b></div>
+              <h3>How much hinges on the life-years assumption?</h3>
+              <label>GiveWell opportunity<select aria-label="Choose a GiveWell opportunity for QALY sensitivity" value={qalySlug} onChange={(event) => setQalySlug(event.target.value)}>{comparableImpact.qalyOpportunities.map((item) => <option value={item.slug} key={item.slug}>{item.organization}</option>)}</select></label>
+              <label>Assumed QALYs per life saved <output>{qalyYield}</output><select aria-label="Assumed QALYs per life saved" value={qalyYield} onChange={(event) => setQalyYield(Number(event.target.value))}>{[20, 25, 30, 35, 40, 45, 50].map((value) => <option value={value} key={value}>{value} QALYs</option>)}</select></label>
+              <div className="impact-result"><span>Illustrative result</span><strong>{qalyCost == null ? '—' : `${money.format(qalyCost)} / QALY`}</strong><small>{selectedQalyOpportunity ? `${money.format(selectedQalyOpportunity.costPerLifeSavedUsd)} per life ÷ ${qalyYield} user-supplied QALYs` : 'Loading accepted native metric…'}</small></div>
+              <p className="impact-range">Sensitivity at 20–50 QALYs: <b>{qalyLowCost == null || qalyHighCost == null ? '—' : `${money.format(qalyLowCost)}–${money.format(qalyHighCost)} per QALY`}</b></p>
+              <p className="impact-caveat">This is not GiveWell’s published QALY estimate. It is a transparent shortcut over a historical cost-per-life average; morbidity, age, health utilities, and discounting remain unmodeled.</p>
+            </article>
+            <article className="impact-calculator cg-calculator">
+              <div className="impact-model-label"><span>EVALUATOR-PUBLISHED FORMULA</span><b>Economic benefit → $CG</b></div>
+              <h3>Make Coefficient’s welfare inputs visible.</h3>
+              <div className="cg-inputs">
+                <label>People<input aria-label="People affected" type="number" min="1" value={cgPeople} onChange={(event) => setCgPeople(Math.max(1, Number(event.target.value) || 1))} /></label>
+                <label>Income gain<input aria-label="Annual income gain percent" type="number" min="1" value={cgIncomeGain} onChange={(event) => setCgIncomeGain(Math.max(1, Number(event.target.value) || 1))} /><span>%</span></label>
+                <label>Years<input aria-label="Duration in years" type="number" min="1" value={cgYears} onChange={(event) => setCgYears(Math.max(1, Number(event.target.value) || 1))} /></label>
+                <label>Cost<input aria-label="Philanthropic cost in USD" type="number" min="1" value={cgCost} onChange={(event) => setCgCost(Math.max(1, Number(event.target.value) || 1))} /><span>USD</span></label>
+              </div>
+              <div className="impact-result"><span>Modeled philanthropic value</span><strong>{compactMoney.format(cgValue)} $CG</strong><small>{cgSroi.toLocaleString('en-US', { maximumFractionDigits: 1 })} $CG per $1 of philanthropic cost</small></div>
+              <p className="impact-formula">50,000 × people × ln(1 + income gain) × years</p>
+              <p className="impact-caveat">Inputs must be causal, marginal estimates. Grant size is not evidence of people reached or income gained, so the ledger never fills these fields automatically.</p>
+            </article>
+          </div>
+          <div className="impact-model-grid">
+            {comparableImpact.models.map((model) => <article key={model.modelKey} className={`impact-model-card ${model.status}`}>
+              <div><span>{model.status.replaceAll('-', ' ')}</span><b>{model.targetUnit}</b></div>
+              <h3>{model.name}</h3>
+              <p><strong>Formula.</strong> {model.formula}</p>
+              <p><strong>Boundary.</strong> {model.limitations[0]}</p>
+              <small>{model.modelVersion}</small>
+              <a href={model.sourceUrl} target="_blank" rel="noreferrer">Trace the definition ↗</a>
+            </article>)}
+          </div>
+          <div className="impact-boundaries">
+            <span>NO BRIDGE, NO SCORE</span>
+            {comparableImpact.boundaries.map((boundary) => <p key={boundary.label}><strong>{boundary.label}.</strong> {boundary.nativeUnit}. {boundary.reason}</p>)}
+          </div>
+          <p className="data-note">D1 reconciled · model registry {comparableImpact.version} · retrieved {day.format(new Date(comparableImpact.updatedAt))} · formulas, assumptions, and boundaries are versioned independently of native assessment rows</p>
+        </>}
+        {!comparableImpact && <p className="market-loading">{comparableImpactError ? 'The comparable-impact registry is temporarily unavailable.' : 'Loading versioned formulas and native metrics…'}</p>}
       </section>
 
       <section className="givewell-section" id="givewell-market">
@@ -785,6 +878,8 @@ export default function Home() {
           <a href="https://animalcharityevaluators.org/blog/announcing-our-2025-charity-recommendations/" target="_blank" rel="noreferrer"><span>ACE</span><strong>2025 recommended charities</strong><b>↗</b></a>
           <a href="https://www.givinggreen.earth/post/2025-2026-top-climate-nonprofits" target="_blank" rel="noreferrer"><span>Giving Green</span><strong>2025–26 climate recommendations</strong><b>↗</b></a>
           <a href="https://www.founderspledge.com/research/education-evidence-and-recommendations" target="_blank" rel="noreferrer"><span>Founders Pledge</span><strong>Education evidence & recommendations</strong><b>↗</b></a>
+          <a href="https://coefficientgiving.org/research/cost-effectiveness/" target="_blank" rel="noreferrer"><span>Coefficient Giving</span><strong>$CG cost-effectiveness methodology</strong><b>↗</b></a>
+          <a href="https://www.gov.uk/government/publications/green-book-supplementary-guidance-wellbeing" target="_blank" rel="noreferrer"><span>HM Treasury</span><strong>WELLBY appraisal guidance</strong><b>↗</b></a>
         </div>
       </section>
 

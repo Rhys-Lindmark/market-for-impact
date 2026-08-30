@@ -1,5 +1,5 @@
 import { env } from 'cloudflare:workers';
-import { normalizeOrganizationName, organizationIdentityKey, organizationSlug } from '@/db/organization-identity';
+import { normalizeOrganizationName, organizationIdentityKey, organizationSlug, reviewedCanonicalOrganizationName } from '@/db/organization-identity';
 
 const BATCH_SIZE = 50;
 
@@ -68,7 +68,8 @@ export async function upsertOrganizationIdentities(sourceId: number, inputs: Org
   const organizationBySlug = new Map(existingOrganizations.results.map((row) => [row.slug, row]));
   for (const identity of identities.values()) {
     const existing = organizationBySlug.get(identity.slug);
-    if (existing && organizationIdentityKey(existing.canonical_name) !== organizationIdentityKey(identity.canonicalName)) {
+    if (existing && organizationIdentityKey(reviewedCanonicalOrganizationName(existing.canonical_name))
+      !== organizationIdentityKey(reviewedCanonicalOrganizationName(identity.canonicalName))) {
       throw new Error(`Existing organization slug maps to a different name: ${identity.slug}`);
     }
   }

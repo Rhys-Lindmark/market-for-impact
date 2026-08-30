@@ -25,6 +25,15 @@ const reviewedCanonicalNames = new Map([
   ['givewell\u0000Good Judgment Inc', 'Good Judgment Inc.'],
 ]);
 
+const reviewedCanonicalVariants = new Map([
+  [organizationIdentityKey('Good Judgment Inc'), 'Good Judgment Inc.'],
+  [organizationIdentityKey('Good Judgment Inc.'), 'Good Judgment Inc.'],
+]);
+
 export function canonicalOrganizationName(source: string, sourceName: string) {
   return reviewedCanonicalNames.get(`${source}\u0000${sourceName}`) ?? sourceName;
+}
+
+export function reviewedCanonicalOrganizationName(value: string) {
+  return reviewedCanonicalVariants.get(organizationIdentityKey(value)) ?? value;
 }

@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import test from 'node:test';
-import { canonicalOrganizationName, normalizeOrganizationName, organizationIdentityKey, organizationSlug, uniqueOrganizationNames } from '../db/organization-identity.ts';
+import { canonicalOrganizationName, normalizeOrganizationName, organizationIdentityKey, organizationSlug, reviewedCanonicalOrganizationName, uniqueOrganizationNames } from '../db/organization-identity.ts';
 
 test('organization identity normalization collapses source whitespace without fuzzy merging', () => {
   assert.equal(normalizeOrganizationName(' Overseas\u00a0Development\u00a0Institute '), 'Overseas Development Institute');
@@ -49,4 +49,6 @@ test('reviewed aliases resolve every current cross-source slug collision', () =>
   }
   assert.equal(canonicalOrganizationName('givewell', 'Good Judgment Inc'), 'Good Judgment Inc.');
   assert.equal(canonicalOrganizationName('coefficient', 'Good Judgment Inc.'), 'Good Judgment Inc.');
+  assert.equal(reviewedCanonicalOrganizationName('Good Judgment Inc'), 'Good Judgment Inc.');
+  assert.equal(reviewedCanonicalOrganizationName('Good Judgment Inc.'), 'Good Judgment Inc.');
 });

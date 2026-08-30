@@ -92,7 +92,7 @@ test('phone donors can distinguish reported outcomes from external evidence doss
   test.skip(testInfo.project.name !== 'phone-390');
   await page.goto('/san-francisco#diligence', { waitUntil: 'domcontentloaded' });
   const dossiers = page.locator('.sf-evidence-dossier');
-  await expect(dossiers).toHaveCount(4);
+  await expect(dossiers).toHaveCount(5);
   const hamilton = dossiers.filter({ hasText: 'Hamilton Families' });
   await expect(hamilton.getByText('deeper diligence; recommendation blocked')).toBeVisible();
   await expect(hamilton.getByText('results pending')).toBeVisible();
@@ -109,6 +109,11 @@ test('phone donors can distinguish reported outcomes from external evidence doss
   await expect(glide.getByRole('heading', { name: /What GLIDE says happened/ })).toBeVisible();
   await expect(glide.getByText('systematic review and meta-analysis of 74 randomized clinical trials with 10,444 adults')).toBeVisible();
   await expect(glide.getByText('03 · What still blocks a recommendation')).toBeVisible();
+  const hac = dossiers.filter({ hasText: 'Housing Action Coalition' });
+  await expect(hac.getByRole('heading', { name: /What Housing Action Coalition says happened/ })).toBeVisible();
+  await expect(hac.getByText('official bill history and chapter status')).toBeVisible();
+  await expect(hac.getByText('peer-reviewed literature review of zoning change, construction, costs, and neighborhood demographics')).toBeVisible();
+  await expect(hac.getByText('03 · What still blocks a recommendation')).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 

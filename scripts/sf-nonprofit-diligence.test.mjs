@@ -14,7 +14,7 @@ test('SF diligence cohort is reproducible and keeps conversions blocked', () => 
   assert.equal(snapshot.candidates.length, 6);
   assert.equal(snapshot.summary.qalyBlockedCount, 6);
   assert.equal(snapshot.summary.candidatesWithPublishedMarginalGap, 0);
-  assert.equal(snapshot.summary.evidenceDossierCount, 4);
+  assert.equal(snapshot.summary.evidenceDossierCount, 5);
 });
 
 test('public-contract aliases reconcile exact accounting totals', () => {
@@ -106,5 +106,24 @@ test('GLIDE dossier separates multi-service scale, public funding, and program e
   assert.match(dossier.evidenceLayers.find((layer) => layer.publisher === 'JAMA Health Forum').transferLimit, /does not estimate the effect of GLIDE/i);
   assert.match(dossier.evidenceLayers.find((layer) => layer.publisher === 'Campbell Systematic Reviews').finding, /did not improve mental health/i);
   assert.match(dossier.evidenceLayers.find((layer) => layer.publisher === 'JAMA Psychiatry').design, /74 randomized clinical trials/i);
+  assert.ok(dossier.missingForRecommendation.some((gap) => /\$100,000.*\$1 million.*\$10 million/i.test(gap)));
+});
+
+test('Housing Action Coalition dossier separates contribution evidence from attribution and downstream housing effects', () => {
+  const hac = snapshot.candidates.find((row) => row.key === 'housing-action-coalition');
+  const dossier = hac.evidenceDossier;
+  const finances = dossier.organizationReported.financials;
+  assert.match(dossier.decisionState, /blocked/);
+  assert.equal(dossier.organizationReported.outcomes.length, 4);
+  assert.equal(finances.membershipDuesUsd + finances.fundraisingEventContributionsUsd + finances.relatedOrganizationContributionsUsd + finances.otherContributionsUsd + finances.netFundraisingEventLossUsd + finances.otherRevenueUsd, finances.revenueUsd);
+  assert.equal(finances.programExpensesUsd + finances.administrationExpensesUsd + finances.fundraisingExpensesUsd, finances.expensesUsd);
+  assert.equal(finances.assetsUsd - finances.liabilitiesUsd, finances.netAssetsUsd);
+  assert.match(finances.boundary, /501\(c\)\(3\).*not the 501\(c\)\(4\)/i);
+  assert.equal(dossier.evidenceLayers.length, 4);
+  assert.match(dossier.evidenceLayers.find((layer) => layer.publisher === 'California Legislative Information').transferLimit, /does not identify HAC's contribution/i);
+  assert.match(dossier.evidenceLayers.find((layer) => layer.publisher === 'Coefficient Giving').finding, /\$120,000/i);
+  assert.match(dossier.evidenceLayers.find((layer) => layer.publisher === 'UC Berkeley').transferLimit, /cannot convert 4,500 legally feasible units/i);
+  assert.match(dossier.evidenceLayers.find((layer) => layer.publisher === 'Journal of Planning Literature').finding, /mixed results/i);
+  assert.ok(dossier.missingForRecommendation.some((gap) => /causal share/i.test(gap)));
   assert.ok(dossier.missingForRecommendation.some((gap) => /\$100,000.*\$1 million.*\$10 million/i.test(gap)));
 });

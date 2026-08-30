@@ -123,12 +123,58 @@ const buildFoodBankPacket = ({ grantEvaluation, diligence, cityContracts }) => {
   };
 };
 
+const buildSfLgbtCenterPacket = ({ grantEvaluation, diligence, cityContracts }) => {
+  const { candidate, protocolCandidate } = findCandidate(diligence, grantEvaluation, 'sf-lgbt-center');
+  const annual = candidate.evidenceDossier.organizationReported;
+  const sources = [
+    { key: 'center-year-review-2024', publisher: annual.source.publisher, title: annual.source.title, url: annual.source.url, publishedAt: annual.source.publishedAt, retrievedAt: annual.source.retrievedAt },
+    { key: 'center-financials', ...candidate.sources.find((source) => source.title === 'FY2024 audited financial statements') },
+    { key: 'center-programs', publisher: candidate.name, title: 'Programs', url: 'https://www.sfcenter.org/programs/', publishedAt: null, retrievedAt: '2026-08-30' },
+    { key: 'center-employment-services', publisher: candidate.name, title: 'Employment Services', url: 'https://www.sfcenter.org/program/employment_services/', publishedAt: null, retrievedAt: '2026-08-30' },
+    { key: 'center-financial-services', publisher: candidate.name, title: 'Financial Services', url: 'https://www.sfcenter.org/program/housing-financial/', publishedAt: null, retrievedAt: '2026-08-30' },
+    { key: 'center-youth-services', publisher: candidate.name, title: 'Youth Services', url: 'https://www.sfcenter.org/program/youth-services/', publishedAt: null, retrievedAt: '2026-08-30' },
+    { key: 'center-theory-of-change', publisher: candidate.name, title: 'The SF LGBT Center Theory of Change', url: 'https://www.sfcenter.org/center-updates/theory-of-change/', publishedAt: null, retrievedAt: '2026-08-30' },
+    { key: 'datasf-supplier-contracts', publisher: cityContracts.publisher, title: cityContracts.title, url: cityContracts.publicUrl, publishedAt: cityContracts.sourceUpdatedAt, retrievedAt: cityContracts.retrievedAt },
+  ];
+  const publicFacts = [
+    { key: 'entity', label: 'Entity and donation vehicle', display: `${candidate.name} · ${candidate.taxStatus} · EIN ${candidate.ein}`, boundary: 'This identifies the organization, not the program, restricted fund, service cohort, or geography that would receive a proposed gift.', sourceKeys: ['center-financials'] },
+    { key: 'program-scope', label: 'Published program scope', display: 'Employment, financial and housing counseling, small-business support, youth mental health and navigation, information and referrals, culture, and community programs', boundary: 'The Center must identify one named program, target population, service intensity, and geography for each gift scenario; this broad portfolio is not a marginal plan.', sourceKeys: ['center-programs', 'center-employment-services', 'center-financial-services', 'center-youth-services'] },
+    { key: 'latest-signals', label: 'Latest accepted reporting window', display: '400+ job seekers supported · 30+ people secured living-wage employment · 20 first-time homebuyers · 1,000 hours of youth mental-health support', boundary: 'Calendar-2024 organization-reported outputs and outcomes; the report does not publish a common service denominator, retention window, comparator, validated mental-health change, or donor attribution.', sourceKeys: ['center-year-review-2024'] },
+    { key: 'organization-finances', label: 'Organization-wide FY2024 context', display: `${formatMoney(annual.financials.revenueUsd)} revenue · ${formatMoney(annual.financials.expensesUsd)} expenses · ${formatMoney(annual.financials.governmentGrantsUsd)} government grants (55% of revenue)`, boundary: 'Audited organization-wide totals and four broad program allocations do not reveal a current program budget, unrestricted liquidity, expected revenue, cost per retained outcome, or funding room.', sourceKeys: ['center-financials', 'center-year-review-2024'] },
+    { key: 'public-funding', label: 'San Francisco contract context', display: `${candidate.publicFunding.contractCount} exact prime-contractor matches · ${formatMoney(candidate.publicFunding.awardUsd)} contract authority · ${formatMoney(candidate.publicFunding.paymentsMadeUsd)} paid`, boundary: 'Life-to-date city contract accounting is not annual revenue, philanthropic funding room, program cost, or evidence that a private gift is additional.', sourceKeys: ['datasf-supplier-contracts'] },
+  ];
+  const questions = makeQuestions({
+    fields: grantEvaluation.marginalPlan.requiredFields,
+    contexts: {
+      programIdentity: { copy: 'The Center and its EIN are verified; the receiving program, restricted fund, target cohort, service intensity, and San Francisco or Bay Area geography are not selected.', sourceKeys: ['center-financials', 'center-programs'] },
+      timeBoundedBudget: { copy: 'FY2024 organization-wide revenue, expenses, government grants, and broad program allocations are public. A current program-period budget, restricted and unrestricted cash, expected revenue, reserves, and unfunded amount are not.', sourceKeys: ['center-financials', 'center-year-review-2024'] },
+      incrementalActivities: { copy: 'Published pages describe employment, financial, housing, youth, referral, cultural, and community services, but no source identifies the incremental activity purchased at any requested gift size.', sourceKeys: ['center-programs', 'center-employment-services', 'center-financial-services', 'center-youth-services'] },
+      capacityConstraints: { copy: 'The Employment Services page says individualized coaching enrollment is currently paused and the Career Connections newsletter is paused until Fall 2026. The reason, duration, staffing, employer, referral, housing, facility, and other program constraints are not reconciled.', sourceKeys: ['center-employment-services'] },
+      fundingDisplacement: { copy: 'Government grants supplied 55% of FY2024 revenue and five matched San Francisco contracts fund overlapping service areas. Restricted grants, renewal assumptions, private gifts, and scenario-specific displacement are not reconciled.', sourceKeys: ['center-financials', 'datasf-supplier-contracts'] },
+      outcomeForecast: { copy: 'The Center reports job placements, home purchases, service reach, and youth mental-health hours. Its 248-participant formative evaluation supports a measurement roadmap but does not publish retained employment, earnings, housing stability, or validated well-being effects with a comparator and uncertainty range.', sourceKeys: ['center-year-review-2024', 'center-theory-of-change'] },
+      costAndAttribution: { copy: 'FY2024 program expense is allocated across four broad families. Cost per retained living-wage job, additional homebuyer, sustained housing outcome, or validated mental-health improvement—and the Center and donor contribution shares—are not published.', sourceKeys: ['center-financials', 'center-year-review-2024'] },
+      milestones: { copy: 'The Theory of Change says the Center will collect and share outcome data regularly, but no accepted source locks scenario-specific 6-, 12-, 24-, or 36-month outcomes or continuation, revision, and exit rules for a new gift.', sourceKeys: ['center-theory-of-change'] },
+    },
+  });
+  return {
+    packetKey: 'sf-lgbt-center-marginal-plan-v0.1', sectionId: 'sf-lgbt-center-plan-request', candidateKey: candidate.key, candidateName: candidate.name, responseLabel: 'Center response',
+    headline: 'What could the SF LGBT Center do with the next gift?', status: REQUEST_STATUS, statusLabel: 'Draft · not sent', responseReceivedAt: null, forecastLockedAt: null,
+    recommendationState: 'insufficient-evidence', purpose: 'Turn the Center’s public service signals, audited finances, program descriptions, and measurement roadmap into three program-specific marginal cases without treating reach, service hours, or a formative evaluation as durable impact.',
+    decisionBoundary: 'This packet is a research request, not a funding recommendation, commitment, organization endorsement, submitted response, estimate of room for more funding, cost per retained job, or cost per validated well-being improvement.',
+    provenanceLegend: makeProvenanceLegend(candidate.name), publicFacts, scenarios: makeScenarios({ protocolCandidate, questions, subject: 'the Center' }), questions, sources,
+  };
+};
+
 export function buildSfMarginalPlanRequests({ grantEvaluation, diligence, publicFunding }) {
   const cityContracts = publicFunding.sources.find((source) => source.key === 'datasf-supplier-contracts');
   if (!cityContracts) throw new Error('Accepted DataSF supplier-contract source is missing.');
-  const packets = [buildHamiltonPacket({ grantEvaluation, diligence, cityContracts }), buildFoodBankPacket({ grantEvaluation, diligence, cityContracts })];
+  const packets = [
+    buildHamiltonPacket({ grantEvaluation, diligence, cityContracts }),
+    buildFoodBankPacket({ grantEvaluation, diligence, cityContracts }),
+    buildSfLgbtCenterPacket({ grantEvaluation, diligence, cityContracts }),
+  ];
   return {
-    version: 'sf-marginal-plan-requests-v0.2', generatedAt: grantEvaluation.generatedAt, geography: grantEvaluation.geography,
+    version: 'sf-marginal-plan-requests-v0.3', generatedAt: grantEvaluation.generatedAt, geography: grantEvaluation.geography,
     summary: {
       packetCount: packets.length,
       draftPacketCount: packets.filter((packet) => packet.status === REQUEST_STATUS).length,
@@ -144,9 +190,9 @@ export function buildSfMarginalPlanRequests({ grantEvaluation, diligence, public
 }
 
 export function validateSfMarginalPlanRequests(snapshot) {
-  if (snapshot.version !== 'sf-marginal-plan-requests-v0.2') throw new Error('Unexpected SF marginal-plan request version.');
-  if (snapshot.packets.length !== 2 || snapshot.summary.packetCount !== 2) throw new Error('Expected Hamilton and Food Bank request packets.');
-  const expectedKeys = ['hamilton-families', 'sf-marin-food-bank'];
+  if (snapshot.version !== 'sf-marginal-plan-requests-v0.3') throw new Error('Unexpected SF marginal-plan request version.');
+  if (snapshot.packets.length !== 3 || snapshot.summary.packetCount !== 3) throw new Error('Expected Hamilton, Food Bank, and SF LGBT Center request packets.');
+  const expectedKeys = ['hamilton-families', 'sf-marin-food-bank', 'sf-lgbt-center'];
   if (JSON.stringify(snapshot.packets.map((packet) => packet.candidateKey)) !== JSON.stringify(expectedKeys)) throw new Error('Unexpected request packet candidates or order.');
   if (new Set(snapshot.packets.map((packet) => packet.sectionId)).size !== snapshot.packets.length) throw new Error('Request packet anchors must be unique.');
   for (const packet of snapshot.packets) {
@@ -160,9 +206,9 @@ export function validateSfMarginalPlanRequests(snapshot) {
     if (packet.publicFacts.some((fact) => fact.sourceKeys.some((key) => !sourceKeys.has(key))) || packet.questions.some((question) => question.publicContextSourceKeys.some((key) => !sourceKeys.has(key)))) throw new Error(`${packet.candidateName} public context references an unknown source.`);
     if (packet.sources.some((source) => !source.retrievedAt)) throw new Error(`${packet.candidateName} source is missing a retrieval date.`);
   }
-  if (snapshot.summary.scenarioCount !== 6 || snapshot.summary.publicFactCount !== 10 || snapshot.summary.questionCount !== 16) throw new Error('Request summary is incomplete.');
+  if (snapshot.summary.scenarioCount !== 9 || snapshot.summary.publicFactCount !== 15 || snapshot.summary.questionCount !== 24) throw new Error('Request summary is incomplete.');
   if (snapshot.summary.submittedScenarioCount !== 0 || snapshot.summary.organizationResponseCount !== 0 || snapshot.summary.mfiModelCount !== 0) throw new Error('Request summary overstates readiness.');
-  const supportedHosts = new Set(['hamiltonfamilies.org', 'www.hamiltonfamilies.org', 'sfmfoodbank.org', 'www.sfmfoodbank.org', 'panda.sfmfoodbank.org', 'data.sfgov.org']);
+  const supportedHosts = new Set(['hamiltonfamilies.org', 'www.hamiltonfamilies.org', 'sfmfoodbank.org', 'www.sfmfoodbank.org', 'panda.sfmfoodbank.org', 'sfcenter.org', 'www.sfcenter.org', 'data.sfgov.org']);
   if (snapshot.packets.some((packet) => packet.sources.some((source) => !supportedHosts.has(new URL(source.url).hostname)))) throw new Error('Request includes an unsupported source domain.');
   return snapshot;
 }

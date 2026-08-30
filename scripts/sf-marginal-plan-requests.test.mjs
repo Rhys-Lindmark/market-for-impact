@@ -10,12 +10,12 @@ const snapshot = buildSfMarginalPlanRequests({
   publicFunding: read('data/san-francisco/public-funding-v1.json'),
 });
 
-test('both organization requests cover every required field and gift size', () => {
+test('all organization requests cover every required field and gift size', () => {
   validateSfMarginalPlanRequests(snapshot);
-  assert.equal(snapshot.summary.packetCount, 2);
-  assert.equal(snapshot.summary.scenarioCount, 6);
-  assert.equal(snapshot.summary.questionCount, 16);
-  assert.equal(snapshot.summary.publicFactCount, 10);
+  assert.equal(snapshot.summary.packetCount, 3);
+  assert.equal(snapshot.summary.scenarioCount, 9);
+  assert.equal(snapshot.summary.questionCount, 24);
+  assert.equal(snapshot.summary.publicFactCount, 15);
   for (const packet of snapshot.packets) {
     assert.deepEqual(packet.scenarios.map((scenario) => scenario.amountUsd), [100000, 1000000, 10000000]);
     assert.equal(packet.questions.length, 8);
@@ -49,5 +49,17 @@ test('Food Bank public prefill keeps cash, in-kind, capacity, and outcomes separ
   assert.match(packet.questions.find((question) => question.key === 'capacityConstraints').publicContext, /at capacity and uses a waitlist/i);
   assert.match(packet.questions.find((question) => question.key === 'outcomeForecast').publicContext, /USDA food-security denominator/i);
   assert.match(packet.decisionBoundary, /not.*cost per food-secure household/i);
+  assert.ok(packet.sources.every((source) => source.retrievedAt));
+});
+
+test('SF LGBT Center public prefill keeps reach, finances, paused enrollment, and durable outcomes separate', () => {
+  const packet = snapshot.packets.find((item) => item.candidateKey === 'sf-lgbt-center');
+  assert.match(packet.publicFacts.find((fact) => fact.key === 'latest-signals').display, /30\+ people secured living-wage employment/);
+  assert.match(packet.publicFacts.find((fact) => fact.key === 'organization-finances').display, /\$3\.62M government grants \(55% of revenue\)/);
+  assert.match(packet.publicFacts.find((fact) => fact.key === 'public-funding').display, /5 exact prime-contractor matches/);
+  assert.match(packet.questions.find((question) => question.key === 'capacityConstraints').publicContext, /enrollment is currently paused/i);
+  assert.match(packet.questions.find((question) => question.key === 'outcomeForecast').publicContext, /248-participant formative evaluation/i);
+  assert.match(packet.questions.find((question) => question.key === 'costAndAttribution').publicContext, /cost per retained living-wage job/i);
+  assert.match(packet.decisionBoundary, /not.*cost per retained job/i);
   assert.ok(packet.sources.every((source) => source.retrievedAt));
 });

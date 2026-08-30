@@ -114,8 +114,83 @@ function parseStringArray(value: unknown): string[] {
   }
 }
 
+async function getCoefficientMarketOverview(sourceId: number, retrievedAt: number) {
+  const [source, summary, recipients, fundRows] = await Promise.all([
+    env.DB.prepare(`SELECT publisher, title, url, retrieved_at, coverage_note, content_hash
+      FROM sources WHERE id = ?`).bind(sourceId).first<{
+        publisher: string; title: string; url: string; retrieved_at: number;
+        coverage_note: string | null; content_hash: string | null;
+      }>(),
+    env.DB.prepare(`SELECT COUNT(*) AS grant_count,
+        COALESCE(SUM(amount_usd), 0) AS total_published_amount_usd,
+        SUM(CASE WHEN amount_usd IS NULL THEN 1 ELSE 0 END) AS grants_without_published_amount,
+        SUM(CASE WHEN json_array_length(recipient_names_json) = 0 THEN 1 ELSE 0 END) AS grants_without_recipient,
+        SUM(CASE WHEN json_array_length(listed_funds_json) = 0 THEN 1 ELSE 0 END) AS grants_without_listed_fund,
+        SUM(CASE WHEN json_array_length(listed_funds_json) > 1 THEN 1 ELSE 0 END) AS grants_with_multiple_listed_funds,
+        SUM(CASE WHEN json_array_length(focus_areas_json) = 0 THEN 1 ELSE 0 END) AS grants_without_focus_area,
+        SUM(CASE WHEN award_date IS NULL THEN 1 ELSE 0 END) AS grants_without_award_date,
+        SUM(CASE WHEN award_date > ? THEN 1 ELSE 0 END) AS future_dated_grants,
+        MIN(award_date) AS earliest_award_date,
+        MAX(award_date) AS latest_award_date
+      FROM grants WHERE source_id = ? AND last_seen_at = ?`)
+      .bind(retrievedAt, sourceId, retrievedAt).first<Record<string, number | null>>(),
+    env.DB.prepare(`SELECT COUNT(DISTINCT names.value) AS unique_recipient_count
+      FROM grants g, json_each(g.recipient_names_json) names
+      WHERE g.source_id = ? AND g.last_seen_at = ? AND names.value <> ''`)
+      .bind(sourceId, retrievedAt).first<{ unique_recipient_count: number }>(),
+    env.DB.prepare(`SELECT funds.value AS fund, COUNT(*) AS grant_count,
+        COALESCE(SUM(g.amount_usd), 0) AS published_amount_usd,
+        MAX(g.award_date) AS latest_award_date
+      FROM grants g, json_each(g.listed_funds_json) funds
+      WHERE g.source_id = ? AND g.last_seen_at = ?
+      GROUP BY funds.value`).bind(sourceId, retrievedAt).all<{
+        fund: string; grant_count: number; published_amount_usd: number; latest_award_date: number | null;
+      }>(),
+  ]);
+  if (!source || !summary) throw new Error('Complete Coefficient market overview is unavailable.');
+  const fundsByName = new Map(fundRows.results.map((row) => [row.fund, row]));
+  const funds = marketSummary.funds.map((fund) => {
+    const row = fundsByName.get(fund.fund);
+    return {
+      fund: fund.fund,
+      url: fund.url,
+      status: fund.status,
+      grantCount: row?.grant_count ?? 0,
+      publishedAmountUsd: row?.published_amount_usd ?? 0,
+      latestAwardDate: row?.latest_award_date ? new Date(row.latest_award_date * 1000).toISOString() : null,
+    };
+  });
+  return {
+    source: {
+      publisher: source.publisher,
+      title: source.title,
+      url: source.url,
+      retrievedAt: new Date(source.retrieved_at * 1000).toISOString(),
+      coverageNote: source.coverage_note,
+      contentHash: source.content_hash,
+    },
+    summary: {
+      grantCount: summary.grant_count ?? 0,
+      totalPublishedAmountUsd: summary.total_published_amount_usd ?? 0,
+      uniqueRecipientCount: recipients?.unique_recipient_count ?? 0,
+      listedFundCount: funds.filter((fund) => fund.grantCount > 0).length,
+      grantsWithMultipleListedFunds: summary.grants_with_multiple_listed_funds ?? 0,
+      grantsWithoutListedFund: summary.grants_without_listed_fund ?? 0,
+      grantsWithoutFocusArea: summary.grants_without_focus_area ?? 0,
+      grantsWithoutPublishedAmount: summary.grants_without_published_amount ?? 0,
+      grantsWithoutRecipient: summary.grants_without_recipient ?? 0,
+      grantsWithoutAwardDate: summary.grants_without_award_date ?? 0,
+      futureDatedGrants: summary.future_dated_grants ?? 0,
+      earliestAwardDate: summary.earliest_award_date ? new Date(summary.earliest_award_date * 1000).toISOString() : null,
+      latestAwardDate: summary.latest_award_date ? new Date(summary.latest_award_date * 1000).toISOString() : null,
+    },
+    funds,
+  };
+}
+
 export async function getAllCoefficientGrants(query: CoefficientGrantQuery) {
   const { sourceId, retrievedAt } = await ensureAllCoefficientSnapshot();
+  const overview = await getCoefficientMarketOverview(sourceId, retrievedAt);
   const effectiveFund = query.fund && listedFunds.has(query.fund) ? query.fund : null;
   const clauses = ['g.source_id = ?', 'g.last_seen_at = ?'];
   const bindings: Array<string | number> = [sourceId, retrievedAt];
@@ -159,9 +234,7 @@ export async function getAllCoefficientGrants(query: CoefficientGrantQuery) {
 
   const total = count?.total ?? 0;
   return {
-    source: marketSummary.source,
-    summary: marketSummary.summary,
-    funds: marketSummary.funds,
+    ...overview,
     query: { ...query, fund: effectiveFund },
     pagination: { page: query.page, pageSize: query.pageSize, total, pageCount: Math.ceil(total / query.pageSize) },
     grants: result.results.map((record) => ({

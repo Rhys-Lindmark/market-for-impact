@@ -88,6 +88,20 @@ type GivingGreenMarket = {
   grants: Array<{ source_record_id: string; source_url: string; amount_usd: number; canonical_name: string; slug: string; strategies: string[] }>;
 };
 
+type FoundersPledgeMarket = {
+  retrievedAt: string;
+  coverageNote: string;
+  comparabilityWarning: string;
+  summary: { opportunityCount: number; causeAreaCount: number; currentPooledFundCount: number; publishedOrganizationRecommendationCount: number; partnerDerivedCount: number; giveDirectlyRelativeCount: number };
+  opportunities: Array<{
+    canonical_name: string; slug: string; source_url: string; source_title: string;
+    cause: 'Education' | 'Climate' | 'Global health' | 'Global catastrophic risks';
+    opportunityType: string; status: string; statusLabel: string; assessmentDate: string | null;
+    evidenceModel: string; nativeMetric: string; benchmarkName: string | null; benchmarkMultiple: number | null;
+    funding_room_usd: null; fundingStatus: string; summary: string; limitations: string;
+  }>;
+};
+
 const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
 const compactMoney = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 2 });
 const integer = new Intl.NumberFormat('en-US');
@@ -113,6 +127,8 @@ export default function Home() {
   const [aceError, setAceError] = useState(false);
   const [givingGreenMarket, setGivingGreenMarket] = useState<GivingGreenMarket | null>(null);
   const [givingGreenError, setGivingGreenError] = useState(false);
+  const [foundersPledgeMarket, setFoundersPledgeMarket] = useState<FoundersPledgeMarket | null>(null);
+  const [foundersPledgeError, setFoundersPledgeError] = useState(false);
   const [showAllRenPhil, setShowAllRenPhil] = useState(false);
   const [explorer, setExplorer] = useState<CoefficientExplorer | null>(null);
   const [explorerError, setExplorerError] = useState(false);
@@ -124,6 +140,12 @@ export default function Home() {
   const [explorerQuery, setExplorerQuery] = useState('');
   const [explorerPage, setExplorerPage] = useState(1);
   const [explorerRefresh, setExplorerRefresh] = useState(0);
+  useEffect(() => {
+    fetch('/api/founders-pledge').then((response) => {
+      if (!response.ok) throw new Error('Founders Pledge matrix unavailable');
+      return response.json() as Promise<FoundersPledgeMarket>;
+    }).then(setFoundersPledgeMarket).catch(() => setFoundersPledgeError(true));
+  }, []);
   useEffect(() => {
     fetch('/api/giving-green').then((response) => {
       if (!response.ok) throw new Error('Giving Green market unavailable');
@@ -214,7 +236,17 @@ export default function Home() {
     room: opportunity.funding_room_usd == null ? 'Qualitative need published' : money.format(opportunity.funding_room_usd),
     source: 'Giving Green',
     href: opportunity.website_url,
-  }))].map((opportunity, index) => ({ ...opportunity, rank: index + 1 })), [aceMarket, giveWellMarket, givingGreenMarket]);
+  })), ...(foundersPledgeMarket?.opportunities ?? []).map((opportunity) => ({
+    name: opportunity.canonical_name,
+    slug: opportunity.slug,
+    intervention: opportunity.evidenceModel,
+    cause: opportunity.cause,
+    evidence: opportunity.statusLabel,
+    impact: opportunity.benchmarkMultiple == null ? opportunity.nativeMetric : `${opportunity.benchmarkMultiple}× GiveDirectly`,
+    room: opportunity.fundingStatus,
+    source: 'Founders Pledge',
+    href: opportunity.source_url,
+  }))].map((opportunity, index) => ({ ...opportunity, rank: index + 1 })), [aceMarket, foundersPledgeMarket, giveWellMarket, givingGreenMarket]);
   const filtered = useMemo(() => acceptedOpportunities.filter((item) =>
     (cause === 'All causes' || item.cause === cause) &&
     `${item.name} ${item.intervention} ${item.source}`.toLowerCase().includes(query.toLowerCase())
@@ -274,7 +306,7 @@ export default function Home() {
 
         <div className="filters">
           <label className="search"><span>⌕</span><input aria-label="Search opportunities" placeholder="Search organizations, interventions, or evaluators" value={query} onChange={(event) => setQuery(event.target.value)} /></label>
-          <label className="select-wrap">Cause area<select aria-label="Filter by cause" value={cause} onChange={(event) => setCause(event.target.value)}><option>All causes</option><option>Global health</option><option>Climate</option><option>Animal welfare</option><option>Education</option><option>AI safety</option></select></label>
+          <label className="select-wrap">Cause area<select aria-label="Filter by cause" value={cause} onChange={(event) => setCause(event.target.value)}><option>All causes</option><option>Global health</option><option>Climate</option><option>Animal welfare</option><option>Education</option><option>AI safety</option><option>Global catastrophic risks</option></select></label>
           <button className="filter-button">More filters <span>＋</span></button>
         </div>
 
@@ -418,6 +450,46 @@ export default function Home() {
           {!givingGreenMarket && <p className="market-loading">{givingGreenError ? 'The accepted Giving Green ledger is temporarily unavailable.' : 'Loading accepted climate assessments…'}</p>}
         </div>
         <p className="data-note">{givingGreenMarket ? `Source retrieved ${day.format(new Date(givingGreenMarket.source.retrievedAt))}` : 'Loading database freshness…'} · <a href="https://www.givinggreen.earth/top-climate-nonprofits" target="_blank" rel="noreferrer">Current top nonprofits ↗</a> · <a href="https://www.givinggreen.earth/post/2025-2026-top-climate-nonprofits" target="_blank" rel="noreferrer">Grant announcement ↗</a></p>
+      </section>
+
+      <section className="founders-pledge-section" id="founders-pledge-market">
+        <div className="founders-pledge-heading">
+          <div><p className="kicker">THE FOUNDERS PLEDGE MATRIX</p><h2>One evaluator.<br />Four evidence regimes.</h2></div>
+          <p>Founders Pledge mixes modeled direct interventions, partner research, active pooled funds, and high-uncertainty bets. This matrix preserves those differences—and shows exactly where a GiveDirectly comparison does and does not exist.</p>
+        </div>
+        <div className="founders-pledge-overview" aria-label="Founders Pledge research matrix summary">
+          <div><span>Funding opportunities</span><strong>{foundersPledgeMarket ? integer.format(foundersPledgeMarket.summary.opportunityCount) : '—'}</strong><p>Funds, programs, and published organization recommendations.</p></div>
+          <div><span>Cause areas</span><strong>{foundersPledgeMarket ? integer.format(foundersPledgeMarket.summary.causeAreaCount) : '—'}</strong><p>Education, climate, global health, and catastrophic risks.</p></div>
+          <div><span>Current pooled funds</span><strong>{foundersPledgeMarket ? integer.format(foundersPledgeMarket.summary.currentPooledFundCount) : '—'}</strong><p>Climate and Global Catastrophic Risks.</p></div>
+          <div><span>Cash-relative estimates</span><strong>{foundersPledgeMarket ? integer.format(foundersPledgeMarket.summary.giveDirectlyRelativeCount) : '—'}</strong><p>Only Imagine Worldwide carries an explicit multiple.</p></div>
+        </div>
+        <div className="founders-pledge-warning"><strong>Comparison boundary.</strong> {foundersPledgeMarket?.comparabilityWarning ?? 'Loading the accepted Founders Pledge assessment matrix…'}</div>
+        <div className="founders-pledge-matrix">
+          {(['Education', 'Climate', 'Global health', 'Global catastrophic risks'] as const).map((matrixCause) => (
+            <section className="founders-pledge-cause" key={matrixCause}>
+              <header><span>{matrixCause}</span><b>{foundersPledgeMarket ? integer.format(foundersPledgeMarket.opportunities.filter((item) => item.cause === matrixCause).length) : '—'}</b></header>
+              <div>
+                {(foundersPledgeMarket?.opportunities ?? []).filter((item) => item.cause === matrixCause).map((opportunity) => (
+                  <article className="founders-pledge-card" key={opportunity.slug}>
+                    <div className="founders-pledge-status"><span>{opportunity.statusLabel}</span><b>{opportunity.assessmentDate ? day.format(new Date(opportunity.assessmentDate)) : 'Current page'}</b></div>
+                    <h3><a href={organizationPath(opportunity.slug)}>{opportunity.canonical_name}</a></h3>
+                    <p className="founders-pledge-model">{opportunity.evidenceModel}</p>
+                    <dl>
+                      <div><dt>Published metric</dt><dd>{opportunity.nativeMetric}</dd></div>
+                      <div><dt>GiveDirectly</dt><dd>{opportunity.benchmarkMultiple == null ? 'No published multiple' : `${opportunity.benchmarkMultiple}× in this model`}</dd></div>
+                      <div><dt>Funding status</dt><dd>{opportunity.fundingStatus}</dd></div>
+                    </dl>
+                    <p className="founders-pledge-summary">{opportunity.summary}</p>
+                    <p className="founders-pledge-limit">{opportunity.limitations}</p>
+                    <div className="founders-pledge-links"><a href={organizationPath(opportunity.slug)}>Market profile →</a><a href={opportunity.source_url} target="_blank" rel="noreferrer">Founders Pledge source ↗</a></div>
+                  </article>
+                ))}
+              </div>
+            </section>
+          ))}
+          {!foundersPledgeMarket && <p className="market-loading">{foundersPledgeError ? 'The accepted Founders Pledge matrix is temporarily unavailable.' : 'Loading accepted Founders Pledge assessments…'}</p>}
+        </div>
+        <p className="data-note">{foundersPledgeMarket ? `Sources retrieved ${day.format(new Date(foundersPledgeMarket.retrievedAt))}` : 'Loading source freshness…'} · Current pooled funds are separated from older published recommendations · <a href="https://www.founderspledge.com/programs" target="_blank" rel="noreferrer">Founders Pledge Funds ↗</a></p>
       </section>
 
       <section className="renphil-section" id="renphil-market">

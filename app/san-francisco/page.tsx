@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 /* eslint-disable @next/next/no-html-link-for-pages -- Native anchors avoid a confirmed Vinext production prefetch runtime error on this server-rendered brief. */
 import candidateUniverse from '@/data/san-francisco/candidate-universe-v1.json';
 import sfComparison from '@/data/san-francisco/donor-comparison-v1.json';
+import sfGrantEvaluation from '@/data/san-francisco/grant-evaluation-v1.json';
 import irsUniverse from '@/data/san-francisco/irs-exempt-universe-v1.json';
 import sfDiligence from '@/data/san-francisco/nonprofit-diligence-v1.json';
 import sfOutcomes from '@/data/san-francisco/outcome-ontology-v1.json';
@@ -44,6 +45,7 @@ export default function SanFranciscoDonorPage() {
         <nav aria-label="San Francisco page navigation">
           <a href="#funnel">Evidence funnel</a>
           <a href="#comparison">Compare six</a>
+          <a href="#protocol">Research protocol</a>
           <a href="#diligence">Initial diligence</a>
           <a href="#research-gates">Research gates</a>
         </nav>
@@ -132,6 +134,63 @@ export default function SanFranciscoDonorPage() {
           ))}
         </div>
         <p className="sf-comparison-disclaimer"><strong>Comparison rule.</strong> {sfComparison.interpretation.recommendation} {sfComparison.interpretation.fundingBoundary}</p>
+      </section>
+
+      <section className="sf-grant-protocol" id="protocol" aria-labelledby="sf-protocol-title">
+        <header>
+          <div><p className="kicker">THE RESEARCH BACKLOG · FORECAST BEFORE LOOK-BACK</p><h2 id="sf-protocol-title">How an impact number earns its place.</h2></div>
+          <p>{sfGrantEvaluation.purpose} Nothing below means an organization has supplied the requested evidence.</p>
+        </header>
+        <div className="sf-protocol-summary" aria-label="Grant evaluation readiness">
+          <div><strong>{sfGrantEvaluation.summary.scenarioCount}</strong><span>Candidate × gift-size plans</span></div>
+          <div><strong>{sfGrantEvaluation.summary.submittedScenarioCount}</strong><span>Plans submitted</span></div>
+          <div><strong>{sfGrantEvaluation.summary.forecastLockedCount}</strong><span>Forecasts locked</span></div>
+          <div><strong>{sfGrantEvaluation.summary.lookbackEligibleCount}</strong><span>Look-backs eligible</span></div>
+        </div>
+        <div className="sf-protocol-contract">
+          <section>
+            <header><span>Before a recommendation</span><h3>Lock the marginal plan.</h3><b>{sfGrantEvaluation.marginalPlan.requiredFields.length} required fields</b></header>
+            <ol>{sfGrantEvaluation.marginalPlan.requiredFields.map((field, index) => <li key={field.key}><span>{String(index + 1).padStart(2, '0')}</span><div><strong>{field.label}</strong><p>{field.question}</p></div></li>)}</ol>
+          </section>
+          <section>
+            <header><span>After funding</span><h3>Compare forecast with reality.</h3><b>{sfGrantEvaluation.lookback.requiredFields.length} required fields</b></header>
+            <ol>{sfGrantEvaluation.lookback.requiredFields.map((field, index) => <li key={field.key}><span>{String(index + 1).padStart(2, '0')}</span><div><strong>{field.label}</strong><p>{field.copy}</p></div></li>)}</ol>
+          </section>
+        </div>
+        <aside className="sf-protocol-timeline">
+          <div><span>Monitoring checkpoints</span><strong>{sfGrantEvaluation.lookback.defaultCheckpointsMonths.map((month) => `${month} mo`).join(' · ')}</strong></div>
+          <p>{sfGrantEvaluation.lookback.forecastRule}</p>
+          <div><span>Systematic look-back target</span><strong>{sfGrantEvaluation.lookback.systematicReviewTargetMonths.join('–')} months</strong></div>
+        </aside>
+        <div className="sf-lookback-seed">
+          <header><div><p className="kicker">FIRST HISTORICAL GRANT SEED · NOT AN MFI RECOMMENDATION</p><h3>A real grant. An incomplete record.</h3></div><p>This is the first accepted San Francisco grant queued for retrospective research. Its public grant record does not contain enough information for a look-back.</p></header>
+          {sfGrantEvaluation.historicalGrants.map((grant) => (
+            <article key={grant.grantKey}>
+              <div><span>Published grant</span><strong>{compactMoney.format(grant.amountUsd)}</strong><small>{grant.amountSemantics} · {grant.awardPeriod}</small></div>
+              <div><span>Recipient and purpose</span><strong>{grant.candidateName}</strong><small>{grant.purpose} · {grant.fund}</small></div>
+              <dl><div><dt>Original forecast</dt><dd>{grant.originalForecastState}</dd></div><div><dt>Milestones</dt><dd>{grant.milestonesState}</dd></div><div><dt>Realized outcomes</dt><dd>{grant.realizedOutcomesState}</dd></div><div><dt>Look-back</dt><dd>{grant.lookbackState}</dd></div></dl>
+              <p>{grant.currentAssessment}</p>
+              <footer><span>Protocol target: {grant.systematicLookbackWindow}</span><small>{grant.scheduleSemantics}</small><a href={grant.sourceUrl} target="_blank" rel="noreferrer">Open grant record ↗</a></footer>
+            </article>
+          ))}
+        </div>
+        <div className="sf-protocol-queue">
+          <header><div><p className="kicker">CURRENT RESEARCH QUEUE</p><h3>Six candidates. Eighteen missing plans.</h3></div><p>A blank plan is not a zero-dollar need. It means MFI has not reviewed a program-specific answer.</p></header>
+          <div>
+            {sfGrantEvaluation.candidates.map((candidate, index) => (
+              <article key={candidate.candidateKey}>
+                <header><span>{String(index + 1).padStart(2, '0')}</span><b>{candidate.marginalPlanLabel}</b></header>
+                <h4>{candidate.candidateName}</h4>
+                <div>{candidate.scenarios.map((scenario) => <div key={scenario.amountUsd}><strong>{compactMoney.format(scenario.amountUsd)}</strong><small>{scenario.display}</small></div>)}</div>
+                <footer><span>Forecast: not eligible</span><span>Look-back: not eligible</span><a href={candidate.researchHref}>Open current evidence ↓</a></footer>
+              </article>
+            ))}
+          </div>
+        </div>
+        <div className="sf-protocol-sources">
+          <p><strong>Method boundary.</strong> {sfGrantEvaluation.methodBoundary}</p>
+          <div>{sfGrantEvaluation.sources.map((source) => <a key={source.url} href={source.url} target="_blank" rel="noreferrer"><span>{source.publisher}</span><strong>{source.title}</strong><small>{source.use}</small><b>↗</b></a>)}</div>
+        </div>
       </section>
 
       <section className="sf-brief-diligence" id="diligence" aria-labelledby="sf-diligence-title">

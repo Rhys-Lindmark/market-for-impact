@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import coefficientIndex from '@/data/normalized/coefficient-market-summary.json';
+import giveWellSnapshot from '@/data/givewell/top-charities.json';
 
 type CoefficientMarket = {
   source: { retrievedAt: string; coverageNote: string; url: string };
@@ -22,6 +23,11 @@ type CoefficientExplorer = {
     focusAreas: string[];
     listedFunds: string[];
   }>;
+};
+
+type GiveWellMarket = {
+  source: { retrievedAt: string; url: string; coverageNote: string };
+  summary: { grant_count: number; total_amount_usd: number; recipient_count: number; latest_decision_date: number; missing_amount_count: number };
 };
 
 const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
@@ -53,6 +59,8 @@ export default function Home() {
   const [query, setQuery] = useState('');
   const [coefficientMarket, setCoefficientMarket] = useState<CoefficientMarket | null>(null);
   const [coefficientError, setCoefficientError] = useState(false);
+  const [giveWellMarket, setGiveWellMarket] = useState<GiveWellMarket | null>(null);
+  const [giveWellError, setGiveWellError] = useState(false);
   const [explorer, setExplorer] = useState<CoefficientExplorer | null>(null);
   const [explorerError, setExplorerError] = useState(false);
   const [explorerLoading, setExplorerLoading] = useState(true);
@@ -68,6 +76,12 @@ export default function Home() {
       if (!response.ok) throw new Error('Grant market unavailable');
       return response.json() as Promise<CoefficientMarket>;
     }).then(setCoefficientMarket).catch(() => setCoefficientError(true));
+  }, []);
+  useEffect(() => {
+    fetch('/api/givewell').then((response) => {
+      if (!response.ok) throw new Error('GiveWell market unavailable');
+      return response.json() as Promise<GiveWellMarket>;
+    }).then(setGiveWellMarket).catch(() => setGiveWellError(true));
   }, []);
   useEffect(() => {
     const params = new URLSearchParams({ page: String(explorerPage), pageSize: '12', sort: explorerSort });
@@ -165,6 +179,39 @@ export default function Home() {
           </table>
         </div>
         <p className="data-note">Source review: August 2026. Metrics preserve each evaluator’s native unit; “room” can mean a modeled gap, capacity, or open recommendation and is not yet normalized.</p>
+      </section>
+
+      <section className="givewell-section" id="givewell-market">
+        <div className="givewell-heading">
+          <div><p className="kicker">THE GIVEWELL MARKET</p><h2>Four programs.<br />No fake precision.</h2></div>
+          <p>GiveWell’s current Top Charities share a funding bar, but not a single donor-ready rank. We preserve each program’s evidence, native delivery unit, model version, geography, and live funding-room process.</p>
+        </div>
+        <div className="givewell-benchmark">
+          <div><span>Current funding bar</span><strong>{giveWellSnapshot.source.benchmark.fundingBarMultiple}× GiveWell benchmark</strong><p>Since November 2025, the benchmark is consumption-based.</p></div>
+          <div><span>GiveDirectly estimate</span><strong>{giveWellSnapshot.source.benchmark.giveDirectlyEstimatedMultipleLow}–{giveWellSnapshot.source.benchmark.giveDirectlyEstimatedMultipleHigh}× benchmark</strong><p>GiveDirectly is a useful reference point, but no longer the benchmark itself.</p></div>
+          <div><span>Published grant ledger</span><strong>{giveWellMarket ? integer.format(giveWellMarket.summary.grant_count) : '541'} records</strong><p>{giveWellMarket ? compactMoney.format(giveWellMarket.summary.total_amount_usd) : '$2.63B'} in exported row amounts through July 2026.</p></div>
+        </div>
+        <div className="givewell-cards">
+          {giveWellSnapshot.opportunities.map((opportunity) => (
+            <article className="givewell-card" key={opportunity.slug}>
+              <div className="givewell-card-top"><span>{opportunity.evidenceLevel}</span><b>{money.format(opportunity.costPerLifeSavedUsd)} / life</b></div>
+              <h3>{opportunity.organization}</h3>
+              <p className="givewell-program">{opportunity.program}</p>
+              <dl>
+                <div><dt>Delivery unit</dt><dd>{money.format(opportunity.costPerDeliveryUsd)} / {opportunity.deliveryUnit}</dd></div>
+                <div><dt>Model</dt><dd><a href={opportunity.modelUrl} target="_blank" rel="noreferrer">{opportunity.modelVersion} ↗</a></dd></div>
+                <div><dt>Funding room</dt><dd>{opportunity.fundingRoomStatus.replaceAll('-', ' ')}</dd></div>
+              </dl>
+              <p className="givewell-room">{opportunity.fundingRoomNote}</p>
+              <div className="givewell-card-links"><a href={opportunity.researchUrl} target="_blank" rel="noreferrer">Research review ↗</a><span>{opportunity.geographies.join(' · ')}</span></div>
+            </article>
+          ))}
+        </div>
+        <div className="givewell-notes">
+          <p><strong>Historical metric.</strong> Cost-per-life figures are GiveWell’s reported averages for 2022–2024 directed funding—not literal outputs of the newer location-specific models.</p>
+          <p><strong>Source discrepancy.</strong> Exported grant rows sum to $2,625,949,864, exactly $3 above Airtable’s displayed aggregate. Both are preserved; neither is silently “fixed.”</p>
+        </div>
+        <p className="data-note">Top Charities updated September 2025 · Cost-effectiveness framework updated May 2026 · Grant export retrieved August 2026 · {giveWellError ? 'The live D1 reconciliation is temporarily unavailable; verified snapshot figures remain visible.' : 'D1-backed grant totals reconcile on load.'} · <a href={giveWellSnapshot.source.url} target="_blank" rel="noreferrer">Primary source ↗</a></p>
       </section>
 
       <section className="flows-section" id="flows">

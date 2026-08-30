@@ -1,16 +1,12 @@
 import { createHash } from 'node:crypto';
+import { decodeHtmlEntities } from './html-entities.mjs';
 
 export const RENPHIL_WINNERS_URL = 'https://www.renaissancephilanthropy.org/ai-for-math-fund-projects';
 export const RENPHIL_FIRST_ROUND_URL = 'https://www.renaissancephilanthropy.org/insights/ai-for-math-fund-announces-18-million-in-grants-to-accelerate-breakthrough-discoveries-in-mathematicsnbsp';
 export const RENPHIL_ADDITIONAL_URL = 'https://www.renaissancephilanthropy.org/insights/renaissance-philanthropy-and-xtx-markets-additional-13-million';
 
 export function decodeHtml(value) {
-  return value
-    .replaceAll('&quot;', '"').replaceAll('&#39;', "'").replaceAll('&apos;', "'")
-    .replaceAll('&lt;', '<').replaceAll('&gt;', '>').replaceAll('&amp;', '&')
-    .replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(Number(code)))
-    .replace(/&#x([0-9a-f]+);/gi, (_, code) => String.fromCodePoint(Number.parseInt(code, 16)))
-    .replaceAll('&nbsp;', ' ');
+  return decodeHtmlEntities(value);
 }
 
 function cleanText(html) {

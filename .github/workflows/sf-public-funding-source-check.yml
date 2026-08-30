@@ -1,0 +1,36 @@
+name: San Francisco public-funding source check
+
+on:
+  push:
+    paths:
+      - 'data/san-francisco/public-funding-*.json'
+      - 'scripts/refresh-sf-public-funding.mjs'
+      - 'scripts/lib/sf-public-funding.mjs'
+      - 'scripts/sf-public-funding.test.mjs'
+      - '.github/workflows/sf-public-funding-source-check.yml'
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sf-public-funding-freshness
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate snapshot
+        run: node scripts/validate-sf-public-funding.mjs
+      - name: Run baseline tests
+        run: node --test scripts/sf-public-funding.test.mjs
+      - name: Verify DataSF sources
+        run: node scripts/refresh-sf-public-funding.mjs

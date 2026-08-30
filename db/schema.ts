@@ -1,4 +1,4 @@
-import { index, integer, real, sqliteTable, text, uniqueIndex } from 'drizzle-orm/sqlite-core';
+import { index, integer, primaryKey, real, sqliteTable, text, uniqueIndex } from 'drizzle-orm/sqlite-core';
 
 export const sources = sqliteTable('sources', {
   id: integer('id').primaryKey({ autoIncrement: true }),
@@ -267,4 +267,47 @@ export const localOutcomeOverlaps = sqliteTable('local_outcome_overlaps', {
 }, (table) => [
   uniqueIndex('local_outcome_overlaps_pair_version_idx').on(table.leftOutcomeId, table.rightOutcomeId, table.ontologyVersion),
   index('local_outcome_overlaps_version_idx').on(table.ontologyVersion),
+]);
+
+export const sfPublicFundingSources = sqliteTable('sf_public_funding_sources', {
+  id: integer('id').primaryKey({ autoIncrement: true }), sourceKey: text('source_key').notNull(),
+  datasetId: text('dataset_id').notNull(), publisher: text('publisher').notNull(), title: text('title').notNull(),
+  publicUrl: text('public_url').notNull(), queryUrl: text('query_url').notNull(), amountSemantics: text('amount_semantics').notNull(),
+  dataAsOf: text('data_as_of'), sourceUpdatedAt: integer('source_updated_at', { mode: 'timestamp' }).notNull(),
+  retrievedAt: integer('retrieved_at', { mode: 'timestamp' }).notNull(), sourceRowCount: integer('source_row_count').notNull(),
+  semanticHash: text('semantic_hash').notNull(), snapshotVersion: text('snapshot_version').notNull(),
+}, (table) => [uniqueIndex('sf_public_funding_sources_key_version_idx').on(table.sourceKey, table.snapshotVersion)]);
+
+export const sfDepartmentBudgets = sqliteTable('sf_department_budgets', {
+  id: integer('id').primaryKey({ autoIncrement: true }), departmentCode: text('department_code').notNull(),
+  department: text('department').notNull(), fiscalYear: text('fiscal_year').notNull(), budgetUsd: real('budget_usd').notNull(),
+  outcomeKeysJson: text('outcome_keys_json').notNull().default('[]'), dataAsOf: text('data_as_of'), dataLoadedAt: text('data_loaded_at'),
+  snapshotVersion: text('snapshot_version').notNull(), updatedAt: integer('updated_at', { mode: 'timestamp' }).notNull(),
+}, (table) => [
+  uniqueIndex('sf_department_budgets_code_year_version_idx').on(table.departmentCode, table.fiscalYear, table.snapshotVersion),
+  index('sf_department_budgets_version_code_idx').on(table.snapshotVersion, table.departmentCode),
+]);
+
+export const sfPublicContracts = sqliteTable('sf_public_contracts', {
+  id: integer('id').primaryKey({ autoIncrement: true }), contractNumber: text('contract_number').notNull(),
+  contractTitle: text('contract_title'), termStartDate: text('term_start_date').notNull(), termEndDate: text('term_end_date').notNull(),
+  contractType: text('contract_type'), purchasingAuthority: text('purchasing_authority'),
+  departmentCode: text('department_code').notNull(), department: text('department').notNull(),
+  primeContractor: text('prime_contractor').notNull(), scopeOfWork: text('scope_of_work'), awardUsd: real('award_usd'),
+  outstandingPurchaseOrdersUsd: real('outstanding_purchase_orders_usd'), paymentsMadeUsd: real('payments_made_usd'),
+  remainingAuthorityUsd: real('remaining_authority_usd'), dataAsOf: text('data_as_of'), dataLoadedAt: text('data_loaded_at'),
+  snapshotVersion: text('snapshot_version').notNull(), updatedAt: integer('updated_at', { mode: 'timestamp' }).notNull(),
+}, (table) => [
+  uniqueIndex('sf_public_contracts_number_version_idx').on(table.contractNumber, table.snapshotVersion),
+  index('sf_public_contracts_version_award_idx').on(table.snapshotVersion, table.awardUsd),
+  index('sf_public_contracts_version_department_idx').on(table.snapshotVersion, table.departmentCode),
+]);
+
+export const sfPublicContractOutcomes = sqliteTable('sf_public_contract_outcomes', {
+  contractId: integer('contract_id').notNull().references(() => sfPublicContracts.id),
+  outcomeId: integer('outcome_id').notNull().references(() => localOutcomes.id), matchReason: text('match_reason').notNull(),
+  snapshotVersion: text('snapshot_version').notNull(),
+}, (table) => [
+  primaryKey({ columns: [table.contractId, table.outcomeId, table.snapshotVersion] }),
+  index('sf_public_contract_outcomes_version_outcome_idx').on(table.snapshotVersion, table.outcomeId),
 ]);

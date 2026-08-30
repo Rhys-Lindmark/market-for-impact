@@ -1,0 +1,77 @@
+{
+  "version": "sf-public-funding-config-v0.1",
+  "snapshotDate": "2026-08-30",
+  "fiscalYear": {
+    "sourceValue": "2027",
+    "label": "FY2026–2027",
+    "startsOn": "2026-07-01",
+    "endsOn": "2027-06-30"
+  },
+  "sources": {
+    "budget": {
+      "key": "datasf-budget",
+      "datasetId": "xdgd-c79v",
+      "publisher": "San Francisco Controller's Office",
+      "title": "Budget",
+      "metadataUrl": "https://data.sfgov.org/api/views/xdgd-c79v",
+      "resourceUrl": "https://data.sfgov.org/resource/xdgd-c79v.json",
+      "publicUrl": "https://data.sfgov.org/City-Management-and-Ethics/Budget/xdgd-c79v",
+      "amountSemantics": "The approved amount published in the Annual Appropriation Ordinance. It is planned spending, not a payment, outcome, funding gap, or philanthropic opportunity."
+    },
+    "contracts": {
+      "key": "datasf-supplier-contracts",
+      "datasetId": "cqi5-hm2d",
+      "publisher": "San Francisco Controller's Office",
+      "title": "Supplier Contracts",
+      "metadataUrl": "https://data.sfgov.org/api/views/cqi5-hm2d",
+      "resourceUrl": "https://data.sfgov.org/resource/cqi5-hm2d.json",
+      "publicUrl": "https://data.sfgov.org/City-Management-and-Ethics/Supplier-Contracts/cqi5-hm2d",
+      "amountSemantics": "Contract authority, payments, and remaining authority are life-to-date fields for fully executed expenditure contracts, not annual flows. Rows exclude confidential contracts and revenue contracts."
+    }
+  },
+  "budgetDepartmentMappings": {
+    "housing-stability": ["HOM", "RNT"],
+    "unsheltered-days-avoided": ["HOM"],
+    "overdose-deaths-averted": ["DPH"],
+    "mental-health-stabilization": ["DPH"],
+    "food-security": ["HSA"],
+    "educational-attainment": ["CHF", "DEC"],
+    "violence-reduction": ["POL", "ADP", "JUV"],
+    "economic-mobility": ["ECN"]
+  },
+  "contractClassificationRules": {
+    "housing-stability": [
+      { "departments": ["HOM", "ADP", "HSA", "MYR", "DPH"], "pattern": "housing|homelessness prevent|master lease|rapid re.?housing|rental subsid|rent subsid|eviction|shelter|navigation|hotel|sro|housing first|housing loc|flex housing", "reason": "housing or homelessness language in an outcome-relevant department" }
+    ],
+    "unsheltered-days-avoided": [
+      { "departments": ["HOM", "DPH"], "pattern": "shelter|navigation|street outreach|unsheltered|sfhot|safe sleep|drop.?in|homeless outreach", "reason": "street, shelter, navigation, or outreach language" }
+    ],
+    "overdose-deaths-averted": [
+      { "departments": ["DPH"], "pattern": "overdose|substance use|sud treatment|sud services|opioid|naloxone|methadone|buprenorphine|harm reduction|sobering|addiction", "reason": "substance-use, overdose, or harm-reduction language" }
+    ],
+    "mental-health-stabilization": [
+      { "departments": ["DPH", "ADP", "DEC", "HSA"], "pattern": "mental health|behavioral health|psychiatr|\\bbhs\\b|crisis|mh services|mh&sa|ecmh", "reason": "mental-health, behavioral-health, or crisis language" }
+    ],
+    "food-security": [
+      { "departments": ["HSA", "HOM", "DPH", "CHF", "DEC"], "pattern": "food|meal|nutrition|grocery|pantry|congregate dining", "reason": "food, meal, or nutrition language" }
+    ],
+    "educational-attainment": [
+      { "departments": ["DEC"], "pattern": ".", "reason": "Department of Early Childhood contract" },
+      { "departments": ["CHF", "JUV", "HSA", "LIB"], "pattern": "learn and succeed|free city|college|education|school|academic|literacy|early childhood|child care|tutor|credit course", "reason": "learning, school, college, or literacy language" }
+    ],
+    "violence-reduction": [
+      { "departments": ["POL", "CHF", "HRC", "JUV", "DAT", "ADP"], "pattern": "violence|calvip|victim|survivor|domestic abuse|domestic violence|sexual assault|safe passage|crime prevention|restorative justice", "reason": "violence-prevention or victim-support language" }
+    ],
+    "economic-mobility": [
+      { "departments": ["ECN"], "pattern": ".", "reason": "Office of Economic and Workforce Development contract" },
+      { "departments": ["CHF", "HSA", "JUV", "ADP"], "pattern": "productive adult|workforce|employment|job center|career|citybuild|hiring hall|vocational|economic mobility|small business|financial empowerment", "reason": "employment, workforce, or economic-opportunity language" }
+    ]
+  },
+  "rules": {
+    "budget": "Department budgets are broad fiscal envelopes. Outcome mappings indicate institutional relevance, not outcome-specific appropriations; the same department may appear under multiple outcomes.",
+    "contracts": "Only nonprofit prime-contractor rows whose published term includes the snapshot date are accepted. A contract can map to several outcomes, so outcome totals are non-additive.",
+    "amounts": "Contract award, payments made, outstanding purchase orders, and remaining authority are kept separate. Negative or internally unreconciled remaining amounts stay visible and are never repaired silently.",
+    "impact": "Public spending is context, not evidence of effectiveness, additionality, displacement, or room for philanthropic funding.",
+    "coverage": "The contract dataset excludes confidential and revenue contracts and omits direct purchase orders or vouchers without a supplier contract. The budget dataset contains transfer adjustments and broad department envelopes."
+  }
+}

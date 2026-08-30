@@ -36,6 +36,7 @@ This is research infrastructure, not financial, tax, or individualized giving ad
 - A donor-facing data-quality dashboard covering source freshness, content-addressing, missing fields, publisher conflicts, disappeared rows, grouped-grant visibility, private-grant boundaries, and stale or closed funding-room evidence without collapsing those signals into an opaque score.
 - An explainable donor portfolio builder across 31 evaluator-supported funding tranches. Donors set cause weights, uncertainty tolerance, an evidence floor, published geography, direct-versus-pooled vehicle preference, and deployment horizon; the resulting allocation preserves unmatched cause dollars as unallocated and flags every selection whose current room for funding must be verified.
 - A San Francisco outcome ontology defining eight local outcome families—housing stability, unsheltered days avoided, overdose deaths averted, mental-health stabilization, food security, educational attainment, violence reduction, and economic mobility—against ten official sources. Service outputs, administrative proxies, model inputs, causal attribution, equity cuts, and double-count boundaries remain separate; QALY and WELLBY conversion is blocked until a versioned local model exists.
+- A San Francisco public-funding baseline across the approved FY2026–2027 city budget and 1,784 nonprofit prime contracts active on August 30, 2026. It maps 388 contracts into the local outcome ontology with conservative, auditable text rules while keeping department envelopes, contract authority, outstanding purchase orders, payments, and remaining authority separate and explicitly non-additive.
 - Renaissance Philanthropy’s 28 currently linked 2025 AI for Math awards, reconciled against its stated 29-award portfolio with one explicit coverage gap and no inferred row-level amounts.
 - Stable grant detail URLs across all current Coefficient, GiveWell, Giving Green, and RenPhil ledgers, plus organization profiles that separate received, advised, and originated funding roles and display evaluator evidence when available.
 - Auditable many-to-many grant/organization roles and source-specific name aliases, including all named recipients in Coefficient’s three multi-recipient records without splitting or duplicating grant amounts.
@@ -201,6 +202,18 @@ npm run data:sf:sources
 ```
 
 The eight outcomes retain their own canonical units and follow-up windows. Two—unsheltered days avoided and overdose deaths averted—are explicitly model-required. All eight block QALY and WELLBY translation until a versioned local conversion model specifies the population, baseline, duration, displacement, deadweight, uncertainty, and supporting evidence. GitHub checks the ten source definitions hourly and fails into review when a binary hash or semantic signal changes.
+
+### San Francisco public-funding baseline
+
+The public-funding snapshot combines two official DataSF ledgers: the approved FY2026–2027 budget and fully executed nonprofit prime contracts whose published terms include August 30, 2026. Department budgets are broad institutional envelopes, not outcome-specific appropriations. Contract authority, outstanding purchase orders, payments made, and remaining authority are life-to-date accounting fields and are never treated as annual spending, effectiveness, philanthropic displacement, or room for more funding.
+
+```bash
+npm run data:sf:funding:check
+npm run data:sf:funding:sources
+npm run data:sf:funding:refresh  # review upstream changes before committing
+```
+
+The committed snapshot preserves 54 department rows and 1,784 active nonprofit contracts. Ten broad department envelopes and 388 contracts map to the eight-outcome ontology; 1,396 contracts remain explicit abstentions. Twenty-one contracts map to more than one outcome, so outcome totals are intentionally non-additive. The source ledger retains 144 negative published remaining-authority values rather than silently repairing them. GitHub checks both DataSF datasets hourly and fails closed when either semantic row set changes.
 
 ### Evaluator comparison
 

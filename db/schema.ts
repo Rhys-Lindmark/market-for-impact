@@ -116,3 +116,29 @@ export const assessments = sqliteTable('assessments', {
   index('assessments_org_date_idx').on(table.organizationId, table.assessmentDate),
   index('assessments_evaluator_idx').on(table.evaluatorId),
 ]);
+
+export const impactBenchmarks = sqliteTable('impact_benchmarks', {
+  id: integer('id').primaryKey({ autoIncrement: true }),
+  sourceId: integer('source_id').notNull().references(() => sources.id),
+  evaluatorId: integer('evaluator_id').notNull().references(() => organizations.id),
+  comparatorOrganizationId: integer('comparator_organization_id').references(() => organizations.id),
+  benchmarkKey: text('benchmark_key').notNull(),
+  name: text('name').notNull(),
+  benchmarkType: text('benchmark_type').notNull(),
+  effectiveAt: integer('effective_at', { mode: 'timestamp' }),
+  modelVersion: text('model_version').notNull(),
+  referenceBenchmarkKey: text('reference_benchmark_key'),
+  estimateLow: real('estimate_low'),
+  estimateHigh: real('estimate_high'),
+  unitName: text('unit_name').notNull(),
+  unitsPerUsd: real('units_per_usd'),
+  currencyBasis: text('currency_basis'),
+  populationBasis: text('population_basis'),
+  assumptionsJson: text('assumptions_json').notNull().default('[]'),
+  limitationsJson: text('limitations_json').notNull().default('[]'),
+  modelUrl: text('model_url'),
+}, (table) => [
+  uniqueIndex('impact_benchmarks_key_idx').on(table.benchmarkKey),
+  index('impact_benchmarks_evaluator_type_idx').on(table.evaluatorId, table.benchmarkType),
+  index('impact_benchmarks_comparator_idx').on(table.comparatorOrganizationId),
+]);

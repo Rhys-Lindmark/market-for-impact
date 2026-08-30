@@ -230,3 +230,41 @@ export const fundingTranches = sqliteTable('funding_tranches', {
   index('funding_tranches_evaluator_cause_idx').on(table.evaluatorSlug, table.cause),
   index('funding_tranches_assessment_idx').on(table.assessmentId),
 ]);
+
+export const localOutcomes = sqliteTable('local_outcomes', {
+  id: integer('id').primaryKey({ autoIncrement: true }),
+  slug: text('slug').notNull(), geography: text('geography').notNull(), label: text('label').notNull(),
+  question: text('question').notNull(), canonicalUnit: text('canonical_unit').notNull(),
+  observableMeasure: text('observable_measure').notNull(), unitSemantics: text('unit_semantics').notNull(),
+  population: text('population').notNull(), timeWindow: text('time_window').notNull(), direction: text('direction').notNull(),
+  measurementState: text('measurement_state').notNull(), attributionState: text('attribution_state').notNull(),
+  serviceOutputsJson: text('service_outputs_json').notNull().default('[]'),
+  administrativeProxiesJson: text('administrative_proxies_json').notNull().default('[]'),
+  requiredInputsJson: text('required_inputs_json').notNull().default('[]'),
+  allowedClaimsJson: text('allowed_claims_json').notNull().default('[]'),
+  blockedClaimsJson: text('blocked_claims_json').notNull().default('[]'),
+  equityCutsJson: text('equity_cuts_json').notNull().default('[]'), qalyState: text('qaly_state').notNull(),
+  wellbyState: text('wellby_state').notNull(), displayOrder: integer('display_order').notNull(),
+  ontologyVersion: text('ontology_version').notNull(), updatedAt: integer('updated_at', { mode: 'timestamp' }).notNull(),
+}, (table) => [uniqueIndex('local_outcomes_slug_idx').on(table.slug), index('local_outcomes_version_order_idx').on(table.ontologyVersion, table.displayOrder)]);
+
+export const localOutcomeSources = sqliteTable('local_outcome_sources', {
+  id: integer('id').primaryKey({ autoIncrement: true }), outcomeId: integer('outcome_id').notNull().references(() => localOutcomes.id),
+  sourceKey: text('source_key').notNull(), publisher: text('publisher').notNull(), title: text('title').notNull(),
+  sourceUrl: text('source_url').notNull(), publishedAt: text('published_at'), datePrecision: text('date_precision').notNull(),
+  retrievedAt: integer('retrieved_at', { mode: 'timestamp' }).notNull(), monitorMode: text('monitor_mode').notNull(),
+  coverageNote: text('coverage_note').notNull(), ontologyVersion: text('ontology_version').notNull(),
+}, (table) => [
+  uniqueIndex('local_outcome_sources_outcome_source_version_idx').on(table.outcomeId, table.sourceKey, table.ontologyVersion),
+  index('local_outcome_sources_version_idx').on(table.ontologyVersion, table.sourceKey),
+]);
+
+export const localOutcomeOverlaps = sqliteTable('local_outcome_overlaps', {
+  id: integer('id').primaryKey({ autoIncrement: true }), leftOutcomeId: integer('left_outcome_id').notNull().references(() => localOutcomes.id),
+  rightOutcomeId: integer('right_outcome_id').notNull().references(() => localOutcomes.id), risk: text('risk').notNull(),
+  treatmentRule: text('treatment_rule').notNull(), ontologyVersion: text('ontology_version').notNull(),
+  updatedAt: integer('updated_at', { mode: 'timestamp' }).notNull(),
+}, (table) => [
+  uniqueIndex('local_outcome_overlaps_pair_version_idx').on(table.leftOutcomeId, table.rightOutcomeId, table.ontologyVersion),
+  index('local_outcome_overlaps_version_idx').on(table.ontologyVersion),
+]);

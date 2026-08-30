@@ -35,6 +35,7 @@ This is research infrastructure, not financial, tax, or individualized giving ad
 - A D1-backed capital-chain explorer across 3,491 accepted Coefficient, GiveWell, Giving Green, and RenPhil source rows. It keeps originating and advising funders separate, exposes source-supported year, cause, geography, status, and restriction filters, and prohibits cross-publisher dollar totals; the overlapping 79-row Coefficient EGC subset is excluded.
 - A donor-facing data-quality dashboard covering source freshness, content-addressing, missing fields, publisher conflicts, disappeared rows, grouped-grant visibility, private-grant boundaries, and stale or closed funding-room evidence without collapsing those signals into an opaque score.
 - An explainable donor portfolio builder across 31 evaluator-supported funding tranches. Donors set cause weights, uncertainty tolerance, an evidence floor, published geography, direct-versus-pooled vehicle preference, and deployment horizon; the resulting allocation preserves unmatched cause dollars as unallocated and flags every selection whose current room for funding must be verified.
+- A San Francisco outcome ontology defining eight local outcome families—housing stability, unsheltered days avoided, overdose deaths averted, mental-health stabilization, food security, educational attainment, violence reduction, and economic mobility—against ten official sources. Service outputs, administrative proxies, model inputs, causal attribution, equity cuts, and double-count boundaries remain separate; QALY and WELLBY conversion is blocked until a versioned local model exists.
 - Renaissance Philanthropy’s 28 currently linked 2025 AI for Math awards, reconciled against its stated 29-award portfolio with one explicit coverage gap and no inferred row-level amounts.
 - Stable grant detail URLs across all current Coefficient, GiveWell, Giving Green, and RenPhil ledgers, plus organization profiles that separate received, advised, and originated funding roles and display evaluator evidence when available.
 - Auditable many-to-many grant/organization roles and source-specific name aliases, including all named recipients in Coefficient’s three multi-recipient records without splitting or duplicating grant amounts.
@@ -74,6 +75,8 @@ Raw source semantics remain source-specific. Generic fields such as topics, fund
 Organization identity is conservative. `organization_source_names` preserves each publisher’s exact display name and the basis for linking it to a canonical organization. `grant_organization_roles` records every recipient, adviser, and originating funder relationship without forcing a single recipient onto a multi-recipient grant. Exact Unicode-normalized source names merge automatically; other cross-source aliases require an explicit reviewed mapping. Amounts remain attached to grants and are never divided across recipient links.
 
 The donor portfolio is deliberately not an optimizer. Cause weights divide the budget exactly; filtering a cause to zero eligible opportunities leaves that bucket unallocated rather than redistributing it. Within a cause, the builder selects at most three current opportunities by funding-room evidence state and stable source fields, then splits the bucket equally while respecting published numeric caps. Unpublished room remains a verify-before-giving condition. Evidence and uncertainty profiles are versioned eligibility categories, not comparable impact scores, and native outcome units are never ranked across causes.
+
+The San Francisco ontology is a measurement contract, not a recommendation slate. A delivered service is an output, an administrative field may be a proxy, and an outcome is a change in a person’s condition or durable status over a named window. Donor-attributable effects require a credible comparison or transparent model. Linked outcomes can be reported side by side, but they cannot be added without following the registered overlap rule.
 
 ## Local development
 
@@ -187,6 +190,17 @@ npm run data:ai-safety:build  # review taxonomy changes before committing
 ```
 
 Unmatched rows remain unclassified rather than receiving a guessed role. Historical published amounts describe the field’s disclosed funding flow; they are not effectiveness scores or current room for more funding. Founders Pledge recommendations are overlaid as a distinct signal, with reviewed aliases retained in the snapshot and its external-only IBBIS recommendation kept visible.
+
+### San Francisco outcome ontology
+
+The local outcome contract is stored in `data/san-francisco/outcome-ontology-v1.json` and materialized idempotently into D1. Its source monitor checks official city, federal, school-system, and workforce definitions without silently refreshing the reviewed ontology.
+
+```bash
+npm run data:sf:check
+npm run data:sf:sources
+```
+
+The eight outcomes retain their own canonical units and follow-up windows. Two—unsheltered days avoided and overdose deaths averted—are explicitly model-required. All eight block QALY and WELLBY translation until a versioned local conversion model specifies the population, baseline, duration, displacement, deadweight, uncertainty, and supporting evidence. GitHub checks the ten source definitions hourly and fails into review when a binary hash or semantic signal changes.
 
 ### Evaluator comparison
 

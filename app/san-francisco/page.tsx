@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 /* eslint-disable @next/next/no-html-link-for-pages -- Native anchors avoid a confirmed Vinext production prefetch runtime error on this server-rendered brief. */
 import candidateUniverse from '@/data/san-francisco/candidate-universe-v1.json';
+import sfComparison from '@/data/san-francisco/donor-comparison-v1.json';
 import irsUniverse from '@/data/san-francisco/irs-exempt-universe-v1.json';
 import sfDiligence from '@/data/san-francisco/nonprofit-diligence-v1.json';
 import sfOutcomes from '@/data/san-francisco/outcome-ontology-v1.json';
@@ -42,6 +43,7 @@ export default function SanFranciscoDonorPage() {
         <a className="brand" href="/"><span className="brand-mark">M</span><span>Market for Impact</span></a>
         <nav aria-label="San Francisco page navigation">
           <a href="#funnel">Evidence funnel</a>
+          <a href="#comparison">Compare six</a>
           <a href="#diligence">Initial diligence</a>
           <a href="#research-gates">Research gates</a>
         </nav>
@@ -82,6 +84,56 @@ export default function SanFranciscoDonorPage() {
         </div>
       </section>
 
+      <section className="sf-donor-comparison" id="comparison" aria-labelledby="sf-comparison-title">
+        <header>
+          <div><p className="kicker">DONOR COMPARISON · ALPHABETICAL, NOT RANKED</p><h2 id="sf-comparison-title">Six organizations. One honest denominator.</h2></div>
+          <p>This is the GiveWell-style front door: the same decision fields for every organization, with missing evidence left visible. It is a research shortlist—not a recommendation or allocation.</p>
+        </header>
+        <div className="sf-comparison-summary" aria-label="Comparison status">
+          <div><strong>{sfComparison.summary.candidateCount}</strong><span>Under review</span></div>
+          <div><strong>{sfComparison.summary.recommendationReadyCount}</strong><span>Recommendation-ready</span></div>
+          <div><strong>{sfComparison.summary.costEffectivenessNotEstimableCount}</strong><span>Impact prices not estimable</span></div>
+          <div><strong>{sfComparison.summary.publishedFundingRoomCount}</strong><span>Published funding-room amounts</span></div>
+        </div>
+        <aside className="sf-comparison-boundary">
+          <div><span>Proposed common outcome</span><strong>Life substantially bettered</strong><b>Definition not approved</b></div>
+          <p>{sfComparison.interpretation.translationBoundary}</p>
+        </aside>
+        <div className="sf-comparison-cards">
+          {sfComparison.candidates.map((candidate, index) => (
+            <article className="sf-comparison-card" key={candidate.key}>
+              <header>
+                <span>{String(index + 1).padStart(2, '0')} · {candidate.organizationType}</span>
+                <b>{candidate.decisionLabel}</b>
+              </header>
+              <h3>{candidate.name}</h3>
+              <p className="sf-comparison-outcomes">{candidate.outcomeLabels.join(' · ')}</p>
+              <p className="sf-comparison-intervention">{candidate.interventionType}</p>
+              <dl className="sf-comparison-metrics">
+                <div><dt>Cost per life substantially bettered</dt><dd className="sf-comparison-cost">{candidate.costEffectiveness.display}</dd></div>
+                <div><dt>Evidence</dt><dd>{candidate.researchStateLabel}</dd></div>
+                <div><dt>Current funding room</dt><dd>{candidate.fundingRoom.display}</dd></div>
+              </dl>
+              <section className="sf-comparison-gifts" aria-label={`${candidate.name} marginal gift plans`}>
+                <span>What would the next gift buy?</span>
+                <div>{candidate.fundingRoom.giftScenarios.map((scenario) => <div key={scenario.amountUsd}><strong>{compactMoney.format(scenario.amountUsd)}</strong><small>{scenario.display}</small></div>)}</div>
+              </section>
+              <section className="sf-comparison-signal">
+                <span>Strongest accepted native signal—not a cost-effectiveness estimate</span>
+                <strong>{candidate.strongestNativeSignal.value}</strong>
+                <p>{candidate.strongestNativeSignal.label} · {candidate.strongestNativeSignal.period}</p>
+              </section>
+              <p className="sf-comparison-decision">{candidate.decisionSummary}</p>
+              <footer>
+                <div><span>Donation vehicle</span><strong>{candidate.donationVehicle.taxStatus}</strong><small>{candidate.donationVehicle.deductibility}</small></div>
+                <div className="sf-comparison-actions"><a href={candidate.researchHref}>Full research ↓</a><a href={candidate.donationVehicle.url} target="_blank" rel="noreferrer">Giving page ↗</a></div>
+              </footer>
+            </article>
+          ))}
+        </div>
+        <p className="sf-comparison-disclaimer"><strong>Comparison rule.</strong> {sfComparison.interpretation.recommendation} {sfComparison.interpretation.fundingBoundary}</p>
+      </section>
+
       <section className="sf-brief-diligence" id="diligence" aria-labelledby="sf-diligence-title">
         <header>
           <div><p className="kicker">INITIAL DILIGENCE · ALPHABETICAL, NOT RANKED</p><h2 id="sf-diligence-title">Six initial diligence records.</h2></div>
@@ -89,7 +141,7 @@ export default function SanFranciscoDonorPage() {
         </header>
         <div className="sf-brief-candidates">
           {candidates.map((candidate, index) => (
-            <details key={candidate.key}>
+            <details id={`${candidate.key}-scorecard`} key={candidate.key}>
               <summary>
                 <span>{String(index + 1).padStart(2, '0')}</span>
                 <div><small>{candidate.entityType}</small><strong>{candidate.name}</strong><p>{candidate.outcomeKeys.map((key) => outcomeLabels.get(key) ?? key).join(' · ')}</p></div>

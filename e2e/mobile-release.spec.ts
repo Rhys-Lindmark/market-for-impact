@@ -78,6 +78,24 @@ test('phone donors can reach the core market from the top bar', async ({ page },
   await expect(page.getByRole('heading', { name: /Where can a major gift do the most good/ })).toBeVisible();
 });
 
+test('phone donors see the same honest decision fields across all six San Francisco candidates', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== 'phone-390');
+  await page.goto('/san-francisco#comparison', { waitUntil: 'domcontentloaded' });
+  await expect(page.getByRole('heading', { name: 'Six organizations. One honest denominator.' })).toBeVisible();
+  const cards = page.locator('.sf-comparison-card');
+  await expect(cards).toHaveCount(6);
+  await expect(cards.locator('.sf-comparison-cost')).toHaveCount(6);
+  await expect(cards.locator('.sf-comparison-cost')).toHaveText(Array(6).fill('Not yet estimable'));
+  await expect(page.locator('.sf-comparison-summary>div').nth(1)).toContainText('Recommendation-ready');
+  await expect(page.locator('.sf-comparison-summary>div').nth(1).locator('strong')).toHaveText('0');
+  const firstCard = cards.first();
+  await expect(firstCard.locator('.sf-comparison-gifts')).toContainText('$100K');
+  await expect(firstCard.locator('.sf-comparison-gifts')).toContainText('$1M');
+  await expect(firstCard.locator('.sf-comparison-gifts')).toContainText('$10M');
+  await expect(firstCard.locator('.sf-comparison-gifts')).toContainText('No reviewed plan');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
 test('phone donors can inspect a San Francisco diligence record', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'phone-390');
   await page.goto('/san-francisco#diligence', { waitUntil: 'domcontentloaded' });

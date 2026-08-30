@@ -29,6 +29,7 @@ This backlog is ordered by donor value, data integrity, and dependency. Each ite
 - [ ] **MFI-010 — Founders Pledge research matrix.** Map recommendations by cause, including education, climate, global health, and catastrophic risks; expose when estimates are relative to GiveDirectly.
 - [ ] **MFI-011 — AI safety ecosystem map.** Build an organization taxonomy spanning technical safety, governance, field-building, evaluations, biosecurity overlap, and effective careers. Seed it from Coefficient Giving grants, then reconcile other disclosed funders.
 - [ ] **MFI-012 — Evaluator comparison view.** For any cause, show agreement, disagreement, date, decision criteria, and funding status across GiveWell, Coefficient Giving, ACE, Giving Green, and Founders Pledge.
+- [ ] **MFI-022 — Renaissance Philanthropy grant pipeline.** Inventory public fund and grant portfolios, beginning with the 29 published 2025 AI for Math awards. Preserve fund, named donor, project, team or recipient, source URL, announcement period, and missing award amounts; never substitute fund commitments or application ranges for row-level grant amounts. Keep catalyzed, directly raised, and unlocked/matchmade capital signals separate from grants.
 
 ## Then — decision quality
 

@@ -104,13 +104,14 @@ test('phone donors can inspect the marginal-plan and grant-look-back research co
   await expect(summary.locator('strong')).toHaveText(['18', '0', '0', '0']);
   await expect(page.locator('.sf-protocol-contract>section')).toHaveCount(2);
   await expect(page.locator('.sf-protocol-contract li')).toHaveCount(16);
-  await expect(page.locator('.sf-request-index a')).toHaveCount(3);
+  await expect(page.locator('.sf-request-index a')).toHaveCount(4);
   const requests = page.locator('.sf-request-packet');
-  await expect(requests).toHaveCount(3);
+  await expect(requests).toHaveCount(4);
   const hamiltonRequest = requests.filter({ hasText: 'What could Hamilton Families do with the next gift?' });
   const foodBankRequest = requests.filter({ hasText: 'What could the Food Bank do with the next gift?' });
   const centerRequest = requests.filter({ hasText: 'What could the SF LGBT Center do with the next gift?' });
-  for (const request of [hamiltonRequest, foodBankRequest, centerRequest]) {
+  const glideRequest = requests.filter({ hasText: 'What could GLIDE do with the next gift?' });
+  for (const request of [hamiltonRequest, foodBankRequest, centerRequest, glideRequest]) {
     await expect(request.getByText('Draft · not sent')).toBeVisible();
     await expect(request.locator('.sf-request-facts article')).toHaveCount(5);
     await expect(request.locator('.sf-request-scenarios article')).toHaveCount(3);
@@ -127,6 +128,10 @@ test('phone donors can inspect the marginal-plan and grant-look-back research co
   await expect(centerRequest).toContainText('enrollment is currently paused');
   await expect(centerRequest).toContainText('248-participant formative evaluation');
   await expect(centerRequest).toContainText(/cost per retained living-wage job/i);
+  await expect(glideRequest).toContainText('14 exact prime-contractor matches');
+  await expect(glideRequest).toContainText('620,513 meals served');
+  await expect(glideRequest).toContainText('limited space and high demand');
+  await expect(glideRequest).toContainText('$14.12M future meal agreement');
   const seed = page.locator('.sf-lookback-seed article');
   await expect(seed).toHaveCount(1);
   await expect(seed).toContainText('$120K');

@@ -165,6 +165,47 @@ const buildSfLgbtCenterPacket = ({ grantEvaluation, diligence, cityContracts }) 
   };
 };
 
+const buildGlidePacket = ({ grantEvaluation, diligence, cityContracts }) => {
+  const { candidate, protocolCandidate } = findCandidate(diligence, grantEvaluation, 'glide');
+  const annual = candidate.evidenceDossier.organizationReported;
+  const sources = [
+    { key: 'glide-impact-report-2025', publisher: annual.source.publisher, title: annual.source.title, url: annual.source.url, publishedAt: annual.source.publishedAt, retrievedAt: annual.source.retrievedAt },
+    { key: 'glide-financials', ...candidate.sources.find((source) => source.title === 'FY2025 audited consolidated financial statements') },
+    { key: 'glide-programs', publisher: candidate.name, title: 'Programs', url: 'https://www.glide.org/programs/', publishedAt: null, retrievedAt: '2026-08-30' },
+    { key: 'glide-daily-meals', publisher: candidate.name, title: 'Daily Free Meals', url: 'https://www.glide.org/programs/daily-free-meals/', publishedAt: null, retrievedAt: '2026-08-30' },
+    { key: 'glide-welcome-center', publisher: candidate.name, title: 'Welcome Center', url: 'https://www.glide.org/programs/welcome-center/', publishedAt: null, retrievedAt: '2026-08-30' },
+    { key: 'glide-heat', publisher: candidate.name, title: 'Health Empowerment & Access Team', url: 'https://www.glide.org/heat/', publishedAt: null, retrievedAt: '2026-08-30' },
+    { key: 'datasf-supplier-contracts', publisher: cityContracts.publisher, title: cityContracts.title, url: cityContracts.publicUrl, publishedAt: cityContracts.sourceUpdatedAt, retrievedAt: cityContracts.retrievedAt },
+  ];
+  const publicFacts = [
+    { key: 'entity', label: 'Entity and donation vehicle', display: `${candidate.name} · ${candidate.taxStatus} · EIN ${candidate.ein}`, boundary: 'This identifies the Foundation donation vehicle; the audited reporting also consolidates Glide Memorial Church and related real-estate entities, and no receiving program or restricted fund is selected.', sourceKeys: ['glide-financials'] },
+    { key: 'program-scope', label: 'Published program scope', display: 'Daily meals, rental and benefits assistance, case management, family and childcare services, harm reduction, medication treatment, health testing, legal support, and advocacy', boundary: 'GLIDE must identify one named program, legal entity, target cohort, service intensity, and geography for each gift scenario; this integrated portfolio is not a marginal plan.', sourceKeys: ['glide-programs', 'glide-daily-meals', 'glide-welcome-center', 'glide-heat'] },
+    { key: 'latest-signals', label: 'Latest accepted reporting window', display: '620,513 meals served · 317 people received rental assistance · 2,422 people connected to benefits · 56 people enrolled in medication-assisted treatment', boundary: 'FY2025 organization-reported outputs and administrative outcomes; meals and enrollments are not unique durable outcomes, and no common follow-up, counterfactual, cross-program deduplication, or donor attribution is published.', sourceKeys: ['glide-impact-report-2025'] },
+    { key: 'organization-finances', label: 'Consolidated FY2025 context', display: `${formatMoney(annual.financials.revenueUsd)} revenue · ${formatMoney(annual.financials.expensesUsd)} expenses · ${formatMoney(annual.financials.contractRevenueUsd)} contract revenue`, boundary: 'Consolidated Foundation, Church, and related real-estate totals do not reveal a current program budget, unrestricted liquidity, program cash cost, expected revenue, or philanthropic funding room.', sourceKeys: ['glide-financials', 'glide-impact-report-2025'] },
+    { key: 'public-funding', label: 'San Francisco contract context', display: `${candidate.publicFunding.contractCount} exact prime-contractor matches · ${formatMoney(candidate.publicFunding.awardUsd)} contract authority · ${formatMoney(candidate.publicFunding.paymentsMadeUsd)} paid`, boundary: 'Life-to-date city contract accounting is not annual revenue, philanthropic funding room, program cost, or evidence that a private gift is additional.', sourceKeys: ['datasf-supplier-contracts'] },
+  ];
+  const questions = makeQuestions({
+    fields: grantEvaluation.marginalPlan.requiredFields,
+    contexts: {
+      programIdentity: { copy: 'GLIDE Foundation and its EIN are verified, while audited reporting consolidates the Foundation, Glide Memorial Church, and related real-estate entities. The receiving entity, program, restricted fund, cohort, and geography are not selected.', sourceKeys: ['glide-financials', 'glide-programs'] },
+      timeBoundedBudget: { copy: 'FY2025 consolidated revenue, expenses, contributions, contract revenue, and broad functional expenses are public. A current program-period cash budget, restricted and unrestricted cash, reserves, expected revenue, and unfunded amount are not.', sourceKeys: ['glide-financials', 'glide-impact-report-2025'] },
+      incrementalActivities: { copy: 'Published pages describe existing meals, rental and benefits assistance, case management, family services, harm reduction, treatment access, and health testing, but no source identifies the incremental activity purchased at any requested gift size.', sourceKeys: ['glide-programs', 'glide-daily-meals', 'glide-welcome-center', 'glide-heat'] },
+      capacityConstraints: { copy: 'Daily Meals reports about 1,700 meals per day with no eligibility requirement and partial city funding. The Welcome Center offers case management when available and goods based on availability; HEAT reports limited space and high demand for syringe access plus scheduled same-day medication starts. None quantifies program slack, staffing, food, clinical, referral, volunteer, or facility capacity for a new gift.', sourceKeys: ['glide-daily-meals', 'glide-welcome-center', 'glide-heat'] },
+      fundingDisplacement: { copy: 'FY2025 contract revenue was $10.83M; 14 matched city contracts include a $14.12M future meal agreement. Government grants, donated goods, Church and Foundation resources, and scenario-specific displacement are not reconciled.', sourceKeys: ['glide-financials', 'datasf-supplier-contracts'] },
+      outcomeForecast: { copy: 'GLIDE reports meals, rental assistance, benefit connections, and medication-treatment enrollment without a common 6- or 12-month food-security, housing-stability, benefit-retention, treatment-retention, or well-being denominator, comparator, expected incremental effect, or uncertainty range.', sourceKeys: ['glide-impact-report-2025'] },
+      costAndAttribution: { copy: 'Consolidated functional expenses do not publish cash cost per additional food-secure participant, sustained tenancy, approved and retained benefit, retained treatment participant, or validated well-being improvement—or GLIDE and donor contribution shares.', sourceKeys: ['glide-financials', 'glide-impact-report-2025'] },
+      milestones: { copy: 'No accepted source locks scenario-specific 6-, 12-, 24-, or 36-month outcomes, cross-program deduplication, forecast updates, or continuation, revision, and exit rules for a new gift.', sourceKeys: ['glide-impact-report-2025'] },
+    },
+  });
+  return {
+    packetKey: 'glide-marginal-plan-v0.1', sectionId: 'glide-plan-request', candidateKey: candidate.key, candidateName: candidate.name, responseLabel: 'GLIDE response',
+    headline: 'What could GLIDE do with the next gift?', status: REQUEST_STATUS, statusLabel: 'Draft · not sent', responseReceivedAt: null, forecastLockedAt: null,
+    recommendationState: 'insufficient-evidence', purpose: 'Turn GLIDE’s public service scale, consolidated finances, program descriptions, and capacity signals into three program-specific marginal cases without confusing gateway services or administrative connections with durable outcomes.',
+    decisionBoundary: 'This packet is a research request, not a funding recommendation, commitment, organization endorsement, submitted response, estimate of room for more funding, cost per food-secure participant, sustained tenancy, or retained treatment participant.',
+    provenanceLegend: makeProvenanceLegend(candidate.name), publicFacts, scenarios: makeScenarios({ protocolCandidate, questions, subject: 'GLIDE' }), questions, sources,
+  };
+};
+
 export function buildSfMarginalPlanRequests({ grantEvaluation, diligence, publicFunding }) {
   const cityContracts = publicFunding.sources.find((source) => source.key === 'datasf-supplier-contracts');
   if (!cityContracts) throw new Error('Accepted DataSF supplier-contract source is missing.');
@@ -172,9 +213,10 @@ export function buildSfMarginalPlanRequests({ grantEvaluation, diligence, public
     buildHamiltonPacket({ grantEvaluation, diligence, cityContracts }),
     buildFoodBankPacket({ grantEvaluation, diligence, cityContracts }),
     buildSfLgbtCenterPacket({ grantEvaluation, diligence, cityContracts }),
+    buildGlidePacket({ grantEvaluation, diligence, cityContracts }),
   ];
   return {
-    version: 'sf-marginal-plan-requests-v0.3', generatedAt: grantEvaluation.generatedAt, geography: grantEvaluation.geography,
+    version: 'sf-marginal-plan-requests-v0.4', generatedAt: grantEvaluation.generatedAt, geography: grantEvaluation.geography,
     summary: {
       packetCount: packets.length,
       draftPacketCount: packets.filter((packet) => packet.status === REQUEST_STATUS).length,
@@ -190,9 +232,9 @@ export function buildSfMarginalPlanRequests({ grantEvaluation, diligence, public
 }
 
 export function validateSfMarginalPlanRequests(snapshot) {
-  if (snapshot.version !== 'sf-marginal-plan-requests-v0.3') throw new Error('Unexpected SF marginal-plan request version.');
-  if (snapshot.packets.length !== 3 || snapshot.summary.packetCount !== 3) throw new Error('Expected Hamilton, Food Bank, and SF LGBT Center request packets.');
-  const expectedKeys = ['hamilton-families', 'sf-marin-food-bank', 'sf-lgbt-center'];
+  if (snapshot.version !== 'sf-marginal-plan-requests-v0.4') throw new Error('Unexpected SF marginal-plan request version.');
+  if (snapshot.packets.length !== 4 || snapshot.summary.packetCount !== 4) throw new Error('Expected Hamilton, Food Bank, SF LGBT Center, and GLIDE request packets.');
+  const expectedKeys = ['hamilton-families', 'sf-marin-food-bank', 'sf-lgbt-center', 'glide'];
   if (JSON.stringify(snapshot.packets.map((packet) => packet.candidateKey)) !== JSON.stringify(expectedKeys)) throw new Error('Unexpected request packet candidates or order.');
   if (new Set(snapshot.packets.map((packet) => packet.sectionId)).size !== snapshot.packets.length) throw new Error('Request packet anchors must be unique.');
   for (const packet of snapshot.packets) {
@@ -206,9 +248,9 @@ export function validateSfMarginalPlanRequests(snapshot) {
     if (packet.publicFacts.some((fact) => fact.sourceKeys.some((key) => !sourceKeys.has(key))) || packet.questions.some((question) => question.publicContextSourceKeys.some((key) => !sourceKeys.has(key)))) throw new Error(`${packet.candidateName} public context references an unknown source.`);
     if (packet.sources.some((source) => !source.retrievedAt)) throw new Error(`${packet.candidateName} source is missing a retrieval date.`);
   }
-  if (snapshot.summary.scenarioCount !== 9 || snapshot.summary.publicFactCount !== 15 || snapshot.summary.questionCount !== 24) throw new Error('Request summary is incomplete.');
+  if (snapshot.summary.scenarioCount !== 12 || snapshot.summary.publicFactCount !== 20 || snapshot.summary.questionCount !== 32) throw new Error('Request summary is incomplete.');
   if (snapshot.summary.submittedScenarioCount !== 0 || snapshot.summary.organizationResponseCount !== 0 || snapshot.summary.mfiModelCount !== 0) throw new Error('Request summary overstates readiness.');
-  const supportedHosts = new Set(['hamiltonfamilies.org', 'www.hamiltonfamilies.org', 'sfmfoodbank.org', 'www.sfmfoodbank.org', 'panda.sfmfoodbank.org', 'sfcenter.org', 'www.sfcenter.org', 'data.sfgov.org']);
+  const supportedHosts = new Set(['hamiltonfamilies.org', 'www.hamiltonfamilies.org', 'sfmfoodbank.org', 'www.sfmfoodbank.org', 'panda.sfmfoodbank.org', 'sfcenter.org', 'www.sfcenter.org', 'glide.org', 'www.glide.org', 'data.sfgov.org']);
   if (snapshot.packets.some((packet) => packet.sources.some((source) => !supportedHosts.has(new URL(source.url).hostname)))) throw new Error('Request includes an unsupported source domain.');
   return snapshot;
 }

@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import giveWellSnapshot from '@/data/givewell/top-charities.json';
 import renPhilSnapshot from '@/data/renphil/ai-for-math-2025.json';
 import sfDiligence from '@/data/san-francisco/nonprofit-diligence-v1.json';
+import charityNavigatorDiscovery from '@/data/charity-navigator/lgbtq-rights-v1.json';
 
 type CoefficientMarket = {
   source: { retrievedAt: string; coverageNote: string; url: string };
@@ -623,6 +624,7 @@ export default function Home() {
         </a>
         <nav aria-label="Primary navigation">
           <a href="#portfolio">Build a portfolio</a>
+          <a href="#lgbtq-discovery">LGBTQIA+ giving</a>
           <a href="#san-francisco">San Francisco</a>
           <a href="#opportunities">Opportunities</a>
           <a href="#evaluator-comparison">Compare evaluators</a>
@@ -867,6 +869,46 @@ export default function Home() {
         </article>
         <div className="sf-diligence-rules"><span>READING RULES</span><p><strong>Discovery.</strong> {sfDiligence.rules.discovery}</p><p><strong>Ratings.</strong> {sfDiligence.rules.ratings}</p><p><strong>Causality.</strong> {sfDiligence.rules.causality}</p><p><strong>Conversion.</strong> {sfDiligence.rules.conversion}</p></div>
         <p className="data-note">{sfDiligence.version} · {sfDiligence.coverageNote}</p>
+      </section>
+
+      <section className="cause-discovery-section" id="lgbtq-discovery">
+        <div className="cause-discovery-heading">
+          <div><p className="kicker">CAUSE DISCOVERY · FIRST SLICE</p><h2>Beyond the EA lists.<br />Before the recommendation.</h2></div>
+          <p>Charity Navigator surfaces <strong>{integer.format(charityNavigatorDiscovery.summary.discoveredOrganizationCount)}</strong> organizations tagged “LGBTQ rights.” This page starts with its current first ten results, then shows exactly what still needs diligence before Market for Impact can recommend one.</p>
+        </div>
+        <div className="cause-lenses" aria-label="Charity Navigator LGBTQIA+ discovery lenses">
+          {charityNavigatorDiscovery.taxonomy.discoveryLenses.map((lens) => <span key={lens.key}>{lens.label}</span>)}
+        </div>
+        <div className="cause-discovery-summary">
+          <article><span>FIRST-PAGE CANDIDATES</span><strong>{integer.format(charityNavigatorDiscovery.summary.reviewedCandidateCount)}</strong><small>Default source order · not an MFI rank</small></article>
+          <article><span>FOUR-STAR PROFILES</span><strong>{integer.format(charityNavigatorDiscovery.summary.fourStarCount)}</strong><small>Charity Navigator signal only</small></article>
+          <article><span>ALL FOUR BEACONS</span><strong>{integer.format(charityNavigatorDiscovery.summary.fourBeaconCount)}</strong><small>Coverage is not causal impact</small></article>
+          <article><span>PUBLISHED FUNDING GAPS</span><strong>{integer.format(charityNavigatorDiscovery.summary.publishedRoomForFundingCount)}</strong><small>Not yet assessed is not zero</small></article>
+        </div>
+        <div className="cause-candidate-table" role="region" aria-label="LGBTQIA+ charity discovery candidates" tabIndex={0}>
+          <table>
+            <thead><tr><th>Candidate</th><th>Headquarters</th><th>Charity Navigator</th><th>Completed beacons</th><th>MFI evidence state</th><th /></tr></thead>
+            <tbody>{charityNavigatorDiscovery.candidates.map((candidate) => <tr key={candidate.ein}>
+              <td><strong>{candidate.name}</strong><small>EIN {candidate.ein}</small><div className="cause-tags">{candidate.causes.slice(0, 3).map((cause) => <span key={cause}>{cause}</span>)}</div></td>
+              <td>{candidate.headquarters.city}, {candidate.headquarters.state}<small>Service geography unknown</small></td>
+              <td><strong>{candidate.ratingScore}% · {candidate.starRating} stars</strong><small>{candidate.highestLevelAdvisory ?? 'No advisory in accepted search field'}</small></td>
+              <td><strong>{candidate.completedBeaconCount}/4</strong><small>{candidate.completedBeacons.join(' · ')}</small></td>
+              <td><span className="research-state">Research lead</span><small>Impact evidence unassessed<br />Funding room unassessed</small></td>
+              <td><a href={candidate.profileUrl} target="_blank" rel="noreferrer" aria-label={`Open Charity Navigator profile for ${candidate.name}`}>↗</a></td>
+            </tr>)}</tbody>
+          </table>
+        </div>
+        <div className="cause-discovery-boundaries">
+          <p><strong>What this is.</strong> {charityNavigatorDiscovery.interpretation.coverage}</p>
+          <p><strong>What ratings mean.</strong> {charityNavigatorDiscovery.interpretation.rating}</p>
+          <p><strong>What is missing.</strong> {charityNavigatorDiscovery.interpretation.geography} {charityNavigatorDiscovery.interpretation.missingness}</p>
+          <p><strong>Decision state.</strong> {charityNavigatorDiscovery.interpretation.decision}</p>
+        </div>
+        <div className="cause-discovery-sources">
+          <a href={charityNavigatorDiscovery.source.searchUrl} target="_blank" rel="noreferrer"><span>DISCOVERY SOURCE</span><strong>Charity Navigator · LGBTQ rights search</strong><small>{integer.format(charityNavigatorDiscovery.source.totalItems)} results at retrieval · default ordering</small><b>↗</b></a>
+          <a href={charityNavigatorDiscovery.source.methodologyUrl} target="_blank" rel="noreferrer"><span>RATING METHOD</span><strong>Spring 2026 methodology guide</strong><small>Beacon weights, eligibility, alerts, and curated-list criteria</small><b>↗</b></a>
+        </div>
+        <p className="data-note">{charityNavigatorDiscovery.version} · retrieved {shortDay.format(new Date(charityNavigatorDiscovery.retrievedAt))} · exact-name scan found no overlap with accepted MFI evaluator or grant ledgers</p>
       </section>
 
       <section className="market-section" id="opportunities">

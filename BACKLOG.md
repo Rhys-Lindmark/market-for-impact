@@ -61,9 +61,17 @@ This backlog is ordered by donor value, data integrity, and dependency. Each ite
   - [ ] Obtain program-specific marginal funding plans and independent outcome evidence; conduct GiveWell-style interviews before promoting any candidate into the MFI-021 recommendation slate.
 - [ ] **MFI-021 — SF first recommendation slate.** Publish a small, deeply researched set of opportunities with downside cases, funding gaps, and follow-up milestones.
 
+## Broader discovery and geography
+
+- [ ] **MFI-023 — Broad cause discovery and Charity Navigator crosswalk.** Use Charity Navigator as a discovery, accountability, finance, and measurement input without relabeling its rating as effectiveness.
+  - [x] Publish the first end-to-end LGBTQIA+ slice from the live `LGBTQ rights` search. The versioned snapshot retains the 441-result universe, first ten default-ordered candidates, EINs, headquarters, source tags, scores, stars, completed beacons, advisories, profile source timestamps, and explicit missing rating dates. The page labels service geography, independent impact evidence, and current room for more funding as unassessed; it makes no recommendation. An exact-name scan found no overlap with accepted evaluator or grant ledgers. Verified 2026-08-30: live semantic refresh, snapshot validation, exact-identity guard, 77 tests, lint, production build, desktop table review, 390 px horizontal-scroll behavior, and zero browser warnings or errors passed.
+  - [ ] Paginate the full cause universe, add EIN-first identity reconciliation, audits/990s, evaluator/grant overlaps, and organization-specific outcome and marginal-funding diligence.
+  - [ ] Extend the same source contract to additional high-interest causes without importing Charity Navigator’s source ordering as an MFI rank.
+- [ ] **MFI-024 — Geography lens beginning with India.** Separate headquarters, service geography, target population, grant geography, evaluator coverage, and locally registered donation vehicles before comparing opportunities.
+
 ## Operating tracks
 
-- [ ] Add automatic hourly source-change detection and human review queues; GitHub now checks the full Coefficient public grant index, EGC subset, RenPhil AI for Math portfolio, ACE recommendation set, Giving Green grant announcement, the nine-source Founders Pledge matrix, the SF outcome ontology, and the SF public-funding baseline hourly, no-ops when unchanged, and fails closed into review on changes or suspicious removals, but other evaluators still need coverage.
+- [ ] Add automatic hourly source-change detection and human review queues; GitHub now checks the full Coefficient public grant index, EGC subset, RenPhil AI for Math portfolio, ACE recommendation set, Giving Green grant announcement, the nine-source Founders Pledge matrix, the SF outcome ontology, the SF public-funding baseline, and the first Charity Navigator LGBTQ discovery page, no-ops when unchanged, and fails closed into review on changes or suspicious removals, but other evaluators still need coverage.
 - [ ] Add source snapshots and diffs so historical claims remain auditable; the complete Coefficient snapshot now retains stable source IDs, canonical grant URLs, exact award dates, publication timestamps, all focus-area tags, and a content hash. D1 now preserves full-index first/last-seen timestamps and leaves records absent from a later snapshot in history; human-readable historical snapshot diffs remain next.
 - [ ] Add a corrections policy, conflicts disclosure, methodology changelog, and research red-team template.
 - [ ] Interview one Coefficient Giving researcher, one GiveWell-style evaluator, one large foundation staffer, and three AI-company donors; convert findings to issues.

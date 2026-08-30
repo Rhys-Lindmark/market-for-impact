@@ -1,0 +1,605 @@
+{
+  "version": "sf-nonprofit-diligence-v0.1",
+  "configVersion": "sf-nonprofit-diligence-config-v0.1",
+  "generatedAt": "2026-08-30T16:45:00.000Z",
+  "geography": "San Francisco, California",
+  "coverageNote": "An intentionally incomplete first diligence cohort chosen to test direct service, advocacy, LGBTQ+ community support, food security, housing, and multi-service models. Inclusion is not a recommendation.",
+  "rules": {
+    "discovery": "Candidate discovery is not a recommendation. A headquarters address, public contract, Charity Navigator profile, or self-reported impact claim does not establish marginal impact.",
+    "publicFunding": "Contract figures are life-to-date accounting fields from the MFI-019 snapshot. They can reveal public-funding overlap but not effectiveness, displacement, or philanthropic room for more funding.",
+    "ratings": "Charity Navigator ratings are preserved with completed-beacon coverage when published. They are governance, finance, and sometimes measurement signals—not Market for Impact effectiveness scores.",
+    "causality": "Organization-reported outputs and policy or election wins remain contribution evidence unless an independent counterfactual design supports an outcome claim.",
+    "conversion": "QALY and WELLBY estimates are blocked for every candidate until a versioned local model, defensible counterfactual, and uncertainty analysis exist."
+  },
+  "summary": {
+    "candidateCount": 6,
+    "publicContractMatchCount": 35,
+    "candidatesWithPublicContracts": 4,
+    "candidatesWithPublishedMarginalGap": 0,
+    "qalyBlockedCount": 6,
+    "acceptedGrantLedgerMatchCount": 1
+  },
+  "candidates": [
+    {
+      "key": "hamilton-families",
+      "name": "Hamilton Families",
+      "entityType": "direct-service nonprofit",
+      "taxStatus": "501(c)(3)",
+      "ein": "94-3055602",
+      "donationDeductibility": "Organization states donations are tax-deductible to the extent allowed by law.",
+      "donationUrl": "https://hamiltonfamilies.org/donate",
+      "serviceGeography": "San Francisco Bay Area; current city contracts confirm San Francisco programs.",
+      "interventionType": "family homelessness prevention, shelter, rapid rehousing, and housing subsidies",
+      "outcomeKeys": [
+        "housing-stability",
+        "educational-attainment"
+      ],
+      "theoryOfChange": "Temporary assistance, landlord partnerships, shelter, and case management can prevent displacement or help families move into stable housing; child supports may reduce education disruption.",
+      "evidenceLevel": "organization-reported outcomes",
+      "evidenceSummary": "The April–June 2026 report states 338 families served, 34 program exits to stable housing, 19 families receiving eviction-prevention assistance, and $660,709 in housing subsidies.",
+      "causalBoundary": "The report supplies service and exit counts, but no comparison group, durability follow-up, cost per sustained housing outcome, or donor-attribution estimate.",
+      "marginalFunding": "No reviewed, time-bounded marginal funding gap or next-dollar plan is published in the accepted sources.",
+      "downsideCase": "Subsidies may replace public dollars or move families between programs without increasing durable housing supply; housing exits may not persist.",
+      "contractAliases": [
+        "HAMILTON FAMILIES"
+      ],
+      "grantLedgerAliases": [
+        "Hamilton Families"
+      ],
+      "charityNavigator": {
+        "url": "https://www.charitynavigator.org/ein/943055602",
+        "rating": 100,
+        "stars": 4,
+        "completedBeaconCount": 1,
+        "totalBeaconCount": 4,
+        "asOf": "2026-08-30",
+        "note": "The displayed overall score is based on Accountability & Finance only; it is not an impact estimate."
+      },
+      "nativeSignals": [
+        {
+          "label": "Families served",
+          "value": "338",
+          "period": "April–June 2026",
+          "signalType": "output"
+        },
+        {
+          "label": "Program exits to stable housing",
+          "value": "34",
+          "period": "April–June 2026",
+          "signalType": "organization-reported outcome"
+        },
+        {
+          "label": "Families receiving eviction-prevention assistance",
+          "value": "19",
+          "period": "April–June 2026",
+          "signalType": "output"
+        }
+      ],
+      "sources": [
+        {
+          "publisher": "Hamilton Families",
+          "title": "Quarterly Report (April–June 2026)",
+          "url": "https://hamiltonfamilies.org/quarterly-impact-reports/fy25-26-q4-impact-report",
+          "publishedAt": null,
+          "period": "2026-04-01 to 2026-06-30",
+          "retrievedAt": "2026-08-30"
+        },
+        {
+          "publisher": "Hamilton Families",
+          "title": "Financials",
+          "url": "https://hamiltonfamilies.org/financials",
+          "publishedAt": null,
+          "period": "FY2024–2025 documents available",
+          "retrievedAt": "2026-08-30"
+        }
+      ],
+      "publicFunding": {
+        "snapshotVersion": "sf-public-funding-v0.1",
+        "snapshotDate": "2026-08-30",
+        "contractCount": 8,
+        "awardUsd": 60051037,
+        "paymentsMadeUsd": 33504211.41,
+        "remainingAuthorityUsd": 22178853.15,
+        "outcomeKeys": [
+          "educational-attainment",
+          "housing-stability"
+        ],
+        "contractNumbers": [
+          "1000013716",
+          "1000016516",
+          "1000019042",
+          "1000022895",
+          "1000024433",
+          "1000031182",
+          "1000032562",
+          "1000036141"
+        ],
+        "note": "Exact prime-contractor alias matches in the active-contract snapshot; figures are accounting context, not philanthropic room."
+      },
+      "acceptedGrantLedgerMatches": [],
+      "conversionState": {
+        "qaly": "blocked",
+        "wellby": "blocked",
+        "reason": "QALY and WELLBY estimates are blocked for every candidate until a versioned local model, defensible counterfactual, and uncertainty analysis exist."
+      }
+    },
+    {
+      "key": "sf-marin-food-bank",
+      "name": "San Francisco–Marin Food Bank",
+      "entityType": "direct-service and advocacy nonprofit",
+      "taxStatus": "501(c)(3)",
+      "ein": "94-3041517",
+      "donationDeductibility": "Tax-deductible charitable vehicle; confirm individual circumstances with the organization or an adviser.",
+      "donationUrl": "https://www.sfmfoodbank.org/donate/",
+      "serviceGeography": "San Francisco and Marin counties; this scorecard isolates the organization but not all reported activity to San Francisco.",
+      "interventionType": "food distribution, community markets, benefits access, and food-policy advocacy",
+      "outcomeKeys": [
+        "food-security",
+        "housing-stability"
+      ],
+      "theoryOfChange": "Reliable access to nutritious food can reduce food insecurity and free household resources for housing and other essentials; benefits enrollment and policy advocacy may address upstream causes.",
+      "evidenceLevel": "organization-reported outputs and financials",
+      "evidenceSummary": "The FY2025 report identifies 265 community partners and reports $159.4M in program-service expense, including substantial donated-food value. It describes a transition from pop-up pantries to community markets.",
+      "causalBoundary": "Distributed-food value, meals, partners, and program expense are not equivalent to households becoming food secure. The reviewed report does not publish a counterfactual or SF-only cost per durable outcome.",
+      "marginalFunding": "The report describes growing demand and flexible private support but does not publish a bounded marginal gap, capacity ceiling, or incremental outcome schedule.",
+      "downsideCase": "Food distribution may manage acute need without changing root causes; donated-food accounting can dominate dollar totals and obscure cash marginal cost.",
+      "contractAliases": [
+        "SAN FRANCISCO FOOD BANK"
+      ],
+      "grantLedgerAliases": [
+        "San Francisco-Marin Food Bank",
+        "The San Francisco-Marin Food Bank"
+      ],
+      "charityNavigator": {
+        "url": "https://www.charitynavigator.org/ein/943041517",
+        "rating": 93,
+        "stars": 4,
+        "completedBeaconCount": 3,
+        "totalBeaconCount": 4,
+        "asOf": "2026-08-30",
+        "note": "Three completed beacons improve signal coverage, but the rating still is not a causal or marginal impact estimate."
+      },
+      "nativeSignals": [
+        {
+          "label": "Community partners",
+          "value": "265",
+          "period": "FY2025",
+          "signalType": "output"
+        },
+        {
+          "label": "Program-service expense",
+          "value": "$159.4M",
+          "period": "FY2025",
+          "signalType": "financial"
+        },
+        {
+          "label": "Private contributions including events",
+          "value": "$41.8M",
+          "period": "FY2025",
+          "signalType": "financial"
+        }
+      ],
+      "sources": [
+        {
+          "publisher": "San Francisco–Marin Food Bank",
+          "title": "Fiscal Year 2025 Annual Report",
+          "url": "https://www.sfmfoodbank.org/annual-report-2025/",
+          "publishedAt": null,
+          "period": "2024-07-01 to 2025-06-30",
+          "retrievedAt": "2026-08-30"
+        },
+        {
+          "publisher": "San Francisco–Marin Food Bank",
+          "title": "Financial statements archive",
+          "url": "https://www.sfmfoodbank.org/blog/tag/financial-statements/",
+          "publishedAt": null,
+          "period": "FY2024–2025 audit available",
+          "retrievedAt": "2026-08-30"
+        }
+      ],
+      "publicFunding": {
+        "snapshotVersion": "sf-public-funding-v0.1",
+        "snapshotDate": "2026-08-30",
+        "contractCount": 8,
+        "awardUsd": 23938671,
+        "paymentsMadeUsd": 5315340.56,
+        "remainingAuthorityUsd": 18039528.28,
+        "outcomeKeys": [
+          "food-security",
+          "housing-stability"
+        ],
+        "contractNumbers": [
+          "1000020873",
+          "1000030816",
+          "1000035494",
+          "1000035954",
+          "1000036270",
+          "1000038310",
+          "1000038424",
+          "100003843"
+        ],
+        "note": "Exact prime-contractor alias matches in the active-contract snapshot; figures are accounting context, not philanthropic room."
+      },
+      "acceptedGrantLedgerMatches": [],
+      "conversionState": {
+        "qaly": "blocked",
+        "wellby": "blocked",
+        "reason": "QALY and WELLBY estimates are blocked for every candidate until a versioned local model, defensible counterfactual, and uncertainty analysis exist."
+      }
+    },
+    {
+      "key": "sf-lgbt-center",
+      "name": "SF LGBT Center",
+      "entityType": "community center and direct-service nonprofit",
+      "taxStatus": "501(c)(3)",
+      "ein": "94-3236718",
+      "donationDeductibility": "The organization identifies itself as a 501(c)(3); employer matching may be available.",
+      "donationUrl": "https://www.sfcenter.org/give/",
+      "serviceGeography": "San Francisco and Bay Area LGBTQ+ communities; city contracts include employment, youth, and community services.",
+      "interventionType": "LGBTQ+ youth services, employment and financial coaching, referrals, community space, and advocacy",
+      "outcomeKeys": [
+        "economic-mobility",
+        "housing-stability",
+        "mental-health-stabilization"
+      ],
+      "theoryOfChange": "Integrated affirming services and a trusted community hub may improve economic security, connection, housing stability, and access to mental-health support for LGBTQ+ residents.",
+      "evidenceLevel": "program description and public-contract outputs",
+      "evidenceSummary": "The audited program description identifies economic-development, youth, community, and building-service programs. Current city contracts confirm employment, financial-coaching, youth, and social-service activity.",
+      "causalBoundary": "The accepted sources do not yet provide a reconciled outcome denominator, counterfactual, sustained follow-up, or cost per economic, housing, or health outcome.",
+      "marginalFunding": "No reviewed program-specific marginal gap or capacity schedule is published; donation and matching routes are available.",
+      "downsideCase": "A broad service portfolio makes organization-level attribution difficult; public contracts may already fund some activities donors assume are marginal.",
+      "contractAliases": [
+        "THE SAN FRANCISCO LGBT COMMUNITY CENTER"
+      ],
+      "grantLedgerAliases": [
+        "San Francisco Lesbian Gay Bisexual Transgender Community Center",
+        "SF LGBT Center"
+      ],
+      "charityNavigator": {
+        "url": "https://www.charitynavigator.org/ein/943236718",
+        "rating": 100,
+        "stars": 4,
+        "completedBeaconCount": null,
+        "totalBeaconCount": 4,
+        "asOf": "2026-08-30",
+        "note": "The profile reports a four-star rating; completed-beacon count was not captured, so this is not treated as comprehensive effectiveness evidence."
+      },
+      "nativeSignals": [
+        {
+          "label": "Current city contract records",
+          "value": "5",
+          "period": "Active on 2026-08-30",
+          "signalType": "public-funding context"
+        },
+        {
+          "label": "Audited program families",
+          "value": "4",
+          "period": "FY2024 audit",
+          "signalType": "program scope"
+        }
+      ],
+      "sources": [
+        {
+          "publisher": "SF LGBT Center",
+          "title": "The Center: impact and financial transparency",
+          "url": "https://www.sfcenter.org/the-center/",
+          "publishedAt": null,
+          "period": "Current page; 2025 review and FY2024 audit linked",
+          "retrievedAt": "2026-08-30"
+        },
+        {
+          "publisher": "SF LGBT Center",
+          "title": "FY2024 audited financial statements",
+          "url": "https://www.sfcenter.org/wp-content/uploads/2024/12/sf-lgbt-community-center-fy-2024-audited-financial-statements.pdf",
+          "publishedAt": null,
+          "period": "Year ended 2024-06-30",
+          "retrievedAt": "2026-08-30"
+        }
+      ],
+      "publicFunding": {
+        "snapshotVersion": "sf-public-funding-v0.1",
+        "snapshotDate": "2026-08-30",
+        "contractCount": 5,
+        "awardUsd": 14528741,
+        "paymentsMadeUsd": 5289720.36,
+        "remainingAuthorityUsd": 8381763.99,
+        "outcomeKeys": [
+          "economic-mobility"
+        ],
+        "contractNumbers": [
+          "1000022618",
+          "1000024714",
+          "1000032184",
+          "1000032643",
+          "1000033416"
+        ],
+        "note": "Exact prime-contractor alias matches in the active-contract snapshot; figures are accounting context, not philanthropic room."
+      },
+      "acceptedGrantLedgerMatches": [],
+      "conversionState": {
+        "qaly": "blocked",
+        "wellby": "blocked",
+        "reason": "QALY and WELLBY estimates are blocked for every candidate until a versioned local model, defensible counterfactual, and uncertainty analysis exist."
+      }
+    },
+    {
+      "key": "glide",
+      "name": "GLIDE",
+      "entityType": "multi-service and advocacy nonprofit",
+      "taxStatus": "501(c)(3)",
+      "ein": "94-1156481",
+      "donationDeductibility": "The accepted profile identifies GLIDE Foundation as a 501(c)(3); donors should select the intended GLIDE entity.",
+      "donationUrl": "https://www.glide.org/ways-to-give/",
+      "serviceGeography": "Tenderloin, San Francisco, and the broader Bay Area; city contracts confirm multiple local programs.",
+      "interventionType": "meals, housing navigation, behavioral health, family programs, outreach, and advocacy",
+      "outcomeKeys": [
+        "food-security",
+        "housing-stability",
+        "unsheltered-days-avoided",
+        "mental-health-stabilization",
+        "educational-attainment"
+      ],
+      "theoryOfChange": "Low-barrier, integrated services can meet immediate needs and create pathways into housing, health, and family stability while advocacy addresses structural barriers.",
+      "evidenceLevel": "organization-reported outputs and financials",
+      "evidenceSummary": "The FY2025 report describes a roughly $30.8M expense base and multiple frontline programs. Current city contracts link GLIDE to meals, housing navigation, youth, health, and ambassador services.",
+      "causalBoundary": "Organization-wide service and financial totals cannot be assigned to one outcome. The accepted sources do not establish a donor counterfactual or cost per sustained local outcome.",
+      "marginalFunding": "The report argues private unrestricted support enables responsiveness, but publishes no bounded gap, program capacity curve, or incremental outcome estimate.",
+      "downsideCase": "Breadth can dilute measurement and create double-counting across connected services; some reported FY2025 financials were marked pending final audit in the impact report.",
+      "contractAliases": [
+        "GLIDE FOUNDATION"
+      ],
+      "grantLedgerAliases": [
+        "GLIDE",
+        "Glide Foundation"
+      ],
+      "charityNavigator": {
+        "url": "https://www.charitynavigator.org/ein/941156481",
+        "rating": null,
+        "stars": null,
+        "completedBeaconCount": 0,
+        "totalBeaconCount": 4,
+        "asOf": "2026-08-30",
+        "note": "Charity Navigator currently displays GLIDE Foundation as not rated; absence of a rating is not a negative impact finding."
+      },
+      "nativeSignals": [
+        {
+          "label": "Reported revenue",
+          "value": "$30.4M",
+          "period": "FY2025",
+          "signalType": "financial; report marked pending final audit"
+        },
+        {
+          "label": "Reported expense",
+          "value": "$30.8M",
+          "period": "FY2025",
+          "signalType": "financial; report marked pending final audit"
+        },
+        {
+          "label": "Reported city-contract revenue",
+          "value": "$9.0M",
+          "period": "FY2025",
+          "signalType": "organization-reported financial"
+        }
+      ],
+      "sources": [
+        {
+          "publisher": "GLIDE",
+          "title": "FY2025 Impact Report",
+          "url": "https://www.glide.org/wp-content/uploads/2026/01/GLIDE-Impact-Report-2024-2025.pdf",
+          "publishedAt": null,
+          "period": "2024-07-01 to 2025-06-30",
+          "retrievedAt": "2026-08-30"
+        },
+        {
+          "publisher": "GLIDE",
+          "title": "Financials and annual reports",
+          "url": "https://www.glide.org/financials-annual-reports/",
+          "publishedAt": null,
+          "period": "Current archive",
+          "retrievedAt": "2026-08-30"
+        }
+      ],
+      "publicFunding": {
+        "snapshotVersion": "sf-public-funding-v0.1",
+        "snapshotDate": "2026-08-30",
+        "contractCount": 14,
+        "awardUsd": 50205192,
+        "paymentsMadeUsd": 11350784.24,
+        "remainingAuthorityUsd": 32422743.83,
+        "outcomeKeys": [
+          "educational-attainment",
+          "food-security",
+          "housing-stability",
+          "unsheltered-days-avoided"
+        ],
+        "contractNumbers": [
+          "1000029541",
+          "1000032556",
+          "1000032819",
+          "1000033279",
+          "1000033316",
+          "1000034271",
+          "1000035060",
+          "1000035496",
+          "1000036232",
+          "1000036504",
+          "1000037475",
+          "1000037642",
+          "1000037909",
+          "1000038761"
+        ],
+        "note": "Exact prime-contractor alias matches in the active-contract snapshot; figures are accounting context, not philanthropic room."
+      },
+      "acceptedGrantLedgerMatches": [],
+      "conversionState": {
+        "qaly": "blocked",
+        "wellby": "blocked",
+        "reason": "QALY and WELLBY estimates are blocked for every candidate until a versioned local model, defensible counterfactual, and uncertainty analysis exist."
+      }
+    },
+    {
+      "key": "growsf",
+      "name": "GrowSF",
+      "entityType": "civic advocacy and electoral nonprofit",
+      "taxStatus": "501(c)(4)",
+      "ein": null,
+      "donationDeductibility": "GrowSF states donations are not deductible as charitable contributions for federal income-tax purposes.",
+      "donationUrl": "https://growsf.org/about/",
+      "serviceGeography": "San Francisco policy and elections.",
+      "interventionType": "voter information, candidate support, policy research, and electoral advocacy",
+      "outcomeKeys": [
+        "housing-stability",
+        "violence-reduction",
+        "educational-attainment",
+        "economic-mobility"
+      ],
+      "theoryOfChange": "Research, voter guides, and campaigns may change officeholders and ballot outcomes, which may in turn change policy implementation and long-run city outcomes.",
+      "evidenceLevel": "organization-reported reach and election results",
+      "evidenceSummary": "GrowSF reports 117,000 unique voter-guide visitors and victories for every supported June 2026 candidate, along with campaign-channel spending and reach.",
+      "causalBoundary": "Reach and aligned election results do not identify how many votes GrowSF changed, the counterfactual result, implementation quality, or downstream housing, safety, education, or economic outcomes.",
+      "marginalFunding": "Donation asks and campaign uses are visible, but no reviewed marginal dollars-to-votes or policy-outcome curve is published.",
+      "downsideCase": "Electoral activity is value-laden and may create policy harms as well as benefits; donor preferences, campaign-finance rules, and non-deductibility differ from charitable giving.",
+      "contractAliases": [],
+      "grantLedgerAliases": [
+        "GrowSF"
+      ],
+      "charityNavigator": null,
+      "nativeSignals": [
+        {
+          "label": "Voter-guide unique visitors",
+          "value": "117,000",
+          "period": "June 2026 election",
+          "signalType": "reach"
+        },
+        {
+          "label": "Supported candidates who won",
+          "value": "3 of 3",
+          "period": "June 2026 election",
+          "signalType": "aligned result; not causal attribution"
+        },
+        {
+          "label": "Connected-TV impressions",
+          "value": "14M",
+          "period": "June 2026 election",
+          "signalType": "reach"
+        }
+      ],
+      "sources": [
+        {
+          "publisher": "GrowSF",
+          "title": "About GrowSF",
+          "url": "https://growsf.org/about/",
+          "publishedAt": null,
+          "period": "Current page",
+          "retrievedAt": "2026-08-30"
+        },
+        {
+          "publisher": "GrowSF",
+          "title": "June 2026 Impact Report",
+          "url": "https://growsf.org/impact-report-june-2026/",
+          "publishedAt": null,
+          "period": "June 2026 election",
+          "retrievedAt": "2026-08-30"
+        }
+      ],
+      "publicFunding": {
+        "snapshotVersion": "sf-public-funding-v0.1",
+        "snapshotDate": "2026-08-30",
+        "contractCount": 0,
+        "awardUsd": 0,
+        "paymentsMadeUsd": 0,
+        "remainingAuthorityUsd": 0,
+        "outcomeKeys": [],
+        "contractNumbers": [],
+        "note": "No exact prime-contractor alias match in the active-contract snapshot; absence is not evidence of no public funding."
+      },
+      "acceptedGrantLedgerMatches": [],
+      "conversionState": {
+        "qaly": "blocked",
+        "wellby": "blocked",
+        "reason": "QALY and WELLBY estimates are blocked for every candidate until a versioned local model, defensible counterfactual, and uncertainty analysis exist."
+      }
+    },
+    {
+      "key": "housing-action-coalition",
+      "name": "Housing Action Coalition",
+      "entityType": "housing research and advocacy coalition",
+      "taxStatus": "501(c)(3) and 501(c)(4) vehicles",
+      "ein": null,
+      "donationDeductibility": "HAC states only contributions to its 501(c)(3) education and research vehicle are tax-deductible to the extent allowed by law; advocacy gifts use its 501(c)(4).",
+      "donationUrl": "https://housingactioncoalition.org/donate",
+      "serviceGeography": "California with Bay Area and San Francisco advocacy; reported impacts are not SF-only.",
+      "interventionType": "housing policy research, project endorsements, coalition building, litigation strategy, and legislative advocacy",
+      "outcomeKeys": [
+        "housing-stability",
+        "economic-mobility"
+      ],
+      "theoryOfChange": "Policy and legal advocacy can make more housing legally feasible and reduce approval barriers, potentially increasing completions and moderating long-run housing costs.",
+      "evidenceLevel": "organization-reported policy contribution",
+      "evidenceSummary": "The 2024 report attributes more than 100 acres of rezoning and legal capacity for more than 4,500 multifamily units to its Housing Element accountability work with counsel.",
+      "causalBoundary": "Legally feasible units are not permits, starts, completions, occupied homes, affordability changes, or SF-only outcomes. Contribution among coalition partners is not independently apportioned.",
+      "marginalFunding": "The donation page describes policy, coalition, and advocacy uses but gives no time-bounded gap or marginal policy-win forecast.",
+      "downsideCase": "Upzoning may not produce construction in weak markets and can create distributional tradeoffs; policy attribution is especially vulnerable to coalition double-counting.",
+      "contractAliases": [],
+      "grantLedgerAliases": [
+        "Housing Action Coalition"
+      ],
+      "charityNavigator": null,
+      "nativeSignals": [
+        {
+          "label": "Land reported rezoned",
+          "value": "100+ acres",
+          "period": "2024 impact report",
+          "signalType": "policy output; organization-attributed"
+        },
+        {
+          "label": "Units reported legally enabled",
+          "value": "4,500+",
+          "period": "2024 impact report",
+          "signalType": "legal capacity; not completed housing"
+        }
+      ],
+      "sources": [
+        {
+          "publisher": "Housing Action Coalition",
+          "title": "Impact Report 2024",
+          "url": "https://housingactioncoalition.org/s/HAC-Impact-Report-022725.pdf",
+          "publishedAt": null,
+          "period": "2024",
+          "retrievedAt": "2026-08-30"
+        },
+        {
+          "publisher": "Housing Action Coalition",
+          "title": "Friends of HAC donation and tax information",
+          "url": "https://housingactioncoalition.org/donate",
+          "publishedAt": null,
+          "period": "Current page",
+          "retrievedAt": "2026-08-30"
+        }
+      ],
+      "publicFunding": {
+        "snapshotVersion": "sf-public-funding-v0.1",
+        "snapshotDate": "2026-08-30",
+        "contractCount": 0,
+        "awardUsd": 0,
+        "paymentsMadeUsd": 0,
+        "remainingAuthorityUsd": 0,
+        "outcomeKeys": [],
+        "contractNumbers": [],
+        "note": "No exact prime-contractor alias match in the active-contract snapshot; absence is not evidence of no public funding."
+      },
+      "acceptedGrantLedgerMatches": [
+        {
+          "publisher": "Coefficient Giving",
+          "recordId": "grants-36116-0",
+          "name": "Housing Action Coalition"
+        }
+      ],
+      "conversionState": {
+        "qaly": "blocked",
+        "wellby": "blocked",
+        "reason": "QALY and WELLBY estimates are blocked for every candidate until a versioned local model, defensible counterfactual, and uncertainty analysis exist."
+      }
+    }
+  ]
+}

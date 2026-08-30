@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import giveWellSnapshot from '@/data/givewell/top-charities.json';
 import renPhilSnapshot from '@/data/renphil/ai-for-math-2025.json';
+import sfDiligence from '@/data/san-francisco/nonprofit-diligence-v1.json';
 
 type CoefficientMarket = {
   source: { retrievedAt: string; coverageNote: string; url: string };
@@ -345,6 +346,7 @@ export default function Home() {
   const [sfOutcomeKey, setSfOutcomeKey] = useState('housing-stability');
   const [sfFunding, setSfFunding] = useState<SfPublicFunding | null>(null);
   const [sfFundingError, setSfFundingError] = useState(false);
+  const [sfCandidateKey, setSfCandidateKey] = useState(sfDiligence.candidates[0].key);
   const [showAllRenPhil, setShowAllRenPhil] = useState(false);
   const [explorer, setExplorer] = useState<CoefficientExplorer | null>(null);
   const [explorerError, setExplorerError] = useState(false);
@@ -597,6 +599,7 @@ export default function Home() {
   const selectedSfOutcome = sfOntology?.outcomes.find((item) => item.key === sfOutcomeKey) ?? sfOntology?.outcomes[0] ?? null;
   const selectedSfOverlaps = sfOntology?.overlaps.filter((item) => item.leftKey === selectedSfOutcome?.key || item.rightKey === selectedSfOutcome?.key) ?? [];
   const selectedSfFunding = sfFunding?.outcomes.find((item) => item.key === sfOutcomeKey) ?? sfFunding?.outcomes[0] ?? null;
+  const selectedSfCandidate = sfDiligence.candidates.find((item) => item.key === sfCandidateKey) ?? sfDiligence.candidates[0];
   const qalyCost = selectedQalyOpportunity ? selectedQalyOpportunity.costPerLifeSavedUsd / qalyYield : null;
   const qalyLowCost = selectedQalyOpportunity ? selectedQalyOpportunity.costPerLifeSavedUsd / 50 : null;
   const qalyHighCost = selectedQalyOpportunity ? selectedQalyOpportunity.costPerLifeSavedUsd / 20 : null;
@@ -812,6 +815,58 @@ export default function Home() {
           <div className="sf-funding-sources">{sfFunding.sources.map((source) => <a href={source.publicUrl} target="_blank" rel="noreferrer" key={source.key}><span>{source.publisher}</span><strong>{source.title}</strong><small>{integer.format(source.sourceRowCount)} accepted rows · data as of {source.dataAsOf ? shortDay.format(new Date(source.dataAsOf)) : 'unpublished'}</small><b>↗</b></a>)}</div>
           <p className="data-note">{sfFunding.version} · snapshot {shortDay.format(new Date(`${sfFunding.snapshotDate}T12:00:00Z`))} · {integer.format(sfFunding.summary.negativeRemainingCount)} contracts retain negative published remaining-authority values rather than silently repairing them</p>
         </>}
+      </section>
+
+      <section className="sf-diligence-section" id="sf-diligence">
+        <div className="sf-diligence-heading">
+          <div><p className="kicker">LOCAL GIVING DILIGENCE</p><h2>Six candidates.<br />Zero automatic endorsements.</h2></div>
+          <p>This first cohort tests a GiveWell-style local scorecard across direct service, community infrastructure, housing advocacy, and elections. It asks what a donor can actually infer—and keeps unknown marginal impact visible.</p>
+        </div>
+        <div className="sf-diligence-summary" aria-label="San Francisco diligence summary">
+          <div><span>CANDIDATES REVIEWED</span><strong>{integer.format(sfDiligence.summary.candidateCount)}</strong><small>Intentionally incomplete discovery cohort</small></div>
+          <div><span>ACTIVE CONTRACT MATCHES</span><strong>{integer.format(sfDiligence.summary.publicContractMatchCount)}</strong><small>Exact prime-contractor aliases · accounting context</small></div>
+          <div><span>LEDGER OVERLAPS</span><strong>{integer.format(sfDiligence.summary.acceptedGrantLedgerMatchCount)}</strong><small>Exact accepted-grant identity matches</small></div>
+          <div><span>PUBLISHED MARGINAL GAPS</span><strong>{integer.format(sfDiligence.summary.candidatesWithPublishedMarginalGap)}</strong><small>Unknown is not zero funding room</small></div>
+        </div>
+        <div className="sf-candidate-tabs" role="tablist" aria-label="Choose a San Francisco organization">
+          {sfDiligence.candidates.map((candidate) => <button type="button" role="tab" aria-selected={candidate.key === selectedSfCandidate.key} className={candidate.key === selectedSfCandidate.key ? 'active' : ''} key={candidate.key} onClick={() => setSfCandidateKey(candidate.key)}><span>{candidate.entityType}</span><strong>{candidate.name}</strong><small>{candidate.evidenceLevel}</small></button>)}
+        </div>
+        <article className="sf-diligence-card">
+          <header>
+            <div><span>{selectedSfCandidate.taxStatus} · {selectedSfCandidate.serviceGeography}</span><h3>{selectedSfCandidate.name}</h3><p>{selectedSfCandidate.interventionType}</p></div>
+            <div className="sf-diligence-status"><span>{selectedSfCandidate.evidenceLevel}</span><span>Marginal gap unpublished</span><span className="blocked">QALY blocked</span><span className="blocked">WELLBY blocked</span></div>
+          </header>
+          <div className="sf-diligence-contract">
+            <section><span>THEORY OF CHANGE</span><p>{selectedSfCandidate.theoryOfChange}</p></section>
+            <section><span>WHAT THE EVIDENCE CURRENTLY SAYS</span><p>{selectedSfCandidate.evidenceSummary}</p></section>
+            <section><span>CAUSAL BOUNDARY</span><p>{selectedSfCandidate.causalBoundary}</p></section>
+          </div>
+          <div className="sf-diligence-grid">
+            <section className="sf-native-signals">
+              <div className="sf-diligence-subheading"><span>NATIVE SIGNALS</span><b>Never collapsed into one score</b></div>
+              {selectedSfCandidate.nativeSignals.map((signal) => <article key={`${signal.label}-${signal.period}`}><span>{signal.signalType}</span><strong>{signal.value}</strong><h4>{signal.label}</h4><small>{signal.period}</small></article>)}
+            </section>
+            <section className="sf-public-overlap">
+              <div className="sf-diligence-subheading"><span>PUBLIC-FUNDING OVERLAP</span><b>{selectedSfCandidate.publicFunding.contractCount} exact contract matches</b></div>
+              <div className="sf-public-overlap-stats"><div><span>AUTHORITY</span><strong>{selectedSfCandidate.publicFunding.contractCount ? compactMoney.format(selectedSfCandidate.publicFunding.awardUsd) : 'No exact match'}</strong></div><div><span>PAID</span><strong>{selectedSfCandidate.publicFunding.contractCount ? compactMoney.format(selectedSfCandidate.publicFunding.paymentsMadeUsd) : '—'}</strong></div><div><span>REMAINING AUTHORITY</span><strong>{selectedSfCandidate.publicFunding.contractCount ? compactMoney.format(selectedSfCandidate.publicFunding.remainingAuthorityUsd) : '—'}</strong></div></div>
+              <p>{selectedSfCandidate.publicFunding.note}</p>
+              <small>{selectedSfCandidate.publicFunding.outcomeKeys.length ? selectedSfCandidate.publicFunding.outcomeKeys.join(' · ').replaceAll('-', ' ') : 'No public outcome classification from an exact active-contract match'}</small>
+            </section>
+          </div>
+          <div className="sf-diligence-decisions">
+            <section><span>NEXT-DOLLAR STATE</span><h4>Room remains unknown</h4><p>{selectedSfCandidate.marginalFunding}</p></section>
+            <section><span>DOWNSIDE CASE</span><h4>What could make this less effective?</h4><p>{selectedSfCandidate.downsideCase}</p></section>
+            <section><span>DONATION VEHICLE</span><h4>{selectedSfCandidate.taxStatus}</h4><p>{selectedSfCandidate.donationDeductibility}</p><a href={selectedSfCandidate.donationUrl} target="_blank" rel="noreferrer">Donation information ↗</a></section>
+          </div>
+          <div className="sf-rating-strip">
+            <span>CHARITY NAVIGATOR</span>
+            {selectedSfCandidate.charityNavigator ? <><strong>{selectedSfCandidate.charityNavigator.rating == null ? 'Not rated' : `${selectedSfCandidate.charityNavigator.rating}% · ${selectedSfCandidate.charityNavigator.stars} stars`}</strong><p>{selectedSfCandidate.charityNavigator.note}</p><a href={selectedSfCandidate.charityNavigator.url} target="_blank" rel="noreferrer">Profile ↗</a></> : <><strong>Not in this scorecard</strong><p>This entity type has no accepted Charity Navigator signal here. Absence is not a positive or negative finding.</p></>}
+          </div>
+          <div className="sf-diligence-sources">{selectedSfCandidate.sources.map((source) => <a href={source.url} target="_blank" rel="noreferrer" key={source.url}><span>{source.publisher}</span><strong>{source.title}</strong><small>{source.period} · retrieved {shortDay.format(new Date(`${source.retrievedAt}T12:00:00Z`))}</small><b>↗</b></a>)}</div>
+          {selectedSfCandidate.acceptedGrantLedgerMatches.length > 0 && <div className="sf-ledger-match"><span>ACCEPTED GRANT LEDGER MATCH</span>{selectedSfCandidate.acceptedGrantLedgerMatches.map((match) => <a href={`/grants/coefficient/${match.recordId}`} key={`${match.publisher}-${match.recordId}`}>{match.publisher} · {match.recordId} →</a>)}</div>}
+        </article>
+        <div className="sf-diligence-rules"><span>READING RULES</span><p><strong>Discovery.</strong> {sfDiligence.rules.discovery}</p><p><strong>Ratings.</strong> {sfDiligence.rules.ratings}</p><p><strong>Causality.</strong> {sfDiligence.rules.causality}</p><p><strong>Conversion.</strong> {sfDiligence.rules.conversion}</p></div>
+        <p className="data-note">{sfDiligence.version} · {sfDiligence.coverageNote}</p>
       </section>
 
       <section className="market-section" id="opportunities">

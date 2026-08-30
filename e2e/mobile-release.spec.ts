@@ -1,6 +1,13 @@
 import { expect, test } from '@playwright/test';
 
-const routes = (process.env.MOBILE_AUDIT_ROUTES ?? '/,/san-francisco').split(',').map((route) => route.trim()).filter(Boolean);
+const defaultRoutes = [
+  '/',
+  '/san-francisco',
+  '/grants/coefficient/grants-18659-0',
+  '/grants/coefficient/grants-15086-0',
+  '/organizations/georgetown-university-initiative-on-innovation-development-and-evaluation',
+];
+const routes = (process.env.MOBILE_AUDIT_ROUTES?.split(',') ?? defaultRoutes).map((route) => route.trim()).filter(Boolean);
 
 for (const route of routes) {
   test(`${route} has no page-level horizontal overflow`, async ({ page }) => {
@@ -9,10 +16,52 @@ for (const route of routes) {
     page.on('pageerror', (error) => errors.push(error.message));
     await page.goto(route, { waitUntil: 'domcontentloaded' });
     await expect(page.locator('body')).toBeVisible();
+    await expect(page.getByText('This page couldn’t load')).toHaveCount(0);
     await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
     expect(errors).toEqual([]);
   });
 }
+
+test('phone donors can use critical evidence controls without silent panel failures', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== 'phone-390');
+  const errors: string[] = [];
+  page.on('console', (message) => { if (message.type() === 'error') errors.push(message.text()); });
+  page.on('pageerror', (error) => errors.push(error.message));
+  await page.goto('/', { waitUntil: 'domcontentloaded' });
+  await expect(page.locator('html')).toHaveAttribute('data-mfi-hydrated', 'true');
+
+  await expect(page.locator('.ai-safety-overview strong').first()).not.toHaveText('—', { timeout: 20_000 });
+  await expect(page.locator('.quality-summary-grid strong').first()).not.toHaveText('—');
+  await expect(page.getByText('The AI safety ecosystem is temporarily unavailable.')).toHaveCount(0);
+  await expect(page.getByText('The quality register is temporarily unavailable.')).toHaveCount(0);
+
+  await page.getByLabel('Uncertainty tolerance').selectOption('exploratory');
+  await expect(page.getByLabel('Uncertainty tolerance')).toHaveValue('exploratory');
+
+  const climateTab = page.locator('.comparison-cause-tabs').getByRole('tab', { name: /Climate/ });
+  await climateTab.click();
+  await expect(climateTab).toHaveAttribute('aria-selected', 'true');
+  await expect(page.locator('.comparison-summary')).toContainText('Climate');
+
+  const unpublishedTab = page.locator('.funding-curve-controls').getByRole('tab', { name: 'Amount unpublished' });
+  await unpublishedTab.click();
+  await expect(unpublishedTab).toHaveAttribute('aria-selected', 'true');
+  await expect(page.locator('.funding-curve-readout')).toContainText('OPEN OR LIVE, AMOUNT NOT PUBLISHED');
+
+  await page.locator('.flow-ledger-tabs button').filter({ hasText: 'Giving Green' }).click();
+  await expect(page.locator('.flow-query-status')).toContainText(/matching Giving Green.* rows/);
+
+  const qualityState = page.locator('.quality-filter-controls label').nth(1).locator('select');
+  await qualityState.selectOption('conflict');
+  await expect(qualityState).toHaveValue('conflict');
+  await expect(page.locator('.quality-issue-grid')).toContainText('source conflict');
+
+  await page.getByLabel('Search San Francisco IRS exempt organizations').fill('GLIDE');
+  await expect(page.locator('.sf-irs-grid')).toContainText('GLIDE');
+
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+  expect(errors).toEqual([]);
+});
 
 test('phone donors can reach the core market from the top bar', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'phone-390');

@@ -114,6 +114,30 @@ type AiSafetyMarket = {
   classificationNote: string;
 };
 
+type EvaluatorComparison = {
+  comparisonVersion: string;
+  generatedAt: string;
+  comparisonBoundary: string;
+  database: { status: string; checkedEvaluatorCount: number; sourceFreshness: Record<string, string> };
+  evaluatorProfiles: Array<{ key: string; name: string; methodologyUrl: string; criteria: string[]; evidenceRegime: string }>;
+  causes: Array<{
+    key: string; label: string;
+    summary: { representedEvaluatorCount: number; currentRecommendationEvaluatorCount: number; numericFundingRoomEvaluatorCount: number };
+    synthesis: {
+      agreement: string; disagreement: string; decisionBoundary: string;
+      sharedRecommendations: Array<{ evaluators: string[]; organizations: string[] }>;
+      recommendationGrantOverlaps: Array<{ evaluator: string; organizations: string[] }>;
+    };
+    cells: Array<{
+      evaluatorKey: string; evaluator: string; coverageStatus: string; mode: string; decisionDate: string | null; retrievedAt: string | null;
+      recommendationCount: number; numericFundingRoomCount: number; numericFundingRoomUsd: number | null;
+      publishedGrantCount: number | null; publishedAmountUsd: number | null;
+      fundLenses: Array<{ fund: string; grantCount: number; publishedAmountUsd: number; latestAwardDate: string | null }>;
+      organizations: string[]; criteria: string[]; evidenceRegime: string; fundingStatus: string; sourceUrl: string; note: string;
+    }>;
+  }>;
+};
+
 const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
 const compactMoney = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 2 });
 const integer = new Intl.NumberFormat('en-US');
@@ -145,6 +169,9 @@ export default function Home() {
   const [aiSafetyError, setAiSafetyError] = useState(false);
   const [aiRole, setAiRole] = useState('all');
   const [aiQuery, setAiQuery] = useState('');
+  const [evaluatorComparison, setEvaluatorComparison] = useState<EvaluatorComparison | null>(null);
+  const [evaluatorComparisonError, setEvaluatorComparisonError] = useState(false);
+  const [comparisonCause, setComparisonCause] = useState('global-health');
   const [showAllRenPhil, setShowAllRenPhil] = useState(false);
   const [explorer, setExplorer] = useState<CoefficientExplorer | null>(null);
   const [explorerError, setExplorerError] = useState(false);
@@ -156,6 +183,12 @@ export default function Home() {
   const [explorerQuery, setExplorerQuery] = useState('');
   const [explorerPage, setExplorerPage] = useState(1);
   const [explorerRefresh, setExplorerRefresh] = useState(0);
+  useEffect(() => {
+    fetch('/api/evaluator-comparison').then((response) => {
+      if (!response.ok) throw new Error('Evaluator comparison unavailable');
+      return response.json() as Promise<EvaluatorComparison>;
+    }).then(setEvaluatorComparison).catch(() => setEvaluatorComparisonError(true));
+  }, []);
   useEffect(() => {
     fetch('/api/ai-safety').then((response) => {
       if (!response.ok) throw new Error('AI safety ecosystem unavailable');
@@ -289,6 +322,7 @@ export default function Home() {
     (aiRole === 'all' || organization.roles.includes(aiRole)) &&
     `${organization.organization} ${organization.roles.join(' ')}`.toLowerCase().includes(aiQuery.toLowerCase())
   ).slice(0, 24), [aiQuery, aiRole, aiSafetyMarket]);
+  const selectedComparison = evaluatorComparison?.causes.find((item) => item.key === comparisonCause) ?? evaluatorComparison?.causes[0] ?? null;
 
   return (
     <main>
@@ -299,6 +333,7 @@ export default function Home() {
         </a>
         <nav aria-label="Primary navigation">
           <a href="#opportunities">Opportunities</a>
+          <a href="#evaluator-comparison">Compare evaluators</a>
           <a href="#flows">Funding flows</a>
           <a href="#methodology">Methodology</a>
         </nav>
@@ -356,7 +391,53 @@ export default function Home() {
             </tbody>
           </table>
         </div>
-        <p className="data-note">This table contains only current assessments materialized in the accepted ledger. Founders Pledge remains out until its source pipeline is reviewed. Metrics preserve each evaluator’s native unit; ACE’s native outcomes and Giving Green’s qualitative systems-change cases are deliberately not collapsed into a universal score.</p>
+        <p className="data-note">This table contains accepted assessment rows materialized in the ledger, including current recommendations, pooled funds, and explicitly labeled published research. Metrics preserve each evaluator’s native unit; unlike outcomes are deliberately not collapsed into a universal score.</p>
+      </section>
+
+      <section className="evaluator-comparison-section" id="evaluator-comparison">
+        <div className="evaluator-comparison-heading">
+          <div><p className="kicker">THE EVALUATOR MAP</p><h2>One cause.<br />Five different questions.</h2></div>
+          <p>Compare what each evaluator actually publishes: direct recommendations, pooled funds, historical grant lenses, decision criteria, evidence date, and marginal funding status. Empty cells stay explicit.</p>
+        </div>
+        <div className="comparison-cause-tabs" role="tablist" aria-label="Choose cause for evaluator comparison">
+          {(evaluatorComparison?.causes ?? []).map((item) => <button type="button" role="tab" aria-selected={item.key === comparisonCause} className={item.key === comparisonCause ? 'active' : ''} key={item.key} onClick={() => setComparisonCause(item.key)}><span>{item.label}</span><b>{item.summary.representedEvaluatorCount}/5 represented</b></button>)}
+        </div>
+        {selectedComparison && <>
+          <div className="comparison-summary" aria-label={`${selectedComparison.label} evaluator comparison summary`}>
+            <div><span>CAUSE</span><strong>{selectedComparison.label}</strong></div>
+            <div><span>REPRESENTED</span><strong>{selectedComparison.summary.representedEvaluatorCount} of 5</strong><small>Accepted current source coverage</small></div>
+            <div><span>RECOMMENDATION SOURCES</span><strong>{selectedComparison.summary.currentRecommendationEvaluatorCount}</strong><small>Direct picks or active pooled funds</small></div>
+            <div><span>NUMERIC FUNDING ROOM</span><strong>{selectedComparison.summary.numericFundingRoomEvaluatorCount}</strong><small>Evaluators publishing at least one figure</small></div>
+          </div>
+          <div className="comparison-synthesis">
+            <article><span>AGREEMENT</span><p>{selectedComparison.synthesis.agreement}</p></article>
+            <article><span>DIFFERENCE</span><p>{selectedComparison.synthesis.disagreement}</p></article>
+            <article><span>DECISION BOUNDARY</span><p>{selectedComparison.synthesis.decisionBoundary}</p></article>
+          </div>
+          <div className="comparison-cards">
+            {selectedComparison.cells.map((cell) => (
+              <article className={cell.coverageStatus === 'not-covered-in-accepted-current-set' ? 'comparison-card empty-cell' : 'comparison-card'} key={cell.evaluatorKey}>
+                <div className="comparison-card-status"><span>{cell.coverageStatus.replaceAll('-', ' ')}</span><b>{cell.decisionDate ? shortDay.format(new Date(cell.decisionDate)) : 'No decision date'}</b></div>
+                <h3>{cell.evaluator}</h3>
+                <p className="comparison-mode">{cell.mode}</p>
+                <div className="comparison-signal">
+                  {cell.coverageStatus === 'not-covered-in-accepted-current-set' ? <><strong>—</strong><span>No accepted cause row</span></> : cell.recommendationCount > 0 ? <><strong>{integer.format(cell.recommendationCount)}</strong><span>accepted opportunities</span></> : cell.publishedGrantCount != null ? <><strong>{compactMoney.format(cell.publishedAmountUsd ?? 0)}</strong><span>{integer.format(cell.publishedGrantCount)} published grants</span></> : <><strong>{integer.format(cell.fundLenses.length)}</strong><span>overlapping grant lenses</span></>}
+                </div>
+                {cell.fundLenses.length > 1 && <div className="comparison-lenses">{cell.fundLenses.map((lens) => <span key={lens.fund}>{lens.fund} · {integer.format(lens.grantCount)} · {compactMoney.format(lens.publishedAmountUsd)}</span>)}</div>}
+                <div className="comparison-criteria"><span>DECISION CRITERIA</span><p>{cell.criteria.join(' · ')}</p></div>
+                <p className="comparison-funding"><strong>Funding status.</strong> {cell.fundingStatus}</p>
+                <p className="comparison-note">{cell.note}</p>
+                <a href={cell.sourceUrl} target="_blank" rel="noreferrer">Trace the method ↗</a>
+              </article>
+            ))}
+          </div>
+          <div className="comparison-overlap">
+            <span>RECOMMENDATION ↔ GRANT HISTORY</span>
+            {selectedComparison.synthesis.recommendationGrantOverlaps.length ? selectedComparison.synthesis.recommendationGrantOverlaps.map((overlap) => <p key={overlap.evaluator}><strong>{overlap.evaluator}:</strong> {integer.format(overlap.organizations.length)} named recommendation{overlap.organizations.length === 1 ? '' : 's'} also appear in Coefficient’s cause lens. This is prior-funding alignment, not current evaluator agreement.</p>) : <p>No auditable recommendation–grant-history overlap is available for this cause in the accepted comparison set.</p>}
+          </div>
+        </>}
+        {!evaluatorComparison && <p className="market-loading">{evaluatorComparisonError ? 'The evaluator comparison is temporarily unavailable.' : 'Reconciling five evaluator sources against the accepted database…'}</p>}
+        <p className="data-note">{evaluatorComparison ? `D1 ${evaluatorComparison.database.status} · matrix generated ${day.format(new Date(evaluatorComparison.generatedAt))}` : 'Loading source reconciliation…'} · Absence is not a negative evaluation · Grant history is not a recommendation · Native outcome units remain incomparable</p>
       </section>
 
       <section className="givewell-section" id="givewell-market">

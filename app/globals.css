@@ -52,6 +52,35 @@ tbody tr:hover { background:#f4f6e9; }
 .row-arrow { border:0; background:transparent; font-size:20px; cursor:pointer; }
 .empty { text-align:center; padding:50px; color:#6a7773; }
 .data-note { font-size:11px; color:#6a7773; margin:12px 0 0; }
+.givewell-section { padding:100px 4vw; background:#e9f0df; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.givewell-heading { display:grid; grid-template-columns:1fr 430px; gap:6vw; align-items:end; margin-bottom:45px; }
+.givewell-heading>p { margin:0; color:#50605a; font-size:13px; line-height:1.65; }
+.givewell-benchmark { display:grid; grid-template-columns:repeat(3,1fr); border:1px solid var(--ink); margin-bottom:24px; }
+.givewell-benchmark>div { min-height:155px; padding:22px; border-right:1px solid var(--ink); }
+.givewell-benchmark>div:last-child { border-right:0; }
+.givewell-benchmark span { font-size:9px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:#5d6b67; }
+.givewell-benchmark strong { display:block; margin:18px 0 8px; font-family:Georgia,serif; font-size:26px; font-weight:400; }
+.givewell-benchmark p { margin:0; color:#52615c; font-size:11px; line-height:1.5; }
+.givewell-cards { display:grid; grid-template-columns:repeat(2,1fr); border-top:1px solid var(--ink); border-left:1px solid var(--ink); }
+.givewell-card { display:flex; min-height:420px; flex-direction:column; padding:28px; border-right:1px solid var(--ink); border-bottom:1px solid var(--ink); }
+.givewell-card-top { display:flex; justify-content:space-between; gap:15px; font-size:9px; text-transform:uppercase; letter-spacing:.08em; }
+.givewell-card-top span { color:#197b52; }
+.givewell-card-top b { font-family:'Courier New',monospace; }
+.givewell-card h3 { margin:42px 0 5px; font-family:Georgia,serif; font-size:35px; font-weight:400; letter-spacing:-.03em; }
+.givewell-program { margin:0 0 30px; color:#50605a; font-size:12px; }
+.givewell-card dl { margin:0; border-top:1px solid #91a095; }
+.givewell-card dl div { display:grid; grid-template-columns:110px 1fr; gap:15px; padding:11px 0; border-bottom:1px solid #b5c0b5; font-size:10px; }
+.givewell-card dt { color:#627169; text-transform:uppercase; letter-spacing:.06em; }
+.givewell-card dd { margin:0; text-align:right; }
+.givewell-card dd a:hover,.givewell-card-links a:hover { text-decoration:underline; text-underline-offset:3px; }
+.givewell-room { margin:22px 0; color:#46564f; font-size:11px; line-height:1.55; }
+.givewell-card-links { display:flex; justify-content:space-between; gap:24px; align-items:end; margin-top:auto; font-size:9px; }
+.givewell-card-links a { flex:0 0 auto; font-weight:800; }
+.givewell-card-links span { max-width:65%; color:#69776f; text-align:right; line-height:1.45; }
+.givewell-notes { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:24px; }
+.givewell-notes p { margin:0; padding:18px 20px; background:#dbe6d3; color:#4d5c56; font-size:11px; line-height:1.6; }
+.givewell-notes strong { color:var(--ink); }
+.givewell-section .data-note a { text-decoration:underline; text-underline-offset:3px; }
 .flows-section { display:grid; grid-template-columns:.8fr 1.2fr; gap:6vw; padding:100px 4vw; background:var(--ink); color:#f7f5ec; }
 .flow-copy>p:not(.kicker) { color:#b7c2bf; max-width:460px; line-height:1.65; margin:28px 0; }
 .text-link.light { display:inline-block; color:var(--acid); border-color:var(--acid); }
@@ -157,4 +186,4 @@ footer { display:flex; justify-content:space-between; align-items:center; paddin
 footer p { color:#aebbb7; }
 
 @media(max-width:800px){
-  nav { display:none; }.outline-button { display:none; }.hero { padding-top:62px; min-height:auto; }.hero-stats,.ledger-stats,.coefficient-overview { grid-template-columns:1fr 1fr; }.hero-stats div:nth-child(2),.ledger-stats div:nth-child(2),.coefficient-overview div:nth-child(2){border-right:0}.ledger-stats div{border-bottom:1px solid var(--ink)}.coefficient-overview div{border-bottom:1px solid #5f706a}.ledger-heading,.ledger-grid,.coefficient-market-heading,.grant-explorer-heading{grid-template-columns:1fr}.fund-market-grid{grid-template-columns:1fr}.fund-market-row:nth-child(odd){border-right:0}.index-caveats{grid-template-columns:1fr}.grant-explorer-controls{grid-template-columns:1fr 1fr}.grant-explorer-controls label{border-bottom:1px solid #5f706a}.grant-explorer-controls label:nth-child(2){border-right:0}.grant-explorer-controls>button{min-height:48px;grid-column:1/-1}.grant-results{grid-template-columns:1fr}.section-heading{display:block}.section-heading>p{margin-top:20px}.filters{grid-template-columns:1fr}.search,.select-wrap{border-right:0;border-bottom:1px solid var(--ink)}.filter-button{padding:14px 16px}.flows-section,.sources-section{grid-template-columns:1fr}.flow-card{padding:22px}.metric-row{grid-template-columns:120px 1fr 50px}.ledger-row{grid-template-columns:1fr 1.3fr 80px;gap:10px}.method-grid{grid-template-columns:1fr 1fr}.method-grid article:nth-child(2){border-right:0}footer{align-items:flex-start;gap:25px;flex-direction:column}.hero-actions{align-items:flex-start;flex-direction:column}.market-section,.method-section,.flows-section,.sources-section,.ledger-section,.coefficient-market-section{padding-top:72px;padding-bottom:72px}}
+  nav { display:none; }.outline-button { display:none; }.hero { padding-top:62px; min-height:auto; }.hero-stats,.ledger-stats,.coefficient-overview { grid-template-columns:1fr 1fr; }.hero-stats div:nth-child(2),.ledger-stats div:nth-child(2),.coefficient-overview div:nth-child(2){border-right:0}.ledger-stats div{border-bottom:1px solid var(--ink)}.coefficient-overview div{border-bottom:1px solid #5f706a}.ledger-heading,.ledger-grid,.coefficient-market-heading,.grant-explorer-heading,.givewell-heading{grid-template-columns:1fr}.givewell-benchmark{grid-template-columns:1fr}.givewell-benchmark>div{border-right:0;border-bottom:1px solid var(--ink)}.givewell-benchmark>div:last-child{border-bottom:0}.givewell-cards,.givewell-notes{grid-template-columns:1fr}.givewell-card{min-height:0}.fund-market-grid{grid-template-columns:1fr}.fund-market-row:nth-child(odd){border-right:0}.index-caveats{grid-template-columns:1fr}.grant-explorer-controls{grid-template-columns:1fr 1fr}.grant-explorer-controls label{border-bottom:1px solid #5f706a}.grant-explorer-controls label:nth-child(2){border-right:0}.grant-explorer-controls>button{min-height:48px;grid-column:1/-1}.grant-results{grid-template-columns:1fr}.section-heading{display:block}.section-heading>p{margin-top:20px}.filters{grid-template-columns:1fr}.search,.select-wrap{border-right:0;border-bottom:1px solid var(--ink)}.filter-button{padding:14px 16px}.flows-section,.sources-section{grid-template-columns:1fr}.flow-card{padding:22px}.metric-row{grid-template-columns:120px 1fr 50px}.ledger-row{grid-template-columns:1fr 1.3fr 80px;gap:10px}.method-grid{grid-template-columns:1fr 1fr}.method-grid article:nth-child(2){border-right:0}footer{align-items:flex-start;gap:25px;flex-direction:column}.hero-actions{align-items:flex-start;flex-direction:column}.market-section,.method-section,.flows-section,.sources-section,.ledger-section,.coefficient-market-section,.givewell-section{padding-top:72px;padding-bottom:72px}}

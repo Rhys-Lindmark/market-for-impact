@@ -41,6 +41,9 @@ export const grants = sqliteTable('grants', {
   recipientNamesText: text('recipient_names_text').notNull().default(''),
   focusAreasJson: text('focus_areas_json').notNull().default('[]'),
   listedFundsJson: text('listed_funds_json').notNull().default('[]'),
+  topicsJson: text('topics_json').notNull().default('[]'),
+  fundersJson: text('funders_json').notNull().default('[]'),
+  countriesJson: text('countries_json').notNull().default('[]'),
   startDate: integer('start_date', { mode: 'timestamp' }),
   endDate: integer('end_date', { mode: 'timestamp' }),
   cause: text('cause').notNull(),
@@ -82,6 +85,7 @@ export const assessments = sqliteTable('assessments', {
   limitations: text('limitations'),
   modelVersion: text('model_version'),
 }, (table) => [
+  uniqueIndex('assessments_source_org_status_idx').on(table.sourceId, table.organizationId, table.recommendationStatus),
   index('assessments_org_date_idx').on(table.organizationId, table.assessmentDate),
   index('assessments_evaluator_idx').on(table.evaluatorId),
 ]);

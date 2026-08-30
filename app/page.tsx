@@ -203,6 +203,25 @@ type SfOutcomeOntology = {
   overlaps: Array<{ leftKey: string; leftLabel: string; rightKey: string; rightLabel: string; risk: string; rule: string }>;
 };
 
+type SfPublicFunding = {
+  version: string; generatedAt: string; snapshotDate: string;
+  fiscalYear: { sourceValue: string; label: string; startsOn: string; endsOn: string };
+  rules: { budget: string; contracts: string; amounts: string; impact: string; coverage: string };
+  summary: { departmentCount: number; cityBudgetUsd: number; mappedDepartmentCount: number; mappedDepartmentBudgetUsd: number;
+    activeNonprofitContractCount: number; classifiedContractCount: number; unclassifiedContractCount: number;
+    multiOutcomeContractCount: number; contractAwardUsd: number; paymentsMadeUsd: number; remainingAuthorityUsd: number;
+    classifiedContractAwardUsd: number; classifiedPaymentsMadeUsd: number; classifiedRemainingAuthorityUsd: number; negativeRemainingCount: number };
+  sources: Array<{ key: string; datasetId: string; publisher: string; title: string; publicUrl: string; queryUrl: string;
+    amountSemantics: string; dataAsOf: string | null; sourceUpdatedAt: string; retrievedAt: string; sourceRowCount: number; semanticHash: string }>;
+  outcomes: Array<{ key: string; label: string; canonicalUnit: string; budgetDepartmentCount: number; budgetEnvelopeUsd: number;
+    budgetDepartments: Array<{ departmentCode: string; department: string; budgetUsd: number; outcomeKeys: string[] }>;
+    contractCount: number; contractAwardUsd: number; paymentsMadeUsd: number; remainingAuthorityUsd: number;
+    topContracts: Array<{ contractNumber: string; contractTitle: string | null; termStartDate: string; termEndDate: string;
+      contractType: string | null; departmentCode: string; department: string; primeContractor: string; scopeOfWork: string | null;
+      awardUsd: number | null; outstandingPurchaseOrdersUsd: number | null; paymentsMadeUsd: number | null;
+      remainingAuthorityUsd: number | null; matchReason: string | undefined }> }>;
+};
+
 type GrantFlowMarket = {
   version: string; generatedAt: string; acceptedSourceRowCount: number;
   aggregationRules: { row: string; amount: string; roles: string; missingness: string; date: string };
@@ -324,6 +343,8 @@ export default function Home() {
   const [sfOntology, setSfOntology] = useState<SfOutcomeOntology | null>(null);
   const [sfOntologyError, setSfOntologyError] = useState(false);
   const [sfOutcomeKey, setSfOutcomeKey] = useState('housing-stability');
+  const [sfFunding, setSfFunding] = useState<SfPublicFunding | null>(null);
+  const [sfFundingError, setSfFundingError] = useState(false);
   const [showAllRenPhil, setShowAllRenPhil] = useState(false);
   const [explorer, setExplorer] = useState<CoefficientExplorer | null>(null);
   const [explorerError, setExplorerError] = useState(false);
@@ -391,6 +412,12 @@ export default function Home() {
       if (!response.ok) throw new Error('San Francisco outcome ontology unavailable');
       return response.json() as Promise<SfOutcomeOntology>;
     }).then(setSfOntology).catch(() => setSfOntologyError(true));
+  }, []);
+  useEffect(() => {
+    fetch('/api/sf-public-funding').then((response) => {
+      if (!response.ok) throw new Error('San Francisco public-funding baseline unavailable');
+      return response.json() as Promise<SfPublicFunding>;
+    }).then(setSfFunding).catch(() => setSfFundingError(true));
   }, []);
   useEffect(() => {
     const controller = new AbortController();
@@ -569,6 +596,7 @@ export default function Home() {
   const selectedQalyOpportunity = comparableImpact?.qalyOpportunities.find((item) => item.slug === qalySlug) ?? comparableImpact?.qalyOpportunities[0] ?? null;
   const selectedSfOutcome = sfOntology?.outcomes.find((item) => item.key === sfOutcomeKey) ?? sfOntology?.outcomes[0] ?? null;
   const selectedSfOverlaps = sfOntology?.overlaps.filter((item) => item.leftKey === selectedSfOutcome?.key || item.rightKey === selectedSfOutcome?.key) ?? [];
+  const selectedSfFunding = sfFunding?.outcomes.find((item) => item.key === sfOutcomeKey) ?? sfFunding?.outcomes[0] ?? null;
   const qalyCost = selectedQalyOpportunity ? selectedQalyOpportunity.costPerLifeSavedUsd / qalyYield : null;
   const qalyLowCost = selectedQalyOpportunity ? selectedQalyOpportunity.costPerLifeSavedUsd / 50 : null;
   const qalyHighCost = selectedQalyOpportunity ? selectedQalyOpportunity.costPerLifeSavedUsd / 20 : null;
@@ -723,6 +751,66 @@ export default function Home() {
             <span>CLASSIFICATION RULE</span><p><strong>Outcome.</strong> {sfOntology.classificationRules.outcome}</p><p><strong>Counterfactual.</strong> {sfOntology.classificationRules.counterfactual}</p><p><strong>Conversion.</strong> {sfOntology.classificationRules.conversion}</p>
           </div>
           <p className="data-note">{sfOntology.version} · {sfOntology.geography} · {sfOntology.scopeNote}</p>
+        </>}
+      </section>
+
+      <section className="sf-funding-section" id="sf-public-funding">
+        <div className="sf-funding-heading">
+          <div><p className="kicker">THE PUBLIC BASELINE</p><h2>What City money<br />is already here?</h2></div>
+          <p>Private giving enters a field already shaped by public budgets and contracts. This baseline shows those accounting signals without pretending that authorized dollars equal outcomes—or that a large contract proves a small philanthropic gap.</p>
+        </div>
+        <div className="sf-funding-summary" aria-label="San Francisco public-funding summary">
+          <div><span>CITY BUDGET</span><strong>{sfFunding ? compactMoney.format(sfFunding.summary.cityBudgetUsd) : '—'}</strong><small>{sfFunding?.fiscalYear.label ?? 'Current fiscal year'} approved spending · all departments</small></div>
+          <div><span>OUTCOME-RELEVANT ENVELOPES</span><strong>{sfFunding ? compactMoney.format(sfFunding.summary.mappedDepartmentBudgetUsd) : '—'}</strong><small>{sfFunding ? `${integer.format(sfFunding.summary.mappedDepartmentCount)} broad departments · not additive by outcome` : 'Loading mapped departments…'}</small></div>
+          <div><span>ACTIVE NONPROFIT CONTRACTS</span><strong>{sfFunding ? integer.format(sfFunding.summary.activeNonprofitContractCount) : '—'}</strong><small>Fully executed prime-supplier contracts active on snapshot date</small></div>
+          <div><span>OUTCOME-LINKED</span><strong>{sfFunding ? integer.format(sfFunding.summary.classifiedContractCount) : '—'}</strong><small>{sfFunding ? `${integer.format(sfFunding.summary.unclassifiedContractCount)} abstentions · ${integer.format(sfFunding.summary.multiOutcomeContractCount)} multi-outcome` : 'Conservative text rules loading…'}</small></div>
+        </div>
+        {sfFundingError && <p className="sf-funding-loading error">The public-funding baseline is temporarily unavailable.</p>}
+        {!sfFunding && !sfFundingError && <p className="sf-funding-loading">Reconciling approved budgets and active nonprofit contracts…</p>}
+        {sfFunding && selectedSfFunding && <>
+          <div className="sf-funding-tabs" role="tablist" aria-label="Choose a local outcome funding baseline">
+            {sfFunding.outcomes.map((item) => <button type="button" role="tab" aria-selected={item.key === selectedSfFunding.key} className={item.key === selectedSfFunding.key ? 'active' : ''} key={item.key} onClick={() => setSfOutcomeKey(item.key)}><span>{item.label}</span><b>{integer.format(item.contractCount)} contracts</b></button>)}
+          </div>
+          <div className="sf-funding-readout">
+            <article>
+              <span>BROAD DEPARTMENT ENVELOPE</span><strong>{compactMoney.format(selectedSfFunding.budgetEnvelopeUsd)}</strong>
+              <p>Approved {sfFunding.fiscalYear.label} spending across mapped departments. This is institutional context, not an outcome-specific appropriation.</p>
+            </article>
+            <article>
+              <span>CONTRACT AUTHORITY</span><strong>{compactMoney.format(selectedSfFunding.contractAwardUsd)}</strong>
+              <p>{integer.format(selectedSfFunding.contractCount)} outcome-linked active nonprofit contracts. Multi-outcome contracts appear in each relevant view.</p>
+            </article>
+            <article>
+              <span>PAYMENTS MADE</span><strong>{compactMoney.format(selectedSfFunding.paymentsMadeUsd)}</strong>
+              <p>Published life-to-date payments on the selected contracts—not current-year spending or philanthropic displacement.</p>
+            </article>
+            <article>
+              <span>REMAINING AUTHORITY</span><strong>{compactMoney.format(selectedSfFunding.remainingAuthorityUsd)}</strong>
+              <p>Published contract authority remaining. It is not room for more funding and does not reconcile mechanically to award minus payments.</p>
+            </article>
+          </div>
+          <div className="sf-funding-grid">
+            <section className="sf-budget-departments">
+              <div className="sf-funding-subheading"><span>FISCAL ENVELOPES</span><b>{selectedSfFunding.budgetDepartmentCount} mapped departments</b></div>
+              {selectedSfFunding.budgetDepartments.map((department) => <article key={department.departmentCode}><span>{department.departmentCode}</span><strong>{department.department}</strong><b>{compactMoney.format(department.budgetUsd)}</b><small>Entire department budget · relevance map only</small></article>)}
+              <p className="sf-funding-empty">A department can serve several outcomes. Never sum these outcome envelopes into a citywide impact total.</p>
+            </section>
+            <section className="sf-contract-ledger">
+              <div className="sf-funding-subheading"><span>LARGEST LINKED CONTRACTS</span><b>Top {selectedSfFunding.topContracts.length} by authority</b></div>
+              {selectedSfFunding.topContracts.map((contract) => <article key={contract.contractNumber}>
+                <div><span>{contract.departmentCode} · {contract.contractNumber}</span><b>{contract.matchReason}</b></div>
+                <h3>{contract.primeContractor}</h3><p>{contract.contractTitle || contract.scopeOfWork || 'No published contract title'}</p>
+                <dl><div><dt>Award</dt><dd>{contract.awardUsd == null ? 'Unknown' : compactMoney.format(contract.awardUsd)}</dd></div><div><dt>Paid</dt><dd>{contract.paymentsMadeUsd == null ? 'Unknown' : compactMoney.format(contract.paymentsMadeUsd)}</dd></div><div><dt>Remaining</dt><dd>{contract.remainingAuthorityUsd == null ? 'Unknown' : compactMoney.format(contract.remainingAuthorityUsd)}</dd></div></dl>
+                <small>{shortDay.format(new Date(contract.termStartDate))} → {shortDay.format(new Date(contract.termEndDate))} · {contract.contractType || 'type unpublished'}</small>
+              </article>)}
+              {selectedSfFunding.topContracts.length === 0 && <p className="sf-funding-empty">No active nonprofit contract passed the conservative rules for this outcome. That is an abstention, not evidence of no public activity.</p>}
+            </section>
+          </div>
+          <div className="sf-funding-boundaries">
+            <span>ACCOUNTING BOUNDARIES</span><p><strong>Budget.</strong> {sfFunding.rules.budget}</p><p><strong>Contracts.</strong> {sfFunding.rules.contracts}</p><p><strong>Impact.</strong> {sfFunding.rules.impact}</p><p><strong>Coverage.</strong> {sfFunding.rules.coverage}</p>
+          </div>
+          <div className="sf-funding-sources">{sfFunding.sources.map((source) => <a href={source.publicUrl} target="_blank" rel="noreferrer" key={source.key}><span>{source.publisher}</span><strong>{source.title}</strong><small>{integer.format(source.sourceRowCount)} accepted rows · data as of {source.dataAsOf ? shortDay.format(new Date(source.dataAsOf)) : 'unpublished'}</small><b>↗</b></a>)}</div>
+          <p className="data-note">{sfFunding.version} · snapshot {shortDay.format(new Date(`${sfFunding.snapshotDate}T12:00:00Z`))} · {integer.format(sfFunding.summary.negativeRemainingCount)} contracts retain negative published remaining-authority values rather than silently repairing them</p>
         </>}
       </section>
 

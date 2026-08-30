@@ -348,6 +348,10 @@ export default function Home() {
   const [sfFunding, setSfFunding] = useState<SfPublicFunding | null>(null);
   const [sfFundingError, setSfFundingError] = useState(false);
   const [sfCandidateKey, setSfCandidateKey] = useState(sfDiligence.candidates[0].key);
+  const [charityQuery, setCharityQuery] = useState('');
+  const [charityState, setCharityState] = useState('all');
+  const [charityRating, setCharityRating] = useState('all');
+  const [charityPage, setCharityPage] = useState(1);
   const [showAllRenPhil, setShowAllRenPhil] = useState(false);
   const [explorer, setExplorer] = useState<CoefficientExplorer | null>(null);
   const [explorerError, setExplorerError] = useState(false);
@@ -534,6 +538,15 @@ export default function Home() {
   const filteredQualityIssues = useMemo(() => (dataQuality?.issues ?? []).filter((issue) =>
     (qualitySource === 'all' || issue.sourceKey === qualitySource) && (qualityState === 'all' || issue.state === qualityState)),
   [dataQuality, qualitySource, qualityState]);
+  const charityStates = useMemo(() => Array.from(new Set(charityNavigatorDiscovery.candidates.map((row) => row.headquarters.state))).sort(), []);
+  const filteredCharities = useMemo(() => charityNavigatorDiscovery.candidates.filter((row) => {
+    const searchable = `${row.name} ${row.ein} ${row.headquarters.city} ${row.headquarters.state} ${row.causes.join(' ')}`.toLowerCase();
+    const ratingMatch = charityRating === 'all' || (charityRating === 'four' && row.starRating === 4) || (charityRating === 'three' && row.starRating === 3) || (charityRating === 'other' && row.starRating !== 4 && row.starRating !== 3);
+    return searchable.includes(charityQuery.trim().toLowerCase()) && (charityState === 'all' || row.headquarters.state === charityState) && ratingMatch;
+  }), [charityQuery, charityRating, charityState]);
+  const charityPageSize = 12;
+  const charityPageCount = Math.max(1, Math.ceil(filteredCharities.length / charityPageSize));
+  const visibleCharities = filteredCharities.slice((Math.min(charityPage, charityPageCount) - 1) * charityPageSize, Math.min(charityPage, charityPageCount) * charityPageSize);
   const acceptedOpportunities = useMemo(() => [...(giveWellMarket?.opportunities ?? []).map((opportunity) => ({
     name: opportunity.organization,
     slug: opportunity.slug,
@@ -873,31 +886,38 @@ export default function Home() {
 
       <section className="cause-discovery-section" id="lgbtq-discovery">
         <div className="cause-discovery-heading">
-          <div><p className="kicker">CAUSE DISCOVERY · FIRST SLICE</p><h2>Beyond the EA lists.<br />Before the recommendation.</h2></div>
-          <p>Charity Navigator surfaces <strong>{integer.format(charityNavigatorDiscovery.summary.discoveredOrganizationCount)}</strong> organizations tagged “LGBTQ rights.” This page starts with its current first ten results, then shows exactly what still needs diligence before Market for Impact can recommend one.</p>
+          <div><p className="kicker">CAUSE DISCOVERY · COMPLETE SOURCE UNIVERSE</p><h2>Beyond the EA lists.<br />Before the recommendation.</h2></div>
+          <p>Charity Navigator surfaces <strong>{integer.format(charityNavigatorDiscovery.summary.discoveredOrganizationCount)}</strong> organizations tagged “LGBTQ rights.” This explorer contains every current search result, then shows exactly what still needs diligence before Market for Impact can recommend one.</p>
         </div>
         <div className="cause-lenses" aria-label="Charity Navigator LGBTQIA+ discovery lenses">
           {charityNavigatorDiscovery.taxonomy.discoveryLenses.map((lens) => <span key={lens.key}>{lens.label}</span>)}
         </div>
         <div className="cause-discovery-summary">
-          <article><span>FIRST-PAGE CANDIDATES</span><strong>{integer.format(charityNavigatorDiscovery.summary.reviewedCandidateCount)}</strong><small>Default source order · not an MFI rank</small></article>
+          <article><span>DISCOVERED ORGANIZATIONS</span><strong>{integer.format(charityNavigatorDiscovery.summary.reviewedCandidateCount)}</strong><small>{charityNavigatorDiscovery.source.pagesRetrieved} source pages · not an MFI rank</small></article>
           <article><span>FOUR-STAR PROFILES</span><strong>{integer.format(charityNavigatorDiscovery.summary.fourStarCount)}</strong><small>Charity Navigator signal only</small></article>
-          <article><span>ALL FOUR BEACONS</span><strong>{integer.format(charityNavigatorDiscovery.summary.fourBeaconCount)}</strong><small>Coverage is not causal impact</small></article>
+          <article><span>PROFILE-REVIEWED</span><strong>{integer.format(charityNavigatorDiscovery.summary.profileReviewedCount)}</strong><small>Deep fields retained for first ten</small></article>
           <article><span>PUBLISHED FUNDING GAPS</span><strong>{integer.format(charityNavigatorDiscovery.summary.publishedRoomForFundingCount)}</strong><small>Not yet assessed is not zero</small></article>
+        </div>
+        <div className="cause-discovery-filters">
+          <label><span>SEARCH</span><input value={charityQuery} onChange={(event) => { setCharityQuery(event.target.value); setCharityPage(1); }} placeholder="Name, EIN, city, or cause" aria-label="Search LGBTQIA+ charities" /></label>
+          <label><span>HEADQUARTERS</span><select value={charityState} onChange={(event) => { setCharityState(event.target.value); setCharityPage(1); }} aria-label="Filter charities by headquarters state"><option value="all">All states</option>{charityStates.map((state) => <option value={state} key={state}>{state}</option>)}</select></label>
+          <label><span>CN RATING</span><select value={charityRating} onChange={(event) => { setCharityRating(event.target.value); setCharityPage(1); }} aria-label="Filter charities by Charity Navigator rating"><option value="all">All ratings</option><option value="four">4 stars</option><option value="three">3 stars</option><option value="other">Other</option></select></label>
+          <div><span>VISIBLE</span><strong>{integer.format(filteredCharities.length)}</strong></div>
         </div>
         <div className="cause-candidate-table" role="region" aria-label="LGBTQIA+ charity discovery candidates" tabIndex={0}>
           <table>
             <thead><tr><th>Candidate</th><th>Headquarters</th><th>Charity Navigator</th><th>Completed beacons</th><th>MFI evidence state</th><th /></tr></thead>
-            <tbody>{charityNavigatorDiscovery.candidates.map((candidate) => <tr key={candidate.ein}>
+            <tbody>{visibleCharities.map((candidate) => <tr key={candidate.ein}>
               <td><strong>{candidate.name}</strong><small>EIN {candidate.ein}</small><div className="cause-tags">{candidate.causes.slice(0, 3).map((cause) => <span key={cause}>{cause}</span>)}</div></td>
               <td>{candidate.headquarters.city}, {candidate.headquarters.state}<small>Service geography unknown</small></td>
               <td><strong>{candidate.ratingScore}% · {candidate.starRating} stars</strong><small>{candidate.highestLevelAdvisory ?? 'No advisory in accepted search field'}</small></td>
-              <td><strong>{candidate.completedBeaconCount}/4</strong><small>{candidate.completedBeacons.join(' · ')}</small></td>
-              <td><span className="research-state">Research lead</span><small>Impact evidence unassessed<br />Funding room unassessed</small></td>
+              <td><strong>{candidate.completedBeaconCount == null ? 'Not reviewed' : `${candidate.completedBeaconCount}/4`}</strong><small>{candidate.completedBeaconCount == null ? 'Source-index-only row' : candidate.completedBeacons.join(' · ')}</small></td>
+              <td><span className="research-state">Research lead</span><small>Impact evidence unassessed<br />Funding room unassessed{candidate.evaluatorAssessmentMatches.length + candidate.acceptedGrantLedgerMatches.length > 0 ? <><br />{candidate.evaluatorAssessmentMatches.length} evaluator · {candidate.acceptedGrantLedgerMatches.length} grant match</> : null}</small></td>
               <td><a href={candidate.profileUrl} target="_blank" rel="noreferrer" aria-label={`Open Charity Navigator profile for ${candidate.name}`}>↗</a></td>
             </tr>)}</tbody>
           </table>
         </div>
+        <div className="cause-discovery-pagination"><button disabled={charityPage <= 1} onClick={() => setCharityPage((page) => Math.max(1, page - 1))}>← Previous</button><span>Page {Math.min(charityPage, charityPageCount)} of {charityPageCount}</span><button disabled={charityPage >= charityPageCount} onClick={() => setCharityPage((page) => Math.min(charityPageCount, page + 1))}>Next →</button></div>
         <div className="cause-discovery-boundaries">
           <p><strong>What this is.</strong> {charityNavigatorDiscovery.interpretation.coverage}</p>
           <p><strong>What ratings mean.</strong> {charityNavigatorDiscovery.interpretation.rating}</p>
@@ -908,7 +928,7 @@ export default function Home() {
           <a href={charityNavigatorDiscovery.source.searchUrl} target="_blank" rel="noreferrer"><span>DISCOVERY SOURCE</span><strong>Charity Navigator · LGBTQ rights search</strong><small>{integer.format(charityNavigatorDiscovery.source.totalItems)} results at retrieval · default ordering</small><b>↗</b></a>
           <a href={charityNavigatorDiscovery.source.methodologyUrl} target="_blank" rel="noreferrer"><span>RATING METHOD</span><strong>Spring 2026 methodology guide</strong><small>Beacon weights, eligibility, alerts, and curated-list criteria</small><b>↗</b></a>
         </div>
-        <p className="data-note">{charityNavigatorDiscovery.version} · retrieved {shortDay.format(new Date(charityNavigatorDiscovery.retrievedAt))} · exact-name scan found no overlap with accepted MFI evaluator or grant ledgers</p>
+        <p className="data-note">{charityNavigatorDiscovery.version} · retrieved {shortDay.format(new Date(charityNavigatorDiscovery.retrievedAt))} · exact-name crosswalk found {charityNavigatorDiscovery.summary.evaluatorOverlapCount} evaluator and {charityNavigatorDiscovery.summary.acceptedGrantLedgerOverlapCount} historical grant-ledger overlaps; none are treated as effectiveness evidence</p>
       </section>
 
       <section className="market-section" id="opportunities">

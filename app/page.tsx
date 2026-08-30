@@ -200,6 +200,40 @@ type GrantFlowMarket = {
   }>;
 };
 
+type DataQuality = {
+  version: string; asOfDate: string; generatedAt: string;
+  freshnessRules: Array<{ state: string; maximumAgeDays: number | null; label: string }>;
+  stateRules: Array<{ state: string; rule: string }>;
+  rowRules: { current: string; disappeared: string; grouped: string; amounts: string };
+  summary: {
+    trackedSourceCount: number; currentSourceCount: number; monitorSourceCount: number; staleSourceCount: number;
+    contentAddressedSourceCount: number; reviewedReferenceSourceCount: number; acceptedGrantRowCount: number;
+    missingAmountCount: number; missingDateCount: number; missingRecipientCount: number; missingPurposeCount: number;
+    missingSourceUrlCount: number; futureDatedCount: number; groupedObservedCount: number;
+    disappearedRowCount: number; conflictCount: number; issueCount: number;
+    qualityStateCounts: Record<string, number>;
+  };
+  fundingQuality: { trancheCount: number; amountUnpublishedCount: number; staleCount: number; closedCount: number };
+  ledgers: Array<{
+    key: string; label: string; publisher: string; title: string; sourceUrl: string; retrievedAt: string;
+    ageDays: number; freshnessState: string; qualityState: string; statusSemantics: string; canonicalDateLabel: string;
+    rowCount: number; publishedAmountUsd: number; missingAmountCount: number; missingDateCount: number;
+    missingRecipientCount: number; missingPurposeCount: number; missingSourceUrlCount: number;
+    groupedObservedCount: number; futureDatedCount: number; multipleRecipientCount: number;
+    missingRestrictionCount: number; missingNormalizedOriginatorCount: number; missingNormalizedAdvisorCount: number;
+    disappearedRowCount: number; contentState: string; coverageNote: string | null; caveats: string[];
+  }>;
+  issues: Array<{
+    key: string; sourceKey: string; state: string; category: string; count: number | null; unit: string | null;
+    title: string; description: string; sourceUrl?: string | null;
+  }>;
+  sources: Array<{
+    publisher: string; title: string; url: string; publishedAt: string | null; retrievedAt: string;
+    ageDays: number; freshnessState: string; contentState: string; coverageNote: string | null;
+    objectCounts: { grants: number; assessments: number; benchmarks: number; conversionModels: number };
+  }>;
+};
+
 const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
 const compactMoney = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 2 });
 const integer = new Intl.NumberFormat('en-US');
@@ -272,6 +306,17 @@ export default function Home() {
   const [flowQuery, setFlowQuery] = useState('');
   const [flowPage, setFlowPage] = useState(1);
   const [flowRefresh, setFlowRefresh] = useState(0);
+  const [dataQuality, setDataQuality] = useState<DataQuality | null>(null);
+  const [dataQualityError, setDataQualityError] = useState(false);
+  const [qualitySource, setQualitySource] = useState('all');
+  const [qualityState, setQualityState] = useState('all');
+  const [showAllQualitySources, setShowAllQualitySources] = useState(false);
+  useEffect(() => {
+    fetch('/api/data-quality').then((response) => {
+      if (!response.ok) throw new Error('Data-quality dashboard unavailable');
+      return response.json() as Promise<DataQuality>;
+    }).then(setDataQuality).catch(() => setDataQualityError(true));
+  }, []);
   useEffect(() => {
     const params = new URLSearchParams({ source: flowSource, page: String(flowPage), pageSize: '10', sort: flowSort });
     if (flowYear) params.set('year', flowYear);
@@ -392,6 +437,9 @@ export default function Home() {
     setGrantFlowsLoading(true); setGrantFlowsError(false); setFlowSource(source); setFlowYear(''); setFlowCause('');
     setFlowGeography(''); setFlowStatus(''); setFlowRestriction(''); setFlowDraft(''); setFlowQuery(''); setFlowPage(1);
   };
+  const filteredQualityIssues = useMemo(() => (dataQuality?.issues ?? []).filter((issue) =>
+    (qualitySource === 'all' || issue.sourceKey === qualitySource) && (qualityState === 'all' || issue.state === qualityState)),
+  [dataQuality, qualitySource, qualityState]);
   const acceptedOpportunities = useMemo(() => [...(giveWellMarket?.opportunities ?? []).map((opportunity) => ({
     name: opportunity.organization,
     slug: opportunity.slug,
@@ -482,6 +530,7 @@ export default function Home() {
           <a href="#impact-lab">Translate impact</a>
           <a href="#funding-curve">Funding room</a>
           <a href="#flows">Funding flows</a>
+          <a href="#data-quality">Data quality</a>
           <a href="#methodology">Methodology</a>
         </nav>
         <button className="outline-button">Explore the market <span>↗</span></button>
@@ -976,6 +1025,79 @@ export default function Home() {
         </div>}
         <div className="flow-method-notes"><p><strong>One row, one amount.</strong> {grantFlows?.aggregationRules.row ?? 'Recipient roles never duplicate a grant amount.'}</p><p><strong>Role discipline.</strong> {grantFlows?.aggregationRules.roles ?? 'Originating and advising funders remain separate.'}</p><p><strong>Missing stays missing.</strong> {grantFlows?.aggregationRules.missingness ?? 'Unsupported fields are never inferred.'}</p></div>
         <p className="data-note">{grantFlows ? `${grantFlows.version} · selected source retrieved ${day.format(new Date(grantFlows.selectedSource.retrievedAt))}` : 'Loading source reconciliation…'} · cause-tag counts may overlap inside a ledger · <a href={grantFlows?.selectedSource.sourceUrl ?? '#flows'} target="_blank" rel="noreferrer">Publisher source ↗</a></p>
+      </section>
+
+      <section className="data-quality-section" id="data-quality">
+        <div className="data-quality-heading">
+          <div><p className="kicker">QUALITY BEFORE CONFIDENCE</p><h2>See what the data can—and cannot—support.</h2></div>
+          <p>A donor should be able to distinguish a real source conflict from a documented publication limit, a missing field, or an old snapshot. This register uses rules, not an opaque quality score.</p>
+        </div>
+        <div className="quality-summary-grid">
+          <div><span>Tracked source pages</span><strong>{dataQuality ? integer.format(dataQuality.summary.trackedSourceCount) : '—'}</strong><p>{dataQuality ? `${integer.format(dataQuality.summary.currentSourceCount)} current · ${integer.format(dataQuality.summary.staleSourceCount)} stale` : 'Reconciling freshness…'}</p></div>
+          <div><span>Accepted grant rows</span><strong>{dataQuality ? integer.format(dataQuality.summary.acceptedGrantRowCount) : '—'}</strong><p>Distinct publisher rows; amounts remain non-additive.</p></div>
+          <div><span>Amounts unpublished</span><strong>{dataQuality ? integer.format(dataQuality.summary.missingAmountCount) : '—'}</strong><p>Unknown is retained rather than converted to zero.</p></div>
+          <div><span>Canonical dates missing</span><strong>{dataQuality ? integer.format(dataQuality.summary.missingDateCount) : '—'}</strong><p>Award, decision, or disbursement date by ledger.</p></div>
+          <div><span>Source conflicts</span><strong>{dataQuality ? integer.format(dataQuality.summary.conflictCount) : '—'}</strong><p>Publisher totals or declared coverage disagree.</p></div>
+          <div><span>Disappeared rows</span><strong>{dataQuality ? integer.format(dataQuality.summary.disappearedRowCount) : '—'}</strong><p>Not called retracted without publisher evidence.</p></div>
+        </div>
+        <div className="quality-freshness-strip">
+          <div><span>CONTENT-ADDRESSED</span><strong>{dataQuality ? integer.format(dataQuality.summary.contentAddressedSourceCount) : '—'}</strong><p>Snapshot sources with a stored semantic hash.</p></div>
+          <div><span>REVIEWED REFERENCE</span><strong>{dataQuality ? integer.format(dataQuality.summary.reviewedReferenceSourceCount) : '—'}</strong><p>Method pages retained without pretending a page hash was captured.</p></div>
+          <div><span>FUNDING ROOM</span><strong>{dataQuality ? `${integer.format(dataQuality.fundingQuality.staleCount)} stale · ${integer.format(dataQuality.fundingQuality.closedCount)} closed` : '—'}</strong><p>{dataQuality ? `${integer.format(dataQuality.fundingQuality.amountUnpublishedCount)} of ${integer.format(dataQuality.fundingQuality.trancheCount)} tranches have no published amount.` : 'Reconciling tranche evidence…'}</p></div>
+        </div>
+        <div className="quality-ledger-grid">
+          {(dataQuality?.ledgers ?? []).map((ledger) => (
+            <article className={`quality-ledger ${ledger.qualityState}`} key={ledger.key}>
+              <header><div><span>{ledger.publisher}</span><h3>{ledger.label}</h3></div><b>{ledger.qualityState.replaceAll('-', ' ')}</b></header>
+              <div className="quality-ledger-freshness"><span>{ledger.ageDays === 0 ? 'Retrieved today' : `${integer.format(ledger.ageDays)} days since retrieval`}</span><i><em style={{ width: `${Math.max(4, Math.min(100, 100 - ledger.ageDays * 2))}%` }} /></i><strong>{ledger.freshnessState}</strong></div>
+              <dl>
+                <div><dt>Rows</dt><dd>{integer.format(ledger.rowCount)}</dd></div>
+                <div><dt>Amount missing</dt><dd>{integer.format(ledger.missingAmountCount)}</dd></div>
+                <div><dt>{ledger.canonicalDateLabel} missing</dt><dd>{integer.format(ledger.missingDateCount)}</dd></div>
+                <div><dt>Recipient missing</dt><dd>{integer.format(ledger.missingRecipientCount)}</dd></div>
+                <div><dt>Direct URL missing</dt><dd>{integer.format(ledger.missingSourceUrlCount)}</dd></div>
+                <div><dt>Disappeared</dt><dd>{integer.format(ledger.disappearedRowCount)}</dd></div>
+              </dl>
+              <p>{ledger.coverageNote ?? ledger.caveats[0]}</p>
+              <a href={ledger.sourceUrl} target="_blank" rel="noreferrer">Inspect publisher source ↗</a>
+            </article>
+          ))}
+          {!dataQuality && <p className="quality-loading">{dataQualityError ? 'The quality register is temporarily unavailable.' : 'Reconciling accepted sources…'}</p>}
+        </div>
+        <div className="quality-register">
+          <div className="quality-register-heading"><div><span>OPEN EVIDENCE REGISTER</span><h3>Conflicts, gaps, and boundaries.</h3></div><p>Counts describe missing evidence or source behavior. They do not rank evaluator quality.</p></div>
+          <div className="quality-filter-controls">
+            <label><span>Source</span><select value={qualitySource} onChange={(event) => setQualitySource(event.target.value)}><option value="all">All tracked areas</option>{[...new Set((dataQuality?.issues ?? []).map((issue) => issue.sourceKey))].map((source) => <option value={source} key={source}>{source.replaceAll('-', ' ')}</option>)}</select></label>
+            <label><span>Issue state</span><select value={qualityState} onChange={(event) => setQualityState(event.target.value)}><option value="all">All issue states</option><option value="conflict">Source conflict</option><option value="incomplete">Incomplete row evidence</option><option value="monitor">Monitor</option><option value="documented-boundary">Documented boundary</option></select></label>
+            <div><span>VISIBLE ISSUES</span><strong>{integer.format(filteredQualityIssues.length)}</strong></div>
+          </div>
+          <div className="quality-issue-grid">
+            {filteredQualityIssues.map((issue) => (
+              <article className={`quality-issue ${issue.state}`} key={issue.key}>
+                <div><span>{issue.category.replaceAll('-', ' ')}</span><b>{issue.state.replaceAll('-', ' ')}</b></div>
+                <h4>{issue.title}</h4>
+                <p>{issue.description}</p>
+                <div className="quality-issue-footer"><strong>{issue.count == null ? 'QUALITATIVE' : `${integer.format(issue.count)} ${issue.unit ?? ''}`}</strong>{issue.sourceUrl && <a href={issue.sourceUrl} target="_blank" rel="noreferrer">Source ↗</a>}</div>
+              </article>
+            ))}
+            {dataQuality && filteredQualityIssues.length === 0 && <p className="quality-empty">No issues match those filters.</p>}
+          </div>
+        </div>
+        <div className="quality-source-inventory">
+          <div className="quality-source-heading"><div><span>SOURCE INVENTORY</span><h3>Every tracked page has a freshness state.</h3></div><p>{dataQuality?.freshnessRules.map((rule) => rule.label).join(' · ') ?? 'Loading explicit freshness rules…'}</p></div>
+          <div className="quality-source-list">
+            {(dataQuality?.sources ?? []).slice(0, showAllQualitySources ? undefined : 8).map((source) => {
+              const objectCount = source.objectCounts.grants + source.objectCounts.assessments + source.objectCounts.benchmarks + source.objectCounts.conversionModels;
+              return <a href={source.url} target="_blank" rel="noreferrer" key={source.url}><span>{source.publisher}</span><strong>{source.title}</strong><small>{source.ageDays === 0 ? 'today' : `${integer.format(source.ageDays)}d ago`} · {source.contentState.replaceAll('-', ' ')}</small><b>{integer.format(objectCount)} linked object{objectCount === 1 ? '' : 's'} ↗</b></a>;
+            })}
+          </div>
+          {dataQuality && !showAllQualitySources && dataQuality.sources.length > 8 && <button className="quality-source-reveal" type="button" onClick={() => setShowAllQualitySources(true)}>Show all {integer.format(dataQuality.sources.length)} tracked sources ↓</button>}
+        </div>
+        <div className="quality-rule-grid">
+          {(dataQuality?.stateRules ?? []).map((rule) => <p key={rule.state}><strong>{rule.state.replaceAll('-', ' ')}.</strong> {rule.rule}</p>)}
+          <p><strong>Grouped rows.</strong> {dataQuality?.rowRules.grouped ?? 'Grouped status is counted only when published row evidence supports it.'}</p>
+        </div>
+        <p className="data-note">{dataQuality ? `${dataQuality.version} · quality state as of ${day.format(new Date(`${dataQuality.asOfDate}T00:00:00.000Z`))}` : 'Loading quality state…'} · zero observed grouped flags does not override publisher grouping caveats · missing is not zero</p>
       </section>
 
       <section className="flows-section" id="published-signals">

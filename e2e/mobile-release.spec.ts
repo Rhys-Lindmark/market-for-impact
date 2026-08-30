@@ -43,7 +43,7 @@ test('phone donors can distinguish reported outcomes from external evidence doss
   test.skip(testInfo.project.name !== 'phone-390');
   await page.goto('/san-francisco#diligence', { waitUntil: 'domcontentloaded' });
   const dossiers = page.locator('.sf-evidence-dossier');
-  await expect(dossiers).toHaveCount(2);
+  await expect(dossiers).toHaveCount(3);
   const hamilton = dossiers.filter({ hasText: 'Hamilton Families' });
   await expect(hamilton.getByText('deeper diligence; recommendation blocked')).toBeVisible();
   await expect(hamilton.getByText('results pending')).toBeVisible();
@@ -52,6 +52,10 @@ test('phone donors can distinguish reported outcomes from external evidence doss
   await expect(foodBank.getByText('randomized trial; 228 adults followed for 12 months')).toBeVisible();
   await expect(foodBank.getByText('03 · What still blocks a recommendation')).toBeVisible();
   await expect(foodBank.getByRole('heading', { name: /price the next dollar/ })).toBeVisible();
+  const center = dossiers.filter({ hasText: 'SF LGBT Center' });
+  await expect(center.getByRole('heading', { name: /What the Center says happened/ })).toBeVisible();
+  await expect(center.getByText('systematic review of 107 experimental or quasi-experimental interventions in 31 countries')).toBeVisible();
+  await expect(center.getByText('03 · What still blocks a recommendation')).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 

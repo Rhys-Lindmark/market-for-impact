@@ -1,4 +1,5 @@
 import { createHash } from 'node:crypto';
+import { decodeHtmlEntities } from './html-entities.mjs';
 
 export const GIVING_GREEN_ANNOUNCEMENT_URL = 'https://www.givinggreen.earth/post/2025-2026-top-climate-nonprofits';
 export const GIVING_GREEN_TOP_URL = 'https://www.givinggreen.earth/top-climate-nonprofits';
@@ -50,7 +51,7 @@ export const topRecommendationMetadata = {
 };
 
 function decode(text) {
-  return text.replace(/&amp;/g, '&').replace(/&nbsp;|&#160;| /g, ' ').replace(/&#39;/g, "'").replace(/&quot;/g, '"');
+  return decodeHtmlEntities(text).replaceAll(' ', ' ');
 }
 
 function textContent(html) {
@@ -130,4 +131,3 @@ export function validateGivingGreenSnapshot(snapshot) {
   if (snapshot.topRecommendations.some((record) => !record.fundingNeed || !record.evaluationSummary)) throw new Error('Giving Green recommendation narratives are incomplete.');
   return snapshot;
 }
-

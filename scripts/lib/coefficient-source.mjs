@@ -1,4 +1,5 @@
 import { createHash } from 'node:crypto';
+import { decodeHtmlEntities } from './html-entities.mjs';
 
 export const COEFFICIENT_ALGOLIA = Object.freeze({
   applicationId: 'WBC743WF65',
@@ -14,8 +15,7 @@ const monthFormatter = new Intl.DateTimeFormat('en-US', {
 });
 
 export function decodeEntities(value) {
-  return String(value ?? '').replaceAll('&amp;', '&').replaceAll('&quot;', '"')
-    .replaceAll('&#39;', "'").replaceAll('&lt;', '<').replaceAll('&gt;', '>');
+  return decodeHtmlEntities(value);
 }
 
 function isoFromEpoch(value, field) {

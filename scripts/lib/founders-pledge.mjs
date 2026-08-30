@@ -1,9 +1,12 @@
 import { createHash } from 'node:crypto';
+import { decodeHtmlEntities } from './html-entities.mjs';
 
 export function normalizePageText(html) {
-  return html.replace(/<script[\s\S]*?<\/script>/gi, ' ').replace(/<style[\s\S]*?<\/style>/gi, ' ')
-    .replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/&#39;|&apos;/g, "'")
-    .replace(/&quot;/g, '"').replace(/&nbsp;|&#160;/g, ' ').replace(/\s+/g, ' ').trim();
+  const withoutExecutableContent = html
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, ' ')
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, ' ');
+  return decodeHtmlEntities(withoutExecutableContent.replace(/<[^>]+>/g, ' '))
+    .replace(/\s+/g, ' ').trim();
 }
 
 export function semanticHash(snapshot) {

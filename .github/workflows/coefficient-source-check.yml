@@ -1,6 +1,12 @@
 name: Coefficient source freshness
 
 on:
+  pull_request:
+    paths:
+      - '.github/workflows/coefficient-source-check.yml'
+      - 'data/coefficient/**'
+      - 'scripts/refresh-coefficient.mjs'
+      - 'scripts/lib/coefficient-source.mjs'
   schedule:
     - cron: '23 * * * *'
   workflow_dispatch:

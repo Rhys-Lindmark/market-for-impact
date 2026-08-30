@@ -24,3 +24,33 @@ export function decodeHtmlEntities(value) {
     },
   );
 }
+
+export function removeHtmlElementContents(value, tagName) {
+  const html = String(value ?? '');
+  const lower = html.toLowerCase();
+  const opening = `<${tagName.toLowerCase()}`;
+  const closing = `</${tagName.toLowerCase()}`;
+  let cursor = 0;
+  let result = '';
+
+  while (cursor < html.length) {
+    const start = lower.indexOf(opening, cursor);
+    if (start < 0) return result + html.slice(cursor);
+    const boundary = lower[start + opening.length];
+    if (boundary && !/[\s/>]/.test(boundary)) {
+      result += html.slice(cursor, start + opening.length);
+      cursor = start + opening.length;
+      continue;
+    }
+    const openingEnd = lower.indexOf('>', start + opening.length);
+    if (openingEnd < 0) return result + html.slice(cursor, start);
+    const closingStart = lower.indexOf(closing, openingEnd + 1);
+    if (closingStart < 0) return result + html.slice(cursor, start);
+    const closingEnd = lower.indexOf('>', closingStart + closing.length);
+    if (closingEnd < 0) return result + html.slice(cursor, start);
+    result += `${html.slice(cursor, start)} `;
+    cursor = closingEnd + 1;
+  }
+
+  return result;
+}

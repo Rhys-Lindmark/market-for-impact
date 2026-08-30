@@ -9,6 +9,7 @@ test('decodes recognized entities exactly once', () => {
 
 test('removes script content with whitespace in the closing tag', () => {
   assert.equal(normalizePageText('safe<script>alert(1)</script >text'), 'safe text');
+  assert.equal(normalizePageText('safe<script>alert(1)</script\t\n malformed>text'), 'safe text');
 });
 
 test('preserves invalid numeric entities', () => {

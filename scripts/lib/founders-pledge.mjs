@@ -1,10 +1,11 @@
 import { createHash } from 'node:crypto';
-import { decodeHtmlEntities } from './html-entities.mjs';
+import { decodeHtmlEntities, removeHtmlElementContents } from './html-entities.mjs';
 
 export function normalizePageText(html) {
-  const withoutExecutableContent = html
-    .replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, ' ')
-    .replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, ' ');
+  const withoutExecutableContent = removeHtmlElementContents(
+    removeHtmlElementContents(html, 'script'),
+    'style',
+  );
   return decodeHtmlEntities(withoutExecutableContent.replace(/<[^>]+>/g, ' '))
     .replace(/\s+/g, ' ').trim();
 }

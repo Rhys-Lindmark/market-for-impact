@@ -146,7 +146,12 @@ function parseJsonArray(value: unknown): string[] {
 
 export async function getGiveWellMarket() {
   const { sourceId, retrievedAt } = await ensureGiveWellSnapshot();
-  const [summary, recent] = await Promise.all([
+  const [source, summary, recent, assessments] = await Promise.all([
+    env.DB.prepare(`SELECT publisher, title, url, retrieved_at, coverage_note, content_hash
+      FROM sources WHERE id = ?`).bind(sourceId).first<{
+        publisher: string; title: string; url: string; retrieved_at: number;
+        coverage_note: string | null; content_hash: string | null;
+      }>(),
     env.DB.prepare(`SELECT COUNT(*) AS grant_count, COALESCE(SUM(amount_usd), 0) AS total_amount_usd,
       COUNT(DISTINCT recipient_id) AS recipient_count, MAX(decision_date) AS latest_decision_date,
       SUM(CASE WHEN amount_usd IS NULL THEN 1 ELSE 0 END) AS missing_amount_count
@@ -157,13 +162,53 @@ export async function getGiveWellMarket() {
       WHERE g.source_id = ? AND g.last_seen_at = ?
       ORDER BY g.decision_date DESC, g.amount_usd DESC, g.source_record_id ASC LIMIT 8`)
       .bind(sourceId, retrievedAt).all<Record<string, unknown>>(),
+    env.DB.prepare(`SELECT o.canonical_name, o.slug, o.website_url, a.recommendation_status,
+        a.assessment_date, a.evidence_level, a.native_metric_name, a.native_metric_value,
+        a.native_metric_unit, a.funding_room_usd, a.funding_room_period, a.summary,
+        a.limitations, a.model_version
+      FROM assessments a
+      JOIN organizations o ON o.id = a.organization_id
+      JOIN sources s ON s.id = a.source_id
+      WHERE s.url = ? AND a.recommendation_status = 'top-charity-current'
+      ORDER BY o.canonical_name`).bind(opportunitySnapshot.source.url).all<{
+        canonical_name: string; slug: string; website_url: string | null; recommendation_status: string;
+        assessment_date: number | null; evidence_level: string | null; native_metric_name: string | null;
+        native_metric_value: number | null; native_metric_unit: string | null; funding_room_usd: number | null;
+        funding_room_period: string | null; summary: string | null; limitations: string | null; model_version: string | null;
+      }>(),
   ]);
+  if (!source) throw new Error('GiveWell source metadata is unavailable.');
+  const metadataBySlug = new Map(opportunitySnapshot.opportunities.map((opportunity) => [opportunity.slug, opportunity]));
   return {
-    source: grantSnapshot.source,
+    source: {
+      publisher: source.publisher,
+      title: source.title,
+      url: source.url,
+      retrievedAt: new Date(source.retrieved_at * 1000).toISOString(),
+      coverageNote: source.coverage_note,
+      contentHash: source.content_hash,
+    },
     summary,
     benchmark: opportunitySnapshot.source.benchmark,
     opportunitySource: opportunitySnapshot.source,
-    opportunities: opportunitySnapshot.opportunities,
+    opportunities: assessments.results.map((assessment) => {
+      const metadata = metadataBySlug.get(assessment.slug);
+      if (!metadata) throw new Error(`GiveWell opportunity metadata missing for ${assessment.slug}.`);
+      return {
+        ...metadata,
+        organization: assessment.canonical_name,
+        researchUrl: assessment.website_url ?? metadata.researchUrl,
+        evidenceLevel: assessment.evidence_level ?? 'Not published',
+        costPerLifeSavedUsd: assessment.native_metric_value,
+        fundingRoomUsd: assessment.funding_room_usd,
+        fundingRoomStatus: assessment.funding_room_period ?? 'not-published',
+        limitations: assessment.limitations ?? metadata.limitations,
+        modelVersion: assessment.model_version ?? 'Not published',
+        assessmentDate: assessment.assessment_date ? new Date(assessment.assessment_date * 1000).toISOString() : null,
+        metricName: assessment.native_metric_name,
+        metricUnit: assessment.native_metric_unit,
+      };
+    }),
     recent: recent.results.map((record) => ({
       ...record,
       topics: parseJsonArray(record.topics_json), funders: parseJsonArray(record.funders_json),

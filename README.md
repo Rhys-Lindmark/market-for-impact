@@ -27,6 +27,7 @@ This is research infrastructure, not financial, tax, or individualized giving ad
 - Renaissance Philanthropy’s 28 currently linked 2025 AI for Math awards, reconciled against its stated 29-award portfolio with one explicit coverage gap and no inferred row-level amounts.
 - Stable grant detail URLs across all current Coefficient, GiveWell, and RenPhil ledgers, plus organization profiles that separate received, advised, and originated funding roles and display evaluator evidence when available.
 - Auditable many-to-many grant/organization roles and source-specific name aliases, including all named recipients in Coefficient’s three multi-recipient records without splitting or duplicating grant amounts.
+- A database-backed homepage whose displayed grant counts, funding totals, fund-lens aggregates, missingness, opportunity assessments, and freshness states come from accepted current D1 rows. It does not substitute bundled numbers when the ledger is unavailable, sum the overlapping Coefficient EGC subset, or imply that cross-publisher exports are additive.
 - Content-addressed raw and normalized snapshots, idempotent D1 materialization, source caveats, and fail-closed import checks.
 
 The prioritized roadmap is in [BACKLOG.md](BACKLOG.md). It covers ACE, Giving Green, Founders Pledge, AI safety, comparable-impact modeling, funding-room curves, organization pages, and a San Francisco giving market.

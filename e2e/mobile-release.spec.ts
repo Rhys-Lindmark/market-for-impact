@@ -104,16 +104,24 @@ test('phone donors can inspect the marginal-plan and grant-look-back research co
   await expect(summary.locator('strong')).toHaveText(['18', '0', '0', '0']);
   await expect(page.locator('.sf-protocol-contract>section')).toHaveCount(2);
   await expect(page.locator('.sf-protocol-contract li')).toHaveCount(16);
-  const request = page.locator('.sf-request-packet');
-  await expect(request.getByRole('heading', { name: 'What could Hamilton Families do with the next gift?' })).toBeVisible();
-  await expect(request.getByText('Draft · not sent')).toBeVisible();
-  await expect(request.locator('.sf-request-facts article')).toHaveCount(5);
-  await expect(request.locator('.sf-request-scenarios article')).toHaveCount(3);
-  await expect(request.locator('.sf-request-scenarios article>header strong')).toHaveText(['$100K', '$1M', '$10M']);
-  await expect(request.locator('.sf-request-questions>ol>li')).toHaveCount(8);
-  await expect(request.getByText('not-submitted', { exact: true })).toHaveCount(11);
-  await expect(request.getByText('not-started', { exact: true })).toHaveCount(8);
-  await expect(request).toContainText('8 exact prime-contractor matches');
+  await expect(page.locator('.sf-request-index a')).toHaveCount(2);
+  const requests = page.locator('.sf-request-packet');
+  await expect(requests).toHaveCount(2);
+  const hamiltonRequest = requests.filter({ hasText: 'What could Hamilton Families do with the next gift?' });
+  const foodBankRequest = requests.filter({ hasText: 'What could the Food Bank do with the next gift?' });
+  for (const request of [hamiltonRequest, foodBankRequest]) {
+    await expect(request.getByText('Draft · not sent')).toBeVisible();
+    await expect(request.locator('.sf-request-facts article')).toHaveCount(5);
+    await expect(request.locator('.sf-request-scenarios article')).toHaveCount(3);
+    await expect(request.locator('.sf-request-scenarios article>header strong')).toHaveText(['$100K', '$1M', '$10M']);
+    await expect(request.locator('.sf-request-questions>ol>li')).toHaveCount(8);
+    await expect(request.getByText('not-submitted', { exact: true })).toHaveCount(11);
+    await expect(request.getByText('not-started', { exact: true })).toHaveCount(8);
+    await expect(request).toContainText('8 exact prime-contractor matches');
+  }
+  await expect(foodBankRequest).toContainText('at capacity and uses a waitlist');
+  await expect(foodBankRequest).toContainText('$83.89M donated food/in-kind');
+  await expect(foodBankRequest).toContainText('USDA food-security denominator');
   const seed = page.locator('.sf-lookback-seed article');
   await expect(seed).toHaveCount(1);
   await expect(seed).toContainText('$120K');

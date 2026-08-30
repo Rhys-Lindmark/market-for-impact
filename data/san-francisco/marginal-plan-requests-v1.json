@@ -1,22 +1,25 @@
 {
-  "version": "sf-marginal-plan-requests-v0.1",
+  "version": "sf-marginal-plan-requests-v0.2",
   "generatedAt": "2026-08-30T21:35:00.000Z",
   "geography": "San Francisco, California",
   "summary": {
-    "packetCount": 1,
-    "draftPacketCount": 1,
-    "scenarioCount": 3,
+    "packetCount": 2,
+    "draftPacketCount": 2,
+    "scenarioCount": 6,
     "submittedScenarioCount": 0,
     "organizationResponseCount": 0,
     "mfiModelCount": 0,
-    "publicFactCount": 5,
-    "questionCount": 8
+    "publicFactCount": 10,
+    "questionCount": 16
   },
   "packets": [
     {
       "packetKey": "hamilton-families-marginal-plan-v0.1",
+      "sectionId": "hamilton-plan-request",
       "candidateKey": "hamilton-families",
       "candidateName": "Hamilton Families",
+      "responseLabel": "Hamilton response",
+      "headline": "What could Hamilton Families do with the next gift?",
       "status": "draft-not-sent",
       "statusLabel": "Draft · not sent",
       "responseReceivedAt": null,
@@ -149,6 +152,9 @@
           "label": "Program and legal entity",
           "question": "Which legal entity, named program, population, and San Francisco geography would receive the gift?",
           "publicContext": "Hamilton Families and its EIN are verified; the receiving program, restricted fund, population, and San Francisco geography are not selected.",
+          "publicContextSourceKeys": [
+            "hamilton-financials"
+          ],
           "publicContextState": "accepted-public-context",
           "organizationResponseState": "not-submitted",
           "organizationResponse": null,
@@ -160,6 +166,10 @@
           "label": "Time-bounded budget",
           "question": "What is the program budget, cash on hand, restricted funding, reserves, expected revenue, and unfunded amount over the same period?",
           "publicContext": "Organization-wide FY2025 revenue, expenses, and government funding are public. A program-period budget and unfunded amount are not.",
+          "publicContextSourceKeys": [
+            "hamilton-annual-report-2025",
+            "hamilton-financials"
+          ],
           "publicContextState": "accepted-public-context",
           "organizationResponseState": "not-submitted",
           "organizationResponse": null,
@@ -171,6 +181,9 @@
           "label": "Incremental activities",
           "question": "What would happen with this gift that would not happen otherwise, and on what spending schedule?",
           "publicContext": "Published services describe current work, but no source says what an incremental gift at any requested size would add.",
+          "publicContextSourceKeys": [
+            "hamilton-housing-services"
+          ],
           "publicContextState": "accepted-public-context",
           "organizationResponseState": "not-submitted",
           "organizationResponse": null,
@@ -182,6 +195,9 @@
           "label": "Capacity constraints",
           "question": "Which staffing, referral, facility, regulatory, partner, or target-population constraints limit expansion?",
           "publicContext": "The quarterly report describes 46 new landlord partnerships. Available units, staffing, referral flow, caseload, and other binding constraints are not published.",
+          "publicContextSourceKeys": [
+            "hamilton-quarterly-2026-q4"
+          ],
           "publicContextState": "accepted-public-context",
           "organizationResponseState": "not-submitted",
           "organizationResponse": null,
@@ -193,6 +209,10 @@
           "label": "Other-funder displacement",
           "question": "Would public, restricted, board-designated, or other philanthropic funding change if this gift arrived?",
           "publicContext": "Government revenue and eight matched city contracts make displacement material, but no scenario-specific reconciliation is public.",
+          "publicContextSourceKeys": [
+            "hamilton-annual-report-2025",
+            "datasf-supplier-contracts"
+          ],
           "publicContextState": "accepted-public-context",
           "organizationResponseState": "not-submitted",
           "organizationResponse": null,
@@ -204,6 +224,9 @@
           "label": "Outcome forecast",
           "question": "What durable outcome, baseline, counterfactual, follow-up window, expected value, and uncertainty range are forecast?",
           "publicContext": "Hamilton reports stable-housing exits and eviction-prevention assistance without a common durability window, comparison rate, expected incremental outcome, or uncertainty range.",
+          "publicContextSourceKeys": [
+            "hamilton-quarterly-2026-q4"
+          ],
           "publicContextState": "accepted-public-context",
           "organizationResponseState": "not-submitted",
           "organizationResponse": null,
@@ -215,6 +238,9 @@
           "label": "Cost and attribution",
           "question": "What program-level cash cost and contribution or attribution share connect the gift to the outcome?",
           "publicContext": "Housing subsidies are reported, but program cash cost, cost per sustained outcome, contribution share, and donor attribution are not.",
+          "publicContextSourceKeys": [
+            "hamilton-quarterly-2026-q4"
+          ],
           "publicContextState": "accepted-public-context",
           "organizationResponseState": "not-submitted",
           "organizationResponse": null,
@@ -226,6 +252,9 @@
           "label": "Milestones and stop rules",
           "question": "What will be reported at 6, 12, 24, and 36 months, and what result would cause continuation, revision, or exit?",
           "publicContext": "No accepted source pre-registers 6-, 12-, 24-, or 36-month milestones or continuation, revision, and exit rules for a new gift.",
+          "publicContextSourceKeys": [
+            "hamilton-annual-report-2025"
+          ],
           "publicContextState": "accepted-public-context",
           "organizationResponseState": "not-submitted",
           "organizationResponse": null,
@@ -265,6 +294,323 @@
           "publisher": "Hamilton Families",
           "title": "Housing Services",
           "url": "https://hamiltonfamilies.org/housing-services",
+          "publishedAt": null,
+          "retrievedAt": "2026-08-30"
+        },
+        {
+          "key": "datasf-supplier-contracts",
+          "publisher": "San Francisco Controller's Office",
+          "title": "Supplier Contracts",
+          "url": "https://data.sfgov.org/City-Management-and-Ethics/Supplier-Contracts/cqi5-hm2d",
+          "publishedAt": "2026-08-24T10:24:42.000Z",
+          "retrievedAt": "2026-08-30T15:40:37.403Z"
+        }
+      ]
+    },
+    {
+      "packetKey": "sf-marin-food-bank-marginal-plan-v0.1",
+      "sectionId": "food-bank-plan-request",
+      "candidateKey": "sf-marin-food-bank",
+      "candidateName": "San Francisco–Marin Food Bank",
+      "responseLabel": "Food Bank response",
+      "headline": "What could the Food Bank do with the next gift?",
+      "status": "draft-not-sent",
+      "statusLabel": "Draft · not sent",
+      "responseReceivedAt": null,
+      "forecastLockedAt": null,
+      "recommendationState": "insufficient-evidence",
+      "purpose": "Turn the Food Bank’s public scale, cash and in-kind accounting, program descriptions, and capacity signals into three program-specific marginal cases without confusing food volume with durable food security.",
+      "decisionBoundary": "This packet is a research request, not a funding recommendation, commitment, organization endorsement, submitted response, estimate of room for more funding, or cost per food-secure household.",
+      "provenanceLegend": [
+        {
+          "key": "public-context",
+          "label": "Accepted public context",
+          "meaning": "A cited fact that frames the question but does not answer the marginal case."
+        },
+        {
+          "key": "organization-response",
+          "label": "Organization response",
+          "meaning": "A dated answer and supporting materials supplied or confirmed by San Francisco–Marin Food Bank. None has been received."
+        },
+        {
+          "key": "mfi-model",
+          "label": "MFI model",
+          "meaning": "An independently reviewed forecast or translation built only after the response. None has been started."
+        }
+      ],
+      "publicFacts": [
+        {
+          "key": "entity",
+          "label": "Entity and donation vehicle",
+          "display": "San Francisco–Marin Food Bank · 501(c)(3) · EIN 94-3041517",
+          "boundary": "This identifies the organization, not the program, partner, restricted fund, or county that would receive a proposed gift.",
+          "sourceKeys": [
+            "food-bank-financials"
+          ]
+        },
+        {
+          "key": "program-scope",
+          "label": "Published program scope",
+          "display": "Neighborhood pantries, Community Markets, home-delivered groceries, CalFresh enrollment, partner distribution, and advocacy",
+          "boundary": "The Food Bank must identify one named program, target population, county, and delivery model for each gift scenario; this public list is not a marginal plan.",
+          "sourceKeys": [
+            "food-bank-services",
+            "food-bank-community-markets",
+            "food-bank-home-delivery"
+          ]
+        },
+        {
+          "key": "latest-signals",
+          "label": "Latest accepted reporting window",
+          "display": "44,000 households served weekly · nearly 56M meals-equivalent shared · 1,200 Community Market participants · $16.5M in CalFresh benefits secured",
+          "boundary": "FY2025 organization-reported outputs and administrative outcomes across two counties; no unique annual denominator, common follow-up, counterfactual, or donor attribution is published.",
+          "sourceKeys": [
+            "food-bank-annual-report-2025"
+          ]
+        },
+        {
+          "key": "organization-finances",
+          "label": "Organization-wide FY2025 context",
+          "display": "$169.75M revenue, including $83.89M donated food/in-kind · $41.8M private revenue",
+          "boundary": "In-kind food value and cash are not interchangeable. Organization-wide totals do not reveal cash marginal cost, program budget, unrestricted liquidity, county split, or funding room.",
+          "sourceKeys": [
+            "food-bank-annual-report-2025",
+            "food-bank-financials"
+          ]
+        },
+        {
+          "key": "public-funding",
+          "label": "San Francisco contract context",
+          "display": "8 exact prime-contractor matches · $23.94M contract authority · $5.32M paid",
+          "boundary": "Life-to-date city contract accounting is not annual revenue, philanthropic funding room, program cost, or evidence that a private gift is additional.",
+          "sourceKeys": [
+            "datasf-supplier-contracts"
+          ]
+        }
+      ],
+      "scenarios": [
+        {
+          "amountUsd": 100000,
+          "state": "not-submitted",
+          "organizationResponse": null,
+          "mfiModel": null,
+          "requestedDecision": "Identify the strongest specific use of an incremental $100K gift over a dated period, or state that the Food Bank cannot productively absorb it.",
+          "requiredQuestionKeys": [
+            "programIdentity",
+            "timeBoundedBudget",
+            "incrementalActivities",
+            "capacityConstraints",
+            "fundingDisplacement",
+            "outcomeForecast",
+            "costAndAttribution",
+            "milestones"
+          ]
+        },
+        {
+          "amountUsd": 1000000,
+          "state": "not-submitted",
+          "organizationResponse": null,
+          "mfiModel": null,
+          "requestedDecision": "Identify the strongest specific use of an incremental $1M gift over a dated period, or state that the Food Bank cannot productively absorb it.",
+          "requiredQuestionKeys": [
+            "programIdentity",
+            "timeBoundedBudget",
+            "incrementalActivities",
+            "capacityConstraints",
+            "fundingDisplacement",
+            "outcomeForecast",
+            "costAndAttribution",
+            "milestones"
+          ]
+        },
+        {
+          "amountUsd": 10000000,
+          "state": "not-submitted",
+          "organizationResponse": null,
+          "mfiModel": null,
+          "requestedDecision": "Identify the strongest specific use of an incremental $10M gift over a dated period, or state that the Food Bank cannot productively absorb it.",
+          "requiredQuestionKeys": [
+            "programIdentity",
+            "timeBoundedBudget",
+            "incrementalActivities",
+            "capacityConstraints",
+            "fundingDisplacement",
+            "outcomeForecast",
+            "costAndAttribution",
+            "milestones"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "key": "programIdentity",
+          "label": "Program and legal entity",
+          "question": "Which legal entity, named program, population, and San Francisco geography would receive the gift?",
+          "publicContext": "The Food Bank and its EIN are verified; the receiving program, partner or direct-service operator, restricted fund, target population, and county are not selected.",
+          "publicContextSourceKeys": [
+            "food-bank-financials",
+            "food-bank-services"
+          ],
+          "publicContextState": "accepted-public-context",
+          "organizationResponseState": "not-submitted",
+          "organizationResponse": null,
+          "mfiModelState": "not-started",
+          "mfiModel": null
+        },
+        {
+          "key": "timeBoundedBudget",
+          "label": "Time-bounded budget",
+          "question": "What is the program budget, cash on hand, restricted funding, reserves, expected revenue, and unfunded amount over the same period?",
+          "publicContext": "FY2025 organization-wide cash and in-kind totals are public. A program-period cash budget, donated-food assumption, inventory, reserves, expected revenue, and unfunded amount are not.",
+          "publicContextSourceKeys": [
+            "food-bank-annual-report-2025",
+            "food-bank-financials"
+          ],
+          "publicContextState": "accepted-public-context",
+          "organizationResponseState": "not-submitted",
+          "organizationResponse": null,
+          "mfiModelState": "not-started",
+          "mfiModel": null
+        },
+        {
+          "key": "incrementalActivities",
+          "label": "Incremental activities",
+          "question": "What would happen with this gift that would not happen otherwise, and on what spending schedule?",
+          "publicContext": "Published services describe existing pantries, Community Markets, home delivery, and benefits enrollment, but no source identifies the incremental activity purchased at any requested gift size.",
+          "publicContextSourceKeys": [
+            "food-bank-services",
+            "food-bank-community-markets",
+            "food-bank-home-delivery"
+          ],
+          "publicContextState": "accepted-public-context",
+          "organizationResponseState": "not-submitted",
+          "organizationResponse": null,
+          "mfiModelState": "not-started",
+          "mfiModel": null
+        },
+        {
+          "key": "capacityConstraints",
+          "label": "Capacity constraints",
+          "question": "Which staffing, referral, facility, regulatory, partner, or target-population constraints limit expansion?",
+          "publicContext": "The home-delivery application says that program is at capacity and uses a waitlist; Community Markets states an eight-market expansion and a goal of up to 4,500 households weekly within three years. Open slots, waitlist size, food supply, warehouse, staffing, partner, volunteer, and delivery constraints are not reconciled.",
+          "publicContextSourceKeys": [
+            "food-bank-home-delivery-application",
+            "food-bank-community-markets"
+          ],
+          "publicContextState": "accepted-public-context",
+          "organizationResponseState": "not-submitted",
+          "organizationResponse": null,
+          "mfiModelState": "not-started",
+          "mfiModel": null
+        },
+        {
+          "key": "fundingDisplacement",
+          "label": "Other-funder displacement",
+          "question": "Would public, restricted, board-designated, or other philanthropic funding change if this gift arrived?",
+          "publicContext": "Government food and grants, donated-food inventory, private contributions, county support, and eight matched San Francisco contracts make displacement material, but no scenario-specific reconciliation is public.",
+          "publicContextSourceKeys": [
+            "food-bank-annual-report-2025",
+            "food-bank-home-delivery",
+            "datasf-supplier-contracts"
+          ],
+          "publicContextState": "accepted-public-context",
+          "organizationResponseState": "not-submitted",
+          "organizationResponse": null,
+          "mfiModelState": "not-started",
+          "mfiModel": null
+        },
+        {
+          "key": "outcomeForecast",
+          "label": "Outcome forecast",
+          "question": "What durable outcome, baseline, counterfactual, follow-up window, expected value, and uncertainty range are forecast?",
+          "publicContext": "The Food Bank reports reach, meals-equivalent, benefits, and participant survey results without a common 6- or 12-month USDA food-security denominator, comparator, expected incremental effect, or uncertainty range.",
+          "publicContextSourceKeys": [
+            "food-bank-annual-report-2025",
+            "food-bank-home-delivery"
+          ],
+          "publicContextState": "accepted-public-context",
+          "organizationResponseState": "not-submitted",
+          "organizationResponse": null,
+          "mfiModelState": "not-started",
+          "mfiModel": null
+        },
+        {
+          "key": "costAndAttribution",
+          "label": "Cost and attribution",
+          "question": "What program-level cash cost and contribution or attribution share connect the gift to the outcome?",
+          "publicContext": "Program expense includes donated-food value and organization-wide allocation. Cash cost per unique participant, cost per sustained food-security outcome, partner contribution, and donor attribution are not published.",
+          "publicContextSourceKeys": [
+            "food-bank-annual-report-2025",
+            "food-bank-financials"
+          ],
+          "publicContextState": "accepted-public-context",
+          "organizationResponseState": "not-submitted",
+          "organizationResponse": null,
+          "mfiModelState": "not-started",
+          "mfiModel": null
+        },
+        {
+          "key": "milestones",
+          "label": "Milestones and stop rules",
+          "question": "What will be reported at 6, 12, 24, and 36 months, and what result would cause continuation, revision, or exit?",
+          "publicContext": "Community Markets publishes an expansion goal, but no accepted source locks scenario-specific 6-, 12-, 24-, or 36-month outcomes or continuation, revision, and exit rules for a new gift.",
+          "publicContextSourceKeys": [
+            "food-bank-community-markets"
+          ],
+          "publicContextState": "accepted-public-context",
+          "organizationResponseState": "not-submitted",
+          "organizationResponse": null,
+          "mfiModelState": "not-started",
+          "mfiModel": null
+        }
+      ],
+      "sources": [
+        {
+          "key": "food-bank-annual-report-2025",
+          "publisher": "San Francisco–Marin Food Bank",
+          "title": "Fiscal Year 2025 Annual Report",
+          "url": "https://www.sfmfoodbank.org/annual-report-2025/",
+          "publishedAt": null,
+          "retrievedAt": "2026-08-30"
+        },
+        {
+          "key": "food-bank-financials",
+          "publisher": "San Francisco–Marin Food Bank",
+          "title": "Financial statements archive",
+          "url": "https://www.sfmfoodbank.org/blog/tag/financial-statements/",
+          "publishedAt": null,
+          "period": "FY2024–2025 audit available",
+          "retrievedAt": "2026-08-30"
+        },
+        {
+          "key": "food-bank-services",
+          "publisher": "San Francisco–Marin Food Bank",
+          "title": "Our Services",
+          "url": "https://www.sfmfoodbank.org/services/",
+          "publishedAt": null,
+          "retrievedAt": "2026-08-30"
+        },
+        {
+          "key": "food-bank-community-markets",
+          "publisher": "San Francisco–Marin Food Bank",
+          "title": "Community Markets",
+          "url": "https://www.sfmfoodbank.org/programs/community-markets/",
+          "publishedAt": null,
+          "retrievedAt": "2026-08-30"
+        },
+        {
+          "key": "food-bank-home-delivery",
+          "publisher": "San Francisco–Marin Food Bank",
+          "title": "Home-Delivered Groceries",
+          "url": "https://www.sfmfoodbank.org/programs/home-delivered-groceries-seniors/",
+          "publishedAt": null,
+          "retrievedAt": "2026-08-30"
+        },
+        {
+          "key": "food-bank-home-delivery-application",
+          "publisher": "San Francisco–Marin Food Bank",
+          "title": "Home-Delivered Groceries Application",
+          "url": "https://panda.sfmfoodbank.org/homedelivery/en",
           "publishedAt": null,
           "retrievedAt": "2026-08-30"
         },

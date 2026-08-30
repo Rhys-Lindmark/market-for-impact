@@ -39,16 +39,19 @@ test('phone donors can inspect a San Francisco diligence record', async ({ page 
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 
-test('phone donors can distinguish Hamilton reported outcomes from external evidence', async ({ page }, testInfo) => {
+test('phone donors can distinguish reported outcomes from external evidence dossiers', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'phone-390');
   await page.goto('/san-francisco#diligence', { waitUntil: 'domcontentloaded' });
-  const dossier = page.locator('.sf-evidence-dossier');
-  await expect(dossier.getByRole('heading', { name: 'Hamilton Families' })).toBeVisible();
-  await expect(dossier.getByText('deeper diligence; recommendation blocked')).toBeVisible();
-  await expect(dossier.getByRole('heading', { name: /What Hamilton says happened/ })).toBeVisible();
-  await expect(dossier.getByText('results pending')).toBeVisible();
-  await expect(dossier.getByText('03 · What still blocks a recommendation')).toBeVisible();
-  await expect(dossier.getByRole('heading', { name: /price the next dollar/ })).toBeVisible();
+  const dossiers = page.locator('.sf-evidence-dossier');
+  await expect(dossiers).toHaveCount(2);
+  const hamilton = dossiers.filter({ hasText: 'Hamilton Families' });
+  await expect(hamilton.getByText('deeper diligence; recommendation blocked')).toBeVisible();
+  await expect(hamilton.getByText('results pending')).toBeVisible();
+  const foodBank = dossiers.filter({ hasText: 'San Francisco–Marin Food Bank' });
+  await expect(foodBank.getByRole('heading', { name: /What the Food Bank says happened/ })).toBeVisible();
+  await expect(foodBank.getByText('randomized trial; 228 adults followed for 12 months')).toBeVisible();
+  await expect(foodBank.getByText('03 · What still blocks a recommendation')).toBeVisible();
+  await expect(foodBank.getByRole('heading', { name: /price the next dollar/ })).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 

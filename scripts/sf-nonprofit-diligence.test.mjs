@@ -14,6 +14,7 @@ test('SF diligence cohort is reproducible and keeps conversions blocked', () => 
   assert.equal(snapshot.candidates.length, 6);
   assert.equal(snapshot.summary.qalyBlockedCount, 6);
   assert.equal(snapshot.summary.candidatesWithPublishedMarginalGap, 0);
+  assert.equal(snapshot.summary.evidenceDossierCount, 2);
 });
 
 test('public-contract aliases reconcile exact accounting totals', () => {
@@ -56,4 +57,20 @@ test('Hamilton dossier separates reported results from external evidence and unr
   assert.equal(dossier.evidenceLayers.find((layer) => layer.publisher === 'Housing Solutions Lab').status, 'results pending');
   assert.match(dossier.evidenceLayers.find((layer) => layer.title === 'Family Options Study').transferLimit, /not Hamilton-specific/i);
   assert.ok(dossier.missingForRecommendation.some((gap) => /marginal plan/i.test(gap)));
+});
+
+test('Food Bank dossier separates distributed volume, monitored reporting, and transferable causal evidence', () => {
+  const foodBank = snapshot.candidates.find((row) => row.key === 'sf-marin-food-bank');
+  const dossier = foodBank.evidenceDossier;
+  const finances = dossier.organizationReported.financials;
+  assert.match(dossier.decisionState, /blocked/);
+  assert.equal(dossier.organizationReported.outcomes.length, 4);
+  assert.equal(finances.donatedFoodAndInKindRevenueUsd + finances.governmentFoodCommoditiesUsd + finances.governmentGrantsUsd + finances.privateRevenueUsd + finances.otherRevenueUsd, finances.revenueUsd);
+  assert.equal(finances.programExpensesUsd + finances.fundraisingExpensesUsd + finances.administrationExpensesUsd, finances.expensesUsd);
+  assert.match(finances.boundary, /cash cost per household/i);
+  assert.equal(dossier.evidenceLayers.length, 4);
+  assert.match(dossier.evidenceLayers.find((layer) => layer.publisher === 'City and County of San Francisco').transferLimit, /no comparison group/i);
+  assert.match(dossier.evidenceLayers.find((layer) => layer.publisher === 'Public Health Nutrition').transferLimit, /heterogeneous for meta-analysis/i);
+  assert.match(dossier.evidenceLayers.find((layer) => layer.publisher === 'American Journal of Preventive Medicine').design, /randomized trial/i);
+  assert.ok(dossier.missingForRecommendation.some((gap) => /\$100,000.*\$1 million.*\$10 million/i.test(gap)));
 });

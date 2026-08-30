@@ -189,6 +189,20 @@ type DonorPortfolio = {
   rules: { weights: string; selection: string; allocation: string; comparability: string; geography: string };
 };
 
+type SfOutcomeOntology = {
+  version: string; generatedAt: string; geography: string; scopeNote: string;
+  classificationRules: { outcome: string; proxy: string; output: string; counterfactual: string; equity: string; conversion: string };
+  summary: { outcomeCount: number; sourceCount: number; modelRequiredCount: number; conversionBlockedCount: number; overlapCount: number };
+  outcomes: Array<{
+    key: string; label: string; question: string; canonicalUnit: string; observableMeasure: string; unitSemantics: string;
+    population: string; timeWindow: string; direction: string; measurementState: string; attributionState: string;
+    serviceOutputs: string[]; administrativeProxies: string[]; requiredInputs: string[]; allowedClaims: string[];
+    blockedClaims: string[]; equityCuts: string[]; qalyState: string; wellbyState: string;
+    sources: Array<{ key: string; publisher: string; title: string; url: string; publishedAt: string | null; datePrecision: string; retrievedAt: string; monitorMode: string; coverageNote: string }>;
+  }>;
+  overlaps: Array<{ leftKey: string; leftLabel: string; rightKey: string; rightLabel: string; risk: string; rule: string }>;
+};
+
 type GrantFlowMarket = {
   version: string; generatedAt: string; acceptedSourceRowCount: number;
   aggregationRules: { row: string; amount: string; roles: string; missingness: string; date: string };
@@ -307,6 +321,9 @@ export default function Home() {
   const [portfolioGeography, setPortfolioGeography] = useState('any');
   const [portfolioLiquidity, setPortfolioLiquidity] = useState('pooled-ok');
   const [portfolioHorizon, setPortfolioHorizon] = useState('flexible');
+  const [sfOntology, setSfOntology] = useState<SfOutcomeOntology | null>(null);
+  const [sfOntologyError, setSfOntologyError] = useState(false);
+  const [sfOutcomeKey, setSfOutcomeKey] = useState('housing-stability');
   const [showAllRenPhil, setShowAllRenPhil] = useState(false);
   const [explorer, setExplorer] = useState<CoefficientExplorer | null>(null);
   const [explorerError, setExplorerError] = useState(false);
@@ -368,6 +385,12 @@ export default function Home() {
       if (!response.ok) throw new Error('Funding tranches unavailable');
       return response.json() as Promise<FundingTrancheMarket>;
     }).then(setFundingTranches).catch(() => setFundingTranchesError(true));
+  }, []);
+  useEffect(() => {
+    fetch('/api/sf-outcomes').then((response) => {
+      if (!response.ok) throw new Error('San Francisco outcome ontology unavailable');
+      return response.json() as Promise<SfOutcomeOntology>;
+    }).then(setSfOntology).catch(() => setSfOntologyError(true));
   }, []);
   useEffect(() => {
     const controller = new AbortController();
@@ -544,6 +567,8 @@ export default function Home() {
   ).slice(0, 24), [aiQuery, aiRole, aiSafetyMarket]);
   const selectedComparison = evaluatorComparison?.causes.find((item) => item.key === comparisonCause) ?? evaluatorComparison?.causes[0] ?? null;
   const selectedQalyOpportunity = comparableImpact?.qalyOpportunities.find((item) => item.slug === qalySlug) ?? comparableImpact?.qalyOpportunities[0] ?? null;
+  const selectedSfOutcome = sfOntology?.outcomes.find((item) => item.key === sfOutcomeKey) ?? sfOntology?.outcomes[0] ?? null;
+  const selectedSfOverlaps = sfOntology?.overlaps.filter((item) => item.leftKey === selectedSfOutcome?.key || item.rightKey === selectedSfOutcome?.key) ?? [];
   const qalyCost = selectedQalyOpportunity ? selectedQalyOpportunity.costPerLifeSavedUsd / qalyYield : null;
   const qalyLowCost = selectedQalyOpportunity ? selectedQalyOpportunity.costPerLifeSavedUsd / 50 : null;
   const qalyHighCost = selectedQalyOpportunity ? selectedQalyOpportunity.costPerLifeSavedUsd / 20 : null;
@@ -567,9 +592,9 @@ export default function Home() {
         </a>
         <nav aria-label="Primary navigation">
           <a href="#portfolio">Build a portfolio</a>
+          <a href="#san-francisco">San Francisco</a>
           <a href="#opportunities">Opportunities</a>
           <a href="#evaluator-comparison">Compare evaluators</a>
-          <a href="#impact-lab">Translate impact</a>
           <a href="#funding-curve">Funding room</a>
           <a href="#flows">Funding flows</a>
           <a href="#data-quality">Data quality</a>
@@ -643,6 +668,62 @@ export default function Home() {
             </>}
           </div>
         </div>
+      </section>
+
+      <section className="sf-outcomes-section" id="san-francisco">
+        <div className="sf-outcomes-heading">
+          <div><p className="kicker">SAN FRANCISCO OUTCOME CONTRACT</p><h2>A local dollar needs<br />a local outcome.</h2></div>
+          <p>Before ranking organizations, define what success means. This first ontology keeps durable outcomes separate from administrative proxies and delivered services—and blocks donor-attribution and health conversions until the required model exists.</p>
+        </div>
+        <div className="sf-outcomes-summary" aria-label="San Francisco outcome ontology summary">
+          <div><span>OUTCOMES DEFINED</span><strong>{sfOntology ? integer.format(sfOntology.summary.outcomeCount) : '—'}</strong><small>Mutually legible, not necessarily additive</small></div>
+          <div><span>OFFICIAL SOURCES</span><strong>{sfOntology ? integer.format(sfOntology.summary.sourceCount) : '—'}</strong><small>City, federal, and school-system definitions</small></div>
+          <div><span>MODEL REQUIRED</span><strong>{sfOntology ? integer.format(sfOntology.summary.modelRequiredCount) : '—'}</strong><small>Days avoided and deaths averted</small></div>
+          <div><span>QALY / WELLBY BLOCKED</span><strong>{sfOntology ? `${integer.format(sfOntology.summary.conversionBlockedCount)} / 8` : '—'}</strong><small>Until a versioned local conversion exists</small></div>
+        </div>
+        {sfOntologyError && <p className="sf-outcomes-loading error">The San Francisco measurement contract is temporarily unavailable.</p>}
+        {!sfOntology && !sfOntologyError && <p className="sf-outcomes-loading">Loading the versioned local measurement contract…</p>}
+        {sfOntology && selectedSfOutcome && <>
+          <div className="sf-outcome-tabs" role="tablist" aria-label="Choose a San Francisco outcome">
+            {sfOntology.outcomes.map((item, index) => <button type="button" role="tab" aria-selected={item.key === selectedSfOutcome.key} className={item.key === selectedSfOutcome.key ? 'active' : ''} key={item.key} onClick={() => setSfOutcomeKey(item.key)}><b>{String(index + 1).padStart(2, '0')}</b><span>{item.label}</span><small>{item.measurementState.replaceAll('-', ' ')}</small></button>)}
+          </div>
+          <article className="sf-outcome-card">
+            <header>
+              <div><span>SELECTED OUTCOME</span><h3>{selectedSfOutcome.label}</h3><p>{selectedSfOutcome.question}</p></div>
+              <div className="sf-outcome-status"><span>{selectedSfOutcome.measurementState.replaceAll('-', ' ')}</span><span>{selectedSfOutcome.attributionState.replaceAll('-', ' ')}</span><span className="blocked">QALY blocked</span><span className="blocked">WELLBY blocked</span></div>
+            </header>
+            <div className="sf-outcome-definition">
+              <div><span>CANONICAL UNIT</span><strong>{selectedSfOutcome.canonicalUnit}</strong><p>{selectedSfOutcome.unitSemantics}</p></div>
+              <div><span>OBSERVABLE MEASURE</span><p>{selectedSfOutcome.observableMeasure}</p></div>
+              <div><span>POPULATION</span><p>{selectedSfOutcome.population}</p></div>
+              <div><span>FOLLOW-UP WINDOW</span><p>{selectedSfOutcome.timeWindow}</p></div>
+            </div>
+            <div className="sf-separation-grid">
+              <section><span>SERVICE OUTPUTS</span><h4>What was delivered</h4><ul>{selectedSfOutcome.serviceOutputs.map((item) => <li key={item}>{item}</li>)}</ul></section>
+              <section><span>ADMINISTRATIVE PROXIES</span><h4>Signals, not proof</h4><ul>{selectedSfOutcome.administrativeProxies.map((item) => <li key={item}>{item}</li>)}</ul></section>
+              <section><span>REQUIRED MODEL INPUTS</span><h4>Needed for attribution</h4><ul>{selectedSfOutcome.requiredInputs.map((item) => <li key={item}>{item}</li>)}</ul></section>
+            </div>
+            <div className="sf-claims-grid">
+              <section><span>SAFE TO REPORT</span>{selectedSfOutcome.allowedClaims.map((item) => <p key={item}>✓ {item}</p>)}</section>
+              <section><span>CLAIMS BLOCKED</span>{selectedSfOutcome.blockedClaims.map((item) => <p key={item}>× {item}</p>)}</section>
+              <section><span>EQUITY CUTS</span><p>{selectedSfOutcome.equityCuts.join(' · ')}</p></section>
+            </div>
+          </article>
+          <div className="sf-evidence-grid">
+            <section>
+              <div className="sf-subheading"><span>SOURCE TRAIL</span><b>{selectedSfOutcome.sources.length} linked definitions</b></div>
+              <div className="sf-source-list">{selectedSfOutcome.sources.map((source) => <a href={source.url} target="_blank" rel="noreferrer" key={source.key}><span>{source.publisher}</span><strong>{source.title}</strong><small>{source.coverageNote}</small><b>↗</b></a>)}</div>
+            </section>
+            <section>
+              <div className="sf-subheading"><span>DOUBLE-COUNT REGISTER</span><b>{selectedSfOverlaps.length} relevant boundaries</b></div>
+              <div className="sf-overlap-list">{selectedSfOverlaps.map((item) => { const pairedLabel = item.leftKey === selectedSfOutcome.key ? item.rightLabel : item.leftLabel; return <article key={`${item.leftKey}-${item.rightKey}`}><span>WITH {pairedLabel}</span><p>{item.risk}</p><strong>{item.rule}</strong></article>; })}{selectedSfOverlaps.length === 0 && <p>No registered overlap for this outcome.</p>}</div>
+            </section>
+          </div>
+          <div className="sf-classification-rule">
+            <span>CLASSIFICATION RULE</span><p><strong>Outcome.</strong> {sfOntology.classificationRules.outcome}</p><p><strong>Counterfactual.</strong> {sfOntology.classificationRules.counterfactual}</p><p><strong>Conversion.</strong> {sfOntology.classificationRules.conversion}</p>
+          </div>
+          <p className="data-note">{sfOntology.version} · {sfOntology.geography} · {sfOntology.scopeNote}</p>
+        </>}
       </section>
 
       <section className="market-section" id="opportunities">

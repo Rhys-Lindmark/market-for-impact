@@ -1,0 +1,36 @@
+name: San Francisco ontology source check
+
+on:
+  push:
+    paths:
+      - 'data/san-francisco/**'
+      - 'scripts/refresh-sf-outcomes.mjs'
+      - 'scripts/lib/sf-outcome-ontology.mjs'
+      - 'scripts/sf-outcome-ontology.test.mjs'
+      - '.github/workflows/sf-ontology-source-check.yml'
+  schedule:
+    - cron: '53 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sf-ontology-source-freshness
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate ontology
+        run: node scripts/validate-sf-outcomes.mjs
+      - name: Run ontology tests
+        run: node --test scripts/sf-outcome-ontology.test.mjs
+      - name: Verify accepted sources
+        run: node scripts/refresh-sf-outcomes.mjs

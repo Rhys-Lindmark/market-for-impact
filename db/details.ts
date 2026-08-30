@@ -3,10 +3,12 @@ import coefficientAllSnapshot from '@/data/coefficient/all-grants.json';
 import coefficientSnapshot from '@/data/normalized/coefficient-effective-giving-and-careers.json';
 import giveWellSnapshot from '@/data/normalized/givewell-grants.json';
 import renPhilSnapshot from '@/data/renphil/ai-for-math-2025.json';
+import givingGreenSnapshot from '@/data/giving-green/recommendations-2025-2026.json';
 import { ensureAllCoefficientSnapshot } from '@/db/coefficient-all';
 import { ensureCurrentSnapshot } from '@/db/coefficient';
 import { ensureGiveWellSnapshot } from '@/db/givewell';
 import { ensureRenPhilSnapshot } from '@/db/renphil';
+import { ensureGivingGreenSnapshot } from '@/db/giving-green';
 import { grantPath, type GrantSourceKey, parseStringArray } from '@/db/detail-contract';
 
 const sourceDefinitions: Record<GrantSourceKey, { url: string; ensure: () => Promise<unknown> }> = {
@@ -14,6 +16,7 @@ const sourceDefinitions: Record<GrantSourceKey, { url: string; ensure: () => Pro
   'coefficient-egc': { url: coefficientSnapshot.source.url, ensure: ensureCurrentSnapshot },
   givewell: { url: giveWellSnapshot.source.url, ensure: ensureGiveWellSnapshot },
   renphil: { url: renPhilSnapshot.source.url, ensure: ensureRenPhilSnapshot },
+  'giving-green': { url: givingGreenSnapshot.source.url, ensure: ensureGivingGreenSnapshot },
 };
 
 const sourceKeyByUrl = new Map(Object.entries(sourceDefinitions).map(([key, value]) => [value.url, key as GrantSourceKey]));
@@ -141,6 +144,7 @@ async function ensureAllMarketData() {
   await ensureCurrentSnapshot();
   await ensureGiveWellSnapshot();
   await ensureRenPhilSnapshot();
+  await ensureGivingGreenSnapshot();
 }
 
 type Relationship = 'received' | 'advised' | 'originated';

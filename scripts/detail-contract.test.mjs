@@ -7,6 +7,7 @@ test('detail routes accept only supported source ledgers', () => {
   assert.equal(isGrantSourceKey('coefficient-egc'), true);
   assert.equal(isGrantSourceKey('givewell'), true);
   assert.equal(isGrantSourceKey('renphil'), true);
+  assert.equal(isGrantSourceKey('giving-green'), true);
   assert.equal(isGrantSourceKey('unknown'), false);
 });
 

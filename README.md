@@ -26,8 +26,9 @@ This is research infrastructure, not financial, tax, or individualized giving ad
 - GiveWell’s 541-row public grant export and four current Top Charities, including evidence levels, delivery costs, historical reported cost per life saved, geography, model versions, and non-inferred funding-room status.
 - A versioned GiveDirectly comparison layer that keeps GiveWell’s 1× welfare anchor, 3–4× standard-program estimate, and 6× funding bar separate, with model-population, welfare-weight, currency-basis, and incompatibility warnings stored in D1.
 - Animal Charity Evaluators’ 10 current Recommended Charities, including five 2025 reviews and five retained 2024 recommendations, with 28 program-level native metrics, evaluation vintages, uncertainty ranges, annual funding capacity, and incremental room for more funding preserved in D1.
+- Giving Green’s five current 2025–2026 Top Climate Nonprofits and complete 29-row grant announcement, with strategy tags, qualitative evaluation cases, funding-need language, and $26.063M of planned grants preserved without treating grant size as rank or disbursement.
 - Renaissance Philanthropy’s 28 currently linked 2025 AI for Math awards, reconciled against its stated 29-award portfolio with one explicit coverage gap and no inferred row-level amounts.
-- Stable grant detail URLs across all current Coefficient, GiveWell, and RenPhil ledgers, plus organization profiles that separate received, advised, and originated funding roles and display evaluator evidence when available.
+- Stable grant detail URLs across all current Coefficient, GiveWell, Giving Green, and RenPhil ledgers, plus organization profiles that separate received, advised, and originated funding roles and display evaluator evidence when available.
 - Auditable many-to-many grant/organization roles and source-specific name aliases, including all named recipients in Coefficient’s three multi-recipient records without splitting or duplicating grant amounts.
 - A database-backed homepage whose displayed grant counts, funding totals, fund-lens aggregates, missingness, opportunity assessments, and freshness states come from accepted current D1 rows. It does not substitute bundled numbers when the ledger is unavailable, sum the overlapping Coefficient EGC subset, or imply that cross-publisher exports are additive.
 - Content-addressed raw and normalized snapshots, idempotent D1 materialization, source caveats, and fail-closed import checks.
@@ -143,6 +144,17 @@ npm run data:ace:refresh  # review upstream changes before committing
 ```
 
 ACE’s selected-program estimates remain in their native units: animals helped or affected, meals replaced, people reached, research outputs, and suffering-adjusted days (SADs). They are stored as multiple program metrics rather than one organization score. ACE explicitly warns that 2025 SAD estimates are not directly comparable with earlier ACE estimates or other organizations’ SAD estimates, so Market for Impact does not rank across those model vintages. GitHub checks the live recommendation links hourly and fails into review when the set changes.
+
+### Giving Green
+
+The Giving Green snapshot covers its five current 2025–2026 Top Climate Nonprofits and all 29 rows in the official grant announcement: five top nonprofits and 24 other grantees. The announced amounts total $26.063M, including $14.4M for the five top nonprofits.
+
+```bash
+npm run data:giving-green:check
+npm run data:giving-green:refresh  # review upstream changes before committing
+```
+
+These amounts are planned Giving Green Fund grants, not proof of payment, unrestricted room for more funding, or an effectiveness ranking. Giving Green’s organization-level case is qualitative—scale, feasibility, and funding need—so the site does not manufacture emissions-per-dollar estimates. Project InnerSpace is the only current review with a numeric organization-level gap in the snapshot: $4M for the remainder of 2025 as of October 2025. That explicitly dated estimate remains visible as stale period-specific evidence, not current 2026 room. GitHub checks the official announcement hourly and fails into review when its 29-row semantic grant set changes.
 
 ## Data and citation rules
 

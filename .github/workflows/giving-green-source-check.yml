@@ -1,0 +1,33 @@
+name: Giving Green source freshness
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/giving-green-source-check.yml'
+      - 'data/giving-green/**'
+      - 'scripts/refresh-giving-green.mjs'
+      - 'scripts/lib/giving-green.mjs'
+      - 'scripts/giving-green.test.mjs'
+  schedule:
+    - cron: '29 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: giving-green-source-freshness
+  cancel-in-progress: true
+
+jobs:
+  check-recommendations-and-grants:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node --test scripts/giving-green.test.mjs
+      - run: node scripts/refresh-giving-green.mjs
+

@@ -1,4 +1,4 @@
-export const grantSourceKeys = ['coefficient', 'coefficient-egc', 'givewell', 'renphil'] as const;
+export const grantSourceKeys = ['coefficient', 'coefficient-egc', 'givewell', 'renphil', 'giving-green'] as const;
 
 export type GrantSourceKey = (typeof grantSourceKeys)[number];
 

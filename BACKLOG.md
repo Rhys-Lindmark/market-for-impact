@@ -9,7 +9,8 @@ This backlog is ordered by donor value, data integrity, and dependency. Each ite
 - [ ] **MFI-003 — Build the Coefficient Giving ingestion pipeline.** Discover the current databases for each fund, retain source URLs and publication lag, ingest grants idempotently, and mark paid/committed/recommended status. Do not treat the public database as complete; Coefficient says it omits most non–Good Ventures advised funding.
   - [x] Normalize and idempotently import all 79 currently published Effective Giving & Careers records into D1, retaining source/status semantics, stable IDs, content hashes, first/last-seen timestamps, and duplicate tests.
   - [x] Expose reconciled D1 totals and recent grants on the homepage with a primary-source coverage note. Verified locally on 2026-08-29: 79 grants, $46,721,803, 51 recipients; two successive API reads returned the same totals.
-  - [ ] Automate refreshing the raw snapshot from a source-supported export or stable endpoint, then extend discovery and import coverage to every Coefficient fund. Until then, rendered-page retrieval remains a reviewed acquisition step rather than an unattended feed.
+  - [x] Automate the Effective Giving & Careers snapshot from Coefficient's public Algolia search index. The refresh command validates all records, fails closed on truncation or duplicate source IDs, reports additions/updates/removals, and is a no-op when unchanged. Verified 2026-08-29 against the rendered fund page and index: 79 records, $46,721,803, 51 recipients.
+  - [ ] Extend source discovery, refresh, and import coverage to every active and archived Coefficient fund; reconcile overlapping focus-area tags without double-counting.
 - [ ] **MFI-004 — Build the GiveWell opportunity importer.** Import current Top Charities, grants spreadsheet rows, cost per outcome, evidence notes, location, and rolling room-for-more-funding decisions. Preserve estimate date and model version.
 - [ ] **MFI-005 — Ship organization and grant detail pages.** Add stable URLs, source citations, grant timeline, evaluator comparisons, metric provenance, and data freshness.
 - [ ] **MFI-006 — Replace homepage aggregates with database queries.** Make every displayed count and funding total traceable to accepted ledger rows; show coverage and last-refresh status.
@@ -40,8 +41,8 @@ This backlog is ordered by donor value, data integrity, and dependency. Each ite
 
 ## Operating tracks
 
-- [ ] Add automatic hourly source-change detection and human review queues; make unchanged snapshots a no-op and route semantic/schema changes to review.
-- [ ] Add source snapshots and diffs so historical claims remain auditable.
+- [ ] Add automatic hourly source-change detection and human review queues; GitHub now checks EGC hourly, no-ops when unchanged, and fails closed into review on changes or suspicious removals, but other sources still need coverage.
+- [ ] Add source snapshots and diffs so historical claims remain auditable; EGC now retains stable source IDs, canonical grant URLs, award dates, publication timestamps, content hashes, and first/last-seen timestamps.
 - [ ] Add a corrections policy, conflicts disclosure, methodology changelog, and research red-team template.
 - [ ] Interview one Coefficient Giving researcher, one GiveWell-style evaluator, one large foundation staffer, and three AI-company donors; convert findings to issues.
 - [ ] Maintain accessibility, mobile, performance, citation, and data-freshness checks in CI.

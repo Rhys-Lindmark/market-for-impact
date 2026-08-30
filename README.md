@@ -23,3 +23,16 @@ npm run dev
 ```
 
 See [BACKLOG.md](BACKLOG.md) for the prioritized roadmap and data-PR definition of done.
+
+## Coefficient Giving refresh
+
+The Effective Giving & Careers snapshot comes from the public search index used by Coefficient Giving's fund page. The committed search credential is the publisher's browser-visible, search-only key; it cannot modify the index.
+
+```bash
+npm run data:coefficient:check   # exits 0 when the committed snapshot is current
+npm run data:coefficient:refresh # review and write a changed snapshot, then normalize it
+```
+
+The refresh validates completeness, source IDs, amounts, dates, fund membership, and duplicate identities. It fails closed on suspicious truncation. Published records remain explicitly distinct from paid or committed grants, and Coefficient's stated publication-lag and coverage caveats are retained with every snapshot.
+
+GitHub also runs the non-writing check hourly. A changed or suspicious snapshot fails the check and enters the human/Codex review queue; the workflow never accepts upstream data changes on its own.

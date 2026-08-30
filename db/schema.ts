@@ -23,6 +23,8 @@ export const organizations = sqliteTable('organizations', {
 export const grants = sqliteTable('grants', {
   id: integer('id').primaryKey({ autoIncrement: true }),
   externalId: text('external_id'),
+  sourceRecordId: text('source_record_id'),
+  sourceUrl: text('source_url'),
   sourceId: integer('source_id').notNull().references(() => sources.id),
   originatingFunderId: integer('originating_funder_id').references(() => organizations.id),
   advisingFunderId: integer('advising_funder_id').references(() => organizations.id),
@@ -32,6 +34,8 @@ export const grants = sqliteTable('grants', {
   currency: text('currency'),
   status: text('status').notNull(),
   decisionDate: integer('decision_date', { mode: 'timestamp' }),
+  awardDate: integer('award_date', { mode: 'timestamp' }),
+  sourcePublishedAt: integer('source_published_at', { mode: 'timestamp' }),
   startDate: integer('start_date', { mode: 'timestamp' }),
   endDate: integer('end_date', { mode: 'timestamp' }),
   cause: text('cause').notNull(),
@@ -44,6 +48,7 @@ export const grants = sqliteTable('grants', {
   lastSeenAt: integer('last_seen_at', { mode: 'timestamp' }),
 }, (table) => [
   uniqueIndex('grants_source_external_idx').on(table.sourceId, table.externalId),
+  uniqueIndex('grants_source_record_idx').on(table.sourceId, table.sourceRecordId),
   index('grants_cause_date_idx').on(table.cause, table.decisionDate),
   index('grants_recipient_idx').on(table.recipientId),
 ]);

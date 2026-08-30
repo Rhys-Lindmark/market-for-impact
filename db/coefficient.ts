@@ -40,13 +40,18 @@ async function ensureCurrentSnapshot() {
     const recipientId = recipientIds.get(record.recipientSlug);
     if (!recipientId) throw new Error(`Missing recipient: ${record.recipient}`);
     const decisionDate = Math.floor(new Date(record.decisionMonth).valueOf() / 1000);
+    const awardDate = Math.floor(new Date(record.awardDate).valueOf() / 1000);
+    const sourcePublishedAt = record.publicationDate ? Math.floor(new Date(record.publicationDate).valueOf() / 1000) : null;
     return env.DB.prepare(`INSERT INTO grants
-      (external_id, source_id, advising_funder_id, recipient_id, amount_usd, amount_original, currency, status, decision_date, cause, purpose, grouped_grant, first_seen_at, last_seen_at)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      (external_id, source_record_id, source_url, source_id, advising_funder_id, recipient_id, amount_usd, amount_original, currency, status, decision_date, award_date, source_published_at, cause, purpose, grouped_grant, first_seen_at, last_seen_at)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
       ON CONFLICT(source_id, external_id) DO UPDATE SET
-        amount_usd = excluded.amount_usd, status = excluded.status, purpose = excluded.purpose, last_seen_at = excluded.last_seen_at`)
-      .bind(record.externalId, source.id, advisor.id, recipientId, record.amountUsd, record.amountUsd, record.currency,
-        record.status, decisionDate, record.cause, record.purpose, record.groupedGrant ? 1 : 0, retrievedAt, retrievedAt);
+        source_record_id = excluded.source_record_id, source_url = excluded.source_url, amount_usd = excluded.amount_usd,
+        status = excluded.status, decision_date = excluded.decision_date, award_date = excluded.award_date,
+        source_published_at = excluded.source_published_at, purpose = excluded.purpose, last_seen_at = excluded.last_seen_at`)
+      .bind(record.externalId, record.sourceRecordId, record.grantUrl, source.id, advisor.id, recipientId,
+        record.amountUsd, record.amountUsd, record.currency, record.status, decisionDate, awardDate, sourcePublishedAt,
+        record.cause, record.purpose, record.groupedGrant ? 1 : 0, retrievedAt, retrievedAt);
   });
   for (let index = 0; index < grantStatements.length; index += 50) {
     await env.DB.batch(grantStatements.slice(index, index + 50));
@@ -67,8 +72,9 @@ export async function getCoefficientGrantMarket() {
       .first<{ grant_count: number; total_amount_usd: number; latest_decision_date: number }>(),
     env.DB.prepare('SELECT COUNT(DISTINCT recipient_id) AS recipient_count FROM grants WHERE source_id = ? AND last_seen_at = ?').bind(sourceId, retrievedAt)
       .first<{ recipient_count: number }>(),
-    env.DB.prepare(`SELECT g.external_id, o.canonical_name AS recipient, o.website_url AS recipient_url,
-      g.purpose, g.amount_usd, g.decision_date, g.status
+    env.DB.prepare(`SELECT g.external_id, g.source_record_id, g.source_url, g.source_published_at,
+      o.canonical_name AS recipient, o.website_url AS recipient_url,
+      g.purpose, g.amount_usd, g.decision_date, g.award_date, g.status
       FROM grants g JOIN organizations o ON o.id = g.recipient_id
       WHERE g.source_id = ? AND g.last_seen_at = ? ORDER BY g.decision_date DESC, g.amount_usd DESC LIMIT 8`).bind(sourceId, retrievedAt).all(),
   ]);

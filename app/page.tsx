@@ -5,10 +5,12 @@ import { useEffect, useMemo, useState } from 'react';
 type CoefficientMarket = {
   source: { retrievedAt: string; coverageNote: string; url: string };
   summary: { grant_count: number; total_amount_usd: number; latest_decision_date: number; recipient_count: number };
-  recent: Array<{ external_id: string; recipient: string; recipient_url: string | null; purpose: string; amount_usd: number; decision_date: number; status: string }>;
+  recent: Array<{ external_id: string; source_url: string | null; recipient: string; recipient_url: string | null; purpose: string; amount_usd: number; decision_date: number; status: string }>;
 };
 
 const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+const month = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+const day = new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 
 const flowMetrics = [
   { name: 'Coefficient Giving', amount: '$1B+', note: 'directed in 2025', width: 100, color: '#8e6cf0' },
@@ -136,7 +138,7 @@ export default function Home() {
           <div><span>Published records</span><strong>{coefficientMarket?.summary.grant_count ?? 79}</strong></div>
           <div><span>Published amounts</span><strong>{coefficientMarket ? money.format(coefficientMarket.summary.total_amount_usd) : '$46.7M'}</strong></div>
           <div><span>Distinct recipients</span><strong>{coefficientMarket?.summary.recipient_count ?? 51}</strong></div>
-          <div><span>Latest decision month</span><strong>July 2026</strong></div>
+          <div><span>Latest decision month</span><strong>{coefficientMarket ? month.format(new Date(coefficientMarket.summary.latest_decision_date * 1000)) : 'July 2026'}</strong></div>
         </div>
         <div className="ledger-grid">
           <div className="ledger-table">
@@ -144,7 +146,7 @@ export default function Home() {
             {coefficientMarket?.recent.map((grant) => (
               <div className="ledger-row" key={grant.external_id}>
                 <span>{grant.recipient_url ? <a href={grant.recipient_url} target="_blank" rel="noreferrer">{grant.recipient} ↗</a> : grant.recipient}</span>
-                <span>{grant.purpose}</span><strong>{money.format(grant.amount_usd)}</strong>
+                <span>{grant.source_url ? <a href={grant.source_url} target="_blank" rel="noreferrer">{grant.purpose} ↗</a> : grant.purpose}</span><strong>{money.format(grant.amount_usd)}</strong>
               </div>
             )) ?? <div className="ledger-loading">{coefficientError ? 'The live ledger is temporarily unavailable; the verified snapshot remains shown above.' : 'Loading the D1-backed ledger…'}</div>}
           </div>
@@ -156,7 +158,7 @@ export default function Home() {
             <a className="text-link" href="https://coefficientgiving.org/grant-publishing-process/" target="_blank" rel="noreferrer">Read their publishing process ↗</a>
           </aside>
         </div>
-        <p className="data-note">Retrieved August 29, 2026 · Content-addressed snapshot · Stable grant IDs · Removed records remain detectable through last-seen timestamps.</p>
+        <p className="data-note">Retrieved {coefficientMarket ? day.format(new Date(coefficientMarket.source.retrievedAt)) : 'August 29, 2026'} · Public index snapshot · Content-addressed · Removed records remain detectable through last-seen timestamps.</p>
       </section>
 
       <section className="sources-section">

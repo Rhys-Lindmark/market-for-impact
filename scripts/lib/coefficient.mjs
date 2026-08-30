@@ -42,12 +42,17 @@ export function normalizeSnapshot(snapshot) {
     seen.add(externalId);
     return {
       externalId,
+      sourceRecordId: record.sourceRecordId || null,
+      sourcePostId: record.sourcePostId || null,
+      grantUrl: record.grantUrl || null,
       recipient: record.recipient.trim(),
       recipientSlug: slugify(record.recipient),
       recipientUrl: record.recipientUrl || null,
       purpose: record.purpose.trim(),
       decisionMonth,
       publishedMonth: record.date,
+      awardDate: record.awardDate || decisionMonth,
+      publicationDate: record.publicationDate || null,
       amountUsd,
       amountDisplay: record.amount,
       currency: 'USD',

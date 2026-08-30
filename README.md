@@ -37,6 +37,7 @@ This is research infrastructure, not financial, tax, or individualized giving ad
 - An explainable donor portfolio builder across 31 evaluator-supported funding tranches. Donors set cause weights, uncertainty tolerance, an evidence floor, published geography, direct-versus-pooled vehicle preference, and deployment horizon; the resulting allocation preserves unmatched cause dollars as unallocated and flags every selection whose current room for funding must be verified.
 - A San Francisco outcome ontology defining eight local outcome families—housing stability, unsheltered days avoided, overdose deaths averted, mental-health stabilization, food security, educational attainment, violence reduction, and economic mobility—against ten official sources. Service outputs, administrative proxies, model inputs, causal attribution, equity cuts, and double-count boundaries remain separate; QALY and WELLBY conversion is blocked until a versioned local model exists.
 - A San Francisco public-funding baseline across the approved FY2026–2027 city budget and 1,784 nonprofit prime contracts active on August 30, 2026. It maps 388 contracts into the local outcome ontology with conservative, auditable text rules while keeping department envelopes, contract authority, outstanding purchase orders, payments, and remaining authority separate and explicitly non-additive.
+- A first six-candidate San Francisco diligence market spanning direct service, LGBTQ+ community support, housing advocacy, and elections. It reconciles 35 exact active city-contract matches, exposes one accepted Coefficient grant overlap, preserves Charity Navigator beacon coverage as a non-impact signal, and leaves every marginal funding gap and QALY/WELLBY conversion explicitly unresolved.
 - Renaissance Philanthropy’s 28 currently linked 2025 AI for Math awards, reconciled against its stated 29-award portfolio with one explicit coverage gap and no inferred row-level amounts.
 - Stable grant detail URLs across all current Coefficient, GiveWell, Giving Green, and RenPhil ledgers, plus organization profiles that separate received, advised, and originated funding roles and display evaluator evidence when available.
 - Auditable many-to-many grant/organization roles and source-specific name aliases, including all named recipients in Coefficient’s three multi-recipient records without splitting or duplicating grant amounts.
@@ -214,6 +215,17 @@ npm run data:sf:funding:refresh  # review upstream changes before committing
 ```
 
 The committed snapshot preserves 54 department rows and 1,784 active nonprofit contracts. Ten broad department envelopes and 388 contracts map to the eight-outcome ontology; 1,396 contracts remain explicit abstentions. Twenty-one contracts map to more than one outcome, so outcome totals are intentionally non-additive. The source ledger retains 144 negative published remaining-authority values rather than silently repairing them. GitHub checks both DataSF datasets hourly and fails closed when either semantic row set changes.
+
+### San Francisco nonprofit diligence
+
+The first diligence cohort is generated from `data/san-francisco/nonprofit-diligence-config-v1.json`, the accepted public-funding snapshot, and the four accepted grant ledgers. Exact identity aliases—not fuzzy names—connect candidates to city contracts and philanthropic grants.
+
+```bash
+npm run data:sf:diligence:check
+npm run data:sf:diligence:build  # update only after reviewing source evidence
+```
+
+The scorecards separate native signals, causal evidence, public-funding overlap, donation vehicle, and marginal funding state. Charity Navigator scores retain their completed-beacon limitations and never become effectiveness rankings. No candidate advances to a recommendation until the project obtains a current next-dollar plan, validates implementation capacity, examines downside risks, and finds sufficient independent evidence for the claimed outcome.
 
 ### Evaluator comparison
 

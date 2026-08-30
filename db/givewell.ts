@@ -30,7 +30,7 @@ async function upsertOrganizations(records: GrantRecord[], opportunities: Opport
   }
 }
 
-async function ensureGiveWellSnapshot() {
+export async function ensureGiveWellSnapshot() {
   const grantSourceUrl = grantSnapshot.source.url;
   const current = await env.DB.prepare('SELECT id, content_hash, retrieved_at FROM sources WHERE url = ?')
     .bind(grantSourceUrl).first<{ id: number; content_hash: string | null; retrieved_at: number }>();

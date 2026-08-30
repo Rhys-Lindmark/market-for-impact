@@ -3,7 +3,7 @@ import snapshot from '@/data/normalized/coefficient-effective-giving-and-careers
 
 type GrantRecord = (typeof snapshot.records)[number];
 
-async function ensureCurrentSnapshot() {
+export async function ensureCurrentSnapshot() {
   const sourceUrl = snapshot.source.url;
   const current = await env.DB.prepare('SELECT id, content_hash, retrieved_at FROM sources WHERE url = ?')
     .bind(sourceUrl).first<{ id: number; content_hash: string | null; retrieved_at: number }>();
@@ -76,7 +76,7 @@ export async function getCoefficientGrantMarket() {
     env.DB.prepare('SELECT COUNT(DISTINCT recipient_id) AS recipient_count FROM grants WHERE source_id = ? AND last_seen_at = ?').bind(sourceId, retrievedAt)
       .first<{ recipient_count: number }>(),
     env.DB.prepare(`SELECT g.external_id, g.source_record_id, g.source_url, g.source_published_at,
-      o.canonical_name AS recipient, o.website_url AS recipient_url,
+      o.canonical_name AS recipient, o.slug AS recipient_slug, o.website_url AS recipient_url,
       g.purpose, g.amount_usd, g.decision_date, g.award_date, g.status
       FROM grants g JOIN organizations o ON o.id = g.recipient_id
       WHERE g.source_id = ? AND g.last_seen_at = ? ORDER BY g.decision_date DESC, g.amount_usd DESC LIMIT 8`).bind(sourceId, retrievedAt).all(),

@@ -7,7 +7,7 @@ function epoch(value: string | null) {
   return value ? Math.floor(new Date(value).valueOf() / 1000) : null;
 }
 
-async function ensureRenPhilSnapshot() {
+export async function ensureRenPhilSnapshot() {
   const current = await env.DB.prepare('SELECT id, content_hash, retrieved_at FROM sources WHERE url = ?')
     .bind(snapshot.source.url).first<{ id: number; content_hash: string | null; retrieved_at: number }>();
   if (current?.content_hash === snapshot.source.contentHash) {

@@ -24,7 +24,7 @@ function normalizedRecipientText(record: SnapshotRecord) {
   return record.recipients.map((name) => name.replace(/\s+/g, ' ').trim()).join(' · ');
 }
 
-async function ensureAllCoefficientSnapshot() {
+export async function ensureAllCoefficientSnapshot() {
   const sourceUrl = snapshot.source.url;
   const current = await env.DB.prepare('SELECT id, content_hash, retrieved_at FROM sources WHERE url = ?')
     .bind(sourceUrl).first<{ id: number; content_hash: string | null; retrieved_at: number }>();

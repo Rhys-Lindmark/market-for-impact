@@ -29,7 +29,7 @@ const compactMoney = new Intl.NumberFormat('en-US', { style: 'currency', currenc
 const outcomeLabels = new Map(sfOutcomes.outcomes.map((outcome) => [outcome.key, outcome.label]));
 const candidates = [...sfDiligence.candidates].sort((a, b) => a.name.localeCompare(b.name));
 const dossierCandidates = candidates.flatMap((candidate) => 'evidenceDossier' in candidate ? [{ candidate, dossier: candidate.evidenceDossier }] : []);
-const hamiltonRequest = sfMarginalPlanRequests.packets[0];
+const marginalPlanRequests = sfMarginalPlanRequests.packets;
 
 const researchGates = [
   { number: '01', title: 'Verify the entity', copy: 'Confirm the legal entity, donation vehicle, EIN, service geography, and which program a gift would support.' },
@@ -164,32 +164,38 @@ export default function SanFranciscoDonorPage() {
           <p>{sfGrantEvaluation.lookback.forecastRule}</p>
           <div><span>Systematic look-back target</span><strong>{sfGrantEvaluation.lookback.systematicReviewTargetMonths.join('–')} months</strong></div>
         </aside>
-        <section className="sf-request-packet" id="hamilton-plan-request" aria-labelledby="hamilton-plan-request-title">
-          <header>
-            <div><p className="kicker">ORGANIZATION REQUEST 01 · PUBLIC PREFILL, NOT A RESPONSE</p><h3 id="hamilton-plan-request-title">What could Hamilton Families do with the next gift?</h3></div>
-            <div className="sf-request-status"><span>Packet status</span><strong>{hamiltonRequest.statusLabel}</strong><small>{hamiltonRequest.recommendationState}</small></div>
-          </header>
-          <p className="sf-request-purpose">{hamiltonRequest.purpose}</p>
-          <div className="sf-request-legend" aria-label="Research provenance">
-            {hamiltonRequest.provenanceLegend.map((item, index) => <div key={item.key}><span>0{index + 1}</span><strong>{item.label}</strong><p>{item.meaning}</p></div>)}
-          </div>
-          <div className="sf-request-facts">
-            <header><span>Accepted public context</span><h4>Five facts we can safely prefill.</h4><p>Each fact frames a question. None is copied into Hamilton’s answer or an MFI model.</p></header>
-            <div>{hamiltonRequest.publicFacts.map((fact) => <article key={fact.key}><span>{fact.label}</span><strong>{fact.display}</strong><p>{fact.boundary}</p></article>)}</div>
-          </div>
-          <div className="sf-request-scenarios">
-            <header><span>The decision request</span><h4>Three separate marginal cases.</h4><p>Hamilton may answer with a program plan—or say the amount cannot be productively absorbed.</p></header>
-            <div>{hamiltonRequest.scenarios.map((scenario) => <article key={scenario.amountUsd}><header><strong>{compactMoney.format(scenario.amountUsd)}</strong><b>{scenario.state}</b></header><p>{scenario.requestedDecision}</p><dl><div><dt>Organization response</dt><dd>Not submitted</dd></div><div><dt>MFI model</dt><dd>Not started</dd></div></dl></article>)}</div>
-          </div>
-          <div className="sf-request-questions">
-            <header><span>Interview and document request</span><h4>Eight questions. Two empty evidence lanes.</h4><p>Public context stays visible beside the missing organization answer and independent model.</p></header>
-            <ol>{hamiltonRequest.questions.map((question, index) => <li key={question.key}><header><span>{String(index + 1).padStart(2, '0')}</span><div><strong>{question.label}</strong><p>{question.question}</p></div></header><div><section><span>Public context</span><p>{question.publicContext}</p></section><section className="missing"><span>Hamilton response</span><strong>{question.organizationResponseState}</strong></section><section className="missing"><span>MFI model</span><strong>{question.mfiModelState}</strong></section></div></li>)}</ol>
-          </div>
-          <footer>
-            <p><strong>Decision boundary.</strong> {hamiltonRequest.decisionBoundary}</p>
-            <div>{hamiltonRequest.sources.map((source) => <a key={source.key} href={source.url} target="_blank" rel="noreferrer"><span>{source.publisher}</span><strong>{source.title}</strong><b>↗</b></a>)}</div>
-          </footer>
-        </section>
+        <div className="sf-request-index" aria-label="Organization request packets">
+          <header><span>Organization-specific packets</span><strong>{sfMarginalPlanRequests.summary.packetCount} drafted · 0 submitted</strong></header>
+          <div>{marginalPlanRequests.map((request, index) => <a href={`#${request.sectionId}`} key={request.packetKey}><span>{String(index + 1).padStart(2, '0')}</span><strong>{request.candidateName}</strong><small>{request.statusLabel}</small></a>)}</div>
+        </div>
+        {marginalPlanRequests.map((request, requestIndex) => (
+          <section className="sf-request-packet" id={request.sectionId} aria-labelledby={`${request.sectionId}-title`} key={request.packetKey}>
+            <header>
+              <div><p className="kicker">ORGANIZATION REQUEST {String(requestIndex + 1).padStart(2, '0')} · PUBLIC PREFILL, NOT A RESPONSE</p><h3 id={`${request.sectionId}-title`}>{request.headline}</h3></div>
+              <div className="sf-request-status"><span>Packet status</span><strong>{request.statusLabel}</strong><small>{request.recommendationState}</small></div>
+            </header>
+            <p className="sf-request-purpose">{request.purpose}</p>
+            <div className="sf-request-legend" aria-label={`${request.candidateName} research provenance`}>
+              {request.provenanceLegend.map((item, index) => <div key={item.key}><span>0{index + 1}</span><strong>{item.label}</strong><p>{item.meaning}</p></div>)}
+            </div>
+            <div className="sf-request-facts">
+              <header><span>Accepted public context</span><h4>{request.publicFacts.length} facts we can safely prefill.</h4><p>Each fact frames a question. None is copied into the organization’s answer or an MFI model.</p></header>
+              <div>{request.publicFacts.map((fact) => <article key={fact.key}><span>{fact.label}</span><strong>{fact.display}</strong><p>{fact.boundary}</p></article>)}</div>
+            </div>
+            <div className="sf-request-scenarios">
+              <header><span>The decision request</span><h4>Three separate marginal cases.</h4><p>The organization may answer with a program plan—or say the amount cannot be productively absorbed.</p></header>
+              <div>{request.scenarios.map((scenario) => <article key={scenario.amountUsd}><header><strong>{compactMoney.format(scenario.amountUsd)}</strong><b>{scenario.state}</b></header><p>{scenario.requestedDecision}</p><dl><div><dt>Organization response</dt><dd>Not submitted</dd></div><div><dt>MFI model</dt><dd>Not started</dd></div></dl></article>)}</div>
+            </div>
+            <div className="sf-request-questions">
+              <header><span>Interview and document request</span><h4>Eight questions. Two empty evidence lanes.</h4><p>Public context stays visible beside the missing organization answer and independent model.</p></header>
+              <ol>{request.questions.map((question, index) => <li key={question.key}><header><span>{String(index + 1).padStart(2, '0')}</span><div><strong>{question.label}</strong><p>{question.question}</p></div></header><div><section><span>Public context</span><p>{question.publicContext}</p></section><section className="missing"><span>{request.responseLabel}</span><strong>{question.organizationResponseState}</strong></section><section className="missing"><span>MFI model</span><strong>{question.mfiModelState}</strong></section></div></li>)}</ol>
+            </div>
+            <footer>
+              <p><strong>Decision boundary.</strong> {request.decisionBoundary}</p>
+              <div>{request.sources.map((source) => <a key={source.key} href={source.url} target="_blank" rel="noreferrer"><span>{source.publisher}</span><strong>{source.title}</strong><b>↗</b></a>)}</div>
+            </footer>
+          </section>
+        ))}
         <div className="sf-lookback-seed">
           <header><div><p className="kicker">FIRST HISTORICAL GRANT SEED · NOT AN MFI RECOMMENDATION</p><h3>A real grant. An incomplete record.</h3></div><p>This is the first accepted San Francisco grant queued for retrospective research. Its public grant record does not contain enough information for a look-back.</p></header>
           {sfGrantEvaluation.historicalGrants.map((grant) => (

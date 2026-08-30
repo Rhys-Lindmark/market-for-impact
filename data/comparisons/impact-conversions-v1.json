@@ -1,0 +1,112 @@
+{
+  "version": "impact-conversions-v0.1",
+  "retrievedAt": "2026-08-30T00:00:00.000Z",
+  "models": [
+    {
+      "modelKey": "givewell-life-saved-to-qaly-v0.1",
+      "name": "Life saved → illustrative QALYs",
+      "publisher": "Market for Impact",
+      "sourceUrl": "https://www.nice.org.uk/glossary?lang=en&letter=q",
+      "sourceTitle": "NICE quality-adjusted life year definition",
+      "evaluatorSlug": "givewell",
+      "status": "illustrative",
+      "sourceUnit": "USD per life saved",
+      "targetUnit": "USD per QALY",
+      "formula": "cost_per_life_saved_usd / assumed_qalys_per_life_saved",
+      "modelVersion": "v0.1 — user-supplied QALY yield",
+      "effectiveAt": "2026-08-30T00:00:00.000Z",
+      "parameters": [
+        { "key": "assumed_qalys_per_life_saved", "label": "QALYs per life saved", "low": 20, "default": 30, "high": 50, "unit": "QALYs" }
+      ],
+      "assumptions": [
+        "The donor supplies the QALY yield; Market for Impact does not claim that one life saved equals a fixed number of QALYs.",
+        "The historical GiveWell cost-per-life figure is divided by that user-supplied yield.",
+        "No morbidity benefit, discounting, age weighting, or spillover is added."
+      ],
+      "limitations": [
+        "GiveWell's headline cost-per-life figures are historical 2022–2024 directed-funding averages, not current marginal tranche estimates.",
+        "A QALY requires health-state utilities over time; this shortcut is a sensitivity check, not a source-published CEA output."
+      ]
+    },
+    {
+      "modelKey": "coefficient-economic-benefit-to-cg-v0.1",
+      "name": "Economic benefit → Coefficient Giving dollars",
+      "publisher": "Coefficient Giving",
+      "sourceUrl": "https://coefficientgiving.org/research/cost-effectiveness/",
+      "sourceTitle": "Coefficient Giving cost-effectiveness methodology",
+      "evaluatorSlug": "coefficient-giving",
+      "status": "evaluator-published",
+      "sourceUnit": "people × proportional income gain × years",
+      "targetUnit": "$CG",
+      "formula": "50000 * people * ln(1 + proportional_income_gain) * years",
+      "modelVersion": "Coefficient Giving current public formula, captured 2026-08-30",
+      "effectiveAt": null,
+      "parameters": [
+        { "key": "people", "label": "People affected", "low": 1, "default": 100, "high": 100000, "unit": "people" },
+        { "key": "income_gain_percent", "label": "Annual income gain", "low": 1, "default": 10, "high": 100, "unit": "%" },
+        { "key": "years", "label": "Duration", "low": 1, "default": 5, "high": 50, "unit": "years" },
+        { "key": "cost_usd", "label": "Philanthropic cost", "low": 1, "default": 100000, "high": 1000000000, "unit": "USD" }
+      ],
+      "assumptions": [
+        "One $CG is the welfare benefit of giving $1 to a person earning $50,000 per year.",
+        "The public formula uses logarithmic utility of income.",
+        "SROI is philanthropic value in $CG divided by philanthropic cost in USD."
+      ],
+      "limitations": [
+        "The calculator requires a causal income effect, population, duration, and cost; none are inferred from grant amounts.",
+        "$CG is Coefficient Giving's welfare model and is not a QALY, WELLBY, or GiveWell benchmark unit."
+      ]
+    },
+    {
+      "modelKey": "givewell-benchmark-units-v0.1",
+      "name": "GiveWell multiple → benchmark units",
+      "publisher": "GiveWell",
+      "sourceUrl": "https://www.givewell.org/how-we-work/our-criteria/cost-effectiveness/cost-effectiveness-models/november-2025-version",
+      "sourceTitle": "GiveWell cost-effectiveness analyses — November 2025",
+      "evaluatorSlug": "givewell",
+      "status": "evaluator-published",
+      "sourceUnit": "GiveWell benchmark multiple",
+      "targetUnit": "approximate GiveWell welfare units per USD",
+      "formula": "benchmark_multiple * 0.003",
+      "modelVersion": "GiveWell November 2025 benchmark",
+      "effectiveAt": "2025-11-01T00:00:00.000Z",
+      "parameters": [],
+      "assumptions": [
+        "GiveWell publishes approximately 0.003 benchmark units per US dollar at 1×.",
+        "The conversion applies only when the multiple uses the November 2025 consumption benchmark."
+      ],
+      "limitations": [
+        "The 0.003 figure is approximate.",
+        "Older GiveDirectly-relative multiples and Founders Pledge's GiveDirectly model do not share this denominator."
+      ]
+    },
+    {
+      "modelKey": "native-outcome-to-wellby-v0.1",
+      "name": "Native outcome → WELLBY",
+      "publisher": "HM Treasury",
+      "sourceUrl": "https://www.gov.uk/government/publications/green-book-supplementary-guidance-wellbeing",
+      "sourceTitle": "Wellbeing Guidance for Appraisal",
+      "evaluatorSlug": null,
+      "status": "blocked-missing-input",
+      "sourceUnit": "native outcome",
+      "targetUnit": "WELLBY",
+      "formula": "causal_life_satisfaction_change * people_affected * duration_years",
+      "modelVersion": "Green Book wellbeing definition; MFI bridge v0.1",
+      "effectiveAt": "2022-11-18T00:00:00.000Z",
+      "parameters": [],
+      "assumptions": [
+        "One WELLBY is a one-point change in life satisfaction on a 0–10 scale for one person for one year.",
+        "A causal life-satisfaction effect, population, duration, and appropriate discounting are required."
+      ],
+      "limitations": [
+        "The accepted evaluator rows do not publish the required life-satisfaction inputs.",
+        "Market for Impact does not translate animal outcomes, test-score gains, emissions claims, or lives saved into WELLBYs without a source-grounded bridge."
+      ]
+    }
+  ],
+  "boundaries": [
+    { "label": "Animal welfare", "nativeUnit": "ACE program-specific reach and spending metrics", "status": "incomparable", "reason": "No accepted cross-species welfare weights or QALY/WELLBY bridge." },
+    { "label": "Climate", "nativeUnit": "Giving Green qualitative systems-change cases", "status": "incomparable", "reason": "No accepted organization-level emissions-per-dollar estimate in the current source set." },
+    { "label": "Education", "nativeUnit": "standard deviations per dollar or model-specific GiveDirectly multiples", "status": "incomparable", "reason": "Founders Pledge's 2023 GiveDirectly model does not share GiveWell's current benchmark denominator." }
+  ]
+}

@@ -179,3 +179,25 @@ export const impactBenchmarks = sqliteTable('impact_benchmarks', {
   index('impact_benchmarks_evaluator_type_idx').on(table.evaluatorId, table.benchmarkType),
   index('impact_benchmarks_comparator_idx').on(table.comparatorOrganizationId),
 ]);
+
+export const impactConversionModels = sqliteTable('impact_conversion_models', {
+  id: integer('id').primaryKey({ autoIncrement: true }),
+  sourceId: integer('source_id').notNull().references(() => sources.id),
+  evaluatorId: integer('evaluator_id').references(() => organizations.id),
+  modelKey: text('model_key').notNull(),
+  name: text('name').notNull(),
+  status: text('status').notNull(),
+  sourceUnit: text('source_unit').notNull(),
+  targetUnit: text('target_unit').notNull(),
+  formula: text('formula').notNull(),
+  modelVersion: text('model_version').notNull(),
+  effectiveAt: integer('effective_at', { mode: 'timestamp' }),
+  parametersJson: text('parameters_json').notNull().default('[]'),
+  assumptionsJson: text('assumptions_json').notNull().default('[]'),
+  limitationsJson: text('limitations_json').notNull().default('[]'),
+  updatedAt: integer('updated_at', { mode: 'timestamp' }).notNull(),
+}, (table) => [
+  uniqueIndex('impact_conversion_models_key_idx').on(table.modelKey),
+  index('impact_conversion_models_status_target_idx').on(table.status, table.targetUnit),
+  index('impact_conversion_models_evaluator_idx').on(table.evaluatorId),
+]);

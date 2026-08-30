@@ -43,7 +43,7 @@ export function buildSfNonprofitDiligence({ config, publicFunding, ledgers }) {
     };
   });
   return {
-    version: 'sf-nonprofit-diligence-v0.2',
+    version: 'sf-nonprofit-diligence-v0.3',
     configVersion: config.version,
     generatedAt: config.generatedAt,
     geography: config.geography,
@@ -55,6 +55,7 @@ export function buildSfNonprofitDiligence({ config, publicFunding, ledgers }) {
       candidatesWithPublicContracts: candidates.filter((row) => row.publicFunding.contractCount).length,
       candidatesWithPublishedMarginalGap: candidates.filter((row) => /\$[\d,.]+/.test(row.marginalFunding)).length,
       qalyBlockedCount: candidates.filter((row) => row.conversionState.qaly === 'blocked').length,
+      evidenceDossierCount: candidates.filter((row) => row.evidenceDossier).length,
       acceptedGrantLedgerMatchCount: candidates.reduce((sum, row) => sum + row.acceptedGrantLedgerMatches.length, 0)
     },
     candidates
@@ -62,7 +63,7 @@ export function buildSfNonprofitDiligence({ config, publicFunding, ledgers }) {
 }
 
 export function validateSfNonprofitDiligence(snapshot) {
-  if (snapshot.version !== 'sf-nonprofit-diligence-v0.2') throw new Error('Unexpected SF nonprofit diligence version.');
+  if (snapshot.version !== 'sf-nonprofit-diligence-v0.3') throw new Error('Unexpected SF nonprofit diligence version.');
   if (snapshot.candidates.length < 6 || snapshot.summary.candidateCount !== snapshot.candidates.length) throw new Error('Initial SF candidate cohort is incomplete.');
   if (new Set(snapshot.candidates.map((row) => row.key)).size !== snapshot.candidates.length) throw new Error('Duplicate SF candidate key.');
   if (snapshot.summary.qalyBlockedCount !== snapshot.candidates.length) throw new Error('Every initial SF QALY estimate must remain blocked.');
@@ -75,12 +76,15 @@ export function validateSfNonprofitDiligence(snapshot) {
     if (row.conversionState.qaly !== 'blocked' || row.conversionState.wellby !== 'blocked') throw new Error(`Unsupported conversion for ${row.key}.`);
     if (row.evidenceDossier) {
       const dossierSources = [row.evidenceDossier.organizationReported.source, ...row.evidenceDossier.evidenceLayers];
-      if (!row.evidenceDossier.decisionState.includes('blocked')) throw new Error(`Evidence dossier recommendation boundary missing for ${row.key}.`);
+      if (!row.evidenceDossier.reportingName || !row.evidenceDossier.decisionState.includes('blocked')) throw new Error(`Evidence dossier recommendation boundary missing for ${row.key}.`);
       if (dossierSources.some((source) => !source.url.startsWith('https://') || !source.retrievedAt)) throw new Error(`Invalid dossier source trail for ${row.key}.`);
       if (row.evidenceDossier.organizationReported.outcomes.some((claim) => !claim.claimType.includes('organization-reported') || !claim.limitation)) throw new Error(`Organization-reported dossier claim is not bounded for ${row.key}.`);
+      if (!row.evidenceDossier.organizationReported.financials.revenueNote || !row.evidenceDossier.organizationReported.financials.expenseNote || !row.evidenceDossier.organizationReported.financials.boundary) throw new Error(`Dossier financial boundary missing for ${row.key}.`);
+      if (row.evidenceDossier.evidenceLayers.length < 4 || row.evidenceDossier.evidenceLayers.some((layer) => !layer.design || !layer.status || !layer.decisionUse || !layer.transferLimit)) throw new Error(`Incomplete evidence ladder for ${row.key}.`);
       if (row.evidenceDossier.evidenceLayers.some((layer) => layer.status === 'results pending' && !/no outcome results/i.test(layer.finding))) throw new Error(`Pending evidence is presented as a result for ${row.key}.`);
       if (!row.evidenceDossier.missingForRecommendation.length) throw new Error(`Dossier recommendation gaps missing for ${row.key}.`);
     }
   }
+  if (snapshot.summary.evidenceDossierCount !== snapshot.candidates.filter((row) => row.evidenceDossier).length) throw new Error('Evidence dossier summary is inconsistent.');
   return snapshot;
 }

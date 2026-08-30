@@ -173,6 +173,22 @@ type FundingTrancheMarket = {
   }>;
 };
 
+type DonorPortfolio = {
+  version: string; generatedAt: string;
+  input: { budgetUsd: number; causeWeights: Record<string, number>; riskTolerance: string; minimumEvidence: string; geography: string; liquidity: string; timeHorizon: string };
+  summary: { budgetUsd: number; allocatedUsd: number; unallocatedUsd: number; allocationCount: number; causeCount: number; verifyRoomCount: number };
+  buckets: Array<{ cause: string; weight: number; requestedUsd: number; eligibleCount: number; selectedCount: number; allocatedUsd: number; unallocatedUsd: number }>;
+  allocations: Array<{
+    trancheKey: string; evaluatorSlug: string; evaluator: string; organization: string; organizationSlug: string; cause: string;
+    status: string; amountUsd: number | null; timeWindow: string; use: string; confidenceLabel: string; confidenceBasis: string;
+    marginalMetricName: string | null; marginalMetricValue: number | null; marginalMetricUnit: string | null; modelVersion: string;
+    sourceUrl: string; limitations: string; evidenceLabel: string; uncertaintyProfile: string; liquidityMode: string;
+    deploymentMode: string; geography: string; geographyTags: string[]; allocationUsd: number; roomVerification: string;
+  }>;
+  exclusions: Array<{ trancheKey: string; organization: string; cause: string; reasons: string[] }>;
+  rules: { weights: string; selection: string; allocation: string; comparability: string; geography: string };
+};
+
 type GrantFlowMarket = {
   version: string; generatedAt: string; acceptedSourceRowCount: number;
   aggregationRules: { row: string; amount: string; roles: string; missingness: string; date: string };
@@ -281,6 +297,16 @@ export default function Home() {
   const [fundingView, setFundingView] = useState<'numeric' | 'unpriced' | 'boundary'>('numeric');
   const [fundingPeriod, setFundingPeriod] = useState('annual, 2026–2027');
   const [fundingEvaluator, setFundingEvaluator] = useState('all');
+  const [portfolio, setPortfolio] = useState<DonorPortfolio | null>(null);
+  const [portfolioError, setPortfolioError] = useState('');
+  const [portfolioLoading, setPortfolioLoading] = useState(true);
+  const [portfolioBudget, setPortfolioBudget] = useState(10000);
+  const [portfolioWeights, setPortfolioWeights] = useState<Record<string, number>>({ 'Animal welfare': 20, Climate: 20, Education: 20, 'Global catastrophic risks': 20, 'Global health': 20 });
+  const [portfolioRisk, setPortfolioRisk] = useState('balanced');
+  const [portfolioEvidence, setPortfolioEvidence] = useState('structured');
+  const [portfolioGeography, setPortfolioGeography] = useState('any');
+  const [portfolioLiquidity, setPortfolioLiquidity] = useState('pooled-ok');
+  const [portfolioHorizon, setPortfolioHorizon] = useState('flexible');
   const [showAllRenPhil, setShowAllRenPhil] = useState(false);
   const [explorer, setExplorer] = useState<CoefficientExplorer | null>(null);
   const [explorerError, setExplorerError] = useState(false);
@@ -343,6 +369,21 @@ export default function Home() {
       return response.json() as Promise<FundingTrancheMarket>;
     }).then(setFundingTranches).catch(() => setFundingTranchesError(true));
   }, []);
+  useEffect(() => {
+    const controller = new AbortController();
+    fetch('/api/donor-portfolio', { method: 'POST', signal: controller.signal, headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ budgetUsd: portfolioBudget, causeWeights: portfolioWeights, riskTolerance: portfolioRisk,
+        minimumEvidence: portfolioEvidence, geography: portfolioGeography, liquidity: portfolioLiquidity, timeHorizon: portfolioHorizon }) })
+      .then(async (response) => {
+        const result = await response.json() as DonorPortfolio & { error?: string };
+        if (!response.ok) throw new Error(result.error ?? 'Portfolio builder unavailable');
+        return result;
+      }).then((result) => { setPortfolio(result); setPortfolioError(''); setPortfolioLoading(false); }).catch((error) => {
+        if (error instanceof DOMException && error.name === 'AbortError') return;
+        setPortfolio(null); setPortfolioError(error instanceof Error ? error.message : 'Portfolio builder unavailable'); setPortfolioLoading(false);
+      });
+    return () => controller.abort();
+  }, [portfolioBudget, portfolioEvidence, portfolioGeography, portfolioHorizon, portfolioLiquidity, portfolioRisk, portfolioWeights]);
   useEffect(() => {
     fetch('/api/comparable-impact').then((response) => {
       if (!response.ok) throw new Error('Comparable-impact model unavailable');
@@ -525,13 +566,13 @@ export default function Home() {
           <span>Market for Impact</span>
         </a>
         <nav aria-label="Primary navigation">
+          <a href="#portfolio">Build a portfolio</a>
           <a href="#opportunities">Opportunities</a>
           <a href="#evaluator-comparison">Compare evaluators</a>
           <a href="#impact-lab">Translate impact</a>
           <a href="#funding-curve">Funding room</a>
           <a href="#flows">Funding flows</a>
           <a href="#data-quality">Data quality</a>
-          <a href="#methodology">Methodology</a>
         </nav>
         <button className="outline-button">Explore the market <span>↗</span></button>
       </header>
@@ -541,7 +582,7 @@ export default function Home() {
         <h1>Put every dollar<br />where it matters most.</h1>
         <p className="hero-copy">A living market of the world’s most promising funding opportunities—compared across evidence, expected impact, and room for more funding.</p>
         <div className="hero-actions">
-          <a className="primary-button" href="#opportunities">Find opportunities <span>→</span></a>
+          <a className="primary-button" href="#portfolio">Build a portfolio <span>→</span></a>
           <a className="text-link" href="#methodology">How we compare impact</a>
         </div>
         <div className="hero-stats" aria-label="Dataset summary">
@@ -549,6 +590,58 @@ export default function Home() {
           <div><strong>{explorer ? compactMoney.format(explorer.summary.totalPublishedAmountUsd) : '—'}</strong><span>published row amounts</span></div>
           <div><strong>{explorer ? integer.format(explorer.summary.listedFundCount) : '—'}</strong><span>fund lenses in the ledger</span></div>
           <div><strong>{reviewedAt ?? '—'}</strong><span>database snapshot retrieved</span></div>
+        </div>
+      </section>
+
+      <section className="portfolio-section" id="portfolio">
+        <div className="portfolio-heading">
+          <div><p className="kicker">YOUR GIVING, MADE EXPLICIT</p><h2>Build a portfolio.<br />Keep every assumption visible.</h2></div>
+          <p>This is an allocation worksheet, not an impact ranking. Your cause weights set the dollars; evidence and practical constraints determine which accepted opportunities can receive them.</p>
+        </div>
+        <div className="portfolio-shell">
+          <aside className="portfolio-controls">
+            <div className="portfolio-budget"><label htmlFor="portfolio-budget">Giving budget</label><div><span>$</span><input id="portfolio-budget" type="number" min="100" max="100000000" step="100" value={portfolioBudget} onChange={(event) => setPortfolioBudget(Number(event.target.value))} /></div></div>
+            <fieldset className="portfolio-weights"><legend>Cause weights</legend>
+              {Object.entries(portfolioWeights).map(([portfolioCause, weight]) => <label key={portfolioCause}><span>{portfolioCause}<b>{weight}</b></span><input type="range" min="0" max="100" step="5" value={weight} aria-label={`${portfolioCause} weight`} onChange={(event) => setPortfolioWeights((current) => ({ ...current, [portfolioCause]: Number(event.target.value) }))} /></label>)}
+            </fieldset>
+            <div className="portfolio-selects">
+              <label>Uncertainty tolerance<select value={portfolioRisk} onChange={(event) => setPortfolioRisk(event.target.value)}><option value="established">Direct models only</option><option value="balanced">Models + systems change</option><option value="exploratory">Include hits-based work</option></select></label>
+              <label>Minimum evidence<select value={portfolioEvidence} onChange={(event) => setPortfolioEvidence(event.target.value)}><option value="quantified">Quantified / modeled outcomes</option><option value="structured">Structured evaluator case</option><option value="reviewed">Any accepted review</option></select></label>
+              <label>Published geography<select value={portfolioGeography} onChange={(event) => setPortfolioGeography(event.target.value)}><option value="any">Any or unpublished</option><option value="global">Global / multi-region</option><option value="africa">Africa named</option><option value="asia">Asia named</option><option value="latin-america">Latin America named</option><option value="europe">Europe named</option><option value="north-america">North America named</option></select></label>
+              <label>Giving vehicle<select value={portfolioLiquidity} onChange={(event) => setPortfolioLiquidity(event.target.value)}><option value="pooled-ok">Direct or pooled</option><option value="direct-only">Direct organizations only</option></select></label>
+              <label>Deployment horizon<select value={portfolioHorizon} onChange={(event) => setPortfolioHorizon(event.target.value)}><option value="within-year">Published within one year</option><option value="annual">Within-year or annual</option><option value="flexible">Flexible / unpublished timing</option></select></label>
+            </div>
+          </aside>
+          <div className="portfolio-output" aria-live="polite">
+            <div className="portfolio-summary">
+              <div><span>PROPOSED</span><strong>{portfolio ? money.format(portfolio.summary.allocatedUsd) : '—'}</strong><small>{portfolio ? `${portfolio.summary.allocationCount} source-backed opportunities` : 'Building from current evidence…'}</small></div>
+              <div><span>UNALLOCATED</span><strong>{portfolio ? money.format(portfolio.summary.unallocatedUsd) : '—'}</strong><small>Never redistributed across causes silently</small></div>
+              <div><span>VERIFY ROOM</span><strong>{portfolio ? integer.format(portfolio.summary.verifyRoomCount) : '—'}</strong><small>Selections without a published numeric cap</small></div>
+            </div>
+            {portfolioLoading && <p className="portfolio-loading">Reapplying your explicit constraints…</p>}
+            {!portfolioLoading && portfolioError && <p className="portfolio-loading error">{portfolioError}</p>}
+            {!portfolioLoading && portfolio && <>
+              <div className="portfolio-buckets">
+                {portfolio.buckets.filter((bucket) => bucket.weight > 0).map((bucket) => <div key={bucket.cause}><span>{bucket.cause}</span><i><em style={{ width: `${portfolio.summary.budgetUsd ? bucket.allocatedUsd / portfolio.summary.budgetUsd * 100 : 0}%` }} /></i><strong>{money.format(bucket.allocatedUsd)}</strong><small>{bucket.unallocatedUsd ? `${money.format(bucket.unallocatedUsd)} held back · ${bucket.eligibleCount} eligible` : `${bucket.selectedCount} selected · weight ${bucket.weight}`}</small></div>)}
+              </div>
+              <div className="portfolio-allocations">
+                {portfolio.allocations.map((item, index) => <article key={item.trancheKey}>
+                  <div className="portfolio-allocation-index"><span>{String(index + 1).padStart(2, '0')}</span><b>{item.cause}</b></div>
+                  <div className="portfolio-allocation-main">
+                    <header><div><span>{item.evaluator}</span><h3>{item.organization}</h3></div><strong>{money.format(item.allocationUsd)}</strong></header>
+                    <div className="portfolio-rationale"><p><b>WHY ELIGIBLE</b>{item.evidenceLabel} · {item.uncertaintyProfile.replaceAll('-', ' ')} · {item.liquidityMode.replaceAll('-', ' ')}</p><p><b>USE</b>{item.use}</p><p><b>GEOGRAPHY</b>{item.geography}</p></div>
+                    <div className="portfolio-allocation-footer"><span className={item.roomVerification === 'verify-current-room-before-giving' ? 'verify' : ''}>{item.roomVerification.replaceAll('-', ' ')}</span><span>{item.timeWindow}</span><a href={item.sourceUrl} target="_blank" rel="noreferrer">Evaluator source ↗</a><a href={`/organizations/${item.organizationSlug}`}>Evidence profile →</a></div>
+                  </div>
+                </article>)}
+                {portfolio.allocations.length === 0 && <p className="portfolio-empty">No accepted current opportunity passes every chosen constraint. The requested cause dollars remain unallocated; loosen a constraint or inspect the boundaries below.</p>}
+              </div>
+              <div className="portfolio-boundaries">
+                {portfolio.buckets.filter((bucket) => bucket.weight > 0).map((bucket) => <p key={bucket.cause}><strong>{bucket.cause}.</strong> {bucket.eligibleCount ? `${bucket.eligibleCount} eligible; ${bucket.selectedCount} selected under the three-opportunity diversification cap.` : `No eligible candidate; ${money.format(bucket.unallocatedUsd)} stays unallocated.`}</p>)}
+              </div>
+              <div className="portfolio-rules"><span>ALLOCATION CONTRACT</span><p><strong>Weights.</strong> {portfolio.rules.weights}</p><p><strong>Selection.</strong> {portfolio.rules.selection}</p><p><strong>Comparability.</strong> {portfolio.rules.comparability}</p></div>
+              <p className="data-note">{portfolio.version} · {integer.format(portfolio.exclusions.length)} candidates excluded by current constraints · illustrative allocation only · confirm current room and donation mechanics with the evaluator before giving</p>
+            </>}
+          </div>
         </div>
       </section>
 

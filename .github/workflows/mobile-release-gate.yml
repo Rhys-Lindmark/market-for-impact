@@ -4,10 +4,12 @@ on:
   pull_request:
     paths:
       - 'app/**'
+      - 'drizzle/**'
       - 'e2e/**'
       - 'package.json'
       - 'package-lock.json'
       - 'playwright.config.ts'
+      - 'wrangler.mobile.jsonc'
       - '.github/workflows/mobile-release-gate.yml'
   workflow_dispatch:
 
@@ -30,4 +32,6 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npx playwright install --with-deps chromium
+      - name: Apply the complete local D1 migration chain
+        run: npx wrangler d1 migrations apply DB --local --config wrangler.mobile.jsonc --persist-to .wrangler/state
       - run: npm run test:mobile

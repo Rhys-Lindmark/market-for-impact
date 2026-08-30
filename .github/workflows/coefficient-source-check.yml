@@ -10,6 +10,9 @@ on:
       - 'scripts/refresh-coefficient-all.mjs'
       - 'scripts/lib/coefficient-source.mjs'
       - 'scripts/lib/coefficient-all-source.mjs'
+      - 'data/ai-safety/ecosystem-v1.json'
+      - 'scripts/build-ai-safety-ecosystem.mjs'
+      - 'scripts/lib/ai-safety-ecosystem.mjs'
   schedule:
     - cron: '23 * * * *'
   workflow_dispatch:
@@ -34,3 +37,5 @@ jobs:
         run: node scripts/refresh-coefficient.mjs
       - name: Compare full public index with committed snapshot
         run: node scripts/refresh-coefficient-all.mjs
+      - name: Reconcile dependent AI safety identity snapshot
+        run: node scripts/build-ai-safety-ecosystem.mjs

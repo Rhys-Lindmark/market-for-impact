@@ -1,4 +1,5 @@
 import { createHash } from 'node:crypto';
+import { decodeHtmlEntities } from './html-entities.mjs';
 
 export const AI_FUND = 'Navigating Transformative AI';
 export const taxonomyVersion = 'ai-safety-ecosystem-v1-2026-08-30';
@@ -58,7 +59,7 @@ export const foundersPledgeAliases = {
 };
 
 function normalize(value) {
-  return value.normalize('NFKC').replace(/\s+/g, ' ').trim();
+  return decodeHtmlEntities(value).normalize('NFKC').replace(/\s+/g, ' ').trim();
 }
 
 export function organizationSlug(value) {
@@ -98,8 +99,9 @@ export function buildAiSafetyEcosystem(coefficient, foundersPledge, generatedAt)
   const grants = coefficient.records.filter((record) => record.listedFunds.includes(AI_FUND));
   const organizations = new Map();
   const grantClassifications = grants.map((grant) => {
-    const classification = classifyGrant(grant);
-    for (const recipient of grant.recipients) {
+    const recipients = grant.recipients.map(normalize);
+    const classification = classifyGrant({ ...grant, recipients });
+    for (const recipient of recipients) {
       const current = organizations.get(recipient) ?? {
         organization: recipient, slug: organizationSlug(recipient), grantCount: 0, publishedAmountUsd: 0,
         latestAwardDate: null, roles: new Set(), basis: new Set(), roleAmounts: new Map(), sourceRecordIds: [],
@@ -117,7 +119,7 @@ export function buildAiSafetyEcosystem(coefficient, foundersPledge, generatedAt)
     }
     return {
       sourceRecordId: grant.sourceRecordId, roles: classification.roles, basis: classification.basis,
-      amountUsd: grant.amountUsd, awardDate: grant.awardDate, recipient: grant.recipients[0] ?? null,
+      amountUsd: grant.amountUsd, awardDate: grant.awardDate, recipient: recipients[0] ?? null,
     };
   });
 

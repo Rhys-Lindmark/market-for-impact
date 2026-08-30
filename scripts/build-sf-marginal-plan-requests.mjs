@@ -13,4 +13,4 @@ const serialized = `${JSON.stringify(snapshot, null, 2)}\n`;
 if (process.argv.includes('--write')) await fs.writeFile(outputPath, serialized);
 else if (await fs.readFile(outputPath, 'utf8') !== serialized) throw new Error(`${outputPath} is stale. Run npm run data:sf:requests:build.`);
 
-console.log(`SF marginal-plan requests current: ${snapshot.summary.packetCount} packet, ${snapshot.summary.scenarioCount} scenarios, ${snapshot.summary.submittedScenarioCount} submitted.`);
+console.log(`SF marginal-plan requests current: ${snapshot.summary.packetCount} packets, ${snapshot.summary.scenarioCount} scenarios, ${snapshot.summary.submittedScenarioCount} submitted.`);

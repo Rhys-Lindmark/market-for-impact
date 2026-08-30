@@ -74,6 +74,20 @@ type AceMarket = {
   }>;
 };
 
+type GivingGreenMarket = {
+  source: { retrievedAt: string; url: string; topListUrl: string; coverageNote: string };
+  summary: { grant_count: number; announced_amount_usd: number; missing_disbursement_date_count: number; topRecommendationCount: number; otherGranteeCount: number; grantRecordCount: number; totalAnnouncedGrantUsd: number; topAnnouncedGrantUsd: number };
+  comparabilityWarning: string;
+  recommendations: Array<{
+    canonical_name: string; slug: string; website_url: string; evidence_level: string;
+    native_metric_name: string; funding_room_usd: number | null; funding_room_period: string;
+    summary: string; limitations: string; model_version: string; sourceRecordId: string;
+    amountUsd: number; amountLabel: string; period: string; strategies: string[]; geography: string;
+    evaluationSummary: string; fundingNeed: string;
+  }>;
+  grants: Array<{ source_record_id: string; source_url: string; amount_usd: number; canonical_name: string; slug: string; strategies: string[] }>;
+};
+
 const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
 const compactMoney = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 2 });
 const integer = new Intl.NumberFormat('en-US');
@@ -97,6 +111,8 @@ export default function Home() {
   const [renPhilError, setRenPhilError] = useState(false);
   const [aceMarket, setAceMarket] = useState<AceMarket | null>(null);
   const [aceError, setAceError] = useState(false);
+  const [givingGreenMarket, setGivingGreenMarket] = useState<GivingGreenMarket | null>(null);
+  const [givingGreenError, setGivingGreenError] = useState(false);
   const [showAllRenPhil, setShowAllRenPhil] = useState(false);
   const [explorer, setExplorer] = useState<CoefficientExplorer | null>(null);
   const [explorerError, setExplorerError] = useState(false);
@@ -108,6 +124,12 @@ export default function Home() {
   const [explorerQuery, setExplorerQuery] = useState('');
   const [explorerPage, setExplorerPage] = useState(1);
   const [explorerRefresh, setExplorerRefresh] = useState(0);
+  useEffect(() => {
+    fetch('/api/giving-green').then((response) => {
+      if (!response.ok) throw new Error('Giving Green market unavailable');
+      return response.json() as Promise<GivingGreenMarket>;
+    }).then(setGivingGreenMarket).catch(() => setGivingGreenError(true));
+  }, []);
   useEffect(() => {
     fetch('/api/ace').then((response) => {
       if (!response.ok) throw new Error('ACE market unavailable');
@@ -182,7 +204,17 @@ export default function Home() {
     room: money.format(opportunity.funding_room_usd),
     source: 'Animal Charity Evaluators',
     href: opportunity.website_url,
-  }))].map((opportunity, index) => ({ ...opportunity, rank: index + 1 })), [aceMarket, giveWellMarket]);
+  })), ...(givingGreenMarket?.recommendations ?? []).map((opportunity) => ({
+    name: opportunity.canonical_name,
+    slug: opportunity.slug,
+    intervention: opportunity.strategies.join(' · '),
+    cause: 'Climate',
+    evidence: opportunity.evidence_level,
+    impact: 'Qualitative systems-change case',
+    room: opportunity.funding_room_usd == null ? 'Qualitative need published' : money.format(opportunity.funding_room_usd),
+    source: 'Giving Green',
+    href: opportunity.website_url,
+  }))].map((opportunity, index) => ({ ...opportunity, rank: index + 1 })), [aceMarket, giveWellMarket, givingGreenMarket]);
   const filtered = useMemo(() => acceptedOpportunities.filter((item) =>
     (cause === 'All causes' || item.cause === cause) &&
     `${item.name} ${item.intervention} ${item.source}`.toLowerCase().includes(query.toLowerCase())
@@ -192,11 +224,12 @@ export default function Home() {
       { name: 'Coefficient public index', amount: explorer?.summary.totalPublishedAmountUsd ?? null, records: explorer?.summary.grantCount ?? null, note: 'published row amounts; complete public index', color: '#8e6cf0' },
       { name: 'GiveWell grant export', amount: giveWellMarket?.summary.total_amount_usd ?? null, records: giveWellMarket?.summary.grant_count ?? null, note: 'published grant rows; separate publisher export', color: '#38a679' },
       { name: 'Coefficient EGC subset', amount: coefficientMarket?.summary.total_amount_usd ?? null, records: coefficientMarket?.summary.grant_count ?? null, note: 'fully overlaps the public index; never summed', color: '#ff7657' },
+      { name: 'Giving Green 2025 cycle', amount: givingGreenMarket?.summary.announced_amount_usd ?? null, records: givingGreenMarket?.summary.grant_count ?? null, note: 'planned grants; announcement is not proof of payment', color: '#8cbf45' },
       { name: 'RenPhil AI for Math', amount: null, records: renPhilMarket?.summary.award_count ?? null, note: 'row-level amounts not published', color: '#e2a72e' },
     ];
     const maximum = Math.max(...values.map((item) => item.amount ?? 0), 1);
     return values.map((item) => ({ ...item, width: item.amount == null ? 0 : Math.max(3, (item.amount / maximum) * 100) }));
-  }, [coefficientMarket, explorer, giveWellMarket, renPhilMarket]);
+  }, [coefficientMarket, explorer, giveWellMarket, givingGreenMarket, renPhilMarket]);
   const reviewedAt = explorer?.source.retrievedAt ? month.format(new Date(explorer.source.retrievedAt)) : null;
 
   return (
@@ -265,7 +298,7 @@ export default function Home() {
             </tbody>
           </table>
         </div>
-        <p className="data-note">This table contains only current assessments materialized in the accepted ledger. Giving Green and Founders Pledge remain out until their source pipelines are reviewed. Metrics preserve each evaluator’s native unit; ACE’s animal, output, and SAD metrics are deliberately not collapsed into a universal score.</p>
+        <p className="data-note">This table contains only current assessments materialized in the accepted ledger. Founders Pledge remains out until its source pipeline is reviewed. Metrics preserve each evaluator’s native unit; ACE’s native outcomes and Giving Green’s qualitative systems-change cases are deliberately not collapsed into a universal score.</p>
       </section>
 
       <section className="givewell-section" id="givewell-market">
@@ -351,6 +384,40 @@ export default function Home() {
           {!aceMarket && <p className="market-loading">{aceError ? 'The accepted ACE ledger is temporarily unavailable.' : 'Loading accepted ACE assessments…'}</p>}
         </div>
         <p className="data-note">{aceMarket ? `Source retrieved ${day.format(new Date(aceMarket.source.retrievedAt))}` : 'Loading database freshness…'} · <a href="https://animalcharityevaluators.org/blog/announcing-our-2025-charity-recommendations/" target="_blank" rel="noreferrer">2025 recommendation announcement ↗</a></p>
+      </section>
+
+      <section className="giving-green-section" id="giving-green-market">
+        <div className="giving-green-heading">
+          <div><p className="kicker">THE CLIMATE MARKET</p><h2>{givingGreenMarket ? integer.format(givingGreenMarket.summary.topRecommendationCount) : 'Current'} best bets.<br />Systems change, no fake tonnage.</h2></div>
+          <p>Giving Green’s current recommendations span firm power, hard-to-abate industry, food systems, aviation, and shipping. Its research is qualitative at the organization level, so we show strategy, funding need, and announced grants without inventing emissions-per-dollar scores.</p>
+        </div>
+        <div className="giving-green-overview" aria-label="Giving Green 2025–2026 recommendation and grant summary">
+          <div><span>Top nonprofits</span><strong>{givingGreenMarket ? integer.format(givingGreenMarket.summary.topRecommendationCount) : '—'}</strong><p>Alphabetical, explicitly not ranked.</p></div>
+          <div><span>Announced grant rows</span><strong>{givingGreenMarket ? integer.format(givingGreenMarket.summary.grantRecordCount) : '—'}</strong><p>Five top nonprofits plus 24 strategy grantees.</p></div>
+          <div><span>Full cycle announced</span><strong>{givingGreenMarket ? compactMoney.format(givingGreenMarket.summary.totalAnnouncedGrantUsd) : '—'}</strong><p>Planned grants; not proof of disbursement.</p></div>
+          <div><span>Top nonprofit share</span><strong>{givingGreenMarket ? compactMoney.format(givingGreenMarket.summary.topAnnouncedGrantUsd) : '—'}</strong><p>Grant size is not an effectiveness rank.</p></div>
+        </div>
+        <div className="giving-green-warning"><strong>Comparison boundary.</strong> {givingGreenMarket?.comparabilityWarning ?? 'Loading the accepted Giving Green assessment and grant ledger…'}</div>
+        <div className="giving-green-cards">
+          {(givingGreenMarket?.recommendations ?? []).map((recommendation) => (
+            <article className="giving-green-card" key={recommendation.slug}>
+              <div className="giving-green-card-top"><span>2025–2026 TOP NONPROFIT</span><b>{recommendation.model_version}</b></div>
+              <h3><a href={organizationPath(recommendation.slug)}>{recommendation.canonical_name}</a></h3>
+              <p className="giving-green-geography">{recommendation.geography}</p>
+              <div className="giving-green-strategies">{recommendation.strategies.map((strategy) => <span key={strategy}>{strategy}</span>)}</div>
+              <dl>
+                <div><dt>Fund grant</dt><dd>{compactMoney.format(recommendation.amountUsd)} · {recommendation.period}</dd></div>
+                <div><dt>Numeric funding gap</dt><dd>{recommendation.funding_room_usd == null ? 'Not published' : `${money.format(recommendation.funding_room_usd)} · ${recommendation.funding_room_period}`}</dd></div>
+                <div><dt>Impact metric</dt><dd>Not quantified organization-wide</dd></div>
+              </dl>
+              <p className="giving-green-need"><strong>Use for more funding.</strong> {recommendation.fundingNeed}</p>
+              <p className="giving-green-limit">{recommendation.limitations}</p>
+              <div className="giving-green-card-links"><a href={organizationPath(recommendation.slug)}>Market profile →</a><a href={grantPath('giving-green', recommendation.sourceRecordId)}>Grant record →</a><a href={recommendation.website_url} target="_blank" rel="noreferrer">Research ↗</a></div>
+            </article>
+          ))}
+          {!givingGreenMarket && <p className="market-loading">{givingGreenError ? 'The accepted Giving Green ledger is temporarily unavailable.' : 'Loading accepted climate assessments…'}</p>}
+        </div>
+        <p className="data-note">{givingGreenMarket ? `Source retrieved ${day.format(new Date(givingGreenMarket.source.retrievedAt))}` : 'Loading database freshness…'} · <a href="https://www.givinggreen.earth/top-climate-nonprofits" target="_blank" rel="noreferrer">Current top nonprofits ↗</a> · <a href="https://www.givinggreen.earth/post/2025-2026-top-climate-nonprofits" target="_blank" rel="noreferrer">Grant announcement ↗</a></p>
       </section>
 
       <section className="renphil-section" id="renphil-market">

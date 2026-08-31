@@ -1,6 +1,7 @@
 import { defineConfig } from '@playwright/test';
 
 const externalBaseUrl = process.env.MOBILE_AUDIT_BASE_URL;
+const executablePath = process.env.PLAYWRIGHT_EXECUTABLE_PATH;
 
 export default defineConfig({
   testDir: './e2e',
@@ -12,6 +13,7 @@ export default defineConfig({
   use: {
     baseURL: externalBaseUrl ?? 'http://localhost:3107',
     browserName: 'chromium',
+    launchOptions: executablePath ? { executablePath } : undefined,
     trace: 'retain-on-failure',
   },
   webServer: externalBaseUrl ? undefined : {

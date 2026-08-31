@@ -2,6 +2,7 @@ import { expect, test } from '@playwright/test';
 
 const defaultRoutes = [
   '/',
+  '/india',
   '/san-francisco',
   '/grants/coefficient/grants-18659-0',
   '/grants/coefficient/grants-15086-0',
@@ -76,6 +77,19 @@ test('phone donors can reach the core market from the top bar', async ({ page },
   await menu.getByRole('link', { name: /San Francisco/ }).click();
   await expect(page).toHaveURL(/\/san-francisco$/);
   await expect(page.getByRole('heading', { name: /Where can a major gift do the most good/ })).toBeVisible();
+});
+
+test('phone donors can inspect the India geography contract without inferred funding room', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== 'phone-390');
+  await page.goto('/india', { waitUntil: 'domcontentloaded' });
+  await expect(page.getByRole('heading', { name: /Giving in India/ })).toBeVisible();
+  await expect(page.locator('.india-hero-stats strong')).toHaveText(['50', '1', '0', '0']);
+  await expect(page.locator('.india-opportunity-card')).toContainText('Shrimp Welfare Project');
+  await expect(page.locator('.india-opportunity-card')).toContainText('India-specific room');
+  await expect(page.locator('.india-opportunity-card')).toContainText('Not published');
+  await expect(page.locator('.india-flow-summary')).toContainText('Multi-country rows');
+  await expect(page.locator('.india-coverage-grid article')).toHaveCount(6);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 
 test('phone donors see the same honest decision fields across all six San Francisco candidates', async ({ page }, testInfo) => {

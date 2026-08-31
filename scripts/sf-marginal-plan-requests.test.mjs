@@ -12,10 +12,10 @@ const snapshot = buildSfMarginalPlanRequests({
 
 test('all organization requests cover every required field and gift size', () => {
   validateSfMarginalPlanRequests(snapshot);
-  assert.equal(snapshot.summary.packetCount, 4);
-  assert.equal(snapshot.summary.scenarioCount, 12);
-  assert.equal(snapshot.summary.questionCount, 32);
-  assert.equal(snapshot.summary.publicFactCount, 20);
+  assert.equal(snapshot.summary.packetCount, 5);
+  assert.equal(snapshot.summary.scenarioCount, 15);
+  assert.equal(snapshot.summary.questionCount, 40);
+  assert.equal(snapshot.summary.publicFactCount, 25);
   for (const packet of snapshot.packets) {
     assert.deepEqual(packet.scenarios.map((scenario) => scenario.amountUsd), [100000, 1000000, 10000000]);
     assert.equal(packet.questions.length, 8);
@@ -73,5 +73,18 @@ test('GLIDE public prefill keeps gateway services, consolidated finances, capaci
   assert.match(packet.questions.find((question) => question.key === 'fundingDisplacement').publicContext, /\$14\.12M future meal agreement/i);
   assert.match(packet.questions.find((question) => question.key === 'outcomeForecast').publicContext, /treatment-retention/i);
   assert.match(packet.decisionBoundary, /not.*cost per food-secure participant/i);
+  assert.ok(packet.sources.every((source) => source.retrievedAt));
+});
+
+test('Housing Action Coalition public prefill keeps legal vehicles, coalition contribution, and completed homes separate', () => {
+  const packet = snapshot.packets.find((item) => item.candidateKey === 'housing-action-coalition');
+  assert.match(packet.publicFacts.find((fact) => fact.key === 'entity').display, /501\(c\)\(3\).*83-1881525.*501\(c\)\(4\)/);
+  assert.match(packet.publicFacts.find((fact) => fact.key === 'latest-signals').display, /4,500\+ units reported legally enabled/);
+  assert.match(packet.publicFacts.find((fact) => fact.key === 'organization-finances').display, /-\$89\.28K net assets/);
+  assert.match(packet.publicFacts.find((fact) => fact.key === 'known-funding').display, /\$120K Coefficient-published 2025 advocacy grant/);
+  assert.match(packet.questions.find((question) => question.key === 'fundingDisplacement').publicContext, /140 member organizations/);
+  assert.match(packet.questions.find((question) => question.key === 'outcomeForecast').publicContext, /permits, starts, completions and occupancy/i);
+  assert.match(packet.questions.find((question) => question.key === 'costAndAttribution').publicContext, /coalition contribution shares/i);
+  assert.match(packet.decisionBoundary, /not.*causal attribution.*cost per completed home/i);
   assert.ok(packet.sources.every((source) => source.retrievedAt));
 });

@@ -206,6 +206,48 @@ const buildGlidePacket = ({ grantEvaluation, diligence, cityContracts }) => {
   };
 };
 
+const buildHousingActionCoalitionPacket = ({ grantEvaluation, diligence }) => {
+  const { candidate, protocolCandidate } = findCandidate(diligence, grantEvaluation, 'housing-action-coalition');
+  const annual = candidate.evidenceDossier.organizationReported;
+  const grant = grantEvaluation.historicalGrants.find((item) => item.candidateKey === candidate.key);
+  if (!grant) throw new Error('Accepted Housing Action Coalition grant record is missing.');
+  const sources = [
+    { key: 'hac-impact-report-2024', publisher: annual.source.publisher, title: annual.source.title, url: annual.source.url, publishedAt: annual.source.publishedAt, retrievedAt: annual.source.retrievedAt },
+    { key: 'hac-form-990-2024', publisher: 'ProPublica Nonprofit Explorer', title: 'San Francisco Housing Action Coalition · FY2024 Form 990', url: 'https://projects.propublica.org/nonprofits/organizations/831881525', publishedAt: '2025-10-10', retrievedAt: '2026-08-30' },
+    { key: 'hac-about', publisher: candidate.name, title: 'About', url: 'https://housingactioncoalition.org/about', publishedAt: null, retrievedAt: '2026-08-30' },
+    { key: 'hac-donate', publisher: candidate.name, title: 'Friends of HAC · donation and tax information', url: 'https://housingactioncoalition.org/donate', publishedAt: null, retrievedAt: '2026-08-30' },
+    { key: 'hac-membership', publisher: candidate.name, title: 'Membership', url: 'https://housingactioncoalition.org/membership', publishedAt: null, retrievedAt: '2026-08-30' },
+    { key: 'coefficient-hac-grant', publisher: grant.publisher, title: grant.title, url: grant.sourceUrl, publishedAt: grant.sourcePublishedAt, retrievedAt: grant.sourceRetrievedAt },
+  ];
+  const publicFacts = [
+    { key: 'entity', label: 'Entity and donation vehicles', display: '501(c)(3) education and research · EIN 83-1881525 · separate 501(c)(4) advocacy and lobbying vehicle', boundary: 'The donor must select the receiving legal entity, campaign, restricted use, and jurisdiction. Only the 501(c)(3) gift is described as tax-deductible; the vehicles must not be treated as one interchangeable balance sheet or intervention.', sourceKeys: ['hac-form-990-2024', 'hac-donate'] },
+    { key: 'program-scope', label: 'Published program scope', display: 'Policy research and education, coalition organizing, legislative advocacy, project support, public mobilization, and litigation strategy', boundary: 'HAC must identify one vehicle, named campaign or project, target decision, geography, coalition role, and time window for each gift scenario; this portfolio is not a marginal plan.', sourceKeys: ['hac-about', 'hac-donate', 'hac-membership'] },
+    { key: 'latest-signals', label: 'Latest accepted reporting window', display: '3 sponsored bills signed · 24 additional supported bills signed · 45 events with 1,250+ attendees · 100+ acres and 4,500+ units reported legally enabled', boundary: 'Calendar-2024 organization-reported policy and activity signals. Coalition contribution is not causal attribution; legal capacity, passage, and attendance are not permits, starts, completed or occupied homes, affordability, or resident well-being.', sourceKeys: ['hac-impact-report-2024'] },
+    { key: 'organization-finances', label: '501(c)(3) FY2024 filing context', display: `${formatMoney(annual.financials.revenueUsd)} revenue · ${formatMoney(annual.financials.expensesUsd)} expenses · ${formatMoney(annual.financials.netAssetsUsd)} net assets`, boundary: 'The filing covers the 501(c)(3), not the 501(c)(4). Organization-wide functional expenses and negative year-end net assets do not reveal current cash, inter-entity balances, campaign cost, additionality, or room for more funding.', sourceKeys: ['hac-form-990-2024'] },
+    { key: 'known-funding', label: 'Known institutional and member context', display: `${formatMoney(grant.amountUsd)} Coefficient-published 2025 advocacy grant · 140 current member organizations reported`, boundary: 'One advised grant and a current membership count do not reconcile originating funders, dues, restricted support, member conflicts, renewal assumptions, displacement, or a current funding gap. The grant must not be counted again as an independent originating-funder commitment.', sourceKeys: ['coefficient-hac-grant', 'hac-membership'] },
+  ];
+  const questions = makeQuestions({
+    fields: grantEvaluation.marginalPlan.requiredFields,
+    contexts: {
+      programIdentity: { copy: 'HAC publicly separates a 501(c)(3) education and research vehicle from a 501(c)(4) advocacy and lobbying vehicle. The receiving entity, named campaign or project, policy decision, jurisdiction, coalition role, and restricted use are not selected.', sourceKeys: ['hac-about', 'hac-donate', 'hac-form-990-2024'] },
+      timeBoundedBudget: { copy: 'The FY2024 filing supplies 501(c)(3) revenue, expenses, assets, liabilities, and net assets. Current 501(c)(3) and 501(c)(4) cash, liabilities, inter-entity flows, restricted funds, dues, expected revenue, campaign budgets, and unfunded amounts are not reconciled.', sourceKeys: ['hac-form-990-2024'] },
+      incrementalActivities: { copy: 'Current pages describe policy research, education, coalition organizing, analysis, legislative advocacy, public mobilization, and project support, but no source identifies the additional campaign activity purchased at any requested gift size.', sourceKeys: ['hac-about', 'hac-donate', 'hac-membership'] },
+      capacityConstraints: { copy: 'HAC says predictable monthly support helps it plan, staff, and scale campaigns. It does not publish the binding staff, legal, research, coalition, policymaker, project-pipeline, timing, or jurisdictional constraints—or how those constraints change at $100K, $1M, and $10M.', sourceKeys: ['hac-donate'] },
+      fundingDisplacement: { copy: `HAC reports 140 member organizations, and Coefficient Giving publishes a ${formatMoney(grant.amountUsd)} advocacy grant. Member dues, developer and institutional support, restrictions, originating funders, renewal assumptions, the two vehicles, and scenario-specific displacement are not reconciled.`, sourceKeys: ['hac-membership', 'coefficient-hac-grant', 'hac-form-990-2024'] },
+      outcomeForecast: { copy: 'HAC reports enacted bills and legal capacity for 4,500+ multifamily units, but no accepted source estimates HAC’s marginal contribution, the probability of a policy counterfactual, implementation through permits, starts, completions and occupancy, affordability mix, geography, timing, or uncertainty.', sourceKeys: ['hac-impact-report-2024'] },
+      costAndAttribution: { copy: 'The 501(c)(3) filing does not publish campaign-level cash cost, the 501(c)(4) cost base, coalition contribution shares, cost per additional policy change, cost per additional completed and occupied home, or a downstream rent, displacement, QALY, WELLBY, or life-substantially-bettered model.', sourceKeys: ['hac-form-990-2024', 'hac-impact-report-2024'] },
+      milestones: { copy: 'No accepted source locks scenario-specific 6-, 12-, 24-, or 36-month milestones spanning staff and coalition activity, decision stages, implementation, occupied housing, forecast updates, and continuation, revision, or exit rules.', sourceKeys: ['hac-impact-report-2024', 'hac-donate'] },
+    },
+  });
+  return {
+    packetKey: 'housing-action-coalition-marginal-plan-v0.1', sectionId: 'housing-action-coalition-plan-request', candidateKey: candidate.key, candidateName: candidate.name, responseLabel: 'HAC response',
+    headline: 'What could Housing Action Coalition do with the next gift?', status: REQUEST_STATUS, statusLabel: 'Draft · not sent', responseReceivedAt: null, forecastLockedAt: null,
+    recommendationState: 'insufficient-evidence', purpose: 'Turn HAC’s public policy portfolio, separate legal vehicles, 501(c)(3) filing, member base, and known institutional grant into three campaign-specific marginal cases without attributing coalition outcomes or counting legal capacity as completed housing.',
+    decisionBoundary: 'This packet is a research request, not a funding recommendation, commitment, organization endorsement, submitted response, estimate of room for more funding, causal attribution of a policy outcome, cost per completed home, or life-substantially-bettered estimate.',
+    provenanceLegend: makeProvenanceLegend(candidate.name), publicFacts, scenarios: makeScenarios({ protocolCandidate, questions, subject: 'HAC' }), questions, sources,
+  };
+};
+
 export function buildSfMarginalPlanRequests({ grantEvaluation, diligence, publicFunding }) {
   const cityContracts = publicFunding.sources.find((source) => source.key === 'datasf-supplier-contracts');
   if (!cityContracts) throw new Error('Accepted DataSF supplier-contract source is missing.');
@@ -214,9 +256,10 @@ export function buildSfMarginalPlanRequests({ grantEvaluation, diligence, public
     buildFoodBankPacket({ grantEvaluation, diligence, cityContracts }),
     buildSfLgbtCenterPacket({ grantEvaluation, diligence, cityContracts }),
     buildGlidePacket({ grantEvaluation, diligence, cityContracts }),
+    buildHousingActionCoalitionPacket({ grantEvaluation, diligence }),
   ];
   return {
-    version: 'sf-marginal-plan-requests-v0.4', generatedAt: grantEvaluation.generatedAt, geography: grantEvaluation.geography,
+    version: 'sf-marginal-plan-requests-v0.5', generatedAt: grantEvaluation.generatedAt, geography: grantEvaluation.geography,
     summary: {
       packetCount: packets.length,
       draftPacketCount: packets.filter((packet) => packet.status === REQUEST_STATUS).length,
@@ -232,9 +275,9 @@ export function buildSfMarginalPlanRequests({ grantEvaluation, diligence, public
 }
 
 export function validateSfMarginalPlanRequests(snapshot) {
-  if (snapshot.version !== 'sf-marginal-plan-requests-v0.4') throw new Error('Unexpected SF marginal-plan request version.');
-  if (snapshot.packets.length !== 4 || snapshot.summary.packetCount !== 4) throw new Error('Expected Hamilton, Food Bank, SF LGBT Center, and GLIDE request packets.');
-  const expectedKeys = ['hamilton-families', 'sf-marin-food-bank', 'sf-lgbt-center', 'glide'];
+  if (snapshot.version !== 'sf-marginal-plan-requests-v0.5') throw new Error('Unexpected SF marginal-plan request version.');
+  if (snapshot.packets.length !== 5 || snapshot.summary.packetCount !== 5) throw new Error('Expected Hamilton, Food Bank, SF LGBT Center, GLIDE, and Housing Action Coalition request packets.');
+  const expectedKeys = ['hamilton-families', 'sf-marin-food-bank', 'sf-lgbt-center', 'glide', 'housing-action-coalition'];
   if (JSON.stringify(snapshot.packets.map((packet) => packet.candidateKey)) !== JSON.stringify(expectedKeys)) throw new Error('Unexpected request packet candidates or order.');
   if (new Set(snapshot.packets.map((packet) => packet.sectionId)).size !== snapshot.packets.length) throw new Error('Request packet anchors must be unique.');
   for (const packet of snapshot.packets) {
@@ -248,9 +291,9 @@ export function validateSfMarginalPlanRequests(snapshot) {
     if (packet.publicFacts.some((fact) => fact.sourceKeys.some((key) => !sourceKeys.has(key))) || packet.questions.some((question) => question.publicContextSourceKeys.some((key) => !sourceKeys.has(key)))) throw new Error(`${packet.candidateName} public context references an unknown source.`);
     if (packet.sources.some((source) => !source.retrievedAt)) throw new Error(`${packet.candidateName} source is missing a retrieval date.`);
   }
-  if (snapshot.summary.scenarioCount !== 12 || snapshot.summary.publicFactCount !== 20 || snapshot.summary.questionCount !== 32) throw new Error('Request summary is incomplete.');
+  if (snapshot.summary.scenarioCount !== 15 || snapshot.summary.publicFactCount !== 25 || snapshot.summary.questionCount !== 40) throw new Error('Request summary is incomplete.');
   if (snapshot.summary.submittedScenarioCount !== 0 || snapshot.summary.organizationResponseCount !== 0 || snapshot.summary.mfiModelCount !== 0) throw new Error('Request summary overstates readiness.');
-  const supportedHosts = new Set(['hamiltonfamilies.org', 'www.hamiltonfamilies.org', 'sfmfoodbank.org', 'www.sfmfoodbank.org', 'panda.sfmfoodbank.org', 'sfcenter.org', 'www.sfcenter.org', 'glide.org', 'www.glide.org', 'data.sfgov.org']);
+  const supportedHosts = new Set(['hamiltonfamilies.org', 'www.hamiltonfamilies.org', 'sfmfoodbank.org', 'www.sfmfoodbank.org', 'panda.sfmfoodbank.org', 'sfcenter.org', 'www.sfcenter.org', 'glide.org', 'www.glide.org', 'housingactioncoalition.org', 'projects.propublica.org', 'coefficientgiving.org', 'data.sfgov.org']);
   if (snapshot.packets.some((packet) => packet.sources.some((source) => !supportedHosts.has(new URL(source.url).hostname)))) throw new Error('Request includes an unsupported source domain.');
   return snapshot;
 }

@@ -1,6 +1,13 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { fetchJson } from '../app/lib/fetch-json.ts';
+import { fetchJson, withRuntimeBasePath } from '../app/lib/fetch-json.ts';
+
+test('runtime API paths follow the canonical /donate proxy without changing the Sites origin', () => {
+  assert.equal(withRuntimeBasePath('/api/givewell', '/donate/'), '/donate/api/givewell');
+  assert.equal(withRuntimeBasePath('/api/sf-sff-grants?q=x', '/donate/san-francisco'), '/donate/api/sf-sff-grants?q=x');
+  assert.equal(withRuntimeBasePath('/api/givewell', '/'), '/api/givewell');
+  assert.equal(withRuntimeBasePath('https://example.com/api/givewell', '/donate/'), 'https://example.com/api/givewell');
+});
 
 test('read-only JSON requests recover from retryable HTTP and network failures', async () => {
   const originalFetch = globalThis.fetch;

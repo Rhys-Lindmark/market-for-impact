@@ -5,7 +5,7 @@ import giveWellSnapshot from '@/data/givewell/top-charities.json';
 import renPhilSnapshot from '@/data/renphil/ai-for-math-2025.json';
 import sfDiligence from '@/data/san-francisco/nonprofit-diligence-v1.json';
 import charityNavigatorDiscovery from '@/data/charity-navigator/lgbtq-rights-v1.json';
-import { fetchJson } from '@/app/lib/fetch-json';
+import { fetchJson, withRuntimeBasePath } from '@/app/lib/fetch-json';
 
 type SfCandidateUniverse = {
   version: string; source: { publisher: string; title: string; snapshotDate: string; queryUrl: string | null };
@@ -480,7 +480,7 @@ export default function Home() {
   }, []);
   useEffect(() => {
     const controller = new AbortController();
-    fetch('/api/donor-portfolio', { method: 'POST', signal: controller.signal, headers: { 'Content-Type': 'application/json' },
+    fetch(withRuntimeBasePath('/api/donor-portfolio'), { method: 'POST', signal: controller.signal, headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ budgetUsd: portfolioBudget, causeWeights: portfolioWeights, riskTolerance: portfolioRisk,
         minimumEvidence: portfolioEvidence, geography: portfolioGeography, liquidity: portfolioLiquidity, timeHorizon: portfolioHorizon }) })
       .then(async (response) => {

@@ -1,18 +1,38 @@
 {
-  "version": "sf-project-open-hand-review-v0.1",
-  "generatedAt": "2026-08-30T22:05:00-07:00",
-  "organization": { "name": "Project Open Hand", "ein": "943023551", "taxStatus": "501(c)(3)", "donationUrl": "https://www.openhand.org/donate" },
+  "version": "sf-project-open-hand-review-v0.2",
+  "generatedAt": "2026-08-31T12:05:00-07:00",
+  "organization": {
+    "name": "Project Open Hand",
+    "ein": "943023551",
+    "taxStatus": "501(c)(3)",
+    "donationUrl": "https://www.openhand.org/donate"
+  },
   "decision": {
-    "state": "Promising intervention; organization-level marginal cost-effectiveness not yet estimable",
-    "summary": "Project Open Hand directly delivered interventions studied in randomized trials, which is stronger organization-specific evidence than most local discovery records. Results are mixed across populations and outcomes, and reviewed public sources do not isolate the current cost or counterfactual outcomes of the next philanthropic gift.",
-    "costEffectiveness": "Not estimable",
-    "roomForMoreFunding": "Not published",
+    "state": "No demonstrated all-cause readmission benefit; exploratory heart-failure model only",
+    "summary": "Project Open Hand directly delivered meals in two randomized trials, which is unusually relevant organization evidence for a local charity. The largest trial found no improvement in its primary all-cause hospitalization outcome. A favorable heart-failure hospitalization result was exploratory, provider-pooled, and not a Project Open Hand estimate. Market for Impact therefore models that narrower hypothesis separately rather than calling the whole organization cost-effective.",
+    "costEffectiveness": "Primary endpoint: no demonstrated benefit. Exploratory heart-failure hypothesis: approximately $212,500 per additional 90-day heart-failure hospitalization averted; $56,604-$1.4 million conditional positive-effect sensitivity; null effect plausible",
+    "roomForMoreFunding": "Not published for the modeled pathway",
     "recommendation": "Not recommendation-ready"
   },
   "nativeScale": [
-    { "value": "1,083,712", "label": "meals served", "period": "FY2024", "semantics": "organization-reported across San Francisco, Alameda, and Contra Costa counties; not unique beneficiaries or attributable outcomes" },
-    { "value": "14,531", "label": "clients served", "period": "FY2024", "semantics": "organization-reported across programs and counties; not an experimental denominator" },
-    { "value": "1,910", "label": "dietitian assessments and counseling sessions", "period": "FY2024", "semantics": "service output; not a durable health outcome" }
+    {
+      "value": "1,083,712",
+      "label": "meals served",
+      "period": "FY2024",
+      "semantics": "organization-reported across San Francisco, Alameda, and Contra Costa counties; not unique beneficiaries or attributable outcomes"
+    },
+    {
+      "value": "14,531",
+      "label": "clients served",
+      "period": "FY2024",
+      "semantics": "organization-reported across programs and counties; not an experimental denominator"
+    },
+    {
+      "value": "1,910",
+      "label": "dietitian assessments and counseling sessions",
+      "period": "FY2024",
+      "semantics": "service output; not a durable health outcome"
+    }
   ],
   "financialContext": {
     "period": "FY ended June 30, 2024",
@@ -26,49 +46,95 @@
       "key": "kp-nourish",
       "design": "Pragmatic randomized trial",
       "population": "1,977 recently hospitalized high-risk adults in Northern California; Project Open Hand and Ceres delivered meals",
-      "result": "The primary all-cause 90-day readmission outcome was not improved: 27.1% with meals versus 24.6% usual care; adjusted hazard ratio 1.02 (95% CI 0.86–1.21). Exploratory analyses found lower heart-failure hospitalization among participants with heart failure and lower all-cause mortality, but no all-cause emergency-department benefit.",
-      "transfer": "Direct delivery involvement supports implementation relevance, but results combine two providers and multiple counties; exploratory outcomes should not replace the null primary result."
+      "result": "The primary all-cause 90-day hospitalization outcome was not improved: 27.1% with meals versus 24.6% with usual care, a 2.6-point adverse risk difference (95% CI -1.3 to 6.5) and adjusted hazard ratio 1.02 (95% CI 0.86-1.21). Among 641 participants with heart failure, an exploratory analysis found 7.9% versus 13.2% heart-failure hospitalization, a -5.3-point difference (95% CI -10.0 to -0.6) and adjusted hazard ratio 0.52 (95% CI 0.32-0.86).",
+      "transfer": "This is the strongest evidence and directly involved Project Open Hand, but it combines two providers and five medical centers. The heart-failure result was exploratory and must not replace the null primary result. Our model discounts the 5.3-point subgroup difference and keeps a null effect plausible."
     },
     {
       "key": "chefs-hiv",
       "design": "Pragmatic randomized trial",
       "population": "191 Project Open Hand clients living with HIV; intensive food-plus-nutrition support versus less-intensive Project Open Hand standard care",
       "result": "At six months, the intensive arm had lower odds of hospitalization, food insecurity, depressive symptoms, poor antiretroviral adherence, and unprotected sex. The trial found no difference in its primary viral-nonsuppression or health-related-quality-of-life outcomes.",
-      "transfer": "Organization-specific and locally relevant, but small, population-specific, and a comparison of two service intensities—not food support versus no service."
+      "transfer": "This is organization-specific and locally relevant, but small, population-specific, and a comparison of two Project Open Hand service intensities rather than food support versus no service. It does not identify the heart-failure effect or cost used in our model."
     },
     {
       "key": "medi-cal-pilot",
       "design": "State multi-provider pilot evaluation",
       "population": "Medi-Cal beneficiaries with congestive heart failure across eight California counties; Project Open Hand served San Francisco, Alameda, and San Mateo",
-      "result": "The intervention offered three meals daily for 12 weeks plus nutrition therapy and case-management components. The evaluation is useful for implementation and claims-based outcome context but does not publish a Project Open Hand-only causal estimate.",
-      "transfer": "Provider-pooled results cannot be assigned to Project Open Hand, and program components and payer reimbursement may differ from a marginal philanthropic expansion."
+      "result": "The authorizing program set a $6 million four-year budget to serve 1,413 beneficiaries with three medically tailored meals per day for 12 weeks. That implies $4,246 per targeted participant before any distinction between budget, contracted price, actual spending, provider cost, or current price. The final evaluation pooled multiple providers and did not publish a Project Open Hand-only causal estimate.",
+      "transfer": "We round the public program budget ratio to a $4,250 best-guess course cost and use a wide $3,000-$7,000 range. It is the closest program-specific public anchor, but the intensity differs from the randomized trial's one large meal per day for up to 10 weeks and is not current philanthropic funding room."
     }
   ],
   "model": {
-    "nativeOutcome": "Avoided condition-specific hospitalization over a defined follow-up period",
-    "status": "not-estimable",
+    "nativeOutcome": "An additional 90-day hospitalization for heart failure averted among a recently discharged adult with known heart failure because a medically tailored meal course was offered",
+    "status": "exploratory-model-not-funding-recommendation",
     "missingInputs": [
-      "A named current Project Open Hand program and eligible cohort for the marginal gift",
-      "Full incremental cost per enrolled and completed participant, including shared costs",
-      "Expected enrollment, completion, displacement, and payer-reimbursement case",
-      "A pre-specified causal effect applicable to that cohort rather than selected exploratory outcomes",
-      "A time-bounded $100K, $1M, and $10M capacity plan",
-      "Independent confirmation of which outcomes Project Open Hand can report for the funded cohort"
+      "A named current Project Open Hand post-discharge heart-failure program, legal entity, service geography, eligibility rule, and meal intensity for the proposed gift",
+      "Project Open Hand-only eligible, enrolled, reached, completing, and followed participant counts with reasons for nonparticipation and missingness",
+      "Current incremental food, delivery, dietitian, referral, data, and shared costs per completed course, separated from reimbursed services",
+      "Pre-specified Project Open Hand-only all-cause and heart-failure hospitalization outcomes with a credible comparison and 90-day follow-up",
+      "Payer reimbursement, public-program coverage, private-gift displacement, and the counterfactual for eligible patients not philanthropically funded",
+      "A time-bounded $100K, $1M, and $10M capacity plan with incremental courses, constraints, milestones, downside cases, and stop rules"
     ],
-    "qalyBoundary": "No QALY, WELLBY, life-saved, or life-substantially-bettered conversion is published. A condition-specific avoided-hospitalization model must come first."
+    "qalyBoundary": "No QALY, WELLBY, life-saved, or life-substantially-bettered conversion is published. First confirm a targeted Project Open Hand hospitalization effect; then model duration, mortality overlap, quality of life, and hospitalization disutility separately."
   },
   "reservations": [
-    "The largest reviewed randomized trial missed its primary outcome; favorable mortality and heart-failure findings were exploratory.",
-    "The smaller HIV trial found no effect on its primary viral or health-related-quality-of-life outcomes.",
+    "The largest randomized trial missed its primary all-cause hospitalization outcome; the favorable heart-failure result was exploratory.",
+    "The heart-failure subgroup result combined Project Open Hand and Ceres and does not identify a provider-specific effect.",
+    "The randomized intervention delivered one large meal per day for up to 10 weeks, while the state pilot cost anchor covered three meals per day for 12 weeks plus nutrition and case-management components.",
+    "Only 53.5% of randomized meal recipients received all 10 weeks, and those receiving more than five weeks differed from those receiving fewer.",
+    "The smaller HIV trial found no effect on its primary viral or health-related-quality-of-life outcomes and compared intensive with standard Project Open Hand service.",
     "FY2024 scale combines several programs and three counties, so dividing organization expenses by meals or clients would be misleading.",
-    "Public financing and reimbursement may fund some medically tailored nutrition; the philanthropic counterfactual and displacement case are not published.",
-    "No current organization-supplied marginal plan was found in the reviewed public sources."
+    "Public financing, health-plan reimbursement, and philanthropy may all support medically tailored nutrition; the current private-gift counterfactual is not published.",
+    "No current organization-supplied marginal plan for a post-discharge heart-failure cohort was found in the reviewed public sources."
   ],
   "sources": [
-    { "publisher": "Project Open Hand", "title": "FY2024 impact figures — 2025 sponsorship packet", "url": "https://www.openhand.org/sites/openhand.org/files/2025%20Project%20Open%20Hand%20Sponsorship%20Packet_Final.pdf", "published": "2025", "retrieved": "2026-08-30", "sourceType": "organization-reported" },
-    { "publisher": "Project Open Hand / Aprio", "title": "Audited financial statements, June 30, 2024 and 2023", "url": "https://www.openhand.org/sites/openhand.org/files/2023-2024%20Financial%20Statement.pdf", "published": "2025-02-25", "retrieved": "2026-08-30", "sourceType": "independent audit" },
-    { "publisher": "Medical Care", "title": "Effect of Medically Tailored Meals on Clinical Outcomes in Recently Hospitalized High-Risk Adults", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9451942/", "published": "2022", "retrieved": "2026-08-30", "sourceType": "peer-reviewed randomized trial" },
-    { "publisher": "The Journal of Infectious Diseases", "title": "Food Is Medicine for Human Immunodeficiency Virus", "url": "https://pubmed.ncbi.nlm.nih.gov/38696724/", "published": "2024", "retrieved": "2026-08-30", "sourceType": "peer-reviewed randomized trial" },
-    { "publisher": "California Department of Health Care Services / Mathematica", "title": "Evaluation of the Medi-Cal Medically Tailored Meals Pilot Program", "url": "https://www.dhcs.ca.gov/wp-content/uploads/2025/10/Evaluation-of-the-Medically-Tailored-Meals-Pilot-Program-Final-Report.pdf", "published": "2023-12-14", "retrieved": "2026-08-30", "sourceType": "government evaluation" }
+    {
+      "publisher": "Project Open Hand",
+      "title": "FY2024 impact figures - 2025 sponsorship packet",
+      "url": "https://www.openhand.org/sites/openhand.org/files/2025%20Project%20Open%20Hand%20Sponsorship%20Packet_Final.pdf",
+      "published": "2025",
+      "retrieved": "2026-08-30",
+      "sourceType": "organization-reported"
+    },
+    {
+      "publisher": "Project Open Hand / Aprio",
+      "title": "Audited financial statements, June 30, 2024 and 2023",
+      "url": "https://www.openhand.org/sites/openhand.org/files/2023-2024%20Financial%20Statement.pdf",
+      "published": "2025-02-25",
+      "retrieved": "2026-08-30",
+      "sourceType": "independent audit"
+    },
+    {
+      "publisher": "Medical Care",
+      "title": "Effect of Medically Tailored Meals on Clinical Outcomes in Recently Hospitalized High-Risk Adults",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9451942/",
+      "published": "2022",
+      "retrieved": "2026-08-31",
+      "sourceType": "peer-reviewed randomized trial"
+    },
+    {
+      "publisher": "The Journal of Infectious Diseases",
+      "title": "Food Is Medicine for Human Immunodeficiency Virus",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38696724/",
+      "published": "2024",
+      "retrieved": "2026-08-31",
+      "sourceType": "peer-reviewed randomized trial"
+    },
+    {
+      "publisher": "California Department of Health Care Services",
+      "title": "Medically Tailored Meals Pilot Program",
+      "url": "https://www.dhcs.ca.gov/services/long-term-care-alternatives-home-and-community-based-service-options/medically-tailored-meals-pilot-program/",
+      "published": "Program page; publication date not stated",
+      "retrieved": "2026-08-31",
+      "sourceType": "official program budget and target"
+    },
+    {
+      "publisher": "California Department of Health Care Services / Mathematica",
+      "title": "Evaluation of the Medi-Cal Medically Tailored Meals Pilot Program",
+      "url": "https://www.dhcs.ca.gov/wp-content/uploads/2025/10/Evaluation-of-the-Medically-Tailored-Meals-Pilot-Program-Final-Report.pdf",
+      "published": "2023-12-14; posted by DHCS June 2024",
+      "retrieved": "2026-08-31",
+      "sourceType": "government evaluation"
+    }
   ]
 }

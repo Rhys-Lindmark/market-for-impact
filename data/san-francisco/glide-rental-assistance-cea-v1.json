@@ -1,0 +1,150 @@
+{
+  "version": "sf-glide-rental-assistance-cea-v0.1",
+  "generatedAt": "2026-08-31T10:15:00-07:00",
+  "program": "GLIDE Welcome Center rental assistance",
+  "status": "exploratory-model-not-funding-recommendation",
+  "decisionUnit": "An additional GLIDE rental-assistance case that avoids entry to an emergency homeless shelter within six months because assistance was available",
+  "bottomLine": {
+    "giftUsd": 100000,
+    "estimatedAssistanceCases": 32.5,
+    "estimatedAdditionalShelterEntriesAverted": 0.65,
+    "costPerAdditionalShelterEntryAvertedUsd": 153850,
+    "conditionalPositiveEffectRangeUsd": {
+      "low": 51280,
+      "high": 2500000
+    },
+    "interpretation": "Our best guess is roughly $154,000 per additional six-month shelter entry averted. Conditional on a positive causal effect, the modeled range is about $51,000-$2.5 million. A null effect remains plausible, so the true upper bound is not finite."
+  },
+  "inputs": [
+    {
+      "key": "gift_usd",
+      "label": "Illustrative gift",
+      "best": 100000,
+      "low": 100000,
+      "high": 100000,
+      "unit": "USD",
+      "basis": "Donor scenario, not published current funding room",
+      "confidence": "scenario"
+    },
+    {
+      "key": "reported_grant_usd",
+      "label": "Reported Wells Fargo program funding",
+      "best": 100000,
+      "low": 100000,
+      "high": 100000,
+      "unit": "USD",
+      "basis": "GLIDE's FY2025 impact report describes a major 2022 Wells Fargo investment and says $100,000 stabilized housing for 39 households; it does not publish a program ledger or identify this as current funding room",
+      "confidence": "moderate for the published claim; not a marginal budget"
+    },
+    {
+      "key": "reported_assisted_households",
+      "label": "Reported households assisted by the $100,000 cohort",
+      "best": 39,
+      "low": 39,
+      "high": 39,
+      "unit": "assistance cases",
+      "basis": "Organization-reported cohort; applicant flow, eligibility denials, household size, and linkage to the separate FY2025 total of 317 people are not published",
+      "confidence": "moderate for the reported cohort"
+    },
+    {
+      "key": "raw_reported_cost_per_assistance_case_usd",
+      "label": "Raw reported funding per assisted household",
+      "best": 2564,
+      "low": 2564,
+      "high": 2564,
+      "unit": "USD",
+      "basis": "$100,000 divided by 39 reported households. This is a historical raw ratio, not an audited marginal unit cost",
+      "confidence": "low"
+    },
+    {
+      "key": "marginal_cost_per_assistance_case_usd",
+      "label": "Modeled marginal cost per assistance case",
+      "best": 3077,
+      "low": 2564,
+      "high": 5000,
+      "unit": "USD",
+      "basis": "MFI adds 20% to the raw cohort ratio for screening, workshop, case-management, and overhead resources. The range allows the raw ratio at the low end and materially higher delivery cost at the high end",
+      "confidence": "very low"
+    },
+    {
+      "key": "reported_three_month_housing_retention",
+      "label": "Reported three-month housing retention",
+      "best": 1,
+      "low": 1,
+      "high": 1,
+      "unit": "proportion",
+      "basis": "GLIDE reports 100% of assisted clients remained housed after three months, but publishes no comparator, outcome definition, sample attrition, verification method, or longer follow-up",
+      "confidence": "low for the cohort; not causal"
+    },
+    {
+      "key": "causal_six_month_shelter_entry_reduction",
+      "label": "MFI estimate of absolute six-month shelter-entry reduction",
+      "best": 0.02,
+      "low": 0.002,
+      "high": 0.05,
+      "unit": "proportion",
+      "basis": "Judgmental transfer from a Chicago quasi-experiment: funding availability reduced six-month shelter entry by 1.6 percentage points overall and 2.2 points among below-median-income rent callers. GLIDE's receipt denominator, selection, assistance mix, city, and outcome tracking differ; 5 points is an optimistic positive-effect bound, not a study estimate for GLIDE",
+      "confidence": "very low"
+    }
+  ],
+  "formula": {
+    "assistanceCases": "gift_usd / marginal_cost_per_assistance_case_usd",
+    "additionalShelterEntriesAverted": "assistance_cases * causal_six_month_shelter_entry_reduction",
+    "costPerAdditionalShelterEntryAverted": "marginal_cost_per_assistance_case_usd / causal_six_month_shelter_entry_reduction",
+    "rangeMethod": "conditional positive-effect range: optimistic = low modeled cost with high positive effect; pessimistic = high modeled cost with small positive effect",
+    "denominatorBoundary": "The GLIDE cohort reports assisted households; the annual headline reports people. They are not combined. The external study estimates the intention-to-treat effect of funding availability among eligible callers, not GLIDE's treatment-on-the-treated effect."
+  },
+  "sensitivity": [
+    {
+      "case": "Optimistic positive effect",
+      "marginalCostPerAssistanceCaseUsd": 2564,
+      "causalShelterEntryReduction": 0.05,
+      "assistanceCasesPer100k": 39,
+      "additionalShelterEntriesAvertedPer100k": 1.95,
+      "costPerAdditionalShelterEntryAvertedUsd": 51280
+    },
+    {
+      "case": "Best guess",
+      "marginalCostPerAssistanceCaseUsd": 3077,
+      "causalShelterEntryReduction": 0.02,
+      "assistanceCasesPer100k": 32.5,
+      "additionalShelterEntriesAvertedPer100k": 0.65,
+      "costPerAdditionalShelterEntryAvertedUsd": 153850
+    },
+    {
+      "case": "Small positive effect",
+      "marginalCostPerAssistanceCaseUsd": 5000,
+      "causalShelterEntryReduction": 0.002,
+      "assistanceCasesPer100k": 20,
+      "additionalShelterEntriesAvertedPer100k": 0.04,
+      "costPerAdditionalShelterEntryAvertedUsd": 2500000
+    }
+  ],
+  "nullEffectBoundary": "The numeric range is conditional on a positive effect. GLIDE's 100% three-month retention claim has no comparison group, and the external study is not GLIDE-specific. If assistance only substitutes for other funding, reaches cases that would remain housed anyway, or does not reduce six-month shelter entry, additional outcomes approach zero and cost per outcome has no finite upper bound.",
+  "fundingRoom": {
+    "status": "not published",
+    "boundary": "The $100,000 denominator reuses a historical sponsor-cohort size because it is inspectable; it is not evidence that GLIDE can productively add another 33 cases now. GLIDE has not published current unrestricted and restricted balances, eligible unfunded applicants, award-source mix, case-management capacity, landlord or unit constraints, displacement of Season of Sharing or public funds, or a dated marginal plan.",
+    "requiredNext": "Obtain the current rental-assistance ledger, applicant and eligibility funnel, person-versus-household crosswalk, assistance-source attribution, delivery cost, six- and twelve-month HMIS-linked outcomes, and time-bounded $100K, $1M, and $10M expansion plans."
+  },
+  "excludedBenefits": [
+    "Evictions prevented unless GLIDE publishes a denominator, verification method, and counterfactual",
+    "Moves into new housing, housing quality, rent burden, employment, savings, school continuity, and family spillovers",
+    "Avoided shelter, healthcare, criminal-justice, and other public costs; the external paper's benefit estimates rely partly on noncausal associations",
+    "Benefits from meals, benefits navigation, hygiene, legal services, behavioral health, family programs, advocacy, or church activities",
+    "QALYs, WELLBYs, mortality benefits, and a 'life substantially bettered' conversion"
+  ],
+  "sources": [
+    {
+      "url": "https://www.glide.org/wp-content/uploads/2026/01/GLIDE-Impact-Report-2024-2025.pdf",
+      "role": "GLIDE cohort, funding, three-month retention, and FY2025 scale claims"
+    },
+    {
+      "url": "https://www.glide.org/programs/welcome-center/",
+      "role": "Current program description, service hours, workshop requirement, and assistance types"
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27516600/",
+      "role": "Quasi-experimental shelter-entry effect and published cost-effectiveness anchor"
+    }
+  ]
+}

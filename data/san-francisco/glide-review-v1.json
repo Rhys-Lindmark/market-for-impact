@@ -1,6 +1,6 @@
 {
-  "version": "sf-glide-review-v0.1",
-  "generatedAt": "2026-08-31T01:05:00-07:00",
+  "version": "sf-glide-review-v0.2",
+  "generatedAt": "2026-08-31T10:15:00-07:00",
   "organization": {
     "name": "GLIDE Foundation",
     "ein": "941156481",
@@ -8,9 +8,9 @@
     "donationUrl": "https://www.glide.org/ways-to-give/"
   },
   "decision": {
-    "state": "Strong delivery footprint; no single marginal opportunity or organization-specific causal estimate",
-    "summary": "GLIDE combines daily meals, housing and benefits navigation, behavioral-health treatment, family programs, outreach, advocacy, and church activities. Its FY2025 reporting establishes substantial delivery, and external reviews support several underlying intervention families. But the public record does not identify one donor-expandable program, deduplicated participant cohort, durable outcome, credible comparison, or incremental cost. Service volume and contract compliance therefore cannot yet become an impact price or recommendation.",
-    "costEffectiveness": "Not estimable",
+    "state": "Exploratory rental-assistance model; broad GLIDE portfolio remains unmodeled",
+    "summary": "GLIDE combines daily meals, rental and benefits assistance, behavioral-health treatment, family programs, outreach, advocacy, and church activities. We do not pool those pathways. A dedicated exploratory model now isolates one historical $100,000 rental-assistance cohort, prices an assistance case, and transfers a heavily discounted six-month shelter-entry effect from a Chicago quasi-experiment. The result is about $154,000 per additional shelter entry averted, with a $51,000-$2.5 million conditional positive-effect range and no finite upper bound if GLIDE's causal effect is null. This is a judgmental model, not a recommendation.",
+    "costEffectiveness": "Exploratory: about $154,000 per additional six-month shelter entry averted; roughly $51,000-$2.5 million conditional on a positive effect",
     "roomForMoreFunding": "Not published",
     "recommendation": "Not recommendation-ready"
   },
@@ -53,6 +53,27 @@
   },
   "evidence": [
     {
+      "key": "glide-rental-fy2025",
+      "design": "Organization-reported rental-assistance cohort and annual outputs",
+      "population": "San Francisco households and people receiving GLIDE Welcome Center rental assistance",
+      "result": "GLIDE reports that a historical $100,000 sponsor cohort stabilized 39 households and that 100% of assisted clients remained housed after three months. Separately, its FY2025 report says 317 people received $965,254 for security deposits and first-month rent.",
+      "transfer": "The 39-household cohort and 317-person annual total use different denominators and are not combined. GLIDE does not publish the applicant funnel, comparison group, outcome definition, missing follow-up, source-specific ledger, six-month shelter entry, or the share that would have remained housed without assistance. The three-month claim is therefore descriptive, not causal."
+    },
+    {
+      "key": "glide-rental-current-program",
+      "design": "Current official program description",
+      "population": "San Francisco residents seeking eviction, back-rent, move-in, or deposit assistance through GLIDE's Welcome Center",
+      "result": "GLIDE currently describes weekday rental assistance, a required housing-readiness workshop, emergency options for eviction, back rent, and deposits, and case management when available.",
+      "transfer": "This establishes the current service pathway but not program dose, eligibility decisions, funded-versus-referred cases, delivery cost, outcome tracking, or private-gift additionality. It also differs from the FY2025 impact report's narrower parenthetical description of security deposits and first-month rent."
+    },
+    {
+      "key": "homelessness-prevention-quasi-experiment",
+      "design": "Quasi-experiment using good-as-random funding availability among 4,448 eligible first-time callers",
+      "population": "Chicago households seeking temporary rent, security-deposit, or utility assistance from 2010 to 2012",
+      "result": "Funding availability reduced entry to a homeless shelter within six months by 1.6 percentage points overall, a 76% relative decline. Among below-median-income rent callers the estimated reduction was 2.2 points. The authors estimated about $10,300 per homeless spell averted in then-current dollars.",
+      "transfer": "This is the strongest relevant causal evidence, but it estimates an intention-to-treat effect of funding availability among eligible callers—not GLIDE's effect among funded cases. City, eligibility, assistance mix, public alternatives, shelter data, and implementation differ. MFI therefore uses a very wide 0.2-5 percentage-point positive-effect range and keeps a null effect outside the finite range."
+    },
+    {
       "key": "glide-reporting",
       "design": "Organization-reported annual outputs",
       "population": "People using GLIDE's food, Welcome Center, benefits, and behavioral-health services during FY2025",
@@ -89,19 +110,19 @@
     }
   ],
   "model": {
-    "nativeOutcome": "For one selected GLIDE program, an additional eligible participant achieving its pre-specified durable 12-month outcome because of the funded intervention",
-    "status": "not-estimable",
+    "nativeOutcome": "An additional GLIDE rental-assistance case that avoids entry to an emergency homeless shelter within six months because assistance was available",
+    "status": "exploratory-model-not-funding-recommendation",
     "missingInputs": [
-      "A named GLIDE legal entity, program, restricted fund, geography, eligible cohort, and intervention intensity",
-      "Unique applicants or eligible participants, enrollments, delivered dosage, exits, cross-program duplicates, and complete follow-up denominators",
-      "One pre-specified durable outcome—food security, sustained tenancy, approved and retained benefit, or retained treatment—with a follow-up window",
-      "Complete 3-, 6-, 12-, and 24-month outcome data including unsuccessful exits and missingness",
-      "A credible GLIDE comparison or a transparent, sensitivity-tested transfer from the relevant external intervention evidence",
-      "Incremental staff, food, assistance, clinical, referral, volunteer, facilities, incentives, and overhead cost for the selected program",
-      "Public contract coverage, donated goods, church and Foundation resources, service substitution, and private-gift additionality",
+      "The exact legal entity and restricted fund supporting the Welcome Center rental-assistance pathway",
+      "Unique applicants, eligibility decisions, funded cases, referrals, assistance source, household size, unsuccessful exits, and person-versus-household crosswalk",
+      "Verified shelter entry and housing retention at 3, 6, 12, and 24 months with complete denominators and missingness",
+      "A GLIDE comparison group or assigned funding cutoff that can estimate the local counterfactual",
+      "A reconciliation of the historical $100,000/39-household cohort with the separate FY2025 317-person/$965,254 totals",
+      "Incremental screening, workshop, case-management, financial-assistance, referral, facilities, partner, and overhead cost",
+      "Corporate, public, Season of Sharing, Catholic Charities, and other partner funding; substitution; and private-gift additionality",
       "Time-bounded $100K, $1M, and $10M capacity plans with activities, constraints, milestones, displacement, and downside cases"
     ],
-    "qalyBoundary": "No QALY, WELLBY, life-saved, or life-substantially-bettered conversion is published. First estimate an additional durable outcome for one defined program; then version any food-security, housing, treatment, or wellbeing conversion separately so overlapping pathways are not double-counted."
+    "qalyBoundary": "No QALY, WELLBY, life-saved, or life-substantially-bettered conversion is published. The exploratory model stops at an additional six-month shelter entry averted. Housing quality, longer retention, health, mortality, education, employment, public-cost, and family spillover values require separate evidence and must not be added without double-counting controls."
   },
   "reservations": [
     "Meals, rental assistance, benefit connections, treatment enrollment, family services, outreach, advocacy, and church activities have different beneficiaries and outcomes.",
@@ -112,8 +133,26 @@
     "The audit consolidates the Foundation, Church, and real-estate entities and does not publish program-specific cash costs for durable outcomes.",
     "Fourteen active city contracts span distinct service lines; multiyear award and remaining-authority fields are not current donation room.",
     "Without one bounded marginal plan, unrestricted giving could support valuable flexibility but cannot be assigned a defensible outcome forecast."
+    ,"The 39-household sponsor cohort and 317-person annual output are different denominators; treating them as one unit-cost numerator and denominator would be false precision."
+    ,"The external study's funding-availability effect and GLIDE's funded-case denominator are not interchangeable. The exploratory model's 2-point best guess is an MFI judgment, not a treatment effect reported by either source."
   ],
   "sources": [
+    {
+      "publisher": "GLIDE",
+      "title": "Welcome Center",
+      "url": "https://www.glide.org/programs/welcome-center/",
+      "published": "current program page; no publication date shown",
+      "retrieved": "2026-08-31",
+      "sourceType": "current official program description"
+    },
+    {
+      "publisher": "Science",
+      "title": "The impact of homelessness prevention programs on homelessness",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27516600/",
+      "published": "2016-08-11",
+      "retrieved": "2026-08-31",
+      "sourceType": "quasi-experimental study"
+    },
     {
       "publisher": "GLIDE",
       "title": "FY2025 Impact Report",

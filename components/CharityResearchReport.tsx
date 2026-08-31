@@ -41,6 +41,7 @@ export type CharityReportContent = {
     headline: string;
     body: string;
     equation: { label: string; expression: string; result: string };
+    inputColumnLabel?: string;
     inputs: Array<{ key: string; label: string; confidence: string; best: string; range: string; basis: string }>;
     giftHeading: string;
     sensitivity: Array<{ case: string; headline: string; detail: string }>;
@@ -107,7 +108,7 @@ export default function CharityResearchReport({ content }: { content: CharityRep
             <p>{content.model.body}</p>
             <div className="charity-model-equation"><span>{content.model.equation.label}</span><strong>{content.model.equation.expression}</strong><b>{content.model.equation.result}</b></div>
             <div className="charity-model-table" role="table" aria-label={`${content.organization} cost-effectiveness assumptions`}>
-              <div role="row"><span role="columnheader">Input</span><span role="columnheader">Best guess</span><span role="columnheader">Range</span><span role="columnheader">Basis</span></div>
+              <div role="row"><span role="columnheader">Input</span><span role="columnheader">{content.model.inputColumnLabel ?? 'Best guess'}</span><span role="columnheader">Range</span><span role="columnheader">Basis</span></div>
               {content.model.inputs.map((input) => <div role="row" key={input.key}><strong role="cell">{input.label}<small>{input.confidence} confidence</small></strong><span role="cell">{input.best}</span><span role="cell">{input.range}</span><p role="cell">{input.basis}</p></div>)}
             </div>
             <h3>{content.model.giftHeading}</h3>

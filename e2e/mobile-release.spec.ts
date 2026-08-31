@@ -326,9 +326,23 @@ test('phone donors can inspect the 6,688 to 25 San Francisco research funnel', a
   await expect(page.getByRole('heading', { name: '6,688 records. 25 deep reviews.' })).toBeVisible();
   await expect(page.locator('.sf-research-stages strong')).toHaveText(['6,688', '1,000', '100', '25', '0']);
   await expect(page.locator('.sf-deep-queue article')).toHaveCount(25);
-  await expect(page.locator('.sf-deep-queue article>b')).toHaveText(Array(25).fill('CEA not started'));
+  await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'CEA not started' })).toHaveCount(24);
+  await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'Initial review complete' })).toHaveCount(1);
   await expect(page.locator('.sf-advocacy-track')).toContainText('GrowSF');
   await expect(page.locator('.sf-advocacy-track')).toContainText('Advocacy is reviewed, not ranked.');
   await expect(page.getByRole('link', { name: /Open the SF cost-effectiveness workbook/ })).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('phone donors can inspect the first San Francisco deep review without a fabricated CEA', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== 'phone-390');
+  await page.goto('/san-francisco#project-open-hand-review', { waitUntil: 'domcontentloaded' });
+  await expect(page.getByRole('heading', { level: 2, name: 'Project Open Hand', exact: true })).toBeVisible();
+  await expect(page.locator('.sf-poh-review')).toContainText('Direct trial involvement. Mixed results.');
+  await expect(page.locator('.sf-poh-review')).toContainText('The primary all-cause 90-day readmission outcome was not improved');
+  await expect(page.locator('.sf-poh-review')).toContainText('Not estimable');
+  await expect(page.locator('.sf-poh-review')).toContainText('Not published');
+  await expect(page.locator('.sf-poh-evidence article')).toHaveCount(3);
+  await expect(page.locator('.sf-poh-model li')).toHaveCount(11);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });

@@ -9,6 +9,7 @@ import sfDiligence from '@/data/san-francisco/nonprofit-diligence-v1.json';
 import sfOutcomes from '@/data/san-francisco/outcome-ontology-v1.json';
 import sfFunding from '@/data/san-francisco/public-funding-v1.json';
 import sfResearchFunnel from '@/data/san-francisco/research-funnel-v1.json';
+import pohReview from '@/data/san-francisco/project-open-hand-review-v1.json';
 import sffGrants from '@/data/san-francisco/sff-community-grants-v1.json';
 import SffGrantExplorer from './SffGrantExplorer';
 
@@ -126,11 +127,19 @@ export default function SanFranciscoDonorPage() {
         </div>
         <div className="sf-deep-queue">
           <header><div><span>THE FIRST 25 · ALPHABETICAL, NOT RANKED</span><h3>GiveWell-style reports queued.</h3></div><p>Each report must cover intervention evidence, organization-specific results, costs, counterfactuals, funding room, sensitivity, reservations, and sources.</p></header>
-          <div>{sfResearchFunnel.deepDiveRows.map((row) => <article key={row.ein}><span>{String(row.queuePosition).padStart(2, '0')}</span><div><h4>{row.displayName}</h4><p>{row.intervention}</p><small>EIN {row.ein} · {row.exactContractSourceName ? 'city-contract link' : 'no exact city-contract link'}</small></div><b>{row.costEffectivenessStatus === 'not-estimable' ? 'CEA not started' : row.costEffectivenessStatus}</b></article>)}</div>
+          <div>{sfResearchFunnel.deepDiveRows.map((row) => <article key={row.ein}><span>{String(row.queuePosition).padStart(2, '0')}</span><div><h4>{row.displayName}</h4><p>{row.intervention}</p><small>EIN {row.ein} · {row.exactContractSourceName ? 'city-contract link' : 'no exact city-contract link'}</small>{row.reportStatus === 'initial-review-complete' && <a href="#project-open-hand-review">Open initial review ↓</a>}</div><b>{row.reportStatus === 'initial-review-complete' ? 'Initial review complete' : 'CEA not started'}</b></article>)}</div>
         </div>
         <details className="sf-report-contract"><summary>Open the common 12-part report contract</summary><ol>{sfResearchFunnel.reportContract.map((item) => <li key={item}>{item}</li>)}</ol></details>
         <aside className="sf-advocacy-track"><div><span>SEPARATE EVIDENCE TRACK</span><h3>Advocacy is reviewed, not ranked.</h3></div><p>{sfResearchFunnel.interpretation.advocacy}</p><ul>{sfResearchFunnel.advocacyEvidenceTrack.map((row) => <li key={row.name}><strong>{row.name}</strong><span>{row.researchMode}</span></li>)}</ul></aside>
-        <footer><p><strong>Current result: 0 of 25 complete.</strong> {sfResearchFunnel.interpretation.costEffectiveness}</p><div>{sfResearchFunnel.sources.map((source) => <a key={source.url} href={source.url} target="_blank" rel="noreferrer">{source.title} ↗</a>)}</div></footer>
+        <footer><p><strong>Current result: {sfResearchFunnel.summary.completedInitialReviewCount} of 25 initial reviews complete; 0 CEAs complete.</strong> {sfResearchFunnel.interpretation.costEffectiveness}</p><div>{sfResearchFunnel.sources.map((source) => <a key={source.url} href={source.url} target="_blank" rel="noreferrer">{source.title} ↗</a>)}</div></footer>
+      </section>
+
+      <section className="sf-poh-review" id="project-open-hand-review" aria-labelledby="sf-poh-title">
+        <header><div><p className="kicker">DEEP DIVE 01 · INITIAL REVIEW</p><h2 id="sf-poh-title">Project Open Hand</h2><p>{pohReview.decision.summary}</p></div><dl><div><dt>Decision state</dt><dd>{pohReview.decision.state}</dd></div><div><dt>Cost-effectiveness</dt><dd>{pohReview.decision.costEffectiveness}</dd></div><div><dt>Funding room</dt><dd>{pohReview.decision.roomForMoreFunding}</dd></div></dl></header>
+        <div className="sf-poh-scale">{pohReview.nativeScale.map((row) => <article key={row.label}><strong>{row.value}</strong><span>{row.label}</span><p>{row.period} · {row.semantics}</p></article>)}</div>
+        <section className="sf-poh-evidence"><header><span>WHAT THE BEST REVIEWED EVIDENCE SAYS</span><h3>Direct trial involvement. Mixed results.</h3></header><div>{pohReview.evidence.map((item) => <article key={item.key}><span>{item.design}</span><h4>{item.population}</h4><p>{item.result}</p><aside><strong>Transfer boundary</strong>{item.transfer}</aside></article>)}</div></section>
+        <div className="sf-poh-model"><section><span>COST-EFFECTIVENESS MODEL</span><h3>Not estimable—and why.</h3><p>The first native outcome would be <strong>{pohReview.model.nativeOutcome.toLowerCase()}</strong>. The reviewed public record cannot yet price it for a marginal gift.</p><ol>{pohReview.model.missingInputs.map((item) => <li key={item}>{item}</li>)}</ol><strong>{pohReview.model.qalyBoundary}</strong><a href={sfResearchFunnel.workbook.url} target="_blank" rel="noreferrer">Open the blank model ↗</a></section><section><span>HOW WE COULD BE WRONG</span><h3>Reservations stay visible.</h3><ul>{pohReview.reservations.map((item) => <li key={item}>{item}</li>)}</ul><p><strong>Financial context.</strong> The FY2024 audit reports {compactMoney.format(pohReview.financialContext.totalAssetsUsd)} in total assets and {compactMoney.format(pohReview.financialContext.availableForGeneralExpenditureWithinOneYearUsd)} available for general expenditure within one year. {pohReview.financialContext.boundary}</p></section></div>
+        <footer><div>{pohReview.sources.map((source) => <a href={source.url} target="_blank" rel="noreferrer" key={source.url}><span>{source.sourceType} · {source.published}</span><strong>{source.title}</strong><small>{source.publisher} · retrieved {source.retrieved}</small></a>)}</div><a className="sf-poh-donate" href={pohReview.organization.donationUrl} target="_blank" rel="noreferrer"><span>Giving route, not an MFI recommendation</span><strong>Project Open Hand donation page ↗</strong></a></footer>
       </section>
 
       <section className="sf-brief-context" aria-labelledby="sf-context-title">

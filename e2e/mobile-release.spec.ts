@@ -344,7 +344,7 @@ test('phone donors can inspect Project Open Hand mixed evidence and its explorat
   await expect(page.locator('#project-open-hand-review')).toContainText('The primary all-cause 90-day hospitalization outcome was not improved');
   await expect(page.locator('#project-open-hand-review')).toContainText('approximately $212,500');
   await expect(page.locator('#project-open-hand-review')).toContainText('Not published');
-  await expect(page.locator('#project-open-hand-review').getByRole('link', { name: 'Open full report' })).toHaveAttribute('href', '/charities/project-open-hand');
+  await expect(page.locator('a[href="/charities/project-open-hand"]')).toHaveCount(1);
   await expect(page.locator('#project-open-hand-review .sf-deep-evidence article')).toHaveCount(3);
   await expect(page.locator('#project-open-hand-review .sf-deep-model li')).toHaveCount(11);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);

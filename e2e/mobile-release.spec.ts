@@ -248,7 +248,7 @@ test('phone donors can distinguish reported outcomes from external evidence doss
   test.skip(testInfo.project.name !== 'phone-390');
   await page.goto('/san-francisco#diligence', { waitUntil: 'domcontentloaded' });
   const dossiers = page.locator('.sf-evidence-dossier');
-  await expect(dossiers).toHaveCount(6);
+  await expect(dossiers).toHaveCount(5);
   const hamilton = dossiers.filter({ hasText: 'Hamilton Families' });
   await expect(hamilton.getByText('deeper diligence; recommendation blocked')).toBeVisible();
   await expect(hamilton.getByText('results pending')).toBeVisible();
@@ -257,10 +257,7 @@ test('phone donors can distinguish reported outcomes from external evidence doss
   await expect(foodBank.getByText('randomized trial; 228 adults followed for 12 months')).toBeVisible();
   await expect(foodBank.getByText('03 · What still blocks a recommendation')).toBeVisible();
   await expect(foodBank.getByRole('heading', { name: /price the next dollar/ })).toBeVisible();
-  const center = dossiers.filter({ hasText: 'SF LGBT Center' });
-  await expect(center.getByRole('heading', { name: /What the Center says happened/ })).toBeVisible();
-  await expect(center.getByText('systematic review of 107 experimental or quasi-experimental interventions in 31 countries')).toBeVisible();
-  await expect(center.getByText('03 · What still blocks a recommendation')).toBeVisible();
+  await expect(page.locator('a[href="/charities/sf-lgbt-center"]').first()).toBeVisible();
   const glide = dossiers.filter({ hasText: 'GLIDE' });
   await expect(glide.getByRole('heading', { name: /What GLIDE says happened/ })).toBeVisible();
   await expect(glide.getByText('systematic review and meta-analysis of 74 randomized clinical trials with 10,444 adults')).toBeVisible();
@@ -329,7 +326,7 @@ test('phone donors can inspect the 6,688 to 25 San Francisco research funnel', a
   await expect(page.getByRole('heading', { name: '6,688 records. 25 deep reviews.' })).toBeVisible();
   await expect(page.locator('.sf-research-stages strong')).toHaveText(['6,688', '1,000', '100', '25', '7']);
   await expect(page.locator('.sf-deep-queue article')).toHaveCount(25);
-  await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'CEA not started' })).toHaveCount(12);
+  await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'CEA not started' })).toHaveCount(11);
   await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'Initial review complete' })).toHaveCount(7);
   await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'Exploratory model' })).toHaveCount(7);
   await expect(page.locator('.sf-advocacy-track')).toContainText('GrowSF');

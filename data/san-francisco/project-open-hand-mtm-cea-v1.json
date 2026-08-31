@@ -1,0 +1,128 @@
+{
+  "version": "sf-project-open-hand-mtm-cea-v0.1",
+  "generatedAt": "2026-08-31T12:05:00-07:00",
+  "program": "Project Open Hand post-discharge medically tailored meals for adults with known heart failure",
+  "status": "exploratory-model-not-funding-recommendation",
+  "decisionUnit": "An additional 90-day heart-failure hospitalization averted among a recently discharged adult with known heart failure because a medically tailored meal course was offered",
+  "bottomLine": {
+    "giftUsd": 100000,
+    "estimatedMealCourses": 23.53,
+    "estimatedAdditionalHeartFailureHospitalizationsAverted": 0.47,
+    "costPerAdditionalHeartFailureHospitalizationAvertedUsd": 212500,
+    "conditionalPositiveEffectRangeUsd": { "low": 56604, "high": 1400000 },
+    "interpretation": "The randomized trial found no improvement in its primary all-cause hospitalization endpoint, so there is no demonstrated cost per all-cause hospitalization averted. For a narrower heart-failure hypothesis, our best guess is approximately $212,500 per additional 90-day heart-failure hospitalization averted. Conditional on a positive effect, the modeled range is about $56,604-$1.4 million. A null effect remains plausible, so the true upper bound is not finite."
+  },
+  "inputs": [
+    {
+      "key": "gift_usd",
+      "label": "Illustrative gift",
+      "best": 100000,
+      "low": 100000,
+      "high": 100000,
+      "unit": "USD",
+      "basis": "Donor scenario, not published current funding room",
+      "confidence": "scenario"
+    },
+    {
+      "key": "modeled_marginal_cost_per_course_usd",
+      "label": "Modeled marginal cost per meal course",
+      "best": 4250,
+      "low": 3000,
+      "high": 7000,
+      "unit": "USD",
+      "basis": "The California pilot authorized $6 million to serve 1,413 beneficiaries with three meals daily for 12 weeks, or $4,246 per targeted participant. MFI rounds to $4,250 and widens the range for provider mix, budget-versus-spend, intensity, inflation, delivery, dietitian, and shared-cost uncertainty. This is not a current Project Open Hand quote.",
+      "confidence": "low"
+    },
+    {
+      "key": "kp_nourish_all_cause_hospitalization_risk_difference",
+      "label": "Randomized all-cause hospitalization difference",
+      "best": 0.026,
+      "low": -0.013,
+      "high": 0.065,
+      "unit": "proportion",
+      "basis": "At 90 days, all-cause hospitalization was 27.1% with meals and 24.6% with usual care. The positive sign is adverse. This primary endpoint is not converted into a favorable cost-effectiveness result.",
+      "confidence": "high for the trial; provider-pooled"
+    },
+    {
+      "key": "kp_nourish_heart_failure_hospitalization_reduction",
+      "label": "Exploratory randomized heart-failure hospitalization reduction",
+      "best": 0.053,
+      "low": 0.006,
+      "high": 0.1,
+      "unit": "proportion",
+      "basis": "Among 641 participants with known heart failure, 90-day heart-failure hospitalization was 7.9% with meals and 13.2% with usual care: a 5.3-point reduction with a 95% confidence interval from 0.6 to 10.0 points. This was exploratory and combined two meal providers.",
+      "confidence": "moderate for the subgroup; indirect for Project Open Hand"
+    },
+    {
+      "key": "causal_heart_failure_hospitalization_reduction",
+      "label": "MFI estimate of absolute 90-day heart-failure hospitalization reduction",
+      "best": 0.02,
+      "low": 0.005,
+      "high": 0.053,
+      "unit": "proportion",
+      "basis": "Judgmental transfer discounted below the exploratory 5.3-point trial result because the primary endpoint was null, multiple outcomes were tested, providers were pooled, course intensity differs, and current Project Open Hand targeting is unpublished. The low bound is a small positive effect, not a guarantee; a null effect remains plausible.",
+      "confidence": "very low"
+    }
+  ],
+  "formula": {
+    "mealCourses": "gift_usd / modeled_marginal_cost_per_course_usd",
+    "additionalHeartFailureHospitalizationsAverted": "meal_courses * causal_heart_failure_hospitalization_reduction",
+    "costPerAdditionalHeartFailureHospitalizationAverted": "modeled_marginal_cost_per_course_usd / causal_heart_failure_hospitalization_reduction",
+    "rangeMethod": "conditional positive-effect range: optimistic = low modeled course cost with the observed 5.3-point exploratory difference; pessimistic = high modeled cost with a small 0.5-point positive effect",
+    "primaryEndpointBoundary": "The randomized all-cause hospitalization risk difference favored usual care numerically and was statistically consistent with the null. The conditional model is only for the exploratory heart-failure outcome."
+  },
+  "sensitivity": [
+    {
+      "case": "Observed exploratory effect",
+      "marginalCostPerCourseUsd": 3000,
+      "causalHeartFailureHospitalizationReduction": 0.053,
+      "mealCoursesPer100k": 33.33,
+      "additionalHeartFailureHospitalizationsAvertedPer100k": 1.77,
+      "costPerAdditionalHeartFailureHospitalizationAvertedUsd": 56604
+    },
+    {
+      "case": "MFI best guess",
+      "marginalCostPerCourseUsd": 4250,
+      "causalHeartFailureHospitalizationReduction": 0.02,
+      "mealCoursesPer100k": 23.53,
+      "additionalHeartFailureHospitalizationsAvertedPer100k": 0.47,
+      "costPerAdditionalHeartFailureHospitalizationAvertedUsd": 212500
+    },
+    {
+      "case": "Small positive effect",
+      "marginalCostPerCourseUsd": 7000,
+      "causalHeartFailureHospitalizationReduction": 0.005,
+      "mealCoursesPer100k": 14.29,
+      "additionalHeartFailureHospitalizationsAvertedPer100k": 0.07,
+      "costPerAdditionalHeartFailureHospitalizationAvertedUsd": 1400000
+    }
+  ],
+  "nullEffectBoundary": "The numeric range is conditional on a positive heart-failure effect. The trial's primary all-cause hospitalization endpoint was null, the favorable subgroup result was exploratory, and Project Open Hand's provider-specific effect is unknown. If the subgroup finding does not replicate, Project Open Hand reaches a different population, or private money substitutes for reimbursed care, additional hospitalizations averted approach zero and cost per outcome has no finite upper bound.",
+  "fundingRoom": {
+    "status": "not published for the modeled pathway",
+    "boundary": "The $100,000 scenario is illustrative. Project Open Hand has not published a current post-discharge heart-failure waitlist, payer-denial funnel, restricted balance, course price, provider capacity, reimbursement counterfactual, or dated plan showing that a private gift would create additional courses.",
+    "requiredNext": "Obtain a current heart-failure cohort plan, participant funnel, provider-only budget, payer coverage and denials, course completion, pre-specified hospitalization linkage, and time-bounded $100K, $1M, and $10M expansion cases."
+  },
+  "excludedBenefits": [
+    "All-cause hospitalization reduction, because the randomized primary endpoint did not improve",
+    "Exploratory mortality reduction, because it was not the primary endpoint and was not explained by lower all-cause utilization",
+    "Food security, depression, adherence, sexual-health, and HIV outcomes from the smaller intensive-versus-standard-care trial",
+    "Meal enjoyment, caregiver relief, nutrition knowledge, social contact, and avoided food spending",
+    "Hospital cost savings, because price and value are different and the modeled outcome is an admission rather than dollars saved",
+    "QALYs, WELLBYs, lives saved, and a life-substantially-bettered conversion"
+  ],
+  "sources": [
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9451942/",
+      "role": "Randomized all-cause primary outcome and exploratory heart-failure subgroup effect"
+    },
+    {
+      "url": "https://www.dhcs.ca.gov/services/long-term-care-alternatives-home-and-community-based-service-options/medically-tailored-meals-pilot-program/",
+      "role": "Official $6 million budget, 1,413-beneficiary target, 12-week intensity, counties, and provider context"
+    },
+    {
+      "url": "https://www.dhcs.ca.gov/wp-content/uploads/2025/10/Evaluation-of-the-Medically-Tailored-Meals-Pilot-Program-Final-Report.pdf",
+      "role": "Multi-provider implementation and Project Open Hand transfer limitations"
+    }
+  ]
+}

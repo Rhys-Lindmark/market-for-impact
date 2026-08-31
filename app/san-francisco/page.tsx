@@ -14,7 +14,6 @@ import edcReview from '@/data/san-francisco/eviction-defense-collaborative-revie
 import compassReview from '@/data/san-francisco/compass-family-services-review-v1.json';
 import farmingHopeReview from '@/data/san-francisco/farming-hope-review-v1.json';
 import fiveKeysReview from '@/data/san-francisco/five-keys-review-v1.json';
-import hamiltonFamiliesReview from '@/data/san-francisco/hamilton-families-review-v1.json';
 import harmReductionTherapyCenterReview from '@/data/san-francisco/harm-reduction-therapy-center-review-v1.json';
 import homelessYouthAllianceReview from '@/data/san-francisco/homeless-youth-alliance-review-v1.json';
 import huckleberryYouthProgramsReview from '@/data/san-francisco/huckleberry-youth-programs-review-v1.json';
@@ -44,7 +43,7 @@ const candidates = [...sfDiligence.candidates].sort((a, b) => a.name.localeCompa
 const dossierCandidates = candidates.flatMap((candidate) => 'evidenceDossier' in candidate ? [{ candidate, dossier: candidate.evidenceDossier }] : []);
 const marginalPlanRequests = sfMarginalPlanRequests.packets;
 const sffInitialPage = { pagination: { page: 1, pageSize: 12, total: sffGrants.partners.length, pageCount: Math.ceil(sffGrants.partners.length / 12) }, partners: sffGrants.partners.slice(0, 12) };
-const deepReviewAnchors = new Map([['943023551', '#project-open-hand-review'], ['943342323', '#eviction-defense-collaborative-review'], ['941156622', '#compass-family-services-review'], ['237362588', '/charities/curry-senior-center'], ['832393341', '#farming-hope-review'], ['810622701', '#five-keys-review'], ['941156481', '/charities/glide'], ['943055602', '#hamilton-families-review'], ['943363781', '#harm-reduction-therapy-center-review'], ['813036333', '#homeless-youth-alliance-review'], ['941687559', '#huckleberry-youth-programs-review'], ['942978977', '/charities/institute-on-aging']]);
+const deepReviewAnchors = new Map([['943023551', '#project-open-hand-review'], ['943342323', '#eviction-defense-collaborative-review'], ['941156622', '#compass-family-services-review'], ['237362588', '/charities/curry-senior-center'], ['832393341', '#farming-hope-review'], ['810622701', '#five-keys-review'], ['941156481', '/charities/glide'], ['943055602', '/charities/hamilton-families'], ['943363781', '#harm-reduction-therapy-center-review'], ['813036333', '#homeless-youth-alliance-review'], ['941687559', '#huckleberry-youth-programs-review'], ['942978977', '/charities/institute-on-aging']]);
 
 const researchGates = [
   { number: '01', title: 'Verify the entity', copy: 'Confirm the legal entity, donation vehicle, EIN, service geography, and which program a gift would support.' },
@@ -149,7 +148,6 @@ export default function SanFranciscoDonorPage() {
       <SfDeepReview review={compassReview} number={3} id="compass-family-services-review" evidenceHeadline="Strong need. Mixed evidence. Better measurement underway." workbookUrl={sfResearchFunnel.workbook.url} />
       <SfDeepReview review={farmingHopeReview} number={5} id="farming-hope-review" evidenceHeadline="Promising placement signal. Mixed transferred evidence." workbookUrl={sfResearchFunnel.workbook.url} />
       <SfDeepReview review={fiveKeysReview} number={6} id="five-keys-review" evidenceHeadline="Promising intervention class. Local causal effect unknown." workbookUrl={sfResearchFunnel.workbook.url} />
-      <SfDeepReview review={hamiltonFamiliesReview} number={8} id="hamilton-families-review" evidenceHeadline="Durable subsidy evidence. Rapid-rehousing effect uncertain." workbookUrl={sfResearchFunnel.workbook.url} />
       <SfDeepReview review={harmReductionTherapyCenterReview} number={9} id="harm-reduction-therapy-center-review" evidenceHeadline="Relevant short-term trial. HRTC effect unknown." workbookUrl={sfResearchFunnel.workbook.url} />
       <SfDeepReview review={homelessYouthAllianceReview} number={10} id="homeless-youth-alliance-review" evidenceHeadline="Strong intervention rationale. HYA effect unknown." workbookUrl={sfResearchFunnel.workbook.url} />
       <SfDeepReview review={huckleberryYouthProgramsReview} number={11} id="huckleberry-youth-programs-review" evidenceHeadline="Several promising pathways. No single marginal case." workbookUrl={sfResearchFunnel.workbook.url} />

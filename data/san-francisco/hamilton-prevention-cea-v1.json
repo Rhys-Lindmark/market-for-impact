@@ -1,0 +1,130 @@
+{
+  "version": "sf-hamilton-prevention-cea-v0.1",
+  "generatedAt": "2026-08-31T10:40:00-07:00",
+  "program": "Hamilton Families Homelessness Prevention Assistance Program",
+  "status": "exploratory-model-not-funding-recommendation",
+  "decisionUnit": "An additional eligible family that avoids recorded homelessness within six months because Hamilton offered temporary financial assistance",
+  "bottomLine": {
+    "giftUsd": 100000,
+    "estimatedAssistanceCases": 10,
+    "estimatedAdditionalHomelessnessEpisodesAverted": 0.2,
+    "costPerAdditionalHomelessnessEpisodeAvertedUsd": 500000,
+    "conditionalPositiveEffectRangeUsd": {
+      "low": 100000,
+      "high": 12500000
+    },
+    "interpretation": "Our best guess is roughly $500,000 per additional six-month recorded homelessness episode averted. Conditional on a positive causal effect, the modeled range is about $100,000-$12.5 million. A null effect remains plausible, so the true upper bound is not finite."
+  },
+  "inputs": [
+    {
+      "key": "gift_usd",
+      "label": "Illustrative gift",
+      "best": 100000,
+      "low": 100000,
+      "high": 100000,
+      "unit": "USD",
+      "basis": "Donor scenario, not published current funding room",
+      "confidence": "scenario"
+    },
+    {
+      "key": "modeled_marginal_cost_per_family_usd",
+      "label": "Modeled marginal cost per assisted family",
+      "best": 10000,
+      "low": 5000,
+      "high": 25000,
+      "unit": "USD",
+      "basis": "MFI judgment for a program offering up to three months of back rent plus three months of future rent, income planning, legal referrals, and case management. Hamilton does not publish its average prevention payment or program-specific delivery cost. The range is anchored above the $4,442 average assistance amount in the Santa Clara randomized trial and allows a much larger San Francisco arrears and service package.",
+      "confidence": "very low"
+    },
+    {
+      "key": "reported_fy2025_families_avoiding_homelessness",
+      "label": "Families Hamilton reports avoided homelessness",
+      "best": 127,
+      "low": 127,
+      "high": 127,
+      "unit": "families",
+      "basis": "Hamilton FY2025 organization reporting. No applicant denominator, verification method, common follow-up, comparison group, or cross-program duplication is published, so this is not used as a causal effect.",
+      "confidence": "moderate for the reported count; not causal"
+    },
+    {
+      "key": "santa_clara_offer_effect",
+      "label": "Santa Clara randomized offer effect",
+      "best": 0.038,
+      "low": 0.038,
+      "high": 0.038,
+      "unit": "proportion",
+      "basis": "A randomized offer of temporary financial assistance reduced recorded homelessness within six months by 3.8 percentage points from a 4.1% control rate. The treatment-control payment difference was $1,898, take-up increased by 56 points, and effects were smaller for households with children.",
+      "confidence": "high for the study; indirect for Hamilton"
+    },
+    {
+      "key": "causal_six_month_homelessness_reduction",
+      "label": "MFI estimate of absolute six-month homelessness reduction",
+      "best": 0.02,
+      "low": 0.002,
+      "high": 0.05,
+      "unit": "proportion",
+      "basis": "Judgmental transfer discounted below the Santa Clara randomized 3.8-point offer effect because Hamilton serves families, may use different risk targeting and payment rules, and does not publish a matched HMIS outcome. Five points is an optimistic positive-effect bound, not a Hamilton estimate.",
+      "confidence": "very low"
+    }
+  ],
+  "formula": {
+    "assistanceCases": "gift_usd / modeled_marginal_cost_per_family_usd",
+    "additionalHomelessnessEpisodesAverted": "assistance_cases * causal_six_month_homelessness_reduction",
+    "costPerAdditionalHomelessnessEpisodeAverted": "modeled_marginal_cost_per_family_usd / causal_six_month_homelessness_reduction",
+    "rangeMethod": "conditional positive-effect range: optimistic = low modeled cost with high positive effect; pessimistic = high modeled cost with small positive effect",
+    "denominatorBoundary": "Hamilton's reported families are program outputs. The external randomized estimate is the intention-to-treat effect of an offer among marginally eligible Santa Clara applicants, not Hamilton's treatment-on-the-treated effect."
+  },
+  "sensitivity": [
+    {
+      "case": "Optimistic positive effect",
+      "marginalCostPerAssistanceCaseUsd": 5000,
+      "causalHomelessnessReduction": 0.05,
+      "assistanceCasesPer100k": 20,
+      "additionalHomelessnessEpisodesAvertedPer100k": 1,
+      "costPerAdditionalHomelessnessEpisodeAvertedUsd": 100000
+    },
+    {
+      "case": "Best guess",
+      "marginalCostPerAssistanceCaseUsd": 10000,
+      "causalHomelessnessReduction": 0.02,
+      "assistanceCasesPer100k": 10,
+      "additionalHomelessnessEpisodesAvertedPer100k": 0.2,
+      "costPerAdditionalHomelessnessEpisodeAvertedUsd": 500000
+    },
+    {
+      "case": "Small positive effect",
+      "marginalCostPerAssistanceCaseUsd": 25000,
+      "causalHomelessnessReduction": 0.002,
+      "assistanceCasesPer100k": 4,
+      "additionalHomelessnessEpisodesAvertedPer100k": 0.008,
+      "costPerAdditionalHomelessnessEpisodeAvertedUsd": 12500000
+    }
+  ],
+  "nullEffectBoundary": "The numeric range is conditional on a positive effect. Hamilton's 127-family claim has no comparison, and the external randomized effect is not Hamilton-specific. If assistance reaches families who would remain housed anyway, substitutes for public or private aid, or does not reduce six-month recorded homelessness, additional outcomes approach zero and cost per outcome has no finite upper bound.",
+  "fundingRoom": {
+    "status": "not published",
+    "boundary": "The $100,000 scenario is illustrative. Hamilton has not published eligible unfunded applicants, prevention-only restricted balances, average awards, source-specific program accounts, staff capacity, public-funding displacement, or a dated plan showing how another gift creates additional cases.",
+    "requiredNext": "Obtain the prevention applicant and eligibility funnel, assistance ledger, source attribution, program delivery cost, HMIS-linked six- and twelve-month outcomes, and time-bounded $100K, $1M, and $10M expansion plans."
+  },
+  "excludedBenefits": [
+    "Hamilton's reported families avoiding homelessness unless the organization publishes the outcome definition, verification method, common follow-up, and counterfactual",
+    "Evictions avoided, housing quality, rent burden, employment, school continuity, and family spillovers",
+    "Avoided shelter, healthcare, criminal-justice, and other public costs",
+    "Benefits from Hamilton's shelter, rapid rehousing, long-term subsidies, education, and post-program cash pathways",
+    "QALYs, WELLBYs, mortality benefits, and a 'life substantially bettered' conversion"
+  ],
+  "sources": [
+    {
+      "url": "https://hamiltonfamilies.org/s/FINAL-Hamilton-Families-2025-Annual-Report.pdf",
+      "role": "FY2025 organization-reported prevention and housing outcomes"
+    },
+    {
+      "url": "https://hamiltonfamilies.org/s/FY22-23-Form-990.pdf",
+      "role": "Program description and assistance structure; historical portfolio accounting only"
+    },
+    {
+      "url": "https://doi.org/10.1162/rest_a_01344",
+      "role": "Santa Clara randomized temporary-financial-assistance effect and cost inputs"
+    }
+  ]
+}

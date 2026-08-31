@@ -8,6 +8,7 @@ const defaultRoutes = [
   '/charities/sf-marin-food-bank',
   '/charities/sf-lgbt-center',
   '/charities/compass-family-services',
+  '/charities/eviction-defense-collaborative',
   '/grants/coefficient/grants-18659-0',
   '/grants/coefficient/grants-15086-0',
   '/organizations/georgetown-university-initiative-on-innovation-development-and-evaluation',
@@ -325,11 +326,11 @@ test('phone donors can inspect the 6,688 to 25 San Francisco research funnel', a
   test.skip(testInfo.project.name !== 'phone-390');
   await page.goto('/san-francisco#research-funnel', { waitUntil: 'domcontentloaded' });
   await expect(page.getByRole('heading', { name: '6,688 records. 25 deep reviews.' })).toBeVisible();
-  await expect(page.locator('.sf-research-stages strong')).toHaveText(['6,688', '1,000', '100', '25', '8']);
+  await expect(page.locator('.sf-research-stages strong')).toHaveText(['6,688', '1,000', '100', '25', '9']);
   await expect(page.locator('.sf-deep-queue article')).toHaveCount(25);
   await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'CEA not started' })).toHaveCount(11);
-  await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'Initial review complete' })).toHaveCount(6);
-  await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'Exploratory model' })).toHaveCount(8);
+  await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'Initial review complete' })).toHaveCount(5);
+  await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'Exploratory model' })).toHaveCount(9);
   await expect(page.locator('.sf-advocacy-track')).toContainText('GrowSF');
   await expect(page.locator('.sf-advocacy-track')).toContainText('Advocacy is reviewed, not ranked.');
   await expect(page.getByRole('link', { name: /Open the SF cost-effectiveness workbook/ })).toBeVisible();
@@ -350,17 +351,19 @@ test('phone donors can inspect Project Open Hand mixed evidence and its explorat
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 
-test('phone donors can inspect the EDC review without a fabricated causal estimate', async ({ page }, testInfo) => {
+test('phone donors can inspect the EDC model with conflicting evidence and no life-bettered conversion', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'phone-390');
-  await page.goto('/san-francisco#eviction-defense-collaborative-review', { waitUntil: 'domcontentloaded' });
-  const review = page.locator('#eviction-defense-collaborative-review');
-  await expect(page.getByRole('heading', { level: 2, name: 'Eviction Defense Collaborative', exact: true })).toBeVisible();
+  await page.goto('/charities/eviction-defense-collaborative', { waitUntil: 'domcontentloaded' });
+  const review = page.locator('.charity-report-article');
+  await expect(page.getByRole('heading', { level: 1, name: 'Eviction Defense Collaborative', exact: true })).toBeVisible();
   await expect(review).toContainText('63% of full-scope clients stayed in their homes versus 45%');
   await expect(review).toContainText('not an EDC-specific causal estimate');
   await expect(review).toContainText('did not improve substantive outcomes');
-  await expect(review).toContainText('Not estimable');
-  await expect(review.locator('.sf-deep-evidence article')).toHaveCount(3);
-  await expect(review.locator('.sf-deep-model li')).toHaveCount(14);
+  await expect(review).toContainText('$126,000');
+  await expect(review).toContainText('no finite upper bound');
+  await expect(review).toContainText('Not estimated');
+  await expect(review.locator('.charity-evidence-list article')).toHaveCount(3);
+  await expect(review.locator('.charity-sensitivity article')).toHaveCount(3);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 

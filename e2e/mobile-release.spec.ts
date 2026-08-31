@@ -104,14 +104,15 @@ test('phone donors can inspect the marginal-plan and grant-look-back research co
   await expect(summary.locator('strong')).toHaveText(['18', '0', '0', '0']);
   await expect(page.locator('.sf-protocol-contract>section')).toHaveCount(2);
   await expect(page.locator('.sf-protocol-contract li')).toHaveCount(16);
-  await expect(page.locator('.sf-request-index a')).toHaveCount(4);
+  await expect(page.locator('.sf-request-index a')).toHaveCount(5);
   const requests = page.locator('.sf-request-packet');
-  await expect(requests).toHaveCount(4);
+  await expect(requests).toHaveCount(5);
   const hamiltonRequest = requests.filter({ hasText: 'What could Hamilton Families do with the next gift?' });
   const foodBankRequest = requests.filter({ hasText: 'What could the Food Bank do with the next gift?' });
   const centerRequest = requests.filter({ hasText: 'What could the SF LGBT Center do with the next gift?' });
   const glideRequest = requests.filter({ hasText: 'What could GLIDE do with the next gift?' });
-  for (const request of [hamiltonRequest, foodBankRequest, centerRequest, glideRequest]) {
+  const hacRequest = requests.filter({ hasText: 'What could Housing Action Coalition do with the next gift?' });
+  for (const request of [hamiltonRequest, foodBankRequest, centerRequest, glideRequest, hacRequest]) {
     await expect(request.getByText('Draft · not sent')).toBeVisible();
     await expect(request.locator('.sf-request-facts article')).toHaveCount(5);
     await expect(request.locator('.sf-request-scenarios article')).toHaveCount(3);
@@ -132,6 +133,10 @@ test('phone donors can inspect the marginal-plan and grant-look-back research co
   await expect(glideRequest).toContainText('620,513 meals served');
   await expect(glideRequest).toContainText('limited space and high demand');
   await expect(glideRequest).toContainText('$14.12M future meal agreement');
+  await expect(hacRequest).toContainText('4,500+ units reported legally enabled');
+  await expect(hacRequest).toContainText('$120K Coefficient-published 2025 advocacy grant');
+  await expect(hacRequest).toContainText('140 member organizations');
+  await expect(hacRequest).toContainText('permits, starts, completions and occupancy');
   const seed = page.locator('.sf-lookback-seed article');
   await expect(seed).toHaveCount(1);
   await expect(seed).toContainText('$120K');

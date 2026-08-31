@@ -124,6 +124,23 @@ test('phone donors reach the complete San Francisco decision state before the re
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 
+test('phone donors can search the complete SFF community-foundation partner lens', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== 'phone-390');
+  await page.goto('/san-francisco#community-foundation', { waitUntil: 'domcontentloaded' });
+  await expect(page.getByRole('heading', { name: 'Another 424 doors into the local field.' })).toBeVisible();
+  await expect(page.locator('.sf-sff-summary strong')).toHaveText(['424', '$49.52M', '43', '25', '1']);
+  await expect(page.locator('.sf-sff-grid article')).toHaveCount(12);
+  await page.getByLabel('Search SFF FY2025 partners').fill('Hamilton Families');
+  await expect(page.locator('.sf-sff-grid article')).toHaveCount(1);
+  const hamilton = page.locator('.sf-sff-grid article').first();
+  await expect(hamilton).toContainText('Hamilton Families');
+  await expect(hamilton).toContainText('$15,000');
+  await expect(hamilton).toContainText('One partner total—not an individual grant or current funding gap');
+  await expect(hamilton.getByRole('link', { name: 'Open deep evidence dossier' })).toBeVisible();
+  await expect(page.getByText('The community-foundation explorer could not refresh.')).toHaveCount(0);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
 test('phone donors can inspect the marginal-plan and grant-look-back research contract', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'phone-390');
   await page.goto('/san-francisco#protocol', { waitUntil: 'domcontentloaded' });

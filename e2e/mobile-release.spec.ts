@@ -326,11 +326,11 @@ test('phone donors can inspect the 6,688 to 25 San Francisco research funnel', a
   test.skip(testInfo.project.name !== 'phone-390');
   await page.goto('/san-francisco#research-funnel', { waitUntil: 'domcontentloaded' });
   await expect(page.getByRole('heading', { name: '6,688 records. 25 deep reviews.' })).toBeVisible();
-  await expect(page.locator('.sf-research-stages strong')).toHaveText(['6,688', '1,000', '100', '25', '5']);
+  await expect(page.locator('.sf-research-stages strong')).toHaveText(['6,688', '1,000', '100', '25', '6']);
   await expect(page.locator('.sf-deep-queue article')).toHaveCount(25);
   await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'CEA not started' })).toHaveCount(13);
-  await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'Initial review complete' })).toHaveCount(7);
-  await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'Exploratory model' })).toHaveCount(5);
+  await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'Initial review complete' })).toHaveCount(6);
+  await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'Exploratory model' })).toHaveCount(6);
   await expect(page.locator('.sf-advocacy-track')).toContainText('GrowSF');
   await expect(page.locator('.sf-advocacy-track')).toContainText('Advocacy is reviewed, not ranked.');
   await expect(page.getByRole('link', { name: /Open the SF cost-effectiveness workbook/ })).toBeVisible();
@@ -345,7 +345,7 @@ test('phone donors can inspect Project Open Hand mixed evidence and its explorat
   await expect(page.locator('#project-open-hand-review')).toContainText('The primary all-cause 90-day hospitalization outcome was not improved');
   await expect(page.locator('#project-open-hand-review')).toContainText('approximately $212,500');
   await expect(page.locator('#project-open-hand-review')).toContainText('Not published');
-  await expect(page.locator('a[href="/charities/project-open-hand"]')).toHaveCount(1);
+  await expect(page.locator('a[href="/charities/project-open-hand"]')).toHaveCount(2);
   await expect(page.locator('#project-open-hand-review .sf-deep-evidence article')).toHaveCount(3);
   await expect(page.locator('#project-open-hand-review .sf-deep-model li')).toHaveCount(14);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);

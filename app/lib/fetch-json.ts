@@ -1,5 +1,10 @@
 const retryableStatuses = new Set([408, 425, 429, 500, 502, 503, 504]);
 
+export function withRuntimeBasePath<T extends RequestInfo | URL>(input: T, pathname = typeof location === 'undefined' ? '' : location.pathname): T | string {
+  if (typeof input !== 'string' || !input.startsWith('/api/') || !pathname.startsWith('/donate')) return input;
+  return `/donate${input}`;
+}
+
 function wait(ms: number, signal?: AbortSignal | null) {
   return new Promise<void>((resolve, reject) => {
     const timer = setTimeout(() => {
@@ -20,7 +25,7 @@ export async function fetchJson<T>(input: RequestInfo | URL, init?: RequestInit,
   for (let attempt = 0; attempt < attempts; attempt += 1) {
     let response: Response;
     try {
-      response = await fetch(input, init);
+      response = await fetch(withRuntimeBasePath(input), init);
     } catch (error) {
       if (init?.signal?.aborted) throw error;
       lastError = error;

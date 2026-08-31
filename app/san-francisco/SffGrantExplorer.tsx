@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState, useSyncExternalStore } from 'react';
+import { withRuntimeBasePath } from '@/app/lib/fetch-json';
 
 type Partner = {
   id: string;
@@ -80,7 +81,7 @@ export default function SffGrantExplorer({ initialData, pdfUrl }: { initialData:
     const load = async () => {
       for (let attempt = 0; attempt < 3; attempt += 1) {
         try {
-          const response = await fetch(`/api/sf-sff-grants?${params}`, { signal: controller.signal });
+          const response = await fetch(withRuntimeBasePath(`/api/sf-sff-grants?${params}`), { signal: controller.signal });
           if (!response.ok) throw new Error(`HTTP ${response.status}`);
           const next = await response.json() as SffPageData;
           if (!cancelled) { setData(next); setError(false); }

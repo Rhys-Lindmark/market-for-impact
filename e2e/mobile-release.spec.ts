@@ -9,6 +9,7 @@ const defaultRoutes = [
   '/charities/sf-lgbt-center',
   '/charities/compass-family-services',
   '/charities/eviction-defense-collaborative',
+  '/charities/farming-hope',
   '/grants/coefficient/grants-18659-0',
   '/grants/coefficient/grants-15086-0',
   '/organizations/georgetown-university-initiative-on-innovation-development-and-evaluation',
@@ -410,17 +411,19 @@ test('phone donors can inspect the SF LGBT Center employment model without an in
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 
-test('phone donors can inspect the Farming Hope review without treating placement as causal impact', async ({ page }, testInfo) => {
+test('phone donors can inspect the Farming Hope model without treating placement as causal impact', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'phone-390');
-  await page.goto('/san-francisco#farming-hope-review', { waitUntil: 'domcontentloaded' });
-  const review = page.locator('#farming-hope-review');
-  await expect(page.getByRole('heading', { level: 2, name: 'Farming Hope', exact: true })).toBeVisible();
-  await expect(review).toContainText('Promising placement signal. Mixed transferred evidence.');
+  await page.goto('/charities/farming-hope', { waitUntil: 'domcontentloaded' });
+  const review = page.locator('.charity-report-article');
+  await expect(page.getByRole('heading', { level: 1, name: 'Farming Hope', exact: true })).toBeVisible();
+  await expect(review).toContainText('71% employment within 90 days of graduation');
+  await expect(review).toContainText('about $1.04M per additional person');
   await expect(review).toContainText('did not increase regular unsubsidized employment');
-  await expect(review).toContainText('4.0 percentage-point impact');
-  await expect(review).toContainText('Not estimable');
-  await expect(review.locator('.sf-deep-evidence article')).toHaveCount(3);
-  await expect(review.locator('.sf-deep-model li')).toHaveCount(15);
+  await expect(review).toContainText('4.0 points');
+  await expect(review).toContainText('Not estimated');
+  await expect(review).toContainText('null remains plausible');
+  await expect(review.locator('.charity-evidence-list article')).toHaveCount(3);
+  await expect(review.locator('.charity-sensitivity article')).toHaveCount(3);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 

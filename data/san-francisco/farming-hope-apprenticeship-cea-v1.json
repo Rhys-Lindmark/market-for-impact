@@ -1,0 +1,163 @@
+{
+  "version": "sf-farming-hope-apprenticeship-cea-v0.1",
+  "generatedAt": "2026-08-31T16:40:00-07:00",
+  "program": "Farming Hope 12-week paid culinary apprenticeship",
+  "status": "exploratory-transferred-employment-effect-model-not-funding-recommendation",
+  "decisionUnit": "An additional apprentice with any unemployment-insurance-covered employment during the final year of a 30-month follow-up, relative to usual community services",
+  "bottomLine": {
+    "giftUsd": 100000,
+    "historicalEquivalentApprentices": 2.40323745392818,
+    "estimatedAdditionalPeopleEverEmployedInLateFollowUpYear": 0.0961294981571272,
+    "historicalGrossCostPerReportedApprenticeUsd": 41610.53658536585,
+    "costPerAdditionalPersonEverEmployedInLateFollowUpYearUsd": 1040263.4146341463,
+    "conditionalPositiveEffectRangeUsd": {
+      "low": 520131.70731707313,
+      "high": 4161053.658536585
+    },
+    "interpretation": "Farming Hope reported $1,706,032 of 2024 job-training expense and 41 apprentices trained, or about $41,611 of gross historical expense per reported apprentice. Applying the 4.0 percentage-point pooled randomized effect from seven enhanced transitional-jobs programs gives a conditional estimate of about $1.04 million per additional person with any covered employment in the late follow-up year. The population, program, labor market, and outcome reporting differ materially, so this is a very-low-confidence transfer; a null or harmful effect remains plausible."
+  },
+  "inputs": [
+    {
+      "key": "gift_usd",
+      "label": "Illustrative gift",
+      "best": 100000,
+      "low": 100000,
+      "high": 100000,
+      "unit": "USD",
+      "basis": "Donor scenario, not published current funding room",
+      "confidence": "scenario"
+    },
+    {
+      "key": "fy2024_job_training_expense_usd",
+      "label": "FY2024 job-training program expense",
+      "best": 1706032,
+      "low": 1706032,
+      "high": 1706032,
+      "unit": "USD",
+      "basis": "Farming Hope's 2024 Form 990, Part III, line 4a. The bucket includes the full job-training program and is not an incremental or philanthropic cost.",
+      "confidence": "high for filed accounting; low for marginal use"
+    },
+    {
+      "key": "reported_apprentices_trained",
+      "label": "Reported apprentices trained",
+      "best": 41,
+      "low": 41,
+      "high": 41,
+      "unit": "people",
+      "basis": "Farming Hope's 2024 Gratitude Report. The report does not publish applications, enrollment timing, duplicate handling, exits, or complete follow-up.",
+      "confidence": "moderate"
+    },
+    {
+      "key": "historical_gross_cost_per_reported_apprentice_usd",
+      "label": "Historical gross expense per reported apprentice",
+      "best": 41610.53658536585,
+      "low": 41610.53658536585,
+      "high": 41610.53658536585,
+      "unit": "USD",
+      "basis": "$1,706,032 of filed job-training expense divided by 41 reported apprentices. This is a cross-source historical ratio, not a marginal price, causal cost, or cost per graduate or placement.",
+      "confidence": "low"
+    },
+    {
+      "key": "reported_employment_within_90_days_of_graduation",
+      "label": "Organization-reported employment within 90 days of graduation",
+      "best": 0.71,
+      "low": 0.71,
+      "high": 0.71,
+      "unit": "proportion",
+      "basis": "Farming Hope's 2024 Gratitude Report. The numerator, graduate denominator, missing follow-up, job coverage, hours, wage distribution, and comparison rate are not published. This input is descriptive and is not used as the causal effect.",
+      "confidence": "low for interpretation; not causal"
+    },
+    {
+      "key": "etjd_pooled_late_year_any_employment_effect",
+      "label": "ETJD pooled randomized late-year any-employment effect",
+      "best": 0.04,
+      "low": 0.022,
+      "high": 0.059,
+      "unit": "proportion",
+      "basis": "Across seven enhanced transitional-jobs sites, 64.4% of the program group versus 60.4% of controls had any National Directory of New Hires-covered employment in the final follow-up year; impact 4.0 points, 90% CI 2.2 to 5.9. The study populations and programs differ from Farming Hope.",
+      "confidence": "high for the pooled study; very low for direct transfer"
+    },
+    {
+      "key": "mfi_transferred_late_year_any_employment_effect",
+      "label": "MFI transferred late-year any-employment effect",
+      "best": 0.04,
+      "low": 0.01,
+      "high": 0.08,
+      "unit": "proportion",
+      "basis": "The midpoint copies the pooled ETJD randomized result rather than Farming Hope's 71% placement rate. The wider 1%-8% positive-effect scenarios reflect program and population transfer uncertainty and are not confidence bounds. Earlier transitional-jobs trials found no lasting unsubsidized-employment gain, so zero or harm remains outside the numeric range.",
+      "confidence": "very low"
+    }
+  ],
+  "formula": {
+    "historicalGrossCostPerReportedApprentice": "fy2024_job_training_expense_usd / reported_apprentices_trained",
+    "historicalEquivalentApprentices": "gift_usd / historical_gross_cost_per_reported_apprentice_usd",
+    "estimatedAdditionalPeopleEverEmployedInLateFollowUpYear": "historical_equivalent_apprentices * mfi_transferred_late_year_any_employment_effect",
+    "costPerAdditionalPersonEverEmployedInLateFollowUpYear": "historical_gross_cost_per_reported_apprentice_usd / mfi_transferred_late_year_any_employment_effect",
+    "rangeMethod": "Fixed FY2024 gross historical expense ratio with favorable, midpoint, and small-positive transferred-effect scenarios",
+    "denominatorBoundary": "Any covered employment during the final follow-up year is not continuous 12-month retention, a permanent job, a living-wage placement, earnings gain, or employment attributable to Farming Hope."
+  },
+  "sensitivity": [
+    {
+      "case": "Favorable positive transfer",
+      "causalEffect": 0.08,
+      "historicalEquivalentApprenticesPer100k": 2.40323745392818,
+      "additionalPeopleEverEmployedInLateFollowUpYearPer100k": 0.1922589963142544,
+      "costPerAdditionalPersonEverEmployedInLateFollowUpYearUsd": 520131.70731707313
+    },
+    {
+      "case": "Best guess",
+      "causalEffect": 0.04,
+      "historicalEquivalentApprenticesPer100k": 2.40323745392818,
+      "additionalPeopleEverEmployedInLateFollowUpYearPer100k": 0.0961294981571272,
+      "costPerAdditionalPersonEverEmployedInLateFollowUpYearUsd": 1040263.4146341463
+    },
+    {
+      "case": "Small positive transfer",
+      "causalEffect": 0.01,
+      "historicalEquivalentApprenticesPer100k": 2.40323745392818,
+      "additionalPeopleEverEmployedInLateFollowUpYearPer100k": 0.0240323745392818,
+      "costPerAdditionalPersonEverEmployedInLateFollowUpYearUsd": 4161053.658536585
+    }
+  ],
+  "nullEffectBoundary": "The conditional range excludes zero and harm. An earlier four-city randomized demonstration found that transitional jobs increased employment only while subsidized jobs were available and did not increase regular unsubsidized employment. If Farming Hope's apprenticeship does not improve late follow-up employment relative to existing services, if employers substitute apprentices for other workers, or if a gift replaces public, restricted, or earned funding, additional employment approaches zero or becomes negative and no finite positive impact price exists.",
+  "fundingRoom": {
+    "status": "not published",
+    "publicContext": {
+      "period": "calendar 2024 and active city-contract snapshot as of 2026-08-20",
+      "jobTrainingProgramExpenseUsd": 1706032,
+      "jobTrainingProgramServiceRevenueUsd": 112816,
+      "activeCityPrimeContractRecords": 4
+    },
+    "boundary": "The $100,000 scenario is illustrative. Farming Hope's website says gifts support paid job training alongside food recovery and community meals, but it does not publish a current apprenticeship-only budget, committed funding, remaining gap, cohort expansion, staffing constraint, employer-placement capacity, or public/earned-revenue displacement rule.",
+    "requiredNext": "Obtain a dated apprenticeship budget and $100K, $1M, and $10M expansion cases; application-to-enrollment flow; exact graduate and follow-up denominators; verified job hours, wages, benefits, and 3-, 6-, 12-, and 24-month retention; participant-level cost including wages; and restricted, public, and earned-revenue reconciliation."
+  },
+  "excludedBenefits": [
+    "The reported 71% employment-within-90-days rate as a causal effect",
+    "Graduation, paid apprenticeship hours, meals, groceries, food recovery, and earned revenue as if they were the same beneficiary outcome",
+    "Employment in all quarters, permanent employment, job quality, earnings, wage progression, and benefits because Farming Hope has not published those outcomes for the cohort",
+    "Employer substitution, avoided public costs, reduced recidivism, housing stability, recovery, confidence, belonging, and family spillovers",
+    "QALYs, WELLBYs, mortality benefits, and a 10-QALY life-substantially-bettered conversion"
+  ],
+  "sources": [
+    {
+      "url": "https://farminghope.org/wp-content/uploads/2026/07/Farming-Hope_Gratitude-Report-2024-FINAL.pdf",
+      "role": "2024 apprentices, graduation, 90-day employment, wage, and separate food-output reporting"
+    },
+    {
+      "url": "https://farminghope.org/wp-content/uploads/2026/07/Farming-Hope-990-2024-Philanthropy.org_.pdf",
+      "role": "Filed 2024 job-training expense, program-service revenue, and organization-wide finances"
+    },
+    {
+      "url": "https://farminghope.org/apprenticeships/",
+      "role": "Current 12-week, part-time, paid apprenticeship design and applicant process"
+    },
+    {
+      "url": "https://www.dol.gov/resource-library/enhanced-transitional-jobs-demonstration-evaluation-final-report",
+      "role": "Seven-site randomized pooled late-follow-up employment effect and cost range"
+    },
+    {
+      "url": "https://www.mdrc.org/work/publications/returning-work-after-prison",
+      "role": "Earlier four-city randomized null on regular unsubsidized employment"
+    }
+  ]
+}

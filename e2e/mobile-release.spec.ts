@@ -326,8 +326,8 @@ test('phone donors can inspect the 6,688 to 25 San Francisco research funnel', a
   await expect(page.getByRole('heading', { name: '6,688 records. 25 deep reviews.' })).toBeVisible();
   await expect(page.locator('.sf-research-stages strong')).toHaveText(['6,688', '1,000', '100', '25', '0']);
   await expect(page.locator('.sf-deep-queue article')).toHaveCount(25);
-  await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'CEA not started' })).toHaveCount(16);
-  await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'Initial review complete' })).toHaveCount(9);
+  await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'CEA not started' })).toHaveCount(15);
+  await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'Initial review complete' })).toHaveCount(10);
   await expect(page.locator('.sf-advocacy-track')).toContainText('GrowSF');
   await expect(page.locator('.sf-advocacy-track')).toContainText('Advocacy is reviewed, not ranked.');
   await expect(page.getByRole('link', { name: /Open the SF cost-effectiveness workbook/ })).toBeVisible();
@@ -454,6 +454,21 @@ test('phone donors can inspect the HRTC review without treating service contacts
   await expect(review).toContainText('not unique participants, completed treatment courses, durable outcomes');
   await expect(review).toContainText("not HRTC's effect size");
   await expect(review).toContainText('no statistically significant treatment-group differences');
+  await expect(review).toContainText('Not estimable');
+  await expect(review.locator('.sf-deep-evidence article')).toHaveCount(5);
+  await expect(review.locator('.sf-deep-model li')).toHaveCount(16);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('phone donors can inspect the HYA review without treating referrals as durable outcomes', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== 'phone-390');
+  await page.goto('/san-francisco#homeless-youth-alliance-review', { waitUntil: 'domcontentloaded' });
+  const review = page.locator('#homeless-youth-alliance-review');
+  await expect(page.getByRole('heading', { level: 2, name: 'Homeless Youth Alliance', exact: true })).toBeVisible();
+  await expect(review).toContainText('Strong intervention rationale. HYA effect unknown.');
+  await expect(review).toContainText('not verified enrollment, completion, sustained housing');
+  await expect(review).toContainText('supports the intervention class, not HYA');
+  await expect(review).toContainText('connection to housing is not equivalent');
   await expect(review).toContainText('Not estimable');
   await expect(review.locator('.sf-deep-evidence article')).toHaveCount(5);
   await expect(review.locator('.sf-deep-model li')).toHaveCount(16);

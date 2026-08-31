@@ -41,6 +41,23 @@ test('SFF fiscal-sponsor records remain dated source assertions rather than curr
   assert.equal(snapshot.summary.rowLevelServiceGeographyCount, 0);
 });
 
+test('current receiving reviews never carry historical sponsors forward automatically', () => {
+  assert.equal(snapshot.summary.currentReceivingEntityReviewRowCount, 11);
+  assert.equal(snapshot.summary.currentSponsorConfirmedRowCount, 5);
+  assert.equal(snapshot.summary.historicalSponsorChangedRowCount, 1);
+  assert.equal(snapshot.summary.currentReceivingEntityUnresolvedRowCount, 6);
+  assert.equal(snapshot.summary.currentDonationRouteRowCount, 9);
+  const eltimpano = snapshot.partners.find((row) => row.granteeName === 'El Tímpano');
+  assert.equal(eltimpano?.sourceReportedFiscalSponsors[0]?.sponsorName, 'Independent Arts & Media');
+  assert.equal(eltimpano?.currentReceivingEntityReview?.relationshipStatus, 'historical-sponsor-changed');
+  assert.equal(eltimpano?.currentReceivingEntityReview?.currentFiscalSponsorName, 'Mission Edge');
+  assert.match(eltimpano?.currentReceivingEntityReview?.donationPayeeInstructions ?? '', /Mission Edge/);
+  const pym = snapshot.partners.find((row) => row.granteeName === 'Palestinian Youth Movement');
+  assert.equal(pym?.sourceReportedFiscalSponsors[0]?.sponsorName, 'WESPAC Foundation, Inc.');
+  assert.equal(pym?.currentReceivingEntityReview?.currentFiscalSponsorName, null);
+  assert.equal(pym?.currentReceivingEntityReview?.relationshipStatus, 'current-receiving-entity-unresolved');
+});
+
 test('SFF source provenance remains pinned to the reviewed official PDF', () => {
   assert.equal(snapshot.source.pdfSha256, '2ecda948949b04fa7a1d29cba39bf12b6901098182d32388fbb775744ebb8e12');
   assert.equal(snapshot.source.pdfPageCount, 11);

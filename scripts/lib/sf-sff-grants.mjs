@@ -4,7 +4,7 @@ const identity = (value) => String(value ?? '').normalize('NFKC').replace(/\s+/g
 const hash = (value) => crypto.createHash('sha256').update(value).digest('hex');
 const stableId = (name) => hash(`sff-fy25:${identity(name)}`).slice(0, 16);
 
-export function buildSfSffGrants({ source, fiscalSponsorSource, irsUniverse, candidateUniverse, diligence }) {
+export function buildSfSffGrants({ source, fiscalSponsorSource, currentReceivingEntityReviews, irsUniverse, candidateUniverse, diligence }) {
   const irsByName = new Map();
   for (const row of irsUniverse.organizations) {
     const key = identity(row.name);
@@ -19,6 +19,7 @@ export function buildSfSffGrants({ source, fiscalSponsorSource, irsUniverse, can
     if (!sponsorAssertionsByProject.has(key)) sponsorAssertionsByProject.set(key, []);
     sponsorAssertionsByProject.get(key).push(assertion);
   }
+  const currentReviewByProject = new Map(currentReceivingEntityReviews.reviews.map((review) => [identity(review.projectName), review]));
 
   const partners = source.rows.map((row, index) => {
     const key = identity(row.granteeName);
@@ -26,6 +27,7 @@ export function buildSfSffGrants({ source, fiscalSponsorSource, irsUniverse, can
     const contract = contractsByName.get(key) ?? null;
     const dossier = diligenceByName.get(key) ?? null;
     const sponsorAssertions = sponsorAssertionsByProject.get(key) ?? [];
+    const currentReceivingEntityReview = currentReviewByProject.get(key) ?? null;
     const sponsors = new Map();
     for (const assertion of sponsorAssertions) {
       const sponsorKey = identity(assertion.fiscalSponsorName);
@@ -62,6 +64,7 @@ export function buildSfSffGrants({ source, fiscalSponsorSource, irsUniverse, can
       exactContractSourceName: contract?.sourceName ?? null,
       sourceReportedFiscalSponsors,
       fiscalSponsorConflictStatus: sourceReportedFiscalSponsors.length > 1 ? 'multiple-source-reported-sponsors' : 'none-observed',
+      currentReceivingEntityReview,
       diligenceKey: dossier?.key ?? null,
       diligenceName: dossier?.name ?? null,
       impactEvidenceStatus: dossier ? 'deep-evidence-dossier' : 'not-yet-assessed',
@@ -73,7 +76,7 @@ export function buildSfSffGrants({ source, fiscalSponsorSource, irsUniverse, can
   const totalFundingUsd = partners.reduce((sum, row) => sum + row.totalFundingUsd, 0);
   const semantic = { partners };
   return {
-    version: 'sf-sff-community-grants-v0.2',
+    version: 'sf-sff-community-grants-v0.3',
     generatedAt: source.retrievedAt,
     funder: 'The San Francisco Foundation',
     period: source.period,
@@ -86,6 +89,12 @@ export function buildSfSffGrants({ source, fiscalSponsorSource, irsUniverse, can
         apiUrl: fiscalSponsorSource.search.apiUrl,
         semanticHash: fiscalSponsorSource.semanticHash,
         coverageBoundary: fiscalSponsorSource.search.coverageBoundary,
+      },
+      currentReceivingEntityReviews: {
+        version: currentReceivingEntityReviews.version,
+        reviewedAt: currentReceivingEntityReviews.reviewedAt,
+        scope: currentReceivingEntityReviews.scope,
+        method: currentReceivingEntityReviews.method,
       },
       contentHash: hash(JSON.stringify(semantic)),
     },
@@ -100,6 +109,11 @@ export function buildSfSffGrants({ source, fiscalSponsorSource, irsUniverse, can
       sourceReportedFiscalSponsorRowCount: partners.filter((row) => row.sourceReportedFiscalSponsors.length > 0).length,
       distinctSourceReportedFiscalSponsorCount: new Set(partners.flatMap((row) => row.sourceReportedFiscalSponsors.map((sponsor) => identity(sponsor.sponsorName)))).size,
       fiscalSponsorConflictRowCount: partners.filter((row) => row.fiscalSponsorConflictStatus !== 'none-observed').length,
+      currentReceivingEntityReviewRowCount: partners.filter((row) => row.currentReceivingEntityReview !== null).length,
+      currentSponsorConfirmedRowCount: partners.filter((row) => row.currentReceivingEntityReview?.currentFiscalSponsorName).length,
+      historicalSponsorChangedRowCount: partners.filter((row) => row.currentReceivingEntityReview?.relationshipStatus === 'historical-sponsor-changed').length,
+      currentReceivingEntityUnresolvedRowCount: partners.filter((row) => row.currentReceivingEntityReview?.relationshipStatus === 'current-receiving-entity-unresolved').length,
+      currentDonationRouteRowCount: partners.filter((row) => row.currentReceivingEntityReview?.donationRouteStatus !== 'no-current-route-found' && row.currentReceivingEntityReview?.donationRouteStatus).length,
       diligenceMatchRowCount: partners.filter((row) => row.diligenceKey !== null).length,
       sourceNameOnlyRowCount: partners.filter((row) => row.identityStatus === 'source-name-only').length,
       rowLevelServiceGeographyCount: 0,
@@ -110,7 +124,7 @@ export function buildSfSffGrants({ source, fiscalSponsorSource, irsUniverse, can
       denominator: `This lens contains all ${partners.length} rows in SFF's published FY2025 grantee-partner PDF. SFF separately reports ${source.portfolioSummary.reportedGrantCount} grants, ${source.portfolioSummary.reportedOrganizationCount} organizations, and ${source.portfolioSummary.reportedIndividualCount} individuals; the PDF does not classify each row or explain why its row count equals the reported organization count.`,
       amount: source.amountSemantics,
       geography: 'The PDF does not publish a county or service geography per partner. A name, IRS filing address, city contract, or SFF Bay Area mandate is not used to assign a row to San Francisco service.',
-      identity: 'Crosswalks use only exact Unicode-, whitespace-, and case-normalized source names. SFF give-guide fiscal-sponsor statements are dated historical assertions, not verification of a current legal or donation relationship. IRS, contract, dossier, and sponsor records remain separate; fuzzy matching is prohibited.',
+      identity: 'Crosswalks use only exact Unicode-, whitespace-, and case-normalized source names. SFF give-guide fiscal-sponsor statements remain dated historical assertions, not verification of a current legal or donation relationship. A separate 2026-08-30 review uses only current project or fiscal-sponsor pages; donation routes, payee instructions, and sponsor identity remain distinct, and unresolved receiving entities stay visible. IRS, contract, dossier, and sponsor records remain separate; fuzzy matching is prohibited.',
       impact: 'SFF funding is funder-discovery and philanthropic-flow context. An award, amount, city contract, or exact identity link is not evidence of effectiveness, additionality, or recommendation quality.',
       fundingRoom: 'Historical aggregate funding is not current room for more funding. Every partner remains unpriced until a time-bounded marginal plan and counterfactual are reviewed.',
       coverage: source.coverageBoundary,
@@ -119,7 +133,7 @@ export function buildSfSffGrants({ source, fiscalSponsorSource, irsUniverse, can
 }
 
 export function validateSfSffGrants(snapshot) {
-  if (snapshot.version !== 'sf-sff-community-grants-v0.2') throw new Error('Unexpected SFF community-grants version.');
+  if (snapshot.version !== 'sf-sff-community-grants-v0.3') throw new Error('Unexpected SFF community-grants version.');
   if (snapshot.summary.publishedPartnerRowCount !== 424 || snapshot.partners.length !== 424) throw new Error('SFF row count does not reconcile.');
   if (snapshot.summary.publishedPartnerTotalFundingUsd !== 49_516_694) throw new Error('SFF published amount does not reconcile.');
   if (snapshot.partners.reduce((sum, row) => sum + row.totalFundingUsd, 0) !== snapshot.summary.publishedPartnerTotalFundingUsd) throw new Error('SFF partner amounts do not sum to the published total.');
@@ -136,6 +150,13 @@ export function validateSfSffGrants(snapshot) {
   if (snapshot.summary.fiscalSponsorConflictRowCount !== snapshot.partners.filter((row) => row.fiscalSponsorConflictStatus !== 'none-observed').length) throw new Error('SFF fiscal-sponsor conflicts do not reconcile.');
   if (snapshot.partners.flatMap((row) => row.sourceReportedFiscalSponsors).some((sponsor) => sponsor.assertionSemantics !== 'source-reported-at-publication-not-current-verification')) throw new Error('SFF fiscal-sponsor assertion semantics drifted.');
   if (!snapshot.source.fiscalSponsorCorpus?.semanticHash || !snapshot.source.fiscalSponsorCorpus?.coverageBoundary) throw new Error('SFF fiscal-sponsor source provenance is missing.');
+  if (snapshot.summary.currentReceivingEntityReviewRowCount !== 11) throw new Error('SFF current receiving-entity review count does not reconcile.');
+  if (snapshot.summary.currentSponsorConfirmedRowCount !== 5 || snapshot.summary.historicalSponsorChangedRowCount !== 1 || snapshot.summary.currentReceivingEntityUnresolvedRowCount !== 6 || snapshot.summary.currentDonationRouteRowCount !== 9) throw new Error('SFF current receiving-entity review summary drifted.');
+  if (snapshot.partners.some((row) => row.sourceReportedFiscalSponsors.length === 0 && row.currentReceivingEntityReview !== null)) throw new Error('SFF current review escaped the historical 11-row scope.');
+  if (snapshot.partners.some((row) => row.currentReceivingEntityReview && !row.sourceReportedFiscalSponsors.some((sponsor) => identity(sponsor.sponsorName) === identity(row.currentReceivingEntityReview.historicalSffSponsorName)))) throw new Error('SFF current review does not preserve its historical sponsor match.');
+  if (snapshot.partners.some((row) => row.currentReceivingEntityReview?.relationshipStatus === 'current-receiving-entity-unresolved' && row.currentReceivingEntityReview.currentFiscalSponsorName !== null)) throw new Error('An unresolved current receiving entity was populated.');
+  if (snapshot.partners.some((row) => row.currentReceivingEntityReview?.donationRouteStatus === 'no-current-route-found' && row.currentReceivingEntityReview.donationUrl !== null)) throw new Error('A missing donation route has a URL.');
+  if (!snapshot.source.currentReceivingEntityReviews?.version || !snapshot.source.currentReceivingEntityReviews?.method) throw new Error('SFF current receiving-entity review provenance is missing.');
   if (snapshot.summary.diligenceMatchRowCount !== snapshot.partners.filter((row) => row.diligenceKey !== null).length) throw new Error('SFF diligence matches do not reconcile.');
   const expectedHash = hash(JSON.stringify({ partners: snapshot.partners }));
   if (snapshot.source.contentHash !== expectedHash) throw new Error('SFF snapshot hash does not reconcile.');

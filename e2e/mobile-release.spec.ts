@@ -128,7 +128,7 @@ test('phone donors can search the complete SFF community-foundation partner lens
   test.skip(testInfo.project.name !== 'phone-390');
   await page.goto('/san-francisco#community-foundation', { waitUntil: 'domcontentloaded' });
   await expect(page.getByRole('heading', { name: 'Another 424 doors into the local field.' })).toBeVisible();
-  await expect(page.locator('.sf-sff-summary strong')).toHaveText(['424', '$49.52M', '43', '25', '11', '1']);
+  await expect(page.locator('.sf-sff-summary strong')).toHaveText(['424', '$49.52M', '43', '25', '11', '5']);
   await expect(page.locator('.sf-sff-grid article')).toHaveCount(12);
   await page.getByLabel('Search SFF FY2025 partners').fill('Hamilton Families');
   await expect(page.locator('.sf-sff-grid article')).toHaveCount(1);
@@ -142,7 +142,14 @@ test('phone donors can search the complete SFF community-foundation partner lens
   const eltimpano = page.locator('.sf-sff-grid article').first();
   await expect(eltimpano).toContainText('El Tímpano');
   await expect(eltimpano).toContainText('historical source assertion, not current verification');
+  await expect(eltimpano).toContainText('historical sponsor changed');
+  await expect(eltimpano).toContainText('Mission Edge');
+  await expect(eltimpano.getByRole('link', { name: 'Current donation route' })).toBeVisible();
   await expect(eltimpano.getByRole('link', { name: 'Independent Arts & Media' })).toBeVisible();
+  await page.getByLabel('Search SFF FY2025 partners').fill('');
+  await page.getByLabel('Filter SFF identity links').selectOption('current-unresolved');
+  await expect(page.locator('.sf-sff-grid article')).toHaveCount(6);
+  await expect(page.locator('.sf-sff-grid article')).toContainText(['Asian Prisoner Support Committee', 'Bay Resistance Institute', 'California Native Vote Project', 'Cooperation Richmond', 'Lavender Phoenix', 'Palestinian Youth Movement']);
   await expect(page.getByText('The community-foundation explorer could not refresh.')).toHaveCount(0);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });

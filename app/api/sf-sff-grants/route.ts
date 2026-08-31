@@ -9,12 +9,16 @@ export async function GET(request: Request) {
   const pageSize = Math.min(50, Math.max(1, Number(searchParams.get('pageSize') ?? 12)));
   const requestedPage = Math.max(1, Number(searchParams.get('page') ?? 1));
   const partners = snapshot.partners.filter((row) => {
-    const searchable = `${row.granteeName} ${row.exactIrsMatches.map((match) => match.ein).join(' ')} ${row.exactContractSourceName ?? ''} ${row.sourceReportedFiscalSponsors.map((sponsor) => sponsor.sponsorName).join(' ')}`.toLowerCase();
+    const searchable = `${row.granteeName} ${row.exactIrsMatches.map((match) => match.ein).join(' ')} ${row.exactContractSourceName ?? ''} ${row.sourceReportedFiscalSponsors.map((sponsor) => sponsor.sponsorName).join(' ')} ${row.currentReceivingEntityReview?.currentFiscalSponsorName ?? ''}`.toLowerCase();
     const identityMatch = identity === 'all'
       || (identity === 'diligence' && row.diligenceKey !== null)
       || (identity === 'irs' && row.exactIrsMatches.length > 0)
       || (identity === 'contract' && row.exactContractSourceName !== null)
       || (identity === 'sponsor' && row.sourceReportedFiscalSponsors.length > 0)
+      || (identity === 'current-reviewed' && row.currentReceivingEntityReview !== null)
+      || (identity === 'current-confirmed' && row.currentReceivingEntityReview?.currentFiscalSponsorName !== null)
+      || (identity === 'current-changed' && row.currentReceivingEntityReview?.relationshipStatus === 'historical-sponsor-changed')
+      || (identity === 'current-unresolved' && row.currentReceivingEntityReview?.relationshipStatus === 'current-receiving-entity-unresolved')
       || (identity === 'unlinked' && row.exactIrsMatches.length === 0 && row.exactContractSourceName === null && row.sourceReportedFiscalSponsors.length === 0 && row.diligenceKey === null);
     return searchable.includes(query) && identityMatch;
   }).sort((a, b) => sort === 'funding'

@@ -11,7 +11,6 @@ import sfFunding from '@/data/san-francisco/public-funding-v1.json';
 import sfResearchFunnel from '@/data/san-francisco/research-funnel-v1.json';
 import pohReview from '@/data/san-francisco/project-open-hand-review-v1.json';
 import edcReview from '@/data/san-francisco/eviction-defense-collaborative-review-v1.json';
-import compassReview from '@/data/san-francisco/compass-family-services-review-v1.json';
 import farmingHopeReview from '@/data/san-francisco/farming-hope-review-v1.json';
 import fiveKeysReview from '@/data/san-francisco/five-keys-review-v1.json';
 import harmReductionTherapyCenterReview from '@/data/san-francisco/harm-reduction-therapy-center-review-v1.json';
@@ -43,8 +42,8 @@ const candidates = [...sfDiligence.candidates].sort((a, b) => a.name.localeCompa
 const dossierCandidates = candidates.flatMap((candidate) => 'evidenceDossier' in candidate && candidate.key !== 'sf-lgbt-center' ? [{ candidate, dossier: candidate.evidenceDossier }] : []);
 const marginalPlanRequests = sfMarginalPlanRequests.packets;
 const sffInitialPage = { pagination: { page: 1, pageSize: 12, total: sffGrants.partners.length, pageCount: Math.ceil(sffGrants.partners.length / 12) }, partners: sffGrants.partners.slice(0, 12) };
-const deepReviewAnchors = new Map([['943023551', '/charities/project-open-hand'], ['943342323', '#eviction-defense-collaborative-review'], ['941156622', '#compass-family-services-review'], ['237362588', '/charities/curry-senior-center'], ['832393341', '#farming-hope-review'], ['810622701', '#five-keys-review'], ['941156481', '/charities/glide'], ['943055602', '/charities/hamilton-families'], ['943363781', '#harm-reduction-therapy-center-review'], ['813036333', '#homeless-youth-alliance-review'], ['941687559', '#huckleberry-youth-programs-review'], ['942978977', '/charities/institute-on-aging'], ['943041517', '/charities/sf-marin-food-bank'], ['943236718', '/charities/sf-lgbt-center']]);
-const canonicalResearchRoutes = new Map([['sf-lgbt-center', '/charities/sf-lgbt-center'], ['sf-marin-food-bank', '/charities/sf-marin-food-bank'], ['hamilton-families', '/charities/hamilton-families'], ['glide', '/charities/glide']]);
+const deepReviewAnchors = new Map([['943023551', '/charities/project-open-hand'], ['943342323', '#eviction-defense-collaborative-review'], ['941156622', '/charities/compass-family-services'], ['237362588', '/charities/curry-senior-center'], ['832393341', '#farming-hope-review'], ['810622701', '#five-keys-review'], ['941156481', '/charities/glide'], ['943055602', '/charities/hamilton-families'], ['943363781', '#harm-reduction-therapy-center-review'], ['813036333', '#homeless-youth-alliance-review'], ['941687559', '#huckleberry-youth-programs-review'], ['942978977', '/charities/institute-on-aging'], ['943041517', '/charities/sf-marin-food-bank'], ['943236718', '/charities/sf-lgbt-center']]);
+const canonicalResearchRoutes = new Map([['sf-lgbt-center', '/charities/sf-lgbt-center'], ['sf-marin-food-bank', '/charities/sf-marin-food-bank'], ['hamilton-families', '/charities/hamilton-families'], ['glide', '/charities/glide'], ['compass-family-services', '/charities/compass-family-services']]);
 const canonicalResearchHref = (key: string, fallback: string) => canonicalResearchRoutes.get(key) ?? fallback;
 
 const topResearchPrograms = [
@@ -55,6 +54,7 @@ const topResearchPrograms = [
   { organization: 'Curry Senior Center', program: 'Senior Vitality', overview: 'Technology, coaching, and group support intended to reduce loneliness.', price: '≈ $167,000', unit: 'per additional meaningful loneliness improvement at 12 months', evidence: 'Very uncertain', detail: 'The local study is uncontrolled and external digital-intervention evidence is heterogeneous.', href: '/charities/curry-senior-center' },
   { organization: 'Project Open Hand', program: 'Post-discharge medically tailored meals', overview: 'Condition-matched meals for recently hospitalized adults with known heart failure.', price: '≈ $213,000', unit: 'per additional 90-day heart-failure hospitalization averted', evidence: 'Mixed randomized evidence', detail: 'The randomized primary all-cause outcome was null; the modeled heart-failure result is exploratory.', href: '/charities/project-open-hand' },
   { organization: 'Hamilton Families', program: 'Homelessness prevention', overview: 'Flexible assistance and case management intended to avert family homelessness.', price: '≈ $500,000', unit: 'per additional six-month homelessness episode averted', evidence: 'Very uncertain', detail: 'The effect is transferred from external randomized evidence and the next-gift plan is unpublished.', href: '/charities/hamilton-families' },
+  { organization: 'Compass Family Services', program: 'C-Rent homelessness prevention', overview: 'Back-rent and move-in assistance paired with case management and problem-solving for at-risk families.', price: '≈ $485,000', unit: 'per additional six-month homelessness episode averted', evidence: 'Audited cost; transferred effect', detail: 'The $9,704 cost anchor is historical accounting, while the effect is discounted from external randomized evidence; a null remains plausible.', href: '/charities/compass-family-services' },
 ];
 
 const researchGates = [
@@ -175,7 +175,6 @@ export default function SanFranciscoDonorPage() {
 
       <SfDeepReview review={pohReview} number={1} id="project-open-hand-review" evidenceHeadline="Direct trial involvement. Mixed results." workbookUrl={sfResearchFunnel.workbook.url} />
       <SfDeepReview review={edcReview} number={2} id="eviction-defense-collaborative-review" evidenceHeadline="Plausible benefit. Context-dependent evidence." workbookUrl={sfResearchFunnel.workbook.url} />
-      <SfDeepReview review={compassReview} number={3} id="compass-family-services-review" evidenceHeadline="Strong need. Mixed evidence. Better measurement underway." workbookUrl={sfResearchFunnel.workbook.url} />
       <SfDeepReview review={farmingHopeReview} number={5} id="farming-hope-review" evidenceHeadline="Promising placement signal. Mixed transferred evidence." workbookUrl={sfResearchFunnel.workbook.url} />
       <SfDeepReview review={fiveKeysReview} number={6} id="five-keys-review" evidenceHeadline="Promising intervention class. Local causal effect unknown." workbookUrl={sfResearchFunnel.workbook.url} />
       <SfDeepReview review={harmReductionTherapyCenterReview} number={9} id="harm-reduction-therapy-center-review" evidenceHeadline="Relevant short-term trial. HRTC effect unknown." workbookUrl={sfResearchFunnel.workbook.url} />

@@ -1,6 +1,6 @@
 {
-  "version": "sf-compass-family-services-review-v0.1",
-  "generatedAt": "2026-08-30T22:30:00-07:00",
+  "version": "sf-compass-family-services-review-v0.2",
+  "generatedAt": "2026-08-31T15:10:00-07:00",
   "organization": {
     "name": "Compass Family Services",
     "ein": "941156622",
@@ -8,9 +8,9 @@
     "donationUrl": "https://www.compass-sf.org/give-today"
   },
   "decision": {
-    "state": "Promising intervention portfolio; Compass-specific marginal cost-effectiveness not yet estimable",
-    "summary": "Compass Family Services combines homelessness prevention, shelter, rapid rehousing, permanent subsidies, housing navigation, childcare, behavioral health, and other services. It reports substantial family reach and housing placements, while external evidence is strongest for long-term subsidies and mixed for rapid rehousing. Public sources do not identify the causal effect, incremental cost, or additional capacity of the next philanthropic gift to a named Compass program.",
-    "costEffectiveness": "Not estimable",
+    "state": "Exploratory historical-accounting model for C-Rent; not recommendation-ready",
+    "summary": "Compass's C-Rent program is a bounded homelessness-prevention pathway with audited FY2025 program expense and a geographically relevant external randomized study. Dividing $2.009 million of audited C-Rent expense by 207 reported prevention-classified families gives a $9,704 historical accounting ratio. A discounted 2.0-point transferred causal effect implies about $485,000 per additional six-month homelessness episode averted, conditional on a positive effect. A null effect remains plausible and current funding room is not published.",
+    "costEffectiveness": "Approximately $485,000 per additional six-month homelessness episode averted in an exploratory transferred-effect model",
     "roomForMoreFunding": "Not published",
     "recommendation": "Not recommendation-ready"
   },
@@ -43,10 +43,40 @@
     "totalLiabilitiesUsd": 10835237,
     "programServicesExpenseUsd": 38222158,
     "housingAssistanceUsd": 17174392,
+    "cRentProgramExpenseUsd": 2008658,
+    "cRentHousingAssistanceUsd": 1095985,
     "summary": "The consolidated FY2025 audit reports $44.77 million in revenue, $45.17 million in expenses, and $38.22 million in program services. Government grants supplied $33.36 million, and functional expenses include $17.17 million of housing assistance.",
     "boundary": "The statements consolidate Compass Family Services and Compass QALICB and span thirteen programs. Housing assistance is a subsidy or transfer, not delivery cost; assets include property and other consolidated balances. None of these totals establishes unrestricted liquidity, philanthropic additionality, or marginal funding room."
   },
   "evidence": [
+    {
+      "key": "compass-c-rent-reporting",
+      "design": "Organization-reported administrative outcome",
+      "population": "At-risk families receiving financial support in FY2025",
+      "result": "Compass reports that 207 at-risk families were prevented from becoming homeless through financial support.",
+      "transfer": "The annual report does not explicitly reconcile the 207 to unique C-Rent households, define the follow-up window, or publish a comparison. It is a prevention classification, not 207 additional causal outcomes."
+    },
+    {
+      "key": "compass-c-rent-audit",
+      "design": "Independent audited functional-expense statement",
+      "population": "Compass C-Rent in the fiscal year ended June 30, 2025",
+      "result": "The audit assigns $2,008,658 of program expense to C-Rent, including $1,095,985 of housing assistance and $912,673 of other program expense. Dividing by 207 reported families yields $9,704 of gross historical expense per reported family.",
+      "transfer": "The accounts provide a stronger cost anchor than an invented marginal price, but the ratio is not a causal cost per outcome, current marginal cost, or proof that the 207-family denominator maps exactly to the audited program."
+    },
+    {
+      "key": "santa-clara-prevention-rct",
+      "design": "Randomized offer of temporary financial assistance",
+      "population": "Marginally eligible people and families seeking homelessness-prevention assistance in Santa Clara County",
+      "result": "The offer reduced recorded homelessness within six months by 3.8 percentage points from a 4.1% control rate. Effects were larger among people with prior homelessness and households without children.",
+      "transfer": "This is strong but indirect evidence for Compass. C-Rent serves families; eligibility, risk targeting, take-up, payment amounts, services, and outcome recording differ. We therefore use a discounted 2.0-point best guess and retain a plausible null."
+    },
+    {
+      "key": "compass-prevention-public-contract",
+      "design": "San Francisco administrative contract record",
+      "population": "Active Compass - Prevention prime contract 1000022894, term July 2021 through June 2027",
+      "result": "As of August 20, 2026, the record shows $8,362,796 of award authority, $5,239,918.29 of payments, and $1,805,364.70 of remaining authority.",
+      "transfer": "These are life-to-date public-contract fields. Remaining authority is not annual flow, cash on hand, an unrestricted philanthropic gap, or verified room for more funding."
+    },
     {
       "key": "compass-reporting-and-rct",
       "design": "Organization reporting + ongoing randomized study",
@@ -70,10 +100,10 @@
     }
   ],
   "model": {
-    "nativeOutcome": "Family remaining in stable permanent housing without shelter entry or literal homelessness 12 months after subsidy or program exit",
-    "status": "not-estimable",
+    "nativeOutcome": "At-risk family avoiding recorded homelessness within six months because C-Rent provided financial assistance",
+    "status": "exploratory-transferred-effect-model",
     "missingInputs": [
-      "A named Compass program, eligible cohort, and duplicate-free family denominator for the next gift",
+      "C-Rent's eligible-applicant funnel and a duplicate-free reconciliation of the 207 reported families",
       "A pre-specified placement, housing-retention, and return-to-homelessness definition by program",
       "Complete 6-, 12-, and 24-month follow-up with attrition and unsuccessful exits",
       "A credible Compass-specific comparison or explicit sensitivity-tested transfer from external evidence",
@@ -87,6 +117,7 @@
   "reservations": [
     "The portfolio mixes prevention, shelter, rapid rehousing, permanent subsidies, housing navigation, childcare, behavioral health, and other services with different evidence and costs.",
     "The FY2025 placement and prevention figures do not publish eligible denominators, duplicate handling, program mix, follow-up, attrition, or a comparison group.",
+    "The annual report does not explicitly reconcile the 207 prevention-classified families to unique C-Rent households in the audited program-expense denominator.",
     "Calling a family 'prevented' from homelessness is an administrative classification, not a causal estimate of homelessness avoided.",
     "The audit's $17.17 million housing-assistance line is a transfer or subsidy and must not be treated as service-delivery cost.",
     "Government grants supplied most FY2025 revenue, so the additional activity created by unrestricted philanthropy is unknown.",
@@ -99,7 +130,7 @@
       "title": "FY2025 Annual Report",
       "url": "https://www.compass-sf.org/annual-report",
       "published": "FY ended 2025-06-30",
-      "retrieved": "2026-08-30",
+      "retrieved": "2026-08-31",
       "sourceType": "organization-reported"
     },
     {
@@ -107,7 +138,7 @@
       "title": "Consolidated financial statements, June 30, 2025 and 2024",
       "url": "https://www.compass-sf.org/_files/ugd/13331a_cd52c427b2074bb1ae6195c5aded399b.pdf",
       "published": "2025-12-18",
-      "retrieved": "2026-08-30",
+      "retrieved": "2026-08-31",
       "sourceType": "independent audit"
     },
     {
@@ -115,8 +146,24 @@
       "title": "Programs",
       "url": "https://www.compass-sf.org/our-programs",
       "published": "date not displayed",
-      "retrieved": "2026-08-30",
+      "retrieved": "2026-08-31",
       "sourceType": "organization-reported program scope"
+    },
+    {
+      "publisher": "The Review of Economics and Statistics",
+      "title": "The Impact of Homelessness Prevention Programs on Homelessness",
+      "url": "https://doi.org/10.1162/rest_a_01344",
+      "published": "2025",
+      "retrieved": "2026-08-31",
+      "sourceType": "randomized experiment"
+    },
+    {
+      "publisher": "City and County of San Francisco",
+      "title": "Supplier Contracts — Compass - Prevention, contract 1000022894",
+      "url": "https://data.sfgov.org/City-Management-and-Ethics/Supplier-Contracts/cqi5-hm2d",
+      "published": "data as of 2026-08-20",
+      "retrieved": "2026-08-31",
+      "sourceType": "administrative contract data"
     },
     {
       "publisher": "NYU Housing Solutions Lab",

@@ -1,0 +1,156 @@
+{
+  "version": "sf-compass-c-rent-cea-v0.1",
+  "generatedAt": "2026-08-31T15:10:00-07:00",
+  "program": "Compass Family Services C-Rent Homelessness Prevention",
+  "status": "exploratory-historical-accounting-model-not-funding-recommendation",
+  "decisionUnit": "An additional at-risk family that avoids recorded homelessness within six months because C-Rent provided financial assistance",
+  "bottomLine": {
+    "giftUsd": 100000,
+    "historicalEquivalentFamilyCases": 10.30538797545426,
+    "estimatedAdditionalHomelessnessEpisodesAverted": 0.2061077595090852,
+    "costPerAdditionalHomelessnessEpisodeAvertedUsd": 485183.0917874396,
+    "conditionalPositiveEffectRangeUsd": {
+      "low": 194073.23671497585,
+      "high": 4851830.917874396
+    },
+    "interpretation": "FY2025 audited C-Rent expense divided by 207 reported prevention-classified families is about $9,704 per reported family. Applying a judgmental 2.0-point six-month homelessness reduction produces a conditional estimate of about $485,000 per additional episode averted. A null effect remains plausible, so the true upper bound is not finite."
+  },
+  "inputs": [
+    {
+      "key": "gift_usd",
+      "label": "Illustrative gift",
+      "best": 100000,
+      "low": 100000,
+      "high": 100000,
+      "unit": "USD",
+      "basis": "Donor scenario, not published current funding room",
+      "confidence": "scenario"
+    },
+    {
+      "key": "audited_c_rent_program_expense_usd",
+      "label": "Audited C-Rent program expense",
+      "best": 2008658,
+      "low": 2008658,
+      "high": 2008658,
+      "unit": "USD",
+      "basis": "Compass FY2025 independent audit, statement of functional expenses. This is a historical full-program accounting total, not a marginal price.",
+      "confidence": "high for accounting; not marginal"
+    },
+    {
+      "key": "audited_c_rent_housing_assistance_usd",
+      "label": "Audited C-Rent housing assistance",
+      "best": 1095985,
+      "low": 1095985,
+      "high": 1095985,
+      "unit": "USD",
+      "basis": "Compass FY2025 independent audit. Housing assistance is a transfer to or for families, not delivery cost.",
+      "confidence": "high for accounting"
+    },
+    {
+      "key": "reported_prevention_classified_families",
+      "label": "Reported prevention-classified families",
+      "best": 207,
+      "low": 207,
+      "high": 207,
+      "unit": "families",
+      "basis": "Compass FY2025 annual report. The report says 207 at-risk families were prevented from becoming homeless through financial support, but does not explicitly reconcile the count to unique C-Rent households or publish a comparison group.",
+      "confidence": "moderate for reported count; not causal"
+    },
+    {
+      "key": "gross_accounting_cost_per_reported_family_usd",
+      "label": "Gross accounting cost per reported family",
+      "best": 9703.661835748792,
+      "low": 9703.661835748792,
+      "high": 9703.661835748792,
+      "unit": "USD",
+      "basis": "$2,008,658 audited C-Rent program expense divided by 207 reported prevention-classified families. This is a historical accounting ratio, not a causal cost per outcome or current marginal price.",
+      "confidence": "moderate"
+    },
+    {
+      "key": "santa_clara_randomized_offer_effect",
+      "label": "Santa Clara randomized offer effect",
+      "best": 0.038,
+      "low": 0.038,
+      "high": 0.038,
+      "unit": "proportion",
+      "basis": "A randomized offer of temporary financial assistance reduced recorded homelessness within six months by 3.8 percentage points from a 4.1% control rate. The effect was larger among people without children, limiting transfer to Compass's family population.",
+      "confidence": "high for study; indirect for Compass"
+    },
+    {
+      "key": "causal_six_month_homelessness_reduction",
+      "label": "MFI estimate of absolute six-month homelessness reduction",
+      "best": 0.02,
+      "low": 0.002,
+      "high": 0.05,
+      "unit": "proportion",
+      "basis": "Judgmental transfer discounted below the Santa Clara randomized 3.8-point offer effect because Compass serves families and does not publish the C-Rent applicant funnel, take-up, risk targeting, HMIS-linked outcome, or comparison. Five points is a favorable positive-effect scenario, not a Compass estimate.",
+      "confidence": "very low"
+    }
+  ],
+  "formula": {
+    "grossAccountingCostPerReportedFamily": "audited_c_rent_program_expense_usd / reported_prevention_classified_families",
+    "historicalEquivalentFamilyCases": "gift_usd / gross_accounting_cost_per_reported_family_usd",
+    "additionalHomelessnessEpisodesAverted": "historical_equivalent_family_cases * causal_six_month_homelessness_reduction",
+    "costPerAdditionalHomelessnessEpisodeAverted": "gross_accounting_cost_per_reported_family_usd / causal_six_month_homelessness_reduction",
+    "rangeMethod": "Fixed FY2025 historical accounting cost with favorable, midpoint, and small positive causal-effect scenarios",
+    "denominatorBoundary": "The 207-family figure is an organization-reported administrative prevention classification. The external randomized estimate is an intention-to-treat effect among marginally eligible Santa Clara applicants, not a Compass treatment effect."
+  },
+  "accountingReconciliation": {
+    "nonHousingProgramExpenseUsd": 912673,
+    "housingAssistancePerReportedFamilyUsd": 5294.613526570049,
+    "nonHousingProgramExpensePerReportedFamilyUsd": 4409.048309178744,
+    "boundary": "The audit's $1,095,985 housing-assistance line plus $912,673 of other C-Rent program expense reconciles to $2,008,658. The resulting per-family amounts are accounting ratios only."
+  },
+  "sensitivity": [
+    {
+      "case": "Favorable positive effect",
+      "causalHomelessnessReduction": 0.05,
+      "historicalEquivalentFamilyCasesPer100k": 10.30538797545426,
+      "additionalHomelessnessEpisodesAvertedPer100k": 0.515269398772713,
+      "costPerAdditionalHomelessnessEpisodeAvertedUsd": 194073.23671497585
+    },
+    {
+      "case": "Best guess",
+      "causalHomelessnessReduction": 0.02,
+      "historicalEquivalentFamilyCasesPer100k": 10.30538797545426,
+      "additionalHomelessnessEpisodesAvertedPer100k": 0.2061077595090852,
+      "costPerAdditionalHomelessnessEpisodeAvertedUsd": 485183.0917874396
+    },
+    {
+      "case": "Small positive effect",
+      "causalHomelessnessReduction": 0.002,
+      "historicalEquivalentFamilyCasesPer100k": 10.30538797545426,
+      "additionalHomelessnessEpisodesAvertedPer100k": 0.02061077595090852,
+      "costPerAdditionalHomelessnessEpisodeAvertedUsd": 4851830.917874396
+    }
+  ],
+  "nullEffectBoundary": "The numeric range is conditional on a positive effect. Compass's 207-family classification has no comparison, and the external randomized effect is not Compass-specific. If C-Rent reaches families who would remain housed anyway, substitutes for other assistance, or does not reduce six-month recorded homelessness, additional outcomes approach zero and cost per outcome has no finite upper bound.",
+  "fundingRoom": {
+    "status": "not published",
+    "publicContractContext": {
+      "contractNumber": "1000022894",
+      "scope": "Compass - Prevention",
+      "term": "2021-07-01 to 2027-06-30",
+      "awardAuthorityUsd": 8362796,
+      "paymentsUsd": 5239918.29,
+      "remainingAuthorityUsd": 1805364.7,
+      "dataAsOf": "2026-08-20"
+    },
+    "boundary": "The $100,000 scenario is illustrative. The active city contract's award authority, payments, and remaining authority are life-to-date public-contract fields—not annual flow, cash balance, philanthropic gap, or proof that a private gift adds cases.",
+    "requiredNext": "Obtain the C-Rent applicant and eligibility funnel, unique-household reconciliation, assistance ledger by source, HMIS-linked outcomes, restricted balances, public reimbursement rules, staff capacity, and time-bounded $100K, $1M, and $10M expansion plans."
+  },
+  "excludedBenefits": [
+    "Compass's 207 reported prevention classifications as additional causal outcomes",
+    "Evictions avoided, housing quality, rent burden, employment, school continuity, and family spillovers",
+    "Avoided shelter, healthcare, criminal-justice, and other public costs",
+    "Benefits from Compass shelter, rapid rehousing, permanent subsidies, childcare, behavioral health, and other programs",
+    "QALYs, WELLBYs, mortality benefits, and a 10-QALY 'life substantially bettered' conversion"
+  ],
+  "sources": [
+    { "url": "https://www.compass-sf.org/annual-report", "role": "FY2025 organization-reported prevention count" },
+    { "url": "https://www.compass-sf.org/our-programs", "role": "C-Rent program definition" },
+    { "url": "https://www.compass-sf.org/_files/ugd/13331a_cd52c427b2074bb1ae6195c5aded399b.pdf", "role": "FY2025 audited C-Rent functional expenses" },
+    { "url": "https://doi.org/10.1162/rest_a_01344", "role": "Santa Clara randomized temporary-financial-assistance effect" },
+    { "url": "https://data.sfgov.org/City-Management-and-Ethics/Supplier-Contracts/cqi5-hm2d", "role": "Active San Francisco prevention contract context" }
+  ]
+}

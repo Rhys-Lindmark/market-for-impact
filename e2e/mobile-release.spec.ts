@@ -7,6 +7,7 @@ const defaultRoutes = [
   '/charities/project-open-hand',
   '/charities/sf-marin-food-bank',
   '/charities/sf-lgbt-center',
+  '/charities/compass-family-services',
   '/grants/coefficient/grants-18659-0',
   '/grants/coefficient/grants-15086-0',
   '/organizations/georgetown-university-initiative-on-innovation-development-and-evaluation',
@@ -363,17 +364,13 @@ test('phone donors can inspect the EDC review without a fabricated causal estima
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 
-test('phone donors can inspect the Compass review without a fabricated housing impact price', async ({ page }, testInfo) => {
+test('phone donors can inspect the Compass C-Rent model and its blocked life-bettered conversion', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'phone-390');
-  await page.goto('/san-francisco#compass-family-services-review', { waitUntil: 'domcontentloaded' });
-  const review = page.locator('#compass-family-services-review');
-  await expect(page.getByRole('heading', { level: 2, name: 'Compass Family Services', exact: true })).toBeVisible();
-  await expect(review).toContainText('Strong need. Mixed evidence. Better measurement underway.');
-  await expect(review).toContainText('roughly the same outcomes as usual care');
-  await expect(review).toContainText('results are not yet published');
-  await expect(review).toContainText('Not estimable');
-  await expect(review.locator('.sf-deep-evidence article')).toHaveCount(3);
-  await expect(review.locator('.sf-deep-model li')).toHaveCount(15);
+  await page.goto('/charities/compass-family-services', { waitUntil: 'domcontentloaded' });
+  await expect(page.getByRole('heading', { level: 1, name: 'Compass Family Services', exact: true })).toBeVisible();
+  await expect(page.getByText('≈ $485K', { exact: true })).toBeVisible();
+  await expect(page.getByText('Not estimated', { exact: true })).toBeVisible();
+  await expect(page.getByText(/no finite upper bound/i)).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 

@@ -346,7 +346,7 @@ test('phone donors can inspect Project Open Hand mixed evidence and its explorat
   await expect(page.locator('#project-open-hand-review')).toContainText('Not published');
   await expect(page.locator('a[href="/charities/project-open-hand"]')).toHaveCount(1);
   await expect(page.locator('#project-open-hand-review .sf-deep-evidence article')).toHaveCount(3);
-  await expect(page.locator('#project-open-hand-review .sf-deep-model li')).toHaveCount(11);
+  await expect(page.locator('#project-open-hand-review .sf-deep-model li')).toHaveCount(14);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 

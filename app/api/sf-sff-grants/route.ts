@@ -9,7 +9,7 @@ export async function GET(request: Request) {
   const pageSize = Math.min(50, Math.max(1, Number(searchParams.get('pageSize') ?? 12)));
   const requestedPage = Math.max(1, Number(searchParams.get('page') ?? 1));
   const partners = snapshot.partners.filter((row) => {
-    const searchable = `${row.granteeName} ${row.exactIrsMatches.map((match) => match.ein).join(' ')} ${row.exactContractSourceName ?? ''} ${row.sourceReportedFiscalSponsors.map((sponsor) => sponsor.sponsorName).join(' ')} ${row.currentReceivingEntityReview?.currentFiscalSponsorName ?? ''} ${row.currentServiceGeographyReview?.serviceGeographyLabel ?? ''} ${row.currentServiceGeographyReview?.namedGeographies.join(' ') ?? ''}`.toLowerCase();
+    const searchable = `${row.granteeName} ${row.exactIrsMatches.map((match) => match.ein).join(' ')} ${row.exactContractSourceName ?? ''} ${row.sourceReportedFiscalSponsors.map((sponsor) => sponsor.sponsorName).join(' ')} ${row.currentReceivingEntityReview?.currentFiscalSponsorName ?? ''} ${row.currentServiceGeographyReview?.serviceGeographyLabel ?? ''} ${row.currentServiceGeographyReview?.namedGeographies.join(' ') ?? ''} ${row.currentDiligenceReview?.intervention.type ?? ''}`.toLowerCase();
     const identityMatch = identity === 'all'
       || (identity === 'diligence' && row.diligenceKey !== null)
       || (identity === 'irs' && row.exactIrsMatches.length > 0)
@@ -25,6 +25,7 @@ export async function GET(request: Request) {
       || (identity === 'geography-non-sf-local' && row.currentServiceGeographyReview?.scopeStatus === 'named-non-sf-local-geography')
       || (identity === 'geography-statewide' && row.currentServiceGeographyReview?.scopeStatus === 'statewide-california')
       || (identity === 'geography-transnational' && row.currentServiceGeographyReview?.scopeStatus === 'transnational-no-local-allocation')
+      || (identity === 'diligence-screened' && row.currentDiligenceReview !== null)
       || (identity === 'unlinked' && row.exactIrsMatches.length === 0 && row.exactContractSourceName === null && row.sourceReportedFiscalSponsors.length === 0 && row.diligenceKey === null);
     return searchable.includes(query) && identityMatch;
   }).sort((a, b) => sort === 'funding'

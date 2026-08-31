@@ -4,7 +4,7 @@ const identity = (value) => String(value ?? '').normalize('NFKC').replace(/\s+/g
 const hash = (value) => crypto.createHash('sha256').update(value).digest('hex');
 const stableId = (name) => hash(`sff-fy25:${identity(name)}`).slice(0, 16);
 
-export function buildSfSffGrants({ source, fiscalSponsorSource, currentReceivingEntityReviews, serviceGeographyReviews, irsUniverse, candidateUniverse, diligence }) {
+export function buildSfSffGrants({ source, fiscalSponsorSource, currentReceivingEntityReviews, serviceGeographyReviews, candidateDiligenceReviews, irsUniverse, candidateUniverse, diligence }) {
   const irsByName = new Map();
   for (const row of irsUniverse.organizations) {
     const key = identity(row.name);
@@ -21,6 +21,7 @@ export function buildSfSffGrants({ source, fiscalSponsorSource, currentReceiving
   }
   const currentReviewByProject = new Map(currentReceivingEntityReviews.reviews.map((review) => [identity(review.projectName), review]));
   const geographyReviewByProject = new Map(serviceGeographyReviews.reviews.map((review) => [identity(review.projectName), review]));
+  const diligenceReviewByProject = new Map(candidateDiligenceReviews.reviews.map((review) => [identity(review.projectName), review]));
 
   const partners = source.rows.map((row, index) => {
     const key = identity(row.granteeName);
@@ -30,6 +31,7 @@ export function buildSfSffGrants({ source, fiscalSponsorSource, currentReceiving
     const sponsorAssertions = sponsorAssertionsByProject.get(key) ?? [];
     const currentReceivingEntityReview = currentReviewByProject.get(key) ?? null;
     const currentServiceGeographyReview = geographyReviewByProject.get(key) ?? null;
+    const currentDiligenceReview = diligenceReviewByProject.get(key) ?? null;
     const sponsors = new Map();
     for (const assertion of sponsorAssertions) {
       const sponsorKey = identity(assertion.fiscalSponsorName);
@@ -62,6 +64,7 @@ export function buildSfSffGrants({ source, fiscalSponsorSource, currentReceiving
       serviceGeography: null,
       serviceGeographyStatus: 'not-published-in-list',
       currentServiceGeographyReview,
+      currentDiligenceReview,
       identityStatus,
       exactIrsMatches,
       exactContractSourceName: contract?.sourceName ?? null,
@@ -79,7 +82,7 @@ export function buildSfSffGrants({ source, fiscalSponsorSource, currentReceiving
   const totalFundingUsd = partners.reduce((sum, row) => sum + row.totalFundingUsd, 0);
   const semantic = { partners };
   return {
-    version: 'sf-sff-community-grants-v0.4',
+    version: 'sf-sff-community-grants-v0.5',
     generatedAt: source.retrievedAt,
     funder: 'The San Francisco Foundation',
     period: source.period,
@@ -104,6 +107,12 @@ export function buildSfSffGrants({ source, fiscalSponsorSource, currentReceiving
         reviewedAt: serviceGeographyReviews.reviewedAt,
         scope: serviceGeographyReviews.scope,
         method: serviceGeographyReviews.method,
+      },
+      candidateDiligenceReviews: {
+        version: candidateDiligenceReviews.version,
+        reviewedAt: candidateDiligenceReviews.reviewedAt,
+        scope: candidateDiligenceReviews.scope,
+        method: candidateDiligenceReviews.method,
       },
       contentHash: hash(JSON.stringify(semantic)),
     },
@@ -132,6 +141,8 @@ export function buildSfSffGrants({ source, fiscalSponsorSource, currentReceiving
       namedNonSfLocalGeographyRowCount: partners.filter((row) => row.currentServiceGeographyReview?.scopeStatus === 'named-non-sf-local-geography').length,
       statewideCaliforniaScopeRowCount: partners.filter((row) => row.currentServiceGeographyReview?.scopeStatus === 'statewide-california').length,
       transnationalNoLocalAllocationRowCount: partners.filter((row) => row.currentServiceGeographyReview?.scopeStatus === 'transnational-no-local-allocation').length,
+      currentDiligenceReviewRowCount: partners.filter((row) => row.currentDiligenceReview !== null).length,
+      recommendationReadyDiligenceRowCount: partners.filter((row) => row.currentDiligenceReview?.reviewStatus === 'recommendation-ready').length,
       rowLevelServiceGeographyCount: 0,
       publishableRoomForFundingCount: 0,
     },
@@ -149,7 +160,7 @@ export function buildSfSffGrants({ source, fiscalSponsorSource, currentReceiving
 }
 
 export function validateSfSffGrants(snapshot) {
-  if (snapshot.version !== 'sf-sff-community-grants-v0.4') throw new Error('Unexpected SFF community-grants version.');
+  if (snapshot.version !== 'sf-sff-community-grants-v0.5') throw new Error('Unexpected SFF community-grants version.');
   if (snapshot.summary.publishedPartnerRowCount !== 424 || snapshot.partners.length !== 424) throw new Error('SFF row count does not reconcile.');
   if (snapshot.summary.publishedPartnerTotalFundingUsd !== 49_516_694) throw new Error('SFF published amount does not reconcile.');
   if (snapshot.partners.reduce((sum, row) => sum + row.totalFundingUsd, 0) !== snapshot.summary.publishedPartnerTotalFundingUsd) throw new Error('SFF partner amounts do not sum to the published total.');
@@ -179,6 +190,13 @@ export function validateSfSffGrants(snapshot) {
   if (snapshot.partners.filter((row) => row.currentServiceGeographyReview?.sanFranciscoRelevance === 'explicit-audience-presence-within-regional-scope').some((row) => row.granteeName !== 'El Tímpano')) throw new Error('SFF review inferred explicit San Francisco audience presence.');
   if (snapshot.partners.some((row) => row.currentServiceGeographyReview && (!row.currentServiceGeographyReview.sourceUrl || !row.currentServiceGeographyReview.sourceClaim || !row.currentServiceGeographyReview.retrievedAt || !row.currentServiceGeographyReview.limitation))) throw new Error('SFF service-geography provenance is incomplete.');
   if (!snapshot.source.serviceGeographyReviews?.version || !snapshot.source.serviceGeographyReviews?.method) throw new Error('SFF service-geography review provenance is missing.');
+  if (snapshot.summary.currentDiligenceReviewRowCount !== 1 || snapshot.summary.recommendationReadyDiligenceRowCount !== 0) throw new Error('SFF candidate diligence summary drifted.');
+  if (snapshot.partners.some((row) => row.currentDiligenceReview !== null && (row.currentServiceGeographyReview?.sanFranciscoRelevance !== 'explicit-audience-presence-within-regional-scope' || !row.currentReceivingEntityReview?.currentFiscalSponsorName))) throw new Error('SFF candidate diligence escaped its identity and geography gate.');
+  const reviewedCandidate = snapshot.partners.find((row) => row.currentDiligenceReview !== null);
+  if (reviewedCandidate?.granteeName !== 'El Tímpano') throw new Error('Unexpected SFF candidate diligence row.');
+  if (reviewedCandidate.currentDiligenceReview.financials.projectRevenueUsd !== null || reviewedCandidate.currentDiligenceReview.financials.projectExpensesUsd !== null || reviewedCandidate.currentDiligenceReview.fundingRoom.status !== 'not-published') throw new Error('SFF candidate diligence inferred finances or funding room.');
+  if (reviewedCandidate.currentDiligenceReview.evidenceLayers.length < 4 || reviewedCandidate.currentDiligenceReview.evidenceLayers.some((layer) => !layer.url.startsWith('https://') || !layer.retrievedAt || !layer.transferLimit)) throw new Error('SFF candidate diligence evidence trail is incomplete.');
+  if (!snapshot.source.candidateDiligenceReviews?.version || !snapshot.source.candidateDiligenceReviews?.method) throw new Error('SFF candidate diligence provenance is missing.');
   if (snapshot.summary.diligenceMatchRowCount !== snapshot.partners.filter((row) => row.diligenceKey !== null).length) throw new Error('SFF diligence matches do not reconcile.');
   const expectedHash = hash(JSON.stringify({ partners: snapshot.partners }));
   if (snapshot.source.contentHash !== expectedHash) throw new Error('SFF snapshot hash does not reconcile.');

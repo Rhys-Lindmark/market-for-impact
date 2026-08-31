@@ -77,6 +77,25 @@ test('current service-geography reviews preserve SF-specific and regional bounda
   assert.ok(snapshot.partners.every((row) => row.serviceGeography === null && row.serviceGeographyStatus === 'not-published-in-list'));
 });
 
+test('El Tímpano screening preserves reach, pooled evidence, financial missingness, and recommendation blockers', () => {
+  assert.equal(snapshot.summary.currentDiligenceReviewRowCount, 1);
+  assert.equal(snapshot.summary.recommendationReadyDiligenceRowCount, 0);
+  const eltimpano = snapshot.partners.find((row) => row.granteeName === 'El Tímpano');
+  const review = eltimpano?.currentDiligenceReview;
+  assert.equal(review?.reviewStatus, 'screening-complete-recommendation-blocked');
+  assert.equal(review?.entity.currentFiscalSponsorName, 'Mission Edge');
+  assert.equal(review?.financials.projectRevenueUsd, null);
+  assert.equal(review?.financials.projectExpensesUsd, null);
+  assert.equal(review?.financials.publishedPartnershipRevenueUsd, 350_000);
+  assert.equal(review?.evidenceLayers.length, 5);
+  assert.match(review?.evidenceLayers.find((layer) => layer.publisher.includes('Columbia Journalism Review'))?.design ?? '', /randomized controlled trial/i);
+  assert.match(review?.evidenceLayers.find((layer) => layer.publisher.includes('Columbia Journalism Review'))?.transferLimit ?? '', /pools three outlets/i);
+  assert.equal(review?.fundingRoom.status, 'not-published');
+  assert.deepEqual(review?.fundingRoom.giftSizesUsd, [100_000, 1_000_000, 10_000_000]);
+  assert.ok(review?.missingForRecommendation.some((gap) => /San Francisco-specific cohort/i.test(gap)));
+  assert.ok(review?.missingForRecommendation.some((gap) => /QALY.*WELLBY.*life-substantially-bettered/i.test(gap)));
+});
+
 test('SFF source provenance remains pinned to the reviewed official PDF', () => {
   assert.equal(snapshot.source.pdfSha256, '2ecda948949b04fa7a1d29cba39bf12b6901098182d32388fbb775744ebb8e12');
   assert.equal(snapshot.source.pdfPageCount, 11);

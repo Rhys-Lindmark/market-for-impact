@@ -326,8 +326,8 @@ test('phone donors can inspect the 6,688 to 25 San Francisco research funnel', a
   await expect(page.getByRole('heading', { name: '6,688 records. 25 deep reviews.' })).toBeVisible();
   await expect(page.locator('.sf-research-stages strong')).toHaveText(['6,688', '1,000', '100', '25', '0']);
   await expect(page.locator('.sf-deep-queue article')).toHaveCount(25);
-  await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'CEA not started' })).toHaveCount(14);
-  await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'Initial review complete' })).toHaveCount(11);
+  await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'CEA not started' })).toHaveCount(13);
+  await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'Initial review complete' })).toHaveCount(12);
   await expect(page.locator('.sf-advocacy-track')).toContainText('GrowSF');
   await expect(page.locator('.sf-advocacy-track')).toContainText('Advocacy is reviewed, not ranked.');
   await expect(page.getByRole('link', { name: /Open the SF cost-effectiveness workbook/ })).toBeVisible();
@@ -487,5 +487,21 @@ test('phone donors can inspect the Huckleberry review without pooling unlike out
   await expect(review).toContainText('Not estimable');
   await expect(review.locator('.sf-deep-evidence article')).toHaveCount(5);
   await expect(review.locator('.sf-deep-model li')).toHaveCount(16);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('phone donors can inspect the Institute on Aging review without treating calls as causal impact', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== 'phone-390');
+  await page.goto('/charities/institute-on-aging', { waitUntil: 'domcontentloaded' });
+  const review = page.locator('.charity-report-article');
+  await expect(page.getByRole('heading', { level: 1, name: 'Institute on Aging', exact: true })).toBeVisible();
+  await expect(review).toContainText('Promising human connection. A weak causal record.');
+  await expect(review).toContainText('Calls are not unique participants');
+  await expect(review).toContainText('no concurrent control group');
+  await expect(review).toContainText('self-selected rather than assigned');
+  await expect(review).toContainText('Not published');
+  await expect(review).toContainText('roughly $15,000 per six-month loneliness remission');
+  await expect(review.locator('.charity-evidence-list article')).toHaveCount(5);
+  await expect(review.locator('.charity-sensitivity article')).toHaveCount(3);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });

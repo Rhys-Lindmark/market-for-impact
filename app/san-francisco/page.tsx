@@ -8,6 +8,7 @@ import sfMarginalPlanRequests from '@/data/san-francisco/marginal-plan-requests-
 import sfDiligence from '@/data/san-francisco/nonprofit-diligence-v1.json';
 import sfOutcomes from '@/data/san-francisco/outcome-ontology-v1.json';
 import sfFunding from '@/data/san-francisco/public-funding-v1.json';
+import sfResearchFunnel from '@/data/san-francisco/research-funnel-v1.json';
 import sffGrants from '@/data/san-francisco/sff-community-grants-v1.json';
 import SffGrantExplorer from './SffGrantExplorer';
 
@@ -109,6 +110,27 @@ export default function SanFranciscoDonorPage() {
           <article className="blocked"><span>04 · Recommendation-ready</span><strong>{integer.format(sfDiligence.summary.candidatesWithPublishedMarginalGap)}</strong><h3>Publishable opportunities</h3><p>No candidate yet has both independently credible marginal-impact evidence and a reviewed, time-bounded funding plan.</p><a href="#research-gates">See what is missing →</a></article>
         </div>
         <div className="sf-funnel-rule"><strong>Decision rule.</strong><span>Scale, Charity Navigator ratings, contracts, reach, and organization-reported outcomes can all inform diligence. None alone becomes an MFI effectiveness ranking.</span></div>
+      </section>
+
+      <section className="sf-research-funnel" id="research-funnel" aria-labelledby="sf-research-funnel-title">
+        <header>
+          <div><p className="kicker">THE RESEARCH PIPELINE · PRIORITY, NOT IMPACT</p><h2 id="sf-research-funnel-title">6,688 records. 25 deep reviews.</h2></div>
+          <p>We are narrowing the local nonprofit field before making recommendations. Every number below describes research status—not proven effectiveness.</p>
+        </header>
+        <div className="sf-research-stages" aria-label="San Francisco research funnel">
+          {sfResearchFunnel.stages.map((stage, index) => <article key={stage.key}><span>{String(index + 1).padStart(2, '0')}</span><strong>{integer.format(stage.count)}</strong><h3>{stage.label}</h3><p>{stage.state}</p></article>)}
+        </div>
+        <div className="sf-research-contract">
+          <div><span>Screening contract</span><h3>What earns the next hour of research?</h3><p>{sfResearchFunnel.eligibilityContract.prioritySignals}</p><strong>{sfResearchFunnel.eligibilityContract.boundary}</strong></div>
+          <a href={sfResearchFunnel.workbook.url} target="_blank" rel="noreferrer"><span>LIVE RESEARCH MODEL</span><strong>Open the SF cost-effectiveness workbook</strong><small>{sfResearchFunnel.workbook.status}</small><b>↗</b></a>
+        </div>
+        <div className="sf-deep-queue">
+          <header><div><span>THE FIRST 25 · ALPHABETICAL, NOT RANKED</span><h3>GiveWell-style reports queued.</h3></div><p>Each report must cover intervention evidence, organization-specific results, costs, counterfactuals, funding room, sensitivity, reservations, and sources.</p></header>
+          <div>{sfResearchFunnel.deepDiveRows.map((row) => <article key={row.ein}><span>{String(row.queuePosition).padStart(2, '0')}</span><div><h4>{row.displayName}</h4><p>{row.intervention}</p><small>EIN {row.ein} · {row.exactContractSourceName ? 'city-contract link' : 'no exact city-contract link'}</small></div><b>{row.costEffectivenessStatus === 'not-estimable' ? 'CEA not started' : row.costEffectivenessStatus}</b></article>)}</div>
+        </div>
+        <details className="sf-report-contract"><summary>Open the common 12-part report contract</summary><ol>{sfResearchFunnel.reportContract.map((item) => <li key={item}>{item}</li>)}</ol></details>
+        <aside className="sf-advocacy-track"><div><span>SEPARATE EVIDENCE TRACK</span><h3>Advocacy is reviewed, not ranked.</h3></div><p>{sfResearchFunnel.interpretation.advocacy}</p><ul>{sfResearchFunnel.advocacyEvidenceTrack.map((row) => <li key={row.name}><strong>{row.name}</strong><span>{row.researchMode}</span></li>)}</ul></aside>
+        <footer><p><strong>Current result: 0 of 25 complete.</strong> {sfResearchFunnel.interpretation.costEffectiveness}</p><div>{sfResearchFunnel.sources.map((source) => <a key={source.url} href={source.url} target="_blank" rel="noreferrer">{source.title} ↗</a>)}</div></footer>
       </section>
 
       <section className="sf-brief-context" aria-labelledby="sf-context-title">

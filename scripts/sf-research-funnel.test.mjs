@@ -8,7 +8,7 @@ const snapshot = buildSfResearchFunnel({ irsUniverse: read('data/san-francisco/i
 
 test('builds a nested research funnel without implying impact', () => {
   validateSfResearchFunnel(snapshot);
-  assert.deepEqual(snapshot.summary, { universeCount: 6688, machineEligibleCount: 1103, shallowScreenCount: 1000, priorityReviewCount: 100, deepDiveQueueCount: 25, completedInitialReviewCount: 8, completedCostEffectivenessCount: 0 });
+  assert.deepEqual(snapshot.summary, { universeCount: 6688, machineEligibleCount: 1103, shallowScreenCount: 1000, priorityReviewCount: 100, deepDiveQueueCount: 25, completedInitialReviewCount: 9, completedCostEffectivenessCount: 0 });
   assert.equal(new Set(snapshot.priority1000).size, 1000);
   assert.equal(new Set(snapshot.priority100).size, 100);
   assert.equal(snapshot.interpretation.ranking.includes('not top-charity lists'), true);

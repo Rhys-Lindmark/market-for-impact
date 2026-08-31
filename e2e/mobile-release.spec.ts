@@ -326,8 +326,8 @@ test('phone donors can inspect the 6,688 to 25 San Francisco research funnel', a
   await expect(page.getByRole('heading', { name: '6,688 records. 25 deep reviews.' })).toBeVisible();
   await expect(page.locator('.sf-research-stages strong')).toHaveText(['6,688', '1,000', '100', '25', '0']);
   await expect(page.locator('.sf-deep-queue article')).toHaveCount(25);
-  await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'CEA not started' })).toHaveCount(17);
-  await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'Initial review complete' })).toHaveCount(8);
+  await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'CEA not started' })).toHaveCount(16);
+  await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'Initial review complete' })).toHaveCount(9);
   await expect(page.locator('.sf-advocacy-track')).toContainText('GrowSF');
   await expect(page.locator('.sf-advocacy-track')).toContainText('Advocacy is reviewed, not ranked.');
   await expect(page.getByRole('link', { name: /Open the SF cost-effectiveness workbook/ })).toBeVisible();
@@ -439,6 +439,21 @@ test('phone donors can inspect the Hamilton review without double-counting housi
   await expect(review).toContainText('Durable subsidy evidence. Rapid-rehousing effect uncertain.');
   await expect(review).toContainText('subset of 344, not an additional outcome count');
   await expect(review).toContainText('Long-term housing subsidies produced the broadest benefits');
+  await expect(review).toContainText('Not estimable');
+  await expect(review.locator('.sf-deep-evidence article')).toHaveCount(5);
+  await expect(review.locator('.sf-deep-model li')).toHaveCount(16);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('phone donors can inspect the HRTC review without treating service contacts as causal impact', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== 'phone-390');
+  await page.goto('/san-francisco#harm-reduction-therapy-center-review', { waitUntil: 'domcontentloaded' });
+  const review = page.locator('#harm-reduction-therapy-center-review');
+  await expect(page.getByRole('heading', { level: 2, name: 'Harm Reduction Therapy Center', exact: true })).toBeVisible();
+  await expect(review).toContainText('Relevant short-term trial. HRTC effect unknown.');
+  await expect(review).toContainText('not unique participants, completed treatment courses, durable outcomes');
+  await expect(review).toContainText("not HRTC's effect size");
+  await expect(review).toContainText('no statistically significant treatment-group differences');
   await expect(review).toContainText('Not estimable');
   await expect(review.locator('.sf-deep-evidence article')).toHaveCount(5);
   await expect(review.locator('.sf-deep-model li')).toHaveCount(16);

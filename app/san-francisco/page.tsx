@@ -12,7 +12,6 @@ import sfResearchFunnel from '@/data/san-francisco/research-funnel-v1.json';
 import pohReview from '@/data/san-francisco/project-open-hand-review-v1.json';
 import edcReview from '@/data/san-francisco/eviction-defense-collaborative-review-v1.json';
 import compassReview from '@/data/san-francisco/compass-family-services-review-v1.json';
-import curryReview from '@/data/san-francisco/curry-senior-center-review-v1.json';
 import farmingHopeReview from '@/data/san-francisco/farming-hope-review-v1.json';
 import fiveKeysReview from '@/data/san-francisco/five-keys-review-v1.json';
 import glideReview from '@/data/san-francisco/glide-review-v1.json';
@@ -46,7 +45,7 @@ const candidates = [...sfDiligence.candidates].sort((a, b) => a.name.localeCompa
 const dossierCandidates = candidates.flatMap((candidate) => 'evidenceDossier' in candidate ? [{ candidate, dossier: candidate.evidenceDossier }] : []);
 const marginalPlanRequests = sfMarginalPlanRequests.packets;
 const sffInitialPage = { pagination: { page: 1, pageSize: 12, total: sffGrants.partners.length, pageCount: Math.ceil(sffGrants.partners.length / 12) }, partners: sffGrants.partners.slice(0, 12) };
-const deepReviewAnchors = new Map([['943023551', '#project-open-hand-review'], ['943342323', '#eviction-defense-collaborative-review'], ['941156622', '#compass-family-services-review'], ['237362588', '#curry-senior-center-review'], ['832393341', '#farming-hope-review'], ['810622701', '#five-keys-review'], ['941156481', '#glide-review'], ['943055602', '#hamilton-families-review'], ['943363781', '#harm-reduction-therapy-center-review'], ['813036333', '#homeless-youth-alliance-review'], ['941687559', '#huckleberry-youth-programs-review'], ['942978977', '/charities/institute-on-aging']]);
+const deepReviewAnchors = new Map([['943023551', '#project-open-hand-review'], ['943342323', '#eviction-defense-collaborative-review'], ['941156622', '#compass-family-services-review'], ['237362588', '/charities/curry-senior-center'], ['832393341', '#farming-hope-review'], ['810622701', '#five-keys-review'], ['941156481', '#glide-review'], ['943055602', '#hamilton-families-review'], ['943363781', '#harm-reduction-therapy-center-review'], ['813036333', '#homeless-youth-alliance-review'], ['941687559', '#huckleberry-youth-programs-review'], ['942978977', '/charities/institute-on-aging']]);
 
 const researchGates = [
   { number: '01', title: 'Verify the entity', copy: 'Confirm the legal entity, donation vehicle, EIN, service geography, and which program a gift would support.' },
@@ -139,17 +138,16 @@ export default function SanFranciscoDonorPage() {
         </div>
         <div className="sf-deep-queue">
           <header><div><span>THE FIRST 25 · ALPHABETICAL, NOT RANKED</span><h3>GiveWell-style reports queued.</h3></div><p>Each report must cover intervention evidence, organization-specific results, costs, counterfactuals, funding room, sensitivity, reservations, and sources.</p></header>
-          <div>{sfResearchFunnel.deepDiveRows.map((row) => <article key={row.ein}><span>{String(row.queuePosition).padStart(2, '0')}</span><div><h4>{row.displayName}</h4><p>{row.intervention}</p><small>EIN {row.ein} · {row.exactContractSourceName ? 'city-contract link' : 'no exact city-contract link'}</small>{row.reportStatus === 'initial-review-complete' && <a href={deepReviewAnchors.get(row.ein)}>Open initial review ↓</a>}</div><b>{row.reportStatus === 'initial-review-complete' ? 'Initial review complete' : 'CEA not started'}</b></article>)}</div>
+          <div>{sfResearchFunnel.deepDiveRows.map((row) => <article key={row.ein}><span>{String(row.queuePosition).padStart(2, '0')}</span><div><h4>{row.displayName}</h4><p>{row.intervention}</p><small>EIN {row.ein} · {row.exactContractSourceName ? 'city-contract link' : 'no exact city-contract link'}</small>{row.reportStatus === 'initial-review-complete' && <a href={deepReviewAnchors.get(row.ein)}>{row.costEffectivenessStatus === 'exploratory-model' ? 'Open full report →' : 'Open initial review ↓'}</a>}</div><b>{row.costEffectivenessStatus === 'exploratory-model' ? 'Exploratory model' : row.reportStatus === 'initial-review-complete' ? 'Initial review complete' : 'CEA not started'}</b></article>)}</div>
         </div>
         <details className="sf-report-contract"><summary>Open the common 12-part report contract</summary><ol>{sfResearchFunnel.reportContract.map((item) => <li key={item}>{item}</li>)}</ol></details>
         <aside className="sf-advocacy-track"><div><span>SEPARATE EVIDENCE TRACK</span><h3>Advocacy is reviewed, not ranked.</h3></div><p>{sfResearchFunnel.interpretation.advocacy}</p><ul>{sfResearchFunnel.advocacyEvidenceTrack.map((row) => <li key={row.name}><strong>{row.name}</strong><span>{row.researchMode}</span></li>)}</ul></aside>
-        <footer><p><strong>Current result: {sfResearchFunnel.summary.completedInitialReviewCount} of 25 initial reviews complete; 1 exploratory model and 0 recommendation-grade CEAs.</strong> {sfResearchFunnel.interpretation.costEffectiveness}</p><div>{sfResearchFunnel.sources.map((source) => <a key={source.url} href={source.url} target="_blank" rel="noreferrer">{source.title} ↗</a>)}</div></footer>
+        <footer><p><strong>Current result: {sfResearchFunnel.summary.completedInitialReviewCount} of 25 initial reviews complete; {sfResearchFunnel.summary.exploratoryModelCount} exploratory models and {sfResearchFunnel.summary.completedCostEffectivenessCount} recommendation-grade CEAs.</strong> {sfResearchFunnel.interpretation.costEffectiveness}</p><div>{sfResearchFunnel.sources.map((source) => <a key={source.url} href={source.url} target="_blank" rel="noreferrer">{source.title} ↗</a>)}</div></footer>
       </section>
 
       <SfDeepReview review={pohReview} number={1} id="project-open-hand-review" evidenceHeadline="Direct trial involvement. Mixed results." workbookUrl={sfResearchFunnel.workbook.url} />
       <SfDeepReview review={edcReview} number={2} id="eviction-defense-collaborative-review" evidenceHeadline="Plausible benefit. Context-dependent evidence." workbookUrl={sfResearchFunnel.workbook.url} />
       <SfDeepReview review={compassReview} number={3} id="compass-family-services-review" evidenceHeadline="Strong need. Mixed evidence. Better measurement underway." workbookUrl={sfResearchFunnel.workbook.url} />
-      <SfDeepReview review={curryReview} number={4} id="curry-senior-center-review" evidenceHeadline="Relevant local research. Causal uncertainty remains." workbookUrl={sfResearchFunnel.workbook.url} />
       <SfDeepReview review={farmingHopeReview} number={5} id="farming-hope-review" evidenceHeadline="Promising placement signal. Mixed transferred evidence." workbookUrl={sfResearchFunnel.workbook.url} />
       <SfDeepReview review={fiveKeysReview} number={6} id="five-keys-review" evidenceHeadline="Promising intervention class. Local causal effect unknown." workbookUrl={sfResearchFunnel.workbook.url} />
       <SfDeepReview review={glideReview} number={7} id="glide-review" evidenceHeadline="Multiple promising pathways. No single marginal case." workbookUrl={sfResearchFunnel.workbook.url} />

@@ -1,0 +1,58 @@
+{
+  "version": "sf-curry-senior-vitality-cea-v0.1",
+  "generatedAt": "2026-08-31T09:42:00-07:00",
+  "program": "Senior Vitality year-one technology, connectivity, group instruction, tutoring, and health coaching",
+  "decisionUnit": "additional participant with at least a 0.5 standard-deviation improvement in loneliness at 12 months",
+  "status": "exploratory-model-not-funding-recommendation",
+  "bottomLine": {
+    "giftUsd": 100000,
+    "estimatedParticipants": 20.83,
+    "estimatedAdditionalMeaningfulImprovements": 0.6,
+    "costPerAdditionalMeaningfulImprovementUsd": 167217,
+    "conditionalPositiveEffectRangeUsd": { "low": 37909, "high": 2266664 },
+    "interpretation": "Our best guess is roughly $170,000 per additional participant achieving at least a 0.5 standard-deviation loneliness improvement at 12 months. Conditional on a positive causal effect, the modeled range is about $38,000–$2.3 million. A null or harmful effect remains plausible, so the true upper bound is not finite."
+  },
+  "formula": {
+    "participants": "gift_usd / marginal_cost_per_participant_usd",
+    "incrementalMeaningfulImprovementProbability": "normal_cdf(-meaningful_change_threshold_sd + causal_mean_shift_sd) - normal_cdf(-meaningful_change_threshold_sd)",
+    "additionalMeaningfulImprovements": "participants * incremental_meaningful_improvement_probability",
+    "costPerAdditionalMeaningfulImprovement": "marginal_cost_per_participant_usd / incremental_meaningful_improvement_probability",
+    "rangeMethod": "conditional positive-effect range: optimistic = low cost with high positive mean shift; pessimistic = high cost with low positive mean shift",
+    "distributionAssumption": "Individual 12-month loneliness changes are modeled as normally distributed with standard deviation 1; the intervention shifts the mean without changing variance. This is an MFI approximation, not a property established by the Curry study."
+  },
+  "inputs": [
+    { "key": "gift_usd", "label": "Illustrative gift", "best": 100000, "low": 100000, "high": 100000, "unit": "USD", "basis": "Donor scenario, not published funding room", "confidence": "scenario" },
+    { "key": "equipment_package_per_participant_usd", "label": "iPad, wearable, scale, setup, and replacement allowance", "best": 900, "low": 500, "high": 1300, "unit": "USD", "basis": "MFI replacement-cost assumption for the equipment package described in the study; Curry does not publish per-participant equipment cost", "confidence": "very low" },
+    { "key": "first_year_connectivity_per_participant_usd", "label": "First-year home internet and connectivity support", "best": 900, "low": 600, "high": 1200, "unit": "USD", "basis": "MFI assumption based on 12 months of service plus setup; the study says Curry paid first-year internet but does not publish cost", "confidence": "very low" },
+    { "key": "staff_partner_overhead_per_participant_usd", "label": "Group instruction, tutoring, health coaching, partner, and overhead resources", "best": 3000, "low": 1400, "high": 5500, "unit": "USD", "basis": "MFI resource assumption for a one-year, cohorts-of-up-to-15 program; not reconciled to Curry program accounts or in-kind partner support", "confidence": "very low" },
+    { "key": "marginal_cost_per_participant_usd", "label": "Twelve-month marginal cost per Senior Vitality participant", "best": 4800, "low": 2500, "high": 8000, "unit": "USD", "basis": "Sum of equipment, connectivity, and staff/partner/overhead assumptions; not Curry's reported unit cost", "confidence": "very low" },
+    { "key": "observed_within_person_loneliness_change_sd", "label": "Observed 12-month within-person loneliness change", "best": 0.24, "low": 0.24, "high": 0.24, "unit": "SD improvement", "basis": "Cohen's d=-0.24 among 90 participants with follow-up in Curry's uncontrolled study; sign shown here as improvement magnitude", "confidence": "moderate for the analyzed sample; not causal" },
+    { "key": "causal_mean_shift_sd", "label": "MFI estimate of causal 12-month loneliness mean shift", "best": 0.08, "low": 0.01, "high": 0.18, "unit": "SD improvement", "basis": "Judgmental one-third attribution of the observed 0.24 SD within-person change. The positive-effect sensitivity is informed by conflicting 2021 and 2026 digital-intervention meta-analyses; null or harm remains outside the numeric range and explicitly plausible", "confidence": "very low" },
+    { "key": "meaningful_change_threshold_sd", "label": "Meaningful participant-level loneliness improvement threshold", "best": 0.5, "low": 0.5, "high": 0.5, "unit": "SD improvement", "basis": "MFI decision threshold chosen for comparability; not a Curry-published responder definition or validated UCLA-scale threshold", "confidence": "judgmental" },
+    { "key": "incremental_meaningful_improvement_probability", "label": "Modeled incremental probability of crossing the threshold", "best": 0.028705, "low": 0.003529, "high": 0.065947, "unit": "proportion", "basis": "Normal-shift approximation using the threshold and causal-effect assumptions; not an observed Curry response rate", "confidence": "very low" }
+  ],
+  "sensitivity": [
+    { "case": "Optimistic positive effect", "marginalCostPerParticipantUsd": 2500, "causalMeanShiftSd": 0.18, "incrementalMeaningfulImprovementProbability": 0.065947, "participantsPer100k": 40, "additionalMeaningfulImprovementsPer100k": 2.64, "costPerAdditionalMeaningfulImprovementUsd": 37909 },
+    { "case": "Best guess", "marginalCostPerParticipantUsd": 4800, "causalMeanShiftSd": 0.08, "incrementalMeaningfulImprovementProbability": 0.028705, "participantsPer100k": 20.83, "additionalMeaningfulImprovementsPer100k": 0.6, "costPerAdditionalMeaningfulImprovementUsd": 167217 },
+    { "case": "Small positive effect", "marginalCostPerParticipantUsd": 8000, "causalMeanShiftSd": 0.01, "incrementalMeaningfulImprovementProbability": 0.003529, "participantsPer100k": 12.5, "additionalMeaningfulImprovementsPer100k": 0.04, "costPerAdditionalMeaningfulImprovementUsd": 2266664 }
+  ],
+  "nullEffectBoundary": "The Curry study has no comparison group, and the external literature is heterogeneous. A null or harmful effect remains plausible: if Senior Vitality has no causal effect—or worsens loneliness for some participants—the model produces zero or negative additional improvements and no finite positive cost-effectiveness estimate. The $38,000–$2.3 million interval is therefore conditional on the effect being positive, not a conventional 95% confidence interval.",
+  "excludedBenefits": [
+    "Digital-literacy gains not captured by the loneliness decision unit",
+    "Healthcare self-efficacy and self-rated-health changes, because the uncontrolled study cannot establish their causal effect",
+    "Benefits from Curry meals, clinical care, housing services, groceries, outreach, or other programs",
+    "Devices and internet retained after the modeled year unless their incremental duration and value are evidenced",
+    "QALYs, WELLBYs, healthcare utilization, mortality, and caregiver spillovers"
+  ],
+  "fundingRoom": {
+    "status": "not published",
+    "boundary": "The $100,000 gift is an illustrative denominator, not evidence that Curry can add 21 Senior Vitality participants. Curry has not published a current marginal budget, cohort slots, staffing or partner capacity, equipment procurement constraints, public-payer restrictions, or whether private money would add participants rather than replace Disability and Aging Services funding.",
+    "requiredNext": "Obtain Curry's current Senior Vitality program accounts, participant flow, partner and in-kind contributions, cohort capacity, and time-bounded $100K, $1M, and $10M expansion plans; then replace all MFI cost assumptions and pre-register the next outcome comparison."
+  },
+  "sources": [
+    { "title": "A Technology-Based Intervention Impacts Quality of Life for Low Income Older Adults by Reducing Loneliness and Improving Healthcare Self-Efficacy and Self-Rated Health", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11978907/", "role": "Program components, cohort structure, observed 12-month change, and study-design limitations" },
+    { "title": "Programs — Senior Vitality", "url": "https://curryseniorcenter.org/programs-category/", "role": "Current one- to two-year program description and delivery locations" },
+    { "title": "Evaluation of the Effectiveness of Digital Technology Interventions to Reduce Loneliness in Older Adults", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8214187/", "role": "Earlier external evidence reporting no statistically significant pooled effects" },
+    { "title": "Effectiveness of digital health interventions in reducing loneliness among older adults", "url": "https://pubmed.ncbi.nlm.nih.gov/42096655/", "role": "2026 external randomized-trial meta-analysis reporting a pooled SMD of -0.39 with substantial uncertainty and heterogeneity" }
+  ]
+}

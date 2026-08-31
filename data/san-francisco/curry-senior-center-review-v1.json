@@ -8,9 +8,9 @@
     "donationUrl": "https://curryseniorcenter.org/guide-to-giving/"
   },
   "decision": {
-    "state": "Promising organization-specific evidence; marginal cost-effectiveness not yet estimable",
-    "summary": "Curry Senior Center combines meals, primary and behavioral health care, housing-based services, groceries, outreach, and technology support for low-income older adults. A Curry-linked pre/post study found small favorable changes in loneliness, healthcare self-efficacy, and self-rated health after Senior Vitality, but it had no comparison group and evaluated a bundled intervention. Public sources do not connect the next philanthropic gift to a named program, incremental cost, counterfactual improvement, or additional capacity.",
-    "costEffectiveness": "Not estimable",
+    "state": "Exploratory Senior Vitality model; not recommendation-ready",
+    "summary": "Curry Senior Center combines meals, primary and behavioral health care, housing-based services, groceries, outreach, and technology support for low-income older adults. A Curry-linked pre/post study found small favorable changes in loneliness, healthcare self-efficacy, and self-rated health after Senior Vitality, but it had no comparison group and evaluated a bundled intervention. MFI now publishes a judgmental, versioned Senior Vitality model rather than treating the whole Curry portfolio as one intervention; public sources still do not establish the program's incremental cost, counterfactual effect, or additional capacity.",
+    "costEffectiveness": "Exploratory: about $170,000 per additional participant crossing a modeled 0.5 SD 12-month loneliness-improvement threshold; $38,000–$2.3 million conditional positive-effect range, with null or harm still plausible",
     "roomForMoreFunding": "Not published",
     "recommendation": "Not recommendation-ready"
   },
@@ -68,11 +68,18 @@
       "population": "Six digital-technology intervention studies with 646 older participants; five clinical trials entered follow-up meta-analyses",
       "result": "Pooled effects versus usual care or non-digital interventions were not statistically significant at 3 months (SMD 0.02, 95% CI -0.36 to 0.40), 4 months (SMD -1.11, 95% CI -2.60 to 0.38), or 6 months (SMD -0.11, 95% CI -0.54 to 0.32). Evidence quality ranged from very low to moderate.",
       "transfer": "The review predates Curry's 2024 study and covers heterogeneous digital interventions, populations, comparators, and follow-up periods. It cautions against assuming that Curry's favorable within-person change is a causal technology effect; it does not show that Curry's full bundled program has no benefit."
+    },
+    {
+      "key": "digital-health-loneliness-meta-analysis-2026",
+      "design": "2026 systematic review and meta-analysis of randomized controlled trials",
+      "population": "Seventeen digital-health intervention studies with 2,423 older participants",
+      "result": "The pooled loneliness effect favored digital health interventions (SMD=-0.39, 95% CI -0.77 to -0.01), while the authors emphasized heterogeneity and the need for standardized measurement, diverse populations, and longer follow-up.",
+      "transfer": "This later synthesis makes a positive Curry effect more plausible than the 2021 review alone, but it pools interventions unlike Senior Vitality and does not identify Curry's effect, cost, participant-level response threshold, or durability. MFI therefore uses it only to inform a wide sensitivity range, not as a plug-in causal estimate."
     }
   ],
   "model": {
     "nativeOutcome": "Older adult achieving a pre-specified, durable improvement in loneliness 12 months after completing a named Curry program",
-    "status": "not-estimable",
+    "status": "exploratory-model-in-separate-versioned-file",
     "missingInputs": [
       "A named Curry program and the specific activities the next gift would fund",
       "Eligible, enrolled, completing, and followed participant counts with duplicate handling",
@@ -91,6 +98,8 @@
     "The Senior Vitality evaluation is a non-comparative pre/post study with convenience recruitment, attrition, and organization involvement.",
     "Senior Vitality bundled devices, internet, training, social contact, and health coaching, so its active ingredient is unknown.",
     "The study covers 2018–2022 cohorts while current implementation and FY2025 reporting may differ.",
+    "The exploratory model imposes a 0.5 SD response threshold and a normal distribution of participant-level change because Curry does not publish a responder definition or change-score distribution.",
+    "The model's finite $38,000–$2.3 million interval is conditional on a positive effect; a null or harmful effect remains plausible and has no finite positive impact price.",
     "Future conditional public grants of $13.87 million are neither unrestricted assets nor evidence of funding room.",
     "Government grants, contracts, donated space, and public health support are substantial, so the additional activity caused by private philanthropy is unknown."
   ],
@@ -134,6 +143,14 @@
       "published": "2021-06-04",
       "retrieved": "2026-08-30",
       "sourceType": "systematic review and meta-analysis"
+    },
+    {
+      "publisher": "Age and Ageing",
+      "title": "Effectiveness of digital health interventions in reducing loneliness among older adults: a systematic review and meta-analysis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42096655/",
+      "published": "2026-05-04",
+      "retrieved": "2026-08-31",
+      "sourceType": "systematic review and meta-analysis of randomized controlled trials"
     }
   ]
 }

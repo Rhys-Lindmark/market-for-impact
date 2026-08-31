@@ -27,7 +27,7 @@ export function buildSfResearchFunnel({ irsUniverse, config }) {
       queuePosition: index + 1, ein, displayName, legalName: source.name, intervention,
       nteeCode: source.nteeCode, nteeGroup: source.nteeGroup, revenueAmountUsd: source.revenueAmountUsd, taxPeriod: source.taxPeriod,
       exactContractSourceName: source.exactContractSourceName, existingScorecardKey: source.scorecardKey,
-      reportStatus: 'queued', costEffectivenessStatus: 'not-estimable', recommendationStatus: 'not-assessed'
+      reportStatus: config.completedInitialReviewEins.includes(ein) ? 'initial-review-complete' : 'queued', costEffectivenessStatus: 'not-estimable', recommendationStatus: 'not-assessed'
     };
   });
   const selected = (limit) => {
@@ -40,12 +40,12 @@ export function buildSfResearchFunnel({ irsUniverse, config }) {
   const semantic = { priority1000, priority100, deepDiveRows, advocacyEvidenceTrack: config.advocacyEvidenceTrack };
   return {
     version: 'sf-research-funnel-v0.1', generatedAt: config.generatedAt, geography: irsUniverse.geography,
-    summary: { universeCount: irsUniverse.summary.organizationCount, machineEligibleCount: eligible.length, shallowScreenCount: priority1000.length, priorityReviewCount: priority100.length, deepDiveQueueCount: deepDiveRows.length, completedCostEffectivenessCount: 0 },
+    summary: { universeCount: irsUniverse.summary.organizationCount, machineEligibleCount: eligible.length, shallowScreenCount: priority1000.length, priorityReviewCount: priority100.length, deepDiveQueueCount: deepDiveRows.length, completedInitialReviewCount: deepDiveRows.filter((row) => row.reportStatus === 'initial-review-complete').length, completedCostEffectivenessCount: 0 },
     stages: [
       { key: 'universe', count: irsUniverse.summary.organizationCount, label: 'SF filing-address EINs', state: 'discovery universe' },
       { key: 'shallow', count: priority1000.length, label: 'Shallow screens', state: 'research-priority queue' },
       { key: 'priority', count: priority100.length, label: 'Priority reviews', state: 'research-priority queue' },
-      { key: 'deep', count: deepDiveRows.length, label: 'Deep-dive reports', state: 'queued' },
+      { key: 'deep', count: deepDiveRows.length, label: 'Deep-dive reports', state: `${deepDiveRows.filter((row) => row.reportStatus === 'initial-review-complete').length} initial review complete` },
       { key: 'complete', count: 0, label: 'CEA complete', state: 'none yet' }
     ],
     eligibilityContract: {

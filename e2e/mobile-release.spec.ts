@@ -128,7 +128,7 @@ test('phone donors can search the complete SFF community-foundation partner lens
   test.skip(testInfo.project.name !== 'phone-390');
   await page.goto('/san-francisco#community-foundation', { waitUntil: 'domcontentloaded' });
   await expect(page.getByRole('heading', { name: 'Another 424 doors into the local field.' })).toBeVisible();
-  await expect(page.locator('.sf-sff-summary strong')).toHaveText(['424', '$49.52M', '11', '1', '6', '5']);
+  await expect(page.locator('.sf-sff-summary strong')).toHaveText(['424', '$49.52M', '11', '1', '1', '0']);
   await expect(page.locator('.sf-sff-grid article')).toHaveCount(12);
   await page.getByLabel('Search SFF FY2025 partners').fill('Hamilton Families');
   await expect(page.locator('.sf-sff-grid article')).toHaveCount(1);
@@ -146,9 +146,17 @@ test('phone donors can search the complete SFF community-foundation partner lens
   await expect(eltimpano).toContainText('Mission Edge');
   await expect(eltimpano).toContainText('explicit audience presence within regional scope');
   await expect(eltimpano).toContainText('more than 100 San Francisco subscribers');
+  await expect(eltimpano).toContainText('Screened · recommendation blocked');
+  await expect(eltimpano).toContainText('5,500+ · SMS subscriber community');
+  await expect(eltimpano).toContainText('project level financials not published in reviewed sources');
+  await expect(eltimpano).toContainText('Funding room · Not yet estimable');
+  await expect(eltimpano.getByRole('link', { name: /Community-Centered Outlets Empower and Inform Latinos/ })).toBeVisible();
   await expect(eltimpano.getByRole('link', { name: 'Current donation route' })).toBeVisible();
   await expect(eltimpano.getByRole('link', { name: 'Independent Arts & Media' })).toBeVisible();
   await page.getByLabel('Search SFF FY2025 partners').fill('');
+  await page.getByLabel('Filter SFF identity links').selectOption('diligence-screened');
+  await expect(page.locator('.sf-sff-grid article')).toHaveCount(1);
+  await expect(page.locator('.sf-sff-grid article').first()).toContainText('El Tímpano');
   await page.getByLabel('Filter SFF identity links').selectOption('current-unresolved');
   await expect(page.locator('.sf-sff-grid article')).toHaveCount(5);
   await expect(page.locator('.sf-sff-grid article')).toContainText(['Bay Resistance Institute', 'California Native Vote Project', 'Cooperation Richmond', 'Lavender Phoenix', 'Palestinian Youth Movement']);

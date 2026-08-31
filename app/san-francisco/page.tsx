@@ -13,6 +13,7 @@ import pohReview from '@/data/san-francisco/project-open-hand-review-v1.json';
 import edcReview from '@/data/san-francisco/eviction-defense-collaborative-review-v1.json';
 import compassReview from '@/data/san-francisco/compass-family-services-review-v1.json';
 import curryReview from '@/data/san-francisco/curry-senior-center-review-v1.json';
+import farmingHopeReview from '@/data/san-francisco/farming-hope-review-v1.json';
 import sffGrants from '@/data/san-francisco/sff-community-grants-v1.json';
 import SffGrantExplorer from './SffGrantExplorer';
 import SfDeepReview from './SfDeepReview';
@@ -39,7 +40,7 @@ const candidates = [...sfDiligence.candidates].sort((a, b) => a.name.localeCompa
 const dossierCandidates = candidates.flatMap((candidate) => 'evidenceDossier' in candidate ? [{ candidate, dossier: candidate.evidenceDossier }] : []);
 const marginalPlanRequests = sfMarginalPlanRequests.packets;
 const sffInitialPage = { pagination: { page: 1, pageSize: 12, total: sffGrants.partners.length, pageCount: Math.ceil(sffGrants.partners.length / 12) }, partners: sffGrants.partners.slice(0, 12) };
-const deepReviewAnchors = new Map([['943023551', '#project-open-hand-review'], ['943342323', '#eviction-defense-collaborative-review'], ['941156622', '#compass-family-services-review'], ['237362588', '#curry-senior-center-review']]);
+const deepReviewAnchors = new Map([['943023551', '#project-open-hand-review'], ['943342323', '#eviction-defense-collaborative-review'], ['941156622', '#compass-family-services-review'], ['237362588', '#curry-senior-center-review'], ['832393341', '#farming-hope-review']]);
 
 const researchGates = [
   { number: '01', title: 'Verify the entity', copy: 'Confirm the legal entity, donation vehicle, EIN, service geography, and which program a gift would support.' },
@@ -143,6 +144,7 @@ export default function SanFranciscoDonorPage() {
       <SfDeepReview review={edcReview} number={2} id="eviction-defense-collaborative-review" evidenceHeadline="Plausible benefit. Context-dependent evidence." workbookUrl={sfResearchFunnel.workbook.url} />
       <SfDeepReview review={compassReview} number={3} id="compass-family-services-review" evidenceHeadline="Strong need. Mixed evidence. Better measurement underway." workbookUrl={sfResearchFunnel.workbook.url} />
       <SfDeepReview review={curryReview} number={4} id="curry-senior-center-review" evidenceHeadline="Relevant local research. Causal uncertainty remains." workbookUrl={sfResearchFunnel.workbook.url} />
+      <SfDeepReview review={farmingHopeReview} number={5} id="farming-hope-review" evidenceHeadline="Promising placement signal. Mixed transferred evidence." workbookUrl={sfResearchFunnel.workbook.url} />
 
       <section className="sf-brief-context" aria-labelledby="sf-context-title">
         <div><p className="kicker">WHAT THE MARKET CAN ANSWER TODAY</p><h2 id="sf-context-title">Useful context. Explicit limits.</h2></div>

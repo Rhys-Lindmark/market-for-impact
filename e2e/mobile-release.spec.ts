@@ -326,8 +326,8 @@ test('phone donors can inspect the 6,688 to 25 San Francisco research funnel', a
   await expect(page.getByRole('heading', { name: '6,688 records. 25 deep reviews.' })).toBeVisible();
   await expect(page.locator('.sf-research-stages strong')).toHaveText(['6,688', '1,000', '100', '25', '0']);
   await expect(page.locator('.sf-deep-queue article')).toHaveCount(25);
-  await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'CEA not started' })).toHaveCount(21);
-  await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'Initial review complete' })).toHaveCount(4);
+  await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'CEA not started' })).toHaveCount(20);
+  await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'Initial review complete' })).toHaveCount(5);
   await expect(page.locator('.sf-advocacy-track')).toContainText('GrowSF');
   await expect(page.locator('.sf-advocacy-track')).toContainText('Advocacy is reviewed, not ranked.');
   await expect(page.getByRole('link', { name: /Open the SF cost-effectiveness workbook/ })).toBeVisible();
@@ -383,6 +383,20 @@ test('phone donors can inspect the Curry review without converting service volum
   await expect(review).toContainText('Relevant local research. Causal uncertainty remains.');
   await expect(review).toContainText('d=-0.24');
   await expect(review).toContainText('no comparison group');
+  await expect(review).toContainText('Not estimable');
+  await expect(review.locator('.sf-deep-evidence article')).toHaveCount(3);
+  await expect(review.locator('.sf-deep-model li')).toHaveCount(15);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('phone donors can inspect the Farming Hope review without treating placement as causal impact', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== 'phone-390');
+  await page.goto('/san-francisco#farming-hope-review', { waitUntil: 'domcontentloaded' });
+  const review = page.locator('#farming-hope-review');
+  await expect(page.getByRole('heading', { level: 2, name: 'Farming Hope', exact: true })).toBeVisible();
+  await expect(review).toContainText('Promising placement signal. Mixed transferred evidence.');
+  await expect(review).toContainText('did not increase regular unsubsidized employment');
+  await expect(review).toContainText('4.0 percentage-point impact');
   await expect(review).toContainText('Not estimable');
   await expect(review.locator('.sf-deep-evidence article')).toHaveCount(3);
   await expect(review.locator('.sf-deep-model li')).toHaveCount(15);

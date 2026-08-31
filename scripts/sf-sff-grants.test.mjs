@@ -24,9 +24,21 @@ test('SFF discovery crosswalks are exact and do not become impact or funding roo
   assert.equal(hamilton?.diligenceKey, 'hamilton-families');
   assert.ok(snapshot.summary.exactIrsMatchRowCount > 0);
   assert.ok(snapshot.summary.exactContractMatchRowCount > 0);
+  assert.equal(snapshot.summary.sourceReportedFiscalSponsorRowCount, 11);
+  assert.equal(snapshot.summary.distinctSourceReportedFiscalSponsorCount, 8);
+  assert.equal(snapshot.summary.fiscalSponsorConflictRowCount, 0);
   assert.equal(snapshot.summary.publishableRoomForFundingCount, 0);
   assert.equal(snapshot.summary.rowLevelServiceGeographyCount, 0);
   assert.ok(snapshot.partners.every((row) => row.impactEvidenceStatus === 'not-yet-assessed' || row.impactEvidenceStatus === 'deep-evidence-dossier'));
+});
+
+test('SFF fiscal-sponsor records remain dated source assertions rather than current legal verification', () => {
+  const eltimpano = snapshot.partners.find((row) => row.granteeName === 'El Tímpano');
+  assert.deepEqual(eltimpano?.sourceReportedFiscalSponsors.map((row) => row.sponsorName), ['Independent Arts & Media']);
+  assert.equal(eltimpano?.sourceReportedFiscalSponsors[0]?.assertionSemantics, 'source-reported-at-publication-not-current-verification');
+  assert.equal(eltimpano?.sourceReportedFiscalSponsors[0]?.latestSourcePublishedAt, '2024-11-12T10:58:08');
+  assert.match(snapshot.interpretation.identity, /not verification of a current legal or donation relationship/i);
+  assert.equal(snapshot.summary.rowLevelServiceGeographyCount, 0);
 });
 
 test('SFF source provenance remains pinned to the reviewed official PDF', () => {

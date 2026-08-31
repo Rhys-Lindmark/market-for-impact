@@ -6,9 +6,12 @@ on:
       - '.github/workflows/sff-source-check.yml'
       - 'data/san-francisco/sff-*'
       - 'scripts/check-sff-fy25-source.mjs'
+      - 'scripts/import-sff-fiscal-sponsors.mjs'
       - 'scripts/build-sf-sff-grants.mjs'
       - 'scripts/lib/sf-sff-grants.mjs'
+      - 'scripts/lib/sf-sff-fiscal-sponsors.mjs'
       - 'scripts/sf-sff-grants.test.mjs'
+      - 'scripts/sf-sff-fiscal-sponsors.test.mjs'
   schedule:
     - cron: '37 * * * *'
   workflow_dispatch:
@@ -32,6 +35,8 @@ jobs:
       - name: Validate normalized snapshot
         run: node scripts/build-sf-sff-grants.mjs
       - name: Run SFF contract tests
-        run: node --test scripts/sf-sff-grants.test.mjs
+        run: node --test scripts/sf-sff-grants.test.mjs scripts/sf-sff-fiscal-sponsors.test.mjs
       - name: Verify official PDF is unchanged
         run: node scripts/check-sff-fy25-source.mjs
+      - name: Verify official fiscal-sponsor corpus is unchanged
+        run: node scripts/import-sff-fiscal-sponsors.mjs

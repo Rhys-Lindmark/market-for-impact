@@ -45,6 +45,7 @@ export default function SanFranciscoDonorPage() {
       <header className="detail-topbar sf-brief-topbar">
         <a className="brand" href="/"><span className="brand-mark">M</span><span>Market for Impact</span></a>
         <nav aria-label="San Francisco page navigation">
+          <a href="#decision-snapshot">Decision snapshot</a>
           <a href="#funnel">Evidence funnel</a>
           <a href="#comparison">Compare six</a>
           <a href="#protocol">Research protocol</a>
@@ -62,7 +63,34 @@ export default function SanFranciscoDonorPage() {
         <div className="sf-brief-intro">
           <p>This page is built for a donor considering roughly <strong>$10 million this year</strong>. It starts with the whole observable field, narrows only when evidence supports it, and keeps “we do not know yet” visible.</p>
           <div><span>Current decision state</span><strong>Research shortlist—not a recommendation slate</strong></div>
+          <a className="sf-hero-decision-link" href="#decision-snapshot">See the current shortlist ↓</a>
         </div>
+      </section>
+
+      <section className="sf-decision-snapshot" id="decision-snapshot" aria-labelledby="sf-decision-snapshot-title">
+        <header>
+          <div><p className="kicker">CURRENT SHORTLIST · ALPHABETICAL, NOT RANKED</p><h2 id="sf-decision-snapshot-title">What can a donor act on today?</h2></div>
+          <div className="sf-decision-answer"><span>Recommendation-ready</span><strong>{sfComparison.summary.recommendationReadyCount}</strong><p>No organization has yet cleared both the impact-evidence and marginal-funding gates.</p></div>
+        </header>
+        <div className="sf-decision-table" role="table" aria-label="San Francisco research shortlist">
+          <div className="sf-decision-table-head" role="row">
+            <span role="columnheader">Organization</span><span role="columnheader">Primary outcome areas</span><span role="columnheader">Cost per life substantially bettered</span><span role="columnheader">Current funding room</span><span role="columnheader">Decision state</span><span aria-hidden="true" />
+          </div>
+          {sfComparison.candidates.map((candidate, index) => (
+            <article className="sf-decision-row" role="row" key={candidate.key}>
+              <div role="cell"><span>{String(index + 1).padStart(2, '0')} · {candidate.organizationType}</span><strong>{candidate.name}</strong></div>
+              <p role="cell">{candidate.outcomeLabels.join(' · ')}</p>
+              <div className="missing" role="cell"><span>Impact price</span><strong>{candidate.costEffectiveness.display}</strong></div>
+              <div className="missing" role="cell"><span>Marginal gap</span><strong>{candidate.fundingRoom.display}</strong></div>
+              <div role="cell"><span>Evidence state</span><strong>{candidate.decisionLabel}</strong></div>
+              <a role="cell" href={candidate.researchHref} aria-label={`Open ${candidate.name} research`}>Evidence ↓</a>
+            </article>
+          ))}
+        </div>
+        <footer>
+          <p><strong>Why there is no “top charity” yet.</strong> Service scale, organization-reported outcomes, contracts, ratings, and transferred external evidence do not establish the counterfactual impact or additional funding room of the next gift.</p>
+          <a href="#comparison">Open the complete donor comparison →</a>
+        </footer>
       </section>
 
       <section className="sf-brief-funnel" id="funnel" aria-labelledby="sf-funnel-title">

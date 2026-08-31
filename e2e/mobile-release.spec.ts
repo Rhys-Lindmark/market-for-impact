@@ -110,6 +110,20 @@ test('phone donors see the same honest decision fields across all six San Franci
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 
+test('phone donors reach the complete San Francisco decision state before the research archive', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== 'phone-390');
+  await page.goto('/san-francisco#decision-snapshot', { waitUntil: 'domcontentloaded' });
+  await expect(page.getByRole('heading', { name: 'What can a donor act on today?' })).toBeVisible();
+  await expect(page.locator('.sf-decision-answer>strong')).toHaveText('0');
+  const rows = page.locator('.sf-decision-row');
+  await expect(rows).toHaveCount(6);
+  await expect(rows.locator('div:first-child>strong')).toHaveText(['GLIDE', 'GrowSF', 'Hamilton Families', 'Housing Action Coalition', 'San Francisco–Marin Food Bank', 'SF LGBT Center']);
+  await expect(rows.locator('.missing').filter({ hasText: 'Impact price' }).locator('strong')).toHaveText(Array(6).fill('Not yet estimable'));
+  await expect(rows.locator('.missing').filter({ hasText: 'Marginal gap' }).locator('strong')).toHaveText(Array(6).fill('Not published'));
+  await expect(page.getByText('Why there is no “top charity” yet.')).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
 test('phone donors can inspect the marginal-plan and grant-look-back research contract', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'phone-390');
   await page.goto('/san-francisco#protocol', { waitUntil: 'domcontentloaded' });

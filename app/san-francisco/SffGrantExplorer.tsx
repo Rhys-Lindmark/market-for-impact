@@ -11,6 +11,14 @@ type Partner = {
   identityStatus: string;
   exactIrsMatches: { ein: string; sourceName: string; scorecardKey: string | null }[];
   exactContractSourceName: string | null;
+  sourceReportedFiscalSponsors: {
+    sponsorName: string;
+    assertionSemantics: string;
+    latestSourcePostTitle: string;
+    latestSourceUrl: string;
+    latestSourcePublishedAt: string;
+    historicalAssertionCount: number;
+  }[];
   diligenceKey: string | null;
   diligenceName: string | null;
   impactEvidenceStatus: string;
@@ -65,7 +73,7 @@ export default function SffGrantExplorer({ initialData, pdfUrl }: { initialData:
     <div className="sf-sff-explorer">
       <div className="sf-sff-controls">
         <label><span>Search published partner</span><input aria-label="Search SFF FY2025 partners" disabled={!hydrated} value={query} onChange={(event) => updateQuery(event.target.value)} placeholder="Hamilton Families…" /></label>
-        <label><span>Exact identity link</span><select aria-label="Filter SFF identity links" disabled={!hydrated} value={identity} onChange={(event) => updateIdentity(event.target.value)}><option value="all">All source rows</option><option value="diligence">Deep dossier</option><option value="irs">IRS exact name</option><option value="contract">City-contract exact name</option><option value="unlinked">No exact local link</option></select></label>
+        <label><span>Exact identity link</span><select aria-label="Filter SFF identity links" disabled={!hydrated} value={identity} onChange={(event) => updateIdentity(event.target.value)}><option value="all">All source rows</option><option value="diligence">Deep dossier</option><option value="irs">IRS exact name</option><option value="contract">City-contract exact name</option><option value="sponsor">SFF sponsor record</option><option value="unlinked">No exact local link</option></select></label>
         <label><span>Order</span><select aria-label="Sort SFF partners" disabled={!hydrated} value={sort} onChange={(event) => updateSort(event.target.value)}><option value="alphabetical">Source order · alphabetical</option><option value="funding">Published funding · high to low</option></select></label>
         <div><span>Rows matching</span><strong>{data.pagination.total}</strong></div>
       </div>
@@ -79,6 +87,7 @@ export default function SffGrantExplorer({ initialData, pdfUrl }: { initialData:
             <dl>
               <div><dt>IRS exact-name links</dt><dd>{partner.exactIrsMatches.length ? partner.exactIrsMatches.map((match) => match.ein).join(' · ') : 'None found'}</dd></div>
               <div><dt>City-contract exact name</dt><dd>{partner.exactContractSourceName ?? 'None found'}</dd></div>
+              <div><dt>SFF fiscal-sponsor source</dt><dd>{partner.sourceReportedFiscalSponsors.length ? partner.sourceReportedFiscalSponsors.map((sponsor) => <span className="sf-sff-sponsor-source" key={sponsor.sponsorName}><a href={sponsor.latestSourceUrl} target="_blank" rel="noreferrer">{sponsor.sponsorName} ↗</a><small>Reported {sponsor.latestSourcePublishedAt.slice(0, 10)} · historical source assertion, not current verification{sponsor.historicalAssertionCount > 1 ? ` · ${sponsor.historicalAssertionCount} SFF posts` : ''}</small></span>) : 'None found in reviewed SFF guides'}</dd></div>
               <div><dt>Impact / funding room</dt><dd>Not yet assessed · not yet assessed</dd></div>
             </dl>
             <footer>{partner.diligenceKey ? <a href={`#${partner.diligenceKey}-dossier-title`}>Open deep evidence dossier ↓</a> : <span>No MFI dossier</span>}<a href={`${pdfUrl}#page=${partner.sourcePage}`} target="_blank" rel="noreferrer">Source row ↗</a></footer>

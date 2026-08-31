@@ -9,12 +9,13 @@ export async function GET(request: Request) {
   const pageSize = Math.min(50, Math.max(1, Number(searchParams.get('pageSize') ?? 12)));
   const requestedPage = Math.max(1, Number(searchParams.get('page') ?? 1));
   const partners = snapshot.partners.filter((row) => {
-    const searchable = `${row.granteeName} ${row.exactIrsMatches.map((match) => match.ein).join(' ')} ${row.exactContractSourceName ?? ''}`.toLowerCase();
+    const searchable = `${row.granteeName} ${row.exactIrsMatches.map((match) => match.ein).join(' ')} ${row.exactContractSourceName ?? ''} ${row.sourceReportedFiscalSponsors.map((sponsor) => sponsor.sponsorName).join(' ')}`.toLowerCase();
     const identityMatch = identity === 'all'
       || (identity === 'diligence' && row.diligenceKey !== null)
       || (identity === 'irs' && row.exactIrsMatches.length > 0)
       || (identity === 'contract' && row.exactContractSourceName !== null)
-      || (identity === 'unlinked' && row.exactIrsMatches.length === 0 && row.exactContractSourceName === null && row.diligenceKey === null);
+      || (identity === 'sponsor' && row.sourceReportedFiscalSponsors.length > 0)
+      || (identity === 'unlinked' && row.exactIrsMatches.length === 0 && row.exactContractSourceName === null && row.sourceReportedFiscalSponsors.length === 0 && row.diligenceKey === null);
     return searchable.includes(query) && identityMatch;
   }).sort((a, b) => sort === 'funding'
     ? b.totalFundingUsd - a.totalFundingUsd || a.granteeName.localeCompare(b.granteeName)

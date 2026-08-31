@@ -1,0 +1,126 @@
+{
+  "version": "sf-edc-full-scope-legal-defense-cea-v0.1",
+  "generatedAt": "2026-08-31T16:20:00-07:00",
+  "program": "Eviction Defense Collaborative / Tenant Right to Counsel full-scope legal defense",
+  "status": "exploratory-public-cost-and-transferred-effect-model-not-funding-recommendation",
+  "decisionUnit": "An additional tenant household retaining the right to occupy its home because full-scope legal representation was provided instead of less intensive assistance",
+  "bottomLine": {
+    "giftUsd": 100000,
+    "historicalEquivalentFullScopeCases": 15.873015873015873,
+    "estimatedAdditionalRetainedPossessionOutcomes": 0.7936507936507937,
+    "costPerAdditionalRetainedPossessionOutcomeUsd": 126000,
+    "conditionalPositiveEffectRangeUsd": { "low": 42000, "high": 630000 },
+    "interpretation": "San Francisco budgeted $315,000 for a fully loaded Tenant Right to Counsel legal-defense team with a 50-case deliverable, or $6,300 per historical full-scope case. Applying a judgmental 5-point retained-possession effect gives a conditional estimate of $126,000 per additional household retaining possession. The randomized evidence conflicts by court and comparison service, so a null effect remains plausible and the true upper bound is not finite."
+  },
+  "inputs": [
+    {
+      "key": "gift_usd",
+      "label": "Illustrative gift",
+      "best": 100000,
+      "low": 100000,
+      "high": 100000,
+      "unit": "USD",
+      "basis": "Donor scenario, not published current funding room",
+      "confidence": "scenario"
+    },
+    {
+      "key": "city_fully_loaded_team_cost_usd",
+      "label": "City fully loaded legal-defense team cost",
+      "best": 315000,
+      "low": 315000,
+      "high": 315000,
+      "unit": "USD",
+      "basis": "MOHCD FY2023–24 Tenant Right to Counsel presentation: one attorney, support and supervision fractions, $660 litigation expense per client, and 15% overhead. Public budget context, not EDC marginal cost.",
+      "confidence": "high for published budget; not marginal"
+    },
+    {
+      "key": "city_team_case_deliverable",
+      "label": "City full-scope team case deliverable",
+      "best": 50,
+      "low": 50,
+      "high": 50,
+      "unit": "cases",
+      "basis": "MOHCD states that new attorneys require ramp-up time to achieve a deliverable goal of 50 cases. The presentation does not define case complexity, completion, or follow-up.",
+      "confidence": "high for published target; moderate as denominator"
+    },
+    {
+      "key": "historical_cost_per_full_scope_case_usd",
+      "label": "Historical public cost per full-scope case",
+      "best": 6300,
+      "low": 6300,
+      "high": 6300,
+      "unit": "USD",
+      "basis": "$315,000 fully loaded team cost divided by the 50-case deliverable. This is a TRC-wide historical budget ratio, not an EDC invoice, causal price, or current marginal offer.",
+      "confidence": "moderate"
+    },
+    {
+      "key": "nyc_randomized_judgment_reduction",
+      "label": "NYC randomized adverse-judgment reduction",
+      "best": 0.29,
+      "low": 0.29,
+      "high": 0.29,
+      "unit": "proportion",
+      "basis": "Final judgments were entered against 22% of represented tenants and 51% of unrepresented tenants in an older New York City randomized experiment. Judgment is not the same as retained possession, and the setting differs sharply from current San Francisco.",
+      "confidence": "high for study; very indirect for EDC"
+    },
+    {
+      "key": "sf_unadjusted_stayed_home_difference",
+      "label": "SF descriptive stayed-home difference",
+      "best": 0.18,
+      "low": 0.18,
+      "high": 0.18,
+      "unit": "proportion",
+      "basis": "MOHCD reported 63% of full-scope clients stayed in their homes versus 45% receiving limited-scope assistance at settlement conference. This was not reported as randomized or adjusted and is not an EDC effect.",
+      "confidence": "low for causal use"
+    },
+    {
+      "key": "causal_retained_possession_effect",
+      "label": "MFI estimate of absolute retained-possession effect",
+      "best": 0.05,
+      "low": 0.01,
+      "high": 0.15,
+      "unit": "proportion",
+      "basis": "Judgmental transfer set well below the NYC randomized 29-point adverse-judgment effect and the SF unadjusted 18-point comparison because the Massachusetts Housing Court experiment found no retained-possession gain from full versus limited assistance. The numeric range is conditional on a positive effect; null or harm remains outside it.",
+      "confidence": "very low"
+    }
+  ],
+  "formula": {
+    "historicalCostPerFullScopeCase": "city_fully_loaded_team_cost_usd / city_team_case_deliverable",
+    "historicalEquivalentFullScopeCases": "gift_usd / historical_cost_per_full_scope_case_usd",
+    "additionalRetainedPossessionOutcomes": "historical_equivalent_full_scope_cases * causal_retained_possession_effect",
+    "costPerAdditionalRetainedPossessionOutcome": "historical_cost_per_full_scope_case_usd / causal_retained_possession_effect",
+    "rangeMethod": "Fixed FY2023–24 public team-cost ratio with favorable, midpoint, and small-positive effect scenarios",
+    "denominatorBoundary": "The 50 cases are a city staffing deliverable, not a published count of completed, unique, EDC-only cases. Retaining the right to occupy is narrower than avoiding homelessness and does not specify duration."
+  },
+  "sensitivity": [
+    { "case": "Favorable positive effect", "causalRetainedPossessionEffect": 0.15, "historicalEquivalentCasesPer100k": 15.873015873015873, "additionalRetainedPossessionOutcomesPer100k": 2.380952380952381, "costPerAdditionalRetainedPossessionOutcomeUsd": 42000 },
+    { "case": "Best guess", "causalRetainedPossessionEffect": 0.05, "historicalEquivalentCasesPer100k": 15.873015873015873, "additionalRetainedPossessionOutcomesPer100k": 0.7936507936507937, "costPerAdditionalRetainedPossessionOutcomeUsd": 126000 },
+    { "case": "Small positive effect", "causalRetainedPossessionEffect": 0.01, "historicalEquivalentCasesPer100k": 15.873015873015873, "additionalRetainedPossessionOutcomesPer100k": 0.15873015873015872, "costPerAdditionalRetainedPossessionOutcomeUsd": 630000 }
+  ],
+  "nullEffectBoundary": "The conditional range does not include zero or harm. Full representation did not outperform limited assistance on retained possession in the Massachusetts Housing Court experiment. If San Francisco's limited-scope and referral system already captures the marginal benefit, if vulnerability scoring selects harder cases, or if a gift displaces public funding, additional retained-possession outcomes may approach zero or become negative and cost per additional outcome has no finite upper bound.",
+  "fundingRoom": {
+    "status": "not published",
+    "publicContext": {
+      "period": "FY2023–24",
+      "trcFundingUsd": 17700000,
+      "fullyLoadedTeamCostUsd": 315000,
+      "reportedAttorneyVacancies": 8
+    },
+    "boundary": "The $100,000 scenario is illustrative. The city budget and eight reported attorney vacancies show scale and an implementation constraint, but not an EDC philanthropic gap, private-dollar additionality, or a current case price.",
+    "requiredNext": "Obtain EDC's dated $100K, $1M, and $10M expansion plans; public reimbursement and displacement rules; current vacancies and ramp time; EDC-only full-scope case counts; assignment rules; and linked 3-, 6-, 12-, and 24-month housing outcomes."
+  },
+  "excludedBenefits": [
+    "The city's 63% versus 45% stayed-home comparison as a causal effect",
+    "The city's 92% avoided-homelessness claim as an EDC-specific outcome",
+    "Dismissals, settlement quality, debt reduction, time gained, legal dignity, and housing-condition remedies",
+    "Avoided shelter, healthcare, school disruption, displacement, and other public or household costs",
+    "EDC rental assistance, subsidies, intake, referral, shelter advocacy, and services delivered by partner organizations",
+    "QALYs, WELLBYs, mortality benefits, and a 10-QALY 'life substantially bettered' conversion"
+  ],
+  "sources": [
+    { "url": "https://sfgov.legistar.com/View.ashx?M=F&ID=12884642&GUID=A36EC077-730C-4BD0-B4EA-869B23842BF4", "role": "FY2023–24 TRC structure, descriptive outcomes, funding, staffing, team cost, and case deliverable" },
+    { "url": "https://evictiondefense.org/wp-content/uploads/2025/06/EDC-Annual-Final-Report-6.30.24.pdf", "role": "FY2024 audited legal-services and organization-wide expense context" },
+    { "url": "https://www.ojp.gov/ncjrs/virtual-library/abstracts/impact-legal-counsel-outcomes-poor-tenants-new-york-citys-housing", "role": "Older NYC randomized legal-counsel evidence" },
+    { "url": "https://www.povertyactionlab.org/evaluation/legal-representation-and-housing-court-cases-united-states", "role": "Massachusetts randomized full-versus-limited representation evidence" }
+  ]
+}

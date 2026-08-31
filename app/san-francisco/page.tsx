@@ -130,8 +130,8 @@ export default function SanFranciscoDonorPage() {
           <div><strong>{compactMoney.format(sffGrants.summary.publishedPartnerTotalFundingUsd)}</strong><span>Aggregate partner totals</span></div>
           <div><strong>{integer.format(sffGrants.summary.exactIrsMatchRowCount)}</strong><span>Exact IRS-name links</span></div>
           <div><strong>{integer.format(sffGrants.summary.exactContractMatchRowCount)}</strong><span>Exact city-contract links</span></div>
-          <div><strong>{integer.format(sffGrants.summary.sourceReportedFiscalSponsorRowCount)}</strong><span>Exact SFF sponsor records</span></div>
-          <div><strong>{integer.format(sffGrants.summary.diligenceMatchRowCount)}</strong><span>Existing deep dossier</span></div>
+          <div><strong>{integer.format(sffGrants.summary.currentReceivingEntityReviewRowCount)}</strong><span>Current receiving reviews</span></div>
+          <div><strong>{integer.format(sffGrants.summary.currentSponsorConfirmedRowCount)}</strong><span>Current sponsors confirmed</span></div>
         </div>
         <aside className="sf-sff-amount-rule"><span>AMOUNT SEMANTICS</span><p>{sffGrants.interpretation.amount} Historical funding is not current room for more funding.</p></aside>
         <SffGrantExplorer initialData={sffInitialPage} pdfUrl={sffGrants.source.pdfUrl} />

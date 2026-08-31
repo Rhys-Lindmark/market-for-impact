@@ -28,6 +28,17 @@ type Partner = {
     sources: { publisher: string; url: string; claim: string; retrievedAt: string }[];
     limitation: string;
   };
+  currentServiceGeographyReview: null | {
+    scopeStatus: string;
+    serviceGeographyLabel: string;
+    namedGeographies: string[];
+    sanFranciscoRelevance: string;
+    sourcePublisher: string;
+    sourceUrl: string;
+    sourceClaim: string;
+    retrievedAt: string;
+    limitation: string;
+  };
   diligenceKey: string | null;
   diligenceName: string | null;
   impactEvidenceStatus: string;
@@ -82,7 +93,7 @@ export default function SffGrantExplorer({ initialData, pdfUrl }: { initialData:
     <div className="sf-sff-explorer">
       <div className="sf-sff-controls">
         <label><span>Search published partner</span><input aria-label="Search SFF FY2025 partners" disabled={!hydrated} value={query} onChange={(event) => updateQuery(event.target.value)} placeholder="Hamilton Families…" /></label>
-        <label><span>Identity / receiving review</span><select aria-label="Filter SFF identity links" disabled={!hydrated} value={identity} onChange={(event) => updateIdentity(event.target.value)}><option value="all">All source rows</option><option value="current-reviewed">Current receiving review</option><option value="current-confirmed">Current sponsor confirmed</option><option value="current-changed">Historical sponsor changed</option><option value="current-unresolved">Current entity unresolved</option><option value="diligence">Deep dossier</option><option value="irs">IRS exact name</option><option value="contract">City-contract exact name</option><option value="sponsor">Historical SFF sponsor record</option><option value="unlinked">No exact local link</option></select></label>
+        <label><span>Identity / geography review</span><select aria-label="Filter SFF identity links" disabled={!hydrated} value={identity} onChange={(event) => updateIdentity(event.target.value)}><option value="all">All source rows</option><option value="current-reviewed">Current receiving review</option><option value="current-confirmed">Current sponsor confirmed</option><option value="current-changed">Historical sponsor changed</option><option value="current-unresolved">Current entity unresolved</option><option value="geography-reviewed">Service geography reviewed</option><option value="geography-explicit-sf">Explicit SF audience presence</option><option value="geography-regional">Regional Bay Area scope</option><option value="geography-non-sf-local">Named non-SF local area</option><option value="geography-statewide">California statewide</option><option value="geography-transnational">Transnational · no SF allocation</option><option value="diligence">Deep dossier</option><option value="irs">IRS exact name</option><option value="contract">City-contract exact name</option><option value="sponsor">Historical SFF sponsor record</option><option value="unlinked">No exact local link</option></select></label>
         <label><span>Order</span><select aria-label="Sort SFF partners" disabled={!hydrated} value={sort} onChange={(event) => updateSort(event.target.value)}><option value="alphabetical">Source order · alphabetical</option><option value="funding">Published funding · high to low</option></select></label>
         <div><span>Rows matching</span><strong>{data.pagination.total}</strong></div>
       </div>
@@ -98,6 +109,7 @@ export default function SffGrantExplorer({ initialData, pdfUrl }: { initialData:
               <div><dt>City-contract exact name</dt><dd>{partner.exactContractSourceName ?? 'None found'}</dd></div>
               <div><dt>SFF fiscal-sponsor source</dt><dd>{partner.sourceReportedFiscalSponsors.length ? partner.sourceReportedFiscalSponsors.map((sponsor) => <span className="sf-sff-sponsor-source" key={sponsor.sponsorName}><a href={sponsor.latestSourceUrl} target="_blank" rel="noreferrer">{sponsor.sponsorName} ↗</a><small>Reported {sponsor.latestSourcePublishedAt.slice(0, 10)} · historical source assertion, not current verification{sponsor.historicalAssertionCount > 1 ? ` · ${sponsor.historicalAssertionCount} SFF posts` : ''}</small></span>) : 'None found in reviewed SFF guides'}</dd></div>
               <div><dt>Current receiving review</dt><dd>{partner.currentReceivingEntityReview ? <span className="sf-sff-current-review"><b>{partner.currentReceivingEntityReview.relationshipStatus.replaceAll('-', ' ')}</b><strong>{partner.currentReceivingEntityReview.currentFiscalSponsorName ?? 'Receiving entity unresolved'}</strong>{partner.currentReceivingEntityReview.donationUrl ? <a href={partner.currentReceivingEntityReview.donationUrl} target="_blank" rel="noreferrer">Current donation route ↗</a> : <small>No current donation route found</small>}{partner.currentReceivingEntityReview.donationPayeeInstructions && <small>{partner.currentReceivingEntityReview.donationPayeeInstructions}</small>}<a href={partner.currentReceivingEntityReview.sources[0].url} target="_blank" rel="noreferrer">Official source · reviewed {partner.currentReceivingEntityReview.sources[0].retrievedAt} ↗</a><small>{partner.currentReceivingEntityReview.limitation}</small></span> : 'Not in the 11-row current review scope'}</dd></div>
+              <div><dt>Current service-geography review</dt><dd>{partner.currentServiceGeographyReview ? <span className="sf-sff-current-review"><b>{partner.currentServiceGeographyReview.sanFranciscoRelevance.replaceAll('-', ' ')}</b><strong>{partner.currentServiceGeographyReview.serviceGeographyLabel}</strong><small>{partner.currentServiceGeographyReview.sourceClaim}</small><a href={partner.currentServiceGeographyReview.sourceUrl} target="_blank" rel="noreferrer">{partner.currentServiceGeographyReview.sourcePublisher} · reviewed {partner.currentServiceGeographyReview.retrievedAt} ↗</a><small>{partner.currentServiceGeographyReview.limitation}</small></span> : 'Not yet reviewed from a current project source'}</dd></div>
               <div><dt>Impact / funding room</dt><dd>Not yet assessed · not yet assessed</dd></div>
             </dl>
             <footer>{partner.diligenceKey ? <a href={`#${partner.diligenceKey}-dossier-title`}>Open deep evidence dossier ↓</a> : <span>No MFI dossier</span>}<a href={`${pdfUrl}#page=${partner.sourcePage}`} target="_blank" rel="noreferrer">Source row ↗</a></footer>

@@ -1,0 +1,52 @@
+{
+  "version": "sf-institute-on-aging-friendship-line-cea-v0.1",
+  "generatedAt": "2026-08-31T07:42:00-07:00",
+  "program": "Friendship Line proactive outbound calls",
+  "decisionUnit": "additional participant no longer meeting the study's loneliness threshold at six months",
+  "status": "exploratory-model-not-funding-recommendation",
+  "bottomLine": {
+    "giftUsd": 100000,
+    "estimatedParticipants": 96.15,
+    "estimatedAdditionalSixMonthRemissions": 6.73,
+    "costPerAdditionalSixMonthRemissionUsd": 14857,
+    "plausibleRangeUsd": { "low": 5000, "high": 78000 },
+    "interpretation": "Our best guess is roughly $15,000 per additional participant no longer meeting the study's loneliness threshold at six months, with a deliberately wide $5,000–$78,000 range. This is an exploratory decision model, not a measured IOA result or a recommendation."
+  },
+  "formula": {
+    "participants": "gift_usd / marginal_cost_per_participant_usd",
+    "additionalRemissions": "participants * causal_six_month_remission_probability",
+    "costPerAdditionalRemission": "marginal_cost_per_participant_usd / causal_six_month_remission_probability",
+    "rangeMethod": "optimistic = low cost / high effect; pessimistic = high cost / low effect"
+  },
+  "inputs": [
+    { "key": "gift_usd", "label": "Illustrative gift", "best": 100000, "low": 100000, "high": 100000, "unit": "USD", "basis": "Donor scenario, not published funding room", "confidence": "scenario" },
+    { "key": "six_month_calls_per_participant", "label": "Proactive calls over six months", "best": 52, "low": 26, "high": 78, "unit": "calls", "basis": "MFI operating assumption of two calls per week; IOA does not publish a common dose for the pilot or current participants", "confidence": "very low" },
+    { "key": "minutes_per_call_including_notes", "label": "Staff or volunteer time per call including notes", "best": 20, "low": 15, "high": 30, "unit": "minutes", "basis": "MFI operating assumption; no IOA time-and-motion study located", "confidence": "very low" },
+    { "key": "loaded_resource_cost_per_hour_usd", "label": "Loaded program resource cost", "best": 60, "low": 40, "high": 75, "unit": "USD per hour", "basis": "MFI blended assumption for supervision, paid staff, volunteer management, technology, training, and overhead—not an IOA reported wage", "confidence": "very low" },
+    { "key": "marginal_cost_per_participant_usd", "label": "Six-month marginal cost per proactive participant", "best": 1040, "low": 600, "high": 1560, "unit": "USD", "basis": "Bottom-up synthesis of call dose, time, loaded resource cost, and a modest non-call allowance; not reconciled to program accounts", "confidence": "very low" },
+    { "key": "observed_six_month_loneliness_change", "label": "Observed decline in participants reporting loneliness", "best": 0.18, "low": 0.18, "high": 0.18, "unit": "proportion", "basis": "46% at baseline to 28% at six months in the 121-person single-group pilot", "confidence": "moderate for the enrolled sample; not causal" },
+    { "key": "causal_six_month_remission_probability", "label": "MFI estimate of causal six-month remission per participant", "best": 0.07, "low": 0.02, "high": 0.12, "unit": "additional remissions per participant", "basis": "Judgmental 39% attribution of the observed 18-point within-participant decline, with a 2–12 point range for regression to the mean, secular change, selection, and missing counterfactual", "confidence": "very low" }
+  ],
+  "sensitivity": [
+    { "case": "Optimistic", "marginalCostPerParticipantUsd": 600, "causalRemissionProbability": 0.12, "participantsPer100k": 166.67, "additionalRemissionsPer100k": 20, "costPerAdditionalRemissionUsd": 5000 },
+    { "case": "Best guess", "marginalCostPerParticipantUsd": 1040, "causalRemissionProbability": 0.07, "participantsPer100k": 96.15, "additionalRemissionsPer100k": 6.73, "costPerAdditionalRemissionUsd": 14857 },
+    { "case": "Pessimistic", "marginalCostPerParticipantUsd": 1560, "causalRemissionProbability": 0.02, "participantsPer100k": 64.1, "additionalRemissionsPer100k": 1.28, "costPerAdditionalRemissionUsd": 78000 }
+  ],
+  "excludedBenefits": [
+    "Suicides averted, because no program-specific counterfactual suicide effect was located",
+    "Emergency visits or healthcare spending averted, because participant anecdotes are not utilization estimates",
+    "Mortality, QALY, WELLBY, or life-substantially-bettered conversions",
+    "Benefits from inbound crisis calls, grief groups, referrals, or other IOA programs",
+    "Caregiver and family spillovers"
+  ],
+  "fundingRoom": {
+    "status": "not published",
+    "boundary": "The $100,000 gift is an illustrative denominator, not a claim that IOA can productively absorb it for incremental proactive calls. A recommendation requires a dated marginal plan, program accounts, staffing and volunteer capacity, payer restrictions, and evidence that a private gift would add rather than displace calls.",
+    "requiredNext": "Obtain an IOA-approved six-month proactive-call budget and capacity plan at $100K, $1M, and $10M, then replace every MFI cost assumption with program accounts and rerun the sensitivity analysis."
+  },
+  "sources": [
+    { "title": "A proactive phone intervention for older adults to address loneliness identified by a health plan", "url": "https://pubmed.ncbi.nlm.nih.gov/39315941/", "role": "Observed pilot change and study-design boundary" },
+    { "title": "Friendship Line", "url": "https://www.ioaging.org/friendship-line/", "role": "Current program model, audience, languages, and call volume" },
+    { "title": "Friendly visiting by a volunteer for reducing loneliness or social isolation in older adults", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10688573/", "role": "External evidence uncertainty for a related befriending intervention class" }
+  ]
+}

@@ -46,7 +46,7 @@ const candidates = [...sfDiligence.candidates].sort((a, b) => a.name.localeCompa
 const dossierCandidates = candidates.flatMap((candidate) => 'evidenceDossier' in candidate ? [{ candidate, dossier: candidate.evidenceDossier }] : []);
 const marginalPlanRequests = sfMarginalPlanRequests.packets;
 const sffInitialPage = { pagination: { page: 1, pageSize: 12, total: sffGrants.partners.length, pageCount: Math.ceil(sffGrants.partners.length / 12) }, partners: sffGrants.partners.slice(0, 12) };
-const deepReviewAnchors = new Map([['943023551', '#project-open-hand-review'], ['943342323', '#eviction-defense-collaborative-review'], ['941156622', '#compass-family-services-review'], ['237362588', '#curry-senior-center-review'], ['832393341', '#farming-hope-review'], ['810622701', '#five-keys-review'], ['941156481', '#glide-review'], ['943055602', '#hamilton-families-review'], ['943363781', '#harm-reduction-therapy-center-review'], ['813036333', '#homeless-youth-alliance-review'], ['941687559', '#huckleberry-youth-programs-review']]);
+const deepReviewAnchors = new Map([['943023551', '#project-open-hand-review'], ['943342323', '#eviction-defense-collaborative-review'], ['941156622', '#compass-family-services-review'], ['237362588', '#curry-senior-center-review'], ['832393341', '#farming-hope-review'], ['810622701', '#five-keys-review'], ['941156481', '#glide-review'], ['943055602', '#hamilton-families-review'], ['943363781', '#harm-reduction-therapy-center-review'], ['813036333', '#homeless-youth-alliance-review'], ['941687559', '#huckleberry-youth-programs-review'], ['942978977', '/charities/institute-on-aging']]);
 
 const researchGates = [
   { number: '01', title: 'Verify the entity', copy: 'Confirm the legal entity, donation vehicle, EIN, service geography, and which program a gift would support.' },
@@ -143,7 +143,7 @@ export default function SanFranciscoDonorPage() {
         </div>
         <details className="sf-report-contract"><summary>Open the common 12-part report contract</summary><ol>{sfResearchFunnel.reportContract.map((item) => <li key={item}>{item}</li>)}</ol></details>
         <aside className="sf-advocacy-track"><div><span>SEPARATE EVIDENCE TRACK</span><h3>Advocacy is reviewed, not ranked.</h3></div><p>{sfResearchFunnel.interpretation.advocacy}</p><ul>{sfResearchFunnel.advocacyEvidenceTrack.map((row) => <li key={row.name}><strong>{row.name}</strong><span>{row.researchMode}</span></li>)}</ul></aside>
-        <footer><p><strong>Current result: {sfResearchFunnel.summary.completedInitialReviewCount} of 25 initial reviews complete; 0 CEAs complete.</strong> {sfResearchFunnel.interpretation.costEffectiveness}</p><div>{sfResearchFunnel.sources.map((source) => <a key={source.url} href={source.url} target="_blank" rel="noreferrer">{source.title} ↗</a>)}</div></footer>
+        <footer><p><strong>Current result: {sfResearchFunnel.summary.completedInitialReviewCount} of 25 initial reviews complete; 1 exploratory model and 0 recommendation-grade CEAs.</strong> {sfResearchFunnel.interpretation.costEffectiveness}</p><div>{sfResearchFunnel.sources.map((source) => <a key={source.url} href={source.url} target="_blank" rel="noreferrer">{source.title} ↗</a>)}</div></footer>
       </section>
 
       <SfDeepReview review={pohReview} number={1} id="project-open-hand-review" evidenceHeadline="Direct trial involvement. Mixed results." workbookUrl={sfResearchFunnel.workbook.url} />
@@ -157,7 +157,6 @@ export default function SanFranciscoDonorPage() {
       <SfDeepReview review={harmReductionTherapyCenterReview} number={9} id="harm-reduction-therapy-center-review" evidenceHeadline="Relevant short-term trial. HRTC effect unknown." workbookUrl={sfResearchFunnel.workbook.url} />
       <SfDeepReview review={homelessYouthAllianceReview} number={10} id="homeless-youth-alliance-review" evidenceHeadline="Strong intervention rationale. HYA effect unknown." workbookUrl={sfResearchFunnel.workbook.url} />
       <SfDeepReview review={huckleberryYouthProgramsReview} number={11} id="huckleberry-youth-programs-review" evidenceHeadline="Several promising pathways. No single marginal case." workbookUrl={sfResearchFunnel.workbook.url} />
-
       <section className="sf-brief-context" aria-labelledby="sf-context-title">
         <div><p className="kicker">WHAT THE MARKET CAN ANSWER TODAY</p><h2 id="sf-context-title">Useful context. Explicit limits.</h2></div>
         <div className="sf-context-grid">

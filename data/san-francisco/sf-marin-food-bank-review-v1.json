@@ -1,0 +1,34 @@
+{
+  "version": "sf-marin-food-bank-review-v0.1",
+  "generatedAt": "2026-08-31T13:50:00-07:00",
+  "organization": { "name": "San Francisco–Marin Food Bank", "ein": "943041517", "taxStatus": "501(c)(3)", "donationUrl": "https://donate.sfmfoodbank.org/" },
+  "decision": {
+    "state": "Exploratory Community Market model; not recommendation-ready",
+    "summary": "SFMFB operates at exceptional local scale and publishes audited program accounting. Its Community Markets add client choice and navigation, but the organization has not published a causal food-security result or a costed marginal plan. Market for Impact therefore transfers external randomized evidence cautiously and models a native food-security outcome rather than meals, dollars of food, QALYs, or lives bettered.",
+    "costEffectiveness": "Approximately $6,000 per additional household not experiencing very low food security at 12 months; $1,333-$60,000 conditional positive-effect sensitivity; null effect plausible",
+    "roomForMoreFunding": "Not published for the modeled pathway",
+    "recommendation": "Not recommendation-ready"
+  },
+  "evidence": [
+    { "key": "sfmfb-scale", "design": "Audited accounts plus organization reporting", "population": "Households reached through SFMFB's pantry network and two Community Markets", "result": "SFMFB reports 44,000 households served weekly and nearly 56 million meals-equivalent in FY2025. Audited Neighborhood Pantries expense was $101.97 million, including $75.54 million of donated food distributed.", "transfer": "This establishes scale and accounting context, not unique households, causal food-security gains, or the marginal effect of a donation. The audit narrative separately says more than 49,000 households weekly, so the denominator is not perfectly stable." },
+    { "key": "freshplace", "design": "Randomized controlled trial", "population": "228 adults randomized to Freshplace or traditional pantry access in Hartford, Connecticut", "result": "Freshplace combined client-choice food access, monthly motivational interviewing, and referrals. Participants were reported as less than half as likely as controls to experience very low food security, with gains in self-sufficiency and fruit and vegetable intake.", "transfer": "This is the most relevant causal anchor we found, but it is not SFMFB evidence and does not isolate client choice from case management or referrals. Our 5-point best guess is a heavily discounted transfer, not an observed SFMFB effect." },
+    { "key": "systematic-review", "design": "Systematic review", "population": "Twelve food-bank-based interventions, including five randomized trials", "result": "The review found heterogeneous interventions and outcomes and did not pool results in a meta-analysis.", "transfer": "Food-bank interventions are not one uniform treatment. The evidence supports testing a defined Community Market pathway, not treating every meal or pantry visit as an equivalent outcome." }
+  ],
+  "reservations": [
+    "SFMFB has not published a causal Community Market effect on food security, health, or well-being.",
+    "Freshplace bundled client choice with motivational interviewing and referrals in another city and population.",
+    "The 44,000-household annual-report denominator conflicts with the audit narrative's more-than-49,000 figure and may include recurring households across weeks.",
+    "The donor-cash cost subtracts recognized donated food and services; it is not a total social-resource cost and does not value donated food at zero.",
+    "Neighborhood Pantries accounts cover a broader network than the two Community Markets, which opened in June 2025.",
+    "The eight-market expansion goal is not a published marginal funding gap or capacity curve.",
+    "Public contracts, commodities, private gifts, and donated food interact; displacement for the next gift is unknown.",
+    "A QALY, WELLBY, or 10-QALY life-bettered conversion would require measured duration, health and well-being effects, household-person allocation, and moral weights that are not available."
+  ],
+  "sources": [
+    { "publisher": "San Francisco–Marin Food Bank", "title": "FY2025 Annual Report", "url": "https://www.sfmfoodbank.org/annual-report-2025/", "published": "2025", "retrieved": "2026-08-31", "sourceType": "organization-reported" },
+    { "publisher": "San Francisco–Marin Food Bank / Baker Tilly", "title": "FY2025 audited financial statements", "url": "https://www.sfmfoodbank.org/wp-content/uploads/2025/12/San-Francisco-Marin-Food-Bank-FY25-Audited-Financial-Statement_FINAL.pdf", "published": "2025-12-11", "retrieved": "2026-08-31", "sourceType": "independent audit" },
+    { "publisher": "San Francisco–Marin Food Bank", "title": "Community Markets", "url": "https://www.sfmfoodbank.org/programs/community-markets/", "published": "Publication date not stated", "retrieved": "2026-08-31", "sourceType": "organization program description" },
+    { "publisher": "American Journal of Preventive Medicine", "title": "A randomized controlled trial of a food pantry intervention", "url": "https://pubmed.ncbi.nlm.nih.gov/24139769/", "published": "2013", "retrieved": "2026-08-31", "sourceType": "peer-reviewed randomized trial" },
+    { "publisher": "BMC Public Health", "title": "Food bank-based interventions and health outcomes: a systematic review", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10260889/", "published": "2023", "retrieved": "2026-08-31", "sourceType": "peer-reviewed systematic review" }
+  ]
+}

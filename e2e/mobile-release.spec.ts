@@ -5,6 +5,7 @@ const defaultRoutes = [
   '/india',
   '/san-francisco',
   '/charities/project-open-hand',
+  '/charities/sf-marin-food-bank',
   '/grants/coefficient/grants-18659-0',
   '/grants/coefficient/grants-15086-0',
   '/organizations/georgetown-university-initiative-on-innovation-development-and-evaluation',

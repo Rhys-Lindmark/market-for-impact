@@ -1,0 +1,53 @@
+{
+  "version": "sf-marin-food-bank-community-market-cea-v0.1",
+  "generatedAt": "2026-08-31T13:50:00-07:00",
+  "program": "San Francisco–Marin Food Bank Community Market household food access",
+  "status": "exploratory-model-not-funding-recommendation",
+  "decisionUnit": "An additional household not experiencing very low food security at 12 months because it received 26 weeks of Community Market access",
+  "bottomLine": {
+    "giftUsd": 100000,
+    "estimatedHouseholdCourses": 333.33,
+    "estimatedAdditionalHouseholdsNotExperiencingVeryLowFoodSecurity": 16.67,
+    "costPerAdditionalHouseholdNotExperiencingVeryLowFoodSecurityUsd": 6000,
+    "conditionalPositiveEffectRangeUsd": { "low": 1333, "high": 60000 },
+    "interpretation": "Our best exploratory estimate is about $6,000 per additional household not experiencing very low food security at 12 months. Conditional on a positive effect, the modeled range is approximately $1,333-$60,000. The effect is transferred from a different bundled pantry intervention, so a null effect remains plausible and the true upper bound is not finite."
+  },
+  "inputs": [
+    { "key": "gift_usd", "label": "Illustrative gift", "best": 100000, "low": 100000, "high": 100000, "unit": "USD", "basis": "Donor scenario, not published current funding room", "confidence": "scenario" },
+    { "key": "modeled_cash_cost_per_26_week_household_course_usd", "label": "Modeled cash cost per 26-week household course", "best": 300, "low": 200, "high": 600, "unit": "USD", "basis": "FY2025 audited Neighborhood Pantries expense of $101.97 million less $75.54 million of recognized donated food distributed and $0.66 million of donated services and supplies, divided by the annual-report denominator of 44,000 households served weekly and 52 weeks, then multiplied by 26 weeks and rounded. This cash-accounting boundary does not value donated food at zero and is not a Community Market marginal quote.", "confidence": "low" },
+    { "key": "full_accounting_cost_per_26_week_household_course_usd", "label": "Full recognized accounting cost per 26-week household course", "best": 1160, "low": 1040, "high": 1160, "unit": "USD", "basis": "FY2025 audited Neighborhood Pantries functional expense divided by 44,000-49,000 weekly households, annualized and multiplied by 26 weeks. This includes recognized donated food and is a social-resource comparator, not the donor-cash numerator.", "confidence": "low" },
+    { "key": "freshplace_relative_risk_reduction", "label": "Freshplace randomized relative reduction in very low food security", "best": 0.5, "low": 0.5, "high": 0.5, "unit": "proportion", "basis": "The 228-person Freshplace randomized trial reported intervention participants were less than half as likely as controls to experience very low food security. Freshplace bundled client choice with monthly motivational interviewing and referrals and was not an SFMFB program.", "confidence": "moderate for Freshplace; indirect for SFMFB" },
+    { "key": "causal_absolute_very_low_food_security_reduction", "label": "MFI estimate of absolute 12-month very-low-food-security reduction", "best": 0.05, "low": 0.01, "high": 0.15, "unit": "proportion", "basis": "Judgmental transfer discounted well below the Freshplace result because SFMFB Community Markets differ in population, geography, service bundle, dose, and follow-up and publish no causal food-security estimate. The low bound is a small positive effect, not a guarantee; a null effect remains plausible.", "confidence": "very low" }
+  ],
+  "formula": {
+    "householdCourses": "gift_usd / modeled_cash_cost_per_26_week_household_course_usd",
+    "additionalHouseholdsNotExperiencingVeryLowFoodSecurity": "household_courses * causal_absolute_very_low_food_security_reduction",
+    "costPerAdditionalHouseholdNotExperiencingVeryLowFoodSecurity": "modeled_cash_cost_per_26_week_household_course_usd / causal_absolute_very_low_food_security_reduction",
+    "rangeMethod": "conditional positive-effect range: favorable = low cash cost / 15-point effect; cautious positive = high cash cost / 1-point effect"
+  },
+  "sensitivity": [
+    { "case": "Favorable positive effect", "cashCostPerHouseholdCourseUsd": 200, "causalVeryLowFoodSecurityReduction": 0.15, "householdCoursesPer100k": 500, "additionalHouseholdsPer100k": 75, "costPerAdditionalHouseholdUsd": 1333 },
+    { "case": "MFI best guess", "cashCostPerHouseholdCourseUsd": 300, "causalVeryLowFoodSecurityReduction": 0.05, "householdCoursesPer100k": 333.33, "additionalHouseholdsPer100k": 16.67, "costPerAdditionalHouseholdUsd": 6000 },
+    { "case": "Small positive effect", "cashCostPerHouseholdCourseUsd": 600, "causalVeryLowFoodSecurityReduction": 0.01, "householdCoursesPer100k": 166.67, "additionalHouseholdsPer100k": 1.67, "costPerAdditionalHouseholdUsd": 60000 }
+  ],
+  "nullEffectBoundary": "The numeric range is conditional on a positive effect. SFMFB has not published a causal Community Market food-security result, and Freshplace combined client choice with case management and referrals in another city. If Community Markets do not reduce very low food security, or a gift substitutes for existing cash or donated food, additional outcomes approach zero and no finite positive cost-effectiveness estimate exists.",
+  "fundingRoom": {
+    "status": "not published for the modeled pathway",
+    "boundary": "The $100,000 scenario is illustrative. SFMFB describes a goal of eight Community Markets serving up to 4,500 households weekly within three years, but does not publish a current site-by-site budget, committed funding, remaining gap, waitlist, staffing constraint, partner displacement, or outcome forecast for the next gift.",
+    "requiredNext": "Obtain a dated Community Market expansion budget, committed and restricted funding, site pipeline, household capacity, incremental cash and in-kind resources, enrollment and retention, pre-specified food-security follow-up, and $100K, $1M, and $10M marginal cases."
+  },
+  "excludedBenefits": [
+    "QALYs, WELLBYs, lives saved, and a 10-QALY life-substantially-bettered conversion",
+    "Reduced worry in the home-delivery survey because it has no comparison group",
+    "CalFresh benefits accessed because benefit dollars are not equivalent to attributable welfare gain",
+    "Health-care savings, diet quality, social connection, peer-navigation benefits, and avoided food spending",
+    "Food-bank-wide reach because households can recur and Community Markets are only one delivery channel"
+  ],
+  "sources": [
+    { "url": "https://www.sfmfoodbank.org/annual-report-2025/", "role": "FY2025 household reach, meals-equivalent, Community Market scale, and organizationwide financial summary" },
+    { "url": "https://www.sfmfoodbank.org/wp-content/uploads/2025/12/San-Francisco-Marin-Food-Bank-FY25-Audited-Financial-Statement_FINAL.pdf", "role": "Audited Neighborhood Pantries functional expenses and donated-food accounting" },
+    { "url": "https://www.sfmfoodbank.org/programs/community-markets/", "role": "Community Market model and expansion goal" },
+    { "url": "https://pubmed.ncbi.nlm.nih.gov/24139769/", "role": "Freshplace randomized very-low-food-security result" },
+    { "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10260889/", "role": "Systematic review showing heterogeneous food-bank intervention evidence" }
+  ]
+}

@@ -104,15 +104,16 @@ test('phone donors can inspect the marginal-plan and grant-look-back research co
   await expect(summary.locator('strong')).toHaveText(['18', '0', '0', '0']);
   await expect(page.locator('.sf-protocol-contract>section')).toHaveCount(2);
   await expect(page.locator('.sf-protocol-contract li')).toHaveCount(16);
-  await expect(page.locator('.sf-request-index a')).toHaveCount(5);
+  await expect(page.locator('.sf-request-index a')).toHaveCount(6);
   const requests = page.locator('.sf-request-packet');
-  await expect(requests).toHaveCount(5);
+  await expect(requests).toHaveCount(6);
   const hamiltonRequest = requests.filter({ hasText: 'What could Hamilton Families do with the next gift?' });
   const foodBankRequest = requests.filter({ hasText: 'What could the Food Bank do with the next gift?' });
   const centerRequest = requests.filter({ hasText: 'What could the SF LGBT Center do with the next gift?' });
   const glideRequest = requests.filter({ hasText: 'What could GLIDE do with the next gift?' });
   const hacRequest = requests.filter({ hasText: 'What could Housing Action Coalition do with the next gift?' });
-  for (const request of [hamiltonRequest, foodBankRequest, centerRequest, glideRequest, hacRequest]) {
+  const growsfRequest = requests.filter({ hasText: 'What could GrowSF do with the next gift?' });
+  for (const request of [hamiltonRequest, foodBankRequest, centerRequest, glideRequest, hacRequest, growsfRequest]) {
     await expect(request.getByText('Draft · not sent')).toBeVisible();
     await expect(request.locator('.sf-request-facts article')).toHaveCount(5);
     await expect(request.locator('.sf-request-scenarios article')).toHaveCount(3);
@@ -121,6 +122,8 @@ test('phone donors can inspect the marginal-plan and grant-look-back research co
     await expect(request.getByText('not-submitted', { exact: true })).toHaveCount(11);
     await expect(request.getByText('not-started', { exact: true })).toHaveCount(8);
   }
+  await expect(growsfRequest).toContainText('not a funding recommendation');
+  await expect(growsfRequest).toContainText('political endorsement');
   await expect(hamiltonRequest).toContainText('8 exact prime-contractor matches');
   await expect(foodBankRequest).toContainText('at capacity and uses a waitlist');
   await expect(foodBankRequest).toContainText('$83.89M donated food/in-kind');
@@ -167,7 +170,7 @@ test('phone donors can distinguish reported outcomes from external evidence doss
   test.skip(testInfo.project.name !== 'phone-390');
   await page.goto('/san-francisco#diligence', { waitUntil: 'domcontentloaded' });
   const dossiers = page.locator('.sf-evidence-dossier');
-  await expect(dossiers).toHaveCount(5);
+  await expect(dossiers).toHaveCount(6);
   const hamilton = dossiers.filter({ hasText: 'Hamilton Families' });
   await expect(hamilton.getByText('deeper diligence; recommendation blocked')).toBeVisible();
   await expect(hamilton.getByText('results pending')).toBeVisible();
@@ -189,6 +192,11 @@ test('phone donors can distinguish reported outcomes from external evidence doss
   await expect(hac.getByText('official bill history and chapter status')).toBeVisible();
   await expect(hac.getByText('peer-reviewed literature review of zoning change, construction, costs, and neighborhood demographics')).toBeVisible();
   await expect(hac.getByText('03 · What still blocks a recommendation')).toBeVisible();
+  const growsf = dossiers.filter({ hasText: 'GrowSF' });
+  await expect(growsf.getByRole('heading', { name: /What Coalition to Grow San Francisco – GrowSF says happened/ })).toBeVisible();
+  await expect(growsf.getByText('official final election canvass')).toBeVisible();
+  await expect(growsf.getByText('meta-analysis of 40 field experiments plus nine original field experiments')).toBeVisible();
+  await expect(growsf.getByText('03 · What still blocks a recommendation')).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 

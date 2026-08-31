@@ -14,7 +14,7 @@ test('SF donor comparison standardizes six candidates without ranking them', () 
   assert.equal(snapshot.summary.candidateCount, 6);
   assert.equal(snapshot.summary.recommendationReadyCount, 0);
   assert.equal(snapshot.summary.insufficientEvidenceCount, 6);
-  assert.equal(snapshot.summary.deepDossierCount, 5);
+  assert.equal(snapshot.summary.deepDossierCount, 6);
   assert.match(snapshot.interpretation.ordering, /alphabetical, not ranked/i);
 });
 
@@ -32,7 +32,7 @@ test('every unsupported impact price and gift-size plan fails visibly open', () 
 test('research depth and donation vehicles remain descriptive rather than scored', () => {
   const growsf = snapshot.candidates.find((candidate) => candidate.key === 'growsf');
   const hac = snapshot.candidates.find((candidate) => candidate.key === 'housing-action-coalition');
-  assert.equal(growsf.researchState, 'initial-scorecard-only');
+  assert.equal(growsf.researchState, 'deep-evidence-dossier');
   assert.match(growsf.donationVehicle.deductibility, /not deductible/i);
   assert.equal(hac.researchState, 'deep-evidence-dossier');
   assert.match(hac.donationVehicle.taxStatus, /501\(c\)\(3\).*501\(c\)\(4\)/i);

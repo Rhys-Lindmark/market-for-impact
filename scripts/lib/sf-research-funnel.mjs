@@ -27,7 +27,9 @@ export function buildSfResearchFunnel({ irsUniverse, config }) {
       queuePosition: index + 1, ein, displayName, legalName: source.name, intervention,
       nteeCode: source.nteeCode, nteeGroup: source.nteeGroup, revenueAmountUsd: source.revenueAmountUsd, taxPeriod: source.taxPeriod,
       exactContractSourceName: source.exactContractSourceName, existingScorecardKey: source.scorecardKey,
-      reportStatus: config.completedInitialReviewEins.includes(ein) ? 'initial-review-complete' : 'queued', costEffectivenessStatus: 'not-estimable', recommendationStatus: 'not-assessed'
+      reportStatus: config.completedInitialReviewEins.includes(ein) ? 'initial-review-complete' : 'queued',
+      costEffectivenessStatus: config.exploratoryModelEins.includes(ein) ? 'exploratory-model' : 'not-estimable',
+      recommendationStatus: 'not-assessed'
     };
   });
   const selected = (limit) => {
@@ -40,13 +42,13 @@ export function buildSfResearchFunnel({ irsUniverse, config }) {
   const semantic = { priority1000, priority100, deepDiveRows, advocacyEvidenceTrack: config.advocacyEvidenceTrack };
   return {
     version: 'sf-research-funnel-v0.1', generatedAt: config.generatedAt, geography: irsUniverse.geography,
-    summary: { universeCount: irsUniverse.summary.organizationCount, machineEligibleCount: eligible.length, shallowScreenCount: priority1000.length, priorityReviewCount: priority100.length, deepDiveQueueCount: deepDiveRows.length, completedInitialReviewCount: deepDiveRows.filter((row) => row.reportStatus === 'initial-review-complete').length, completedCostEffectivenessCount: 0 },
+    summary: { universeCount: irsUniverse.summary.organizationCount, machineEligibleCount: eligible.length, shallowScreenCount: priority1000.length, priorityReviewCount: priority100.length, deepDiveQueueCount: deepDiveRows.length, completedInitialReviewCount: deepDiveRows.filter((row) => row.reportStatus === 'initial-review-complete').length, exploratoryModelCount: deepDiveRows.filter((row) => row.costEffectivenessStatus === 'exploratory-model').length, completedCostEffectivenessCount: 0 },
     stages: [
       { key: 'universe', count: irsUniverse.summary.organizationCount, label: 'SF filing-address EINs', state: 'discovery universe' },
       { key: 'shallow', count: priority1000.length, label: 'Shallow screens', state: 'research-priority queue' },
       { key: 'priority', count: priority100.length, label: 'Priority reviews', state: 'research-priority queue' },
       { key: 'deep', count: deepDiveRows.length, label: 'Deep-dive reports', state: `${deepDiveRows.filter((row) => row.reportStatus === 'initial-review-complete').length} initial review complete` },
-      { key: 'complete', count: 0, label: 'CEA complete', state: 'none yet' }
+      { key: 'complete', count: deepDiveRows.filter((row) => row.costEffectivenessStatus === 'exploratory-model').length, label: 'Exploratory models', state: '0 recommendation-grade' }
     ],
     eligibilityContract: {
       include: 'IRS filing address in San Francisco; subsection 03; deductibility code 1; reported positive revenue; NTEE group plausibly connected to education, health, safety, employment, food, housing, youth, human services, civil rights, or community improvement. Curated deep-review candidates may enter despite a missing or misleading NTEE code, with the exception visible.',
@@ -58,7 +60,7 @@ export function buildSfResearchFunnel({ irsUniverse, config }) {
     workbook: config.workbook, sources: config.sources,
     interpretation: {
       ranking: 'The 1,000 and 100 are research-priority queues, not top-charity lists. The 25 are a deliberately varied deep-review queue, displayed alphabetically rather than ranked.',
-      costEffectiveness: 'No organization-level cost-effectiveness estimate is complete. Native outcomes come first; QALY or WELLBY conversion is published only with an inspectable, versioned model and uncertainty.',
+      costEffectiveness: 'Exploratory models publish a best estimate, sensitivity, and explicit null-effect boundary but are not recommendations. Native outcomes come first; QALY or WELLBY conversion is published only with an inspectable, versioned model and uncertainty.',
       advocacy: 'Election and policy-advocacy organizations are researched in a separate, unranked evidence track. MFI does not endorse candidates or treat an election result as intrinsically beneficial.'
     },
     contentHash: contentHash(semantic)
@@ -70,7 +72,8 @@ export function validateSfResearchFunnel(snapshot) {
   if (snapshot.summary.universeCount !== 6688 || snapshot.summary.shallowScreenCount !== 1000 || snapshot.summary.priorityReviewCount !== 100 || snapshot.summary.deepDiveQueueCount !== 25) throw new Error('SF funnel stage counts do not reconcile.');
   if (!snapshot.priority100.slice(0, 25).every((ein) => snapshot.deepDiveRows.some((row) => row.ein === ein))) throw new Error('Deep-dive queue must lead priority review.');
   if (!snapshot.priority100.every((ein) => snapshot.priority1000.includes(ein))) throw new Error('Priority 100 must be a subset of shallow 1,000.');
-  if (snapshot.deepDiveRows.some((row) => row.costEffectivenessStatus !== 'not-estimable' || row.recommendationStatus !== 'not-assessed')) throw new Error('Queued deep dives cannot imply results.');
+  if (snapshot.deepDiveRows.some((row) => !['not-estimable', 'exploratory-model'].includes(row.costEffectivenessStatus) || row.recommendationStatus !== 'not-assessed')) throw new Error('Queued deep dives cannot imply recommendations or unsupported model states.');
+  if (snapshot.summary.exploratoryModelCount !== snapshot.deepDiveRows.filter((row) => row.costEffectivenessStatus === 'exploratory-model').length) throw new Error('Exploratory-model count does not reconcile.');
   const semantic = { priority1000: snapshot.priority1000, priority100: snapshot.priority100, deepDiveRows: snapshot.deepDiveRows, advocacyEvidenceTrack: snapshot.advocacyEvidenceTrack };
   if (snapshot.contentHash !== contentHash(semantic)) throw new Error('SF research-funnel content hash does not reconcile.');
   return snapshot;

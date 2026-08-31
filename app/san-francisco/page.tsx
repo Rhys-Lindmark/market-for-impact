@@ -16,6 +16,7 @@ import curryReview from '@/data/san-francisco/curry-senior-center-review-v1.json
 import farmingHopeReview from '@/data/san-francisco/farming-hope-review-v1.json';
 import fiveKeysReview from '@/data/san-francisco/five-keys-review-v1.json';
 import glideReview from '@/data/san-francisco/glide-review-v1.json';
+import hamiltonFamiliesReview from '@/data/san-francisco/hamilton-families-review-v1.json';
 import sffGrants from '@/data/san-francisco/sff-community-grants-v1.json';
 import SffGrantExplorer from './SffGrantExplorer';
 import SfDeepReview from './SfDeepReview';
@@ -42,7 +43,7 @@ const candidates = [...sfDiligence.candidates].sort((a, b) => a.name.localeCompa
 const dossierCandidates = candidates.flatMap((candidate) => 'evidenceDossier' in candidate ? [{ candidate, dossier: candidate.evidenceDossier }] : []);
 const marginalPlanRequests = sfMarginalPlanRequests.packets;
 const sffInitialPage = { pagination: { page: 1, pageSize: 12, total: sffGrants.partners.length, pageCount: Math.ceil(sffGrants.partners.length / 12) }, partners: sffGrants.partners.slice(0, 12) };
-const deepReviewAnchors = new Map([['943023551', '#project-open-hand-review'], ['943342323', '#eviction-defense-collaborative-review'], ['941156622', '#compass-family-services-review'], ['237362588', '#curry-senior-center-review'], ['832393341', '#farming-hope-review'], ['810622701', '#five-keys-review'], ['941156481', '#glide-review']]);
+const deepReviewAnchors = new Map([['943023551', '#project-open-hand-review'], ['943342323', '#eviction-defense-collaborative-review'], ['941156622', '#compass-family-services-review'], ['237362588', '#curry-senior-center-review'], ['832393341', '#farming-hope-review'], ['810622701', '#five-keys-review'], ['941156481', '#glide-review'], ['943055602', '#hamilton-families-review']]);
 
 const researchGates = [
   { number: '01', title: 'Verify the entity', copy: 'Confirm the legal entity, donation vehicle, EIN, service geography, and which program a gift would support.' },
@@ -149,6 +150,7 @@ export default function SanFranciscoDonorPage() {
       <SfDeepReview review={farmingHopeReview} number={5} id="farming-hope-review" evidenceHeadline="Promising placement signal. Mixed transferred evidence." workbookUrl={sfResearchFunnel.workbook.url} />
       <SfDeepReview review={fiveKeysReview} number={6} id="five-keys-review" evidenceHeadline="Promising intervention class. Local causal effect unknown." workbookUrl={sfResearchFunnel.workbook.url} />
       <SfDeepReview review={glideReview} number={7} id="glide-review" evidenceHeadline="Multiple promising pathways. No single marginal case." workbookUrl={sfResearchFunnel.workbook.url} />
+      <SfDeepReview review={hamiltonFamiliesReview} number={8} id="hamilton-families-review" evidenceHeadline="Durable subsidy evidence. Rapid-rehousing effect uncertain." workbookUrl={sfResearchFunnel.workbook.url} />
 
       <section className="sf-brief-context" aria-labelledby="sf-context-title">
         <div><p className="kicker">WHAT THE MARKET CAN ANSWER TODAY</p><h2 id="sf-context-title">Useful context. Explicit limits.</h2></div>

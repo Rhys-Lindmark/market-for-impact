@@ -128,10 +128,10 @@ export default function SanFranciscoDonorPage() {
         <div className="sf-sff-summary" aria-label="San Francisco Foundation portfolio summary">
           <div><strong>{integer.format(sffGrants.summary.publishedPartnerRowCount)}</strong><span>Published partner rows</span></div>
           <div><strong>{compactMoney.format(sffGrants.summary.publishedPartnerTotalFundingUsd)}</strong><span>Aggregate partner totals</span></div>
-          <div><strong>{integer.format(sffGrants.summary.exactIrsMatchRowCount)}</strong><span>Exact IRS-name links</span></div>
-          <div><strong>{integer.format(sffGrants.summary.exactContractMatchRowCount)}</strong><span>Exact city-contract links</span></div>
-          <div><strong>{integer.format(sffGrants.summary.currentReceivingEntityReviewRowCount)}</strong><span>Current receiving reviews</span></div>
+          <div><strong>{integer.format(sffGrants.summary.currentServiceGeographyReviewRowCount)}</strong><span>Service geographies reviewed</span></div>
+          <div><strong>{integer.format(sffGrants.summary.explicitSfAudiencePresenceRowCount)}</strong><span>Explicit SF audience presence</span></div>
           <div><strong>{integer.format(sffGrants.summary.currentSponsorConfirmedRowCount)}</strong><span>Current sponsors confirmed</span></div>
+          <div><strong>{integer.format(sffGrants.summary.currentReceivingEntityUnresolvedRowCount)}</strong><span>Receiving entities unresolved</span></div>
         </div>
         <aside className="sf-sff-amount-rule"><span>AMOUNT SEMANTICS</span><p>{sffGrants.interpretation.amount} Historical funding is not current room for more funding.</p></aside>
         <SffGrantExplorer initialData={sffInitialPage} pdfUrl={sffGrants.source.pdfUrl} />

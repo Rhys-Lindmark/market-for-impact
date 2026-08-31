@@ -1,0 +1,53 @@
+{
+  "version": "sf-lgbt-center-employment-cea-v0.1",
+  "generatedAt": "2026-08-31T14:20:00-07:00",
+  "program": "SF LGBT Center employment support",
+  "status": "exploratory-conditional-scenario-not-funding-recommendation",
+  "decisionUnit": "An additional living-wage job placement attributable to the Center within the reporting year",
+  "bottomLine": {
+    "giftUsd": 100000,
+    "reportedGrossCostPerPlacementBenchmarkUsd": 42942,
+    "conditionalMidpointCostPerAdditionalPlacementUsd": 171768,
+    "conditionalPositiveAttributionRangeUsd": { "low": 85884, "high": 429421 },
+    "conditionalMidpointAdditionalPlacementsPer100k": 0.58,
+    "interpretation": "The FY2024 Economic Development allocation divided by 30 reported living-wage placements is a $42,942 gross reconciliation benchmark, not a causal or marginal impact price. If 25% of reported placements were additional because of the Center, the conditional midpoint would be approximately $171,768 per additional placement. A 10%-50% positive-attribution sensitivity spans approximately $85,884-$429,421. The external employment-services evidence is compatible with a null effect, so the true upper bound is not finite."
+  },
+  "inputs": [
+    { "key": "gift_usd", "label": "Illustrative gift", "best": 100000, "low": 100000, "high": 100000, "unit": "USD", "basis": "Donor scenario, not published current funding room", "confidence": "scenario" },
+    { "key": "fy2024_economic_development_expense_usd", "label": "FY2024 Economic Development allocation", "best": 1288262, "low": 1288262, "high": 1288262, "unit": "USD", "basis": "Audited functional expense. It includes employment, financial, housing, and small-business work and is not an employment-program budget or marginal quote.", "confidence": "high for accounting; low for employment allocation" },
+    { "key": "reported_job_seekers_supported", "label": "2024 job seekers receiving employment support", "best": 400, "low": 400, "high": 400, "unit": "people_floor", "basis": "The 2024 Year in Review reports 400+ job seekers receiving drop-in, workshop, mentorship, and one-to-one support. We use the published floor; service intensity and unique-participant reconciliation are not reported.", "confidence": "moderate for organization-reported floor" },
+    { "key": "reported_living_wage_placements", "label": "2024 reported living-wage placements", "best": 30, "low": 30, "high": 30, "unit": "placements_floor", "basis": "The 2024 Year in Review reports 30+ community members securing living-wage employment. The wage threshold, retention, service pathway, comparison rate, and attribution are unpublished.", "confidence": "low" },
+    { "key": "conditional_center_attribution_share", "label": "Conditional share of reported placements that was additional", "best": 0.25, "low": 0.1, "high": 0.5, "unit": "proportion", "basis": "MFI decision scenarios, not evidence estimates. The range asks what the accounting would imply if 10%, 25%, or 50% of reported placements were additional because of the Center. A null effect remains plausible because the Center has no comparison group and a systematic review found employment-service effects negligible or statistically insignificant on average.", "confidence": "very low" }
+  ],
+  "formula": {
+    "reportedGrossCostPerPlacementBenchmark": "fy2024_economic_development_expense_usd / reported_living_wage_placements",
+    "conditionalAdditionalPlacements": "reported_living_wage_placements * conditional_center_attribution_share",
+    "conditionalCostPerAdditionalPlacement": "fy2024_economic_development_expense_usd / conditional_additional_placements",
+    "rangeMethod": "conditional positive-attribution sensitivity: favorable = 50% of reported placements additional; midpoint = 25%; small positive = 10%"
+  },
+  "sensitivity": [
+    { "case": "Favorable positive attribution", "attributionShare": 0.5, "additionalPlacementsInReportedCohort": 15, "costPerAdditionalPlacementUsd": 85884, "additionalPlacementsPer100k": 1.16 },
+    { "case": "MFI midpoint scenario", "attributionShare": 0.25, "additionalPlacementsInReportedCohort": 7.5, "costPerAdditionalPlacementUsd": 171768, "additionalPlacementsPer100k": 0.58 },
+    { "case": "Small positive attribution", "attributionShare": 0.1, "additionalPlacementsInReportedCohort": 3, "costPerAdditionalPlacementUsd": 429421, "additionalPlacementsPer100k": 0.23 }
+  ],
+  "nullEffectBoundary": "The numeric range is conditional on some positive Center-attributable effect. The Center has not published a comparison rate, retained-employment follow-up, earnings change, or program-level cost. The external systematic review found employment-service effects negligible or statistically insignificant on average. If the Center did not change placement probability, or a gift replaced public or restricted funding, additional placements approach zero and no finite positive cost-effectiveness estimate exists.",
+  "fundingRoom": {
+    "status": "not published for the modeled pathway",
+    "boundary": "The $100,000 scenario is illustrative and linear. Individualized coaching enrollment is currently paused, the Career Connections newsletter is paused until Fall 2026, government grants supplied 55% of FY2024 revenue, and five exact city-contract matches overlap service areas. The Center has not published an employment-specific budget, committed funding, remaining gap, staffing or employer capacity, placement forecast, or displacement analysis for the next gift.",
+    "requiredNext": "Obtain a dated employment-program budget, restricted and public funding reconciliation, unique participant and service-intensity cohorts, wage threshold, 6- and 12-month employment and earnings outcomes, a credible comparison, and $100K, $1M, and $10M marginal cases."
+  },
+  "excludedBenefits": [
+    "QALYs, WELLBYs, lives saved, and a 10-QALY life-substantially-bettered conversion",
+    "Employment retention and earnings gains because neither is published for the 2024 placement cohort",
+    "Employer-side inclusion, confidence, social connection, financial counseling, homeownership, and small-business outcomes",
+    "Career-fair attendance, workshops, newsletters, drop-ins, and coaching contacts as if they were durable outcomes",
+    "Economic value of a placement because wage, hours, duration, taxes, benefits, and the counterfactual earnings path are unknown"
+  ],
+  "sources": [
+    { "url": "https://www.sfcenter.org/wp-content/uploads/2025/03/final-center-year-in-review-2024.pdf", "role": "Dated 2024 employment-support and living-wage-placement floors" },
+    { "url": "https://www.sfcenter.org/wp-content/uploads/2024/12/sf-lgbt-community-center-fy-2024-audited-financial-statements.pdf", "role": "Audited FY2024 Economic Development allocation and organization finances" },
+    { "url": "https://www.sfcenter.org/program/employment_services/", "role": "Current employment-service design, current undated impact counters, and enrollment/newsletter pauses" },
+    { "url": "https://www.campbellcollaboration.org/review/improving-youth-labour-market-outcomes/", "role": "External systematic review of experimental and quasi-experimental employment interventions" },
+    { "url": "https://www.sfcenter.org/wp-content/uploads/2026/01/sf-lgbt-center-theory-of-change-executive-summary.pdf", "role": "Center-wide formative evaluation and measurement roadmap" }
+  ]
+}

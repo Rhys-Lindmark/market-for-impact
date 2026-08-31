@@ -6,6 +6,7 @@ const defaultRoutes = [
   '/san-francisco',
   '/charities/project-open-hand',
   '/charities/sf-marin-food-bank',
+  '/charities/sf-lgbt-center',
   '/grants/coefficient/grants-18659-0',
   '/grants/coefficient/grants-15086-0',
   '/organizations/georgetown-university-initiative-on-innovation-development-and-evaluation',
@@ -247,7 +248,7 @@ test('phone donors can distinguish reported outcomes from external evidence doss
   test.skip(testInfo.project.name !== 'phone-390');
   await page.goto('/san-francisco#diligence', { waitUntil: 'domcontentloaded' });
   const dossiers = page.locator('.sf-evidence-dossier');
-  await expect(dossiers).toHaveCount(6);
+  await expect(dossiers).toHaveCount(5);
   const hamilton = dossiers.filter({ hasText: 'Hamilton Families' });
   await expect(hamilton.getByText('deeper diligence; recommendation blocked')).toBeVisible();
   await expect(hamilton.getByText('results pending')).toBeVisible();
@@ -256,10 +257,7 @@ test('phone donors can distinguish reported outcomes from external evidence doss
   await expect(foodBank.getByText('randomized trial; 228 adults followed for 12 months')).toBeVisible();
   await expect(foodBank.getByText('03 · What still blocks a recommendation')).toBeVisible();
   await expect(foodBank.getByRole('heading', { name: /price the next dollar/ })).toBeVisible();
-  const center = dossiers.filter({ hasText: 'SF LGBT Center' });
-  await expect(center.getByRole('heading', { name: /What the Center says happened/ })).toBeVisible();
-  await expect(center.getByText('systematic review of 107 experimental or quasi-experimental interventions in 31 countries')).toBeVisible();
-  await expect(center.getByText('03 · What still blocks a recommendation')).toBeVisible();
+  await expect(page.locator('a[href="/charities/sf-lgbt-center"]').first()).toBeVisible();
   const glide = dossiers.filter({ hasText: 'GLIDE' });
   await expect(glide.getByRole('heading', { name: /What GLIDE says happened/ })).toBeVisible();
   await expect(glide.getByText('systematic review and meta-analysis of 74 randomized clinical trials with 10,444 adults')).toBeVisible();
@@ -326,11 +324,11 @@ test('phone donors can inspect the 6,688 to 25 San Francisco research funnel', a
   test.skip(testInfo.project.name !== 'phone-390');
   await page.goto('/san-francisco#research-funnel', { waitUntil: 'domcontentloaded' });
   await expect(page.getByRole('heading', { name: '6,688 records. 25 deep reviews.' })).toBeVisible();
-  await expect(page.locator('.sf-research-stages strong')).toHaveText(['6,688', '1,000', '100', '25', '6']);
+  await expect(page.locator('.sf-research-stages strong')).toHaveText(['6,688', '1,000', '100', '25', '7']);
   await expect(page.locator('.sf-deep-queue article')).toHaveCount(25);
-  await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'CEA not started' })).toHaveCount(12);
+  await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'CEA not started' })).toHaveCount(11);
   await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'Initial review complete' })).toHaveCount(7);
-  await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'Exploratory model' })).toHaveCount(6);
+  await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'Exploratory model' })).toHaveCount(7);
   await expect(page.locator('.sf-advocacy-track')).toContainText('GrowSF');
   await expect(page.locator('.sf-advocacy-track')).toContainText('Advocacy is reviewed, not ranked.');
   await expect(page.getByRole('link', { name: /Open the SF cost-effectiveness workbook/ })).toBeVisible();
@@ -390,6 +388,23 @@ test('phone donors can inspect the Curry model without converting service volume
   await expect(review).toContainText('roughly $170,000 per additional meaningful loneliness improvement');
   await expect(review).toContainText('null or harmful effect');
   await expect(review).toContainText('not verified room for more funding');
+  await expect(review.locator('.charity-evidence-list article')).toHaveCount(4);
+  await expect(review.locator('.charity-sensitivity article')).toHaveCount(3);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('phone donors can inspect the SF LGBT Center employment model without an invented life-bettered conversion', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== 'phone-390');
+  await page.goto('/charities/sf-lgbt-center', { waitUntil: 'domcontentloaded' });
+  const review = page.locator('.charity-report-article');
+  await expect(page.getByRole('heading', { level: 1, name: 'SF LGBT Center', exact: true })).toBeVisible();
+  await expect(review).toContainText('400+ LGBTQ+ job seekers');
+  await expect(review).toContainText('30+ people secure living-wage employment');
+  await expect(review).toContainText('about $171,768 per additional placement');
+  await expect(review).toContainText('null effect remains plausible');
+  await expect(review).toContainText(/10-QALY life bettered/i);
+  await expect(review).toContainText('Not estimated');
+  await expect(review).toContainText('individualized coaching is paused');
   await expect(review.locator('.charity-evidence-list article')).toHaveCount(4);
   await expect(review.locator('.charity-sensitivity article')).toHaveCount(3);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);

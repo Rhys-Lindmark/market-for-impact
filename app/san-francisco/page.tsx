@@ -40,13 +40,16 @@ const compactMoney = new Intl.NumberFormat('en-US', { style: 'currency', currenc
 
 const outcomeLabels = new Map(sfOutcomes.outcomes.map((outcome) => [outcome.key, outcome.label]));
 const candidates = [...sfDiligence.candidates].sort((a, b) => a.name.localeCompare(b.name));
-const dossierCandidates = candidates.flatMap((candidate) => 'evidenceDossier' in candidate ? [{ candidate, dossier: candidate.evidenceDossier }] : []);
+const dossierCandidates = candidates.flatMap((candidate) => 'evidenceDossier' in candidate && candidate.key !== 'sf-lgbt-center' ? [{ candidate, dossier: candidate.evidenceDossier }] : []);
 const marginalPlanRequests = sfMarginalPlanRequests.packets;
 const sffInitialPage = { pagination: { page: 1, pageSize: 12, total: sffGrants.partners.length, pageCount: Math.ceil(sffGrants.partners.length / 12) }, partners: sffGrants.partners.slice(0, 12) };
-const deepReviewAnchors = new Map([['943023551', '/charities/project-open-hand'], ['943342323', '#eviction-defense-collaborative-review'], ['941156622', '#compass-family-services-review'], ['237362588', '/charities/curry-senior-center'], ['832393341', '#farming-hope-review'], ['810622701', '#five-keys-review'], ['941156481', '/charities/glide'], ['943055602', '/charities/hamilton-families'], ['943363781', '#harm-reduction-therapy-center-review'], ['813036333', '#homeless-youth-alliance-review'], ['941687559', '#huckleberry-youth-programs-review'], ['942978977', '/charities/institute-on-aging'], ['943041517', '/charities/sf-marin-food-bank']]);
+const deepReviewAnchors = new Map([['943023551', '/charities/project-open-hand'], ['943342323', '#eviction-defense-collaborative-review'], ['941156622', '#compass-family-services-review'], ['237362588', '/charities/curry-senior-center'], ['832393341', '#farming-hope-review'], ['810622701', '#five-keys-review'], ['941156481', '/charities/glide'], ['943055602', '/charities/hamilton-families'], ['943363781', '#harm-reduction-therapy-center-review'], ['813036333', '#homeless-youth-alliance-review'], ['941687559', '#huckleberry-youth-programs-review'], ['942978977', '/charities/institute-on-aging'], ['943041517', '/charities/sf-marin-food-bank'], ['943236718', '/charities/sf-lgbt-center']]);
+const canonicalResearchRoutes = new Map([['sf-lgbt-center', '/charities/sf-lgbt-center'], ['sf-marin-food-bank', '/charities/sf-marin-food-bank'], ['hamilton-families', '/charities/hamilton-families'], ['glide', '/charities/glide']]);
+const canonicalResearchHref = (key: string, fallback: string) => canonicalResearchRoutes.get(key) ?? fallback;
 
 const topResearchPrograms = [
   { organization: 'San Francisco–Marin Food Bank', program: 'Community Markets', overview: 'Client-choice groceries plus navigation and support for households facing food insecurity.', price: '≈ $6,000', unit: 'per additional household not experiencing very low food security at 12 months', evidence: 'Promising but indirect', detail: 'The causal anchor is a randomized trial of a different bundled pantry model. SFMFB has not published a causal Community Market outcome.', href: '/charities/sf-marin-food-bank' },
+  { organization: 'SF LGBT Center', program: 'Employment Services', overview: 'Affirming job-search support, coaching, career fairs, and employer partnerships for LGBTQ+ job seekers.', price: '≈ $172,000', unit: 'per additional living-wage placement in a 25%-attribution scenario', evidence: 'Reported outcomes; causal effect unknown', detail: 'The 2024 placement count has no counterfactual or retention follow-up; external employment-service effects include a plausible null.', href: '/charities/sf-lgbt-center' },
   { organization: 'Institute on Aging', program: 'Friendship Line proactive calls', overview: 'Structured calls intended to reduce loneliness among older adults.', price: '≈ $14,900', unit: 'per additional six-month loneliness remission', evidence: 'Very uncertain', detail: 'The organization-specific pilot had no comparison group; the causal share and operating cost are modeled.', href: '/charities/institute-on-aging' },
   { organization: 'GLIDE', program: 'Rental assistance', overview: 'Short-term financial assistance intended to prevent shelter entry.', price: '≈ $154,000', unit: 'per additional six-month shelter entry averted', evidence: 'Very uncertain', detail: 'The effect is transferred from external homelessness-prevention evidence and current marginal funding room is unpublished.', href: '/charities/glide' },
   { organization: 'Curry Senior Center', program: 'Senior Vitality', overview: 'Technology, coaching, and group support intended to reduce loneliness.', price: '≈ $167,000', unit: 'per additional meaningful loneliness improvement at 12 months', evidence: 'Very uncertain', detail: 'The local study is uncontrolled and external digital-intervention evidence is heterogeneous.', href: '/charities/curry-senior-center' },
@@ -125,7 +128,7 @@ export default function SanFranciscoDonorPage() {
               <div className="missing" role="cell"><span>Impact price</span><strong>{candidate.costEffectiveness.display}</strong></div>
               <div className="missing" role="cell"><span>Marginal gap</span><strong>{candidate.fundingRoom.display}</strong></div>
               <div role="cell"><span>Evidence state</span><strong>{candidate.decisionLabel}</strong></div>
-              <a role="cell" href={candidate.researchHref} aria-label={`Open ${candidate.name} research`}>Evidence ↓</a>
+              <a role="cell" href={canonicalResearchHref(candidate.key, candidate.researchHref)} aria-label={`Open ${candidate.name} research`}>Evidence ↓</a>
             </article>
           ))}
         </div>
@@ -248,7 +251,7 @@ export default function SanFranciscoDonorPage() {
               <p className="sf-comparison-decision">{candidate.decisionSummary}</p>
               <footer>
                 <div><span>Donation vehicle</span><strong>{candidate.donationVehicle.taxStatus}</strong><small>{candidate.donationVehicle.deductibility}</small></div>
-                <div className="sf-comparison-actions"><a href={candidate.researchHref}>Full research ↓</a><a href={candidate.donationVehicle.url} target="_blank" rel="noreferrer">Giving page ↗</a></div>
+                <div className="sf-comparison-actions"><a href={canonicalResearchHref(candidate.key, candidate.researchHref)}>Full research ↓</a><a href={candidate.donationVehicle.url} target="_blank" rel="noreferrer">Giving page ↗</a></div>
               </footer>
             </article>
           ))}
@@ -334,7 +337,7 @@ export default function SanFranciscoDonorPage() {
                 <header><span>{String(index + 1).padStart(2, '0')}</span><b>{candidate.marginalPlanLabel}</b></header>
                 <h4>{candidate.candidateName}</h4>
                 <div>{candidate.scenarios.map((scenario) => <div key={scenario.amountUsd}><strong>{compactMoney.format(scenario.amountUsd)}</strong><small>{scenario.display}</small></div>)}</div>
-                <footer><span>Forecast: not eligible</span><span>Look-back: not eligible</span><a href={candidate.researchHref}>Open current evidence ↓</a></footer>
+                <footer><span>Forecast: not eligible</span><span>Look-back: not eligible</span><a href={canonicalResearchHref(candidate.candidateKey, candidate.researchHref)}>Open current evidence ↓</a></footer>
               </article>
             ))}
           </div>

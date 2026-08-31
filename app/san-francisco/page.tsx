@@ -43,7 +43,16 @@ const candidates = [...sfDiligence.candidates].sort((a, b) => a.name.localeCompa
 const dossierCandidates = candidates.flatMap((candidate) => 'evidenceDossier' in candidate ? [{ candidate, dossier: candidate.evidenceDossier }] : []);
 const marginalPlanRequests = sfMarginalPlanRequests.packets;
 const sffInitialPage = { pagination: { page: 1, pageSize: 12, total: sffGrants.partners.length, pageCount: Math.ceil(sffGrants.partners.length / 12) }, partners: sffGrants.partners.slice(0, 12) };
-const deepReviewAnchors = new Map([['943023551', '/charities/project-open-hand'], ['943342323', '#eviction-defense-collaborative-review'], ['941156622', '#compass-family-services-review'], ['237362588', '/charities/curry-senior-center'], ['832393341', '#farming-hope-review'], ['810622701', '#five-keys-review'], ['941156481', '/charities/glide'], ['943055602', '/charities/hamilton-families'], ['943363781', '#harm-reduction-therapy-center-review'], ['813036333', '#homeless-youth-alliance-review'], ['941687559', '#huckleberry-youth-programs-review'], ['942978977', '/charities/institute-on-aging']]);
+const deepReviewAnchors = new Map([['943023551', '/charities/project-open-hand'], ['943342323', '#eviction-defense-collaborative-review'], ['941156622', '#compass-family-services-review'], ['237362588', '/charities/curry-senior-center'], ['832393341', '#farming-hope-review'], ['810622701', '#five-keys-review'], ['941156481', '/charities/glide'], ['943055602', '/charities/hamilton-families'], ['943363781', '#harm-reduction-therapy-center-review'], ['813036333', '#homeless-youth-alliance-review'], ['941687559', '#huckleberry-youth-programs-review'], ['942978977', '/charities/institute-on-aging'], ['943041517', '/charities/sf-marin-food-bank']]);
+
+const topResearchPrograms = [
+  { organization: 'San Francisco–Marin Food Bank', program: 'Community Markets', overview: 'Client-choice groceries plus navigation and support for households facing food insecurity.', price: '≈ $6,000', unit: 'per additional household not experiencing very low food security at 12 months', evidence: 'Promising but indirect', detail: 'The causal anchor is a randomized trial of a different bundled pantry model. SFMFB has not published a causal Community Market outcome.', href: '/charities/sf-marin-food-bank' },
+  { organization: 'Institute on Aging', program: 'Friendship Line proactive calls', overview: 'Structured calls intended to reduce loneliness among older adults.', price: '≈ $14,900', unit: 'per additional six-month loneliness remission', evidence: 'Very uncertain', detail: 'The organization-specific pilot had no comparison group; the causal share and operating cost are modeled.', href: '/charities/institute-on-aging' },
+  { organization: 'GLIDE', program: 'Rental assistance', overview: 'Short-term financial assistance intended to prevent shelter entry.', price: '≈ $154,000', unit: 'per additional six-month shelter entry averted', evidence: 'Very uncertain', detail: 'The effect is transferred from external homelessness-prevention evidence and current marginal funding room is unpublished.', href: '/charities/glide' },
+  { organization: 'Curry Senior Center', program: 'Senior Vitality', overview: 'Technology, coaching, and group support intended to reduce loneliness.', price: '≈ $167,000', unit: 'per additional meaningful loneliness improvement at 12 months', evidence: 'Very uncertain', detail: 'The local study is uncontrolled and external digital-intervention evidence is heterogeneous.', href: '/charities/curry-senior-center' },
+  { organization: 'Project Open Hand', program: 'Post-discharge medically tailored meals', overview: 'Condition-matched meals for recently hospitalized adults with known heart failure.', price: '≈ $213,000', unit: 'per additional 90-day heart-failure hospitalization averted', evidence: 'Mixed randomized evidence', detail: 'The randomized primary all-cause outcome was null; the modeled heart-failure result is exploratory.', href: '/charities/project-open-hand' },
+  { organization: 'Hamilton Families', program: 'Homelessness prevention', overview: 'Flexible assistance and case management intended to avert family homelessness.', price: '≈ $500,000', unit: 'per additional six-month homelessness episode averted', evidence: 'Very uncertain', detail: 'The effect is transferred from external randomized evidence and the next-gift plan is unpublished.', href: '/charities/hamilton-families' },
+];
 
 const researchGates = [
   { number: '01', title: 'Verify the entity', copy: 'Confirm the legal entity, donation vehicle, EIN, service geography, and which program a gift would support.' },
@@ -59,7 +68,8 @@ export default function SanFranciscoDonorPage() {
       <header className="detail-topbar sf-brief-topbar">
         <a className="brand" href="/"><span className="brand-mark">M</span><span>Market for Impact</span></a>
         <nav aria-label="San Francisco page navigation">
-          <a href="#decision-snapshot">Decision snapshot</a>
+          <a href="#top-research">Top research</a>
+          <a href="#decision-snapshot">Shortlist</a>
           <a href="#funnel">Evidence funnel</a>
           <a href="#community-foundation">Community grants</a>
           <a href="#comparison">Compare six</a>
@@ -79,6 +89,23 @@ export default function SanFranciscoDonorPage() {
           <p>This page is built for a donor considering roughly <strong>$10 million this year</strong>. It starts with the whole observable field, narrows only when evidence supports it, and keeps “we do not know yet” visible.</p>
           <div><span>Current decision state</span><strong>Research shortlist—not a recommendation slate</strong></div>
           <a className="sf-hero-decision-link" href="#decision-snapshot">See the current shortlist ↓</a>
+        </div>
+      </section>
+
+      <section className="sf-top-research" id="top-research" aria-labelledby="sf-top-research-title">
+        <header>
+          <div><p className="kicker">GIVEWELL-STYLE PROGRAM REVIEWS · NOT YET RECOMMENDATIONS</p><h2 id="sf-top-research-title">The strongest cost-effectiveness work so far.</h2></div>
+          <p>These are our current opinions, not a league table. The outcomes differ, every model has a plausible null case, and no organization has published verified room for more funding. Open each full report to inspect the assumptions.</p>
+        </header>
+        <aside className="sf-life-bettered-contract"><strong>Why we do not yet show “$ per life bettered.”</strong><span>We would define one life substantially bettered as <b>10 incremental QALYs</b>, but none of these programs currently has a defensible QALY effect, duration, household-to-person allocation, or marginal funding plan. Native outcomes remain visible until a versioned conversion can survive review.</span></aside>
+        <div className="sf-top-research-list">
+          {topResearchPrograms.map((item, index) => <article key={item.href}>
+            <span>PROGRAM {index + 1} OF {topResearchPrograms.length}</span>
+            <div><p>OVERVIEW</p><h3>{item.program}</h3><strong>{item.organization}</strong><p>{item.overview}</p></div>
+            <div><p>COST-EFFECTIVENESS</p><h4>{item.price}</h4><strong>{item.unit}</strong><small>Exploratory estimate · funding room not published</small></div>
+            <div><p>EVIDENCE OF IMPACT</p><h4>{item.evidence}</h4><span>{item.detail}</span></div>
+            <a href={item.href}>Full research report →</a>
+          </article>)}
         </div>
       </section>
 

@@ -1,6 +1,6 @@
 {
-  "version": "sf-hamilton-families-review-v0.1",
-  "generatedAt": "2026-08-31T03:00:00-07:00",
+  "version": "sf-hamilton-families-review-v0.2",
+  "generatedAt": "2026-08-31T10:40:00-07:00",
   "organization": {
     "name": "Hamilton Families",
     "ein": "943055602",
@@ -8,9 +8,9 @@
     "donationUrl": "https://hamiltonfamilies.org/donate"
   },
   "decision": {
-    "state": "Relevant randomized evidence; Hamilton-specific additional impact remains unknown",
-    "summary": "Hamilton Families reports prevention, shelter, rapid-rehousing, subsidy, and family-support activity in a housing market where placement is unusually difficult. The strongest external randomized evidence favors long-term housing subsidies over time-limited rapid rehousing for broad family outcomes, while a Hamilton-partner cash trial has no published results yet. Public reporting does not supply a common participant flow, durable comparison, incremental program cost, or bounded marginal plan, so reported housing outcomes cannot yet become an impact price or recommendation.",
-    "costEffectiveness": "Not estimable",
+    "state": "Exploratory prevention estimate; Hamilton-specific cost, effect, and funding room remain unknown",
+    "summary": "Hamilton Families' homelessness-prevention pathway resembles a temporary-financial-assistance program tested in a high-rent Santa Clara County randomized trial. Market for Impact discounts that study's 3.8-percentage-point six-month effect and uses an explicit, highly uncertain San Francisco cost assumption to estimate roughly $500,000 per additional recorded homelessness episode averted. This is an opinionated decision model, not a measured Hamilton effect or recommendation: Hamilton does not publish prevention-only accounts, an applicant flow, HMIS-linked comparison, or a current marginal plan.",
+    "costEffectiveness": "Exploratory: approximately $500,000 per additional six-month recorded homelessness episode averted; $100,000-$12.5 million conditional positive-effect sensitivity; null effect plausible",
     "roomForMoreFunding": "Not published",
     "recommendation": "Not recommendation-ready"
   },
@@ -60,6 +60,20 @@
       "transfer": "The 157 newly housed families are a subset of 344, not an additional outcome count. The report does not publish one eligible cohort, comparison, common follow-up, complete missingness, repeat homelessness, residential moves, or attribution to a specific program or funding source."
     },
     {
+      "key": "hamilton-prevention-program",
+      "design": "Organization-described prevention pathway and annual output",
+      "population": "Currently housed families Hamilton deems at risk of homelessness",
+      "result": "Hamilton describes rental assistance of up to three months of back rent plus three months of future rent, income planning, legal referrals, and case management. It reports 127 families avoided homelessness in FY2025.",
+      "transfer": "Hamilton does not publish average assistance, prevention-only delivery cost, applicants, eligibility denials, award-source mix, follow-up, HMIS linkage, or a comparison. The 127-family count is not a causal estimate and is not used to derive the modeled effect."
+    },
+    {
+      "key": "santa-clara-prevention-rct",
+      "design": "Randomized offer of temporary financial assistance",
+      "population": "Marginally eligible individuals and families at imminent risk of homelessness in high-rent Santa Clara County",
+      "result": "An offer increased receipt of financial assistance by 56 percentage points and reduced recorded homelessness within six months by 3.8 points from a 4.1% control rate. The treatment-control payment difference was $1,898; average assistance among all program recipients in FY2020 was $4,442.",
+      "transfer": "This is the closest causal evidence and is geographically relevant, but it is not Hamilton-specific. Effects were smaller for households with children, and Hamilton does not publish comparable screening, take-up, payment, or outcome data. MFI therefore uses a discounted 2.0-point best guess with a much wider sensitivity."
+    },
+    {
       "key": "hamilton-geographic-analysis",
       "design": "Hamilton-specific formative geographic market analysis",
       "population": "Potential Heading Home Initiative placements across a high-cost, low-vacancy Bay Area housing market",
@@ -90,7 +104,7 @@
   ],
   "model": {
     "nativeOutcome": "an additional eligible family stably housed for at least 12 months without a return to homelessness because of one defined Hamilton program",
-    "status": "not-estimable",
+    "status": "exploratory-model-not-funding-recommendation",
     "missingInputs": [
       "A named Hamilton legal entity, program, restricted fund, geography, eligibility rule, and intervention intensity for the proposed gift",
       "Unique eligible families, applicants, enrollments, assistance starts, exits, cross-program duplicates, and complete follow-up denominators",
@@ -107,6 +121,8 @@
     "Prevention, emergency shelter, rapid rehousing, long-term subsidies, education support, and post-program cash have different causal pathways and evidence.",
     "The FY2025 counts do not publish one deduplicated participant flow or common 12- and 24-month housing-stability denominator.",
     "Reported avoidance of homelessness lacks an observed counterfactual, and reported maintained housing lacks a comparison-group rate.",
+    "The $10,000 modeled cost per prevention case is an MFI judgment, not a Hamilton budget or observed average award.",
+    "The Santa Clara randomized 3.8-point effect is an intention-to-treat offer effect among marginally eligible applicants; it is not Hamilton's effect among funded families.",
     "The 157 newly housed families are included within the 344 maintained-housing count and must not be added again.",
     "Family Options found the broadest benefits for long-term subsidy, not community-based rapid rehousing, but its sites and implementation differ from Hamilton's context.",
     "The Bay Area Thriving Families trial evaluates cash after rapid rehousing and has no published outcome results in the accepted source.",
@@ -121,6 +137,22 @@
       "published": "FY2025; publication date not stated",
       "retrieved": "2026-08-30",
       "sourceType": "organization-reported outcomes and finances"
+    },
+    {
+      "publisher": "Hamilton Families",
+      "title": "FY2022-23 Form 990",
+      "url": "https://hamiltonfamilies.org/s/FY22-23-Form-990.pdf",
+      "published": "FY2023 filing",
+      "retrieved": "2026-08-31",
+      "sourceType": "organization-filed program description and historical portfolio accounting"
+    },
+    {
+      "publisher": "The Review of Economics and Statistics",
+      "title": "Do Homelessness Prevention Programs Prevent Homelessness? Evidence from a Randomized Controlled Trial",
+      "url": "https://doi.org/10.1162/rest_a_01344",
+      "published": "2025-09",
+      "retrieved": "2026-08-31",
+      "sourceType": "peer-reviewed randomized evaluation"
     },
     {
       "publisher": "Urban Institute",

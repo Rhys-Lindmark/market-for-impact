@@ -436,17 +436,18 @@ test('phone donors can inspect the GLIDE rental-assistance model without treatin
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 
-test('phone donors can inspect the Hamilton review without double-counting housing outcomes', async ({ page }, testInfo) => {
+test('phone donors can inspect the Hamilton prevention model without treating reported avoidance as causal impact', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'phone-390');
-  await page.goto('/san-francisco#hamilton-families-review', { waitUntil: 'domcontentloaded' });
-  const review = page.locator('#hamilton-families-review');
-  await expect(page.getByRole('heading', { level: 2, name: 'Hamilton Families', exact: true }).first()).toBeVisible();
-  await expect(review).toContainText('Durable subsidy evidence. Rapid-rehousing effect uncertain.');
-  await expect(review).toContainText('subset of 344, not an additional outcome count');
-  await expect(review).toContainText('Long-term housing subsidies produced the broadest benefits');
-  await expect(review).toContainText('Not estimable');
-  await expect(review.locator('.sf-deep-evidence article')).toHaveCount(5);
-  await expect(review.locator('.sf-deep-model li')).toHaveCount(16);
+  await page.goto('/charities/hamilton-families', { waitUntil: 'domcontentloaded' });
+  const review = page.locator('.charity-report-article');
+  await expect(page.getByRole('heading', { level: 1, name: 'Hamilton Families', exact: true })).toBeVisible();
+  await expect(review).toContainText('Strong evidence for the intervention. Weak evidence for Hamilton’s next dollar.');
+  await expect(review).toContainText('3.8 percentage points within six months');
+  await expect(review).toContainText('roughly $500,000 per additional six-month homelessness episode averted');
+  await expect(review).toContainText('The 127 reported FY2025 families remain an output, not a causal denominator');
+  await expect(review).toContainText('null effect remains plausible');
+  await expect(review.locator('.charity-evidence-list article')).toHaveCount(3);
+  await expect(review.locator('.charity-sensitivity article')).toHaveCount(3);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 

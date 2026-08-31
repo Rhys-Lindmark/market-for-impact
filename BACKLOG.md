@@ -93,6 +93,8 @@ Design first for a major donor deciding how to deploy roughly $10 million this y
   - [ ] Add audits/990s and organization-specific outcome and marginal-funding diligence before promoting any discovery row into a recommendation.
   - [ ] Extend the same source contract to additional high-interest causes without importing Charity Navigator’s source ordering as an MFI rank.
 - [ ] **MFI-024 — Geography lens beginning with India.** Separate headquarters, service geography, target population, grant geography, evaluator coverage, and locally registered donation vehicles before comparing opportunities.
+  - [x] Publish the first auditable India lens. The standalone page separates five geography fields, reconciles all 50 GiveWell rows explicitly naming India, distinguishes 36 India-only from 14 unallocated multi-country rows, and preserves ACE's one current India-explicit opportunity and native shrimp-welfare metrics without turning organization-wide funding room into India-specific room. Headquarters, donation vehicle, tax treatment, and India-program funding room remain visibly unassessed. Verified 2026-08-30 with deterministic regeneration, 112 unit tests, lint, production build, and 21 responsive/browser checks across 390 px and 768 px with no page overflow or console errors.
+  - [ ] Add India-native evaluators and locally registered candidates, then verify service geographies, receiving entities, donation rails, legal constraints, and $100K / $1M / $10M marginal plans before publishing any India recommendation or ranking.
 
 ## Operating tracks
 

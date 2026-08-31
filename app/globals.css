@@ -9,7 +9,7 @@ a { color:inherit; text-decoration:none; }
 .topbar { height:80px; display:flex; align-items:center; justify-content:space-between; padding:0 4vw; border-bottom:1px solid var(--line); background:rgba(251,250,246,.95); position:sticky; top:0; z-index:20; backdrop-filter:blur(10px); }
 .brand { display:flex; align-items:center; gap:11px; font-weight:800; letter-spacing:-.02em; }
 .brand-mark { display:grid; place-items:center; width:29px; height:29px; border-radius:50%; background:var(--ink); color:var(--acid); font-family:Georgia,serif; font-style:italic; }
-.desktop-navigation { display:flex; gap:34px; font-size:14px; }
+.desktop-navigation { display:flex; gap:clamp(13px,1.65vw,27px); font-size:13px; }
 .desktop-navigation a:hover,.mobile-navigation a:hover,.text-link:hover { text-decoration:underline; text-underline-offset:4px; }
 .outline-button,.filter-button { border:1px solid var(--ink); background:transparent; padding:12px 16px; border-radius:3px; cursor:pointer; font-weight:700; }
 .mobile-menu { display:none; }
@@ -1011,6 +1011,172 @@ footer p { color:#aebbb7; }
   .sf-dossier-metrics{grid-template-columns:1fr}
   .sf-dossier-metrics>div{min-width:0;min-height:0}
   .sf-dossier-metrics strong,.sf-dossier-metrics h5,.sf-dossier-metrics small,.sf-dossier-metrics p{overflow-wrap:anywhere}
+}
+
+/* India geography lens */
+.india-page { --india-ink:#172d27; --india-saffron:#e89b3c; --india-cream:#f6eedf; --india-indigo:#273652; background:var(--india-cream); color:var(--india-ink); }
+.india-page a { color:inherit; }
+.india-topbar { position:sticky; top:0; z-index:20; display:flex; height:72px; align-items:center; justify-content:space-between; gap:24px; padding:0 4vw; border-bottom:1px solid var(--india-ink); background:rgba(246,238,223,.94); backdrop-filter:blur(12px); }
+.india-topbar nav { display:flex; gap:28px; font-size:10px; font-weight:800; text-transform:uppercase; }
+.india-topbar>a:last-child { font-size:10px; font-weight:800; }
+.india-hero { min-height:calc(100vh - 72px); padding:58px 5vw 0; background:linear-gradient(135deg,#f3a743 0 28%,#f6eedf 28% 100%); }
+.india-hero-label { display:flex; justify-content:space-between; gap:20px; font-size:9px; font-weight:900; letter-spacing:.14em; }
+.india-hero h1 { max-width:1050px; margin:11vh 0 48px; font-family:Georgia,serif; font-size:clamp(68px,9.5vw,150px); font-weight:400; line-height:.82; letter-spacing:-.065em; }
+.india-hero-deck { display:grid; max-width:1040px; grid-template-columns:1.2fr 1fr; gap:7vw; margin-left:auto; }
+.india-hero-deck p { margin:0; font-size:14px; line-height:1.72; }
+.india-hero-deck p:first-child { font-family:Georgia,serif; font-size:20px; line-height:1.5; }
+.india-hero-stats,.india-flow-summary { display:grid; grid-template-columns:repeat(4,1fr); margin-top:58px; border-top:1px solid var(--india-ink); border-left:1px solid var(--india-ink); }
+.india-hero-stats>div,.india-flow-summary>div { min-width:0; min-height:175px; padding:21px; border-right:1px solid var(--india-ink); background:rgba(246,238,223,.74); }
+.india-hero-stats span,.india-flow-summary span { display:block; min-height:28px; font-size:8px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+.india-hero-stats strong,.india-flow-summary strong { display:block; margin:21px 0 9px; font-family:Georgia,serif; font-size:45px; font-weight:400; }
+.india-hero-stats small,.india-flow-summary small { display:block; color:#5d6963; font-size:8px; line-height:1.5; }
+.india-contract { display:grid; grid-template-columns:minmax(260px,.75fr) 2fr; padding:100px 5vw; background:#f5ead5; }
+.india-contract>header { padding-right:5vw; }
+.india-contract>header>span,.india-contract article>span,.india-flow-grid>section>header span,.india-open-work>span { font-size:8px; font-weight:900; letter-spacing:.15em; }
+.india-contract h2,.india-opportunity>header h2,.india-flows>header h2,.india-coverage>header h2 { margin:18px 0 0; font-family:Georgia,serif; font-size:clamp(42px,5vw,70px); font-weight:400; line-height:.94; letter-spacing:-.04em; }
+.india-contract>div { display:grid; grid-template-columns:repeat(5,1fr); border-top:1px solid var(--india-ink); border-left:1px solid var(--india-ink); }
+.india-contract article { min-height:335px; padding:19px; border-right:1px solid var(--india-ink); border-bottom:1px solid var(--india-ink); }
+.india-contract h3 { margin:70px 0 18px; font-family:Georgia,serif; font-size:22px; font-weight:400; }
+.india-contract article p { color:#506058; font-size:9px; line-height:1.65; }
+.india-contract article b { display:block; margin-top:24px; color:#a94e2e; font-size:8px; line-height:1.45; text-transform:uppercase; }
+.india-opportunity,.india-flows,.india-coverage { padding:110px 5vw; }
+.india-opportunity { background:#173b31; color:#f7f0e2; }
+.india-opportunity>header,.india-flows>header,.india-coverage>header { display:grid; grid-template-columns:1fr minmax(260px,410px); gap:7vw; align-items:end; margin-bottom:44px; }
+.india-opportunity>header>p,.india-flows>header>p,.india-coverage>header>p { margin:0; color:#abc0b8; font-size:10px; line-height:1.7; }
+.india-opportunity-card { display:grid; grid-template-columns:130px 1fr; border:1px solid #78968c; }
+.india-opportunity-index { display:flex; flex-direction:column; padding:24px; border-right:1px solid #78968c; }
+.india-opportunity-index>span { font-family:Georgia,serif; font-size:48px; }
+.india-opportunity-index>b { margin-top:auto; font-size:9px; }
+.india-opportunity-index>small { margin-top:8px; color:#a9bdb6; font-size:8px; }
+.india-opportunity-main { min-width:0; }
+.india-opportunity-main>header { display:flex; align-items:flex-start; justify-content:space-between; gap:30px; padding:30px; border-bottom:1px solid #78968c; }
+.india-opportunity-main>header span { color:#eec36e; font-size:8px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; }
+.india-opportunity-main h3 { margin:10px 0 5px; font-family:Georgia,serif; font-size:42px; font-weight:400; }
+.india-opportunity-main h3 a { text-decoration-thickness:1px; text-underline-offset:6px; }
+.india-opportunity-main>header p { margin:0; color:#b7c9c2; font-size:9px; }
+.india-opportunity-main>header>a { font-size:9px; font-weight:900; }
+.india-opportunity-facts { display:grid; grid-template-columns:1.35fr 1fr 1fr 1fr; border-bottom:1px solid #78968c; }
+.india-opportunity-facts>div { min-width:0; min-height:135px; padding:20px; border-right:1px solid #78968c; }
+.india-opportunity-facts>div:last-child { border-right:0; background:#87432f; }
+.india-opportunity-facts span { display:block; color:#a8bcb5; font-size:7px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+.india-opportunity-facts strong { display:block; margin-top:24px; font-family:Georgia,serif; font-size:20px; font-weight:400; line-height:1.2; overflow-wrap:anywhere; }
+.india-opportunity-facts small { display:block; margin-top:8px; color:#b8c8c2; font-size:7px; line-height:1.45; }
+.india-native-metrics { display:grid; grid-template-columns:repeat(3,1fr); }
+.india-native-metrics article { min-width:0; min-height:300px; padding:24px; border-right:1px solid #78968c; }
+.india-native-metrics article:last-child { border-right:0; }
+.india-native-metrics article>span { color:#eec36e; font-size:8px; font-weight:900; }
+.india-native-metrics article>strong { display:block; margin:45px 0 5px; font-family:Georgia,serif; font-size:55px; font-weight:400; }
+.india-native-metrics h4 { margin:0 0 30px; font-size:9px; text-transform:uppercase; }
+.india-native-metrics p { color:#aec0ba; font-size:9px; line-height:1.65; }
+.india-native-metrics .india-vehicle-gap { background:#e89b3c; color:#172d27; }
+.india-native-metrics .india-vehicle-gap span,.india-native-metrics .india-vehicle-gap p { color:#172d27; }
+.india-native-metrics .india-vehicle-gap strong { font-size:40px; }
+.india-opportunity-main>footer { padding:22px 28px; border-top:1px solid #78968c; color:#b4c6bf; font-size:9px; line-height:1.7; }
+.india-opportunity-main>footer strong { color:#f7f0e2; }
+.india-flows { background:#e9dcc5; }
+.india-flows>header>p,.india-coverage>header>p { color:#52615a; }
+.india-flow-summary { margin-top:0; }
+.india-flow-summary>div { background:#f5ead8; }
+.india-flow-boundary { display:grid; grid-template-columns:150px 1fr; gap:22px; padding:20px; border:1px solid var(--india-ink); background:#e89b3c; }
+.india-flow-boundary span { font-size:8px; font-weight:900; }
+.india-flow-boundary p { margin:0; font-size:9px; line-height:1.6; }
+.india-flow-grid { display:grid; grid-template-columns:1fr 1fr; border-left:1px solid var(--india-ink); }
+.india-flow-grid>section { min-width:0; border-right:1px solid var(--india-ink); border-bottom:1px solid var(--india-ink); }
+.india-flow-grid>section>header { display:flex; justify-content:space-between; gap:15px; padding:16px 18px; border-bottom:1px solid var(--india-ink); font-size:8px; }
+.india-recipient-list article { display:grid; grid-template-columns:34px minmax(0,1fr) auto; gap:16px; padding:17px 18px; border-bottom:1px solid #aa9e8c; }
+.india-recipient-list article:last-child { border-bottom:0; }
+.india-recipient-list article>span { font-family:'Courier New',monospace; font-size:9px; }
+.india-recipient-list h3,.india-grant-list h3 { margin:0; font-family:Georgia,serif; font-size:17px; font-weight:400; line-height:1.2; overflow-wrap:anywhere; }
+.india-recipient-list p,.india-grant-list p { margin:7px 0; color:#5c675f; font-size:7px; line-height:1.45; }
+.india-recipient-list small { color:#6a736e; font-size:7px; }
+.india-recipient-list article>strong { font-family:Georgia,serif; font-size:18px; font-weight:400; }
+.india-recipient-list footer { grid-column:2/-1; display:flex; flex-direction:row; justify-content:space-between; gap:12px; color:#7b4b36; font-size:7px; }
+.india-grant-list>a { display:block; padding:17px 18px; border-bottom:1px solid #aa9e8c; }
+.india-grant-list>a:last-child { border-bottom:0; }
+.india-grant-list>a>div,.india-grant-list footer { display:flex; flex-direction:row; align-items:center; justify-content:space-between; gap:14px; }
+.india-grant-list>a>div { margin-bottom:13px; font-size:7px; }
+.india-grant-list>a>div span { color:#a94e2e; font-weight:900; }
+.india-grant-list footer strong { font-family:Georgia,serif; font-size:17px; font-weight:400; }
+.india-grant-list footer span { max-width:62%; color:#5b665f; font-size:7px; text-align:right; }
+.india-coverage { background:#273652; color:#f5efe2; }
+.india-coverage-grid { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid #8290aa; border-left:1px solid #8290aa; }
+.india-coverage-grid article { display:flex; min-height:300px; flex-direction:column; padding:22px; border-right:1px solid #8290aa; border-bottom:1px solid #8290aa; }
+.india-coverage-grid article>div { display:flex; justify-content:space-between; gap:15px; font-size:8px; text-transform:uppercase; }
+.india-coverage-grid article>div span { color:#efb457; }
+.india-coverage-grid article p { margin:50px 0 16px; font-family:Georgia,serif; font-size:20px; line-height:1.35; }
+.india-coverage-grid article small { color:#b3bfd1; font-size:8px; line-height:1.55; }
+.india-coverage-grid article>a { margin-top:auto; padding-top:24px; font-size:8px; font-weight:900; }
+.india-open-work { display:grid; grid-template-columns:130px repeat(3,1fr); gap:28px; margin-top:38px; padding:25px 0; border-top:1px solid #8290aa; border-bottom:1px solid #8290aa; }
+.india-open-work p { margin:0; color:#b9c4d4; font-size:9px; line-height:1.65; }
+.india-open-work strong { color:#f5efe2; }
+.india-sources { display:grid; grid-template-columns:repeat(4,1fr); margin-top:38px; border-top:1px solid #8290aa; border-left:1px solid #8290aa; }
+.india-sources a { display:grid; min-height:190px; grid-template-columns:1fr auto; gap:12px; padding:19px; border-right:1px solid #8290aa; border-bottom:1px solid #8290aa; }
+.india-sources a>span,.india-sources a>small { grid-column:1/-1; color:#b5c0d0; font-size:7px; }
+.india-sources a>strong { font-family:Georgia,serif; font-size:17px; font-weight:400; line-height:1.3; }
+.india-sources a>b { grid-column:2; grid-row:2; }
+.india-coverage .data-note { color:#aeb9ca; }
+.india-footer { display:flex; min-height:150px; align-items:center; justify-content:space-between; gap:25px; padding:35px 5vw; background:#172d27; color:#f5efe2; }
+.india-footer p { font-family:Georgia,serif; font-size:24px; }
+.india-footer>a { font-size:9px; font-weight:900; }
+
+@media(max-width:1100px){
+  .india-contract { grid-template-columns:1fr; }
+  .india-contract>header { margin-bottom:40px; }
+  .india-contract>div { grid-template-columns:repeat(3,1fr); }
+  .india-contract article { min-height:275px; }
+  .india-opportunity-facts { grid-template-columns:1fr 1fr; }
+  .india-opportunity-facts>div:nth-child(2) { border-right:0; }
+  .india-opportunity-facts>div:nth-child(-n+2) { border-bottom:1px solid #78968c; }
+  .india-sources { grid-template-columns:repeat(2,1fr); }
+}
+
+@media(max-width:800px){
+  .india-topbar { height:64px; padding:0 4vw; }
+  .india-topbar nav { display:none; }
+  .india-topbar>a:last-child { display:none; }
+  .india-hero { min-height:auto; padding:50px 5vw 0; background:linear-gradient(150deg,#f3a743 0 18%,#f6eedf 18% 100%); }
+  .india-hero h1 { margin:92px 0 38px; font-size:clamp(60px,18vw,95px); }
+  .india-hero-deck,.india-opportunity>header,.india-flows>header,.india-coverage>header { grid-template-columns:1fr; }
+  .india-hero-deck { gap:24px; }
+  .india-hero-stats,.india-flow-summary { grid-template-columns:1fr 1fr; }
+  .india-hero-stats>div,.india-flow-summary>div { min-height:150px; border-bottom:1px solid var(--india-ink); }
+  .india-contract,.india-opportunity,.india-flows,.india-coverage { padding:76px 5vw; }
+  .india-contract>div { grid-template-columns:1fr 1fr; }
+  .india-contract article { min-height:250px; }
+  .india-contract article:last-child { grid-column:1/-1; min-height:220px; }
+  .india-opportunity-card { grid-template-columns:1fr; }
+  .india-opportunity-index { min-height:90px; flex-direction:row; align-items:center; gap:18px; border-right:0; border-bottom:1px solid #78968c; }
+  .india-opportunity-index>span { font-size:34px; }
+  .india-opportunity-index>b { margin:0 0 0 auto; }
+  .india-opportunity-main>header { flex-direction:column; }
+  .india-opportunity-main h3 { font-size:34px; }
+  .india-native-metrics { grid-template-columns:1fr; }
+  .india-native-metrics article { min-height:0; border-right:0; border-bottom:1px solid #78968c; }
+  .india-native-metrics article:last-child { border-bottom:0; }
+  .india-native-metrics article>strong { margin-top:30px; }
+  .india-flow-grid { grid-template-columns:1fr; }
+  .india-coverage-grid { grid-template-columns:1fr; }
+  .india-coverage-grid article { min-height:240px; }
+  .india-open-work { grid-template-columns:1fr; }
+  .india-sources { grid-template-columns:1fr; }
+  .india-footer { align-items:flex-start; flex-direction:column; }
+}
+
+@media(max-width:520px){
+  .india-hero-label b { display:none; }
+  .india-hero-stats>div,.india-flow-summary>div { min-height:135px; padding:16px; }
+  .india-hero-stats strong,.india-flow-summary strong { font-size:36px; }
+  .india-contract>div,.india-opportunity-facts { grid-template-columns:1fr; }
+  .india-contract article,.india-contract article:last-child { min-height:0; }
+  .india-contract h3 { margin-top:38px; }
+  .india-opportunity-facts>div,.india-opportunity-facts>div:nth-child(2) { border-right:0; border-bottom:1px solid #78968c; }
+  .india-opportunity-facts>div:last-child { border-bottom:0; }
+  .india-recipient-list article { grid-template-columns:28px minmax(0,1fr); }
+  .india-recipient-list article>strong { grid-column:2; }
+  .india-recipient-list footer { flex-direction:column; }
+  .india-flow-grid>section>header { flex-direction:column; }
+  .india-grant-list footer { align-items:flex-start; flex-direction:column; }
+  .india-grant-list footer span { max-width:none; text-align:left; }
 }
 
 @media(max-width:800px){

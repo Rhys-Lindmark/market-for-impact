@@ -14,7 +14,7 @@ test('SF diligence cohort is reproducible and keeps conversions blocked', () => 
   assert.equal(snapshot.candidates.length, 6);
   assert.equal(snapshot.summary.qalyBlockedCount, 6);
   assert.equal(snapshot.summary.candidatesWithPublishedMarginalGap, 0);
-  assert.equal(snapshot.summary.evidenceDossierCount, 5);
+  assert.equal(snapshot.summary.evidenceDossierCount, 6);
 });
 
 test('public-contract aliases reconcile exact accounting totals', () => {
@@ -126,4 +126,23 @@ test('Housing Action Coalition dossier separates contribution evidence from attr
   assert.match(dossier.evidenceLayers.find((layer) => layer.publisher === 'Journal of Planning Literature').finding, /mixed results/i);
   assert.ok(dossier.missingForRecommendation.some((gap) => /causal share/i.test(gap)));
   assert.ok(dossier.missingForRecommendation.some((gap) => /\$100,000.*\$1 million.*\$10 million/i.test(gap)));
+});
+
+test('GrowSF dossier separates electoral reach, aligned results, causal attribution, and downstream outcomes', () => {
+  const growsf = snapshot.candidates.find((row) => row.key === 'growsf');
+  const dossier = growsf.evidenceDossier;
+  const finances = dossier.organizationReported.financials;
+  assert.equal(growsf.ein, '85-2716857');
+  assert.match(dossier.decisionState, /blocked/);
+  assert.equal(dossier.organizationReported.outcomes.length, 4);
+  assert.equal(finances.contributionsUsd + finances.investmentIncomeUsd, finances.revenueUsd);
+  assert.equal(finances.assetsUsd - finances.liabilitiesUsd, finances.netAssetsUsd);
+  assert.match(finances.boundary, /not deductible.*federal income-tax/i);
+  assert.equal(dossier.evidenceLayers.length, 4);
+  assert.match(dossier.evidenceLayers.find((layer) => layer.publisher === 'San Francisco Department of Elections').transferLimit, /does not identify GrowSF exposure/i);
+  assert.match(dossier.evidenceLayers.find((layer) => layer.publisher === 'San Francisco Ethics Commission').finding, /\$274,429\.61/i);
+  assert.match(dossier.evidenceLayers.find((layer) => layer.publisher === 'American Political Science Review').finding, /average persuasive effect of zero/i);
+  assert.match(dossier.evidenceLayers.find((layer) => layer.publisher === 'Political Behavior').transferLimit, /not an endorsing San Francisco guide/i);
+  assert.ok(dossier.missingForRecommendation.some((gap) => /\$100,000.*\$1 million.*\$10 million/i.test(gap)));
+  assert.ok(dossier.missingForRecommendation.some((gap) => /QALY.*WELLBY.*life-substantially-bettered/i.test(gap)));
 });

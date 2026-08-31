@@ -43,7 +43,7 @@ export function buildSfNonprofitDiligence({ config, publicFunding, ledgers }) {
     };
   });
   return {
-    version: 'sf-nonprofit-diligence-v0.6',
+    version: 'sf-nonprofit-diligence-v0.7',
     configVersion: config.version,
     generatedAt: config.generatedAt,
     geography: config.geography,
@@ -63,7 +63,7 @@ export function buildSfNonprofitDiligence({ config, publicFunding, ledgers }) {
 }
 
 export function validateSfNonprofitDiligence(snapshot) {
-  if (snapshot.version !== 'sf-nonprofit-diligence-v0.6') throw new Error('Unexpected SF nonprofit diligence version.');
+  if (snapshot.version !== 'sf-nonprofit-diligence-v0.7') throw new Error('Unexpected SF nonprofit diligence version.');
   if (snapshot.candidates.length < 6 || snapshot.summary.candidateCount !== snapshot.candidates.length) throw new Error('Initial SF candidate cohort is incomplete.');
   if (new Set(snapshot.candidates.map((row) => row.key)).size !== snapshot.candidates.length) throw new Error('Duplicate SF candidate key.');
   if (snapshot.summary.qalyBlockedCount !== snapshot.candidates.length) throw new Error('Every initial SF QALY estimate must remain blocked.');

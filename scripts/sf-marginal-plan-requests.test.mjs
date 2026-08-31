@@ -12,10 +12,10 @@ const snapshot = buildSfMarginalPlanRequests({
 
 test('all organization requests cover every required field and gift size', () => {
   validateSfMarginalPlanRequests(snapshot);
-  assert.equal(snapshot.summary.packetCount, 5);
-  assert.equal(snapshot.summary.scenarioCount, 15);
-  assert.equal(snapshot.summary.questionCount, 40);
-  assert.equal(snapshot.summary.publicFactCount, 25);
+  assert.equal(snapshot.summary.packetCount, 6);
+  assert.equal(snapshot.summary.scenarioCount, 18);
+  assert.equal(snapshot.summary.questionCount, 48);
+  assert.equal(snapshot.summary.publicFactCount, 30);
   for (const packet of snapshot.packets) {
     assert.deepEqual(packet.scenarios.map((scenario) => scenario.amountUsd), [100000, 1000000, 10000000]);
     assert.equal(packet.questions.length, 8);
@@ -86,5 +86,17 @@ test('Housing Action Coalition public prefill keeps legal vehicles, coalition co
   assert.match(packet.questions.find((question) => question.key === 'outcomeForecast').publicContext, /permits, starts, completions and occupancy/i);
   assert.match(packet.questions.find((question) => question.key === 'costAndAttribution').publicContext, /coalition contribution shares/i);
   assert.match(packet.decisionBoundary, /not.*causal attribution.*cost per completed home/i);
+  assert.ok(packet.sources.every((source) => source.retrievedAt));
+});
+
+test('GrowSF public prefill keeps political identity, campaign reach, attribution, and downstream outcomes separate', () => {
+  const packet = snapshot.packets.find((item) => item.candidateKey === 'growsf');
+  assert.match(packet.publicFacts.find((fact) => fact.key === 'entity').display, /501\(c\)\(4\).*85-2716857.*not deductible/i);
+  assert.match(packet.publicFacts.find((fact) => fact.key === 'latest-signals').display, /117,000 unique voter-guide users/);
+  assert.match(packet.publicFacts.find((fact) => fact.key === 'organization-finances').display, /\$938\.32K revenue/);
+  assert.match(packet.publicFacts.find((fact) => fact.key === 'campaign-accounting').display, /\$274,429\.61/);
+  assert.match(packet.questions.find((question) => question.key === 'outcomeForecast').publicContext, /incremental guide use, persuasion, turnout, and vote choice/i);
+  assert.match(packet.questions.find((question) => question.key === 'costAndAttribution').publicContext, /do not yield cost per additional persuaded voter/i);
+  assert.match(packet.decisionBoundary, /neutral research request.*not.*political endorsement.*cost per vote/i);
   assert.ok(packet.sources.every((source) => source.retrievedAt));
 });

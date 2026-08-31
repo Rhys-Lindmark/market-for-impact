@@ -248,6 +248,45 @@ const buildHousingActionCoalitionPacket = ({ grantEvaluation, diligence }) => {
   };
 };
 
+const buildGrowSfPacket = ({ grantEvaluation, diligence }) => {
+  const { candidate, protocolCandidate } = findCandidate(diligence, grantEvaluation, 'growsf');
+  const annual = candidate.evidenceDossier.organizationReported;
+  const sources = [
+    { key: 'growsf-about', ...candidate.sources.find((source) => source.title === 'About GrowSF') },
+    { key: 'growsf-impact-report-2026', publisher: annual.source.publisher, title: annual.source.title, url: annual.source.url, publishedAt: annual.source.publishedAt, retrievedAt: annual.source.retrievedAt },
+    { key: 'growsf-form-990-2024', ...candidate.sources.find((source) => source.title.includes('FY2024 Form 990')) },
+    { key: 'sf-election-results-2026', publisher: 'San Francisco Department of Elections', title: 'June 2, 2026 Consolidated Statewide Direct Primary Election Results', url: 'https://www.sfelections.org/results/20260602/index.html', publishedAt: '2026-06-25', retrievedAt: '2026-08-30' },
+    { key: 'sf-ethics-growsf-committee', publisher: 'San Francisco Ethics Commission', title: 'GrowSF Voter Guide committee · June 2, 2026 election', url: 'https://campaign.sfethics.org/elections/2026-06-02/committees/CA1433436', publishedAt: '2026-08-10', retrievedAt: '2026-08-30' },
+  ];
+  const publicFacts = [
+    { key: 'entity', label: 'Entity and donation vehicle', display: `${annual.reportingName ?? candidate.evidenceDossier.reportingName} · ${candidate.taxStatus} · EIN ${candidate.ein} · gifts not deductible as charitable contributions`, boundary: 'A donor must identify the receiving 501(c)(4) or committee, restricted activity, contest, and legal constraints. This is political spending rather than a tax-deductible charitable gift.', sourceKeys: ['growsf-about', 'growsf-form-990-2024'] },
+    { key: 'program-scope', label: 'Published activity scope', display: 'Voter guides, candidate and ballot-measure campaigns, paid media, policy research, and a leadership pipeline', boundary: 'GrowSF must identify one legal entity, contest or research project, tactic, audience, jurisdiction, and time period for each gift scenario; the portfolio is not a marginal plan.', sourceKeys: ['growsf-about', 'growsf-impact-report-2026'] },
+    { key: 'latest-signals', label: 'June 2026 reporting window', display: '117,000 unique voter-guide users · 14M connected-TV impressions · 3 of 3 supported candidates won · 1 opposed measure failed', boundary: 'Organization-reported reach and officially confirmed aligned results do not identify votes changed, incremental turnout, the election counterfactual, policy implementation, or resident outcomes.', sourceKeys: ['growsf-impact-report-2026', 'sf-election-results-2026'] },
+    { key: 'organization-finances', label: '501(c)(4) FY2024 filing context', display: `${formatMoney(annual.financials.revenueUsd)} revenue · ${formatMoney(annual.financials.expensesUsd)} expenses · ${formatMoney(annual.financials.netAssetsUsd)} net assets`, boundary: 'FY2024 entity-wide totals do not reconcile the June 2026 campaign, every committee, current liquidity, restricted uses, other donors, expected support, or scenario-specific funding room.', sourceKeys: ['growsf-form-990-2024'] },
+    { key: 'campaign-accounting', label: 'June 2026 campaign accounting', display: '$1.424M organization-reported campaign budget · $274,429.61 across four recent independent expenditures on the reviewed committee page', boundary: 'The two figures use different scopes. The Ethics page warns that displayed totals omit some activity, so they cannot be reconciled into total campaign cost, cost per incremental vote, or philanthropic additionality.', sourceKeys: ['growsf-impact-report-2026', 'sf-ethics-growsf-committee'] },
+  ];
+  const questions = makeQuestions({
+    fields: grantEvaluation.marginalPlan.requiredFields,
+    contexts: {
+      programIdentity: { copy: 'GrowSF identifies a 501(c)(4), voter guide, campaigns, research, and a leadership pipeline. The receiving entity or committee, contest or project, tactic, target audience, jurisdiction, restriction, and compliance review are not selected.', sourceKeys: ['growsf-about', 'growsf-impact-report-2026', 'growsf-form-990-2024'] },
+      timeBoundedBudget: { copy: 'The FY2024 filing and June 2026 campaign report use different periods and scopes. Current entity and committee cash, liabilities, accrued expenses, restrictions, expected support, campaign budgets, and unfunded amounts are not consolidated.', sourceKeys: ['growsf-form-990-2024', 'growsf-impact-report-2026', 'sf-ethics-growsf-committee'] },
+      incrementalActivities: { copy: 'Published activities include guides, mail, connected TV, digital media, research, campaigns, and leadership development, but no source says what an incremental $100K, $1M, or $10M would add.', sourceKeys: ['growsf-about', 'growsf-impact-report-2026'] },
+      capacityConstraints: { copy: 'The report describes a media-heavy campaign but does not publish binding staff, research, audience, ad-inventory, election-timing, compliance, candidate-pipeline, saturation, or diminishing-return constraints.', sourceKeys: ['growsf-impact-report-2026'] },
+      fundingDisplacement: { copy: 'The FY2024 entity filing, June 2026 campaign budget, and reviewed committee disclosures are not reconciled across donors, legal entities, committees, restricted uses, expected renewals, or scenario-specific displacement.', sourceKeys: ['growsf-form-990-2024', 'growsf-impact-report-2026', 'sf-ethics-growsf-committee'] },
+      outcomeForecast: { copy: 'GrowSF reports reach and aligned election results. A credible scenario forecast needs incremental guide use, persuasion, turnout, and vote choice with uncertainty and a pre-specified counterfactual; downstream policy effects must remain separate.', sourceKeys: ['growsf-impact-report-2026', 'sf-election-results-2026'] },
+      costAndAttribution: { copy: 'Reported media volume, campaign cost, and aligned results do not yield cost per additional persuaded voter, incremental turnout, changed outcome, implemented policy, QALY, WELLBY, or life substantially bettered.', sourceKeys: ['growsf-impact-report-2026', 'sf-election-results-2026', 'sf-ethics-growsf-committee'] },
+      milestones: { copy: 'No accepted source locks scenario-specific pre-election, post-election, 6-, 12-, 24-, or 36-month milestones spanning delivery, measured persuasion, final results, policy implementation, resident outcomes, forecast revision, and stop rules.', sourceKeys: ['growsf-impact-report-2026'] },
+    },
+  });
+  return {
+    packetKey: 'growsf-marginal-plan-v0.1', sectionId: 'growsf-plan-request', candidateKey: candidate.key, candidateName: candidate.name, responseLabel: 'GrowSF response',
+    headline: 'What could GrowSF do with the next gift?', status: REQUEST_STATUS, statusLabel: 'Draft · not sent', responseReceivedAt: null, forecastLockedAt: null,
+    recommendationState: 'insufficient-evidence', purpose: 'Turn GrowSF’s public 501(c)(4) identity, campaign reach, aligned results, entity filing, and limited committee disclosures into three legally specific marginal cases without endorsing electoral choices or attributing votes and downstream outcomes.',
+    decisionBoundary: 'This packet is a neutral research request, not a funding recommendation, political endorsement, commitment, submitted response, estimate of room for more funding, causal attribution of an election result, cost per vote, policy-impact estimate, or life-substantially-bettered estimate.',
+    provenanceLegend: makeProvenanceLegend(candidate.name), publicFacts, scenarios: makeScenarios({ protocolCandidate, questions, subject: 'GrowSF' }), questions, sources,
+  };
+};
+
 export function buildSfMarginalPlanRequests({ grantEvaluation, diligence, publicFunding }) {
   const cityContracts = publicFunding.sources.find((source) => source.key === 'datasf-supplier-contracts');
   if (!cityContracts) throw new Error('Accepted DataSF supplier-contract source is missing.');
@@ -257,9 +296,10 @@ export function buildSfMarginalPlanRequests({ grantEvaluation, diligence, public
     buildSfLgbtCenterPacket({ grantEvaluation, diligence, cityContracts }),
     buildGlidePacket({ grantEvaluation, diligence, cityContracts }),
     buildHousingActionCoalitionPacket({ grantEvaluation, diligence }),
+    buildGrowSfPacket({ grantEvaluation, diligence }),
   ];
   return {
-    version: 'sf-marginal-plan-requests-v0.5', generatedAt: grantEvaluation.generatedAt, geography: grantEvaluation.geography,
+    version: 'sf-marginal-plan-requests-v0.6', generatedAt: grantEvaluation.generatedAt, geography: grantEvaluation.geography,
     summary: {
       packetCount: packets.length,
       draftPacketCount: packets.filter((packet) => packet.status === REQUEST_STATUS).length,
@@ -275,9 +315,9 @@ export function buildSfMarginalPlanRequests({ grantEvaluation, diligence, public
 }
 
 export function validateSfMarginalPlanRequests(snapshot) {
-  if (snapshot.version !== 'sf-marginal-plan-requests-v0.5') throw new Error('Unexpected SF marginal-plan request version.');
-  if (snapshot.packets.length !== 5 || snapshot.summary.packetCount !== 5) throw new Error('Expected Hamilton, Food Bank, SF LGBT Center, GLIDE, and Housing Action Coalition request packets.');
-  const expectedKeys = ['hamilton-families', 'sf-marin-food-bank', 'sf-lgbt-center', 'glide', 'housing-action-coalition'];
+  if (snapshot.version !== 'sf-marginal-plan-requests-v0.6') throw new Error('Unexpected SF marginal-plan request version.');
+  if (snapshot.packets.length !== 6 || snapshot.summary.packetCount !== 6) throw new Error('Expected all six San Francisco candidate request packets.');
+  const expectedKeys = ['hamilton-families', 'sf-marin-food-bank', 'sf-lgbt-center', 'glide', 'housing-action-coalition', 'growsf'];
   if (JSON.stringify(snapshot.packets.map((packet) => packet.candidateKey)) !== JSON.stringify(expectedKeys)) throw new Error('Unexpected request packet candidates or order.');
   if (new Set(snapshot.packets.map((packet) => packet.sectionId)).size !== snapshot.packets.length) throw new Error('Request packet anchors must be unique.');
   for (const packet of snapshot.packets) {
@@ -291,9 +331,9 @@ export function validateSfMarginalPlanRequests(snapshot) {
     if (packet.publicFacts.some((fact) => fact.sourceKeys.some((key) => !sourceKeys.has(key))) || packet.questions.some((question) => question.publicContextSourceKeys.some((key) => !sourceKeys.has(key)))) throw new Error(`${packet.candidateName} public context references an unknown source.`);
     if (packet.sources.some((source) => !source.retrievedAt)) throw new Error(`${packet.candidateName} source is missing a retrieval date.`);
   }
-  if (snapshot.summary.scenarioCount !== 15 || snapshot.summary.publicFactCount !== 25 || snapshot.summary.questionCount !== 40) throw new Error('Request summary is incomplete.');
+  if (snapshot.summary.scenarioCount !== 18 || snapshot.summary.publicFactCount !== 30 || snapshot.summary.questionCount !== 48) throw new Error('Request summary is incomplete.');
   if (snapshot.summary.submittedScenarioCount !== 0 || snapshot.summary.organizationResponseCount !== 0 || snapshot.summary.mfiModelCount !== 0) throw new Error('Request summary overstates readiness.');
-  const supportedHosts = new Set(['hamiltonfamilies.org', 'www.hamiltonfamilies.org', 'sfmfoodbank.org', 'www.sfmfoodbank.org', 'panda.sfmfoodbank.org', 'sfcenter.org', 'www.sfcenter.org', 'glide.org', 'www.glide.org', 'housingactioncoalition.org', 'projects.propublica.org', 'coefficientgiving.org', 'data.sfgov.org']);
+  const supportedHosts = new Set(['hamiltonfamilies.org', 'www.hamiltonfamilies.org', 'sfmfoodbank.org', 'www.sfmfoodbank.org', 'panda.sfmfoodbank.org', 'sfcenter.org', 'www.sfcenter.org', 'glide.org', 'www.glide.org', 'housingactioncoalition.org', 'growsf.org', 'projects.propublica.org', 'coefficientgiving.org', 'data.sfgov.org', 'www.sfelections.org', 'campaign.sfethics.org']);
   if (snapshot.packets.some((packet) => packet.sources.some((source) => !supportedHosts.has(new URL(source.url).hostname)))) throw new Error('Request includes an unsupported source domain.');
   return snapshot;
 }

@@ -8,6 +8,8 @@ import sfMarginalPlanRequests from '@/data/san-francisco/marginal-plan-requests-
 import sfDiligence from '@/data/san-francisco/nonprofit-diligence-v1.json';
 import sfOutcomes from '@/data/san-francisco/outcome-ontology-v1.json';
 import sfFunding from '@/data/san-francisco/public-funding-v1.json';
+import sffGrants from '@/data/san-francisco/sff-community-grants-v1.json';
+import SffGrantExplorer from './SffGrantExplorer';
 
 export const metadata: Metadata = {
   title: 'San Francisco giving — Market for Impact',
@@ -30,6 +32,7 @@ const outcomeLabels = new Map(sfOutcomes.outcomes.map((outcome) => [outcome.key,
 const candidates = [...sfDiligence.candidates].sort((a, b) => a.name.localeCompare(b.name));
 const dossierCandidates = candidates.flatMap((candidate) => 'evidenceDossier' in candidate ? [{ candidate, dossier: candidate.evidenceDossier }] : []);
 const marginalPlanRequests = sfMarginalPlanRequests.packets;
+const sffInitialPage = { pagination: { page: 1, pageSize: 12, total: sffGrants.partners.length, pageCount: Math.ceil(sffGrants.partners.length / 12) }, partners: sffGrants.partners.slice(0, 12) };
 
 const researchGates = [
   { number: '01', title: 'Verify the entity', copy: 'Confirm the legal entity, donation vehicle, EIN, service geography, and which program a gift would support.' },
@@ -47,6 +50,7 @@ export default function SanFranciscoDonorPage() {
         <nav aria-label="San Francisco page navigation">
           <a href="#decision-snapshot">Decision snapshot</a>
           <a href="#funnel">Evidence funnel</a>
+          <a href="#community-foundation">Community grants</a>
           <a href="#comparison">Compare six</a>
           <a href="#protocol">Research protocol</a>
           <a href="#diligence">Initial diligence</a>
@@ -114,6 +118,24 @@ export default function SanFranciscoDonorPage() {
           <article><span>Public baseline</span><strong>{compactMoney.format(sfFunding.summary.cityBudgetUsd)}</strong><p>Approved city spending is context. Contract authority, payments, and remaining authority stay separate and never become donation room.</p><a href="/#sf-public-funding">Inspect public funding ↗</a></article>
           <article><span>Conversion boundary</span><strong>QALY / WELLBY blocked</strong><p>All six candidates lack the local counterfactual and versioned conversion model required for a defensible health or wellbeing estimate.</p><a href="/#sf-diligence">Inspect the boundary ↗</a></article>
         </div>
+      </section>
+
+      <section className="sf-sff-section" id="community-foundation" aria-labelledby="sf-sff-title">
+        <header>
+          <div><p className="kicker">COMMUNITY-FOUNDATION LENS · FY2025 PROGRAMMATIC PORTFOLIO</p><h2 id="sf-sff-title">Another 424 doors into the local field.</h2></div>
+          <p>The San Francisco Foundation publishes aggregate FY2025 funding by grantee partner. This adds a funder-discovery lens beyond city contracts and IRS addresses; it does not tell us which partner is effective or where the next dollar should go.</p>
+        </header>
+        <div className="sf-sff-summary" aria-label="San Francisco Foundation portfolio summary">
+          <div><strong>{integer.format(sffGrants.summary.publishedPartnerRowCount)}</strong><span>Published partner rows</span></div>
+          <div><strong>{compactMoney.format(sffGrants.summary.publishedPartnerTotalFundingUsd)}</strong><span>Aggregate partner totals</span></div>
+          <div><strong>{integer.format(sffGrants.summary.exactIrsMatchRowCount)}</strong><span>Exact IRS-name links</span></div>
+          <div><strong>{integer.format(sffGrants.summary.exactContractMatchRowCount)}</strong><span>Exact city-contract links</span></div>
+          <div><strong>{integer.format(sffGrants.summary.diligenceMatchRowCount)}</strong><span>Existing deep dossier</span></div>
+        </div>
+        <aside className="sf-sff-amount-rule"><span>AMOUNT SEMANTICS</span><p>{sffGrants.interpretation.amount} Historical funding is not current room for more funding.</p></aside>
+        <SffGrantExplorer initialData={sffInitialPage} pdfUrl={sffGrants.source.pdfUrl} />
+        <div className="sf-sff-boundaries"><p><strong>Denominator.</strong> {sffGrants.interpretation.denominator}</p><p><strong>Geography.</strong> {sffGrants.interpretation.geography}</p><p><strong>Identity.</strong> {sffGrants.interpretation.identity}</p><p><strong>Decision.</strong> {sffGrants.interpretation.impact} {sffGrants.interpretation.fundingRoom}</p></div>
+        <div className="sf-sff-sources"><a href={sffGrants.source.portfolioPageUrl} target="_blank" rel="noreferrer"><span>PORTFOLIO METHODOLOGY</span><strong>San Francisco Foundation · 2025 Grantmaking Data</strong><small>FY2025 programmatic grants · data as of {sffGrants.source.portfolioDataAsOf}</small><b>↗</b></a><a href={sffGrants.source.pdfUrl} target="_blank" rel="noreferrer"><span>PRIMARY LIST</span><strong>Funded Organizations and Individuals</strong><small>11-page reviewed PDF · SHA-256 pinned</small><b>↗</b></a></div>
       </section>
 
       <section className="sf-donor-comparison" id="comparison" aria-labelledby="sf-comparison-title">

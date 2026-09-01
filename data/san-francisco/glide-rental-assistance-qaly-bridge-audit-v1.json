@@ -1,0 +1,108 @@
+{
+  "version": "sf-glide-rental-assistance-qaly-bridge-audit-v0.1",
+  "generatedAt": "2026-08-31T20:48:00-07:00",
+  "status": "not-yet-convertible",
+  "sharedDenominator": {
+    "label": "one better life",
+    "qalyThreshold": 10,
+    "publishedPriceUsd": null
+  },
+  "nativeOutcome": "One additional entry to an emergency homeless shelter avoided within six months because rental assistance was available",
+  "decision": "Do not publish a dollars-per-10-QALYs price. Emergency-shelter entry is an administrative housing outcome, not a preference-based health state. GLIDE has not linked its assisted households to six-month shelter, housing, mortality, or health-utility outcomes. The nearest health-utility evidence evaluates intensive Housing First for chronically homeless adults with mental illness; it found no significant EQ-5D difference in a large randomized comparison and cautions that EQ-5D did not strongly track broader quality of life in this population. It cannot supply a QALY coefficient for GLIDE's short-term rental-assistance pathway.",
+  "candidateEvidence": {
+    "status": "no-defensible-coefficient",
+    "nearestEvidence": "Randomized Housing First studies that measured EQ-5D in chronically homeless adults with mental illness",
+    "qalyPerShelterEntryAverted": null,
+    "boundary": "Housing First combines permanent housing subsidies with intensive case management or assertive community treatment. GLIDE's modeled pathway is short-term financial assistance for households facing a resolvable crisis. Different populations, treatments, counterfactuals, housing trajectories, utility instruments, and follow-up prevent a per-shelter-entry QALY transfer."
+  },
+  "failedGates": [
+    {
+      "key": "outcome_definition",
+      "label": "Define and verify the housing outcome",
+      "status": "failed",
+      "why": "GLIDE reports three-month housing retention for a historical sponsor cohort but publishes no linkage to six-month emergency-shelter entry, unsheltered homelessness, doubled-up housing, eviction, moves, or housing quality. The modeled endpoint is transferred from Chicago administrative shelter data, not observed at GLIDE."
+    },
+    {
+      "key": "program_effect",
+      "label": "Measure GLIDE's causal prevention effect",
+      "status": "failed",
+      "why": "The 2.0-point effect is an MFI judgment transferred from funding availability among 4,448 eligible Chicago callers. GLIDE has no concurrent comparison, applicant flow, treatment assignment, or outcome follow-up, and a null effect remains plausible."
+    },
+    {
+      "key": "health_state_mapping",
+      "label": "Map housing trajectories to preference-based utility",
+      "status": "failed",
+      "why": "Neither GLIDE nor the Chicago prevention study measured EQ-5D, HUI, SF-6D, AQoL, mortality, or another QALY input. A large Housing First trial found no significant EQ-5D difference, while a companion study found only moderate—not strong—convergence with broader quality of life."
+    },
+    {
+      "key": "duration",
+      "label": "Establish timing and persistence",
+      "status": "failed",
+      "why": "Avoiding one recorded shelter entry within six months does not reveal days stably housed, later shelter or unsheltered episodes, the onset of any health benefit, or its persistence. No utility area-under-the-curve can be calculated."
+    },
+    {
+      "key": "household_person_allocation",
+      "label": "Reconcile households, callers, and people",
+      "status": "failed",
+      "why": "The historical GLIDE cohort uses 39 households, the FY2025 headline uses 317 people, and the Chicago estimate uses eligible callers. Household size, children, duplicate participants, and who experiences any health gain are not published, so person-level QALYs cannot be allocated."
+    },
+    {
+      "key": "overlap_and_pathway",
+      "label": "Prevent overlap and pathway double-counting",
+      "status": "failed",
+      "why": "A shelter entry averted may represent continued tenancy, a move, doubling up, another subsidy, or a later homelessness episode. Health, safety, schooling, and public-cost pathways overlap and cannot be added independently without a longitudinal state model."
+    },
+    {
+      "key": "program_cost",
+      "label": "Identify incremental rental-assistance cost",
+      "status": "failed",
+      "why": "The $3,077 numerator begins with a historical $100,000-to-39-household ratio and adds a 20% delivery-cost judgment. It is not a current audited program cost, incremental budget, or source-specific marginal price."
+    },
+    {
+      "key": "additionality",
+      "label": "Reconcile funding sources and marginal capacity",
+      "status": "failed",
+      "why": "GLIDE connects applicants to public and nonprofit partners, reports substantial contract revenue, and has not published unfunded eligible demand or a dated marginal plan. A private gift may replace another funding source rather than create an additional assisted case."
+    }
+  ],
+  "illustrativeCounterfactual": {
+    "status": "not-calculable",
+    "nativeCostPerOutcomeUsd": 153850,
+    "qalyPerOutcome": null,
+    "arithmetic": "$153,850 / [missing QALYs per additional six-month shelter entry averted] x 10 QALYs",
+    "resultUsd": null,
+    "publicationBoundary": "No arithmetic result is shown because choosing a QALY weight would fabricate the central input. The $153,850 native scenario remains visible only as a conditional shelter-entry audit trail; it is not a comparison price, rank, or recommendation."
+  },
+  "requiredEvidence": [
+    "Pre-specify the eligible applicant cohort, assistance type and source, household/person crosswalk, and mutually exclusive housing states; link every applicant to 3-, 6-, 12-, and 24-month shelter, unsheltered, eviction, move, and stable-housing outcomes.",
+    "Use randomized funding allocation, a credible cutoff, phased rollout, or another defensible comparison to estimate GLIDE's own intention-to-treat effect with complete participant flow and missing-data analysis.",
+    "Collect preference-based utility and mortality for the same household members at baseline and repeated follow-up; model person-level trajectories, spillovers, overlap, duration, and instrument sensitivity rather than importing a Housing First coefficient.",
+    "Publish the current program ledger, transfer and delivery costs, partner-funding displacement rules, eligible unfunded demand, staffing and housing constraints, and dated $100K, $1M, and $10M marginal plans."
+  ],
+  "sources": [
+    {
+      "publisher": "Science",
+      "title": "The impact of homelessness prevention programs on homelessness",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27516600/",
+      "published": "2016",
+      "retrieved": "2026-08-31",
+      "sourceType": "peer-reviewed quasi-experiment"
+    },
+    {
+      "publisher": "JAMA Network Open",
+      "title": "Cost-effectiveness of Housing First Intervention With Intensive Case Management Compared With Treatment as Usual for Homeless Adults With Mental Illness",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6707012/",
+      "published": "2019",
+      "retrieved": "2026-08-31",
+      "sourceType": "randomized-trial economic evaluation"
+    },
+    {
+      "publisher": "BMC Health Services Research",
+      "title": "Convergent validity of the EQ-5D-3L in a randomized-controlled trial of the Housing First model",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6626335/",
+      "published": "2019",
+      "retrieved": "2026-08-31",
+      "sourceType": "health-utility measurement study"
+    }
+  ]
+}

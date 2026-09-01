@@ -571,7 +571,15 @@ test('phone donors can inspect the Institute on Aging review without treating ca
   await expect(review).toContainText('self-selected rather than assigned');
   await expect(review).toContainText('Not published');
   await expect(review).toContainText('roughly $15,000 per six-month loneliness remission');
+  await expect(review).toContainText(/cost per better life/i);
+  await expect(page.getByText('≈ $14.9M', { exact: true })).toBeVisible();
+  await expect(review).toContainText('about $14.9 million per better life');
+  await expect(review).toContainText('$1.25M');
+  await expect(review).toContainText('$624M');
+  await expect(review).toContainText('0.0007 QALY');
+  await expect(review.locator('.charity-qaly-bridge .charity-sensitivity article')).toHaveCount(3);
+  await expect(review).toContainText(/no finite positive upper bound/i);
   await expect(review.locator('.charity-evidence-list article')).toHaveCount(5);
-  await expect(review.locator('.charity-sensitivity article')).toHaveCount(3);
+  await expect(review.locator('.charity-model > .charity-sensitivity article')).toHaveCount(3);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });

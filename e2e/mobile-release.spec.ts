@@ -410,6 +410,26 @@ test('phone donors can inspect the Curry model without converting service volume
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 
+test('phone donors can inspect the Food Bank native and 10-QALY decision models without treating food volume as impact', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== 'phone-390');
+  await page.goto('/charities/sf-marin-food-bank', { waitUntil: 'domcontentloaded' });
+  const review = page.locator('.charity-report-article');
+  await expect(page.getByRole('heading', { level: 1, name: 'San Francisco–Marin Food Bank', exact: true })).toBeVisible();
+  await expect(review).toContainText('about $6,000 per additional household not experiencing very low food security');
+  await expect(review).toContainText('$ per 10 QALYs — one better life');
+  await expect(page.getByText('≈ $85.7M', { exact: true })).toBeVisible();
+  await expect(review).toContainText('about $85.7 million per better life');
+  await expect(review).toContainText('$1.11 million');
+  await expect(review).toContainText('$24B');
+  await expect(review).toContainText('0.000035 QALY');
+  await expect(review).toContainText('35% of modeled exits');
+  await expect(review.locator('.charity-qaly-bridge .charity-sensitivity article')).toHaveCount(3);
+  await expect(review).toContainText(/no finite positive upper bound/i);
+  await expect(review.locator('.charity-evidence-list article')).toHaveCount(3);
+  await expect(review.locator('.charity-model > .charity-sensitivity article')).toHaveCount(3);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
 test('phone donors can inspect the SF LGBT Center employment model without an invented life-bettered conversion', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'phone-390');
   await page.goto('/charities/sf-lgbt-center', { waitUntil: 'domcontentloaded' });

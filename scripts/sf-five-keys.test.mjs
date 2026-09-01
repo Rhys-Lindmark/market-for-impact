@@ -4,6 +4,7 @@ import fs from 'node:fs';
 
 const review = JSON.parse(fs.readFileSync('data/san-francisco/five-keys-review-v1.json', 'utf8'));
 const model = JSON.parse(fs.readFileSync('data/san-francisco/five-keys-credential-cea-v1.json', 'utf8'));
+const bridge = JSON.parse(fs.readFileSync('data/san-francisco/five-keys-credential-qaly-bridge-v1.json', 'utf8'));
 
 test('Five Keys review separates service scale and in-house comparison from causal impact', () => {
   assert.equal(review.evidence.length, 3);
@@ -14,7 +15,8 @@ test('Five Keys review separates service scale and in-house comparison from caus
   assert.match(review.decision.costEffectiveness, /\$166,700 per additional credential/i);
   assert.equal(review.decision.roomForMoreFunding, 'Not published');
   assert.equal(review.model.missingInputs.length, 8);
-  assert.match(review.model.qalyBoundary, /No QALY/);
+  assert.match(review.model.qalyBoundary, /\$4\.9 million per 10-QALY decision estimate/i);
+  assert.match(review.model.qalyBoundary, /not a measured Five Keys health effect/i);
 });
 
 test('Five Keys review preserves education, portfolio, and public-funding boundaries', () => {
@@ -38,13 +40,26 @@ test('Five Keys model reconciles audited school cost and keeps causal scenarios 
   assert.match(model.formula.denominatorBoundary, /not a unique life substantially bettered/i);
 });
 
-test('donor-facing pages use 10 QALYs as the shared better-life denominator without inventing a bridge', () => {
+test('Five Keys applies the universal 10-QALY denominator with an explicit discounted transfer model', () => {
+  const b = bridge.modeledBridge;
+  assert.equal(bridge.sharedDenominator.qalyThreshold, 10);
+  assert.equal(bridge.sharedDenominator.publishedPriceUsd, b.bestCostPerTenQalysUsd);
+  assert.equal(bridge.sourceEvidence.publishedDiscountedLifetimeQalyPerAdditionalGraduate, 1.7);
+  assert.equal(b.qalyPerAdditionalCredential.best, 0.34);
+  assert.equal(b.bestCostPerTenQalysUsd, b.historicalGrossCostPerAdaYearUsd / (b.additionalCredentialProbabilityPerAdaYear.best * b.qalyPerAdditionalCredential.best) * 10);
+  assert.equal(b.positiveEffectRangeUsd.low, b.historicalGrossCostPerAdaYearUsd / (b.additionalCredentialProbabilityPerAdaYear.high * b.qalyPerAdditionalCredential.high) * 10);
+  assert.equal(b.positiveEffectRangeUsd.high, b.historicalGrossCostPerAdaYearUsd / (b.additionalCredentialProbabilityPerAdaYear.low * b.qalyPerAdditionalCredential.low) * 10);
+  assert.match(b.nullBoundary, /no finite upper bound/i);
+});
+
+test('donor-facing pages publish the explicit Five Keys decision estimate and its uncertainty', () => {
   const report = fs.readFileSync('app/charities/five-keys/page.tsx', 'utf8');
   const sharedReport = fs.readFileSync('components/CharityResearchReport.tsx', 'utf8');
   const sfPage = fs.readFileSync('app/san-francisco/page.tsx', 'utf8');
-  assert.match(report, /\$ PER BETTER LIFE/);
-  assert.match(report, /denominator: 10 QALYs/);
+  assert.match(report, /COST PER BETTER LIFE/);
+  assert.match(report, /about \$4\.9 million per better life/);
+  assert.match(report, /qalyPerAdditionalCredential\.best/);
   assert.match(sharedReport, /\$ per 10 QALYs — one better life/);
-  assert.match(sfPage, /COST PER BETTER LIFE/);
-  assert.match(sfPage, /Not yet convertible/);
+  assert.match(sfPage, /Five Keys Schools and Programs[\s\S]*betterLifePrice: '≈ \$4\.9M'/);
+  assert.match(sfPage, /Five Keys Schools and Programs[\s\S]*bridgeState: 'Very-low-confidence education\/QALY model'/);
 });

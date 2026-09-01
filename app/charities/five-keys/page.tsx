@@ -2,12 +2,13 @@ import type { Metadata } from 'next';
 import CharityResearchReport, { type CharityReportContent } from '@/components/CharityResearchReport';
 import review from '@/data/san-francisco/five-keys-review-v1.json';
 import model from '@/data/san-francisco/five-keys-credential-cea-v1.json';
+import bridge from '@/data/san-francisco/five-keys-credential-qaly-bridge-v1.json';
 
 export const metadata: Metadata = {
   title: 'Five Keys secondary credentials — charity research | Market for Impact',
-  description: 'Our evidence review and exploratory cost-per-additional-credential model for Five Keys Independence High School.',
-  openGraph: { title: 'Five Keys secondary credentials — charity research', description: 'A source-grounded model separating audited school costs, credential outputs, modeled causal scenarios, and funding room.', images: [] },
-  twitter: { card: 'summary', title: 'Five Keys secondary credentials — charity research', description: 'An inspectable credential model with a plausible null and no invented life-bettered conversion.', images: [] },
+  description: 'Our evidence review and exploratory credential and 10-QALY models for Five Keys Independence High School.',
+  openGraph: { title: 'Five Keys secondary credentials — charity research', description: 'A source-grounded model separating audited school costs, credential outputs, a discounted education-to-health transfer, and funding room.', images: [] },
+  twitter: { card: 'summary', title: 'Five Keys secondary credentials — charity research', description: 'An inspectable credential and QALY model with explicit transfer uncertainty.', images: [] },
 };
 
 const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
@@ -39,7 +40,7 @@ const content: CharityReportContent = {
   summary: [
     { label: 'GROSS HISTORICAL BENCHMARK', value: '≈ $16,700', detail: 'FY2024 total FKIH expense per ADA-equivalent year; not a marginal price' },
     { label: 'OUR CONDITIONAL BEST GUESS', value: '≈ $167,000', detail: 'per additional credential if one ADA-equivalent year raises completion by 10 points' },
-    { label: '$ PER BETTER LIFE', value: 'Not yet convertible', detail: 'denominator: 10 QALYs; no defensible credential-to-QALY bridge yet' },
+    { label: 'COST PER BETTER LIFE', value: '≈ $4.9M', detail: 'per 10 QALYs; very-low-confidence education-to-health transfer with an 80% central discount' },
     { label: 'FUNDING ROOM', value: 'Not published', detail: 'the $100,000 gift is a scenario, not a verified added-seat plan' },
   ],
   programSection: {
@@ -50,7 +51,7 @@ const content: CharityReportContent = {
       { title: 'Deliver flexible instruction', detail: 'Credentialed teachers provide classroom, independent-study, synchronous, GED/HiSET, literacy, and related support around custody and life constraints.' },
       { title: 'Verify completion and follow-up', detail: 'A recommendation-grade cohort would reconcile every entrant, dosage, withdrawal, transfer, diploma or equivalency, and education, employment, and custody status through at least 36 months.' },
     ],
-    boundary: 'The model covers an ADA-equivalent year in FKIH and an additional accredited secondary credential. It excludes other Five Keys schools and services, credits without completion, selected-graduate recidivism comparisons, employment and earnings, avoided custody, and any QALY or life-bettered conversion.',
+    boundary: 'The native model covers an ADA-equivalent year in FKIH and an additional accredited secondary credential. It excludes other Five Keys schools and services, credits without completion, selected-graduate recidivism comparisons, employment and earnings, and avoided custody. The separate comparison bridge models health utility only.',
   },
   model: {
     headline: 'Our current model: about $167,000 per additional credential—conditional on a 10-point effect we cannot yet verify.',
@@ -63,10 +64,26 @@ const content: CharityReportContent = {
     uncertaintyBoundary: model.nullEffectBoundary,
     fundingBoundary: model.fundingRoom.boundary,
   },
+  comparisonBridge: {
+    headline: 'Our current best estimate: about $4.9 million per better life (10 QALYs).',
+    body: bridge.decision,
+    equation: {
+      label: 'EXPLORATORY COST PER 10 QALYS · ONE BETTER LIFE',
+      expression: `${money.format(bridge.modeledBridge.historicalGrossCostPerAdaYearUsd)} ÷ (${percent.format(bridge.modeledBridge.additionalCredentialProbabilityPerAdaYear.best)} × ${bridge.modeledBridge.qalyPerAdditionalCredential.best} QALY) × 10`,
+      result: `= ${compactMoney.format(bridge.modeledBridge.bestCostPerTenQalysUsd)}`,
+    },
+    inputs: [
+      { key: 'gross_cost', label: 'Gross historical cost per ADA-equivalent year', confidence: 'moderate historical; low marginal', best: money.format(bridge.modeledBridge.historicalGrossCostPerAdaYearUsd), range: 'Fixed FY2024 ratio', basis: 'Audited school expense divided by annual ADA; not a unique learner, marginal seat, or donor price.' },
+      { key: 'credential_effect', label: 'Additional credential probability per ADA-equivalent year', confidence: 'very low', best: percent.format(bridge.modeledBridge.additionalCredentialProbabilityPerAdaYear.best), range: `${percent.format(bridge.modeledBridge.additionalCredentialProbabilityPerAdaYear.low)}–${percent.format(bridge.modeledBridge.additionalCredentialProbabilityPerAdaYear.high)}`, basis: bridge.modeledBridge.additionalCredentialProbabilityPerAdaYear.basis },
+      { key: 'qaly_per_credential', label: 'Lifetime QALYs per additional credential', confidence: 'very low transfer', best: String(bridge.modeledBridge.qalyPerAdditionalCredential.best), range: `${bridge.modeledBridge.qalyPerAdditionalCredential.low}–${bridge.modeledBridge.qalyPerAdditionalCredential.high}`, basis: bridge.sourceEvidence.fiveKeysQalyPerAdditionalCredential.basis },
+    ],
+    sensitivity: bridge.modeledBridge.sensitivity.map((row) => ({ case: row.case, headline: compactMoney.format(row.costPerTenQalysUsd), detail: `${percent.format(row.credentialEffect)} credential effect · ${row.qalyPerCredential} QALY per additional credential` })),
+    boundary: `${bridge.modeledBridge.nullBoundary} ${bridge.sourceEvidence.boundary}`,
+  },
   evidence: review.evidence,
   reservations: review.reservations,
   excludedBenefits: model.excludedBenefits,
-  sources: review.sources,
+  sources: [...review.sources, ...bridge.sources],
 };
 
 export default function FiveKeysResearchPage() {

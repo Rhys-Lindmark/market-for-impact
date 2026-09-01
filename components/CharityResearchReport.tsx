@@ -1,4 +1,4 @@
-import Link from 'next/link';
+/* eslint-disable @next/next/no-html-link-for-pages -- Native anchors avoid a confirmed Vinext production prefetch runtime error under the canonical /donate base path. */
 
 export type CharityEvidence = {
   key: string;
@@ -66,7 +66,7 @@ export default function CharityResearchReport({ content }: { content: CharityRep
   return (
     <main className="charity-report">
       <header className="charity-report-topbar">
-        <Link className="brand" href="/"><span className="brand-mark">M</span><span>Market for Impact</span></Link>
+        <a className="brand" href="/"><span className="brand-mark">M</span><span>Market for Impact</span></a>
         <nav aria-label="Charity report navigation"><a href="#nutshell">In a nutshell</a><a href="#program">The program</a><a href="#cost-effectiveness">Cost-effectiveness</a><a href="#reservations">Reservations</a></nav>
         <a className="charity-report-donate" href={content.donationUrl} target="_blank" rel="noreferrer">Donation route ↗</a>
       </header>

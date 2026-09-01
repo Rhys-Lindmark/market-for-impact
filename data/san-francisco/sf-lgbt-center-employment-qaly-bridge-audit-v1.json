@@ -1,94 +1,61 @@
 {
-  "version": "sf-lgbt-center-employment-qaly-bridge-audit-v0.1",
-  "generatedAt": "2026-08-31T20:25:00-07:00",
-  "status": "not-yet-convertible",
-  "sharedDenominator": {
-    "label": "one better life",
-    "qalyThreshold": 10,
-    "publishedPriceUsd": null
-  },
+  "version": "sf-lgbt-center-employment-qaly-bridge-v0.2",
+  "generatedAt": "2026-09-01T08:08:00-07:00",
+  "status": "exploratory-employment-health-utility-transfer-model",
+  "sharedDenominator": { "label": "one better life", "qalyThreshold": 10, "publishedPriceUsd": 168332640 },
   "nativeOutcome": "One additional living-wage job placement attributable to the Center within the reporting year",
-  "decision": "Do not publish a dollars-per-10-QALYs price. The Center has not defined the wage threshold, measured retention or earnings, identified a causal placement effect, or collected preference-based health utility. Employment is not itself a health state, and the nearest cost-utility literature evaluates specific supported-employment interventions in populations with diagnosed health conditions; it does not supply a transferable QALY coefficient per placement for this program or population.",
-  "candidateEvidence": {
-    "status": "no-defensible-coefficient",
-    "nearestEvidence": "Economic evaluations of supported employment or Individual Placement and Support for people with mental-health conditions",
-    "qalyPerPlacement": null,
-    "boundary": "Some supported-employment studies measure QALYs directly, but their participants, intervention fidelity, comparators, health conditions, follow-up, and utility instruments differ from the Center's broad employment services. Their QALY results cannot be divided by job counts and transferred as a per-placement weight."
+  "decision": "Publish an explicit, very-low-confidence decision estimate of approximately $168 million per 10 QALYs. The closest joint employment-and-utility randomized evidence found a 4.9-percentage-point employment gain and 0.01 incremental QALY per participant over 18 months for intensive Individual Placement and Support in adults receiving alcohol or drug treatment. Dividing those trial effects implies 0.204 QALY per additional job start only if all QALY change is assigned to the employment effect. MFI retains 10% of that ratio for population, program, mediation, and instrument transfer and then retains 50% for unknown Center placement durability, yielding 0.0102 QALY per modeled additional placement. Combined with the native $171,768 conditional placement price, the central comparison price is approximately $168 million per better life. The conditional positive-effect range is approximately $8.42 million to $11.2 billion; a true null, harm, or funding displacement remains plausible. This is a best-effort donor estimate, not a measured Center effect, verified marginal price, rank, or funding recommendation.",
+  "sourceEvidence": {
+    "design": "Pragmatic, multicenter randomized controlled trial of Individual Placement and Support versus treatment-as-usual employment support",
+    "population": "1,687 adults in community treatment for alcohol or drug dependence in England; 1,403 had linked employment data for the complete-case employment comparison",
+    "intervention": "Up to 13 months of intensive Individual Placement and Support integrated into seven treatment centers",
+    "employmentRateIps": 0.297,
+    "employmentRateControl": 0.248,
+    "absoluteEmploymentEffect": 0.049,
+    "incrementalQalyPerParticipant": { "best": 0.01, "low": 0.003, "high": 0.02 },
+    "followUpYears": 1.5,
+    "boundary": "The trial jointly estimates intervention effects on any employment during 18 months and EQ-5D-5L QALYs; it does not establish that employment mediated the QALY gain. Participants had diagnosed substance dependence and received intensive integrated IPS. The Center serves a broader LGBTQ+ population through a different, incompletely specified service mix, so neither the trial effect nor the implied QALY-per-job ratio is directly transferable."
   },
-  "failedGates": [
-    {
-      "key": "outcome_definition",
-      "label": "Define and retain the employment outcome",
-      "status": "failed",
-      "why": "The published 30+ count does not define the living-wage threshold, job hours, benefits, start date, retention, earnings, duplicate people, or the reporting pathway that preceded each placement."
-    },
-    {
-      "key": "program_effect",
-      "label": "Measure the Center's causal placement effect",
-      "status": "failed",
-      "why": "The Center reports placements without a concurrent comparison or baseline placement rate. The model's 25% attribution share is a decision scenario, not an evidence estimate, and a null remains plausible."
-    },
-    {
-      "key": "program_cost",
-      "label": "Identify incremental employment-program cost",
-      "status": "failed",
-      "why": "The numerator is the entire audited Economic Development allocation, which also includes financial, housing, and small-business services. It is not an employment-program budget or a marginal funding quote."
-    },
-    {
-      "key": "health_pathway",
-      "label": "Establish a causal employment-to-health pathway",
-      "status": "failed",
-      "why": "Employment, income, job quality, discrimination, baseline health, and health utility are jointly determined. The Center did not measure whether any additional placement changed health rather than only employment status."
-    },
-    {
-      "key": "utility_measurement",
-      "label": "Measure preference-based health utility",
-      "status": "failed",
-      "why": "No EQ-5D, HUI, SF-6D, AQoL, or other preference-based utility measure was collected. Quality-of-life findings from supported-employment studies do not create a utility coefficient for this population."
-    },
-    {
-      "key": "duration",
-      "label": "Establish timing and persistence",
-      "status": "failed",
-      "why": "The published placement count has no 6- or 12-month retention, earnings trajectory, health-utility time points, onset, area under the curve, or post-program persistence."
-    },
-    {
-      "key": "additionality",
-      "label": "Reconcile public funding and marginal capacity",
-      "status": "failed",
-      "why": "Government grants supplied 55% of FY2024 revenue, individualized coaching enrollment is paused, and no dated marginal plan shows that a new private gift adds service capacity rather than replacing public or restricted funding."
-    }
+  "modeledBridge": {
+    "conditionalCostPerAdditionalPlacementUsd": { "best": 171768, "low": 85884, "high": 429421, "basis": "The native v0.1 model divides the broad FY2024 Economic Development allocation by 30 reported placements and assumes 25% are additional in the central scenario. The 10%–50% attribution cases are judgmental, not evidence estimates; the numerator includes non-employment services and is not a marginal price." },
+    "externalImpliedQalyPerAdditionalJobStart": { "best": 0.20408163265306123, "low": 0.061224489795918366, "high": 0.40816326530612246, "basis": "Trial incremental QALY per participant divided by the 4.9-percentage-point complete-case employment difference. This ratio is an arithmetic joint-outcome anchor, not a causal mediation estimate or a QALY weight for employment." },
+    "retainedShareForProgramPopulationAndMediationTransfer": { "best": 0.1, "low": 0.025, "high": 0.25, "basis": "The midpoint retains 10% because the trial used intensive integrated IPS in adults with substance dependence, while the Center reports a mixed service bundle and a broad LGBTQ+ population; employment may not mediate the trial QALY gain. This is a judgment range." },
+    "retainedShareForPlacementDurability": { "best": 0.5, "low": 0.25, "high": 1, "basis": "The Center reports job starts without 6- or 12-month retention, hours, benefits, or earnings. The midpoint gives half credit relative to the trial's 18-month observation window; this is a decision assumption, not measured retention." },
+    "formula": "(incremental_qaly_per_trial_participant / absolute_trial_employment_effect) * transfer_retention * placement_durability_retention",
+    "qalyPerAdditionalPlacement": { "best": 0.010204081632653062, "low": 0.00038265306122448983, "high": 0.10204081632653061 },
+    "bestCostPerTenQalysUsd": 168332640,
+    "costPerQalyUsd": 16833264,
+    "positiveEffectRangeUsd": { "low": 8416632, "high": 11222202133.333332 },
+    "sensitivity": [
+      { "case": "Optimistic positive transfer", "costPerAdditionalPlacementUsd": 85884, "incrementalQalyPerTrialParticipant": 0.02, "transferRetention": 0.25, "placementDurabilityRetention": 1, "qalyPerAdditionalPlacement": 0.10204081632653061, "costPerTenQalysUsd": 8416632 },
+      { "case": "Central transfer-discounted estimate", "costPerAdditionalPlacementUsd": 171768, "incrementalQalyPerTrialParticipant": 0.01, "transferRetention": 0.1, "placementDurabilityRetention": 0.5, "qalyPerAdditionalPlacement": 0.010204081632653062, "costPerTenQalysUsd": 168332640 },
+      { "case": "Cautious positive transfer", "costPerAdditionalPlacementUsd": 429421, "incrementalQalyPerTrialParticipant": 0.003, "transferRetention": 0.025, "placementDurabilityRetention": 0.25, "qalyPerAdditionalPlacement": 0.00038265306122448983, "costPerTenQalysUsd": 11222202133.333332 }
+    ],
+    "nullBoundary": "The numeric range is conditional on a positive Center-attributable placement effect, a positive transferable health-utility relationship, placement durability, and donor additionality. The Center has no causal comparison or retention data; the external trial's QALY gain was not shown to be mediated by employment; individualized coaching is paused; and no marginal funding plan is published. If the Center does not change placement probability, employment produces no health-utility gain for this population, QALY change is transient or adverse, placements do not persist, or a gift displaces public or restricted funding, the impact price has no finite positive upper bound."
+  },
+  "evidenceWeaknesses": [
+    { "key": "outcome_definition", "label": "Center placement definition and retention", "why": "The published 30+ count does not define wage threshold, hours, benefits, start date, duplicate people, service pathway, or 6- and 12-month retention." },
+    { "key": "program_effect", "label": "Center causal placement effect", "why": "The 25% central attribution is a decision scenario, not evidence. The Center has no concurrent comparison or baseline placement rate; null or harm remains plausible." },
+    { "key": "joint_outcome_not_mediation", "label": "Employment-to-QALY mediation", "why": "The external RCT measured both outcomes but did not show that its QALY gain was caused by additional employment. Dividing joint effects is an arithmetic anchor, not mediation evidence." },
+    { "key": "population_and_program_transfer", "label": "Population and intervention transfer", "why": "The trial integrated intensive IPS with alcohol and drug treatment. The Center's broader LGBTQ+ population, baseline health, discrimination exposures, service mix, fidelity, and comparator differ." },
+    { "key": "cost_and_additionality", "label": "Employment-program cost and funding room", "why": "The numerator is the whole Economic Development allocation, including non-employment services. Government grants supplied 55% of FY2024 revenue, coaching is paused, and the next gift's capacity and displacement are unknown." }
   ],
-  "illustrativeCounterfactual": {
-    "status": "not-calculable",
-    "nativeCostPerOutcomeUsd": 171768,
-    "qalyPerOutcome": null,
-    "arithmetic": "$171,768 / [missing QALYs per additional retained placement] x 10 QALYs",
-    "resultUsd": null,
-    "publicationBoundary": "No arithmetic result is shown because choosing a QALY weight would fabricate the central input. The native conditional placement scenario remains visible only as an audit trail; it is not a comparison price, rank, or recommendation."
-  },
+  "excludedBenefits": [
+    "Earnings, taxes, benefits, financial stability, and employer productivity because wage, hours, retention, and counterfactual earnings are unpublished",
+    "Confidence, social connection, discrimination reduction, housing stability, and employer-side inclusion outside the transferred EQ-5D result",
+    "Youth, financial counseling, homeownership, small-business, community-event, and other Center program benefits",
+    "Family, caregiver, employer, public-budget, and community spillovers"
+  ],
   "requiredEvidence": [
     "Pre-specify the living-wage threshold, eligible cohort, service pathway, employment start, hours, benefits, and 6- and 12-month retention and earnings outcomes.",
     "Use a randomized, phased, or credible matched comparison with complete participant flow, exposure, missing-data analysis, and a pre-specified causal estimand.",
-    "Collect preference-based utility at baseline and repeated follow-up for the same participants; estimate utility jointly with employment rather than importing a literature coefficient.",
+    "Collect EQ-5D or another preference-based utility measure at baseline and repeated follow-up; estimate employment, utility, and mediation jointly for the same participants.",
     "Publish the employment-program budget, active-component costs, public and restricted funding, displacement rule, capacity, and dated $100K, $1M, and $10M marginal plans."
   ],
   "sources": [
-    {
-      "publisher": "Annals of Family Medicine",
-      "title": "Employment Interventions in Health Settings: A Systematic Review and Synthesis",
-      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6130994/",
-      "published": "2018",
-      "retrieved": "2026-08-31",
-      "sourceType": "peer-reviewed systematic review"
-    },
-    {
-      "publisher": "Epidemiology and Psychiatric Sciences",
-      "title": "Economic analyses of supported employment programmes for people with mental health conditions: A systematic review",
-      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9491084/",
-      "published": "2022",
-      "retrieved": "2026-08-31",
-      "sourceType": "peer-reviewed systematic review of economic evaluations"
-    }
+    { "publisher": "The Lancet Regional Health – Europe", "title": "Superiority and cost-effectiveness of Individual Placement and Support versus standard employment support for people with alcohol and drug dependence", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10828604/", "published": "2023-11-17", "retrieved": "2026-09-01", "sourceType": "peer-reviewed pragmatic randomized controlled trial and economic evaluation" },
+    { "publisher": "UK Office for Health Improvement and Disparities", "title": "Individual Placement and Support – Alcohol and Drug study: main findings", "url": "https://www.gov.uk/government/publications/helping-people-in-alcohol-and-drug-treatment-services-into-work/individual-placement-and-support-alcohol-and-drug-study-main-findings--2", "published": "2024-01-16", "retrieved": "2026-09-01", "sourceType": "official trial findings and linked-employment denominator" },
+    { "publisher": "Annals of Family Medicine", "title": "Employment Interventions in Health Settings: A Systematic Review and Synthesis", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6130994/", "published": "2018", "retrieved": "2026-08-31", "sourceType": "peer-reviewed systematic review" },
+    { "publisher": "Epidemiology and Psychiatric Sciences", "title": "Economic analyses of supported employment programmes for people with mental health conditions: A systematic review", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9491084/", "published": "2022", "retrieved": "2026-08-31", "sourceType": "peer-reviewed systematic review of economic evaluations" }
   ]
 }

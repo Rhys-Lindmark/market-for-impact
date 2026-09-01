@@ -2,19 +2,20 @@ import type { Metadata } from 'next';
 import CharityResearchReport, { type CharityReportContent } from '@/components/CharityResearchReport';
 import review from '@/data/san-francisco/sf-lgbt-center-employment-review-v1.json';
 import model from '@/data/san-francisco/sf-lgbt-center-employment-cea-v1.json';
-import bridgeAudit from '@/data/san-francisco/sf-lgbt-center-employment-qaly-bridge-audit-v1.json';
+import bridge from '@/data/san-francisco/sf-lgbt-center-employment-qaly-bridge-audit-v1.json';
 
 export const metadata: Metadata = {
   title: 'SF LGBT Center Employment Services — charity research | Market for Impact',
   description: 'Our evidence review and conditional cost-effectiveness scenarios for SF LGBT Center employment support.',
   openGraph: { title: 'SF LGBT Center Employment Services — charity research', description: 'A source-grounded employment review that separates reported placements, causal attribution, public funding, and current capacity.', images: [] },
-  twitter: { card: 'summary', title: 'SF LGBT Center Employment Services — charity research', description: 'A conditional employment model with an explicit null case and no invented QALY conversion.', images: [] },
+  twitter: { card: 'summary', title: 'SF LGBT Center Employment Services — charity research', description: 'A conditional employment model with an explicit, very-low-confidence health-utility transfer.', images: [] },
 };
 
 const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
 const compactMoney = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 1 });
 const number = new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 });
-const percent = new Intl.NumberFormat('en-US', { style: 'percent', maximumFractionDigits: 0 });
+const percent = new Intl.NumberFormat('en-US', { style: 'percent', maximumFractionDigits: 1 });
+const qalyNumber = new Intl.NumberFormat('en-US', { maximumFractionDigits: 6 });
 const expense = model.inputs.find((input) => input.key === 'fy2024_economic_development_expense_usd')!;
 const placements = model.inputs.find((input) => input.key === 'reported_living_wage_placements')!;
 const attribution = model.inputs.find((input) => input.key === 'conditional_center_attribution_share')!;
@@ -25,11 +26,11 @@ const content: CharityReportContent = {
   eyebrow: 'CHARITY RESEARCH · SAN FRANCISCO',
   program: 'Employment Services: drop-ins, coaching, career fairs, and employer partnerships',
   donationUrl: review.organization.donationUrl,
-  published: '31 August 2026',
+  published: '1 September 2026',
   modelVersion: model.version,
   nutshell: {
     headline: 'A trusted employment program with real placement reporting—and no causal denominator yet.',
-    body: <>The Center reports supporting <strong>400+ LGBTQ+ job seekers</strong> and helping <strong>30+ people secure living-wage employment in 2024</strong>. Its audit assigns {compactMoney.format(expense.best)} to the broader Economic Development family. That produces a <strong>{money.format(model.bottomLine.reportedGrossCostPerPlacementBenchmarkUsd)} gross accounting benchmark per reported placement</strong>, not a causal price. If 25% of reported placements were additional because of the Center, the conditional midpoint would be <strong>about {money.format(model.bottomLine.conditionalMidpointCostPerAdditionalPlacementUsd)} per additional placement</strong>. A null effect remains plausible.</>,
+    body: <>The Center reports supporting <strong>400+ LGBTQ+ job seekers</strong> and helping <strong>30+ people secure living-wage employment in 2024</strong>. Its audit assigns {compactMoney.format(expense.best)} to the broader Economic Development family. If 25% of reported placements were additional because of the Center, the conditional midpoint would be <strong>about {money.format(model.bottomLine.conditionalMidpointCostPerAdditionalPlacementUsd)} per additional placement</strong>. A separate, heavily discounted transfer from a randomized employment-and-utility trial produces a very-low-confidence central estimate of <strong>about {compactMoney.format(bridge.modeledBridge.bestCostPerTenQalysUsd)} per 10 QALYs</strong>. A null effect remains plausible.</>,
     whyItMayWork: 'Affirming coaching, job-search support, career fairs, referrals, and employer partnerships may reduce information, network, confidence, and discrimination-related barriers for LGBTQ+ job seekers.',
     whyWeAreCautious: 'The published placement count lacks a comparison group, service-intensity reconciliation, wage definition, retention, and earnings follow-up; external employment-service effects are small and uncertain on average.',
     recommendationBlocker: 'The Center has not published an employment-specific budget, a dated marginal funding gap, unique participant cohorts, 6- and 12-month job retention and earnings, or evidence that a private gift adds services rather than replacing public or restricted funding.',
@@ -37,7 +38,7 @@ const content: CharityReportContent = {
   summary: [
     { label: 'GROSS REPORTED BENCHMARK', value: '≈ $42,900', detail: 'broad Economic Development allocation per reported 2024 living-wage placement; not causal' },
     { label: 'CONDITIONAL MIDPOINT', value: '≈ $172,000', detail: 'per additional placement if 25% of reported placements were Center-attributable' },
-    { label: '$ PER 10 QALYS · ONE BETTER LIFE', value: 'Not yet convertible', detail: 'seven explicit evidence gates fail; the native placement scenario remains visible below' },
+    { label: 'COST PER BETTER LIFE', value: '≈ $168M', detail: 'per 10 QALYs; very-low-confidence employment and health-utility transfer' },
     { label: 'FUNDING ROOM', value: 'Not published', detail: 'individual coaching enrollment is currently paused' },
   ],
   programSection: {
@@ -61,26 +62,29 @@ const content: CharityReportContent = {
     uncertaintyBoundary: model.nullEffectBoundary,
     fundingBoundary: model.fundingRoom.boundary,
   },
-  comparisonAudit: {
-    headline: 'Not yet convertible to $ per 10 QALYs—and no coefficient should be guessed.',
-    body: bridgeAudit.decision,
-    candidate: {
-      label: 'NEAREST COST-UTILITY EVIDENCE',
-      value: 'No transferable QALY / placement',
-      detail: 'Supported-employment evaluations sometimes measure QALYs directly in populations with diagnosed health conditions. They do not establish a health-utility weight for one Center-reported placement.',
+  comparisonBridge: {
+    headline: 'Our current best estimate: about $168 million per better life (10 QALYs).',
+    body: bridge.decision,
+    equation: {
+      label: 'EXPLORATORY COST PER 10 QALYS · ONE BETTER LIFE',
+      expression: `${money.format(bridge.modeledBridge.conditionalCostPerAdditionalPlacementUsd.best)} ÷ ${qalyNumber.format(bridge.modeledBridge.qalyPerAdditionalPlacement.best)} QALY × 10`,
+      result: `= ${compactMoney.format(bridge.modeledBridge.bestCostPerTenQalysUsd)}`,
     },
-    failedGates: bridgeAudit.failedGates.map((gate) => ({ key: gate.key, label: gate.label, why: gate.why })),
-    illustrative: {
-      expression: bridgeAudit.illustrativeCounterfactual.arithmetic,
-      result: '= Withheld',
-      boundary: bridgeAudit.illustrativeCounterfactual.publicationBoundary,
-    },
-    requiredEvidence: bridgeAudit.requiredEvidence,
+    inputs: [
+      { key: 'placement_cost', label: 'Conditional cost per additional placement', confidence: 'very low as a causal or marginal price', best: money.format(bridge.modeledBridge.conditionalCostPerAdditionalPlacementUsd.best), range: `${money.format(bridge.modeledBridge.conditionalCostPerAdditionalPlacementUsd.low)}–${money.format(bridge.modeledBridge.conditionalCostPerAdditionalPlacementUsd.high)}`, basis: bridge.modeledBridge.conditionalCostPerAdditionalPlacementUsd.basis },
+      { key: 'trial_employment', label: 'Trial absolute employment effect', confidence: 'moderate for the trial; very low for transfer', best: percent.format(bridge.sourceEvidence.absoluteEmploymentEffect), range: `${percent.format(bridge.sourceEvidence.employmentRateControl)} control → ${percent.format(bridge.sourceEvidence.employmentRateIps)} IPS`, basis: bridge.sourceEvidence.boundary },
+      { key: 'trial_qaly', label: 'Trial incremental QALY per participant', confidence: 'low for the trial; very low for transfer', best: String(bridge.sourceEvidence.incrementalQalyPerParticipant.best), range: `${bridge.sourceEvidence.incrementalQalyPerParticipant.low}–${bridge.sourceEvidence.incrementalQalyPerParticipant.high}`, basis: `Measured over ${bridge.sourceEvidence.followUpYears} years. ${bridge.sourceEvidence.boundary}` },
+      { key: 'implied_joint_ratio', label: 'Arithmetic QALY per additional job-start anchor', confidence: 'not a mediation estimate', best: number.format(bridge.modeledBridge.externalImpliedQalyPerAdditionalJobStart.best), range: `${number.format(bridge.modeledBridge.externalImpliedQalyPerAdditionalJobStart.low)}–${number.format(bridge.modeledBridge.externalImpliedQalyPerAdditionalJobStart.high)}`, basis: bridge.modeledBridge.externalImpliedQalyPerAdditionalJobStart.basis },
+      { key: 'transfer_retention', label: 'Program, population, and mediation transfer retained', confidence: 'judgmental', best: percent.format(bridge.modeledBridge.retainedShareForProgramPopulationAndMediationTransfer.best), range: `${percent.format(bridge.modeledBridge.retainedShareForProgramPopulationAndMediationTransfer.low)}–${percent.format(bridge.modeledBridge.retainedShareForProgramPopulationAndMediationTransfer.high)}`, basis: bridge.modeledBridge.retainedShareForProgramPopulationAndMediationTransfer.basis },
+      { key: 'durability', label: 'Placement durability retained', confidence: 'judgmental', best: percent.format(bridge.modeledBridge.retainedShareForPlacementDurability.best), range: `${percent.format(bridge.modeledBridge.retainedShareForPlacementDurability.low)}–${percent.format(bridge.modeledBridge.retainedShareForPlacementDurability.high)}`, basis: bridge.modeledBridge.retainedShareForPlacementDurability.basis },
+    ],
+    sensitivity: bridge.modeledBridge.sensitivity.map((row) => ({ case: row.case, headline: compactMoney.format(row.costPerTenQalysUsd), detail: `${money.format(row.costPerAdditionalPlacementUsd)} per additional placement · ${qalyNumber.format(row.qalyPerAdditionalPlacement)} QALY each` })),
+    boundary: bridge.modeledBridge.nullBoundary,
   },
   evidence: review.evidence,
   reservations: review.reservations,
-  excludedBenefits: model.excludedBenefits,
-  sources: [...review.sources, ...bridgeAudit.sources.filter((source) => !review.sources.some((existing) => existing.url === source.url))],
+  excludedBenefits: [...new Set([...model.excludedBenefits.filter((benefit) => !/QALY|life-substantially-bettered/i.test(benefit)), ...bridge.excludedBenefits])],
+  sources: [...review.sources, ...bridge.sources.filter((source) => !review.sources.some((existing) => existing.url === source.url))],
 };
 
 export default function SfLgbtCenterResearchPage() { return <CharityResearchReport content={content} />; }

@@ -430,7 +430,7 @@ test('phone donors can inspect the Food Bank native and 10-QALY decision models 
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 
-test('phone donors can inspect the SF LGBT Center employment model without an invented life-bettered conversion', async ({ page }, testInfo) => {
+test('phone donors can inspect the SF LGBT Center native and 10-QALY decision models without treating placements as health impact', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'phone-390');
   await page.goto('/charities/sf-lgbt-center', { waitUntil: 'domcontentloaded' });
   const review = page.locator('.charity-report-article');
@@ -439,14 +439,18 @@ test('phone donors can inspect the SF LGBT Center employment model without an in
   await expect(review).toContainText('30+ people secure living-wage employment');
   await expect(review).toContainText('about $171,768 per additional placement');
   await expect(review).toContainText('null effect remains plausible');
-  await expect(review).toContainText(/\$ per 10 QALYs · one better life/i);
-  await expect(review).toContainText('Not yet convertible');
-  await expect(review).toContainText('No transferable QALY / placement');
-  await expect(review).toContainText('= Withheld');
-  await expect(review.locator('.charity-audit-gates article')).toHaveCount(7);
+  await expect(review).toContainText(/\$ per 10 QALYs — one better life/i);
+  await expect(page.getByText('≈ $168M', { exact: true })).toBeVisible();
+  await expect(review).toContainText('about $168 million per better life');
+  await expect(review).toContainText('$8.42 million');
+  await expect(review).toContainText('$11.2 billion');
+  await expect(review).toContainText('0.010204 QALY');
+  await expect(review).toContainText('not a causal mediation estimate');
+  await expect(review.locator('.charity-qaly-bridge .charity-sensitivity article')).toHaveCount(3);
+  await expect(review).toContainText(/no finite positive upper bound/i);
   await expect(review).toContainText('individualized coaching is paused');
   await expect(review.locator('.charity-evidence-list article')).toHaveCount(4);
-  await expect(review.locator('.charity-sensitivity article')).toHaveCount(3);
+  await expect(review.locator('.charity-model > .charity-sensitivity article')).toHaveCount(3);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 

@@ -18,22 +18,33 @@ test('keeps the Center employment accounting and conditional attribution inspect
   assert.match(model.fundingRoom.boundary, /illustrative and linear/i);
 });
 
-test('keeps employment fail-closed against the 10-QALY better-life denominator', () => {
+test('publishes an inspectable employment-to-QALY decision model without treating employment as a health state', () => {
   assert.equal(bridge.sharedDenominator.qalyThreshold, 10);
-  assert.equal(bridge.sharedDenominator.publishedPriceUsd, null);
-  assert.equal(bridge.status, 'not-yet-convertible');
-  assert.equal(bridge.candidateEvidence.qalyPerPlacement, null);
-  assert.equal(bridge.failedGates.length, 7);
-  assert.equal(bridge.illustrativeCounterfactual.status, 'not-calculable');
-  assert.equal(bridge.illustrativeCounterfactual.resultUsd, null);
-  assert.match(bridge.decision, /Employment is not itself a health state/i);
-  assert.match(bridge.illustrativeCounterfactual.publicationBoundary, /fabricate the central input/i);
+  assert.equal(bridge.status, 'exploratory-employment-health-utility-transfer-model');
+  assert.equal(bridge.sourceEvidence.absoluteEmploymentEffect, 0.049);
+  assert.equal(bridge.sourceEvidence.incrementalQalyPerParticipant.best, 0.01);
+  const m = bridge.modeledBridge;
+  const expectedQaly = bridge.sourceEvidence.incrementalQalyPerParticipant.best
+    / bridge.sourceEvidence.absoluteEmploymentEffect
+    * m.retainedShareForProgramPopulationAndMediationTransfer.best
+    * m.retainedShareForPlacementDurability.best;
+  assert.ok(Math.abs(expectedQaly - m.qalyPerAdditionalPlacement.best) < 1e-12);
+  const expectedPrice = m.conditionalCostPerAdditionalPlacementUsd.best / expectedQaly * 10;
+  assert.ok(Math.abs(expectedPrice - m.bestCostPerTenQalysUsd) < 1e-6);
+  assert.equal(expectedPrice, bridge.sharedDenominator.publishedPriceUsd);
+  assert.equal(m.sensitivity.length, 3);
+  for (const row of m.sensitivity) {
+    assert.ok(Math.abs(row.costPerAdditionalPlacementUsd / row.qalyPerAdditionalPlacement * 10 - row.costPerTenQalysUsd) < 1e-4);
+  }
+  assert.match(m.externalImpliedQalyPerAdditionalJobStart.basis, /not a causal mediation estimate/i);
+  assert.match(m.nullBoundary, /no finite positive upper bound/i);
+  assert.match(bridge.decision, /not a measured Center effect/i);
 });
 
 test('does not relabel reported placements, program reach, or QALYs as causal impact', () => {
   assert.match(model.status, /conditional-scenario/i);
   assert.match(model.decisionUnit, /additional living-wage job placement attributable/i);
-  assert.equal(model.excludedBenefits.some((row) => /10-QALY/i.test(row)), true);
+  assert.equal(bridge.excludedBenefits.some((row) => /Earnings/i.test(row)), true);
   assert.equal(review.evidence.length, 4);
   assert.equal(new Set(review.sources.map((source) => source.url)).size, review.sources.length);
   assert.match(review.reservations.join(' '), /without a reporting period/i);

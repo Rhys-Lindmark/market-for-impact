@@ -4,6 +4,7 @@ import fs from 'node:fs';
 
 const review = JSON.parse(fs.readFileSync('data/san-francisco/hamilton-families-review-v1.json', 'utf8'));
 const model = JSON.parse(fs.readFileSync('data/san-francisco/hamilton-prevention-cea-v1.json', 'utf8'));
+const bridgeAudit = JSON.parse(fs.readFileSync('data/san-francisco/hamilton-prevention-qaly-bridge-audit-v1.json', 'utf8'));
 
 test('Hamilton review separates reported housing outcomes from additional impact', () => {
   assert.equal(review.evidence.length, 7);
@@ -42,4 +43,21 @@ test('Hamilton review preserves portfolio, public-funding, and overlap boundarie
   assert.ok(review.reservations.some((item) => /included within the 344/i.test(item)));
   assert.ok(review.nativeScale.every((row) => /not|no published/i.test(row.semantics)));
   assert.ok(review.sources.every((source) => source.url && source.published && source.retrieved && source.sourceType));
+});
+
+test('Hamilton 10-QALY audit keeps the VA comparator external and fails closed', () => {
+  assert.equal(bridgeAudit.status, 'not-yet-convertible');
+  assert.equal(bridgeAudit.sharedDenominator.qalyThreshold, 10);
+  assert.equal(bridgeAudit.sharedDenominator.publishedPriceUsd, null);
+  assert.equal(bridgeAudit.failedGates.length, 8);
+  assert.ok(bridgeAudit.failedGates.every((gate) => gate.status === 'failed'));
+  assert.equal(bridgeAudit.candidateEvidence.incrementalQalys, 0.144);
+  assert.equal(bridgeAudit.candidateEvidence.publishedCostPerQalyUsd, 29751);
+  assert.equal(bridgeAudit.candidateEvidence.publishedCostPerTenQalysUsd, 297510);
+  assert.equal(bridgeAudit.candidateEvidence.hamiltonQalysPerAdditionalFamilyAvoidingHomelessness, null);
+  assert.equal(bridgeAudit.illustrativeCounterfactual.nativeCostPerOutcomeUsd, model.bottomLine.costPerAdditionalHomelessnessEpisodeAvertedUsd);
+  assert.equal(bridgeAudit.illustrativeCounterfactual.resultUsd, null);
+  assert.match(bridgeAudit.candidateEvidence.boundary, /not Hamilton's philanthropic price/i);
+  assert.match(bridgeAudit.illustrativeCounterfactual.publicationBoundary, /displayed separately as external evidence/i);
+  assert.ok(bridgeAudit.sources.every((source) => source.url && source.published && source.retrieved && source.sourceType));
 });

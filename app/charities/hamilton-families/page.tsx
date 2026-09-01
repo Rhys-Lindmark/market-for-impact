@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import CharityResearchReport, { type CharityReportContent } from '@/components/CharityResearchReport';
 import review from '@/data/san-francisco/hamilton-families-review-v1.json';
 import model from '@/data/san-francisco/hamilton-prevention-cea-v1.json';
+import bridgeAudit from '@/data/san-francisco/hamilton-prevention-qaly-bridge-audit-v1.json';
 
 export const metadata: Metadata = {
   title: 'Hamilton Families homelessness prevention — charity research | Market for Impact',
@@ -40,7 +41,7 @@ const content: CharityReportContent = {
   summary: [
     { label: 'OUR BEST GUESS', value: '≈ $500K', detail: 'per additional eligible family avoiding recorded homelessness within six months' },
     { label: 'POSITIVE-EFFECT SENSITIVITY', value: '$100K–$12.5M', detail: 'conditional on a positive causal effect; a null effect has no finite impact price' },
-    { label: 'EVIDENCE', value: 'Strong, indirect', detail: 'one geographically relevant randomized trial; no Hamilton-specific comparison' },
+    { label: '$ PER 10 QALYS · ONE BETTER LIFE', value: 'Not yet convertible', detail: 'eight explicit evidence gates fail; the native family-housing model remains visible below' },
     { label: 'FUNDING ROOM', value: 'Not published', detail: 'the $100,000 gift is a scenario, not a current marginal offer' },
   ],
   programSection: {
@@ -63,10 +64,29 @@ const content: CharityReportContent = {
     uncertaintyBoundary: model.nullEffectBoundary,
     fundingBoundary: model.fundingRoom.boundary,
   },
+  comparisonAudit: {
+    headline: 'Not yet convertible to $ per 10 QALYs—and a family avoiding homelessness is not a measured health-utility unit.',
+    body: bridgeAudit.decision,
+    candidate: {
+      label: 'EXTERNAL STUDY · NOT HAMILTON',
+      value: '≈ $298K / 10 QALYs',
+      detail: 'A 2024 VA-payer model estimated $29,751 per QALY for SSVF homelessness prevention. Veteran housing trajectories, mortality, healthcare costs, and assumed utility weights do not establish Hamilton’s donor cost or QALYs.',
+    },
+    failedGates: bridgeAudit.failedGates.map((gate) => ({ key: gate.key, label: gate.label, why: gate.why })),
+    illustrative: {
+      expression: bridgeAudit.illustrativeCounterfactual.arithmetic,
+      result: '= Withheld',
+      boundary: bridgeAudit.illustrativeCounterfactual.publicationBoundary,
+    },
+    requiredEvidence: bridgeAudit.requiredEvidence,
+  },
   evidence: review.evidence.filter((item) => evidenceKeys.has(item.key)),
   reservations: review.reservations,
   excludedBenefits: model.excludedBenefits,
-  sources: review.sources.filter((source) => model.sources.some((modelSource) => modelSource.url === source.url)),
+  sources: [
+    ...review.sources.filter((source) => model.sources.some((modelSource) => modelSource.url === source.url)),
+    ...bridgeAudit.sources.filter((source) => !review.sources.some((existing) => existing.url === source.url)),
+  ],
 };
 
 export default function HamiltonFamiliesResearchPage() {

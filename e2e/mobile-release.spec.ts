@@ -404,8 +404,11 @@ test('phone donors can inspect the SF LGBT Center employment model without an in
   await expect(review).toContainText('30+ people secure living-wage employment');
   await expect(review).toContainText('about $171,768 per additional placement');
   await expect(review).toContainText('null effect remains plausible');
-  await expect(review).toContainText(/10-QALY life bettered/i);
-  await expect(review).toContainText('Not estimated');
+  await expect(review).toContainText(/\$ per 10 QALYs · one better life/i);
+  await expect(review).toContainText('Not yet convertible');
+  await expect(review).toContainText('No transferable QALY / placement');
+  await expect(review).toContainText('= Withheld');
+  await expect(review.locator('.charity-audit-gates article')).toHaveCount(7);
   await expect(review).toContainText('individualized coaching is paused');
   await expect(review.locator('.charity-evidence-list article')).toHaveCount(4);
   await expect(review.locator('.charity-sensitivity article')).toHaveCount(3);

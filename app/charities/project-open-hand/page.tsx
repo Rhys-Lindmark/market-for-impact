@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import CharityResearchReport, { type CharityReportContent } from '@/components/CharityResearchReport';
 import review from '@/data/san-francisco/project-open-hand-review-v1.json';
 import model from '@/data/san-francisco/project-open-hand-mtm-cea-v1.json';
+import bridge from '@/data/san-francisco/heart-failure-hospitalization-qaly-bridge-v1.json';
 
 export const metadata: Metadata = {
   title: 'Project Open Hand medically tailored meals — charity research | Market for Impact',
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
 
 const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
 const compactMoney = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 1 });
-const number = new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 });
+const number = new Intl.NumberFormat('en-US', { maximumFractionDigits: 4 });
 const percent = new Intl.NumberFormat('en-US', { style: 'percent', maximumFractionDigits: 1 });
 const cost = model.inputs.find((input) => input.key === 'modeled_marginal_cost_per_course_usd')!;
 const effect = model.inputs.find((input) => input.key === 'causal_heart_failure_hospitalization_reduction')!;
@@ -32,15 +33,15 @@ const content: CharityReportContent = {
   modelVersion: model.version,
   nutshell: {
     headline: 'A real randomized test—and a result that resists a simple endorsement.',
-    body: <>Project Open Hand helped deliver meals in a 1,977-person randomized trial. The intervention <strong>did not reduce the primary outcome of all-cause hospitalization</strong>: 27.1% with meals versus 24.6% with usual care. A narrower exploratory analysis among participants with heart failure found 7.9% versus 13.2% heart-failure hospitalization. We discount that subgroup result and estimate <strong>about {money.format(model.bottomLine.costPerAdditionalHeartFailureHospitalizationAvertedUsd)} per additional 90-day heart-failure hospitalization averted</strong>, conditional on the effect being real and transferable. The positive-effect range is <strong>{compactMoney.format(model.bottomLine.conditionalPositiveEffectRangeUsd.low)}–{compactMoney.format(model.bottomLine.conditionalPositiveEffectRangeUsd.high)}</strong>; a null effect remains plausible.</>,
+    body: <>Project Open Hand helped deliver meals in a 1,977-person randomized trial. The intervention <strong>did not reduce the primary outcome of all-cause hospitalization</strong>: 27.1% with meals versus 24.6% with usual care. A narrower exploratory analysis among participants with heart failure found 7.9% versus 13.2% heart-failure hospitalization. We discount that subgroup result and estimate <strong>about {money.format(model.bottomLine.costPerAdditionalHeartFailureHospitalizationAvertedUsd)} per additional 90-day heart-failure hospitalization averted</strong>. Bridging only that admission’s short-term quality-of-life loss yields <strong>about {compactMoney.format(bridge.bottomLine.costPerTenQalysUsd)} per 10 QALYs—one better life</strong>. Both figures are conditional on the exploratory effect being real and transferable; a null remains plausible.</>,
     whyItMayWork: 'After discharge, a condition-matched meal can make a heart-failure diet feasible when illness, low income, mobility, or cooking constraints would otherwise undermine adherence.',
     whyWeAreCautious: 'The primary outcome was null, the favorable heart-failure result was exploratory, two meal providers were pooled, and the public cost anchor describes a different meal intensity.',
     recommendationBlocker: 'Project Open Hand has not published a current heart-failure cohort, provider-only outcome, course price, payer-denial funnel, or marginal plan showing that a private gift creates additional courses rather than replacing reimbursed care.',
   },
   summary: [
     { label: 'PRIMARY ENDPOINT', value: 'No benefit shown', detail: 'all-cause hospitalization was 27.1% with meals versus 24.6% usual care' },
-    { label: 'CONDITIONAL HF MODEL', value: '≈ $213K', detail: 'per additional 90-day heart-failure hospitalization averted under our best transfer assumptions' },
-    { label: 'POSITIVE-EFFECT SENSITIVITY', value: '$57K–$1.4M', detail: 'conditional on a positive heart-failure effect; a null effect has no finite impact price' },
+    { label: 'COST PER BETTER LIFE', value: '≈ $133M', detail: 'per 10 QALYs, counting only short-term morbidity from an avoided heart-failure admission' },
+    { label: 'POSITIVE-EFFECT SENSITIVITY', value: '$32M–$7.8B', detail: 'conditional on a positive heart-failure effect; a null effect has no finite impact price' },
     { label: 'FUNDING ROOM', value: 'Not published', detail: 'the $100,000 gift is a scenario, not a current marginal offer' },
   ],
   programSection: {
@@ -63,10 +64,22 @@ const content: CharityReportContent = {
     uncertaintyBoundary: model.nullEffectBoundary,
     fundingBoundary: model.fundingRoom.boundary,
   },
+  comparisonBridge: {
+    headline: 'About $133 million per 10 QALYs—conditional on the exploratory heart-failure effect.',
+    body: 'The bridge deliberately counts only the short-term morbidity of an avoided acute heart-failure admission. NICE’s model implies 0.016 QALY per admission from a six-week utility dip. The sensitivity spans an acute-stay-only floor from ASCEND-HF to a 90-day recovery profile reported in the heart-failure utility review. It excludes mortality, downstream readmissions, caregiver effects, medical savings, and the direct quality-of-life effects of meals.',
+    equation: { label: 'CONDITIONAL COST PER 10 QALYS (ONE BETTER LIFE)', expression: `${money.format(model.bottomLine.costPerAdditionalHeartFailureHospitalizationAvertedUsd)} ÷ ${number.format(bridge.bottomLine.qalyPerHeartFailureHospitalizationAverted)} QALY × 10`, result: `= ${money.format(bridge.bottomLine.costPerTenQalysUsd)}` },
+    inputs: bridge.inputs.map((input) => ({ key: input.key, label: input.label, confidence: input.confidence, best: formatInput(input.best, input.unit), range: `${formatInput(input.low, input.unit)}–${formatInput(input.high, input.unit)}`, basis: input.basis })),
+    sensitivity: [
+      { case: 'Optimistic positive effect', headline: compactMoney.format(bridge.bottomLine.conditionalPositiveEffectRangeUsd.low), detail: 'per 10 QALYs · $56,604 per admission averted ÷ 0.0175 QALY × 10' },
+      { case: 'MFI best guess', headline: compactMoney.format(bridge.bottomLine.costPerTenQalysUsd), detail: '$212,500 per admission averted ÷ 0.016 QALY × 10' },
+      { case: 'Small positive effect', headline: compactMoney.format(bridge.bottomLine.conditionalPositiveEffectRangeUsd.high), detail: '$1.4 million per admission averted ÷ 0.0018 QALY × 10' },
+    ],
+    boundary: bridge.nullEffectBoundary,
+  },
   evidence: review.evidence.filter((item) => evidenceKeys.has(item.key)),
   reservations: review.reservations,
   excludedBenefits: model.excludedBenefits,
-  sources: review.sources.filter((source) => model.sources.some((modelSource) => modelSource.url === source.url)),
+  sources: [...review.sources.filter((source) => model.sources.some((modelSource) => modelSource.url === source.url)), ...bridge.sources],
 };
 
 export default function ProjectOpenHandResearchPage() {

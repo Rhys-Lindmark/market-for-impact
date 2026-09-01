@@ -4,6 +4,7 @@ import fs from 'node:fs';
 
 const review = JSON.parse(fs.readFileSync('data/san-francisco/project-open-hand-review-v1.json', 'utf8'));
 const model = JSON.parse(fs.readFileSync('data/san-francisco/project-open-hand-mtm-cea-v1.json', 'utf8'));
+const bridge = JSON.parse(fs.readFileSync('data/san-francisco/heart-failure-hospitalization-qaly-bridge-v1.json', 'utf8'));
 
 test('Project Open Hand review preserves mixed evidence and the null primary endpoint', () => {
   assert.equal(review.evidence.length, 3);
@@ -13,7 +14,23 @@ test('Project Open Hand review preserves mixed evidence and the null primary end
   assert.match(review.decision.costEffectiveness, /Primary endpoint: no demonstrated benefit/i);
   assert.equal(review.decision.roomForMoreFunding, 'Not published for the modeled pathway');
   assert.equal(review.model.missingInputs.length, 6);
-  assert.match(review.model.qalyBoundary, /No QALY/);
+  assert.match(review.model.qalyBoundary, /separate v0\.1 bridge/i);
+});
+
+test('Project Open Hand QALY bridge normalizes to ten QALYs without hiding the null', () => {
+  const byKey = new Map(bridge.inputs.map((input) => [input.key, input]));
+  const nativeCost = byKey.get('cost_per_heart_failure_hospitalization_averted_usd');
+  const qaly = byKey.get('qaly_per_heart_failure_hospitalization_averted');
+  const denominator = byKey.get('qalys_per_better_life');
+  assert.equal(bridge.comparisonOutcome, '10 incremental QALYs (one better life)');
+  assert.equal(bridge.bottomLine.costPerQalyUsd, nativeCost.best / qaly.best);
+  assert.equal(bridge.bottomLine.costPerTenQalysUsd, bridge.bottomLine.costPerQalyUsd * denominator.best);
+  assert.equal(bridge.bottomLine.conditionalPositiveEffectRangeUsd.low, Math.round(nativeCost.low / qaly.high * 10));
+  assert.equal(bridge.bottomLine.conditionalPositiveEffectRangeUsd.high, Math.round(nativeCost.high / qaly.low * 10));
+  assert.match(bridge.nullEffectBoundary, /no finite upper bound/i);
+  assert.match(bridge.scope.overlapControls, /excludes mortality/i);
+  assert.equal(bridge.sources.length, 4);
+  assert.ok(bridge.sources.every((source) => source.url && source.published && source.retrieved && source.role));
 });
 
 test('Project Open Hand heart-failure model is reproducible and explicitly conditional', () => {

@@ -111,7 +111,7 @@ export default function CharityResearchReport({ content }: { content: CharityRep
           <aside className="charity-comparison-denominator">
             <span>SHARED COMPARISON DENOMINATOR</span>
             <strong>$ per 10 QALYs — one better life</strong>
-            <p>Every Market for Impact model ultimately reports against this denominator. Until a versioned bridge from the native outcome to duration-adjusted QALYs is defensible, the comparison price remains “not yet convertible”; the native outcome model below stays visible and auditable.</p>
+            <p>Every Market for Impact model ultimately reports against this denominator. We publish an explicit best estimate when a bounded decision model can be built, even when it requires uncertain external transfers; the native outcome, assumptions, sensitivity, and plausible-null boundary remain visible.</p>
           </aside>
 
           <section className="charity-section" id="program">

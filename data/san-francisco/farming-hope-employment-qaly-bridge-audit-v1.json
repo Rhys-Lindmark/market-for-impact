@@ -1,0 +1,143 @@
+{
+  "version": "sf-farming-hope-employment-qaly-bridge-audit-v0.1",
+  "generatedAt": "2026-08-31T23:05:00-07:00",
+  "status": "exploratory-transfer-model",
+  "sharedDenominator": {
+    "label": "one better life",
+    "qalyThreshold": 10,
+    "publishedPriceUsd": 41610536.58536585
+  },
+  "nativeOutcome": "One additional apprentice with any unemployment-insurance-covered employment during the final year of a 30-month follow-up, relative to usual community services",
+  "decision": "Publish an explicit, very-low-confidence decision estimate of approximately $41.6 million per 10 QALYs. The model divides Farming Hope's $41,611 gross historical expense per apprentice by the 0.01 incremental QALY per assigned participant reported in a randomized Individual Placement and Support trial, then multiplies by 10 QALYs. This is a participant-level intervention transfer—not QALYs per job and not a claim that employment itself is a health state. The population, clinical setting, intervention, comparator, utility trajectory, and follow-up differ materially, so the sensitivity spans $20.8 million to $416 million and a true null remains plausible.",
+  "candidateEvidence": {
+    "status": "numeric-external-comparator-not-transferable",
+    "nearestEvidence": "A 2024 randomized cost-effectiveness trial of Individual Placement and Support for people with alcohol or drug dependence",
+    "studyPopulation": "Adults in community treatment for alcohol or drug dependence in England",
+    "publishedIncrementalQalyPerParticipant": 0.01,
+    "publishedRangeQalyPerParticipant": [0.003, 0.02],
+    "farmingHopeQalysPerAdditionalLateYearEmploymentOutcome": null,
+    "boundary": "The trial's 0.01 incremental QALY is an intention-to-treat difference per participant assigned to a specialist supported-employment intervention. It is not a QALY gain per person employed and cannot be divided by or attached to Farming Hope's transferred late-year employment outcome. The population, clinical setting, intervention, comparator, employment exposure, utility trajectory, and follow-up differ. A broader systematic review also found heterogeneous methods and variable quality across supported-employment economic evaluations."
+  },
+  "modeledBridge": {
+    "status": "exploratory-external-transfer",
+    "historicalGrossCostPerApprenticeUsd": 41610.53658536585,
+    "qalyPerAssignedParticipant": {
+      "best": 0.01,
+      "low": 0.001,
+      "high": 0.02,
+      "basis": "The central value and 0.003-0.02 reported range come from a randomized IPS trial in substance-dependence treatment. MFI extends the downside to 0.001 to reflect transfer from a specialist clinical supported-employment intervention to Farming Hope's culinary apprenticeship. This is a decision range, not a statistical confidence interval."
+    },
+    "formula": "historical_gross_cost_per_apprentice_usd / qaly_per_assigned_participant * 10",
+    "bestCostPerTenQalysUsd": 41610536.58536585,
+    "positiveEffectRangeUsd": {
+      "low": 20805268.292682923,
+      "high": 416105365.8536585
+    },
+    "costPerQalyUsd": 4161053.658536585,
+    "sensitivity": [
+      { "case": "Optimistic direct-transfer bound", "qalyPerParticipant": 0.02, "costPerTenQalysUsd": 20805268.292682923 },
+      { "case": "Central direct transfer", "qalyPerParticipant": 0.01, "costPerTenQalysUsd": 41610536.58536585 },
+      { "case": "Reported lower trial value", "qalyPerParticipant": 0.003, "costPerTenQalysUsd": 138701788.6178862 },
+      { "case": "Transfer-discounted downside", "qalyPerParticipant": 0.001, "costPerTenQalysUsd": 416105365.8536585 }
+    ],
+    "nullBoundary": "The numeric range is conditional on a positive health-utility effect. The external trial does not establish Farming Hope's effect, and broader reviews find uncertain or heterogeneous health impacts from employment interventions. If Farming Hope creates no incremental QALYs relative to alternatives, the impact price has no finite upper bound."
+  },
+  "failedGates": [
+    {
+      "key": "outcome_definition",
+      "label": "Define retained employment and job quality",
+      "status": "failed",
+      "why": "Farming Hope reports employment within 90 days of graduation but not the numerator, missing follow-up, job hours, wage distribution, benefits, job quality, or retention. The model instead uses any covered employment during a late follow-up year, which is not continuous work or a durable placement."
+    },
+    {
+      "key": "program_effect",
+      "label": "Measure Farming Hope's causal employment effect",
+      "status": "failed",
+      "why": "The model's four-point effect is transferred from seven different Enhanced Transitional Jobs Demonstration sites. Farming Hope has no randomized, phased, matched, or otherwise credible comparison, and earlier transitional-jobs evidence leaves a null or harmful effect plausible."
+    },
+    {
+      "key": "program_transfer",
+      "label": "Resolve intervention and population transfer",
+      "status": "failed",
+      "why": "Farming Hope's 12-week culinary apprenticeship, participant mix, labor market, employer relationships, and services are not the pooled ETJD programs or the specialist IPS intervention used in the nearest QALY trial. Their effects cannot be treated as Farming Hope coefficients."
+    },
+    {
+      "key": "health_pathway",
+      "label": "Establish a causal employment-to-health pathway",
+      "status": "failed",
+      "why": "Employment status, hours, earnings, job security, working conditions, baseline health, housing, recovery, and social support are jointly determined. Farming Hope did not measure whether an additional employment outcome changed health rather than only administrative employment status."
+    },
+    {
+      "key": "utility_measurement",
+      "label": "Measure preference-based health utility",
+      "status": "failed",
+      "why": "No EQ-5D, HUI, SF-6D, AQoL, mortality, or other person-level QALY input was collected. Reviews of employment interventions report uncertain health effects and do not create a utility coefficient for a Farming Hope employment outcome."
+    },
+    {
+      "key": "duration_and_mediation",
+      "label": "Establish timing, persistence, and mediation",
+      "status": "failed",
+      "why": "Neither Farming Hope nor the native model establishes when any health change begins, how long work or health gains persist, or whether effects flow through earnings, insurance, routine, social contact, reduced justice involvement, or another overlapping pathway."
+    },
+    {
+      "key": "marginal_program_cost",
+      "label": "Identify the incremental apprenticeship cost",
+      "status": "failed",
+      "why": "The $41,611 numerator is FY2024 job-training expense divided by 41 reported apprentices. It is a gross historical cross-source ratio, not a participant-level incremental cost, current marginal cohort budget, or donor price."
+    },
+    {
+      "key": "additionality_and_overlap",
+      "label": "Reconcile funding additionality and benefit overlap",
+      "status": "failed",
+      "why": "Farming Hope has not published eligible unfunded demand, constrained capacity, public, restricted, earned, and donated-resource displacement rules, or dated $100K, $1M, and $10M expansion plans. Employment, earnings, housing, recovery, recidivism, food, and wellbeing pathways would overlap and cannot be summed independently."
+    }
+  ],
+  "illustrativeCounterfactual": {
+    "status": "modeled-external-transfer",
+    "nativeCostPerOutcomeUsd": 1040263,
+    "qalyPerOutcome": 0.01,
+    "arithmetic": "$41,611 historical cost per apprentice / 0.01 transferred QALY per assigned participant x 10 QALYs",
+    "resultUsd": 41610536.58536585,
+    "publicationBoundary": "This participant-level model does not combine the separate $1.04 million per additional late-year employment scenario with QALYs per job. It transfers the total randomized health-utility effect of a different intervention and population to each Farming Hope apprentice. The result is a decision estimate with extreme transfer uncertainty, not a recommendation-grade price."
+  },
+  "requiredEvidence": [
+    "Pre-specify a duplicate-free entrant cohort and employment outcome covering job start, hours, wage, benefits, employer, job quality, earnings, and employment in each quarter through at least 24 months, with complete follow-up and missing-data analysis.",
+    "Use randomized assignment when apprenticeship places are constrained, a credible phased rollout, matched comparison, or another defensible design to estimate Farming Hope's own effect relative to the services participants would otherwise receive.",
+    "Collect preference-based utility at baseline and repeated follow-up for the same participants; jointly model employment, earnings, health utility, mortality, timing, persistence, mediation, adverse effects, and overlap rather than importing a literature coefficient.",
+    "Publish an incremental apprenticeship budget, active-component costs, wage and in-kind treatment, public, restricted, and earned funding, eligible unfunded demand, capacity constraints, displacement rules, and dated $100K, $1M, and $10M marginal plans."
+  ],
+  "sources": [
+    {
+      "publisher": "The Lancet Psychiatry",
+      "title": "Superiority and cost-effectiveness of Individual Placement and Support versus standard employment support for people with alcohol and drug dependence: a pragmatic, parallel-group, open-label, multicentre, randomised, controlled, phase 3 trial",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38299044/",
+      "published": "2024-02-01",
+      "retrieved": "2026-08-31",
+      "sourceType": "randomized cost-effectiveness trial"
+    },
+    {
+      "publisher": "Epidemiology and Psychiatric Sciences",
+      "title": "Economic analyses of supported employment programmes for people with mental health conditions: A systematic review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35983840/",
+      "published": "2022-08-15",
+      "retrieved": "2026-08-31",
+      "sourceType": "systematic review of economic evaluations"
+    },
+    {
+      "publisher": "Annals of Family Medicine",
+      "title": "Employment Interventions in Health Settings: A Systematic Review and Synthesis",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6130994/",
+      "published": "2018-09-01",
+      "retrieved": "2026-08-31",
+      "sourceType": "systematic review"
+    },
+    {
+      "publisher": "U.S. Department of Labor",
+      "title": "Enhanced Transitional Jobs Demonstration Evaluation Final Report",
+      "url": "https://www.dol.gov/resource-library/enhanced-transitional-jobs-demonstration-evaluation-final-report",
+      "published": "2018-11-01",
+      "retrieved": "2026-08-31",
+      "sourceType": "randomized multi-site impact evaluation"
+    }
+  ]
+}

@@ -10,7 +10,6 @@ import sfOutcomes from '@/data/san-francisco/outcome-ontology-v1.json';
 import sfFunding from '@/data/san-francisco/public-funding-v1.json';
 import sfResearchFunnel from '@/data/san-francisco/research-funnel-v1.json';
 import pohReview from '@/data/san-francisco/project-open-hand-review-v1.json';
-import fiveKeysReview from '@/data/san-francisco/five-keys-review-v1.json';
 import harmReductionTherapyCenterReview from '@/data/san-francisco/harm-reduction-therapy-center-review-v1.json';
 import homelessYouthAllianceReview from '@/data/san-francisco/homeless-youth-alliance-review-v1.json';
 import huckleberryYouthProgramsReview from '@/data/san-francisco/huckleberry-youth-programs-review-v1.json';
@@ -40,8 +39,8 @@ const candidates = [...sfDiligence.candidates].sort((a, b) => a.name.localeCompa
 const dossierCandidates = candidates.flatMap((candidate) => 'evidenceDossier' in candidate && candidate.key !== 'sf-lgbt-center' ? [{ candidate, dossier: candidate.evidenceDossier }] : []);
 const marginalPlanRequests = sfMarginalPlanRequests.packets;
 const sffInitialPage = { pagination: { page: 1, pageSize: 12, total: sffGrants.partners.length, pageCount: Math.ceil(sffGrants.partners.length / 12) }, partners: sffGrants.partners.slice(0, 12) };
-const deepReviewAnchors = new Map([['943023551', '/charities/project-open-hand'], ['943342323', '/charities/eviction-defense-collaborative'], ['941156622', '/charities/compass-family-services'], ['237362588', '/charities/curry-senior-center'], ['832393341', '/charities/farming-hope'], ['810622701', '#five-keys-review'], ['941156481', '/charities/glide'], ['943055602', '/charities/hamilton-families'], ['943363781', '#harm-reduction-therapy-center-review'], ['813036333', '#homeless-youth-alliance-review'], ['941687559', '#huckleberry-youth-programs-review'], ['942978977', '/charities/institute-on-aging'], ['943041517', '/charities/sf-marin-food-bank'], ['943236718', '/charities/sf-lgbt-center']]);
-const canonicalResearchRoutes = new Map([['sf-lgbt-center', '/charities/sf-lgbt-center'], ['sf-marin-food-bank', '/charities/sf-marin-food-bank'], ['hamilton-families', '/charities/hamilton-families'], ['glide', '/charities/glide'], ['compass-family-services', '/charities/compass-family-services'], ['eviction-defense-collaborative', '/charities/eviction-defense-collaborative'], ['farming-hope', '/charities/farming-hope']]);
+const deepReviewAnchors = new Map([['943023551', '/charities/project-open-hand'], ['943342323', '/charities/eviction-defense-collaborative'], ['941156622', '/charities/compass-family-services'], ['237362588', '/charities/curry-senior-center'], ['832393341', '/charities/farming-hope'], ['810622701', '/charities/five-keys'], ['941156481', '/charities/glide'], ['943055602', '/charities/hamilton-families'], ['943363781', '#harm-reduction-therapy-center-review'], ['813036333', '#homeless-youth-alliance-review'], ['941687559', '#huckleberry-youth-programs-review'], ['942978977', '/charities/institute-on-aging'], ['943041517', '/charities/sf-marin-food-bank'], ['943236718', '/charities/sf-lgbt-center']]);
+const canonicalResearchRoutes = new Map([['sf-lgbt-center', '/charities/sf-lgbt-center'], ['sf-marin-food-bank', '/charities/sf-marin-food-bank'], ['hamilton-families', '/charities/hamilton-families'], ['glide', '/charities/glide'], ['compass-family-services', '/charities/compass-family-services'], ['eviction-defense-collaborative', '/charities/eviction-defense-collaborative'], ['farming-hope', '/charities/farming-hope'], ['five-keys-schools-and-programs', '/charities/five-keys']]);
 const canonicalResearchHref = (key: string, fallback: string) => canonicalResearchRoutes.get(key) ?? fallback;
 
 const topResearchPrograms = [
@@ -55,6 +54,7 @@ const topResearchPrograms = [
   { organization: 'Compass Family Services', program: 'C-Rent homelessness prevention', overview: 'Back-rent and move-in assistance paired with case management and problem-solving for at-risk families.', price: '≈ $485,000', unit: 'per additional six-month homelessness episode averted', evidence: 'Audited cost; transferred effect', detail: 'The $9,704 cost anchor is historical accounting, while the effect is discounted from external randomized evidence; a null remains plausible.', href: '/charities/compass-family-services' },
   { organization: 'Eviction Defense Collaborative', program: 'Full-scope eviction defense', overview: 'An attorney and support team represent a tenant through an eviction case, with intake, referral, and social-service coordination around the legal pathway.', price: '≈ $126,000', unit: 'per additional tenant household retaining possession', evidence: 'Conflicting randomized evidence', detail: 'The $6,300 public cost benchmark is historical; the 5-point effect is judgmental and a null remains plausible.', href: '/charities/eviction-defense-collaborative' },
   { organization: 'Farming Hope', program: 'Paid culinary apprenticeship', overview: 'A 12-week, part-time paid apprenticeship combining kitchen work, professional skills, case-manager involvement, and employer connections.', price: '≈ $1.04M', unit: 'per additional person ever employed in a late follow-up year', evidence: 'Reported outcomes; transferred randomized effect', detail: 'The $41,600 gross cost anchor is historical and the 4-point causal input comes from different transitional-jobs programs; a null remains plausible.', href: '/charities/farming-hope' },
+  { organization: 'Five Keys Schools and Programs', program: 'Secondary-credential pathway', overview: 'Accredited, flexible high-school and equivalency instruction in custody and community settings for learners traditional schools did not retain.', price: '≈ $167,000', unit: 'per additional credential in a modeled 10-point scenario', evidence: 'Audited cost; causal effect unmeasured', detail: 'The $16,700 cost anchor is per ADA-equivalent year. The credential effect is a transparent decision scenario—not a Five Keys estimate—and a null remains plausible.', href: '/charities/five-keys' },
 ];
 
 const researchGates = [
@@ -100,12 +100,12 @@ export default function SanFranciscoDonorPage() {
           <div><p className="kicker">GIVEWELL-STYLE PROGRAM REVIEWS · NOT YET RECOMMENDATIONS</p><h2 id="sf-top-research-title">The strongest cost-effectiveness work so far.</h2></div>
           <p>These are our current opinions, not a league table. The outcomes differ, every model has a plausible null case, and no organization has published verified room for more funding. Open each full report to inspect the assumptions.</p>
         </header>
-        <aside className="sf-life-bettered-contract"><strong>Why we do not yet show “$ per life bettered.”</strong><span>We would define one life substantially bettered as <b>10 incremental QALYs</b>, but none of these programs currently has a defensible QALY effect, duration, household-to-person allocation, or marginal funding plan. Native outcomes remain visible until a versioned conversion can survive review.</span></aside>
+        <aside className="sf-life-bettered-contract"><strong>The common denominator is $ per better life.</strong><span><b>One better life = 10 incremental QALYs.</b> Every program is compared against that denominator. Where the bridge from a native outcome to QALYs is not yet defensible, we say “not yet convertible” and retain the native model rather than inventing precision.</span></aside>
         <div className="sf-top-research-list">
           {topResearchPrograms.map((item, index) => <article key={item.href}>
             <span>PROGRAM {index + 1} OF {topResearchPrograms.length}</span>
             <div><p>OVERVIEW</p><h3>{item.program}</h3><strong>{item.organization}</strong><p>{item.overview}</p></div>
-            <div><p>COST-EFFECTIVENESS</p><h4>{item.price}</h4><strong>{item.unit}</strong><small>Exploratory estimate · funding room not published</small></div>
+            <div><p>COST PER BETTER LIFE</p><h4>Not yet convertible</h4><strong>$ per 10 QALYs · one better life</strong><span><b>Native model:</b> {item.price} {item.unit}</span><small>Exploratory estimate · funding room not published</small></div>
             <div><p>EVIDENCE OF IMPACT</p><h4>{item.evidence}</h4><span>{item.detail}</span></div>
             <a href={item.href}>Full research report →</a>
           </article>)}
@@ -174,7 +174,6 @@ export default function SanFranciscoDonorPage() {
       </section>
 
       <SfDeepReview review={pohReview} number={1} id="project-open-hand-review" evidenceHeadline="Direct trial involvement. Mixed results." workbookUrl={sfResearchFunnel.workbook.url} />
-      <SfDeepReview review={fiveKeysReview} number={6} id="five-keys-review" evidenceHeadline="Promising intervention class. Local causal effect unknown." workbookUrl={sfResearchFunnel.workbook.url} />
       <SfDeepReview review={harmReductionTherapyCenterReview} number={9} id="harm-reduction-therapy-center-review" evidenceHeadline="Relevant short-term trial. HRTC effect unknown." workbookUrl={sfResearchFunnel.workbook.url} />
       <SfDeepReview review={homelessYouthAllianceReview} number={10} id="homeless-youth-alliance-review" evidenceHeadline="Strong intervention rationale. HYA effect unknown." workbookUrl={sfResearchFunnel.workbook.url} />
       <SfDeepReview review={huckleberryYouthProgramsReview} number={11} id="huckleberry-youth-programs-review" evidenceHeadline="Several promising pathways. No single marginal case." workbookUrl={sfResearchFunnel.workbook.url} />

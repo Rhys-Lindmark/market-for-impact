@@ -1,6 +1,6 @@
 {
-  "version": "sf-five-keys-review-v0.1",
-  "generatedAt": "2026-08-30T17:10:00-07:00",
+  "version": "sf-five-keys-review-v0.2",
+  "generatedAt": "2026-08-31T17:39:19-07:00",
   "organization": {
     "name": "Five Keys Schools and Programs",
     "ein": "810622701",
@@ -8,11 +8,11 @@
     "donationUrl": "https://www.fivekeyscharter.org/donate"
   },
   "decision": {
-    "state": "Promising intervention evidence; organization-specific impact and marginal cost-effectiveness not yet estimable",
-    "summary": "Five Keys operates accredited adult and non-traditional high-school programs alongside reentry, workforce, housing, and other services. Correctional education has favorable meta-analytic evidence, but Five Keys' public results do not identify a comparable control group, complete post-release follow-up, incremental education cost, or the additional activity a private gift would buy. Its in-house recidivism comparison therefore remains a signal to investigate—not a causal effect or impact price.",
-    "costEffectiveness": "Not estimable",
+    "state": "Exploratory credential model; causal effect and marginal funding plan unverified",
+    "summary": "Five Keys operates accredited adult and non-traditional high-school programs alongside reentry, workforce, housing, and other services. Its FY2024 audit now supports a bounded FKIH cost per ADA-equivalent year, but Five Keys' public results still do not identify a comparable credential-completion group, complete post-release follow-up, incremental philanthropic cost, or the additional activity a private gift would buy. The published recidivism comparison remains a signal to investigate—not a causal effect or impact price.",
+    "costEffectiveness": "Exploratory: about $166,700 per additional credential at a modeled 10-point effect",
     "roomForMoreFunding": "Not published",
-    "recommendation": "Not recommendation-ready"
+    "recommendation": "Not recommendation-ready; a null remains plausible"
   },
   "nativeScale": [
     {
@@ -45,16 +45,16 @@
     "activeSfPrimeContractAwardAuthorityUsd": 214855512,
     "activeSfPrimeContractPaymentsUsd": 136421451.46,
     "activeSfPrimeContractRemainingAuthorityUsd": 48752865.35,
-    "summary": "The FY2024 Form 990 reports $121.98 million in revenue, $120.78 million in expenses, and $39.81 million in net assets. The city's separate ledger has 15 active exact-name prime-contract records with $214.86 million of multiyear award authority and $136.42 million paid as of August 20, 2026.",
-    "boundary": "The nonprofit filing covers a large multi-program, multi-county organization; it does not publish the incremental cost of an additional San Francisco diploma or reduced reincarceration. City records are dominated by housing and homelessness services, use overlapping multiyear terms, and distinguish award authority, payments, outstanding purchase orders, and remaining authority. None of those fields is a private-donation gap, and none should be divided by graduates."
+    "summary": "The FY2024 audit reports $121.98 million in organization revenue, $120.78 million in expenses, and $39.81 million in net assets. Its combining schedules isolate $37.21 million of Five Keys Independence High expense and 2,232.74 annual ADA. The city's separate ledger has 15 active exact-name prime-contract records with $214.86 million of multiyear award authority and $136.42 million paid as of August 20, 2026.",
+    "boundary": "The organization spans schools, housing, workforce, reentry, and other programs. The audit permits a historical FKIH cost per ADA-equivalent year, but ADA is not unique enrollment, dosage, marginal seats, or completed credentials. City records are dominated by housing and homelessness services, use overlapping multiyear terms, and distinguish award authority, payments, outstanding purchase orders, and remaining authority. None of those fields is a private-donation gap, and none should be divided by graduates."
   },
   "evidence": [
     {
       "key": "five-keys-service-record",
       "design": "Organization and school administrative reporting",
       "population": "Five Keys students across accredited charter schools, community sites, and 17 county jails in California",
-      "result": "Five Keys reports more than 2,100 graduates to date and says its schools operate at more than 51 community settings and in 17 jails. Its 2023–24 charter-school LCAP reports 56 schoolwide GED completers for 2022–23.",
-      "transfer": "These figures establish delivery and credential outputs, not impact. The public pages do not publish a reconciled student flow, San Francisco-only cohort, completion denominator, comparable nonparticipant group, or post-release outcome follow-up."
+      "result": "Five Keys reports more than 2,100 graduates to date and says its schools operate at more than 51 community settings and in 17 jails. Its 2024–25 FKIH LCAP reports 56 people passed all GED portions in 2022–23, while its FY2024 audit reports 2,232.74 annual ADA.",
+      "transfer": "These figures establish delivery and credential outputs, not impact. ADA is an attendance-based funding denominator rather than unique learner flow, and the public record does not publish a San Francisco-only cohort, eligible or tested GED denominator, comparable nonparticipant group, or complete post-release follow-up."
     },
     {
       "key": "five-keys-recidivism-claim",
@@ -67,24 +67,26 @@
       "key": "rand-correctional-education",
       "design": "Systematic review and meta-analysis of U.S. correctional-education evaluations",
       "population": "Incarcerated adults in studies of adult basic, secondary/GED, postsecondary, and vocational education published from 1980 through 2011",
-      "result": "RAND found 30% lower odds of recidivism in the high-school/GED subset and 13% higher odds of post-release employment across 18 employment studies. Only one of the 18 employment studies used a high-quality research design; RAND also identified curriculum, dosage, and program quality as unresolved evidence gaps.",
+      "result": "RAND found 30% lower odds of recidivism in the high-school/GED subset. Across the full correctional-education evidence base, its modeled three-year reincarceration risk difference was 12.9 points, but programs, outcomes, follow-up, and study quality varied; RAND identified curriculum, dosage, and program quality as unresolved evidence gaps.",
       "transfer": "This supports correctional education as a promising intervention class, not Five Keys' effect size. The studies predate current Five Keys delivery, mix prison contexts and program types, and do not establish San Francisco implementation quality, marginal cost, or philanthropic additionality."
     }
   ],
   "model": {
     "nativeOutcome": "Additional eligible learner earning an accredited secondary credential and remaining out of custody for 24 months because of the funded Five Keys program",
-    "status": "not-estimable",
+    "status": "exploratory-scenario-model",
+    "version": "sf-five-keys-credential-cea-v0.1",
+    "bestGuess": "About $166,700 per additional credential, conditional on one ADA-equivalent year increasing credential completion by 10 percentage points",
     "missingInputs": [
       "A named Five Keys school or program, legal and funding boundary, geography, and gift-restricted cohort",
       "Unique eligible learners, applicants, enrollees, attendance or dosage, withdrawals, transfers, credentials, and duplicate handling",
       "A pre-specified credential and recidivism outcome with arrest, conviction, jail, and prison definitions kept separate",
       "Complete 6-, 12-, 24-, and 36-month post-release follow-up with release dates, attrition, and subgroup results",
       "A credible Five Keys comparison or a transparent, sensitivity-tested transfer from external correctional-education evidence",
-      "Incremental instructional, navigation, case-management, facilities, custody-coordination, and overhead cost by program and cohort",
+      "Incremental instructional, navigation, case-management, facilities, custody-coordination, and overhead cost by program and cohort; the published $16,667 per ADA-equivalent year is historical schoolwide intensity",
       "Public charter reimbursement, city and county contract coverage, service substitution, and private-gift additionality",
       "Time-bounded $100K, $1M, and $10M capacity plans with seats, staffing, constraints, milestones, and downside cases"
     ],
-    "qalyBoundary": "No QALY, WELLBY, life-saved, or life-substantially-bettered conversion is published. Estimate additional credentials and avoided custody under explicit counterfactuals first; then separately model education, earnings, safety, family, and wellbeing effects without double-counting."
+    "qalyBoundary": "No QALY, WELLBY, life-saved, or life-substantially-bettered conversion is published. The exploratory model estimates additional credentials only. Avoided custody, education, earnings, safety, family, and wellbeing effects require separate causal estimates and must not be double-counted."
   },
   "reservations": [
     "Five Keys combines accredited schools with reentry, workforce, housing, restorative-justice, and other services across multiple counties.",
@@ -92,10 +94,26 @@
     "The published 26% and 17% recidivism figures use an in-house comparison whose cohort, follow-up, and outcome definitions are not disclosed.",
     "Comparing selected graduates with a statewide incarcerated population is vulnerable to selection, geography, calendar-time, and risk differences.",
     "RAND's favorable intervention evidence is heterogeneous and does not identify Five Keys' curriculum, dosage, or local implementation effect.",
-    "The FY2024 Form 990 and city-contract ledger cover many services, so neither can be divided by graduates to obtain a cost per outcome.",
+    "The FY2024 audit isolates FKIH expense and ADA, but dividing those values yields only a historical cost per ADA-equivalent year—not cost per unique learner, marginal seat, or additional credential.",
     "Public school funding and large service contracts may fund overlapping inputs; the extra activity and displacement created by a private gift are unknown."
   ],
   "sources": [
+    {
+      "publisher": "Five Keys Schools and Programs / Gilbert CPAs",
+      "title": "Financial Statements and Supplementary Information, June 30, 2024",
+      "url": "https://www.fivekeyscharter.org/s/2024-06-GSAFAC-0000362373.pdf",
+      "published": "2024-12-16",
+      "retrieved": "2026-08-31",
+      "sourceType": "audited financial statements and school combining schedules"
+    },
+    {
+      "publisher": "Five Keys Independence High School",
+      "title": "2024–2025 Local Control and Accountability Plan",
+      "url": "https://www.fivekeyscharter.org/s/Five-Keys-Independence-High-School-LCAP-2024-2025.pdf",
+      "published": "2024-09-20",
+      "retrieved": "2026-08-31",
+      "sourceType": "school administrative reporting"
+    },
     {
       "publisher": "Five Keys Schools and Programs",
       "title": "Education program and service locations",
@@ -130,8 +148,8 @@
     },
     {
       "publisher": "RAND Corporation / U.S. Bureau of Justice Assistance",
-      "title": "How Effective Is Correctional Education? The Results of a Meta-Analysis",
-      "url": "https://www.rand.org/content/dam/rand/pubs/research_briefs/RB9700/RB9728/RAND_RB9728.pdf",
+      "title": "Evaluating the Effectiveness of Correctional Education",
+      "url": "https://www.rand.org/content/dam/rand/pubs/research_reports/RR200/RR266/RAND_RR266.pdf",
       "published": "2013",
       "retrieved": "2026-08-30",
       "sourceType": "systematic review and meta-analysis"

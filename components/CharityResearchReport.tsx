@@ -92,6 +92,12 @@ export default function CharityResearchReport({ content }: { content: CharityRep
             {content.summary.map((item) => <div key={item.label}><span>{item.label}</span><strong>{item.value}</strong><p>{item.detail}</p></div>)}
           </section>
 
+          <aside className="charity-comparison-denominator">
+            <span>SHARED COMPARISON DENOMINATOR</span>
+            <strong>$ per 10 QALYs — one better life</strong>
+            <p>Every Market for Impact model ultimately reports against this denominator. Until a versioned bridge from the native outcome to duration-adjusted QALYs is defensible, the comparison price remains “not yet convertible”; the native outcome model below stays visible and auditable.</p>
+          </aside>
+
           <section className="charity-section" id="program">
             <p className="charity-section-number">1 · THE BASICS</p>
             <h2>How does the program work?</h2>

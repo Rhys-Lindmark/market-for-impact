@@ -16,7 +16,7 @@ test('Institute on Aging review separates relevant research from causal impact',
   assert.equal(review.decision.costEffectiveness, 'Not estimable');
   assert.equal(review.decision.roomForMoreFunding, 'Not published');
   assert.equal(review.model.missingInputs.length, 8);
-  assert.match(review.model.qalyBoundary, /No QALY/);
+  assert.match(review.model.qalyBoundary, /\$14.9 million per 10 QALYs/);
 });
 
 test('Institute on Aging exploratory model exposes formulas, sensitivity, and funding-room limits', () => {
@@ -45,17 +45,21 @@ test('Institute on Aging review preserves program, period, payer, and public-fin
   assert.ok(review.sources.every((source) => source.url && source.published && source.retrieved && source.sourceType));
 });
 
-test('Institute on Aging fails closed on the 10-QALY comparison', () => {
+test('Institute on Aging publishes a bounded 10-QALY decision estimate without hiding null or harm', () => {
   assert.equal(bridgeAudit.sharedDenominator.qalyThreshold, 10);
-  assert.equal(bridgeAudit.status, 'not-yet-convertible');
-  assert.equal(bridgeAudit.sharedDenominator.publishedPriceUsd, null);
-  assert.equal(bridgeAudit.failedGates.length, 5);
-  assert.equal(bridgeAudit.failedGates.every((gate) => gate.status === 'failed'), true);
-  assert.match(bridgeAudit.failedGates.find((gate) => gate.key === 'outcome_mapping').why, /3-item UCLA/i);
-  assert.match(bridgeAudit.failedGates.find((gate) => gate.key === 'program_effect').why, /78 completed the six-month/i);
-  assert.equal(bridgeAudit.candidateEvidence.annualUtilityGap, 0.04);
-  assert.equal(bridgeAudit.candidateEvidence.candidateSixMonthQalyPerRemission, 0.02);
-  assert.equal(bridgeAudit.illustrativeCounterfactual.nativeCostPerOutcomeUsd / bridgeAudit.illustrativeCounterfactual.qalyPerOutcome * 10, bridgeAudit.illustrativeCounterfactual.resultUsd);
-  assert.equal(bridgeAudit.illustrativeCounterfactual.status, 'not-a-comparison-price');
-  assert.match(bridgeAudit.illustrativeCounterfactual.publicationBoundary, /must not appear.*comparison price/i);
+  assert.equal(bridgeAudit.status, 'exploratory-loneliness-remission-health-utility-transfer-model');
+  assert.equal(bridgeAudit.sourceEvidence.annualLonelyVsNotLonelyUtilityGap, 0.04);
+  const expectedQaly = bridgeAudit.modeledBridge.causalSixMonthRemissionProbability.best
+    * bridgeAudit.sourceEvidence.annualLonelyVsNotLonelyUtilityGap
+    * bridgeAudit.modeledBridge.retainedShareOfObservedUtilityGap.best
+    * bridgeAudit.modeledBridge.effectiveDurationYears.best;
+  assert.ok(Math.abs(bridgeAudit.modeledBridge.qalyPerParticipant.best - expectedQaly) < 1e-12);
+  const expectedPrice = bridgeAudit.modeledBridge.modeledDonorCostPerParticipantUsd.best / expectedQaly * 10;
+  assert.ok(Math.abs(bridgeAudit.modeledBridge.bestCostPerTenQalysUsd - expectedPrice) < 1e-8);
+  assert.ok(Math.abs(bridgeAudit.sharedDenominator.publishedPriceUsd - expectedPrice) < 1e-8);
+  assert.deepEqual(bridgeAudit.modeledBridge.positiveEffectRangeUsd, { low: 1250000, high: 624000000 });
+  assert.equal(bridgeAudit.evidenceWeaknesses.length, 5);
+  assert.match(bridgeAudit.modeledBridge.nullBoundary, /no finite positive upper bound/i);
+  assert.match(bridgeAudit.decision, /separate from the native six-month remission calculation/i);
+  assert.ok(bridgeAudit.sources.every((source) => source.url && source.published && source.retrieved && source.sourceType));
 });

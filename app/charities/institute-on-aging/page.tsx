@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import CharityResearchReport, { type CharityReportContent } from '@/components/CharityResearchReport';
 import review from '@/data/san-francisco/institute-on-aging-review-v1.json';
 import model from '@/data/san-francisco/institute-on-aging-cea-v1.json';
-import bridgeAudit from '@/data/san-francisco/institute-on-aging-qaly-bridge-audit-v1.json';
+import bridge from '@/data/san-francisco/institute-on-aging-qaly-bridge-audit-v1.json';
 
 export const metadata: Metadata = {
   title: 'Institute on Aging — charity research | Market for Impact',
@@ -24,11 +24,11 @@ const content: CharityReportContent = {
   eyebrow: 'CHARITY RESEARCH · SAN FRANCISCO / CALIFORNIA',
   program: 'Friendship Line proactive outbound calls for older adults experiencing loneliness',
   donationUrl: review.organization.donationUrl,
-  published: '31 August 2026',
+  published: '1 September 2026',
   modelVersion: model.version,
   nutshell: {
     headline: 'Promising human connection. A weak causal record. Not yet a funding recommendation.',
-    body: <>Institute on Aging runs a free, multilingual 24/7 support line for older adults, adults with disabilities, and caregivers. A six-month pilot reported a substantial decline in loneliness among 121 enrolled health-plan members, but it had no control group. Our exploratory model estimates <strong>about {money.format(model.bottomLine.costPerAdditionalSixMonthRemissionUsd)} per additional six-month loneliness remission</strong>, with a deliberately wide <strong>{money.format(model.bottomLine.plausibleRangeUsd.low)}–{money.format(model.bottomLine.plausibleRangeUsd.high)}</strong> range.</>,
+    body: <>Institute on Aging runs a free, multilingual 24/7 support line for older adults, adults with disabilities, and caregivers. A six-month pilot reported a substantial decline in loneliness, but it had no control group and only 78 of 175 baseline participants completed six months. Our native model estimates <strong>about {money.format(model.bottomLine.costPerAdditionalSixMonthRemissionUsd)} per additional six-month loneliness remission</strong>. A separate participant-level health-utility transfer produces a very-low-confidence central estimate of <strong>about {compactMoney.format(bridge.modeledBridge.bestCostPerTenQalysUsd)} per 10 QALYs</strong>.</>,
     whyItMayWork: 'Proactive, repeated human contact directly targets loneliness and removes access barriers.',
     whyWeAreCautious: 'The observed 18-point decline may partly reflect selection, regression to the mean, pandemic-era change, or follow-up bias.',
     recommendationBlocker: 'IOA has not published program accounts, a marginal capacity plan, or evidence that a private gift adds calls rather than replacing public funding.',
@@ -36,7 +36,7 @@ const content: CharityReportContent = {
   summary: [
     { label: 'OUR BEST GUESS', value: money.format(model.bottomLine.costPerAdditionalSixMonthRemissionUsd), detail: 'per additional participant below the study’s loneliness threshold at six months' },
     { label: 'PLAUSIBLE RANGE', value: `${money.format(model.bottomLine.plausibleRangeUsd.low)}–${money.format(model.bottomLine.plausibleRangeUsd.high)}`, detail: 'driven by unknown program cost and an uncontrolled effect estimate' },
-    { label: '$ PER 10 QALYS · ONE BETTER LIFE', value: 'Not yet convertible', detail: 'five explicit evidence gates fail; the native loneliness outcome remains visible below' },
+    { label: 'COST PER BETTER LIFE', value: '≈ $14.9M', detail: 'per 10 QALYs; very-low-confidence loneliness-remission utility transfer' },
     { label: 'FUNDING ROOM', value: 'Not published', detail: `the modeled ${money.format(model.bottomLine.giftUsd)} is illustrative, not verified room` },
   ],
   programSection: {
@@ -58,26 +58,28 @@ const content: CharityReportContent = {
     sensitivity: model.sensitivity.map((row) => ({ case: row.case, headline: `${number.format(row.additionalRemissionsPer100k)} additional remissions`, detail: `${number.format(row.participantsPer100k)} participants · ${money.format(row.costPerAdditionalRemissionUsd)} each` })),
     fundingBoundary: model.fundingRoom.boundary,
   },
-  comparisonAudit: {
-    headline: 'Not yet convertible to $ per 10 QALYs—and now we can say exactly why.',
-    body: bridgeAudit.decision,
-    candidate: {
-      label: 'BEST CANDIDATE HEALTH-UTILITY EVIDENCE',
-      value: '0.04 utility gap / year',
-      detail: 'Two observational chronic-condition studies reported a 0.04 gap between lonely and not-lonely groups. That association is useful for auditing assumptions, but it is not a causal UCLA-threshold-to-QALY mapping.',
+  comparisonBridge: {
+    headline: 'Our current best estimate: about $14.9 million per better life (10 QALYs).',
+    body: bridge.decision,
+    equation: {
+      label: 'EXPLORATORY COST PER 10 QALYS · ONE BETTER LIFE',
+      expression: `${money.format(bridge.modeledBridge.modeledDonorCostPerParticipantUsd.best)} ÷ ${bridge.modeledBridge.qalyPerParticipant.best} QALY × 10`,
+      result: `= ${compactMoney.format(bridge.modeledBridge.bestCostPerTenQalysUsd)}`,
     },
-    failedGates: bridgeAudit.failedGates.map((gate) => ({ key: gate.key, label: gate.label, why: gate.why })),
-    illustrative: {
-      expression: bridgeAudit.illustrativeCounterfactual.arithmetic,
-      result: `= ${compactMoney.format(bridgeAudit.illustrativeCounterfactual.resultUsd)}`,
-      boundary: bridgeAudit.illustrativeCounterfactual.publicationBoundary,
-    },
-    requiredEvidence: bridgeAudit.requiredEvidence,
+    inputs: [
+      { key: 'donor_cost', label: 'Modeled donor cost per participant', confidence: 'very low as a marginal price', best: money.format(bridge.modeledBridge.modeledDonorCostPerParticipantUsd.best), range: `${money.format(bridge.modeledBridge.modeledDonorCostPerParticipantUsd.low)}–${money.format(bridge.modeledBridge.modeledDonorCostPerParticipantUsd.high)}`, basis: bridge.modeledBridge.modeledDonorCostPerParticipantUsd.basis },
+      { key: 'remission_probability', label: 'Causal six-month loneliness remission', confidence: 'very low', best: percent.format(bridge.modeledBridge.causalSixMonthRemissionProbability.best), range: `${percent.format(bridge.modeledBridge.causalSixMonthRemissionProbability.low)}–${percent.format(bridge.modeledBridge.causalSixMonthRemissionProbability.high)}`, basis: bridge.modeledBridge.causalSixMonthRemissionProbability.basis },
+      { key: 'utility_gap', label: 'Observed annual lonely-versus-not-lonely utility gap', confidence: 'very low as a causal transfer', best: String(bridge.sourceEvidence.annualLonelyVsNotLonelyUtilityGap), range: 'Published contrast used as point anchor', basis: bridge.sourceEvidence.utilityGapBasis },
+      { key: 'retention', label: 'Share of observational utility gap retained', confidence: 'judgmental transfer', best: percent.format(bridge.modeledBridge.retainedShareOfObservedUtilityGap.best), range: `${percent.format(bridge.modeledBridge.retainedShareOfObservedUtilityGap.low)}–${percent.format(bridge.modeledBridge.retainedShareOfObservedUtilityGap.high)}`, basis: bridge.modeledBridge.retainedShareOfObservedUtilityGap.basis },
+      { key: 'duration', label: 'Effective utility duration', confidence: 'judgmental', best: `${bridge.modeledBridge.effectiveDurationYears.best} year`, range: `${bridge.modeledBridge.effectiveDurationYears.low}–${bridge.modeledBridge.effectiveDurationYears.high} year`, basis: bridge.modeledBridge.effectiveDurationYears.basis },
+    ],
+    sensitivity: bridge.modeledBridge.sensitivity.map((row) => ({ case: row.case, headline: compactMoney.format(row.costPerTenQalysUsd), detail: `${money.format(row.donorCostPerParticipantUsd)} per participant · ${row.qalyPerParticipant} QALY each` })),
+    boundary: `${bridge.modeledBridge.nullBoundary} ${bridge.sourceEvidence.boundary}`,
   },
   evidence: review.evidence,
   reservations: review.reservations,
-  excludedBenefits: model.excludedBenefits,
-  sources: [...review.sources, ...bridgeAudit.sources.filter((source) => !review.sources.some((existing) => existing.url === source.url))],
+  excludedBenefits: [...new Set([...model.excludedBenefits, ...bridge.excludedBenefits])],
+  sources: [...review.sources, ...bridge.sources.filter((source) => !review.sources.some((existing) => existing.url === source.url))],
 };
 
 export default function InstituteOnAgingResearchPage() {

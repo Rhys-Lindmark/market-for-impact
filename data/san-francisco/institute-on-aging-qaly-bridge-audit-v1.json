@@ -1,103 +1,70 @@
 {
-  "version": "sf-institute-on-aging-qaly-bridge-audit-v0.1",
-  "generatedAt": "2026-08-31T19:48:00-07:00",
-  "status": "not-yet-convertible",
-  "sharedDenominator": {
-    "label": "one better life",
-    "qalyThreshold": 10,
-    "publishedPriceUsd": null
-  },
+  "version": "sf-institute-on-aging-qaly-bridge-v0.2",
+  "generatedAt": "2026-09-01T07:40:00-07:00",
+  "status": "exploratory-loneliness-remission-health-utility-transfer-model",
+  "sharedDenominator": { "label": "one better life", "qalyThreshold": 10, "publishedPriceUsd": 14857142.857142856 },
   "nativeOutcome": "One additional participant below the study's 3-item UCLA loneliness threshold at six months",
-  "decision": "Do not publish a dollars-per-10-QALYs price. The IOA pilot measured a binary 3-item UCLA loneliness threshold, not preference-based health utility, and its 46%-to-28% change came from an uncontrolled cohort with substantial loss to follow-up. Available utility studies are cross-sectional, use different loneliness definitions and health-utility instruments, and do not establish the timing or persistence of a utility gain.",
-  "candidateEvidence": {
-    "design": "Systematic review of 19 observational studies reporting loneliness or social isolation alongside health-state utility values",
-    "population": "People with pre-existing health conditions; populations, conditions, loneliness measures, and utility instruments varied",
-    "contrast": "Lonely versus not lonely in two chronic-condition studies using HUI2 or EQ-5D-3L",
-    "annualUtilityGap": 0.04,
-    "candidateSixMonthQalyPerRemission": 0.02,
-    "candidateArithmetic": "0.04 annual utility gap x 0.5 year",
-    "boundary": "The 0.04 difference is a cross-sectional association in other populations, not a causal effect of Friendship Line, a mapping from the 3-item UCLA threshold, or a measured six-month utility gain. The review found heterogeneity and confounding too substantial for quantitative synthesis."
+  "decision": "Publish an explicit, very-low-confidence decision estimate of approximately $14.9 million per 10 QALYs. This participant-level model is separate from the native six-month remission calculation. It starts with the native model's judgmental $1,040 cost per participant and 7% causal remission probability, then assigns each causal remission 50% of a systematic review's 0.04 annual lonely-versus-not-lonely health-utility gap for 0.5 effective year. That yields 0.0007 QALY per participant and approximately $14.9 million per better life. The conditional positive-effect range is approximately $1.25 million to $624 million; a true null, harm, or funding displacement remains plausible. This is a best-effort donor estimate, not a measured IOA effect, verified marginal price, rank, or funding recommendation.",
+  "sourceEvidence": {
+    "friendshipLinePilot": "The uncontrolled pilot enrolled 175 evaluation participants; 121 had any follow-up and 78 completed six months. Loneliness fell from 46% to 28%, but only 53% of scheduled calls were completed on average and the design does not identify a causal effect.",
+    "utilityReviewDesign": "Systematic review of 19 observational studies reporting loneliness or social isolation alongside health-state utility values",
+    "utilityReviewPopulation": "People with pre-existing health conditions; populations, conditions, loneliness measures, and utility instruments varied",
+    "annualLonelyVsNotLonelyUtilityGap": 0.04,
+    "utilityGapBasis": "Two cross-sectional chronic-condition studies reported a 0.04 utility difference between lonely and not-lonely groups using HUI2 or EQ-5D-3L. The review could not pool estimates because of population, instrument, tariff, condition, and loneliness-measure heterogeneity.",
+    "interventionEvidence": "A very-low-certainty friendly-visiting review did not establish a durable effect for a comparable service. Telephone RCTs show that structured behavioral activation or mindfulness can outperform telephone befriending, but those interventions, populations, doses, and comparators differ from Friendship Line.",
+    "boundary": "No source maps IOA's 3-item UCLA threshold directly to health utility. The 0.04 gap is observational, binary, and confounded; the causal remission probability, transfer retention, and duration are MFI decision assumptions rather than study estimates."
   },
-  "failedGates": [
-    {
-      "key": "outcome_mapping",
-      "label": "Map the loneliness threshold to utility",
-      "status": "failed",
-      "why": "The IOA study defined loneliness as 3 or more points on the 3-item UCLA scale. The candidate utility literature used varied loneliness definitions and preference-based instruments; no validated mapping from this binary threshold to EQ-5D, HUI, SF-6D, or AQoL utility was located."
+  "modeledBridge": {
+    "modeledDonorCostPerParticipantUsd": {
+      "best": 1040, "low": 600, "high": 1560,
+      "basis": "Bottom-up MFI synthesis of call dose, time, loaded resource cost, supervision, volunteer management, technology, training, and overhead. IOA does not publish Friendship Line program accounts or a current marginal price."
     },
-    {
-      "key": "causal_utility_effect",
-      "label": "Separate loneliness from correlated illness",
-      "status": "failed",
-      "why": "The 0.04 utility gap is observational and comes from people with pre-existing health conditions. Depression, disability, chronic illness, and other confounding can affect both loneliness and utility, so the association cannot be treated as the causal utility gained by remitting loneliness."
+    "causalSixMonthRemissionProbability": {
+      "best": 0.07, "low": 0.02, "high": 0.12,
+      "basis": "The midpoint attributes 7 percentage points of the uncontrolled 18-point decline to Friendship Line. The positive range is judgmental and reflects regression to the mean, secular change, selection, 45% six-month retention, and incomplete scheduled calls; null or harm remains outside the finite range."
     },
-    {
-      "key": "program_effect",
-      "label": "Measure Friendship Line's causal effect",
-      "status": "failed",
-      "why": "The pilot had no concurrent control group. Of 175 baseline participants, 121 had any follow-up and only 78 completed the six-month interview; regression to the mean, secular change, selection, and missing outcomes remain unresolved."
+    "retainedShareOfObservedUtilityGap": {
+      "best": 0.5, "low": 0.25, "high": 1,
+      "basis": "The midpoint retains half of the cross-sectional 0.04 utility gap to reflect confounding, population transfer, instrument differences, and the absence of a validated 3-item UCLA threshold mapping. This is a judgment range, not a confidence interval."
     },
-    {
-      "key": "duration",
-      "label": "Establish timing and persistence",
-      "status": "failed",
-      "why": "A lower loneliness share at six months does not establish when a change began, its area under the curve, whether it persisted after the final interview, or whether health utility changed for the same duration."
+    "effectiveDurationYears": {
+      "best": 0.5, "low": 0.125, "high": 1,
+      "basis": "The midpoint combines gradual onset during the six-month program with limited persistence after the endpoint. The cautious case approximates a short-lived late gain; the optimistic case allows a full year. IOA measured neither onset nor post-program persistence."
     },
-    {
-      "key": "instrument_sensitivity",
-      "label": "Choose a defensible utility instrument",
-      "status": "failed",
-      "why": "The evidence review warns that EQ-5D may be insufficiently sensitive to psychological and social outcomes and that different instruments can yield materially different values. IOA did not directly collect a preference-based utility measure."
-    }
+    "formula": "causal_six_month_remission_probability * annual_utility_gap * retained_share_of_observed_utility_gap * effective_duration_years",
+    "qalyPerParticipant": { "best": 0.0007, "low": 0.000025, "high": 0.0048 },
+    "bestCostPerTenQalysUsd": 14857142.857142856,
+    "costPerQalyUsd": 1485714.2857142857,
+    "positiveEffectRangeUsd": { "low": 1250000, "high": 624000000 },
+    "sensitivity": [
+      { "case": "Optimistic positive transfer", "donorCostPerParticipantUsd": 600, "causalSixMonthRemissionProbability": 0.12, "retainedShareOfObservedUtilityGap": 1, "effectiveDurationYears": 1, "qalyPerParticipant": 0.0048, "costPerTenQalysUsd": 1250000 },
+      { "case": "Central transfer-discounted estimate", "donorCostPerParticipantUsd": 1040, "causalSixMonthRemissionProbability": 0.07, "retainedShareOfObservedUtilityGap": 0.5, "effectiveDurationYears": 0.5, "qalyPerParticipant": 0.0007, "costPerTenQalysUsd": 14857142.857142856 },
+      { "case": "Cautious positive transfer", "donorCostPerParticipantUsd": 1560, "causalSixMonthRemissionProbability": 0.02, "retainedShareOfObservedUtilityGap": 0.25, "effectiveDurationYears": 0.125, "qalyPerParticipant": 0.000025, "costPerTenQalysUsd": 624000000 }
+    ],
+    "nullBoundary": "The numeric range is conditional on a positive Friendship Line effect, a positive remission-to-utility relationship, and donor additionality. The pilot has no control group and only 78 of 175 baseline participants completed six months; the utility gap is observational; related telephone and befriending evidence does not identify IOA's effect; and IOA publishes no current marginal plan. If proactive calls have no causal loneliness effect, cause no health-utility gain, produce only transient change outside the assumed duration, harm some participants, or a private gift displaces health-plan or public funding, the impact price has no finite positive upper bound."
+  },
+  "evidenceWeaknesses": [
+    { "key": "program_effect", "label": "Friendship Line causal effect", "why": "The pilot had no concurrent comparison. Of 175 baseline participants, 121 had any follow-up, 78 completed six months, and an average 53% of scheduled calls were completed. The 7-point central causal remission probability is an MFI judgment; null or harm remains plausible." },
+    { "key": "utility_mapping", "label": "Remission-to-utility mapping", "why": "No validated mapping was located from the 3-item UCLA threshold to a preference-based utility instrument. The binary 0.04 utility contrast is observational, heterogeneous, and drawn from chronic-condition populations." },
+    { "key": "timing_and_persistence", "label": "Timing and persistence", "why": "The lower loneliness share at six months does not reveal onset, area under the utility curve, or persistence after the final interview. The 0.5-year midpoint is a decision assumption." },
+    { "key": "instrument_sensitivity", "label": "Health-utility sensitivity", "why": "The utility review warns that generic instruments may miss psychosocial change and that different instruments produce different values. IOA collected no preference-based utility measure." },
+    { "key": "cost_and_additionality", "label": "Marginal cost and funding room", "why": "The $1,040 participant cost is built from MFI resource assumptions, not IOA accounts. Health-plan payment, public contracts, volunteer capacity, current cohort constraints, and displacement are unresolved." }
   ],
-  "illustrativeCounterfactual": {
-    "status": "not-a-comparison-price",
-    "assumptions": "If, contrary to the missing evidence, each modeled six-month remission caused the full 0.04 annual utility difference for exactly six months, assign 0.02 QALY per remission.",
-    "nativeCostPerOutcomeUsd": 14857,
-    "qalyPerOutcome": 0.02,
-    "arithmetic": "$14,857 / 0.02 QALY x 10 QALYs",
-    "resultUsd": 7428500,
-    "publicationBoundary": "This arithmetic is shown only to expose the unsupported mapping, causality, and duration assumptions. It must not appear as IOA's comparison price, rank, or recommendation."
-  },
+  "excludedBenefits": [
+    "Suicides averted, emergency visits, healthcare spending, mortality, and crisis resolutions not causally measured for Friendship Line",
+    "Depression, anxiety, unhealthy-day, referral, safety, and social-connection benefits not captured by the loneliness utility transfer",
+    "Caregiver, family, clinician, volunteer, and community spillovers",
+    "Benefits from inbound calls, grief groups, or other Institute on Aging programs"
+  ],
   "requiredEvidence": [
-    "Pre-specify the 3-item UCLA outcome and collect a preference-based utility measure at baseline, intermediate time points, and follow-up.",
-    "Use a randomized or credible concurrent comparison with complete participant flow, exposure, missing-data analysis, and a pre-specified causal estimand.",
-    "Estimate the utility change jointly with loneliness so the bridge does not rely on a cross-study threshold mapping.",
-    "Measure onset, area under the utility curve, and persistence beyond the six-month endpoint.",
-    "Publish incremental Friendship Line cost, payer and public-funding displacement, capacity, and a dated marginal funding plan."
+    "Pre-specify the 3-item UCLA outcome and causal estimand; use randomization or a credible concurrent comparison with complete participant flow, scheduled-call exposure, and missing-data analysis.",
+    "Collect a preference-based utility measure alongside loneliness at baseline, intermediate time points, six months, and post-program follow-up.",
+    "Publish Friendship Line program accounts, health-plan and public payments, volunteer and in-kind resources, current capacity constraints, displacement rules, and dated $100K, $1M, and $10M marginal plans."
   ],
   "sources": [
-    {
-      "publisher": "Annals of the New York Academy of Sciences",
-      "title": "A proactive phone intervention for older adults to address loneliness identified by a health plan",
-      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13050024/",
-      "published": "2024-09-24",
-      "retrieved": "2026-08-31",
-      "sourceType": "peer-reviewed uncontrolled mixed-methods pilot"
-    },
-    {
-      "publisher": "Quality of Life Research",
-      "title": "The impact of loneliness and social isolation on health state utility values: a systematic literature review",
-      "url": "https://link.springer.com/article/10.1007/s11136-021-03063-1",
-      "published": "2022",
-      "retrieved": "2026-08-31",
-      "sourceType": "peer-reviewed systematic literature review"
-    },
-    {
-      "publisher": "UK Department for Culture, Media and Sport",
-      "title": "Tackling loneliness evidence review: full report",
-      "url": "https://www.gov.uk/government/publications/tackling-loneliness-evidence-review/tackling-loneliness-evidence-review-full-report",
-      "published": "2023-03-23",
-      "retrieved": "2026-08-31",
-      "sourceType": "government evidence review"
-    },
-    {
-      "publisher": "NIHR Journals Library",
-      "title": "Promoting social engagement and well-being in older people: the PLINY randomised controlled trial",
-      "url": "https://www.ncbi.nlm.nih.gov/books/NBK264030/",
-      "published": "2014",
-      "retrieved": "2026-08-31",
-      "sourceType": "randomized trial report with unusable health-economic analysis"
-    }
+    { "publisher": "Annals of the New York Academy of Sciences", "title": "A proactive phone intervention for older adults to address loneliness identified by a health plan", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13050024/", "published": "2024-09-24", "retrieved": "2026-09-01", "sourceType": "peer-reviewed uncontrolled mixed-methods pilot" },
+    { "publisher": "Quality of Life Research", "title": "The impact of loneliness and social isolation on health state utility values: a systematic literature review", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8785005/", "published": "2022-01-24", "retrieved": "2026-09-01", "sourceType": "peer-reviewed systematic literature review" },
+    { "publisher": "Campbell Systematic Reviews", "title": "Friendly visiting by a volunteer for reducing loneliness or social isolation in older adults", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10688573/", "published": "2023-11-15", "retrieved": "2026-09-01", "sourceType": "peer-reviewed systematic review" },
+    { "publisher": "JAMA Network Open", "title": "Layperson-Delivered Telephone-Based Behavioral Activation Among Low-Income Older Adults During the COVID-19 Pandemic", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11185980/", "published": "2024-06-18", "retrieved": "2026-09-01", "sourceType": "randomized clinical trial of related telephone interventions" }
   ]
 }

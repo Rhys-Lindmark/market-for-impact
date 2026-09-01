@@ -1,0 +1,94 @@
+{
+  "version": "sf-lgbt-center-employment-qaly-bridge-audit-v0.1",
+  "generatedAt": "2026-08-31T20:25:00-07:00",
+  "status": "not-yet-convertible",
+  "sharedDenominator": {
+    "label": "one better life",
+    "qalyThreshold": 10,
+    "publishedPriceUsd": null
+  },
+  "nativeOutcome": "One additional living-wage job placement attributable to the Center within the reporting year",
+  "decision": "Do not publish a dollars-per-10-QALYs price. The Center has not defined the wage threshold, measured retention or earnings, identified a causal placement effect, or collected preference-based health utility. Employment is not itself a health state, and the nearest cost-utility literature evaluates specific supported-employment interventions in populations with diagnosed health conditions; it does not supply a transferable QALY coefficient per placement for this program or population.",
+  "candidateEvidence": {
+    "status": "no-defensible-coefficient",
+    "nearestEvidence": "Economic evaluations of supported employment or Individual Placement and Support for people with mental-health conditions",
+    "qalyPerPlacement": null,
+    "boundary": "Some supported-employment studies measure QALYs directly, but their participants, intervention fidelity, comparators, health conditions, follow-up, and utility instruments differ from the Center's broad employment services. Their QALY results cannot be divided by job counts and transferred as a per-placement weight."
+  },
+  "failedGates": [
+    {
+      "key": "outcome_definition",
+      "label": "Define and retain the employment outcome",
+      "status": "failed",
+      "why": "The published 30+ count does not define the living-wage threshold, job hours, benefits, start date, retention, earnings, duplicate people, or the reporting pathway that preceded each placement."
+    },
+    {
+      "key": "program_effect",
+      "label": "Measure the Center's causal placement effect",
+      "status": "failed",
+      "why": "The Center reports placements without a concurrent comparison or baseline placement rate. The model's 25% attribution share is a decision scenario, not an evidence estimate, and a null remains plausible."
+    },
+    {
+      "key": "program_cost",
+      "label": "Identify incremental employment-program cost",
+      "status": "failed",
+      "why": "The numerator is the entire audited Economic Development allocation, which also includes financial, housing, and small-business services. It is not an employment-program budget or a marginal funding quote."
+    },
+    {
+      "key": "health_pathway",
+      "label": "Establish a causal employment-to-health pathway",
+      "status": "failed",
+      "why": "Employment, income, job quality, discrimination, baseline health, and health utility are jointly determined. The Center did not measure whether any additional placement changed health rather than only employment status."
+    },
+    {
+      "key": "utility_measurement",
+      "label": "Measure preference-based health utility",
+      "status": "failed",
+      "why": "No EQ-5D, HUI, SF-6D, AQoL, or other preference-based utility measure was collected. Quality-of-life findings from supported-employment studies do not create a utility coefficient for this population."
+    },
+    {
+      "key": "duration",
+      "label": "Establish timing and persistence",
+      "status": "failed",
+      "why": "The published placement count has no 6- or 12-month retention, earnings trajectory, health-utility time points, onset, area under the curve, or post-program persistence."
+    },
+    {
+      "key": "additionality",
+      "label": "Reconcile public funding and marginal capacity",
+      "status": "failed",
+      "why": "Government grants supplied 55% of FY2024 revenue, individualized coaching enrollment is paused, and no dated marginal plan shows that a new private gift adds service capacity rather than replacing public or restricted funding."
+    }
+  ],
+  "illustrativeCounterfactual": {
+    "status": "not-calculable",
+    "nativeCostPerOutcomeUsd": 171768,
+    "qalyPerOutcome": null,
+    "arithmetic": "$171,768 / [missing QALYs per additional retained placement] x 10 QALYs",
+    "resultUsd": null,
+    "publicationBoundary": "No arithmetic result is shown because choosing a QALY weight would fabricate the central input. The native conditional placement scenario remains visible only as an audit trail; it is not a comparison price, rank, or recommendation."
+  },
+  "requiredEvidence": [
+    "Pre-specify the living-wage threshold, eligible cohort, service pathway, employment start, hours, benefits, and 6- and 12-month retention and earnings outcomes.",
+    "Use a randomized, phased, or credible matched comparison with complete participant flow, exposure, missing-data analysis, and a pre-specified causal estimand.",
+    "Collect preference-based utility at baseline and repeated follow-up for the same participants; estimate utility jointly with employment rather than importing a literature coefficient.",
+    "Publish the employment-program budget, active-component costs, public and restricted funding, displacement rule, capacity, and dated $100K, $1M, and $10M marginal plans."
+  ],
+  "sources": [
+    {
+      "publisher": "Annals of Family Medicine",
+      "title": "Employment Interventions in Health Settings: A Systematic Review and Synthesis",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6130994/",
+      "published": "2018",
+      "retrieved": "2026-08-31",
+      "sourceType": "peer-reviewed systematic review"
+    },
+    {
+      "publisher": "Epidemiology and Psychiatric Sciences",
+      "title": "Economic analyses of supported employment programmes for people with mental health conditions: A systematic review",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9491084/",
+      "published": "2022",
+      "retrieved": "2026-08-31",
+      "sourceType": "peer-reviewed systematic review of economic evaluations"
+    }
+  ]
+}

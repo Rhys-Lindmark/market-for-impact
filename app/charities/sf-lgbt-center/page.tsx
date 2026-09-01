@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import CharityResearchReport, { type CharityReportContent } from '@/components/CharityResearchReport';
 import review from '@/data/san-francisco/sf-lgbt-center-employment-review-v1.json';
 import model from '@/data/san-francisco/sf-lgbt-center-employment-cea-v1.json';
+import bridgeAudit from '@/data/san-francisco/sf-lgbt-center-employment-qaly-bridge-audit-v1.json';
 
 export const metadata: Metadata = {
   title: 'SF LGBT Center Employment Services — charity research | Market for Impact',
@@ -36,7 +37,7 @@ const content: CharityReportContent = {
   summary: [
     { label: 'GROSS REPORTED BENCHMARK', value: '≈ $42,900', detail: 'broad Economic Development allocation per reported 2024 living-wage placement; not causal' },
     { label: 'CONDITIONAL MIDPOINT', value: '≈ $172,000', detail: 'per additional placement if 25% of reported placements were Center-attributable' },
-    { label: '10-QALY LIFE BETTERED', value: 'Not estimated', detail: 'employment duration, income, health pathway, and counterfactual are not measured' },
+    { label: '$ PER 10 QALYS · ONE BETTER LIFE', value: 'Not yet convertible', detail: 'seven explicit evidence gates fail; the native placement scenario remains visible below' },
     { label: 'FUNDING ROOM', value: 'Not published', detail: 'individual coaching enrollment is currently paused' },
   ],
   programSection: {
@@ -60,10 +61,26 @@ const content: CharityReportContent = {
     uncertaintyBoundary: model.nullEffectBoundary,
     fundingBoundary: model.fundingRoom.boundary,
   },
+  comparisonAudit: {
+    headline: 'Not yet convertible to $ per 10 QALYs—and no coefficient should be guessed.',
+    body: bridgeAudit.decision,
+    candidate: {
+      label: 'NEAREST COST-UTILITY EVIDENCE',
+      value: 'No transferable QALY / placement',
+      detail: 'Supported-employment evaluations sometimes measure QALYs directly in populations with diagnosed health conditions. They do not establish a health-utility weight for one Center-reported placement.',
+    },
+    failedGates: bridgeAudit.failedGates.map((gate) => ({ key: gate.key, label: gate.label, why: gate.why })),
+    illustrative: {
+      expression: bridgeAudit.illustrativeCounterfactual.arithmetic,
+      result: '= Withheld',
+      boundary: bridgeAudit.illustrativeCounterfactual.publicationBoundary,
+    },
+    requiredEvidence: bridgeAudit.requiredEvidence,
+  },
   evidence: review.evidence,
   reservations: review.reservations,
   excludedBenefits: model.excludedBenefits,
-  sources: review.sources,
+  sources: [...review.sources, ...bridgeAudit.sources.filter((source) => !review.sources.some((existing) => existing.url === source.url))],
 };
 
 export default function SfLgbtCenterResearchPage() { return <CharityResearchReport content={content} />; }

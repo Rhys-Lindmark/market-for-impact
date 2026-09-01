@@ -446,13 +446,16 @@ test('phone donors can inspect the Five Keys model without treating credential o
   const review = page.locator('.charity-report-article');
   await expect(page.getByRole('heading', { level: 1, name: 'Five Keys Schools and Programs', exact: true })).toBeVisible();
   await expect(review).toContainText('≈ $167,000');
-  await expect(review).toContainText('$ PER BETTER LIFE');
-  await expect(review).toContainText('Not yet convertible');
+  await expect(review).toContainText('COST PER BETTER LIFE');
+  await expect(review).toContainText('≈ $4.9M');
+  await expect(review).toContainText('about $4.9 million per better life');
+  await expect(review).toContainText('80% transfer and causal discount');
   await expect(review).toContainText('$ per 10 QALYs — one better life');
   await expect(review).toContainText('decision scenarios, not confidence bounds');
   await expect(review).toContainText('zero remains plausible');
   await expect(review.locator('.charity-evidence-list article')).toHaveCount(3);
-  await expect(review.locator('.charity-sensitivity article')).toHaveCount(3);
+  await expect(review.locator('.charity-model > .charity-sensitivity article')).toHaveCount(3);
+  await expect(review.locator('.charity-qaly-bridge .charity-sensitivity article')).toHaveCount(4);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 

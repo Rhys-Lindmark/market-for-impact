@@ -470,14 +470,17 @@ test('phone donors can inspect the GLIDE rental-assistance model without treatin
   await expect(review).toContainText('roughly $154,000 per additional six-month shelter entry averted');
   await expect(review).toContainText('1.6 percentage points');
   await expect(review).toContainText('null effect remains plausible');
-  await expect(review).toContainText(/\$ per 10 QALYs · one better life/i);
-  await expect(review).toContainText('Not yet convertible');
-  await expect(review).toContainText('No transferable QALY / shelter entry');
-  await expect(review).toContainText('= Withheld');
-  await expect(review.locator('.charity-audit-gates article')).toHaveCount(8);
+  await expect(review).toContainText(/\$ per 10 QALYs — one better life/i);
+  await expect(page.getByText('≈ $427K', { exact: true })).toBeVisible();
+  await expect(review).toContainText('about $427,000 per better life');
+  await expect(review).toContainText('$178.06K');
+  await expect(review).toContainText('$3.47M');
+  await expect(review).toContainText('one adult-equivalent');
+  await expect(review.locator('.charity-qaly-bridge .charity-sensitivity article')).toHaveCount(3);
+  await expect(review).toContainText(/no finite upper bound/i);
   await expect(review).toContainText('not verified room for more funding');
   await expect(review.locator('.charity-evidence-list article')).toHaveCount(3);
-  await expect(review.locator('.charity-sensitivity article')).toHaveCount(3);
+  await expect(review.locator('.charity-model > .charity-sensitivity article')).toHaveCount(3);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 

@@ -4,6 +4,9 @@ import fs from 'node:fs';
 
 const review = JSON.parse(fs.readFileSync('data/san-francisco/farming-hope-review-v1.json', 'utf8'));
 const model = JSON.parse(fs.readFileSync('data/san-francisco/farming-hope-apprenticeship-cea-v1.json', 'utf8'));
+const bridge = JSON.parse(fs.readFileSync('data/san-francisco/farming-hope-employment-qaly-bridge-audit-v1.json', 'utf8'));
+const page = fs.readFileSync('app/charities/farming-hope/page.tsx', 'utf8');
+const sfPage = fs.readFileSync('app/san-francisco/page.tsx', 'utf8');
 
 test('Farming Hope review separates reported placement from causal impact', () => {
   assert.equal(review.evidence.length, 3);
@@ -51,4 +54,27 @@ test('Farming Hope model preserves the late-follow-up employment denominator', (
   assert.match(model.formula.denominatorBoundary, /not continuous 12-month retention/i);
   assert.match(model.fundingRoom.boundary, /does not publish a current apprenticeship-only budget/i);
   assert.match(model.decisionUnit, /unemployment-insurance-covered employment/i);
+});
+
+test('Farming Hope applies the universal 10-QALY denominator with an explicit transfer model', () => {
+  assert.equal(bridge.sharedDenominator.qalyThreshold, 10);
+  assert.equal(bridge.sharedDenominator.publishedPriceUsd, bridge.modeledBridge.bestCostPerTenQalysUsd);
+  assert.equal(bridge.status, 'exploratory-transfer-model');
+  assert.equal(bridge.failedGates.length, 8);
+  assert.ok(bridge.failedGates.every((gate) => gate.status === 'failed'));
+  assert.equal(bridge.illustrativeCounterfactual.resultUsd, bridge.modeledBridge.bestCostPerTenQalysUsd);
+  assert.equal(bridge.candidateEvidence.publishedIncrementalQalyPerParticipant, 0.01);
+  assert.equal(bridge.candidateEvidence.farmingHopeQalysPerAdditionalLateYearEmploymentOutcome, null);
+  assert.match(bridge.candidateEvidence.boundary, /not a QALY gain per person employed/i);
+  assert.equal(bridge.modeledBridge.bestCostPerTenQalysUsd, bridge.modeledBridge.historicalGrossCostPerApprenticeUsd / bridge.modeledBridge.qalyPerAssignedParticipant.best * 10);
+  assert.equal(bridge.modeledBridge.positiveEffectRangeUsd.low, bridge.modeledBridge.historicalGrossCostPerApprenticeUsd / bridge.modeledBridge.qalyPerAssignedParticipant.high * 10);
+  assert.ok(Math.abs(bridge.modeledBridge.positiveEffectRangeUsd.high - bridge.modeledBridge.historicalGrossCostPerApprenticeUsd / bridge.modeledBridge.qalyPerAssignedParticipant.low * 10) < 0.000001);
+});
+
+test('Farming Hope report and SF shortlist publish no fabricated comparison price', () => {
+  assert.match(page, /COST PER BETTER LIFE/);
+  assert.match(page, /about \$41\.6 million per better life/);
+  assert.match(page, /qalyPerAssignedParticipant\.best/);
+  assert.match(sfPage, /Farming Hope[\s\S]*betterLifePrice: '≈ \$41\.6M'/);
+  assert.match(sfPage, /Farming Hope[\s\S]*bridgeState: 'Very-low-confidence QALY transfer'/);
 });

@@ -426,14 +426,17 @@ test('phone donors can inspect the Farming Hope model without treating placement
   await page.goto('/charities/farming-hope', { waitUntil: 'domcontentloaded' });
   const review = page.locator('.charity-report-article');
   await expect(page.getByRole('heading', { level: 1, name: 'Farming Hope', exact: true })).toBeVisible();
+  await expect(review).toContainText('≈ $41.6M');
+  await expect(page.getByRole('heading', { name: /about \$41\.6 million per better life/ })).toBeVisible();
   await expect(review).toContainText('71% employment within 90 days of graduation');
   await expect(review).toContainText('about $1.04M per additional person');
   await expect(review).toContainText('did not increase regular unsubsidized employment');
   await expect(review).toContainText('4.0 points');
-  await expect(review).toContainText('Not estimated');
+  await expect(review).toContainText('0.01 QALY');
+  await expect(review.locator('.charity-qaly-bridge .charity-sensitivity article')).toHaveCount(4);
   await expect(review).toContainText('null remains plausible');
   await expect(review.locator('.charity-evidence-list article')).toHaveCount(3);
-  await expect(review.locator('.charity-sensitivity article')).toHaveCount(3);
+  await expect(review.locator('.charity-model > .charity-sensitivity article')).toHaveCount(3);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 

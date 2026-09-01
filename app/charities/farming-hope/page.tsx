@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import CharityResearchReport, { type CharityReportContent } from '@/components/CharityResearchReport';
 import review from '@/data/san-francisco/farming-hope-review-v1.json';
 import model from '@/data/san-francisco/farming-hope-apprenticeship-cea-v1.json';
+import bridgeAudit from '@/data/san-francisco/farming-hope-employment-qaly-bridge-audit-v1.json';
 
 export const metadata: Metadata = {
   title: 'Farming Hope culinary apprenticeship — charity research | Market for Impact',
@@ -39,7 +40,7 @@ const content: CharityReportContent = {
   summary: [
     { label: 'GROSS HISTORICAL BENCHMARK', value: '≈ $41,600', detail: 'FY2024 job-training expense per reported apprentice; not a marginal price' },
     { label: 'OUR CONDITIONAL BEST GUESS', value: '≈ $1.04M', detail: 'per additional person ever employed in a late follow-up year, using a transferred 4-point effect' },
-    { label: '$ PER LIFE BETTERED', value: 'Not estimated', detail: 'employment duration, earnings, wellbeing, and QALY conversion are not measured' },
+    { label: 'COST PER BETTER LIFE', value: '≈ $41.6M', detail: 'per 10 QALYs; very-low-confidence participant-level transfer from a randomized IPS trial' },
     { label: 'FUNDING ROOM', value: 'Not published', detail: 'the $100,000 gift is a scenario, not a verified cohort expansion' },
   ],
   programSection: {
@@ -63,10 +64,29 @@ const content: CharityReportContent = {
     uncertaintyBoundary: model.nullEffectBoundary,
     fundingBoundary: model.fundingRoom.boundary,
   },
+  comparisonBridge: {
+    headline: 'Our current best estimate: about $41.6 million per better life (10 QALYs).',
+    body: bridgeAudit.decision,
+    equation: {
+      label: 'EXPLORATORY COST PER 10 QALYS · ONE BETTER LIFE',
+      expression: `${money.format(bridgeAudit.modeledBridge.historicalGrossCostPerApprenticeUsd)} ÷ ${bridgeAudit.modeledBridge.qalyPerAssignedParticipant.best} QALY × 10`,
+      result: `= ${compactMoney.format(bridgeAudit.modeledBridge.bestCostPerTenQalysUsd)}`,
+    },
+    inputs: [
+      { key: 'gross_cost', label: 'Gross historical cost per apprentice', confidence: 'low', best: money.format(bridgeAudit.modeledBridge.historicalGrossCostPerApprenticeUsd), range: 'Fixed historical ratio', basis: 'FY2024 job-training expense divided by 41 reported apprentices; not a marginal donor price.' },
+      { key: 'qaly_transfer', label: 'Incremental QALY per assigned participant', confidence: 'very low transfer', best: String(bridgeAudit.modeledBridge.qalyPerAssignedParticipant.best), range: `${bridgeAudit.modeledBridge.qalyPerAssignedParticipant.low}–${bridgeAudit.modeledBridge.qalyPerAssignedParticipant.high}`, basis: bridgeAudit.modeledBridge.qalyPerAssignedParticipant.basis },
+      { key: 'denominator', label: 'One better life', confidence: 'defined', best: '10 QALYs', range: 'Fixed comparison denominator', basis: 'Universal Market for Impact comparison unit.' },
+    ],
+    sensitivity: bridgeAudit.modeledBridge.sensitivity.map((row) => ({ case: row.case, headline: compactMoney.format(row.costPerTenQalysUsd), detail: `${row.qalyPerParticipant} QALY per assigned participant · per 10 QALYs` })),
+    boundary: bridgeAudit.modeledBridge.nullBoundary,
+  },
   evidence: review.evidence,
   reservations: review.reservations,
   excludedBenefits: model.excludedBenefits,
-  sources: review.sources,
+  sources: [
+    ...review.sources,
+    ...bridgeAudit.sources.filter((source) => !review.sources.some((existing) => existing.url === source.url)),
+  ],
 };
 
 export default function FarmingHopeResearchPage() {

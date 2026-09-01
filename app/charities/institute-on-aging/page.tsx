@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import CharityResearchReport, { type CharityReportContent } from '@/components/CharityResearchReport';
 import review from '@/data/san-francisco/institute-on-aging-review-v1.json';
 import model from '@/data/san-francisco/institute-on-aging-cea-v1.json';
+import bridgeAudit from '@/data/san-francisco/institute-on-aging-qaly-bridge-audit-v1.json';
 
 export const metadata: Metadata = {
   title: 'Institute on Aging — charity research | Market for Impact',
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 };
 
 const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+const compactMoney = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 2 });
 const number = new Intl.NumberFormat('en-US', { maximumFractionDigits: 1 });
 const percent = new Intl.NumberFormat('en-US', { style: 'percent', maximumFractionDigits: 0 });
 const formatInput = (value: number, unit: string) => unit.includes('proportion') || unit.includes('remissions') ? percent.format(value) : `${number.format(value)} ${unit}`;
@@ -34,7 +36,7 @@ const content: CharityReportContent = {
   summary: [
     { label: 'OUR BEST GUESS', value: money.format(model.bottomLine.costPerAdditionalSixMonthRemissionUsd), detail: 'per additional participant below the study’s loneliness threshold at six months' },
     { label: 'PLAUSIBLE RANGE', value: `${money.format(model.bottomLine.plausibleRangeUsd.low)}–${money.format(model.bottomLine.plausibleRangeUsd.high)}`, detail: 'driven by unknown program cost and an uncontrolled effect estimate' },
-    { label: 'EVIDENCE', value: 'Suggestive', detail: 'one relevant single-group pilot; no randomized or concurrent comparison' },
+    { label: '$ PER 10 QALYS · ONE BETTER LIFE', value: 'Not yet convertible', detail: 'five explicit evidence gates fail; the native loneliness outcome remains visible below' },
     { label: 'FUNDING ROOM', value: 'Not published', detail: `the modeled ${money.format(model.bottomLine.giftUsd)} is illustrative, not verified room` },
   ],
   programSection: {
@@ -56,10 +58,26 @@ const content: CharityReportContent = {
     sensitivity: model.sensitivity.map((row) => ({ case: row.case, headline: `${number.format(row.additionalRemissionsPer100k)} additional remissions`, detail: `${number.format(row.participantsPer100k)} participants · ${money.format(row.costPerAdditionalRemissionUsd)} each` })),
     fundingBoundary: model.fundingRoom.boundary,
   },
+  comparisonAudit: {
+    headline: 'Not yet convertible to $ per 10 QALYs—and now we can say exactly why.',
+    body: bridgeAudit.decision,
+    candidate: {
+      label: 'BEST CANDIDATE HEALTH-UTILITY EVIDENCE',
+      value: '0.04 utility gap / year',
+      detail: 'Two observational chronic-condition studies reported a 0.04 gap between lonely and not-lonely groups. That association is useful for auditing assumptions, but it is not a causal UCLA-threshold-to-QALY mapping.',
+    },
+    failedGates: bridgeAudit.failedGates.map((gate) => ({ key: gate.key, label: gate.label, why: gate.why })),
+    illustrative: {
+      expression: bridgeAudit.illustrativeCounterfactual.arithmetic,
+      result: `= ${compactMoney.format(bridgeAudit.illustrativeCounterfactual.resultUsd)}`,
+      boundary: bridgeAudit.illustrativeCounterfactual.publicationBoundary,
+    },
+    requiredEvidence: bridgeAudit.requiredEvidence,
+  },
   evidence: review.evidence,
   reservations: review.reservations,
   excludedBenefits: model.excludedBenefits,
-  sources: review.sources,
+  sources: [...review.sources, ...bridgeAudit.sources.filter((source) => !review.sources.some((existing) => existing.url === source.url))],
 };
 
 export default function InstituteOnAgingResearchPage() {

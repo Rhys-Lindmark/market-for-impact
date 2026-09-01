@@ -4,6 +4,7 @@ import fs from 'node:fs';
 
 const review = JSON.parse(fs.readFileSync('data/san-francisco/institute-on-aging-review-v1.json', 'utf8'));
 const model = JSON.parse(fs.readFileSync('data/san-francisco/institute-on-aging-cea-v1.json', 'utf8'));
+const bridgeAudit = JSON.parse(fs.readFileSync('data/san-francisco/institute-on-aging-qaly-bridge-audit-v1.json', 'utf8'));
 
 test('Institute on Aging review separates relevant research from causal impact', () => {
   assert.equal(review.evidence.length, 5);
@@ -42,4 +43,19 @@ test('Institute on Aging review preserves program, period, payer, and public-fin
   assert.match(review.financialContext.boundary, /different accounting fields, not interchangeable funding gaps/i);
   assert.ok(review.nativeScale.every((row) => /not/i.test(row.semantics)));
   assert.ok(review.sources.every((source) => source.url && source.published && source.retrieved && source.sourceType));
+});
+
+test('Institute on Aging fails closed on the 10-QALY comparison', () => {
+  assert.equal(bridgeAudit.sharedDenominator.qalyThreshold, 10);
+  assert.equal(bridgeAudit.status, 'not-yet-convertible');
+  assert.equal(bridgeAudit.sharedDenominator.publishedPriceUsd, null);
+  assert.equal(bridgeAudit.failedGates.length, 5);
+  assert.equal(bridgeAudit.failedGates.every((gate) => gate.status === 'failed'), true);
+  assert.match(bridgeAudit.failedGates.find((gate) => gate.key === 'outcome_mapping').why, /3-item UCLA/i);
+  assert.match(bridgeAudit.failedGates.find((gate) => gate.key === 'program_effect').why, /78 completed the six-month/i);
+  assert.equal(bridgeAudit.candidateEvidence.annualUtilityGap, 0.04);
+  assert.equal(bridgeAudit.candidateEvidence.candidateSixMonthQalyPerRemission, 0.02);
+  assert.equal(bridgeAudit.illustrativeCounterfactual.nativeCostPerOutcomeUsd / bridgeAudit.illustrativeCounterfactual.qalyPerOutcome * 10, bridgeAudit.illustrativeCounterfactual.resultUsd);
+  assert.equal(bridgeAudit.illustrativeCounterfactual.status, 'not-a-comparison-price');
+  assert.match(bridgeAudit.illustrativeCounterfactual.publicationBoundary, /must not appear.*comparison price/i);
 });

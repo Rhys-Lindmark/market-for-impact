@@ -1,0 +1,103 @@
+{
+  "version": "sf-institute-on-aging-qaly-bridge-audit-v0.1",
+  "generatedAt": "2026-08-31T19:48:00-07:00",
+  "status": "not-yet-convertible",
+  "sharedDenominator": {
+    "label": "one better life",
+    "qalyThreshold": 10,
+    "publishedPriceUsd": null
+  },
+  "nativeOutcome": "One additional participant below the study's 3-item UCLA loneliness threshold at six months",
+  "decision": "Do not publish a dollars-per-10-QALYs price. The IOA pilot measured a binary 3-item UCLA loneliness threshold, not preference-based health utility, and its 46%-to-28% change came from an uncontrolled cohort with substantial loss to follow-up. Available utility studies are cross-sectional, use different loneliness definitions and health-utility instruments, and do not establish the timing or persistence of a utility gain.",
+  "candidateEvidence": {
+    "design": "Systematic review of 19 observational studies reporting loneliness or social isolation alongside health-state utility values",
+    "population": "People with pre-existing health conditions; populations, conditions, loneliness measures, and utility instruments varied",
+    "contrast": "Lonely versus not lonely in two chronic-condition studies using HUI2 or EQ-5D-3L",
+    "annualUtilityGap": 0.04,
+    "candidateSixMonthQalyPerRemission": 0.02,
+    "candidateArithmetic": "0.04 annual utility gap x 0.5 year",
+    "boundary": "The 0.04 difference is a cross-sectional association in other populations, not a causal effect of Friendship Line, a mapping from the 3-item UCLA threshold, or a measured six-month utility gain. The review found heterogeneity and confounding too substantial for quantitative synthesis."
+  },
+  "failedGates": [
+    {
+      "key": "outcome_mapping",
+      "label": "Map the loneliness threshold to utility",
+      "status": "failed",
+      "why": "The IOA study defined loneliness as 3 or more points on the 3-item UCLA scale. The candidate utility literature used varied loneliness definitions and preference-based instruments; no validated mapping from this binary threshold to EQ-5D, HUI, SF-6D, or AQoL utility was located."
+    },
+    {
+      "key": "causal_utility_effect",
+      "label": "Separate loneliness from correlated illness",
+      "status": "failed",
+      "why": "The 0.04 utility gap is observational and comes from people with pre-existing health conditions. Depression, disability, chronic illness, and other confounding can affect both loneliness and utility, so the association cannot be treated as the causal utility gained by remitting loneliness."
+    },
+    {
+      "key": "program_effect",
+      "label": "Measure Friendship Line's causal effect",
+      "status": "failed",
+      "why": "The pilot had no concurrent control group. Of 175 baseline participants, 121 had any follow-up and only 78 completed the six-month interview; regression to the mean, secular change, selection, and missing outcomes remain unresolved."
+    },
+    {
+      "key": "duration",
+      "label": "Establish timing and persistence",
+      "status": "failed",
+      "why": "A lower loneliness share at six months does not establish when a change began, its area under the curve, whether it persisted after the final interview, or whether health utility changed for the same duration."
+    },
+    {
+      "key": "instrument_sensitivity",
+      "label": "Choose a defensible utility instrument",
+      "status": "failed",
+      "why": "The evidence review warns that EQ-5D may be insufficiently sensitive to psychological and social outcomes and that different instruments can yield materially different values. IOA did not directly collect a preference-based utility measure."
+    }
+  ],
+  "illustrativeCounterfactual": {
+    "status": "not-a-comparison-price",
+    "assumptions": "If, contrary to the missing evidence, each modeled six-month remission caused the full 0.04 annual utility difference for exactly six months, assign 0.02 QALY per remission.",
+    "nativeCostPerOutcomeUsd": 14857,
+    "qalyPerOutcome": 0.02,
+    "arithmetic": "$14,857 / 0.02 QALY x 10 QALYs",
+    "resultUsd": 7428500,
+    "publicationBoundary": "This arithmetic is shown only to expose the unsupported mapping, causality, and duration assumptions. It must not appear as IOA's comparison price, rank, or recommendation."
+  },
+  "requiredEvidence": [
+    "Pre-specify the 3-item UCLA outcome and collect a preference-based utility measure at baseline, intermediate time points, and follow-up.",
+    "Use a randomized or credible concurrent comparison with complete participant flow, exposure, missing-data analysis, and a pre-specified causal estimand.",
+    "Estimate the utility change jointly with loneliness so the bridge does not rely on a cross-study threshold mapping.",
+    "Measure onset, area under the utility curve, and persistence beyond the six-month endpoint.",
+    "Publish incremental Friendship Line cost, payer and public-funding displacement, capacity, and a dated marginal funding plan."
+  ],
+  "sources": [
+    {
+      "publisher": "Annals of the New York Academy of Sciences",
+      "title": "A proactive phone intervention for older adults to address loneliness identified by a health plan",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13050024/",
+      "published": "2024-09-24",
+      "retrieved": "2026-08-31",
+      "sourceType": "peer-reviewed uncontrolled mixed-methods pilot"
+    },
+    {
+      "publisher": "Quality of Life Research",
+      "title": "The impact of loneliness and social isolation on health state utility values: a systematic literature review",
+      "url": "https://link.springer.com/article/10.1007/s11136-021-03063-1",
+      "published": "2022",
+      "retrieved": "2026-08-31",
+      "sourceType": "peer-reviewed systematic literature review"
+    },
+    {
+      "publisher": "UK Department for Culture, Media and Sport",
+      "title": "Tackling loneliness evidence review: full report",
+      "url": "https://www.gov.uk/government/publications/tackling-loneliness-evidence-review/tackling-loneliness-evidence-review-full-report",
+      "published": "2023-03-23",
+      "retrieved": "2026-08-31",
+      "sourceType": "government evidence review"
+    },
+    {
+      "publisher": "NIHR Journals Library",
+      "title": "Promoting social engagement and well-being in older people: the PLINY randomised controlled trial",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK264030/",
+      "published": "2014",
+      "retrieved": "2026-08-31",
+      "sourceType": "randomized trial report with unusable health-economic analysis"
+    }
+  ]
+}

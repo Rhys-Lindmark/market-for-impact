@@ -16,7 +16,7 @@ test('Compass review separates the C-Rent model from broader portfolio evidence'
   assert.match(review.decision.costEffectiveness, /approximately \$485,000/i);
   assert.equal(review.decision.roomForMoreFunding, 'Not published');
   assert.equal(review.model.missingInputs.length, 8);
-  assert.match(review.model.qalyBoundary, /No QALY/);
+  assert.match(review.model.qalyBoundary, /very-low-confidence.*1\.35 million per 10 QALYs/i);
 });
 
 test('Compass review keeps assistance transfers and reported outcomes bounded', () => {

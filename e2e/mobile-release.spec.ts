@@ -369,19 +369,20 @@ test('phone donors can inspect the EDC model with conflicting evidence and no li
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 
-test('phone donors can inspect the Compass C-Rent model and its blocked life-bettered conversion', async ({ page }, testInfo) => {
+test('phone donors can inspect the Compass C-Rent native and 10-QALY decision models', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'phone-390');
   await page.goto('/charities/compass-family-services', { waitUntil: 'domcontentloaded' });
   const review = page.locator('.charity-report-article');
   await expect(page.getByRole('heading', { level: 1, name: 'Compass Family Services', exact: true })).toBeVisible();
   await expect(page.getByText('≈ $485K', { exact: true })).toBeVisible();
-  await expect(review).toContainText(/\$ per 10 QALYs · one better life/i);
-  await expect(page.getByText('Not yet convertible', { exact: true })).toBeVisible();
-  await expect(review).toContainText('≈ $298K / 10 QALYs');
-  await expect(review).toContainText('EXTERNAL STUDY · NOT COMPASS');
-  await expect(review).toContainText('= Withheld');
-  await expect(review.locator('.charity-audit-gates article')).toHaveCount(8);
-  await expect(page.getByText(/no finite upper bound/i)).toBeVisible();
+  await expect(review).toContainText(/\$ per 10 QALYs — one better life/i);
+  await expect(page.getByText('≈ $1.35M', { exact: true })).toBeVisible();
+  await expect(review).toContainText('about $1.35 million per better life');
+  await expect(review).toContainText('$367.68K');
+  await expect(review).toContainText('$17.36M');
+  await expect(review).toContainText('one adult-equivalent');
+  await expect(review.locator('.charity-qaly-bridge .charity-sensitivity article')).toHaveCount(3);
+  await expect(review).toContainText(/no finite upper bound/i);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 

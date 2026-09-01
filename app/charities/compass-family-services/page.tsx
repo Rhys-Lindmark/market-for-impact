@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import CharityResearchReport, { type CharityReportContent } from '@/components/CharityResearchReport';
 import review from '@/data/san-francisco/compass-family-services-review-v1.json';
 import model from '@/data/san-francisco/compass-c-rent-cea-v1.json';
-import bridgeAudit from '@/data/san-francisco/compass-c-rent-qaly-bridge-audit-v1.json';
+import bridge from '@/data/san-francisco/compass-c-rent-qaly-bridge-audit-v1.json';
 
 export const metadata: Metadata = {
   title: 'Compass C-Rent homelessness prevention — charity research | Market for Impact',
@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 
 const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
 const compactMoney = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 1 });
+const bridgeMoney = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 2 });
 const number = new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 });
 const percent = new Intl.NumberFormat('en-US', { style: 'percent', maximumFractionDigits: 1 });
 const cost = model.inputs.find((input) => input.key === 'gross_accounting_cost_per_reported_family_usd')!;
@@ -29,11 +30,11 @@ const content: CharityReportContent = {
   eyebrow: 'CHARITY RESEARCH · SAN FRANCISCO',
   program: 'C-Rent back-rent and move-in assistance, case management, and problem-solving for families at risk of homelessness',
   donationUrl: review.organization.donationUrl,
-  published: '31 August 2026',
+  published: '1 September 2026',
   modelVersion: model.version,
   nutshell: {
     headline: 'A concrete prevention pathway. Strong transferred evidence. No Compass counterfactual.',
-    body: <>Compass reports that financial support prevented homelessness for <strong>207 at-risk families</strong> in FY2025. Its audit assigns <strong>{money.format(model.inputs.find((input) => input.key === 'audited_c_rent_program_expense_usd')!.best)}</strong> to C-Rent, or <strong>about {money.format(cost.best)} per reported family</strong>. Applying a discounted 2.0-point effect from a geographically relevant randomized trial gives a conditional estimate of <strong>about {money.format(model.bottomLine.costPerAdditionalHomelessnessEpisodeAvertedUsd)} per additional six-month homelessness episode averted</strong>. A null effect remains plausible.</>,
+    body: <>Compass reports that financial support prevented homelessness for <strong>207 at-risk families</strong> in FY2025. Its audit assigns <strong>{money.format(model.inputs.find((input) => input.key === 'audited_c_rent_program_expense_usd')!.best)}</strong> to C-Rent, or <strong>about {money.format(cost.best)} per reported family</strong>. Applying a discounted 2.0-point effect from a geographically relevant randomized trial gives a conditional estimate of <strong>about {money.format(model.bottomLine.costPerAdditionalHomelessnessEpisodeAvertedUsd)} per additional six-month homelessness episode averted</strong>. Our separate health-utility transfer produces a very-low-confidence central estimate of <strong>about {bridgeMoney.format(bridge.modeledBridge.bestCostPerTenQalysUsd)} per 10 QALYs</strong>. A null effect remains plausible.</>,
     whyItMayWork: 'A temporary rent or move-in cash gap can trigger eviction and shelter entry even when a family could otherwise sustain housing. C-Rent pairs direct assistance with case management and problem-solving.',
     whyWeAreCautious: 'The 207-family count is an administrative classification without a comparison or published follow-up, and the closest randomized study found stronger effects for households without children.',
     recommendationBlocker: 'Compass has not published C-Rent’s applicant funnel, unique-household reconciliation, HMIS-linked outcomes, source-specific assistance ledger, or a dated marginal plan showing that a new private gift adds rather than displaces aid.',
@@ -41,7 +42,7 @@ const content: CharityReportContent = {
   summary: [
     { label: 'REPORTED COST BENCHMARK', value: '≈ $9,700', detail: 'FY2025 audited C-Rent expense per reported prevention-classified family; not a causal impact price' },
     { label: 'OUR CONDITIONAL BEST GUESS', value: '≈ $485K', detail: 'per additional family avoiding recorded homelessness within six months' },
-    { label: '$ PER 10 QALYS · ONE BETTER LIFE', value: 'Not yet convertible', detail: 'eight explicit evidence gates fail; the native family-housing model remains visible below' },
+    { label: 'COST PER BETTER LIFE', value: '≈ $1.35M', detail: 'per 10 QALYs; very-low-confidence transfer from a VA housing model' },
     { label: 'FUNDING ROOM', value: 'Not published', detail: 'the $100,000 gift is a scenario, not a current marginal offer' },
   ],
   programSection: {
@@ -65,28 +66,28 @@ const content: CharityReportContent = {
     uncertaintyBoundary: model.nullEffectBoundary,
     fundingBoundary: model.fundingRoom.boundary,
   },
-  comparisonAudit: {
-    headline: 'Not yet convertible to $ per 10 QALYs—and a prevention classification is not a measured health-utility unit.',
-    body: bridgeAudit.decision,
-    candidate: {
-      label: 'EXTERNAL STUDY · NOT COMPASS',
-      value: '≈ $298K / 10 QALYs',
-      detail: 'A 2024 VA-payer model estimated $29,751 per QALY for SSVF homelessness prevention. Veteran housing trajectories, mortality, healthcare costs, and assumed utility weights do not establish Compass’s donor cost or QALYs.',
+  comparisonBridge: {
+    headline: 'Our current best estimate: about $1.35 million per better life (10 QALYs).',
+    body: bridge.decision,
+    equation: {
+      label: 'EXPLORATORY COST PER 10 QALYS · ONE BETTER LIFE',
+      expression: `${money.format(bridge.modeledBridge.modeledDonorCostPerAssistedFamilyUsd.best)} ÷ ${bridge.modeledBridge.qalyPerAssistedFamily.best} QALY × 10`,
+      result: `= ${bridgeMoney.format(bridge.modeledBridge.bestCostPerTenQalysUsd)}`,
     },
-    failedGates: bridgeAudit.failedGates.map((gate) => ({ key: gate.key, label: gate.label, why: gate.why })),
-    illustrative: {
-      expression: bridgeAudit.illustrativeCounterfactual.arithmetic,
-      result: '= Withheld',
-      boundary: bridgeAudit.illustrativeCounterfactual.publicationBoundary,
-    },
-    requiredEvidence: bridgeAudit.requiredEvidence,
+    inputs: [
+      { key: 'donor_cost', label: 'Modeled donor cost per reported family', confidence: 'very low as a marginal price', best: money.format(bridge.modeledBridge.modeledDonorCostPerAssistedFamilyUsd.best), range: `${money.format(bridge.modeledBridge.modeledDonorCostPerAssistedFamilyUsd.low)}–${money.format(bridge.modeledBridge.modeledDonorCostPerAssistedFamilyUsd.high)}`, basis: bridge.modeledBridge.modeledDonorCostPerAssistedFamilyUsd.basis },
+      { key: 'va_qaly', label: 'VA model QALYs per prevention recipient', confidence: 'moderate for model; indirect for Compass', best: String(bridge.sourceEvidence.incrementalQalysPerRecipient), range: 'Published point estimate', basis: 'A two-year VA simulation estimated 0.144 incremental QALYs and 90.7 additional stable-housing days per homelessness-prevention recipient receiving temporary financial assistance.' },
+      { key: 'compass_qaly', label: 'QALYs per Compass reported family after transfer discount', confidence: 'very low transfer', best: String(bridge.modeledBridge.qalyPerAssistedFamily.best), range: `${bridge.modeledBridge.qalyPerAssistedFamily.low}–${bridge.modeledBridge.qalyPerAssistedFamily.high}`, basis: bridge.sourceEvidence.compassQalysPerAssistedFamily.basis },
+    ],
+    sensitivity: bridge.modeledBridge.sensitivity.map((row) => ({ case: row.case, headline: bridgeMoney.format(row.costPerTenQalysUsd), detail: `${money.format(row.donorCostPerFamilyUsd)} per family · ${percent.format(row.retainedShareOfVaQalyEffect)} of VA QALY estimate retained` })),
+    boundary: `${bridge.modeledBridge.nullBoundary} ${bridge.sourceEvidence.boundary}`,
   },
   evidence: review.evidence.filter((item) => evidenceKeys.has(item.key)),
   reservations: review.reservations,
-  excludedBenefits: model.excludedBenefits,
+  excludedBenefits: [...new Set([...model.excludedBenefits, ...bridge.excludedBenefits])],
   sources: [
     ...review.sources.filter((source) => model.sources.some((modelSource) => modelSource.url === source.url)),
-    ...bridgeAudit.sources.filter((source) => !review.sources.some((existing) => existing.url === source.url)),
+    ...bridge.sources.filter((source) => !review.sources.some((existing) => existing.url === source.url)),
   ],
 };
 

@@ -1,121 +1,135 @@
 {
-  "version": "sf-compass-c-rent-qaly-bridge-audit-v0.1",
-  "generatedAt": "2026-08-31T21:25:00-07:00",
-  "status": "not-yet-convertible",
+  "version": "sf-compass-c-rent-qaly-bridge-v0.2",
+  "generatedAt": "2026-09-01T01:20:00-07:00",
+  "status": "exploratory-housing-health-transfer-model",
   "sharedDenominator": {
     "label": "one better life",
     "qalyThreshold": 10,
-    "publishedPriceUsd": null
+    "publishedPriceUsd": 1347730.8105206655
   },
-  "nativeOutcome": "One additional at-risk family that avoids recorded homelessness within six months because Compass C-Rent provided financial assistance",
-  "decision": "Do not publish a Compass C-Rent dollars-per-10-QALYs price. Compass reports a prevention count and has audited C-Rent expense, but it does not measure a causal housing effect, preference-based health utility, mortality, days in mutually exclusive housing states, or adult and child spillovers. A 2024 JAMA Network Open model evaluates temporary financial assistance for homelessness prevention, but it is a VA-payer model of veterans and does not establish QALYs for Compass families. It is an external comparator and model template, not a transferable coefficient.",
-  "candidateEvidence": {
-    "status": "external-comparator-not-transferable",
+  "decision": "Publish an explicit, very-low-confidence decision estimate of approximately $1.35 million per 10 QALYs. The model starts from a 2024 JAMA Network Open homelessness-prevention model's 0.144 incremental QALYs per veteran receiving temporary financial assistance, applies a 50% central transfer discount for Compass's family population, intervention bundle, healthcare linkage, housing trajectory, mortality, and utility assumptions, and divides the audited FY2025 C-Rent accounting ratio of $9,704 per reported prevention-classified family by 0.072 QALY. This participant-level health transfer is a separate decision model and is not multiplied by the native model's judgmental 2-point six-month homelessness effect. The conditional positive-effect range is approximately $368,000 to $17.4 million per 10 QALYs. A true null remains plausible. This is a best-effort donor estimate, not a measured Compass effect, verified marginal price, or funding recommendation.",
+  "sourceEvidence": {
     "nearestEvidence": "VA Supportive Services for Veteran Families homelessness-prevention economic model",
     "studyPopulation": "Veterans enrolled in SSVF homelessness prevention",
     "timeHorizonYears": 2,
     "incrementalCostUsd": 4291,
-    "incrementalQalys": 0.144,
+    "incrementalStableHousingDays": 90.7,
+    "incrementalQalysPerRecipient": 0.144,
     "publishedCostPerQalyUsd": 29751,
     "publishedCostPerTenQalysUsd": 297510,
-    "compassQalysPerAdditionalFamilyAvoidingHomelessness": null,
-    "boundary": "The published ICER uses VA costs and savings, observational veteran housing transitions, veteran mortality inputs, an unstable-housing utility of 0.434 derived from a standard-gamble survey, and stable housing utility of 1 by assumption. Compass's donor numerator, family population, back-rent and move-in pathway, six-month event outcome, healthcare access, mortality, housing trajectory, and person-level utility are not the same. The study's $297,510 per 10 QALYs is not Compass's philanthropic price."
-  },
-  "failedGates": [
-    {
-      "key": "outcome_definition",
-      "label": "Define and verify Compass's prevention outcome",
-      "status": "failed",
-      "why": "Compass reports 207 at-risk families prevented from becoming homeless through financial support, but it does not reconcile the count to unique C-Rent households, publish the eligible-applicant denominator, use a common follow-up, link to HMIS, or distinguish continued tenancy, moves, doubling up, shelter, and unsheltered homelessness."
+    "compassQalysPerAssistedFamily": {
+      "best": 0.072,
+      "low": 0.0144,
+      "high": 0.144,
+      "basis": "The midpoint retains 50% of the VA model's 0.144 incremental QALYs per homelessness-prevention enrollee. This explicit discount covers veteran-to-family transfer, different assistance and service bundles, VA healthcare linkage, observational housing transitions and mortality inputs, a stable-housing utility of 1 by assumption, and the absence of Compass-specific utility measurement. The model counts one adult-equivalent beneficiary per reported prevention-classified family and excludes child and caregiver spillovers. The 10%-100% retention range is a decision range, not a confidence interval."
     },
+    "boundary": "The JAMA model follows veterans through stable housing, unstable housing, and death for two years. It uses observational VA housing transitions, mortality and healthcare costs, an unstable-housing utility of 0.434 from a community standard-gamble survey, and stable-housing utility of 1 by assumption. It does not study Compass, Bay Area families, children, C-Rent, or philanthropy."
+  },
+  "modeledBridge": {
+    "modeledDonorCostPerAssistedFamilyUsd": {
+      "best": 9703.661835748791,
+      "low": 5294.613526570049,
+      "high": 25000,
+      "basis": "The midpoint is the audited FY2025 C-Rent program expense of $2,008,658 divided by 207 organization-reported prevention-classified families. The optimistic floor counts only the audited $1,095,985 housing-assistance line divided by 207. The cautious $25,000 case allows for an uncertain marginal case mix and delivery cost. None is a published current donor price, and the annual-report count is not explicitly reconciled to unique C-Rent households."
+    },
+    "qalyPerAssistedFamily": {
+      "best": 0.072,
+      "low": 0.0144,
+      "high": 0.144
+    },
+    "formula": "modeled_donor_cost_per_assisted_family_usd / qaly_per_assisted_family * 10",
+    "bestCostPerTenQalysUsd": 1347730.8105206655,
+    "costPerQalyUsd": 134773.08105206655,
+    "positiveEffectRangeUsd": {
+      "low": 367681.49490069784,
+      "high": 17361111.111111112
+    },
+    "sensitivity": [
+      {
+        "case": "Optimistic transfer",
+        "donorCostPerFamilyUsd": 5294.613526570049,
+        "retainedShareOfVaQalyEffect": 1,
+        "qalyPerAssistedFamily": 0.144,
+        "costPerTenQalysUsd": 367681.49490069784
+      },
+      {
+        "case": "Central transfer-discounted estimate",
+        "donorCostPerFamilyUsd": 9703.661835748791,
+        "retainedShareOfVaQalyEffect": 0.5,
+        "qalyPerAssistedFamily": 0.072,
+        "costPerTenQalysUsd": 1347730.8105206655
+      },
+      {
+        "case": "Cautious positive transfer",
+        "donorCostPerFamilyUsd": 25000,
+        "retainedShareOfVaQalyEffect": 0.1,
+        "qalyPerAssistedFamily": 0.0144,
+        "costPerTenQalysUsd": 17361111.111111112
+      }
+    ],
+    "nullBoundary": "The numeric range is conditional on a positive Compass health effect and donor additionality. Compass has not measured preference-based utility or its causal effect, and the VA coefficient may not transfer. If a new private dollar displaces public or restricted funding, reaches families whose housing would remain stable anyway, or causes no QALY gain, the impact price has no finite upper bound."
+  },
+  "evidenceWeaknesses": [
     {
       "key": "program_effect",
-      "label": "Measure C-Rent's causal prevention effect",
-      "status": "failed",
-      "why": "The 2.0-point six-month effect is an MFI judgment discounted from a 3.8-point Santa Clara randomized offer effect. Compass has no randomized allocation, eligibility-cutoff design, phased rollout, concurrent comparison, or complete participant flow, and the external study reported smaller effects for households with children. A null effect remains plausible."
+      "label": "Compass causal effect",
+      "why": "Compass's 207-family prevention classification has no applicant denominator, common follow-up, HMIS-linked comparison, or randomized allocation. The native 2-point six-month effect and the QALY transfer are both judgments; a null remains plausible."
     },
     {
       "key": "health_state_mapping",
-      "label": "Measure preference-based health utility",
-      "status": "failed",
-      "why": "Neither Compass nor the Santa Clara trial measured EQ-5D, HUI, SF-6D, AQoL, mortality, or another person-level QALY input. The closest JAMA model assigns utility 0.434 to unstable housing from a community standard-gamble survey and utility 1 to stable housing by assumption; it does not measure utility in Compass families."
-    },
-    {
-      "key": "duration_and_trajectory",
-      "label": "Establish timing and persistence",
-      "status": "failed",
-      "why": "A prevention classification does not establish days stably housed, later eviction or homelessness, the onset of any health effect, or its persistence. The external VA model follows daily housing-state transitions for two years, while Compass publishes no comparable C-Rent trajectory."
+      "label": "Health utility transfer",
+      "why": "Compass and the Santa Clara trial did not collect EQ-5D, HUI, SF-6D, AQoL, mortality, or another person-level QALY input. The 0.072-QALY midpoint is a discounted transfer from a VA simulation, not a Compass measurement."
     },
     {
       "key": "family_person_allocation",
-      "label": "Allocate benefits across adults and children",
-      "status": "failed",
-      "why": "Compass's native unit is a family, Santa Clara randomizes applicant households, and the VA comparator models one veteran. Compass does not publish household composition, repeated participants, which members experience a health change, child and caregiver spillovers, or person-level utility, so family outcomes cannot be converted to QALYs."
+      "label": "Family allocation",
+      "why": "The estimate counts one adult-equivalent beneficiary per reported family. It excludes children and caregiver spillovers because Compass does not publish household composition or person-level outcomes; that may undercount benefits but avoids multiplying an unsupported family effect."
     },
     {
-      "key": "population_intervention_payer_transfer",
-      "label": "Validate the external-model transfer",
-      "status": "failed",
-      "why": "SSVF is a nationwide VA program for veterans and veteran families with VA healthcare linkage, different eligibility, assistance amounts, service rules, housing-state measurement, mortality, and payer costs. C-Rent serves San Francisco families through local back-rent, move-in assistance, case management, and problem-solving. The JAMA authors explicitly caution that their VA-specific results may not directly generalize to non-VA populations."
+      "key": "duration_and_trajectory",
+      "label": "Duration and trajectory",
+      "why": "The VA model follows daily housing states for two years. Compass reports no comparable trajectory, so the 50% transfer discount is doing substantial work and should be replaced by measured 3-, 6-, 12-, and 24-month housing and utility data."
     },
     {
-      "key": "marginal_program_cost",
-      "label": "Identify C-Rent's incremental donor cost",
-      "status": "failed",
-      "why": "The $9,704 numerator is a historical ratio of audited FY2025 C-Rent program expense to 207 reported prevention classifications. It combines $1,095,985 of housing assistance with $912,673 of other program expense and is not a current average award, delivery cost, incremental price, or source-specific philanthropic numerator."
-    },
-    {
-      "key": "additionality_and_overlap",
-      "label": "Reconcile funding and prevent benefit overlap",
-      "status": "failed",
-      "why": "Compass has an active San Francisco prevention contract and has not published eligible unfunded demand, source-specific balances, reimbursement rules, staff or landlord capacity, or displacement controls. Housing, mental health, safety, school continuity, food security, and public-cost pathways overlap and cannot be added independently without a longitudinal household model and dated marginal plan."
+      "key": "program_cost_and_additionality",
+      "label": "Donor cost and funding room",
+      "why": "The $9,704 numerator is an audited historical accounting ratio, not a current marginal price. Compass has an active public prevention contract and no published eligible-unfunded queue, source-specific balance, displacement rule, or current marginal plan."
     }
   ],
-  "illustrativeCounterfactual": {
-    "status": "not-calculable",
-    "nativeCostPerOutcomeUsd": 485183.0917874396,
-    "qalyPerOutcome": null,
-    "arithmetic": "$485,183 / [missing QALYs per additional Compass family avoiding six-month homelessness] x 10 QALYs",
-    "resultUsd": null,
-    "publicationBoundary": "No arithmetic result is shown because Compass has no measured or defensibly transferred QALYs per additional family avoiding homelessness. The $485,183 native scenario remains visible as a conditional housing-outcome audit trail. The VA study's $297,510 per 10 QALYs is displayed separately as external evidence, not substituted into Compass's model, rank, or recommendation."
-  },
+  "excludedBenefits": [
+    "Child, partner, caregiver, school-continuity, safety, and family spillovers",
+    "Avoided shelter, healthcare, criminal-justice, and other public costs",
+    "Benefits from Compass programs other than C-Rent homelessness prevention",
+    "Any QALY gain beyond one adult-equivalent recipient over the two-year transferred model horizon"
+  ],
   "requiredEvidence": [
-    "Pre-specify the eligible C-Rent cohort, assistance type and source, household/person crosswalk, and mutually exclusive housing states; link every eligible applicant to 3-, 6-, 12-, and 24-month housing outcomes with complete follow-up and missing-data analysis.",
-    "Use randomized funding allocation, a credible eligibility cutoff, phased rollout, or another defensible comparison to estimate C-Rent's own intention-to-treat effect and days in each housing state.",
-    "Collect preference-based utility and mortality for adult and child household members at baseline and repeated follow-up; model person-level trajectories, household spillovers, duration, overlap, and instrument sensitivity.",
-    "Publish C-Rent transfer and delivery costs by funding source, public/private reconciliation, eligible unfunded demand, operational constraints, and dated $100K, $1M, and $10M marginal plans."
+    "Link every eligible C-Rent applicant to complete 3-, 6-, 12-, and 24-month housing outcomes, including nonrecipients, and use randomized allocation, a credible cutoff, or phased rollout to estimate Compass's own effect.",
+    "Collect preference-based health utility for adult and child household members at baseline and repeated follow-up, with household composition and missing-data analysis.",
+    "Publish C-Rent transfer and delivery costs, public/private funding reconciliation, eligible unfunded demand, operational constraints, and dated $100K, $1M, and $10M marginal plans."
   ],
   "sources": [
     {
       "publisher": "Compass Family Services",
       "title": "FY2025 Annual Report",
       "url": "https://www.compass-sf.org/annual-report",
-      "published": "2026",
-      "retrieved": "2026-08-31",
+      "published": "FY ended 2025-06-30",
+      "retrieved": "2026-09-01",
       "sourceType": "organization reporting"
     },
     {
       "publisher": "Compass Family Services / Hood & Strong",
       "title": "FY2025 audited financial statements",
       "url": "https://www.compass-sf.org/_files/ugd/13331a_cd52c427b2074bb1ae6195c5aded399b.pdf",
-      "published": "2026",
-      "retrieved": "2026-08-31",
+      "published": "2025-12-18",
+      "retrieved": "2026-09-01",
       "sourceType": "independent audit"
-    },
-    {
-      "publisher": "Compass Family Services",
-      "title": "Programs — C-Rent eviction prevention",
-      "url": "https://www.compass-sf.org/our-programs",
-      "published": "current page",
-      "retrieved": "2026-08-31",
-      "sourceType": "program description"
     },
     {
       "publisher": "Review of Economics and Statistics",
       "title": "Do Homelessness Prevention Programs Prevent Homelessness? Evidence from a Randomized Controlled Trial",
       "url": "https://doi.org/10.1162/rest_a_01344",
       "published": "2023",
-      "retrieved": "2026-08-31",
+      "retrieved": "2026-09-01",
       "sourceType": "randomized temporary-financial-assistance study"
     },
     {
@@ -123,7 +137,7 @@
       "title": "Cost-Effectiveness of Temporary Financial Assistance for Veterans Experiencing Housing Instability",
       "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2825636",
       "published": "2024-11-05",
-      "retrieved": "2026-08-31",
+      "retrieved": "2026-09-01",
       "sourceType": "observationally parameterized economic evaluation"
     },
     {
@@ -131,7 +145,7 @@
       "title": "Estimation of Utility Values for Computing Quality-Adjusted Life Years Associated With Homelessness",
       "url": "https://pubmed.ncbi.nlm.nih.gov/34629422/",
       "published": "2021-12-01",
-      "retrieved": "2026-08-31",
+      "retrieved": "2026-09-01",
       "sourceType": "cross-sectional standard-gamble survey"
     }
   ]

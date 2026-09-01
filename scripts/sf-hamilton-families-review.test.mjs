@@ -18,7 +18,7 @@ test('Hamilton review separates reported housing outcomes from additional impact
   assert.match(review.decision.costEffectiveness, /approximately \$500,000/i);
   assert.equal(review.decision.roomForMoreFunding, 'Not published');
   assert.equal(review.model.missingInputs.length, 8);
-  assert.match(review.model.qalyBoundary, /No QALY/);
+  assert.match(review.model.qalyBoundary, /very-low-confidence.*10-QALY/i);
 });
 
 test('Hamilton prevention model is arithmetically reproducible and preserves the null-effect boundary', () => {
@@ -30,7 +30,7 @@ test('Hamilton prevention model is arithmetically reproducible and preserves the
   assert.deepEqual(model.bottomLine.conditionalPositiveEffectRangeUsd, { low: 100000, high: 12500000 });
   assert.match(model.nullEffectBoundary, /no finite upper bound/i);
   assert.match(model.fundingRoom.boundary, /illustrative/i);
-  assert.ok(model.excludedBenefits.some((item) => /QALYs/i.test(item)));
+  assert.ok(model.excludedBenefits.some((item) => /QALY bridge/i.test(item)));
 });
 
 test('Hamilton review preserves portfolio, public-funding, and overlap boundaries', () => {
@@ -45,19 +45,18 @@ test('Hamilton review preserves portfolio, public-funding, and overlap boundarie
   assert.ok(review.sources.every((source) => source.url && source.published && source.retrieved && source.sourceType));
 });
 
-test('Hamilton 10-QALY audit keeps the VA comparator external and fails closed', () => {
-  assert.equal(bridgeAudit.status, 'not-yet-convertible');
+test('Hamilton 10-QALY bridge publishes a bounded decision estimate without hiding a plausible null', () => {
+  assert.equal(bridgeAudit.status, 'exploratory-housing-health-transfer-model');
   assert.equal(bridgeAudit.sharedDenominator.qalyThreshold, 10);
-  assert.equal(bridgeAudit.sharedDenominator.publishedPriceUsd, null);
-  assert.equal(bridgeAudit.failedGates.length, 8);
-  assert.ok(bridgeAudit.failedGates.every((gate) => gate.status === 'failed'));
-  assert.equal(bridgeAudit.candidateEvidence.incrementalQalys, 0.144);
-  assert.equal(bridgeAudit.candidateEvidence.publishedCostPerQalyUsd, 29751);
-  assert.equal(bridgeAudit.candidateEvidence.publishedCostPerTenQalysUsd, 297510);
-  assert.equal(bridgeAudit.candidateEvidence.hamiltonQalysPerAdditionalFamilyAvoidingHomelessness, null);
-  assert.equal(bridgeAudit.illustrativeCounterfactual.nativeCostPerOutcomeUsd, model.bottomLine.costPerAdditionalHomelessnessEpisodeAvertedUsd);
-  assert.equal(bridgeAudit.illustrativeCounterfactual.resultUsd, null);
-  assert.match(bridgeAudit.candidateEvidence.boundary, /not Hamilton's philanthropic price/i);
-  assert.match(bridgeAudit.illustrativeCounterfactual.publicationBoundary, /displayed separately as external evidence/i);
+  assert.equal(bridgeAudit.sourceEvidence.incrementalQalysPerRecipient, 0.144);
+  assert.equal(bridgeAudit.sourceEvidence.publishedCostPerQalyUsd, 29751);
+  assert.equal(bridgeAudit.modeledBridge.qalyPerAssistedFamily.best, 0.072);
+  const expected = bridgeAudit.modeledBridge.modeledDonorCostPerAssistedFamilyUsd.best / bridgeAudit.modeledBridge.qalyPerAssistedFamily.best * 10;
+  assert.equal(bridgeAudit.modeledBridge.bestCostPerTenQalysUsd, expected);
+  assert.equal(bridgeAudit.sharedDenominator.publishedPriceUsd, expected);
+  assert.deepEqual(bridgeAudit.modeledBridge.positiveEffectRangeUsd, { low: 347222.2222222222, high: 17361111.111111112 });
+  assert.equal(bridgeAudit.evidenceWeaknesses.length, 5);
+  assert.match(bridgeAudit.modeledBridge.nullBoundary, /no finite upper bound/i);
+  assert.match(bridgeAudit.sourceEvidence.hamiltonQalysPerAssistedFamily.basis, /one adult-equivalent/i);
   assert.ok(bridgeAudit.sources.every((source) => source.url && source.published && source.retrieved && source.sourceType));
 });

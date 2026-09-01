@@ -4,6 +4,7 @@ import fs from 'node:fs';
 
 const review = JSON.parse(fs.readFileSync('data/san-francisco/eviction-defense-collaborative-review-v1.json', 'utf8'));
 const model = JSON.parse(fs.readFileSync('data/san-francisco/edc-full-scope-legal-defense-cea-v1.json', 'utf8'));
+const bridge = JSON.parse(fs.readFileSync('data/san-francisco/edc-legal-defense-qaly-bridge-audit-v1.json', 'utf8'));
 
 test('EDC review preserves mixed evidence and labels its exploratory estimate', () => {
   assert.equal(review.evidence.length, 3);
@@ -43,4 +44,27 @@ test('EDC model does not turn descriptive SF outcomes into a causal input', () =
   assert.equal(effect.best, 0.05);
   assert.match(sfDescriptive.basis, /not reported as randomized or adjusted/i);
   assert.match(effect.basis, /Massachusetts Housing Court experiment found no/i);
+});
+
+test('EDC uses 10 QALYs as the shared denominator but fails closed on conversion', () => {
+  assert.equal(bridge.sharedDenominator.qalyThreshold, 10);
+  assert.equal(bridge.sharedDenominator.publishedPriceUsd, null);
+  assert.equal(bridge.status, 'not-yet-convertible');
+  assert.equal(bridge.failedGates.length, 8);
+  assert.ok(bridge.failedGates.every((gate) => gate.status === 'failed'));
+  assert.equal(bridge.illustrativeCounterfactual.nativeCostPerOutcomeUsd, model.bottomLine.costPerAdditionalRetainedPossessionOutcomeUsd);
+  assert.equal(bridge.illustrativeCounterfactual.qalyPerOutcome, null);
+  assert.equal(bridge.illustrativeCounterfactual.resultUsd, null);
+  assert.match(bridge.decision, /retaining possession is a legal and housing outcome/i);
+  assert.match(bridge.candidateEvidence.boundary, /does not estimate causal QALYs/i);
+});
+
+test('EDC donor-facing pages show the common better-life denominator without inventing a price', () => {
+  const report = fs.readFileSync('app/charities/eviction-defense-collaborative/page.tsx', 'utf8');
+  const sfPage = fs.readFileSync('app/san-francisco/page.tsx', 'utf8');
+  assert.match(report, /\$ PER 10 QALYS · ONE BETTER LIFE/);
+  assert.match(report, /Not yet convertible/);
+  assert.match(report, /No \$ \/ QALY estimate/);
+  assert.match(sfPage, /Eviction Defense Collaborative[\s\S]*betterLifePrice: 'Not yet convertible'/);
+  assert.match(sfPage, /Eight evidence gates failed/);
 });

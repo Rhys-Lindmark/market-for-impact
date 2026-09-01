@@ -1,0 +1,119 @@
+{
+  "version": "sf-edc-legal-defense-qaly-bridge-audit-v0.1",
+  "generatedAt": "2026-08-31T22:35:00-07:00",
+  "status": "not-yet-convertible",
+  "sharedDenominator": {
+    "label": "one better life",
+    "qalyThreshold": 10,
+    "publishedPriceUsd": null
+  },
+  "nativeOutcome": "One additional tenant household retaining the right to occupy its home because full-scope legal representation was provided instead of less intensive assistance",
+  "decision": "Do not publish an Eviction Defense Collaborative dollars-per-10-QALYs price. The legal model itself is conditional on a judgmental five-point retained-possession effect, while randomized evidence conflicts across courts and comparison services. Research links eviction and housing insecurity to health harms, but it does not supply an EDC-specific causal legal-defense effect, preference-based utility change, duration, or person-level household allocation. Retaining possession is a legal and housing outcome—not a measured health-utility unit.",
+  "candidateEvidence": {
+    "status": "health-pathway-evidence-not-a-qaly-bridge",
+    "nearestEvidence": "Systematic reviews of housing-stability interventions and eviction-related health outcomes, plus a Washington tenant-right-to-counsel mixed-methods study",
+    "studyPopulation": "Heterogeneous US housing-insecurity populations, children exposed to eviction, and Washington tenants receiving legal aid",
+    "publishedCostPerQalyUsd": null,
+    "publishedCostPerTenQalysUsd": null,
+    "edcQalysPerAdditionalRetainedPossessionOutcome": null,
+    "boundary": "The 2022 systematic review found mixed and mostly low- or very-low-certainty health evidence for targeted housing-stability interventions, including legal assistance. The 2023 child-health review reports associations across heterogeneous eviction exposures and outcomes, not a preference-based utility decrement or the effect of counsel. The 2025 Washington study combines interviews with descriptive case outcomes and reports perceived stress and potential health pathways; it does not estimate causal QALYs. None can be multiplied by EDC's retained-possession scenario."
+  },
+  "failedGates": [
+    {
+      "key": "legal_outcome_definition",
+      "label": "Define and verify the retained-possession outcome",
+      "status": "failed",
+      "why": "San Francisco reports program-wide stayed-home outcomes across providers without an EDC-only cohort, common follow-up date, complete loss-to-follow-up accounting, or separation of continued tenancy, negotiated move, dismissal, time gained, shelter entry, and later displacement."
+    },
+    {
+      "key": "program_effect",
+      "label": "Measure EDC's causal legal-defense effect",
+      "status": "failed",
+      "why": "The five-point effect is an MFI judgment. An older New York randomized experiment favored representation, a Massachusetts Housing Court experiment found no retained-possession advantage over limited assistance, and San Francisco's 18-point descriptive difference is neither randomized nor adjusted. A null effect remains plausible."
+    },
+    {
+      "key": "legal_defense_contribution",
+      "label": "Isolate legal defense from other supports",
+      "status": "failed",
+      "why": "EDC coordinates intake, limited-scope help, rental assistance, subsidies, shelter advocacy, referrals, and partner representation. Public reporting does not isolate which housing outcomes were caused by full-scope EDC counsel rather than cash, settlement-court processes, partner services, or underlying case strength."
+    },
+    {
+      "key": "health_state_mapping",
+      "label": "Measure preference-based health utility",
+      "status": "failed",
+      "why": "EDC and the legal-representation experiments did not collect EQ-5D, HUI, SF-6D, AQoL, mortality, or another person-level QALY input. Observed or self-reported health associations following eviction do not establish the utility gain from one EDC-caused retained-possession outcome."
+    },
+    {
+      "key": "duration_and_trajectory",
+      "label": "Establish housing and health duration",
+      "status": "failed",
+      "why": "Retaining possession at case resolution does not establish days housed, later eviction or homelessness, housing quality, the onset of any health change, or its persistence. EDC has not published linked 3-, 6-, 12-, and 24-month housing and health trajectories."
+    },
+    {
+      "key": "household_person_allocation",
+      "label": "Allocate benefits across household members",
+      "status": "failed",
+      "why": "The native unit is a tenant household, but QALYs are person-level. Public data do not report household composition, duplicate cases, which adults or children remain housed, who experiences a health change, caregiver and child spillovers, or overlap among household members."
+    },
+    {
+      "key": "marginal_program_cost",
+      "label": "Identify EDC's incremental donor cost",
+      "status": "failed",
+      "why": "The $6,300 numerator is a historical city staffing ratio: a $315,000 fully loaded team divided by a 50-case deliverable. It is not an EDC invoice, current marginal case cost, completed-case denominator, or private-gift offer, and it excludes the distinction between assistance transfers and delivery cost."
+    },
+    {
+      "key": "additionality_and_overlap",
+      "label": "Reconcile public funding and benefit overlap",
+      "status": "failed",
+      "why": "EDC has not published eligible unfunded demand, public reimbursement and displacement rules, source-specific balances, attorney ramp time, or dated $100K, $1M, and $10M expansion plans. Housing, mental health, safety, school continuity, income, and public-cost pathways overlap and cannot be summed without a longitudinal person-level model."
+    }
+  ],
+  "illustrativeCounterfactual": {
+    "status": "not-calculable",
+    "nativeCostPerOutcomeUsd": 126000,
+    "qalyPerOutcome": null,
+    "arithmetic": "$126,000 / [missing QALYs per additional EDC-caused retained-possession outcome] x 10 QALYs",
+    "resultUsd": null,
+    "publicationBoundary": "No arithmetic result is shown because the model lacks both a stable EDC causal legal outcome and a defensible person-level health-utility bridge. The $126,000 native scenario remains visible as a conditional legal-outcome audit trail. Health associations and perceived stress relief are pathway evidence, not coefficients for EDC's rank or recommendation."
+  },
+  "requiredEvidence": [
+    "Pre-specify a duplicate-free EDC full-scope cohort and mutually exclusive legal and housing outcomes; link every eligible case to housing status at 3, 6, 12, and 24 months with complete follow-up and missing-data analysis.",
+    "Use randomized assignment when capacity is constrained, a credible vulnerability-score cutoff, phased rollout, or another defensible comparison to estimate EDC's own effect relative to the actual limited-scope alternative.",
+    "Collect preference-based utility and mortality for adult and child household members at baseline and repeated follow-up; model person-level housing and health trajectories, duration, spillovers, overlap, and instrument sensitivity.",
+    "Publish incremental EDC staffing and delivery costs separately from rental-assistance transfers, reconcile public and private sources, document eligible unfunded demand and constraints, and provide dated $100K, $1M, and $10M marginal plans."
+  ],
+  "sources": [
+    {
+      "publisher": "JAMA Network Open",
+      "title": "Association of Promoting Housing Affordability and Stability With Improved Health Outcomes: A Systematic Review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36322083/",
+      "published": "2022-11-01",
+      "retrieved": "2026-08-31",
+      "sourceType": "systematic review"
+    },
+    {
+      "publisher": "JAMA Network Open",
+      "title": "Evictions and Infant and Child Health Outcomes: A Systematic Review",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10091158/",
+      "published": "2023-04-11",
+      "retrieved": "2026-08-31",
+      "sourceType": "systematic review"
+    },
+    {
+      "publisher": "Social Science & Medicine",
+      "title": "Evictions, legal counsel, and population health: A mixed methods study",
+      "url": "https://doi.org/10.1016/j.socscimed.2025.118134",
+      "published": "2025-07-01",
+      "retrieved": "2026-08-31",
+      "sourceType": "mixed-methods tenant-right-to-counsel study"
+    },
+    {
+      "publisher": "Abdul Latif Jameel Poverty Action Lab",
+      "title": "Legal Representation and Housing Court Cases in the United States",
+      "url": "https://www.povertyactionlab.org/evaluation/legal-representation-and-housing-court-cases-united-states",
+      "published": "research dates 2009–2011",
+      "retrieved": "2026-08-31",
+      "sourceType": "randomized-evidence synthesis"
+    }
+  ]
+}

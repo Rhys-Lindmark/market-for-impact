@@ -363,7 +363,7 @@ test('phone donors can inspect the EDC model with conflicting evidence and no li
   await expect(review).toContainText('did not improve substantive outcomes');
   await expect(review).toContainText('$126,000');
   await expect(review).toContainText('no finite upper bound');
-  await expect(review).toContainText('Not estimated');
+  await expect(review).toContainText('Not yet convertible');
   await expect(review.locator('.charity-evidence-list article')).toHaveCount(3);
   await expect(review.locator('.charity-sensitivity article')).toHaveCount(3);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);

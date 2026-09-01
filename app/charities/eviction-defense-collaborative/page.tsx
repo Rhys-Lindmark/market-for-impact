@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import CharityResearchReport, { type CharityReportContent } from '@/components/CharityResearchReport';
 import review from '@/data/san-francisco/eviction-defense-collaborative-review-v1.json';
 import model from '@/data/san-francisco/edc-full-scope-legal-defense-cea-v1.json';
+import bridgeAudit from '@/data/san-francisco/edc-legal-defense-qaly-bridge-audit-v1.json';
 
 export const metadata: Metadata = {
   title: 'Eviction Defense Collaborative legal defense — charity research | Market for Impact',
@@ -39,7 +40,7 @@ const content: CharityReportContent = {
   summary: [
     { label: 'PUBLIC COST BENCHMARK', value: '$6,300', detail: 'FY2023–24 city team budget divided by a 50-case deliverable; not an EDC marginal price' },
     { label: 'OUR CONDITIONAL BEST GUESS', value: '$126,000', detail: 'per additional tenant household retaining possession because of full-scope representation' },
-    { label: '$ PER LIFE BETTERED', value: 'Not estimated', detail: 'no defensible QALY effect, housing-duration value, or household-to-person conversion' },
+    { label: '$ PER 10 QALYS · ONE BETTER LIFE', value: 'Not yet convertible', detail: 'eight explicit evidence gates fail; the native legal-outcome model remains visible below' },
     { label: 'FUNDING ROOM', value: 'Not published', detail: 'the $100,000 gift is a scenario, not a current marginal offer' },
   ],
   programSection: {
@@ -63,10 +64,29 @@ const content: CharityReportContent = {
     uncertaintyBoundary: model.nullEffectBoundary,
     fundingBoundary: model.fundingRoom.boundary,
   },
+  comparisonAudit: {
+    headline: 'Not yet convertible to $ per 10 QALYs—and retaining possession is not a measured health-utility unit.',
+    body: bridgeAudit.decision,
+    candidate: {
+      label: 'NEAREST HEALTH EVIDENCE · NOT AN EDC COEFFICIENT',
+      value: 'No $ / QALY estimate',
+      detail: 'Systematic reviews find plausible health pathways but mixed or observational evidence. The Washington counsel study measures perceived stress and descriptive case outcomes, not causal preference-based utility.',
+    },
+    failedGates: bridgeAudit.failedGates.map((gate) => ({ key: gate.key, label: gate.label, why: gate.why })),
+    illustrative: {
+      expression: bridgeAudit.illustrativeCounterfactual.arithmetic,
+      result: '= Withheld',
+      boundary: bridgeAudit.illustrativeCounterfactual.publicationBoundary,
+    },
+    requiredEvidence: bridgeAudit.requiredEvidence,
+  },
   evidence: review.evidence,
   reservations: review.reservations,
   excludedBenefits: model.excludedBenefits,
-  sources: review.sources,
+  sources: [
+    ...review.sources,
+    ...bridgeAudit.sources.filter((source) => !review.sources.some((existing) => existing.url === source.url)),
+  ],
 };
 
 export default function EvictionDefenseCollaborativeResearchPage() {

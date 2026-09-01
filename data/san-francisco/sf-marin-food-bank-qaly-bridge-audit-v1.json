@@ -1,0 +1,87 @@
+{
+  "version": "sf-marin-food-bank-qaly-bridge-audit-v0.1",
+  "generatedAt": "2026-08-31T19:20:00-07:00",
+  "status": "not-yet-convertible",
+  "sharedDenominator": {
+    "label": "one better life",
+    "qalyThreshold": 10,
+    "publishedPriceUsd": null
+  },
+  "nativeOutcome": "One additional household not experiencing very low food security at 12 months",
+  "decision": "Do not publish a dollars-per-10-QALYs price. The available health-utility estimate describes one adult becoming fully food secure for one year, while the native SFMFB model describes a household crossing only the very-low-food-security threshold. The state transition, person allocation, duration, and organization-specific causal effect are unresolved.",
+  "candidateEvidence": {
+    "design": "Longitudinal observational target-trial emulation using nationally representative Medical Expenditure Panel Survey data",
+    "population": "Adults who screened positive for food insecurity; 1,368 were food insecure under the full survey module",
+    "contrast": "Status quo versus a hypothetical intervention making every participant food secure",
+    "qalyPerAdultYear": { "best": 0.008, "low95Ci": 0.002, "high95Ci": 0.014 },
+    "boundary": "The estimate is an adult-level one-year health-utility difference for eliminating food insecurity. It is not a randomized intervention effect, a household effect, a very-low-to-low-food-security transition, or evidence about SFMFB Community Markets."
+  },
+  "failedGates": [
+    {
+      "key": "health_state_transition",
+      "label": "Match the health-state transition",
+      "status": "failed",
+      "why": "USDA classifies both low and very low food security as food insecure. The SFMFB model estimates movement out of very low food security, which may still leave a household food insecure; the candidate utility study estimates becoming food secure."
+    },
+    {
+      "key": "person_allocation",
+      "label": "Allocate a household outcome to people",
+      "status": "failed",
+      "why": "The native result is measured per household, while QALYs accrue to people. No defensible adult/child count, affected-member share, or within-household distribution is available for the modeled Community Market cohort."
+    },
+    {
+      "key": "duration",
+      "label": "Establish duration",
+      "status": "failed",
+      "why": "A 12-month endpoint does not show when the food-security change began, whether it persisted for a full year, or what happened after follow-up."
+    },
+    {
+      "key": "program_effect",
+      "label": "Measure the SFMFB causal effect",
+      "status": "failed",
+      "why": "The native effect is transferred from Freshplace, which bundled client choice with monthly motivational interviewing and referrals in Hartford. SFMFB has not published a causal Community Market food-security or health-utility result."
+    }
+  ],
+  "illustrativeCounterfactual": {
+    "status": "not-a-comparison-price",
+    "assumptions": "If, contrary to the missing evidence, every native household outcome meant exactly one adult became fully food secure for exactly one year, use 0.008 QALY per adult-year.",
+    "nativeCostPerOutcomeUsd": 6000,
+    "qalyPerOutcome": 0.008,
+    "arithmetic": "$6,000 / 0.008 QALY x 10 QALYs",
+    "resultUsd": 7500000,
+    "publicationBoundary": "This arithmetic is shown only to expose the unsupported assumptions. It must not appear as SFMFB's comparison price, rank, or recommendation."
+  },
+  "requiredEvidence": [
+    "Report the full USDA food-security transition matrix for a defined Community Market cohort, including high, marginal, low, and very low categories.",
+    "Report unique household composition and pre-specify which adults and children receive health-utility credit.",
+    "Measure SF-6D or another preference-based health utility at baseline and follow-up, with timing sufficient to estimate duration.",
+    "Use a credible comparison, complete participant flow, missing-data analysis, and a pre-specified causal estimand.",
+    "Publish incremental program cost, public/private displacement, capacity, and a dated marginal funding plan."
+  ],
+  "sources": [
+    {
+      "publisher": "Journal of General Internal Medicine",
+      "title": "Eliminating Food Insecurity in the USA: a Target Trial Emulation Using Observational Data to Estimate Effects on Health-Related Quality of Life",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10406772/",
+      "published": "2023",
+      "retrieved": "2026-08-31",
+      "sourceType": "peer-reviewed observational target-trial emulation"
+    },
+    {
+      "publisher": "USDA Economic Research Service",
+      "title": "Food Security in the U.S.: Measurement",
+      "url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us/measurement",
+      "published": "Updated 2026",
+      "retrieved": "2026-08-31",
+      "sourceType": "official measurement definition"
+    },
+    {
+      "publisher": "American Journal of Preventive Medicine",
+      "title": "A novel food pantry program: food security, self-sufficiency, and diet-quality outcomes",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24139769/",
+      "published": "2013",
+      "retrieved": "2026-08-31",
+      "sourceType": "peer-reviewed randomized trial"
+    }
+  ]
+}

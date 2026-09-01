@@ -56,6 +56,14 @@ export type CharityReportContent = {
     sensitivity: Array<{ case: string; headline: string; detail: string }>;
     boundary: string;
   };
+  comparisonAudit?: {
+    headline: string;
+    body: string;
+    candidate: { label: string; value: string; detail: string };
+    failedGates: Array<{ key: string; label: string; why: string }>;
+    illustrative: { expression: string; result: string; boundary: string };
+    requiredEvidence: string[];
+  };
   evidence: CharityEvidence[];
   reservations: string[];
   excludedBenefits: string[];
@@ -140,6 +148,18 @@ export default function CharityResearchReport({ content }: { content: CharityRep
               </div>
               <div className="charity-sensitivity">{content.comparisonBridge.sensitivity.map((row) => <article key={row.case}><span>{row.case}</span><strong>{row.headline}</strong><p>{row.detail}</p></article>)}</div>
               <aside className="charity-boundary charity-null-boundary"><strong>Conditional bridge—not a recommendation.</strong>{content.comparisonBridge.boundary}</aside>
+            </div> : null}
+            {content.comparisonAudit ? <div className="charity-qaly-bridge charity-qaly-audit">
+              <p className="charity-section-number">SHARED DENOMINATOR AUDIT</p>
+              <h3>{content.comparisonAudit.headline}</h3>
+              <p>{content.comparisonAudit.body}</p>
+              <div className="charity-audit-candidate"><span>{content.comparisonAudit.candidate.label}</span><strong>{content.comparisonAudit.candidate.value}</strong><p>{content.comparisonAudit.candidate.detail}</p></div>
+              <h4>Why the bridge fails today</h4>
+              <div className="charity-audit-gates">{content.comparisonAudit.failedGates.map((gate) => <article key={gate.key}><span>FAILED GATE</span><strong>{gate.label}</strong><p>{gate.why}</p></article>)}</div>
+              <div className="charity-model-equation charity-audit-equation"><span>ILLUSTRATIVE ONLY · NOT A COMPARISON PRICE</span><strong>{content.comparisonAudit.illustrative.expression}</strong><b>{content.comparisonAudit.illustrative.result}</b></div>
+              <aside className="charity-boundary charity-null-boundary"><strong>Why we do not publish that number.</strong>{content.comparisonAudit.illustrative.boundary}</aside>
+              <h4>Evidence required to unlock $ per 10 QALYs</h4>
+              <ol className="charity-reservations">{content.comparisonAudit.requiredEvidence.map((item) => <li key={item}>{item}</li>)}</ol>
             </div> : null}
           </section>
 

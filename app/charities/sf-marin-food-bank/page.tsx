@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import CharityResearchReport, { type CharityReportContent } from '@/components/CharityResearchReport';
 import review from '@/data/san-francisco/sf-marin-food-bank-review-v1.json';
 import model from '@/data/san-francisco/sf-marin-food-bank-community-market-cea-v1.json';
+import bridgeAudit from '@/data/san-francisco/sf-marin-food-bank-qaly-bridge-audit-v1.json';
 
 export const metadata: Metadata = {
   title: 'SF–Marin Food Bank Community Markets — charity research | Market for Impact',
@@ -35,7 +36,7 @@ const content: CharityReportContent = {
   summary: [
     { label: 'EXPLORATORY IMPACT PRICE', value: '≈ $6,000', detail: 'per additional household not experiencing very low food security at 12 months' },
     { label: 'POSITIVE-EFFECT SENSITIVITY', value: '$1.3K–$60K', detail: 'conditional on a positive effect; the null case has no finite impact price' },
-    { label: '10-QALY LIFE BETTERED', value: 'Not estimated', detail: 'no defensible duration, QALY effect, or household-to-person conversion' },
+    { label: '$ PER 10 QALYS · ONE BETTER LIFE', value: 'Not yet convertible', detail: 'four explicit evidence gates fail; the native household outcome remains visible below' },
     { label: 'FUNDING ROOM', value: 'Not published', detail: 'the $100,000 gift is a scenario, not a current marginal offer' },
   ],
   programSection: {
@@ -58,10 +59,26 @@ const content: CharityReportContent = {
     uncertaintyBoundary: model.nullEffectBoundary,
     fundingBoundary: model.fundingRoom.boundary,
   },
+  comparisonAudit: {
+    headline: 'Not yet convertible to $ per 10 QALYs—and now we can say exactly why.',
+    body: bridgeAudit.decision,
+    candidate: {
+      label: 'BEST CANDIDATE HEALTH-UTILITY EVIDENCE',
+      value: '0.008 QALY / adult-year',
+      detail: '95% CI 0.002–0.014 in an observational target-trial emulation of eliminating food insecurity. This is useful evidence, but it does not match the modeled household outcome.',
+    },
+    failedGates: bridgeAudit.failedGates.map((gate) => ({ key: gate.key, label: gate.label, why: gate.why })),
+    illustrative: {
+      expression: bridgeAudit.illustrativeCounterfactual.arithmetic,
+      result: `= ${compactMoney.format(bridgeAudit.illustrativeCounterfactual.resultUsd)}`,
+      boundary: bridgeAudit.illustrativeCounterfactual.publicationBoundary,
+    },
+    requiredEvidence: bridgeAudit.requiredEvidence,
+  },
   evidence: review.evidence,
   reservations: review.reservations,
   excludedBenefits: model.excludedBenefits,
-  sources: review.sources,
+  sources: [...review.sources, ...bridgeAudit.sources.filter((source) => !review.sources.some((existing) => existing.url === source.url))],
 };
 
 export default function SfMarinFoodBankResearchPage() { return <CharityResearchReport content={content} />; }

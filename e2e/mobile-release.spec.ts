@@ -490,14 +490,16 @@ test('phone donors can inspect the Hamilton prevention model without treating re
   await expect(review).toContainText('roughly $500,000 per additional six-month homelessness episode averted');
   await expect(review).toContainText('The 127 reported FY2025 families remain an output, not a causal denominator');
   await expect(review).toContainText('null effect remains plausible');
-  await expect(review).toContainText(/\$ per 10 QALYs · one better life/i);
-  await expect(review).toContainText('Not yet convertible');
-  await expect(review).toContainText('≈ $298K / 10 QALYs');
-  await expect(review).toContainText('EXTERNAL STUDY · NOT HAMILTON');
-  await expect(review).toContainText('= Withheld');
-  await expect(review.locator('.charity-audit-gates article')).toHaveCount(8);
+  await expect(review).toContainText('$ per 10 QALYs — one better life');
+  await expect(review).toContainText('≈ $1.4M');
+  await expect(review).toContainText('about $1.4 million per better life');
+  await expect(review).toContainText('$347.2K');
+  await expect(review).toContainText('$17.4M');
+  await expect(review).toContainText('one adult-equivalent beneficiary');
+  await expect(review).toContainText('no finite upper bound');
   await expect(review.locator('.charity-evidence-list article')).toHaveCount(3);
-  await expect(review.locator('.charity-sensitivity article')).toHaveCount(3);
+  await expect(review.locator('.charity-model > .charity-sensitivity article')).toHaveCount(3);
+  await expect(review.locator('.charity-qaly-bridge .charity-sensitivity article')).toHaveCount(3);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 

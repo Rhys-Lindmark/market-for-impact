@@ -1,0 +1,102 @@
+{
+  "version": "sf-heart-failure-hospitalization-qaly-bridge-v0.1",
+  "generatedAt": "2026-08-31T19:05:00-07:00",
+  "nativeOutcome": "An additional 90-day heart-failure hospitalization averted",
+  "comparisonOutcome": "10 incremental QALYs (one better life)",
+  "status": "exploratory-conditional-bridge-not-funding-recommendation",
+  "bottomLine": {
+    "qalyPerHeartFailureHospitalizationAverted": 0.016,
+    "costPerQalyUsd": 13281250,
+    "costPerTenQalysUsd": 132812500,
+    "conditionalPositiveEffectRangeUsd": {
+      "low": 32345143,
+      "high": 7777777778
+    },
+    "interpretation": "Conditional on Project Open Hand causing the modeled reduction in heart-failure hospitalizations, and counting only the short-term health-related quality-of-life loss of an acute admission, the best estimate is approximately $132.8 million per 10 QALYs (one better life). The positive-effect sensitivity is approximately $32.3 million-$7.8 billion. Because the intervention's randomized primary outcome was null and the favorable heart-failure result was exploratory, a null effect remains plausible and the true upper bound is not finite."
+  },
+  "inputs": [
+    {
+      "key": "cost_per_heart_failure_hospitalization_averted_usd",
+      "label": "Conditional cost per heart-failure hospitalization averted",
+      "best": 212500,
+      "low": 56604,
+      "high": 1400000,
+      "unit": "USD",
+      "basis": "Imported from the Project Open Hand native-outcome model. The range is conditional on a positive effect and combines course-cost and causal-effect sensitivities.",
+      "confidence": "very low"
+    },
+    {
+      "key": "qaly_per_heart_failure_hospitalization_averted",
+      "label": "Short-term QALYs per heart-failure hospitalization averted",
+      "best": 0.016,
+      "low": 0.0018,
+      "high": 0.0175,
+      "unit": "QALY",
+      "basis": "Best: NICE modeled a 6-week utility dip from a worsening-heart-failure admission as a 0.064 decrement over a 3-month cycle, equal to 0.016 QALY. Low: acute-stay-only floor using ASCEND-HF's 0.11 gap between 24-hour inpatient and discharge utility over a six-day median stay (0.11 x 6 / 365 = 0.0018 QALY). High: McMurray et al.'s reported decrements of 0.105 in days 0-30 and 0.054 in days 31-90, integrated over 90 days (0.0175 QALY).",
+      "confidence": "low; external heart-failure populations"
+    },
+    {
+      "key": "qalys_per_better_life",
+      "label": "QALYs per one better life",
+      "best": 10,
+      "low": 10,
+      "high": 10,
+      "unit": "QALY",
+      "basis": "Market for Impact's shared comparison denominator. It is a reporting convention, not a clinical threshold or a claim that ten QALYs accrue to one identifiable person.",
+      "confidence": "definition"
+    }
+  ],
+  "formula": {
+    "costPerQaly": "cost_per_heart_failure_hospitalization_averted_usd / qaly_per_heart_failure_hospitalization_averted",
+    "costPerTenQalys": "cost_per_qaly_usd * 10",
+    "bestCalculation": "$212,500 / 0.016 QALY x 10 QALYs = $132,812,500 per better life",
+    "rangeMethod": "Optimistic positive-effect case divides the native model's $56,604 low cost by 0.0175 QALY and multiplies by 10. Pessimistic positive-effect case divides $1.4 million by 0.0018 QALY and multiplies by 10. A null causal effect is outside the numeric range and has no finite cost per QALY."
+  },
+  "scope": {
+    "population": "Adults recently discharged after hospitalization with known heart failure; utility evidence is transferred from other acute and chronic heart-failure populations.",
+    "duration": "Short-term acute and post-discharge health-related quality-of-life loss through 90 days.",
+    "personAllocation": "One avoided hospitalization is assigned to one patient. No household multiplier is used.",
+    "counterfactual": "Usual post-discharge care without the modeled meal course, consistent with the native randomized comparison.",
+    "overlapControls": "Counts only short-term morbidity from the avoided admission. Excludes mortality, future readmissions, caregiver effects, food security, depression, adherence, medical cost savings, and any quality-of-life benefit of meals apart from avoiding the modeled admission.",
+    "transferBoundary": "The QALY weights are not Project Open Hand measurements. They come from international heart-failure trials and NICE modeling and may not match the San Francisco population, admission severity, length of stay, or recovery trajectory."
+  },
+  "nullEffectBoundary": "This bridge does not repair the causal uncertainty in the native model. The randomized primary all-cause hospitalization endpoint did not improve; the favorable heart-failure subgroup result was exploratory and provider-pooled. If Project Open Hand's true additional effect is zero, cost per 10 QALYs has no finite upper bound.",
+  "sources": [
+    {
+      "publisher": "National Institute for Health and Care Excellence",
+      "title": "Acute heart failure: appendices — cost-effectiveness analysis",
+      "url": "https://www.nice.org.uk/guidance/cg187/documents/acute-heart-failure-appendices2",
+      "published": "2014",
+      "retrieved": "2026-08-31",
+      "sourceType": "Official health-technology-assessment model",
+      "role": "Best-estimate six-week utility dip represented as a 0.064 decrement over a three-month cycle"
+    },
+    {
+      "publisher": "PharmacoEconomics",
+      "title": "Health State Utilities of Patients with Heart Failure: A Systematic Literature Review",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7867520/",
+      "published": "2021",
+      "retrieved": "2026-08-31",
+      "sourceType": "Peer-reviewed systematic literature review",
+      "role": "Hospitalization-disutility evidence and McMurray 0-30 and 31-90 day sensitivity inputs"
+    },
+    {
+      "publisher": "BMJ Open",
+      "title": "Model-based cost-effectiveness analysis of B-type natriuretic peptide-guided care in patients with heart failure",
+      "url": "https://bmjopen.bmj.com/content/6/12/e014010",
+      "published": "2016",
+      "retrieved": "2026-08-31",
+      "sourceType": "Peer-reviewed cost-effectiveness model",
+      "role": "ASCEND-HF utility values: 0.66 at 24 hours and 0.77 at discharge"
+    },
+    {
+      "publisher": "Journal of the American College of Cardiology",
+      "title": "Hospitalization for Recently Diagnosed Versus Worsening Chronic Heart Failure: From the ASCEND-HF Trial",
+      "url": "https://www.jacc.org/doi/10.1016/j.jacc.2017.04.043",
+      "published": "2017",
+      "retrieved": "2026-08-31",
+      "sourceType": "Peer-reviewed trial analysis",
+      "role": "Six-day median hospitalization duration used in the acute-stay-only floor"
+    }
+  ]
+}

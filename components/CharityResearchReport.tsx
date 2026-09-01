@@ -48,6 +48,14 @@ export type CharityReportContent = {
     uncertaintyBoundary?: string;
     fundingBoundary: string;
   };
+  comparisonBridge?: {
+    headline: string;
+    body: string;
+    equation: { label: string; expression: string; result: string };
+    inputs: Array<{ key: string; label: string; confidence: string; best: string; range: string; basis: string }>;
+    sensitivity: Array<{ case: string; headline: string; detail: string }>;
+    boundary: string;
+  };
   evidence: CharityEvidence[];
   reservations: string[];
   excludedBenefits: string[];
@@ -121,6 +129,18 @@ export default function CharityResearchReport({ content }: { content: CharityRep
             <div className="charity-sensitivity">{content.model.sensitivity.map((row) => <article key={row.case}><span>{row.case}</span><strong>{row.headline}</strong><p>{row.detail}</p></article>)}</div>
             {content.model.uncertaintyBoundary ? <aside className="charity-boundary charity-null-boundary"><strong>The range is not a guarantee of positive impact.</strong>{content.model.uncertaintyBoundary}</aside> : null}
             <aside className="charity-boundary"><strong>This is not verified room for more funding.</strong>{content.model.fundingBoundary}</aside>
+            {content.comparisonBridge ? <div className="charity-qaly-bridge">
+              <p className="charity-section-number">SHARED DENOMINATOR BRIDGE</p>
+              <h3>{content.comparisonBridge.headline}</h3>
+              <p>{content.comparisonBridge.body}</p>
+              <div className="charity-model-equation"><span>{content.comparisonBridge.equation.label}</span><strong>{content.comparisonBridge.equation.expression}</strong><b>{content.comparisonBridge.equation.result}</b></div>
+              <div className="charity-model-table" role="table" aria-label={`${content.organization} native outcome to QALY bridge assumptions`}>
+                <div role="row"><span role="columnheader">Bridge input</span><span role="columnheader">Best guess</span><span role="columnheader">Range</span><span role="columnheader">Basis</span></div>
+                {content.comparisonBridge.inputs.map((input) => <div role="row" key={input.key}><strong role="cell">{input.label}<small>{input.confidence} confidence</small></strong><span role="cell">{input.best}</span><span role="cell">{input.range}</span><p role="cell">{input.basis}</p></div>)}
+              </div>
+              <div className="charity-sensitivity">{content.comparisonBridge.sensitivity.map((row) => <article key={row.case}><span>{row.case}</span><strong>{row.headline}</strong><p>{row.detail}</p></article>)}</div>
+              <aside className="charity-boundary charity-null-boundary"><strong>Conditional bridge—not a recommendation.</strong>{content.comparisonBridge.boundary}</aside>
+            </div> : null}
           </section>
 
           <section className="charity-section" id="evidence">

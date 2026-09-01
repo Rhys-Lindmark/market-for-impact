@@ -4,6 +4,7 @@ import fs from 'node:fs';
 
 const review = JSON.parse(fs.readFileSync('data/san-francisco/glide-review-v1.json', 'utf8'));
 const model = JSON.parse(fs.readFileSync('data/san-francisco/glide-rental-assistance-cea-v1.json', 'utf8'));
+const bridge = JSON.parse(fs.readFileSync('data/san-francisco/glide-rental-assistance-qaly-bridge-audit-v1.json', 'utf8'));
 
 test('GLIDE review separates service outputs and external evidence from organization impact', () => {
   const evidence = new Map(review.evidence.map((item) => [item.key, item]));
@@ -35,6 +36,19 @@ test('GLIDE rental-assistance model is arithmetically reproducible and preserves
   assert.match(model.nullEffectBoundary, /no finite upper bound/i);
   assert.match(model.fundingRoom.boundary, /not evidence that GLIDE can productively add/i);
   assert.ok(model.sources.every((source) => source.url && source.role));
+});
+
+test('GLIDE fails closed against the 10-QALY better-life denominator', () => {
+  assert.equal(bridge.sharedDenominator.qalyThreshold, 10);
+  assert.equal(bridge.sharedDenominator.publishedPriceUsd, null);
+  assert.equal(bridge.status, 'not-yet-convertible');
+  assert.equal(bridge.candidateEvidence.qalyPerShelterEntryAverted, null);
+  assert.equal(bridge.failedGates.length, 8);
+  assert.equal(bridge.illustrativeCounterfactual.status, 'not-calculable');
+  assert.equal(bridge.illustrativeCounterfactual.resultUsd, null);
+  assert.match(bridge.decision, /Emergency-shelter entry is an administrative housing outcome/i);
+  assert.match(bridge.illustrativeCounterfactual.publicationBoundary, /fabricate the central input/i);
+  assert.equal(new Set(bridge.sources.map((source) => source.url)).size, bridge.sources.length);
 });
 
 test('GLIDE review preserves consolidated finances and city accounting boundaries', () => {

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import CharityResearchReport, { type CharityReportContent } from '@/components/CharityResearchReport';
 import review from '@/data/san-francisco/glide-review-v1.json';
 import model from '@/data/san-francisco/glide-rental-assistance-cea-v1.json';
+import bridgeAudit from '@/data/san-francisco/glide-rental-assistance-qaly-bridge-audit-v1.json';
 
 export const metadata: Metadata = {
   title: 'GLIDE rental assistance — charity research | Market for Impact',
@@ -40,7 +41,7 @@ const content: CharityReportContent = {
   summary: [
     { label: 'OUR BEST GUESS', value: '≈ $154K', detail: 'per additional assistance case avoiding emergency-shelter entry within six months' },
     { label: 'POSITIVE-EFFECT SENSITIVITY', value: '$51K–$2.5M', detail: 'conditional on a positive causal effect; a null effect has no finite impact price' },
-    { label: 'EVIDENCE', value: 'Promising, indirect', detail: 'one relevant quasi-experiment; GLIDE outcomes remain uncontrolled and short-term' },
+    { label: '$ PER 10 QALYS · ONE BETTER LIFE', value: 'Not yet convertible', detail: 'eight explicit evidence gates fail; the native shelter-entry model remains visible below' },
     { label: 'FUNDING ROOM', value: 'Not published', detail: 'the $100,000 cohort is historical evidence, not a current marginal offer' },
   ],
   programSection: {
@@ -63,10 +64,29 @@ const content: CharityReportContent = {
     uncertaintyBoundary: model.nullEffectBoundary,
     fundingBoundary: model.fundingRoom.boundary,
   },
+  comparisonAudit: {
+    headline: 'Not yet convertible to $ per 10 QALYs—and shelter entry is not a health-utility unit.',
+    body: bridgeAudit.decision,
+    candidate: {
+      label: 'NEAREST HEALTH-UTILITY EVIDENCE',
+      value: 'No transferable QALY / shelter entry',
+      detail: 'Randomized Housing First research measured EQ-5D in chronically homeless adults with mental illness. It does not establish a utility weight for one GLIDE-assisted household avoiding a recorded shelter entry.',
+    },
+    failedGates: bridgeAudit.failedGates.map((gate) => ({ key: gate.key, label: gate.label, why: gate.why })),
+    illustrative: {
+      expression: bridgeAudit.illustrativeCounterfactual.arithmetic,
+      result: '= Withheld',
+      boundary: bridgeAudit.illustrativeCounterfactual.publicationBoundary,
+    },
+    requiredEvidence: bridgeAudit.requiredEvidence,
+  },
   evidence: review.evidence.filter((item) => evidenceKeys.has(item.key)),
   reservations: review.reservations,
   excludedBenefits: model.excludedBenefits,
-  sources: review.sources.filter((source) => model.sources.some((modelSource) => modelSource.url === source.url)),
+  sources: [
+    ...review.sources.filter((source) => model.sources.some((modelSource) => modelSource.url === source.url)),
+    ...bridgeAudit.sources.filter((source) => !review.sources.some((existing) => existing.url === source.url)),
+  ],
 };
 
 export default function GlideResearchPage() {

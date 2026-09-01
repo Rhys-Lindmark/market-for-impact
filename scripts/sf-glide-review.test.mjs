@@ -19,7 +19,7 @@ test('GLIDE review separates service outputs and external evidence from organiza
   assert.match(review.decision.costEffectiveness, /Exploratory: about \$154,000/);
   assert.equal(review.decision.roomForMoreFunding, 'Not published');
   assert.equal(review.model.missingInputs.length, 8);
-  assert.match(review.model.qalyBoundary, /No QALY/);
+  assert.match(review.model.qalyBoundary, /\$427,000 per 10 QALYs/);
 });
 
 test('GLIDE rental-assistance model is arithmetically reproducible and preserves the null-effect boundary', () => {
@@ -38,17 +38,20 @@ test('GLIDE rental-assistance model is arithmetically reproducible and preserves
   assert.ok(model.sources.every((source) => source.url && source.role));
 });
 
-test('GLIDE fails closed against the 10-QALY better-life denominator', () => {
+test('GLIDE publishes a bounded 10-QALY decision estimate without hiding a plausible null', () => {
   assert.equal(bridge.sharedDenominator.qalyThreshold, 10);
-  assert.equal(bridge.sharedDenominator.publishedPriceUsd, null);
-  assert.equal(bridge.status, 'not-yet-convertible');
-  assert.equal(bridge.candidateEvidence.qalyPerShelterEntryAverted, null);
-  assert.equal(bridge.failedGates.length, 8);
-  assert.equal(bridge.illustrativeCounterfactual.status, 'not-calculable');
-  assert.equal(bridge.illustrativeCounterfactual.resultUsd, null);
-  assert.match(bridge.decision, /Emergency-shelter entry is an administrative housing outcome/i);
-  assert.match(bridge.illustrativeCounterfactual.publicationBoundary, /fabricate the central input/i);
+  assert.equal(bridge.status, 'exploratory-housing-health-transfer-model');
+  assert.equal(bridge.sourceEvidence.incrementalQalysPerRecipient, 0.144);
+  assert.equal(bridge.modeledBridge.qalyPerAssistedHousehold.best, 0.072);
+  const expected = bridge.modeledBridge.modeledDonorCostPerAssistedHouseholdUsd.best / bridge.modeledBridge.qalyPerAssistedHousehold.best * 10;
+  assert.ok(Math.abs(bridge.modeledBridge.bestCostPerTenQalysUsd - expected) < 1e-8);
+  assert.ok(Math.abs(bridge.sharedDenominator.publishedPriceUsd - expected) < 1e-8);
+  assert.deepEqual(bridge.modeledBridge.positiveEffectRangeUsd, { low: 178055.55555555556, high: 3472222.222222222 });
+  assert.equal(bridge.evidenceWeaknesses.length, 5);
+  assert.match(bridge.modeledBridge.nullBoundary, /no finite upper bound/i);
+  assert.match(bridge.sourceEvidence.glideQalysPerAssistedHousehold.basis, /one adult-equivalent/i);
   assert.equal(new Set(bridge.sources.map((source) => source.url)).size, bridge.sources.length);
+  assert.ok(bridge.sources.every((source) => source.published && source.retrieved && source.sourceType));
 });
 
 test('GLIDE review preserves consolidated finances and city accounting boundaries', () => {

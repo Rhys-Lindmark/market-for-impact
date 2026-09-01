@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import CharityResearchReport, { type CharityReportContent } from '@/components/CharityResearchReport';
 import review from '@/data/san-francisco/glide-review-v1.json';
 import model from '@/data/san-francisco/glide-rental-assistance-cea-v1.json';
-import bridgeAudit from '@/data/san-francisco/glide-rental-assistance-qaly-bridge-audit-v1.json';
+import bridge from '@/data/san-francisco/glide-rental-assistance-qaly-bridge-audit-v1.json';
 
 export const metadata: Metadata = {
   title: 'GLIDE rental assistance — charity research | Market for Impact',
@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 
 const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
 const compactMoney = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 1 });
+const bridgeMoney = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 2 });
 const number = new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 });
 const percent = new Intl.NumberFormat('en-US', { style: 'percent', maximumFractionDigits: 1 });
 const cost = model.inputs.find((input) => input.key === 'marginal_cost_per_assistance_case_usd')!;
@@ -29,11 +30,11 @@ const content: CharityReportContent = {
   eyebrow: 'CHARITY RESEARCH · SAN FRANCISCO',
   program: 'Welcome Center rental assistance for eviction, back-rent, move-in, and deposit crises',
   donationUrl: review.organization.donationUrl,
-  published: '31 August 2026',
+  published: '1 September 2026',
   modelVersion: model.version,
   nutshell: {
     headline: 'A concrete prevention tool. A credible outside study. A very uncertain GLIDE effect.',
-    body: <>GLIDE reports that a historical <strong>$100,000 rental-assistance cohort served 39 households</strong> and that all assisted clients remained housed after three months. That is encouraging but uncontrolled. Our exploratory model transfers a heavily discounted effect from a 4,448-caller Chicago quasi-experiment and estimates <strong>about {money.format(model.bottomLine.costPerAdditionalShelterEntryAvertedUsd)} per additional shelter entry averted within six months</strong>. Conditional on a positive effect, the range is <strong>{compactMoney.format(model.bottomLine.conditionalPositiveEffectRangeUsd.low)}–{compactMoney.format(model.bottomLine.conditionalPositiveEffectRangeUsd.high)}</strong>; a null effect remains plausible.</>,
+    body: <>GLIDE reports that a historical <strong>$100,000 rental-assistance cohort served 39 households</strong> and that all assisted clients remained housed after three months. That is encouraging but uncontrolled. Our exploratory model transfers a heavily discounted effect from a 4,448-caller Chicago quasi-experiment and estimates <strong>about {money.format(model.bottomLine.costPerAdditionalShelterEntryAvertedUsd)} per additional shelter entry averted within six months</strong>. Our separate health-utility transfer produces a very-low-confidence central estimate of <strong>about {bridgeMoney.format(bridge.modeledBridge.bestCostPerTenQalysUsd)} per 10 QALYs</strong>. Conditional on a positive effect, both models have wide ranges; a null effect remains plausible.</>,
     whyItMayWork: 'Short-term rent, deposit, or move-in assistance can resolve a specific cash shortfall before it becomes a shelter entry, while GLIDE adds readiness workshops and case support.',
     whyWeAreCautious: 'GLIDE publishes no comparison group or six-month shelter linkage, and its household, person, funding-source, and assistance-type denominators change across reports.',
     recommendationBlocker: 'GLIDE has not published the current applicant funnel, source-specific program accounts, verified six- or twelve-month outcomes, or a dated plan showing that another private gift funds additional cases rather than replacing partner money.',
@@ -41,7 +42,7 @@ const content: CharityReportContent = {
   summary: [
     { label: 'OUR BEST GUESS', value: '≈ $154K', detail: 'per additional assistance case avoiding emergency-shelter entry within six months' },
     { label: 'POSITIVE-EFFECT SENSITIVITY', value: '$51K–$2.5M', detail: 'conditional on a positive causal effect; a null effect has no finite impact price' },
-    { label: '$ PER 10 QALYS · ONE BETTER LIFE', value: 'Not yet convertible', detail: 'eight explicit evidence gates fail; the native shelter-entry model remains visible below' },
+    { label: 'COST PER BETTER LIFE', value: '≈ $427K', detail: 'per 10 QALYs; very-low-confidence transfer from a VA housing model' },
     { label: 'FUNDING ROOM', value: 'Not published', detail: 'the $100,000 cohort is historical evidence, not a current marginal offer' },
   ],
   programSection: {
@@ -64,28 +65,28 @@ const content: CharityReportContent = {
     uncertaintyBoundary: model.nullEffectBoundary,
     fundingBoundary: model.fundingRoom.boundary,
   },
-  comparisonAudit: {
-    headline: 'Not yet convertible to $ per 10 QALYs—and shelter entry is not a health-utility unit.',
-    body: bridgeAudit.decision,
-    candidate: {
-      label: 'NEAREST HEALTH-UTILITY EVIDENCE',
-      value: 'No transferable QALY / shelter entry',
-      detail: 'Randomized Housing First research measured EQ-5D in chronically homeless adults with mental illness. It does not establish a utility weight for one GLIDE-assisted household avoiding a recorded shelter entry.',
+  comparisonBridge: {
+    headline: 'Our current best estimate: about $427,000 per better life (10 QALYs).',
+    body: bridge.decision,
+    equation: {
+      label: 'EXPLORATORY COST PER 10 QALYS · ONE BETTER LIFE',
+      expression: `${money.format(bridge.modeledBridge.modeledDonorCostPerAssistedHouseholdUsd.best)} ÷ ${bridge.modeledBridge.qalyPerAssistedHousehold.best} QALY × 10`,
+      result: `= ${bridgeMoney.format(bridge.modeledBridge.bestCostPerTenQalysUsd)}`,
     },
-    failedGates: bridgeAudit.failedGates.map((gate) => ({ key: gate.key, label: gate.label, why: gate.why })),
-    illustrative: {
-      expression: bridgeAudit.illustrativeCounterfactual.arithmetic,
-      result: '= Withheld',
-      boundary: bridgeAudit.illustrativeCounterfactual.publicationBoundary,
-    },
-    requiredEvidence: bridgeAudit.requiredEvidence,
+    inputs: [
+      { key: 'donor_cost', label: 'Modeled donor cost per assisted household', confidence: 'very low as a marginal price', best: money.format(bridge.modeledBridge.modeledDonorCostPerAssistedHouseholdUsd.best), range: `${money.format(bridge.modeledBridge.modeledDonorCostPerAssistedHouseholdUsd.low)}–${money.format(bridge.modeledBridge.modeledDonorCostPerAssistedHouseholdUsd.high)}`, basis: bridge.modeledBridge.modeledDonorCostPerAssistedHouseholdUsd.basis },
+      { key: 'va_qaly', label: 'VA model QALYs per prevention recipient', confidence: 'moderate for model; indirect for GLIDE', best: String(bridge.sourceEvidence.incrementalQalysPerRecipient), range: 'Published point estimate', basis: 'A two-year VA simulation estimated 0.144 incremental QALYs and 90.7 additional stable-housing days per homelessness-prevention recipient receiving temporary financial assistance.' },
+      { key: 'glide_qaly', label: 'QALYs per GLIDE-assisted household after transfer discount', confidence: 'very low transfer', best: String(bridge.modeledBridge.qalyPerAssistedHousehold.best), range: `${bridge.modeledBridge.qalyPerAssistedHousehold.low}–${bridge.modeledBridge.qalyPerAssistedHousehold.high}`, basis: bridge.sourceEvidence.glideQalysPerAssistedHousehold.basis },
+    ],
+    sensitivity: bridge.modeledBridge.sensitivity.map((row) => ({ case: row.case, headline: bridgeMoney.format(row.costPerTenQalysUsd), detail: `${money.format(row.donorCostPerHouseholdUsd)} per household · ${percent.format(row.retainedShareOfVaQalyEffect)} of VA QALY estimate retained` })),
+    boundary: `${bridge.modeledBridge.nullBoundary} ${bridge.sourceEvidence.boundary}`,
   },
   evidence: review.evidence.filter((item) => evidenceKeys.has(item.key)),
   reservations: review.reservations,
-  excludedBenefits: model.excludedBenefits,
+  excludedBenefits: [...new Set([...model.excludedBenefits, ...bridge.excludedBenefits])],
   sources: [
     ...review.sources.filter((source) => model.sources.some((modelSource) => modelSource.url === source.url)),
-    ...bridgeAudit.sources.filter((source) => !review.sources.some((existing) => existing.url === source.url)),
+    ...bridge.sources.filter((source) => !review.sources.some((existing) => existing.url === source.url)),
   ],
 };
 

@@ -5,7 +5,7 @@ import fs from 'node:fs';
 const read = (path) => JSON.parse(fs.readFileSync(path, 'utf8'));
 const model = read('data/san-francisco/sf-marin-food-bank-community-market-cea-v1.json');
 const review = read('data/san-francisco/sf-marin-food-bank-review-v1.json');
-const bridgeAudit = read('data/san-francisco/sf-marin-food-bank-qaly-bridge-audit-v1.json');
+const bridge = read('data/san-francisco/sf-marin-food-bank-qaly-bridge-audit-v1.json');
 
 test('keeps the food-bank model arithmetic and accounting boundary inspectable', () => {
   const cost = model.inputs.find((row) => row.key === 'modeled_cash_cost_per_26_week_household_course_usd');
@@ -23,16 +23,26 @@ test('does not smuggle meals or QALYs into the native outcome', () => {
   assert.equal(new Set(review.sources.map((source) => source.url)).size, review.sources.length);
 });
 
-test('fails closed on the 10-QALY comparison until the native outcome matches the evidence', () => {
-  assert.equal(bridgeAudit.sharedDenominator.qalyThreshold, 10);
-  assert.equal(bridgeAudit.status, 'not-yet-convertible');
-  assert.equal(bridgeAudit.sharedDenominator.publishedPriceUsd, null);
-  assert.equal(bridgeAudit.failedGates.length, 4);
-  assert.equal(bridgeAudit.failedGates.every((gate) => gate.status === 'failed'), true);
-  assert.match(bridgeAudit.failedGates.find((gate) => gate.key === 'health_state_transition').why, /low and very low.*food insecure/i);
-  assert.match(bridgeAudit.failedGates.find((gate) => gate.key === 'person_allocation').why, /household.*people/i);
-  assert.equal(bridgeAudit.candidateEvidence.qalyPerAdultYear.best, 0.008);
-  assert.equal(bridgeAudit.illustrativeCounterfactual.nativeCostPerOutcomeUsd / bridgeAudit.illustrativeCounterfactual.qalyPerOutcome * 10, bridgeAudit.illustrativeCounterfactual.resultUsd);
-  assert.equal(bridgeAudit.illustrativeCounterfactual.status, 'not-a-comparison-price');
-  assert.match(bridgeAudit.illustrativeCounterfactual.publicationBoundary, /must not appear.*comparison price/i);
+test('publishes an inspectable, bounded 10-QALY decision model without collapsing the food-security states', () => {
+  assert.equal(bridge.sharedDenominator.qalyThreshold, 10);
+  assert.equal(bridge.status, 'exploratory-food-security-health-utility-transfer-model');
+  assert.equal(bridge.sourceEvidence.qalyPerAdultYear.best, 0.008);
+  const m = bridge.modeledBridge;
+  const expectedQaly = m.causalExitFromVeryLowFoodSecurityProbability.best
+    * m.shareOfExitsReachingFullHouseholdFoodSecurity.best
+    * m.adultEquivalentBeneficiariesPerHousehold.best
+    * bridge.sourceEvidence.qalyPerAdultYear.best
+    * m.retainedShareOfObservedUtilityEffect.best
+    * m.effectiveDurationYears.best;
+  assert.ok(Math.abs(expectedQaly - m.qalyPerHouseholdCourse.best) < 1e-12);
+  const expectedPrice = m.modeledDonorCostPerHouseholdCourseUsd.best / expectedQaly * 10;
+  assert.ok(Math.abs(expectedPrice - m.bestCostPerTenQalysUsd) < 1e-6);
+  assert.ok(Math.abs(expectedPrice - bridge.sharedDenominator.publishedPriceUsd) < 1e-6);
+  assert.equal(m.sensitivity.length, 3);
+  for (const row of m.sensitivity) {
+    assert.ok(Math.abs(row.donorCostPerHouseholdCourseUsd / row.qalyPerHouseholdCourse * 10 - row.costPerTenQalysUsd) < 1e-4);
+  }
+  assert.match(m.shareOfExitsReachingFullHouseholdFoodSecurity.basis, /35%.*judgment/i);
+  assert.match(m.nullBoundary, /no finite positive upper bound/i);
+  assert.match(bridge.decision, /not a measured SFMFB effect/i);
 });

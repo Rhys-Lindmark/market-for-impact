@@ -1,87 +1,58 @@
 {
-  "version": "sf-marin-food-bank-qaly-bridge-audit-v0.1",
-  "generatedAt": "2026-08-31T19:20:00-07:00",
-  "status": "not-yet-convertible",
-  "sharedDenominator": {
-    "label": "one better life",
-    "qalyThreshold": 10,
-    "publishedPriceUsd": null
-  },
+  "version": "sf-marin-food-bank-qaly-bridge-v0.2",
+  "generatedAt": "2026-09-01T08:05:00-07:00",
+  "status": "exploratory-food-security-health-utility-transfer-model",
+  "sharedDenominator": { "label": "one better life", "qalyThreshold": 10, "publishedPriceUsd": 85714285.71428572 },
   "nativeOutcome": "One additional household not experiencing very low food security at 12 months",
-  "decision": "Do not publish a dollars-per-10-QALYs price. The available health-utility estimate describes one adult becoming fully food secure for one year, while the native SFMFB model describes a household crossing only the very-low-food-security threshold. The state transition, person allocation, duration, and organization-specific causal effect are unresolved.",
-  "candidateEvidence": {
+  "decision": "Publish an explicit, very-low-confidence decision estimate of approximately $85.7 million per 10 QALYs. The model does not equate crossing the very-low-food-security threshold with becoming food secure. Instead, it assigns 35% of modeled exits to full household food security, credits one adult-equivalent, retains 50% of an observational 0.008-QALY adult-year contrast, and assumes 0.5 effective year. Combined with the native $300 household-course cost and 5% causal exit probability, this yields 0.000035 QALY per course. The conditional positive-effect range is approximately $1.11 million to $24 billion; a true null, harm, or funding displacement remains plausible. This is a best-effort donor estimate, not a measured SFMFB effect, verified marginal price, rank, or funding recommendation.",
+  "sourceEvidence": {
     "design": "Longitudinal observational target-trial emulation using nationally representative Medical Expenditure Panel Survey data",
     "population": "Adults who screened positive for food insecurity; 1,368 were food insecure under the full survey module",
     "contrast": "Status quo versus a hypothetical intervention making every participant food secure",
     "qalyPerAdultYear": { "best": 0.008, "low95Ci": 0.002, "high95Ci": 0.014 },
-    "boundary": "The estimate is an adult-level one-year health-utility difference for eliminating food insecurity. It is not a randomized intervention effect, a household effect, a very-low-to-low-food-security transition, or evidence about SFMFB Community Markets."
+    "boundary": "The estimate is an adult-level one-year health-utility difference for eliminating food insecurity. It is observational, not a randomized intervention effect; it is not a household effect, a very-low-to-low-food-security transition, or evidence about SFMFB Community Markets. We use the published 0.008 point estimate and represent transfer uncertainty separately rather than treating its confidence interval as the decision range."
   },
-  "failedGates": [
-    {
-      "key": "health_state_transition",
-      "label": "Match the health-state transition",
-      "status": "failed",
-      "why": "USDA classifies both low and very low food security as food insecure. The SFMFB model estimates movement out of very low food security, which may still leave a household food insecure; the candidate utility study estimates becoming food secure."
-    },
-    {
-      "key": "person_allocation",
-      "label": "Allocate a household outcome to people",
-      "status": "failed",
-      "why": "The native result is measured per household, while QALYs accrue to people. No defensible adult/child count, affected-member share, or within-household distribution is available for the modeled Community Market cohort."
-    },
-    {
-      "key": "duration",
-      "label": "Establish duration",
-      "status": "failed",
-      "why": "A 12-month endpoint does not show when the food-security change began, whether it persisted for a full year, or what happened after follow-up."
-    },
-    {
-      "key": "program_effect",
-      "label": "Measure the SFMFB causal effect",
-      "status": "failed",
-      "why": "The native effect is transferred from Freshplace, which bundled client choice with monthly motivational interviewing and referrals in Hartford. SFMFB has not published a causal Community Market food-security or health-utility result."
-    }
+  "modeledBridge": {
+    "modeledDonorCostPerHouseholdCourseUsd": { "best": 300, "low": 200, "high": 600, "basis": "The native v0.1 model isolates donor-cash Neighborhood Pantries expense and models one 26-week household course. It is not a total social-resource cost or a current SFMFB marginal price; the comparable full recognized-accounting course is approximately $1,160." },
+    "causalExitFromVeryLowFoodSecurityProbability": { "best": 0.05, "low": 0.01, "high": 0.15, "basis": "The native model heavily discounts the 228-person Freshplace randomized result for differences in population, geography, service bundle, dose, and follow-up. SFMFB has not published a causal Community Market result; null or harm remains outside the finite positive range." },
+    "shareOfExitsReachingFullHouseholdFoodSecurity": { "best": 0.35, "low": 0.1, "high": 0.75, "basis": "USDA classifies both low and very low food security as food insecure. With no Community Market transition matrix, MFI judges that 35% of modeled exits from very low food security reach full household food security; the rest receive no QALY credit. This is a judgment range, not a measured proportion." },
+    "adultEquivalentBeneficiariesPerHousehold": { "best": 1, "low": 0.5, "high": 2, "basis": "The central model credits one adult-equivalent per household and excludes child and caregiver effects. The range reflects uncertainty about household composition and within-household benefit allocation; SFMFB publishes neither for the modeled cohort." },
+    "retainedShareOfObservedUtilityEffect": { "best": 0.5, "low": 0.25, "high": 1, "basis": "The midpoint retains half of the observational 0.008-QALY adult-year contrast to reflect confounding, population transfer, household-to-adult allocation, and the difference between a program-driven transition and the study's hypothetical elimination of food insecurity." },
+    "effectiveDurationYears": { "best": 0.5, "low": 0.25, "high": 1, "basis": "The midpoint allows for gradual onset during the 26-week course and limited persistence to the 12-month endpoint. The timing and persistence of a Community Market food-security change have not been measured." },
+    "formula": "causal_exit_probability * share_reaching_full_food_security * adult_equivalent_beneficiaries * qaly_per_adult_year * retained_share * effective_duration_years",
+    "qalyPerHouseholdCourse": { "best": 0.000035, "low": 2.5e-7, "high": 0.0018 },
+    "bestCostPerTenQalysUsd": 85714285.71428572,
+    "costPerQalyUsd": 8571428.571428573,
+    "positiveEffectRangeUsd": { "low": 1111111.111111111, "high": 24000000000 },
+    "sensitivity": [
+      { "case": "Optimistic positive transfer", "donorCostPerHouseholdCourseUsd": 200, "causalExitProbability": 0.15, "shareReachingFullFoodSecurity": 0.75, "adultEquivalentBeneficiaries": 2, "retainedShare": 1, "effectiveDurationYears": 1, "qalyPerHouseholdCourse": 0.0018, "costPerTenQalysUsd": 1111111.111111111 },
+      { "case": "Central transfer-discounted estimate", "donorCostPerHouseholdCourseUsd": 300, "causalExitProbability": 0.05, "shareReachingFullFoodSecurity": 0.35, "adultEquivalentBeneficiaries": 1, "retainedShare": 0.5, "effectiveDurationYears": 0.5, "qalyPerHouseholdCourse": 0.000035, "costPerTenQalysUsd": 85714285.71428572 },
+      { "case": "Cautious positive transfer", "donorCostPerHouseholdCourseUsd": 600, "causalExitProbability": 0.01, "shareReachingFullFoodSecurity": 0.1, "adultEquivalentBeneficiaries": 0.5, "retainedShare": 0.25, "effectiveDurationYears": 0.25, "qalyPerHouseholdCourse": 2.5e-7, "costPerTenQalysUsd": 24000000000 }
+    ],
+    "nullBoundary": "The numeric range is conditional on a positive Community Market effect, some modeled exits reaching full food security, a positive adult health-utility relationship, and donor additionality. SFMFB has not published a causal Community Market result or a current marginal funding plan; the health-utility anchor is observational. If the program has no causal effect, leaves every household food insecure, causes harm, produces only transient change outside the assumed duration, or a gift displaces public funding, commodities, or existing private support, the impact price has no finite positive upper bound."
+  },
+  "evidenceWeaknesses": [
+    { "key": "health_state_transition", "label": "Food-security state transition", "why": "The native model estimates exit from very low food security, while the utility study estimates eliminating adult food insecurity. The 35% full-food-security share is an explicit MFI judgment because no cohort transition matrix is published." },
+    { "key": "person_allocation", "label": "Household-to-person allocation", "why": "QALYs accrue to people, but the native outcome is per household. The central one-adult-equivalent allocation excludes children and is not an SFMFB measurement." },
+    { "key": "utility_transfer", "label": "Health-utility transfer", "why": "The 0.008 QALY per adult-year contrast is observational and estimates a hypothetical elimination of food insecurity, not a Community Market intervention. The 50% retention is judgmental." },
+    { "key": "duration", "label": "Timing and persistence", "why": "A 12-month food-security endpoint does not reveal onset or area under the health-utility curve. The 0.5-year midpoint is a decision assumption." },
+    { "key": "program_effect_and_additionality", "label": "Program effect and marginal funding", "why": "The 5% effect is transferred from a different bundled pantry model, and the $300 course cost is a top-down donor-cash allocation. Neither is a measured marginal Community Market result or price." }
   ],
-  "illustrativeCounterfactual": {
-    "status": "not-a-comparison-price",
-    "assumptions": "If, contrary to the missing evidence, every native household outcome meant exactly one adult became fully food secure for exactly one year, use 0.008 QALY per adult-year.",
-    "nativeCostPerOutcomeUsd": 6000,
-    "qalyPerOutcome": 0.008,
-    "arithmetic": "$6,000 / 0.008 QALY x 10 QALYs",
-    "resultUsd": 7500000,
-    "publicationBoundary": "This arithmetic is shown only to expose the unsupported assumptions. It must not appear as SFMFB's comparison price, rank, or recommendation."
-  },
+  "excludedBenefits": [
+    "Child health, development, school attendance, caregiver relief, and within-household spillovers",
+    "Diet quality, stress, mental health, medical spending, mortality, and benefits-enrollment gains not captured by the adult food-security utility transfer",
+    "Food value, participant time, volunteer time, donated services, public commodities, and other social-resource costs outside the donor-cash boundary",
+    "Benefits from neighborhood pantries, home delivery, CalFresh outreach, policy work, and other Food Bank programs"
+  ],
   "requiredEvidence": [
     "Report the full USDA food-security transition matrix for a defined Community Market cohort, including high, marginal, low, and very low categories.",
-    "Report unique household composition and pre-specify which adults and children receive health-utility credit.",
-    "Measure SF-6D or another preference-based health utility at baseline and follow-up, with timing sufficient to estimate duration.",
-    "Use a credible comparison, complete participant flow, missing-data analysis, and a pre-specified causal estimand.",
-    "Publish incremental program cost, public/private displacement, capacity, and a dated marginal funding plan."
+    "Report unique household composition and collect preference-based health utility for adults and age-appropriate measures for children at baseline, intermediate time points, 12 months, and post-program follow-up.",
+    "Use randomization or a credible concurrent comparison with complete participant flow, exposure, missing-data analysis, and a pre-specified causal estimand.",
+    "Publish incremental program cost, public/private/commodity displacement, current capacity, and dated $100K, $1M, and $10M marginal plans."
   ],
   "sources": [
-    {
-      "publisher": "Journal of General Internal Medicine",
-      "title": "Eliminating Food Insecurity in the USA: a Target Trial Emulation Using Observational Data to Estimate Effects on Health-Related Quality of Life",
-      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10406772/",
-      "published": "2023",
-      "retrieved": "2026-08-31",
-      "sourceType": "peer-reviewed observational target-trial emulation"
-    },
-    {
-      "publisher": "USDA Economic Research Service",
-      "title": "Food Security in the U.S.: Measurement",
-      "url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us/measurement",
-      "published": "Updated 2026",
-      "retrieved": "2026-08-31",
-      "sourceType": "official measurement definition"
-    },
-    {
-      "publisher": "American Journal of Preventive Medicine",
-      "title": "A novel food pantry program: food security, self-sufficiency, and diet-quality outcomes",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/24139769/",
-      "published": "2013",
-      "retrieved": "2026-08-31",
-      "sourceType": "peer-reviewed randomized trial"
-    }
+    { "publisher": "Journal of General Internal Medicine", "title": "Eliminating Food Insecurity in the USA: a Target Trial Emulation Using Observational Data to Estimate Effects on Health-Related Quality of Life", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10406772/", "published": "2023", "retrieved": "2026-09-01", "sourceType": "peer-reviewed observational target-trial emulation" },
+    { "publisher": "USDA Economic Research Service", "title": "Food Security in the U.S.: Measurement", "url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us/measurement", "published": "Updated 2026", "retrieved": "2026-09-01", "sourceType": "official measurement definition" },
+    { "publisher": "American Journal of Preventive Medicine", "title": "A novel food pantry program: food security, self-sufficiency, and diet-quality outcomes", "url": "https://pubmed.ncbi.nlm.nih.gov/24139769/", "published": "2013", "retrieved": "2026-09-01", "sourceType": "peer-reviewed randomized trial" }
   ]
 }

@@ -26,7 +26,7 @@ test('Compass C-Rent impact model is reproducible and preserves the null case', 
   close(model.bottomLine.costPerAdditionalHomelessnessEpisodeAvertedUsd, cost / effect);
   assert.match(model.nullEffectBoundary, /no finite upper bound/i);
   assert.match(model.fundingRoom.boundary, /not annual flow|life-to-date/i);
-  assert.ok(model.excludedBenefits.some((item) => /QALYs/i.test(item)));
+  assert.ok(!model.excludedBenefits.some((item) => /QALYs|10-QALY/i.test(item)));
 });
 
 test('Compass C-Rent evidence and sources preserve causal and funding boundaries', () => {
@@ -37,17 +37,18 @@ test('Compass C-Rent evidence and sources preserve causal and funding boundaries
   assert.equal(model.fundingRoom.publicContractContext.remainingAuthorityUsd, 1805364.7);
 });
 
-test('Compass 10-QALY audit keeps the VA comparator external and fails closed', () => {
-  assert.equal(bridgeAudit.status, 'not-yet-convertible');
+test('Compass 10-QALY bridge publishes a bounded decision estimate without hiding a plausible null', () => {
+  assert.equal(bridgeAudit.status, 'exploratory-housing-health-transfer-model');
   assert.equal(bridgeAudit.sharedDenominator.qalyThreshold, 10);
-  assert.equal(bridgeAudit.sharedDenominator.publishedPriceUsd, null);
-  assert.equal(bridgeAudit.failedGates.length, 8);
-  assert.ok(bridgeAudit.failedGates.every((gate) => gate.status === 'failed'));
-  assert.equal(bridgeAudit.candidateEvidence.publishedCostPerQalyUsd, 29751);
-  assert.equal(bridgeAudit.candidateEvidence.publishedCostPerTenQalysUsd, 297510);
-  assert.equal(bridgeAudit.candidateEvidence.compassQalysPerAdditionalFamilyAvoidingHomelessness, null);
-  assert.equal(bridgeAudit.illustrativeCounterfactual.qalyPerOutcome, null);
-  assert.equal(bridgeAudit.illustrativeCounterfactual.resultUsd, null);
-  assert.match(bridgeAudit.illustrativeCounterfactual.publicationBoundary, /external evidence|not substituted/i);
+  assert.equal(bridgeAudit.sourceEvidence.incrementalQalysPerRecipient, 0.144);
+  assert.equal(bridgeAudit.sourceEvidence.publishedCostPerQalyUsd, 29751);
+  assert.equal(bridgeAudit.modeledBridge.qalyPerAssistedFamily.best, 0.072);
+  const expected = bridgeAudit.modeledBridge.modeledDonorCostPerAssistedFamilyUsd.best / bridgeAudit.modeledBridge.qalyPerAssistedFamily.best * 10;
+  close(bridgeAudit.modeledBridge.bestCostPerTenQalysUsd, expected);
+  close(bridgeAudit.sharedDenominator.publishedPriceUsd, expected);
+  assert.deepEqual(bridgeAudit.modeledBridge.positiveEffectRangeUsd, { low: 367681.49490069784, high: 17361111.111111112 });
+  assert.equal(bridgeAudit.evidenceWeaknesses.length, 5);
+  assert.match(bridgeAudit.modeledBridge.nullBoundary, /no finite upper bound/i);
+  assert.match(bridgeAudit.sourceEvidence.compassQalysPerAssistedFamily.basis, /one adult-equivalent/i);
   assert.ok(bridgeAudit.sources.every((source) => source.url && source.published && source.retrieved && source.sourceType));
 });

@@ -1,0 +1,101 @@
+{
+  "version": "sf-curry-senior-center-qaly-bridge-audit-v0.1",
+  "generatedAt": "2026-08-31T20:12:00-07:00",
+  "status": "not-yet-convertible",
+  "sharedDenominator": {
+    "label": "one better life",
+    "qalyThreshold": 10,
+    "publishedPriceUsd": null
+  },
+  "nativeOutcome": "One additional participant modeled to cross a 0.5 standard-deviation loneliness-improvement threshold at 12 months",
+  "decision": "Do not publish a dollars-per-10-QALYs price. Curry did not directly observe the native responder outcome: MFI constructs it by combining a judgmental 0.5-SD threshold, a normal change-score distribution, and a judgmental causal discount applied to an uncontrolled pre/post study. The available health-utility literature does not map this modeled threshold crossing to a preference-based utility gain, and neither onset nor persistence is measured.",
+  "candidateEvidence": {
+    "design": "Systematic review of 19 observational studies reporting loneliness or social isolation alongside health-state utility values",
+    "population": "People with pre-existing health conditions; populations, conditions, loneliness measures, and utility instruments varied",
+    "contrast": "Lonely versus not lonely in two chronic-condition studies using HUI2 or EQ-5D-3L",
+    "annualUtilityGap": 0.04,
+    "candidateOneYearQalyPerOutcome": 0.04,
+    "candidateArithmetic": "0.04 annual utility gap x 1 assumed year",
+    "boundary": "The 0.04 difference is a cross-sectional association between binary loneliness states in other populations. It is not a mapping from a 0.5-SD change, a validated Curry responder threshold, a causal effect of Senior Vitality, or a measured one-year utility gain."
+  },
+  "failedGates": [
+    {
+      "key": "outcome_construction",
+      "label": "Validate the native responder outcome",
+      "status": "failed",
+      "why": "Curry reported an average pre/post change, not the share of participants crossing a responder threshold. MFI imposes a 0.5-SD threshold and standard-normal change distribution, so the native denominator itself is modeled rather than observed or clinically validated."
+    },
+    {
+      "key": "outcome_mapping",
+      "label": "Map the score change to utility",
+      "status": "failed",
+      "why": "No validated mapping was located from Curry's loneliness measure or MFI's 0.5-SD modeled threshold to EQ-5D, HUI, SF-6D, AQoL, or another preference-based utility instrument. A binary lonely-versus-not-lonely contrast is not interchangeable with a standardized score change."
+    },
+    {
+      "key": "causal_utility_effect",
+      "label": "Separate loneliness from correlated illness",
+      "status": "failed",
+      "why": "The candidate 0.04 utility gap is observational and comes from people with pre-existing health conditions. Depression, disability, chronic illness, and other confounding can affect both loneliness and utility, so the association cannot be treated as the utility caused by reducing loneliness."
+    },
+    {
+      "key": "program_effect",
+      "label": "Measure Senior Vitality's causal effect",
+      "status": "failed",
+      "why": "The Curry study had no concurrent comparison group, used convenience and referral recruitment, and retained 90 of 106 baseline participants at 12 months. The model's 0.08-SD causal shift is a judgmental one-third attribution of the observed 0.24-SD change; null or harm remains plausible."
+    },
+    {
+      "key": "duration",
+      "label": "Establish timing and persistence",
+      "status": "failed",
+      "why": "A 12-month endpoint does not establish when loneliness or health utility changed, the area under the utility curve during the year, or whether any benefit persisted beyond the final assessment."
+    },
+    {
+      "key": "bundle_and_instrument",
+      "label": "Identify the active component and utility instrument",
+      "status": "failed",
+      "why": "Senior Vitality bundles devices, connectivity, classes, tutoring, social contact, and health coaching, so the active component is unknown. Curry did not collect preference-based utility, and evidence reviews warn that common instruments such as EQ-5D may miss psychosocial change."
+    }
+  ],
+  "illustrativeCounterfactual": {
+    "status": "not-a-comparison-price",
+    "assumptions": "If, contrary to the missing evidence, every modeled 0.5-SD threshold crossing caused the full 0.04 annual utility difference for exactly one year, assign 0.04 QALY per modeled improvement.",
+    "nativeCostPerOutcomeUsd": 167217,
+    "qalyPerOutcome": 0.04,
+    "arithmetic": "$167,217 / 0.04 QALY x 10 QALYs",
+    "resultUsd": 41804250,
+    "publicationBoundary": "This arithmetic is shown only to expose the unsupported responder, mapping, causality, and duration assumptions. It must not appear as Curry's comparison price, rank, or recommendation."
+  },
+  "requiredEvidence": [
+    "Pre-specify and validate a participant-level loneliness response threshold before analyzing the next cohort.",
+    "Collect a preference-based utility measure alongside the loneliness instrument at baseline, intermediate time points, 12 months, and follow-up.",
+    "Use a randomized or credible concurrent comparison with complete participant flow, exposure, missing-data analysis, and a pre-specified causal estimand.",
+    "Estimate utility and loneliness change jointly so the bridge does not rely on a cross-study standardized-score mapping.",
+    "Measure onset, area under the utility curve, persistence, active program components, incremental cost, public-funding displacement, capacity, and a dated marginal funding plan."
+  ],
+  "sources": [
+    {
+      "publisher": "Journal of Applied Gerontology",
+      "title": "A Technology-Based Intervention Impacts Quality of Life for Low Income Older Adults by Reducing Loneliness and Improving Healthcare Self-Efficacy and Self-Rated Health",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11978907/",
+      "published": "2024",
+      "retrieved": "2026-08-31",
+      "sourceType": "peer-reviewed uncontrolled pre/post study"
+    },
+    {
+      "publisher": "Quality of Life Research",
+      "title": "The impact of loneliness and social isolation on health state utility values: a systematic literature review",
+      "url": "https://link.springer.com/article/10.1007/s11136-021-03063-1",
+      "published": "2022",
+      "retrieved": "2026-08-31",
+      "sourceType": "peer-reviewed systematic literature review"
+    },
+    {
+      "publisher": "UK Department for Culture, Media and Sport",
+      "title": "Tackling loneliness evidence review: full report",
+      "url": "https://www.gov.uk/government/publications/tackling-loneliness-evidence-review/tackling-loneliness-evidence-review-full-report",
+      "published": "2023-03-23",
+      "retrieved": "2026-08-31",
+      "sourceType": "government evidence review"
+    }
+  ]
+}

@@ -4,6 +4,7 @@ import fs from 'node:fs';
 
 const review = JSON.parse(fs.readFileSync('data/san-francisco/compass-family-services-review-v1.json', 'utf8'));
 const model = JSON.parse(fs.readFileSync('data/san-francisco/compass-c-rent-cea-v1.json', 'utf8'));
+const bridgeAudit = JSON.parse(fs.readFileSync('data/san-francisco/compass-c-rent-qaly-bridge-audit-v1.json', 'utf8'));
 const close = (actual, expected) => assert.ok(Math.abs(actual - expected) < 1e-8, `${actual} != ${expected}`);
 
 test('Compass C-Rent accounting model reconciles exactly', () => {
@@ -34,4 +35,19 @@ test('Compass C-Rent evidence and sources preserve causal and funding boundaries
   assert.ok(review.evidence.some((item) => item.key === 'compass-prevention-public-contract' && /not.*verified room for more funding/i.test(item.transfer)));
   assert.ok(review.sources.every((source) => source.url && source.published && source.retrieved && source.sourceType));
   assert.equal(model.fundingRoom.publicContractContext.remainingAuthorityUsd, 1805364.7);
+});
+
+test('Compass 10-QALY audit keeps the VA comparator external and fails closed', () => {
+  assert.equal(bridgeAudit.status, 'not-yet-convertible');
+  assert.equal(bridgeAudit.sharedDenominator.qalyThreshold, 10);
+  assert.equal(bridgeAudit.sharedDenominator.publishedPriceUsd, null);
+  assert.equal(bridgeAudit.failedGates.length, 8);
+  assert.ok(bridgeAudit.failedGates.every((gate) => gate.status === 'failed'));
+  assert.equal(bridgeAudit.candidateEvidence.publishedCostPerQalyUsd, 29751);
+  assert.equal(bridgeAudit.candidateEvidence.publishedCostPerTenQalysUsd, 297510);
+  assert.equal(bridgeAudit.candidateEvidence.compassQalysPerAdditionalFamilyAvoidingHomelessness, null);
+  assert.equal(bridgeAudit.illustrativeCounterfactual.qalyPerOutcome, null);
+  assert.equal(bridgeAudit.illustrativeCounterfactual.resultUsd, null);
+  assert.match(bridgeAudit.illustrativeCounterfactual.publicationBoundary, /external evidence|not substituted/i);
+  assert.ok(bridgeAudit.sources.every((source) => source.url && source.published && source.retrieved && source.sourceType));
 });

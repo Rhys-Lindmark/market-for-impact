@@ -372,9 +372,15 @@ test('phone donors can inspect the EDC model with conflicting evidence and no li
 test('phone donors can inspect the Compass C-Rent model and its blocked life-bettered conversion', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'phone-390');
   await page.goto('/charities/compass-family-services', { waitUntil: 'domcontentloaded' });
+  const review = page.locator('.charity-report-article');
   await expect(page.getByRole('heading', { level: 1, name: 'Compass Family Services', exact: true })).toBeVisible();
   await expect(page.getByText('≈ $485K', { exact: true })).toBeVisible();
-  await expect(page.getByText('Not estimated', { exact: true })).toBeVisible();
+  await expect(review).toContainText(/\$ per 10 QALYs · one better life/i);
+  await expect(page.getByText('Not yet convertible', { exact: true })).toBeVisible();
+  await expect(review).toContainText('≈ $298K / 10 QALYs');
+  await expect(review).toContainText('EXTERNAL STUDY · NOT COMPASS');
+  await expect(review).toContainText('= Withheld');
+  await expect(review.locator('.charity-audit-gates article')).toHaveCount(8);
   await expect(page.getByText(/no finite upper bound/i)).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });

@@ -1,6 +1,6 @@
 {
-  "version": "sf-farming-hope-review-v0.1",
-  "generatedAt": "2026-08-30T23:25:00-07:00",
+  "version": "sf-farming-hope-review-v0.2",
+  "generatedAt": "2026-08-31T16:40:00-07:00",
   "organization": {
     "name": "Farming Hope",
     "ein": "832393341",
@@ -8,9 +8,9 @@
     "donationUrl": "https://farminghope.org/donate/"
   },
   "decision": {
-    "state": "Promising reported employment signal; causal and marginal cost-effectiveness not yet estimable",
-    "summary": "Farming Hope combines paid culinary apprenticeship, job support, community meals, grocery distribution, and food recovery. Its 2024 report shows high graduation and post-graduation employment rates, but does not publish participant flow, employment definitions, follow-up completeness, a comparison group, or the cost of creating an additional sustained job. Randomized transitional-jobs evidence is mixed and highly program-dependent, so the reported placement rate cannot yet be treated as causal impact.",
-    "costEffectiveness": "Not estimable",
+    "state": "Exploratory transferred-effect model; not recommendation-ready",
+    "summary": "Farming Hope combines paid culinary apprenticeship, job support, community meals, grocery distribution, and food recovery. Its 2024 report shows high graduation and post-graduation employment rates, but does not publish participant flow, employment definitions, follow-up completeness, or a comparison group. A new exploratory model isolates the paid apprenticeship, uses the 2024 job-training expense as a gross historical cost anchor, and transfers a pooled randomized late-follow-up employment effect. The conditional result is about $1.04 million per additional person ever employed in the late follow-up year; a null remains plausible.",
+    "costEffectiveness": "≈ $1.04M per additional person ever employed in a late follow-up year (conditional)",
     "roomForMoreFunding": "Not published",
     "recommendation": "Not recommendation-ready"
   },
@@ -73,7 +73,8 @@
   ],
   "model": {
     "nativeOutcome": "Apprentice in unsubsidized employment at least 30 hours per week and still employed 12 months after program exit",
-    "status": "not-estimable",
+    "status": "exploratory-transferred-effect-model",
+    "modelVersion": "sf-farming-hope-apprenticeship-cea-v0.1",
     "missingInputs": [
       "Eligible applicants, enrolled apprentices, graduates, exits, and all follow-up denominators with missingness",
       "A pre-specified definition of unsubsidized employment, hours, wage, benefits, job quality, and sustained retention",
@@ -111,6 +112,14 @@
       "published": "filed 2025-09-23",
       "retrieved": "2026-08-30",
       "sourceType": "organization tax filing"
+    },
+    {
+      "publisher": "Farming Hope",
+      "title": "Apprenticeships",
+      "url": "https://farminghope.org/apprenticeships/",
+      "published": "current program page",
+      "retrieved": "2026-08-31",
+      "sourceType": "current organization program description"
     },
     {
       "publisher": "San Francisco Department of Public Health",

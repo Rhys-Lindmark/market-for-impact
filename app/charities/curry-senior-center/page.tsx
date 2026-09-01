@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import CharityResearchReport, { type CharityReportContent } from '@/components/CharityResearchReport';
 import review from '@/data/san-francisco/curry-senior-center-review-v1.json';
 import model from '@/data/san-francisco/curry-senior-center-cea-v1.json';
+import bridgeAudit from '@/data/san-francisco/curry-senior-center-qaly-bridge-audit-v1.json';
 
 export const metadata: Metadata = {
   title: 'Curry Senior Center — charity research | Market for Impact',
@@ -39,7 +40,7 @@ const content: CharityReportContent = {
   summary: [
     { label: 'OUR BEST GUESS', value: '≈ $170K', detail: 'per additional participant crossing a modeled 0.5 SD loneliness-improvement threshold at 12 months' },
     { label: 'POSITIVE-EFFECT SENSITIVITY', value: '$38K–$2.3M', detail: 'conditional on a positive causal effect; null or harm remains plausible' },
-    { label: 'EVIDENCE', value: 'Mixed', detail: 'one relevant uncontrolled local study; conflicting external randomized syntheses' },
+    { label: '$ PER 10 QALYS · ONE BETTER LIFE', value: 'Not yet convertible', detail: 'six explicit evidence gates fail; the native loneliness model remains visible below' },
     { label: 'FUNDING ROOM', value: 'Not published', detail: 'the modeled $100,000 is illustrative, not verified cohort capacity' },
   ],
   programSection: {
@@ -62,10 +63,26 @@ const content: CharityReportContent = {
     uncertaintyBoundary: model.nullEffectBoundary,
     fundingBoundary: model.fundingRoom.boundary,
   },
+  comparisonAudit: {
+    headline: 'Not yet convertible to $ per 10 QALYs—and the native outcome is itself modeled.',
+    body: bridgeAudit.decision,
+    candidate: {
+      label: 'BEST CANDIDATE HEALTH-UTILITY EVIDENCE',
+      value: '0.04 utility gap / year',
+      detail: 'Two observational chronic-condition studies reported a 0.04 gap between lonely and not-lonely groups. That association cannot be substituted for Curry’s modeled 0.5-SD threshold crossing.',
+    },
+    failedGates: bridgeAudit.failedGates.map((gate) => ({ key: gate.key, label: gate.label, why: gate.why })),
+    illustrative: {
+      expression: bridgeAudit.illustrativeCounterfactual.arithmetic,
+      result: `= ${compactMoney.format(bridgeAudit.illustrativeCounterfactual.resultUsd)}`,
+      boundary: bridgeAudit.illustrativeCounterfactual.publicationBoundary,
+    },
+    requiredEvidence: bridgeAudit.requiredEvidence,
+  },
   evidence: review.evidence,
   reservations: review.reservations,
   excludedBenefits: model.excludedBenefits,
-  sources: review.sources,
+  sources: [...review.sources, ...bridgeAudit.sources.filter((source) => !review.sources.some((existing) => existing.url === source.url))],
 };
 
 export default function CurrySeniorCenterResearchPage() {

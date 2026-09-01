@@ -4,6 +4,7 @@ import fs from 'node:fs';
 
 const review = JSON.parse(fs.readFileSync('data/san-francisco/curry-senior-center-review-v1.json', 'utf8'));
 const model = JSON.parse(fs.readFileSync('data/san-francisco/curry-senior-center-cea-v1.json', 'utf8'));
+const bridge = JSON.parse(fs.readFileSync('data/san-francisco/curry-senior-center-qaly-bridge-audit-v1.json', 'utf8'));
 
 function normalCdf(value) {
   const sign = value < 0 ? -1 : 1;
@@ -50,4 +51,19 @@ test('Curry review keeps periods, outputs, and conditional grants bounded', () =
   assert.match(review.financialContext.boundary, /not cash on hand/i);
   assert.ok(review.nativeScale.every((row) => /not/i.test(row.semantics)));
   assert.ok(review.sources.every((source) => source.url && source.published && source.retrieved && source.sourceType));
+});
+
+test('Curry stays fail-closed against the shared 10-QALY better-life denominator', () => {
+  assert.equal(bridge.sharedDenominator.qalyThreshold, 10);
+  assert.equal(bridge.sharedDenominator.publishedPriceUsd, null);
+  assert.equal(bridge.status, 'not-yet-convertible');
+  assert.equal(bridge.failedGates.length, 6);
+  assert.equal(bridge.candidateEvidence.annualUtilityGap, 0.04);
+  assert.equal(bridge.illustrativeCounterfactual.status, 'not-a-comparison-price');
+  assert.equal(
+    bridge.illustrativeCounterfactual.nativeCostPerOutcomeUsd / bridge.illustrativeCounterfactual.qalyPerOutcome * bridge.sharedDenominator.qalyThreshold,
+    bridge.illustrativeCounterfactual.resultUsd,
+  );
+  assert.match(bridge.decision, /modeled threshold crossing/i);
+  assert.match(bridge.illustrativeCounterfactual.publicationBoundary, /must not appear as Curry's comparison price/i);
 });

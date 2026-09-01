@@ -395,10 +395,18 @@ test('phone donors can inspect the Curry model without converting service volume
   await expect(review).toContainText('d=-0.24');
   await expect(review).toContainText('no comparison group');
   await expect(review).toContainText('roughly $170,000 per additional meaningful loneliness improvement');
+  await expect(review).toContainText(/\$ per 10 QALYs — one better life/i);
+  await expect(page.getByText('≈ $30M', { exact: true })).toBeVisible();
+  await expect(review).toContainText('about $30 million per better life');
+  await expect(review).toContainText('$1.74M');
+  await expect(review).toContainText('$1.6B');
+  await expect(review).toContainText('0.0016 QALY');
+  await expect(review.locator('.charity-qaly-bridge .charity-sensitivity article')).toHaveCount(3);
+  await expect(review).toContainText(/no finite positive upper bound/i);
   await expect(review).toContainText('null or harmful effect');
   await expect(review).toContainText('not verified room for more funding');
   await expect(review.locator('.charity-evidence-list article')).toHaveCount(4);
-  await expect(review.locator('.charity-sensitivity article')).toHaveCount(3);
+  await expect(review.locator('.charity-model > .charity-sensitivity article')).toHaveCount(3);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 

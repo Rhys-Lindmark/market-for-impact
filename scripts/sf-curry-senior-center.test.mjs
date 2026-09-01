@@ -22,7 +22,7 @@ test('Curry review separates favorable pre/post change from causal impact', () =
   assert.match(review.decision.costEffectiveness, /Exploratory: about \$170,000/);
   assert.equal(review.decision.roomForMoreFunding, 'Not published');
   assert.equal(review.model.missingInputs.length, 8);
-  assert.match(review.model.qalyBoundary, /No QALY/);
+  assert.match(review.model.qalyBoundary, /\$30 million per 10 QALYs/);
 });
 
 test('Curry exploratory model exposes its distributional judgment and null-effect boundary', () => {
@@ -53,17 +53,21 @@ test('Curry review keeps periods, outputs, and conditional grants bounded', () =
   assert.ok(review.sources.every((source) => source.url && source.published && source.retrieved && source.sourceType));
 });
 
-test('Curry stays fail-closed against the shared 10-QALY better-life denominator', () => {
+test('Curry publishes a bounded 10-QALY decision estimate without hiding null or harm', () => {
   assert.equal(bridge.sharedDenominator.qalyThreshold, 10);
-  assert.equal(bridge.sharedDenominator.publishedPriceUsd, null);
-  assert.equal(bridge.status, 'not-yet-convertible');
-  assert.equal(bridge.failedGates.length, 6);
-  assert.equal(bridge.candidateEvidence.annualUtilityGap, 0.04);
-  assert.equal(bridge.illustrativeCounterfactual.status, 'not-a-comparison-price');
-  assert.equal(
-    bridge.illustrativeCounterfactual.nativeCostPerOutcomeUsd / bridge.illustrativeCounterfactual.qalyPerOutcome * bridge.sharedDenominator.qalyThreshold,
-    bridge.illustrativeCounterfactual.resultUsd,
-  );
-  assert.match(bridge.decision, /modeled threshold crossing/i);
-  assert.match(bridge.illustrativeCounterfactual.publicationBoundary, /must not appear as Curry's comparison price/i);
+  assert.equal(bridge.status, 'exploratory-loneliness-health-utility-transfer-model');
+  assert.equal(bridge.sourceEvidence.annualLonelyVsNotLonelyUtilityGap, 0.04);
+  const expectedQaly = 0.04
+    * (bridge.modeledBridge.causalLonelinessMeanShiftSd.best / bridge.modeledBridge.fullLonelinessTransitionSd.best)
+    * bridge.modeledBridge.retainedShareOfObservedUtilityGap.best
+    * bridge.modeledBridge.effectiveDurationYears.best;
+  assert.ok(Math.abs(bridge.modeledBridge.qalyPerParticipant.best - expectedQaly) < 1e-12);
+  const expectedPrice = bridge.modeledBridge.modeledDonorCostPerParticipantUsd.best / expectedQaly * 10;
+  assert.equal(bridge.modeledBridge.bestCostPerTenQalysUsd, expectedPrice);
+  assert.equal(bridge.sharedDenominator.publishedPriceUsd, expectedPrice);
+  assert.deepEqual(bridge.modeledBridge.positiveEffectRangeUsd, { low: 1736111.1111111112, high: 1600000000 });
+  assert.equal(bridge.evidenceWeaknesses.length, 5);
+  assert.match(bridge.modeledBridge.nullBoundary, /no finite positive upper bound/i);
+  assert.match(bridge.decision, /separate from the native modeled-responder calculation/i);
+  assert.ok(bridge.sources.every((source) => source.url && source.published && source.retrieved && source.sourceType));
 });

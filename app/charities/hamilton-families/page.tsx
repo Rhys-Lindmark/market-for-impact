@@ -41,7 +41,7 @@ const content: CharityReportContent = {
   summary: [
     { label: 'OUR BEST GUESS', value: '≈ $500K', detail: 'per additional eligible family avoiding recorded homelessness within six months' },
     { label: 'POSITIVE-EFFECT SENSITIVITY', value: '$100K–$12.5M', detail: 'conditional on a positive causal effect; a null effect has no finite impact price' },
-    { label: '$ PER 10 QALYS · ONE BETTER LIFE', value: 'Not yet convertible', detail: 'eight explicit evidence gates fail; the native family-housing model remains visible below' },
+    { label: 'COST PER BETTER LIFE', value: '≈ $1.4M', detail: 'per 10 QALYs; very-low-confidence transfer from a VA housing model' },
     { label: 'FUNDING ROOM', value: 'Not published', detail: 'the $100,000 gift is a scenario, not a current marginal offer' },
   ],
   programSection: {
@@ -64,25 +64,25 @@ const content: CharityReportContent = {
     uncertaintyBoundary: model.nullEffectBoundary,
     fundingBoundary: model.fundingRoom.boundary,
   },
-  comparisonAudit: {
-    headline: 'Not yet convertible to $ per 10 QALYs—and a family avoiding homelessness is not a measured health-utility unit.',
+  comparisonBridge: {
+    headline: 'Our current best estimate: about $1.4 million per better life (10 QALYs).',
     body: bridgeAudit.decision,
-    candidate: {
-      label: 'EXTERNAL STUDY · NOT HAMILTON',
-      value: '≈ $298K / 10 QALYs',
-      detail: 'A 2024 VA-payer model estimated $29,751 per QALY for SSVF homelessness prevention. Veteran housing trajectories, mortality, healthcare costs, and assumed utility weights do not establish Hamilton’s donor cost or QALYs.',
+    equation: {
+      label: 'EXPLORATORY COST PER 10 QALYS · ONE BETTER LIFE',
+      expression: `${money.format(bridgeAudit.modeledBridge.modeledDonorCostPerAssistedFamilyUsd.best)} ÷ ${bridgeAudit.modeledBridge.qalyPerAssistedFamily.best} QALY × 10`,
+      result: `= ${compactMoney.format(bridgeAudit.modeledBridge.bestCostPerTenQalysUsd)}`,
     },
-    failedGates: bridgeAudit.failedGates.map((gate) => ({ key: gate.key, label: gate.label, why: gate.why })),
-    illustrative: {
-      expression: bridgeAudit.illustrativeCounterfactual.arithmetic,
-      result: '= Withheld',
-      boundary: bridgeAudit.illustrativeCounterfactual.publicationBoundary,
-    },
-    requiredEvidence: bridgeAudit.requiredEvidence,
+    inputs: [
+      { key: 'donor_cost', label: 'Modeled donor cost per assisted family', confidence: 'very low', best: money.format(bridgeAudit.modeledBridge.modeledDonorCostPerAssistedFamilyUsd.best), range: `${money.format(bridgeAudit.modeledBridge.modeledDonorCostPerAssistedFamilyUsd.low)}–${money.format(bridgeAudit.modeledBridge.modeledDonorCostPerAssistedFamilyUsd.high)}`, basis: bridgeAudit.modeledBridge.modeledDonorCostPerAssistedFamilyUsd.basis },
+      { key: 'va_qaly', label: 'VA model QALYs per prevention recipient', confidence: 'moderate for model; indirect for Hamilton', best: String(bridgeAudit.sourceEvidence.incrementalQalysPerRecipient), range: 'Published point estimate', basis: 'A two-year VA simulation estimated 0.144 incremental QALYs and 90.7 additional stable-housing days per homelessness-prevention recipient receiving temporary financial assistance.' },
+      { key: 'hamilton_qaly', label: 'QALYs per Hamilton assisted family after transfer discount', confidence: 'very low transfer', best: String(bridgeAudit.modeledBridge.qalyPerAssistedFamily.best), range: `${bridgeAudit.modeledBridge.qalyPerAssistedFamily.low}–${bridgeAudit.modeledBridge.qalyPerAssistedFamily.high}`, basis: bridgeAudit.sourceEvidence.hamiltonQalysPerAssistedFamily.basis },
+    ],
+    sensitivity: bridgeAudit.modeledBridge.sensitivity.map((row) => ({ case: row.case, headline: compactMoney.format(row.costPerTenQalysUsd), detail: `${money.format(row.donorCostPerFamilyUsd)} per family · ${percent.format(row.retainedShareOfVaQalyEffect)} of VA QALY estimate retained` })),
+    boundary: `${bridgeAudit.modeledBridge.nullBoundary} ${bridgeAudit.sourceEvidence.boundary}`,
   },
   evidence: review.evidence.filter((item) => evidenceKeys.has(item.key)),
   reservations: review.reservations,
-  excludedBenefits: model.excludedBenefits,
+  excludedBenefits: [...new Set([...model.excludedBenefits, ...bridgeAudit.excludedBenefits])],
   sources: [
     ...review.sources.filter((source) => model.sources.some((modelSource) => modelSource.url === source.url)),
     ...bridgeAudit.sources.filter((source) => !review.sources.some((existing) => existing.url === source.url)),

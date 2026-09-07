@@ -10,6 +10,8 @@ Design first for a major donor deciding how to deploy roughly $10 million this y
 
 ## Now — foundation
 
+- [ ] **HRTC alcohol-focused mobile therapy — SF5.** Dedicated exploratory model estimates $5.55M/10 QALYs, with $493K–$444M positive scenarios and null boundary. Explicitly models a proposed five-session slice, not the exact protocol currently delivered; preserves unvalidated change-score mapping and public-funding substitution. Independent review, 191 tests, lint/build and phone/tablet checks passed. Issue #134 tracks local dose, utility and staffing evidence. Next merge/deploy and verify canonical report/API.
+
 - [ ] **PHC prescription glasses — unconventional program 1/10.** Conditional central estimate $71,111/10 QALYs; positive scenarios $8,889–$4M and explicit zero-additionality case. Current official giving level anchors cost but does not verify marginal funding. External uncontrolled utility, local referral attrition, Medi-Cal alternatives and Community Initiatives sponsorship are separated. Independent review, 189 tests, lint/build and phone/tablet checks passed; next merge/deploy and verify canonical report/API. Obtain current program cash/in-kind/reimbursement accounting and sustained usable correction before promotion.
 
 - [x] **SFAF targeted naloxone expansion — SF13 implementation.** PR #128 merged, Sites v102 deployed; canonical report/API, 186 tests, lint/build and phone/tablet checks passed. Central analyst estimate $56,328/10 QALYs includes residual repeat-rescue stress, public-supply assumptions and unknown marginal funding room. Research-only; issue #127 tracks incremental reach and repeated-recipient evidence.

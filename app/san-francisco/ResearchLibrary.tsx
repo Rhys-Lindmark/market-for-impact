@@ -96,6 +96,7 @@ export default function SanFranciscoDonorPage() {
       </section>
 
       <section className="sf-top-research" id="top-research" aria-labelledby="sf-top-research-title">
+        <aside className="sf-life-bettered-contract"><strong>New research bet: targeted overdose prevention.</strong><span>Our exploratory SFAF model estimates about $56K per 10 QALYs, with very wide uncertainty and unverified funding room. <a href="https://ai.rhyslindmark.com/donate/charities/san-francisco-aids-foundation">Read the model and what could overturn it →</a></span></aside>
         <header>
           <div><p className="kicker">GIVEWELL-STYLE PROGRAM REVIEWS · NOT YET RECOMMENDATIONS</p><h2 id="sf-top-research-title">The strongest cost-effectiveness work so far.</h2></div>
           <p>These are our current opinions, not a league table. The outcomes differ, every model has a plausible null case, and no organization has published verified room for more funding. Open each full report to inspect the assumptions.</p>

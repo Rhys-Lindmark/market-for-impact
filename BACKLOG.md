@@ -10,7 +10,9 @@ Design first for a major donor deciding how to deploy roughly $10 million this y
 
 ## Now — foundation
 
-- [ ] **SFAF targeted naloxone expansion — SF13 implementation.** Publish the versioned local-output model and dedicated report, with central analyst estimate $56,328/10 QALYs, explicit residual repeat-rescue stress test, public-supply assumption and unknown marginal funding room. Independent numerical/conceptual review completed; phone/tablet tests passed. Remain research-only pending more evidence on incremental reach and repeated-rescue overlap. Next: verify and deploy, then EDC's remaining QALY endpoint.
+- [x] **SFAF targeted naloxone expansion — SF13 implementation.** PR #128 merged, Sites v102 deployed; canonical report/API, 186 tests, lint/build and phone/tablet checks passed. Central analyst estimate $56,328/10 QALYs includes residual repeat-rescue stress, public-supply assumptions and unknown marginal funding room. Research-only; issue #127 tracks incremental reach and repeated-recipient evidence.
+
+- [ ] **EDC adult-health decision model — SF4.** Replace the current withheld endpoint with a transparent subjective estimate ($126M/10 QALYs; positive scenarios $2.1M–$25.2B), retaining the historical audit. July 2026 trial evidence cautions against transferring court results into residential stability. Inputs, formulas, API and phone/tablet tests implemented; full 186-test suite, lint and build passed. Next: merge and verify canonical release, then JCYC summer jobs.
 
 - [ ] **SF expanded search — mechanism-first bets (2026-09-07).** Complete the remaining original 25, plus ten unconventional programs and ten mechanism-first bets documented in [docs/sf-research-bets.md](docs/sf-research-bets.md). Hypothesize what could move the needle cheaply, find a local charity implementing it, and test the hypothesis against costs, causal outcomes and marginal funding constraints. Seek credible estimates below $100,000 per 10 QALYs without fitting assumptions to the target. Discovery is complete for the twenty leads (two local delivery/partner gaps explicitly flagged); evaluation and cost-effectiveness models are not complete.
 

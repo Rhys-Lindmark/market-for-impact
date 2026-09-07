@@ -210,7 +210,7 @@ export default function SanFranciscoDonorPage() {
         <div className="sf-context-grid">
           <article><span>Outcome contract</span><strong>{sfOutcomes.outcomes.length} local outcomes</strong><p>Housing, homelessness, overdose, mental health, food security, education, violence, and mobility have explicit units and attribution requirements.</p><a href="/#san-francisco">Read the outcome definitions ↗</a></article>
           <article><span>Public baseline</span><strong>{compactMoney.format(sfFunding.summary.cityBudgetUsd)}</strong><p>Approved city spending is context. Contract authority, payments, and remaining authority stay separate and never become donation room.</p><a href="/#sf-public-funding">Inspect public funding ↗</a></article>
-          <article><span>Conversion boundary</span><strong>QALY / WELLBY blocked</strong><p>All six candidates lack the local counterfactual and versioned conversion model required for a defensible health or wellbeing estimate.</p><a href="/#sf-diligence">Inspect the boundary ↗</a></article>
+          <article><span>Current modeling boundary</span><strong>Exploratory QALY estimates</strong><p>The reviews above now contain versioned health models. Local causal effects and marginal funding remain unverified; these analyst estimates are not measured outcomes or WELLBY conversions.</p><a href="#top-research">Inspect the current models ↗</a></article>
         </div>
       </section>
 

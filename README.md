@@ -4,7 +4,9 @@ Market for Impact is a source-traceable market of philanthropic opportunities an
 
 The product connects evaluator recommendations to disclosed grants while preserving evidence, native impact metrics, marginal funding room, model versions, uncertainty, and source freshness. The intended audience includes individual donors, foundation staff, researchers, and people at AI companies deciding where to give.
 
-Live site: [market-for-impact.rhyslindmark.chatgpt.site](https://market-for-impact.rhyslindmark.chatgpt.site/)
+Live site: [San Francisco giving](https://ai.rhyslindmark.com/donate). The homepage features four current research picks priced per 10 QALYs. [Rest of the research](https://ai.rhyslindmark.com/donate/research) preserves the full local evidence library; the [cross-cause archive](https://ai.rhyslindmark.com/donate/archive) preserves earlier grant/evaluator tools with original snapshot dates. The upstream Sites origin remains the deployment host.
+
+Current scope (7 September 2026): finish the 25-priority SF review cohort; add SPUR, GrowSF and Housing Action Coalition; investigate 10 unconventional programs and 10 high-conviction research bets seeking a credible estimate below $100,000 per 10 QALYs; then synthesize a city cost-effectiveness theory. [Phase plan and recovery state](docs/sf-progress.md).
 
 ## Product principles
 

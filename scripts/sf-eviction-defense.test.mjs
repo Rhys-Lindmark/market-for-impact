@@ -61,7 +61,7 @@ test('EDC uses 10 QALYs as the shared denominator but fails closed on conversion
 
 test('EDC donor-facing pages show the common better-life denominator without inventing a price', () => {
   const report = fs.readFileSync('app/charities/eviction-defense-collaborative/page.tsx', 'utf8');
-  const sfPage = fs.readFileSync('app/san-francisco/page.tsx', 'utf8');
+  const sfPage = fs.readFileSync('app/san-francisco/ResearchLibrary.tsx', 'utf8');
   assert.match(report, /\$ PER 10 QALYS · ONE BETTER LIFE/);
   assert.match(report, /Not yet convertible/);
   assert.match(report, /No \$ \/ QALY estimate/);

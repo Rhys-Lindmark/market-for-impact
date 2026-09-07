@@ -55,7 +55,7 @@ test('Five Keys applies the universal 10-QALY denominator with an explicit disco
 test('donor-facing pages publish the explicit Five Keys decision estimate and its uncertainty', () => {
   const report = fs.readFileSync('app/charities/five-keys/page.tsx', 'utf8');
   const sharedReport = fs.readFileSync('components/CharityResearchReport.tsx', 'utf8');
-  const sfPage = fs.readFileSync('app/san-francisco/page.tsx', 'utf8');
+  const sfPage = fs.readFileSync('app/san-francisco/ResearchLibrary.tsx', 'utf8');
   assert.match(report, /COST PER BETTER LIFE/);
   assert.match(report, /about \$4\.9 million per better life/);
   assert.match(report, /qalyPerAdditionalCredential\.best/);

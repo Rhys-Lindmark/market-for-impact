@@ -10,7 +10,9 @@ Design first for a major donor deciding how to deploy roughly $10 million this y
 
 ## Now — foundation
 
-- [ ] **Openhouse Friendly Visitor — SF7 / #148.** Proposed six-month companionship match: subjective central $5.33M/10 QALYs, positive scenarios $593K–$320M, null/harm possible. Separate local satisfaction and external symptom-scale findings from assumed utility. Pending verification/release; require marginal quote and volunteer capacity.
+- [ ] **Progress Foundation Avenues — SF7 / #151.** Two-week crisis residential care versus available hospital treatment. Subjective positive central $391M/10 QALYs; null at least as credible. Payer savings are not donor savings. Pending independent review, tests and release; require marginal episode quote and public-funding reconciliation.
+
+- [x] **Openhouse Friendly Visitor — SF7 / #148.** Proposed six-month companionship match: subjective central $5.33M/10 QALYs, positive scenarios $593K–$320M, null/harm possible. Separate local satisfaction and external symptom-scale findings from assumed utility. Accepted PR #150 / Sites v112; 213 tests, lint/build, independent review, phone/tablet and full mobile audit passed. Canonical report/API and workbook B109 verified. Require marginal quote and volunteer capacity.
 
 - [x] **New Door six-month SF employment — SF7 / #146.** Health-only speculative scenario central $160M/10 QALYs, positive cases $10.7M–$4.8B with null/harm boundary. Local program identity and mixed external employment-health evidence remain separate from subjective utility and cost. Accepted PR #149 / Sites v111; 211 tests, lint/build, independent review, phone/tablet and full mobile audit passed. Canonical report/API and workbook B101 verified. No claim that economic benefits are worthless.
 

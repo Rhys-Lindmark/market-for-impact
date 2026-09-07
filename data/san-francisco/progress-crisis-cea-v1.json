@@ -1,0 +1,120 @@
+{
+  "version": "sf-progress-crisis-cea-v1",
+  "reviewedAt": "2026-09-07",
+  "organization": "Progress Foundation",
+  "program": "Avenues two-week acute diversion episode",
+  "confidence": "very-low",
+  "denominator": "10 incremental QALYs",
+  "formula": "10 * costPerPlace / (utilityGain * effectiveYears * engagement * additionality)",
+  "scope": "Proposed extra Avenues crisis-residential episode versus otherwise-available hospital care; not a no-treatment counterfactual or longer-term housing.",
+  "scenarios": [
+    {
+      "name": "Favorable positive",
+      "costPerPlace": 10000,
+      "utilityGain": 0.05,
+      "effectiveYears": 0.038356164383561646,
+      "engagement": 1,
+      "additionality": 0.75,
+      "horizonYears": 0.038356164383561646
+    },
+    {
+      "name": "Subjective positive central",
+      "costPerPlace": 15000,
+      "utilityGain": 0.02,
+      "effectiveYears": 0.038356164383561646,
+      "engagement": 1,
+      "additionality": 0.5,
+      "horizonYears": 0.038356164383561646
+    },
+    {
+      "name": "Unfavorable positive",
+      "costPerPlace": 25000,
+      "utilityGain": 0.002,
+      "effectiveYears": 0.038356164383561646,
+      "engagement": 1,
+      "additionality": 0.25,
+      "horizonYears": 0.038356164383561646
+    }
+  ],
+  "judgments": [
+    {
+      "key": "costPerPlace",
+      "label": "Current episode allowance",
+      "basis": "Assumed $15,000, not a quote or inflation-adjusted audited cost. FY2022–23 pooled ADU budget $6,431,386 / 584 estimated annual clients is about $11,013, but estimated clients may differ from episodes, includes four programs and is not marginal Avenues pricing."
+    },
+    {
+      "key": "utilityGain",
+      "label": "Short-term health advantage over hospital",
+      "basis": "Subjective .02, not a trial estimate. Closest small randomized QALY comparison found no significant adjusted health difference. Null is at least as credible as this positive scenario; satisfaction is not utility."
+    },
+    {
+      "key": "effectiveYears",
+      "label": "Benefit window",
+      "basis": "Fourteen days divided by 365. No persistent recovery, mortality or hospital-access gain is assumed."
+    },
+    {
+      "key": "engagement",
+      "label": "Separate completion multiplier",
+      "basis": "One: utility already averages across episodes including transfer/failure. Hospital backup remains necessary."
+    },
+    {
+      "key": "additionality",
+      "label": "New donor-funded capacity",
+      "basis": "50% judgment. Public contract funding and contingency may replace donor spending; actual unfunded safe capacity unverified."
+    }
+  ],
+  "nullBoundary": "The evidence-led comparator is no demonstrated incremental QALY gain versus hospital care. Null is at least as credible as the positive central scenario. No finite positive-benefit price at zero effect; negative utility preserves harm. These positive cases are not confidence limits.",
+  "fundingRoom": {
+    "verifiedUsd": null,
+    "status": "unverified",
+    "nextEvidence": "A current Avenues marginal episode quote, hospital-transfer and safety costs, public reimbursement ledger, and a credible incremental health or access counterfactual."
+  },
+  "excluded": [
+    "Government-payer hospital savings deducted from donor costs",
+    "Health benefits versus no treatment when hospital care is the comparator",
+    "Deaths prevented or benefits after the two-week episode",
+    "Dore urgent-care clinic, long-term residential care and housing"
+  ],
+  "sources": [
+    {
+      "publisher": "Progress Foundation",
+      "title": "Programs — Avenues",
+      "url": "https://www.progressfoundation.org/programs/",
+      "published": "Undated current page",
+      "retrieved": "2026-09-07",
+      "sourceType": "Local program identity and average two-week stay"
+    },
+    {
+      "publisher": "SF Budget and Legislative Analyst",
+      "title": "January 25, 2023 budget analysis",
+      "url": "https://sfgov.legistar.com/View.ashx?GUID=0FB53ED1-587F-4421-AF84-99C1D8D7D45E&ID=11592302&M=F",
+      "published": "2023-01-25",
+      "retrieved": "2026-09-07",
+      "sourceType": "Printed pp15–18 pooled ADU budget and estimated clients, not marginal price"
+    },
+    {
+      "publisher": "Howard et al.",
+      "title": "Women's crisis houses compared with psychiatric wards",
+      "url": "https://doi.org/10.1192/bjp.bp.110.081083",
+      "published": "2010-08",
+      "retrieved": "2026-09-07",
+      "sourceType": "Small randomized pilot; incomplete follow-up and an inconsistent displayed adjusted QALY coefficient, not imported"
+    },
+    {
+      "publisher": "Fenton et al.",
+      "title": "Cost and cost-effectiveness of hospital vs residential crisis care",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11926936/",
+      "published": "2002-04",
+      "retrieved": "2026-09-07",
+      "sourceType": "Government-payer cost comparison; symptom/community-day outcomes, not QALYs"
+    },
+    {
+      "publisher": "Fenton et al.",
+      "title": "Randomized trial of general hospital and residential alternative care",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9545998/",
+      "published": "1998",
+      "retrieved": "2026-09-07",
+      "sourceType": "Transfers and non-entry into assigned treatment constrain extrapolation"
+    }
+  ]
+}

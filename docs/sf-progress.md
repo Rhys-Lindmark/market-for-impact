@@ -10,7 +10,7 @@ Updated 2026-09-07. Manager: current task. Research implementer: sf_research_aud
 
 Accepted 2026-09-07: PRs #124 and #125 merged. Exact source f6965366c99aea9093e53581f888105950e4c166 published as Sites v101. Earlier verification: 181 tests, lint, build, homepage phone/tablet tests, route/navigation suite and GitHub mobile checks passed. Canonical production root, /san-francisco, /archive and /research returned HTTP 200, correct headings and no 390px overflow; both front doors contain exactly four picks. Canonical coefficient-grants API returned 200. Domain, base path and public access unchanged.
 
-Exit: all three accepted with published canonical routes. Four current picks are GLIDE, Compass, Hamilton, Five Keys, by positive central modeled price. They are not verified marginal funding offers. No claim that all 25 reviews are completed.
+Exit: all three accepted with published canonical routes. That initial shortlist was later superseded by PR #166: SFAF, PHC, GLIDE, Compass. All25 original models are now complete; the estimates remain exploratory, with no verified marginal funding offers.
 
 ## Phase 2 — finish the 25-priority review cohort
 
@@ -67,7 +67,7 @@ Latest user ordering supersedes parallel expansion: finish 25 → theory → mec
 
 Current phase: 4 — ten mechanism-first bets. All25 original models are released through PR #162; city theory PR #164 is merged and independently accepted. No verified marginal funding offers. Current ranking #165 joins the two additional comparator models and synchronizes the 27-review list and homepage four. Next: mechanism-first ten, unconventional ten, policy three, then final visual rebuild. Later user direction enables an immediate central-estimate research sort and matching homepage four; full visual rebuild remains later.
 
-Active block started 2026-09-07T22:01:25Z; target90 measured minutes without padding. Original cohort completion and city-theory synthesis are the current block. Earlier SFAF/PHC work remains additional comparator evidence, not extra original-cohort rows.
+Active block started 2026-09-07T23:20:33Z; target90 measured minutes without padding. Mechanism-first research is the current block. DOPE #168 models an additional site-year, with explicit usual-care and SFAF-overlap boundaries. Earlier SFAF/PHC work remains additional comparator evidence, not extra original-cohort rows.
 
 SF4: EDC now has an explicit subjective adult-health bridge: $126M/10 QALYs, positive scenarios $2.1M–$25.2B and a zero-benefit boundary. The historical failed-gate audit is preserved as history, not the current estimate. July 2026 randomized evidence cautions against treating legal possession as stable housing. PR #129 and canonical report/API accepted in Sites v103.
 

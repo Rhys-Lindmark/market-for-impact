@@ -1,0 +1,125 @@
+{
+  "version": "sf-lyon-earlier-testosterone-cea-v1",
+  "reviewedAt": "2026-09-07",
+  "organization": "Lyon-Martin Community Health Services",
+  "program": "Earlier adult testosterone initiation",
+  "confidence": "very-low",
+  "denominator": "10 incremental QALYs",
+  "formula": "10 * costPerSupportedStart / (utilityDifference * waitAvoidedYears * onsetFactor * transferRetention * additionality)",
+  "scope": "Proposed acceleration of clinically eligible adults seeking masculinization; not all clinic services, minors, estrogen therapy or surgery.",
+  "scenarios": [
+    {
+      "name": "Favorable positive",
+      "costPerSupportedStart": 250,
+      "utilityDifference": 0.14,
+      "waitAvoidedYears": 0.25,
+      "onsetFactor": 1,
+      "transferRetention": 1,
+      "additionality": 0.75
+    },
+    {
+      "name": "Central analyst estimate",
+      "costPerSupportedStart": 1000,
+      "utilityDifference": 0.07,
+      "waitAvoidedYears": 0.25,
+      "onsetFactor": 0.5,
+      "transferRetention": 0.5,
+      "additionality": 0.5
+    },
+    {
+      "name": "Unfavorable positive",
+      "costPerSupportedStart": 2000,
+      "utilityDifference": 0.01,
+      "waitAvoidedYears": 0.08333333333333333,
+      "onsetFactor": 0.5,
+      "transferRetention": 0.25,
+      "additionality": 0.25
+    }
+  ],
+  "judgments": [
+    {
+      "key": "costPerSupportedStart",
+      "label": "Cost per supported earlier start",
+      "basis": "Assumed nominal USD $1,000: three all-in clinical/lab/medication encounter bundles at $250 plus $250 navigation/coordination allocation including unsuccessful engagement. Neither unit price nor utilization is measured locally; no assumed reimbursement savings."
+    },
+    {
+      "key": "utilityDifference",
+      "label": "Three-month utility difference",
+      "basis": "Nolan 2024 randomized secondary analysis: baseline-adjusted EQ-5D-5L difference 0.07, reported 95% CI −0.07 to 0.21; nonsignificant. UK tariff, short open-label trial. Positive scenario values are not confidence bounds. Preserve reported interval rather than reconstructing one from the inconsistent reported P value."
+    },
+    {
+      "key": "waitAvoidedYears",
+      "label": "Wait avoided",
+      "basis": "Central three months matches the external trial window; local wait and number of accelerated starts unknown. Credit no benefit beyond three months; not a lifetime treatment estimate."
+    },
+    {
+      "key": "onsetFactor",
+      "label": "Within-window benefit onset",
+      "basis": "50% assumes a linear ramp from zero to the measured month-three endpoint. Immediate full benefit in the favorable case is a stress assumption, not observed onset."
+    },
+    {
+      "key": "transferRetention",
+      "label": "Local transfer retention",
+      "basis": "50% judgment for Australian-to-SF care setting and population differences; no local causal utility measurement."
+    },
+    {
+      "key": "additionality",
+      "label": "Genuinely accelerated share",
+      "basis": "50% judgment for starts actually brought forward by the donor rather than existing insurance/funding or alternative access. Do not credit all scheduled appointments."
+    }
+  ],
+  "nullBoundary": "No shortened wait, no additional financing or no utility benefit means no finite positive-benefit price. The utility interval includes harm. Signed utility sensitivity is supported by the model; nonpositive health results are not presented as a positive cost-effectiveness price.",
+  "fundingRoom": {
+    "verifiedUsd": null,
+    "status": "unverified",
+    "nextEvidence": "A priced adult-testosterone access tranche: current waits, accelerated starts, clinician/pharmacy capacity, reimbursement and restricted-gift allocation."
+  },
+  "excluded": [
+    "Benefits beyond month three",
+    "Mortality inferred from suicidality scores",
+    "Additional depression/dysphoria credit already reflected in utility",
+    "Minors, estrogen therapy, surgery, psychotherapy and other primary care"
+  ],
+  "sources": [
+    {
+      "publisher": "Lyon-Martin",
+      "title": "Healthcare services",
+      "url": "https://www.lyon-martin.org/healthcare-services",
+      "published": "Undated",
+      "retrieved": "2026-09-07",
+      "sourceType": "Local prescribing, monitoring and support identity; not marginal unit cost"
+    },
+    {
+      "publisher": "Nolan et al., JAMA Network Open",
+      "title": "Testosterone and Quality of Life in Transgender and Gender-Diverse Adults Seeking Masculinization",
+      "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2825347",
+      "published": "2024-10-25",
+      "retrieved": "2026-09-07",
+      "sourceType": "Primary randomized secondary analysis; preference-based utility endpoint, not local effect"
+    },
+    {
+      "publisher": "San Francisco Human Rights Commission",
+      "title": "RFP 100 grant agreements for commission approval, p.12",
+      "url": "https://media.api.sf.gov/documents/HRC_RFP_100_Grant_Agreement_Commission_Approval_20260209.pdf",
+      "published": "2026-02-09",
+      "retrieved": "2026-09-07",
+      "sourceType": "Proposed mixed integrated-care funding, not a hormone-access budget"
+    },
+    {
+      "publisher": "San Francisco DPH",
+      "title": "Contracted programs planning list, rows 292–293",
+      "url": "https://media.api.sf.gov/documents/DPH_Contracted_Programs_4-17-26.pdf",
+      "published": "2026-04-17",
+      "retrieved": "2026-09-07",
+      "sourceType": "Dated planning figures; not executed current cuts or private funding room"
+    },
+    {
+      "publisher": "Lyon-Martin",
+      "title": "Save Lyon-Martin capital campaign",
+      "url": "https://www.savelyonmartin.com/",
+      "published": "Undated current campaign",
+      "retrieved": "2026-09-07",
+      "sourceType": "Prospective multi-service capacity and permanent home; not incremental hormone starts"
+    }
+  ]
+}

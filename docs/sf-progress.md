@@ -20,7 +20,7 @@ Dependency: phase 1. Each remaining program gets a dedicated report, explicit be
 - [x] SF5 Model existing initial reviews: Harm Reduction Therapy Center, Homeless Youth Alliance, Huckleberry Youth Programs.
 - [x] SF6 Review and model JCYC, Larkin Street, Lyon-Martin, Mission Neighborhood Centers.
 - [x] SF7 Review and model New Door Ventures, Openhouse, Progress Foundation, Richmond Area Multi-Services.
-- [ ] SF8 Review and model Self-Help for the Elderly, Tenderloin Housing Clinic, United Playaz.
+- [x] SF8 Review and model Self-Help for the Elderly, Tenderloin Housing Clinic, United Playaz. Accepted PRs #160–#162 / Sites v116–v118; original25 coverage verified.
 
 Exit: 25 inspectable reviews/models, or exact unresolved variables documented after meaningful research; no invented evidence or claimed precision. Update shared workbook when a model changes and verify formulas.
 
@@ -65,9 +65,9 @@ Latest user ordering supersedes parallel expansion: finish 25 → theory → mec
 
 ## Recovery state
 
-Current phase: 2. SF5–SF7 accepted, including Progress Foundation PR #152 / v113 and RAMS PR #158 / v115. Original cohort: 22 released models; Self-Help in verification, THC and United Playaz next. SF11 and SF12 each have one existing modeled candidate, not ten completed reviews. After SF8 follow the strict user ordering above. Shared housing coefficients create correlated uncertainty, not independent local measurements.
+Current phase: 3 — city theory. All25 original program models are released through PR #162 / Sites v118. No verified marginal funding offers. Theory #163 is in implementation and independent verification; after acceptance, proceed to ten mechanism-first bets, then ten unconventional, then policy three, then final selection/redesign. No interim homepage reselection.
 
-Active block started 2026-09-07T22:01:25Z; target 90 measured minutes without padding. SF13 accepted: SFAF central $56,328/10 QALYs, positive scenarios $5,016–$1.67M, residual repeat-rescue sensitivity ($112,655 at 50% further lifetime credit). PR #128 merged as c78213dbf8a979550d02583dae3dc8349ed8f2b5 and published as Sites v102; 186 tests, full lint/build, phone/tablet checks and canonical report/API passed. Remains research-only rather than displacing a homepage pick.
+Active block started 2026-09-07T22:01:25Z; target90 measured minutes without padding. Original cohort completion and city-theory synthesis are the current block. Earlier SFAF/PHC work remains additional comparator evidence, not extra original-cohort rows.
 
 SF4: EDC now has an explicit subjective adult-health bridge: $126M/10 QALYs, positive scenarios $2.1M–$25.2B and a zero-benefit boundary. The historical failed-gate audit is preserved as history, not the current estimate. July 2026 randomized evidence cautions against treating legal possession as stable housing. PR #129 and canonical report/API accepted in Sites v103.
 
@@ -87,9 +87,14 @@ SF4: EDC now has an explicit subjective adult-health bridge: $126M/10 QALYs, pos
 | MNC proposed dental prevention | 39,256,978 | #147 | v110 |
 | New Door health-only employment | 160,000,000 | #149 | v111 |
 | Openhouse companionship | 5,333,333 | #150 | v112 |
+| Progress crisis residence | 391,071,429 | #152 | v113 |
+| RAMS depression counseling | 4,210,526 | #158 | v115 |
+| Self-Help proposed therapeutic tai chi | 2,400,000 | #160 | v116 |
+| THC room-turnover acceleration | 46,794,872 | #161 | v117 |
+| United Playaz mentorship | 26,666,667 | #162 | v118 |
 
 These are analyst scenarios, not measured local effects or verified marginal funding offers. Model perspectives differ: several omit non-health benefits, and mortality models share survival judgments. Do not interpret the table as an endorsement ranking. SFAF and PHC are under-$100K leads conditional on additionality; both have much worse pessimistic cases and null boundaries. The proposed 2026 SFAF agreement names HYA/GLIDE/HRTC subcontractors, so prime-only funding ledgers and pooled mortality benefits risk double-counting.
 
-All twelve released central formulas are mirrored in the existing [research workbook, Sep 7 Research Models tab](https://docs.google.com/spreadsheets/d/10boGN2J7SHJhNtmzAkzbKnRy-jSnoUQROeUFTY6Jdcg/edit?gid=1202219418#gid=1202219418). Native recalculation matches the site model outputs; existing user and GiveWell template tabs were preserved. Each block links its full versioned model, scenario ranges and sources. Workbook central outputs are not substitutes for reading those uncertainty notes.
+All17 September7 research-model central formulas are mirrored in the existing [research workbook, Sep7 Research Models tab](https://docs.google.com/spreadsheets/d/10boGN2J7SHJhNtmzAkzbKnRy-jSnoUQROeUFTY6Jdcg/edit?gid=1202219418#gid=1202219418). Native outputs and visual layout match; user and GiveWell tabs preserved. These central outputs do not replace full uncertainty notes.
 
-Latest accepted research source: cb78629c909ce8638d22fe076cac10e74a41487d, shared between GitHub main and Sites source, published as v112. Full merged suite: 213 tests, lint and production build passed; GitHub mobile and security checks passed. Public access, domain and /donate base path unchanged. All five newly released reports/APIs returned 200 with matching central outputs and no 390px overflow; native workbook formulas and layout checked. Progress Foundation adds a 21st cohort model in verification with 215 tests and phone/tablet checks; consult issue #151 for final release acceptance. RAMS is the next original-cohort review. United Playaz evidence preparation distinguishes mentorship from buybacks and is not yet a completed model.
+Latest accepted research source: c93f4fab50deba8f4e0263a0a318647d9a2fb801, shared by GitHub main and Sites source, published v118. 227 tests, lint/build, independent audits, phone/tablet and GitHub mobile/security passed. All25 canonical report URLs returned200 with shared denominator; new report/API numbers and workbook formulas matched. Public access/domain/base unchanged.

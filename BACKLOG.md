@@ -10,9 +10,11 @@ Design first for a major donor deciding how to deploy roughly $10 million this y
 
 ## Now — foundation
 
+- [ ] **MNC dental prevention — SF6 / #145.** Proposed targeted course plus licensed partner, not verified current varnish delivery. Central $39.3M/10 QALYs; positive scenarios $854K–$5.65B. Separate incident cavities from untreated painful-mouth cycles; no double multiplication of six-month QALY loss. Independent audit accepted; awaiting full verification and release. Next: funded clinical partner and real incremental dental gap.
+
 - [ ] **Lyon-Martin earlier adult care — SF6 / #143.** Dedicated short-horizon utility model: conditional central $4.57M/10 QALYs; positive scenarios $95K–$768M, with signed null/harm boundary. Independent review accepted; 205 tests, lint, production build and phone/tablet checks passed. Await merged canonical release. Need actual wait reduction, cost and reimbursement before treating this as an available tranche.
 
-- [ ] **Larkin cash-plus — SF6 / #141.** Added proposed TYI-dose replication model and dedicated report: central $40.4M/10 QALYs, positive scenarios $6.07M–$2.42B. Historical cash dose is sourced; housing duration, utility and support cost are explicit judgments. Independent audit accepted the bounded short-horizon threshold and corrected author attribution. Await release checks. Next: original-assignment housing trajectories, cost/funding crosswalk, then Lyon-Martin.
+- [x] **Larkin cash-plus — SF6 / #141.** Added proposed TYI-dose replication model and dedicated report: central $40.4M/10 QALYs, positive scenarios $6.07M–$2.42B. Historical cash dose is sourced; housing duration, utility and support cost are explicit judgments. Independent audit accepted the bounded short-horizon threshold and corrected author attribution. Accepted PR #142 / Sites v108: 202 tests, lint/build, independent review, phone/tablet and canonical report/API passed. Workbook formula matched. Next: original-assignment housing trajectories, cost/funding crosswalk, then Lyon-Martin.
 
 - [x] **Huckleberry adolescent anxiety counseling — SF5 / #138.** Dedicated analyst model: central $3.69M/10 QALYs; positive scenarios $618K–$71.1M and null boundary. Direct external QALY endpoint is integrated once; local course, nominal staffing cost and additionality remain judgments. Medi-Cal/sliding-scale provision is not donor funding room. Accepted PR #140 / Sites v107: independent review, 198 tests, lint/build, phone/tablet and canonical report/API checks passed.
 

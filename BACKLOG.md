@@ -10,6 +10,8 @@ Design first for a major donor deciding how to deploy roughly $10 million this y
 
 ## Now — foundation
 
+- [ ] **RAMS depression counseling — SF7 / #154.** Hypothetical fifteen-contact course, not a verified local CBT protocol. Central $4.21M/10 QALYs, positive scenarios $359K–$160M with null/harm. Actual psychodynamic training mismatch explicitly attenuated by judgment, not claimed comparative efficacy. Pending review, verification and release.
+
 - [ ] **Research report donation-route guard — #155.** Do not show a clickable-looking donation action when a report has no destination. Preserve real links and show a non-interactive unverified funding status. Pending mobile regression and release.
 
 - [ ] **Progress Foundation Avenues — SF7 / #151.** Two-week crisis residential care versus available hospital treatment. Subjective positive central $391M/10 QALYs; null at least as credible. Payer savings are not donor savings. Pending independent review, tests and release; require marginal episode quote and public-funding reconciliation.

@@ -8,11 +8,11 @@ const snapshot = buildSfResearchFunnel({ irsUniverse: read('data/san-francisco/i
 
 test('builds a nested research funnel without implying impact', () => {
   validateSfResearchFunnel(snapshot);
-  assert.deepEqual(snapshot.summary, { universeCount: 6688, machineEligibleCount: 1103, shallowScreenCount: 1000, priorityReviewCount: 100, deepDiveQueueCount: 25, completedInitialReviewCount: 21, exploratoryModelCount: 21, completedCostEffectivenessCount: 0 });
+  assert.deepEqual(snapshot.summary, { universeCount: 6688, machineEligibleCount: 1103, shallowScreenCount: 1000, priorityReviewCount: 100, deepDiveQueueCount: 25, completedInitialReviewCount: 22, exploratoryModelCount: 22, completedCostEffectivenessCount: 0 });
   assert.equal(new Set(snapshot.priority1000).size, 1000);
   assert.equal(new Set(snapshot.priority100).size, 100);
   assert.equal(snapshot.interpretation.ranking.includes('not top-charity lists'), true);
-  assert.deepEqual(snapshot.deepDiveRows.filter((row) => row.costEffectivenessStatus === 'exploratory-model').map((row) => row.displayName), ['Compass Family Services', 'Curry Senior Center', 'Eviction Defense Collaborative', 'Farming Hope', 'Five Keys Schools and Programs', 'GLIDE Foundation', 'Hamilton Families', 'Harm Reduction Therapy Center', 'Homeless Youth Alliance', 'Huckleberry Youth Programs', 'Institute on Aging', 'Japanese Community Youth Council', 'Larkin Street Youth Services', 'Lyon-Martin Community Health Services', 'Mission Neighborhood Centers', 'New Door Ventures', 'Openhouse', 'Progress Foundation', 'Project Open Hand', 'San Francisco–Marin Food Bank', 'SF LGBT Center']);
+  assert.deepEqual(snapshot.deepDiveRows.filter((row) => row.costEffectivenessStatus === 'exploratory-model').map((row) => row.displayName), ['Compass Family Services', 'Curry Senior Center', 'Eviction Defense Collaborative', 'Farming Hope', 'Five Keys Schools and Programs', 'GLIDE Foundation', 'Hamilton Families', 'Harm Reduction Therapy Center', 'Homeless Youth Alliance', 'Huckleberry Youth Programs', 'Institute on Aging', 'Japanese Community Youth Council', 'Larkin Street Youth Services', 'Lyon-Martin Community Health Services', 'Mission Neighborhood Centers', 'New Door Ventures', 'Openhouse', 'Progress Foundation', 'Project Open Hand', 'Richmond Area Multi-Services', 'San Francisco–Marin Food Bank', 'SF LGBT Center']);
 });
 
 test('keeps advocacy in a separate unranked evidence track', () => {

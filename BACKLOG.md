@@ -10,6 +10,8 @@ Design first for a major donor deciding how to deploy roughly $10 million this y
 
 ## Now — foundation
 
+- [ ] **Huckleberry adolescent anxiety counseling — SF5 / #138.** Dedicated analyst model: central $3.69M/10 QALYs; positive scenarios $618K–$71.1M and null boundary. Direct external QALY endpoint is integrated once; local course, nominal staffing cost and additionality remain judgments. Medi-Cal/sliding-scale provision is not donor funding room. Await independent review, full tests, browser checks and canonical release before acceptance.
+
 - [x] **HYA supported medication access — SF5.** Conditional central $4.69M/10 QALYs; positive scenarios $77K–$1.48B, not confidence bounds. Models additional buprenorphine-covered time rather than referrals and preserves adult-to-youth, observational and funding uncertainty. Newly identified May 2026 SFAF proposal names HYA/GLIDE/HRTC subcontractors; added overlap warning to SFAF report without pooling unlike contract scopes. Independent review, 194 tests, lint/build and four phone/tablet HYA/SFAF checks passed. Issue #136 tracks marginal covered time and cost. PR #137 merged; Sites v106 and canonical report/API accepted. Next: Huckleberry counseling.
 - [x] **HRTC alcohol-focused mobile therapy — SF5.** Dedicated exploratory model estimates $5.55M/10 QALYs, with $493K–$444M positive scenarios and null boundary. Explicitly models a proposed five-session slice, not the exact protocol currently delivered; preserves unvalidated change-score mapping and public-funding substitution. Independent review, 191 tests, lint/build and phone/tablet checks passed. Issue #134 tracks local dose, utility and staffing evidence. PR #135 merged; Sites v106 and canonical report/API accepted.
 

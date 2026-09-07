@@ -25,7 +25,7 @@ For each lead: verify program and entity; examine intervention evidence; estimat
 
 ## Ten unconventional program leads
 
-These are distinct programs, not necessarily ten distinct legal entities. Local delivery gaps remain explicit.
+This is an older program-level discovery list, not yet ten distinct researched organizations. PHC appears more than once; do not count its services as separate organizations toward the roughly-50 goal. Reconcile or replace duplicates during the unconventional phase. Local delivery gaps remain explicit.
 
 1. **Lead-remediation navigation:** [PODER's Fix Lead SF announcement](https://podersf.org/2026/07/28/fix-lead-sf-program/). Can small enrollment support unlock public remediation? PODER is a possible outreach partner, not a confirmed remediation implementer. Need additional completed remediations, exposure change and defensible health valuation.
 2. **Indoor air filtration:** [Brightline Defense](https://www.brightlinedefense.org/news/em-magazine). Test purifier use, maintenance, exposure reduction and clinical benefits; uncontrolled reported symptom change is insufficient for causal inference.
@@ -40,6 +40,6 @@ These are distinct programs, not necessarily ten distinct legal entities. Local 
 
 ## Research order and housing hypothesis
 
-First investigate overdose prevention, medication-treatment retention, and inexpensive sensory/dental interventions, alongside the unfinished original 25. This order reflects short causal pathways and potentially inexpensive delivery, not established rankings. Housing remains a hypothesis: the three current leading housing estimates share an external QALY coefficient and a retention judgment. Their apparent agreement is not three independent measurements of housing's superiority.
+Latest user order: complete the original 25, publish the city-level theory, then research these ten mechanism-first bets, then the ten unconventional programs, then SPUR/GrowSF/HAC, and only then select the final four and rebuild the homepage. Existing candidate lists are provisional discovery, not permission to skip that order. Within the mechanism phase, prioritize overdose prevention, medication-treatment retention and inexpensive access interventions if the synthesis supports them. This order reflects short causal pathways and potentially inexpensive delivery, not established rankings. Housing remains a hypothesis: the three current leading housing estimates share an external QALY coefficient and a retention judgment. Their apparent agreement is not three independent measurements of housing's superiority.
 
-Completion requires an inspectable program model and bottom line, including a best estimate when defensible, source/assumption separation, sensitivities, and a marginal funding assessment. Keep unsuccessful leads visible. Derive the city-wide theory after comparing the original and expanded cohorts, not by assuming the present leaders must win.
+Completion requires an inspectable program model and bottom line, including a best estimate when defensible, source/assumption separation, sensitivities, and a marginal funding assessment. Keep unsuccessful leads visible. Develop the initial city-wide theory from the original 25 before expanding, then revise it with the new findings; do not assume the present leaders must win.

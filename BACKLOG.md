@@ -10,19 +10,21 @@ Design first for a major donor deciding how to deploy roughly $10 million this y
 
 ## Now — foundation
 
-- [ ] **United Playaz intensive mentorship — SF8 / #153.** Central subjective $26.7M/10 QALYs; positive scenarios $333K–$4B, null/harm possible. Conditional-on-engagement mortality effect, not READI ITT or gun counts. Original cohort reaches25 modeled programs, not25 verified funding offers. Independent audit accepted; pending complete release verification.
+- [ ] **City cost-effectiveness theory — SF10 / #163.** After all25 original models, publish a donor-useful causal/cost ledger, shared-assumption audit, falsifiable hypotheses and sub-$100K thresholds. No interim homepage ranking. Mechanism-first ten are next only after theory acceptance.
 
-- [ ] **THC room-turnover acceleration — SF8 / #159.** Central subjective $46.8M/10 QALYs; positive scenarios $1.17M–$4.17B. Count only incremental earlier occupant-days with safe repairs, funding additionality and no full-year bonus. Independent audit accepted; pending complete release verification.
+- [x] **United Playaz intensive mentorship — SF8 / #153.** Accepted PR #162 / Sites v118, central subjective $26.7M/10 QALYs; positive $333K–$4B with null/harm. 227 tests, lint/build, independent audit, phone/tablet, GitHub mobile/security, canonical report/API and workbook B151/B152 verified. Original cohort now25 models, not25 verified marginal offers.
+
+- [x] **THC room-turnover acceleration — SF8 / #159.** Accepted PR #161 / Sites v117. Central $46.8M/10 QALYs, positive $1.17M–$4.17B; count only net earlier occupant-days. 224 tests, lint/build, independent audit, phone/tablet, GitHub mobile/security, canonical report/API and workbook B142 verified.
 
 **Latest user order, 2026-09-07:** finish the original 25 → city theory of change → ten mechanism-first bets → ten unconventional programs → SPUR/GrowSF/HAC → final top-four selection and GiveWell-style visual rebuild with photos. No interim top-four reassessment. Roughly 50 unique organizations; remaining research lives separately. This ordering supersedes older parallel-expansion notes; see docs/sf-progress.md.
 
-- [ ] **Self-Help therapeutic tai chi — SF8 / #157.** Proposed 24-week trial-matched course, not existing six-week Sun-style delivery. Central independent bridge $2.4M/10 QALYs; alternative published integrated-QALY reading $600K. Explicit cost, onset, fidelity and funding assumptions; expired closeout grant is not current room. Independent audit accepted unit-boundary wording; pending full verification/release.
+- [x] **Self-Help therapeutic tai chi — SF8 / #157.** Accepted PR #160 / Sites v116. Central independent bridge $2.4M/10 QALYs; alternate integrated-QALY reading $600K. Proposed trial-matched course is not current six-week Sun-style. 221 tests, lint/build, independent audit, phone/tablet, GitHub mobile/security, canonical report/API and workbook B133/B134 verified.
 
-- [ ] **RAMS depression counseling — SF7 / #154.** Hypothetical fifteen-contact course, not a verified local CBT protocol. Central $4.21M/10 QALYs, positive scenarios $359K–$160M with null/harm. Actual psychodynamic training mismatch explicitly attenuated by judgment, not claimed comparative efficacy. Pending review, verification and release.
+- [x] **RAMS depression counseling — SF7 / #154.** Accepted PR #158 / Sites v115. Central $4.21M/10 QALYs; CBT-to-local psychodynamic transfer is explicit judgment, not local efficacy. 218 tests, lint/build, independent audit, phone/tablet, GitHub mobile/security, canonical report/API and workbook B124 verified.
 
-- [ ] **Research report donation-route guard — #155.** Do not show a clickable-looking donation action when a report has no destination. Preserve real links and show a non-interactive unverified funding status. Pending mobile regression and release.
+- [x] **Research report donation-route guard — #155.** Accepted PR #156 / Sites v114. Missing destination now renders noninteractive Funding route unverified; real GLIDE link preserved. 215 tests, lint/build and mobile regression/production checks passed.
 
-- [ ] **Progress Foundation Avenues — SF7 / #151.** Two-week crisis residential care versus available hospital treatment. Subjective positive central $391M/10 QALYs; null at least as credible. Payer savings are not donor savings. Pending independent review, tests and release; require marginal episode quote and public-funding reconciliation.
+- [x] **Progress Foundation Avenues — SF7 / #151.** Accepted PR #152 / Sites v113. Subjective central $391M/10 QALYs; null at least as credible against hospital alternative. 215 tests, lint/build, independent review, phone/tablet and canonical report/API/workbook checks passed. Current marginal quote and public funding reconciliation remain open.
 
 - [x] **Openhouse Friendly Visitor — SF7 / #148.** Proposed six-month companionship match: subjective central $5.33M/10 QALYs, positive scenarios $593K–$320M, null/harm possible. Separate local satisfaction and external symptom-scale findings from assumed utility. Accepted PR #150 / Sites v112; 213 tests, lint/build, independent review, phone/tablet and full mobile audit passed. Canonical report/API and workbook B109 verified. Require marginal quote and volunteer capacity.
 

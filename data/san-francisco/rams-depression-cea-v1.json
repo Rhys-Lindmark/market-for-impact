@@ -1,0 +1,117 @@
+{
+  "version": "sf-rams-depression-cea-v1",
+  "reviewedAt": "2026-09-07",
+  "organization": "Richmond Area Multi-Services (RAMS)",
+  "program": "Modeled adult depression-counseling course",
+  "confidence": "very-low",
+  "denominator": "10 incremental QALYs",
+  "formula": "10 * costPerOfferedCourse / (referenceQalys * transferRetention * additionality)",
+  "scope": "Hypothetical 15-contact depression-counseling course within Adult Outpatient; not an existing standardized RAMS CBT protocol, the whole clinic, or residential services.",
+  "scenarios": [
+    {
+      "name": "Favorable positive",
+      "costPerOfferedCourse": 2000,
+      "referenceQalys": 0.099,
+      "transferRetention": 0.75,
+      "additionality": 0.75
+    },
+    {
+      "name": "Central analyst estimate",
+      "costPerOfferedCourse": 3000,
+      "referenceQalys": 0.057,
+      "transferRetention": 0.25,
+      "additionality": 0.5
+    },
+    {
+      "name": "Unfavorable positive",
+      "costPerOfferedCourse": 6000,
+      "referenceQalys": 0.015,
+      "transferRetention": 0.1,
+      "additionality": 0.25
+    }
+  ],
+  "judgments": [
+    {
+      "key": "costPerOfferedCourse",
+      "label": "Marginal course allowance",
+      "basis": "Assumed fifteen contacts at $150 loaded delivery each, plus $750 intake, supervision and coordination = $3,000. Neither dose nor rate is a RAMS quote. Includes offered-course effort and noncompletion."
+    },
+    {
+      "key": "referenceQalys",
+      "label": "External one-year QALY calibration",
+      "basis": "CoBalT imputed baseline-adjusted EQ-5D-3L area-under-curve difference .057, 95% CI .015–.099, CBT plus usual care versus usual care in antidepressant-resistant depression. Already integrates one year and offered-treatment outcomes. Not an endpoint utility or RAMS effect."
+    },
+    {
+      "key": "transferRetention",
+      "label": "Modality and population transfer",
+      "basis": "25% judgment for a substantial mismatch: RAMS describes predominantly psychodynamic training, not CoBalT CBT fidelity. Severity, existing psychotherapy and local delivery also differ. This is not evidence that psychodynamic care has one-quarter CBT efficacy."
+    },
+    {
+      "key": "additionality",
+      "label": "Additional funded care",
+      "basis": "50% judgment for funding replacement/reimbursement and genuinely added capacity. No verified donor-sized gap or restricted depression tranche."
+    }
+  ],
+  "nullBoundary": "Positive scenarios combine a trial interval with subjective local assumptions; they are not a RAMS confidence interval. Zero local benefit or added capacity means no finite positive-benefit price. Signed reference QALYs preserve possible harm. No unmeasured long-term benefit added.",
+  "fundingRoom": {
+    "verifiedUsd": null,
+    "status": "unverified",
+    "nextEvidence": "Actual depression subgroup and modality, contact schedule, loaded course quote, outpatient-only Appendix B and reimbursement/wait-list crosswalk."
+  },
+  "excluded": [
+    "Residential Broderick and API collaborative services",
+    "Additional years or routine completion multipliers applied to the integrated QALY estimate",
+    "Employment, family or healthcare savings",
+    "Psychodynamic trial gains divided linearly by sessions"
+  ],
+  "sources": [
+    {
+      "publisher": "RAMS",
+      "title": "Adult Outpatient Services",
+      "url": "https://ramsinc.org/programs/clinical-counseling-services/adult-outpatient-services/",
+      "published": "Undated current page",
+      "retrieved": "2026-09-07",
+      "sourceType": "Counseling service identity; no standardized depression-course cost"
+    },
+    {
+      "publisher": "RAMS",
+      "title": "Outpatient Clinical Practicum",
+      "url": "https://ramsinc.org/programs/rams-training-institute/outpatient-clinical-practicum/",
+      "published": "Undated current page",
+      "retrieved": "2026-09-07",
+      "sourceType": "Predominantly psychodynamic training; not verified CBT fidelity"
+    },
+    {
+      "publisher": "San Francisco",
+      "title": "RAMS FY2023–24 funding summary",
+      "url": "https://media.api.sf.gov/documents/USE_RAMS_Funding_Summary_23-24_updated_4_16_24.pdf",
+      "published": "FY2023–24 summary; April 2024 file revision",
+      "retrieved": "2026-09-07",
+      "sourceType": "Mixed adult contract includes outpatient, residential and collaborative services; not marginal course cost"
+    },
+    {
+      "publisher": "Wiles et al. / NIHR",
+      "title": "CoBalT economic results",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK261987/",
+      "published": "2014-05",
+      "retrieved": "2026-09-07",
+      "sourceType": "469-person randomized trial; one-year imputed EQ-5D economic endpoint"
+    },
+    {
+      "publisher": "Wiles et al. / NIHR",
+      "title": "CoBalT full report Table 64",
+      "url": "https://njl-admin.nihr.ac.uk/document/download/2002530",
+      "published": "2014-05",
+      "retrieved": "2026-09-07",
+      "sourceType": "Base-case .057 QALYs, CI .015–.099; not descriptive .053 estimate"
+    },
+    {
+      "publisher": "Tavistock Adult Depression Study economic researchers",
+      "title": "Long-term psychoanalytic psychotherapy economic evaluation",
+      "url": "https://researchonline.lse.ac.uk/id/eprint/119292/1/1_s2.0_S0165032723005955_main.pdf",
+      "published": "2023-05-08 online",
+      "retrieved": "2026-09-07",
+      "sourceType": "Longer 60-session protocol and CORE-6D; triangulation, not a scaled course coefficient"
+    }
+  ]
+}

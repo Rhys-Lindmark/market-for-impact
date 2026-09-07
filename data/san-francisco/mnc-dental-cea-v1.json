@@ -1,0 +1,133 @@
+{
+  "version": "sf-mnc-dental-prevention-cea-v1",
+  "reviewedAt": "2026-09-07",
+  "organization": "Mission Neighborhood Centers",
+  "program": "Proposed targeted child dental-prevention course",
+  "confidence": "very-low",
+  "denominator": "10 incremental QALYs",
+  "formula": "10 * costPerCourse / ((controlRisk - controlRisk/(controlToTreatmentOddsRatio*(1-controlRisk)+controlRisk)) * transferRetention * additionality * untreatedCycles * painProbability * painQalyLossPerCycle)",
+  "scope": "Proposed MNC dental navigation plus a licensed clinical partner for otherwise-unreached initially caries-free children. MNC varnish delivery is not verified. Not an estimate of preschool or all family services.",
+  "scenarios": [
+    {
+      "name": "Favorable positive",
+      "costPerCourse": 100,
+      "controlRisk": 0.5,
+      "controlToTreatmentOddsRatio": 3.77,
+      "transferRetention": 1,
+      "additionality": 0.75,
+      "untreatedCycles": 1,
+      "painProbability": 0.48,
+      "painQalyLossPerCycle": 0.0112
+    },
+    {
+      "name": "Central analyst estimate",
+      "costPerCourse": 250,
+      "controlRisk": 0.4,
+      "controlToTreatmentOddsRatio": 3.77,
+      "transferRetention": 0.5,
+      "additionality": 0.5,
+      "untreatedCycles": 0.5,
+      "painProbability": 0.24,
+      "painQalyLossPerCycle": 0.0085
+    },
+    {
+      "name": "Unfavorable positive",
+      "costPerCourse": 500,
+      "controlRisk": 0.2,
+      "controlToTreatmentOddsRatio": 1.88,
+      "transferRetention": 0.25,
+      "additionality": 0.25,
+      "untreatedCycles": 0.25,
+      "painProbability": 0.14,
+      "painQalyLossPerCycle": 0.0049
+    }
+  ],
+  "judgments": [
+    {
+      "key": "costPerCourse",
+      "label": "Donor course budget",
+      "basis": "Assumed nominal $250 with existing clinical infrastructure. Four historical $20.88 Medicaid application fees (~$84) are only a reimbursement reference; the remainder allows navigation, scheduling and delivery overhead. Not a local quote or complete dental-treatment budget."
+    },
+    {
+      "key": "controlRisk",
+      "label": "Untreated incident-caries risk",
+      "basis": "Assumed 40% over the proposed two-year course, not MNC data. Trial endpoint was person-level cavitated decay or filled surfaces at last follow-up, not uniform two-year pain incidence."
+    },
+    {
+      "key": "controlToTreatmentOddsRatio",
+      "label": "Control / assigned-treatment odds",
+      "basis": "SF randomized trial assigned twice-yearly varnish: OR3.77 (95%CI1.88–7.58). Invert odds correctly; not a risk ratio. Protocol error caused fewer active applications; no upward adjustment using nonrandom actual-dose comparisons."
+    },
+    {
+      "key": "transferRetention",
+      "label": "Incremental effect retention",
+      "basis": "50% judgment for current population, service and baseline-prevention differences. MNC already provides toothbrushing; a different trial found no extra varnish benefit on top of supervised brushing."
+    },
+    {
+      "key": "additionality",
+      "label": "New donor-financed access",
+      "basis": "50% judgment for actual additional access beyond Head Start, Medi-Cal and existing dental homes. Missing recorded care does not prove an eligible unfunded child."
+    },
+    {
+      "key": "untreatedCycles",
+      "label": "Equivalent untreated mouth-level cycles",
+      "basis": "Central 0.5 six-month cycles per prevented incident-case child: an explicit provisional judgment giving only partial credit because the incidence endpoint includes promptly treated/filled lesions. Captures clinical-state compatibility and untreated duration, not extra efficacy. Range0–1 emphasized; no local measurement."
+    },
+    {
+      "key": "painProbability",
+      "label": "Pain given compatible untreated disease",
+      "basis": "External Janusz model0.24 for moderate caries; extensive0.48 favorable. Not all new caries is painful. Combined literature/expert inputs, not the SF trial's measured health effect."
+    },
+    {
+      "key": "painQalyLossPerCycle",
+      "label": "Pain loss per six-month cycle",
+      "basis": "Janusz2024 model0.0085 QALY per six-month cycle (0.0049–0.0112). Already time-integrated: do not multiply by0.5years again. Not a direct trial utility measurement."
+    }
+  ],
+  "nullBoundary": "No new completed prevention, no additional benefit beyond existing brushing/care, or zero untreated painful disease yields no finite positive price. Positive scenarios are subjective stress tests, not confidence bounds; harm is not assigned a positive price.",
+  "fundingRoom": {
+    "verifiedUsd": null,
+    "status": "unverified",
+    "nextEvidence": "Licensed delivery partner, otherwise-unreached eligible children, completed applications, caries and untreated-pain follow-up, full navigation costs and reimbursement/public-funding reconciliation."
+  },
+  "excluded": [
+    "Education, school readiness, earnings and IQ",
+    "Caregiver health or lifetime benefits",
+    "Avoided dental costs as donor cash returns",
+    "Multiple lesions counted as separate people or repeated QALY gains"
+  ],
+  "sources": [
+    {
+      "publisher": "Mission Neighborhood Centers",
+      "title": "Head Start / Early Head Start Annual Report2023–2024",
+      "url": "https://mncsf.org/wp-content/uploads/2025/03/Annual-Report-2023-2024.pdf",
+      "published": "FY2023–2024; website March2025",
+      "retrieved": "2026-09-07",
+      "sourceType": "Local toothbrushing and dental navigation; not verified varnish delivery or causal health"
+    },
+    {
+      "publisher": "Weintraub et al., Journal of Dental Research",
+      "title": "Fluoride varnish efficacy in preventing early childhood caries",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16434737/",
+      "published": "2006-02",
+      "retrieved": "2026-09-07",
+      "sourceType": "Primary SF randomized trial; assigned-treatment odds, attrition and protocol deviation"
+    },
+    {
+      "publisher": "Janusz et al.",
+      "title": "US childhood dental economic model, author manuscript",
+      "url": "https://scholarworks.indianapolis.iu.edu/server/api/core/bitstreams/6a3540ba-d542-4344-b6f8-545ee32f3519/content",
+      "published": "2024",
+      "retrieved": "2026-09-07",
+      "sourceType": "External reimbursement and expert/literature pain-QALY model inputs"
+    },
+    {
+      "publisher": "Effenberger et al.",
+      "title": "Fluoride varnish added to supervised toothbrushing randomized trial",
+      "url": "https://static1.squarespace.com/static/5d91c9f2c5b70a65bf3064dc/t/617a45583ebd5b1034afc63a/1635403097180/effenberger-2021.pdf",
+      "published": "2021",
+      "retrieved": "2026-09-07",
+      "sourceType": "Primary South African cluster trial; no significant additive caries benefit, different population"
+    }
+  ]
+}

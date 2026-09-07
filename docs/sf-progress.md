@@ -4,9 +4,11 @@ Updated 2026-09-07. Manager: current task. Research implementer: sf_research_aud
 
 ## Phase 1 — concise SF front door
 
-- [ ] SF1 Homepage and /san-francisco show exactly four current picks with source-derived $/10 QALYs, evidence, and report links.
-- [ ] SF2 Preserve detailed research at /research and cross-cause market at /archive; verify navigation and canonical paths.
-- [ ] SF3 Pass relevant tests, mobile checks, lint, production build; merge and deploy the validated commit.
+- [x] SF1 Homepage and /san-francisco show exactly four current picks with source-derived $/10 QALYs, evidence, and report links.
+- [x] SF2 Preserve detailed research at /research and cross-cause market at /archive; verify navigation and canonical paths.
+- [x] SF3 Pass relevant tests, mobile checks, lint, production build; merge and deploy the validated commit.
+
+Accepted 2026-09-07: PRs #124 and #125 merged. Exact source f6965366c99aea9093e53581f888105950e4c166 published as Sites v101. Earlier verification: 181 tests, lint, build, homepage phone/tablet tests, route/navigation suite and GitHub mobile checks passed. Canonical production root, /san-francisco, /archive and /research returned HTTP 200, correct headings and no 390px overflow; both front doors contain exactly four picks. Canonical coefficient-grants API returned 200. Domain, base path and public access unchanged.
 
 Exit: all three accepted with published canonical routes. Four current picks are GLIDE, Compass, Hamilton, Five Keys, by positive central modeled price. They are not verified marginal funding offers. No claim that all 25 reviews are completed.
 
@@ -44,4 +46,4 @@ Expanded search may proceed alongside the 25 reviews. Synthesis must account for
 
 ## Recovery state
 
-Current phase: 1. Next: verify new routes, retain existing archive interactions, publish. Remaining: SF1–SF10. Evidence so far: read-only audit confirms top-four exact model prices and all remaining cohort identities. Shared housing coefficient creates correlated uncertainty; it is not three independent local measurements. Verify housing citation mismatch before future model revisions.
+Current phase: 2, with expanded-search research allowed independently. Next: finish the remaining existing QALY endpoints and develop the naloxone local-cost model from the research note. Remaining: SF4–SF13. Shared housing coefficient creates correlated uncertainty; it is not three independent local measurements. GLIDE utility citation corrected in #124 to PubMed 34629422. Ten unconventional leads and ten mechanism-first bets are recorded in sf-research-bets.md; their evaluation is unfinished. See naloxone-research-checkpoint.md for new evidence and its limitations.

@@ -78,7 +78,7 @@ const content: CharityReportContent = {
   },
   evidence: [...review.evidence, { key: 'memphis-2026', design: 'Randomized offer of legal assistance; July 2026 working-paper revision', population: '1,140 Memphis tenants seeking assistance', result: 'The instrumental-variable court-eviction effect was a 25-point reduction; it attenuated 86% after rental assistance expired. Ultimate residential stability did not measurably improve.', transfer: 'Do not import this large court effect while omitting complementary cash and its costs. Court judgments, moves and homelessness are different endpoints.' }],
   reservations: [...review.reservations, 'No eviction-specific preference-based utility estimate was found. The 25% health-relevant share and 0.04 utility gain are subjective judgments; adjacent housing studies include null utility results.', 'The July 2026 Memphis trial had imperfect address matching and survey follow-up. Its residential-stability null informs caution but is not proof that all legal assistance has zero housing benefit.'],
-  excludedBenefits: model.excludedBenefits,
+  excludedBenefits: [...model.excludedBenefits.slice(0, -1), 'Mortality, children and household spillovers, WELLBYs, and broader non-health value. The adult-health QALY bridge above is included, but is explicitly subjective.'],
   sources: [
     ...review.sources,
     ...bridgeAudit.sources.filter((source) => !review.sources.some((existing) => existing.url === source.url)),

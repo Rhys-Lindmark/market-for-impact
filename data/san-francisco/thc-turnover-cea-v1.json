@@ -1,0 +1,101 @@
+{
+  "version": "sf-thc-turnover-cea-v1",
+  "reviewedAt": "2026-09-07",
+  "organization": "Tenderloin Housing Clinic",
+  "program": "Proposed supplemental room-turnover crew",
+  "denominator": "10 incremental QALYs",
+  "confidence": "very-low",
+  "formula": "10 * costPerTurnover / (daysAccelerated / 365 * occupancyRealization * additionality * utilityGain)",
+  "scenarios": [
+    {
+      "name": "Favorable positive",
+      "costPerTurnover": 1000,
+      "daysAccelerated": 52,
+      "occupancyRealization": 1,
+      "additionality": 0.75,
+      "utilityGain": 0.08
+    },
+    {
+      "name": "Central analyst estimate",
+      "costPerTurnover": 2500,
+      "daysAccelerated": 26,
+      "occupancyRealization": 0.75,
+      "additionality": 0.5,
+      "utilityGain": 0.02
+    },
+    {
+      "name": "Unfavorable positive",
+      "costPerTurnover": 5000,
+      "daysAccelerated": 7,
+      "occupancyRealization": 0.5,
+      "additionality": 0.25,
+      "utilityGain": 0.005
+    }
+  ],
+  "judgments": [
+    {
+      "key": "costPerTurnover",
+      "label": "Supplemental crew allowance",
+      "basis": "Assumed 32 loaded labor hours at $60 plus $580 supplies/coordination = $2,500 per offered turnover in extra acceleration effort, not ordinary cleaning already funded. Not a THC quote; include unsuccessful repairs and overhead."
+    },
+    {
+      "key": "daysAccelerated",
+      "label": "Potentially accelerated days",
+      "basis": "26-day judgment is half the observed FY2024–25 gap between 73-day room cleaning/repair and 21-day target. Target is not a counterfactual and does not prove money removes any of the delay."
+    },
+    {
+      "key": "occupancyRealization",
+      "label": "Net earlier occupancy realization",
+      "basis": "75% assumed fraction of nominal room-days translating into less time in a worse setting, not merely earlier availability or substitution for another available room. Referral delays are separate."
+    },
+    {
+      "key": "additionality",
+      "label": "Additional funded work",
+      "basis": "50% subjective retention after public/landlord replacement and other planned repairs. Keep separate from occupancy realization; neither is verified."
+    },
+    {
+      "key": "utilityGain",
+      "label": "Health utility while housed earlier",
+      "basis": "0.02 subjective gain during the short accelerated interval. Housing stability does not establish a health-utility effect. External randomized generic-quality-of-life results caution toward null; no immediate transfer of a one-year nonrandom mapped estimate."
+    }
+  ],
+  "nullBoundary": "Null if money cannot resolve the bottleneck, another equivalent room was available, public/landlord funds replace the gift, or earlier occupancy brings no health improvement. Signed negative utility preserves harm. Positive scenarios are not a confidence interval.",
+  "fundingRoom": {
+    "verifiedUsd": null,
+    "status": "unverified",
+    "nextEvidence": "Room-level ready/referral/occupied dates, delay causes, authorized safe work scope, incremental crew quote, landlord/public cost responsibility and actual referral demand."
+  },
+  "excluded": [
+    "Full annual supportive-housing contract as marginal turnover cost",
+    "Additional one-year housing-health benefit after the counterfactual move-in date",
+    "Referral speed, retention and occupancy counted as separate causal benefits",
+    "Legal defense, rent-subsidy and other providers' housing benefits",
+    "Unsafe acceleration before required inspections"
+  ],
+  "sources": [
+    {
+      "publisher": "San Francisco Budget and Legislative Analyst",
+      "title": "THC supportive housing agreement review",
+      "url": "https://sfgov.legistar.com/View.ashx?GUID=EFC67579-0D63-42C8-ADED-F1CBE3C86ABA&ID=15502167&M=F",
+      "published": "2026-05-27",
+      "retrieved": "2026-09-07",
+      "sourceType": "Observed room-turnover bottleneck and public contract context; no marginal causal estimate"
+    },
+    {
+      "publisher": "Stergiopoulos et al. / JAMA",
+      "title": "Housing and intensive case-management randomized trial",
+      "url": "https://jamanetwork.com/journals/jama/fullarticle/2174029",
+      "published": "2015-03-03",
+      "retrieved": "2026-09-07",
+      "sourceType": "Housing improved; generic quality-of-life effect not established. Score is not a QALY utility"
+    },
+    {
+      "publisher": "UNC Charlotte Urban Institute",
+      "title": "Housing First Charlotte–Mecklenburg outcomes report",
+      "url": "https://ui.charlotte.edu/wp-content/uploads/sites/1003/2024/02/HFCM-Final-Outcomes-Report-2020-Final.pdf",
+      "published": "2020",
+      "retrieved": "2026-09-07",
+      "sourceType": "Nonrandom one-year mapped utility result; contextual, not a few-week SF coefficient"
+    }
+  ]
+}

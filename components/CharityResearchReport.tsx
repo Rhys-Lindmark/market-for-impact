@@ -21,7 +21,7 @@ export type CharityReportContent = {
   organization: string;
   eyebrow: string;
   program: string;
-  donationUrl: string;
+  donationUrl?: string;
   published: string;
   modelVersion: string;
   nutshell: {
@@ -76,7 +76,7 @@ export default function CharityResearchReport({ content }: { content: CharityRep
       <header className="charity-report-topbar">
         <a className="brand" href="/"><span className="brand-mark">M</span><span>Market for Impact</span></a>
         <nav aria-label="Charity report navigation"><a href="#nutshell">In a nutshell</a><a href="#program">The program</a><a href="#cost-effectiveness">Cost-effectiveness</a><a href="#reservations">Reservations</a></nav>
-        <a className="charity-report-donate" href={content.donationUrl} target="_blank" rel="noreferrer">Donation route ↗</a>
+        {content.donationUrl?.trim() ? <a className="charity-report-donate" href={content.donationUrl.trim()} target="_blank" rel="noreferrer">Donation route ↗</a> : <span className="charity-report-funding-status">Funding route unverified</span>}
       </header>
 
       <div className="charity-report-layout">

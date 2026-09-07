@@ -1,0 +1,120 @@
+{
+  "version": "sf-openhouse-companionship-cea-v1",
+  "reviewedAt": "2026-09-07",
+  "organization": "Openhouse",
+  "program": "Six-month Friendly Visitor match",
+  "confidence": "very-low",
+  "denominator": "10 incremental QALYs",
+  "formula": "10 * costPerPlace / (utilityGain * effectiveYears * engagement * additionality)",
+  "scope": "Proposed additional six-month companionship match for an LGBTQ older adult; not housing construction, rent assistance or all intergenerational services.",
+  "scenarios": [
+    {
+      "name": "Favorable positive",
+      "costPerPlace": 600,
+      "utilityGain": 0.03,
+      "effectiveYears": 0.5,
+      "engagement": 0.9,
+      "additionality": 0.75,
+      "horizonYears": 0.5
+    },
+    {
+      "name": "Central analyst estimate",
+      "costPerPlace": 1000,
+      "utilityGain": 0.01,
+      "effectiveYears": 0.5,
+      "engagement": 0.75,
+      "additionality": 0.5,
+      "horizonYears": 0.5
+    },
+    {
+      "name": "Unfavorable positive",
+      "costPerPlace": 2000,
+      "utilityGain": 0.002,
+      "effectiveYears": 0.25,
+      "engagement": 0.5,
+      "additionality": 0.25,
+      "horizonYears": 0.5
+    }
+  ],
+  "judgments": [
+    {
+      "key": "costPerPlace",
+      "label": "Cash cost per new match",
+      "basis": "Assumed $1,000: ten staff hours at a $60 loaded hourly cost plus $400 screening, training, transport and administration. Not an Openhouse quote. Volunteer time is an additional in-kind resource, not free societal capacity."
+    },
+    {
+      "key": "utilityGain",
+      "label": "Incremental health utility while engaged",
+      "basis": "Subjective .01 utility gain, not a measured Openhouse effect. External befriending evidence supports investigating depression/loneliness, but neither those scales nor local satisfaction scores are converted numerically into QALYs."
+    },
+    {
+      "key": "effectiveYears",
+      "label": "Effective benefit duration",
+      "basis": "Half a year at the assumed effect in the central scenario; unfavorable .25 equivalent years allows later onset or fading. No lifetime extrapolation."
+    },
+    {
+      "key": "engagement",
+      "label": "Sustained effective engagement",
+      "basis": "75% analyst assumption for proposed matches sustaining useful contact, not a completion rate inferred from 80 active pairs or incomplete local follow-up."
+    },
+    {
+      "key": "additionality",
+      "label": "Added funding capacity",
+      "basis": "50% judgment for new effective matches versus replacement funding. Marginal capacity and actual funding room are unverified."
+    }
+  ],
+  "nullBoundary": "Zero added contact, zero health improvement or fully replacement funding means no finite positive-benefit price. Signed negative utility retains possible harm. The positive scenarios are stress cases, not confidence intervals.",
+  "fundingRoom": {
+    "verifiedUsd": null,
+    "status": "unverified",
+    "nextEvidence": "A priced marginal-match plan, volunteer/staff capacity, retention and comparative preference-based health measurement."
+  },
+  "excluded": [
+    "Housing construction and rent assistance",
+    "Volunteer health benefits",
+    "Mortality or dementia prevention",
+    "Loneliness and satisfaction points directly relabeled as QALYs"
+  ],
+  "sources": [
+    {
+      "publisher": "Openhouse development manager / SF Bay Times",
+      "title": "Fighting Ageism: LGBTQ Seniors and Friendly Visitors Connect",
+      "url": "https://sfbaytimes.com/fighting-ageism-lgbtq-seniors-and-friendly-visitors-connect-for-life-affirming-companionship-and-support/",
+      "published": "2025-11-06",
+      "retrieved": "2026-09-07",
+      "sourceType": "Organization-authored description: 80 current pairs; not a causal outcome or full-year cohort"
+    },
+    {
+      "publisher": "San Francisco Human Services Agency",
+      "title": "2023–2027 intergenerational program grants",
+      "url": "https://www.sfhsa.org/sites/default/files/media/document/2023-07/f_multiple_grantees_intergenerational_program.pdf",
+      "published": "2023-07",
+      "retrieved": "2026-09-07",
+      "sourceType": "Pages44–54: mixed-program annual budget, not marginal Friendly Visitor cost"
+    },
+    {
+      "publisher": "Openhouse / California Reducing Disparities Project",
+      "title": "Local evaluation final report",
+      "url": "https://cultureishealth.org/wp-content/uploads/2024/05/Openhouse_Final-Report_2021-11-30.pdf",
+      "published": "2021-11-30",
+      "retrieved": "2026-09-07",
+      "sourceType": "Uncontrolled multi-program evaluation; incomplete FVP follow-up; satisfaction is not health utility"
+    },
+    {
+      "publisher": "BEFRIENDAS researchers / PubMed",
+      "title": "Befriending intervention randomized trial",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41161295/",
+      "published": "2025",
+      "retrieved": "2026-09-07",
+      "sourceType": "Australian aged-care trial; depression/loneliness effects, not a transferable QALY estimate"
+    },
+    {
+      "publisher": "NIHR / PLINY researchers",
+      "title": "Telephone friendship groups for older people",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK264029/",
+      "published": "2014",
+      "retrieved": "2026-09-07",
+      "sourceType": "Volunteer recruitment/retention and delivery failure; incomplete planned economics: capacity warning"
+    }
+  ]
+}

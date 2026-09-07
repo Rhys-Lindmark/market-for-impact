@@ -10,6 +10,10 @@ Design first for a major donor deciding how to deploy roughly $10 million this y
 
 ## Now — foundation
 
+**Latest user order, 2026-09-07:** finish the original 25 → city theory of change → ten mechanism-first bets → ten unconventional programs → SPUR/GrowSF/HAC → final top-four selection and GiveWell-style visual rebuild with photos. No interim top-four reassessment. Roughly 50 unique organizations; remaining research lives separately. This ordering supersedes older parallel-expansion notes; see docs/sf-progress.md.
+
+- [ ] **Self-Help therapeutic tai chi — SF8 / #157.** Proposed 24-week trial-matched course, not existing six-week Sun-style delivery. Central independent bridge $2.4M/10 QALYs; alternative published integrated-QALY reading $600K. Explicit cost, onset, fidelity and funding assumptions; expired closeout grant is not current room. Independent audit accepted unit-boundary wording; pending full verification/release.
+
 - [ ] **RAMS depression counseling — SF7 / #154.** Hypothetical fifteen-contact course, not a verified local CBT protocol. Central $4.21M/10 QALYs, positive scenarios $359K–$160M with null/harm. Actual psychodynamic training mismatch explicitly attenuated by judgment, not claimed comparative efficacy. Pending review, verification and release.
 
 - [ ] **Research report donation-route guard — #155.** Do not show a clickable-looking donation action when a report has no destination. Preserve real links and show a non-interactive unverified funding status. Pending mobile regression and release.

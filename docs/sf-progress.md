@@ -19,36 +19,55 @@ Dependency: phase 1. Each remaining program gets a dedicated report, explicit be
 - [x] SF4 Resolve remaining EDC and Project Open Hand QALY endpoints. EDC accepted in PR #129 / Sites v103; Project Open Hand's existing narrow acute-morbidity endpoint remains $132.8M/10 QALYs.
 - [x] SF5 Model existing initial reviews: Harm Reduction Therapy Center, Homeless Youth Alliance, Huckleberry Youth Programs.
 - [x] SF6 Review and model JCYC, Larkin Street, Lyon-Martin, Mission Neighborhood Centers.
-- [ ] SF7 Review and model New Door Ventures, Openhouse, Progress Foundation, Richmond Area Multi-Services.
+- [x] SF7 Review and model New Door Ventures, Openhouse, Progress Foundation, Richmond Area Multi-Services.
 - [ ] SF8 Review and model Self-Help for the Elderly, Tenderloin Housing Clinic, United Playaz.
 
 Exit: 25 inspectable reviews/models, or exact unresolved variables documented after meaningful research; no invented evidence or claimed precision. Update shared workbook when a model changes and verify formulas.
 
-## Phase 3 — urban policy organizations
-
-- [ ] SF9 Add dedicated SPUR, GrowSF, Housing Action Coalition research pages; preserve entity and program boundaries, evaluate non-electoral public-benefit mechanisms, and label attribution assumptions.
-
-Research in this phase may proceed independently of phase 2. Exit: inspectable program theories and quantitative scenarios where defensible; no election-result-to-health causal shortcut.
-
-## Phase 4 — city cost-effectiveness theory
+## Phase 3 — city cost-effectiveness theory
 
 Dependency: completed phase 2 research. Compare cash-gap prevention, treatment, education/employment, and policy mechanisms by cost, severity, durable benefit, reach, attribution, and displacement. Test shared assumptions and excluded benefits before claiming a 100× advantage.
 
 - [ ] SF10 Publish synthesis with ranked hypotheses, counterexamples, and the next candidate search priorities.
 
-## Expanded search — user steering 7 September 2026
+## Phase 4 — ten mechanism-first research bets
 
-- [ ] SF11 Add and screen ten unconventional programs with source-confirmed SF delivery or an explicit missing local partner.
+Dependency: SF10. Hypothesize the mechanism before selecting the charity; use the synthesis to guide the search, then update beliefs from evidence.
+
 - [ ] SF12 Screen the ten mechanism-first research bets in [sf-research-bets.md](sf-research-bets.md): first hypothesize a cheap causal route to health gains, then find a local implementer, then test whether it holds. This label is a research priority, not an effectiveness endorsement. Discovery queue recorded; program models remain unfinished.
+
+## Phase 5 — ten unconventional programs
+
+Dependency: SF12.
+
+- [ ] SF11 Add and research ten unconventional programs with source-confirmed SF delivery or an explicit missing local partner. Keep this cohort distinct from the mechanism-first ten; do not double-count organizations to inflate coverage.
+
+## Phase 6 — urban policy organizations
+
+Dependency: SF11.
+
+- [ ] SF9 Add dedicated SPUR, GrowSF, Housing Action Coalition research pages; preserve entity and program boundaries, evaluate non-electoral public-benefit mechanisms, and label attribution assumptions.
+
+Exit: inspectable program theories and quantitative scenarios where defensible; no election-result-to-health causal shortcut.
+
+## Phase 7 — final top-four selection and visual rebuild
+
+Dependency: completed original 25, theory, ten mechanism-first bets, ten unconventional programs, and SPUR/GrowSF/HAC. This is roughly 50 organizations (48 if all are distinct), not an inflated exact count.
+
+- [ ] SF14 Only now choose the strongest four using consistent modeled cost-effectiveness, evidence and marginal-funding criteria. Remove the previously proposed interim top-four reassessment.
+- [ ] SF15 Rebuild the concise homepage and /san-francisco in the visual and content structure of https://www.givewell.org/charities/top-charities: four clear program cards, suitable sourced/licensed photos, prominent USD per 10 QALYs, compact caveats and research links. Put all remaining research behind a clear bottom link. Verify phone/tablet layout, accessibility, sources and canonical routes.
+
+## Existing expanded-search evidence
+
 - [x] SF13 Deepen the best candidate for under $100,000 per 10 QALYs ($10,000/QALY), starting with overdose prevention. SFAF conditional model and report accepted in PR #128, Sites v102, canonical report and model API verified. This completes the investigation deliverable, not verification of an available funding offer; issue #127 tracks the missing incremental reach and repeat-recipient evidence.
 
-Expanded search may proceed alongside the 25 reviews. Synthesis must account for the expanded findings and must not claim 100× differences based only on correlated assumptions or unlike model perspectives.
+Latest user ordering supersedes parallel expansion: finish 25 → theory → mechanism-first ten → unconventional ten → policy three → final four and visual rebuild. Preserve already completed exploratory evidence, but do not jump to redesign. Synthesis must not claim 100× differences based only on correlated assumptions or unlike model perspectives.
 
 ## Recovery state
 
-Current phase: 2, with expanded-search research allowed independently. SF5 accepted: HRTC, HYA and Huckleberry are modeled. SF6 is accepted: JCYC, Larkin Street, Lyon-Martin and MNC all released. SF7 has New Door and Openhouse accepted; Progress Foundation is in verification (#151), with RAMS next. The original cohort has 20 released models and a 21st draft. SF11 and SF12 each have one modeled candidate, not ten completed reviews. SF9 policy organizations and SF10 synthesis remain unfinished. Shared housing coefficient creates correlated uncertainty; it is not three independent local measurements.
+Current phase: 2. SF5–SF7 accepted, including Progress Foundation PR #152 / v113 and RAMS PR #158 / v115. Original cohort: 22 released models; Self-Help in verification, THC and United Playaz next. SF11 and SF12 each have one existing modeled candidate, not ten completed reviews. After SF8 follow the strict user ordering above. Shared housing coefficients create correlated uncertainty, not independent local measurements.
 
-Active block started 2026-09-07T20:30:30Z; target 90 measured minutes without padding. SF13 accepted: SFAF central $56,328/10 QALYs, positive scenarios $5,016–$1.67M, residual repeat-rescue sensitivity ($112,655 at 50% further lifetime credit). PR #128 merged as c78213dbf8a979550d02583dae3dc8349ed8f2b5 and published as Sites v102; 186 tests, full lint/build, phone/tablet checks and canonical report/API passed. Remains research-only rather than displacing a homepage pick.
+Active block started 2026-09-07T22:01:25Z; target 90 measured minutes without padding. SF13 accepted: SFAF central $56,328/10 QALYs, positive scenarios $5,016–$1.67M, residual repeat-rescue sensitivity ($112,655 at 50% further lifetime credit). PR #128 merged as c78213dbf8a979550d02583dae3dc8349ed8f2b5 and published as Sites v102; 186 tests, full lint/build, phone/tablet checks and canonical report/API passed. Remains research-only rather than displacing a homepage pick.
 
 SF4: EDC now has an explicit subjective adult-health bridge: $126M/10 QALYs, positive scenarios $2.1M–$25.2B and a zero-benefit boundary. The historical failed-gate audit is preserved as history, not the current estimate. July 2026 randomized evidence cautions against treating legal possession as stable housing. PR #129 and canonical report/API accepted in Sites v103.
 

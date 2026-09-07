@@ -1,0 +1,125 @@
+{
+  "version": "sf-selfhelp-falls-cea-v1",
+  "reviewedAt": "2026-09-07",
+  "organization": "Self-Help for the Elderly",
+  "program": "Proposed therapeutic tai chi fall-prevention course",
+  "denominator": "10 incremental QALYs",
+  "confidence": "very-low",
+  "formula": "10 * courseCost / (hypothesizedEndpointUtility * horizonYears * onsetFraction * localTransfer * additionality)",
+  "scope": "Proposed fidelity-specified 24-week TJQMBB course for high-fall-risk older adults. Not a valuation of the existing six-week Sun-style course.",
+  "scenarios": [
+    {
+      "name": "Favorable positive",
+      "courseCost": 300,
+      "hypothesizedEndpointUtility": 0.06,
+      "horizonYears": 0.5,
+      "onsetFraction": 0.5,
+      "localTransfer": 0.75,
+      "additionality": 0.75
+    },
+    {
+      "name": "Central analyst estimate",
+      "courseCost": 600,
+      "hypothesizedEndpointUtility": 0.04,
+      "horizonYears": 0.5,
+      "onsetFraction": 0.5,
+      "localTransfer": 0.5,
+      "additionality": 0.5
+    },
+    {
+      "name": "Unfavorable positive",
+      "courseCost": 1200,
+      "hypothesizedEndpointUtility": 0.01,
+      "horizonYears": 0.5,
+      "onsetFraction": 0.25,
+      "localTransfer": 0.25,
+      "additionality": 0.25
+    }
+  ],
+  "judgments": [
+    {
+      "key": "courseCost",
+      "label": "Course planning allowance",
+      "basis": "48 classes × two paid preparation/delivery hours × $60 / 15 participants + $200 support = $584, rounded to $600. Assumed occupancy, wage and support—not a provider quote. Licensing, room and transport need pricing."
+    },
+    {
+      "key": "hypothesizedEndpointUtility",
+      "label": "Hypothesized endpoint utility gain",
+      "basis": "Independent calibration of .04, not a securely verified endpoint coefficient: Li/Harmer prose describes utility difference but its methods multiply by duration and table labels .04 incremental QALYs. Our duration/onset assumptions are not a correction to that paper."
+    },
+    {
+      "key": "horizonYears",
+      "label": "Modeled follow-up horizon",
+      "basis": "Rounded six-month horizon (0.5 year), not exactly 24/52 years. No persistence beyond follow-up."
+    },
+    {
+      "key": "onsetFraction",
+      "label": "Benefit onset over follow-up",
+      "basis": "50% assumes linear growth from zero to the hypothesized endpoint. Judgment, not adherence. No second attendance adjustment."
+    },
+    {
+      "key": "localTransfer",
+      "label": "Local fidelity and population retention",
+      "basis": "50% subjective retention for proposed curriculum, high-risk recruitment and realistic local alternatives. Reference comparison is stretching, not no exercise or current Sun-style tai chi."
+    },
+    {
+      "key": "additionality",
+      "label": "Additional funded capacity",
+      "basis": "50% assumed net added places after replacement funding. No verified current offer."
+    }
+  ],
+  "unitAmbiguity": "If .04 is used directly as the paper's integrated QALYs, with the same cost/transfer/additionality and no extra duration/onset, the central price is $600,000 per 10 QALYs. Our independent endpoint bridge gives $2.4M. Neither is a measured local effect.",
+  "nullBoundary": "Null or harm remains possible. The favorable/unfavorable combinations are analyst scenarios, not a confidence interval. No finite positive price exists at zero or negative benefit.",
+  "fundingRoom": {
+    "verifiedUsd": null,
+    "status": "unverified",
+    "nextEvidence": "Named curriculum and qualified instructors, high-risk eligibility, active cohort budget and post-March-2026 funding plan."
+  },
+  "excluded": [
+    "Additional fall-injury, mortality or healthcare-savings gains on top of health utility",
+    "Current six-week Sun-style service treated as the 24-week trial",
+    "Expired CalFresh closeout budget interpreted as current funding room"
+  ],
+  "sources": [
+    {
+      "publisher": "Self-Help for the Elderly",
+      "title": "Tai Chi service",
+      "url": "https://www.selfhelpelderly.org/our-services/activity-centers/tai-chi",
+      "published": "Undated current page",
+      "retrieved": "2026-09-07",
+      "sourceType": "Six-week Sun-style Tai Chi for Arthritis and Fall Prevention; not verified TJQMBB"
+    },
+    {
+      "publisher": "San Francisco Human Services Agency",
+      "title": "CalFresh Healthy Living closeout grant",
+      "url": "https://www.sfhsa.org/sites/default/files/media/document/2025-12/self-help_for_the_elderly_calfresh_healthy_living_program.pdf",
+      "published": "2026-01-07 commission item",
+      "retrieved": "2026-09-07",
+      "sourceType": "January–March 2026 mixed exercise/wind-down budget, not current course price"
+    },
+    {
+      "publisher": "Li et al.",
+      "title": "Therapeutic tai ji quan randomized trial",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30208396/",
+      "published": "2018",
+      "retrieved": "2026-09-07",
+      "sourceType": "670 high-fall-risk older adults; 24-week intervention versus stretching"
+    },
+    {
+      "publisher": "Li and Harmer et al.",
+      "title": "Trial economic evaluation",
+      "url": "https://academic.oup.com/biomedgerontology/article/74/9/1504/5284888",
+      "published": "2019-01-10",
+      "retrieved": "2026-09-07",
+      "sourceType": "Utility/QALY wording ambiguity; not a local marginal-donation ICER"
+    },
+    {
+      "publisher": "Day et al.",
+      "title": "Tai Chi fall-prevention randomized trial",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25769960/",
+      "published": "2015",
+      "retrieved": "2026-09-07",
+      "sourceType": "Disconfirming Sun-style evidence in relatively well older adults"
+    }
+  ]
+}

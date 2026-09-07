@@ -10,6 +10,8 @@ Design first for a major donor deciding how to deploy roughly $10 million this y
 
 ## Now — foundation
 
+- [ ] **Research report donation-route guard — #155.** Do not show a clickable-looking donation action when a report has no destination. Preserve real links and show a non-interactive unverified funding status. Pending mobile regression and release.
+
 - [ ] **Progress Foundation Avenues — SF7 / #151.** Two-week crisis residential care versus available hospital treatment. Subjective positive central $391M/10 QALYs; null at least as credible. Payer savings are not donor savings. Pending independent review, tests and release; require marginal episode quote and public-funding reconciliation.
 
 - [x] **Openhouse Friendly Visitor — SF7 / #148.** Proposed six-month companionship match: subjective central $5.33M/10 QALYs, positive scenarios $593K–$320M, null/harm possible. Separate local satisfaction and external symptom-scale findings from assumed utility. Accepted PR #150 / Sites v112; 213 tests, lint/build, independent review, phone/tablet and full mobile audit passed. Canonical report/API and workbook B109 verified. Require marginal quote and volunteer capacity.

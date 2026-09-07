@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import glide from '@/data/san-francisco/glide-rental-assistance-qaly-bridge-audit-v1.json';
 import compass from '@/data/san-francisco/compass-c-rent-qaly-bridge-audit-v1.json';
-import hamilton from '@/data/san-francisco/hamilton-prevention-qaly-bridge-audit-v1.json';
-import fiveKeys from '@/data/san-francisco/five-keys-credential-qaly-bridge-v1.json';
+import { researchCostRanking, researchRankBySlug } from '@/lib/research-cost-ranking.mjs';
+
 import './sf-home.css';
 
 export const metadata: Metadata = {
@@ -14,12 +14,19 @@ export const metadata: Metadata = {
 
 const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumSignificantDigits: 3 });
 const root = 'https://ai.rhyslindmark.com/donate';
-const picks = [
-  { slug: 'glide', name: 'GLIDE', program: 'Keep a housing crisis from becoming homelessness', overview: 'Rental, deposit, and move-in assistance helps San Francisco residents resolve a cash shortfall and stay housed.', opinion: 'Our strongest current lead. A relatively small, well-timed payment may prevent a much larger crisis.', evidence: 'Encouraging local reporting and outside prevention studies. The health gain and current delivery cost are estimates.', reservation: 'The $3,077 case cost is modeled from a historical cohort. Confirm what a new gift would actually fund.', model: glide.modeledBridge },
+const picksBySlug = [
+  { slug: 'san-francisco-aids-foundation', name: 'San Francisco AIDS Foundation', program: 'Reach otherwise uncovered overdoses', overview: 'Targeted naloxone outreach and training could help witnesses respond to overdoses that would otherwise be fatal.', opinion: 'Our lowest central estimate and a high-priority funding question—not a verified offer of these health gains.', evidence: 'Local distribution reports and external survival evidence, connected by explicit analyst assumptions.', reservation: 'Existing free supply, alternative rescue and repeat recipients can erase much of the marginal benefit. Reported reversals are not lives saved.', model: null },
+  { slug: 'project-homeless-connect', name: 'Project Homeless Connect', program: 'Restore useful vision with prescription glasses', overview: 'Core Senses helps people experiencing homelessness obtain prescription glasses and navigate access barriers.', opinion: 'A promising inexpensive access intervention. Investigate an additional dispensing tranche before committing a large gift.', evidence: 'Current giving benchmarks and an external uncontrolled health-utility study; local utility gains remain unmeasured.', reservation: 'The model assumes $100 per completed dispense and discounts utility and additionality. Public coverage, in-kind resources and sustained use need verification.', model: null },
+  { slug: 'glide', name: 'GLIDE', program: 'Keep a housing crisis from becoming homelessness', overview: 'Rental, deposit, and move-in assistance helps San Francisco residents resolve a cash shortfall and stay housed.', opinion: 'Our strongest current housing lead. A relatively small, well-timed payment may prevent a much larger crisis.', evidence: 'Encouraging local reporting and outside prevention studies. The health gain and current delivery cost are estimates.', reservation: 'The $3,077 case cost is modeled from a historical cohort. Confirm what a new gift would actually fund.', model: glide.modeledBridge },
   { slug: 'compass-family-services', name: 'Compass Family Services', program: 'Help families catch up on rent', overview: 'C-Rent combines back-rent and move-in assistance with case management for families at risk of losing their homes.', opinion: 'A promising family-homelessness prevention option, with a clearer audited cost starting point.', evidence: 'Audited program spending and external prevention research. The family count and health effect need local verification.', reservation: 'The $9,704 cost per family is an accounting ratio, not a confirmed price for an additional family.', model: compass.modeledBridge },
-  { slug: 'hamilton-families', name: 'Hamilton Families', program: 'Prevent family homelessness', overview: 'Flexible financial assistance and case management aim to keep at-risk families out of homelessness.', opinion: 'A promising alternative to Compass. Their estimates are too close and uncertain to distinguish meaningfully.', evidence: 'An external randomized prevention study supports the mechanism. Hamilton-specific costs and health gains are modeled.', reservation: 'The $10,000 cost per family is a judgment call. A prevention-only budget would materially improve this estimate.', model: hamilton.modeledBridge },
-  { slug: 'five-keys', name: 'Five Keys Schools and Programs', program: 'Help adults finish secondary education', overview: 'Flexible instruction in custody and community settings helps people earn a high-school diploma or equivalent credential.', opinion: 'Our fourth current research pick. Education could deliver lasting benefits, but the local health case is less established.', evidence: 'Audited costs, an assumed increase in credentials, and an external education-to-health model.', reservation: 'The estimate covers the broader program, not an isolated SF donation. Verify local use and whether private money adds instruction.', model: fiveKeys.modeledBridge },
 ];
+
+const picks = researchCostRanking.slice(0, 4).map(row => {
+  const pick = picksBySlug.find(p => p.slug === row.slug);
+  if (!pick) throw new Error('Missing homepage summary for ' + row.slug);
+  const rank = researchRankBySlug.get(row.slug)!;
+  return { ...pick, model: { bestCostPerTenQalysUsd: rank.centralUsdPerTenQalys, costPerQalyUsd: rank.centralUsdPerTenQalys / 10, positiveEffectRangeUsd: pick.model?.positiveEffectRangeUsd ?? rank.positiveEffectRangeUsd } };
+});
 
 export default function SanFranciscoHome() {
   return <div className="sf-home">
@@ -31,7 +38,7 @@ export default function SanFranciscoHome() {
         <p className="sf-home-lead">Where could your next dollar make life better in San Francisco?</p>
         <p>These four programs have the lowest central cost estimates in our completed models so far. They are our current research picks, with very low confidence and funding capacity still to verify.</p>
         <p className="sf-home-unit"><strong>One better life = 10 additional QALYs.</strong> That means ten years of life in full health, or equivalent health gains spread across people. These are modeled health benefits, not a count of people served.</p>
-        <small>Shortlist updated 7 September 2026 · Models dated 31 August–1 September 2026</small>
+        <small>Shortlist updated 7 September 2026 · Models reviewed through 7 September 2026</small>
       </section>
       <nav className="sf-home-jump" aria-label="Jump to a charity">{picks.map(p => <a key={p.slug} href={`#${p.slug}`}>{p.name} ↓</a>)}</nav>
       <section aria-label="Four current charity picks">{picks.map((pick, i) => <article className="sf-home-charity" id={pick.slug} key={pick.slug}>
@@ -42,7 +49,7 @@ export default function SanFranciscoHome() {
         </div>
         <a className="sf-home-report" href={`${root}/charities/${pick.slug}`}>Full research report &amp; cost-effectiveness model →</a>
       </article>)}</section>
-      <footer className="sf-home-footer"><p>The three housing estimates share the same transferred health-effect assumption. Their apparent advantage is a research lead to test; it does not establish that other programs are ineffective.</p><a href={`${root}/research`}>Rest of the research →</a></footer>
+      <footer className="sf-home-footer"><p>Ordered by central modeled dollars per 10 QALYs, not evidence strength. Costs and assumptions differ; GLIDE and Compass share a transferred housing-health assumption. These are research leads, not proof that other charities are ineffective.</p><a href={`${root}/research`}>Rest of the research →</a></footer>
     </main>
   </div>;
 }

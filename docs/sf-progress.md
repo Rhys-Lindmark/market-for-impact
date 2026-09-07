@@ -28,7 +28,7 @@ Exit: 25 inspectable reviews/models, or exact unresolved variables documented af
 
 Dependency: completed phase 2 research. Compare cash-gap prevention, treatment, education/employment, and policy mechanisms by cost, severity, durable benefit, reach, attribution, and displacement. Test shared assumptions and excluded benefits before claiming a 100× advantage.
 
-- [ ] SF10 Publish synthesis with ranked hypotheses, counterexamples, and the next candidate search priorities.
+- [x] SF10 Publish synthesis with ranked hypotheses, counterexamples, and the next candidate search priorities. PR #164 merged; 233 tests, independent audit, phone/tablet and GitHub gates passed. Released with the subsequent ranking update.
 
 ## Phase 4 — ten mechanism-first research bets
 
@@ -54,7 +54,7 @@ Exit: inspectable program theories and quantitative scenarios where defensible; 
 
 Dependency: completed original 25, theory, ten mechanism-first bets, ten unconventional programs, and SPUR/GrowSF/HAC. This is roughly 50 organizations (48 if all are distinct), not an inflated exact count.
 
-- [ ] SF14 Only now choose the strongest four using consistent modeled cost-effectiveness, evidence and marginal-funding criteria. Remove the previously proposed interim top-four reassessment.
+- [ ] SF14 After expanded research, reassess the strongest four using modeled cost-effectiveness, evidence and marginal-funding criteria. Later user direction explicitly enables updating the current numeric top four now.
 - [ ] SF15 Rebuild the concise homepage and /san-francisco in the visual and content structure of https://www.givewell.org/charities/top-charities: four clear program cards, suitable sourced/licensed photos, prominent USD per 10 QALYs, compact caveats and research links. Put all remaining research behind a clear bottom link. Verify phone/tablet layout, accessibility, sources and canonical routes.
 
 ## Existing expanded-search evidence
@@ -65,7 +65,7 @@ Latest user ordering supersedes parallel expansion: finish 25 → theory → mec
 
 ## Recovery state
 
-Current phase: 3 — city theory. All25 original program models are released through PR #162 / Sites v118. No verified marginal funding offers. Theory #163 is in implementation and independent verification; after acceptance, proceed to ten mechanism-first bets, then ten unconventional, then policy three, then final selection/redesign. No interim homepage reselection.
+Current phase: 4 — ten mechanism-first bets. All25 original models are released through PR #162; city theory PR #164 is merged and independently accepted. No verified marginal funding offers. Current ranking #165 joins the two additional comparator models and synchronizes the 27-review list and homepage four. Next: mechanism-first ten, unconventional ten, policy three, then final visual rebuild. Later user direction enables an immediate central-estimate research sort and matching homepage four; full visual rebuild remains later.
 
 Active block started 2026-09-07T22:01:25Z; target90 measured minutes without padding. Original cohort completion and city-theory synthesis are the current block. Earlier SFAF/PHC work remains additional comparator evidence, not extra original-cohort rows.
 

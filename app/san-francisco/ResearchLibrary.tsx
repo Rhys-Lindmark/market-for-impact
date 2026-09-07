@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { researchRankBySlug } from '@/lib/research-cost-ranking.mjs';
 /* eslint-disable @next/next/no-html-link-for-pages -- Native anchors avoid a confirmed Vinext production prefetch runtime error on this server-rendered brief. */
 import candidateUniverse from '@/data/san-francisco/candidate-universe-v1.json';
 import sfComparison from '@/data/san-francisco/donor-comparison-v1.json';
@@ -44,6 +45,8 @@ const canonicalResearchRoutes = new Map([['sf-lgbt-center', '/charities/sf-lgbt-
 const canonicalResearchHref = (key: string, fallback: string) => canonicalResearchRoutes.get(key) ?? fallback;
 
 const topResearchPrograms = [
+  { organization: 'San Francisco AIDS Foundation', program: 'Targeted naloxone outreach', overview: 'Reach otherwise uncovered overdoses with naloxone and response training.', price: '≈ $20', unit: 'per modeled distributed dose', betterLifePrice: '', bridgeState: 'Very-low-confidence marginal survival model', evidence: 'Local outputs; external survival evidence; subjective additionality', detail: 'Positive scenarios $5K–$1.67M. Reported reversals are not deaths averted; free supply, alternative rescue and repeat recipients matter. Funding room unverified.', href: '/charities/san-francisco-aids-foundation' },
+  { organization: 'Project Homeless Connect', program: 'Core Senses prescription glasses', overview: 'Access to prescription glasses for people experiencing homelessness.', price: '≈ $100', unit: 'per modeled completed dispense', betterLifePrice: '', bridgeState: 'Very-low-confidence transferred vision-utility model', evidence: 'Giving benchmark; external uncontrolled utility study', detail: 'Positive scenarios $8.9K–$4M. Current marginal cost, sustained use and benefit beyond existing coverage remain unverified; donor costs exclude resources financed elsewhere.', href: '/charities/project-homeless-connect' },
   { organization: 'United Playaz', program: 'Proposed intensive mentorship year', overview: 'High-risk youth support, not gun buybacks or contacts counted as intensive places.', price: '≈ $10,000', unit: 'per proposed annual place', betterLifePrice: '≈ $26.7M', bridgeState: 'Subjective fatal-risk model with conditional engagement', evidence: 'Local program identity; external mortality evidence uncertain', detail: 'Positive scenarios $333K–$4B; null/harm possible. Current risk, dose and marginal capacity unverified.', href: '/charities/united-playaz' },
   { organization: 'Tenderloin Housing Clinic', program: 'Proposed supplemental turnover crew', overview: 'Earlier safe room occupancy, not the whole housing contract.', price: '≈ $2,500', unit: 'per proposed accelerated turnover', betterLifePrice: '≈ $46.8M', bridgeState: 'Short-horizon subjective health model', evidence: 'Observed delay is a lead, not a causal repair effect', detail: 'Positive scenarios $1.17M–$4.17B; null/harm possible. No full-year health bonus for a few earlier weeks.', href: '/charities/tenderloin-housing-clinic' },
   { organization: 'Self-Help for the Elderly', program: 'Proposed therapeutic tai chi course', overview: 'A 24-week high-risk course, distinct from existing six-week Sun-style classes.', price: '≈ $600', unit: 'per proposed course', betterLifePrice: '≈ $2.4M', bridgeState: 'Independent utility bridge; published-unit alternative $600K', evidence: 'External randomized evidence; curriculum and QALY interpretation need care', detail: 'Positive scenarios $356K–$154M, with null/harm possible. No current funding offer verified.', href: '/charities/self-help-for-the-elderly' },
@@ -70,6 +73,12 @@ const topResearchPrograms = [
   { organization: 'Farming Hope', program: 'Paid culinary apprenticeship', overview: 'A 12-week, part-time paid apprenticeship combining kitchen work, professional skills, case-manager involvement, and employer connections.', price: '≈ $1.04M', unit: 'per additional person ever employed in a late follow-up year', betterLifePrice: '≈ $41.6M', bridgeState: 'Very-low-confidence QALY transfer', evidence: 'Reported outcomes; transferred randomized effect', detail: 'The better-life estimate transfers a randomized IPS trial\'s 0.01 QALY per participant to Farming Hope; the intervention and population differ materially, and a null remains plausible.', href: '/charities/farming-hope' },
   { organization: 'Five Keys Schools and Programs', program: 'Secondary-credential pathway', overview: 'Accredited, flexible high-school and equivalency instruction in custody and community settings for learners traditional schools did not retain.', price: '≈ $167,000', unit: 'per additional credential in a modeled 10-point scenario', betterLifePrice: '≈ $4.9M', bridgeState: 'Very-low-confidence education/QALY model', evidence: 'Audited cost; modeled credential and health effects', detail: 'The central bridge retains 20% of a peer-reviewed U.S. model\'s 1.7 QALYs per additional graduate, then combines 0.34 QALY with the modeled 10-point credential effect. Neither effect is measured for Five Keys, and a null remains plausible.', href: '/charities/five-keys' },
 ];
+
+const sortedResearchPrograms = topResearchPrograms.map(item => {
+  const model = researchRankBySlug.get(item.href.split('/').at(-1)!);
+  if (!model) throw new Error('Missing central estimate for ' + item.href);
+  return { ...item, rank: model.rank, centralUsdPerTenQalys: model.centralUsdPerTenQalys, betterLifePrice: model.centralUsdPerTenQalys == null ? 'Not yet estimated' : '≈ ' + compactMoney.format(model.centralUsdPerTenQalys) };
+}).sort((a, b) => a.rank - b.rank);
 
 const researchGates = [
   { number: '01', title: 'Verify the entity', copy: 'Confirm the legal entity, donation vehicle, EIN, service geography, and which program a gift would support.' },
@@ -114,11 +123,11 @@ export default function SanFranciscoDonorPage() {
         <aside className="sf-life-bettered-contract"><strong>New research bets below $100K in central scenarios.</strong><span><a href="https://ai.rhyslindmark.com/donate/charities/san-francisco-aids-foundation">SFAF targeted naloxone outreach: about $56K per 10 QALYs.</a> <a href="https://ai.rhyslindmark.com/donate/charities/project-homeless-connect">PHC prescription glasses: about $71K per 10 QALYs.</a> Both have very wide uncertainty and unverified marginal funding room. These are conditional research estimates, not verified donation offers.</span></aside>
         <header>
           <div><p className="kicker">GIVEWELL-STYLE PROGRAM REVIEWS · NOT YET RECOMMENDATIONS</p><h2 id="sf-top-research-title">The strongest cost-effectiveness work so far.</h2></div>
-          <p>These are our current opinions, not a league table. The outcomes differ, every model has a plausible null case, and no organization has published verified room for more funding. Open each full report to inspect the assumptions.</p>
+          <p>Sorted from lowest to highest central modeled dollars per 10 QALYs. This is not a ranking of evidence quality: cost scopes and assumptions differ, every model has a plausible null case, and marginal funding room remains unverified. Open each report to inspect the model.</p>
         </header>
         <aside className="sf-life-bettered-contract"><strong>The common denominator is $ per better life.</strong><span><b>One better life = 10 incremental QALYs.</b> Every program is compared against that denominator. Where the bridge from a native outcome to QALYs is not yet defensible, we say “not yet convertible” and retain the native model rather than inventing precision.</span></aside>
         <div className="sf-top-research-list">
-          {topResearchPrograms.map((item, index) => <article key={item.href}>
+          {sortedResearchPrograms.map((item, index) => <article key={item.href} data-research-slug={item.href.split('/').at(-1)} data-cost-per-ten-qalys={item.centralUsdPerTenQalys}>
             <span>PROGRAM {index + 1} OF {topResearchPrograms.length}</span>
             <div><p>OVERVIEW</p><h3>{item.program}</h3><strong>{item.organization}</strong><p>{item.overview}</p></div>
             <div><p>COST PER BETTER LIFE</p><h4>{'betterLifePrice' in item ? item.betterLifePrice : 'Not yet convertible'}</h4><strong>$ per 10 QALYs · one better life</strong><span><b>Native model:</b> {item.price} {item.unit}</span><small>{'bridgeState' in item ? item.bridgeState : 'Exploratory estimate'} · funding room not published</small></div>
@@ -201,7 +210,7 @@ export default function SanFranciscoDonorPage() {
         <div className="sf-context-grid">
           <article><span>Outcome contract</span><strong>{sfOutcomes.outcomes.length} local outcomes</strong><p>Housing, homelessness, overdose, mental health, food security, education, violence, and mobility have explicit units and attribution requirements.</p><a href="/#san-francisco">Read the outcome definitions ↗</a></article>
           <article><span>Public baseline</span><strong>{compactMoney.format(sfFunding.summary.cityBudgetUsd)}</strong><p>Approved city spending is context. Contract authority, payments, and remaining authority stay separate and never become donation room.</p><a href="/#sf-public-funding">Inspect public funding ↗</a></article>
-          <article><span>Conversion boundary</span><strong>QALY / WELLBY blocked</strong><p>All six candidates lack the local counterfactual and versioned conversion model required for a defensible health or wellbeing estimate.</p><a href="/#sf-diligence">Inspect the boundary ↗</a></article>
+          <article><span>Current modeling boundary</span><strong>Exploratory QALY estimates</strong><p>The reviews above now contain versioned health models. Local causal effects and marginal funding remain unverified; these analyst estimates are not measured outcomes or WELLBY conversions.</p><a href="#top-research">Inspect the current models ↗</a></article>
         </div>
       </section>
 

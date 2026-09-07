@@ -355,7 +355,7 @@ test('phone donors can inspect Project Open Hand mixed evidence and its explorat
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 
-test('phone donors can inspect the EDC model with conflicting evidence and no life-bettered conversion', async ({ page }, testInfo) => {
+test('phone donors can inspect EDC conflicting evidence and its subjective life-bettered conversion', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'phone-390');
   await page.goto('/charities/eviction-defense-collaborative', { waitUntil: 'domcontentloaded' });
   const review = page.locator('.charity-report-article');
@@ -365,9 +365,10 @@ test('phone donors can inspect the EDC model with conflicting evidence and no li
   await expect(review).toContainText('did not improve substantive outcomes');
   await expect(review).toContainText('$126,000');
   await expect(review).toContainText('no finite upper bound');
-  await expect(review).toContainText('Not yet convertible');
-  await expect(review.locator('.charity-evidence-list article')).toHaveCount(3);
-  await expect(review.locator('.charity-sensitivity article')).toHaveCount(3);
+  await expect(review).toContainText('$126M');
+  await expect(review).toContainText('explicitly subjective health bridge');
+  await expect(review.locator('.charity-evidence-list article')).toHaveCount(4);
+  await expect(review.locator('.charity-sensitivity article')).toHaveCount(6);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 

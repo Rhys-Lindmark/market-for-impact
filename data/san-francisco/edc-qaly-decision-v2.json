@@ -1,0 +1,107 @@
+{
+  "version": "sf-edc-qaly-decision-v2",
+  "reviewedAt": "2026-09-07",
+  "status": "exploratory-judgmental-health-bridge",
+  "confidence": "very-low",
+  "denominator": "10 incremental QALYs",
+  "central": {
+    "costPerCaseUsd": 6300,
+    "additionalRetainedPossessionProbability": 0.05,
+    "affectedAdults": 1,
+    "healthRelevantDisplacementShare": 0.25,
+    "utilityGain": 0.04,
+    "durationYears": 1,
+    "donorAdditionality": 1
+  },
+  "scenarios": [
+    {
+      "name": "Favorable positive",
+      "costPerOutcomeUsd": 42000,
+      "healthRelevantDisplacementShare": 1,
+      "utilityGain": 0.1,
+      "durationYears": 2,
+      "affectedAdults": 1,
+      "donorAdditionality": 1
+    },
+    {
+      "name": "Central analyst estimate",
+      "costPerOutcomeUsd": 126000,
+      "healthRelevantDisplacementShare": 0.25,
+      "utilityGain": 0.04,
+      "durationYears": 1,
+      "affectedAdults": 1,
+      "donorAdditionality": 1
+    },
+    {
+      "name": "Unfavorable positive",
+      "costPerOutcomeUsd": 630000,
+      "healthRelevantDisplacementShare": 0.1,
+      "utilityGain": 0.01,
+      "durationYears": 0.5,
+      "affectedAdults": 1,
+      "donorAdditionality": 0.5
+    }
+  ],
+  "formula": "10 * costPerOutcomeUsd / (affectedAdults * healthRelevantDisplacementShare * utilityGain * durationYears * donorAdditionality)",
+  "publishedPriceUsd": 126000000,
+  "judgments": [
+    {
+      "label": "Health-relevant displacement share",
+      "best": "25%",
+      "range": "10%–100%",
+      "basis": "Subjective transfer: a legal outcome may delay or alter a move without preventing health-relevant displacement. The July2026 Memphis trial found no effect on ultimate residential stability, so the central scenario credits only a minority. This is not a measured fraction."
+    },
+    {
+      "label": "Utility gain among affected adults",
+      "best": "0.04",
+      "range": "0.01–0.10",
+      "basis": "Subjective modest health-improvement scenario, not an eviction-specific preference-based study estimate. The search did not identify a measured coefficient; adjacent housing utility studies are often null."
+    },
+    {
+      "label": "Duration",
+      "best": "1 year",
+      "range": "0.5–2 years",
+      "basis": "One-year window limits extrapolation. Judge-assignment evidence supports some first-year acute-health effects but not a persistent second-year utilization effect."
+    },
+    {
+      "label": "Affected adults",
+      "best": "1",
+      "range": "1",
+      "basis": "One adult avoids unsupported household/child multipliers; it does not imply that other household members receive no benefit."
+    },
+    {
+      "label": "Donor additionality",
+      "best": "100%, conditional",
+      "range": "0%–100%",
+      "basis": "Central assumes the gift funds additional full-scope cases, not replacement of public funding. This is unverified. Zero additionality produces no finite price."
+    }
+  ],
+  "bottomLine": "Our best guess for the narrow adult-health pathway is $126 million per 10 QALYs, conditional on extra cases and a positive legal effect. We would not prioritize this program on the present QALY estimate; justice, voice, financial protection and other non-health benefits are not fully represented. This is not evidence that legal assistance has no value.",
+  "nullBoundary": "Zero legal effect, zero health effect or zero donor additionality means no finite cost per QALY; harm remains possible. Positive scenarios are not confidence intervals.",
+  "sources": [
+    {
+      "publisher": "Caspi and Rafkin",
+      "title": "Legal Assistance for Evictions",
+      "url": "https://www.charlierafkin.com/docs/cr_rtc.pdf",
+      "published": "July 2026 revision",
+      "retrieved": "2026-09-07",
+      "sourceType": "Memphis randomized trial; court outcomes differ from residential stability"
+    },
+    {
+      "publisher": "Collinson et al.",
+      "title": "Eviction and Poverty in American Cities",
+      "url": "https://academic.oup.com/qje/article/139/1/57/7276608",
+      "published": "2024",
+      "retrieved": "2026-09-07",
+      "sourceType": "Judge-assignment study; health pathway, not utility coefficient"
+    },
+    {
+      "publisher": "Collinson et al.",
+      "title": "Eviction and Poverty in American Cities, working paper Table8",
+      "url": "https://humcap.uchicago.edu/RePEc/hka/wpaper/Djik_Collinson_Humphries_Mader_Reed_Tannenbaum_2022_Eviction-Poverty.pdf",
+      "published": "2022 working paper",
+      "retrieved": "2026-09-07",
+      "sourceType": "Versioned hospital-use estimates; not QALYs"
+    }
+  ]
+}

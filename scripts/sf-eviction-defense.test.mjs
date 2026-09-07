@@ -13,7 +13,7 @@ test('EDC review preserves mixed evidence and labels its exploratory estimate', 
   assert.match(review.decision.costEffectiveness, /126,000/);
   assert.equal(review.decision.roomForMoreFunding, 'Not published');
   assert.equal(review.model.missingInputs.length, 8);
-  assert.match(review.model.qalyBoundary, /No QALY/);
+  assert.match(review.model.qalyBoundary, /subjective adult-health estimate/);
 });
 
 test('EDC financial and outcome boundaries prevent false per-family calculations', () => {
@@ -59,12 +59,17 @@ test('EDC uses 10 QALYs as the shared denominator but fails closed on conversion
   assert.match(bridge.candidateEvidence.boundary, /does not estimate causal QALYs/i);
 });
 
-test('EDC donor-facing pages show the common better-life denominator without inventing a price', () => {
+test('EDC current pages publish an explicitly subjective health estimate while preserving the historical audit', () => {
   const report = fs.readFileSync('app/charities/eviction-defense-collaborative/page.tsx', 'utf8');
   const sfPage = fs.readFileSync('app/san-francisco/ResearchLibrary.tsx', 'utf8');
   assert.match(report, /\$ PER 10 QALYS · ONE BETTER LIFE/);
-  assert.match(report, /Not yet convertible/);
-  assert.match(report, /No \$ \/ QALY estimate/);
-  assert.match(sfPage, /Eviction Defense Collaborative[\s\S]*betterLifePrice: 'Not yet convertible'/);
-  assert.match(sfPage, /Eight evidence gates failed/);
+  assert.match(report, /subjective/);
+  assert.match(report, /edc-qaly-decision-v2/);
+  assert.match(sfPage, /Eviction Defense Collaborative[\s\S]*betterLifePrice: '≈ \$126M'/);
+  const current = JSON.parse(fs.readFileSync('data/san-francisco/edc-qaly-decision-v2.json', 'utf8'));
+  const c = current.central;
+  const gain = c.additionalRetainedPossessionProbability * c.affectedAdults * c.healthRelevantDisplacementShare * c.utilityGain * c.durationYears * c.donorAdditionality;
+  assert.equal(10 * c.costPerCaseUsd / gain, current.publishedPriceUsd);
+  assert.equal(current.publishedPriceUsd, 126000000);
+  assert.equal(current.confidence, 'very-low');
 });

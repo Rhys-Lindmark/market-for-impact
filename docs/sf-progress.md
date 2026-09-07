@@ -37,7 +37,7 @@ Dependency: completed phase 2 research. Compare cash-gap prevention, treatment, 
 ## Expanded search — user steering 7 September 2026
 
 - [ ] SF11 Add and screen ten unconventional programs with source-confirmed SF delivery or an explicit missing local partner.
-- [ ] SF12 Add and screen ten high-conviction research bets; this label is a search priority, not an effectiveness endorsement.
+- [ ] SF12 Screen the ten mechanism-first research bets in [sf-research-bets.md](sf-research-bets.md): first hypothesize a cheap causal route to health gains, then find a local implementer, then test whether it holds. This label is a research priority, not an effectiveness endorsement. Discovery queue recorded; program models remain unfinished.
 - [ ] SF13 Deepen the best candidate for under $100,000 per 10 QALYs ($10,000/QALY), starting with overdose prevention. Separate published economic ICERs from marginal donor prices and current SF coverage.
 
 Expanded search may proceed alongside the 25 reviews. Synthesis must account for the expanded findings and must not claim 100× differences based only on correlated assumptions or unlike model perspectives.

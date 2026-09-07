@@ -1,0 +1,93 @@
+{
+  "version": "sf-huckleberry-counseling-cea-v1",
+  "reviewedAt": "2026-09-07",
+  "organization": "Huckleberry Youth Programs",
+  "program": "Modeled adolescent anxiety counseling",
+  "confidence": "very-low",
+  "denominator": "10 incremental QALYs",
+  "formula": "10 * costPerOfferedCourse / (trialQalys * transferRetention * additionality)",
+  "scope": "A proposed brief behavioral course for adolescents with anxiety, not all Huckleberry services or a claim that the exact trial protocol is delivered",
+  "scenarios": [
+    {
+      "name": "Optimistic positive",
+      "costPerOfferedCourse": 1600,
+      "trialQalys": 0.046,
+      "transferRetention": 0.75,
+      "additionality": 0.75
+    },
+    {
+      "name": "Central analyst estimate",
+      "costPerOfferedCourse": 2400,
+      "trialQalys": 0.026,
+      "transferRetention": 0.5,
+      "additionality": 0.5
+    },
+    {
+      "name": "Pessimistic positive",
+      "costPerOfferedCourse": 4000,
+      "trialQalys": 0.009,
+      "transferRetention": 0.25,
+      "additionality": 0.25
+    }
+  ],
+  "judgments": [
+    {
+      "key": "costPerOfferedCourse",
+      "label": "Cost per offered course",
+      "basis": "Analyst nominal USD budget: twelve 45-minute sessions plus three hours of engagement/supervision = twelve hours at an assumed $200 all-in rate. Not an observed Huckleberry cost, inflation adjustment, or price quote. Includes noncompletion effort."
+    },
+    {
+      "key": "trialQalys",
+      "label": "External incremental QALYs",
+      "basis": "Lynch 2021 Table 3: adjusted HUI2 difference .026 over 32 weeks, 95% CI .009–.046, brief behavioral therapy versus assisted referral. Endpoint already integrates follow-up and assignment/noncompletion; no extra duration or completion factor."
+    },
+    {
+      "key": "transferRetention",
+      "label": "Local program/population transfer",
+      "basis": "50% judgment for older local recipients, protocol and setting differences. Restricted to a plausible adolescent anxiety slice; not extrapolated to acute crises, substance dependence or all trauma counseling."
+    },
+    {
+      "key": "additionality",
+      "label": "Donor additionality",
+      "basis": "50% judgment for alternative access and funding substitution. Medi-Cal and state-supported care exist; no claim that half of any actual gift is additional."
+    }
+  ],
+  "nullBoundary": "No additional effective care means no finite positive price. Positive scenarios combine trial endpoints with subjective inputs; they are not confidence intervals for Huckleberry. Harm and long-term effects are unmodeled.",
+  "fundingRoom": {
+    "verifiedUsd": null,
+    "status": "unverified",
+    "nextEvidence": "Local protocol, age/diagnosis cohort, staff time, reimbursement, waiting list and priced additional course capacity."
+  },
+  "excluded": [
+    "Long-term health beyond 32 weeks",
+    "Family, education and justice outcomes",
+    "Societal healthcare savings",
+    "Shelter, sexual-health and other Huckleberry programs"
+  ],
+  "sources": [
+    {
+      "publisher": "Huckleberry Youth Programs",
+      "title": "Counseling Programs",
+      "url": "https://www.huckleberryyouth.org/counseling-programs/",
+      "published": "Undated; relative-year language not treated as current contract date",
+      "retrieved": "2026-09-07",
+      "sourceType": "SF service identity, sliding scale and Medi-Cal provision; not marginal costs"
+    },
+    {
+      "publisher": "Lynch et al., JAMA Network Open",
+      "title": "Cost-effectiveness of Brief Behavioral Therapy for Pediatric Anxiety and Depression in Primary Care",
+      "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2777443",
+      "published": "2021-03-15",
+      "retrieved": "2026-09-07",
+      "sourceType": "External randomized trial economic analysis; direct HUI2 outcome, not local causal evidence"
+    },
+    {
+      "publisher": "Huckleberry Youth Programs",
+      "title": "Our Mission in Action",
+      "url": "https://www.huckleberryyouth.org/our-mission-in-action/",
+      "published": "2025 year-end; exact date unavailable",
+      "retrieved": "2026-09-07",
+      "sourceType": "Aggregate self-reported outcome context; not model effect input"
+    }
+  ]
+}

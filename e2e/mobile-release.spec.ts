@@ -4,6 +4,8 @@ const defaultRoutes = [
   '/',
   '/india',
   '/san-francisco',
+  '/research',
+  '/archive',
   '/charities/project-open-hand',
   '/charities/sf-marin-food-bank',
   '/charities/sf-lgbt-center',
@@ -35,7 +37,7 @@ test('phone donors can use critical evidence controls without silent panel failu
   const errors: string[] = [];
   page.on('console', (message) => { if (message.type() === 'error') errors.push(message.text()); });
   page.on('pageerror', (error) => errors.push(error.message));
-  await page.goto('/', { waitUntil: 'domcontentloaded' });
+  await page.goto('/archive', { waitUntil: 'domcontentloaded' });
   await expect(page.locator('html')).toHaveAttribute('data-mfi-hydrated', 'true');
 
   await expect(page.locator('.ai-safety-overview strong').first()).not.toHaveText('—', { timeout: 20_000 });
@@ -73,7 +75,7 @@ test('phone donors can use critical evidence controls without silent panel failu
 
 test('phone donors can reach the core market from the top bar', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'phone-390');
-  await page.goto('/', { waitUntil: 'domcontentloaded' });
+  await page.goto('/archive', { waitUntil: 'domcontentloaded' });
   await expect(page.locator('html')).toHaveAttribute('data-mfi-hydrated', 'true');
   await expect(page.locator('.desktop-navigation')).toBeHidden();
   const menu = page.locator('.mobile-menu');
@@ -83,7 +85,7 @@ test('phone donors can reach the core market from the top bar', async ({ page },
   await expect(menu.getByRole('link', { name: /San Francisco/ })).toBeVisible();
   await menu.getByRole('link', { name: /San Francisco/ }).click();
   await expect(page).toHaveURL(/\/san-francisco$/);
-  await expect(page.getByRole('heading', { name: /Where can a major gift do the most good/ })).toBeVisible();
+  await expect(page.getByRole('heading', { name: /Our top charities/ })).toBeVisible();
 });
 
 test('phone donors can inspect the India geography contract without inferred funding room', async ({ page }, testInfo) => {
@@ -101,7 +103,7 @@ test('phone donors can inspect the India geography contract without inferred fun
 
 test('phone donors see the same honest decision fields across all six San Francisco candidates', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'phone-390');
-  await page.goto('/san-francisco#comparison', { waitUntil: 'domcontentloaded' });
+  await page.goto('/research#comparison', { waitUntil: 'domcontentloaded' });
   await expect(page.getByRole('heading', { name: 'Six organizations. One honest denominator.' })).toBeVisible();
   const cards = page.locator('.sf-comparison-card');
   await expect(cards).toHaveCount(6);
@@ -119,7 +121,7 @@ test('phone donors see the same honest decision fields across all six San Franci
 
 test('phone donors reach the complete San Francisco decision state before the research archive', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'phone-390');
-  await page.goto('/san-francisco#decision-snapshot', { waitUntil: 'domcontentloaded' });
+  await page.goto('/research#decision-snapshot', { waitUntil: 'domcontentloaded' });
   await expect(page.getByRole('heading', { name: 'What can a donor act on today?' })).toBeVisible();
   await expect(page.locator('.sf-decision-answer>strong')).toHaveText('0');
   const rows = page.locator('.sf-decision-row');
@@ -133,7 +135,7 @@ test('phone donors reach the complete San Francisco decision state before the re
 
 test('phone donors can search the complete SFF community-foundation partner lens', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'phone-390');
-  await page.goto('/san-francisco#community-foundation', { waitUntil: 'domcontentloaded' });
+  await page.goto('/research#community-foundation', { waitUntil: 'domcontentloaded' });
   await expect(page.getByRole('heading', { name: 'Another 424 doors into the local field.' })).toBeVisible();
   await expect(page.locator('.sf-sff-summary strong')).toHaveText(['424', '$49.52M', '11', '1', '1', '0']);
   await expect(page.locator('.sf-sff-grid article')).toHaveCount(12);
@@ -180,7 +182,7 @@ test('phone donors can search the complete SFF community-foundation partner lens
 
 test('phone donors can inspect the marginal-plan and grant-look-back research contract', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'phone-390');
-  await page.goto('/san-francisco#protocol', { waitUntil: 'domcontentloaded' });
+  await page.goto('/research#protocol', { waitUntil: 'domcontentloaded' });
   await expect(page.getByRole('heading', { name: 'How an impact number earns its place.' })).toBeVisible();
   const summary = page.locator('.sf-protocol-summary');
   await expect(summary.locator('strong')).toHaveText(['18', '0', '0', '0']);
@@ -240,7 +242,7 @@ test('phone donors can inspect the marginal-plan and grant-look-back research co
 
 test('phone donors can inspect a San Francisco diligence record', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'phone-390');
-  await page.goto('/san-francisco#diligence', { waitUntil: 'domcontentloaded' });
+  await page.goto('/research#diligence', { waitUntil: 'domcontentloaded' });
   const firstRecord = page.locator('.sf-brief-candidates details').first();
   await firstRecord.locator('summary').click();
   await expect(firstRecord).toHaveAttribute('open', '');
@@ -250,7 +252,7 @@ test('phone donors can inspect a San Francisco diligence record', async ({ page 
 
 test('phone donors can distinguish reported outcomes from external evidence dossiers', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'phone-390');
-  await page.goto('/san-francisco#diligence', { waitUntil: 'domcontentloaded' });
+  await page.goto('/research#diligence', { waitUntil: 'domcontentloaded' });
   const dossiers = page.locator('.sf-evidence-dossier');
   await expect(dossiers).toHaveCount(5);
   const hamilton = dossiers.filter({ hasText: 'Hamilton Families' });
@@ -281,7 +283,7 @@ test('phone donors can distinguish reported outcomes from external evidence doss
 
 test('phone controls retain practical touch targets and wide tables scroll locally', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'phone-390');
-  await page.goto('/', { waitUntil: 'domcontentloaded' });
+  await page.goto('/archive', { waitUntil: 'domcontentloaded' });
   const undersizedButtons = await page.locator('button:visible').evaluateAll((buttons) => buttons
     .map((button) => ({ label: button.getAttribute('aria-label') ?? button.textContent?.trim() ?? '', height: button.getBoundingClientRect().height }))
     .filter((button) => button.height < 43.5));
@@ -316,7 +318,7 @@ test('transient San Francisco discovery-feed failures recover without permanent 
     });
   }
 
-  await page.goto('/#san-francisco', { waitUntil: 'domcontentloaded' });
+  await page.goto('/archive#san-francisco', { waitUntil: 'domcontentloaded' });
   await expect(page.locator('.sf-universe-summary strong').first()).not.toHaveText('—', { timeout: 20_000 });
   await expect(page.locator('.sf-irs-summary strong').first()).not.toHaveText('—');
   await expect(page.getByText('The San Francisco candidate universe is temporarily unavailable.')).toHaveCount(0);
@@ -326,7 +328,7 @@ test('transient San Francisco discovery-feed failures recover without permanent 
 
 test('phone donors can inspect the 6,688 to 25 San Francisco research funnel', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'phone-390');
-  await page.goto('/san-francisco#research-funnel', { waitUntil: 'domcontentloaded' });
+  await page.goto('/research#research-funnel', { waitUntil: 'domcontentloaded' });
   await expect(page.getByRole('heading', { name: '6,688 records. 25 deep reviews.' })).toBeVisible();
   await expect(page.locator('.sf-research-stages strong')).toHaveText(['6,688', '1,000', '100', '25', '11']);
   await expect(page.locator('.sf-deep-queue article')).toHaveCount(25);
@@ -341,7 +343,7 @@ test('phone donors can inspect the 6,688 to 25 San Francisco research funnel', a
 
 test('phone donors can inspect Project Open Hand mixed evidence and its exploratory model', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'phone-390');
-  await page.goto('/san-francisco#project-open-hand-review', { waitUntil: 'domcontentloaded' });
+  await page.goto('/research#project-open-hand-review', { waitUntil: 'domcontentloaded' });
   await expect(page.getByRole('heading', { level: 2, name: 'Project Open Hand', exact: true })).toBeVisible();
   await expect(page.locator('#project-open-hand-review')).toContainText('Direct trial involvement. Mixed results.');
   await expect(page.locator('#project-open-hand-review')).toContainText('The primary all-cause 90-day hospitalization outcome was not improved');
@@ -541,7 +543,7 @@ test('phone donors can inspect the Hamilton prevention model without treating re
 
 test('phone donors can inspect the HRTC review without treating service contacts as causal impact', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'phone-390');
-  await page.goto('/san-francisco#harm-reduction-therapy-center-review', { waitUntil: 'domcontentloaded' });
+  await page.goto('/research#harm-reduction-therapy-center-review', { waitUntil: 'domcontentloaded' });
   const review = page.locator('#harm-reduction-therapy-center-review');
   await expect(page.getByRole('heading', { level: 2, name: 'Harm Reduction Therapy Center', exact: true })).toBeVisible();
   await expect(review).toContainText('Relevant short-term trial. HRTC effect unknown.');
@@ -556,7 +558,7 @@ test('phone donors can inspect the HRTC review without treating service contacts
 
 test('phone donors can inspect the HYA review without treating referrals as durable outcomes', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'phone-390');
-  await page.goto('/san-francisco#homeless-youth-alliance-review', { waitUntil: 'domcontentloaded' });
+  await page.goto('/research#homeless-youth-alliance-review', { waitUntil: 'domcontentloaded' });
   const review = page.locator('#homeless-youth-alliance-review');
   await expect(page.getByRole('heading', { level: 2, name: 'Homeless Youth Alliance', exact: true })).toBeVisible();
   await expect(review).toContainText('Strong intervention rationale. HYA effect unknown.');
@@ -571,7 +573,7 @@ test('phone donors can inspect the HYA review without treating referrals as dura
 
 test('phone donors can inspect the Huckleberry review without pooling unlike outcomes', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'phone-390');
-  await page.goto('/san-francisco#huckleberry-youth-programs-review', { waitUntil: 'domcontentloaded' });
+  await page.goto('/research#huckleberry-youth-programs-review', { waitUntil: 'domcontentloaded' });
   const review = page.locator('#huckleberry-youth-programs-review');
   await expect(page.getByRole('heading', { level: 2, name: 'Huckleberry Youth Programs', exact: true })).toBeVisible();
   await expect(review).toContainText('Several promising pathways. No single marginal case.');

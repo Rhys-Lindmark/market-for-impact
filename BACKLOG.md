@@ -4,6 +4,8 @@ This backlog is ordered by donor value, data integrity, and dependency. Each ite
 
 ## Product north star
 
+**2026-09-07 user direction supersedes the cross-cause homepage:** San Francisco is now the product. `/donate` and `/donate/san-francisco` lead with exactly four concise current charity picks, following GiveWell's top-charities structure; use $ per 10 QALYs as the common denominator. Preserve full SF work under `/donate/research` and cross-cause work under `/donate/archive`. Continue all 25 prioritized reviews, add SPUR/GrowSF/HAC, and derive a general city cost-effectiveness theory after completing the cohort. The dependency-ordered Manager Loop and recovery state are in [docs/sf-progress.md](docs/sf-progress.md). Current first phase: front door and navigation. Do not resume broad-cause expansion ahead of SF research.
+
 Design first for a major donor deciding how to deploy roughly $10 million this year from a much larger long-run philanthropic pool. Lead with cause areas rather than funder brands: a donor should be able to see the opportunity universe, compare intervention and evidence regimes, understand what the next $100,000 / $1 million / $10 million could fund, and distinguish recommended, promising, watchlist, and insufficient-evidence states. Treat San Francisco as the flagship local-giving market; funder and evaluator views remain evidence lenses rather than the primary information architecture.
 
 ## Now — foundation

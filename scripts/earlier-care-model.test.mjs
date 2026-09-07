@@ -1,0 +1,5 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {readFileSync}from'node:fs';import{earlierCareModel}from'../lib/earlier-care-model.mjs';
+const m=JSON.parse(readFileSync(new URL('../data/san-francisco/lyon-earlier-care-cea-v1.json',import.meta.url)));const c=m.scenarios[1];
+test('earlier care integrates endpoint once over avoided wait',()=>{const r=earlierCareModel(c);assert.ok(Math.abs(r.qalysPerSupportedStart-.0021875)<1e-12);assert.ok(Math.abs(r.costPerTenQalys-4571428.571428571)<1e-6);});
+test('null and harmful utility do not create a positive price',()=>{assert.equal(earlierCareModel({...c,utilityDifference:0}).costPerTenQalys,null);const r=earlierCareModel({...c,utilityDifference:-.07});assert.equal(r.costPerTenQalys,null);assert.ok(r.additionalQalys<0);});
+test('earlier care cannot silently extrapolate beyond measured horizon',()=>{for(const d of [{waitAvoidedYears:1},{onsetFactor:2},{costPerSupportedStart:0},{utilityDifference:NaN},{additionality:-1}])assert.throws(()=>earlierCareModel({...c,...d}),RangeError);});

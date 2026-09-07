@@ -10,13 +10,15 @@ Design first for a major donor deciding how to deploy roughly $10 million this y
 
 ## Now — foundation
 
-- [ ] **City cost-effectiveness theory — SF10 / #163.** After all25 original models, publish a donor-useful causal/cost ledger, shared-assumption audit, falsifiable hypotheses and sub-$100K thresholds. No interim homepage ranking. Mechanism-first ten are next only after theory acceptance.
+- [x] **Current cost-effectiveness order — #165.** All27 completed models sorted numerically by central USD per10 QALYs; homepage uses the same first four: SFAF, PHC, GLIDE, Compass. 234 tests, lint/build and eight focused phone/tablet checks passed. Positive scenarios and unverified funding room remain visible; deployment acceptance recorded in the issue.
+
+- [x] **City cost-effectiveness theory — SF10 / #163.** After all25 original models, publish a donor-useful causal/cost ledger, shared-assumption audit, falsifiable hypotheses and sub-$100K thresholds. The user's later request explicitly enables a current central-estimate ranking. Mechanism-first ten are next only after theory acceptance.
 
 - [x] **United Playaz intensive mentorship — SF8 / #153.** Accepted PR #162 / Sites v118, central subjective $26.7M/10 QALYs; positive $333K–$4B with null/harm. 227 tests, lint/build, independent audit, phone/tablet, GitHub mobile/security, canonical report/API and workbook B151/B152 verified. Original cohort now25 models, not25 verified marginal offers.
 
 - [x] **THC room-turnover acceleration — SF8 / #159.** Accepted PR #161 / Sites v117. Central $46.8M/10 QALYs, positive $1.17M–$4.17B; count only net earlier occupant-days. 224 tests, lint/build, independent audit, phone/tablet, GitHub mobile/security, canonical report/API and workbook B142 verified.
 
-**Latest user order, 2026-09-07:** finish the original 25 → city theory of change → ten mechanism-first bets → ten unconventional programs → SPUR/GrowSF/HAC → final top-four selection and GiveWell-style visual rebuild with photos. No interim top-four reassessment. Roughly 50 unique organizations; remaining research lives separately. This ordering supersedes older parallel-expansion notes; see docs/sf-progress.md.
+**Latest user order, 2026-09-07:** finish the original 25 → city theory of change → ten mechanism-first bets → ten unconventional programs → SPUR/GrowSF/HAC → final top-four selection and GiveWell-style visual rebuild with photos. Later 2026-09-07 override: sort the research list by central cost-effectiveness and update the current homepage four now; retain the later full visual rebuild. Roughly 50 unique organizations; remaining research lives separately. This ordering supersedes older parallel-expansion notes; see docs/sf-progress.md.
 
 - [x] **Self-Help therapeutic tai chi — SF8 / #157.** Accepted PR #160 / Sites v116. Central independent bridge $2.4M/10 QALYs; alternate integrated-QALY reading $600K. Proposed trial-matched course is not current six-week Sun-style. 221 tests, lint/build, independent audit, phone/tablet, GitHub mobile/security, canonical report/API and workbook B133/B134 verified.
 

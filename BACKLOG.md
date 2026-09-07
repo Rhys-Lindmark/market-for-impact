@@ -10,6 +10,8 @@ Design first for a major donor deciding how to deploy roughly $10 million this y
 
 ## Now — foundation
 
+- [ ] **United Playaz intensive mentorship — SF8 / #153.** Central subjective $26.7M/10 QALYs; positive scenarios $333K–$4B, null/harm possible. Conditional-on-engagement mortality effect, not READI ITT or gun counts. Original cohort reaches25 modeled programs, not25 verified funding offers. Independent audit accepted; pending complete release verification.
+
 - [ ] **THC room-turnover acceleration — SF8 / #159.** Central subjective $46.8M/10 QALYs; positive scenarios $1.17M–$4.17B. Count only incremental earlier occupant-days with safe repairs, funding additionality and no full-year bonus. Independent audit accepted; pending complete release verification.
 
 **Latest user order, 2026-09-07:** finish the original 25 → city theory of change → ten mechanism-first bets → ten unconventional programs → SPUR/GrowSF/HAC → final top-four selection and GiveWell-style visual rebuild with photos. No interim top-four reassessment. Roughly 50 unique organizations; remaining research lives separately. This ordering supersedes older parallel-expansion notes; see docs/sf-progress.md.

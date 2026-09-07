@@ -1,0 +1,1 @@
+import model from'@/data/san-francisco/united-playaz-cea-v1.json';import{youthMortalityModel}from'@/lib/youth-mortality-model.mjs';export function GET(){return Response.json({...model,evaluatedScenarios:model.scenarios.map(s=>({...s,...youthMortalityModel(s)}))});}

@@ -1,0 +1,35 @@
+{
+  "version": "sf-hrtc-therapy-cea-v1",
+  "reviewedAt": "2026-09-07",
+  "organization": "Harm Reduction Therapy Center",
+  "program": "Modeled alcohol-focused course within Adult Mobile Behavioral Health",
+  "scope": "Proposed analytic five-session slice, not evidence HRTC implements the exact external HaRT-A protocol",
+  "confidence": "very-low",
+  "denominator": "10 incremental quality-adjusted life years",
+  "amountSemantics": "modeled marginal donor expenditure, not a verified funding offer",
+  "formula": "10 * costPerOfferedCourse / (physicalScoreGain * utilityPerPhysicalPoint * transferRetention * effectiveWeeks / 52 * additionality)",
+  "anchors": { "annualBudgetUsd": 899823, "annualStaffHours": 4530, "budgetedStaffHourUsd": 198.64, "plannedUnduplicatedClients": 500, "contractPeriod": "2024-07-01 through 2029-06-30", "physicalEffectStandardized": 0.41, "mappingPcsCoefficient": 0.00781 },
+  "scenarios": [
+    { "name": "Optimistic positive", "costPerOfferedCourse": 1000, "physicalScoreGain": 6, "utilityPerPhysicalPoint": 0.00781, "transferRetention": 1, "effectiveWeeks": 30, "additionality": 0.75 },
+    { "name": "Central analyst estimate", "costPerOfferedCourse": 1500, "physicalScoreGain": 4, "utilityPerPhysicalPoint": 0.00781, "transferRetention": 0.5, "effectiveWeeks": 18, "additionality": 0.5 },
+    { "name": "Pessimistic positive", "costPerOfferedCourse": 2500, "physicalScoreGain": 1, "utilityPerPhysicalPoint": 0.00781, "transferRetention": 0.25, "effectiveWeeks": 6, "additionality": 0.25 }
+  ],
+  "judgments": [
+    { "key": "costPerOfferedCourse", "label": "Donor cost per offered course", "basis": "Five one-hour sessions plus 2.5 hours of engagement, missed appointments and coordination at about $200/hour gives $1,500. Hours and rounding are assumptions. The published $198.64 is a budgeted service-resource benchmark; do not add a second blanket overhead allowance." },
+    { "key": "physicalScoreGain", "label": "Peak incremental SF-12 physical score", "basis": "Four points is an analyst scenario, compatible in scale with a small-to-medium effect but not recovered from d=0.41. A normative standard deviation is not necessarily the trial's effect-size denominator." },
+    { "key": "transferRetention", "label": "Mapping and delivery transfer", "basis": "50% jointly discounts protocol, retention/delivery and population differences, unvalidated change-score mapping and the earlier inconclusive quality-of-life trial. Not a measured causal adjustment." },
+    { "key": "effectiveWeeks", "label": "Full-effect-equivalent weeks", "basis": "18 assumes a linear rise over 12 weeks and decline to zero over 24: 12/2 + 24/2. It credits incremental area under the curve, not persistent within-person improvement when usual care catches up." },
+    { "key": "additionality", "label": "Funding additionality", "basis": "50% allows replacement of existing public/private financing or alternative treatment. The existing contract is not available philanthropic capacity." }
+  ],
+  "mappingBoundary": "Hanmer's group-average SF-12 to SF-6D equation includes 0.00781 per physical component point. Applying it to changes assumes unchanged demographics and no mental-component change. The source did not validate change-score prediction. No QALYs were measured in the selected HaRT-A trial.",
+  "nullBoundary": "No incremental utility improvement or no additional funded treatment means no finite price. Positive scenarios are not confidence intervals; harms are possible and would require a signed net-benefit model.",
+  "fundingRoom": { "verifiedUsd": null, "status": "unverified", "nextEvidence": "Participant-linked course offers, dose and utility follow-up plus incremental staffing and public-versus-private funding plan; no contact has been made." },
+  "excluded": ["Medication and naloxone effects", "Overdose mortality or other survival gains", "Separate alcohol, depression, employment or housing benefits overlapping the mapped utility", "Broader youth and training programs", "Public-payer savings"],
+  "sources": [
+    { "publisher": "SF Health Commission", "title": "November 2024 contract report, printed page 5", "url": "https://media.api.sf.gov/documents/HC_Monthly_November_Report_FINAL_0.pdf", "published": "2024-11-05", "retrieved": "2026-09-07", "sourceType": "Adult Mobile Behavioral Health budgeted hours and clients; not marginal course cost" },
+    { "publisher": "Harm Reduction Therapy Center", "title": "Mission Mobile team and Gubbio", "url": "https://harmreductiontherapy.org/news/may-2025-newsletter-the-mission-mobile-team-moves-one-chair-inside-gubbio/", "published": "2025-05", "retrieved": "2026-09-07", "sourceType": "Local delivery description, not causal outcomes" },
+    { "publisher": "Collins et al.", "title": "Combining extended-release naltrexone and behavioral harm-reduction treatment: randomized clinical trial", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9875110/", "published": "2021", "retrieved": "2026-09-07", "sourceType": "HaRT-A alone comparison only; physical quality of life, not measured QALYs" },
+    { "publisher": "Collins et al.", "title": "Randomized controlled trial of harm reduction treatment for alcohol", "url": "https://depts.washington.edu/harrtlab/wordpress/wp-content/uploads/2019/03/Collins-et-al-2019-harta.pdf", "published": "2019", "retrieved": "2026-09-07", "sourceType": "Earlier four-session trial; inconclusive quality-of-life effect" },
+    { "publisher": "Hanmer, Value in Health", "title": "Predicting an SF-6D Preference-Based Score Using MCS and PCS Scores from the SF-12 or SF-36", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4000703/", "published": "2009", "retrieved": "2026-09-07", "sourceType": "Group-average mapping; change-score validity not established" }
+  ]
+}

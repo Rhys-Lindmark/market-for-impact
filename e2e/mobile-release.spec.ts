@@ -547,7 +547,7 @@ test('phone donors can inspect the HRTC review without treating service contacts
   await page.goto('/research#harm-reduction-therapy-center-review', { waitUntil: 'domcontentloaded' });
   const review = page.locator('#harm-reduction-therapy-center-review');
   await expect(page.getByRole('heading', { level: 2, name: 'Harm Reduction Therapy Center', exact: true })).toBeVisible();
-  await expect(review).toContainText('Relevant short-term trial. HRTC effect unknown.');
+  await expect(review).toContainText('Historical initial review: relevant short-term trial; HRTC effect unknown.');
   await expect(review).toContainText('not unique participants, completed treatment courses, durable outcomes');
   await expect(review).toContainText("not HRTC's effect size");
   await expect(review).toContainText('no statistically significant treatment-group differences');

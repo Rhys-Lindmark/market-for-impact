@@ -1,0 +1,4 @@
+import test from'node:test';import assert from'node:assert/strict';import{readFileSync}from'node:fs';import{supportiveHealthModel}from'../lib/supportive-health-model.mjs';const m=JSON.parse(readFileSync(new URL('../data/san-francisco/newdoor-health-cea-v1.json',import.meta.url)));const c=m.scenarios[1];
+test('New Door health-only central model reproduces',()=>{const r=supportiveHealthModel(c);assert.equal(r.costPerTenQalys,160000000);assert.equal(r.qalysPerPlace,.00125);assert.equal(r.additionalQalys,.00625);});
+test('supportive health retains null and harm without positive price',()=>{for(const d of[{utilityGain:0},{additionality:0},{engagement:0},{utilityGain:-.01}])assert.equal(supportiveHealthModel({...c,...d}).costPerTenQalys,null);});
+test('supportive health validates horizon and fractional bounds',()=>{for(const d of[{effectiveYears:2},{engagement:2},{costPerPlace:0},{utilityGain:NaN}])assert.throws(()=>supportiveHealthModel({...c,...d}),RangeError);});

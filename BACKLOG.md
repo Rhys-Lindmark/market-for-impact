@@ -10,9 +10,11 @@ Design first for a major donor deciding how to deploy roughly $10 million this y
 
 ## Now — foundation
 
+- [ ] **New Door six-month SF employment — SF7 / #146.** Health-only speculative scenario central $160M/10 QALYs, positive cases $10.7M–$4.8B with null/harm boundary. Local program identity and mixed external employment-health evidence remain separate from subjective utility and cost. Pending full verification, independent review and release. No claim that economic benefits are worthless.
+
 - [ ] **MNC dental prevention — SF6 / #145.** Proposed targeted course plus licensed partner, not verified current varnish delivery. Central $39.3M/10 QALYs; positive scenarios $854K–$5.65B. Separate incident cavities from untreated painful-mouth cycles; no double multiplication of six-month QALY loss. Independent audit accepted; awaiting full verification and release. Next: funded clinical partner and real incremental dental gap.
 
-- [ ] **Lyon-Martin earlier adult care — SF6 / #143.** Dedicated short-horizon utility model: conditional central $4.57M/10 QALYs; positive scenarios $95K–$768M, with signed null/harm boundary. Independent review accepted; 205 tests, lint, production build and phone/tablet checks passed. Await merged canonical release. Need actual wait reduction, cost and reimbursement before treating this as an available tranche.
+- [x] **Lyon-Martin earlier adult care — SF6 / #143.** Dedicated short-horizon utility model: conditional central $4.57M/10 QALYs; positive scenarios $95K–$768M, with signed null/harm boundary. Independent review accepted; 205 tests, lint, production build and phone/tablet checks passed. Accepted PR #144 / Sites v109, canonical report/API and workbook parity verified. Need actual wait reduction, cost and reimbursement before treating this as an available tranche.
 
 - [x] **Larkin cash-plus — SF6 / #141.** Added proposed TYI-dose replication model and dedicated report: central $40.4M/10 QALYs, positive scenarios $6.07M–$2.42B. Historical cash dose is sourced; housing duration, utility and support cost are explicit judgments. Independent audit accepted the bounded short-horizon threshold and corrected author attribution. Accepted PR #142 / Sites v108: 202 tests, lint/build, independent review, phone/tablet and canonical report/API passed. Workbook formula matched. Next: original-assignment housing trajectories, cost/funding crosswalk, then Lyon-Martin.
 

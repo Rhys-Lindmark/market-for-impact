@@ -1,0 +1,1 @@
+import model from '@/data/san-francisco/newdoor-health-cea-v1.json';import{supportiveHealthModel}from'@/lib/supportive-health-model.mjs';export function GET(){return Response.json({...model,evaluatedScenarios:model.scenarios.map(s=>({...s,...supportiveHealthModel(s)}))});}

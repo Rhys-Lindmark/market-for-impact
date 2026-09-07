@@ -1,0 +1,120 @@
+{
+  "version": "sf-newdoor-employment-health-cea-v1",
+  "reviewedAt": "2026-09-07",
+  "organization": "New Door Ventures",
+  "program": "Six-month SF Employment Program place",
+  "confidence": "very-low",
+  "denominator": "10 incremental QALYs",
+  "formula": "10 * costPerPlace / (utilityGain * effectiveYears * engagement * additionality)",
+  "scope": "Health-only scenario for a proposed additional SF employment place; not education, other cities, or total economic-mobility value.",
+  "scenarios": [
+    {
+      "name": "Favorable positive",
+      "costPerPlace": 12000,
+      "utilityGain": 0.02,
+      "effectiveYears": 0.75,
+      "engagement": 1,
+      "additionality": 0.75,
+      "horizonYears": 1
+    },
+    {
+      "name": "Central analyst estimate",
+      "costPerPlace": 20000,
+      "utilityGain": 0.005,
+      "effectiveYears": 0.5,
+      "engagement": 1,
+      "additionality": 0.5,
+      "horizonYears": 1
+    },
+    {
+      "name": "Unfavorable positive",
+      "costPerPlace": 30000,
+      "utilityGain": 0.001,
+      "effectiveYears": 0.25,
+      "engagement": 1,
+      "additionality": 0.25,
+      "horizonYears": 1
+    }
+  ],
+  "judgments": [
+    {
+      "key": "costPerPlace",
+      "label": "Additional place budget",
+      "basis": "Assumed nominal $20,000 all-in allowance for six months of paid internship wages, casework, training, supervision and overhead. $12,000–$30,000 stress cases are not quotes. Neither one public grant divided by participants nor whole-program expenses across mismatched years supplies the marginal cost."
+    },
+    {
+      "key": "utilityGain",
+      "label": "Incremental health utility",
+      "basis": "Subjective .005: a small health gain, one-quarter of a .02 endpoint reference from England's health-selected adult IPS trial. This is calibration, not a transferred causal coefficient. Youth internships differ substantially; JOBS II found no mean EQ-5D benefit."
+    },
+    {
+      "key": "effectiveYears",
+      "label": "Effective benefit duration",
+      "basis": "Half an equivalent full-effect year within a one-year horizon, allowing gradual emergence/fading. Not .005 measured accumulated QALYs or a lifetime assumption."
+    },
+    {
+      "key": "engagement",
+      "label": "Additional engagement multiplier",
+      "basis": "Set1: the subjective local health gain is already averaged across the offered-place cohort including unsuccessful engagement. No second completion or employment-rate multiplier."
+    },
+    {
+      "key": "additionality",
+      "label": "New funded capacity",
+      "basis": "50% judgment for new places versus replacement of existing public/private commitments. Actual donor tranche and capacity unknown."
+    }
+  ],
+  "nullBoundary": "No added effective support or no health benefit means no finite positive-benefit price. Harm remains possible; the model preserves signed utility. Positive scenarios are judgments, not confidence bounds. This health-only lens omits the program's principal economic-mobility benefits.",
+  "fundingRoom": {
+    "verifiedUsd": null,
+    "status": "unverified",
+    "nextEvidence": "A six-month SF cohort quote, all-funder cost ledger, actual additional slots, consistent dosage, and complete health/employment outcomes against ordinary alternatives."
+  },
+  "excluded": [
+    "Wages and earnings converted into QALYs",
+    "Deaths prevented borrowed from unrelated youth jobs trials",
+    "Confidence scores treated as health utility",
+    "Education, housing and future benefits beyond the narrow one-year health horizon"
+  ],
+  "sources": [
+    {
+      "publisher": "New Door Ventures",
+      "title": "Employment Program",
+      "url": "https://www.newdoor.org/what-we-do/employment-program/",
+      "published": "Undated current page; mixed duration wording retained",
+      "retrieved": "2026-09-07",
+      "sourceType": "Current six-month headline,12–15 weekly paid hours and weekly support; FAQ still says three-month-plus"
+    },
+    {
+      "publisher": "San Francisco DCYF",
+      "title": "FY2024–25 TAY/A workforce program report",
+      "url": "https://apps.dcyf.org/granteereports2429/fy2425-prog-216269.html",
+      "published": "FY2024–2025",
+      "retrieved": "2026-09-07",
+      "sourceType": "Administrative funding and outcomes; not marginal costs or causal effect"
+    },
+    {
+      "publisher": "New Door / independent auditors",
+      "title": "2025 audited financial statements",
+      "url": "https://www.newdoor.org/wp-content/uploads/2026/07/NDV-2025-Audit-Report.pdf",
+      "published": "CY2025; website July2026",
+      "retrieved": "2026-09-07",
+      "sourceType": "Named SF employment expense, not same-period DCYF participant denominator"
+    },
+    {
+      "publisher": "UK Department for Work and Pensions",
+      "title": "Estimates of IPS impact over12months: Health-led Employment Trial",
+      "url": "https://www.gov.uk/government/publications/health-led-trials-impact-evaluation-reports/estimates-of-the-impact-of-ips-over-12-months-health-led-employment-trial-evaluation",
+      "published": "2023-07-26; HTML added 2024-04-08",
+      "retrieved": "2026-09-07",
+      "sourceType": "External adult participation-effect EQ-5D endpoint; not New Door effect or accumulated QALYs"
+    },
+    {
+      "publisher": "UK Department for Work and Pensions",
+      "title": "Group Work/JOBS II cost-benefit technical report",
+      "url": "https://www.gov.uk/government/publications/an-evaluation-of-the-group-work-jobs-ii-trial/cost-benefit-analysis-technical-report",
+      "published": "2021; updated2022-05-17",
+      "retrieved": "2026-09-07",
+      "sourceType": "External employment-support counterevidence: no mean EQ-5D benefit"
+    }
+  ]
+}

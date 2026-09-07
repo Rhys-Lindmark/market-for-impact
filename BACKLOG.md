@@ -10,6 +10,8 @@ Design first for a major donor deciding how to deploy roughly $10 million this y
 
 ## Now — foundation
 
+- [ ] **THC room-turnover acceleration — SF8 / #159.** Central subjective $46.8M/10 QALYs; positive scenarios $1.17M–$4.17B. Count only incremental earlier occupant-days with safe repairs, funding additionality and no full-year bonus. Independent audit accepted; pending complete release verification.
+
 **Latest user order, 2026-09-07:** finish the original 25 → city theory of change → ten mechanism-first bets → ten unconventional programs → SPUR/GrowSF/HAC → final top-four selection and GiveWell-style visual rebuild with photos. No interim top-four reassessment. Roughly 50 unique organizations; remaining research lives separately. This ordering supersedes older parallel-expansion notes; see docs/sf-progress.md.
 
 - [ ] **Self-Help therapeutic tai chi — SF8 / #157.** Proposed 24-week trial-matched course, not existing six-week Sun-style delivery. Central independent bridge $2.4M/10 QALYs; alternative published integrated-QALY reading $600K. Explicit cost, onset, fidelity and funding assumptions; expired closeout grant is not current room. Independent audit accepted unit-boundary wording; pending full verification/release.

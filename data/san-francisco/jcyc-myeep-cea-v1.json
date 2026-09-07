@@ -1,0 +1,31 @@
+{
+  "version": "sf-jcyc-myeep-cea-v1",
+  "reviewedAt": "2026-09-07",
+  "organization": "JCYC",
+  "program": "MYEEP summer paid-work placements",
+  "confidence": "very-low",
+  "denominator": "10 incremental quality-adjusted life years",
+  "amountSemantics": "modeled marginal donor expenditure, not a verified funding offer",
+  "formula": "10 * costPerSlot / (mortalityReduction * transferRetention * additionality * qalysPerDeath)",
+  "scope": "One additional summer placement; not school-year MYEEP or all JCYC programs",
+  "anchors": { "designEmploymentHours": 140, "designTrainingHours": 10, "currentPostedHourlyWage": 19.61, "mortalityReduction": 0.00073, "mortalityStandardError": 0.00031, "mortalityWindow": "Cumulative through October 2014 for NYC 2005–08 cohorts; not annual", "effectType": "2SLS participation effect; do not divide again by lottery take-up" },
+  "scenarios": [
+    { "name": "Optimistic positive", "costPerSlot": 4000, "mortalityReduction": 0.00073, "transferRetention": 0.75, "additionality": 1, "qalysPerDeath": 25 },
+    { "name": "Central analyst estimate", "costPerSlot": 5100, "mortalityReduction": 0.00073, "transferRetention": 0.25, "additionality": 0.75, "qalysPerDeath": 15 },
+    { "name": "Pessimistic positive", "costPerSlot": 7000, "mortalityReduction": 0.00073, "transferRetention": 0.05, "additionality": 0.25, "qalysPerDeath": 8 }
+  ],
+  "judgments": [
+    { "key": "costPerSlot", "label": "Donor cost per additional summer slot", "basis": "150 hours * $19.61 * 1.12 + $1,800 = $5,094.48, rounded to $5,100. Design hours and current posted wage are anchors; paying all training hours, 12% loading, $1,800 delivery allowance and transfer to a future summer cohort are assumptions, not a JCYC quote." },
+    { "key": "transferRetention", "label": "Share of external mortality effect retained", "basis": "25% is a subjective allowance for different baseline risks, program design, geography, vintage and uncertain marginal participant mix. It is not an estimated SF effect." },
+    { "key": "additionality", "label": "Share of a funded slot that is additional", "basis": "75% allows replacement of existing funding or another placement. No current unfunded cohort or private-gift allocation has been verified." },
+    { "key": "qalysPerDeath", "label": "Discounted QALYs per death prevented", "basis": "15 is a rounded judgment, not measured youth life expectancy. An illustrative 40-year horizon with utility 0.85, annual hazard 0.01, 3% discount and five-year delay gives about 14.7 QALYs. Mortality timing and long-run persistence remain unverified." }
+  ],
+  "nullBoundary": "No additional slots, no transferred mortality effect, or no lasting survival gain means zero additional QALYs and no finite price. Positive scenarios are not confidence intervals; adverse effects are not ruled out.",
+  "fundingRoom": { "verifiedUsd": null, "status": "unverified", "nextEvidence": "Summer-only incremental wage and delivery budget, unmet eligible demand, counterfactual placements and current private-gift capacity; no contact has been made." },
+  "excluded": ["Current earnings and household consumption gains", "Incarceration and nonfatal injury benefits", "Education and longer-run earnings gains, which are not established by the selected experiment", "Public-payer savings and broader societal value"],
+  "sources": [
+    { "publisher": "JCYC Workhub", "title": "MYEEP program and posted wage", "url": "https://www.jcycworkhub.org/programs/myeep", "published": "Undated, current page includes school-year content", "retrieved": "2026-09-07", "sourceType": "Program identity and wage; not a current summer funding offer" },
+    { "publisher": "San Francisco DCYF", "title": "Board of Supervisors presentation, page 3", "url": "https://sfgov.legistar.com/View.ashx?GUID=AF1D2E06-37B6-4D5F-904B-3CF8AD5C5A41&ID=13040351&M=F", "published": "2024-06-20", "retrieved": "2026-09-07", "sourceType": "Summer design dosage and annual allocation, not completed hours or summer-only spending" },
+    { "publisher": "Gelber, Isen and Kessler, Quarterly Journal of Economics", "title": "The Effects of Youth Employment: Evidence from New York City Lotteries", "url": "https://users.nber.org/~kesslerj/papers/GelberIsenKessler_2016.pdf", "published": "2016; advance publication 2015", "retrieved": "2026-09-07", "sourceType": "Randomized lottery instrumental-variable evaluation; Table VII cumulative mortality" }
+  ]
+}

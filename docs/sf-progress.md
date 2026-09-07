@@ -16,7 +16,7 @@ Exit: all three accepted with published canonical routes. Four current picks are
 
 Dependency: phase 1. Each remaining program gets a dedicated report, explicit best-guess $/10 QALYs model with formula and sensitivities, source/assumption separation, and local funding constraints. A blank or failed-gate audit alone does not count as a completed model.
 
-- [ ] SF4 Resolve remaining EDC and Project Open Hand QALY endpoints.
+- [x] SF4 Resolve remaining EDC and Project Open Hand QALY endpoints. EDC accepted in PR #129 / Sites v103; Project Open Hand's existing narrow acute-morbidity endpoint remains $132.8M/10 QALYs.
 - [ ] SF5 Model existing initial reviews: Harm Reduction Therapy Center, Homeless Youth Alliance, Huckleberry Youth Programs.
 - [ ] SF6 Review and model JCYC, Larkin Street, Lyon-Martin, Mission Neighborhood Centers.
 - [ ] SF7 Review and model New Door Ventures, Openhouse, Progress Foundation, Richmond Area Multi-Services.
@@ -46,8 +46,25 @@ Expanded search may proceed alongside the 25 reviews. Synthesis must account for
 
 ## Recovery state
 
-Current phase: 2, with expanded-search research allowed independently. Next: finish the remaining existing QALY endpoints and develop the naloxone local-cost model from the research note. Remaining: SF4–SF13. Shared housing coefficient creates correlated uncertainty; it is not three independent local measurements. GLIDE utility citation corrected in #124 to PubMed 34629422. Ten unconventional leads and ten mechanism-first bets are recorded in sf-research-bets.md; their evaluation is unfinished. See naloxone-research-checkpoint.md for new evidence and its limitations.
+Current phase: 2, with expanded-search research allowed independently. Next: Huckleberry adolescent counseling using the primary-source lead in [huckleberry-research-handoff.md](huckleberry-research-handoff.md). SF5 has HRTC and HYA modeled; Huckleberry remains. SF6 has JCYC modeled; three organizations remain. SF11 and SF12 each have one modeled candidate, not ten completed reviews. SF9 policy organizations and SF10 synthesis remain unfinished. Shared housing coefficient creates correlated uncertainty; it is not three independent local measurements.
 
 Active block started 2026-09-07T18:48:17Z; target 90 measured minutes without padding. SF13 accepted: SFAF central $56,328/10 QALYs, positive scenarios $5,016–$1.67M, residual repeat-rescue sensitivity ($112,655 at 50% further lifetime credit). PR #128 merged as c78213dbf8a979550d02583dae3dc8349ed8f2b5 and published as Sites v102; 186 tests, full lint/build, phone/tablet checks and canonical report/API passed. Remains research-only rather than displacing a homepage pick.
 
-SF4: Project Open Hand already has an existing $132.8M narrow acute-morbidity endpoint. EDC now has an explicit subjective adult-health bridge: $126M/10 QALYs, positive scenarios $2.1M–$25.2B and a zero-benefit boundary. The historical failed-gate audit is preserved as history, not the current estimate. July 2026 randomized evidence shows strong dependence on rental assistance and no measurable ultimate residential-stability effect, so the model retains a modest 5-point legal-effect assumption. EDC's 186 tests, lint/build and phone/tablet model-API checks pass; acceptance awaits PR and canonical deployment. Next: JCYC summer jobs and Project Homeless Connect glasses; both need explicit transfer and marginal-funding assumptions.
+SF4: EDC now has an explicit subjective adult-health bridge: $126M/10 QALYs, positive scenarios $2.1M–$25.2B and a zero-benefit boundary. The historical failed-gate audit is preserved as history, not the current estimate. July 2026 randomized evidence cautions against treating legal possession as stable housing. PR #129 and canonical report/API accepted in Sites v103.
+
+## September 7 model release ledger
+
+| Program | Central USD / 10 QALYs | PR | Initial release |
+| --- | ---: | --- | --- |
+| SFAF naloxone | 56,328 | #128 | v102 |
+| EDC legal defense | 126,000,000 | #129 | v103 |
+| PHC eyeglasses | 71,111 | #130 | v104 |
+| JCYC summer jobs | 24,840,183 | #133 | v105 |
+| HRTC proposed therapy slice | 5,548,442 | #135 | v106 |
+| HYA medication access | 4,687,027 | #137 | v106 |
+
+These are analyst scenarios, not measured local effects or verified marginal funding offers. Model perspectives differ: several omit non-health benefits, and mortality models share survival judgments. Do not interpret the table as an endorsement ranking. SFAF and PHC are under-$100K leads conditional on additionality; both have much worse pessimistic cases and null boundaries. The proposed 2026 SFAF agreement names HYA/GLIDE/HRTC subcontractors, so prime-only funding ledgers and pooled mortality benefits risk double-counting.
+
+All six central formulas are mirrored in the existing [research workbook, Sep 7 Research Models tab](https://docs.google.com/spreadsheets/d/10boGN2J7SHJhNtmzAkzbKnRy-jSnoUQROeUFTY6Jdcg/edit?gid=1202219418#gid=1202219418). Native recalculation matches the site model outputs; existing user and GiveWell template tabs were preserved. Each block links its full versioned model, scenario ranges and sources. Workbook central outputs are not substitutes for reading those uncertainty notes.
+
+Latest research source: 10511edafd59477a757fa42787fb8346fb4bf7ea, shared between GitHub main and Sites source, published as v106. Full merged suite: 194 tests, lint and production build passed; GitHub mobile and security checks passed. Public access, domain and /donate base path unchanged. Canonical HRTC, HYA and SFAF reports/APIs returned 200 with matching central outputs and no 390px overflow. Acceptance is recorded with issues #134 and #136. Next ready issue: #138 (Huckleberry counseling).

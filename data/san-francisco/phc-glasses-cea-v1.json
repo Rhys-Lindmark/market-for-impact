@@ -1,0 +1,34 @@
+{
+  "version": "sf-phc-glasses-cea-v1",
+  "reviewedAt": "2026-09-07",
+  "organization": "Project Homeless Connect",
+  "program": "Core Senses prescription glasses",
+  "entity": { "fiscalSponsor": "Community Initiatives", "sponsorEin": "94-3255070", "scope": "Sponsor-wide finances are not PHC program costs" },
+  "denominator": "10 incremental quality-adjusted life years",
+  "confidence": "very-low",
+  "amountSemantics": "modeled marginal donor expenditure, not a verified funding offer",
+  "formula": "10 * costPerDispensedPair / (utilityGain * effectiveUseYears * additionality)",
+  "anchors": { "currentGivingLevelUsd": 100, "pairsAtGivingLevel": 2, "externalUtilityBefore": 0.850, "externalUtilityAfter": 0.925, "externalFollowupRecipients": 41, "localReferrals": 40, "localPresentations": 14 },
+  "scenarios": [
+    { "name": "Optimistic positive", "costPerDispensedPair": 50, "utilityGain": 0.075, "effectiveUseYears": 1, "additionality": 0.75 },
+    { "name": "Central analyst estimate", "costPerDispensedPair": 100, "utilityGain": 0.0375, "effectiveUseYears": 0.75, "additionality": 0.5 },
+    { "name": "Pessimistic positive", "costPerDispensedPair": 250, "utilityGain": 0.01, "effectiveUseYears": 0.25, "additionality": 0.25 }
+  ],
+  "judgments": [
+    { "key": "costPerDispensedPair", "label": "Donor dollars per completed dispense", "basis": "$100 doubles PHC's current $50-per-pair fundraising benchmark to allow delivery, navigation and overhead. Neither amount is an audited marginal program cost. Includes unsuccessful referral effort allocated across completed dispenses; excludes resources financed elsewhere." },
+    { "key": "utilityGain", "label": "Utility gained while effectively corrected", "basis": "0.0375 halves the uncontrolled Zambia six-month EQ-5D improvement of 0.075 for confounding and population/severity transfer. This discount is subjective, not an estimated causal adjustment." },
+    { "key": "effectiveUseYears", "label": "Effective retained-use years", "basis": "0.75 assumes nine useful months within a one-year horizon, incorporating breakage, loss and nonuse. No separate multiyear persistence or discount is credited. Local duration is unmeasured." },
+    { "key": "additionality", "label": "Benefit additional to existing access and funding", "basis": "50% is a joint subjective allowance for donations replacing funding and recipients obtaining correction otherwise. Medi-Cal coverage does not guarantee access, but existing coverage cannot be ignored." }
+  ],
+  "nullBoundary": "If a gift adds no dispenses or only replaces otherwise available correction, additionality is zero: no finite price per QALY. Positive scenarios are not confidence intervals.",
+  "fundingRoom": { "verifiedUsd": null, "status": "unverified", "nextEvidence": "Program-level cash, reimbursement and in-kind costs; additional funded dispenses; corrected acuity and usable-glasses follow-up at 3, 6 and 12 months. No organization contact has been made." },
+  "excluded": ["Mortality benefits", "Employment and housing benefits", "Separate depression or safety benefits that could overlap health utility", "Cataract treatment, hearing aids and dentures", "Costs covered by insurers, donated professional time and other non-donor resources"],
+  "sources": [
+    { "publisher": "Project Homeless Connect", "title": "Core Senses program", "url": "https://www.projecthomelessconnect.org/programs/coresenses/", "published": "Undated", "retrieved": "2026-09-07", "sourceType": "Current service definition; annual prescription pair with existing prescription" },
+    { "publisher": "Project Homeless Connect", "title": "Donate: giving levels and fiscal sponsorship", "url": "https://www.projecthomelessconnect.org/donate/", "published": "Undated", "retrieved": "2026-09-07", "sourceType": "Current fundraising benchmark, not marginal cost accounting" },
+    { "publisher": "Project Homeless Connect", "title": "Optical Day, February 2025", "url": "https://www.projecthomelessconnect.org/events/optical-day-26/", "published": "2025-02-10 event", "retrieved": "2026-09-07", "sourceType": "Historical eligibility and no on-site examination boundary" },
+    { "publisher": "California DHCS", "title": "Medi-Cal Vision Benefits", "url": "https://www.dhcs.ca.gov/providers-partners/pharmacy-benefits-division-and-vision-care-program/medi-cal-vision-benefits/", "published": "Undated", "retrieved": "2026-09-07", "sourceType": "Existing coverage and replacement pathway; not measured access" },
+    { "publisher": "Griffiths et al., Cost Effectiveness and Resource Allocation", "title": "Cost-effectiveness of eye care services in Zambia", "url": "https://researchonline.lshtm.ac.uk/1604317/1/1478-7547-12-6.pdf", "published": "2014", "retrieved": "2026-09-07", "sourceType": "Uncontrolled preference-based utility before/after; 41 spectacle recipients at follow-up" },
+    { "publisher": "Hennein et al., Journal of Academic Ophthalmology", "title": "Follow-Up Rates at a Free Ophthalmology Clinic at a Homeless Shelter", "url": "https://www.thieme-connect.com/products/ejournals/pdf/10.1055/s-0041-1726288.pdf", "published": "2021-03-24", "retrieved": "2026-09-07", "sourceType": "SF referral attrition, 2017–18 clinic cohort; presentation is not sustained wear" }
+  ]
+}

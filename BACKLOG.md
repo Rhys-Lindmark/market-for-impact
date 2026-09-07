@@ -10,6 +10,8 @@ Design first for a major donor deciding how to deploy roughly $10 million this y
 
 ## Now — foundation
 
+- [ ] **Mechanism-first1: DOPE additional site-year — #168.** Build and verify a versioned tenant-response mortality model, distinct from counting naloxone reversals or adding SFAF benefits. Current central $2.43M/10 QALYs is exploratory; use site-risk thresholds and funding/coverage evidence to judge the bet. Next: HealthRIGHT360 medication-treatment retention.
+
 - [x] **Current cost-effectiveness order — #165.** All27 completed models sorted numerically by central USD per10 QALYs; homepage uses the same first four: SFAF, PHC, GLIDE, Compass. 234 tests, lint/build and eight focused phone/tablet checks passed. Positive scenarios and unverified funding room remain visible; deployment acceptance recorded in the issue.
 
 - [x] **City cost-effectiveness theory — SF10 / #163.** After all25 original models, publish a donor-useful causal/cost ledger, shared-assumption audit, falsifiable hypotheses and sub-$100K thresholds. The user's later request explicitly enables a current central-estimate ranking. Mechanism-first ten are next only after theory acceptance.

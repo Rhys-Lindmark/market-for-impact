@@ -1,0 +1,189 @@
+{
+  "version": "sf-dope-site-cea-v1",
+  "reviewedAt": "2026-09-07",
+  "organization": "National Harm Reduction Coalition",
+  "program": "DOPE: proposed tenant-responder site-year",
+  "denominator": "10 incremental QALYs",
+  "confidence": "very-low",
+  "scope": "A hypothetical additional occupied 100-resident site-year of peer coordination, not DOPE's whole distribution network or an available donation offer.",
+  "costPerspective": "Marginal donor cash; publicly supplied naloxone, existing building services and later healthcare are excluded from the cash numerator and must be reconciled separately.",
+  "costConstruction": {
+    "specialists": 4,
+    "weeklyPayment": 50,
+    "weeks": 52,
+    "coordinatorHoursPerWeek": 5,
+    "coordinatorLoadedHourlyCost": 60,
+    "otherAnnualCosts": 4000,
+    "total": 30000,
+    "note": "Only the historical $50 weekly gift-card payment is observed. All staffing quantities, loaded wage, annual continuation and other costs are analyst assumptions; this is not a current staffing quote or compensation recommendation."
+  },
+  "scenarios": [
+    {
+      "name": "Optimistic positive",
+      "annualCost": 15000,
+      "residentYears": 160,
+      "annualOverdoseRisk": 0.02,
+      "opioidResponsiveShare": 0.9,
+      "relativeRiskReduction": 0.5,
+      "fundingAdditionality": 0.8,
+      "utility": 0.8,
+      "annualHazard": 0.055,
+      "horizonYears": 20,
+      "discountRate": 0.03,
+      "responderHarmQalys": 0
+    },
+    {
+      "name": "Central analyst estimate",
+      "annualCost": 30000,
+      "residentYears": 100,
+      "annualOverdoseRisk": 0.003,
+      "opioidResponsiveShare": 0.8,
+      "relativeRiskReduction": 0.2,
+      "fundingAdditionality": 0.5,
+      "utility": 0.7,
+      "annualHazard": 0.08,
+      "horizonYears": 15,
+      "discountRate": 0.03,
+      "responderHarmQalys": 0
+    },
+    {
+      "name": "Pessimistic positive",
+      "annualCost": 60000,
+      "residentYears": 50,
+      "annualOverdoseRisk": 0.001,
+      "opioidResponsiveShare": 0.5,
+      "relativeRiskReduction": 0.05,
+      "fundingAdditionality": 0.25,
+      "utility": 0.6,
+      "annualHazard": 0.15,
+      "horizonYears": 10,
+      "discountRate": 0.03,
+      "responderHarmQalys": 0
+    }
+  ],
+  "judgments": [
+    {
+      "key": "annualCost",
+      "label": "Annual donor cash",
+      "basis": "Central $30K is a transparent staffing construction, not $439086 divided by contract training targets. Optimistic/pessimistic are alternative work-package assumptions."
+    },
+    {
+      "key": "residentYears",
+      "label": "Occupied resident-years",
+      "basis": "100 is a hypothetical full-year exposure. The pilot involved 50- and160-unit buildings; units are not a measured occupied population."
+    },
+    {
+      "key": "annualOverdoseRisk",
+      "label": "Annual all-overdose mortality probability",
+      "basis": "0.3% is a judgment near the historical2010–17 SRO rate of278.7/100000. Neither historical rate nor our scenario is a current target-site observation; 0.1%–2% tests selection and time changes."
+    },
+    {
+      "key": "opioidResponsiveShare",
+      "label": "Potentially opioid-responsive death share",
+      "basis": "80% is an explicit current-site assumption, not historical opioid involvement157.8/278.7 or proof that every opioid death is reachable. Timely reach is handled in risk reduction."
+    },
+    {
+      "key": "relativeRiskReduction",
+      "label": "Added reduction versus existing response",
+      "basis": "20% is a subjective hypothesis covering access, reach in locked rooms, responder availability, use and successful rescue relative to stations, staff, peers and EMS. No controlled local mortality effect was found. Do not apply a second engagement discount."
+    },
+    {
+      "key": "fundingAdditionality",
+      "label": "Share not replacing funded activity",
+      "basis": "50% discounts funding substitution separately from response effectiveness. New work must exceed existing contractual commitments; current expansion is unverified."
+    },
+    {
+      "key": "utility",
+      "label": "Survivor health utility",
+      "basis": "0.70 reuses the SFAF survival scenario for comparability; not a measured DOPE survivor value."
+    },
+    {
+      "key": "annualHazard",
+      "label": "Later annual mortality hazard",
+      "basis": "8% is an external-survival-informed analyst choice shared with SFAF. It is a continuous hazard, not the site's baseline overdose probability."
+    },
+    {
+      "key": "horizonYears",
+      "label": "Future survival credit",
+      "basis": "15-year cap; no normal-lifespan assumption. Annual discount3% is applied within the survival integral."
+    },
+    {
+      "key": "responderHarmQalys",
+      "label": "Additional responder burden",
+      "basis": "Zero in displayed positive cases means unquantified, not absent. Stress tests subtract0.05 and0.15 QALYs/site-year; these are illustrative, not measured burdens."
+    }
+  ],
+  "fundingRoom": {
+    "verifiedUsd": null,
+    "status": "unverified",
+    "nextEvidence": "Current site-specific costs, uncovered shifts/networks, occupied exposure, unique fatal/nonfatal incidents, alternative response, existing contracts and a restricted marginal work plan."
+  },
+  "overlap": "DOPE historically supplies partner networks including SFAF. Separate contracts do not establish independent health gains. Do not add full DOPE and SFAF rescue benefits for the same event/person. The model is an alternative site-level hypothesis, not an additive portfolio tranche.",
+  "nullBoundary": "No added response or full funding substitution gives zero benefit. Harmful effects or responder burden can make net QALYs negative; no finite positive cost-effectiveness ratio is displayed.",
+  "sources": [
+    {
+      "publisher": "Olding et al., International Journal of Drug Policy",
+      "title": "Saving lives in our homes",
+      "url": "https://escholarship.org/content/qt0cr1145c/qt0cr1145c_noSplash_00c720854c3e678c2daf26894d825b11.pdf",
+      "published": "2023-06-08",
+      "retrieved": "2026-09-07",
+      "sourceType": "Qualitative implementation study; pilot size and historical peer compensation, not mortality efficacy"
+    },
+    {
+      "publisher": "Rowe et al., Drug and Alcohol Dependence",
+      "title": "SRO overdose mortality2010–2017",
+      "url": "https://escholarship.org/content/qt1cv0j3z2/qt1cv0j3z2_noSplash_d7a1ae71234b4bd7264c3e53fc399f3a.pdf",
+      "published": "2019",
+      "retrieved": "2026-09-07",
+      "sourceType": "Historical local mortality; table1 uses SRO units as population denominator proxy"
+    },
+    {
+      "publisher": "SFDPH",
+      "title": "FY25–26 performance objectives",
+      "url": "https://media.api.sf.gov/documents/PBH_Performance_Objectives_FY25_hwPpKPK.26_v2.pdf",
+      "published": "2026-06-22 revision",
+      "retrieved": "2026-09-07",
+      "sourceType": "Contract1000032403 targets, not achieved outputs or funding room"
+    },
+    {
+      "publisher": "SFDPH",
+      "title": "Contracted programs inventory",
+      "url": "https://media.api.sf.gov/documents/DPH_Contracted_Programs_4-17-26.pdf",
+      "published": "2026-04-17",
+      "retrieved": "2026-09-07",
+      "sourceType": "$439086 listed Naloxone Distribution program line; not current incremental cost"
+    },
+    {
+      "publisher": "SFDPH",
+      "title": "Naloxone guideline",
+      "url": "https://media.api.sf.gov/documents/Naloxone_Guideline.pdf",
+      "published": "2025-03-06 approval on cover",
+      "retrieved": "2026-09-07",
+      "sourceType": "Free NDP intranasal supply and clearinghouse/DOPE division; later-page pending approval footers retained in source"
+    },
+    {
+      "publisher": "SFDPH",
+      "title": "Health Commission BHS Directors Update",
+      "url": "https://www.sf.gov/sites/default/files/2025-01/010625_SFHC_BHSDirectorsUpdate-Jan2-2025.pdf",
+      "published": "2025-01-06",
+      "retrieved": "2026-09-07",
+      "sourceType": "Slide15 reports all156 HSH-funded PSH sites have24/7 naloxone stations; availability not timely response"
+    },
+    {
+      "publisher": "National Harm Reduction Coalition",
+      "title": "San Francisco response and partner network",
+      "url": "https://harmreduction.org/issues/fentanyl/first-responders-safety-guide/san-francisco-response/",
+      "published": "Undated historical page",
+      "retrieved": "2026-09-07",
+      "sourceType": "Partner overlap including SFAF; not current independent marginal reach"
+    },
+    {
+      "publisher": "National Harm Reduction Coalition",
+      "title": "Donation page",
+      "url": "https://give.harmreduction.org/",
+      "published": "Undated",
+      "retrieved": "2026-09-07",
+      "sourceType": "General national donation route; DOPE-restricted marginal allocation not verified"
+    }
+  ]
+}

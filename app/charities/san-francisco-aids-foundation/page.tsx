@@ -71,6 +71,7 @@ const content: CharityReportContent = {
     { key: 'coverage', design: '2026 HEALing Communities microsimulation', population: '26 communities outside SF', result: 'Some communities were modeled with no additional naloxone expansion because their baseline already met the enhanced-distribution definition.', transfer: 'This supports checking existing coverage, not assuming zero effectiveness in SF. The paper uses a different, higher cost-effectiveness threshold.' },
   ],
   reservations: [
+    'A May 2026 proposed SFAF agreement names HYA, GLIDE and HRTC as subcontractors and includes naloxone in a wider service bundle. It strengthens the public-funding overlap concern. No verified crosswalk establishes that it replaces the historical $250K/26,016-dose anchor; do not combine their budgets or add full mortality benefits across overlapping recipients.',
     'The 50% marginal-yield adjustment and 2% additional-survival probability dominate the result; neither has been measured for SFAF expansion.',
     'Repeating lifetime benefits for repeated rescues of the same person can overcount. The aggregate retention adjustment is not a substitute for a person-linked survival model.',
     'Annual doses and reports can concern different periods, sources or repeat events; the observed ratio is an operational anchor, not a biological probability.',

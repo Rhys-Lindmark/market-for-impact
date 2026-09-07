@@ -1,0 +1,41 @@
+{
+  "version": "sf-sfaf-naloxone-cea-v1",
+  "reviewedAt": "2026-09-07",
+  "organization": "San Francisco AIDS Foundation",
+  "program": "Additional targeted overdose-prevention outreach and naloxone distribution",
+  "confidence": "very-low",
+  "modelType": "judgmental-local-output-transfer",
+  "amountSemantics": "modeled marginal donor expenditure, not a verified funding offer",
+  "denominator": "10 incremental quality-adjusted life years",
+  "reported": { "year": 2025, "reversals": 2852, "doses": 41399, "trainings": 10041 },
+  "plannedCostAnchor": { "year": 2024, "annualBudgetUsd": 250000, "annualTargetDoses": 26016, "semantics": "proposed ongoing bundled budget and target outputs; not executed accounts or marginal rates" },
+  "scenarios": [
+    { "name": "Optimistic positive", "costPerDose": 10, "marginalYieldRetention": 0.75, "additionalSurvivalPerReversal": 0.05, "utility": 0.8, "annualHazard": 0.055, "horizonYears": 20, "discountRate": 0.03 },
+    { "name": "Central analyst estimate", "costPerDose": 20, "marginalYieldRetention": 0.5, "additionalSurvivalPerReversal": 0.02, "utility": 0.7, "annualHazard": 0.08, "horizonYears": 15, "discountRate": 0.03 },
+    { "name": "Pessimistic positive", "costPerDose": 40, "marginalYieldRetention": 0.25, "additionalSurvivalPerReversal": 0.005, "utility": 0.6, "annualHazard": 0.15, "horizonYears": 10, "discountRate": 0.03 }
+  ],
+  "judgments": [
+    { "key": "costPerDose", "label": "Donor cost per additional dose", "basis": "$20 is approximately twice the $9.61 planned bundle/target-dose benchmark, rounded, allowing extra outreach effort and delivery shortfalls. This transfers across years and program scopes; it is not an SFAF quote." },
+    { "key": "marginalYieldRetention", "label": "Share of reported yield retained at the margin", "basis": "50% is an aggregate judgment for harder-to-reach expansion, displacement, reporting/denominator mismatch and repeated recipients. These components are not separately measured; a person-linked model is needed to resolve repeat-rescue double counting." },
+    { "key": "additionalSurvivalPerReversal", "label": "Additional acute survival per retained reversal", "basis": "2% credits one additional acute survivor per 50 retained reports. Most reported reversals are assumed not to be additional lives saved because spontaneous survival and alternative rescue are possible. Historical untreated-overdose model inputs provide plausibility, not a current local counterfactual." },
+    { "key": "utility", "label": "Health utility during survival", "basis": "0.70 is an explicit downward transfer from a 2024 patient-data estimate of 0.799 for HIV-negative daily heroin injection, allowing comorbidity and current-population differences. It is not a judgment about a person's moral worth." },
+    { "key": "annualHazard", "label": "Annual all-cause mortality hazard", "basis": "0.08 is informed by a US overdose-survivor cohort's 778.3 deaths per 10,000 person-years. Keeping this rate constant is an approximation, not an observed 15-year SF trajectory." },
+    { "key": "horizonYears", "label": "Credited survival horizon", "basis": "15 years truncates benefits because current recipient ages and long-term outcomes are unknown. This is a judgment, not a life-expectancy estimate." },
+    { "key": "discountRate", "label": "Annual QALY discount", "basis": "3% is an explicit model convention; applied as an effective annual discount rate." }
+  ],
+  "formula": "10 * costPerDose / ((reportedReversals / distributedDoses) * marginalYieldRetention * additionalSurvivalPerReversal * qalysPerDeathPrevented)",
+  "survivalFormula": "utility * (1 - exp(-(annualHazard + log(1 + discountRate)) * horizonYears)) / (annualHazard + log(1 + discountRate))",
+  "nullBoundary": "If donations replace existing provision or no otherwise-fatal events are reached, additional QALYs are zero and there is no finite price. The positive scenarios are not confidence intervals and do not exclude null benefit.",
+  "fundingRoom": { "verifiedUsd": null, "status": "unverified", "nextEvidence": "A current additional outreach plan, executed program costs, unmet coverage and recipient-linked rescue records; no contact with the organization has been made." },
+  "excluded": ["Nonfatal brain injury prevention", "Benefits to families", "Treatment-navigation health gains", "Healthcare costs after rescue and future healthcare spending", "Drug procurement supplied by existing public programs"],
+  "sources": [
+    { "publisher": "SF Department of Public Health", "title": "Naloxone guideline", "url": "https://media.api.sf.gov/documents/Naloxone_Guideline.pdf", "published": "2025-03-06", "retrieved": "2026-09-07", "sourceType": "Public supply pathways; continued expansion supply is not guaranteed" },
+    { "publisher": "San Francisco AIDS Foundation", "title": "Overdose prevention and response; 2025 service reporting", "url": "https://www.sfaf.org/health-services/overdose-prevention-response/", "published": "Undated page; 2025 reporting", "retrieved": "2026-09-07", "sourceType": "Organization-reported outputs and service identity" },
+    { "publisher": "SF Health Commission", "title": "Proposed SFAF agreement 1000032060", "url": "https://www.sf.gov/sites/default/files/2024-05/HC%20Memo%20Memo%20-%20%20SFAF%2032060%20Final.pdf", "published": "2024-06-04", "retrieved": "2026-09-07", "sourceType": "Proposed public budget and output targets; dates inconsistent within document" },
+    { "publisher": "Olfson et al., JAMA Psychiatry", "title": "Causes of Death After Nonfatal Opioid Overdose", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6143082/", "published": "2018", "retrieved": "2026-09-07", "sourceType": "Observational US cohort; transferred survival anchor" },
+    { "publisher": "Weiner et al., Annals of Emergency Medicine", "title": "One-Year Mortality of Patients After Emergency Department Treatment for Nonfatal Opioid Overdose", "url": "https://pubmed.ncbi.nlm.nih.gov/31229387/", "published": "2020", "retrieved": "2026-09-07", "sourceType": "Observational Massachusetts cohort; survival triangulation" },
+    { "publisher": "Patton et al., Quality of Life Research", "title": "Analyzing quality of life among people with opioid use disorder from the NIDA Data Share initiative", "url": "https://link.springer.com/article/10.1007/s11136-024-03729-6", "published": "2024-08-08", "retrieved": "2026-09-07", "sourceType": "Patient-data utility mapping across six trials" },
+    { "publisher": "Coffin and Sullivan, Annals of Internal Medicine", "title": "Cost-effectiveness of distributing naloxone to heroin users", "url": "https://www.prescribetoprevent.org/wp-content/uploads/Coffin_Cost-effectiveness-article.pdf", "published": "2013", "retrieved": "2026-09-07", "sourceType": "Historical model; 2017 correction primary text remains unverified; not using kits/death output" },
+    { "publisher": "Chhatwal et al., Lancet Regional Health Americas", "title": "Cost-effectiveness of community-based interventions: HEALing Communities simulation", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13146536/", "published": "2026-04-30", "retrieved": "2026-09-07", "sourceType": "External microsimulation; existing provision limits modeled expansion" }
+  ]
+}

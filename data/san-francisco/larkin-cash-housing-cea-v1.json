@@ -1,0 +1,33 @@
+{
+  "version": "sf-larkin-cash-housing-cea-v1",
+  "reviewedAt": "2026-09-07",
+  "organization": "Larkin Street Youth Services",
+  "program": "A proposed TYI-dose cash-plus replication",
+  "confidence": "very-low",
+  "denominator": "10 incremental QALYs",
+  "formula": "10 * (cashUsd + supportUsd) / (additionalHousingYears * utilityGain * additionality)",
+  "scope": "Prospective replication of the completed SF Trust Youth Initiative dose. Not current AIM pricing, federal RHY prevention, residential housing, or the whole organization.",
+  "scenarios": [
+    {"name":"Favorable positive","cashUsd":40500,"supportUsd":5000,"additionalHousingYears":1,"utilityGain":0.1,"additionality":0.75,"horizonYears":2.5},
+    {"name":"Central analyst estimate","cashUsd":40500,"supportUsd":10000,"additionalHousingYears":0.5,"utilityGain":0.05,"additionality":0.5,"horizonYears":2.5},
+    {"name":"Unfavorable positive","cashUsd":40500,"supportUsd":20000,"additionalHousingYears":0.1,"utilityGain":0.01,"additionality":0.25,"horizonYears":2.5}
+  ],
+  "judgments": [
+    {"key":"cashUsd","label":"Cash per participant","basis":"Published SF TYI entitlement: $1,500 monthly for 24 months plus $4,500 = $40,500. Historic nominal dose retained without inflation adjustment; not an AIM quote."},
+    {"key":"supportUsd","label":"Support and administration","basis":"Central assumed $10,000: 96 staff hours over 24 months at an assumed $100 loaded hourly cost, plus $400 administration. Includes unsuccessful engagement; not observed Larkin spending. Positive stress cases $5,000/$20,000."},
+    {"key":"additionalHousingYears","label":"Extra stable-housing person-years","basis":"Judgment: half a year newly housed over 30 months versus ordinary services, equivalent to 20% of the observed window. This gives partial rather than near-total credit because ordinary services also improve housing; it is a provisional decision assumption, not a calibrated empirical estimate. Stress cases 0.1–1 year. Not derived from the reported 86% housing rate, before–after nights, or NYC enrollment-group difference; clean cumulative causal housing-day data are unavailable."},
+    {"key":"utilityGain","label":"Health utility per additional housed year","basis":"Explicit subjective 0.05 (0.01–0.10): a modest health-related quality improvement of five percentage points during extra housed time, not credit for all housing benefits, not measured by TYI and not a validated homelessness-to-QALY conversion. It credits only health-related quality of life; shares uncertainty with other housing models."},
+    {"key":"additionality","label":"Additional donor-financed capacity","basis":"50% judgment (25–75%) for replacement of already financed cash/support. Housing effect above is already relative to services as usual; do not apply a second causal housing discount."}
+  ],
+  "nullBoundary":"Zero extra housing, zero utility gain, or full funding substitution yields no finite positive-benefit price. Harm remains possible and is not assigned a positive price. Positive scenarios are judgmental stress tests, not confidence bounds. The 30-month horizon excludes later effects.",
+  "fundingRoom":{"verifiedUsd":null,"status":"unverified","nextEvidence":"A priced additional cash-plus tranche, payment and support cost ledger, original-assignment cumulative housing-day trajectories with missingness sensitivity, and an AIM/RHY/TYI funding crosswalk."},
+  "financialContext":{"fiscalYearEnded":"2025-06-30","governmentContractRevenue":22582807,"totalExpenses":36777319,"amountSemantics":"Audited organization-wide accrued revenue and expenses; not cash paid, marginal program costs, or available private funding room."},
+  "excluded":["Mortality and health beyond 30 months","Income, autonomy, education and justice benefits outside the health-utility bridge","Government savings and transfer recipients' cash value as separate QALYs","Other Larkin housing, employment and engagement programs"],
+  "sources":[
+    {"publisher":"Chapin Hall","title":"SF Pathways Study and Trust Youth Initiative overview","url":"https://www.chapinhall.org/wp-content/uploads/Chapin-Hall_Cash-Transfers-San-Francisco-Overview_March-2025.pdf","published":"2025-03","retrieved":"2026-09-07","sourceType":"Primary design and enrollment report; 85 participants, three reassignments; not final intention-to-treat outcomes"},
+    {"publisher":"SSWR / Sara Semborski","title":"Implementing Cash Transfers in the Context of Local Homelessness Response Systems","url":"https://sswr.confex.com/sswr/2026/webprogram/Paper60594.html","published":"2026-01 conference","retrieved":"2026-09-07","sourceType":"Primary conference abstract: cash dose and paired before–after housing analysis, not a clean between-arm effect"},
+    {"publisher":"Larkin Street Youth Services","title":"Celebrating the Trust Youth Initiative","url":"https://larkinstreetyouth.org/celebrating-the-trust-youth-initiative/","published":"2025-12-15","retrieved":"2026-09-07","sourceType":"Organization-reported 86% housing outcome and AIM successor announcement; denominator and counterfactual not supplied"},
+    {"publisher":"Chapin Hall","title":"NYC Pathways Study Findings","url":"https://www.chapinhall.org/wp-content/uploads/Chapin-Hall_NYC-Pathways-Study-Findings_July-2025.pdf","published":"2025-07","retrieved":"2026-09-07","sourceType":"External cash-plus analogue; reassignment and differential response limit causal inference; not an effect input"},
+    {"publisher":"Larkin Street / independent auditors","title":"FY2025 audited financial statements, printed page 5","url":"https://larkinstreetyouth.org/wp-content/uploads/2026/05/Larkin-Street-Youth-Services-Audited-Financials-24-25.pdf","published":"2025-12-19 audit; website path May 2026","retrieved":"2026-09-07","sourceType":"Organization-wide financial context; table visually checked; no marginal cash-program cost"}
+  ]
+}

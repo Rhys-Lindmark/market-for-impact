@@ -310,7 +310,10 @@ test('phone donors can inspect the GLIDE rental-assistance model without treatin
   await expect(review).toContainText('$178.06K');
   await expect(review).toContainText('$3.47M');
   await expect(review).toContainText('one adult-equivalent');
-  await expect(review.locator('.charity-qaly-bridge .charity-sensitivity article')).toHaveCount(3);
+  await expect(review.locator('.charity-qaly-bridge .charity-sensitivity article')).toHaveCount(4);
+  await expect(review).toContainText('unverified current-cost contingency');
+  await expect(review).toContainText('No cost uplift; same central health transfer');
+  await expect(review).toContainText('$356.13K');
   await expect(review).toContainText(/no finite upper bound/i);
   await expect(review).toContainText('not verified room for more funding');
   await expect(review.locator('.charity-evidence-list article')).toHaveCount(3);

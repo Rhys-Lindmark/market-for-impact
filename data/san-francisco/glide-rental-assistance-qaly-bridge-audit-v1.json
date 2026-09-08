@@ -1,6 +1,6 @@
 {
-  "version": "sf-glide-rental-assistance-qaly-bridge-v0.2",
-  "generatedAt": "2026-09-01T04:20:00-07:00",
+  "version": "sf-glide-rental-assistance-qaly-bridge-v0.3",
+  "generatedAt": "2026-09-08T13:54:19Z",
   "status": "exploratory-housing-health-transfer-model",
   "sharedDenominator": { "label": "one better life", "qalyThreshold": 10, "publishedPriceUsd": 427361.1111111111 },
   "nativeOutcome": "One additional entry to an emergency homeless shelter avoided within six months because rental assistance was available",
@@ -27,7 +27,7 @@
       "best": 3077,
       "low": 2564,
       "high": 5000,
-      "basis": "The midpoint is GLIDE's historical $100,000 sponsor cohort divided by 39 reported assisted households, plus 20% for screening, workshops, case management, and overhead. The optimistic floor uses the raw $2,564 ratio; the cautious case uses $5,000. None is an audited current marginal price, and the 39-household cohort is not reconciled to the separate FY2025 317-person total."
+      "basis": "GLIDE's historical $100,000 sponsor example served 39 households and supported case management and housing-stability workshops; it does not itemize spending. The $3,077 midpoint retains a rounded 20% unverified current-cost contingency, not a documented charge for omitted services. Possible overlap is explicit. The historical-cost scenario rounds the raw cohort ratio to $2,564; the cautious case uses $5,000. None is an audited current marginal price, and the 39-household cohort is not reconciled to the separate FY2025 317-person total."
     },
     "qalyPerAssistedHousehold": { "best": 0.072, "low": 0.0144, "high": 0.144 },
     "formula": "modeled_donor_cost_per_assisted_household_usd / qaly_per_assisted_household * 10",
@@ -37,6 +37,7 @@
     "sensitivity": [
       { "case": "Optimistic transfer", "donorCostPerHouseholdUsd": 2564, "retainedShareOfVaQalyEffect": 1, "qalyPerAssistedHousehold": 0.144, "costPerTenQalysUsd": 178055.55555555556 },
       { "case": "Central transfer-discounted estimate", "donorCostPerHouseholdUsd": 3077, "retainedShareOfVaQalyEffect": 0.5, "qalyPerAssistedHousehold": 0.072, "costPerTenQalysUsd": 427361.1111111111 },
+      { "case": "No cost uplift; same central health transfer", "donorCostPerHouseholdUsd": 2564.102564102564, "retainedShareOfVaQalyEffect": 0.5, "qalyPerAssistedHousehold": 0.072, "costPerTenQalysUsd": 356125.3561253561 },
       { "case": "Cautious positive transfer", "donorCostPerHouseholdUsd": 5000, "retainedShareOfVaQalyEffect": 0.1, "qalyPerAssistedHousehold": 0.0144, "costPerTenQalysUsd": 3472222.222222222 }
     ],
     "nullBoundary": "The numeric range is conditional on a positive GLIDE health effect and donor additionality. GLIDE has not measured preference-based utility or its causal effect, and the VA coefficient may not transfer. If a new private dollar displaces sponsor, public, Season of Sharing, or partner funding, reaches households whose housing would remain stable anyway, or causes no QALY gain, the impact price has no finite upper bound."
@@ -60,7 +61,7 @@
     "Publish transfer and delivery costs, source-specific funding reconciliation, eligible unfunded demand, operational constraints, and dated $100K, $1M, and $10M marginal plans."
   ],
   "sources": [
-    { "publisher": "GLIDE", "title": "Impact Report 2024–2025", "url": "https://www.glide.org/wp-content/uploads/2026/01/GLIDE-Impact-Report-2024-2025.pdf", "published": "FY ended 2025-06-30", "retrieved": "2026-09-01", "sourceType": "organization reporting" },
+    { "publisher": "GLIDE", "title": "Impact Report 2024–2025", "url": "https://www.glide.org/wp-content/uploads/2026/01/GLIDE-Impact-Report-2024-2025.pdf", "published": "FY ended 2025-06-30", "retrieved": "2026-09-08", "sourceType": "organization reporting" },
     { "publisher": "Science", "title": "The impact of homelessness prevention programs on homelessness", "url": "https://pubmed.ncbi.nlm.nih.gov/27516600/", "published": "2016-08-11", "retrieved": "2026-09-01", "sourceType": "peer-reviewed quasi-experiment" },
     { "publisher": "JAMA Network Open", "title": "Cost-Effectiveness of Temporary Financial Assistance for Veterans Experiencing Housing Instability", "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2825636", "published": "2024-11-05", "retrieved": "2026-09-01", "sourceType": "observationally parameterized economic evaluation" },
     { "publisher": "Medical Care", "title": "Estimation of Utility Values for Computing Quality-Adjusted Life Years Associated With Homelessness", "url": "https://pubmed.ncbi.nlm.nih.gov/34629422/", "published": "2021-12-01", "retrieved": "2026-09-07", "sourceType": "cross-sectional standard-gamble survey" }

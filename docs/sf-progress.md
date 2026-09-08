@@ -1,5 +1,15 @@
 # San Francisco giving — active phase plan
 
+## Current block — 2026-09-08T17:03:01Z
+
+42/100 is the accepted public count (v134). Phase SF9a: integrate the completed HAC Developer Pathway and SPUR clean-heat conditional models, preserving weak central findings rather than using optimistic tails. Manager owns implementation; Euclid screens new child-health high-upside candidates, Harvey investigates a real GrowSF mechanism, Jason audits HAC then screens new mechanisms. Previous acknowledgement-only turn was no progress; this block resumes concrete integration.
+
+- [x] SF9a-1 Publishable reports and versioned formulas, causal/SF/recipient boundaries and independent audits. Packet and actual integration audited;15 signed scenarios agree.
+- [ ] SF9a-2 Central-only ranking; signed/null/input regression checks; native workbook parity; phone/tablet report and model navigation; lint/build and full CI. Local284 tests, lint/build,20 phone/tablet checks and30 native formula outputs pass; full CI remains.
+- [ ] SF9a-3 Reviewed PR, exact-commit public deployment, canonical verification, issue/backlog acceptance and measured shared log.
+
+Exit: two distinct validated published research reports, not two verified marginal donation offers. Target 44/100 only upon canonical acceptance. No extra organization count for SPUR's ambitious stress or HAC/Onyx's shared pathway. Stall threshold25 minutes without an accepted evidence milestone. Block target18:33:01Z, no padding. High-upside screening governs new research allocation; completed negative findings remain honest.
+
 ## Current block — 2026-09-08T15:35:08Z
 
 Latest acceptance:42/100 published. PR202/v134 exactfded8623937f3db1c006b2b1e405248a733094ad adds PVF/Lions shared cataract and Operation Access abnormal-FIT research.280tests, lint/build, fullCI,16 local phone/tablet checks,58 native-sheet formula outputs and canonical390/768 report/modelAPI/ranking/top4 pass. Earlier40-report state below is the intermediate checkpoint, not current coverage. Four reports published this block; goal still incomplete. Next workers: HAC Developer Pathway, SPUR clean-heat permitting, GrowSF prospective mechanism audit. Do not count historical law adoption as future donation impact. Completed negative screens preserved in docs/research-queue/next100/september8; no new count from screens.

@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Current authority —55/115 published
+
+Helen Keller PR227/v154, Roots PR228/v155 and End Overdose PR229/v156 are now canonical-verified. Current live exact31e64dc72416ca3c5d0ae9f40f88acf13b70c8ce. See docs/sf-progress.md for authoritative checkpoint; older pending entries below are history. Next three whole-org investigations: Code Tenderloin, Coalition for Clean Air, SF Public Health Foundation HCV. SFDUU current-service conflict held/not counted. Preserved Bayview/IFR/Raphael packets require whole-organization scope revision before release.
+
 ## End Overdose integration — September 8
 
 Roots PR228/v155 published; canonical phone check passed, tablet rerender verification pending. End Overdose new whole-gift report integrated with nine audited scenarios; current national central$1.52M, Bay$21.7M, SF$76.0M per10Q. Primary filing verifies EIN83-0696963; checkout identity text unavailable, disclosed. Geography/allocation are priors; all cash retained, public supply baseline and donor/resources distinguished. Seventeen bounded-runtime tests accepted. Count55 only after publication; user target115 remains controlling.

@@ -55,7 +55,6 @@ export default function SanFranciscoHome() {
         <div><GivingIllustration index={1} label="Illustration of research books" /><h2>Donate based on evidence</h2><p>Read the research behind each estimate, including the assumptions and what could change our view.</p></div>
         <div><GivingIllustration index={2} label="Illustration of choosing a charity" /><h2>Pick a charity</h2><p>Explore our current shortlist, then use the organization’s giving link in its report to donate directly.</p></div>
       </section>
-      <p className="sf-home-note">Our four lowest central estimates so far. A “better life” means 10 additional quality-adjusted life years, potentially spread across people. Estimates are uncertain; marginal funding room is unverified.</p>
       <section aria-label="Four current charity picks">{picks.map((pick, i) => <article className="sf-home-charity" id={pick.slug} key={pick.slug}>
         <figure><img src={`${root}${photos[pick.slug].src}`} alt={photos[pick.slug].caption} width="480" height="480" loading="lazy" /><figcaption><a href={photos[pick.slug].source}>{photos[pick.slug].caption}</a></figcaption></figure>
         <div><p className="sf-home-eyebrow">CHARITY {i + 1} OF 4</p><h2>{pick.program}</h2>

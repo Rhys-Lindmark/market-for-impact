@@ -46,4 +46,4 @@ const content:CharityReportContent={
  {publisher:'SPUR',title:'2025–26 annual report',url:'https://www.spur.org/about/annual-reports/2026',published:'2026; financials as of March 31',retrieved:data.reviewedAt,sourceType:'Provider report; unaudited finances'},
  {publisher:'SPUR',title:'General giving',url:'https://www.spur.org/join-renew-give/donate',published:'Not stated',retrieved:data.reviewedAt,sourceType:'Recipient disclosure; not modeled funding offer'}],
 };
-export default function Page(){return <CharityResearchReport content={content}/>;}
+export default function Page(){return <CharityResearchReport content={{...content, donationUrl:"https://www.spur.org/join-renew-give/donate"}}/>;}

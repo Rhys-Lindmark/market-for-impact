@@ -61,5 +61,5 @@ export default function ClinicalPathwayReport({kind}:{kind:'respite'|'wound'}){
  excludedBenefits:['Healthcare savings as donor cash','Unmodeled mortality reduction','Independent housing and substance-use benefits','Unpriced public or volunteered resources'],
  sources:data.sources,
  };
- return <CharityResearchReport content={content}/>;
+ return <CharityResearchReport content={{...content, donationUrl:isRespite ? undefined : 'https://www.sfccc.org/donate'}}/>;
 }

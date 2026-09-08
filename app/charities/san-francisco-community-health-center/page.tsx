@@ -68,4 +68,4 @@ const content: CharityReportContent = {
   excludedBenefits: ['Reduced onward transmission', 'Avoided future healthcare expenditure', 'Family welfare and income', 'Retreatment benefits and costs', 'Irreversible disease prevented before later usual-care cure'],
   sources: model.sources,
 };
-export default function SfchcResearchPage() { return <CharityResearchReport content={content} />; }
+export default function SfchcResearchPage() { return <CharityResearchReport content={{...content, donationUrl:"https://www.sfcommunityhealth.org/donate"}} />; }

@@ -69,4 +69,4 @@ const content: CharityReportContent = {
   excludedBenefits:['Protection from incomplete courses','Future use of terminal stock','Healthcare and productivity cost savings','Other vaccines or other clinic services'],
   sources:[...data.sources,{publisher:'EClinicalMedicine',title:'Final ZOE-LTFU analysis to 11 years',url:'https://pubmed.ncbi.nlm.nih.gov/40630610/',published:'2025-05-09',retrieved:'2026-09-07',sourceType:'Primary long-term extension study'}],
 };
-export default function VaccineResearchPage(){return <CharityResearchReport content={content}/>;}
+export default function VaccineResearchPage(){return <CharityResearchReport content={{...content, donationUrl:"https://sffc.org/donate"}}/>;}

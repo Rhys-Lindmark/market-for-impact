@@ -32,5 +32,5 @@ export default function Page(){
  {key:'null',design:'Kuo prospective nonrandomized NDPP comparison',population:'575 enrollees and 5,373 nonenrollees in an insured workforce',result:'Adjusted two-year QALY difference −.001, 95% CI −.022 to .019.',transfer:'Pooled delivery channels and confounding limit transfer. This substantive null challenges the positive utility bridge.'}],
  reservations:['The favorable sub-$100K result requires both cheap delivery and sustained effects; neither alone is enough.','Program-directed giving does not establish an accepted incremental SF-DPP restriction.','Better evidence is needed on utility and actual extra participation, not just organizational scale.'],
  excludedBenefits:['Lifetime diabetes or mortality gains','Child health and YMCA youth-program effects','Healthcare savings treated as donor cash','Unpriced recurring booster treatment'],sources:data.sources};
- return <CharityResearchReport content={content}/>;
+ return <CharityResearchReport content={{...content, donationUrl:"https://donate.ymcasf.org/give"}}/>;
 }

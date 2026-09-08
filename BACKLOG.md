@@ -2,6 +2,8 @@
 
 ## Current priority — GiveBetter x SF website cleanup
 
+September 8 follow-up: remove homepage note, unify wordmark fonts, redesign all 45 indexed reports as readable GiveWell-style research pages with Donate and numbered sections, and round research-table display prices. See `docs/report-design.md`. Rhys explicitly authorized resuming the 115-organization research work **after** these three changes are published and verified; this supersedes the earlier research/workbook pause. No model or research-count changes in this design release.
+
 PR211 merged and v137 published the redesign. Canonical verification found the proxy rewrites anchors but not root-relative image src attributes; follow-up explicitly mounts all seven homepage images under the canonical `/givebetter/images` path. Estimates and research links are unchanged. Verify image decoding and the 45-row index on the public canonical routes before handoff.
 
 Canonical URL override (Rhys, September 8): `https://ai.rhyslindmark.com/givebetter` replaces `/donate`. The user configured the route; `/donate` now redirects. Use `/givebetter` for future deployment checks, report links, GitHub updates and logs. Do not change the domain or proxy configuration.

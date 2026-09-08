@@ -2,8 +2,9 @@ import { expect, test } from '@playwright/test';
 
 test('EDC reports its subjective 10-QALY model instead of withholding all estimates', async ({ page, request }) => {
   await page.goto('/charities/eviction-defense-collaborative');
-  await expect(page.locator('#nutshell')).toContainText('$126M');
-  await expect(page.locator('#nutshell')).toContainText('subjective health bridge');
+  await expect(page.locator('#summary')).toContainText('$126M');
+  await expect(page.locator('#summary')).toContainText('subjective health bridge');
+  await page.getByText('QALY conversion assumptions',{exact:true}).click();
   await expect(page.getByText('No eviction-specific preference-based utility estimate was found.', { exact: false })).toBeVisible();
   await expect(page.getByText('Eight evidence gates failed', { exact: true })).toHaveCount(0);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);

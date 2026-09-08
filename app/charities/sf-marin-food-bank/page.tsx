@@ -7,8 +7,8 @@ import bridge from '@/data/san-francisco/sf-marin-food-bank-qaly-bridge-audit-v1
 export const metadata: Metadata = {
   title: 'SF–Marin Food Bank Community Markets — charity research | Market for Impact',
   description: 'Our evidence review and exploratory food-security cost-effectiveness model for San Francisco–Marin Food Bank Community Markets.',
-  openGraph: { title: 'SF–Marin Food Bank — charity research', description: 'A source-grounded Community Market review with an explicit cash-cost boundary, transferred evidence, and null case.', images: [] },
-  twitter: { card: 'summary', title: 'SF–Marin Food Bank — charity research', description: 'A source-grounded Community Market review with an explicit cash-cost boundary, transferred evidence, and null case.', images: [] },
+  openGraph: { title: 'SF–Marin Food Bank — charity research', description: 'A source-grounded Community Market review with a modeled operating-cost allowance, transferred evidence, and null case.', images: [] },
+  twitter: { card: 'summary', title: 'SF–Marin Food Bank — charity research', description: 'A source-grounded Community Market review with a modeled operating-cost allowance, transferred evidence, and null case.', images: [] },
 };
 
 const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });

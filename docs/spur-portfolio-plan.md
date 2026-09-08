@@ -24,4 +24,6 @@ Select NEW research bets for credible upside below $100,000 per 10 incremental Q
 
 ## Recovery and next action
 
+18:28 UTC checkpoint: public hearing release accepted at 45/115; scope PR208 merged. Portfolio evidence is in draft PR209. Root calculator lib/spur-portfolio-model.mjs matches all seven v1 scenario outputs but is not yet wired into the report. Independent audit accepts arithmetic with beneficiary-allocation and finite-schedule clarifications (v2 asset). New housing-utility evidence warrants reducing central average nonoccupant utility .005 to .001 as a judgment update, not a sourced conversion; keep old .005 as a historical sensitivity. Harvey produces v3, Jason independently audits, Euclid prepares report content. Next integrate v3 plus report, API, ranking and workbook, then test/build/mobile/canonical release. Do not publish old draft central or count SPUR twice.
+
 Read the three dated worker evidence packets, verify decisive primary sources, then construct SP3. Keep housing affordability and productivity effects visible even when their health conversion is unresolved; do not silently equate dollars of GDP with QALYs. Track overlapping housing/transport/heat populations and public resource costs explicitly. Reassess progress after 20–30 active minutes without an accepted evidence/model milestone; do not polish the old clean-heat-only answer.

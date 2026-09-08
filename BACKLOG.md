@@ -1,5 +1,13 @@
 # Market for Impact backlog
 
+## Calibration v2 acceptance — September 8
+
+- [x] RotaCare published in PR222, exact9129b2120fb8019d57b1256f251ce6e061d3d60e; canonical phone/tablet report/API and unified50-row table passed. Current count50/115.
+- [x] AMF/NI harmonized v2 integrated: historical mortality benchmark, finite age/timing-aware QALY conversion, no duplicate generic funding/coverage haircuts, whole gift retained, original v1 APIs unchanged.
+- [x] Independent24-scenario audit and200 formula assertions;307 repository tests; lint/build;8 phone/tablet checks passed. Corrected stale NI funding copy before final build.
+- [ ] Publish v2 and verify canonical estimates/API. Central global AMF3778.42 and NI3869.67 per10Q are conditional analyst estimates, not GiveWell QALY figures or current donation offers. Age80/20 and timing remain priors; full-resource perspective unknown.
+- [ ] Next: whole-organization YMCA replacement and audited VTL new report. Count does not increase for revising existing organizations. Generalize external native-outcome calibration before applying judgmental penalties in future reports.
+
 ## RotaCare integration checkpoint — September 8
 
 RotaCare Bay Area v2 report and inspectable model validated in focused worktree; not counted until canonical publication.306 tests,lint/build and independent99-check runtime audit passed. Central$3.40M/10BayQ; no established SF-resident share, unified row therefore says Not estimated rather than disguising Bay cost as SF. Full gift counted,60% non-BP portfolio benefits unquantified; duration/catch-up, gross resources and harm scenarios explicit. No separate bottom research section. Next whole-org YMCA revision and calibrated AMF/NI models; goal115 remains active.

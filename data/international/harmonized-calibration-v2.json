@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 2,
+  "version": "harmonized-calibration-v2-2026-09-08",
+  "asOf": "2026-09-08",
+  "status": "research estimate; conditional historical benchmark calibration",
+  "method": "Historical GiveWell funding-opportunity mortality benchmark transferred to an ordinary gift, with independent analyst finite survival-to-QALY conversion",
+  "currency": "USD",
+  "scope": "Whole ordinary gift cash charged; modeled representative core only. Not a current restricted offer or GiveWell QALY estimate.",
+  "lineage": {
+    "convention": "Independent age-aware calibration; original v1 models retained",
+    "originalModels": "Preserve original AMF and NI v1 assets and outputs unchanged as separately labeled constructed stresses; do not combine their ladders with this calibration.",
+    "originalCentralUsdPer10GlobalQalysApprox": {"amf": 9720.19, "ni": 43072.99777}
+  },
+  "costPerspective": {
+    "central": "whole donor gift cash",
+    "netSocietalCost": null,
+    "fullResourceCost": null,
+    "explanation": "No matched incremental companion-resource denominator. Do not carry forward old per-net or per-catchment allowances. Optional gross associated costs are a separate perspective, not a net societal ICER."
+  },
+  "sources": [
+    {"id": "gw-impact", "url": "https://www.givewell.org/impact-estimates", "sourceUpdated": "2026-08", "accessed": "2026-09-08", "supports": "Rounded 2022–24 grant-weighted funding-opportunity dollars per modeled life: AMF5500, NI4500; not every unrestricted gift. Native estimates incorporate other-funder responses."},
+    {"id": "gw-itn", "url": "https://www.givewell.org/international/technical/programs/insecticide-treated-nets", "sourcePublished": "2023-12", "sourceUpdated": "2024-04", "accessed": "2026-09-08", "supports": "Section4.3 includes older-child/adult mortality; Uganda illustration294 early+70 older deaths. Does not establish portfolio age mix or our survival trajectory."},
+    {"id": "gw-ni", "url": "https://www.givewell.org/international/technical/programs/new-incentives", "parameterVintage": "2024-09 cost section; page includes mixed-vintage analyses", "accessed": "2026-09-08", "supports": "Childhood and later mortality pathways; enrolled and additionally vaccinated denominators differ; moral-weighted benefit shares are not death-age shares."},
+    {"id": "gw-ni-extension", "url": "https://www.givewell.org/research/grants/new-incentives-extension-of-support-in-northern-nigeria-march-2025", "grantVintage": "2025-03", "accessed": "2026-09-08", "supports": "Existing funded support into2028; does not establish current marginal gift price or source the assumed event timing."},
+    {"id": "tanzania-followup", "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2112524", "sourceYear": 2022, "accessed": "2026-09-08", "supports": "Observational22-year follow-up supports persistence qualitatively, not a fitted40-year lifetable or generic .8 multiplier."}
+  ],
+  "defaults": {
+    "giftUsd": 10000,
+    "discountRate": 0.03,
+    "relativeMortalityYield": 1,
+    "earlyDeathShare": 0.8,
+    "survivalPersistenceMultiplier": 1,
+    "earlySurvival": {"years": 40, "annualSurvival": 0.99, "utility": 0.85},
+    "olderSurvival": {"years": 20, "annualSurvival": 0.98, "utility": 0.8},
+    "newSharedHarmPvQalysPerGift": 0,
+    "newIndependentHarmPvQalysPerGift": 0,
+    "directSfHealthShare": 0,
+    "directBayHealthShare": 0
+  },
+  "assumptions": {
+    "survival": "All horizons, annual survival, utility and midpoint integration are analyst trajectories, not national lifetables. Finite truncation does not imply death at horizon.",
+    "age": "80%early/20%older is an analyst prior for both. AMF Uganda example is supporting context, not a grant-weighted empirical share. NI share is not inferred from moral-weighted benefit percentages.",
+    "yield": "1 transfers historical adjusted mortality yield to a representative ordinary gift; it is not proof of no substitution. Do not append old funding, efficacy, coverage or trial-transfer haircuts.",
+    "persistence": "No extra generic persistence penalty centrally; .8 sensitivity is distinct from the .8 age share.",
+    "harm": "Only new harms not already in the source benchmark. Harm inputs are whole-gift present-value QALYs for the specified gift, not per dollar or per death; shared harm scales with relative yield, independent harm does not. Re-specify harms if changing gift scale.",
+    "geography": "Zero direct SF/Bay modeled health. Unknown indirect health receives no credit; a global price is not a local price.",
+    "ranges": "Scenarios are possibilities, not confidence intervals; no tuning to a target."
+  },
+  "organizations": {
+    "amf": {
+      "name": "Against Malaria Foundation",
+      "nativeUsdPerModeledDeath": 5500,
+      "benchmarkSourceId": "gw-impact",
+      "coreShare": 1,
+      "coreAllocationMeaning": "Representative ordinary-gift core prior; not verified current allocation or an overhead rate.",
+      "earlyEventYears": [2.5],
+      "olderEventYears": [2.5],
+      "timingMeaning": "Analyst mean gift-to-event delay for near-term protection of both current children and adults; not observed pipeline timing."
+    },
+    "ni": {
+      "name": "New Incentives",
+      "nativeUsdPerModeledDeath": 4500,
+      "benchmarkSourceId": "gw-impact",
+      "coreShare": 0.9,
+      "coreAllocationMeaning": "Analyst representative immunization-core allocation; 10%health-unquantified, not valueless. Not an overhead discount on already costed delivery.",
+      "earlyEventYears": [3, 4, 5, 6],
+      "olderEventYears": [25],
+      "timingMeaning": "Analyst equal early-event weights after implementation delay; older mortality occurs as vaccinated cohort ages. Not measured current death-age distribution."
+    }
+  },
+  "scenarios": [
+    {"id": "central", "overrides": {}},
+    {"id": "half-yield", "overrides": {"relativeMortalityYield": 0.5}},
+    {"id": "double-yield", "overrides": {"relativeMortalityYield": 2}},
+    {"id": "zero-yield", "overrides": {"relativeMortalityYield": 0}},
+    {"id": "all-early", "overrides": {"earlyDeathShare": 1}},
+    {"id": "all-older", "overrides": {"earlyDeathShare": 0}},
+    {"id": "short-tail", "overrides": {"earlySurvival": {"years": 3}, "olderSurvival": {"years": 3}}},
+    {"id": "persistence-80", "overrides": {"survivalPersistenceMultiplier": 0.8}},
+    {"id": "shared-harm", "overrides": {"newSharedHarmPvQalysPerGift": 0.1}},
+    {"id": "zero-yield-shared-harm", "overrides": {"relativeMortalityYield": 0, "newSharedHarmPvQalysPerGift": 0.1}},
+    {"id": "zero-yield-independent-harm", "overrides": {"relativeMortalityYield": 0, "newIndependentHarmPvQalysPerGift": 0.1}},
+    {"id": "core-share-one", "overrides": {"coreShare": 1}}
+  ]
+}

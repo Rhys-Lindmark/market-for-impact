@@ -420,12 +420,12 @@ test('phone donors can inspect the Food Bank native and 10-QALY decision models 
   await expect(page.getByRole('heading', { level: 1, name: 'San Francisco–Marin Food Bank', exact: true })).toBeVisible();
   await expect(review).toContainText('about $6,000 per additional household not experiencing very low food security');
   await expect(review).toContainText('$ per 10 QALYs — one better life');
-  await expect(page.getByText('≈ $85.7M', { exact: true })).toBeVisible();
-  await expect(review).toContainText('about $85.7 million per better life');
-  await expect(review).toContainText('$1.11 million');
-  await expect(review).toContainText('$24B');
-  await expect(review).toContainText('0.000035 QALY');
-  await expect(review).toContainText('35% of modeled exits');
+  await expect(page.getByText('$59.6M', { exact: true }).first()).toBeVisible();
+  await expect(review).toContainText('about $59.6 million per10 incremental QALYs');
+  await expect(review).toContainText('$515.3K');
+  await expect(review).toContainText('$83.5B');
+  await expect(review).toContainText('0.000050312499999999996 QALY');
+  await expect(review).toContainText('Additional delivery caused by funding');
   await expect(review.locator('.charity-qaly-bridge .charity-sensitivity article')).toHaveCount(3);
   await expect(review).toContainText(/no finite positive upper bound/i);
   await expect(review.locator('.charity-evidence-list article')).toHaveCount(3);

@@ -1,0 +1,192 @@
+{
+  "version": "sf-healthright-moud-cea-v1",
+  "reviewedAt": "2026-09-07",
+  "organization": "HealthRIGHT 360",
+  "program": "Proposed additional nurse-led medication access",
+  "denominator": "10 incremental QALYs",
+  "confidence": "very-low",
+  "scope": "One hypothetical two-year nurse-led outpatient access expansion at ICC; not all HR360 services or a verified funding offer.",
+  "costPerspective": "Donor cash for a full clinical capacity package. Incremental pharmacy costs are separately displayed as resources; central donor pharmacy share is zero only under an explicit public-payment assumption, not verified reimbursement. No cost offsets deducted.",
+  "scenarios": [
+    {
+      "firstYearCost": 238888,
+      "secondYearCost": 229676,
+      "costMultiplier": 0.8,
+      "clinicPatients": 28587.666666666668,
+      "medicationYearsPer10000": 16.4,
+      "accessTransfer": 1,
+      "fundingAdditionality": 1,
+      "buprenorphineShare": 1,
+      "mortalityOut": 0.05,
+      "mortalityIn": 0.015,
+      "causalRetention": 0.8,
+      "extraDeaths": 0,
+      "drugCostPerMedicationYear": 1000,
+      "donorDrugShare": 0,
+      "benefitDelayYears": 1,
+      "utility": 0.8,
+      "annualHazard": 0.055,
+      "horizonYears": 20,
+      "discountRate": 0.03,
+      "name": "Optimistic positive",
+      "nonfatalUtilityGain": 0.1
+    },
+    {
+      "firstYearCost": 238888,
+      "secondYearCost": 229676,
+      "costMultiplier": 1.25,
+      "clinicPatients": 28587.666666666668,
+      "medicationYearsPer10000": 8.2,
+      "accessTransfer": 0.5,
+      "fundingAdditionality": 0.5,
+      "buprenorphineShare": 0.9,
+      "mortalityOut": 0.0095,
+      "mortalityIn": 0.0043,
+      "causalRetention": 0.5,
+      "extraDeaths": 0,
+      "drugCostPerMedicationYear": 1000,
+      "donorDrugShare": 0,
+      "benefitDelayYears": 1,
+      "utility": 0.7,
+      "annualHazard": 0.08,
+      "horizonYears": 15,
+      "discountRate": 0.03,
+      "name": "Central analyst estimate",
+      "nonfatalUtilityGain": 0.03
+    },
+    {
+      "firstYearCost": 238888,
+      "secondYearCost": 229676,
+      "costMultiplier": 1.6,
+      "clinicPatients": 28587.666666666668,
+      "medicationYearsPer10000": 5.4,
+      "accessTransfer": 0.2,
+      "fundingAdditionality": 0.25,
+      "buprenorphineShare": 0.7,
+      "mortalityOut": 0.008,
+      "mortalityIn": 0.006,
+      "causalRetention": 0.25,
+      "extraDeaths": 0,
+      "drugCostPerMedicationYear": 1000,
+      "donorDrugShare": 0,
+      "benefitDelayYears": 1,
+      "utility": 0.6,
+      "annualHazard": 0.15,
+      "horizonYears": 10,
+      "discountRate": 0.03,
+      "name": "Pessimistic positive",
+      "nonfatalUtilityGain": 0
+    }
+  ],
+  "assumptions": [
+    {
+      "key": "costMultiplier",
+      "label": "Local/current capacity-cost factor",
+      "basis": "1.25 is a judgmental uplift to 2023 national clinical resource costs, not a measured SF quote or inflation series."
+    },
+    {
+      "key": "clinicPatients",
+      "label": "Two-year primary-care population",
+      "basis": "171526 / 6 intervention clinics is a trial-scale reference, not ICC's patient count. The 75 monthly treated-patient costing assumption is a different denominator."
+    },
+    {
+      "key": "medicationYearsPer10000",
+      "label": "Added medication-years per 10,000 over TWO years",
+      "basis": "Central 8.2 from PROUD adjusted trial result; optimistic 16.4 is a speculative doubling, pessimistic 5.4 is its one-sided lower bound. Cases are not confidence intervals."
+    },
+    {
+      "key": "accessTransfer",
+      "label": "Transfer of trial access effect",
+      "basis": "Further expansion at an existing integrated clinic may do less than introducing a nurse model. This includes alternative treatment displaced; do not discount access twice."
+    },
+    {
+      "key": "fundingAdditionality",
+      "label": "Funding additionality",
+      "basis": "Probability-equivalent share of the added capacity not supplied by existing public/private funding. Separate from patient-level access transfer."
+    },
+    {
+      "key": "buprenorphineShare",
+      "label": "Buprenorphine share of extra medication time",
+      "basis": "Judgment: no current ICC drug mix observed. Remaining naltrexone time receives no mortality credit, not a claim of no benefit."
+    },
+    {
+      "key": "mortalityOut",
+      "label": "Out-of-treatment mortality per person-year",
+      "basis": "Central 0.0095 is an older pooled cohort calibration; not measured contemporary SF risk. Higher-risk optimistic case is a judgment."
+    },
+    {
+      "key": "mortalityIn",
+      "label": "In-treatment mortality per person-year",
+      "basis": "Central 0.0043 from the same cohort synthesis; selection/confounding prevent causal interpretation."
+    },
+    {
+      "key": "causalRetention",
+      "label": "Causal/transport retention of mortality difference",
+      "basis": "Central 50% is an explicit judgment, not an estimated confidence adjustment. No additional overdose-specific benefit is added to all-cause survival."
+    },
+    {
+      "key": "utility",
+      "label": "Survivor health utility",
+      "basis": "Judgmental shared mortality-model value, not a treatment-induced utility gain."
+    },
+    {
+      "key": "annualHazard",
+      "label": "Post-prevented-death annual hazard",
+      "basis": "Judgmental conditional survival trajectory after the avoided acute death, not lifetime treatment efficacy."
+    },
+    {
+      "key": "horizonYears",
+      "label": "Post-event survival horizon",
+      "basis": "15 years central; future survival discounted at 3% annually. No indefinite medication protection assumed."
+    },
+    {
+      "key": "nonfatalUtilityGain",
+      "label": "Additional nonfatal utility while covered",
+      "basis": "Analyst best guess 0.03, not a measured local gain or a published utility level. Optimistic 0.10 and pessimistic zero; apply only during added buprenorphine time, not indefinitely."
+    }
+  ],
+  "nullBoundary": "Zero additional coverage or full funding substitution gives zero benefit absent extra harm. With coverage, zero mortality benefit and zero nonfatal utility gain together produce zero health benefit. Greater in-treatment mortality or extra cessation-related deaths can produce harm. The pooled out-of-treatment rate already includes cessation periods; extra deaths are a stress test beyond that calibration, not an estimated additive penalty.",
+  "overlap": "Do not add these benefits to HYA access or SFAF/DOPE rescue benefits for the same person-time and avoided deaths. This rare-event approximation is for one two-year tranche; repeated tranches need a person-level survival model, not fresh independent lifetime credit every year.",
+  "sources": [
+    {
+      "publisher": "HealthRIGHT 360",
+      "title": "Integrated Care Center",
+      "url": "https://www.healthright360.org/program/integrated-care-center-2/",
+      "published": "Undated; current service page",
+      "retrieved": "2026-09-07",
+      "sourceType": "Local provider disclosure"
+    },
+    {
+      "publisher": "JAMA Internal Medicine",
+      "title": "PROUD cluster randomized clinical trial",
+      "url": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2811096",
+      "published": "2023",
+      "retrieved": "2026-09-07",
+      "sourceType": "Primary cluster randomized trial"
+    },
+    {
+      "publisher": "Drug and Alcohol Dependence",
+      "title": "PROUD treatment-duration secondary analysis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39550823/",
+      "published": "2024",
+      "retrieved": "2026-09-07",
+      "sourceType": "Primary trial secondary analysis"
+    },
+    {
+      "publisher": "American Journal of Managed Care",
+      "title": "Cost of implementing and sustaining the Massachusetts model",
+      "url": "https://www.ajmc.com/view/the-cost-of-implementing-and-sustaining-the-massachusetts-model",
+      "published": "2026-04-22",
+      "retrieved": "2026-09-07",
+      "sourceType": "Primary microcosting study; 2023 USD"
+    },
+    {
+      "publisher": "BMJ",
+      "title": "Mortality during and after opioid substitution treatment",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5421454/",
+      "published": "2017-04-26",
+      "retrieved": "2026-09-07",
+      "sourceType": "Original meta-analysis of observational cohorts"
+    }
+  ]
+}

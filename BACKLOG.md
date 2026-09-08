@@ -10,7 +10,9 @@ Design first for a major donor deciding how to deploy roughly $10 million this y
 
 ## Now — foundation
 
-- [ ] **Mechanism-first1: DOPE additional site-year — #168.** Build and verify a versioned tenant-response mortality model, distinct from counting naloxone reversals or adding SFAF benefits. Current central $2.43M/10 QALYs is exploratory; use site-risk thresholds and funding/coverage evidence to judge the bet. Next: HealthRIGHT360 medication-treatment retention.
+- [ ] **Mechanism-first2: HealthRIGHT 360 access — #170.** Two-year additional nurse-led medication access model, central $26.35M/10 QALYs; optimistic $261K, pessimistic $10.3B, null/harm possible. 240 tests, lint/build, independent audit and four local phone/tablet checks passed; native workbook A175:E209 formulas and outputs verified. Publish after GitHub/canonical gates. Next: SF Community Health Center HCV cure navigation.
+
+- [x] **Mechanism-first1: DOPE additional site-year — #168.** PR #169 / Sites v120 accepted; central $2.43M/10 QALYs, current marginal funding unverified. Canonical report/API and 28-row ordering verified; 237 tests and mobile/security gates passed. This completes a research bet, not a donation recommendation.
 
 - [x] **Current cost-effectiveness order — #165.** All27 completed models sorted numerically by central USD per10 QALYs; homepage uses the same first four: SFAF, PHC, GLIDE, Compass. 234 tests, lint/build and eight focused phone/tablet checks passed. Positive scenarios and unverified funding room remain visible; deployment acceptance recorded in the issue.
 

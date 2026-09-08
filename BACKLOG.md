@@ -2,6 +2,8 @@
 
 ## Latest scope override — 115 organizations (Rhys, September 8)
 
+Latest accepted count: **45/115**, including hearing PR207/public v136 at exact 3cc743e4c561197d6a8e9b9661c1b7d55274877f. Central hearing $1.25M/10 QALYs; historical recipient-status uncertainty prevents a direct-giving recommendation. 287 tests, lint/build, full CI, 14 local phone/tablet checks, 28 native formulas and canonical report/API/45-row ranking/top-four verification passed. Older pending hearing entries are historical.
+
 The target is now **115 distinct published, validated organization reports**: the existing 100 SF-focused target plus **5 California-wide, 5 US-wide, and 5 international organizations**. These are fifteen additional unique organizations, not repeated geographic labels on existing reports. Keep the SF product front door and current research standards. Older 100-target references below are historical and superseded by this section.
 
 - [ ] **CA5:** Screen statewide organizations for credible high cost-effectiveness, then complete five distinct reports.

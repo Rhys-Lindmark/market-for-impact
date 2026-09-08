@@ -10,6 +10,8 @@ Design first for a major donor deciding how to deploy roughly $10 million this y
 
 ## Now — foundation
 
+- [x] **Large Bay discovery / issue #185:** Added a separate five-organization FY2025 audited-expense shortlist at /research/large-bay-nonprofits. Preserve donated-food accounting, wider geography, Goodwill selection caveat and no organization-wide QALY inference. Next: specify one marginal food-benefit/food-health program and one YMCA youth/health intervention, then model their donor additionality and dollars per 10 QALYs.
+
 - [x] **Mechanism-first3: SFCHC integrated HCV access — #172.** Accepted PR #174 / Sites v122, exact b28297233fcd4cb05f4de9a2abf1523504935d91. Central $2.00M/10 QALYs; no verified marginal offer. 244 tests, lint/build, independent audit, native workbook A211:E243, phone/tablet and canonical 30-row ranking/report/API passed.
 - [x] **Mechanism-first4: NEMS HBV re-engagement — #175.** Accepted PR #176 / Sites v123 at 4477c43ad95eeaedb800f585f0d1dbc54141df6e. 248 tests, lint/build, full GitHub mobile gate, native workbook A245:E266 and canonical31-review/report/API checks passed. Central $1.20M/10 QALYs; no marginal offer. Parallel evidence #177 merged.
 - [x] **Mechanism-first5: SFFC targeted vaccine access — #178.** PR #179 / Sites v124 accepted at fe7c8adb1b891d0cf64771decc25c6c5b494bec6. Conditional central $1.955M/10 QALYs; no verified offer. 252 tests, lint/build, GitHub gates, native workbook A268:E294, canonical report/API and32-row ordering passed.

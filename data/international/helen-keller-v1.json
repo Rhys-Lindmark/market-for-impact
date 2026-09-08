@@ -1,0 +1,39 @@
+{
+ "version":"hki-whole-gift-v1-2026-09-08","status":"Conditional research model; independently audited",
+ "organization":"Helen Keller International","ein":"13-5562162",
+ "giftBoundary":"Ordinary unrestricted gift to Helen Keller Intl, not its separate vitamin-A-restricted giving page; not Helen Keller Services",
+ "defaults":{"giftUsd":10000,"coreShare":0.3,"nativeUsdPerDeath":3500,"relativeYield":1,"earlyShare":0.8,"delayYears":2.5,"discountRate":0.03,"earlyYears":40,"earlyAnnualSurvival":0.99,"earlyUtility":0.85,"olderYears":20,"olderAnnualSurvival":0.98,"olderUtility":0.8,"sharedHarmPv":0,"independentHarmPv":0,"extraGrossResourcesUsd":0},
+ "assumptions":{
+ "allocation":"30% analyst marginal VAS-equivalent core, remaining70%healthunquantified with full giftcost. FY25nutrition includingVAS76.890M/125.882Mtotal is not a VAS allocation. No additional overhead haircut.",
+ "benchmark":"3500USD/modeledlife is GiveWell2022–24historical opportunity average publishedAugust2026, not a current unrestrictedquote. Relativeyield1 transfers native adjusted effect; no stacked financing/coverage/efficacy penalties.",
+ "ageTiming":"80/20early/older provisional harmonized prior, not measured VAS age mix. Both events2.5years after gift. Finite40/20year trajectories with backgroundsurvival and3%discount once; no extra persistence multiplier.",
+ "geography":"Overseas quantifiedcore directSF/Bay0. Wholeorganization localshare unknown becauseUSvision exists; no local credit rather than claim of no localactivity.",
+ "resources":"Central fullresource/netsocietal cost unestimated. Optional addedresources are grossassociated package only, not necessarily incremental when financing replaced.",
+ "harms":"Inputs are whole-giftPV QALY losses newly attributable and notsourcecovered. Shared scaleswithyield, independent remainsunderzero. Diagnosticvalues not observedrates.",
+ "funding":"Current exact unrestrictedmargin unverified. Historical grants and donatedpublic commodities formbaseline, not newgiftoutputs. New2026evaluation methodology is not mechanically combined with historicalbenchmark."
+ },
+ "financialAnchor":{"fiscalYearEnded":"2025-06-30","totalExpensesUsd":125882062,"nutritionIncludingVasUsd":76889685,"usVisionUsd":3605683,"ntdUsd":13112320,"inKindDistributionUsd":10538535,"supportServicesUsd":21013063,"endNetAssetsUsd":123759012,"limitation":"Annualreportfinancialtable, not next-dollar budget; netassets not entirely freecash"},
+ "sources":[
+ {"id":"annual","url":"https://helenkellerintl.org/wp-content/uploads/2026/04/HKIntl_2025AnnualReport_Web.pdf","date":"2026-04 upload;FYended2025-06-30","pages":"PDF16 financials;17 identity","accessed":"2026-09-08"},
+ {"id":"restriction","url":"https://helenkellerintl.org/support-our-vitamin-a-work/","date":"undated","accessed":"2026-09-08"},
+ {"id":"benchmark","url":"https://www.givewell.org/impact-estimates","date":"updated2026-08;2022–24opportunities","accessed":"2026-09-08"},
+ {"id":"devta","url":"https://pubmed.ncbi.nlm.nih.gov/23498849/","date":"2013","accessed":"2026-09-08 primary indexedabstract verified"},
+ {"id":"newmethods","url":"https://blog.givewell.org/2026/04/02/podcast-episode-27-scrutinizing-one-of-our-longest-funded-programs/","date":"2026-04-02","accessed":"2026-09-08"},
+ {"id":"lookback","url":"https://www.givewell.org/research/lookbacks/Helen-Keller-VAS-Nigeria-2025","date":"2025","accessed":"2026-09-08 indexedprimarysummary"},
+ {"id":"payer","url":"https://www.givewell.org/international/technical/programs/vitamin-A","date":"mixedvintage;technicalpageApril2024","accessed":"2026-09-08"}
+ ],
+ "scenarios":[
+ {"id":"central","overrides":{}},
+ {"id":"favorable-joint","overrides":{"coreShare":0.6,"nativeUsdPerDeath":2500,"earlyShare":1,"delayYears":1}},
+ {"id":"pessimistic-positive","overrides":{"coreShare":0.05,"nativeUsdPerDeath":7000,"earlyYears":3,"olderYears":3,"delayYears":5}},
+ {"id":"half-yield","overrides":{"relativeYield":0.5}},
+ {"id":"all-early","overrides":{"earlyShare":1}},
+ {"id":"all-older","overrides":{"earlyShare":0}},
+ {"id":"short-tail","overrides":{"earlyYears":3,"olderYears":3}},
+ {"id":"zero-core","overrides":{"coreShare":0}},
+ {"id":"zero-yield","overrides":{"relativeYield":0}},
+ {"id":"zero-yield-shared-harm","overrides":{"relativeYield":0,"sharedHarmPv":0.1}},
+ {"id":"zero-yield-independent-harm","overrides":{"relativeYield":0,"independentHarmPv":0.1}},
+ {"id":"gross-resource-double","overrides":{"extraGrossResourcesUsd":10000}}
+ ]
+}

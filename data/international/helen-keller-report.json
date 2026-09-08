@@ -1,0 +1,280 @@
+{
+  "organization": "Helen Keller Intl",
+  "eyebrow": "International · whole-gift health",
+  "program": "Whole unrestricted gift with a representative vitamin A core",
+  "donationUrl": "https://helenkellerintl.org/donate",
+  "published": "September 8, 2026",
+  "modelVersion": "hki-whole-gift-v1-2026-09-08",
+  "nutshell": {
+    "headline": "Our conditional best estimate is about $8,000 per 10 global QALYs.",
+    "body": "We charge the whole unrestricted gift and quantify a judgmental 30% vitamin A core. Other health benefits remain unquantified. No SF or Bay health is credited—not because Helen Keller has no US programs, but because their marginal local health is unverified.",
+    "whyItMayWork": "In high-burden settings, inexpensive vitamin A delivery can reduce childhood illness and mortality.",
+    "whyWeAreCautious": "The unrestricted allocation and survival conversion are judgments. A very large randomized trial found no clear mortality reduction, and modern effectiveness varies by setting.",
+    "recommendationBlocker": "Current marginal allocation, funding room and age-specific mortality yield need better evidence. This is not a guaranteed offer."
+  },
+  "summary": [
+    {
+      "label": "Global best estimate",
+      "value": "$8,015 / 10 QALYs",
+      "detail": "Whole gift cash; conditional representative-core model."
+    },
+    {
+      "label": "SF / Bay credit",
+      "value": "Zero modeled",
+      "detail": "US vision programs exist; local incremental health is unverified."
+    },
+    {
+      "label": "Gift allocation",
+      "value": "30% represented core",
+      "detail": "Remaining 70% health-unquantified, not assumed worthless."
+    },
+    {
+      "label": "Full resources",
+      "value": "Unestimated",
+      "detail": "Donor cash is not a complete societal cost."
+    }
+  ],
+  "programSection": {
+    "body": "Helen Keller International (EIN 13-5562162) works in nutrition, vitamin A delivery, neglected tropical diseases and vision, including US vision services. It is distinct from Helen Keller Services.",
+    "steps": [
+      {
+        "title": "Support the whole organization",
+        "detail": "General gifts are flexible. Its dedicated vitamin A page restricts gifts to that work; that is a different donation boundary."
+      },
+      {
+        "title": "Represent one health pathway",
+        "detail": "The model assigns 30% of the marginal gift to vitamin A-equivalent health, leaving other outcomes unquantified."
+      },
+      {
+        "title": "Compare against existing care",
+        "detail": "Government programs, donated medicine and other grants already fund substantial services; existing recipients are not automatically additional."
+      }
+    ],
+    "boundary": "The core share is an analyst prior, not the audited vitamin A share or a second overhead haircut. All gift dollars remain in the numerator."
+  },
+  "model": {
+    "headline": "A $10,000 unrestricted gift yields an estimated 12.4769 global QALYs.",
+    "body": "The historical anchor is $3,500 per modeled life saved. Our finite conversion assumes 80% early and 20% older deaths, 40/20-year remaining trajectories and a 2.5-year event delay. These are explicit priors, not a measured VAS death-age mix, national life table or GiveWell QALY estimate.",
+    "equation": {
+      "label": "WHOLE-GIFT GLOBAL MODEL",
+      "expression": "($10,000 × .30 / $3,500) × 14.55634 gift-time QALYs per modeled death",
+      "result": "12.47686 QALYs; $100,000 / 12.47686 = $8,014.83 per 10 QALYs"
+    },
+    "inputs": [
+      {
+        "key": "allocation",
+        "label": "Represented vitamin A core",
+        "confidence": "Analyst judgment",
+        "best": "30%",
+        "range": "5–60% joint scenarios; zero-core null",
+        "basis": "FY2025 nutrition includes vitamin A and other programs. Its broad expense category is not the next unrestricted dollar's allocation."
+      },
+      {
+        "key": "native",
+        "label": "Historical mortality benchmark",
+        "confidence": "Evaluator model",
+        "best": "$3,500 per modeled life",
+        "range": "$2,500–$7,000 scenario assumptions",
+        "basis": "GiveWell's August 2026 summary uses 2022–24 grants, not a current unrestricted offer."
+      },
+      {
+        "key": "age",
+        "label": "Early / older death mix",
+        "confidence": "Analyst judgment",
+        "best": "80% / 20%",
+        "range": "All early / all older",
+        "basis": "Provisional harmonized conversion; actual native age composition remains unresolved."
+      },
+      {
+        "key": "survival",
+        "label": "Finite survival and utility",
+        "confidence": "Analyst judgment",
+        "best": "40 / 20 years; .85 / .80 utility",
+        "range": "Three-year tails",
+        "basis": "Annual survival .99/.98, 3% discount. No generic extra persistence haircut."
+      },
+      {
+        "key": "timing",
+        "label": "Gift-to-event delay",
+        "confidence": "Analyst judgment",
+        "best": "2.5 years",
+        "range": "1–5 years",
+        "basis": "Pipeline approximation, not observed current deployment."
+      },
+      {
+        "key": "yield",
+        "label": "Relative core-opportunity yield",
+        "confidence": "Analyst judgment",
+        "best": "1",
+        "range": "Half yield; zero yield",
+        "basis": "Transfers the already-adjusted historical anchor without stacking new generic coverage, efficacy or financing penalties."
+      }
+    ],
+    "giftHeading": "What would an ordinary gift change?",
+    "sensitivity": [
+      {
+        "case": "central",
+        "headline": "$8,015 / 10 global QALYs",
+        "detail": "12.476864 global QALYs per $10,000. Assumption scenario, not a confidence interval."
+      },
+      {
+        "case": "favorable-joint",
+        "headline": "$2,516 / 10 global QALYs",
+        "detail": "39.746029 global QALYs per $10,000. Assumption scenario, not a confidence interval."
+      },
+      {
+        "case": "pessimistic-positive",
+        "headline": "$685,041 / 10 global QALYs",
+        "detail": "0.145977 global QALYs per $10,000. Assumption scenario, not a confidence interval."
+      },
+      {
+        "case": "half-yield",
+        "headline": "$16,030 / 10 global QALYs",
+        "detail": "6.238432 global QALYs per $10,000. Assumption scenario, not a confidence interval."
+      },
+      {
+        "case": "all-early",
+        "headline": "$7,364 / 10 global QALYs",
+        "detail": "13.579378 global QALYs per $10,000. Assumption scenario, not a confidence interval."
+      },
+      {
+        "case": "all-older",
+        "headline": "$12,396 / 10 global QALYs",
+        "detail": "8.066805 global QALYs per $10,000. Assumption scenario, not a confidence interval."
+      },
+      {
+        "case": "short-tail",
+        "headline": "$53,020 / 10 global QALYs",
+        "detail": "1.886068 global QALYs per $10,000. Assumption scenario, not a confidence interval."
+      },
+      {
+        "case": "zero-core",
+        "headline": "No positive price / 10 global QALYs",
+        "detail": "0.000000 global QALYs per $10,000. Assumption scenario, not a confidence interval."
+      },
+      {
+        "case": "zero-yield",
+        "headline": "No positive price / 10 global QALYs",
+        "detail": "0.000000 global QALYs per $10,000. Assumption scenario, not a confidence interval."
+      },
+      {
+        "case": "zero-yield-shared-harm",
+        "headline": "No positive price / 10 global QALYs",
+        "detail": "0.000000 global QALYs per $10,000. New harm diagnostic, not an observed clinical rate."
+      },
+      {
+        "case": "zero-yield-independent-harm",
+        "headline": "No positive price / 10 global QALYs",
+        "detail": "-0.100000 global QALYs per $10,000. New harm diagnostic, not an observed clinical rate."
+      },
+      {
+        "case": "gross-resource-double",
+        "headline": "$16,030 / 10 global QALYs, gross resource stress",
+        "detail": "12.476864 global QALYs per $10,000. Adds a hypothetical $10,000 associated-resource allowance; donor-only result remains $8,015."
+      }
+    ],
+    "uncertaintyBoundary": "Null core allocation or yield gives no finite positive price. Independently caused harm can remain when benefits are zero. Shared harms scale with provision; source-covered clinical harms are not deducted twice. No unmodeled lifetime, income or separate blindness credit is added.",
+    "fundingBoundary": "A current unrestricted funding gap or allocation is not verified. Dedicated VAS giving is restricted and cannot be substituted silently. Government services, existing grants and capsules funded through Nutrition International and Canada form the baseline. Full resource costs remain unknown; annual in-kind accounting is not the marginal cost of this gift."
+  },
+  "evidence": [
+    {
+      "key": "devta",
+      "design": "DEVTA cluster randomized trial, Lancet 2013",
+      "population": "About one million children in northern India; 36 retinol versus 36 control blocks",
+      "result": "Mortality ratio .96 (95% CI .89–1.03), p=.22; no clear all-cause mortality reduction.",
+      "transfer": "Primary indexed evidence verified; challenges universal 20–30% mortality claims but does not exclude smaller benefits in different settings."
+    },
+    {
+      "key": "benchmark",
+      "design": "Historical GiveWell grant modeling",
+      "population": "2022–24 vitamin A opportunities; summary updated August 2026",
+      "result": "$3,500 per modeled life saved.",
+      "transfer": "Not a trial QALY result or ordinary-gift quote. Allocation and future survival are our separate judgments."
+    },
+    {
+      "key": "update",
+      "design": "GiveWell research update, April 2026",
+      "population": "Contemporary modeled vitamin A settings",
+      "result": "Modern mortality reduction modeled at 1–11%, versus 19% trial average.",
+      "transfer": "New disease, dosing and publication-bias analyses matter. A 25-times moral-weighted benchmark claim cannot be converted directly into dollars per life or QALYs."
+    },
+    {
+      "key": "lookback",
+      "design": "GiveWell 2025 Nigeria grant lookback",
+      "population": "Historical expansion to new Nigerian states",
+      "result": "Evaluator says it would likely have made a smaller grant, excluding two states later exited.",
+      "transfer": "Geography and monitoring can change effectiveness; historical average is not guaranteed everywhere."
+    }
+  ],
+  "reservations": [
+    "General gifts are not automatically restricted vitamin A funding.",
+    "Nutrition expenditure does not identify vitamin A's marginal allocation.",
+    "The large mortality-null trial and current-context uncertainty remain substantive.",
+    "US programs exist, but no verified marginal SF/Bay health share is assigned.",
+    "Scenarios are not confidence bounds."
+  ],
+  "excludedBenefits": [
+    "Other nutrition, neglected-disease, eye-health and US vision effects not quantified here.",
+    "Separate income, education or blindness gains on top of the mortality bridge.",
+    "Unverified SF/Bay spillovers or headquarters-based benefit allocation.",
+    "Healthcare savings treated as donor cash and unreconciled societal resources."
+  ],
+  "sources": [
+    {
+      "publisher": "Helen Keller Intl",
+      "title": "FY2025 Annual Report, financial table and identity",
+      "url": "https://helenkellerintl.org/wp-content/uploads/2026/04/HKIntl_2025AnnualReport_Web.pdf",
+      "published": "April 2026 upload; fiscal year ended June 30, 2025",
+      "sourceType": "Primary organizational report; PDF pages 16–17",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Helen Keller Intl",
+      "title": "Support Our Vitamin A Work",
+      "url": "https://helenkellerintl.org/support-our-vitamin-a-work/",
+      "published": "Undated",
+      "sourceType": "Primary restricted donation boundary",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "GiveWell",
+      "title": "How We Produce Impact Estimates",
+      "url": "https://www.givewell.org/impact-estimates",
+      "published": "Updated August 2026; 2022–24 grants",
+      "sourceType": "Primary evaluator model",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Lancet / PubMed",
+      "title": "DEVTA: vitamin A every six months in one million preschool children",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23498849/",
+      "published": "2013",
+      "sourceType": "Primary randomized trial; indexed abstract",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "GiveWell",
+      "title": "Scrutinizing One of Our Longest-Funded Programs",
+      "url": "https://blog.givewell.org/2026/04/02/podcast-episode-27-scrutinizing-one-of-our-longest-funded-programs/",
+      "published": "April 2, 2026",
+      "sourceType": "Primary evaluator methodological update",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "GiveWell",
+      "title": "Lookback: Helen Keller vitamin A expansion in Nigeria",
+      "url": "https://www.givewell.org/research/lookbacks/Helen-Keller-VAS-Nigeria-2025",
+      "published": "2025",
+      "sourceType": "Primary evaluator retrospective; indexed summary",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "GiveWell",
+      "title": "Vitamin A Supplementation technical analysis",
+      "url": "https://www.givewell.org/international/technical/programs/vitamin-A",
+      "published": "April 2024 technical page; mixed-vintage inputs",
+      "sourceType": "Primary evaluator payer and delivery analysis",
+      "retrieved": "September 8, 2026"
+    }
+  ]
+}

@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Helen Keller whole-gift release — September 8
+
+Malaria Consortium PR226 is canonical verified at52/115. HKI report ready with full unrestricted gift and30% modeled overseas VAS core: central $8,015/10 global QALYs. Broader70% health unquantified; actual US vision programs are not denied, their SF/Bay effect remains unestimated. DEVTA mortality-null, updated evaluator-methodology caveat and source vintage retained. Twelve scenarios,58 checks and independent audit accepted;311 repository tests/lint/build passed. Count53 only after canonical verification. Next Roots model audit/integration; preserve whole-organization scope and local denominator.
+
 ## Malaria Consortium release — September 8
 
 VTL PR225 canonical51-row report/API verified; published count51/115. Malaria Consortium whole unrestricted UK gift report ready: central $5,496/10 global QALYs,50% representative-core allocation prior, remaininghealth unquantified with all cost retained. Native mortality benchmark and finite age/timing conversion; primary mortality-null and reserves disclosed. Twelve scenarios independently matched,310 tests/lint/build and focused phone/tablet checks. No SF/Bay local price established. Count52 only after canonical publication. Next Helen Keller whole-gift research and additional local mechanism-first candidates.

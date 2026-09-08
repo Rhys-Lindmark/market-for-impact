@@ -7,8 +7,8 @@ import bridge from '@/data/san-francisco/sf-marin-food-bank-qaly-bridge-audit-v1
 export const metadata: Metadata = {
   title: 'SF–Marin Food Bank Community Markets — charity research | Market for Impact',
   description: 'Our evidence review and exploratory food-security cost-effectiveness model for San Francisco–Marin Food Bank Community Markets.',
-  openGraph: { title: 'SF–Marin Food Bank — charity research', description: 'A source-grounded Community Market review with an explicit cash-cost boundary, transferred evidence, and null case.', images: [] },
-  twitter: { card: 'summary', title: 'SF–Marin Food Bank — charity research', description: 'A source-grounded Community Market review with an explicit cash-cost boundary, transferred evidence, and null case.', images: [] },
+  openGraph: { title: 'SF–Marin Food Bank — charity research', description: 'A source-grounded Community Market review with a modeled operating-cost allowance, transferred evidence, and null case.', images: [] },
+  twitter: { card: 'summary', title: 'SF–Marin Food Bank — charity research', description: 'A source-grounded Community Market review with a modeled operating-cost allowance, transferred evidence, and null case.', images: [] },
 };
 
 const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
@@ -25,18 +25,18 @@ const content: CharityReportContent = {
   program: 'Community Markets: client-choice food access with navigation and support',
   donationUrl: review.organization.donationUrl,
   published: '1 September 2026',
-  modelVersion: model.version,
+  modelVersion: bridge.version,
   nutshell: {
-    headline: 'A huge food-distribution engine; a promising program model; an unmeasured causal result.',
-    body: <>SFMFB reports serving <strong>44,000 households weekly</strong> and nearly 56 million meals-equivalent in FY2025. Its Community Markets offer client choice and support, but SFMFB has not published a causal food-security estimate. Using audited pantry cash costs and heavily discounted external randomized evidence, we estimate <strong>about {money.format(model.bottomLine.costPerAdditionalHouseholdNotExperiencingVeryLowFoodSecurityUsd)} per additional household not experiencing very low food security at 12 months</strong>. A separate health-utility transfer produces a very-low-confidence central estimate of <strong>about {compactMoney.format(bridge.modeledBridge.bestCostPerTenQalysUsd)} per 10 QALYs</strong>.</>,
+    headline: 'Helpful food access, but not a leading health-only donation under our current model.',
+    body: <>SFMFB reports serving <strong>44,000 households weekly</strong> and nearly 56 million meals-equivalent in FY2025. Its Community Markets offer client choice and support, but SFMFB has not published a causal food-security estimate. Using an operating-cost allowance oriented by pantry accounts and heavily discounted external randomized evidence, we estimate <strong>about {money.format(model.bottomLine.costPerAdditionalHouseholdNotExperiencingVeryLowFoodSecurityUsd)} per additional household not experiencing very low food security at 12 months</strong>. A separate health-utility transfer produces a very-low-confidence central estimate of <strong>about {compactMoney.format(bridge.modeledBridge.bestCostPerTenQalysUsd)} per 10 QALYs</strong>.</>,
     whyItMayWork: 'Reliable client-choice food access can relax a household budget constraint, improve diet fit, and pair food with peer navigation and benefit support.',
     whyWeAreCautious: 'The causal anchor is a different bundled pantry intervention, current Community Market outcomes are unpublished, and network accounting does not identify a marginal market course cost.',
     recommendationBlocker: 'SFMFB has not published a costed site-by-site expansion gap, household enrollment and retention, pre-specified food-security follow-up, or evidence that the next private gift creates additional service rather than replacing cash, commodities, or donated food.',
   },
   summary: [
-    { label: 'EXPLORATORY IMPACT PRICE', value: '≈ $6,000', detail: 'per additional household not experiencing very low food security at 12 months' },
-    { label: 'POSITIVE-EFFECT SENSITIVITY', value: '$1.3K–$60K', detail: 'conditional on a positive effect; the null case has no finite impact price' },
-    { label: 'COST PER BETTER LIFE', value: '≈ $85.7M', detail: 'per 10 QALYs; very-low-confidence food-security health-utility transfer' },
+    { label: 'COST PER BETTER LIFE', value: compactMoney.format(bridge.modeledBridge.bestCostPerTenQalysUsd), detail: 'per 10 QALYs; very-low-confidence food-security health-utility transfer' },
+    { label: 'POSITIVE-EFFECT SENSITIVITY', value: `${compactMoney.format(Math.min(...bridge.modeledBridge.sensitivity.map(row => row.costPerTenQalysUsd)))}–${compactMoney.format(Math.max(...bridge.modeledBridge.sensitivity.map(row => row.costPerTenQalysUsd)))}`, detail: 'per 10 QALYs; joint assumption scenarios, not confidence bounds; null or harm possible' },
+    { label: 'NATIVE OUTCOME MODEL', value: '≈ $6,000', detail: 'per additional household not experiencing very low food security, before the separate donor-additionality discount' },
     { label: 'FUNDING ROOM', value: 'Not published', detail: 'the $100,000 gift is a scenario, not a current marginal offer' },
   ],
   programSection: {
@@ -51,7 +51,7 @@ const content: CharityReportContent = {
   },
   model: {
     headline: 'Roughly $6,000 per additional household not experiencing very low food security—if the transferred effect is real.',
-    body: 'We isolate approximately $25.8 million of FY2025 Neighborhood Pantries cash and recognized operating expense after removing recognized donated food and donated services, divide by 44,000 weekly households and 52 weeks, and model a 26-week course at $300. We then assign a 5-point absolute reduction in very low food security—far below the bundled Freshplace trial result—to reflect program and population transfer. This is a donor-cash model, not a total social-resource cost; the comparable full recognized accounting cost is about $1,160 per course.',
+    body: 'We isolate approximately $25.8 million of FY2025 Neighborhood Pantries cash and recognized operating expense after removing recognized donated food and donated services, divide by 44,000 weekly households and 52 weeks, and model a 26-week course at $300. We then assign a 5-point absolute reduction in very low food security—far below the bundled Freshplace trial result—to reflect program and population transfer. The $300 is a judgmental donor operating allowance, not a verified cash-flow or marginal cost: the accounting subtraction still includes depreciation. It is not a total social-resource cost; the comparable full recognized accounting cost is about $1,160 per course.',
     equation: { label: 'CONDITIONAL COST PER ADDITIONAL HOUSEHOLD NOT EXPERIENCING VERY LOW FOOD SECURITY', expression: `${money.format(cost.best)} ÷ ${percent.format(effect.best)}`, result: `= ${money.format(model.bottomLine.costPerAdditionalHouseholdNotExperiencingVeryLowFoodSecurityUsd)}` },
     inputs: model.inputs.slice(1).map((input) => ({ key: input.key, label: input.label, confidence: input.confidence, best: formatInput(input.best, input.unit), range: `${formatInput(input.low, input.unit)}–${formatInput(input.high, input.unit)}`, basis: input.basis })),
     giftHeading: `What would ${money.format(model.bottomLine.giftUsd)} buy in the conditional model?`,
@@ -60,7 +60,7 @@ const content: CharityReportContent = {
     fundingBoundary: model.fundingRoom.boundary,
   },
   comparisonBridge: {
-    headline: 'Our current best estimate: about $85.7 million per better life (10 QALYs).',
+    headline: `Our current best estimate: ${compactMoney.format(bridge.modeledBridge.bestCostPerTenQalysUsd)} per better life (10 QALYs).`,
     body: bridge.decision,
     equation: {
       label: 'EXPLORATORY COST PER 10 QALYS · ONE BETTER LIFE',
@@ -68,11 +68,12 @@ const content: CharityReportContent = {
       result: `= ${compactMoney.format(bridge.modeledBridge.bestCostPerTenQalysUsd)}`,
     },
     inputs: [
+      { key: 'funding_additionality', label: 'Additional delivery caused by funding', confidence: 'judgment', best: percent.format(bridge.modeledBridge.fundingAdditionality.best), range: '10%–75%', basis: bridge.modeledBridge.fundingAdditionality.basis },
       { key: 'donor_cost', label: 'Modeled donor-cash cost per household course', confidence: 'very low as a marginal price', best: money.format(bridge.modeledBridge.modeledDonorCostPerHouseholdCourseUsd.best), range: `${money.format(bridge.modeledBridge.modeledDonorCostPerHouseholdCourseUsd.low)}–${money.format(bridge.modeledBridge.modeledDonorCostPerHouseholdCourseUsd.high)}`, basis: bridge.modeledBridge.modeledDonorCostPerHouseholdCourseUsd.basis },
       { key: 'causal_exit', label: 'Causal exit from very low food security', confidence: 'very low', best: percent.format(bridge.modeledBridge.causalExitFromVeryLowFoodSecurityProbability.best), range: `${percent.format(bridge.modeledBridge.causalExitFromVeryLowFoodSecurityProbability.low)}–${percent.format(bridge.modeledBridge.causalExitFromVeryLowFoodSecurityProbability.high)}`, basis: bridge.modeledBridge.causalExitFromVeryLowFoodSecurityProbability.basis },
-      { key: 'full_food_security', label: 'Share of exits reaching full food security', confidence: 'judgmental', best: percent.format(bridge.modeledBridge.shareOfExitsReachingFullHouseholdFoodSecurity.best), range: `${percent.format(bridge.modeledBridge.shareOfExitsReachingFullHouseholdFoodSecurity.low)}–${percent.format(bridge.modeledBridge.shareOfExitsReachingFullHouseholdFoodSecurity.high)}`, basis: bridge.modeledBridge.shareOfExitsReachingFullHouseholdFoodSecurity.basis },
+      { key: 'full_food_security', label: 'Share of exits reaching the study food-secure category', confidence: 'judgmental', best: percent.format(bridge.modeledBridge.shareOfExitsReachingFullHouseholdFoodSecurity.best), range: `${percent.format(bridge.modeledBridge.shareOfExitsReachingFullHouseholdFoodSecurity.low)}–${percent.format(bridge.modeledBridge.shareOfExitsReachingFullHouseholdFoodSecurity.high)}`, basis: bridge.modeledBridge.shareOfExitsReachingFullHouseholdFoodSecurity.basis },
       { key: 'adult_equivalents', label: 'Adult-equivalent beneficiaries per household', confidence: 'judgmental', best: String(bridge.modeledBridge.adultEquivalentBeneficiariesPerHousehold.best), range: `${bridge.modeledBridge.adultEquivalentBeneficiariesPerHousehold.low}–${bridge.modeledBridge.adultEquivalentBeneficiariesPerHousehold.high}`, basis: bridge.modeledBridge.adultEquivalentBeneficiariesPerHousehold.basis },
-      { key: 'utility_effect', label: 'Observed QALY per adult-year eliminating food insecurity', confidence: 'very low as a causal transfer', best: String(bridge.sourceEvidence.qalyPerAdultYear.best), range: 'Published 95% CI: 0.002–0.014', basis: bridge.sourceEvidence.boundary },
+      { key: 'utility_effect', label: 'Observational insecure-versus-secure utility contrast', confidence: 'very low as a causal transfer', best: String(bridge.sourceEvidence.qalyPerAdultYear.best), range: 'Published 95% CI: 0.010–0.036', basis: bridge.sourceEvidence.boundary },
       { key: 'retention', label: 'Share of observational utility effect retained', confidence: 'judgmental transfer', best: percent.format(bridge.modeledBridge.retainedShareOfObservedUtilityEffect.best), range: `${percent.format(bridge.modeledBridge.retainedShareOfObservedUtilityEffect.low)}–${percent.format(bridge.modeledBridge.retainedShareOfObservedUtilityEffect.high)}`, basis: bridge.modeledBridge.retainedShareOfObservedUtilityEffect.basis },
       { key: 'duration', label: 'Effective utility duration', confidence: 'judgmental', best: `${bridge.modeledBridge.effectiveDurationYears.best} year`, range: `${bridge.modeledBridge.effectiveDurationYears.low}–${bridge.modeledBridge.effectiveDurationYears.high} year`, basis: bridge.modeledBridge.effectiveDurationYears.basis },
     ],

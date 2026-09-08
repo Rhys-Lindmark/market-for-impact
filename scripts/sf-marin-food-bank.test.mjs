@@ -26,23 +26,36 @@ test('does not smuggle meals or QALYs into the native outcome', () => {
 test('publishes an inspectable, bounded 10-QALY decision model without collapsing the food-security states', () => {
   assert.equal(bridge.sharedDenominator.qalyThreshold, 10);
   assert.equal(bridge.status, 'exploratory-food-security-health-utility-transfer-model');
-  assert.equal(bridge.sourceEvidence.qalyPerAdultYear.best, 0.008);
+  assert.equal(bridge.sourceEvidence.qalyPerAdultYear.best, 0.023);
   const m = bridge.modeledBridge;
   const expectedQaly = m.causalExitFromVeryLowFoodSecurityProbability.best
     * m.shareOfExitsReachingFullHouseholdFoodSecurity.best
     * m.adultEquivalentBeneficiariesPerHousehold.best
     * bridge.sourceEvidence.qalyPerAdultYear.best
     * m.retainedShareOfObservedUtilityEffect.best
-    * m.effectiveDurationYears.best;
+    * m.effectiveDurationYears.best * m.fundingAdditionality.best;
   assert.ok(Math.abs(expectedQaly - m.qalyPerHouseholdCourse.best) < 1e-12);
   const expectedPrice = m.modeledDonorCostPerHouseholdCourseUsd.best / expectedQaly * 10;
   assert.ok(Math.abs(expectedPrice - m.bestCostPerTenQalysUsd) < 1e-6);
   assert.ok(Math.abs(expectedPrice - bridge.sharedDenominator.publishedPriceUsd) < 1e-6);
   assert.equal(m.sensitivity.length, 3);
   for (const row of m.sensitivity) {
+    const recomputedQaly = row.causalExitProbability * row.shareReachingFullFoodSecurity
+      * row.adultEquivalentBeneficiaries * bridge.sourceEvidence.qalyPerAdultYear.best
+      * row.retainedShare * row.effectiveDurationYears * row.fundingAdditionality;
+    assert.ok(Math.abs(recomputedQaly - row.qalyPerHouseholdCourse) < 1e-12);
     assert.ok(Math.abs(row.donorCostPerHouseholdCourseUsd / row.qalyPerHouseholdCourse * 10 - row.costPerTenQalysUsd) < 1e-4);
   }
   assert.match(m.shareOfExitsReachingFullHouseholdFoodSecurity.basis, /35%.*judgment/i);
   assert.match(m.nullBoundary, /no finite positive upper bound/i);
   assert.match(bridge.decision, /not a measured SFMFB effect/i);
+});
+
+test('food-security bridge separates the state contrast, funding discount and accounting sensitivity', () => {
+  const m = bridge.modeledBridge;
+  assert.equal(m.fundingAdditionality.best, 0.5);
+  assert.ok(Math.abs(m.bestCostPerTenQalysUsd - 59627329.19254659) < 1e-6);
+  assert.ok(Math.abs(m.oldPopulationContrastSensitivityUsd / m.bestCostPerTenQalysUsd - 0.023 / 0.008) < 1e-12);
+  assert.ok(Math.abs(m.fullRecognizedAccountingCostPerTenQalysUsd - 1160 / m.qalyPerHouseholdCourse.best * 10) < 1e-6);
+  assert.ok(Math.abs(m.maximumDonorCourseCostFor100k - m.qalyPerHouseholdCourse.best * 10000) < 1e-9);
 });

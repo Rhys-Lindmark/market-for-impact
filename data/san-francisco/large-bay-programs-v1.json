@@ -1,0 +1,268 @@
+[
+  {
+    "slug": "second-harvest-silicon-valley",
+    "organization": "Second Harvest of Silicon Valley",
+    "program": "Additional community grocery access",
+    "geography": "Santa Clara and San Mateo; not San Francisco city",
+    "calculator": "food",
+    "unit": "One food-insecure household offered a six-month course",
+    "how": "A proposed 13-pickup course through community partners. This dose is a modeling assumption, not a verified schedule at every site. Compare with existing food, benefits and alternative pantries, not starvation.",
+    "costs": "Central $325 = 13 × ($10 purchased food + $15 logistics/staff/overhead). These are judgmental marginal allowances, not audited unit costs. An expanded resource illustration is $1,040, including $585 donated-food opportunity value and $130 partner/volunteer/participant time. It is not a complete societal incremental cost.",
+    "evidence": "Freshplace randomized 228 adults to client-choice pantry plus motivational interviewing and referrals, versus conventional pantry care. It supports food-security improvement from a bundle, not a measured grocery-only effect here. The .023 utility anchor is an observational insecure-versus-secure contrast; 35% of modeled exits from very low food security are assumed to reach the study secure category.",
+    "funding": "No additional-course offer verified. Existing public commodities, reserves, donated inventory and partner sites may fund the same service. A warehouse capital campaign is not this course.",
+    "equation": "Q = financing × (exit probability × secure share × adult equivalents × utility × transfer × effective years − harm)",
+    "scenarios": [
+      {
+        "name": "Favorable",
+        "utility": 0.023,
+        "harmQalys": 0,
+        "cost": 150,
+        "exitProbability": 0.15,
+        "secureShare": 0.75,
+        "adults": 2,
+        "transfer": 1,
+        "effectiveYears": 1,
+        "fundingAdditionality": 0.9
+      },
+      {
+        "name": "Central",
+        "utility": 0.023,
+        "harmQalys": 0,
+        "cost": 325,
+        "exitProbability": 0.05,
+        "secureShare": 0.35,
+        "adults": 1,
+        "transfer": 0.5,
+        "effectiveYears": 0.5,
+        "fundingAdditionality": 0.5
+      },
+      {
+        "name": "Pessimistic positive",
+        "utility": 0.023,
+        "harmQalys": 0,
+        "cost": 650,
+        "exitProbability": 0.01,
+        "secureShare": 0.1,
+        "adults": 0.5,
+        "transfer": 0.25,
+        "effectiveYears": 0.25,
+        "fundingAdditionality": 0.1
+      }
+    ],
+    "version": "large-bay-program-v1",
+    "verifiedMarginalOffer": false,
+    "sources": [
+      {
+        "publisher": "Primary source",
+        "title": "Provider audited accounts",
+        "url": "https://www.shfb.org/wp-content/uploads/2025/12/2024-2025-Audited-Financial-Statements.pdf",
+        "published": "FY2025",
+        "retrieved": "2026-09-07",
+        "sourceType": "Primary program, funding or research evidence"
+      },
+      {
+        "publisher": "Primary source",
+        "title": "Freshplace randomized trial",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/24139769/",
+        "published": "2013",
+        "retrieved": "2026-09-07",
+        "sourceType": "Primary program, funding or research evidence"
+      },
+      {
+        "publisher": "Primary source",
+        "title": "Food security and utility study",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10406772/",
+        "published": "2023",
+        "retrieved": "2026-09-07",
+        "sourceType": "Primary program, funding or research evidence"
+      }
+    ]
+  },
+  {
+    "slug": "alameda-county-community-food-bank",
+    "organization": "Alameda County Community Food Bank",
+    "program": "Additional CalFresh application assistance",
+    "geography": "Alameda County; not San Francisco city",
+    "calculator": "benefits",
+    "unit": "One assisted application, including unsuccessful applications",
+    "how": "Multilingual assistance can turn eligibility into actual enrollment. The model separately estimates approval, enrollment caused by assistance, improved food security, health utility and whether donations add assistance capacity.",
+    "costs": "Central $500 is a judgmental allowance oriented by a historical base-program budget/application ratio, not a quote. Expanded implementation allowance $700 adds public processing, partner and participant costs. Illustrative extra benefit payments of $168 per application are a separate fiscal transfer, not a QALY benefit or necessarily a net societal resource cost.",
+    "evidence": "A Pennsylvania randomized outreach trial increased SNAP enrollment among older Medicaid adults; its outreach-level effect cannot be multiplied by local application approval. USDA six-month food-security comparisons are nonrandomized. Approval .70, enrollment additionality .40 and a .05 causal food-security effect are judgments. The observational utility contrast is .023; .25 effective health years assumes linear onset over six months, not six months of immediate full health gain.",
+    "funding": "The identified county contract ended June 2026; expiration does not establish a funding gap. Current continuation and a marginal donor tranche remain unverified. Do not attribute publicly reimbursed assistance twice.",
+    "equation": "Q = financing × (approval × enrollment additionality × security effect × adults × utility × transfer × effective years − harm)",
+    "scenarios": [
+      {
+        "name": "Favorable",
+        "utility": 0.023,
+        "harmQalys": 0,
+        "cost": 150,
+        "approval": 0.8,
+        "enrollmentAdditionality": 0.75,
+        "securityEffect": 0.12,
+        "adults": 2,
+        "transfer": 1,
+        "effectiveYears": 1,
+        "fundingAdditionality": 0.9
+      },
+      {
+        "name": "Central",
+        "utility": 0.023,
+        "harmQalys": 0,
+        "cost": 500,
+        "approval": 0.7,
+        "enrollmentAdditionality": 0.4,
+        "securityEffect": 0.05,
+        "adults": 1,
+        "transfer": 0.5,
+        "effectiveYears": 0.25,
+        "fundingAdditionality": 0.5
+      },
+      {
+        "name": "Pessimistic positive",
+        "utility": 0.023,
+        "harmQalys": 0,
+        "cost": 800,
+        "approval": 0.5,
+        "enrollmentAdditionality": 0.1,
+        "securityEffect": 0.01,
+        "adults": 0.5,
+        "transfer": 0.25,
+        "effectiveYears": 0.25,
+        "fundingAdditionality": 0.1
+      }
+    ],
+    "version": "large-bay-program-v1",
+    "verifiedMarginalOffer": false,
+    "sources": [
+      {
+        "publisher": "Primary source",
+        "title": "Local CalFresh assistance",
+        "url": "https://www.accfb.org/about-us/calfresh/",
+        "published": "Undated",
+        "retrieved": "2026-09-07",
+        "sourceType": "Primary program, funding or research evidence"
+      },
+      {
+        "publisher": "Primary source",
+        "title": "County contract amendment",
+        "url": "https://www.alamedacountyca.gov/board/bos_calendar/documents/DocsAgendaReg_03_24_26/PUBLIC%20ASSISTANCE/Regular%20Calendar/SSA_401211.pdf",
+        "published": "2026-03-24",
+        "retrieved": "2026-09-07",
+        "sourceType": "Primary program, funding or research evidence"
+      },
+      {
+        "publisher": "Primary source",
+        "title": "Randomized enrollment assistance",
+        "url": "https://economics.mit.edu/sites/default/files/2022-08/aaFinkelstein_Noto_QJE_August_2019%20%281%29.pdf",
+        "published": "2019",
+        "retrieved": "2026-09-07",
+        "sourceType": "Primary program, funding or research evidence"
+      },
+      {
+        "publisher": "Primary source",
+        "title": "USDA food-security evaluation",
+        "url": "https://fns-prod.azureedge.us/sites/default/files/Measuring2013.pdf",
+        "published": "2013",
+        "retrieved": "2026-09-07",
+        "sourceType": "Primary program, funding or research evidence"
+      },
+      {
+        "publisher": "Primary source",
+        "title": "Food security and utility study",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10406772/",
+        "published": "2023",
+        "retrieved": "2026-09-07",
+        "sourceType": "Primary program, funding or research evidence"
+      }
+    ]
+  },
+  {
+    "slug": "food-bank-contra-costa-solano",
+    "organization": "Food Bank of Contra Costa and Solano",
+    "program": "Additional Mobile Food Pharmacy course",
+    "geography": "Solano County; not San Francisco city",
+    "calculator": "pharmacy",
+    "unit": "One six-month course offered to an adult with diabetes and food insecurity",
+    "how": "Local clinics and the food bank distribute produce and prescribed staples. The model assumes 26 weekly produce opportunities and six monthly staple boxes; monthly prescription frequency is a planning judgment. Costs include missed pickup capacity. Do not transfer Contra Costa Extra Helpings' separate dose.",
+    "costs": "Central $600 = $260 produce allowance + $120 staples + $130 logistics + $90 enrollment/admin. All unit prices are judgments. Expanded gross resources of $1,118 add donated food, volunteers and clinical support, before recipient travel/time. These are not audited marginal quotes or a societal incremental ICER.",
+    "evidence": "A randomized food-bank diabetes-support trial did not improve HbA1c, depression or diabetes distress. A crossover analysis of 284 of the original 568 participants found a .49-point food-insecurity score change; it is not an independent replication. Mapping each point to .01 utility is entirely judgmental. Do not divide the score by 12 to manufacture utility. Central .25 effective years models gradual onset within six months.",
+    "funding": "The May 2026 county/tribal agreement allocated $280,000 to continue this program. That is existing funding, not a $280,000 shortfall. No additional-patient donor offer verified.",
+    "equation": "Q = financing × (score improvement × transfer × utility per score point × effective years − harm)",
+    "scenarios": [
+      {
+        "name": "Favorable",
+        "cost": 300,
+        "scoreImprovement": 0.77,
+        "utilityPerPoint": 0.03,
+        "transfer": 0.75,
+        "effectiveYears": 0.5,
+        "fundingAdditionality": 0.75,
+        "harmQalys": 0
+      },
+      {
+        "name": "Central",
+        "cost": 600,
+        "scoreImprovement": 0.49,
+        "utilityPerPoint": 0.01,
+        "transfer": 0.5,
+        "effectiveYears": 0.25,
+        "fundingAdditionality": 0.5,
+        "harmQalys": 0
+      },
+      {
+        "name": "Pessimistic positive",
+        "cost": 1000,
+        "scoreImprovement": 0.21,
+        "utilityPerPoint": 0.002,
+        "transfer": 0.25,
+        "effectiveYears": 0.125,
+        "fundingAdditionality": 0.25,
+        "harmQalys": 0
+      }
+    ],
+    "version": "large-bay-program-v1",
+    "verifiedMarginalOffer": false,
+    "sources": [
+      {
+        "publisher": "Primary source",
+        "title": "Provider program newsletter",
+        "url": "https://www.foodbankccs.org/wp-content/uploads/2024/06/At-the-Table-Summer-2024_v7_web.pdf",
+        "published": "2024",
+        "retrieved": "2026-09-07",
+        "sourceType": "Primary program, funding or research evidence"
+      },
+      {
+        "publisher": "Primary source",
+        "title": "Existing tribal funding",
+        "url": "https://yochadehe.gov/2026/05/05/solano-supes-accept-1-million-from-yocha-dehe-wintun-nation/",
+        "published": "2026-05-05",
+        "retrieved": "2026-09-07",
+        "sourceType": "Primary program, funding or research evidence"
+      },
+      {
+        "publisher": "Primary source",
+        "title": "Randomized food-bank diabetes trial",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/30024798/",
+        "published": "2018",
+        "retrieved": "2026-09-07",
+        "sourceType": "Primary program, funding or research evidence"
+      },
+      {
+        "publisher": "Primary source",
+        "title": "Crossover food-security analysis",
+        "url": "https://escholarship.org/uc/item/2987s03g",
+        "published": "2022",
+        "retrieved": "2026-09-07",
+        "sourceType": "Primary program, funding or research evidence"
+      },
+      {
+        "publisher": "Primary source",
+        "title": "Independent food-as-medicine trial",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10751657/",
+        "published": "2024",
+        "retrieved": "2026-09-07",
+        "sourceType": "Primary program, funding or research evidence"
+      }
+    ]
+  }
+]

@@ -20,6 +20,6 @@ Health =5.9/52 ×.05 utility judgment ×.5 transfer ×.5 donor additionality =.0
 
 ## Verification
 
-Independent source and implementation audits accepted after dose, payer, harm and baseline-comorbidity corrections. 266 unit tests, lint, production build and six phone/tablet report/API/ranking checks passed. Native workbook Sep7 Research Models A349:E368 recalculates both central models; readback corrected a wound-cell reference error and matches code. No claim of native visual inspection for this addition.
+Independent source and implementation audits accepted after dose, payer, harm and baseline-comorbidity corrections. 267 unit tests including the merged Bay shortlist, lint, production build and six phone/tablet report/API/ranking checks passed. Native workbook Sep7 Research Models A349:E368 recalculates both central models; readback corrected a wound-cell reference error and matches code. Native input layout and wound output cells visually checked in isolated Codex browser.
 
 Primary source URLs and publication/retrieval fields are in the two versioned JSON files. Next: verify actual clinical capacity, complete delivery budget and counterfactual care before treating either scenario as a fundable offer.

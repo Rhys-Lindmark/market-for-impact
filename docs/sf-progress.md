@@ -34,9 +34,11 @@ Dependency: completed phase 2 research. Compare cash-gap prevention, treatment, 
 
 Dependency: SF10. Hypothesize the mechanism before selecting the charity; use the synthesis to guide the search, then update beliefs from evidence.
 
-- [ ] SF12 Screen the ten mechanism-first research bets in [sf-research-bets.md](sf-research-bets.md): first hypothesize a cheap causal route to health gains, then find a local implementer, then test whether it holds. This label is a research priority, not an effectiveness endorsement. Discovery queue recorded; program models remain unfinished.
+- [ ] SF12 Ten mechanism-first implementations are complete through PR #189: DOPE, HealthRIGHT360, SFCHC HCV, NEMS HBV, SFFC vaccine access, Breathe, Clinic by the Bay, St Anthony, CFSF respite and SFCCC wound care. The first eight are accepted through public version127; final two await PR #189 CI and canonical release acceptance. Do not mark this phase accepted until that verification. These are research scenarios, not ten endorsements or verified funding offers.
 
 ## Phase 5 — ten unconventional programs
+
+Next ready after SF12 acceptance: integrate the ten unconventional drafts already preserved by PR #177. Separately, user-requested five large Bay nonprofits were published via #188 / version128 with audited FY2025 expense and donated-food boundaries; prioritize a specific food-benefit/food-health and YMCA youth/health follow-up without substituting size for effectiveness.
 
 Dependency: SF12.
 

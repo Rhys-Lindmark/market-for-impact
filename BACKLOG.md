@@ -1,5 +1,11 @@
 # Market for Impact backlog
 
+## Vision To Learn release — September 8
+
+Whole ordinary-gift clinical-core report integrated with national/Bay/SF estimates; existing50 remains published count until this release verifies canonically. Central $801K/10 US QALYs, $10.02M Bay, $53.43M SF; no local sub100K finding. Pediatric utility, marginal allocation, wear and catch-up are explicit priors. Public match is optional conditional California-only tranche; existing public funding is baseline. Full gift and gross resource envelope retained; eleven finite/null/harm scenarios.309 tests,lint/build and4 local phone/tablet checks passed; primary packet independently audited. Next canonical publication then Malaria Consortium report52.
+
+YMCA PR224 canonical report/API/ranking verified; count remains50. CPEHN budget gate found enacted39M navigation and15M CHW funding: do not assume statewide absence of funding. Existing dental models contain no July2026 cutoff assumption, so no automatic numerical revision warranted.
+
 ## Whole YMCA acceptance — September 8
 
 Replaces DPP-only headline with whole unrestricted-gift conditional portfolio: central $9.50M/10 SF QALYs, $6.18M/10 Bay QALYs, all $100K counted and30% health unquantified. No verified prospective allocation or donor offer. Seven scenarios preserve finite health, independent harms and nested regions; old DPP API retained as program history. Independent runtime/content audit accepted,308 tests and lint/build passed. Count stays50/115. Next publish and canonical verify, then Vision To Learn as report51.

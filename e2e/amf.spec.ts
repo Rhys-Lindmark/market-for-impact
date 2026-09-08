@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';
 test('AMF global report does not alter SF recommendations',async({page})=>{
  await page.goto('/research');
- const sf=page.locator('[data-research-slug]');await expect(sf).toHaveCount(50);
+ const sf=page.locator('[data-research-slug]');await expect(sf).toHaveCount(51);
  const amf=page.locator('[data-research-slug="against-malaria-foundation"]');await expect(amf).toContainText('Not estimated');
  await amf.locator('a').first().click();
  await expect(page.getByRole('heading',{level:1,name:'Against Malaria Foundation',exact:true})).toBeVisible();

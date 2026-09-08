@@ -62,4 +62,4 @@ const content: CharityReportContent = {
   ],
   excludedBenefits: model.excluded, sources: model.sources,
 };
-export default function HYAReport() { return <CharityResearchReport content={content} />; }
+export default function HYAReport() { return <CharityResearchReport content={{...content, donationUrl:"https://homelessyouthalliance.networkforgood.com/"}} />; }

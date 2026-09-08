@@ -1,4 +1,6 @@
 /* eslint-disable @next/next/no-html-link-for-pages -- Native anchors avoid a confirmed Vinext production prefetch runtime error under the canonical /donate base path. */
+import '@/app/givebetter.css';
+import '@/app/report-reading.css';
 
 export type CharityEvidence = {
   key: string;
@@ -70,119 +72,100 @@ export type CharityReportContent = {
   sources: CharitySource[];
 };
 
+function Assumptions({ inputs }: { inputs: CharityReportContent['model']['inputs'] }) {
+  return <dl className="report-assumptions">{inputs.map(input => <div key={input.key}>
+    <dt>{input.label}</dt><dd><strong>{input.best}</strong> (range: {input.range}). {input.basis} <em>{input.confidence}.</em></dd>
+  </div>)}</dl>;
+}
+function Scenarios({ rows }: { rows: CharityReportContent['model']['sensitivity'] }) {
+  return <ul className="report-scenarios">{rows.map(row => <li key={row.case}><strong>{row.case}: {row.headline}.</strong> {row.detail}</li>)}</ul>;
+}
 export default function CharityResearchReport({ content }: { content: CharityReportContent }) {
+  const donationUrl = content.donationUrl?.trim();
+  const headings = [
+    ['summary', 'Summary'],
+    ['program', '1. What do they do?'],
+    ['evidence', '2. Monitoring and information sharing'],
+    ['reservations', '3. Qualitative assessment'],
+    ['cost-effectiveness', '4. What do you get for your dollar?'],
+    ['funding', '5. Funding and previous grants'],
+    ['sources', '6. Sources'],
+  ];
   return (
-    <main className="charity-report">
-      <header className="charity-report-topbar">
-        <a className="brand" href="/"><span className="brand-mark">M</span><span>Market for Impact</span></a>
-        <nav aria-label="Charity report navigation"><a href="#nutshell">In a nutshell</a><a href="#program">The program</a><a href="#cost-effectiveness">Cost-effectiveness</a><a href="#reservations">Reservations</a></nav>
-        {content.donationUrl?.trim() ? <a className="charity-report-donate" href={content.donationUrl.trim()} target="_blank" rel="noreferrer">Donation route ↗</a> : <span className="charity-report-funding-status">Funding route unverified</span>}
-      </header>
-
-      <div className="charity-report-layout">
-        <aside className="charity-report-toc" aria-label="On this page">
-          <span>ON THIS PAGE</span>
-          <a href="#nutshell">In a nutshell</a><a href="#summary">Summary</a><a href="#program">How the program works</a><a href="#cost-effectiveness">Cost-effectiveness model</a><a href="#evidence">Evidence</a><a href="#reservations">How we could be wrong</a><a href="#sources">Sources</a>
-          <small>Published {content.published}<br />Model {content.modelVersion}</small>
-        </aside>
-
-        <article className="charity-report-article">
-          <header className="charity-report-title">
-            <p className="kicker">{content.eyebrow}</p>
-            <h1>{content.organization}</h1>
-            <p>{content.program}</p>
-          </header>
-
-          <section className="charity-nutshell" id="nutshell">
-            <span>IN A NUTSHELL</span>
-            <h2>{content.nutshell.headline}</h2>
+    <main className="givebetter charity-report">
+      <header className="givebetter-masthead"><a href="/">Give<span>Better</span> <small>x SF</small></a></header>
+      <div className="report-reading-column">
+        <header className="report-heading">
+          <h1>{content.organization}</h1><p className="report-program">{content.program}</p>
+          <a className="report-donate" href={donationUrl || '#funding'} {...(donationUrl ? {target:'_blank',rel:'noreferrer'} : {})}>Donate</a>
+        </header>
+        <nav className="report-contents" aria-label="Table of Contents">
+          <h2>Table of Contents</h2>
+          {headings.map(([id,label]) => <a key={id} href={'#'+id}>{label}</a>)}
+        </nav>
+        <p className="report-date">Published: {content.published}. Model: {content.modelVersion}.</p>
+        <article>
+          <section id="summary"><span id="nutshell" />
+            <h2>Summary</h2>
+            <p><strong>{content.nutshell.headline}</strong></p>
             <p>{content.nutshell.body}</p>
             <ul>
               <li><strong>Why it may work:</strong> {content.nutshell.whyItMayWork}</li>
-              <li><strong>Why we are cautious:</strong> {content.nutshell.whyWeAreCautious}</li>
-              <li><strong>What blocks a recommendation:</strong> {content.nutshell.recommendationBlocker}</li>
+              <li><strong>Key reservation:</strong> {content.nutshell.whyWeAreCautious}</li>
+              <li><strong>Before recommending a donation:</strong> {content.nutshell.recommendationBlocker}</li>
             </ul>
+            <dl className="report-summary">{content.summary.map(item => <div key={item.label}><dt>{item.label.toLowerCase()}</dt><dd><strong>{item.value}</strong> — {item.detail}</dd></div>)}</dl>
           </section>
-
-          <section className="charity-summary" id="summary">
-            {content.summary.map((item) => <div key={item.label}><span>{item.label}</span><strong>{item.value}</strong><p>{item.detail}</p></div>)}
+          <section id="program">
+            <h2>1. What do they do?</h2><p>{content.programSection.body}</p>
+            {content.programSection.steps.map(step => <div key={step.title}><h3>{step.title}</h3><p>{step.detail}</p></div>)}
+            <p><strong>Scope of this review.</strong> {content.programSection.boundary}</p>
           </section>
-
-          <aside className="charity-comparison-denominator">
-            <span>SHARED COMPARISON DENOMINATOR</span>
-            <strong>$ per 10 QALYs — one better life</strong>
-            <p>Every Market for Impact model ultimately reports against this denominator. We publish an explicit best estimate when a bounded decision model can be built, even when it requires uncertain external transfers; the native outcome, assumptions, sensitivity, and plausible-null boundary remain visible.</p>
-          </aside>
-
-          <section className="charity-section" id="program">
-            <p className="charity-section-number">1 · THE BASICS</p>
-            <h2>How does the program work?</h2>
-            <p>{content.programSection.body}</p>
-            <div className="charity-program-flow" aria-label={`${content.organization} program model`}>
-              {content.programSection.steps.map((step, index) => <div key={step.title}><span>{String(index + 1).padStart(2, '0')}</span><strong>{step.title}</strong><p>{step.detail}</p></div>)}
-            </div>
-            <aside className="charity-boundary"><strong>Scope boundary</strong>{content.programSection.boundary}</aside>
+          <section id="evidence">
+            <h2>2. Monitoring and information sharing</h2>
+            {content.evidence.map(item => <div key={item.key}><h3>{item.population}</h3><p><strong>{item.design}.</strong> {item.result}</p><p><strong>Our assessment.</strong> {item.transfer}</p></div>)}
           </section>
-
-          <section className="charity-section charity-model" id="cost-effectiveness">
-            <p className="charity-section-number">2 · COST-EFFECTIVENESS</p>
-            <h2>{content.model.headline}</h2>
-            <p>{content.model.body}</p>
-            <div className="charity-model-equation"><span>{content.model.equation.label}</span><strong>{content.model.equation.expression}</strong><b>{content.model.equation.result}</b></div>
-            <div className="charity-model-table" role="table" aria-label={`${content.organization} cost-effectiveness assumptions`}>
-              <div role="row"><span role="columnheader">Input</span><span role="columnheader">{content.model.inputColumnLabel ?? 'Best guess'}</span><span role="columnheader">Range</span><span role="columnheader">Basis</span></div>
-              {content.model.inputs.map((input) => <div role="row" key={input.key}><strong role="cell">{input.label}<small>{input.confidence} confidence</small></strong><span role="cell">{input.best}</span><span role="cell">{input.range}</span><p role="cell">{input.basis}</p></div>)}
-            </div>
-            <h3>{content.model.giftHeading}</h3>
-            <div className="charity-sensitivity">{content.model.sensitivity.map((row) => <article key={row.case}><span>{row.case}</span><strong>{row.headline}</strong><p>{row.detail}</p></article>)}</div>
-            {content.model.uncertaintyBoundary ? <aside className="charity-boundary charity-null-boundary"><strong>The range is not a guarantee of positive impact.</strong>{content.model.uncertaintyBoundary}</aside> : null}
-            <aside className="charity-boundary"><strong>This is not verified room for more funding.</strong>{content.model.fundingBoundary}</aside>
-            {content.comparisonBridge ? <div className="charity-qaly-bridge">
-              <p className="charity-section-number">SHARED DENOMINATOR BRIDGE</p>
-              <h3>{content.comparisonBridge.headline}</h3>
-              <p>{content.comparisonBridge.body}</p>
-              <div className="charity-model-equation"><span>{content.comparisonBridge.equation.label}</span><strong>{content.comparisonBridge.equation.expression}</strong><b>{content.comparisonBridge.equation.result}</b></div>
-              <div className="charity-model-table" role="table" aria-label={`${content.organization} native outcome to QALY bridge assumptions`}>
-                <div role="row"><span role="columnheader">Bridge input</span><span role="columnheader">Best guess</span><span role="columnheader">Range</span><span role="columnheader">Basis</span></div>
-                {content.comparisonBridge.inputs.map((input) => <div role="row" key={input.key}><strong role="cell">{input.label}<small>{input.confidence} confidence</small></strong><span role="cell">{input.best}</span><span role="cell">{input.range}</span><p role="cell">{input.basis}</p></div>)}
-              </div>
-              <div className="charity-sensitivity">{content.comparisonBridge.sensitivity.map((row) => <article key={row.case}><span>{row.case}</span><strong>{row.headline}</strong><p>{row.detail}</p></article>)}</div>
-              <aside className="charity-boundary charity-null-boundary"><strong>Conditional bridge—not a recommendation.</strong>{content.comparisonBridge.boundary}</aside>
-            </div> : null}
-            {content.comparisonAudit ? <div className="charity-qaly-bridge charity-qaly-audit">
-              <p className="charity-section-number">SHARED DENOMINATOR AUDIT</p>
-              <h3>{content.comparisonAudit.headline}</h3>
-              <p>{content.comparisonAudit.body}</p>
-              <div className="charity-audit-candidate"><span>{content.comparisonAudit.candidate.label}</span><strong>{content.comparisonAudit.candidate.value}</strong><p>{content.comparisonAudit.candidate.detail}</p></div>
-              <h4>Why the bridge fails today</h4>
-              <div className="charity-audit-gates">{content.comparisonAudit.failedGates.map((gate) => <article key={gate.key}><span>FAILED GATE</span><strong>{gate.label}</strong><p>{gate.why}</p></article>)}</div>
-              <div className="charity-model-equation charity-audit-equation"><span>ILLUSTRATIVE ONLY · NOT A COMPARISON PRICE</span><strong>{content.comparisonAudit.illustrative.expression}</strong><b>{content.comparisonAudit.illustrative.result}</b></div>
-              <aside className="charity-boundary charity-null-boundary"><strong>Why we do not publish that number.</strong>{content.comparisonAudit.illustrative.boundary}</aside>
-              <h4>Evidence required to unlock $ per 10 QALYs</h4>
-              <ol className="charity-reservations">{content.comparisonAudit.requiredEvidence.map((item) => <li key={item}>{item}</li>)}</ol>
-            </div> : null}
+          <section id="reservations">
+            <h2>3. Qualitative assessment</h2>
+            <p>{content.nutshell.whyItMayWork}</p>
+            <h3>Key reservations</h3><ul>{content.reservations.map(item => <li key={item}>{item}</li>)}</ul>
+            <h3>Benefits not included in our estimate</h3><ul>{content.excludedBenefits.map(item => <li key={item}>{item}</li>)}</ul>
           </section>
-
-          <section className="charity-section" id="evidence">
-            <p className="charity-section-number">3 · EVIDENCE</p>
-            <h2>What does the evidence actually show?</h2>
-            <div className="charity-evidence-list">{content.evidence.map((item, index) => <article key={item.key}><span>{String(index + 1).padStart(2, '0')} · {item.design}</span><h3>{item.population}</h3><p>{item.result}</p><aside><strong>Our read</strong>{item.transfer}</aside></article>)}</div>
+          <section id="cost-effectiveness">
+            <h2>4. What do you get for your dollar?</h2>
+            <p><strong>{content.model.headline}</strong></p><p>{content.model.body}</p>
+            <p>A better life is our comparison unit of 10 additional quality-adjusted life years (QALYs), potentially spread across people. These are uncertain estimates, not measured returns or verified donation offers.</p>
+            <h3>How we calculate the estimate</h3>
+            <p className="report-equation"><strong>{content.model.equation.label}:</strong> {content.model.equation.expression}<br /><strong>{content.model.equation.result}</strong></p>
+            <details className="report-method"><summary>Model inputs and assumptions</summary><Assumptions inputs={content.model.inputs}/></details>
+            <h3>{content.model.giftHeading}</h3><Scenarios rows={content.model.sensitivity}/>
+            {content.model.uncertaintyBoundary && <p><strong>Uncertainty.</strong> {content.model.uncertaintyBoundary}</p>}
+            {content.comparisonBridge && <div className="report-qaly-bridge">
+              <h3>{content.comparisonBridge.headline}</h3><p>{content.comparisonBridge.body}</p>
+              <p className="report-equation"><strong>{content.comparisonBridge.equation.label}:</strong> {content.comparisonBridge.equation.expression}<br /><strong>{content.comparisonBridge.equation.result}</strong></p>
+              <details className="report-method"><summary>QALY conversion assumptions</summary><Assumptions inputs={content.comparisonBridge.inputs}/></details>
+              <Scenarios rows={content.comparisonBridge.sensitivity}/><p>{content.comparisonBridge.boundary}</p>
+            </div>}
+            {content.comparisonAudit && <div>
+              <h3>{content.comparisonAudit.headline}</h3><p>{content.comparisonAudit.body}</p>
+              <p><strong>{content.comparisonAudit.candidate.label}: {content.comparisonAudit.candidate.value}.</strong> {content.comparisonAudit.candidate.detail}</p>
+              <h4>Unresolved evidence</h4><ul>{content.comparisonAudit.failedGates.map(gate => <li key={gate.key}><strong>{gate.label}.</strong> {gate.why}</li>)}</ul>
+              <p><strong>Illustrative only—not a comparison price.</strong> {content.comparisonAudit.illustrative.expression}: {content.comparisonAudit.illustrative.result}</p>
+              <p>{content.comparisonAudit.illustrative.boundary}</p>
+              <ul>{content.comparisonAudit.requiredEvidence.map(item => <li key={item}>{item}</li>)}</ul>
+            </div>}
           </section>
-
-          <section className="charity-section" id="reservations">
-            <p className="charity-section-number">4 · HOW WE COULD BE WRONG</p>
-            <h2>The most important uncertainties are causal—not cosmetic.</h2>
-            <ol className="charity-reservations">{content.reservations.map((reservation) => <li key={reservation}>{reservation}</li>)}</ol>
-            <h3>Benefits we deliberately excluded</h3>
-            <ul>{content.excludedBenefits.map((benefit) => <li key={benefit}>{benefit}</li>)}</ul>
+          <section id="funding">
+            <h2>5. Funding and previous grants</h2>
+            <p>{content.model.fundingBoundary}</p>
+            <p>This review does not establish a verified marginal funding offer or a complete history of grants.</p>
+            {donationUrl ? <><p><a className="report-donate" href={donationUrl} target="_blank" rel="noreferrer">Donate</a></p><p className="report-donation-note">Opens the organization’s giving page. A general donation may not fund the specific activity modeled here; confirm allocation with the recipient.</p></> : <p>We have not verified a suitable donation route for this reviewed activity. Confirm the legal recipient and intended allocation before donating.</p>}
           </section>
-
-          <section className="charity-section charity-sources" id="sources">
-            <p className="charity-section-number">5 · SOURCES</p>
-            <h2>Research trail</h2>
-            {content.sources.map((source) => <a href={source.url} target="_blank" rel="noreferrer" key={source.url}><span>{source.sourceType} · {source.published}</span><strong>{source.title}</strong><small>{source.publisher} · retrieved {source.retrieved}</small></a>)}
+          <section id="sources"><h2>6. Sources</h2>
+            <ol className="report-sources">{content.sources.map(source => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.title}</a>. {source.publisher}. {source.sourceType}. Published: {source.published}; retrieved: {source.retrieved}.</li>)}</ol>
           </section>
         </article>
+        <footer className="report-footer"><a href="/research">All research</a> · <a href="/">Our top charities</a><p>GiveBetter x SF is not affiliated with GiveWell or the organizations reviewed.</p></footer>
       </div>
     </main>
   );

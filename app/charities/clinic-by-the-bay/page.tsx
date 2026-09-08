@@ -55,4 +55,4 @@ const content:CharityReportContent={
  excludedBenefits:['Mortality reduction','Employment and income','Multiple overlapping tooth-level utility gains','Unpriced volunteer opportunity costs','Permanent full-health restoration'],
  sources:data.sources,
 };
-export default function DentalResearchPage(){return <CharityResearchReport content={content}/>;}
+export default function DentalResearchPage(){return <CharityResearchReport content={{...content, donationUrl:"https://www.clinicbythebay.org/donate"}}/>;}

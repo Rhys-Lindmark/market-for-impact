@@ -46,4 +46,4 @@ const content: CharityReportContent = {
  reservations:['No verified match to the exact trial protocol.','Local staffing cost and reimbursement are unknown.','Short health horizon excludes possible durable and family benefits.','Neither a free-to-client service nor an aggregate improvement rate establishes donor additionality.'],
  excludedBenefits:model.excluded,sources:model.sources,
 };
-export default function HuckleberryReport(){return <CharityResearchReport content={content}/>;}
+export default function HuckleberryReport(){return <CharityResearchReport content={{...content, donationUrl:"https://huckleberryyouth.networkforgood.com/projects/19508-donations-to-huckleberry-youth-programs"}}/>;}

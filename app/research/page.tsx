@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 /* eslint-disable @next/next/no-html-link-for-pages -- Preserve native navigation; Vinext prefetch failed in production on the existing research surface. */
 import { sortedResearchPrograms } from '@/lib/sf-research-index';
 import { internationalResearch } from '@/lib/international-research-index';
+import { usResearch } from '@/lib/us-research-index';
 import styles from './research-index.module.css';
 import '../givebetter.css';
 const price = (value:number|null) => value === null ? 'Not yet estimated' : new Intl.NumberFormat('en-US', {style:'currency',currency:'USD',notation:'compact',minimumFractionDigits:value>=1_000_000&&value<1_000_000_000?1:0,maximumFractionDigits:value>=1_000_000_000?0:value>=1_000_000?1:0}).format(value);
@@ -24,6 +25,13 @@ export default function ResearchIndex() {
           <th scope="row"><a className={styles.rowLink} href={item.href}><strong>{item.organization}</strong><span>{item.program}</span></a></th>
           <td><a href={item.href} aria-label={`${item.organization}: ${price(item.centralUsdPerTenQalys)} per better life`}>{price(item.centralUsdPerTenQalys)}</a></td>
         </tr>)}
+      </tbody></table>
+    </section>
+    <section aria-label="US-wide organization research">
+      <h2>US-wide research</h2>
+      <p>National health estimates, separate from the SF ranking. Local health shares are not yet estimated.</p>
+      <table className={styles.table}><caption>Central dollars per 10 US-wide QALYs. Bay Area impact share unknown.</caption><thead><tr><th scope="col">Organization</th><th scope="col">$ per better life US-wide</th></tr></thead><tbody>
+        {usResearch.map(item=><tr key={item.href} data-us-slug={item.href.split('/').at(-1)}><th scope="row"><a className={styles.rowLink} href={item.href}><strong>{item.organization}</strong><span>{item.program}</span></a></th><td><a href={item.href} aria-label={item.organization+': '+price(item.overallUsdPerTenQalys)+' per 10 US-wide QALYs'}>{price(item.overallUsdPerTenQalys)}</a></td></tr>)}
       </tbody></table>
     </section>
     <section aria-label="International organization research">

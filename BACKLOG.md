@@ -1,5 +1,11 @@
 # Market for Impact backlog
 
+## September 8 current research checkpoint
+
+**48/115 published and canonical-verified**: 46 SF-indexed reports plus AMF and New Incentives internationally. PR218/public v145 at 748c84f1a0fe5c5bd8534f6eebf38c4f457c840e verified at 390/768 widths (report, API, index and unchanged SF top four). This supersedes older 45-count acceptance entries below. Formatting follow-up is live: million prices have one decimal.
+
+Current focused work: Remedy Alliance representative-core national gift model, separate US-wide index with unknown Bay/SF health shares. See docs/remedy-release-plan.md. Do not count the draft. Whole-organization revisions such as YMCA and New Door remain pending and do not add organizations. Current measured block began 2026-09-08T21:27:56Z; root integrates and three workers research/audit independently.
+
 ## Current priority — GiveBetter x SF website cleanup
 
 September 8 follow-up: remove homepage note, unify wordmark fonts, redesign all 45 indexed reports as readable GiveWell-style research pages with Donate and numbered sections, and round research-table display prices. See `docs/report-design.md`. Rhys explicitly authorized resuming the 115-organization research work **after** these three changes are published and verified; this supersedes the earlier research/workbook pause. No model or research-count changes in this design release.

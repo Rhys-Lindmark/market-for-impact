@@ -1,5 +1,9 @@
 # San Francisco giving — active phase plan
 
+## Latest acceptance override: organization-wide research
+
+Rhys clarified that YMCA SF and other named nonprofits should be evaluated as whole organizations. BACKLOG.md's organization-wide scope section supersedes prior program-specific completion counts.45 published pages is a historical coverage measure; the number meeting the new whole-organization standard requires an explicit scope audit. Keep program findings as components or separate115+ follow-ups without duplicate organization count. Priority: finish SPUR wholeportfolio, audit existing coverage, then revise YMCA SF.
+
 ## Scope override — September 8: 115
 
 User expanded the objective to 100 SF-focused organizations plus five additional California-wide, five US-wide and five international organizations. BACKLOG.md's latest scope override is authoritative over historical 100-target notes. Added cohorts need overall USD/QALY and USD/10 QALYs, estimated nine-county Bay Area share of incremental health, source/uncertainty and consistent prospective cost boundaries. No duplicate organization count or automatic grandfathering of Bay-only reviews.

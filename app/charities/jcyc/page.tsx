@@ -12,7 +12,7 @@ const content: CharityReportContent = {
   published: '7 September 2026', modelVersion: model.version,
   nutshell: {
     headline: 'Summer jobs have credible external safety evidence, but are not a cheap health intervention in our central model.',
-    body: <>Our best guess is <strong>{usd.format(central.result.costPerTenQalys!)} per better life (10 QALYs)</strong> for a marginal summer placement, counting only a transferred mortality pathway. We would not prioritize this program for a health-only donor on this estimate. That is narrower than judging the value of youth wages, opportunity and community connection. <a href="https://ai.rhyslindmark.com/donate/api/sf-jcyc-model">Inspect the model and scenarios →</a></>,
+    body: <>Our best guess is <strong>{usd.format(central.result.costPerTenQalys!)} per better life (10 QALYs)</strong> for a marginal summer placement, counting only a transferred mortality pathway. We would not prioritize this program for a health-only donor on this estimate. That is narrower than judging the value of youth wages, opportunity and community connection. <a href="https://ai.rhyslindmark.com/givebetter/api/sf-jcyc-model">Inspect the model and scenarios →</a></>,
     whyItMayWork: 'Structured paid work could reduce exposure to dangerous situations and improve connections to adults and services.',
     whyWeAreCautious: 'The selected experiment took place in older NYC cohorts, not SF. A local mortality effect and a privately funded additional summer slot are unverified.',
     recommendationBlocker: 'We have no current summer-specific marginal budget or causal local outcome estimate.',

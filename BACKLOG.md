@@ -2,6 +2,8 @@
 
 ## Current priority — GiveBetter x SF website cleanup
 
+Canonical URL override (Rhys, September 8): `https://ai.rhyslindmark.com/givebetter` replaces `/donate`. The user configured the route; `/donate` now redirects. Use `/givebetter` for future deployment checks, report links, GitHub updates and logs. Do not change the domain or proxy configuration.
+
 Rhys paused the 115-organization research push for a shareable homepage and research index. This branch implements GiveBetter x SF branding, three original explanatory illustrations, four alternating attributed organization photos, compact evidence/price sections and a semantic, condensed research table. Existing estimates and 45 program-report routes remain unchanged; these are not newly completed whole-organization reports. Exact licensed Adelle webfonts remain unavailable; use explicit fallbacks, not copied font kits. See `docs/givebetter-design.md` for scope, provenance and verification contract. Finish validation and publish this cleanup before resuming organization-wide research.
 
 ## Latest scope override — 115 organizations (Rhys, September 8)

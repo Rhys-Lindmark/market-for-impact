@@ -1,5 +1,7 @@
 # GiveBetter x SF presentation refresh — September 8, 2026
 
+During implementation Rhys changed the canonical mount to `https://ai.rhyslindmark.com/givebetter`. Verified root 200 and old `/donate` 308 redirect to the new mount. Updated live-source absolute report links and homepage canonical metadata. Historical research/data provenance URLs remain unchanged; no domain/proxy settings edited.
+
 Scope: root and `/san-francisco` front door, plus `/research`. Preserve all 45 existing program reviews, central estimates, numeric sorting and underlying models. This is presentation work, not additional research completion. The 115-organization research push was paused for this priority.
 
 Design reference: https://www.givewell.org/charities/top-charities and Rhys's supplied screenshots. Original GiveBetter x SF wordmark; no GiveWell logo or affiliation claim. Three original generated editorial illustrations introduce local giving, evidence and choosing a charity. Four actual organization photographs alternate left/right on desktop and stack on phones. Research uses a semantic two-column table with one shared unit and uncertainty note, without repeated caveats, arrows, summaries or approximation symbols in rows.

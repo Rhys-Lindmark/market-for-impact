@@ -10,12 +10,12 @@ import './givebetter.css';
 export const metadata: Metadata = {
   title: 'Our Top Charities — GiveBetter x SF',
   description: 'Our current San Francisco shortlist, compared by estimated dollars per better life: 10 additional quality-adjusted life years.',
-  alternates: { canonical: 'https://ai.rhyslindmark.com/donate' },
+  alternates: { canonical: 'https://ai.rhyslindmark.com/givebetter' },
   openGraph: { title: 'Our top San Francisco charities', description: 'Four current picks, transparent estimates, and the research behind them.' },
 };
 
 const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumSignificantDigits: 3 });
-const root = 'https://ai.rhyslindmark.com/donate';
+const root = 'https://ai.rhyslindmark.com/givebetter';
 function GivingIllustration({ index, label }: { index:number; label:string }) {
   return <div className="sf-home-illustration"><img src="/images/givebetter-principles.png" alt={label} width="600" height="200" style={{transform:`translateX(-${index * 100 / 3}%)`}} /></div>;
 }

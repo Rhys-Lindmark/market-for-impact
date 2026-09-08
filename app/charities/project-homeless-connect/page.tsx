@@ -15,7 +15,7 @@ const content: CharityReportContent = {
   published: '7 September 2026', modelVersion: model.version,
   nutshell: {
     headline: 'A cheap correction could buy meaningful healthy time—if the next gift adds access.',
-    body: <>Our conditional best guess is <strong>{price} per better life (10 QALYs)</strong>. Prescription glasses are a promising research lead below our $100K target, not yet a verified marginal donation opportunity. The largest uncertainty is whether new giving adds usable correction beyond existing coverage. <a href="https://ai.rhyslindmark.com/donate/api/sf-glasses-model">Inspect every input and calculated scenario →</a></>,
+    body: <>Our conditional best guess is <strong>{price} per better life (10 QALYs)</strong>. Prescription glasses are a promising research lead below our $100K target, not yet a verified marginal donation opportunity. The largest uncertainty is whether new giving adds usable correction beyond existing coverage. <a href="https://ai.rhyslindmark.com/givebetter/api/sf-glasses-model">Inspect every input and calculated scenario →</a></>,
     whyItMayWork: 'A low-cost device can correct an ongoing limitation for months, without requiring an expensive year-long service program.',
     whyWeAreCautious: 'The health-utility estimate comes from an uncontrolled external study. Local retained use, costs and counterfactual access are unmeasured.',
     recommendationBlocker: 'No current restricted expansion, incremental dispense budget or marginal funding room has been verified.',

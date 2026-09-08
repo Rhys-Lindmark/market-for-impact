@@ -7,7 +7,7 @@ for (const path of ['/', '/san-francisco']) {
     await expect(page.locator('.sf-home-charity')).toHaveCount(4);
     await expect(page.locator('.sf-home-org-card h4')).toHaveText(['San Francisco AIDS Foundation', 'Project Homeless Connect', 'GLIDE', 'Breathe California']);
     await expect(page.locator('.sf-home-charity-body section:nth-child(2) strong')).toHaveText(['$56.3K per better life (10 QALYs)', '$71.1K per better life (10 QALYs)', '$427K per better life (10 QALYs)', '$533K per better life (10 QALYs)']);
-    await expect(page.getByRole('link', { name: 'All research', exact:true })).toHaveAttribute('href', 'https://ai.rhyslindmark.com/donate/research');
+    await expect(page.getByRole('link', { name: 'All research', exact:true })).toHaveAttribute('href', 'https://ai.rhyslindmark.com/givebetter/research');
     await expect(page.locator('.sf-home-illustration')).toHaveCount(3);
     await expect(page.locator('.sf-home-note')).toContainText('marginal funding room is unverified');
     for (const img of await page.locator('.sf-home-charity img').all()) {

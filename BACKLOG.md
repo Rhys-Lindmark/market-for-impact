@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Malaria Consortium release — September 8
+
+VTL PR225 canonical51-row report/API verified; published count51/115. Malaria Consortium whole unrestricted UK gift report ready: central $5,496/10 global QALYs,50% representative-core allocation prior, remaininghealth unquantified with all cost retained. Native mortality benchmark and finite age/timing conversion; primary mortality-null and reserves disclosed. Twelve scenarios independently matched,310 tests/lint/build and focused phone/tablet checks. No SF/Bay local price established. Count52 only after canonical publication. Next Helen Keller whole-gift research and additional local mechanism-first candidates.
+
 ## Vision To Learn release — September 8
 
 Whole ordinary-gift clinical-core report integrated with national/Bay/SF estimates; existing50 remains published count until this release verifies canonically. Central $801K/10 US QALYs, $10.02M Bay, $53.43M SF; no local sub100K finding. Pediatric utility, marginal allocation, wear and catch-up are explicit priors. Public match is optional conditional California-only tranche; existing public funding is baseline. Full gift and gross resource envelope retained; eleven finite/null/harm scenarios.309 tests,lint/build and4 local phone/tablet checks passed; primary packet independently audited. Next canonical publication then Malaria Consortium report52.

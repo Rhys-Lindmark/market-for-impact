@@ -1,0 +1,256 @@
+{
+  "organization": "Malaria Consortium",
+  "eyebrow": "International · global health",
+  "program": "Whole unrestricted gift with a representative malaria-prevention core",
+  "donationUrl": "https://www.malariaconsortium.org/donate-to-malaria-consortium",
+  "published": "September 8, 2026",
+  "modelVersion": "mc-whole-gift-v1-2026-09-08",
+  "nutshell": {
+    "headline": "Our conditional best estimate is about $5,500 per 10 global QALYs.",
+    "body": "We charge the whole gift and quantify an assumed 50% malaria-prevention core. Direct SF and Bay Area health receives zero credit; this global estimate is not a local donation price. The remaining activity has unquantified health benefits.",
+    "whyItMayWork": "Low-cost seasonal preventive medicine reduces childhood malaria in high-burden settings.",
+    "whyWeAreCautious": "The whole-gift allocation and future survival are judgments. A major randomized trial reduced malaria but did not clearly reduce all-cause mortality.",
+    "recommendationBlocker": "The next unrestricted dollar's use and timing remain uncertain. This is a representative-gift model, not a guaranteed purchase or verified unfunded campaign."
+  },
+  "summary": [
+    {
+      "label": "Global best estimate",
+      "value": "$5,496 / 10 QALYs",
+      "detail": "Whole donor cash; conditional representative-core model."
+    },
+    {
+      "label": "SF / Bay",
+      "value": "Zero direct health credited",
+      "detail": "Unknown indirect effects receive no numerical credit."
+    },
+    {
+      "label": "Gift scope",
+      "value": "50% quantified core",
+      "detail": "All costs charged; other health unquantified, not assumed worthless."
+    },
+    {
+      "label": "Full resources",
+      "value": "Unestimated",
+      "detail": "Donor cash is not a complete societal cost."
+    }
+  ],
+  "programSection": {
+    "body": "Malaria Consortium supports seasonal malaria chemoprevention and broader prevention, treatment, research and health-system work. The modeled recipient is UK charity 1099776/company 4785712. Do not assume the US affiliate has the same marginal allocation.",
+    "steps": [
+      {
+        "title": "Support the whole organization",
+        "detail": "An ordinary unrestricted gift can support delivery or broader strategic priorities; a restricted SMC gift is a separate option."
+      },
+      {
+        "title": "Prevent seasonal malaria",
+        "detail": "Monthly medicine courses target high-risk transmission periods. Doses, full-season courses, cases avoided and deaths avoided are different units."
+      },
+      {
+        "title": "Count additional future health",
+        "detail": "Use a historical mortality benchmark with explicit allocation, age and timing assumptions, against already-funded care."
+      }
+    ],
+    "boundary": "The 50% core share is an analyst marginal-allocation prior, not an audited allocation or overhead rate. The other 50% remains in cost without quantified health."
+  },
+  "model": {
+    "headline": "A $10,000 gift yields an estimated 18.1954 global QALYs.",
+    "body": "The historical benchmark is $4,000 per modeled life saved. We assign 80% of deaths to an early-age trajectory and 20% to an older trajectory, both after an assumed 2.5-year delay. These age shares and finite survival curves are judgments, not measured portfolio outcomes or GiveWell moral weights.",
+    "equation": {
+      "label": "WHOLE-GIFT GLOBAL MODEL",
+      "expression": "($10,000 × .50 / $4,000) × 14.55634 gift-time QALYs per modeled death",
+      "result": "18.19543 QALYs; $100,000 / 18.19543 = $5,495.89 per 10 QALYs"
+    },
+    "inputs": [
+      {
+        "key": "core",
+        "label": "Representative core allocation",
+        "confidence": "Analyst judgment",
+        "best": "50%",
+        "range": "10–80% in joint scenarios; zero-core null",
+        "basis": "Restricted SMC was 63.87% of FY2025 total expenditure, but that is not today's unrestricted margin. Broader strategic uses and reserves matter."
+      },
+      {
+        "key": "native",
+        "label": "Native mortality benchmark",
+        "confidence": "Historical evaluator model",
+        "best": "$4,000 / modeled life",
+        "range": "$3,000–$6,500 scenario assumptions",
+        "basis": "GiveWell August 2026 summary of 2022–24 opportunities; not randomized deaths or a current quote."
+      },
+      {
+        "key": "age",
+        "label": "Early / older death mix",
+        "confidence": "Analyst judgment",
+        "best": "80% / 20%",
+        "range": "All early / all older",
+        "basis": "Provisional harmonized conversion prior; actual native SMC age composition remains unresolved."
+      },
+      {
+        "key": "survival",
+        "label": "Finite remaining health",
+        "confidence": "Analyst judgment",
+        "best": "40 years early; 20 older",
+        "range": "Three-year tails stress",
+        "basis": "Annual survival .99/.98, utility .85/.80, 3% discount; no extra generic persistence discount."
+      },
+      {
+        "key": "timing",
+        "label": "Gift-to-event delay",
+        "confidence": "Analyst judgment",
+        "best": "2.5 years",
+        "range": "1–5 years",
+        "basis": "Not a measured current funding pipeline."
+      },
+      {
+        "key": "yield",
+        "label": "Relative opportunity yield",
+        "confidence": "Analyst judgment",
+        "best": "1",
+        "range": "Half yield or zero",
+        "basis": "Transfers adjusted historical effectiveness to the represented core. No stacked efficacy, coverage or financing penalties."
+      }
+    ],
+    "giftHeading": "What does an unrestricted gift support?",
+    "sensitivity": [
+      {
+        "case": "central",
+        "headline": "$5,496 / 10 global QALYs",
+        "detail": "18.195426 global QALYs per $10,000. Assumption scenario, not a confidence bound."
+      },
+      {
+        "case": "favorable-joint",
+        "headline": "$2,264 / 10 global QALYs",
+        "detail": "44.162255 global QALYs per $10,000. Assumption scenario, not a confidence bound."
+      },
+      {
+        "case": "pessimistic-positive",
+        "headline": "$318,055 / 10 global QALYs",
+        "detail": "0.314411 global QALYs per $10,000. Assumption scenario, not a confidence bound."
+      },
+      {
+        "case": "half-yield",
+        "headline": "$10,992 / 10 global QALYs",
+        "detail": "9.097713 global QALYs per $10,000. Assumption scenario, not a confidence bound."
+      },
+      {
+        "case": "all-early",
+        "headline": "$5,050 / 10 global QALYs",
+        "detail": "19.803260 global QALYs per $10,000. Assumption scenario, not a confidence bound."
+      },
+      {
+        "case": "all-older",
+        "headline": "$8,500 / 10 global QALYs",
+        "detail": "11.764091 global QALYs per $10,000. Assumption scenario, not a confidence bound."
+      },
+      {
+        "case": "short-tail",
+        "headline": "$36,357 / 10 global QALYs",
+        "detail": "2.750516 global QALYs per $10,000. Assumption scenario, not a confidence bound."
+      },
+      {
+        "case": "zero-core",
+        "headline": "No positive price / 10 global QALYs",
+        "detail": "0.000000 global QALYs per $10,000. Assumption scenario, not a confidence bound."
+      },
+      {
+        "case": "zero-yield",
+        "headline": "No positive price / 10 global QALYs",
+        "detail": "0.000000 global QALYs per $10,000. Assumption scenario, not a confidence bound."
+      },
+      {
+        "case": "zero-yield-shared-harm",
+        "headline": "No positive price / 10 global QALYs",
+        "detail": "0.000000 global QALYs per $10,000. Hypothetical new harm diagnostic, not an observed rate."
+      },
+      {
+        "case": "zero-yield-independent-harm",
+        "headline": "No positive price / 10 global QALYs",
+        "detail": "-0.100000 global QALYs per $10,000. Hypothetical new harm diagnostic, not an observed rate."
+      },
+      {
+        "case": "gross-resource-double",
+        "headline": "$10,992 / 10 global QALYs including gross resource allowance",
+        "detail": "18.195426 global QALYs per $10,000. Adds an illustrative $10,000 associated-resource allowance; not net societal cost."
+      }
+    ],
+    "uncertaintyBoundary": "Null allocation or yield gives no finite positive price. New shared harms scale with yield; independent gift-specific harms can persist when benefits are zero. Source-covered clinical harms are not charged twice. Resistance, serious reactions, survival catch-up and overlapping prevention programs remain uncertainties.",
+    "fundingBoundary": "FY2025 general reserves were above the stated target, with planned strategic deployment. The accounts do not prove an urgent unrestricted shortfall or zero marginal benefit. Existing national programs, grants and other donors are baseline. A matched full-resource/net societal cost is unknown; the double-resource scenario is only a gross associated-package stress."
+  },
+  "evidence": [
+    {
+      "key": "trial",
+      "design": "Stepped-wedge cluster randomized trial; November 2016",
+      "population": "54 health posts in Senegal; age eligibility expanded from under five to under ten",
+      "result": "Confirmed malaria fell 60% and severe malaria 45%. All-cause mortality RR .90 (95% CI .68–1.20) was not clearly reduced.",
+      "transfer": "Supports morbidity prevention, not a direct randomized QALY or unrestricted-donation effect."
+    },
+    {
+      "key": "native",
+      "design": "GiveWell historical funding-opportunity modeling",
+      "population": "2022–24 SMC grants; summary updated August 2026",
+      "result": "$4,000 per modeled life and $7 per child treated with a full course.",
+      "transfer": "Already adjusted historical outcomes. Our allocation and QALY conversion are separate judgments, not another multiplication of trial efficacy."
+    },
+    {
+      "key": "accounts",
+      "design": "Audited organizational accounts",
+      "population": "Year ended March 31, 2025",
+      "result": "£44.192M restricted SMC expenditure out of £69.192M total; unrestricted reserves exceeded the stated target.",
+      "transfer": "Evidence of organizational scope and existing resources, not a causal next-dollar allocation."
+    }
+  ],
+  "reservations": [
+    "The 50% marginal core and 80/20 age mix are explicit priors, not observed portfolio statistics.",
+    "The randomized mortality-null finding must remain visible alongside the modeled mortality benchmark.",
+    "No verified current unfunded campaign or allocation is promised at this price.",
+    "Do not give SMC and nets additive full credit for the same health under inconsistent counterfactuals."
+  ],
+  "excludedBenefits": [
+    "Noncore research, health-system and other health effects not modeled here.",
+    "Separate income, education or morbidity benefits beyond the mortality conversion.",
+    "Unmeasured SF/Bay spillovers or headquarters-based local allocations.",
+    "Healthcare savings treated as donor cash or full societal costs."
+  ],
+  "sources": [
+    {
+      "publisher": "Malaria Consortium",
+      "title": "Trustees' report and financial statements, FY2025, pages 32, 41 and 49",
+      "url": "https://www.malariaconsortium.org/assets/global/2024-2025-Trustees-Report.pdf",
+      "published": "October 28, 2025; year ended March 31, 2025",
+      "sourceType": "Primary audited organizational accounts",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Malaria Consortium",
+      "title": "Donation FAQs: unrestricted versus restricted gifts",
+      "url": "https://www.malariaconsortium.org/as-an-individual-support-us/donation-faqs",
+      "published": "Undated",
+      "sourceType": "Primary donation boundary",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Malaria Consortium",
+      "title": "Donation and current delivery description",
+      "url": "https://www.malariaconsortium.org/donate-to-malaria-consortium",
+      "published": "Undated; includes 2024 delivery figures",
+      "sourceType": "Primary organizational description",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "GiveWell",
+      "title": "How We Produce Impact Estimates",
+      "url": "https://www.givewell.org/impact-estimates",
+      "published": "Updated August 2026; 2022–24 grant averages",
+      "sourceType": "Primary evaluator mortality model, not trial outcome",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "PLOS Medicine",
+      "title": "Cissé et al.: seasonal malaria chemoprevention randomized trial",
+      "url": "https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1002175",
+      "published": "November 22, 2016",
+      "sourceType": "Primary randomized clinical evidence",
+      "retrieved": "September 8, 2026"
+    }
+  ]
+}

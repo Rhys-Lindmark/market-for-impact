@@ -1,0 +1,40 @@
+{
+  "version":"mc-whole-gift-v1-2026-09-08",
+  "status":"Conditional research model; independently reviewed",
+  "organization":"Malaria Consortium",
+  "recipientBoundary":"UK charity1099776/company4785712, whole ordinary unrestricted gift. US affiliate giving is not silently treated as identical allocation.",
+  "method":"Representative SMC-equivalent core of whole gift, historical adjusted mortality benchmark, analyst finite survival conversion; noncore health unquantified",
+  "defaults":{"giftUsd":10000,"coreShare":0.5,"nativeUsdPerDeath":4000,"relativeYield":1,"earlyShare":0.8,"delayYears":2.5,"discountRate":0.03,"earlyYears":40,"earlyAnnualSurvival":0.99,"earlyUtility":0.85,"olderYears":20,"olderAnnualSurvival":0.98,"olderUtility":0.8,"sharedHarmPv":0,"independentHarmPv":0,"extraGrossResourcesUsd":0},
+  "assumptions":{
+    "allocation":".5 analyst marginal SMC-equivalent allocation, not audited. FY2025restrictedSMC expenditure44192/total69192=.638687 supports materialcore but is not unrestrictedmargin. Remaining50%healthunquantified; full gift charged. Core share also covers enabling expenditure only if its marginal equivalent health matches benchmark; no separate leverage bonus.",
+    "yield":"1 is representative historical opportunity yield conditional on core; no additional generic financing/efficacy/uptake haircut. Halfyield changes quality of core opportunity, not allocation again.",
+    "age":".8early/.2older harmonized provisional conversion prior, not measured SMC death-age mix. Older ages may include indirect benefits; actual eligible children do not establish native death mix. All-early and all-older sensitivities required.",
+    "timing":"2.5year gift-to-event delay for both groups; analyst pipeline approximation. Finite event-time survival curves match AMF/NI conventions, not sourced lifetables or automatic lifetimes.",
+    "harm":"Whole-gift present-value new harms only; shared scales with relativeYield, independent does not. Do not double-subtract source-covered drug harms. Harm amounts are scenario judgments, not observed rates.",
+    "geography":"Quantified overseas core directSF=0,directBay=0; unknown indirect and noncorelocal effects receive no credit.",
+    "resources":"Central full-resource/net-societal costs unknown. extraGrossResourcesUsd is an optional grossassociated-package stress, not a net incremental resource estimate.",
+    "funding":"No verified current unfunded campaign offer. FY2025 reserves above target and funded baseline matter; not proof every next dollar has zero health. Unrestricted gift may finance systems/Asia/fundraising rather than additionalSMC."
+  },
+  "financialAnchor":{"yearEnded":"2025-03-31","currency":"GBP thousands","restrictedSmcExpenditure":44192,"otherRestrictedExpenditure":18998,"unrestrictedExpenditure":6002,"totalExpenditure":69192,"unrestrictedClosingFunds":34288,"generalReserveTargetLow":21000,"generalReserveTargetHigh":28000},
+  "sources":[
+    {"id":"accounts","url":"https://www.malariaconsortium.org/assets/global/2024-2025-Trustees-Report.pdf","published":"2025-10-28","pages":"32,41,49","accessed":"2026-09-08","supports":"Fundscope, portfolio costs and reserves; not marginal allocation"},
+    {"id":"faq","url":"https://www.malariaconsortium.org/as-an-individual-support-us/donation-faqs","date":"undated","accessed":"2026-09-08","supports":"Unrestricted flexibility versus separate GiveWell-program restrictions"},
+    {"id":"native","url":"https://www.givewell.org/impact-estimates","updated":"2026-08","accessed":"2026-09-08","supports":"2022–24opportunity average4000USD/modeledlife,7USD/fullcourse; not currentoffer"},
+    {"id":"trial","url":"https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1002175","published":"2016-11-22","accessed":"2026-09-08","supports":"Randomized morbidity effect and mortalitynull; not direct QALYs"},
+    {"id":"delivery","url":"https://www.malariaconsortium.org/donate-to-malaria-consortium","date":"undated;2024deliveryfigures","accessed":"2026-09-08","supports":"Actual SMC and broader activities;illustrative donation outputs not marginalquotes"}
+  ],
+  "scenarios":[
+    {"id":"central","overrides":{}},
+    {"id":"favorable-joint","overrides":{"coreShare":0.8,"nativeUsdPerDeath":3000,"earlyShare":1,"delayYears":1}},
+    {"id":"pessimistic-positive","overrides":{"coreShare":0.1,"nativeUsdPerDeath":6500,"earlyYears":3,"olderYears":3,"delayYears":5}},
+    {"id":"half-yield","overrides":{"relativeYield":0.5}},
+    {"id":"all-early","overrides":{"earlyShare":1}},
+    {"id":"all-older","overrides":{"earlyShare":0}},
+    {"id":"short-tail","overrides":{"earlyYears":3,"olderYears":3}},
+    {"id":"zero-core","overrides":{"coreShare":0}},
+    {"id":"zero-yield","overrides":{"relativeYield":0}},
+    {"id":"zero-yield-shared-harm","overrides":{"relativeYield":0,"sharedHarmPv":0.1}},
+    {"id":"zero-yield-independent-harm","overrides":{"relativeYield":0,"independentHarmPv":0.1}},
+    {"id":"gross-resource-double","overrides":{"extraGrossResourcesUsd":10000}}
+  ]
+}

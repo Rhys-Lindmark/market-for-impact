@@ -1,0 +1,228 @@
+{
+  "schemaVersion": 1,
+  "modelId": "oa-abnormal-fit-completed-pathway-v1",
+  "reviewDate": "2026-09-08",
+  "organization": {
+    "name": "Operation Access",
+    "legalName": "Ambulatory Surgery Access Coalition dba Operation Access",
+    "ein": "94-3180356",
+    "website": "https://www.operationaccess.org/"
+  },
+  "status": "Publishable conditional research; not a recommendation, provider quote or verified marginal offer",
+  "intervention": {
+    "description": "Marginal support for OA's existing matching, donated-specialist coordination, preparation, interpretation and follow-up for an uninsured SF adult aged 50–75 with abnormal FIT and clinically indicated colonoscopy.",
+    "unit": "One completed-pathway equivalent; spending on offered referrals that fail to complete is allocated into this completed-unit cost.",
+    "scope": "Conditioned on an SF abnormal-FIT pathway; not unrestricted organization-wide donation effectiveness.",
+    "geographicShareOfUnrestrictedDonation": null,
+    "restrictedGiftAcceptance": null,
+    "availableAdditionalSlots": null,
+    "downstreamCancerTreatmentAccess": "Required for assumed treated-health gains but not verified for modeled marginal patient."
+  },
+  "formulas": {
+    "netQalyPerPathway": "marginallyEnabledFraction * netQalyPerEnabledCompletion",
+    "donorUsdPer10Qaly": "10 * cashAllocationPerCompletedPathway / netQalyPerPathway, only when netQalyPerPathway > 0",
+    "expandedCost": "cashAllocationPerCompletedPathway + marginallyEnabledFraction * (clinicalResourceSensitivityPerEnabledCompletion + otherDonatedSupportSensitivityPerEnabledCompletion)",
+    "expandedUsdPer10Qaly": "10 * expandedCost / netQalyPerPathway, only when netQalyPerPathway > 0",
+    "thresholdNetQalyPerEnabledCompletion": "cashAllocationPerCompletedPathway / (10000 * marginallyEnabledFraction), only when marginallyEnabledFraction > 0"
+  },
+  "observedCostAnchors": {
+    "year": 2025,
+    "totalAccrualExpense": 22876888,
+    "donatedClinicalCharges": 20530000,
+    "otherDonatedSupport": 89922,
+    "cashLikeExpenseBySubtraction": 2256966,
+    "annualReportCashExpense": 2256967,
+    "cashPresentationDifference": 1,
+    "mixedCompletedServices": 1529,
+    "gastroenterologyServicesNotFitOnly": 575,
+    "derivedCashPerMixedCompletedService": 1476.1059516023545,
+    "programCashLikeExpense": 1884605,
+    "programCashPerMixedCompletedService": 1232.573577501635,
+    "budget2026CashExpense": 1900000,
+    "budgetPerPriorYearVolumeNotObserved2026Cost": 1242.6422498364943
+  },
+  "externalEvidence": {
+    "navigation": {
+      "primaryUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13007779/",
+      "analysisN": 967,
+      "randomizedN": 985,
+      "interventionCompletion": 0.551,
+      "comparatorCompletion": 0.421,
+      "riskDifference": 0.13,
+      "riskDifferenceCi95": [
+        0.065,
+        0.194
+      ],
+      "usedAsModelMultiplier": false,
+      "reason": "Offered navigation contrast differs from a completed OA pathway whose existing service already includes navigation."
+    },
+    "mortality": {
+      "primaryUrl": "https://pubmed.ncbi.nlm.nih.gov/33789965/",
+      "horizonYears": 10,
+      "crcMortalityPer1000Compliers": 6.8,
+      "crcMortalityPer1000Noncompliers": 16,
+      "absoluteAssociation": 0.0092,
+      "causal": false,
+      "population": "Veneto adults50–69, FIT>20microgramsHb/g; noncompliance means no colonoscopy within the program, not necessarily never scoped elsewhere.",
+      "timingBiasCaveat": "Exposure classification/timing and immortal-time bias have been raised in subsequent methodological critique; no claim these are solved.",
+      "methodologicalCritiqueUrl": "https://pubmed.ncbi.nlm.nih.gov/37549982/",
+      "discountedQalyPerDeathIllustration": 10,
+      "illustrativeAssociationQaly": 0.092,
+      "usedAsDirectCausalEffect": false
+    }
+  },
+  "healthBridge": {
+    "type": "Judgment-based aggregate net QALYs, informed but not estimated by external mortality evidence.",
+    "centralRationale": "0.05 net QALY is roughly half the illustrative observational 0.092 QALY association; it is not an estimated attenuation factor or a validated stage model.",
+    "mortalityMorbidityDecomposition": null,
+    "reasonNoDecomposition": "No local stage, adenoma progression, utility or complication dataset supports a separate numeric decomposition. Do not add extra morbidity or survival credit to the aggregate net QALY.",
+    "benefitHorizon": "Discounted future adult health conditional on actual alternative care and mortality; source observes 10-year CRC mortality, not OA lifetime QALYs.",
+    "discountRate": null,
+    "discountRateNote": "No mechanically estimated survival model. The illustrative 10 QALYs per avoided death is a baseline-discounted judgment that includes both death timing over the ten-year period and subsequent health, not a discounted life-table calculation. Do not discount the aggregate net-health scenarios a second time.",
+    "childrenAndHouseholdQaly": 0
+  },
+  "resourceSensitivity": {
+    "clinicalResourceSensitivityPerEnabledCompletion": 2000,
+    "otherDonatedSupportSensitivityPerEnabledCompletion": 60,
+    "clinicalCostProvenance": "Analyst sensitivity for clinical facility/professional/procedure inputs, not provider quote; excludes separately modeled nonclinical donated coordination support. Waived clinical charges are not opportunity cost.",
+    "otherSupportProvenance": "Rounded mixed-program allocation from $89,922/1,529; not verified marginal cost.",
+    "perspective": "Donor budget plus induced clinical/nonclinical donated resources; not a complete societal analysis.",
+    "excludedUnquantified": [
+      "Additional cancer treatment and surveillance resources",
+      "Patient and caregiver time",
+      "Net downstream payer savings"
+    ],
+    "publicReimbursementDeduction": 0,
+    "zeroFundingHarmInterpretation": "Zero funding assumes identical clinical activity under replacement funding, hence no incremental clinical harm; does not rule out unmodeled donor opportunity costs or administrative harms."
+  },
+  "inputProvenance": {
+    "cashAllocationPerCompletedPathway": "Judgment anchored to observed mixed-program 2025 cash-like average; all functions and failed referral work allocated.",
+    "marginallyEnabledFraction": "Judgment about marginal operating support enabling pathway activity versus other funding or displaced activity; not measured from reserves.",
+    "netQalyPerEnabledCompletion": "Aggregate net health judgment versus actual alternative timing/care; includes mortality/morbidity consequences and procedural harms conceptually, not separately estimated."
+  },
+  "sourceDocuments": [
+    {
+      "id": "budget2026",
+      "url": "https://www.operationaccess.org/s/2026Budget-8pz4.pdf",
+      "resolvedUrl": "https://static1.squarespace.com/static/5f6b916c0b3bd103fda539ae/t/6a2c59e86d66d3079edc4f50/1781291496486/2026Budget.pdf",
+      "pages": "PDF1",
+      "date": "Approved 2025-12-10"
+    },
+    {
+      "id": "audit2025",
+      "url": "https://www.operationaccess.org/s/2025-Audited-Financial-Statements.pdf",
+      "resolvedUrl": "https://static1.squarespace.com/static/5f6b916c0b3bd103fda539ae/t/6a189cab42ad21662a9f6c02/1779997868020/2025+Audited+Financial+Statements.pdf",
+      "pages": "Printed5–6/PDF7–8 costs; printed8/PDF10 services; printed12–13/PDF14–15 charges, liquidity and restrictions",
+      "date": "Year ended2025-12-31; audit2026-05-20"
+    },
+    {
+      "id": "report2025",
+      "url": "https://www.operationaccess.org/s/Operation-Access-Annual-Report-2025.pdf",
+      "resolvedUrl": "https://static1.squarespace.com/static/5f6b916c0b3bd103fda539ae/t/6a18946f433bf862a8e9d8e6/1779995766063/Operation+Access+Annual+Report+2025.pdf",
+      "pages": "PDF2 funding/capacity;6 wait;7 specialty;13 finance;15 donors",
+      "date": "2025 reporting year"
+    },
+    {
+      "id": "eligibility",
+      "url": "https://www.operationaccess.org/for-patients-para-pacientes"
+    },
+    {
+      "id": "workflow",
+      "url": "https://www.operationaccess.org/volunteerinfo"
+    },
+    {
+      "id": "positiveFit",
+      "url": "https://www.cacoloncancer.org/operation-access-facilitated-access-to-donated-colonoscopies/"
+    },
+    {
+      "id": "coverage2026",
+      "url": "https://www.dhcs.ca.gov/medi-cal/updates/medi-cal-changes/"
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "central",
+      "cashAllocationPerCompletedPathway": 1500,
+      "marginallyEnabledFraction": 0.5,
+      "netQalyPerEnabledCompletion": 0.05,
+      "netQalyPerPathway": 0.025,
+      "donorUsdPer10Qaly": 600000,
+      "expandedCost": 2530,
+      "expandedUsdPer10Qaly": 1012000,
+      "thresholdNetQalyPerEnabledCompletion": 0.3,
+      "result": "Positive judgment scenario; not a confidence interval"
+    },
+    {
+      "name": "favorable",
+      "cashAllocationPerCompletedPathway": 1000,
+      "marginallyEnabledFraction": 0.75,
+      "netQalyPerEnabledCompletion": 0.2,
+      "netQalyPerPathway": 0.15000000000000002,
+      "donorUsdPer10Qaly": 66666.66666666666,
+      "expandedCost": 2545,
+      "expandedUsdPer10Qaly": 169666.66666666663,
+      "thresholdNetQalyPerEnabledCompletion": 0.13333333333333333,
+      "result": "Positive judgment scenario; not a confidence interval"
+    },
+    {
+      "name": "pessimistic_positive",
+      "cashAllocationPerCompletedPathway": 2500,
+      "marginallyEnabledFraction": 0.1,
+      "netQalyPerEnabledCompletion": 0.005,
+      "netQalyPerPathway": 0.0005,
+      "donorUsdPer10Qaly": 50000000,
+      "expandedCost": 2706,
+      "expandedUsdPer10Qaly": 54120000,
+      "thresholdNetQalyPerEnabledCompletion": 2.5,
+      "result": "Positive judgment scenario; not a confidence interval"
+    },
+    {
+      "name": "funding_supply_null",
+      "cashAllocationPerCompletedPathway": 1500,
+      "marginallyEnabledFraction": 0,
+      "netQalyPerEnabledCompletion": 0.05,
+      "netQalyPerPathway": 0,
+      "donorUsdPer10Qaly": null,
+      "expandedCost": 1500,
+      "expandedUsdPer10Qaly": null,
+      "thresholdNetQalyPerEnabledCompletion": null,
+      "result": "Zero incremental health; no finite ratio"
+    },
+    {
+      "name": "clinical_null",
+      "cashAllocationPerCompletedPathway": 1500,
+      "marginallyEnabledFraction": 0.5,
+      "netQalyPerEnabledCompletion": 0,
+      "netQalyPerPathway": 0,
+      "donorUsdPer10Qaly": null,
+      "expandedCost": 2530,
+      "expandedUsdPer10Qaly": null,
+      "thresholdNetQalyPerEnabledCompletion": 0.3,
+      "result": "Zero incremental health; no finite ratio"
+    },
+    {
+      "name": "harm",
+      "cashAllocationPerCompletedPathway": 1500,
+      "marginallyEnabledFraction": 0.5,
+      "netQalyPerEnabledCompletion": -0.001,
+      "netQalyPerPathway": -0.0005,
+      "donorUsdPer10Qaly": null,
+      "expandedCost": 2530,
+      "expandedUsdPer10Qaly": null,
+      "thresholdNetQalyPerEnabledCompletion": 0.3,
+      "result": "Net harm"
+    },
+    {
+      "name": "zero_funding_with_harm",
+      "cashAllocationPerCompletedPathway": 1500,
+      "marginallyEnabledFraction": 0,
+      "netQalyPerEnabledCompletion": -0.001,
+      "netQalyPerPathway": 0,
+      "donorUsdPer10Qaly": null,
+      "expandedCost": 1500,
+      "expandedUsdPer10Qaly": null,
+      "thresholdNetQalyPerEnabledCompletion": null,
+      "result": "Zero incremental health; no finite ratio"
+    }
+  ]
+}

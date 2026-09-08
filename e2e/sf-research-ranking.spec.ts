@@ -3,13 +3,13 @@ import { expect, test } from '@playwright/test';
 test('research list is numeric ascending and its first four match the home page', async ({ page }) => {
   await page.goto('/research');
   const cards = page.locator('[data-research-slug]');
-  await expect(cards).toHaveCount(40);
+  await expect(cards).toHaveCount(42);
   const rows = await cards.evaluateAll(nodes => nodes.map(n => ({ slug: n.getAttribute('data-research-slug'), cost: Number(n.getAttribute('data-cost-per-ten-qalys')) })));
   expect(rows.every((r, i) => Number.isFinite(r.cost) && (i === 0 || r.cost >= rows[i - 1].cost))).toBe(true);
-  expect(new Set(rows.map(r => r.slug)).size).toBe(40);
+  expect(new Set(rows.map(r => r.slug)).size).toBe(42);
   await expect(page.getByText('THE FIRST 25', { exact: false })).toHaveCount(0);
   await expect(page.locator('.sf-deep-queue, .sf-evidence-dossier, .sf-decision-snapshot')).toHaveCount(0);
-  await expect(page.getByRole('heading', { level: 2 })).toHaveCount(40);
+  await expect(page.getByRole('heading', { level: 2 })).toHaveCount(42);
   for (const row of rows) {
     await expect(page.locator(`[data-research-slug="${row.slug}"] a`).first()).toHaveAttribute('href', `/charities/${row.slug}`);
   }

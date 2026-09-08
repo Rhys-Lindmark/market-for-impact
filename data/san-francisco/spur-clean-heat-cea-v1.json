@@ -1,0 +1,189 @@
+{
+  "version": "research-spur-clean-heat-v1",
+  "reviewedAt": "2026-09-08",
+  "status": "exploratory-judgment-model-not-recommendation",
+  "organization": "SPUR",
+  "ein": "941498232",
+  "mechanism": "Additional non-electoral heat-pump permitting research and technical implementation support; count earlier actual gas-to-electric conversions, not permits or whole legislation",
+  "unit": "Hypothetical additional USD100000 program grant; no restricted offer verified",
+  "geography": "Only health of San Francisco residents, even when regional implementation generates it",
+  "formula": "netQalys = fraction * realization * contribution * effectiveYears * sfShare * deaths * qalysPerDeath - harm",
+  "inputDefinitions": {
+    "fraction": "Judgment: equivalent fraction of full regional modeled appliance exposure reduction brought forward by the whole prospective implementation package conditional on success; net of funded/required baseline, not percent permit growth",
+    "realization": "Judgment probability prospective package changes actual conversion timing/uptake rather than documentation only",
+    "contribution": "Judgment marginal gift's causal contribution to package, including replacement of existing SPUR funds and other actors; not SPUR's historical share of laws",
+    "effectiveYears": "Judgment equivalent discounted steady-state mortality-impact years, accounting for adoption ramp, actual earlier-exposure window, mortality lag and calendar discounting; not equipment lifetime",
+    "sfShare": "Judgment fraction of modeled health gains accruing to SF residents; not organization address or population share assumed factual",
+    "deaths": "Primary modeled 37–85 annual deaths for full regional appliance emissions elimination, not randomized outcomes;61 midpoint judgment",
+    "qalysPerDeath": "Judgment discounted remaining health-years per mortality case, valued at case time; calendar timing handled only in effectiveYears",
+    "harm": "Already-net SF QALY burden attributable to the grant, adjusted for its own implementation/additionality pathway; raw harm per installation requires that adjustment first. Identical replacement funding has no shared installation-harm increment; donor-specific harms can persist. Zero central means unquantified, not proven absent"
+  },
+  "sources": [
+    {
+      "id": "spur-current",
+      "url": "https://www.spur.org/news/2026-08-06/three-measures-drive-down-high-cost-heat-pump-installation",
+      "type": "provider-current-work"
+    },
+    {
+      "id": "spur-report",
+      "url": "https://www.spur.org/sites/default/files/2025-06/SPUR_Greenlighting_Clean_Heat.pdf",
+      "pages": "12–13",
+      "type": "provider-research"
+    },
+    {
+      "id": "health-primary",
+      "url": "https://www.baaqmd.gov/~/media/dotgov/files/rules/reg-9-rule-6-nitrogen-oxides-emissions-from-natural-gasfired-water-heaters/2021-amendment/documents/20221220_sr_appe_rg09040906-pdf.pdf?rev=f05e1e6f12874600a0382b178b04ab0d",
+      "pages": "6–8, AppendixE TableE.2",
+      "type": "agency-atmospheric-health-model",
+      "nativeEndpoint": "37–85 modeled annual premature deaths averted if total PM2.5 reductions from full regional equipment emissions elimination occur",
+      "causalLimit": "No donor/program causal effect; epidemiological model range, not SPUR CI"
+    }
+  ],
+  "cashCost": {
+    "amountUsd": 100000,
+    "classification": "judgment not price quote",
+    "components": [
+      {
+        "name": "loaded research/technical staff",
+        "usd": 70000
+      },
+      {
+        "name": "permitting data/evaluation and technical review",
+        "usd": 15000
+      },
+      {
+        "name": "coordination and overhead",
+        "usd": 15000
+      }
+    ],
+    "includesFailedImplementation": true
+  },
+  "resourceBoundary": {
+    "complete": false,
+    "omitted": "Net city/contractor implementation resources; incremental equipment/electrical work, operation, maintenance and disposal relative to otherwise scheduled replacement; financing/incidence and harms. No energy/healthcare savings credited.",
+    "cautions": "Fees/taxes/rebates are transfers, not synonymous with net resources. Do not add full replacement cost if comparator buys replacement anyway."
+  },
+  "scenarios": [
+    {
+      "key": "central",
+      "fraction": 0.01,
+      "realization": 0.5,
+      "contribution": 0.1,
+      "effectiveYears": 3,
+      "sfShare": 0.1,
+      "deaths": 61,
+      "qalysPerDeath": 8,
+      "harm": 0,
+      "donorCostUsd": 100000,
+      "netQalys": 0.0732,
+      "usdPerTenQalys": 13661202.18579235,
+      "signedStatus": "positive"
+    },
+    {
+      "key": "favorable",
+      "fraction": 0.05,
+      "realization": 0.7,
+      "contribution": 0.2,
+      "effectiveYears": 5,
+      "sfShare": 0.15,
+      "deaths": 85,
+      "qalysPerDeath": 12,
+      "harm": 0,
+      "donorCostUsd": 100000,
+      "netQalys": 5.3549999999999995,
+      "usdPerTenQalys": 186741.36321195145,
+      "signedStatus": "positive"
+    },
+    {
+      "key": "pessimistic",
+      "fraction": 0.001,
+      "realization": 0.2,
+      "contribution": 0.02,
+      "effectiveYears": 1,
+      "sfShare": 0.05,
+      "deaths": 37,
+      "qalysPerDeath": 3,
+      "harm": 0,
+      "donorCostUsd": 100000,
+      "netQalys": 0.000022200000000000004,
+      "usdPerTenQalys": 45045045045.04504,
+      "signedStatus": "positive"
+    },
+    {
+      "key": "ambitious_scale_stress_excluded_ranking",
+      "fraction": 0.1,
+      "realization": 0.75,
+      "contribution": 0.2,
+      "effectiveYears": 7,
+      "sfShare": 0.2,
+      "deaths": 85,
+      "qalysPerDeath": 12,
+      "harm": 0,
+      "donorCostUsd": 100000,
+      "netQalys": 21.420000000000005,
+      "usdPerTenQalys": 46685.34080298785,
+      "signedStatus": "positive"
+    },
+    {
+      "key": "funding_null",
+      "fraction": 0.01,
+      "realization": 0.5,
+      "contribution": 0,
+      "effectiveYears": 3,
+      "sfShare": 0.1,
+      "deaths": 61,
+      "qalysPerDeath": 8,
+      "harm": 0,
+      "donorCostUsd": 100000,
+      "netQalys": 0,
+      "usdPerTenQalys": null,
+      "signedStatus": "null"
+    },
+    {
+      "key": "implementation_null",
+      "fraction": 0.01,
+      "realization": 0,
+      "contribution": 0.1,
+      "effectiveYears": 3,
+      "sfShare": 0.1,
+      "deaths": 61,
+      "qalysPerDeath": 8,
+      "harm": 0,
+      "donorCostUsd": 100000,
+      "netQalys": 0,
+      "usdPerTenQalys": null,
+      "signedStatus": "null"
+    },
+    {
+      "key": "harm",
+      "fraction": 0.01,
+      "realization": 0.5,
+      "contribution": 0.1,
+      "effectiveYears": 3,
+      "sfShare": 0.1,
+      "deaths": 61,
+      "qalysPerDeath": 8,
+      "harm": 0.1,
+      "donorCostUsd": 100000,
+      "netQalys": -0.026800000000000004,
+      "usdPerTenQalys": null,
+      "signedStatus": "harm"
+    }
+  ],
+  "coreScenarioKeys": [
+    "central",
+    "favorable",
+    "pessimistic"
+  ],
+  "rankingExcludedScenarioKeys": [
+    "ambitious_scale_stress_excluded_ranking"
+  ],
+  "currentRuleBaseline": {
+    "url": "https://www.baaqmd.gov/en/rules-and-compliance/rule-development/building-appliances?sc_lang=en",
+    "checkedAt": "2026-09-08",
+    "finding": "July14,2026 draft flexibility amendments, August13 comment deadline, tentative November boarddecision; existing public technical guidance and implementation working group are baseline, not donor-added outcomes",
+    "pollutantBoundary": "37–85 total-PM mortality requires actual gas-to-electric combustion-emission removal; hypothetical zero-NOx gas equipment cannot inherit primary-PM benefit automatically"
+  },
+  "verifiedMarginalOffer": null,
+  "verifiedSfRestriction": null
+}

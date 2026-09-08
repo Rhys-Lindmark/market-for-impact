@@ -1,0 +1,367 @@
+{
+  "organization": "Vision To Learn",
+  "eyebrow": "National organization · Bay and SF school vision services",
+  "program": "Conditional whole-organization health value of a $100,000 unrestricted gift",
+  "donationUrl": "https://visiontolearn.org/",
+  "published": "September 8, 2026",
+  "modelVersion": "vision-to-learn-whole-gift-v2",
+  "nutshell": {
+    "headline": "School eyeglasses improve vision. The health value of the next unrestricted gift is less certain.",
+    "body": "Our conditional central estimate is $53.43 million per 10 SF-resident QALYs, $10.02 million for Bay residents including SF, and $801,000 nationally. These are explicit analyst judgments, not trial-measured QALYs or a priced funding offer. A favorable joint scenario passes $100,000 nationally but not for Bay or SF health.",
+    "whyItMayWork": "Mobile examinations and glasses address real visual deficits; replacement-supported cohorts show sustained corrected vision. California donations may also enable federal financing.",
+    "whyWeAreCautious": "Pediatric preference utility, care otherwise received, wearing time, gift allocation and marginal financing are not measured for the next gift.",
+    "recommendationBlocker": "No verified marginal capacity, current complete cost quote, eligible matching headroom or pediatric QALY calibration."
+  },
+  "summary": [
+    {
+      "label": "Central donor cost / 10 QALYs",
+      "value": "$53.43M SF / $10.02M Bay / $801K US",
+      "detail": "The same gift produces .018716 SF, .099821 Bay and 1.247760 US QALYs. These are nested scopes, not additive."
+    },
+    {
+      "label": "Whole gift",
+      "value": "$100,000 once",
+      "detail": "Central $80,000 clinical delivery and $20,000 shared institutional work; all costs retained, allocation judgmental."
+    },
+    {
+      "label": "Recipient",
+      "value": "Vision To Learn · EIN 45-3457853",
+      "detail": "Official provider disclosure; distinct from PHC adult glasses and PVF/Lions cataract care."
+    },
+    {
+      "label": "Gross associated operating-resource envelope",
+      "value": "$114,222 central",
+      "detail": "Includes assumed donated delivery resources and failed/replaced provision; not net incremental full societal cost. Family time and some opportunity costs are omitted."
+    }
+  ],
+  "programSection": {
+    "body": "Vision To Learn provides school-based screenings, examinations, fitting and glasses to low-income children nationally, including SFUSD and other Bay districts. This ordinary-gift model represents that clinical core while retaining organizational overhead and unquantified work. Actual clinics are verified; modeled extra child-courses are not a capacity promise.",
+    "steps": [
+      {
+        "title": "Fund the whole organization",
+        "detail": "The core allocation funds complete delivery cash, including upstream screening and noncompletion. Shared administration, fundraising and other institutional work retain their cost."
+      },
+      {
+        "title": "Enable additional care",
+        "detail": "Financial additionality distinguishes newly enabled courses from replacement funding; a separate clinical-gap prior excludes children already adequately corrected."
+      },
+      {
+        "title": "Deliver and maintain useful glasses",
+        "detail": "Effective wearing time, not pair count, drives health. Second pairs and replacements preserve the same child's correction rather than create another health gain."
+      },
+      {
+        "title": "Count finite health by residence",
+        "detail": "After an explicit dispensing delay, useful correction lasts only until the no-gift care comparator catches up. No lifetime learning, earnings or blindness-prevention tail is added."
+      }
+    ],
+    "boundary": "Bay includes SF, within US. Regional resident shares are assumptions, not current output fractions. Overseas health is zero. Partner-provided care must not be counted again in another report."
+  },
+  "model": {
+    "headline": "Finite corrected-vision time, not test scores converted into health",
+    "body": "Central dispensing begins 1.5 months after donation and the incremental window lasts one year; favorable starts after one month for two years, pessimistic after three months for six months. All delays and catch-up times are judgments. Health is discounted at 3% from donation; shared service harm occurs at dispensing and independent donor harm at donation.",
+    "equation": {
+      "label": "Health for each base or matching tranche",
+      "expression": "Q = children × financial additionality × (uncorrected fraction × effective wear × utility × discounted corrected-time − shared harm), discounted to dispensing; apply tranche residence shares, then subtract independent donor harm.",
+      "result": "Central 1.247760 US QALYs / .099821 Bay / .018716 SF for the same $100,000."
+    },
+    "inputs": [
+      {
+        "key": "cost",
+        "label": "Direct cash / associated in-kind per delivered child",
+        "confidence": "Analyst judgment",
+        "best": "$225 / $40",
+        "range": "$150–$400 / $25–$75",
+        "basis": "Complete direct-course allocation includes failed screens, exams, noncompletion and follow-up. Historical below-$150 provider narrative is not a current quote. Favorable $150 must support two years."
+      },
+      {
+        "key": "allocation",
+        "label": "Clinical share of whole gift",
+        "confidence": "Analyst judgment",
+        "best": "80%",
+        "range": "65%–90%",
+        "basis": "Remaining shared institutional costs retained; academic and broader benefits unquantified."
+      },
+      {
+        "key": "additionality",
+        "label": "Financial additionality / uncorrected comparator",
+        "confidence": "Analyst judgment",
+        "best": "50% / 60%",
+        "range": "20%–80% / 30%–90%; zero tested",
+        "basis": "Different funding and clinical substitutes; no third blanket replacement factor."
+      },
+      {
+        "key": "wear",
+        "label": "Effective correction fraction",
+        "confidence": "Analyst judgment",
+        "best": "60%",
+        "range": "30%–80%",
+        "basis": "Includes loss and nonwear; not measured annual adherence or extra completion probability."
+      },
+      {
+        "key": "utility",
+        "label": "Preference utility while effectively corrected",
+        "confidence": "Analyst judgment",
+        "best": "0.02",
+        "range": "0.005–0.04; zero tested",
+        "basis": "Unvalidated pediatric analyst prior. Chart-line and academic gains are not preference utility."
+      },
+      {
+        "key": "geography",
+        "label": "Ordinary base Bay / SF health shares",
+        "confidence": "Analyst judgment",
+        "best": "8% / 1.5%",
+        "range": "3%–15% / 0.3%–4%",
+        "basis": "Nested resident allocation priors, not measured marginal output. California match uses separate conditional Bay20% / SF3.75%."
+      },
+      {
+        "key": "public",
+        "label": "New public matching cash",
+        "confidence": "Analyst judgment",
+        "best": "$0 central",
+        "range": "Separate hypothetical $32,000",
+        "basis": "An assumed1:1 match on40% California core budget only. Not an available donor offer or statutory rate."
+      }
+    ],
+    "giftHeading": "Same $100,000 gift; scenarios are not confidence intervals",
+    "sensitivity": [
+      {
+        "case": "central",
+        "headline": "SF: $53,429,092/10Q · BAY: $10,017,955/10Q · US: $801,436/10Q",
+        "detail": "QALYs SF 0.0187164, Bay 0.0998208, US 1.24776. Gross associated resource envelope $114,222."
+      },
+      {
+        "case": "favorable",
+        "headline": "SF: $933,846/10Q · BAY: $249,026/10Q · US: $37,354/10Q",
+        "detail": "QALYs SF 1.07084, Bay 4.01565, US 26.7710. Gross associated resource envelope $115,000."
+      },
+      {
+        "case": "pessimistic",
+        "headline": "SF: $59,606,301,161/10Q · BAY: $5,960,630,116/10Q · US: $178,818,903/10Q",
+        "detail": "QALYs SF 0.0000167767, Bay 0.000167767, US 0.00559225. Gross associated resource envelope $112,188."
+      },
+      {
+        "case": "central conditional public match",
+        "headline": "SF: $26,714,546/10Q · BAY: $5,008,977/10Q · US: $572,455/10Q",
+        "detail": "QALYs SF 0.0374328, Bay 0.199642, US 1.74686. Gross associated resource envelope $151,911."
+      },
+      {
+        "case": "zero financial additionality",
+        "headline": "SF: no positive ratio · BAY: no positive ratio · US: no positive ratio",
+        "detail": "QALYs SF 0.00000, Bay 0.00000, US 0.00000. Gross associated resource envelope $114,222."
+      },
+      {
+        "case": "zero clinical gain",
+        "headline": "SF: no positive ratio · BAY: no positive ratio · US: no positive ratio",
+        "detail": "QALYs SF 0.00000, Bay 0.00000, US 0.00000. Gross associated resource envelope $114,222."
+      },
+      {
+        "case": "no gain shared harm",
+        "headline": "SF: no positive ratio · BAY: no positive ratio · US: no positive ratio",
+        "detail": "QALYs SF -0.000132842, Bay -0.000708489, US -0.00885611. Gross associated resource envelope $114,222."
+      },
+      {
+        "case": "zero additionality independent harm",
+        "headline": "SF: no positive ratio · BAY: no positive ratio · US: no positive ratio",
+        "detail": "QALYs SF -0.00150000, Bay -0.00800000, US -0.100000. Gross associated resource envelope $114,222."
+      },
+      {
+        "case": "central three month catchup",
+        "headline": "SF: $215,897,415/10Q · BAY: $40,480,765/10Q · US: $3,238,461/10Q",
+        "detail": "QALYs SF 0.00463183, Bay 0.0247031, US 0.308789. Gross associated resource envelope $114,222."
+      },
+      {
+        "case": "central no sf residents",
+        "headline": "SF: no positive ratio · BAY: $10,017,955/10Q · US: $801,436/10Q",
+        "detail": "QALYs SF 0.00000, Bay 0.0998208, US 1.24776. Gross associated resource envelope $114,222."
+      },
+      {
+        "case": "central zero dispensing delay",
+        "headline": "SF: $53,232,043/10Q · BAY: $9,981,008/10Q · US: $798,481/10Q",
+        "detail": "QALYs SF 0.0187857, Bay 0.100190, US 1.25238. Gross associated resource envelope $114,222."
+      }
+    ],
+    "uncertaintyBoundary": "Joint favorable inputs are not a verified offer or confidence bound. Null financial expansion or null clinical value produces no positive ratio; shared or independent health harm can make net QALYs negative. Independent harm geography uses ordinary resident-share priors, not a verified harm location. Zero dispensing delay reproduces v1 central for provenance.",
+    "fundingBoundary": "Ordinary public reimbursement is baseline. Only the optional California match scenario adds NEW public cash, assuming eligibility, claims, capacity and a hypothetical rate. Base and match children have separate geography; the match does not fund non-California care. All public cash and in-kind allowances enter gross resource costs. Direct claims administration is assumed inside course cost; institutional capacity is not unlimited. This envelope counts committed failed/replaced provision and is not a net incremental societal CEA."
+  },
+  "evidence": [
+    {
+      "key": "acuity",
+      "design": "Guo et al.2021 cross-sectional presenting versus best-corrected acuity",
+      "population": "4,972 Baltimore school children prescribed glasses",
+      "result": "70% gained at least two better-eye chart lines on refraction.",
+      "transfer": "Supports optical correction, not sustained wear, untreated delay or preference utility."
+    },
+    {
+      "key": "duration",
+      "design": "Mudie et al.2022 prospective school cohort",
+      "population": "Baltimore second/third graders;206 at first follow-up",
+      "result": "Presenting distance acuity improved from .14 to .05 logMAR; improvement persisted into the next school year.",
+      "transfer": "Two pairs and replacement support were supplied. No randomized usual-care comparator; does not validate two-year delay avoided."
+    },
+    {
+      "key": "academic",
+      "design": "Neitzel et al.2021 randomized school rollout",
+      "population": "Baltimore grades3–7",
+      "result": "Reading benefit at one year was not sustained at two years.",
+      "transfer": "Academic effect is not converted to QALYs; its attenuation is not proof that visual benefit disappears."
+    },
+    {
+      "key": "utility",
+      "design": "Pediatric glasses-type QoL trial and adult economic evaluation",
+      "population": "Chinese children and Indian adults, respectively",
+      "result": "Pediatric NEI-RQL-42 is not preference utility; adult modeled utility is not validated US pediatric gain.",
+      "transfer": "The model's0.02 utility remains an explicit analyst judgment."
+    },
+    {
+      "key": "public",
+      "design": "Current DHCS MOS provider/financing guidance",
+      "population": "California school vision services",
+      "result": "VTL is a current provider; eligible private funding can draw federal CHIP funds.",
+      "transfer": "No verified ordinary-gift match rate, headroom or new local slots. Existing reimbursement is not automatically incremental."
+    }
+  ],
+  "reservations": [
+    "Utility, adherence, clinical catch-up, marginal costs and regional shares are weakly calibrated judgments.",
+    "Two-year favorable correction requires replacement and follow-up within a low assumed cash budget.",
+    "Current Baltimore replacement copy inconsistently states18months versus one year; no national guarantee inferred.",
+    "Public reimbursement, donated glasses and public screening require partner-resource accounting and substitution checks.",
+    "Do not add school test-score gains, referrals, two pairs per child or partner counts as separate QALYs."
+  ],
+  "excludedBenefits": [
+    "Academic attainment and economic welfare",
+    "Parent health and time benefits",
+    "Unquantified institutional research/advocacy",
+    "Medical-cost savings",
+    "Unproven lifetime amblyopia or blindness prevention"
+  ],
+  "sources": [
+    {
+      "publisher": "Vision To Learn",
+      "title": "Annual Reports and legal identity",
+      "url": "https://visiontolearn.org/annual-reports/",
+      "published": "current page, accessed September 8, 2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official provider or partner disclosure"
+    },
+    {
+      "publisher": "Vision To Learn",
+      "title": "2024–2025 Annual Report",
+      "url": "https://visiontolearn.org/wp-content/uploads/VTL_AnnualReport_2025_20-ocr.pdf",
+      "published": "FY2024–2025; accessed September 8, 2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Organization annual report, not audited financial statements"
+    },
+    {
+      "publisher": "Vision To Learn",
+      "title": "A Decade of Progress",
+      "url": "https://visiontolearn.org/wp-content/uploads/VTL-A-Decade-of-Progress.pdf",
+      "published": "2022-era narrative, not a current quote; accessed September 8, 2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official provider or partner disclosure"
+    },
+    {
+      "publisher": "Vision To Learn",
+      "title": "Northern California",
+      "url": "https://visiontolearn.org/where-we-work/northern-california/",
+      "published": "current page accessed September 8, 2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official provider or partner disclosure"
+    },
+    {
+      "publisher": "Vision To Learn",
+      "title": "California regional report",
+      "url": "https://visiontolearn.org/wp-content/uploads/California_RegionalPages_10.pdf",
+      "published": "2022–2023 output; accessed September 8, 2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official provider or partner disclosure"
+    },
+    {
+      "publisher": "California DHCS",
+      "title": "Mobile Optometric Services Program",
+      "url": "https://www.dhcs.ca.gov/services/medi-cal-resources/medi-cal-eligibility-division/mobile-optometric-services-mos-program/",
+      "published": "current page accessed September 8, 2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official government program guidance"
+    },
+    {
+      "publisher": "California DHCS",
+      "title": "MOS Frequently Asked Questions",
+      "url": "https://www.dhcs.ca.gov/services/medi-cal-resources/medi-cal-eligibility-division/frequently-asked-questions-mos-faqs/",
+      "published": "current page accessed September 8, 2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official government program guidance"
+    },
+    {
+      "publisher": "California DHCS",
+      "title": "How do I become a donor?",
+      "url": "https://www.dhcs.ca.gov/services/medi-cal-resources/medi-cal-eligibility-division/how-do-i-become-a-donor/",
+      "published": "current page accessed September 8, 2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official government program guidance"
+    },
+    {
+      "publisher": "Guo et al.; Harvard author institution",
+      "title": "Visual acuity and refractive findings in children prescribed glasses from a school-based vision program",
+      "url": "https://eye.hms.harvard.edu/publications/visual-acuity-and-refractive-findings-children-prescribed-glasses-school-based",
+      "published": "J AAPOS 2021; PMID34752908; abstract read September 8, 2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary study abstract or author-institution record"
+    },
+    {
+      "publisher": "Neitzel et al.; JAMA Ophthalmology",
+      "title": "Effect of a Randomized Interventional School-Based Vision Program on Academic Performance of Students in Grades 3 to 7",
+      "url": "https://jamanetwork.com/journals/jamaophthalmology/fullarticle/2783867",
+      "published": "September 9, 2021; indexed primary text accessed September 8, 2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary randomized study, indexed publisher text"
+    },
+    {
+      "publisher": "Yi et al.; Ophthalmology/PubMed",
+      "title": "Impact of Free Glasses and a Teacher Incentive on Children's Use of Eyeglasses",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26275472/",
+      "published": "2015; primary abstract indexed September 8, 2026; subsequent open429",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary study abstract or author-institution record"
+    },
+    {
+      "publisher": "Zhou et al.; Acta Ophthalmologica/PubMed",
+      "title": "Self-refraction, ready-made glasses and quality of life among rural myopic Chinese children",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27321197/",
+      "published": "2017; PMID27321197; primary abstract accessed September 8, 2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary study abstract or author-institution record"
+    },
+    {
+      "publisher": "Angell et al.; BMJ Open Ophthalmology/PubMed",
+      "title": "Ready-made and custom-made eyeglasses in India: a cost-effectiveness analysis of a randomised controlled trial",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29657979/",
+      "published": "February9,2018; primary abstract accessed September8,2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary study abstract or author-institution record"
+    },
+    {
+      "publisher": "Mudie et al.; Johns Hopkins University",
+      "title": "Baltimore Reading and Eye Disease Study: vision outcomes of school-based eye care",
+      "url": "https://pure.johnshopkins.edu/en/publications/baltimore-reading-and-eye-disease-study-vision-outcomes-of-school/",
+      "published": "February2022; primary institutional abstract read September8,2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary study abstract or author-institution record"
+    },
+    {
+      "publisher": "Johns Hopkins Medicine",
+      "title": "Baltimore Reading and Eye Disease Study",
+      "url": "https://www.hopkinsmedicine.org/wilmer/research/dana-center/research/breds",
+      "published": "current institutional page read September8,2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official provider or partner disclosure"
+    },
+    {
+      "publisher": "Vision for Baltimore",
+      "title": "For Families",
+      "url": "https://visionforbaltimore.org/for-families/",
+      "published": "current partner page read September8,2026; replacement windows internally inconsistent",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official provider or partner disclosure"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';
 test('Remedy national report does not replace SF ranking or invent Bay share',async({page})=>{
  await page.goto('/research');
- await expect(page.locator('[data-research-slug]')).toHaveCount(50);
+ await expect(page.locator('[data-research-slug]')).toHaveCount(51);
  await expect(page.locator('[data-geography="International"]')).toHaveCount(2);
  const row=page.locator('[data-research-slug="remedy-alliance"]');
  await expect(row).toHaveCount(1);await expect(row).toContainText('$15.2M');

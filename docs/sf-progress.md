@@ -1,5 +1,13 @@
 # San Francisco giving — active phase plan
 
+## Latest recovery override — September 8
+
+Active block started2026-09-08T12:37:40Z. Manager owns Site edits; three research workers have bounded independent evidence/audit assignments. Phase4/SF12 is accepted through v129; all ten mechanism-first models are published. Five large-Bay program comparison accepted in PR192/v130, exact83fcb3bd65ed89bc267ab6d4ef0b65f003e30ae2.38 SF-ranked reports plus three separately scoped Bay reports. Older recovery notes below are historical.
+
+Independent user-requested phase SF16/#193: simplify research index to one cost-sorted list, no duplicate first25 or inline deep-dives. Exit criteria:38 unique substantive report destinations; unchanged numeric ordering/top4; useful methodology/regional links; retained causal/API/source checks; responsive native render; green tests/build/CI and canonical deployment. Local16 focused phone/tablet checks and273 unit tests pass; lint/build pass. Final CI and deployment pending. No model estimate changed in this UX phase.
+
+Next dependency-ordered research: Brightline/RTSF and remaining unconventional programs, then policy three; expanded100 discovery and funding-room diligence remain tracked in BACKLOG/#191. All25 funding audits are drafted, not all integrated into published models. Prioritize factual cost-boundary and public-overlap corrections; do not convert missing funding information into invented prices or offers.
+
 Updated 2026-09-07. Manager: current task. Three parallel research agents completed read-only evidence handoffs in PR #177; Site edits and deployment remain manager-owned. User-authorized parallel discovery supersedes serial evidence collection, not source acceptance or focused model releases. Stall interval: 25 minutes of active work without accepted evidence.
 
 ## Phase 1 — concise SF front door

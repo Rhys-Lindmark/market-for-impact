@@ -7,8 +7,8 @@ test('Huckleberry direct-QALY research preserves funding and duration boundaries
  const r=await request.get('/api/sf-huckleberry-model');expect(r.ok()).toBeTruthy();
  const m=await r.json();expect(m.evaluatedScenarios[1].costPerTenQalys).toBeCloseTo(3692307.6923,2);
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
- await page.goto('/research#research-funnel');
+ await page.goto('/research');
  for(const slug of ['huckleberry-youth-programs','harm-reduction-therapy-center','homeless-youth-alliance','jcyc']) {
-  await expect(page.locator('.sf-deep-queue a[href$="/charities/'+slug+'"]')).toBeVisible();
+  await expect(page.locator('[data-research-slug] a[href$="/charities/'+slug+'"]').first()).toBeVisible();
  }
 });

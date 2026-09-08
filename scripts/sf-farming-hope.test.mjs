@@ -6,7 +6,7 @@ const review = JSON.parse(fs.readFileSync('data/san-francisco/farming-hope-revie
 const model = JSON.parse(fs.readFileSync('data/san-francisco/farming-hope-apprenticeship-cea-v1.json', 'utf8'));
 const bridge = JSON.parse(fs.readFileSync('data/san-francisco/farming-hope-employment-qaly-bridge-audit-v1.json', 'utf8'));
 const page = fs.readFileSync('app/charities/farming-hope/page.tsx', 'utf8');
-const sfPage = fs.readFileSync('app/san-francisco/ResearchLibrary.tsx', 'utf8');
+const sfPage = fs.readFileSync('lib/sf-research-index.ts', 'utf8');
 
 test('Farming Hope review separates reported placement from causal impact', () => {
   assert.equal(review.evidence.length, 3);

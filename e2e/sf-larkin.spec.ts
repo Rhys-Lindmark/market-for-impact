@@ -9,6 +9,6 @@ test('Larkin cash model exposes assumptions and threshold without overflow',asyn
  const m=await r.json();expect(m.evaluatedScenarios[1].costPerTenQalys).toBe(40400000);
  expect(m.fundingRoom.verifiedUsd).toBeNull();
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
- await page.goto('/research#research-funnel');
- await expect(page.locator('.sf-deep-queue a[href$="/charities/larkin-street"]')).toBeVisible();
+ await page.goto('/research');
+ await expect(page.locator('[data-research-slug] a[href$="/charities/larkin-street"]').first()).toBeVisible();
 });

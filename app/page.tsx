@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumSignificantDigits: 3 });
 const root = 'https://ai.rhyslindmark.com/givebetter';
 function GivingIllustration({ index, label }: { index:number; label:string }) {
-  return <div className="sf-home-illustration"><img src="/images/givebetter-principles.png" alt={label} width="600" height="200" style={{transform:`translateX(-${index * 100 / 3}%)`}} /></div>;
+  return <div className="sf-home-illustration"><img src={`${root}/images/givebetter-principles.png`} alt={label} width="600" height="200" style={{transform:`translateX(-${index * 100 / 3}%)`}} /></div>;
 }
 const photos: Record<string, { src: string; caption: string; source: string }> = {
   'san-francisco-aids-foundation': { src: '/images/sfaf.jpg', caption: 'Harm reduction at San Francisco AIDS Foundation. Photo: SFAF.', source: 'https://www.sfaf.org/health-services/overdose-prevention-response/' },
@@ -57,7 +57,7 @@ export default function SanFranciscoHome() {
       </section>
       <p className="sf-home-note">Our four lowest central estimates so far. A “better life” means 10 additional quality-adjusted life years, potentially spread across people. Estimates are uncertain; marginal funding room is unverified.</p>
       <section aria-label="Four current charity picks">{picks.map((pick, i) => <article className="sf-home-charity" id={pick.slug} key={pick.slug}>
-        <figure><img src={photos[pick.slug].src} alt={photos[pick.slug].caption} width="480" height="480" loading="lazy" /><figcaption><a href={photos[pick.slug].source}>{photos[pick.slug].caption}</a></figcaption></figure>
+        <figure><img src={`${root}${photos[pick.slug].src}`} alt={photos[pick.slug].caption} width="480" height="480" loading="lazy" /><figcaption><a href={photos[pick.slug].source}>{photos[pick.slug].caption}</a></figcaption></figure>
         <div><p className="sf-home-eyebrow">CHARITY {i + 1} OF 4</p><h2>{pick.program}</h2>
           <div className="sf-home-charity-body">
             <section><h3>Overview</h3><p>{pick.overview}</p></section>

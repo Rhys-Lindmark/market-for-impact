@@ -1,0 +1,7 @@
+# Remedy integration acceptance
+
+September8,2026. Read-only `work/market-for-impact-remedy-alliance`: calculator, API, model/report JSON, page, US index and research page. **No material correction.**140 runtime parity/geography checks passed against accepted final packet across ten scenarios. Required-key, bounded survival-loop, fraction, cost and harm guards are present.
+
+US-wide price appears only in the separate US research section; no Remedy reference in SF ranking/index. SF/Bay/CA outcomes and Bay share remain null, not zero. Report/API retain across-bundle event and same-person future-time deduplication as judgments, finite survival, funded public baseline, fullgift/grossresource separation and all ten signed scenarios. No localprice is inferred from the California partnership. The legacy earlyDeathsPrevented field is contextualized by packet semantics, not presented as observed lives saved.
+
+RotaCare v2 follow-up also accepted: direct event-year × clipped health-year recomputation gives central fiveyearwindow Bay.062810232384Q,15,920,972.78USD/10Q; severe stress2.03379626443Q,491,691.33USD/10Q. Clipping retains original completecost and harms; year5 enddated events correctly receive no laterhealth in this diagnostic. Core eight results are unchanged. New copy explicitly admits durable-consequence assumption and absent postyear5catch-up modeling; “no-new-gift usual care” replaces blanket untreatedcomparator. These satisfy the prior audit request, not prove a lower/upper statistical bound.

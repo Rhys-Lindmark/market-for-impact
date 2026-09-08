@@ -1,0 +1,22 @@
+import {test,expect} from '@playwright/test';
+test('Remedy national report does not replace SF ranking or invent Bay share',async({page})=>{
+ await page.goto('/research');
+ await expect(page.locator('[data-research-slug]')).toHaveCount(46);
+ await expect(page.locator('[data-international-slug]')).toHaveCount(2);
+ const row=page.locator('[data-us-slug="remedy-alliance"]');
+ await expect(row).toHaveCount(1);await expect(row).toContainText('$76K');
+ await expect(page.locator('#top-research')).not.toContainText('Remedy');
+ await row.locator('a').first().click();
+ await expect(page.locator('article')).toContainText('$76,164');
+ await expect(page.locator('article')).toContainText('$116,785');
+ const donations=page.getByRole('link',{name:'Donate',exact:true});
+ await expect(donations).toHaveCount(2);
+ for(const donation of await donations.all()) await expect(donation).toHaveAttribute('href','https://givebutter.com/ScOTky');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
+ const api=await(await page.request.get('/api/remedy-alliance-model')).json();
+ expect(api.evaluated).toHaveLength(10);
+ expect(api.evaluated[0].donorUsdPer10Qaly).toBeCloseTo(76164.1656,2);
+ expect(api.evaluated[0].bayHealthShare).toBeNull();expect(api.evaluated[0].bayUsdPer10Qaly).toBeNull();
+ await page.goto('/');
+ expect(await page.locator('.sf-home-charity').evaluateAll(ns=>ns.map(n=>n.id))).toEqual(['san-francisco-aids-foundation','project-homeless-connect','glide','breathe-california']);
+});

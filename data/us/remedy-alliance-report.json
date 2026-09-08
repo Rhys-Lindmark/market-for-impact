@@ -1,0 +1,249 @@
+{
+  "organization": "Remedy Alliance / For The People",
+  "eyebrow": "California-serving · national health",
+  "program": "Low-cost naloxone access through community harm-reduction programs",
+  "donationUrl": "https://givebutter.com/ScOTky",
+  "published": "September 8, 2026",
+  "modelVersion": "remedy-alliance-general-gift-representative-naloxone-core-v1",
+  "nutshell": {
+    "headline": "Our best estimate is $76,164 per 10 additional overall QALYs.",
+    "body": "This represents an ordinary gift to Remedy’s naloxone-access core across its national network—not a California-only gift. The central gross associated-resource estimate is $116,785, above our $100,000 target. SF and Bay benefit shares are unknown.",
+    "whyItMayWork": "Low-cost supply can reach people likely to witness an overdose, where timely naloxone can prevent a fatal outcome.",
+    "whyWeAreCautious": "The model depends on uncertain additional supply, actual use and person-linked survival. Reported reversals are not lives saved.",
+    "recommendationBlocker": "Clarify the marginal supply mix and missing downstream access beyond public funding. This is a conditional model, not a verified donor offer or robust full-resource result."
+  },
+  "summary": [
+    {
+      "label": "Overall estimate",
+      "value": "$76,164 / 10 QALYs",
+      "detail": "National representative-core estimate with explicit donor-additionality judgments."
+    },
+    {
+      "label": "Associated resources",
+      "value": "$116,785 / 10 QALYs",
+      "detail": "Gross downstream-resource stress, not net societal cost."
+    },
+    {
+      "label": "SF / Bay share",
+      "value": "Unknown",
+      "detail": "A California warehouse or public contract does not identify beneficiary residence."
+    },
+    {
+      "label": "Evidence",
+      "value": "Clinical and observational",
+      "detail": "No randomized Remedy donor-to-mortality estimate."
+    }
+  ],
+  "programSection": {
+    "body": "Remedy supplies low-cost or free naloxone to community organizations and provides technical assistance. It is a California NDP partner and also serves a national network.",
+    "steps": [
+      {
+        "title": "Support community supply",
+        "detail": "Procurement and fulfillment help organizations obtain medicine for people who use drugs and their networks."
+      },
+      {
+        "title": "Complete the last mile",
+        "detail": "Health depends on distribution, availability during an overdose and additional rescue—not on shipment counts alone."
+      }
+    ],
+    "boundary": "We assign 80% of an ordinary gift to the naloxone core by judgment. Core costs already include administration; this is not another overhead haircut. Other activity receives no numerical benefit credit, but is not known to have zero impact."
+  },
+  "model": {
+    "headline": "A $10,000 gift yields an estimated 1.31295 overall QALYs.",
+    "body": "We use a standardized four-injectable-dose-equivalent bundle solely for procurement accounting—not a clinical dosing recommendation or a fixed product mix. Every cost and use assumption refers to that unit. Events are deduplicated across all bundles; person-time is deduplicated across repeated rescues.",
+    "equation": {
+      "label": "Central model",
+      "expression": "533.333 bundles × .40 additionality × (.05 unique-event equivalents × .05 person-linked survival equivalents × 2.54364 Q − .00002 shared harm) / 1.03",
+      "result": "1.31295 QALYs; $10,000 × 10 / 1.31295 = $76,164"
+    },
+    "inputs": [
+      {
+        "key": "allocation",
+        "label": "Marginal core allocation",
+        "confidence": "Judgment",
+        "best": "80%",
+        "range": "50–95%",
+        "basis": "General-gift core share; all gift dollars remain in the numerator."
+      },
+      {
+        "key": "cash",
+        "label": "Cash per accounting bundle",
+        "confidence": "Judgment",
+        "best": "$15",
+        "range": "$10–$30",
+        "basis": "Approximately $7 commodity, $3 fulfillment and $5 support/administration. Historical injectable pricing is not a current quote or a nasal-product price."
+      },
+      {
+        "key": "external",
+        "label": "Other associated resources",
+        "confidence": "Judgment",
+        "best": "$10 per bundle",
+        "range": "$5–$20",
+        "basis": "Downstream time and supplies outside Remedy cash; charged on all funded bundles, including unused ones."
+      },
+      {
+        "key": "use",
+        "label": "Nonduplicated response-equivalents",
+        "confidence": "Judgment",
+        "best": ".05 per bundle in 12 months",
+        "range": ".01–.10",
+        "basis": "Includes last-mile failure, nonuse and expiry. Several funded bundles at one scene share one event credit."
+      },
+      {
+        "key": "survival",
+        "label": "Person-linked survival-equivalents",
+        "confidence": "Judgment",
+        "best": ".05 per qualifying event",
+        "range": ".02–.10",
+        "basis": "Marginal first-rescue-equivalent survival after alternative rescue and overlapping tails from repeated rescues of the same person. Not raw rescue survival."
+      },
+      {
+        "key": "additionality",
+        "label": "Funding/output additionality",
+        "confidence": "Judgment",
+        "best": "40%",
+        "range": "0–70%",
+        "basis": "Beyond public funding, other donors, existing stock and cross-subsidized supply; separate from alternative rescue at an event."
+      },
+      {
+        "key": "tail",
+        "label": "Finite survival difference",
+        "confidence": "Judgment",
+        "best": "5 years; .90 annual survival; .70 utility",
+        "range": "2–10 years; separate 1-year stress",
+        "basis": "3% discount and a rescue midpoint one year after the gift. Annual mortality does not itself remove duplicate person-time."
+      }
+    ],
+    "giftHeading": "How much could the estimate change?",
+    "sensitivity": [
+      {
+        "case": "Favorable",
+        "headline": "$3,069 / 10 QALYs",
+        "detail": "Joint optimistic assumptions; $4,527 with associated resources."
+      },
+      {
+        "case": "Pessimistic positive",
+        "headline": "$37.36 million / 10 QALYs",
+        "detail": "Lower utilization, survival and additionality; $49.81m gross."
+      },
+      {
+        "case": "One-year survival",
+        "headline": "$298,800 / 10 QALYs",
+        "detail": "Only one post-rescue year credited; $458,160 gross."
+      },
+      {
+        "case": "Dense public substitution",
+        "headline": "$304,657 / 10 QALYs",
+        "detail": "10% additionality stress, not a measured California result."
+      },
+      {
+        "case": "Null and harm",
+        "headline": "No positive ratio",
+        "detail": "Identical funding replacement gives zero shared health. Clinical null can retain shared harm; independent gift harm may persist under replacement."
+      }
+    ],
+    "uncertaintyBoundary": "These are joint analyst scenarios, not confidence intervals. Each person’s survival tail is credited once or partitioned into genuinely incremental intervals. The .05 survival coefficient already includes a judgment about repeat-rescue overlap. The model does not empirically identify unique lives saved.",
+    "fundingBoundary": "California NDP already provides free naloxone through Remedy and has supplied all 58 counties. Existing public contracts, tiered sales, commodity donations and a working-capital loan are baseline or substitutes—not a fresh gift’s impact. The model’s 40% additionality is a national judgment, not a verified unfunded queue. Costs plus external resources are gross associated commitments, not net societal incremental costs at the replacement null. Do not give full additive credit for one episode to Remedy, NDP and downstream organizations."
+  },
+  "evidence": [
+    {
+      "key": "oend",
+      "design": "Interrupted time series",
+      "population": "Massachusetts communities, Walley et al. 2013",
+      "result": "Greater overdose-education/naloxone implementation was associated with lower overdose mortality.",
+      "transfer": "Historical observational comparisons support plausibility but cannot be applied as Remedy’s donor-specific mortality percentage."
+    },
+    {
+      "key": "pittsburgh",
+      "design": "Administrative cohort, published 2025",
+      "population": "Pittsburgh harm-reduction participants, 2005–2023",
+      "result": "Reported responses demonstrate actual peer naloxone use; reported survival was 98%.",
+      "transfer": "No untreated comparator. Survival after response is not survival caused by supply. Repeat recipients, events and formulation differences matter; Remedy affiliations are disclosed."
+    },
+    {
+      "key": "delivery",
+      "design": "Primary organizational and payer documentation",
+      "population": "Remedy’s California and national supply network",
+      "result": "DHCS identifies Remedy as its injectable-naloxone distribution partner.",
+      "transfer": "This verifies delivery and a public funding baseline, not a new charitable gap or the location of marginal beneficiaries."
+    }
+  ],
+  "reservations": [
+    "Shipment, dose and reversal counts are not interchangeable with incremental lives saved.",
+    "Multiple bundles at a scene and repeated rescues of the same person must not duplicate event or survival credit.",
+    "The current marginal product mix, funding gap and geographic allocation are unknown.",
+    "The central gross-resource result exceeds $100,000 per 10 QALYs."
+  ],
+  "excludedBenefits": [
+    "Drug-checking, community-support and other noncore health effects.",
+    "Unmeasured nonfatal injury or treatment-entry benefits.",
+    "Unverified SF/Bay or international spillovers.",
+    "Healthcare savings and financial transfers treated as health benefits."
+  ],
+  "sources": [
+    {
+      "publisher": "Remedy Alliance",
+      "title": "Program and organization",
+      "url": "https://remedyallianceftp.org/",
+      "published": "Current page",
+      "sourceType": "Primary organizational description",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Remedy Alliance",
+      "title": "General giving",
+      "url": "https://givebutter.com/ScOTky",
+      "published": "Current page",
+      "sourceType": "Primary donation route",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "California DHCS",
+      "title": "Products available through NDP",
+      "url": "https://www.dhcs.ca.gov/individuals/naloxone-distribution-project/products-available-through-the-ndp-2/",
+      "published": "Current page",
+      "sourceType": "Primary public payer/program",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "California DHCS",
+      "title": "Naloxone Distribution Project",
+      "url": "https://www.dhcs.ca.gov/individuals/naloxone-distribution-project/",
+      "published": "Current page",
+      "sourceType": "Primary public baseline",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Walley et al.",
+      "title": "Overdose education and naloxone distribution in Massachusetts",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23372174/",
+      "published": "2013",
+      "sourceType": "Primary observational study abstract",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Dasgupta et al.",
+      "title": "Seventeen years of Pittsburgh naloxone distribution and administration",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0315026",
+      "published": "October 24, 2025",
+      "sourceType": "Primary administrative cohort",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Remedy Alliance",
+      "title": "First ten months of naloxone distribution",
+      "url": "https://remedyallianceftp.org/blogs/news/remedy-alliance-for-the-people-distributes-over-1-million-doses-of-naloxone-in-the-first-10-months-of-operation",
+      "published": "2023",
+      "sourceType": "Historical primary activity/price context",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Soros Economic Development Fund",
+      "title": "Working-capital loan to Remedy Alliance",
+      "url": "https://www.soroseconomicdevelopmentfund.org/newsroom/open-society-supports-an-innovative-model-to-make-naloxone-easier-to-access-amidst-the-u-s-overdose-crisis",
+      "published": "December 2023",
+      "sourceType": "Primary lender record",
+      "retrieved": "September 8, 2026"
+    }
+  ]
+}

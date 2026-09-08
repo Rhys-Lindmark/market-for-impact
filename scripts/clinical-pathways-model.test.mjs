@@ -1,0 +1,7 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';
+import {respiteModel,woundModel} from '../lib/clinical-pathways-model.mjs';
+const r=JSON.parse(fs.readFileSync(new URL('../data/san-francisco/cfsf-respite-cea-v1.json',import.meta.url))),w=JSON.parse(fs.readFileSync(new URL('../data/san-francisco/sfccc-wound-cea-v1.json',import.meta.url)));
+test('Respite matches local midpoint cost without extending observed utility',()=>{const x=respiteModel(r.scenarios[1]);assert.equal(x.donorCost,15900);assert.equal(x.netQalys,.0001125);assert(Math.abs(x.costPerTenQalys-1413333333.3333333)<1e-5);assert(r.scenarios.every(s=>s.externalQalys===.0009&&s.days>=46));});
+test('Wound course cost and recurrence-adjusted weeks reproduce',()=>{const x=woundModel(w.scenarios[1]);assert.equal(x.donorCost,32*(.5*100*1.3+30)+460);assert(Math.abs(x.costPerTenQalys-24677966.101694915)<1e-6);});
+test('Clinical pathway replacement and harm never become bargains',()=>{for(const [fn,s]of[[respiteModel,r.scenarios[1]],[woundModel,w.scenarios[1]]]){assert.equal(fn({...s,fundingAdditionality:0,harmQalys:1}).netQalys,0);assert.equal(fn({...s,harmQalys:1}).costPerTenQalys,null);assert.throws(()=>fn({...s,transfer:2}),RangeError);}});
+test('Wound health horizon and respite nonfinite prices fail closed',()=>{assert.throws(()=>woundModel({...w.scenarios[1],ulcerFreeWeeks:53}),RangeError);assert.throws(()=>respiteModel({...r.scenarios[1],dailyCost:NaN}),RangeError);});

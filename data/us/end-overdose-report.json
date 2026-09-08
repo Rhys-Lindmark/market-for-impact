@@ -1,0 +1,359 @@
+{
+  "organization": "End Overdose",
+  "eyebrow": "National overdose-prevention organization · US, Bay and SF health",
+  "program": "Conditional whole-organization value of a $100,000 unrestricted gift",
+  "donationUrl": "https://donate.endoverdose.net/give/546264",
+  "published": "September 8, 2026",
+  "modelVersion": "end-overdose-whole-portfolio-v1",
+  "nutshell": {
+    "headline": "Naloxone can reverse an opioid overdose. The next unrestricted gift's additional rescues are unmeasured.",
+    "body": "Our conditional central estimate is $1.52 million per 10 US QALYs, $21.7 million for Bay residents and $76.0 million for SF residents. The favorable joint case reaches $10,238 nationally, $68,255 Bay and $204,764 SF; it is a demanding sensitivity, not a measured offer or confidence bound.",
+    "whyItMayWork": "End Overdose supplies overdose-response training and naloxone, with verified SF event delivery and Bay chapters. Timely administration can avert opioid-overdose death.",
+    "whyWeAreCautious": "Low-risk recipients, other kit carriers, EMS and public supply can make added kits substitutive. Complete marginal costs, encounter rates, funding additionality and resident shares are not measured.",
+    "recommendationBlocker": "Accepted conditional research, not a demonstrated high-value SF donation. No verified marginal recipient cohort, additional rescue rate or SF-restricted offer."
+  },
+  "summary": [
+    {
+      "label": "Central donor cost / 10 QALYs",
+      "value": "$76.0M SF / $21.7M Bay / $1.52M US",
+      "detail": "Same $100,000 gift: 0.0131657 SF, 0.0460801 Bay and 0.658287 US QALYs. Bay includes SF; geographic totals are nested and never additive."
+    },
+    {
+      "label": "Whole-gift boundary",
+      "value": "$100,000 once",
+      "detail": "75% rescue-training allocation and 25% other portfolio work with unquantified health. Both are retained in the gift numerator; allocation is judgmental."
+    },
+    {
+      "label": "Recipient",
+      "value": "End Overdose · EIN 83-0696963",
+      "detail": "2024 organization-filed Form 990 identifies END OVERDOSE, EIN and endoverdose.net. This is primary filing identity verification, not a current IRS eligibility audit."
+    },
+    {
+      "label": "Central gross resource envelope",
+      "value": "$115,000",
+      "detail": "Includes $15,000 hypothetical unpaid delivery inputs. Gross package resources, not net incremental societal cost; downstream medical spending and displacement omitted."
+    }
+  ],
+  "programSection": {
+    "body": "A national general gift supports training, naloxone, test strips, public awareness, chapter and school activity. The whole-gift model quantifies only additional rescue survival while retaining all spending. Historical output counts do not establish deaths averted.",
+    "steps": [
+      {
+        "title": "Allocate and cost the whole gift",
+        "detail": "Central $75,000 pays $50 per offered training-plus-twin-pack package. Staff, noncompletion, delivery, shipping and relevant administration are already costed."
+      },
+      {
+        "title": "Reach a qualifying overdose opportunity",
+        "detail": "Count only the first qualifying opportunity within one year, then remove overlapping witnesses and repeatedly rescued people across the funded cohort."
+      },
+      {
+        "title": "Add rescue beyond usual care",
+        "detail": "Conditional extra timely administration includes training completion, kit carriage and functioning supply beyond bystanders/EMS. Funding additionality separately addresses replacement financing."
+      },
+      {
+        "title": "Count finite survival gains",
+        "detail": "Count conditional mortality reduction, then finite discounted survival/utility. Two doses are one kit, not two independent lives; no national mortality trend credit."
+      }
+    ],
+    "boundary": "Only US-resident health is modeled. SF delivery and chapter locations do not establish beneficiary residence or next-dollar shares. Remove overlapping stock, scenes, rescued people and causal credit across End Overdose, SFAF, DOPE and FentCheck."
+  },
+  "model": {
+    "headline": "Additional unique-person rescues, not doses counted as lives",
+    "body": "Central offers are hypothetical deliverable counts, not capacity promises. One-year encounter and rescue probabilities are explicit low-confidence analyst priors. Survival begins after rescue at the end of year 1 and is finite.",
+    "equation": {
+      "label": "Whole-gift rescue bridge",
+      "expression": "Offers = gift × rescue allocation / complete package cash. Avoided deaths = offers × one-year encounter × unique-person factor × extra timely administration × conditional mortality difference × funding additionality. QALYs = deaths × sum(k=1..T)[utility × (1−annual mortality)^k / 1.03^k] / 1.03 − implementation-scaled shared harm − independent donor harm.",
+      "result": "Central: 1,500 offers × .005 × .5 × .2 × .2 × .5 = .075 avoided deaths; 9.040 finite QALYs at rescue per death yields .658287 US QALYs at gift."
+    },
+    "inputs": [
+      {
+        "key": "allocation",
+        "label": "Rescue allocation / offered-package cash",
+        "confidence": "Analyst judgment; external drug benchmark",
+        "best": "75% / $50",
+        "range": "50–85% / $35–$100",
+        "basis": "Central $19 twin-pack plus $31 complete operations. CalRx price applies to California; nationwide transfer is a judgment. Beneficiary shipping revenue assumed absent/waived."
+      },
+      {
+        "key": "encounter",
+        "label": "First qualifying opportunity within one year",
+        "confidence": "Unmeasured analyst prior",
+        "best": "0.5%",
+        "range": "0.1–5%",
+        "basis": "Broad youth/general audience central; favorable assumes better targeting. Historical trainees and reported rescues do not measure EO's next cohort."
+      },
+      {
+        "key": "unique",
+        "label": "Unique rescued-person factor",
+        "confidence": "Bookkeeping judgment",
+        "best": "50%",
+        "range": "25–80%",
+        "basis": "Deduplicate multiple carriers at one scene and repeated rescued people across the funded cohort, not merely kit/rescuer IDs."
+      },
+      {
+        "key": "rescue",
+        "label": "Extra timely administration / conditional mortality difference",
+        "confidence": "Unmeasured analyst priors",
+        "best": "20% / 20%",
+        "range": "5–30% / 5–30%",
+        "basis": "First includes completion, kit availability and carriage beyond ordinary rescue. Second is absolute survival advantage for that additional administration, retaining alternative care. No second adherence factor."
+      },
+      {
+        "key": "additionality",
+        "label": "Funding additionality",
+        "confidence": "Analyst judgment",
+        "best": "50%",
+        "range": "0–80%",
+        "basis": "Whether gift adds delivery rather than replacing funding. Separate from clinical alternatives; no verified marginal tranche."
+      },
+      {
+        "key": "health",
+        "label": "Utility / competing mortality / survival years",
+        "confidence": "Finite survival judgment",
+        "best": "0.75 / 4% yearly / 30 years",
+        "range": "0.65–0.85 / 2–8% / 15–40 years; separate 10-year stress",
+        "basis": "3% discount, rescue at end of year 1. Central 9.040 QALYs at rescue is mathematical, not an observed EO life expectancy or utility."
+      },
+      {
+        "key": "geography",
+        "label": "SF / other Bay beneficiary-residence share",
+        "confidence": "Unmeasured allocation prior",
+        "best": "2% / 5%",
+        "range": "0.5–5% / 2–10%; separate zero-SF stress",
+        "basis": "Bay includes SF. All remaining health assumed other US. Portola dose share and chapter counts do not establish these shares."
+      },
+      {
+        "key": "resources",
+        "label": "Unpaid inputs per offered package",
+        "confidence": "Gross resource judgment",
+        "best": "$10",
+        "range": "$5–$25",
+        "basis": "Medication is paid in main cash case. Separate hypothetical donated stock removes $19 cash and adds stock once to gross resources; does not establish available public stock."
+      },
+      {
+        "key": "harms",
+        "label": "Independent donor harm diagnostic",
+        "confidence": "Hypothetical stress, not observed harm",
+        "best": "Zero in central",
+        "range": "0.1 present-valued US QALY loss with zero additionality",
+        "basis": "Independent gift harm survives zero activity. Shared implementation harm would scale with funding additionality. Signed geography uses same shares here; differently localized harm requires separate partition."
+      }
+    ],
+    "giftHeading": "Same $100,000 gift in every scenario",
+    "sensitivity": [
+      {
+        "case": "central",
+        "headline": "SF donor: $75,954,757/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.658286619 / 0.0460800634 / 0.0131657324. US donor $1,519,095; Bay donor $21,701,359 per 10 QALYs. Gross resource envelope $115,000; US/Bay/SF resource prices $1,746,959 / $24,956,563 / $87,347,970 per 10 QALYs."
+      },
+      {
+        "case": "favorable",
+        "headline": "SF donor: $204,764/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 97.6735188 / 14.6510278 / 4.88367594. US donor $10,238; Bay donor $68,255 per 10 QALYs. Gross resource envelope $112,143; US/Bay/SF resource prices $11,481 / $76,543 / $229,628 per 10 QALYs."
+      },
+      {
+        "case": "pessimistic",
+        "headline": "SF donor: $1,485,568,356,857/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.000134628608 / 0.0000033657152 / 6.7314304e-7. US donor $7,427,841,784; Bay donor $297,113,671,371 per 10 QALYs. Gross resource envelope $112,500; US/Bay/SF resource prices $8,356,322,007 / $334,252,880,293 / $1,671,264,401,464 per 10 QALYs."
+      },
+      {
+        "case": "no funding additionality",
+        "headline": "SF donor: No finite positive ratio/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0 / 0 / 0. US donor No finite positive ratio; Bay donor No finite positive ratio per 10 QALYs. Gross resource envelope $115,000; US/Bay/SF resource prices No finite positive ratio / No finite positive ratio / No finite positive ratio per 10 QALYs."
+      },
+      {
+        "case": "no incremental rescue",
+        "headline": "SF donor: No finite positive ratio/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0 / 0 / 0. US donor No finite positive ratio; Bay donor No finite positive ratio per 10 QALYs. Gross resource envelope $115,000; US/Bay/SF resource prices No finite positive ratio / No finite positive ratio / No finite positive ratio per 10 QALYs."
+      },
+      {
+        "case": "donor harm",
+        "headline": "SF donor: No finite positive ratio/10 QALYs",
+        "detail": "US/Bay/SF QALYs: -0.1 / -0.007 / -0.002. US donor No finite positive ratio; Bay donor No finite positive ratio per 10 QALYs. Gross resource envelope $115,000; US/Bay/SF resource prices No finite positive ratio / No finite positive ratio / No finite positive ratio per 10 QALYs."
+      },
+      {
+        "case": "short survival",
+        "headline": "SF donor: $132,117,523/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.378450935 / 0.0264915654 / 0.00756901869. US donor $2,642,350; Bay donor $37,747,864 per 10 QALYs. Gross resource envelope $115,000; US/Bay/SF resource prices $3,038,703 / $43,410,043 / $151,935,151 per 10 QALYs."
+      },
+      {
+        "case": "no sf health",
+        "headline": "SF donor: No finite positive ratio/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.658286619 / 0.032914331 / 0. US donor $1,519,095; Bay donor $30,381,903 per 10 QALYs. Gross resource envelope $115,000; US/Bay/SF resource prices $1,746,959 / $34,939,188 / No finite positive ratio per 10 QALYs."
+      },
+      {
+        "case": "donated stock sensitivity",
+        "headline": "SF donor: $47,091,949/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 1.06175261 / 0.0743226828 / 0.0212350522. US donor $941,839; Bay donor $13,454,843 per 10 QALYs. Gross resource envelope $170,161; US/Bay/SF resource prices $1,602,645 / $22,894,934 / $80,132,268 per 10 QALYs."
+      }
+    ],
+    "uncertaintyBoundary": "Joint scenarios are not confidence intervals. Central priors are not an empirically calibrated expected value. Favorable national/Bay prices must not substitute for the SF ranking. At other central assumptions a national $100K/10 QALY threshold requires over 7.6% one-year encounter probability versus 0.5% central; even 100% would not reach central Bay/SF thresholds. Null/harm cases retain cost and have no finite positive ratio.",
+    "fundingBoundary": "Fresh official Solution→Donate link resolves to the listed campaign URL. Its JavaScript landing page exposes no readable entity/EIN or checkout terms to the web reader; CUA reports no browser available. Exact checkout identity is therefore unverified independently of official route linkage and primary filing identity. No SF restriction, current matching offer, funding queue or supply gap established. Existing free kits, NDP medication, other organizations, venue medics and EMS form the baseline."
+  },
+  "evidence": [
+    {
+      "key": "walley",
+      "design": "Walley et al., BMJ 2013 controlled interrupted time series",
+      "population": "19 Massachusetts communities, 2002–2009",
+      "result": "Mortality rate ratios .73 and .54 at two implementation intensities versus none; 2,912 cumulative trainees and 327 reported rescues.",
+      "transfer": "Primary abstract inspected; full article inaccessible. Observational older community context does not estimate current EO low-risk recipients' annual use or marginal lives saved."
+    },
+    {
+      "key": "zang",
+      "design": "Zang et al., JAMA Network Open 2024 decision model",
+      "population": "Rhode Island naloxone distribution scenarios",
+      "result": "50,000 added kits annually modeled to reduce mortality 6.3% or 8.8% depending allocation.",
+      "transfer": "Simulation, not trial or EO causal measurement. Witnessing opportunities constrain additional benefit in supplied settings; no per-kit effect imported."
+    },
+    {
+      "key": "delivery",
+      "design": "Official program, chapter directory and historical quarterly report",
+      "population": "National trainees and events, including SF Portola",
+      "result": "Summer 2024 reports 71,733 doses and 44,952 trainees; Portola 1,814 doses. Official directory lists Bay Area/SF and UC Berkeley.",
+      "transfer": "July–September quarterly figures, not annual totals, unique residents or rescues. Full historical PDF retrieval inherited from documented primary inspection; chapter directory freshly checked."
+    },
+    {
+      "key": "identity",
+      "design": "Organization-filed 2024 Form 990 reproduced from IRS data",
+      "population": "END OVERDOSE, EIN 83-0696963",
+      "result": "Header links legal filing name, EIN and endoverdose.net. 2024 revenue $956,733; expenses $970,440.",
+      "transfer": "Direct compressed retrieval inspected primary header and Parts I/III/IX. Historical functional program classification does not validate marginal rescue share; no model values recalibrated."
+    }
+  ],
+  "reservations": [
+    "Marginal recipient exposure, unique additional rescues, complete fulfillment cost and residence shares remain unmeasured.",
+    "Primary filing identity and official giving route are verified; checkout entity disclosure and SF-restricted terms are not independently readable.",
+    "Core marginal allocation differs from historical program-accounting categories; unquantified benefits retain all gift costs.",
+    "$19 is a California procurement benchmark, not a nationwide EO invoice. Public stock availability and unpaid input prices are assumptions.",
+    "National death trends and historical training/dose totals establish no extra donor causal health.",
+    "Cross-organization price gaps are not measured comparative effectiveness. Our central encounter/rescue assumptions imply one added death averted per20,000 offered packages, versus roughly one survival-equivalent per1,000 differently defined Remedy bundles. Audience targeting can justify different priors, but does not establish that twentyfold gap; units and survival tails also differ."
+  ],
+  "excludedBenefits": [
+    "Other prevention and public-awareness work",
+    "Fentanyl test-strip benefit",
+    "Chapter and school spillovers beyond counted rescues",
+    "Nonfatal morbidity prevented",
+    "Welfare and medical savings"
+  ],
+  "sources": [
+    {
+      "publisher": "End Overdose; IRS-released Form 990 reproduced by ProPublica",
+      "title": "2024 Form 990, submitted March 25, 2025",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202530849349300213/IRS990",
+      "published": "March 25, 2025 submission",
+      "retrieved": "September 8, 2026; direct compressed HTTP retrieval inspected header, Part I, Part III and Part IX",
+      "sourceType": "Primary organization-filed return, not a secondary profile summary; Header identifies name, EIN and website. Historical national accounting and reported output do not identify marginal donor allocation or health. No model input recalibrated from filing."
+    },
+    {
+      "publisher": "End Overdose",
+      "title": "Our Solution",
+      "url": "https://endoverdose.net/about/solution/",
+      "published": "Undated",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official program description"
+    },
+    {
+      "publisher": "End Overdose",
+      "title": "Chapters",
+      "url": "https://endoverdose.net/about/chapters/",
+      "published": "Undated",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official chapter directory"
+    },
+    {
+      "publisher": "End Overdose",
+      "title": "Summer 2024 Impact Report, July–September",
+      "url": "https://cdn.sanity.io/files/03xshhuu/production/fc944226581fe8e9a80cd6d39aa74f59574d954e.pdf",
+      "published": "October 1, 2024",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Organization-authored quarterly report"
+    },
+    {
+      "publisher": "End Overdose",
+      "title": "Naloxone Kit",
+      "url": "https://store.endoverdose.net/products/nasal-nalonxone-kit",
+      "published": "Undated",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official product page"
+    },
+    {
+      "publisher": "End Overdose",
+      "title": "Naloxone Kit (CA residents)",
+      "url": "https://store.endoverdose.net/products/narcan-kit-ca-residents",
+      "published": "Undated",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official California product page"
+    },
+    {
+      "publisher": "End Overdose",
+      "title": "Donate to End Overdose",
+      "url": "https://donate.endoverdose.net/give/546264",
+      "published": "Undated",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official linked giving route"
+    },
+    {
+      "publisher": "State of California, CalRx",
+      "title": "CalRx Naloxone Savings",
+      "url": "https://calrx.ca.gov/naloxone/savings/",
+      "published": "Price effective January 1, 2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official procurement price"
+    },
+    {
+      "publisher": "State of California, CalRx",
+      "title": "Get Naloxone",
+      "url": "https://calrx.ca.gov/get-naloxone/",
+      "published": "Undated",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official procurement eligibility"
+    },
+    {
+      "publisher": "California Department of Health Care Services",
+      "title": "Naloxone Distribution Project FAQ",
+      "url": "https://www.dhcs.ca.gov/individuals/naloxone-distribution-project/ndp-frequently-asked-questions/",
+      "published": "Current page includes April 2026 supply update",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official public program"
+    },
+    {
+      "publisher": "Walley et al., BMJ; PubMed primary abstract",
+      "title": "Opioid overdose rates and implementation of overdose education and nasal naloxone distribution in Massachusetts",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23372174/",
+      "published": "January 30, 2013",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Controlled interrupted time-series study"
+    },
+    {
+      "publisher": "Zang et al., JAMA Network Open",
+      "title": "Evaluation of Strategies to Enhance Community-Based Naloxone Distribution Supported by an Opioid Settlement",
+      "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2819204",
+      "published": "May 30, 2024",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary decision-analytic simulation"
+    },
+    {
+      "publisher": "US Centers for Disease Control and Prevention",
+      "title": "Lifesaving Naloxone",
+      "url": "https://www.cdc.gov/stop-overdose/caring/naloxone.html",
+      "published": "June 11, 2025",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official public-health explanation"
+    },
+    {
+      "publisher": "Community Initiatives",
+      "title": "SF Hep B Free–Bay Area",
+      "url": "https://give.communityin.org/campaigns/21rk5e",
+      "published": "Undated",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Sponsor-run giving page"
+    },
+    {
+      "publisher": "NCAPDA",
+      "title": "Donate",
+      "url": "https://ncapda.org/get-involved/donate/",
+      "published": "Undated",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official giving/program page"
+    }
+  ]
+}

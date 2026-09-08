@@ -1,0 +1,599 @@
+{
+  "schema_version": "research-portfolio-v1",
+  "model_id": "end-overdose-whole-portfolio-v1",
+  "prepared_at": "2026-09-08",
+  "status": "Accepted conditional research model after independent arithmetic audit; primary filing identity verified September 8, 2026; not a verified donation recommendation",
+  "organization": {
+    "name": "End Overdose",
+    "identity": "Organization-filed 2024 Form 990, submitted March 25, 2025 and inspected in ProPublica's rendering of IRS data, identifies END OVERDOSE, EIN 83-0696963 and endoverdose.net. This verifies filing identity, not a fresh IRS eligibility audit. Distinct from End Native Overdose, SFAF, DOPE and FentCheck.",
+    "geography": "National US organization with verified SF activity and Bay chapters; not an SF-only recipient."
+  },
+  "gift_boundary": "One $100,000 unrestricted gift, spent once. All scenarios are conditional marginal allocations, not observed budgets. Only naloxone-training delivery health is quantified; the rest remains costed.",
+  "unit": "One offered training-plus-twin-pack package within a one-year delivery window. All offers are fully costed including failures, training platform, staff, fulfillment, shipping and implementation overhead. Two doses are one kit, not two recipient rescues.",
+  "cost_status": "$19 per twin-pack is a primary California procurement benchmark, not EO invoice or automatically available nationwide. All operating prices and national transfer are analyst judgments. Core central cash $19 stock + $31 operations; favorable $19+$16; pessimistic $45+$55. Assumes no beneficiary shipping revenue; conservatively cash-finances stock. Hypothetical donated-stock sensitivity explicitly moves stock to resource cost.",
+  "assumption_status": "All health and allocation inputs are explicit analyst priors, not source-measured effect estimates. Published community evidence supports plausibility but does not identify marginal EO rescue rates or utility.",
+  "formula": {
+    "offers": "G*core_fraction/(kit_cash_usd+operations_cash_usd)",
+    "finite_qaly_per_death": "sum k=1..T [survival_utility*(1-annual_competing_mortality)^k/(1+discount_rate)^k]",
+    "deaths": "offers*encounter_probability*unique_scene_factor*incremental_timely_rescue_probability*mortality_risk_reduction_given_extra_rescue*funding_additionality",
+    "global_qaly": "deaths*finite_qaly_per_death/(1+discount_rate)^event_delay_years - funding_additionality*shared_harm_qaly - donor_specific_harm_qaly",
+    "bay_qaly": "global_qaly*(sf_health_share+rest_bay_health_share)",
+    "sf_qaly": "global_qaly*sf_health_share",
+    "gross_resource": "G + offers*(unpaid_resource_per_offer_usd+donated_stock_resource_per_offer_usd)",
+    "usd_per_10": "10*cost/Q if Q>0, otherwise null"
+  },
+  "definitions": {
+    "encounter_probability": "Probability a prospective trainee has at least one qualifying opioid-overdose rescue opportunity within one year; not an annualized historical reversal count.",
+    "unique_scene_factor": "Reduction for multiple trained witnesses of the same episode and repeated rescued recipients; aggregate credit must be first unique-person survival only. This is a conservative bookkeeping prior, not an observed deduplication rate.",
+    "incremental_timely_rescue_probability": "Conditional probability the offered package adds timely naloxone administration, including completion, delivery, usable kit availability and carriage, beyond ordinary bystander/EMS rescue. No extra adherence factor is multiplied.",
+    "mortality_risk_reduction_given_extra_rescue": "Absolute mortality reduction for an episode receiving genuinely additional timely administration versus the same episode without it, retaining other ordinary care. Not the proportion of reversals surviving.",
+    "funding_additionality": "Share of nominal package activity genuinely added by gift versus replacement of other funding. Separate from clinical rescue substitution, not an additional discount for the same kit-access alternative.",
+    "health_schedule": "Rescue at end of year 1, followed by finite annual survival/utility flows for 30 central, 40 favorable or 15 pessimistic years. Those are explicit trajectories, not measured age-matched life expectancies. The opportunity period is only one year, not device shelf life.",
+    "geography": "Explicit unmeasured beneficiary-residence shares. All/global means US health only; Bay includes SF and must not be added. Training/event/chapter location is not beneficiary residence.",
+    "shared_harm_qaly": "All-recipient present-valued health harm conditional on package implementation before funding additionality. Not monetary opportunity cost.",
+    "donor_specific_harm_qaly": "Gift-specific actual health harm independent of whether package activity is additional. Geography assumed same as benefit shares in this diagnostic; revise if evidence differs.",
+    "gross_resource": "Gross package spending envelope including unpaid labor/other inputs. Not net induced social opportunity cost. At zero funding additionality gift and gross resource envelope remain, although net incremental public use can be zero."
+  },
+  "unquantified": [
+    "Other prevention and public-awareness work",
+    "Fentanyl test-strip benefit",
+    "Chapter and school spillovers beyond counted rescues",
+    "Nonfatal morbidity prevented",
+    "Welfare and medical savings"
+  ],
+  "funding_and_overlap": "Current free EO kit and NDP public supply are major baseline substitutes. No EO stock funding source, current donor tranche, wait-list, marginal demand or SF restriction verified. Never add the same public twin-pack, rescue or person-survival effect to SFAF, DOPE or FentCheck ledgers.",
+  "sources": [
+    {
+      "id": "filing_2024",
+      "publisher": "End Overdose; IRS-released Form 990 reproduced by ProPublica",
+      "type": "Primary organization-filed return, not a secondary profile summary",
+      "title": "2024 Form 990, submitted March 25, 2025",
+      "published": "March 25, 2025 submission",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202530849349300213/IRS990",
+      "retrieved": "September 8, 2026; direct compressed HTTP retrieval inspected header, Part I, Part III and Part IX",
+      "scope": "Header identifies name, EIN and website. Historical national accounting and reported output do not identify marginal donor allocation or health. No model input recalibrated from filing."
+    },
+    {
+      "id": "program",
+      "publisher": "End Overdose",
+      "type": "Official program description",
+      "title": "Our Solution",
+      "published": "Undated",
+      "url": "https://endoverdose.net/about/solution/",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "id": "chapters",
+      "publisher": "End Overdose",
+      "type": "Official chapter directory",
+      "title": "Chapters",
+      "published": "Undated",
+      "url": "https://endoverdose.net/about/chapters/",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "id": "report",
+      "publisher": "End Overdose",
+      "type": "Organization-authored quarterly report",
+      "title": "Summer 2024 Impact Report, July–September",
+      "published": "October 1, 2024",
+      "url": "https://cdn.sanity.io/files/03xshhuu/production/fc944226581fe8e9a80cd6d39aa74f59574d954e.pdf",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "id": "kit",
+      "publisher": "End Overdose",
+      "type": "Official product page",
+      "title": "Naloxone Kit",
+      "published": "Undated",
+      "url": "https://store.endoverdose.net/products/nasal-nalonxone-kit",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "id": "ca_kit",
+      "publisher": "End Overdose",
+      "type": "Official California product page",
+      "title": "Naloxone Kit (CA residents)",
+      "published": "Undated",
+      "url": "https://store.endoverdose.net/products/narcan-kit-ca-residents",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "id": "give",
+      "publisher": "End Overdose",
+      "type": "Official linked giving route",
+      "title": "Donate to End Overdose",
+      "published": "Undated",
+      "url": "https://donate.endoverdose.net/give/546264",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "id": "calrx",
+      "publisher": "State of California, CalRx",
+      "type": "Official procurement price",
+      "title": "CalRx Naloxone Savings",
+      "published": "Price effective January 1, 2026",
+      "url": "https://calrx.ca.gov/naloxone/savings/",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "id": "calrx_access",
+      "publisher": "State of California, CalRx",
+      "type": "Official procurement eligibility",
+      "title": "Get Naloxone",
+      "published": "Undated",
+      "url": "https://calrx.ca.gov/get-naloxone/",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "id": "ndp",
+      "publisher": "California Department of Health Care Services",
+      "type": "Official public program",
+      "title": "Naloxone Distribution Project FAQ",
+      "published": "Current page includes April 2026 supply update",
+      "url": "https://www.dhcs.ca.gov/individuals/naloxone-distribution-project/ndp-frequently-asked-questions/",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "id": "walley",
+      "publisher": "Walley et al., BMJ; PubMed primary abstract",
+      "type": "Controlled interrupted time-series study",
+      "title": "Opioid overdose rates and implementation of overdose education and nasal naloxone distribution in Massachusetts",
+      "published": "January 30, 2013",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23372174/",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "id": "zang",
+      "publisher": "Zang et al., JAMA Network Open",
+      "type": "Primary decision-analytic simulation",
+      "title": "Evaluation of Strategies to Enhance Community-Based Naloxone Distribution Supported by an Opioid Settlement",
+      "published": "May 30, 2024",
+      "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2819204",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "id": "cdc",
+      "publisher": "US Centers for Disease Control and Prevention",
+      "type": "Official public-health explanation",
+      "title": "Lifesaving Naloxone",
+      "published": "June 11, 2025",
+      "url": "https://www.cdc.gov/stop-overdose/caring/naloxone.html",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "id": "hepb",
+      "publisher": "Community Initiatives",
+      "type": "Sponsor-run giving page",
+      "title": "SF Hep B Free–Bay Area",
+      "published": "Undated",
+      "url": "https://give.communityin.org/campaigns/21rk5e",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "id": "ncapda",
+      "publisher": "NCAPDA",
+      "type": "Official giving/program page",
+      "title": "Donate",
+      "published": "Undated",
+      "url": "https://ncapda.org/get-involved/donate/",
+      "retrieved": "September 8, 2026"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "central",
+      "inputs": {
+        "gift_usd": 100000,
+        "core_fraction": 0.75,
+        "kit_cash_usd": 19,
+        "operations_cash_usd": 31,
+        "unpaid_resource_per_offer_usd": 10,
+        "encounter_probability": 0.005,
+        "unique_scene_factor": 0.5,
+        "incremental_timely_rescue_probability": 0.2,
+        "mortality_risk_reduction_given_extra_rescue": 0.2,
+        "funding_additionality": 0.5,
+        "survival_utility": 0.75,
+        "annual_competing_mortality": 0.04,
+        "health_years": 30,
+        "discount_rate": 0.03,
+        "event_delay_years": 1,
+        "sf_health_share": 0.02,
+        "rest_bay_health_share": 0.05,
+        "shared_harm_qaly": 0,
+        "donor_specific_harm_qaly": 0,
+        "donated_stock_resource_per_offer_usd": 0
+      },
+      "outputs": {
+        "offers": 1500,
+        "finite_qaly_per_death_at_rescue": 9.040469572865828,
+        "deaths_averted": 0.07500000000000001,
+        "gross_resource_usd": 115000,
+        "global": {
+          "qaly": 0.6582866193834341,
+          "donor_usd_per_10_qaly": 1519095.1335705747,
+          "gross_resource_usd_per_10_qaly": 1746959.403606161
+        },
+        "bay": {
+          "qaly": 0.046080063356840395,
+          "donor_usd_per_10_qaly": 21701359.05100821,
+          "gross_resource_usd_per_10_qaly": 24956562.90865944
+        },
+        "sf": {
+          "qaly": 0.013165732387668683,
+          "donor_usd_per_10_qaly": 75954756.67852874,
+          "gross_resource_usd_per_10_qaly": 87347970.18030804
+        }
+      }
+    },
+    {
+      "id": "favorable",
+      "inputs": {
+        "gift_usd": 100000,
+        "core_fraction": 0.85,
+        "kit_cash_usd": 19,
+        "operations_cash_usd": 16,
+        "unpaid_resource_per_offer_usd": 5,
+        "encounter_probability": 0.05,
+        "unique_scene_factor": 0.8,
+        "incremental_timely_rescue_probability": 0.3,
+        "mortality_risk_reduction_given_extra_rescue": 0.3,
+        "funding_additionality": 0.8,
+        "survival_utility": 0.85,
+        "annual_competing_mortality": 0.02,
+        "health_years": 40,
+        "discount_rate": 0.03,
+        "event_delay_years": 1,
+        "sf_health_share": 0.05,
+        "rest_bay_health_share": 0.1,
+        "shared_harm_qaly": 0,
+        "donor_specific_harm_qaly": 0,
+        "donated_stock_resource_per_offer_usd": 0
+      },
+      "outputs": {
+        "offers": 2428.5714285714284,
+        "finite_qaly_per_death_at_rescue": 14.383702420604887,
+        "deaths_averted": 6.9942857142857155,
+        "gross_resource_usd": 112142.85714285714,
+        "global": {
+          "qaly": 97.67351879512003,
+          "donor_usd_per_10_qaly": 10238.18955573414,
+          "gross_resource_usd_per_10_qaly": 11481.398287501856
+        },
+        "bay": {
+          "qaly": 14.651027819268007,
+          "donor_usd_per_10_qaly": 68254.59703822758,
+          "gross_resource_usd_per_10_qaly": 76542.65525001235
+        },
+        "sf": {
+          "qaly": 4.883675939756002,
+          "donor_usd_per_10_qaly": 204763.79111468274,
+          "gross_resource_usd_per_10_qaly": 229627.96575003708
+        }
+      }
+    },
+    {
+      "id": "pessimistic",
+      "inputs": {
+        "gift_usd": 100000,
+        "core_fraction": 0.5,
+        "kit_cash_usd": 45,
+        "operations_cash_usd": 55,
+        "unpaid_resource_per_offer_usd": 25,
+        "encounter_probability": 0.001,
+        "unique_scene_factor": 0.25,
+        "incremental_timely_rescue_probability": 0.05,
+        "mortality_risk_reduction_given_extra_rescue": 0.05,
+        "funding_additionality": 0.1,
+        "survival_utility": 0.65,
+        "annual_competing_mortality": 0.08,
+        "health_years": 15,
+        "discount_rate": 0.03,
+        "event_delay_years": 1,
+        "sf_health_share": 0.005,
+        "rest_bay_health_share": 0.02,
+        "shared_harm_qaly": 0,
+        "donor_specific_harm_qaly": 0,
+        "donated_stock_resource_per_offer_usd": 0
+      },
+      "outputs": {
+        "offers": 500,
+        "finite_qaly_per_death_at_rescue": 4.4373589202904204,
+        "deaths_averted": 0.00003125000000000001,
+        "gross_resource_usd": 112500,
+        "global": {
+          "qaly": 0.00013462860801852008,
+          "donor_usd_per_10_qaly": 7427841784.284331,
+          "gross_resource_usd_per_10_qaly": 8356322007.319873
+        },
+        "bay": {
+          "qaly": 0.000003365715200463002,
+          "donor_usd_per_10_qaly": 297113671371.3732,
+          "gross_resource_usd_per_10_qaly": 334252880292.7949
+        },
+        "sf": {
+          "qaly": 6.731430400926004e-7,
+          "donor_usd_per_10_qaly": 1485568356856.8662,
+          "gross_resource_usd_per_10_qaly": 1671264401463.9744
+        }
+      }
+    },
+    {
+      "id": "no_funding_additionality",
+      "inputs": {
+        "gift_usd": 100000,
+        "core_fraction": 0.75,
+        "kit_cash_usd": 19,
+        "operations_cash_usd": 31,
+        "unpaid_resource_per_offer_usd": 10,
+        "encounter_probability": 0.005,
+        "unique_scene_factor": 0.5,
+        "incremental_timely_rescue_probability": 0.2,
+        "mortality_risk_reduction_given_extra_rescue": 0.2,
+        "funding_additionality": 0,
+        "survival_utility": 0.75,
+        "annual_competing_mortality": 0.04,
+        "health_years": 30,
+        "discount_rate": 0.03,
+        "event_delay_years": 1,
+        "sf_health_share": 0.02,
+        "rest_bay_health_share": 0.05,
+        "shared_harm_qaly": 0,
+        "donor_specific_harm_qaly": 0,
+        "donated_stock_resource_per_offer_usd": 0
+      },
+      "outputs": {
+        "offers": 1500,
+        "finite_qaly_per_death_at_rescue": 9.040469572865828,
+        "deaths_averted": 0,
+        "gross_resource_usd": 115000,
+        "global": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "gross_resource_usd_per_10_qaly": null
+        },
+        "bay": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "gross_resource_usd_per_10_qaly": null
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "gross_resource_usd_per_10_qaly": null
+        }
+      }
+    },
+    {
+      "id": "no_incremental_rescue",
+      "inputs": {
+        "gift_usd": 100000,
+        "core_fraction": 0.75,
+        "kit_cash_usd": 19,
+        "operations_cash_usd": 31,
+        "unpaid_resource_per_offer_usd": 10,
+        "encounter_probability": 0.005,
+        "unique_scene_factor": 0.5,
+        "incremental_timely_rescue_probability": 0,
+        "mortality_risk_reduction_given_extra_rescue": 0.2,
+        "funding_additionality": 0.5,
+        "survival_utility": 0.75,
+        "annual_competing_mortality": 0.04,
+        "health_years": 30,
+        "discount_rate": 0.03,
+        "event_delay_years": 1,
+        "sf_health_share": 0.02,
+        "rest_bay_health_share": 0.05,
+        "shared_harm_qaly": 0,
+        "donor_specific_harm_qaly": 0,
+        "donated_stock_resource_per_offer_usd": 0
+      },
+      "outputs": {
+        "offers": 1500,
+        "finite_qaly_per_death_at_rescue": 9.040469572865828,
+        "deaths_averted": 0,
+        "gross_resource_usd": 115000,
+        "global": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "gross_resource_usd_per_10_qaly": null
+        },
+        "bay": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "gross_resource_usd_per_10_qaly": null
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "gross_resource_usd_per_10_qaly": null
+        }
+      }
+    },
+    {
+      "id": "donor_harm",
+      "inputs": {
+        "gift_usd": 100000,
+        "core_fraction": 0.75,
+        "kit_cash_usd": 19,
+        "operations_cash_usd": 31,
+        "unpaid_resource_per_offer_usd": 10,
+        "encounter_probability": 0.005,
+        "unique_scene_factor": 0.5,
+        "incremental_timely_rescue_probability": 0.2,
+        "mortality_risk_reduction_given_extra_rescue": 0.2,
+        "funding_additionality": 0,
+        "survival_utility": 0.75,
+        "annual_competing_mortality": 0.04,
+        "health_years": 30,
+        "discount_rate": 0.03,
+        "event_delay_years": 1,
+        "sf_health_share": 0.02,
+        "rest_bay_health_share": 0.05,
+        "shared_harm_qaly": 0,
+        "donor_specific_harm_qaly": 0.1,
+        "donated_stock_resource_per_offer_usd": 0
+      },
+      "outputs": {
+        "offers": 1500,
+        "finite_qaly_per_death_at_rescue": 9.040469572865828,
+        "deaths_averted": 0,
+        "gross_resource_usd": 115000,
+        "global": {
+          "qaly": -0.1,
+          "donor_usd_per_10_qaly": null,
+          "gross_resource_usd_per_10_qaly": null
+        },
+        "bay": {
+          "qaly": -0.007000000000000001,
+          "donor_usd_per_10_qaly": null,
+          "gross_resource_usd_per_10_qaly": null
+        },
+        "sf": {
+          "qaly": -0.002,
+          "donor_usd_per_10_qaly": null,
+          "gross_resource_usd_per_10_qaly": null
+        }
+      }
+    },
+    {
+      "id": "short_survival",
+      "inputs": {
+        "gift_usd": 100000,
+        "core_fraction": 0.75,
+        "kit_cash_usd": 19,
+        "operations_cash_usd": 31,
+        "unpaid_resource_per_offer_usd": 10,
+        "encounter_probability": 0.005,
+        "unique_scene_factor": 0.5,
+        "incremental_timely_rescue_probability": 0.2,
+        "mortality_risk_reduction_given_extra_rescue": 0.2,
+        "funding_additionality": 0.5,
+        "survival_utility": 0.75,
+        "annual_competing_mortality": 0.04,
+        "health_years": 10,
+        "discount_rate": 0.03,
+        "event_delay_years": 1,
+        "sf_health_share": 0.02,
+        "rest_bay_health_share": 0.05,
+        "shared_harm_qaly": 0,
+        "donor_specific_harm_qaly": 0,
+        "donated_stock_resource_per_offer_usd": 0
+      },
+      "outputs": {
+        "offers": 1500,
+        "finite_qaly_per_death_at_rescue": 5.19739283452088,
+        "deaths_averted": 0.07500000000000001,
+        "gross_resource_usd": 115000,
+        "global": {
+          "qaly": 0.3784509345524913,
+          "donor_usd_per_10_qaly": 2642350.4573518224,
+          "gross_resource_usd_per_10_qaly": 3038703.0259545958
+        },
+        "bay": {
+          "qaly": 0.026491565418674392,
+          "donor_usd_per_10_qaly": 37747863.6764546,
+          "gross_resource_usd_per_10_qaly": 43410043.2279228
+        },
+        "sf": {
+          "qaly": 0.007569018691049826,
+          "donor_usd_per_10_qaly": 132117522.86759111,
+          "gross_resource_usd_per_10_qaly": 151935151.2977298
+        }
+      }
+    },
+    {
+      "id": "no_sf_health",
+      "inputs": {
+        "gift_usd": 100000,
+        "core_fraction": 0.75,
+        "kit_cash_usd": 19,
+        "operations_cash_usd": 31,
+        "unpaid_resource_per_offer_usd": 10,
+        "encounter_probability": 0.005,
+        "unique_scene_factor": 0.5,
+        "incremental_timely_rescue_probability": 0.2,
+        "mortality_risk_reduction_given_extra_rescue": 0.2,
+        "funding_additionality": 0.5,
+        "survival_utility": 0.75,
+        "annual_competing_mortality": 0.04,
+        "health_years": 30,
+        "discount_rate": 0.03,
+        "event_delay_years": 1,
+        "sf_health_share": 0,
+        "rest_bay_health_share": 0.05,
+        "shared_harm_qaly": 0,
+        "donor_specific_harm_qaly": 0,
+        "donated_stock_resource_per_offer_usd": 0
+      },
+      "outputs": {
+        "offers": 1500,
+        "finite_qaly_per_death_at_rescue": 9.040469572865828,
+        "deaths_averted": 0.07500000000000001,
+        "gross_resource_usd": 115000,
+        "global": {
+          "qaly": 0.6582866193834341,
+          "donor_usd_per_10_qaly": 1519095.1335705747,
+          "gross_resource_usd_per_10_qaly": 1746959.403606161
+        },
+        "bay": {
+          "qaly": 0.03291433096917171,
+          "donor_usd_per_10_qaly": 30381902.671411496,
+          "gross_resource_usd_per_10_qaly": 34939188.07212322
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "gross_resource_usd_per_10_qaly": null
+        }
+      }
+    },
+    {
+      "id": "donated_stock_sensitivity",
+      "inputs": {
+        "gift_usd": 100000,
+        "core_fraction": 0.75,
+        "kit_cash_usd": 0,
+        "operations_cash_usd": 31,
+        "unpaid_resource_per_offer_usd": 10,
+        "encounter_probability": 0.005,
+        "unique_scene_factor": 0.5,
+        "incremental_timely_rescue_probability": 0.2,
+        "mortality_risk_reduction_given_extra_rescue": 0.2,
+        "funding_additionality": 0.5,
+        "survival_utility": 0.75,
+        "annual_competing_mortality": 0.04,
+        "health_years": 30,
+        "discount_rate": 0.03,
+        "event_delay_years": 1,
+        "sf_health_share": 0.02,
+        "rest_bay_health_share": 0.05,
+        "shared_harm_qaly": 0,
+        "donor_specific_harm_qaly": 0,
+        "donated_stock_resource_per_offer_usd": 19
+      },
+      "outputs": {
+        "offers": 2419.3548387096776,
+        "finite_qaly_per_death_at_rescue": 9.040469572865828,
+        "deaths_averted": 0.1209677419354839,
+        "gross_resource_usd": 170161.29032258067,
+        "global": {
+          "qaly": 1.0617526119087648,
+          "donor_usd_per_10_qaly": 941838.9828137563,
+          "gross_resource_usd_per_10_qaly": 1602645.3659169564
+        },
+        "bay": {
+          "qaly": 0.07432268283361354,
+          "donor_usd_per_10_qaly": 13454842.611625088,
+          "gross_resource_usd_per_10_qaly": 22894933.79881366
+        },
+        "sf": {
+          "qaly": 0.021235052238175296,
+          "donor_usd_per_10_qaly": 47091949.140687816,
+          "gross_resource_usd_per_10_qaly": 80132268.29584782
+        }
+      }
+    }
+  ]
+}

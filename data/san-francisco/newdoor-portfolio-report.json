@@ -1,0 +1,270 @@
+{
+  "organization": "New Door Ventures",
+  "eyebrow": "Whole organization · SF, Oakland and San Jose",
+  "program": "Integrated youth employment, education and career support",
+  "published": "September 8, 2026",
+  "modelVersion": "newdoor-unrestricted-portfolio-v1",
+  "nutshell": {
+    "headline": "Our best estimate is $508 million per 10 additional SF QALYs.",
+    "body": "Across the Bay Area, including SF, the estimate is $229 million. This costs an entire unrestricted gift, not one SF employment place. Only a modest short-term employment-related health effect is quantified; education, earnings and opportunity may have substantial value outside this health model.",
+    "whyItMayWork": "Paid work and integrated support can help transition-age young people build stability and access opportunities.",
+    "whyWeAreCautious": "No local causal QALY effect is established. The small utility gain, marginal spending mix, complete costs and funding additionality are analyst judgments.",
+    "recommendationBlocker": "Neither central nor favorable assumptions approach $100,000 per 10 QALYs. Verify actual health change and unrestricted-gift use before making a health-based recommendation."
+  },
+  "summary": [
+    {
+      "label": "SF estimate",
+      "value": "$508M / 10 QALYs",
+      "detail": "Central whole-gift donor estimate; 45% SF residence share is judgmental."
+    },
+    {
+      "label": "Bay estimate",
+      "value": "$229M / 10 QALYs",
+      "detail": "Includes SF and modeled Oakland/San Jose/other Bay beneficiaries; do not add SF again."
+    },
+    {
+      "label": "Gift coverage",
+      "value": "100% cash counted",
+      "detail": "Central 70% integrated employment, 30% other provision with unquantified health."
+    },
+    {
+      "label": "Evidence",
+      "value": "Weak health transfer",
+      "detail": "External adult employment trials do not establish a youth-program QALY effect."
+    }
+  ],
+  "programSection": {
+    "body": "New Door provides paid employment and support, high-school-equivalency education, and career services. The actual portfolio includes San Jose as well as SF and Oakland. Its Vision 2030 strategy is strengthening career-linked pathways; a staffing plan is not evidence of achieved health or a new donor-funded place.",
+    "steps": [
+      {
+        "title": "Support an integrated employment offer",
+        "detail": "Paid work, casework, training, supervision, transport and necessary education/transition help are budgeted together."
+      },
+      {
+        "title": "Fund additional education and career services",
+        "detail": "Separate budget shares cover provision beyond the integrated employment core, not the same support charged twice."
+      },
+      {
+        "title": "Measure health separately from economic progress",
+        "detail": "Credentials, wages and placements are not converted automatically into health utility or lifetime survival."
+      }
+    ],
+    "boundary": "Central allocation: 70% integrated employment, 15% additional education, 10% additional career services and 5% strategy/reserve/other. These are prospective analyst priors, not audited allocations. All gift cash stays in the numerator; other benefits are unquantified, not assumed absent."
+  },
+  "model": {
+    "headline": "A $100,000 gift yields an estimated .001969 SF QALYs, or .004375 across the Bay.",
+    "body": "The central $20,000 complete offered-place allowance funds 3.5 expected six-month employment offers from the $70,000 employment allocation. Fractional offers are expectation accounting, not purchasable slots. The utility average already includes unsuccessful engagement; no second completion or job-placement multiplier is applied.",
+    "equation": {
+      "label": "Central SF model",
+      "expression": "($70,000 / $20,000) × .005 utility × .5 integrated years × .5 funding additionality × .45 SF share",
+      "result": ".00196875 SF QALYs; $100,000 × 10 / .00196875 = $507,936,508"
+    },
+    "inputs": [
+      {
+        "key": "allocation",
+        "label": "Integrated employment allocation",
+        "confidence": "Judgment",
+        "best": "70% of gift",
+        "range": "50–80%; separate all-employment stress",
+        "basis": "Historical employment spending informs scope but does not establish the next gift’s allocation. Other provision remains costed."
+      },
+      {
+        "key": "cost",
+        "label": "Complete offered-place cost",
+        "confidence": "Judgment",
+        "best": "$20,000",
+        "range": "$12,000–$30,000",
+        "basis": "Includes wages, casework, training, supervision, transport and allocated shared costs once. Not a quote or mismatched annual-cost/participant ratio."
+      },
+      {
+        "key": "utility",
+        "label": "Average net health utility gain",
+        "confidence": "Judgment",
+        "best": ".005",
+        "range": ".001–.02; null and negative stresses",
+        "basis": "Not an imported adult trial coefficient. Average across offered places includes noncompletion; certificates and wages receive no separate health credit."
+      },
+      {
+        "key": "duration",
+        "label": "Integrated health exposure",
+        "confidence": "Judgment",
+        "best": ".5 years",
+        "range": ".25–.75 years",
+        "basis": "All health is within the first year of the offer; exposure integrates onset and decay. No lifetime employment-health tail."
+      },
+      {
+        "key": "additionality",
+        "label": "Access caused by the gift",
+        "confidence": "Judgment",
+        "best": "50%",
+        "range": "0–75%",
+        "basis": "Services preserved or expanded beyond public/private commitments and accessible alternatives. A deficit alone does not establish this share."
+      },
+      {
+        "key": "geography",
+        "label": "SF residence share",
+        "confidence": "Judgment",
+        "best": "45%",
+        "range": "25–60%",
+        "basis": "All modeled recipients are provisionally Bay residents, including San Jose. Accounting location is not beneficiary residence; any non-Bay share needs separate allocation."
+      }
+    ],
+    "giftHeading": "How much could the estimate change?",
+    "sensitivity": [
+      {
+        "case": "Joint favorable",
+        "headline": "$22.22M / 10 SF QALYs",
+        "detail": "$13.33M per 10 Bay QALYs. Still far above the target; not a confidence limit."
+      },
+      {
+        "case": "Pessimistic positive",
+        "headline": "$38.4B / 10 SF QALYs",
+        "detail": "$9.6B per 10 Bay QALYs."
+      },
+      {
+        "case": "All-employment allocation",
+        "headline": "$355.56M SF / $160M Bay",
+        "detail": "Other central assumptions unchanged. A diagnostic restricted-core comparison, not the central unrestricted portfolio."
+      },
+      {
+        "case": "Additional-resource stress",
+        "headline": "Positive ratios double",
+        "detail": "An illustrative extra $100,000 gives central $1.016B SF and $457.14M Bay. This is not a measured societal-resource estimate."
+      },
+      {
+        "case": "Null and harm",
+        "headline": "No positive ratio",
+        "detail": "No funding additionality or no health gain gives zero. Shared negative utility scales with additionality; independent gift harm can persist even when provision is replaced."
+      }
+    ],
+    "uncertaintyBoundary": "This is a partial-health portfolio judgment, not measured whole-organization effectiveness or a calibrated probability-weighted mean. The single employment health increment already covers its integrated support; do not add education, career, housing or partner-treatment benefits without distinct causal outcomes and overlap checks. The site’s six-month employment headline and three-month-plus FAQ differ, so the modeled six-month dose needs confirmation.",
+    "fundingBoundary": "Calendar-2025 audited expenses were $6.505M, including $5.079M program expense, and government grants were $1.439M. The operating net-asset decline differs from the total net-asset decline; neither proves a marginal offer. Do not divide calendar-2025 costs by fiscal-2024–25 DCYF outputs. Complete course allowances include overhead and unsuccessful offers. Wages are donor costs but partly transfers in societal accounting; participant labor/time, volunteer inputs and employer output need explicit valuation before subtracting transfers. No full-resource cost or current unfunded slot is verified."
+  },
+  "evidence": [
+    {
+      "key": "ips",
+      "design": "Government employment-trial evaluation",
+      "population": "UK adults selected for health-led IPS trials",
+      "result": "Small and heterogeneous health-utility findings provide context, not a direct youth effect.",
+      "transfer": "The model’s .005 utility is judgment, not a validated transfer or accumulated trial QALYs."
+    },
+    {
+      "key": "jobs",
+      "design": "Group Work/JOBS II trial economic evaluation",
+      "population": "UK employment-support participants",
+      "result": "No mean EQ-5D improvement was reported.",
+      "transfer": "Important counterevidence against assuming employment support creates health; not proof all youth programs are ineffective."
+    },
+    {
+      "key": "delivery",
+      "design": "Current primary program descriptions",
+      "population": "New Door youth and career-service users",
+      "result": "Paid employment, education support and career pathways are real; programs need not serve disjoint participants.",
+      "transfer": "Service existence, jobs and confidence are not causal health outcomes."
+    },
+    {
+      "key": "finance",
+      "design": "2025 audited statements",
+      "population": "New Door’s SF, Oakland, San Jose and additional programs",
+      "result": "Finances document a broader organization than the prior single-SF-place model.",
+      "transfer": "Historical regional expenditures do not identify prospective prices, resident mix or gift additionality."
+    }
+  ],
+  "reservations": [
+    "The central and favorable results do not support a sub-$100,000 per 10 QALY claim.",
+    "The health-only model omits potentially important educational, economic and community value.",
+    "Local utility, duration, marginal allocation and donor additionality are unmeasured judgments.",
+    "San Jose is within the actual portfolio; an SF-only employment place is not the whole organization.",
+    "Program duration, all-funder costs and current extra capacity remain uncertain.",
+    "The official-linked current appeal includes pharmacy-technician training and illustrative wage/transport amounts. These are fundraising examples, not measured QALY effects or complete marginal course prices; their wider earnings and opportunity benefits remain unquantified."
+  ],
+  "excludedBenefits": [
+    "Unquantified education, credentials, career progression, wages and longer-run opportunity benefits.",
+    "Lifetime mortality or health gains inferred from employment or promotional statistics.",
+    "Duplicated support, housing or partner-clinic health effects within the same integrated cohort.",
+    "Unpriced employer production, financial transfers or opportunity costs treated as QALYs."
+  ],
+  "sources": [
+    {
+      "publisher": "New Door Ventures / SD Mayer & Associates",
+      "title": "2025 audited financial statements",
+      "url": "https://www.newdoor.org/wp-content/uploads/2026/07/NDV-2025-Audit-Report.pdf",
+      "published": "June 12, 2026; calendar 2025",
+      "sourceType": "Primary audited finances",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "New Door Ventures",
+      "title": "What We Do",
+      "url": "https://www.newdoor.org/what-we-do/",
+      "published": "Current page",
+      "sourceType": "Primary portfolio description",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "New Door Ventures",
+      "title": "Employment Program",
+      "url": "https://www.newdoor.org/what-we-do/employment-program/",
+      "published": "Current page",
+      "sourceType": "Primary service and duration description",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "New Door Ventures",
+      "title": "Education Program",
+      "url": "https://www.newdoor.org/what-we-do/education/",
+      "published": "Current page",
+      "sourceType": "Primary service description",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "New Door Ventures",
+      "title": "Career Services",
+      "url": "https://www.newdoor.org/career-services/",
+      "published": "Current page",
+      "sourceType": "Primary service description",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "New Door Ventures",
+      "title": "SF Employment Program Director posting",
+      "url": "https://www.newdoor.org/get-involved/join-our-team/programs-director-san-francisco-employment-program/",
+      "published": "Current posting",
+      "sourceType": "Primary strategy/implementation context",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "UK Department for Work and Pensions",
+      "title": "Estimates of IPS impact over 12 months",
+      "url": "https://www.gov.uk/government/publications/health-led-trials-impact-evaluation-reports/estimates-of-the-impact-of-ips-over-12-months-health-led-employment-trial-evaluation",
+      "published": "2023; updated April 8, 2024",
+      "sourceType": "Primary trial evaluation",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "UK Department for Work and Pensions",
+      "title": "Group Work/JOBS II cost-benefit technical report",
+      "url": "https://www.gov.uk/government/publications/an-evaluation-of-the-group-work-jobs-ii-trial/cost-benefit-analysis-technical-report",
+      "published": "2021; updated May 17, 2022",
+      "sourceType": "Primary economic evaluation",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "New Door Ventures",
+      "title": "Financial disclosures and donation route",
+      "url": "https://www.newdoor.org/who-we-are/financials/",
+      "published": "Current page",
+      "sourceType": "Primary organization/giving context",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "New Door Ventures",
+      "title": "45 Years, One Door at a Time — official-linked giving campaign",
+      "url": "https://giving.gofundme.com/campaign/778708/donate",
+      "published": "Undated; accessed September 8, 2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Organization fundraising disclosure"
+    }
+  ],
+  "donationUrl": "https://giving.gofundme.com/campaign/778708/donate"
+}

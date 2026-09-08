@@ -5,7 +5,7 @@ test('concise index has qualified estimates and no retired navigation', async ({
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('GiveBetter x SF Research');
   await expect(page.locator('body')).toContainText('not verified donation offers');
   await expect(page.locator('body')).toContainText('Cost scopes and evidence quality vary');
-  await expect(page.locator('[data-research-slug]')).toHaveCount(45);
+  await expect(page.locator('[data-research-slug]')).toHaveCount(46);
   await expect(page.locator('.sf-deep-queue, .sf-decision-snapshot, .sf-evidence-dossier, .sf-comparison-card')).toHaveCount(0);
   const dead = await page.locator('a[href^="#"]').evaluateAll(links => links.filter(a => !document.getElementById(a.getAttribute('href')!.slice(1))).map(a => a.getAttribute('href')));
   expect(dead).toEqual([]);

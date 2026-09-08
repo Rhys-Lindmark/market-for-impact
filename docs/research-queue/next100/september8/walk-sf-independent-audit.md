@@ -1,0 +1,17 @@
+# Walk SF v1 independent acceptance
+
+2026-09-08. Audited `./walk-sf-{model.json,review.md,self-check.mjs}`. **Accept as a conditional whole-gift, partial-health research model; no material numeric correction required.** Not a verified marginal construction offer or measured organizational effect.
+
+Independently expanded the event-year × subsequent-health-year double sums rather than copying the factored calculator: 40 health/geography/signed-ratio checks across eight scenarios passed. Independently recomputed both capital perspectives: 16 further checks passed. Central SF .172448709855 Q and Bay .218435032483 Q; favorable SF31.5674316991/Bay35.2812471931. Null and independent-harm cases preserve spent gift, signed health and null ratios. Bay includes SF.
+
+Primary recheck: [Grundy full paper](https://researchonline.lshtm.ac.uk/4370/1/bmj.b4469.pdf), Table2, supports death reduction35.1% with CI−1.9–72.0; KSI46.3%, while 2000–06 restriction gives28.4%. These are controlled observational injury results, not QALYs or advocacy effects. Actual [Slow Our Streets](https://walksf.org/slow-our-streets/) page explicitly discusses2026 physical design expansion and existing33camera locations. Its older2024death count42 differs from the later SFMTA43; retaining the primary [January2026 SFMTA](https://www.sfmta.com/press-releases/press-release-san-francisco-traffic-fatalities-drop-nearly-half-2025) baseline25 for2025 is preferable to silently merging them. Other financial and550injury primary extraction is inherited from the author's documented inspection, not independently recertified here.
+
+Important acceptance boundaries already present and required in integration:
+
+- The joint probability includes funding replacement and coalition contribution, conditional on the60Kallocated effort. Do not add another.6 or donationadditionality multiplier. Full100K remains denominator,40Kotherstreams unquantified—not evidence of zero benefit.
+- Riskshare is addressable baseline casualty burden, not streetlength or residentpercentage. Central/favorable inputs are judgments;8%risk across fiveyears at35%probability is a demanding joint stress. Its sub100Kdonor result is not a calibrated probability interval or likely outcome.
+- Fatal and nonfatal utility trajectories are explicit finite judgments. Fatality is not counted again as nonfatal severe injury. Event-year discount and post-event health discount cover distinct periods. No automatic lifelong injury disability or separately added activity/pollution benefit.
+- Matched-build capital subtracts later identical construction under the same successful-acceleration counterfactual. Its arithmetic is correct, but it is a narrow timing comparison, not full net societal cost: asset replacement/residual value, displaced projects, financing and downstream costs remain unpriced. Gross-forward spending is a separate envelope, not a competing claim to be exact incremental cost. Retain both; p=0 correctly removes extra public spending while no-effect construction can still cost money.
+- Do not add this physical package's health/capital to SPUR or cityagency claims without deduplication. Current cameras and planned projects are the baseline.
+
+Donor-useful conclusion: confirming donor contribution alone cannot bring the central package below100K/10Q; even p=1 produces only1.72449SF Q per100K. A genuinely stronger named package, reach/delay or cost case is needed. No target-driven retuning warranted.

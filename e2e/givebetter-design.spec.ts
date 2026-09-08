@@ -13,10 +13,10 @@ for (const width of [390, 768, 1280]) {
     await expect.poll(() => first.locator('img').evaluate((el:HTMLImageElement) => el.complete && el.naturalWidth > 0)).toBe(true);
     await page.screenshot({path:testInfo.outputPath(`givebetter-home-${width}.png`),fullPage:true});
     await page.goto('/research');
-    await expect(page.getByRole('table')).toBeVisible();
-    await expect(page.locator('tbody tr')).toHaveCount(45);
-    await expect(page.locator('tbody')).not.toContainText('Exploratory estimate');
-    await expect(page.locator('tbody')).not.toContainText('≈');
+    await expect(page.locator('#top-research').getByRole('table')).toBeVisible();
+    await expect(page.locator('#top-research tbody tr')).toHaveCount(46);
+    await expect(page.locator('#top-research tbody')).not.toContainText('Exploratory estimate');
+    await expect(page.locator('#top-research tbody')).not.toContainText('≈');
     const row = page.locator('tbody tr').first();
     expect((await row.boundingBox())!.height).toBeLessThan(135);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);

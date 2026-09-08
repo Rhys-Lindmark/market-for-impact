@@ -11,7 +11,7 @@ const content: CharityReportContent = {
   published: '7 September 2026', modelVersion: model.version,
   nutshell: {
     headline: 'Accessible therapy may improve health, but the modeled benefit is small and short-lived.',
-    body: <>Our exploratory best guess is <strong>{money.format(central.result.costPerTenQalys!)} per better life (10 QALYs)</strong>. This is a proposed alcohol-focused slice of Adult Mobile Behavioral Health, not a measured HRTC result or evidence that HRTC uses the exact trial protocol. We would not prioritize it on the current health-only estimate. <a href="https://ai.rhyslindmark.com/donate/api/sf-hrtc-model">Inspect the model and assumptions →</a></>,
+    body: <>Our exploratory best guess is <strong>{money.format(central.result.costPerTenQalys!)} per better life (10 QALYs)</strong>. This is a proposed alcohol-focused slice of Adult Mobile Behavioral Health, not a measured HRTC result or evidence that HRTC uses the exact trial protocol. We would not prioritize it on the current health-only estimate. <a href="https://ai.rhyslindmark.com/givebetter/api/sf-hrtc-model">Inspect the model and assumptions →</a></>,
     whyItMayWork: 'Low-threshold behavioral care can reach adults whom conventional abstinence-first services do not engage.',
     whyWeAreCautious: 'The evidence concerns a specific external alcohol intervention. The score-to-utility mapping has not been validated for change scores.',
     recommendationBlocker: 'An additional course, local health trajectory and incremental private-funding plan are not verified.',

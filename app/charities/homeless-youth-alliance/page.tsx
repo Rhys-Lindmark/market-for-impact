@@ -11,7 +11,7 @@ const content: CharityReportContent = {
   published: '7 September 2026', modelVersion: model.version,
   nutshell: {
     headline: 'Medication access is a plausible health pathway; the benefit of an extra navigation dollar is much less certain.',
-    body: <>Our conditional best guess is <strong>{usd.format(central.result.costPerTenQalys!)} per better life (10 QALYs)</strong>. This models HYA-supported initiation and retention through a collaborative clinic, not all HYA work. It counts additional medication-covered time, not referrals as successful treatment. We would seek a specific expansion plan before prioritizing a gift. <a href="https://ai.rhyslindmark.com/donate/api/sf-hya-model">Inspect the inputs and calculations →</a></>,
+    body: <>Our conditional best guess is <strong>{usd.format(central.result.costPerTenQalys!)} per better life (10 QALYs)</strong>. This models HYA-supported initiation and retention through a collaborative clinic, not all HYA work. It counts additional medication-covered time, not referrals as successful treatment. We would seek a specific expansion plan before prioritizing a gift. <a href="https://ai.rhyslindmark.com/givebetter/api/sf-hya-model">Inspect the inputs and calculations →</a></>,
     whyItMayWork: 'Low-threshold support can help someone begin and remain on treatment that is associated with lower mortality.',
     whyWeAreCautious: 'Local additional uptake, coverage days and marginal staffing cost are unmeasured; the mortality association comes from a different adult cohort.',
     recommendationBlocker: 'No verified additional HYA allocation, prescriber capacity or linked medication-covered-time outcome is available.',

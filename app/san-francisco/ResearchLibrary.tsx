@@ -68,7 +68,7 @@ export default function SanFranciscoDonorPage() {
           <a href="#diligence">Initial diligence</a>
           <a href="#research-gates">Research gates</a>
         </nav>
-        <a className="detail-back" href="https://ai.rhyslindmark.com/donate">← Our top charities</a>
+        <a className="detail-back" href="https://ai.rhyslindmark.com/givebetter">← Our top charities</a>
       </header>
 
       <section className="sf-brief-hero">
@@ -79,14 +79,14 @@ export default function SanFranciscoDonorPage() {
           <p><a href="/research/large-bay-nonprofits">Five large Bay Area nonprofits worth examining →</a></p>
         </div>
         <div className="sf-brief-intro">
-          <p>Explore our full San Francisco research: program estimates, the 25-priority review queue, nonprofit records, and sources. <a href="https://ai.rhyslindmark.com/donate/archive">Cross-cause research archive →</a></p>
+          <p>Explore our full San Francisco research: program estimates, the 25-priority review queue, nonprofit records, and sources. <a href="https://ai.rhyslindmark.com/givebetter/archive">Cross-cause research archive →</a></p>
           <div><span>Current decision state</span><strong>Research shortlist—not a recommendation slate</strong></div>
           <a className="sf-hero-decision-link" href="#decision-snapshot">See the current shortlist ↓</a>
         </div>
       </section>
 
       <section className="sf-top-research" id="top-research" aria-labelledby="sf-top-research-title">
-        <aside className="sf-life-bettered-contract"><strong>New research bets below $100K in central scenarios.</strong><span><a href="https://ai.rhyslindmark.com/donate/charities/san-francisco-aids-foundation">SFAF targeted naloxone outreach: about $56K per 10 QALYs.</a> <a href="https://ai.rhyslindmark.com/donate/charities/project-homeless-connect">PHC prescription glasses: about $71K per 10 QALYs.</a> Both have very wide uncertainty and unverified marginal funding room. These are conditional research estimates, not verified donation offers.</span></aside>
+        <aside className="sf-life-bettered-contract"><strong>New research bets below $100K in central scenarios.</strong><span><a href="https://ai.rhyslindmark.com/givebetter/charities/san-francisco-aids-foundation">SFAF targeted naloxone outreach: about $56K per 10 QALYs.</a> <a href="https://ai.rhyslindmark.com/givebetter/charities/project-homeless-connect">PHC prescription glasses: about $71K per 10 QALYs.</a> Both have very wide uncertainty and unverified marginal funding room. These are conditional research estimates, not verified donation offers.</span></aside>
         <header>
           <div><p className="kicker">GIVEWELL-STYLE PROGRAM REVIEWS · NOT YET RECOMMENDATIONS</p><h2 id="sf-top-research-title">The strongest cost-effectiveness work so far.</h2></div>
           <p>Sorted from lowest to highest central modeled dollars per 10 QALYs. This is not a ranking of evidence quality: cost scopes and assumptions differ, every model has a plausible null case, and marginal funding room remains unverified. Open each report to inspect the model.</p>
@@ -165,11 +165,11 @@ export default function SanFranciscoDonorPage() {
       </section>
 
       <SfDeepReview review={pohReview} number={1} id="project-open-hand-review" evidenceHeadline="Direct trial involvement. Mixed results." workbookUrl={sfResearchFunnel.workbook.url} />
-      <p className="sf-life-bettered-contract"><strong>HYA: updated quantitative research.</strong><a href="https://ai.rhyslindmark.com/donate/charities/homeless-youth-alliance">Read the current medication-access model →</a><span>The initial record below predates this analyst estimate and the newly identified proposed subcontract funding.</span></p>
-      <p className="sf-life-bettered-contract"><strong>HRTC: updated quantitative research.</strong><a href="https://ai.rhyslindmark.com/donate/charities/harm-reduction-therapy-center">Read the current $5.55M/10-QALY model →</a><span>The initial diligence record below is historical; its unpriced status has been superseded by a clearly labeled analyst scenario.</span></p>
+      <p className="sf-life-bettered-contract"><strong>HYA: updated quantitative research.</strong><a href="https://ai.rhyslindmark.com/givebetter/charities/homeless-youth-alliance">Read the current medication-access model →</a><span>The initial record below predates this analyst estimate and the newly identified proposed subcontract funding.</span></p>
+      <p className="sf-life-bettered-contract"><strong>HRTC: updated quantitative research.</strong><a href="https://ai.rhyslindmark.com/givebetter/charities/harm-reduction-therapy-center">Read the current $5.55M/10-QALY model →</a><span>The initial diligence record below is historical; its unpriced status has been superseded by a clearly labeled analyst scenario.</span></p>
       <SfDeepReview review={harmReductionTherapyCenterReview} number={9} id="harm-reduction-therapy-center-review" evidenceHeadline="Historical initial review: relevant short-term trial; HRTC effect unknown." workbookUrl={sfResearchFunnel.workbook.url} />
       <SfDeepReview review={homelessYouthAllianceReview} number={10} id="homeless-youth-alliance-review" evidenceHeadline="Strong intervention rationale. HYA effect unknown." workbookUrl={sfResearchFunnel.workbook.url} />
-      <p className="sf-life-bettered-contract"><strong>Huckleberry: updated quantitative research.</strong><a href="https://ai.rhyslindmark.com/donate/charities/huckleberry-youth-programs">Read the adolescent counseling model →</a><span>The initial multi-program record below predates this narrower analyst scenario.</span></p>
+      <p className="sf-life-bettered-contract"><strong>Huckleberry: updated quantitative research.</strong><a href="https://ai.rhyslindmark.com/givebetter/charities/huckleberry-youth-programs">Read the adolescent counseling model →</a><span>The initial multi-program record below predates this narrower analyst scenario.</span></p>
       <SfDeepReview review={huckleberryYouthProgramsReview} number={11} id="huckleberry-youth-programs-review" evidenceHeadline="Several promising pathways. No single marginal case." workbookUrl={sfResearchFunnel.workbook.url} />
       <section className="sf-brief-context" aria-labelledby="sf-context-title">
         <div><p className="kicker">WHAT THE MARKET CAN ANSWER TODAY</p><h2 id="sf-context-title">Useful context. Explicit limits.</h2></div>

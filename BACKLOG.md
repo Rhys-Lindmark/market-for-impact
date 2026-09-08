@@ -1,5 +1,13 @@
 # Market for Impact backlog
 
+## Current priority — GiveBetter x SF website cleanup
+
+PR211 merged and v137 published the redesign. Canonical verification found the proxy rewrites anchors but not root-relative image src attributes; follow-up explicitly mounts all seven homepage images under the canonical `/givebetter/images` path. Estimates and research links are unchanged. Verify image decoding and the 45-row index on the public canonical routes before handoff.
+
+Canonical URL override (Rhys, September 8): `https://ai.rhyslindmark.com/givebetter` replaces `/donate`. The user configured the route; `/donate` now redirects. Use `/givebetter` for future deployment checks, report links, GitHub updates and logs. Do not change the domain or proxy configuration.
+
+Rhys paused the 115-organization research push for a shareable homepage and research index. This branch implements GiveBetter x SF branding, three original explanatory illustrations, four alternating attributed organization photos, compact evidence/price sections and a semantic, condensed research table. Existing estimates and 45 program-report routes remain unchanged; these are not newly completed whole-organization reports. Exact licensed Adelle webfonts remain unavailable; use explicit fallbacks, not copied font kits. See `docs/givebetter-design.md` for scope, provenance and verification contract. Finish validation and publish this cleanup before resuming organization-wide research.
+
 ## Latest scope override — 115 organizations (Rhys, September 8)
 
 Latest accepted count: **45/115**, including hearing PR207/public v136 at exact 3cc743e4c561197d6a8e9b9661c1b7d55274877f. Central hearing $1.25M/10 QALYs; historical recipient-status uncertainty prevents a direct-giving recommendation. 287 tests, lint/build, full CI, 14 local phone/tablet checks, 28 native formulas and canonical report/API/45-row ranking/top-four verification passed. Older pending hearing entries are historical.

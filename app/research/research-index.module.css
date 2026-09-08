@@ -1,33 +1,21 @@
-.shell { max-width: 1120px; margin: auto; padding: 0 2rem 4rem; color: var(--ink, #19382f); }
-.nav { display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; padding: 1.5rem 0; border-bottom: 1px solid currentColor; }
-.nav > a:last-child { font-size: 1rem; }
-.intro { max-width: 790px; padding: 3rem 0 2rem; }
-.intro h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin: .6rem 0 1.2rem; }
-.intro p { font-size: 1.1rem; line-height: 1.6; }
-.intro .caveat { color: #52635c; font-size: 1rem; }
-.columnLabels { display: grid; grid-template-columns: 1fr 230px; gap: 2rem; padding: 1rem 0; font-size: .875rem; font-weight: 700; letter-spacing: .05em; border-bottom: 2px solid currentColor; }
-.list { list-style: none; padding: 0; margin: 0; }
-.list > li { border-bottom: 1px solid #a6b0a9; }
-.card { display: grid; grid-template-columns: minmax(0, 1fr) 230px; gap: 2rem; padding: 1.75rem 0; }
-.card h2 { margin: .3rem 0 .7rem; font-size: 1.7rem; line-height: 1.25; }
-.card h2 a { text-decoration: none; }
-.card h2 a:hover { text-decoration: underline; }
-.card p { font-size: 1rem; line-height: 1.6; max-width: 650px; }
-.card .organization { margin: 0; font-size: .95rem; font-weight: 700; }
-.reportLink { display: inline-block; margin-top: .4rem; padding: .4rem 0; font-size: 1rem; }
-.price { display: flex; flex-direction: column; gap: .4rem; }
-.price > strong { font-size: 2rem; line-height: 1.2; }
-.price > span { font-size: .95rem; }
-.price small { margin-top: .4rem; font-size: .875rem; line-height: 1.5; color: #73523a; }
-.footer { display: grid; gap: .8rem; padding-top: 2rem; font-size: 1rem; }
-.shell a:focus-visible { outline: 3px solid #b15b24; outline-offset: 4px; }
-@media (max-width: 640px) {
-  .shell { padding: 0 1.25rem 3rem; }
-  .nav { align-items: flex-start; flex-wrap: wrap; gap: .75rem; }
-  .intro { padding-top: 2rem; }
-  .columnLabels { display: none; }
-  .list { border-top: 2px solid currentColor; }
-  .card { grid-template-columns: 1fr; gap: 1.1rem; }
-  .card h2 { font-size: 1.5rem; }
-  .price { border-left: 3px solid #a6b0a9; padding-left: 1rem; }
-}
+.shell { max-width:1080px; margin:auto; padding:36px 28px 60px; }
+.intro { margin-bottom:30px; }
+.intro h1 { color:var(--gb-heading); font-size:clamp(27px,4vw,36px); line-height:1.25; margin:0 0 12px; font-weight:800; }
+.intro p { margin:0; font-size:17px; }
+.intro .caveat { font-size:14px; color:#666; margin-top:4px; }
+.table { width:100%; min-width:0; border-collapse:collapse; table-layout:fixed; }
+.table th { background:transparent; text-transform:none; letter-spacing:normal; }
+.table caption { text-align:left; caption-side:bottom; color:#666; font-size:14px; padding-top:18px; }
+.table thead th { font-family:Avenir,'Avenir Next',Arial,sans-serif; text-align:left; font-size:14px; padding:12px 0; color:#666; font-weight:600; border-bottom:2px solid #b6c6cd; }
+.table thead th:last-child { width:160px; text-align:right; }
+.table tbody th,.table td { border-bottom:1px solid var(--gb-rule); padding:0; vertical-align:middle; }
+.table tbody th { text-align:left; font-weight:400; }
+.rowLink { display:block; padding:13px 18px 13px 0; text-decoration:none; }
+.rowLink strong { display:block; font-family:Avenir,'Avenir Next',Arial,sans-serif; color:#3e3e3e; font-size:17px; line-height:1.4; }
+.rowLink span { display:block; font-size:15px; line-height:1.45; color:#656565; margin-top:2px; }
+.table td { text-align:right; font-family:Avenir,'Avenir Next',Arial,sans-serif; font-size:19px; font-weight:600; font-variant-numeric:tabular-nums; }
+.table td a { display:block; padding:20px 0; text-decoration:none; color:#365360; }
+.table tbody tr:hover { background:#f6f9fa; }
+.table a:hover strong,.table td a:hover { text-decoration:underline; }
+.footer { display:flex; flex-wrap:wrap; gap:12px 28px; padding-top:30px; font-size:14px; }
+@media(max-width:600px) { .shell { padding:28px 20px 45px; }.table thead th:last-child { width:105px; }.rowLink strong { font-size:16px; }.rowLink span { font-size:14px; }.table td { font-size:17px; }.table thead th { font-size:13px; } }

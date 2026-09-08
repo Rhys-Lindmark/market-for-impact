@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { sortedResearchPrograms } from '@/lib/sf-research-index';
 import styles from './research-index.module.css';
 import '../givebetter.css';
-const price = (value:number|null) => value === null ? 'Not yet estimated' : new Intl.NumberFormat('en-US', {style:'currency',currency:'USD',notation:'compact',maximumFractionDigits:0}).format(value);
+const price = (value:number|null) => value === null ? 'Not yet estimated' : new Intl.NumberFormat('en-US', {style:'currency',currency:'USD',notation:'compact',minimumFractionDigits:value>=1_000_000&&value<1_000_000_000?1:0,maximumFractionDigits:value>=1_000_000_000?0:value>=1_000_000?1:0}).format(value);
 
 export const metadata: Metadata = {
   title: 'GiveBetter x SF Research',

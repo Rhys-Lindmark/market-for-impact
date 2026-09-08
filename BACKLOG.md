@@ -1,5 +1,11 @@
 # Market for Impact backlog
 
+## Whole YMCA acceptance — September 8
+
+Replaces DPP-only headline with whole unrestricted-gift conditional portfolio: central $9.50M/10 SF QALYs, $6.18M/10 Bay QALYs, all $100K counted and30% health unquantified. No verified prospective allocation or donor offer. Seven scenarios preserve finite health, independent harms and nested regions; old DPP API retained as program history. Independent runtime/content audit accepted,308 tests and lint/build passed. Count stays50/115. Next publish and canonical verify, then Vision To Learn as report51.
+
+Calibration PR223 is now published: canonical AMF/NI headlines and12-scenario APIs verified390/768. Current global estimates3778.42/3869.67 per10Q; original v1 preserved.
+
 ## Calibration v2 acceptance — September 8
 
 - [x] RotaCare published in PR222, exact9129b2120fb8019d57b1256f251ce6e061d3d60e; canonical phone/tablet report/API and unified50-row table passed. Current count50/115.

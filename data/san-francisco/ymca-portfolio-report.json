@@ -1,0 +1,278 @@
+{
+  "organization": "YMCA of Greater San Francisco",
+  "eyebrow": "Whole-organization estimate · San Francisco and Bay Area",
+  "program": "Fitness, mental health, family support, diabetes prevention and broader community services",
+  "donationUrl": "https://www.ymcasf.org/donate/annual-campaign/",
+  "published": "September 8, 2026",
+  "modelVersion": "ymca-greater-sf-unrestricted-portfolio-proposal-v1",
+  "nutshell": {
+    "headline": "Our best estimate is $9.50 million per 10 additional SF QALYs.",
+    "body": "The same unrestricted gift yields an estimated $6.18 million per 10 Bay Area QALYs, including SF. This portfolio model replaces the narrower diabetes-prevention view. It counts the entire gift while leaving 30% of spending without quantified health benefits.",
+    "whyItMayWork": "YMCA provides real clinical care, supported activity, family services and diabetes prevention that can improve health when donations expand access.",
+    "whyWeAreCautious": "The next gift’s allocation, additional service access, complete costs and local health effects are largely analyst judgments. Educational and community value is not fully captured in QALYs.",
+    "recommendationBlocker": "Neither central nor favorable modeled health yield meets $100,000 per 10 QALYs. Better evidence on marginal services and sustained health change is needed."
+  },
+  "summary": [
+    {
+      "label": "SF estimate",
+      "value": "$9.50M / 10 QALYs",
+      "detail": "Central donor-cash estimate with a judgmental 65% SF residence share."
+    },
+    {
+      "label": "Bay estimate",
+      "value": "$6.18M / 10 QALYs",
+      "detail": "Includes SF; not an additional pool of benefits to add to it."
+    },
+    {
+      "label": "Gift coverage",
+      "value": "100% of cash counted",
+      "detail": "30% allocated to youth, aquatics and camp/capital/other has unquantified health."
+    },
+    {
+      "label": "Evidence",
+      "value": "Mixed trials and judgments",
+      "detail": "One external integrated QALY anchor; no observed organization-wide donor effect."
+    }
+  ],
+  "programSection": {
+    "body": "The YMCA’s work spans SF, San Mateo and Marin. Its actual services include fitness access, mental-health care, family resource centers, diabetes prevention, youth programs and aquatics. Public funding, fees and existing partnerships already support much of this work.",
+    "steps": [
+      {
+        "title": "Allocate one unrestricted gift",
+        "detail": "Assumed shares: fitness 20%, mental health 25%, family support 20%, diabetes prevention 5%, youth enrichment 15%, aquatics 5%, and camp/capital/other 10%."
+      },
+      {
+        "title": "Change access beyond existing provision",
+        "detail": "Only additional provision earns health credit; replacing fees, public payments or other donors may create little incremental health."
+      },
+      {
+        "title": "Count distinct health changes",
+        "detail": "Supported exercise, therapy, short hardship relief and delayed diabetes are modeled separately, assuming distinct health increments; overlapping benefits must be excluded."
+      }
+    ],
+    "boundary": "All allocation weights are analyst priors, not audited marginal spending. Complete offered-course allowances include failed participation and shared costs once. Unquantified services are not assumed valueless. Food-bank partner outcomes are not added again."
+  },
+  "model": {
+    "headline": "A $100,000 gift yields an estimated 0.105 SF QALYs, or 0.162 across the Bay.",
+    "body": "We estimate four finite health pathways rather than extrapolate diabetes prevention to the whole YMCA. Fitness contributes .072 Bay QALYs, mental health .066667, family support .016 and diabetes prevention .007215. Geography is then allocated by residence judgment.",
+    "equation": {
+      "label": "Central portfolio model",
+      "expression": "(.072 fitness + .066667 mental health + .016 family support + .007215 diabetes prevention) × .65 SF share",
+      "result": ".105223 SF QALYs; $100,000 × 10 / .105223 = $9,503,647"
+    },
+    "inputs": [
+      {
+        "key": "allocation",
+        "label": "Unrestricted-gift allocation",
+        "confidence": "Judgment",
+        "best": "70% quantified pathways; 30% unquantified",
+        "range": "Fixed in these scenarios",
+        "basis": "All $100,000 remains in the numerator. Actual prospective allocation may differ sharply."
+      },
+      {
+        "key": "fitness",
+        "label": "Supported-activity course",
+        "confidence": "Trial anchor; judgmental transfer",
+        "best": "$600; .027 Q × 20% transfer",
+        "range": "$300–$1,000; 2–75% transfer",
+        "basis": "External .027 Q is integrated over months 6–12, not annual utility or lifetime benefit. Membership assistance alone does not establish a matched coached course."
+      },
+      {
+        "key": "mental",
+        "label": "Mental-health course",
+        "confidence": "Judgment",
+        "best": "$1,500; 20% response × .10 utility × .5 integrated years",
+        "range": "$1,000–$2,500; bounded first-year effects",
+        "basis": "Response is incremental versus usual care and includes noncompletion. Utility includes shared treatment burdens; no symptom-scale mapping is claimed."
+      },
+      {
+        "key": "family",
+        "label": "Short family hardship support",
+        "confidence": "Judgment",
+        "best": "$500; 20% response × .02 utility × .25 integrated years",
+        "range": "$250–$1,000; .1–.5 integrated years",
+        "basis": "Short-lived health relief only, not a major housing transition or duplicated therapy/food-bank benefit. Weakest quantified bridge."
+      },
+      {
+        "key": "dpp",
+        "label": "Diabetes-prevention course",
+        "confidence": "Judgment, informed by trials",
+        "best": "$600; 8% three-year risk × 30% reduction",
+        "range": "$350–$1,000; 3–15% risk; 10–50% reduction",
+        "basis": "Central cases are delayed two years, with .05 annual utility relief discounted in years 3–4. No lifelong diabetes avoidance or duplicate fitness benefit."
+      },
+      {
+        "key": "additionality",
+        "label": "Additional provision from funding",
+        "confidence": "Judgment",
+        "best": "40% in each quantified pathway",
+        "range": "0–80%, depending on pathway",
+        "basis": "Access beyond public, private and household financing. Separate from response to that changed provision; not another completion multiplier."
+      },
+      {
+        "key": "geography",
+        "label": "SF share of modeled Bay health",
+        "confidence": "Judgment",
+        "best": "65%",
+        "range": "40–75%",
+        "basis": "Unverified beneficiary-residence prior, not a branch-location ratio. Model assumes no material non-Bay share; outside-Bay benefits must be separately allocated if present."
+      }
+    ],
+    "giftHeading": "How much could the estimate change?",
+    "sensitivity": [
+      {
+        "case": "Joint favorable",
+        "headline": "$447,276 / 10 SF QALYs",
+        "detail": "$335,457 per 10 Bay QALYs. Demanding combination of cheaper courses and stronger effects; neither meets the target."
+      },
+      {
+        "case": "Pessimistic positive",
+        "headline": "$1.91 billion / 10 SF QALYs",
+        "detail": "$764.85 million per 10 Bay QALYs."
+      },
+      {
+        "case": "Additional-resource stress",
+        "headline": "Central ratios double",
+        "detail": "A hypothetical extra $100,000 of induced resources gives $19.01M SF and $12.35M Bay. This is not a measured full-resource comparison."
+      },
+      {
+        "case": "No additional provision or clinical benefit",
+        "headline": "No finite positive ratio",
+        "detail": "Donor cash remains spent while modeled health is zero."
+      },
+      {
+        "case": "Independent donor-harm stress",
+        "headline": "Bay health can become negative",
+        "detail": "Subtracting .1 Q in SF and .1 elsewhere in the Bay leaves .005223 SF Q but −.038119 Bay Q centrally. Under no additional provision, both regions have net harm. These are diagnostic assumptions, not observed harm rates."
+      }
+    ],
+    "uncertaintyBoundary": "Scenarios are joint analyst judgments, not confidence limits or a calibrated expected-value distribution. Exercise-referral EQ-5D already includes mental health: fitness and therapy increments must be from separate cohorts or exclude the same distress improvement in the same person and period. Shared people may have genuinely distinct gains, but full overlapping generic utilities cannot be added. Remove family credit if it duplicates therapy or partner-food health. DPP participants do not also earn the modeled fitness benefit.",
+    "fundingBoundary": "FY2025 audited expenses were $117.87M. Revenue included $51.16M of government fees/grants; membership and program fees are also substantial. These document baseline financing, not marginal allocation or course prices. General campaign giving does not identify extra treatment places. Course allowances include staff, facilities and allocated overhead; the favorable mental-health price requires low-intensity/group delivery, not guaranteed full clinical therapy. Public reimbursement, displaced payments, volunteer and participant time, travel and savings are not reconciled, so donor cash is not comprehensive societal cost. Unquantified youth, aquatics and capital benefits remain possible, positive or negative."
+  },
+  "evidence": [
+    {
+      "key": "ners",
+      "design": "Randomized exercise-referral economic evaluation",
+      "population": "Wales NERS; 798 economic-study participants, 55% of the trial",
+      "result": ".027 incremental QALYs integrated over months 6–12; baseline EQ-5D was not collected.",
+      "transfer": "A 16-week supported referral program is not an ordinary YMCA membership. The economic sample had greater adherence; transfer factors address selection and delivery mismatch without a second adherence multiplier or later tail."
+    },
+    {
+      "key": "mental-family",
+      "design": "Primary service documentation; modeled health judgments",
+      "population": "YMCA mental-health services and family resource centers",
+      "result": "Actual clinical and hardship-support pathways exist, alongside DPH, school and Medi-Cal funding.",
+      "transfer": "Local incremental response, utility and duration are not measured here. Workshops, referrals and delivered therapy are not interchangeable."
+    },
+    {
+      "key": "dpp",
+      "design": "Randomized community adaptation plus current program documentation",
+      "population": "RAPID trial and YMCA high-risk adult prevention course",
+      "result": "Community delivery is supported; local DPP excludes diagnosed diabetes and may be covered by employers or insurers.",
+      "transfer": "RAPID is not a local incidence/QALY estimate. The model uses finite analyst diabetes-delay assumptions, not the intensive DPP trial’s lifetime benefits."
+    },
+    {
+      "key": "portfolio",
+      "design": "Audited financial statements and annual report",
+      "population": "YMCA of Greater San Francisco, FY2024–25",
+      "result": "Broad health, human-service, youth and camp operations and mixed financing are documented.",
+      "transfer": "Accounting categories and participant counts do not measure the next gift’s allocation, additional health or beneficiary residence."
+    }
+  ],
+  "reservations": [
+    "The entire gift is costed, but only selected health pathways are quantified; this is not a complete social-value estimate.",
+    "Local response, funding, course-price and geography assumptions dominate the result.",
+    "Fitness, therapy, family support and DPP must not duplicate the same health increment.",
+    "Existing public funding and fees can substitute for donations; extra service capacity is unverified.",
+    "Even the joint favorable scenario remains above $100,000 per 10 QALYs."
+  ],
+  "excludedBenefits": [
+    "Unquantified youth education, employment, caregiver and community benefits.",
+    "Aquatics, drowning prevention, camping and capital benefits without a verified incremental health bridge.",
+    "Food-bank partnership benefits already credited to the supplying organizations.",
+    "Lifetime diabetes prevention, long-run exercise tails and duplicated therapy effects.",
+    "Unreconciled healthcare savings or financial transfers treated as health."
+  ],
+  "sources": [
+    {
+      "publisher": "YMCA of Greater San Francisco",
+      "title": "FY2025 audited financial statements",
+      "url": "https://media.ymcasf.org/wp-content/uploads/2025/11/12144641/Young-Mens-Christian-Association-of-San-Francisco-2025-Audit-FS-Final.pdf",
+      "published": "October 24, 2025; year ended June 30, 2025",
+      "sourceType": "Primary audited finances",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "YMCA of Greater San Francisco",
+      "title": "FY2024–25 annual report",
+      "url": "https://media.ymcasf.org/wp-content/uploads/2025/12/24152248/Annual-Report-YMCA-of-Greater-San-Francisco-2024-2025.pdf",
+      "published": "December 2025",
+      "sourceType": "Primary portfolio report",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "YMCA of Greater San Francisco",
+      "title": "Annual campaign",
+      "url": "https://www.ymcasf.org/donate/annual-campaign/",
+      "published": "Current page",
+      "sourceType": "Primary general-giving route",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "YMCA of Greater San Francisco",
+      "title": "Financial assistance",
+      "url": "https://www.ymcasf.org/membership/membership-benefits/financial-assistance/",
+      "published": "Current page",
+      "sourceType": "Primary access description",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "YMCA of Greater San Francisco",
+      "title": "Mental-health services",
+      "url": "https://www.ymcasf.org/location/mental-health-services-ymca/",
+      "published": "Current page",
+      "sourceType": "Primary clinical-service description",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "YMCA of Greater San Francisco",
+      "title": "Family resource centers",
+      "url": "https://www.ymcasf.org/program/family-resource-centers/",
+      "published": "Current page",
+      "sourceType": "Primary service description",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "YMCA of Greater San Francisco",
+      "title": "Diabetes Prevention Program",
+      "url": "https://www.ymcasf.org/program/diabetes-prevention/",
+      "published": "Current page",
+      "sourceType": "Primary eligibility and payer context",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Edwards et al., BMC Public Health",
+      "title": "NERS randomized economic evaluation",
+      "url": "https://eprints.gla.ac.uk/89420/1/89420.pdf",
+      "published": "2013",
+      "sourceType": "Primary randomized-trial economic evaluation",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "RAPID investigators",
+      "title": "Community YMCA diabetes-prevention trial",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4605179/",
+      "published": "2015",
+      "sourceType": "Primary randomized trial; indexed abstract provenance",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Diabetes Prevention Program Research Group",
+      "title": "Ten-year cost-effectiveness of lifestyle intervention",
+      "url": "https://diabetesjournals.org/care/article/35/4/723/38335/The-10-Year-Cost-Effectiveness-of-Lifestyle",
+      "published": "2012",
+      "sourceType": "Primary trial economic evaluation; context only",
+      "retrieved": "September 8, 2026"
+    }
+  ]
+}

@@ -4,16 +4,27 @@ import compass from '@/data/san-francisco/compass-c-rent-qaly-bridge-audit-v1.js
 import { researchCostRanking, researchRankBySlug } from '@/lib/research-cost-ranking.mjs';
 
 import './sf-home.css';
+import './givebetter.css';
+/* eslint-disable @next/next/no-img-element -- Static editorial photos with reserved dimensions. */
 
 export const metadata: Metadata = {
-  title: 'Our top San Francisco charities — Market for Impact',
+  title: 'Our Top Charities — GiveBetter x SF',
   description: 'Our current San Francisco shortlist, compared by estimated dollars per better life: 10 additional quality-adjusted life years.',
-  alternates: { canonical: 'https://ai.rhyslindmark.com/donate' },
+  alternates: { canonical: 'https://ai.rhyslindmark.com/givebetter' },
   openGraph: { title: 'Our top San Francisco charities', description: 'Four current picks, transparent estimates, and the research behind them.' },
 };
 
 const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumSignificantDigits: 3 });
-const root = 'https://ai.rhyslindmark.com/donate';
+const root = 'https://ai.rhyslindmark.com/givebetter';
+function GivingIllustration({ index, label }: { index:number; label:string }) {
+  return <div className="sf-home-illustration"><img src="/images/givebetter-principles.png" alt={label} width="600" height="200" style={{transform:`translateX(-${index * 100 / 3}%)`}} /></div>;
+}
+const photos: Record<string, { src: string; caption: string; source: string }> = {
+  'san-francisco-aids-foundation': { src: '/images/sfaf.jpg', caption: 'Harm reduction at San Francisco AIDS Foundation. Photo: SFAF.', source: 'https://www.sfaf.org/health-services/overdose-prevention-response/' },
+  'project-homeless-connect': { src: '/images/phc.jpg', caption: 'Reading and prescription glasses services. Photo: Project Homeless Connect, 2015.', source: 'https://www.projecthomelessconnect.org/v44a0929/' },
+  glide: { src: '/images/glide.jpg', caption: 'GLIDE Women’s Center staff. Photo: GLIDE. The housing model reviews rental assistance separately.', source: 'https://www.glide.org/compassionate-case-management-at-glides-womens-center/' },
+  'breathe-california': { src: '/images/breathe.png', caption: 'Breathe California community outreach, 2019. Photo: Breathe California; not a pictured cessation session.', source: 'https://lungsrus.org/' },
+};
 const picksBySlug = [
   { slug: 'breathe-california', name: 'Breathe California', program: 'Help more adults quit smoking', overview: 'A proposed additional six-session course could produce sustained quits and prevent later illness.', opinion: 'An attractive mechanism to investigate, but current SF delivery and marginal pricing are not verified.', evidence: 'External lifetime health calibration; local quit effect, cost and funding additionality are judgments.', reservation: 'This is a conditional course model, not an available local offer. It excludes medication costs; free existing support changes the counterfactual.', model: null },
   { slug: 'north-east-medical-services', name: 'North East Medical Services', program: 'Reconnect people to ongoing hepatitis B care', overview: 'Additional follow-up could help adults receive monitoring and indicated treatment before serious liver disease develops.', opinion: 'A promising prevention mechanism, but this ranking relies on a very uncertain adaptation of an external lifetime model.', evidence: 'Published economic modeling and verified local services; no causal estimate of an additional NEMS donation.', reservation: 'The estimate pays for20 years of recurring support. Local effect, health timing and additionality are judgments; existing ReLink funding may displace a gift.', model: null },
@@ -31,27 +42,32 @@ const picks = researchCostRanking.slice(0, 4).map(row => {
 });
 
 export default function SanFranciscoHome() {
-  return <div className="sf-home">
-    <header className="sf-home-nav"><a href={root} className="sf-home-brand">Market for Impact</a><a href={`${root}/research`}>Our research ↗</a></header>
+  return <div className="sf-home givebetter">
+    <header className="givebetter-masthead"><a href={root}>Give<span>Better</span> <small>x SF</small></a></header>
     <main>
       <section className="sf-home-intro">
-        <p className="sf-home-eyebrow">SAN FRANCISCO GIVING</p>
-        <h1>Our top charities</h1>
-        <p className="sf-home-lead">Where could your next dollar make life better in San Francisco?</p>
-        <p>These four programs have the lowest central cost estimates in our completed models so far. They are our current research picks, with very low confidence and funding capacity still to verify.</p>
-        <p className="sf-home-unit"><strong>One better life = 10 additional QALYs.</strong> That means ten years of life in full health, or equivalent health gains spread across people. These are modeled health benefits, not a count of people served.</p>
-        <small>Shortlist updated 7 September 2026 · Models reviewed through 7 September 2026</small>
+        <h1>Our Top Charities</h1>
+        <p className="sf-home-lead">Find promising ways to make life better in San Francisco.</p>
+        <small>Last updated: September 2026</small>
       </section>
-      <nav className="sf-home-jump" aria-label="Jump to a charity">{picks.map(p => <a key={p.slug} href={`#${p.slug}`}>{p.name} ↓</a>)}</nav>
+      <section className="sf-home-principles" aria-label="How to give better">
+        <div><GivingIllustration index={0} label="Illustration of San Francisco Bay" /><h2>Give to cost-effective programs</h2><p>We compare how much an additional donation could improve health and lives in San Francisco.</p></div>
+        <div><GivingIllustration index={1} label="Illustration of research books" /><h2>Donate based on evidence</h2><p>Read the research behind each estimate, including the assumptions and what could change our view.</p></div>
+        <div><GivingIllustration index={2} label="Illustration of choosing a charity" /><h2>Pick a charity</h2><p>Explore our current shortlist, then use the organization’s giving link in its report to donate directly.</p></div>
+      </section>
+      <p className="sf-home-note">Our four lowest central estimates so far. A “better life” means 10 additional quality-adjusted life years, potentially spread across people. Estimates are uncertain; marginal funding room is unverified.</p>
       <section aria-label="Four current charity picks">{picks.map((pick, i) => <article className="sf-home-charity" id={pick.slug} key={pick.slug}>
-        <div className="sf-home-charity-title"><p className="sf-home-eyebrow">CHARITY {i + 1} OF 4</p><h2>{pick.program}</h2><a href={`${root}/charities/${pick.slug}`} className="sf-home-org">{pick.name} ↗</a></div>
-        <div className="sf-home-charity-body">
-          <div><h3>Overview</h3><p>{pick.overview}</p><h3>Our take</h3><p>{pick.opinion}</p><h3>Evidence of impact</h3><p>{pick.evidence}</p></div>
-          <div className="sf-home-estimate"><h3>Cost-effectiveness</h3><strong className="sf-home-price">≈ {money.format(pick.model.bestCostPerTenQalysUsd)}</strong><p className="sf-home-price-unit">per better life · 10 QALYs</p><p>≈ {money.format(pick.model.costPerQalyUsd)} per QALY</p><p className="sf-home-range">Positive-effect scenarios: {money.format(pick.model.positiveEffectRangeUsd.low)}–{money.format(pick.model.positiveEffectRangeUsd.high)} per better life.</p><details><summary>What could change this estimate?</summary><p>{pick.reservation}</p><p>The scenario range is not a confidence interval. If the program produces no extra health benefit, or a gift replaces other funding, the cost per better life has no finite upper bound.</p></details><p className="sf-home-funding">Room for more funding: not yet verified.</p></div>
+        <figure><img src={photos[pick.slug].src} alt={photos[pick.slug].caption} width="480" height="480" loading="lazy" /><figcaption><a href={photos[pick.slug].source}>{photos[pick.slug].caption}</a></figcaption></figure>
+        <div><p className="sf-home-eyebrow">CHARITY {i + 1} OF 4</p><h2>{pick.program}</h2>
+          <div className="sf-home-charity-body">
+            <section><h3>Overview</h3><p>{pick.overview}</p></section>
+            <section><h3>Cost-effectiveness</h3><p>Our central estimate is <strong>{money.format(pick.model.bestCostPerTenQalysUsd)} per better life (10 QALYs)</strong>. {pick.opinion}</p></section>
+            <section><h3>Evidence of impact</h3><p>{pick.evidence}</p><p>{pick.reservation}</p></section>
+            <section><h3>Organization and research</h3><div className="sf-home-org-card"><h4>{pick.name}</h4><a className="sf-home-report" href={`${root}/charities/${pick.slug}`}>Full research report</a></div></section>
+          </div>
         </div>
-        <a className="sf-home-report" href={`${root}/charities/${pick.slug}`}>Full research report &amp; cost-effectiveness model →</a>
       </article>)}</section>
-      <footer className="sf-home-footer"><p>Ordered by central modeled dollars per 10 QALYs, not evidence strength. Cost scopes and health assumptions differ substantially; Breathe’s conditional course budget excludes medication and other payers’ resources. These are research leads, not proof that other charities are ineffective.</p><a href={`${root}/research`}>Rest of the research →</a></footer>
+      <footer className="sf-home-footer"><a href={`${root}/research`}>All research</a><p>Independent research. Not affiliated with GiveWell or the organizations reviewed.</p></footer>
     </main>
   </div>;
 }

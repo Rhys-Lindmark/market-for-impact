@@ -10,7 +10,7 @@ const content: CharityReportContent = {
  organization: model.organization, program: model.program, eyebrow: 'CHARITY RESEARCH · SAN FRANCISCO · EXPLORATORY', published: '7 September 2026', modelVersion: model.version,
  nutshell: {
   headline: 'A direct health measure supports a model—not a claim that local counseling is cheap.',
-  body: <>Our best guess is <strong>{money.format(central.result.costPerTenQalys!)} per better life (10 QALYs)</strong> for a proposed brief adolescent anxiety course. This is not a measured Huckleberry effect, nor a model of its entire counseling portfolio. On this narrow health-only estimate, it is not a leading cost-effectiveness choice. <a href="https://ai.rhyslindmark.com/donate/api/sf-huckleberry-model">Inspect assumptions and formulas →</a></>,
+  body: <>Our best guess is <strong>{money.format(central.result.costPerTenQalys!)} per better life (10 QALYs)</strong> for a proposed brief adolescent anxiety course. This is not a measured Huckleberry effect, nor a model of its entire counseling portfolio. On this narrow health-only estimate, it is not a leading cost-effectiveness choice. <a href="https://ai.rhyslindmark.com/givebetter/api/sf-huckleberry-model">Inspect assumptions and formulas →</a></>,
   whyItMayWork: 'Accessible behavioral counseling can reduce avoidant behavior and improve functioning for a suitable adolescent anxiety cohort.',
   whyWeAreCautious: 'The local protocol, recipient mix and marginal cost are unverified. The external comparator is assisted referral, not no care.',
   recommendationBlocker: 'A priced additional course with identifiable reimbursement and staffing capacity is missing.',

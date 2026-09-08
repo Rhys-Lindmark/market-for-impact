@@ -11,9 +11,9 @@ test('homepage and research copy refinements',async({page})=>{
  for(const cell of await page.locator('tbody td').all()) expect(await cell.innerText()).toMatch(/^\$[\d,]+(?:\.\dM|[KBT])?$/);
 });
 
-test('all 45 reports use readable research architecture',async({page},testInfo)=>{
+test('all 46 reports use readable research architecture',async({page},testInfo)=>{
  test.setTimeout(180000);
- expect(sortedResearchPrograms).toHaveLength(45);
+ expect(sortedResearchPrograms).toHaveLength(46);
  for(const item of sortedResearchPrograms){
   const response=await page.goto(item.href);
   expect(response?.status(),item.href).toBe(200);

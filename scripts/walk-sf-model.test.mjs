@@ -4,3 +4,6 @@ import {walkSfModel} from '../lib/walk-sf-model.mjs';
 test('Walk SF integrated calculator agrees with independently audited scenarios',()=>{
  for(const s of data.scenarios){const r=walkSfModel(s,data.giftUsd);for(const key of ['sfNetQaly','bayIncludingSfNetQaly','sfUsdPer10Qaly','bayUsdPer10Qaly','timingResourceUsd','grossForwardResourceStressUsd']){if(s.outputs[key]===null)assert.equal(r[key],null);else assert.ok(Math.abs(r[key]-s.outputs[key])<1e-8*Math.max(1,Math.abs(s.outputs[key])),s.id+key);}assert.equal(r.donorCostUsd,100000);}
 });
+test('Walk SF rejects missing fields, fractional and unbounded horizons',()=>{
+ const s=data.scenarios[0];for(const fields of [{targetRiskShare:undefined},{delayYears:1.1},{fatalHorizonYears:1e9},{sfResidentShare:2},{packageCapitalUsd:-1}])assert.throws(()=>walkSfModel({...s,...fields}),RangeError);
+});

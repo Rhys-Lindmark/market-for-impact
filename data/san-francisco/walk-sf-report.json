@@ -1,0 +1,270 @@
+{
+  "organization": "Walk San Francisco",
+  "eyebrow": "San Francisco · Whole-organization street-safety portfolio",
+  "program": "Conditional health value of a $100,000 unrestricted gift across implementation advocacy, education and survivor support",
+  "donationUrl": "https://walksf.org/about-us/our-impact/",
+  "published": "September 8, 2026",
+  "modelVersion": "walksf-unrestricted-traffic-safety-v1",
+  "nutshell": {
+    "headline": "Safer streets could produce broad benefits. A new gift’s contribution is uncertain.",
+    "body": "Our conditional central estimate is $5.80 million per 10 SF-resident QALYs, or $4.58 million per 10 Bay-resident QALYs including SF. A demanding favorable joint scenario reaches $31,700/$28,300 in donor cost, but not under the same public-resource boundary. These are analyst judgments about prospective implementation, not observed organizational effects or a priced donation offer.",
+    "whyItMayWork": "Physical traffic-calming has controlled injury evidence. Accelerating a substantial package could prevent deaths and severe injuries before the no-gift baseline catches up.",
+    "whyWeAreCautious": "Neither the next gift’s causal contribution nor the otherwise-delayed street package is verified. Utility and residence shares are judgments; the primary death-effect interval includes no effect.",
+    "recommendationBlocker": "No identified marginal package, counterfactual completion date, complete public-capital budget or verified unused organizational capacity."
+  },
+  "summary": [
+    {
+      "label": "Central donor cost / 10 QALYs",
+      "value": "$5.80M SF / $4.58M Bay",
+      "detail": "Same $100,000 gift yields .172449 SF QALY and .218435 Bay QALY. Bay includes SF; do not add them."
+    },
+    {
+      "label": "Whole-gift boundary",
+      "value": "$100,000 once",
+      "detail": "$60,000 implementation; $15,000 other policy/education; $15,000 survivor support; $10,000 other/shared reserve. Allocation is judgmental; all cost retained."
+    },
+    {
+      "label": "Recipient",
+      "value": "Walk San Francisco Foundation",
+      "detail": "EIN 47-2000881, supported by official historical IRS letter and provider-posted FY2024–25 Form 990; not current tax advice."
+    },
+    {
+      "label": "Financial scale",
+      "value": "$981,449 FY2024–25 expenses",
+      "detail": "A filed Form 990, not audited statements or a unit-cost quote. A $100,000 gift is material, about 10% of that expense base."
+    }
+  ],
+  "programSection": {
+    "body": "Walk SF works on street-safety implementation, organizing, education, policy and support for survivors and families. The 2026 Slow Our Streets campaign is real; the modeled bundled engineering package is hypothetical. We evaluate non-electoral implementation and accountability, not candidate or party persuasion.",
+    "steps": [
+      {
+        "title": "Fund the portfolio",
+        "detail": "Required implementation staff, administration and fundraising fit inside its $60,000 share; other allocations are not a second overhead charge."
+      },
+      {
+        "title": "Advance an otherwise-delayed package",
+        "detail": "The central 10% joint probability includes coalition attribution, fundraising replacement, public approval, failure and projects happening anyway. Do not multiply another allocation or additionality discount."
+      },
+      {
+        "title": "Prevent injuries during acceleration",
+        "detail": "Central success covers 2% of baseline fatal/severe risk for two years. These are risk-weighted exposures, not shares of residents or street length."
+      },
+      {
+        "title": "Follow finite health consequences",
+        "detail": "Only injuries prevented before the comparator catches up count. Their finite subsequent health consequences can extend beyond the acceleration period."
+      }
+    ],
+    "boundary": "Existing cameras, daylighting and scheduled public projects are baseline. No historical citywide decline, all endorsed projects or full legislative victory is attributed to the gift. Other portfolio benefits remain unquantified, not established absent."
+  },
+  "model": {
+    "headline": "One budget; finite acceleration and explicit attribution",
+    "body": "Central/favorable projects open at the beginning of year 2; pessimistic at year 3. Count event years 2–3, 2–6 or year 3 respectively, placing events at year-end. Fatal and nonfatal health trajectories are then discounted from those events; the two timing discounts cover different periods. Geography is an unmeasured residence prior: central 75% SF, 20% other Bay, 5% outside Bay; favorable 85/10/5%; pessimistic 60/25/15%. City location is not resident identity.",
+    "equation": {
+      "label": "Incremental health",
+      "expression": "Q = attribution probability × risk share × discounted acceleration years × (fatal incidence × fatal reduction × finite fatal Q + nonfatal severe incidence × severe reduction × finite injury Q), partitioned by residence minus independent donor-specific harm.",
+      "result": "Central: .172449 SF QALY / .218435 Bay QALY for the same $100,000."
+    },
+    "inputs": [
+      {
+        "key": "attribution",
+        "label": "Joint chance of additional acceleration",
+        "confidence": "Analyst judgment",
+        "best": "10%",
+        "range": "1%–35%; zero tested",
+        "basis": "Conditional on $60,000 implementation allocation, includes failure and replacement."
+      },
+      {
+        "key": "risk",
+        "label": "Annual baseline fatal / nonfatal severe injuries",
+        "confidence": "Mixed source periods",
+        "best": "25 / 550",
+        "range": "15 / 300 pessimistically",
+        "basis": "25 deaths in 2025 is official; 550 is historical annual severe-injury average, not a 2025 count."
+      },
+      {
+        "key": "reach",
+        "label": "Risk-weighted package reach / acceleration",
+        "confidence": "Analyst judgment",
+        "best": "2% / 2 years",
+        "range": "0.5% / 1 year to 8% / 5 years",
+        "basis": "Not a verified project or inexpensive access to high-injury streets."
+      },
+      {
+        "key": "effect",
+        "label": "Fatal / severe risk reduction",
+        "confidence": "Transferred judgment",
+        "best": "10% / 20%",
+        "range": "2% / 5% to 35% / 40%; null and harm tested",
+        "basis": "Physical-zone evidence, not cameras or signs alone; death-only primary interval crosses zero."
+      },
+      {
+        "key": "utility",
+        "label": "Finite QALYs per fatal / severe event prevented",
+        "confidence": "Analyst judgment",
+        "best": "12.31 / .283",
+        "range": "5.61 / .029 to 16.82 / .687",
+        "basis": "Fatal utility .80/.85/.65, annual hazard .02/.01/.05 and 30/40/15 years; severe loss .10/.15/.03 for 3/5/1 years; 3% discount."
+      }
+    ],
+    "giftHeading": "Same $100,000 gift under different assumptions",
+    "sensitivity": [
+      {
+        "case": "Central",
+        "headline": "$5.80M SF / $4.58M Bay per 10 QALYs",
+        "detail": ".172449 / .218435 QALYs."
+      },
+      {
+        "case": "Favorable joint stress",
+        "headline": "$31.7K SF / $28.3K Bay",
+        "detail": "31.5674 / 35.2812 QALYs. Demanding joint scenario, not confidence bound. Matched public-capital timing raises costs to $105.6K/$94.5K; gross forward-resource stress to $384K/$344K."
+      },
+      {
+        "case": "Pessimistic positive",
+        "headline": "$17.19B SF / $12.13B Bay",
+        "detail": ".000058183 / .000082426 QALYs."
+      },
+      {
+        "case": "No acceleration or no injury reduction",
+        "headline": "No finite positive ratio",
+        "detail": "Zero QALYs; gift remains spent. No acceleration also removes incremental public construction timing costs."
+      },
+      {
+        "case": "Fatal effect null",
+        "headline": "$11.53M SF / $9.105M Bay",
+        "detail": ".086704 / .109826 QALYs from central nonfatal effect alone."
+      },
+      {
+        "case": "Harmful risk transfer",
+        "headline": "Net harm",
+        "detail": "−.025819 SF / −.032704 Bay QALYs; no positive price."
+      },
+      {
+        "case": "No acceleration plus donor-specific harm",
+        "headline": "Net harm",
+        "detail": "−.01 SF / −.02 Bay QALYs; a hypothetical independent health harm, not financial opportunity cost."
+      }
+    ],
+    "uncertaintyBoundary": "With other central assumptions unchanged, even 100% attribution produces only about 1.72 SF QALYs, short of the >10 needed for <$100,000 per 10 QALYs. Favorable upside requires jointly different reach, effect or duration—not merely proving some donor contribution.",
+    "fundingBoundary": "Donor numerator is the full gift. The separate matched-build perspective adds expected early-versus-later capital PV and extra maintenance: total $109,289/$333,432/$100,174 centrally/favorably/pessimistically. Gross forward spending without later-build credit is $200,803/$1,212,790/$102,919. Capital allowances $1M/$3M/$300K and maintenance $20K/$60K/$10K are unquoted judgments. These comparisons omit some displaced projects, volunteer time, disruption and medical offsets; neither is a fully priced social CEA. Deduplicate any shared public package and health attribution with SPUR and other advocates."
+  },
+  "evidence": [
+    {
+      "key": "physical",
+      "design": "Controlled interrupted time series; Grundy et al., BMJ 2009",
+      "population": "London physical 20-mph zones, 1986–2006",
+      "result": "All-casualty reduction 41.9%; killed/seriously injured 46.3%; deaths 35.1% with interval −1.9% to 72.0%. Recent-period estimates were smaller.",
+      "transfer": "No QALYs measured; physical engineering differs from signs, cameras, advocacy and some SF arterial conditions. Fatal and nonfatal outcomes remain separate."
+    },
+    {
+      "key": "baseline",
+      "design": "Official surveillance descriptions",
+      "population": "SF city traffic events, including nonresidents",
+      "result": "25 deaths in 2025; a separate historical average near 550 severe injuries annually.",
+      "transfer": "Combining different periods is a planning assumption, not a current matched-year injury dataset."
+    },
+    {
+      "key": "local",
+      "design": "Official organization portfolio and filing",
+      "population": "Walk SF’s current work and FY2024–25 finances",
+      "result": "Real implementation work and a roughly $1M expense scale; no verified gift-to-street effect.",
+      "transfer": "Historical contributions and expense proportions do not establish marginal impact or funding room."
+    }
+  ],
+  "reservations": [
+    "A small unrestricted gift may replace existing support or fail to alter public implementation.",
+    "SF target roads may not match London physical-zone evidence; deaths are statistically uncertain.",
+    "Finite utility, competing mortality, severity mix, target risk share and residence shares are judgments.",
+    "The favorable multi-corridor package is not demonstrated current capacity or a grant offer.",
+    "A publicly funded study is not an unfunded construction need. The District 2 web timeline is internally inconsistent; do not infer completed 2027 construction.",
+    "Funding deficit, annual expenditure and general donation options do not establish room for more effective funding."
+  ],
+  "excludedBenefits": [
+    "Survivor and family health effects",
+    "Education and civic welfare",
+    "Walking, pollution or fear-of-traffic benefits",
+    "Caregiver benefits and medical savings",
+    "Any electoral persuasion or duplicate advocacy credit"
+  ],
+  "sources": [
+    {
+      "publisher": "Walk San Francisco",
+      "title": "Slow Our Streets, 2026 campaign",
+      "url": "https://walksf.org/slow-our-streets/",
+      "published": "Undated current 2026 page",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official campaign page"
+    },
+    {
+      "publisher": "Walk San Francisco",
+      "title": "2025 Impact Report",
+      "url": "https://walksf.org/wp-content/uploads/2026/06/walksf-impact-report-2026_final.pdf",
+      "published": "2025 report; postedJune 2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Organization-authored impact report"
+    },
+    {
+      "publisher": "Walk San Francisco Foundation",
+      "title": "FY2024–25 Form990",
+      "url": "https://walksf.org/wp-content/uploads/2026/05/wsff-24-25-taxfinal-990.public.pdf",
+      "published": "July 1, 2024–June 30, 2025; preparerMay 14, 2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Provider-posted Form 990 filing"
+    },
+    {
+      "publisher": "IRS, hosted by organization",
+      "title": "Determination letter",
+      "url": "https://walksf.org/wp-content/uploads/2024/10/irs-determination-letter.pdf",
+      "published": "February 26, 2015; exemptioneffectiveSeptember 14, 2014",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Historical IRS determination letter"
+    },
+    {
+      "publisher": "SFMTA",
+      "title": "Traffic Fatalities Drop by Nearly Half in2025",
+      "url": "https://www.sfmta.com/press-releases/press-release-san-francisco-traffic-fatalities-drop-nearly-half-2025",
+      "published": "January 8, 2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official surveillance press release"
+    },
+    {
+      "publisher": "SFDPH",
+      "title": "Community Health Assessment2024",
+      "url": "https://media.api.sf.gov/documents/San_Francisco_Population_Health_CHA_2024_2025-04.cleaned.pdf",
+      "published": "2024; cleanedApril 2025",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official community health assessment"
+    },
+    {
+      "publisher": "Grundy et al., BMJ / LSHTM",
+      "title": "Effect of20mphtraffic speedzones on roadinjuries",
+      "url": "https://researchonline.lshtm.ac.uk/4370/1/bmj.b4469.pdf",
+      "published": "December 10, 2009",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary controlled interrupted time-series study"
+    },
+    {
+      "publisher": "SFMTA",
+      "title": "District2 Safety Study",
+      "url": "https://www.sfmta.com/projects/district-2-safety-study",
+      "published": "Undated currentpage; checkedSeptember 8, 2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official publicly funded project page"
+    },
+    {
+      "publisher": "SFMTA",
+      "title": "New High Injury Network map",
+      "url": "https://www.sfmta.com/fr/node/45244",
+      "published": "2026 currentpage",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official risk-network description"
+    },
+    {
+      "publisher": "SFMTA",
+      "title": "Laurel Heights/Jordan Park historicaltrafficcalming plan",
+      "url": "https://www.sfmta.com/tl/media/2013/download?inline=",
+      "published": "FY 2012–17schedule, not 2026price",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Historical engineering cost document"
+    }
+  ]
+}

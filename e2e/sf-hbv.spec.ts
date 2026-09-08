@@ -2,8 +2,8 @@ import { test, expect } from '@playwright/test';
 test('HBV report keeps lifetime calibration, recurring costs and funding caveats visible', async ({ page, request }) => {
   await page.goto('/charities/north-east-medical-services');
   await expect(page.getByRole('heading', {name:'North East Medical Services',exact:true})).toBeVisible();
-  await expect(page.locator('.charity-summary')).toContainText('$1,201,091');
-  await expect(page.locator('.charity-report-funding-status')).toContainText('Funding route unverified');
+  await expect(page.locator('.report-summary')).toContainText('$1,201,091');
+  await expect(page.locator('.report-heading .report-donate')).toHaveAttribute('href', /^(https:\/\/|#funding)/);
   await expect(page.locator('body')).toContainText('not recreate');
   const response = await request.get('/api/sf-hbv-model');
   expect(response.ok()).toBeTruthy();

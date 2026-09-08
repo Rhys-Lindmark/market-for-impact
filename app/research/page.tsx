@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { sortedResearchPrograms } from '@/lib/sf-research-index';
 import styles from './research-index.module.css';
 import '../givebetter.css';
+const price = (value:number|null) => value === null ? 'Not yet estimated' : new Intl.NumberFormat('en-US', {style:'currency',currency:'USD',notation:'compact',maximumFractionDigits:0}).format(value);
 
 export const metadata: Metadata = {
   title: 'GiveBetter x SF Research',
@@ -17,10 +18,10 @@ export default function ResearchIndex() {
       <p className={styles.caveat}>These are uncertain research estimates, not verified donation offers.</p>
     </section>
     <section aria-label="San Francisco program research" id="top-research">
-      <table className={styles.table}><caption>{sortedResearchPrograms.length} reviews, lowest central estimated cost first. Cost scopes and evidence quality vary; see each report.</caption><thead><tr><th scope="col">Organization / program</th><th scope="col">$ / better life</th></tr></thead><tbody>
+      <table className={styles.table}><caption>{sortedResearchPrograms.length} reviews, lowest central estimated cost first. Cost scopes and evidence quality vary; see each report.</caption><thead><tr><th scope="col">Organization</th><th scope="col">$ per better life</th></tr></thead><tbody>
         {sortedResearchPrograms.map(item => <tr key={item.href} data-research-slug={item.href.split('/').at(-1)} data-cost-per-ten-qalys={item.centralUsdPerTenQalys}>
           <th scope="row"><a className={styles.rowLink} href={item.href}><strong>{item.organization}</strong><span>{item.program}</span></a></th>
-          <td><a href={item.href} aria-label={`${item.organization}: ${item.betterLifePrice.replace('≈ ', '')} per better life`}>{item.betterLifePrice.replace('≈ ', '')}</a></td>
+          <td><a href={item.href} aria-label={`${item.organization}: ${price(item.centralUsdPerTenQalys)} per better life`}>{price(item.centralUsdPerTenQalys)}</a></td>
         </tr>)}
       </tbody></table>
     </section>

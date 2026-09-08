@@ -62,4 +62,4 @@ const content: CharityReportContent = {
   ],
   excludedBenefits: model.excluded, sources: model.sources,
 };
-export default function HRTCReport() { return <CharityResearchReport content={content} />; }
+export default function HRTCReport() { return <CharityResearchReport content={{...content, donationUrl:"https://donorbox.org/harm-reduction-therapy-as-an-act-of-love"}} />; }

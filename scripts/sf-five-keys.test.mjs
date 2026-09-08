@@ -59,7 +59,7 @@ test('donor-facing pages publish the explicit Five Keys decision estimate and it
   assert.match(report, /COST PER BETTER LIFE/);
   assert.match(report, /about \$4\.9 million per better life/);
   assert.match(report, /qalyPerAdditionalCredential\.best/);
-  assert.match(sharedReport, /\$ per 10 QALYs — one better life/);
+  assert.match(sharedReport, /10 additional quality-adjusted life years/);
   assert.match(sfPage, /Five Keys Schools and Programs[\s\S]*betterLifePrice: '≈ \$4\.9M'/);
   assert.match(sfPage, /Five Keys Schools and Programs[\s\S]*bridgeState: 'Very-low-confidence education\/QALY model'/);
 });

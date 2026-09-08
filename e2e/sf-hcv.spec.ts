@@ -2,8 +2,8 @@ import { test, expect } from '@playwright/test';
 test('HCV report distinguishes central price, favorable case and funding room', async ({ page, request }) => {
   await page.goto('/charities/san-francisco-community-health-center');
   await expect(page.getByRole('heading', { name: 'San Francisco Community Health Center', exact: true })).toBeVisible();
-  await expect(page.locator('.charity-summary')).toContainText('$1,997,838');
-  await expect(page.locator('.charity-report-funding-status')).toContainText('Funding route unverified');
+  await expect(page.locator('.report-summary')).toContainText('$1,997,838');
+  await expect(page.locator('.report-heading .report-donate')).toHaveAttribute('href', /^(https:\/\/|#funding)/);
   await expect(page.locator('body')).toContainText('No finite positive price');
   const response = await request.get('/api/sf-hcv-model');
   expect(response.ok()).toBeTruthy();

@@ -1,0 +1,11 @@
+# Hearing final-packet acceptance
+
+September8,2026. Read `/private/tmp/mfi-hearing-final-review.md` and `/private/tmp/mfi-hearing-final-model.json` against the previous clinical/identity audits. **Accept conditional research; no material numerical or causal/time/harm correction identified.** Direct-giving endorsement remains unsupported, distinct from whether a substantive critical report counts as research.
+
+Recomputed all seven annual exposure schedules and net-QALY formulas. Effective years .5/2/.25 follow their explicit1/4/1-calendar-year end-year3% schedules. Core .012Q/$1,500 = $1.25M/10Q; extended .1215Q/$900 = $74,074.07; pessimistic .00015625Q/$2,500 = $160M. Gross cash-plus-stock diagnostics $1.75M/$123,456.79/$224M agree and are correctly not called complete net societal costs. No extra retention, survival or calendar factor should be added during integration.
+
+The .12 anchor is explicitly endpoint modified-HUI3 utility, not integrated QALYs; selected fitted/rehabilitated population and short delayed comparator are disclosed. Pre-fitting completion and subsequent wear/catch-up are separately defined. Four-year support is covered by an explicitly optimistic upfront reserve, not assumed free after the two benefit-equivalent years. Central6.25-effective-year threshold correctly marked infeasible inside the one-year horizon. Shared harms cancel under identical funding replacement; independent donor harms persist, with no negative bargain ratio.
+
+Primary IRS revocation is described with dataset cutoff, not inferred closure or misconduct. Later reinstatement/new recipient remains unknown. NPI activity does not establish tax status or appointments. The draft does not silently substitute PHC as recipient, and its shared hearing ledger avoids duplicate health credit. Current conditional publication may count the distinct researched organization; verified recipient eligibility must not redefine the user's organization-research target.
+
+Only implementation caution: the external modified-HUI3 trial and local operator remain separate evidence claims. No browser or new primary IRS bulk re-download performed in this acceptance pass; source/identity checks are inherited transparently from the documented prior audits. Do not label an indexed or recently crawled provider page as newly verified operational capacity.

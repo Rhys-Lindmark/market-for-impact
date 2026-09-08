@@ -1,12 +1,20 @@
 # San Francisco giving — active phase plan
 
+## Scope override — September 8: 115
+
+User expanded the objective to 100 SF-focused organizations plus five additional California-wide, five US-wide and five international organizations. BACKLOG.md's latest scope override is authoritative over historical 100-target notes. Added cohorts need overall USD/QALY and USD/10 QALYs, estimated nine-county Bay Area share of incremental health, source/uncertainty and consistent prospective cost boundaries. No duplicate organization count or automatic grandfathering of Bay-only reviews.
+
+Latest verified publication checkpoint is **45/115**: hearing PR207 accepted as public v136 at exact 3cc743e4c561197d6a8e9b9661c1b7d55274877f on GitHub and Sites. 287 tests, lint/build, full CI, 14 local phone/tablet checks, 28 native spreadsheet formula outputs, and canonical 390/768 report/model navigation plus 45-row unique ascending ranking/top-four agreement passed. Additional geographic cohorts are not yet accepted. SPUR whole-portfolio revision is underway separately; it revises rather than adds an organization.
+
 ## Current block — 2026-09-08T17:03:01Z
+
+Latest acceptance:44/100 published in PR205/v135, exactf92364b501abd0aea3f6ab745a08cf4a819470d8. FullCI plus canonical390/768 reports/API/44unique ascending rankings/top4 verified. Next SF9b: Hearing Center shared PHC hearing pathway (not glasses), finite time/health model and historical-EIN revocation caveat. Local287tests, lint/build,14phone/tablet checks,28native formulas and visual check pass. No count45 until final release.
 
 42/100 is the accepted public count (v134). Phase SF9a: integrate the completed HAC Developer Pathway and SPUR clean-heat conditional models, preserving weak central findings rather than using optimistic tails. Manager owns implementation; Euclid screens new child-health high-upside candidates, Harvey investigates a real GrowSF mechanism, Jason audits HAC then screens new mechanisms. Previous acknowledgement-only turn was no progress; this block resumes concrete integration.
 
 - [x] SF9a-1 Publishable reports and versioned formulas, causal/SF/recipient boundaries and independent audits. Packet and actual integration audited;15 signed scenarios agree.
-- [ ] SF9a-2 Central-only ranking; signed/null/input regression checks; native workbook parity; phone/tablet report and model navigation; lint/build and full CI. Local284 tests, lint/build,20 phone/tablet checks and30 native formula outputs pass; full CI remains.
-- [ ] SF9a-3 Reviewed PR, exact-commit public deployment, canonical verification, issue/backlog acceptance and measured shared log.
+- [x] SF9a-2 Central-only ranking; signed/null/input regression checks; native workbook parity; phone/tablet report and model navigation; lint/build and full CI.284 tests, lint/build,20 phone/tablet checks,30 native formula outputs and fullCI pass.
+- [x] SF9a-3 PR205 merged; exact-commit public deployment and canonical acceptance verified. Measured shared log due at block end, not a new clock.
 
 Exit: two distinct validated published research reports, not two verified marginal donation offers. Target 44/100 only upon canonical acceptance. No extra organization count for SPUR's ambitious stress or HAC/Onyx's shared pathway. Stall threshold25 minutes without an accepted evidence milestone. Block target18:33:01Z, no padding. High-upside screening governs new research allocation; completed negative findings remain honest.
 

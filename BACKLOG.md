@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Resumed research block — September 8
+
+53/115 now published: Helen Keller PR227/v154 canonical report/API and research index verified at390/768. Hourly automation resumed on explicit user instruction. Roots is next, with independently audited whole-gift model,12 scenarios and21 runtime tests. Count54 only after publication and canonical verification. Root integrates; three workers support implementation, independent audit and next high-EV candidate research. End Overdose primary EIN resolved, report preparation next. Current block start2026-09-08T23:18:56Z; no paused time counted.
+
 ## Helen Keller whole-gift release — September 8
 
 Malaria Consortium PR226 is canonical verified at52/115. HKI report ready with full unrestricted gift and30% modeled overseas VAS core: central $8,015/10 global QALYs. Broader70% health unquantified; actual US vision programs are not denied, their SF/Bay effect remains unestimated. DEVTA mortality-null, updated evaluator-methodology caveat and source vintage retained. Twelve scenarios,58 checks and independent audit accepted;311 repository tests/lint/build passed. Count53 only after canonical verification. Next Roots model audit/integration; preserve whole-organization scope and local denominator.

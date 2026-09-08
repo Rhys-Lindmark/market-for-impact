@@ -1,5 +1,17 @@
 # Market for Impact backlog
 
+## Latest scope override — 115 organizations (Rhys, September 8)
+
+The target is now **115 distinct published, validated organization reports**: the existing 100 SF-focused target plus **5 California-wide, 5 US-wide, and 5 international organizations**. These are fifteen additional unique organizations, not repeated geographic labels on existing reports. Keep the SF product front door and current research standards. Older 100-target references below are historical and superseded by this section.
+
+- [ ] **CA5:** Screen statewide organizations for credible high cost-effectiveness, then complete five distinct reports.
+- [ ] **US5:** Screen nationally operating organizations for credible high cost-effectiveness, then complete five distinct reports.
+- [ ] **INT5:** Screen internationally operating organizations for credible high cost-effectiveness, then complete five distinct reports.
+- [ ] **Geographic impact accounting:** For each added organization, publish overall USD per incremental QALY and USD per 10 incremental QALYs, plus the estimated percentage of incremental QALYs accruing to the Bay Area. Define Bay Area as the nine-county region, distinct from SF city. Show geography-specific assumptions, time horizon, uncertainty and null/harm cases. Spending share, office location and beneficiary share are not automatically health-impact share.
+- [ ] **Comparable cost boundaries:** Use the same prospective intervention/funding scenario and cost perspective for overall and geographic results. If calculating donor dollars per Bay Area QALY, divide the full gift by its incremental Bay Area QALYs and label that perspective; do not misleadingly allocate costs away. Report unknown when a geographic share is not estimable, and no finite positive ratio for zero/nonpositive health. Do not force positive local spillovers for international work.
+
+Prioritize these new bets using the existing high-upside gate; never tune assumptions to a target. Count each organization once, assign a primary cohort, and disclose cross-cohort operations. Retain separate SF and expansion counters; existing Bay-only reports do not automatically satisfy the new cohorts without an explicit eligibility and distinctness audit. Portfolio revisions such as SPUR add no organization count.
+
 This backlog is ordered by donor value, data integrity, and dependency. Each item should normally become one GitHub issue and one focused pull request. When the ready queue drops below five items, replenish it from the research tracks below.
 
 ## Product north star

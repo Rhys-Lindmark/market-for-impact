@@ -1,5 +1,11 @@
 # San Francisco giving — active phase plan
 
+## Scope override — September 8: 115
+
+User expanded the objective to 100 SF-focused organizations plus five additional California-wide, five US-wide and five international organizations. BACKLOG.md's latest scope override is authoritative over historical 100-target notes. Added cohorts need overall USD/QALY and USD/10 QALYs, estimated nine-county Bay Area share of incremental health, source/uncertainty and consistent prospective cost boundaries. No duplicate organization count or automatic grandfathering of Bay-only reviews.
+
+Latest verified publication checkpoint is 44 distinct SF reports (v135), so expanded progress is **44/115** with the additional cohorts not yet accepted. Hearing PR207 is not yet counted. SPUR whole-portfolio revision is underway separately; it revises rather than adds an organization.
+
 ## Current block — 2026-09-08T17:03:01Z
 
 42/100 is the accepted public count (v134). Phase SF9a: integrate the completed HAC Developer Pathway and SPUR clean-heat conditional models, preserving weak central findings rather than using optimistic tails. Manager owns implementation; Euclid screens new child-health high-upside candidates, Harvey investigates a real GrowSF mechanism, Jason audits HAC then screens new mechanisms. Previous acknowledgement-only turn was no progress; this block resumes concrete integration.

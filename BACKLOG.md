@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## End Overdose integration — September 8
+
+Roots PR228/v155 published; canonical phone check passed, tablet rerender verification pending. End Overdose new whole-gift report integrated with nine audited scenarios; current national central$1.52M, Bay$21.7M, SF$76.0M per10Q. Primary filing verifies EIN83-0696963; checkout identity text unavailable, disclosed. Geography/allocation are priors; all cash retained, public supply baseline and donor/resources distinguished. Seventeen bounded-runtime tests accepted. Count55 only after publication; user target115 remains controlling.
+
 ## Resumed research block — September 8
 
 53/115 now published: Helen Keller PR227/v154 canonical report/API and research index verified at390/768. Hourly automation resumed on explicit user instruction. Roots is next, with independently audited whole-gift model,12 scenarios and21 runtime tests. Count54 only after publication and canonical verification. Root integrates; three workers support implementation, independent audit and next high-EV candidate research. End Overdose primary EIN resolved, report preparation next. Current block start2026-09-08T23:18:56Z; no paused time counted.

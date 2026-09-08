@@ -10,7 +10,8 @@ Design first for a major donor deciding how to deploy roughly $10 million this y
 
 ## Now — foundation
 
-- [ ] **Mechanism-first3: SFCHC integrated HCV access — #172.** Model and report implemented: central $2.00M/10 QALYs, positive $36.5K–$309M. No verified marginal offer. Explicit cure difference, later-care/reinfection timing heuristic, gross clinical and drug-resource boundaries. Independent audit corrections incorporated; native workbook A211:E243 central formulas match. Local tests, lint/build and four phone/tablet checks passed; final release verification pending. Next: NEMS HBV care.
+- [x] **Mechanism-first3: SFCHC integrated HCV access — #172.** Accepted PR #174 / Sites v122, exact b28297233fcd4cb05f4de9a2abf1523504935d91. Central $2.00M/10 QALYs; no verified marginal offer. 244 tests, lint/build, independent audit, native workbook A211:E243, phone/tablet and canonical 30-row ranking/report/API passed.
+- [ ] **Mechanism-first4: NEMS HBV re-engagement — #175.** Implemented central $1.20M/10 QALYs with recurring navigation cost and explicit lifetime-calibration limitations. Independent audit accepted after clarifying clinically inactive HBV versus inactive records. 248 tests, lint/build, four phone/tablet checks and native workbook A245:E266 passed. Final release pending. Next: finish mechanism-first six from parallel research handoffs; integrate only after primary-source/model review.
 
 - [ ] **Child-health discovery — #173.** User requested under5/under13 opportunities. Screen lead-remediation bottlenecks, targeted asthma and early childhood care; reconcile with existing MNC and unconventional cohort without duplicate counts. Lead evidence cautions against automatic lifetime/QALY credit.
 

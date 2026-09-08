@@ -1,6 +1,12 @@
 # San Francisco giving — active phase plan
 
-## Current block — 2026-09-08T13:54:19Z
+## Current block — 2026-09-08T15:35:08Z
+
+**40/100 published and canonically verified**, plus three Bay-only reports. PR199/v133 at94d8cf91d676c8d901d26d1c7f9d0008545113a2 adds Brightline Defense and Rebuilding Together SF.277 tests, lint/build, full CI, native workbook45 formulas and canonical390/768 report/model-link/API/ranking/home checks passed. Top four remain SFAF, Project Homeless Connect, GLIDE and Breathe California. GLIDE correction already accepted PR197/v132; do not repeat it. Block clock is continuous across user/goal turns, target roughly17:05:08Z.
+
+Next phase: high-upside conditional research, not count-padding. Jason prepares a PVF/Lions shared cataract pathway model; Euclid checks MNHC's actual current HCV delivery/gap; Harvey verifies Operation Access current costs and positive-FIT pathway. Manager owns integration/publishing. Count PVF/Lions shared clinical output once. Missing funding offers remain explicit; conditional models are allowed with transparent judgments. NICOS and the HPP syphilis proposal failed the short priority screen and are not full-report assignments. Completed Raphael/IFR/Bayview drafts remain preserved, not counted or retuned.
+
+## Previous block — 2026-09-08T13:54:19Z (historical)
 
 New durable goal is active: 100 distinct published SF-relevant organization reviews, following issue191. Current coverage audit finds38 operational organizations/projects plus3 Bay-only reports; legal-recipient reconciliation remains in progress and discovery screens do not count. Current block target90 measured minutes; hourly/user continuations do not reset its clock.
 

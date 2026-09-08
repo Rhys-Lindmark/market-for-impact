@@ -9,7 +9,7 @@ test('research list is numeric ascending and its first four match the home page'
   expect(new Set(rows.map(r => r.slug)).size).toBe(45);
   await expect(page.getByText('THE FIRST 25', { exact: false })).toHaveCount(0);
   await expect(page.locator('.sf-deep-queue, .sf-evidence-dossier, .sf-decision-snapshot')).toHaveCount(0);
-  await expect(page.locator('tbody tr')).toHaveCount(45);
+  await expect(page.locator('#top-research tbody tr')).toHaveCount(45);
   for (const row of rows) {
     await expect(page.locator(`[data-research-slug="${row.slug}"] a`).first()).toHaveAttribute('href', `/charities/${row.slug}`);
   }

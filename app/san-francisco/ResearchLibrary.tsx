@@ -119,6 +119,7 @@ export default function SanFranciscoDonorPage() {
           <p className="kicker">SAN FRANCISCO · MAJOR-DONOR BRIEF</p>
           <h1>Rest of the research.</h1>
           <p><a href="/research/city-theory">What we learned from the first 25 models →</a></p>
+          <p><a href="/research/large-bay-nonprofits">Five large Bay Area nonprofits worth examining →</a></p>
         </div>
         <div className="sf-brief-intro">
           <p>Explore our full San Francisco research: program estimates, the 25-priority review queue, nonprofit records, and sources. <a href="https://ai.rhyslindmark.com/donate/archive">Cross-cause research archive →</a></p>

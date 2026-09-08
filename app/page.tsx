@@ -16,6 +16,9 @@ export const metadata: Metadata = {
 
 const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumSignificantDigits: 3 });
 const root = 'https://ai.rhyslindmark.com/donate';
+function GivingIllustration({ index, label }: { index:number; label:string }) {
+  return <div className="sf-home-illustration"><img src="/images/givebetter-principles.png" alt={label} width="600" height="200" style={{transform:`translateX(-${index * 100 / 3}%)`}} /></div>;
+}
 const photos: Record<string, { src: string; caption: string; source: string }> = {
   'san-francisco-aids-foundation': { src: '/images/sfaf.jpg', caption: 'Harm reduction at San Francisco AIDS Foundation. Photo: SFAF.', source: 'https://www.sfaf.org/health-services/overdose-prevention-response/' },
   'project-homeless-connect': { src: '/images/phc.jpg', caption: 'Reading and prescription glasses services. Photo: Project Homeless Connect, 2015.', source: 'https://www.projecthomelessconnect.org/v44a0929/' },
@@ -48,9 +51,9 @@ export default function SanFranciscoHome() {
         <small>Last updated: September 2026</small>
       </section>
       <section className="sf-home-principles" aria-label="How to give better">
-        <div><div className="sf-home-illustration" style={{backgroundPositionX:'0%'}} role="img" aria-label="Illustration of San Francisco Bay" /><h2>Give to cost-effective programs</h2><p>We compare how much an additional donation could improve health and lives in San Francisco.</p></div>
-        <div><div className="sf-home-illustration" style={{backgroundPositionX:'50%'}} role="img" aria-label="Illustration of research books" /><h2>Donate based on evidence</h2><p>Read the research behind each estimate, including the assumptions and what could change our view.</p></div>
-        <div><div className="sf-home-illustration" style={{backgroundPositionX:'100%'}} role="img" aria-label="Illustration of choosing a charity" /><h2>Pick a charity</h2><p>Explore our current shortlist, then use the organization’s giving link in its report to donate directly.</p></div>
+        <div><GivingIllustration index={0} label="Illustration of San Francisco Bay" /><h2>Give to cost-effective programs</h2><p>We compare how much an additional donation could improve health and lives in San Francisco.</p></div>
+        <div><GivingIllustration index={1} label="Illustration of research books" /><h2>Donate based on evidence</h2><p>Read the research behind each estimate, including the assumptions and what could change our view.</p></div>
+        <div><GivingIllustration index={2} label="Illustration of choosing a charity" /><h2>Pick a charity</h2><p>Explore our current shortlist, then use the organization’s giving link in its report to donate directly.</p></div>
       </section>
       <p className="sf-home-note">Our four lowest central estimates so far. A “better life” means 10 additional quality-adjusted life years, potentially spread across people. Estimates are uncertain; marginal funding room is unverified.</p>
       <section aria-label="Four current charity picks">{picks.map((pick, i) => <article className="sf-home-charity" id={pick.slug} key={pick.slug}>

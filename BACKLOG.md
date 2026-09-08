@@ -1,5 +1,16 @@
 # Market for Impact backlog
 
+## Organization-wide scope requirement — latest Rhys direction, September 8
+
+The default report assesses the **whole named organization**, including YMCA of Greater San Francisco, not one selected program used as an organization-wide proxy. Review the material portfolio, shared costs, how additional unrestricted funding changes delivery, geography, overlapping outcomes and downsides. Publish an explicit best estimate with transparent partial coverage and uncertainty where necessary; do not imply unquantified programs are worthless. Aggregate incremental health before computing the ratio, not by averaging program cost-effectiveness ratios.
+
+- [ ] **YMCA SF revision:** replace the diabetes-prevention-only interpretation with a whole-organization portfolio assessment. Preserve the diabetes-prevention model as a labeled component and potential separate program follow-up.
+- [ ] **Existing-report scope audit:** classify every published report as organization-wide, explicitly partial portfolio, or program-specific. The previous 45 count records published distinct-organization pages under the old program-specific definition, not 45 verified organization-wide assessments. Report both published-page coverage and the audited organization-wide completion count; the latter is currently unverified, not automatically zero or45.
+- [ ] **New-report acceptance:** start with organizational portfolio and unrestricted-gift allocation. A promising program discovered inside an organization belongs in a separate **115+ program follow-up queue**, not a substitute for the required organization assessment or an extra distinct organization.
+- [ ] **Presentation/ranking audit:** never label a program estimate as the whole organization's effectiveness. Keep existing findings accessible with scope labels while revisions proceed; update the report, model, geography and ranking consistently when an organization-wide model is validated.
+
+This instruction supersedes earlier program-specific completion language. The target remains115 distinct organization-wide reviews. SPUR's current portfolio revision is the first active application; use its scope and overlap controls, not its numerical assumptions, as a template.
+
 ## Latest scope override — 115 organizations (Rhys, September 8)
 
 Latest accepted count: **45/115**, including hearing PR207/public v136 at exact 3cc743e4c561197d6a8e9b9661c1b7d55274877f. Central hearing $1.25M/10 QALYs; historical recipient-status uncertainty prevents a direct-giving recommendation. 287 tests, lint/build, full CI, 14 local phone/tablet checks, 28 native formulas and canonical report/API/45-row ranking/top-four verification passed. Older pending hearing entries are historical.

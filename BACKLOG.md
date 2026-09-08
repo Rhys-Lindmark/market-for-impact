@@ -1,5 +1,18 @@
 # Market for Impact backlog
 
+## GiveWell reconciliation findings — September 8
+
+Native benchmark check completed: GiveWell2022–24 weighted modeled mortality prices are AMF$5,500/death and NI$4,500/death. Our independent scenarios imply$12,449/$51,440 per early death before the13.646 discounted Q/death conversion. No factor-of-ten arithmetic bug; overlapping conservative assumptions and unmatched enrollment/catchment denominators are material model-quality risks. Public comparison/API implemented, validation pending. Do not label constructed downside scenarios calibrated expected values.
+
+Next model phase: preserve v1; develop matched external mortality calibration without reapplying its existing coverage/funding deductions. Independently justify survival and age/timing composition, particularly NI adult/older-child benefits. Historical grant averages do not certify next unrestricted-gift funding room. Add explicit native-unit and external-benchmark checks to future CEA acceptance; distinguish missing evidence from an automatic numerical haircut.
+
+## Priority override — one local-comparison table and GiveWell reconciliation (September 8)
+
+- [ ] **One clean research table:** merge US and international rows into the main table with parenthetical geography labels. Display SF-resident USD per10Q consistently, not national/global prices disguised as local. Preserve original overall estimates within reports. Derive transparent local-share or indirect-spillover scenarios with explicit uncertain priors and zero cases; do not invent measured effects. Remove separate bottom US/international sections.
+- [ ] **AMF and New Incentives benchmark reconciliation:** compare current models against primary GiveWell cost-per-life-saved estimates. Check native units, cost scope, attribution/additionality, duplicated adjustments, baseline mortality, survival horizon, utility, discounting and program vintage. Example arithmetic: $5,000/life divided by an assumed50Q/life = $100/Q = $1,000/10Q; the50Q is a hypothesis, not a GiveWell result. Explain legitimate differences and correct actual errors rather than forcing agreement. Apply lessons across future research. Jason assigned independent source-grounded reconciliation.
+
+RotaCare draft preserved in its own worktree; do not publish its separate Bay-section design before this user-requested table change. Latest verified published count49/115. This design/reconciliation work does not add organizations.
+
 ## September 8 current research checkpoint
 
 **48/115 published and canonical-verified**: 46 SF-indexed reports plus AMF and New Incentives internationally. PR218/public v145 at 748c84f1a0fe5c5bd8534f6eebf38c4f457c840e verified at 390/768 widths (report, API, index and unchanged SF top four). This supersedes older 45-count acceptance entries below. Formatting follow-up is live: million prices have one decimal.

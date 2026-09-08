@@ -1,0 +1,1450 @@
+{
+  "schemaVersion": "3.0.0",
+  "modelId": "spur-unrestricted-portfolio-conditional-v3",
+  "reviewedAt": "2026-09-08",
+  "status": "Housing utility evidence update applied; conditional analyst estimate, not recommendation",
+  "organization": {
+    "name": "SPUR — San Francisco Bay Area Planning and Urban Research Association",
+    "ein": "94-1498232",
+    "existingOrganization": true
+  },
+  "unit": "One marginal $100,000 unrestricted gift; hypothetical allocation, no verified offer",
+  "currency": "2026 USD",
+  "budget": {
+    "totalUsd": 100000,
+    "allocationUsd": {
+      "housingPlanning": 35000,
+      "transportation": 30000,
+      "cleanHeatEnvironmental": 20000,
+      "governanceProcurement": 10000,
+      "economicSecurityDowntown": 5000
+    },
+    "meaning": "Includes shared research, education, coordination, fundraising and administration once. Marginal allocation judgments, not historical program shares."
+  },
+  "ranking": {
+    "coreScenario": "central",
+    "sfResult": "SF-only",
+    "bayResult": "Bay including SF; not additive to SF result",
+    "favorableIsNotRankingChoice": true
+  },
+  "duration": {
+    "giftWorkYears": 2,
+    "annualDiscountRate": 0.03,
+    "housingCentralFavorableCalendarYearsAfterGift": [
+      3,
+      8
+    ],
+    "housingMeaning": "Housing home-year inputs are already discounted integrals of the attached finite calendar schedules; do not multiply them by duration or discount a second time.",
+    "housingPessimisticCalendarMaximumYears": 3,
+    "transitCalendarMaximumYears": 5,
+    "transitMeaning": "Useful service-hour inputs are discounted aggregates of explicit years1–5 schedules; no further five-year multiplier. Trips/400 are recurrent-use-equivalent rider-years, not calendar duration.",
+    "heatMeaning": "Effective discounted mortality-impact years include ramp, catch-up and lag. Conditional survival QALYs per death are judgments inherited from component; not perpetual treatment benefit.",
+    "heatMaximumEffectiveYears": 5
+  },
+  "definitions": {
+    "housingContribution": "Combined gift-versus-no-gift contribution includes funding displacement, implementation failure and collaborator credit; no second probability factor.",
+    "housingUtility": "Wholly judgmental net health-state utility. Direct and nonoccupant benefit components must not duplicate the same housing-state gain; distinct benefits for a shared person may coexist.",
+    "transitContribution": "Combined net gift contribution; no further attribution multiplier.",
+    "transitHealth": "Net access/activity/injury judgment among changed recurrent rider-years. Deduplicate housing-related travel/health benefits, not every person who also benefits from housing.",
+    "heat": "Inherited conditional bridge, not source-calibrated gift dose-response. Fraction scaled proportionally from prior component only as planning sensitivity.",
+    "unquantified": "Governance/economic budget $15,000 retained but health contribution set to zero as partial-accounting convention, not proof of no welfare or harm.",
+    "donorHarm": "Independent net SF/restBay harm outside already-net shared benefit priors; diagnostic amounts not observed.",
+    "housingSpilloverUtility": "Central .001 is an unconditional average utility improvement per counted nonoccupant adult-year, wholly analyst judgment, not a mapped symptom coefficient. No extra response probability is applied. Historical central .005 is a separate sensitivity; favorable/pessimistic joint assumptions unchanged.",
+    "housingDirectUtility": "Central .01 is conditional on a genuinely improved harmful housing state for 15% of two residents per direct home-year: .0015 average per direct resident-year. No primary source calibrates this utility or identifies the physical dose."
+  },
+  "formulas": {
+    "housing": "homeYears * contribution * (people*stateFraction*directUtility + spilloverHouseholdYears*adults*spilloverUtility)",
+    "transit": "serviceHours * contribution * marginalTrips / tripsPerRiderYear * healthFraction * netQalyPerChangedRiderYear",
+    "heatBay": "regionalExposureFraction * implementationProbability * attribution * effectiveYears * modeledRegionalDeaths * qalyPerDeath",
+    "heatSf": "heatBay * sfShare",
+    "netGeography": "housing + transit + heat - donorSpecificHarm, separately SF/restBay; Bay = SF + restBay",
+    "cost": "One full $100,000 donor budget; ratio 10*cost/Q iff Q>0, else null",
+    "resourceStress": "Add $1,000,000 net induced resources once; not complete societal CEA or empirically priced implementation"
+  },
+  "scenarios": [
+    {
+      "id": "central",
+      "housing": {
+        "conditionalSfOccupiedHomeYears": 1000,
+        "conditionalRestBayOccupiedHomeYears": 3000,
+        "netGiftContribution": 0.02,
+        "peoplePerDirectHomeYear": 2,
+        "improvedStateFraction": 0.15,
+        "directUtility": 0.01,
+        "spilloverHouseholdYearsPerHomeYear": 0.5,
+        "adultsPerSpilloverHousehold": 1.5,
+        "spilloverUtility": 0.001,
+        "calendarSchedule": {
+          "yearsAfterGift": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "annualUndiscountedSfEquivalentOccupiedHomes": [
+            195.83948822759302,
+            195.83948822759302,
+            195.83948822759302,
+            195.83948822759302,
+            195.83948822759302,
+            195.83948822759302
+          ],
+          "annualUndiscountedRestBayEquivalentOccupiedHomes": [
+            587.518464682779,
+            587.518464682779,
+            587.518464682779,
+            587.518464682779,
+            587.518464682779,
+            587.518464682779
+          ],
+          "meaning": "Illustrative beneficiary-allocated occupied-home exposure; zero outside listed years. Pessimistic comparator catches up after year3; other housing schedules stop after year8. Already integrated H enters Q exactly once."
+        }
+      },
+      "transit": {
+        "conditionalSfUsefulServiceHours": 5000,
+        "conditionalRestBayUsefulServiceHours": 15000,
+        "netGiftContribution": 0.02,
+        "marginalTripsPerServiceHour": 20,
+        "tripsPerRecurrentRiderYear": 400,
+        "healthRelevantFraction": 0.1,
+        "netQalyPerChangedRiderYear": 0.005,
+        "calendarSchedule": {
+          "yearsAfterGift": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "annualUndiscountedSfEquivalentServiceHours": [
+            1091.77285700288,
+            1091.77285700288,
+            1091.77285700288,
+            1091.77285700288,
+            1091.77285700288
+          ],
+          "annualUndiscountedRestBayEquivalentServiceHours": [
+            3275.3185710086404,
+            3275.3185710086404,
+            3275.3185710086404,
+            3275.3185710086404,
+            3275.3185710086404
+          ],
+          "meaning": "Illustrative benefit-equivalent geographic allocation; zero beyond year5. Discounted sums equal input service-hours, used once."
+        }
+      },
+      "heat": {
+        "conditionalRegionalExposureFraction": 0.002,
+        "implementationProbability": 0.5,
+        "giftAttribution": 0.1,
+        "effectiveDiscountedMortalityYears": 3,
+        "modeledRegionalDeathsPerYear": 61,
+        "qalyPerDeath": 8,
+        "sfHealthShare": 0.1
+      },
+      "donorSpecificHarm": {
+        "sfQaly": 0,
+        "restBayQaly": 0
+      },
+      "outputs": {
+        "housingSfQaly": 0.075,
+        "housingRestBayQaly": 0.22499999999999998,
+        "transitSfQaly": 0.0025000000000000005,
+        "transitRestBayQaly": 0.0075000000000000015,
+        "heatSfQaly": 0.01464,
+        "heatRestBayQaly": 0.13176000000000002,
+        "sfNetQaly": 0.09214,
+        "restBayNetQaly": 0.36426000000000003,
+        "bayIncludingSfNetQaly": 0.45640000000000003,
+        "donorCostUsd": 100000,
+        "sfUsdPer10Qaly": 10853049.706967657,
+        "bayUsdPer10Qaly": 2191060.473269062,
+        "resourceStressAdditionalUsd": 1000000,
+        "sfResourceStressUsdPer10Qaly": 119383546.77664424,
+        "bayResourceStressUsdPer10Qaly": 24101665.20595968
+      }
+    },
+    {
+      "id": "favorable",
+      "housing": {
+        "conditionalSfOccupiedHomeYears": 5000,
+        "conditionalRestBayOccupiedHomeYears": 15000,
+        "netGiftContribution": 0.05,
+        "peoplePerDirectHomeYear": 2,
+        "improvedStateFraction": 0.3,
+        "directUtility": 0.02,
+        "spilloverHouseholdYearsPerHomeYear": 2,
+        "adultsPerSpilloverHousehold": 1.5,
+        "spilloverUtility": 0.01,
+        "calendarSchedule": {
+          "yearsAfterGift": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "annualUndiscountedSfEquivalentOccupiedHomes": [
+            979.1974411379651,
+            979.1974411379651,
+            979.1974411379651,
+            979.1974411379651,
+            979.1974411379651,
+            979.1974411379651
+          ],
+          "annualUndiscountedRestBayEquivalentOccupiedHomes": [
+            2937.5923234138954,
+            2937.5923234138954,
+            2937.5923234138954,
+            2937.5923234138954,
+            2937.5923234138954,
+            2937.5923234138954
+          ],
+          "meaning": "Illustrative beneficiary-allocated occupied-home exposure; zero outside listed years. Pessimistic comparator catches up after year3; other housing schedules stop after year8. Already integrated H enters Q exactly once."
+        }
+      },
+      "transit": {
+        "conditionalSfUsefulServiceHours": 50000,
+        "conditionalRestBayUsefulServiceHours": 150000,
+        "netGiftContribution": 0.05,
+        "marginalTripsPerServiceHour": 40,
+        "tripsPerRecurrentRiderYear": 400,
+        "healthRelevantFraction": 0.25,
+        "netQalyPerChangedRiderYear": 0.01,
+        "calendarSchedule": {
+          "yearsAfterGift": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "annualUndiscountedSfEquivalentServiceHours": [
+            10917.728570028801,
+            10917.728570028801,
+            10917.728570028801,
+            10917.728570028801,
+            10917.728570028801
+          ],
+          "annualUndiscountedRestBayEquivalentServiceHours": [
+            32753.185710086404,
+            32753.185710086404,
+            32753.185710086404,
+            32753.185710086404,
+            32753.185710086404
+          ],
+          "meaning": "Illustrative benefit-equivalent geographic allocation; zero beyond year5. Discounted sums equal input service-hours, used once."
+        }
+      },
+      "heat": {
+        "conditionalRegionalExposureFraction": 0.01,
+        "implementationProbability": 0.7,
+        "giftAttribution": 0.2,
+        "effectiveDiscountedMortalityYears": 5,
+        "modeledRegionalDeathsPerYear": 85,
+        "qalyPerDeath": 12,
+        "sfHealthShare": 0.15
+      },
+      "donorSpecificHarm": {
+        "sfQaly": 0,
+        "restBayQaly": 0
+      },
+      "outputs": {
+        "housingSfQaly": 10.5,
+        "housingRestBayQaly": 31.499999999999996,
+        "transitSfQaly": 0.625,
+        "transitRestBayQaly": 1.875,
+        "heatSfQaly": 1.071,
+        "heatRestBayQaly": 6.069,
+        "sfNetQaly": 12.196,
+        "restBayNetQaly": 39.444,
+        "bayIncludingSfNetQaly": 51.64,
+        "donorCostUsd": 100000,
+        "sfUsdPer10Qaly": 81994.0964250574,
+        "bayUsdPer10Qaly": 19364.833462432223,
+        "resourceStressAdditionalUsd": 1000000,
+        "sfResourceStressUsdPer10Qaly": 901935.0606756314,
+        "bayResourceStressUsdPer10Qaly": 213013.16808675445
+      }
+    },
+    {
+      "id": "pessimisticPositive",
+      "housing": {
+        "conditionalSfOccupiedHomeYears": 100,
+        "conditionalRestBayOccupiedHomeYears": 300,
+        "netGiftContribution": 0.002,
+        "peoplePerDirectHomeYear": 1,
+        "improvedStateFraction": 0.05,
+        "directUtility": 0.002,
+        "spilloverHouseholdYearsPerHomeYear": 0.1,
+        "adultsPerSpilloverHousehold": 1,
+        "spilloverUtility": 0.001,
+        "calendarSchedule": {
+          "yearsAfterGift": [
+            3
+          ],
+          "annualUndiscountedSfEquivalentOccupiedHomes": [
+            109.2727
+          ],
+          "annualUndiscountedRestBayEquivalentOccupiedHomes": [
+            327.81809999999996
+          ],
+          "meaning": "Illustrative beneficiary-allocated occupied-home exposure; zero outside listed years. Pessimistic comparator catches up after year3; other housing schedules stop after year8. Already integrated H enters Q exactly once."
+        }
+      },
+      "transit": {
+        "conditionalSfUsefulServiceHours": 500,
+        "conditionalRestBayUsefulServiceHours": 1500,
+        "netGiftContribution": 0.001,
+        "marginalTripsPerServiceHour": 10,
+        "tripsPerRecurrentRiderYear": 400,
+        "healthRelevantFraction": 0.02,
+        "netQalyPerChangedRiderYear": 0.001,
+        "calendarSchedule": {
+          "yearsAfterGift": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "annualUndiscountedSfEquivalentServiceHours": [
+            109.17728570028801,
+            109.17728570028801,
+            109.17728570028801,
+            109.17728570028801,
+            109.17728570028801
+          ],
+          "annualUndiscountedRestBayEquivalentServiceHours": [
+            327.53185710086404,
+            327.53185710086404,
+            327.53185710086404,
+            327.53185710086404,
+            327.53185710086404
+          ],
+          "meaning": "Illustrative benefit-equivalent geographic allocation; zero beyond year5. Discounted sums equal input service-hours, used once."
+        }
+      },
+      "heat": {
+        "conditionalRegionalExposureFraction": 0.0002,
+        "implementationProbability": 0.2,
+        "giftAttribution": 0.02,
+        "effectiveDiscountedMortalityYears": 1,
+        "modeledRegionalDeathsPerYear": 37,
+        "qalyPerDeath": 3,
+        "sfHealthShare": 0.05
+      },
+      "donorSpecificHarm": {
+        "sfQaly": 0,
+        "restBayQaly": 0
+      },
+      "outputs": {
+        "housingSfQaly": 0.00004,
+        "housingRestBayQaly": 0.00012000000000000002,
+        "transitSfQaly": 2.5000000000000004e-7,
+        "transitRestBayQaly": 7.500000000000002e-7,
+        "heatSfQaly": 0.000004440000000000001,
+        "heatRestBayQaly": 0.00008436,
+        "sfNetQaly": 0.00004469,
+        "restBayNetQaly": 0.00020511000000000002,
+        "bayIncludingSfNetQaly": 0.0002498,
+        "donorCostUsd": 100000,
+        "sfUsdPer10Qaly": 22376370552.696354,
+        "bayUsdPer10Qaly": 4003202562.0496397,
+        "resourceStressAdditionalUsd": 1000000,
+        "sfResourceStressUsdPer10Qaly": 246140076079.65988,
+        "bayResourceStressUsdPer10Qaly": 44035228182.546036
+      }
+    },
+    {
+      "id": "nullGiftContribution",
+      "housing": {
+        "conditionalSfOccupiedHomeYears": 1000,
+        "conditionalRestBayOccupiedHomeYears": 3000,
+        "netGiftContribution": 0,
+        "peoplePerDirectHomeYear": 2,
+        "improvedStateFraction": 0.15,
+        "directUtility": 0.01,
+        "spilloverHouseholdYearsPerHomeYear": 0.5,
+        "adultsPerSpilloverHousehold": 1.5,
+        "spilloverUtility": 0.001,
+        "calendarSchedule": {
+          "yearsAfterGift": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "annualUndiscountedSfEquivalentOccupiedHomes": [
+            195.83948822759302,
+            195.83948822759302,
+            195.83948822759302,
+            195.83948822759302,
+            195.83948822759302,
+            195.83948822759302
+          ],
+          "annualUndiscountedRestBayEquivalentOccupiedHomes": [
+            587.518464682779,
+            587.518464682779,
+            587.518464682779,
+            587.518464682779,
+            587.518464682779,
+            587.518464682779
+          ],
+          "meaning": "Illustrative beneficiary-allocated occupied-home exposure; zero outside listed years. Pessimistic comparator catches up after year3; other housing schedules stop after year8. Already integrated H enters Q exactly once."
+        }
+      },
+      "transit": {
+        "conditionalSfUsefulServiceHours": 5000,
+        "conditionalRestBayUsefulServiceHours": 15000,
+        "netGiftContribution": 0,
+        "marginalTripsPerServiceHour": 20,
+        "tripsPerRecurrentRiderYear": 400,
+        "healthRelevantFraction": 0.1,
+        "netQalyPerChangedRiderYear": 0.005,
+        "calendarSchedule": {
+          "yearsAfterGift": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "annualUndiscountedSfEquivalentServiceHours": [
+            1091.77285700288,
+            1091.77285700288,
+            1091.77285700288,
+            1091.77285700288,
+            1091.77285700288
+          ],
+          "annualUndiscountedRestBayEquivalentServiceHours": [
+            3275.3185710086404,
+            3275.3185710086404,
+            3275.3185710086404,
+            3275.3185710086404,
+            3275.3185710086404
+          ],
+          "meaning": "Illustrative benefit-equivalent geographic allocation; zero beyond year5. Discounted sums equal input service-hours, used once."
+        }
+      },
+      "heat": {
+        "conditionalRegionalExposureFraction": 0.002,
+        "implementationProbability": 0.5,
+        "giftAttribution": 0,
+        "effectiveDiscountedMortalityYears": 3,
+        "modeledRegionalDeathsPerYear": 61,
+        "qalyPerDeath": 8,
+        "sfHealthShare": 0.1
+      },
+      "donorSpecificHarm": {
+        "sfQaly": 0,
+        "restBayQaly": 0
+      },
+      "outputs": {
+        "housingSfQaly": 0,
+        "housingRestBayQaly": 0,
+        "transitSfQaly": 0,
+        "transitRestBayQaly": 0,
+        "heatSfQaly": 0,
+        "heatRestBayQaly": 0,
+        "sfNetQaly": 0,
+        "restBayNetQaly": 0,
+        "bayIncludingSfNetQaly": 0,
+        "donorCostUsd": 100000,
+        "sfUsdPer10Qaly": null,
+        "bayUsdPer10Qaly": null,
+        "resourceStressAdditionalUsd": 1000000,
+        "sfResourceStressUsdPer10Qaly": null,
+        "bayResourceStressUsdPer10Qaly": null
+      }
+    },
+    {
+      "id": "nullPhysicalOutput",
+      "housing": {
+        "conditionalSfOccupiedHomeYears": 0,
+        "conditionalRestBayOccupiedHomeYears": 0,
+        "netGiftContribution": 0.02,
+        "peoplePerDirectHomeYear": 2,
+        "improvedStateFraction": 0.15,
+        "directUtility": 0.01,
+        "spilloverHouseholdYearsPerHomeYear": 0.5,
+        "adultsPerSpilloverHousehold": 1.5,
+        "spilloverUtility": 0.001,
+        "calendarSchedule": {
+          "yearsAfterGift": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "annualUndiscountedSfEquivalentOccupiedHomes": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "annualUndiscountedRestBayEquivalentOccupiedHomes": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "meaning": "Illustrative beneficiary-allocated occupied-home exposure; zero outside listed years. Pessimistic comparator catches up after year3; other housing schedules stop after year8. Already integrated H enters Q exactly once."
+        }
+      },
+      "transit": {
+        "conditionalSfUsefulServiceHours": 0,
+        "conditionalRestBayUsefulServiceHours": 0,
+        "netGiftContribution": 0.02,
+        "marginalTripsPerServiceHour": 20,
+        "tripsPerRecurrentRiderYear": 400,
+        "healthRelevantFraction": 0.1,
+        "netQalyPerChangedRiderYear": 0.005,
+        "calendarSchedule": {
+          "yearsAfterGift": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "annualUndiscountedSfEquivalentServiceHours": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "annualUndiscountedRestBayEquivalentServiceHours": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "meaning": "Illustrative benefit-equivalent geographic allocation; zero beyond year5. Discounted sums equal input service-hours, used once."
+        }
+      },
+      "heat": {
+        "conditionalRegionalExposureFraction": 0,
+        "implementationProbability": 0.5,
+        "giftAttribution": 0.1,
+        "effectiveDiscountedMortalityYears": 3,
+        "modeledRegionalDeathsPerYear": 61,
+        "qalyPerDeath": 8,
+        "sfHealthShare": 0.1
+      },
+      "donorSpecificHarm": {
+        "sfQaly": 0,
+        "restBayQaly": 0
+      },
+      "outputs": {
+        "housingSfQaly": 0,
+        "housingRestBayQaly": 0,
+        "transitSfQaly": 0,
+        "transitRestBayQaly": 0,
+        "heatSfQaly": 0,
+        "heatRestBayQaly": 0,
+        "sfNetQaly": 0,
+        "restBayNetQaly": 0,
+        "bayIncludingSfNetQaly": 0,
+        "donorCostUsd": 100000,
+        "sfUsdPer10Qaly": null,
+        "bayUsdPer10Qaly": null,
+        "resourceStressAdditionalUsd": 1000000,
+        "sfResourceStressUsdPer10Qaly": null,
+        "bayResourceStressUsdPer10Qaly": null
+      }
+    },
+    {
+      "id": "centralDonorHarm",
+      "housing": {
+        "conditionalSfOccupiedHomeYears": 1000,
+        "conditionalRestBayOccupiedHomeYears": 3000,
+        "netGiftContribution": 0.02,
+        "peoplePerDirectHomeYear": 2,
+        "improvedStateFraction": 0.15,
+        "directUtility": 0.01,
+        "spilloverHouseholdYearsPerHomeYear": 0.5,
+        "adultsPerSpilloverHousehold": 1.5,
+        "spilloverUtility": 0.001,
+        "calendarSchedule": {
+          "yearsAfterGift": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "annualUndiscountedSfEquivalentOccupiedHomes": [
+            195.83948822759302,
+            195.83948822759302,
+            195.83948822759302,
+            195.83948822759302,
+            195.83948822759302,
+            195.83948822759302
+          ],
+          "annualUndiscountedRestBayEquivalentOccupiedHomes": [
+            587.518464682779,
+            587.518464682779,
+            587.518464682779,
+            587.518464682779,
+            587.518464682779,
+            587.518464682779
+          ],
+          "meaning": "Illustrative beneficiary-allocated occupied-home exposure; zero outside listed years. Pessimistic comparator catches up after year3; other housing schedules stop after year8. Already integrated H enters Q exactly once."
+        }
+      },
+      "transit": {
+        "conditionalSfUsefulServiceHours": 5000,
+        "conditionalRestBayUsefulServiceHours": 15000,
+        "netGiftContribution": 0.02,
+        "marginalTripsPerServiceHour": 20,
+        "tripsPerRecurrentRiderYear": 400,
+        "healthRelevantFraction": 0.1,
+        "netQalyPerChangedRiderYear": 0.005,
+        "calendarSchedule": {
+          "yearsAfterGift": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "annualUndiscountedSfEquivalentServiceHours": [
+            1091.77285700288,
+            1091.77285700288,
+            1091.77285700288,
+            1091.77285700288,
+            1091.77285700288
+          ],
+          "annualUndiscountedRestBayEquivalentServiceHours": [
+            3275.3185710086404,
+            3275.3185710086404,
+            3275.3185710086404,
+            3275.3185710086404,
+            3275.3185710086404
+          ],
+          "meaning": "Illustrative benefit-equivalent geographic allocation; zero beyond year5. Discounted sums equal input service-hours, used once."
+        }
+      },
+      "heat": {
+        "conditionalRegionalExposureFraction": 0.002,
+        "implementationProbability": 0.5,
+        "giftAttribution": 0.1,
+        "effectiveDiscountedMortalityYears": 3,
+        "modeledRegionalDeathsPerYear": 61,
+        "qalyPerDeath": 8,
+        "sfHealthShare": 0.1
+      },
+      "donorSpecificHarm": {
+        "sfQaly": 0.2,
+        "restBayQaly": 0.5
+      },
+      "outputs": {
+        "housingSfQaly": 0.075,
+        "housingRestBayQaly": 0.22499999999999998,
+        "transitSfQaly": 0.0025000000000000005,
+        "transitRestBayQaly": 0.0075000000000000015,
+        "heatSfQaly": 0.01464,
+        "heatRestBayQaly": 0.13176000000000002,
+        "sfNetQaly": -0.10786000000000001,
+        "restBayNetQaly": -0.13573999999999997,
+        "bayIncludingSfNetQaly": -0.24359999999999998,
+        "donorCostUsd": 100000,
+        "sfUsdPer10Qaly": null,
+        "bayUsdPer10Qaly": null,
+        "resourceStressAdditionalUsd": 1000000,
+        "sfResourceStressUsdPer10Qaly": null,
+        "bayResourceStressUsdPer10Qaly": null
+      }
+    },
+    {
+      "id": "nullContributionDonorHarm",
+      "housing": {
+        "conditionalSfOccupiedHomeYears": 1000,
+        "conditionalRestBayOccupiedHomeYears": 3000,
+        "netGiftContribution": 0,
+        "peoplePerDirectHomeYear": 2,
+        "improvedStateFraction": 0.15,
+        "directUtility": 0.01,
+        "spilloverHouseholdYearsPerHomeYear": 0.5,
+        "adultsPerSpilloverHousehold": 1.5,
+        "spilloverUtility": 0.001,
+        "calendarSchedule": {
+          "yearsAfterGift": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "annualUndiscountedSfEquivalentOccupiedHomes": [
+            195.83948822759302,
+            195.83948822759302,
+            195.83948822759302,
+            195.83948822759302,
+            195.83948822759302,
+            195.83948822759302
+          ],
+          "annualUndiscountedRestBayEquivalentOccupiedHomes": [
+            587.518464682779,
+            587.518464682779,
+            587.518464682779,
+            587.518464682779,
+            587.518464682779,
+            587.518464682779
+          ],
+          "meaning": "Illustrative beneficiary-allocated occupied-home exposure; zero outside listed years. Pessimistic comparator catches up after year3; other housing schedules stop after year8. Already integrated H enters Q exactly once."
+        }
+      },
+      "transit": {
+        "conditionalSfUsefulServiceHours": 5000,
+        "conditionalRestBayUsefulServiceHours": 15000,
+        "netGiftContribution": 0,
+        "marginalTripsPerServiceHour": 20,
+        "tripsPerRecurrentRiderYear": 400,
+        "healthRelevantFraction": 0.1,
+        "netQalyPerChangedRiderYear": 0.005,
+        "calendarSchedule": {
+          "yearsAfterGift": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "annualUndiscountedSfEquivalentServiceHours": [
+            1091.77285700288,
+            1091.77285700288,
+            1091.77285700288,
+            1091.77285700288,
+            1091.77285700288
+          ],
+          "annualUndiscountedRestBayEquivalentServiceHours": [
+            3275.3185710086404,
+            3275.3185710086404,
+            3275.3185710086404,
+            3275.3185710086404,
+            3275.3185710086404
+          ],
+          "meaning": "Illustrative benefit-equivalent geographic allocation; zero beyond year5. Discounted sums equal input service-hours, used once."
+        }
+      },
+      "heat": {
+        "conditionalRegionalExposureFraction": 0.002,
+        "implementationProbability": 0.5,
+        "giftAttribution": 0,
+        "effectiveDiscountedMortalityYears": 3,
+        "modeledRegionalDeathsPerYear": 61,
+        "qalyPerDeath": 8,
+        "sfHealthShare": 0.1
+      },
+      "donorSpecificHarm": {
+        "sfQaly": 0.2,
+        "restBayQaly": 0.5
+      },
+      "outputs": {
+        "housingSfQaly": 0,
+        "housingRestBayQaly": 0,
+        "transitSfQaly": 0,
+        "transitRestBayQaly": 0,
+        "heatSfQaly": 0,
+        "heatRestBayQaly": 0,
+        "sfNetQaly": -0.2,
+        "restBayNetQaly": -0.5,
+        "bayIncludingSfNetQaly": -0.7,
+        "donorCostUsd": 100000,
+        "sfUsdPer10Qaly": null,
+        "bayUsdPer10Qaly": null,
+        "resourceStressAdditionalUsd": 1000000,
+        "sfResourceStressUsdPer10Qaly": null,
+        "bayResourceStressUsdPer10Qaly": null
+      }
+    },
+    {
+      "id": "centralZeroHousingSpillover",
+      "housing": {
+        "conditionalSfOccupiedHomeYears": 1000,
+        "conditionalRestBayOccupiedHomeYears": 3000,
+        "netGiftContribution": 0.02,
+        "peoplePerDirectHomeYear": 2,
+        "improvedStateFraction": 0.15,
+        "directUtility": 0.01,
+        "spilloverHouseholdYearsPerHomeYear": 0,
+        "adultsPerSpilloverHousehold": 1.5,
+        "spilloverUtility": 0.001,
+        "calendarSchedule": {
+          "yearsAfterGift": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "annualUndiscountedSfEquivalentOccupiedHomes": [
+            195.83948822759302,
+            195.83948822759302,
+            195.83948822759302,
+            195.83948822759302,
+            195.83948822759302,
+            195.83948822759302
+          ],
+          "annualUndiscountedRestBayEquivalentOccupiedHomes": [
+            587.518464682779,
+            587.518464682779,
+            587.518464682779,
+            587.518464682779,
+            587.518464682779,
+            587.518464682779
+          ],
+          "meaning": "Illustrative beneficiary-allocated occupied-home exposure; zero outside listed years. Pessimistic comparator catches up after year3; other housing schedules stop after year8. Already integrated H enters Q exactly once."
+        }
+      },
+      "transit": {
+        "conditionalSfUsefulServiceHours": 5000,
+        "conditionalRestBayUsefulServiceHours": 15000,
+        "netGiftContribution": 0.02,
+        "marginalTripsPerServiceHour": 20,
+        "tripsPerRecurrentRiderYear": 400,
+        "healthRelevantFraction": 0.1,
+        "netQalyPerChangedRiderYear": 0.005,
+        "calendarSchedule": {
+          "yearsAfterGift": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "annualUndiscountedSfEquivalentServiceHours": [
+            1091.77285700288,
+            1091.77285700288,
+            1091.77285700288,
+            1091.77285700288,
+            1091.77285700288
+          ],
+          "annualUndiscountedRestBayEquivalentServiceHours": [
+            3275.3185710086404,
+            3275.3185710086404,
+            3275.3185710086404,
+            3275.3185710086404,
+            3275.3185710086404
+          ],
+          "meaning": "Illustrative benefit-equivalent geographic allocation; zero beyond year5. Discounted sums equal input service-hours, used once."
+        }
+      },
+      "heat": {
+        "conditionalRegionalExposureFraction": 0.002,
+        "implementationProbability": 0.5,
+        "giftAttribution": 0.1,
+        "effectiveDiscountedMortalityYears": 3,
+        "modeledRegionalDeathsPerYear": 61,
+        "qalyPerDeath": 8,
+        "sfHealthShare": 0.1
+      },
+      "donorSpecificHarm": {
+        "sfQaly": 0,
+        "restBayQaly": 0
+      },
+      "outputs": {
+        "housingSfQaly": 0.060000000000000005,
+        "housingRestBayQaly": 0.18,
+        "transitSfQaly": 0.0025000000000000005,
+        "transitRestBayQaly": 0.0075000000000000015,
+        "heatSfQaly": 0.01464,
+        "heatRestBayQaly": 0.13176000000000002,
+        "sfNetQaly": 0.07714,
+        "restBayNetQaly": 0.31926,
+        "bayIncludingSfNetQaly": 0.3964,
+        "donorCostUsd": 100000,
+        "sfUsdPer10Qaly": 12963443.090484833,
+        "bayUsdPer10Qaly": 2522704.339051463,
+        "resourceStressAdditionalUsd": 1000000,
+        "sfResourceStressUsdPer10Qaly": 142597873.99533316,
+        "bayResourceStressUsdPer10Qaly": 27749747.729566097
+      },
+      "sensitivityOf": "central",
+      "note": "Nonoccupant housing health set to zero; all other inputs/budgets unchanged. Not a confidence bound or replacement central."
+    },
+    {
+      "id": "favorableZeroHousingSpillover",
+      "housing": {
+        "conditionalSfOccupiedHomeYears": 5000,
+        "conditionalRestBayOccupiedHomeYears": 15000,
+        "netGiftContribution": 0.05,
+        "peoplePerDirectHomeYear": 2,
+        "improvedStateFraction": 0.3,
+        "directUtility": 0.02,
+        "spilloverHouseholdYearsPerHomeYear": 0,
+        "adultsPerSpilloverHousehold": 1.5,
+        "spilloverUtility": 0.01,
+        "calendarSchedule": {
+          "yearsAfterGift": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "annualUndiscountedSfEquivalentOccupiedHomes": [
+            979.1974411379651,
+            979.1974411379651,
+            979.1974411379651,
+            979.1974411379651,
+            979.1974411379651,
+            979.1974411379651
+          ],
+          "annualUndiscountedRestBayEquivalentOccupiedHomes": [
+            2937.5923234138954,
+            2937.5923234138954,
+            2937.5923234138954,
+            2937.5923234138954,
+            2937.5923234138954,
+            2937.5923234138954
+          ],
+          "meaning": "Illustrative beneficiary-allocated occupied-home exposure; zero outside listed years. Pessimistic comparator catches up after year3; other housing schedules stop after year8. Already integrated H enters Q exactly once."
+        }
+      },
+      "transit": {
+        "conditionalSfUsefulServiceHours": 50000,
+        "conditionalRestBayUsefulServiceHours": 150000,
+        "netGiftContribution": 0.05,
+        "marginalTripsPerServiceHour": 40,
+        "tripsPerRecurrentRiderYear": 400,
+        "healthRelevantFraction": 0.25,
+        "netQalyPerChangedRiderYear": 0.01,
+        "calendarSchedule": {
+          "yearsAfterGift": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "annualUndiscountedSfEquivalentServiceHours": [
+            10917.728570028801,
+            10917.728570028801,
+            10917.728570028801,
+            10917.728570028801,
+            10917.728570028801
+          ],
+          "annualUndiscountedRestBayEquivalentServiceHours": [
+            32753.185710086404,
+            32753.185710086404,
+            32753.185710086404,
+            32753.185710086404,
+            32753.185710086404
+          ],
+          "meaning": "Illustrative benefit-equivalent geographic allocation; zero beyond year5. Discounted sums equal input service-hours, used once."
+        }
+      },
+      "heat": {
+        "conditionalRegionalExposureFraction": 0.01,
+        "implementationProbability": 0.7,
+        "giftAttribution": 0.2,
+        "effectiveDiscountedMortalityYears": 5,
+        "modeledRegionalDeathsPerYear": 85,
+        "qalyPerDeath": 12,
+        "sfHealthShare": 0.15
+      },
+      "donorSpecificHarm": {
+        "sfQaly": 0,
+        "restBayQaly": 0
+      },
+      "outputs": {
+        "housingSfQaly": 3.0000000000000004,
+        "housingRestBayQaly": 9,
+        "transitSfQaly": 0.625,
+        "transitRestBayQaly": 1.875,
+        "heatSfQaly": 1.071,
+        "heatRestBayQaly": 6.069,
+        "sfNetQaly": 4.696000000000001,
+        "restBayNetQaly": 16.944,
+        "bayIncludingSfNetQaly": 21.64,
+        "donorCostUsd": 100000,
+        "sfUsdPer10Qaly": 212947.1890971039,
+        "bayUsdPer10Qaly": 46210.72088724584,
+        "resourceStressAdditionalUsd": 1000000,
+        "sfResourceStressUsdPer10Qaly": 2342419.0800681426,
+        "bayResourceStressUsdPer10Qaly": 508317.9297597042
+      },
+      "sensitivityOf": "favorable",
+      "note": "Nonoccupant housing health set to zero; all other inputs/budgets unchanged. Not a confidence bound or replacement central."
+    },
+    {
+      "id": "historicalCentralSpilloverPrior",
+      "housing": {
+        "conditionalSfOccupiedHomeYears": 1000,
+        "conditionalRestBayOccupiedHomeYears": 3000,
+        "netGiftContribution": 0.02,
+        "peoplePerDirectHomeYear": 2,
+        "improvedStateFraction": 0.15,
+        "directUtility": 0.01,
+        "spilloverHouseholdYearsPerHomeYear": 0.5,
+        "adultsPerSpilloverHousehold": 1.5,
+        "spilloverUtility": 0.005,
+        "calendarSchedule": {
+          "yearsAfterGift": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "annualUndiscountedSfEquivalentOccupiedHomes": [
+            195.83948822759302,
+            195.83948822759302,
+            195.83948822759302,
+            195.83948822759302,
+            195.83948822759302,
+            195.83948822759302
+          ],
+          "annualUndiscountedRestBayEquivalentOccupiedHomes": [
+            587.518464682779,
+            587.518464682779,
+            587.518464682779,
+            587.518464682779,
+            587.518464682779,
+            587.518464682779
+          ],
+          "meaning": "Illustrative beneficiary-allocated occupied-home exposure; zero outside listed years. Pessimistic comparator catches up after year3; other housing schedules stop after year8. Already integrated H enters Q exactly once."
+        }
+      },
+      "transit": {
+        "conditionalSfUsefulServiceHours": 5000,
+        "conditionalRestBayUsefulServiceHours": 15000,
+        "netGiftContribution": 0.02,
+        "marginalTripsPerServiceHour": 20,
+        "tripsPerRecurrentRiderYear": 400,
+        "healthRelevantFraction": 0.1,
+        "netQalyPerChangedRiderYear": 0.005,
+        "calendarSchedule": {
+          "yearsAfterGift": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "annualUndiscountedSfEquivalentServiceHours": [
+            1091.77285700288,
+            1091.77285700288,
+            1091.77285700288,
+            1091.77285700288,
+            1091.77285700288
+          ],
+          "annualUndiscountedRestBayEquivalentServiceHours": [
+            3275.3185710086404,
+            3275.3185710086404,
+            3275.3185710086404,
+            3275.3185710086404,
+            3275.3185710086404
+          ],
+          "meaning": "Illustrative benefit-equivalent geographic allocation; zero beyond year5. Discounted sums equal input service-hours, used once."
+        }
+      },
+      "heat": {
+        "conditionalRegionalExposureFraction": 0.002,
+        "implementationProbability": 0.5,
+        "giftAttribution": 0.1,
+        "effectiveDiscountedMortalityYears": 3,
+        "modeledRegionalDeathsPerYear": 61,
+        "qalyPerDeath": 8,
+        "sfHealthShare": 0.1
+      },
+      "donorSpecificHarm": {
+        "sfQaly": 0,
+        "restBayQaly": 0
+      },
+      "outputs": {
+        "housingSfQaly": 0.135,
+        "housingRestBayQaly": 0.405,
+        "transitSfQaly": 0.0025000000000000005,
+        "transitRestBayQaly": 0.0075000000000000015,
+        "heatSfQaly": 0.01464,
+        "heatRestBayQaly": 0.13176000000000002,
+        "sfNetQaly": 0.15214,
+        "restBayNetQaly": 0.5442600000000001,
+        "bayIncludingSfNetQaly": 0.6964000000000001,
+        "donorCostUsd": 100000,
+        "sfUsdPer10Qaly": 6572893.387669252,
+        "bayUsdPer10Qaly": 1435956.346927053,
+        "resourceStressAdditionalUsd": 1000000,
+        "sfResourceStressUsdPer10Qaly": 72301827.26436177,
+        "bayResourceStressUsdPer10Qaly": 15795519.816197585
+      },
+      "sensitivityOf": "central",
+      "note": "Historical v2 central .005 unconditional spillover average; retained for lineage, not current central or ranking choice."
+    }
+  ],
+  "sources": [
+    {
+      "title": "2024 Form 990, Part III, physical page 3",
+      "url": "https://www.spur.org/sites/default/files/2026-02/SPUR_2024_Form_990.pdf",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-portfolio-evidence.md",
+      "published": "Reporting period April 1, 2024–March 31, 2025",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from completed source audit; not newly reopened in this arithmetic conversion"
+    },
+    {
+      "title": "financial-disclosure index",
+      "url": "https://www.spur.org/about/financial-statements",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-portfolio-evidence.md",
+      "published": "Undated/mutable page or historical version; exact publication date not established in this conversion",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from completed source audit; not newly reopened in this arithmetic conversion"
+    },
+    {
+      "title": "2025–26 annual report",
+      "url": "https://www.spur.org/about/annual-reports/2026",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-portfolio-evidence.md",
+      "published": "FY2025–26; unaudited as of March 31, 2026",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from completed source audit; not newly reopened in this arithmetic conversion"
+    },
+    {
+      "title": "FY24–25 audited statements",
+      "url": "https://www.spur.org/sites/default/files/2026-02/SPUR_FY24-25_Audited_Statements.pdf",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-portfolio-evidence.md",
+      "published": "Year ended March 31, 2025; auditor report February 4, 2026",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from completed source audit; not newly reopened in this arithmetic conversion"
+    },
+    {
+      "title": "current housing page",
+      "url": "https://www.spur.org/policy-area/housing",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-portfolio-evidence.md",
+      "published": "Undated/mutable page or historical version; exact publication date not established in this conversion",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from completed source audit; not newly reopened in this arithmetic conversion"
+    },
+    {
+      "title": "Reinventing Downtown, February 4, 2026",
+      "url": "https://www.spur.org/publications/policy-brief/2026-02-04/reinventing-downtown",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-portfolio-evidence.md",
+      "published": "February 4, 2026",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from completed source audit; not newly reopened in this arithmetic conversion"
+    },
+    {
+      "title": "Taking Muni’s Vitals, March 26, 2026",
+      "url": "https://www.spur.org/publications/research/2026-03-26/taking-munis-vitals",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-portfolio-evidence.md",
+      "published": "March 26, 2026",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from completed source audit; not newly reopened in this arithmetic conversion"
+    },
+    {
+      "title": "Getting In on the Ground Floor, December 10, 2025",
+      "url": "https://www.spur.org/publications/policy-brief/2025-12-10/getting-ground-floor",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-portfolio-evidence.md",
+      "published": "December 10, 2025",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from completed source audit; not newly reopened in this arithmetic conversion"
+    },
+    {
+      "title": "Economic Justice portfolio page",
+      "url": "https://www.spur.org/policy-area/economic-justice",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-portfolio-evidence.md",
+      "published": "Undated/mutable page or historical version; exact publication date not established in this conversion",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from completed source audit; not newly reopened in this arithmetic conversion"
+    },
+    {
+      "title": "Purchasing Power, April 17, 2025",
+      "url": "https://www.spur.org/publications/spur-report/2025-04-17/purchasing-power",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-portfolio-evidence.md",
+      "published": "April 17, 2025",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from completed source audit; not newly reopened in this arithmetic conversion"
+    },
+    {
+      "title": "Shared Risk, Shared Resilience, January 7, 2026",
+      "url": "https://www.spur.org/publications/spur-report/2026-01-07/shared-risk-shared-resilience",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-portfolio-evidence.md",
+      "published": "January 7, 2026",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from completed source audit; not newly reopened in this arithmetic conversion"
+    },
+    {
+      "title": "Greenlighting Clean Heat, June 6, 2025",
+      "url": "https://www.spur.org/publications/policy-brief/2025-06-06/greenlighting-clean-heat",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-portfolio-evidence.md",
+      "published": "June 6, 2025",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from completed source audit; not newly reopened in this arithmetic conversion"
+    },
+    {
+      "title": "The housing theory of everything",
+      "url": "https://worksinprogress.co/issue/the-housing-theory-of-everything/",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-citywide-qaly-audit.md",
+      "published": "September 14, 2021",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from completed source audit; not newly reopened in this arithmetic conversion"
+    },
+    {
+      "title": "SPUR, Permitting Progress, May 2026 source file",
+      "url": "https://www.spur.org/sites/default/files/2026-05/SPUR_Permitting_Progress.pdf",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-citywide-qaly-audit.md",
+      "published": "May 2026",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from completed source audit; not newly reopened in this arithmetic conversion"
+    },
+    {
+      "title": "Asquith, Mast and Reed, working paper 2020",
+      "url": "https://research.upjohn.org/up_workingpapers/316/",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-citywide-qaly-audit.md",
+      "published": "2020 working paper",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from completed source audit; not newly reopened in this arithmetic conversion"
+    },
+    {
+      "title": "published March 2023",
+      "url": "https://direct.mit.edu/rest/article/105/2/359/100977/Local-Effects-of-Large-New-Apartment-Buildings-in",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-citywide-qaly-audit.md",
+      "published": "March 2023",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from completed source audit; not newly reopened in this arithmetic conversion"
+    },
+    {
+      "title": "Pennington, June 15, 2021 SF working paper",
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3867764",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-citywide-qaly-audit.md",
+      "published": "June 15, 2021 working paper",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from completed source audit; not newly reopened in this arithmetic conversion"
+    },
+    {
+      "title": "primary manuscript copy",
+      "url": "https://joeornstein.github.io/pols-4641/readings/Pennington%20-%20Does%20Building%20New%20Housing%20Cause%20Displacement%20The%20.pdf",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-citywide-qaly-audit.md",
+      "published": "June 15, 2021 working paper",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from completed source audit; not newly reopened in this arithmetic conversion"
+    },
+    {
+      "title": "Diamond, McQuade and Qian, AER September 2019",
+      "url": "https://pubs.aeaweb.org/doi/10.1257/aer.20181289",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-citywide-qaly-audit.md",
+      "published": "September 2019",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from completed source audit; not newly reopened in this arithmetic conversion"
+    },
+    {
+      "title": "working paper",
+      "url": "https://www.nber.org/papers/w24181",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-citywide-qaly-audit.md",
+      "published": "Working paper; see source audit for version",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from completed source audit; not newly reopened in this arithmetic conversion"
+    },
+    {
+      "title": "Ludwig et al., NEJM October 20, 2011",
+      "url": "https://www.nejm.org/doi/full/10.1056/NEJMsa1103216",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-citywide-qaly-audit.md",
+      "published": "October 20, 2011",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from completed source audit; not newly reopened in this arithmetic conversion"
+    },
+    {
+      "title": "Althoff et al., Nature July 10, 2017",
+      "url": "https://www.nature.com/articles/nature23018",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-citywide-qaly-audit.md",
+      "published": "July 10, 2017",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from completed source audit; not newly reopened in this arithmetic conversion"
+    },
+    {
+      "title": "Althoff et al., Nature, online August 13 / issue September 11, 2025",
+      "url": "https://www.nature.com/articles/s41586-025-09321-3",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-citywide-qaly-audit.md",
+      "published": "Online August 13, 2025; issue September 11, 2025",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from completed source audit; not newly reopened in this arithmetic conversion"
+    },
+    {
+      "title": "Maizlish et al., AJPH April 2013",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3673232/",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-citywide-qaly-audit.md",
+      "published": "April 2013",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from completed source audit; not newly reopened in this arithmetic conversion"
+    },
+    {
+      "title": "Glaeser and Kahn, Journal of Urban Economics May 2010",
+      "url": "https://sites.socsci.uci.edu/~jkbrueck/course%20readings/glaeser-kahn.pdf",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-citywide-qaly-audit.md",
+      "published": "May 2010",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from completed source audit; not newly reopened in this arithmetic conversion"
+    },
+    {
+      "title": "Hsieh and Moretti, AEJ Macroeconomics April 2019",
+      "url": "https://www.aeaweb.org/articles?id=10.1257/mac.20170388",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-citywide-qaly-audit.md",
+      "published": "April 2019",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from completed source audit; not newly reopened in this arithmetic conversion"
+    },
+    {
+      "title": "full report",
+      "url": "https://www.spur.org/sites/default/files/2025-06/SPUR_Greenlighting_Clean_Heat.pdf",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-current-model-brief.md",
+      "published": "June 6, 2025",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from completed source audit; not newly reopened in this arithmetic conversion"
+    },
+    {
+      "title": "August6,2026 update",
+      "url": "https://www.spur.org/news/2026-08-06/three-measures-drive-down-high-cost-heat-pump-installation",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-current-model-brief.md",
+      "published": "August 6, 2026",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from completed source audit; not newly reopened in this arithmetic conversion"
+    },
+    {
+      "title": "Donation page",
+      "url": "https://www.spur.org/join-renew-give/donate",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-current-model-brief.md",
+      "published": "Undated/mutable page or historical version; exact publication date not established in this conversion",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from completed source audit; not newly reopened in this arithmetic conversion"
+    },
+    {
+      "title": "primary atmospheric/health assessment, AppendixE TableE.2, pp6–8",
+      "url": "https://www.baaqmd.gov/~/media/dotgov/files/rules/reg-9-rule-6-nitrogen-oxides-emissions-from-natural-gasfired-water-heaters/2021-amendment/documents/20221220_sr_appe_rg09040906-pdf.pdf?rev=f05e1e6f12874600a0382b178b04ab0d#page=7",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-current-model-brief.md",
+      "published": "December 20, 2022",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from completed source audit; not newly reopened in this arithmetic conversion"
+    },
+    {
+      "title": "Air District's actual appliance program",
+      "url": "https://www.baaqmd.gov/rules-and-compliance/rule-development/building-appliances",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-current-model-brief.md",
+      "published": "Undated/mutable page or historical version; exact publication date not established in this conversion",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from completed source audit; not newly reopened in this arithmetic conversion"
+    },
+    {
+      "title": "current explanatory site",
+      "url": "https://knowthefacts.baaqmd.gov/",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-current-model-brief.md",
+      "published": "Undated/mutable page or historical version; exact publication date not established in this conversion",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from completed source audit; not newly reopened in this arithmetic conversion"
+    },
+    {
+      "title": "February25,2026 official state-legislation packet",
+      "url": "https://media.api.sf.gov/documents/February_25_2026_State_Legislation_Committee_Packet.pdf",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-current-model-brief.md",
+      "published": "February 25, 2026",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from completed source audit; not newly reopened in this arithmetic conversion"
+    },
+    {
+      "title": "current official rule-development page",
+      "url": "https://www.baaqmd.gov/en/rules-and-compliance/rule-development/building-appliances?sc_lang=en",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-current-model-brief.md",
+      "published": "Undated/mutable page or historical version; exact publication date not established in this conversion",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from completed source audit; not newly reopened in this arithmetic conversion"
+    },
+    {
+      "title": "Bentley et al., housing affordability and mental health",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21821543/",
+      "published": "2011",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-housing-utility-check.md",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from bounded primary-source check; not newly reopened in v3 arithmetic conversion. These are not preference-utility calibration studies."
+    },
+    {
+      "title": "Denary et al., rental assistance and psychological distress",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8299474/",
+      "published": "August 2021",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-housing-utility-check.md",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from bounded primary-source check; not newly reopened in v3 arithmetic conversion. These are not preference-utility calibration studies."
+    },
+    {
+      "title": "Reeves et al., UK Housing Benefit cuts and depressive symptoms",
+      "url": "https://eprints.lse.ac.uk/67723/1/Reeves_Reductions%20in%20UK%20benefit_2016.pdf",
+      "published": "September 15, 2016",
+      "sourceAsset": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-housing-utility-check.md",
+      "retrieved": "September 8, 2026",
+      "access": "Inherited from bounded primary-source check; not newly reopened in v3 arithmetic conversion. These are not preference-utility calibration studies."
+    }
+  ],
+  "limitations": [
+    "All physical-output and unspecified health priors are analyst judgments, not inferred from spending shares.",
+    "Housing conditional scopes are unverified; permits and adopted rules do not prove financially feasible completions.",
+    "SF subset is geographic accounting, not guarantee SF net benefit <= total Bay when other places experience harm.",
+    "Deduplicate cross-channel health benefits/exposures and partner credit, not all shared people; governance enabling these outputs earns no second credit.",
+    "Do not infer contemporary SPUR food-program delivery after 2024 fiscal sponsor transfer.",
+    "Public/private induced construction, transit, appliance and implementation resources unpriced; favorable donor-only threshold fragile.",
+    "No generic GDP, births, innovation or all-city-population health multiplier.",
+    "SF/restBay labels encode an unverified health-residence allocation; neither project nor service location determines beneficiary residence.",
+    "All finite annual exposure schedules remain illustrative decompositions of fixed integrated inputs, not forecasts. V3 changes only central-derived spillover utility assumptions and recalculates outputs."
+  ],
+  "provenance": {
+    "proposal": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-portfolio-proposal.md",
+    "portfolioSources": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-portfolio-evidence.md",
+    "citywideAudit": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-citywide-qaly-audit.md",
+    "component": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-current-model-brief.md",
+    "coreNumericChanges": true,
+    "v1": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-portfolio-v1.json",
+    "independentAudit": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-portfolio-independent-audit.md",
+    "v2Review": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-portfolio-v2-review.md",
+    "v2": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-portfolio-v2.json",
+    "v3Review": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-portfolio-v3-review.md",
+    "housingUtilityEvidence": "https://github.com/Rhys-Lindmark/market-for-impact/blob/main/docs/research-queue/next100/september8/spur-housing-utility-check.md",
+    "changeReason": "Analyst shrinkage of unconditional central spillover utility from .005 to .001 prompted by heterogeneous, nonutility and null-compatible longitudinal evidence; no physical-output, attribution, price or favorable/pessimistic tuning."
+  },
+  "geography": {
+    "basis": "Explicit beneficiary-residence allocation prior, not infrastructure-location inference",
+    "bayIncludesSf": true,
+    "sfAndBayNotAdditive": true,
+    "housingAndTransitSfBenefitShare": 0.25,
+    "shareEvidence": "Judgment; not observed commuter, migration, rent-catchment or household-residence data",
+    "legacyFieldMeaning": "SF/restBay homeYears and serviceHours are benefit-equivalent exposure cells assigned to resident groups. Their labels do not verify where a building stands or a vehicle operates. Geographic project scopes in v1 prose were illustrative, not independently established.",
+    "crossBorderRule": "A later project-location to beneficiary-residence matrix may allocate SF infrastructure effects to non-SF residents and vice versa. Current 25/75 allocation preserves existing totals; all-Bay scope still excludes unmodeled out-of-region effects.",
+    "heatAllocation": "Separate scenario-specific sfHealthShare inherited as an explicit health-residence prior, not equipment location."
+  },
+  "verification": {
+    "scenarios": 10,
+    "passedChecks": 112,
+    "checks": "40 discounted schedule integrals, 10 geographic sums, 45 unchanged favorable/pessimistic outputs, 15 historical-central output matches, 2 independently expanded central totals.",
+    "centralChanged": true,
+    "centralDerivedScenarioIds": [
+      "central",
+      "nullGiftContribution",
+      "nullPhysicalOutput",
+      "centralDonorHarm",
+      "nullContributionDonorHarm",
+      "centralZeroHousingSpillover"
+    ],
+    "unchangedJointScenarios": [
+      "favorable",
+      "pessimisticPositive"
+    ],
+    "historicalSensitivity": "historicalCentralSpilloverPrior",
+    "resourceStressIsUnpriced": true
+  }
+}

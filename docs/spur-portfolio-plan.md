@@ -12,6 +12,12 @@ User priority, 8 September 2026. Replace the clean-heat-only interpretation of S
 
 ## Current phase and ownership
 
+20:11:36 UTC resumed after explicit Rhys authorization and verified public cleanup v139 (PR213). Main2236abb merged with autostash; all draft changes restored successfully. SPUR Whole Portfolio CEA A1:E418 now populated and all2,090 cells plus110 expected formula outputs verified. Null output expectations correctly map to the explicit no-positive-Q text; no spreadsheet errors. Native100% Google view checked initial parameters and central SF/Bay outputs. Workbook sharing remains private; do not expose its link as the only public model. Three research workers active on accepted AMF/YMCA and next unique opportunities. Current task: finalize SPUR provenance/test/build/public release using the new report design; no increment for this revision.
+
+September 8 restart at 19:44:28 UTC after website cleanup: merged current main237658f into this preserved worktree without overwriting draft SPUR edits. Canonical is now `https://ai.rhyslindmark.com/givebetter`. Independently checked preserved integration and v3 audits; live Sheets A1:E51 matches all preserved inputs, and the 11 central formulas evaluate correctly. Attempt to finish A52:E418 was rejected by the approval gate, which still considers the earlier research/workbook pause active. No Google cells changed. Asked Rhys to explicitly confirm resumption; do not retry writes or publish SPUR until confirmed. Existing 418-row worksheet plan remains in session store `spurSheet`. Workers asked to pause and preserve assets. New read-only scope-upgrade packet: `/private/tmp/mfi-org-upgrade-priorities.md`.
+
+New continuous block start: 2026-09-08T18:33:20Z; target about 20:03:20Z. Previous block was completed progress and logged87.35 minutes. Current accepted count45/115. SP3 integration now uses v3 (.001 average housing spillover) and dynamic SF/Bay results; source, workbook, browser and release acceptance remain required. Workers: final report asset, independent v3 audit, Essential Access EPT next high-upside report. No new count for SPUR revision.
+
 SP1–SP2 evidence gathering. Coordinator owns Site edits and publication. Euclid: portfolio/finances. Harvey: housing/transport mechanisms. Jason: citywide QALY bridge and double-counting audit. Existing accepted count remains 44/100 pending unrelated hearing release.
 
 ## Initial evidence that changes the model

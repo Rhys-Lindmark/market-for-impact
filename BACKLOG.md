@@ -289,3 +289,8 @@ During active research blocks, the coordinating agent must keep every available 
 3. Native impact units are retained; any conversion is versioned and uncertainty is visible.
 4. Imports are idempotent and duplicates are tested.
 5. UI totals reconcile to accepted records and disclose coverage gaps.
+# SPUR whole-organization revision — September 8, 2026
+
+Research resumed after the requested GiveBetter design cleanup shipped as PR213/v139. Published count remains 45/115: replacing SPUR's clean-heat-only report does not add an organization. PR209 now models one hypothetical unrestricted gift across housing (including existing-resident spillovers), transportation, heat, and costed-but-unquantified governance/economic work. Central estimate: $10.85M per 10 SF QALYs and $2.19M per 10 Bay QALYs, with SF nested inside Bay. Geography, exposure, attribution and utility are explicit judgments; null, harm and resource-cost scenarios are retained. Historical clean heat is preserved separately, not ranked as SPUR overall.
+
+Verification: 292 unit tests, lint (zero errors; two existing warnings), production build, and four phone/tablet SPUR/HAC browser tests passed. Private SPUR workbook: 2,090 authored cells and 110 formula outputs verified; public model/API and checked-in provenance do not require private spreadsheet access. Next: publish/verify PR209, then integrate independently accepted AMF as a new international organization; workers continue outcome-first candidates. Do not count drafts or portfolio revisions as new organizations.

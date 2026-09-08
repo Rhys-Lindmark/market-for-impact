@@ -1,49 +1,30 @@
 import type {Metadata} from 'next';
 import CharityResearchReport,{type CharityReportContent} from '@/components/CharityResearchReport';
-import data from '@/data/san-francisco/spur-clean-heat-cea-v1.json';
-import {spurModel} from '@/lib/urban-policy-model.mjs';
-export const metadata:Metadata={title:'SPUR — clean-heat implementation | Market for Impact',description:'Conditional SF health model for SPUR clean-heat permitting work: actual conversions, marginal contribution and explicit uncertainty.'};
+import data from '@/data/san-francisco/spur-portfolio-cea-v3.json';
+import report from '@/data/san-francisco/spur-portfolio-report.json';
+import {spurPortfolioModel} from '@/lib/spur-portfolio-model.mjs';
+export const metadata:Metadata={title:'SPUR — whole-organization impact | Market for Impact',description:'Housing spillovers, transportation and clean heat: a conditional unrestricted-gift model with separate SF and Bay Area health estimates.'};
 const money=(n:number|null)=>n===null?'No finite positive price':new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',notation:'compact',maximumFractionDigits:2}).format(n);
-const result=spurModel(data.scenarios[0]);
-const input=(key:string,label:string,best:string,range:string,basis:string)=>({key,label,best,range,basis,confidence:key==='deaths'?'Agency model; uncertain':'Judgmental'});
+const result=spurPortfolioModel(data.scenarios.find(s=>s.id==='central')!,data.budget.totalUsd);
 const content:CharityReportContent={
- organization:'SPUR',program:'Greenlighting Clean Heat: permitting research and implementation',eyebrow:'SAN FRANCISCO · CONDITIONAL RESEARCH',published:'8 September 2026',modelVersion:data.version,
- nutshell:{headline:'Reducing pollution is valuable. An extra donor’s share of this transition is uncertain.',
- body:<>Our provisional best estimate is <strong>{money(result.costPerTenQalys)} per better life—10 incremental QALYs</strong>. We model additional non-electoral clean-heat research and implementation support, counting only SF residents’ health. The estimate is conditional, not a priced funding offer. <a href="/api/sf-urban-policy-models">Inspect the model and sources →</a></>,
- whyItMayWork:'Better permitting and technical implementation could bring forward actual gas-to-electric conversions and reduce outdoor particulate pollution.',
- whyWeAreCautious:'Existing rules, public work and other organizations already drive the transition. No observed dose-response links a new SPUR grant to additional conversions.',
- recommendationBlocker:'No restricted $100K package or SF-only gift is verified; net implementation and equipment costs are unpriced.'},
- summary:[{label:'COST PER BETTER LIFE',value:money(result.costPerTenQalys),detail:'per 10 QALYs; conditional donor budget'},{label:'POSITIVE CORE SCENARIOS',value:'$187K–$45B',detail:'Joint assumptions, not confidence bounds; null/harm possible'},{label:'MODELED GRANT',value:'$100,000',detail:'Planning allowance, not an available offer'},{label:'FUNDING ROOM',value:'Unknown',detail:'A deficit does not identify a marginal program tranche'}],
- programSection:{body:'SPUR’s June 2025 Greenlighting Clean Heat report and August 2026 update address heat-pump permitting, installation costs and technical barriers. Its annual report describes regional pilots, not measured SF conversions caused by an additional gift.',
- steps:[{title:'Improve a real implementation bottleneck',detail:'Additional research, permitting-data evaluation and technical support beyond already-funded work.'},{title:'Change actual conversion timing',detail:'More documented permits alone are insufficient if installations happen anyway.'},{title:'Count incremental SF health',detail:'Translate net earlier pollution reduction into modeled mortality and explicitly assumed remaining QALYs.'}],
- boundary:'The package is prospective and hypothetical within a real workstream, not a purchase of equipment, legislation or electoral activity. This is SPUR, not SPURR procurement. Its general charitable giving route identifies EIN 94-1498232, but no modeled restriction is verified.'},
- model:{headline:money(result.costPerTenQalys)+' per 10 QALYs',
- body:'A primary Air District model estimates 37–85 fewer annual premature deaths if applicable regional appliance emissions are eliminated. We use an analyst midpoint of 61, then sharply limit scale, implementation probability, the marginal donor’s contribution, SF geography and the effective timing window. This yields 0.0732 expected QALY per hypothetical $100K package. All scaling and health-year inputs are judgments.',
- equation:{label:'DONOR DOLLARS PER 10 QALYS',expression:'10 × $100,000 ÷ (0.01 × 0.5 × 0.1 × 3 × 0.1 × 61 × 8)',result:money(result.costPerTenQalys)},
- inputColumnLabel:'Central assumption',
- inputs:[input('cost','Complete grant budget','$100,000','$100,000 across scenarios','$70K loaded staff, $15K data/technical review and $15K coordination/overhead; includes failed effort, all judgmental.'),
- input('fraction','Equivalent regional exposure reduction','1%','0.1–5% core','Net exposure brought forward conditional on success, not percent growth in permits or a measured linear emissions coefficient.'),
- input('realization','Implementation probability','50%','20–70%; zero possible','Actual conversion timing/uptake changes, not merely documentation.'),
- input('contribution','Marginal donor contribution','10%','2–20%; zero possible','Includes replacement of existing SPUR funding and contribution of agencies/other implementers.'),
- input('years','Effective mortality-impact years','3','1–5 core','Already includes adoption ramp, mortality lag, comparator catch-up and calendar discounting; not heat-pump lifetime.'),
- input('sf','SF share of affected health','10%','5–15% core','A geographic judgment, not inferred from SPUR’s address.'),
- input('deaths','Full-region annual modeled deaths averted','61','37–85','2022 Appendix E total-PM model; 61 is our midpoint, not the source’s central estimate.'),
- input('qaly','Remaining QALYs per mortality case','8','3–12','Discounted remaining health valued at case time; calendar timing is handled in effective years, not twice.')],
- giftHeading:'Core, null and harm scenarios',
- sensitivity:data.scenarios.filter(s=>!data.rankingExcludedScenarioKeys.includes(s.key)).map(s=>{const r=spurModel(s);return {case:s.key.replaceAll('_',' '),headline:money(r.costPerTenQalys),detail:r.netQalys+' incremental SF QALYs; '+r.status};}),
- uncertaintyBoundary:'The mortality anchor concerns outdoor total PM2.5 from actual gas-to-electric emission removal. A hypothetical zero-NOx gas appliance cannot inherit primary-PM elimination. The separate 23–52 secondary-PM estimate is not added. Harm is already-net grant-attributable health loss, adjusted for its own implementation/additionality; identical replacement creates no shared-harm increment, but independent donor harm can persist.',
- fundingBoundary:'Existing appliance rules and public implementation are the baseline. As checked September 8, the Air District lists July 14, 2026 draft small-water-heater flexibility amendments and a tentative November decision, not adopted amendments. No historical achievement or future event is counted as a completed donor outcome. SPUR’s unaudited organizational deficit does not price this workstream.'},
- comparisonBridge:{headline:'A sub-$100K tail exists, but is neither the best estimate nor a robust resource bargain',
- body:'A separate ambitious scenario assumes 10% regional exposure scale, 75% realization, 20% donor contribution, seven effective years and 20% SF health share. It produces 21.42 QALYs and $46,685/10 QALYs. It is excluded from the core range and ranking.',
- equation:{label:'AMBITIOUS SCALE—NOT CENTRAL',expression:'10 × $100,000 ÷ 21.42 QALYs',result:'$46,685'},
- inputs:[],sensitivity:[{case:'Same health, another $1M of net resources',headline:'$514K',detail:'per 10 QALYs; implementation-cost stress, not a cost estimate'}],
- boundary:'The ambitious case can absorb only $114,200 of additional net resources before crossing $100K/10 QALYs. City/contractor work, equipment/electrical upgrades and operating costs must be compared with otherwise scheduled replacements. Fees and rebates are transfers, not automatic resource savings. Central and favorable already fail before these costs.'},
- evidence:[{key:'Current provider work',design:'2025 report and August 2026 update',population:'Regional heat-pump implementation including SF permitting examples',result:'A real ongoing research workstream is documented.',transfer:'No measured marginal conversion effect or SF-only offer.'},{key:'Outdoor pollution health anchor',design:'Air District CMAQ/BenMAP assessment, December 2022, Appendix E Table E.2',population:'Regional commercial/residential space and water heating emissions',result:'37–85 modeled premature deaths averted per year under full emissions elimination.',transfer:'Atmospheric and epidemiological modeling, not randomized SPUR evidence. The range reflects risk-function choice, not uncertainty in this grant.'}],
- reservations:['Exposure scale, attribution and SF share dominate the result and need project-specific evidence.','Faster permitting might legalize existing installations rather than increase electrification.','Remaining health-years are judgments, not full healthy lifetimes.','The selected workstream is not an organization-wide score for SPUR’s housing, transport and other work.'],
- excludedBenefits:['No separate asthma, cardiovascular morbidity, indoor-air, cooling or climate credit.','No willingness-to-pay valuations treated as healthcare savings.','No historical law adoption or equipment lifetime credited to the next donation.'],
- sources:[...data.sources.map(s=>({publisher:s.id==='health-primary'?'Bay Area Air District':'SPUR',title:s.id==='health-primary'?'2022 appliance emissions health assessment, Appendix E':'Greenlighting Clean Heat: report or update',url:s.url,published:s.id==='health-primary'?'December 2022':s.id==='spur-current'?'6 August 2026':'June 2025',retrieved:data.reviewedAt,sourceType:s.type})),
- {publisher:'Bay Area Air District',title:'Current appliance rule development',url:data.currentRuleBaseline.url,published:'July 2026 drafts; current page',retrieved:data.reviewedAt,sourceType:'Official proposed-rule status'},
- {publisher:'SPUR',title:'2025–26 annual report',url:'https://www.spur.org/about/annual-reports/2026',published:'2026; financials as of March 31',retrieved:data.reviewedAt,sourceType:'Provider report; unaudited finances'},
- {publisher:'SPUR',title:'General giving',url:'https://www.spur.org/join-renew-give/donate',published:'Not stated',retrieved:data.reviewedAt,sourceType:'Recipient disclosure; not modeled funding offer'}],
+ ...report,modelVersion:data.modelId,
+ nutshell:{...report.nutshell,body:<>Our best estimate is <strong>{money(result.sfUsdPer10Qaly)} per 10 SF QALYs</strong>, or <strong>{money(result.bayUsdPer10Qaly)} per 10 Bay Area QALYs</strong> for the same hypothetical $100,000 unrestricted gift. We include housing benefits for existing residents, transportation and cleaner buildings—not only clean heat. SF is included in the Bay total; do not add them. These are judgmental partial-health estimates, not a complete welfare valuation or verified funding offer. <a href="/api/sf-spur-portfolio">Inspect the model and sources →</a></>},
+ summary:[
+ {label:'SF HEALTH',value:money(result.sfUsdPer10Qaly),detail:'per 10 incremental SF-resident QALYs; '+money(result.sfUsdPerQaly)+' per QALY'},
+ {label:'BAY AREA HEALTH',value:money(result.bayUsdPer10Qaly),detail:'per 10 incremental Bay QALYs, including SF; '+money(result.bayUsdPerQaly)+' per QALY'},
+ {label:'SAME GIFT',value:money(data.budget.totalUsd),detail:'Unrestricted allocation is hypothetical, not a quoted funding tranche'},
+ {label:'GEOGRAPHY',value:(100*result.sfNetQaly/result.bayIncludingSfNetQaly).toFixed(1)+'% SF',detail:'Share of modeled Bay health; resident allocation is a judgment. Out-of-region effects are unquantified.'}
+ ],
+ model:{...report.model,headline:money(result.sfUsdPer10Qaly)+' per 10 SF QALYs',
+ equation:{...report.model.equation,result:result.sfNetQaly.toPrecision(5)+' SF QALYs; '+result.bayIncludingSfNetQaly.toPrecision(5)+' Bay QALYs from the same gift'},
+ sensitivity:[...data.scenarios.map(s=>{const r=spurPortfolioModel(s,data.budget.totalUsd);return {case:s.id.replace(/([a-z])([A-Z])/g,'$1 $2'),headline:money(r.sfUsdPer10Qaly)+' SF / '+money(r.bayUsdPer10Qaly)+' Bay per 10 QALYs',detail:r.sfNetQaly.toPrecision(5)+' SF QALYs; '+r.bayIncludingSfNetQaly.toPrecision(5)+' Bay QALYs including SF. Joint assumptions, not confidence intervals.'};}),
+ {case:'Additional $1M net-resource stress',headline:money(result.sfResourceStressUsdPer10Qaly)+' SF / '+money(result.bayResourceStressUsdPer10Qaly)+' Bay',detail:'per 10 QALYs; unpriced resource stress, not a full societal cost estimate.'}]},
+ comparisonBridge:{headline:'Where the modeled health comes from',body:'Housing includes direct harmful-state relief and nonoccupant affordability spillovers. Transit and heat count distinct health effects. All effects use the same gift, with SF nested inside the Bay Area.',
+ equation:{label:'CENTRAL SF HEALTH',expression:result.housingSfQaly.toPrecision(4)+' housing + '+result.transitSfQaly.toPrecision(4)+' transit + '+result.heatSfQaly.toPrecision(4)+' clean heat',result:result.sfNetQaly.toPrecision(5)+' QALYs'},
+ inputs:[],sensitivity:[
+ {case:'Housing',headline:result.housingSfQaly.toPrecision(4)+' SF QALYs',detail:(result.housingSfQaly+result.housingRestBayQaly).toPrecision(4)+' Bay QALYs; direct and nonoccupant health states'},
+ {case:'Transportation',headline:result.transitSfQaly.toPrecision(4)+' SF QALYs',detail:(result.transitSfQaly+result.transitRestBayQaly).toPrecision(4)+' Bay QALYs; useful service and changed health exposure'},
+ {case:'Clean heat',headline:result.heatSfQaly.toPrecision(4)+' SF QALYs',detail:(result.heatSfQaly+result.heatRestBayQaly).toPrecision(4)+' Bay QALYs; actual emissions removal'}
+ ],boundary:'The remaining $15K governance/economic allocation is costed but its health contribution is unquantified. Broad income, productivity and civic gains are not automatically QALYs. The historical clean-heat-only model is preserved in the urban-policy API, not used as this whole-organization score.'}
 };
 export default function Page(){return <CharityResearchReport content={{...content, donationUrl:"https://www.spur.org/join-renew-give/donate"}}/>;}

@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';
 test('Bay research stays outside SF ranking and exposes full-resource and duration uncertainty',async({page})=>{
  await page.goto('/research');
- await expect(page.locator('[data-research-slug]')).toHaveCount(51);
+ await expect(page.locator('[data-research-slug]')).toHaveCount(52);
  await expect(page.locator('table')).toHaveCount(1);
  const row=page.locator('[data-research-slug="rotacare-bay-area"]');
  await expect(row).toHaveCount(1);await expect(row).toContainText('Not estimated');

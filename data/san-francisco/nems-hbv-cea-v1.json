@@ -1,0 +1,39 @@
+{
+  "version": "sf-nems-hbv-cea-v1",
+  "reviewedAt": "2026-09-07",
+  "organization": "North East Medical Services",
+  "program": "Proposed additional HBV registry re-engagement",
+  "denominator": "10 incremental QALYs",
+  "confidence": "very-low",
+  "scope": "A closed initial cohort of diagnosed, initially inactive adult HBV registry patients; repeated navigation supports monitoring and subsequently indicated care. Not a one-year gift, a treatment start, screening, or the infant program.",
+  "costPerspective": "Present value of full recurring navigator, supervision and analyst capacity per initial registry person. No replacement patients or salary savings after attrition. Philanthropic navigation costs only; publicly financed tests, medication, surveillance and downstream health costs are excluded, not free resources. No current provider quote or restricted funding offer verified.",
+  "nullBoundary": "No additional monitoring, no causal downstream effect, or complete replacement of existing funding yields no benefit. Harms can outweigh the modeled gain. Zero funded duration credits no benefit; no finite positive price is reported at null or harm.",
+  "scenarios": [
+    { "name": "Optimistic positive", "navigatorAnnual": 65000, "supervisionAnnual": 22900, "analystFirstYear": 3593.44, "analystLaterYear": 2524.88, "panelSize": 3000, "costMultiplier": 1, "fundedYears": 35, "referenceYears": 35, "discountRate": 0.03, "benefitShape": 0, "localMonitoringIncrement": 0.2835, "causalTransfer": 1, "fundingAdditionality": 0.9, "harmQalysPerPerson": 0 },
+    { "name": "Central analyst estimate", "navigatorAnnual": 65000, "supervisionAnnual": 22900, "analystFirstYear": 3593.44, "analystLaterYear": 2524.88, "panelSize": 2500, "costMultiplier": 1.5, "fundedYears": 20, "referenceYears": 35, "discountRate": 0.03, "benefitShape": 1, "localMonitoringIncrement": 0.1, "causalTransfer": 0.5, "fundingAdditionality": 0.5, "harmQalysPerPerson": 0 },
+    { "name": "Pessimistic positive", "navigatorAnnual": 65000, "supervisionAnnual": 22900, "analystFirstYear": 3593.44, "analystLaterYear": 2524.88, "panelSize": 2000, "costMultiplier": 2, "fundedYears": 10, "referenceYears": 45, "discountRate": 0.03, "benefitShape": 2, "localMonitoringIncrement": 0.03, "causalTransfer": 0.2, "fundingAdditionality": 0.25, "harmQalysPerPerson": 0 }
+  ],
+  "assumptions": [
+    { "key": "navigatorAnnual", "label": "Annual navigator salary anchor", "basis": "2026 paper Table2: $65,000; not a NEMS marginal quote." },
+    { "key": "supervisionAnnual", "label": "Annual allocated clinical supervision", "basis": "Paper Table2: $22,900; charged in full every funded year." },
+    { "key": "analystFirstYear", "label": "First-year analyst support", "basis": "Paper Table2 EHR analyst allocation $3,593.44; navigation text requires similar support. Transfer is an assumption." },
+    { "key": "analystLaterYear", "label": "Later annual analyst support", "basis": "Paper Table2 allocation $2,524.88; retained every later funded year." },
+    { "key": "panelSize", "label": "Initial closed registry cohort", "basis": "Paper staffing range 2,000–3,000 per navigator. No replacement entrants or future salaries avoided after attrition are counted." },
+    { "key": "costMultiplier", "label": "Local fully loaded cost adjustment", "basis": "1 / 1.5 / 2 judgments for benefits, overhead and local costs, not observed inflation or quotes." },
+    { "key": "fundedYears", "label": "Years of recurring support purchased", "basis": "35 / 20 / 10-year hypothetical commitments. Charge annual capacity throughout; not one year buying lifetime gains." },
+    { "key": "referenceYears", "label": "Analyst health allocation window", "basis": "35 / 35 / 45 years, NOT the paper's horizon. Its total is lifetime; this approximates the timing of already discounted incremental health." },
+    { "key": "discountRate", "label": "Annual discount rate", "basis": "3% matches source. Discount costs annually; normalize discounted health weights to avoid double discounting the lifetime anchor." },
+    { "key": "benefitShape", "label": "Health timing exponent", "basis": "Weights year^shape: uniform, linearly later, quadratically later. No source annual trajectories available; a major judgment." },
+    { "key": "localMonitoringIncrement", "label": "Additional annual monitoring proportion", "basis": "28.35 / 10 / 3 percentage points over existing EHR, ReLink and usual care. Judgments, not observed effects. Assumes appropriate downstream care; testing itself is not QALYs." },
+    { "key": "causalTransfer", "label": "Source and downstream health transfer", "basis": "100 / 50 / 20% judgments for causal uncertainty and local age/severity/downstream-care mismatch. Not a validated correction for source inconsistencies." },
+    { "key": "fundingAdditionality", "label": "Health share caused by gift", "basis": "90 / 50 / 25% judgment; existing grants/reimbursement can make this zero. Full gift cost is still incurred." },
+    { "key": "harmQalysPerPerson", "label": "Net additional harm per initial person", "basis": "Zero in central positive cases; signed downside tested separately. Includes unnecessary treatment, burden or disruption if attributable; not established zero harm." }
+  ],
+  "sources": [
+    { "key": "paper", "publisher": "Journal of Viral Hepatitis", "title": "Starinieri et al.: Cost-Effectiveness of Interventions to Improve Retention in Care for Chronic Hepatitis B in the United States", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13071230/", "published": "2026-04-12", "retrieved": "2026-09-07", "sourceType": "Primary economic model" },
+    { "key": "local", "publisher": "North East Medical Services", "title": "Liver Health Program", "url": "https://www.nems.org/programs/liverhealth/", "published": "Undated", "retrieved": "2026-09-07", "sourceType": "Provider disclosure" },
+    { "key": "grant", "publisher": "CDA Foundation", "title": "ReLink grantees", "url": "https://cdafound.org/relink/grantees/", "published": "Undated", "retrieved": "2026-09-07", "sourceType": "Funder disclosure" },
+    { "key": "giving", "publisher": "North East Medical Services", "title": "Support us", "url": "https://www.nems.org/support-us/", "published": "Undated", "retrieved": "2026-09-07", "sourceType": "Donation recipient disclosure" },
+    { "key": "registry", "publisher": "AASLD", "title": "The Liver Meeting 2024 abstracts, abstract 1236, PDF pages500–501", "url": "https://www.aasld.org/sites/default/files/2024-10/1_the_liver_meeting_2024_abstracts.pdf", "published": "2024", "retrieved": "2026-09-07", "sourceType": "Descriptive local conference abstract" }
+  ]
+}

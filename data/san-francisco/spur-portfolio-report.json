@@ -1,0 +1,544 @@
+{
+  "organization": "SPUR",
+  "eyebrow": "San Francisco Bay Area · Whole-organization policy portfolio",
+  "program": "Whole-organization policy research and advocacy",
+  "donationUrl": "https://www.spur.org/join-renew-give/donate",
+  "published": "September 8, 2026",
+  "modelVersion": "spur-unrestricted-portfolio-conditional-v3",
+  "nutshell": {
+    "headline": "Citywide influence could matter. Its marginal health return is uncertain.",
+    "body": "One hypothetical $100,000 unrestricted gift produces a conditional best estimate of .09214 SF QALY or .4564 Bay QALY including SF: $10.85M/10 SF QALYs and $2.19M/10 Bay QALYs. This evaluates SPUR’s broader portfolio, not only clean heat. The totals must not be added. These are partial-health judgments, not measured effects, a complete welfare valuation or a verified offer.",
+    "whyItMayWork": "Housing completion and affordability can affect many residents; useful transit and cleaner buildings can change health beyond direct program participants. Small causal improvements at city scale may matter.",
+    "whyWeAreCautious": "No source measures the next gift’s share of those outcomes. Housing health utilities, prospective physical outputs and allocation weights remain judgments; a relevant longitudinal rental-assistance comparison is null-compatible.",
+    "recommendationBlocker": "No verified marginal unrestricted allocation, additional funded task, complete implementation cost or accepted restricted offer. Conditional research is not a donation recommendation."
+  },
+  "summary": [
+    {
+      "label": "Central cost / 10 QALYs",
+      "value": "$10.85M SF / $2.19M Bay",
+      "detail": "Same $100,000 gift; .09214 SF QALY and .4564 Bay QALY including SF."
+    },
+    {
+      "label": "One gift, two geographic views",
+      "value": "SF and Bay including SF",
+      "detail": "Both use the same $100,000 numerator. SF is part of the Bay result; never add the two totals."
+    },
+    {
+      "label": "Whole-organization scope",
+      "value": "Five budget components",
+      "detail": "Housing/planning, transportation, clean heat/environment, governance/procurement and economic security."
+    },
+    {
+      "label": "Recipient",
+      "value": "EIN 94-1498232",
+      "detail": "SPUR—San Francisco Bay Area Planning and Urban Research Association; existing reviewed organization, not a new charity count."
+    }
+  ],
+  "programSection": {
+    "body": "SPUR conducts research, education and advocacy across SF, Oakland, San José and the region. Actual work includes permitting and downtown housing feasibility, Muni performance, building decarbonization, procurement and economic policy. We model a hypothetical marginal allocation, not a documented package sold by SPUR or all historical policy achievements.",
+    "steps": [
+      {
+        "title": "Allocate one shared gift",
+        "detail": "$35,000 housing/planning; $30,000 transportation; $20,000 clean heat/environment; $10,000 governance/procurement; $5,000 economic security. These are analyst marginal shares, not reported spending."
+      },
+      {
+        "title": "Change actual implementation",
+        "detail": "Count genuinely additional or earlier occupied homes, useful transit service and cleaner-building exposure beyond public agencies, other advocates and already-funded SPUR work."
+      },
+      {
+        "title": "Track residents and spillovers",
+        "detail": "Include occupants, affected nonoccupant renters, transit users and pollution-exposed residents, with distinct SF and rest-of-Bay cells. Migration alone is not improved health."
+      },
+      {
+        "title": "Count finite net health",
+        "detail": "Count distinct net health gains. Remove duplicated exposures, health states and attribution, not every repeated person: one resident may receive genuinely distinct benefits with consistent utility and competing-risk accounting."
+      }
+    ],
+    "boundary": "Clean heat is only one component. Governance may enable the same housing/transit outcomes and cannot receive a second full credit. The $15,000 governance/economic allocation remains costed but its health benefits are unquantified—not proven absent. Economic welfare, civic value, income and innovation are not silently converted into QALYs. Exact finite housing years:3,4,5,6,7,8 for central/favorable-derived cases, year3 only pessimistically, zero otherwise. Transit years1–5 only. Annual exposures are discounted by(1.03)^year and integrated once; never multiply integrated totals by duration again. Schedules are illustrative decompositions, not forecasts."
+  },
+  "model": {
+    "headline": "One portfolio budget, explicit causal assumptions",
+    "body": "All topic allocations and physical-output priors are conditional analyst judgments. Reported organizational expenditure does not determine marginal impact. Staff, coordination, education, fundraising and administration are included once in the shared $100,000; no separate overhead effectiveness penalty. The central housing spillover utility is revised to .001 per counted nonoccupant adult-year; .005 belongs only to labeled historical sensitivity. Housing/transit allocate 25% of resident benefit to SF and75% to the rest of the Bay as an explicit unverified prior, not a claim based on infrastructure location. Heat separately allocates .10/.15/.05 to SF. These cells are benefit-equivalent exposures.",
+    "equation": {
+      "label": "Same gift, separate geography",
+      "expression": "Q(region) = net housing health + net transit health + net clean-heat health − independent donor harm. Bay Q = SF Q + rest-of-Bay Q. Cost / 10Q = 10 × $100,000 / Q only when Q > 0.",
+      "result": "Central: .09214 SF QALY → $10,853,050/10Q; .4564 Bay QALY including SF → $2,191,060/10Q."
+    },
+    "inputs": [
+      {
+        "key": "housingScope",
+        "label": "Conditional occupied home-years: SF / rest of Bay",
+        "confidence": "Low",
+        "best": "1,000 / 3,000",
+        "range": "Favorable 5,000 / 15,000; pessimistic 100 / 300",
+        "basis": "Beneficiary-residence allocated exposures, not verified project locations. Central annual occupied-home equivalents195.839488 SF/587.518465 restBay in each year3–8 integrate to1000/3000 at3%discount. No second duration multiplier."
+      },
+      {
+        "key": "housingContribution",
+        "label": "Gift contribution to housing output",
+        "confidence": "Low",
+        "best": ".02",
+        "range": "Favorable .05; pessimistic .002; null 0",
+        "basis": "Includes funding replacement, implementation failure and collaborator credit; do not add another success factor."
+      },
+      {
+        "key": "directHealth",
+        "label": "Direct housing utility and affected fraction",
+        "confidence": "Low",
+        "best": ".01 conditional utility × .15 affected",
+        "range": "Favorable .02 × .30; pessimistic .002 × .05",
+        "basis": "Only genuinely improved harmful housing states. Two people per central/favorable home-year, one pessimistically. No automatic homelessness transition."
+      },
+      {
+        "key": "spillover",
+        "label": "Nonoccupant housing spillovers",
+        "confidence": "Low",
+        "best": ".5 household-years × 1.5 adults × .001 utility",
+        "range": "Favorable 2 × 1.5 × .01; pessimistic .1 × 1 × .001",
+        "basis": "Central utility .001 is judgmental shrinkage, not a study estimate. Old .005 is historical sensitivity. A rent decrease is not itself a health outcome."
+      },
+      {
+        "key": "transitScope",
+        "label": "Conditional useful SF / rest-Bay service hours",
+        "confidence": "Low",
+        "best": "5,000 / 15,000",
+        "range": "Favorable 50,000 / 150,000; pessimistic 500 / 1,500",
+        "basis": "Resident benefit-equivalent allocation, not vehicle location. Central annual hours1091.772857 SF/3275.318571 restBay in years1–5 integrate to5000/15000 at3%; zero thereafter."
+      },
+      {
+        "key": "transitBridge",
+        "label": "Trips → recurrent riders → net health",
+        "confidence": "Low",
+        "best": "20 trips/hour ÷ 400 × .10 × .005 Q/rider-year",
+        "range": "Favorable 40 ÷ 400 × .25 × .01; pessimistic 10 ÷ 400 × .02 × .001",
+        "basis": "Only marginal useful trips and health-relevant behavior/access changes; annual rider normalization is not an added lifetime."
+      },
+      {
+        "key": "heat",
+        "label": "Clean-heat component",
+        "confidence": "Low",
+        "best": "$20,000 allocation",
+        "range": "Central .01464 SF/.1464 Bay QALYs; favorable1.071/7.14; pessimistic.00000444/.0000888",
+        "basis": "BayQ=F×P×A×T×D×L. Central .002×.5×.1×3×61×8; SFshare.10. Favorable .01×.7×.2×5×85×12; share.15. Pessimistic .0002×.2×.02×1×37×3; share.05. Component only; unspecified inputs judgments."
+      },
+      {
+        "key": "unquantified",
+        "label": "Governance and economic health credit",
+        "confidence": "Low",
+        "best": "Unquantified; $15,000 retained in cost",
+        "range": "Not a claim of zero welfare benefit or harm",
+        "basis": "No generic city-budget, income, GDP, desired-birth or innovation-to-health coefficient."
+      }
+    ],
+    "giftHeading": "Calculated v3 scenarios",
+    "sensitivity": [
+      {
+        "case": "central",
+        "headline": "$10,853,050 / 10 SF QALYs; $2,191,060 / 10 Bay QALYs",
+        "detail": "SF net QALYs 0.092140000; Bay including SF 0.45640000. Same $100,000 gift. Conditional scenario; not a confidence interval."
+      },
+      {
+        "case": "favorable",
+        "headline": "$81,994 / 10 SF QALYs; $19,365 / 10 Bay QALYs",
+        "detail": "SF net QALYs 12.196000; Bay including SF 51.640000. Same $100,000 gift. Conditional scenario; not a confidence interval."
+      },
+      {
+        "case": "pessimisticPositive",
+        "headline": "$22,376,370,553 / 10 SF QALYs; $4,003,202,562 / 10 Bay QALYs",
+        "detail": "SF net QALYs 0.000044690000; Bay including SF 0.00024980000. Same $100,000 gift. Conditional scenario; not a confidence interval."
+      },
+      {
+        "case": "nullGiftContribution",
+        "headline": "SF: no positive-Q ratio; Bay: no positive-Q ratio",
+        "detail": "SF net QALYs 0.0000000; Bay including SF 0.0000000. Same $100,000 gift. Conditional scenario; not a confidence interval."
+      },
+      {
+        "case": "nullPhysicalOutput",
+        "headline": "SF: no positive-Q ratio; Bay: no positive-Q ratio",
+        "detail": "SF net QALYs 0.0000000; Bay including SF 0.0000000. Same $100,000 gift. Conditional scenario; not a confidence interval."
+      },
+      {
+        "case": "centralDonorHarm",
+        "headline": "SF: no positive-Q ratio; Bay: no positive-Q ratio",
+        "detail": "SF net QALYs -0.10786000; Bay including SF -0.24360000. Same $100,000 gift. Conditional scenario; not a confidence interval."
+      },
+      {
+        "case": "nullContributionDonorHarm",
+        "headline": "SF: no positive-Q ratio; Bay: no positive-Q ratio",
+        "detail": "SF net QALYs -0.20000000; Bay including SF -0.70000000. Same $100,000 gift. Conditional scenario; not a confidence interval."
+      },
+      {
+        "case": "centralZeroHousingSpillover",
+        "headline": "$12,963,443 / 10 SF QALYs; $2,522,704 / 10 Bay QALYs",
+        "detail": "SF net QALYs 0.077140000; Bay including SF 0.39640000. Same $100,000 gift. Conditional scenario; not a confidence interval."
+      },
+      {
+        "case": "favorableZeroHousingSpillover",
+        "headline": "$212,947 / 10 SF QALYs; $46,211 / 10 Bay QALYs",
+        "detail": "SF net QALYs 4.6960000; Bay including SF 21.640000. Same $100,000 gift. Conditional scenario; not a confidence interval."
+      },
+      {
+        "case": "historicalCentralSpilloverPrior",
+        "headline": "$6,572,893 / 10 SF QALYs; $1,435,956 / 10 Bay QALYs",
+        "detail": "SF net QALYs 0.15214000; Bay including SF 0.69640000. Same $100,000 gift. Historical .005 sensitivity, not central."
+      },
+      {
+        "case": "Additional $1M net-resource stress",
+        "headline": "Central $119.38M/10 SF QALYs; $24.10M/10 Bay QALYs",
+        "detail": "Adds the resource stress once; unpriced sensitivity, not full societal CEA."
+      }
+    ],
+    "uncertaintyBoundary": "The positive scenarios are judgments, not a statistical interval or assurance of positive impact. Conditional homes must be financially feasible; transit trips must actually change. Citywide effects are legitimate only for changed exposures, not all residents times a treated-person utility. A longer-lived building does not establish equally persistent health relief.",
+    "fundingBoundary": "FY2025–26 reported expenses were $6,916,547, including $4,910,748 policy/program/publication expenses, unaudited as of March 31, 2026. No topic/city marginal spending split is reported. A deficit or general giving option does not prove room for this gift. Public/private construction, transit operations, appliances and implementation costs remain unpriced; costs should be incremental versus baseline, not all financing flows."
+  },
+  "evidence": [
+    {
+      "key": "portfolio",
+      "design": "Provider annual report, audited accounts and Form 990",
+      "population": "SPUR regional portfolio, not SF-only",
+      "result": "Six policy areas are grouped in one program-service total; no reliable topic-level allocation. Food & Agriculture transitioned to another fiscal sponsor in May 2024.",
+      "transfer": "Do not allocate equally by topic, infer output per dollar or credit old food-program outcomes to current unrestricted gifts."
+    },
+    {
+      "key": "housingSupply",
+      "design": "Primary local/quasi-experimental housing studies",
+      "population": "Nearby renters and affected neighborhoods, not every city resident",
+      "result": "Asquith/Mast/Reed documents local rent spillovers; Pennington examines a specific displacement proxy.",
+      "transfer": "Neither identifies marginal SPUR completions, citywide rent decline per building or a rent-to-QALY coefficient."
+    },
+    {
+      "key": "utility",
+      "design": "Longitudinal and quasi-natural-experiment mental-health studies",
+      "population": "Australian households, low-income New Haven adults and UK private renters",
+      "result": "Bentley finds a small mental-health-score change entering unaffordable housing; Denary’s within-person assistance transition is nonsignificant; Reeves finds a 1.8-point depressive-symptom prevalence increase after a substantial benefit cut.",
+      "transfer": "None is a preference-utility estimate for modest rent savings. Central .001 spillover is an explicitly judgmental update; .01 direct is conditional on harmful-state improvement."
+    },
+    {
+      "key": "transit",
+      "design": "Current SPUR Muni analysis and external travel-health research",
+      "population": "SF/regional travelers and actual changed exposure",
+      "result": "Actual performance/efficiency work creates a plausible service pathway; external regional transport models establish health mechanisms.",
+      "transfer": "Do not award full regional health scenarios, all riders, permanent walking gains or public transit funding as QALYs."
+    },
+    {
+      "key": "heat",
+      "design": "SPUR permitting work and regional atmospheric/health modeling",
+      "population": "Actual affected Bay residents",
+      "result": "Clean heat has an existing conditional component model.",
+      "transfer": "No separate full pollution/health credit through overlapping housing or transit pathways; exact revised component inputs are in v3."
+    }
+  ],
+  "reservations": [
+    "Marginal allocation, additional staff capacity and donor acceptance are unknown; historical research scale does not establish current gift leverage.",
+    "The housing spillover multiplier lacks a measured rent-dose or state-transition denominator. Rent-controlled or unburdened households may see little health gain.",
+    "Direct-occupant and nonoccupant housing cells are disjoint by definition. Across pathways, exclude duplicated health effects, not all shared beneficiaries. Distinct benefits to the same resident may count if their utility and risk effects are jointly consistent.",
+    "Finite health exposure needs explicit comparator catch-up, lag and adaptation. An occupied home-year is not automatically a full health-benefit year.",
+    "SF and rest-of-Bay effects may differ; harms elsewhere can offset SF benefits. The Bay result includes SF and is not an additional pot of health.",
+    "Construction/displacement, transit injuries, unsafe implementation or public-service crowd-out can reverse benefit. Do not count the same shared harm twice."
+  ],
+  "excludedBenefits": [
+    "Unquantified civic, economic, arts, income, innovation and desired-family-formation welfare—not assumed valueless.",
+    "Unverified governance/economic-security health effects; these budgets remain in donor cost.",
+    "Old Food & Agriculture effects following the 2024 sponsor transfer.",
+    "All historical policy wins, all city residents, all transit revenue and duplicate overlapping program benefits.",
+    "Unverified induced-resource savings, perpetual health effects or duplicate SF-plus-Bay totals."
+  ],
+  "sources": [
+    {
+      "publisher": "SPUR",
+      "title": "2024 Form990, PartIII program services",
+      "url": "https://www.spur.org/sites/default/files/2026-02/SPUR_2024_Form_990.pdf",
+      "published": "Reporting period April 1, 2024–March 31, 2025",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "Tax filing"
+    },
+    {
+      "publisher": "SPUR",
+      "title": "Financial statements index",
+      "url": "https://www.spur.org/about/financial-statements",
+      "published": "Undated/mutable page or historical version; exact publication date not established in this conversion",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "Financial-disclosure page"
+    },
+    {
+      "publisher": "SPUR",
+      "title": "2025–2026 Annual Report",
+      "url": "https://www.spur.org/about/annual-reports/2026",
+      "published": "FY2025–26; unaudited as of March 31, 2026",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "Provider annual report; unaudited financials"
+    },
+    {
+      "publisher": "SPUR / WMB² LLP",
+      "title": "FY2024–25 Financial Statements",
+      "url": "https://www.spur.org/sites/default/files/2026-02/SPUR_FY24-25_Audited_Statements.pdf",
+      "published": "Year ended March 31, 2025; auditor report February 4, 2026",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "Independent financial audit"
+    },
+    {
+      "publisher": "SPUR",
+      "title": "Housing",
+      "url": "https://www.spur.org/policy-area/housing",
+      "published": "Undated/mutable page or historical version; exact publication date not established in this conversion",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "Policy portfolio page"
+    },
+    {
+      "publisher": "SPUR",
+      "title": "Reinventing Downtown",
+      "url": "https://www.spur.org/publications/policy-brief/2026-02-04/reinventing-downtown",
+      "published": "February 4, 2026",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "Policy brief"
+    },
+    {
+      "publisher": "SPUR",
+      "title": "Taking Muni’s Vitals",
+      "url": "https://www.spur.org/publications/research/2026-03-26/taking-munis-vitals",
+      "published": "March 26, 2026",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "Agency-performance research"
+    },
+    {
+      "publisher": "SPUR",
+      "title": "Getting In on the Ground Floor",
+      "url": "https://www.spur.org/publications/policy-brief/2025-12-10/getting-ground-floor",
+      "published": "December 10, 2025",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "San José policy brief"
+    },
+    {
+      "publisher": "SPUR",
+      "title": "Economic Justice",
+      "url": "https://www.spur.org/policy-area/economic-justice",
+      "published": "Undated/mutable page or historical version; exact publication date not established in this conversion",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "Policy portfolio page"
+    },
+    {
+      "publisher": "SPUR",
+      "title": "Purchasing Power",
+      "url": "https://www.spur.org/publications/spur-report/2025-04-17/purchasing-power",
+      "published": "April 17, 2025",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "Procurement research"
+    },
+    {
+      "publisher": "SPUR",
+      "title": "Shared Risk, Shared Resilience",
+      "url": "https://www.spur.org/publications/spur-report/2026-01-07/shared-risk-shared-resilience",
+      "published": "January 7, 2026",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "Wildfire governance report"
+    },
+    {
+      "publisher": "SPUR",
+      "title": "Greenlighting Clean Heat",
+      "url": "https://www.spur.org/publications/policy-brief/2025-06-06/greenlighting-clean-heat",
+      "published": "June 6, 2025",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "Policy brief"
+    },
+    {
+      "publisher": "Works in Progress — Myers, Bowman and Southwood",
+      "title": "The Housing Theory of Everything",
+      "url": "https://worksinprogress.co/issue/the-housing-theory-of-everything/",
+      "published": "September 14, 2021",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "Contextual synthesis essay; not causal evidence"
+    },
+    {
+      "publisher": "SPUR",
+      "title": "Permitting Progress",
+      "url": "https://www.spur.org/sites/default/files/2026-05/SPUR_Permitting_Progress.pdf",
+      "published": "May 2026",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "SF permitting research"
+    },
+    {
+      "publisher": "W.E. Upjohn Institute — Asquith, Mast and Reed",
+      "title": "Local Effects of Large New Apartment Buildings in Low-Income Areas",
+      "url": "https://research.upjohn.org/up_workingpapers/316/",
+      "published": "2020 working paper",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "Quasi-experimental working paper"
+    },
+    {
+      "publisher": "Review of Economics and Statistics — Asquith, Mast and Reed",
+      "title": "Local Effects of Large New Apartment Buildings in Low-Income Areas",
+      "url": "https://direct.mit.edu/rest/article/105/2/359/100977/Local-Effects-of-Large-New-Apartment-Buildings-in",
+      "published": "March 2023",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "Published quasi-experimental study"
+    },
+    {
+      "publisher": "SSRN — Kate Pennington",
+      "title": "Does Building New Housing Cause Displacement?",
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3867764",
+      "published": "June 15, 2021 working paper",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "Working paper"
+    },
+    {
+      "publisher": "Kate Pennington; hosted by Joe Ornstein",
+      "title": "Does Building New Housing Cause Displacement?",
+      "url": "https://joeornstein.github.io/pols-4641/readings/Pennington%20-%20Does%20Building%20New%20Housing%20Cause%20Displacement%20The%20.pdf",
+      "published": "June 15, 2021 working paper",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "Primary manuscript copy"
+    },
+    {
+      "publisher": "American Economic Review — Diamond, McQuade and Qian",
+      "title": "The Effects of Rent Control Expansion on Tenants, Landlords, and Inequality",
+      "url": "https://pubs.aeaweb.org/doi/10.1257/aer.20181289",
+      "published": "September 2019",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "Quasi-experimental study"
+    },
+    {
+      "publisher": "NBER — Diamond, McQuade and Qian",
+      "title": "The Effects of Rent Control Expansion on Tenants, Landlords, and Inequality",
+      "url": "https://www.nber.org/papers/w24181",
+      "published": "Working paper; see source audit for version",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "Working paper"
+    },
+    {
+      "publisher": "New England Journal of Medicine — Ludwig et al.",
+      "title": "Neighborhoods, Obesity, and Diabetes — A Randomized Social Experiment",
+      "url": "https://www.nejm.org/doi/full/10.1056/NEJMsa1103216",
+      "published": "October 20, 2011",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "Randomized study"
+    },
+    {
+      "publisher": "Nature — Althoff et al.",
+      "title": "Large-scale Physical Activity Data Reveal Worldwide Activity Inequality",
+      "url": "https://www.nature.com/articles/nature23018",
+      "published": "July 10, 2017",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "Observational smartphone study"
+    },
+    {
+      "publisher": "Nature — Althoff et al.",
+      "title": "2025 residential relocation, walkability and physical activity study",
+      "url": "https://www.nature.com/articles/s41586-025-09321-3",
+      "published": "Online August 13, 2025; issue September 11, 2025",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "Longitudinal relocation study"
+    },
+    {
+      "publisher": "American Journal of Public Health — Maizlish et al.",
+      "title": "Health Cobenefits and Transportation-Related Reductions in Greenhouse Gas Emissions in the San Francisco Bay Area",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3673232/",
+      "published": "April 2013",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "Modeled regional health-impact study"
+    },
+    {
+      "publisher": "Journal of Urban Economics — Glaeser and Kahn",
+      "title": "The Greenness of Cities: Carbon Dioxide Emissions and Urban Development",
+      "url": "https://sites.socsci.uci.edu/~jkbrueck/course%20readings/glaeser-kahn.pdf",
+      "published": "May 2010",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "Modeled emissions study"
+    },
+    {
+      "publisher": "American Economic Journal: Macroeconomics — Hsieh and Moretti",
+      "title": "Housing Constraints and Spatial Misallocation",
+      "url": "https://www.aeaweb.org/articles?id=10.1257/mac.20170388",
+      "published": "April 2019",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "Economic model; not health estimate"
+    },
+    {
+      "publisher": "SPUR",
+      "title": "Greenlighting Clean Heat — full report",
+      "url": "https://www.spur.org/sites/default/files/2025-06/SPUR_Greenlighting_Clean_Heat.pdf",
+      "published": "June 6, 2025",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "Permitting research"
+    },
+    {
+      "publisher": "SPUR",
+      "title": "Three Measures to Drive Down the High Cost of Heat Pump Installation",
+      "url": "https://www.spur.org/news/2026-08-06/three-measures-drive-down-high-cost-heat-pump-installation",
+      "published": "August 6, 2026",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "Implementation update"
+    },
+    {
+      "publisher": "SPUR",
+      "title": "Donate to SPUR",
+      "url": "https://www.spur.org/join-renew-give/donate",
+      "published": "Undated/mutable page or historical version; exact publication date not established in this conversion",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "General giving page"
+    },
+    {
+      "publisher": "Bay Area Air Quality Management District",
+      "title": "Appliance-rule health assessment, AppendixE TableE.2",
+      "url": "https://www.baaqmd.gov/~/media/dotgov/files/rules/reg-9-rule-6-nitrogen-oxides-emissions-from-natural-gasfired-water-heaters/2021-amendment/documents/20221220_sr_appe_rg09040906-pdf.pdf?rev=f05e1e6f12874600a0382b178b04ab0d#page=7",
+      "published": "December 20, 2022",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "Atmospheric and mortality model"
+    },
+    {
+      "publisher": "Bay Area Air Quality Management District",
+      "title": "Building Appliances",
+      "url": "https://www.baaqmd.gov/rules-and-compliance/rule-development/building-appliances",
+      "published": "Undated/mutable page or historical version; exact publication date not established in this conversion",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "Regulatory-development page"
+    },
+    {
+      "publisher": "Bay Area Air Quality Management District",
+      "title": "Know the Facts",
+      "url": "https://knowthefacts.baaqmd.gov/",
+      "published": "Undated/mutable page or historical version; exact publication date not established in this conversion",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "Official appliance explanatory site"
+    },
+    {
+      "publisher": "San Francisco State Legislation Committee",
+      "title": "February25,2026 meeting packet",
+      "url": "https://media.api.sf.gov/documents/February_25_2026_State_Legislation_Committee_Packet.pdf",
+      "published": "February 25, 2026",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "Government meeting materials"
+    },
+    {
+      "publisher": "Bay Area Air Quality Management District",
+      "title": "Building Appliances — current rule development",
+      "url": "https://www.baaqmd.gov/en/rules-and-compliance/rule-development/building-appliances?sc_lang=en",
+      "published": "Undated/mutable page or historical version; exact publication date not established in this conversion",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "Official regulatory page"
+    },
+    {
+      "publisher": "American Journal of Epidemiology — Bentley et al.",
+      "title": "Association Between Housing Affordability and Mental Health",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21821543/",
+      "published": "2011",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "Longitudinal study; mental-health scale not utility"
+    },
+    {
+      "publisher": "Social Science & Medicine — Denary et al.",
+      "title": "Does Rental Assistance Improve Mental Health? Insights From a Longitudinal Cohort Study",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8299474/",
+      "published": "August 2021",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "Cohort study; K10 distress not QALYs"
+    },
+    {
+      "publisher": "American Journal of Epidemiology — Reeves et al.; LSE repository",
+      "title": "Reductions in the United Kingdom’s Government Housing Benefit and Symptoms of Depression in Low-Income Households",
+      "url": "https://eprints.lse.ac.uk/67723/1/Reeves_Reductions%20in%20UK%20benefit_2016.pdf",
+      "published": "September 15, 2016",
+      "retrieved": "September 8, 2026; inherited completed source audit, not newly reopened in conversion",
+      "sourceType": "Quasi-natural experiment; symptom prevalence not utility"
+    }
+  ]
+}

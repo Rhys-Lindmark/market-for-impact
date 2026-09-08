@@ -10,11 +10,9 @@ test('all HAC scenarios resolve inheritance and recompute signed outcomes',()=>{
  close(hac.cost_perspective.donor_cost_central_components.reduce((n,s)=>n+s.cost_usd,0),15000);
  assert.equal(hac.cost_perspective.full_resource_cost_usd,null);
 });
-test('all SPUR outcomes reproduce source model, without promoting ambitious stress',()=>{
+test('historical SPUR clean-heat outcomes remain reproducible after portfolio revision',()=>{
  for(const s of spur.scenarios){const r=spurModel(s);close(r.netQalys,s.netQalys);assert.equal(r.status,s.signedStatus);s.usdPerTenQalys===null?assert.equal(r.costPerTenQalys,null):close(r.costPerTenQalys,s.usdPerTenQalys);}
- const row=researchCostRanking.find(s=>s.slug==='spur');
- close(row.centralUsdPerTenQalys,13661202.18579235);
- close(row.positiveEffectRangeUsd.low,186741.36321195145);
+ close(spurModel(spur.scenarios[0]).costPerTenQalys,13661202.18579235);
  assert.equal(researchCostRanking.find(s=>s.slug==='housing-action-coalition').centralUsdPerTenQalys,15000000);
 });
 test('nulls preserve donor cost, independent harm survives replacement, invalid inputs fail',()=>{

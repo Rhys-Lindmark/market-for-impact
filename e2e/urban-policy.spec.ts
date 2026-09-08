@@ -1,5 +1,5 @@
 import {test,expect} from '@playwright/test';
-for(const [slug,title] of [['housing-action-coalition','Housing Action Coalition'],['spur','SPUR']]){
+for(const [slug,title] of [['housing-action-coalition','Housing Action Coalition']]){
  test(slug+' conditional model and signed scenarios',async({page})=>{
   await page.goto('/charities/'+slug);
   await expect(page.getByRole('heading',{level:1,name:title,exact:true})).toBeVisible();

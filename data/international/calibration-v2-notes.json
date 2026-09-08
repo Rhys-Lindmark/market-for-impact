@@ -1,0 +1,69 @@
+{
+  "version": "harmonized-v2-public-notes-2026-09-08",
+  "status": "Outside-Site integration notes; not published",
+  "numericSource": "/private/tmp/mfi-harmonized-calibration-calc.mjs",
+  "dataSource": "/private/tmp/mfi-harmonized-calibration-data.json",
+  "sharedSections": [
+    {
+      "heading": "What changed",
+      "body": "We now anchor mortality to GiveWell's historical funding-opportunity estimates, then make our own explicit conversion from avoided deaths to quality-adjusted life years. The earlier models remain available as constructed stress tests. Their arithmetic was correct, but combining several uncalibrated discounts made their central estimates more pessimistic than the external mortality benchmark. We have not multiplied the new benchmark by those old discounts again."
+    },
+    {
+      "heading": "What the benchmark does—and does not—tell us",
+      "body": "GiveWell's August 2026 summary uses 2022–24 grant-weighted funding opportunities. Applying that historical yield to an ordinary gift is our assumption, not a guaranteed offer or a verified price for today's next dollar. The native estimate already accounts for other funders' responses. Our QALY figures are not GiveWell's moral weights or its own QALY estimates."
+    },
+    {
+      "heading": "How we count future health",
+      "body": "We assume 80% of modeled deaths avoided occur in early childhood and 20% at older ages. These are analyst priors, not measured portfolio shares. Early deaths receive a finite 40-year survival trajectory; older deaths receive 20 years. We adjust for background mortality and health quality, and discount future health at 3% annually. We do not add a further generic persistence discount centrally. None of these trajectories is a fitted national life table."
+    },
+    {
+      "heading": "Costs and local impact",
+      "body": "Every estimate charges the entire donation. A matched full-resource or net societal cost remains unknown: we cannot simply reuse the old per-net or per-child allowances after changing the model's denominator. Direct modeled SF and Bay Area health is zero; unknown indirect effects receive no credit. The global figure is not a local cost-effectiveness estimate."
+    },
+    {
+      "heading": "How uncertain is this?",
+      "body": "The scenarios change assumptions; they are not confidence intervals. A donation can have no additional health effect, in which case there is no finite positive cost per QALY. Independently caused harm can make the health result negative even when benefits are zero. Harms already included in the source benchmark are not subtracted a second time."
+    }
+  ],
+  "organizations": {
+    "amf": {
+      "name": "Against Malaria Foundation",
+      "headline": "About $3,800 per 10 global QALYs",
+      "centralUsdPer10GlobalQalys": 3778.4221255564,
+      "previousConstructedCentralUsdPer10GlobalQalys": 9720.19,
+      "nativeUsdPerModeledDeath": 5500,
+      "sections": [
+        {"heading": "Our current best estimate", "body": "A representative ordinary gift is modeled at about $3,800 per 10 global QALYs. We apply GiveWell's historical $5,500 per modeled life saved to the whole gift, then use our own finite, age-aware health conversion. This is a conditional estimate, not a promised result."},
+        {"heading": "Why AMF's estimate changed", "body": "The original net-level model estimated about $9,700 per 10 QALYs. Replacing its compounded mortality assumptions with an external benchmark improves calibration. We also removed an unsupported extra 20% persistence reduction and stopped assigning every modeled death a young child's survival trajectory. Those last two changes work in opposite directions."},
+        {"heading": "When benefits occur", "body": "Nets protect children and adults who are alive during their use. We assume a mean 2.5-year delay from donation to the avoided death for both age groups. The 80/20 age split is a portfolio prior informed by, but not measured from, GiveWell's older-child/adult modeling. Delay and remaining survival are separate assumptions."},
+        {"heading": "Whole-gift boundary", "body": "We treat the ordinary gift as supporting AMF's representative core activity. This is not a claim that a specific new campaign is unfunded or that all overhead disappears. Already-funded grants are evidence about effectiveness, not available donation offers."},
+        {"heading": "Useful stresses", "body": "Half the historical mortality yield gives about $7,600 per 10 QALYs. Counting only three years of health after each avoided death gives about $25,000. Neither is a statistical lower bound on effectiveness."}
+      ],
+      "scenarios": {"halfYieldUsdPer10Qalys": 7556.8442511128, "threeYearTailUsdPer10Qalys": 24995.306539192672, "allEarlyUsdPer10Qalys": 3471.6506748921656, "allOlderUsdPer10Qalys": 5844.055515825914},
+      "sourceIds": ["givewell-impact", "givewell-itn"]
+    },
+    "ni": {
+      "name": "New Incentives",
+      "headline": "About $3,900 per 10 global QALYs",
+      "centralUsdPer10GlobalQalys": 3869.6726744576786,
+      "previousConstructedCentralUsdPer10GlobalQalys": 43072.99777,
+      "nativeUsdPerModeledDeath": 4500,
+      "sections": [
+        {"heading": "Our current best estimate", "body": "A representative ordinary gift is modeled at about $3,900 per 10 global QALYs. We assign 90% to the immunization core and use GiveWell's historical $4,500 per modeled life saved. We charge the full gift; the remaining 10% has unquantified health benefits, not assumed zero value."},
+        {"heading": "Why NI's estimate changed more", "body": "The original model estimated about $43,000 per 10 QALYs. Its joint cost, coverage and financing assumptions implied far fewer avoided deaths per dollar than the external benchmark. The revised estimate replaces that entire mortality calculation rather than adding GiveWell on top. We also distinguish enrolled infants from additional vaccinations: a coverage increase cannot be applied interchangeably to both denominators."},
+        {"heading": "When benefits occur", "body": "We spread early avoided deaths equally across years 3–6 after donation. For later deaths, we use year 25, reflecting protection as the vaccinated cohort ages. These are explicit timing judgments. Unlike nets protecting current adults, infant vaccination can avert an adult death decades later, so the models should not use identical event dates."},
+        {"heading": "Whole-gift boundary", "body": "The 90% core allocation is an analyst scope prior, not a sourced overhead rate or a second delivery-cost deduction. Existing grants already fund substantial work. We assume an ordinary gift has representative marginal health yield; we have not verified a particular unfunded offer at this price."},
+        {"heading": "Useful stresses", "body": "Half the historical mortality yield gives about $7,700 per 10 QALYs. Counting only three post-death years gives about $26,300. The old $43,000 model remains a separate constructed stress, not a statistical confidence bound."}
+      ],
+      "scenarios": {"halfYieldUsdPer10Qalys": 7739.345348915357, "threeYearTailUsdPer10Qalys": 26348.4833542048, "allEarlyUsdPer10Qalys": 3346.4215978431807, "allOlderUsdPer10Qalys": 10331.400646370406},
+      "sourceIds": ["givewell-impact", "givewell-ni", "givewell-ni-extension"]
+    }
+  },
+  "comparisonNote": "The roughly $100 difference between the two central figures is much smaller than the uncertainty in age mix, timing and marginal funding. It does not establish that one organization is better.",
+  "sources": [
+    {"id": "givewell-impact", "title": "GiveWell: How We Produce Impact Estimates", "url": "https://www.givewell.org/impact-estimates", "updated": "2026-08", "accessed": "2026-09-08"},
+    {"id": "givewell-itn", "title": "GiveWell: Mass Distribution of Insecticide-Treated Nets, especially section4.3", "url": "https://www.givewell.org/international/technical/programs/insecticide-treated-nets", "published": "2023-12", "updated": "2024-04", "accessed": "2026-09-08"},
+    {"id": "givewell-ni", "title": "GiveWell: New Incentives technical analysis", "url": "https://www.givewell.org/international/technical/programs/new-incentives", "parameterVintage": "2024-09 cost section; mixed-vintage analysis", "accessed": "2026-09-08"},
+    {"id": "givewell-ni-extension", "title": "GiveWell: NI extension of support in Northern Nigeria", "url": "https://www.givewell.org/research/grants/new-incentives-extension-of-support-in-northern-nigeria-march-2025", "grantVintage": "2025-03", "accessed": "2026-09-08"}
+  ]
+}

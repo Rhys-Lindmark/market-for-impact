@@ -1,0 +1,396 @@
+{
+  "schemaVersion": 1,
+  "modelId": "pvf-first-eye-delay-research-v1",
+  "reviewDate": "2026-09-08",
+  "organization": {
+    "name": "Pacific Vision Foundation",
+    "slug": "pacific-vision-foundation",
+    "ein": "942422439",
+    "donationUrl": "https://pacificvisionfoundation.org/ways-to-give/",
+    "officialGeneralGivingUrl": "https://pacificvisionfoundation.org/ways-to-give/",
+    "recipient": "PVF general recipient; no confirmed restricted offer",
+    "partners": [
+      "Lions Eye Foundation / CPMC Lions Eye Clinic",
+      "CPMC ophthalmology clinicians and trainees",
+      "Pacific Vision Surgery Center"
+    ],
+    "region": "SF clinical site and a conditionally SF-resident eligible cohort; the actual program also serves wider California and Nevada."
+  },
+  "status": "Constructed organization-specific conditional research estimate, not measured PVF effectiveness or a provider-priced offer",
+  "program": {
+    "name": "Proposed additional first-eye cataract surgical access through shared PVF/Lions pathway",
+    "unit": "One eligible SF-resident patient assigned a supported first-eye surgical course; donor budget allocated across all assigned cases including failed referrals and noncompletion",
+    "coreHorizonYears": 1,
+    "coreCounterfactual": "Expedited surgery versus otherwise approximately one-year delay, not permanent denial",
+    "actualServiceVerified": true,
+    "exactAdditionalDonorCourseVerified": false,
+    "clinicalScope": "Visually significant first-eye cataract; clinical suitability, first/second-eye status, fellow-eye function and ocular comorbidity assessed by clinician",
+    "eligibility": "Model uninsured patients meeting current Lions rules; do not assume insured/Medi-Cal patients admitted under this particular pathway."
+  },
+  "funding": {
+    "roomForFundingUsd": null,
+    "verifiedRestrictedOffer": false,
+    "cashSubsidyQuoteVerified": false,
+    "additionalityDefinition": "Fraction of proposed complete surgical support actually expanded rather than replacing existing PVF/Lions/clinicalpartner financing; no effect on donation amount paid",
+    "counterfactual": "Existing Patient Assistance Fund, Lions funds, donated clinical capacity, ordinary referrals and any otherwise available coverage."
+  },
+  "costs": {
+    "currency": "USD",
+    "priceYear": 2026,
+    "allAmountsJudgments": true,
+    "centralDonorBudget": {
+      "eligibilitySchedulingNavigationUsd": 250,
+      "incrementalFacilityConsumableSupportUsd": 400,
+      "postoperativeMedicationFollowupSupportUsd": 200,
+      "transportAccessContingencyUsd": 150,
+      "totalUsd": 1000
+    },
+    "centralAdditionalPartnerResourceValueUsd": 2500,
+    "centralCompleteDirectResourcesUsd": 3500,
+    "interpretation": "$1,000 gift-funded cash plus $2,500 of assumed partner clinical, facility and lens resources not already included in cash. This allocation is a research judgment, not a quote, charge or procedure valuation. No empirical leverage factor is used. Actual partner commitments and unused capacity are unverified.",
+    "favorable": "$500 complete cash support and $2,500 total direct resources; leaner additional support with substantial clinical underwriting assumed.",
+    "pessimistic": "$2,000 cash support and $6,000 total direct resources; more support and higher delivery costs.",
+    "perspective": "Conditional donor cash; separate gross complete-direct-resource diagnostic. Not a net payer ICER or full societal cost. The complete-resource diagnostic retains the whole modeled course cost despite displacement; participant time and future medical costs are excluded."
+  },
+  "inputDefinitions": {
+    "externalIntegratedQaly": "First-eye one-year trial assignment QALY difference: .056 centrally and favorably; .006, the trial's lower confidence-limit coordinate, for the pessimistic stress. This is not a local confidence interval. Already integrated: no extra one-year, onset, success or falls factor.",
+    "clinicalComparatorTransfer": "Judgment for local population, severity, comparator and pathway fit: .5 centrally and pessimistically, 1 favorably. Not a newly measured completion rate.",
+    "fundingAdditionality": "Judgment: .5 centrally, .75 favorably and .25 pessimistically. A separate financing contrast; set to 1 if the clinical contrast already directly compares a gift with no gift.",
+    "sharedIncrementalHarmQaly": "Extra local service harm outside the trial effect; scale only under identical replacement. Do not subtract trial complications again.",
+    "donorSpecificHarmQaly": "Net extra privacy, disruption or other harm caused by donor activity independently of added surgery; outside the funding factor."
+  },
+  "formulas": {
+    "grossTransferredQaly": "externalIntegratedQaly * clinicalComparatorTransfer",
+    "netQalys": "fundingAdditionality * (grossTransferredQaly - sharedIncrementalHarmQaly) - donorSpecificHarmQaly",
+    "donorUsdPerTenQalys": "netQalys>0 ? 10*donorCashCostUsd/netQalys : null",
+    "directResourceDiagnosticUsdPerTenQalys": "netQalys>0 ? 10*completeDirectResourceCostUsd/netQalys : null",
+    "costCeiling": "10000 * netQalys; cost must be strictly below the ceiling to beat 100000 USD per 10 QALYs."
+  },
+  "coreScenarios": [
+    {
+      "id": "central",
+      "inputs": {
+        "donorCashCostUsd": 1000,
+        "completeDirectResourceCostUsd": 3500,
+        "externalIntegratedQaly": 0.056,
+        "clinicalComparatorTransfer": 0.5,
+        "fundingAdditionality": 0.5,
+        "sharedIncrementalHarmQaly": 0,
+        "donorSpecificHarmQaly": 0
+      },
+      "result": {
+        "grossTransferredQaly": 0.028,
+        "netQalys": 0.014,
+        "donorUsdPerTenQalys": 714285.7142857143,
+        "directResourceDiagnosticUsdPerTenQalys": 2500000,
+        "donorCostCeilingAt100kPerTenQalys": 140,
+        "status": "positive conditional gain"
+      }
+    },
+    {
+      "id": "favorable",
+      "inputs": {
+        "donorCashCostUsd": 500,
+        "completeDirectResourceCostUsd": 2500,
+        "externalIntegratedQaly": 0.056,
+        "clinicalComparatorTransfer": 1,
+        "fundingAdditionality": 0.75,
+        "sharedIncrementalHarmQaly": 0,
+        "donorSpecificHarmQaly": 0
+      },
+      "result": {
+        "grossTransferredQaly": 0.056,
+        "netQalys": 0.042,
+        "donorUsdPerTenQalys": 119047.61904761904,
+        "directResourceDiagnosticUsdPerTenQalys": 595238.0952380951,
+        "donorCostCeilingAt100kPerTenQalys": 420,
+        "status": "positive conditional gain"
+      }
+    },
+    {
+      "id": "pessimisticPositive",
+      "inputs": {
+        "donorCashCostUsd": 2000,
+        "completeDirectResourceCostUsd": 6000,
+        "externalIntegratedQaly": 0.006,
+        "clinicalComparatorTransfer": 0.5,
+        "fundingAdditionality": 0.25,
+        "sharedIncrementalHarmQaly": 0,
+        "donorSpecificHarmQaly": 0
+      },
+      "result": {
+        "grossTransferredQaly": 0.003,
+        "netQalys": 0.00075,
+        "donorUsdPerTenQalys": 26666666.666666668,
+        "directResourceDiagnosticUsdPerTenQalys": 80000000,
+        "donorCostCeilingAt100kPerTenQalys": 7.5,
+        "status": "positive conditional gain"
+      }
+    }
+  ],
+  "separateScenarios": [
+    {
+      "id": "nullFunding",
+      "reason": "Identical surgery already financed; donor spend remains",
+      "inputs": {
+        "donorCashCostUsd": 1000,
+        "completeDirectResourceCostUsd": 3500,
+        "externalIntegratedQaly": 0.056,
+        "clinicalComparatorTransfer": 0.5,
+        "fundingAdditionality": 0,
+        "sharedIncrementalHarmQaly": 0,
+        "donorSpecificHarmQaly": 0
+      },
+      "result": {
+        "grossTransferredQaly": 0.028,
+        "netQalys": 0,
+        "donorUsdPerTenQalys": null,
+        "directResourceDiagnosticUsdPerTenQalys": null,
+        "donorCostCeilingAt100kPerTenQalys": 0,
+        "status": "no incremental health gain"
+      }
+    },
+    {
+      "id": "nullClinicalOrTiming",
+      "reason": "No actual net visual-health/time improvement",
+      "inputs": {
+        "donorCashCostUsd": 1000,
+        "completeDirectResourceCostUsd": 3500,
+        "externalIntegratedQaly": 0.056,
+        "clinicalComparatorTransfer": 0,
+        "fundingAdditionality": 0.5,
+        "sharedIncrementalHarmQaly": 0,
+        "donorSpecificHarmQaly": 0
+      },
+      "result": {
+        "grossTransferredQaly": 0,
+        "netQalys": 0,
+        "donorUsdPerTenQalys": null,
+        "directResourceDiagnosticUsdPerTenQalys": null,
+        "donorCostCeilingAt100kPerTenQalys": 0,
+        "status": "no incremental health gain"
+      }
+    },
+    {
+      "id": "sharedLocalHarm",
+      "reason": "Extra local service harm of .04 QALY beyond harm already included in the trial; diagnostic magnitude, not an observed probability.",
+      "inputs": {
+        "donorCashCostUsd": 1000,
+        "completeDirectResourceCostUsd": 3500,
+        "externalIntegratedQaly": 0.056,
+        "clinicalComparatorTransfer": 0.5,
+        "fundingAdditionality": 0.5,
+        "sharedIncrementalHarmQaly": 0.04,
+        "donorSpecificHarmQaly": 0
+      },
+      "result": {
+        "grossTransferredQaly": 0.028,
+        "netQalys": -0.006,
+        "donorUsdPerTenQalys": null,
+        "directResourceDiagnosticUsdPerTenQalys": null,
+        "donorCostCeilingAt100kPerTenQalys": 0,
+        "status": "health-worsening stress"
+      }
+    },
+    {
+      "id": "donorDisruptionAtZeroAdditionality",
+      "reason": "Independent donor-driven disruption remains at zero extra beneficial surgery",
+      "inputs": {
+        "donorCashCostUsd": 1000,
+        "completeDirectResourceCostUsd": 3500,
+        "externalIntegratedQaly": 0.056,
+        "clinicalComparatorTransfer": 0.5,
+        "fundingAdditionality": 0,
+        "sharedIncrementalHarmQaly": 0,
+        "donorSpecificHarmQaly": 0.02
+      },
+      "result": {
+        "grossTransferredQaly": 0.028,
+        "netQalys": -0.02,
+        "donorUsdPerTenQalys": null,
+        "directResourceDiagnosticUsdPerTenQalys": null,
+        "donorCostCeilingAt100kPerTenQalys": 0,
+        "status": "health-worsening stress"
+      }
+    },
+    {
+      "id": "lowCashCapacitySensitivity",
+      "reason": "Unverified $250 subsidy with partners covering balance; not part of positive core or ranking",
+      "inputs": {
+        "donorCashCostUsd": 250,
+        "completeDirectResourceCostUsd": 2500,
+        "externalIntegratedQaly": 0.056,
+        "clinicalComparatorTransfer": 1,
+        "fundingAdditionality": 0.75,
+        "sharedIncrementalHarmQaly": 0,
+        "donorSpecificHarmQaly": 0
+      },
+      "result": {
+        "grossTransferredQaly": 0.056,
+        "netQalys": 0.042,
+        "donorUsdPerTenQalys": 59523.80952380952,
+        "directResourceDiagnosticUsdPerTenQalys": 595238.0952380951,
+        "donorCostCeilingAt100kPerTenQalys": 420,
+        "status": "positive conditional gain"
+      }
+    },
+    {
+      "id": "secondEyeCounterweight",
+      "reason": "Separate randomized second-eye one-year estimate; not interchangeable with first-eye results.",
+      "inputs": {
+        "donorCashCostUsd": 1000,
+        "completeDirectResourceCostUsd": 3500,
+        "externalIntegratedQaly": 0.015,
+        "clinicalComparatorTransfer": 0.5,
+        "fundingAdditionality": 0.5,
+        "sharedIncrementalHarmQaly": 0,
+        "donorSpecificHarmQaly": 0
+      },
+      "result": {
+        "grossTransferredQaly": 0.0075,
+        "netQalys": 0.00375,
+        "donorUsdPerTenQalys": 2666666.666666667,
+        "directResourceDiagnosticUsdPerTenQalys": 9333333.333333334,
+        "donorCostCeilingAt100kPerTenQalys": 37.5,
+        "status": "positive conditional gain"
+      }
+    },
+    {
+      "id": "otherwiseUntreatedLifetime",
+      "reason": "Separate Brown 13-year modeled first-eye lifetime-denial comparator; not the delay model or a ranking input.",
+      "inputs": {
+        "donorCashCostUsd": 1000,
+        "completeDirectResourceCostUsd": 3500,
+        "externalIntegratedQaly": 1.6212,
+        "clinicalComparatorTransfer": 0.5,
+        "fundingAdditionality": 0.5,
+        "sharedIncrementalHarmQaly": 0,
+        "donorSpecificHarmQaly": 0
+      },
+      "result": {
+        "grossTransferredQaly": 0.8106,
+        "netQalys": 0.4053,
+        "donorUsdPerTenQalys": 24673.081667900322,
+        "directResourceDiagnosticUsdPerTenQalys": 86355.78583765113,
+        "donorCostCeilingAt100kPerTenQalys": 4053,
+        "status": "positive conditional gain"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "pvfIdentityAndHub",
+      "url": "https://pacificvisionfoundation.org/pacific-vision-eye-institute/",
+      "title": "Pacific Vision Eye Institute",
+      "published": null,
+      "type": "official provider",
+      "facts": "PVF EIN 94-2422439. The hub houses CPMC ophthalmology, Lions clinic and the surgery center.",
+      "limits": "Not the commercial Pacific Vision Institute. Shared care pathway, not independently additive partner outcomes.",
+      "retrieved": "2026-09-08"
+    },
+    {
+      "id": "pvfPatients",
+      "url": "https://pacificvisionfoundation.org/for-patients/",
+      "title": "For Patients",
+      "published": null,
+      "type": "official provider",
+      "facts": "Eligible free or reduced-cost patients are referred through Lions Eye Foundation Clinic, subject to physician referral and income/insurance requirements.",
+      "limits": "No priced marginal offer, donor restriction or available SF cohort established.",
+      "retrieved": "2026-09-08"
+    },
+    {
+      "id": "pvf2025",
+      "url": "https://pacificvisionfoundation.org/wp-content/uploads/2026/07/FINAL-DIGITAL-PVF-Impact-Report-2025.pdf",
+      "title": "2025 Impact Report",
+      "published": "2025 report; URL uploaded 2026-07",
+      "type": "official provider report",
+      "locator": "Physical pages 7 and 16; patient stories elsewhere.",
+      "facts": "The Patient Assistance Fund covers surgery costs; 2,542 total surgeries and 570 total charity cases since 2020; shared regional CPMC/Lions pathway.",
+      "limits": "Not 570 annual cataracts or SF-only beneficiaries. A selected long-denial Nevada story does not establish the SF counterfactual. Patients' quoted prices elsewhere are not PVF costs.",
+      "retrieved": "2026-09-08"
+    },
+    {
+      "id": "lionsEligibility",
+      "url": "https://www.lionseyefoundation.com/_files/ugd/fb7908_10991c70103941e7b3d2d4beba770914.pdf",
+      "title": "Patient Application and Eligibility Guidelines",
+      "published": "Effective 2026-01-01",
+      "type": "official program eligibility",
+      "facts": "Uninsured, including no government, county, private or partial coverage; one-year served-community residency, income verification and diagnostic physician referral.",
+      "limits": "Primary full PDF verified by the independent delivery auditor. Specific intake excludes insurance despite PVF's broader underinsured narrative; insured pathways remain unresolved.",
+      "retrieved": "2026-09-08"
+    },
+    {
+      "id": "lionsServices",
+      "url": "https://www.lionseyefoundation.com/services-2",
+      "title": "Lions Eye Foundation services",
+      "published": "FY2024–25 financial display",
+      "type": "official partner",
+      "facts": "Partnerships with CPMC and PVF; all-procedure expenses and values are reported.",
+      "limits": "No mixed-budget/procedure division or general leverage multiplier enters cost. No cataract-specific marginal quote.",
+      "retrieved": "2026-09-08"
+    },
+    {
+      "id": "firstEye",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2095519/",
+      "alternateUrl": "https://eprints.soton.ac.uk/480801/",
+      "title": "Falls and health status in elderly women following first eye cataract surgery: an economic evaluation conducted alongside a randomised controlled trial",
+      "doi": "10.1136/bjo.2007.118687",
+      "published": "2007-12",
+      "type": "randomized trial economic analysis",
+      "facts": "306 women over 70 with bilateral cataracts; 75% had baseline acuity 6/12 or better. Expedited approximately four weeks versus a 12-month wait. There were 288 economic-analysis participants. One-year integrated QALY difference .056, 95% CI .006–.108.",
+      "limits": "Assignment-level integrated EQ-5D-derived QALYs, not a utility level or an annual benefit forever. The mild-impairment older female sample is not all local cases. Indexed primary and independent-auditor verification; this auditor's full PMC fetch was challenged.",
+      "retrieved": "2026-09-08"
+    },
+    {
+      "id": "secondEye",
+      "url": "https://www.nature.com/articles/eye2009112",
+      "title": "Second-eye cataract surgery in elderly women: a cost-utility analysis conducted alongside a randomized controlled trial",
+      "doi": "10.1038/eye.2009.112",
+      "published": "2010-02; online 2009-05-15",
+      "type": "randomized trial economic analysis",
+      "facts": "239 women over 70 with previous first-eye surgery and minimal remaining-eye dysfunction; four-week versus 12-month wait. One-year QALY gain .015, 95% CI −.039–.068, p=.59.",
+      "limits": "Important null counterweight, not a first-eye effect. Historical £646 net payer cost is not delivery cost.",
+      "retrieved": "2026-09-08"
+    },
+    {
+      "id": "brownLifetime",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0161642013005873",
+      "alternateUrl": "https://pubmed.ncbi.nlm.nih.gov/24246824/",
+      "title": "Cataract Surgery Cost Utility Revisited in 2012: A New Economic Paradigm",
+      "doi": "10.1016/j.ophtha.2013.04.030",
+      "published": "2013-12",
+      "type": "modeled patient-preference cost utility",
+      "facts": "PORT visual outcomes and time-tradeoff valuations; 1.6212 first-eye QALYs over 13 years; 2.8152 bilateral QALYs; historical 2012 direct ophthalmic cost $2,653.",
+      "limits": "Different method and long-term untreated comparator, not a randomized lifetime observation. No societal economic ROI or bilateral total is credited to one eye. Historical cost is not a current SF quote.",
+      "retrieved": "2026-09-08"
+    }
+  ],
+  "rationale": "The central estimate uses the randomized one-year delay benefit, halved for uncertain local/comparator fit and halved for funding replacement. The $1,000 cash amount is a bottom-up planning budget conditional on partner underwriting; neither that underwriting nor the marginal price is verified. This is a provisional best guess, not an evidence-weighted posterior or an available purchase. Favorable retains the trial mean rather than selecting the upper confidence limit; the low $250 cash case and long-denial model remain separate.",
+  "exclusions": [
+    "One shared cataract pathway counted once under PVF; no additive Lions, PVF or CPMC procedure-health claims.",
+    "No first-eye benefit for every second eye; no bilateral QALY total for one operation.",
+    "No automatic health tail beyond one year in the core; fixture or lens duration is not the duration of counterfactual benefit.",
+    "No extra fall-prevention, independence, mortality, productivity, caregiver or monetary ROI gains.",
+    "No treatment of donated partner inputs as costless resources; no historical all-procedure budget/volume unit cost.",
+    "No assumption that all regional patients are SF residents.",
+    "No use of a Nevada patient's outside quote as a PVF price or an SF delay distribution."
+  ],
+  "acceptanceTests": [
+    "Reproduce all core and separate scenarios with finite-input checks.",
+    "Q <= 0 returns null for both prices but retains signed Q.",
+    "Zero funding and zero donor-specific harm gives zero even with shared harm; donor-specific harm at zero funding remains negative.",
+    "No additional QALY multiplier for one year or trial completion.",
+    "First-eye, second-eye and lifetime cases remain distinct; only the central core is used for ranking.",
+    "No verified funding-room or priced-offer claims; recipient, partners and SF-resident restriction remain visible."
+  ],
+  "display": {
+    "centralUsdPerTenQalys": 714285.7142857143,
+    "positiveCoreRange": [
+      119047.61904761904,
+      26666666.666666668
+    ],
+    "rangeType": "Joint scenario judgments, not a confidence interval.",
+    "headline": "Earlier sight-restoring care, with an uncertain donor margin.",
+    "recommendationBoundary": "Real shared surgical pathway; hypothetical additional course and unknown funding room. Core favorable is above $100K per 10 QALYs; separate low-cash and long-denial sensitivities are not ranking inputs."
+  }
+}

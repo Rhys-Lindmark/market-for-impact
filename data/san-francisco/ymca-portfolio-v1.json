@@ -1,0 +1,506 @@
+{
+  "schemaVersion": "1.0.0",
+  "modelId": "ymca-greater-sf-unrestricted-portfolio-proposal-v1",
+  "reviewDate": "2026-09-08",
+  "status": "Constructed conditional partial-health portfolio; independently reviewed; not measured expected value or verified marginal offer",
+  "organization": "YMCA of Greater San Francisco / Young Men’s Christian Association of San Francisco",
+  "budget": {
+    "giftUsd": 100000,
+    "allocations": {
+      "fitness": 20000,
+      "mental": 25000,
+      "family": 20000,
+      "dpp": 5000,
+      "youthEnrichment": 15000,
+      "aquatics": 5000,
+      "campCapitalOther": 10000
+    },
+    "allSharedCostsIncludedOnce": true,
+    "unquantifiedBudgetUsd": 30000,
+    "allocationBasis": "Judgment; historical broad categories inform service scope, NOT observed marginal weights"
+  },
+  "geography": {
+    "meaning": "SFshare .65/.75/.4 is unverified residence allocation prior for each quantifiable component; remainder Marin/SanMateo/other Bay participants. BayincludesSF, samegift. No inference from location.",
+    "bayIncludesSf": true
+  },
+  "costPerspective": {
+    "donor": "The entire $100,000 gift remains spent in every scenario. Offered-course allowances include noncompletion and allocated shared costs, but are judgments, not provider quotes.",
+    "resourceStress": "The additional $100,000 field is a hypothetical extra-resource stress, not measured net societal cost or a claim those resources arise in the no-additionality case. Null scenarios retain no positive ratio regardless of this unpriced assumption.",
+    "unpriced": "Public reimbursements, displaced payments, volunteer and participant time, travel and downstream resource savings are not reconciled. Do not label donor cash or the stress a comprehensive resource CEA."
+  },
+  "causalDefinitions": {
+    "additionality": "Share of funded provision that changes access relative to no-gift public, private and household financing. Not course completion.",
+    "response": "Incremental response conditional on changed provision versus usual care, including noncompletion. No second adherence factor.",
+    "geographicPrior": "Assumes all quantified beneficiaries are Bay residents; SF fraction is unverified. Exclude or separately allocate any non-Bay benefit before claiming local health.",
+    "familyOverlap": "Remove family credit if short hardship-related health cannot be distinguished from mental-health therapy or partner-food benefits already credited. Shared people can have genuinely distinct health gains."
+  },
+  "duration": {
+    "fitness": "16-week offered coached activity access, source QALY AUC months6–12 only, no later tail; transfer already incorporates response and weaker fidelity.",
+    "mental": "Bounded course over firstyear; integrated exposure.5/1/.1years by scenario includes response timing and decay, not lifetime remission.",
+    "family": "Short family hardship-support course; integrated health exposure.25/.5/.1year; not ongoing housing health.",
+    "dpp": "One-year course; three-year incident-risk contrast; prevented cases conservatively placed at endyear3, then utility relief in endyears3 through3+delay−1, discounted3%; delay2/5/1years. No lifelong diabetes avoidance."
+  },
+  "formula": {
+    "offeredCourses": "allocation/courseCost; fractional offers are expectation accounting not purchasable fractions",
+    "fitness": "offers*additionality*.027*transfer",
+    "mentalFamily": "offers*additionality*incrementalResponse*netConditionalUtility*integratedYears",
+    "dpp": "offers*additionality*baseline3yearRisk*RRR*utilityLoss*sum(t=3..3+delayYears−1)(1.03)^(-t)",
+    "portfolio": "sum(componentBayQ); SF=grossBay*sfShare−donorSFharm; restBay=grossBay*(1−share)−donorRestharm; Bay=SF+restBay; ratio10*100K/Q onlyifQpositive"
+  },
+  "boundaries": [
+    "All local response, incidence, risk-reduction, utility, delay, cost and funding priors are judgments except external NERS .027 anchor.",
+    "Net conditional utility priors already include shared burdens; donor-specific harms outside funding. Core0notproofnoharm.",
+    "No DPP exercise benefit added again through fitness; distinguish overlapping health states, not all shared people.",
+    "Family credit limited short health-related hardship response, excludes separately counted therapy and food-bank outcomes.",
+    "Fitness generic EQ5D includes mental health. Central and stress allocations assume distinct fitness versus therapy health increments: separate cohorts, or remove therapy-related distress improvement already captured by fitness for the same person and period. Do not add full generic utilities for overlapping care; this cohort separation is a judgment, not verified local linkage.",
+    "30K youth/aquatics/campcapital cost remains while health unquantified; these streams have welfare and possible harm, not assumed valueless.",
+    "No current marginal weight, clinic-course quote, capacity or live donoroffer verified.",
+    "Donor prices are full-course resource allowances, not just copays. Publicfunding replacement is modeled viaadditionality. Grosscashspend not netsocietalresources.",
+    "Do not add allBaytoSF or use DPPalone as wholeorganization estimate."
+  ],
+  "scenarios": [
+    {
+      "id": "central",
+      "sfShare": 0.65,
+      "fitness": {
+        "cost": 600,
+        "additionality": 0.4,
+        "trialQaly": 0.027,
+        "transfer": 0.2
+      },
+      "mental": {
+        "cost": 1500,
+        "additionality": 0.4,
+        "response": 0.2,
+        "utility": 0.1,
+        "effectiveYears": 0.5
+      },
+      "family": {
+        "cost": 500,
+        "additionality": 0.4,
+        "response": 0.2,
+        "utility": 0.02,
+        "effectiveYears": 0.25
+      },
+      "dpp": {
+        "cost": 600,
+        "additionality": 0.4,
+        "baselineThreeYearRisk": 0.08,
+        "relativeReduction": 0.3,
+        "diabetesDelayYears": 2,
+        "utilityLossPerYear": 0.05
+      },
+      "donorHarm": {
+        "sf": 0,
+        "restBay": 0
+      },
+      "outputs": {
+        "fitnessQaly": 0.07200000000000001,
+        "mentalQaly": 0.0666666666666667,
+        "familyQaly": 0.016,
+        "dppQaly": 0.007214514829075395,
+        "grossBayQaly": 0.16188118149574213,
+        "sfNetQaly": 0.10522276797223239,
+        "restBayNetQaly": 0.05665841352350974,
+        "bayIncludingSfNetQaly": 0.16188118149574213,
+        "donorCost": 100000,
+        "sfUsdPer10Qaly": 9503646.58971805,
+        "bayUsdPer10Qaly": 6177370.283316733,
+        "inducedResourceStressUsd": 100000,
+        "sfStressUsdPer10Qaly": 19007293.1794361,
+        "bayStressUsdPer10Qaly": 12354740.566633467
+      }
+    },
+    {
+      "id": "favorable",
+      "sfShare": 0.75,
+      "fitness": {
+        "cost": 300,
+        "additionality": 0.8,
+        "trialQaly": 0.027,
+        "transfer": 0.75
+      },
+      "mental": {
+        "cost": 1000,
+        "additionality": 0.75,
+        "response": 0.4,
+        "utility": 0.15,
+        "effectiveYears": 1
+      },
+      "family": {
+        "cost": 250,
+        "additionality": 0.75,
+        "response": 0.4,
+        "utility": 0.04,
+        "effectiveYears": 0.5
+      },
+      "dpp": {
+        "cost": 350,
+        "additionality": 0.8,
+        "baselineThreeYearRisk": 0.15,
+        "relativeReduction": 0.5,
+        "diabetesDelayYears": 5,
+        "utilityLossPerYear": 0.08
+      },
+      "donorHarm": {
+        "sf": 0,
+        "restBay": 0
+      },
+      "outputs": {
+        "fitnessQaly": 1.08,
+        "mentalQaly": 1.125,
+        "familyQaly": 0.48,
+        "dppQaly": 0.2960100520923443,
+        "grossBayQaly": 2.981010052092344,
+        "sfNetQaly": 2.235757539069258,
+        "restBayNetQaly": 0.745252513023086,
+        "bayIncludingSfNetQaly": 2.981010052092344,
+        "donorCost": 100000,
+        "sfUsdPer10Qaly": 447275.6918070366,
+        "bayUsdPer10Qaly": 335456.76885527745,
+        "inducedResourceStressUsd": 100000,
+        "sfStressUsdPer10Qaly": 894551.3836140732,
+        "bayStressUsdPer10Qaly": 670913.5377105549
+      }
+    },
+    {
+      "id": "pessimisticPositive",
+      "sfShare": 0.4,
+      "fitness": {
+        "cost": 1000,
+        "additionality": 0.1,
+        "trialQaly": 0.027,
+        "transfer": 0.02
+      },
+      "mental": {
+        "cost": 2500,
+        "additionality": 0.1,
+        "response": 0.05,
+        "utility": 0.03,
+        "effectiveYears": 0.1
+      },
+      "family": {
+        "cost": 1000,
+        "additionality": 0.1,
+        "response": 0.05,
+        "utility": 0.005,
+        "effectiveYears": 0.1
+      },
+      "dpp": {
+        "cost": 1000,
+        "additionality": 0.1,
+        "baselineThreeYearRisk": 0.03,
+        "relativeReduction": 0.1,
+        "diabetesDelayYears": 1,
+        "utilityLossPerYear": 0.02
+      },
+      "donorHarm": {
+        "sf": 0,
+        "restBay": 0
+      },
+      "outputs": {
+        "fitnessQaly": 0.00108,
+        "mentalQaly": 0.00015000000000000001,
+        "familyQaly": 0.00005,
+        "dppQaly": 0.00002745424978059479,
+        "grossBayQaly": 0.0013074542497805946,
+        "sfNetQaly": 0.0005229816999122379,
+        "restBayNetQaly": 0.0007844725498683567,
+        "bayIncludingSfNetQaly": 0.0013074542497805946,
+        "donorCost": 100000,
+        "sfUsdPer10Qaly": 1912112795.0897918,
+        "bayUsdPer10Qaly": 764845118.0359168,
+        "inducedResourceStressUsd": 100000,
+        "sfStressUsdPer10Qaly": 3824225590.1795835,
+        "bayStressUsdPer10Qaly": 1529690236.0718336
+      }
+    },
+    {
+      "id": "nullAdditionality",
+      "sfShare": 0.65,
+      "fitness": {
+        "cost": 600,
+        "additionality": 0,
+        "trialQaly": 0.027,
+        "transfer": 0.2
+      },
+      "mental": {
+        "cost": 1500,
+        "additionality": 0,
+        "response": 0.2,
+        "utility": 0.1,
+        "effectiveYears": 0.5
+      },
+      "family": {
+        "cost": 500,
+        "additionality": 0,
+        "response": 0.2,
+        "utility": 0.02,
+        "effectiveYears": 0.25
+      },
+      "dpp": {
+        "cost": 600,
+        "additionality": 0,
+        "baselineThreeYearRisk": 0.08,
+        "relativeReduction": 0.3,
+        "diabetesDelayYears": 2,
+        "utilityLossPerYear": 0.05
+      },
+      "donorHarm": {
+        "sf": 0,
+        "restBay": 0
+      },
+      "outputs": {
+        "fitnessQaly": 0,
+        "mentalQaly": 0,
+        "familyQaly": 0,
+        "dppQaly": 0,
+        "grossBayQaly": 0,
+        "sfNetQaly": 0,
+        "restBayNetQaly": 0,
+        "bayIncludingSfNetQaly": 0,
+        "donorCost": 100000,
+        "sfUsdPer10Qaly": null,
+        "bayUsdPer10Qaly": null,
+        "inducedResourceStressUsd": 100000,
+        "sfStressUsdPer10Qaly": null,
+        "bayStressUsdPer10Qaly": null
+      }
+    },
+    {
+      "id": "nullClinicalEffect",
+      "sfShare": 0.65,
+      "fitness": {
+        "cost": 600,
+        "additionality": 0.4,
+        "trialQaly": 0.027,
+        "transfer": 0
+      },
+      "mental": {
+        "cost": 1500,
+        "additionality": 0.4,
+        "response": 0,
+        "utility": 0.1,
+        "effectiveYears": 0.5
+      },
+      "family": {
+        "cost": 500,
+        "additionality": 0.4,
+        "response": 0,
+        "utility": 0.02,
+        "effectiveYears": 0.25
+      },
+      "dpp": {
+        "cost": 600,
+        "additionality": 0.4,
+        "baselineThreeYearRisk": 0.08,
+        "relativeReduction": 0,
+        "diabetesDelayYears": 2,
+        "utilityLossPerYear": 0.05
+      },
+      "donorHarm": {
+        "sf": 0,
+        "restBay": 0
+      },
+      "outputs": {
+        "fitnessQaly": 0,
+        "mentalQaly": 0,
+        "familyQaly": 0,
+        "dppQaly": 0,
+        "grossBayQaly": 0,
+        "sfNetQaly": 0,
+        "restBayNetQaly": 0,
+        "bayIncludingSfNetQaly": 0,
+        "donorCost": 100000,
+        "sfUsdPer10Qaly": null,
+        "bayUsdPer10Qaly": null,
+        "inducedResourceStressUsd": 100000,
+        "sfStressUsdPer10Qaly": null,
+        "bayStressUsdPer10Qaly": null
+      }
+    },
+    {
+      "id": "centralDonorHarm",
+      "sfShare": 0.65,
+      "fitness": {
+        "cost": 600,
+        "additionality": 0.4,
+        "trialQaly": 0.027,
+        "transfer": 0.2
+      },
+      "mental": {
+        "cost": 1500,
+        "additionality": 0.4,
+        "response": 0.2,
+        "utility": 0.1,
+        "effectiveYears": 0.5
+      },
+      "family": {
+        "cost": 500,
+        "additionality": 0.4,
+        "response": 0.2,
+        "utility": 0.02,
+        "effectiveYears": 0.25
+      },
+      "dpp": {
+        "cost": 600,
+        "additionality": 0.4,
+        "baselineThreeYearRisk": 0.08,
+        "relativeReduction": 0.3,
+        "diabetesDelayYears": 2,
+        "utilityLossPerYear": 0.05
+      },
+      "donorHarm": {
+        "sf": 0.1,
+        "restBay": 0.1
+      },
+      "outputs": {
+        "fitnessQaly": 0.07200000000000001,
+        "mentalQaly": 0.0666666666666667,
+        "familyQaly": 0.016,
+        "dppQaly": 0.007214514829075395,
+        "grossBayQaly": 0.16188118149574213,
+        "sfNetQaly": 0.005222767972232381,
+        "restBayNetQaly": -0.043341586476490265,
+        "bayIncludingSfNetQaly": -0.038118818504257884,
+        "donorCost": 100000,
+        "sfUsdPer10Qaly": 191469352.136003,
+        "bayUsdPer10Qaly": null,
+        "inducedResourceStressUsd": 100000,
+        "sfStressUsdPer10Qaly": 382938704.272006,
+        "bayStressUsdPer10Qaly": null
+      }
+    },
+    {
+      "id": "nullAdditionalityDonorHarm",
+      "sfShare": 0.65,
+      "fitness": {
+        "cost": 600,
+        "additionality": 0,
+        "trialQaly": 0.027,
+        "transfer": 0.2
+      },
+      "mental": {
+        "cost": 1500,
+        "additionality": 0,
+        "response": 0.2,
+        "utility": 0.1,
+        "effectiveYears": 0.5
+      },
+      "family": {
+        "cost": 500,
+        "additionality": 0,
+        "response": 0.2,
+        "utility": 0.02,
+        "effectiveYears": 0.25
+      },
+      "dpp": {
+        "cost": 600,
+        "additionality": 0,
+        "baselineThreeYearRisk": 0.08,
+        "relativeReduction": 0.3,
+        "diabetesDelayYears": 2,
+        "utilityLossPerYear": 0.05
+      },
+      "donorHarm": {
+        "sf": 0.1,
+        "restBay": 0.1
+      },
+      "outputs": {
+        "fitnessQaly": 0,
+        "mentalQaly": 0,
+        "familyQaly": 0,
+        "dppQaly": 0,
+        "grossBayQaly": 0,
+        "sfNetQaly": -0.1,
+        "restBayNetQaly": -0.1,
+        "bayIncludingSfNetQaly": -0.2,
+        "donorCost": 100000,
+        "sfUsdPer10Qaly": null,
+        "bayUsdPer10Qaly": null,
+        "inducedResourceStressUsd": 100000,
+        "sfStressUsdPer10Qaly": null,
+        "bayStressUsdPer10Qaly": null
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "YMCA financial audit",
+      "url": "https://media.ymcasf.org/wp-content/uploads/2025/11/12144641/Young-Mens-Christian-Association-of-San-Francisco-2025-Audit-FS-Final.pdf",
+      "date": "Year ended June30,2025; October24,2025",
+      "meaning": "Functional allocations and existing public/fee financing, not marginal costs",
+      "retrieved": "September8,2026"
+    },
+    {
+      "title": "YMCA annual report",
+      "url": "https://media.ymcasf.org/wp-content/uploads/2025/12/24152248/Annual-Report-YMCA-of-Greater-San-Francisco-2024-2025.pdf",
+      "date": "December2025, FY2024–25",
+      "meaning": "Reach, service breadth and funded projects; not causal health",
+      "retrieved": "September8,2026"
+    },
+    {
+      "title": "YMCA DPP",
+      "url": "https://www.ymcasf.org/program/diabetes-prevention/",
+      "date": "Undated; accessed September8,2026",
+      "meaning": "Actual prevention eligibility and insurance alternatives; no measured local QALYs",
+      "retrieved": "September8,2026"
+    },
+    {
+      "title": "YMCA mental health",
+      "url": "https://www.ymcasf.org/location/mental-health-services-ymca/",
+      "date": "Undated; accessed September8,2026",
+      "meaning": "Actual therapy and substantial DPH/school/Medi-Cal baseline",
+      "retrieved": "September8,2026"
+    },
+    {
+      "title": "YMCA family resource centers",
+      "url": "https://www.ymcasf.org/program/family-resource-centers/",
+      "date": "Undated; accessed September8,2026",
+      "meaning": "Actual family service route, not incremental response",
+      "retrieved": "September8,2026"
+    },
+    {
+      "title": "YMCA financial assistance",
+      "url": "https://www.ymcasf.org/membership/membership-benefits/financial-assistance/",
+      "date": "Undated; accessed September8,2026",
+      "meaning": "Income-verified assistance, not extra activity",
+      "retrieved": "September8,2026"
+    },
+    {
+      "title": "YMCA annual campaign",
+      "url": "https://www.ymcasf.org/donate/annual-campaign/",
+      "date": "Undated; accessed September8,2026",
+      "meaning": "General access fundraising, not priced offer",
+      "retrieved": "September8,2026"
+    },
+    {
+      "title": "Edwards et al., NERS economic RCT",
+      "url": "https://eprints.gla.ac.uk/89420/1/89420.pdf",
+      "date": "BMC Public Health2013,13:1021",
+      "meaning": "798 economic participants (55% trial),.027QALY AUC6–12months; no baseline EQ5D; selection/transfer uncertainty",
+      "retrieved": "September8,2026"
+    },
+    {
+      "title": "RAPID YMCA trial",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4605179/",
+      "date": "2015",
+      "meaning": "509 randomized low-income adults with elevated glucose; actual community adaptation, not localYMCAQALY. Indexed primary abstract only; directPMCchallenge.",
+      "retrieved": "September8,2026"
+    },
+    {
+      "title": "DPP ten-year economic evaluation",
+      "url": "https://diabetesjournals.org/care/article/35/4/723/38335/The-10-Year-Cost-Effectiveness-of-Lifestyle",
+      "date": "April2012",
+      "meaning": "Longer intensive trial program not assigned numerically toYMCA; methodological context only",
+      "retrieved": "September8,2026"
+    },
+    {
+      "title": "SF Rec/Park Bayview Safety Swim",
+      "url": "https://sfrecpark.org/1613/Bayview-Safety-Swim-Splash",
+      "date": "Undated; priorSeptember8,2026read",
+      "meaning": "Joint free program, no local drowning effect estimated",
+      "retrieved": "September8,2026"
+    }
+  ]
+}

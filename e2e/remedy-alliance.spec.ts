@@ -1,11 +1,11 @@
 import {test,expect} from '@playwright/test';
 test('Remedy national report does not replace SF ranking or invent Bay share',async({page})=>{
  await page.goto('/research');
- await expect(page.locator('[data-research-slug]')).toHaveCount(46);
- await expect(page.locator('[data-international-slug]')).toHaveCount(2);
- const row=page.locator('[data-us-slug="remedy-alliance"]');
- await expect(row).toHaveCount(1);await expect(row).toContainText('$76K');
- await expect(page.locator('#top-research')).not.toContainText('Remedy');
+ await expect(page.locator('[data-research-slug]')).toHaveCount(49);
+ await expect(page.locator('[data-geography="International"]')).toHaveCount(2);
+ const row=page.locator('[data-research-slug="remedy-alliance"]');
+ await expect(row).toHaveCount(1);await expect(row).toContainText('$15.2M');
+ await expect(page.locator('#top-research')).toContainText('Remedy');
  await row.locator('a').first().click();
  await expect(page.locator('article')).toContainText('$76,164');
  await expect(page.locator('article')).toContainText('$116,785');

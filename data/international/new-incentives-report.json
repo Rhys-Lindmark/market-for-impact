@@ -1,0 +1,273 @@
+{
+  "organization": "New Incentives",
+  "eyebrow": "International health · representative organizational core",
+  "program": "Cash incentives for childhood vaccination in northern Nigeria",
+  "donationUrl": "https://www.newincentives.org/donate",
+  "published": "September 8, 2026",
+  "modelVersion": "new-incentives-representative-core-general-gift-v1",
+  "nutshell": {
+    "headline": "Our best estimate is $43,073 per 10 additional global QALYs.",
+    "body": "An ordinary gift supports a focused vaccination-access organization. We estimate the return from its representative core, not a special restricted offer. The gross associated-resource sensitivity is $66,332. Direct SF and Bay health benefit is zero; indirect benefit is unknown and uncredited.",
+    "whyItMayWork": "A randomized evaluation found higher vaccination coverage, and the core program is inexpensive relative to the consequences of preventable childhood disease.",
+    "whyWeAreCautious": "The trial measured coverage, not deaths. Future disease risk, sustained survival and the additional value of a new gift require substantial judgment.",
+    "recommendationBlocker": "Clarify current marginal allocation after existing grants and the remaining disease risk before alternative vaccination. These uncertainties do not make the conditional estimate a measured return."
+  },
+  "summary": [
+    {
+      "label": "Overall estimate",
+      "value": "$43,073 / 10 QALYs",
+      "detail": "Ordinary-gift, representative-core analyst estimate."
+    },
+    {
+      "label": "Associated resources",
+      "value": "$66,332 / 10 QALYs",
+      "detail": "Gross fiscal-package stress, not net societal cost; transfer-excluded proxy is $55,478."
+    },
+    {
+      "label": "SF / Bay benefit",
+      "value": "Zero direct",
+      "detail": "Nigerian beneficiaries; indirect local health is unknown and uncredited."
+    },
+    {
+      "label": "Evidence",
+      "value": "Coverage RCT",
+      "detail": "No mortality or QALY endpoint measured."
+    }
+  ],
+  "programSection": {
+    "body": "New Incentives provides caregiver cash incentives, community awareness and vaccine-stock support alongside free government vaccination in northern Nigeria.",
+    "steps": [
+      {
+        "title": "Make visits easier",
+        "detail": "Incentives help offset transport and missed income while staff verify vaccination."
+      },
+      {
+        "title": "Support the existing system",
+        "detail": "The program also encourages demand and helps clinics address stock problems; these are one combined intervention, not separate health multipliers."
+      }
+    ],
+    "boundary": "An ordinary organizational gift is represented by a 90% marginal allocation to the vaccination core. This is a prior, not an audited share or second overhead deduction. All-in core costs already include administration. Other work, including ORS and delivery experiments, receives no numerical benefit credit."
+  },
+  "model": {
+    "headline": "A $10,000 gift yields an estimated 2.32164 additional QALYs.",
+    "body": "We model 360 eligible catchment infants, not 360 completed vaccinations. The price is an analyst $25 per catchment infant; the founder’s roughly $16 per enrolled child is a different denominator. Coverage becomes health through explicit disease-risk, efficacy, additionality and finite-survival judgments.",
+    "equation": {
+      "label": "Central model",
+      "expression": "360 × .30 × .12 × .03 × .50 × 13.6461 × .8759304 − .002036 shared harm",
+      "result": "2.32164 QALYs; $10,000 × 10 / 2.32164 = $43,073"
+    },
+    "inputs": [
+      {
+        "key": "allocation",
+        "label": "Marginal vaccination-core allocation",
+        "best": "90%",
+        "range": "70–100%",
+        "basis": "Other marginal activity remains in the gift cost; core overhead is already included.",
+        "confidence": "Analyst judgment"
+      },
+      {
+        "key": "cost",
+        "label": "Cash per eligible catchment infant",
+        "best": "$25",
+        "range": "$18–$40",
+        "basis": "All-in planning price including transfers, failures, repeat enrollment and administration; not a provider quote.",
+        "confidence": "Analyst judgment"
+      },
+      {
+        "key": "coverage",
+        "label": "Extra full-course-equivalent coverage",
+        "best": "12 percentage points",
+        "range": "4–18 points",
+        "basis": "Dose/completion differences are standardized here once, with measurement and contemporary transfer. Not an empirical mortality-weighted RCT coefficient.",
+        "confidence": "Analyst judgment"
+      },
+      {
+        "key": "risk",
+        "label": "Remaining targeted-disease death risk",
+        "best": "3%",
+        "range": "1–5%",
+        "basis": "Risk to age five among marginal not-yet-protected infants, excluding deaths before vaccination and those avoided by alternative catch-up. Not national mortality per birth.",
+        "confidence": "Analyst judgment"
+      },
+      {
+        "key": "efficacy",
+        "label": "Standardized-course disease efficacy",
+        "best": "50%",
+        "range": "35–60%",
+        "basis": "Protection against that disease risk; no second incomplete-series discount.",
+        "confidence": "Analyst judgment"
+      },
+      {
+        "key": "additionality",
+        "label": "Funding/output additionality",
+        "best": "30%",
+        "range": "0–70%",
+        "basis": "Beyond existing public care, reserves and other funders. Not another trial-adherence factor.",
+        "confidence": "Analyst judgment"
+      },
+      {
+        "key": "survival",
+        "label": "Finite survival difference",
+        "best": "40 years, .99 annual survival, .85 utility, .8 persistent fraction",
+        "range": "15–60 years in joint scenarios; separate 3-year stress",
+        "basis": "All life-course inputs are judgments, not observed trial follow-up. Discount is 3%.",
+        "confidence": "Analyst judgment"
+      },
+      {
+        "key": "timing",
+        "label": "Implementation and event timing",
+        "best": "2-year delay; four equally weighted event years",
+        "range": "1–4-year delay",
+        "basis": "Calendar discount is separate from discounting years after a prevented early death.",
+        "confidence": "Analyst judgment"
+      },
+      {
+        "key": "resources",
+        "label": "Other gross associated resources",
+        "best": "$15 per supported infant",
+        "range": "$10–$25",
+        "basis": "Public vaccine, clinic and household allowance outside NI cash. A separate proxy removes $7 transfer cash; neither is net societal cost.",
+        "confidence": "Analyst judgment"
+      }
+    ],
+    "giftHeading": "How much could the estimate change?",
+    "sensitivity": [
+      {
+        "case": "Favorable",
+        "headline": "$2,319 / 10 QALYs",
+        "detail": "Joint optimistic assumptions; $3,607 with gross associated resources."
+      },
+      {
+        "case": "Pessimistic positive",
+        "headline": "$12.98 million / 10 QALYs",
+        "detail": "Lower coverage, disease risk, additionality and survival; $18.66m gross."
+      },
+      {
+        "case": "Short survival",
+        "headline": "$245,491 / 10 QALYs",
+        "detail": "Only three post-death years credited; $378,056 gross."
+      },
+      {
+        "case": "Funding replacement or clinical null",
+        "headline": "No positive ratio",
+        "detail": "Identical replacement gives zero shared benefit and harm. Clinical null with shared harm can be negative."
+      },
+      {
+        "case": "Independent harm",
+        "headline": "Health loss remains possible",
+        "detail": "Independent gift harm is outside funding additionality; no positive cost-effectiveness ratio is shown for negative health."
+      }
+    ],
+    "uncertaintyBoundary": "Scenarios are analyst combinations, not confidence intervals. The mortality bridge is not calibrated to an observed mortality effect. Uncredited noncore benefits and harms mean this is not a rigorous lower bound.",
+    "fundingBoundary": "GiveWell’s March 2025 award funded nine states from January 2027 through March 2028; Niger and Yobe had separate funding. Those activities are baseline. NI’s future-plans page contains mixed-vintage, different-horizon figures that do not establish a current post-award funding gap. We use a two-year delay and 30% additionality judgment rather than count already funded children. Cash transfers are fiscal costs, not themselves consumed resources; the transfer-excluded proxy still does not resolve net public replacement or household costs."
+  },
+  "evidence": [
+    {
+      "key": "coverage-rct",
+      "design": "Cluster randomized evaluation, 2017–2020",
+      "population": "Clinic catchments in three northern Nigerian states",
+      "result": "Among 5,173 children aged 12–16 months across 167 clinic catchments, caregiver-reported BCG, Penta1 and measles coverage rose 16, 21 and 14 percentage points; full-series coverage rose 27 points.",
+      "transfer": "The comparator retained usual services and campaigns. Self-report and selected feasible clinics limit transport. Timing effects are not added separately; the retracted incentive-size pilot was a different study."
+    },
+    {
+      "key": "mortality",
+      "design": "Primary clinical plausibility evidence",
+      "population": "Historical Gambian pneumococcal-vaccine trial",
+      "result": "Cutts et al. found a mortality benefit from PCV, supporting a causal pathway from vaccination to survival.",
+      "transfer": "Different vaccine and setting; neither the 50% bundle efficacy nor Nigeria’s 3% residual disease risk is estimated by that trial."
+    },
+    {
+      "key": "operations",
+      "design": "Primary organizational reporting",
+      "population": "Current New Incentives platform",
+      "result": "The founder reports roughly $16 per enrolled child and acknowledges changing unit economics and new program experiments.",
+      "transfer": "Not an independently audited marginal catchment price or proof every donated dollar creates new activity."
+    }
+  ],
+  "reservations": [
+    "The model multiplies mortality-weighted coverage, disease risk and efficacy priors; which children receive extra protection remains uncertain.",
+    "Existing funding into 2028 may displace or delay a fresh gift’s effect.",
+    "Forty-year survival difference is an explicit extrapolation, not an RCT result.",
+    "A California mailing address does not make Nigerian beneficiary health local."
+  ],
+  "excludedBenefits": [
+    "Nonfatal disease, adult hepatitis and neonatal outcomes outside the modeled age window.",
+    "Cash-consumption welfare, education, productivity and GiveWell moral weights.",
+    "ORS, research/innovation and other noncore benefits.",
+    "Unverified SF/Bay spillovers."
+  ],
+  "sources": [
+    {
+      "publisher": "New Incentives",
+      "title": "Donate",
+      "url": "https://www.newincentives.org/donate",
+      "published": "Undated current page",
+      "sourceType": "Primary organizational giving",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "New Incentives",
+      "title": "Our Work",
+      "url": "https://www.newincentives.org/our-work",
+      "published": "Undated current page",
+      "sourceType": "Primary program description",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "IDinsight",
+      "title": "Impact of Conditional Cash Transfers on Routine Childhood Immunizations",
+      "url": "https://www.idinsight.org/wp-content/uploads/2021/03/NewIncentivesReport_13thNovember.pdf",
+      "published": "November 2020",
+      "sourceType": "Primary randomized evaluation brief; printed page 3",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Cutts et al.",
+      "title": "Pneumococcal conjugate vaccine trial in The Gambia",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15794968/",
+      "published": "2005",
+      "sourceType": "Primary trial abstract",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Nigeria Federal Ministry of Health",
+      "title": "2024 NDHS report launch",
+      "url": "https://health.gov.ng/fg-launches-2024-ndhs-report-unveils-data-on-fertility-child-mortality-others/",
+      "published": "2025",
+      "sourceType": "Primary national burden context",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Svetha Janumpalli",
+      "title": "New Incentives founder AMA",
+      "url": "https://forum.effectivealtruism.org/posts/aqyGLEvmbCrwyNHvH/ama-svetha-janumpalli-ceo-and-founder-of-new-incentives",
+      "published": "May 6, 2026, with later replies",
+      "sourceType": "Primary operational account",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "GiveWell",
+      "title": "New Incentives extension of support in northern Nigeria",
+      "url": "https://www.givewell.org/research/grants/new-incentives-extension-of-support-in-northern-nigeria-march-2025",
+      "published": "March 2025 grant",
+      "sourceType": "Primary funder record; not causal clinical evidence",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "New Incentives",
+      "title": "Future Plans",
+      "url": "https://www.newincentives.org/future-plans",
+      "published": "Undated; mixed funding horizons",
+      "sourceType": "Primary organizational planning",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "New Incentives",
+      "title": "Financials and Policies",
+      "url": "https://www.newincentives.org/financials",
+      "published": "Undated; historical cost chart",
+      "sourceType": "Primary accounting-method description",
+      "retrieved": "September 8, 2026"
+    }
+  ]
+}

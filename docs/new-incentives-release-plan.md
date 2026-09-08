@@ -1,5 +1,7 @@
 # New Incentives
 
+Active block start2026-09-08T21:27:56Z. Prior block made authoritative progress: AMF+WalkSF published, SPUR scope corrected, count45→47; measured75.333333minutes logged. Current maincfde991 verified full CI green (297tests and full mobile). New NI draftPR218 at7e0d9c6: required/fraction/horizon/transfer-cost guards added after audit; acceptedscenario results unchanged.
+
 Current published47/115 (46 SF-indexed +1international). Root integrating accepted primary-source/model/audit packet; Harvey returning outside-Site report content. This organization counts toward international cohort, not SF.
 
 - [x] NI1: Catchment RCT, representative core, complete-course-equivalent coverage vs efficacy, finite health, funding baseline and geography independently reviewed.

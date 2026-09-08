@@ -1,0 +1,287 @@
+{
+  "organization": "RotaCare Bay Area",
+  "eyebrow": "Bay Area and adjacent counties",
+  "program": "Free-clinic care, with blood-pressure treatment as the quantified pathway",
+  "published": "September 8, 2026",
+  "modelVersion": "rotacare-bay-area-whole-gift-bp-v2",
+  "nutshell": {
+    "headline": "Our best estimate is $3.40 million per 10 additional Bay Area QALYs.",
+    "body": "The overall US estimate is $2.89 million. This conditional model counts an entire unrestricted gift while quantifying its blood-pressure-care share; other clinic benefits remain unquantified. It is not a demonstrated below-$100,000 opportunity.",
+    "whyItMayWork": "Sustained blood-pressure treatment can prevent cardiovascular events when patients would otherwise lack effective care.",
+    "whyWeAreCautious": "Local risk, achieved treatment differences, marginal costs and donor additionality are not measured. The longer health consequences may overstate benefit if prevented events instead occur later.",
+    "recommendationBlocker": "Verify the complete care budget and sustained treatment difference beyond accessible alternatives. Actual Bay operations do not establish an SF-resident benefit share."
+  },
+  "summary": [
+    {
+      "label": "Bay estimate",
+      "value": "$3.40M / 10 QALYs",
+      "detail": "Central donor-cash estimate; $5.14M including gross associated resources."
+    },
+    {
+      "label": "Overall estimate",
+      "value": "$2.89M / 10 QALYs",
+      "detail": "All modeled US beneficiaries; includes Bay health, so the two are not additive."
+    },
+    {
+      "label": "SF benefit",
+      "value": "Not established",
+      "detail": "Zero SF health credited pending residence evidence—not a claim that no SF residents receive care."
+    },
+    {
+      "label": "Evidence",
+      "value": "Trials inform treatment effect",
+      "detail": "No randomized RotaCare donation-to-health estimate."
+    }
+  ],
+  "programSection": {
+    "body": "RotaCare Bay Area, Inc. operates volunteer-supported clinics providing acute and chronic care. Northern Peninsula is in Daly City, not San Francisco; it lists prescriptions but no medication dispensing. Services and eligibility vary by clinic.",
+    "steps": [
+      {
+        "title": "Make sustained care accessible",
+        "detail": "Assessment, prescribing, testing and follow-up may help uninsured people obtain effective blood-pressure treatment."
+      },
+      {
+        "title": "Improve outcomes beyond usual care",
+        "detail": "The model requires a sustained achieved blood-pressure difference—not merely screening, visits or referrals."
+      }
+    ],
+    "boundary": "We assign 40% of a hypothetical $100,000 unrestricted gift to five-year blood-pressure care offers. The remaining 60% supports the broader clinic portfolio and remains in the cost numerator, with health unquantified. This allocation is an analyst prior, not a reported budget. Operation Access surgery benefits are excluded to avoid duplicate credit."
+  },
+  "model": {
+    "headline": "A $100,000 gift yields an estimated 0.295 Bay QALYs.",
+    "body": "The central model reserves $1,750 for each five-year offered care pathway, including unsuccessful participation, medicines, tests, coordination and allocated overhead. It funds 22.857 offers. Future cash is reserved at the gift date; no reserve interest or inflation is modeled.",
+    "equation": {
+      "label": "Central Bay model",
+      "expression": "22.857 offers × .50 funding additionality × (.0313168 Q before shared harm − .001 Q shared harm) × .85 Bay share",
+      "result": ".294506 Bay QALYs; $100,000 × 10 / .294506 = $3,395,514"
+    },
+    "inputs": [
+      {
+        "key": "allocation",
+        "label": "Gift allocated to blood-pressure care",
+        "confidence": "Judgment",
+        "best": "40%",
+        "range": "Fixed across these scenarios",
+        "basis": "All gift cash is counted once. Other clinic health is unquantified, not known to be zero."
+      },
+      {
+        "key": "cash",
+        "label": "Complete five-year cash cost",
+        "confidence": "Judgment",
+        "best": "$1,750 per offer",
+        "range": "$1,000–$3,500",
+        "basis": "Central annual budget: $60 medicines, $60 tests and $230 delivery/coordination/overhead. These are constructed budgets, not quotes."
+      },
+      {
+        "key": "resources",
+        "label": "Additional unpaid resources",
+        "confidence": "Judgment",
+        "best": "$450 per offer-year",
+        "range": "$300–$650",
+        "basis": "Donated clinical labor, facilities and other inputs outside cash; no duplicate medication or lab charge. Gross spending envelope, not net societal cost."
+      },
+      {
+        "key": "risk",
+        "label": "Usual-care five-year first-event risk",
+        "confidence": "Judgment",
+        "best": "10%",
+        "range": "3–25%",
+        "basis": "No-new-gift cardiovascular risk; not a measured RotaCare cohort or universally untreated population."
+      },
+      {
+        "key": "bp",
+        "label": "Sustained systolic difference",
+        "confidence": "Judgment",
+        "best": "10 mmHg",
+        "range": "3–20 mmHg; separate 30-mmHg stress",
+        "basis": "Average difference versus accessible care already incorporates receipt and persistence. No second adherence multiplier."
+      },
+      {
+        "key": "rr",
+        "label": "Major cardiovascular-event risk ratio",
+        "confidence": "Trial synthesis; transferred",
+        "best": ".80 per 10 mmHg",
+        "range": "Fixed source anchor",
+        "basis": "Ettehad et al. randomized-trial meta-analysis. Exponentiation and transfer to local five-year risk are modeling assumptions."
+      },
+      {
+        "key": "additionality",
+        "label": "Funding additionality",
+        "confidence": "Judgment",
+        "best": "50%",
+        "range": "0–80%",
+        "basis": "Activity beyond existing grants, reserves, other donations and public care; distinct from clinical alternatives already embedded in the achieved BP difference."
+      },
+      {
+        "key": "tail",
+        "label": "Event-specific health consequences",
+        "confidence": "Judgment",
+        "best": "Finite 2–20-year central tails",
+        "range": "Separate five-calendar-year clipping",
+        "basis": "First events changed during five years of care are partitioned into fatal event, nonfatal stroke, MI and heart failure. Utility, survival and 3% discount are explicit assumptions; later event catch-up is not directly modeled."
+      },
+      {
+        "key": "geography",
+        "label": "Bay residence allocation",
+        "confidence": "Judgment",
+        "best": "85%",
+        "range": "70–95%",
+        "basis": "Monterey and Santa Cruz are outside the nine-county Bay Area. These are residence priors, not clinic-count ratios; SF share is unverified."
+      }
+    ],
+    "giftHeading": "How much could the estimate change?",
+    "sensitivity": [
+      {
+        "case": "Favorable",
+        "headline": "$122,413 / 10 Bay QALYs",
+        "detail": "Joint optimistic assumptions; $195,861 with gross associated resources. Still above the target."
+      },
+      {
+        "case": "Pessimistic positive",
+        "headline": "$1.01 billion / 10 Bay QALYs",
+        "detail": "Lower risk and treatment difference with more costly complete care; $1.39 billion gross."
+      },
+      {
+        "case": "Central: health clipped at year 5",
+        "headline": "$15.92M / 10 Bay QALYs",
+        "detail": "Only health flows through the end of care year 5 count; complete costs remain. Gross estimate: $24.11M."
+      },
+      {
+        "case": "Severe-untreated stress",
+        "headline": "Not a demonstrated opportunity",
+        "detail": "A sustained 30-mmHg difference gives $90,307 Bay cash but $144,491 gross. With health clipped at year 5: $491,691 cash and $786,706 gross. The local cohort and effect are unverified."
+      },
+      {
+        "case": "Null and harm",
+        "headline": "No positive ratio",
+        "detail": "Identical funding replacement or no clinical difference and no harm gives zero. Retained treatment harm can make health negative; independent gift harm may persist under replacement."
+      }
+    ],
+    "uncertaintyBoundary": "These are analyst scenarios, not confidence intervals. First-event differences are scheduled over five years and discounted; mutually exclusive event consequences then receive finite survival/utility flows. Fatal events are not counted again as nonfatal injuries. The core assumes durable consequences of changed events; competing mortality alone does not resolve later cardiovascular catch-up. Clipping all flows at calendar year 5 is an explicit sensitivity, not an additional treatment duration.",
+    "fundingBoundary": "The annual report’s $200 cost-per-patient figure is not a reconciled complete-cost price. FY2024–25 filing expenses of $1,413,811 divided by 1,582 reported unique patients are about $894—a scope cross-check, not a BP-course estimate. The model’s favorable $200 annual budget is a separate optimistic judgment. The report describes a CPA review, not an audit. Existing funds and donated resources remain baseline; full five-year staffing and follow-up capacity are not established. Gross associated resources are not net new societal costs when a gift replaces existing funding."
+  },
+  "evidence": [
+    {
+      "key": "treatment",
+      "design": "Meta-analysis of randomized trials",
+      "population": "Blood-pressure treatment trials; Ettehad et al., 2016",
+      "result": "A 10-mmHg systolic reduction was associated with a major cardiovascular-event risk ratio of .80.",
+      "transfer": "Strong treatment anchor, not evidence that RotaCare achieves this incremental difference. Do not add separate mortality, stroke or heart-failure effects to the composite."
+    },
+    {
+      "key": "risk",
+      "design": "Individual-participant trial meta-analysis",
+      "population": "Increasing baseline cardiovascular-risk groups, 2014",
+      "result": "Higher-risk groups had larger absolute benefit from blood-pressure lowering.",
+      "transfer": "Supports the importance of baseline risk; the local cohort risk remains unmeasured."
+    },
+    {
+      "key": "counterevidence",
+      "design": "Randomized trials",
+      "population": "HOPE-3 intermediate-risk adults; separate 2024 coaching/practice-facilitation trial",
+      "result": "HOPE-3 found no overall benefit in its intermediate-risk cohort; coaching/facilitation did not outperform enhanced usual care in the separate trial.",
+      "transfer": "Care contact is insufficient by itself. Benefit depends on sustained additional treatment and risk."
+    },
+    {
+      "key": "utility",
+      "design": "Longitudinal EQ-5D cohort",
+      "population": "Oxford Vascular Study stroke survivors and controls",
+      "result": "Persistent utility loss after stroke supports a finite morbidity pathway.",
+      "transfer": "Observational survivor-state evidence informs scale, not the causal utility of every cardiovascular event or a saved lifetime."
+    },
+    {
+      "key": "local",
+      "design": "Provider program reports and tax filing",
+      "population": "RotaCare Bay Area clinics",
+      "result": "Actual chronic-care delivery and organizational finances are documented.",
+      "transfer": "No measured next-gift allocation, achieved BP contrast or SF-resident share. Filing evidence does not establish a marginal care offer."
+    }
+  ],
+  "reservations": [
+    "The central estimate and ordinary favorable scenario exceed $100,000 per 10 Bay QALYs.",
+    "The advertised $200 cost-per-patient figure is not a complete five-year care cost.",
+    "Clinical risk, treatment difference, funding additionality and Bay residence shares are analyst judgments. Shared and independent modeled harms use those same regional proportions; a separately SF-located harm would require its own allocation.",
+    "Durable health consequences may be overstated if events are postponed rather than permanently avoided.",
+    "Actual Bay operations do not establish SF-resident health; no positive SF ratio is reported."
+  ],
+  "excludedBenefits": [
+    "Unquantified acute, diabetes, asthma, diagnostic and other clinic benefits.",
+    "Operation Access partner surgery outcomes already represented elsewhere.",
+    "Additional cardiovascular events or separate all-cause mortality credit beyond the first-event model.",
+    "Unverified SF-resident benefits, healthcare savings and monetary opportunity-cost effects."
+  ],
+  "sources": [
+    {
+      "publisher": "RotaCare Bay Area",
+      "title": "Northern Peninsula clinic",
+      "url": "https://www.rotacarebayarea.org/nopeninsula",
+      "published": "Current page",
+      "sourceType": "Primary clinic description",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "RotaCare Bay Area",
+      "title": "San Rafael Transitional Care Clinic",
+      "url": "https://www.rotacarebayarea.org/sanrafael",
+      "published": "Current page",
+      "sourceType": "Primary clinic description",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "RotaCare Bay Area",
+      "title": "2024–2025 Annual Report",
+      "url": "https://www.rotacarebayarea.org/_files/ugd/ebfb22_0d7dcc9504274e84b20fda5e4f93ec56.pdf",
+      "published": "July 2024–June 2025",
+      "sourceType": "Primary organizational report",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "RotaCare Bay Area",
+      "title": "FY2024–25 Form 990",
+      "url": "https://www.rotacarebayarea.org/_files/ugd/ebfb22_030f1d31567346b1874f3aa9cd1d1513.pdf",
+      "published": "Prepared January 16, 2026",
+      "sourceType": "Provider-posted tax filing; not an audit",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Ettehad et al., Lancet",
+      "title": "Blood pressure lowering for prevention of cardiovascular disease and death",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26724178/",
+      "published": "2016",
+      "sourceType": "Primary randomized-trial meta-analysis",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Blood Pressure Lowering Treatment Trialists’ Collaboration / Oxford",
+      "title": "Blood pressure-lowering treatment based on cardiovascular risk",
+      "url": "https://www.ndph.ox.ac.uk/publications/481129",
+      "published": "2014",
+      "sourceType": "Author-institution primary abstract",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Luengo-Fernandez et al., Neurology",
+      "title": "Quality of life after TIA and stroke: Oxford Vascular Study",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3806919/",
+      "published": "2013",
+      "sourceType": "Primary longitudinal utility study",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "HOPE-3 investigators, NEJM",
+      "title": "Blood-Pressure Lowering in Intermediate-Risk Persons without Cardiovascular Disease",
+      "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa1600175",
+      "published": "2016",
+      "sourceType": "Randomized trial",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "JAMA Internal Medicine",
+      "title": "Practice Facilitation and Peer Coaching for Uncontrolled Hypertension Among Black Individuals",
+      "url": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2816426",
+      "published": "2024",
+      "sourceType": "Cluster randomized trial",
+      "retrieved": "September 8, 2026"
+    }
+  ]
+}

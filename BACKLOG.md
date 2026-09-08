@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## RotaCare integration checkpoint — September 8
+
+RotaCare Bay Area v2 report and inspectable model validated in focused worktree; not counted until canonical publication.306 tests,lint/build and independent99-check runtime audit passed. Central$3.40M/10BayQ; no established SF-resident share, unified row therefore says Not estimated rather than disguising Bay cost as SF. Full gift counted,60% non-BP portfolio benefits unquantified; duration/catch-up, gross resources and harm scenarios explicit. No separate bottom research section. Next whole-org YMCA revision and calibrated AMF/NI models; goal115 remains active.
+
 ## GiveWell reconciliation findings — September 8
 
 Native benchmark check completed: GiveWell2022–24 weighted modeled mortality prices are AMF$5,500/death and NI$4,500/death. Our independent scenarios imply$12,449/$51,440 per early death before the13.646 discounted Q/death conversion. No factor-of-ten arithmetic bug; overlapping conservative assumptions and unmatched enrollment/catchment denominators are material model-quality risks. Public comparison/API implemented, validation pending. Do not label constructed downside scenarios calibrated expected values.

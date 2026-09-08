@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test';
 test('New Incentives is global research, not an SF recommendation',async({page})=>{
- await page.goto('/research');await expect(page.locator('[data-research-slug]')).toHaveCount(49);
+ await page.goto('/research');await expect(page.locator('[data-research-slug]')).toHaveCount(50);
  const row=page.locator('[data-research-slug="new-incentives"]');await expect(row).toContainText('Not estimated');
  await row.locator('a').first().click();await expect(page.getByRole('heading',{level:1,name:'New Incentives',exact:true})).toBeVisible();
  await expect(page.locator('article')).toContainText('43');await expect(page.locator('article')).toContainText('March 2028');

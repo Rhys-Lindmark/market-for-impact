@@ -1,0 +1,923 @@
+{
+  "schema_version": "research-portfolio-v1",
+  "model_id": "rotacare-bay-area-whole-gift-bp-v2",
+  "prepared_at": "2026-09-08",
+  "status": "Conditional research draft for independent audit; not recommendation",
+  "organization": {
+    "name": "RotaCare Bay Area, Inc.",
+    "ein": "77-0328723",
+    "recipient_source": "Provider-posted Form 990, primary identity",
+    "scope": "Bay and adjacent California counties. No verified SF-resident share, so zero SF health credited; not a claim that no SF resident is ever served."
+  },
+  "decision": "Central and favorable cases exceed $100K/10 Bay QALYs. Separate severe-untreated stress may cross only with a large sustained blood-pressure difference, cheap complete care and stronger additionality; not locally demonstrated.",
+  "allocation": "One $100K unrestricted gift: 40% effective BP care course offers, 60% other free-clinic portfolio including acute, other chronic, diagnostic and shared work, health-unquantified but costed. The split is an analyst marginal prior, not provider accounting.",
+  "costs": "Annual donor cash cost $350/$200/$700 central/favorable/pessimistic for each of five years. Entire five-year envelope prepaid/reserved from the gift at time0, no interest credited. Includes medication, labs, visits/coordination and overhead within this stream, all failures retained. $200 favorable is an optimistic contextual claim, not verified complete course price. Additional unpaid annual $450/$300/$650 is gross nominal resource stress, not discounted incremental social cost.",
+  "finite_health": "Five-year achieved average treatment difference conditional on implementation, inclusive of missed visits, receipt and persistence versus usual accessible care. Only first composite cardiovascular event differences during years1–5 are counted. Event-year first-risk differences discounted, then finite event-specific utility loss or survival flow discounted from event. No lifelong blood-pressure effect. Constant competing mortality applies to all post-event health flows; case-specific extra mortality omitted except fatal first events. Core estimates assume the difference in first events during years1–5 creates durable event-specific consequences, not that every prevented event merely reappears just after year5. Later CVD catch-up is not explicitly modeled. This assumption can overstate benefit. Two calendar-window sensitivities clip every health tail at end of care year5, retaining complete costs and harms.",
+  "causal_boundary": "Source RR .80 per10mmHg is trial-meta-analysis anchor; exponentiation across achieved BP differences and application to five-year cumulative risk are modeling transfers. No-new-gift usual-care risks and achieved local differences are judgments. No additional adherence multiplier. Funding additionality addresses activity replacement separately from clinical usual-care substitution embedded in achieved BP difference.",
+  "event_partition": "Fatal composite event, nonfatal stroke, nonfatal MI and nonfatal HF shares sum1. Shares refer to avoided FIRST events, not all diagnoses; death not counted again as nonfatal injury. Mortality curve is finite, not sourced lifetime QALYs. Stroke source EQ-5D supports scale only, not causal no-stroke utility or all CVD events.",
+  "geography": "Global means all counted US health. Bay includes SF; Monterey and Santa Cruz excluded from nine-county Bay. .85/.95/.70 Bay shares are unmeasured resident allocation priors, not clinic-count ratios; all SF shares0 pending evidence.",
+  "funding_overlap": "Most medications and physician/lab/space support can be donated; add resource value, do not duplicate cash item. Current medication dispensing varies by clinic, Northern Peninsula lists prescriptions but not medications. Public coverage/other free clinics remain baseline. Operation Access referral partnership surgery benefits excluded entirely.",
+  "harm": "Shared harm per offered five-year course is an all-recipient present-valued health decrement before funding additionality, independent donor harm is a gift-specific health loss even at zero additionality. Same regional share applied explicitly. No monetary opportunity-cost subtraction.",
+  "sources": [
+    {
+      "id": "delivery",
+      "publisher": "RotaCare Bay Area",
+      "type": "Official clinic/program pages",
+      "title": "Current free-clinic portfolio and Northern Peninsula services",
+      "published": "Undated",
+      "url": "https://www.rotacarebayarea.org/nopeninsula",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "id": "portfolio",
+      "publisher": "RotaCare Bay Area",
+      "type": "Organization-authored annual report",
+      "title": "2024–2025 Annual Report",
+      "published": "July 2024–June 2025 reporting period",
+      "url": "https://www.rotacarebayarea.org/_files/ugd/ebfb22_0d7dcc9504274e84b20fda5e4f93ec56.pdf",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "id": "filing",
+      "publisher": "RotaCare Bay Area / IRS Form 990",
+      "type": "Provider-posted tax filing",
+      "title": "FY2024–25 Form 990",
+      "published": "July 1, 2024–June 30, 2025; preparer January 16, 2026",
+      "url": "https://www.rotacarebayarea.org/_files/ugd/ebfb22_030f1d31567346b1874f3aa9cd1d1513.pdf",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "id": "sanrafael",
+      "publisher": "RotaCare Bay Area",
+      "type": "Official clinic description",
+      "title": "San Rafael Transitional Care Clinic",
+      "published": "Undated",
+      "url": "https://www.rotacarebayarea.org/sanrafael",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "id": "rr",
+      "publisher": "Ettehad et al., Lancet; PubMed",
+      "type": "Primary trial meta-analysis",
+      "title": "Blood pressure lowering for prevention of cardiovascular disease and death",
+      "published": "2016",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26724178/",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "id": "risk",
+      "publisher": "Blood Pressure Lowering Treatment Trialists Collaboration / Oxford",
+      "type": "Author-institution primary abstract",
+      "title": "Blood pressure-lowering treatment based on cardiovascular risk",
+      "published": "2014",
+      "url": "https://www.ndph.ox.ac.uk/publications/481129",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "id": "utility",
+      "publisher": "Luengo-Fernandez et al., Neurology; PMC",
+      "type": "Primary longitudinal EQ-5D cohort",
+      "title": "Quality of life after TIA and stroke: Ten-year results of the Oxford Vascular Study",
+      "published": "2013",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3806919/",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "id": "null",
+      "publisher": "HOPE-3 investigators, NEJM",
+      "type": "Randomized placebo-controlled trial",
+      "title": "Blood-Pressure Lowering in Intermediate-Risk Persons without Cardiovascular Disease",
+      "published": "2016",
+      "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa1600175",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "id": "coaching",
+      "publisher": "JAMA Internal Medicine",
+      "type": "Cluster randomized trial",
+      "title": "Practice Facilitation and Peer Coaching for Uncontrolled Hypertension Among Black Individuals",
+      "published": "2024",
+      "url": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2816426",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "id": "shanti",
+      "publisher": "Shanti Project",
+      "type": "Official service description",
+      "title": "Cancer Program Client Services",
+      "published": "Undated",
+      "url": "https://www.shanti.org/programs-services/shanti-cancer-program/client-services/",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "id": "shanti_scope",
+      "publisher": "Shanti Project",
+      "type": "Official press release",
+      "title": "Expanded Cancer Program",
+      "published": "October 2, 2025",
+      "url": "https://www.shanti.org/wp-content/uploads/2025/10/Cancer-Program-Press-Release-10.2.25.pdf",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "id": "wcrc",
+      "publisher": "Women’s Cancer Resource Center",
+      "type": "Official practical assistance description",
+      "title": "Practical Assistance",
+      "published": "Undated",
+      "url": "https://www.wcrc.org/practical-assistance/",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "id": "navigation_null",
+      "publisher": "Ell et al.; PubMed",
+      "type": "Randomized trial",
+      "title": "Cancer treatment adherence among low-income women with breast or gynecologic cancer",
+      "published": "2009",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19551881/",
+      "retrieved": "September 8, 2026"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "central",
+      "inputs": {
+        "gift_usd": 100000,
+        "bp_allocation_fraction": 0.4,
+        "course_years": 5,
+        "annual_cash_cost_usd": 350,
+        "annual_unpaid_resource_usd": 450,
+        "baseline_five_year_first_cvd_risk": 0.1,
+        "achieved_sbp_difference_mm_hg": 10,
+        "rr_per_10_mm_hg": 0.8,
+        "funding_additionality": 0.5,
+        "discount": 0.03,
+        "fatal_event_share": 0.2,
+        "stroke_event_share": 0.3,
+        "mi_event_share": 0.3,
+        "hf_event_share": 0.2,
+        "fatal_utility": 0.75,
+        "fatal_annual_competing_mortality": 0.05,
+        "fatal_years": 20,
+        "stroke_utility_loss": 0.15,
+        "stroke_years": 5,
+        "mi_utility_loss": 0.04,
+        "mi_years": 2,
+        "hf_utility_loss": 0.1,
+        "hf_years": 5,
+        "shared_qaly_harm_per_offer": 0.001,
+        "donor_specific_qaly_harm": 0,
+        "sf_health_share": 0,
+        "rest_bay_health_share": 0.85,
+        "clip_health_at_course_end": false
+      },
+      "outputs": {
+        "offered_five_year_courses": 22.857142857142858,
+        "cumulative_rr": 0.8,
+        "event_schedule": [
+          {
+            "year": 1,
+            "absolute_first_event_difference": 0.004313595970452888
+          },
+          {
+            "year": 2,
+            "absolute_first_event_difference": 0.004152312000455127
+          },
+          {
+            "year": 3,
+            "absolute_first_event_difference": 0.003995570863283008
+          },
+          {
+            "year": 4,
+            "absolute_first_event_difference": 0.00384325832188534
+          },
+          {
+            "year": 5,
+            "absolute_first_event_difference": 0.00369526284392329
+          }
+        ],
+        "weighted_qaly_per_first_event": 1.7056463469337884,
+        "unadjusted_health_per_offer": 0.03131681711252741,
+        "gross_resource_usd": 151428.57142857142,
+        "global": {
+          "qaly": 0.3464779098574561,
+          "donor_usd_per_10_qaly": 2886186.886810211,
+          "gross_resource_usd_per_10_qaly": 4370511.571455462
+        },
+        "bay": {
+          "qaly": 0.29450622337883764,
+          "donor_usd_per_10_qaly": 3395513.9844826013,
+          "gross_resource_usd_per_10_qaly": 5141778.319359367
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "gross_resource_usd_per_10_qaly": null
+        }
+      }
+    },
+    {
+      "id": "favorable",
+      "inputs": {
+        "gift_usd": 100000,
+        "bp_allocation_fraction": 0.4,
+        "course_years": 5,
+        "annual_cash_cost_usd": 200,
+        "annual_unpaid_resource_usd": 300,
+        "baseline_five_year_first_cvd_risk": 0.25,
+        "achieved_sbp_difference_mm_hg": 20,
+        "rr_per_10_mm_hg": 0.8,
+        "funding_additionality": 0.8,
+        "discount": 0.03,
+        "fatal_event_share": 0.25,
+        "stroke_event_share": 0.35,
+        "mi_event_share": 0.2,
+        "hf_event_share": 0.2,
+        "fatal_utility": 0.8,
+        "fatal_annual_competing_mortality": 0.03,
+        "fatal_years": 30,
+        "stroke_utility_loss": 0.2,
+        "stroke_years": 7,
+        "mi_utility_loss": 0.05,
+        "mi_years": 3,
+        "hf_utility_loss": 0.12,
+        "hf_years": 7,
+        "shared_qaly_harm_per_offer": 0.0005,
+        "donor_specific_qaly_harm": 0,
+        "sf_health_share": 0,
+        "rest_bay_health_share": 0.95,
+        "clip_health_at_course_end": false
+      },
+      "outputs": {
+        "offered_five_year_courses": 40,
+        "cumulative_rr": 0.6400000000000001,
+        "event_schedule": [
+          {
+            "year": 1,
+            "absolute_first_event_difference": 0.02164278761260796
+          },
+          {
+            "year": 2,
+            "absolute_first_event_difference": 0.01969099363237886
+          },
+          {
+            "year": 3,
+            "absolute_first_event_difference": 0.01787374686944749
+          },
+          {
+            "year": 4,
+            "absolute_first_event_difference": 0.01618265340191671
+          },
+          {
+            "year": 5,
+            "absolute_first_event_difference": 0.014609818483648777
+          }
+        ],
+        "weighted_qaly_per_first_event": 3.2470946155837015,
+        "unadjusted_health_per_offer": 0.2692189241788438,
+        "gross_resource_usd": 160000,
+        "global": {
+          "qaly": 8.599005573723002,
+          "donor_usd_per_10_qaly": 116292.51678308225,
+          "gross_resource_usd_per_10_qaly": 186068.0268529316
+        },
+        "bay": {
+          "qaly": 8.16905529503685,
+          "donor_usd_per_10_qaly": 122413.17556113923,
+          "gross_resource_usd_per_10_qaly": 195861.08089782277
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "gross_resource_usd_per_10_qaly": null
+        }
+      }
+    },
+    {
+      "id": "pessimistic",
+      "inputs": {
+        "gift_usd": 100000,
+        "bp_allocation_fraction": 0.4,
+        "course_years": 5,
+        "annual_cash_cost_usd": 700,
+        "annual_unpaid_resource_usd": 650,
+        "baseline_five_year_first_cvd_risk": 0.03,
+        "achieved_sbp_difference_mm_hg": 3,
+        "rr_per_10_mm_hg": 0.8,
+        "funding_additionality": 0.2,
+        "discount": 0.03,
+        "fatal_event_share": 0.1,
+        "stroke_event_share": 0.2,
+        "mi_event_share": 0.4,
+        "hf_event_share": 0.3,
+        "fatal_utility": 0.65,
+        "fatal_annual_competing_mortality": 0.08,
+        "fatal_years": 10,
+        "stroke_utility_loss": 0.1,
+        "stroke_years": 3,
+        "mi_utility_loss": 0.02,
+        "mi_years": 1,
+        "hf_utility_loss": 0.05,
+        "hf_years": 3,
+        "shared_qaly_harm_per_offer": 0.0002,
+        "donor_specific_qaly_harm": 0,
+        "sf_health_share": 0,
+        "rest_bay_health_share": 0.7,
+        "clip_health_at_course_end": false
+      },
+      "outputs": {
+        "offered_five_year_courses": 11.428571428571429,
+        "cumulative_rr": 0.9352484478226214,
+        "event_schedule": [
+          {
+            "year": 1,
+            "absolute_first_event_difference": 0.00039777403713436854
+          },
+          {
+            "year": 2,
+            "absolute_first_event_difference": 0.00039310064022427937
+          },
+          {
+            "year": 3,
+            "absolute_first_event_difference": 0.0003884684394109758
+          },
+          {
+            "year": 4,
+            "absolute_first_event_difference": 0.0003838771117761503
+          },
+          {
+            "year": 5,
+            "absolute_first_event_difference": 0.0003793263367754193
+          }
+        ],
+        "weighted_qaly_per_first_event": 0.4591916343045942,
+        "unadjusted_health_per_offer": 0.0008175939950905432,
+        "gross_resource_usd": 137142.85714285716,
+        "global": {
+          "qaly": 0.0014116434173498133,
+          "donor_usd_per_10_qaly": 708394193.3986253,
+          "gross_resource_usd_per_10_qaly": 971512036.660972
+        },
+        "bay": {
+          "qaly": 0.0009881503921448692,
+          "donor_usd_per_10_qaly": 1011991704.8551791,
+          "gross_resource_usd_per_10_qaly": 1387874338.087103
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "gross_resource_usd_per_10_qaly": null
+        }
+      }
+    },
+    {
+      "id": "no_funding",
+      "inputs": {
+        "gift_usd": 100000,
+        "bp_allocation_fraction": 0.4,
+        "course_years": 5,
+        "annual_cash_cost_usd": 350,
+        "annual_unpaid_resource_usd": 450,
+        "baseline_five_year_first_cvd_risk": 0.1,
+        "achieved_sbp_difference_mm_hg": 10,
+        "rr_per_10_mm_hg": 0.8,
+        "funding_additionality": 0,
+        "discount": 0.03,
+        "fatal_event_share": 0.2,
+        "stroke_event_share": 0.3,
+        "mi_event_share": 0.3,
+        "hf_event_share": 0.2,
+        "fatal_utility": 0.75,
+        "fatal_annual_competing_mortality": 0.05,
+        "fatal_years": 20,
+        "stroke_utility_loss": 0.15,
+        "stroke_years": 5,
+        "mi_utility_loss": 0.04,
+        "mi_years": 2,
+        "hf_utility_loss": 0.1,
+        "hf_years": 5,
+        "shared_qaly_harm_per_offer": 0.001,
+        "donor_specific_qaly_harm": 0,
+        "sf_health_share": 0,
+        "rest_bay_health_share": 0.85,
+        "clip_health_at_course_end": false
+      },
+      "outputs": {
+        "offered_five_year_courses": 22.857142857142858,
+        "cumulative_rr": 0.8,
+        "event_schedule": [
+          {
+            "year": 1,
+            "absolute_first_event_difference": 0.004313595970452888
+          },
+          {
+            "year": 2,
+            "absolute_first_event_difference": 0.004152312000455127
+          },
+          {
+            "year": 3,
+            "absolute_first_event_difference": 0.003995570863283008
+          },
+          {
+            "year": 4,
+            "absolute_first_event_difference": 0.00384325832188534
+          },
+          {
+            "year": 5,
+            "absolute_first_event_difference": 0.00369526284392329
+          }
+        ],
+        "weighted_qaly_per_first_event": 1.7056463469337884,
+        "unadjusted_health_per_offer": 0.03131681711252741,
+        "gross_resource_usd": 151428.57142857142,
+        "global": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "gross_resource_usd_per_10_qaly": null
+        },
+        "bay": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "gross_resource_usd_per_10_qaly": null
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "gross_resource_usd_per_10_qaly": null
+        }
+      }
+    },
+    {
+      "id": "no_clinical_difference",
+      "inputs": {
+        "gift_usd": 100000,
+        "bp_allocation_fraction": 0.4,
+        "course_years": 5,
+        "annual_cash_cost_usd": 350,
+        "annual_unpaid_resource_usd": 450,
+        "baseline_five_year_first_cvd_risk": 0.1,
+        "achieved_sbp_difference_mm_hg": 0,
+        "rr_per_10_mm_hg": 0.8,
+        "funding_additionality": 0.5,
+        "discount": 0.03,
+        "fatal_event_share": 0.2,
+        "stroke_event_share": 0.3,
+        "mi_event_share": 0.3,
+        "hf_event_share": 0.2,
+        "fatal_utility": 0.75,
+        "fatal_annual_competing_mortality": 0.05,
+        "fatal_years": 20,
+        "stroke_utility_loss": 0.15,
+        "stroke_years": 5,
+        "mi_utility_loss": 0.04,
+        "mi_years": 2,
+        "hf_utility_loss": 0.1,
+        "hf_years": 5,
+        "shared_qaly_harm_per_offer": 0,
+        "donor_specific_qaly_harm": 0,
+        "sf_health_share": 0,
+        "rest_bay_health_share": 0.85,
+        "clip_health_at_course_end": false
+      },
+      "outputs": {
+        "offered_five_year_courses": 22.857142857142858,
+        "cumulative_rr": 1,
+        "event_schedule": [
+          {
+            "year": 1,
+            "absolute_first_event_difference": 0
+          },
+          {
+            "year": 2,
+            "absolute_first_event_difference": 0
+          },
+          {
+            "year": 3,
+            "absolute_first_event_difference": 0
+          },
+          {
+            "year": 4,
+            "absolute_first_event_difference": 0
+          },
+          {
+            "year": 5,
+            "absolute_first_event_difference": 0
+          }
+        ],
+        "weighted_qaly_per_first_event": 1.7056463469337884,
+        "unadjusted_health_per_offer": 0,
+        "gross_resource_usd": 151428.57142857142,
+        "global": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "gross_resource_usd_per_10_qaly": null
+        },
+        "bay": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "gross_resource_usd_per_10_qaly": null
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "gross_resource_usd_per_10_qaly": null
+        }
+      }
+    },
+    {
+      "id": "no_clinical_gain_with_treatment_harm",
+      "inputs": {
+        "gift_usd": 100000,
+        "bp_allocation_fraction": 0.4,
+        "course_years": 5,
+        "annual_cash_cost_usd": 350,
+        "annual_unpaid_resource_usd": 450,
+        "baseline_five_year_first_cvd_risk": 0.1,
+        "achieved_sbp_difference_mm_hg": 0,
+        "rr_per_10_mm_hg": 0.8,
+        "funding_additionality": 0.5,
+        "discount": 0.03,
+        "fatal_event_share": 0.2,
+        "stroke_event_share": 0.3,
+        "mi_event_share": 0.3,
+        "hf_event_share": 0.2,
+        "fatal_utility": 0.75,
+        "fatal_annual_competing_mortality": 0.05,
+        "fatal_years": 20,
+        "stroke_utility_loss": 0.15,
+        "stroke_years": 5,
+        "mi_utility_loss": 0.04,
+        "mi_years": 2,
+        "hf_utility_loss": 0.1,
+        "hf_years": 5,
+        "shared_qaly_harm_per_offer": 0.001,
+        "donor_specific_qaly_harm": 0,
+        "sf_health_share": 0,
+        "rest_bay_health_share": 0.85,
+        "clip_health_at_course_end": false
+      },
+      "outputs": {
+        "offered_five_year_courses": 22.857142857142858,
+        "cumulative_rr": 1,
+        "event_schedule": [
+          {
+            "year": 1,
+            "absolute_first_event_difference": 0
+          },
+          {
+            "year": 2,
+            "absolute_first_event_difference": 0
+          },
+          {
+            "year": 3,
+            "absolute_first_event_difference": 0
+          },
+          {
+            "year": 4,
+            "absolute_first_event_difference": 0
+          },
+          {
+            "year": 5,
+            "absolute_first_event_difference": 0
+          }
+        ],
+        "weighted_qaly_per_first_event": 1.7056463469337884,
+        "unadjusted_health_per_offer": 0,
+        "gross_resource_usd": 151428.57142857142,
+        "global": {
+          "qaly": -0.011428571428571429,
+          "donor_usd_per_10_qaly": null,
+          "gross_resource_usd_per_10_qaly": null
+        },
+        "bay": {
+          "qaly": -0.009714285714285713,
+          "donor_usd_per_10_qaly": null,
+          "gross_resource_usd_per_10_qaly": null
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "gross_resource_usd_per_10_qaly": null
+        }
+      }
+    },
+    {
+      "id": "independent_donor_harm",
+      "inputs": {
+        "gift_usd": 100000,
+        "bp_allocation_fraction": 0.4,
+        "course_years": 5,
+        "annual_cash_cost_usd": 350,
+        "annual_unpaid_resource_usd": 450,
+        "baseline_five_year_first_cvd_risk": 0.1,
+        "achieved_sbp_difference_mm_hg": 10,
+        "rr_per_10_mm_hg": 0.8,
+        "funding_additionality": 0,
+        "discount": 0.03,
+        "fatal_event_share": 0.2,
+        "stroke_event_share": 0.3,
+        "mi_event_share": 0.3,
+        "hf_event_share": 0.2,
+        "fatal_utility": 0.75,
+        "fatal_annual_competing_mortality": 0.05,
+        "fatal_years": 20,
+        "stroke_utility_loss": 0.15,
+        "stroke_years": 5,
+        "mi_utility_loss": 0.04,
+        "mi_years": 2,
+        "hf_utility_loss": 0.1,
+        "hf_years": 5,
+        "shared_qaly_harm_per_offer": 0.001,
+        "donor_specific_qaly_harm": 0.1,
+        "sf_health_share": 0,
+        "rest_bay_health_share": 0.85,
+        "clip_health_at_course_end": false
+      },
+      "outputs": {
+        "offered_five_year_courses": 22.857142857142858,
+        "cumulative_rr": 0.8,
+        "event_schedule": [
+          {
+            "year": 1,
+            "absolute_first_event_difference": 0.004313595970452888
+          },
+          {
+            "year": 2,
+            "absolute_first_event_difference": 0.004152312000455127
+          },
+          {
+            "year": 3,
+            "absolute_first_event_difference": 0.003995570863283008
+          },
+          {
+            "year": 4,
+            "absolute_first_event_difference": 0.00384325832188534
+          },
+          {
+            "year": 5,
+            "absolute_first_event_difference": 0.00369526284392329
+          }
+        ],
+        "weighted_qaly_per_first_event": 1.7056463469337884,
+        "unadjusted_health_per_offer": 0.03131681711252741,
+        "gross_resource_usd": 151428.57142857142,
+        "global": {
+          "qaly": -0.1,
+          "donor_usd_per_10_qaly": null,
+          "gross_resource_usd_per_10_qaly": null
+        },
+        "bay": {
+          "qaly": -0.085,
+          "donor_usd_per_10_qaly": null,
+          "gross_resource_usd_per_10_qaly": null
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "gross_resource_usd_per_10_qaly": null
+        }
+      }
+    },
+    {
+      "id": "severe_untreated_stress",
+      "inputs": {
+        "gift_usd": 100000,
+        "bp_allocation_fraction": 0.4,
+        "course_years": 5,
+        "annual_cash_cost_usd": 200,
+        "annual_unpaid_resource_usd": 300,
+        "baseline_five_year_first_cvd_risk": 0.25,
+        "achieved_sbp_difference_mm_hg": 30,
+        "rr_per_10_mm_hg": 0.8,
+        "funding_additionality": 0.8,
+        "discount": 0.03,
+        "fatal_event_share": 0.25,
+        "stroke_event_share": 0.35,
+        "mi_event_share": 0.2,
+        "hf_event_share": 0.2,
+        "fatal_utility": 0.8,
+        "fatal_annual_competing_mortality": 0.03,
+        "fatal_years": 30,
+        "stroke_utility_loss": 0.2,
+        "stroke_years": 7,
+        "mi_utility_loss": 0.05,
+        "mi_years": 3,
+        "hf_utility_loss": 0.12,
+        "hf_years": 7,
+        "shared_qaly_harm_per_offer": 0.0005,
+        "donor_specific_qaly_harm": 0,
+        "sf_health_share": 0,
+        "rest_bay_health_share": 0.95,
+        "clip_health_at_course_end": false
+      },
+      "outputs": {
+        "offered_five_year_courses": 40,
+        "cumulative_rr": 0.5120000000000001,
+        "event_schedule": [
+          {
+            "year": 1,
+            "absolute_first_event_difference": 0.028891108025410728
+          },
+          {
+            "year": 2,
+            "absolute_first_event_difference": 0.02649505664604959
+          },
+          {
+            "year": 3,
+            "absolute_first_event_difference": 0.02425406944975387
+          },
+          {
+            "year": 4,
+            "absolute_first_event_difference": 0.022158906396454913
+          },
+          {
+            "year": 5,
+            "absolute_first_event_difference": 0.020200859482330878
+          }
+        ],
+        "weighted_qaly_per_first_event": 3.2470946155837015,
+        "unadjusted_health_per_offer": 0.36475588264130093,
+        "gross_resource_usd": 160000,
+        "global": {
+          "qaly": 11.65618824452163,
+          "donor_usd_per_10_qaly": 85791.33924591486,
+          "gross_resource_usd_per_10_qaly": 137266.14279346378
+        },
+        "bay": {
+          "qaly": 11.073378832295548,
+          "donor_usd_per_10_qaly": 90306.6728904367,
+          "gross_resource_usd_per_10_qaly": 144490.67662469874
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "gross_resource_usd_per_10_qaly": null
+        }
+      }
+    },
+    {
+      "id": "central_calendar5_only",
+      "inputs": {
+        "gift_usd": 100000,
+        "bp_allocation_fraction": 0.4,
+        "course_years": 5,
+        "annual_cash_cost_usd": 350,
+        "annual_unpaid_resource_usd": 450,
+        "baseline_five_year_first_cvd_risk": 0.1,
+        "achieved_sbp_difference_mm_hg": 10,
+        "rr_per_10_mm_hg": 0.8,
+        "funding_additionality": 0.5,
+        "discount": 0.03,
+        "fatal_event_share": 0.2,
+        "stroke_event_share": 0.3,
+        "mi_event_share": 0.3,
+        "hf_event_share": 0.2,
+        "fatal_utility": 0.75,
+        "fatal_annual_competing_mortality": 0.05,
+        "fatal_years": 20,
+        "stroke_utility_loss": 0.15,
+        "stroke_years": 5,
+        "mi_utility_loss": 0.04,
+        "mi_years": 2,
+        "hf_utility_loss": 0.1,
+        "hf_years": 5,
+        "shared_qaly_harm_per_offer": 0.001,
+        "donor_specific_qaly_harm": 0,
+        "sf_health_share": 0,
+        "rest_bay_health_share": 0.85,
+        "clip_health_at_course_end": true
+      },
+      "outputs": {
+        "offered_five_year_courses": 22.857142857142858,
+        "cumulative_rr": 0.8,
+        "event_schedule": [
+          {
+            "year": 1,
+            "absolute_first_event_difference": 0.004313595970452888,
+            "clipped_qaly_per_first_event": 0.7267602337115422
+          },
+          {
+            "year": 2,
+            "absolute_first_event_difference": 0.004152312000455127,
+            "clipped_qaly_per_first_event": 0.5711694091936961
+          },
+          {
+            "year": 3,
+            "absolute_first_event_difference": 0.003995570863283008,
+            "clipped_qaly_per_first_event": 0.4024761994532944
+          },
+          {
+            "year": 4,
+            "absolute_first_event_difference": 0.00384325832188534,
+            "clipped_qaly_per_first_event": 0.20936893203883494
+          },
+          {
+            "year": 5,
+            "absolute_first_event_difference": 0.00369526284392329,
+            "clipped_qaly_per_first_event": 0
+          }
+        ],
+        "weighted_qaly_per_first_event": 1.7056463469337884,
+        "unadjusted_health_per_offer": 0.007465759215996012,
+        "gross_resource_usd": 151428.57142857142,
+        "global": {
+          "qaly": 0.07389439103995442,
+          "donor_usd_per_10_qaly": 13532826.861774987,
+          "gross_resource_usd_per_10_qaly": 20492566.390687834
+        },
+        "bay": {
+          "qaly": 0.06281023238396126,
+          "donor_usd_per_10_qaly": 15920972.778558806,
+          "gross_resource_usd_per_10_qaly": 24108901.636103332
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "gross_resource_usd_per_10_qaly": null
+        }
+      }
+    },
+    {
+      "id": "severe_untreated_stress_calendar5_only",
+      "inputs": {
+        "gift_usd": 100000,
+        "bp_allocation_fraction": 0.4,
+        "course_years": 5,
+        "annual_cash_cost_usd": 200,
+        "annual_unpaid_resource_usd": 300,
+        "baseline_five_year_first_cvd_risk": 0.25,
+        "achieved_sbp_difference_mm_hg": 30,
+        "rr_per_10_mm_hg": 0.8,
+        "funding_additionality": 0.8,
+        "discount": 0.03,
+        "fatal_event_share": 0.25,
+        "stroke_event_share": 0.35,
+        "mi_event_share": 0.2,
+        "hf_event_share": 0.2,
+        "fatal_utility": 0.8,
+        "fatal_annual_competing_mortality": 0.03,
+        "fatal_years": 30,
+        "stroke_utility_loss": 0.2,
+        "stroke_years": 7,
+        "mi_utility_loss": 0.05,
+        "mi_years": 3,
+        "hf_utility_loss": 0.12,
+        "hf_years": 7,
+        "shared_qaly_harm_per_offer": 0.0005,
+        "donor_specific_qaly_harm": 0,
+        "sf_health_share": 0,
+        "rest_bay_health_share": 0.95,
+        "clip_health_at_course_end": true
+      },
+      "outputs": {
+        "offered_five_year_courses": 40,
+        "cumulative_rr": 0.5120000000000001,
+        "event_schedule": [
+          {
+            "year": 1,
+            "absolute_first_event_difference": 0.028891108025410728,
+            "clipped_qaly_per_first_event": 1.0410657202230165
+          },
+          {
+            "year": 2,
+            "absolute_first_event_difference": 0.02649505664604959,
+            "clipped_qaly_per_first_event": 0.8098137888054383
+          },
+          {
+            "year": 3,
+            "absolute_first_event_difference": 0.02425406944975387,
+            "clipped_qaly_per_first_event": 0.555905363370723
+          },
+          {
+            "year": 4,
+            "absolute_first_event_difference": 0.022158906396454913,
+            "clipped_qaly_per_first_event": 0.2862912621359223
+          },
+          {
+            "year": 5,
+            "absolute_first_event_difference": 0.020200859482330878,
+            "clipped_qaly_per_first_event": 0
+          }
+        ],
+        "weighted_qaly_per_first_event": 3.2470946155837015,
+        "unadjusted_health_per_offer": 0.06740119290885334,
+        "gross_resource_usd": 160000,
+        "global": {
+          "qaly": 2.140838173083307,
+          "donor_usd_per_10_qaly": 467106.768074752,
+          "gross_resource_usd_per_10_qaly": 747370.8289196033
+        },
+        "bay": {
+          "qaly": 2.0337962644291414,
+          "donor_usd_per_10_qaly": 491691.3348155285,
+          "gross_resource_usd_per_10_qaly": 786706.1357048455
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "gross_resource_usd_per_10_qaly": null
+        }
+      }
+    }
+  ],
+  "provenance": "V2 adds explicit post-care event catch-up caveat and central/severe calendar-year5 clipping sensitivities. Original eight core scenario outputs preserved; no tuning of prices or effect parameters."
+}

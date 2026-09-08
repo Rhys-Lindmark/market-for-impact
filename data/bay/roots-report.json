@@ -1,0 +1,284 @@
+{
+  "organization": "Roots Community Health",
+  "eyebrow": "California clinical and social-service organization · Bay health",
+  "program": "Conditional whole-organization value of a $100,000 unrestricted gift",
+  "donationUrl": "https://rootscommunityhealth.org/donate/",
+  "published": "September 8, 2026",
+  "modelVersion": "roots-whole-gift-bp-v1",
+  "nutshell": {
+    "headline": "Treating uncontrolled blood pressure can prevent serious disease. The next gift's clinical effect is unmeasured.",
+    "body": "Our conditional central estimate is $3.56 million per 10 Bay-resident QALYs. The favorable donor scenario is $94,166, but $141,249 with additional resources and $381,400 when health is clipped to the five-year care window. These are different scopes, not interchangeable prices. The pessimistic scenario has slightly negative health.",
+    "whyItMayWork": "Roots offers complex primary care and navigation. Randomized treatment evidence supports cardiovascular risk reduction when care achieves a sustained blood-pressure difference.",
+    "whyWeAreCautious": "Current high-risk case mix, complete course costs, gift allocation and additional clinical outcomes are not measured. Historical care-team proposals are not current results.",
+    "recommendationBlocker": "Conditional research, not a funding recommendation: no verified additional high-risk cohort or current complete care budget."
+  },
+  "summary": [
+    {
+      "label": "Central donor cost / 10 QALYs",
+      "value": "$3.56M Bay / $3.38M US",
+      "detail": "Same $100,000 gift: 0.281152 Bay QALYs, 0.295950 US QALYs. SF remains unquantified with zero numerical credit, not evidence of no SF patients."
+    },
+    {
+      "label": "Whole-gift boundary",
+      "value": "$100,000 once",
+      "detail": "Central25% BP course allocation,75% shared and other portfolio work with unquantified health. Allocation is judgmental, not audited spending."
+    },
+    {
+      "label": "Recipient",
+      "value": "Roots Community Health · EIN26-2583954",
+      "detail": "Official giving disclosure verifies this California recipient; not Seattle Roots or Roots of Health in the Philippines."
+    },
+    {
+      "label": "Central gross resource envelope",
+      "value": "$112,500",
+      "detail": "Includes hypothetical additional public/partner resources; not net incremental societal cost. Family time omitted."
+    }
+  ],
+  "programSection": {
+    "body": "Current referrals cover complex primary care, diabetes, counseling and medication management, plus benefits, re-entry, education and family navigation. A general gift supports the whole organization. This model quantifies only a prospective sustained-BP-treatment component while retaining all gift costs.",
+    "steps": [
+      {
+        "title": "Allocate the whole gift",
+        "detail": "The BP allocation reserves five years of direct cash. Shared and other work keeps its cost but has no quantified benefit here."
+      },
+      {
+        "title": "Reach a selected high-risk cohort",
+        "detail": "Course cost includes screening, ineligible candidates and failed engagement. The20% central first-event risk does not describe all referrals."
+      },
+      {
+        "title": "Change treatment beyond usual care",
+        "detail": "The achieved BP difference includes incomplete uptake and persistence. Financial additionality separately tests whether the gift replaces already-funded activity."
+      },
+      {
+        "title": "Count finite first-event consequences",
+        "detail": "Only first cardiovascular events during five care years count. Finite postevent consequences are discounted; a separate clipped scenario tests dependence on later health."
+      }
+    ],
+    "boundary": "All quantified health is US-resident health. Bay and SF are nested resident-share priors, not clinic counts. No duplicated patient-time benefits with other clinical or navigation reports."
+  },
+  "model": {
+    "headline": "Finite cardiovascular outcomes, not visits counted as health",
+    "body": "Central courses start three months after the gift. Annual first-event risks reproduce five-year cumulative risk exactly. Events occur at midyear; health flows begin one year afterward. Core finite consequences assume prevented early events are not merely delayed until after year5.",
+    "equation": {
+      "label": "Whole-gift clinical bridge",
+      "expression": "N=gift×BP allocation/course cash. R1=R0×0.8^(achieved SBP/10). Q=N×funding additionality×(sum of annual first-event differences×finite discounted health consequences−shared harm)−independent donor harm.",
+      "result": "Central:12.5 offered courses,0.25 incremental first events prevented,0.295950 US QALYs and0.281152 Bay QALYs."
+    },
+    "inputs": [
+      {
+        "key": "allocation",
+        "label": "BP allocation / five-year course cash",
+        "confidence": "Analyst judgment",
+        "best": "25% / $2,000",
+        "range": "10–50% / $1,000–$4,000",
+        "basis": "Whole gift remains numerator. Costs include selection, unsuccessful engagement and direct clinical delivery; other institutional costs remain outside this allocation."
+      },
+      {
+        "key": "clinical",
+        "label": "Five-year usual-care risk / achieved SBP difference",
+        "confidence": "Local judgments; external causal RR",
+        "best": "20% / 10mmHg",
+        "range": "5–30% / 3–20mmHg",
+        "basis": "Applies to selected high-risk offered-course cohort. Achieved difference includes adherence; no second adherence multiplier."
+      },
+      {
+        "key": "additionality",
+        "label": "Financial additionality",
+        "confidence": "Analyst judgment",
+        "best": "50%",
+        "range": "0–80%",
+        "basis": "Replacement of existing activity differs from the clinical no-gift comparator. No verified priced tranche."
+      },
+      {
+        "key": "health",
+        "label": "Fatal share and finite health consequences",
+        "confidence": "Analyst judgment",
+        "best": "20% fatal;0.75 utility for10 years; nonfatal0.10 loss for5 years",
+        "range": "Fatal share10–30%; finite fatal5–20 and nonfatal2–5 years",
+        "basis": "Mutually exclusive first-event consequences;5% annual postevent competing mortality,3% discount. Not published lifetime QALYs."
+      },
+      {
+        "key": "timing",
+        "label": "Course duration / start delay",
+        "confidence": "Analyst judgment",
+        "best": "5 years / 3 months",
+        "range": "Start delay1.5–6 months",
+        "basis": "Complete cash reserved at gift. Delay shifts events and care-year5 clipping window."
+      },
+      {
+        "key": "geography",
+        "label": "Bay / SF resident share",
+        "confidence": "Allocation prior; SF unquantified",
+        "best": "95% / zero quantified credit",
+        "range": "Bay90–98%; SF0",
+        "basis": "No current resident utilization denominator establishes these shares. Bay includes SF."
+      },
+      {
+        "key": "resources",
+        "label": "Additional gross resources per offered course",
+        "confidence": "Unpriced stress",
+        "best": "$1,000",
+        "range": "$0 lower-bound cost sensitivity",
+        "basis": "Gross associated inputs outside donor cash, not an established genuinely incremental amount. No double charging of donor cash items. Family time omitted."
+      },
+      {
+        "key": "harms",
+        "label": "Shared course harm",
+        "confidence": "Explicit judgment",
+        "best": "0.001 discounted QALY/course",
+        "range": "Zero-gain and independent-harm cases included",
+        "basis": "Shared harm before funding additionality; independent donor harm survives zero additionality. Not a sourced adverse-event rate."
+      }
+    ],
+    "giftHeading": "Same $100,000 gift in every scenario",
+    "sensitivity": [
+      {
+        "case": "central",
+        "headline": "Bay donor: $3,556,794/10 QALYs",
+        "detail": "Bay QALYs 0.281152102; US 0.295949581; SF0 quantified. US donor $3,378,954/10 QALYs. Gross resource envelope $112,500; Bay resource $4,001,393/10 QALYs."
+      },
+      {
+        "case": "favorable joint stress",
+        "headline": "Bay donor: $94,166/10 QALYs",
+        "detail": "Bay QALYs 10.6195665; US 10.8362924; SF0 quantified. US donor $92,282/10 QALYs. Gross resource envelope $150,000; Bay resource $141,249/10 QALYs."
+      },
+      {
+        "case": "pessimistic",
+        "headline": "Bay donor: No finite positive ratio",
+        "detail": "Bay QALYs -0.0000431218920; US -0.0000479132133; SF0 quantified. US donor No finite positive ratio. Gross resource envelope $102,500; Bay resource No finite positive ratio."
+      },
+      {
+        "case": "five year health clip",
+        "headline": "Bay donor: $11,129,113/10 QALYs",
+        "detail": "Bay QALYs 0.0898544202; US 0.0945836002; SF0 quantified. US donor $10,572,657/10 QALYs. Gross resource envelope $112,500; Bay resource $12,520,252/10 QALYs."
+      },
+      {
+        "case": "favorable five year health clip",
+        "headline": "Bay donor: $381,400/10 QALYs",
+        "detail": "Bay QALYs 2.62192223; US 2.67543085; SF0 quantified. US donor $373,772/10 QALYs. Gross resource envelope $150,000; Bay resource $572,099/10 QALYs."
+      },
+      {
+        "case": "lower risk case mix",
+        "headline": "Bay donor: $15,253,030/10 QALYs",
+        "detail": "Bay QALYs 0.0655607433; US 0.0690113088; SF0 quantified. US donor $14,490,379/10 QALYs. Gross resource envelope $112,500; Bay resource $17,159,659/10 QALYs."
+      },
+      {
+        "case": "public baseline strong",
+        "headline": "Bay donor: $57,438,206/10 QALYs",
+        "detail": "Bay QALYs 0.0174100145; US 0.0183263310; SF0 quantified. US donor $54,566,296/10 QALYs. Gross resource envelope $112,500; Bay resource $64,617,982/10 QALYs."
+      },
+      {
+        "case": "no additional activity",
+        "headline": "Bay donor: No finite positive ratio",
+        "detail": "Bay QALYs 0.00000000; US 0.00000000; SF0 quantified. US donor No finite positive ratio. Gross resource envelope $112,500; Bay resource No finite positive ratio."
+      },
+      {
+        "case": "no clinical gain",
+        "headline": "Bay donor: No finite positive ratio",
+        "detail": "Bay QALYs -0.00593750000; US -0.00625000000; SF0 quantified. US donor No finite positive ratio. Gross resource envelope $112,500; Bay resource No finite positive ratio."
+      },
+      {
+        "case": "no gain no shared harm",
+        "headline": "Bay donor: No finite positive ratio",
+        "detail": "Bay QALYs 0.00000000; US 0.00000000; SF0 quantified. US donor No finite positive ratio. Gross resource envelope $112,500; Bay resource No finite positive ratio."
+      },
+      {
+        "case": "independent donor harm",
+        "headline": "Bay donor: No finite positive ratio",
+        "detail": "Bay QALYs -0.00950000000; US -0.0100000000; SF0 quantified. US donor No finite positive ratio. Gross resource envelope $112,500; Bay resource No finite positive ratio."
+      },
+      {
+        "case": "unpriced resources zero lower bound",
+        "headline": "Bay donor: $3,556,794/10 QALYs",
+        "detail": "Bay QALYs 0.281152102; US 0.295949581; SF0 quantified. US donor $3,378,954/10 QALYs. Gross resource envelope $100,000; Bay resource $3,556,794/10 QALYs."
+      }
+    ],
+    "uncertaintyBoundary": "Core retains finite health after care ends, assuming durable event consequences rather than complete later catch-up. Favorable care-year5 clipping is $381,400/10 Bay QALYs; its resource comparison is $572,099. The negative pessimistic case has no positive cost-effectiveness ratio. Scenarios are not confidence bounds.",
+    "fundingBoundary": "Official general giving is available, but does not establish BP-specific capacity or allocation. Existing Medi-Cal care and historical county-funded street medicine are baseline. Gross resources count all offers including replacement/failure, not net societal increment."
+  },
+  "evidence": [
+    {
+      "key": "rr",
+      "design": "Ettehad et al.2016 randomized-trial meta-analysis",
+      "population": "Blood-pressure-lowering trial populations",
+      "result": "RR0.80 (95%CI0.77–0.83) for major cardiovascular events per10mmHg achieved systolic reduction.",
+      "transfer": "Supports treatment mechanism, not Roots' achieved difference, local risk or health utility. Verified from author-institution indexed abstract; not fresh full-paper retrieval."
+    },
+    {
+      "key": "counterweight",
+      "design": "HOPE-3 randomized trial",
+      "population": "Intermediate-risk adults without cardiovascular disease",
+      "result": "Benefit concentrated in highest baseline-BP third; middle and lower thirds neutral.",
+      "transfer": "Do not extrapolate high-risk treatment gains to every primary-care referral."
+    },
+    {
+      "key": "delivery",
+      "design": "Current provider referral and giving disclosures",
+      "population": "Roots clinical and navigation clients",
+      "result": "Actual complex primary care and navigation verified; official EIN disclosed.",
+      "transfer": "Neither service listings nor old proposals demonstrate incremental health or current capacity."
+    }
+  ],
+  "reservations": [
+    "No current BP-specific complete price, high-risk backlog or achieved between-counterfactual BP outcome.",
+    "Whole-gift allocation is judgmental; current audited functional spending was not retrieved.",
+    "Severity, utility, duration and resident shares are priors. Noncore benefits and harms remain unquantified.",
+    "The favorable donor estimate crosses the threshold only jointly; the resource-inclusive and clipped versions do not."
+  ],
+  "excludedBenefits": [
+    "Other primary and behavioral health outcomes",
+    "Housing, employment, re-entry and family benefits",
+    "Pulse-oximetry advocacy and broader policy effects",
+    "Economic welfare, recurrent CVD and overlapping partner benefits"
+  ],
+  "sources": [
+    {
+      "publisher": "Roots Community Health",
+      "title": "Current referral page",
+      "url": "https://rootscommunityhealth.org/make-a-referral/",
+      "published": "Undated",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official provider disclosure"
+    },
+    {
+      "publisher": "Roots Community Health",
+      "title": "Donate; EIN and general giving",
+      "url": "https://rootscommunityhealth.org/donate/",
+      "published": "Undated",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official provider disclosure"
+    },
+    {
+      "publisher": "Roots Community Health",
+      "title": "Care team proposals, not achieved/current outputs",
+      "url": "https://development.rootsclinic.org/care-team/",
+      "published": "2016–2017",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official provider disclosure"
+    },
+    {
+      "publisher": "Ettehad et al.; Oxford author institution",
+      "title": "Blood pressure lowering trial meta-analysis abstract",
+      "url": "https://www.ndph.ox.ac.uk/publications/586376",
+      "published": "2016",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary meta-analysis; author-institution indexed abstract"
+    },
+    {
+      "publisher": "Lonn et al.; New England Journal of Medicine",
+      "title": "HOPE-3 blood-pressure randomized trial",
+      "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa1600175",
+      "published": "2016",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary randomized trial"
+    },
+    {
+      "publisher": "California Health Care Foundation",
+      "title": "Street Medicine Amid the COVID-19 Pandemic",
+      "url": "https://www.chcf.org/wp-content/uploads/2021/01/StreetMedicineAmidCOVID19Pandemic.pdf",
+      "published": "2021",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary funder account, historical"
+    }
+  ]
+}

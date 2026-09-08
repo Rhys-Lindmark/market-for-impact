@@ -1,32 +1,32 @@
-.sf-home { background:#fff; color:#253b43; font-family:Arial,Helvetica,sans-serif; font-size:17px; line-height:1.6; }
-.sf-home a { color:#176b82; text-decoration:underline; text-underline-offset:4px; }
-.sf-home-nav { max-width:1180px; margin:auto; padding:24px 32px; display:flex; justify-content:space-between; align-items:center; gap:24px; border-bottom:1px solid #d6e2e5; }
-.sf-home-nav .sf-home-brand { font-size:24px; font-weight:700; color:#203f4a; text-decoration:none; }
-.sf-home main { max-width:1120px; margin:auto; padding:0 32px; }
-.sf-home-intro { max-width:800px; padding:55px 0 28px; }
-.sf-home .sf-home-eyebrow,.sf-home h3 { text-transform:uppercase; color:#47717e; font-size:14px; font-weight:700; letter-spacing:.09em; margin:0 0 12px; }
-.sf-home h1 { font-family:Georgia,serif; font-size:clamp(42px,6vw,68px); line-height:1.06; font-weight:400; letter-spacing:-.035em; margin:0 0 22px; }
-.sf-home .sf-home-lead { font-size:24px; line-height:1.4; }
-.sf-home p { margin:0 0 18px; }
-.sf-home-unit { background:#eff6f8; padding:18px 22px; border-left:4px solid #277b90; }
-.sf-home small { font-size:14px; color:#5d6b70; }
-.sf-home-jump { display:flex; flex-wrap:wrap; gap:12px 26px; border-top:1px solid #d6e2e5; padding:20px 0; }
-.sf-home-jump a { min-height:44px; display:inline-flex; align-items:center; }
-.sf-home-charity { padding:42px 0; border-top:2px solid #b8cdd4; scroll-margin-top:20px; }
-.sf-home-charity h2 { font-family:Georgia,serif; font-size:clamp(30px,4vw,44px); line-height:1.15; font-weight:400; margin:0 0 14px; max-width:750px; letter-spacing:-.02em; }
-.sf-home-org { font-size:22px; font-weight:700; display:inline-block; margin-bottom:28px; }
-.sf-home-charity-body { display:grid; grid-template-columns:1fr 1fr; gap:60px; }
-.sf-home h3 { margin-top:18px; }
-.sf-home-estimate { padding:22px 28px; background:#f1f7f9; align-self:start; }
-.sf-home-estimate h3 { margin-top:0; }
-.sf-home-price { display:block; color:#145267; font-size:clamp(40px,5vw,60px); font-weight:400; font-family:Georgia,serif; line-height:1.2; }
-.sf-home .sf-home-price-unit { font-size:20px; font-weight:700; margin:8px 0; }
-.sf-home-range,.sf-home-funding { font-size:15px; }
-.sf-home details { border-top:1px solid #b8cdd4; padding:12px 0; }
-.sf-home summary { cursor:pointer; min-height:44px; font-size:16px; font-weight:700; }
-.sf-home details p { font-size:16px; }
-.sf-home-report { display:inline-flex; align-items:center; min-height:48px; margin-top:18px; font-weight:700; }
-.sf-home-footer { border-top:2px solid #b8cdd4; padding:32px 0 70px; }
-.sf-home-footer p { max-width:850px; font-size:16px; }
-.sf-home-footer a { font-size:24px; font-weight:700; display:inline-flex; min-height:48px; align-items:center; }
-@media(max-width:680px) { .sf-home-nav { padding:20px; align-items:flex-start; flex-direction:column; gap:6px; }.sf-home main { padding:0 20px; }.sf-home-intro { padding-top:35px; }.sf-home-charity-body { grid-template-columns:1fr; gap:12px; }.sf-home-estimate { padding:22px; }.sf-home-jump { gap:8px 20px; }.sf-home-charity { padding:32px 0; } }
+.sf-home main { max-width:1180px; margin:auto; padding:0 30px; }
+.sf-home-intro { padding:30px 0 0; }
+.sf-home h1 { color:var(--gb-heading); font-size:38px; line-height:1.2; margin:0 0 8px; font-weight:800; }
+.sf-home .sf-home-lead { font-family:Avenir,'Avenir Next',Arial,sans-serif; color:#5b727d; font-size:24px; font-weight:700; line-height:1.35; margin:0 0 10px; }
+.sf-home-intro small { font-size:14px; }
+.sf-home-principles { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:40px; padding:48px 0 30px; }
+.sf-home-principles h2 { font-size:21px; line-height:1.3; font-weight:800; margin:14px 0 10px; }
+.sf-home-principles p { margin:0; }
+.sf-home-illustration { width:200px; height:200px; margin:auto; background-image:url('/images/givebetter-principles.png'); background-size:300% auto; background-repeat:no-repeat; background-position-y:center; }
+.sf-home-note { font-size:14px; color:#666; max-width:1000px; margin:0 0 35px; }
+.sf-home-charity { display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); gap:80px; padding:55px 0 70px; scroll-margin-top:20px; }
+.sf-home-charity:nth-child(even) { grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr); }
+.sf-home-charity:nth-child(even) figure { order:2; }
+.sf-home-charity figure { margin:32px 0 0; align-self:start; }
+.sf-home-charity figure img { display:block; width:100%; height:480px; object-fit:cover; }
+.sf-home-charity figcaption { font-size:13px; color:#777; text-align:center; line-height:1.35; padding:8px 4px; }
+.sf-home-charity figcaption a { color:inherit; }
+.sf-home-eyebrow { font-family:Avenir,'Avenir Next',Arial,sans-serif; color:#777; font-size:14px; text-transform:uppercase; margin:0 0 5px; }
+.sf-home-charity h2 { font-size:34px; font-weight:800; line-height:1.2; margin:0 0 15px; }
+.sf-home-charity-body { border-top:1px solid var(--gb-rule); border-left:1px solid var(--gb-rule); padding:0 0 0 23px; }
+.sf-home-charity-body section { position:relative; padding-top:24px; }
+.sf-home-charity-body section:before { content:''; position:absolute; left:-24px; top:37px; width:16px; height:1px; background:var(--gb-rule); }
+.sf-home h3 { text-transform:uppercase; font-size:14px; color:#777; font-weight:500; line-height:1.4; margin:0 0 6px; }
+.sf-home-charity p { margin:0 0 8px; }
+.sf-home-org-card { border-left:4px solid #4093b2; padding:17px 20px; box-shadow:0 2px 8px #0002; }
+.sf-home-org-card h4 { margin:0 0 4px; font-size:21px; font-weight:800; line-height:1.3; }
+.sf-home-report { display:inline-flex; align-items:center; min-height:40px; border:2px solid #4093b2; margin-top:10px; padding:6px 14px; font-family:Avenir,'Avenir Next',Arial,sans-serif; font-size:12px; font-weight:800; text-transform:uppercase; text-decoration:none; }
+.sf-home .sf-home-footer { display:block; border-top:1px solid var(--gb-rule); padding:28px 0 55px; text-align:center; }
+.sf-home-footer>a { font-family:Avenir,'Avenir Next',Arial,sans-serif; font-size:22px; }
+.sf-home-footer p { font-size:13px; color:#777; margin-top:18px; }
+@media(max-width:760px) { .sf-home .sf-home-illustration { width:200px; height:200px; } }
+@media(max-width:760px) { .sf-home main { padding:0 22px; }.sf-home h1 { font-size:32px; }.sf-home .sf-home-lead { font-size:21px; }.sf-home-principles { grid-template-columns:1fr; gap:28px; padding-top:28px; }.sf-home-illustration { width:260px; height:160px; margin:auto; }.sf-home-charity,.sf-home-charity:nth-child(even) { grid-template-columns:1fr; gap:22px; padding:30px 0 45px; }.sf-home-charity:nth-child(even) figure { order:0; }.sf-home-charity figure { margin:0; }.sf-home-charity figure img { height:320px; }.sf-home-charity h2 { font-size:29px; } }

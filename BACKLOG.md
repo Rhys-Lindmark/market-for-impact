@@ -10,7 +10,11 @@ Design first for a major donor deciding how to deploy roughly $10 million this y
 
 ## Now — foundation
 
-- [ ] **Mechanism-first2: HealthRIGHT 360 access — #170.** Two-year additional nurse-led medication access model, central $26.35M/10 QALYs; optimistic $261K, pessimistic $10.3B, null/harm possible. 240 tests, lint/build, independent audit and four local phone/tablet checks passed; native workbook A175:E209 formulas and outputs verified. Publish after GitHub/canonical gates. Next: SF Community Health Center HCV cure navigation.
+- [ ] **Mechanism-first3: SFCHC integrated HCV access — #172.** Model and report implemented: central $2.00M/10 QALYs, positive $36.5K–$309M. No verified marginal offer. Explicit cure difference, later-care/reinfection timing heuristic, gross clinical and drug-resource boundaries. Independent audit corrections incorporated; native workbook A211:E243 central formulas match. Local tests, lint/build and four phone/tablet checks passed; final release verification pending. Next: NEMS HBV care.
+
+- [ ] **Child-health discovery — #173.** User requested under5/under13 opportunities. Screen lead-remediation bottlenecks, targeted asthma and early childhood care; reconcile with existing MNC and unconventional cohort without duplicate counts. Lead evidence cautions against automatic lifetime/QALY credit.
+
+- [x] **Mechanism-first2: HealthRIGHT 360 access — #170.** Two-year additional nurse-led medication access model, central $26.35M/10 QALYs; optimistic $261K, pessimistic $10.3B, null/harm possible. 240 tests, lint/build, independent audit and four local phone/tablet checks passed; native workbook A175:E209 formulas and outputs verified. Accepted PR #171 / Sites v121, exact commit 7704842185383ad24cdf21ffceb41adbaab8d315. Canonical report/API and 29-row ascending research verified.
 
 - [x] **Mechanism-first1: DOPE additional site-year — #168.** PR #169 / Sites v120 accepted; central $2.43M/10 QALYs, current marginal funding unverified. Canonical report/API and 28-row ordering verified; 237 tests and mobile/security gates passed. This completes a research bet, not a donation recommendation.
 

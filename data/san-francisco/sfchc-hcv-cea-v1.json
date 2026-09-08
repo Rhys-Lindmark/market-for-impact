@@ -1,0 +1,255 @@
+{
+  "version": "sf-sfchc-hcv-cea-v1",
+  "reviewedAt": "2026-09-07",
+  "organization": "San Francisco Community Health Center",
+  "program": "Proposed expansion of integrated hepatitis C treatment",
+  "denominator": "10 incremental QALYs",
+  "confidence": "very-low",
+  "scope": "One additional HCV-positive eligible enrollee offered integrated clinical access instead of facilitated referral; not generic navigation or all SFCHC services.",
+  "costPerspective": "Gross additional clinical package cost, with no deduction for usual-care clinical costs or assumed reimbursement. Donor pharmacy share is zero under an unverified public/assistance-payment scenario; gross package DAA resources before funding displacement are reported separately. Not a complete societal incremental cost-effectiveness analysis.",
+  "nullBoundary": "No additional confirmed cures, zero funding additionality, or immediate universal counterfactual cure produces no positive benefit. Reinfection and later cure are not known locally. Treatment or implementation harms can outweigh gains; the central model assumes no extra harm.",
+  "overlap": "SFCHC already offers integrated care and has public support. Adding navigation inside that existing service cannot inherit the entire integrated-care-versus-referral effect. Deduplicate patients and shared health gains with SFAF, DOPE, HYA and medication-access programs; do not add independent lifetime gains to the same person without a joint model.",
+  "scenarios": [
+    {
+      "costPerEnrollee2020": 6035,
+      "startup2020": 4677,
+      "downtime2020": 3030,
+      "plannedEnrollees": 100,
+      "discountRate": 0.035,
+      "horizonYears": 20,
+      "donorDrugShare": 0,
+      "harmQalysPerEnrollee": 0,
+      "name": "Optimistic positive",
+      "costMultiplier": 1,
+      "downtimeShare": 0,
+      "accessTransfer": 1,
+      "fundingAdditionality": 0.9,
+      "referenceQalysPerCure": 6.4,
+      "reinfectionHazard": 0.02,
+      "excessMortalityHazard": 0.01,
+      "laterCureProbability": 0.2,
+      "laterCureYears": 5,
+      "benefitShape": 0,
+      "drugCostPerStart": 10000
+    },
+    {
+      "costPerEnrollee2020": 6035,
+      "startup2020": 4677,
+      "downtime2020": 3030,
+      "plannedEnrollees": 100,
+      "discountRate": 0.035,
+      "horizonYears": 20,
+      "donorDrugShare": 0,
+      "harmQalysPerEnrollee": 0,
+      "name": "Central analyst estimate",
+      "costMultiplier": 1.35,
+      "downtimeShare": 0.5,
+      "accessTransfer": 0.5,
+      "fundingAdditionality": 0.5,
+      "referenceQalysPerCure": 4,
+      "reinfectionHazard": 0.069,
+      "excessMortalityHazard": 0.03,
+      "laterCureProbability": 0.7,
+      "laterCureYears": 3,
+      "benefitShape": 1,
+      "drugCostPerStart": 15000
+    },
+    {
+      "costPerEnrollee2020": 6035,
+      "startup2020": 4677,
+      "downtime2020": 3030,
+      "plannedEnrollees": 100,
+      "discountRate": 0.035,
+      "horizonYears": 20,
+      "donorDrugShare": 0,
+      "harmQalysPerEnrollee": 0,
+      "name": "Pessimistic positive",
+      "costMultiplier": 1.7,
+      "downtimeShare": 1,
+      "accessTransfer": 0.2,
+      "fundingAdditionality": 0.25,
+      "referenceQalysPerCure": 2.3,
+      "reinfectionHazard": 0.12,
+      "excessMortalityHazard": 0.06,
+      "laterCureProbability": 0.9,
+      "laterCureYears": 1,
+      "benefitShape": 2,
+      "drugCostPerStart": 25000
+    }
+  ],
+  "assumptions": [
+    {
+      "key": "costPerEnrollee2020",
+      "label": "Clinical cost per trial enrollee, 2020 USD",
+      "basis": "Kapadia microcosting: $6,035 excludes startup, physician downtime and DAA medication. Multiply by 84/82 to retain excluded participants' resources against the eligible efficacy denominator."
+    },
+    {
+      "key": "startup2020",
+      "label": "Program startup, 2020 USD",
+      "basis": "Published $4,677; spread over an assumed 100 additional eligible people, not a verified expansion size."
+    },
+    {
+      "key": "plannedEnrollees",
+      "label": "People sharing startup costs",
+      "basis": "100-person hypothetical tranche; never equated with local contract targets."
+    },
+    {
+      "key": "downtime2020",
+      "label": "Full physician downtime per trial enrollee",
+      "basis": "Published $3,030; multiplied by scenario share and 84/82. Flexibility may require idle capacity; it is not automatically free."
+    },
+    {
+      "key": "downtimeShare",
+      "label": "Downtime charged to this package",
+      "basis": "0/50/100% judgment: integrated clinics may use some availability for other services. No local allocation verified."
+    },
+    {
+      "key": "costMultiplier",
+      "label": "Local/current cost multiplier",
+      "basis": "1/1.35/1.7 judgment, not an inflation series or SFCHC quote."
+    },
+    {
+      "key": "accessTransfer",
+      "label": "Fraction of trial incremental access retained",
+      "basis": "Trial 55/82 minus 19/83 SVR12 difference. 100/50/20% judgment for otherwise referral-only people; could be zero inside existing integrated care."
+    },
+    {
+      "key": "fundingAdditionality",
+      "label": "Share of expansion caused by gift",
+      "basis": "90/50/25% judgment; current public service and replacement funding can make this zero."
+    },
+    {
+      "key": "referenceQalysPerCure",
+      "label": "External lifetime QALY-per-cure anchor",
+      "basis": "MONARCH age-40 discounted bounds 2.3 (F0) to 6.4 (F4), algebra from 0.23–0.64 QALY per ten-percentage-point SVR improvement. Central 4 is a severity-mix judgment, not measured SF health."
+    },
+    {
+      "key": "horizonYears",
+      "label": "Effective health-benefit allocation window",
+      "basis": "20-year heuristic, not a rerun of the lifetime Markov model. External total is allocated across this window only to stress-test timing and durability."
+    },
+    {
+      "key": "benefitShape",
+      "label": "Timing weight exponent",
+      "basis": "Annual weight year^shape: uniform / linearly later / quadratically later. Source does not provide this timing distribution; it is a major model judgment."
+    },
+    {
+      "key": "discountRate",
+      "label": "Reference health discount rate",
+      "basis": "3.5% matches MONARCH. Normalize the annual weights to the already-discounted anchor, avoiding a second discount of its total."
+    },
+    {
+      "key": "reinfectionHazard",
+      "label": "Annual reinfection hazard approximation",
+      "basis": "Central .069 from 4 events/57.9 post-cure person-years in the external trial; 0.02/0.12 scenarios. Treating this short follow-up rate as a sustained hazard is speculative; no retreatment benefit included."
+    },
+    {
+      "key": "excessMortalityHazard",
+      "label": "Excess competing mortality hazard",
+      "basis": "1/3/6% annually by judgment, additional to general mortality embedded in the reference model, not total mortality."
+    },
+    {
+      "key": "laterCureProbability",
+      "label": "Counterfactual eventual cure probability",
+      "basis": "20/70/90% among people counted as additional one-year cures; judgment, not the trial control cure rate already subtracted."
+    },
+    {
+      "key": "laterCureYears",
+      "label": "Years until counterfactual cure",
+      "basis": "5/3/1-year judgment. No incremental health credit thereafter for that fraction. Does not model irreversible disease prevented before later cure."
+    },
+    {
+      "key": "drugCostPerStart",
+      "label": "Resource cost per additional DAA start",
+      "basis": "$10K/$15K/$25K analyst assumptions, not current net Medi-Cal prices. Start difference 64/82 minus 22/83, scaled by access transfer; do not multiply by cure success again. This is a conservative gross-package resource sensitivity before funding displacement, not gift-attributable net resource use."
+    },
+    {
+      "key": "donorDrugShare",
+      "label": "Donor fraction of medication costs",
+      "basis": "Zero central conditional on public/assistance payment, unverified locally. Setting one charges full drug resources without changing health."
+    },
+    {
+      "key": "harmQalysPerEnrollee",
+      "label": "Additional implementation harm",
+      "basis": "Zero central; explicit stress parameter for adverse effects and model omissions, not a measured harm estimate."
+    }
+  ],
+  "sources": [
+    {
+      "key": "provider",
+      "title": "SFCHC Wellness Clinic",
+      "url": "https://www.sfcommunityhealth.org/wellness-clinic",
+      "date": "Undated; retrieved 7 September 2026",
+      "note": "Local HCV testing, counseling and treatment; FQHC/public support. No priced expansion.",
+      "publisher": "San Francisco Community Health Center",
+      "published": "Undated",
+      "retrieved": "2026-09-07",
+      "sourceType": "Provider disclosure"
+    },
+    {
+      "key": "entity",
+      "title": "SFCHC donation identity",
+      "url": "https://www.sfcommunityhealth.org/donate",
+      "date": "Undated; retrieved 7 September 2026",
+      "note": "Asian and Pacific Islander Wellness Center, Inc.; EIN 94-3096109. General giving route, not a restricted HCV offer.",
+      "publisher": "San Francisco Community Health Center",
+      "published": "Undated",
+      "retrieved": "2026-09-07",
+      "sourceType": "Provider disclosure"
+    },
+    {
+      "key": "trial",
+      "title": "Eckhardt et al.: accessible HCV care randomized trial",
+      "url": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2790054",
+      "date": "14 March 2022; retrieved 7 September 2026",
+      "note": "Integrated care compared with referral already containing navigation; SVR12 is 12 weeks after treatment, measured within one year of enrollment.",
+      "publisher": "JAMA Internal Medicine",
+      "published": "14 March 2022",
+      "retrieved": "2026-09-07",
+      "sourceType": "Primary research"
+    },
+    {
+      "key": "cost",
+      "title": "Kapadia et al.: co-located HCV microcosting",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9836210/",
+      "date": "7 October 2022; retrieved 7 September 2026",
+      "note": "2020 USD; 84 cost enrollees versus 82 eligible efficacy participants; excludes drugs and usual-care cost comparison.",
+      "publisher": "Drug and Alcohol Dependence Reports",
+      "published": "7 October 2022",
+      "retrieved": "2026-09-07",
+      "sourceType": "Primary research"
+    },
+    {
+      "key": "health",
+      "title": "McEwan et al.: incremental SVR and lifetime QALYs",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0117334",
+      "date": "2015; retrieved 7 September 2026",
+      "note": "UK modeled lifetime benefit with 3.5% discounting, not current SF observed health or a reinfection/catch-up-treatment model.",
+      "publisher": "PLOS ONE",
+      "published": "2015",
+      "retrieved": "2026-09-07",
+      "sourceType": "Primary research"
+    },
+    {
+      "key": "local-contract",
+      "title": "SFDPH FY2025–26 CHEP program objectives",
+      "url": "https://media.api.sf.gov/documents/Final_FY25-26_CHEP_Prog._Objectives_01.06.20251.pdf",
+      "date": "FY2025–26 filename; retrieved 7 September 2026",
+      "note": "Page 10 HCV Treatment & Navigation contract 1000036520: targets, not outcomes. Stale internal headers; SVR4 not SVR12. No verified corresponding dollar line.",
+      "publisher": "San Francisco Department of Public Health",
+      "published": "FY2025–26 filename",
+      "retrieved": "2026-09-07",
+      "sourceType": "Public contract objectives"
+    },
+    {
+      "key": "navigation",
+      "title": "CTN-0064 randomized HCV care facilitation trial",
+      "url": "https://academic.oup.com/ofid/article/8/8/ofab334/6310155",
+      "publisher": "Open Forum Infectious Diseases",
+      "published": "2021",
+      "retrieved": "2026-09-07",
+      "sourceType": "Primary research",
+      "note": "Small secondary cure outcome: 6/41 versus 5/53 among RNA-positive people; not the integrated-care trial."
+    }
+  ]
+}

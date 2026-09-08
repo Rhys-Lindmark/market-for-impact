@@ -14,4 +14,6 @@ Issue201; active measured block began15:35:08Z. Published count remains40 until 
 
 ## Remaining exit criteria
 
+**Accepted September8:** all below criteria met. PR202 merged; exactfded8623937f3db1c006b2b1e405248a733094ad pushed to GitHub and Sites, publicv134 deployment succeeded. Canonical390/768 checks verified both reports, complete model responses,42unique ascending rows and unchanged topfour (SFAF,PHC,GLIDE,Breathe). No page errors or report overflow. All58 native-sheet calculated outputs match models, not only17donor prices.42/100 now counted; no verified marginal offers.
+
 Full GitHub CI; merge exact validated tree; push same source to Sites; deploy; canonical `/donate/charities/pacific-vision-foundation`, `/donate/charities/operation-access`, modelAPI,42-row research and unchanged top4 checks. Only then count42/100. No verified marginal offers claimed.

@@ -101,185 +101,11 @@ test('phone donors can inspect the India geography contract without inferred fun
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 
-test('phone donors see the same honest decision fields across all six San Francisco candidates', async ({ page }, testInfo) => {
-  test.skip(testInfo.project.name !== 'phone-390');
-  await page.goto('/research#comparison', { waitUntil: 'domcontentloaded' });
-  await expect(page.getByRole('heading', { name: 'Six organizations. One honest denominator.' })).toBeVisible();
-  const cards = page.locator('.sf-comparison-card');
-  await expect(cards).toHaveCount(6);
-  await expect(cards.locator('.sf-comparison-cost')).toHaveCount(6);
-  await expect(cards.locator('.sf-comparison-cost')).toHaveText(Array(6).fill('Not yet estimable'));
-  await expect(page.locator('.sf-comparison-summary>div').nth(1)).toContainText('Recommendation-ready');
-  await expect(page.locator('.sf-comparison-summary>div').nth(1).locator('strong')).toHaveText('0');
-  const firstCard = cards.first();
-  await expect(firstCard.locator('.sf-comparison-gifts')).toContainText('$100K');
-  await expect(firstCard.locator('.sf-comparison-gifts')).toContainText('$1M');
-  await expect(firstCard.locator('.sf-comparison-gifts')).toContainText('$10M');
-  await expect(firstCard.locator('.sf-comparison-gifts')).toContainText('No reviewed plan');
-  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
-});
 
-test('phone donors reach the complete San Francisco decision state before the research archive', async ({ page }, testInfo) => {
-  test.skip(testInfo.project.name !== 'phone-390');
-  await page.goto('/research#decision-snapshot', { waitUntil: 'domcontentloaded' });
-  await expect(page.getByRole('heading', { name: 'What can a donor act on today?' })).toBeVisible();
-  await expect(page.locator('.sf-decision-answer>strong')).toHaveText('0');
-  const rows = page.locator('.sf-decision-row');
-  await expect(rows).toHaveCount(6);
-  await expect(rows.locator('div:first-child>strong')).toHaveText(['GLIDE', 'GrowSF', 'Hamilton Families', 'Housing Action Coalition', 'San Francisco–Marin Food Bank', 'SF LGBT Center']);
-  await expect(rows.locator('.missing').filter({ hasText: 'Impact price' }).locator('strong')).toHaveText(Array(6).fill('Not yet estimable'));
-  await expect(rows.locator('.missing').filter({ hasText: 'Marginal gap' }).locator('strong')).toHaveText(Array(6).fill('Not published'));
-  await expect(page.getByText('Why there is no “top charity” yet.')).toBeVisible();
-  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
-});
 
-test('phone donors can search the complete SFF community-foundation partner lens', async ({ page }, testInfo) => {
-  test.skip(testInfo.project.name !== 'phone-390');
-  await page.goto('/research#community-foundation', { waitUntil: 'domcontentloaded' });
-  await expect(page.getByRole('heading', { name: 'Another 424 doors into the local field.' })).toBeVisible();
-  await expect(page.locator('.sf-sff-summary strong')).toHaveText(['424', '$49.52M', '11', '1', '1', '0']);
-  await expect(page.locator('.sf-sff-grid article')).toHaveCount(12);
-  await page.getByLabel('Search SFF FY2025 partners').fill('Hamilton Families');
-  await expect(page.locator('.sf-sff-grid article')).toHaveCount(1);
-  const hamilton = page.locator('.sf-sff-grid article').first();
-  await expect(hamilton).toContainText('Hamilton Families');
-  await expect(hamilton).toContainText('$15,000');
-  await expect(hamilton).toContainText('One partner total—not an individual grant or current funding gap');
-  await expect(hamilton.getByRole('link', { name: 'Open deep evidence dossier' })).toBeVisible();
-  await page.getByLabel('Search SFF FY2025 partners').fill('Independent Arts & Media');
-  await expect(page.locator('.sf-sff-grid article')).toHaveCount(1);
-  const eltimpano = page.locator('.sf-sff-grid article').first();
-  await expect(eltimpano).toContainText('El Tímpano');
-  await expect(eltimpano).toContainText('historical source assertion, not current verification');
-  await expect(eltimpano).toContainText('historical sponsor changed');
-  await expect(eltimpano).toContainText('Mission Edge');
-  await expect(eltimpano).toContainText('explicit audience presence within regional scope');
-  await expect(eltimpano).toContainText('more than 100 San Francisco subscribers');
-  await expect(eltimpano).toContainText('Screened · recommendation blocked');
-  await expect(eltimpano).toContainText('5,500+ · SMS subscriber community');
-  await expect(eltimpano).toContainText('project level financials not published in reviewed sources');
-  await expect(eltimpano).toContainText('Funding room · Not yet estimable');
-  await expect(eltimpano.getByRole('link', { name: /Community-Centered Outlets Empower and Inform Latinos/ })).toBeVisible();
-  await expect(eltimpano.getByRole('link', { name: 'Current donation route' })).toBeVisible();
-  await expect(eltimpano.getByRole('link', { name: 'Independent Arts & Media' })).toBeVisible();
-  await page.getByLabel('Search SFF FY2025 partners').fill('');
-  await page.getByLabel('Filter SFF identity links').selectOption('diligence-screened');
-  await expect(page.locator('.sf-sff-grid article')).toHaveCount(1);
-  await expect(page.locator('.sf-sff-grid article').first()).toContainText('El Tímpano');
-  await page.getByLabel('Filter SFF identity links').selectOption('current-unresolved');
-  await expect(page.locator('.sf-sff-grid article')).toHaveCount(5);
-  await expect(page.locator('.sf-sff-grid article')).toContainText(['Bay Resistance Institute', 'California Native Vote Project', 'Cooperation Richmond', 'Lavender Phoenix', 'Palestinian Youth Movement']);
-  await page.getByLabel('Filter SFF identity links').selectOption('geography-non-sf-local');
-  await expect(page.locator('.sf-sff-grid article')).toHaveCount(4);
-  await expect(page.locator('.sf-sff-grid article')).toContainText(['Cooperation Richmond', 'Lift Up Contra Costa', 'Oakland Rising', 'Rising Juntos']);
-  await page.getByLabel('Search SFF FY2025 partners').fill('Asian Prisoner Support Committee');
-  await page.getByLabel('Filter SFF identity links').selectOption('current-changed');
-  await expect(page.locator('.sf-sff-grid article')).toHaveCount(1);
-  await expect(page.locator('.sf-sff-grid article').first()).toContainText('Asian Americans for Civil Rights and Equality (AACRE)');
-  await expect(page.getByText('The community-foundation explorer could not refresh.')).toHaveCount(0);
-  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
-});
 
-test('phone donors can inspect the marginal-plan and grant-look-back research contract', async ({ page }, testInfo) => {
-  test.skip(testInfo.project.name !== 'phone-390');
-  await page.goto('/research#protocol', { waitUntil: 'domcontentloaded' });
-  await expect(page.getByRole('heading', { name: 'How an impact number earns its place.' })).toBeVisible();
-  const summary = page.locator('.sf-protocol-summary');
-  await expect(summary.locator('strong')).toHaveText(['18', '0', '0', '0']);
-  await expect(page.locator('.sf-protocol-contract>section')).toHaveCount(2);
-  await expect(page.locator('.sf-protocol-contract li')).toHaveCount(16);
-  await expect(page.locator('.sf-request-index a')).toHaveCount(6);
-  const requests = page.locator('.sf-request-packet');
-  await expect(requests).toHaveCount(6);
-  const hamiltonRequest = requests.filter({ hasText: 'What could Hamilton Families do with the next gift?' });
-  const foodBankRequest = requests.filter({ hasText: 'What could the Food Bank do with the next gift?' });
-  const centerRequest = requests.filter({ hasText: 'What could the SF LGBT Center do with the next gift?' });
-  const glideRequest = requests.filter({ hasText: 'What could GLIDE do with the next gift?' });
-  const hacRequest = requests.filter({ hasText: 'What could Housing Action Coalition do with the next gift?' });
-  const growsfRequest = requests.filter({ hasText: 'What could GrowSF do with the next gift?' });
-  for (const request of [hamiltonRequest, foodBankRequest, centerRequest, glideRequest, hacRequest, growsfRequest]) {
-    await expect(request.getByText('Draft · not sent')).toBeVisible();
-    await expect(request.locator('.sf-request-facts article')).toHaveCount(5);
-    await expect(request.locator('.sf-request-scenarios article')).toHaveCount(3);
-    await expect(request.locator('.sf-request-scenarios article>header strong')).toHaveText(['$100K', '$1M', '$10M']);
-    await expect(request.locator('.sf-request-questions>ol>li')).toHaveCount(8);
-    await expect(request.getByText('not-submitted', { exact: true })).toHaveCount(11);
-    await expect(request.getByText('not-started', { exact: true })).toHaveCount(8);
-  }
-  await expect(growsfRequest).toContainText('not a funding recommendation');
-  await expect(growsfRequest).toContainText('political endorsement');
-  await expect(hamiltonRequest).toContainText('8 exact prime-contractor matches');
-  await expect(foodBankRequest).toContainText('at capacity and uses a waitlist');
-  await expect(foodBankRequest).toContainText('$83.89M donated food/in-kind');
-  await expect(foodBankRequest).toContainText('USDA food-security denominator');
-  await expect(centerRequest).toContainText('5 exact prime-contractor matches');
-  await expect(centerRequest).toContainText('enrollment is currently paused');
-  await expect(centerRequest).toContainText('248-participant formative evaluation');
-  await expect(centerRequest).toContainText(/cost per retained living-wage job/i);
-  await expect(glideRequest).toContainText('14 exact prime-contractor matches');
-  await expect(glideRequest).toContainText('620,513 meals served');
-  await expect(glideRequest).toContainText('limited space and high demand');
-  await expect(glideRequest).toContainText('$14.12M future meal agreement');
-  await expect(hacRequest).toContainText('4,500+ units reported legally enabled');
-  await expect(hacRequest).toContainText('$120K Coefficient-published 2025 advocacy grant');
-  await expect(hacRequest).toContainText('140 member organizations');
-  await expect(hacRequest).toContainText('permits, starts, completions and occupancy');
-  const seed = page.locator('.sf-lookback-seed article');
-  await expect(seed).toHaveCount(1);
-  await expect(seed).toContainText('$120K');
-  await expect(seed).toContainText('Housing Action Coalition');
-  await expect(seed).toContainText('not-published');
-  await expect(seed).toContainText('not-yet-assessable');
-  const queue = page.locator('.sf-protocol-queue article');
-  await expect(queue).toHaveCount(6);
-  await expect(queue.locator('header b')).toHaveText(Array(6).fill('Not submitted'));
-  await expect(queue.first()).toContainText('$100K');
-  await expect(queue.first()).toContainText('$1M');
-  await expect(queue.first()).toContainText('$10M');
-  await expect(queue.first()).toContainText('Awaiting program-specific plan');
-  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
-});
 
-test('phone donors can inspect a San Francisco diligence record', async ({ page }, testInfo) => {
-  test.skip(testInfo.project.name !== 'phone-390');
-  await page.goto('/research#diligence', { waitUntil: 'domcontentloaded' });
-  const firstRecord = page.locator('.sf-brief-candidates details').first();
-  await firstRecord.locator('summary').click();
-  await expect(firstRecord).toHaveAttribute('open', '');
-  await expect(firstRecord.getByText('Causal boundary')).toBeVisible();
-  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
-});
 
-test('phone donors can distinguish reported outcomes from external evidence dossiers', async ({ page }, testInfo) => {
-  test.skip(testInfo.project.name !== 'phone-390');
-  await page.goto('/research#diligence', { waitUntil: 'domcontentloaded' });
-  const dossiers = page.locator('.sf-evidence-dossier');
-  await expect(dossiers).toHaveCount(5);
-  const hamilton = dossiers.filter({ hasText: 'Hamilton Families' });
-  await expect(hamilton.getByText('deeper diligence; recommendation blocked')).toBeVisible();
-  await expect(hamilton.getByText('results pending')).toBeVisible();
-  const foodBank = dossiers.filter({ hasText: 'San Francisco–Marin Food Bank' });
-  await expect(foodBank.getByRole('heading', { name: /What the Food Bank says happened/ })).toBeVisible();
-  await expect(foodBank.getByText('randomized trial; 228 adults followed for 12 months')).toBeVisible();
-  await expect(foodBank.getByText('03 · What still blocks a recommendation')).toBeVisible();
-  await expect(foodBank.getByRole('heading', { name: /price the next dollar/ })).toBeVisible();
-  await expect(page.locator('a[href="/charities/sf-lgbt-center"]').first()).toBeVisible();
-  const glide = dossiers.filter({ hasText: 'GLIDE' });
-  await expect(glide.getByRole('heading', { name: /What GLIDE says happened/ })).toBeVisible();
-  await expect(glide.getByText('systematic review and meta-analysis of 74 randomized clinical trials with 10,444 adults')).toBeVisible();
-  await expect(glide.getByText('03 · What still blocks a recommendation')).toBeVisible();
-  const hac = dossiers.filter({ hasText: 'Housing Action Coalition' });
-  await expect(hac.getByRole('heading', { name: /What Housing Action Coalition says happened/ })).toBeVisible();
-  await expect(hac.getByText('official bill history and chapter status')).toBeVisible();
-  await expect(hac.getByText('peer-reviewed literature review of zoning change, construction, costs, and neighborhood demographics')).toBeVisible();
-  await expect(hac.getByText('03 · What still blocks a recommendation')).toBeVisible();
-  const growsf = dossiers.filter({ hasText: 'GrowSF' });
-  await expect(growsf.getByRole('heading', { name: /What Coalition to Grow San Francisco – GrowSF says happened/ })).toBeVisible();
-  await expect(growsf.getByText('official final election canvass')).toBeVisible();
-  await expect(growsf.getByText('meta-analysis of 40 field experiments plus nine original field experiments')).toBeVisible();
-  await expect(growsf.getByText('03 · What still blocks a recommendation')).toBeVisible();
-  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
-});
 
 test('phone controls retain practical touch targets and wide tables scroll locally', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'phone-390');
@@ -326,34 +152,7 @@ test('transient San Francisco discovery-feed failures recover without permanent 
   for (const apiRoute of routes) expect(attempts.get(apiRoute)).toBeGreaterThanOrEqual(2);
 });
 
-test('phone donors can inspect the 6,688 to 25 San Francisco research funnel', async ({ page }, testInfo) => {
-  test.skip(testInfo.project.name !== 'phone-390');
-  await page.goto('/research#research-funnel', { waitUntil: 'domcontentloaded' });
-  await expect(page.getByRole('heading', { name: '6,688 records. 25 deep reviews.' })).toBeVisible();
-  await expect(page.locator('.sf-research-stages strong')).toHaveText(['6,688', '1,000', '100', '25', '25']);
-  await expect(page.locator('.sf-deep-queue article')).toHaveCount(25);
-  await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'CEA not started' })).toHaveCount(0);
-  await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'Initial review complete' })).toHaveCount(0);
-  await expect(page.locator('.sf-deep-queue article>b').filter({ hasText: 'Exploratory model' })).toHaveCount(25);
-  await expect(page.locator('.sf-advocacy-track')).toContainText('GrowSF');
-  await expect(page.locator('.sf-advocacy-track')).toContainText('Advocacy is reviewed, not ranked.');
-  await expect(page.getByRole('link', { name: /Open the SF cost-effectiveness workbook/ })).toBeVisible();
-  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
-});
 
-test('phone donors can inspect Project Open Hand mixed evidence and its exploratory model', async ({ page }, testInfo) => {
-  test.skip(testInfo.project.name !== 'phone-390');
-  await page.goto('/research#project-open-hand-review', { waitUntil: 'domcontentloaded' });
-  await expect(page.getByRole('heading', { level: 2, name: 'Project Open Hand', exact: true })).toBeVisible();
-  await expect(page.locator('#project-open-hand-review')).toContainText('Direct trial involvement. Mixed results.');
-  await expect(page.locator('#project-open-hand-review')).toContainText('The primary all-cause 90-day hospitalization outcome was not improved');
-  await expect(page.locator('#project-open-hand-review')).toContainText('approximately $212,500');
-  await expect(page.locator('#project-open-hand-review')).toContainText('Not published');
-  await expect(page.locator('a[href="/charities/project-open-hand"]')).toHaveCount(2);
-  await expect(page.locator('#project-open-hand-review .sf-deep-evidence article')).toHaveCount(3);
-  await expect(page.locator('#project-open-hand-review .sf-deep-model li')).toHaveCount(14);
-  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
-});
 
 test('phone donors can inspect EDC conflicting evidence and its subjective life-bettered conversion', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'phone-390');
@@ -542,50 +341,8 @@ test('phone donors can inspect the Hamilton prevention model without treating re
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 
-test('phone donors can inspect the HRTC review without treating service contacts as causal impact', async ({ page }, testInfo) => {
-  test.skip(testInfo.project.name !== 'phone-390');
-  await page.goto('/research#harm-reduction-therapy-center-review', { waitUntil: 'domcontentloaded' });
-  const review = page.locator('#harm-reduction-therapy-center-review');
-  await expect(page.getByRole('heading', { level: 2, name: 'Harm Reduction Therapy Center', exact: true })).toBeVisible();
-  await expect(review).toContainText('Historical initial review: relevant short-term trial; HRTC effect unknown.');
-  await expect(review).toContainText('not unique participants, completed treatment courses, durable outcomes');
-  await expect(review).toContainText("not HRTC's effect size");
-  await expect(review).toContainText('no statistically significant treatment-group differences');
-  await expect(review).toContainText('Not estimable');
-  await expect(review.locator('.sf-deep-evidence article')).toHaveCount(5);
-  await expect(review.locator('.sf-deep-model li')).toHaveCount(16);
-  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
-});
 
-test('phone donors can inspect the HYA review without treating referrals as durable outcomes', async ({ page }, testInfo) => {
-  test.skip(testInfo.project.name !== 'phone-390');
-  await page.goto('/research#homeless-youth-alliance-review', { waitUntil: 'domcontentloaded' });
-  const review = page.locator('#homeless-youth-alliance-review');
-  await expect(page.getByRole('heading', { level: 2, name: 'Homeless Youth Alliance', exact: true })).toBeVisible();
-  await expect(review).toContainText('Strong intervention rationale. HYA effect unknown.');
-  await expect(review).toContainText('not verified enrollment, completion, sustained housing');
-  await expect(review).toContainText('supports the intervention class, not HYA');
-  await expect(review).toContainText('connection to housing is not equivalent');
-  await expect(review).toContainText('Not estimable');
-  await expect(review.locator('.sf-deep-evidence article')).toHaveCount(5);
-  await expect(review.locator('.sf-deep-model li')).toHaveCount(16);
-  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
-});
 
-test('phone donors can inspect the Huckleberry review without pooling unlike outcomes', async ({ page }, testInfo) => {
-  test.skip(testInfo.project.name !== 'phone-390');
-  await page.goto('/research#huckleberry-youth-programs-review', { waitUntil: 'domcontentloaded' });
-  const review = page.locator('#huckleberry-youth-programs-review');
-  await expect(page.getByRole('heading', { level: 2, name: 'Huckleberry Youth Programs', exact: true })).toBeVisible();
-  await expect(review).toContainText('Several promising pathways. No single marginal case.');
-  await expect(review).toContainText('different denominators and conditioning rules');
-  await expect(review).toContainText('nonexperimental participant-only design');
-  await expect(review).toContainText('supports the intervention class for low-risk youth, not CARC');
-  await expect(review).toContainText('Not estimable');
-  await expect(review.locator('.sf-deep-evidence article')).toHaveCount(5);
-  await expect(review.locator('.sf-deep-model li')).toHaveCount(16);
-  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
-});
 
 test('phone donors can inspect the Institute on Aging review without treating calls as causal impact', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'phone-390');

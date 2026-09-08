@@ -10,6 +10,13 @@ Design first for a major donor deciding how to deploy roughly $10 million this y
 
 ## Now — foundation
 
+### September 8 release acceptance and active cleanup
+
+- [x] **Large Bay program models — #190 / PR #192:** five-program comparison and four new reports published as v130, exact83fcb3bd65ed89bc267ab6d4ef0b65f003e30ae2 on GitHub and Sites. Seven canonical pages and four APIs verified.38 SF-ranked reports plus three Bay-only reports; top4 unchanged. Native workbook12 scenarios/36 formulas and two-tab visual checks passed. No verified marginal offers.
+- [x] **Mechanism-first ten — SF12:** accepted through PR #189 / v129, including St Anthony, CFSF respite and SFCCC wound care. Prior pending notes below are historical; no need to repeat these releases.
+- [ ] **Concise research index — #193:** implemented one38-report central-cost list; removed duplicate queues, stale six-candidate decision tables and inline reviews from the public index. Source data preserved, causal-evidence tests migrated to dedicated reports, historical SFF API and protocol/funnel data tests retained.273 unit tests, lint/build and16 focused phone/tablet checks passed; final CI and canonical release remain.
+- **Next research:** Brightline and RTSF full reports; prioritized funding-assumption corrections from all25 funding audits. Broader target100 remains uncompleted; discovery briefs are not published reviews.
+
 ### Latest priority override: toward 100 researched organizations
 
 User direction supersedes the older post-50 sequence below. Finish the current ~50 cohort, then execute these additions before the previously agreed post-50 reassessment, evidence/funding, visual rebuild, theory synthesis and next-batch work. Research-page cleanup may ship sooner as an independent focused improvement.

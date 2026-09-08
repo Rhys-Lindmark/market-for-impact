@@ -1,5 +1,22 @@
 # San Francisco giving — active phase plan
 
+## Authoritative current checkpoint — September 8, 23:38 UTC
+
+**55/115 distinct reports published and canonical-verified.** Canonical base is https://ai.rhyslindmark.com/givebetter . Older counts and /donate references below are historical. Goal metadata still says100; the user-expanded115 target controls acceptance and must not be marked complete at100.
+
+Current measured block began2026-09-08T23:18:56Z after explicit user resume. Prior pause interval is excluded; exact interrupted-block end was not recorded, so no elapsed duration is claimed. Hourly automation active. Root owns Site integration; three bounded research workers pursue Code Tenderloin, Coalition for Clean Air, and SF Public Health Foundation HCV.
+
+- [x] R53 Helen Keller Intl: PR227/v154,311 tests, canonical390/768 report/API/53-row index.
+- [x] R54 Roots Community Health: PR228/v155,332 tests, independent12-scenario audit, local and canonical390/768 report/API/54-row index.
+- [x] R55 End Overdose: PR229/v156,349 tests, independent9-scenario audit, local and canonical390/768 report/API/55-row index. Exact published31e64dc72416ca3c5d0ae9f40f88acf13b70c8ce.
+- [ ] R56+ Accept the next current whole-organization packets, independently audit calculations and evidence, integrate, validate and publish. Only then increment.
+- [ ] Cohort reconciliation: keep primary expansion cohorts distinct; current unified total includes4international,3US and2Bay-only additions beyond46SF-indexed reports. A geographic label does not automatically satisfy five new CA-wide organizations.
+- [ ] Revise preserved Bayview/IFR/Raphael program-only packets to whole-organization gift scope before counting new reports. Do not publish their proposed program prices as whole-organization estimates.
+
+SFDUU held, not counted: official undated service page conflicts with2026 closure testimony. Its conditional operating model is not a current giving estimate. Screens, holds and model-only drafts do not increase55.
+
+Exit for each report: inspected source-grounded whole-gift scope, explicit priors and signed/null health, independent arithmetic acceptance, relevant tests/lint/build, focused PR and same-source public deployment, canonical report/API/ranking/mobile verification. Twenty-five-minute stall interval; diagnose actual bottleneck rather than pad work. Stop immediately on explicit user pause.
+
 ## Scope override — September 8: 115
 
 User expanded the objective to 100 SF-focused organizations plus five additional California-wide, five US-wide and five international organizations. BACKLOG.md's latest scope override is authoritative over historical 100-target notes. Added cohorts need overall USD/QALY and USD/10 QALYs, estimated nine-county Bay Area share of incremental health, source/uncertainty and consistent prospective cost boundaries. No duplicate organization count or automatic grandfathering of Bay-only reviews.

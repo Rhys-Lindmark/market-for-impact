@@ -30,7 +30,7 @@ const content: CharityReportContent = {
   eyebrow: 'CHARITY RESEARCH · SAN FRANCISCO',
   program: 'Welcome Center rental assistance for eviction, back-rent, move-in, and deposit crises',
   donationUrl: review.organization.donationUrl,
-  published: '1 September 2026',
+  published: '8 September 2026',
   modelVersion: model.version,
   nutshell: {
     headline: 'A concrete prevention tool. A credible outside study. A very uncertain GLIDE effect.',
@@ -57,7 +57,7 @@ const content: CharityReportContent = {
   },
   model: {
     headline: 'Our current model: roughly $154,000 per additional six-month shelter entry averted.',
-    body: 'GLIDE’s historical sponsor example implies $2,564 per assisted household. We add 20% for screening, workshops, case management, and overhead, producing a $3,077 best-guess marginal cost. We then use a 2.0 percentage-point absolute shelter-entry reduction: close to the 1.6-point overall and 2.2-point low-income estimates in the Chicago quasi-experiment, but still an explicit MFI transfer judgment because GLIDE’s funded-case denominator differs from that study’s funding-availability denominator.',
+    body: 'GLIDE’s historical sponsor example implies about $2,564 per assisted household and already supported case management and housing-stability workshops. We retain a rounded 20% unverified current-cost contingency to reach $3,077—not a documented extra charge for those services. The allocation is unknown and may overlap historical costs. Holding the central health estimate fixed, removing that contingency gives about $356,000 per 10 QALYs; this is a sensitivity, not a new funding quote. The separate shelter-entry model uses a 2.0 percentage-point reduction: close to the 1.6-point overall and 2.2-point low-income estimates in the Chicago quasi-experiment, but still an explicit transfer judgment because its denominator differs from GLIDE’s funded cases.',
     equation: { label: 'MODELED COST PER ADDITIONAL SHELTER ENTRY AVERTED', expression: `${money.format(cost.best)} ÷ ${percent.format(effect.best)}`, result: `= ${money.format(model.bottomLine.costPerAdditionalShelterEntryAvertedUsd)}` },
     inputs: model.inputs.slice(1).map((input) => ({ key: input.key, label: input.label, confidence: input.confidence, best: formatInput(input.best, input.unit), range: `${formatInput(input.low, input.unit)}–${formatInput(input.high, input.unit)}`, basis: input.basis })),
     giftHeading: `What would ${money.format(model.bottomLine.giftUsd)} buy?`,

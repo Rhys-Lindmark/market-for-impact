@@ -12,12 +12,15 @@ Design first for a major donor deciding how to deploy roughly $10 million this y
 
 ### September 8 release acceptance and active cleanup
 
+- [ ] **GLIDE cost-source correction — #196 / SF17:** source, report, versioned models and native workbook now distinguish the unverified 20% contingency from documented historical services. Central $427,361/10 QALYs unchanged; no-uplift sensitivity $356,125. 274 tests, lint/build and focused mobile checks pass. Full CI, merge and exact canonical release remain; next review IOA/FiveKeys cost and public-funding boundaries, then publish Brightline/RTSF.
 - [x] **Large Bay program models — #190 / PR #192:** five-program comparison and four new reports published as v130, exact83fcb3bd65ed89bc267ab6d4ef0b65f003e30ae2 on GitHub and Sites. Seven canonical pages and four APIs verified.38 SF-ranked reports plus three Bay-only reports; top4 unchanged. Native workbook12 scenarios/36 formulas and two-tab visual checks passed. No verified marginal offers.
 - [x] **Mechanism-first ten — SF12:** accepted through PR #189 / v129, including St Anthony, CFSF respite and SFCCC wound care. Prior pending notes below are historical; no need to repeat these releases.
 - [x] **Concise research index — #193 / PR #194:** accepted public v131, exact f4c122bc5a2651b190d6b5120208063861791eba on GitHub and Sites. One38-report central-cost list; redundant queues and inline reviews removed.273 unit tests, lint/build, full mobile CI and canonical390/768 checks passed, including top-four agreement, report navigation and historical SFF API.
 - **Next research:** Brightline and RTSF full reports; prioritized funding-assumption corrections from all25 funding audits. Broader target100 remains uncompleted; discovery briefs are not published reviews.
 
 ### Latest priority override: toward 100 researched organizations
+
+- [ ] **Outcome-first discovery (September8):** identify important, cost-effectively changeable SF outcomes such as overdose deaths and additional housing built, establish baseline/trend and causal levers, then work backward to actual nonprofit programs. Keep intermediate outputs distinct from final welfare and make the incremental-QALY bridge explicit. Use this map to prioritize the next organization reviews; do not begin only from familiar charity names. See issue191.
 
 User direction supersedes the older post-50 sequence below. Finish the current ~50 cohort, then execute these additions before the previously agreed post-50 reassessment, evidence/funding, visual rebuild, theory synthesis and next-batch work. Research-page cleanup may ship sooner as an independent focused improvement.
 

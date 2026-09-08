@@ -1,5 +1,11 @@
 # San Francisco giving — active phase plan
 
+## Current block — 2026-09-08T13:54:19Z
+
+New durable goal is active: 100 distinct published SF-relevant organization reviews, following issue191. Current coverage audit finds38 operational organizations/projects plus3 Bay-only reports; legal-recipient reconciliation remains in progress and discovery screens do not count. Current block target90 measured minutes; hourly/user continuations do not reset its clock.
+
+SF16 research index accepted PR194/v131 at f4c122bc5a2651b190d6b5120208063861791eba; no repeat implementation needed. PR195 research evidence merged. Active SF17: GLIDE cost-source correction (#196), preserving central price and adding a no-uplift sensitivity. Acceptance: primary cohort scope; model/report/workbook agreement; regression tests; lint/build; focused and full mobile checks; exact-commit canonical release. Next: IOA/FiveKeys perspective corrections, then Brightline/RTSF. Three independent workers prepare/audit research assets; root owns Site integration. Outcome-first discovery now precedes charity selection, per issue191 update.
+
 ## Latest recovery override — September 8
 
 Active block started2026-09-08T12:37:40Z. Manager owns Site edits; three research workers have bounded independent evidence/audit assignments. Phase4/SF12 is accepted through v129; all ten mechanism-first models are published. Five large-Bay program comparison accepted in PR192/v130, exact83fcb3bd65ed89bc267ab6d4ef0b65f003e30ae2.38 SF-ranked reports plus three separately scoped Bay reports. Older recovery notes below are historical.

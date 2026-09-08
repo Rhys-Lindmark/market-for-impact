@@ -64,3 +64,15 @@ test('GLIDE review preserves consolidated finances and city accounting boundarie
   assert.ok(review.nativeScale.every((row) => /not|no published|does not/i.test(row.semantics)));
   assert.ok(review.sources.every((source) => source.url && source.published && source.retrieved && source.sourceType));
 });
+
+test('GLIDE cost contingency is not presented as documented omitted services', () => {
+  const cost = model.inputs.find(input => input.key === 'marginal_cost_per_assistance_case_usd');
+  assert.match(cost.basis, /supported case management and housing-stability workshops/);
+  assert.match(cost.basis, /unverified current-cost contingency/);
+  assert.match(bridge.modeledBridge.modeledDonorCostPerAssistedHouseholdUsd.basis, /not a documented charge for omitted services/);
+  const row = bridge.modeledBridge.sensitivity.find(row => row.case.startsWith('No cost uplift'));
+  assert.equal(row.qalyPerAssistedHousehold, bridge.modeledBridge.qalyPerAssistedHousehold.best);
+  assert.ok(Math.abs(row.donorCostPerHouseholdUsd - 100000 / 39) < 1e-10);
+  assert.ok(Math.abs(row.costPerTenQalysUsd - (100000 / 39) / 0.072 * 10) < 1e-7);
+  assert.equal(bridge.sharedDenominator.publishedPriceUsd, 427361.1111111111);
+});

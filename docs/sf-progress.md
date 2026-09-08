@@ -1,5 +1,11 @@
 # San Francisco giving — active phase plan
 
+## Scope override — September 8: 115
+
+User expanded the objective to 100 SF-focused organizations plus five additional California-wide, five US-wide and five international organizations. BACKLOG.md's latest scope override is authoritative over historical 100-target notes. Added cohorts need overall USD/QALY and USD/10 QALYs, estimated nine-county Bay Area share of incremental health, source/uncertainty and consistent prospective cost boundaries. No duplicate organization count or automatic grandfathering of Bay-only reviews.
+
+Latest verified publication checkpoint is **45/115**: hearing PR207 accepted as public v136 at exact 3cc743e4c561197d6a8e9b9661c1b7d55274877f on GitHub and Sites. 287 tests, lint/build, full CI, 14 local phone/tablet checks, 28 native spreadsheet formula outputs, and canonical 390/768 report/model navigation plus 45-row unique ascending ranking/top-four agreement passed. Additional geographic cohorts are not yet accepted. SPUR whole-portfolio revision is underway separately; it revises rather than adds an organization.
+
 ## Current block — 2026-09-08T17:03:01Z
 
 Latest acceptance:44/100 published in PR205/v135, exactf92364b501abd0aea3f6ab745a08cf4a819470d8. FullCI plus canonical390/768 reports/API/44unique ascending rankings/top4 verified. Next SF9b: Hearing Center shared PHC hearing pathway (not glasses), finite time/health model and historical-EIN revocation caveat. Local287tests, lint/build,14phone/tablet checks,28native formulas and visual check pass. No count45 until final release.

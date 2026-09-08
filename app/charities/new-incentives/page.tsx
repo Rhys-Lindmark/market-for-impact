@@ -1,5 +1,6 @@
 import type {Metadata} from 'next';
 import LocalImpactNote from '@/components/LocalImpactNote';
+import GiveWellComparison from '@/components/GiveWellComparison';
 import CharityResearchReport,{type CharityReportContent} from '@/components/CharityResearchReport';
 import data from '@/data/international/new-incentives-cea-v1.json';
 import report from '@/data/international/new-incentives-report.json';
@@ -11,4 +12,4 @@ const content:CharityReportContent={...report,modelVersion:data.modelId,
  nutshell:{...report.nutshell,headline:money(central.globalUsdPer10Qaly)+' per 10 additional global QALYs.',body:<>{report.nutshell.body} That is {money(central.globalUsdPerQaly)} per global QALY. <a href="/api/new-incentives-model">Inspect all formulas, inputs and sources</a>.</>},
  model:{...report.model,sensitivity:data.scenarios.map(s=>{const r=newIncentivesModel(s,data.giftUsd);return {case:s.id,headline:money(r.globalUsdPer10Qaly)+' per 10 global QALYs',detail:r.netGlobalQaly.toPrecision(5)+' net QALYs from the same gift. Gross associated fiscal-package price '+money(r.grossFiscalUsdPer10Qaly)+'; transfer-excluded gross proxy '+money(r.transferExcludedProxyUsdPer10Qaly)+'. These are not net societal estimates.'};})}
 };
-export default function Page(){return <><CharityResearchReport content={content}/><LocalImpactNote slug="new-incentives" directQ={central.netGlobalQaly} gift={data.giftUsd}/></>;}
+export default function Page(){return <><CharityResearchReport content={content}/><GiveWellComparison slug="new-incentives"/><LocalImpactNote slug="new-incentives" directQ={central.netGlobalQaly} gift={data.giftUsd}/></>;}

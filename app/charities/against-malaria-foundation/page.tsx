@@ -1,5 +1,6 @@
 import type {Metadata} from 'next';
 import LocalImpactNote from '@/components/LocalImpactNote';
+import GiveWellComparison from '@/components/GiveWellComparison';
 import CharityResearchReport,{type CharityReportContent} from '@/components/CharityResearchReport';
 import data from '@/data/international/amf-cea-v1.json';
 import {amfModel} from '@/lib/amf-model.mjs';
@@ -34,4 +35,4 @@ const content:CharityReportContent={
  excludedBenefits:['Nonfatal malaria, adult and pregnancy health, income and education effects are not credited.','The model does not import GiveWell moral weights or count the already-funded DRC grant again.','No automatic additional community-protection multiplier beyond the historical community trial.'],
  sources:data.evidence.primarySourceUrls.map((url,i)=>({publisher:new URL(url).hostname,title:sourceTitles[i],url,published:i===0?'April 1996':i===2?'Year ended June 2025':i===5?'24 August 2026':i===6?'August 2026':i===7||i===8||i===10?'2022':i===9?'2002':'Undated, live provider page',retrieved:'8 September 2026',sourceType:'Primary source; access and interpretation limits documented in model'}))
 };
-export default function Page(){return <><CharityResearchReport content={content}/><LocalImpactNote slug="against-malaria-foundation" directQ={result.globalQaly} gift={result.donorCostUsd}/></>;}
+export default function Page(){return <><CharityResearchReport content={content}/><GiveWellComparison slug="against-malaria-foundation"/><LocalImpactNote slug="against-malaria-foundation" directQ={result.globalQaly} gift={result.donorCostUsd}/></>;}

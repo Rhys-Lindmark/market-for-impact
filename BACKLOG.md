@@ -1,5 +1,11 @@
 # Market for Impact backlog
 
+## GiveWell reconciliation findings — September 8
+
+Native benchmark check completed: GiveWell2022–24 weighted modeled mortality prices are AMF$5,500/death and NI$4,500/death. Our independent scenarios imply$12,449/$51,440 per early death before the13.646 discounted Q/death conversion. No factor-of-ten arithmetic bug; overlapping conservative assumptions and unmatched enrollment/catchment denominators are material model-quality risks. Public comparison/API implemented, validation pending. Do not label constructed downside scenarios calibrated expected values.
+
+Next model phase: preserve v1; develop matched external mortality calibration without reapplying its existing coverage/funding deductions. Independently justify survival and age/timing composition, particularly NI adult/older-child benefits. Historical grant averages do not certify next unrestricted-gift funding room. Add explicit native-unit and external-benchmark checks to future CEA acceptance; distinguish missing evidence from an automatic numerical haircut.
+
 ## Priority override — one local-comparison table and GiveWell reconciliation (September 8)
 
 - [ ] **One clean research table:** merge US and international rows into the main table with parenthetical geography labels. Display SF-resident USD per10Q consistently, not national/global prices disguised as local. Preserve original overall estimates within reports. Derive transparent local-share or indirect-spillover scenarios with explicit uncertain priors and zero cases; do not invent measured effects. Remove separate bottom US/international sections.

@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## New Door whole-gift revision
+
+Replaces proposed single SF employment-place headline with audited whole-organization allocation model: central$508M/10SFQ and$229M/10BayQ, other education/career health unquantified with full gift retained. No new organization count;55/115 remains live. Eight independently audited scenarios; original program API preserved as history. Official-linked current donation campaign verified. New reports in progress separately: Code Tenderloin, SFPHF, CCA.
+
 ## Current authority —55/115 published
 
 Helen Keller PR227/v154, Roots PR228/v155 and End Overdose PR229/v156 are now canonical-verified. Current live exact31e64dc72416ca3c5d0ae9f40f88acf13b70c8ce. See docs/sf-progress.md for authoritative checkpoint; older pending entries below are history. Next three whole-org investigations: Code Tenderloin, Coalition for Clean Air, SF Public Health Foundation HCV. SFDUU current-service conflict held/not counted. Preserved Bayview/IFR/Raphael packets require whole-organization scope revision before release.

@@ -1,0 +1,350 @@
+{
+  "schemaVersion": "1.0.0",
+  "modelId": "newdoor-unrestricted-portfolio-v1",
+  "reviewDate": "2026-09-08",
+  "status": "Independently accepted conditional whole-organization partial-health estimate",
+  "organization": "New Door Ventures",
+  "giftUsd": 100000,
+  "scope": "One marginal unrestricted gift across employment, education, career support and strategy/reserve; whole gift costed, only employment health quantified. Existing organization revision, no new count.",
+  "financialContext": {
+    "period": "Calendar 2025",
+    "totalExpenses": 6505120,
+    "programExpenses": 5078730,
+    "employmentSf": 1843419,
+    "employmentOakland": 1784535,
+    "employmentSanJose": 427257,
+    "education": 572181,
+    "transitionServices": 451338,
+    "fundraising": 1038613,
+    "generalAdministration": 387777,
+    "governmentGrants": 1438580,
+    "operatingNetAssetChange": -2005878,
+    "totalNetAssetChange": -1804022,
+    "source": "audit",
+    "meaning": "Historical functional expenditures and existing finance, not prospective allocation or marginal price. Never divide CY2025 costs by FY2024–25 DCYF participants."
+  },
+  "allocationBasis": "Central 70% integrated employment,15% education,10% additional career,5% strategy/reserve is judgment. Combined employment is about79.85% of historical program expenditure; current integrated strategy and separate streams justify a broad range, not a measured next-gift forecast. Overhead embedded in course allowances and other allocations once.",
+  "unit": "An offered six-month employment place, including wages, weekly support, training, supervision, transport and allocated shared overhead. Any education/career input required for this modeled core is inside its cost; separate buckets represent other provision only.",
+  "healthBasis": "Retains existing subjective .005/.02/.001 utility, effective years .5/.75/.25 and funding .5/.75/.25; not direct imported youth trial effects. Offered-place average already includes noncompletion. No second engagement multiplier.",
+  "duration": "All health within one year of offer. Effective years integrate onset, decay and any within-year discount; .75 favorable is not .75 years added after the year. No lifelong employment, mortality or credential health gain.",
+  "geography": "All modeled benefits assumed among Bay residents; SF share .45/.60/.25 is judgment loosely informed by SF employment accounting about45.46% of all employment costs, not measured residence. Remainder includes Oakland/San Jose/other Bay. Bay includes SF, same gift.",
+  "additionality": "Access preserved or expanded because of gift versus already funded services, alternative providers and replacement of public/private commitments. Not completion or employment placement.",
+  "costPerspective": "Entire $100K gift paid in every case, including unquantified/reserve shares. Cost allowances include shared operations once. Extra-resource stress adds hypothetical $100K net resources, not a measured societal cost; especially not claimed induced under no additionality. Wages are donor costs but transfers in some resource perspectives; do not subtract their full amount without pricing participant labor/time and employer production.",
+  "overlap": "Single averaged health change for integrated employment/support cohort; no added QALYs from education certificates, career placements, wages, referrals or partner-clinic outcomes. Education/career spending outside core stays health-unquantified; no assumption all participants are distinct.",
+  "nullHarm": "Signed shared utility scales with additionality. Independent donor-specific harm remains outside it. Nonpositive QALYs have null ratios, not apparent bargains. Null/harm demonstrate boundaries, not observed event rates.",
+  "fundingRoom": {
+    "verifiedUsd": null,
+    "currentOffer": false,
+    "missing": "Program mix, consistent dose, all-funder marginal ledger, resident mix, live capacity, and no-gift continuation/alternative service"
+  },
+  "formula": "Bay gross=(employment allocation / full offered-place cost)*utility*effective years*additionality. SF=Bay gross*SFshare−independent SF harm; restBay=Bay gross*(1−SFshare)−independent restBay harm; Bay=SF+restBay. USD/10=10*whole gift/netQ if positive.",
+  "scenarios": [
+    {
+      "id": "central",
+      "allocations": {
+        "employment": 70000,
+        "education": 15000,
+        "careerAdditional": 10000,
+        "reserveStrategy": 5000
+      },
+      "costPerOfferedPlace": 20000,
+      "utilityGain": 0.005,
+      "effectiveYears": 0.5,
+      "additionality": 0.5,
+      "sfResidentShare": 0.45,
+      "donorHarmSf": 0,
+      "donorHarmRestBay": 0,
+      "outputs": {
+        "offeredPlaces": 3.5,
+        "healthUnquantifiedAllocationUsd": 30000,
+        "grossBayQaly": 0.004375,
+        "sfNetQaly": 0.0019687500000000004,
+        "restBayNetQaly": 0.0024062500000000004,
+        "bayIncludingSfNetQaly": 0.004375,
+        "sfUsdPer10Qaly": 507936507.9365078,
+        "bayUsdPer10Qaly": 228571428.57142854,
+        "sfExtraResourceStressUsdPer10Qaly": 1015873015.8730156,
+        "bayExtraResourceStressUsdPer10Qaly": 457142857.1428571
+      }
+    },
+    {
+      "id": "favorable",
+      "allocations": {
+        "employment": 80000,
+        "education": 10000,
+        "careerAdditional": 5000,
+        "reserveStrategy": 5000
+      },
+      "costPerOfferedPlace": 12000,
+      "utilityGain": 0.02,
+      "effectiveYears": 0.75,
+      "additionality": 0.75,
+      "sfResidentShare": 0.6,
+      "donorHarmSf": 0,
+      "donorHarmRestBay": 0,
+      "outputs": {
+        "offeredPlaces": 6.666666666666667,
+        "healthUnquantifiedAllocationUsd": 20000,
+        "grossBayQaly": 0.07500000000000001,
+        "sfNetQaly": 0.045000000000000005,
+        "restBayNetQaly": 0.030000000000000006,
+        "bayIncludingSfNetQaly": 0.07500000000000001,
+        "sfUsdPer10Qaly": 22222222.22222222,
+        "bayUsdPer10Qaly": 13333333.333333332,
+        "sfExtraResourceStressUsdPer10Qaly": 44444444.44444444,
+        "bayExtraResourceStressUsdPer10Qaly": 26666666.666666664
+      }
+    },
+    {
+      "id": "pessimisticPositive",
+      "allocations": {
+        "employment": 50000,
+        "education": 20000,
+        "careerAdditional": 15000,
+        "reserveStrategy": 15000
+      },
+      "costPerOfferedPlace": 30000,
+      "utilityGain": 0.001,
+      "effectiveYears": 0.25,
+      "additionality": 0.25,
+      "sfResidentShare": 0.25,
+      "donorHarmSf": 0,
+      "donorHarmRestBay": 0,
+      "outputs": {
+        "offeredPlaces": 1.6666666666666667,
+        "healthUnquantifiedAllocationUsd": 50000,
+        "grossBayQaly": 0.00010416666666666667,
+        "sfNetQaly": 0.00002604166666666667,
+        "restBayNetQaly": 0.000078125,
+        "bayIncludingSfNetQaly": 0.00010416666666666667,
+        "sfUsdPer10Qaly": 38400000000,
+        "bayUsdPer10Qaly": 9600000000,
+        "sfExtraResourceStressUsdPer10Qaly": 76800000000,
+        "bayExtraResourceStressUsdPer10Qaly": 19200000000
+      }
+    },
+    {
+      "id": "nullAdditionality",
+      "allocations": {
+        "employment": 70000,
+        "education": 15000,
+        "careerAdditional": 10000,
+        "reserveStrategy": 5000
+      },
+      "costPerOfferedPlace": 20000,
+      "utilityGain": 0.005,
+      "effectiveYears": 0.5,
+      "additionality": 0,
+      "sfResidentShare": 0.45,
+      "donorHarmSf": 0,
+      "donorHarmRestBay": 0,
+      "outputs": {
+        "offeredPlaces": 3.5,
+        "healthUnquantifiedAllocationUsd": 30000,
+        "grossBayQaly": 0,
+        "sfNetQaly": 0,
+        "restBayNetQaly": 0,
+        "bayIncludingSfNetQaly": 0,
+        "sfUsdPer10Qaly": null,
+        "bayUsdPer10Qaly": null,
+        "sfExtraResourceStressUsdPer10Qaly": null,
+        "bayExtraResourceStressUsdPer10Qaly": null
+      }
+    },
+    {
+      "id": "nullHealthEffect",
+      "allocations": {
+        "employment": 70000,
+        "education": 15000,
+        "careerAdditional": 10000,
+        "reserveStrategy": 5000
+      },
+      "costPerOfferedPlace": 20000,
+      "utilityGain": 0,
+      "effectiveYears": 0.5,
+      "additionality": 0.5,
+      "sfResidentShare": 0.45,
+      "donorHarmSf": 0,
+      "donorHarmRestBay": 0,
+      "outputs": {
+        "offeredPlaces": 3.5,
+        "healthUnquantifiedAllocationUsd": 30000,
+        "grossBayQaly": 0,
+        "sfNetQaly": 0,
+        "restBayNetQaly": 0,
+        "bayIncludingSfNetQaly": 0,
+        "sfUsdPer10Qaly": null,
+        "bayUsdPer10Qaly": null,
+        "sfExtraResourceStressUsdPer10Qaly": null,
+        "bayExtraResourceStressUsdPer10Qaly": null
+      }
+    },
+    {
+      "id": "sharedHealthHarm",
+      "allocations": {
+        "employment": 70000,
+        "education": 15000,
+        "careerAdditional": 10000,
+        "reserveStrategy": 5000
+      },
+      "costPerOfferedPlace": 20000,
+      "utilityGain": -0.005,
+      "effectiveYears": 0.5,
+      "additionality": 0.5,
+      "sfResidentShare": 0.45,
+      "donorHarmSf": 0,
+      "donorHarmRestBay": 0,
+      "outputs": {
+        "offeredPlaces": 3.5,
+        "healthUnquantifiedAllocationUsd": 30000,
+        "grossBayQaly": -0.004375,
+        "sfNetQaly": -0.0019687500000000004,
+        "restBayNetQaly": -0.0024062500000000004,
+        "bayIncludingSfNetQaly": -0.004375,
+        "sfUsdPer10Qaly": null,
+        "bayUsdPer10Qaly": null,
+        "sfExtraResourceStressUsdPer10Qaly": null,
+        "bayExtraResourceStressUsdPer10Qaly": null
+      }
+    },
+    {
+      "id": "nullAdditionalityDonorHarm",
+      "allocations": {
+        "employment": 70000,
+        "education": 15000,
+        "careerAdditional": 10000,
+        "reserveStrategy": 5000
+      },
+      "costPerOfferedPlace": 20000,
+      "utilityGain": 0.005,
+      "effectiveYears": 0.5,
+      "additionality": 0,
+      "sfResidentShare": 0.45,
+      "donorHarmSf": 0.001,
+      "donorHarmRestBay": 0.001,
+      "outputs": {
+        "offeredPlaces": 3.5,
+        "healthUnquantifiedAllocationUsd": 30000,
+        "grossBayQaly": 0,
+        "sfNetQaly": -0.001,
+        "restBayNetQaly": -0.001,
+        "bayIncludingSfNetQaly": -0.002,
+        "sfUsdPer10Qaly": null,
+        "bayUsdPer10Qaly": null,
+        "sfExtraResourceStressUsdPer10Qaly": null,
+        "bayExtraResourceStressUsdPer10Qaly": null
+      }
+    },
+    {
+      "id": "allEmploymentAllocationStress",
+      "allocations": {
+        "employment": 100000,
+        "education": 0,
+        "careerAdditional": 0,
+        "reserveStrategy": 0
+      },
+      "costPerOfferedPlace": 20000,
+      "utilityGain": 0.005,
+      "effectiveYears": 0.5,
+      "additionality": 0.5,
+      "sfResidentShare": 0.45,
+      "donorHarmSf": 0,
+      "donorHarmRestBay": 0,
+      "outputs": {
+        "offeredPlaces": 5,
+        "healthUnquantifiedAllocationUsd": 0,
+        "grossBayQaly": 0.00625,
+        "sfNetQaly": 0.0028125000000000003,
+        "restBayNetQaly": 0.0034375000000000005,
+        "bayIncludingSfNetQaly": 0.00625,
+        "sfUsdPer10Qaly": 355555555.5555555,
+        "bayUsdPer10Qaly": 160000000,
+        "sfExtraResourceStressUsdPer10Qaly": 711111111.111111,
+        "bayExtraResourceStressUsdPer10Qaly": 320000000
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "audit",
+      "publisher": "New Door Ventures / SD Mayer & Associates",
+      "title": "2025 audited financial statements",
+      "url": "https://www.newdoor.org/wp-content/uploads/2026/07/NDV-2025-Audit-Report.pdf",
+      "date": "Year ended December 31, 2025; signed June 12, 2026",
+      "scope": "Full PDF text downloaded directly into memory and extracted; printed pages 4–5 financials, 7–8 strategy, 10 noncash, 13 liquidity. No marginal price.",
+      "accessed": "September 8, 2026"
+    },
+    {
+      "id": "programs",
+      "publisher": "New Door Ventures",
+      "title": "What We Do",
+      "url": "https://www.newdoor.org/what-we-do/",
+      "date": "Undated current page",
+      "scope": "Current program identity; no health effect inferred from promotional outcomes.",
+      "accessed": "September 8, 2026"
+    },
+    {
+      "id": "employment",
+      "publisher": "New Door Ventures",
+      "title": "Employment Program",
+      "url": "https://www.newdoor.org/what-we-do/employment-program/",
+      "date": "Undated current page",
+      "scope": "Six-month headline versus three-month-plus FAQ; paid hours and weekly support, not confirmed marginal capacity.",
+      "accessed": "September 8, 2026"
+    },
+    {
+      "id": "education",
+      "publisher": "New Door Ventures",
+      "title": "Education Program",
+      "url": "https://www.newdoor.org/what-we-do/education/",
+      "date": "Undated current page",
+      "scope": "High-school-equivalency instruction, stipends, transport and fees; not QALYs.",
+      "accessed": "September 8, 2026"
+    },
+    {
+      "id": "career",
+      "publisher": "New Door Ventures",
+      "title": "Career Services",
+      "url": "https://www.newdoor.org/career-services/",
+      "date": "Undated current page",
+      "scope": "Open to graduates and others; not automatically same cohort.",
+      "accessed": "September 8, 2026"
+    },
+    {
+      "id": "strategy",
+      "publisher": "New Door Ventures",
+      "title": "Program Director, SF Employment Program",
+      "url": "https://www.newdoor.org/get-involved/join-our-team/programs-director-san-francisco-employment-program/",
+      "date": "Undated current posting",
+      "scope": "Vision 2030 strengthened SF pathway; future implementation, not achieved outcomes.",
+      "accessed": "September 8, 2026"
+    },
+    {
+      "id": "ips",
+      "publisher": "UK Department for Work and Pensions",
+      "title": "Estimates of IPS impact over 12 months",
+      "url": "https://www.gov.uk/government/publications/health-led-trials-impact-evaluation-reports/estimates-of-the-impact-of-ips-over-12-months-health-led-employment-trial-evaluation",
+      "date": "July 2023; updated April 8, 2024",
+      "scope": "External adult health-selected trial, small endpoint utility, not youth causal coefficient or accumulated QALYs.",
+      "accessed": "September 8, 2026"
+    },
+    {
+      "id": "jobs",
+      "publisher": "UK Department for Work and Pensions",
+      "title": "Group Work/JOBS II cost-benefit technical report",
+      "url": "https://www.gov.uk/government/publications/an-evaluation-of-the-group-work-jobs-ii-trial/cost-benefit-analysis-technical-report",
+      "date": "2021; updated May 17, 2022",
+      "scope": "Null mean EQ5D counterweight; not proof every youth program is ineffective.",
+      "accessed": "September 8, 2026"
+    },
+    {
+      "id": "giving",
+      "publisher": "New Door Ventures",
+      "title": "Financial disclosures and official donation route",
+      "url": "https://www.newdoor.org/who-we-are/financials/",
+      "date": "Undated current page",
+      "scope": "General giving option, not restricted marginal program offer.",
+      "accessed": "September 8, 2026"
+    }
+  ]
+}

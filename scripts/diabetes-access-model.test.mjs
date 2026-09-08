@@ -1,0 +1,6 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';
+import {diabetesAccessModel} from '../lib/diabetes-access-model.mjs';
+const d=JSON.parse(fs.readFileSync(new URL('../data/san-francisco/st-anthony-diabetes-cea-v1.json',import.meta.url)));
+test('Diabetes uses verified integrated20-year health anchor once',()=>{const r=diabetesAccessModel(d.scenarios[1]);assert.equal(r.netQalys,.000375);assert(Math.abs(r.costPerTenQalys-10666666.666666666)<1e-6);assert.equal(r.maximumCostFor100k,3.75);});
+test('Peer-supported redesign is separate from outreach sensitivity',()=>{assert(d.scenarios.every(s=>s.sourceQalys===.0015));assert.equal(d.redesign.sourceQalys,.0276);assert(diabetesAccessModel(d.redesign).costPerTenQalys<100000);assert(diabetesAccessModel(d.scenarios[0]).costPerTenQalys>100000);});
+test('Diabetes null harm and bounds remain explicit',()=>{const s=d.scenarios[1];assert.equal(diabetesAccessModel({...s,fundingAdditionality:0,harmQalys:1}).netQalys,0);assert.equal(diabetesAccessModel({...s,harmQalys:1}).costPerTenQalys,null);assert.throws(()=>diabetesAccessModel({...s,transfer:2}),RangeError);assert.throws(()=>diabetesAccessModel({...s,cost:NaN}),RangeError);});

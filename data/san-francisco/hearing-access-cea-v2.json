@@ -1,0 +1,282 @@
+{
+  "model_id": "hsc-phc-hearing-access-v2-reviewed",
+  "as_of": "2026-09-08",
+  "status": "conditional_research_not_verified_offer",
+  "clinical_operator": "Hearing and Speech Center of Northern California",
+  "historical_ein": "94-1322198",
+  "current_charitable_eligibility": "Historical EIN is primary IRS automatic-revocation listed effective2025-11-15, posted2026-03-10, blank reinstatement field in dataset labeled2026-06-09; subsequent reinstatement/successor unverified; not evidence clinic closed",
+  "access_partner": "Project Homeless Connect",
+  "shared_outcome_ledger_key": "phc-hsc-adult-hearing-aid-access",
+  "unit": "one clinically eligible willing adult offered an assessed, fitted and supported hearing-aid course; one or both ears as indicated",
+  "source_inputs": {
+    "utility_anchor": {
+      "value": 0.12,
+      "units": "HUI3 utility, not QALYs",
+      "source": "https://link.springer.com/article/10.1186/s12913-020-05977-x",
+      "caution": "Three-month delayed-start community-center randomized study; modified control HUI3; short follow-up. No imported published ICER."
+    },
+    "local_pathway": "https://www.projecthomelessconnect.org/programs/coresenses/",
+    "donated_device_pathway": "https://hearingspeech.org/donate/item-donations/",
+    "general_restrictable_donation_not_offer": "https://hearingspeech.org/donate/",
+    "active_clinical_npi_not_charity_status": "https://npiregistry.cms.hhs.gov/api/?number=1164577433&version=2.1",
+    "secondary_status_warning": "https://projects.propublica.org/nonprofits/organizations/941322198",
+    "medicare_baseline": "https://www.medicare.gov/coverage/hearing-aids",
+    "medi_cal_baseline": "https://www.healthcareoptions.dhcs.ca.gov/content/dam/digital/united-states/california/ca-hco/documents/english/2024-MCP-EOC-member-handbook.pdf",
+    "otc_baseline": "https://www.fda.gov/medical-devices/hearing-aids/otc-hearing-aids-what-you-should-know"
+  },
+  "formula": "Q = funding_additionality * (utility_increment * local_transfer * pre_fitting_completion * effective_incremental_years - shared_pathway_harm_qaly_per_offer) - donor_specific_harm_qaly_per_offer",
+  "nonduplication": "Effective years includes ramp-up, later non-use, death and alternative-care catch-up. Do not apply another retention factor. Funding additionality concerns budget displacement, not repeat catch-up. PHC and HSC receive no separate health credit for the same course.",
+  "cost_perspective": "Constructed 2026 USD donor cash including paid clinical labor, failures and support. Resource comparison adds donated-device opportunity cost, excludes unknown patient time and credits no healthcare savings. Not provider quotation. Resource diagnostic is gross cash-plus-donated-stock per commissioned offer, not net incremental societal ICER; allowance not multiplied by funding and does not establish otherwise-used stock consumption.",
+  "scenarios": [
+    {
+      "name": "central",
+      "cash_components": {
+        "clinical_labor": 600,
+        "refurbishment_molds": 250,
+        "support_batteries_repairs": 250,
+        "coordination_and_failures": 200,
+        "facility_admin_contingency": 200
+      },
+      "cash_cost_per_offer": 1500,
+      "additional_resource_allowance": 600,
+      "utility_increment": 0.12,
+      "local_transfer": 0.5,
+      "pre_fitting_completion": 0.8,
+      "effective_incremental_years": 0.5,
+      "funding_additionality": 0.5,
+      "qaly_per_offer": 0.012,
+      "cash_cost_per_10_qaly": 1250000,
+      "resource_cost_per_10_qaly": 1750000,
+      "calendar_horizon_years": 1,
+      "discount_rate": 0.03,
+      "annual_incremental_benefit_fractions": [
+        0.515
+      ],
+      "shared_pathway_harm_qaly_per_offer": 0,
+      "donor_specific_harm_qaly_per_offer": 0,
+      "resource_cost_per_offer": 2100,
+      "supportBudgetCoversEntireCalendarWindow": true
+    },
+    {
+      "name": "favorable_extended_access_stress",
+      "cash_components": {
+        "clinical_labor": 400,
+        "refurbishment_molds": 150,
+        "support_batteries_repairs": 150,
+        "coordination_and_failures": 100,
+        "facility_admin_contingency": 100
+      },
+      "cash_cost_per_offer": 900,
+      "additional_resource_allowance": 600,
+      "utility_increment": 0.12,
+      "local_transfer": 0.75,
+      "pre_fitting_completion": 0.9,
+      "effective_incremental_years": 2,
+      "funding_additionality": 0.75,
+      "qaly_per_offer": 0.1215,
+      "cash_cost_per_10_qaly": 74074.07407407407,
+      "resource_cost_per_10_qaly": 123456.7901234568,
+      "calendar_horizon_years": 4,
+      "discount_rate": 0.03,
+      "annual_incremental_benefit_fractions": [
+        0.5380540903861649,
+        0.5380540903861649,
+        0.5380540903861649,
+        0.5380540903861649
+      ],
+      "shared_pathway_harm_qaly_per_offer": 0,
+      "donor_specific_harm_qaly_per_offer": 0,
+      "resource_cost_per_offer": 1500,
+      "supportBudgetCoversEntireCalendarWindow": true
+    },
+    {
+      "name": "pessimistic_instrument_and_access",
+      "cash_components": {
+        "clinical_labor": 1000,
+        "refurbishment_molds": 450,
+        "support_batteries_repairs": 400,
+        "coordination_and_failures": 300,
+        "facility_admin_contingency": 350
+      },
+      "cash_cost_per_offer": 2500,
+      "additional_resource_allowance": 1000,
+      "utility_increment": 0.01,
+      "local_transfer": 0.5,
+      "pre_fitting_completion": 0.5,
+      "effective_incremental_years": 0.25,
+      "funding_additionality": 0.25,
+      "qaly_per_offer": 0.00015625,
+      "cash_cost_per_10_qaly": 160000000,
+      "resource_cost_per_10_qaly": 224000000,
+      "calendar_horizon_years": 1,
+      "discount_rate": 0.03,
+      "annual_incremental_benefit_fractions": [
+        0.2575
+      ],
+      "shared_pathway_harm_qaly_per_offer": 0,
+      "donor_specific_harm_qaly_per_offer": 0,
+      "resource_cost_per_offer": 3500,
+      "supportBudgetCoversEntireCalendarWindow": true
+    },
+    {
+      "name": "null_budget_substitution",
+      "cash_cost_per_offer": 1500,
+      "utility_increment": 0.12,
+      "local_transfer": 0.5,
+      "pre_fitting_completion": 0.8,
+      "effective_incremental_years": 0.5,
+      "funding_additionality": 0,
+      "qaly_per_offer": 0,
+      "cash_cost_per_10_qaly": null,
+      "classification": "no incremental health",
+      "calendar_horizon_years": 1,
+      "discount_rate": 0.03,
+      "annual_incremental_benefit_fractions": [
+        0.515
+      ],
+      "shared_pathway_harm_qaly_per_offer": 0,
+      "donor_specific_harm_qaly_per_offer": 0,
+      "additional_resource_allowance": 600,
+      "cash_components": {
+        "clinical_labor": 600,
+        "refurbishment_molds": 250,
+        "support_batteries_repairs": 250,
+        "coordination_and_failures": 200,
+        "facility_admin_contingency": 200
+      },
+      "resource_cost_per_offer": 2100,
+      "resource_cost_per_10_qaly": null,
+      "supportBudgetCoversEntireCalendarWindow": true
+    },
+    {
+      "name": "hypothetical_signed_harm",
+      "cash_cost_per_offer": 1500,
+      "utility_increment": 0,
+      "local_transfer": 0.5,
+      "pre_fitting_completion": 0.8,
+      "effective_incremental_years": 0.5,
+      "funding_additionality": 0.5,
+      "qaly_per_offer": -0.001,
+      "cash_cost_per_10_qaly": null,
+      "classification": "dominated; harm amount is sensitivity judgment, not observed adverse-event rate",
+      "calendar_horizon_years": 1,
+      "discount_rate": 0.03,
+      "annual_incremental_benefit_fractions": [
+        0.515
+      ],
+      "shared_pathway_harm_qaly_per_offer": 0,
+      "donor_specific_harm_qaly_per_offer": 0.001,
+      "additional_resource_allowance": 600,
+      "cash_components": {
+        "clinical_labor": 600,
+        "refurbishment_molds": 250,
+        "support_batteries_repairs": 250,
+        "coordination_and_failures": 200,
+        "facility_admin_contingency": 200
+      },
+      "resource_cost_per_offer": 2100,
+      "resource_cost_per_10_qaly": null,
+      "supportBudgetCoversEntireCalendarWindow": true
+    },
+    {
+      "name": "zero_funding_shared_harm_cancels",
+      "cash_components": {
+        "clinical_labor": 600,
+        "refurbishment_molds": 250,
+        "support_batteries_repairs": 250,
+        "coordination_and_failures": 200,
+        "facility_admin_contingency": 200
+      },
+      "cash_cost_per_offer": 1500,
+      "additional_resource_allowance": 600,
+      "utility_increment": 0,
+      "local_transfer": 0.5,
+      "pre_fitting_completion": 0.8,
+      "effective_incremental_years": 0.5,
+      "funding_additionality": 0,
+      "qaly_per_offer": 0,
+      "cash_cost_per_10_qaly": null,
+      "resource_cost_per_10_qaly": null,
+      "calendar_horizon_years": 1,
+      "discount_rate": 0.03,
+      "annual_incremental_benefit_fractions": [
+        0.515
+      ],
+      "shared_pathway_harm_qaly_per_offer": 0.001,
+      "donor_specific_harm_qaly_per_offer": 0,
+      "resource_cost_per_offer": 2100,
+      "supportBudgetCoversEntireCalendarWindow": true,
+      "classification": "identical replacement: shared treatment harm not incremental"
+    },
+    {
+      "name": "zero_funding_independent_harm_persists",
+      "cash_components": {
+        "clinical_labor": 600,
+        "refurbishment_molds": 250,
+        "support_batteries_repairs": 250,
+        "coordination_and_failures": 200,
+        "facility_admin_contingency": 200
+      },
+      "cash_cost_per_offer": 1500,
+      "additional_resource_allowance": 600,
+      "utility_increment": 0,
+      "local_transfer": 0.5,
+      "pre_fitting_completion": 0.8,
+      "effective_incremental_years": 0.5,
+      "funding_additionality": 0,
+      "qaly_per_offer": -0.001,
+      "cash_cost_per_10_qaly": null,
+      "resource_cost_per_10_qaly": null,
+      "calendar_horizon_years": 1,
+      "discount_rate": 0.03,
+      "annual_incremental_benefit_fractions": [
+        0.515
+      ],
+      "shared_pathway_harm_qaly_per_offer": 0.001,
+      "donor_specific_harm_qaly_per_offer": 0.001,
+      "resource_cost_per_offer": 2100,
+      "supportBudgetCoversEntireCalendarWindow": true,
+      "classification": "donor-specific health harm despite budget substitution"
+    }
+  ],
+  "judgment_labels": "All local cost, completion, transfer, additionality, effective years and harm inputs are analyst assumptions. The 0.01 utility value is instrument sensitivity, not measured local benefit. Scenario ranges are not confidence intervals.",
+  "thresholds": {
+    "central_max_cash_at_100k_per10q": 120,
+    "central_required_effective_years_at_1500_cash": 6.25,
+    "favorable_required_effective_years_at_900_cash": 1.4814814814814814
+  },
+  "unknowns": [
+    "post-dataset reinstatement or verified eligible successor/controlled funding recipient",
+    "documented unfunded adult backlog",
+    "counterfactual appropriate fitting delay",
+    "payer entitlement and substitution",
+    "complete marginal course cost",
+    "device stock yield and capacity",
+    "longitudinal use and utility",
+    "additional outreach/screening cost if not already clinically eligible"
+  ],
+  "identityEvidence": {
+    "audit": "/private/tmp/mfi-hearing-identity.md",
+    "bulkPage": "https://www.irs.gov/charities-non-profits/tax-exempt-organization-search-bulk-data-downloads",
+    "revocationZip": "https://apps.irs.gov/pub/epostcard/data-download-revocation.zip",
+    "publication78Zip": "https://apps.irs.gov/pub/epostcard/data-download-pub78.zip",
+    "record": "941322198|HEARING AND SPEECH CENTER OF NORTHERN CALIFORNIA||1234 DIVISADERO ST|SAN FRANCISCO|CA|94115-3911|US|03|15-NOV-2025|10-MAR-2026|",
+    "caution": "Preserves complete primary-record extraction from same-day identity audit; no new bulk download. Current IRS landing page independently confirms June9,2026 dataset label."
+  },
+  "timeConvention": {
+    "annualDiscountRate": 0.03,
+    "discountTiming": "Annual end-of-year",
+    "effectiveYearsFormula": "sum annual_incremental_benefit_fractions[y-1]/(1.03^y), y=1..calendar_horizon_years",
+    "fractionMeaning": "Conditional on pre-fitting completion, combined incremental utility-equivalent exposure relative to alternative care: ramp/non-use/death/catch-up; constructed annual-average schedule, not observed adherence",
+    "cashTiming": "Entire donor cash budget committed/reserved at time0, including support throughout calendar horizon; no unpriced extension and no second discount of cash commitment"
+  },
+  "harmConvention": {
+    "shared": "Net additional pathway health burden per commissioned offer, before financing additionality. Must exclude treatment burden already in net utility anchor. Shared clinical harms cancel under identical funding replacement.",
+    "independent": "Already-net donor-specific health harm outside funding factor. Not money/opportunity cost in dollars; monetary costs stay numerator. Donor-specific displaced health only if separately modeled."
+  },
+  "ranking": {
+    "core": "central",
+    "extendedFavorableStress": "favorable_extended_access_stress",
+    "doNotPromoteStressToCentral": true
+  }
+}

@@ -1,0 +1,3 @@
+import {expect,test} from '@playwright/test';
+for(const [slug,title,api,price]of[['community-forward-sf','Community Forward SF','respite','$1,413,333,333'],['sfccc','San Francisco Community Clinic Consortium','wound','$24,677,966']])test(slug+' exposes conditional clinical pathway',async({page})=>{
+ await page.goto('/charities/'+slug);await expect(page.getByRole('heading',{level:1})).toHaveText(title);await expect(page.locator('main')).toContainText(price);await expect(page.locator('main')).toContainText('Null is plausible');expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);const r=await page.request.get('/api/sf-'+api+'-model');expect(r.ok()).toBe(true);const d=await r.json();expect(d.verifiedMarginalOffer).toBe(false);});

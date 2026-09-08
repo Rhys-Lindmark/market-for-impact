@@ -34,9 +34,11 @@ Dependency: completed phase 2 research. Compare cash-gap prevention, treatment, 
 
 Dependency: SF10. Hypothesize the mechanism before selecting the charity; use the synthesis to guide the search, then update beliefs from evidence.
 
-- [ ] SF12 Screen the ten mechanism-first research bets in [sf-research-bets.md](sf-research-bets.md): first hypothesize a cheap causal route to health gains, then find a local implementer, then test whether it holds. This label is a research priority, not an effectiveness endorsement. Discovery queue recorded; program models remain unfinished.
+- [ ] SF12 Ten mechanism-first implementations are complete through PR #189: DOPE, HealthRIGHT360, SFCHC HCV, NEMS HBV, SFFC vaccine access, Breathe, Clinic by the Bay, St Anthony, CFSF respite and SFCCC wound care. The first eight are accepted through public version127; final two await PR #189 CI and canonical release acceptance. Do not mark this phase accepted until that verification. These are research scenarios, not ten endorsements or verified funding offers.
 
 ## Phase 5 — ten unconventional programs
+
+Next ready after SF12 acceptance: integrate the ten unconventional drafts already preserved by PR #177. Separately, user-requested five large Bay nonprofits were published via #188 / version128 with audited FY2025 expense and donated-food boundaries; prioritize a specific food-benefit/food-health and YMCA youth/health follow-up without substituting size for effectiveness.
 
 Dependency: SF12.
 
@@ -67,7 +69,7 @@ Latest user ordering supersedes parallel expansion: finish 25 → theory → mec
 
 Current phase: 4 — ten mechanism-first bets. All25 original models are released through PR #162; city theory PR #164 is merged and independently accepted. No verified marginal funding offers. Current ranking #165 joins the two additional comparator models and synchronizes the 27-review list and homepage four. Next: mechanism-first ten, unconventional ten, policy three, then final visual rebuild. Later user direction enables an immediate central-estimate research sort and matching homepage four; full visual rebuild remains later.
 
-Active block started 2026-09-08T03:11:37Z; target90 measured minutes without padding. DOPE, HealthRIGHT360, SFCHC HCV, NEMS HBV and SFFC vaccine access are accepted through PR #179 / Sites v124, exact source fe7c8adb1b891d0cf64771decc25c6c5b494bec6. Canonical32-review ranking, homepage four and vaccine report/API passed. Breathe #180 is independently audited with256 tests, lint/build, eight phone/tablet checks and native workbook A296:E316 arithmetic passed; release gate pending. Conditional cessation central533K/10Q moves into fourth place; child asthma5.98M is a separate mechanism, not an extra organization. Next: St Anthony and Clinic by the Bay audits, then respite and wound care. All four implementation audits are preserved under /private/tmp/mfi-parallel-mechanisms for integration; persistent discovery drafts were merged in #177. No verified marginal funding offers. Root owns Site changes; research auditors supply evidence only. Child leads #173 remain in scope; avoid duplicate organization counts.
+Active block started 2026-09-08T03:11:37Z. NEMS, vaccines, Breathe, dental and St Anthony releases are accepted through Sites v127; the separate large-Bay audit shortlist is live as v128 / PR #188. Final mechanism models (CFSF respite and SFCCC wound care) are implemented in PR #189: 267 tests, lint/build, six focused phone/tablet checks and native formula readback passed, pending final CI and canonical release verification. Ranking has37 modeled reviews locally; public ranking remains35 until #189 deploys. Next after acceptance: integrate the ten unconventional drafts preserved in #177, then policy three and final visual rebuild. Large-Bay program follow-ups and child leads #173 remain in scope. Root owns Site changes; auditors supply evidence only. No verified marginal funding offers.
 
 SF4: EDC now has an explicit subjective adult-health bridge: $126M/10 QALYs, positive scenarios $2.1M–$25.2B and a zero-benefit boundary. The historical failed-gate audit is preserved as history, not the current estimate. July 2026 randomized evidence cautions against treating legal possession as stable housing. PR #129 and canonical report/API accepted in Sites v103.
 

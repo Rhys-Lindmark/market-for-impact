@@ -10,6 +10,7 @@ Design first for a major donor deciding how to deploy roughly $10 million this y
 
 ## Now — foundation
 
+- [x] **Clinical access models / issue #187:** Added Community Forward SF respite and SFCCC sustained venous-ulcer reviews, inspectable APIs, signed-health models and central ranking entries. 266 unit tests, lint/build, six phone/tablet checks and native Sheet formulas passed. No verified marginal offers; see docs/clinical-pathways-source-audit.md. Release acceptance still requires merged CI and canonical verification.
 - [x] **Large Bay discovery / issue #185:** Added a separate five-organization FY2025 audited-expense shortlist at /research/large-bay-nonprofits. Preserve donated-food accounting, wider geography, Goodwill selection caveat and no organization-wide QALY inference. Next: specify one marginal food-benefit/food-health program and one YMCA youth/health intervention, then model their donor additionality and dollars per 10 QALYs.
 
 - [x] **Mechanism-first3: SFCHC integrated HCV access — #172.** Accepted PR #174 / Sites v122, exact b28297233fcd4cb05f4de9a2abf1523504935d91. Central $2.00M/10 QALYs; no verified marginal offer. 244 tests, lint/build, independent audit, native workbook A211:E243, phone/tablet and canonical 30-row ranking/report/API passed.

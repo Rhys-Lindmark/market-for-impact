@@ -1,0 +1,9 @@
+# Clinic by the Bay dental acceptance — 2026-09-07
+
+Independent source audit and actual-code review: sf_research_audit; root verified primary local services, salary posting and Wigsten2023 paired outcome text. Source URLs and retrieval dates are in the model JSON. This is an exploratory earlier-relief model, not an endorsed extraction policy or verified marginal offer.
+
+The discovery draft's harm convention was ambiguous. Accepted model applies funding additionality to BOTH relief and net harm: a × (utility × integrated untreated pain-years × symptomatic resolution − harm). Thus pure replacement of identical care creates zero benefit and harm. Central .5 × (.04 × .25 × .8 − .0005) = .00375 QALY; USD350 gives USD933,333 per10 QALYs, not the draft's USD1M. Favorable14,870; pessimistic80M. Threshold2.203125 untreated pain-years versus central.25, or central donor cost37.50.
+
+All health inputs are judgments. The source's matched extraction respondents n18 changed EQ5D .77 to.81, p=.297; no untreated comparator. It does not establish a causal extraction effect or year-long untreated pain. Cost350 is a construction using the published85–95K/20-hour salary anchor, not quoted unit cost. Indirect/failed appointments allocated; volunteer resources excluded from donor cost but not free. Clinicians and patients choose appropriate treatment; simple extraction and no local tooth replacement bound transfer. SF-resident restriction is a hypothetical modeled allocation.
+
+259 unit tests, lint/build and four phone/tablet report/ranking checks passed. Existing native workbook A318:E328 formulas exactly match JS; output price, cost threshold and pain duration were visually verified in separate Codex browser. No user Chrome interaction or sharing change. Full GitHub and canonical publication gates remain required.

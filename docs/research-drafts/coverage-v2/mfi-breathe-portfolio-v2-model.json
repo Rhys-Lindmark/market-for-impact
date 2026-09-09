@@ -1,0 +1,157 @@
+{
+  "model_id": "breathe-ein941156307-expanded-clinical-coverage-v2",
+  "prepared": "2026-09-08",
+  "status": "Research correction only; full organization expectation unresolved; do not publish subset as whole-org estimate",
+  "foundation": {
+    "gift_usd": 100000,
+    "discount": 0.03,
+    "cessation_allocation": 0.15,
+    "asthma_allocation": 0.25,
+    "cessation_cash_per_offer": 250,
+    "asthma_cash_per_offer": 1200,
+    "cessation_additionality": 0.4,
+    "asthma_additionality": 0.35,
+    "extra_six_month_quit": 0.03,
+    "background_quit_hazard": 0.04,
+    "relapse_hazard": 0.1,
+    "smoking_mortality": 0.012,
+    "quit_mortality": 0.008,
+    "smoking_utility": 0.75,
+    "quit_utility": 0.77,
+    "cessation_horizon": 10,
+    "mortality_recovery_lag": 2,
+    "cessation_delay": 0.5,
+    "asthma_extra_symptom_free_days": 24.4,
+    "asthma_transfer": 0.5,
+    "asthma_child_fraction": 0.6,
+    "asthma_utility_gap": 0.1,
+    "asthma_years": 1,
+    "asthma_delay": 0.25,
+    "cessation_external_per_offer": 100,
+    "asthma_external_per_offer": 300,
+    "cessation_bay_share": 0.75,
+    "cessation_sf_share": 0.05,
+    "asthma_bay_share": 0.8,
+    "asthma_sf_share": 0.08,
+    "cessation_harm_per_added_offer": 0,
+    "asthma_harm_per_added_offer": 0,
+    "independent_harm_q": 0,
+    "harm_bay_share": 0.8,
+    "harm_sf_share": 0.05
+  },
+  "inputs": {
+    "cpap_allocation": 0.25,
+    "cpap_cash_per_episode": 500,
+    "cpap_additionality": 0.5,
+    "cpap_qaly_one_year": 0.005,
+    "cpap_relative_transfer": 0.8,
+    "cpap_delay": 0.25,
+    "cpap_outside_per_episode": 400,
+    "cpap_bay_share": 0.8,
+    "cpap_sf_share": 0.08,
+    "adult_asthma_days_per_fortnight": 2.02,
+    "adult_asthma_transfer": 0.5,
+    "adult_asthma_symptom_utility_gap": 0.1,
+    "adult_asthma_homevisit_fraction": 0.8
+  },
+  "scenarios": [
+    {
+      "id": "central",
+      "inputs": {}
+    },
+    {
+      "id": "cpap_sf6d_measure",
+      "inputs": {
+        "cpap_qaly_one_year": 0.018
+      }
+    },
+    {
+      "id": "cpap_eq5d_lower_ci",
+      "inputs": {
+        "cpap_qaly_one_year": -0.034
+      }
+    },
+    {
+      "id": "cpap_eq5d_upper_ci",
+      "inputs": {
+        "cpap_qaly_one_year": 0.044
+      }
+    },
+    {
+      "id": "cpap_financing_replacement",
+      "inputs": {
+        "cpap_additionality": 0
+      }
+    },
+    {
+      "id": "cpap_no_utility_effect",
+      "inputs": {
+        "cpap_qaly_one_year": 0
+      }
+    },
+    {
+      "id": "adult_asthma_null",
+      "inputs": {
+        "adult_asthma_days_per_fortnight": 0
+      }
+    },
+    {
+      "id": "all_replacement",
+      "foundation": {
+        "cessation_additionality": 0,
+        "asthma_additionality": 0
+      },
+      "inputs": {
+        "cpap_additionality": 0
+      }
+    },
+    {
+      "id": "no_sf",
+      "foundation": {
+        "cessation_sf_share": 0,
+        "asthma_sf_share": 0,
+        "harm_sf_share": 0
+      },
+      "inputs": {
+        "cpap_sf_share": 0
+      }
+    },
+    {
+      "id": "zero_gift",
+      "foundation": {
+        "gift_usd": 0
+      },
+      "inputs": {}
+    },
+    {
+      "id": "new_path_harm",
+      "inputs": {
+        "cpap_qaly_one_year": -0.02,
+        "adult_asthma_days_per_fortnight": -1
+      }
+    },
+    {
+      "id": "cheap_cpap_high_response",
+      "inputs": {
+        "cpap_cash_per_episode": 250,
+        "cpap_additionality": 0.8,
+        "cpap_qaly_one_year": 0.018,
+        "cpap_relative_transfer": 1
+      }
+    },
+    {
+      "id": "copay_not_free_resource",
+      "inputs": {
+        "cpap_outside_per_episode": 800
+      }
+    },
+    {
+      "id": "no_discount",
+      "foundation": {
+        "discount": 0
+      },
+      "inputs": {}
+    }
+  ]
+}
+

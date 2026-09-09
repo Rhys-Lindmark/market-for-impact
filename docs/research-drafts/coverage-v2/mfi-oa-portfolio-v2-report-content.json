@@ -1,0 +1,1134 @@
+{
+  "organization": "Operation Access",
+  "eyebrow": "Whole organization · named diagnostic case-mix priors",
+  "program": "Expected ordinary-gift health conditional on explicit case-mix assumptions",
+  "donationUrl": "https://www.operationaccess.org/donate",
+  "published": "September 9, 2026",
+  "modelVersion": "oa-whole-gift-named-coverage-v2",
+  "nutshell": {
+    "headline": "The omitted specialties materially raise estimated health, but the result remains uncertain and expensive.",
+    "body": "For $100,000, central net health is 0.513674 QALYs nationally. Donor cost per10Q is $1,946,762 US, $3,244,603 Bay and $24,334,519 SF. These are conditional case-mix expectations, not measured OA outcomes.",
+    "whyItMayWork": "Coordinated donated specialty treatment can relieve persistent bleeding, neuropathy, obstruction, pain and vision loss across multiple specialties.",
+    "whyWeAreCautious": "Current specialty totals are known but modern diagnosis frequencies are not. Historical mix, heterogeneous trial comparators, generic utility mapping and no-gift timing require explicit priors.",
+    "recommendationBlocker": "No verified marginal procedure mix, distinct-patient wait comparison or complete treatment linkage. Even joint favorable national donor scenario is about$465k/10Q."
+  },
+  "summary": [
+    {
+      "label": "Full gift",
+      "value": "$100,000",
+      "detail": "All-function coordination cost retained across all10 specialty categories; no inverse allocation uplift."
+    },
+    {
+      "label": "Expanded net health",
+      "value": "0.513674 QALYs",
+      "detail": "Old3pathways 0.064065; named additions 0.449609. Bay 0.308204 / SF 0.041094."
+    },
+    {
+      "label": "Gross associated resources",
+      "value": "$369,105",
+      "detail": "All nominal service clinical/support/time resources retained, plus explicit further-treatment allowance; not waived charges or net societal costs."
+    }
+  ],
+  "programSection": {
+    "body": "Recipient Ambulatory Surgery Access Coalition dba Operation Access, EIN94-3180356, coordinates donated outpatient specialty services for eligible uninsured people.2025reported1,529services across10specialties; these are not distinct patients or diagnosis-specific procedures.",
+    "steps": [
+      {
+        "title": "Allocate current specialty service equivalents",
+        "detail": "Use complete whole-gift cash and existing specialty costs; no repeated overhead or navigation multiplier."
+      },
+      {
+        "title": "Use a complete named case-mix ledger",
+        "detail": "Each specialty sums to100%across old and new pathways, with fractions explicitly assumed rather than observed."
+      },
+      {
+        "title": "Count finite earlier appropriate treatment",
+        "detail": "Symptom relief stops with comparator catch-up, recurrence, death or horizon. Diagnosis requires management; acute harm remains."
+      }
+    ],
+    "boundary": "Current specialties are verified, but naming a representative diagnosis does not establish actual OA procedure frequency. Expected organization health is conditional on the inspectable case-mix prior. Other assessment2%has explicitzero benefit plus burden."
+  },
+  "model": {
+    "headline": "Named-pathway coverage replaces the three-subset headline",
+    "body": "Preserves original finite CRC, cataract and hernia components; adds21named clinical/assessment rows. No generic residual QALY-per-dollar parameter.",
+    "equation": {
+      "label": "Each new clinical row",
+      "expression": "People=whole gift×specialty allocation/cost×diagnostic share×common additional-activity factor÷services/episode×disjoint fraction. Q=people×[success/linkage×signed utility gain×delay discount×finite annuity(catch-up+recurrence+death+discount,H)−acute burden]. Sum all rows and original components; retain whole gift and all nominal clinical resources.",
+      "result": "Central 0.5136735945144643 QALYs; same full gift priced against each geographic share."
+    },
+    "inputs": [
+      {
+        "key": "gift_usd",
+        "label": "gift usd",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "100000",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Reference ordinary unrestricted gift; every dollar retained, not an SF colonoscopy restriction."
+      },
+      {
+        "key": "funding_additionality",
+        "label": "funding additionality",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.5",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "50% judgment for extra maintained/expanded services after replacement funding and provider bottlenecks. Existing OA care is baseline. Not estimated from the deficit or reserves."
+      },
+      {
+        "key": "max_additional_services",
+        "label": "max additional services",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "100",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "100 extra mixed-service cap is an assumption, not identified open appointments. Shared capacity reduces all specialty activity proportionately."
+      },
+      {
+        "key": "discount",
+        "label": "discount",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.03",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "3% annual health discount; economic resource amounts are gross associated present-dollar allowances, not a discounted net-social ledger."
+      },
+      {
+        "key": "bay_share",
+        "label": "bay share",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.6",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "60% weak beneficiary-residence prior within Northern California/Central Valley reach. No published specialty-specific county shares verified."
+      },
+      {
+        "key": "sf_share",
+        "label": "sf share",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.08",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "8% weak SF beneficiary-residence prior nested within Bay, not office location or guaranteed restricted allocation."
+      },
+      {
+        "key": "independent_harm_q",
+        "label": "independent harm q",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Gift-date PV health loss independent of clinical activity; central0. The preserved historical foundation tested a zero-activity adverse loss of1; this is not one of the nine v2 scenarios."
+      },
+      {
+        "key": "outside_support_per_service",
+        "label": "outside support per service",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "60",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "$60 distinct nonclinical donated support per nominal mixed service, rounded from89,922/1,529; not already cash-paid interpretation/travel."
+      },
+      {
+        "key": "patient_time_per_service",
+        "label": "patient time per service",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "100",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "$100 additional patient/caregiver time allowance per nominal service, not earnings benefits or OA-paid travel."
+      },
+      {
+        "key": "crc_treatment_cost_per_selected",
+        "label": "crc treatment cost per selected",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "1500",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "$1,500 expected downstream therapy/surveillance resource allowance per nominal selectedFIT service, beyond endoscopy resources; weak prior, not provider quote or complete treatment estimate."
+      },
+      {
+        "key": "gi_allocation",
+        "label": "gi allocation",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.37",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Prospective all-function cash allocation prior, loosely anchored to mixed2025 specialty service shares; specialty cash spending not observed. Ten categories sum to1; management/fundraising are allocated once across all categories."
+      },
+      {
+        "key": "gi_cash_per_service",
+        "label": "gi cash per service",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "1400",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "All-function cash allocation per completed specialty service-equivalent, including failed-referral work. Judgment around audited$1,476 mixed-service average, not a specialist-specific quote. No added13pp navigation multiplier."
+      },
+      {
+        "key": "gi_clinical_resource_per_service",
+        "label": "gi clinical resource per service",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "2500",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Distinct donated clinician/facility/anesthesia/pathology resource prior per nominal service; not waived charges, no patient fee or public payment subtracted. Includes repeat services through the nominal-service denominator."
+      },
+      {
+        "key": "general_allocation",
+        "label": "general allocation",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.13",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Prospective all-function cash allocation prior, loosely anchored to mixed2025 specialty service shares; specialty cash spending not observed. Ten categories sum to1; management/fundraising are allocated once across all categories."
+      },
+      {
+        "key": "general_cash_per_service",
+        "label": "general cash per service",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "1700",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "All-function cash allocation per completed specialty service-equivalent, including failed-referral work. Judgment around audited$1,476 mixed-service average, not a specialist-specific quote. No added13pp navigation multiplier."
+      },
+      {
+        "key": "general_clinical_resource_per_service",
+        "label": "general clinical resource per service",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "5500",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Distinct donated clinician/facility/anesthesia/pathology resource prior per nominal service; not waived charges, no patient fee or public payment subtracted. Includes repeat services through the nominal-service denominator."
+      },
+      {
+        "key": "gyne_allocation",
+        "label": "gyne allocation",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.11",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Prospective all-function cash allocation prior, loosely anchored to mixed2025 specialty service shares; specialty cash spending not observed. Ten categories sum to1; management/fundraising are allocated once across all categories."
+      },
+      {
+        "key": "gyne_cash_per_service",
+        "label": "gyne cash per service",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "1500",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "All-function cash allocation per completed specialty service-equivalent, including failed-referral work. Judgment around audited$1,476 mixed-service average, not a specialist-specific quote. No added13pp navigation multiplier."
+      },
+      {
+        "key": "gyne_clinical_resource_per_service",
+        "label": "gyne clinical resource per service",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "4500",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Distinct donated clinician/facility/anesthesia/pathology resource prior per nominal service; not waived charges, no patient fee or public payment subtracted. Includes repeat services through the nominal-service denominator."
+      },
+      {
+        "key": "ortho_allocation",
+        "label": "ortho allocation",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.1",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Prospective all-function cash allocation prior, loosely anchored to mixed2025 specialty service shares; specialty cash spending not observed. Ten categories sum to1; management/fundraising are allocated once across all categories."
+      },
+      {
+        "key": "ortho_cash_per_service",
+        "label": "ortho cash per service",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "1600",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "All-function cash allocation per completed specialty service-equivalent, including failed-referral work. Judgment around audited$1,476 mixed-service average, not a specialist-specific quote. No added13pp navigation multiplier."
+      },
+      {
+        "key": "ortho_clinical_resource_per_service",
+        "label": "ortho clinical resource per service",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "5000",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Distinct donated clinician/facility/anesthesia/pathology resource prior per nominal service; not waived charges, no patient fee or public payment subtracted. Includes repeat services through the nominal-service denominator."
+      },
+      {
+        "key": "head_neck_allocation",
+        "label": "head neck allocation",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.08",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Prospective all-function cash allocation prior, loosely anchored to mixed2025 specialty service shares; specialty cash spending not observed. Ten categories sum to1; management/fundraising are allocated once across all categories."
+      },
+      {
+        "key": "head_neck_cash_per_service",
+        "label": "head neck cash per service",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "1500",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "All-function cash allocation per completed specialty service-equivalent, including failed-referral work. Judgment around audited$1,476 mixed-service average, not a specialist-specific quote. No added13pp navigation multiplier."
+      },
+      {
+        "key": "head_neck_clinical_resource_per_service",
+        "label": "head neck clinical resource per service",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "3500",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Distinct donated clinician/facility/anesthesia/pathology resource prior per nominal service; not waived charges, no patient fee or public payment subtracted. Includes repeat services through the nominal-service denominator."
+      },
+      {
+        "key": "urology_allocation",
+        "label": "urology allocation",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.07",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Prospective all-function cash allocation prior, loosely anchored to mixed2025 specialty service shares; specialty cash spending not observed. Ten categories sum to1; management/fundraising are allocated once across all categories."
+      },
+      {
+        "key": "urology_cash_per_service",
+        "label": "urology cash per service",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "1500",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "All-function cash allocation per completed specialty service-equivalent, including failed-referral work. Judgment around audited$1,476 mixed-service average, not a specialist-specific quote. No added13pp navigation multiplier."
+      },
+      {
+        "key": "urology_clinical_resource_per_service",
+        "label": "urology clinical resource per service",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "4000",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Distinct donated clinician/facility/anesthesia/pathology resource prior per nominal service; not waived charges, no patient fee or public payment subtracted. Includes repeat services through the nominal-service denominator."
+      },
+      {
+        "key": "derm_allocation",
+        "label": "derm allocation",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.05",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Prospective all-function cash allocation prior, loosely anchored to mixed2025 specialty service shares; specialty cash spending not observed. Ten categories sum to1; management/fundraising are allocated once across all categories."
+      },
+      {
+        "key": "derm_cash_per_service",
+        "label": "derm cash per service",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "1300",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "All-function cash allocation per completed specialty service-equivalent, including failed-referral work. Judgment around audited$1,476 mixed-service average, not a specialist-specific quote. No added13pp navigation multiplier."
+      },
+      {
+        "key": "derm_clinical_resource_per_service",
+        "label": "derm clinical resource per service",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "1800",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Distinct donated clinician/facility/anesthesia/pathology resource prior per nominal service; not waived charges, no patient fee or public payment subtracted. Includes repeat services through the nominal-service denominator."
+      },
+      {
+        "key": "vascular_allocation",
+        "label": "vascular allocation",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.04",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Prospective all-function cash allocation prior, loosely anchored to mixed2025 specialty service shares; specialty cash spending not observed. Ten categories sum to1; management/fundraising are allocated once across all categories."
+      },
+      {
+        "key": "vascular_cash_per_service",
+        "label": "vascular cash per service",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "1800",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "All-function cash allocation per completed specialty service-equivalent, including failed-referral work. Judgment around audited$1,476 mixed-service average, not a specialist-specific quote. No added13pp navigation multiplier."
+      },
+      {
+        "key": "vascular_clinical_resource_per_service",
+        "label": "vascular clinical resource per service",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "4500",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Distinct donated clinician/facility/anesthesia/pathology resource prior per nominal service; not waived charges, no patient fee or public payment subtracted. Includes repeat services through the nominal-service denominator."
+      },
+      {
+        "key": "eye_allocation",
+        "label": "eye allocation",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.03",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Prospective all-function cash allocation prior, loosely anchored to mixed2025 specialty service shares; specialty cash spending not observed. Ten categories sum to1; management/fundraising are allocated once across all categories."
+      },
+      {
+        "key": "eye_cash_per_service",
+        "label": "eye cash per service",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "1800",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "All-function cash allocation per completed specialty service-equivalent, including failed-referral work. Judgment around audited$1,476 mixed-service average, not a specialist-specific quote. No added13pp navigation multiplier."
+      },
+      {
+        "key": "eye_clinical_resource_per_service",
+        "label": "eye clinical resource per service",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "2500",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Distinct donated clinician/facility/anesthesia/pathology resource prior per nominal service; not waived charges, no patient fee or public payment subtracted. Includes repeat services through the nominal-service denominator."
+      },
+      {
+        "key": "other_allocation",
+        "label": "other allocation",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.02",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Prospective all-function cash allocation prior, loosely anchored to mixed2025 specialty service shares; specialty cash spending not observed. Ten categories sum to1; management/fundraising are allocated once across all categories."
+      },
+      {
+        "key": "other_cash_per_service",
+        "label": "other cash per service",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "1500",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "All-function cash allocation per completed specialty service-equivalent, including failed-referral work. Judgment around audited$1,476 mixed-service average, not a specialist-specific quote. No added13pp navigation multiplier."
+      },
+      {
+        "key": "other_clinical_resource_per_service",
+        "label": "other clinical resource per service",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "3000",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Distinct donated clinician/facility/anesthesia/pathology resource prior per nominal service; not waived charges, no patient fee or public payment subtracted. Includes repeat services through the nominal-service denominator."
+      },
+      {
+        "key": "eye_selected_fraction",
+        "label": "eye selected fraction",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.65",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "65% of nominal ophthalmology services assumed selected first-eye function-limiting cataract pathway;45observedeye services also include other procedures."
+      },
+      {
+        "key": "eye_services_per_person",
+        "label": "eye services per person",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "1.2",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "1.2 service-equivalents per unique selected patient-episode planning prior; avoids service=person. All associated service costs retained."
+      },
+      {
+        "key": "eye_disjoint_fraction",
+        "label": "eye disjoint fraction",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.95",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Exclusive patient ledger order CRC→cataract→hernia, fractions1/.95/.90. Prior allowance for people already credited; no second eye, repeat operation or second pathway full-person health award."
+      },
+      {
+        "key": "eye_treatment_success",
+        "label": "eye treatment success",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.9",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Clinical success/transfer judgment, not observed OA success or the96%self-reported broadquality-of-life figure."
+      },
+      {
+        "key": "eye_utility_gain",
+        "label": "eye utility gain",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.05",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": ".05 utility-point gain per successful person-year is a separate judgment. The RCT's.056 integrated first-yearQALY is a magnitude anchor only, not a rate multiplied by three years."
+      },
+      {
+        "key": "eye_catchup_hazard",
+        "label": "eye catchup hazard",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.7",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": ".7/year rate prior for later public/safety-net/self-funded care catching up; discounts finite earlier-care health even when no new gift finances the initial procedure."
+      },
+      {
+        "key": "eye_loss_hazard",
+        "label": "eye loss hazard",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.03",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Recurrence or loss-of-benefit hazard prior, separate from eventual comparator care and mortality."
+      },
+      {
+        "key": "eye_mortality_hazard",
+        "label": "eye mortality hazard",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.02",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "All-cause competing mortality hazard prior during symptom gain. No mortality benefit claimed for this pathway."
+      },
+      {
+        "key": "eye_horizon_years",
+        "label": "eye horizon years",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "3",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "At most three years of possible postprocedure symptom difference centrally; no permanence claim. Later care and recurrence shorten expected benefit."
+      },
+      {
+        "key": "eye_delay_years",
+        "label": "eye delay years",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.25",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Quarter-year procedure delay; cohort already conditioned alive at service start, so delay discounts only."
+      },
+      {
+        "key": "eye_harm_q_per_person",
+        "label": "eye harm q per person",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.002",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Extra procedure/recovery/complication burden per unique episode in gift-date PVQALYs; includes all repeat procedures in that episode. Independent of treatment success. No delayed no-gift procedure harm is subtracted, conservatively."
+      },
+      {
+        "key": "hernia_selected_fraction",
+        "label": "hernia selected fraction",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.45",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "45% of nominal general-surgery services assumed selected symptomatic hernia episodes;201general services are not201hernias."
+      },
+      {
+        "key": "hernia_services_per_person",
+        "label": "hernia services per person",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "1.2",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "1.2 service-equivalents per unique selected patient-episode planning prior; avoids service=person. All associated service costs retained."
+      },
+      {
+        "key": "hernia_disjoint_fraction",
+        "label": "hernia disjoint fraction",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.9",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Exclusive patient ledger order CRC→cataract→hernia, fractions1/.95/.90. Prior allowance for people already credited; no second eye, repeat operation or second pathway full-person health award."
+      },
+      {
+        "key": "hernia_treatment_success",
+        "label": "hernia treatment success",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.85",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Clinical success/transfer judgment, not observed OA success or the96%self-reported broadquality-of-life figure."
+      },
+      {
+        "key": "hernia_utility_gain",
+        "label": "hernia utility gain",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.04",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": ".04 utility-point gain per successful symptomatic-person-year is a judgment; minimallysymptomatic randomized evidence is essentially null. Selected pain-limiting hernia fraction and transport are unknown."
+      },
+      {
+        "key": "hernia_catchup_hazard",
+        "label": "hernia catchup hazard",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.7",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": ".7/year rate prior for later public/safety-net/self-funded care catching up; discounts finite earlier-care health even when no new gift finances the initial procedure."
+      },
+      {
+        "key": "hernia_loss_hazard",
+        "label": "hernia loss hazard",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.08",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Recurrence or loss-of-benefit hazard prior, separate from eventual comparator care and mortality."
+      },
+      {
+        "key": "hernia_mortality_hazard",
+        "label": "hernia mortality hazard",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.02",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "All-cause competing mortality hazard prior during symptom gain. No mortality benefit claimed for this pathway."
+      },
+      {
+        "key": "hernia_horizon_years",
+        "label": "hernia horizon years",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "3",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "At most three years of possible postprocedure symptom difference centrally; no permanence claim. Later care and recurrence shorten expected benefit."
+      },
+      {
+        "key": "hernia_delay_years",
+        "label": "hernia delay years",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.25",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Quarter-year procedure delay; cohort already conditioned alive at service start, so delay discounts only."
+      },
+      {
+        "key": "hernia_harm_q_per_person",
+        "label": "hernia harm q per person",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.004",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Extra procedure/recovery/complication burden per unique episode in gift-date PVQALYs; includes all repeat procedures in that episode. Independent of treatment success. No delayed no-gift procedure harm is subtracted, conservatively."
+      },
+      {
+        "key": "crc_selected_fraction",
+        "label": "crc selected fraction",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.5",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "50% of nominal GI services assumed abnormal-FIT follow-up;575GI services are not575positiveFIT patients."
+      },
+      {
+        "key": "crc_services_per_person",
+        "label": "crc services per person",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "1.2",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "1.2 service-equivalents per unique selected patient-episode planning prior; avoids service=person. All associated service costs retained."
+      },
+      {
+        "key": "crc_disjoint_fraction",
+        "label": "crc disjoint fraction",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "1",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Exclusive patient ledger order CRC→cataract→hernia, fractions1/.95/.90. Prior allowance for people already credited; no second eye, repeat operation or second pathway full-person health award."
+      },
+      {
+        "key": "crc_treatment_linkage",
+        "label": "crc treatment linkage",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.7",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "70% judgment chance that necessary appropriate downstream management can deliver the modeled contrast. Diagnostic completion alone earns no full treatment gain."
+      },
+      {
+        "key": "crc_annual_fatal_hazard_reduction",
+        "label": "crc annual fatal hazard reduction",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.0006",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": ".0006/year is a judgment if no later-care catchup, lasting five hazard-years after latency. It is not.0092/10 or an estimated causal attenuation of the cohort. Fiveyears×.0006=.003 cumulative hazard only as a scale check."
+      },
+      {
+        "key": "crc_baseline_total_mortality_hazard",
+        "label": "crc baseline total mortality hazard",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.025",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": ".025/year all-cause hazard prior already includes CRC mortality. Only the modeled CRC component changes; no second mortality hazard added."
+      },
+      {
+        "key": "crc_catchup_hazard",
+        "label": "crc catchup hazard",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.5",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": ".5/year aggregate hazard-effect decay prior (two-year characteristic time) for eventual ordinary diagnostic/treatment care; mean-hazard approximation, not exact random individual care-time mixture."
+      },
+      {
+        "key": "crc_latency_years",
+        "label": "crc latency years",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "2",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Two-year assumed lag from procedure to differential fatal risk. Not observed OA survival timing; existing alternative care can catch up during this lag."
+      },
+      {
+        "key": "crc_active_years",
+        "label": "crc active years",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "5",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Five years of possibly different fatal hazard after latency, not five avoided deaths or a life expectancy."
+      },
+      {
+        "key": "crc_horizon_years",
+        "label": "crc horizon years",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "10",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Ten-year finite survival observation from procedure; both arms return to common mortality after the hazard-effect window. No lifetime tail."
+      },
+      {
+        "key": "crc_delay_years",
+        "label": "crc delay years",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.25",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Quarter-year procedure delay; cohort already conditioned alive at service start, so delay discounts only."
+      },
+      {
+        "key": "crc_surviving_utility",
+        "label": "crc surviving utility",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.75",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": ".75 utility for extra surviving person-time; no extra cancer morbidity or household benefit."
+      },
+      {
+        "key": "crc_harm_q_per_person",
+        "label": "crc harm q per person",
+        "confidence": "Foundation source-qualified assumption",
+        "best": "0.001",
+        "range": "Existing bounded foundation model and v2 scenarios",
+        "basis": "Extra procedure/recovery/complication burden per unique episode in gift-date PVQALYs; includes all repeat procedures in that episode. Independent of treatment success. No delayed no-gift procedure harm is subtracted, conservatively."
+      },
+      {
+        "key": "gi_symptom_diagnosis",
+        "label": "Non-FIT GI investigation → benign treatable dyspepsia/dysphagia management",
+        "confidence": "Explicit diagnostic mix and utility prior",
+        "best": "Share0.5; gain0.03; response/linkage0.4; harm0.001; services/person1.2; distinct0.85; catch-up0.7; loss0.1; death0.02; H3; delay0.25; extra resources200/nominal service",
+        "range": "Signed gains−1..1, horizons0..30; scenarios expose null/adverse/fast-catch-up",
+        "basis": "Diagnostic procedure alone earns no cure; treatment linkage is a prior, alternative primary-care therapy remains baseline."
+      },
+      {
+        "key": "general_cyst",
+        "label": "Painful cyst/lipoma excision",
+        "confidence": "Explicit diagnostic mix and utility prior",
+        "best": "Share0.225; gain0.025; response/linkage0.85; harm0.002; services/person1.2; distinct0.85; catch-up0.7; loss0.1; death0.02; H3; delay0.25; extra resources0/nominal service",
+        "range": "Signed gains−1..1, horizons0..30; scenarios expose null/adverse/fast-catch-up",
+        "basis": "Current OA procedure explicitly listed; utility and symptom-limiting fraction are priors, not cosmetic benefit."
+      },
+      {
+        "key": "anorectal",
+        "label": "Symptomatic haemorrhoid/fissure treatment",
+        "confidence": "Explicit diagnostic mix and utility prior",
+        "best": "Share0.12; gain0.05; response/linkage0.8; harm0.004; services/person1.2; distinct0.85; catch-up0.7; loss0.1; death0.02; H3; delay0.25; extra resources0/nominal service",
+        "range": "Signed gains−1..1, horizons0..30; scenarios expose null/adverse/fast-catch-up",
+        "basis": "Historical minor anorectal mix only; assume persistent symptoms despite medical management."
+      },
+      {
+        "key": "gallstone",
+        "label": "Uncomplicated symptomatic gallstone surgery",
+        "confidence": "Explicit diagnostic mix and utility prior",
+        "best": "Share0.065; gain0.01; response/linkage0.7; harm0.005; services/person1.2; distinct0.85; catch-up0.7; loss0.1; death0.02; H3; delay0.25; extra resources0/nominal service",
+        "range": "Signed gains−1..1, horizons0..30; scenarios expose null/adverse/fast-catch-up",
+        "basis": "C-GALL control includes later surgery; nonsignificant small integrated QALY difference; conservative care may suffice."
+      },
+      {
+        "key": "breast_diagnostic",
+        "label": "Breast lesion diagnostic assessment and linked benign symptom treatment",
+        "confidence": "Explicit diagnostic mix and utility prior",
+        "best": "Share0.14; gain0.01; response/linkage0.25; harm0.001; services/person1.2; distinct0.85; catch-up0.7; loss0.1; death0.02; H3; delay0.25; extra resources200/nominal service",
+        "range": "Signed gains−1..1, horizons0..30; scenarios expose null/adverse/fast-catch-up",
+        "basis": "No unverified cancer survival gain. Prior only for changed symptom management, not all negative tests."
+      },
+      {
+        "key": "aub",
+        "label": "Refractory abnormal uterine bleeding → definitive outpatient treatment",
+        "confidence": "Explicit diagnostic mix and utility prior",
+        "best": "Share0.65; gain0.1; response/linkage0.8; harm0.015; services/person1.2; distinct0.85; catch-up0.7; loss0.1; death0.02; H3; delay0.25; extra resources0/nominal service",
+        "range": "Signed gains−1..1, horizons0..30; scenarios expose null/adverse/fast-catch-up",
+        "basis": "Ms trial supports surgery vs expanded medical care; no hysterectomy-vs-ablation transfer, fertility/recovery losses retained."
+      },
+      {
+        "key": "pelvic",
+        "label": "Symptomatic pelvic prolapse/incontinence treatment",
+        "confidence": "Explicit diagnostic mix and utility prior",
+        "best": "Share0.25; gain0.07; response/linkage0.7; harm0.01; services/person1.2; distinct0.85; catch-up0.7; loss0.1; death0.02; H3; delay0.25; extra resources0/nominal service",
+        "range": "Signed gains−1..1, horizons0..30; scenarios expose null/adverse/fast-catch-up",
+        "basis": "Case-mix and utility priors, not confirmed OA frequency; pessary/conservative alternatives retained."
+      },
+      {
+        "key": "gyne_diagnostic",
+        "label": "Gynaecologic diagnostic workup → nonmalignant symptom management",
+        "confidence": "Explicit diagnostic mix and utility prior",
+        "best": "Share0.1; gain0.02; response/linkage0.3; harm0.002; services/person1.2; distinct0.85; catch-up0.7; loss0.1; death0.02; H3; delay0.25; extra resources200/nominal service",
+        "range": "Signed gains−1..1, horizons0..30; scenarios expose null/adverse/fast-catch-up",
+        "basis": "Diagnosis without management has zero benefit through linkage; no automatic cancer cure."
+      },
+      {
+        "key": "cts",
+        "label": "Carpal tunnel decompression for symptomatic confirmed CTS",
+        "confidence": "Explicit diagnostic mix and utility prior",
+        "best": "Share0.35; gain0.03; response/linkage0.8; harm0.004; services/person1.2; distinct0.85; catch-up0.7; loss0.1; death0.02; H3; delay0.25; extra resources0/nominal service",
+        "range": "Signed gains−1..1, horizons0..30; scenarios expose null/adverse/fast-catch-up",
+        "basis": "Primary economic trial .04 at12months is nonsignificant point utility, not integrated QALY. .03 here is an independent transfer prior."
+      },
+      {
+        "key": "foot_tendon",
+        "label": "Painful foot deformity / tendon or trigger-finger intervention",
+        "confidence": "Explicit diagnostic mix and utility prior",
+        "best": "Share0.45; gain0.06; response/linkage0.75; harm0.005; services/person1.2; distinct0.85; catch-up0.7; loss0.1; death0.02; H3; delay0.25; extra resources0/nominal service",
+        "range": "Signed gains−1..1, horizons0..30; scenarios expose null/adverse/fast-catch-up",
+        "basis": "Named mechanical function hypothesis; OA ortho/podiatry totals not diagnosis frequencies. Utilities are priors. Torkki hallux-valgus RCT11368700 supports the painful-bunion subset only; two-year catch-up12807332 rules out lifelong timing gain."
+      },
+      {
+        "key": "degenerative_knee",
+        "label": "Degenerative knee arthroscopy without acute mechanical indication",
+        "confidence": "Explicit diagnostic mix and utility prior",
+        "best": "Share0.2; gain0; response/linkage0.8; harm0.006; services/person1.2; distinct0.85; catch-up0.7; loss0.1; death0.02; H3; delay0.25; extra resources0/nominal service",
+        "range": "Signed gains−1..1, horizons0..30; scenarios expose null/adverse/fast-catch-up",
+        "basis": "Null benefit central, not assume all orthopaedic surgery is useful; harm retained."
+      },
+      {
+        "key": "nasal",
+        "label": "Septal nasal obstruction surgery versus nasal medical therapy",
+        "confidence": "Explicit diagnostic mix and utility prior",
+        "best": "Share0.7; gain0.04; response/linkage0.8; harm0.004; services/person1.2; distinct0.85; catch-up0.7; loss0.1; death0.02; H3; delay0.25; extra resources0/nominal service",
+        "range": "Signed gains−1..1, horizons0..30; scenarios expose null/adverse/fast-catch-up",
+        "basis": "NAIROS validates symptom mechanism, not SNOT22-to-QALY conversion or universal ENT benefit."
+      },
+      {
+        "key": "ear",
+        "label": "Conductive ear disease treatment",
+        "confidence": "Explicit diagnostic mix and utility prior",
+        "best": "Share0.3; gain0.03; response/linkage0.7; harm0.003; services/person1.2; distinct0.85; catch-up0.7; loss0.1; death0.02; H3; delay0.25; extra resources200/nominal service",
+        "range": "Signed gains−1..1, horizons0..30; scenarios expose null/adverse/fast-catch-up",
+        "basis": "Clinical indication and utility priors; no all-ENT survival credit."
+      },
+      {
+        "key": "bph",
+        "label": "Bothersome BPH/outlet obstruction treatment",
+        "confidence": "Explicit diagnostic mix and utility prior",
+        "best": "Share0.45; gain0.06; response/linkage0.8; harm0.006; services/person1.2; distinct0.85; catch-up0.7; loss0.1; death0.02; H3; delay0.25; extra resources0/nominal service",
+        "range": "Signed gains−1..1, horizons0..30; scenarios expose null/adverse/fast-catch-up",
+        "basis": "TURP vs watchful waiting trial supports symptom relief, not current OA frequency; modern medication baseline matters."
+      },
+      {
+        "key": "stone",
+        "label": "Symptomatic urinary stone treatment",
+        "confidence": "Explicit diagnostic mix and utility prior",
+        "best": "Share0.35; gain0.05; response/linkage0.75; harm0.005; services/person1.2; distinct0.85; catch-up0.7; loss0.1; death0.02; H3; delay0.25; extra resources200/nominal service",
+        "range": "Signed gains−1..1, horizons0..30; scenarios expose null/adverse/fast-catch-up",
+        "basis": "No prophylactic life-saving claim for asymptomatic stones; spontaneous passage and medical treatment in comparator."
+      },
+      {
+        "key": "scrotal",
+        "label": "Symptomatic benign scrotal/hydrocele treatment",
+        "confidence": "Explicit diagnostic mix and utility prior",
+        "best": "Share0.2; gain0.025; response/linkage0.75; harm0.004; services/person1.2; distinct0.85; catch-up0.7; loss0.1; death0.02; H3; delay0.25; extra resources0/nominal service",
+        "range": "Signed gains−1..1, horizons0..30; scenarios expose null/adverse/fast-catch-up",
+        "basis": "Indication and finite utility priors; no infertility or cancer mortality award."
+      },
+      {
+        "key": "derm_cyst",
+        "label": "Symptomatic benign skin cyst/lesion treatment",
+        "confidence": "Explicit diagnostic mix and utility prior",
+        "best": "Share0.8; gain0.02; response/linkage0.8; harm0.002; services/person1.2; distinct0.85; catch-up0.7; loss0.1; death0.02; H3; delay0.25; extra resources0/nominal service",
+        "range": "Signed gains−1..1, horizons0..30; scenarios expose null/adverse/fast-catch-up",
+        "basis": "Current OA cyst/lipoma service; disjoint allocation from general surgery required."
+      },
+      {
+        "key": "skin_lesion",
+        "label": "Localized skin lesion diagnosis and treatment",
+        "confidence": "Explicit diagnostic mix and utility prior",
+        "best": "Share0.2; gain0.03; response/linkage0.6; harm0.003; services/person1.2; distinct0.85; catch-up0.7; loss0.1; death0.02; H3; delay0.25; extra resources200/nominal service",
+        "range": "Signed gains−1..1, horizons0..30; scenarios expose null/adverse/fast-catch-up",
+        "basis": "Symptom/functional relief only; no melanoma mortality extrapolation."
+      },
+      {
+        "key": "veins",
+        "label": "Symptomatic uncomplicated varicose vein treatment",
+        "confidence": "Explicit diagnostic mix and utility prior",
+        "best": "Share1; gain0.04; response/linkage0.8; harm0.003; services/person1.2; distinct0.85; catch-up0.7; loss0.1; death0.02; H3; delay0.25; extra resources0/nominal service",
+        "range": "Signed gains−1..1, horizons0..30; scenarios expose null/adverse/fast-catch-up",
+        "basis": "REACTIV randomized conservative comparator; integrated two-year .054Q not annual gain."
+      },
+      {
+        "key": "pterygium",
+        "label": "Symptomatic pterygium treatment",
+        "confidence": "Explicit diagnostic mix and utility prior",
+        "best": "Share0.35; gain0.025; response/linkage0.8; harm0.003; services/person1.2; distinct0.85; catch-up0.7; loss0.1; death0.02; H3; delay0.25; extra resources0/nominal service",
+        "range": "Signed gains−1..1, horizons0..30; scenarios expose null/adverse/fast-catch-up",
+        "basis": "Current OA explicitly offered; first-eye cataract cohort excluded; finite symptom/vision utility prior."
+      },
+      {
+        "key": "other_assessment",
+        "label": "Specialty assessment without established diagnosis-changing intervention",
+        "confidence": "Explicit diagnostic mix and utility prior",
+        "best": "Share1; gain0; response/linkage0; harm0.0005; services/person1.2; distinct0.85; catch-up0.7; loss0.1; death0.02; H3; delay0.25; extra resources0/nominal service",
+        "range": "Signed gains−1..1, horizons0..30; scenarios expose null/adverse/fast-catch-up",
+        "basis": "Only2%wholegift allocation; centralzero benefit explicitly due absent disease/intervention evidence, not blanket residual zero for major specialties."
+      }
+    ],
+    "giftHeading": "Whole $100,000 in every geographic denominator",
+    "fundingBoundary": "Current cash-like expense and all-service donated clinical resources are retained from the audited foundation. No additional slots or restricted offer is verified. New health does not add duplicate hospital costs; six follow-on diagnostic/treatment rows add$200per nominal service. Gross associated resources are not net induced costs, and no public reimbursement or waived-charge saving is subtracted.",
+    "uncertaintyBoundary": "Within-specialty diagnosis mix is not measured. This is a conditional expected whole-organization model, not a confidence interval or claim that all named procedures are currently supplied at these frequencies.",
+    "sensitivity": [
+      {
+        "case": "central",
+        "headline": "0.51367359 national QALYs; $1,946,762 donor/10Q",
+        "detail": "us: Q=0.5136735945144643; donor=$1,946,762; gross resources=$7,185,600 per10Q; bay: Q=0.30820415670867857; donor=$3,244,603; gross resources=$11,976,000 per10Q; sf: Q=0.041093887561157144; donor=$24,334,519; gross resources=$89,819,997 per10Q"
+      },
+      {
+        "case": "new_pathways_null",
+        "headline": "-0.00934436 national QALYs; unpriced donor/10Q",
+        "detail": "us: Q=-0.009344364422171401; donor=unpriced; gross resources=unpriced per10Q; bay: Q=-0.0056066186533028405; donor=unpriced; gross resources=unpriced per10Q; sf: Q=-0.0007475491537737121; donor=unpriced; gross resources=unpriced per10Q"
+      },
+      {
+        "case": "fast_later_care",
+        "headline": "0.04646966 national QALYs; $21,519,416 donor/10Q",
+        "detail": "us: Q=0.04646966310240659; donor=$21,519,416; gross resources=$79,429,301 per10Q; bay: Q=0.027881797861443954; donor=$35,865,693; gross resources=$132,382,168 per10Q; sf: Q=0.0037175730481925273; donor=$268,992,697; gross resources=$992,866,264 per10Q"
+      },
+      {
+        "case": "zero_activity",
+        "headline": "0.00000000 national QALYs; unpriced donor/10Q",
+        "detail": "us: Q=0; donor=unpriced; gross resources=unpriced per10Q; bay: Q=0; donor=unpriced; gross resources=unpriced per10Q; sf: Q=0; donor=unpriced; gross resources=unpriced per10Q"
+      },
+      {
+        "case": "adverse_new_pathways",
+        "headline": "-0.12818108 national QALYs; unpriced donor/10Q",
+        "detail": "us: Q=-0.12818107721082567; donor=unpriced; gross resources=unpriced per10Q; bay: Q=-0.0769086463264954; donor=unpriced; gross resources=unpriced per10Q; sf: Q=-0.010254486176866053; donor=unpriced; gross resources=unpriced per10Q"
+      },
+      {
+        "case": "favorable_joint",
+        "headline": "2.15096914 national QALYs; $464,907 donor/10Q",
+        "detail": "us: Q=2.150969144084584; donor=$464,907; gross resources=$1,715,995 per10Q; bay: Q=1.2905814864507505; donor=$774,845; gross resources=$2,859,992 per10Q; sf: Q=0.17207753152676675; donor=$5,811,334; gross resources=$21,449,941 per10Q"
+      },
+      {
+        "case": "no_local",
+        "headline": "0.51367359 national QALYs; $1,946,762 donor/10Q",
+        "detail": "us: Q=0.5136735945144643; donor=$1,946,762; gross resources=$7,185,600 per10Q; bay: Q=0; donor=unpriced; gross resources=unpriced per10Q; sf: Q=0; donor=unpriced; gross resources=unpriced per10Q"
+      },
+      {
+        "case": "double_new_resources",
+        "headline": "0.51367359 national QALYs; $1,946,762 donor/10Q",
+        "detail": "us: Q=0.5136735945144643; donor=$1,946,762; gross resources=$7,393,443 per10Q; bay: Q=0.30820415670867857; donor=$3,244,603; gross resources=$12,322,406 per10Q; sf: Q=0.041093887561157144; donor=$24,334,519; gross resources=$92,418,041 per10Q"
+      },
+      {
+        "case": "one_year",
+        "headline": "0.28797828 national QALYs; $3,472,484 donor/10Q",
+        "detail": "us: Q=0.2879782775452944; donor=$3,472,484; gross resources=$12,817,123 per10Q; bay: Q=0.17278696652717665; donor=$5,787,474; gross resources=$21,361,871 per10Q; sf: Q=0.023038262203623556; donor=$43,406,052; gross resources=$160,214,031 per10Q"
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "key": "coverage",
+      "design": "Current annual report plus historical descriptive study",
+      "population": "OA specialty services, not unique diagnosis cohorts",
+      "result": "Current10specialty totals anchor resource allocation; historical within-general-surgery mix informs weak priors only.",
+      "transfer": "Postprocedure yes/no surveys are not utility scores; actual treated waits are not counterfactual waits avoided."
+    },
+    {
+      "key": "cts_aub",
+      "design": "Randomized surgery vs conservative/medical care trials",
+      "population": "Confirmed CTS and refractory abnormal uterine bleeding",
+      "result": "CTS utility difference at12months was small/nonsignificant; AUB earlier benefit diminished as comparator patients received surgery.",
+      "transfer": "No integrated-QALY misreading, no ablation-vs-hysterectomy comparison substituted for access."
+    },
+    {
+      "key": "other",
+      "design": "TURP, septoplasty, veins, foot and other primary trials",
+      "population": "Selected symptomatic patients with organ-specific comparators",
+      "result": "Some procedures improve symptoms; C-GALL/degenerative-knee evidence cautions against generic surgical benefits.",
+      "transfer": "Utility gains, success and diagnosis mix remain explicit priors. No one specialty's efficacy is assigned unchanged to another."
+    }
+  ],
+  "reservations": [
+    "Case-mix hypotheses cover all material specialties but current diagnosis crosswalk is missing.",
+    "Medical, splint, pessary and later-surgery alternatives prevent interpreting treatment as lifelong benefit versus no care.",
+    "New named pathways increase central health roughlyeightfold; v1three-subset headline was not a whole-organization expected return.",
+    "Some pathways have weak primary causal evidence and explicit utility priors; linked diagnostic benefit and severe cancer outcomes remain especially uncertain."
+  ],
+  "excludedBenefits": [
+    "Unverified breast/skin/gynaecologic cancer-survival effects",
+    "Repeated full-person health for multiple services or specialties",
+    "Money/waived charges or work-productivity gains converted into QALYs",
+    "Lifetime symptom benefit after comparator care, recurrence or death",
+    "Unestablished benefit of the2%other-assessment category; burden retained"
+  ],
+  "sources": [
+    {
+      "key": "audit",
+      "publisher": "Operation Access",
+      "title": "2025 audited financial statements",
+      "url": "https://www.operationaccess.org/s/2025-Audited-Financial-Statements.pdf",
+      "published": "Year ended December31,2025; auditMay20,2026",
+      "sourceType": "Primary audited whole-organization expense, waived-charge accounting, liquidity and restrictions; relevant PDF7–8,14–15 visually verified.",
+      "retrieved": "September9,2026"
+    },
+    {
+      "key": "report",
+      "publisher": "Operation Access",
+      "title": "2025 annual report",
+      "url": "https://www.operationaccess.org/s/Operation-Access-Annual-Report-2025.pdf",
+      "published": "2025 reporting year",
+      "sourceType": "Primary specialty counts/chartPDF7, funding lossPDF2, wait/readinessPDF6, cash financePDF13. Counts are services, not unique people or measured health.",
+      "retrieved": "September9,2026"
+    },
+    {
+      "key": "budget",
+      "publisher": "Operation Access",
+      "title": "2026 budget",
+      "url": "https://www.operationaccess.org/s/2026Budget-8pz4.pdf",
+      "published": "ApprovedDecember10,2025",
+      "sourceType": "Primary1.9million cash plan, not actual2026 unit cost or procedure target.",
+      "retrieved": "September9,2026"
+    },
+    {
+      "key": "eligibility",
+      "publisher": "Operation Access",
+      "title": "Patient eligibility and procedures",
+      "url": "https://www.operationaccess.org/for-patients-para-pacientes",
+      "published": "Current undated",
+      "sourceType": "Uninsured and ineligible fullMedi-Cal/Medicare/CMSP; cataract and hernia procedures explicitly offered; not insurance.",
+      "retrieved": "September9,2026"
+    },
+    {
+      "key": "giving",
+      "publisher": "Operation Access",
+      "title": "Donate",
+      "url": "https://www.operationaccess.org/donate",
+      "published": "Current undated",
+      "sourceType": "Official ordinary donation route and EIN94-3180356. Waived-dollar fundraising leverage is not QALY evidence.",
+      "retrieved": "September9,2026"
+    },
+    {
+      "key": "fit",
+      "publisher": "California Colorectal Cancer Coalition",
+      "title": "OA facilitated donated colonoscopy",
+      "url": "https://www.cacoloncancer.org/operation-access-facilitated-access-to-donated-colonoscopies/",
+      "published": "Current undated",
+      "sourceType": "Primary referral mechanism; above-average risk/positive stool tests; not575verifiedFITcases.",
+      "retrieved": "September9,2026"
+    },
+    {
+      "key": "cataract",
+      "publisher": "Sach et al.",
+      "title": "First-eye cataract randomized economic evaluation",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2095519/",
+      "published": "2007",
+      "sourceType": "306women over70, expedited4weeks vsroutine12months; first-yearQALYdifference.056(.006,.108), integratedyear—not annualutilityorOAlocalestimate.",
+      "retrieved": "September9,2026"
+    },
+    {
+      "key": "hernia",
+      "publisher": "Fitzgibbons et al.",
+      "title": "Watchful waiting versus repair",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16418463/",
+      "published": "2006",
+      "sourceType": "720minimallysymptomatic men;2-yearpain/physicalfunction differences notsignificant;23%watchfulwaiting crossed torepair. Strong warning against assuming allhernias benefit.",
+      "retrieved": "September9,2026"
+    },
+    {
+      "key": "crc",
+      "publisher": "Zorzi et al.",
+      "title": "Mortality after positive FIT without program colonoscopy",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33789965/",
+      "published": "2021",
+      "sourceType": "Observational10-yearCRC mortality6.8vs16per1000. Not randomization, no directly imported hazardorQALY.",
+      "retrieved": "September9,2026"
+    },
+    {
+      "key": "critique",
+      "publisher": "Methodological correspondence",
+      "title": "Immortal-time concern in positive-FIT mortality comparison",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37549982/",
+      "published": "2023",
+      "sourceType": "Primary methodological criticism; exposure timing/selection biases not assumed solved.",
+      "retrieved": "September9,2026"
+    },
+    {
+      "key": "navigation",
+      "publisher": "PRECISE investigators",
+      "title": "Navigation after abnormal stool test trial",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13007779/",
+      "published": "2025",
+      "sourceType": "967analysis;55.1vs42.1%one-yearcompletion. Not multiplied into already-completed OAservice units.",
+      "retrieved": "September9,2026"
+    },
+    {
+      "key": "coverage",
+      "publisher": "California DHCS",
+      "title": "Medi-Cal eligibility changes",
+      "url": "https://www.dhcs.ca.gov/medi-cal/updates/medi-cal-changes/",
+      "published": "2026",
+      "sourceType": "Public coverage remains baseline when available; no assertion alluninsured have no latercare.",
+      "retrieved": "September9,2026"
+    },
+    {
+      "key": "cts_econ",
+      "publisher": "Korthals-de Bos et al.",
+      "title": "Surgery versus splinting economic evaluation",
+      "url": "https://research.vu.nl/ws/files/2213413/195347.pdf",
+      "published": "2006",
+      "retrieved": "September 9, 2026 UTC",
+      "sourceType": "Primary economic RCT; 12-month utility point difference, not integrated QALYs"
+    },
+    {
+      "key": "aub",
+      "publisher": "Kuppermann et al.",
+      "title": "Medicine or Surgery randomized trial",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15039411/",
+      "published": "2004",
+      "retrieved": "September 9, 2026 UTC",
+      "sourceType": "Primary hysterectomy vs expanded medical treatment; not ablation comparator"
+    },
+    {
+      "key": "bph",
+      "publisher": "Wasson et al.",
+      "title": "TURP versus watchful waiting",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/7527493/",
+      "published": "1995",
+      "retrieved": "September 9, 2026 UTC",
+      "sourceType": "Primary randomized clinical trial; contemporary medication baseline differs"
+    },
+    {
+      "key": "nasal",
+      "publisher": "NAIROS investigators",
+      "title": "Septoplasty versus medical management",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38477237/",
+      "published": "2024",
+      "retrieved": "September 9, 2026 UTC",
+      "sourceType": "Primary trial and economic report; SNOT22 not utility"
+    },
+    {
+      "key": "veins",
+      "publisher": "REACTIV investigators",
+      "title": "Varicose veins randomized clinical/economic trial",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16707070/",
+      "published": "2006",
+      "retrieved": "September 9, 2026 UTC",
+      "sourceType": "Primary integrated two-year QALY estimate, not annual utility"
+    },
+    {
+      "key": "gallstone",
+      "publisher": "C-GALL investigators",
+      "title": "Conservative treatment versus cholecystectomy",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38943314/",
+      "published": "2024",
+      "retrieved": "September 9, 2026 UTC",
+      "sourceType": "Primary randomized report; small nonsignificant QALY difference"
+    },
+    {
+      "key": "foot",
+      "publisher": "Torkki et al.",
+      "title": "Painful hallux valgus surgery versus orthosis/wait",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11368700/",
+      "published": "2001",
+      "retrieved": "September 9, 2026 UTC",
+      "sourceType": "Primary randomized trial; selected painful bunion patients"
+    },
+    {
+      "key": "foot_catchup",
+      "publisher": "Torkki et al.",
+      "title": "Hallux valgus two-year randomized follow-up",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12807332/",
+      "published": "2003",
+      "retrieved": "September 9, 2026 UTC",
+      "sourceType": "Primary later-care catch-up; no persisting difference assumed"
+    },
+    {
+      "key": "pelvic",
+      "publisher": "van der Vaart et al.",
+      "title": "Pessary versus surgery for prolapse",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36538310/",
+      "published": "2022",
+      "retrieved": "September 9, 2026 UTC",
+      "sourceType": "Primary randomized trial with substantial crossover; neither arm no care"
+    },
+    {
+      "key": "knee",
+      "publisher": "Sihvonen et al.",
+      "title": "Degenerative meniscus surgery versus sham",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24369076/",
+      "published": "2013",
+      "retrieved": "September 9, 2026 UTC",
+      "sourceType": "Primary sham-controlled trial; central benefit null for this assumed subset"
+    },
+    {
+      "key": "historical",
+      "publisher": "Matula et al.",
+      "title": "Historical OA services1994–2008",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19959048/",
+      "published": "2009",
+      "retrieved": "September 9, 2026 UTC",
+      "sourceType": "Primary descriptive study; root visually verified diagnosis table, no current frequencies or QALY outcome"
+    },
+    {
+      "key": "aub_activity",
+      "publisher": "Operation Access / treating partner Sutter Health",
+      "title": "Actual refractory uterine bleeding and donated hysterectomy pathway",
+      "url": "https://vitals.sutterhealth.org/gift-of-surgery-2023/",
+      "published": "2023",
+      "retrieved": "September 9, 2026 UTC",
+      "sourceType": "Primary provider account; activity evidence only, not diagnosis frequency or mean causal outcome"
+    }
+  ]
+}
+

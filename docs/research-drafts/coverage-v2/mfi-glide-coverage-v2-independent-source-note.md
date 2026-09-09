@@ -1,0 +1,16 @@
+# GLIDE v2 independent source/comparator checks
+
+Preliminary source review, not numerical or report acceptance. Read the author's named coverage ledger. Frozen Foundation finance, corrected cash-year context, existing rescue and housing arithmetic retain prior verification. No Site actions or organization-count increment.
+
+[Larochelle 2018](https://pubmed.ncbi.nlm.nih.gov/29913516/) is a Massachusetts observational post-overdose cohort, not a randomized mortality estimate. Exposure varies monthly; buprenorphine median receipt was four months and its adjusted all-cause HR was 0.63. The cohort's all-cause and opioid-specific rates are overlapping outcomes and must not be added. A locally transferred HR requires explicit adherence, accessible public baseline and confounding judgments. Joint rescue/MOUD survival should compare one treated cohort against one baseline, with effects removed as funded care ends. A finite survival tail may persist afterward but cannot imply continued treatment protection.
+
+[BRIGHT](https://pubmed.ncbi.nlm.nih.gov/21646576/) used nonrandomized alternating site-period assignment, 299 selected persistently depressed participants in residential substance-use care and sixteen two-hour CBT sessions. Mixed outpatient groups and attendee counts do not establish a comparable course or effect. Selected symptom prevalence, meaningful attendance and a fidelity discount are necessary before a finite independent utility prior; no direct BDI-to-QALY conversion.
+
+[Tiwari advocacy RCT](https://pubmed.ncbi.nlm.nih.gov/20682933/) compared a 12-week advocacy intervention with usual community services. The BDI difference was 2.66, below the stated five-unit clinically important difference; physical assault, sexual coercion and HRQoL did not improve significantly. This is a counterweight to strong generic safety/mental-health effects, not evidence that all advocacy has zero value. Short signed priors are appropriate if clinical-course and baseline differences remain visible.
+
+[Berkowitz medically tailored meals](https://pubmed.ncbi.nlm.nih.gov/30421335/) studied a selected food-insecure diabetic population receiving ten delivered tailored meals weekly in 12-week crossover periods. Its population, treatment and self-reported symptom outcomes are not generic GLIDE communal meal parameters. [Doyle food-as-medicine RCT](https://pmc.ncbi.nlm.nih.gov/articles/PMC10751657/) found increased preventive-care engagement but no glycemic improvement relative to control. Neither source supports meals-to-diabetes-deaths arithmetic. Explicit short relief of otherwise inadequate intake can be a judgment, gated on consumption and replacement; all meal costs remain.
+
+The author's ledger names remaining policy, infectious-disease prevention/transmission and affiliate omissions. These must remain visible and bounded in the final expectation, not silently zeroed or given a generic uplift. Finite symptom gains during years alive in both arms do not inherently duplicate baseline survivor utility; overlap adjustments should specifically exclude the same condition/person/time benefit already counted. Excluding uncertain shared outcomes conservatively is acceptable if described as a prior, not validated deduplication.
+
+Awaiting stable v2 calculator/model/report for full independent acceptance.
+

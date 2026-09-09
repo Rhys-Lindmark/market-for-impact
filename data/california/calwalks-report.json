@@ -1,0 +1,395 @@
+{
+  "organization": "California Walks",
+  "eyebrow": "California statewide pedestrian safety · US, Bay and SF health",
+  "program": "Conditional whole-organization value of a $100,000 unrestricted gift",
+  "donationUrl": "https://calwalks.org/donate",
+  "published": "September 8, 2026",
+  "modelVersion": "california-walks-whole-gift-v1",
+  "nutshell": {
+    "headline": "Earlier crossing improvements could avert serious injury. Whether an extra gift changes implementation is unknown.",
+    "body": "Central donor estimates are $6.32M per 10 US QALYs, $23.2M Bay and $632M SF. A favorable joint case reaches $29,137 US and $63,737 Bay, but its $1.748M net resource numerator raises US cost to $509,315/10 QALYs.",
+    "whyItMayWork": "California Walks provides donor-supported technical assistance and implementation follow-up. FHWA refuge-island guidance supplies a matching physical safety mechanism.",
+    "whyWeAreCautious": "Package cost, additional implementation, site injury exposure, displaced health and residence shares are unmeasured priors. A crash reduction is not directly a fatality reduction.",
+    "recommendationBlocker": "Independently checked conditional research model. No demonstrated marginal package or high-expected-value donation; favorable joint threshold crossing does not establish a recommendation."
+  },
+  "summary": [
+    {
+      "label": "Central donor cost / 10 QALYs",
+      "value": "$632M SF / $23.2M Bay / $6.32M US",
+      "detail": "Same $100,000 unrestricted gift; 0.001583 SF, 0.04317 Bay, 0.1583 US QALYs. All modeled health assumed California residents."
+    },
+    {
+      "label": "Whole gift",
+      "value": "$100,000",
+      "detail": "50% to all-in future implementation packages; other portfolio health unquantified and all gift cash retained."
+    },
+    {
+      "label": "Favorable donor / net resource US",
+      "value": "$29,137 / $509,315",
+      "detail": "Joint favorable scenario, not a confidence bound or calibrated expected value. Bay donor $63,737; SF donor $1.46M."
+    },
+    {
+      "label": "Recipient",
+      "value": "California Walks · EIN 81-0618523",
+      "detail": "Official statewide donation page; EIN corroborated by IRS-derived extract and historical primary grant schedule. No current IRS-status audit."
+    }
+  ],
+  "programSection": {
+    "body": "California Walks combines training, planning, policy work and local organizing. Current pages identify donor-supported no-cost assistance and publicly funded CPBST with implementation follow-up. This model quantifies only hypothetical future support that changes implementation of refuge-island-equivalent crossings.",
+    "steps": [
+      {
+        "title": "Buy additional support",
+        "detail": "Half the gift at $25,000 per all-in package buys two nominal packages. Existing agency/foundation support remains baseline."
+      },
+      {
+        "title": "Change implementation",
+        "detail": "50% funding additionality and 20% incremental change probability produce 0.2 expected changed projects, conditional on agency and coalition activity."
+      },
+      {
+        "title": "Bring crossings into operation earlier",
+        "detail": "Six nominal crossings per project and 80% realization produce 0.96 expected target crossings. The alternative loses 0.30 health-equivalent crossings."
+      },
+      {
+        "title": "Count finite net health",
+        "detail": "Three years of earlier operation after two-year delay; fatal and serious nonfatal events get separate finite tails. Displaced health persists if target implementation fails."
+      }
+    ],
+    "boundary": "Distinct recipient from Walk San Francisco and other road-safety advocates. Never sum their full attribution for the same crossing, funding decision or injured person. Bay includes SF, with separate target and alternative residence shares."
+  },
+  "model": {
+    "headline": "Added implementation capacity → finite net crossing safety",
+    "body": "All marginal quantities are judgments. Evidence supports the organizational work and engineering mechanism; it does not identify actual next-gift crossings or QALYs.",
+    "equation": {
+      "label": "Whole-gift causal bridge",
+      "expression": "N = gift × implementation fraction / package cost × funding additionality × incremental project-change probability. Target = N × crossings × realization. Alternative = N × health-equivalent displaced crossings. Regional Q = (target × target residence share − alternative × alternative share) × crash reduction × severity/site transfer × (fatal event rate × finite survival Q + serious nonfatal event rate × finite disability Q) × discounted earlier-operation years − independent harm.",
+      "result": "Central 2 nominal packages → 0.2 changed projects → 0.96 target versus 0.30 displaced crossing-equivalents → 0.1583 US QALYs."
+    },
+    "inputs": [
+      {
+        "key": "gift",
+        "label": "Implementation allocation / all-in package",
+        "confidence": "Analyst whole-gift budget",
+        "best": "50% / $25,000",
+        "range": "30–60% / $15,000–$40,000",
+        "basis": "Includes research, engagement and shared operations. No posted package quote; revenue and historic expense ratios do not define the margin."
+      },
+      {
+        "key": "additionality",
+        "label": "Funding additionality / incremental project change",
+        "confidence": "Unmeasured causal priors",
+        "best": "50% / 20%",
+        "range": "20–80% / 5–50%; null cases retained",
+        "basis": "Separate displacement of existing support from contribution conditional on other advocates and agencies. One distinct project per package."
+      },
+      {
+        "key": "sites",
+        "label": "Crossings per project / realized earlier operation",
+        "confidence": "Hypothetical project archetype",
+        "best": "6 / 80%",
+        "range": "3–20 / 30–90%; zero implementation",
+        "basis": "Operational refuge-island-equivalent sites, not applications or training attendance. No current project queue established."
+      },
+      {
+        "key": "alternative",
+        "label": "Displaced health-equivalent crossings per project",
+        "confidence": "Public opportunity-cost prior",
+        "best": "1.5",
+        "range": "1.5–4; equal-benefit stress 4.8",
+        "basis": "Independent of target realization. May represent another kind of safety investment on the same finite health scale."
+      },
+      {
+        "key": "exposure",
+        "label": "Fatal / serious nonfatal events per crossing-year",
+        "confidence": "Unmeasured target-site judgments",
+        "best": "0.01 / 0.10 people",
+        "range": "0.002–0.02 / 0.02–0.20",
+        "basis": "Prospective long-run baseline rates, not observed selected-site counts. Fatal and serious nonfatal categories disjoint. Requires matched-site empirical Bayes or controlled exposure analysis to address regression to the mean."
+      },
+      {
+        "key": "effect",
+        "label": "Pedestrian crash reduction / severity-site transfer",
+        "confidence": "FHWA mechanism plus judgment",
+        "best": "46% / 70%",
+        "range": "Transfer 40–90%; zero-effect stress",
+        "basis": "Historical refuge/median guidance for marked crossings. Fatal and serious injury proportionality is unverified; not a CalWalks treatment effect or a claim for every project design."
+      },
+      {
+        "key": "timing",
+        "label": "Earlier-operation years / delay",
+        "confidence": "Finite counterfactual prior",
+        "best": "3 / 2 years",
+        "range": "1–5 / 1–4",
+        "basis": "3% discount; no-gift baseline catches up. No current claim that the 2027 ATP application window is open."
+      },
+      {
+        "key": "fatal",
+        "label": "Survival utility / mortality / tail",
+        "confidence": "Analyst health prior",
+        "best": "0.8 / 2% yearly / 30 years",
+        "range": "Favorable 0.85 / 1% / 40; short tail 10",
+        "basis": "Central 12.156 QALYs at prevented fatal event. Finite annual survival and discounting; one tail per unique person."
+      },
+      {
+        "key": "injury",
+        "label": "Serious-injury disutility / duration",
+        "confidence": "Analyst health prior",
+        "best": "0.2 / 10 years",
+        "range": "Favorable 0.3 / 10; short duration 3",
+        "basis": "Central 1.537 QALYs per nonfatal event after mortality and discounting; assumes persistent average deficit, not validated injury mix. Mortality-only sensitivity retained."
+      },
+      {
+        "key": "geography",
+        "label": "Target Bay/SF and displaced Bay/SF",
+        "confidence": "Independent residence priors",
+        "best": "Target 25%/1%; displaced 20%/1%",
+        "range": "Favorable 40%/2% versus 20%/2%; zero SF and SF harm",
+        "basis": "San Jose activity supports Bay relevance but does not identify resident incidence. All modeled health in California; Bay includes SF."
+      },
+      {
+        "key": "resources",
+        "label": "Target / alternative public and private PV",
+        "confidence": "Unpriced real-resource judgments",
+        "best": "Public $600k/$300k; private $20k/$10k per decision",
+        "range": "Favorable public $2M/$1M; private $50k/$20k",
+        "basis": "Gift-date incremental PV relative to each project's no-gift timing. Includes construction/capital timing and maintenance; transfers and publicly financed private assets excluded."
+      }
+    ],
+    "giftHeading": "Same $100,000 gift in fourteen scenarios",
+    "sensitivity": [
+      {
+        "case": "central",
+        "headline": "SF donor: $631,800,965/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.158278 / 0.0431666 / 0.00158278. US/Bay donor: $6,318,010 / $23,166,035. Net resource numerator $162,000; gross target $224,000. US/Bay/SF net resource per 10 QALYs: $10,235,176 / $37,528,977 / $1,023,517,564."
+      },
+      {
+        "case": "favorable joint",
+        "headline": "SF donor: $1,456,849/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 34.3206 / 15.6894 / 0.686413. US/Bay donor: $29,137 / $63,737. Net resource numerator $1,748,000; gross target $3,380,000. US/Bay/SF net resource per 10 QALYs: $509,315 / $1,114,125 / $25,465,725."
+      },
+      {
+        "case": "pessimistic harm",
+        "headline": "SF donor: No finite positive ratio/10 QALYs",
+        "detail": "US/Bay/SF QALYs: -0.0000399021 / -0.00000498776 / -3.99021e-7. US/Bay donor: No finite positive ratio / No finite positive ratio. Net resource numerator $102,325; gross target $104,650. US/Bay/SF net resource per 10 QALYs: No finite positive ratio / No finite positive ratio / No finite positive ratio."
+      },
+      {
+        "case": "no additional funding",
+        "headline": "SF donor: No finite positive ratio/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.00000 / 0.00000 / 0.00000. US/Bay donor: No finite positive ratio / No finite positive ratio. Net resource numerator $100,000; gross target $100,000. US/Bay/SF net resource per 10 QALYs: No finite positive ratio / No finite positive ratio / No finite positive ratio."
+      },
+      {
+        "case": "no decision change",
+        "headline": "SF donor: No finite positive ratio/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.00000 / 0.00000 / 0.00000. US/Bay donor: No finite positive ratio / No finite positive ratio. Net resource numerator $100,000; gross target $100,000. US/Bay/SF net resource per 10 QALYs: No finite positive ratio / No finite positive ratio / No finite positive ratio."
+      },
+      {
+        "case": "no target implementation",
+        "headline": "SF donor: No finite positive ratio/10 QALYs",
+        "detail": "US/Bay/SF QALYs: -0.0719444 / -0.0143889 / -0.000719444. US/Bay donor: No finite positive ratio / No finite positive ratio. Net resource numerator $162,000; gross target $224,000. US/Bay/SF net resource per 10 QALYs: No finite positive ratio / No finite positive ratio / No finite positive ratio."
+      },
+      {
+        "case": "equal health displacement",
+        "headline": "SF donor: No finite positive ratio/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.00000 / 0.00000 / 0.00000. US/Bay donor: No finite positive ratio / No finite positive ratio. Net resource numerator $162,000; gross target $224,000. US/Bay/SF net resource per 10 QALYs: No finite positive ratio / No finite positive ratio / No finite positive ratio."
+      },
+      {
+        "case": "no sf benefit",
+        "headline": "SF donor: No finite positive ratio/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.158278 / 0.0431666 / 0.00000. US/Bay donor: $6,318,010 / $23,166,035. Net resource numerator $162,000; gross target $224,000. US/Bay/SF net resource per 10 QALYs: $10,235,176 / $37,528,977 / No finite positive ratio."
+      },
+      {
+        "case": "sf net harm",
+        "headline": "SF donor: No finite positive ratio/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.158278 / 0.0431666 / -0.00143889. US/Bay donor: $6,318,010 / $23,166,035. Net resource numerator $162,000; gross target $224,000. US/Bay/SF net resource per 10 QALYs: $10,235,176 / $37,528,977 / No finite positive ratio."
+      },
+      {
+        "case": "short health tail",
+        "headline": "SF donor: $1,501,281,321/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.0666098 / 0.0181663 / 0.000666098. US/Bay donor: $15,012,813 / $55,046,982. Net resource numerator $162,000; gross target $224,000. US/Bay/SF net resource per 10 QALYs: $24,320,757 / $89,176,110 / $2,432,075,740."
+      },
+      {
+        "case": "extra public resources",
+        "headline": "SF donor: $631,800,965/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.158278 / 0.0431666 / 0.00158278. US/Bay donor: $6,318,010 / $23,166,035. Net resource numerator $342,000; gross target $404,000. US/Bay/SF net resource per 10 QALYs: $21,607,593 / $79,227,841 / $2,160,759,301."
+      },
+      {
+        "case": "independent harm",
+        "headline": "SF donor: No finite positive ratio/10 QALYs",
+        "detail": "US/Bay/SF QALYs: -0.0100000 / -0.00200000 / -0.000100000. US/Bay donor: No finite positive ratio / No finite positive ratio. Net resource numerator $100,000; gross target $100,000. US/Bay/SF net resource per 10 QALYs: No finite positive ratio / No finite positive ratio / No finite positive ratio."
+      },
+      {
+        "case": "common engineering effect null",
+        "headline": "SF donor: No finite positive ratio/10 QALYs",
+        "detail": "Shared crash-reduction coefficient is zero for target and alternative alike: an all-project engineering null, not target-only failure. Target-only operational failure retaining alternative harm appears separately. US/Bay/SF QALYs: 0.00000 / 0.00000 / 0.00000. US/Bay donor: No finite positive ratio / No finite positive ratio. Net resource numerator $162,000; gross target $224,000. US/Bay/SF net resource per 10 QALYs: No finite positive ratio / No finite positive ratio / No finite positive ratio."
+      },
+      {
+        "case": "mortality only",
+        "headline": "SF donor: $1,430,490,607/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.0699061 / 0.0190653 / 0.000699061. US/Bay donor: $14,304,906 / $52,451,322. Net resource numerator $162,000; gross target $224,000. US/Bay/SF net resource per 10 QALYs: $23,173,948 / $84,971,142 / $2,317,394,783."
+      }
+    ],
+    "uncertaintyBoundary": "Joint scenarios are not probability-weighted or confidence intervals. Favorable US/Bay donor prices cross $100,000 per 10 QALYs, while all favorable total-resource prices remain above it. Missing clinical/exposure, causal and cost data prevent high-expected-value inference.",
+    "fundingBoundary": "Official giving supports the statewide organization. Current consulting recognizes foundation/donor support and public CPBST support; neither establishes an unfunded offer. Existing assistance and adopted projects are baseline. Displacement is necessary because ATP is oversubscribed."
+  },
+  "evidence": [
+    {
+      "key": "current",
+      "design": "California Walks CPBST and current implementation follow-up",
+      "population": "California portfolio or implementation context",
+      "result": "Joint SafeTREC program funded by OTS/NHTSA; current page seeks up to three follow-up communities. Existing funded assistance is baseline.",
+      "transfer": "See model input labels for distinction between source findings and analyst priors."
+    },
+    {
+      "key": "donor",
+      "design": "California Walks consulting and assistance",
+      "population": "California portfolio or implementation context",
+      "result": "Foundation partners and individual donors support no-cost services. No posted price or unmet gift-ready queue. Prior /tamenu URL returned 404.",
+      "transfer": "See model input labels for distinction between source findings and analyst priors."
+    },
+    {
+      "key": "bay",
+      "design": "Walk San Jose",
+      "population": "California portfolio or implementation context",
+      "result": "A California Walks project, not a separate charity; establishes Bay activity but no next-gift resident distribution.",
+      "transfer": "See model input labels for distinction between source findings and analyst priors."
+    },
+    {
+      "key": "giving",
+      "design": "California Walks official donate page",
+      "population": "California portfolio or implementation context",
+      "result": "Supports statewide general giving; no restricted offer validated.",
+      "transfer": "See model input labels for distinction between source findings and analyst priors."
+    },
+    {
+      "key": "countermeasure",
+      "design": "FHWA Safety Benefits of Raised Medians and Pedestrian Refuge Areas",
+      "population": "Pedestrian crashes at marked crossings",
+      "result": "46% pedestrian crash reduction at marked crossings. Historical guidance, last modified 2013; not a fatality-specific causal estimate or CalWalks result.",
+      "transfer": "See model input labels for distinction between source findings and analyst priors."
+    },
+    {
+      "key": "countermeasure_context",
+      "design": "FHWA current medians and refuge islands countermeasure page",
+      "population": "California portfolio or implementation context",
+      "result": "Identifies suitable multilane urban/suburban locations and references CMF 175; not project readiness.",
+      "transfer": "See model input labels for distinction between source findings and analyst priors."
+    },
+    {
+      "key": "public",
+      "design": "CTC Active Transportation Program",
+      "population": "California portfolio or implementation context",
+      "result": "Program is oversubscribed; publicly supported technical assistance already exists. 2027 guidelines adopted March 19, 2026. No assumption that past application deadlines remain open.",
+      "transfer": "See model input labels for distinction between source findings and analyst priors."
+    },
+    {
+      "key": "finance",
+      "design": "ProPublica IRS-derived FY June 2025 extract",
+      "population": "California portfolio or implementation context",
+      "result": "EIN 81-0618523; revenue 933001, expenses 723270, assets 539005, liabilities 68160. Raw filing/XML fetch failed; extracted values only, no functional spending split verified.",
+      "transfer": "See model input labels for distinction between source findings and analyst priors."
+    },
+    {
+      "key": "ein_primary",
+      "design": "American Heart Association 2019 Form 990 Schedule I",
+      "population": "California portfolio or implementation context",
+      "result": "Search-indexed primary grant schedule pairs California Walks with EIN 81-0618523. Historical recipient corroboration, not current tax-status audit.",
+      "transfer": "See model input labels for distinction between source findings and analyst priors."
+    }
+  ],
+  "reservations": [
+    "Unverified incremental implementation, target-site exposure, complete project cost and forgone alternatives dominate the result.",
+    "Fatal and nonfatal QALY tails are transparent assumptions, not injury-specific clinical estimates.",
+    "FY2025 finance values are an IRS-derived extract; raw filing retrieval failed and no functional allocation was independently reconciled.",
+    "No complete value estimate for the other half of the unrestricted portfolio.",
+    "The highest-value next evidence is a funded-baseline-adjusted queue, site injury history, actual counterfactual schedules and public cost ledger."
+  ],
+  "sources": [
+    {
+      "title": "California Walks CPBST and current implementation follow-up",
+      "url": "https://calwalks.org/cpbst",
+      "description": "Joint SafeTREC program funded by OTS/NHTSA; current page seeks up to three follow-up communities. Existing funded assistance is baseline.",
+      "publisher": "California Walks",
+      "published": "Undated/current page",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary official webpage"
+    },
+    {
+      "title": "California Walks consulting and assistance",
+      "url": "https://calwalks.org/consulting",
+      "description": "Foundation partners and individual donors support no-cost services. No posted price or unmet gift-ready queue. Prior /tamenu URL returned 404.",
+      "publisher": "California Walks",
+      "published": "Undated/current page",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary official webpage"
+    },
+    {
+      "title": "Walk San Jose",
+      "url": "https://calwalks.org/walk-san-jose",
+      "description": "A California Walks project, not a separate charity; establishes Bay activity but no next-gift resident distribution.",
+      "publisher": "California Walks",
+      "published": "Undated/current page",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary official webpage"
+    },
+    {
+      "title": "California Walks official donate page",
+      "url": "https://calwalks.org/donate",
+      "description": "Supports statewide general giving; no restricted offer validated.",
+      "publisher": "California Walks",
+      "published": "Undated/current page",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary official webpage"
+    },
+    {
+      "title": "FHWA Safety Benefits of Raised Medians and Pedestrian Refuge Areas",
+      "url": "https://highways.dot.gov/safety/pedestrian-bicyclist/background-resources/safety-benefits-raised-medians-and-pedestrian",
+      "description": "46% pedestrian crash reduction at marked crossings. Historical guidance, last modified 2013; not a fatality-specific causal estimate or CalWalks result.",
+      "publisher": "Federal Highway Administration",
+      "published": "Historical guidance; last modified February 1, 2013",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary official webpage"
+    },
+    {
+      "title": "FHWA current medians and refuge islands countermeasure page",
+      "url": "https://highways.dot.gov/safety/proven-safety-countermeasures/medians-and-pedestrian-refuge-islands-urban-and-suburban-areas",
+      "description": "Identifies suitable multilane urban/suburban locations and references CMF 175; not project readiness.",
+      "publisher": "Federal Highway Administration",
+      "published": "Undated/current page",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary official webpage"
+    },
+    {
+      "title": "CTC Active Transportation Program",
+      "url": "https://catc.ca.gov/programs/active-transportation-program",
+      "description": "Program is oversubscribed; publicly supported technical assistance already exists. 2027 guidelines adopted March 19, 2026. No assumption that past application deadlines remain open.",
+      "publisher": "California Transportation Commission",
+      "published": "Undated/current page",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary official webpage"
+    },
+    {
+      "title": "ProPublica IRS-derived FY June 2025 extract",
+      "url": "https://projects.propublica.org/nonprofits/organizations/810618523",
+      "description": "EIN 81-0618523; revenue 933001, expenses 723270, assets 539005, liabilities 68160. Raw filing/XML fetch failed; extracted values only, no functional spending split verified.",
+      "publisher": "ProPublica / IRS-derived extract",
+      "published": "FY ended June 2025; filing listed August 15, 2025",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Secondary IRS-derived extract; raw filing retrieval failed"
+    },
+    {
+      "title": "American Heart Association 2019 Form 990 Schedule I",
+      "url": "https://www.empoweredtoserve.org/-/media/Files/Finance/2019-AHA-990-Public-Inspection-Copy.pdf",
+      "description": "Search-indexed primary grant schedule pairs California Walks with EIN 81-0618523. Historical recipient corroboration, not current tax-status audit.",
+      "publisher": "American Heart Association",
+      "published": "2019 tax return",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary historical grant schedule; search-indexed text only"
+    }
+  ],
+  "excludedBenefits": [
+    "Walking-activity and physical-fitness health gains",
+    "Climate and air-pollution benefits",
+    "Other injuries outside the fatal and serious pedestrian-injury branch",
+    "Community programs and statewide policy benefits outside modeled crossing implementation",
+    "Other unrestricted portfolio benefits; half of central gift retains cost with unquantified health"
+  ]
+}

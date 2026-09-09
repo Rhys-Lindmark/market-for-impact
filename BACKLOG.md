@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## California Walks — accepted, publication pending
+
+Conditional whole-gift crossing implementation model; full gift, displaced project health and public/private resources retained. Central $6.32M/10 California QALYs, $23.2M Bay and $632M SF. A favorable donor case is not the central or full-resource estimate. Independent14-scenario acceptance and source recheck; no verified marginal funding offer. Count61 only after canonical report/index/API verification. Next accepted Fistula Foundation and California YIMBY. SFAF/PHC whole-gift revisions published PR240/v162 with count unchanged60.
+
 ## Active phase — SFAF/PHC whole-gift correction
 
 Count remains60/115. Root integrates independently accepted SFAF and PHC whole-gift reports, new executable APIs and central ranking, preserving historical program models. Acceptance: unit/model parity, report/API and homepage/index mobile checks, production build, exact-source canonical publication. New top4 still concern program-specific estimates; do not relabel them unrestricted-gift offers. Next publish accepted CalWalks/Fistula/YIMBY. GLIDE and Breathe whole-gift revisions independently accepted. Start recorded2026-09-09T03:04:14Z; active effort unmeasured.

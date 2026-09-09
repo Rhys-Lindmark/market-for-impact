@@ -1,0 +1,993 @@
+{
+  "schema_version": "conditional-implementation-portfolio-v1",
+  "model_id": "california-walks-whole-gift-v1",
+  "prepared_at": "2026-09-08",
+  "status": "Independently checked conditional research model; no demonstrated marginal offer",
+  "organization": {
+    "name": "California Walks",
+    "ein": "81-0618523",
+    "donation_url": "https://calwalks.org/donate",
+    "scope": "California statewide unrestricted portfolio; only prospective crossing-safety implementation health quantified"
+  },
+  "scenarios": [
+    {
+      "id": "central",
+      "inputs": {
+        "gift_usd": 100000,
+        "implementation_fraction": 0.5,
+        "package_cost_usd": 25000,
+        "funding_additionality": 0.5,
+        "incremental_change_probability": 0.2,
+        "crossings_per_project": 6,
+        "realization_fraction": 0.8,
+        "displaced_equivalent_crossings": 1.5,
+        "fatalities_per_crossing_year": 0.01,
+        "serious_nonfatal_per_crossing_year": 0.1,
+        "crash_reduction": 0.46,
+        "severity_site_transfer": 0.7,
+        "acceleration_years": 3,
+        "start_delay_years": 2,
+        "discount_rate": 0.03,
+        "survival_utility": 0.8,
+        "annual_competing_mortality": 0.02,
+        "survival_years": 30,
+        "injury_disutility": 0.2,
+        "injury_duration_years": 10,
+        "target_bay_share": 0.25,
+        "target_sf_share": 0.01,
+        "displaced_bay_share": 0.2,
+        "displaced_sf_share": 0.01,
+        "target_public_pv": 600000,
+        "displaced_public_pv": 300000,
+        "target_private_pv": 20000,
+        "displaced_private_pv": 10000,
+        "independent_harm_qaly": 0,
+        "harm_bay_share": 0.2,
+        "harm_sf_share": 0.01
+      },
+      "outputs": {
+        "nominal_packages": 2,
+        "expected_changed_projects": 0.2,
+        "target_crossings": 0.9600000000000002,
+        "displaced_crossings": 0.30000000000000004,
+        "net_crossing_years": 1.9800000000000004,
+        "mortality_qaly_at_event": 12.156197267729137,
+        "serious_injury_qaly_at_event": 1.5367226977601656,
+        "discounted_acceleration_years": 2.7059355189569896,
+        "net_public_resource_usd": 60000,
+        "net_private_resource_usd": 2000,
+        "total_net_resource_usd": 162000,
+        "target_gross_resource_usd": 224000,
+        "us": {
+          "qaly": 0.15827769426837424,
+          "donor_usd_per_10_qaly": 6318009.65146996,
+          "net_resource_usd_per_10_qaly": 10235175.635381335
+        },
+        "bay": {
+          "qaly": 0.0431666438913748,
+          "donor_usd_per_10_qaly": 23166035.388723183,
+          "net_resource_usd_per_10_qaly": 37528977.329731554
+        },
+        "sf": {
+          "qaly": 0.0015827769426837424,
+          "donor_usd_per_10_qaly": 631800965.146996,
+          "net_resource_usd_per_10_qaly": 1023517563.5381335
+        }
+      }
+    },
+    {
+      "id": "favorable_joint",
+      "inputs": {
+        "gift_usd": 100000,
+        "implementation_fraction": 0.6,
+        "package_cost_usd": 15000,
+        "funding_additionality": 0.8,
+        "incremental_change_probability": 0.5,
+        "crossings_per_project": 20,
+        "realization_fraction": 0.9,
+        "displaced_equivalent_crossings": 4,
+        "fatalities_per_crossing_year": 0.02,
+        "serious_nonfatal_per_crossing_year": 0.2,
+        "crash_reduction": 0.46,
+        "severity_site_transfer": 0.9,
+        "acceleration_years": 5,
+        "start_delay_years": 1,
+        "discount_rate": 0.03,
+        "survival_utility": 0.85,
+        "annual_competing_mortality": 0.01,
+        "survival_years": 40,
+        "injury_disutility": 0.3,
+        "injury_duration_years": 10,
+        "target_bay_share": 0.4,
+        "target_sf_share": 0.02,
+        "displaced_bay_share": 0.2,
+        "displaced_sf_share": 0.02,
+        "target_public_pv": 2000000,
+        "displaced_public_pv": 1000000,
+        "target_private_pv": 50000,
+        "displaced_private_pv": 20000,
+        "independent_harm_qaly": 0,
+        "harm_bay_share": 0.2,
+        "harm_sf_share": 0.01
+      },
+      "outputs": {
+        "nominal_packages": 4,
+        "expected_changed_projects": 1.6,
+        "target_crossings": 28.8,
+        "displaced_crossings": 6.4,
+        "net_crossing_years": 112,
+        "mortality_qaly_at_event": 16.72317433356283,
+        "serious_injury_qaly_at_event": 2.4283818992387416,
+        "discounted_acceleration_years": 4.512519576962215,
+        "net_public_resource_usd": 1600000,
+        "net_private_resource_usd": 48000,
+        "total_net_resource_usd": 1748000,
+        "target_gross_resource_usd": 3380000,
+        "us": {
+          "qaly": 34.32064030650917,
+          "donor_usd_per_10_qaly": 29136.98553025954,
+          "net_resource_usd_per_10_qaly": 509314.5070689368
+        },
+        "bay": {
+          "qaly": 15.68943556868991,
+          "donor_usd_per_10_qaly": 63737.15584744272,
+          "net_resource_usd_per_10_qaly": 1114125.484213299
+        },
+        "sf": {
+          "qaly": 0.6864128061301835,
+          "donor_usd_per_10_qaly": 1456849.2765129767,
+          "net_resource_usd_per_10_qaly": 25465725.353446834
+        }
+      }
+    },
+    {
+      "id": "pessimistic_harm",
+      "inputs": {
+        "gift_usd": 100000,
+        "implementation_fraction": 0.3,
+        "package_cost_usd": 40000,
+        "funding_additionality": 0.2,
+        "incremental_change_probability": 0.05,
+        "crossings_per_project": 3,
+        "realization_fraction": 0.3,
+        "displaced_equivalent_crossings": 1.5,
+        "fatalities_per_crossing_year": 0.002,
+        "serious_nonfatal_per_crossing_year": 0.02,
+        "crash_reduction": 0.46,
+        "severity_site_transfer": 0.4,
+        "acceleration_years": 1,
+        "start_delay_years": 4,
+        "discount_rate": 0.03,
+        "survival_utility": 0.8,
+        "annual_competing_mortality": 0.02,
+        "survival_years": 30,
+        "injury_disutility": 0.2,
+        "injury_duration_years": 10,
+        "target_bay_share": 0.25,
+        "target_sf_share": 0.01,
+        "displaced_bay_share": 0.2,
+        "displaced_sf_share": 0.01,
+        "target_public_pv": 600000,
+        "displaced_public_pv": 300000,
+        "target_private_pv": 20000,
+        "displaced_private_pv": 10000,
+        "independent_harm_qaly": 0,
+        "harm_bay_share": 0.2,
+        "harm_sf_share": 0.01
+      },
+      "outputs": {
+        "nominal_packages": 0.75,
+        "expected_changed_projects": 0.0075000000000000015,
+        "target_crossings": 0.006750000000000002,
+        "displaced_crossings": 0.011250000000000003,
+        "net_crossing_years": -0.004500000000000001,
+        "mortality_qaly_at_event": 12.156197267729137,
+        "serious_injury_qaly_at_event": 1.5367226977601656,
+        "discounted_acceleration_years": 0.8754523015810894,
+        "net_public_resource_usd": 2250.0000000000005,
+        "net_private_resource_usd": 75.00000000000001,
+        "total_net_resource_usd": 102325,
+        "target_gross_resource_usd": 104650,
+        "us": {
+          "qaly": -0.00003990205709051436,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        },
+        "bay": {
+          "qaly": -0.000004987757136314296,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        },
+        "sf": {
+          "qaly": -3.9902057090514373e-7,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        }
+      }
+    },
+    {
+      "id": "no_additional_funding",
+      "inputs": {
+        "gift_usd": 100000,
+        "implementation_fraction": 0.5,
+        "package_cost_usd": 25000,
+        "funding_additionality": 0,
+        "incremental_change_probability": 0.2,
+        "crossings_per_project": 6,
+        "realization_fraction": 0.8,
+        "displaced_equivalent_crossings": 1.5,
+        "fatalities_per_crossing_year": 0.01,
+        "serious_nonfatal_per_crossing_year": 0.1,
+        "crash_reduction": 0.46,
+        "severity_site_transfer": 0.7,
+        "acceleration_years": 3,
+        "start_delay_years": 2,
+        "discount_rate": 0.03,
+        "survival_utility": 0.8,
+        "annual_competing_mortality": 0.02,
+        "survival_years": 30,
+        "injury_disutility": 0.2,
+        "injury_duration_years": 10,
+        "target_bay_share": 0.25,
+        "target_sf_share": 0.01,
+        "displaced_bay_share": 0.2,
+        "displaced_sf_share": 0.01,
+        "target_public_pv": 600000,
+        "displaced_public_pv": 300000,
+        "target_private_pv": 20000,
+        "displaced_private_pv": 10000,
+        "independent_harm_qaly": 0,
+        "harm_bay_share": 0.2,
+        "harm_sf_share": 0.01
+      },
+      "outputs": {
+        "nominal_packages": 2,
+        "expected_changed_projects": 0,
+        "target_crossings": 0,
+        "displaced_crossings": 0,
+        "net_crossing_years": 0,
+        "mortality_qaly_at_event": 12.156197267729137,
+        "serious_injury_qaly_at_event": 1.5367226977601656,
+        "discounted_acceleration_years": 2.7059355189569896,
+        "net_public_resource_usd": 0,
+        "net_private_resource_usd": 0,
+        "total_net_resource_usd": 100000,
+        "target_gross_resource_usd": 100000,
+        "us": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        },
+        "bay": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        }
+      }
+    },
+    {
+      "id": "no_decision_change",
+      "inputs": {
+        "gift_usd": 100000,
+        "implementation_fraction": 0.5,
+        "package_cost_usd": 25000,
+        "funding_additionality": 0.5,
+        "incremental_change_probability": 0,
+        "crossings_per_project": 6,
+        "realization_fraction": 0.8,
+        "displaced_equivalent_crossings": 1.5,
+        "fatalities_per_crossing_year": 0.01,
+        "serious_nonfatal_per_crossing_year": 0.1,
+        "crash_reduction": 0.46,
+        "severity_site_transfer": 0.7,
+        "acceleration_years": 3,
+        "start_delay_years": 2,
+        "discount_rate": 0.03,
+        "survival_utility": 0.8,
+        "annual_competing_mortality": 0.02,
+        "survival_years": 30,
+        "injury_disutility": 0.2,
+        "injury_duration_years": 10,
+        "target_bay_share": 0.25,
+        "target_sf_share": 0.01,
+        "displaced_bay_share": 0.2,
+        "displaced_sf_share": 0.01,
+        "target_public_pv": 600000,
+        "displaced_public_pv": 300000,
+        "target_private_pv": 20000,
+        "displaced_private_pv": 10000,
+        "independent_harm_qaly": 0,
+        "harm_bay_share": 0.2,
+        "harm_sf_share": 0.01
+      },
+      "outputs": {
+        "nominal_packages": 2,
+        "expected_changed_projects": 0,
+        "target_crossings": 0,
+        "displaced_crossings": 0,
+        "net_crossing_years": 0,
+        "mortality_qaly_at_event": 12.156197267729137,
+        "serious_injury_qaly_at_event": 1.5367226977601656,
+        "discounted_acceleration_years": 2.7059355189569896,
+        "net_public_resource_usd": 0,
+        "net_private_resource_usd": 0,
+        "total_net_resource_usd": 100000,
+        "target_gross_resource_usd": 100000,
+        "us": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        },
+        "bay": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        }
+      }
+    },
+    {
+      "id": "no_target_implementation",
+      "inputs": {
+        "gift_usd": 100000,
+        "implementation_fraction": 0.5,
+        "package_cost_usd": 25000,
+        "funding_additionality": 0.5,
+        "incremental_change_probability": 0.2,
+        "crossings_per_project": 6,
+        "realization_fraction": 0,
+        "displaced_equivalent_crossings": 1.5,
+        "fatalities_per_crossing_year": 0.01,
+        "serious_nonfatal_per_crossing_year": 0.1,
+        "crash_reduction": 0.46,
+        "severity_site_transfer": 0.7,
+        "acceleration_years": 3,
+        "start_delay_years": 2,
+        "discount_rate": 0.03,
+        "survival_utility": 0.8,
+        "annual_competing_mortality": 0.02,
+        "survival_years": 30,
+        "injury_disutility": 0.2,
+        "injury_duration_years": 10,
+        "target_bay_share": 0.25,
+        "target_sf_share": 0.01,
+        "displaced_bay_share": 0.2,
+        "displaced_sf_share": 0.01,
+        "target_public_pv": 600000,
+        "displaced_public_pv": 300000,
+        "target_private_pv": 20000,
+        "displaced_private_pv": 10000,
+        "independent_harm_qaly": 0,
+        "harm_bay_share": 0.2,
+        "harm_sf_share": 0.01
+      },
+      "outputs": {
+        "nominal_packages": 2,
+        "expected_changed_projects": 0.2,
+        "target_crossings": 0,
+        "displaced_crossings": 0.30000000000000004,
+        "net_crossing_years": -0.9000000000000001,
+        "mortality_qaly_at_event": 12.156197267729137,
+        "serious_injury_qaly_at_event": 1.5367226977601656,
+        "discounted_acceleration_years": 2.7059355189569896,
+        "net_public_resource_usd": 60000,
+        "net_private_resource_usd": 2000,
+        "total_net_resource_usd": 162000,
+        "target_gross_resource_usd": 224000,
+        "us": {
+          "qaly": -0.07194440648562465,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        },
+        "bay": {
+          "qaly": -0.014388881297124931,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        },
+        "sf": {
+          "qaly": -0.0007194440648562465,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        }
+      }
+    },
+    {
+      "id": "equal_health_displacement",
+      "inputs": {
+        "gift_usd": 100000,
+        "implementation_fraction": 0.5,
+        "package_cost_usd": 25000,
+        "funding_additionality": 0.5,
+        "incremental_change_probability": 0.2,
+        "crossings_per_project": 6,
+        "realization_fraction": 0.8,
+        "displaced_equivalent_crossings": 4.8,
+        "fatalities_per_crossing_year": 0.01,
+        "serious_nonfatal_per_crossing_year": 0.1,
+        "crash_reduction": 0.46,
+        "severity_site_transfer": 0.7,
+        "acceleration_years": 3,
+        "start_delay_years": 2,
+        "discount_rate": 0.03,
+        "survival_utility": 0.8,
+        "annual_competing_mortality": 0.02,
+        "survival_years": 30,
+        "injury_disutility": 0.2,
+        "injury_duration_years": 10,
+        "target_bay_share": 0.2,
+        "target_sf_share": 0.01,
+        "displaced_bay_share": 0.2,
+        "displaced_sf_share": 0.01,
+        "target_public_pv": 600000,
+        "displaced_public_pv": 300000,
+        "target_private_pv": 20000,
+        "displaced_private_pv": 10000,
+        "independent_harm_qaly": 0,
+        "harm_bay_share": 0.2,
+        "harm_sf_share": 0.01
+      },
+      "outputs": {
+        "nominal_packages": 2,
+        "expected_changed_projects": 0.2,
+        "target_crossings": 0.9600000000000002,
+        "displaced_crossings": 0.96,
+        "net_crossing_years": 0,
+        "mortality_qaly_at_event": 12.156197267729137,
+        "serious_injury_qaly_at_event": 1.5367226977601656,
+        "discounted_acceleration_years": 2.7059355189569896,
+        "net_public_resource_usd": 60000,
+        "net_private_resource_usd": 2000,
+        "total_net_resource_usd": 162000,
+        "target_gross_resource_usd": 224000,
+        "us": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        },
+        "bay": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        }
+      }
+    },
+    {
+      "id": "no_sf_benefit",
+      "inputs": {
+        "gift_usd": 100000,
+        "implementation_fraction": 0.5,
+        "package_cost_usd": 25000,
+        "funding_additionality": 0.5,
+        "incremental_change_probability": 0.2,
+        "crossings_per_project": 6,
+        "realization_fraction": 0.8,
+        "displaced_equivalent_crossings": 1.5,
+        "fatalities_per_crossing_year": 0.01,
+        "serious_nonfatal_per_crossing_year": 0.1,
+        "crash_reduction": 0.46,
+        "severity_site_transfer": 0.7,
+        "acceleration_years": 3,
+        "start_delay_years": 2,
+        "discount_rate": 0.03,
+        "survival_utility": 0.8,
+        "annual_competing_mortality": 0.02,
+        "survival_years": 30,
+        "injury_disutility": 0.2,
+        "injury_duration_years": 10,
+        "target_bay_share": 0.25,
+        "target_sf_share": 0,
+        "displaced_bay_share": 0.2,
+        "displaced_sf_share": 0,
+        "target_public_pv": 600000,
+        "displaced_public_pv": 300000,
+        "target_private_pv": 20000,
+        "displaced_private_pv": 10000,
+        "independent_harm_qaly": 0,
+        "harm_bay_share": 0.2,
+        "harm_sf_share": 0.01
+      },
+      "outputs": {
+        "nominal_packages": 2,
+        "expected_changed_projects": 0.2,
+        "target_crossings": 0.9600000000000002,
+        "displaced_crossings": 0.30000000000000004,
+        "net_crossing_years": 1.9800000000000004,
+        "mortality_qaly_at_event": 12.156197267729137,
+        "serious_injury_qaly_at_event": 1.5367226977601656,
+        "discounted_acceleration_years": 2.7059355189569896,
+        "net_public_resource_usd": 60000,
+        "net_private_resource_usd": 2000,
+        "total_net_resource_usd": 162000,
+        "target_gross_resource_usd": 224000,
+        "us": {
+          "qaly": 0.15827769426837424,
+          "donor_usd_per_10_qaly": 6318009.65146996,
+          "net_resource_usd_per_10_qaly": 10235175.635381335
+        },
+        "bay": {
+          "qaly": 0.0431666438913748,
+          "donor_usd_per_10_qaly": 23166035.388723183,
+          "net_resource_usd_per_10_qaly": 37528977.329731554
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        }
+      }
+    },
+    {
+      "id": "sf_net_harm",
+      "inputs": {
+        "gift_usd": 100000,
+        "implementation_fraction": 0.5,
+        "package_cost_usd": 25000,
+        "funding_additionality": 0.5,
+        "incremental_change_probability": 0.2,
+        "crossings_per_project": 6,
+        "realization_fraction": 0.8,
+        "displaced_equivalent_crossings": 1.5,
+        "fatalities_per_crossing_year": 0.01,
+        "serious_nonfatal_per_crossing_year": 0.1,
+        "crash_reduction": 0.46,
+        "severity_site_transfer": 0.7,
+        "acceleration_years": 3,
+        "start_delay_years": 2,
+        "discount_rate": 0.03,
+        "survival_utility": 0.8,
+        "annual_competing_mortality": 0.02,
+        "survival_years": 30,
+        "injury_disutility": 0.2,
+        "injury_duration_years": 10,
+        "target_bay_share": 0.25,
+        "target_sf_share": 0,
+        "displaced_bay_share": 0.2,
+        "displaced_sf_share": 0.02,
+        "target_public_pv": 600000,
+        "displaced_public_pv": 300000,
+        "target_private_pv": 20000,
+        "displaced_private_pv": 10000,
+        "independent_harm_qaly": 0,
+        "harm_bay_share": 0.2,
+        "harm_sf_share": 0.01
+      },
+      "outputs": {
+        "nominal_packages": 2,
+        "expected_changed_projects": 0.2,
+        "target_crossings": 0.9600000000000002,
+        "displaced_crossings": 0.30000000000000004,
+        "net_crossing_years": 1.9800000000000004,
+        "mortality_qaly_at_event": 12.156197267729137,
+        "serious_injury_qaly_at_event": 1.5367226977601656,
+        "discounted_acceleration_years": 2.7059355189569896,
+        "net_public_resource_usd": 60000,
+        "net_private_resource_usd": 2000,
+        "total_net_resource_usd": 162000,
+        "target_gross_resource_usd": 224000,
+        "us": {
+          "qaly": 0.15827769426837424,
+          "donor_usd_per_10_qaly": 6318009.65146996,
+          "net_resource_usd_per_10_qaly": 10235175.635381335
+        },
+        "bay": {
+          "qaly": 0.0431666438913748,
+          "donor_usd_per_10_qaly": 23166035.388723183,
+          "net_resource_usd_per_10_qaly": 37528977.329731554
+        },
+        "sf": {
+          "qaly": -0.001438888129712493,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        }
+      }
+    },
+    {
+      "id": "short_health_tail",
+      "inputs": {
+        "gift_usd": 100000,
+        "implementation_fraction": 0.5,
+        "package_cost_usd": 25000,
+        "funding_additionality": 0.5,
+        "incremental_change_probability": 0.2,
+        "crossings_per_project": 6,
+        "realization_fraction": 0.8,
+        "displaced_equivalent_crossings": 1.5,
+        "fatalities_per_crossing_year": 0.01,
+        "serious_nonfatal_per_crossing_year": 0.1,
+        "crash_reduction": 0.46,
+        "severity_site_transfer": 0.7,
+        "acceleration_years": 3,
+        "start_delay_years": 2,
+        "discount_rate": 0.03,
+        "survival_utility": 0.8,
+        "annual_competing_mortality": 0.02,
+        "survival_years": 10,
+        "injury_disutility": 0.2,
+        "injury_duration_years": 3,
+        "target_bay_share": 0.25,
+        "target_sf_share": 0.01,
+        "displaced_bay_share": 0.2,
+        "displaced_sf_share": 0.01,
+        "target_public_pv": 600000,
+        "displaced_public_pv": 300000,
+        "target_private_pv": 20000,
+        "displaced_private_pv": 10000,
+        "independent_harm_qaly": 0,
+        "harm_bay_share": 0.2,
+        "harm_sf_share": 0.01
+      },
+      "outputs": {
+        "nominal_packages": 2,
+        "expected_changed_projects": 0.2,
+        "target_crossings": 0.9600000000000002,
+        "displaced_crossings": 0.30000000000000004,
+        "net_crossing_years": 1.9800000000000004,
+        "mortality_qaly_at_event": 6.146890791040662,
+        "serious_injury_qaly_at_event": 0.5436098860923175,
+        "discounted_acceleration_years": 2.7059355189569896,
+        "net_public_resource_usd": 60000,
+        "net_private_resource_usd": 2000,
+        "total_net_resource_usd": 162000,
+        "target_gross_resource_usd": 224000,
+        "us": {
+          "qaly": 0.06660976768391345,
+          "donor_usd_per_10_qaly": 15012813.206996132,
+          "net_resource_usd_per_10_qaly": 24320757.395333733
+        },
+        "bay": {
+          "qaly": 0.018166300277430943,
+          "donor_usd_per_10_qaly": 55046981.75898581,
+          "net_resource_usd_per_10_qaly": 89176110.44955702
+        },
+        "sf": {
+          "qaly": 0.0006660976768391345,
+          "donor_usd_per_10_qaly": 1501281320.6996133,
+          "net_resource_usd_per_10_qaly": 2432075739.5333734
+        }
+      }
+    },
+    {
+      "id": "extra_public_resources",
+      "inputs": {
+        "gift_usd": 100000,
+        "implementation_fraction": 0.5,
+        "package_cost_usd": 25000,
+        "funding_additionality": 0.5,
+        "incremental_change_probability": 0.2,
+        "crossings_per_project": 6,
+        "realization_fraction": 0.8,
+        "displaced_equivalent_crossings": 1.5,
+        "fatalities_per_crossing_year": 0.01,
+        "serious_nonfatal_per_crossing_year": 0.1,
+        "crash_reduction": 0.46,
+        "severity_site_transfer": 0.7,
+        "acceleration_years": 3,
+        "start_delay_years": 2,
+        "discount_rate": 0.03,
+        "survival_utility": 0.8,
+        "annual_competing_mortality": 0.02,
+        "survival_years": 30,
+        "injury_disutility": 0.2,
+        "injury_duration_years": 10,
+        "target_bay_share": 0.25,
+        "target_sf_share": 0.01,
+        "displaced_bay_share": 0.2,
+        "displaced_sf_share": 0.01,
+        "target_public_pv": 1500000,
+        "displaced_public_pv": 300000,
+        "target_private_pv": 20000,
+        "displaced_private_pv": 10000,
+        "independent_harm_qaly": 0,
+        "harm_bay_share": 0.2,
+        "harm_sf_share": 0.01
+      },
+      "outputs": {
+        "nominal_packages": 2,
+        "expected_changed_projects": 0.2,
+        "target_crossings": 0.9600000000000002,
+        "displaced_crossings": 0.30000000000000004,
+        "net_crossing_years": 1.9800000000000004,
+        "mortality_qaly_at_event": 12.156197267729137,
+        "serious_injury_qaly_at_event": 1.5367226977601656,
+        "discounted_acceleration_years": 2.7059355189569896,
+        "net_public_resource_usd": 240000,
+        "net_private_resource_usd": 2000,
+        "total_net_resource_usd": 342000,
+        "target_gross_resource_usd": 404000,
+        "us": {
+          "qaly": 0.15827769426837424,
+          "donor_usd_per_10_qaly": 6318009.65146996,
+          "net_resource_usd_per_10_qaly": 21607593.008027263
+        },
+        "bay": {
+          "qaly": 0.0431666438913748,
+          "donor_usd_per_10_qaly": 23166035.388723183,
+          "net_resource_usd_per_10_qaly": 79227841.02943328
+        },
+        "sf": {
+          "qaly": 0.0015827769426837424,
+          "donor_usd_per_10_qaly": 631800965.146996,
+          "net_resource_usd_per_10_qaly": 2160759300.8027263
+        }
+      }
+    },
+    {
+      "id": "independent_harm",
+      "inputs": {
+        "gift_usd": 100000,
+        "implementation_fraction": 0.5,
+        "package_cost_usd": 25000,
+        "funding_additionality": 0,
+        "incremental_change_probability": 0.2,
+        "crossings_per_project": 6,
+        "realization_fraction": 0.8,
+        "displaced_equivalent_crossings": 1.5,
+        "fatalities_per_crossing_year": 0.01,
+        "serious_nonfatal_per_crossing_year": 0.1,
+        "crash_reduction": 0.46,
+        "severity_site_transfer": 0.7,
+        "acceleration_years": 3,
+        "start_delay_years": 2,
+        "discount_rate": 0.03,
+        "survival_utility": 0.8,
+        "annual_competing_mortality": 0.02,
+        "survival_years": 30,
+        "injury_disutility": 0.2,
+        "injury_duration_years": 10,
+        "target_bay_share": 0.25,
+        "target_sf_share": 0.01,
+        "displaced_bay_share": 0.2,
+        "displaced_sf_share": 0.01,
+        "target_public_pv": 600000,
+        "displaced_public_pv": 300000,
+        "target_private_pv": 20000,
+        "displaced_private_pv": 10000,
+        "independent_harm_qaly": 0.01,
+        "harm_bay_share": 0.2,
+        "harm_sf_share": 0.01
+      },
+      "outputs": {
+        "nominal_packages": 2,
+        "expected_changed_projects": 0,
+        "target_crossings": 0,
+        "displaced_crossings": 0,
+        "net_crossing_years": 0,
+        "mortality_qaly_at_event": 12.156197267729137,
+        "serious_injury_qaly_at_event": 1.5367226977601656,
+        "discounted_acceleration_years": 2.7059355189569896,
+        "net_public_resource_usd": 0,
+        "net_private_resource_usd": 0,
+        "total_net_resource_usd": 100000,
+        "target_gross_resource_usd": 100000,
+        "us": {
+          "qaly": -0.01,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        },
+        "bay": {
+          "qaly": -0.002,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        },
+        "sf": {
+          "qaly": -0.0001,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        }
+      }
+    },
+    {
+      "id": "zero_effect",
+      "inputs": {
+        "gift_usd": 100000,
+        "implementation_fraction": 0.5,
+        "package_cost_usd": 25000,
+        "funding_additionality": 0.5,
+        "incremental_change_probability": 0.2,
+        "crossings_per_project": 6,
+        "realization_fraction": 0.8,
+        "displaced_equivalent_crossings": 1.5,
+        "fatalities_per_crossing_year": 0.01,
+        "serious_nonfatal_per_crossing_year": 0.1,
+        "crash_reduction": 0,
+        "severity_site_transfer": 0.7,
+        "acceleration_years": 3,
+        "start_delay_years": 2,
+        "discount_rate": 0.03,
+        "survival_utility": 0.8,
+        "annual_competing_mortality": 0.02,
+        "survival_years": 30,
+        "injury_disutility": 0.2,
+        "injury_duration_years": 10,
+        "target_bay_share": 0.25,
+        "target_sf_share": 0.01,
+        "displaced_bay_share": 0.2,
+        "displaced_sf_share": 0.01,
+        "target_public_pv": 600000,
+        "displaced_public_pv": 300000,
+        "target_private_pv": 20000,
+        "displaced_private_pv": 10000,
+        "independent_harm_qaly": 0,
+        "harm_bay_share": 0.2,
+        "harm_sf_share": 0.01
+      },
+      "outputs": {
+        "nominal_packages": 2,
+        "expected_changed_projects": 0.2,
+        "target_crossings": 0.9600000000000002,
+        "displaced_crossings": 0.30000000000000004,
+        "net_crossing_years": 1.9800000000000004,
+        "mortality_qaly_at_event": 12.156197267729137,
+        "serious_injury_qaly_at_event": 1.5367226977601656,
+        "discounted_acceleration_years": 2.7059355189569896,
+        "net_public_resource_usd": 60000,
+        "net_private_resource_usd": 2000,
+        "total_net_resource_usd": 162000,
+        "target_gross_resource_usd": 224000,
+        "us": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        },
+        "bay": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        }
+      },
+      "interpretation": "Common engineering-effect null: shared reduction is zero for both target and health-equivalent alternative. This is not target-only failure; no_target_implementation separately retains independently valuable lost alternative health."
+    },
+    {
+      "id": "mortality_only",
+      "inputs": {
+        "gift_usd": 100000,
+        "implementation_fraction": 0.5,
+        "package_cost_usd": 25000,
+        "funding_additionality": 0.5,
+        "incremental_change_probability": 0.2,
+        "crossings_per_project": 6,
+        "realization_fraction": 0.8,
+        "displaced_equivalent_crossings": 1.5,
+        "fatalities_per_crossing_year": 0.01,
+        "serious_nonfatal_per_crossing_year": 0,
+        "crash_reduction": 0.46,
+        "severity_site_transfer": 0.7,
+        "acceleration_years": 3,
+        "start_delay_years": 2,
+        "discount_rate": 0.03,
+        "survival_utility": 0.8,
+        "annual_competing_mortality": 0.02,
+        "survival_years": 30,
+        "injury_disutility": 0.2,
+        "injury_duration_years": 10,
+        "target_bay_share": 0.25,
+        "target_sf_share": 0.01,
+        "displaced_bay_share": 0.2,
+        "displaced_sf_share": 0.01,
+        "target_public_pv": 600000,
+        "displaced_public_pv": 300000,
+        "target_private_pv": 20000,
+        "displaced_private_pv": 10000,
+        "independent_harm_qaly": 0,
+        "harm_bay_share": 0.2,
+        "harm_sf_share": 0.01
+      },
+      "outputs": {
+        "nominal_packages": 2,
+        "expected_changed_projects": 0.2,
+        "target_crossings": 0.9600000000000002,
+        "displaced_crossings": 0.30000000000000004,
+        "net_crossing_years": 1.9800000000000004,
+        "mortality_qaly_at_event": 12.156197267729137,
+        "serious_injury_qaly_at_event": 1.5367226977601656,
+        "discounted_acceleration_years": 2.7059355189569896,
+        "net_public_resource_usd": 60000,
+        "net_private_resource_usd": 2000,
+        "total_net_resource_usd": 162000,
+        "target_gross_resource_usd": 224000,
+        "us": {
+          "qaly": 0.06990608644685933,
+          "donor_usd_per_10_qaly": 14304906.065084508,
+          "net_resource_usd_per_10_qaly": 23173947.8254369
+        },
+        "bay": {
+          "qaly": 0.01906529630368891,
+          "donor_usd_per_10_qaly": 52451322.23864319,
+          "net_resource_usd_per_10_qaly": 84971142.02660197
+        },
+        "sf": {
+          "qaly": 0.0006990608644685934,
+          "donor_usd_per_10_qaly": 1430490606.5084505,
+          "net_resource_usd_per_10_qaly": 2317394782.5436897
+        }
+      }
+    }
+  ],
+  "basis": "Current donor-supported assistance and implementation follow-up support the work type, not marginal package availability or success rates. FHWA's 46% reduction concerns pedestrian crashes at marked crossings with medians/refuges; applying it to fatal and serious-injury people at prospective sites is an explicit unmeasured severity/site transfer.",
+  "definitions": {
+    "gift": "One $100,000 unrestricted gift counted in full. Allocation buys all-in support packages including shared operations. Other portfolio health is unquantified.",
+    "additionality": "Funding additionality discounts existing public/foundation/fee-funded assistance. Incremental change probability already conditions on agencies, other advocates and preexisting project schedules. One distinct project per package; no second coalition attribution.",
+    "implementation": "Expected changed projects times target crossings times realization measures operational crossings brought forward. Displaced health-equivalent crossings are independent of target realization and retain forgone health on failure.",
+    "health": "Fatalities and serious nonfatal injuries are disjoint people outcomes, not added crash totals. Rates are prospective site archetype judgments, not extracted local crash counts. Each prevented event gets one finite tail; future survivors are not repeatedly assigned tails.",
+    "timing": "Three years earlier operation after two years delay centrally; baseline catches up afterward. Annual event midpoint discounting plus finite postevent survival/disability discounting. No credit for historic ATP awards or past submissions.",
+    "geography": "All modeled target and alternative health is assumed California residents and labeled US total. Bay includes SF. Target and displaced Bay/SF residence shares are independently adjustable; San Jose activity is not SF incidence. Positive regional health need not nest after subtracting differently located harms.",
+    "cost": "Per changed-project real public and private costs are gift-date PV differences versus each project's own no-gift schedule, including capital timing, construction and maintenance. These unpriced priors are not full face-value grants or asserted procurement quotes. Exclude transfers and publicly paid assets from private costs. Subtract displaced alternative resources. Net public health opportunity costs are represented only by specific lost alternative health; no monetized health subtraction.",
+    "uncertainty": "Central and favorable are uncalibrated joint assumptions, not confidence limits. No probabilities assigned to scenarios. Threshold crossing in favorable case is not evidence of high expected value.",
+    "harm": "Separate donor harm is already net gift-attributable health at gift date and survives zero staff additionality. Unquantified walking activity, climate, police/community programs and other portfolio benefits are not assigned zero truth."
+  },
+  "sources": [
+    {
+      "key": "current",
+      "title": "California Walks CPBST and current implementation follow-up",
+      "url": "https://calwalks.org/cpbst",
+      "finding": "Joint SafeTREC program funded by OTS/NHTSA; current page seeks up to three follow-up communities. Existing funded assistance is baseline."
+    },
+    {
+      "key": "donor",
+      "title": "California Walks consulting and assistance",
+      "url": "https://calwalks.org/consulting",
+      "finding": "Foundation partners and individual donors support no-cost services. No posted price or unmet gift-ready queue. Prior /tamenu URL returned 404."
+    },
+    {
+      "key": "bay",
+      "title": "Walk San Jose",
+      "url": "https://calwalks.org/walk-san-jose",
+      "finding": "A California Walks project, not a separate charity; establishes Bay activity but no next-gift resident distribution."
+    },
+    {
+      "key": "giving",
+      "title": "California Walks official donate page",
+      "url": "https://calwalks.org/donate",
+      "finding": "Supports statewide general giving; no restricted offer validated."
+    },
+    {
+      "key": "countermeasure",
+      "title": "FHWA Safety Benefits of Raised Medians and Pedestrian Refuge Areas",
+      "url": "https://highways.dot.gov/safety/pedestrian-bicyclist/background-resources/safety-benefits-raised-medians-and-pedestrian",
+      "finding": "46% pedestrian crash reduction at marked crossings. Historical guidance, last modified 2013; not a fatality-specific causal estimate or CalWalks result."
+    },
+    {
+      "key": "countermeasure_context",
+      "title": "FHWA current medians and refuge islands countermeasure page",
+      "url": "https://highways.dot.gov/safety/proven-safety-countermeasures/medians-and-pedestrian-refuge-islands-urban-and-suburban-areas",
+      "finding": "Identifies suitable multilane urban/suburban locations and references CMF 175; not project readiness."
+    },
+    {
+      "key": "public",
+      "title": "CTC Active Transportation Program",
+      "url": "https://catc.ca.gov/programs/active-transportation-program",
+      "finding": "Program is oversubscribed; publicly supported technical assistance already exists. 2027 guidelines adopted March 19, 2026. No assumption that past application deadlines remain open."
+    },
+    {
+      "key": "finance",
+      "title": "ProPublica IRS-derived FY June 2025 extract",
+      "url": "https://projects.propublica.org/nonprofits/organizations/810618523",
+      "finding": "EIN 81-0618523; revenue 933001, expenses 723270, assets 539005, liabilities 68160. Raw filing/XML fetch failed; extracted values only, no functional spending split verified."
+    },
+    {
+      "key": "ein_primary",
+      "title": "American Heart Association 2019 Form 990 Schedule I",
+      "url": "https://www.empoweredtoserve.org/-/media/Files/Finance/2019-AHA-990-Public-Inspection-Copy.pdf",
+      "finding": "Search-indexed primary grant schedule pairs California Walks with EIN 81-0618523. Historical recipient corroboration, not current tax-status audit."
+    }
+  ]
+}

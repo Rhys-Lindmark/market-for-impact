@@ -3,9 +3,11 @@ import {internationalResearch} from './international-research-index';
 import {usResearch} from './us-research-index';
 import {remedyLocalScenarios} from './local-impact-data';
 import {bayResearch} from './bay-research-index';
+import {californiaResearch} from './california-research-index';
 // Every displayed comparison price has the same SF-resident denominator.
 // Unknown local effects sort last; never substitute a global/national price.
 export const unifiedResearch=[
+ ...californiaResearch.map(r=>({organization:r.organization+' (California)',program:r.program,href:r.href,scope:'California',sfUsdPerTenQalys:r.sfUsdPerTenQalys as number|null,localStatus:'Modeled local share of statewide health; see report'})),
  ...sortedResearchPrograms.map(r=>({organization:r.organization,program:r.program,href:r.href,scope:'SF',sfUsdPerTenQalys:r.centralUsdPerTenQalys as number|null,localStatus:'modeled'})),
  ...bayResearch.map(r=>({organization:r.organization+' (Bay Area)',program:r.program,href:r.href,scope:'Bay',sfUsdPerTenQalys:r.sfUsdPerTenQalys as number|null,localStatus:'Bay estimate in report; SF resident effect not established'})),
  ...usResearch.map(r=>({organization:r.organization+' (U.S.)',program:r.program,href:r.href,scope:'US',sfUsdPerTenQalys:r.href==='/charities/remedy-alliance'?remedyLocalScenarios[0].sfUsdPer10Q:r.sfUsdPerTenQalys as number|null,localStatus:'Very uncertain local-share judgment; see report'})),

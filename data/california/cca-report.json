@@ -1,0 +1,327 @@
+{
+  "organization": "Coalition for Clean Air",
+  "eyebrow": "California statewide air-quality policy · US, Bay and SF health",
+  "program": "Conditional whole-organization value of a $100,000 unrestricted gift",
+  "donationUrl": "https://ccair.app.neoncrm.com/forms/donate",
+  "published": "September 8, 2026",
+  "modelVersion": "cca-whole-gift-charging-v1",
+  "nutshell": {
+    "headline": "Cleaner fleet operation can improve population health. Added advocacy's effect on deployment is unmeasured.",
+    "body": "Central donor estimates are $1.24 billion per 10 US QALYs, $12.4 billion Bay and $124 billion SF. The favorable joint case is $811,000 US, $3.60 million Bay and $23.2 million SF; its net resource numerator is nine times the gift. This model finds no demonstrated bargain.",
+    "whyItMayWork": "Current CCA policy work supports charging infrastructure that could bring clean truck and bus operation forward. A matched CARB zero-emission substitution model supports the physical mechanism.",
+    "whyWeAreCautious": "The health-per-truck anchor is a coarse ratio from a historical forecast, not a measured marginal effect. Future decision influence, actual deployment, competing projects, cost and residence shares are judgments.",
+    "recommendationBlocker": "Conditional research; independently audited model. No verified extra decision capacity or project-level deployment/exposure counterfactual; no donation recommendation."
+  },
+  "summary": [
+    {
+      "label": "Central donor cost / 10 QALYs",
+      "value": "$124B SF / $12.4B Bay / $1.24B US",
+      "detail": "Same $100,000 gift: 0.0000080411 SF, 0.000080411 Bay and 0.000804110 US QALYs. All assumed in California; regional health is nested."
+    },
+    {
+      "label": "Whole-gift boundary",
+      "value": "$100,000 once",
+      "detail": "40% assigned to future charging-related capacity, 60% other portfolio work with unquantified health. All-in staff cost includes shared delivery operations."
+    },
+    {
+      "label": "Recipient",
+      "value": "Coalition for Clean Air · EIN 23-7120567",
+      "detail": "Official general donation form and FY2024–25 Form 990 identify the recipient; not a current IRS-status audit or a restricted Bay offer."
+    },
+    {
+      "label": "Central net resource numerator",
+      "value": "$110,000",
+      "detail": "Gift plus zero assumed net public resource difference and $10,000 net private resources. Separate target gross envelope $160,000 before subtracting alternative-project resources."
+    }
+  ],
+  "programSection": {
+    "body": "CCA's whole portfolio includes freight and vehicle policy, climate, monitoring and education. This model quantifies only hypothetical future charging-allocation and implementation capacity while retaining all gift costs. It does not credit a new gift for old policy passage or already submitted comments.",
+    "steps": [
+      {
+        "title": "Fund additional future capacity",
+        "detail": "40% of the gift at $200,000 per all-in staff-year buys 0.2 nominal staff-years. Funding additionality discounts replacement of existing support."
+      },
+      {
+        "title": "Change a distinct decision",
+        "detail": "Two opportunities per staff-year and 10% incremental change probability yield 0.02 expected changed decisions after 50% funding additionality. Probability already conditions on coalition work."
+      },
+      {
+        "title": "Enable earlier clean operation",
+        "detail": "A nominal 100-vehicle project enables half its vehicles earlier; the alternative forgone supplies 25 equivalent clean vehicles. Charger installation alone is not a health outcome."
+      },
+      {
+        "title": "Count finite net health",
+        "detail": "Only three earlier operating years after two years' delay count, followed by finite avoided-death survival. Displaced-project health remains lost if target deployment fails."
+      }
+    ],
+    "boundary": "Target, displaced and independent-harm geographies are separate. Bay includes SF. Do not duplicate the same decision, vehicle operation or pollution-mediated death across CCA, SPUR, Brightline or other coalitions."
+  },
+  "model": {
+    "headline": "Future net clean-vehicle years, not enacted-policy totals",
+    "body": "The model's central result is 1.5 net earlier clean-vehicle years and 0.000225 avoided deaths before finite survival and event-time discounting. Every marginal input is a judgment; the historical regulatory study supplies a coarse matched health scale only.",
+    "equation": {
+      "label": "Whole-gift capacity and displacement bridge",
+      "expression": "Staff = gift × charging allocation / all-in staff-year cost. Changed decisions = staff × distinct opportunities × incremental CCA change probability × funding additionality. Regional Q = (target accelerated vehicles × target share − displaced equivalents × displaced share) × annual death prior × transfer × finite survival tail × discounted acceleration-year sum − independent harm × harm share.",
+      "result": "Central 0.2 staff-years → 0.02 expected changed decisions → 1 target and 0.5 displaced vehicle-equivalents → 0.000804110 California QALYs at gift."
+    },
+    "inputs": [
+      {
+        "key": "capacity",
+        "label": "Charging allocation / all-in staff-year cash",
+        "confidence": "Analyst marginal judgment",
+        "best": "40% / $200,000",
+        "range": "20–60% / $150,000–$300,000",
+        "basis": "Staff cost includes related research and shared operations; not employee salary or functional-accounting ratio. Entire $100,000 stays in numerator."
+      },
+      {
+        "key": "influence",
+        "label": "Distinct opportunities / incremental decision change",
+        "confidence": "Unmeasured attribution prior",
+        "best": "2 per staff-year / 10%",
+        "range": "1–4 / 2–25%; null retained",
+        "basis": "Probability already measures added CCA effect conditional on coalitions and agencies. No second coalition-credit multiplier and no duplicate projects."
+      },
+      {
+        "key": "funding",
+        "label": "Financial additionality",
+        "confidence": "Analyst judgment",
+        "best": "50%",
+        "range": "0–80%",
+        "basis": "Whether added staff work occurs rather than replacing funding. Distinct from decision attribution."
+      },
+      {
+        "key": "deployment",
+        "label": "Nominal vehicles / actual earlier clean operation",
+        "confidence": "Prospective project archetype",
+        "best": "100 / 50%",
+        "range": "25–500 / 20–80%; failed-deployment harm",
+        "basis": "No named project offer. Includes vehicle availability, utilization, attrition and already committed baseline deployment."
+      },
+      {
+        "key": "displacement",
+        "label": "Alternative clean-vehicle-equivalent fraction",
+        "confidence": "Analyst opportunity-cost judgment",
+        "best": "25% of nominal project vehicles",
+        "range": "16–50%; pessimistic exceeds target enabled share",
+        "basis": "Independent of target success. Alternative need not literally buy trucks; same finite health scale represents forgone project health."
+      },
+      {
+        "key": "mortality",
+        "label": "Annual mortality / transfer factor",
+        "confidence": "Coarse historical model-informed prior",
+        "best": "0.0003 death per vehicle-year / 50%",
+        "range": "0.00005–0.0005 / 25–80%",
+        "basis": "2019 CARB ACT Table V-3: 18 deaths in 2030; Figure IX-1 roughly 60,000 ZEVs. Ratio is not a measured marginal derivative. Transfer aggregates modern baseline, grid, duty-cycle, exposure and timing mismatch; no inspection proxy."
+      },
+      {
+        "key": "timing",
+        "label": "Acceleration window / start delay",
+        "confidence": "Finite counterfactual judgment",
+        "best": "3 years / 2 years",
+        "range": "1–5 / 1–4 years",
+        "basis": "Count earlier operation only until no-gift adoption catches up. Events at year midpoints; 3% discount."
+      },
+      {
+        "key": "survival",
+        "label": "Utility / competing mortality / finite tail",
+        "confidence": "Analyst health judgment",
+        "best": "0.7 / 8% yearly / 10 years",
+        "range": "Favorable 0.8 / 5% / 15 years; short-tail stress 3",
+        "basis": "3.962 central QALYs at event. Separate from operating window; no statistical-life dollar conversion or repeat survival credit."
+      },
+      {
+        "key": "geography",
+        "label": "Target and displaced Bay / SF shares",
+        "confidence": "Unmeasured residence allocation",
+        "best": "Both 10% Bay / 1% SF",
+        "range": "Favorable target 20% / 3%, displaced 10% / 1%; zero-SF stress",
+        "basis": "Historical air-basin pattern is only loose context; not SF city data or a guaranteed nine-county exposure map. All modeled health assumed California residents."
+      },
+      {
+        "key": "resources",
+        "label": "Target / alternative real project costs",
+        "confidence": "Unpriced present-value judgments",
+        "best": "Public $2M / $2M; private net $1M / $0.5M per changed decision",
+        "range": "Larger favorable projects; extra-public-cost stress",
+        "basis": "Net real inputs at gift date; transfers excluded, public-paid assets not charged again privately. Private amounts include capital timing, energy and maintenance savings."
+      },
+      {
+        "key": "harm",
+        "label": "Independent donor harm diagnostic",
+        "confidence": "Hypothetical sensitivity",
+        "best": "Zero",
+        "range": "0.01 US QALY with zero additionality",
+        "basis": "Separate from lost alternative-project health; survives no staff activity and uses its own geographic partition."
+      }
+    ],
+    "giftHeading": "Same $100,000 gift in all eleven scenarios",
+    "sensitivity": [
+      {
+        "case": "central",
+        "headline": "SF donor: $124,361,032,873/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.000804110401 / 0.0000804110401 / 0.00000804110401. US/Bay donor prices $1,243,610,329 / $12,436,103,287 per 10 QALYs. Expected net public resources $0; net private $10,000. Total net resource numerator $110,000; target gross envelope $160,000. US/Bay/SF net-resource prices $1,367,971,362 / $13,679,713,616 / $136,797,136,161 per 10 QALYs."
+      },
+      {
+        "case": "favorable joint",
+        "headline": "SF donor: $23,158,051/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 1.23375792 / 0.277595531 / 0.0431815271. US/Bay donor prices $810,532 / $3,602,363 per 10 QALYs. Expected net public resources $0; net private $800,000. Total net resource numerator $900,000; target gross envelope $4,900,000. US/Bay/SF net-resource prices $7,294,786 / $32,421,271 / $208,422,458 per 10 QALYs."
+      },
+      {
+        "case": "pessimistic harm",
+        "headline": "SF donor: No finite positive ratio",
+        "detail": "US/Bay/SF QALYs: -7.37149394e-9 / -7.37149394e-10 / -7.37149394e-11. US/Bay donor prices No finite positive ratio / No finite positive ratio per 10 QALYs. Expected net public resources $0; net private $133. Total net resource numerator $100,133; target gross envelope $100,800. US/Bay/SF net-resource prices No finite positive ratio / No finite positive ratio / No finite positive ratio per 10 QALYs."
+      },
+      {
+        "case": "no funding additionality",
+        "headline": "SF donor: No finite positive ratio",
+        "detail": "US/Bay/SF QALYs: 0 / 0 / 0. US/Bay donor prices No finite positive ratio / No finite positive ratio per 10 QALYs. Expected net public resources $0; net private $0. Total net resource numerator $100,000; target gross envelope $100,000. US/Bay/SF net-resource prices No finite positive ratio / No finite positive ratio / No finite positive ratio per 10 QALYs."
+      },
+      {
+        "case": "no policy effect",
+        "headline": "SF donor: No finite positive ratio",
+        "detail": "US/Bay/SF QALYs: 0 / 0 / 0. US/Bay donor prices No finite positive ratio / No finite positive ratio per 10 QALYs. Expected net public resources $0; net private $0. Total net resource numerator $100,000; target gross envelope $100,000. US/Bay/SF net-resource prices No finite positive ratio / No finite positive ratio / No finite positive ratio per 10 QALYs."
+      },
+      {
+        "case": "no clean vehicle operation",
+        "headline": "SF donor: No finite positive ratio",
+        "detail": "US/Bay/SF QALYs: -0.000804110401 / -0.0000804110401 / -0.00000804110401. US/Bay donor prices No finite positive ratio / No finite positive ratio per 10 QALYs. Expected net public resources $0; net private $10,000. Total net resource numerator $110,000; target gross envelope $160,000. US/Bay/SF net-resource prices No finite positive ratio / No finite positive ratio / No finite positive ratio per 10 QALYs."
+      },
+      {
+        "case": "equal benefit displacement",
+        "headline": "SF donor: No finite positive ratio",
+        "detail": "US/Bay/SF QALYs: 0 / 0 / 0. US/Bay donor prices No finite positive ratio / No finite positive ratio per 10 QALYs. Expected net public resources $0; net private $10,000. Total net resource numerator $110,000; target gross envelope $160,000. US/Bay/SF net-resource prices No finite positive ratio / No finite positive ratio / No finite positive ratio per 10 QALYs."
+      },
+      {
+        "case": "independent donor harm",
+        "headline": "SF donor: No finite positive ratio",
+        "detail": "US/Bay/SF QALYs: -0.01 / -0.001 / -0.0001. US/Bay donor prices No finite positive ratio / No finite positive ratio per 10 QALYs. Expected net public resources $0; net private $0. Total net resource numerator $100,000; target gross envelope $100,000. US/Bay/SF net-resource prices No finite positive ratio / No finite positive ratio / No finite positive ratio per 10 QALYs."
+      },
+      {
+        "case": "short survival",
+        "headline": "SF donor: $292,857,397,990/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.000341463117 / 0.0000341463117 / 0.00000341463117. US/Bay donor prices $2,928,573,980 / $29,285,739,799 per 10 QALYs. Expected net public resources $0; net private $10,000. Total net resource numerator $110,000; target gross envelope $160,000. US/Bay/SF net-resource prices $3,221,431,378 / $32,214,313,779 / $322,143,137,789 per 10 QALYs."
+      },
+      {
+        "case": "extra public resources",
+        "headline": "SF donor: $124,361,032,873/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.000804110401 / 0.0000804110401 / 0.00000804110401. US/Bay donor prices $1,243,610,329 / $12,436,103,287 per 10 QALYs. Expected net public resources $20,000; net private $10,000. Total net resource numerator $130,000; target gross envelope $180,000. US/Bay/SF net-resource prices $1,616,693,427 / $16,166,934,274 / $161,669,342,735 per 10 QALYs."
+      },
+      {
+        "case": "no sf health",
+        "headline": "SF donor: No finite positive ratio",
+        "detail": "US/Bay/SF QALYs: 0.000804110401 / 0.0000804110401 / 0. US/Bay donor prices $1,243,610,329 / $12,436,103,287 per 10 QALYs. Expected net public resources $0; net private $10,000. Total net resource numerator $110,000; target gross envelope $160,000. US/Bay/SF net-resource prices $1,367,971,362 / $13,679,713,616 / No finite positive ratio per 10 QALYs."
+      }
+    ],
+    "uncertaintyBoundary": "Scenarios are not confidence intervals and central is not a calibrated expected value. Failure to enable clean operation retains displaced-project harm. Null and negative health have no positive ratio. Favorable prices remain far above $100,000/10 QALYs without threshold tuning. Whole-organization unquantified benefits could change overall value.",
+    "fundingBoundary": "Official general giving is available. Current work motivates prospective capacity but no specific marginal staffing offer or affected project is verified. Existing mandates, already adopted funding and other advocates form baseline; old ACT passage earns no new-gift credit. Zero central public net cost is an equal-real-cost reallocation assumption, not measured free public resources."
+  },
+  "evidence": [
+    {
+      "key": "current",
+      "design": "CCA primary CEC comment and commission participation record",
+      "population": "California clean-transportation allocation and implementation",
+      "result": "July 8, 2026 CCA comment prioritizes cleaner heavy-duty infrastructure. August 28 CEC report lists CCA among many participants.",
+      "transfer": "Supports actual current organizational work, not decision success, funding additionality or exclusive attribution."
+    },
+    {
+      "key": "matched",
+      "design": "CARB 2019 proposed Advanced Clean Trucks forecast",
+      "population": "Mixed California medium/heavy-duty vehicles",
+      "result": "18 annual avoided deaths in 2030 and visually approximately 60,000 ZEVs provide an order-of-magnitude annual health scale.",
+      "transfer": "Not a current regulatory forecast, per-truck experiment or structural marginal derivative. Old baseline, geography, stock and health timing differ from new charging projects; explicit transfer factor does not resolve uncertainty."
+    },
+    {
+      "key": "charging",
+      "design": "CEC 2026 replicable infrastructure blueprint",
+      "population": "South Coast medium/heavy-duty fleets",
+      "result": "Identifies infrastructure, purchasing, turnover and cost constraints on acceleration and possible local traffic burdens.",
+      "transfer": "No measured charging-adoption elasticity. Actual clean operation and independent displaced alternative are required."
+    },
+    {
+      "key": "finance",
+      "design": "CCA FY2024–25 Form 990; visually checked pages 1 and 10",
+      "population": "Whole organization",
+      "result": "Revenue $2,149,048; expense $2,452,895: program $1,479,082, management/general $647,639, fundraising $326,174.",
+      "transfer": "Reconciled accounting and recipient identity, not current marginal cost or health allocation. No second overhead penalty."
+    },
+    {
+      "key": "rejected",
+      "design": "UCI port-terminal blueprint alternative",
+      "population": "Selected South Coast pollution episodes",
+      "result": "Primary caveat says two high-pollution months cannot be annualized.",
+      "transfer": "Not used as the numerical anchor; no inspection/maintenance effect imported."
+    }
+  ],
+  "reservations": [
+    "The central $124B SF estimate is a very uncertain partial-health result, not an assessment of every benefit of CCA.",
+    "No measured marginal decision effect, complete project cost, actual clean-operation increment or alternative-project health.",
+    "Historical mortality/fleet ratio is coarse and nonstructural. Current diesel standards, grid supply, fleet mix and epidemiological timing can materially alter it.",
+    "Bay/SF shares are separate analyst assumptions; statewide externalities may benefit nonclients, but geography must follow exposure.",
+    "Public and private costs are present-value real-input scenarios; transfers and overlapping assets must not be counted twice."
+  ],
+  "excludedBenefits": [
+    "Other CCA education, monitoring, climate and policy health",
+    "Nonfatal respiratory/cardiovascular morbidity",
+    "Noise, collision, congestion and construction harms except displacement/independent-harm stresses",
+    "Climate effects outside the air-pollution death branch",
+    "Medical spending and general fiscal opportunity costs"
+  ],
+  "sources": [
+    {
+      "publisher": "CCA",
+      "title": "FY2024–25 Form 990; visually checked pages 1,10",
+      "url": "https://www.ccair.org/wp-content/uploads/2026/05/2024-2025-CCA-Form-990.pdf",
+      "published": "Period July 2024–June 2025; prepared May 7, 2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary organization filing or disclosure"
+    },
+    {
+      "publisher": "CCA/CEC docket",
+      "title": "July 8 2026 comment TN271317",
+      "url": "https://efiling.energy.ca.gov/GetDocument.aspx?DocumentContentId=108852&tn=271317",
+      "published": "July 8, 2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary organization filing or disclosure"
+    },
+    {
+      "publisher": "CEC",
+      "title": "2026–27 commission investment plan TN272245",
+      "url": "https://efiling.energy.ca.gov/GetDocument.aspx?DocumentContentId=119921&tn=272245",
+      "published": "August 28, 2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary agency study or docket; access limits stated in title"
+    },
+    {
+      "publisher": "CARB",
+      "title": "Proposed ACT ISOR; matched zero-emission substitution, historical forecast",
+      "url": "https://ww2.arb.ca.gov/sites/default/files/barcu/regact/2019/act2019/isor.pdf",
+      "published": "October 22, 2019; inspected V-1 to V-6, VI-2, IX-3 to IX-7",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary agency study or docket; access limits stated in title"
+    },
+    {
+      "publisher": "CEC",
+      "title": "Replicable MDHD infrastructure blueprint, CEC-600-2026-017; page33",
+      "url": "https://www.energy.ca.gov/sites/default/files/2026-04/CEC-600-2026-017.pdf",
+      "published": "April 2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary agency study or docket; access limits stated in title"
+    },
+    {
+      "publisher": "CEC/UCI",
+      "title": "Port Terminal Blueprint alternative examined; two high-pollution episodes cannot annualize",
+      "url": "https://www.energy.ca.gov/sites/default/files/2025-04/Final_Blueprint_ARV-21-022_UC_Irvine_Port_Terminal_ADA.pdf",
+      "published": "2025; search-indexed primary caveats inspected, not full source",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary agency study or docket; access limits stated in title"
+    },
+    {
+      "publisher": "CCA",
+      "title": "Official donation form and EIN",
+      "url": "https://ccair.app.neoncrm.com/forms/donate",
+      "published": "Undated; accessed September 8, 2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary organization filing or disclosure"
+    }
+  ]
+}

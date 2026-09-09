@@ -1,5 +1,13 @@
 # Market for Impact backlog
 
+## Current authority — 56/115 published, September 9 UTC
+
+Code Tenderloin PR233 is live in v157 at exact 67a4b77f7438701c1a444ccdbd52dc9749eca3ed. Canonical /givebetter research count56 and Code Tenderloin/New Door report+API verified at390/768. Includes New Door whole-gift revision PR231 (no extra count) and shared browser contract PR232 (GitHub mobile gate passed). Code:353 unit tests,15 signed scenarios,1,222 model checks plus independent151-parity audit; focused report/index/NewDoor checks passed after checking both intended Donate links.
+
+Next publication order: SF Public Health Foundation and Coalition for Clean Air (independently accepted /private/tmp/mfi-sfphf-independent-acceptance.md and mfi-cca-independent-acceptance.md). Felton, HPP and California Walks whole-gift packets completed in /private/tmp/mfi-felton-*,mfi-hpp-*,mfi-ca-next-*; independent cross-audits underway. Do not count these until published. Local broad browser run had timeout/navigation interruptions; PR232's GitHub mobile gate passed. Do not call the interrupted local run green.
+
+Current counted cohort:47 SF-indexed reports,2 Bay-only,3 US and4 international. CA-wide additions remain distinct; target115 is unchanged. Whole-gift conditional partial-health models retain unquantified portfolio costs; never market a program-only price as the organization's unrestricted-gift value.
+
 ## Code Tenderloin — next accepted report (publication pending)
 
 Whole $100,000 unrestricted gift; central $1.97M per 10 SF QALYs, with a finite one-year rescue-coverage improvement and recurrent mortality thereafter. Retains unquantified employment/other portfolio costs. Independent audit: 1,222 model checks and 151 schema/parity assertions across 15 signed scenarios. Standalone EIN verified; public/partner baseline and current marginal allocation remain uncertain. No threshold-driven retuning. Add to the published count only after canonical report/API verification. Next accepted packets: SFPHF and Coalition for Clean Air.

@@ -1,5 +1,11 @@
 # San Francisco giving — active phase plan
 
+## Authoritative checkpoint — September 9, 01:23 UTC
+
+**56/115 published and canonical-verified.** Code Tenderloin PR233/v157 exact67a4b77f7438701c1a444ccdbd52dc9749eca3ed; successful deployment01:21:12Z and canonical390/768 report/API/index verification. New Door whole-gift revision included, not counted twice. Root publication phase next: independently accepted SFPHF and CCA. Worker cross-audits: audit_cca→Felton, audit_sfphf→California Walks, code_readiness→HPP. Six packets/revisions are not six new live reports.
+
+Block started23:18:56Z; record actual closing timestamp in shared work log. Local browser interruptions extended elapsed time beyond90min; active time is not measured. Hourly schedule and115 goal remain active; explicit user pause overrides all continuation. Next report exit: independent acceptance, source-preserving integration, model+browser tests, exact-source deployment, canonical verification.
+
 ## Authoritative current checkpoint — September 8, 23:38 UTC
 
 **55/115 distinct reports published and canonical-verified.** Canonical base is https://ai.rhyslindmark.com/givebetter . Older counts and /donate references below are historical. Goal metadata still says100; the user-expanded115 target controls acceptance and must not be marked complete at100.

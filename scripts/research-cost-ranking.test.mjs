@@ -2,9 +2,9 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { researchCostRanking as rows } from '../lib/research-cost-ranking.mjs';
 
-test('all 48 SF reviews have unique, ascending central 10-QALY estimates', () => {
-  assert.equal(rows.length, 48);
-  assert.equal(new Set(rows.map(r => r.slug)).size, 48);
+test('all 49 SF reviews have unique, ascending central 10-QALY estimates', () => {
+  assert.equal(rows.length, 49);
+  assert.equal(new Set(rows.map(r => r.slug)).size, 49);
   rows.forEach((r, i) => {
     assert.ok(Number.isFinite(r.centralUsdPerTenQalys) && r.centralUsdPerTenQalys > 0);
     if (i) assert.ok(rows[i - 1].centralUsdPerTenQalys <= r.centralUsdPerTenQalys);

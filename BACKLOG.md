@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Code Tenderloin — next accepted report (publication pending)
+
+Whole $100,000 unrestricted gift; central $1.97M per 10 SF QALYs, with a finite one-year rescue-coverage improvement and recurrent mortality thereafter. Retains unquantified employment/other portfolio costs. Independent audit: 1,222 model checks and 151 schema/parity assertions across 15 signed scenarios. Standalone EIN verified; public/partner baseline and current marginal allocation remain uncertain. No threshold-driven retuning. Add to the published count only after canonical report/API verification. Next accepted packets: SFPHF and Coalition for Clean Air.
+
 ## New Door whole-gift revision
 
 Replaces proposed single SF employment-place headline with audited whole-organization allocation model: central$508M/10SFQ and$229M/10BayQ, other education/career health unquantified with full gift retained. No new organization count;55/115 remains live. Eight independently audited scenarios; original program API preserved as history. Official-linked current donation campaign verified. New reports in progress separately: Code Tenderloin, SFPHF, CCA.

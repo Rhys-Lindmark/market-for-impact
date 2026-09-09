@@ -1,0 +1,342 @@
+{
+  "organization": "Fistula Foundation",
+  "eyebrow": "International comparator · finite health after childbirth-injury repair",
+  "program": "Conditional whole-organization value of a $100,000 unrestricted gift",
+  "donationUrl": "https://fistulafoundation.org/how-to-help/",
+  "published": "September 8, 2026",
+  "modelVersion": "fistula-whole-gift-finite-health-v1",
+  "nutshell": {
+    "headline": "Repair can relieve severe chronic disability; additional access and duration drive whole-gift value.",
+    "body": "Conditional central donor cost is $76,286 and gross resource cost $101,944 per 10 overseas QALYs. These are explicit best-estimate assumptions, not a measured unrestricted-gift result or guarantee of room. Total central is above the $100k screen; no parameter was retuned to pass.",
+    "whyItMayWork": "A focused organization finances surgical access through local partners. Durable continence improvements have observational support.",
+    "whyWeAreCautious": "No preference-utility or current marginal waiting-time study anchors the key bridge. Partial recovery, repeat operations, donor replacement and non-fistula costs materially reduce credit.",
+    "recommendationBlocker": "Current incremental capacity/funding gap unknown. Validate unique patients, marginal spending, alternative treatment timing and outcomes before committing."
+  },
+  "summary": [
+    {
+      "label": "Central total / 10 QALYs",
+      "value": "$101,944 gross resources",
+      "detail": "$76,286 donor; 13.109 net overseas QALYs per $100,000 whole gift. Total central narrowly misses the $100k screen."
+    },
+    {
+      "label": "SF / Bay direct health",
+      "value": "0 / 0 modeled QALYs",
+      "detail": "No finite positive local ratio. Indirect effects unknown and uncredited, not asserted absent."
+    },
+    {
+      "label": "Matched whole cost",
+      "value": "$1,189 historical → $1,487 central",
+      "detail": "2024 whole expense/output ratio, then explicit 1.25 marginal/current cost prior; no second overhead factor."
+    },
+    {
+      "label": "Current funding room",
+      "value": "Unknown",
+      "detail": "Prior 50% funding additionality is not proof of a ready unfunded tranche."
+    }
+  ],
+  "programSection": {
+    "body": "General support pays for the complete organizational system; only the fistula-repair clinical stream is quantified. Perineal tears, training and network effects receive no separate benefit credit.",
+    "steps": [
+      {
+        "title": "Keep every dollar",
+        "detail": "Whole historical expenses include program, management and fundraising; expansion cost uplift remains explicit."
+      },
+      {
+        "title": "Deduplicate and allocate",
+        "detail": "Count distinct care episodes, then fistula share. Other operations still cost money."
+      },
+      {
+        "title": "Compare with available care",
+        "detail": "Financial additionality and finite waiting-time advantage remove different counterfactuals."
+      },
+      {
+        "title": "Value finite health",
+        "detail": "Signed utility by disjoint recovery states, survival, decay and one discount; subtract separate harms."
+      }
+    ],
+    "boundary": "No life saved, newborn health, lifetime 40-year cure, income-to-QALY or DALY=QALY shortcut."
+  },
+  "model": {
+    "headline": "A finite morbidity stream with the whole gift retained",
+    "body": "67.269 nominal surgeries × .85 unique episodes × .50 additionality = 28.589 added episodes. Of these, 22.872 are modeled fistula cases.",
+    "equation": {
+      "label": "Whole-gift health bridge",
+      "expression": "N = gift / (whole annual expense / annual surgery count × marginal-cost multiplier); E = N × unique share × funding additionality. Q = E × fistula share × (pDry×uDry + pPartial×uPartial) × finite discounted survival/decay years − E×procedure harm − independent harm.",
+      "result": "28.589 × .8 × .1429545 × 4.140417 − .428841 = 13.108625 overseas QALYs; gross resources $133,634.61."
+    },
+    "inputs": [
+      {
+        "key": "expense_per_surgery_2024",
+        "label": "expense per surgery 2024",
+        "confidence": "Observed derived",
+        "best": "Observed derived",
+        "range": "See labeled numeric range in confidence; null/harm cases below",
+        "basis": "Matched 2024 whole expenses / all reported surgeries; includes administration, fundraising, training, outreach and tears. Accounting average, not causal marginal quote."
+      },
+      {
+        "key": "marginal_cost_multiplier",
+        "label": "marginal cost multiplier",
+        "confidence": "Best-estimate prior 1.25; range 1–2.5",
+        "best": "Best-estimate prior 1.25; range 1–2.5",
+        "range": "See labeled numeric range in confidence; null/harm cases below",
+        "basis": "2024-to-2026 prices, remote/complex expansion and accounting/output mismatch; not estimated inflation. No second overhead haircut."
+      },
+      {
+        "key": "unique_patient_fraction",
+        "label": "unique patient fraction",
+        "confidence": "Prior .85; range .65–1",
+        "best": "Prior .85; range .65–1",
+        "range": "See labeled numeric range in confidence; null/harm cases below",
+        "basis": "Reported surgeries may include repeats; only unique care episodes receive first-treatment outcome stream; repeat surgery remains fully costed."
+      },
+      {
+        "key": "fistula_fraction",
+        "label": "fistula fraction",
+        "confidence": "Current provider reports 20% tear cases; working share .8, range .6–.9",
+        "best": "Current provider reports 20% tear cases; working share .8, range .6–.9",
+        "range": "See labeled numeric range in confidence; null/harm cases below",
+        "basis": "Do not apply fistula trial outcomes to perineal tears. Their costs and potential benefits retained/uncredited."
+      },
+      {
+        "key": "financial_additionality",
+        "label": "financial additionality",
+        "confidence": "Prior .5; range .15–.85, null0",
+        "best": "Prior .5; range .15–.85, null0",
+        "range": "See labeled numeric range in confidence; null/harm cases below",
+        "basis": "Capacity added beyond public hospitals, NGOs, reserves and donor replacement. Not patient waiting-time catch-up. Current room unknown."
+      },
+      {
+        "key": "dry_fraction / partial_fraction",
+        "label": "dry fraction / partial fraction",
+        "confidence": "Conservative full operated cohort anchor 21/44 dry, 13/44 partial; favorable transfer .75/.20",
+        "best": "Conservative full operated cohort anchor 21/44 dry, 13/44 partial; favorable transfer .75/.20",
+        "range": "See labeled numeric range in confidence; null/harm cases below",
+        "basis": "Nielsen: 38/44 followed, 37 classified urinary states. All 10 others receive zero durable health (3 persistent, 6 lost, 1 unclassified). No RCT or current portfolio rate. Cautious .4/.3 is a joint transfer scenario, not a lower confidence bound on both fractions."
+      },
+      {
+        "key": "dry_utility_gain / partial_utility_gain",
+        "label": "dry utility gain / partial utility gain",
+        "confidence": "Explicit preference-utility priors .25/.08, ranges .1–.35 / 0–.15, signed -0.1/-.05 diagnostics",
+        "best": "Explicit preference-utility priors .25/.08, ranges .1–.35 / 0–.15, signed -0.1/-.05 diagnostics",
+        "range": "See labeled numeric range in confidence; null/harm cases below",
+        "basis": "QoL questionnaires and DALY disability weights are not direct QALYs. Recovery does not imply restored social health; no separate mental-health or income credit."
+      },
+      {
+        "key": "advantage_years",
+        "label": "advantage years",
+        "confidence": "Prior5, range1–10, null0",
+        "best": "Prior5, range1–10, null0",
+        "range": "See labeled numeric range in confidence; null/harm cases below",
+        "basis": "Hard cap on advantage over later public/NGO treatment or recovery, not patient lifetime; actual no-gift waiting-time distribution unavailable."
+      },
+      {
+        "key": "delay_years / annual_mortality / annual_effect_decay",
+        "label": "delay years / annual mortality / annual effect decay",
+        "confidence": "Priors .5/.01/.03; ranges 0–2 / 0–.03 / 0–.15",
+        "best": "Priors .5/.01/.03; ranges 0–2 / 0–.03 / 0–.15",
+        "range": "See labeled numeric range in confidence; null/harm cases below",
+        "basis": "Delay to care, finite survival and recurrence/declining effect after long-term outcome anchor. No lifetime extension or maternal-death benefit."
+      },
+      {
+        "key": "procedure_harm_q",
+        "label": "procedure harm q",
+        "confidence": "Prior .015 per added distinct episode; range0–.1",
+        "best": "Prior .015 per added distinct episode; range0–.1",
+        "range": "See labeled numeric range in confidence; null/harm cases below",
+        "basis": "Gift-date PV total acute harms from every operation/repeat in an added unique episode, including tears; not a per-operation rate. Excludes durable-state worsening. Full present harm without subtracting delayed alternative repair harm is conservative."
+      },
+      {
+        "key": "independent_harm_q",
+        "label": "independent harm q",
+        "confidence": "Central0, adverse1",
+        "best": "Central0, adverse1",
+        "range": "See labeled numeric range in confidence; null/harm cases below",
+        "basis": "Gift-date PV health loss outside patient treatment stream, e.g. displaced other scarce care; no activity multiplier. Do not double count procedure harm."
+      },
+      {
+        "key": "external_resource_per_nominal_surgery",
+        "label": "external resource per nominal surgery",
+        "confidence": "Prior$500; range0–1500",
+        "best": "Prior$500; range0–1500",
+        "range": "See labeled numeric range in confidence; null/harm cases below",
+        "basis": "Unreimbursed public hospital/noncash staff, patient travel/time, family care, including unsuccessful/repeat/tear procedures. Add on all nominal surgery equivalents. Gross resources, not net induced societal spending."
+      }
+    ],
+    "sensitivity": [
+      {
+        "case": "central",
+        "headline": "Total resources: $101,944/10 QALYs",
+        "detail": "All-region QALYs 13.10862523; donor $76,286/10 QALYs; gross resources $133,635. Full $100,000 gift retained. SF/Bay direct QALYs 0/0; local ratios unavailable. SF/Bay indirect unknown/uncredited. Status: positive."
+      },
+      {
+        "case": "favorable",
+        "headline": "Total resources: $8,229/10 QALYs",
+        "detail": "All-region QALYs 147.0737200; donor $6,799/10 QALYs; gross resources $121,022. Full $100,000 gift retained. SF/Bay direct QALYs 0/0; local ratios unavailable. SF/Bay indirect unknown/uncredited. Status: positive."
+      },
+      {
+        "case": "cautious",
+        "headline": "Total resources: $25,494,941/10 QALYs",
+        "detail": "All-region QALYs 0.05571429664; donor $17,948,714/10 QALYs; gross resources $142,043. Full $100,000 gift retained. SF/Bay direct QALYs 0/0; local ratios unavailable. SF/Bay indirect unknown/uncredited. Status: positive."
+      },
+      {
+        "case": "fast public catchup",
+        "headline": "Total resources: $500,923/10 QALYs",
+        "detail": "All-region QALYs 2.667767136; donor $374,845/10 QALYs; gross resources $133,635. Full $100,000 gift retained. SF/Bay direct QALYs 0/0; local ratios unavailable. SF/Bay indirect unknown/uncredited. Status: positive."
+      },
+      {
+        "case": "low additionality",
+        "headline": "Total resources: $339,813/10 QALYs",
+        "detail": "All-region QALYs 3.932587570; donor $254,286/10 QALYs; gross resources $133,635. Full $100,000 gift retained. SF/Bay direct QALYs 0/0; local ratios unavailable. SF/Bay indirect unknown/uncredited. Status: positive."
+      },
+      {
+        "case": "higher complete cost",
+        "headline": "Total resources: $229,546/10 QALYs",
+        "detail": "All-region QALYs 6.554312616; donor $152,571/10 QALYs; gross resources $150,452. Full $100,000 gift retained. SF/Bay direct QALYs 0/0; local ratios unavailable. SF/Bay indirect unknown/uncredited. Status: positive."
+      },
+      {
+        "case": "low utility bridge",
+        "headline": "Total resources: $326,669/10 QALYs",
+        "detail": "All-region QALYs 4.090821591; donor $244,450/10 QALYs; gross resources $133,635. Full $100,000 gift retained. SF/Bay direct QALYs 0/0; local ratios unavailable. SF/Bay indirect unknown/uncredited. Status: positive."
+      },
+      {
+        "case": "no funding additionality",
+        "headline": "Total resources: No finite positive ratio",
+        "detail": "All-region QALYs 0.000000000; donor No finite positive ratio; gross resources $133,635. Full $100,000 gift retained. SF/Bay direct QALYs 0/0; local ratios unavailable. SF/Bay indirect unknown/uncredited. Status: zero."
+      },
+      {
+        "case": "zero health and harm",
+        "headline": "Total resources: No finite positive ratio",
+        "detail": "All-region QALYs 0.000000000; donor No finite positive ratio; gross resources $133,635. Full $100,000 gift retained. SF/Bay direct QALYs 0/0; local ratios unavailable. SF/Bay indirect unknown/uncredited. Status: zero."
+      },
+      {
+        "case": "no durable health with procedure harm",
+        "headline": "Total resources: No finite positive ratio",
+        "detail": "All-region QALYs -0.4288413319; donor No finite positive ratio; gross resources $133,635. Full $100,000 gift retained. SF/Bay direct QALYs 0/0; local ratios unavailable. SF/Bay indirect unknown/uncredited. Status: harm."
+      },
+      {
+        "case": "signed worsening",
+        "headline": "Total resources: No finite positive ratio",
+        "detail": "All-region QALYs -6.347447540; donor No finite positive ratio; gross resources $133,635. Full $100,000 gift retained. SF/Bay direct QALYs 0/0; local ratios unavailable. SF/Bay indirect unknown/uncredited. Status: harm."
+      },
+      {
+        "case": "independent harm zero activity",
+        "headline": "Total resources: No finite positive ratio",
+        "detail": "All-region QALYs -1.000000000; donor No finite positive ratio; gross resources $133,635. Full $100,000 gift retained. SF/Bay direct QALYs 0/0; local ratios unavailable. SF/Bay indirect unknown/uncredited. Status: harm."
+      },
+      {
+        "case": "no fistula allocation",
+        "headline": "Total resources: No finite positive ratio",
+        "detail": "All-region QALYs -0.4288413319; donor No finite positive ratio; gross resources $133,635. Full $100,000 gift retained. SF/Bay direct QALYs 0/0; local ratios unavailable. SF/Bay indirect unknown/uncredited. Status: harm."
+      },
+      {
+        "case": "all external resources donor paid",
+        "headline": "Total resources: $101,944/10 QALYs",
+        "detail": "All-region QALYs 9.809303752; donor $101,944/10 QALYs; gross resources $100,000. Full $100,000 gift retained. SF/Bay direct QALYs 0/0; local ratios unavailable. SF/Bay indirect unknown/uncredited. Status: positive."
+      },
+      {
+        "case": "no discount",
+        "headline": "Total resources: $93,358/10 QALYs",
+        "detail": "All-region QALYs 14.31416323; donor $69,861/10 QALYs; gross resources $133,635. Full $100,000 gift retained. SF/Bay direct QALYs 0/0; local ratios unavailable. SF/Bay indirect unknown/uncredited. Status: positive."
+      }
+    ],
+    "uncertaintyBoundary": "Scenarios are not confidence intervals. Central is conditional, not probability-weighted certainty. Correcting missing outcomes to failure raises central total above $100k without retuning. Cautious total $25.49m; one-year catch-up $500,923; favorable $8,229. Zero and negative health retain full costs and suppress positive ratios.",
+    "fundingBoundary": "No verified unfunded 2026 tranche. Positive prior permits research ranking, not a guarantee a gift adds care. Public capacity and other NGOs are baseline. Independent donor displacement and eventual patient catch-up are different counterfactuals.",
+    "giftHeading": "Where the whole $100,000 unrestricted gift goes"
+  },
+  "evidence": [
+    {
+      "key": "outcomes",
+      "design": "External observational follow-up",
+      "population": "Rural Ethiopian repair patients",
+      "result": "Reported long-term dry/partial/persistent states support incomplete recovery.",
+      "transfer": "Small uncontrolled cohort, loss to follow-up and portfolio differences; no direct QALY measurement."
+    },
+    {
+      "key": "counterevidence",
+      "design": "Cross-sectional survivor quality of life",
+      "population": "Ethiopian repair survivors",
+      "result": "Substantial ongoing poor quality of life reported.",
+      "transfer": "Do not assume surgical closure restores full social or mental health."
+    },
+    {
+      "key": "cost",
+      "design": "Primary annual report and filing",
+      "population": "Whole organization, all operations",
+      "result": "Matched historical full cost $1,189 per reported surgery.",
+      "transfer": "Accounting grant timing and repeat cases mean not current marginal price; uplift and unique share are priors."
+    }
+  ],
+  "reservations": [
+    "Clinical outcome and utility transfer are not randomized evidence of this donor gift.",
+    "Five-year treatment advantage and 50% financial additionality are the decisive unmeasured priors.",
+    "Annual expense/output ratio may mismatch grant accrual and surgical delivery; current marginal multiplier addresses this only provisionally.",
+    "Zero credit for perineal tears is an evidence exclusion, not proof they have no benefit; their procedure harms and full resource costs remain.",
+    "Gross resource envelope adds outside resources to nominal activity even under funding replacement. It is not net induced public expenditure or net societal cost."
+  ],
+  "excludedBenefits": [
+    "Perineal-tear durable health",
+    "Training and future surgical capacity beyond modeled episodes",
+    "Mortality or newborn survival improvement",
+    "Income, caregiver relief and social benefits outside the utility bridge",
+    "Downstream fiscal savings",
+    "SF/Bay indirect knowledge, altruism or spillover health"
+  ],
+  "sources": [
+    {
+      "publisher": "Fistula Foundation",
+      "title": "2024 annual report, expense table and surgery count",
+      "url": "https://fistulafoundation.org/wp-content/uploads/2019/03/FF_Annual-Report_2024_PR5_24-Pg_Reader-Spreads_250708_Reference-1.pdf",
+      "published": "2025",
+      "sourceType": "Primary report, PDF pages 6 and 11. Matched year expenses/output, not marginal causal price.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Fistula Foundation",
+      "title": "2024 Form 990",
+      "url": "https://fistulafoundation.org/wp-content/uploads/2019/03/Fistula-Foundation-2024-Form-990-for-Public-Inspection.pdf",
+      "published": "2025",
+      "sourceType": "Primary filing pp.1,2,10. Confirms whole expenses, program/admin/fundraising and entity.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Fistula Foundation",
+      "title": "FAQs",
+      "url": "https://fistulafoundation.org/about/faqs/",
+      "published": "Undated current page",
+      "sourceType": "Provider cost scope, portfolio mix, partner monitoring and entity. $624 is not whole-organization cost; 20% tear share is not a matched 2024 allocation.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Nielsen et al., BJOG",
+      "title": "Community-based long-term follow-up after fistula repair",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19459865/",
+      "published": "2009",
+      "sourceType": "Primary observational cohort, 38/44 followed at 14–28 months; clinical counts sum37. No untreated random control or preference utility.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Aynalem et al.",
+      "title": "Long-term quality of life after fistula repair",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35178255/",
+      "published": "2022",
+      "sourceType": "Primary observational counterevidence: 182 respondents, 84.1% classified poor overall QoL. Not a causal no-benefit estimate.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Uganda cost-effectiveness study authors",
+      "title": "Estimating costs and cost-effectiveness for obstetric fistula repair",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6263022/",
+      "published": "2018",
+      "sourceType": "Primary economic model, not trial. Lifetime no-surgery DALYs and historical microcosts exclude infrastructure and indirect costs; neither used as QALYs/current whole-org cost.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Fistula Foundation",
+      "title": "2025 output announcement",
+      "url": "https://fistulafoundation.org/news/advances-womens-global-health/",
+      "published": "March 26, 2026",
+      "sourceType": "Provider reports 19,577 surgeries and $28m raised in 2025. Confirms activity; funds raised are not spent matched costs or current funding gap.",
+      "retrieved": "September 8, 2026"
+    }
+  ]
+}

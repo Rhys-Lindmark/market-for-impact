@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Fistula Foundation — accepted, publication pending
+
+Whole-gift finite childbirth-injury repair health model: central donor$76,286 and gross associated resources$101,944 per10 overseas QALYs. Corrected full observed clinical cohort denominator; missing outcomes get no benefit, later alternative surgery limits benefit, no lifelong recovery assumption. SF/Bay direct benefit zero centrally; indirect unknown, never substitute global price in SF table.15 signed scenarios independently accepted,3276 author and358 independent checks plus finite-horizon/calibration release audit. Count62 and international cohort5 after canonical verification. Next accepted California YIMBY and Healthier Kids Foundation.
+
 ## California Walks — accepted, publication pending
 
 Conditional whole-gift crossing implementation model; full gift, displaced project health and public/private resources retained. Central $6.32M/10 California QALYs, $23.2M Bay and $632M SF. A favorable donor case is not the central or full-resource estimate. Independent14-scenario acceptance and source recheck; no verified marginal funding offer. Count61 only after canonical report/index/API verification. Next accepted Fistula Foundation and California YIMBY. SFAF/PHC whole-gift revisions published PR240/v162 with count unchanged60.

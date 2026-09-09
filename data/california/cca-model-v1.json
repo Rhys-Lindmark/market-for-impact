@@ -1,0 +1,755 @@
+{
+  "schema_version": "conditional-policy-portfolio-v1",
+  "model_id": "cca-whole-gift-charging-v1",
+  "prepared_at": "2026-09-08",
+  "status": "Conditional research draft for independent audit; no demonstrated marginal donation offer",
+  "organization": {
+    "name": "Coalition for Clean Air",
+    "ein": "23-7120567",
+    "donation_url": "https://ccair.app.neoncrm.com/forms/donate",
+    "scope": "California-wide whole unrestricted portfolio; only future charging/clean-fleet operation health quantified"
+  },
+  "basis": "Current CCA July 2026 CEC participation motivates prospective staff work. Every causal capacity, allocation, timing, cost, survival and geography input is an analyst prior. A 2019 CARB ACT zero-emission-vs-ICE forecast supplies only a coarse matched health order-of-magnitude anchor: 18 annual deaths in 2030 divided by roughly 60,000 ZEVs visually estimated from fleet figure. This is not measured per-truck health, not a current regulation forecast and not credit for ACT passage. Transfer factor addresses timing, cleaner modern diesel, grid/duty-cycle and exposure mismatch; not a calibrated combined correction.",
+  "formula": {
+    "staff": "G*charging_fraction/staff_year_cash",
+    "changed_decisions": "staff*opportunities_per_staff_year*incremental_change_probability*funding_additionality",
+    "vehicles": "changed_decisions*vehicles_per_changed_decision*enabled_clean_operation_fraction",
+    "displaced_vehicles": "changed_decisions*vehicles_per_changed_decision*displaced_equivalent_vehicle_fraction",
+    "health": "(target_vehicles*target_region_share-displaced_vehicles*displaced_region_share)*deaths_per_vehicle_year*transfer*finite_survival_tail*sum_j(discount to midpoint of each acceleration year) - independent_harm*harm_region_share",
+    "public_cost": "changed_decisions*(target_public_real_cost-displaced_public_real_cost)",
+    "net_resource": "G+expected_net_public_real_cost+expected_net_private_real_cost"
+  },
+  "definitions": {
+    "incremental_change_probability": "Chance one prospective distinct decision changes because of added CCA work, conditional on other coalition and public activity. Already marginal CCA attribution: never multiply a second coalition credit. Distinct decision opportunities must not refer to the same project.",
+    "funding_additionality": "Whether extra staff work occurs instead of replacing other support; not a second coalition or clinical counterfactual adjustment.",
+    "enabled_clean_operation_fraction": "Share of project vehicles whose clean use is actually brought forward; includes charging utilization, vehicle availability, attrition and already-committed adoption. Not installation counts.",
+    "displacement": "Lost alternative-project health as equivalent clean vehicles per nominal project vehicle, independent of whether target deployment succeeds; same finite window and health coefficient. Separate geographic shares preserve regional harm. Alternative need not literally be a truck purchase. Central target enables 50% of 100 vehicles, displaced alternative 25%; if target fails, alternative loss remains.",
+    "costs": "Public values are real implementation inputs excluding transfers; private values are net real cost including capital timing, energy and maintenance versus each project's own baseline, excluding public-paid assets. No double-counted grants, subsidies or asset ownership transfer. Per-decision magnitudes are unpriced analyst assumptions. All per-decision costs are assumed present values at gift date, including the later start and finite acceleration window. Values do not price full vehicle purchase as wholly additional when purchases are merely earlier.",
+    "geography": "All health assumed California residents, labeled US for nesting. Bay includes SF. Central 10%/1% are allocation priors informed only loosely by old ACT air-basin pattern, not measured next-gift residence.",
+    "timing": "One prospective staff-year allocation, decisions starting after delay. Only finite earlier clean-operation years count; no perpetual ZEV benefits once no-gift fleet catches up. Finite postevent survival is separate; tail times count first unique prevented deaths."
+  },
+  "unquantified": [
+    "Other CCA education, monitoring, climate and policy health",
+    "Nonfatal respiratory/cardiovascular morbidity",
+    "Noise, collision, congestion and construction harms except displacement/independent-harm stresses",
+    "Climate effects outside the air-pollution death branch",
+    "Medical spending and general fiscal opportunity costs"
+  ],
+  "sources": [
+    {
+      "publisher": "CCA",
+      "title": "FY2024–25 Form 990; visually checked pages 1,10",
+      "url": "https://www.ccair.org/wp-content/uploads/2026/05/2024-2025-CCA-Form-990.pdf",
+      "date": "Period July 2024–June 2025; prepared May 7, 2026"
+    },
+    {
+      "publisher": "CCA/CEC docket",
+      "title": "July 8 2026 comment TN271317",
+      "url": "https://efiling.energy.ca.gov/GetDocument.aspx?DocumentContentId=108852&tn=271317",
+      "date": "July 8, 2026"
+    },
+    {
+      "publisher": "CEC",
+      "title": "2026–27 commission investment plan TN272245",
+      "url": "https://efiling.energy.ca.gov/GetDocument.aspx?DocumentContentId=119921&tn=272245",
+      "date": "August 28, 2026"
+    },
+    {
+      "publisher": "CARB",
+      "title": "Proposed ACT ISOR; matched zero-emission substitution, historical forecast",
+      "url": "https://ww2.arb.ca.gov/sites/default/files/barcu/regact/2019/act2019/isor.pdf",
+      "date": "October 22, 2019; inspected V-1 to V-6, VI-2, IX-3 to IX-7"
+    },
+    {
+      "publisher": "CEC",
+      "title": "Replicable MDHD infrastructure blueprint, CEC-600-2026-017; page33",
+      "url": "https://www.energy.ca.gov/sites/default/files/2026-04/CEC-600-2026-017.pdf",
+      "date": "April 2026"
+    },
+    {
+      "publisher": "CEC/UCI",
+      "title": "Port Terminal Blueprint alternative examined; two high-pollution episodes cannot annualize",
+      "url": "https://www.energy.ca.gov/sites/default/files/2025-04/Final_Blueprint_ARV-21-022_UC_Irvine_Port_Terminal_ADA.pdf",
+      "date": "2025; search-indexed primary caveats inspected, not full source"
+    },
+    {
+      "publisher": "CCA",
+      "title": "Official donation form and EIN",
+      "url": "https://ccair.app.neoncrm.com/forms/donate",
+      "date": "Undated; accessed September 8, 2026"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "central",
+      "inputs": {
+        "gift_usd": 100000,
+        "charging_fraction": 0.4,
+        "staff_year_cash_usd": 200000,
+        "decision_opportunities_per_staff_year": 2,
+        "incremental_change_probability": 0.1,
+        "funding_additionality": 0.5,
+        "vehicles_per_changed_decision": 100,
+        "enabled_clean_operation_fraction": 0.5,
+        "displaced_equivalent_vehicle_fraction": 0.25,
+        "acceleration_years": 3,
+        "start_delay_years": 2,
+        "deaths_per_vehicle_year": 0.0003,
+        "health_transfer_factor": 0.5,
+        "survival_utility": 0.7,
+        "annual_competing_mortality": 0.08,
+        "health_tail_years": 10,
+        "discount_rate": 0.03,
+        "target_bay_share": 0.1,
+        "target_sf_share": 0.01,
+        "displaced_bay_share": 0.1,
+        "displaced_sf_share": 0.01,
+        "target_public_real_cost_per_decision": 2000000,
+        "displaced_public_real_cost_per_decision": 2000000,
+        "target_private_net_cost_per_decision": 1000000,
+        "displaced_private_net_cost_per_decision": 500000,
+        "independent_harm_us_qaly": 0,
+        "independent_harm_bay_share": 0.1,
+        "independent_harm_sf_share": 0.01
+      },
+      "outputs": {
+        "staff_years": 0.2,
+        "expected_changed_decisions": 0.020000000000000004,
+        "target_vehicles_accelerated": 1.0000000000000002,
+        "displaced_equivalent_vehicles": 0.5000000000000001,
+        "net_vehicle_years": 1.5000000000000004,
+        "net_deaths_averted": 0.00022500000000000005,
+        "finite_qaly_per_death_at_event": 3.9622052842268696,
+        "expected_net_public_real_cost_usd": 0,
+        "expected_net_private_real_cost_usd": 10000.000000000002,
+        "total_net_resource_usd": 110000,
+        "target_gross_resource_envelope_usd": 160000,
+        "us": {
+          "qaly": 0.0008041104008991421,
+          "donor_usd_per_10_qaly": 1243610328.7332406,
+          "net_resource_usd_per_10_qaly": 1367971361.6065645
+        },
+        "bay": {
+          "qaly": 0.00008041104008991422,
+          "donor_usd_per_10_qaly": 12436103287.332405,
+          "net_resource_usd_per_10_qaly": 13679713616.065645
+        },
+        "sf": {
+          "qaly": 0.00000804110400899142,
+          "donor_usd_per_10_qaly": 124361032873.32408,
+          "net_resource_usd_per_10_qaly": 136797136160.65648
+        }
+      }
+    },
+    {
+      "id": "favorable_joint",
+      "inputs": {
+        "gift_usd": 100000,
+        "charging_fraction": 0.6,
+        "staff_year_cash_usd": 150000,
+        "decision_opportunities_per_staff_year": 4,
+        "incremental_change_probability": 0.25,
+        "funding_additionality": 0.8,
+        "vehicles_per_changed_decision": 500,
+        "enabled_clean_operation_fraction": 0.8,
+        "displaced_equivalent_vehicle_fraction": 0.16,
+        "acceleration_years": 5,
+        "start_delay_years": 1,
+        "deaths_per_vehicle_year": 0.0005,
+        "health_transfer_factor": 0.8,
+        "survival_utility": 0.8,
+        "annual_competing_mortality": 0.05,
+        "health_tail_years": 15,
+        "discount_rate": 0.03,
+        "target_bay_share": 0.2,
+        "target_sf_share": 0.03,
+        "displaced_bay_share": 0.1,
+        "displaced_sf_share": 0.01,
+        "target_public_real_cost_per_decision": 10000000,
+        "displaced_public_real_cost_per_decision": 10000000,
+        "target_private_net_cost_per_decision": 5000000,
+        "displaced_private_net_cost_per_decision": 2500000,
+        "independent_harm_us_qaly": 0,
+        "independent_harm_bay_share": 0.1,
+        "independent_harm_sf_share": 0.01
+      },
+      "outputs": {
+        "staff_years": 0.4,
+        "expected_changed_decisions": 0.32000000000000006,
+        "target_vehicles_accelerated": 128.00000000000003,
+        "displaced_equivalent_vehicles": 25.600000000000005,
+        "net_vehicle_years": 512.0000000000001,
+        "net_deaths_averted": 0.20480000000000007,
+        "finite_qaly_per_death_at_event": 6.674994393579475,
+        "expected_net_public_real_cost_usd": 0,
+        "expected_net_private_real_cost_usd": 800000.0000000001,
+        "total_net_resource_usd": 900000.0000000001,
+        "target_gross_resource_envelope_usd": 4900000.000000001,
+        "us": {
+          "qaly": 1.2337579162476713,
+          "donor_usd_per_10_qaly": 810531.7800443232,
+          "net_resource_usd_per_10_qaly": 7294786.02039891
+        },
+        "bay": {
+          "qaly": 0.27759553115572605,
+          "donor_usd_per_10_qaly": 3602363.4668636583,
+          "net_resource_usd_per_10_qaly": 32421271.201772932
+        },
+        "sf": {
+          "qaly": 0.04318152706866849,
+          "donor_usd_per_10_qaly": 23158050.858409237,
+          "net_resource_usd_per_10_qaly": 208422457.72568315
+        }
+      }
+    },
+    {
+      "id": "pessimistic_harm",
+      "inputs": {
+        "gift_usd": 100000,
+        "charging_fraction": 0.2,
+        "staff_year_cash_usd": 300000,
+        "decision_opportunities_per_staff_year": 1,
+        "incremental_change_probability": 0.02,
+        "funding_additionality": 0.2,
+        "vehicles_per_changed_decision": 25,
+        "enabled_clean_operation_fraction": 0.2,
+        "displaced_equivalent_vehicle_fraction": 0.24,
+        "acceleration_years": 1,
+        "start_delay_years": 4,
+        "deaths_per_vehicle_year": 0.00005,
+        "health_transfer_factor": 0.25,
+        "survival_utility": 0.7,
+        "annual_competing_mortality": 0.08,
+        "health_tail_years": 5,
+        "discount_rate": 0.03,
+        "target_bay_share": 0.1,
+        "target_sf_share": 0.01,
+        "displaced_bay_share": 0.1,
+        "displaced_sf_share": 0.01,
+        "target_public_real_cost_per_decision": 2000000,
+        "displaced_public_real_cost_per_decision": 2000000,
+        "target_private_net_cost_per_decision": 1000000,
+        "displaced_private_net_cost_per_decision": 500000,
+        "independent_harm_us_qaly": 0,
+        "independent_harm_bay_share": 0.1,
+        "independent_harm_sf_share": 0.01
+      },
+      "outputs": {
+        "staff_years": 0.06666666666666667,
+        "expected_changed_decisions": 0.0002666666666666667,
+        "target_vehicles_accelerated": 0.0013333333333333335,
+        "displaced_equivalent_vehicles": 0.0016,
+        "net_vehicle_years": -0.00026666666666666657,
+        "net_deaths_averted": -3.333333333333332e-9,
+        "finite_qaly_per_death_at_event": 2.5260635869979624,
+        "expected_net_public_real_cost_usd": 0,
+        "expected_net_private_real_cost_usd": 133.33333333333334,
+        "total_net_resource_usd": 100133.33333333333,
+        "target_gross_resource_envelope_usd": 100800,
+        "us": {
+          "qaly": -7.3714939372584934e-9,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        },
+        "bay": {
+          "qaly": -7.37149393725849e-10,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        },
+        "sf": {
+          "qaly": -7.371493937258498e-11,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        }
+      }
+    },
+    {
+      "id": "no_funding_additionality",
+      "inputs": {
+        "gift_usd": 100000,
+        "charging_fraction": 0.4,
+        "staff_year_cash_usd": 200000,
+        "decision_opportunities_per_staff_year": 2,
+        "incremental_change_probability": 0.1,
+        "funding_additionality": 0,
+        "vehicles_per_changed_decision": 100,
+        "enabled_clean_operation_fraction": 0.5,
+        "displaced_equivalent_vehicle_fraction": 0.25,
+        "acceleration_years": 3,
+        "start_delay_years": 2,
+        "deaths_per_vehicle_year": 0.0003,
+        "health_transfer_factor": 0.5,
+        "survival_utility": 0.7,
+        "annual_competing_mortality": 0.08,
+        "health_tail_years": 10,
+        "discount_rate": 0.03,
+        "target_bay_share": 0.1,
+        "target_sf_share": 0.01,
+        "displaced_bay_share": 0.1,
+        "displaced_sf_share": 0.01,
+        "target_public_real_cost_per_decision": 2000000,
+        "displaced_public_real_cost_per_decision": 2000000,
+        "target_private_net_cost_per_decision": 1000000,
+        "displaced_private_net_cost_per_decision": 500000,
+        "independent_harm_us_qaly": 0,
+        "independent_harm_bay_share": 0.1,
+        "independent_harm_sf_share": 0.01
+      },
+      "outputs": {
+        "staff_years": 0.2,
+        "expected_changed_decisions": 0,
+        "target_vehicles_accelerated": 0,
+        "displaced_equivalent_vehicles": 0,
+        "net_vehicle_years": 0,
+        "net_deaths_averted": 0,
+        "finite_qaly_per_death_at_event": 3.9622052842268696,
+        "expected_net_public_real_cost_usd": 0,
+        "expected_net_private_real_cost_usd": 0,
+        "total_net_resource_usd": 100000,
+        "target_gross_resource_envelope_usd": 100000,
+        "us": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        },
+        "bay": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        }
+      }
+    },
+    {
+      "id": "no_policy_effect",
+      "inputs": {
+        "gift_usd": 100000,
+        "charging_fraction": 0.4,
+        "staff_year_cash_usd": 200000,
+        "decision_opportunities_per_staff_year": 2,
+        "incremental_change_probability": 0,
+        "funding_additionality": 0.5,
+        "vehicles_per_changed_decision": 100,
+        "enabled_clean_operation_fraction": 0.5,
+        "displaced_equivalent_vehicle_fraction": 0.25,
+        "acceleration_years": 3,
+        "start_delay_years": 2,
+        "deaths_per_vehicle_year": 0.0003,
+        "health_transfer_factor": 0.5,
+        "survival_utility": 0.7,
+        "annual_competing_mortality": 0.08,
+        "health_tail_years": 10,
+        "discount_rate": 0.03,
+        "target_bay_share": 0.1,
+        "target_sf_share": 0.01,
+        "displaced_bay_share": 0.1,
+        "displaced_sf_share": 0.01,
+        "target_public_real_cost_per_decision": 2000000,
+        "displaced_public_real_cost_per_decision": 2000000,
+        "target_private_net_cost_per_decision": 1000000,
+        "displaced_private_net_cost_per_decision": 500000,
+        "independent_harm_us_qaly": 0,
+        "independent_harm_bay_share": 0.1,
+        "independent_harm_sf_share": 0.01
+      },
+      "outputs": {
+        "staff_years": 0.2,
+        "expected_changed_decisions": 0,
+        "target_vehicles_accelerated": 0,
+        "displaced_equivalent_vehicles": 0,
+        "net_vehicle_years": 0,
+        "net_deaths_averted": 0,
+        "finite_qaly_per_death_at_event": 3.9622052842268696,
+        "expected_net_public_real_cost_usd": 0,
+        "expected_net_private_real_cost_usd": 0,
+        "total_net_resource_usd": 100000,
+        "target_gross_resource_envelope_usd": 100000,
+        "us": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        },
+        "bay": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        }
+      }
+    },
+    {
+      "id": "no_clean_vehicle_operation",
+      "inputs": {
+        "gift_usd": 100000,
+        "charging_fraction": 0.4,
+        "staff_year_cash_usd": 200000,
+        "decision_opportunities_per_staff_year": 2,
+        "incremental_change_probability": 0.1,
+        "funding_additionality": 0.5,
+        "vehicles_per_changed_decision": 100,
+        "enabled_clean_operation_fraction": 0,
+        "displaced_equivalent_vehicle_fraction": 0.25,
+        "acceleration_years": 3,
+        "start_delay_years": 2,
+        "deaths_per_vehicle_year": 0.0003,
+        "health_transfer_factor": 0.5,
+        "survival_utility": 0.7,
+        "annual_competing_mortality": 0.08,
+        "health_tail_years": 10,
+        "discount_rate": 0.03,
+        "target_bay_share": 0.1,
+        "target_sf_share": 0.01,
+        "displaced_bay_share": 0.1,
+        "displaced_sf_share": 0.01,
+        "target_public_real_cost_per_decision": 2000000,
+        "displaced_public_real_cost_per_decision": 2000000,
+        "target_private_net_cost_per_decision": 1000000,
+        "displaced_private_net_cost_per_decision": 500000,
+        "independent_harm_us_qaly": 0,
+        "independent_harm_bay_share": 0.1,
+        "independent_harm_sf_share": 0.01
+      },
+      "outputs": {
+        "staff_years": 0.2,
+        "expected_changed_decisions": 0.020000000000000004,
+        "target_vehicles_accelerated": 0,
+        "displaced_equivalent_vehicles": 0.5000000000000001,
+        "net_vehicle_years": -1.5000000000000004,
+        "net_deaths_averted": -0.00022500000000000005,
+        "finite_qaly_per_death_at_event": 3.9622052842268696,
+        "expected_net_public_real_cost_usd": 0,
+        "expected_net_private_real_cost_usd": 10000.000000000002,
+        "total_net_resource_usd": 110000,
+        "target_gross_resource_envelope_usd": 160000,
+        "us": {
+          "qaly": -0.0008041104008991421,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        },
+        "bay": {
+          "qaly": -0.00008041104008991422,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        },
+        "sf": {
+          "qaly": -0.00000804110400899142,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        }
+      }
+    },
+    {
+      "id": "equal_benefit_displacement",
+      "inputs": {
+        "gift_usd": 100000,
+        "charging_fraction": 0.4,
+        "staff_year_cash_usd": 200000,
+        "decision_opportunities_per_staff_year": 2,
+        "incremental_change_probability": 0.1,
+        "funding_additionality": 0.5,
+        "vehicles_per_changed_decision": 100,
+        "enabled_clean_operation_fraction": 0.5,
+        "displaced_equivalent_vehicle_fraction": 0.5,
+        "acceleration_years": 3,
+        "start_delay_years": 2,
+        "deaths_per_vehicle_year": 0.0003,
+        "health_transfer_factor": 0.5,
+        "survival_utility": 0.7,
+        "annual_competing_mortality": 0.08,
+        "health_tail_years": 10,
+        "discount_rate": 0.03,
+        "target_bay_share": 0.1,
+        "target_sf_share": 0.01,
+        "displaced_bay_share": 0.1,
+        "displaced_sf_share": 0.01,
+        "target_public_real_cost_per_decision": 2000000,
+        "displaced_public_real_cost_per_decision": 2000000,
+        "target_private_net_cost_per_decision": 1000000,
+        "displaced_private_net_cost_per_decision": 500000,
+        "independent_harm_us_qaly": 0,
+        "independent_harm_bay_share": 0.1,
+        "independent_harm_sf_share": 0.01
+      },
+      "outputs": {
+        "staff_years": 0.2,
+        "expected_changed_decisions": 0.020000000000000004,
+        "target_vehicles_accelerated": 1.0000000000000002,
+        "displaced_equivalent_vehicles": 1.0000000000000002,
+        "net_vehicle_years": 0,
+        "net_deaths_averted": 0,
+        "finite_qaly_per_death_at_event": 3.9622052842268696,
+        "expected_net_public_real_cost_usd": 0,
+        "expected_net_private_real_cost_usd": 10000.000000000002,
+        "total_net_resource_usd": 110000,
+        "target_gross_resource_envelope_usd": 160000,
+        "us": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        },
+        "bay": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        }
+      }
+    },
+    {
+      "id": "independent_donor_harm",
+      "inputs": {
+        "gift_usd": 100000,
+        "charging_fraction": 0.4,
+        "staff_year_cash_usd": 200000,
+        "decision_opportunities_per_staff_year": 2,
+        "incremental_change_probability": 0.1,
+        "funding_additionality": 0,
+        "vehicles_per_changed_decision": 100,
+        "enabled_clean_operation_fraction": 0.5,
+        "displaced_equivalent_vehicle_fraction": 0.25,
+        "acceleration_years": 3,
+        "start_delay_years": 2,
+        "deaths_per_vehicle_year": 0.0003,
+        "health_transfer_factor": 0.5,
+        "survival_utility": 0.7,
+        "annual_competing_mortality": 0.08,
+        "health_tail_years": 10,
+        "discount_rate": 0.03,
+        "target_bay_share": 0.1,
+        "target_sf_share": 0.01,
+        "displaced_bay_share": 0.1,
+        "displaced_sf_share": 0.01,
+        "target_public_real_cost_per_decision": 2000000,
+        "displaced_public_real_cost_per_decision": 2000000,
+        "target_private_net_cost_per_decision": 1000000,
+        "displaced_private_net_cost_per_decision": 500000,
+        "independent_harm_us_qaly": 0.01,
+        "independent_harm_bay_share": 0.1,
+        "independent_harm_sf_share": 0.01
+      },
+      "outputs": {
+        "staff_years": 0.2,
+        "expected_changed_decisions": 0,
+        "target_vehicles_accelerated": 0,
+        "displaced_equivalent_vehicles": 0,
+        "net_vehicle_years": 0,
+        "net_deaths_averted": 0,
+        "finite_qaly_per_death_at_event": 3.9622052842268696,
+        "expected_net_public_real_cost_usd": 0,
+        "expected_net_private_real_cost_usd": 0,
+        "total_net_resource_usd": 100000,
+        "target_gross_resource_envelope_usd": 100000,
+        "us": {
+          "qaly": -0.01,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        },
+        "bay": {
+          "qaly": -0.001,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        },
+        "sf": {
+          "qaly": -0.0001,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        }
+      }
+    },
+    {
+      "id": "short_survival",
+      "inputs": {
+        "gift_usd": 100000,
+        "charging_fraction": 0.4,
+        "staff_year_cash_usd": 200000,
+        "decision_opportunities_per_staff_year": 2,
+        "incremental_change_probability": 0.1,
+        "funding_additionality": 0.5,
+        "vehicles_per_changed_decision": 100,
+        "enabled_clean_operation_fraction": 0.5,
+        "displaced_equivalent_vehicle_fraction": 0.25,
+        "acceleration_years": 3,
+        "start_delay_years": 2,
+        "deaths_per_vehicle_year": 0.0003,
+        "health_transfer_factor": 0.5,
+        "survival_utility": 0.7,
+        "annual_competing_mortality": 0.08,
+        "health_tail_years": 3,
+        "discount_rate": 0.03,
+        "target_bay_share": 0.1,
+        "target_sf_share": 0.01,
+        "displaced_bay_share": 0.1,
+        "displaced_sf_share": 0.01,
+        "target_public_real_cost_per_decision": 2000000,
+        "displaced_public_real_cost_per_decision": 2000000,
+        "target_private_net_cost_per_decision": 1000000,
+        "displaced_private_net_cost_per_decision": 500000,
+        "independent_harm_us_qaly": 0,
+        "independent_harm_bay_share": 0.1,
+        "independent_harm_sf_share": 0.01
+      },
+      "outputs": {
+        "staff_years": 0.2,
+        "expected_changed_decisions": 0.020000000000000004,
+        "target_vehicles_accelerated": 1.0000000000000002,
+        "displaced_equivalent_vehicles": 0.5000000000000001,
+        "net_vehicle_years": 1.5000000000000004,
+        "net_deaths_averted": 0.00022500000000000005,
+        "finite_qaly_per_death_at_event": 1.682538822597044,
+        "expected_net_public_real_cost_usd": 0,
+        "expected_net_private_real_cost_usd": 10000.000000000002,
+        "total_net_resource_usd": 110000,
+        "target_gross_resource_envelope_usd": 160000,
+        "us": {
+          "qaly": 0.0003414631171567061,
+          "donor_usd_per_10_qaly": 2928573979.8980236,
+          "net_resource_usd_per_10_qaly": 3221431377.887826
+        },
+        "bay": {
+          "qaly": 0.00003414631171567062,
+          "donor_usd_per_10_qaly": 29285739798.980232,
+          "net_resource_usd_per_10_qaly": 32214313778.878258
+        },
+        "sf": {
+          "qaly": 0.0000034146311715670614,
+          "donor_usd_per_10_qaly": 292857397989.80237,
+          "net_resource_usd_per_10_qaly": 322143137788.7826
+        }
+      }
+    },
+    {
+      "id": "extra_public_resources",
+      "inputs": {
+        "gift_usd": 100000,
+        "charging_fraction": 0.4,
+        "staff_year_cash_usd": 200000,
+        "decision_opportunities_per_staff_year": 2,
+        "incremental_change_probability": 0.1,
+        "funding_additionality": 0.5,
+        "vehicles_per_changed_decision": 100,
+        "enabled_clean_operation_fraction": 0.5,
+        "displaced_equivalent_vehicle_fraction": 0.25,
+        "acceleration_years": 3,
+        "start_delay_years": 2,
+        "deaths_per_vehicle_year": 0.0003,
+        "health_transfer_factor": 0.5,
+        "survival_utility": 0.7,
+        "annual_competing_mortality": 0.08,
+        "health_tail_years": 10,
+        "discount_rate": 0.03,
+        "target_bay_share": 0.1,
+        "target_sf_share": 0.01,
+        "displaced_bay_share": 0.1,
+        "displaced_sf_share": 0.01,
+        "target_public_real_cost_per_decision": 3000000,
+        "displaced_public_real_cost_per_decision": 2000000,
+        "target_private_net_cost_per_decision": 1000000,
+        "displaced_private_net_cost_per_decision": 500000,
+        "independent_harm_us_qaly": 0,
+        "independent_harm_bay_share": 0.1,
+        "independent_harm_sf_share": 0.01
+      },
+      "outputs": {
+        "staff_years": 0.2,
+        "expected_changed_decisions": 0.020000000000000004,
+        "target_vehicles_accelerated": 1.0000000000000002,
+        "displaced_equivalent_vehicles": 0.5000000000000001,
+        "net_vehicle_years": 1.5000000000000004,
+        "net_deaths_averted": 0.00022500000000000005,
+        "finite_qaly_per_death_at_event": 3.9622052842268696,
+        "expected_net_public_real_cost_usd": 20000.000000000004,
+        "expected_net_private_real_cost_usd": 10000.000000000002,
+        "total_net_resource_usd": 130000,
+        "target_gross_resource_envelope_usd": 180000,
+        "us": {
+          "qaly": 0.0008041104008991421,
+          "donor_usd_per_10_qaly": 1243610328.7332406,
+          "net_resource_usd_per_10_qaly": 1616693427.3532126
+        },
+        "bay": {
+          "qaly": 0.00008041104008991422,
+          "donor_usd_per_10_qaly": 12436103287.332405,
+          "net_resource_usd_per_10_qaly": 16166934273.532127
+        },
+        "sf": {
+          "qaly": 0.00000804110400899142,
+          "donor_usd_per_10_qaly": 124361032873.32408,
+          "net_resource_usd_per_10_qaly": 161669342735.3213
+        }
+      }
+    },
+    {
+      "id": "no_sf_health",
+      "inputs": {
+        "gift_usd": 100000,
+        "charging_fraction": 0.4,
+        "staff_year_cash_usd": 200000,
+        "decision_opportunities_per_staff_year": 2,
+        "incremental_change_probability": 0.1,
+        "funding_additionality": 0.5,
+        "vehicles_per_changed_decision": 100,
+        "enabled_clean_operation_fraction": 0.5,
+        "displaced_equivalent_vehicle_fraction": 0.25,
+        "acceleration_years": 3,
+        "start_delay_years": 2,
+        "deaths_per_vehicle_year": 0.0003,
+        "health_transfer_factor": 0.5,
+        "survival_utility": 0.7,
+        "annual_competing_mortality": 0.08,
+        "health_tail_years": 10,
+        "discount_rate": 0.03,
+        "target_bay_share": 0.1,
+        "target_sf_share": 0,
+        "displaced_bay_share": 0.1,
+        "displaced_sf_share": 0,
+        "target_public_real_cost_per_decision": 2000000,
+        "displaced_public_real_cost_per_decision": 2000000,
+        "target_private_net_cost_per_decision": 1000000,
+        "displaced_private_net_cost_per_decision": 500000,
+        "independent_harm_us_qaly": 0,
+        "independent_harm_bay_share": 0.1,
+        "independent_harm_sf_share": 0.01
+      },
+      "outputs": {
+        "staff_years": 0.2,
+        "expected_changed_decisions": 0.020000000000000004,
+        "target_vehicles_accelerated": 1.0000000000000002,
+        "displaced_equivalent_vehicles": 0.5000000000000001,
+        "net_vehicle_years": 1.5000000000000004,
+        "net_deaths_averted": 0.00022500000000000005,
+        "finite_qaly_per_death_at_event": 3.9622052842268696,
+        "expected_net_public_real_cost_usd": 0,
+        "expected_net_private_real_cost_usd": 10000.000000000002,
+        "total_net_resource_usd": 110000,
+        "target_gross_resource_envelope_usd": 160000,
+        "us": {
+          "qaly": 0.0008041104008991421,
+          "donor_usd_per_10_qaly": 1243610328.7332406,
+          "net_resource_usd_per_10_qaly": 1367971361.6065645
+        },
+        "bay": {
+          "qaly": 0.00008041104008991422,
+          "donor_usd_per_10_qaly": 12436103287.332405,
+          "net_resource_usd_per_10_qaly": 13679713616.065645
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_usd_per_10_qaly": null,
+          "net_resource_usd_per_10_qaly": null
+        }
+      }
+    }
+  ]
+}

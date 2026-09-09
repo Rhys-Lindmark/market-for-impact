@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Coalition for Clean Air — accepted California-wide report, publication pending
+
+Whole unrestricted gift retains all portfolio cost; conditional future clean-fleet implementation capacity, not past policy passage. Central $124B/10SFQ, $12.4B/10BayQ, $1.24B/10CaliforniaQ. Competing-project health and real-resource displacement stay independent of target success. Historical CARB health/fleet anchor is explicitly a coarse forecast ratio, not a marginal causal estimate. Independently audited11scenarios/813checks plus253calculator comparisons. Distinct California cohort, not an SF-headquartered or US-wide relabel. Count58 after canonical verification; next accepted Felton/HPP/CalWalks.
+
 ## SFPHF next report — accepted, publication pending
 
 Whole $100,000 unrestricted foundation gift with a conditional HCV cure component;90% central portfolio health unquantified, cost retained. Central $18.31M/10 SF QALYs. Later counterfactual cure, reinfection, excess mortality, signed harms and gross associated resource costs are explicit. Independent18-test/10-scenario acceptance, primary trial and external health-reference audit completed. Count57 only after canonical publication verification. Next accepted report: Coalition for Clean Air; then Felton, HPP and California Walks.

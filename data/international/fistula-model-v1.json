@@ -1,0 +1,229 @@
+{
+  "model_id": "fistula-whole-gift-finite-health-v1",
+  "organization": "Fistula Foundation",
+  "as_of": "2026-09-08",
+  "gift_scope": "Whole unrestricted organization; one international cohort candidate, not an SF intervention",
+  "status": "Conditional best estimate, not validated marginal offer",
+  "observed": {
+    "expenses_2024_usd": 19726107,
+    "surgeries_2024": 16587,
+    "program_expenses_2024": 16533204,
+    "management_2024": 1490119,
+    "fundraising_2024": 1702784,
+    "surgeries_2025": 19577,
+    "faq_treatment_usd": 624,
+    "faq_perineal_tear_fraction": 0.2
+  },
+  "central_inputs": {
+    "gift_usd": 100000,
+    "expense_per_surgery_2024": 1189.2510399710616,
+    "marginal_cost_multiplier": 1.25,
+    "unique_patient_fraction": 0.85,
+    "fistula_fraction": 0.8,
+    "financial_additionality": 0.5,
+    "dry_fraction": 0.4772727272727273,
+    "partial_fraction": 0.29545454545454547,
+    "dry_utility_gain": 0.25,
+    "partial_utility_gain": 0.08,
+    "advantage_years": 5,
+    "delay_years": 0.5,
+    "annual_mortality": 0.01,
+    "annual_effect_decay": 0.03,
+    "discount_rate": 0.03,
+    "procedure_harm_q": 0.015,
+    "independent_harm_q": 0,
+    "external_resource_per_nominal_surgery": 500
+  },
+  "parameter_basis": [
+    [
+      "expense_per_surgery_2024",
+      "Observed derived",
+      "Matched 2024 whole expenses / all reported surgeries; includes administration, fundraising, training, outreach and tears. Accounting average, not causal marginal quote."
+    ],
+    [
+      "marginal_cost_multiplier",
+      "Best-estimate prior 1.25; range 1–2.5",
+      "2024-to-2026 prices, remote/complex expansion and accounting/output mismatch; not estimated inflation. No second overhead haircut."
+    ],
+    [
+      "unique_patient_fraction",
+      "Prior .85; range .65–1",
+      "Reported surgeries may include repeats; only unique care episodes receive first-treatment outcome stream; repeat surgery remains fully costed."
+    ],
+    [
+      "fistula_fraction",
+      "Current provider reports 20% tear cases; working share .8, range .6–.9",
+      "Do not apply fistula trial outcomes to perineal tears. Their costs and potential benefits retained/uncredited."
+    ],
+    [
+      "financial_additionality",
+      "Prior .5; range .15–.85, null0",
+      "Capacity added beyond public hospitals, NGOs, reserves and donor replacement. Not patient waiting-time catch-up. Current room unknown."
+    ],
+    [
+      "dry_fraction / partial_fraction",
+      "Conservative full operated cohort anchor 21/44 dry, 13/44 partial; favorable transfer .75/.20",
+      "Nielsen: 38/44 followed, 37 classified urinary states. All 10 others receive zero durable health (3 persistent, 6 lost, 1 unclassified). No RCT or current portfolio rate. Cautious .4/.3 is a joint transfer scenario, not a lower confidence bound on both fractions."
+    ],
+    [
+      "dry_utility_gain / partial_utility_gain",
+      "Explicit preference-utility priors .25/.08, ranges .1–.35 / 0–.15, signed -0.1/-.05 diagnostics",
+      "QoL questionnaires and DALY disability weights are not direct QALYs. Recovery does not imply restored social health; no separate mental-health or income credit."
+    ],
+    [
+      "advantage_years",
+      "Prior5, range1–10, null0",
+      "Hard cap on advantage over later public/NGO treatment or recovery, not patient lifetime; actual no-gift waiting-time distribution unavailable."
+    ],
+    [
+      "delay_years / annual_mortality / annual_effect_decay",
+      "Priors .5/.01/.03; ranges 0–2 / 0–.03 / 0–.15",
+      "Delay to care, finite survival and recurrence/declining effect after long-term outcome anchor. No lifetime extension or maternal-death benefit."
+    ],
+    [
+      "procedure_harm_q",
+      "Prior .015 per added distinct episode; range0–.1",
+      "Gift-date PV total acute harms from every operation/repeat in an added unique episode, including tears; not a per-operation rate. Excludes durable-state worsening. Full present harm without subtracting delayed alternative repair harm is conservative."
+    ],
+    [
+      "independent_harm_q",
+      "Central0, adverse1",
+      "Gift-date PV health loss outside patient treatment stream, e.g. displaced other scarce care; no activity multiplier. Do not double count procedure harm."
+    ],
+    [
+      "external_resource_per_nominal_surgery",
+      "Prior$500; range0–1500",
+      "Unreimbursed public hospital/noncash staff, patient travel/time, family care, including unsuccessful/repeat/tear procedures. Add on all nominal surgery equivalents. Gross resources, not net induced societal spending."
+    ]
+  ],
+  "geography": {
+    "all_region": "Direct Africa/Asia health",
+    "sf_direct_q": 0,
+    "bay_direct_q": 0,
+    "sf_indirect": "Unknown, uncredited",
+    "bay_indirect": "Unknown, uncredited",
+    "note": "US administration is a resource cost, not local health benefit. No local multiplier."
+  },
+  "funding_boundary": "No verified unfunded 2026 tranche. Positive prior permits research ranking, not a guarantee a gift adds care. Public capacity and other NGOs are baseline. Independent donor displacement and eventual patient catch-up are different counterfactuals.",
+  "scenarios": [
+    {
+      "id": "central",
+      "overrides": {}
+    },
+    {
+      "id": "favorable",
+      "overrides": {
+        "marginal_cost_multiplier": 1,
+        "unique_patient_fraction": 1,
+        "fistula_fraction": 0.9,
+        "financial_additionality": 0.85,
+        "dry_fraction": 0.75,
+        "partial_fraction": 0.2,
+        "dry_utility_gain": 0.35,
+        "partial_utility_gain": 0.12,
+        "advantage_years": 10,
+        "delay_years": 0.25,
+        "annual_mortality": 0.005,
+        "annual_effect_decay": 0.01,
+        "procedure_harm_q": 0.005,
+        "external_resource_per_nominal_surgery": 250
+      }
+    },
+    {
+      "id": "cautious",
+      "overrides": {
+        "marginal_cost_multiplier": 2,
+        "unique_patient_fraction": 0.7,
+        "fistula_fraction": 0.7,
+        "financial_additionality": 0.2,
+        "dry_fraction": 0.4,
+        "partial_fraction": 0.3,
+        "dry_utility_gain": 0.1,
+        "partial_utility_gain": 0.02,
+        "advantage_years": 1,
+        "annual_effect_decay": 0.1,
+        "procedure_harm_q": 0.02,
+        "external_resource_per_nominal_surgery": 1000
+      }
+    },
+    {
+      "id": "fast_public_catchup",
+      "overrides": {
+        "advantage_years": 1
+      }
+    },
+    {
+      "id": "low_additionality",
+      "overrides": {
+        "financial_additionality": 0.15
+      }
+    },
+    {
+      "id": "higher_complete_cost",
+      "overrides": {
+        "marginal_cost_multiplier": 2.5,
+        "external_resource_per_nominal_surgery": 1500
+      }
+    },
+    {
+      "id": "low_utility_bridge",
+      "overrides": {
+        "dry_utility_gain": 0.1,
+        "partial_utility_gain": 0
+      }
+    },
+    {
+      "id": "no_funding_additionality",
+      "overrides": {
+        "financial_additionality": 0
+      }
+    },
+    {
+      "id": "zero_health_and_harm",
+      "overrides": {
+        "dry_utility_gain": 0,
+        "partial_utility_gain": 0,
+        "procedure_harm_q": 0
+      }
+    },
+    {
+      "id": "no_durable_health_with_procedure_harm",
+      "overrides": {
+        "advantage_years": 0
+      }
+    },
+    {
+      "id": "signed_worsening",
+      "overrides": {
+        "dry_utility_gain": -0.1,
+        "partial_utility_gain": -0.05
+      }
+    },
+    {
+      "id": "independent_harm_zero_activity",
+      "overrides": {
+        "financial_additionality": 0,
+        "independent_harm_q": 1
+      }
+    },
+    {
+      "id": "no_fistula_allocation",
+      "overrides": {
+        "fistula_fraction": 0
+      }
+    },
+    {
+      "id": "all_external_resources_donor_paid",
+      "overrides": {
+        "expense_per_surgery_2024": 1589.2510399710616,
+        "external_resource_per_nominal_surgery": 0
+      }
+    },
+    {
+      "id": "no_discount",
+      "overrides": {
+        "discount_rate": 0
+      }
+    }
+  ]
+}

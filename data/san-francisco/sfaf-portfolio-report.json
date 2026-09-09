@@ -1,0 +1,386 @@
+{
+  "organization": "San Francisco AIDS Foundation",
+  "eyebrow": "Whole organization · ordinary unrestricted gift · SF, Bay and US health",
+  "program": "Conditional value of a $100,000 unrestricted SFAF gift",
+  "donationUrl": "https://donate.sfaf.org/campaign/773029/donate",
+  "published": "September 8, 2026",
+  "modelVersion": "sfaf-whole-organization-unrestricted-v1",
+  "nutshell": {
+    "headline": "An ordinary SFAF gift supports a broad portfolio; added overdose protection is its largest quantified health stream here.",
+    "body": "Central $2,018,525 per10 SF QALYs for the whole gift, with 0.4954 SF QALYs per $100,000. Joint favorable assumptions yield $20,263, but are not a calibrated expected value or confidence bound. The earlier $56,328 figure applied only to hypothetical targeted naloxone spending.",
+    "whyItMayWork": "SFAF delivers overdose prevention and PrEP alongside HIV, HCV, behavioral health, housing and community support. Flexible funds may extend protection to people not reached by current funding.",
+    "whyWeAreCautious": "Marginal allocations, unique-person reach, effect beyond existing rescue/PrEP access and available funding room remain unmeasured. Most portfolio costs are retained with their health unquantified.",
+    "recommendationBlocker": "No verified marginal unrestricted-gift budget or patient-linked additional-effect estimate. This replaces the scope of the organization estimate, not the historical program calculation or organization count."
+  },
+  "summary": [
+    {
+      "label": "Central whole-gift donor cost /10 QALYs",
+      "value": "$2,018,525 SF / $1,926,860 Bay / $1,905,230 US",
+      "detail": "Same $100,000 numerator; regional health is nested and never added."
+    },
+    {
+      "label": "Explicit central allocation",
+      "value": "15% overdose /20% PrEP /65% unquantified",
+      "detail": "Marginal judgments, not audited expense shares or a donor restriction. Full gift cost retained."
+    },
+    {
+      "label": "Central associated resources",
+      "value": "$138,286",
+      "detail": "Includes unpriced outside medicine/lab/other resources. Gross envelope before funding replacement, not net social cost."
+    },
+    {
+      "label": "Historical comparison",
+      "value": "$56,328 program-only",
+      "detail": "Legacy targeted-dose model remains inspectable. General giving cannot inherit that program allocation."
+    }
+  ],
+  "programSection": {
+    "body": "The audit spans sexual health, substance/behavioral care, linkage/retention/social support, policy, management and fundraising. Current services support two modeled mechanisms, not all measured organization benefit. The central allocation ledger also reserves5% for HCV,15% HIV linkage/social support,15% other substance/behavioral health,10% other sexual/trans care,5% policy and15% central operations.",
+    "steps": [
+      {
+        "title": "Allocate the ordinary gift",
+        "detail": "$15,000 direct overdose support and$20,000 direct PrEP access; remaining$65,000 retained. Central operations are priced separately from branch direct unit costs."
+      },
+      {
+        "title": "Reach distinct additional people",
+        "detail": "At$300 and$700 per offer,50 overdose and28.57 PrEP offers; financing replacement reduces these to20 overdose people and8.57 PrEP offers.90% disjoint PrEP eligibility leaves7.71 credited people."
+      },
+      {
+        "title": "Compare two finite trajectories",
+        "detail": "Recurring overdose rescues affect one person's survival curve. PrEP changes finite time without HIV, allowing later infections in both arms."
+      },
+      {
+        "title": "Deduplicate and value health",
+        "detail": "No new lifetime per reported reversal. Exclude overlap from PrEP gains; retain its costs/harms. No extra HCV/MOUD survival, transmission or other portfolio health added."
+      }
+    ],
+    "boundary": "Neither a dose, a training nor a PrEP prescription is a causal life saved. All quantities beyond service existence are scenario inputs."
+  },
+  "model": {
+    "headline": "Whole gift, unique cohorts and finite clinical benefits",
+    "body": "Central overdose survival contributes0.508789 US QALYs and disjoint PrEP morbidity0.016082, before regional allocation. Both benefits compare actual available care with finite added protection. Death and infection remain possible after support ends.",
+    "equation": {
+      "label": "Finite-state whole-gift bridge",
+      "expression": "Unique people = gift × branch allocation / direct offer cost × financing additionality (× disjoint fraction for PrEP). OD benefit integrates supported survival minus baseline survival. PrEP benefit integrates supported HIV-free survival minus baseline HIV-free survival × treated-HIV utility gap. Subtract distinct present-valued harms. Whole-gift price =10 × gift / regional net Q.",
+      "result": "US 0.524871; Bay 0.518979; SF 0.495411 QALYs. SF donor $2,018,525 / gross associated resources $2,791,332 per10 QALYs."
+    },
+    "inputs": [
+      {
+        "key": "allocation",
+        "label": "OD /PrEP gift allocation",
+        "confidence": "Explicit marginal portfolio prior",
+        "best": "15% /20%",
+        "range": "5–30% /10–25%; zero-quantified allocation case",
+        "basis": "Audit establishes portfolio breadth, not next-gift shares. Central other65% priced but unquantified. Funding additionality does not stand in for allocation."
+      },
+      {
+        "key": "cash",
+        "label": "Direct cash per supported offer",
+        "confidence": "Unpriced delivery prior",
+        "best": "$300 OD /$700 PrEP",
+        "range": "$150–$600 OD /$350–$1,500 PrEP",
+        "basis": "Includes recruitment failures, branch staff, follow-up and program administration. Central corporate management/fundraising is in separate15% retained spending. Outside medication/lab inputs priced separately."
+      },
+      {
+        "key": "finance",
+        "label": "Financing additionality",
+        "confidence": "Unverified capacity/replacement prior",
+        "best": "40% OD /30% PrEP",
+        "range": "10–70% /10–60%; explicit zero",
+        "basis": "Existing government support, assistance,340B operations and other donors stay baseline. Does not measure clinical change or unrestricted allocation."
+      },
+      {
+        "key": "odrisk",
+        "label": "Recurrent events /fatality without effective rescue",
+        "confidence": "Historical recurrence context; local priors",
+        "best": "0.5 per year /10%",
+        "range": "0.3–1 /5–15%;2-event stress",
+        "basis": "External Medicaid recurrence and mortality inform scale only. Events can recur in survivors; fatal hazard is event rate × untreated fatality × failure of effective rescue."
+      },
+      {
+        "key": "odrescue",
+        "label": "Effective rescue baseline /increment",
+        "confidence": "Unmeasured counterfactual",
+        "best": "80% /+10 points",
+        "range": "75–90% /+2–20 points;−5-point harm",
+        "basis": "Includes witness access, timely dosing, EMS and alternative rescue. It is not the pharmacological reversal rate or reported reversals/doses."
+      },
+      {
+        "key": "odtail",
+        "label": "OD protection /finite survival",
+        "confidence": "Explicit competing-risk model",
+        "best": "1-year protection;15-year horizon;utility.7;other hazard.06",
+        "range": ".5–2-year support;10–20-year horizon;5-year stress",
+        "basis": "Baseline fatal hazard totals.07 centrally. The.06 hazard excludes overdose death already modeled. Following support both arms return to baseline risk; survival difference is integrated once."
+      },
+      {
+        "key": "preprisk",
+        "label": "PrEP baseline HIV hazard /additional effective coverage",
+        "confidence": "Local priors versus current care",
+        "best": "1% yearly /25% extra coverage",
+        "range": ".3–3% /5–50%;zero",
+        "basis": "PROUD's86% relative effect is an external active-PrEP scale. Its much higher control incidence is not imported. Coverage increment is added protected time beyond actual care."
+      },
+      {
+        "key": "preptail",
+        "label": "PrEP support /finite morbidity",
+        "confidence": "Utility/duration judgment",
+        "best": "1 year /20-year horizon /.08 utility gap",
+        "range": "10–25-year horizon /.03–.15 gap;5-year stress",
+        "basis": "Common mortality.01 and later infection continue. Gap compares HIV-free with treated HIV, not untreated AIDS; no HIV mortality/transmission credit. Not direct SFAF utility evidence."
+      },
+      {
+        "key": "dedup",
+        "label": "Disjoint PrEP health fraction",
+        "confidence": "Unmeasured overlap prior",
+        "best": "90%",
+        "range": "70–95%;zero disjoint health stress",
+        "basis": "Excludes people/person-time already credited under overdose survival. Full PrEP costs and harms remain; no added MOUD/HCV tail on those same survivors."
+      },
+      {
+        "key": "resources",
+        "label": "Outside resources per nominal offer",
+        "confidence": "Unpriced gross envelope",
+        "best": "$80 OD /$1,200 PrEP",
+        "range": "Donor-pays sensitivity moves these into direct cash",
+        "basis": "Medication/lab/other real inputs outside branch cash and corporate overhead. Not insurance transfers or340B revenue. Assumes associated inputs before replacement; no savings subtraction."
+      },
+      {
+        "key": "geography",
+        "label": "OD Bay/SF;PrEP Bay/SF",
+        "confidence": "Future health-residence priors",
+        "best": "99%/95%;95%/75%",
+        "range": "Favorable PrEP SF85%;zero SF case",
+        "basis": "SF nests within Bay. Shares include mobility over health horizon; service-site location alone does not prove residence."
+      },
+      {
+        "key": "harm",
+        "label": "Shared /independent loss",
+        "confidence": "Diagnostic outside counted clinical effects",
+        "best": "0 centrally",
+        "range": ".04 OD /.01 PrEP per incremental offer;.1 independent QALY",
+        "basis": "Already gift-date PV, no extra discount. PrEP shared harm applies even to overlap-excluded people; independent harm survives zero funded activity."
+      }
+    ],
+    "giftHeading": "Same $100,000 ordinary gift in sixteen scenarios",
+    "sensitivity": [
+      {
+        "case": "central",
+        "headline": "SF donor: $2,018,525/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.52487114 / 0.51897915 / 0.49541118. US/Bay donor prices: $1,905,230 / $1,926,860. Gross associated resources $138,286; US/Bay/SF resource prices: $2,634,660 / $2,664,572 / $2,791,332 per10 QALYs."
+      },
+      {
+        "case": "favorable joint",
+        "headline": "SF donor: $20,263/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 52.043531 / 51.487062 / 49.351272. US/Bay donor prices: $19,215 / $19,422. Gross associated resources $201,714; US/Bay/SF resource prices: $38,759 / $39,178 / $40,873 per10 QALYs."
+      },
+      {
+        "case": "pessimistic positive",
+        "headline": "SF donor: $2,583,049,910/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.00041040290 / 0.00040575017 / 0.00038713925. US/Bay donor prices: $2,436,629,960 / $2,464,570,754. Gross associated resources $108,667; US/Bay/SF resource prices: $2,647,804,556 / $2,678,166,886 / $2,806,914,236 per10 QALYs."
+      },
+      {
+        "case": "no quantified allocation",
+        "headline": "SF donor: No finite positive ratio/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.0000000 / 0.0000000 / 0.0000000. US/Bay donor prices: No finite positive ratio / No finite positive ratio. Gross associated resources $100,000; US/Bay/SF resource prices: No finite positive ratio / No finite positive ratio / No finite positive ratio per10 QALYs."
+      },
+      {
+        "case": "replacement only",
+        "headline": "SF donor: No finite positive ratio/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.0000000 / 0.0000000 / 0.0000000. US/Bay donor prices: No finite positive ratio / No finite positive ratio. Gross associated resources $138,286; US/Bay/SF resource prices: No finite positive ratio / No finite positive ratio / No finite positive ratio per10 QALYs."
+      },
+      {
+        "case": "no clinical increment",
+        "headline": "SF donor: No finite positive ratio/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.0000000 / 0.0000000 / 0.0000000. US/Bay donor prices: No finite positive ratio / No finite positive ratio. Gross associated resources $138,286; US/Bay/SF resource prices: No finite positive ratio / No finite positive ratio / No finite positive ratio per10 QALYs."
+      },
+      {
+        "case": "quarter year preservation",
+        "headline": "SF donor: $7,712,310/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.13735843 / 0.13581931 / 0.12966285. US/Bay donor prices: $7,280,223 / $7,362,723. Gross associated resources $138,286; US/Bay/SF resource prices: $10,067,508 / $10,181,594 / $10,665,022 per10 QALYs."
+      },
+      {
+        "case": "high recurrent risk",
+        "headline": "SF donor: $749,173/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 1.4084429 / 1.3937152 / 1.3348044. US/Bay donor prices: $710,004 / $717,507. Gross associated resources $138,286; US/Bay/SF resource prices: $981,834 / $992,209 / $1,036,000 per10 QALYs."
+      },
+      {
+        "case": "five year health horizon",
+        "headline": "SF donor: $4,301,174/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.24582397 / 0.24315811 / 0.23249468. US/Bay donor prices: $4,067,952 / $4,112,550. Gross associated resources $138,286; US/Bay/SF resource prices: $5,625,396 / $5,687,070 / $5,947,909 per10 QALYs."
+      },
+      {
+        "case": "prep fully overlaps",
+        "headline": "SF donor: $2,068,896/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.50878913 / 0.50370124 / 0.48334968. US/Bay donor prices: $1,965,451 / $1,985,304. Gross associated resources $138,286; US/Bay/SF resource prices: $2,717,938 / $2,745,392 / $2,860,987 per10 QALYs."
+      },
+      {
+        "case": "negative rescue effect",
+        "headline": "SF donor: No finite positive ratio/10 QALYs",
+        "detail": "US/Bay/SF QALYs: -0.25346281 / -0.25092819 / -0.24078967. US/Bay donor prices: No finite positive ratio / No finite positive ratio. Gross associated resources $138,286; US/Bay/SF resource prices: No finite positive ratio / No finite positive ratio / No finite positive ratio per10 QALYs."
+      },
+      {
+        "case": "independent harm zero activity",
+        "headline": "SF donor: No finite positive ratio/10 QALYs",
+        "detail": "US/Bay/SF QALYs: -0.10000000 / -0.098000000 / -0.090000000. US/Bay donor prices: No finite positive ratio / No finite positive ratio. Gross associated resources $138,286; US/Bay/SF resource prices: No finite positive ratio / No finite positive ratio / No finite positive ratio per10 QALYs."
+      },
+      {
+        "case": "adverse shared burdens",
+        "headline": "SF donor: No finite positive ratio/10 QALYs",
+        "detail": "US/Bay/SF QALYs: -0.36084314 / -0.35444942 / -0.32887453. US/Bay donor prices: No finite positive ratio / No finite positive ratio. Gross associated resources $138,286; US/Bay/SF resource prices: No finite positive ratio / No finite positive ratio / No finite positive ratio per10 QALYs."
+      },
+      {
+        "case": "donor pays outside inputs",
+        "headline": "SF donor: $2,590,435/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.40760058 / 0.40328758 / 0.38603556. US/Bay donor prices: $2,453,382 / $2,479,620. Gross associated resources $100,000; US/Bay/SF resource prices: $2,453,382 / $2,479,620 / $2,590,435 per10 QALYs."
+      },
+      {
+        "case": "no sf health",
+        "headline": "SF donor: No finite positive ratio/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.52487114 / 0.51897915 / 0.0000000. US/Bay donor prices: $1,905,230 / $1,926,860. Gross associated resources $138,286; US/Bay/SF resource prices: $2,634,660 / $2,664,572 / No finite positive ratio per10 QALYs."
+      },
+      {
+        "case": "zero health horizon",
+        "headline": "SF donor: No finite positive ratio/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.0000000 / 0.0000000 / 0.0000000. US/Bay donor prices: No finite positive ratio / No finite positive ratio. Gross associated resources $138,286; US/Bay/SF resource prices: No finite positive ratio / No finite positive ratio / No finite positive ratio per10 QALYs."
+      }
+    ],
+    "uncertaintyBoundary": "The central value is a judgmental partial-health best estimate for the whole gift. Joint favorable inputs are not a confidence bound or high-expected-value claim. Null and harm cases retain gift costs. Shorter protection and health horizons can substantially worsen value; new recurring risk can increase both need and survivor attrition.",
+    "fundingBoundary": "May2026 contract request remains conditional on appropriations; June partial restorations do not resolve the current Pick Up Crew gap. Public PrEP benefits and 340B operations remain baseline. Liquid assets do not establish spare cash or absence of need. Verified funding room remains null."
+  },
+  "evidence": [
+    {
+      "key": "portfolio",
+      "design": "Official FY2025 audited functional portfolio",
+      "population": "Whole SFAF organization",
+      "result": "Multiple clinical/support/policy functions plus central operations are present.",
+      "transfer": "Historical expense categories guide breadth; none is a verified marginal gift share."
+    },
+    {
+      "key": "recurrence",
+      "design": "Historical Medicaid cohort",
+      "population": "Adults following nonfatal opioid overdose",
+      "result": "Repeated overdose and subsequent fatal overdose are observed.",
+      "transfer": "A recurrent-event survival model is warranted, but current SFAF event/rescue hazards remain priors."
+    },
+    {
+      "key": "prep",
+      "design": "PROUD randomized immediate versus deferred PrEP",
+      "population": "High-risk sexual-health clients in England",
+      "result": "86% relative acquisition reduction; substantial background incidence.",
+      "transfer": "Neither local incidence, added access, utility gap nor funding additionality is supplied by this trial."
+    },
+    {
+      "key": "baseline",
+      "design": "Current public budget/benefit sources",
+      "population": "SFAF programs and eligible PrEP clients",
+      "result": "Existing public and assistance routes support care.",
+      "transfer": "They neither prove every client is reached nor identify a priced unfunded cohort."
+    }
+  ],
+  "reservations": [
+    "Most whole-organization health remains unquantified; retained cost is not evidence those services lack value.",
+    "Unique-person costs and recurrence/rescue hazards are unmeasured, replacing the old repeated-report shortcut with an explicit prior-based survival comparison.",
+    "PrEP morbidity utility is an assumption; no direct patient utility, secondary transmission or mortality advantage is credited.",
+    "Current spending authority, additional staff/medicine supply and final public cuts/restorations remain unverified.",
+    "Combine models only after person-level deduplication with HYA, GLIDE, HRTC, SFPHF, clinical partners and other funded providers."
+  ],
+  "excludedBenefits": [
+    "HCV cure and HIV linkage/retention benefits",
+    "MOUD, other behavioral health and drug-use morbidity",
+    "Housing, food, community support and trans/sexual health beyond PrEP",
+    "HIV mortality and secondary transmission prevention",
+    "Policy, statewide appropriations and broader welfare",
+    "Nonfatal overdose brain-injury prevention and health beyond finite horizons"
+  ],
+  "sources": [
+    {
+      "title": "San Francisco AIDS Foundation FY2025 audited financial statements",
+      "publisher": "SFAF; independent auditor",
+      "url": "https://res.cloudinary.com/dxca8bsxf/image/upload/v1764782541/San-Francisco-AIDS-Foundation-Jun25AR-Final_hi9fek.pdf",
+      "published": "November 21, 2025",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary full portfolio statement, in thousands; historical categories are not marginal allocation."
+    },
+    {
+      "title": "Health services",
+      "publisher": "San Francisco AIDS Foundation",
+      "url": "https://www.sfaf.org/health-services/",
+      "published": "Undated current page",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary service description; not measured incremental outcomes."
+    },
+    {
+      "title": "Overdose prevention and response",
+      "publisher": "San Francisco AIDS Foundation",
+      "url": "https://www.sfaf.org/health-services/overdose-prevention-response/",
+      "published": "Undated; 2025 outputs",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary reported doses/reversals; repeat reports do not establish unique lives saved."
+    },
+    {
+      "title": "Annual Report 2025",
+      "publisher": "San Francisco AIDS Foundation",
+      "url": "https://annualreport.sfaf.org/",
+      "published": "2025 reporting; undated page",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary portfolio and pharmacy/PrEP expansion; outputs and joint fundraiser totals are not causal outcomes or unrestricted receipts."
+    },
+    {
+      "title": "May2026 contract1000037481 request",
+      "publisher": "SF Health Commission",
+      "url": "https://media.api.sf.gov/documents/SFAF_-_1000037481_-_HC_Memo_May_2026.cleaned.pdf",
+      "published": "May 4, 2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary proposed public bundle; appropriations condition and unverified final execution retained."
+    },
+    {
+      "title": "Cuts to City-wide HIV Programs Partially Averted",
+      "publisher": "San Francisco AIDS Foundation",
+      "url": "https://www.sfaf.org/news/cuts-to-city-wide-hiv-programs-in-sf-city-budget-partially-averted-2/",
+      "published": "June 26, 2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary organization update; cannot infer remaining Pick Up Crew gap by subtracting unrelated restorations."
+    },
+    {
+      "title": "Risks of fatal opioid overdose during first year following nonfatal overdose",
+      "publisher": "Olfson et al.; Drug and Alcohol Dependence",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10398609/",
+      "published": "2018",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary Medicaid cohort; historical recurrent-event scale, not fentanyl-era SFAF probabilities."
+    },
+    {
+      "title": "Causes of Death After Nonfatal Opioid Overdose",
+      "publisher": "Olfson et al.; JAMA Psychiatry",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6143082/",
+      "published": "2018",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary historical all-cause mortality context. Additional non-overdose hazard is kept separate from modeled overdose mortality."
+    },
+    {
+      "title": "PROUD open-label randomized trial",
+      "publisher": "McCormack et al.; The Lancet",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0140673615000562",
+      "published": "2015 online; 2016 volume",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary indexed trial results;86% relative acquisition reduction is an efficacy context, not local incidence/access gain."
+    },
+    {
+      "title": "PrEP Assistance Program benefits",
+      "publisher": "California CDPH",
+      "url": "https://www.cdph.ca.gov/Programs/CID/DOA/Pages/OA_adap_benefits_prepAP.aspx",
+      "published": "Current page",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary existing payer/assistance coverage; coverage is not verified individual uptake."
+    },
+    {
+      "title": "SFAF official giving",
+      "publisher": "San Francisco AIDS Foundation",
+      "url": "https://donate.sfaf.org/campaign/773029/donate",
+      "published": "Current page",
+      "retrieved": "September 8, 2026",
+      "sourceType": "General organization giving; no program restriction or additional tranche established."
+    }
+  ]
+}

@@ -19,5 +19,5 @@ test('Remedy national report does not replace SF ranking or invent Bay share',as
  expect(api.evaluated[0].donorUsdPer10Qaly).toBeCloseTo(76164.1656,2);
  expect(api.evaluated[0].bayHealthShare).toBeNull();expect(api.evaluated[0].bayUsdPer10Qaly).toBeNull();
  await page.goto('/');
- expect(await page.locator('.sf-home-charity').evaluateAll(ns=>ns.map(n=>n.id))).toEqual(['san-francisco-aids-foundation','project-homeless-connect','glide','breathe-california']);
+ expect(await page.locator('.sf-home-charity').evaluateAll(ns=>ns.map(n=>n.id))).toEqual(['glide','breathe-california','operation-access','pacific-vision-foundation']);
 });

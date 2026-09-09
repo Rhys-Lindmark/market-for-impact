@@ -1,0 +1,49 @@
+# Project Homeless Connect: ordinary unrestricted-gift revision
+
+September 8, 2026. Revision of an existing organization, no new count. No Site/repository edits or outreach. Current model, calculator, report JSON, results and tests use prefix `/private/tmp/mfi-phc-portfolio-`.
+
+## Decision and scope correction
+
+Central **$798,863 donor / $1,118,409 gross resources per10SF QALYs**, with1.251779 SF,1.291308 Bay,1.317662 US QALYs per$100,000 gift. Nested health must never be summed. Joint favorable gross SF price is$80,303, not a confidence bound. The old$71,111 headline remains mathematically valid only for its hypothetical glasses-only donor budget. Its complete source JSON is preserved byte-for-byte in `historical-glasses.json`; no old health is added to this portfolio estimate.
+
+The requested recipient is PHC's whole fiscally sponsored project. [General giving](https://www.projecthomelessconnect.org/donate/) via Community Initiatives (EIN94-3255070) supports the project's programs; it is not sponsor-wide unrestricted giving or automatically a glasses restriction. Giving examples include glasses, dentures and drop-in work. They are fundraising equivalences, not costed current offers. The prior scope audit and funding-room memo were read first; their central objections remain valid.
+
+## Important outcomes and actual mechanisms
+
+[Core Senses](https://www.projecthomelessconnect.org/programs/coresenses/) currently describes annual prescription pairs, hearing-aid partner services and full dentures through a lottery, plus basic dental care through partners. Those three corrective-care pathways are quantitatively plausible. Other dental work, meals, IDs and drop-in/navigation retain full cash cost but no invented extra health credit. We do not infer mortality, housing or employment changes from service contacts.
+
+Glasses: the [Zambia primary study](https://researchonline.lshtm.ac.uk/1604317/1/1478-7547-12-6.pdf) reports EQ-5D .850→.925 among41 of113 spectacle recipients followed. It is uncontrolled and incomplete, not causal whole-cohort efficacy. Central .0375 utility is a subjective transfer prior, not an empirically identified half-effect. A sensitivity treats all missing follow-ups as no benefit then halves for confounding: .075×41/113×.5. No claim all missing outcomes actually failed. The legacy SF referral study's14/40 presentations is not multiplied again into completed-unit costs.
+
+Hearing: [Mulrow's randomized trial](https://pubmed.ncbi.nlm.nih.gov/2197909/) compared aids with a wait list in194 older veterans (188 completed), finding improvements in communication and selected social/emotional scores. This supports mechanism, not a .02 PHC utility effect. [Ye's randomized economic study](https://pubmed.ncbi.nlm.nih.gov/37306959/) reports .017 QALYs in an annual-cost/lifespan framework whose full time normalization was not reconciled here; we do not import it as a per-year rate. The current model uses an explicit .02 generic-utility prior and only one-year post-care-start bounded benefit, with zero and negative tests. No dementia, depression or communication score is separately converted and added.
+
+Dentures: [Pearson's randomized trial](https://www.nature.com/articles/bdj.2007.569) enrolled133 older housebound edentate adults, comparing immediate dentures with the usual waiting list plus visits. Oral daily-performance measures improved at three months. This supports better oral function, not a measured .03 preference-utility gain or a year-long PHC effect. The .03 utility/one-year bridge is a labeled prior. A [randomized denture-material economic study](https://pmc.ncbi.nlm.nih.gov/articles/PMC4119300/) found generic EQ-5D variation difficult to interpret despite oral measures, reinforcing a null bridge possibility. No implant superiority is credited to ordinary full dentures.
+
+## Allocation, costs and public baseline
+
+Allocation is an explicit best-estimate prior:20% glasses,10% hearing,15% dentures,55% other. It is not an observed expense share or an accepted earmark. These proportions reflect a broad social-service organization with multiple direct clinical partners. Current PHC project-level financials and sponsor fee are genuinely unavailable in the public material read; sponsor-wide accounts do not solve that gap.
+
+Per completed episode, cash priors are$150/$1,500/$1,500. They include PHC-paid devices/care, unsuccessful referrals, navigation, delivery/fitting/revisits and allocated sponsor/administration. No second completion multiplier or overhead factor is added. Current giving examples$50/pair and$1,000 dentures are incomplete-cost anchors, not invoices; hearing cash is entirely judgment. Ranges are explicit in model.basis.
+
+Additional outside resources are$100/$1,000/$1,000 per nominal episode: partner clinical input, insurance-paid care, donated professional time/materials and patient/caregiver time not already donor-paid. Another$10,000 covers outside support for other portfolio activities. Total associated resource envelope is$140,000. None of these priors measures net induced societal spending; no public savings are subtracted. The gross envelope deliberately retains associated resources even when financing replaces an existing payer. Zero external-cost diagnostic is not evidence care has no resource cost.
+
+The donor-pays-outside case moves the$100/$1,000/$1,000 into unit cash prices and reserves10% of the gift to pay the other external allowance. Consequently clinical allocation shares fall to18%/9%/13.5%; remaining59.5% includes$10k outside-other payment plus49.5% reduced other activity. It is a different scaled budget, not an assertion health is unchanged when cost shifts payer. All gift cash remains.
+
+[DHCS vision](https://www.dhcs.ca.gov/providers-partners/pharmacy-benefits-division-and-vision-care-program/medi-cal-vision-benefits/) and [hearing benefits](https://www.dhcs.ca.gov/services/hearing-aid-benefit-cap-benefits-frequently-asked-questions-for-members/) establish existing insured routes, including fitting/replacement conditions; coverage is not realized access. [Dental benefits](https://www.dhcs.ca.gov/services/medi-cal-resources/essential-health-benefits/) include dentures for eligible members. Official reform pages have inconsistent indexed eligibility-change dates; rather than pretending all PHC clients have or lack coverage, the model leaves actual eligibility/access mix unmeasured and explores alternative-access shares. PHC's privately funded description does not negate public benefits or partner resources.
+
+## Counterfactual, capacity, overlap and finite health
+
+Financial additionality .5 means half the budget-equivalent clinical activity adds completed episodes rather than replaces donors/PHC resources. Annual caps100 glasses,5 hearing,8 dentures bound additional output; these are operational priors, not observed queue counts. Actual verified funding room remains null. Caps zero/low are explicit scenarios; unspent/reserve cash is never removed from the gift numerator.
+
+Among financially additional episodes, no equivalent correction during the year is assumed for70%/70%/60%. Others get zero incremental utility. This patient alternative-access allowance is distinct from financial substitution; do not describe the same event in both. The one-year post-care-start hard horizon and useful-use fractions .75/.6/.7 address retention/fit/breakage. Delay .1/.25/.25 years precedes the benefit window; survival hazard .02 and3% annual discount are applied once. The one-year benefit window begins at care, ending at gift+1.1 years for glasses and gift+1.25 years for hearing/dentures; it is not truncated at gift+1 year. No lifetime or repeated annual-pair extrapolation.
+
+The health ledger prioritizes glasses, then hearing patients not already credited glasses, then dentures patients not credited either. Nonoverlap shares1/.8/.8 provisionally estimate that disjoint pool. They are not empirically verified identifiers or assurance that actual programs serve disjoint people. Costs and acute harms of excluded overlapping patients remain. Replacing these assumptions requires linked patient-year data; otherwise independent generic utility effects for the same person cannot be added.
+
+Episode harms .0002/.001/.002 QALY are gift-date PV priors on every additional completed episode, including repeated adjustments and overlapping/alternative-covered patients. They exclude worsening already inside signed durable utility. Full present harms are charged without subtracting alternative-treatment harms, conservatively. Independent harm1 QALY remains in the zero-activity diagnostic. No positive ratio is shown at zero/negative net health.
+
+## What changes the decision
+
+Central gross SF price is approximately11.18× the$100k threshold. The much stronger favorable bundle changes allocation, complete costs, utility, availability and capacity jointly; its$80,303 is genuine modeled upside, not central evidence. Only a current costed portfolio tranche plus disjoint clinical outcomes can establish that bundle. First ask for PHC project budget/fiscal fee, committed versus flexible funding, actual extra completed clinical capacity and partner insurance/in-kind crosswalk. Then collect presenting impairment, baseline alternatives and useful correction at3/6/12months. Without those, retain this as low-confidence comparative research—not the old organization-wide$71k claim and not proof PHC's unmeasured work has zero benefit.
+
+## Verification
+
+Node24 calculator produces15 cases. Tests verify saved/report/calculator parity, independent numerical integration, retained costs, allocation/capacity identities, nested geography, required inputs, signed harms and1,000 bounded random cases. Byte equality confirms the historical program JSON remains unchanged. Tests establish internal correctness, not causal validity; independent audit requested separately.

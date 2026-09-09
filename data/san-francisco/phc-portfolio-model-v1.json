@@ -1,0 +1,333 @@
+{
+  "model_id": "phc-whole-portfolio-finite-health-v1",
+  "organization": "Project Homeless Connect",
+  "as_of": "2026-09-08",
+  "scope": "Ordinary unrestricted gift to PHC fiscally sponsored project, not unrestricted Community Initiatives sponsor-wide giving",
+  "entity": {
+    "sponsor": "Community Initiatives",
+    "ein": "94-3255070"
+  },
+  "central_inputs": {
+    "gift_usd": 100000,
+    "discount_rate": 0.03,
+    "annual_mortality": 0.02,
+    "sf_share": 0.95,
+    "bay_share": 0.98,
+    "independent_harm_us_q": 0,
+    "pathways": [
+      {
+        "id": "glasses",
+        "allocation": 0.2,
+        "cash_per_completed": 150,
+        "external_per_nominal": 100,
+        "financial_additionality": 0.5,
+        "max_additional_completed": 100,
+        "nonoverlap_share": 1,
+        "utility": 0.0375,
+        "effective_use": 0.75,
+        "horizon": 1,
+        "delay": 0.1,
+        "alternative_free_share": 0.7,
+        "procedure_harm_q": 0.0002
+      },
+      {
+        "id": "hearing",
+        "allocation": 0.1,
+        "cash_per_completed": 1500,
+        "external_per_nominal": 1000,
+        "financial_additionality": 0.5,
+        "max_additional_completed": 5,
+        "nonoverlap_share": 0.8,
+        "utility": 0.02,
+        "effective_use": 0.6,
+        "horizon": 1,
+        "delay": 0.25,
+        "alternative_free_share": 0.7,
+        "procedure_harm_q": 0.001
+      },
+      {
+        "id": "dentures",
+        "allocation": 0.15,
+        "cash_per_completed": 1500,
+        "external_per_nominal": 1000,
+        "financial_additionality": 0.5,
+        "max_additional_completed": 8,
+        "nonoverlap_share": 0.8,
+        "utility": 0.03,
+        "effective_use": 0.7,
+        "horizon": 1,
+        "delay": 0.25,
+        "alternative_free_share": 0.6,
+        "procedure_harm_q": 0.002
+      }
+    ],
+    "external_other_usd": 10000
+  },
+  "verified_funding_room_usd": null,
+  "historical_comparison": {
+    "model": "sf-phc-glasses-cea-v1",
+    "scope": "Hypothetical glasses-only donor budget, not ordinary unrestricted gift",
+    "cost_per_completed_pair": 100,
+    "utility": 0.0375,
+    "effective_years": 0.75,
+    "joint_additionality": 0.5,
+    "donor_per_10q": 71111.11111111111,
+    "reference_file": "work/market-for-impact-felton/data/san-francisco/phc-glasses-cea-v1.json",
+    "not_added_to_current_q": true
+  },
+  "basis": [
+    [
+      "Allocation",
+      "20% glasses / 10% hearing / 15% dentures / 55% other",
+      "Analyst prior, not financial observation; ranges5–40%/0–20%/0–25% subject sum≤1. Current PHC project accounts unavailable. No general-gift restriction inferred."
+    ],
+    [
+      "Cash unit",
+      "$150 / $1,500 / $1,500",
+      "Completed appropriate dispense/fitting/denture episode; includes all recruitment failures, examinations funded by PHC, follow-up, navigation, allocated sponsor fee/admin. Glasses/denture fundraising examples $50/$1,000 are incomplete-cost fundraising anchors, not proven lower bounds, not invoices; hearing cost is prior. Ranges$75–300/$750–3000/$1000–3000."
+    ],
+    [
+      "Outside resources",
+      "$100 / $1,000 / $1,000 per nominal episode",
+      "Prior$0–300/$0–2000/$0–2000. Partner/insured clinical care, donated labor, devices and patient time not already donor-paid. Gross associated resource envelope, no public offsets."
+    ],
+    [
+      "Funding and capacity",
+      "50% funding additionality; caps100/5/8 additional completed episodes in one year",
+      "Priors. Financial replacement separate from patient alternatives. Caps plausible bounded absorption, not a quoted offer or current queue. Actual verified room null; cap0 diagnostic."
+    ],
+    [
+      "No overlapping people",
+      "Primary health ledger: glasses first, then hearing excluding glasses recipients, dentures excluding both",
+      "Shares1/.8/.8 are analyst fractions of completed episodes in disjoint patient-year cohorts. For discarded overlapping people, all costs and procedural harms remain; no second generic-utility credit. Actual identity linkage unavailable."
+    ],
+    [
+      "Utility",
+      "Glasses .0375; hearing .02; dentures .03",
+      "Signed preference-utility priors while effectively corrected. External glasses before/after .075 in41/113 follow-ups, not causal full-cohort effect. Hearing and denture randomized symptom/oral results are not directly QALYs. Ranges-.02–.075 /-.02–.05 /-.02–.08. No separate social/mental-health score credit."
+    ],
+    [
+      "Finite health",
+      "At most one benefit year after delayed care starts; effective use .75/.6/.7; delay .1/.25/.25 years",
+      "Priors for wear/fit/breakage within the year after care starts and delayed access, no multiyear extrapolation. Fraction without equivalent alternative correction during the year .7/.7/.6; remaining receive zero credit. Do not reapply referral-completion probability to completed-unit costs."
+    ],
+    [
+      "Public baseline",
+      "Medi-Cal optical, hearing and dental services plus public/charity partners continue",
+      "Coverage/eligibility vary; not all PHC participants have accessible care. Dental changes across official pages have inconsistent dates; no unsupported eligibility-specific treatment effect is inferred."
+    ],
+    [
+      "Harm",
+      "Per added completed episode .0002/.001/.002 QALY; independent0",
+      "Gift-date PV losses beyond signed durable utility. Charged on every additional completed episode before patient overlap/alternative filters; conservative since alternative-treatment harms not subtracted. Includes repeated fittings; no activity multiplier for independent harm."
+    ],
+    [
+      "Geography",
+      "95%SF /98%Bay /100%US",
+      "Nested recipient-health residence priors, not observed addresses. Same denominators; never sum nested QALYs."
+    ],
+    [
+      "Other portfolio outside resources",
+      "$10,000 per gift; range0–50,000",
+      "Explicit allowance for donated/partner inputs to otherwise unquantified activities, beyond donor-paid55% remainder. Not sponsor-wide accounts or a measured marginal external cost."
+    ]
+  ],
+  "scenarios": [
+    {
+      "id": "central",
+      "overrides": {}
+    },
+    {
+      "id": "favorable",
+      "overrides": {
+        "all": {
+          "financial_additionality": 0.8,
+          "alternative_free_share": 0.9,
+          "nonoverlap_share": 1,
+          "effective_use": 0.9
+        },
+        "pathways": {
+          "glasses": {
+            "allocation": 0.4,
+            "cash_per_completed": 75,
+            "max_additional_completed": 500,
+            "utility": 0.075
+          },
+          "hearing": {
+            "allocation": 0.15,
+            "cash_per_completed": 750,
+            "max_additional_completed": 30,
+            "utility": 0.05
+          },
+          "dentures": {
+            "allocation": 0.2,
+            "cash_per_completed": 1000,
+            "max_additional_completed": 25,
+            "utility": 0.08
+          }
+        }
+      }
+    },
+    {
+      "id": "cautious",
+      "overrides": {
+        "all": {
+          "financial_additionality": 0.2,
+          "alternative_free_share": 0.3,
+          "effective_use": 0.3,
+          "utility": 0.01
+        },
+        "pathways": {
+          "glasses": {
+            "allocation": 0.05,
+            "cash_per_completed": 300
+          },
+          "hearing": {
+            "allocation": 0.05,
+            "cash_per_completed": 3000
+          },
+          "dentures": {
+            "allocation": 0.05,
+            "cash_per_completed": 3000
+          }
+        }
+      }
+    },
+    {
+      "id": "low_allocation",
+      "overrides": {
+        "pathways": {
+          "glasses": {
+            "allocation": 0.05
+          },
+          "hearing": {
+            "allocation": 0.025
+          },
+          "dentures": {
+            "allocation": 0.0375
+          }
+        }
+      }
+    },
+    {
+      "id": "low_additionality",
+      "overrides": {
+        "all": {
+          "financial_additionality": 0.1
+        }
+      }
+    },
+    {
+      "id": "rapid_alternative_access",
+      "overrides": {
+        "all": {
+          "alternative_free_share": 0.1
+        }
+      }
+    },
+    {
+      "id": "source_attrition_glasses",
+      "overrides": {
+        "pathways": {
+          "glasses": {
+            "utility": 0.013606194690265486
+          }
+        }
+      }
+    },
+    {
+      "id": "glasses_only_health",
+      "overrides": {
+        "pathways": {
+          "hearing": {
+            "utility": 0
+          },
+          "dentures": {
+            "utility": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "no_funding_additionality",
+      "overrides": {
+        "all": {
+          "financial_additionality": 0
+        }
+      }
+    },
+    {
+      "id": "no_capacity",
+      "overrides": {
+        "all": {
+          "max_additional_completed": 0
+        }
+      }
+    },
+    {
+      "id": "null_health",
+      "overrides": {
+        "all": {
+          "utility": 0,
+          "procedure_harm_q": 0
+        }
+      }
+    },
+    {
+      "id": "signed_harm",
+      "overrides": {
+        "all": {
+          "utility": -0.02
+        }
+      }
+    },
+    {
+      "id": "independent_harm_zero_activity",
+      "overrides": {
+        "all": {
+          "financial_additionality": 0
+        },
+        "independent_harm_us_q": 1
+      }
+    },
+    {
+      "id": "limited_capacity",
+      "overrides": {
+        "pathways": {
+          "glasses": {
+            "max_additional_completed": 10
+          },
+          "hearing": {
+            "max_additional_completed": 1
+          },
+          "dentures": {
+            "max_additional_completed": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "outside_resources_donor_paid",
+      "overrides": {
+        "pathways": {
+          "glasses": {
+            "cash_per_completed": 250,
+            "external_per_nominal": 0,
+            "allocation": 0.18
+          },
+          "hearing": {
+            "cash_per_completed": 2500,
+            "external_per_nominal": 0,
+            "allocation": 0.09
+          },
+          "dentures": {
+            "cash_per_completed": 2500,
+            "external_per_nominal": 0,
+            "allocation": 0.135
+          }
+        },
+        "external_other_usd": 0
+      }
+    }
+  ]
+}

@@ -23,7 +23,7 @@ for (const width of [390, 768, 1280]) {
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     await page.screenshot({path:testInfo.outputPath(`givebetter-research-${width}.png`),fullPage:true});
     await row.locator('a').first().click();
-    await expect(page).toHaveURL(/charities\/san-francisco-aids-foundation$/);
+    await expect(page).toHaveURL(/charities\/glide$/);
     await expect(page.getByRole('heading',{level:1})).toBeVisible();
   });
 }

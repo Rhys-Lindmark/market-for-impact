@@ -1,5 +1,11 @@
 # Market for Impact backlog
 
+## SIRUM — accepted; release verification pending
+
+Report67 after canonical verification. Whole ordinary gift, finite medication courses, disjoint BP/statin/residual health, full regional cost numerator. Central donor $131K/10 US QALYs and $4.4M Bay; SF effect unpriced, not a national price substituted into the local table. Named residual-class priors dominate; favorable joint case is not a recommendation. 21 scenarios, 1461 independent checks; repository tests, lint/build and 12 phone/tablet report/API/index checks pass. No current marginal offer.
+
+Verified live checkpoint is66/115: Via Heart PR248, exact2629073bd1223c1a6a1c75ea472b489e06a2a02d, v168, canonical phone/tablet verified. PR249 preserves four portfolio diagnostics but is DRAFT: partial-benefit denominators must not be mislabeled whole-organization expected returns. Clinic's expanded named-pathway v2 is independently accepted for count-neutral integration; OA/GLIDE omitted-benefit corrections continue. Homepage recipient/overlap decision remains separate. Earlier pending headings below are historical.
+
 ## Via Heart Project — accepted, publication pending
 
 20-scenario whole-gift AED placement/maintenance model. Central donor $11.08M total/$15.83M Bay/$73.86M SF per10Q. Placement and maintenance causal increments separate; $350 annual maintenance cannot buy more than one year of protection. New package capped five years and includes renewals. Primary fees/public PHCD baseline retained; no current marginal tranche. Author869 and independent4179 assertions pass. No threshold fitting. Count66 only after canonical verification.

@@ -1,0 +1,523 @@
+{
+  "organization": "Healthier Kids Foundation",
+  "slug": "healthier-kids-foundation",
+  "model_version": "hkf-whole-portfolio-finite-earlier-care-v1",
+  "date": "2026-09-08",
+  "recipient": {
+    "legal_name": "Healthier Kids Foundation Inc",
+    "ein": "77-0545774",
+    "giving_url": "https://hkidsf.org/donate/",
+    "boundary": "Ordinary unrestricted HKF giving including expanded current portfolio; not a vision-only fund, individual program restriction, or former fiscal sponsor."
+  },
+  "finance": {
+    "fiscal_year_end": "2025-06-30",
+    "source": "finance",
+    "total_revenue": 3778505,
+    "total_expenses": 5091250,
+    "program_expenses": 3936132,
+    "management_general": 782761,
+    "fundraising": 372357,
+    "vision": 777628,
+    "dental": 993540,
+    "hearing": 802899,
+    "other_programs": 1362065,
+    "government_contributions": 289473,
+    "program_service_revenue": 218705,
+    "net_assets": 4297786,
+    "unrestricted_net_assets": 3619661,
+    "cash_noninterest": 474786,
+    "savings_temporary_investments": 470773,
+    "interpretation": "Primary filed Form 990, not independently audited statements. Historical deficit and balances neither prove no funding room nor constitute a current costed marginal tranche; no assumption expanded 2026 portfolio fully included."
+  },
+  "central_inputs": {
+    "gift_usd": 100000,
+    "discount_rate": 0.03,
+    "annual_mortality": 0.0002,
+    "bay_share": 0.99,
+    "sf_share": 0,
+    "independent_harm_q": 0,
+    "external_other_usd": 10000,
+    "portfolio": {
+      "vision": 0.15,
+      "dental": 0.18,
+      "hearing": 0.14,
+      "wellness": 0.08,
+      "education": 0.05,
+      "coverage_appointments": 0.07,
+      "baby_gateway": 0.03,
+      "kids_in_common": 0.04,
+      "turning_wheels": 0.03,
+      "general_operations_fundraising": 0.23
+    },
+    "pathways": [
+      {
+        "id": "vision",
+        "screen_cost": 30,
+        "navigation_per_referral": 50,
+        "referral_yield": 0.14,
+        "financial_additionality": 0.5,
+        "max_additional_screens": 1000,
+        "completion": 0.7,
+        "treatable_share": 0.8,
+        "nonoverlap": 1,
+        "utility": 0.025,
+        "effective_use": 0.7,
+        "horizon": 2,
+        "delay": 0.15,
+        "no_equivalent_at_start": 0.6,
+        "alternative_catchup_rate": 0.7,
+        "benefit_loss_rate": 0.15,
+        "episode_harm_q": 0.0001,
+        "external_per_screen": 2,
+        "external_per_completed": 300
+      },
+      {
+        "id": "dental",
+        "screen_cost": 30,
+        "navigation_per_referral": 50,
+        "referral_yield": 0.29,
+        "financial_additionality": 0.5,
+        "max_additional_screens": 1000,
+        "completion": 0.65,
+        "treatable_share": 0.35,
+        "nonoverlap": 0.9,
+        "utility": 0.08,
+        "effective_use": 0.9,
+        "horizon": 0.5,
+        "delay": 0.15,
+        "no_equivalent_at_start": 0.6,
+        "alternative_catchup_rate": 2,
+        "benefit_loss_rate": 1,
+        "episode_harm_q": 0.0005,
+        "external_per_screen": 2,
+        "external_per_completed": 500
+      },
+      {
+        "id": "hearing",
+        "screen_cost": 30,
+        "navigation_per_referral": 75,
+        "referral_yield": 0.04,
+        "financial_additionality": 0.5,
+        "max_additional_screens": 1000,
+        "completion": 0.6,
+        "treatable_share": 0.25,
+        "nonoverlap": 0.85,
+        "utility": 0.01,
+        "effective_use": 0.8,
+        "horizon": 0.5,
+        "delay": 0.2,
+        "no_equivalent_at_start": 0.5,
+        "alternative_catchup_rate": 2,
+        "benefit_loss_rate": 1,
+        "episode_harm_q": 0.0002,
+        "external_per_screen": 2,
+        "external_per_completed": 500
+      }
+    ]
+  },
+  "scenarios": [
+    {
+      "id": "central",
+      "overrides": {}
+    },
+    {
+      "id": "favorable",
+      "overrides": {
+        "portfolio": {
+          "vision": 0.3,
+          "dental": 0.25,
+          "hearing": 0.12,
+          "wellness": 0.04,
+          "education": 0.03,
+          "coverage_appointments": 0.04,
+          "baby_gateway": 0.02,
+          "kids_in_common": 0.02,
+          "turning_wheels": 0.02,
+          "general_operations_fundraising": 0.16
+        },
+        "all": {
+          "screen_cost": 15,
+          "navigation_per_referral": 25,
+          "financial_additionality": 0.8,
+          "completion": 0.85,
+          "max_additional_screens": 5000,
+          "no_equivalent_at_start": 0.8,
+          "alternative_catchup_rate": 0.15,
+          "benefit_loss_rate": 0.05
+        },
+        "pathways": {
+          "vision": {
+            "utility": 0.05,
+            "horizon": 3,
+            "effective_use": 0.85,
+            "treatable_share": 0.9
+          },
+          "dental": {
+            "utility": 0.15,
+            "horizon": 1,
+            "treatable_share": 0.6,
+            "effective_use": 0.95
+          },
+          "hearing": {
+            "utility": 0.025,
+            "horizon": 1,
+            "treatable_share": 0.4
+          }
+        }
+      }
+    },
+    {
+      "id": "cautious",
+      "overrides": {
+        "all": {
+          "screen_cost": 50,
+          "navigation_per_referral": 100,
+          "financial_additionality": 0.2,
+          "completion": 0.4,
+          "no_equivalent_at_start": 0.3,
+          "alternative_catchup_rate": 4,
+          "benefit_loss_rate": 2
+        },
+        "pathways": {
+          "vision": {
+            "utility": 0.01,
+            "horizon": 0.5
+          },
+          "dental": {
+            "utility": 0.03,
+            "horizon": 0.25
+          },
+          "hearing": {
+            "utility": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "historical_allocation",
+      "overrides": {
+        "portfolio": {
+          "vision": 0.15273812914313772,
+          "dental": 0.195146575006138,
+          "hearing": 0.15770174318684016,
+          "wellness": 0.2675305671495212,
+          "education": 0,
+          "coverage_appointments": 0,
+          "baby_gateway": 0,
+          "kids_in_common": 0,
+          "turning_wheels": 0,
+          "general_operations_fundraising": 0.22688298551436287
+        }
+      }
+    },
+    {
+      "id": "low_funding_additionality",
+      "overrides": {
+        "all": {
+          "financial_additionality": 0.1
+        }
+      }
+    },
+    {
+      "id": "low_completion",
+      "overrides": {
+        "all": {
+          "completion": 0.2
+        }
+      }
+    },
+    {
+      "id": "rapid_alternative_care",
+      "overrides": {
+        "all": {
+          "no_equivalent_at_start": 0.2,
+          "alternative_catchup_rate": 8
+        }
+      }
+    },
+    {
+      "id": "one_year_vision",
+      "overrides": {
+        "pathways": {
+          "vision": {
+            "horizon": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "weak_vision_utility",
+      "overrides": {
+        "pathways": {
+          "vision": {
+            "utility": 0.006803097345132743
+          }
+        }
+      }
+    },
+    {
+      "id": "no_hearing_health",
+      "overrides": {
+        "pathways": {
+          "hearing": {
+            "utility": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "vision_only_positive_health",
+      "overrides": {
+        "pathways": {
+          "dental": {
+            "utility": 0
+          },
+          "hearing": {
+            "utility": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "no_additional_capacity",
+      "overrides": {
+        "all": {
+          "max_additional_screens": 0
+        }
+      }
+    },
+    {
+      "id": "no_funding_additionality",
+      "overrides": {
+        "all": {
+          "financial_additionality": 0
+        }
+      }
+    },
+    {
+      "id": "null_utility_retains_harms",
+      "overrides": {
+        "all": {
+          "utility": 0
+        }
+      }
+    },
+    {
+      "id": "zero_all_health",
+      "overrides": {
+        "all": {
+          "utility": 0,
+          "episode_harm_q": 0
+        }
+      }
+    },
+    {
+      "id": "signed_health_harm",
+      "overrides": {
+        "all": {
+          "utility": -0.01
+        },
+        "independent_harm_q": 0.1
+      }
+    },
+    {
+      "id": "independent_harm_zero_activity",
+      "overrides": {
+        "all": {
+          "financial_additionality": 0
+        },
+        "independent_harm_q": 1
+      }
+    },
+    {
+      "id": "external_resource_double",
+      "overrides": {
+        "external_other_usd": 20000,
+        "all": {
+          "external_per_screen": 4
+        },
+        "pathways": {
+          "vision": {
+            "external_per_completed": 600
+          },
+          "dental": {
+            "external_per_completed": 1000
+          },
+          "hearing": {
+            "external_per_completed": 1000
+          }
+        }
+      }
+    },
+    {
+      "id": "limited_absorption",
+      "overrides": {
+        "all": {
+          "max_additional_screens": 25
+        }
+      }
+    },
+    {
+      "id": "regional_sensitivity",
+      "overrides": {
+        "bay_share": 0.9,
+        "sf_share": 0.01
+      }
+    }
+  ],
+  "sources": [
+    {
+      "key": "recipient",
+      "publisher": "Healthier Kids Foundation",
+      "title": "Ways to Give",
+      "url": "https://hkidsf.org/ways-to-give/",
+      "published": "Current undated",
+      "sourceType": "Official general giving and EIN 77-0545774. Page retains an older postal address alongside current contact block; no address used as model input.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "key": "portfolio",
+      "publisher": "Healthier Kids Foundation",
+      "title": "Current programs and leadership",
+      "url": "https://hkidsf.org/our-programs/",
+      "published": "Current undated",
+      "sourceType": "Official screening, education, coverage, foster appointment and newborn support; not allocation or causal health evidence.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "key": "kic",
+      "publisher": "Kids in Common",
+      "title": "Joining Healthier Kids Foundation",
+      "url": "https://www.kidsincommon.org/joining-healthier-kids",
+      "published": "Current undated",
+      "sourceType": "Official continuation of policy, data, partnerships and summit work under HKF; current homepage/team corroborate integration.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "key": "wheels",
+      "publisher": "Healthier Kids Foundation",
+      "title": "Turning Wheels for Kids",
+      "url": "https://hkidsf.org/our-programs/turning-wheels-for-kids/",
+      "published": "Current 2026 portfolio",
+      "sourceType": "Current homepage linked program; cycling benefits not converted to QALYs.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "key": "finance",
+      "publisher": "Healthier Kids Foundation / IRS, rendered by ProPublica",
+      "title": "FY ending June 2025 Form 990",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202533399349300228/IRS990",
+      "published": "Filed December 5, 2025",
+      "sourceType": "Primary filed return, tax-year 2024 form for FY2025. Public rendered iframe read via Node after browser/XML access limitations. Filing is not itself an independent audit; current expansion not presumed inside historical totals.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "key": "vision",
+      "publisher": "Healthier Kids Foundation",
+      "title": "VisionFirst",
+      "url": "https://hkidsf.org/our-programs/visionfirst/",
+      "published": "Current undated statistics",
+      "sourceType": "About 20,000 screens/year, 14% need vision care, over 8,200 glasses using insurance cumulatively; not contemporaneous causal completion rate.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "key": "dental",
+      "publisher": "Healthier Kids Foundation",
+      "title": "DentalFirst",
+      "url": "https://hkidsf.org/our-programs/dentalfirst/",
+      "published": "Current undated statistics",
+      "sourceType": "29% need follow-up contact. Testimonial closes screening paperwork before remaining fillings: a closed referral is not proof of completed treatment.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "key": "hearing",
+      "publisher": "Healthier Kids Foundation",
+      "title": "HearingFirst",
+      "url": "https://hkidsf.org/our-programs/hearingfirst/",
+      "published": "Current undated statistics",
+      "sourceType": "4% need follow-up, CCS navigation. Example includes ear cleaning, not permanent deafness; severity mix unknown.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "key": "baseline",
+      "publisher": "California DHCS",
+      "title": "Medi-Cal for Kids & Teens member information",
+      "url": "https://www.dhcs.ca.gov/services/medi-cal-resources/medi-cal-for-kids-teens/member-information/",
+      "published": "Current",
+      "sourceType": "Official covered diagnosis/treatment, vision/hearing/dental care, transport, appointment and language assistance; coverage is not guaranteed uptake.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "key": "county",
+      "publisher": "Santa Clara County",
+      "title": "FY2025–26 Board budget proposal inventory",
+      "url": "https://files.santaclaracounty.gov/exjcpb1666/2026-04/fy-25-26-inventory-of-board-of-supervisors-budget-proposals.pdf?VersionId=E8IFvttpxEDpbRzbS3R99lmeeoG02Hew",
+      "published": "April 2026",
+      "sourceType": "Official inventory lists $15,000 one-time My HealthFirst expansion allocation. Existing public support, not donor-created leverage or verified renewal.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "key": "wear",
+      "publisher": "Sabharwal et al.",
+      "title": "Eyeglass wear among low-income San Francisco preschoolers",
+      "url": "https://jamanetwork.com/journals/jamaophthalmology/fullarticle/2776359",
+      "published": "February 18, 2021",
+      "sourceType": "Primary observational school-year cohort: 133/188 consistently wore glasses over half the school day. Not 71% of all waking hours, HKF treatment completion, or measured utility.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "key": "utility",
+      "publisher": "Griffiths et al.",
+      "title": "Cost-effectiveness of eye care services in Zambia",
+      "url": "https://researchonline.lshtm.ac.uk/1604317/1/1478-7547-12-6.pdf",
+      "published": "2014",
+      "sourceType": "Primary uncontrolled refraction/presbyopia cohort; .850 to .925 EQ-5D among 41/113 follow-ups. Not child-specific causal utility; used only as weak scale context.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "key": "dental_utility",
+      "publisher": "Knapp et al.",
+      "title": "Dental caries treatment and children/families",
+      "url": "https://eprints.whiterose.ac.uk/169642/1/The%20impact%20of%20dental%20caries%20and%20its%20treatment%20under%20general%20anaesthetic%20on%20children%20and%20their%20families.pdf",
+      "published": "2020 online; 2021 issue",
+      "sourceType": "Primary uncontrolled pre/post GA cohort: 85/167 followed at 3 months; CHU9D displayed as summed 13.58 to 11.09, not preference weights. No score-to-QALY conversion.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "key": "hearing_null",
+      "publisher": "Rovers et al.",
+      "title": "Ventilation tubes versus watchful waiting: quality of life",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11124783/",
+      "published": "2001",
+      "sourceType": "Primary randomized pediatric OME study; indexed abstract reports no significant between-group QoL improvement. Full page challenged; not treated as full-text verification. Challenges broad hearing utility transfer.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "key": "amblyopia",
+      "publisher": "Cotter / PEDIG",
+      "title": "Refractive correction for anisometropic amblyopia",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16751032/",
+      "published": "2006",
+      "sourceType": "Primary prospective noncomparative initial intervention in 84 children aged 3–<7; acuity outcomes, not lifetime utility or timing counterfactual. No extra amblyopia stream credited.",
+      "retrieved": "September 8, 2026"
+    }
+  ],
+  "funding_room": {
+    "verified_incremental_offer_usd": null,
+    "current_queue": null,
+    "capacity_status": "Scenario assumptions only; no actual available slots verified."
+  },
+  "boundaries": [
+    "Entire gift allocated exactly once. Screening/nav unit cash includes direct pathway delivery and pathway administration; separate general-operations/fundraising share stays in numerator, not charged again.",
+    "Three clinical pathways use screen->referral->completed diagnostic/treatment episode->treatable subset; no direct screen-to-QALY mapping. Referral rates are reported historical/undated activity yields, not treatment efficacy.",
+    "Financial additionality reduces newly financed screening capacity, separate from clinical completion and patient alternative care.",
+    "Completed clinical episode includes diagnostic false positives/no appropriate treatment: treatable_share filters these before utility, not before costs and episodic harms.",
+    "No equivalent at intervention start times exp(-alternative catchup*t) models earlier-care health; alternative care thereafter erases gain. Benefit loss/recurrence independently erases gain even without alternative care. Both have explicit priors, not observed HKF survival data.",
+    "Cohorts are expected alive at treatment start. Delay discounts to gift date only; no additional pre-start mortality filter. Mortality acts during finite post-start health. Horizon max 5 years; central 2/.5/.5. No mortality prevention, school score, caregiver utility, lifetime amblyopia or developmental effect credited.",
+    "Primary-person health ledger orders vision,dental,hearing; nonoverlap excludes possible shared generic utility. All pathway costs and harms remain for excluded cases.",
+    "Signed utility is permitted. Episode and independent harms are gift-date PV QALY losses, separate from deterioration already included in utility. Nonpositive health yields null positive cost-effectiveness ratios.",
+    "Gross associated-resource envelope includes full gift, partner/insurance/donated screening and clinical inputs for nominal pathway activity, and other-portfolio allowance. Not net incremental societal spending; funding replacement does not erase gross envelope. No full-resource completeness asserted.",
+    "Overall/US=all modeled recipients; Bay/SF are nested residence priors. SF central0, Bay.99, not headquarters credit. Regional sensitivity .01SF is a hypothetical mix, not observed activity.",
+    "Unquantified portfolio cost stays; zero modeled contribution is not evidence its true effect is zero."
+  ]
+}

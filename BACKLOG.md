@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Healthier Kids Foundation — accepted, publication pending
+
+Whole expanded portfolio, not vision-only. Central Bay donor$3.764M and gross associated resources$6.308M per10Q; SF-city central health0, ratio null. Fifteenpercent vision allocation reflects a new marginal judgment anchored against FY2025 functional scope; screening/referral counts are not clinical outcomes. Finite earlier-care advantage, public replacement, disjoint utility, full gift and signed cases retained.20scenarios;13038author plus663independent assertions accepted. Count63 only after canonical verification. California YIMBY numerical advocacy model was blocked by automated review and remains unpublished; no workaround or count increment. Next nonpolitical HRT/NEXT drafts; GLIDE/Breathe accepted whole-gift revisions remain queued.
+
 ## Fistula Foundation — accepted, publication pending
 
 Whole-gift finite childbirth-injury repair health model: central donor$76,286 and gross associated resources$101,944 per10 overseas QALYs. Corrected full observed clinical cohort denominator; missing outcomes get no benefit, later alternative surgery limits benefit, no lifelong recovery assumption. SF/Bay direct benefit zero centrally; indirect unknown, never substitute global price in SF table.15 signed scenarios independently accepted,3276 author and358 independent checks plus finite-horizon/calibration release audit. Count62 and international cohort5 after canonical verification. Next accepted California YIMBY and Healthier Kids Foundation.

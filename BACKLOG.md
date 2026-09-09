@@ -1,5 +1,11 @@
 # Market for Impact backlog
 
+## NEXT Distro — accepted, publication pending
+
+Whole-gift model: central $172,973 per10 US QALYs; Bay $8.649M under an explicit2% prior. SF direct mail excluded by official California eligibility; SF QALYs zero and ratios null in all18 scenarios. No invented local spillover. Full donation numerator, finite unique-person survival and public/upstream naloxone overlap retained. Author and independent audits pass; count65 only after canonical verification.
+
+HRT report64 published and verified on the canonical route after PR245. California Walks cross-runtime API comparison corrected in PR244; production estimates unchanged.
+
 ## Harm Reduction Therapeutics — accepted, publication pending
 
 Whole gift RiVive manufacturing/free-access model, not packs supplied counted as saved lives. Central USdonor$255,604/grossresources$357,846 per10Q; local1%Bay/.2%SF shares explicitly weak priors, not delivery findings.24signed scenarios and finite unique-person survival; all gift cash retained, manufacture/Remedy chain health and costs not additive.4307author plus3925independent assertions accepted. No current quote or verified marginal tranche. Count64 after canonical verification. NEXT Distro independently accepted next; no numerical political-model workaround.

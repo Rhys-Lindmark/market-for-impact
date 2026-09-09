@@ -1,0 +1,1207 @@
+{
+  "organization": "Clinic by the Bay",
+  "slug": "clinic-by-the-bay",
+  "model_version": "clinic-whole-gift-expected-portfolio-v2",
+  "recipient": {
+    "legal_name": "Volunteers in Medicine - San Francisco dba Clinic by the Bay",
+    "ein": "26-2593712",
+    "giving_url": "https://www.clinicbythebay.org/donate"
+  },
+  "finance": {
+    "year_end": "2025-06-30",
+    "source": "https://projects.propublica.org/nonprofits/full_text/202611359349315736/IRS990",
+    "audited": false,
+    "revenue_net_events": 952542,
+    "expense_part_ix": 1183897,
+    "event_direct_expenses_outside_part_ix": 38265,
+    "gross_reported_cost": 1222162,
+    "depreciation_in_part_ix": 291013,
+    "noncash_contributions": 35684,
+    "noncash_lab_services": 22517,
+    "noncash_gala": 13167,
+    "program_expense": 872675,
+    "management_expense": 173535,
+    "fundraising_expense_part_ix": 137687,
+    "cash_and_savings": 339977,
+    "net_assets": 5190330,
+    "net_property": 4859981,
+    "note": "Primary unaudited IRS filing, not an audited portfolio allocation or current marginal cash budget. Do not subtract all noncash contributions from expenses as if automatically matched, or infer cash flow from accrual figures. Gross cost includes event expense netted from revenue. Depreciation is a resource-use allowance, not a cash outflow."
+  },
+  "central_inputs": {
+    "gift_usd": 100000,
+    "funding_additionality": 0.5,
+    "dental_allocation": 0.2,
+    "mental_allocation": 0.15,
+    "medical_allocation": 0.55,
+    "food_other_allocation": 0.1,
+    "dental_episode_cost": 600,
+    "mental_course_cost": 1200,
+    "dental_target": 0.4,
+    "mental_target": 0.6,
+    "dental_completion": 0.8,
+    "mental_completion": 0.7,
+    "dental_unique": 0.9,
+    "mental_disjoint": 0.8,
+    "dental_capacity": 30,
+    "mental_capacity": 20,
+    "dental_utility": 0.04,
+    "dental_resolution": 0.8,
+    "dental_catchup": 4,
+    "dental_horizon": 1,
+    "dental_delay": 0.15,
+    "dental_harm": 0.0005,
+    "mental_utility": 0.03,
+    "mental_fidelity": 0.6,
+    "mental_catchup": 1.5,
+    "mental_horizon": 1,
+    "mental_delay": 0.15,
+    "mental_harm": 0.001,
+    "mortality": 0.01,
+    "discount": 0.03,
+    "bay_share": 1,
+    "sf_share": 0.7,
+    "volunteer_resource_per_donor": 0.6,
+    "external_resource_per_donor": 0.15,
+    "independent_harm_q": 0,
+    "bp_medical_fraction": 0.3,
+    "bp_course_cost": 1500,
+    "bp_unique": 0.8,
+    "bp_capacity": 30,
+    "bp_baseline_hazard": 0.016,
+    "bp_relative_hazard": 0.8254469933511347,
+    "bp_modern_gap": 0.5,
+    "bp_delivery_transfer": 0.75,
+    "bp_active_years": 1,
+    "bp_latency": 0.25,
+    "bp_horizon": 10,
+    "bp_delay": 0.15,
+    "bp_utility": 0.75,
+    "bp_harm": 0.0005,
+    "bp_external_per_course": 300,
+    "residual_unique": 0.65,
+    "residual_capacity": 100,
+    "residual_delay": 0.15,
+    "residual_harm": 0.0005,
+    "acute_cost": 1000,
+    "acute_target": 0.5,
+    "acute_utility": 0.06,
+    "acute_response": 0.7,
+    "acute_catchup": 4,
+    "acute_horizon": 0.5,
+    "acute_external": 100,
+    "chronic_cost": 1500,
+    "chronic_target": 0.4,
+    "chronic_utility": 0.03,
+    "chronic_response": 0.65,
+    "chronic_catchup": 1.5,
+    "chronic_horizon": 1,
+    "chronic_external": 300,
+    "referral_cost": 3000,
+    "referral_target": 0.3,
+    "referral_utility": 0.1,
+    "referral_response": 0.7,
+    "referral_catchup": 1,
+    "referral_horizon": 2,
+    "referral_external": 3000,
+    "dental_other_cost": 600,
+    "dental_other_target": 0.25,
+    "dental_other_utility": 0.04,
+    "dental_other_response": 0.8,
+    "dental_other_catchup": 4,
+    "dental_other_horizon": 1,
+    "dental_other_external": 150,
+    "mental_other_cost": 1000,
+    "mental_other_target": 0.5,
+    "mental_other_utility": 0.04,
+    "mental_other_response": 0.6,
+    "mental_other_catchup": 2,
+    "mental_other_horizon": 0.75,
+    "mental_other_external": 200,
+    "food_cost": 800,
+    "food_target": 0.4,
+    "food_utility": 0.01,
+    "food_response": 0.4,
+    "food_catchup": 2,
+    "food_horizon": 1,
+    "food_external": 250,
+    "acute_medical_share": 0.4,
+    "chronic_medical_share": 0.4,
+    "referral_medical_share": 0.2
+  },
+  "input_meta": {
+    "gift_usd": {
+      "min": 1,
+      "max": 1000000,
+      "status": "Analyst prior unless stated otherwise",
+      "basis": "Hypothetical ordinary unrestricted gift; not a quoted tranche."
+    },
+    "funding_additionality": {
+      "min": 0,
+      "max": 1,
+      "status": "Analyst prior unless stated otherwise",
+      "basis": "Fraction expanding or preserving otherwise-lost care after replacement of existing donors; distinct from alternative care after treatment starts."
+    },
+    "dental_allocation": {
+      "min": 0,
+      "max": 1,
+      "status": "Analyst prior unless stated otherwise",
+      "basis": "Fully loaded ordinary-gift share for all dental work, not just painful teeth; judgment from new two-day dental service within broader medical clinic."
+    },
+    "mental_allocation": {
+      "min": 0,
+      "max": 1,
+      "status": "Analyst prior unless stated otherwise",
+      "basis": "Fully loaded ordinary-gift share for counseling and psychiatry; specialty spending not disclosed."
+    },
+    "medical_allocation": {
+      "min": 0,
+      "max": 1,
+      "status": "Analyst prior unless stated otherwise",
+      "basis": "General medical, chronic care, prescriptions and referral support; health left unquantified."
+    },
+    "food_other_allocation": {
+      "min": 0,
+      "max": 1,
+      "status": "Analyst prior unless stated otherwise",
+      "basis": "Food pharmacy and remaining services; health left unquantified. All four shares sum to one."
+    },
+    "dental_episode_cost": {
+      "min": 50,
+      "max": 10000,
+      "status": "Analyst prior unless stated otherwise",
+      "basis": "Average fully loaded cost per nominal all-dental course, not only selected extraction. Target and non-target shares partition that activity; non-target budget feeds residual model without adding donor cost. Salary-oriented prior, not measured throughput."
+    },
+    "mental_course_cost": {
+      "min": 100,
+      "max": 20000,
+      "status": "Analyst prior unless stated otherwise",
+      "basis": "All-in mental-health course budget, independent prior: roughly eight funded/coordinated contacts at $150, including overhead and unsuccessful attempts; not clinic quote."
+    },
+    "dental_target": {
+      "min": 0,
+      "max": 1,
+      "status": "Analyst prior unless stated otherwise",
+      "basis": "Share of dental courses with severe pain and clinically indicated simple extraction; no credit to cleanings/exams/fillings here."
+    },
+    "mental_target": {
+      "min": 0,
+      "max": 1,
+      "status": "Analyst prior unless stated otherwise",
+      "basis": "Share of mental-health courses suitable for short-term counseling of depressive symptoms; exclude psychiatry-only and unsupported diagnoses."
+    },
+    "dental_completion": {
+      "min": 0,
+      "max": 1,
+      "status": "Analyst prior unless stated otherwise",
+      "basis": "Completed definitive care conditional on initiated target course; no credit to emergency exam alone."
+    },
+    "mental_completion": {
+      "min": 0,
+      "max": 1,
+      "status": "Analyst prior unless stated otherwise",
+      "basis": "Fraction reaching an adequate local counseling dose; full attempt costs retained."
+    },
+    "dental_unique": {
+      "min": 0,
+      "max": 1,
+      "status": "Analyst prior unless stated otherwise",
+      "basis": "Unique patient-period fraction; repeat teeth and repeat episodes excluded from additional utility summation."
+    },
+    "mental_disjoint": {
+      "min": 0,
+      "max": 1,
+      "status": "Analyst prior unless stated otherwise",
+      "basis": "Unique counseling patient-period fraction after excluding every dental-credited person and repeat courses; unknown linked-data prior."
+    },
+    "dental_capacity": {
+      "min": 0,
+      "max": 10000,
+      "status": "Analyst prior unless stated otherwise",
+      "basis": "Maximum additional completed unique target patients in gift cohort; unverified capacity prior."
+    },
+    "mental_capacity": {
+      "min": 0,
+      "max": 10000,
+      "status": "Analyst prior unless stated otherwise",
+      "basis": "Maximum additional completed disjoint counseling patients; unverified capacity prior."
+    },
+    "dental_utility": {
+      "min": -0.3,
+      "max": 0.3,
+      "status": "Analyst prior unless stated otherwise",
+      "basis": "Signed relief utility prior, loosely oriented by nonsignificant Swedish extraction before/after EQ5D .77 to .81; not a causal estimate."
+    },
+    "dental_resolution": {
+      "min": 0,
+      "max": 1,
+      "status": "Analyst prior unless stated otherwise",
+      "basis": "Successful pain resolution conditional on completed extraction, separate from course completion."
+    },
+    "dental_catchup": {
+      "min": 0,
+      "max": 50,
+      "status": "Analyst prior unless stated otherwise",
+      "basis": "Annual no-gift alternative-treatment/spontaneous symptom-resolution hazard, conditional on successful early treatment; central mean .25 years before hard cap."
+    },
+    "dental_horizon": {
+      "min": 0,
+      "max": 2,
+      "status": "Analyst prior unless stated otherwise",
+      "basis": "Hard maximum years of earlier relief after care begins, never lifetime."
+    },
+    "dental_delay": {
+      "min": 0,
+      "max": 5,
+      "status": "Analyst prior unless stated otherwise",
+      "basis": "Years until care starts; cohorts conditioned alive at start, delay discounts only."
+    },
+    "dental_harm": {
+      "min": 0,
+      "max": 0.5,
+      "status": "Analyst prior unless stated otherwise",
+      "basis": "Gift-date PV incremental procedural/tooth-function QALY loss per additional completed unique patient; net of eventual alternative-care harm."
+    },
+    "mental_utility": {
+      "min": -0.3,
+      "max": 0.3,
+      "status": "Analyst prior unless stated otherwise",
+      "basis": "Signed initial counseling utility advantage: independent prior, NOT Beck-score to EQ5D conversion."
+    },
+    "mental_fidelity": {
+      "min": 0,
+      "max": 1,
+      "status": "Analyst prior unless stated otherwise",
+      "basis": "Local effect-size transfer prior among adequate-dose completers; no claim clinic replicates trained trial therapists."
+    },
+    "mental_catchup": {
+      "min": 0,
+      "max": 50,
+      "status": "Analyst prior unless stated otherwise",
+      "basis": "Additional local alternative-care attenuation beyond imposed one-year fading; accounts for accessible public/free mental care."
+    },
+    "mental_horizon": {
+      "min": 0,
+      "max": 1,
+      "status": "Analyst prior unless stated otherwise",
+      "basis": "Counseling utility fades linearly to zero by one year after start; no residual lifetime mental-health benefit."
+    },
+    "mental_delay": {
+      "min": 0,
+      "max": 5,
+      "status": "Analyst prior unless stated otherwise",
+      "basis": "Care start delay, discounts only for an alive-at-start cohort."
+    },
+    "mental_harm": {
+      "min": 0,
+      "max": 0.5,
+      "status": "Analyst prior unless stated otherwise",
+      "basis": "Gift-date PV incremental burden/adverse effects per additional completed unique counseling patient; clinical deterioration already in signed utility excluded."
+    },
+    "mortality": {
+      "min": 0,
+      "max": 1,
+      "status": "Analyst prior unless stated otherwise",
+      "basis": "Annual competing all-cause hazard during finite benefit, not a mortality reduction claim."
+    },
+    "discount": {
+      "min": 0,
+      "max": 1,
+      "status": "Analyst prior unless stated otherwise",
+      "basis": "Continuous annual health discount rate."
+    },
+    "bay_share": {
+      "min": 0,
+      "max": 1,
+      "status": "Analyst prior unless stated otherwise",
+      "basis": "Direct Bay Area fraction; intended clinic catchment; no measured marginal residency split."
+    },
+    "sf_share": {
+      "min": 0,
+      "max": 1,
+      "status": "Analyst prior unless stated otherwise",
+      "basis": "Direct SF subset of Bay Area; weak prior from SF and San Mateo mission, not proof clinic location equals resident location."
+    },
+    "volunteer_resource_per_donor": {
+      "min": 0,
+      "max": 5,
+      "status": "Analyst prior unless stated otherwise",
+      "basis": "Additional gross associated volunteer opportunity-cost allowance per donor dollar, not a clinic valuation or incremental net cost."
+    },
+    "external_resource_per_donor": {
+      "min": 0,
+      "max": 5,
+      "status": "Analyst prior unless stated otherwise",
+      "basis": "Outside support for original dental/mental branches and common patient support only; BP/residual per-course allowances exclude these costs."
+    },
+    "independent_harm_q": {
+      "min": 0,
+      "max": 1000,
+      "status": "Analyst prior unless stated otherwise",
+      "basis": "Gift-date PV QALY loss independent of expanded care; separate from per-patient harms."
+    },
+    "bp_medical_fraction": {
+      "min": 0,
+      "max": 1,
+      "status": "Explicit analyst prior",
+      "basis": "General-medical budget fraction for HDFP-like hypertensive adults ages30–69/DBP≥90; unknown local case mix, not all visits."
+    },
+    "bp_course_cost": {
+      "min": 100,
+      "max": 20000,
+      "status": "Explicit analyst prior",
+      "basis": "Fully loaded annual systematic-care cost: six contacts at$200 plus$300 drugs/labs; multiply by max(1,funded years), so longer care never costs only one year."
+    },
+    "bp_unique": {
+      "min": 0,
+      "max": 1,
+      "status": "Explicit analyst prior",
+      "basis": "Unique annual patients after excluding dental/counseling patient-periods and repeats."
+    },
+    "bp_capacity": {
+      "min": 0,
+      "max": 10000,
+      "status": "Explicit analyst prior",
+      "basis": "Unverified additional unique annual-course capacity."
+    },
+    "bp_baseline_hazard": {
+      "min": 0,
+      "max": 1,
+      "status": "Explicit analyst prior",
+      "basis": "Current-care all-cause annual mortality prior near annualized HDFP referral arm, not untreated mortality."
+    },
+    "bp_relative_hazard": {
+      "min": 0,
+      "max": 2,
+      "status": "Primary-trial-derived approximation",
+      "basis": "Constant-hazard approximation from HDFP5y risks6.4%stepped versus7.7%community referral; not observed first-year HR."
+    },
+    "bp_modern_gap": {
+      "min": 0,
+      "max": 1,
+      "status": "Explicit analyst prior",
+      "basis": "Remaining opportunity relative to historical referral comparator after modern public/free access, not fraction never treated."
+    },
+    "bp_delivery_transfer": {
+      "min": 0,
+      "max": 1,
+      "status": "Explicit analyst prior",
+      "basis": "Implementation relative to trial assignment effect; no second multiplication by absolute trial adherence."
+    },
+    "bp_active_years": {
+      "min": 0,
+      "max": 5,
+      "status": "Explicit analyst prior",
+      "basis": "Funded exposure; hazards equal comparator after this period."
+    },
+    "bp_latency": {
+      "min": 0,
+      "max": 5,
+      "status": "Explicit analyst prior",
+      "basis": "Initial delay before any hazard effect within the funded exposure."
+    },
+    "bp_horizon": {
+      "min": 0,
+      "max": 20,
+      "status": "Explicit analyst prior",
+      "basis": "Finite survival followup after care start; no permanent risk reduction."
+    },
+    "bp_delay": {
+      "min": 0,
+      "max": 5,
+      "status": "Explicit analyst prior",
+      "basis": "Discount-only start delay, cohort alive at service start."
+    },
+    "bp_utility": {
+      "min": 0,
+      "max": 1,
+      "status": "Explicit analyst prior",
+      "basis": "Utility among living high-risk cohort, independent prior."
+    },
+    "bp_harm": {
+      "min": 0,
+      "max": 0.5,
+      "status": "Explicit analyst prior",
+      "basis": "Gift-date PV nonfatal incremental treatment harm; fatal effects already inside signed mortality contrast."
+    },
+    "bp_external_per_course": {
+      "min": 0,
+      "max": 10000,
+      "status": "Explicit analyst prior",
+      "basis": "Annual outside BP clinical/patient-time cost, multiplied by max(1,funded years); donor-paid and common original-branch support excluded."
+    },
+    "residual_unique": {
+      "min": 0,
+      "max": 1,
+      "status": "Explicit analyst prior",
+      "basis": "Unique residual patient-periods after excluding all credited cohorts/repeats; full costs retained."
+    },
+    "residual_capacity": {
+      "min": 0,
+      "max": 10000,
+      "status": "Explicit analyst prior",
+      "basis": "Unknown additional unique annual-course capacity prior."
+    },
+    "residual_delay": {
+      "min": 0,
+      "max": 5,
+      "status": "Explicit analyst prior",
+      "basis": "Discount-only delay; cohort alive at start."
+    },
+    "residual_harm": {
+      "min": 0,
+      "max": 0.5,
+      "status": "Explicit analyst prior",
+      "basis": "Gift-date PV incremental harm outside signed utility, per additional unique course."
+    },
+    "acute_cost": {
+      "min": 100,
+      "max": 20000,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Fully loaded nominal patient-course cost. 40% of non-BP medical budget; short symptomatic courses, mixed acute/rheumatology need; no automatic disease cure. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+    },
+    "acute_target": {
+      "min": 0,
+      "max": 1,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Share with completed/actionable burden-bearing care. 40% of non-BP medical budget; short symptomatic courses, mixed acute/rheumatology need; no automatic disease cure. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+    },
+    "acute_utility": {
+      "min": -0.3,
+      "max": 0.3,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Signed utility change conditional on response. 40% of non-BP medical budget; short symptomatic courses, mixed acute/rheumatology need; no automatic disease cure. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+    },
+    "acute_response": {
+      "min": 0,
+      "max": 1,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Meaningful symptom/function response. 40% of non-BP medical budget; short symptomatic courses, mixed acute/rheumatology need; no automatic disease cure. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+    },
+    "acute_catchup": {
+      "min": 0,
+      "max": 50,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Annual alternative-care/spontaneous catchup. 40% of non-BP medical budget; short symptomatic courses, mixed acute/rheumatology need; no automatic disease cure. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+    },
+    "acute_horizon": {
+      "min": 0,
+      "max": 3,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Hard post-care benefit horizon. 40% of non-BP medical budget; short symptomatic courses, mixed acute/rheumatology need; no automatic disease cure. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+    },
+    "acute_external": {
+      "min": 0,
+      "max": 10000,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Outside clinical/patient-time cost beyond donor/volunteer/common support. 40% of non-BP medical budget; short symptomatic courses, mixed acute/rheumatology need; no automatic disease cure. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+    },
+    "chronic_cost": {
+      "min": 100,
+      "max": 20000,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Fully loaded nominal patient-course cost. 40% of non-BP medical budget; sustained symptom control in selected chronic illness, not diabetes education→mortality or broad preventive event credit. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+    },
+    "chronic_target": {
+      "min": 0,
+      "max": 1,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Share with completed/actionable burden-bearing care. 40% of non-BP medical budget; sustained symptom control in selected chronic illness, not diabetes education→mortality or broad preventive event credit. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+    },
+    "chronic_utility": {
+      "min": -0.3,
+      "max": 0.3,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Signed utility change conditional on response. 40% of non-BP medical budget; sustained symptom control in selected chronic illness, not diabetes education→mortality or broad preventive event credit. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+    },
+    "chronic_response": {
+      "min": 0,
+      "max": 1,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Meaningful symptom/function response. 40% of non-BP medical budget; sustained symptom control in selected chronic illness, not diabetes education→mortality or broad preventive event credit. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+    },
+    "chronic_catchup": {
+      "min": 0,
+      "max": 50,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Annual alternative-care/spontaneous catchup. 40% of non-BP medical budget; sustained symptom control in selected chronic illness, not diabetes education→mortality or broad preventive event credit. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+    },
+    "chronic_horizon": {
+      "min": 0,
+      "max": 3,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Hard post-care benefit horizon. 40% of non-BP medical budget; sustained symptom control in selected chronic illness, not diabetes education→mortality or broad preventive event credit. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+    },
+    "chronic_external": {
+      "min": 0,
+      "max": 10000,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Outside clinical/patient-time cost beyond donor/volunteer/common support. 40% of non-BP medical budget; sustained symptom control in selected chronic illness, not diabetes education→mortality or broad preventive event credit. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+    },
+    "referral_cost": {
+      "min": 100,
+      "max": 20000,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Fully loaded nominal patient-course cost. 20% of non-BP medical budget; target fraction requires completed actionable specialty care, not a referral alone. External actual treatment resources modeled separately. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+    },
+    "referral_target": {
+      "min": 0,
+      "max": 1,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Share with completed/actionable burden-bearing care. 20% of non-BP medical budget; target fraction requires completed actionable specialty care, not a referral alone. External actual treatment resources modeled separately. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+    },
+    "referral_utility": {
+      "min": -0.3,
+      "max": 0.3,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Signed utility change conditional on response. 20% of non-BP medical budget; target fraction requires completed actionable specialty care, not a referral alone. External actual treatment resources modeled separately. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+    },
+    "referral_response": {
+      "min": 0,
+      "max": 1,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Meaningful symptom/function response. 20% of non-BP medical budget; target fraction requires completed actionable specialty care, not a referral alone. External actual treatment resources modeled separately. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+    },
+    "referral_catchup": {
+      "min": 0,
+      "max": 50,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Annual alternative-care/spontaneous catchup. 20% of non-BP medical budget; target fraction requires completed actionable specialty care, not a referral alone. External actual treatment resources modeled separately. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+    },
+    "referral_horizon": {
+      "min": 0,
+      "max": 3,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Hard post-care benefit horizon. 20% of non-BP medical budget; target fraction requires completed actionable specialty care, not a referral alone. External actual treatment resources modeled separately. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+    },
+    "referral_external": {
+      "min": 0,
+      "max": 10000,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Outside clinical/patient-time cost beyond donor/volunteer/common support. 20% of non-BP medical budget; target fraction requires completed actionable specialty care, not a referral alone. External actual treatment resources modeled separately. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+    },
+    "dental_other_cost": {
+      "min": 100,
+      "max": 20000,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Fully loaded nominal patient-course cost. All nonselected dental budget; only a minority have responsive symptomatic disease. Cleanings/prevention not assigned lifelong benefit. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/dental"
+    },
+    "dental_other_target": {
+      "min": 0,
+      "max": 1,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Share with completed/actionable burden-bearing care. All nonselected dental budget; only a minority have responsive symptomatic disease. Cleanings/prevention not assigned lifelong benefit. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/dental"
+    },
+    "dental_other_utility": {
+      "min": -0.3,
+      "max": 0.3,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Signed utility change conditional on response. All nonselected dental budget; only a minority have responsive symptomatic disease. Cleanings/prevention not assigned lifelong benefit. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/dental"
+    },
+    "dental_other_response": {
+      "min": 0,
+      "max": 1,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Meaningful symptom/function response. All nonselected dental budget; only a minority have responsive symptomatic disease. Cleanings/prevention not assigned lifelong benefit. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/dental"
+    },
+    "dental_other_catchup": {
+      "min": 0,
+      "max": 50,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Annual alternative-care/spontaneous catchup. All nonselected dental budget; only a minority have responsive symptomatic disease. Cleanings/prevention not assigned lifelong benefit. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/dental"
+    },
+    "dental_other_horizon": {
+      "min": 0,
+      "max": 3,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Hard post-care benefit horizon. All nonselected dental budget; only a minority have responsive symptomatic disease. Cleanings/prevention not assigned lifelong benefit. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/dental"
+    },
+    "dental_other_external": {
+      "min": 0,
+      "max": 10000,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Outside clinical/patient-time cost beyond donor/volunteer/common support. All nonselected dental budget; only a minority have responsive symptomatic disease. Cleanings/prevention not assigned lifelong benefit. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/dental"
+    },
+    "mental_other_cost": {
+      "min": 100,
+      "max": 20000,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Fully loaded nominal patient-course cost. All nonselected mental budget; symptomatic anxiety/other psychiatry supported monthly, not depressive counseling credited twice. No suicide mortality claim. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/dental-1"
+    },
+    "mental_other_target": {
+      "min": 0,
+      "max": 1,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Share with completed/actionable burden-bearing care. All nonselected mental budget; symptomatic anxiety/other psychiatry supported monthly, not depressive counseling credited twice. No suicide mortality claim. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/dental-1"
+    },
+    "mental_other_utility": {
+      "min": -0.3,
+      "max": 0.3,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Signed utility change conditional on response. All nonselected mental budget; symptomatic anxiety/other psychiatry supported monthly, not depressive counseling credited twice. No suicide mortality claim. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/dental-1"
+    },
+    "mental_other_response": {
+      "min": 0,
+      "max": 1,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Meaningful symptom/function response. All nonselected mental budget; symptomatic anxiety/other psychiatry supported monthly, not depressive counseling credited twice. No suicide mortality claim. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/dental-1"
+    },
+    "mental_other_catchup": {
+      "min": 0,
+      "max": 50,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Annual alternative-care/spontaneous catchup. All nonselected mental budget; symptomatic anxiety/other psychiatry supported monthly, not depressive counseling credited twice. No suicide mortality claim. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/dental-1"
+    },
+    "mental_other_horizon": {
+      "min": 0,
+      "max": 3,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Hard post-care benefit horizon. All nonselected mental budget; symptomatic anxiety/other psychiatry supported monthly, not depressive counseling credited twice. No suicide mortality claim. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/dental-1"
+    },
+    "mental_other_external": {
+      "min": 0,
+      "max": 10000,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Outside clinical/patient-time cost beyond donor/volunteer/common support. All nonselected mental budget; symptomatic anxiety/other psychiatry supported monthly, not depressive counseling credited twice. No suicide mortality claim. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/dental-1"
+    },
+    "food_cost": {
+      "min": 100,
+      "max": 20000,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Fully loaded nominal patient-course cost. Food/other budget, financial strain plus metabolic conditions; food substitution and public CalFresh/EatSF support in baseline. Small transient morbidity prior, not starvation prevention. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/food-pharmacy"
+    },
+    "food_target": {
+      "min": 0,
+      "max": 1,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Share with completed/actionable burden-bearing care. Food/other budget, financial strain plus metabolic conditions; food substitution and public CalFresh/EatSF support in baseline. Small transient morbidity prior, not starvation prevention. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/food-pharmacy"
+    },
+    "food_utility": {
+      "min": -0.3,
+      "max": 0.3,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Signed utility change conditional on response. Food/other budget, financial strain plus metabolic conditions; food substitution and public CalFresh/EatSF support in baseline. Small transient morbidity prior, not starvation prevention. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/food-pharmacy"
+    },
+    "food_response": {
+      "min": 0,
+      "max": 1,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Meaningful symptom/function response. Food/other budget, financial strain plus metabolic conditions; food substitution and public CalFresh/EatSF support in baseline. Small transient morbidity prior, not starvation prevention. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/food-pharmacy"
+    },
+    "food_catchup": {
+      "min": 0,
+      "max": 50,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Annual alternative-care/spontaneous catchup. Food/other budget, financial strain plus metabolic conditions; food substitution and public CalFresh/EatSF support in baseline. Small transient morbidity prior, not starvation prevention. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/food-pharmacy"
+    },
+    "food_horizon": {
+      "min": 0,
+      "max": 3,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Hard post-care benefit horizon. Food/other budget, financial strain plus metabolic conditions; food substitution and public CalFresh/EatSF support in baseline. Small transient morbidity prior, not starvation prevention. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/food-pharmacy"
+    },
+    "food_external": {
+      "min": 0,
+      "max": 10000,
+      "status": "Weak explicit service-specific prior",
+      "basis": "Outside clinical/patient-time cost beyond donor/volunteer/common support. Food/other budget, financial strain plus metabolic conditions; food substitution and public CalFresh/EatSF support in baseline. Small transient morbidity prior, not starvation prevention. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/food-pharmacy"
+    },
+    "acute_medical_share": {
+      "min": 0,
+      "max": 1,
+      "status": "Unobserved non-BP medical case-mix allocation prior",
+      "basis": "Shares of non-BP medical budget sum to1. Symptom care and chronic medication support each40%, completed specialty-care branch20%; not observed clinic spending."
+    },
+    "chronic_medical_share": {
+      "min": 0,
+      "max": 1,
+      "status": "Unobserved non-BP medical case-mix allocation prior",
+      "basis": "Shares of non-BP medical budget sum to1. Symptom care and chronic medication support each40%, completed specialty-care branch20%; not observed clinic spending."
+    },
+    "referral_medical_share": {
+      "min": 0,
+      "max": 1,
+      "status": "Unobserved non-BP medical case-mix allocation prior",
+      "basis": "Shares of non-BP medical budget sum to1. Symptom care and chronic medication support each40%, completed specialty-care branch20%; not observed clinic spending."
+    }
+  },
+  "scenarios": [
+    {
+      "id": "Central",
+      "overrides": {}
+    },
+    {
+      "id": "Favorable",
+      "overrides": {
+        "funding_additionality": 0.75,
+        "dental_episode_cost": 350,
+        "mental_course_cost": 700,
+        "dental_target": 0.65,
+        "mental_target": 0.8,
+        "dental_completion": 0.95,
+        "mental_completion": 0.9,
+        "dental_unique": 1,
+        "mental_disjoint": 0.95,
+        "dental_utility": 0.12,
+        "dental_catchup": 1,
+        "dental_resolution": 0.95,
+        "mental_utility": 0.07,
+        "mental_fidelity": 0.9,
+        "mental_catchup": 0.5,
+        "dental_harm": 0.0002,
+        "mental_harm": 0.0002,
+        "bp_medical_fraction": 0.4,
+        "bp_course_cost": 1000,
+        "bp_modern_gap": 0.8,
+        "bp_delivery_transfer": 1,
+        "bp_latency": 0,
+        "acute_cost": 750,
+        "acute_target": 0.75,
+        "acute_utility": 0.09,
+        "acute_response": 0.84,
+        "acute_catchup": 2,
+        "chronic_cost": 1125,
+        "chronic_target": 0.6000000000000001,
+        "chronic_utility": 0.045,
+        "chronic_response": 0.78,
+        "chronic_catchup": 0.75,
+        "referral_cost": 2250,
+        "referral_target": 0.44999999999999996,
+        "referral_utility": 0.15000000000000002,
+        "referral_response": 0.84,
+        "referral_catchup": 0.5,
+        "dental_other_cost": 450,
+        "dental_other_target": 0.375,
+        "dental_other_utility": 0.06,
+        "dental_other_response": 0.96,
+        "dental_other_catchup": 2,
+        "mental_other_cost": 750,
+        "mental_other_target": 0.75,
+        "mental_other_utility": 0.06,
+        "mental_other_response": 0.72,
+        "mental_other_catchup": 1,
+        "food_cost": 600,
+        "food_target": 0.6000000000000001,
+        "food_utility": 0.015,
+        "food_response": 0.48,
+        "food_catchup": 1
+      }
+    },
+    {
+      "id": "Cautious",
+      "overrides": {
+        "funding_additionality": 0.25,
+        "dental_episode_cost": 1000,
+        "mental_course_cost": 2200,
+        "dental_target": 0.2,
+        "mental_target": 0.3,
+        "dental_completion": 0.6,
+        "mental_completion": 0.5,
+        "dental_utility": 0.01,
+        "dental_catchup": 12,
+        "mental_utility": 0.005,
+        "mental_fidelity": 0.3,
+        "mental_catchup": 4,
+        "dental_harm": 0.001,
+        "mental_harm": 0.002,
+        "bp_medical_fraction": 0.15,
+        "bp_course_cost": 2500,
+        "bp_modern_gap": 0.1,
+        "bp_delivery_transfer": 0.3,
+        "bp_latency": 0.75,
+        "residual_harm": 0.001,
+        "acute_cost": 1500,
+        "acute_target": 0.25,
+        "acute_utility": 0.015,
+        "acute_response": 0.35,
+        "acute_catchup": 8,
+        "chronic_cost": 2250,
+        "chronic_target": 0.2,
+        "chronic_utility": 0.0075,
+        "chronic_response": 0.325,
+        "chronic_catchup": 3,
+        "referral_cost": 4500,
+        "referral_target": 0.15,
+        "referral_utility": 0.025,
+        "referral_response": 0.35,
+        "referral_catchup": 2,
+        "dental_other_cost": 900,
+        "dental_other_target": 0.125,
+        "dental_other_utility": 0.01,
+        "dental_other_response": 0.4,
+        "dental_other_catchup": 8,
+        "mental_other_cost": 1500,
+        "mental_other_target": 0.25,
+        "mental_other_utility": 0.01,
+        "mental_other_response": 0.3,
+        "mental_other_catchup": 4,
+        "food_cost": 1200,
+        "food_target": 0.2,
+        "food_utility": 0.0025,
+        "food_response": 0.2,
+        "food_catchup": 4
+      }
+    },
+    {
+      "id": "No additional funding",
+      "overrides": {
+        "funding_additionality": 0
+      }
+    },
+    {
+      "id": "No gift capacity",
+      "overrides": {
+        "dental_capacity": 0,
+        "mental_capacity": 0,
+        "bp_capacity": 0,
+        "residual_capacity": 0
+      }
+    },
+    {
+      "id": "Zero net effect",
+      "overrides": {
+        "dental_utility": 0,
+        "mental_utility": 0,
+        "dental_harm": 0,
+        "mental_harm": 0,
+        "bp_relative_hazard": 1,
+        "bp_harm": 0,
+        "residual_harm": 0,
+        "acute_utility": 0,
+        "chronic_utility": 0,
+        "referral_utility": 0,
+        "dental_other_utility": 0,
+        "mental_other_utility": 0,
+        "food_utility": 0
+      }
+    },
+    {
+      "id": "Harm only",
+      "overrides": {
+        "dental_utility": 0,
+        "mental_utility": 0,
+        "bp_relative_hazard": 1,
+        "acute_utility": 0,
+        "chronic_utility": 0,
+        "referral_utility": 0,
+        "dental_other_utility": 0,
+        "mental_other_utility": 0,
+        "food_utility": 0
+      }
+    },
+    {
+      "id": "Signed adverse utility",
+      "overrides": {
+        "dental_utility": -0.02,
+        "mental_utility": -0.02,
+        "bp_relative_hazard": 1.2,
+        "acute_utility": -0.02,
+        "chronic_utility": -0.02,
+        "referral_utility": -0.02,
+        "dental_other_utility": -0.02,
+        "mental_other_utility": -0.02,
+        "food_utility": -0.02
+      }
+    },
+    {
+      "id": "Independent harm despite replacement",
+      "overrides": {
+        "funding_additionality": 0,
+        "independent_harm_q": 0.1
+      }
+    },
+    {
+      "id": "Counseling benefit removed",
+      "overrides": {
+        "mental_utility": 0,
+        "mental_harm": 0
+      }
+    },
+    {
+      "id": "Dental benefit removed",
+      "overrides": {
+        "dental_utility": 0,
+        "dental_harm": 0
+      }
+    },
+    {
+      "id": "All counseling patients overlap",
+      "overrides": {
+        "mental_disjoint": 0
+      }
+    },
+    {
+      "id": "Lower target portfolio",
+      "overrides": {
+        "dental_allocation": 0.1,
+        "mental_allocation": 0.05,
+        "medical_allocation": 0.75
+      }
+    },
+    {
+      "id": "Higher target portfolio",
+      "overrides": {
+        "dental_allocation": 0.3,
+        "mental_allocation": 0.25,
+        "medical_allocation": 0.35
+      }
+    },
+    {
+      "id": "Fast usual-care catchup",
+      "overrides": {
+        "dental_catchup": 20,
+        "mental_catchup": 10
+      }
+    },
+    {
+      "id": "No local counseling transfer",
+      "overrides": {
+        "mental_fidelity": 0
+      }
+    },
+    {
+      "id": "Short dental advantage",
+      "overrides": {
+        "dental_horizon": 0.04
+      }
+    },
+    {
+      "id": "Low SF share",
+      "overrides": {
+        "sf_share": 0.3
+      }
+    },
+    {
+      "id": "No SF beneficiaries",
+      "overrides": {
+        "sf_share": 0
+      }
+    },
+    {
+      "id": "No Bay beneficiaries",
+      "overrides": {
+        "bay_share": 0,
+        "sf_share": 0
+      }
+    },
+    {
+      "id": "Larger gift capped",
+      "overrides": {
+        "gift_usd": 1000000
+      }
+    },
+    {
+      "id": "High gross resources",
+      "overrides": {
+        "volunteer_resource_per_donor": 2,
+        "external_resource_per_donor": 1
+      }
+    },
+    {
+      "id": "Zero dental and counseling discount/hazards",
+      "overrides": {
+        "discount": 0,
+        "mortality": 0,
+        "dental_catchup": 0,
+        "mental_catchup": 0
+      }
+    },
+    {
+      "id": "Immediate care",
+      "overrides": {
+        "dental_delay": 0,
+        "mental_delay": 0
+      }
+    },
+    {
+      "id": "BP null despite medical activity",
+      "overrides": {
+        "bp_relative_hazard": 1
+      }
+    },
+    {
+      "id": "BP full usual-care replacement",
+      "overrides": {
+        "bp_modern_gap": 0
+      }
+    },
+    {
+      "id": "BP no latency",
+      "overrides": {
+        "bp_latency": 0
+      }
+    },
+    {
+      "id": "BP no active effect window",
+      "overrides": {
+        "bp_latency": 1
+      }
+    },
+    {
+      "id": "BP five-year funded course",
+      "overrides": {
+        "bp_active_years": 5,
+        "bp_course_cost": 1500
+      }
+    },
+    {
+      "id": "BP short survival followup",
+      "overrides": {
+        "bp_horizon": 3
+      }
+    },
+    {
+      "id": "Residual null",
+      "overrides": {
+        "residual_harm": 0,
+        "acute_utility": 0,
+        "chronic_utility": 0,
+        "referral_utility": 0,
+        "dental_other_utility": 0,
+        "mental_other_utility": 0,
+        "food_utility": 0
+      }
+    },
+    {
+      "id": "Residual signed harm",
+      "overrides": {
+        "acute_utility": -0.02,
+        "chronic_utility": -0.02,
+        "referral_utility": -0.02,
+        "dental_other_utility": -0.02,
+        "mental_other_utility": -0.02,
+        "food_utility": -0.02
+      }
+    },
+    {
+      "id": "Residual wider prior",
+      "overrides": {
+        "acute_utility": 0.12,
+        "acute_horizon": 1,
+        "chronic_utility": 0.06,
+        "chronic_horizon": 2,
+        "referral_utility": 0.2,
+        "referral_horizon": 3,
+        "dental_other_utility": 0.08,
+        "dental_other_horizon": 2,
+        "mental_other_utility": 0.08,
+        "mental_other_horizon": 1.5,
+        "food_utility": 0.02,
+        "food_horizon": 2
+      }
+    },
+    {
+      "id": "No new pathways diagnostic",
+      "overrides": {
+        "bp_medical_fraction": 0,
+        "residual_harm": 0,
+        "acute_utility": 0,
+        "chronic_utility": 0,
+        "referral_utility": 0,
+        "dental_other_utility": 0,
+        "mental_other_utility": 0,
+        "food_utility": 0
+      }
+    }
+  ],
+  "boundaries": {
+    "numerator": "Whole ordinary-gift cost and attempted expected direct-health portfolio, including uncertain residual morbidity; not an exhaustive consequences inventory.",
+    "overlap": "Dental patients first; counseling excludes those patient-periods entirely. No general chronic-care utility is additionally credited to these patients.",
+    "public_baseline": "No government receipts does not imply no public/free alternative care. Healthy SF covers primary and mental care, not routine dental; other dental clinics still matter.",
+    "resources": "Gross associated donor plus volunteer and external resource allowance, not net incremental societal cost or exhaustive induced public costs.",
+    "timing": "Cohorts alive at care start. Delay discounts benefits only; harms already gift-date PV. Finite utility integration, no mortality prevention.",
+    "room": "No priced additional patient tranche verified. Capacity and funding additionality are scenario priors.",
+    "unavailable": "2025 annual report linked via Canva returned unsupported-browser content; no financial or specialty counts inferred from unread pages. Displayed annualreports-page counts lack verified year and are unused.",
+    "historical": "Retain existing clinic-dental-cea-v1.json selected extraction model ($933,333 per10Q central) unchanged as historical comparison.",
+    "residual": "Remaining budget after selected dental,counseling and BP shares feeds one residual morbidity model. Rare preventive tails remain uncertain, not provenzero; residual and expectation-weight stress required."
+  },
+  "expected_value": {
+    "method": "Subjective joint scenario mixture; ratio to expected signed Q, not average positive-only ratios.",
+    "weights": [
+      {
+        "id": "Central",
+        "weight": 0.7
+      },
+      {
+        "id": "Favorable",
+        "weight": 0.15
+      },
+      {
+        "id": "Cautious",
+        "weight": 0.1
+      },
+      {
+        "id": "No additional funding",
+        "weight": 0.05
+      }
+    ],
+    "basis": "Subjective elicitation, not empirical frequencies: documented ongoing care and waiting demand put most mass on some added but partly replacing activity; central70% represents existing-provider alternatives and mixed clinical need. Favorable15% is a correlated high-need/volunteer-capacity state (severe case mix makes more targets and longer waits, available volunteer capacity lowers course cash cost), not independent success of every optimistic parameter. Cautious10% represents largely low-burden/already-served patients and weak effective delivery; structural null5% reserves complete displacement/no additional activity despite existing operation. These exact probabilities are judgment calls with no calibrated reference class; broad0–30% favorable-weight stress is required, and85%of meanhealth can come from15%tail. They are not evidence of specific funding room.",
+    "weight_sensitivity": [
+      {
+        "id": "No favorable tail",
+        "weights": [
+          0.85,
+          0,
+          0.1,
+          0.05
+        ]
+      },
+      {
+        "id": "Five percent favorable",
+        "weights": [
+          0.8,
+          0.05,
+          0.1,
+          0.05
+        ]
+      },
+      {
+        "id": "Thirty percent favorable",
+        "weights": [
+          0.55,
+          0.3,
+          0.1,
+          0.05
+        ]
+      }
+    ]
+  },
+  "residual_groups": [
+    {
+      "id": "acute",
+      "label": "Acute illness / rheumatologic symptom care",
+      "source": "https://www.clinicbythebay.org/services",
+      "basis": "40% of non-BP medical budget; short symptomatic courses, mixed acute/rheumatology need; no automatic disease cure."
+    },
+    {
+      "id": "chronic",
+      "label": "Non-BP symptomatic medication access",
+      "source": "https://www.clinicbythebay.org/services",
+      "basis": "40% of non-BP medical budget; sustained symptom control in selected chronic illness, not diabetes education→mortality or broad preventive event credit."
+    },
+    {
+      "id": "referral",
+      "label": "Completed diagnostic/specialty referral care",
+      "source": "https://www.clinicbythebay.org/services",
+      "basis": "20% of non-BP medical budget; target fraction requires completed actionable specialty care, not a referral alone. External actual treatment resources modeled separately."
+    },
+    {
+      "id": "dental_other",
+      "label": "Non-extraction dental restoration / periodontal symptoms",
+      "source": "https://www.clinicbythebay.org/dental",
+      "basis": "All nonselected dental budget; only a minority have responsive symptomatic disease. Cleanings/prevention not assigned lifelong benefit."
+    },
+    {
+      "id": "mental_other",
+      "label": "Other short-term mental / psychiatric symptom care",
+      "source": "https://www.clinicbythebay.org/dental-1",
+      "basis": "All nonselected mental budget; symptomatic anxiety/other psychiatry supported monthly, not depressive counseling credited twice. No suicide mortality claim."
+    },
+    {
+      "id": "food",
+      "label": "Food access / nutrition-related morbidity",
+      "source": "https://www.clinicbythebay.org/food-pharmacy",
+      "basis": "Food/other budget, financial strain plus metabolic conditions; food substitution and public CalFresh/EatSF support in baseline. Small transient morbidity prior, not starvation prevention."
+    }
+  ]
+}
+

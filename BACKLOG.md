@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Clinic by the Bay — accepted whole-organization correction
+
+Count unchanged67 once SIRUM canonical mobile verification completes. Clinic now models named medical, dental, mental-health and residual-service pathways across the whole gift, not selected extractions alone. Subjective signed-health expectation: $2.861M/10 SF QALYs; unweighted central $11.396M; favorable15% drives82.6%of expected health. Explicit weight stresses and finite funded-course costs retained.4655 independent/38854 author checks;446 repository tests, lint/build pass. Old dental model/API preserved for historical inspection. Correct a six-pixel SIRUM phone overflow by wrapping long scenario text, with report-level regression assertions rather than clipping content. OA/GLIDE coverage corrections follow; PR249 remains diagnostic draft.
+
 ## SIRUM — accepted; release verification pending
 
 Report67 after canonical verification. Whole ordinary gift, finite medication courses, disjoint BP/statin/residual health, full regional cost numerator. Central donor $131K/10 US QALYs and $4.4M Bay; SF effect unpriced, not a national price substituted into the local table. Named residual-class priors dominate; favorable joint case is not a recommendation. 21 scenarios, 1461 independent checks; repository tests, lint/build and 12 phone/tablet report/API/index checks pass. No current marginal offer.

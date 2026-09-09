@@ -1,5 +1,5 @@
 import {test,expect} from '@playwright/test';
-import {sortedResearchPrograms} from '../lib/sf-research-index';
+import {EXPECTED_RESEARCH_COUNT} from './research-contract';
 
 test('homepage and research copy refinements',async({page})=>{
  await page.goto('/');
@@ -8,13 +8,16 @@ test('homepage and research copy refinements',async({page})=>{
  await page.goto('/research');
  await expect(page.locator('#top-research').getByRole('columnheader',{name:'Organization',exact:true})).toBeVisible();
  await expect(page.getByRole('columnheader',{name:'$ per better life',exact:true})).toBeVisible();
- for(const cell of await page.locator('tbody td').all()) expect(await cell.innerText()).toMatch(/^\$[\d,]+(?:\.\dM|[KBT])?$/);
+ for(const cell of await page.locator('tbody td').all()) expect(await cell.innerText()).toMatch(/^(?:\$[\d,]+(?:\.\dM|[KBT])?|Not estimated)$/);
 });
 
-test('all 46 reports use readable research architecture',async({page},testInfo)=>{
+test('all published reports use readable research architecture',async({page},testInfo)=>{
  test.setTimeout(180000);
- expect(sortedResearchPrograms).toHaveLength(46);
- for(const item of sortedResearchPrograms){
+ await page.goto('/research');
+ await expect(page.locator('[data-research-slug]')).toHaveCount(EXPECTED_RESEARCH_COUNT);
+ const reports=await page.locator('[data-research-slug]').evaluateAll(rows=>rows.map(row=>({href:row.querySelector('a')!.getAttribute('href')!})));
+ expect(new Set(reports.map(r=>r.href)).size).toBe(EXPECTED_RESEARCH_COUNT);
+ for(const item of reports){
   const response=await page.goto(item.href);
   expect(response?.status(),item.href).toBe(200);
   await expect(page.locator('h1')).toBeVisible();

@@ -1,3 +1,4 @@
+import {EXPECTED_RESEARCH_COUNT} from './research-contract';
 import { test, expect } from '@playwright/test';
 
 for (const width of [390, 768, 1280]) {
@@ -14,7 +15,7 @@ for (const width of [390, 768, 1280]) {
     await page.screenshot({path:testInfo.outputPath(`givebetter-home-${width}.png`),fullPage:true});
     await page.goto('/research');
     await expect(page.locator('#top-research').getByRole('table')).toBeVisible();
-    await expect(page.locator('#top-research tbody tr')).toHaveCount(53);
+    await expect(page.locator('#top-research tbody tr')).toHaveCount(EXPECTED_RESEARCH_COUNT);
     await expect(page.locator('#top-research tbody')).not.toContainText('Exploratory estimate');
     await expect(page.locator('#top-research tbody')).not.toContainText('≈');
     const row = page.locator('tbody tr').first();

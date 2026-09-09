@@ -1,3 +1,4 @@
+import {EXPECTED_RESEARCH_COUNT} from './research-contract';
 import {test,expect} from '@playwright/test';
 test('Both global reports explain native mortality versus QALY estimates',async({page})=>{
  for(const [slug,price] of [['against-malaria-foundation','$5,500'],['new-incentives','$4,500']]){
@@ -10,5 +11,5 @@ test('Both global reports explain native mortality versus QALY estimates',async(
  const d=await(await page.request.get('/api/givewell-reconciliation')).json();
  expect(d.comparisons[0].illustrative50Conversion.usdPer10Qalys).toBe(1100);
  expect(d.comparisons[1].illustrative50Conversion.usdPer10Qalys).toBe(900);
- await page.goto('/research');await expect(page.locator('table')).toHaveCount(1);await expect(page.locator('[data-research-slug]')).toHaveCount(53);
+ await page.goto('/research');await expect(page.locator('table')).toHaveCount(1);await expect(page.locator('[data-research-slug]')).toHaveCount(EXPECTED_RESEARCH_COUNT);
 });

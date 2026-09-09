@@ -1,6 +1,7 @@
+import {EXPECTED_RESEARCH_COUNT} from './research-contract';
 import {test,expect} from '@playwright/test';
 test('Vision To Learn report has separate national and local estimates',async({page})=>{
- await page.goto('/research');await expect(page.locator('[data-research-slug]')).toHaveCount(53);
+ await page.goto('/research');await expect(page.locator('[data-research-slug]')).toHaveCount(EXPECTED_RESEARCH_COUNT);
  const row=page.locator('[data-research-slug="vision-to-learn"]');await expect(row).toContainText('$53.4M');
  await row.locator('a').first().click();await expect(page.getByRole('heading',{level:1,name:'Vision To Learn'})).toBeVisible();
  const d=await(await page.request.get('/api/vision-to-learn-model')).json();expect(d.evaluated).toHaveLength(11);expect(d.evaluated[0].donor_per10_sf).toBeCloseTo(53429092,0);

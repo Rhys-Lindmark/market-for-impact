@@ -1,5 +1,13 @@
 # San Francisco giving — active phase plan
 
+## Authoritative checkpoint — September9,05:22UTC
+
+**67/115 published and canonical-verified.** Via Heart66: PR248/v168,2629073bd1223c1a6a1c75ea472b489e06a2a02d. SIRUM67: PR250/v169,4ca834e9a99c27ca94e75f8c922778cdb653d66f. Clinic count-neutral whole-gift correction and report text wrapping: PR251/v170,a309acd5831406c1d0a101ae2e66338cd6f45dfc, successful05:22:05Z. Canonical390/768 report/API/67-row checks pass for both SIRUM and Clinic.446repository tests, lint0errors/3existingwarnings, productionbuild,14focused tests pass. Full GitHub mobile248 and250passed;251pending at checkpoint.
+
+Critical methodological correction: a full gift divided by a small selected subset of benefits is not automatically an expected whole-organization return. DraftPR249 preserves GLIDE/Breathe/OA/PVF diagnostic revisions; OA expanded named-case-mix v2 is independently accepted for integration, GLIDE/Breathe still explicitly incomplete clinical diagnostics. Clinic now includes major medical care and named residual pathways, with subjective signed-health expectation and prominent weight sensitivity. No model revision adds an organization count.
+
+Workers return to high-EV new research: New Eyes and ReCARES, with independent source/model review. OA integration next includes matching homepage summary (PHC may replace OA mechanically) and mobile/ranking verification; do not introduce HSC without resolving recipient/overlap policy. Current scope counts:50SF,4Bay,2CA,6US,5international. Extra national reports do not silently satisfy remaining California/local cohort requirements. Explicit pause controls and115goal remain active. Current block start04:21:29Z; actual end recorded only in shared log.
+
 ## Authoritative checkpoint — September9,04:17UTC
 
 **65/115 published and canonical-verified.** Added CaliforniaWalks61(PR241/v163), Fistula62(PR242/v164), HealthierKids63(PR243/v165), HRT64(PR245/v166), NEXT65(PR246/v167). Latest exact065bdccf95e73d1c8bc266a7b5d010b095b559f7; successful deployment04:16:43Z, canonical390/768 report/API/65-row index verified.438tests, productionbuild,14focused checks passed. Full GitHub mobile244/245passed;246pending at snapshot.

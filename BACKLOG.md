@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Current authoritative checkpoint —67/115
+
+ViaHeart66 and SIRUM67 published; Clinic whole-organization correction count-neutral. Latest live exacta309acd5831406c1d0a101ae2e66338cd6f45dfc (PR251/v170) canonical390/768 reports/APIs/index verified,446tests,14focused checks/build pass. Source and current plan: docs/sf-progress.md/json. Earlier publication-pending entries are historical. Next new candidates NewEyes/ReCARES; accepted OA v2 awaits homepage-aware integration. GLIDE/Breathe partial-coverage diagnostics must not be called whole-org expected returns; draftPR249 preserves research. Never inflate count with revisions/screens or tune estimates toward100K.
+
 ## Clinic by the Bay — accepted whole-organization correction
 
 Count unchanged67 once SIRUM canonical mobile verification completes. Clinic now models named medical, dental, mental-health and residual-service pathways across the whole gift, not selected extractions alone. Subjective signed-health expectation: $2.861M/10 SF QALYs; unweighted central $11.396M; favorable15% drives82.6%of expected health. Explicit weight stresses and finite funded-course costs retained.4655 independent/38854 author checks;446 repository tests, lint/build pass. Old dental model/API preserved for historical inspection. Correct a six-pixel SIRUM phone overflow by wrapping long scenario text, with report-level regression assertions rather than clipping content. OA/GLIDE coverage corrections follow; PR249 remains diagnostic draft.

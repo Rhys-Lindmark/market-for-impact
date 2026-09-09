@@ -8,6 +8,7 @@ function parity(a:unknown,e:unknown):void {
 test('SIRUM preserves finite courses, whole gift and unpriced SF benefit',async({page,request})=>{
  await page.goto('/charities/sirum');await expect(page.getByRole('heading',{level:1})).toHaveText('SIRUM');
  await expect(page.locator('article')).toContainText('$130,983');await expect(page.locator('article')).toContainText('residual');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
  const links=page.getByRole('link',{name:'Donate',exact:true});await expect(links).toHaveCount(2);for(const link of await links.all())await expect(link).toHaveAttribute('href','https://sirum.org/support-our-work/');
  const response=await request.get('/api/sirum-model');expect(response.ok()).toBe(true);const data=await response.json();expect(data.evaluated).toHaveLength(21);
  for(const[i,s]of data.model.scenarios.entries())parity(data.evaluated[i],{id:s.id,...calculate({...data.model.central,...s.overrides})});
@@ -15,4 +16,3 @@ test('SIRUM preserves finite courses, whole gift and unpriced SF benefit',async(
  await page.goto('/research');const row=page.locator('[data-research-slug="sirum"]');await expect(row).toContainText('(U.S.)');await expect(row).not.toContainText('$131K');
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 });
-

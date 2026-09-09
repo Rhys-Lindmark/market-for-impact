@@ -1,0 +1,1277 @@
+{
+  "organization": "Clinic by the Bay",
+  "program": "Ordinary-gift expected health: dental, counseling, hypertension and residual care",
+  "eyebrow": "SAN FRANCISCO · WHOLE-GIFT · EXPLICIT SUBJECTIVE EXPECTATION",
+  "donationUrl": "https://www.clinicbythebay.org/donate",
+  "published": "9 September 2026 UTC",
+  "modelVersion": "clinic-whole-gift-expected-portfolio-v2",
+  "nutshell": {
+    "headline": "Our expected ordinary-gift estimate includes major medical care, not just selected extractions.",
+    "body": "For a $100,000 ordinary gift, our subjective expected donor cost per 10 QALYs is $2,002,578 across all recipients, $2,002,578 in the Bay Area and $2,860,825 in SF. Expected gross associated resource prices are $3,967,448, $3,967,448 and $5,667,783 respectively. This averages signed health across explicitly weighted scenarios (70% central,15% favorable,10% cautious,5% no additional funding), not positive-only ratios. It adds selected hypertension care and uncertain residual morbidity to dental relief and counseling. The unweighted central SF donor scenario is $11,395,651. These are weak, judgment-heavy best estimates, not measured clinic impact or confidence bounds.",
+    "whyItMayWork": "Sustained treatment of hypertension can reduce mortality; dental, mental and other medical care can bring symptom/function improvement sooner.",
+    "whyWeAreCautious": "Gift allocation and named service-mix priors are unobserved locally. Favorable15% supplies 82.6%of expectedQ; zero favorable weight raises expected SF donor price to$13,517,426.",
+    "recommendationBlocker": "Validate ordinary-gift service capacity, patient mix and current-care contrast; measure utilities and linked unique outcomes. Use expectation-weight and residual-null sensitivities before treating the ranking as robust."
+  },
+  "summary": [
+    {
+      "label": "SUBJECTIVE EXPECTED — SF",
+      "value": "$2,860,825",
+      "detail": "Whole gift divided by expected signed direct SF QALYs; weak scenario-weight priors."
+    },
+    {
+      "label": "EXPECTED GROSS RESOURCES — SF",
+      "value": "$5,667,783",
+      "detail": "Ratio of expected gross associated costs to expected health; not full net societal ICER."
+    },
+    {
+      "label": "CENTRAL SCENARIO — SF",
+      "value": "$11,395,651",
+      "detail": "Not equal to expectation; favorable tail materially affects mean."
+    },
+    {
+      "label": "FUNDING ROOM",
+      "value": "Unknown",
+      "detail": "Capacity and displacement are explicit priors, not a priced additional-care offer."
+    }
+  ],
+  "programSection": {
+    "body": "Clinic by the Bay is Volunteers in Medicine – San Francisco, EIN 26-2593712. It supplies free medical, dental, mental-health and food-pharmacy services. Dental access requires being an active medical patient; exams, cleaning and prevention are not completed pain treatment. Its current dental scope includes simple fillings/extractions but not root canals or tooth replacement. Counseling is short-term; psychiatry is monthly. The organization reports no government or insurance receipts, but public and other free-care alternatives remain relevant. The medical model now includes a selected hypertensive annual-care cohort and an explicit uncertain residual person-course model for the other health-bearing activities.",
+    "steps": [
+      {
+        "title": "Fund the full portfolio",
+        "detail": "Retain all $100K:20%dental,15%mental,55%medical,10%food/other, including allocated support. BP courses use30% of medical spending centrally. Remaining budget after selected dental/counseling/BP course shares enters the residual model; no second spending allocation is added."
+      },
+      {
+        "title": "Count distinct annual patient courses",
+        "detail": "One patient-period ledger assigns dental, counseling, BP then residual. Unique fractions explicitly remove overlap and repeats. These are priors; downstream effects must be reconciled before combining other organizations."
+      },
+      {
+        "title": "Model finite clinical effects and residual uncertainty",
+        "detail": "BP survival differs only during funded effective care after latency; equal hazards afterward to10year horizon. Six named residual service groups each have distinct course cost, target/response, signed utility and finite catchup/horizon: acute/rheumatology, non-BP medication care, completed referrals, other dental, other mental, and food support."
+      }
+    ],
+    "boundary": "Whole-gift expected direct-health model with four explicit branches. Residual aggregate priors are much weaker than trial-anchored BP evidence. Rare preventive tails and indirect effects remain unresolved rather than asserted absent; sensitivity must expose their possible materiality. SF nests within Bay, not an additive second population."
+  },
+  "model": {
+    "headline": "$2,860,825 expected donor dollars per 10 direct SF QALYs",
+    "body": "Central components: dental0.03478304880Q; counseling0.009869798320; BP0.01690422578; six residual groups together0.06380403741. BP uses HDFP assignment-level systematic-care versus community-referral evidence, not untreated all-visits effects. Six group-specific residual priors replace the generic uplift; service availability is sourced, but numeric illness mix and utility are explicitly weak judgments. Non-BP medical spending splits40%acute/rheumatology,40%other symptomatic chronic medication care and20%completed specialty pathways. Each cohort is counted once.",
+    "equation": {
+      "label": "EXPECTED FULL-GIFT PRICE",
+      "expression": "Q=Q_dental+Q_counseling+Q_BP+Σ_g N_g[target_g×response_g×signed utility_g×discount(delay)×F(catchup_g+m+r,H_g)−harm]−independent harm; N_g is unique additional patient-courses from its partitioned whole-gift budget, capped jointly; E[Q]=Σscenario w_i×signed Q_i; donor price=10G/E[Q_SF], only if positive.",
+      "result": "$2,860,825"
+    },
+    "inputColumnLabel": "Central prior",
+    "inputs": [
+      {
+        "key": "gift_usd",
+        "label": "gift usd",
+        "confidence": "Analyst prior unless stated otherwise",
+        "best": "100000",
+        "range": "100000 / 1000000",
+        "basis": "Hypothetical ordinary unrestricted gift; not a quoted tranche."
+      },
+      {
+        "key": "funding_additionality",
+        "label": "funding additionality",
+        "confidence": "Analyst prior unless stated otherwise",
+        "best": "0.5",
+        "range": "0.5 / 0.75 / 0.25 / 0",
+        "basis": "Fraction expanding or preserving otherwise-lost care after replacement of existing donors; distinct from alternative care after treatment starts."
+      },
+      {
+        "key": "dental_allocation",
+        "label": "dental allocation",
+        "confidence": "Analyst prior unless stated otherwise",
+        "best": "0.2",
+        "range": "0.2 / 0.1 / 0.3",
+        "basis": "Fully loaded ordinary-gift share for all dental work, not just painful teeth; judgment from new two-day dental service within broader medical clinic."
+      },
+      {
+        "key": "mental_allocation",
+        "label": "mental allocation",
+        "confidence": "Analyst prior unless stated otherwise",
+        "best": "0.15",
+        "range": "0.15 / 0.05 / 0.25",
+        "basis": "Fully loaded ordinary-gift share for counseling and psychiatry; specialty spending not disclosed."
+      },
+      {
+        "key": "medical_allocation",
+        "label": "medical allocation",
+        "confidence": "Analyst prior unless stated otherwise",
+        "best": "0.55",
+        "range": "0.55 / 0.75 / 0.35",
+        "basis": "General medical, chronic care, prescriptions and referral support; health left unquantified."
+      },
+      {
+        "key": "food_other_allocation",
+        "label": "food other allocation",
+        "confidence": "Analyst prior unless stated otherwise",
+        "best": "0.1",
+        "range": "0.1",
+        "basis": "Food pharmacy and remaining services; health left unquantified. All four shares sum to one."
+      },
+      {
+        "key": "dental_episode_cost",
+        "label": "dental episode cost",
+        "confidence": "Analyst prior unless stated otherwise",
+        "best": "600",
+        "range": "600 / 350 / 1000",
+        "basis": "Average fully loaded cost per nominal all-dental course, not only selected extraction. Target and non-target shares partition that activity; non-target budget feeds residual model without adding donor cost. Salary-oriented prior, not measured throughput."
+      },
+      {
+        "key": "mental_course_cost",
+        "label": "mental course cost",
+        "confidence": "Analyst prior unless stated otherwise",
+        "best": "1200",
+        "range": "1200 / 700 / 2200",
+        "basis": "All-in mental-health course budget, independent prior: roughly eight funded/coordinated contacts at $150, including overhead and unsuccessful attempts; not clinic quote."
+      },
+      {
+        "key": "dental_target",
+        "label": "dental target",
+        "confidence": "Analyst prior unless stated otherwise",
+        "best": "0.4",
+        "range": "0.4 / 0.65 / 0.2",
+        "basis": "Share of dental courses with severe pain and clinically indicated simple extraction; no credit to cleanings/exams/fillings here."
+      },
+      {
+        "key": "mental_target",
+        "label": "mental target",
+        "confidence": "Analyst prior unless stated otherwise",
+        "best": "0.6",
+        "range": "0.6 / 0.8 / 0.3",
+        "basis": "Share of mental-health courses suitable for short-term counseling of depressive symptoms; exclude psychiatry-only and unsupported diagnoses."
+      },
+      {
+        "key": "dental_completion",
+        "label": "dental completion",
+        "confidence": "Analyst prior unless stated otherwise",
+        "best": "0.8",
+        "range": "0.8 / 0.95 / 0.6",
+        "basis": "Completed definitive care conditional on initiated target course; no credit to emergency exam alone."
+      },
+      {
+        "key": "mental_completion",
+        "label": "mental completion",
+        "confidence": "Analyst prior unless stated otherwise",
+        "best": "0.7",
+        "range": "0.7 / 0.9 / 0.5",
+        "basis": "Fraction reaching an adequate local counseling dose; full attempt costs retained."
+      },
+      {
+        "key": "dental_unique",
+        "label": "dental unique",
+        "confidence": "Analyst prior unless stated otherwise",
+        "best": "0.9",
+        "range": "0.9 / 1",
+        "basis": "Unique patient-period fraction; repeat teeth and repeat episodes excluded from additional utility summation."
+      },
+      {
+        "key": "mental_disjoint",
+        "label": "mental disjoint",
+        "confidence": "Analyst prior unless stated otherwise",
+        "best": "0.8",
+        "range": "0.8 / 0.95 / 0",
+        "basis": "Unique counseling patient-period fraction after excluding every dental-credited person and repeat courses; unknown linked-data prior."
+      },
+      {
+        "key": "dental_capacity",
+        "label": "dental capacity",
+        "confidence": "Analyst prior unless stated otherwise",
+        "best": "30",
+        "range": "30 / 0",
+        "basis": "Maximum additional completed unique target patients in gift cohort; unverified capacity prior."
+      },
+      {
+        "key": "mental_capacity",
+        "label": "mental capacity",
+        "confidence": "Analyst prior unless stated otherwise",
+        "best": "20",
+        "range": "20 / 0",
+        "basis": "Maximum additional completed disjoint counseling patients; unverified capacity prior."
+      },
+      {
+        "key": "dental_utility",
+        "label": "dental utility",
+        "confidence": "Analyst prior unless stated otherwise",
+        "best": "0.04",
+        "range": "0.04 / 0.12 / 0.01 / 0 / -0.02",
+        "basis": "Signed relief utility prior, loosely oriented by nonsignificant Swedish extraction before/after EQ5D .77 to .81; not a causal estimate."
+      },
+      {
+        "key": "dental_resolution",
+        "label": "dental resolution",
+        "confidence": "Analyst prior unless stated otherwise",
+        "best": "0.8",
+        "range": "0.8 / 0.95",
+        "basis": "Successful pain resolution conditional on completed extraction, separate from course completion."
+      },
+      {
+        "key": "dental_catchup",
+        "label": "dental catchup",
+        "confidence": "Analyst prior unless stated otherwise",
+        "best": "4",
+        "range": "4 / 1 / 12 / 20 / 0",
+        "basis": "Annual no-gift alternative-treatment/spontaneous symptom-resolution hazard, conditional on successful early treatment; central mean .25 years before hard cap."
+      },
+      {
+        "key": "dental_horizon",
+        "label": "dental horizon",
+        "confidence": "Analyst prior unless stated otherwise",
+        "best": "1",
+        "range": "1 / 0.04",
+        "basis": "Hard maximum years of earlier relief after care begins, never lifetime."
+      },
+      {
+        "key": "dental_delay",
+        "label": "dental delay",
+        "confidence": "Analyst prior unless stated otherwise",
+        "best": "0.15",
+        "range": "0.15 / 0",
+        "basis": "Years until care starts; cohorts conditioned alive at start, delay discounts only."
+      },
+      {
+        "key": "dental_harm",
+        "label": "dental harm",
+        "confidence": "Analyst prior unless stated otherwise",
+        "best": "0.0005",
+        "range": "0.0005 / 0.0002 / 0.001 / 0",
+        "basis": "Gift-date PV incremental procedural/tooth-function QALY loss per additional completed unique patient; net of eventual alternative-care harm."
+      },
+      {
+        "key": "mental_utility",
+        "label": "mental utility",
+        "confidence": "Analyst prior unless stated otherwise",
+        "best": "0.03",
+        "range": "0.03 / 0.07 / 0.005 / 0 / -0.02",
+        "basis": "Signed initial counseling utility advantage: independent prior, NOT Beck-score to EQ5D conversion."
+      },
+      {
+        "key": "mental_fidelity",
+        "label": "mental fidelity",
+        "confidence": "Analyst prior unless stated otherwise",
+        "best": "0.6",
+        "range": "0.6 / 0.9 / 0.3 / 0",
+        "basis": "Local effect-size transfer prior among adequate-dose completers; no claim clinic replicates trained trial therapists."
+      },
+      {
+        "key": "mental_catchup",
+        "label": "mental catchup",
+        "confidence": "Analyst prior unless stated otherwise",
+        "best": "1.5",
+        "range": "1.5 / 0.5 / 4 / 10 / 0",
+        "basis": "Additional local alternative-care attenuation beyond imposed one-year fading; accounts for accessible public/free mental care."
+      },
+      {
+        "key": "mental_horizon",
+        "label": "mental horizon",
+        "confidence": "Analyst prior unless stated otherwise",
+        "best": "1",
+        "range": "1",
+        "basis": "Counseling utility fades linearly to zero by one year after start; no residual lifetime mental-health benefit."
+      },
+      {
+        "key": "mental_delay",
+        "label": "mental delay",
+        "confidence": "Analyst prior unless stated otherwise",
+        "best": "0.15",
+        "range": "0.15 / 0",
+        "basis": "Care start delay, discounts only for an alive-at-start cohort."
+      },
+      {
+        "key": "mental_harm",
+        "label": "mental harm",
+        "confidence": "Analyst prior unless stated otherwise",
+        "best": "0.001",
+        "range": "0.001 / 0.0002 / 0.002 / 0",
+        "basis": "Gift-date PV incremental burden/adverse effects per additional completed unique counseling patient; clinical deterioration already in signed utility excluded."
+      },
+      {
+        "key": "mortality",
+        "label": "mortality",
+        "confidence": "Analyst prior unless stated otherwise",
+        "best": "0.01",
+        "range": "0.01 / 0",
+        "basis": "Annual competing all-cause hazard during finite benefit, not a mortality reduction claim."
+      },
+      {
+        "key": "discount",
+        "label": "discount",
+        "confidence": "Analyst prior unless stated otherwise",
+        "best": "0.03",
+        "range": "0.03 / 0",
+        "basis": "Continuous annual health discount rate."
+      },
+      {
+        "key": "bay_share",
+        "label": "bay share",
+        "confidence": "Analyst prior unless stated otherwise",
+        "best": "1",
+        "range": "1 / 0",
+        "basis": "Direct Bay Area fraction; intended clinic catchment; no measured marginal residency split."
+      },
+      {
+        "key": "sf_share",
+        "label": "sf share",
+        "confidence": "Analyst prior unless stated otherwise",
+        "best": "0.7",
+        "range": "0.7 / 0.3 / 0",
+        "basis": "Direct SF subset of Bay Area; weak prior from SF and San Mateo mission, not proof clinic location equals resident location."
+      },
+      {
+        "key": "volunteer_resource_per_donor",
+        "label": "volunteer resource per donor",
+        "confidence": "Analyst prior unless stated otherwise",
+        "best": "0.6",
+        "range": "0.6 / 2",
+        "basis": "Additional gross associated volunteer opportunity-cost allowance per donor dollar, not a clinic valuation or incremental net cost."
+      },
+      {
+        "key": "external_resource_per_donor",
+        "label": "external resource per donor",
+        "confidence": "Analyst prior unless stated otherwise",
+        "best": "0.15",
+        "range": "0.15 / 1",
+        "basis": "Outside support for original dental/mental branches and common patient support only; BP/residual per-course allowances exclude these costs."
+      },
+      {
+        "key": "independent_harm_q",
+        "label": "independent harm q",
+        "confidence": "Analyst prior unless stated otherwise",
+        "best": "0",
+        "range": "0 / 0.1",
+        "basis": "Gift-date PV QALY loss independent of expanded care; separate from per-patient harms."
+      },
+      {
+        "key": "bp_medical_fraction",
+        "label": "bp medical fraction",
+        "confidence": "Explicit analyst prior",
+        "best": "0.3",
+        "range": "0.3 / 0.4 / 0.15 / 0",
+        "basis": "General-medical budget fraction for HDFP-like hypertensive adults ages30–69/DBP≥90; unknown local case mix, not all visits."
+      },
+      {
+        "key": "bp_course_cost",
+        "label": "bp course cost",
+        "confidence": "Explicit analyst prior",
+        "best": "1500",
+        "range": "1500 / 1000 / 2500",
+        "basis": "Fully loaded annual systematic-care cost: six contacts at$200 plus$300 drugs/labs; multiply by max(1,funded years), so longer care never costs only one year."
+      },
+      {
+        "key": "bp_unique",
+        "label": "bp unique",
+        "confidence": "Explicit analyst prior",
+        "best": "0.8",
+        "range": "0.8",
+        "basis": "Unique annual patients after excluding dental/counseling patient-periods and repeats."
+      },
+      {
+        "key": "bp_capacity",
+        "label": "bp capacity",
+        "confidence": "Explicit analyst prior",
+        "best": "30",
+        "range": "30 / 0",
+        "basis": "Unverified additional unique annual-course capacity."
+      },
+      {
+        "key": "bp_baseline_hazard",
+        "label": "bp baseline hazard",
+        "confidence": "Explicit analyst prior",
+        "best": "0.016",
+        "range": "0.016",
+        "basis": "Current-care all-cause annual mortality prior near annualized HDFP referral arm, not untreated mortality."
+      },
+      {
+        "key": "bp_relative_hazard",
+        "label": "bp relative hazard",
+        "confidence": "Primary-trial-derived approximation",
+        "best": "0.8254469933511347",
+        "range": "0.8254469933511347 / 1 / 1.2",
+        "basis": "Constant-hazard approximation from HDFP5y risks6.4%stepped versus7.7%community referral; not observed first-year HR."
+      },
+      {
+        "key": "bp_modern_gap",
+        "label": "bp modern gap",
+        "confidence": "Explicit analyst prior",
+        "best": "0.5",
+        "range": "0.5 / 0.8 / 0.1 / 0",
+        "basis": "Remaining opportunity relative to historical referral comparator after modern public/free access, not fraction never treated."
+      },
+      {
+        "key": "bp_delivery_transfer",
+        "label": "bp delivery transfer",
+        "confidence": "Explicit analyst prior",
+        "best": "0.75",
+        "range": "0.75 / 1 / 0.3",
+        "basis": "Implementation relative to trial assignment effect; no second multiplication by absolute trial adherence."
+      },
+      {
+        "key": "bp_active_years",
+        "label": "bp active years",
+        "confidence": "Explicit analyst prior",
+        "best": "1",
+        "range": "1 / 5",
+        "basis": "Funded exposure; hazards equal comparator after this period."
+      },
+      {
+        "key": "bp_latency",
+        "label": "bp latency",
+        "confidence": "Explicit analyst prior",
+        "best": "0.25",
+        "range": "0.25 / 0 / 0.75 / 1",
+        "basis": "Initial delay before any hazard effect within the funded exposure."
+      },
+      {
+        "key": "bp_horizon",
+        "label": "bp horizon",
+        "confidence": "Explicit analyst prior",
+        "best": "10",
+        "range": "10 / 3",
+        "basis": "Finite survival followup after care start; no permanent risk reduction."
+      },
+      {
+        "key": "bp_delay",
+        "label": "bp delay",
+        "confidence": "Explicit analyst prior",
+        "best": "0.15",
+        "range": "0.15",
+        "basis": "Discount-only start delay, cohort alive at service start."
+      },
+      {
+        "key": "bp_utility",
+        "label": "bp utility",
+        "confidence": "Explicit analyst prior",
+        "best": "0.75",
+        "range": "0.75",
+        "basis": "Utility among living high-risk cohort, independent prior."
+      },
+      {
+        "key": "bp_harm",
+        "label": "bp harm",
+        "confidence": "Explicit analyst prior",
+        "best": "0.0005",
+        "range": "0.0005 / 0",
+        "basis": "Gift-date PV nonfatal incremental treatment harm; fatal effects already inside signed mortality contrast."
+      },
+      {
+        "key": "bp_external_per_course",
+        "label": "bp external per course",
+        "confidence": "Explicit analyst prior",
+        "best": "300",
+        "range": "300",
+        "basis": "Annual outside BP clinical/patient-time cost, multiplied by max(1,funded years); donor-paid and common original-branch support excluded."
+      },
+      {
+        "key": "residual_unique",
+        "label": "residual unique",
+        "confidence": "Explicit analyst prior",
+        "best": "0.65",
+        "range": "0.65",
+        "basis": "Unique residual patient-periods after excluding all credited cohorts/repeats; full costs retained."
+      },
+      {
+        "key": "residual_capacity",
+        "label": "residual capacity",
+        "confidence": "Explicit analyst prior",
+        "best": "100",
+        "range": "100 / 0",
+        "basis": "Unknown additional unique annual-course capacity prior."
+      },
+      {
+        "key": "residual_delay",
+        "label": "residual delay",
+        "confidence": "Explicit analyst prior",
+        "best": "0.15",
+        "range": "0.15",
+        "basis": "Discount-only delay; cohort alive at start."
+      },
+      {
+        "key": "residual_harm",
+        "label": "residual harm",
+        "confidence": "Explicit analyst prior",
+        "best": "0.0005",
+        "range": "0.0005 / 0.001 / 0",
+        "basis": "Gift-date PV incremental harm outside signed utility, per additional unique course."
+      },
+      {
+        "key": "acute_cost",
+        "label": "acute cost",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "1000",
+        "range": "1000 / 750 / 1500",
+        "basis": "Fully loaded nominal patient-course cost. 40% of non-BP medical budget; short symptomatic courses, mixed acute/rheumatology need; no automatic disease cure. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+      },
+      {
+        "key": "acute_target",
+        "label": "acute target",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "0.5",
+        "range": "0.5 / 0.75 / 0.25",
+        "basis": "Share with completed/actionable burden-bearing care. 40% of non-BP medical budget; short symptomatic courses, mixed acute/rheumatology need; no automatic disease cure. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+      },
+      {
+        "key": "acute_utility",
+        "label": "acute utility",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "0.06",
+        "range": "0.06 / 0.09 / 0.015 / 0 / -0.02 / 0.12",
+        "basis": "Signed utility change conditional on response. 40% of non-BP medical budget; short symptomatic courses, mixed acute/rheumatology need; no automatic disease cure. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+      },
+      {
+        "key": "acute_response",
+        "label": "acute response",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "0.7",
+        "range": "0.7 / 0.84 / 0.35",
+        "basis": "Meaningful symptom/function response. 40% of non-BP medical budget; short symptomatic courses, mixed acute/rheumatology need; no automatic disease cure. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+      },
+      {
+        "key": "acute_catchup",
+        "label": "acute catchup",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "4",
+        "range": "4 / 2 / 8",
+        "basis": "Annual alternative-care/spontaneous catchup. 40% of non-BP medical budget; short symptomatic courses, mixed acute/rheumatology need; no automatic disease cure. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+      },
+      {
+        "key": "acute_horizon",
+        "label": "acute horizon",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "0.5",
+        "range": "0.5 / 1",
+        "basis": "Hard post-care benefit horizon. 40% of non-BP medical budget; short symptomatic courses, mixed acute/rheumatology need; no automatic disease cure. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+      },
+      {
+        "key": "acute_external",
+        "label": "acute external",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "100",
+        "range": "100",
+        "basis": "Outside clinical/patient-time cost beyond donor/volunteer/common support. 40% of non-BP medical budget; short symptomatic courses, mixed acute/rheumatology need; no automatic disease cure. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+      },
+      {
+        "key": "chronic_cost",
+        "label": "chronic cost",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "1500",
+        "range": "1500 / 1125 / 2250",
+        "basis": "Fully loaded nominal patient-course cost. 40% of non-BP medical budget; sustained symptom control in selected chronic illness, not diabetes education→mortality or broad preventive event credit. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+      },
+      {
+        "key": "chronic_target",
+        "label": "chronic target",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "0.4",
+        "range": "0.4 / 0.6000000000000001 / 0.2",
+        "basis": "Share with completed/actionable burden-bearing care. 40% of non-BP medical budget; sustained symptom control in selected chronic illness, not diabetes education→mortality or broad preventive event credit. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+      },
+      {
+        "key": "chronic_utility",
+        "label": "chronic utility",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "0.03",
+        "range": "0.03 / 0.045 / 0.0075 / 0 / -0.02 / 0.06",
+        "basis": "Signed utility change conditional on response. 40% of non-BP medical budget; sustained symptom control in selected chronic illness, not diabetes education→mortality or broad preventive event credit. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+      },
+      {
+        "key": "chronic_response",
+        "label": "chronic response",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "0.65",
+        "range": "0.65 / 0.78 / 0.325",
+        "basis": "Meaningful symptom/function response. 40% of non-BP medical budget; sustained symptom control in selected chronic illness, not diabetes education→mortality or broad preventive event credit. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+      },
+      {
+        "key": "chronic_catchup",
+        "label": "chronic catchup",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "1.5",
+        "range": "1.5 / 0.75 / 3",
+        "basis": "Annual alternative-care/spontaneous catchup. 40% of non-BP medical budget; sustained symptom control in selected chronic illness, not diabetes education→mortality or broad preventive event credit. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+      },
+      {
+        "key": "chronic_horizon",
+        "label": "chronic horizon",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "1",
+        "range": "1 / 2",
+        "basis": "Hard post-care benefit horizon. 40% of non-BP medical budget; sustained symptom control in selected chronic illness, not diabetes education→mortality or broad preventive event credit. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+      },
+      {
+        "key": "chronic_external",
+        "label": "chronic external",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "300",
+        "range": "300",
+        "basis": "Outside clinical/patient-time cost beyond donor/volunteer/common support. 40% of non-BP medical budget; sustained symptom control in selected chronic illness, not diabetes education→mortality or broad preventive event credit. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+      },
+      {
+        "key": "referral_cost",
+        "label": "referral cost",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "3000",
+        "range": "3000 / 2250 / 4500",
+        "basis": "Fully loaded nominal patient-course cost. 20% of non-BP medical budget; target fraction requires completed actionable specialty care, not a referral alone. External actual treatment resources modeled separately. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+      },
+      {
+        "key": "referral_target",
+        "label": "referral target",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "0.3",
+        "range": "0.3 / 0.44999999999999996 / 0.15",
+        "basis": "Share with completed/actionable burden-bearing care. 20% of non-BP medical budget; target fraction requires completed actionable specialty care, not a referral alone. External actual treatment resources modeled separately. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+      },
+      {
+        "key": "referral_utility",
+        "label": "referral utility",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "0.1",
+        "range": "0.1 / 0.15000000000000002 / 0.025 / 0 / -0.02 / 0.2",
+        "basis": "Signed utility change conditional on response. 20% of non-BP medical budget; target fraction requires completed actionable specialty care, not a referral alone. External actual treatment resources modeled separately. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+      },
+      {
+        "key": "referral_response",
+        "label": "referral response",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "0.7",
+        "range": "0.7 / 0.84 / 0.35",
+        "basis": "Meaningful symptom/function response. 20% of non-BP medical budget; target fraction requires completed actionable specialty care, not a referral alone. External actual treatment resources modeled separately. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+      },
+      {
+        "key": "referral_catchup",
+        "label": "referral catchup",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "1",
+        "range": "1 / 0.5 / 2",
+        "basis": "Annual alternative-care/spontaneous catchup. 20% of non-BP medical budget; target fraction requires completed actionable specialty care, not a referral alone. External actual treatment resources modeled separately. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+      },
+      {
+        "key": "referral_horizon",
+        "label": "referral horizon",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "2",
+        "range": "2 / 3",
+        "basis": "Hard post-care benefit horizon. 20% of non-BP medical budget; target fraction requires completed actionable specialty care, not a referral alone. External actual treatment resources modeled separately. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+      },
+      {
+        "key": "referral_external",
+        "label": "referral external",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "3000",
+        "range": "3000",
+        "basis": "Outside clinical/patient-time cost beyond donor/volunteer/common support. 20% of non-BP medical budget; target fraction requires completed actionable specialty care, not a referral alone. External actual treatment resources modeled separately. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/services"
+      },
+      {
+        "key": "dental_other_cost",
+        "label": "dental other cost",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "600",
+        "range": "600 / 450 / 900",
+        "basis": "Fully loaded nominal patient-course cost. All nonselected dental budget; only a minority have responsive symptomatic disease. Cleanings/prevention not assigned lifelong benefit. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/dental"
+      },
+      {
+        "key": "dental_other_target",
+        "label": "dental other target",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "0.25",
+        "range": "0.25 / 0.375 / 0.125",
+        "basis": "Share with completed/actionable burden-bearing care. All nonselected dental budget; only a minority have responsive symptomatic disease. Cleanings/prevention not assigned lifelong benefit. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/dental"
+      },
+      {
+        "key": "dental_other_utility",
+        "label": "dental other utility",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "0.04",
+        "range": "0.04 / 0.06 / 0.01 / 0 / -0.02 / 0.08",
+        "basis": "Signed utility change conditional on response. All nonselected dental budget; only a minority have responsive symptomatic disease. Cleanings/prevention not assigned lifelong benefit. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/dental"
+      },
+      {
+        "key": "dental_other_response",
+        "label": "dental other response",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "0.8",
+        "range": "0.8 / 0.96 / 0.4",
+        "basis": "Meaningful symptom/function response. All nonselected dental budget; only a minority have responsive symptomatic disease. Cleanings/prevention not assigned lifelong benefit. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/dental"
+      },
+      {
+        "key": "dental_other_catchup",
+        "label": "dental other catchup",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "4",
+        "range": "4 / 2 / 8",
+        "basis": "Annual alternative-care/spontaneous catchup. All nonselected dental budget; only a minority have responsive symptomatic disease. Cleanings/prevention not assigned lifelong benefit. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/dental"
+      },
+      {
+        "key": "dental_other_horizon",
+        "label": "dental other horizon",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "1",
+        "range": "1 / 2",
+        "basis": "Hard post-care benefit horizon. All nonselected dental budget; only a minority have responsive symptomatic disease. Cleanings/prevention not assigned lifelong benefit. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/dental"
+      },
+      {
+        "key": "dental_other_external",
+        "label": "dental other external",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "150",
+        "range": "150",
+        "basis": "Outside clinical/patient-time cost beyond donor/volunteer/common support. All nonselected dental budget; only a minority have responsive symptomatic disease. Cleanings/prevention not assigned lifelong benefit. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/dental"
+      },
+      {
+        "key": "mental_other_cost",
+        "label": "mental other cost",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "1000",
+        "range": "1000 / 750 / 1500",
+        "basis": "Fully loaded nominal patient-course cost. All nonselected mental budget; symptomatic anxiety/other psychiatry supported monthly, not depressive counseling credited twice. No suicide mortality claim. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/dental-1"
+      },
+      {
+        "key": "mental_other_target",
+        "label": "mental other target",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "0.5",
+        "range": "0.5 / 0.75 / 0.25",
+        "basis": "Share with completed/actionable burden-bearing care. All nonselected mental budget; symptomatic anxiety/other psychiatry supported monthly, not depressive counseling credited twice. No suicide mortality claim. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/dental-1"
+      },
+      {
+        "key": "mental_other_utility",
+        "label": "mental other utility",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "0.04",
+        "range": "0.04 / 0.06 / 0.01 / 0 / -0.02 / 0.08",
+        "basis": "Signed utility change conditional on response. All nonselected mental budget; symptomatic anxiety/other psychiatry supported monthly, not depressive counseling credited twice. No suicide mortality claim. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/dental-1"
+      },
+      {
+        "key": "mental_other_response",
+        "label": "mental other response",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "0.6",
+        "range": "0.6 / 0.72 / 0.3",
+        "basis": "Meaningful symptom/function response. All nonselected mental budget; symptomatic anxiety/other psychiatry supported monthly, not depressive counseling credited twice. No suicide mortality claim. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/dental-1"
+      },
+      {
+        "key": "mental_other_catchup",
+        "label": "mental other catchup",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "2",
+        "range": "2 / 1 / 4",
+        "basis": "Annual alternative-care/spontaneous catchup. All nonselected mental budget; symptomatic anxiety/other psychiatry supported monthly, not depressive counseling credited twice. No suicide mortality claim. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/dental-1"
+      },
+      {
+        "key": "mental_other_horizon",
+        "label": "mental other horizon",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "0.75",
+        "range": "0.75 / 1.5",
+        "basis": "Hard post-care benefit horizon. All nonselected mental budget; symptomatic anxiety/other psychiatry supported monthly, not depressive counseling credited twice. No suicide mortality claim. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/dental-1"
+      },
+      {
+        "key": "mental_other_external",
+        "label": "mental other external",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "200",
+        "range": "200",
+        "basis": "Outside clinical/patient-time cost beyond donor/volunteer/common support. All nonselected mental budget; symptomatic anxiety/other psychiatry supported monthly, not depressive counseling credited twice. No suicide mortality claim. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/dental-1"
+      },
+      {
+        "key": "food_cost",
+        "label": "food cost",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "800",
+        "range": "800 / 600 / 1200",
+        "basis": "Fully loaded nominal patient-course cost. Food/other budget, financial strain plus metabolic conditions; food substitution and public CalFresh/EatSF support in baseline. Small transient morbidity prior, not starvation prevention. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/food-pharmacy"
+      },
+      {
+        "key": "food_target",
+        "label": "food target",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "0.4",
+        "range": "0.4 / 0.6000000000000001 / 0.2",
+        "basis": "Share with completed/actionable burden-bearing care. Food/other budget, financial strain plus metabolic conditions; food substitution and public CalFresh/EatSF support in baseline. Small transient morbidity prior, not starvation prevention. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/food-pharmacy"
+      },
+      {
+        "key": "food_utility",
+        "label": "food utility",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "0.01",
+        "range": "0.01 / 0.015 / 0.0025 / 0 / -0.02 / 0.02",
+        "basis": "Signed utility change conditional on response. Food/other budget, financial strain plus metabolic conditions; food substitution and public CalFresh/EatSF support in baseline. Small transient morbidity prior, not starvation prevention. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/food-pharmacy"
+      },
+      {
+        "key": "food_response",
+        "label": "food response",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "0.4",
+        "range": "0.4 / 0.48 / 0.2",
+        "basis": "Meaningful symptom/function response. Food/other budget, financial strain plus metabolic conditions; food substitution and public CalFresh/EatSF support in baseline. Small transient morbidity prior, not starvation prevention. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/food-pharmacy"
+      },
+      {
+        "key": "food_catchup",
+        "label": "food catchup",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "2",
+        "range": "2 / 1 / 4",
+        "basis": "Annual alternative-care/spontaneous catchup. Food/other budget, financial strain plus metabolic conditions; food substitution and public CalFresh/EatSF support in baseline. Small transient morbidity prior, not starvation prevention. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/food-pharmacy"
+      },
+      {
+        "key": "food_horizon",
+        "label": "food horizon",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "1",
+        "range": "1 / 2",
+        "basis": "Hard post-care benefit horizon. Food/other budget, financial strain plus metabolic conditions; food substitution and public CalFresh/EatSF support in baseline. Small transient morbidity prior, not starvation prevention. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/food-pharmacy"
+      },
+      {
+        "key": "food_external",
+        "label": "food external",
+        "confidence": "Weak explicit service-specific prior",
+        "best": "250",
+        "range": "250",
+        "basis": "Outside clinical/patient-time cost beyond donor/volunteer/common support. Food/other budget, financial strain plus metabolic conditions; food substitution and public CalFresh/EatSF support in baseline. Small transient morbidity prior, not starvation prevention. Source confirms service, not this numerical prior: https://www.clinicbythebay.org/food-pharmacy"
+      },
+      {
+        "key": "acute_medical_share",
+        "label": "acute medical share",
+        "confidence": "Unobserved non-BP medical case-mix allocation prior",
+        "best": "0.4",
+        "range": "0.4",
+        "basis": "Shares of non-BP medical budget sum to1. Symptom care and chronic medication support each40%, completed specialty-care branch20%; not observed clinic spending."
+      },
+      {
+        "key": "chronic_medical_share",
+        "label": "chronic medical share",
+        "confidence": "Unobserved non-BP medical case-mix allocation prior",
+        "best": "0.4",
+        "range": "0.4",
+        "basis": "Shares of non-BP medical budget sum to1. Symptom care and chronic medication support each40%, completed specialty-care branch20%; not observed clinic spending."
+      },
+      {
+        "key": "referral_medical_share",
+        "label": "referral medical share",
+        "confidence": "Unobserved non-BP medical case-mix allocation prior",
+        "best": "0.2",
+        "range": "0.2",
+        "basis": "Shares of non-BP medical budget sum to1. Symptom care and chronic medication support each40%, completed specialty-care branch20%; not observed clinic spending."
+      }
+    ],
+    "giftHeading": "Hypothetical $100,000 unrestricted gift; no verified marginal offer",
+    "sensitivity": [
+      {
+        "case": "Central",
+        "headline": "$11,395,651 per10SF QALYs",
+        "detail": "all: Q 0.1253611103, donor $7,976,956, gross resource $15,789,985; bay: Q 0.1253611103, donor $7,976,956, gross resource $15,789,985; sf: Q 0.08775277722, donor $11,395,651, gross resource $22,557,121; gross associated resource budget $197,945."
+      },
+      {
+        "case": "Favorable",
+        "headline": "$519,510 per10SF QALYs",
+        "detail": "all: Q 2.749846199, donor $363,657, gross resource $738,150; bay: Q 2.749846199, donor $363,657, gross resource $738,150; sf: Q 1.924892340, donor $519,510, gross resource $1,054,501; gross associated resource budget $202,980."
+      },
+      {
+        "case": "Cautious",
+        "headline": "No finite positive ratio per10SF QALYs",
+        "detail": "all: Q -0.008732534295, donor No finite positive ratio, gross resource No finite positive ratio; bay: Q -0.008732534295, donor No finite positive ratio, gross resource No finite positive ratio; sf: Q -0.006112774007, donor No finite positive ratio, gross resource No finite positive ratio; gross associated resource budget $192,113."
+      },
+      {
+        "case": "No additional funding",
+        "headline": "No finite positive ratio per10SF QALYs",
+        "detail": "all: Q 0.000000000, donor No finite positive ratio, gross resource No finite positive ratio; bay: Q 0.000000000, donor No finite positive ratio, gross resource No finite positive ratio; sf: Q 0.000000000, donor No finite positive ratio, gross resource No finite positive ratio; gross associated resource budget $197,945."
+      },
+      {
+        "case": "No gift capacity",
+        "headline": "No finite positive ratio per10SF QALYs",
+        "detail": "all: Q 0.000000000, donor No finite positive ratio, gross resource No finite positive ratio; bay: Q 0.000000000, donor No finite positive ratio, gross resource No finite positive ratio; sf: Q 0.000000000, donor No finite positive ratio, gross resource No finite positive ratio; gross associated resource budget $197,945."
+      },
+      {
+        "case": "Zero net effect",
+        "headline": "No finite positive ratio per10SF QALYs",
+        "detail": "all: Q 0.000000000, donor No finite positive ratio, gross resource No finite positive ratio; bay: Q 0.000000000, donor No finite positive ratio, gross resource No finite positive ratio; sf: Q 0.000000000, donor No finite positive ratio, gross resource No finite positive ratio; gross associated resource budget $197,945."
+      },
+      {
+        "case": "Harm only",
+        "headline": "No finite positive ratio per10SF QALYs",
+        "detail": "all: Q -0.01754416667, donor No finite positive ratio, gross resource No finite positive ratio; bay: Q -0.01754416667, donor No finite positive ratio, gross resource No finite positive ratio; sf: Q -0.01228091667, donor No finite positive ratio, gross resource No finite positive ratio; gross associated resource budget $197,945."
+      },
+      {
+        "case": "Signed adverse utility",
+        "headline": "No finite positive ratio per10SF QALYs",
+        "detail": "all: Q -0.1015070905, donor No finite positive ratio, gross resource No finite positive ratio; bay: Q -0.1015070905, donor No finite positive ratio, gross resource No finite positive ratio; sf: Q -0.07105496338, donor No finite positive ratio, gross resource No finite positive ratio; gross associated resource budget $197,945."
+      },
+      {
+        "case": "Independent harm despite replacement",
+        "headline": "No finite positive ratio per10SF QALYs",
+        "detail": "all: Q -0.1000000000, donor No finite positive ratio, gross resource No finite positive ratio; bay: Q -0.1000000000, donor No finite positive ratio, gross resource No finite positive ratio; sf: Q -0.07000000000, donor No finite positive ratio, gross resource No finite positive ratio; gross associated resource budget $197,945."
+      },
+      {
+        "case": "Counseling benefit removed",
+        "headline": "$12,369,514 per10SF QALYs",
+        "detail": "all: Q 0.1154913120, donor $8,658,660, gross resource $17,139,384; bay: Q 0.1154913120, donor $8,658,660, gross resource $17,139,384; sf: Q 0.08084391839, donor $12,369,514, gross resource $24,484,835; gross associated resource budget $197,945."
+      },
+      {
+        "case": "Dental benefit removed",
+        "headline": "$15,771,716 per10SF QALYs",
+        "detail": "all: Q 0.09057806151, donor $11,040,201, gross resource $21,853,526; bay: Q 0.09057806151, donor $11,040,201, gross resource $21,853,526; sf: Q 0.06340464306, donor $15,771,716, gross resource $31,219,323; gross associated resource budget $197,945."
+      },
+      {
+        "case": "All counseling patients overlap",
+        "headline": "$12,369,514 per10SF QALYs",
+        "detail": "all: Q 0.1154913120, donor $8,658,660, gross resource $17,139,384; bay: Q 0.1154913120, donor $8,658,660, gross resource $17,139,384; sf: Q 0.08084391839, donor $12,369,514, gross resource $24,484,835; gross associated resource budget $197,945."
+      },
+      {
+        "case": "Lower target portfolio",
+        "headline": "$12,509,853 per10SF QALYs",
+        "detail": "all: Q 0.1141957015, donor $8,756,897, gross resource $17,629,823; bay: Q 0.1141957015, donor $8,756,897, gross resource $17,629,823; sf: Q 0.07993699108, donor $12,509,853, gross resource $25,185,461; gross associated resource budget $201,325."
+      },
+      {
+        "case": "Higher target portfolio",
+        "headline": "$10,463,692 per10SF QALYs",
+        "detail": "all: Q 0.1365265191, donor $7,324,584, gross resource $14,251,077; bay: Q 0.1365265191, donor $7,324,584, gross resource $14,251,077; sf: Q 0.09556856336, donor $10,463,692, gross resource $20,358,682; gross associated resource budget $194,565."
+      },
+      {
+        "case": "Fast usual-care catchup",
+        "headline": "$16,380,209 per10SF QALYs",
+        "detail": "all: Q 0.08721326229, donor $11,466,146, gross resource $22,696,663; bay: Q 0.08721326229, donor $11,466,146, gross resource $22,696,663; sf: Q 0.06104928361, donor $16,380,209, gross resource $32,423,804; gross associated resource budget $197,945."
+      },
+      {
+        "case": "No local counseling transfer",
+        "headline": "$12,598,597 per10SF QALYs",
+        "detail": "all: Q 0.1133913120, donor $8,819,018, gross resource $17,456,805; bay: Q 0.1133913120, donor $8,819,018, gross resource $17,456,805; sf: Q 0.07937391839, donor $12,598,597, gross resource $24,938,293; gross associated resource budget $197,945."
+      },
+      {
+        "case": "Short dental advantage",
+        "headline": "$15,225,777 per10SF QALYs",
+        "detail": "all: Q 0.09382584896, donor $10,658,044, gross resource $21,097,065; bay: Q 0.09382584896, donor $10,658,044, gross resource $21,097,065; sf: Q 0.06567809427, donor $15,225,777, gross resource $30,138,664; gross associated resource budget $197,945."
+      },
+      {
+        "case": "Low SF share",
+        "headline": "$26,589,852 per10SF QALYs",
+        "detail": "all: Q 0.1253611103, donor $7,976,956, gross resource $15,789,985; bay: Q 0.1253611103, donor $7,976,956, gross resource $15,789,985; sf: Q 0.03760833309, donor $26,589,852, gross resource $52,633,282; gross associated resource budget $197,945."
+      },
+      {
+        "case": "No SF beneficiaries",
+        "headline": "No finite positive ratio per10SF QALYs",
+        "detail": "all: Q 0.1253611103, donor $7,976,956, gross resource $15,789,985; bay: Q 0.1253611103, donor $7,976,956, gross resource $15,789,985; sf: Q 0.000000000, donor No finite positive ratio, gross resource No finite positive ratio; gross associated resource budget $197,945."
+      },
+      {
+        "case": "No Bay beneficiaries",
+        "headline": "No finite positive ratio per10SF QALYs",
+        "detail": "all: Q 0.1253611103, donor $7,976,956, gross resource $15,789,985; bay: Q 0.000000000, donor No finite positive ratio, gross resource No finite positive ratio; sf: Q 0.000000000, donor No finite positive ratio, gross resource No finite positive ratio; gross associated resource budget $197,945."
+      },
+      {
+        "case": "Larger gift capped",
+        "headline": "$19,818,308 per10SF QALYs",
+        "detail": "all: Q 0.7208342058, donor $13,872,816, gross resource $27,460,545; bay: Q 0.7208342058, donor $13,872,816, gross resource $27,460,545; sf: Q 0.5045839441, donor $19,818,308, gross resource $39,229,350; gross associated resource budget $1,979,450."
+      },
+      {
+        "case": "High gross resources",
+        "headline": "$11,395,651 per10SF QALYs",
+        "detail": "all: Q 0.1253611103, donor $7,976,956, gross resource $33,738,134; bay: Q 0.1253611103, donor $7,976,956, gross resource $33,738,134; sf: Q 0.08775277722, donor $11,395,651, gross resource $48,197,335; gross associated resource budget $422,945."
+      },
+      {
+        "case": "Zero dental and counseling discount/hazards",
+        "headline": "$5,639,511 per10SF QALYs",
+        "detail": "all: Q 0.2533147470, donor $3,947,658, gross resource $7,814,192; bay: Q 0.2533147470, donor $3,947,658, gross resource $7,814,192; sf: Q 0.1773203229, donor $5,639,511, gross resource $11,163,131; gross associated resource budget $197,945."
+      },
+      {
+        "case": "Immediate care",
+        "headline": "$11,375,534 per10SF QALYs",
+        "detail": "all: Q 0.1255827965, donor $7,962,874, gross resource $15,762,111; bay: Q 0.1255827965, donor $7,962,874, gross resource $15,762,111; sf: Q 0.08790795758, donor $11,375,534, gross resource $22,517,302; gross associated resource budget $197,945."
+      },
+      {
+        "case": "BP null despite medical activity",
+        "headline": "$13,444,507 per10SF QALYs",
+        "detail": "all: Q 0.1062568845, donor $9,411,155, gross resource $18,628,911; bay: Q 0.1062568845, donor $9,411,155, gross resource $18,628,911; sf: Q 0.07437981917, donor $13,444,507, gross resource $26,612,729; gross associated resource budget $197,945."
+      },
+      {
+        "case": "BP full usual-care replacement",
+        "headline": "$13,444,507 per10SF QALYs",
+        "detail": "all: Q 0.1062568845, donor $9,411,155, gross resource $18,628,911; bay: Q 0.1062568845, donor $9,411,155, gross resource $18,628,911; sf: Q 0.07437981917, donor $13,444,507, gross resource $26,612,729; gross associated resource budget $197,945."
+      },
+      {
+        "case": "BP no latency",
+        "headline": "$10,809,855 per10SF QALYs",
+        "detail": "all: Q 0.1321545470, donor $7,566,898, gross resource $14,978,297; bay: Q 0.1321545470, donor $7,566,898, gross resource $14,978,297; sf: Q 0.09250818292, donor $10,809,855, gross resource $21,397,567; gross associated resource budget $197,945."
+      },
+      {
+        "case": "BP no active effect window",
+        "headline": "$13,444,507 per10SF QALYs",
+        "detail": "all: Q 0.1062568845, donor $9,411,155, gross resource $18,628,911; bay: Q 0.1062568845, donor $9,411,155, gross resource $18,628,911; sf: Q 0.07437981917, donor $13,444,507, gross resource $26,612,729; gross associated resource budget $197,945."
+      },
+      {
+        "case": "BP five-year funded course",
+        "headline": "$11,310,994 per10SF QALYs",
+        "detail": "all: Q 0.1262993722, donor $7,917,696, gross resource $15,672,683; bay: Q 0.1262993722, donor $7,917,696, gross resource $15,672,683; sf: Q 0.08840956054, donor $11,310,994, gross resource $22,389,547; gross associated resource budget $197,945."
+      },
+      {
+        "case": "BP short survival followup",
+        "headline": "$12,766,175 per10SF QALYs",
+        "detail": "all: Q 0.1119028589, donor $8,936,322, gross resource $17,689,003; bay: Q 0.1119028589, donor $8,936,322, gross resource $17,689,003; sf: Q 0.07833200125, donor $12,766,175, gross resource $25,270,004; gross associated resource budget $197,945."
+      },
+      {
+        "case": "Residual null",
+        "headline": "$23,207,267 per10SF QALYs",
+        "detail": "all: Q 0.06155707290, donor $16,245,087, gross resource $32,156,337; bay: Q 0.06155707290, donor $16,245,087, gross resource $32,156,337; sf: Q 0.04308995103, donor $23,207,267, gross resource $45,937,625; gross associated resource budget $197,945."
+      },
+      {
+        "case": "Residual signed harm",
+        "headline": "$94,031,067 per10SF QALYs",
+        "detail": "all: Q 0.01519254729, donor $65,821,747, gross resource $130,290,857; bay: Q 0.01519254729, donor $65,821,747, gross resource $130,290,857; sf: Q 0.01063478310, donor $94,031,067, gross resource $186,129,795; gross associated resource budget $197,945."
+      },
+      {
+        "case": "Residual wider prior",
+        "headline": "$6,511,852 per10SF QALYs",
+        "detail": "all: Q 0.2193801945, donor $4,558,297, gross resource $9,022,920; bay: Q 0.2193801945, donor $4,558,297, gross resource $9,022,920; sf: Q 0.1535661362, donor $6,511,852, gross resource $12,889,886; gross associated resource budget $197,945."
+      },
+      {
+        "case": "No new pathways diagnostic",
+        "headline": "$31,992,841 per10SF QALYs",
+        "detail": "all: Q 0.04465284712, donor $22,394,989, gross resource $44,773,181; bay: Q 0.04465284712, donor $22,394,989, gross resource $44,773,181; sf: Q 0.03125699298, donor $31,992,841, gross resource $63,961,687; gross associated resource budget $199,925."
+      }
+    ],
+    "uncertaintyBoundary": "Weights are subjective elicited priors, not empirical frequencies. Central is not automatically the expectation. Preserve null/harm scenarios; never average ratios after dropping negative outcomes. Generic computational bounds are not credible intervals. A total impact claim beyond these direct-health mechanisms remains unwarranted.",
+    "fundingBoundary": "FY2025 unaudited primary return has$1,183,897 PartIX expense including$291,013 depreciation plus$38,265 event directcost netted from revenue: combined$1,222,162. These are not a marginal quote or cashflow. Program$872,675,management$173,535,fundraising$137,687 do not disclose specialties. Whole$100K gift remains. BP donor/external annual costs scale with max(1,fundedyears). Residual course/external priors differ by group: acute$1,000/$100,chronic$1,500/$300,referral$3,000/$3,000,otherdental$600/$150,othermental$1,000/$200,food$800/$250. Outside categories exclude donor,volunteer and original-branch/common costs. Full gross associated cost is not a net societal ICER or exhaustive public-cost ledger; funds/food transfers are not automatically resource additions."
+  },
+  "evidence": [
+    {
+      "key": "dental",
+      "design": "Primary prospective nonrandomized Swedish cohort",
+      "population": "Paired extraction respondents, 18 at 12 months",
+      "result": "Extraction EQ5D mean .77 to .81 was nonsignificant (p=.297); the study lacks untreated access controls.",
+      "transfer": "The .04 signed utility is a judgment, not a causal coefficient. Selected painful clinically indicated extraction only; no root-canal benefit transferred to an unavailable procedure."
+    },
+    {
+      "key": "counseling",
+      "design": "Primary pragmatic randomized comparison with preference arms",
+      "population": "197 patients randomized among three arms; 464 total includes preference and therapy-only allocation",
+      "result": "Brief counseling/CBT improved depression symptoms at four months, but groups converged by twelve months. GP psychological referral was held for four months.",
+      "transfer": "A direction and short-duration anchor, not a QALY estimate. Utility is an independent prior, with a one-year fade, local fidelity attenuation and extra alternative-care catchup. No trial fidelity is assumed from generic short-term counseling availability."
+    },
+    {
+      "key": "finance",
+      "design": "Primary FY2025 IRS return, not audited accounts",
+      "population": "Entire legal recipient",
+      "result": "Bundles service costs and confirms a broader medical home rather than a dental-only organization.",
+      "transfer": "No specialty cash split or verified next-gift treatment plan. Annual report is linked but unreadable through available access; index counts are not used as a dated throughput denominator."
+    },
+    {
+      "key": "baseline",
+      "design": "Official local access-program disclosure",
+      "population": "Eligible uninsured SF residents",
+      "result": "Healthy SF covers primary and mental-health care; routine dental is outside its covered service list.",
+      "transfer": "Uninsured is not equivalent to no care. Funding replacement is separate from patient alternative-care catchup; eligibility, availability and waits still vary."
+    },
+    {
+      "key": "bp",
+      "design": "Community-based randomized treatment-access trial",
+      "population": "HDFP:10,940 hypertensive adults ages30–69, DBP≥90",
+      "result": "Systematic stepped care versus referral to community therapy: five-year all-cause mortality6.4% versus7.7%.",
+      "transfer": "Current-care risk, modern gap, finite funded exposure/latency and relative implementation are explicit priors. Derived constant-hazard ratio is not an observed early effect. Trial assignment already incorporates adherence. No mortality double counting."
+    },
+    {
+      "key": "residual",
+      "design": "Explicit bounded health-state prior, not causal clinic evidence",
+      "population": "Six disjoint named service groups, not generic remaining visits",
+      "result": "Service-specific illness fractions, successful response, signed utility and catchup/horizon are separately exposed in99inputs. Clinical/referral completion and low food-related utility are not assumed uniform.",
+      "transfer": "All numerical residual parameters remain weak priors; official menus support existence, not causal magnitude. No life-long disease-prevention award, generic starvation counterfactual or average visits×QALY. Measure mix and patient health, and retain null/adverse group stresses."
+    }
+  ],
+  "reservations": [
+    "The mean is sensitive to elicited favorable-scenario probability and residual priors; neither numerical precision nor a passing calculator makes those probabilities evidence.",
+    "Current BP mortality is a selected-patient prior. HDFP is old and compared systematic care with existing community referral, not no treatment. Modern public access may eliminate the local treatment gap.",
+    "Residual morbidity is a coarse weak-prior branch for remaining direct care, not a multiplier fitted to a ranking threshold. Undocumented rare-event prevention may still matter.",
+    "Four cohorts are disjoint by assumptions, not linked data. Patient overlap and combined utility effects need direct validation.",
+    "Annual courses include unsuccessful and nonresponsive activity costs. Funded duration is finite; one year of donations does not buy lifelong medication adherence.",
+    "All harmful utility, treatment burden and mortality effects must remain signed without charging the same adverse outcome twice.",
+    "Government-free clinic financing does not mean government-free patient alternatives. Net public costs and savings remain unknown."
+  ],
+  "excludedBenefits": [
+    "Indirect/spillover health and lifetime earnings",
+    "Additional fatal MI/stroke credit beyond BP all-cause survival",
+    "Unspecified perpetual prevention benefit from visits or education attendance",
+    "Net public savings and exhaustive downstream costs"
+  ],
+  "sources": [
+    {
+      "publisher": "Clinic by the Bay",
+      "title": "Medical services",
+      "url": "https://www.clinicbythebay.org/services",
+      "published": "Undated",
+      "sourceType": "Primary service disclosure",
+      "retrieved": "2026-09-09 UTC"
+    },
+    {
+      "publisher": "Clinic by the Bay",
+      "title": "Dental services",
+      "url": "https://www.clinicbythebay.org/dental",
+      "published": "Undated",
+      "sourceType": "Primary service and patient-selection disclosure",
+      "retrieved": "2026-09-09 UTC"
+    },
+    {
+      "publisher": "Clinic by the Bay",
+      "title": "Mental health services",
+      "url": "https://www.clinicbythebay.org/dental-1",
+      "published": "Undated",
+      "sourceType": "Primary short-term counseling/psychiatry disclosure",
+      "retrieved": "2026-09-09 UTC"
+    },
+    {
+      "publisher": "Clinic by the Bay",
+      "title": "Patient eligibility",
+      "url": "https://www.clinicbythebay.org/eligibility",
+      "published": "Undated",
+      "sourceType": "Primary uninsured eligibility",
+      "retrieved": "2026-09-09 UTC"
+    },
+    {
+      "publisher": "Clinic by the Bay",
+      "title": "Dental director recruitment",
+      "url": "https://www.clinicbythebay.org/careers",
+      "published": "Undated",
+      "sourceType": "Local salary anchor, not funded capacity",
+      "retrieved": "2026-09-09 UTC"
+    },
+    {
+      "publisher": "Volunteers in Medicine - San Francisco / IRS",
+      "title": "FY2025 Form 990",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202611359349315736/IRS990",
+      "published": "Year ended 30 June 2025",
+      "sourceType": "Primary unaudited return",
+      "retrieved": "2026-09-09 UTC"
+    },
+    {
+      "publisher": "Volunteers in Medicine - San Francisco / IRS",
+      "title": "FY2025 Schedule M",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202611359349315736/IRS990ScheduleM",
+      "published": "Year ended 30 June 2025",
+      "sourceType": "Primary noncash contribution disclosure",
+      "retrieved": "2026-09-09 UTC"
+    },
+    {
+      "publisher": "Clinic by the Bay",
+      "title": "Annual reports index",
+      "url": "https://www.clinicbythebay.org/annualreports",
+      "published": "Undated; links 2025 report",
+      "sourceType": "Primary index only; linked Canva contents unavailable",
+      "retrieved": "2026-09-09 UTC"
+    },
+    {
+      "publisher": "Wigsten et al.",
+      "title": "Cost-effectiveness of root canal treatment compared with tooth extraction",
+      "url": "https://www.diva-portal.org/smash/get/diva2:1904453/FULLTEXT01.pdf",
+      "published": "2023",
+      "sourceType": "Primary nonrandomized Swedish cohort",
+      "retrieved": "2026-09-09 UTC"
+    },
+    {
+      "publisher": "King, Ward et al.",
+      "title": "Brief psychological therapies versus usual GP care",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11086269/",
+      "published": "2000",
+      "sourceType": "Primary randomized trial report",
+      "retrieved": "2026-09-09 UTC"
+    },
+    {
+      "publisher": "Healthy San Francisco",
+      "title": "Covered medical services",
+      "url": "https://healthysanfrancisco.org/participants/covered-medical-services/",
+      "published": "Undated",
+      "sourceType": "Primary local public alternative-care baseline",
+      "retrieved": "2026-09-09 UTC"
+    },
+    {
+      "publisher": "HDFP Cooperative Group",
+      "title": "Five-year findings: stepped care versus community referral",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/490882/",
+      "published": "1979",
+      "retrieved": "2026-09-09 UTC",
+      "sourceType": "Primary randomized assignment mortality evidence"
+    },
+    {
+      "publisher": "NHLBI",
+      "title": "HDFP study record",
+      "url": "https://biolincc.nhlbi.nih.gov/studies/hdfp/",
+      "published": "Study1970s",
+      "retrieved": "2026-09-09 UTC",
+      "sourceType": "Primary study design"
+    },
+    {
+      "publisher": "Baicker et al.",
+      "title": "Oregon Experiment: Medicaid and clinical outcomes",
+      "url": "https://www.nejm.org/doi/full/10.1056/NEJMsa1212321",
+      "published": "2013",
+      "retrieved": "2026-09-09 UTC",
+      "sourceType": "Randomized access counterweight: generic care is not assured BP control"
+    },
+    {
+      "publisher": "Clinic by the Bay",
+      "title": "Food pharmacy and CalFresh/EatSF support",
+      "url": "https://www.clinicbythebay.org/food-pharmacy",
+      "published": "Undated",
+      "retrieved": "2026-09-09 UTC",
+      "sourceType": "Primary service disclosure; no direct QALY effect measured"
+    }
+  ],
+  "comparisonBridge": {
+    "headline": "Subjective expectation-weight sensitivity",
+    "body": "Favorable15% supplies 82.6%of meanQ. Subjective elicitation, not empirical frequencies: documented ongoing care and waiting demand put most mass on some added but partly replacing activity; central70% represents existing-provider alternatives and mixed clinical need. Favorable15% is a correlated high-need/volunteer-capacity state (severe case mix makes more targets and longer waits, available volunteer capacity lowers course cash cost), not independent success of every optimistic parameter. Cautious10% represents largely low-burden/already-served patients and weak effective delivery; structural null5% reserves complete displacement/no additional activity despite existing operation. These exact probabilities are judgment calls with no calibrated reference class; broad0–30% favorable-weight stress is required, and85%of meanhealth can come from15%tail. They are not evidence of specific funding room.",
+    "equation": {
+      "label": "MEAN HEALTH BEFORE PRICE",
+      "expression": "E[Q] = Σ w_i Q_i, including negative and zero outcomes; price=10×gift/E[Q_SF]",
+      "result": "$2,860,825"
+    },
+    "inputs": [
+      {
+        "key": "Central",
+        "label": "Central",
+        "confidence": "Subjective joint-scenario probability",
+        "best": "0.7",
+        "range": "0.85 / 0.8 / 0.55",
+        "basis": "Subjective elicitation, not empirical frequencies: documented ongoing care and waiting demand put most mass on some added but partly replacing activity; central70% represents existing-provider alternatives and mixed clinical need. Favorable15% is a correlated high-need/volunteer-capacity state (severe case mix makes more targets and longer waits, available volunteer capacity lowers course cash cost), not independent success of every optimistic parameter. Cautious10% represents largely low-burden/already-served patients and weak effective delivery; structural null5% reserves complete displacement/no additional activity despite existing operation. These exact probabilities are judgment calls with no calibrated reference class; broad0–30% favorable-weight stress is required, and85%of meanhealth can come from15%tail. They are not evidence of specific funding room."
+      },
+      {
+        "key": "Favorable",
+        "label": "Favorable",
+        "confidence": "Subjective joint-scenario probability",
+        "best": "0.15",
+        "range": "0 / 0.05 / 0.3",
+        "basis": "Subjective elicitation, not empirical frequencies: documented ongoing care and waiting demand put most mass on some added but partly replacing activity; central70% represents existing-provider alternatives and mixed clinical need. Favorable15% is a correlated high-need/volunteer-capacity state (severe case mix makes more targets and longer waits, available volunteer capacity lowers course cash cost), not independent success of every optimistic parameter. Cautious10% represents largely low-burden/already-served patients and weak effective delivery; structural null5% reserves complete displacement/no additional activity despite existing operation. These exact probabilities are judgment calls with no calibrated reference class; broad0–30% favorable-weight stress is required, and85%of meanhealth can come from15%tail. They are not evidence of specific funding room."
+      },
+      {
+        "key": "Cautious",
+        "label": "Cautious",
+        "confidence": "Subjective joint-scenario probability",
+        "best": "0.1",
+        "range": "0.1 / 0.1 / 0.1",
+        "basis": "Subjective elicitation, not empirical frequencies: documented ongoing care and waiting demand put most mass on some added but partly replacing activity; central70% represents existing-provider alternatives and mixed clinical need. Favorable15% is a correlated high-need/volunteer-capacity state (severe case mix makes more targets and longer waits, available volunteer capacity lowers course cash cost), not independent success of every optimistic parameter. Cautious10% represents largely low-burden/already-served patients and weak effective delivery; structural null5% reserves complete displacement/no additional activity despite existing operation. These exact probabilities are judgment calls with no calibrated reference class; broad0–30% favorable-weight stress is required, and85%of meanhealth can come from15%tail. They are not evidence of specific funding room."
+      },
+      {
+        "key": "No additional funding",
+        "label": "No additional funding",
+        "confidence": "Subjective joint-scenario probability",
+        "best": "0.05",
+        "range": "0.05 / 0.05 / 0.05",
+        "basis": "Subjective elicitation, not empirical frequencies: documented ongoing care and waiting demand put most mass on some added but partly replacing activity; central70% represents existing-provider alternatives and mixed clinical need. Favorable15% is a correlated high-need/volunteer-capacity state (severe case mix makes more targets and longer waits, available volunteer capacity lowers course cash cost), not independent success of every optimistic parameter. Cautious10% represents largely low-burden/already-served patients and weak effective delivery; structural null5% reserves complete displacement/no additional activity despite existing operation. These exact probabilities are judgment calls with no calibrated reference class; broad0–30% favorable-weight stress is required, and85%of meanhealth can come from15%tail. They are not evidence of specific funding room."
+      }
+    ],
+    "sensitivity": [
+      {
+        "case": "No favorable tail",
+        "headline": "$13,517,426 donor per10SFQ",
+        "detail": "Weights central/favorable/cautious/null 0.85/0/0.1/0.05; expected SF Q 0.07397858323; gross resource $26,678,239."
+      },
+      {
+        "case": "Five percent favorable",
+        "headline": "$6,030,070 donor per10SFQ",
+        "detail": "Weights central/favorable/cautious/null 0.8/0.05/0.1/0.05; expected SF Q 0.1658355614; gross resource $11,916,237."
+      },
+      {
+        "case": "Thirty percent favorable",
+        "headline": "$1,599,692 donor per10SFQ",
+        "detail": "Weights central/favorable/cautious/null 0.55/0.3/0.1/0.05; expected SF Q 0.6251204519; gross resource $3,181,344."
+      }
+    ],
+    "boundary": "No positive-only filtering or average of ratios. Use as elicited expected value, not statistically estimated expectation; rare omitted consequences remain uncertain."
+  }
+}
+

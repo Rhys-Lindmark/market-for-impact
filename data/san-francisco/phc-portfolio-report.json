@@ -1,0 +1,386 @@
+{
+  "organization": "Project Homeless Connect",
+  "eyebrow": "Whole-organization unrestricted giving · San Francisco",
+  "program": "Glasses, hearing and dentures within PHC's full portfolio",
+  "donationUrl": "https://www.projecthomelessconnect.org/donate/",
+  "published": "September 8, 2026",
+  "modelVersion": "phc-whole-portfolio-finite-health-v1",
+  "nutshell": {
+    "headline": "Low-cost corrective care can help, but ordinary PHC giving supports much more than glasses.",
+    "body": "Conditional central cost is $798,863 donor and $1,118,409 gross resources per10SF QALYs. The historical $71,111 result was glasses-program-only, not an ordinary gift estimate.",
+    "whyItMayWork": "Core Senses and partners help people complete optical, hearing and denture care that existing coverage may fail to deliver.",
+    "whyWeAreCautious": "Allocation, costs, current additional capacity, patient alternatives and utility transfer are assumptions. General giving is not restricted to a cheap device.",
+    "recommendationBlocker": "No current project-level marginal funding offer verified. Conditional research estimate, not a funding recommendation."
+  },
+  "summary": [
+    {
+      "label": "Central cost /10SF QALYs",
+      "value": "$1.118m gross resources",
+      "detail": "$798,863 donor;1.251779 SF QALYs per$100,000 gift."
+    },
+    {
+      "label": "Bay / US total-resource prices",
+      "value": "$1.084m / $1.062m",
+      "detail": "Nested health1.291308 Bay /1.317662 US; do not sum geographic columns."
+    },
+    {
+      "label": "Whole gift allocation",
+      "value": "20% /10% /15% /55%",
+      "detail": "Glasses/hearing/dentures/other. Explicit analyst priors, not PHC accounts."
+    },
+    {
+      "label": "Verified funding room",
+      "value": "Unknown",
+      "detail": "Operational caps are scenario priors, not ready-to-fund slots."
+    }
+  ],
+  "programSection": {
+    "body": "Only three care-completion health streams are quantified. Drop-in services, basic dental treatment, IDs, hygiene, meals and broader navigation retain cost; their unmeasured health is not asserted absent.",
+    "steps": [
+      {
+        "title": "Allocate ordinary support",
+        "detail": "Complete pathway cash costs include delivery failure and allocated sponsor/administrative support."
+      },
+      {
+        "title": "Bound additional capacity",
+        "detail": "New completed episodes are limited by funding replacement and explicit annual caps."
+      },
+      {
+        "title": "Deduplicate patient health",
+        "detail": "Assign one primary clinical stream per patient-year; no second generic-utility gain for a person already credited elsewhere."
+      },
+      {
+        "title": "Count finite incremental use",
+        "detail": "Only useful correction for at most one year after delayed care starts (up to1.25 gift-years), beyond equivalent insured/charity care; subtract independent and episode harms."
+      }
+    ],
+    "boundary": "PHC project-directed general gifts via Community Initiatives, not sponsor-wide unrestricted giving. No saved lives or employment/housing conversion."
+  },
+  "model": {
+    "headline": "The whole gift buys an uncertain portfolio, not 1,000 extra glasses pairs",
+    "body": "The central $100k budget supports133.33 nominal glasses,6.67 hearing and10 denture episodes before funding/capacity adjustments. Remaining$55k has no added quantified clinical stream.",
+    "equation": {
+      "label": "Whole gift health",
+      "expression": "Each Q = min(gift×allocation/cash cost×funding additionality, capacity) × nonoverlap share × no-equivalent-alternative share × signed utility × effective finite discounted years − episode harms; sum pathways minus independent harm.",
+      "result": "US1.31766164 × .95 = SF1.25177856; $140,000 ×10 /1.25177856 = $1,118,409 gross resources per10SF QALYs."
+    },
+    "giftHeading": "Every dollar of the $100,000 PHC gift remains in the numerator",
+    "inputs": [
+      {
+        "key": "input-0",
+        "label": "Allocation",
+        "confidence": "Explicit prior unless source states otherwise",
+        "best": "20% glasses / 10% hearing / 15% dentures / 55% other",
+        "range": "Ranges and structural limits in basis; scenarios below",
+        "basis": "Analyst prior, not financial observation; ranges5–40%/0–20%/0–25% subject sum≤1. Current PHC project accounts unavailable. No general-gift restriction inferred."
+      },
+      {
+        "key": "input-1",
+        "label": "Cash unit",
+        "confidence": "Explicit prior unless source states otherwise",
+        "best": "$150 / $1,500 / $1,500",
+        "range": "Ranges and structural limits in basis; scenarios below",
+        "basis": "Completed appropriate dispense/fitting/denture episode; includes all recruitment failures, examinations funded by PHC, follow-up, navigation, allocated sponsor fee/admin. Glasses/denture fundraising examples $50/$1,000 are incomplete-cost fundraising anchors, not proven lower bounds, not invoices; hearing cost is prior. Ranges$75–300/$750–3000/$1000–3000."
+      },
+      {
+        "key": "input-2",
+        "label": "Outside resources",
+        "confidence": "Explicit prior unless source states otherwise",
+        "best": "$100 / $1,000 / $1,000 per nominal episode",
+        "range": "Ranges and structural limits in basis; scenarios below",
+        "basis": "Prior$0–300/$0–2000/$0–2000. Partner/insured clinical care, donated labor, devices and patient time not already donor-paid. Gross associated resource envelope, no public offsets."
+      },
+      {
+        "key": "input-3",
+        "label": "Funding and capacity",
+        "confidence": "Explicit prior unless source states otherwise",
+        "best": "50% funding additionality; caps100/5/8 additional completed episodes in one year",
+        "range": "Ranges and structural limits in basis; scenarios below",
+        "basis": "Priors. Financial replacement separate from patient alternatives. Caps plausible bounded absorption, not a quoted offer or current queue. Actual verified room null; cap0 diagnostic."
+      },
+      {
+        "key": "input-4",
+        "label": "No overlapping people",
+        "confidence": "Explicit prior unless source states otherwise",
+        "best": "Primary health ledger: glasses first, then hearing excluding glasses recipients, dentures excluding both",
+        "range": "Ranges and structural limits in basis; scenarios below",
+        "basis": "Shares1/.8/.8 are analyst fractions of completed episodes in disjoint patient-year cohorts. For discarded overlapping people, all costs and procedural harms remain; no second generic-utility credit. Actual identity linkage unavailable."
+      },
+      {
+        "key": "input-5",
+        "label": "Utility",
+        "confidence": "Explicit prior unless source states otherwise",
+        "best": "Glasses .0375; hearing .02; dentures .03",
+        "range": "Ranges and structural limits in basis; scenarios below",
+        "basis": "Signed preference-utility priors while effectively corrected. External glasses before/after .075 in41/113 follow-ups, not causal full-cohort effect. Hearing and denture randomized symptom/oral results are not directly QALYs. Ranges-.02–.075 /-.02–.05 /-.02–.08. No separate social/mental-health score credit."
+      },
+      {
+        "key": "input-6",
+        "label": "Finite health",
+        "confidence": "Explicit prior unless source states otherwise",
+        "best": "At most one benefit year after delayed care starts; effective use .75/.6/.7; delay .1/.25/.25 years",
+        "range": "Ranges and structural limits in basis; scenarios below",
+        "basis": "Priors for wear/fit/breakage within the year after care starts and delayed access, no multiyear extrapolation. Fraction without equivalent alternative correction during the year .7/.7/.6; remaining receive zero credit. Do not reapply referral-completion probability to completed-unit costs."
+      },
+      {
+        "key": "input-7",
+        "label": "Public baseline",
+        "confidence": "Explicit prior unless source states otherwise",
+        "best": "Medi-Cal optical, hearing and dental services plus public/charity partners continue",
+        "range": "Ranges and structural limits in basis; scenarios below",
+        "basis": "Coverage/eligibility vary; not all PHC participants have accessible care. Dental changes across official pages have inconsistent dates; no unsupported eligibility-specific treatment effect is inferred."
+      },
+      {
+        "key": "input-8",
+        "label": "Harm",
+        "confidence": "Explicit prior unless source states otherwise",
+        "best": "Per added completed episode .0002/.001/.002 QALY; independent0",
+        "range": "Ranges and structural limits in basis; scenarios below",
+        "basis": "Gift-date PV losses beyond signed durable utility. Charged on every additional completed episode before patient overlap/alternative filters; conservative since alternative-treatment harms not subtracted. Includes repeated fittings; no activity multiplier for independent harm."
+      },
+      {
+        "key": "input-9",
+        "label": "Geography",
+        "confidence": "Explicit prior unless source states otherwise",
+        "best": "95%SF /98%Bay /100%US",
+        "range": "Ranges and structural limits in basis; scenarios below",
+        "basis": "Nested recipient-health residence priors, not observed addresses. Same denominators; never sum nested QALYs."
+      },
+      {
+        "key": "input-10",
+        "label": "Other portfolio outside resources",
+        "confidence": "Explicit prior unless source states otherwise",
+        "best": "$10,000 per gift; range0–50,000",
+        "range": "Ranges and structural limits in basis; scenarios below",
+        "basis": "Explicit allowance for donated/partner inputs to otherwise unquantified activities, beyond donor-paid55% remainder. Not sponsor-wide accounts or a measured marginal external cost."
+      }
+    ],
+    "sensitivity": [
+      {
+        "case": "central",
+        "headline": "SF gross resources: $1,118,409/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 1.317661640 / 1.291308407 / 1.251778558. Donor US/Bay/SF: $758,920/10 QALYs / $774,408/10 QALYs / $798,863/10 QALYs. Gross envelope $140,000; resource US/Bay/SF: $1,062,488/10 QALYs / $1,084,172/10 QALYs / $1,118,409/10 QALYs. Full gift retained; positive."
+      },
+      {
+        "case": "favorable",
+        "headline": "SF gross resources: $80,303/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 26.65334258 / 26.12027572 / 25.32067545. Donor US/Bay/SF: $37,519/10 QALYs / $38,284/10 QALYs / $39,493/10 QALYs. Gross envelope $203,333; resource US/Bay/SF: $76,288/10 QALYs / $77,845/10 QALYs / $80,303/10 QALYs. Full gift retained; positive."
+      },
+      {
+        "case": "cautious",
+        "headline": "SF gross resources: $708,626,043/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.001708272407 / 0.001674106959 / 0.001622858786. Donor US/Bay/SF: $585,386,731/10 QALYs / $597,333,399/10 QALYs / $616,196,559/10 QALYs. Gross envelope $115,000; resource US/Bay/SF: $673,194,741/10 QALYs / $686,933,409/10 QALYs / $708,626,043/10 QALYs. Full gift retained; positive."
+      },
+      {
+        "case": "low allocation",
+        "headline": "SF gross resources: $3,754,658/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.3294154099 / 0.3228271017 / 0.3129446394. Donor US/Bay/SF: $3,035,681/10 QALYs / $3,097,633/10 QALYs / $3,195,453/10 QALYs. Gross envelope $117,500; resource US/Bay/SF: $3,566,925/10 QALYs / $3,639,719/10 QALYs / $3,754,658/10 QALYs. Full gift retained; positive."
+      },
+      {
+        "case": "low additionality",
+        "headline": "SF gross resources: $5,592,043/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.2635323279 / 0.2582616814 / 0.2503557115. Donor US/Bay/SF: $3,794,601/10 QALYs / $3,872,042/10 QALYs / $3,994,317/10 QALYs. Gross envelope $140,000; resource US/Bay/SF: $5,312,441/10 QALYs / $5,420,858/10 QALYs / $5,592,043/10 QALYs. Full gift retained; positive."
+      },
+      {
+        "case": "rapid alternative access",
+        "headline": "SF gross resources: $8,849,013/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.1665365684 / 0.1632058370 / 0.1582097400. Donor US/Bay/SF: $6,004,687/10 QALYs / $6,127,232/10 QALYs / $6,320,723/10 QALYs. Gross envelope $140,000; resource US/Bay/SF: $8,406,562/10 QALYs / $8,578,125/10 QALYs / $8,849,013/10 QALYs. Full gift retained; positive."
+      },
+      {
+        "case": "source attrition glasses",
+        "headline": "SF gross resources: $2,913,592/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.5057964143 / 0.4956804860 / 0.4805065936. Donor US/Bay/SF: $1,977,080/10 QALYs / $2,017,429/10 QALYs / $2,081,137/10 QALYs. Gross envelope $140,000; resource US/Bay/SF: $2,767,912/10 QALYs / $2,824,400/10 QALYs / $2,913,592/10 QALYs. Full gift retained; positive."
+      },
+      {
+        "case": "glasses only health",
+        "headline": "SF gross resources: $1,181,300/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 1.247510701 / 1.222560487 / 1.185135166. Donor US/Bay/SF: $801,596/10 QALYs / $817,955/10 QALYs / $843,786/10 QALYs. Gross envelope $140,000; resource US/Bay/SF: $1,122,235/10 QALYs / $1,145,138/10 QALYs / $1,181,300/10 QALYs. Full gift retained; positive."
+      },
+      {
+        "case": "no funding additionality",
+        "headline": "SF gross resources: No finite positive ratio",
+        "detail": "US/Bay/SF QALYs: 0.000000000 / 0.000000000 / 0.000000000. Donor US/Bay/SF: No finite positive ratio / No finite positive ratio / No finite positive ratio. Gross envelope $140,000; resource US/Bay/SF: No finite positive ratio / No finite positive ratio / No finite positive ratio. Full gift retained; zero."
+      },
+      {
+        "case": "no capacity",
+        "headline": "SF gross resources: No finite positive ratio",
+        "detail": "US/Bay/SF QALYs: 0.000000000 / 0.000000000 / 0.000000000. Donor US/Bay/SF: No finite positive ratio / No finite positive ratio / No finite positive ratio. Gross envelope $140,000; resource US/Bay/SF: No finite positive ratio / No finite positive ratio / No finite positive ratio. Full gift retained; zero."
+      },
+      {
+        "case": "null health",
+        "headline": "SF gross resources: No finite positive ratio",
+        "detail": "US/Bay/SF QALYs: 0.000000000 / 0.000000000 / 0.000000000. Donor US/Bay/SF: No finite positive ratio / No finite positive ratio / No finite positive ratio. Gross envelope $140,000; resource US/Bay/SF: No finite positive ratio / No finite positive ratio / No finite positive ratio. Full gift retained; zero."
+      },
+      {
+        "case": "signed harm",
+        "headline": "SF gross resources: No finite positive ratio",
+        "detail": "US/Bay/SF QALYs: -0.7601901899 / -0.7449863861 / -0.7221806804. Donor US/Bay/SF: No finite positive ratio / No finite positive ratio / No finite positive ratio. Gross envelope $140,000; resource US/Bay/SF: No finite positive ratio / No finite positive ratio / No finite positive ratio. Full gift retained; harm."
+      },
+      {
+        "case": "independent harm zero activity",
+        "headline": "SF gross resources: No finite positive ratio",
+        "detail": "US/Bay/SF QALYs: -1.000000000 / -0.9800000000 / -0.9500000000. Donor US/Bay/SF: No finite positive ratio / No finite positive ratio / No finite positive ratio. Gross envelope $140,000; resource US/Bay/SF: No finite positive ratio / No finite positive ratio / No finite positive ratio. Full gift retained; harm."
+      },
+      {
+        "case": "limited capacity",
+        "headline": "SF gross resources: $7,284,097/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.2023152833 / 0.1982689776 / 0.1921995191. Donor US/Bay/SF: $4,942,780/10 QALYs / $5,043,653/10 QALYs / $5,202,927/10 QALYs. Gross envelope $140,000; resource US/Bay/SF: $6,919,892/10 QALYs / $7,061,115/10 QALYs / $7,284,097/10 QALYs. Full gift retained; positive."
+      },
+      {
+        "case": "outside resources donor paid",
+        "headline": "SF gross resources: $1,479,377/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.7115372854 / 0.6973065397 / 0.6759604211. Donor US/Bay/SF: $1,405,408/10 QALYs / $1,434,090/10 QALYs / $1,479,377/10 QALYs. Gross envelope $100,000; resource US/Bay/SF: $1,405,408/10 QALYs / $1,434,090/10 QALYs / $1,479,377/10 QALYs. Full gift retained; positive."
+      }
+    ],
+    "uncertaintyBoundary": "Central exceeds $100k; joint favorable total $80,303/10SF QALYs is a real conditional upside, not a confidence bound or a funding quote. Zero and harm retain gift cost and suppress positive ratios.",
+    "fundingBoundary": "Public clinical/insurance and donated partner inputs are baseline resources. $140k gross envelope includes $30k associated outside clinical inputs plus$10k other-portfolio outside allowance; it is not net induced societal spending. No current PHC accounts or sponsor fee verified."
+  },
+  "evidence": [
+    {
+      "key": "vision",
+      "design": "Uncontrolled preference-utility cohort",
+      "population": "Zambia spectacle recipients;41/113 followed",
+      "result": "Observed .075 EQ-5D improvement among follow-ups.",
+      "transfer": ".0375 central transfer is a subjective prior, not an identified causal correction. Missing-as-no-benefit sensitivity included."
+    },
+    {
+      "key": "hearing",
+      "design": "Randomized hearing-aid versus wait-list evidence",
+      "population": "External older adult cohorts",
+      "result": "Communication/hearing-related health improves.",
+      "transfer": ".02 utility is an explicit prior; neither questionnaire points nor the abstract .017 QALYs are imported as a per-year local rate."
+    },
+    {
+      "key": "dentures",
+      "design": "Randomized immediate versus delayed domiciliary dentures",
+      "population": "133 UK older edentate adults",
+      "result": "Three-month oral daily-performance outcomes improved.",
+      "transfer": ".03 generic utility and one-year use are priors, not OIDP-to-QALY conversion."
+    }
+  ],
+  "comparisonBridge": {
+    "headline": "Historical program result preserved, not added",
+    "body": "The old $71,111 donor/10Q glasses calculation assumes every dollar buys completed pairs at$100. It also jointly discounts funding/access; no whole-portfolio allocation or outside resources were priced.",
+    "equation": {
+      "label": "Historical only",
+      "expression": "10×100 /(.0375×.75×.5)",
+      "result": "$71,111 per10Q, program-conditional"
+    },
+    "inputs": [],
+    "sensitivity": [],
+    "boundary": "Original JSON preserved byte-for-byte as a historical artifact. Do not add its QALYs to the portfolio result or claim general donations restricted to glasses."
+  },
+  "reservations": [
+    "No current PHC accounts, additional dispense commitment or sponsor fee verified.",
+    "Generic utility differences can overlap; primary-patient ledger exclusions are essential and unverified locally.",
+    "Positive central components do not demonstrate all services effective; unmodeled benefits and harms may change the estimate.",
+    "An external hearing/dental trial is not evidence that PHC's gift causes the same treatment intensity or follow-up.",
+    "Outside-resource allowances are uncertain and count gross associated activity even if funding substitutes."
+  ],
+  "excludedBenefits": [
+    "Basic dental pain treatment outside denture cohort",
+    "Drop-in support, IDs and broader navigation health",
+    "Mortality, housing, employment and income effects",
+    "Separate social/mental-health gains already potentially inside generic utility",
+    "Health after the one-year post-care-start cap",
+    "Other-provider QALYs already counted for the same patient/year"
+  ],
+  "sources": [
+    {
+      "publisher": "Project Homeless Connect",
+      "title": "Core Senses",
+      "url": "https://www.projecthomelessconnect.org/programs/coresenses/",
+      "published": "Current undated",
+      "sourceType": "Official optics, hearing, dentures and partner delivery; donation allocation not specified.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Project Homeless Connect",
+      "title": "Giving and fiscal sponsorship",
+      "url": "https://www.projecthomelessconnect.org/donate/",
+      "published": "Current undated",
+      "sourceType": "General giving examples and Community Initiatives EIN; not a marginal cost/quantity promise.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Griffiths et al.",
+      "title": "Cost-effectiveness of eye care services in Zambia",
+      "url": "https://researchonline.lshtm.ac.uk/1604317/1/1478-7547-12-6.pdf",
+      "published": "2014",
+      "sourceType": "Primary uncontrolled EQ-5D study: .850→.925 among41 of113 spectacle follow-ups. Missingness/confounding unresolved.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Mulrow et al.",
+      "title": "Quality-of-life changes and hearing impairment",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/2197909/",
+      "published": "1990",
+      "sourceType": "Primary randomized hearing-aid versus wait-list trial,194 elderly veterans,188 completed; benefits in communication and selected scores, not a PHC QALY estimate.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Ye et al.",
+      "title": "Cost-effectiveness of hearing aids in China",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37306959/",
+      "published": "2023",
+      "sourceType": "Primary randomized economic study,385 analyzed; abstract .017QALY effect has annual/lifetime costing context not fully reconciled, not mechanically annualized or imported.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Pearson et al.",
+      "title": "Domiciliary denture service randomized trial",
+      "url": "https://www.nature.com/articles/bdj.2007.569",
+      "published": "2007",
+      "sourceType": "133 older edentate adults; immediate dentures versus deferred usual waiting list with visits; three-month OIDP improvements, not preference utility.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "DHCS",
+      "title": "Medi-Cal vision benefits",
+      "url": "https://www.dhcs.ca.gov/providers-partners/pharmacy-benefits-division-and-vision-care-program/medi-cal-vision-benefits/",
+      "published": "Current",
+      "sourceType": "Insured examination/glasses and replacement pathway are baseline, not proof of receipt.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "DHCS",
+      "title": "Hearing aid benefit cap and benefits",
+      "url": "https://www.dhcs.ca.gov/services/hearing-aid-benefit-cap-benefits-frequently-asked-questions-for-members/",
+      "published": "Current",
+      "sourceType": "Covered aids/fitting/repair with caps and exceptions; adult replacement battery exclusion.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "DHCS",
+      "title": "Essential health benefits",
+      "url": "https://www.dhcs.ca.gov/services/medi-cal-resources/essential-health-benefits/",
+      "published": "Current",
+      "sourceType": "Dental, including dentures, is an existing benefit for eligible members; not universal PHC access.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "DHCS",
+      "title": "Dental benefit changes FAQ",
+      "url": "https://www.dhcs.ca.gov/services/medi-cal-dental-benefit-changes/medi-cal-dental-benefit-changes-frequently-asked-questions/",
+      "published": "Current",
+      "sourceType": "Current DHCS FAQ delays affected existing adult non-emergency dental benefit loss to July 1, 2027; new restricted-scope applicants and exceptions differ. Coverage is not realized access.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Hennein et al.",
+      "title": "Follow-up at SF shelter ophthalmology clinic",
+      "url": "https://www.thieme-connect.com/products/ejournals/pdf/10.1055/s-0041-1726288.pdf",
+      "published": "2021",
+      "sourceType": "Primary study in historical local packet:14/40 glasses referrals presented. Do not multiply into cost already per completed pair.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Hulme et al.",
+      "title": "Cost-effectiveness of silicone and alginate impressions for complete dentures",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4119300/",
+      "published": "2014",
+      "sourceType": "Primary randomized economic comparison; oral improvement need not give detectable generic EQ-5D change; not denture-versus-no-care efficacy.",
+      "retrieved": "September 8, 2026"
+    }
+  ]
+}

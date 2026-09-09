@@ -1,5 +1,10 @@
 # Market for Impact backlog
 
+## Active phase — SFAF/PHC whole-gift correction
+
+Count remains60/115. Root integrates independently accepted SFAF and PHC whole-gift reports, new executable APIs and central ranking, preserving historical program models. Acceptance: unit/model parity, report/API and homepage/index mobile checks, production build, exact-source canonical publication. New top4 still concern program-specific estimates; do not relabel them unrestricted-gift offers. Next publish accepted CalWalks/Fistula/YIMBY. GLIDE and Breathe whole-gift revisions independently accepted. Start recorded2026-09-09T03:04:14Z; active effort unmeasured.
+
+
 ## Current authority — 60/115 published, September 9 UTC
 
 SFPHF PR235/v158, CCA PR236/v159, Felton PR237/v160 and HPP PR238/v161 are live and canonical-verified at390/768. Exact latest acf6b49fb38f3ce449212ef895900da6af8d3364.405 tests and focused12check HPP release passed; full GitHub mobile gates passed for235–237,238 pending at checkpoint. Current count50SF-indexed+2Bay+1California+3US+4international. These are distinct reports, not60 equally comparable unrestricted-gift estimates.

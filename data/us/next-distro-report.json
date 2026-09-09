@@ -1,0 +1,484 @@
+{
+  "organization": "NEXT Distro (NEXT Harm Reduction Inc.)",
+  "eyebrow": "Whole organization · unrestricted gift · US mailing access",
+  "program": "Conditional value of an ordinary $100,000 NEXT gift",
+  "donationUrl": "https://nextdistro.org/donate",
+  "published": "September 8, 2026",
+  "modelVersion": "next-distro-whole-gift-v1",
+  "nutshell": {
+    "headline": "Mailing can close naloxone access gaps, but NEXT's marginal cost and future use remain unmeasured.",
+    "body": "Central whole-gift donor cost is $172,973 per10 US QALYs and $8,648,649 per10 Bay QALYs; SF has no priced positive health under the current mailing exclusion. This is a prior-based partial-health estimate, not a verified marginal offer.",
+    "whyItMayWork": "A current online/affiliate delivery network reaches people who report difficulty using existing routes. A supplied course may change whether a future overdose is fatal.",
+    "whyWeAreCautious": "Delivery counts are not unique deaths prevented. Public funding, partner costs, alternative rescue and repeated recipients materially dilute attribution.",
+    "recommendationBlocker": "No current costed next-gift package, unique-beneficiary denominator or incremental first-use outcome cohort. Favorable joint scenarios are not a probability-weighted recommendation."
+  },
+  "summary": [
+    {
+      "label": "Central donor /10 QALYs",
+      "value": "$172,973 US; $8,648,649 Bay; SF unpriced",
+      "detail": "Same full $100,000 numerator, nested health shares; no population allocation."
+    },
+    {
+      "label": "Central allocation",
+      "value": "50% naloxone /50% unquantified",
+      "detail": "Whole-gift marginal prior; includes attributable overhead, not audited allocation."
+    },
+    {
+      "label": "Resources",
+      "value": "$124,382 gross /$112,191 net",
+      "detail": "Explicit medicine/partner/medical priors; no resource savings centrally."
+    },
+    {
+      "label": "Current funding room",
+      "value": "Not verified",
+      "detail": "FY2025 deficit is historical; public grants and an appeal do not establish an open marginal package."
+    }
+  ],
+  "programSection": {
+    "body": "NEXT operates an online and mail-based harm-reduction platform with over30 partners. Affiliates can supply medicine and fulfill orders; donations to NEXT are not donations to every partner. Other supplies, education and support remain inside the gift cost but their health is unquantified.",
+    "steps": [
+      {
+        "title": "Allocate the whole gift",
+        "detail": "$50,000 supports naloxone courses including attributable staff/platform overhead; remaining $50,000 retains its cost."
+      },
+      {
+        "title": "Deduplicate additional access",
+        "detail": "500 nominal courses become 250 added courses and125 distinct at-risk beneficiaries after separate financing and overlap priors."
+      },
+      {
+        "title": "Model a first eligible use",
+        "detail": "A finite one-year opportunity window and competing mortality yield21.91 expected unique first events. Never one saved life per spray, kit or report."
+      },
+      {
+        "title": "Value finite additional survival",
+        "detail": "Compare signed conditional death risk at the first event against existing care, then follow only that person's finite survival difference."
+      }
+    ],
+    "boundary": "No assumed SF mail service, unlimited refills, extra lifetimes from repeated rescues, or sums with HRT/Remedy benefits for the same supply chain."
+  },
+  "model": {
+    "headline": "One indexed rescue episode per distinct beneficiary; finite future health",
+    "body": "All causal quantities are priors. US central 5.78125 QALYs includes no infection, morbidity, social-support or spillover benefits. Ordinary gifts do not inherit an all-naloxone allocation.",
+    "equation": {
+      "label": "First-event survival bridge",
+      "expression": "C = gift × allocation / course cash; N = C × funding additionality × distinct-beneficiary fraction. Qbenefit = N × signed conditional fatality difference × utility × exp(−discount×delay) × ∫[0,min(access,horizon)] event_hazard × exp[−(event_hazard+mortality+discount)t] × annuity(mortality+discount,horizon−t) dt. Qnet subtracts per-added-course and independent gift-date losses, including displaced alternative health.",
+      "result": "5.78124985 US /0.115625 Bay /0 SF QALYs. Central US donor/gross/net costs $172,973 /$215,147 /$194,060 per10 QALYs."
+    },
+    "inputs": [
+      {
+        "key": "gift",
+        "label": "Whole unrestricted gift",
+        "best": "100,000 dollars",
+        "range": "1–1 billion calculator domain",
+        "basis": "Full gift remains numerator in all scenarios.",
+        "confidence": "Specified scenario gift"
+      },
+      {
+        "key": "allocation",
+        "label": "Naloxone allocation",
+        "best": "50%",
+        "range": "20–70%; zero stress",
+        "basis": "Marginal prior including attributable central overhead; other 50% health unquantified, cost retained.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "course_cash",
+        "label": "NEXT cash per complete supported course",
+        "best": "$100",
+        "range": "$40–$250; $140 donor-pays case",
+        "basis": "Unpriced prior covering platform, staff, postage, recruitment failures and attributable administration. Not sprays, old cost/volume division or outside partner resources.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "additionality",
+        "label": "Funding additionality",
+        "best": "50%",
+        "range": "20–80%; zero",
+        "basis": "Fraction of courses added beyond public/other donor funding. Not clinical efficacy or allocation.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "unique_fraction",
+        "label": "Distinct at-risk beneficiaries per added course",
+        "best": "50%",
+        "range": "25–80%",
+        "basis": "Deduplicates repeat orders, shared responders and overlapping programs. At most one lifetime stream/person; secondary population multipliers excluded.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "event_hazard",
+        "label": "First eligible use hazard",
+        "best": "0.2/year",
+        "range": "0.05–0.4; zero",
+        "basis": "First adequate-course rescue opportunity, not all overdoses or reported reversals/mailed kits.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "active_years",
+        "label": "Finite access window",
+        "best": "1 year",
+        "range": "0.25-year stress; domain 0–5",
+        "basis": "No credited new use after access ends; excludes subsequent repeat-use benefit.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "horizon_years",
+        "label": "Finite health horizon from activation",
+        "best": "15 years",
+        "range": "5–20; zero; domain 0–50",
+        "basis": "Same finite end date for early and late index rescues.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "delay_years",
+        "label": "Implementation delay",
+        "best": "0.05 year",
+        "range": "Domain 0–10",
+        "basis": "Health discounted from activation to gift date; population defined at activation.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "mortality_hazard",
+        "label": "Common competing/future mortality",
+        "best": "0.07/year",
+        "range": "0.04 favorable; domain 0–1",
+        "basis": "Explicit prior includes non-index overdoses before first event and all future mortality after it; prevents a permanent saved-life assumption.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "discount",
+        "label": "Continuous health discount",
+        "best": "3%/year",
+        "range": "Domain 0–20%",
+        "basis": "Judgment; not 3% effective annual compounding.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "utility",
+        "label": "Survivor utility",
+        "best": "0.7",
+        "range": "Domain 0–1",
+        "basis": "Not healthy life expectancy or directly measured NEXT utility.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "fatality_difference",
+        "label": "Conditional death-risk reduction",
+        "best": "5 percentage points",
+        "range": "1–10 points; −2-point harm; zero",
+        "basis": "Signed difference relative to actual alternative rescue/EMS, including adequate supply and readiness. Not a drug success rate.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "course_harm_q",
+        "label": "Burden per added course",
+        "best": "0 gift-date PV QALY",
+        "range": "0.02 stress",
+        "basis": "Applies to all added courses, including those without a credited unique beneficiary. Excludes any harm already in fatality difference.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "independent_harm_q",
+        "label": "Independent harm",
+        "best": "0 gift-date PV QALY",
+        "range": "0.2 no-activity stress",
+        "basis": "Survives zero allocation. No second discount.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "alternative_q",
+        "label": "Displaced alternative health",
+        "best": "0 gift-date PV QALY",
+        "range": "1 target-failure stress",
+        "basis": "Distinct crowd-out of other medicine/partner uses, beyond replacement courses already removed. Not a counterfactual assumption of no public care.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "public_per_course",
+        "label": "Outside public resources",
+        "best": "$20/course",
+        "range": "Unpriced; zero donor-pays case",
+        "basis": "Real medicine/partner inputs excluding expenses paid by NEXT or subcontract invoices already counted. Public transfers themselves are not extra resource costs.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "private_per_course",
+        "label": "Outside private/volunteer resources",
+        "best": "$20/course",
+        "range": "Unpriced; zero donor-pays case",
+        "basis": "Real inputs outside NEXT cash; excludes upstream/downstream duplicate payment.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "ems_per_event",
+        "label": "Additional medical resources per eligible event",
+        "best": "$100",
+        "range": "Unpriced; zero sensitivity",
+        "basis": "Expected incremental real EMS/aftercare, not a billed reimbursement or a claim every event causes a new ambulance trip.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "real_savings",
+        "label": "Other net real resource savings",
+        "best": "$0 gift-date dollars",
+        "range": "$150,000 diagnostic; signed domain ±$1 billion",
+        "basis": "Separate unmeasured public/private resource savings, not transfers. Negative input denotes extra costs. Not a benefit estimate.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "bay_share",
+        "label": "Benefit in nine-county Bay Area",
+        "best": "2%",
+        "range": "Zero sensitivity; unmeasured",
+        "basis": "Independent residence prior outside SF, not population share or California statewide delivery share.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "sf_share",
+        "label": "Benefit in SF",
+        "best": "0%",
+        "range": "No positive SF claim",
+        "basis": "Official mail exclusion. Mobility/secondary rescue spillovers not established.",
+        "confidence": "Current activity boundary; spillover uncertainty"
+      },
+      {
+        "key": "harm_bay_share",
+        "label": "Loss in Bay Area",
+        "best": "2%",
+        "range": "Zero sensitivity",
+        "basis": "Separate residence share of course harms, independent harms and displaced alternative health; no addition to US total.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "harm_sf_share",
+        "label": "Loss in SF",
+        "best": "0%",
+        "range": "Nested domain enforced",
+        "basis": "Not mechanically constrained to match benefit share; default no SF effect.",
+        "confidence": "Explicit uncalibrated prior"
+      }
+    ],
+    "giftHeading": "The same ordinary gift across18 signed scenarios",
+    "sensitivity": [
+      {
+        "case": "central",
+        "headline": "US donor $172,973 /10 QALYs",
+        "detail": "US/Bay/SF QALYs 5.7812499 / 0.115625 / 0. Donor US/Bay/SF $172,973 / $8,648,649 / No finite positive-health ratio. Gross resources $124,382; gross prices $215,147 / $10,757,350 / No finite positive-health ratio. Net resources $112,191; net prices $194,060 / $9,703,000 / No finite positive-health ratio. All prices per10 QALYs; negative-resource ratios are signed diagnostics."
+      },
+      {
+        "case": "favorable_joint",
+        "headline": "US donor $3,760 /10 QALYs",
+        "detail": "US/Bay/SF QALYs 265.99151 / 5.3198303 / 0. Donor US/Bay/SF $3,760 / $187,976 / No finite positive-health ratio. Gross resources $215,304; gross prices $8,094 / $404,721 / No finite positive-health ratio. Net resources $192,244; net prices $7,227 / $361,372 / No finite positive-health ratio. All prices per10 QALYs; negative-resource ratios are signed diagnostics."
+      },
+      {
+        "case": "pessimistic_positive",
+        "headline": "US donor $125,549,929 /10 QALYs",
+        "detail": "US/Bay/SF QALYs 0.0079649587 / 0.00015929917 / 0. Donor US/Bay/SF $125,549,929 / $6,277,496,465 / No finite positive-health ratio. Gross resources $103,294; gross prices $129,685,836 / $6,484,291,823 / No finite positive-health ratio. Net resources $100,659; net prices $126,377,111 / $6,318,855,536 / No finite positive-health ratio. All prices per10 QALYs; negative-resource ratios are signed diagnostics."
+      },
+      {
+        "case": "zero_allocation",
+        "headline": "US donor No finite positive-health ratio /10 QALYs",
+        "detail": "US/Bay/SF QALYs 0 / 0 / 0. Donor US/Bay/SF No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Gross resources $100,000; gross prices No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Net resources $100,000; net prices No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. All prices per10 QALYs; negative-resource ratios are signed diagnostics."
+      },
+      {
+        "case": "replacement_only",
+        "headline": "US donor No finite positive-health ratio /10 QALYs",
+        "detail": "US/Bay/SF QALYs 0 / 0 / 0. Donor US/Bay/SF No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Gross resources $124,382; gross prices No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Net resources $100,000; net prices No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. All prices per10 QALYs; negative-resource ratios are signed diagnostics."
+      },
+      {
+        "case": "no_use",
+        "headline": "US donor No finite positive-health ratio /10 QALYs",
+        "detail": "US/Bay/SF QALYs 0 / 0 / 0. Donor US/Bay/SF No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Gross resources $120,000; gross prices No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Net resources $110,000; net prices No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. All prices per10 QALYs; negative-resource ratios are signed diagnostics."
+      },
+      {
+        "case": "no_incremental_rescue",
+        "headline": "US donor No finite positive-health ratio /10 QALYs",
+        "detail": "US/Bay/SF QALYs 0 / 0 / 0. Donor US/Bay/SF No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Gross resources $124,382; gross prices No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Net resources $112,191; net prices No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. All prices per10 QALYs; negative-resource ratios are signed diagnostics."
+      },
+      {
+        "case": "short_access",
+        "headline": "US donor $613,896 /10 QALYs",
+        "detail": "US/Bay/SF QALYs 1.6289408 / 0.032578815 / 0. Donor US/Bay/SF $613,896 / $30,694,793 / No finite positive-health ratio. Gross resources $121,209; gross prices $744,095 / $37,204,774 / No finite positive-health ratio. Net resources $110,604; net prices $678,996 / $33,949,784 / No finite positive-health ratio. All prices per10 QALYs; negative-resource ratios are signed diagnostics."
+      },
+      {
+        "case": "five_year_horizon",
+        "headline": "US donor $364,267 /10 QALYs",
+        "detail": "US/Bay/SF QALYs 2.7452383 / 0.054904766 / 0. Donor US/Bay/SF $364,267 / $18,213,355 / No finite positive-health ratio. Gross resources $124,382; gross prices $453,082 / $22,654,110 / No finite positive-health ratio. Net resources $112,191; net prices $408,675 / $20,433,733 / No finite positive-health ratio. All prices per10 QALYs; negative-resource ratios are signed diagnostics."
+      },
+      {
+        "case": "zero_horizon",
+        "headline": "US donor No finite positive-health ratio /10 QALYs",
+        "detail": "US/Bay/SF QALYs 0 / 0 / 0. Donor US/Bay/SF No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Gross resources $120,000; gross prices No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Net resources $110,000; net prices No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. All prices per10 QALYs; negative-resource ratios are signed diagnostics."
+      },
+      {
+        "case": "negative_clinical_effect",
+        "headline": "US donor No finite positive-health ratio /10 QALYs",
+        "detail": "US/Bay/SF QALYs -2.3124999 / -0.046249999 / 0. Donor US/Bay/SF No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Gross resources $124,382; gross prices No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Net resources $112,191; net prices No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. All prices per10 QALYs; negative-resource ratios are signed diagnostics."
+      },
+      {
+        "case": "independent_harm_no_activity",
+        "headline": "US donor No finite positive-health ratio /10 QALYs",
+        "detail": "US/Bay/SF QALYs -0.2 / -0.004 / 0. Donor US/Bay/SF No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Gross resources $100,000; gross prices No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Net resources $100,000; net prices No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. All prices per10 QALYs; negative-resource ratios are signed diagnostics."
+      },
+      {
+        "case": "target_failure_displaced_alternative",
+        "headline": "US donor No finite positive-health ratio /10 QALYs",
+        "detail": "US/Bay/SF QALYs -1 / -0.02 / 0. Donor US/Bay/SF No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Gross resources $124,382; gross prices No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Net resources $112,191; net prices No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. All prices per10 QALYs; negative-resource ratios are signed diagnostics."
+      },
+      {
+        "case": "course_burden",
+        "headline": "US donor $1,280,000 /10 QALYs",
+        "detail": "US/Bay/SF QALYs 0.78124985 / 0.015624997 / 0. Donor US/Bay/SF $1,280,000 / $64,000,012 / No finite positive-health ratio. Gross resources $124,382; gross prices $1,592,088 / $79,604,406 / No finite positive-health ratio. Net resources $112,191; net prices $1,436,044 / $71,802,209 / No finite positive-health ratio. All prices per10 QALYs; negative-resource ratios are signed diagnostics."
+      },
+      {
+        "case": "donor_pays_outside",
+        "headline": "US donor $242,162 /10 QALYs",
+        "detail": "US/Bay/SF QALYs 4.1294642 / 0.082589284 / 0. Donor US/Bay/SF $242,162 / $12,108,108 / No finite positive-health ratio. Gross resources $103,130; gross prices $249,742 / $12,487,080 / No finite positive-health ratio. Net resources $101,565; net prices $245,952 / $12,297,594 / No finite positive-health ratio. All prices per10 QALYs; negative-resource ratios are signed diagnostics."
+      },
+      {
+        "case": "no_bay_health",
+        "headline": "US donor $172,973 /10 QALYs",
+        "detail": "US/Bay/SF QALYs 5.7812499 / 0 / 0. Donor US/Bay/SF $172,973 / No finite positive-health ratio / No finite positive-health ratio. Gross resources $124,382; gross prices $215,147 / No finite positive-health ratio / No finite positive-health ratio. Net resources $112,191; net prices $194,060 / No finite positive-health ratio / No finite positive-health ratio. All prices per10 QALYs; negative-resource ratios are signed diagnostics."
+      },
+      {
+        "case": "resource_saving_diagnostic",
+        "headline": "US donor $172,973 /10 QALYs",
+        "detail": "US/Bay/SF QALYs 5.7812499 / 0.115625 / 0. Donor US/Bay/SF $172,973 / $8,648,649 / No finite positive-health ratio. Gross resources $124,382; gross prices $215,147 / $10,757,350 / No finite positive-health ratio. Net resources $-37,809; net prices $-65,399 / $-3,269,974 / No finite positive-health ratio. All prices per10 QALYs; negative-resource ratios are signed diagnostics."
+      },
+      {
+        "case": "zero_associated_resources",
+        "headline": "US donor $172,973 /10 QALYs",
+        "detail": "US/Bay/SF QALYs 5.7812499 / 0.115625 / 0. Donor US/Bay/SF $172,973 / $8,648,649 / No finite positive-health ratio. Gross resources $100,000; gross prices $172,973 / $8,648,649 / No finite positive-health ratio. Net resources $100,000; net prices $172,973 / $8,648,649 / No finite positive-health ratio. All prices per10 QALYs; negative-resource ratios are signed diagnostics."
+      }
+    ],
+    "uncertaintyBoundary": "These are judgmental scenarios, not confidence bounds. Favorable US $3,760/10 requires joint optimistic allocation, cost, additionality, uniqueness, use, efficacy and survival. The central value does not meet $100,000/10. Null and negative effects retain costs. Shorter access and survival matter. Public-resource savings can create a negative net-resource price without changing health; this is a diagnostic, not claimed savings.",
+    "fundingBoundary": "FY2025 Form990 shows $738,924 government grants and $426,200 deficit, but no priced current incremental course offer. Gross resources use all nominal courses; net outside inputs use only financing-additional courses, plus expected incremental medical resources, less explicitly specified real savings. Neither is gross organization revenue, billed insurance, or a public transfer sum."
+  },
+  "evidence": [
+    {
+      "key": "current",
+      "design": "Primary program and affiliate descriptions",
+      "population": "People facing naloxone access barriers",
+      "result": "Functioning multi-state network; Oregon partner reports2,342 mail recipients in2024.",
+      "transfer": "One affiliate count is not a network denominator, marginal reach or complete unit cost."
+    },
+    {
+      "key": "early",
+      "design": "2017–2019 descriptive program report",
+      "population": "Early NEXT recipients and voluntarily reported rescues",
+      "result": "3,609 individuals received naloxone;335 reversal reports.",
+      "transfer": "No extraction of a current use probability or unique deaths prevented; repeat and voluntary reports are not causal health."
+    },
+    {
+      "key": "clinical",
+      "design": "FDA indication and labeling",
+      "population": "Opioid-overdose emergencies",
+      "result": "Naloxone reverses respiratory depression; repeat doses and emergency care may be needed.",
+      "transfer": "Does not supply the marginal death-risk difference versus actual alternative rescue."
+    },
+    {
+      "key": "finance",
+      "design": "Primary FY2025 Form990",
+      "population": "Exact recipient, not consolidated affiliates",
+      "result": "$2,648,980 expense; $131,237 shipping/delivery; $738,924 government grants.",
+      "transfer": "No current course denominator, marginal allocation or verified funding room."
+    }
+  ],
+  "reservations": [
+    "All unit costs, causal probabilities and residence shares except the SF delivery boundary remain uncalibrated judgments.",
+    "A complete course can require multiple doses; future use is not inferred from reports divided by doses.",
+    "Finite mortality includes future overdose attrition, but recipient-specific risk and mobility are unknown.",
+    "Outside resources exclude amounts already paid through NEXT contracts. Verify this cost ledger before using the result for a donation.",
+    "Do not add health from NEXT, HRT, Remedy or local affiliate models without removing same-medicine and same-person overlap."
+  ],
+  "excludedBenefits": [
+    "HIV/HCV and other infection prevention from sterile supplies",
+    "Nonfatal overdose injury prevention",
+    "Education, stigma reduction and social support beyond the first modeled rescue",
+    "Additional secondary beneficiaries or repeat rescue episodes",
+    "SF mobility/secondary rescue spillovers",
+    "Health after the finite horizon"
+  ],
+  "sources": [
+    {
+      "title": "Give to NEXT",
+      "publisher": "NEXT Harm Reduction",
+      "url": "https://nextdistro.org/donate",
+      "published": "Undated current page",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary recipient, ordinary gift uses and affiliate separation; no priced open tranche."
+    },
+    {
+      "title": "Naloxone mailing program",
+      "publisher": "NEXT Harm Reduction",
+      "url": "https://nextdistro.org/naloxone",
+      "published": "Undated current page",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary current network and alternative-access eligibility."
+    },
+    {
+      "title": "California resources",
+      "publisher": "NEXT Harm Reduction",
+      "url": "https://nextdistro.org/california",
+      "published": "Undated current page; contains older surrounding context",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary SANE partner and explicit SF mail exclusion; old mortality, hours and legal text not used."
+    },
+    {
+      "title": "FY2025 Form 990",
+      "publisher": "NEXT Harm Reduction; IRS filing hosted by ProPublica",
+      "url": "https://projects.propublica.org/nonprofits/organizations/831333112/202630939349300903/full",
+      "published": "Filed April 3, 2026; July 2024–June 2025 fiscal period",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary e-file return and Schedule O read; tax-year-2024 label is not fiscal-year-2024; no shipment denominator."
+    },
+    {
+      "title": "Naloxone access",
+      "publisher": "California Department of Public Health",
+      "url": "https://www.cdph.ca.gov/Programs/CCDPHP/sapb/pages/naloxone.aspx",
+      "published": "Current page; 2026 updates",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary public/pharmacy/community baseline and NEXT access route."
+    },
+    {
+      "title": "NC overdose summit operator presentation",
+      "publisher": "NCHRC/NEXT presenters; NCACC",
+      "url": "https://www.ncacc.org/wp-content/uploads/2025/03/TH-B4-HR-306-Kestner-Miller-Powell.pdf",
+      "published": "March 2025",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary separation of NEXT platform from partner medicine, processing and shipping."
+    },
+    {
+      "title": "2024 Project RED outputs",
+      "publisher": "Project RED",
+      "url": "https://projectredinitiative.org/",
+      "published": "2024 output period; undated page",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary 2,342 individual Oregon mail recipients, distinct from organizational/festival output."
+    },
+    {
+      "title": "NEXT Harm Reduction: online mail-based program",
+      "publisher": "Yang, Favaro and Meacham; AJPH",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7958031/",
+      "published": "2021; outcomes 2017–2019",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary descriptive study; search-accessible abstract/text. Direct NIH challenge limited full access. Reports not unique causal lives."
+    },
+    {
+      "title": "OTC naloxone approval",
+      "publisher": "FDA",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-over-counter-naloxone-nasal-spray",
+      "published": "March 29, 2023",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary pharmacological indication, not marginal mailing efficacy."
+    },
+    {
+      "title": "Narcan prescribing label",
+      "publisher": "FDA",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/208411s007lbl.pdf",
+      "published": "2023",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary repeat-dose/emergency-care warning; no assumed network formulation mix."
+    }
+  ]
+}

@@ -1,0 +1,454 @@
+{
+  "organization": "Healthier Kids Foundation",
+  "eyebrow": "Whole-organization unrestricted giving · Silicon Valley / Bay Area",
+  "program": "Earlier appropriate child vision, dental and hearing care within HKF's expanded portfolio",
+  "donationUrl": "https://hkidsf.org/donate/",
+  "published": "September 8, 2026",
+  "modelVersion": "hkf-whole-portfolio-finite-earlier-care-v1",
+  "nutshell": {
+    "headline": "Screening can unlock care, but the whole gift pays for much more than completed treatment.",
+    "body": "Central Bay cost is $3,763,882 donor and $6,308,330 modeled associated resources per10 QALYs. No SF-city health is identified centrally.",
+    "whyItMayWork": "HKF follows up with families and helps them use existing coverage to obtain appropriate corrective care sooner.",
+    "whyWeAreCautious": "Clinical completion, severity mix, marginal funding, future allocation and utility transfer are uncertain. Screening and referral counts are not QALYs.",
+    "recommendationBlocker": "No current costed additional-care tranche verified. Research estimate, not a funding recommendation or proof of zero benefit elsewhere."
+  },
+  "summary": [
+    {
+      "label": "Central Bay donor /10 QALYs",
+      "value": "$3,763,882",
+      "detail": "0.265683 Bay QALYs per$100,000 whole gift."
+    },
+    {
+      "label": "Central Bay associated resources",
+      "value": "$6,308,330",
+      "detail": "$167,602 gross envelope; not net/exhaustive societal cost."
+    },
+    {
+      "label": "Favorable Bay donor / resources",
+      "value": "$45,304 / $147,744",
+      "detail": "Joint favorable assumptions; resource case remains above$100k."
+    },
+    {
+      "label": "SF-city / funding room",
+      "value": "No identified health / Unknown",
+      "detail": "No observed SF patient share or verified marginal tranche."
+    }
+  ],
+  "programSection": {
+    "body": "VisionFirst, DentalFirst and HearingFirst lead to family follow-up and insured/partner care. The expanded organization also runs wellness, education, coverage/appointment and newborn services plus Kids in Common and Turning Wheels for Kids; all costs stay.",
+    "steps": [
+      {
+        "title": "Budget the full organization",
+        "detail": "Use explicit ten-category allocation informed by prior-year financial structure, not a vision-only restriction."
+      },
+      {
+        "title": "Pay for the full screening pipeline",
+        "detail": "Negative screens, referral navigation and program administration consume cash before any completed care."
+      },
+      {
+        "title": "Count appropriate, additional, nonoverlapping care",
+        "detail": "Financial substitution, clinical completion, treatability and primary-person overlap filters address different losses."
+      },
+      {
+        "title": "Count only finite earlier-care health",
+        "detail": "Discount benefit; stop it with alternative-care catch-up, recurrence and a hard horizon; subtract harms."
+      }
+    ],
+    "boundary": "Ordinary HKF unrestricted gift, EIN77-0545774. Public coverage and school/clinic services continue. No lifetime prevention or school-to-health conversion."
+  },
+  "model": {
+    "headline": "A whole gift produces uncertain earlier-care time, not one QALY per screen",
+    "body": "Central health separates three clinical streams and retains53% unquantified portfolio cash. Operational caps are priors, not confirmed available appointments.",
+    "equation": {
+      "label": "Finite earlier-care QALYs",
+      "expression": "Nscreen=gift×allocation/(screen cost+referral yield×navigation); Ncomplete=min(Nscreen×funding additionality,cap)×yield×completion. Q=Ncomplete×treatable×nonoverlap×utility×use×no-alternative-at-start×discounted finite exp(−mortality−catch-up−loss) years − harms.",
+      "result": "Overall 0.268366814; Bay 0.265683146; SF0 QALYs. $167,602×10/Bay Q = $6,308,330."
+    },
+    "giftHeading": "All $100,000 remains in the donor numerator",
+    "inputs": [
+      {
+        "key": "portfolio",
+        "label": "Whole gift allocation",
+        "best": "15% vision / 18% dental / 14% hearing / 53% other",
+        "range": "Clinical ranges 5–35% / 5–30% / 5–20%; total portfolio must equal 100%.",
+        "basis": "Explicit current marginal priors informed by historical vision15.27%, dental19.51%, hearing15.77%, other programs26.75%, management15.37%, fundraising7.31%. Expanded programs and flexible-gift priorities may differ. The remaining53% includes wellness8, education5, coverage/appointments7, newborn3, Kids in Common4, Turning Wheels3, general operations/fundraising23. No administrative double charge.",
+        "confidence": "Observed source facts distinguished from analyst priors"
+      },
+      {
+        "key": "screen_cash",
+        "label": "Screen and navigation cash",
+        "best": "$30/screen plus $50/vision or dental referral; $75/hearing referral",
+        "range": "Screen $15–60; navigation $25–150.",
+        "basis": "Direct pathway and program administration priors. Cost per screened child includes negative screens; no $75 already-identified-referral shortcut. Vision's historical $777,628 and undated20,000 annual screens suggest a roughly$39 program-cost scale, not a matched-year marginal quote; central combined cash is$37/screen. Separate central operations share remains paid.",
+        "confidence": "Observed source facts distinguished from analyst priors"
+      },
+      {
+        "key": "yield",
+        "label": "Referral yield",
+        "best": "14% vision / 29% dental / 4% hearing",
+        "range": "Scenario ranges 7–25% / 15–40% / 2–8%.",
+        "basis": "Official undated follow-up-need estimates, not sensitivities or confirmed disease rates. Positive screen is not completed appropriate care.",
+        "confidence": "Observed source facts distinguished from analyst priors"
+      },
+      {
+        "key": "additionality",
+        "label": "Financing and absorption",
+        "best": "50% financially additional; cap1,000 additional screens/pathway",
+        "range": "0–100%; cap0–5,000.",
+        "basis": "Priors, not verified capacity. Replacing county, insurer or other charity funding lowers added capacity; no automatic funding multiplier from historical grants or deficit.",
+        "confidence": "Observed source facts distinguished from analyst priors"
+      },
+      {
+        "key": "completion",
+        "label": "Completed clinical episodes and treatability",
+        "best": "Completion70/65/60%; treatable80/35/25%",
+        "range": "Completion20–85%; treatable40–95/10–60/5–40%.",
+        "basis": "Clinical completion is beyond paperwork closure: appropriate examination and treatment when indicated. Treatability excludes false positives, painless dental concerns and non-correctable findings. All nominal clinical costs retained before that filter. Local causal completion/severity data unavailable.",
+        "confidence": "Observed source facts distinguished from analyst priors"
+      },
+      {
+        "key": "utility",
+        "label": "Preference-utility bridge",
+        "best": "Vision .025; symptomatic dental .08; short-term hearing .01",
+        "range": "Signed ranges -.02–.05 / -.05–.15 / -.02–.025.",
+        "basis": "Explicit judgments, not measured HKF utilities. Vision adult/Zambia uncontrolled .075 provides weak scale context only. Child dental CHU9D summed score change2.48 is not a2.48-QALY or .0248-utility effect. Hearing randomized OME QoL null makes0 a serious alternative. No academic/development score mapping.",
+        "confidence": "Observed source facts distinguished from analyst priors"
+      },
+      {
+        "key": "use",
+        "label": "Effective benefit and overlap",
+        "best": "Useful benefit70/90/80%; disjoint people100/90/85%",
+        "range": "Use40–95%; overlap exclusion0–30% for later streams.",
+        "basis": "SF preschool study's71% is children meeting school wear threshold, not71% all-day wear; .70 effective-use is a transfer judgment. Primary-person ledger vision then dental then hearing; costs/harms of overlapping cases remain.",
+        "confidence": "Observed source facts distinguished from analyst priors"
+      },
+      {
+        "key": "time",
+        "label": "Finite earlier care",
+        "best": "Horizons2/.5/.5 years after treatment; delays .15/.15/.2 years",
+        "range": "Vision .5–3 (hard max5); dental/hearing .25–1; delay0–1.",
+        "basis": "At start,60/60/50% lack equivalent alternative; exponential alternative catch-up hazards .7/2/2 per year. Independent correction-loss/recurrence hazards .15/1/1. All are priors. This explicitly ends benefits when ordinary care catches up. No whole-lifetime amblyopia, saved lives or permanent hearing assumption.",
+        "confidence": "Observed source facts distinguished from analyst priors"
+      },
+      {
+        "key": "discount",
+        "label": "Discount and survival",
+        "best": "3% annual discount; .0002/year mortality hazard",
+        "range": "Discount0–5%; mortality0–.002.",
+        "basis": "Priors. Expected caseload already alive at intervention start; delay discounts only. Mortality applies once during finite benefit; utility is not a survival benefit.",
+        "confidence": "Observed source facts distinguished from analyst priors"
+      },
+      {
+        "key": "harm",
+        "label": "Signed health and harms",
+        "best": "Per added completed episode .0001/.0005/.0002 QALY loss; independent0",
+        "range": "Episode0–.01; independent0–1 QALY per gift.",
+        "basis": "Gift-date PV losses for procedural/transient harms outside signed lasting utility. Conservative: charged before treatability, overlap and alternative filters. Null utility retains harms; true all-health-null scenario explicitly removes them. Independent harm survives zero activity.",
+        "confidence": "Observed source facts distinguished from analyst priors"
+      },
+      {
+        "key": "resources",
+        "label": "Associated outside resources",
+        "best": "$2/nominal screen; $300/$500/$500 per nominal completed episode; $10k other",
+        "range": "Per-screen0–10; per-episode0–1,000/2,000/2,000; other0–$30k.",
+        "basis": "Paid by insurance/partners/donated inputs or patient time, not free. Gross associated activity envelope, including nonadditional financed activity; not net induced societal spending and not exhaustive other-portfolio accounting. No savings offsets.",
+        "confidence": "Observed source facts distinguished from analyst priors"
+      },
+      {
+        "key": "geography",
+        "label": "Overall, Bay and SF",
+        "best": "100% US overall / 99% Bay / 0% SF-city",
+        "range": "Bay90–100%; SF0–1% only hypothetical sensitivity.",
+        "basis": "Service focus Santa Clara/Silicon Valley supports Bay;99% residence is prior. No identified SF-city health, so SF central ratios null. Nested geographies, not additive. No local credit from headquarters alone.",
+        "confidence": "Observed source facts distinguished from analyst priors"
+      }
+    ],
+    "sensitivity": [
+      {
+        "case": "central",
+        "headline": "Bay associated resources: $6,308,330/10 QALYs",
+        "detail": "Overall/Bay/SF QALYs 0.2683668144 / 0.2656831463 / 0.000000000. Donor overall/Bay/SF $3,726,243 / $3,763,882 / No finite positive ratio; resources $6,245,247 / $6,308,330 / No finite positive ratio. Gross associated envelope $167,602. Full gift retained; positive."
+      },
+      {
+        "case": "favorable",
+        "headline": "Bay associated resources: $147,744/10 QALYs",
+        "detail": "Overall/Bay/SF QALYs 22.29596967 / 22.07300997 / 0.000000000. Donor overall/Bay/SF $44,851 / $45,304 / No finite positive ratio; resources $146,267 / $147,744 / No finite positive ratio. Gross associated envelope $326,115. Full gift retained; positive."
+      },
+      {
+        "case": "cautious",
+        "headline": "Bay associated resources: No finite positive ratio/10 QALYs",
+        "detail": "Overall/Bay/SF QALYs -0.0006453380120 / -0.0006388846319 / 0.000000000. Donor overall/Bay/SF No finite positive ratio / No finite positive ratio / No finite positive ratio; resources No finite positive ratio / No finite positive ratio / No finite positive ratio. Gross associated envelope $130,670. Full gift retained; harm."
+      },
+      {
+        "case": "historical_allocation",
+        "headline": "Bay associated resources: $6,182,610/10 QALYs",
+        "detail": "Overall/Bay/SF QALYs 0.2807828888 / 0.2779750599 / 0.000000000. Donor overall/Bay/SF $3,561,471 / $3,597,445 / No finite positive ratio; resources $6,120,784 / $6,182,610 / No finite positive ratio. Gross associated envelope $171,861. Full gift retained; positive."
+      },
+      {
+        "case": "low_funding_additionality",
+        "headline": "Bay associated resources: $31,541,652/10 QALYs",
+        "detail": "Overall/Bay/SF QALYs 0.05367336288 / 0.05313662925 / 0.000000000. Donor overall/Bay/SF $18,631,216 / $18,819,410 / No finite positive ratio; resources $31,226,236 / $31,541,652 / No finite positive ratio. Gross associated envelope $167,602. Full gift retained; positive."
+      },
+      {
+        "case": "low_completion",
+        "headline": "Bay associated resources: $16,494,007/10 QALYs",
+        "detail": "Overall/Bay/SF QALYs 0.07918456153 / 0.07839271592 / 0.000000000. Donor overall/Bay/SF $12,628,724 / $12,756,287 / No finite positive ratio; resources $16,329,066 / $16,494,007 / No finite positive ratio. Gross associated envelope $129,301. Full gift retained; positive."
+      },
+      {
+        "case": "rapid_alternative_care",
+        "headline": "Bay associated resources: $451,524,609/10 QALYs",
+        "detail": "Overall/Bay/SF QALYs 0.003749400391 / 0.003711906387 / 0.000000000. Donor overall/Bay/SF $266,709,312 / $269,403,346 / No finite positive ratio; resources $447,009,363 / $451,524,609 / No finite positive ratio. Gross associated envelope $167,602. Full gift retained; positive."
+      },
+      {
+        "case": "one_year_vision",
+        "headline": "Bay associated resources: $7,607,830/10 QALYs",
+        "detail": "Overall/Bay/SF QALYs 0.2225268741 / 0.2203016054 / 0.000000000. Donor overall/Bay/SF $4,493,839 / $4,539,232 / No finite positive ratio; resources $7,531,751 / $7,607,830 / No finite positive ratio. Gross associated envelope $167,602. Full gift retained; positive."
+      },
+      {
+        "case": "weak_vision_utility",
+        "headline": "Bay associated resources: $10,951,995/10 QALYs",
+        "detail": "Overall/Bay/SF QALYs 0.1545788264 / 0.1530330381 / 0.000000000. Donor overall/Bay/SF $6,469,191 / $6,534,537 / No finite positive ratio; resources $10,842,475 / $10,951,995 / No finite positive ratio. Gross associated envelope $167,602. Full gift retained; positive."
+      },
+      {
+        "case": "no_hearing_health",
+        "headline": "Bay associated resources: $6,334,477/10 QALYs",
+        "detail": "Overall/Bay/SF QALYs 0.2672591061 / 0.2645865151 / 0.000000000. Donor overall/Bay/SF $3,741,687 / $3,779,482 / No finite positive ratio; resources $6,271,132 / $6,334,477 / No finite positive ratio. Gross associated envelope $167,602. Full gift retained; positive."
+      },
+      {
+        "case": "vision_only_positive_health",
+        "headline": "Bay associated resources: $12,609,245/10 QALYs",
+        "detail": "Overall/Bay/SF QALYs 0.1342623199 / 0.1329196967 / 0.000000000. Donor overall/Bay/SF $7,448,106 / $7,523,339 / No finite positive ratio; resources $12,483,153 / $12,609,245 / No finite positive ratio. Gross associated envelope $167,602. Full gift retained; positive."
+      },
+      {
+        "case": "no_additional_capacity",
+        "headline": "Bay associated resources: No finite positive ratio/10 QALYs",
+        "detail": "Overall/Bay/SF QALYs 0.000000000 / 0.000000000 / 0.000000000. Donor overall/Bay/SF No finite positive ratio / No finite positive ratio / No finite positive ratio; resources No finite positive ratio / No finite positive ratio / No finite positive ratio. Gross associated envelope $167,602. Full gift retained; zero."
+      },
+      {
+        "case": "no_funding_additionality",
+        "headline": "Bay associated resources: No finite positive ratio/10 QALYs",
+        "detail": "Overall/Bay/SF QALYs 0.000000000 / 0.000000000 / 0.000000000. Donor overall/Bay/SF No finite positive ratio / No finite positive ratio / No finite positive ratio; resources No finite positive ratio / No finite positive ratio / No finite positive ratio. Gross associated envelope $167,602. Full gift retained; zero."
+      },
+      {
+        "case": "null_utility_retains_harms",
+        "headline": "Bay associated resources: No finite positive ratio/10 QALYs",
+        "detail": "Overall/Bay/SF QALYs -0.02206646606 / -0.02184580140 / 0.000000000. Donor overall/Bay/SF No finite positive ratio / No finite positive ratio / No finite positive ratio; resources No finite positive ratio / No finite positive ratio / No finite positive ratio. Gross associated envelope $167,602. Full gift retained; harm."
+      },
+      {
+        "case": "zero_all_health",
+        "headline": "Bay associated resources: No finite positive ratio/10 QALYs",
+        "detail": "Overall/Bay/SF QALYs 0.000000000 / 0.000000000 / 0.000000000. Donor overall/Bay/SF No finite positive ratio / No finite positive ratio / No finite positive ratio; resources No finite positive ratio / No finite positive ratio / No finite positive ratio. Gross associated envelope $167,602. Full gift retained; zero."
+      },
+      {
+        "case": "signed_health_harm",
+        "headline": "Bay associated resources: No finite positive ratio/10 QALYs",
+        "detail": "Overall/Bay/SF QALYs -0.2023302870 / -0.2003069841 / 0.000000000. Donor overall/Bay/SF No finite positive ratio / No finite positive ratio / No finite positive ratio; resources No finite positive ratio / No finite positive ratio / No finite positive ratio. Gross associated envelope $167,602. Full gift retained; harm."
+      },
+      {
+        "case": "independent_harm_zero_activity",
+        "headline": "Bay associated resources: No finite positive ratio/10 QALYs",
+        "detail": "Overall/Bay/SF QALYs -1.000000000 / -0.9900000000 / 0.000000000. Donor overall/Bay/SF No finite positive ratio / No finite positive ratio / No finite positive ratio; resources No finite positive ratio / No finite positive ratio / No finite positive ratio. Gross associated envelope $167,602. Full gift retained; harm."
+      },
+      {
+        "case": "external_resource_double",
+        "headline": "Bay associated resources: $8,852,779/10 QALYs",
+        "detail": "Overall/Bay/SF QALYs 0.2683668144 / 0.2656831463 / 0.000000000. Donor overall/Bay/SF $3,726,243 / $3,763,882 / No finite positive ratio; resources $8,764,251 / $8,852,779 / No finite positive ratio. Gross associated envelope $235,203. Full gift retained; positive."
+      },
+      {
+        "case": "limited_absorption",
+        "headline": "Bay associated resources: $51,100,520/10 QALYs",
+        "detail": "Overall/Bay/SF QALYs 0.03312973212 / 0.03279843480 / 0.000000000. Donor overall/Bay/SF $30,184,367 / $30,489,260 / No finite positive ratio; resources $50,589,515 / $51,100,520 / No finite positive ratio. Gross associated envelope $167,602. Full gift retained; positive."
+      },
+      {
+        "case": "regional_sensitivity",
+        "headline": "Bay associated resources: $6,939,163/10 QALYs",
+        "detail": "Overall/Bay/SF QALYs 0.2683668144 / 0.2415301330 / 0.002683668144. Donor overall/Bay/SF $3,726,243 / $4,140,270 / $372,624,314; resources $6,245,247 / $6,939,163 / $624,524,714. Gross associated envelope $167,602. Full gift retained; positive."
+      }
+    ],
+    "uncertaintyBoundary": "Central and favorable are conditional bundles, not confidence limits. Zero/negative health retains costs and suppresses positive ratios. The favorable donor result does not establish favorable full-resource efficiency.",
+    "fundingBoundary": "FY2025 filed revenue$3,778,505 and expenses$5,091,250; program$3,936,132, management$782,761, fundraising$372,357. Government contributions$289,473 and service revenue$218,705 are existing support, not added donor leverage. Net assets$4,297,786 do not equal available cash. No current costed funding room established; gross external envelope is not net societal cost."
+  },
+  "evidence": [
+    {
+      "key": "vision-wear",
+      "design": "Observational preschool cohort",
+      "population": "188 low-income San Francisco preschoolers, not HKF",
+      "result": "133 met the school wear threshold across the school year.",
+      "transfer": "Supports sustained use plausibility, not a measured .70 fraction of all-day useful wear, care completion or QALYs."
+    },
+    {
+      "key": "vision-utility",
+      "design": "Uncontrolled before/after EQ-5D",
+      "population": "Zambia refraction/presbyopia recipients,41/113 followed",
+      "result": "Follow-up preference utility was .075 higher.",
+      "transfer": ".025 child utility is a judgment with severe setting/age/attrition limitations. Weak-source and null scenarios included."
+    },
+    {
+      "key": "dental",
+      "design": "Uncontrolled three-month child pre/post study",
+      "population": "85/167 followed after dental treatment under GA",
+      "result": "Oral and overall child scores improved; raw CHU9D sum is not preference utility.",
+      "transfer": "Restrict to symptomatic treatable subset; .08 utility and finite pain-time are explicit priors, not questionnaire conversion."
+    },
+    {
+      "key": "hearing",
+      "design": "Randomized ventilation tubes versus watchful waiting",
+      "population": "Young children with persistent OME",
+      "result": "Indexed abstract reports no significant additional QoL improvement.",
+      "transfer": "No permanent hearing/development credit; tiny short-term .01 bridge is speculative, with zero-hearing and negative scenarios."
+    }
+  ],
+  "comparisonBridge": {
+    "headline": "Why this differs from the $375k quick screen",
+    "body": "The earlier preliminary screen assumed25% vision allocation and$75 per already-identified referral, with a coarse .04Q per extra completion. Full research pays for the screening pipeline, uses15% vision allocation, filters treatability and models alternative-care catch-up. Neither version is a funding quote.",
+    "equation": {
+      "label": "Historical screening hypothesis only",
+      "expression": "10×75 /(.25×.5×.4×.04)",
+      "result": "$375,000 donor /10Q, not the current whole-portfolio estimate"
+    },
+    "inputs": [],
+    "sensitivity": [],
+    "boundary": "Do not add preliminary-screen QALYs to the full model or preserve its number by tuning assumptions."
+  },
+  "reservations": [
+    "FY2025 return is a primary filing, not inspected audited statements; expanded 2026 portfolio allocation remains a prior.",
+    "Undated source activity counts do not establish a current marginal queue or causal completion.",
+    "Adult spectacle utility does not identify pediatric effect; tooth pain and transient hearing bridges are explicit judgments.",
+    "Family care already financed through Medi-Cal/CCS, schools and health plans can replace or shorten donor-caused gains.",
+    "Clinical partner capacity may displace other patients; harms/displacement data are not locally measured.",
+    "Gross outside-resource assumptions are not full net societal accounting.",
+    "Unquantified policy, cycling, wellness, family and other health could materially change whole-organization impact."
+  ],
+  "excludedBenefits": [
+    "Mortality prevention or lives saved",
+    "Lifetime amblyopia prevention or permanent deafness reversal",
+    "Academic achievement, income and developmental scores converted to QALYs",
+    "Additional caregiver utility overlapping child/family measures",
+    "Wellness, obesity education, coverage and newborn benefits beyond quantified clinical streams",
+    "Kids in Common policy and Turning Wheels cycling health",
+    "Any treatment benefit after finite horizon or alternative-care catch-up",
+    "Second generic health gain for an overlapping child"
+  ],
+  "sources": [
+    {
+      "publisher": "Healthier Kids Foundation",
+      "title": "Ways to Give",
+      "url": "https://hkidsf.org/ways-to-give/",
+      "published": "Current undated",
+      "sourceType": "Official general giving and EIN 77-0545774. Page retains an older postal address alongside current contact block; no address used as model input.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Healthier Kids Foundation",
+      "title": "Current programs and leadership",
+      "url": "https://hkidsf.org/our-programs/",
+      "published": "Current undated",
+      "sourceType": "Official screening, education, coverage, foster appointment and newborn support; not allocation or causal health evidence.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Kids in Common",
+      "title": "Joining Healthier Kids Foundation",
+      "url": "https://www.kidsincommon.org/joining-healthier-kids",
+      "published": "Current undated",
+      "sourceType": "Official continuation of policy, data, partnerships and summit work under HKF; current homepage/team corroborate integration.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Healthier Kids Foundation",
+      "title": "Turning Wheels for Kids",
+      "url": "https://hkidsf.org/our-programs/turning-wheels-for-kids/",
+      "published": "Current 2026 portfolio",
+      "sourceType": "Current homepage linked program; cycling benefits not converted to QALYs.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Healthier Kids Foundation / IRS, rendered by ProPublica",
+      "title": "FY ending June 2025 Form 990",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202533399349300228/IRS990",
+      "published": "Filed December 5, 2025",
+      "sourceType": "Primary filed return, tax-year 2024 form for FY2025. Public rendered iframe read via Node after browser/XML access limitations. Filing is not itself an independent audit; current expansion not presumed inside historical totals.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Healthier Kids Foundation",
+      "title": "VisionFirst",
+      "url": "https://hkidsf.org/our-programs/visionfirst/",
+      "published": "Current undated statistics",
+      "sourceType": "About 20,000 screens/year, 14% need vision care, over 8,200 glasses using insurance cumulatively; not contemporaneous causal completion rate.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Healthier Kids Foundation",
+      "title": "DentalFirst",
+      "url": "https://hkidsf.org/our-programs/dentalfirst/",
+      "published": "Current undated statistics",
+      "sourceType": "29% need follow-up contact. Testimonial closes screening paperwork before remaining fillings: a closed referral is not proof of completed treatment.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Healthier Kids Foundation",
+      "title": "HearingFirst",
+      "url": "https://hkidsf.org/our-programs/hearingfirst/",
+      "published": "Current undated statistics",
+      "sourceType": "4% need follow-up, CCS navigation. Example includes ear cleaning, not permanent deafness; severity mix unknown.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "California DHCS",
+      "title": "Medi-Cal for Kids & Teens member information",
+      "url": "https://www.dhcs.ca.gov/services/medi-cal-resources/medi-cal-for-kids-teens/member-information/",
+      "published": "Current",
+      "sourceType": "Official covered diagnosis/treatment, vision/hearing/dental care, transport, appointment and language assistance; coverage is not guaranteed uptake.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Santa Clara County",
+      "title": "FY2025–26 Board budget proposal inventory",
+      "url": "https://files.santaclaracounty.gov/exjcpb1666/2026-04/fy-25-26-inventory-of-board-of-supervisors-budget-proposals.pdf?VersionId=E8IFvttpxEDpbRzbS3R99lmeeoG02Hew",
+      "published": "April 2026",
+      "sourceType": "Official inventory lists $15,000 one-time My HealthFirst expansion allocation. Existing public support, not donor-created leverage or verified renewal.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Sabharwal et al.",
+      "title": "Eyeglass wear among low-income San Francisco preschoolers",
+      "url": "https://jamanetwork.com/journals/jamaophthalmology/fullarticle/2776359",
+      "published": "February 18, 2021",
+      "sourceType": "Primary observational school-year cohort: 133/188 consistently wore glasses over half the school day. Not 71% of all waking hours, HKF treatment completion, or measured utility.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Griffiths et al.",
+      "title": "Cost-effectiveness of eye care services in Zambia",
+      "url": "https://researchonline.lshtm.ac.uk/1604317/1/1478-7547-12-6.pdf",
+      "published": "2014",
+      "sourceType": "Primary uncontrolled refraction/presbyopia cohort; .850 to .925 EQ-5D among 41/113 follow-ups. Not child-specific causal utility; used only as weak scale context.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Knapp et al.",
+      "title": "Dental caries treatment and children/families",
+      "url": "https://eprints.whiterose.ac.uk/169642/1/The%20impact%20of%20dental%20caries%20and%20its%20treatment%20under%20general%20anaesthetic%20on%20children%20and%20their%20families.pdf",
+      "published": "2020 online; 2021 issue",
+      "sourceType": "Primary uncontrolled pre/post GA cohort: 85/167 followed at 3 months; CHU9D displayed as summed 13.58 to 11.09, not preference weights. No score-to-QALY conversion.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Rovers et al.",
+      "title": "Ventilation tubes versus watchful waiting: quality of life",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11124783/",
+      "published": "2001",
+      "sourceType": "Primary randomized pediatric OME study; indexed abstract reports no significant between-group QoL improvement. Full page challenged; not treated as full-text verification. Challenges broad hearing utility transfer.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "publisher": "Cotter / PEDIG",
+      "title": "Refractive correction for anisometropic amblyopia",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16751032/",
+      "published": "2006",
+      "sourceType": "Primary prospective noncomparative initial intervention in 84 children aged 3–<7; acuity outcomes, not lifetime utility or timing counterfactual. No extra amblyopia stream credited.",
+      "retrieved": "September 8, 2026"
+    }
+  ]
+}

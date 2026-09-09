@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Felton Institute — accepted report, publication pending
+
+Whole unrestricted gift includes disjoint early-psychosis and crisis-support pathways;70% unquantified central portfolio retains costs. Central $42.28M/10SFQ, favorable $456K, adverse net harm. Finite person-level crisis survival, two-year psychosis utility and public/988 baseline; mortality effect remains an unvalidated prior with a zero-credit sensitivity. Independent522parity checks and5,000finite-domain checks; author854checks/18scenarios. Count59 only after canonical verification. Next accepted HPP/CalWalks; whole-gift SFAF revision and Fistula independent review underway.
+
 ## Coalition for Clean Air — accepted California-wide report, publication pending
 
 Whole unrestricted gift retains all portfolio cost; conditional future clean-fleet implementation capacity, not past policy passage. Central $124B/10SFQ, $12.4B/10BayQ, $1.24B/10CaliforniaQ. Competing-project health and real-resource displacement stay independent of target success. Historical CARB health/fleet anchor is explicitly a coarse forecast ratio, not a marginal causal estimate. Independently audited11scenarios/813checks plus253calculator comparisons. Distinct California cohort, not an SF-headquartered or US-wide relabel. Count58 after canonical verification; next accepted Felton/HPP/CalWalks.

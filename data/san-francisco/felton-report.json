@@ -1,0 +1,357 @@
+{
+  "organization": "Felton Institute",
+  "eyebrow": "Regional mental health and social services · Early psychosis and crisis support",
+  "program": "Conditional whole-organization value of a $100,000 unrestricted gift",
+  "donationUrl": "https://felton.org/about-us/make-a-difference/donate-now/",
+  "published": "September 8, 2026",
+  "modelVersion": "felton-whole-gift-two-pathways-v1",
+  "nutshell": {
+    "headline": "Felton treats serious mental illness and supports people in crisis. The next unrestricted gift’s health impact is unmeasured.",
+    "body": "Our conditional central estimate is $42.28M per 10 SF-resident QALYs. The favorable joint stress is $456K; adverse assumptions produce net harm. This is a partial-health whole-gift model with very low causal confidence, not observed organization effectiveness.",
+    "whyItMayWork": "Current early-psychosis and crisis services address severe harms. External randomized evidence supports clinical quality-of-life and immediate crisis-distress improvement.",
+    "whyWeAreCautious": "The prospective costs, allocation, local utility effect and crisis mortality benefit are analyst priors. The hotline trial did not measure deaths averted. Seventy percent of central donor cost has unquantified health.",
+    "recommendationBlocker": "No verified marginal unrestricted expansion plan or costed additional cohort; public and clinical payment offsets remain unknown."
+  },
+  "summary": [
+    {
+      "label": "Central donor USD / 10 QALYs",
+      "value": "$42.28M SF / $31.29M Bay / $27.18M US",
+      "detail": "Same full gift divided by nested residence-based health. All modeled health is US; never add these ledgers."
+    },
+    {
+      "label": "Whole-gift boundary",
+      "value": "$100,000 once",
+      "detail": "20% early psychosis, 10% crisis response, 70% other programs and institutional costs. Allocation is a judgment, not audited spending mix."
+    },
+    {
+      "label": "Current recipient",
+      "value": "Felton Institute Inc · EIN 94-1156530",
+      "detail": "SF Suicide Prevention is part of Felton; do not count it as a second independent organization."
+    },
+    {
+      "label": "Central gross resource envelope",
+      "value": "$118,667",
+      "detail": "SF gross resources $50.18M/10 QALYs. Includes outside clinical/partner allowances per offer; not net societal cost."
+    }
+  ],
+  "programSection": {
+    "body": "Felton provides early-psychosis care, crisis support and a wider portfolio of behavioral health, housing, early childhood, senior and justice services. This general-gift model quantifies two conditional pathways while retaining the entire cost.",
+    "steps": [
+      {
+        "title": "Allocate one unrestricted gift",
+        "detail": "Central $20,000 supports an early-psychosis upgrade and $10,000 a crisis-response component. All remaining $70,000 stays in the numerator with unquantified benefits."
+      },
+      {
+        "title": "Buy additional activity over current provision",
+        "detail": "Constructed costs are $20,000 per two-year clinical upgrade and $150 per selected unique high-risk crisis episode, including failed and repeated contacts. At 30% additionality these yield 0.3 upgrades and 20 crisis recipients."
+      },
+      {
+        "title": "Compare with care that already exists",
+        "detail": "Existing Felton services, county/state contracts, Medi-Cal, 988, other responders and ordinary clinical treatment are the baseline. Crisis recipients exclude the modeled early-psychosis cohort."
+      },
+      {
+        "title": "Count finite health",
+        "detail": "Early utility lasts two years, with no later tail. Crisis mortality risk changes for 30 days; extra survivors face common recurrent-suicide and other-death hazards through year ten."
+      }
+    ],
+    "boundary": "No generic hotline call, referral, hospital saving or reported rescue becomes a life saved. Other portfolio health is unknown, not established zero."
+  },
+  "model": {
+    "headline": "Two disjoint conditional pathways, one fully costed gift",
+    "body": "Early psychosis uses a judgmental net utility difference over ordinary care. Crisis response integrates the survival-curve difference once per unique selected high-risk person. All prospective causal inputs are priors; external studies support mechanisms but do not calibrate this gift.",
+    "equation": {
+      "label": "Whole-gift clinical and crisis bridge",
+      "expression": "Q_region = [gift × EP allocation / upgrade cost × additionality × net utility × transfer × discounted duration] × EP residence share + [gift × crisis allocation / episode cost × additionality × (finite survival Q − shared harm)] × crisis residence share − independent regional harm.",
+      "result": "Central US: early psychosis 0.0115664 QALYs + net crisis 0.0252253 = 0.0367917. Bay 0.0319559; SF 0.0236502. Crisis day-30 extra survivors: 0.004984."
+    },
+    "inputs": [
+      {
+        "key": "allocation",
+        "label": "Early / crisis / other allocation",
+        "confidence": "Analyst judgment",
+        "best": "20% / 10% / 70%",
+        "range": "Joint early 10–30%; crisis 5–20%; zero modeled allocation",
+        "basis": "Unrestricted allocation is unknown. Other programs and institutional costs retain all cash; no second overhead multiplier."
+      },
+      {
+        "key": "cost",
+        "label": "Direct upgrade / unique crisis episode",
+        "confidence": "Constructed cost assumptions",
+        "best": "$20,000 / $150",
+        "range": "$10,000–$40,000 / $75–$300 joint cases",
+        "basis": "Early:160 team hours × $100 plus $4,000 supports for two years, over ordinary care. Crisis:three hours × $50 including screening, failed/repeat contacts and supervision. Not current staffing quotes."
+      },
+      {
+        "key": "additionality",
+        "label": "Financial additionality",
+        "confidence": "Analyst judgment",
+        "best": "30% each",
+        "range": "0–60%",
+        "basis": "Public and other funding can replace activity. This differs from the clinical advantage over baseline provision."
+      },
+      {
+        "key": "ep",
+        "label": "Early net utility / local transfer / duration",
+        "confidence": "Judgments informed by external CSC trial",
+        "best": "0.04 / 50% / 2 years",
+        "range": "Utility −0.04 to 0.08; transfer20–75%; duration0.5–2 years",
+        "basis": "QLS is not a preference utility. No trial QALY coefficient is claimed; negative utility can capture net treatment harm. Earlier comparator catch-up shortens health but not course cost."
+      },
+      {
+        "key": "crisis",
+        "label": "30-day suicide risk / residual gap / efficacy",
+        "confidence": "Unvalidated mortality priors",
+        "best": "0.5% / 25% / 20%",
+        "range": "Risk0.1–1%; gap0–50%; efficacy0–40%",
+        "basis": "Risk is net cause-specific risk absent competing death for selected high-risk people, not all callers. Gap includes existing response; ASIST feelings outcomes do not identify mortality effect."
+      },
+      {
+        "key": "survival",
+        "label": "Later suicide / other mortality; utility / horizon",
+        "confidence": "Finite survival assumptions",
+        "best": "0.01 / 0.01 per year; 0.7 / 10 years",
+        "range": "Higher hazards0.08/0.04; utility1; horizons1–15 years",
+        "basis": "Both arms share later hazards after day30; recurrence and competing death consume extra survival. No repeated full-lifetime credits."
+      },
+      {
+        "key": "geography",
+        "label": "SF / Bay resident shares by pathway",
+        "confidence": "Unmeasured nested residence priors",
+        "best": "Early30/80%; crisis80/90%",
+        "range": "All modeled health SF sensitivity",
+        "basis": "Office address and national hotline access do not determine residence. Monterey is outside the nine-county Bay. Independent harm50/85%."
+      },
+      {
+        "key": "timing",
+        "label": "Start delay / discount",
+        "confidence": "Analyst judgment",
+        "best": "0.25 years / 3%",
+        "range": "1.25-year delay",
+        "basis": "Cohorts selected at service start; no prior health credit. One extra year divides net health by1.03."
+      },
+      {
+        "key": "resources",
+        "label": "Outside resources per early / crisis offer",
+        "confidence": "Unpriced gross allowances",
+        "best": "$12,000 / $100",
+        "range": "Zero outside-resource lower bound",
+        "basis": "Ordinary clinical support and volunteer/partner inputs for all offers, including replacement. Not net societal cost; future medical use and family time incomplete."
+      },
+      {
+        "key": "harms",
+        "label": "Shared crisis / independent donor harm",
+        "confidence": "Explicit stress judgments",
+        "best": "0.0001 QALY per additional person / 0",
+        "range": "Independent0.05 US QALY loss",
+        "basis": "Shared harm represents unwanted escalation/distress and vanishes with additional activity; independent harm can remain. These are not measured provider harms."
+      }
+    ],
+    "giftHeading": "Same $100,000 unrestricted gift in every scenario",
+    "sensitivity": [
+      {
+        "case": "central",
+        "headline": "SF donor: $42,283,006/10 QALYs",
+        "detail": "Central analyst assumptions. Full $100,000 gift retained. US/Bay/SF QALYs: 0.0367916998 / 0.0319558905 / 0.0236501632. US/Bay donor: $27,180,043/10 QALYs / $31,293,135/10 QALYs. Gross resources $118,667; US/Bay/SF resource: $32,253,652/10 QALYs / $37,134,520/10 QALYs / $50,175,834/10 QALYs."
+      },
+      {
+        "case": "favorable joint stress",
+        "headline": "SF donor: $456,047/10 QALYs",
+        "detail": "Joint favorable: larger modeled allocation, cheaper delivery, 60% additionality, larger effects, more SF health and 15-year crisis survival horizon; not a verified offer or confidence bound. Full $100,000 gift retained. US/Bay/SF QALYs: 2.52892933 / 2.25521689 / 2.19275836. US/Bay donor: $395,424/10 QALYs / $443,416/10 QALYs. Gross resources $162,667; US/Bay/SF resource: $643,223/10 QALYs / $721,291/10 QALYs / $741,836/10 QALYs."
+      },
+      {
+        "case": "adverse joint stress",
+        "headline": "SF donor: no finite positive ratio",
+        "detail": "Joint adverse: smaller allocation, higher unit costs, weaker effects and additionality, short horizons; net harm. Full $100,000 gift retained. US/Bay/SF QALYs: -0.000118738734 / -0.000109944043 / -0.000110386897. Net modeled harm. US/Bay donor: no finite positive ratio / no finite positive ratio. Gross resources $104,667; US/Bay/SF resource: no finite positive ratio / no finite positive ratio / no finite positive ratio."
+      },
+      {
+        "case": "strong public baseline",
+        "headline": "SF donor: $722,368,588/10 QALYs",
+        "detail": "10% financial additionality, 20% early clinical transfer and 5% residual crisis response gap. Full $100,000 gift retained. US/Bay/SF QALYs: 0.00269428465 / 0.00227063761 / 0.00138433483. US/Bay donor: $371,156,032/10 QALYs / $440,404,931/10 QALYs. Gross resources $118,667; US/Bay/SF resource: $440,438,491/10 QALYs / $522,613,852/10 QALYs / $857,210,725/10 QALYs."
+      },
+      {
+        "case": "no additional activity",
+        "headline": "SF donor: no finite positive ratio",
+        "detail": "No financially additional activity; shared effects vanish. Full $100,000 gift retained. US/Bay/SF QALYs: 0.00000000 / 0.00000000 / 0.00000000. Zero modeled health. US/Bay donor: no finite positive ratio / no finite positive ratio. Gross resources $118,667; US/Bay/SF resource: no finite positive ratio / no finite positive ratio / no finite positive ratio."
+      },
+      {
+        "case": "null without harm",
+        "headline": "SF donor: no finite positive ratio",
+        "detail": "No clinical effect and no shared harm: exact null. Full $100,000 gift retained. US/Bay/SF QALYs: 0.00000000 / 0.00000000 / 0.00000000. Zero modeled health. US/Bay donor: no finite positive ratio / no finite positive ratio. Gross resources $118,667; US/Bay/SF resource: no finite positive ratio / no finite positive ratio / no finite positive ratio."
+      },
+      {
+        "case": "no clinical effect shared harm",
+        "headline": "SF donor: no finite positive ratio",
+        "detail": "No clinical effect; shared crisis harm remains. Full $100,000 gift retained. US/Bay/SF QALYs: -0.00198527507 / -0.00178674757 / -0.00158822006. Net modeled harm. US/Bay donor: no finite positive ratio / no finite positive ratio. Gross resources $118,667; US/Bay/SF resource: no finite positive ratio / no finite positive ratio / no finite positive ratio."
+      },
+      {
+        "case": "independent donor harm",
+        "headline": "SF donor: no finite positive ratio",
+        "detail": "No additional activity but an independent 0.05 US QALY loss. Full $100,000 gift retained. US/Bay/SF QALYs: -0.0500000000 / -0.0425000000 / -0.0250000000. Net modeled harm. US/Bay donor: no finite positive ratio / no finite positive ratio. Gross resources $118,667; US/Bay/SF resource: no finite positive ratio / no finite positive ratio / no finite positive ratio."
+      },
+      {
+        "case": "crisis mortality uncredited",
+        "headline": "SF donor: $531,434,926/10 QALYs",
+        "detail": "No mortality benefit credited to crisis response; shared harm and early clinical benefit remain. Full $100,000 gift retained. US/Bay/SF QALYs: 0.00958111822 / 0.00746636707 / 0.00188169793. US/Bay donor: $104,371,951/10 QALYs / $133,933,946/10 QALYs. Gross resources $118,667; US/Bay/SF resource: $123,854,715/10 QALYs / $158,934,949/10 QALYs / $630,636,112/10 QALYs."
+      },
+      {
+        "case": "ep harm",
+        "headline": "SF donor: no finite positive ratio",
+        "detail": "Early-psychosis net utility is negative; crisis mortality is uncredited. Full $100,000 gift retained. US/Bay/SF QALYs: -0.0135516684 / -0.0110398622 / -0.00505813805. Net modeled harm. US/Bay donor: no finite positive ratio / no finite positive ratio. Gross resources $118,667; US/Bay/SF resource: no finite positive ratio / no finite positive ratio / no finite positive ratio."
+      },
+      {
+        "case": "one year survival window",
+        "headline": "SF donor: $223,445,011/10 QALYs",
+        "detail": "Crisis survival clipped at one year; early clinical course remains two years. Full $100,000 gift retained. US/Bay/SF QALYs: 0.0128232134 / 0.0103842527 / 0.00447537404. US/Bay donor: $77,983,573/10 QALYs / $96,299,660/10 QALYs. Gross resources $118,667; US/Bay/SF resource: $92,540,507/10 QALYs / $114,275,596/10 QALYs / $265,154,746/10 QALYs."
+      },
+      {
+        "case": "higher later mortality",
+        "headline": "SF donor: $61,550,113/10 QALYs",
+        "detail": "Later suicide hazard 0.08 and other-death hazard 0.04. Full $100,000 gift retained. US/Bay/SF QALYs: 0.0275376507 / 0.0236272463 / 0.0162469239. US/Bay donor: $36,313,918/10 QALYs / $42,324,018/10 QALYs. Gross resources $118,667; US/Bay/SF resource: $43,092,516/10 QALYs / $50,224,501/10 QALYs / $73,039,467/10 QALYs."
+      },
+      {
+        "case": "early care catches up six months",
+        "headline": "SF donor: $47,467,492/10 QALYs",
+        "detail": "Early comparator catches up in six months; full offered two-year upgrade cost retained. Full $100,000 gift retained. US/Bay/SF QALYs: 0.0281813213 / 0.0250675877 / 0.0210670496. US/Bay donor: $35,484,497/10 QALYs / $39,892,151/10 QALYs. Gross resources $118,667; US/Bay/SF resource: $42,108,269/10 QALYs / $47,338,686/10 QALYs / $56,328,090/10 QALYs."
+      },
+      {
+        "case": "one extra year delay",
+        "headline": "SF donor: $43,551,497/10 QALYs",
+        "detail": "Both pathways begin 1.25 years after gift. Full $100,000 gift retained. US/Bay/SF QALYs: 0.0357200969 / 0.0310251364 / 0.0229613235. US/Bay donor: $27,995,445/10 QALYs / $32,231,929/10 QALYs. Gross resources $118,667; US/Bay/SF resource: $33,221,261/10 QALYs / $38,248,556/10 QALYs / $51,681,109/10 QALYs."
+      },
+      {
+        "case": "zero external resources lower bound",
+        "headline": "SF donor: $42,283,006/10 QALYs",
+        "detail": "Unverified zero outside-resource lower bound. Full $100,000 gift retained. US/Bay/SF QALYs: 0.0367916998 / 0.0319558905 / 0.0236501632. US/Bay donor: $27,180,043/10 QALYs / $31,293,135/10 QALYs. Gross resources $100,000; US/Bay/SF resource: $27,180,043/10 QALYs / $31,293,135/10 QALYs / $42,283,006/10 QALYs."
+      },
+      {
+        "case": "no modeled allocation",
+        "headline": "SF donor: no finite positive ratio",
+        "detail": "All gift retained in unmodeled portfolio; no quantified activity. Full $100,000 gift retained. US/Bay/SF QALYs: 0.00000000 / 0.00000000 / 0.00000000. Zero modeled health. US/Bay donor: no finite positive ratio / no finite positive ratio. Gross resources $100,000; US/Bay/SF resource: no finite positive ratio / no finite positive ratio / no finite positive ratio."
+      },
+      {
+        "case": "all modeled health sf",
+        "headline": "SF donor: $27,180,043/10 QALYs",
+        "detail": "All modeled health is SF-resident; a geography stress, not observed residence. Full $100,000 gift retained. US/Bay/SF QALYs: 0.0367916998 / 0.0367916998 / 0.0367916998. US/Bay donor: $27,180,043/10 QALYs / $27,180,043/10 QALYs. Gross resources $118,667; US/Bay/SF resource: $32,253,652/10 QALYs / $32,253,652/10 QALYs / $32,253,652/10 QALYs."
+      },
+      {
+        "case": "full health crisis utility",
+        "headline": "SF donor: $30,321,862/10 QALYs",
+        "detail": "Crisis extra survival valued at full health. Full $100,000 gift retained. US/Bay/SF QALYs: 0.0484533776 / 0.0424514005 / 0.0329795055. US/Bay donor: $20,638,396/10 QALYs / $23,556,349/10 QALYs. Gross resources $118,667; US/Bay/SF resource: $24,490,897/10 QALYs / $27,953,534/10 QALYs / $35,981,942/10 QALYs."
+      }
+    ],
+    "uncertaintyBoundary": "Favorable $456K/10 SF QALYs is not a current offer. Strong public baseline gives $722M; removing crisis mortality credit gives $531M. Null and net harm are plausible; these scenarios are not confidence bounds.",
+    "fundingBoundary": "FY2025 government fees are $70.60M against $76.24M revenue. Historical public dependence does not determine marginal displacement. No verified next-gift allocation, staff expansion or funding gap."
+  },
+  "evidence": [
+    {
+      "key": "identity",
+      "design": "Current official provider disclosures",
+      "population": "Felton and its SF early-psychosis/crisis services",
+      "result": "Recipient EIN and active services verified; SFSP is within Felton.",
+      "transfer": "Does not identify a marginal cohort or causal gift effect."
+    },
+    {
+      "key": "csc",
+      "design": "RAISE-ETP cluster-randomized clinical trial and economic evaluation",
+      "population": "404 first-episode psychosis patients at34 clinics, two years",
+      "result": "NAVIGATE improved quality-of-life scores over community care and increased outpatient intensity; hospitalization benefit not clear.",
+      "transfer": "Different program/local comparator. QLS is not directly health utility; this model’s0.04 and50% transfer are priors."
+    },
+    {
+      "key": "hotline",
+      "design": "Gould et al. randomized ASIST counselor-training rollout",
+      "population": "Suicidal hotline callers monitored during calls",
+      "result": "Immediate distress and suicidality ratings improved.",
+      "transfer": "Training comparison does not estimate mortality from a Felton expansion. Crisis survival parameters remain unvalidated priors."
+    },
+    {
+      "key": "finance",
+      "design": "Audited FY2025 statements",
+      "population": "Whole Felton organization",
+      "result": "$71.47M expenses; strong government-fee dependence.",
+      "transfer": "Historical finance is not a marginal unit cost, unrestricted allocation or verified funding room."
+    }
+  ],
+  "reservations": [
+    "All prospective causal inputs and unit costs are analyst judgments.",
+    "The crisis mortality effect is not estimated by the available hotline randomized study.",
+    "70% of central gift cost has unquantified health; this is not complete organization expected value.",
+    "Public contracts, ordinary clinical care and alternative response limit additionality.",
+    "A selected unique-person cohort and exclusion of early-psychosis overlap require operational verification.",
+    "Finite constant mortality hazards approximate recurrence and competing death; age-specific pathways are not fitted.",
+    "No verified expansion quote or remaining funding gap."
+  ],
+  "excludedBenefits": [
+    "Other housing, early-childhood, senior, justice and workforce benefits",
+    "Post-overdose outreach and other behavioral-health pathways",
+    "Additional early-psychosis mortality or employment effects",
+    "Immediate crisis distress relief beyond the modeled mortality bridge",
+    "Hospital savings, economic welfare and family spillovers"
+  ],
+  "sources": [
+    {
+      "publisher": "Felton Institute",
+      "title": "Official giving and EIN",
+      "url": "https://felton.org/about-us/make-a-difference/donate-now/",
+      "published": "Undated",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary provider"
+    },
+    {
+      "publisher": "Felton Institute / independent auditors",
+      "title": "FY2025 audited financial statements; printed p5",
+      "url": "https://felton.org/wp-content/uploads/2026/02/2025_Audited-Financial-Statements.pdf",
+      "published": "December 9, 2025 audit",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary audited statements"
+    },
+    {
+      "publisher": "Felton Institute",
+      "title": "Current San Francisco early psychosis services",
+      "url": "https://felton.org/early-psychosis/san-francisco/",
+      "published": "Undated",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary provider"
+    },
+    {
+      "publisher": "San Francisco Suicide Prevention",
+      "title": "Current crisis services",
+      "url": "https://www.sfsuicide.org/",
+      "published": "Undated",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary provider"
+    },
+    {
+      "publisher": "San Francisco Suicide Prevention",
+      "title": "2019 Felton merger history",
+      "url": "https://www.sfsuicide.org/about/",
+      "published": "Undated",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary provider"
+    },
+    {
+      "publisher": "Felton Institute",
+      "title": "2025 annual report: expanding access and impact",
+      "url": "https://felton.org/2026/07/2025-annual-report-expanding-access-impact/",
+      "published": "July 2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary portfolio report"
+    },
+    {
+      "publisher": "Rosenheck et al.",
+      "title": "RAISE-ETP cost-effectiveness of coordinated first-episode psychosis care",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4903057/",
+      "published": "2016",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary randomized trial economic evaluation"
+    },
+    {
+      "publisher": "Gould et al.",
+      "title": "ASIST counselor training and suicidal caller outcomes",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3838495/",
+      "published": "2013",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary randomized rollout trial"
+    }
+  ]
+}

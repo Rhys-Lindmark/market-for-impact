@@ -1,0 +1,548 @@
+{
+  "organization": "Via Heart Project",
+  "eyebrow": "Whole organization · unrestricted gift · AED readiness",
+  "program": "Conditional value of an ordinary $100,000 gift",
+  "donationUrl": "https://viaheartproject.org/donate/",
+  "published": "September 8, 2026",
+  "modelVersion": "via-heart-whole-gift-v1",
+  "nutshell": {
+    "headline": "A real AED subsidy pathway, but ordinary-gift mortality value remains weakly identified.",
+    "body": "Central donor cost per10 QALYs: $11.08M total, $12.31M US, $15.83M Bay and $73.86M SF. Favorable joint total remains $478,425. This is a conditional prior model, not a verified offer.",
+    "whyItMayWork": "New equipment can enable earlier response; maintenance may improve existing equipment's actual readiness.",
+    "whyWeAreCautious": "Most revenue is paid services. Public/owner replacement, site arrest incidence and maintenance's incremental readiness are unmeasured.",
+    "recommendationBlocker": "No costed unfunded site queue or measured marginal readiness contrast. This packet does not support the requested $100,000/10-QALY threshold."
+  },
+  "summary": [
+    {
+      "label": "Full gift",
+      "value": "$100,000",
+      "detail": "30% new systems;30% maintenance;40% health unquantified, cost retained."
+    },
+    {
+      "label": "Central total health",
+      "value": "0.090263 QALYs",
+      "detail": "US0.081237 / Bay0.063184 / SF0.013539; geographic fractions are priors."
+    },
+    {
+      "label": "Associated resources",
+      "value": "$107,166 gross /$103,920 conditional net",
+      "detail": "Includes site resources and incremental medical allowance; not complete societal accounting."
+    }
+  ],
+  "programSection": {
+    "body": "Exact recipient EIN27-1530938 sells and supports AEDs, provides training and accepts subsidy requests. Its global installed stock is not a Bay population or count of additional lives saved.",
+    "steps": [
+      {
+        "title": "Allocate the whole gift",
+        "detail": "New five-year supported catchments and separate existing-AED maintenance years; other activities retain cost."
+      },
+      {
+        "title": "Remove financing and population overlap",
+        "detail": "Public district and owner alternatives reduce additional activity; distinct catchments prevent repeated rescue credit."
+      },
+      {
+        "title": "Value earlier effective response",
+        "detail": "A small maintenance readiness change is separate from a larger new-system change; one first eligible event and finite survivor health."
+      }
+    ],
+    "boundary": "No unchanged transfer of the CPR-plus-AED trial benefit to maintenance; no added benefits across colocated devices, repeat arrests, public funders or partners."
+  },
+  "model": {
+    "headline": "Finite first-event catchments, separate new and maintenance contrasts",
+    "body": "All causal, marginal allocation and geographic inputs are explicit uncalibrated priors. Prices are planning anchors, not a promised marginal offer.",
+    "equation": {
+      "label": "Per branch",
+      "expression": "N = gift × allocation /cash × additionality × distinct fraction. Q = N × coverage change × survival gain × utility × exp(−discount×delay) × integral[0,min(active,H)] hazard×exp(−(hazard+discount)t)×annuity(mortality+discount,H−t)dt. Subtract gift-date direct and alternative health losses.",
+      "result": "Central total0.09026294 / US0.08123665 / Bay0.06318406 / SF0.01353944 QALYs."
+    },
+    "inputs": [
+      {
+        "key": "gift",
+        "label": "gift",
+        "confidence": "Specified gift",
+        "best": "100000",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "See research/review for counterfactual, duration, geography and cost definitions."
+      },
+      {
+        "key": "new_allocation",
+        "label": "new allocation",
+        "confidence": "Explicit prior or planning assumption",
+        "best": "0.3",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "See research/review for counterfactual, duration, geography and cost definitions."
+      },
+      {
+        "key": "maintenance_allocation",
+        "label": "maintenance allocation",
+        "confidence": "Explicit prior or planning assumption",
+        "best": "0.3",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "See research/review for counterfactual, duration, geography and cost definitions."
+      },
+      {
+        "key": "new_cash",
+        "label": "new cash",
+        "confidence": "Explicit prior or planning assumption",
+        "best": "6800",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "$3,000 equipment+$1,200 initial training+$1,200 refresher allowance+four $350 renewals; first year included. Planning bundle, not quote."
+      },
+      {
+        "key": "maintenance_cash",
+        "label": "maintenance cash",
+        "confidence": "Explicit prior or planning assumption",
+        "best": "350",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "Current $350 annual service price for most models; marginal fully allocated transfer uncertain."
+      },
+      {
+        "key": "new_additionality",
+        "label": "new additionality",
+        "confidence": "Explicit prior or planning assumption",
+        "best": "0.5",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "See research/review for counterfactual, duration, geography and cost definitions."
+      },
+      {
+        "key": "maintenance_additionality",
+        "label": "maintenance additionality",
+        "confidence": "Explicit prior or planning assumption",
+        "best": "0.5",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "See research/review for counterfactual, duration, geography and cost definitions."
+      },
+      {
+        "key": "new_distinct",
+        "label": "new distinct",
+        "confidence": "Explicit prior or planning assumption",
+        "best": "0.9",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "See research/review for counterfactual, duration, geography and cost definitions."
+      },
+      {
+        "key": "maintenance_distinct",
+        "label": "maintenance distinct",
+        "confidence": "Explicit prior or planning assumption",
+        "best": "0.9",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "See research/review for counterfactual, duration, geography and cost definitions."
+      },
+      {
+        "key": "new_hazard",
+        "label": "new hazard",
+        "confidence": "Explicit prior or planning assumption",
+        "best": "0.05",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "See research/review for counterfactual, duration, geography and cost definitions."
+      },
+      {
+        "key": "maintenance_hazard",
+        "label": "maintenance hazard",
+        "confidence": "Explicit prior or planning assumption",
+        "best": "0.05",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "See research/review for counterfactual, duration, geography and cost definitions."
+      },
+      {
+        "key": "new_active",
+        "label": "new active",
+        "confidence": "Explicit prior or planning assumption",
+        "best": "5",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "See research/review for counterfactual, duration, geography and cost definitions."
+      },
+      {
+        "key": "maintenance_active",
+        "label": "maintenance active",
+        "confidence": "Explicit prior or planning assumption",
+        "best": "1",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "See research/review for counterfactual, duration, geography and cost definitions."
+      },
+      {
+        "key": "new_baseline",
+        "label": "new baseline",
+        "confidence": "Explicit prior or planning assumption",
+        "best": "0.3",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "See research/review for counterfactual, duration, geography and cost definitions."
+      },
+      {
+        "key": "maintenance_baseline",
+        "label": "maintenance baseline",
+        "confidence": "Explicit prior or planning assumption",
+        "best": "0.85",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "See research/review for counterfactual, duration, geography and cost definitions."
+      },
+      {
+        "key": "new_increment",
+        "label": "new increment",
+        "confidence": "Explicit prior or planning assumption",
+        "best": "0.4",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "See research/review for counterfactual, duration, geography and cost definitions."
+      },
+      {
+        "key": "maintenance_increment",
+        "label": "maintenance increment",
+        "confidence": "Explicit prior or planning assumption",
+        "best": "0.05",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "See research/review for counterfactual, duration, geography and cost definitions."
+      },
+      {
+        "key": "survival_gain",
+        "label": "survival gain",
+        "confidence": "Explicit prior or planning assumption",
+        "best": "0.1",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "See research/review for counterfactual, duration, geography and cost definitions."
+      },
+      {
+        "key": "horizon",
+        "label": "horizon",
+        "confidence": "Explicit prior or planning assumption",
+        "best": "10",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "See research/review for counterfactual, duration, geography and cost definitions."
+      },
+      {
+        "key": "mortality",
+        "label": "mortality",
+        "confidence": "Explicit prior or planning assumption",
+        "best": "0.1",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "See research/review for counterfactual, duration, geography and cost definitions."
+      },
+      {
+        "key": "utility",
+        "label": "utility",
+        "confidence": "Explicit prior or planning assumption",
+        "best": "0.7",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "See research/review for counterfactual, duration, geography and cost definitions."
+      },
+      {
+        "key": "discount",
+        "label": "discount",
+        "confidence": "Explicit prior or planning assumption",
+        "best": "0.03",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "See research/review for counterfactual, duration, geography and cost definitions."
+      },
+      {
+        "key": "delay",
+        "label": "delay",
+        "confidence": "Explicit prior or planning assumption",
+        "best": "0.05",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "See research/review for counterfactual, duration, geography and cost definitions."
+      },
+      {
+        "key": "us_share",
+        "label": "us share",
+        "confidence": "Explicit prior or planning assumption",
+        "best": "0.9",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "See research/review for counterfactual, duration, geography and cost definitions."
+      },
+      {
+        "key": "bay_share",
+        "label": "bay share",
+        "confidence": "Explicit prior or planning assumption",
+        "best": "0.7",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "See research/review for counterfactual, duration, geography and cost definitions."
+      },
+      {
+        "key": "sf_share",
+        "label": "sf share",
+        "confidence": "Explicit prior or planning assumption",
+        "best": "0.15",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "See research/review for counterfactual, duration, geography and cost definitions."
+      },
+      {
+        "key": "harm_us_share",
+        "label": "harm us share",
+        "confidence": "Explicit prior or planning assumption",
+        "best": "0.9",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "See research/review for counterfactual, duration, geography and cost definitions."
+      },
+      {
+        "key": "harm_bay_share",
+        "label": "harm bay share",
+        "confidence": "Explicit prior or planning assumption",
+        "best": "0.7",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "See research/review for counterfactual, duration, geography and cost definitions."
+      },
+      {
+        "key": "harm_sf_share",
+        "label": "harm sf share",
+        "confidence": "Explicit prior or planning assumption",
+        "best": "0.15",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "See research/review for counterfactual, duration, geography and cost definitions."
+      },
+      {
+        "key": "harm_per_added_course",
+        "label": "harm per added course",
+        "confidence": "Explicit prior or planning assumption",
+        "best": "0",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "See research/review for counterfactual, duration, geography and cost definitions."
+      },
+      {
+        "key": "independent_harm_q",
+        "label": "independent harm q",
+        "confidence": "Explicit prior or planning assumption",
+        "best": "0",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "See research/review for counterfactual, duration, geography and cost definitions."
+      },
+      {
+        "key": "alternative_health_q",
+        "label": "alternative health q",
+        "confidence": "Explicit prior or planning assumption",
+        "best": "0",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "See research/review for counterfactual, duration, geography and cost definitions."
+      },
+      {
+        "key": "new_outside",
+        "label": "new outside",
+        "confidence": "Explicit prior or planning assumption",
+        "best": "500",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "See research/review for counterfactual, duration, geography and cost definitions."
+      },
+      {
+        "key": "maintenance_outside",
+        "label": "maintenance outside",
+        "confidence": "Explicit prior or planning assumption",
+        "best": "50",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "See research/review for counterfactual, duration, geography and cost definitions."
+      },
+      {
+        "key": "medical_per_added_survivor",
+        "label": "medical per added survivor",
+        "confidence": "Explicit prior or planning assumption",
+        "best": "25000",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "See research/review for counterfactual, duration, geography and cost definitions."
+      },
+      {
+        "key": "real_resource_savings",
+        "label": "real resource savings",
+        "confidence": "Explicit prior or planning assumption",
+        "best": "0",
+        "range": "Domain and signed scenarios in reproducible calculator/model",
+        "basis": "See research/review for counterfactual, duration, geography and cost definitions."
+      }
+    ],
+    "giftHeading": "Same whole $100,000 gift in every geographic denominator",
+    "sensitivity": [
+      {
+        "case": "central",
+        "headline": "Total 0.09026294 QALYs; donor $11,078,744 per10",
+        "detail": "total: Q=0.09026293892166742; donor/gross/net per10=11,078,744/11,872,634/11,513,041; us: Q=0.08123664502950069; donor/gross/net per10=12,309,716/13,191,816/12,792,267; bay: Q=0.0631840572451672; donor/gross/net per10=15,826,777/16,960,906/16,447,201; sf: Q=0.013539440838250113; donor/gross/net per10=73,858,294/79,150,895/76,753,604"
+      },
+      {
+        "case": "favorable_joint",
+        "headline": "Total 2.09019016 QALYs; donor $478,425 per10",
+        "detail": "total: Q=2.0901901552219857; donor/gross/net per10=478,425/558,586/550,967; us: Q=1.8811711396997872; donor/gross/net per10=531,584/620,651/612,186; bay: Q=1.4631331086553898; donor/gross/net per10=683,465/797,980/787,096; sf: Q=0.31352852328329783; donor/gross/net per10=3,189,502/3,723,905/3,673,114"
+      },
+      {
+        "case": "adverse",
+        "headline": "Total -0.09879990 QALYs; donor Unpriced per10",
+        "detail": "total: Q=-0.09879989517322428; donor/gross/net per10=unpriced/unpriced/unpriced; us: Q=-0.08891990565590185; donor/gross/net per10=unpriced/unpriced/unpriced; bay: Q=-0.06915992662125699; donor/gross/net per10=unpriced/unpriced/unpriced; sf: Q=-0.01481998427598364; donor/gross/net per10=unpriced/unpriced/unpriced"
+      },
+      {
+        "case": "no_allocation",
+        "headline": "Total 0.00000000 QALYs; donor Unpriced per10",
+        "detail": "total: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced; us: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced; bay: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced; sf: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced"
+      },
+      {
+        "case": "no_additionality",
+        "headline": "Total 0.00000000 QALYs; donor Unpriced per10",
+        "detail": "total: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced; us: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced; bay: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced; sf: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced"
+      },
+      {
+        "case": "new_only",
+        "headline": "Total 0.05492596 QALYs; donor $18,206,326 per10",
+        "detail": "total: Q=0.05492596295119302; donor/gross/net per10=18,206,326/18,687,889/18,487,084; us: Q=0.04943336665607372; donor/gross/net per10=20,229,251/20,764,321/20,541,204; bay: Q=0.03844817406583511; donor/gross/net per10=26,009,037/26,696,984/26,410,119; sf: Q=0.008238894442678953; donor/gross/net per10=121,375,508/124,585,924/123,247,224"
+      },
+      {
+        "case": "maintenance_only",
+        "headline": "Total 0.03533698 QALYs; donor $28,298,969 per10",
+        "detail": "total: Q=0.03533697597047441; donor/gross/net per10=28,298,969/29,578,326/28,971,919; us: Q=0.03180327837342697; donor/gross/net per10=31,443,299/32,864,806/32,191,021; bay: Q=0.024735883179332084; donor/gross/net per10=40,427,099/42,254,751/41,388,456; sf: Q=0.0053005463955711615; donor/gross/net per10=188,659,796/197,188,837/193,146,127"
+      },
+      {
+        "case": "maintenance_null",
+        "headline": "Total 0.05492596 QALYs; donor $18,206,326 per10",
+        "detail": "total: Q=0.05492596295119302; donor/gross/net per10=18,206,326/19,468,160/18,877,219; us: Q=0.04943336665607372; donor/gross/net per10=20,229,251/21,631,289/20,974,688; bay: Q=0.03844817406583511; donor/gross/net per10=26,009,037/27,811,657/26,967,456; sf: Q=0.008238894442678953; donor/gross/net per10=121,375,508/129,787,732/125,848,127"
+      },
+      {
+        "case": "target_null",
+        "headline": "Total 0.00000000 QALYs; donor Unpriced per10",
+        "detail": "total: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced; us: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced; bay: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced; sf: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced"
+      },
+      {
+        "case": "target_failure_alternative_loss",
+        "headline": "Total -1.00000000 QALYs; donor Unpriced per10",
+        "detail": "total: Q=-1; donor/gross/net per10=unpriced/unpriced/unpriced; us: Q=-0.9; donor/gross/net per10=unpriced/unpriced/unpriced; bay: Q=-0.7; donor/gross/net per10=unpriced/unpriced/unpriced; sf: Q=-0.15; donor/gross/net per10=unpriced/unpriced/unpriced"
+      },
+      {
+        "case": "negative_readiness",
+        "headline": "Total -0.04906847 QALYs; donor Unpriced per10",
+        "detail": "total: Q=-0.04906846670827267; donor/gross/net per10=unpriced/unpriced/unpriced; us: Q=-0.0441616200374454; donor/gross/net per10=unpriced/unpriced/unpriced; bay: Q=-0.03434792669579086; donor/gross/net per10=unpriced/unpriced/unpriced; sf: Q=-0.0073602700062409; donor/gross/net per10=unpriced/unpriced/unpriced"
+      },
+      {
+        "case": "short_new_window",
+        "headline": "Total 0.04988750 QALYs; donor $20,045,103 per10",
+        "detail": "total: Q=0.049887495487728584; donor/gross/net per10=20,045,103/21,412,894/20,762,270; us: Q=0.04489874593895573; donor/gross/net per10=22,272,337/23,792,104/23,069,189; bay: Q=0.03492124684141001; donor/gross/net per10=28,635,862/30,589,848/29,660,386; sf: Q=0.007483124323159287; donor/gross/net per10=133,634,022/142,752,626/138,415,135"
+      },
+      {
+        "case": "zero_horizon",
+        "headline": "Total 0.00000000 QALYs; donor Unpriced per10",
+        "detail": "total: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced; us: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced; bay: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced; sf: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced"
+      },
+      {
+        "case": "complete_overlap",
+        "headline": "Total 0.00000000 QALYs; donor Unpriced per10",
+        "detail": "total: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced; us: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced; bay: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced; sf: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced"
+      },
+      {
+        "case": "no_local_health",
+        "headline": "Total 0.09026294 QALYs; donor $11,078,744 per10",
+        "detail": "total: Q=0.09026293892166742; donor/gross/net per10=11,078,744/11,872,634/11,513,041; us: Q=0.08123664502950069; donor/gross/net per10=12,309,716/13,191,816/12,792,267; bay: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced; sf: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced"
+      },
+      {
+        "case": "no_sf_health",
+        "headline": "Total 0.09026294 QALYs; donor $11,078,744 per10",
+        "detail": "total: Q=0.09026293892166742; donor/gross/net per10=11,078,744/11,872,634/11,513,041; us: Q=0.08123664502950069; donor/gross/net per10=12,309,716/13,191,816/12,792,267; bay: Q=0.0631840572451672; donor/gross/net per10=15,826,777/16,960,906/16,447,201; sf: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced"
+      },
+      {
+        "case": "high_outside_cost",
+        "headline": "Total 0.09026294 QALYs; donor $11,078,744 per10",
+        "detail": "total: Q=0.09026293892166742; donor/gross/net per10=11,078,744/14,254,305/12,815,930; us: Q=0.08123664502950069; donor/gross/net per10=12,309,716/15,838,116/14,239,922; bay: Q=0.0631840572451672; donor/gross/net per10=15,826,777/20,363,293/18,308,471; sf: Q=0.013539440838250113; donor/gross/net per10=73,858,294/95,028,698/85,439,533"
+      },
+      {
+        "case": "donor_pays_outside",
+        "headline": "Total 0.08208376 QALYs; donor $12,182,677 per10",
+        "detail": "total: Q=0.0820837646684271; donor/gross/net per10=12,182,677/12,257,578/12,257,578; us: Q=0.07387538820158439; donor/gross/net per10=13,536,308/13,619,532/13,619,532; bay: Q=0.05745863526789896; donor/gross/net per10=17,403,824/17,510,826/17,510,826; sf: Q=0.012312564700264064; donor/gross/net per10=81,217,847/81,717,189/81,717,189"
+      },
+      {
+        "case": "zero_resources_associated",
+        "headline": "Total 0.09026294 QALYs; donor $11,078,744 per10",
+        "detail": "total: Q=0.09026293892166742; donor/gross/net per10=11,078,744/11,078,744/11,078,744; us: Q=0.08123664502950069; donor/gross/net per10=12,309,716/12,309,716/12,309,716; bay: Q=0.0631840572451672; donor/gross/net per10=15,826,777/15,826,777/15,826,777; sf: Q=0.013539440838250113; donor/gross/net per10=73,858,294/73,858,294/73,858,294"
+      },
+      {
+        "case": "signed_resource_savings",
+        "headline": "Total 0.09026294 QALYs; donor $11,078,744 per10",
+        "detail": "total: Q=0.09026293892166742; donor/gross/net per10=11,078,744/11,872,634/-5,105,076; us: Q=0.08123664502950069; donor/gross/net per10=12,309,716/13,191,816/-5,672,306; bay: Q=0.0631840572451672; donor/gross/net per10=15,826,777/16,960,906/-7,292,965; sf: Q=0.013539440838250113; donor/gross/net per10=73,858,294/79,150,895/-34,033,837"
+      }
+    ],
+    "uncertaintyBoundary": "Scenarios are not weighted confidence intervals. Negative health and zero local denominators are retained. Zero associated resources is not a general lower bound when signed savings are allowed.",
+    "fundingBoundary": "Official subsidies and paid public partnership exist, but no verified remaining marginal package. FY2025 surplus/cash do not prove an unrestricted deployable tranche."
+  },
+  "evidence": [
+    {
+      "key": "PAD",
+      "design": "Cluster randomized trial",
+      "population": "993 community units; structured volunteer response",
+      "result": "30 survivors/128 arrests versus15/107; randomized-unit survivor-count comparison.",
+      "transfer": "Supports new response-system plausibility. Does not measure maintenance versus already installed AEDs or establish the model's conditional per-arrest effect."
+    },
+    {
+      "key": "operations",
+      "design": "Official service and intake pages; FY2025 tax filing",
+      "population": "Worldwide AED sites; some Bay partnerships",
+      "result": "Current maintenance/subsidy pathways and fee-dominated revenue verified.",
+      "transfer": "No observed whole-gift allocation, marginal readiness, unique-site incidence or residence shares."
+    }
+  ],
+  "reservations": [
+    "Paid public/owner services could replace donations completely.",
+    "Five-year new-system cash is a planning bundle and the early-response contrast is unmeasured.",
+    "The total effect is small and both central and favorable joint cases fail the threshold.",
+    "Partial resources include no quantified opportunity cost of the retained unmodeled portfolio beyond the full gift; displaced health remains independently parameterized."
+  ],
+  "excludedBenefits": [
+    "Repeated arrests and multiple AEDs rescuing the same person",
+    "Education, awareness and nonfatal morbidity without explicit causal bridges",
+    "Partner/public-funded benefits already present without the gift",
+    "Unmeasured noncardiac or community spillovers"
+  ],
+  "sources": [
+    {
+      "publisher": "Via Heart Project",
+      "title": "Current services and donation values",
+      "url": "https://viaheartproject.org/about/",
+      "published": "Undated; current September 2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official program page"
+    },
+    {
+      "publisher": "Via Heart Project",
+      "title": "Annual maintenance program",
+      "url": "https://viaheartproject.org/join/",
+      "published": "Page labeled 2025; current September 2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official service price"
+    },
+    {
+      "publisher": "Via Heart Project",
+      "title": "Donation request and eligibility",
+      "url": "https://viaheartproject.org/donation-request/",
+      "published": "Undated; current September 2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official intake form"
+    },
+    {
+      "publisher": "Via Heart Project",
+      "title": "Peninsula Health Care District partnership",
+      "url": "https://viaheartproject.org/phcd/",
+      "published": "Undated; current September 2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official funded partnership"
+    },
+    {
+      "publisher": "Via Heart Project",
+      "title": "Organization donation page",
+      "url": "https://viaheartproject.org/donate/",
+      "published": "Undated; current September 2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official unrestricted donation endpoint"
+    },
+    {
+      "publisher": "Via Heart Project / IRS",
+      "title": "FY2025 Form 990, primary e-file reproduced by ProPublica",
+      "url": "https://projects.propublica.org/nonprofits/organizations/271530938/202601289349301730/full",
+      "published": "Filed May 8, 2026; year ended December 31, 2025",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary tax filing; not independent audit"
+    },
+    {
+      "publisher": "Public Access Defibrillation Trial Investigators / NEJM",
+      "title": "Public-access defibrillation and survival after out-of-hospital cardiac arrest",
+      "url": "https://www.nejm.org/doi/abs/10.1056/NEJMoa040566",
+      "published": "August 12, 2004",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary cluster randomized trial"
+    },
+    {
+      "publisher": "Via Heart Project",
+      "title": "School AED services",
+      "url": "https://viaheartproject.org/schools/",
+      "published": "Undated; current September 2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official service scope"
+    }
+  ]
+}

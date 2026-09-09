@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Via Heart Project — accepted, publication pending
+
+20-scenario whole-gift AED placement/maintenance model. Central donor $11.08M total/$15.83M Bay/$73.86M SF per10Q. Placement and maintenance causal increments separate; $350 annual maintenance cannot buy more than one year of protection. New package capped five years and includes renewals. Primary fees/public PHCD baseline retained; no current marginal tranche. Author869 and independent4179 assertions pass. No threshold fitting. Count66 only after canonical verification.
+
 ## Current publication checkpoint —65/115,September9
 
 NEXT PR246/v167 exact065bdccf95e73d1c8bc266a7b5d010b095b559f7 published04:16:43UTC; canonical phone/tablet report/API/65row checks pass.438tests/build and14focused checks. Five new reports this block: CalWalks,Fistula,HKF,HRT,NEXT. SFAF/PHC whole-gift revisions do not increase count. Earlier publication-pending headings below are historical.

@@ -1,0 +1,137 @@
+{
+  "version": "via-heart-whole-gift-v1",
+  "recipient": {
+    "name": "VIA HEART PROJECT",
+    "ein": "27-1530938"
+  },
+  "central": {
+    "gift": 100000,
+    "new_allocation": 0.3,
+    "maintenance_allocation": 0.3,
+    "new_cash": 6800,
+    "maintenance_cash": 350,
+    "new_additionality": 0.5,
+    "maintenance_additionality": 0.5,
+    "new_distinct": 0.9,
+    "maintenance_distinct": 0.9,
+    "new_hazard": 0.05,
+    "maintenance_hazard": 0.05,
+    "new_active": 5,
+    "maintenance_active": 1,
+    "new_baseline": 0.3,
+    "maintenance_baseline": 0.85,
+    "new_increment": 0.4,
+    "maintenance_increment": 0.05,
+    "survival_gain": 0.1,
+    "horizon": 10,
+    "mortality": 0.1,
+    "utility": 0.7,
+    "discount": 0.03,
+    "delay": 0.05,
+    "us_share": 0.9,
+    "bay_share": 0.7,
+    "sf_share": 0.15,
+    "harm_us_share": 0.9,
+    "harm_bay_share": 0.7,
+    "harm_sf_share": 0.15,
+    "harm_per_added_course": 0,
+    "independent_harm_q": 0,
+    "alternative_health_q": 0,
+    "new_outside": 500,
+    "maintenance_outside": 50,
+    "medical_per_added_survivor": 25000,
+    "real_resource_savings": 0
+  },
+  "scenarios": {
+    "central": {},
+    "favorable_joint": {
+      "new_allocation": 0.5,
+      "maintenance_allocation": 0.3,
+      "new_additionality": 0.8,
+      "maintenance_additionality": 0.8,
+      "new_hazard": 0.2,
+      "maintenance_hazard": 0.1,
+      "new_increment": 0.7,
+      "maintenance_baseline": 0.7,
+      "maintenance_increment": 0.2,
+      "horizon": 15,
+      "mortality": 0.06,
+      "utility": 0.8
+    },
+    "adverse": {
+      "new_additionality": 0.2,
+      "maintenance_additionality": 0.2,
+      "new_hazard": 0.01,
+      "maintenance_hazard": 0.01,
+      "new_increment": 0.1,
+      "maintenance_increment": 0,
+      "independent_harm_q": 0.1
+    },
+    "no_allocation": {
+      "new_allocation": 0,
+      "maintenance_allocation": 0
+    },
+    "no_additionality": {
+      "new_additionality": 0,
+      "maintenance_additionality": 0
+    },
+    "new_only": {
+      "maintenance_allocation": 0
+    },
+    "maintenance_only": {
+      "new_allocation": 0
+    },
+    "maintenance_null": {
+      "maintenance_increment": 0
+    },
+    "target_null": {
+      "new_increment": 0,
+      "maintenance_increment": 0
+    },
+    "target_failure_alternative_loss": {
+      "new_increment": 0,
+      "maintenance_increment": 0,
+      "alternative_health_q": 1
+    },
+    "negative_readiness": {
+      "new_increment": -0.1,
+      "maintenance_increment": -0.05
+    },
+    "short_new_window": {
+      "new_active": 1
+    },
+    "zero_horizon": {
+      "horizon": 0
+    },
+    "complete_overlap": {
+      "new_distinct": 0,
+      "maintenance_distinct": 0
+    },
+    "no_local_health": {
+      "bay_share": 0,
+      "sf_share": 0
+    },
+    "no_sf_health": {
+      "sf_share": 0
+    },
+    "high_outside_cost": {
+      "new_outside": 2000,
+      "maintenance_outside": 200,
+      "medical_per_added_survivor": 100000
+    },
+    "donor_pays_outside": {
+      "new_cash": 7300,
+      "maintenance_cash": 400,
+      "new_outside": 0,
+      "maintenance_outside": 0
+    },
+    "zero_resources_associated": {
+      "new_outside": 0,
+      "maintenance_outside": 0,
+      "medical_per_added_survivor": 0
+    },
+    "signed_resource_savings": {
+      "real_resource_savings": 150000
+    }
+  }
+}

@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Homeless Prenatal Program — accepted report, publication pending
+
+Whole unrestricted gift with conditional finite maternal-depression treatment access; all costs retained and other portfolio health unquantified. Central $27.61M/10SFQ. External subgroup evidence is not assumed HPP protocol fidelity; explicit utility prior, clinical usual-care/public funding, signed depression-free days, separate harm and no child lifetime credit. Independent19tests/111author/132independent assertions across12scenarios accepted. Count60 only after canonical verification. Next accepted CalWalks, Fistula, California YIMBY; legacy SFAF/PHC whole-gift revisions are not new organizations.
+
 ## Felton Institute — accepted report, publication pending
 
 Whole unrestricted gift includes disjoint early-psychosis and crisis-support pathways;70% unquantified central portfolio retains costs. Central $42.28M/10SFQ, favorable $456K, adverse net harm. Finite person-level crisis survival, two-year psychosis utility and public/988 baseline; mortality effect remains an unvalidated prior with a zero-credit sensitivity. Independent522parity checks and5,000finite-domain checks; author854checks/18scenarios. Count59 only after canonical verification. Next accepted HPP/CalWalks; whole-gift SFAF revision and Fistula independent review underway.

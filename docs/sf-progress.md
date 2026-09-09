@@ -1,5 +1,13 @@
 # San Francisco giving — active phase plan
 
+## Authoritative checkpoint — September9,04:17UTC
+
+**65/115 published and canonical-verified.** Added CaliforniaWalks61(PR241/v163), Fistula62(PR242/v164), HealthierKids63(PR243/v165), HRT64(PR245/v166), NEXT65(PR246/v167). Latest exact065bdccf95e73d1c8bc266a7b5d010b095b559f7; successful deployment04:16:43Z, canonical390/768 report/API/65-row index verified.438tests, productionbuild,14focused checks passed. Full GitHub mobile244/245passed;246pending at snapshot.
+
+Count-neutral SFAF/PHC whole-gift corrections published PR240/v162. Frozen cost-scope inventory below is historical; current50SF index includes10whole-gift partial-health/40program models. Four further independently accepted corrections GLIDE/Breathe/OA/PVF await coherent integration, not counted again. See next-top-four-portfolio-integration.md: HSC unresolved recipient and shared PHC hearing require explicit homepage eligibility policy; user asked asynchronously. Do not silently promote an unresolved recipient or add shared health.
+
+CaliforniaYIMBY quantitative political model blocked by automated review, left unpublished without workaround. This is not an overall goal blocker. Workers remain assigned to ViaHeart research/audit and HSC current identity refresh. Five additional Bay screens found no defensible threshold bargain; preserve findings, no target-fit. Next phase: accepted whole-gift corrections plus new outcome-first organization reports. Goal115 and hourly schedule remain active; explicit pause overrides. This measured block began03:04:14Z; exact closing time goes in shared log.
+
 ## Authoritative checkpoint — September 9, 02:54 UTC
 
 **60/115 published and canonical-verified.** SFPHF57 (PR235/v158), CCA58 (PR236/v159), Felton59 (PR237/v160), HPP60 (PR238/v161). Latest exactacf6b49fb38f3ce449212ef895900da6af8d3364; successful HPP deployment02:52:58Z and390/768 report/API/60row index verified.405unit tests, lint/build and12focused HPP checks passed. GitHub mobile235–237 passed;238 pending at snapshot.

@@ -1,5 +1,11 @@
 # Market for Impact backlog
 
+## Current publication checkpoint —65/115,September9
+
+NEXT PR246/v167 exact065bdccf95e73d1c8bc266a7b5d010b095b559f7 published04:16:43UTC; canonical phone/tablet report/API/65row checks pass.438tests/build and14focused checks. Five new reports this block: CalWalks,Fistula,HKF,HRT,NEXT. SFAF/PHC whole-gift revisions do not increase count. Earlier publication-pending headings below are historical.
+
+Next: integrate accepted GLIDE/Breathe/OA/PVF whole-gift models (count-neutral) and reconcile homepage eligibility separately from numeric research ranking. HSC recipient refresh underway; PHC hearing overlap must be explicit. User policy question pending, no silent donation recommendation. ViaHeart new research/audit in parallel. Numerical CaliforniaYIMBY item deferred after automated-review block, no workaround. Retain public source data and weak/negative findings.115target remains active; no padding or fabricated active time.
+
 ## NEXT Distro — accepted, publication pending
 
 Whole-gift model: central $172,973 per10 US QALYs; Bay $8.649M under an explicit2% prior. SF direct mail excluded by official California eligibility; SF QALYs zero and ratios null in all18 scenarios. No invented local spillover. Full donation numerator, finite unique-person survival and public/upstream naloxone overlap retained. Author and independent audits pass; count65 only after canonical verification.

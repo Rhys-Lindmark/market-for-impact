@@ -1,0 +1,622 @@
+{
+  "model_id": "hpp-whole-gift-maternal-depression-v1",
+  "prepared": "2026-09-08",
+  "status": "Author-checked conditional research draft; independent acceptance pending; not a verified donor offer",
+  "organization": {
+    "name": "Homeless Prenatal Program",
+    "ein": "94-3146280",
+    "giving_url": "https://www.homelessprenatal.org/donate"
+  },
+  "selection": "Inspected newdoor-portfolio BACKLOG, lib/data/docs and next100 queue. HPP exists in candidate/public-funding universe with older syphilis rejection and prevention hypothesis; no whole-gift HPP report found. This quantifies treatment access for existing maternal depression, not prevention-course efficacy.",
+  "boundary": "Every scenario retains the entire unrestricted $100,000 gift. Only a hypothetical maternal depression-treatment component quantified; housing, child health, wellness, violence support, employment and other benefits/harms unquantified. This is not a restricted treatment offer.",
+  "service": "Current official site offers onsite/virtual bilingual psychotherapy by therapists, social workers and trainees. Specific perinatal depression protocol, added caseload, current waitlist and discretionary allocation unknown. General support is not assumed to reproduce collaborative stepped depression care.",
+  "causal": "Signed incremental depression-free days per clinically eligible person offered a complete supported treatment opportunity, versus actual available care, already includes non-engagement, completion, recurrence, spontaneous recovery and alternative treatment over the finite observation window. No second adherence/remission/catch-up multiplier. Funding additionality separately removes replacement financing.",
+  "health": "DFDs are symptom-derived health-time estimates, not preference-valued QALYs. A judgmental utility contrast (central .2, .1–.3 scenarios) converts days to QALYs. Uniform temporal allocation across 548 days is an explicit timing heuristic; daily midpoints discounted once from gift. No health beyond this window, maternal mortality or child lifetime benefit. Shared and independent harms must exclude losses already contained in signed net depression-free days.",
+  "cost": "Complete cash per offered eligible person includes therapy, failed recruitment/screening allocated across eligible offers, supervision, navigation, interpretation/childcare/transport support and organizational overhead. Outside resource envelope adds hypothetical medication/psychiatric care/other noncash inputs once on nominal offers, before replacement. Not net social cost; no savings deducted. Donor-paid outside-care scenario moves $500 into cash and removes it from extras.",
+  "baseline": "FY2025 audit records $20,534,383 revenue/support, $20,777,163 expense, $12,572,986 program service fees and $6,246,580 restricted net assets. Note7 links service-fee receivables to SF departments. Public rapid-rehousing agreement includes therapist funding through a 2025–2031 planned term. DHCS covered mental health and 2026 transitional care are baseline. None proves a funded maternal therapy seat for every client or an unfunded cohort.",
+  "geography": "All modeled health is US. Bay includes SF; priors based on local family focus rather than measured residence. Same partition applied to harms here. Nested ledgers are never added.",
+  "harm_timing": "Shared harm per incremental offer and independent harm per gift are already gift-date present-value QALY losses. They receive no further discount and exclude losses already captured in signed net depression-free days.",
+  "overlap": "HPP, UCSF/ZSFG, RAMS, Medi-Cal contractors and other family/mental-health agencies cannot each count the same depression-free day. Housing/therapy/support pathways may overlap; no extra maternal/child survival, suicide-prevention or birth-outcome stream credited.",
+  "formulas": {
+    "offers": "gift*allocation/cashPerOffer",
+    "incrementalOffers": "offers*fundingAdditionality",
+    "health": "incrementalOffers*(netDFD/365*utility*meanDiscount-sharedHarm)-independentHarm",
+    "resources": "gift+nominalOffers*extraResources",
+    "ratio": "10*cost/regionQ for regionQ>0, otherwise null"
+  },
+  "sources": [
+    {
+      "id": "identity",
+      "title": "HPP giving and entity disclosure",
+      "publisher": "Homeless Prenatal Program",
+      "url": "https://www.homelessprenatal.org/donate",
+      "published": "Undated current page",
+      "retrieved": "September 8, 2026",
+      "access": "Official EIN 94-3146280; unrestricted giving route. Provider disclosure, not fresh IRS certification."
+    },
+    {
+      "id": "service",
+      "title": "Mental Health and Parenting Support",
+      "publisher": "Homeless Prenatal Program",
+      "url": "https://www.homelessprenatal.org/mental-health-parenting-support",
+      "published": "Undated current page",
+      "retrieved": "September 8, 2026",
+      "access": "Current bilingual psychotherapy description; no measured maternal course outcomes. Dynamic zero counters are not output observations."
+    },
+    {
+      "id": "wellness",
+      "title": "Wellness Center",
+      "publisher": "Homeless Prenatal Program",
+      "url": "https://www.homelessprenatal.org/wellness-center",
+      "published": "Undated current page",
+      "retrieved": "September 8, 2026",
+      "access": "Maternal service context; prenatal classes and support are not causal healthy births."
+    },
+    {
+      "id": "audit",
+      "title": "FY2025 consolidated audited statements",
+      "publisher": "HPP; MUN CPAs",
+      "url": "https://static1.squarespace.com/static/64835d9646f78d0d97c732cc/t/694b0e97365b820b7706be7b/1766526615969/Homeless+Prenatal+Program+6-30-2025+-+Audit+Report.pdf",
+      "published": "December 19, 2025",
+      "retrieved": "September 8, 2026",
+      "access": "Official financial index-linked PDF; primary tables pp.3–7 and note 7 read. Consolidated accounts, not a donor marginal budget."
+    },
+    {
+      "id": "trial",
+      "title": "MOMCare randomized perinatal depression treatment trial",
+      "publisher": "Grote et al.; Depression and Anxiety",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4630126/",
+      "published": "2015",
+      "retrieved": "September 8, 2026",
+      "access": "168 randomized Medicaid participants; multi-component care versus intensive maternity support. HPP fidelity and population transfer unverified."
+    },
+    {
+      "id": "days",
+      "title": "Incremental Benefit-Cost of MOMCare",
+      "publisher": "Grote et al.; Psychiatric Services",
+      "url": "https://psychiatryonline.org/doi/10.1176/appi.ps.201600411",
+      "published": "2017",
+      "retrieved": "September 8, 2026",
+      "access": "Primary publisher indexed results/table and PubMed abstract inspected; direct full-page retrieval failed. 68 added depression-free days in PTSD subgroup; no corresponding significant benefit established without PTSD. Not QALYs or SF marginal prices."
+    },
+    {
+      "id": "days_abstract",
+      "title": "MOMCare economic study primary abstract",
+      "publisher": "Grote et al.; PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28669288/",
+      "published": "2017",
+      "retrieved": "September 8, 2026",
+      "access": "Primary abstract corroborates 68 days and $1,312 incremental depression-care costs; historical 2013-dollar source not used as a current HPP quote."
+    },
+    {
+      "id": "hsh",
+      "title": "HPP Safer Families Plan parenting TAY rapid rehousing budget",
+      "publisher": "SF HSH",
+      "url": "https://media.api.sf.gov/documents/Agenda_Item_12E_HPP-_TAY_RRH.pdf",
+      "published": "Budget July 1, 2025",
+      "retrieved": "September 8, 2026",
+      "access": "Primary 30-page packet; pp.20–25 list 2025–2031 term and therapist salary funding. Existing housing/therapy baseline, not maternal trial delivery or an unfunded queue."
+    },
+    {
+      "id": "hsh_report",
+      "title": "FY2025–26 first-quarter Chapter21B report",
+      "publisher": "SF HSH",
+      "url": "https://media.api.sf.gov/documents/Ch_21B_FY_2025-26_Q1_Report_1HVXzm9.pdf",
+      "published": "FY2025–26 Q1",
+      "retrieved": "September 8, 2026",
+      "access": "Primary indexed report names current agreement 1000035557, term July2025–June2031 and $6,131,147 ceiling. Not annual paid expenditure."
+    },
+    {
+      "id": "coverage",
+      "title": "Maternal and Perinatal Health Care Services",
+      "publisher": "California DHCS",
+      "url": "https://www.dhcs.ca.gov/services/maternal-and-perinatal-health-care-services/",
+      "published": "Current page",
+      "retrieved": "September 8, 2026",
+      "access": "Medi-Cal behavioral-health benefits are baseline, not evidence every person receives timely treatment."
+    },
+    {
+      "id": "tcs",
+      "title": "Population Health Management: pregnancy/postpartum transition care",
+      "publisher": "California DHCS",
+      "url": "https://www.dhcs.ca.gov/calaim-transforming-medi-cal/calaim-population-health-management-initiative/",
+      "published": "January 2026 update described on current page",
+      "retrieved": "September 8, 2026",
+      "access": "Managed care plans have pregnancy/postpartum transition responsibilities through 12 months; HPP reimbursement and actual local access are unverified."
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "central",
+      "inputs": {
+        "gift_usd": 100000,
+        "maternal_depression_allocation": 0.15,
+        "cash_per_offer": 2500,
+        "funding_additionality": 0.4,
+        "incremental_depression_free_days": 30,
+        "observation_days": 548,
+        "utility_gain_per_depression_free_day": 0.2,
+        "discount": 0.035,
+        "gift_to_start_years": 0.25,
+        "extra_resource_per_offer": 500,
+        "shared_harm_q_per_offer": 0,
+        "independent_harm_q": 0,
+        "bay_share": 0.98,
+        "sf_share": 0.95
+      },
+      "outputs": {
+        "offers": 6,
+        "incremental_offers": 2.4000000000000004,
+        "discounted_day_fraction": 0.9662682032036582,
+        "qaly_per_incremental_offer": 0.015883860874580682,
+        "gross_resource_usd": 103000,
+        "us": {
+          "qaly": 0.03812126609899364,
+          "donor_per_10q": 26232077.324063454,
+          "gross_resource_per_10q": 27019039.643785357
+        },
+        "bay": {
+          "qaly": 0.03735884077701377,
+          "donor_per_10q": 26767425.840881076,
+          "gross_resource_per_10q": 27570448.61610751
+        },
+        "sf": {
+          "qaly": 0.03621520279404396,
+          "donor_per_10q": 27612712.972698376,
+          "gross_resource_per_10q": 28441094.361879326
+        }
+      }
+    },
+    {
+      "id": "favorable_joint",
+      "inputs": {
+        "gift_usd": 100000,
+        "maternal_depression_allocation": 0.35,
+        "cash_per_offer": 1200,
+        "funding_additionality": 0.8,
+        "incremental_depression_free_days": 68,
+        "observation_days": 548,
+        "utility_gain_per_depression_free_day": 0.3,
+        "discount": 0.035,
+        "gift_to_start_years": 0,
+        "extra_resource_per_offer": 1000,
+        "shared_harm_q_per_offer": 0,
+        "independent_harm_q": 0,
+        "bay_share": 1,
+        "sf_share": 0.98
+      },
+      "outputs": {
+        "offers": 29.166666666666668,
+        "incremental_offers": 23.333333333333336,
+        "discounted_day_fraction": 0.9746142926281385,
+        "qaly_per_incremental_offer": 0.05447159334140829,
+        "gross_resource_usd": 129166.66666666667,
+        "us": {
+          "qaly": 1.2710038446328602,
+          "donor_per_10q": 786779.6814484524,
+          "gross_resource_per_10q": 1016257.0885375844
+        },
+        "bay": {
+          "qaly": 1.2710038446328602,
+          "donor_per_10q": 786779.6814484524,
+          "gross_resource_per_10q": 1016257.0885375844
+        },
+        "sf": {
+          "qaly": 1.245583767740203,
+          "donor_per_10q": 802836.4096412779,
+          "gross_resource_per_10q": 1036997.029119984
+        }
+      }
+    },
+    {
+      "id": "pessimistic_positive",
+      "inputs": {
+        "gift_usd": 100000,
+        "maternal_depression_allocation": 0.03,
+        "cash_per_offer": 5000,
+        "funding_additionality": 0.1,
+        "incremental_depression_free_days": 3,
+        "observation_days": 548,
+        "utility_gain_per_depression_free_day": 0.1,
+        "discount": 0.035,
+        "gift_to_start_years": 0.5,
+        "extra_resource_per_offer": 500,
+        "shared_harm_q_per_offer": 0,
+        "independent_harm_q": 0,
+        "bay_share": 0.9,
+        "sf_share": 0.8
+      },
+      "outputs": {
+        "offers": 0.6,
+        "incremental_offers": 0.06,
+        "discounted_day_fraction": 0.9579935853440936,
+        "qaly_per_incremental_offer": 0.0007873919879540495,
+        "gross_resource_usd": 100300,
+        "us": {
+          "qaly": 0.00004724351927724297,
+          "donor_per_10q": 21166924380.286297,
+          "gross_resource_per_10q": 21230425153.42716
+        },
+        "bay": {
+          "qaly": 0.00004251916734951867,
+          "donor_per_10q": 23518804866.984776,
+          "gross_resource_per_10q": 23589361281.58573
+        },
+        "sf": {
+          "qaly": 0.00003779481542179438,
+          "donor_per_10q": 26458655475.357872,
+          "gross_resource_per_10q": 26538031441.783943
+        }
+      }
+    },
+    {
+      "id": "negative_clinical_effect",
+      "inputs": {
+        "gift_usd": 100000,
+        "maternal_depression_allocation": 0.15,
+        "cash_per_offer": 2500,
+        "funding_additionality": 0.4,
+        "incremental_depression_free_days": -15,
+        "observation_days": 548,
+        "utility_gain_per_depression_free_day": 0.2,
+        "discount": 0.035,
+        "gift_to_start_years": 0.25,
+        "extra_resource_per_offer": 500,
+        "shared_harm_q_per_offer": 0,
+        "independent_harm_q": 0,
+        "bay_share": 0.98,
+        "sf_share": 0.95
+      },
+      "outputs": {
+        "offers": 6,
+        "incremental_offers": 2.4000000000000004,
+        "discounted_day_fraction": 0.9662682032036582,
+        "qaly_per_incremental_offer": -0.007941930437290341,
+        "gross_resource_usd": 103000,
+        "us": {
+          "qaly": -0.01906063304949682,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "bay": {
+          "qaly": -0.018679420388506885,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "sf": {
+          "qaly": -0.01810760139702198,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        }
+      }
+    },
+    {
+      "id": "no_allocation",
+      "inputs": {
+        "gift_usd": 100000,
+        "maternal_depression_allocation": 0,
+        "cash_per_offer": 2500,
+        "funding_additionality": 0.4,
+        "incremental_depression_free_days": 30,
+        "observation_days": 548,
+        "utility_gain_per_depression_free_day": 0.2,
+        "discount": 0.035,
+        "gift_to_start_years": 0.25,
+        "extra_resource_per_offer": 500,
+        "shared_harm_q_per_offer": 0,
+        "independent_harm_q": 0,
+        "bay_share": 0.98,
+        "sf_share": 0.95
+      },
+      "outputs": {
+        "offers": 0,
+        "incremental_offers": 0,
+        "discounted_day_fraction": 0.9662682032036582,
+        "qaly_per_incremental_offer": 0.015883860874580682,
+        "gross_resource_usd": 100000,
+        "us": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "bay": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        }
+      }
+    },
+    {
+      "id": "replacement_only",
+      "inputs": {
+        "gift_usd": 100000,
+        "maternal_depression_allocation": 0.15,
+        "cash_per_offer": 2500,
+        "funding_additionality": 0,
+        "incremental_depression_free_days": 30,
+        "observation_days": 548,
+        "utility_gain_per_depression_free_day": 0.2,
+        "discount": 0.035,
+        "gift_to_start_years": 0.25,
+        "extra_resource_per_offer": 500,
+        "shared_harm_q_per_offer": 0,
+        "independent_harm_q": 0,
+        "bay_share": 0.98,
+        "sf_share": 0.95
+      },
+      "outputs": {
+        "offers": 6,
+        "incremental_offers": 0,
+        "discounted_day_fraction": 0.9662682032036582,
+        "qaly_per_incremental_offer": 0.015883860874580682,
+        "gross_resource_usd": 103000,
+        "us": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "bay": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        }
+      }
+    },
+    {
+      "id": "no_clinical_difference",
+      "inputs": {
+        "gift_usd": 100000,
+        "maternal_depression_allocation": 0.15,
+        "cash_per_offer": 2500,
+        "funding_additionality": 0.4,
+        "incremental_depression_free_days": 0,
+        "observation_days": 548,
+        "utility_gain_per_depression_free_day": 0.2,
+        "discount": 0.035,
+        "gift_to_start_years": 0.25,
+        "extra_resource_per_offer": 500,
+        "shared_harm_q_per_offer": 0,
+        "independent_harm_q": 0,
+        "bay_share": 0.98,
+        "sf_share": 0.95
+      },
+      "outputs": {
+        "offers": 6,
+        "incremental_offers": 2.4000000000000004,
+        "discounted_day_fraction": 0.9662682032036582,
+        "qaly_per_incremental_offer": 0,
+        "gross_resource_usd": 103000,
+        "us": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "bay": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        }
+      }
+    },
+    {
+      "id": "rapid_counterfactual_recovery",
+      "inputs": {
+        "gift_usd": 100000,
+        "maternal_depression_allocation": 0.15,
+        "cash_per_offer": 2500,
+        "funding_additionality": 0.4,
+        "incremental_depression_free_days": 2,
+        "observation_days": 548,
+        "utility_gain_per_depression_free_day": 0.2,
+        "discount": 0.035,
+        "gift_to_start_years": 0.25,
+        "extra_resource_per_offer": 500,
+        "shared_harm_q_per_offer": 0,
+        "independent_harm_q": 0,
+        "bay_share": 0.98,
+        "sf_share": 0.95
+      },
+      "outputs": {
+        "offers": 6,
+        "incremental_offers": 2.4000000000000004,
+        "discounted_day_fraction": 0.9662682032036582,
+        "qaly_per_incremental_offer": 0.0010589240583053791,
+        "gross_resource_usd": 103000,
+        "us": {
+          "qaly": 0.0025414177399329103,
+          "donor_per_10q": 393481159.86095166,
+          "gross_resource_per_10q": 405285594.65678024
+        },
+        "bay": {
+          "qaly": 0.0024905893851342523,
+          "donor_per_10q": 401511387.613216,
+          "gross_resource_per_10q": 413556729.24161243
+        },
+        "sf": {
+          "qaly": 0.0024143468529362645,
+          "donor_per_10q": 414190694.5904755,
+          "gross_resource_per_10q": 426616415.42818975
+        }
+      }
+    },
+    {
+      "id": "independent_harm_zero_activity",
+      "inputs": {
+        "gift_usd": 100000,
+        "maternal_depression_allocation": 0.15,
+        "cash_per_offer": 2500,
+        "funding_additionality": 0,
+        "incremental_depression_free_days": 30,
+        "observation_days": 548,
+        "utility_gain_per_depression_free_day": 0.2,
+        "discount": 0.035,
+        "gift_to_start_years": 0.25,
+        "extra_resource_per_offer": 500,
+        "shared_harm_q_per_offer": 0,
+        "independent_harm_q": 0.1,
+        "bay_share": 0.98,
+        "sf_share": 0.95
+      },
+      "outputs": {
+        "offers": 6,
+        "incremental_offers": 0,
+        "discounted_day_fraction": 0.9662682032036582,
+        "qaly_per_incremental_offer": 0.015883860874580682,
+        "gross_resource_usd": 103000,
+        "us": {
+          "qaly": -0.1,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "bay": {
+          "qaly": -0.098,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "sf": {
+          "qaly": -0.095,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        }
+      }
+    },
+    {
+      "id": "shared_harm",
+      "inputs": {
+        "gift_usd": 100000,
+        "maternal_depression_allocation": 0.15,
+        "cash_per_offer": 2500,
+        "funding_additionality": 0.4,
+        "incremental_depression_free_days": 30,
+        "observation_days": 548,
+        "utility_gain_per_depression_free_day": 0.2,
+        "discount": 0.035,
+        "gift_to_start_years": 0.25,
+        "extra_resource_per_offer": 500,
+        "shared_harm_q_per_offer": 0.02,
+        "independent_harm_q": 0,
+        "bay_share": 0.98,
+        "sf_share": 0.95
+      },
+      "outputs": {
+        "offers": 6,
+        "incremental_offers": 2.4000000000000004,
+        "discounted_day_fraction": 0.9662682032036582,
+        "qaly_per_incremental_offer": 0.015883860874580682,
+        "gross_resource_usd": 103000,
+        "us": {
+          "qaly": -0.009878733901006366,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "bay": {
+          "qaly": -0.009681159222986239,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "sf": {
+          "qaly": -0.009384797205956048,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        }
+      }
+    },
+    {
+      "id": "donor_covers_outside_care",
+      "inputs": {
+        "gift_usd": 100000,
+        "maternal_depression_allocation": 0.15,
+        "cash_per_offer": 3000,
+        "funding_additionality": 0.4,
+        "incremental_depression_free_days": 30,
+        "observation_days": 548,
+        "utility_gain_per_depression_free_day": 0.2,
+        "discount": 0.035,
+        "gift_to_start_years": 0.25,
+        "extra_resource_per_offer": 0,
+        "shared_harm_q_per_offer": 0,
+        "independent_harm_q": 0,
+        "bay_share": 0.98,
+        "sf_share": 0.95
+      },
+      "outputs": {
+        "offers": 5,
+        "incremental_offers": 2,
+        "discounted_day_fraction": 0.9662682032036582,
+        "qaly_per_incremental_offer": 0.015883860874580682,
+        "gross_resource_usd": 100000,
+        "us": {
+          "qaly": 0.031767721749161364,
+          "donor_per_10q": 31478492.78887615,
+          "gross_resource_per_10q": 31478492.78887615
+        },
+        "bay": {
+          "qaly": 0.031132367314178136,
+          "donor_per_10q": 32120911.009057295,
+          "gross_resource_per_10q": 32120911.009057295
+        },
+        "sf": {
+          "qaly": 0.030179335661703294,
+          "donor_per_10q": 33135255.56723805,
+          "gross_resource_per_10q": 33135255.56723805
+        }
+      }
+    },
+    {
+      "id": "no_utility_bridge",
+      "inputs": {
+        "gift_usd": 100000,
+        "maternal_depression_allocation": 0.15,
+        "cash_per_offer": 2500,
+        "funding_additionality": 0.4,
+        "incremental_depression_free_days": 30,
+        "observation_days": 548,
+        "utility_gain_per_depression_free_day": 0,
+        "discount": 0.035,
+        "gift_to_start_years": 0.25,
+        "extra_resource_per_offer": 500,
+        "shared_harm_q_per_offer": 0,
+        "independent_harm_q": 0,
+        "bay_share": 0.98,
+        "sf_share": 0.95
+      },
+      "outputs": {
+        "offers": 6,
+        "incremental_offers": 2.4000000000000004,
+        "discounted_day_fraction": 0.9662682032036582,
+        "qaly_per_incremental_offer": 0,
+        "gross_resource_usd": 103000,
+        "us": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "bay": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,333 @@
+{
+  "organization": "Homeless Prenatal Program",
+  "eyebrow": "Family support and maternal mental-health access · SF, Bay and US health",
+  "program": "Conditional whole-organization value of a $100,000 unrestricted gift",
+  "donationUrl": "https://www.homelessprenatal.org/donate",
+  "published": "September 8, 2026",
+  "modelVersion": "hpp-whole-gift-maternal-depression-v1",
+  "nutshell": {
+    "headline": "Added maternal depression care could improve health; the unrestricted gift's additional clinical effect is unmeasured.",
+    "body": "Conditional central donor cost is $27.61 million per 10 SF QALYs. The joint favorable case is $802,836 donor and $1,036,997 gross resources. This quantifies one plausible maternal-treatment component while retaining every dollar of the general gift.",
+    "whyItMayWork": "HPP provides psychotherapy alongside pregnancy and family support. Flexible support could help depressed pregnant or postpartum clients receive effective care.",
+    "whyWeAreCautious": "Current additional caseload, treatment fidelity, financing replacement and preference-valued health gains are unknown. Existing covered clinical care and publicly funded HPP services form the baseline.",
+    "recommendationBlocker": "Conditional research, not a verified donor recommendation. Additional maternal therapy capacity and effect are not established."
+  },
+  "summary": [
+    {
+      "label": "Central donor cost / 10 QALYs",
+      "value": "$27.61M SF / $26.77M Bay / $26.23M US",
+      "detail": "Same $100,000 gift: 0.036215 SF, 0.037359 Bay and 0.038121 US QALYs. Nested health is never additive."
+    },
+    {
+      "label": "Whole-gift boundary",
+      "value": "$100,000 once",
+      "detail": "15% hypothetical maternal-depression allocation centrally. Remaining portfolio health is unquantified and all cost retained."
+    },
+    {
+      "label": "Recipient",
+      "value": "HPP · EIN 94-3146280",
+      "detail": "Provider's giving page identifies the entity and general donation route."
+    },
+    {
+      "label": "Central gross resource envelope",
+      "value": "$103,000",
+      "detail": "Adds unpriced outside clinical/noncash resources on nominal offers. Not net induced societal spending."
+    }
+  ],
+  "programSection": {
+    "body": "Current official pages describe psychotherapy and maternal wellness. A distinct perinatal depression protocol, new funded cohort and longitudinal treatment outcomes remain unverified.",
+    "steps": [
+      {
+        "title": "Allocate the whole organization gift",
+        "detail": "A hypothetical share supports complete treatment offers; other spending remains in the numerator."
+      },
+      {
+        "title": "Add care beyond the public baseline",
+        "detail": "Financial additionality removes replaced financing; net clinical days compare with actual available care."
+      },
+      {
+        "title": "Count additional healthier days",
+        "detail": "Signed depression-free days already account for engagement, recovery, recurrence and alternative care."
+      },
+      {
+        "title": "Value finite maternal health",
+        "detail": "Apply an explicit utility prior over 548 days and discount once. No maternal or child lifetime health is added."
+      }
+    ],
+    "boundary": "No contacts-to-lives-saved conversion. Deduplicate maternal health across HPP, UCSF/ZSFG, RAMS and public contractors."
+  },
+  "model": {
+    "headline": "A small finite maternal health stream against the whole gift",
+    "body": "Central six nominal offers become 2.4 incremental offers, each with 30 added depression-free days and an assumed .2 utility contrast. Symptom-derived days are not direct QALY observations.",
+    "equation": {
+      "label": "Whole-gift maternal treatment bridge",
+      "expression": "Offers = gift × maternal allocation / complete cash per offer. QALYs = offers × financial additionality × (net depression-free days / 365 × utility × average daily discount − shared harm) − independent harm.",
+      "result": "6 × .4 × (30/365 × .2 × .966268) = .038121 US QALYs; × .95 = .036215 SF QALYs. $100,000 × 10 / .036215 = $27,612,713 per 10 SF QALYs."
+    },
+    "inputs": [
+      {
+        "key": "allocation",
+        "label": "Maternal-depression share / cash per offer",
+        "confidence": "Analyst judgment",
+        "best": "15% / $2,500",
+        "range": "3–35% / $1,200–$5,000",
+        "basis": "Includes assessment failures, failed recruitment, therapy, supervision, access supports and allocated organizational overhead. No second overhead factor."
+      },
+      {
+        "key": "funding",
+        "label": "Financial additionality",
+        "confidence": "Unmeasured local prior",
+        "best": "40%",
+        "range": "10–80%; zero replacement-only case",
+        "basis": "New treatment opportunities instead of replaced public funds or other donors. Not the same as clinical benefit versus available care."
+      },
+      {
+        "key": "days",
+        "label": "Signed net depression-free days",
+        "confidence": "External evidence; local transfer judgment",
+        "best": "+30 days per offered eligible client",
+        "range": "+3 to +68; −15 and zero diagnostics",
+        "basis": "Across 548 days versus actual care; includes completion, spontaneous recovery, recurrence and later treatment. MOMCare's positive PTSD subgroup is a favorable reference, not HPP efficacy."
+      },
+      {
+        "key": "utility",
+        "label": "Utility contrast for a depression-free day",
+        "confidence": "Explicit assumption; no direct HPP utility data",
+        "best": "0.20",
+        "range": "0.10–0.30; zero bridge case",
+        "basis": "Converts net days to QALYs. Symptom scores, remission and dollar valuations of a day are not themselves preference utility."
+      },
+      {
+        "key": "timing",
+        "label": "Finite observation / discount / gift delay",
+        "confidence": "Evidence-window and timing assumptions",
+        "best": "548 days / 3.5% / .25 years",
+        "range": "0–.5-year delay",
+        "basis": "Uniform allocation of signed net days; daily midpoint discount once. No post-window health. Changing window with fixed net days changes timing only."
+      },
+      {
+        "key": "resources",
+        "label": "Outside resources per nominal offer",
+        "confidence": "Unpriced judgment",
+        "best": "$500",
+        "range": "$500–$1,000; donor-pays diagnostic",
+        "basis": "Outside complete cash treatment cost; hypothetical psychiatric/medication/noncash inputs. Envelope precedes financing replacement and is not net social cost."
+      },
+      {
+        "key": "geography",
+        "label": "Bay / SF residence shares",
+        "confidence": "Unmeasured residence priors",
+        "best": "98% / 95%",
+        "range": "90–100% / 80–98%",
+        "basis": "All health US; SF inside Bay. Location of a clinic does not establish residence; same partition for harms."
+      },
+      {
+        "key": "harm",
+        "label": "Shared / independent present-valued loss",
+        "confidence": "Diagnostic, not observed HPP harm",
+        "best": "0 / 0",
+        "range": ".02 QALY per incremental offer / .1 US QALY at zero activity",
+        "basis": "Both harm inputs are already gift-date present-value QALY losses and receive no additional discount. Shared harm scales with new activity; independent loss persists without a new offer. Exclude losses already in net depression-free days."
+      }
+    ],
+    "giftHeading": "Same $100,000 unrestricted gift in every scenario",
+    "sensitivity": [
+      {
+        "case": "central",
+        "headline": "SF donor: $27,612,713/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.038121266 / 0.037358841 / 0.036215203. US/Bay donor prices: $26,232,077 / $26,767,426 per 10 QALYs. Gross envelope $103,000; US/Bay/SF resource prices: $27,019,040 / $27,570,449 / $28,441,094 per 10 QALYs."
+      },
+      {
+        "case": "favorable joint",
+        "headline": "SF donor: $802,836/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 1.2710038 / 1.2710038 / 1.2455838. US/Bay donor prices: $786,780 / $786,780 per 10 QALYs. Gross envelope $129,167; US/Bay/SF resource prices: $1,016,257 / $1,016,257 / $1,036,997 per 10 QALYs."
+      },
+      {
+        "case": "pessimistic positive",
+        "headline": "SF donor: $26,458,655,475/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.000047243519 / 0.000042519167 / 0.000037794815. US/Bay donor prices: $21,166,924,380 / $23,518,804,867 per 10 QALYs. Gross envelope $100,300; US/Bay/SF resource prices: $21,230,425,153 / $23,589,361,282 / $26,538,031,442 per 10 QALYs."
+      },
+      {
+        "case": "negative clinical effect",
+        "headline": "SF donor: No finite positive ratio/10 QALYs",
+        "detail": "US/Bay/SF QALYs: -0.019060633 / -0.018679420 / -0.018107601. US/Bay donor prices: No finite positive ratio / No finite positive ratio per 10 QALYs. Gross envelope $103,000; US/Bay/SF resource prices: No finite positive ratio / No finite positive ratio / No finite positive ratio per 10 QALYs."
+      },
+      {
+        "case": "no allocation",
+        "headline": "SF donor: No finite positive ratio/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.0000000 / 0.0000000 / 0.0000000. US/Bay donor prices: No finite positive ratio / No finite positive ratio per 10 QALYs. Gross envelope $100,000; US/Bay/SF resource prices: No finite positive ratio / No finite positive ratio / No finite positive ratio per 10 QALYs."
+      },
+      {
+        "case": "replacement only",
+        "headline": "SF donor: No finite positive ratio/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.0000000 / 0.0000000 / 0.0000000. US/Bay donor prices: No finite positive ratio / No finite positive ratio per 10 QALYs. Gross envelope $103,000; US/Bay/SF resource prices: No finite positive ratio / No finite positive ratio / No finite positive ratio per 10 QALYs."
+      },
+      {
+        "case": "no clinical difference",
+        "headline": "SF donor: No finite positive ratio/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.0000000 / 0.0000000 / 0.0000000. US/Bay donor prices: No finite positive ratio / No finite positive ratio per 10 QALYs. Gross envelope $103,000; US/Bay/SF resource prices: No finite positive ratio / No finite positive ratio / No finite positive ratio per 10 QALYs."
+      },
+      {
+        "case": "rapid counterfactual recovery",
+        "headline": "SF donor: $414,190,695/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.0025414177 / 0.0024905894 / 0.0024143469. US/Bay donor prices: $393,481,160 / $401,511,388 per 10 QALYs. Gross envelope $103,000; US/Bay/SF resource prices: $405,285,595 / $413,556,729 / $426,616,415 per 10 QALYs."
+      },
+      {
+        "case": "independent harm zero activity",
+        "headline": "SF donor: No finite positive ratio/10 QALYs",
+        "detail": "US/Bay/SF QALYs: -0.10000000 / -0.098000000 / -0.095000000. US/Bay donor prices: No finite positive ratio / No finite positive ratio per 10 QALYs. Gross envelope $103,000; US/Bay/SF resource prices: No finite positive ratio / No finite positive ratio / No finite positive ratio per 10 QALYs."
+      },
+      {
+        "case": "shared harm",
+        "headline": "SF donor: No finite positive ratio/10 QALYs",
+        "detail": "US/Bay/SF QALYs: -0.0098787339 / -0.0096811592 / -0.0093847972. US/Bay donor prices: No finite positive ratio / No finite positive ratio per 10 QALYs. Gross envelope $103,000; US/Bay/SF resource prices: No finite positive ratio / No finite positive ratio / No finite positive ratio per 10 QALYs."
+      },
+      {
+        "case": "donor covers outside care",
+        "headline": "SF donor: $33,135,256/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.031767722 / 0.031132367 / 0.030179336. US/Bay donor prices: $31,478,493 / $32,120,911 per 10 QALYs. Gross envelope $100,000; US/Bay/SF resource prices: $31,478,493 / $32,120,911 / $33,135,256 per 10 QALYs."
+      },
+      {
+        "case": "no utility bridge",
+        "headline": "SF donor: No finite positive ratio/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.0000000 / 0.0000000 / 0.0000000. US/Bay donor prices: No finite positive ratio / No finite positive ratio per 10 QALYs. Gross envelope $103,000; US/Bay/SF resource prices: No finite positive ratio / No finite positive ratio / No finite positive ratio per 10 QALYs."
+      }
+    ],
+    "uncertaintyBoundary": "Joint scenarios are not confidence bounds. The strong favorable case remains $802,836 per 10 SF QALYs; rapid alternative recovery (2 net days) is $414.19M centrally. Zero allocation/activity/effect keeps all gift cost; independent harm can remain negative at zero activity.",
+    "fundingBoundary": "The FY2025 consolidated audit and current public housing contract show existing resources, not a current unfunded therapy tranche. Covered mental-health care and January2026 managed-care transition responsibilities remain baseline."
+  },
+  "evidence": [
+    {
+      "key": "service",
+      "design": "Official program disclosures",
+      "population": "HPP clients; maternal subset unmeasured",
+      "result": "Bilingual onsite and virtual psychotherapy is described.",
+      "transfer": "No verified named perinatal protocol or additional seat commitment."
+    },
+    {
+      "key": "trial",
+      "design": "MOMCare randomized multi-component care",
+      "population": "Depressed Medicaid pregnant adults in Seattle–King County",
+      "result": "Depression severity improved versus intensive maternity support.",
+      "transfer": "Case mix, intervention fidelity and actual SF usual care differ; no wholesale trial transfer."
+    },
+    {
+      "key": "days",
+      "design": "MOMCare economic analysis",
+      "population": "Especially comorbid PTSD subgroup",
+      "result": "68 additional depression-free days over 18 months in that subgroup.",
+      "transfer": "Primary indexed result; full-page fetch failed. Utility conversion and HPP marginal costs remain assumptions."
+    },
+    {
+      "key": "identity",
+      "design": "Official entity disclosure and consolidated audit",
+      "population": "Whole HPP organization",
+      "result": "EIN verified against provider giving page; current audit inspected.",
+      "transfer": "Historical financial scale does not measure marginal maternal health."
+    }
+  ],
+  "reservations": [
+    "The utility conversion is assumption-driven; net symptom-defined days are not direct preference-valued health.",
+    "Actual marginal allocation, new caseload, funding replacement and course quality remain unverified.",
+    "Favorable external subgroup efficacy may not transfer to the current HPP maternal population or ordinary psychotherapy.",
+    "Unmodeled housing, violence support, child health and employment may add value; retaining cost does not assert those benefits are absent.",
+    "Whole portfolio and partner patient-time must be deduplicated before adding estimates."
+  ],
+  "excludedBenefits": [
+    "Maternal deaths or suicide prevented",
+    "Child survival and lifetime development",
+    "Housing stability and violence-related health beyond counted days",
+    "Employment, income, food and broader welfare",
+    "Health after the observation window and downstream savings"
+  ],
+  "sources": [
+    {
+      "publisher": "Homeless Prenatal Program",
+      "title": "HPP giving and entity disclosure",
+      "url": "https://www.homelessprenatal.org/donate",
+      "published": "Undated current page",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official EIN 94-3146280; unrestricted giving route. Provider disclosure, not fresh IRS certification."
+    },
+    {
+      "publisher": "Homeless Prenatal Program",
+      "title": "Mental Health and Parenting Support",
+      "url": "https://www.homelessprenatal.org/mental-health-parenting-support",
+      "published": "Undated current page",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Current bilingual psychotherapy description; no measured maternal course outcomes. Dynamic zero counters are not output observations."
+    },
+    {
+      "publisher": "Homeless Prenatal Program",
+      "title": "Wellness Center",
+      "url": "https://www.homelessprenatal.org/wellness-center",
+      "published": "Undated current page",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Maternal service context; prenatal classes and support are not causal healthy births."
+    },
+    {
+      "publisher": "HPP; MUN CPAs",
+      "title": "FY2025 consolidated audited statements",
+      "url": "https://static1.squarespace.com/static/64835d9646f78d0d97c732cc/t/694b0e97365b820b7706be7b/1766526615969/Homeless+Prenatal+Program+6-30-2025+-+Audit+Report.pdf",
+      "published": "December 19, 2025",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official financial index-linked PDF; primary tables pp.3–7 and note 7 read. Consolidated accounts, not a donor marginal budget."
+    },
+    {
+      "publisher": "Grote et al.; Depression and Anxiety",
+      "title": "MOMCare randomized perinatal depression treatment trial",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4630126/",
+      "published": "2015",
+      "retrieved": "September 8, 2026",
+      "sourceType": "168 randomized Medicaid participants; multi-component care versus intensive maternity support. HPP fidelity and population transfer unverified."
+    },
+    {
+      "publisher": "Grote et al.; Psychiatric Services",
+      "title": "Incremental Benefit-Cost of MOMCare",
+      "url": "https://psychiatryonline.org/doi/10.1176/appi.ps.201600411",
+      "published": "2017",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary publisher indexed results/table and PubMed abstract inspected; direct full-page retrieval failed. 68 added depression-free days in PTSD subgroup; no corresponding significant benefit established without PTSD. Not QALYs or SF marginal prices."
+    },
+    {
+      "publisher": "Grote et al.; PubMed",
+      "title": "MOMCare economic study primary abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28669288/",
+      "published": "2017",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary abstract corroborates 68 days and $1,312 incremental depression-care costs; historical 2013-dollar source not used as a current HPP quote."
+    },
+    {
+      "publisher": "SF HSH",
+      "title": "HPP Safer Families Plan parenting TAY rapid rehousing budget",
+      "url": "https://media.api.sf.gov/documents/Agenda_Item_12E_HPP-_TAY_RRH.pdf",
+      "published": "Budget July 1, 2025",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary 30-page packet; pp.20–25 list 2025–2031 term and therapist salary funding. Existing housing/therapy baseline, not maternal trial delivery or an unfunded queue."
+    },
+    {
+      "publisher": "SF HSH",
+      "title": "FY2025–26 first-quarter Chapter21B report",
+      "url": "https://media.api.sf.gov/documents/Ch_21B_FY_2025-26_Q1_Report_1HVXzm9.pdf",
+      "published": "FY2025–26 Q1",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary indexed report names current agreement 1000035557, term July2025–June2031 and $6,131,147 ceiling. Not annual paid expenditure."
+    },
+    {
+      "publisher": "California DHCS",
+      "title": "Maternal and Perinatal Health Care Services",
+      "url": "https://www.dhcs.ca.gov/services/maternal-and-perinatal-health-care-services/",
+      "published": "Current page",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Medi-Cal behavioral-health benefits are baseline, not evidence every person receives timely treatment."
+    },
+    {
+      "publisher": "California DHCS",
+      "title": "Population Health Management: pregnancy/postpartum transition care",
+      "url": "https://www.dhcs.ca.gov/calaim-transforming-medi-cal/calaim-population-health-management-initiative/",
+      "published": "January 2026 update described on current page",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Managed care plans have pregnancy/postpartum transition responsibilities through 12 months; HPP reimbursement and actual local access are unverified."
+    }
+  ]
+}

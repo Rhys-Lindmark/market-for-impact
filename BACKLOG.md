@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## SFPHF next report — accepted, publication pending
+
+Whole $100,000 unrestricted foundation gift with a conditional HCV cure component;90% central portfolio health unquantified, cost retained. Central $18.31M/10 SF QALYs. Later counterfactual cure, reinfection, excess mortality, signed harms and gross associated resource costs are explicit. Independent18-test/10-scenario acceptance, primary trial and external health-reference audit completed. Count57 only after canonical publication verification. Next accepted report: Coalition for Clean Air; then Felton, HPP and California Walks.
+
 ## Current authority — 56/115 published, September 9 UTC
 
 Code Tenderloin PR233 is live in v157 at exact 67a4b77f7438701c1a444ccdbd52dc9749eca3ed. Canonical /givebetter research count56 and Code Tenderloin/New Door report+API verified at390/768. Includes New Door whole-gift revision PR231 (no extra count) and shared browser contract PR232 (GitHub mobile gate passed). Code:353 unit tests,15 signed scenarios,1,222 model checks plus independent151-parity audit; focused report/index/NewDoor checks passed after checking both intended Donate links.

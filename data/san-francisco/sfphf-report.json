@@ -1,0 +1,354 @@
+{
+  "organization": "San Francisco Public Health Foundation",
+  "eyebrow": "Public-health intermediary and fiscal sponsor · SF, Bay and US health",
+  "program": "Conditional whole-organization value of a $100,000 unrestricted gift",
+  "donationUrl": "https://sfphf.allyrafundraising.com/",
+  "published": "September 8, 2026",
+  "modelVersion": "sfphf-whole-gift-hcv-navigation-v1",
+  "nutshell": {
+    "headline": "Peer navigation may help people complete hepatitis C treatment. The foundation gift's additional cures are unmeasured.",
+    "body": "Our conditional central estimate is $18.31 million per 10 SF QALYs. A demanding joint favorable case reaches $35,811 donor and $80,932 gross resources; if those people would instead be cured one year later, these become $364,248 and $823,200. Current navigator capacity after the documented contract period is not independently verified.",
+    "whyItMayWork": "The foundation has a documented EndHepCSF funding relationship and an established peer-navigation pathway. Added support could help otherwise untreated people reach and complete curative care.",
+    "whyWeAreCautious": "Existing public contracts, funded clinical partners and restricted project balances may replace new donor activity. The general gift's allocation, current navigator staffing, extra cure probability and later counterfactual treatment are uncertain.",
+    "recommendationBlocker": "Conditional research, not a verified funding recommendation: current navigation capacity and the unrestricted gift's additional clinical effect remain unverified."
+  },
+  "summary": [
+    {
+      "label": "Central donor cost / 10 QALYs",
+      "value": "$18.31M SF / $17.75M Bay / $17.39M US",
+      "detail": "Same $100,000 gift: 0.054616 SF, 0.056340 Bay and 0.057490 US QALYs. SF is inside Bay inside US; these are never additive."
+    },
+    {
+      "label": "Whole-gift boundary",
+      "value": "$100,000 once",
+      "detail": "Central 10% hypothetical HCV allocation; 90% other foundation work retains all cost with unquantified health. This is not a restricted End Hep C project gift."
+    },
+    {
+      "label": "Recipient",
+      "value": "SFPHF · EIN 94-3117093",
+      "detail": "Officially hosted 2024 Form 990 covers July 2024–June 2025 and identifies foundation name, EIN and website. Not calendar-2024 accounts or fresh IRS eligibility certification."
+    },
+    {
+      "label": "Central gross resource envelope",
+      "value": "$113,000",
+      "detail": "Adds hypothetical noncash delivery inputs and payer-funded medication to donor cash. Not net incremental societal spending or a verified current DAA price."
+    }
+  ],
+  "programSection": {
+    "body": "The foundation supports diverse public-health programs through fiscal intermediation, sponsorship and philanthropic support. Only a hypothetical navigation-to-additional-cure component is quantified here. End Hep C SF's peer-navigator page describes a ninth cohort, but gives no cohort date. Historical service and a live organization support a plausible pathway, not proof of today's additional treatment capacity.",
+    "steps": [
+      {
+        "title": "Allocate the whole foundation gift",
+        "detail": "An analyst 10% central allocation funds complete navigation offers. Partner delivery, screening failures, unsuccessful engagement and relevant administration are included in each offer; remaining foundation costs stay in the numerator."
+      },
+      {
+        "title": "Add navigation beyond funded care",
+        "detail": "Financial additionality tests replacement of existing funding. Clinical cure probability separately compares offered support with care already available through public and community providers."
+      },
+      {
+        "title": "Verify additional cures",
+        "detail": "Count confirmed additional cures among offered viremic people, not training, assessment, contacts or referral counts. No integrated-clinic trial effect is assigned to ordinary peer navigation."
+      },
+      {
+        "title": "Limit the health gained",
+        "detail": "Finite health is reduced for reinfection, excess competing mortality and later counterfactual cure. No separate transmission, naloxone or opioid-treatment health is added."
+      }
+    ],
+    "boundary": "EndHepCSF, SFPHF and clinical partners cannot each claim the same cure and patient-time. Service location does not establish residence; SF/Bay shares are unmeasured priors. Assessment contracts do not buy a counted treatment."
+  },
+  "model": {
+    "headline": "Whole-gift costs and a small additional-cure pathway",
+    "body": "Central: ten fully costed offers, 0.125 additional cures and 0.459920 retained QALY per cure at the gift date. The health bridge reallocates an external discounted lifetime reference over a finite 20-year window, then applies durability stresses. It is a heuristic, not a rerun of liver disease progression or an observed foundation result.",
+    "equation": {
+      "label": "Whole-gift navigation bridge",
+      "expression": "Offers = gift × HCV allocation / (navigation cash + donor DAA share × extra starts × DAA resource cost). Additional cures = offers × extra cure probability × funding additionality. QALYs = cures × discounted reference Q × retained normalized health weights / (1+d)^gift-to-cure delay − offers × additionality × shared harm − independent gift harm.",
+      "result": "Central: 10 × .05 × .25 × .459920 = .057490 US QALYs; × .95 = .054616 SF QALYs. $100,000 × 10 / .054616 = $18,309,818 per 10 SF QALYs."
+    },
+    "inputs": [
+      {
+        "key": "allocation",
+        "label": "HCV share / complete navigation cash per offer",
+        "confidence": "Analyst judgment",
+        "best": "10% / $1,000",
+        "range": "2–30% / $500–$2,000",
+        "basis": "Ordinary unrestricted foundation gift. Includes screening failures, unsuccessful engagement, partner delivery and foundation overhead. Not historical program-spending share or current quote."
+      },
+      {
+        "key": "cures",
+        "label": "Additional confirmed-cure probability",
+        "confidence": "Unmeasured local prior; external navigation context",
+        "best": "5 percentage points",
+        "range": "1–15 points; explicit zero-gain case",
+        "basis": "Among confirmed-viremic offered people versus actual available care. CTN-0064 had 6/41 versus 5/53 cures, a small uncertain secondary outcome. Includes completion; no second adherence multiplier."
+      },
+      {
+        "key": "additionality",
+        "label": "Funding additionality",
+        "confidence": "Analyst judgment",
+        "best": "25%",
+        "range": "10–75%; explicit zero-activity case",
+        "basis": "New navigation instead of replacing public funds or other donors. Clinical usual-care substitution is handled separately. Current unfunded cohort and discretionary allocation are unverified."
+      },
+      {
+        "key": "reference",
+        "label": "Reference health per additional cure",
+        "confidence": "External modeled anchor; local mix judgment",
+        "best": "4 discounted QALYs",
+        "range": "2.3–6.4",
+        "basis": "MONARCH age-40 stage-specific increments imply 2.3–6.4 QALYs per cure. Four is a case-mix judgment; not observed SF survival. Reference total already includes 3.5% discount and general mortality."
+      },
+      {
+        "key": "timing",
+        "label": "Finite health allocation / timing / gift-to-cure",
+        "confidence": "Explicit heuristic",
+        "best": "20 years / linearly later / 1-year delay",
+        "range": "Uniform to quadratically later; delay 0.5–2 years",
+        "basis": "Weights year^shape/(1+d)^year are normalized to the already-discounted reference before attrition. This avoids discounting its total twice; only the separate gift delay is discounted again."
+      },
+      {
+        "key": "durability",
+        "label": "Reinfection / excess competing mortality",
+        "confidence": "External short follow-up and analyst priors",
+        "best": "0.069 / 0.03 annual hazards",
+        "range": "0.02–0.12 / 0.01–0.06",
+        "basis": "The accessible-care trial reports 4 reinfections/57.9 person-years. Long-run extrapolation is judgmental. Excess mortality is beyond mortality embedded in the reference. Retreatment unquantified."
+      },
+      {
+        "key": "catchup",
+        "label": "Later counterfactual cure",
+        "confidence": "Unmeasured judgment; decisive sensitivity",
+        "best": "70% cured 3 years later",
+        "range": "20–90% in 1–5 years; universal immediate/one-year stresses",
+        "basis": "For that fraction, stop incremental health after later cure. Does not credit irreversible disease differences thereafter. Rapid catch-up reverses the favorable threshold conclusion."
+      },
+      {
+        "key": "medication",
+        "label": "Extra starts / DAA resource cost / donor share",
+        "confidence": "Resource and access judgments",
+        "best": "8% / $15,000 / 0%",
+        "range": "3–20% / $10,000–$25,000; donor-pays sensitivity",
+        "basis": "Extra starts are at least additional cures. Main donor share zero assumes payer/assistance payment, not verified current capacity. If donors pay, affordable offers fall and medication is charged once."
+      },
+      {
+        "key": "resources",
+        "label": "Other associated resources per offer",
+        "confidence": "Unpriced judgment",
+        "best": "$100",
+        "range": "$100 across scenarios",
+        "basis": "Outside complete donor navigation cash. Gross envelope counts nominal offers/starts before replacement, not net induced public expenditure. Downstream medical savings are not deducted."
+      },
+      {
+        "key": "geography",
+        "label": "Bay / SF residence shares",
+        "confidence": "Unmeasured priors",
+        "best": "98% / 95%",
+        "range": "Bay 95–100%; SF 90–98%",
+        "basis": "All modeled health is US. SF is a subset of Bay; shares are not established by clinic location or the foundation's name."
+      },
+      {
+        "key": "harms",
+        "label": "Shared implementation / independent gift harm",
+        "confidence": "Diagnostic assumptions",
+        "best": "Zero in central",
+        "range": "0.1 US QALY independent loss at zero activity",
+        "basis": "Shared per-offer burden scales with funding additionality. Independent harm persists at zero activity. Same geography partition assumed here; actual differently located harm needs its own partition."
+      }
+    ],
+    "giftHeading": "Same $100,000 unrestricted gift in every scenario",
+    "sensitivity": [
+      {
+        "case": "central",
+        "headline": "SF donor: $18,309,818/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.0574900076 / 0.0563402074 / 0.0546155072. US/Bay donor prices: $17,394,327 / $17,749,313 per 10 QALYs. Gross envelope $113,000; US/Bay/SF resource prices: $19,655,590 / $20,056,724 / $20,690,094 per 10 QALYs."
+      },
+      {
+        "case": "favorable joint",
+        "headline": "SF donor: $35,811/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 28.4945019 / 28.4945019 / 27.9246119. US/Bay donor prices: $35,094 / $35,094 per 10 QALYs. Gross envelope $226,000; US/Bay/SF resource prices: $79,314 / $79,314 / $80,932 per 10 QALYs."
+      },
+      {
+        "case": "pessimistic",
+        "headline": "SF donor: $51,232,537,768/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.0000216876063 / 0.000020603226 / 0.0000195188457. US/Bay donor prices: $46,109,283,991 / $48,536,088,412 per 10 QALYs. Gross envelope $100,850; US/Bay/SF resource prices: $46,501,212,905 / $48,948,645,163 / $51,668,014,339 per 10 QALYs."
+      },
+      {
+        "case": "no navigation allocation",
+        "headline": "SF donor: No finite positive ratio",
+        "detail": "US/Bay/SF QALYs: 0 / 0 / 0. US/Bay donor prices: No finite positive ratio / No finite positive ratio per 10 QALYs. Gross envelope $100,000; US/Bay/SF resource prices: No finite positive ratio / No finite positive ratio / No finite positive ratio per 10 QALYs."
+      },
+      {
+        "case": "no funding additionality",
+        "headline": "SF donor: No finite positive ratio",
+        "detail": "US/Bay/SF QALYs: 0 / 0 / 0. US/Bay donor prices: No finite positive ratio / No finite positive ratio per 10 QALYs. Gross envelope $113,000; US/Bay/SF resource prices: No finite positive ratio / No finite positive ratio / No finite positive ratio per 10 QALYs."
+      },
+      {
+        "case": "no extra cures",
+        "headline": "SF donor: No finite positive ratio",
+        "detail": "US/Bay/SF QALYs: 0 / 0 / 0. US/Bay donor prices: No finite positive ratio / No finite positive ratio per 10 QALYs. Gross envelope $113,000; US/Bay/SF resource prices: No finite positive ratio / No finite positive ratio / No finite positive ratio per 10 QALYs."
+      },
+      {
+        "case": "immediate counterfactual cure",
+        "headline": "SF donor: No finite positive ratio",
+        "detail": "US/Bay/SF QALYs: 0 / 0 / 0. US/Bay donor prices: No finite positive ratio / No finite positive ratio per 10 QALYs. Gross envelope $113,000; US/Bay/SF resource prices: No finite positive ratio / No finite positive ratio / No finite positive ratio per 10 QALYs."
+      },
+      {
+        "case": "independent harm",
+        "headline": "SF donor: No finite positive ratio",
+        "detail": "US/Bay/SF QALYs: -0.1 / -0.098 / -0.095. US/Bay donor prices: No finite positive ratio / No finite positive ratio per 10 QALYs. Gross envelope $113,000; US/Bay/SF resource prices: No finite positive ratio / No finite positive ratio / No finite positive ratio per 10 QALYs."
+      },
+      {
+        "case": "donor pays daa",
+        "headline": "SF donor: $40,281,600/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 0.0261318216 / 0.0256091852 / 0.0248252306. US/Bay donor prices: $38,267,520 / $39,048,490 per 10 QALYs. Gross envelope $100,455; US/Bay/SF resource prices: $38,441,463 / $39,225,983 / $40,464,698 per 10 QALYs."
+      },
+      {
+        "case": "favorable one year catchup",
+        "headline": "SF donor: $364,248/10 QALYs",
+        "detail": "US/Bay/SF QALYs: 2.80141123 / 2.80141123 / 2.745383. US/Bay donor prices: $356,963 / $356,963 per 10 QALYs. Gross envelope $226,000; US/Bay/SF resource prices: $806,736 / $806,736 / $823,200 per 10 QALYs."
+      }
+    ],
+    "uncertaintyBoundary": "The joint favorable scenario is not a confidence bound or measured offer. Its $35,811 SF donor result becomes $364,248 with universal counterfactual cure one year later; gross resources rise from $80,932 to $823,200 per 10 SF QALYs. Current navigator capacity is uncertain. Null allocation/activity/cures and immediate catch-up retain the full gift and no positive ratio; the independent-harm case is negative.",
+    "fundingBoundary": "Historical CHEP proposals/objectives contain inconsistent end dates, all before this review; no current extension or unfunded gap is inferred. FY2025 audit records EndHepCSF restricted funds, not a present discretionary tranche. March2026 public work names the initiative for community needs assessment, which receives no cure credit. Existing public clinical support and restricted philanthropy remain the baseline."
+  },
+  "evidence": [
+    {
+      "key": "service",
+      "design": "Official service page, fiscal records and public contract documentation",
+      "population": "Foundation-sponsored EndHepCSF and partner agencies",
+      "result": "An established navigator structure and restricted EndHepCSF funding relationship exist. Current navigator page describes a ninth cohort without a date.",
+      "transfer": "Supports a plausible current pathway, not verified post-contract staff capacity or an extra cure. Current assessment funding is not treatment."
+    },
+    {
+      "key": "navigation",
+      "design": "CTN-0064 randomized care-facilitation trial",
+      "population": "People with HIV/HCV and substance use; RNA-positive cure denominator",
+      "result": "SVR12 in 6/41 intervention participants versus 5/53 controls.",
+      "transfer": "Small uncertain secondary cure outcome; central 5-point difference is a labeled local prior. Do not transfer integrated-care-versus-referral efficacy to ordinary navigation."
+    },
+    {
+      "key": "health",
+      "design": "McEwan et al. modeled HCV progression and SVR benefit",
+      "population": "External age-40 fibrosis-stage scenarios",
+      "result": "Discounted QALY increments of 0.23–0.64 per ten-point SVR improvement imply 2.3–6.4 per additional cure.",
+      "transfer": "Primary results and 3.5% discount methods inspected. Local age/severity and timing are unmeasured; finite reallocation is a heuristic rather than a disease-model rerun."
+    },
+    {
+      "key": "reinfection",
+      "design": "Accessible-care randomized trial post-cure follow-up",
+      "population": "People who inject drugs; 55 cured intervention participants",
+      "result": "Four reinfections during 57.9 post-cure person-years.",
+      "transfer": "Short follow-up informs a stress hazard, not a verified sustained SF rate. The trial's larger integrated-care effect is not used as navigation efficacy."
+    },
+    {
+      "key": "identity",
+      "design": "Officially hosted Form 990 and FY2025 audited statements",
+      "population": "San Francisco Public Health Foundation",
+      "result": "2024 return for fiscal year ended June2025 identifies EIN 94-3117093. Audit records $423,296 restricted to EndHepCSF at June2025.",
+      "transfer": "Historical entity and project relationship evidence. Restricted balance is neither current unrestricted cash nor proof of a treatment backlog or funding shortage."
+    }
+  ],
+  "reservations": [
+    "Current post-contract navigation staffing and authority to deploy an unrestricted gift remain unverified; the website's cohort has no date.",
+    "Whole-organization allocation, offered navigation costs, additional cures and funding additionality are judgments, not a current marginal budget.",
+    "Reference health is already discounted and transformed with an explicit timing heuristic; rapid later cure, reinfection and competing mortality can sharply reduce value.",
+    "Main donor cost assumes funded DAA access; no current net payer price, extra supply or capacity commitment is verified.",
+    "Deduplicate cures, resources and patient-time with EndHepCSF, GLIDE, SFAF, SFCHC, Springboard and other providers before any portfolio aggregation."
+  ],
+  "excludedBenefits": [
+    "Other foundation-sponsored public-health work",
+    "Community assessment, training and advocacy beyond counted cures",
+    "HCV transmission prevention and retreatment",
+    "Separate naloxone and opioid-treatment survival",
+    "Downstream medical savings and broader welfare"
+  ],
+  "sources": [
+    {
+      "publisher": "San Francisco Public Health Foundation",
+      "title": "Official SFPHF 2024 Form 990; FY ended June2025",
+      "url": "https://sfphf.org/wp-content/uploads/2026/05/SFPHF-2024-TR.pdf",
+      "published": "Prepared May12,2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary document or provider disclosure; see evidence for transfer limits"
+    },
+    {
+      "publisher": "San Francisco Public Health Foundation; independent auditor",
+      "title": "SFPHF FY2025 audited statements",
+      "url": "https://sfphf.org/wp-content/uploads/2026/04/SFPHF-FS-FY2025.pdf",
+      "published": "March30,2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary document or provider disclosure; see evidence for transfer limits"
+    },
+    {
+      "publisher": "End Hep C SF",
+      "title": "End Hep C SF Community Navigator Program",
+      "url": "https://endhepcsf.org/community-navigator-program/",
+      "published": "Undated",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary document or provider disclosure; see evidence for transfer limits"
+    },
+    {
+      "publisher": "San Francisco Public Health Foundation",
+      "title": "SFPHF intermediary role",
+      "url": "https://sfphf.org/intermediary-work/",
+      "published": "Page metadata April15,2025",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary document or provider disclosure; see evidence for transfer limits"
+    },
+    {
+      "publisher": "SF Department of Public Health",
+      "title": "May2024 proposed public funding including navigation",
+      "url": "https://media.api.sf.gov/documents/May_7_2024_HC_Monthly_Report_-_FINAL_-_Late_revision.cleaned.pdf",
+      "published": "May7,2024",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary document or provider disclosure; see evidence for transfer limits"
+    },
+    {
+      "publisher": "SF Budget and Legislative Analyst",
+      "title": "October2024 BLA review: later proposed term and named subcontractors",
+      "url": "https://sfgov.legistar.com/View.ashx?GUID=8EDD47C5-9DE9-4E2E-AD80-2A927C6491AE&ID=13388361&M=F",
+      "published": "October23,2024; search-index primary excerpt only, direct fetch failed",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary public document indexed excerpt; access limits retained in date/description"
+    },
+    {
+      "publisher": "SF Department of Public Health",
+      "title": "March2026 public proposal: End Hep C SF community needs assessment",
+      "url": "https://media.api.sf.gov/documents/A._Contracts_Report_-_March_2026.revised.pdf",
+      "published": "March2,2026; primary indexed excerpt",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary public document indexed excerpt; access limits retained in date/description"
+    },
+    {
+      "publisher": "Metsch et al.; Open Forum Infectious Diseases",
+      "title": "CTN-0064 randomized care facilitation",
+      "url": "https://academic.oup.com/ofid/article/8/8/ofab334/6310155",
+      "published": "2021; full primary page and outcome table read",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary document or provider disclosure; see evidence for transfer limits"
+    },
+    {
+      "publisher": "McEwan et al.; PLOS ONE",
+      "title": "McEwan et al. incremental SVR benefits",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0117334",
+      "published": "2015; primary methods/results read",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary document or provider disclosure; see evidence for transfer limits"
+    },
+    {
+      "publisher": "Eckhardt et al.; JAMA Internal Medicine",
+      "title": "Accessible HCV care trial",
+      "url": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2790054",
+      "published": "2022; primary results read; integrated-care efficacy NOT transferred",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary document or provider disclosure; see evidence for transfer limits"
+    },
+    {
+      "publisher": "SF Department of Public Health",
+      "title": "FY25-26 CHEP program objectives",
+      "url": "https://media.api.sf.gov/documents/Final_FY25-26_CHEP_Prog._Objectives_01.06.20251.pdf",
+      "published": "FY25-26 document; stale internal headers",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary document or provider disclosure; see evidence for transfer limits"
+    }
+  ]
+}

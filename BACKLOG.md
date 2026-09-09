@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Harm Reduction Therapeutics — accepted, publication pending
+
+Whole gift RiVive manufacturing/free-access model, not packs supplied counted as saved lives. Central USdonor$255,604/grossresources$357,846 per10Q; local1%Bay/.2%SF shares explicitly weak priors, not delivery findings.24signed scenarios and finite unique-person survival; all gift cash retained, manufacture/Remedy chain health and costs not additive.4307author plus3925independent assertions accepted. No current quote or verified marginal tranche. Count64 after canonical verification. NEXT Distro independently accepted next; no numerical political-model workaround.
+
 ## Healthier Kids Foundation — accepted, publication pending
 
 Whole expanded portfolio, not vision-only. Central Bay donor$3.764M and gross associated resources$6.308M per10Q; SF-city central health0, ratio null. Fifteenpercent vision allocation reflects a new marginal judgment anchored against FY2025 functional scope; screening/referral counts are not clinical outcomes. Finite earlier-care advantage, public replacement, disjoint utility, full gift and signed cases retained.20scenarios;13038author plus663independent assertions accepted. Count63 only after canonical verification. California YIMBY numerical advocacy model was blocked by automated review and remains unpublished; no workaround or count increment. Next nonpolitical HRT/NEXT drafts; GLIDE/Breathe accepted whole-gift revisions remain queued.

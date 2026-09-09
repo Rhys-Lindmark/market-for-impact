@@ -1,0 +1,382 @@
+{
+  "organization": "Harm Reduction Therapeutics",
+  "slug": "harm-reduction-therapeutics",
+  "model_version": "hrt-whole-gift-rivive-unique-survival-v1",
+  "date": "2026-09-08",
+  "recipient": {
+    "legal_name": "Harm Reduction Therapeutics Inc",
+    "ein": "82-2380699",
+    "type": "501(c)(3), Form990-PF filer",
+    "giving_url": "https://www.harmreductiontherapeutics.org/about/",
+    "giving_boundary": "Ordinary charitable support to HRT; current public page invites financial-support contact. Not an online retail purchase or automatic free-dose restriction. No inquiry or gift submitted."
+  },
+  "finance": {
+    "year": 2024,
+    "gross_sales": 11454985,
+    "cost_of_goods_sold": 4658446,
+    "gross_profit": 6796539,
+    "contributions": 5000,
+    "interest": 123500,
+    "reported_revenue_net_of_cogs": 6925039,
+    "operating_expenses_excluding_cogs": 8244357,
+    "combined_cogs_plus_operating": 12902803,
+    "reported_direct_charitable_activity": 12902802,
+    "net_assets": 1376861,
+    "cash_noninterest": 499882,
+    "savings_temporary_investments": 3895157,
+    "inventory": 1983566,
+    "accounts_payable": 6964835,
+    "note": "Primary filed PF, not independently audited statements. One-dollar difference between combined-cost arithmetic and direct-charitable-activity entry. Only$5,000 current-year contributions; historical donor reliance is not evidence current ordinary gifts finance all production. Sales margins/operating expenses are not per-pack production prices; inventory and liabilities matter."
+  },
+  "central_inputs": {
+    "gift_usd": 100000,
+    "free_access_allocation": 0.7,
+    "other_capacity_allocation": 0.2,
+    "other_partnership_allocation": 0.1,
+    "cash_per_twin_pack": 30,
+    "funding_additionality": 0.35,
+    "max_additional_twin_packs": 5000,
+    "high_risk_placement": 0.6,
+    "twin_packs_per_unique_person": 2,
+    "max_unique_people": 1000,
+    "events_per_person_year": 0.5,
+    "fatality_without_effective_rescue": 0.1,
+    "baseline_effective_rescue": 0.8,
+    "rescue_increment": 0.08,
+    "mean_doses_per_incremental_response": 2,
+    "other_mortality_hazard": 0.06,
+    "utility": 0.7,
+    "active_years": 1,
+    "horizon_years": 10,
+    "delay_years": 0.5,
+    "discount": 0.03,
+    "episode_harm_per_unique_person": 0.0002,
+    "independent_harm_q": 0,
+    "outside_per_nominal_pack": 15,
+    "outside_other_usd": 5000,
+    "bay_share": 0.01,
+    "sf_share": 0.002
+  },
+  "scenarios": [
+    {
+      "id": "central",
+      "overrides": {}
+    },
+    {
+      "id": "favorable",
+      "overrides": {
+        "free_access_allocation": 0.9,
+        "other_capacity_allocation": 0.05,
+        "other_partnership_allocation": 0.05,
+        "cash_per_twin_pack": 20,
+        "funding_additionality": 0.7,
+        "high_risk_placement": 0.8,
+        "twin_packs_per_unique_person": 1,
+        "max_unique_people": 5000,
+        "events_per_person_year": 1,
+        "fatality_without_effective_rescue": 0.15,
+        "baseline_effective_rescue": 0.7,
+        "rescue_increment": 0.15,
+        "utility": 0.8,
+        "other_mortality_hazard": 0.04,
+        "horizon_years": 15,
+        "delay_years": 0.25,
+        "outside_per_nominal_pack": 10
+      }
+    },
+    {
+      "id": "cautious",
+      "overrides": {
+        "free_access_allocation": 0.4,
+        "other_capacity_allocation": 0.4,
+        "other_partnership_allocation": 0.2,
+        "cash_per_twin_pack": 40,
+        "funding_additionality": 0.1,
+        "high_risk_placement": 0.3,
+        "twin_packs_per_unique_person": 4,
+        "events_per_person_year": 0.25,
+        "baseline_effective_rescue": 0.9,
+        "rescue_increment": 0.02,
+        "other_mortality_hazard": 0.08,
+        "utility": 0.6,
+        "horizon_years": 5,
+        "active_years": 0.5,
+        "delay_years": 1
+      }
+    },
+    {
+      "id": "low_free_access_allocation",
+      "overrides": {
+        "free_access_allocation": 0.3,
+        "other_capacity_allocation": 0.5,
+        "other_partnership_allocation": 0.2
+      }
+    },
+    {
+      "id": "cheaper_current_cost",
+      "overrides": {
+        "cash_per_twin_pack": 20
+      }
+    },
+    {
+      "id": "higher_full_cost",
+      "overrides": {
+        "cash_per_twin_pack": 45
+      }
+    },
+    {
+      "id": "public_stock_replacement",
+      "overrides": {
+        "funding_additionality": 0
+      }
+    },
+    {
+      "id": "low_supply_additionality",
+      "overrides": {
+        "funding_additionality": 0.1
+      }
+    },
+    {
+      "id": "last_mile_failure",
+      "overrides": {
+        "high_risk_placement": 0
+      }
+    },
+    {
+      "id": "many_repeat_packs",
+      "overrides": {
+        "twin_packs_per_unique_person": 6
+      }
+    },
+    {
+      "id": "quarter_year_protection",
+      "overrides": {
+        "active_years": 0.25
+      }
+    },
+    {
+      "id": "five_year_survival",
+      "overrides": {
+        "horizon_years": 5
+      }
+    },
+    {
+      "id": "one_year_survival",
+      "overrides": {
+        "horizon_years": 1
+      }
+    },
+    {
+      "id": "high_baseline_rescue",
+      "overrides": {
+        "baseline_effective_rescue": 0.95,
+        "rescue_increment": 0.02
+      }
+    },
+    {
+      "id": "high_recurrent_mortality",
+      "overrides": {
+        "events_per_person_year": 2,
+        "other_mortality_hazard": 0.1
+      }
+    },
+    {
+      "id": "no_incremental_rescue",
+      "overrides": {
+        "rescue_increment": 0
+      }
+    },
+    {
+      "id": "true_health_null",
+      "overrides": {
+        "rescue_increment": 0,
+        "episode_harm_per_unique_person": 0
+      }
+    },
+    {
+      "id": "signed_rescue_harm",
+      "overrides": {
+        "rescue_increment": -0.05
+      }
+    },
+    {
+      "id": "independent_harm_zero_activity",
+      "overrides": {
+        "funding_additionality": 0,
+        "independent_harm_q": 1
+      }
+    },
+    {
+      "id": "limited_manufacturing",
+      "overrides": {
+        "max_additional_twin_packs": 100
+      }
+    },
+    {
+      "id": "limited_unique_reach",
+      "overrides": {
+        "max_unique_people": 25
+      }
+    },
+    {
+      "id": "double_outside_resources",
+      "overrides": {
+        "outside_per_nominal_pack": 30,
+        "outside_other_usd": 10000
+      }
+    },
+    {
+      "id": "no_identified_local_share",
+      "overrides": {
+        "bay_share": 0,
+        "sf_share": 0
+      }
+    },
+    {
+      "id": "larger_local_share_hypothesis",
+      "overrides": {
+        "bay_share": 0.03,
+        "sf_share": 0.005
+      }
+    }
+  ],
+  "sources": [
+    {
+      "key": "recipient",
+      "publisher": "Harm Reduction Therapeutics / IRS",
+      "title": "2024 Form 990-PF",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202533219349104918/IRS990PF",
+      "published": "Filed November 17, 2025",
+      "sourceType": "Primary return identifies HRT Inc EIN82-2380699; rendered public iframe read directly. PF sales revenue is net of COGS; do not mistake reported operating expenses for whole manufacture cost.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "key": "funding",
+      "publisher": "Harm Reduction Therapeutics",
+      "title": "Our Story",
+      "url": "https://www.harmreductiontherapeutics.org/about/",
+      "published": "Current undated",
+      "sourceType": "Current free/low-cost OTC mission, philanthropic pathway; original$36/twin pack now explicitly lower. Not a current dollar quote or restricted ordinary gift offer.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "key": "cost",
+      "publisher": "Harm Reduction Therapeutics",
+      "title": "RiVive FAQ",
+      "url": "https://www.harmreductiontherapeutics.org/faq/",
+      "published": "Current undated",
+      "sourceType": "Price includes approximately95% manufacturing/packaging/testing/warehousing/transport plus5% coordination/admin/regulatory costs;24 twinpacks per case; direct free shipping. RA same price; do not charge production twice.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "key": "commitment",
+      "publisher": "HRT / Capstone Health Alliance",
+      "title": "New distribution partnership",
+      "url": "https://www.harmreductiontherapeutics.org/wp-content/uploads/2026/03/HRT-x-Capstone-Health-Alliance-Partnership-Press-Release_Final.pdf",
+      "published": "January 28, 2026 (March upload)",
+      "sourceType": "Current national provider-distribution expansion and stated at least10% units donated. Existing commitment is baseline, not marginal philanthropic output.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "key": "feedback",
+      "publisher": "HRT / Health Management Associates",
+      "title": "2025 RiVive Community Feedback Report",
+      "url": "https://www.harmreductiontherapeutics.org/wp-content/uploads/2026/04/2025-RiVive-Community-Feedback-Report.pdf",
+      "published": "Released April 2026",
+      "sourceType": "18-page primary manufacturer-commissioned qualitative report read in memory.19 compensated Pennsylvania interviews with variable response denominators; convenience/site selection, no randomized product comparison, dose-use rate or causal mortality estimate.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "key": "partner",
+      "publisher": "Remedy Alliance / HRT",
+      "title": "200,000-dose partnership announcement",
+      "url": "https://www.harmreductiontherapeutics.org/wp-content/uploads/2023/08/Naloxone-donation-8.9.23-FINAL.pdf",
+      "published": "August 9, 2023",
+      "sourceType": "Historical200,000 individual doses (=100,000 twin packs),10% of projected initial annual production. Not a fresh2026 funding offer, observed use or deaths averted.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "key": "current_partner",
+      "publisher": "Students for Sensible Drug Policy",
+      "title": "HOPE harm reduction kits",
+      "url": "https://ssdp.org/blog/carry-naloxone-know-your-rights-save-a-life-ssdps-hope-puts-the-tools-in-your-hands/",
+      "published": "August 31, 2026",
+      "sourceType": "Primary current partner describes HRT-donated RiVive in free trained-participant kits. Shows actual distribution beyond Remedy, not causal extra doses or local residence.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "key": "approval",
+      "publisher": "FDA",
+      "title": "Second OTC naloxone nasal spray approval",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-second-over-counter-naloxone-nasal-spray-product",
+      "published": "July 28, 2023",
+      "sourceType": "RiVive3mg approval and pharmacologic rescue mechanism; not comparative superiority or charity-level deaths-per-pack.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "key": "baseline",
+      "publisher": "California DHCS",
+      "title": "Naloxone Distribution Project",
+      "url": "https://www.dhcs.ca.gov/individuals/naloxone-distribution-project/",
+      "published": "Current",
+      "sourceType": "Free nasal/intramuscular naloxone and existing statewide distribution; prior reversals are not donated-gift lives saved.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "key": "baseline_products",
+      "publisher": "California DHCS",
+      "title": "NDP FAQs",
+      "url": "https://www.dhcs.ca.gov/individuals/naloxone-distribution-project/ndp-frequently-asked-questions/",
+      "published": "Current; April 2026 product change",
+      "sourceType": "Generic nasal replaces brand Narcan in program; partner training requirements. Existing alternative rescue and inventory remain in counterfactual.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "key": "recurrence",
+      "publisher": "Olfson et al.",
+      "title": "Risks of fatal opioid overdose after nonfatal overdose",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10398609/",
+      "published": "2018 article;2023 manuscript availability",
+      "sourceType": "Primary historical adult Medicaid cohort: repeat295/1,000person-years; fatal opioid overdose1,154/100,000person-years. Context only, not current fentanyl or HRT recipient hazard.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "key": "mortality",
+      "publisher": "Olfson et al.",
+      "title": "Causes of death after nonfatal opioid overdose",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6143082/",
+      "published": "2018",
+      "sourceType": "Primary historical cohort: all-cause778.3/10,000person-years. Other-mortality input excludes modeled overdose mortality; not added mechanically to all-cause rate.",
+      "retrieved": "September 8, 2026"
+    },
+    {
+      "key": "community",
+      "publisher": "Walley et al.",
+      "title": "Overdose education/naloxone implementation and mortality",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23372174/",
+      "published": "2013",
+      "sourceType": "Historical observational community interrupted-time-series association, not randomized individual naloxone or manufacturer marginal effect. No reported mortality ratio imported.",
+      "retrieved": "September 8, 2026"
+    }
+  ],
+  "funding_room": {
+    "verified_offer_usd": null,
+    "incremental_manufacturing_quote": null,
+    "current_free_dose_queue": null,
+    "capacity": "All numerical caps are assumptions, not verified open orders."
+  },
+  "boundaries": [
+    "One twin pack=two single-use3mg devices;24packs/case. Packs_per_unique_person is pooled supply per unique at-risk beneficiary over the funded interval, not a clinical dose recommendation, one rescuer=one patient, or one package=one overdose.",
+    "Whole gift fractions sum1. Free-access cash price includes core manufacturer logistics/admin once. Remaining capital/price-access/partnership budget retained with no quantified additional health; not another same-core overhead haircut.",
+    "Funding additionality subtracts substitution of already-financed free production, existing inventory, paid orders and other funders. Manufacturing cap limits extra output. Low inventory price alone does not imply supply bottleneck.",
+    "Placement is last-mile arrival in high-risk networks. Packs per unique beneficiary absorbs repeated issues/sharing and stock per beneficiary; it is an unverified linked-person planning prior. Repeated responses do not generate another survivor tail.",
+    "Both scenarios begin with the same unique at-risk people alive at intervention start. Delay discounts only. Recurrent nonfatal overdose leaves the person alive; fatal opioid hazard=event rate*fatality without effective rescue*(1-effective rescue). Other mortality is separate.",
+    "Improved effective rescue only during finite funded protection; afterward both arms return to identical baseline mortality. Integrate the difference in whole-person survival once to finite horizon. No lifetime rescue multiplier, reduced drug use, MOUD or brain injury benefit.",
+    "Effective rescue already includes witnesses, working supply, correct use, EMS and alternative naloxone; no separate98% observed-survival or formulation-efficacy factor. Rescue increment may be negative in a diagnostic access-displacement scenario.",
+    "Positive incremental-dose demand is constrained not to exceed the available device pool; assumed devices per response is a modeling budget, not medical advice.",
+    "HRT manufacturing and Remedy distribution estimates are alternative marginal-gift counterfactuals, not additive claims on the same naloxone chain. Distribution capacity is held at existing baseline for HRT. A combined portfolio must assign each linked person's incremental survival once; published HRT+Remedy QALYs cannot simply be summed.",
+    "Gross associated outside costs per nominal pack cover only downstream distribution/training/storage/participant inputs not already HRT-paid. Full gift plus outside allowance retained even at supply null; not exhaustive net societal cost. No double production or shipping charge, medical savings or free-stock retail valuation.",
+    "Signed rescue effect and gift-date PV harms allowed. Per-person acute harm is separate from survival utility; independent harm remains at zero activity. Positive ratios are null at zero/negative Q or nonfinite ratio.",
+    "Bay/SF central shares1%/.2% are weak explicit national-program beneficiary-residence priors, not observed allocation or headquarters location. Nested0<=SF<=Bay<=US. Local-zero and larger-local scenarios expose uncertainty. National survival assumptions are not validated region-specific hazards."
+  ]
+}

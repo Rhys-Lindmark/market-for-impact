@@ -1,5 +1,13 @@
 # San Francisco giving — active phase plan
 
+## Authoritative checkpoint — September 9, 02:54 UTC
+
+**60/115 published and canonical-verified.** SFPHF57 (PR235/v158), CCA58 (PR236/v159), Felton59 (PR237/v160), HPP60 (PR238/v161). Latest exactacf6b49fb38f3ce449212ef895900da6af8d3364; successful HPP deployment02:52:58Z and390/768 report/API/60row index verified.405unit tests, lint/build and12focused HPP checks passed. GitHub mobile235–237 passed;238 pending at snapshot.
+
+Next phase: integrate independently accepted SFAF whole-gift revision (no new count), then CalWalks/Fistula/California YIMBY new reports, and accepted PHC/GLIDE/Breathe revisions as ready. All three workers remain assigned: audit_cca Breathe authoring; audit_sfphf PHC acceptance; code_readiness GLIDE acceptance.
+
+Cost-scope inventory is now durable in docs/research-cost-scope-inventory.md/.csv:50SF-indexed reports include8whole-gift partial-health and42program-only estimates. Do not interpret60reports as60fully comparable unrestricted gifts; complete required revisions before final goal acceptance. No threshold-driven retuning. Block started01:33:23Z; actual end/elapsed belongs in shared work log. Explicit pause overrides continuation.
+
 ## Authoritative checkpoint — September 9, 01:23 UTC
 
 **56/115 published and canonical-verified.** Code Tenderloin PR233/v157 exact67a4b77f7438701c1a444ccdbd52dc9749eca3ed; successful deployment01:21:12Z and canonical390/768 report/API/index verification. New Door whole-gift revision included, not counted twice. Root publication phase next: independently accepted SFPHF and CCA. Worker cross-audits: audit_cca→Felton, audit_sfphf→California Walks, code_readiness→HPP. Six packets/revisions are not six new live reports.

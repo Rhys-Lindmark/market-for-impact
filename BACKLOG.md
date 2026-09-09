@@ -1,5 +1,13 @@
 # Market for Impact backlog
 
+## Current authority — 60/115 published, September 9 UTC
+
+SFPHF PR235/v158, CCA PR236/v159, Felton PR237/v160 and HPP PR238/v161 are live and canonical-verified at390/768. Exact latest acf6b49fb38f3ce449212ef895900da6af8d3364.405 tests and focused12check HPP release passed; full GitHub mobile gates passed for235–237,238 pending at checkpoint. Current count50SF-indexed+2Bay+1California+3US+4international. These are distinct reports, not60 equally comparable unrestricted-gift estimates.
+
+Material method correction: docs/research-cost-scope-inventory.md/.csv finds8whole-gift and42program-only within50SF reports. Prioritize SFAF/PHC/GLIDE/Breathe whole-gift revisions before presenting old program prices as ordinary-donation rankings. SFAF revision independently accepted; PHC/GLIDE cross-audits underway; Breathe authoring. Revisions do not increase organization count.
+
+Next new reports independently accepted: California Walks (/private/tmp/mfi-ca-next-*; mfi-calwalks-independent-audit.md), Fistula Foundation (mfi-fistula-*; independent audit), California YIMBY (mfi-ca-yimby-*; independent audit). Fistula central donor$76,286/10overseasQ, gross$101,944 after full-cohort missing-outcome correction; not a SF bargain. Evidence Action screen rejected obsolete user denominator, not proven ineffective. Hourly schedule,115target and explicit pause control unchanged.
+
 ## Homeless Prenatal Program — accepted report, publication pending
 
 Whole unrestricted gift with conditional finite maternal-depression treatment access; all costs retained and other portfolio health unquantified. Central $27.61M/10SFQ. External subgroup evidence is not assumed HPP protocol fidelity; explicit utility prior, clinical usual-care/public funding, signed depression-free days, separate harm and no child lifetime credit. Independent19tests/111author/132independent assertions across12scenarios accepted. Count60 only after canonical verification. Next accepted CalWalks, Fistula, California YIMBY; legacy SFAF/PHC whole-gift revisions are not new organizations.

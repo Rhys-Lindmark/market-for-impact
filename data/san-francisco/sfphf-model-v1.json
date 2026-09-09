@@ -1,0 +1,587 @@
+{
+  "model_id": "sfphf-whole-gift-hcv-navigation-v1",
+  "prepared": "2026-09-08",
+  "status": "Author-checked conditional research draft; independent acceptance pending; not a verified donor offer",
+  "organization": {
+    "name": "San Francisco Public Health Foundation",
+    "ein": "94-3117093",
+    "giving_url": "https://sfphf.allyrafundraising.com/",
+    "identity": "Officially hosted 2024 Form 990 for July 1, 2024–June 30, 2025 links name, EIN and sfphf.org. Prepared May 12, 2026; no claim of fresh IRS eligibility verification."
+  },
+  "service_status": "Live foundation and plausible established navigation pathway: current official site describes ninth peer-navigator cohort; FY2025 audit holds EndHepCSF restricted funds and a March2026 public proposal names the initiative for a different community-assessment scope. Post-June/July2026 navigator staffing and current contract continuation not independently verified. Do not turn the assessment subcontract into treatment or a contract expiry into proof of closure/unfunded need.",
+  "boundary": "One unrestricted $100,000 foundation gift. Only hypothetical HCV navigation-to-additional-cure component quantified; all remaining gift cost retained, other health benefits/harms unquantified. End Hep C project donation route is not substituted for general giving.",
+  "assumptions": "Every numerical scenario input is an analyst judgment. Cure difference is a prospective navigation-versus-actual-available-care probability among confirmed-viremic people offered support, includes completion/failure, and is not measured SFPHF efficacy. Offered navigation cash includes allocated screening failures, all navigation and partner administration/overhead. No second adherence or overhead multiplier.",
+  "health": "Reference QALYs are already discounted lifetime MONARCH-style gains per added cure. A finite 20-year allocation heuristic with weights k^shape/(1+d)^k is normalized to that total; not a rerun of disease progression. Reinfection and EXCESS mortality beyond reference mortality truncate benefit; later cure truncates the relevant fraction. Zero irreversible pre-catchup disease credit after cure; no transmission bonus. Gift-to-cure delay discounted once.",
+  "cost": "Core donor package = navigation cash + donor DAA share * extra starts per offer * DAA resource cost/start. Main donor share zero is hypothetical public/insurance payment, not verified new capacity. Gross envelope adds unpriced noncash inputs plus remaining medication cost on nominal offers/starts before funding replacement. Counts medication once; no net-social-cost claim and no subtraction of future medical savings.",
+  "funding": "Existing public support, funded clinical partners, other donors and restricted balances form baseline. Financial additionality represents replacement of funded navigation; incremental cure probability separately compares clinical access against actual care. Current discretionary allocation, waitlist and incremental funding gap unmeasured.",
+  "geography": "All modeled health US. Bay includes SF; shares are beneficiary-residence priors, not service-location proof. Nested ledgers never summed. Harms use same partition here.",
+  "overlap": "Foundation, EndHepCSF, SFAF, GLIDE, SFCHC, Springboard and other providers cannot each claim full same-patient cure/tail. Transfers are not added resources. No new naloxone or opioid-treatment survival stream credited.",
+  "formulas": {
+    "offers": "G*allocation/(navigationCash+donorDAAShare*startDifference*DAACost)",
+    "additionalCures": "offers*cureDifference*fundingAdditionality",
+    "health": "additionalCures*referenceQ*retainedNormalizedWeights/(1+discount)^giftToCure - offers*fundingAdditionality*sharedHarm - independentHarm",
+    "resources": "gift + offers*(extraResource + (1-donorDAAShare)*startDifference*DAACost)",
+    "ratio": "10*cost/regionQ if regionQ>0 else null"
+  },
+  "sources": [
+    {
+      "id": "entity",
+      "title": "Official SFPHF 2024 Form 990; FY ended June2025",
+      "url": "https://sfphf.org/wp-content/uploads/2026/05/SFPHF-2024-TR.pdf",
+      "published": "Prepared May12,2026",
+      "retrieved": "September8,2026"
+    },
+    {
+      "id": "audit",
+      "title": "SFPHF FY2025 audited statements",
+      "url": "https://sfphf.org/wp-content/uploads/2026/04/SFPHF-FS-FY2025.pdf",
+      "published": "March30,2026",
+      "retrieved": "September8,2026"
+    },
+    {
+      "id": "service",
+      "title": "End Hep C SF Community Navigator Program",
+      "url": "https://endhepcsf.org/community-navigator-program/",
+      "published": "Undated",
+      "retrieved": "September8,2026"
+    },
+    {
+      "id": "foundation",
+      "title": "SFPHF intermediary role",
+      "url": "https://sfphf.org/intermediary-work/",
+      "published": "Page metadata April15,2025",
+      "retrieved": "September8,2026"
+    },
+    {
+      "id": "old_contract",
+      "title": "May2024 proposed public funding including navigation",
+      "url": "https://media.api.sf.gov/documents/May_7_2024_HC_Monthly_Report_-_FINAL_-_Late_revision.cleaned.pdf",
+      "published": "May7,2024",
+      "retrieved": "September8,2026"
+    },
+    {
+      "id": "later_contract",
+      "title": "October2024 BLA review: later proposed term and named subcontractors",
+      "url": "https://sfgov.legistar.com/View.ashx?GUID=8EDD47C5-9DE9-4E2E-AD80-2A927C6491AE&ID=13388361&M=F",
+      "published": "October23,2024; search-index primary excerpt only, direct fetch failed",
+      "retrieved": "September8,2026"
+    },
+    {
+      "id": "current_scope",
+      "title": "March2026 public proposal: End Hep C SF community needs assessment",
+      "url": "https://media.api.sf.gov/documents/A._Contracts_Report_-_March_2026.revised.pdf",
+      "published": "March2,2026; primary indexed excerpt",
+      "retrieved": "September8,2026"
+    },
+    {
+      "id": "navigation_trial",
+      "title": "CTN-0064 randomized care facilitation",
+      "url": "https://academic.oup.com/ofid/article/8/8/ofab334/6310155",
+      "published": "2021; full primary page and outcome table read",
+      "retrieved": "September8,2026"
+    },
+    {
+      "id": "health_anchor",
+      "title": "McEwan et al. incremental SVR benefits",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0117334",
+      "published": "2015; primary methods/results read",
+      "retrieved": "September8,2026"
+    },
+    {
+      "id": "reinfection",
+      "title": "Accessible HCV care trial",
+      "url": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2790054",
+      "published": "2022; primary results read; integrated-care efficacy NOT transferred",
+      "retrieved": "September8,2026"
+    },
+    {
+      "id": "public_baseline",
+      "title": "FY25-26 CHEP program objectives",
+      "url": "https://media.api.sf.gov/documents/Final_FY25-26_CHEP_Prog._Objectives_01.06.20251.pdf",
+      "published": "FY25-26 document; stale internal headers",
+      "retrieved": "September8,2026"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "central",
+      "inputs": {
+        "gift_usd": 100000,
+        "hcv_allocation": 0.1,
+        "navigation_cash_per_offer": 1000,
+        "incremental_cure_probability": 0.05,
+        "additional_start_probability": 0.08,
+        "funding_additionality": 0.25,
+        "reference_qaly_per_cure": 4,
+        "health_years": 20,
+        "benefit_shape": 1,
+        "discount": 0.035,
+        "reinfection_hazard": 0.069,
+        "excess_mortality_hazard": 0.03,
+        "later_cure_probability": 0.7,
+        "later_cure_years": 3,
+        "gift_to_cure_years": 1,
+        "daa_resource_per_start": 15000,
+        "donor_daa_share": 0,
+        "extra_resource_per_offer": 100,
+        "shared_harm_q_per_offer": 0,
+        "independent_harm_q": 0,
+        "bay_share": 0.98,
+        "sf_share": 0.95
+      },
+      "outputs": {
+        "offers": 10,
+        "additional_cures": 0.125,
+        "retained_qaly_per_cure_at_gift": 0.4599200607463338,
+        "gross_resource_usd": 113000,
+        "us": {
+          "qaly": 0.057490007593291724,
+          "donor_per_10q": 17394327.151153237,
+          "gross_resource_per_10q": 19655589.680803157
+        },
+        "bay": {
+          "qaly": 0.056340207441425885,
+          "donor_per_10q": 17749313.41954412,
+          "gross_resource_per_10q": 20056724.164084855
+        },
+        "sf": {
+          "qaly": 0.05461550721362714,
+          "donor_per_10q": 18309818.053845514,
+          "gross_resource_per_10q": 20690094.40084543
+        }
+      }
+    },
+    {
+      "id": "favorable_joint",
+      "inputs": {
+        "gift_usd": 100000,
+        "hcv_allocation": 0.3,
+        "navigation_cash_per_offer": 500,
+        "incremental_cure_probability": 0.15,
+        "additional_start_probability": 0.2,
+        "funding_additionality": 0.75,
+        "reference_qaly_per_cure": 6.4,
+        "health_years": 20,
+        "benefit_shape": 0,
+        "discount": 0.035,
+        "reinfection_hazard": 0.02,
+        "excess_mortality_hazard": 0.01,
+        "later_cure_probability": 0.2,
+        "later_cure_years": 5,
+        "gift_to_cure_years": 0.5,
+        "daa_resource_per_start": 10000,
+        "donor_daa_share": 0,
+        "extra_resource_per_offer": 100,
+        "shared_harm_q_per_offer": 0,
+        "independent_harm_q": 0,
+        "bay_share": 1,
+        "sf_share": 0.98
+      },
+      "outputs": {
+        "offers": 60,
+        "additional_cures": 6.75,
+        "retained_qaly_per_cure_at_gift": 4.221407690292966,
+        "gross_resource_usd": 226000,
+        "us": {
+          "qaly": 28.49450190947752,
+          "donor_per_10q": 35094.489567736266,
+          "gross_resource_per_10q": 79313.54642308397
+        },
+        "bay": {
+          "qaly": 28.49450190947752,
+          "donor_per_10q": 35094.489567736266,
+          "gross_resource_per_10q": 79313.54642308397
+        },
+        "sf": {
+          "qaly": 27.92461187128797,
+          "donor_per_10q": 35810.70364054722,
+          "gross_resource_per_10q": 80932.1902276367
+        }
+      }
+    },
+    {
+      "id": "pessimistic",
+      "inputs": {
+        "gift_usd": 100000,
+        "hcv_allocation": 0.02,
+        "navigation_cash_per_offer": 2000,
+        "incremental_cure_probability": 0.01,
+        "additional_start_probability": 0.03,
+        "funding_additionality": 0.1,
+        "reference_qaly_per_cure": 2.3,
+        "health_years": 20,
+        "benefit_shape": 2,
+        "discount": 0.035,
+        "reinfection_hazard": 0.12,
+        "excess_mortality_hazard": 0.06,
+        "later_cure_probability": 0.9,
+        "later_cure_years": 1,
+        "gift_to_cure_years": 2,
+        "daa_resource_per_start": 25000,
+        "donor_daa_share": 0,
+        "extra_resource_per_offer": 100,
+        "shared_harm_q_per_offer": 0,
+        "independent_harm_q": 0,
+        "bay_share": 0.95,
+        "sf_share": 0.9
+      },
+      "outputs": {
+        "offers": 1,
+        "additional_cures": 0.001,
+        "retained_qaly_per_cure_at_gift": 0.021687606343980845,
+        "gross_resource_usd": 100850,
+        "us": {
+          "qaly": 0.000021687606343980848,
+          "donor_per_10q": 46109283991.01724,
+          "gross_resource_per_10q": 46501212904.94089
+        },
+        "bay": {
+          "qaly": 0.000020603226026781803,
+          "donor_per_10q": 48536088411.5971,
+          "gross_resource_per_10q": 48948645163.09567
+        },
+        "sf": {
+          "qaly": 0.000019518845709582763,
+          "donor_per_10q": 51232537767.79693,
+          "gross_resource_per_10q": 51668014338.823204
+        }
+      }
+    },
+    {
+      "id": "no_navigation_allocation",
+      "inputs": {
+        "gift_usd": 100000,
+        "hcv_allocation": 0,
+        "navigation_cash_per_offer": 1000,
+        "incremental_cure_probability": 0.05,
+        "additional_start_probability": 0.08,
+        "funding_additionality": 0.25,
+        "reference_qaly_per_cure": 4,
+        "health_years": 20,
+        "benefit_shape": 1,
+        "discount": 0.035,
+        "reinfection_hazard": 0.069,
+        "excess_mortality_hazard": 0.03,
+        "later_cure_probability": 0.7,
+        "later_cure_years": 3,
+        "gift_to_cure_years": 1,
+        "daa_resource_per_start": 15000,
+        "donor_daa_share": 0,
+        "extra_resource_per_offer": 100,
+        "shared_harm_q_per_offer": 0,
+        "independent_harm_q": 0,
+        "bay_share": 0.98,
+        "sf_share": 0.95
+      },
+      "outputs": {
+        "offers": 0,
+        "additional_cures": 0,
+        "retained_qaly_per_cure_at_gift": 0.4599200607463338,
+        "gross_resource_usd": 100000,
+        "us": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "bay": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        }
+      }
+    },
+    {
+      "id": "no_funding_additionality",
+      "inputs": {
+        "gift_usd": 100000,
+        "hcv_allocation": 0.1,
+        "navigation_cash_per_offer": 1000,
+        "incremental_cure_probability": 0.05,
+        "additional_start_probability": 0.08,
+        "funding_additionality": 0,
+        "reference_qaly_per_cure": 4,
+        "health_years": 20,
+        "benefit_shape": 1,
+        "discount": 0.035,
+        "reinfection_hazard": 0.069,
+        "excess_mortality_hazard": 0.03,
+        "later_cure_probability": 0.7,
+        "later_cure_years": 3,
+        "gift_to_cure_years": 1,
+        "daa_resource_per_start": 15000,
+        "donor_daa_share": 0,
+        "extra_resource_per_offer": 100,
+        "shared_harm_q_per_offer": 0,
+        "independent_harm_q": 0,
+        "bay_share": 0.98,
+        "sf_share": 0.95
+      },
+      "outputs": {
+        "offers": 10,
+        "additional_cures": 0,
+        "retained_qaly_per_cure_at_gift": 0.4599200607463338,
+        "gross_resource_usd": 113000,
+        "us": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "bay": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        }
+      }
+    },
+    {
+      "id": "no_extra_cures",
+      "inputs": {
+        "gift_usd": 100000,
+        "hcv_allocation": 0.1,
+        "navigation_cash_per_offer": 1000,
+        "incremental_cure_probability": 0,
+        "additional_start_probability": 0.08,
+        "funding_additionality": 0.25,
+        "reference_qaly_per_cure": 4,
+        "health_years": 20,
+        "benefit_shape": 1,
+        "discount": 0.035,
+        "reinfection_hazard": 0.069,
+        "excess_mortality_hazard": 0.03,
+        "later_cure_probability": 0.7,
+        "later_cure_years": 3,
+        "gift_to_cure_years": 1,
+        "daa_resource_per_start": 15000,
+        "donor_daa_share": 0,
+        "extra_resource_per_offer": 100,
+        "shared_harm_q_per_offer": 0,
+        "independent_harm_q": 0,
+        "bay_share": 0.98,
+        "sf_share": 0.95
+      },
+      "outputs": {
+        "offers": 10,
+        "additional_cures": 0,
+        "retained_qaly_per_cure_at_gift": 0.4599200607463338,
+        "gross_resource_usd": 113000,
+        "us": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "bay": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        }
+      }
+    },
+    {
+      "id": "immediate_counterfactual_cure",
+      "inputs": {
+        "gift_usd": 100000,
+        "hcv_allocation": 0.1,
+        "navigation_cash_per_offer": 1000,
+        "incremental_cure_probability": 0.05,
+        "additional_start_probability": 0.08,
+        "funding_additionality": 0.25,
+        "reference_qaly_per_cure": 4,
+        "health_years": 20,
+        "benefit_shape": 1,
+        "discount": 0.035,
+        "reinfection_hazard": 0.069,
+        "excess_mortality_hazard": 0.03,
+        "later_cure_probability": 1,
+        "later_cure_years": 0,
+        "gift_to_cure_years": 1,
+        "daa_resource_per_start": 15000,
+        "donor_daa_share": 0,
+        "extra_resource_per_offer": 100,
+        "shared_harm_q_per_offer": 0,
+        "independent_harm_q": 0,
+        "bay_share": 0.98,
+        "sf_share": 0.95
+      },
+      "outputs": {
+        "offers": 10,
+        "additional_cures": 0.125,
+        "retained_qaly_per_cure_at_gift": 0,
+        "gross_resource_usd": 113000,
+        "us": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "bay": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        }
+      }
+    },
+    {
+      "id": "independent_harm",
+      "inputs": {
+        "gift_usd": 100000,
+        "hcv_allocation": 0.1,
+        "navigation_cash_per_offer": 1000,
+        "incremental_cure_probability": 0.05,
+        "additional_start_probability": 0.08,
+        "funding_additionality": 0,
+        "reference_qaly_per_cure": 4,
+        "health_years": 20,
+        "benefit_shape": 1,
+        "discount": 0.035,
+        "reinfection_hazard": 0.069,
+        "excess_mortality_hazard": 0.03,
+        "later_cure_probability": 0.7,
+        "later_cure_years": 3,
+        "gift_to_cure_years": 1,
+        "daa_resource_per_start": 15000,
+        "donor_daa_share": 0,
+        "extra_resource_per_offer": 100,
+        "shared_harm_q_per_offer": 0,
+        "independent_harm_q": 0.1,
+        "bay_share": 0.98,
+        "sf_share": 0.95
+      },
+      "outputs": {
+        "offers": 10,
+        "additional_cures": 0,
+        "retained_qaly_per_cure_at_gift": 0.4599200607463338,
+        "gross_resource_usd": 113000,
+        "us": {
+          "qaly": -0.1,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "bay": {
+          "qaly": -0.098,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "sf": {
+          "qaly": -0.095,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        }
+      }
+    },
+    {
+      "id": "donor_pays_daa",
+      "inputs": {
+        "gift_usd": 100000,
+        "hcv_allocation": 0.1,
+        "navigation_cash_per_offer": 1000,
+        "incremental_cure_probability": 0.05,
+        "additional_start_probability": 0.08,
+        "funding_additionality": 0.25,
+        "reference_qaly_per_cure": 4,
+        "health_years": 20,
+        "benefit_shape": 1,
+        "discount": 0.035,
+        "reinfection_hazard": 0.069,
+        "excess_mortality_hazard": 0.03,
+        "later_cure_probability": 0.7,
+        "later_cure_years": 3,
+        "gift_to_cure_years": 1,
+        "daa_resource_per_start": 15000,
+        "donor_daa_share": 1,
+        "extra_resource_per_offer": 100,
+        "shared_harm_q_per_offer": 0,
+        "independent_harm_q": 0,
+        "bay_share": 0.98,
+        "sf_share": 0.95
+      },
+      "outputs": {
+        "offers": 4.545454545454546,
+        "additional_cures": 0.05681818181818182,
+        "retained_qaly_per_cure_at_gift": 0.4599200607463338,
+        "gross_resource_usd": 100454.54545454546,
+        "us": {
+          "qaly": 0.02613182163331442,
+          "donor_per_10q": 38267519.73253712,
+          "gross_resource_per_10q": 38441463.00404865
+        },
+        "bay": {
+          "qaly": 0.025609185200648133,
+          "donor_per_10q": 39048489.52299706,
+          "gross_resource_per_10q": 39225982.657192506
+        },
+        "sf": {
+          "qaly": 0.0248252305516487,
+          "donor_per_10q": 40281599.71846013,
+          "gross_resource_per_10q": 40464697.89899858
+        }
+      }
+    },
+    {
+      "id": "favorable_one_year_catchup",
+      "inputs": {
+        "gift_usd": 100000,
+        "hcv_allocation": 0.3,
+        "navigation_cash_per_offer": 500,
+        "incremental_cure_probability": 0.15,
+        "additional_start_probability": 0.2,
+        "funding_additionality": 0.75,
+        "reference_qaly_per_cure": 6.4,
+        "health_years": 20,
+        "benefit_shape": 0,
+        "discount": 0.035,
+        "reinfection_hazard": 0.02,
+        "excess_mortality_hazard": 0.01,
+        "later_cure_probability": 1,
+        "later_cure_years": 1,
+        "gift_to_cure_years": 0.5,
+        "daa_resource_per_start": 10000,
+        "donor_daa_share": 0,
+        "extra_resource_per_offer": 100,
+        "shared_harm_q_per_offer": 0,
+        "independent_harm_q": 0,
+        "bay_share": 1,
+        "sf_share": 0.98
+      },
+      "outputs": {
+        "offers": 60,
+        "additional_cures": 6.75,
+        "retained_qaly_per_cure_at_gift": 0.4150238854811531,
+        "gross_resource_usd": 226000,
+        "us": {
+          "qaly": 2.8014112269977836,
+          "donor_per_10q": 356962.944377031,
+          "gross_resource_per_10q": 806736.2542920901
+        },
+        "bay": {
+          "qaly": 2.8014112269977836,
+          "donor_per_10q": 356962.944377031,
+          "gross_resource_per_10q": 806736.2542920901
+        },
+        "sf": {
+          "qaly": 2.7453830024578276,
+          "donor_per_10q": 364247.9024255419,
+          "gross_resource_per_10q": 823200.2594817247
+        }
+      }
+    }
+  ]
+}

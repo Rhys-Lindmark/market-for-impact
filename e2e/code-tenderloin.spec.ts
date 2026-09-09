@@ -3,7 +3,8 @@ test('Code Tenderloin keeps whole-gift and finite-survival boundaries',async({pa
  await page.goto('/charities/code-tenderloin');
  await expect(page.getByRole('heading',{name:'Code Tenderloin',exact:true})).toBeVisible();
  await expect(page.locator('article')).toContainText('$1.97 million');
- await expect(page.getByRole('link',{name:'Donate',exact:true})).toHaveAttribute('href','https://www.codetenderloin.org/donate');
+ const donate=page.getByRole('link',{name:'Donate',exact:true});await expect(donate).toHaveCount(2);
+ for(const link of await donate.all())await expect(link).toHaveAttribute('href','https://www.codetenderloin.org/donate');
  expect(await page.locator('article table').count()).toBe(0);
  await expect(page.locator('article')).toContainText('75% other work');
  const response=await request.get('/api/code-tenderloin-model');expect(response.ok()).toBeTruthy();

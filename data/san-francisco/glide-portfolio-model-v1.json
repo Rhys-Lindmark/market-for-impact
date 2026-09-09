@@ -1,0 +1,1131 @@
+{
+  "model_id": "glide-whole-foundation-gift-v1",
+  "prepared": "2026-09-08",
+  "status": "Conditional whole-organization research; independent acceptance pending",
+  "organization": {
+    "name": "GLIDE",
+    "recipient": "Glide Foundation",
+    "ein": "94-1156481",
+    "giving_scope": "Ordinary unrestricted Foundation social-services gift. Separate Church giving route not selected; consolidated finance includes Church and property entities. No Church health quantified."
+  },
+  "legacy_comparison": {
+    "usd_per_10q": 427361.1111111111,
+    "scope": "Historical rental-assistance-only model; not an unrestricted-organization estimate; retained without count increment."
+  },
+  "central_inputs": {
+    "gift": 100000,
+    "discount": 0.03,
+    "od_allocation": 0.1,
+    "housing_allocation": 0.1,
+    "od_cost": 300,
+    "housing_cost": 3077,
+    "od_additionality": 0.4,
+    "housing_additionality": 0.5,
+    "od_events": 0.5,
+    "od_fatality_without_rescue": 0.1,
+    "od_baseline_rescue": 0.8,
+    "od_rescue_increment": 0.1,
+    "od_other_mortality": 0.06,
+    "od_utility": 0.7,
+    "od_active_years": 1,
+    "od_horizon": 15,
+    "od_delay": 0.25,
+    "housing_baseline_stability": 0.8,
+    "housing_external_risk_difference": 0.112,
+    "housing_transfer": 0.5,
+    "housing_utility_gap": 0.1,
+    "housing_years": 1,
+    "housing_mortality": 0.01,
+    "housing_delay": 0.1,
+    "housing_disjoint_share": 0.9,
+    "od_external_resources": 80,
+    "housing_external_resources": 300,
+    "housing_cash_transfer": 2400,
+    "od_harm": 0,
+    "housing_harm": 0,
+    "independent_harm": 0,
+    "od_bay": 0.99,
+    "od_sf": 0.95,
+    "housing_bay": 0.98,
+    "housing_sf": 0.95,
+    "harm_bay": 0.98,
+    "harm_sf": 0.95
+  },
+  "scenarios": [
+    {
+      "id": "central",
+      "overrides": {},
+      "outputs": {
+        "unquantified_gift": 80000,
+        "od_offers": 33.333333333333336,
+        "housing_offers": 3.249918752031199,
+        "od_incremental_people": 13.333333333333336,
+        "housing_incremental_disjoint_adults": 1.4624634384140396,
+        "od_baseline_hazard": 0.06999999999999999,
+        "od_supported_hazard": 0.06499999999999999,
+        "od_qaly_per_person": 0.025439456706370406,
+        "housing_qaly_per_disjoint_adult": 0.005474475760788788,
+        "od_net_qaly": 0.3391927560849388,
+        "housing_net_qaly": 0.008006220644637487,
+        "associated_funding": 103641.64229227602,
+        "rent_transfer_excluded": 7799.805004874878,
+        "modeled_resource_cost": 95841.83728740114,
+        "us": {
+          "qaly": 0.3471989767295763,
+          "donor_per_10q": 2880192.8203229485,
+          "associated_funding_per_10q": 2985079.140166926,
+          "modeled_resource_per_10q": 2760429.71641733
+        },
+        "bay": {
+          "qaly": 0.3436469247558342,
+          "donor_per_10q": 2909963.476933523,
+          "associated_funding_per_10q": 3015933.93759932,
+          "modeled_resource_per_10q": 2788962.4606854278
+        },
+        "sf": {
+          "qaly": 0.32983902789309744,
+          "donor_per_10q": 3031781.9161294196,
+          "associated_funding_per_10q": 3142188.568596765,
+          "modeled_resource_per_10q": 2905715.490965611
+        }
+      }
+    },
+    {
+      "id": "favorable_joint",
+      "overrides": {
+        "od_allocation": 0.2,
+        "housing_allocation": 0.15,
+        "od_cost": 150,
+        "housing_cost": 2564.102564102564,
+        "od_additionality": 0.7,
+        "housing_additionality": 0.8,
+        "od_events": 1,
+        "od_fatality_without_rescue": 0.15,
+        "od_baseline_rescue": 0.75,
+        "od_rescue_increment": 0.2,
+        "od_other_mortality": 0.03,
+        "od_utility": 0.75,
+        "od_active_years": 2,
+        "od_horizon": 20,
+        "od_delay": 0,
+        "housing_transfer": 1,
+        "housing_utility_gap": 0.2,
+        "housing_years": 2,
+        "housing_delay": 0,
+        "housing_disjoint_share": 1
+      },
+      "outputs": {
+        "unquantified_gift": 65000,
+        "od_offers": 133.33333333333334,
+        "housing_offers": 5.8500000000000005,
+        "od_incremental_people": 93.33333333333333,
+        "housing_incremental_disjoint_adults": 4.680000000000001,
+        "od_baseline_hazard": 0.0675,
+        "od_supported_hazard": 0.037500000000000006,
+        "od_qaly_per_person": 0.3653050645886172,
+        "housing_qaly_per_disjoint_adult": 0.043073593953040404,
+        "od_net_qaly": 34.095139361604275,
+        "housing_net_qaly": 0.2015844197002291,
+        "associated_funding": 112421.66666666667,
+        "rent_transfer_excluded": 14040.000000000002,
+        "modeled_resource_cost": 98381.66666666667,
+        "us": {
+          "qaly": 34.29672378130451,
+          "donor_per_10q": 29157.30395639452,
+          "associated_funding_per_10q": 32779.127062844665,
+          "modeled_resource_per_10q": 28685.441587366873
+        },
+        "bay": {
+          "qaly": 33.951740699294454,
+          "donor_per_10q": 29453.57084506659,
+          "associated_funding_per_10q": 33112.19523687128,
+          "modeled_resource_per_10q": 28976.913890223936
+        },
+        "sf": {
+          "qaly": 32.581887592239276,
+          "donor_per_10q": 30691.898901467925,
+          "associated_funding_per_10q": 34504.3442766786,
+          "modeled_resource_per_10q": 30195.201670912502
+        }
+      }
+    },
+    {
+      "id": "pessimistic_positive",
+      "overrides": {
+        "od_cost": 600,
+        "housing_cost": 5000,
+        "od_additionality": 0.1,
+        "housing_additionality": 0.1,
+        "od_rescue_increment": 0.02,
+        "od_active_years": 0.25,
+        "od_horizon": 5,
+        "housing_transfer": 0.1,
+        "housing_utility_gap": 0.03,
+        "housing_years": 0.25
+      },
+      "outputs": {
+        "unquantified_gift": 80000,
+        "od_offers": 16.666666666666668,
+        "housing_offers": 2,
+        "od_incremental_people": 1.666666666666667,
+        "housing_incremental_disjoint_adults": 0.18000000000000002,
+        "od_baseline_hazard": 0.06999999999999999,
+        "od_supported_hazard": 0.06899999999999999,
+        "od_qaly_per_person": 0.0006627406198135983,
+        "housing_qaly_per_disjoint_adult": 0.00008333929307967549,
+        "od_net_qaly": 0.0011045676996893307,
+        "housing_net_qaly": 0.000015001072754341588,
+        "associated_funding": 101933.33333333333,
+        "rent_transfer_excluded": 4800,
+        "modeled_resource_cost": 97133.33333333333,
+        "us": {
+          "qaly": 0.0011195687724436722,
+          "donor_per_10q": 893201047.2365261,
+          "associated_funding_per_10q": 910469600.8164322,
+          "modeled_resource_per_10q": 867595950.549079
+        },
+        "bay": {
+          "qaly": 0.001108223073991692,
+          "donor_per_10q": 902345406.325204,
+          "associated_funding_per_10q": 919790750.8474911,
+          "modeled_resource_per_10q": 876478171.3438814
+        },
+        "sf": {
+          "qaly": 0.0010635903338214886,
+          "donor_per_10q": 940211628.6700275,
+          "associated_funding_per_10q": 958389053.4909813,
+          "modeled_resource_per_10q": 913258895.3148199
+        }
+      }
+    },
+    {
+      "id": "no_quantified_allocation",
+      "overrides": {
+        "od_allocation": 0,
+        "housing_allocation": 0
+      },
+      "outputs": {
+        "unquantified_gift": 100000,
+        "od_offers": 0,
+        "housing_offers": 0,
+        "od_incremental_people": 0,
+        "housing_incremental_disjoint_adults": 0,
+        "od_baseline_hazard": 0.06999999999999999,
+        "od_supported_hazard": 0.06499999999999999,
+        "od_qaly_per_person": 0.025439456706370406,
+        "housing_qaly_per_disjoint_adult": 0.005474475760788788,
+        "od_net_qaly": 0,
+        "housing_net_qaly": 0,
+        "associated_funding": 100000,
+        "rent_transfer_excluded": 0,
+        "modeled_resource_cost": 100000,
+        "us": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "associated_funding_per_10q": null,
+          "modeled_resource_per_10q": null
+        },
+        "bay": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "associated_funding_per_10q": null,
+          "modeled_resource_per_10q": null
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "associated_funding_per_10q": null,
+          "modeled_resource_per_10q": null
+        }
+      }
+    },
+    {
+      "id": "complete_funding_replacement",
+      "overrides": {
+        "od_additionality": 0,
+        "housing_additionality": 0
+      },
+      "outputs": {
+        "unquantified_gift": 80000,
+        "od_offers": 33.333333333333336,
+        "housing_offers": 3.249918752031199,
+        "od_incremental_people": 0,
+        "housing_incremental_disjoint_adults": 0,
+        "od_baseline_hazard": 0.06999999999999999,
+        "od_supported_hazard": 0.06499999999999999,
+        "od_qaly_per_person": 0.025439456706370406,
+        "housing_qaly_per_disjoint_adult": 0.005474475760788788,
+        "od_net_qaly": 0,
+        "housing_net_qaly": 0,
+        "associated_funding": 103641.64229227602,
+        "rent_transfer_excluded": 7799.805004874878,
+        "modeled_resource_cost": 95841.83728740114,
+        "us": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "associated_funding_per_10q": null,
+          "modeled_resource_per_10q": null
+        },
+        "bay": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "associated_funding_per_10q": null,
+          "modeled_resource_per_10q": null
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "associated_funding_per_10q": null,
+          "modeled_resource_per_10q": null
+        }
+      }
+    },
+    {
+      "id": "clinical_null",
+      "overrides": {
+        "od_rescue_increment": 0,
+        "housing_external_risk_difference": 0
+      },
+      "outputs": {
+        "unquantified_gift": 80000,
+        "od_offers": 33.333333333333336,
+        "housing_offers": 3.249918752031199,
+        "od_incremental_people": 13.333333333333336,
+        "housing_incremental_disjoint_adults": 1.4624634384140396,
+        "od_baseline_hazard": 0.06999999999999999,
+        "od_supported_hazard": 0.06999999999999999,
+        "od_qaly_per_person": 0,
+        "housing_qaly_per_disjoint_adult": 0,
+        "od_net_qaly": 0,
+        "housing_net_qaly": 0,
+        "associated_funding": 103641.64229227602,
+        "rent_transfer_excluded": 7799.805004874878,
+        "modeled_resource_cost": 95841.83728740114,
+        "us": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "associated_funding_per_10q": null,
+          "modeled_resource_per_10q": null
+        },
+        "bay": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "associated_funding_per_10q": null,
+          "modeled_resource_per_10q": null
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "associated_funding_per_10q": null,
+          "modeled_resource_per_10q": null
+        }
+      }
+    },
+    {
+      "id": "quarter_year_preservation",
+      "overrides": {
+        "od_active_years": 0.25,
+        "housing_years": 0.25
+      },
+      "outputs": {
+        "unquantified_gift": 80000,
+        "od_offers": 33.333333333333336,
+        "housing_offers": 3.249918752031199,
+        "od_incremental_people": 13.333333333333336,
+        "housing_incremental_disjoint_adults": 1.4624634384140396,
+        "od_baseline_hazard": 0.06999999999999999,
+        "od_supported_hazard": 0.06499999999999999,
+        "od_qaly_per_person": 0.006661006056446807,
+        "housing_qaly_per_disjoint_adult": 0.0013889882179945914,
+        "od_net_qaly": 0.08881341408595744,
+        "housing_net_qaly": 0.00203134448520496,
+        "associated_funding": 103641.64229227602,
+        "rent_transfer_excluded": 7799.805004874878,
+        "modeled_resource_cost": 95841.83728740114,
+        "us": {
+          "qaly": 0.0908447585711624,
+          "donor_per_10q": 11007789.725333016,
+          "associated_funding_per_10q": 11408654.051415559,
+          "modeled_resource_per_10q": 10550067.91749293
+        },
+        "bay": {
+          "qaly": 0.08991599754059873,
+          "donor_per_10q": 11121491.473733377,
+          "associated_funding_per_10q": 11526496.410772722,
+          "modeled_resource_per_10q": 10659041.762187734
+        },
+        "sf": {
+          "qaly": 0.08630252064260428,
+          "donor_per_10q": 11587147.079297911,
+          "associated_funding_per_10q": 12009109.527805852,
+          "modeled_resource_per_10q": 11105334.64999256
+        }
+      }
+    },
+    {
+      "id": "high_recurrent_mortality",
+      "overrides": {
+        "od_events": 2,
+        "od_other_mortality": 0.15
+      },
+      "outputs": {
+        "unquantified_gift": 80000,
+        "od_offers": 33.333333333333336,
+        "housing_offers": 3.249918752031199,
+        "od_incremental_people": 13.333333333333336,
+        "housing_incremental_disjoint_adults": 1.4624634384140396,
+        "od_baseline_hazard": 0.19,
+        "od_supported_hazard": 0.16999999999999998,
+        "od_qaly_per_person": 0.055005548031134215,
+        "housing_qaly_per_disjoint_adult": 0.005474475760788788,
+        "od_net_qaly": 0.7334073070817897,
+        "housing_net_qaly": 0.008006220644637487,
+        "associated_funding": 103641.64229227602,
+        "rent_transfer_excluded": 7799.805004874878,
+        "modeled_resource_cost": 95841.83728740114,
+        "us": {
+          "qaly": 0.7414135277264272,
+          "donor_per_10q": 1348774.9583778677,
+          "associated_funding_per_10q": 1397892.5176897845,
+          "modeled_resource_per_10q": 1292690.7009817285
+        },
+        "bay": {
+          "qaly": 0.7339193302427165,
+          "donor_per_10q": 1362547.5700023968,
+          "associated_funding_per_10q": 1412166.6785639834,
+          "modeled_resource_per_10q": 1305890.6250051353
+        },
+        "sf": {
+          "qaly": 0.7043428513401058,
+          "donor_per_10q": 1419763.1140819662,
+          "associated_funding_per_10q": 1471465.8080945103,
+          "modeled_resource_per_10q": 1360727.0536649774
+        }
+      }
+    },
+    {
+      "id": "five_year_od_horizon",
+      "overrides": {
+        "od_horizon": 5
+      },
+      "outputs": {
+        "unquantified_gift": 80000,
+        "od_offers": 33.333333333333336,
+        "housing_offers": 3.249918752031199,
+        "od_incremental_people": 13.333333333333336,
+        "housing_incremental_disjoint_adults": 1.4624634384140396,
+        "od_baseline_hazard": 0.06999999999999999,
+        "od_supported_hazard": 0.06499999999999999,
+        "od_qaly_per_person": 0.01203167413093232,
+        "housing_qaly_per_disjoint_adult": 0.005474475760788788,
+        "od_net_qaly": 0.1604223217457643,
+        "housing_net_qaly": 0.008006220644637487,
+        "associated_funding": 103641.64229227602,
+        "rent_transfer_excluded": 7799.805004874878,
+        "modeled_resource_cost": 95841.83728740114,
+        "us": {
+          "qaly": 0.16842854239040178,
+          "donor_per_10q": 5937235.968486223,
+          "associated_funding_per_10q": 6153448.864506842,
+          "modeled_resource_per_10q": 5690356.036285621
+        },
+        "bay": {
+          "qaly": 0.16666419476005137,
+          "donor_per_10q": 6000088.989957999,
+          "associated_funding_per_10q": 6218590.768190508,
+          "modeled_resource_per_10q": 5750595.526854817
+        },
+        "sf": {
+          "qaly": 0.16000711527088168,
+          "donor_per_10q": 6249722.072090762,
+          "associated_funding_per_10q": 6477314.594217728,
+          "modeled_resource_per_10q": 5989848.459248022
+        }
+      }
+    },
+    {
+      "id": "housing_fully_overlaps",
+      "overrides": {
+        "housing_disjoint_share": 0
+      },
+      "outputs": {
+        "unquantified_gift": 80000,
+        "od_offers": 33.333333333333336,
+        "housing_offers": 3.249918752031199,
+        "od_incremental_people": 13.333333333333336,
+        "housing_incremental_disjoint_adults": 0,
+        "od_baseline_hazard": 0.06999999999999999,
+        "od_supported_hazard": 0.06499999999999999,
+        "od_qaly_per_person": 0.025439456706370406,
+        "housing_qaly_per_disjoint_adult": 0.005474475760788788,
+        "od_net_qaly": 0.3391927560849388,
+        "housing_net_qaly": 0,
+        "associated_funding": 103641.64229227602,
+        "rent_transfer_excluded": 7799.805004874878,
+        "modeled_resource_cost": 95841.83728740114,
+        "us": {
+          "qaly": 0.3391927560849388,
+          "donor_per_10q": 2948176.1684485544,
+          "associated_funding_per_10q": 3055538.1986495797,
+          "modeled_resource_per_10q": 2825586.2063104007
+        },
+        "bay": {
+          "qaly": 0.33580082852408943,
+          "donor_per_10q": 2977955.7257056106,
+          "associated_funding_per_10q": 3086402.2208581613,
+          "modeled_resource_per_10q": 2854127.481121617
+        },
+        "sf": {
+          "qaly": 0.32223311828069184,
+          "donor_per_10q": 3103343.335209005,
+          "associated_funding_per_10q": 3216355.9985785056,
+          "modeled_resource_per_10q": 2974301.2698004222
+        }
+      }
+    },
+    {
+      "id": "housing_worsens",
+      "overrides": {
+        "housing_external_risk_difference": -0.112,
+        "od_allocation": 0
+      },
+      "outputs": {
+        "unquantified_gift": 90000,
+        "od_offers": 0,
+        "housing_offers": 3.249918752031199,
+        "od_incremental_people": 0,
+        "housing_incremental_disjoint_adults": 1.4624634384140396,
+        "od_baseline_hazard": 0.06999999999999999,
+        "od_supported_hazard": 0.06499999999999999,
+        "od_qaly_per_person": 0.025439456706370406,
+        "housing_qaly_per_disjoint_adult": -0.005474475760788788,
+        "od_net_qaly": 0,
+        "housing_net_qaly": -0.008006220644637487,
+        "associated_funding": 100974.97562560935,
+        "rent_transfer_excluded": 7799.805004874878,
+        "modeled_resource_cost": 93175.17062073447,
+        "us": {
+          "qaly": -0.008006220644637487,
+          "donor_per_10q": null,
+          "associated_funding_per_10q": null,
+          "modeled_resource_per_10q": null
+        },
+        "bay": {
+          "qaly": -0.007846096231744737,
+          "donor_per_10q": null,
+          "associated_funding_per_10q": null,
+          "modeled_resource_per_10q": null
+        },
+        "sf": {
+          "qaly": -0.0076059096124056124,
+          "donor_per_10q": null,
+          "associated_funding_per_10q": null,
+          "modeled_resource_per_10q": null
+        }
+      }
+    },
+    {
+      "id": "rescue_worsens",
+      "overrides": {
+        "od_rescue_increment": -0.1,
+        "housing_allocation": 0
+      },
+      "outputs": {
+        "unquantified_gift": 90000,
+        "od_offers": 33.333333333333336,
+        "housing_offers": 0,
+        "od_incremental_people": 13.333333333333336,
+        "housing_incremental_disjoint_adults": 0,
+        "od_baseline_hazard": 0.06999999999999999,
+        "od_supported_hazard": 0.075,
+        "od_qaly_per_person": -0.02531532529167047,
+        "housing_qaly_per_disjoint_adult": 0.005474475760788788,
+        "od_net_qaly": -0.3375376705556063,
+        "housing_net_qaly": 0,
+        "associated_funding": 102666.66666666667,
+        "rent_transfer_excluded": 0,
+        "modeled_resource_cost": 102666.66666666667,
+        "us": {
+          "qaly": -0.3375376705556063,
+          "donor_per_10q": null,
+          "associated_funding_per_10q": null,
+          "modeled_resource_per_10q": null
+        },
+        "bay": {
+          "qaly": -0.33416229385005025,
+          "donor_per_10q": null,
+          "associated_funding_per_10q": null,
+          "modeled_resource_per_10q": null
+        },
+        "sf": {
+          "qaly": -0.32066078702782597,
+          "donor_per_10q": null,
+          "associated_funding_per_10q": null,
+          "modeled_resource_per_10q": null
+        }
+      }
+    },
+    {
+      "id": "independent_harm_zero_activity",
+      "overrides": {
+        "od_additionality": 0,
+        "housing_additionality": 0,
+        "independent_harm": 0.1
+      },
+      "outputs": {
+        "unquantified_gift": 80000,
+        "od_offers": 33.333333333333336,
+        "housing_offers": 3.249918752031199,
+        "od_incremental_people": 0,
+        "housing_incremental_disjoint_adults": 0,
+        "od_baseline_hazard": 0.06999999999999999,
+        "od_supported_hazard": 0.06499999999999999,
+        "od_qaly_per_person": 0.025439456706370406,
+        "housing_qaly_per_disjoint_adult": 0.005474475760788788,
+        "od_net_qaly": 0,
+        "housing_net_qaly": 0,
+        "associated_funding": 103641.64229227602,
+        "rent_transfer_excluded": 7799.805004874878,
+        "modeled_resource_cost": 95841.83728740114,
+        "us": {
+          "qaly": -0.1,
+          "donor_per_10q": null,
+          "associated_funding_per_10q": null,
+          "modeled_resource_per_10q": null
+        },
+        "bay": {
+          "qaly": -0.098,
+          "donor_per_10q": null,
+          "associated_funding_per_10q": null,
+          "modeled_resource_per_10q": null
+        },
+        "sf": {
+          "qaly": -0.095,
+          "donor_per_10q": null,
+          "associated_funding_per_10q": null,
+          "modeled_resource_per_10q": null
+        }
+      }
+    },
+    {
+      "id": "shared_burdens",
+      "overrides": {
+        "od_harm": 0.03,
+        "housing_harm": 0.02
+      },
+      "outputs": {
+        "unquantified_gift": 80000,
+        "od_offers": 33.333333333333336,
+        "housing_offers": 3.249918752031199,
+        "od_incremental_people": 13.333333333333336,
+        "housing_incremental_disjoint_adults": 1.4624634384140396,
+        "od_baseline_hazard": 0.06999999999999999,
+        "od_supported_hazard": 0.06499999999999999,
+        "od_qaly_per_person": 0.025439456706370406,
+        "housing_qaly_per_disjoint_adult": 0.005474475760788788,
+        "od_net_qaly": -0.06080724391506125,
+        "housing_net_qaly": -0.024492966875674503,
+        "associated_funding": 103641.64229227602,
+        "rent_transfer_excluded": 7799.805004874878,
+        "modeled_resource_cost": 95841.83728740114,
+        "us": {
+          "qaly": -0.08530021079073576,
+          "donor_per_10q": null,
+          "associated_funding_per_10q": null,
+          "modeled_resource_per_10q": null
+        },
+        "bay": {
+          "qaly": -0.08420227901407165,
+          "donor_per_10q": null,
+          "associated_funding_per_10q": null,
+          "modeled_resource_per_10q": null
+        },
+        "sf": {
+          "qaly": -0.08103520025119897,
+          "donor_per_10q": null,
+          "associated_funding_per_10q": null,
+          "modeled_resource_per_10q": null
+        }
+      }
+    },
+    {
+      "id": "zero_sf_exposure",
+      "overrides": {
+        "od_sf": 0,
+        "housing_sf": 0,
+        "harm_sf": 0
+      },
+      "outputs": {
+        "unquantified_gift": 80000,
+        "od_offers": 33.333333333333336,
+        "housing_offers": 3.249918752031199,
+        "od_incremental_people": 13.333333333333336,
+        "housing_incremental_disjoint_adults": 1.4624634384140396,
+        "od_baseline_hazard": 0.06999999999999999,
+        "od_supported_hazard": 0.06499999999999999,
+        "od_qaly_per_person": 0.025439456706370406,
+        "housing_qaly_per_disjoint_adult": 0.005474475760788788,
+        "od_net_qaly": 0.3391927560849388,
+        "housing_net_qaly": 0.008006220644637487,
+        "associated_funding": 103641.64229227602,
+        "rent_transfer_excluded": 7799.805004874878,
+        "modeled_resource_cost": 95841.83728740114,
+        "us": {
+          "qaly": 0.3471989767295763,
+          "donor_per_10q": 2880192.8203229485,
+          "associated_funding_per_10q": 2985079.140166926,
+          "modeled_resource_per_10q": 2760429.71641733
+        },
+        "bay": {
+          "qaly": 0.3436469247558342,
+          "donor_per_10q": 2909963.476933523,
+          "associated_funding_per_10q": 3015933.93759932,
+          "modeled_resource_per_10q": 2788962.4606854278
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "associated_funding_per_10q": null,
+          "modeled_resource_per_10q": null
+        }
+      }
+    },
+    {
+      "id": "zero_health_windows",
+      "overrides": {
+        "od_horizon": 0,
+        "housing_years": 0
+      },
+      "outputs": {
+        "unquantified_gift": 80000,
+        "od_offers": 33.333333333333336,
+        "housing_offers": 3.249918752031199,
+        "od_incremental_people": 13.333333333333336,
+        "housing_incremental_disjoint_adults": 1.4624634384140396,
+        "od_baseline_hazard": 0.06999999999999999,
+        "od_supported_hazard": 0.06499999999999999,
+        "od_qaly_per_person": 0,
+        "housing_qaly_per_disjoint_adult": 0,
+        "od_net_qaly": 0,
+        "housing_net_qaly": 0,
+        "associated_funding": 103641.64229227602,
+        "rent_transfer_excluded": 7799.805004874878,
+        "modeled_resource_cost": 95841.83728740114,
+        "us": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "associated_funding_per_10q": null,
+          "modeled_resource_per_10q": null
+        },
+        "bay": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "associated_funding_per_10q": null,
+          "modeled_resource_per_10q": null
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "associated_funding_per_10q": null,
+          "modeled_resource_per_10q": null
+        }
+      }
+    },
+    {
+      "id": "no_housing_transfer_deduction",
+      "overrides": {
+        "housing_cash_transfer": 0
+      },
+      "outputs": {
+        "unquantified_gift": 80000,
+        "od_offers": 33.333333333333336,
+        "housing_offers": 3.249918752031199,
+        "od_incremental_people": 13.333333333333336,
+        "housing_incremental_disjoint_adults": 1.4624634384140396,
+        "od_baseline_hazard": 0.06999999999999999,
+        "od_supported_hazard": 0.06499999999999999,
+        "od_qaly_per_person": 0.025439456706370406,
+        "housing_qaly_per_disjoint_adult": 0.005474475760788788,
+        "od_net_qaly": 0.3391927560849388,
+        "housing_net_qaly": 0.008006220644637487,
+        "associated_funding": 103641.64229227602,
+        "rent_transfer_excluded": 0,
+        "modeled_resource_cost": 103641.64229227602,
+        "us": {
+          "qaly": 0.3471989767295763,
+          "donor_per_10q": 2880192.8203229485,
+          "associated_funding_per_10q": 2985079.140166926,
+          "modeled_resource_per_10q": 2985079.140166926
+        },
+        "bay": {
+          "qaly": 0.3436469247558342,
+          "donor_per_10q": 2909963.476933523,
+          "associated_funding_per_10q": 3015933.93759932,
+          "modeled_resource_per_10q": 3015933.93759932
+        },
+        "sf": {
+          "qaly": 0.32983902789309744,
+          "donor_per_10q": 3031781.9161294196,
+          "associated_funding_per_10q": 3142188.568596765,
+          "modeled_resource_per_10q": 3142188.568596765
+        }
+      }
+    },
+    {
+      "id": "donor_covers_outside_costs",
+      "overrides": {
+        "od_cost": 380,
+        "housing_cost": 3377,
+        "od_external_resources": 0,
+        "housing_external_resources": 0
+      },
+      "outputs": {
+        "unquantified_gift": 80000,
+        "od_offers": 26.31578947368421,
+        "housing_offers": 2.9612081729345574,
+        "od_incremental_people": 10.526315789473685,
+        "housing_incremental_disjoint_adults": 1.3325436778205508,
+        "od_baseline_hazard": 0.06999999999999999,
+        "od_supported_hazard": 0.06499999999999999,
+        "od_qaly_per_person": 0.025439456706370406,
+        "housing_qaly_per_disjoint_adult": 0.005474475760788788,
+        "od_net_qaly": 0.26778375480389904,
+        "housing_net_qaly": 0.00729497806442095,
+        "associated_funding": 100000,
+        "rent_transfer_excluded": 7106.8996150429375,
+        "modeled_resource_cost": 92893.10038495707,
+        "us": {
+          "qaly": 0.27507873286832,
+          "donor_per_10q": 3635322.8385660015,
+          "associated_funding_per_10q": 3635322.8385660015,
+          "modeled_resource_per_10q": 3376964.0937463865
+        },
+        "bay": {
+          "qaly": 0.27225499575899254,
+          "donor_per_10q": 3673027.182521297,
+          "associated_funding_per_10q": 3673027.182521297,
+          "modeled_resource_per_10q": 3411988.8278262685
+        },
+        "sf": {
+          "qaly": 0.26132479622490395,
+          "donor_per_10q": 3826655.6195431603,
+          "associated_funding_per_10q": 3826655.6195431603,
+          "modeled_resource_per_10q": 3554699.046048829
+        }
+      }
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "GLIDE",
+      "title": "FY2025 consolidated audited financial statements",
+      "url": "https://www.glide.org/wp-content/uploads/2026/03/GLIDE-Foundation-2024-25-SA-FS-Final.pdf",
+      "published": "2026-03-11",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary audit; text tables, Foundation + Church + LLCs"
+    },
+    {
+      "publisher": "GLIDE",
+      "title": "Financials and Annual Reports",
+      "url": "https://www.glide.org/financials-annual-reports/",
+      "published": "Undated current",
+      "retrieved": "2026-09-08",
+      "sourceType": "Official financial index and distinct Foundation/Church giving routes"
+    },
+    {
+      "publisher": "GLIDE",
+      "title": "Health Empowerment & Access Team",
+      "url": "https://www.glide.org/heat/",
+      "published": "Undated current",
+      "retrieved": "2026-09-08",
+      "sourceType": "Official active service description"
+    },
+    {
+      "publisher": "GLIDE",
+      "title": "Welcome Center",
+      "url": "https://www.glide.org/programs/welcome-center/",
+      "published": "Undated current",
+      "retrieved": "2026-09-08",
+      "sourceType": "Official eligibility and activity"
+    },
+    {
+      "publisher": "GLIDE",
+      "title": "Impact Report 2024–2025",
+      "url": "https://www.glide.org/wp-content/uploads/2026/01/GLIDE-Impact-Report-2024-2025.pdf",
+      "published": "2026-01",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary organizational reporting; historical cohort is not causal"
+    },
+    {
+      "publisher": "GLIDE",
+      "title": "GLIDE Helped 1,100 People and Prevented Over 500 Evictions",
+      "url": "https://www.glide.org/glide-helped-1100-people-and-prevented-over-500-evictions/",
+      "published": "Undated; describes FY2023–2024 and a prior three-year cohort",
+      "retrieved": "2026-09-08",
+      "sourceType": "Official activity and partner funding pathways; outcomes not causal"
+    },
+    {
+      "publisher": "JAMA Network Open",
+      "title": "Cost-Effectiveness of Temporary Financial Assistance for Veterans Experiencing Housing Instability",
+      "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2825636",
+      "published": "2024-11-05",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary economic model; underlying observational stability contrast, not GLIDE trial"
+    },
+    {
+      "publisher": "SF Department of Public Health",
+      "title": "SFAF contract 1000037481 request",
+      "url": "https://media.api.sf.gov/documents/SFAF_-_1000037481_-_HC_Memo_May_2026.cleaned.pdf",
+      "published": "2026-05-04",
+      "retrieved": "2026-09-08",
+      "sourceType": "Official proposed public baseline; final execution not verified"
+    },
+    {
+      "publisher": "SF DPH",
+      "title": "Health services for people experiencing homelessness",
+      "url": "https://www.sf.gov/departments--san-francisco-health-network--health-services-people-experiencing-homelessness",
+      "published": "Undated current",
+      "retrieved": "2026-09-08",
+      "sourceType": "Official existing care baseline"
+    },
+    {
+      "publisher": "Drug and Alcohol Dependence / PubMed Central",
+      "title": "Risks of fatal opioid overdose during the first year following nonfatal overdose",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10398609/",
+      "published": "2018",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary Medicaid cohort; recurrence context, not GLIDE effect"
+    },
+    {
+      "publisher": "JAMA Psychiatry / PubMed Central",
+      "title": "Causes of Death After Nonfatal Opioid Overdose",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6143082/",
+      "published": "2018",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary cohort; mortality context not GLIDE effect"
+    }
+  ],
+  "finance": {
+    "scope": "FY ended June 30 2025 consolidated Foundation, controlled Church and two real estate LLCs; NOT standalone Foundation",
+    "revenue": 30436763,
+    "contract_revenue": 10826230,
+    "expenses": {
+      "program": 18342460,
+      "church": 1922106,
+      "general_administration": 7766659,
+      "fund_development": 2735377
+    },
+    "total_expenses": 30766602,
+    "total_net_assets": 49706779,
+    "unrestricted_net_assets": 44792766,
+    "cash": 5908995,
+    "limitation": "No program subledger or September 2026 cash/available tranche verified. Consolidated composition is context, not marginal allocation."
+  },
+  "gift_allocation_priors": [
+    {
+      "name": "Overdose rescue access",
+      "share": 0.1,
+      "quantified": true
+    },
+    {
+      "name": "Rental stability",
+      "share": 0.1,
+      "quantified": true
+    },
+    {
+      "name": "Meals and food access",
+      "share": 0.22,
+      "quantified": false
+    },
+    {
+      "name": "Family youth and child development",
+      "share": 0.1,
+      "quantified": false
+    },
+    {
+      "name": "Violence prevention and women support",
+      "share": 0.05,
+      "quantified": false
+    },
+    {
+      "name": "Other HEAT, HIV/HCV, treatment navigation",
+      "share": 0.07,
+      "quantified": false
+    },
+    {
+      "name": "Policy and community engagement",
+      "share": 0.04,
+      "quantified": false
+    },
+    {
+      "name": "Central administration, fundraising, safety and operations",
+      "share": 0.28,
+      "quantified": false
+    },
+    {
+      "name": "Other portfolio, property and affiliate support",
+      "share": 0.04,
+      "quantified": false
+    }
+  ],
+  "boundaries": {
+    "allocation": "All marginal allocations are analyst priors summing to one, not audited fractions. Remaining 80% of central gift retained in denominator and unquantified. Offers include branch costs; separately allocated corporate costs not charged again.",
+    "od": "Unique people counted alive at intervention start, not gift date: compare recurrent-event survival curves through finite horizon. Expected service-start caseload already conditions on survival to care. Baseline rescue and treatment already occur. Active support ends then recurrent hazard returns to baseline; deaths delayed, not permanently prevented. No separate credit for doses/reversals, MOUD/HCV or HIV endpoints.",
+    "housing": "One adult-equivalent per household. .112 external observational stable-at-exit risk difference × .5 transfer gives .056 local stable-day probability difference for one year by explicit prior. Utility gap .1 is morbidity-only analyst prior; no VA .144/.072 QALY transfer, perfect-health assumption, mortality effect or child multiplier. Housing baseline .8 is local illustrative prior, not VA .821 observation.",
+    "overlap": "Housing benefits limited to adults outside OD health cohort by .9 disjoint prior. All housing costs and shared harms remain for excluded people. Nonquantified other programs receive no stacked health credit.",
+    "timing": "Both cohorts are expected people alive at intervention start; service-start caseload already conditions on pre-service survival, so delay only discounts health and no pre-service survival multiplier is added. Housing duration capped at two years computationally; central one year, constant probability difference is a persistence prior. Common housing mortality weights both arms equally after care begins. OD horizon 15 years central, active1 year. Discount3%, explicit service delays. All harms are gift-date PV QALY losses, distinct from signed clinical worsening.",
+    "resources": "Associated funding envelope = full gift plus nominal offered service outside resource priors. Modeled resource cost removes donor-funded rent-transfer prior once. External resources are non-transfer staff/supplies/partner real costs not paid by donor; incurred per nominal offer, including replaced/deduplicated activity. No induced savings credited. Not a validated societal ledger: other transfers, housing service opportunity costs, in-kind and public displacement remain uncertain.",
+    "geography": "Future person-health location shares, not clinic address: OD Bay .99 SF .95; housing Bay .98 SF .95; harm Bay .98 SF .95. All unverified, independently nested; US total excludes unmodeled overseas effects.",
+    "funding_room": "Unknown not zero. Government, SF ERAP, Season of Sharing, problem-solving services, SFAF subcontract and existing donor-funded stock belong in baseline. Proposed public contract not guaranteed new money. No current unfunded queue or executable gift tranche."
+  },
+  "computational_bounds": {
+    "gift": [
+      0,
+      1000000000
+    ],
+    "discount": [
+      0,
+      1
+    ],
+    "od_allocation": [
+      0,
+      1
+    ],
+    "housing_allocation": [
+      0,
+      1
+    ],
+    "od_cost": [
+      1,
+      10000000
+    ],
+    "housing_cost": [
+      1,
+      10000000
+    ],
+    "od_additionality": [
+      0,
+      1
+    ],
+    "housing_additionality": [
+      0,
+      1
+    ],
+    "od_events": [
+      0,
+      20
+    ],
+    "od_fatality_without_rescue": [
+      0,
+      1
+    ],
+    "od_baseline_rescue": [
+      0,
+      1
+    ],
+    "od_rescue_increment": [
+      -1,
+      1
+    ],
+    "od_other_mortality": [
+      0,
+      2
+    ],
+    "od_utility": [
+      0,
+      1
+    ],
+    "od_active_years": [
+      0,
+      10
+    ],
+    "od_horizon": [
+      0,
+      60
+    ],
+    "od_delay": [
+      0,
+      10
+    ],
+    "housing_baseline_stability": [
+      0,
+      1
+    ],
+    "housing_external_risk_difference": [
+      -1,
+      1
+    ],
+    "housing_transfer": [
+      0,
+      1
+    ],
+    "housing_utility_gap": [
+      0,
+      1
+    ],
+    "housing_years": [
+      0,
+      2
+    ],
+    "housing_mortality": [
+      0,
+      2
+    ],
+    "housing_delay": [
+      0,
+      10
+    ],
+    "housing_disjoint_share": [
+      0,
+      1
+    ],
+    "od_external_resources": [
+      0,
+      10000000
+    ],
+    "housing_external_resources": [
+      0,
+      10000000
+    ],
+    "housing_cash_transfer": [
+      0,
+      10000000
+    ],
+    "od_harm": [
+      0,
+      10
+    ],
+    "housing_harm": [
+      0,
+      10
+    ],
+    "independent_harm": [
+      0,
+      100000000
+    ],
+    "od_bay": [
+      0,
+      1
+    ],
+    "od_sf": [
+      0,
+      1
+    ],
+    "housing_bay": [
+      0,
+      1
+    ],
+    "housing_sf": [
+      0,
+      1
+    ],
+    "harm_bay": [
+      0,
+      1
+    ],
+    "harm_sf": [
+      0,
+      1
+    ]
+  }
+}

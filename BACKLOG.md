@@ -1,5 +1,13 @@
 # Market for Impact backlog
 
+## Whole-organization acceptance correction — September9
+
+Published count66 after ViaHeart canonical verification. Four portfolio diagnostic packets are preserved in this draft branch with460 passing tests, lint0errors/3pre-existing warnings and successful build. They are NOT wired into production reports or rankings and are not four new organizations.
+
+Critical finding: full-gift cost with an evidence-selected partial-health denominator is not expected total organization value. Prior arithmetic acceptance does not clear material omitted health. See docs/whole-gift-denominator-audit.md and docs/four-portfolio-draft-status.md. Clinic's major medical pathway is now being estimated, not silently assigned zero. Extend OA specialty coverage, GLIDE joint HEAT pathways and PVF capacity attribution before presenting total-org best estimates. Do not use inverse allocation uplifts or target-matching residuals.
+
+Keep both numerical uncertainty and completeness uncertainty explicit. The earlier recommendation to promote these diagnostics into the lowest-four ranking is superseded. HSC recipient clarification and PHC shared hearing overlap remain a separate homepage gate.
+
 ## Via Heart Project — accepted, publication pending
 
 20-scenario whole-gift AED placement/maintenance model. Central donor $11.08M total/$15.83M Bay/$73.86M SF per10Q. Placement and maintenance causal increments separate; $350 annual maintenance cannot buy more than one year of protection. New package capped five years and includes renewals. Primary fees/public PHCD baseline retained; no current marginal tranche. Author869 and independent4179 assertions pass. No threshold fitting. Count66 only after canonical verification.

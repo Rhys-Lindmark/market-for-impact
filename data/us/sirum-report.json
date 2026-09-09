@@ -1,0 +1,609 @@
+{
+  "organization": "SIRUM",
+  "eyebrow": "Whole organization · unrestricted gift · medicine access",
+  "program": "Conditional value of an ordinary $100,000 gift",
+  "donationUrl": "https://sirum.org/support-our-work/",
+  "published": "September 8, 2026",
+  "modelVersion": "sirum-whole-gift-v1",
+  "nutshell": {
+    "headline": "A credible medicine-access mechanism, but class mix and additional treatment drive the result.",
+    "body": "Central donor cost per10 QALYs: $130,983 US, $4,366,108 Bay, unpriced SF. Gross associated US resources $1,077,665 per10Q. Favorable joint donor assumptions pass nationally and narrowly in Bay; adverse health is negative.",
+    "whyItMayWork": "Low-cost logistics can move otherwise unused medicines into sustained treatment, including verified BP and statin classes.",
+    "whyWeAreCautious": "Stock continuity, fill duration, high-risk mix, residual benefit and marginal public/private alternatives are not measured. Most modeled central health comes from explicit residual-class priors.",
+    "recommendationBlocker": "No verified additional whole-gift package or geographically allocated completed courses. Central result does not establish sub-$100,000/10-QALY value."
+  },
+  "summary": [
+    {
+      "label": "Whole gift",
+      "value": "$100,000",
+      "detail": "70% modeled delivery allocation; entire gift retained in every regional numerator."
+    },
+    {
+      "label": "Central net health",
+      "value": "7.634564 QALYs",
+      "detail": "US 7.634564 / Bay 0.229037 / SF0. Residual morbidity6.012826 gross QALYs is an explicit prior."
+    },
+    {
+      "label": "Associated resources",
+      "value": "$822,750 gross / $438,032 conditional net",
+      "detail": "Outside pharmacy and clinical resources included. Donated-drug retail value excluded; net medical savings are uncertain."
+    }
+  ],
+  "programSection": {
+    "body": "Exact recipient EIN27-1103057 redistributes surplus medicines and includes own pharmacy/returns entities. Santa Clara County's independent public Better Health Pharmacy is a verified Bay partner.",
+    "steps": [
+      {
+        "title": "Budget actual medication-months",
+        "detail": "Shipped prescriptions become dispensed months; concurrent-drug and funded-duration divisors produce distinct complete-course equivalents."
+      },
+      {
+        "title": "Separate existing care from new treatment",
+        "detail": "Financing replacement and sustained-treatment contrast reduce public/insurance/other-donor baseline overlap."
+      },
+      {
+        "title": "Value finite, disjoint health",
+        "detail": "Separate BP first-stroke, statin mixed first-event, and residual on-treatment morbidity cohorts; no additive drugs or repeat-event lives."
+      }
+    ],
+    "boundary": "Current formulary is evidence of classes, not stock, patient indication or quantity. Trial efficacy is not SIRUM's measured marginal effect."
+  },
+  "model": {
+    "headline": "Finite medication coverage and first-event catch-up",
+    "body": "All allocation, mix, continuity, geography, utility and resource values are uncalibrated priors except the specified gift and named clinical/cost anchors. Scenarios are not probabilities.",
+    "equation": {
+      "label": "Whole gift",
+      "expression": "Months=gift×delivery allocation/cash per Rx×dispensed fraction×months per Rx. N(class)=months×disjoint share/(12×funded years×concurrent drugs)×financing additionality×new treatment contrast. Qcardio=N×utility loss×discounted integral(event-free target − counterfactual). Both hazards coincide after funded coverage. Qresidual=N×mean utility gain×finite on-treatment annuity. Subtract linked and independent harms.",
+      "result": "Central total 7.63456395046104; BP 1.5787099573144547, statin 0.2646128733159622, residual 6.012825806545966 gross QALYs; linked harm 0.12158468671534446 and alternative loss0.1."
+    },
+    "inputs": [
+      {
+        "key": "gift",
+        "label": "gift",
+        "confidence": "Specified gift",
+        "best": "100000",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "Definition and finite/counterfactual scope in accompanying review; not an observed SIRUM causal estimate."
+      },
+      {
+        "key": "delivery_allocation",
+        "label": "delivery allocation",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "0.7",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "70% of ordinary gift to direct delivery pathway; remaining30% operations/expansion cost retained, no political benefits."
+      },
+      {
+        "key": "cash_per_shipped_rx",
+        "label": "cash per shipped rx",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "1",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "Current official $1/Rx partner-delivery appeal, not verified whole-cost marginal quote; $5 scenario."
+      },
+      {
+        "key": "months_per_rx",
+        "label": "months per rx",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "1",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "Unknown quantity per shipped prescription; one month central, three-month scenario. Not one patient per Rx."
+      },
+      {
+        "key": "dispensed_fraction",
+        "label": "dispensed fraction",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "0.7",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "Definition and finite/counterfactual scope in accompanying review; not an observed SIRUM causal estimate."
+      },
+      {
+        "key": "funded_years",
+        "label": "funded years",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "1",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "Definition and finite/counterfactual scope in accompanying review; not an observed SIRUM causal estimate."
+      },
+      {
+        "key": "bp_month_share",
+        "label": "bp month share",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "0.2",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "Unobserved fraction of medication-months assigned to disjoint high-risk BP patient cohorts."
+      },
+      {
+        "key": "statin_month_share",
+        "label": "statin month share",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "0.15",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "Unobserved fraction of medication-months assigned to disjoint high-risk statin patient cohorts, excluding BP-attributed patients."
+      },
+      {
+        "key": "bp_drugs_per_person",
+        "label": "bp drugs per person",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "1.5",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "Definition and finite/counterfactual scope in accompanying review; not an observed SIRUM causal estimate."
+      },
+      {
+        "key": "statin_drugs_per_person",
+        "label": "statin drugs per person",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "1",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "Definition and finite/counterfactual scope in accompanying review; not an observed SIRUM causal estimate."
+      },
+      {
+        "key": "financing_additionality",
+        "label": "financing additionality",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "0.5",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "Counterfactual replacement by public supply, other donors and existing stocks."
+      },
+      {
+        "key": "treatment_contrast",
+        "label": "treatment contrast",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "0.5",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "Meaningfully new sustained-treatment cohort fraction versus prior coverage/alternative pharmacies; not an ITT adherence correction."
+      },
+      {
+        "key": "bp_transfer",
+        "label": "bp transfer",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "0.8",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "Definition and finite/counterfactual scope in accompanying review; not an observed SIRUM causal estimate."
+      },
+      {
+        "key": "statin_transfer",
+        "label": "statin transfer",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "0.35",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "0.35 attenuation of HPS trial relative reduction; first-year trial benefit nonsignificant. Explicit zero scenario."
+      },
+      {
+        "key": "hazard_scale",
+        "label": "hazard scale",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "1",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "Definition and finite/counterfactual scope in accompanying review; not an observed SIRUM causal estimate."
+      },
+      {
+        "key": "horizon",
+        "label": "horizon",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "10",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "Definition and finite/counterfactual scope in accompanying review; not an observed SIRUM causal estimate."
+      },
+      {
+        "key": "mortality",
+        "label": "mortality",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "0.05",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "Definition and finite/counterfactual scope in accompanying review; not an observed SIRUM causal estimate."
+      },
+      {
+        "key": "discount",
+        "label": "discount",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "0.03",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "Definition and finite/counterfactual scope in accompanying review; not an observed SIRUM causal estimate."
+      },
+      {
+        "key": "delay",
+        "label": "delay",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "0.25",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "Definition and finite/counterfactual scope in accompanying review; not an observed SIRUM causal estimate."
+      },
+      {
+        "key": "bp_utility_loss",
+        "label": "bp utility loss",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "0.4",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "Definition and finite/counterfactual scope in accompanying review; not an observed SIRUM causal estimate."
+      },
+      {
+        "key": "statin_utility_loss",
+        "label": "statin utility loss",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "0.18",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "Definition and finite/counterfactual scope in accompanying review; not an observed SIRUM causal estimate."
+      },
+      {
+        "key": "other_harm_per_filled_rx",
+        "label": "other harm per filled rx",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "0.00001",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "Definition and finite/counterfactual scope in accompanying review; not an observed SIRUM causal estimate."
+      },
+      {
+        "key": "independent_harm_q",
+        "label": "independent harm q",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "0",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "Gift-date PV independent loss; retained when target effect fails."
+      },
+      {
+        "key": "displaced_alternative_q",
+        "label": "displaced alternative q",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "0.1",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "Gift-date PV opportunity health loss; retained when target effect fails."
+      },
+      {
+        "key": "us_share",
+        "label": "us share",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "1",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "Definition and finite/counterfactual scope in accompanying review; not an observed SIRUM causal estimate."
+      },
+      {
+        "key": "bay_share",
+        "label": "bay share",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "0.03",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "3% Bay-resident health prior, not inferred from Palo Alto address or Santa Clara cumulative output."
+      },
+      {
+        "key": "sf_share",
+        "label": "sf share",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "0",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "Zero central priced SF share due unverified residence throughput; not proof no SF access exists."
+      },
+      {
+        "key": "external_pharmacy_fraction",
+        "label": "external pharmacy fraction",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "0.5",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "Only external partner share; own disregarded Good Pill entities already inside recipient cost."
+      },
+      {
+        "key": "external_dispense_cost",
+        "label": "external dispense cost",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "25",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "Definition and finite/counterfactual scope in accompanying review; not an observed SIRUM causal estimate."
+      },
+      {
+        "key": "other_external_per_rx",
+        "label": "other external per rx",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "2",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "Definition and finite/counterfactual scope in accompanying review; not an observed SIRUM causal estimate."
+      },
+      {
+        "key": "drug_opportunity_per_rx",
+        "label": "drug opportunity per rx",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "0.25",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "Real alternative value prior, not retail/FMV medicine price; otherwise destroyed stock may have little opportunity cost."
+      },
+      {
+        "key": "outside_incremental_fraction",
+        "label": "outside incremental fraction",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "0.5",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "Independent real-resource incrementality assumption; nominal external spending is not all newly caused."
+      },
+      {
+        "key": "public_resource_fraction",
+        "label": "public resource fraction",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "0.7",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "Definition and finite/counterfactual scope in accompanying review; not an observed SIRUM causal estimate."
+      },
+      {
+        "key": "bp_event_cost",
+        "label": "bp event cost",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "25000",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "Definition and finite/counterfactual scope in accompanying review; not an observed SIRUM causal estimate."
+      },
+      {
+        "key": "statin_event_cost",
+        "label": "statin event cost",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "15000",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "Definition and finite/counterfactual scope in accompanying review; not an observed SIRUM causal estimate."
+      },
+      {
+        "key": "residual_utility_gain",
+        "label": "residual utility gain",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "0.019",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "Weighted class-mix prior0.019, not trial extraction. Averaged over initiation delays, acute-course duration, nonresponse and alternative resolution. On-treatment only; negative allowed."
+      },
+      {
+        "key": "residual_drugs_per_person",
+        "label": "residual drugs per person",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "2",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "Two concurrent medicines per residual patient average; no duplicate patient benefit."
+      },
+      {
+        "key": "statin_state_horizon",
+        "label": "statin state horizon",
+        "confidence": "Explicit prior / source-qualified planning anchor",
+        "best": "3",
+        "range": "See bounded calculator domain and signed scenarios",
+        "basis": "Three-year absolute follow-up cap for heterogeneous vascular first-event utility and medical costs, not persistent disability for every revascularization."
+      }
+    ],
+    "fundingBoundary": "Ordinary unrestricted gift, not a verified additional course offer. All donor dollars remain in every regional numerator. Current $1 partner-delivery appeal does not establish months dispensed, high-risk uptake or marginal capacity. Public external pharmacy resources and donor-drug opportunity costs are counted separately; internal disregarded pharmacies are not double-counted. Gross resources exclude avoided medical offsets; conditional net includes them. No fiscal or health benefit from political advocacy is modeled.",
+    "giftHeading": "Entire $100,000 gift in every geography; nonpositive health is unpriced",
+    "sensitivity": [
+      {
+        "case": "central",
+        "headline": "Total 7.63456395 QALYs; donor $130,983 per10",
+        "detail": "total: Q=7.63456395046104; donor/gross/net per10=$130,983/$1,077,665/$573,749; us: Q=7.63456395046104; donor/gross/net per10=$130,983/$1,077,665/$573,749; bay: Q=0.22903691851383118; donor/gross/net per10=$4,366,108/$35,922,156/$19,124,972; sf: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced"
+      },
+      {
+        "case": "favorable_joint",
+        "headline": "Total 101.57052556 QALYs; donor $9,845 per10",
+        "detail": "total: Q=101.57052555750553; donor/gross/net per10=$9,845/$127,473/$-2,802; us: Q=101.57052555750553; donor/gross/net per10=$9,845/$127,473/$-2,802; bay: Q=10.157052555750553; donor/gross/net per10=$98,454/$1,274,730/$-28,022; sf: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced"
+      },
+      {
+        "case": "adverse_joint",
+        "headline": "Total -0.80985293 QALYs; donor unpriced per10",
+        "detail": "total: Q=-0.8098529254433069; donor/gross/net per10=unpriced/unpriced/unpriced; us: Q=-0.8098529254433069; donor/gross/net per10=unpriced/unpriced/unpriced; bay: Q=-0.024295587763299206; donor/gross/net per10=unpriced/unpriced/unpriced; sf: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced"
+      },
+      {
+        "case": "no_additional_funding",
+        "headline": "Total -0.10000000 QALYs; donor unpriced per10",
+        "detail": "total: Q=-0.1; donor/gross/net per10=unpriced/unpriced/unpriced; us: Q=-0.1; donor/gross/net per10=unpriced/unpriced/unpriced; bay: Q=-0.003; donor/gross/net per10=unpriced/unpriced/unpriced; sf: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced"
+      },
+      {
+        "case": "no_treatment_contrast",
+        "headline": "Total -0.10000000 QALYs; donor unpriced per10",
+        "detail": "total: Q=-0.1; donor/gross/net per10=unpriced/unpriced/unpriced; us: Q=-0.1; donor/gross/net per10=unpriced/unpriced/unpriced; bay: Q=-0.003; donor/gross/net per10=unpriced/unpriced/unpriced; sf: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced"
+      },
+      {
+        "case": "cardiovascular_effect_null",
+        "headline": "Total 5.79124112 QALYs; donor $172,675 per10",
+        "detail": "total: Q=5.791241119830622; donor/gross/net per10=$172,675/$1,420,680/$796,677; us: Q=5.791241119830622; donor/gross/net per10=$172,675/$1,420,680/$796,677; bay: Q=0.17373723359491866; donor/gross/net per10=$5,755,819/$47,355,998/$26,555,908; sf: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced"
+      },
+      {
+        "case": "statin_first_year_null",
+        "headline": "Total 7.36995108 QALYs; donor $135,686 per10",
+        "detail": "total: Q=7.3699510771450765; donor/gross/net per10=$135,686/$1,116,357/$606,739; us: Q=7.3699510771450765; donor/gross/net per10=$135,686/$1,116,357/$606,739; bay: Q=0.22109853231435228; donor/gross/net per10=$4,522,870/$37,211,916/$20,224,623; sf: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced"
+      },
+      {
+        "case": "higher_full_cash_cost",
+        "headline": "Total 1.44691279 QALYs; donor $691,127 per10",
+        "detail": "total: Q=1.4469127900922079; donor/gross/net per10=$691,127/$1,690,150/$1,158,373; us: Q=1.4469127900922079; donor/gross/net per10=$691,127/$1,690,150/$1,158,373; bay: Q=0.043407383702766235; donor/gross/net per10=$23,037,555/$56,338,341/$38,612,439; sf: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced"
+      },
+      {
+        "case": "three_month_fills",
+        "headline": "Total 23.34686122 QALYs; donor $42,832 per10",
+        "detail": "total: Q=23.346861224813807; donor/gross/net per10=$42,832/$352,403/$167,623; us: Q=23.346861224813807; donor/gross/net per10=$42,832/$352,403/$167,623; bay: Q=0.7004058367444141; donor/gross/net per10=$1,427,744/$11,746,761/$5,587,438; sf: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced"
+      },
+      {
+        "case": "three_year_continuity",
+        "headline": "Total 6.84376385 QALYs; donor $146,118 per10",
+        "detail": "total: Q=6.843763847853477; donor/gross/net per10=$146,118/$1,202,189/$642,705; us: Q=6.843763847853477; donor/gross/net per10=$146,118/$1,202,189/$642,705; bay: Q=0.20531291543560432; donor/gross/net per10=$4,870,614/$40,072,978/$21,423,514; sf: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced"
+      },
+      {
+        "case": "short_horizon",
+        "headline": "Total 5.97726727 QALYs; donor $167,301 per10",
+        "detail": "total: Q=5.977267265325848; donor/gross/net per10=$167,301/$1,376,465/$728,581; us: Q=5.977267265325848; donor/gross/net per10=$167,301/$1,376,465/$728,581; bay: Q=0.17931801795977542; donor/gross/net per10=$5,576,684/$45,882,171/$24,286,038; sf: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced"
+      },
+      {
+        "case": "low_bay",
+        "headline": "Total 7.63456395 QALYs; donor $130,983 per10",
+        "detail": "total: Q=7.63456395046104; donor/gross/net per10=$130,983/$1,077,665/$573,749; us: Q=7.63456395046104; donor/gross/net per10=$130,983/$1,077,665/$573,749; bay: Q=0.0381728197523052; donor/gross/net per10=$26,196,650/$215,532,938/$114,749,834; sf: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced"
+      },
+      {
+        "case": "no_local",
+        "headline": "Total 7.63456395 QALYs; donor $130,983 per10",
+        "detail": "total: Q=7.63456395046104; donor/gross/net per10=$130,983/$1,077,665/$573,749; us: Q=7.63456395046104; donor/gross/net per10=$130,983/$1,077,665/$573,749; bay: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced; sf: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced"
+      },
+      {
+        "case": "conditional_sf_reach",
+        "headline": "Total 7.63456395 QALYs; donor $130,983 per10",
+        "detail": "total: Q=7.63456395046104; donor/gross/net per10=$130,983/$1,077,665/$573,749; us: Q=7.63456395046104; donor/gross/net per10=$130,983/$1,077,665/$573,749; bay: Q=0.22903691851383118; donor/gross/net per10=$4,366,108/$35,922,156/$19,124,972; sf: Q=0.01526912790092208; donor/gross/net per10=$65,491,625/$538,832,345/$286,874,584"
+      },
+      {
+        "case": "no_external_resources",
+        "headline": "Total 7.63456395 QALYs; donor $130,983 per10",
+        "detail": "total: Q=7.63456395046104; donor/gross/net per10=$130,983/$130,983/$130,983; us: Q=7.63456395046104; donor/gross/net per10=$130,983/$130,983/$130,983; bay: Q=0.22903691851383118; donor/gross/net per10=$4,366,108/$4,366,108/$4,366,108; sf: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced"
+      },
+      {
+        "case": "full_external_increment",
+        "headline": "Total 7.63456395 QALYs; donor $130,983 per10",
+        "detail": "total: Q=7.63456395046104; donor/gross/net per10=$130,983/$1,077,665/$1,047,090; us: Q=7.63456395046104; donor/gross/net per10=$130,983/$1,077,665/$1,047,090; bay: Q=0.22903691851383118; donor/gross/net per10=$4,366,108/$35,922,156/$34,902,996; sf: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced"
+      },
+      {
+        "case": "independent_harm",
+        "headline": "Total -2.36543605 QALYs; donor unpriced per10",
+        "detail": "total: Q=-2.365436049538961; donor/gross/net per10=unpriced/unpriced/unpriced; us: Q=-2.365436049538961; donor/gross/net per10=unpriced/unpriced/unpriced; bay: Q=-0.07096308148616882; donor/gross/net per10=unpriced/unpriced/unpriced; sf: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced"
+      },
+      {
+        "case": "zero_gift",
+        "headline": "Total 0.00000000 QALYs; donor unpriced per10",
+        "detail": "total: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced; us: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced; bay: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced; sf: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced"
+      },
+      {
+        "case": "residual_health_null",
+        "headline": "Total 1.62173814 QALYs; donor $616,622 per10",
+        "detail": "total: Q=1.6217381439150724; donor/gross/net per10=$616,622/$5,073,260/$2,701,006; us: Q=1.6217381439150724; donor/gross/net per10=$616,622/$5,073,260/$2,701,006; bay: Q=0.04865214431745217; donor/gross/net per10=$20,554,079/$169,108,682/$90,033,539; sf: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced"
+      },
+      {
+        "case": "residual_favorable",
+        "headline": "Total 17.44496395 QALYs; donor $57,323 per10",
+        "detail": "total: Q=17.444963950614984; donor/gross/net per10=$57,323/$471,626/$251,094; us: Q=17.444963950614984; donor/gross/net per10=$57,323/$471,626/$251,094; bay: Q=0.5233489185184494; donor/gross/net per10=$1,910,771/$15,720,869/$8,369,798; sf: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced"
+      },
+      {
+        "case": "residual_harm",
+        "headline": "Total -1.54290702 QALYs; donor unpriced per10",
+        "detail": "total: Q=-1.54290701742491; donor/gross/net per10=unpriced/unpriced/unpriced; us: Q=-1.54290701742491; donor/gross/net per10=unpriced/unpriced/unpriced; bay: Q=-0.0462872105227473; donor/gross/net per10=unpriced/unpriced/unpriced; sf: Q=0; donor/gross/net per10=unpriced/unpriced/unpriced"
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "key": "bp",
+      "design": "Randomized placebo-controlled SHEP trial",
+      "population": "Older patients with severe isolated systolic hypertension",
+      "result": "Five-year stroke incidence8.2% control versus5.2% treatment; relative rate0.64.",
+      "transfer": "Named drugs present in county formulary. Actual matching indications, continuity and modern baseline unobserved; hazard and utility transfer are priors."
+    },
+    {
+      "key": "statin",
+      "design": "Randomized HPS trial",
+      "population": "20,536 high-risk adults",
+      "result": "First major vascular event19.8% versus25.2%; composite includes revascularization. First-year reduction nonsignificant.",
+      "transfer": "No mortality/additive-event credit. Attenuated short-course effect, three-year mixed-state cap and explicit null."
+    },
+    {
+      "key": "access",
+      "design": "MI FREEE randomized access trial and current partner operations",
+      "population": "Insured post-MI trial participants versus heterogeneous safety-net recipients",
+      "result": "Access trial improved adherence but not its primary outcome significantly. Actual county medicine pathway verified.",
+      "transfer": "Supports plausibility, not universal medication effect or a confirmed SIRUM treatment increment."
+    }
+  ],
+  "reservations": [
+    "Central residual class expectation is weakly identified and dominates modeled health; residual-null national donor price is about$617k/10Q.",
+    "One versus three medication-months per shipped prescription materially changes value; current appeal does not specify.",
+    "No verified open marginal tranche or Bay/SF patient-residence distribution.",
+    "Gross associated and conditional net resource costs are not a complete societal account; avoided medical offsets can create a negative favorable net numerator but are uncalibrated."
+  ],
+  "excludedBenefits": [
+    "Legislative/political advocacy effects",
+    "Additional mortality or recurrent events on top of first-event cardiovascular states",
+    "Retail medicine value and patient savings converted into QALYs",
+    "Duplicate Good Pill, county, manufacturer or other-partner benefits",
+    "Residual post-treatment mortality/carryover and environmental waste benefits without a quantified bridge"
+  ],
+  "sources": [
+    {
+      "publisher": "SIRUM",
+      "title": "Ordinary monetary support and delivery price anchor",
+      "url": "https://sirum.org/support-our-work/",
+      "published": "Undated; current September 2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official fundraising page; $1/Rx claim not marginal quote"
+    },
+    {
+      "publisher": "SIRUM",
+      "title": "Impact, including 2024 results",
+      "url": "https://sirum.org/impact/",
+      "published": "2024 section; otherwise undated",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official self-report; partner reach not causal outcomes"
+    },
+    {
+      "publisher": "SIRUM / IRS",
+      "title": "FY2024 Form 990",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202523219349327202/IRS990",
+      "published": "Signed November 17, 2025; FY2024",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary tax e-file reproduced by ProPublica; fetched via public HTTP"
+    },
+    {
+      "publisher": "SIRUM / IRS",
+      "title": "FY2024 noncash contributions",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202523219349327202/IRS990ScheduleM",
+      "published": "FY2024",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary Schedule M; FMV not real opportunity cost"
+    },
+    {
+      "publisher": "SIRUM / IRS",
+      "title": "FY2024 disregarded entities",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202523219349327202/IRS990ScheduleR",
+      "published": "FY2024",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary Schedule R; internal entity scope"
+    },
+    {
+      "publisher": "California Board of Pharmacy",
+      "title": "Surplus medication intermediaries",
+      "url": "https://www.pharmacy.ca.gov/online/surplus_med_intermediary.shtml",
+      "published": "Undated current listing",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary regulator license listing"
+    },
+    {
+      "publisher": "County of Santa Clara",
+      "title": "Current medication access and formulary",
+      "url": "https://publichealth.santaclaracounty.gov/programs-and-services/pharmacy-and-vaccination-services/medication-access",
+      "published": "Undated; current September 2026",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official current service and medication-class evidence; not stock guarantee"
+    },
+    {
+      "publisher": "County of Santa Clara",
+      "title": "County pharmacy partnership with SIRUM",
+      "url": "https://news.santaclaracounty.gov/innovative-county-program-provides-residents-free-prescription-medications",
+      "published": "February 20, 2024",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Official county operating account"
+    },
+    {
+      "publisher": "County of Santa Clara",
+      "title": "Unused prescriptions and pharmacy operating costs",
+      "url": "https://publichealth.santaclaracounty.gov/news/news/these-programs-put-unused-prescription-drugs-hands-patients-need",
+      "published": "December 8, 2023",
+      "retrieved": "September 8, 2026",
+      "sourceType": "County-hosted reported account; historical approximate cost, not current quote"
+    },
+    {
+      "publisher": "SHEP Cooperative Research Group / JAMA",
+      "title": "Prevention of stroke by antihypertensive treatment",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/2046107/",
+      "published": "June 26, 1991",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary randomized trial abstract"
+    },
+    {
+      "publisher": "Heart Protection Study Collaborative Group / Lancet",
+      "title": "Simvastatin in 20,536 high-risk individuals",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12114036/",
+      "published": "July 6, 2002",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary randomized trial abstract; first-year effect nonsignificant"
+    },
+    {
+      "publisher": "Choudhry et al. / NEJM",
+      "title": "Full coverage for preventive medicines after MI",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22080794/",
+      "published": "December 1, 2011",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary randomized access trial; primary outcome nonsignificant"
+    }
+  ]
+}
+

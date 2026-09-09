@@ -1,0 +1,252 @@
+{
+  "organization": "SIRUM",
+  "ein": "27-1103057",
+  "version": "sirum-whole-gift-v1",
+  "scope": "Whole unrestricted gift; disjoint high-risk BP, high-risk statin, and bounded residual on-treatment morbidity cohorts. Entire cost retained.",
+  "central": {
+    "gift": 100000,
+    "delivery_allocation": 0.7,
+    "cash_per_shipped_rx": 1,
+    "months_per_rx": 1,
+    "dispensed_fraction": 0.7,
+    "funded_years": 1,
+    "bp_month_share": 0.2,
+    "statin_month_share": 0.15,
+    "bp_drugs_per_person": 1.5,
+    "statin_drugs_per_person": 1,
+    "financing_additionality": 0.5,
+    "treatment_contrast": 0.5,
+    "bp_transfer": 0.8,
+    "statin_transfer": 0.35,
+    "hazard_scale": 1,
+    "horizon": 10,
+    "mortality": 0.05,
+    "discount": 0.03,
+    "delay": 0.25,
+    "bp_utility_loss": 0.4,
+    "statin_utility_loss": 0.18,
+    "other_harm_per_filled_rx": 0.00001,
+    "independent_harm_q": 0,
+    "displaced_alternative_q": 0.1,
+    "us_share": 1,
+    "bay_share": 0.03,
+    "sf_share": 0,
+    "external_pharmacy_fraction": 0.5,
+    "external_dispense_cost": 25,
+    "other_external_per_rx": 2,
+    "drug_opportunity_per_rx": 0.25,
+    "outside_incremental_fraction": 0.5,
+    "public_resource_fraction": 0.7,
+    "bp_event_cost": 25000,
+    "statin_event_cost": 15000,
+    "residual_utility_gain": 0.019,
+    "residual_drugs_per_person": 2,
+    "statin_state_horizon": 3
+  },
+  "scenarios": [
+    {
+      "id": "central",
+      "overrides": {}
+    },
+    {
+      "id": "favorable_joint",
+      "overrides": {
+        "delivery_allocation": 0.9,
+        "months_per_rx": 3,
+        "dispensed_fraction": 0.9,
+        "bp_month_share": 0.3,
+        "statin_month_share": 0.25,
+        "financing_additionality": 0.8,
+        "treatment_contrast": 0.8,
+        "bp_transfer": 1,
+        "statin_transfer": 0.7,
+        "other_harm_per_filled_rx": 0.000002,
+        "displaced_alternative_q": 0,
+        "bay_share": 0.1
+      }
+    },
+    {
+      "id": "adverse_joint",
+      "overrides": {
+        "cash_per_shipped_rx": 3,
+        "dispensed_fraction": 0.4,
+        "financing_additionality": 0.2,
+        "treatment_contrast": 0.2,
+        "bp_transfer": 0.3,
+        "statin_transfer": 0,
+        "other_harm_per_filled_rx": 0.00003,
+        "displaced_alternative_q": 1
+      }
+    },
+    {
+      "id": "no_additional_funding",
+      "overrides": {
+        "financing_additionality": 0
+      }
+    },
+    {
+      "id": "no_treatment_contrast",
+      "overrides": {
+        "treatment_contrast": 0
+      }
+    },
+    {
+      "id": "cardiovascular_effect_null",
+      "overrides": {
+        "bp_transfer": 0,
+        "statin_transfer": 0
+      }
+    },
+    {
+      "id": "statin_first_year_null",
+      "overrides": {
+        "statin_transfer": 0
+      }
+    },
+    {
+      "id": "higher_full_cash_cost",
+      "overrides": {
+        "cash_per_shipped_rx": 5
+      }
+    },
+    {
+      "id": "three_month_fills",
+      "overrides": {
+        "months_per_rx": 3
+      }
+    },
+    {
+      "id": "three_year_continuity",
+      "overrides": {
+        "funded_years": 3
+      }
+    },
+    {
+      "id": "short_horizon",
+      "overrides": {
+        "horizon": 1
+      }
+    },
+    {
+      "id": "low_bay",
+      "overrides": {
+        "bay_share": 0.005
+      }
+    },
+    {
+      "id": "no_local",
+      "overrides": {
+        "bay_share": 0,
+        "sf_share": 0
+      }
+    },
+    {
+      "id": "conditional_sf_reach",
+      "overrides": {
+        "bay_share": 0.03,
+        "sf_share": 0.002
+      }
+    },
+    {
+      "id": "no_external_resources",
+      "overrides": {
+        "external_pharmacy_fraction": 0,
+        "other_external_per_rx": 0,
+        "drug_opportunity_per_rx": 0,
+        "bp_event_cost": 0,
+        "statin_event_cost": 0
+      }
+    },
+    {
+      "id": "full_external_increment",
+      "overrides": {
+        "outside_incremental_fraction": 1
+      }
+    },
+    {
+      "id": "independent_harm",
+      "overrides": {
+        "independent_harm_q": 10
+      }
+    },
+    {
+      "id": "zero_gift",
+      "overrides": {
+        "gift": 0,
+        "independent_harm_q": 0,
+        "displaced_alternative_q": 0
+      }
+    },
+    {
+      "id": "residual_health_null",
+      "overrides": {
+        "residual_utility_gain": 0
+      }
+    },
+    {
+      "id": "residual_favorable",
+      "overrides": {
+        "residual_utility_gain": 0.05
+      }
+    },
+    {
+      "id": "residual_harm",
+      "overrides": {
+        "residual_utility_gain": -0.01
+      }
+    }
+  ],
+  "clinicalAnchors": {
+    "bp": {
+      "source": "https://pubmed.ncbi.nlm.nih.gov/2046107/",
+      "controlFiveYearRisk": 0.082,
+      "trialRelativeRate": 0.64
+    },
+    "statin": {
+      "source": "https://pubmed.ncbi.nlm.nih.gov/12114036/",
+      "controlFiveYearRisk": 0.252,
+      "trialRelativeRate": 0.76
+    }
+  },
+  "finance": {
+    "year": 2024,
+    "totalExpense": 32354215,
+    "pharmaceuticalExpense": 23152443,
+    "nonmedicineExpense": 9201772,
+    "depreciation": 522297,
+    "nonmedicineLessDepreciation": 8679475,
+    "noncashMedicineReceived": 23093298,
+    "noncashSecuritiesReceived": 981890,
+    "cashAndTemporaryInvestments": 4742910,
+    "netAssetsWithoutDonorRestrictions": 16056256,
+    "note": "Expense excluding pharmaceutical/medicine line is not verified cash expense. Pharmaceutical line may include purchases and inventory movements; do not subtract donations received as if equivalent expense. Disregarded entities already included."
+  },
+  "priorNotice": "All allocation, duration, additionality, actual case mix, health-state valuation, geography and real resource inputs are explicit uncalibrated priors. Clinical trials do not estimate SIRUM impact. Joint scenarios are not confidence intervals.",
+  "residualPrior": {
+    "mix": {
+      "psychiatric": {
+        "share": 0.2,
+        "utilityGain": 0.04
+      },
+      "diabetes": {
+        "share": 0.15,
+        "utilityGain": 0.01
+      },
+      "antiInfective": {
+        "share": 0.1,
+        "utilityGain": 0.05
+      },
+      "asthma": {
+        "share": 0.15,
+        "utilityGain": 0.03
+      },
+      "other": {
+        "share": 0.4,
+        "utilityGain": 0
+      }
+    },
+    "interpretation": "Uncalibrated case-mix and on-treatment utility-gain priors; NOT trial extraction. Mutually exclusive residual person cohorts, two concurrent drugs average, no health credit after funded coverage or mortality benefit.",
+    "weightedMean": 0.019
+  }
+}
+

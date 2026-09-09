@@ -1,0 +1,962 @@
+{
+  "model_id": "breathe-ein941156307-whole-unrestricted-v1",
+  "prepared": "2026-09-08",
+  "status": "Conditional whole-gift research; independent acceptance pending; no verified marginal offer",
+  "organization": {
+    "name": "Breathe California of the Bay Area, Golden Gate, and Central Coast",
+    "ein": "94-1156307",
+    "donation_url": "https://lungsrus.org/donate/",
+    "excluded_entities": "Do not combine Golden Gate Public Health Partnership EIN94-0836760, Sacramento or Southern California affiliates."
+  },
+  "historical_comparison": {
+    "path": "data/san-francisco/breathe-cea-v1.json",
+    "cessation_donor_per_10q": 533333.3333333334,
+    "child_asthma_donor_per_10q": 5983606.557377049,
+    "meaning": "Selected program-only conditional models, preserved unchanged; not ordinary-gift prices and not extra research entries."
+  },
+  "central_inputs": {
+    "gift_usd": 100000,
+    "discount": 0.03,
+    "cessation_allocation": 0.15,
+    "asthma_allocation": 0.25,
+    "cessation_cash_per_offer": 250,
+    "asthma_cash_per_offer": 1200,
+    "cessation_additionality": 0.4,
+    "asthma_additionality": 0.35,
+    "extra_six_month_quit": 0.03,
+    "background_quit_hazard": 0.04,
+    "relapse_hazard": 0.1,
+    "smoking_mortality": 0.012,
+    "quit_mortality": 0.008,
+    "smoking_utility": 0.75,
+    "quit_utility": 0.77,
+    "cessation_horizon": 10,
+    "mortality_recovery_lag": 2,
+    "cessation_delay": 0.5,
+    "asthma_extra_symptom_free_days": 24.4,
+    "asthma_transfer": 0.5,
+    "asthma_child_fraction": 0.6,
+    "asthma_utility_gap": 0.1,
+    "asthma_years": 1,
+    "asthma_delay": 0.25,
+    "cessation_external_per_offer": 100,
+    "asthma_external_per_offer": 300,
+    "cessation_bay_share": 0.75,
+    "cessation_sf_share": 0.05,
+    "asthma_bay_share": 0.8,
+    "asthma_sf_share": 0.08,
+    "cessation_harm_per_added_offer": 0,
+    "asthma_harm_per_added_offer": 0,
+    "independent_harm_q": 0,
+    "harm_bay_share": 0.8,
+    "harm_sf_share": 0.05
+  },
+  "scenarios": [
+    {
+      "id": "central",
+      "overrides": {},
+      "outputs": {
+        "unquantified_gift_usd": 60000,
+        "cessation_offers": 60,
+        "asthma_offers": 20.833333333333332,
+        "additional_cessation_people": 24,
+        "additional_asthma_people": 7.291666666666666,
+        "additional_child_asthma_people": 4.374999999999999,
+        "additional_initial_quits": 0.72,
+        "qaly_per_extra_initial_quit": 0.13002696366471556,
+        "qaly_per_added_child": 0.0032693006296660417,
+        "cessation_net_qaly": 0.09361941383859519,
+        "asthma_net_qaly": 0.014303190254788932,
+        "gross_resource_usd": 112250,
+        "us": {
+          "qaly": 0.10792260409338413,
+          "donor_per_10q": 9265899.469352242,
+          "gross_resource_per_10q": 10400972.154347891
+        },
+        "bay": {
+          "qaly": 0.08165711258277754,
+          "donor_per_10q": 12246330.642493377,
+          "gross_resource_per_10q": 13746506.146198815
+        },
+        "sf": {
+          "qaly": 0.005825225912312874,
+          "donor_per_10q": 171667161.93551975,
+          "gross_resource_per_10q": 192696389.27262092
+        }
+      }
+    },
+    {
+      "id": "favorable_joint",
+      "overrides": {
+        "cessation_allocation": 0.3,
+        "asthma_allocation": 0.3,
+        "cessation_cash_per_offer": 150,
+        "asthma_cash_per_offer": 700,
+        "cessation_additionality": 0.7,
+        "asthma_additionality": 0.6,
+        "extra_six_month_quit": 0.08,
+        "background_quit_hazard": 0.02,
+        "relapse_hazard": 0.05,
+        "smoking_mortality": 0.015,
+        "quit_mortality": 0.008,
+        "quit_utility": 0.8,
+        "cessation_horizon": 15,
+        "mortality_recovery_lag": 1,
+        "asthma_extra_symptom_free_days": 48,
+        "asthma_transfer": 0.8,
+        "asthma_child_fraction": 0.8,
+        "asthma_utility_gap": 0.15,
+        "cessation_sf_share": 0.12,
+        "asthma_sf_share": 0.15
+      },
+      "outputs": {
+        "unquantified_gift_usd": 40000,
+        "cessation_offers": 200,
+        "asthma_offers": 42.857142857142854,
+        "additional_cessation_people": 140,
+        "additional_asthma_people": 25.71428571428571,
+        "additional_child_asthma_people": 20.57142857142857,
+        "additional_initial_quits": 11.200000000000001,
+        "qaly_per_extra_initial_quit": 0.5989495886473709,
+        "qaly_per_added_child": 0.015435386579406888,
+        "cessation_net_qaly": 6.708235392850555,
+        "asthma_net_qaly": 0.31752795249065596,
+        "gross_resource_usd": 132857.14285714287,
+        "us": {
+          "qaly": 7.025763345341211,
+          "donor_per_10q": 142333.2883341567,
+          "gross_resource_per_10q": 189099.94021537964
+        },
+        "bay": {
+          "qaly": 5.285198906630441,
+          "donor_per_10q": 189207.63771926728,
+          "gross_resource_per_10q": 251375.86154131225
+        },
+        "sf": {
+          "qaly": 0.8526174400156649,
+          "donor_per_10q": 1172858.9553383137,
+          "gross_resource_per_10q": 1558226.8978066167
+        }
+      }
+    },
+    {
+      "id": "pessimistic",
+      "overrides": {
+        "cessation_allocation": 0.05,
+        "asthma_allocation": 0.15,
+        "cessation_additionality": 0.1,
+        "asthma_additionality": 0.1,
+        "extra_six_month_quit": 0.005,
+        "cessation_cash_per_offer": 600,
+        "asthma_cash_per_offer": 2000,
+        "relapse_hazard": 0.2,
+        "cessation_horizon": 5,
+        "asthma_transfer": 0.2,
+        "asthma_extra_symptom_free_days": 5,
+        "asthma_child_fraction": 0.3,
+        "asthma_utility_gap": 0.03
+      },
+      "outputs": {
+        "unquantified_gift_usd": 80000,
+        "cessation_offers": 8.333333333333334,
+        "asthma_offers": 7.5,
+        "additional_cessation_people": 0.8333333333333335,
+        "additional_asthma_people": 0.75,
+        "additional_child_asthma_people": 0.22499999999999998,
+        "additional_initial_quits": 0.0041666666666666675,
+        "qaly_per_extra_initial_quit": 0.05858444964794833,
+        "qaly_per_added_child": 0.00008039263843441086,
+        "cessation_net_qaly": 0.0002441018735331181,
+        "asthma_net_qaly": 0.00001808834364774244,
+        "gross_resource_usd": 103083.33333333333,
+        "us": {
+          "qaly": 0.00026219021718086057,
+          "donor_per_10q": 3814024835.6794844,
+          "gross_resource_per_10q": 3931623934.779601
+        },
+        "bay": {
+          "qaly": 0.00019754708006803256,
+          "donor_per_10q": 5062084439.089727,
+          "gross_resource_per_10q": 5218165375.961659
+        },
+        "sf": {
+          "qaly": 0.000013652161168475302,
+          "donor_per_10q": 73248476022.18,
+          "gross_resource_per_10q": 75506970699.53055
+        }
+      }
+    },
+    {
+      "id": "replacement_only",
+      "overrides": {
+        "cessation_additionality": 0,
+        "asthma_additionality": 0
+      },
+      "outputs": {
+        "unquantified_gift_usd": 60000,
+        "cessation_offers": 60,
+        "asthma_offers": 20.833333333333332,
+        "additional_cessation_people": 0,
+        "additional_asthma_people": 0,
+        "additional_child_asthma_people": 0,
+        "additional_initial_quits": 0,
+        "qaly_per_extra_initial_quit": 0.13002696366471556,
+        "qaly_per_added_child": 0.0032693006296660417,
+        "cessation_net_qaly": 0,
+        "asthma_net_qaly": 0,
+        "gross_resource_usd": 112250,
+        "us": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "bay": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        }
+      }
+    },
+    {
+      "id": "no_quantified_allocation",
+      "overrides": {
+        "cessation_allocation": 0,
+        "asthma_allocation": 0
+      },
+      "outputs": {
+        "unquantified_gift_usd": 100000,
+        "cessation_offers": 0,
+        "asthma_offers": 0,
+        "additional_cessation_people": 0,
+        "additional_asthma_people": 0,
+        "additional_child_asthma_people": 0,
+        "additional_initial_quits": 0,
+        "qaly_per_extra_initial_quit": 0.13002696366471556,
+        "qaly_per_added_child": 0.0032693006296660417,
+        "cessation_net_qaly": 0,
+        "asthma_net_qaly": 0,
+        "gross_resource_usd": 100000,
+        "us": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "bay": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        }
+      }
+    },
+    {
+      "id": "no_clinical_effect",
+      "overrides": {
+        "extra_six_month_quit": 0,
+        "asthma_extra_symptom_free_days": 0
+      },
+      "outputs": {
+        "unquantified_gift_usd": 60000,
+        "cessation_offers": 60,
+        "asthma_offers": 20.833333333333332,
+        "additional_cessation_people": 24,
+        "additional_asthma_people": 7.291666666666666,
+        "additional_child_asthma_people": 4.374999999999999,
+        "additional_initial_quits": 0,
+        "qaly_per_extra_initial_quit": 0.13002696366471556,
+        "qaly_per_added_child": 0,
+        "cessation_net_qaly": 0,
+        "asthma_net_qaly": 0,
+        "gross_resource_usd": 112250,
+        "us": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "bay": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        }
+      }
+    },
+    {
+      "id": "asthma_trial_null",
+      "overrides": {
+        "asthma_extra_symptom_free_days": 0
+      },
+      "outputs": {
+        "unquantified_gift_usd": 60000,
+        "cessation_offers": 60,
+        "asthma_offers": 20.833333333333332,
+        "additional_cessation_people": 24,
+        "additional_asthma_people": 7.291666666666666,
+        "additional_child_asthma_people": 4.374999999999999,
+        "additional_initial_quits": 0.72,
+        "qaly_per_extra_initial_quit": 0.13002696366471556,
+        "qaly_per_added_child": 0,
+        "cessation_net_qaly": 0.09361941383859519,
+        "asthma_net_qaly": 0,
+        "gross_resource_usd": 112250,
+        "us": {
+          "qaly": 0.09361941383859519,
+          "donor_per_10q": 10681545.194504771,
+          "gross_resource_per_10q": 11990034.480831606
+        },
+        "bay": {
+          "qaly": 0.0702145603789464,
+          "donor_per_10q": 14242060.259339696,
+          "gross_resource_per_10q": 15986712.641108807
+        },
+        "sf": {
+          "qaly": 0.00468097069192976,
+          "donor_per_10q": 213630903.89009544,
+          "gross_resource_per_10q": 239800689.61663213
+        }
+      }
+    },
+    {
+      "id": "no_cessation_effect",
+      "overrides": {
+        "extra_six_month_quit": 0
+      },
+      "outputs": {
+        "unquantified_gift_usd": 60000,
+        "cessation_offers": 60,
+        "asthma_offers": 20.833333333333332,
+        "additional_cessation_people": 24,
+        "additional_asthma_people": 7.291666666666666,
+        "additional_child_asthma_people": 4.374999999999999,
+        "additional_initial_quits": 0,
+        "qaly_per_extra_initial_quit": 0.13002696366471556,
+        "qaly_per_added_child": 0.0032693006296660417,
+        "cessation_net_qaly": 0,
+        "asthma_net_qaly": 0.014303190254788932,
+        "gross_resource_usd": 112250,
+        "us": {
+          "qaly": 0.014303190254788932,
+          "donor_per_10q": 69914472.37899841,
+          "gross_resource_per_10q": 78478995.24542572
+        },
+        "bay": {
+          "qaly": 0.011442552203831146,
+          "donor_per_10q": 87393090.473748,
+          "gross_resource_per_10q": 98098744.05678214
+        },
+        "sf": {
+          "qaly": 0.0011442552203831146,
+          "donor_per_10q": 873930904.73748,
+          "gross_resource_per_10q": 980987440.5678214
+        }
+      }
+    },
+    {
+      "id": "no_cessation_mortality_advantage",
+      "overrides": {
+        "quit_mortality": 0.012
+      },
+      "outputs": {
+        "unquantified_gift_usd": 60000,
+        "cessation_offers": 60,
+        "asthma_offers": 20.833333333333332,
+        "additional_cessation_people": 24,
+        "additional_asthma_people": 7.291666666666666,
+        "additional_child_asthma_people": 4.374999999999999,
+        "additional_initial_quits": 0.72,
+        "qaly_per_extra_initial_quit": 0.09087685412082759,
+        "qaly_per_added_child": 0.0032693006296660417,
+        "cessation_net_qaly": 0.06543133496699587,
+        "asthma_net_qaly": 0.014303190254788932,
+        "gross_resource_usd": 112250,
+        "us": {
+          "qaly": 0.0797345252217848,
+          "donor_per_10q": 12541618.542512916,
+          "gross_resource_per_10q": 14077966.813970748
+        },
+        "bay": {
+          "qaly": 0.060516053429078044,
+          "donor_per_10q": 16524540.900076255,
+          "gross_resource_per_10q": 18548797.160335597
+        },
+        "sf": {
+          "qaly": 0.0044158219687329085,
+          "donor_per_10q": 226458405.04456377,
+          "gross_resource_per_10q": 254199559.66252282
+        }
+      }
+    },
+    {
+      "id": "fast_background_quitting",
+      "overrides": {
+        "background_quit_hazard": 0.3
+      },
+      "outputs": {
+        "unquantified_gift_usd": 60000,
+        "cessation_offers": 60,
+        "asthma_offers": 20.833333333333332,
+        "additional_cessation_people": 24,
+        "additional_asthma_people": 7.291666666666666,
+        "additional_child_asthma_people": 4.374999999999999,
+        "additional_initial_quits": 0.72,
+        "qaly_per_extra_initial_quit": 0.05864368136481542,
+        "qaly_per_added_child": 0.0032693006296660417,
+        "cessation_net_qaly": 0.0422234505826671,
+        "asthma_net_qaly": 0.014303190254788932,
+        "gross_resource_usd": 112250,
+        "us": {
+          "qaly": 0.05652664083745603,
+          "donor_per_10q": 17690773.504046146,
+          "gross_resource_per_10q": 19857893.2582918
+        },
+        "bay": {
+          "qaly": 0.04311014014083147,
+          "donor_per_10q": 23196398.729700647,
+          "gross_resource_per_10q": 26037957.574088976
+        },
+        "sf": {
+          "qaly": 0.0032554277495164697,
+          "donor_per_10q": 307179294.68670607,
+          "gross_resource_per_10q": 344808758.2858276
+        }
+      }
+    },
+    {
+      "id": "high_relapse",
+      "overrides": {
+        "relapse_hazard": 0.5
+      },
+      "outputs": {
+        "unquantified_gift_usd": 60000,
+        "cessation_offers": 60,
+        "asthma_offers": 20.833333333333332,
+        "additional_cessation_people": 24,
+        "additional_asthma_people": 7.291666666666666,
+        "additional_child_asthma_people": 4.374999999999999,
+        "additional_initial_quits": 0.72,
+        "qaly_per_extra_initial_quit": 0.042646581456379215,
+        "qaly_per_added_child": 0.0032693006296660417,
+        "cessation_net_qaly": 0.030705538648593034,
+        "asthma_net_qaly": 0.014303190254788932,
+        "gross_resource_usd": 112250,
+        "us": {
+          "qaly": 0.045008728903381964,
+          "donor_per_10q": 22217912.488634173,
+          "gross_resource_per_10q": 24939606.76849186
+        },
+        "bay": {
+          "qaly": 0.034471706190275925,
+          "donor_per_10q": 29009298.07420117,
+          "gross_resource_per_10q": 32562937.088290814
+        },
+        "sf": {
+          "qaly": 0.0026795321528127664,
+          "donor_per_10q": 373199477.7335577,
+          "gross_resource_per_10q": 418916413.75591856
+        }
+      }
+    },
+    {
+      "id": "short_health_horizon",
+      "overrides": {
+        "cessation_horizon": 3,
+        "asthma_years": 0.25
+      },
+      "outputs": {
+        "unquantified_gift_usd": 60000,
+        "cessation_offers": 60,
+        "asthma_offers": 20.833333333333332,
+        "additional_cessation_people": 24,
+        "additional_asthma_people": 7.291666666666666,
+        "additional_child_asthma_people": 4.374999999999999,
+        "additional_initial_quits": 0.72,
+        "qaly_per_extra_initial_quit": 0.046564966265994066,
+        "qaly_per_added_child": 0.0008264070316028844,
+        "cessation_net_qaly": 0.03352677571151573,
+        "asthma_net_qaly": 0.003615530763262619,
+        "gross_resource_usd": 112250,
+        "us": {
+          "qaly": 0.03714230647477835,
+          "donor_per_10q": 26923476.081892073,
+          "gross_resource_per_10q": 30221601.901923854
+        },
+        "bay": {
+          "qaly": 0.028037506394246892,
+          "donor_per_10q": 35666509.922051884,
+          "gross_resource_per_10q": 40035657.387503244
+        },
+        "sf": {
+          "qaly": 0.001965581246636796,
+          "donor_per_10q": 508755362.6750601,
+          "gross_resource_per_10q": 571077894.602755
+        }
+      }
+    },
+    {
+      "id": "no_child_allocation",
+      "overrides": {
+        "asthma_child_fraction": 0
+      },
+      "outputs": {
+        "unquantified_gift_usd": 60000,
+        "cessation_offers": 60,
+        "asthma_offers": 20.833333333333332,
+        "additional_cessation_people": 24,
+        "additional_asthma_people": 7.291666666666666,
+        "additional_child_asthma_people": 0,
+        "additional_initial_quits": 0.72,
+        "qaly_per_extra_initial_quit": 0.13002696366471556,
+        "qaly_per_added_child": 0.0032693006296660417,
+        "cessation_net_qaly": 0.09361941383859519,
+        "asthma_net_qaly": 0,
+        "gross_resource_usd": 112250,
+        "us": {
+          "qaly": 0.09361941383859519,
+          "donor_per_10q": 10681545.194504771,
+          "gross_resource_per_10q": 11990034.480831606
+        },
+        "bay": {
+          "qaly": 0.0702145603789464,
+          "donor_per_10q": 14242060.259339696,
+          "gross_resource_per_10q": 15986712.641108807
+        },
+        "sf": {
+          "qaly": 0.00468097069192976,
+          "donor_per_10q": 213630903.89009544,
+          "gross_resource_per_10q": 239800689.61663213
+        }
+      }
+    },
+    {
+      "id": "signed_clinical_harm",
+      "overrides": {
+        "extra_six_month_quit": -0.01,
+        "asthma_extra_symptom_free_days": -5
+      },
+      "outputs": {
+        "unquantified_gift_usd": 60000,
+        "cessation_offers": 60,
+        "asthma_offers": 20.833333333333332,
+        "additional_cessation_people": 24,
+        "additional_asthma_people": 7.291666666666666,
+        "additional_child_asthma_people": 4.374999999999999,
+        "additional_initial_quits": -0.24,
+        "qaly_per_extra_initial_quit": 0.13002696366471556,
+        "qaly_per_added_child": -0.0006699386536200905,
+        "cessation_net_qaly": -0.03120647127953173,
+        "asthma_net_qaly": -0.0029309816095878954,
+        "gross_resource_usd": 112250,
+        "us": {
+          "qaly": -0.034137452889119624,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "bay": {
+          "qaly": -0.025749638747319115,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "sf": {
+          "qaly": -0.0017948020927436182,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        }
+      }
+    },
+    {
+      "id": "shared_harm",
+      "overrides": {
+        "cessation_harm_per_added_offer": 0.01,
+        "asthma_harm_per_added_offer": 0.01
+      },
+      "outputs": {
+        "unquantified_gift_usd": 60000,
+        "cessation_offers": 60,
+        "asthma_offers": 20.833333333333332,
+        "additional_cessation_people": 24,
+        "additional_asthma_people": 7.291666666666666,
+        "additional_child_asthma_people": 4.374999999999999,
+        "additional_initial_quits": 0.72,
+        "qaly_per_extra_initial_quit": 0.13002696366471556,
+        "qaly_per_added_child": 0.0032693006296660417,
+        "cessation_net_qaly": -0.1463805861614048,
+        "asthma_net_qaly": -0.05861347641187774,
+        "gross_resource_usd": 112250,
+        "us": {
+          "qaly": -0.20499406257328256,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "bay": {
+          "qaly": -0.15667622075055582,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "sf": {
+          "qaly": -0.012008107421020459,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        }
+      }
+    },
+    {
+      "id": "independent_harm_zero_activity",
+      "overrides": {
+        "cessation_additionality": 0,
+        "asthma_additionality": 0,
+        "independent_harm_q": 0.1
+      },
+      "outputs": {
+        "unquantified_gift_usd": 60000,
+        "cessation_offers": 60,
+        "asthma_offers": 20.833333333333332,
+        "additional_cessation_people": 0,
+        "additional_asthma_people": 0,
+        "additional_child_asthma_people": 0,
+        "additional_initial_quits": 0,
+        "qaly_per_extra_initial_quit": 0.13002696366471556,
+        "qaly_per_added_child": 0.0032693006296660417,
+        "cessation_net_qaly": 0,
+        "asthma_net_qaly": 0,
+        "gross_resource_usd": 112250,
+        "us": {
+          "qaly": -0.1,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "bay": {
+          "qaly": -0.08000000000000002,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "sf": {
+          "qaly": -0.005000000000000001,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        }
+      }
+    },
+    {
+      "id": "donor_pays_external",
+      "overrides": {
+        "cessation_cash_per_offer": 350,
+        "asthma_cash_per_offer": 1500,
+        "cessation_external_per_offer": 0,
+        "asthma_external_per_offer": 0
+      },
+      "outputs": {
+        "unquantified_gift_usd": 60000,
+        "cessation_offers": 42.857142857142854,
+        "asthma_offers": 16.666666666666668,
+        "additional_cessation_people": 17.142857142857142,
+        "additional_asthma_people": 5.833333333333333,
+        "additional_child_asthma_people": 3.4999999999999996,
+        "additional_initial_quits": 0.5142857142857142,
+        "qaly_per_extra_initial_quit": 0.13002696366471556,
+        "qaly_per_added_child": 0.0032693006296660417,
+        "cessation_net_qaly": 0.06687100988471086,
+        "asthma_net_qaly": 0.011442552203831145,
+        "gross_resource_usd": 100000,
+        "us": {
+          "qaly": 0.078313562088542,
+          "donor_per_10q": 12769180.37350148,
+          "gross_resource_per_10q": 12769180.37350148
+        },
+        "bay": {
+          "qaly": 0.05930729917659806,
+          "donor_per_10q": 16861330.964040726,
+          "gross_resource_per_10q": 16861330.964040726
+        },
+        "sf": {
+          "qaly": 0.004258954670542035,
+          "donor_per_10q": 234799399.701695,
+          "gross_resource_per_10q": 234799399.701695
+        }
+      }
+    },
+    {
+      "id": "no_sf_health",
+      "overrides": {
+        "cessation_sf_share": 0,
+        "asthma_sf_share": 0
+      },
+      "outputs": {
+        "unquantified_gift_usd": 60000,
+        "cessation_offers": 60,
+        "asthma_offers": 20.833333333333332,
+        "additional_cessation_people": 24,
+        "additional_asthma_people": 7.291666666666666,
+        "additional_child_asthma_people": 4.374999999999999,
+        "additional_initial_quits": 0.72,
+        "qaly_per_extra_initial_quit": 0.13002696366471556,
+        "qaly_per_added_child": 0.0032693006296660417,
+        "cessation_net_qaly": 0.09361941383859519,
+        "asthma_net_qaly": 0.014303190254788932,
+        "gross_resource_usd": 112250,
+        "us": {
+          "qaly": 0.10792260409338413,
+          "donor_per_10q": 9265899.469352242,
+          "gross_resource_per_10q": 10400972.154347891
+        },
+        "bay": {
+          "qaly": 0.08165711258277754,
+          "donor_per_10q": 12246330.642493377,
+          "gross_resource_per_10q": 13746506.146198815
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        }
+      }
+    },
+    {
+      "id": "zero_horizons",
+      "overrides": {
+        "cessation_horizon": 0,
+        "asthma_years": 0
+      },
+      "outputs": {
+        "unquantified_gift_usd": 60000,
+        "cessation_offers": 60,
+        "asthma_offers": 20.833333333333332,
+        "additional_cessation_people": 24,
+        "additional_asthma_people": 7.291666666666666,
+        "additional_child_asthma_people": 4.374999999999999,
+        "additional_initial_quits": 0.72,
+        "qaly_per_extra_initial_quit": 0,
+        "qaly_per_added_child": 0,
+        "cessation_net_qaly": 0,
+        "asthma_net_qaly": 0,
+        "gross_resource_usd": 112250,
+        "us": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "bay": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        },
+        "sf": {
+          "qaly": 0,
+          "donor_per_10q": null,
+          "gross_resource_per_10q": null
+        }
+      }
+    },
+    {
+      "id": "no_discount",
+      "overrides": {
+        "discount": 0
+      },
+      "outputs": {
+        "unquantified_gift_usd": 60000,
+        "cessation_offers": 60,
+        "asthma_offers": 20.833333333333332,
+        "additional_cessation_people": 24,
+        "additional_asthma_people": 7.291666666666666,
+        "additional_child_asthma_people": 4.374999999999999,
+        "additional_initial_quits": 0.72,
+        "qaly_per_extra_initial_quit": 0.151674564849348,
+        "qaly_per_added_child": 0.0033424657534246575,
+        "cessation_net_qaly": 0.10920568669153055,
+        "asthma_net_qaly": 0.014623287671232874,
+        "gross_resource_usd": 112250,
+        "us": {
+          "qaly": 0.12382897436276342,
+          "donor_per_10q": 8075654.386593302,
+          "gross_resource_per_10q": 9064922.048950981
+        },
+        "bay": {
+          "qaly": 0.09360289515563422,
+          "donor_per_10q": 10683430.232978294,
+          "gross_resource_per_10q": 11992150.436518135
+        },
+        "sf": {
+          "qaly": 0.006630147348275158,
+          "donor_per_10q": 150826210.56078812,
+          "gross_resource_per_10q": 169302421.35448468
+        }
+      }
+    }
+  ],
+  "allocation": [
+    {
+      "component": "Adult cessation",
+      "share": 0.15,
+      "status": "quantified"
+    },
+    {
+      "component": "All-age asthma services",
+      "share": 0.25,
+      "status": "only child fraction quantified"
+    },
+    {
+      "component": "Sleep-apnea equipment",
+      "share": 0.25,
+      "status": "unquantified"
+    },
+    {
+      "component": "Senior/COPD services",
+      "share": 0.1,
+      "status": "unquantified"
+    },
+    {
+      "component": "Clean-air/policy/youth prevention",
+      "share": 0.1,
+      "status": "unquantified"
+    },
+    {
+      "component": "TB/other education",
+      "share": 0.05,
+      "status": "unquantified"
+    },
+    {
+      "component": "Central management/fundraising",
+      "share": 0.1,
+      "status": "retained shared cost"
+    }
+  ],
+  "financial_context": {
+    "source": "IRS-derived secondary extract; primary current return unavailable through links; not a budget allocation",
+    "fy_end": "2025-06",
+    "revenue": 1648480,
+    "expenses": 1373246,
+    "net_assets": 1994569,
+    "filing_date": "2026-05-16",
+    "marginal_room": null,
+    "note": "Other-year extract zeros not treated as zero activity. No affiliate financial pooling."
+  },
+  "sources": [
+    {
+      "publisher": "City of San Jose",
+      "title": "Senior Health and Wellness grant: legal recipient/EIN",
+      "url": "https://records.sanjoseca.gov/Contracts/CON667613-000.pdf",
+      "published": "2022",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary historical contract pp1–2; identity only, not current funding"
+    },
+    {
+      "publisher": "Breathe California",
+      "title": "Official donation page",
+      "url": "https://lungsrus.org/donate/",
+      "published": "Undated current",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary current recipient address/domain and unrestricted giving"
+    },
+    {
+      "publisher": "Breathe California",
+      "title": "About us / portfolio",
+      "url": "https://lungsrus.org/about-us/",
+      "published": "Undated current",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary service breadth, not marginal allocation"
+    },
+    {
+      "publisher": "Breathe California",
+      "title": "Ash Kickers",
+      "url": "https://lungsrus.org/ash-kickers-smoking-cessation-program/",
+      "published": "Undated current",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary six-session service; uncontrolled six-week success not causal sustained quit"
+    },
+    {
+      "publisher": "Breathe California",
+      "title": "Asthma services",
+      "url": "https://lungsrus.org/asthma/",
+      "published": "Undated current",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary all-age visits, equipment and follow-up; children/adults not interchangeable"
+    },
+    {
+      "publisher": "Breathe California",
+      "title": "County resources",
+      "url": "https://lungsrus.org/county-resources/",
+      "published": "Undated current",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary18-county scope includes SF; directory not verified cohort capacity"
+    },
+    {
+      "publisher": "Anthonisen et al.; Annals of Internal Medicine",
+      "title": "Lung Health Study14.5-year mortality randomized trial",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15710956/",
+      "published": "2005-02-15",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary randomized cohort; middle-aged mild airway obstruction; not Ash Kickers or conditional state hazard"
+    },
+    {
+      "publisher": "Krieger et al.; Archives of Pediatrics and Adolescent Medicine",
+      "title": "Seattle–King County Healthy Homes II",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2810206/",
+      "published": "2009",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary randomized child asthma study;24.4 additional symptom-free days/year over nurse comparator, indexed text"
+    },
+    {
+      "publisher": "Bryant-Stephens et al.; JAMA Pediatrics",
+      "title": "Community Health Workers Linking Clinics and Schools",
+      "url": "https://jamanetwork.com/journals/jamapediatrics/fullarticle/2825197",
+      "published": "2024-10-21",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary randomized trial;626 children, no overall between-group primary advantage"
+    },
+    {
+      "publisher": "California DHCS",
+      "title": "Asthma Community Supports definition updates",
+      "url": "https://www.dhcs.ca.gov/wp-content/uploads/2025/10/Community-Supports-February-2025-Service-Definition-Updates.pdf",
+      "published": "2025; effective2026-01-01",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary existing payer boundary; APS education/assessment vs remediation supplies/modifications"
+    },
+    {
+      "publisher": "Kick It California",
+      "title": "FAQs and existing free cessation support",
+      "url": "https://kickitca.org/faqs",
+      "published": "Undated current",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary free baseline services and conditional patch access"
+    },
+    {
+      "publisher": "ProPublica / IRS",
+      "title": "EIN94-1156307 FY2025 extract",
+      "url": "https://projects.propublica.org/nonprofits/organizations/941156307",
+      "published": "Filed2026-05-16",
+      "retrieved": "2026-09-08",
+      "sourceType": "Secondary IRS-derived financial context; raw current filing failed access"
+    },
+    {
+      "publisher": "Breathe California affiliates",
+      "title": "Separate regional affiliates",
+      "url": "https://www.breathecalifornia.org/",
+      "published": "Undated current",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary alliance directory, not consolidated entity"
+    }
+  ],
+  "assumptions": {
+    "allocation": "Judgment, not an audited marginal budget. Direct branch cost excludes central10% overhead; all60% nonbranch dollars retain cost.",
+    "cessation": "Extra six-month quits among all offers beyond actual usual care; initial state difference(-1 smoker,+1 former smoker). Both later face background quitting, relapse and absorbing death. Smoking/quit hazards and utilities are independent priors, not trial conditional coefficients.",
+    "recovery": "Two calendar years after initial six-month quit state have equal smoking/former mortality; then a lower former mortality applies. This is a coarse cohort-calendar recovery proxy, not exact time-since-each-quit/restart biology. No inherited Txt2stop lifetime coefficient.",
+    "asthma": "All-age offers retain cost; central60% child share receives transferred trial benefit. One finite benefit year maximum, no death or caregiver credit. Child recipients disjoint from adult cessation; adult asthma health excluded.",
+    "counterfactual": "Public APS, remediation, Kick It California, insured treatment, other charities and current funds remain baseline. Funding replacement is separate from incremental clinical effect and background later quitting.",
+    "resources": "Gross gift+outside real inputs for all nominal offers. Outside$100 cessation medicine/clinician and$300 asthma supplies/provider effort are unpriced priors excluding branch cash/central overhead. Not net induced resources, transfers or downstream savings.",
+    "geography": "US total modeled health; Bay means nine-county Bay Area, not all18 counties. Central cessationBay/SF75%/5%;asthma80%/8%, independent unverified future-residence shares. Non-US unquantified.",
+    "harms": "Shared per-added-offer and independent QALY losses are gift-date PV, excluding worsening in state/symptom differences. All age asthma offers can incur shared harms even when child benefit excluded.",
+    "scale": "Only illustrative$100k local margin; bounded computational inputs do not verify linear expansion."
+  }
+}

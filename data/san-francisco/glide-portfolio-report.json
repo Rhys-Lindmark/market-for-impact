@@ -1,0 +1,586 @@
+{
+  "organization": "GLIDE",
+  "eyebrow": "Whole-organization unrestricted-gift revision",
+  "program": "Foundation portfolio: overdose rescue access and housing-stability morbidity",
+  "donationUrl": "https://www.glide.org/give/",
+  "published": "2026-09-08",
+  "modelVersion": "glide-whole-foundation-gift-v1",
+  "nutshell": {
+    "headline": "A whole Foundation gift is not an all-rental-assistance gift",
+    "body": "Central $100,000 gift: 10% overdose rescue access, 10% rental stability, 80% other portfolio and support costs retained with unquantified health. Allocations and marginal effects are explicit priors.",
+    "whyItMayWork": "Additional rescue access can delay death despite recurrent risk; additional housing stability may improve finite adult health.",
+    "whyWeAreCautious": "No verified marginal offer, Foundation-only branch ledger or local causal health study. Whole-gift costs and clinical effects cannot be inferred from historical service counts.",
+    "recommendationBlocker": "Obtain a funded-versus-unfunded work queue, public/partner displacement ledger, unique-client overlap data and measured outcomes before recommending a tranche."
+  },
+  "summary": [
+    {
+      "label": "Central SF donor dollars / 10 QALYs",
+      "value": "$3,031,782",
+      "detail": "0.329839 modeled SF QALYs per $100,000 unrestricted gift."
+    },
+    {
+      "label": "Central Bay / US donor dollars / 10 QALYs",
+      "value": "$2,909,963 / $2,880,193",
+      "detail": "Future residence priors, not automatic clinic-address attribution."
+    },
+    {
+      "label": "Associated funding / modeled resources",
+      "value": "$103,642 / $95,842",
+      "detail": "Resource scenario excludes $7,800 assumed rent transfers once; neither metric is a verified societal cost ledger."
+    },
+    {
+      "label": "Historical program-only comparator",
+      "value": "$427,361 / 10 QALYs",
+      "detail": "Old rental-assistance health-transfer model retained historically, not as an ordinary-gift ranking."
+    }
+  ],
+  "programSection": {
+    "body": "Foundation social-service giving is distinct from Church giving. Audit consolidates Foundation, Church and property LLCs; consolidated expenses are not a Foundation marginal allocation ledger. Active HEAT services include Narcan and same-day MOUD access with public partners; Welcome Center connects clients to rental funding and workshops.",
+    "steps": [
+      {
+        "title": "Allocate the complete gift",
+        "detail": "Overdose rescue access 10%; Rental stability 10%; Meals and food access 22%; Family youth and child development 10%; Violence prevention and women support 5%; Other HEAT, HIV/HCV, treatment navigation 7%; Policy and community engagement 4%; Central administration, fundraising, safety and operations 28%; Other portfolio, property and affiliate support 4%. All are analyst priors."
+      },
+      {
+        "title": "Add genuinely new care",
+        "detail": "Subtract replacement of existing funding through separate .4 OD and .5 housing additionality priors. Nominal offers still incur all costs."
+      },
+      {
+        "title": "Credit finite disjoint health",
+        "detail": "Unique OD survival cohorts; one adult per housing household outside OD cohort; all shared harms retained."
+      }
+    ],
+    "boundary": "All marginal allocations are analyst priors summing to one, not audited fractions. Remaining 80% of central gift retained in denominator and unquantified. Offers include branch costs; separately allocated corporate costs not charged again."
+  },
+  "model": {
+    "headline": "Central whole-gift health is dominated by the conditional overdose pathway",
+    "body": "OD survival difference compares recurrent-hazard trajectories. Housing morbidity uses .112 external stability risk difference × .5 transfer × .1 utility gap × finite discounted common-survival exposure. This is a new explicit bridge, not the old .072 QALY coefficient. Both expected caseloads count people alive at intervention start, already conditioning on pre-service survival; delay only discounts health, and mortality starts with care rather than gift date.",
+    "equation": {
+      "label": "Regional net QALYs",
+      "expression": "OD added people × finite survival gain × residence share + disjoint housing adults × finite morbidity gain × residence share − shared and independent harms",
+      "result": "US 0.3471989767295763; Bay 0.3436469247558342; SF 0.32983902789309744"
+    },
+    "inputColumnLabel": "Analyst central",
+    "inputs": [
+      {
+        "key": "gift",
+        "label": "gift",
+        "confidence": "Unverified analyst prior",
+        "best": "100000",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": "Explicit analyst input. See model JSON bounds and scope: nominal offered-service costs, finite health duration, gift-date PV distinct harms, and independently nested geography."
+      },
+      {
+        "key": "discount",
+        "label": "discount",
+        "confidence": "Unverified analyst prior",
+        "best": "0.03",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": "Explicit analyst input. See model JSON bounds and scope: nominal offered-service costs, finite health duration, gift-date PV distinct harms, and independently nested geography."
+      },
+      {
+        "key": "od_allocation",
+        "label": "od allocation",
+        "confidence": "Unverified analyst prior",
+        "best": "0.1",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": "10% judgmental unrestricted deployment; not measured share of audited Program column."
+      },
+      {
+        "key": "housing_allocation",
+        "label": "housing allocation",
+        "confidence": "Unverified analyst prior",
+        "best": "0.1",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": "10% judgmental allocation; not all Foundation gifts fund rental assistance."
+      },
+      {
+        "key": "od_cost",
+        "label": "od cost",
+        "confidence": "Unverified analyst prior",
+        "best": "300",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": "$300 cash per offered unique-person outreach/rescue-access package; unsourced fully loaded branch prior, not price per dose."
+      },
+      {
+        "key": "housing_cost",
+        "label": "housing cost",
+        "confidence": "Unverified analyst prior",
+        "best": "3077",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": "$3,077 historical $100,000/39 household anchor with retained 20% current-cost contingency; historical case management/workshops already included, not charged a second time."
+      },
+      {
+        "key": "od_additionality",
+        "label": "od additionality",
+        "confidence": "Unverified analyst prior",
+        "best": "0.4",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": "Explicit analyst input. See model JSON bounds and scope: nominal offered-service costs, finite health duration, gift-date PV distinct harms, and independently nested geography."
+      },
+      {
+        "key": "housing_additionality",
+        "label": "housing additionality",
+        "confidence": "Unverified analyst prior",
+        "best": "0.5",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": "Explicit analyst input. See model JSON bounds and scope: nominal offered-service costs, finite health duration, gift-date PV distinct harms, and independently nested geography."
+      },
+      {
+        "key": "od_events",
+        "label": "od events",
+        "confidence": "Unverified analyst prior",
+        "best": "0.5",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": "0.5 recurrent overdose events/person-year prior; external 2018 cohort 295 per 1,000 person-years provides context, not local calibration."
+      },
+      {
+        "key": "od_fatality_without_rescue",
+        "label": "od fatality without rescue",
+        "confidence": "Unverified analyst prior",
+        "best": "0.1",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": "Explicit analyst input. See model JSON bounds and scope: nominal offered-service costs, finite health duration, gift-date PV distinct harms, and independently nested geography."
+      },
+      {
+        "key": "od_baseline_rescue",
+        "label": "od baseline rescue",
+        "confidence": "Unverified analyst prior",
+        "best": "0.8",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": "Explicit analyst input. See model JSON bounds and scope: nominal offered-service costs, finite health duration, gift-date PV distinct harms, and independently nested geography."
+      },
+      {
+        "key": "od_rescue_increment",
+        "label": "od rescue increment",
+        "confidence": "Unverified analyst prior",
+        "best": "0.1",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": ".1 absolute change in effective rescue probability relative to baseline .8; signed deterioration allowed; not .1 mortality reduction."
+      },
+      {
+        "key": "od_other_mortality",
+        "label": "od other mortality",
+        "confidence": "Unverified analyst prior",
+        "best": "0.06",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": "0.06 non-overdose mortality hazard; approximate high-risk prior, not total mortality added twice."
+      },
+      {
+        "key": "od_utility",
+        "label": "od utility",
+        "confidence": "Unverified analyst prior",
+        "best": "0.7",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": "Explicit analyst input. See model JSON bounds and scope: nominal offered-service costs, finite health duration, gift-date PV distinct harms, and independently nested geography."
+      },
+      {
+        "key": "od_active_years",
+        "label": "od active years",
+        "confidence": "Unverified analyst prior",
+        "best": "1",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": "Explicit analyst input. See model JSON bounds and scope: nominal offered-service costs, finite health duration, gift-date PV distinct harms, and independently nested geography."
+      },
+      {
+        "key": "od_horizon",
+        "label": "od horizon",
+        "confidence": "Unverified analyst prior",
+        "best": "15",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": "15 years maximum survival follow-up, with baseline recurrent fatal risk resuming after support ends."
+      },
+      {
+        "key": "od_delay",
+        "label": "od delay",
+        "confidence": "Unverified analyst prior",
+        "best": "0.25",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": "Explicit analyst input. See model JSON bounds and scope: nominal offered-service costs, finite health duration, gift-date PV distinct harms, and independently nested geography."
+      },
+      {
+        "key": "housing_baseline_stability",
+        "label": "housing baseline stability",
+        "confidence": "Unverified analyst prior",
+        "best": "0.8",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": "Explicit analyst input. See model JSON bounds and scope: nominal offered-service costs, finite health duration, gift-date PV distinct harms, and independently nested geography."
+      },
+      {
+        "key": "housing_external_risk_difference",
+        "label": "housing external risk difference",
+        "confidence": "External observational input; local transfer unverified",
+        "best": "0.112",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": ".112 stable housing at discharge risk difference from the VA study model input table; observational comparison, not a GLIDE randomized effect or two-year constant."
+      },
+      {
+        "key": "housing_transfer",
+        "label": "housing transfer",
+        "confidence": "Unverified analyst prior",
+        "best": "0.5",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": ".5 judgmental retention of external housing contrast after differing clients, public care and program mix; not a funding fraction."
+      },
+      {
+        "key": "housing_utility_gap",
+        "label": "housing utility gap",
+        "confidence": "Unverified analyst prior",
+        "best": "0.1",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": ".1 morbidity-only utility prior. Does not import stable housing=1 or unstable=.434 from the VA economic model."
+      },
+      {
+        "key": "housing_years",
+        "label": "housing years",
+        "confidence": "Unverified analyst prior",
+        "best": "1",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": "One-year persistent incremental housing-state probability is a prior; 0 to 2 finite-year stress domain."
+      },
+      {
+        "key": "housing_mortality",
+        "label": "housing mortality",
+        "confidence": "Unverified analyst prior",
+        "best": "0.01",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": "Explicit analyst input. See model JSON bounds and scope: nominal offered-service costs, finite health duration, gift-date PV distinct harms, and independently nested geography."
+      },
+      {
+        "key": "housing_delay",
+        "label": "housing delay",
+        "confidence": "Unverified analyst prior",
+        "best": "0.1",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": "Explicit analyst input. See model JSON bounds and scope: nominal offered-service costs, finite health duration, gift-date PV distinct harms, and independently nested geography."
+      },
+      {
+        "key": "housing_disjoint_share",
+        "label": "housing disjoint share",
+        "confidence": "Unverified analyst prior",
+        "best": "0.9",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": ".9 prior share of one adult-equivalent housing recipients outside the OD health cohort; costs and harms not removed."
+      },
+      {
+        "key": "od_external_resources",
+        "label": "od external resources",
+        "confidence": "Unverified analyst prior",
+        "best": "80",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": "Explicit analyst input. See model JSON bounds and scope: nominal offered-service costs, finite health duration, gift-date PV distinct harms, and independently nested geography."
+      },
+      {
+        "key": "housing_external_resources",
+        "label": "housing external resources",
+        "confidence": "Unverified analyst prior",
+        "best": "300",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": "Explicit analyst input. See model JSON bounds and scope: nominal offered-service costs, finite health duration, gift-date PV distinct harms, and independently nested geography."
+      },
+      {
+        "key": "housing_cash_transfer",
+        "label": "housing cash transfer",
+        "confidence": "Unverified analyst prior",
+        "best": "2400",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": "$2,400 donor cash to landlord per nominal housing offer is a composition prior, not a historical itemized amount. Removed once only for modeled resource metric."
+      },
+      {
+        "key": "od_harm",
+        "label": "od harm",
+        "confidence": "Unverified analyst prior",
+        "best": "0",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": "Explicit analyst input. See model JSON bounds and scope: nominal offered-service costs, finite health duration, gift-date PV distinct harms, and independently nested geography."
+      },
+      {
+        "key": "housing_harm",
+        "label": "housing harm",
+        "confidence": "Unverified analyst prior",
+        "best": "0",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": "Explicit analyst input. See model JSON bounds and scope: nominal offered-service costs, finite health duration, gift-date PV distinct harms, and independently nested geography."
+      },
+      {
+        "key": "independent_harm",
+        "label": "independent harm",
+        "confidence": "Unverified analyst prior",
+        "best": "0",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": "Explicit analyst input. See model JSON bounds and scope: nominal offered-service costs, finite health duration, gift-date PV distinct harms, and independently nested geography."
+      },
+      {
+        "key": "od_bay",
+        "label": "od bay",
+        "confidence": "Unverified analyst prior",
+        "best": "0.99",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": "Explicit analyst input. See model JSON bounds and scope: nominal offered-service costs, finite health duration, gift-date PV distinct harms, and independently nested geography."
+      },
+      {
+        "key": "od_sf",
+        "label": "od sf",
+        "confidence": "Unverified analyst prior",
+        "best": "0.95",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": "Explicit analyst input. See model JSON bounds and scope: nominal offered-service costs, finite health duration, gift-date PV distinct harms, and independently nested geography."
+      },
+      {
+        "key": "housing_bay",
+        "label": "housing bay",
+        "confidence": "Unverified analyst prior",
+        "best": "0.98",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": "Explicit analyst input. See model JSON bounds and scope: nominal offered-service costs, finite health duration, gift-date PV distinct harms, and independently nested geography."
+      },
+      {
+        "key": "housing_sf",
+        "label": "housing sf",
+        "confidence": "Unverified analyst prior",
+        "best": "0.95",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": "Explicit analyst input. See model JSON bounds and scope: nominal offered-service costs, finite health duration, gift-date PV distinct harms, and independently nested geography."
+      },
+      {
+        "key": "harm_bay",
+        "label": "harm bay",
+        "confidence": "Unverified analyst prior",
+        "best": "0.98",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": "Explicit analyst input. See model JSON bounds and scope: nominal offered-service costs, finite health duration, gift-date PV distinct harms, and independently nested geography."
+      },
+      {
+        "key": "harm_sf",
+        "label": "harm sf",
+        "confidence": "Unverified analyst prior",
+        "best": "0.95",
+        "range": "Signed/zero/joint stress scenarios below; computational bounds are not probability intervals.",
+        "basis": "Explicit analyst input. See model JSON bounds and scope: nominal offered-service costs, finite health duration, gift-date PV distinct harms, and independently nested geography."
+      }
+    ],
+    "giftHeading": "One ordinary unrestricted $100,000 Foundation gift",
+    "sensitivity": [
+      {
+        "case": "central",
+        "headline": "SF $3,031,782 / 10 QALYs; US $2,880,193",
+        "detail": "{\"us\":{\"qaly\":0.3471989767295763,\"donor_per_10q\":2880192.8203229485,\"associated_funding_per_10q\":2985079.140166926,\"modeled_resource_per_10q\":2760429.71641733},\"bay\":{\"qaly\":0.3436469247558342,\"donor_per_10q\":2909963.476933523,\"associated_funding_per_10q\":3015933.93759932,\"modeled_resource_per_10q\":2788962.4606854278},\"sf\":{\"qaly\":0.32983902789309744,\"donor_per_10q\":3031781.9161294196,\"associated_funding_per_10q\":3142188.568596765,\"modeled_resource_per_10q\":2905715.490965611},\"associated_funding\":103641.64229227602,\"modeled_resource_cost\":95841.83728740114}"
+      },
+      {
+        "case": "favorable joint",
+        "headline": "SF $30,692 / 10 QALYs; US $29,157",
+        "detail": "{\"us\":{\"qaly\":34.29672378130451,\"donor_per_10q\":29157.30395639452,\"associated_funding_per_10q\":32779.127062844665,\"modeled_resource_per_10q\":28685.441587366873},\"bay\":{\"qaly\":33.951740699294454,\"donor_per_10q\":29453.57084506659,\"associated_funding_per_10q\":33112.19523687128,\"modeled_resource_per_10q\":28976.913890223936},\"sf\":{\"qaly\":32.581887592239276,\"donor_per_10q\":30691.898901467925,\"associated_funding_per_10q\":34504.3442766786,\"modeled_resource_per_10q\":30195.201670912502},\"associated_funding\":112421.66666666667,\"modeled_resource_cost\":98381.66666666667}"
+      },
+      {
+        "case": "pessimistic positive",
+        "headline": "SF $940,211,629 / 10 QALYs; US $893,201,047",
+        "detail": "{\"us\":{\"qaly\":0.0011195687724436722,\"donor_per_10q\":893201047.2365261,\"associated_funding_per_10q\":910469600.8164322,\"modeled_resource_per_10q\":867595950.549079},\"bay\":{\"qaly\":0.001108223073991692,\"donor_per_10q\":902345406.325204,\"associated_funding_per_10q\":919790750.8474911,\"modeled_resource_per_10q\":876478171.3438814},\"sf\":{\"qaly\":0.0010635903338214886,\"donor_per_10q\":940211628.6700275,\"associated_funding_per_10q\":958389053.4909813,\"modeled_resource_per_10q\":913258895.3148199},\"associated_funding\":101933.33333333333,\"modeled_resource_cost\":97133.33333333333}"
+      },
+      {
+        "case": "no quantified allocation",
+        "headline": "SF Not a positive finite price / 10 QALYs; US Not a positive finite price",
+        "detail": "{\"us\":{\"qaly\":0,\"donor_per_10q\":null,\"associated_funding_per_10q\":null,\"modeled_resource_per_10q\":null},\"bay\":{\"qaly\":0,\"donor_per_10q\":null,\"associated_funding_per_10q\":null,\"modeled_resource_per_10q\":null},\"sf\":{\"qaly\":0,\"donor_per_10q\":null,\"associated_funding_per_10q\":null,\"modeled_resource_per_10q\":null},\"associated_funding\":100000,\"modeled_resource_cost\":100000}"
+      },
+      {
+        "case": "complete funding replacement",
+        "headline": "SF Not a positive finite price / 10 QALYs; US Not a positive finite price",
+        "detail": "{\"us\":{\"qaly\":0,\"donor_per_10q\":null,\"associated_funding_per_10q\":null,\"modeled_resource_per_10q\":null},\"bay\":{\"qaly\":0,\"donor_per_10q\":null,\"associated_funding_per_10q\":null,\"modeled_resource_per_10q\":null},\"sf\":{\"qaly\":0,\"donor_per_10q\":null,\"associated_funding_per_10q\":null,\"modeled_resource_per_10q\":null},\"associated_funding\":103641.64229227602,\"modeled_resource_cost\":95841.83728740114}"
+      },
+      {
+        "case": "clinical null",
+        "headline": "SF Not a positive finite price / 10 QALYs; US Not a positive finite price",
+        "detail": "{\"us\":{\"qaly\":0,\"donor_per_10q\":null,\"associated_funding_per_10q\":null,\"modeled_resource_per_10q\":null},\"bay\":{\"qaly\":0,\"donor_per_10q\":null,\"associated_funding_per_10q\":null,\"modeled_resource_per_10q\":null},\"sf\":{\"qaly\":0,\"donor_per_10q\":null,\"associated_funding_per_10q\":null,\"modeled_resource_per_10q\":null},\"associated_funding\":103641.64229227602,\"modeled_resource_cost\":95841.83728740114}"
+      },
+      {
+        "case": "quarter year preservation",
+        "headline": "SF $11,587,147 / 10 QALYs; US $11,007,790",
+        "detail": "{\"us\":{\"qaly\":0.0908447585711624,\"donor_per_10q\":11007789.725333016,\"associated_funding_per_10q\":11408654.051415559,\"modeled_resource_per_10q\":10550067.91749293},\"bay\":{\"qaly\":0.08991599754059873,\"donor_per_10q\":11121491.473733377,\"associated_funding_per_10q\":11526496.410772722,\"modeled_resource_per_10q\":10659041.762187734},\"sf\":{\"qaly\":0.08630252064260428,\"donor_per_10q\":11587147.079297911,\"associated_funding_per_10q\":12009109.527805852,\"modeled_resource_per_10q\":11105334.64999256},\"associated_funding\":103641.64229227602,\"modeled_resource_cost\":95841.83728740114}"
+      },
+      {
+        "case": "high recurrent mortality",
+        "headline": "SF $1,419,763 / 10 QALYs; US $1,348,775",
+        "detail": "{\"us\":{\"qaly\":0.7414135277264272,\"donor_per_10q\":1348774.9583778677,\"associated_funding_per_10q\":1397892.5176897845,\"modeled_resource_per_10q\":1292690.7009817285},\"bay\":{\"qaly\":0.7339193302427165,\"donor_per_10q\":1362547.5700023968,\"associated_funding_per_10q\":1412166.6785639834,\"modeled_resource_per_10q\":1305890.6250051353},\"sf\":{\"qaly\":0.7043428513401058,\"donor_per_10q\":1419763.1140819662,\"associated_funding_per_10q\":1471465.8080945103,\"modeled_resource_per_10q\":1360727.0536649774},\"associated_funding\":103641.64229227602,\"modeled_resource_cost\":95841.83728740114}"
+      },
+      {
+        "case": "five year od horizon",
+        "headline": "SF $6,249,722 / 10 QALYs; US $5,937,236",
+        "detail": "{\"us\":{\"qaly\":0.16842854239040178,\"donor_per_10q\":5937235.968486223,\"associated_funding_per_10q\":6153448.864506842,\"modeled_resource_per_10q\":5690356.036285621},\"bay\":{\"qaly\":0.16666419476005137,\"donor_per_10q\":6000088.989957999,\"associated_funding_per_10q\":6218590.768190508,\"modeled_resource_per_10q\":5750595.526854817},\"sf\":{\"qaly\":0.16000711527088168,\"donor_per_10q\":6249722.072090762,\"associated_funding_per_10q\":6477314.594217728,\"modeled_resource_per_10q\":5989848.459248022},\"associated_funding\":103641.64229227602,\"modeled_resource_cost\":95841.83728740114}"
+      },
+      {
+        "case": "housing fully overlaps",
+        "headline": "SF $3,103,343 / 10 QALYs; US $2,948,176",
+        "detail": "{\"us\":{\"qaly\":0.3391927560849388,\"donor_per_10q\":2948176.1684485544,\"associated_funding_per_10q\":3055538.1986495797,\"modeled_resource_per_10q\":2825586.2063104007},\"bay\":{\"qaly\":0.33580082852408943,\"donor_per_10q\":2977955.7257056106,\"associated_funding_per_10q\":3086402.2208581613,\"modeled_resource_per_10q\":2854127.481121617},\"sf\":{\"qaly\":0.32223311828069184,\"donor_per_10q\":3103343.335209005,\"associated_funding_per_10q\":3216355.9985785056,\"modeled_resource_per_10q\":2974301.2698004222},\"associated_funding\":103641.64229227602,\"modeled_resource_cost\":95841.83728740114}"
+      },
+      {
+        "case": "housing worsens",
+        "headline": "SF Not a positive finite price / 10 QALYs; US Not a positive finite price",
+        "detail": "{\"us\":{\"qaly\":-0.008006220644637487,\"donor_per_10q\":null,\"associated_funding_per_10q\":null,\"modeled_resource_per_10q\":null},\"bay\":{\"qaly\":-0.007846096231744737,\"donor_per_10q\":null,\"associated_funding_per_10q\":null,\"modeled_resource_per_10q\":null},\"sf\":{\"qaly\":-0.0076059096124056124,\"donor_per_10q\":null,\"associated_funding_per_10q\":null,\"modeled_resource_per_10q\":null},\"associated_funding\":100974.97562560935,\"modeled_resource_cost\":93175.17062073447}"
+      },
+      {
+        "case": "rescue worsens",
+        "headline": "SF Not a positive finite price / 10 QALYs; US Not a positive finite price",
+        "detail": "{\"us\":{\"qaly\":-0.3375376705556063,\"donor_per_10q\":null,\"associated_funding_per_10q\":null,\"modeled_resource_per_10q\":null},\"bay\":{\"qaly\":-0.33416229385005025,\"donor_per_10q\":null,\"associated_funding_per_10q\":null,\"modeled_resource_per_10q\":null},\"sf\":{\"qaly\":-0.32066078702782597,\"donor_per_10q\":null,\"associated_funding_per_10q\":null,\"modeled_resource_per_10q\":null},\"associated_funding\":102666.66666666667,\"modeled_resource_cost\":102666.66666666667}"
+      },
+      {
+        "case": "independent harm zero activity",
+        "headline": "SF Not a positive finite price / 10 QALYs; US Not a positive finite price",
+        "detail": "{\"us\":{\"qaly\":-0.1,\"donor_per_10q\":null,\"associated_funding_per_10q\":null,\"modeled_resource_per_10q\":null},\"bay\":{\"qaly\":-0.098,\"donor_per_10q\":null,\"associated_funding_per_10q\":null,\"modeled_resource_per_10q\":null},\"sf\":{\"qaly\":-0.095,\"donor_per_10q\":null,\"associated_funding_per_10q\":null,\"modeled_resource_per_10q\":null},\"associated_funding\":103641.64229227602,\"modeled_resource_cost\":95841.83728740114}"
+      },
+      {
+        "case": "shared burdens",
+        "headline": "SF Not a positive finite price / 10 QALYs; US Not a positive finite price",
+        "detail": "{\"us\":{\"qaly\":-0.08530021079073576,\"donor_per_10q\":null,\"associated_funding_per_10q\":null,\"modeled_resource_per_10q\":null},\"bay\":{\"qaly\":-0.08420227901407165,\"donor_per_10q\":null,\"associated_funding_per_10q\":null,\"modeled_resource_per_10q\":null},\"sf\":{\"qaly\":-0.08103520025119897,\"donor_per_10q\":null,\"associated_funding_per_10q\":null,\"modeled_resource_per_10q\":null},\"associated_funding\":103641.64229227602,\"modeled_resource_cost\":95841.83728740114}"
+      },
+      {
+        "case": "zero sf exposure",
+        "headline": "SF Not a positive finite price / 10 QALYs; US $2,880,193",
+        "detail": "{\"us\":{\"qaly\":0.3471989767295763,\"donor_per_10q\":2880192.8203229485,\"associated_funding_per_10q\":2985079.140166926,\"modeled_resource_per_10q\":2760429.71641733},\"bay\":{\"qaly\":0.3436469247558342,\"donor_per_10q\":2909963.476933523,\"associated_funding_per_10q\":3015933.93759932,\"modeled_resource_per_10q\":2788962.4606854278},\"sf\":{\"qaly\":0,\"donor_per_10q\":null,\"associated_funding_per_10q\":null,\"modeled_resource_per_10q\":null},\"associated_funding\":103641.64229227602,\"modeled_resource_cost\":95841.83728740114}"
+      },
+      {
+        "case": "zero health windows",
+        "headline": "SF Not a positive finite price / 10 QALYs; US Not a positive finite price",
+        "detail": "{\"us\":{\"qaly\":0,\"donor_per_10q\":null,\"associated_funding_per_10q\":null,\"modeled_resource_per_10q\":null},\"bay\":{\"qaly\":0,\"donor_per_10q\":null,\"associated_funding_per_10q\":null,\"modeled_resource_per_10q\":null},\"sf\":{\"qaly\":0,\"donor_per_10q\":null,\"associated_funding_per_10q\":null,\"modeled_resource_per_10q\":null},\"associated_funding\":103641.64229227602,\"modeled_resource_cost\":95841.83728740114}"
+      },
+      {
+        "case": "no housing transfer deduction",
+        "headline": "SF $3,031,782 / 10 QALYs; US $2,880,193",
+        "detail": "{\"us\":{\"qaly\":0.3471989767295763,\"donor_per_10q\":2880192.8203229485,\"associated_funding_per_10q\":2985079.140166926,\"modeled_resource_per_10q\":2985079.140166926},\"bay\":{\"qaly\":0.3436469247558342,\"donor_per_10q\":2909963.476933523,\"associated_funding_per_10q\":3015933.93759932,\"modeled_resource_per_10q\":3015933.93759932},\"sf\":{\"qaly\":0.32983902789309744,\"donor_per_10q\":3031781.9161294196,\"associated_funding_per_10q\":3142188.568596765,\"modeled_resource_per_10q\":3142188.568596765},\"associated_funding\":103641.64229227602,\"modeled_resource_cost\":103641.64229227602}"
+      },
+      {
+        "case": "donor covers outside costs",
+        "headline": "SF $3,826,656 / 10 QALYs; US $3,635,323",
+        "detail": "{\"us\":{\"qaly\":0.27507873286832,\"donor_per_10q\":3635322.8385660015,\"associated_funding_per_10q\":3635322.8385660015,\"modeled_resource_per_10q\":3376964.0937463865},\"bay\":{\"qaly\":0.27225499575899254,\"donor_per_10q\":3673027.182521297,\"associated_funding_per_10q\":3673027.182521297,\"modeled_resource_per_10q\":3411988.8278262685},\"sf\":{\"qaly\":0.26132479622490395,\"donor_per_10q\":3826655.6195431603,\"associated_funding_per_10q\":3826655.6195431603,\"modeled_resource_per_10q\":3554699.046048829},\"associated_funding\":100000,\"modeled_resource_cost\":92893.10038495707}"
+      }
+    ],
+    "uncertaintyBoundary": "18 joint and one-way scenarios are not confidence intervals. Zero and negative health remain. Favorable jointly optimistic SF $30,692 is not a measured bargain or posterior expectation. Computational linearity is only illustrative near the $100,000 gift.",
+    "fundingBoundary": "Unknown not zero. Government, SF ERAP, Season of Sharing, problem-solving services, SFAF subcontract and existing donor-funded stock belong in baseline. Proposed public contract not guaranteed new money. No current unfunded queue or executable gift tranche."
+  },
+  "evidence": [
+    {
+      "key": "portfolio",
+      "design": "FY2025 independent consolidated audit",
+      "population": "Foundation, controlled Church and two property LLCs",
+      "result": "$30,766,602 total expenses; $10,826,230 contract revenue. Program $18,342,460; Church $1,922,106; administration $7,766,659; fundraising $2,735,377.",
+      "transfer": "Not standalone Foundation cost allocation or September 2026 room. No audit percentage becomes a marginal benefit multiplier."
+    },
+    {
+      "key": "housing",
+      "design": "VA two-year Markov economic model using observational TFA comparison",
+      "population": "Veterans enrolled in SSVF homelessness prevention",
+      "result": "Model input .112 higher probability of stable housing at program exit. Model output .144 QALYs not imported.",
+      "transfer": "One-year persistence, .5 transfer and .1 morbidity gap are priors. No mortality benefit or child multiplier."
+    },
+    {
+      "key": "od",
+      "design": "Current HEAT activity plus external post-overdose cohorts",
+      "population": "GLIDE service users; external cohorts differ in date, drugs and healthcare",
+      "result": "Naloxone access exists; recurrent overdose and competing mortality require finite survival accounting.",
+      "transfer": "No causal GLIDE rescue increment or unique people per donor dollar measured; reported rescues/doses do not equal permanent lives saved."
+    }
+  ],
+  "reservations": [
+    "Unknown not zero. Government, SF ERAP, Season of Sharing, problem-solving services, SFAF subcontract and existing donor-funded stock belong in baseline. Proposed public contract not guaranteed new money. No current unfunded queue or executable gift tranche.",
+    "Associated funding envelope = full gift plus nominal offered service outside resource priors. Modeled resource cost removes donor-funded rent-transfer prior once. External resources are non-transfer staff/supplies/partner real costs not paid by donor; incurred per nominal offer, including replaced/deduplicated activity. No induced savings credited. Not a validated societal ledger: other transfers, housing service opportunity costs, in-kind and public displacement remain uncertain.",
+    "VA discharge-state probability is not proof of a constant one-year SF effect; local health utility is missing.",
+    "Overlap exclusion requires unique-person linkage across HEAT and housing. 90% disjoint is unverified.",
+    "Consolidated Church/property scope and high support costs prevent relabeling an old program budget as all-organization efficiency."
+  ],
+  "excludedBenefits": [
+    "80% central unquantified portfolio: meals, children/families, violence prevention, other HEAT, policy, operations and affiliate/property support",
+    "Separate Church health or spiritual-wellbeing claims",
+    "MOUD, HIV, HCV and other health endpoints already potentially within OD cohort; no stacked mortality credit",
+    "Housing mortality, children, caregiver spillovers, wealth and shelter/healthcare savings",
+    "Any housing health after two-year maximum or OD survival beyond finite horizon",
+    "Historical program-only $427,361 price as current unrestricted-gift outcome"
+  ],
+  "sources": [
+    {
+      "publisher": "GLIDE",
+      "title": "FY2025 consolidated audited financial statements",
+      "url": "https://www.glide.org/wp-content/uploads/2026/03/GLIDE-Foundation-2024-25-SA-FS-Final.pdf",
+      "published": "2026-03-11",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary audit; text tables, Foundation + Church + LLCs"
+    },
+    {
+      "publisher": "GLIDE",
+      "title": "Financials and Annual Reports",
+      "url": "https://www.glide.org/financials-annual-reports/",
+      "published": "Undated current",
+      "retrieved": "2026-09-08",
+      "sourceType": "Official financial index and distinct Foundation/Church giving routes"
+    },
+    {
+      "publisher": "GLIDE",
+      "title": "Health Empowerment & Access Team",
+      "url": "https://www.glide.org/heat/",
+      "published": "Undated current",
+      "retrieved": "2026-09-08",
+      "sourceType": "Official active service description"
+    },
+    {
+      "publisher": "GLIDE",
+      "title": "Welcome Center",
+      "url": "https://www.glide.org/programs/welcome-center/",
+      "published": "Undated current",
+      "retrieved": "2026-09-08",
+      "sourceType": "Official eligibility and activity"
+    },
+    {
+      "publisher": "GLIDE",
+      "title": "Impact Report 2024–2025",
+      "url": "https://www.glide.org/wp-content/uploads/2026/01/GLIDE-Impact-Report-2024-2025.pdf",
+      "published": "2026-01",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary organizational reporting; historical cohort is not causal"
+    },
+    {
+      "publisher": "GLIDE",
+      "title": "GLIDE Helped 1,100 People and Prevented Over 500 Evictions",
+      "url": "https://www.glide.org/glide-helped-1100-people-and-prevented-over-500-evictions/",
+      "published": "Undated; describes FY2023–2024 and a prior three-year cohort",
+      "retrieved": "2026-09-08",
+      "sourceType": "Official activity and partner funding pathways; outcomes not causal"
+    },
+    {
+      "publisher": "JAMA Network Open",
+      "title": "Cost-Effectiveness of Temporary Financial Assistance for Veterans Experiencing Housing Instability",
+      "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2825636",
+      "published": "2024-11-05",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary economic model; underlying observational stability contrast, not GLIDE trial"
+    },
+    {
+      "publisher": "SF Department of Public Health",
+      "title": "SFAF contract 1000037481 request",
+      "url": "https://media.api.sf.gov/documents/SFAF_-_1000037481_-_HC_Memo_May_2026.cleaned.pdf",
+      "published": "2026-05-04",
+      "retrieved": "2026-09-08",
+      "sourceType": "Official proposed public baseline; final execution not verified"
+    },
+    {
+      "publisher": "SF DPH",
+      "title": "Health services for people experiencing homelessness",
+      "url": "https://www.sf.gov/departments--san-francisco-health-network--health-services-people-experiencing-homelessness",
+      "published": "Undated current",
+      "retrieved": "2026-09-08",
+      "sourceType": "Official existing care baseline"
+    },
+    {
+      "publisher": "Drug and Alcohol Dependence / PubMed Central",
+      "title": "Risks of fatal opioid overdose during the first year following nonfatal overdose",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10398609/",
+      "published": "2018",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary Medicaid cohort; recurrence context, not GLIDE effect"
+    },
+    {
+      "publisher": "JAMA Psychiatry / PubMed Central",
+      "title": "Causes of Death After Nonfatal Opioid Overdose",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6143082/",
+      "published": "2018",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary cohort; mortality context not GLIDE effect"
+    }
+  ]
+}

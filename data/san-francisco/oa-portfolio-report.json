@@ -1,0 +1,949 @@
+{
+  "organization": "Operation Access",
+  "eyebrow": "Whole-organization ordinary-gift revision",
+  "program": "Donated surgical access: finite earlier-care portfolio",
+  "donationUrl": "https://www.operationaccess.org/donate",
+  "published": "September9,2026",
+  "modelVersion": "oa-whole-gift-finite-portfolio-v1",
+  "nutshell": {
+    "headline": "A selected colonoscopy price does not describe an ordinary Operation Access gift.",
+    "body": "Central whole-gift national donor $15,609,221 and gross-associated resources $57,020,662 per10 QALYs. Bay $26,015,369 / $95,034,437; SF $195,115,266 / $712,758,277. Local shares are weak priors.",
+    "whyItMayWork": "OA coordinates real donated specialist care for uninsured people, potentially accelerating needed procedures. First-eye cataract evidence supports finite health gains in a different clinical population.",
+    "whyWeAreCautious": "Most portfolio health remains unquantified; the credited subsets, alternative-care delays and donor-to-capacity effect are uncertain. The legacy selectedSF$600,000 is not this whole-gift estimate.",
+    "recommendationBlocker": "Verify specialty cash allocation, unique symptomatic case mix, local residence, alternative-care timing and available donated provider capacity before recommending a gift."
+  },
+  "summary": [
+    {
+      "label": "Whole ordinary gift",
+      "value": "$100,000",
+      "detail": "All-function cost retained across ten specialties; no selected-colonoscopy earmark assumed."
+    },
+    {
+      "label": "National net health",
+      "value": "0.06406469483 QALYs",
+      "detail": "Finite disjoint selectedCRC, cataract and symptomatic-hernia health only; other outcomes unquantified."
+    },
+    {
+      "label": "Favorable national donor/resources",
+      "value": "$1,050,175 / $3,940,381",
+      "detail": "Joint planning hypotheses, not bounds or verified funding offer."
+    },
+    {
+      "label": "Verified marginal room",
+      "value": "Unknown",
+      "detail": "Funding loss/layoffs documented; no new slots or current tranche priced."
+    }
+  ],
+  "programSection": {
+    "body": "Ambulatory Surgery Access Coalition dbaOperationAccess, EIN94-3180356, matches uninsured Northern California/Central Valley patients to donated specialist procedures. Current eligibility excludes people eligible for full-scopeMedi-Cal, Medicare orCMSP. OA is not comprehensive insurance. Official ordinary giving route verified without transaction.",
+    "steps": [
+      {
+        "title": "Whole portfolio",
+        "detail": "2025:1,529services, including575GI,201general surgery and45ophthalmology; other gynecology, orthopedic, head/neck, urologic, skin and vascular care remains in the portfolio."
+      },
+      {
+        "title": "Incremental unique clinical subsets",
+        "detail": "Budget allocation→service equivalents→additional provider capacity→selected condition→unique disjoint people. Service counts and94%appointment readiness are not health gains."
+      },
+      {
+        "title": "Earlier care, not never care",
+        "detail": "Finite symptom relief or finite survival difference versus eventual ordinary care. Procedure harms remain separate."
+      }
+    ],
+    "boundary": "All ten cash allocations sum to one. Other services retain full costs with health unquantified; zero credit is not a finding they are ineffective. This partial-health whole-gift estimate is not an upper bound on cost-effectiveness. Completed-service cost includes coordination, overhead and failed referrals. Selected clinical subset, service-to-person conversion, financial additionality and disjointness are separate assumptions; service count alone is never a health outcome. Current uninsured/ineligible-Medi-Cal eligibility is not a never-care baseline. Later safety-net care, coverage changes, other donors, donated provider capacity and OA's existing navigation remain in the counterfactual. CRC uses an explicitly judgmental mean-hazard survival approximation. Cohort mortality association and navigationRCT are not causal manufacturer-like coefficients; no .13 completion multiplier or legacy aggregate.05Q is reused. One exclusive linked-person ledger CRC then eye then hernia. Repeats/second eyes and overlapping diagnoses retain costs but cannot earn duplicate whole-person health. No productivity, caregiver or other mortality gains are added. Donated clinical resources, distinct nonclinical support, patient time and downstream cancer-care allowances are gross associated costs on all nominal services, including uncredited/replaced activity. They are not waived charges, net incremental resources, or exhaustive societal cost. Both health comparisons start with the same people alive at care. Delay discounts only; horizons start at care, not gift. Harms are already gift-date PV and include repeat procedures within an episode; late-comparator harms are not subtracted. Bay and SF are nested weak residence priors, not measured local return. US equals all-region direct health here; no international or indirect local spillovers are credited. Historical selectedSF$600,000 donor/$1,012,000 expanded price remains a separate program comparison. It must not remain the ordinary-gift ranking input after this revision."
+  },
+  "model": {
+    "headline": "Full gift, finite earlier-care benefit, signed uncertainty",
+    "body": "2025audited cash-like expense is$2,256,966 after removing waived clinical charges and other in-kind support; annual-report cash differs by$1. Its$1,476mixed-service mean anchors prospective specialty cost priors, not measured marginal prices. All numeric clinical/conversion/geography parameters are judgments.",
+    "equation": {
+      "label": "Whole-gift health",
+      "expression": "N_j=(D×allocation_j/cost_j)×activityFactor×selected_j/servicesPerPerson_j×disjoint_j; Q=sum_j[N_j×(finiteHealth_j−PVharm_j)]−independentPVharm. activityFactor=min(totalNominal×fundingAdditionality,cap)/totalNominal.",
+      "result": "National Q=0.06406469483; gross-associated resources=$365,301."
+    },
+    "inputColumnLabel": "Explicit prior and primary anchor",
+    "inputs": [
+      {
+        "key": "gift_usd",
+        "label": "gift usd",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "100000",
+        "range": "Scenario inputs 100000 to 100000; not a confidence interval",
+        "basis": "Reference ordinary unrestricted gift; every dollar retained, not an SF colonoscopy restriction."
+      },
+      {
+        "key": "funding_additionality",
+        "label": "funding additionality",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.5",
+        "range": "Scenario inputs 0 to 0.75; not a confidence interval",
+        "basis": "50% judgment for extra maintained/expanded services after replacement funding and provider bottlenecks. Existing OA care is baseline. Not estimated from the deficit or reserves."
+      },
+      {
+        "key": "max_additional_services",
+        "label": "max additional services",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "100",
+        "range": "Scenario inputs 0 to 100; not a confidence interval",
+        "basis": "100 extra mixed-service cap is an assumption, not identified open appointments. Shared capacity reduces all specialty activity proportionately."
+      },
+      {
+        "key": "discount",
+        "label": "discount",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.03",
+        "range": "Scenario inputs 0.03 to 0.03; not a confidence interval",
+        "basis": "3% annual health discount; economic resource amounts are gross associated present-dollar allowances, not a discounted net-social ledger."
+      },
+      {
+        "key": "bay_share",
+        "label": "bay share",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.6",
+        "range": "Scenario inputs 0 to 0.8; not a confidence interval",
+        "basis": "60% weak beneficiary-residence prior within Northern California/Central Valley reach. No published specialty-specific county shares verified."
+      },
+      {
+        "key": "sf_share",
+        "label": "sf share",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.08",
+        "range": "Scenario inputs 0 to 0.15; not a confidence interval",
+        "basis": "8% weak SF beneficiary-residence prior nested within Bay, not office location or guaranteed restricted allocation."
+      },
+      {
+        "key": "independent_harm_q",
+        "label": "independent harm q",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0",
+        "range": "Scenario inputs 0 to 1; not a confidence interval",
+        "basis": "Gift-date PV health loss independent of clinical activity; central0, zero-activity adverse case1."
+      },
+      {
+        "key": "outside_support_per_service",
+        "label": "outside support per service",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "60",
+        "range": "Scenario inputs 60 to 60; not a confidence interval",
+        "basis": "$60 distinct nonclinical donated support per nominal mixed service, rounded from89,922/1,529; not already cash-paid interpretation/travel."
+      },
+      {
+        "key": "patient_time_per_service",
+        "label": "patient time per service",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "100",
+        "range": "Scenario inputs 100 to 100; not a confidence interval",
+        "basis": "$100 additional patient/caregiver time allowance per nominal service, not earnings benefits or OA-paid travel."
+      },
+      {
+        "key": "crc_treatment_cost_per_selected",
+        "label": "crc treatment cost per selected",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "1500",
+        "range": "Scenario inputs 1500 to 1500; not a confidence interval",
+        "basis": "$1,500 expected downstream therapy/surveillance resource allowance per nominal selectedFIT service, beyond endoscopy resources; weak prior, not provider quote or complete treatment estimate."
+      },
+      {
+        "key": "gi_allocation",
+        "label": "gi allocation",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.37",
+        "range": "Scenario inputs 0.25 to 0.42; not a confidence interval",
+        "basis": "Prospective all-function cash allocation prior, loosely anchored to mixed2025 specialty service shares; specialty cash spending not observed. Ten categories sum to1; management/fundraising are allocated once across all categories."
+      },
+      {
+        "key": "gi_cash_per_service",
+        "label": "gi cash per service",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "1400",
+        "range": "Scenario inputs 1400 to 1400; not a confidence interval",
+        "basis": "All-function cash allocation per completed specialty service-equivalent, including failed-referral work. Judgment around audited$1,476 mixed-service average, not a specialist-specific quote. No added13pp navigation multiplier."
+      },
+      {
+        "key": "gi_clinical_resource_per_service",
+        "label": "gi clinical resource per service",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "2500",
+        "range": "Scenario inputs 2500 to 5000; not a confidence interval",
+        "basis": "Distinct donated clinician/facility/anesthesia/pathology resource prior per nominal service; not waived charges, no patient fee or public payment subtracted. Includes repeat services through the nominal-service denominator."
+      },
+      {
+        "key": "general_allocation",
+        "label": "general allocation",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.13",
+        "range": "Scenario inputs 0.08 to 0.15; not a confidence interval",
+        "basis": "Prospective all-function cash allocation prior, loosely anchored to mixed2025 specialty service shares; specialty cash spending not observed. Ten categories sum to1; management/fundraising are allocated once across all categories."
+      },
+      {
+        "key": "general_cash_per_service",
+        "label": "general cash per service",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "1700",
+        "range": "Scenario inputs 1700 to 1700; not a confidence interval",
+        "basis": "All-function cash allocation per completed specialty service-equivalent, including failed-referral work. Judgment around audited$1,476 mixed-service average, not a specialist-specific quote. No added13pp navigation multiplier."
+      },
+      {
+        "key": "general_clinical_resource_per_service",
+        "label": "general clinical resource per service",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "5500",
+        "range": "Scenario inputs 5500 to 11000; not a confidence interval",
+        "basis": "Distinct donated clinician/facility/anesthesia/pathology resource prior per nominal service; not waived charges, no patient fee or public payment subtracted. Includes repeat services through the nominal-service denominator."
+      },
+      {
+        "key": "gyne_allocation",
+        "label": "gyne allocation",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.11",
+        "range": "Scenario inputs 0.11 to 0.11; not a confidence interval",
+        "basis": "Prospective all-function cash allocation prior, loosely anchored to mixed2025 specialty service shares; specialty cash spending not observed. Ten categories sum to1; management/fundraising are allocated once across all categories."
+      },
+      {
+        "key": "gyne_cash_per_service",
+        "label": "gyne cash per service",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "1500",
+        "range": "Scenario inputs 1500 to 1500; not a confidence interval",
+        "basis": "All-function cash allocation per completed specialty service-equivalent, including failed-referral work. Judgment around audited$1,476 mixed-service average, not a specialist-specific quote. No added13pp navigation multiplier."
+      },
+      {
+        "key": "gyne_clinical_resource_per_service",
+        "label": "gyne clinical resource per service",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "4500",
+        "range": "Scenario inputs 4500 to 9000; not a confidence interval",
+        "basis": "Distinct donated clinician/facility/anesthesia/pathology resource prior per nominal service; not waived charges, no patient fee or public payment subtracted. Includes repeat services through the nominal-service denominator."
+      },
+      {
+        "key": "ortho_allocation",
+        "label": "ortho allocation",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.1",
+        "range": "Scenario inputs 0.1 to 0.1; not a confidence interval",
+        "basis": "Prospective all-function cash allocation prior, loosely anchored to mixed2025 specialty service shares; specialty cash spending not observed. Ten categories sum to1; management/fundraising are allocated once across all categories."
+      },
+      {
+        "key": "ortho_cash_per_service",
+        "label": "ortho cash per service",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "1600",
+        "range": "Scenario inputs 1600 to 1600; not a confidence interval",
+        "basis": "All-function cash allocation per completed specialty service-equivalent, including failed-referral work. Judgment around audited$1,476 mixed-service average, not a specialist-specific quote. No added13pp navigation multiplier."
+      },
+      {
+        "key": "ortho_clinical_resource_per_service",
+        "label": "ortho clinical resource per service",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "5000",
+        "range": "Scenario inputs 5000 to 10000; not a confidence interval",
+        "basis": "Distinct donated clinician/facility/anesthesia/pathology resource prior per nominal service; not waived charges, no patient fee or public payment subtracted. Includes repeat services through the nominal-service denominator."
+      },
+      {
+        "key": "head_neck_allocation",
+        "label": "head neck allocation",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.08",
+        "range": "Scenario inputs 0.08 to 0.08; not a confidence interval",
+        "basis": "Prospective all-function cash allocation prior, loosely anchored to mixed2025 specialty service shares; specialty cash spending not observed. Ten categories sum to1; management/fundraising are allocated once across all categories."
+      },
+      {
+        "key": "head_neck_cash_per_service",
+        "label": "head neck cash per service",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "1500",
+        "range": "Scenario inputs 1500 to 1500; not a confidence interval",
+        "basis": "All-function cash allocation per completed specialty service-equivalent, including failed-referral work. Judgment around audited$1,476 mixed-service average, not a specialist-specific quote. No added13pp navigation multiplier."
+      },
+      {
+        "key": "head_neck_clinical_resource_per_service",
+        "label": "head neck clinical resource per service",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "3500",
+        "range": "Scenario inputs 3500 to 7000; not a confidence interval",
+        "basis": "Distinct donated clinician/facility/anesthesia/pathology resource prior per nominal service; not waived charges, no patient fee or public payment subtracted. Includes repeat services through the nominal-service denominator."
+      },
+      {
+        "key": "urology_allocation",
+        "label": "urology allocation",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.07",
+        "range": "Scenario inputs 0.07 to 0.07; not a confidence interval",
+        "basis": "Prospective all-function cash allocation prior, loosely anchored to mixed2025 specialty service shares; specialty cash spending not observed. Ten categories sum to1; management/fundraising are allocated once across all categories."
+      },
+      {
+        "key": "urology_cash_per_service",
+        "label": "urology cash per service",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "1500",
+        "range": "Scenario inputs 1500 to 1500; not a confidence interval",
+        "basis": "All-function cash allocation per completed specialty service-equivalent, including failed-referral work. Judgment around audited$1,476 mixed-service average, not a specialist-specific quote. No added13pp navigation multiplier."
+      },
+      {
+        "key": "urology_clinical_resource_per_service",
+        "label": "urology clinical resource per service",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "4000",
+        "range": "Scenario inputs 4000 to 8000; not a confidence interval",
+        "basis": "Distinct donated clinician/facility/anesthesia/pathology resource prior per nominal service; not waived charges, no patient fee or public payment subtracted. Includes repeat services through the nominal-service denominator."
+      },
+      {
+        "key": "derm_allocation",
+        "label": "derm allocation",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.05",
+        "range": "Scenario inputs 0 to 0.05; not a confidence interval",
+        "basis": "Prospective all-function cash allocation prior, loosely anchored to mixed2025 specialty service shares; specialty cash spending not observed. Ten categories sum to1; management/fundraising are allocated once across all categories."
+      },
+      {
+        "key": "derm_cash_per_service",
+        "label": "derm cash per service",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "1300",
+        "range": "Scenario inputs 1300 to 1300; not a confidence interval",
+        "basis": "All-function cash allocation per completed specialty service-equivalent, including failed-referral work. Judgment around audited$1,476 mixed-service average, not a specialist-specific quote. No added13pp navigation multiplier."
+      },
+      {
+        "key": "derm_clinical_resource_per_service",
+        "label": "derm clinical resource per service",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "1800",
+        "range": "Scenario inputs 1800 to 3600; not a confidence interval",
+        "basis": "Distinct donated clinician/facility/anesthesia/pathology resource prior per nominal service; not waived charges, no patient fee or public payment subtracted. Includes repeat services through the nominal-service denominator."
+      },
+      {
+        "key": "vascular_allocation",
+        "label": "vascular allocation",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.04",
+        "range": "Scenario inputs 0.02 to 0.04; not a confidence interval",
+        "basis": "Prospective all-function cash allocation prior, loosely anchored to mixed2025 specialty service shares; specialty cash spending not observed. Ten categories sum to1; management/fundraising are allocated once across all categories."
+      },
+      {
+        "key": "vascular_cash_per_service",
+        "label": "vascular cash per service",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "1800",
+        "range": "Scenario inputs 1800 to 1800; not a confidence interval",
+        "basis": "All-function cash allocation per completed specialty service-equivalent, including failed-referral work. Judgment around audited$1,476 mixed-service average, not a specialist-specific quote. No added13pp navigation multiplier."
+      },
+      {
+        "key": "vascular_clinical_resource_per_service",
+        "label": "vascular clinical resource per service",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "4500",
+        "range": "Scenario inputs 4500 to 9000; not a confidence interval",
+        "basis": "Distinct donated clinician/facility/anesthesia/pathology resource prior per nominal service; not waived charges, no patient fee or public payment subtracted. Includes repeat services through the nominal-service denominator."
+      },
+      {
+        "key": "eye_allocation",
+        "label": "eye allocation",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.03",
+        "range": "Scenario inputs 0.01 to 0.05; not a confidence interval",
+        "basis": "Prospective all-function cash allocation prior, loosely anchored to mixed2025 specialty service shares; specialty cash spending not observed. Ten categories sum to1; management/fundraising are allocated once across all categories."
+      },
+      {
+        "key": "eye_cash_per_service",
+        "label": "eye cash per service",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "1800",
+        "range": "Scenario inputs 1800 to 1800; not a confidence interval",
+        "basis": "All-function cash allocation per completed specialty service-equivalent, including failed-referral work. Judgment around audited$1,476 mixed-service average, not a specialist-specific quote. No added13pp navigation multiplier."
+      },
+      {
+        "key": "eye_clinical_resource_per_service",
+        "label": "eye clinical resource per service",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "2500",
+        "range": "Scenario inputs 2500 to 5000; not a confidence interval",
+        "basis": "Distinct donated clinician/facility/anesthesia/pathology resource prior per nominal service; not waived charges, no patient fee or public payment subtracted. Includes repeat services through the nominal-service denominator."
+      },
+      {
+        "key": "other_allocation",
+        "label": "other allocation",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.02",
+        "range": "Scenario inputs 0 to 0.21; not a confidence interval",
+        "basis": "Prospective all-function cash allocation prior, loosely anchored to mixed2025 specialty service shares; specialty cash spending not observed. Ten categories sum to1; management/fundraising are allocated once across all categories."
+      },
+      {
+        "key": "other_cash_per_service",
+        "label": "other cash per service",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "1500",
+        "range": "Scenario inputs 1500 to 1500; not a confidence interval",
+        "basis": "All-function cash allocation per completed specialty service-equivalent, including failed-referral work. Judgment around audited$1,476 mixed-service average, not a specialist-specific quote. No added13pp navigation multiplier."
+      },
+      {
+        "key": "other_clinical_resource_per_service",
+        "label": "other clinical resource per service",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "3000",
+        "range": "Scenario inputs 3000 to 6000; not a confidence interval",
+        "basis": "Distinct donated clinician/facility/anesthesia/pathology resource prior per nominal service; not waived charges, no patient fee or public payment subtracted. Includes repeat services through the nominal-service denominator."
+      },
+      {
+        "key": "eye_selected_fraction",
+        "label": "eye selected fraction",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.65",
+        "range": "Scenario inputs 0 to 0.9; not a confidence interval",
+        "basis": "65% of nominal ophthalmology services assumed selected first-eye function-limiting cataract pathway;45observedeye services also include other procedures."
+      },
+      {
+        "key": "eye_services_per_person",
+        "label": "eye services per person",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "1.2",
+        "range": "Scenario inputs 1.2 to 2; not a confidence interval",
+        "basis": "1.2 service-equivalents per unique selected patient-episode planning prior; avoids service=person. All associated service costs retained."
+      },
+      {
+        "key": "eye_disjoint_fraction",
+        "label": "eye disjoint fraction",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.95",
+        "range": "Scenario inputs 0.95 to 0.95; not a confidence interval",
+        "basis": "Exclusive patient ledger order CRC→cataract→hernia, fractions1/.95/.90. Prior allowance for people already credited; no second eye, repeat operation or second pathway full-person health award."
+      },
+      {
+        "key": "eye_treatment_success",
+        "label": "eye treatment success",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.9",
+        "range": "Scenario inputs 0.9 to 0.9; not a confidence interval",
+        "basis": "Clinical success/transfer judgment, not observed OA success or the96%self-reported broadquality-of-life figure."
+      },
+      {
+        "key": "eye_utility_gain",
+        "label": "eye utility gain",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.05",
+        "range": "Scenario inputs -0.02 to 0.1; not a confidence interval",
+        "basis": ".05 utility-point gain per successful person-year is a separate judgment. The RCT's.056 integrated first-yearQALY is a magnitude anchor only, not a rate multiplied by three years."
+      },
+      {
+        "key": "eye_catchup_hazard",
+        "label": "eye catchup hazard",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.7",
+        "range": "Scenario inputs 0 to 4; not a confidence interval",
+        "basis": ".7/year rate prior for later public/safety-net/self-funded care catching up; discounts finite earlier-care health even when no new gift finances the initial procedure."
+      },
+      {
+        "key": "eye_loss_hazard",
+        "label": "eye loss hazard",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.03",
+        "range": "Scenario inputs 0.03 to 0.03; not a confidence interval",
+        "basis": "Recurrence or loss-of-benefit hazard prior, separate from eventual comparator care and mortality."
+      },
+      {
+        "key": "eye_mortality_hazard",
+        "label": "eye mortality hazard",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.02",
+        "range": "Scenario inputs 0.02 to 0.02; not a confidence interval",
+        "basis": "All-cause competing mortality hazard prior during symptom gain. No mortality benefit claimed for this pathway."
+      },
+      {
+        "key": "eye_horizon_years",
+        "label": "eye horizon years",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "3",
+        "range": "Scenario inputs 1 to 5; not a confidence interval",
+        "basis": "At most three years of possible postprocedure symptom difference centrally; no permanence claim. Later care and recurrence shorten expected benefit."
+      },
+      {
+        "key": "eye_delay_years",
+        "label": "eye delay years",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.25",
+        "range": "Scenario inputs 0.25 to 0.25; not a confidence interval",
+        "basis": "Quarter-year procedure delay; cohort already conditioned alive at service start, so delay discounts only."
+      },
+      {
+        "key": "eye_harm_q_per_person",
+        "label": "eye harm q per person",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.002",
+        "range": "Scenario inputs 0 to 0.002; not a confidence interval",
+        "basis": "Extra procedure/recovery/complication burden per unique episode in gift-date PVQALYs; includes all repeat procedures in that episode. Independent of treatment success. No delayed no-gift procedure harm is subtracted, conservatively."
+      },
+      {
+        "key": "hernia_selected_fraction",
+        "label": "hernia selected fraction",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.45",
+        "range": "Scenario inputs 0 to 0.7; not a confidence interval",
+        "basis": "45% of nominal general-surgery services assumed selected symptomatic hernia episodes;201general services are not201hernias."
+      },
+      {
+        "key": "hernia_services_per_person",
+        "label": "hernia services per person",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "1.2",
+        "range": "Scenario inputs 1.2 to 2; not a confidence interval",
+        "basis": "1.2 service-equivalents per unique selected patient-episode planning prior; avoids service=person. All associated service costs retained."
+      },
+      {
+        "key": "hernia_disjoint_fraction",
+        "label": "hernia disjoint fraction",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.9",
+        "range": "Scenario inputs 0.9 to 0.9; not a confidence interval",
+        "basis": "Exclusive patient ledger order CRC→cataract→hernia, fractions1/.95/.90. Prior allowance for people already credited; no second eye, repeat operation or second pathway full-person health award."
+      },
+      {
+        "key": "hernia_treatment_success",
+        "label": "hernia treatment success",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.85",
+        "range": "Scenario inputs 0.85 to 0.85; not a confidence interval",
+        "basis": "Clinical success/transfer judgment, not observed OA success or the96%self-reported broadquality-of-life figure."
+      },
+      {
+        "key": "hernia_utility_gain",
+        "label": "hernia utility gain",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.04",
+        "range": "Scenario inputs -0.02 to 0.1; not a confidence interval",
+        "basis": ".04 utility-point gain per successful symptomatic-person-year is a judgment; minimallysymptomatic randomized evidence is essentially null. Selected pain-limiting hernia fraction and transport are unknown."
+      },
+      {
+        "key": "hernia_catchup_hazard",
+        "label": "hernia catchup hazard",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.7",
+        "range": "Scenario inputs 0 to 4; not a confidence interval",
+        "basis": ".7/year rate prior for later public/safety-net/self-funded care catching up; discounts finite earlier-care health even when no new gift finances the initial procedure."
+      },
+      {
+        "key": "hernia_loss_hazard",
+        "label": "hernia loss hazard",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.08",
+        "range": "Scenario inputs 0.08 to 0.08; not a confidence interval",
+        "basis": "Recurrence or loss-of-benefit hazard prior, separate from eventual comparator care and mortality."
+      },
+      {
+        "key": "hernia_mortality_hazard",
+        "label": "hernia mortality hazard",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.02",
+        "range": "Scenario inputs 0.02 to 0.02; not a confidence interval",
+        "basis": "All-cause competing mortality hazard prior during symptom gain. No mortality benefit claimed for this pathway."
+      },
+      {
+        "key": "hernia_horizon_years",
+        "label": "hernia horizon years",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "3",
+        "range": "Scenario inputs 1 to 5; not a confidence interval",
+        "basis": "At most three years of possible postprocedure symptom difference centrally; no permanence claim. Later care and recurrence shorten expected benefit."
+      },
+      {
+        "key": "hernia_delay_years",
+        "label": "hernia delay years",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.25",
+        "range": "Scenario inputs 0.25 to 0.25; not a confidence interval",
+        "basis": "Quarter-year procedure delay; cohort already conditioned alive at service start, so delay discounts only."
+      },
+      {
+        "key": "hernia_harm_q_per_person",
+        "label": "hernia harm q per person",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.004",
+        "range": "Scenario inputs 0 to 0.004; not a confidence interval",
+        "basis": "Extra procedure/recovery/complication burden per unique episode in gift-date PVQALYs; includes all repeat procedures in that episode. Independent of treatment success. No delayed no-gift procedure harm is subtracted, conservatively."
+      },
+      {
+        "key": "crc_selected_fraction",
+        "label": "crc selected fraction",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.5",
+        "range": "Scenario inputs 0 to 0.75; not a confidence interval",
+        "basis": "50% of nominal GI services assumed abnormal-FIT follow-up;575GI services are not575positiveFIT patients."
+      },
+      {
+        "key": "crc_services_per_person",
+        "label": "crc services per person",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "1.2",
+        "range": "Scenario inputs 1.2 to 2; not a confidence interval",
+        "basis": "1.2 service-equivalents per unique selected patient-episode planning prior; avoids service=person. All associated service costs retained."
+      },
+      {
+        "key": "crc_disjoint_fraction",
+        "label": "crc disjoint fraction",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "1",
+        "range": "Scenario inputs 1 to 1; not a confidence interval",
+        "basis": "Exclusive patient ledger order CRC→cataract→hernia, fractions1/.95/.90. Prior allowance for people already credited; no second eye, repeat operation or second pathway full-person health award."
+      },
+      {
+        "key": "crc_treatment_linkage",
+        "label": "crc treatment linkage",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.7",
+        "range": "Scenario inputs 0 to 0.9; not a confidence interval",
+        "basis": "70% judgment chance that necessary appropriate downstream management can deliver the modeled contrast. Diagnostic completion alone earns no full treatment gain."
+      },
+      {
+        "key": "crc_annual_fatal_hazard_reduction",
+        "label": "crc annual fatal hazard reduction",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.0006",
+        "range": "Scenario inputs -0.0003 to 0.001; not a confidence interval",
+        "basis": ".0006/year is a judgment if no later-care catchup, lasting five hazard-years after latency. It is not.0092/10 or an estimated causal attenuation of the cohort. Fiveyears×.0006=.003 cumulative hazard only as a scale check."
+      },
+      {
+        "key": "crc_baseline_total_mortality_hazard",
+        "label": "crc baseline total mortality hazard",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.025",
+        "range": "Scenario inputs 0.025 to 0.025; not a confidence interval",
+        "basis": ".025/year all-cause hazard prior already includes CRC mortality. Only the modeled CRC component changes; no second mortality hazard added."
+      },
+      {
+        "key": "crc_catchup_hazard",
+        "label": "crc catchup hazard",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.5",
+        "range": "Scenario inputs 0 to 4; not a confidence interval",
+        "basis": ".5/year aggregate hazard-effect decay prior (two-year characteristic time) for eventual ordinary diagnostic/treatment care; mean-hazard approximation, not exact random individual care-time mixture."
+      },
+      {
+        "key": "crc_latency_years",
+        "label": "crc latency years",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "2",
+        "range": "Scenario inputs 2 to 2; not a confidence interval",
+        "basis": "Two-year assumed lag from procedure to differential fatal risk. Not observed OA survival timing; existing alternative care can catch up during this lag."
+      },
+      {
+        "key": "crc_active_years",
+        "label": "crc active years",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "5",
+        "range": "Scenario inputs 5 to 5; not a confidence interval",
+        "basis": "Five years of possibly different fatal hazard after latency, not five avoided deaths or a life expectancy."
+      },
+      {
+        "key": "crc_horizon_years",
+        "label": "crc horizon years",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "10",
+        "range": "Scenario inputs 10 to 15; not a confidence interval",
+        "basis": "Ten-year finite survival observation from procedure; both arms return to common mortality after the hazard-effect window. No lifetime tail."
+      },
+      {
+        "key": "crc_delay_years",
+        "label": "crc delay years",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.25",
+        "range": "Scenario inputs 0.25 to 0.25; not a confidence interval",
+        "basis": "Quarter-year procedure delay; cohort already conditioned alive at service start, so delay discounts only."
+      },
+      {
+        "key": "crc_surviving_utility",
+        "label": "crc surviving utility",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.75",
+        "range": "Scenario inputs 0.75 to 0.75; not a confidence interval",
+        "basis": ".75 utility for extra surviving person-time; no extra cancer morbidity or household benefit."
+      },
+      {
+        "key": "crc_harm_q_per_person",
+        "label": "crc harm q per person",
+        "confidence": "Explicit judgment unless source anchor stated",
+        "best": "0.001",
+        "range": "Scenario inputs 0 to 0.001; not a confidence interval",
+        "basis": "Extra procedure/recovery/complication burden per unique episode in gift-date PVQALYs; includes all repeat procedures in that episode. Independent of treatment success. No delayed no-gift procedure harm is subtracted, conservatively."
+      }
+    ],
+    "giftHeading": "Whole-gift scenarios: all23 retained",
+    "sensitivity": [
+      {
+        "case": "central",
+        "headline": "US donor $15,609,221; US resources $57,020,662",
+        "detail": "Net QALYs US 0.06406469483, Bay 0.03843881690, SF 0.005125175587. Per10Q: US $15,609,221 / $57,020,662; Bay $26,015,369 / $95,034,437; SF $195,115,266 / $712,758,277. Gross-associated resources $365,301. Signed/null values preserved; scenario, not confidence interval."
+      },
+      {
+        "case": "favorable",
+        "headline": "US donor $1,050,175; US resources $3,940,381",
+        "detail": "Net QALYs US 0.9522221901, Bay 0.5713333141, SF 0.07617777521. Per10Q: US $1,050,175 / $3,940,381; Bay $1,750,292 / $6,567,302; SF $13,127,188 / $49,254,766. Gross-associated resources $375,212. Signed/null values preserved; scenario, not confidence interval."
+      },
+      {
+        "case": "cautious",
+        "headline": "US donor No finite positive ratio; US resources No finite positive ratio",
+        "detail": "Net QALYs US -0.0005814115746, Bay -0.0003488469448, SF -0.00004651292597. Per10Q: US No finite positive ratio / No finite positive ratio; Bay No finite positive ratio / No finite positive ratio; SF No finite positive ratio / No finite positive ratio. Gross-associated resources $353,408. Signed/null values preserved; scenario, not confidence interval."
+      },
+      {
+        "case": "funding_replacement",
+        "headline": "US donor No finite positive ratio; US resources No finite positive ratio",
+        "detail": "Net QALYs US 0.000000000, Bay 0.000000000, SF 0.000000000. Per10Q: US No finite positive ratio / No finite positive ratio; Bay No finite positive ratio / No finite positive ratio; SF No finite positive ratio / No finite positive ratio. Gross-associated resources $365,301. Signed/null values preserved; scenario, not confidence interval."
+      },
+      {
+        "case": "capacity_zero",
+        "headline": "US donor No finite positive ratio; US resources No finite positive ratio",
+        "detail": "Net QALYs US 0.000000000, Bay 0.000000000, SF 0.000000000. Per10Q: US No finite positive ratio / No finite positive ratio; Bay No finite positive ratio / No finite positive ratio; SF No finite positive ratio / No finite positive ratio. Gross-associated resources $365,301. Signed/null values preserved; scenario, not confidence interval."
+      },
+      {
+        "case": "limited_capacity",
+        "headline": "US donor $104,156,181; US resources $380,483,709",
+        "detail": "Net QALYs US 0.009600966435, Bay 0.005760579861, SF 0.0007680773148. Per10Q: US $104,156,181 / $380,483,709; Bay $173,593,635 / $634,139,515; SF $1,301,952,265 / $4,756,046,363. Gross-associated resources $365,301. Signed/null values preserved; scenario, not confidence interval."
+      },
+      {
+        "case": "fast_alternative_care",
+        "headline": "US donor $269,027,275; US resources $982,759,682",
+        "detail": "Net QALYs US 0.003717095224, Bay 0.002230257134, SF 0.0002973676179. Per10Q: US $269,027,275 / $982,759,682; Bay $448,378,792 / $1,637,932,803; SF $3,362,840,941 / $12,284,496,022. Gross-associated resources $365,301. Signed/null values preserved; scenario, not confidence interval."
+      },
+      {
+        "case": "no_later_care",
+        "headline": "US donor $5,547,114; US resources $20,263,670",
+        "detail": "Net QALYs US 0.1802739222, Bay 0.1081643533, SF 0.01442191378. Per10Q: US $5,547,114 / $20,263,670; Bay $9,245,190 / $33,772,784; SF $69,338,925 / $253,295,878. Gross-associated resources $365,301. Signed/null values preserved; scenario, not confidence interval."
+      },
+      {
+        "case": "one_year_nonfatal_benefit",
+        "headline": "US donor $27,306,065; US resources $99,749,366",
+        "detail": "Net QALYs US 0.03662190026, Bay 0.02197314016, SF 0.002929752021. Per10Q: US $27,306,065 / $99,749,366; Bay $45,510,109 / $166,248,943; SF $341,325,816 / $1,246,867,070. Gross-associated resources $365,301. Signed/null values preserved; scenario, not confidence interval."
+      },
+      {
+        "case": "crc_no_treatment",
+        "headline": "US donor $17,001,726; US resources $62,107,497",
+        "detail": "Net QALYs US 0.05881755838, Bay 0.03529053503, SF 0.004705404670. Per10Q: US $17,001,726 / $62,107,497; Bay $28,336,210 / $103,512,495; SF $212,521,573 / $776,343,710. Gross-associated resources $365,301. Signed/null values preserved; scenario, not confidence interval."
+      },
+      {
+        "case": "crc_association_does_not_transfer",
+        "headline": "US donor $17,001,726; US resources $62,107,497",
+        "detail": "Net QALYs US 0.05881755838, Bay 0.03529053503, SF 0.004705404670. Per10Q: US $17,001,726 / $62,107,497; Bay $28,336,210 / $103,512,495; SF $212,521,573 / $776,343,710. Gross-associated resources $365,301. Signed/null values preserved; scenario, not confidence interval."
+      },
+      {
+        "case": "minimally_symptomatic_hernia_null",
+        "headline": "US donor $62,801,904; US resources $229,416,065",
+        "detail": "Net QALYs US 0.01592308421, Bay 0.009553850527, SF 0.001273846737. Per10Q: US $62,801,904 / $229,416,065; Bay $104,669,839 / $382,360,108; SF $785,023,795 / $2,867,700,810. Gross-associated resources $365,301. Signed/null values preserved; scenario, not confidence interval."
+      },
+      {
+        "case": "all_health_null",
+        "headline": "US donor No finite positive ratio; US resources No finite positive ratio",
+        "detail": "Net QALYs US 0.000000000, Bay 0.000000000, SF 0.000000000. Per10Q: US No finite positive ratio / No finite positive ratio; Bay No finite positive ratio / No finite positive ratio; SF No finite positive ratio / No finite positive ratio. Gross-associated resources $365,301. Signed/null values preserved; scenario, not confidence interval."
+      },
+      {
+        "case": "benefit_null_harms_retained",
+        "headline": "US donor No finite positive ratio; US resources No finite positive ratio",
+        "detail": "Net QALYs US -0.01152535598, Bay -0.006915213585, SF -0.0009220284781. Per10Q: US No finite positive ratio / No finite positive ratio; Bay No finite positive ratio / No finite positive ratio; SF No finite positive ratio / No finite positive ratio. Gross-associated resources $365,301. Signed/null values preserved; scenario, not confidence interval."
+      },
+      {
+        "case": "signed_adverse_health",
+        "headline": "US donor No finite positive ratio; US resources No finite positive ratio",
+        "detail": "Net QALYs US -0.04709955280, Bay -0.02825973168, SF -0.003767964224. Per10Q: US No finite positive ratio / No finite positive ratio; Bay No finite positive ratio / No finite positive ratio; SF No finite positive ratio / No finite positive ratio. Gross-associated resources $365,301. Signed/null values preserved; scenario, not confidence interval."
+      },
+      {
+        "case": "independent_harm_zero_activity",
+        "headline": "US donor No finite positive ratio; US resources No finite positive ratio",
+        "detail": "Net QALYs US -1.000000000, Bay -0.6000000000, SF -0.08000000000. Per10Q: US No finite positive ratio / No finite positive ratio; Bay No finite positive ratio / No finite positive ratio; SF No finite positive ratio / No finite positive ratio. Gross-associated resources $365,301. Signed/null values preserved; scenario, not confidence interval."
+      },
+      {
+        "case": "repeat_services",
+        "headline": "US donor $26,015,369; US resources $95,034,437",
+        "detail": "Net QALYs US 0.03843881690, Bay 0.02306329014, SF 0.003075105352. Per10Q: US $26,015,369 / $95,034,437; Bay $43,358,948 / $158,390,728; SF $325,192,111 / $1,187,930,461. Gross-associated resources $365,301. Signed/null values preserved; scenario, not confidence interval."
+      },
+      {
+        "case": "lower_target_portfolio",
+        "headline": "US donor $29,950,149; US resources $106,771,268",
+        "detail": "Net QALYs US 0.03338881527, Bay 0.02003328916, SF 0.002671105222. Per10Q: US $29,950,149 / $106,771,268; Bay $49,916,915 / $177,952,113; SF $374,376,865 / $1,334,640,844. Gross-associated resources $356,497. Signed/null values preserved; scenario, not confidence interval."
+      },
+      {
+        "case": "higher_target_portfolio",
+        "headline": "US donor $11,782,572; US resources $43,614,900",
+        "detail": "Net QALYs US 0.08487111359, Bay 0.05092266816, SF 0.006789689087. Per10Q: US $11,782,572 / $43,614,900; Bay $19,637,620 / $72,691,499; SF $147,282,149 / $545,186,245. Gross-associated resources $370,165. Signed/null values preserved; scenario, not confidence interval."
+      },
+      {
+        "case": "double_external_resources",
+        "headline": "US donor $15,609,221; US resources $93,671,633",
+        "detail": "Net QALYs US 0.06406469483, Bay 0.03843881690, SF 0.005125175587. Per10Q: US $15,609,221 / $93,671,633; Bay $26,015,369 / $156,119,389; SF $195,115,266 / $1,170,895,418. Gross-associated resources $600,104. Signed/null values preserved; scenario, not confidence interval."
+      },
+      {
+        "case": "local_zero",
+        "headline": "US donor $15,609,221; US resources $57,020,662",
+        "detail": "Net QALYs US 0.06406469483, Bay 0.000000000, SF 0.000000000. Per10Q: US $15,609,221 / $57,020,662; Bay No finite positive ratio / No finite positive ratio; SF No finite positive ratio / No finite positive ratio. Gross-associated resources $365,301. Signed/null values preserved; scenario, not confidence interval."
+      },
+      {
+        "case": "higher_local_share",
+        "headline": "US donor $15,609,221; US resources $57,020,662",
+        "detail": "Net QALYs US 0.06406469483, Bay 0.05125175587, SF 0.009609704225. Per10Q: US $15,609,221 / $57,020,662; Bay $19,511,527 / $71,275,828; SF $104,061,475 / $380,137,748. Gross-associated resources $365,301. Signed/null values preserved; scenario, not confidence interval."
+      },
+      {
+        "case": "no_selected_subsets",
+        "headline": "US donor No finite positive ratio; US resources No finite positive ratio",
+        "detail": "Net QALYs US 0.000000000, Bay 0.000000000, SF 0.000000000. Per10Q: US No finite positive ratio / No finite positive ratio; Bay No finite positive ratio / No finite positive ratio; SF No finite positive ratio / No finite positive ratio. Gross-associated resources $345,480. Signed/null values preserved; scenario, not confidence interval."
+      }
+    ],
+    "uncertaintyBoundary": "Cautious and signed cases can cause net harm. Unquantified services can improve true value, but may also carry unmeasured harms: this is not a proven cost upper bound. Favorable case was not tuned to a threshold.",
+    "fundingBoundary": "2025largest-funder loss, layoffs and other-donor growth coexist with16monthsoperatingcash. The2026$1.9Mbudget is a plan, not a measured capacity contraction or marginal offer. Donation restriction, local slots and financing leverage remain unverified."
+  },
+  "comparisonBridge": {
+    "headline": "Historical selected abnormal-FIT comparison, preserved",
+    "body": "Legacy conditionalSFmodel assumed$1,500 cash per completed pathway,50%additionality and.05aggregate netQALY. It did not allocate an ordinary whole gift to geography or other services. This revision replaces its ranking interpretation, not its archived arithmetic.",
+    "equation": {
+      "label": "Historical selected service only",
+      "expression": "10×1500/(.5×.05)",
+      "result": "$600,000 donor; $1,012,000 expanded resources per10Q"
+    },
+    "inputs": [],
+    "sensitivity": [],
+    "boundary": "Do not blend the historical aggregate.05Q with the new finite hazard/symptom model or present either as measuredOAhealth. No new organization count."
+  },
+  "evidence": [
+    {
+      "key": "portfolio",
+      "design": "Primary audited accounts and annual report",
+      "population": "2025regional mixed services",
+      "result": "1,529services;575GI,201general,45eye. Cash-like all-function expense2,256,966; waivedclinicalcharges20,530,000.",
+      "transfer": "Counts inform composition only; specialty cash spending, selected diagnoses and unique-persons are unknown."
+    },
+    {
+      "key": "cataract",
+      "design": "Randomized economic evaluation",
+      "population": "306womenover70, first-eye cataract; expedited4weeks vsroutine12monthwait",
+      "result": "Integratedfirst-yearQALYdifference.056,95%CI.006to.108.",
+      "transfer": "Differentage/sex/vision severity and counterfactual. .05utilitypoint/year used here is an independent modest planning prior, not thatQALY divided/repeated. No separatefall benefit added."
+    },
+    {
+      "key": "hernia",
+      "design": "Randomized watchful-waiting trial",
+      "population": "720minimallysymptomatic men",
+      "result": "Two-year pain/function outcomes not significantly improved;23%watchfulwaiting crossed torepair.",
+      "transfer": "Minimallysymptomatic benefit can be zero. .04utilityprior applies only to assumedselectedpain-limitingcases, not all201generalservices or a measuredsymptomaticsubgroup."
+    },
+    {
+      "key": "crc",
+      "design": "Observational positive-FIT cohort and methodological critique",
+      "population": "Italian screening adults50–69",
+      "result": "10-yearCRCmortality6.8vs16per1000compliers/noncompliers.",
+      "transfer": "Selection, nonprogramcare and exposure/immortal-time concerns remain. The new small fatal-hazard difference/latency/duration are explicit hypotheses, not extracted causalparameters."
+    },
+    {
+      "key": "navigation",
+      "design": "Randomized navigation trial",
+      "population": "967analysis afterabnormalstooltest",
+      "result": "55.1vs42.1%one-yearcolonoscopycompletion.",
+      "transfer": "No13ppmultiplier on already-completedOAservice-equivalents. NotQALYevidence."
+    }
+  ],
+  "reservations": [
+    "Wholegift allocation is prospective, not auditedspecialtyspending. Mostserviceshaveunquantifiedhealth.",
+    "Alternativecare and provider-financing additionality dominate. No never-care assumption.",
+    "CRC mean-hazard model is not an exact mixture over individual random later-care times, nor a validated stage/adenoma simulation.",
+    "Cataract and symptomatic-hernia utilities are transferablepriorjudgments, not observedOA effects.",
+    "The CRC component is slightly negative centrally after conservative acuteprocedure harm. It was not forcedpositive.",
+    "Gross-associated resource cost is neither net induced nor exhaustive. Donatedcharges are not economicresources.",
+    "Bay60%/SF8% are particularlyweak residencepriors; zero-localcaseincluded."
+  ],
+  "excludedBenefits": [
+    "All remainingGI/general/eye and other-specialty health leftunquantified, withallcostsretained.",
+    "No extra cancer morbidity, adenoma prevention, second-eye benefit, fall prevention, productivity, familyQALY or lifetime credit.",
+    "No observed96%reportedhealthimprovement→QALY conversion, no94%readiness→completioneffect, and no donateddollar→healthconversion.",
+    "No publicreimbursement subtraction, donatedretailvaluation, netpayersavings or speculativeindirectlocalbenefit."
+  ],
+  "sources": [
+    {
+      "publisher": "Operation Access",
+      "title": "2025 audited financial statements",
+      "url": "https://www.operationaccess.org/s/2025-Audited-Financial-Statements.pdf",
+      "published": "Year ended December31,2025; auditMay20,2026",
+      "sourceType": "Primary audited whole-organization expense, waived-charge accounting, liquidity and restrictions; relevant PDF7–8,14–15 visually verified.",
+      "retrieved": "September9,2026"
+    },
+    {
+      "publisher": "Operation Access",
+      "title": "2025 annual report",
+      "url": "https://www.operationaccess.org/s/Operation-Access-Annual-Report-2025.pdf",
+      "published": "2025 reporting year",
+      "sourceType": "Primary specialty counts/chartPDF7, funding lossPDF2, wait/readinessPDF6, cash financePDF13. Counts are services, not unique people or measured health.",
+      "retrieved": "September9,2026"
+    },
+    {
+      "publisher": "Operation Access",
+      "title": "2026 budget",
+      "url": "https://www.operationaccess.org/s/2026Budget-8pz4.pdf",
+      "published": "ApprovedDecember10,2025",
+      "sourceType": "Primary1.9million cash plan, not actual2026 unit cost or procedure target.",
+      "retrieved": "September9,2026"
+    },
+    {
+      "publisher": "Operation Access",
+      "title": "Patient eligibility and procedures",
+      "url": "https://www.operationaccess.org/for-patients-para-pacientes",
+      "published": "Current undated",
+      "sourceType": "Uninsured and ineligible fullMedi-Cal/Medicare/CMSP; cataract and hernia procedures explicitly offered; not insurance.",
+      "retrieved": "September9,2026"
+    },
+    {
+      "publisher": "Operation Access",
+      "title": "Donate",
+      "url": "https://www.operationaccess.org/donate",
+      "published": "Current undated",
+      "sourceType": "Official ordinary donation route and EIN94-3180356. Waived-dollar fundraising leverage is not QALY evidence.",
+      "retrieved": "September9,2026"
+    },
+    {
+      "publisher": "California Colorectal Cancer Coalition",
+      "title": "OA facilitated donated colonoscopy",
+      "url": "https://www.cacoloncancer.org/operation-access-facilitated-access-to-donated-colonoscopies/",
+      "published": "Current undated",
+      "sourceType": "Primary referral mechanism; above-average risk/positive stool tests; not575verifiedFITcases.",
+      "retrieved": "September9,2026"
+    },
+    {
+      "publisher": "Sach et al.",
+      "title": "First-eye cataract randomized economic evaluation",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2095519/",
+      "published": "2007",
+      "sourceType": "306women over70, expedited4weeks vsroutine12months; first-yearQALYdifference.056(.006,.108), integratedyear—not annualutilityorOAlocalestimate.",
+      "retrieved": "September9,2026"
+    },
+    {
+      "publisher": "Fitzgibbons et al.",
+      "title": "Watchful waiting versus repair",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16418463/",
+      "published": "2006",
+      "sourceType": "720minimallysymptomatic men;2-yearpain/physicalfunction differences notsignificant;23%watchfulwaiting crossed torepair. Strong warning against assuming allhernias benefit.",
+      "retrieved": "September9,2026"
+    },
+    {
+      "publisher": "Zorzi et al.",
+      "title": "Mortality after positive FIT without program colonoscopy",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33789965/",
+      "published": "2021",
+      "sourceType": "Observational10-yearCRC mortality6.8vs16per1000. Not randomization, no directly imported hazardorQALY.",
+      "retrieved": "September9,2026"
+    },
+    {
+      "publisher": "Methodological correspondence",
+      "title": "Immortal-time concern in positive-FIT mortality comparison",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37549982/",
+      "published": "2023",
+      "sourceType": "Primary methodological criticism; exposure timing/selection biases not assumed solved.",
+      "retrieved": "September9,2026"
+    },
+    {
+      "publisher": "PRECISE investigators",
+      "title": "Navigation after abnormal stool test trial",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13007779/",
+      "published": "2025",
+      "sourceType": "967analysis;55.1vs42.1%one-yearcompletion. Not multiplied into already-completed OAservice units.",
+      "retrieved": "September9,2026"
+    },
+    {
+      "publisher": "California DHCS",
+      "title": "Medi-Cal eligibility changes",
+      "url": "https://www.dhcs.ca.gov/medi-cal/updates/medi-cal-changes/",
+      "published": "2026",
+      "sourceType": "Public coverage remains baseline when available; no assertion alluninsured have no latercare.",
+      "retrieved": "September9,2026"
+    }
+  ]
+}

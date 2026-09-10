@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Bayview Hunters Point Foundation — accepted distinct SF organization
+
+EIN94-1747575, not Bayview Senior Services. Whole FY2025 expense against explicitly partial behavioral-health benefit; weighted $236.13M per10 modeled SF QALYs, giving HOLD. Geography is site-of-service assumption, not verified all-client residence. Final City amendments distinguished from superseded proposal; negative net assets show fragility, not proven liquidity. Known-gross accounting boundary is incomplete; verified marginal prices null. Source/model audit accepted; 485 tests, lint zero errors, build and four phone/tablet checks pass. Report80 only after preceding releases and canonical verification. Next accepted NFP, then Westside after material audit corrections.
+
 ## California Coalition for Youth — accepted finite crisis-support report
 
 Full FY2025 organization expense charged; finite crisis-contact morbidity only, no mortality or policy credit. Weighted $440K donor/$527K illustrative gross per10 total QALYs; Bay20%/SF2% are explicitly unsourced nested priors, not observed callers. Repeat overlap, 988 substitution, public funding and marginal capacity unresolved. Source/model audit ACCEPT; giving HOLD. Root corrected caller-supplied gift numerator consistency and tests exact accepted default, zero-access and double-gift cases. 482 tests, lint zero errors and production build pass. Report79 only after prior releases and canonical verification. This is the third additional California-wide organization, not a new SF service provider.

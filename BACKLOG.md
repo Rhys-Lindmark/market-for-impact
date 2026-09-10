@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Operation Access — expanded whole-gift coverage accepted, publication pending
+
+Count-neutral named-case-mix model replaces selected abnormal-FIT programme price. Current specialties,21 added explicit clinical pathways and finite later-care counterfactuals; central donor $1.947M US/$3.245M Bay/$24.335M SF per10Q.9170independent and1946author checks; diagnosis frequencies and resource priors remain weak, no funding offer. Historical endpoint preserved. Mechanical top four now GLIDE/Breathe/PVF/PHC; PHC summary and shared hearing caveat added using its existing sourced photo. HSC recipient decision is not bypassed or introduced. Goal67/115 remains in progress.
+
 ## Current authoritative checkpoint —67/115
 
 ViaHeart66 and SIRUM67 published; Clinic whole-organization correction count-neutral. Latest live exacta309acd5831406c1d0a101ae2e66338cd6f45dfc (PR251/v170) canonical390/768 reports/APIs/index verified,446tests,14focused checks/build pass. Source and current plan: docs/sf-progress.md/json. Earlier publication-pending entries are historical. Next new candidates NewEyes/ReCARES; accepted OA v2 awaits homepage-aware integration. GLIDE/Breathe partial-coverage diagnostics must not be called whole-org expected returns; draftPR249 preserves research. Never inflate count with revisions/screens or tune estimates toward100K.

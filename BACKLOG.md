@@ -4,9 +4,9 @@
 
 New Eyes advances the reviewed set to68 once this branch is merged and canonical-verified. Its very-low-confidence weighted ordinary-gift model is $78,651/10 U.S. QALYs; removing the5% favorable scenario gives $100,714, and illustrative gross resources give $219,881. Hypothetical2% Bay/.25% SF shares imply $3.93M/$31.46M, but no local recipient allocation or marginal funding offer is verified, so it is not an SF recommendation. ReCARES, Ear of the Lion, Alliance for Smiles, Youth ALIVE! and Acterra remain negative screens and do not inflate the count. Continue high-EV screening without tuning findings toward100K.
 
-## Operation Access — expanded whole-gift coverage accepted, publication pending
+## Operation Access — expanded whole-gift coverage published
 
-Count-neutral named-case-mix model replaces selected abnormal-FIT programme price. Current specialties,21 added explicit clinical pathways and finite later-care counterfactuals; central donor $1.947M US/$3.245M Bay/$24.335M SF per10Q.9170independent and1946author checks; diagnosis frequencies and resource priors remain weak, no funding offer. Historical endpoint preserved. Mechanical top four now GLIDE/Breathe/PVF/PHC; PHC summary and shared hearing caveat added using its existing sourced photo. HSC recipient decision is not bypassed or introduced. Goal67/115 remains in progress.
+Count-neutral named-case-mix model replaces selected abnormal-FIT programme price. Current specialties,21 added explicit clinical pathways and finite later-care counterfactuals; central donor $1.947M US/$3.245M Bay/$24.335M SF per10Q.9170independent and1946author checks; diagnosis frequencies and resource priors remain weak, no funding offer. Historical endpoint preserved. Mechanical top four now GLIDE/Breathe/PVF/PHC; PHC summary and shared hearing caveat added using its existing sourced photo. PR254, exact c18b172ef505281329e74cc7236383aff45f0cc0, Sites v171; canonical report/API/home/research and390/768 no-overflow checks passed. Count remains67/115 because this is a correction.
 
 ## Clinic by the Bay — accepted whole-organization correction
 

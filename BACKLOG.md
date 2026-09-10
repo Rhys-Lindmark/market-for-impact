@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Youth ALIVE — accepted Oakland whole-gift report
+
+Whole-organization gift with explicitly partial CiC-like health model; other program benefits not summed. Independent source and integration audits ACCEPT, giving HOLD. Direct five-year modeled 4.64−4.62=.020 QALY anchor replaces ambiguous cost/ICER reconstruction; source inconsistency and NICE limitations retained. Weighted $27.34M donor/$28.08M illustrative gross per10 Bay QALYs; zero direct SF credit, real null/harm, 66.1% favorable-tail dependence and $5M CalVIP displacement caveat. 479 tests, lint zero errors, build and phone/tablet checks precede publication. Report78 only after prior releases and canonical verification. Next accepted CalYouth, BVHPF and corrected NFP.
+
 ## Public Health Advocates — accepted whole-gift California report
 
 Independently audited historical DPP-policy-equivalent model; giving HOLD. Weighted $78.8M donor/$93.8M illustrative gross per 10 total QALYs; Bay20%/SF2% are nested unmeasured priors. Current policy attribution, gross trial-cost proxy, going-concern/control concerns and unpriced marginal funding remain explicit. Root ESM conversion matches accepted output exactly and adds tested nonpositive-benefit guards; independent integration recheck accepted. 476 tests, lint zero errors, production build and phone/tablet checks required before release. Report77 only after FUF and canonical verification. Current live75 includes CIC, the first of three additional California-wide reports.

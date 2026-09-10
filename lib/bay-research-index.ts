@@ -1,4 +1,6 @@
 import data from '@/data/bay/rotacare-cea-v2.json';
+import {calculate as sisterwebModel} from './sisterweb-model.mjs';
+const sisterweb=sisterwebModel().weighted;
 import {calculate as ceresModel} from './ceres-community-model.mjs';
 const ceres=ceresModel();
 import {calculate as heppacModel} from './heppac-model.mjs';
@@ -22,4 +24,5 @@ export const bayResearch=[{organization:'RotaCare Bay Area',program:'Whole-gift 
 {organization:'Via Heart Project',program:'Whole-gift AED placement and maintenance',href:'/charities/via-heart-project',bayUsdPerTenQalys:via.prices.bay.donor,sfUsdPerTenQalys:via.prices.sf.donor},
 {organization:'Marin Treatment Center',program:'Conditional whole-gift opioid treatment access',href:'/charities/marin-treatment-center',bayUsdPerTenQalys:marinTreatment.inputs.gift*10/marinTreatment.weighted.bayQaly,sfUsdPerTenQalys:null},
 {organization:'HEPPAC',program:'Conditional whole-gift harm reduction',href:'/charities/heppac',bayUsdPerTenQalys:heppac.bayDonorPer10Qaly,sfUsdPerTenQalys:heppac.sfDonorPer10Qaly},
-{organization:'Ceres Community Project',program:'Whole-gift medically tailored meal support',href:'/charities/ceres-community-project',bayUsdPerTenQalys:ceres.inputs.giftUsd*10/ceres.weighted.bayQaly,sfUsdPerTenQalys:null}];
+{organization:'Ceres Community Project',program:'Whole-gift medically tailored meal support',href:'/charities/ceres-community-project',bayUsdPerTenQalys:ceres.inputs.giftUsd*10/ceres.weighted.bayQaly,sfUsdPerTenQalys:null},
+{organization:'SisterWeb Community Doula Network',program:'Whole-project prenatal and postpartum support',href:'/charities/sisterweb',bayUsdPerTenQalys:sisterweb.bayDonorPer10Qaly,sfUsdPerTenQalys:sisterweb.sfDonorPer10Qaly}];

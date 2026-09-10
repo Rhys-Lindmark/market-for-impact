@@ -1,5 +1,11 @@
 # San Francisco giving — active phase plan
 
+## Resumed block — September 10, 16:12 UTC
+
+**67/115 remains the published count.** The hourly heartbeat is active again with `/givebetter` as canonical and the 115-report finish line. Root owns Site integration while three research workers cover New Eyes, ReCARES and the next high-EV pipeline; finished slots are refilled immediately. Operation Access named-case-mix v2 is count-neutral and ready for publication: central donor estimates are $1.947M US, $3.245M Bay and $24.335M SF per 10 QALYs. The change preserves the historical abnormal-FIT model, replaces the ranked whole-organization value, and mechanically changes the homepage fourth pick to Project Homeless Connect without double-counting its shared hearing pathway.
+
+Acceptance evidence so far: 9,170 independent and 1,946 author OA checks; 448 repository tests; lint with zero errors and three pre-existing warnings; production build; all 26 selected phone/tablet checks pass after fixing test expectations. Diagnosis mix, causal transfer and marginal funding room remain explicitly uncertain. Next exit: publish this correction without incrementing the count, then accept or reject New Eyes as report 68 using independent whole-gift review. Block start 2026-09-10T16:12:41Z; end time belongs only in the measured shared log.
+
 ## Authoritative checkpoint — September9,05:22UTC
 
 **68/115 after New Eyes publication and canonical verification.** The New Eyes report is a very-low-confidence national ordinary-gift model, not an SF recommendation: $78,651/10 U.S. QALYs, $100,714 without the5% favorable scenario, $219,881 with illustrative gross associated resources, and hypothetical $31.46M/10 SF QALYs at a .25% allocation share. Funding room and local recipient shares remain unverified. Via Heart66: PR248/v168,2629073bd1223c1a6a1c75ea472b489e06a2a02d. SIRUM67: PR250/v169,4ca834e9a99c27ca94e75f8c922778cdb653d66f. Clinic correction PR251/v170 is count neutral. OA v2 is a separate count-neutral correction in PR254.

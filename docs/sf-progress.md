@@ -1,8 +1,36 @@
 # San Francisco giving — active phase plan
 
+## Current block — Bayview report80 and continued audited research
+
+Start2026-09-10T22:16:28Z. Prior79 reports and research-time headers are live at v186; full PR272 CI passed. Current integration: Bayview Hunters Point Foundation (root), NFP resource-realization correction (new_eyes_report68), independent NFP audit/high-EV discovery (high_ev_pipeline), and a new outcome-first/transfer report (recares_report69). Report80 exits only after source/model validation, responsive checks, exact-source publication and canonical report/API/index checks. No report count is awarded to screens. New organization timers and actual AI identities follow docs/research-effort.md; explicit pause preserved.
+
+The Bayview release candidate contains63 local and17 expanded reports, using the Bay90% subjective residence allocation without presenting service location as residence. Counts toward SF outcome-first. NFP requires a gross-resource correction before publication. Stall checkpoint:20–30 minutes without a report/evidence milestone triggers reassignment or a concrete dependency fix, not polishing.
+
+## User priority: per-organization research provenance
+
+Bay-only regrouping is published and canonical-verified (PR271 / Sites v185); count remains79/115. All79 reports now have a research-time and AI-model disclosure near the title, with honest historical unknowns. Follow docs/research-effort.md and AGENTS.md for future timed research intervals. Recovered26 verified single-organization intervals for12 reports, explicitly partial;67 reports remain unrecorded. This metadata change adds no reports and does not change cost-effectiveness estimates.
+
+## Current checkpoint — September 10: 79/115
+
+Verified published through CalYouth (PR268 / Sites v184). The requested Bay Area-only research-list cleanup is count-neutral: 62 local reports, with 17 California/U.S./international reports preserved in Expanded Geography Research. Bay organizations use their Bay-wide model denominator; SF-only modeled benefits are a Bay subset, with no invented regional spillover credit. The legacy international archive remains accessible.
+
+Next: publish the provenance header, then adapt BVHPF and NFP pending PRs without double counting. Category targets remain unchanged; archival placement does not erase comparator research or add category slots.
+
+## 68→115 category tracker — September 10
+
+Track 47 remaining unique organization reports and 49 category slots. Targets are 10 each for SF outcome-first organizations, SF universe/new coverage, policy and systems leverage, and other-city transfers with real Bay implementers; plus 3 each for EA/Charity-Entrepreneurship mechanisms tied to real organizations, wider Bay/California, and selective US/international comparators. Exactly two genuinely cross-cutting organizations may satisfy two named category slots, while each organization counts once toward 115. Screens, duplicate program reviews, revisions and hypothetical ventures do not count.
+
+The main `/givebetter/research` index is for SF/Bay donor decisions. International comparator reports remain part of the 68-report corpus but belong in the linked archive. US/Bay organizations must show a modeled local price or a justified zero/unknown—not their national value relabeled as local.
+
+## Resumed block — September 10, 16:12 UTC
+
+**67/115 remained the published count through the Operation Access correction.** The hourly heartbeat is active again with `/givebetter` as canonical and the 115-report finish line. Root owns Site integration while three research workers cover New Eyes and the next high-EV pipeline; finished slots are refilled immediately. Operation Access named-case-mix v2 is count-neutral and published in PR254/Sites v171 from exact c18b172ef505281329e74cc7236383aff45f0cc0: central donor estimates are $1.947M US, $3.245M Bay and $24.335M SF per 10 QALYs. The change preserves the historical abnormal-FIT model, replaces the ranked whole-organization value, and mechanically changes the homepage fourth pick to Project Homeless Connect without double-counting its shared hearing pathway.
+
+Acceptance evidence: 9,170 independent and 1,946 author OA checks; 448 repository tests; lint with zero errors and three pre-existing warnings; production build; full GitHub mobile release gate; canonical 390/768 report and homepage checks. Diagnosis mix, causal transfer and marginal funding room remain explicitly uncertain. Next exit: publish and verify New Eyes as report68 using independent whole-gift review. Block start 2026-09-10T16:12:41Z; end time belongs only in the measured shared log.
+
 ## Authoritative checkpoint — September9,05:22UTC
 
-**67/115 published and canonical-verified.** Via Heart66: PR248/v168,2629073bd1223c1a6a1c75ea472b489e06a2a02d. SIRUM67: PR250/v169,4ca834e9a99c27ca94e75f8c922778cdb653d66f. Clinic count-neutral whole-gift correction and report text wrapping: PR251/v170,a309acd5831406c1d0a101ae2e66338cd6f45dfc, successful05:22:05Z. Canonical390/768 report/API/67-row checks pass for both SIRUM and Clinic.446repository tests, lint0errors/3existingwarnings, productionbuild,14focused tests pass. Full GitHub mobile248 and250passed;251pending at checkpoint.
+**68/115 after New Eyes publication and canonical verification.** The New Eyes report is a very-low-confidence national ordinary-gift model, not an SF recommendation: $78,651/10 U.S. QALYs, $100,714 without the5% favorable scenario, $219,881 with illustrative gross associated resources, and hypothetical $31.46M/10 SF QALYs at a .25% allocation share. Funding room and local recipient shares remain unverified. Via Heart66: PR248/v168,2629073bd1223c1a6a1c75ea472b489e06a2a02d. SIRUM67: PR250/v169,4ca834e9a99c27ca94e75f8c922778cdb653d66f. Clinic correction PR251/v170 is count neutral. OA v2 is a separate count-neutral correction in PR254.
 
 Critical methodological correction: a full gift divided by a small selected subset of benefits is not automatically an expected whole-organization return. DraftPR249 preserves GLIDE/Breathe/OA/PVF diagnostic revisions; OA expanded named-case-mix v2 is independently accepted for integration, GLIDE/Breathe still explicitly incomplete clinical diagnostics. Clinic now includes major medical care and named residual pathways, with subjective signed-health expectation and prominent weight sensitivity. No model revision adds an organization count.
 

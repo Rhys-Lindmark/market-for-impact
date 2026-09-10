@@ -12,6 +12,6 @@ test('HKF expanded whole gift retains20 signed scenarios and Bay geography',asyn
  const response=await request.get('/api/hkf-model');expect(response.ok()).toBe(true);const data=await response.json();expect(data.evaluated).toHaveLength(20);
  for(const [i,s]of data.model.scenarios.entries())parity(data.evaluated[i],{id:s.id,...calculate(inputsFor(data.model,s))});
  expect(data.evaluated[0].donor_sf_per_10q).toBeNull();
- await page.goto('/research');await expect(page.locator('[data-research-slug="healthier-kids-foundation"]')).toContainText('(Bay Area)');
+ await page.goto('/research');await expect(page.locator('[data-research-slug="healthier-kids-foundation"]')).not.toContainText('(Bay Area)');
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 });

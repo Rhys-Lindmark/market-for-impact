@@ -1,0 +1,252 @@
+{
+  "organization": "Public Health Advocates",
+  "eyebrow": "CHARITY RESEARCH · CALIFORNIA · EXPLORATORY",
+  "program": "Health-policy advocacy, community systems change, emergency resilience and prevention",
+  "donationUrl": "https://publichealthadvocates.salsalabs.org/donate",
+  "published": "10 September 2026",
+  "modelVersion": "public-health-advocates-v1",
+  "nutshell": {
+    "headline": "PHAdvocates has proven policy capability, but current marginal health attribution and governance are unresolved.",
+    "body": "A $100,000 prior-weighted illustration is $78.8M donor and $93.8M illustrative gross resources per 10 QALYs. Central is $301M. A 5%-weight favorable case supplies 88.24% of modeled benefit.",
+    "whyItMayWork": "PHAdvocates helped win Medi-Cal coverage of the evidence-based Diabetes Prevention Program and reports more than a dozen state laws.",
+    "whyWeAreCautious": "Current programs disclose no incremental health denominator, policy counterfactual or next-gift plan; FY2024 audit flags going concern and an internal-control deficiency.",
+    "recommendationBlocker": "Obtain audit remediation, runway, current policy targets, partner attribution, next-$100K staffing, and linked uptake/outcomes."
+  },
+  "summary": [
+    {
+      "label": "MODELED ORDINARY GIFT",
+      "value": "$78.8M",
+      "detail": "donor cost per 10 signed modeled QALYs; 40% null, 10% harm"
+    },
+    {
+      "label": "CENTRAL",
+      "value": "$301M",
+      "detail": "donor cost per 10 modeled QALYs"
+    },
+    {
+      "label": "FAVORABLE",
+      "value": "$4.46M",
+      "detail": "5% weight; 88.24% of weighted benefit"
+    },
+    {
+      "label": "BAY / SF",
+      "value": "20% / 2%",
+      "detail": "statewide priors; SF nested"
+    },
+    {
+      "label": "RFMF",
+      "value": "Unverified, unpriced",
+      "detail": "financial need acute; health-producing room operationally risky"
+    }
+  ],
+  "programSection": {
+    "body": "The full legal entity includes childhood-trauma policy, emergency resilience, alternative response, youth advocacy, state legislation, climate justice and Stockton health work.",
+    "steps": [
+      {
+        "title": "Change state and local policy",
+        "detail": "Sponsor legislation and coach communities."
+      },
+      {
+        "title": "Build prevention systems",
+        "detail": "ACT, emergency resilience and alternative response."
+      },
+      {
+        "title": "Support local health equity",
+        "detail": "Youth, climate, nutrition, activity and breastfeeding campaigns."
+      }
+    ],
+    "boundary": "All $7.533M expense is charged. Only a DPP-coverage policy-equivalent is quantified; other pathways receive zero QALYs."
+  },
+  "model": {
+    "giftHeading": "Illustrative $100,000 unrestricted gift",
+    "headline": "Weighted $78.8M donor / $93.8M gross per 10 QALYs.",
+    "body": "Historical Medi-Cal DPP coverage is used as a mechanism benchmark, not a current outcome. Completer scale, attribution, QALY, gift and realization factors are priors.",
+    "equation": {
+      "label": "CENTRAL",
+      "expression": "500 equivalent completers × 5% attribution × .05 QALY × ($100K/$7.533M) × 25% deployability × 80% realization",
+      "result": ".0033186 gift QALY; $301.3M/10"
+    },
+    "inputs": [
+      {
+        "key": "volume",
+        "label": "Annual DPP-coverage-equivalent completers",
+        "confidence": "Very low",
+        "best": "500",
+        "range": "50 harm / 0 / 500 / 2,500",
+        "basis": "Scenario only; no current PHAdvocates participant outcome."
+      },
+      {
+        "key": "attribution",
+        "label": "Organization attribution",
+        "confidence": "Very low",
+        "best": "5%",
+        "range": "2% / 0 / 5% / 15%",
+        "basis": "Government, coalition, providers and advocates share causality."
+      },
+      {
+        "key": "qaly",
+        "label": "Finite QALY per completer",
+        "confidence": "Very low; sensitivity",
+        "best": ".05",
+        "range": "−.005 / 0 / .05 / .10",
+        "basis": "Trial anchors direction and persistence; values are not derived by combining the separate per-participant cost and review ICER."
+      },
+      {
+        "key": "gift",
+        "label": "Deployability × realization",
+        "confidence": "Low",
+        "best": "25% × 80%",
+        "range": "15×70 / 20×75 / 25×80 / 50×90",
+        "basis": "Restricted funding, going concern, internal control and unpriced use."
+      },
+      {
+        "key": "gross",
+        "label": "Gross-resource proxy",
+        "confidence": "Very low",
+        "best": "1.25× advocacy plus $2,250/completer",
+        "range": "1.10–1.50×",
+        "basis": "Historical efficacy-trial proxy; price year/perspective not matched; not current Medi-Cal marginal cost or a lower bound."
+      }
+    ],
+    "sensitivity": [
+      {
+        "case": "Harm 10%",
+        "headline": "Net harm",
+        "detail": "−.000007 QALY"
+      },
+      {
+        "case": "Null 40%",
+        "headline": "Not defined",
+        "detail": "No positive QALY"
+      },
+      {
+        "case": "Central 45%",
+        "headline": "$301M donor / $377M gross",
+        "detail": ".003319 QALY"
+      },
+      {
+        "case": "Favorable 5%",
+        "headline": "$4.46M donor / $6.92M gross",
+        "detail": ".224004 QALY"
+      },
+      {
+        "case": "Weighted",
+        "headline": "$78.8M donor / $93.8M gross",
+        "detail": ".012693 QALY"
+      },
+      {
+        "case": "No favorable",
+        "headline": "$636M donor",
+        "detail": ".001571 QALY"
+      }
+    ],
+    "uncertaintyBoundary": "The favorable tail dominates; values are priors, not confidence intervals or observed outcomes. With zero gift deployability, QALYs are zero and cost/geography ratios are null.",
+    "fundingBoundary": "Financial need appears acute; health-producing marginal RFMF is unverified, unpriced, and operationally risky."
+  },
+  "evidence": [
+    {
+      "key": "dpp",
+      "design": "Randomized trial and 10-year follow-up",
+      "population": "Adults at high diabetes risk",
+      "result": "58% lower incidence at ~3 years; one-third lower at 10 years; ~4-year delay.",
+      "transfer": "Medi-Cal implementation and current PHAdvocates contribution unmeasured."
+    },
+    {
+      "key": "economic",
+      "design": "2024 systematic review",
+      "population": "16 nonpharmacologic prevention studies",
+      "result": "Median DPP-based ICER $27,077/QALY.",
+      "transfer": "Design and delivery heterogeneous."
+    },
+    {
+      "key": "finance",
+      "design": "IRS 990 and federal single audit",
+      "population": "Whole organization",
+      "result": "FY24 $7.533M expense, $743K surplus, $2.010M net assets; going-concern and internal-control flags.",
+      "transfer": "Full expense; deployability discounted."
+    }
+  ],
+  "reservations": [
+    "No current attributable completers or health outcomes",
+    "Historical win is not marginal use",
+    "Most current pathways are zero-credit",
+    "Audit flags going concern and significant deficiency",
+    "Gross resources incomplete",
+    "Bay/SF shares assumed"
+  ],
+  "excludedBenefits": [
+    "Trauma policy",
+    "Emergency preparedness",
+    "Alternative 9-1-1 response",
+    "Youth and social-media policy",
+    "Climate justice",
+    "Nutrition, activity and breastfeeding",
+    "Convening, research and empowerment"
+  ],
+  "sources": [
+    {
+      "publisher": "Public Health Advocates",
+      "title": "Our Work",
+      "url": "https://phadvocates.org/our-work/",
+      "published": "Current",
+      "retrieved": "2026-09-10",
+      "sourceType": "Official portfolio"
+    },
+    {
+      "publisher": "Public Health Advocates",
+      "title": "Donate",
+      "url": "https://publichealthadvocates.salsalabs.org/donate",
+      "published": "Current",
+      "retrieved": "2026-09-10",
+      "sourceType": "Official unrestricted donation"
+    },
+    {
+      "publisher": "Public Health Advocates",
+      "title": "Diabetes Prevention Program",
+      "url": "https://phadvocates.org/case-study/diabetes-prevention-program/",
+      "published": "Historical case",
+      "retrieved": "2026-09-10",
+      "sourceType": "Official policy case"
+    },
+    {
+      "publisher": "California DHCS",
+      "title": "Diabetes Prevention Program",
+      "url": "https://www.dhcs.ca.gov/services/medi-cal-resources/diabetes-prevention-program-diabetes-prevention-program/",
+      "published": "Current",
+      "retrieved": "2026-09-10",
+      "sourceType": "Official benefit rules"
+    },
+    {
+      "publisher": "CDC",
+      "title": "What Is the National DPP?",
+      "url": "https://www.cdc.gov/diabetes-prevention/programs/what-is-the-national-dpp.html",
+      "published": "2024-05-14",
+      "retrieved": "2026-09-10",
+      "sourceType": "Government evidence summary"
+    },
+    {
+      "publisher": "PubMed",
+      "title": "Cost effectiveness of nonpharmacological prevention programs for diabetes",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38450300/",
+      "published": "2024",
+      "retrieved": "2026-09-10",
+      "sourceType": "Systematic review"
+    },
+    {
+      "publisher": "Springer/Applied Health Economics and Health Policy",
+      "title": "Cost-Effectiveness of the National Diabetes Prevention Program",
+      "url": "https://link.springer.com/article/10.1007/s40258-020-00565-w",
+      "published": "2020",
+      "retrieved": "2026-09-10",
+      "sourceType": "Historical efficacy-trial cost context"
+    },
+    {
+      "publisher": "IRS/Federal Audit Clearinghouse via ProPublica",
+      "title": "Public Health Advocates, EIN 95-4723901",
+      "url": "https://projects.propublica.org/nonprofits/organizations/954723901",
+      "published": "FY2024",
+      "retrieved": "2026-09-10",
+      "sourceType": "990 and audit flags"
+    }
+  ]
+}

@@ -3,9 +3,12 @@ import {test,expect} from '@playwright/test';
 test('Remedy national report does not replace SF ranking or invent Bay share',async({page})=>{
  await page.goto('/research');
  await expect(page.locator('[data-research-slug]')).toHaveCount(EXPECTED_RESEARCH_COUNT);
+ await expect(page.locator('[data-geography="International"]')).toHaveCount(0);
+ await page.goto('/archive/international-research');
  await expect(page.locator('[data-geography="International"]')).toHaveCount(EXPECTED_INTERNATIONAL_COUNT);
+ await page.goto('/archive/expanded-geography-research');
  const row=page.locator('[data-research-slug="remedy-alliance"]');
- await expect(row).toHaveCount(1);await expect(row).toContainText('$15.2M');
+ await expect(row).toHaveCount(1);await expect(row).toContainText('$76K');
  await expect(page.locator('#top-research')).toContainText('Remedy');
  await row.locator('a').first().click();
  await expect(page.locator('article')).toContainText('$76,164');
@@ -19,5 +22,5 @@ test('Remedy national report does not replace SF ranking or invent Bay share',as
  expect(api.evaluated[0].donorUsdPer10Qaly).toBeCloseTo(76164.1656,2);
  expect(api.evaluated[0].bayHealthShare).toBeNull();expect(api.evaluated[0].bayUsdPer10Qaly).toBeNull();
  await page.goto('/');
- expect(await page.locator('.sf-home-charity').evaluateAll(ns=>ns.map(n=>n.id))).toEqual(['glide','breathe-california','operation-access','pacific-vision-foundation']);
+ expect(await page.locator('.sf-home-charity').evaluateAll(ns=>ns.map(n=>n.id))).toEqual(['glide','breathe-california','pacific-vision-foundation','project-homeless-connect']);
 });

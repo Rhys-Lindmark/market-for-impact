@@ -1,8 +1,78 @@
 # Market for Impact backlog
 
-## Current authoritative checkpoint —67/115
+## Bayview Hunters Point Foundation — accepted distinct SF organization
 
-ViaHeart66 and SIRUM67 published; Clinic whole-organization correction count-neutral. Latest live exacta309acd5831406c1d0a101ae2e66338cd6f45dfc (PR251/v170) canonical390/768 reports/APIs/index verified,446tests,14focused checks/build pass. Source and current plan: docs/sf-progress.md/json. Earlier publication-pending entries are historical. Next new candidates NewEyes/ReCARES; accepted OA v2 awaits homepage-aware integration. GLIDE/Breathe partial-coverage diagnostics must not be called whole-org expected returns; draftPR249 preserves research. Never inflate count with revisions/screens or tune estimates toward100K.
+Release candidate80: $236.13M is total/site-attributed, not resident-specific. Subjective SF65%/Bay90% resident priors imply $363.28M SF/$262.37M Bay; measured residence remains unavailable. The new Bay-only list uses $262.37M with the assumption disclosed in the report, tooltip and accessible label. Final independent re-audit accepted. New release includes verified partial timing; no count before canonical verification.
+
+EIN94-1747575, not Bayview Senior Services. Whole FY2025 expense against explicitly partial behavioral-health benefit, giving HOLD. Final City amendments distinguished from superseded proposal; negative net assets show fragility, not proven liquidity. Known-gross accounting boundary is incomplete; verified marginal prices null. Earlier source/model audit accepted. Next: corrected NFP after its external-resource realization audit, then the highest-EV new organization; Westside retains material unresolved corrections.
+
+## Research-time / AI-model provenance on every report
+
+User priority: show actual organization-specific research minutes and AI model near the title on every old/new report. Implemented shared header for all79 reports, including expanded geography;26 verified intervals across12 reports are explicitly partial, while67 historical records remain unknown. Follow docs/research-effort.md for timestamped author/modeling/audit intervals, actual model identity evidence and partial-history coverage; exclude integration, deployment and idle waits. AGENTS.md and the new-report release checklist require available provenance records. No research count or cost-effectiveness estimate changes. Validation:487 tests passed, lint0 errors/3 existing warnings, production build passed;4 responsive checks passed, including every79 report header on phone390/tablet768. Next: publish, verify canonical headers, then integrate accepted BVHPF/NFP reports with their available provenance.
+
+## Bay Area research list / Expanded Geography Research — September 10
+
+Current verified published checkpoint: **79/115** through CalYouth (PR268, Sites v184). This interface reorganization adds no reports. Keep 62 SF/Bay reports in the main list and move 5 California-wide, 7 U.S.-wide and 5 international reports into **Expanded Geography Research**. All 79 reports and their models remain available. Bay-wide rows use their Bay price, not their smaller SF allocation; no new spillover benefits are invented. Remove redundant name and price geography labels as requested. The old international archive URL serves the expanded archive for existing bookmarks.
+
+Validation includes report/API model tests, production build, responsive archive navigation, Bay-price parity for Via Heart/HEPPAC, all-79 report-layout coverage and unique membership checks. Next: finish this canonical publication, then adapt accepted BVHPF/NFP PRs to the new grouping before adding them. Preserve explicit subjective local-share and funding-room disclosures inside reports.
+
+## California Coalition for Youth — accepted finite crisis-support report
+
+Full FY2025 organization expense charged; finite crisis-contact morbidity only, no mortality or policy credit. Weighted $440K donor/$527K illustrative gross per10 total QALYs; Bay20%/SF2% are explicitly unsourced nested priors, not observed callers. Repeat overlap, 988 substitution, public funding and marginal capacity unresolved. Source/model audit ACCEPT; giving HOLD. Root corrected caller-supplied gift numerator consistency and tests exact accepted default, zero-access and double-gift cases. 482 tests, lint zero errors and production build pass. Report79 only after prior releases and canonical verification. This is the third additional California-wide organization, not a new SF service provider.
+
+## Youth ALIVE — accepted Oakland whole-gift report
+
+Whole-organization gift with explicitly partial CiC-like health model; other program benefits not summed. Independent source and integration audits ACCEPT, giving HOLD. Direct five-year modeled 4.64−4.62=.020 QALY anchor replaces ambiguous cost/ICER reconstruction; source inconsistency and NICE limitations retained. Weighted $27.34M donor/$28.08M illustrative gross per10 Bay QALYs; zero direct SF credit, real null/harm, 66.1% favorable-tail dependence and $5M CalVIP displacement caveat. 479 tests, lint zero errors, build and phone/tablet checks precede publication. Report78 only after prior releases and canonical verification. Next accepted CalYouth, BVHPF and corrected NFP.
+
+## Public Health Advocates — accepted whole-gift California report
+
+Independently audited historical DPP-policy-equivalent model; giving HOLD. Weighted $78.8M donor/$93.8M illustrative gross per 10 total QALYs; Bay20%/SF2% are nested unmeasured priors. Current policy attribution, gross trial-cost proxy, going-concern/control concerns and unpriced marginal funding remain explicit. Root ESM conversion matches accepted output exactly and adds tested nonpositive-benefit guards; independent integration recheck accepted. 476 tests, lint zero errors, production build and phone/tablet checks required before release. Report77 only after FUF and canonical verification. Current live75 includes CIC, the first of three additional California-wide reports.
+
+## Friends of the Urban Forest — audited report in integration
+
+Whole-gift SF street-tree report; finite establishment and annual survival, explicit unvalidated QALY/tree-year priors and signed null/harm. Weighted donor/gross $1.053M/$1.219M per 10 QALYs; favorable tail supplies 84.9%. All organization expense remains charged against grant-associated tree output, which may be only a subset. Current FY2025 finances inform funding room but do not prove a marginal offer. Independent audit accepted; giving HOLD. Count 76 only after CIC and FUF canonical verification. Local checks and model snapshot are retained in the publication audit. Also distinguish SF-only report labels from regional labels without changing estimates.
+
+Current verified checkpoint: 74/115, through Safe & Sound (PR263/v179). Earlier pending headings are historical. Next CIC PR264, FUF, Public Health Advocates, Youth ALIVE and CalYouth; BVHPF and NFP remain audit drafts. Wider-Bay cohort is overfilled by one; do not relabel reports to make category quotas fit.
+
+## California Immunization Coalition — corrected model accepted
+
+Distinct California-wide organization; independently accepted whole-gift policy model, giving HOLD. Corrected MMR-only health calibration replaces the rejected full-schedule comparison and removes the unsupported sub-$100K favorable case. Weighted donor/gross $41.87M/$46.11M per 10 QALYs; current campaign attribution, modern transfer and Bay20%/SF2% shares remain explicit priors. 470 tests, lint zero errors, build, four phone/tablet checks and exact corrected-output match passed. Report 75 only after prior releases and canonical verification. Counts toward the remaining California-wide requirement. Next accepted FUF and PHAdvocates, then corrected/audited Youth ALIVE.
+
+## Safe & Sound — accepted release after Sonrisas
+
+Whole-organization finite stress/family-functioning model, independently audited, giving HOLD. Signed donor/gross $504.929M/$521.229M per 10 QALYs; 35% null, 10% harm and 81.87% favorable-tail dependence. Full GAAP expense is separated from gross resource outlay including direct donor benefits. No central mortality/maltreatment/policy credit or verified marginal offer. 467 tests, lint zero errors, production build, four phone/tablet checks and exact accepted-output comparison passed. Count 74 only after prior releases and canonical verification. Next corrected CIC, then FUF after tree-survival/current-finance audit corrections.
+
+## Sonrisas Dental Health — accepted release after SisterWeb
+
+Whole-organization safety-net dental report, independently audited; donor HOLD. Signed donor/gross $34.684M/$39.453M per 10 QALYs, with finite symptomatic relief only and explicit 76.9% favorable-tail dependence. Approximately matched FY2025 expense/current clinic output, DALY-derived scalar, payer displacement and unverified marginal capacity are disclosed. 464 tests, lint zero errors, production build, four phone/tablet checks and exact accepted-output comparison passed. Count becomes 73 only after prior canonical releases and its verification. Next accepted Safe & Sound; CIC MMR/full-schedule correction and FUF audit remain pending.
+
+## SisterWeb — accepted release after Ceres
+
+Whole-project finite-morbidity model, independently audited, giving HOLD. Signed weighted donor/gross $63.245M/$73.364M per 10 QALYs; 25% null, 10% harm, strong favorable-tail dependence. New EIN/no filing, unresolved Heluna contract transition, public-funding overlap and expense proxies are disclosed. Marginal offer unverified. Root output matches accepted JSON exactly; 461 tests, lint zero errors, production build, and four phone/tablet checks passed. Report 72 only after canonical publication following Ceres. Next: accepted Sonrisas, Safe & Sound audit, new SF and California-wide research.
+
+## Ceres Community Project — accepted release after HEPPAC
+
+Independently audited whole-organization report with randomized primary null evidence and an expressly exploratory mortality bridge. Weighted donor/gross: $258.168M/$302.994M per 10 QALYs; donor HOLD. Client-bounded course denominator, finite survival, 60% null weight, reported volunteer value, and dated funding target/waitlist remain explicit. No verified marginal funding offer. 458 tests, lint zero errors, production build, and four Ceres/HEPPAC phone/tablet checks passed. Counts as report 71 only after exact-source canonical verification, following HEPPAC. Ceres does not satisfy the California-wide cohort requirement. Next: accepted SisterWeb and Sonrisas, then Safe & Sound after audit.
+
+## HEPPAC — accepted next report (70 after both releases are verified)
+
+Whole-organization conditional harm-reduction model, independently audited; donor HOLD. Weighted $10.864M/10 QALYs overall, $11.112M Bay and $265.457M SF under unmeasured nested geographic priors. Includes 20% no-benefit weight, finite fatal-event survival and explicit outcome-versus-donation attribution. Historical engagement data are not annualized; the county amendment is requested, not presumed executed. Gross resource multiplier is illustrative, not observed. Full portfolio costs and unquantified services remain visible.
+
+Marin Treatment Center is published and canonical-verified as report 69 (PR258, v174, exact 78feb23f683863dd90cb66cd8dcfee240fc1c962). Root HEPPAC ESM output matches the accepted v5 snapshot exactly. Combined validation passed: 455 tests, lint with zero errors and three existing warnings, production build, and four phone/tablet report/API checks. Canonical HEPPAC deployment remains pending. Next: integrate independently accepted Ceres and SisterWeb; Sonrisas audit and Safe & Sound research continue. Do not count incomplete or duplicate reports.
+
+## Next release — Marin Treatment Center (69/115 after canonical verification)
+
+Independent source/model audit accepted a conditional whole-gift opioid-treatment model, not a verified marginal offer. Weighted ordinary-gift estimate: $7.133M per 10 QALYs overall; central $24.213M. Bay share is a judgment (98.23% outcome-weighted); SF residence share and marginal gross resources remain unknown. Finite survival, medication mix, clinical transfer, alternative care, funding replacement and a true null scenario are explicit. Major unquantified services keep their costs; this is an unfavorable/high-uncertainty finding, not zero impact.
+
+Root integration: report, model/API, Bay index and phone/tablet contract. 452 repository tests passed; lint has no errors and three existing warnings; production build and both phone/tablet checks passed. Exact-source release pending. Session began 2026-09-10T18:11:24Z. Next: HEPPAC independent review and Ceres full report; finish existing research rather than repeated screens. MTC contributes wider-Bay coverage, not the separate requirement for three additional California-wide organizations.
+
+## Current authoritative checkpoint —68/115
+
+New Eyes advances the reviewed set to68 once this branch is merged and canonical-verified. Its very-low-confidence weighted ordinary-gift model is $78,651/10 U.S. QALYs; removing the5% favorable scenario gives $100,714, and illustrative gross resources give $219,881. Hypothetical2% Bay/.25% SF shares imply $3.93M/$31.46M, but no local recipient allocation or marginal funding offer is verified, so it is not an SF recommendation. ReCARES, Ear of the Lion, Alliance for Smiles, Youth ALIVE! and Acterra remain negative screens and do not inflate the count. Continue high-EV screening without tuning findings toward100K.
+
+## Operation Access — expanded whole-gift coverage published
+
+Count-neutral named-case-mix model replaces selected abnormal-FIT programme price. Current specialties,21 added explicit clinical pathways and finite later-care counterfactuals; central donor $1.947M US/$3.245M Bay/$24.335M SF per10Q.9170independent and1946author checks; diagnosis frequencies and resource priors remain weak, no funding offer. Historical endpoint preserved. Mechanical top four now GLIDE/Breathe/PVF/PHC; PHC summary and shared hearing caveat added using its existing sourced photo. PR254, exact c18b172ef505281329e74cc7236383aff45f0cc0, Sites v171; canonical report/API/home/research and390/768 no-overflow checks passed. Count remains67/115 because this is a correction.
 
 ## Clinic by the Bay — accepted whole-organization correction
 
@@ -221,6 +291,10 @@ User direction supersedes the older post-50 sequence below. Finish the current ~
 - [ ] **Research-page simplification:** consolidate /donate/research into one cost-effectiveness-sorted research-report index. Remove redundant “THE FIRST 25” and bottom “DEEP DIVE” collections; audit everything below “What can a donor act on today?” Retain useful methods/source material through report links, not duplicate candidate-only cards. Every listed completed item must lead to a substantive research report; keep the discovery queue internal and clearly separate.
 
 Completion target: 100 unique researched organizations with program-specific, inspectable USD/10 incremental QALY models, uncertainty and actual funding-status labels. Multiple programs at one organization do not inflate the organization count; Bay-only research stays distinguishable from SF-serving research. Never tune assumptions to reach the sub-$100K target.
+
+**September 10 category tracker — 68→115:** track 47 remaining unique reports and 49 category slots. Target ten slots each for SF outcome-first organizations, SF universe/new coverage, policy and systems leverage, and other-city transfers with a real Bay implementer. Target three slots each for EA/Charity-Entrepreneurship mechanisms tied to real organizations, wider Bay/California (including at least three more California-wide organizations), and selective evidence-rich US/international comparators. Exactly two genuinely cross-cutting organizations may satisfy two documented category slots, but each organization counts once toward 115. Screens, duplicate programs, revisions and hypothetical ventures do not count. Report both x/115 and per-category progress.
+
+- [ ] **Research-index regional scope cleanup:** keep `/givebetter/research` focused on SF/Bay donor decisions. Display an explicit SF estimate when modeled and otherwise an explicit Bay Area estimate for Bay/US organizations; never substitute the national value. Move international comparison rows to a linked archive index while retaining their substantive reports and their contribution to the 115-report corpus.
 
 **September8 evidence checkpoint:** [Internal next100 queue](docs/research-queue/next100/README.md) preserves ten other-city hypotheses, ten EA-informed hypotheses, ten new-to-coverage candidates, ten hypothetical incubation concepts, a100-EIN metadata sample and public-source funding audits for25 leading models. This is not100 completed reviews or a whole-universe screen. Independent audits verified100 unique sampled EINs and ten preliminary primary checks; known-grantee exclusions are broader than completed reviews, contractor-only entities are absent, and the On Lok donation-entity mismatch remains unresolved. Draft model packets do not enter rankings until independently audited, integrated and published. Next: implement GLIDE/IOA/FiveKeys cost-perspective corrections, complete Brightline/RTSF, then promote verified new-program packets. No verified marginal funding offers were established by the25 funding checks.
 

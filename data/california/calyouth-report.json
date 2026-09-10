@@ -1,0 +1,270 @@
+{
+  "organization": "California Coalition for Youth",
+  "eyebrow": "CHARITY RESEARCH · CALIFORNIA · EXPLORATORY",
+  "program": "California Youth Crisis Line, youth-homelessness advocacy and member support",
+  "donationUrl": "https://calyouth.org/donate/",
+  "published": "10 September 2026",
+  "modelVersion": "calyouth-v1",
+  "nutshell": {
+    "headline": "A real statewide crisis line, but no CalYouth-linked distal health outcomes.",
+    "body": "A $100,000 signed illustration is $440,440 donor and $527,427 illustrative gross resources per 10 QALYs. Central is $541,791. The only sub-$100,000 result is a favorable stress case.",
+    "whyItMayWork": "CalHHS reports 16,740 annual calls averaged over 2014–2023, and external studies observe proximal distress reductions during crisis calls.",
+    "whyWeAreCautious": "Calls are not people or resolved crises; mortality credit is zero; repeat overlap, 988 displacement, marginal use and local shares are unresolved.",
+    "recommendationBlocker": "Obtain current unique/repeat contact structure, answer rates, severity, warm handoffs, follow-up outcomes, funding restrictions and a next-$100K staffing plan."
+  },
+  "summary": [
+    {
+      "label": "MODELED ORDINARY GIFT",
+      "value": "$440K",
+      "detail": "donor cost per 10 signed modeled QALYs; 45% null, 10% harm"
+    },
+    {
+      "label": "CENTRAL",
+      "value": "$542K",
+      "detail": "donor cost per 10 modeled QALYs"
+    },
+    {
+      "label": "FAVORABLE STRESS",
+      "value": "$60.6K",
+      "detail": "10% weight; 72.69% of weighted benefit"
+    },
+    {
+      "label": "BAY / SF",
+      "value": "20% / 2%",
+      "detail": "rounded unsourced analyst priors; nine-county Bay; SF nested"
+    },
+    {
+      "label": "RFMF",
+      "value": "Unverified, unpriced",
+      "detail": "plausible hotline capacity, unknown grant substitution"
+    }
+  ],
+  "programSection": {
+    "body": "The full legal entity runs the crisis line, statewide policy and legislative advocacy, member networking, youth leadership, public education, and the Youth Empowerment Summit.",
+    "steps": [
+      {
+        "title": "Answer crisis contacts",
+        "detail": "Staff and trained volunteers provide 24/7 counseling."
+      },
+      {
+        "title": "Connect youth to services",
+        "detail": "Referrals and warm connections use a statewide resource directory."
+      },
+      {
+        "title": "Change youth systems",
+        "detail": "Policy, member advocacy, conferences and youth participation."
+      }
+    ],
+    "boundary": "All FY2025 expense is charged. Only conditional finite crisis-contact morbidity receives QALYs; mortality and every other pathway receive zero."
+  },
+  "model": {
+    "headline": "Weighted $440K donor / $527K illustrative gross per 10 QALYs.",
+    "body": "The model uses calls, never unique people. QALY/contact is a finite net episode sensitivity after repeat overlap, not a study estimate.",
+    "equation": {
+      "label": "CENTRAL",
+      "expression": "16,740 calls × ($100K/$1.214M) ×45% deployability ×35% non-displaced access ×85% realization ×.010 QALY",
+      "result": "1.84573 gift QALYs; $541,791/10"
+    },
+    "inputs": [
+      {
+        "key": "volume",
+        "label": "Annual crisis contacts",
+        "confidence": "Medium",
+        "best": "16,740",
+        "range": "Historical 2014–2023 annual average",
+        "basis": "CalHHS; calls, not unduplicated callers."
+      },
+      {
+        "key": "gift",
+        "label": "Deployability",
+        "confidence": "Very low",
+        "best": "45%",
+        "range": "20–70%",
+        "basis": "Donation names line; no priced marginal allocation."
+      },
+      {
+        "key": "access",
+        "label": "Non-displaced access",
+        "confidence": "Very low",
+        "best": "35%",
+        "range": "0–60%",
+        "basis": "988, county lines and other supports create substitution."
+      },
+      {
+        "key": "qaly",
+        "label": "Finite net QALY/additional contact",
+        "confidence": "Very low; sensitivity",
+        "best": ".010",
+        "range": "−.005 / 0 / .010 / .030",
+        "basis": "Zero mortality credit; 1.83-day harm to 10.96-day favorable morbidity equivalent."
+      },
+      {
+        "key": "gross",
+        "label": "Gross-resource proxy",
+        "confidence": "Very low",
+        "best": "1.20×",
+        "range": "1.15–1.30×",
+        "basis": "Illustrative volunteer/training/referral resources; not audited or a lower bound."
+      },
+      {
+        "key": "geography",
+        "label": "Bay / SF impact share",
+        "confidence": "Very low; unsourced prior",
+        "best": "20% / 2%",
+        "range": "Not measured",
+        "basis": "Rounded analyst population-share priors. Bay means Alameda, Contra Costa, Marin, Napa, San Francisco, San Mateo, Santa Clara, Solano, and Sonoma; SF is nested."
+      }
+    ],
+    "sensitivity": [
+      {
+        "case": "Harm 10%",
+        "headline": "Net harm",
+        "detail": "−.25851 QALY"
+      },
+      {
+        "case": "Null 45%",
+        "headline": "Not defined",
+        "detail": "No positive QALY"
+      },
+      {
+        "case": "Central 35%",
+        "headline": "$542K donor / $650K gross",
+        "detail": "1.84573 QALY"
+      },
+      {
+        "case": "Favorable 10%",
+        "headline": "$60.6K donor / $78.8K gross",
+        "detail": "16.5030 QALY"
+      },
+      {
+        "case": "Weighted",
+        "headline": "$440K donor / $527K gross",
+        "detail": "2.27046 QALY"
+      },
+      {
+        "case": "No favorable",
+        "headline": "$1.45M donor / $1.72M gross",
+        "detail": ".68906 QALY"
+      }
+    ],
+    "uncertaintyBoundary": "Favorable stress supplies 72.69% of signed expected QALYs; no causal mortality estimate is used.",
+    "fundingBoundary": "Health-producing marginal RFMF is plausible but unverified and unpriced.",
+    "giftHeading": "Illustrative $100,000 unrestricted gift"
+  },
+  "evidence": [
+    {
+      "key": "throughput",
+      "design": "CalHHS administrative summary",
+      "population": "California youth 12–24 and families",
+      "result": "16,740 annual calls averaged 2014–2023; 14:57 average duration.",
+      "transfer": "Calls may repeat and do not establish outcomes."
+    },
+    {
+      "key": "review",
+      "design": "33-study systematic review",
+      "population": "Crisis-line users",
+      "result": "Most level-four evidence; 80% high risk of bias; high-quality effectiveness evidence lacking.",
+      "transfer": "No CalYouth-specific effect."
+    },
+    {
+      "key": "cohort",
+      "design": "Uncontrolled eight-center cohort",
+      "population": "1,085 suicidal callers; 380 follow-up",
+      "result": "Suicidality fell during calls; hopelessness and psychological pain continued falling.",
+      "transfer": "No counterfactual; selection and attrition."
+    },
+    {
+      "key": "finance",
+      "design": "IRS FY2025 filing",
+      "population": "Whole organization",
+      "result": "$1.214M expense, $135,884 surplus, $432,706 net assets.",
+      "transfer": "Full expense charged; marginal allocation unknown."
+    }
+  ],
+  "reservations": [
+    "Calls are not unique people",
+    "No CalYouth-linked distal outcomes",
+    "Zero mortality credit",
+    "Repeat-contact overlap unresolved",
+    "No priced marginal gift",
+    "988/public-funding substitution",
+    "Gross resources incomplete",
+    "Bay/SF shares assumed"
+  ],
+  "excludedBenefits": [
+    "Suicides or deaths prevented",
+    "Policy and legislative wins",
+    "Housing and shelter outcomes",
+    "Referral-provider treatment",
+    "Education and conferences",
+    "Youth leadership",
+    "Member capacity",
+    "Family spillovers"
+  ],
+  "sources": [
+    {
+      "publisher": "California Coalition for Youth",
+      "title": "Youth Crisis Line",
+      "url": "https://calyouth.org/cycl/",
+      "published": "Current",
+      "retrieved": "2026-09-10",
+      "sourceType": "Official program"
+    },
+    {
+      "publisher": "California Coalition for Youth",
+      "title": "Donate",
+      "url": "https://calyouth.org/donate/",
+      "published": "Current",
+      "retrieved": "2026-09-10",
+      "sourceType": "Official donation"
+    },
+    {
+      "publisher": "California Coalition for Youth",
+      "title": "Volunteer",
+      "url": "https://calyouth.org/cycl/volunteer/",
+      "published": "Current",
+      "retrieved": "2026-09-10",
+      "sourceType": "Official staffing"
+    },
+    {
+      "publisher": "California Health and Human Services Agency",
+      "title": "AB 988 Chart Book",
+      "url": "https://www.chhs.ca.gov/wp-content/uploads/2024/11/AB988-Chart-Book-110524-DRAFT.pdf",
+      "published": "2024-11-05 draft",
+      "retrieved": "2026-09-10",
+      "sourceType": "Government throughput"
+    },
+    {
+      "publisher": "IRS via ProPublica",
+      "title": "California Coalition for Youth, EIN 94-2607710",
+      "url": "https://projects.propublica.org/nonprofits/organizations/942607710",
+      "published": "FY2025",
+      "retrieved": "2026-09-10",
+      "sourceType": "IRS filing"
+    },
+    {
+      "publisher": "PubMed",
+      "title": "The Effectiveness of Crisis Line Services: A Systematic Review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32010655/",
+      "published": "2020-01-17",
+      "retrieved": "2026-09-10",
+      "sourceType": "Systematic review"
+    },
+    {
+      "publisher": "PubMed",
+      "title": "An Evaluation of Crisis Hotline Outcomes, Part 2",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17579545/",
+      "published": "2007",
+      "retrieved": "2026-09-10",
+      "sourceType": "Uncontrolled cohort"
+    },
+    {
+      "publisher": "California Coalition for Youth",
+      "title": "History of Funding for Homeless Youth",
+      "url": "https://calyouth.org/wp-content/uploads/2024/10/History-of-Funding-for-Homeless-Youth-Final.pdf",
+      "published": "2024",
+      "retrieved": "2026-09-10",
+      "sourceType": "Official historical funding"
+    }
+  ]
+}

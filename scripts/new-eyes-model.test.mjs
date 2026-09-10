@@ -1,0 +1,6 @@
+import fs from'node:fs';import assert from'node:assert/strict';import{calculate,scenario}from'../lib/new-eyes-model.mjs';
+const m=JSON.parse(fs.readFileSync(new URL('../data/us/new-eyes-model-v1.json',import.meta.url)));let checks=0;const close=(a,b,t=1e-5)=>{assert.ok(Math.abs(a-b)<=t*Math.max(1,Math.abs(a),Math.abs(b)));checks++;};
+const full=calculate(m),without=calculate(m,false);close(full.expected_q,12.7144126);close(full.national.donor_per_10q,78650.90);close(full.national.resource_per_10q,219881.09);close(without.expected_q,9.9291542);close(without.national.donor_per_10q,100713.51);close(without.national.resource_per_10q,286543.19);close(full.bay.donor_per_10q,full.national.donor_per_10q/.02);close(full.sf.donor_per_10q,full.national.donor_per_10q/.0025);assert.ok(full.sf.q<=full.bay.q);checks++;
+for(const s of m.scenarios){const r=scenario(m,s);assert.ok(r.recipients>0&&Number.isFinite(r.gift_q)&&Number.isFinite(r.total_resources_usd));checks++;}
+for(const bad of [NaN,Infinity,-1]){assert.throws(()=>calculate({...m,gift_usd:bad}));checks++;}
+console.log(JSON.stringify({status:'pass',checks,central:full.national.donor_per_10q,zero_favorable:without.national.donor_per_10q}));

@@ -1,5 +1,5 @@
 import {test,expect} from '@playwright/test';
-for(const [slug,title] of [['pacific-vision-foundation','Pacific Vision Foundation'],['operation-access','Operation Access']]){
+for(const [slug,title] of [['pacific-vision-foundation','Pacific Vision Foundation']]){
  test(`${slug}: conditional price, signed nulls and inspectable model`,async({page})=>{
   await page.goto(`/charities/${slug}`);
   await expect(page.getByRole('heading',{level:1,name:title,exact:true})).toBeVisible();

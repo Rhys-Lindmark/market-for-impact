@@ -16,7 +16,8 @@ test(key+' whole-gift API and report match every signed scenario',async({page,re
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 });
 }
-test('new shortlist has explicit program-scope fallbacks',async({page})=>{
- await page.goto('/');await expect(page.locator('.sf-home-research-note')).toHaveCount(2);
- for(const slug of ['operation-access','pacific-vision-foundation'])await expect(page.locator('#'+slug)).toContainText('unrestricted');
+test('new shortlist has explicit whole-gift boundaries',async({page})=>{
+ await page.goto('/');await expect(page.locator('.sf-home-research-note')).toHaveCount(1);
+ await expect(page.locator('#pacific-vision-foundation')).toContainText('unrestricted');
+ await expect(page.locator('#project-homeless-connect')).toContainText('whole-gift');
 });

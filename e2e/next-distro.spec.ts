@@ -15,6 +15,6 @@ test('NEXT whole gift retains zero SF eligibility and signed scenarios',async({p
   expect(data.evaluated[i].q.sf).toBe(0);
   expect(data.evaluated[i].prices.sf).toEqual({donor:null,gross:null,net:null});
  }
- await page.goto('/research');await expect(page.locator('[data-research-slug="next-distro"]')).toContainText('(U.S.)');
+ await page.goto('/archive/expanded-geography-research');await expect(page.locator('[data-research-slug="next-distro"]')).toContainText('(U.S.)');
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 });

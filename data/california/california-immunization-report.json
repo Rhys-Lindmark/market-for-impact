@@ -1,0 +1,79 @@
+{
+  "organization":"California Immunization Coalition",
+  "eyebrow":"CHARITY RESEARCH · CALIFORNIA · EXPLORATORY",
+  "program":"Statewide vaccine policy, access, provider education, communication, and coalition support",
+  "donationUrl":"https://www.immunizeca.org/donate/",
+  "published":"10 September 2026",
+  "modelVersion":"california-immunization-coalition-v1",
+  "nutshell":{
+    "headline":"Vaccination has a strong health mechanism, but CIC-specific marginal policy attribution is unobserved.",
+    "body":"A $100,000 reasoned-prior illustration is $41.9M donor and $46.1M illustrative gross resources per 10 QALYs. Central is $228M; a 5%-weight favorable policy case is $2.28M donor and supplies 91.75% of weighted benefit.",
+    "whyItMayWork":"California policy has quasi-experimentally increased vaccination coverage, and CIC is a small statewide coalition with current policy/access and provider-communication work.",
+    "whyWeAreCautious":"CIC reports no current CIC-attributable coverage outcome, policy counterfactual, or priced next-gift campaign. Partners, lawmakers, agencies and providers share causality.",
+    "recommendationBlocker":"Obtain a dated next-$100,000 policy campaign, measurable decision target, partner contribution budget, and post-policy uptake design."
+  },
+  "summary":[
+    {"label":"MODELED ORDINARY GIFT","value":"$41.9M","detail":"prior-weighted donor cost per 10 modeled QALYs; 40% null and 10% harm"},
+    {"label":"CENTRAL","value":"$228M","detail":"donor cost per 10 modeled QALYs"},
+    {"label":"FAVORABLE POLICY STRESS","value":"$2.28M","detail":"donor cost; 5% weight, 91.75% of weighted QALYs, and $5.66M gross proxy"},
+    {"label":"BAY / SF SHARE","value":"20% / 2%","detail":"statewide population-share priors; SF nested in Bay"},
+    {"label":"FUNDING ROOM","value":"Plausible, unpriced","detail":"6.0 months net assets and a deficit, but $100K is 23.7% of expense"}
+  ],
+  "programSection":{
+    "body":"CIC, EIN 94-3318502, is a statewide 501(c)(3) supporting vaccine policy/access, provider and public communication, the annual summit, local coalitions and partner advocacy. Vaccinate California is profiled as a parent advocacy group; the modeled legal entity is CIC.",
+    "steps":[
+      {"title":"Support policy and access","detail":"Advocate for policies and programs that preserve evidence-based vaccine access."},
+      {"title":"Educate providers and the public","detail":"Maintain resources, communications, webinars and annual summit programming."},
+      {"title":"Coordinate coalitions","detail":"Connect local coalitions, professional groups, public health and parent advocates."}
+    ],
+    "boundary":"Training, convening, downloads and communications receive no direct QALY credit. Only a bounded policy-to-uptake chain is quantified against full FY2024 expense."
+  },
+  "model":{
+    "headline":"Prior-weighted gift $41.9M/10 QALYs; favorable stress $2.28M/10.",
+    "body":"SB277's 3.3-point MMR coverage estimate, multiplied by a rounded 500K kindergarten cohort, creates 16,500 MMR-coverage-affected child-equivalents—not a CIC outcome. Annual policy-equivalent production, CIC attribution, MMR-specific finite health calibration, deployability and realization are separate inputs.",
+    "equation":{"label":"CENTRAL GIFT","expression":"16,500 × 5% annual policy-equivalent × 5% CIC attribution × 0.001511 QALY × ($100K/$422,714) × 35% deployability × 85% realization","result":"0.0043865 QALY; $227,970,996 donor per 10 QALYs"},
+    "inputs":[
+      {"key":"benchmark","label":"SB277-scale MMR-coverage-affected children","confidence":"Low as scale, not CIC outcome","best":"16,500","range":"3.3% × rounded 500K cohort","basis":"Synthetic-control MMR coverage estimate; rounded cohort is an analyst scale input."},
+      {"key":"policyEquivalent","label":"Annual policy-equivalent fraction","confidence":"Very low","best":"5%","range":"1% / 0 / 5% / 20%","basis":"No current CIC-attributable policy outcome; scenario prior."},
+      {"key":"attribution","label":"CIC share","confidence":"Very low","best":"5%","range":"2% harm / 0 / 5% / 15%","basis":"Lawmakers, agencies, clinicians, funders and coalition partners share causality."},
+      {"key":"qaly","label":"Finite QALY per MMR-coverage-affected child","confidence":"Very low","best":"0.001511","range":"−0.0002 / 0 / 0.001511 / 0.006060","basis":"MMR-only CDC death/illness/hospital rows form a historical upper calibration, then 5%/15% modern marginal transfer is applied."},
+      {"key":"gift","label":"Deployability and realization","confidence":"Low","best":"35% × 85%","range":"25%×75% / 35%×80% / 35%×85% / 65%×95%","basis":"$100K is large relative to CIC expense and no priced marginal campaign is public."},
+      {"key":"gross","label":"High-side full-schedule resource proxy","confidence":"Low proxy","best":"$2,050/affected child","range":"fixed illustration","basis":"CDC $240B full nine-vaccine program cost / 117M children; intentionally high-side and not a matched marginal MMR price."}
+    ],
+    "sensitivity":[
+      {"case":"Harm 10%","headline":"Net harm","detail":"−0.000029 gift QALY."},
+      {"case":"Null 40%","headline":"No positive QALYs","detail":"Gift spent; stand-alone cost infinite."},
+      {"case":"Central 45%","headline":"$228M donor / $242M gross","detail":"0.0043865 gift QALY."},
+      {"case":"Favorable 5%","headline":"$2.28M donor / $5.66M gross","detail":"0.438230 gift QALY; 91.75% of weighted benefit."},
+      {"case":"Weighted","headline":"$41.9M donor / $46.1M gross","detail":"0.023883 signed gift QALY."},
+      {"case":"No favorable","headline":"$482M donor","detail":"0.002075 renormalized gift QALY."}
+    ],
+    "uncertaintyBoundary":"All CIC attribution, annual policy, QALY, gift and geography values are analyst priors, not confidence intervals or observed outcomes. The favorable case drives the headline.",
+    "fundingBoundary":"FY2024 expense $422,714, deficit $20,232 and net assets $213,077 suggest some room, but no priced marginal campaign or grant-displacement analysis exists."
+  },
+  "evidence":[
+    {"key":"sb277","design":"Prespecified synthetic control plus county difference-in-differences","population":"California kindergarten vaccination coverage","result":"SB277 associated with +3.3pp MMR and +4.3pp overall county coverage.","transfer":"Policy mechanism benchmark only; not CIC attribution."},
+    {"key":"replacement","design":"State school-entry trend analysis","population":"California kindergarteners","result":"Not-up-to-date share fell 7.15% to 4.42% in year one; replacement pathways and partial year-two reversal remained.","transfer":"Supports downside and nonpersistence."},
+    {"key":"health","design":"CDC economic disease model","population":"117M US children born 1994–2023","result":"Routine vaccination modeled to prevent 508M illnesses, 32M hospitalizations and 1.129M deaths.","transfer":"Full schedule versus no vaccination; not marginal CIC effect."},
+    {"key":"finance","design":"IRS Form 990","population":"Whole CIC legal organization","result":"FY2024 revenue $402,482, expense $422,714, deficit $20,232, net assets $213,077.","transfer":"Full expense denominator; marginal absorption unknown."}
+  ],
+  "reservations":[
+    "No current CIC-specific policy, uptake, morbidity or mortality outcome is identified.",
+    "Historical SB277 evidence is a mechanism benchmark, not proof of future policy production.",
+    "Organization attribution among coalition partners, government and providers is highly uncertain.",
+    "QALY per coverage-affected child uses MMR-only historical components and a judgmental modern marginal transfer; it is not an observed CIC effect.",
+    "Potential polarization, adverse events, replacement exemptions and education effects appear in harm/downside boundaries.",
+    "Gross resources omit unmeasured advocacy partners and public-health infrastructure and do not net avoided costs.",
+    "Bay/SF shares are statewide priors, not measured beneficiaries."
+  ],
+  "excludedBenefits":["Provider knowledge","Public confidence","Summit and networking value","Local coalition capacity","Policy spillovers outside California","Avoided medical spending","Equity, trust and preparedness benefits not captured by vaccination QALYs"],
+  "sources":[
+    {"publisher":"California Immunization Coalition","title":"Donate","url":"https://www.immunizeca.org/donate/","published":"Updated 2026-07-29","retrieved":"2026-09-10","sourceType":"Official identity, donation and current scope"},
+    {"publisher":"California Immunization Coalition","title":"Homepage and 2026 activities","url":"https://www.immunizeca.org/","published":"Current 2026","retrieved":"2026-09-10","sourceType":"Official organization activity page"},
+    {"publisher":"California Immunization Coalition","title":"Vaccinate California","url":"https://www.immunizeca.org/vaccinate-california/","published":"Current profile","retrieved":"2026-09-10","sourceType":"Official partner/program profile and historical policy claim"},
+    {"publisher":"IRS via ProPublica Nonprofit Explorer","title":"California Immunization Coalition, EIN 94-3318502","url":"https://projects.propublica.org/nonprofits/organizations/943318502","published":"FY2024 filing, filed 2025-11-12","retrieved":"2026-09-10","sourceType":"IRS Form 990 data"},
+    {"publisher":"PLOS Medicine / PubMed Central","title":"The 2016 California policy to eliminate nonmedical vaccine exemptions and changes in vaccine coverage","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC6927583/","published":"2019","retrieved":"2026-09-10","sourceType":"Peer-reviewed quasi-experimental policy analysis"},
+    {"publisher":"Pediatrics / PubMed Central","title":"Elimination of Nonmedical Immunization Exemptions in California and School-Entry Vaccine Status","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC6564056/","published":"2019","retrieved":"2026-09-10","sourceType":"Peer-reviewed policy analysis"},
+    {"publisher":"CDC MMWR","title":"Health and Economic Benefits of Routine Childhood Immunizations in the Era of the Vaccines for Children Program—United States, 1994–2023","url":"https://www.cdc.gov/mmwr/volumes/73/wr/mm7331a2.htm","published":"2024-08-08","retrieved":"2026-09-10","sourceType":"Government health and economic model"}
+  ]
+}

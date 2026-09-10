@@ -1,0 +1,99 @@
+{
+  "organization": "Safe & Sound",
+  "eyebrow": "CHARITY RESEARCH · SAN FRANCISCO · EXPLORATORY",
+  "program": "Family support, childhood-trauma prevention, community education, and systems change",
+  "donationUrl": "https://safeandsound.org/?campaign=751530",
+  "published": "10 September 2026",
+  "modelVersion": "safe-sound-whole-org-v2",
+  "nutshell": {
+    "headline": "Safe & Sound addresses severe childhood harm, but its public evidence does not identify organization-attributable maltreatment or health outcomes.",
+    "body": "A reasoned-prior illustration puts a $100,000 unrestricted gift at $505 million per 10 signed expected QALYs, or $521 million under an illustrative gross-resource sensitivity. Central is $1.329 billion. The model gives no mortality or central maltreatment credit and includes 35% null and 10% harm cases.",
+    "whyItMayWork": "Parenting interventions can reduce stress and improve family functioning, and Safe & Sound integrates care coordination, therapy, parent education, concrete support and systems work in San Francisco.",
+    "whyWeAreCautious": "Reported people are not proven unique; course completion and intervention fidelity are absent; protective factors and child-welfare avoidance lack a credible counterfactual; citywide trends and partner reach are not organization outcomes.",
+    "recommendationBlocker": "Obtain de-duplicated households and completed courses, intervention fidelity, linked health and harm outcomes with a comparison strategy, partner attribution, current residence, and a dated priced next-gift use."
+  },
+  "summary": [
+    {"label":"MODELED ORDINARY GIFT","value":"$505M","detail":"prior-weighted donor cost per 10 signed modeled QALYs; 35% null and 10% harm priors"},
+    {"label":"CENTRAL GIFT ILLUSTRATION","value":"$1.329B","detail":"per 10 modeled QALYs; 30% gift deployability and 85% realization are priors"},
+    {"label":"FAVORABLE STRESS CASE","value":"$30.8M","detail":"per 10 modeled QALYs; supplies most weighted benefit despite 5% weight"},
+    {"label":"BAY / SF SHARE","value":"100% / 97.50%","detail":"service-geography-informed priors; SF is nested within Bay, residence unmeasured"},
+    {"label":"FUNDING ROOM","value":"Low–moderate, unverified","detail":"two deficits, but 14.2 months unrestricted net assets and no priced expansion"}
+  ],
+  "programSection": {
+    "body": "Safe & Sound is one audited San Francisco organization spanning direct family services, community education and partnerships, and strategic partnerships and policy. Its 13,325 direct-service count and 333 IFS children/caregivers are reported people, not proven unique households or completed courses.",
+    "steps": [
+      {"title":"Support children and caregivers","detail":"IFS, SafeStart, therapy, therapeutic play, parent/child education, care coordination, TALK Line, and concrete-needs help."},
+      {"title":"Educate and build community capacity","detail":"Child-safety and mandated-reporter education, Communities of Care, SFUSD work, and provider training."},
+      {"title":"Coordinate systems","detail":"Family Services Alliance and Children's Advocacy Center backbone work, Center for Youth Wellness, TASIE, research, policy and advocacy."},
+      {"title":"Provide material and crisis support","detail":"Meals, diapers, formula, hygiene items, school and holiday supplies, housing/employment navigation, and volunteer support."}
+    ],
+    "boundary": "The full $13.206M audited expense is charged. Only the 333 IFS children/caregivers enter the QALY model, after a combined effective-share discount. Calls, sessions, screenings, items, trainees, network reach and citywide trends are not summed as health beneficiaries."
+  },
+  "model": {
+    "headline": "Prior-weighted ordinary gift: $505M per 10 modeled QALYs; central: $1.329B.",
+    "body": "The model converts finite caregiver-stress and family-functioning sensitivities into annual organization QALYs, scales by a $100,000 gift's share of total expense, then applies separate gift deployability and realization factors. Mortality, policy and central maltreatment effects receive zero credit.",
+    "equation": {
+      "label":"CENTRAL MODELED GIFT COST",
+      "expression":"10 × $100,000 ÷ [333 × 60% effective share × 0.0065 QALY × 30% causal transfer × ($100,000 ÷ $13,205,575) × 30% deployability × 85% realization]",
+      "result":"$1,329,189,924 per 10 modeled QALYs; 0.00075234 gift-attributed QALY"
+    },
+    "inputColumnLabel":"Harm / null / central / favorable-stress judgments",
+    "inputs": [
+      {"key":"ifsVolume","label":"Reported IFS children and caregivers","confidence":"Moderate as a count; low uniqueness","best":"333","range":"fixed reported output","basis":"Official 2024 narrative; includes SafeStart, with no role mix, household deduplication or completion."},
+      {"key":"effectiveShare","label":"Effective IFS person-equivalent share","confidence":"Very low; analyst prior","best":"60%","range":"30% / 60% / 60% / 80%","basis":"Jointly discounts duplication, child/caregiver composition, course completion and health-relevant dose; never treats 333 as families."},
+      {"key":"finiteQaly","label":"Finite QALY per effective IFS person","confidence":"Very low; bounded sensitivity","best":"0.0065","range":"−0.003 / 0 / 0.0065 / 0.047","basis":"Central = stress 30%×0.03×0.5y plus family function 20%×0.02×0.5y. Favorable adds a finite maltreatment sensitivity; no death/lifetime tail."},
+      {"key":"causalTransfer","label":"Outcome causal transfer","confidence":"Low","best":"30%","range":"50% harm / 0% / 30% / 60%","basis":"Current review supports stress/function direction, but Safe & Sound intervention mix, fidelity and local counterfactual are unresolved."},
+      {"key":"giftDeployability","label":"Gift funding/capacity deployability","confidence":"Low","best":"30%","range":"20% / 30% / 30% / 60%","basis":"Deficits show pressure, but reserves are substantial and no priced incremental course or queue is public."},
+      {"key":"giftRealization","label":"Gift-to-outcome realization","confidence":"Low","best":"85%","range":"75% / 80% / 85% / 95%","basis":"Captures implementation delay, attrition and failure between funding and finite outcome."},
+      {"key":"weights","label":"Unconditional scenario weights","confidence":"Subjective; not calibrated","best":"10% harm / 35% null / 50% central / 5% favorable","range":"fixed illustration","basis":"Null and harm are material because validated local health outcomes and harms are unreported."},
+      {"key":"grossMultiplier","label":"Illustrative gross-resource factors","confidence":"Audited base; partner sensitivity very low","best":"1.019537× audited base × 1.02× partner factor","range":"partner 1.00× / 1.00× / 1.02× / 1.05×","basis":"Audited $13.464M resource outlay divided by $13.206M GAAP expense includes direct donor benefits; separate partner factors remain unmeasured. Recognized in-kind is already audited."},
+      {"key":"geography","label":"Bay and nested SF impact priors","confidence":"Low","best":"100% Bay / 95% SF central","range":"SF 90% / 95% / 95% / 98%","basis":"Two SF sites and SF partners establish service location, not beneficiary residence."}
+    ],
+    "giftHeading":"Illustrative $100,000 unrestricted gift",
+    "sensitivity": [
+      {"case":"Harm (10%)","headline":"Net harm","detail":"−0.000170 gift QALY from finite surveillance, separation, autonomy or poor-fit stress."},
+      {"case":"Null (35%)","headline":"No positive QALYs","detail":"Gift/resources spent; stand-alone cost infinite."},
+      {"case":"Central (50%)","headline":"$1.329B donor per 10 QALYs","detail":"0.000752 gift QALY; $1.382B illustrative gross-resource sensitivity."},
+      {"case":"Favorable stress (5%)","headline":"$30.8M donor per 10 QALYs","detail":"0.032427 gift QALY; $33.0M illustrative gross-resource sensitivity; 81.87% of signed weighted QALYs."},
+      {"case":"Prior-weighted","headline":"$505M donor per 10 QALYs","detail":"0.001980 signed expected gift QALY; $521M illustrative gross-resource sensitivity."},
+      {"case":"No favorable case","headline":"$2.65B donor per 10 QALYs","detail":"Renormalizes harm, null and central; 0.000378 gift QALY."}
+    ],
+    "uncertaintyBoundary":"QALY magnitudes, transfer, gift factors, weights, gross resources and geography are reasoned priors, not observed effects or confidence intervals. The 5%-weight favorable case supplies most expected benefit. Zero effect or deployability yields no finite favorable cost ratio.",
+    "fundingBoundary":"RFMF is low-to-moderate and unverified. FY2024 deficit was $1.874M after a $2.615M FY2023 deficit, but unrestricted net assets were $15.605M and cash plus investments $10.920M. No priced IFS expansion, binding match, de-duplicated waitlist or next-$100,000 commitment was found."
+  },
+  "evidence": [
+    {"key":"parenting-review-2026","design":"Systematic review of 23 randomized studies","population":"3,997 participants in parenting programs published 2013–2023","result":"Significant direction-count results for parenting practices, stress/emotional regulation, family functioning and parental risk factors; nonsignificant for maltreatment reports, abuse potential, parenting competence and child functioning.","transfer":"Supports finite stress/function direction only. Safe & Sound program identity, fidelity, dose and completion are unreported."},
+    {"key":"recurrence-review-2017","design":"Systematic review/meta-analysis","population":"Parents with substantiated or suspected physical-abuse histories","result":"Four studies: RD −0.11 (−0.22 to −0.004); RR 0.76 (0.54–1.07).","transfer":"Narrow recurrence population and RR compatible with null; used only to bound a low-weight favorable stress case."},
+    {"key":"local-monitoring","design":"Organization monitoring/evaluation claims without public counterfactual detail","population":"Safe & Sound direct-service and IFS families","result":">90% reduced stress/increased capacity; ~80% improve protective factors; 85% referred families avoided child-welfare entry in a 2022 evaluation.","transfer":"Cannot identify causal health outcomes; no central maltreatment credit."},
+    {"key":"finance","design":"Independent audited financial statements","population":"Whole Safe & Sound legal organization","result":"FY2024 revenue $11.332M, expense $13.206M, deficit $1.874M, unrestricted net assets $15.605M.","transfer":"Full expense is used; deficits do not prove marginal expansion."}
+  ],
+  "reservations": [
+    "The 13,325 direct-service and 333 IFS counts are not proven unique people, households or completed courses.",
+    "Protective factors and child-welfare avoidance are not validated health outcomes and lack a public credible counterfactual.",
+    "Citywide abuse/foster-care trends and 40-plus-member alliance reach cannot be attributed to Safe & Sound alone.",
+    "Screenings, calls, therapy sessions, meals, supplies, trainees and volunteer hours are activities, not additional unique beneficiaries.",
+    "Central maltreatment, child-functioning, policy and mortality QALYs are zero; favorable maltreatment credit is only a sensitivity.",
+    "Harm may arise from surveillance/reporting burden, false positives, unnecessary separation, autonomy loss or poor-fit services.",
+    "Gift deployability and current room for funding are unverified despite recent deficits.",
+    "Gross-resource and geography figures are illustrative assumptions, not measured totals or residence."
+  ],
+  "excludedBenefits": [
+    "Therapy and TALK Line outcomes not separable from IFS",
+    "Meals, diapers, formula, hygiene, school and holiday supplies",
+    "Therapeutic playroom, classes, Kids' Turn and material family support",
+    "School-safety and mandated-reporter education",
+    "SafeStart, Communities of Care and provider capacity building",
+    "Family Services Alliance and Children's Advocacy Center backbone effects",
+    "Center for Youth Wellness, TASIE screening, training and publications",
+    "Research, policy, advocacy, volunteer, housing, employment, dignity and economic outcomes",
+    "Claimed citywide trend contribution and partner-agency outcomes"
+  ],
+  "sources": [
+    {"publisher":"Safe & Sound","title":"Our Impact","url":"https://safeandsound.org/what-we-do/our-impact/","published":"Current page","retrieved":"2026-09-10","sourceType":"Official identity, programs and impact claims"},
+    {"publisher":"Safe & Sound","title":"Strengthening Families, Transforming Systems: 2024 Annual Report","url":"https://annualreport.safeandsound.org/strengthening-families-transforming-systems","published":"2025 reporting FY2024","retrieved":"2026-09-10","sourceType":"Official activity and program report"},
+    {"publisher":"Safe & Sound","title":"Donate","url":"https://safeandsound.org/?campaign=751530","published":"Current campaign","retrieved":"2026-09-10","sourceType":"Official donation page"},
+    {"publisher":"Safe & Sound / independent auditor","title":"Financial Statements, December 31, 2024","url":"https://safeandsound.org/wp-content/uploads/2025/06/Safe-Sound-2024-Audit-fst-1231-EV-Final-SECURED.pdf","published":"Audit dated 2025-06-26","retrieved":"2026-09-10","sourceType":"Audited whole-organization financial statements"},
+    {"publisher":"Trauma, Violence, & Abuse / PubMed","title":"Effectiveness of Parenting Programs in Preventing Child Maltreatment: A Systematic Review of Randomized Controlled Trials","url":"https://pubmed.ncbi.nlm.nih.gov/42218702/","published":"2026-05-31","retrieved":"2026-09-10","sourceType":"Peer-reviewed systematic review"},
+    {"publisher":"Trauma, Violence, & Abuse / PubMed","title":"Parenting Programs for the Prevention of Child Physical Abuse Recurrence: A Systematic Review and Meta-Analysis","url":"https://pubmed.ncbi.nlm.nih.gov/28378136/","published":"2017-09","retrieved":"2026-09-10","sourceType":"Peer-reviewed systematic review and meta-analysis"}
+  ]
+}

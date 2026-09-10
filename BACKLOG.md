@@ -1,5 +1,11 @@
 # Market for Impact backlog
 
+## HEPPAC — accepted next report (70 after both releases are verified)
+
+Whole-organization conditional harm-reduction model, independently audited; donor HOLD. Weighted $10.864M/10 QALYs overall, $11.112M Bay and $265.457M SF under unmeasured nested geographic priors. Includes 20% no-benefit weight, finite fatal-event survival and explicit outcome-versus-donation attribution. Historical engagement data are not annualized; the county amendment is requested, not presumed executed. Gross resource multiplier is illustrative, not observed. Full portfolio costs and unquantified services remain visible.
+
+Marin Treatment Center is published and canonical-verified as report 69 (PR258, v174, exact 78feb23f683863dd90cb66cd8dcfee240fc1c962). Root HEPPAC ESM output matches the accepted v5 snapshot exactly. Combined validation passed: 455 tests, lint with zero errors and three existing warnings, production build, and four phone/tablet report/API checks. Canonical HEPPAC deployment remains pending. Next: integrate independently accepted Ceres and SisterWeb; Sonrisas audit and Safe & Sound research continue. Do not count incomplete or duplicate reports.
+
 ## Next release — Marin Treatment Center (69/115 after canonical verification)
 
 Independent source/model audit accepted a conditional whole-gift opioid-treatment model, not a verified marginal offer. Weighted ordinary-gift estimate: $7.133M per 10 QALYs overall; central $24.213M. Bay share is a judgment (98.23% outcome-weighted); SF residence share and marginal gross resources remain unknown. Finite survival, medication mix, clinical transfer, alternative care, funding replacement and a true null scenario are explicit. Major unquantified services keep their costs; this is an unfavorable/high-uncertainty finding, not zero impact.

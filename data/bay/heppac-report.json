@@ -1,0 +1,406 @@
+{
+  "organization": "HIV Education and Prevention Project of Alameda County (HEPPAC)",
+  "eyebrow": "CHARITY RESEARCH · EAST BAY · EXPLORATORY",
+  "program": "Harm reduction, overdose prevention, treatment navigation, drug checking, and wraparound services",
+  "donationUrl": "https://heppac.org/donate/",
+  "published": "10 September 2026",
+  "modelVersion": "heppac-whole-org-v5",
+  "nutshell": {
+    "headline": "HEPPAC addresses fatal overdose and infection risks, but current organization-level outcomes and the next-gift counterfactual are not public.",
+    "body": "Under an explicitly judgmental prior-weighted illustration, a $100,000 unrestricted gift corresponds to $10.86 million per better life (10 modeled QALYs), or $12.38 million under an illustrative gross-resource sensitivity. The central whole-organization accounting diagnostic is $6.73 million in reported spending per 10 scenario-attributed QALYs. Neither is an empirically identified marginal quote.",
+    "whyItMayWork": "Naloxone rescue, medication treatment, and sterile-syringe access have credible severe-endpoint mechanisms. HEPPAC operates an integrated East Bay harm-reduction portfolio and its official donation page says gifts support community services.",
+    "whyWeAreCautious": "HEPPAC does not publicly report current unique participants, annual reversals, retained medication treatment, infections averted, checking-linked behavior or cross-program overlap. A same-system navigation study is observational and noncurrent, and a newer randomized peer-navigation trial was inconclusive.",
+    "recommendationBlocker": "Obtain a dated next-$100,000 budget, successor-contract status, current unduplicated people and events, treatment starts and retention, infection outcomes, drug-checking behavior, residence shares, and person-level cross-program linkage before recommending a gift on health cost-effectiveness."
+  },
+  "summary": [
+    {
+      "label": "MODELED ORDINARY GIFT",
+      "value": "$10.86M",
+      "detail": "prior-weighted donor cost per 10 modeled QALYs; includes a 20% no-benefit prior"
+    },
+    {
+      "label": "CENTRAL GIFT ILLUSTRATION",
+      "value": "$17.60M",
+      "detail": "per 10 modeled QALYs; 45% deployability and 85% realization are analyst priors"
+    },
+    {
+      "label": "WHOLE-ORG DIAGNOSTIC",
+      "value": "$6.73M",
+      "detail": "reported annual spending per 10 central scenario QALYs; not marginal donor cost"
+    },
+    {
+      "label": "BAY / SF SHARE",
+      "value": "97.76% / 4.09%",
+      "detail": "QALY-weighted assumed shares; SF is nested within Bay and neither is measured residence"
+    },
+    {
+      "label": "FUNDING ROOM",
+      "value": "Plausible, unverified",
+      "detail": "moderate reserves, but no priced next-gift use and a public amendment only maintained existing staffing"
+    }
+  ],
+  "programSection": {
+    "body": "HEPPAC is an Oakland nonprofit serving Alameda and Contra Costa Counties. Its portfolio includes overdose-prevention education and naloxone, syringe access, medication-treatment navigation, HIV/HCV services, drug checking, mobile outreach, drop-in basic needs, wound care, condoms, acupuncture/herbalist services, and B-DUHB interventions. Its donation page also identifies fiscal sponsorship for Punks With Lunch and J&MP Innovations.",
+    "steps": [
+      {
+        "title": "Prevent and reverse overdose",
+        "detail": "OPEND distributes naloxone with brief training. Refill access is unlimited, so doses, people and reversal events require separate deduplication."
+      },
+      {
+        "title": "Link people to medication treatment",
+        "detail": "Substance-use navigators may improve 30-day engagement, but HEPPAC publishes no current annual starts, medication mix or retained treatment-years."
+      },
+      {
+        "title": "Reduce infection and supply risk",
+        "detail": "Syringe access has credible HIV-prevention evidence; FTIR and confirmatory drug checking may change behavior, but HEPPAC-specific infections and overdoses averted are not measured publicly."
+      },
+      {
+        "title": "Provide integrated support",
+        "detail": "Screening/linkage, mobile outreach, condoms, drop-in services, wound care, acupuncture/herbalist services and B-DUHB may add value. They remain in cost and receive no separate QALYs here."
+      }
+    ],
+    "boundary": "The model uses the entire FY2025 expense of $4,953,186. Events, items and people are never summed as recipients. Naloxone, navigation and checking share mortality endpoints and receive an explicit overlap sensitivity; person-level overlap remains unresolved. Fiscal-sponsorship/pass-through activity inside expense is also unresolved."
+  },
+  "model": {
+    "headline": "Prior-weighted modeled ordinary gift: $10.86M per 10 QALYs; central: $17.60M.",
+    "body": "The executable first models annual organization-attributed QALYs under explicit pathway, causal-additionality and overlap judgments. It then scales a hypothetical $100,000 unrestricted gift pro rata to annual expense, applies funding deployability and realization discounts, and weights downside, central, favorable and no-benefit cases. The separate gross-resource figures are illustrative multipliers, not measured estimates or lower bounds.",
+    "equation": {
+      "label": "CENTRAL MODELED GIFT COST",
+      "expression": "10 × $100,000 ÷ [7.357 central annual organization-attributed QALYs × ($100,000 ÷ $4,953,186 expense) × 45% deployability × 85% realization]",
+      "result": "$17,601,599 per 10 modeled QALYs; 0.056813 gift-attributed QALY"
+    },
+    "inputColumnLabel": "Downside / central / favorable-stress judgments",
+    "inputs": [
+      {
+        "key": "navigationVolume",
+        "label": "Annual retained-effective treatment engagements",
+        "confidence": "Very low; judgment-only",
+        "best": "25",
+        "range": "10 / 25 / 50",
+        "basis": "No current HEPPAC outcome volume exists. Anderson et al. observed 119 SUN recipients within a five-month, all-SUD, noncurrent cohort; it is transfer context and is never annualized into HEPPAC outcomes."
+      },
+      {
+        "key": "navigationQaly",
+        "label": "QALY per retained-effective engagement",
+        "confidence": "Very low; bounded sensitivity",
+        "best": "0.50",
+        "range": "0.25 / 0.50 / 1.00",
+        "basis": "Sordo et al. supports the direction of benefit while in treatment, not these magnitudes. Drug mix, retained years, mortality risk difference, morbidity and local transfer are missing."
+      },
+      {
+        "key": "naloxoneReversals",
+        "label": "Annual reported reversal events",
+        "confidence": "Very low for current HEPPAC",
+        "best": "50",
+        "range": "20 / 50 / 137",
+        "basis": "Twenty and 50 are scenario values. The 137 figure is an old snapshot with no clean annual window and appears only in the favorable stress case."
+      },
+      {
+        "key": "naloxoneFatalityBridge",
+        "label": "Otherwise-fatal probability and HEPPAC attribution",
+        "confidence": "Low",
+        "best": "10% × 75%",
+        "range": "5% × 60% / 10% × 75% / 15% × 85%",
+        "basis": "Lay naloxone survival is high, but the untreated counterfactual and alternative rescue are not observed."
+      },
+      {
+        "key": "finiteFatalQaly",
+        "label": "Finite survival-adjusted QALYs per fatal event",
+        "confidence": "Low; judgmental",
+        "best": "2.291",
+        "range": "1.342 / 2.291 / 3.640",
+        "basis": "Discounted finite sums use 5/10/20-year horizons, annual survival 65%/75%/82%, utility 0.55/0.65/0.75 and 3% discounting."
+      },
+      {
+        "key": "infectionBenefit",
+        "label": "Infections averted and QALYs",
+        "confidence": "Very low locally",
+        "best": "1 infection × 65% attribution × 5 QALYs",
+        "range": "0.25 × 50% × 3 / 1 × 65% × 5 / 3 × 80% × 8",
+        "basis": "Syringe-service evidence supports HIV prevention, but HEPPAC publishes no unique exposure, baseline incidence or local infections-averted analysis."
+      },
+      {
+        "key": "checkingBenefit",
+        "label": "Fatal-overdose equivalents from drug checking",
+        "confidence": "Very low",
+        "best": "0.25",
+        "range": "0.05 / 0.25 / 1",
+        "basis": "Behavior evidence is emerging and mortality is not established. If the proposed 50 samples/month occurred, these imply one equivalent per 12,000/2,400/600 samples."
+      },
+      {
+        "key": "overlap",
+        "label": "Shared mortality overlap adjustment",
+        "confidence": "Very low; no person linkage",
+        "best": "70% retained",
+        "range": "80% / 70% / 60% retained",
+        "basis": "Naloxone, navigation and checking may benefit the same person and share survival endpoints. This sensitivity does not solve deduplication."
+      },
+      {
+        "key": "outcomeAdditionality",
+        "label": "Pathway outcome additionality",
+        "confidence": "Low",
+        "best": "50%",
+        "range": "25% / 50% / 75%",
+        "basis": "Separates service activity from outcomes that would not otherwise occur; retained in both whole-organization and gift calculations."
+      },
+      {
+        "key": "giftDeployability",
+        "label": "Ordinary-gift funding/capacity deployability",
+        "confidence": "Low",
+        "best": "45%",
+        "range": "20% / 45% / 70%",
+        "basis": "Moderate reserves and substantial contributions allow some marginal use, but HEPPAC has not made a dated next-$100,000 commitment and public funding may be displaced."
+      },
+      {
+        "key": "giftRealization",
+        "label": "Gift-to-outcome realization",
+        "confidence": "Low",
+        "best": "85%",
+        "range": "70% / 85% / 95%",
+        "basis": "Discounts implementation delay and failure between receipt, service expansion and health outcome."
+      },
+      {
+        "key": "weights",
+        "label": "Unconditional scenario prior weights",
+        "confidence": "Subjective; not empirically calibrated",
+        "best": "20% no benefit / 24% downside / 48% central / 8% favorable",
+        "range": "fixed for illustration",
+        "basis": "A material null reflects missing current outcomes and inconclusive navigation evidence. The favorable case is low-weight because it combines several unobserved favorable assumptions."
+      },
+      {
+        "key": "grossMultiplier",
+        "label": "Illustrative gross-resource multiplier",
+        "confidence": "Very low; sensitivity only",
+        "best": "1.15×",
+        "range": "1.10× / 1.15× / 1.30×",
+        "basis": "Flags free state naloxone, partners and clinical referrals without claiming quantities, fair values or a lower bound."
+      },
+      {
+        "key": "bayShare",
+        "label": "Bay Area impact share",
+        "confidence": "Low; service-geography-informed prior",
+        "best": "95%",
+        "range": "85% / 95% / 99%",
+        "basis": "Documented program sites are in Alameda and Contra Costa Counties; beneficiary residence is not measured."
+      },
+      {
+        "key": "sfShare",
+        "label": "San Francisco impact share, nested in Bay",
+        "confidence": "Very low; assumed",
+        "best": "2%",
+        "range": "0% / 2% / 5%",
+        "basis": "No SF site was found, but that does not exclude SF residents. Zero applies only to the downside assumption, not as a measured fact."
+      }
+    ],
+    "giftHeading": "Illustrative $100,000 unrestricted gift",
+    "sensitivity": [
+      {
+        "case": "No benefit (20% prior weight)",
+        "headline": "No positive QALYs",
+        "detail": "The gift and an assumed 1.10× gross resource amount are spent; QALYs are zero and stand-alone cost is infinite."
+      },
+      {
+        "case": "Downside (24%)",
+        "headline": "$696M modeled donor cost per 10 QALYs",
+        "detail": "0.001436 gift QALY; $766M illustrative gross-resource sensitivity."
+      },
+      {
+        "case": "Central (48%)",
+        "headline": "$17.60M modeled donor cost per 10 QALYs",
+        "detail": "0.056813 gift QALY; $20.24M illustrative gross-resource sensitivity."
+      },
+      {
+        "case": "Favorable stress (8%)",
+        "headline": "$1.242M modeled donor cost per 10 QALYs",
+        "detail": "0.80542 gift QALY; $1.614M illustrative gross-resource sensitivity; this case still supplies most weighted QALYs."
+      },
+      {
+        "case": "Prior-weighted",
+        "headline": "$10.86M modeled donor cost per 10 QALYs",
+        "detail": "0.092049 expected gift QALY; $12.38M illustrative gross-resource sensitivity; 97.76% Bay and 4.09% nested SF outcome shares are assumed, not measured."
+      }
+    ],
+    "uncertaintyBoundary": "Scenario values and weights are analyst priors, not confidence intervals, observed HEPPAC outcomes or empirically calibrated probabilities. The favorable stress case contributes most expected QALYs despite only 8% weight, so the headline is right-tail-sensitive. Zero deployability or zero outcomes returns zero QALYs and no finite cost ratio. The five-month Anderson study is never annualized.",
+    "fundingBoundary": "RFMF is plausible but unverified. FY2025 net assets of $2.363M equal about 5.7 months of expense and the organization ran a $209K surplus. The November 14, 2025 county staff recommendation requested a $700K increase through August 31, 2026 primarily to maintain existing navigator staffing; without an executed amendment or later budget, it is a dated public-funding baseline rather than a verified gap. HEPPAC's donation page gives examples and says donations support services, but it does not price health-outcome capacity or commit the next $100,000. Verified marginal donor and gross costs remain unknown."
+  },
+  "evidence": [
+    {
+      "key": "anderson-navigation",
+      "design": "Observational implementation study with propensity matching",
+      "population": "1,328 discharged patients with alcohol, opioid, cocaine or methamphetamine diagnoses at three Alameda public emergency departments, September 1, 2021–January 31, 2022",
+      "result": "119 received navigation; 30-day treatment engagement was 50.4% versus 15.9%; matched OR 2.1 (95% CI 1.2–3.5).",
+      "transfer": "Same-system mechanism evidence only. It is a five-month, noncurrent, all-SUD study and supplies no annual HEPPAC outcome volume, retained MOUD or mortality."
+    },
+    {
+      "key": "doran-rct",
+      "design": "Randomized peer-navigation trial",
+      "population": "247 NYC emergency-department patients after opioid overdose",
+      "result": "Composite adverse-event RR 1.02 (0.72–1.45); mortality HR 0.55 (0.22–1.30); 90-day MOUD OR 1.64 (0.68–3.94).",
+      "transfer": "Inconclusive rather than proof of no effect; mortality was underpowered and the peer model differs from Alameda medication-first navigation. It prevents treating observational linkage as certain mortality benefit."
+    },
+    {
+      "key": "naloxone-review",
+      "design": "Systematic review",
+      "population": "Lay naloxone studies",
+      "result": "Reported survival after lay naloxone was 93–98% across uncontrolled studies.",
+      "transfer": "Supports rescue efficacy but does not reveal which HEPPAC reversals would otherwise be fatal or rescued elsewhere."
+    },
+    {
+      "key": "syringe-evidence",
+      "design": "US evidence synthesis",
+      "population": "People who inject drugs using syringe-service programs",
+      "result": "Evidence was sufficient for HIV prevention; higher-quality studies in one meta-analysis reported RR 0.42 (0.22–0.81).",
+      "transfer": "Local incidence, coverage, unique users and overlap with other providers are absent, so the model varies infections averted directly."
+    },
+    {
+      "key": "drug-checking-review",
+      "design": "Systematic review",
+      "population": "People using drug-checking services",
+      "result": "Evidence suggests changes in intentions and sometimes behavior; mortality effects are not established.",
+      "transfer": "HEPPAC drug-checking receives small central credit and a clearly labeled favorable stress assumption."
+    },
+    {
+      "key": "finance",
+      "design": "IRS Form 990 accounting data",
+      "population": "Whole HEPPAC legal organization",
+      "result": "FY2025 revenue $5.162M, expense $4.953M, surplus $209K and net assets $2.363M.",
+      "transfer": "Full expense is the whole-organization denominator; fiscal-sponsorship/pass-through composition and marginal funding remain unresolved."
+    }
+  ],
+  "reservations": [
+    "Current unique participants, kits or doses, reversal events, treatment starts and retention, checking-linked behavior, infections and cross-program linkage are not publicly reported.",
+    "Unlimited naloxone refills make item, person and event deduplication essential; reported reversals are not deaths averted.",
+    "Navigation, naloxone and checking may benefit the same person and share mortality; an overlap sensitivity is not person-level deduplication.",
+    "MOUD QALYs per retained-effective engagement are bounded sensitivities, not estimates derived quantitatively from the Sordo meta-analysis.",
+    "Fatal-event QALYs use finite survival, utility and discounting priors; age, relapse, competing mortality and event timing are unobserved.",
+    "Gift deployability, realization, scenario weights, geography and gross multipliers are analyst priors.",
+    "The $700K county document is a staff-requested amendment to maintain staffing, not evidence in this packet of execution, expiry-created need or private-gift additionality.",
+    "Bay and SF shares are service-geography-informed assumptions; beneficiary residence is unknown.",
+    "The gross-resource multiplier is illustrative only, neither measured nor a demonstrated lower bound.",
+    "Fiscal sponsorship/pass-through activity may be included in expense, but this packet cannot reconcile it."
+  ],
+  "excludedBenefits": [
+    "Drop-in showers, laundry, food, hygiene supplies and resource navigation",
+    "HIV/HCV screening, counseling, referral and treatment linkage distinct from syringe prevention",
+    "Community and mobile outreach, condoms, education, advocacy and task-force effects",
+    "Abscess wound care and other community-based medical services",
+    "Acupuncture and herbalist services",
+    "B-DUHB interventions",
+    "Benefits attributable to fiscally sponsored or pass-through programs not reconciled to HEPPAC expense",
+    "Criminal-justice, housing, dignity, stigma and emergency-service outcomes"
+  ],
+  "sources": [
+    {
+      "publisher": "HEPPAC",
+      "title": "Donate",
+      "url": "https://heppac.org/donate/",
+      "published": "Undated/current",
+      "retrieved": "2026-09-10",
+      "sourceType": "Official organization donation page"
+    },
+    {
+      "publisher": "HEPPAC",
+      "title": "HEPPAC home and service portfolio",
+      "url": "https://heppac.org/",
+      "published": "Undated/current",
+      "retrieved": "2026-09-10",
+      "sourceType": "Official organization program page"
+    },
+    {
+      "publisher": "HEPPAC",
+      "title": "OPEND: Overdose Prevention and Education",
+      "url": "https://heppac.org/opend-overdose-prevention-education/",
+      "published": "Undated/current",
+      "retrieved": "2026-09-10",
+      "sourceType": "Official organization program page"
+    },
+    {
+      "publisher": "Internal Revenue Service, mirrored by ProPublica Nonprofit Explorer",
+      "title": "HEPPAC nonprofit filings, EIN 94-3205535",
+      "url": "https://projects.propublica.org/nonprofits/organizations/943205535",
+      "published": "FY2025 filing",
+      "retrieved": "2026-09-10",
+      "sourceType": "IRS Form 990 data"
+    },
+    {
+      "publisher": "IRS filing extraction via Philanthropy.org",
+      "title": "HEPPAC FY2025 program-service descriptions",
+      "url": "https://philanthropy.org/990/report/943205535/hiv-education-and-prevention-project-of-alameda-county",
+      "published": "FY2025 filing",
+      "retrieved": "2026-09-10",
+      "sourceType": "IRS Form 990 extraction"
+    },
+    {
+      "publisher": "Annals of Emergency Medicine / PubMed",
+      "title": "Effectiveness of Substance Use Navigation for Emergency Department Patients With Substance Use Disorders",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36402631/",
+      "published": "2022-11-17 online; 2023 print",
+      "retrieved": "2026-09-10",
+      "sourceType": "Peer-reviewed observational implementation study"
+    },
+    {
+      "publisher": "JAMA Network Open",
+      "title": "Peer Recovery Coach Intervention for Emergency Department Patients With Opioid Overdose",
+      "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2844716",
+      "published": "2026-02-06",
+      "retrieved": "2026-09-10",
+      "sourceType": "Peer-reviewed randomized trial"
+    },
+    {
+      "publisher": "The BMJ",
+      "title": "Mortality risk during and after opioid substitution treatment: systematic review and meta-analysis of cohort studies",
+      "url": "https://www.bmj.com/content/357/bmj.j1550",
+      "published": "2017-04-26",
+      "retrieved": "2026-09-10",
+      "sourceType": "Peer-reviewed systematic review and meta-analysis"
+    },
+    {
+      "publisher": "BMC Public Health",
+      "title": "Effectiveness of naloxone in preventing fatalities from opioid overdose",
+      "url": "https://doi.org/10.1186/s12889-025-22210-8",
+      "published": "2025",
+      "retrieved": "2026-09-10",
+      "sourceType": "Peer-reviewed systematic review"
+    },
+    {
+      "publisher": "US evidence review / NCBI Bookshelf",
+      "title": "Evidence synthesis for syringe-service programs",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK598967/table/ch3.tab1/?report=objectonly",
+      "published": "Current evidence synthesis",
+      "retrieved": "2026-09-10",
+      "sourceType": "Government evidence review"
+    },
+    {
+      "publisher": "Alameda County",
+      "title": "Overdose Prevention Education and Naloxone outcome snapshot",
+      "url": "https://alamedacountyca.gov/probation/documents/OverdosePreventionEducationandNaloxone.pdf",
+      "published": "Undated historical presentation",
+      "retrieved": "2026-09-10",
+      "sourceType": "Official county presentation"
+    },
+    {
+      "publisher": "Alameda County Health Care Services Agency",
+      "title": "Staff recommendation and proposed HEPPAC amendment, HCSA_397004",
+      "url": "https://www.alamedacountyca.gov/board/bos_calendar/documents/DocsAgendaReg_12_16_25/HEALTH%20CARE%20SERVICES/Regular%20Calendar/HCSA_397004.pdf",
+      "published": "2025-11-14 staff recommendation; 2025-12-16 agenda",
+      "retrieved": "2026-09-10",
+      "sourceType": "Official county staff recommendation and proposed budget"
+    },
+    {
+      "publisher": "International Journal of Drug Policy / PubMed Central",
+      "title": "Drug checking services for people who use drugs: a systematic review",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9299873/",
+      "published": "2022",
+      "retrieved": "2026-09-10",
+      "sourceType": "Peer-reviewed systematic review"
+    },
+    {
+      "publisher": "California Department of Health Care Services",
+      "title": "Naloxone Distribution Project",
+      "url": "https://www.dhcs.ca.gov/individuals/naloxone-distribution-project/",
+      "published": "Undated/current",
+      "retrieved": "2026-09-10",
+      "sourceType": "Official state program page"
+    }
+  ]
+}

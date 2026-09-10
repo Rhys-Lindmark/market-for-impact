@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Ceres Community Project — accepted release after HEPPAC
+
+Independently audited whole-organization report with randomized primary null evidence and an expressly exploratory mortality bridge. Weighted donor/gross: $258.168M/$302.994M per 10 QALYs; donor HOLD. Client-bounded course denominator, finite survival, 60% null weight, reported volunteer value, and dated funding target/waitlist remain explicit. No verified marginal funding offer. 458 tests, lint zero errors, production build, and four Ceres/HEPPAC phone/tablet checks passed. Counts as report 71 only after exact-source canonical verification, following HEPPAC. Ceres does not satisfy the California-wide cohort requirement. Next: accepted SisterWeb and Sonrisas, then Safe & Sound after audit.
+
 ## HEPPAC — accepted next report (70 after both releases are verified)
 
 Whole-organization conditional harm-reduction model, independently audited; donor HOLD. Weighted $10.864M/10 QALYs overall, $11.112M Bay and $265.457M SF under unmeasured nested geographic priors. Includes 20% no-benefit weight, finite fatal-event survival and explicit outcome-versus-donation attribution. Historical engagement data are not annualized; the county amendment is requested, not presumed executed. Gross resource multiplier is illustrative, not observed. Full portfolio costs and unquantified services remain visible.

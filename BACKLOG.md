@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## California Coalition for Youth — accepted finite crisis-support report
+
+Full FY2025 organization expense charged; finite crisis-contact morbidity only, no mortality or policy credit. Weighted $440K donor/$527K illustrative gross per10 total QALYs; Bay20%/SF2% are explicitly unsourced nested priors, not observed callers. Repeat overlap, 988 substitution, public funding and marginal capacity unresolved. Source/model audit ACCEPT; giving HOLD. Root corrected caller-supplied gift numerator consistency and tests exact accepted default, zero-access and double-gift cases. 482 tests, lint zero errors and production build pass. Report79 only after prior releases and canonical verification. This is the third additional California-wide organization, not a new SF service provider.
+
 ## Youth ALIVE — accepted Oakland whole-gift report
 
 Whole-organization gift with explicitly partial CiC-like health model; other program benefits not summed. Independent source and integration audits ACCEPT, giving HOLD. Direct five-year modeled 4.64−4.62=.020 QALY anchor replaces ambiguous cost/ICER reconstruction; source inconsistency and NICE limitations retained. Weighted $27.34M donor/$28.08M illustrative gross per10 Bay QALYs; zero direct SF credit, real null/harm, 66.1% favorable-tail dependence and $5M CalVIP displacement caveat. 479 tests, lint zero errors, build and phone/tablet checks precede publication. Report78 only after prior releases and canonical verification. Next accepted CalYouth, BVHPF and corrected NFP.

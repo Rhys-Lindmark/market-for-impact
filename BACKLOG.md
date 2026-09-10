@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## California Immunization Coalition — corrected model accepted
+
+Distinct California-wide organization; independently accepted whole-gift policy model, giving HOLD. Corrected MMR-only health calibration replaces the rejected full-schedule comparison and removes the unsupported sub-$100K favorable case. Weighted donor/gross $41.87M/$46.11M per 10 QALYs; current campaign attribution, modern transfer and Bay20%/SF2% shares remain explicit priors. 470 tests, lint zero errors, build, four phone/tablet checks and exact corrected-output match passed. Report 75 only after prior releases and canonical verification. Counts toward the remaining California-wide requirement. Next accepted FUF and PHAdvocates, then corrected/audited Youth ALIVE.
+
 ## Safe & Sound — accepted release after Sonrisas
 
 Whole-organization finite stress/family-functioning model, independently audited, giving HOLD. Signed donor/gross $504.929M/$521.229M per 10 QALYs; 35% null, 10% harm and 81.87% favorable-tail dependence. Full GAAP expense is separated from gross resource outlay including direct donor benefits. No central mortality/maltreatment/policy credit or verified marginal offer. 467 tests, lint zero errors, production build, four phone/tablet checks and exact accepted-output comparison passed. Count 74 only after prior releases and canonical verification. Next corrected CIC, then FUF after tree-survival/current-finance audit corrections.

@@ -2,6 +2,7 @@
 import '@/app/givebetter.css';
 import '@/app/report-reading.css';
 import researchEffort from '@/data/research-effort.json';
+import historicalEffort from '@/data/research-effort-historical-estimates.json';
 import {researchEffortSummary} from '@/lib/research-effort.mjs';
 
 export type CharityEvidence = {
@@ -84,7 +85,7 @@ function Scenarios({ rows }: { rows: CharityReportContent['model']['sensitivity'
 }
 export default function CharityResearchReport({ content }: { content: CharityReportContent }) {
   const donationUrl = content.donationUrl?.trim();
-  const effort = researchEffortSummary(researchEffort,content.organization);
+  const effort = researchEffortSummary(researchEffort,content.organization,historicalEffort);
   const headings = [
     ['summary', 'Summary'],
     ['program', '1. What do they do?'],
@@ -100,14 +101,14 @@ export default function CharityResearchReport({ content }: { content: CharityRep
       <div className="report-reading-column">
         <header className="report-heading">
           <h1>{content.organization}</h1><p className="report-program">{content.program}</p>
-          {effort.recorded?<details className="report-research-effort" data-research-effort="recorded"><summary>{effort.label}</summary><p>{effort.details}</p></details>:<p className="report-research-effort" data-research-effort="not-recorded" title={effort.details} aria-description={effort.details}>{effort.label}</p>}
+          <details className="report-research-effort" data-research-effort={effort.recorded?'recorded':effort.estimated?'estimated':'not-recorded'}><summary>{effort.label}</summary><ul aria-label="Research phases">{effort.bullets.map(bullet=><li key={bullet}>{bullet}</li>)}</ul></details>
+          <p className="report-date">Published: {content.published}.</p>
           <a className="report-donate" href={donationUrl || '#funding'} {...(donationUrl ? {target:'_blank',rel:'noreferrer'} : {})}>Donate</a>
         </header>
         <nav className="report-contents" aria-label="Table of Contents">
           <h2>Table of Contents</h2>
           {headings.map(([id,label]) => <a key={id} href={'#'+id}>{label}</a>)}
         </nav>
-        <p className="report-date">Published: {content.published}. Cost-effectiveness model: {content.modelVersion}.</p>
         <article>
           <section id="summary"><span id="nutshell" />
             <h2>Summary</h2>
@@ -169,7 +170,7 @@ export default function CharityResearchReport({ content }: { content: CharityRep
             <ol className="report-sources">{content.sources.map(source => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.title}</a>. {source.publisher}. {source.sourceType}. Published: {source.published}; retrieved: {source.retrieved}.</li>)}</ol>
           </section>
         </article>
-        <footer className="report-footer"><a href="/research">All research</a> · <a href="/">Our top charities</a><p>GiveBetter x SF is not affiliated with GiveWell or the organizations reviewed.</p></footer>
+        <footer className="report-footer"><p className="report-model-version">Cost-effectiveness model: {content.modelVersion}.</p><a href="/research">All research</a> · <a href="/">Our top charities</a><p>GiveBetter x SF is not affiliated with GiveWell or the organizations reviewed.</p></footer>
       </div>
     </main>
   );

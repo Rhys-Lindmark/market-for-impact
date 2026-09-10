@@ -33,8 +33,15 @@ test('all published reports use readable research architecture',async({page},tes
   await expect(page.locator('.report-heading [data-research-effort]')).toHaveCount(1);
   await expect(page.locator('.report-heading [data-research-effort]')).toBeVisible();
   await expect(page.locator('.report-heading [data-research-effort]')).toContainText(/research|Research/);
+  await expect(page.locator('.report-heading [data-research-effort]')).toContainText(/^Research time: .+ on /);
+  await expect(page.locator('.report-heading')).not.toContainText('Cost-effectiveness model:');
+  await expect(page.locator('.report-footer .report-model-version')).toContainText('Cost-effectiveness model:');
+  await expect(page.getByRole('navigation',{name:'Table of Contents'}).locator('a')).toHaveCount(7);
   const effort=page.locator('.report-heading [data-research-effort]');
-  if(registry.organizations[organization]?.sessions.length){await expect(effort).toHaveAttribute('data-research-effort','recorded');if(registry.organizations[organization].coverage==='partial')await expect(effort.locator('summary')).toContainText('partial record');await effort.locator('summary').click();await expect(effort.locator('p')).toContainText('researcher');}
+  if(registry.organizations[organization]?.sessions.length){await expect(effort).toHaveAttribute('data-research-effort','recorded');if(registry.organizations[organization].coverage==='partial')await expect(effort.locator('summary')).toContainText('+ min');}
+  else {await expect(effort).toHaveAttribute('data-research-effort','estimated');await expect(effort.locator('summary')).toContainText('~18 min');}
+  await effort.locator('summary').click();await expect(effort.locator('ul')).toBeVisible();expect(await effort.locator('li').count()).toBeLessThanOrEqual(5);
+  await expect(effort).not.toContainText('wall-clock intervals');await expect(effort).not.toContainText('partial total');
   for(const heading of ['Summary','1. What do they do?','2. Monitoring and information sharing','3. Qualitative assessment','4. What do you get for your dollar?','5. Funding and previous grants','6. Sources']) await expect(page.getByRole('heading',{name:heading,exact:true})).toBeVisible();
   await expect(page.locator('.report-heading .report-donate')).toHaveText('Donate');
   await expect(page.locator('#funding')).toHaveCount(1);
@@ -49,4 +56,32 @@ test('all published reports use readable research architecture',async({page},tes
  await page.screenshot({path:testInfo.outputPath('report-phone.png'),fullPage:true});
  await page.setViewportSize({width:1280,height:900});
  await page.screenshot({path:testInfo.outputPath('report-desktop.png'),fullPage:true});
+});
+
+test('research table of contents sits left on desktop and remains usable on narrow screens',async({page},testInfo)=>{
+ for(const slug of ['glide','marin-treatment-center']){
+  await page.setViewportSize({width:1440,height:900});
+  await page.goto('/charities/'+slug);
+  const nav=page.getByRole('navigation',{name:'Table of Contents'});
+  const article=page.locator('.report-reading-column>article');
+  const n=await nav.boundingBox(),a=await article.boundingBox();
+  expect(n).not.toBeNull();expect(a).not.toBeNull();
+  expect(n!.x+n!.width).toBeLessThan(a!.x);
+  expect(Math.abs(n!.y-a!.y)).toBeLessThanOrEqual(25);
+  expect(await nav.evaluate(el=>getComputedStyle(el).position)).toBe('sticky');
+  expect(await page.locator('.report-footer').evaluate(el=>getComputedStyle(el).display)).toBe('block');
+  await page.screenshot({path:testInfo.outputPath(slug+'-sidebar.png')});
+  await nav.getByRole('link',{name:'4. What do you get for your dollar?',exact:true}).click();
+  await expect(page).toHaveURL(/#cost-effectiveness$/);
+  await expect(page.locator('#cost-effectiveness h2')).toBeInViewport();
+  await expect(nav).toBeInViewport();
+  for(const width of [768,390]){
+   await page.setViewportSize({width,height:900});await page.goto('/charities/'+slug);
+   const narrowNav=await nav.boundingBox(),narrowArticle=await article.boundingBox();
+   expect(narrowNav!.y+narrowNav!.height).toBeLessThanOrEqual(narrowArticle!.y+1);
+   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+   await nav.getByRole('link',{name:'6. Sources',exact:true}).click();
+   await expect(page.locator('#sources h2')).toBeInViewport();
+  }
+ }
 });

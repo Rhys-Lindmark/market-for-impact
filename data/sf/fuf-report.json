@@ -1,0 +1,93 @@
+{
+  "organization":"Friends of the Urban Forest",
+  "eyebrow":"CHARITY RESEARCH · SAN FRANCISCO · ENVIRONMENTAL HEALTH",
+  "program":"Street-tree planting, establishment care, sidewalk gardens, and workforce development",
+  "donationUrl":"https://www.friendsoftheurbanforest.org/support-us",
+  "published":"10 September 2026",
+  "modelVersion":"fuf-whole-org-v2",
+  "nutshell":{
+    "headline":"FUF's San Francisco tree delivery is verified, but its health effect per surviving street-tree-year is not.",
+    "body":"Under an explicitly judgmental signed prior-weighted illustration, a $100,000 unrestricted gift corresponds to $1.053 million per better life (10 modeled QALYs), or $1.219 million including a gross-resource sensitivity. The 10%-weight favorable case supplies 84.9% of expected net QALYs. These are not empirical marginal estimates; verified marginal donor and gross costs remain unknown.",
+    "whyItMayWork":"San Francisco Public Works verified grant-associated reporting of 1,412 trees planted in FY2023–24 and extended a large performance-based grant. FUF provides establishment care and directs gifts toward low-canopy San Francisco neighborhoods.",
+    "whyWeAreCautious":"No study identifies QALYs per surviving San Francisco street-tree-year, FUF publishes no matched survival, and the cited city contract has expired without a public current marginal gift plan.",
+    "recommendationBlocker":"Obtain current tree and survival cohorts, approved-site backlog, contract status, marginal gift allocation, and an independently defensible health-utility or morbidity bridge for comparable San Francisco blocks."
+  },
+  "summary":[
+    {"label":"MODELED ORDINARY GIFT","value":"$1.053M","detail":"signed prior-weighted per 10 modeled QALYs; 84.9% favorable-tail driven"},
+    {"label":"CENTRAL ILLUSTRATION","value":"$1.848M","detail":"per 10 modeled QALYs using an unvalidated 0.010 QALY/tree-year scalar"},
+    {"label":"FAVORABLE ILLUSTRATION","value":"$124,101","detail":"donor cost only; modeled gross remains $186,152 per 10 QALYs"},
+    {"label":"BAY / SF SHARE","value":"100% / 100%","detail":"nested site-of-tree assumptions, not unique-resident shares"},
+    {"label":"FUNDING ROOM","value":"Unverified","detail":"direct gift pathway and deficit, but prior city contract expired and no priced current tranche"}
+  ],
+  "programSection":{
+    "body":"FUF plants and establishes San Francisco street trees, installs sidewalk gardens, conducts outreach, and runs youth and workforce-development activities.",
+    "steps":[
+      {"title":"Identify and prepare planting sites","detail":"FUF coordinates utilities, residents, species selection, concrete removal, and community planting in low-canopy neighborhoods."},
+      {"title":"Plant and establish trees","detail":"San Francisco Public Works' grant-performance section reported 1,412 trees planted in FY2023–24; this may be a subset, not a full organization census. FUF's historical report describes three years of establishment care."},
+      {"title":"Deliver broader community programs","detail":"Gardens, outreach, volunteers, youth, and workforce development remain in whole-organization cost but receive no separately stacked health credit."}
+    ],
+    "boundary":"The full FY2024 IRS expense of $5,673,426 is used. Dividing by 1,412 trees reported in the city grant-performance section gives $4,018 per credited grant-associated tree-output equivalent and 24.89 equivalents for a $100,000 expense share. The 1,412 may be a subset rather than a complete organization census, while all organization cost is charged. This is retrospective accounting scale, not a verified marginal tree purchase."
+  },
+  "model":{
+    "headline":"Prior-weighted modeled ordinary gift: $1.053M per 10 QALYs; central: $1.848M.",
+    "body":"The model converts only additional surviving, discounted tree-years through an explicit analyst health scalar. It does not add heat, pollution, mental health, physical activity, mortality, gardens, workforce, or climate benefits separately.",
+    "equation":{"label":"CENTRAL MODELED GIFT COST","expression":"10 × $100,000 ÷ [(9.955 incremental trees × 5.634 finite discounted surviving tree-years/tree × 0.010 QALY/tree-year) − (9.955 incremental trees × 0.002 harm QALY/tree)]","result":"$1,848,441 per 10 modeled QALYs; 0.540996 gift-attributed net QALY"},
+    "inputColumnLabel":"Harm / null / central / favorable judgments",
+    "inputs":[
+      {"key":"treeBase","label":"Gift-linked credited tree-output equivalents","confidence":"High arithmetic; moderate output matching; low census completeness and marginality","best":"24.89","range":"same retrospective base in all scenarios","basis":"$100,000 / $5,673,426 × 1,412 trees from the city grant-performance section. This is verified grant-associated output, not proven complete whole-organization output; all organization cost is still charged. Watering, care visits, and gardens are not added as beneficiaries."},
+      {"key":"weights","label":"Scenario prior weights","confidence":"Subjective; not empirically calibrated","best":"25% harm / 35% null / 30% central / 10% favorable","range":"fixed for illustration","basis":"Delivery is verified, but health conversion, current additionality, and FUF survival are not; harm plus null therefore receive 60% weight."},
+      {"key":"additionality","label":"Ordinary-gift funding additionality","confidence":"Low","best":"40% central","range":"10% null; 15% harm; 40% central; 75% favorable","basis":"The donation page promises more trees and both FY2024 and FY2025 had deficits. The cited city contract expired and no current approved-site or gift tranche is public."},
+      {"key":"survival","label":"Establishment survival and annual post-establishment mortality","confidence":"Low","best":"75% then 6.0% annual mortality","range":"50% then 9.3% / 75% then 6.0% / 90% then 2.8%","basis":"FUF provides three years of establishment care. The review reports annual cohort-mortality quartiles around 2.8%–9.3%, highest in the first five years; scenarios apply explicit year-by-year decay. No FUF cohort survival is public."},
+      {"key":"horizon","label":"Finite benefit horizon","confidence":"Low","best":"12 years","range":"8 / 12 / 20 years","basis":"Tree-years are explicitly finite and discounted at 3%; no perpetual canopy benefit is credited."},
+      {"key":"qalyTreeYear","label":"QALY per surviving tree-year","confidence":"Very low; unvalidated analyst bridge","best":"0.010","range":"0 / 0.010 / 0.040","basis":"External studies support plausibility but do not identify this value. Central equals one aggregate QALY per 100 surviving tree-years; favorable equals four. Neither is an empirical FUF effect."},
+      {"key":"harm","label":"Harm QALY per incremental tree","confidence":"Very low stress test","best":"0.002 central","range":"0 / 0.0006 / 0.002 / 0.020","basis":"Represents allergens, impaired ventilation, water, root or sidewalk damage, failure risk, maintenance, and green-gentrification burdens; no FUF incidence is alleged."},
+      {"key":"gross","label":"Gross-resource multiplier","confidence":"Low sensitivity, not audited value","best":"1.20× central","range":"1.05×–1.50×","basis":"Stresses volunteer and resident time plus downstream city care. Water, property-owner effort, and infrastructure costs remain unknown."},
+      {"key":"geography","label":"Bay and San Francisco direct-health shares","confidence":"High for tree location; not unique beneficiaries","best":"100% / 100%","range":"same in all positive scenarios","basis":"Verified trees are planted in San Francisco; benefits may reach residents, workers, and visitors. Bay and SF are nested."}
+    ],
+    "giftHeading":"Illustrative $100,000 unrestricted gift",
+    "sensitivity":[
+      {"case":"Harm (25% prior weight)","headline":"−0.07466 modeled QALY","detail":"No positive ratio; a signed burden stress, not observed FUF harm."},
+      {"case":"Null (35%)","headline":"No positive QALYs","detail":"No validated tree-health conversion; donor and gross ratios are null."},
+      {"case":"Central (30%)","headline":"$1.848M modeled donor cost per 10 QALYs","detail":"0.540996 net gift QALY and $2.218M modeled gross-resource cost."},
+      {"case":"Favorable (10%)","headline":"$124,101 modeled donor cost per 10 QALYs","detail":"8.05794 net gift QALYs and $186,152 modeled gross-resource cost."},
+      {"case":"Signed prior-weighted","headline":"$1.053M modeled donor cost per 10 QALYs","detail":"0.949427 expected net QALY and $1.219M modeled gross-resource cost. The favorable case contributes 84.9% of expected net QALYs; without it, donor cost is $6.27M."}
+    ],
+    "uncertaintyBoundary":"Scenario weights and all health-conversion values are analyst priors, not confidence intervals or measured FUF effects. The weighted result is favorable-tail-sensitive. A zero-funding sensitivity returns zero QALYs and null donor, gross, Bay, and SF ratios or shares.",
+    "fundingBoundary":"RFMF is a moderate physical pathway with unverified current gift additionality. FUF says donations support more trees in low-canopy San Francisco neighborhoods. The newer FY2025 filing reports $5.142M revenue, $5.410M expense, a $268K deficit, and $2.327M net assets. But the cited $5.551M city contract ended 2025-08-31, and no current approved-site backlog, renewal, binding match, survival target, or next-$100,000 allocation is public. Verified marginal donor and gross costs are null."
+  },
+  "evidence":[
+    {"key":"sf-output","design":"San Francisco Public Works grant-performance memo","population":"Grant-associated FUF FY2023–24 San Francisco delivery","result":"The grant-performance section reports 1,412 trees planted, 1,172 watered weekly, 2,909 care visits, and 2,364 square feet of gardens; performance supported a contract extension through August 2025.","transfer":"Strong delivery verification but not proof of a complete whole-organization tree census. The reported trees form a conservative credited denominator while all cost is charged; other activities are not added as health beneficiaries, and the expired contract is not current funding room."},
+    {"key":"vacant-lot-rct","design":"Cluster-randomized vacant-lot greening trial","population":"Adults living near treated vacant lots in Philadelphia","result":"Depression and worthlessness were lower near greened lots, but the package combined grass, trees, fencing, and maintenance; overall poor mental health was not significantly reduced.","transfer":"Supports mechanism plausibility but does not isolate a street-tree effect or QALYs."},
+    {"key":"green-heart","design":"Quasi-randomized neighborhood greening experiment","population":"Louisville neighborhoods","result":"Project reporting describes reduced inflammatory biomarkers after large-scale planting.","transfer":"An intermediate endpoint only; receives zero clinical-event or mortality QALYs."},
+    {"key":"portland","design":"Observational natural experiment","population":"Portland neighborhoods with nonprofit tree planting","result":"More and older planted trees were associated with lower later mortality.","transfer":"Residual confounding and city/intervention transfer prevent direct causal conversion."},
+    {"key":"finance","design":"IRS Form 990 accounting data","population":"Whole FUF legal organization, FY ending June 2024","result":"Expense $5.673M, revenue $5.007M, deficit $666K, net assets $2.595M, and contributions $4.971M.","transfer":"Full expense remains in the donor denominator; financial need does not prove marginal tree output."}
+  ],
+  "reservations":[
+    "No source supplies QALYs per surviving San Francisco street-tree-year.",
+    "FUF publishes no matched survival by cohort, species, or neighborhood.",
+    "The $2,500 price is historical FY2021–22, not a current restricted offer.",
+    "The 1,412 trees are verified grant-associated output, not proven complete whole-organization output; all organization expense is nevertheless charged.",
+    "The FY2023–24 output/expense ratio does not prove marginal constant returns.",
+    "External greening evidence differs in intervention, setting, outcome, and causal strength.",
+    "Scenario weights, additionality, survival, horizon, health scalar, harm, and gross multipliers are priors.",
+    "Current public-funding substitution and downstream city/resource costs are incomplete."
+  ],
+  "excludedBenefits":[
+    "Separately stacked heat, pollution, noise, asthma, physical-activity, mental-health, and mortality pathways",
+    "Climate and statewide demonstration spillovers",
+    "Sidewalk-garden benefits",
+    "Youth and workforce-development outcomes",
+    "Volunteer and community well-being",
+    "Property values and neighborhood aesthetics"
+  ],
+  "sources":[
+    {"publisher":"San Francisco Public Works Commission","title":"Tree Planting Workforce Development Grant Agreement modification","url":"https://sfpublicworks.org/sites/default/files/Item%204m_PWC%20Tree%20Planting%20WFD%20mod%202024-7-22%20v719.pdf","published":"2024-07-22","retrieved":"2026-09-10","sourceType":"Official city performance and contract memo"},
+    {"publisher":"Friends of the Urban Forest","title":"Annual Impact Report 2022","url":"https://www.friendsoftheurbanforest.org/_files/ugd/e4f6ab_a4af347f726145aa886715b3bcc2b540.pdf","published":"Reporting July 2021–June 2022","retrieved":"2026-09-10","sourceType":"Official organization report and historical tree-cost description"},
+    {"publisher":"Friends of the Urban Forest","title":"Ways to Give","url":"https://www.friendsoftheurbanforest.org/support-us","published":"Undated/current","retrieved":"2026-09-10","sourceType":"Official organization donation page"},
+    {"publisher":"Internal Revenue Service, mirrored by ProPublica Nonprofit Explorer","title":"Friends of the Urban Forest filings, EIN 94-2699528","url":"https://projects.propublica.org/nonprofits/organizations/942699528","published":"FY2024 filing received 2025-04-12; FY2025 filing received 2026-04-14","retrieved":"2026-09-10","sourceType":"IRS Form 990 data"},
+    {"publisher":"JAMA Network Open / US Forest Service","title":"Effect of Greening Vacant Land on Mental Health of Community-Dwelling Adults: A Cluster Randomized Trial","url":"https://www.fs.usda.gov/nrs/pubs/jrnl/2018/nrs_2018_south_001.pdf","published":"2018-07-20","retrieved":"2026-09-10","sourceType":"Peer-reviewed cluster-randomized greening trial"},
+    {"publisher":"University of Louisville Envirome Institute","title":"Green Heart Louisville Project","url":"https://centers.louisville.edu/envirome/featured-research-projects/green-heart-louisville-project","published":"Current project page","retrieved":"2026-09-10","sourceType":"Official university project results page"},
+    {"publisher":"Environment International","title":"The association between tree planting and mortality: A natural experiment and cost-benefit analysis","url":"https://doi.org/10.1016/j.envint.2022.107609","published":"2022","retrieved":"2026-09-10","sourceType":"Peer-reviewed observational natural experiment"},
+    {"publisher":"US Forest Service Research and Development","title":"Urban Tree Mortality: A Literature Review","url":"https://research.fs.usda.gov/treesearch/58772","published":"2019","retrieved":"2026-09-10","sourceType":"Peer-reviewed literature review"}
+  ]
+}

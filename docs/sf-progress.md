@@ -1,5 +1,11 @@
 # San Francisco giving — active phase plan
 
+## Current checkpoint — September 10: 79/115
+
+Verified published through CalYouth (PR268 / Sites v184). The requested Bay Area-only research-list cleanup is count-neutral: 62 local reports, with 17 California/U.S./international reports preserved in Expanded Geography Research. Bay organizations use their Bay-wide model denominator; SF-only modeled benefits are a Bay subset, with no invented regional spillover credit. The legacy international archive remains accessible.
+
+Next: validate and publish the regrouping, then adapt BVHPF and NFP pending PRs without double counting. Category targets remain unchanged; archival placement does not erase comparator research or add category slots.
+
 ## 68→115 category tracker — September 10
 
 Track 47 remaining unique organization reports and 49 category slots. Targets are 10 each for SF outcome-first organizations, SF universe/new coverage, policy and systems leverage, and other-city transfers with real Bay implementers; plus 3 each for EA/Charity-Entrepreneurship mechanisms tied to real organizations, wider Bay/California, and selective US/international comparators. Exactly two genuinely cross-cutting organizations may satisfy two named category slots, while each organization counts once toward 115. Screens, duplicate program reviews, revisions and hypothetical ventures do not count.

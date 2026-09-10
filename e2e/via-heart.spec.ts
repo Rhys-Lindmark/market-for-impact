@@ -14,6 +14,7 @@ test('Via Heart whole gift retains funded duration and signed scenarios',async({
   parity(data.evaluated[i],{id,...calculate({...data.model.central,...overrides as object})});
   if(data.evaluated[i].q.sf<=0)expect(data.evaluated[i].prices.sf).toEqual({donor:null,gross:null,net:null});
  }
- await page.goto('/research');await expect(page.locator('[data-research-slug="via-heart-project"]')).toContainText('(Bay Area)');
+ await page.goto('/research');await expect(page.locator('[data-research-slug="via-heart-project"]')).not.toContainText('(Bay Area)');
+ await expect(page.locator('[data-research-slug="via-heart-project"]')).toHaveAttribute('data-cost-per-ten-qalys',String(calculate(data.model.central).prices.bay.donor));
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 });

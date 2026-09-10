@@ -1,5 +1,5 @@
 import {test,expect} from '@playwright/test';
-import {EXPECTED_RESEARCH_COUNT} from './research-contract';
+import {EXPECTED_RESEARCH_COUNT,EXPECTED_PUBLISHED_COUNT,EXPECTED_EXPANDED_COUNT} from './research-contract';
 
 test('homepage and research copy refinements',async({page})=>{
  await page.goto('/');
@@ -9,15 +9,19 @@ test('homepage and research copy refinements',async({page})=>{
  await expect(page.locator('tbody')).not.toContainText('Not estimated');
  await expect(page.locator('#top-research').getByRole('columnheader',{name:'Organization',exact:true})).toBeVisible();
  await expect(page.getByRole('columnheader',{name:'$ per better life',exact:true})).toBeVisible();
- for(const cell of await page.locator('tbody td').all()) expect(await cell.innerText()).toMatch(/^\$[\d,]+(?:\.\dM|[KBT])?\n(?:SF|BAY AREA)$/);
+ for(const cell of await page.locator('tbody td').all()) expect(await cell.innerText()).toMatch(/^\$[\d,]+(?:\.\dM|[KBT])?$/);
 });
 
 test('all published reports use readable research architecture',async({page},testInfo)=>{
  test.setTimeout(180000);
  await page.goto('/research');
  await expect(page.locator('[data-research-slug]')).toHaveCount(EXPECTED_RESEARCH_COUNT);
- const reports=await page.locator('[data-research-slug]').evaluateAll(rows=>rows.map(row=>({href:row.querySelector('a')!.getAttribute('href')!})));
- expect(new Set(reports.map(r=>r.href)).size).toBe(EXPECTED_RESEARCH_COUNT);
+ const localReports=await page.locator('[data-research-slug]').evaluateAll(rows=>rows.map(row=>({href:row.querySelector('a')!.getAttribute('href')!})));
+ await page.goto('/archive/expanded-geography-research');
+ await expect(page.locator('[data-research-slug]')).toHaveCount(EXPECTED_EXPANDED_COUNT);
+ const expandedReports=await page.locator('[data-research-slug]').evaluateAll(rows=>rows.map(row=>({href:row.querySelector('a')!.getAttribute('href')!})));
+ const reports=[...localReports,...expandedReports];
+ expect(new Set(reports.map(r=>r.href)).size).toBe(EXPECTED_PUBLISHED_COUNT);
  for(const item of reports){
   const response=await page.goto(item.href);
   expect(response?.status(),item.href).toBe(200);

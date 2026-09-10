@@ -26,7 +26,7 @@ import {calculate as hkfModel} from './hkf-model.mjs';
 const hkf=hkfModel(hkfData.central_inputs);
 const roots=rootsModel(rootsData.scenarios.find(s=>s.id==='central')!.inputs);
 const central=rotacareModel(data.scenarios.find(s=>s.id==='central')!.inputs);
-// Bay-resident prices must not enter the SF-resident ranking.
+// The main local comparison uses Bay-resident prices; narrower SF shares remain in reports.
 export const bayResearch=[{organization:'Youth ALIVE!',program:'Whole-gift violence prevention and healing',href:'/charities/youth-alive',bayUsdPerTenQalys:youthAlive.donorCostPer10Qaly,sfUsdPerTenQalys:null},{scope:'SF',organization:'Friends of the Urban Forest',program:'Whole-gift street-tree planting and care',href:'/charities/friends-of-the-urban-forest',bayUsdPerTenQalys:fuf.modeledOrdinaryGiftCostPer10Qaly,sfUsdPerTenQalys:fuf.modeledOrdinaryGiftCostPer10Qaly},{organization:'RotaCare Bay Area',program:'Whole-gift cost; blood-pressure care quantified',href:'/charities/rotacare-bay-area',bayUsdPerTenQalys:central.bay.donor_usd_per_10_qaly,sfUsdPerTenQalys:null},{organization:'Roots Community Health',program:'Whole-gift cost; high-risk blood-pressure care quantified',href:'/charities/roots-community-health',bayUsdPerTenQalys:roots.donor_bay_per_10q,sfUsdPerTenQalys:null},
 {organization:'Healthier Kids Foundation',program:'Whole-gift child vision, dental and hearing access',href:'/charities/healthier-kids-foundation',bayUsdPerTenQalys:hkf.donor_bay_per_10q,sfUsdPerTenQalys:hkf.donor_sf_per_10q},
 {organization:'Via Heart Project',program:'Whole-gift AED placement and maintenance',href:'/charities/via-heart-project',bayUsdPerTenQalys:via.prices.bay.donor,sfUsdPerTenQalys:via.prices.sf.donor},

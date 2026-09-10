@@ -1,8 +1,8 @@
 # Market for Impact backlog
 
-## Current authoritative checkpoint —67/115
+## Current authoritative checkpoint —68/115
 
-ViaHeart66 and SIRUM67 published; Clinic whole-organization correction count-neutral. Latest live exacta309acd5831406c1d0a101ae2e66338cd6f45dfc (PR251/v170) canonical390/768 reports/APIs/index verified,446tests,14focused checks/build pass. Source and current plan: docs/sf-progress.md/json. Earlier publication-pending entries are historical. Next new candidates NewEyes/ReCARES; accepted OA v2 awaits homepage-aware integration. GLIDE/Breathe partial-coverage diagnostics must not be called whole-org expected returns; draftPR249 preserves research. Never inflate count with revisions/screens or tune estimates toward100K.
+New Eyes advances the reviewed set to68 once this branch is merged and canonical-verified. Its very-low-confidence weighted ordinary-gift model is $78,651/10 U.S. QALYs; removing the5% favorable scenario gives $100,714, and illustrative gross resources give $219,881. Hypothetical2% Bay/.25% SF shares imply $3.93M/$31.46M, but no local recipient allocation or marginal funding offer is verified, so it is not an SF recommendation. ReCARES, Ear of the Lion, Alliance for Smiles and Youth ALIVE! remain negative screens and do not inflate the count. OA v2 is a separate count-neutral correction in PR254. Continue high-EV screening without tuning findings toward100K.
 
 ## Clinic by the Bay — accepted whole-organization correction
 

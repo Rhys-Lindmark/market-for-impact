@@ -1,0 +1,81 @@
+{
+  "organization": "New Eyes for the Needy",
+  "eyebrow": "United States · whole organization · vision correction",
+  "program": "Very-low-confidence ordinary-gift estimate for prescription glasses",
+  "donationUrl": "https://new-eyes.org/give",
+  "published": "September 10, 2026",
+  "modelVersion": "new-eyes-whole-gift-v1",
+  "nutshell": {
+    "headline": "Our analyst-weighted estimate is $78,651 per 10 additional U.S.-wide QALYs.",
+    "body": "This is a very-low-confidence model of a $100,000 unrestricted gift, not measured impact or a verified marginal offer. A 5% favorable scenario supplies 25.8% of expected health; removing it raises the donor estimate to $100,714. Hypothetical 2% Bay and 0.25% SF allocation shares imply $3.93 million and $31.46 million per 10 local QALYs, but actual local recipient shares are unknown.",
+    "whyItMayWork": "New Eyes supplies low-cost prescription glasses to financially eligible people who might otherwise remain uncorrected.",
+    "whyWeAreCautious": "The utility bridge is transferred from a small uncontrolled Zambian study, while wear, counterfactual correction and gift additionality are analyst judgments.",
+    "recommendationBlocker": "Verify redeemed-glasses capacity, otherwise-uncorrected recipients, a U.S. utility bridge, full exam resources and Bay/SF delivery before treating this as a funding recommendation."
+  },
+  "summary": [
+    {"label":"National donor estimate","value":"$78,651 / 10 QALYs","detail":"Weighted ordinary-gift scenario; very low confidence."},
+    {"label":"Without favorable tail","value":"$100,714 / 10 QALYs","detail":"Central and cautious-positive scenarios renormalized."},
+    {"label":"Gross associated resources","value":"$219,881 / 10 QALYs","detail":"Includes illustrative exam/refraction and application-fee resources."},
+    {"label":"Funding room","value":"Unverified","detail":"Falling reported reach and deficits do not establish scalable unmet demand."}
+  ],
+  "programSection": {
+    "body": "New Eyes for the Needy, EIN 22-1539720, pays for basic single-vision or lined-bifocal glasses for eligible U.S. applicants with a current prescription. It reports serving all 50 states, DC and Puerto Rico.",
+    "steps": [
+      {"title":"Confirm eligibility and prescription","detail":"Applicants use a referring agency or direct application. A prescription generally must be dated within 24 months; California's limited online verification is not a comprehensive eye exam."},
+      {"title":"Issue and redeem a voucher","detail":"Approved applicants order one basic pair. Application, voucher and glasses are one recipient-course, not separate impact units."},
+      {"title":"Value sustained correction","detail":"Health requires the pair to fit, be worn and correct vision that would otherwise remain uncorrected for a finite period."}
+    ],
+    "boundary": "The model covers an unrestricted whole-organization gift and the domestic glasses pathway. Overseas donated frames receive no health credit. Historical expense per reported U.S. individual—not the optical component alone—sets cash throughput."
+  },
+  "model": {
+    "headline": "A $100,000 gift yields 12.714 expected U.S.-wide QALYs in our weighted model.",
+    "body": "Historical whole-organization expense per reported U.S. individual was $60.19, $65.89 and $75.33 across FY2024–FY2026. The public $24–$25 optical figure excludes the rest of an ordinary gift and the prerequisite exam. Scenario weights are subjective judgments, not empirical probabilities.",
+    "equation": {"label":"Weighted ordinary-gift model","expression":"Recipients = gift / historical whole-organization expense per reported individual. QALYs = recipients × funding additionality × (otherwise uncorrected × wear × utility gain × discounted duration − shared harm) × dispensing-delay discount; then sum scenario QALYs by weight.","result":"12.7144 expected QALYs; $100,000 × 10 / 12.7144 = $78,650.90."},
+    "inputs": [
+      {"key":"expense","label":"Historical expense per reported individual","confidence":"Primary filings; denominator not independently deduplicated","best":"$65.89 central","range":"$60.19–$75.33","basis":"Whole-organization expenses divided by reported U.S. individuals in three fiscal years."},
+      {"key":"additionality","label":"Funding additionality","confidence":"Analyst judgment","best":"50% central","range":"25–75%","basis":"Share of gift-funded courses that are genuinely additional rather than replacing other resources."},
+      {"key":"gap","label":"Otherwise-uncorrected share","confidence":"Analyst judgment","best":"70% central","range":"50–90%","basis":"Applicants may find other charitable, public, insurance or household financing."},
+      {"key":"wear","label":"Sustained wear","confidence":"Analyst judgment","best":"80% central","range":"50–80%","basis":"Correct fit, receipt, use and persistence are not measured for the modeled cohort."},
+      {"key":"utility","label":"Utility gain while worn","confidence":"Very-low-confidence transfer","best":"0.030 central","range":"0.010–0.050","basis":"Haircut from an uncontrolled 0.075 EQ-5D change among 41 followed Zambian patients; not a U.S. causal estimate."},
+      {"key":"duration","label":"Effective duration","confidence":"Analyst judgment","best":"1 year central","range":"0.5–1.5 years","basis":"Finite correction period after delay; no lifetime extrapolation."},
+      {"key":"geography","label":"Hypothetical local allocation","confidence":"Sensitivity only","best":"2% Bay; 0.25% SF","range":"Bay 1–4%; SF 0.1–0.5%","basis":"No primary Bay/SF recipient counts or restricted-gift commitment. SF is nested inside Bay."}
+    ],
+    "giftHeading": "How much could the estimate change?",
+    "sensitivity": [
+      {"case":"Weighted national estimate","headline":"$78,651 donor / $219,881 gross per 10 QALYs","detail":"Includes 5% favorable, 75% central and 20% cautious-positive weight."},
+      {"case":"No favorable scenario","headline":"$100,714 donor / $286,543 gross per 10 QALYs","detail":"The remaining two scenarios are renormalized; this shows the favorable tail's leverage."},
+      {"case":"Hypothetical Bay 2%","headline":"$3.93 million donor per 10 Bay QALYs","detail":"Allocation arithmetic only, not an observed local share."},
+      {"case":"Hypothetical SF 0.25%","headline":"$31.46 million donor per 10 SF QALYs","detail":"Nested within the Bay sensitivity; not an SF recommendation."},
+      {"case":"No additional redeemed glasses","headline":"No finite positive price","detail":"If the gift merely replaces funding or recipients would otherwise obtain correction, incremental QALYs are zero."}
+    ],
+    "uncertaintyBoundary": "The weights do not define a confidence interval. The 5% favorable case contributes 25.8% of expected health. Gross-resource figures use unobserved exam costs and fee incidence, and the duration discount is a short-horizon analyst approximation.",
+    "fundingBoundary": "Reported U.S. reach fell from 21,837 to 16,527 to 15,204 while the organization reported recent deficits and $4.52 million in net assets. These facts motivate diligence but establish neither a waitlist nor marginal capacity. Ask for state-level issued, redeemed and expired vouchers; turnaways; optical-lab capacity; unrestricted-gift allocation; exam financing; and a written local designation option."
+  },
+  "evidence": [
+    {"key":"delivery","design":"Primary filings and program rules","population":"Reported U.S. recipients, FY2024–FY2026","result":"The organization reported 21,837, 16,527 and 15,204 financially needy U.S. individuals receiving glasses across the three years.","transfer":"This supports delivery and historical average cost, not verified unique recipients, counterfactual correction or marginal gift impact."},
+    {"key":"utility","design":"Uncontrolled before/after study","population":"41 Zambian refraction patients followed for six months","result":"Mean EQ-5D rose from 0.850 to 0.925.","transfer":"The 0.075 change is not causal and may reflect unusually severe presenting impairment. Our 0.030 central U.S. transfer remains a judgment."},
+    {"key":"trial","design":"Randomized adult spectacle trial","population":"Adults randomized to ready-made versus custom spectacles","result":"Spectacles improved vision-specific quality of life in both groups.","transfer":"This supports benefit plausibility but does not identify a generic U.S. utility gain or New Eyes' incremental effect."}
+  ],
+  "reservations": [
+    "Reported individuals are not independently verified unique recipients, and issued vouchers may expire.",
+    "A current prescription and eye exam are prerequisites whose resource cost is not in the donor ledger.",
+    "The model lacks measured fit, wear, breakage, replacement and sustained utility outcomes.",
+    "No Bay/SF volume, local restriction commitment or verified marginal expansion plan is published."
+  ],
+  "excludedBenefits": [
+    "Education, employment, caregiver and safety benefits without a non-overlapping causal bridge.",
+    "Overseas donated-frame benefits.",
+    "Retail-price savings as if they were QALYs or economic resource costs.",
+    "Unmeasured value of the prerequisite eye examination."
+  ],
+  "sources": [
+    {"publisher":"New Eyes for the Needy","title":"FY2023–24 Form 990","url":"https://new-eyes.org/s/NEN-990-2023-24.pdf","published":"Fiscal year ended March 31, 2024","retrieved":"September 10, 2026","sourceType":"Primary organization-posted filing"},
+    {"publisher":"New Eyes for the Needy","title":"FY2023–24 audited financial statements","url":"https://new-eyes.org/s/NEFTN_33124-Financial-Statements.pdf","published":"Fiscal year ended March 31, 2024","retrieved":"September 10, 2026","sourceType":"Primary audited financial statements"},
+    {"publisher":"IRS via ProPublica Nonprofit Explorer","title":"FY2024–25 Form 990 filing","url":"https://projects.propublica.org/nonprofits/organizations/221539720/202502039349301820/full","published":"Fiscal year ended March 31, 2025","retrieved":"September 10, 2026","sourceType":"Primary tax filing reproduction"},
+    {"publisher":"New Eyes for the Needy","title":"FY2025–26 Form 990","url":"https://new-eyes.org/s/Form990-P_NewEyes_FY2026.pdf","published":"Fiscal year ended March 31, 2026","retrieved":"September 10, 2026","sourceType":"Organization-posted return; IRS processing not separately verified"},
+    {"publisher":"New Eyes for the Needy","title":"Application rules","url":"https://new-eyes.org/application","published":"Current page","retrieved":"September 10, 2026","sourceType":"Primary program rules"},
+    {"publisher":"New Eyes for the Needy","title":"$8,000 Delta Gamma grant announcement","url":"https://new-eyes.org/blog/2025/11/23/new-eyes-receives-8000-grant-from-the-delta-gamma-foundation","published":"November 23, 2025","retrieved":"September 10, 2026","sourceType":"Primary restricted optical-cost claim"},
+    {"publisher":"Griffiths et al.","title":"The impact of refractive error on the quality of life of patients in rural Zambia","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC3944959/","published":"2014","retrieved":"September 10, 2026","sourceType":"Peer-reviewed uncontrolled before/after study"},
+    {"publisher":"Keay et al.","title":"Vision and quality of life following ready-made spectacles","url":"https://pubmed.ncbi.nlm.nih.gov/22705346/","published":"2013","retrieved":"September 10, 2026","sourceType":"Peer-reviewed randomized adult spectacle trial"}
+  ]
+}

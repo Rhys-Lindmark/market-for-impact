@@ -1,6 +1,6 @@
 # Research completion and donation recommendations
 
-Current checkpoint: 68 unique published organizations, verified at Sites v173 on September 10, 2026. Target: 115. The 49 category slots and two permitted overlaps remain specified in sf-progress.md.
+Current checkpoint: 72 unique published organizations, verified through Sites v177 on September 10, 2026. Target: 115. The category slots and permitted overlaps remain specified in sf-progress.md; live versus pending reports are recorded in sf-progress.json.
 
 ## Publication criteria
 
@@ -12,11 +12,13 @@ Do not multiply historical annual outputs by gift/annual expense and call that m
 
 ## Current phase: turn completed research into audited reports
 
-- [ ] PUB-1: Marin Treatment Center author revises its existing packet and model; high_ev_pipeline independently checks sources, ordinary-gift attribution, finite survival, cost scope and geography.
-- [ ] PUB-2: recares_report69 selects one completed unpublished local assessment for a full report, including an unfavorable conclusion when supported.
-- [ ] PUB-3: Root accepts material corrections, integrates a coherent report in a dedicated worktree, verifies it, and publishes the exact reviewed commit. Count increases only after canonical verification.
+- [x] PUB-1: Marin Treatment Center accepted, released in PR258/v174, and canonically verified at phone/tablet widths.
+- [x] PUB-2: HEPPAC completed and independently accepted; released in PR259/v175 and canonically verified.
+- [x] PUB-3: Root integrated and published MTC, HEPPAC, Ceres and SisterWeb as separate focused PRs (258–261), exact-source releases v174–177, with tests/builds and canonical report/API/navigation verification. Count is 72, not the number of accepted drafts.
+- [ ] PUB-4: Complete releases of accepted Sonrisas, Safe & Sound and corrected California Immunization Coalition; reconcile counters only after canonical verification.
+- [ ] PUB-5: Integrate accepted FUF and Public Health Advocates; finish Youth ALIVE source/zero-funding corrections and independent re-audit.
 
-Root manages integration and keeps three bounded workers assigned. Each handoff uses the latest origin/main report routes and index sources for duplicate checks. The original project checkout can be stale; a claimed 45- or 46-report inventory is not sufficient against the current 68-report corpus.
+Root manages integration and keeps three bounded workers assigned. Each handoff uses the latest origin/main report routes and all index sources for duplicate checks. The original checkout can be stale; inspect current slugs and EINs before choosing a candidate. New bets must have plausible unusual upside before research; this is separate from publishing already-completed honest unfavorable findings.
 
 Exit: at least one additional independently audited, substantive organization report published and verified, with category and unique-report counters reconciled. If a packet lacks necessary evidence, preserve the exact defects and advance another completed packet. Reassess the phase after 25 minutes without an accepted evidence milestone; repeated screening alone must not replace integration.
 

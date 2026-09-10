@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## SisterWeb — accepted release after Ceres
+
+Whole-project finite-morbidity model, independently audited, giving HOLD. Signed weighted donor/gross $63.245M/$73.364M per 10 QALYs; 25% null, 10% harm, strong favorable-tail dependence. New EIN/no filing, unresolved Heluna contract transition, public-funding overlap and expense proxies are disclosed. Marginal offer unverified. Root output matches accepted JSON exactly; 461 tests, lint zero errors, production build, and four phone/tablet checks passed. Report 72 only after canonical publication following Ceres. Next: accepted Sonrisas, Safe & Sound audit, new SF and California-wide research.
+
 ## Ceres Community Project — accepted release after HEPPAC
 
 Independently audited whole-organization report with randomized primary null evidence and an expressly exploratory mortality bridge. Weighted donor/gross: $258.168M/$302.994M per 10 QALYs; donor HOLD. Client-bounded course denominator, finite survival, 60% null weight, reported volunteer value, and dated funding target/waitlist remain explicit. No verified marginal funding offer. 458 tests, lint zero errors, production build, and four Ceres/HEPPAC phone/tablet checks passed. Counts as report 71 only after exact-source canonical verification, following HEPPAC. Ceres does not satisfy the California-wide cohort requirement. Next: accepted SisterWeb and Sonrisas, then Safe & Sound after audit.

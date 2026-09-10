@@ -1,0 +1,7 @@
+# Ceres publication audit
+
+Independently accepted September 10, 2026 (new_eyes_report68 author; high_ev_pipeline auditor). Whole-organization report, donor HOLD; not a favorable recommendation. Accepted source packet and current funding evidence preserve the randomized primary hospitalization null and explicitly exploratory mortality. The gift-linked clinical denominator is capped by reported clients (24.92), not 54.13 meal-derived courses. Finite survival, 60% true-null weight, full expenses and the reported volunteer-resource anchor remain inspectable. Bay shares are assumptions and direct SF delivery is uncredited.
+
+Expected weighted ordinary-gift/gross prices: $258.168M/$302.994M per 10 QALYs overall. A dated 100-person waitlist and $1M annual five-year organizational funding goal plus $800K reserve do not establish a current gift-to-course marginal offer. Verified marginal prices remain null.
+
+Focused release follows HEPPAC PR259. Count becomes 71 only after canonical verification. Validation: all 458 tests passed, lint zero errors (three existing warnings), production build passed, and four Ceres/HEPPAC phone/tablet interaction checks passed. Root compared all accepted scenario and weighted outputs exactly; initial independent client-bound assertion was corrected to use a 1e-12 floating-point tolerance, with no model change. This is Bay coverage, not California-wide coverage. Next: independently accepted SisterWeb and Sonrisas, then Safe & Sound after final audit.

@@ -1,0 +1,95 @@
+{
+  "organization":"Ceres Community Project",
+  "eyebrow":"CHARITY RESEARCH · BAY AREA · EXPLORATORY",
+  "program":"Medically tailored meals and whole-organization community programs",
+  "donationUrl":"https://support.ceresproject.org/campaign/750741/donate",
+  "published":"10 September 2026",
+  "modelVersion":"ceres-whole-org-v2",
+  "nutshell":{
+    "headline":"A large randomized trial found no reduction in its primary hospitalization endpoint; the mortality signal remains exploratory.",
+    "body":"Under an explicitly judgmental prior-weighted illustration, a $100,000 unrestricted gift corresponds to $258.2 million per better life (10 modeled QALYs), or $303.0 million including reported volunteer value. These are not empirical marginal estimates; verified marginal donor and gross costs remain unknown.",
+    "whyItMayWork":"Ceres delivers medically tailored meals to people with serious illness and directly co-delivered the 1,977-person KP NOURISH randomized trial. Kitchen capacity and a non-Medi-Cal eligibility gap make incremental delivery plausible.",
+    "whyWeAreCautious":"The prespecified 90-day hospitalization outcome and all-cause emergency visits were null. Mortality and heart-failure findings were exploratory, and site-level Ceres effects, unique completed courses, and marginal funding additionality are unknown.",
+    "recommendationBlocker":"Obtain a dated donor-eligible waitlist and course budget, unique completed 70-meal courses by diagnosis/payer/county, and replicated mortality-powered evidence before recommending a gift on health cost-effectiveness."
+  },
+  "summary":[
+    {"label":"MODELED ORDINARY GIFT","value":"$258.2M","detail":"prior-weighted per 10 modeled QALYs; not an empirical marginal quote"},
+    {"label":"CENTRAL ILLUSTRATION","value":"$3.716B","detail":"per 10 modeled QALYs after heavy mortality and funding discounts"},
+    {"label":"UPSIDE ILLUSTRATION","value":"$26.37M","detail":"still uses exploratory mortality and favorable eligibility/additionality"},
+    {"label":"BAY / SF SHARE","value":"99.79% / 0%","detail":"scenario-weighted Bay assumption; SF zero is delivery-scope based, not residence data"},
+    {"label":"FUNDING ROOM","value":"Priced target; output unverified","detail":"$1M/year for five years plus $800K reserve, but no gift-to-course guarantee"}
+  ],
+  "programSection":{
+    "body":"Ceres prepares and delivers medically tailored meals for people with cancer, diabetes, congestive heart failure and other serious illness in the North Bay. It also supplies family portions, mentors teen chefs and gardeners, coordinates adult volunteers, and participates in education and policy.",
+    "steps":[
+      {"title":"Identify eligible serious-illness clients","detail":"Current eligibility spans more than the recently hospitalized Kaiser trial population, and payer/counterfactual coverage varies."},
+      {"title":"Prepare and deliver tailored meals","detail":"The trial offered one large meal daily for up to ten weeks, with eligible household meals. Current reports count meals and clients but not unique completed trial-equivalent courses."},
+      {"title":"Support a broader community model","detail":"Teen development, gardens, volunteer engagement, family support and policy may add value but receive no QALYs in this model."}
+    ],
+    "boundary":"The full FY2024 IRS expense of $5,975,906 is used. A $100,000 gift maps retrospectively to 3,789 meals or 54.13 meal-derived 70-meal courses, but only 24.92 of 1,489 reported-client equivalents. The model uses the lower client anchor; neither measure is a verified marginal purchase."
+  },
+  "model":{
+    "headline":"Prior-weighted modeled ordinary gift: $258.2M per 10 QALYs; central: $3.716B.",
+    "body":"The model gives zero credit to null randomized hospitalization and emergency-use results. It models only a heavily discounted exploratory mortality pathway and keeps funding additionality, trial-like eligibility, dose uniqueness, mortality durability and finite survival explicit.",
+    "equation":{"label":"CENTRAL MODELED GIFT COST","expression":"10 × $100,000 ÷ [min(54.13 meal courses, 24.92 reported-client equivalents) × 20% funding additionality × 10% trial-like share × 75% dose reliability × 0.3% mortality ARR × 25% durable transfer × 0.960 finite survival QALYs]","result":"$3,715,584,297 per 10 modeled QALYs; 0.000269 gift-attributed QALY"},
+    "inputColumnLabel":"Null / central / upside judgments",
+    "inputs":[
+      {"key":"nominalCourses","label":"Client-bounded nominal course equivalents","confidence":"Moderate as accounting scale; low as unique completed courses","best":"24.92 client-bounded","range":"same client-bounded scale in all scenarios","basis":"The gift share gives 54.13 meal-derived 70-meal courses but only 24.92 of 1,489 reported-client equivalents. The model uses the lower client anchor before eligibility and dose discounts."},
+      {"key":"weights","label":"Scenario prior weights","confidence":"Subjective; not empirically calibrated","best":"60% null / 30% central / 10% upside","range":"fixed for illustration","basis":"The primary endpoint was null, mortality exploratory, and marginal eligibility unverified, so null receives majority weight and joint upside receives 10%."},
+      {"key":"fundingAdditionality","label":"Ordinary-gift funding additionality","confidence":"Low","best":"20%","range":"5% / 20% / 50%","basis":"Declining grants, coverage gaps and unused kitchen capacity favor some additionality; surplus, assets and payer reimbursement favor displacement."},
+      {"key":"trialLikeShare","label":"Recently discharged trial-like case share","confidence":"Low","best":"10%","range":"5% / 10% / 30%","basis":"Ceres serves a broader serious-illness population; no matched diagnosis/discharge share is public."},
+      {"key":"doseReliability","label":"Unique completed-dose reliability","confidence":"Low","best":"75%","range":"60% / 75% / 90%","basis":"Meal counts include household portions and are not reconciled to unique completed 70-meal courses."},
+      {"key":"mortalityArr","label":"90-day mortality absolute-risk reduction","confidence":"Null for established effect; low for illustration","best":"0.3 percentage points","range":"0 / 0.3pp / 1.3pp","basis":"Null respects the prespecified hospitalization result; central shrinks the exploratory 1.3-point difference by 77%; upside imports it without calling it established."},
+      {"key":"finiteSurvival","label":"Finite QALYs per observed 90-day death difference","confidence":"Low","best":"0.240","range":"0 / 0.240 / 0.867","basis":"Finite 3- or 5-year midpoint survival tail at 3% discount, then 25%/50% durable transfer. Competing mortality and delayed-versus-averted death are unknown."},
+      {"key":"grossMultiplier","label":"Reported-volunteer gross-resource multiplier","confidence":"Moderate for reported value; marginal resources still unknown","best":"1.173629×","range":"1.173629× in all scenarios","basis":"Ceres reports 42,519 volunteer hours valued at $1,037,591. Treating that value as outside FY2024 IRS expense gives ($5,975,906 + $1,037,591) / $5,975,906. At least $266,482 in-kind is not added because overlap with booked expense is unconfirmed; other external resources remain unknown."},
+      {"key":"bayShare","label":"Bay Area direct-health share","confidence":"Low-moderate; delivery-informed assumption","best":"90%","range":"80% / 90% / 100%","basis":"Ceres describes Marin/Sonoma delivery and Napa/Solano pathways but publishes no residence table."},
+      {"key":"sfShare","label":"San Francisco direct-health share","confidence":"Moderate for current delivery scope; not residence-measured","best":"0%","range":"0% in all scenarios","basis":"No current Ceres SF program/caseload is identified; Kaiser SF recruitment and Project Open Hand delivery are not Ceres delivery."}
+    ],
+    "giftHeading":"Illustrative $100,000 unrestricted gift",
+    "sensitivity":[
+      {"case":"Null (60% prior weight)","headline":"No positive QALYs","detail":"Zero mortality, hospitalization, ED and morbidity credit; no finite positive-benefit cost ratio."},
+      {"case":"Central (30%)","headline":"$3.716B modeled ordinary-gift cost per 10 QALYs","detail":"0.000269 gift QALY; $4.361B modeled gross cost using reported volunteer value; verified marginal costs unknown."},
+      {"case":"Upside (10%)","headline":"$26.37M modeled ordinary-gift cost per 10 QALYs","detail":"0.03793 gift QALY; $30.94M modeled gross cost; imports the exploratory 1.3-point mortality difference."},
+      {"case":"Prior-weighted","headline":"$258.2M modeled ordinary-gift cost per 10 QALYs","detail":"0.003873 expected gift QALY; $303.0M modeled gross cost; 99.79% outcome-weighted Bay share and 0% modeled SF share."}
+    ],
+    "uncertaintyBoundary":"Scenario values and weights are analyst priors, not confidence intervals or measured Ceres marginal effects. The primary randomized endpoint is null. The upside is retained only to show what happens if an exploratory mortality finding transfers; it is not described as established. A zero-funding sensitivity returns zero QALYs and null ratios/shares.",
+    "fundingBoundary":"RFMF has a priced organizational target but unverified philanthropic output additionality. The official FAQ seeks an extra $1M annually for five years for the Scaling & Innovation Fund plus an approximately $800K maintenance reserve. A December 2025 update reported 100 people waiting, and a May 2026 update describes active scaling toward 800,000 meals annually over a decade. Against this, FY2024 IRS data show a $5.85M surplus and $12.36M net assets, while Ceres says increased production is expected to be funded primarily by scaling Medi-Cal/Partnership and Kaiser contracts. No source ties the next unrestricted $100,000 to specified completed courses. The model retains conditional 5%/20%/50% funding-additionality priors; verified marginal donor and gross costs are null."
+  },
+  "evidence":[
+    {"key":"nourish-primary","design":"Remote pragmatic randomized trial","population":"1,977 recently discharged Kaiser adults with heart failure, diabetes or chronic kidney disease","result":"90-day all-cause hospitalization: adjusted HR 1.02 (95% CI 0.86–1.21), no benefit.","transfer":"This prespecified primary result receives zero QALY and no avoided-cost credit."},
+    {"key":"nourish-exploratory","design":"Exploratory outcomes from the same randomized trial","population":"993 assigned meals and 984 usual care","result":"Mortality 4.1% versus 5.4%; adjusted HR about 0.65. Heart-failure hospitalization improved in a subgroup; all-cause ED use was null.","transfer":"Mortality was not the definitive powered primary endpoint and needs replication. It enters only a discounted illustration; the HF subgroup and ED use receive no separate credit."},
+    {"key":"ceres-delivery","design":"Ceres operating report","population":"Whole 2024 organization","result":"226,432 meals, 1,489 clients, 42,519 volunteer hours valued at $1,037,591, and at least $266,482 in-kind reported; current 2025 page reports 226,787 meals and 1,618 clients/families.","transfer":"The model bounds gift-linked courses by the lower reported-client share and uses the reported volunteer value for gross resources. Outputs still do not establish unique completed clinical courses or health outcomes; in-kind overlap with booked expense is unknown."},
+    {"key":"finance","design":"IRS Form 990 accounting data","population":"Whole Ceres Community Project legal organization","result":"FY2024 expense $5.976M, revenue $11.830M, surplus $5.854M and net assets $12.357M.","transfer":"Full expense remains in the donor denominator. Capital/support-corporation reconciliation and marginal funding remain uncertain."}
+  ],
+  "reservations":[
+    "Ceres co-delivered a multi-site intervention with Project Open Hand; site-level randomized effects are unavailable.",
+    "The insured, integrated-care, recently discharged trial population may not match current Ceres clients.",
+    "Mortality and heart-failure findings were exploratory; hospitalization and ED findings were null.",
+    "Meal-derived course equivalents exceed the pro-rata reported-client anchor, so the model uses the lower 24.92-client base. Family portions and incomplete consumption still prevent treating it as unique completed patient courses.",
+    "Funding additionality, trial-like share, dose reliability, mortality shrinkage, finite survival, weights and geography are priors. The gross multiplier is anchored to reported volunteer value, but remaining external resources are unknown.",
+    "The operating report excludes the support corporation/capital project, so output/whole-org cost reconciliation is imperfect.",
+    "Avoided medical spending is not donor cash and is not deducted; external resources remain incompletely priced."
+  ],
+  "excludedBenefits":[
+    "All-cause hospitalization and emergency-use reductions, because randomized estimates were null",
+    "Heart-failure subgroup hospitalization, to avoid exploratory subgroup stacking",
+    "Nutrition counseling, because no added trial benefit was observed",
+    "Food security, caring, recovery comfort and caregiver/family-meal utility",
+    "Teen development, adult-volunteer outcomes, gardens, education, policy and training",
+    "Speculative avoided health-care spending"
+  ],
+  "sources":[
+    {"publisher":"Medical Care / PubMed","title":"Effect of Medically Tailored Meals on Clinical Outcomes in Recently Hospitalized High-Risk Adults","url":"https://pubmed.ncbi.nlm.nih.gov/35972131/","published":"2022-08-15","retrieved":"2026-09-10","sourceType":"Peer-reviewed pragmatic randomized trial"},
+    {"publisher":"ClinicalTrials.gov","title":"KP NOURISH, NCT05166525","url":"https://clinicaltrials.gov/study/NCT05166525","published":"Last update 2021-12-22","retrieved":"2026-09-10","sourceType":"Official trial registry"},
+    {"publisher":"Ceres Community Project","title":"Kaiser Permanente NOURISH","url":"https://www.ceresproject.org/kaiser-permanente-nourish","published":"Undated","retrieved":"2026-09-10","sourceType":"Official organization trial page"},
+    {"publisher":"Ceres Community Project","title":"2024 Annual Report","url":"https://static1.squarespace.com/static/605b5dc033224821d80ad63a/t/681be50757f3b4560975e26e/1746658572358/Ceres%2B2024%2BAnnual%2BReport%2B-%2BDigital%2B%281%29.pdf","published":"Reporting year 2024","retrieved":"2026-09-10","sourceType":"Official annual report"},
+    {"publisher":"Internal Revenue Service, mirrored by ProPublica Nonprofit Explorer","title":"Ceres Community Project filings, EIN 26-2250997","url":"https://projects.propublica.org/nonprofits/organizations/262250997","published":"FY2024 filing received 2025-05-13","retrieved":"2026-09-10","sourceType":"IRS Form 990 data"},
+    {"publisher":"Ceres Community Project","title":"Ceres Community Project current program and outputs","url":"https://www.ceresproject.org/","published":"Undated","retrieved":"2026-09-10","sourceType":"Official organization page"},
+    {"publisher":"County of Sonoma","title":"Food Distribution System Assessment","url":"https://sonoma-county.legistar.com/View.ashx?GUID=92EF0F9C-0CFD-4A94-9D76-E000D53A5480&ID=13741166&M=F","published":"Date shown in official packet","retrieved":"2026-09-10","sourceType":"Official county assessment"},
+    {"publisher":"California Department of Health Care Services","title":"Medically Tailored Meals Pilot Program","url":"https://www.dhcs.ca.gov/services/long-term-care-alternatives-home-and-community-based-service-options/medically-tailored-meals-pilot-program/","published":"Undated/current","retrieved":"2026-09-10","sourceType":"Official state program page"},
+    {"publisher":"Ceres Community Project","title":"Scaling & Innovation Center FAQ","url":"https://www.center.ceresproject.org/faqs-copy","published":"Undated","retrieved":"2026-09-10","sourceType":"Official organization capital and funding FAQ"},
+    {"publisher":"Ceres Community Project","title":"December 2025 e-news update","url":"https://www.ceresproject.org/blog/e-news-december-2025-4f483-2jjg4","published":"2025-12","retrieved":"2026-09-10","sourceType":"Official organization update"},
+    {"publisher":"Ceres Community Project","title":"May 2026 e-news update","url":"https://www.ceresproject.org/blog/e-new-may-2026","published":"2026-05-22","retrieved":"2026-09-10","sourceType":"Official organization update"},
+    {"publisher":"Ceres Community Project","title":"The Business Case","url":"https://www.center.ceresproject.org/the-business-case","published":"Undated","retrieved":"2026-09-10","sourceType":"Official organization scaling and payer-funding case"}
+  ]
+}

@@ -1,0 +1,2 @@
+import {calculate, calculatePublishedLifetimeBestGuess, inputs} from '@/lib/nfp-portfolio-model.mjs';
+export function GET(){const evaluated=calculatePublishedLifetimeBestGuess();return Response.json({modelVersion:inputs.modelVersion,verifiedMarginalFundingOffer:null,interpretation:'Whole-organization NFP and Child First lifetime prior model; Bay and SF allocations are unmeasured subjective shares, not observed local impact.',evaluated,followupBoundDiagnostic:calculate()});}

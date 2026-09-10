@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Changent / Nurse-Family Partnership — audited national comparator
+
+Accepted v4 models both NFP and material Child First activity against full organization expense. Lifetime benefits use baseline-discounted survival and a transparent50% post-follow-up persistence prior; the follow-up-bound diagnostic is retained separately. Weighted donor/gross $10.24M/$15.49M per10 QALYs, with84.46% favorable-tail dependence and unmeasured Bay/SF shares. Giving HOLD; no verified marginal offer.496 tests and lint0 errors pass; final build and responsive verification underway. Published baseline80 includes BVHPF and shared UI releasev188; NFP becomes81 only after canonical publication. Next accepted MiracleFeet and Spectrum, then independently audited new Bay organizations.
+
 ## Research-page navigation and metadata — user priority
 
 Apply the shared left-side desktop table of contents to all80 published reports, retaining compact above-content navigation on phones/tablets. Move the cost-effectiveness model version to the report footer; keep publication date and research time near the title. Research provenance reads “Research time: [time] on [AI model]” with concise phase bullets. Per Rhys's follow-up, missing historical times use the frozen13-report mean (~18min), explicitly approximate; GPT-5.6 Sol Medium is a user-supplied historical assumption. Actual sessions remain unchanged, partial measured totals use a compact plus sign, and future reports do not inherit historical guesses. No research count, sources, assumptions or numerical findings change. Validate all report metadata plus desktop/mobile anchor navigation before exact-source publication.

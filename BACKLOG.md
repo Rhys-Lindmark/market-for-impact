@@ -4,6 +4,9 @@
 
 Whole legal-organization expense charged; explicit unmodeled Child First benefits. Corrected annual-family/full-course unit alignment retained. Signed expected donor/gross cost is $15.10M/$21.04M per 10 total QALYs; Bay2.5%/SF0.2% are unmeasured allocation priors, not local delivery evidence. No verified marginal offer. Default snapshot, zero-funding/zero-gift, double-gift, gross boundary and validation tests pass. Full local validation: 483 tests, lint zero errors/three existing warnings, production build and two phone/tablet report/API checks. Do not count until canonical publication. Bayview remains draft pending separate resident attribution; report ordinal depends on release order.
 
+## Research-page navigation and metadata — user priority
+
+Apply the shared left-side desktop table of contents to all80 published reports, retaining compact above-content navigation on phones/tablets. Move the cost-effectiveness model version to the report footer; keep publication date and research time near the title. Research provenance reads “Research time: [time] on [AI model]” with concise phase bullets. Per Rhys's follow-up, missing historical times use the frozen13-report mean (~18min), explicitly approximate; GPT-5.6 Sol Medium is a user-supplied historical assumption. Actual sessions remain unchanged, partial measured totals use a compact plus sign, and future reports do not inherit historical guesses. No research count, sources, assumptions or numerical findings change. Validate all report metadata plus desktop/mobile anchor navigation before exact-source publication.
 
 ## Bayview Hunters Point Foundation — accepted distinct SF organization
 

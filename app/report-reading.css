@@ -10,12 +10,14 @@
 .report-reading-column h4 { font-size:18px; color:#706f63; }
 .report-contents { margin:24px 0 30px; }
 .report-contents h2 { font-size:18px; margin-bottom:12px; }
-.report-contents a { display:block; font:700 25px/1.55 Avenir,'Avenir Next',Arial,sans-serif; color:#706f63; text-decoration:none; margin:4px 0; }
+.givebetter .report-contents a { display:block; font:700 16px/1.5 Avenir,'Avenir Next',Arial,sans-serif; color:#706f63; text-decoration:none; margin:8px 0; }
 .report-contents a:hover { color:#367c99; text-decoration:underline; }
-.report-date { font-size:14px; color:#666; }
+.report-heading .report-date { font-size:14px; color:#666; margin:12px 0 0; }
 .report-reading-column .report-research-effort { font-size:14px; color:#666; margin:10px 0 0; line-height:1.5; }
 .report-research-effort summary { cursor:pointer; }
 .report-reading-column .report-research-effort p { font-size:14px; margin:8px 0 0; }
+.report-reading-column .report-research-effort ul { margin:8px 0 0; padding-left:20px; }
+.report-reading-column .report-research-effort li { font-size:14px; line-height:1.5; margin:4px 0; }
 .report-reading-column article>section { padding:24px 0; scroll-margin-top:24px; }
 .report-reading-column p,.report-reading-column li,.report-reading-column dd { font-size:16px; line-height:1.7; }
 .report-reading-column p { margin:0 0 16px; }
@@ -33,6 +35,15 @@
 .report-assumptions em { color:#666; }
 .report-sources { overflow-wrap:anywhere; }
 .report-reading-column .report-donation-note { font-size:14px; }
-.givebetter .report-footer { border-top:1px solid #dedede; margin-top:28px; padding:22px 0 0; font-size:14px; }
-.report-footer p { font-size:14px; margin-top:12px; }
-@media(max-width:600px) { .report-reading-column { padding:25px 20px 45px; } .report-heading { padding-right:0; } .report-heading>.report-donate { position:static; margin-top:18px; } .givebetter .report-heading h1 { font-size:29px; } .report-contents a { font-size:21px; } .report-reading-column h2 { font-size:25px; } }
+.givebetter .report-footer { display:block; border-top:1px solid #dedede; margin-top:28px; padding:22px 0 0; font-size:14px; }
+.report-footer p { font-size:14px; color:#666; margin-top:12px; }
+.report-model-version { overflow-wrap:anywhere; }
+@media(min-width:1050px) {
+ .report-reading-column { display:grid; grid-template-columns:250px minmax(0,820px); column-gap:48px; max-width:1174px; }
+ .report-heading { grid-column:2; }
+ .report-contents { grid-column:1; grid-row:2; align-self:start; position:sticky; top:24px; max-height:calc(100vh - 48px); overflow-y:auto; margin:24px 0 0; }
+ .report-contents h2 { font-size:18px; color:#3e3e3e; }
+ .report-reading-column>article { grid-column:2; grid-row:2; min-width:0; }
+ .report-reading-column>.report-footer { grid-column:2; min-width:0; }
+}
+@media(max-width:600px) { .report-reading-column { padding:25px 20px 45px; } .report-heading { padding-right:0; } .report-heading>.report-donate { position:static; margin-top:18px; } .givebetter .report-heading h1 { font-size:29px; } .report-reading-column h2 { font-size:25px; } .report-contents h2 { font-size:18px; } }

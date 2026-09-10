@@ -2,6 +2,8 @@
 
 ## Bayview Hunters Point Foundation — accepted distinct SF organization
 
+Final correction supersedes the earlier geographic headline below: $236.13M is total/site-attributed, not resident-specific. Subjective SF65%/Bay90% resident priors imply $363.28M SF/$262.37M Bay; measured residence remains unavailable. Final independent re-audit accepted; 488 tests and updated phone/tablet checks pass. Ordinal depends on NFP release order; do not count before canonical verification.
+
 EIN94-1747575, not Bayview Senior Services. Whole FY2025 expense against explicitly partial behavioral-health benefit; weighted $236.13M per10 modeled SF QALYs, giving HOLD. Geography is site-of-service assumption, not verified all-client residence. Final City amendments distinguished from superseded proposal; negative net assets show fragility, not proven liquidity. Known-gross accounting boundary is incomplete; verified marginal prices null. Source/model audit accepted; 485 tests, lint zero errors, build and four phone/tablet checks pass. Report80 only after preceding releases and canonical verification. Next accepted NFP, then Westside after material audit corrections.
 
 ## California Coalition for Youth — accepted finite crisis-support report

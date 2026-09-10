@@ -7,7 +7,7 @@
   "modelVersion": "bvhpf-whole-org-v1",
   "nutshell": {
     "headline": "BVHPF delivers severe-endpoint services in San Francisco, but an ordinary gift's incremental treatment and health outcomes are unpriced.",
-    "body": "A signed prior-weighted $100,000 illustration corresponds to $236.13 million per 10 modeled QALYs. Central is $178.12 million and favorable is $17.65 million. Known gross expense equals donor cash on the Form 990 boundary; true gross resources are higher but unknown. These are conditional priors, not empirical marginal estimates.",
+    "body": "A signed prior-weighted $100,000 illustration corresponds to $236.13 million per 10 modeled QALYs. Central is $178.12 million and favorable is $17.65 million. Known gross expense equals donor cash on the Form 990 boundary; true gross resources are higher but unknown. These are conditional priors, not empirical marginal estimates. Applying subjective resident shares of 90% Bay and 65% SF gives $262.37M per 10 modeled Bay-resident QALYs and $363.28M per 10 modeled SF-resident QALYs. Neither share is measured.",
     "whyItMayWork": "BVHPF reports more than 400 annual behavioral-health clients and provides outpatient/jail methadone, therapy, psychiatry, crisis intervention, housing, shelter, and re-entry services in SF.",
     "whyWeAreCautious": "No diagnosis mix, medication/retention person-years, validated before/after health utility, overdose or mortality follow-up, program overlap, or priced next-gift clinical use is public.",
     "recommendationBlocker": "Obtain a unique fiscal-year client table, clinical outcomes and counterfactual access, OMM retention and medication mix, payer displacement, current waitlists/vacancies, and a costed next-$100,000 plan."
@@ -30,8 +30,8 @@
     },
     {
       "label": "BAY / SF SHARE",
-      "value": "100% / 100%",
-      "detail": "lower-confidence SF site-of-service assumptions; residence unmeasured across all 400; SF nested within Bay"
+      "value": "90% / 65% modeled residents",
+      "detail": "Subjective allocation; measured residence unavailable. Service sites are 100% SF. Bay55–99% and SF25–90% sensitivities are not confidence bounds."
     },
     {
       "label": "FUNDING ROOM",
@@ -118,10 +118,10 @@
       {
         "key": "geography",
         "label": "Bay / SF share of credited QALY",
-        "confidence": "Low–moderate site-of-service assumption",
-        "best": "100% / 100%",
-        "range": "same in all positive scenarios",
-        "basis": "Current behavioral-health services are SF-based. The SF-residency clause covers the narrower contracted outpatient cohort, not proven residence for all 400 behavioral-health clients; residence is unmeasured."
+        "confidence": "Subjective judgment; measured residence unavailable",
+        "best": "90% Bay / 65% SF modeled residence",
+        "range": "Bay55–99%; SF25–90%; verified service sites100%SF",
+        "basis": "SF service sites and the narrower SF-eligible contracted cohort inform a judgment, not measured residence. The nominal older 220/current400 client ratio is period-mismatched and not unduplicated; it is neither a valid share nor a lower bound."
       }
     ],
     "giftHeading": "Illustrative $100,000 unrestricted gift",
@@ -155,6 +155,11 @@
         "case": "Signed prior-weighted",
         "headline": "$236.13M per 10 QALYs",
         "detail": "0.004235 net QALY. Favorable case supplies 66.9%; positive-only ratio is $232.98M."
+      },
+      {
+        "case": "Resident allocation, holding total health fixed",
+        "headline": "$363.28M per 10 modeled SF-resident QALYs",
+        "detail": "Subjective SF65%/Bay90% central. SF25–90% yields $944.53M–$262.37M; Bay55–99% yields $429.33M–$238.52M. Measured residence unavailable; not confidence bounds."
       }
     ],
     "uncertaintyBoundary": "All scenario values and weights are analyst priors, not confidence intervals. Verified marginal donor and gross costs remain unknown. The headline is favorable-tail-sensitive and excludes unmeasured benefits rather than assuming they are zero in reality.",

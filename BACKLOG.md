@@ -1,5 +1,10 @@
 # Market for Impact backlog
 
+## Changent / Nurse-Family Partnership — audited national comparator
+
+Whole legal-organization expense charged; explicit unmodeled Child First benefits. Corrected annual-family/full-course unit alignment retained. Signed expected donor/gross cost is $15.10M/$21.04M per 10 total QALYs; Bay2.5%/SF0.2% are unmeasured allocation priors, not local delivery evidence. No verified marginal offer. Default snapshot, zero-funding/zero-gift, double-gift, gross boundary and validation tests pass. Full local validation: 483 tests, lint zero errors/three existing warnings, production build and two phone/tablet report/API checks. Do not count until canonical publication. Bayview remains draft pending separate resident attribution; report ordinal depends on release order.
+
+
 ## California Coalition for Youth — accepted finite crisis-support report
 
 Full FY2025 organization expense charged; finite crisis-contact morbidity only, no mortality or policy credit. Weighted $440K donor/$527K illustrative gross per10 total QALYs; Bay20%/SF2% are explicitly unsourced nested priors, not observed callers. Repeat overlap, 988 substitution, public funding and marginal capacity unresolved. Source/model audit ACCEPT; giving HOLD. Root corrected caller-supplied gift numerator consistency and tests exact accepted default, zero-access and double-gift cases. 482 tests, lint zero errors and production build pass. Report79 only after prior releases and canonical verification. This is the third additional California-wide organization, not a new SF service provider.

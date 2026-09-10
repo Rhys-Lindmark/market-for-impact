@@ -1,5 +1,11 @@
 # San Francisco giving — active phase plan
 
+## Resumed block — September 10, 16:12 UTC
+
+**67/115 remains the published count.** The hourly heartbeat is active again with `/givebetter` as canonical and the 115-report finish line. Root owns Site integration while three research workers cover New Eyes, ReCARES and the next high-EV pipeline; finished slots are refilled immediately. Operation Access named-case-mix v2 is count-neutral and ready for publication: central donor estimates are $1.947M US, $3.245M Bay and $24.335M SF per 10 QALYs. The change preserves the historical abnormal-FIT model, replaces the ranked whole-organization value, and mechanically changes the homepage fourth pick to Project Homeless Connect without double-counting its shared hearing pathway.
+
+Acceptance evidence so far: 9,170 independent and 1,946 author OA checks; 448 repository tests; lint with zero errors and three pre-existing warnings; production build; all 26 selected phone/tablet checks pass after fixing test expectations. Diagnosis mix, causal transfer and marginal funding room remain explicitly uncertain. Next exit: publish this correction without incrementing the count, then accept or reject New Eyes as report 68 using independent whole-gift review. Block start 2026-09-10T16:12:41Z; end time belongs only in the measured shared log.
+
 ## Authoritative checkpoint — September9,05:22UTC
 
 **67/115 published and canonical-verified.** Via Heart66: PR248/v168,2629073bd1223c1a6a1c75ea472b489e06a2a02d. SIRUM67: PR250/v169,4ca834e9a99c27ca94e75f8c922778cdb653d66f. Clinic count-neutral whole-gift correction and report text wrapping: PR251/v170,a309acd5831406c1d0a101ae2e66338cd6f45dfc, successful05:22:05Z. Canonical390/768 report/API/67-row checks pass for both SIRUM and Clinic.446repository tests, lint0errors/3existingwarnings, productionbuild,14focused tests pass. Full GitHub mobile248 and250passed;251pending at checkpoint.

@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Public Health Advocates — accepted whole-gift California report
+
+Independently audited historical DPP-policy-equivalent model; giving HOLD. Weighted $78.8M donor/$93.8M illustrative gross per 10 total QALYs; Bay20%/SF2% are nested unmeasured priors. Current policy attribution, gross trial-cost proxy, going-concern/control concerns and unpriced marginal funding remain explicit. Root ESM conversion matches accepted output exactly and adds tested nonpositive-benefit guards; independent integration recheck accepted. 476 tests, lint zero errors, production build and phone/tablet checks required before release. Report77 only after FUF and canonical verification. Current live75 includes CIC, the first of three additional California-wide reports.
+
 ## Friends of the Urban Forest — audited report in integration
 
 Whole-gift SF street-tree report; finite establishment and annual survival, explicit unvalidated QALY/tree-year priors and signed null/harm. Weighted donor/gross $1.053M/$1.219M per 10 QALYs; favorable tail supplies 84.9%. All organization expense remains charged against grant-associated tree output, which may be only a subset. Current FY2025 finances inform funding room but do not prove a marginal offer. Independent audit accepted; giving HOLD. Count 76 only after CIC and FUF canonical verification. Local checks and model snapshot are retained in the publication audit. Also distinguish SF-only report labels from regional labels without changing estimates.

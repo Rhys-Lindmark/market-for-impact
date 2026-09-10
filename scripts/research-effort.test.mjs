@@ -15,8 +15,20 @@ test('time comes from timestamps and is not rounded up',()=>{
 });
 test('parallel workers sum separately and partial history remains disclosed',()=>{
  const d=data([session,{...session,id:'two',workerId:'auditor',model:null}],'partial');validateResearchEffort(d);
- const r=researchEffortSummary(d,'Example');assert.equal(r.minutes,40.1);assert.match(r.label,/unrecorded AI model/);assert.match(r.details,/partial total/);
- assert.match(r.label,/partial record/);assert.match(r.details,/Included phases: research/);
+ const r=researchEffortSummary(d,'Example');assert.equal(r.minutes,40.1);assert.match(r.label,/unrecorded AI model/);
+ assert.match(r.label,/40.1\+ min/);assert.deepEqual(r.bullets,['Research — reviewed programs, finances and impact evidence.']);assert.doesNotMatch(r.label,/partial record/);
+});
+test('historical estimates use a frozen report average and never invent session timestamps',()=>{
+ const registry=JSON.parse(fs.readFileSync('data/research-effort.json','utf8'));
+ const h=JSON.parse(fs.readFileSync('data/research-effort-historical-estimates.json','utf8'));
+ assert.equal(h.samples.length,13);assert.equal(new Set(h.organizations).size,80);
+ assert.equal(h.minutes,h.samples.reduce((sum,s)=>sum+s.minutes,0)/h.samples.length);
+ const estimated=researchEffortSummary(registry,'GLIDE Foundation',h);
+ assert.equal(estimated.recorded,false);assert.equal(estimated.estimated,true);
+ assert.equal(estimated.label,'Research time: ~18 min on GPT-5.6 Sol Medium');
+ assert.match(estimated.bullets.at(-1),/AI model assumed/);
+ const future=researchEffortSummary(registry,'Future organization',h);assert.equal(future.minutes,null);assert.equal(future.estimated,false);
+ const recorded=researchEffortSummary(registry,'Marin Treatment Center',h);assert.equal(recorded.recorded,true);assert.equal(recorded.estimated,false);assert.equal(recorded.label,'Research time: 37+ min on GPT-5.6 Sol Medium');
 });
 test('duplicate intervals overlapping worker time and unverified model identities reject',()=>{
  assert.throws(()=>validateResearchEffort(data([session,session])));

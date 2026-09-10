@@ -2,7 +2,7 @@
 
 ## Research-page navigation and metadata — user priority
 
-Apply the shared left-side desktop table of contents to all80 published reports, retaining compact above-content navigation on phones/tablets. Move the cost-effectiveness model version to the report footer; keep publication date and measured research provenance near the title. Research provenance reads “Research time: [time] on [AI model]”; historical unknowns remain explicit rather than invented. No research count, sources, assumptions or numerical findings change. Validate all report metadata plus desktop/mobile anchor navigation before exact-source publication.
+Apply the shared left-side desktop table of contents to all80 published reports, retaining compact above-content navigation on phones/tablets. Move the cost-effectiveness model version to the report footer; keep publication date and research time near the title. Research provenance reads “Research time: [time] on [AI model]” with concise phase bullets. Per Rhys's follow-up, missing historical times use the frozen13-report mean (~18min), explicitly approximate; GPT-5.6 Sol Medium is a user-supplied historical assumption. Actual sessions remain unchanged, partial measured totals use a compact plus sign, and future reports do not inherit historical guesses. No research count, sources, assumptions or numerical findings change. Validate all report metadata plus desktop/mobile anchor navigation before exact-source publication.
 
 ## Bayview Hunters Point Foundation — accepted distinct SF organization
 

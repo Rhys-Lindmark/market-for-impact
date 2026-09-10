@@ -1,5 +1,11 @@
 # Market for Impact backlog
 
+## Friends of the Urban Forest — audited report in integration
+
+Whole-gift SF street-tree report; finite establishment and annual survival, explicit unvalidated QALY/tree-year priors and signed null/harm. Weighted donor/gross $1.053M/$1.219M per 10 QALYs; favorable tail supplies 84.9%. All organization expense remains charged against grant-associated tree output, which may be only a subset. Current FY2025 finances inform funding room but do not prove a marginal offer. Independent audit accepted; giving HOLD. Count 76 only after CIC and FUF canonical verification. Local checks and model snapshot are retained in the publication audit. Also distinguish SF-only report labels from regional labels without changing estimates.
+
+Current verified checkpoint: 74/115, through Safe & Sound (PR263/v179). Earlier pending headings are historical. Next CIC PR264, FUF, Public Health Advocates, Youth ALIVE and CalYouth; BVHPF and NFP remain audit drafts. Wider-Bay cohort is overfilled by one; do not relabel reports to make category quotas fit.
+
 ## California Immunization Coalition — corrected model accepted
 
 Distinct California-wide organization; independently accepted whole-gift policy model, giving HOLD. Corrected MMR-only health calibration replaces the rejected full-schedule comparison and removes the unsupported sub-$100K favorable case. Weighted donor/gross $41.87M/$46.11M per 10 QALYs; current campaign attribution, modern transfer and Bay20%/SF2% shares remain explicit priors. 470 tests, lint zero errors, build, four phone/tablet checks and exact corrected-output match passed. Report 75 only after prior releases and canonical verification. Counts toward the remaining California-wide requirement. Next accepted FUF and PHAdvocates, then corrected/audited Youth ALIVE.

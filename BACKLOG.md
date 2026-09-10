@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Research-time / AI-model provenance on every report
+
+User priority: show actual organization-specific research minutes and AI model near the title on every old/new report. Implemented shared header for all79 reports, including expanded geography;26 verified intervals across12 reports are explicitly partial, while67 historical records remain unknown. Follow docs/research-effort.md for timestamped author/modeling/audit intervals, actual model identity evidence and partial-history coverage; exclude integration, deployment and idle waits. AGENTS.md and the new-report release checklist require available provenance records. No research count or cost-effectiveness estimate changes. Validation:487 tests passed, lint0 errors/3 existing warnings, production build passed;4 responsive checks passed, including every79 report header on phone390/tablet768. Next: publish, verify canonical headers, then integrate accepted BVHPF/NFP reports with their available provenance.
+
 ## Bay Area research list / Expanded Geography Research — September 10
 
 Current verified published checkpoint: **79/115** through CalYouth (PR268, Sites v184). This interface reorganization adds no reports. Keep 62 SF/Bay reports in the main list and move 5 California-wide, 7 U.S.-wide and 5 international reports into **Expanded Geography Research**. All 79 reports and their models remain available. Bay-wide rows use their Bay price, not their smaller SF allocation; no new spillover benefits are invented. Remove redundant name and price geography labels as requested. The old international archive URL serves the expanded archive for existing bookmarks.

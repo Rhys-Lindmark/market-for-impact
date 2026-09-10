@@ -1,10 +1,14 @@
 # San Francisco giving — active phase plan
 
+## User priority: per-organization research provenance
+
+Bay-only regrouping is published and canonical-verified (PR271 / Sites v185); count remains79/115. All79 reports now have a research-time and AI-model disclosure near the title, with honest historical unknowns. Follow docs/research-effort.md and AGENTS.md for future timed research intervals. Recovered26 verified single-organization intervals for12 reports, explicitly partial;67 reports remain unrecorded. This metadata change adds no reports and does not change cost-effectiveness estimates.
+
 ## Current checkpoint — September 10: 79/115
 
 Verified published through CalYouth (PR268 / Sites v184). The requested Bay Area-only research-list cleanup is count-neutral: 62 local reports, with 17 California/U.S./international reports preserved in Expanded Geography Research. Bay organizations use their Bay-wide model denominator; SF-only modeled benefits are a Bay subset, with no invented regional spillover credit. The legacy international archive remains accessible.
 
-Next: validate and publish the regrouping, then adapt BVHPF and NFP pending PRs without double counting. Category targets remain unchanged; archival placement does not erase comparator research or add category slots.
+Next: publish the provenance header, then adapt BVHPF and NFP pending PRs without double counting. Category targets remain unchanged; archival placement does not erase comparator research or add category slots.
 
 ## 68→115 category tracker — September 10
 

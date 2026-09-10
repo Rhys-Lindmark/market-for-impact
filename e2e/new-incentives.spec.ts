@@ -1,7 +1,7 @@
 import {EXPECTED_INTERNATIONAL_COUNT} from './research-contract';
 import {test,expect} from '@playwright/test';
 test('New Incentives is global research, not an SF recommendation',async({page})=>{
- await page.goto('/archive/international-research');await expect(page.locator('[data-research-slug]')).toHaveCount(EXPECTED_INTERNATIONAL_COUNT);
+ await page.goto('/archive/international-research');await expect(page.locator('[data-research-slug][data-geography="International"]')).toHaveCount(EXPECTED_INTERNATIONAL_COUNT);
  const row=page.locator('[data-research-slug="new-incentives"]');await expect(row).toContainText('$4K');
  await row.locator('a').first().click();await expect(page.getByRole('heading',{level:1,name:'New Incentives',exact:true})).toBeVisible();
  await expect(page.locator('article')).toContainText('$3,870');await expect(page.locator('article')).toContainText('March 2028');

@@ -4,7 +4,7 @@ test('HEPPAC separates hypothetical SF attribution from total gift impact',async
  await page.goto('/research');
  await expect(page.locator('[data-research-slug]')).toHaveCount(EXPECTED_RESEARCH_COUNT);
  const row=page.locator('[data-research-slug="heppac"]');
- await expect(row).toHaveAttribute('data-estimate-geography','San Francisco');
+ await expect(row).toHaveAttribute('data-estimate-geography','Bay Area');
  await row.locator('a').first().click();
  await expect(page.getByRole('heading',{level:1})).toContainText('HEPPAC');
  await expect(page.locator('#summary')).toContainText('$10.86M');
@@ -14,6 +14,7 @@ test('HEPPAC separates hypothetical SF attribution from total gift impact',async
  expect(w.donorPer10Qaly).toBeGreaterThan(10e6);expect(w.donorPer10Qaly).toBeLessThan(12e6);
  expect(w.sfDonorPer10Qaly).toBeGreaterThan(w.bayDonorPer10Qaly);
  expect(w.bayDonorPer10Qaly).toBeGreaterThan(w.donorPer10Qaly);
+ await page.goto('/research');await expect(page.locator('[data-research-slug="heppac"]')).toHaveAttribute('data-cost-per-ten-qalys',String(w.bayDonorPer10Qaly));await page.goto('/charities/heppac');
  const links=page.locator('a.report-donate');await expect(links).toHaveCount(2);
  for(const link of await links.all())await expect(link).toHaveAttribute('href','https://heppac.org/donate/');
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);

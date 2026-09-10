@@ -1,0 +1,278 @@
+{
+  "organization": "Bayview Hunters Point Foundation for Community Improvement",
+  "eyebrow": "CHARITY RESEARCH · SAN FRANCISCO · BEHAVIORAL HEALTH",
+  "program": "Behavioral health, methadone, housing, shelter, re-entry, and food services",
+  "donationUrl": "https://www.bayviewci.org/get-involved",
+  "published": "10 September 2026",
+  "modelVersion": "bvhpf-whole-org-v1",
+  "nutshell": {
+    "headline": "BVHPF delivers severe-endpoint services in San Francisco, but an ordinary gift's incremental treatment and health outcomes are unpriced.",
+    "body": "A signed prior-weighted $100,000 illustration corresponds to $236.13 million per 10 modeled QALYs. Central is $178.12 million and favorable is $17.65 million. Known gross expense equals donor cash on the Form 990 boundary; true gross resources are higher but unknown. These are conditional priors, not empirical marginal estimates. Applying subjective resident shares of 90% Bay and 65% SF gives $262.37M per 10 modeled Bay-resident QALYs and $363.28M per 10 modeled SF-resident QALYs. Neither share is measured.",
+    "whyItMayWork": "BVHPF reports more than 400 annual behavioral-health clients and provides outpatient/jail methadone, therapy, psychiatry, crisis intervention, housing, shelter, and re-entry services in SF.",
+    "whyWeAreCautious": "No diagnosis mix, medication/retention person-years, validated before/after health utility, overdose or mortality follow-up, program overlap, or priced next-gift clinical use is public.",
+    "recommendationBlocker": "Obtain a unique fiscal-year client table, clinical outcomes and counterfactual access, OMM retention and medication mix, payer displacement, current waitlists/vacancies, and a costed next-$100,000 plan."
+  },
+  "summary": [
+    {
+      "label": "MODELED ORDINARY GIFT",
+      "value": "$236.13M",
+      "detail": "signed prior-weighted donor and known-gross cost per 10 modeled QALYs"
+    },
+    {
+      "label": "CENTRAL",
+      "value": "$178.12M",
+      "detail": "per 10 modeled QALYs; conditional, not observed"
+    },
+    {
+      "label": "FAVORABLE",
+      "value": "$17.65M",
+      "detail": "5% prior weight; 66.9% of expected net QALYs"
+    },
+    {
+      "label": "BAY / SF SHARE",
+      "value": "90% / 65% modeled residents",
+      "detail": "Subjective allocation; measured residence unavailable. Service sites are 100% SF. Bay55–99% and SF25–90% sensitivities are not confidence bounds."
+    },
+    {
+      "label": "FUNDING ROOM",
+      "value": "Fragility; marginal health unpriced",
+      "detail": "negative net assets and live donation route, but liquidity unestablished, large public contracts, and no priced capacity tranche"
+    }
+  ],
+  "programSection": {
+    "body": "BVHPF operates behavioral health and opioid treatment, family residential recovery, shelter/navigation, supportive housing, jail/re-entry, and food programs in San Francisco.",
+    "steps": [
+      {
+        "title": "Engage high-risk clients at SF service sites",
+        "detail": "Official pages report 400+ annual behavioral-health clients and over 1,500 people/families organization-wide; categories and periods are not reconciled."
+      },
+      {
+        "title": "Deliver treatment and stabilization",
+        "detail": "Services include therapy, psychiatry, crisis intervention, OMM/jail methadone, case management, shelter, and housing support."
+      },
+      {
+        "title": "Translate service into health",
+        "detail": "Only a finite behavioral-health utility pathway receives QALYs. Methadone mortality, housing, shelter, food, re-entry, and public savings receive zero direct credit without outcomes."
+      }
+    ],
+    "boundary": "The full FY2025 expense of $17,782,834 is charged. A $100,000 gift maps retrospectively to 2.249 of the reported 400 behavioral-health client-equivalents. The current service count is a floor without an explicit fiscal-year label, so the period match and unique-person denominator are approximate."
+  },
+  "model": {
+    "headline": "Signed prior-weighted modeled gift: $236.13M per 10 QALYs; central: $178.12M.",
+    "body": "The model applies unique-person reliability, gift funding additionality, finite utility gain and duration, and clinical applicability. It includes true null and signed harm cases and gives no mortality credit.",
+    "equation": {
+      "label": "CENTRAL MODELED GIFT COST",
+      "expression": "10 × $100,000 ÷ [2.249 client-equivalents × 90% reliability × 15% funding additionality × (0.05 utility × 0.75 years ÷ midpoint discount) × 50% clinical applicability]",
+      "result": "$178,116,283 per 10 modeled QALYs; 0.005614 gift-attributed QALY"
+    },
+    "inputColumnLabel": "Harm / null / cautious / central / favorable judgments",
+    "inputs": [
+      {
+        "key": "clients",
+        "label": "Reported behavioral-health client floor",
+        "confidence": "Moderate for stated scale; low for unique fiscal-year match",
+        "best": "400 annually",
+        "range": "held fixed; reliability 75%–95%",
+        "basis": "Official current page says over 400 annually; FY2022-23 City data separately show 196 adult and 24 child outpatient clients."
+      },
+      {
+        "key": "weights",
+        "label": "Scenario prior weights",
+        "confidence": "Subjective",
+        "best": "3% harm / 42% null / 25% cautious / 25% central / 5% favorable",
+        "range": "fixed for illustration",
+        "basis": "Null is large because no marginal gift use or outcomes are observed; favorable requires several favorable judgments jointly."
+      },
+      {
+        "key": "fundingAdditionality",
+        "label": "Ordinary-gift funding additionality",
+        "confidence": "Low",
+        "best": "15% central",
+        "range": "0% null; 5% cautious; 15% central; 35% favorable; 10% harm",
+        "basis": "Negative net assets support need; public reimbursement/contracts and no priced clinical tranche support substantial displacement risk."
+      },
+      {
+        "key": "utilityDuration",
+        "label": "Finite health gain",
+        "confidence": "Low transfer",
+        "best": "0.05 utility for 0.75 years",
+        "range": "0.02×0.5y to 0.11×1y",
+        "basis": "Bounded below a psychotherapy HTA's roughly 0.11–0.12 QALY gain; not a BVHPF outcome."
+      },
+      {
+        "key": "applicability",
+        "label": "Clinical applicability",
+        "confidence": "Low",
+        "best": "50% central",
+        "range": "25%–70% positive cases",
+        "basis": "Discounts diagnosis mix, engagement, completion, usual care, and mismatch between published psychotherapy and BVHPF's mixed services."
+      },
+      {
+        "key": "gross",
+        "label": "Known gross resources",
+        "confidence": "High for recognized expense; unknown for external resources",
+        "best": "1.0× donor cash",
+        "range": "true multiplier unknown",
+        "basis": "Form 990 expense is fully charged; induced outside care, public subsidies, client time, and unrecognized donated services are not priced."
+      },
+      {
+        "key": "geography",
+        "label": "Bay / SF share of credited QALY",
+        "confidence": "Subjective judgment; measured residence unavailable",
+        "best": "90% Bay / 65% SF modeled residence",
+        "range": "Bay55–99%; SF25–90%; verified service sites100%SF",
+        "basis": "SF service sites and the narrower SF-eligible contracted cohort inform a judgment, not measured residence. The nominal older 220/current400 client ratio is period-mismatched and not unduplicated; it is neither a valid share nor a lower bound."
+      }
+    ],
+    "giftHeading": "Illustrative $100,000 unrestricted gift",
+    "sensitivity": [
+      {
+        "case": "Harm (3%)",
+        "headline": "−0.001912 QALY",
+        "detail": "Signed stress, not observed BVHPF harm; no positive cost ratio."
+      },
+      {
+        "case": "Null (42%)",
+        "headline": "No incremental QALY",
+        "detail": "No additional clinical capacity; donor/gross ratios and geography shares are null."
+      },
+      {
+        "case": "Cautious (25%)",
+        "headline": "$4.492B per 10 QALYs",
+        "detail": "0.000223 QALY; very small finite health gain and 5% funding additionality."
+      },
+      {
+        "case": "Central (25%)",
+        "headline": "$178.12M per 10 QALYs",
+        "detail": "0.005614 QALY; 15% funding additionality and 50% clinical applicability."
+      },
+      {
+        "case": "Favorable (5%)",
+        "headline": "$17.65M per 10 QALYs",
+        "detail": "0.056661 QALY; 35% funding additionality and favorable finite utility bridge."
+      },
+      {
+        "case": "Signed prior-weighted",
+        "headline": "$236.13M per 10 QALYs",
+        "detail": "0.004235 net QALY. Favorable case supplies 66.9%; positive-only ratio is $232.98M."
+      },
+      {
+        "case": "Resident allocation, holding total health fixed",
+        "headline": "$363.28M per 10 modeled SF-resident QALYs",
+        "detail": "Subjective SF65%/Bay90% central. SF25–90% yields $944.53M–$262.37M; Bay55–99% yields $429.33M–$238.52M. Measured residence unavailable; not confidence bounds."
+      }
+    ],
+    "uncertaintyBoundary": "All scenario values and weights are analyst priors, not confidence intervals. Verified marginal donor and gross costs remain unknown. The headline is favorable-tail-sensitive and excludes unmeasured benefits rather than assuming they are zero in reality.",
+    "fundingBoundary": "FY2025 revenue $17.833M, expense $17.783M, surplus $50,426 and net assets −$1.408M show balance-sheet fragility, not established cash liquidity. Enacted Amendment5 authorized $18,079,996 through December2026; later Amendment6 authorized exactly $25,611,719 through June2028. The earlier May2025 $25,711,090 proposal was superseded. Large public contracts and no costed clinical expansion make health-producing marginal room unverified and unpriced."
+  },
+  "evidence": [
+    {
+      "key": "0",
+      "design": "SF City-monitored outpatient delivery",
+      "population": "SF City-monitored outpatient delivery",
+      "result": "FY2022-23 adult/child programs served 196/24; current contract targets 177/44 and City warns target counts are not unduplicated.",
+      "transfer": "Moderate for service delivery; no causal health outcome"
+    },
+    {
+      "key": "1",
+      "design": "Psychotherapy health-utility anchor",
+      "population": "Psychotherapy health-utility anchor",
+      "result": "A health technology assessment estimated roughly 0.11–0.12 QALY for group/individual CBT versus usual care. The model uses smaller finite transferred gains.",
+      "transfer": "Moderate external evidence; low transfer"
+    },
+    {
+      "key": "2",
+      "design": "BVHPF organization reporting",
+      "population": "BVHPF organization reporting",
+      "result": "Official pages report 400+ behavioral-health clients and describe direct methadone, therapy, psychiatry, housing and shelter mechanisms, but no comparative patient outcomes.",
+      "transfer": "Moderate for broad scale; weak for outcomes"
+    }
+  ],
+  "reservations": [
+    "The 400-client figure is not explicitly assigned to FY2025 and may not be unique across behavioral-health programs.",
+    "Ordinary gifts may displace City/Medi-Cal funding or support working capital rather than add clients.",
+    "The psychotherapy QALY evidence does not identify BVHPF's diagnosis mix, treatment fidelity, or outcomes.",
+    "Negative net assets show balance-sheet fragility but do not establish liquidity or scalable clinical capacity; City fiscal/compliance monitoring adds execution risk.",
+    "Known gross resources exclude potentially large external medical, housing, public-service, client-time, and donated-service costs."
+  ],
+  "excludedBenefits": [
+    "Methadone-attributable overdose and mortality benefit: medication mix, treatment person-years, retention and substitution unknown.",
+    "Housing/shelter mortality, emergency-use and utility effects: no causal bridge or resident outcome denominator.",
+    "Food security, jail/re-entry, family recovery, youth, crime, employment, caregiver and public-savings effects: no direct QALY credit.",
+    "Any statewide or non-SF spillover: no credit."
+  ],
+  "sources": [
+    {
+      "publisher": "Bayview Hunters Point Foundation",
+      "title": "Official behavioral health services",
+      "url": "https://www.bayviewci.org/behavioral-health-services",
+      "published": "Undated/current",
+      "retrieved": "2026-09-10",
+      "sourceType": "current scope and 400+ annual clients; accessed 2026-09-10"
+    },
+    {
+      "publisher": "Bayview Hunters Point Foundation",
+      "title": "Official whole-organization programs",
+      "url": "https://www.bayviewci.org/what-we-do",
+      "published": "Undated/current",
+      "retrieved": "2026-09-10",
+      "sourceType": "program counts and mechanisms; accessed 2026-09-10"
+    },
+    {
+      "publisher": "Bayview Hunters Point Foundation",
+      "title": "Official history/current scale",
+      "url": "https://www.bayviewci.org/we-do",
+      "published": "Undated/current",
+      "retrieved": "2026-09-10",
+      "sourceType": "1,500+ SF people/families and OMM history; accessed 2026-09-10"
+    },
+    {
+      "publisher": "Bayview Hunters Point Foundation",
+      "title": "Official giving and economic statement",
+      "url": "https://www.bayviewci.org/get-involved",
+      "published": "Undated/current",
+      "retrieved": "2026-09-10",
+      "sourceType": "donation route and EIN; accessed 2026-09-10"
+    },
+    {
+      "publisher": "IRS via ProPublica",
+      "title": "FY2025 IRS-derived filing",
+      "url": "https://projects.propublica.org/nonprofits/organizations/941747575",
+      "published": "FY2025; filed2026-05-15",
+      "retrieved": "2026-09-10",
+      "sourceType": "filed 2026-05-15"
+    },
+    {
+      "publisher": "San Francisco Board of Supervisors",
+      "title": "SF Board/DPH contract packet",
+      "url": "https://sfgov.legistar.com/View.ashx?GUID=49B58CDF-BEB5-45E0-9337-DB904724EDA3&ID=14202118&M=F",
+      "published": "2025-05-14",
+      "retrieved": "2026-09-10",
+      "sourceType": "dated 2025-05-14; counts, scope, monitoring, superseded proposed terms"
+    },
+    {
+      "publisher": "San Francisco Board of Supervisors",
+      "title": "Enacted Amendment 6, File 251133",
+      "url": "https://sfgov.legistar.com/LegislationDetail.aspx?GUID=3AC62703-A2E9-400D-A825-B731BF3C0D55&ID=7731505",
+      "published": "2025-12-23",
+      "retrieved": "2026-09-10",
+      "sourceType": "Resolution 609-25; $25,611,719 through 2028-06-30, enacted 2025-12-23"
+    },
+    {
+      "publisher": "Health Quality Ontario",
+      "title": "Psychotherapy health technology assessment",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5709536/",
+      "published": "2017",
+      "retrieved": "2026-09-10",
+      "sourceType": "external 0.11–0.12 QALY upper anchor; accessed 2026-09-10"
+    },
+    {
+      "publisher": "Bayview Senior Services",
+      "title": "Distinct Bayview Senior Services entity",
+      "url": "https://www.bhpmss.org/nonprofit-annual-economic-statement",
+      "published": "Undated/current",
+      "retrieved": "2026-09-10",
+      "sourceType": "EIN 94-2186268; accessed 2026-09-10"
+    }
+  ]
+}

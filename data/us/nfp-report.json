@@ -4,17 +4,17 @@
   "program": "National Nurse-Family Partnership implementation support, with Child First in the same legal organization",
   "donationUrl": "https://changent.org/get-involved/support-our-work/",
   "published": "10 September 2026",
-  "modelVersion": "nurse-family-partnership-v2-unit-aligned",
+  "modelVersion": "nurse-family-partnership-v3-resource-timing-aligned",
   "nutshell": {
     "headline": "Legacy mortality evidence is promising, but a modern RCT's age-two primary composite was null and marginal gift leverage is unverified.",
-    "body": "A $100,000 ordinary-gift model yields 0.06621 signed QALY, or $15.10 million donor cost and $21.04 million gross-resource cost per 10 modeled QALYs. Central is $14.97 million/$25.32 million. A 5%-weight favorable case supplies 85.23% of the signed expectation; without it, donor cost worsens to $97.12 million per 10 QALYs. These are conditional priors, not a marginal offer.",
+    "body": "A $100,000 ordinary-gift model yields 0.06621 signed QALY, or $15.10 million donor cost and $22.01 million gross-resource cost per 10 modeled QALYs. Central is $14.97 million/$26.47 million. A 5%-weight favorable case supplies 85.23% of the signed expectation; without it, donor cost worsens to $97.12 million per 10 QALYs. These are conditional priors, not a marginal offer.",
     "whyItMayWork": "Nurse-Family Partnership is unusually well studied. A Memphis randomized-trial follow-up found nine preventable-cause deaths in the comparison group and none in the pregnancy-plus-infancy nurse-visited group through age 20.",
     "whyWeAreCautious": "A 5,670-person modern South Carolina RCT found a null age-two primary composite. Changent supports local implementers rather than directly employing San Francisco nurses, the legal entity also operates Child First, and no priced next-gift expansion plan or local funding gap was found.",
     "recommendationBlocker": "Obtain unrestricted-gift allocation across NFP, Child First, policy, and reserves; SF unique active, new, and completing families; unserved eligible referrals; marginal national-office and local delivery costs; cofunding; fidelity; and a preregistered local outcome plan."
   },
   "summary": [
-    {"label": "MODELED ORDINARY GIFT", "value": "$15.10M", "detail": "donor per 10 signed modeled QALYs; gross-resource estimate $21.04M"},
-    {"label": "CENTRAL ILLUSTRATION", "value": "$14.97M", "detail": "donor per 10 modeled QALYs; gross-resource estimate $25.32M"},
+    {"label": "MODELED ORDINARY GIFT", "value": "$15.10M", "detail": "donor per 10 signed modeled QALYs; gross-resource estimate $22.01M"},
+    {"label": "CENTRAL ILLUSTRATION", "value": "$14.97M", "detail": "donor per 10 modeled QALYs; gross-resource estimate $26.47M"},
     {"label": "FAVORABLE ILLUSTRATION", "value": "$886K", "detail": "5% weight; 85.23% of signed expected QALYs"},
     {"label": "BAY / SF SHARE", "value": "2.5% / 0.2%", "detail": "constant national-gift priors, not measured local allocation"},
     {"label": "FUNDING ROOM", "value": "Constrained / unverified", "detail": "large total-net-asset scale, unknown liquidity, and no priced next-gift plan"}
@@ -30,7 +30,7 @@
   },
   "model": {
     "headline": "Prior-weighted modeled ordinary gift: $15.10M per 10 QALYs; central: $14.97M.",
-    "body": "The signed model aligns annual active-family units to full 2.5-year courses before applying full-course QALYs and delivery costs. It charges all Changent expense, assigns Child First and unmodeled activities zero benefit, includes harm and null cases, and treats Bay/SF allocation as constant national-gift priors.",
+    "body": "The signed model aligns annual active-family units to full 2.5-year courses before applying full-course QALYs and delivery costs. It charges outside implementation resources to funded course-equivalents before the separate realization factor, while QALYs accrue only to realized courses. It charges all Changent expense, assigns Child First and unmodeled activities zero benefit, includes harm and null cases, and treats Bay/SF allocation as constant national-gift priors.",
     "equation": {
       "label": "CENTRAL MODELED GIFT COST",
       "expression": "10 × $100,000 ÷ [($10,000 additional support ÷ $538.759986 active-family-year cost ÷ 2.5 years × 90% realization) × 0.010 QALY/full course]",
@@ -45,17 +45,17 @@
       {"key": "realization", "label": "Course realization", "confidence": "Low", "best": "90% central", "range": "80%–95%", "basis": "Discounts modeled course-equivalents for incomplete exposure, retention, fidelity, and implementation failure; it is not a measured completion rate."},
       {"key": "qalyFamily", "label": "QALY per realized full course", "confidence": "Very low transfer prior", "best": "0.010 central", "range": "−0.010 / 0 / 0.001 / 0.010 / 0.080", "basis": "Memphis calibration is 0.016 preventable-death risk difference × a 9-QALY undiscounted within-age-20 cap = 0.144 QALY/full course. Scenario credits are judgmental fractions, not trial QALY estimates."},
       {"key": "finiteBridge", "label": "Finite mortality calibration", "confidence": "Low analyst cap", "best": "9 QALYs per prevented death", "range": "fixed calibration, not direct credit", "basis": "Assumes approximately ten undiscounted remaining years within the observed age-20 window at 0.9 utility and gives no survival credit after age 20."},
-      {"key": "gross", "label": "Full delivery cost per realized course", "confidence": "Moderate historical evidence; low current-SF transfer", "best": "$11,700 central", "range": "$8,580–$14,728", "basis": "Historical 2012 national present-value and 2019 California estimates. The model subtracts the aligned $1,346.90 Changent amount before adding outside implementation resources; these are not current SF marginal prices."},
+      {"key": "gross", "label": "Full delivery cost per funded course-equivalent", "confidence": "Moderate historical evidence; low current-SF transfer", "best": "$11,700 central", "range": "$8,580–$14,728", "basis": "Historical 2012 national present-value and 2019 California estimates. For each pre-realization funded course-equivalent, the model subtracts the aligned $1,346.90 Changent amount before adding outside implementation resources; QALYs still accrue only after realization. This may overstate partner cost for early exits, but avoids treating incomplete or failed realization as consuming zero outside resources. These are not current SF marginal prices."},
       {"key": "geography", "label": "Bay and San Francisco impact shares", "confidence": "Very low analyst allocation", "best": "2.5% / 0.2%", "range": "constant across scenarios", "basis": "Bay means the nine-county region and SF is nested. The priors combine a mismatched 5,811 California-capacity/57,005 national-family proxy with unsourced round 25%-of-California Bay and 2%-of-California SF splits; proportional national-gift allocation is also assumed."}
     ],
     "giftHeading": "Illustrative $100,000 ordinary gift to Changent",
     "sensitivity": [
       {"case": "Harm (10% prior weight)", "headline": "−0.011879 modeled QALY", "detail": "1.187913 modeled full courses at −0.010 QALY/course; no positive donor or gross ratio."},
       {"case": "Null (40%)", "headline": "No modeled QALYs", "detail": "1.781870 modeled full courses but zero QALY/course; donor and gross ratios are not defined."},
-      {"case": "Cautious positive (30%)", "headline": "$316.92M modeled donor cost per 10 QALYs", "detail": "0.003155 QALY; gross-resource cost $450.73M."},
-      {"case": "Central (15%)", "headline": "$14.97M modeled donor cost per 10 QALYs", "detail": "0.066820 QALY; gross-resource cost $25.32M."},
-      {"case": "Favorable stress (5%)", "headline": "$886,118 modeled donor cost per 10 QALYs", "detail": "1.128517 QALY; gross-resource cost $1.790M."},
-      {"case": "Signed prior-weighted", "headline": "$15.10M modeled donor cost per 10 QALYs", "detail": "0.066208 expected QALY and $21.04M gross-resource cost. Favorable contributes 85.23% of signed expected QALYs; without it, donor cost is $97.12M."}
+      {"case": "Cautious positive (30%)", "headline": "$316.92M modeled donor cost per 10 QALYs", "detail": "0.003155 QALY; gross-resource cost $474.34M."},
+      {"case": "Central (15%)", "headline": "$14.97M modeled donor cost per 10 QALYs", "detail": "0.066820 QALY; gross-resource cost $26.47M."},
+      {"case": "Favorable stress (5%)", "headline": "$886,118 modeled donor cost per 10 QALYs", "detail": "1.128517 QALY; gross-resource cost $1.84M."},
+      {"case": "Signed prior-weighted", "headline": "$15.10M modeled donor cost per 10 QALYs", "detail": "0.066208 expected QALY and $22.01M gross-resource cost. Favorable contributes 85.23% of signed expected QALYs; without it, donor cost is $97.12M."}
     ],
     "uncertaintyBoundary": "Funding additionality, realization, QALY transfer, harm, geography, and scenario weights are analyst priors, not confidence intervals or measured Changent effects. The age-two primary composite was null; the age-20 mortality signal was sparse and not prespecified. Zero funding additionality returns zero QALYs and null donor, gross, Bay, and SF ratios.",
     "fundingBoundary": "Health-producing marginal RFMF is unverified and appears constrained. Changent accepts ordinary gifts to EIN 20-0234163, but does not promise NFP- or SF-restriction or publish a next-$100,000 family target, local cofunding gap, waitlist, or binding national-office constraint. FY2024 total net assets of $111.212M were 3.6 times expense, but are not demonstrated liquid or unrestricted; pledge restrictions, timing, and liquidity are unavailable."

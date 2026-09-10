@@ -10,6 +10,6 @@ test('CCA statewide portfolio preserves local denominator and resource displacem
  expect(data.evaluated).toHaveLength(11);const central=data.evaluated[0];
  expect(central.sf.donor_usd_per_10_qaly).toBeGreaterThan(120e9);expect(central.sf.donor_usd_per_10_qaly).toBeLessThan(130e9);
  expect(central.total_net_resource_usd).toBe(110000);
- await page.goto('/research');await expect(page.locator('[data-research-slug="coalition-for-clean-air"]')).toContainText('(California)');
+ await page.goto('/archive/expanded-geography-research');await expect(page.locator('[data-research-slug="coalition-for-clean-air"]')).toContainText('(California)');
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
 });

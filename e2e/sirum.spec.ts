@@ -13,6 +13,6 @@ test('SIRUM preserves finite courses, whole gift and unpriced SF benefit',async(
  const response=await request.get('/api/sirum-model');expect(response.ok()).toBe(true);const data=await response.json();expect(data.evaluated).toHaveLength(21);
  for(const[i,s]of data.model.scenarios.entries())parity(data.evaluated[i],{id:s.id,...calculate({...data.model.central,...s.overrides})});
  expect(data.evaluated[0].regions.sf.donorPer10Q).toBeNull();
- await page.goto('/research');const row=page.locator('[data-research-slug="sirum"]');await expect(row).toContainText('(U.S.)');await expect(row).not.toContainText('$131K');
+ await page.goto('/archive/expanded-geography-research');const row=page.locator('[data-research-slug="sirum"]');await expect(row).toContainText('(U.S.)');await expect(row).toContainText('$131K');
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 });

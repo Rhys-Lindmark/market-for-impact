@@ -1,0 +1,511 @@
+{
+  "version": 1,
+  "timeBasis": "Sum of recorded, organization-specific researcher wall-clock intervals. Parallel researchers are counted separately; this is not elapsed calendar time or a quality score.",
+  "historicalCoverage": "Earlier reports did not consistently record organization-specific research intervals or AI model provenance. Missing records are unknown, not zero.",
+  "organizations": {
+    "Changent / Nurse-Family Partnership": {
+      "coverage": "partial",
+      "sessions": [
+        {
+          "id": "4a8fc60f-952c-4fb2-8756-d76f7f505b21",
+          "workerId": "research-worker-2",
+          "phase": "source-audit",
+          "startedAt": "2026-09-10T22:08:28.737Z",
+          "endedAt": "2026-09-10T22:13:40.974Z",
+          "model": {
+            "id": "gpt-5.6-sol",
+            "name": "GPT-5.6 Sol",
+            "evidence": "Verified runtime turn-context identity; see docs/nfp-publication-audit.md."
+          },
+          "evidence": "Organization-specific source-audit of NFP source/model units and resource timing; see docs/nfp-publication-audit.md.",
+          "description": "Recorded pre-publication source-audit only; earlier research and integration are excluded."
+        },
+        {
+          "id": "8cab2438-9d02-425c-aea9-2670d9324e3c",
+          "workerId": "research-worker-2",
+          "phase": "modeling",
+          "startedAt": "2026-09-10T22:17:28.338Z",
+          "endedAt": "2026-09-10T22:20:59.034Z",
+          "model": {
+            "id": "gpt-5.6-sol",
+            "name": "GPT-5.6 Sol",
+            "evidence": "Verified runtime turn-context identity; see docs/nfp-publication-audit.md."
+          },
+          "evidence": "Organization-specific modeling of NFP source/model units and resource timing; see docs/nfp-publication-audit.md.",
+          "description": "Recorded pre-publication modeling only; earlier research and integration are excluded."
+        },
+        {
+          "id": "ec3c19c8-a717-4e60-9295-191e4a8b2306",
+          "workerId": "research-worker-1",
+          "phase": "source-audit",
+          "startedAt": "2026-09-10T22:23:48.882Z",
+          "endedAt": "2026-09-10T22:24:58.759Z",
+          "model": {
+            "id": "gpt-5.6-sol",
+            "name": "GPT-5.6 Sol",
+            "evidence": "Verified runtime turn-context identity; see docs/nfp-publication-audit.md."
+          },
+          "evidence": "Organization-specific source-audit of NFP source/model units and resource timing; see docs/nfp-publication-audit.md.",
+          "description": "Recorded pre-publication source-audit only; earlier research and integration are excluded."
+        }
+      ]
+    },
+    "Bayview Hunters Point Foundation for Community Improvement": {
+      "coverage": "partial",
+      "sessions": [
+        {
+          "id": "backfill-worker3-bvhpf-20260910-1",
+          "workerId": "research-worker-3",
+          "phase": "research",
+          "startedAt": "2026-09-10T20:23:28.290Z",
+          "endedAt": "2026-09-10T20:25:18.598Z",
+          "model": {
+            "id": "gpt-5.6-sol",
+            "name": "GPT-5.6 Sol",
+            "evidence": "Verified same-turn runtime model identity; see docs/bvhpf-publication-audit.md."
+          },
+          "evidence": "Bounded organization-specific geography research separated verified delivery sites from unmeasured residence and proposed wide nested resident-share sensitivities. See docs/bvhpf-publication-audit.md.",
+          "description": "Pre-publication geography research only."
+        },
+        {
+          "id": "backfill-worker3-bvhpf-20260910-2",
+          "workerId": "research-worker-3",
+          "phase": "source-audit",
+          "startedAt": "2026-09-10T20:25:56.772Z",
+          "endedAt": "2026-09-10T20:27:12.504Z",
+          "model": {
+            "id": "gpt-5.6-sol",
+            "name": "GPT-5.6 Sol",
+            "evidence": "Verified same-turn runtime model identity; see docs/bvhpf-publication-audit.md."
+          },
+          "evidence": "Audited the proposed subjective SF and Bay resident allocation against measured-null residence, verified service sites, sensitivity nesting, and total-health arithmetic. See docs/bvhpf-publication-audit.md.",
+          "description": "Pre-publication substantive geography audit only."
+        }
+      ]
+    },
+    "Sonrisas Dental Health": {
+      "coverage": "partial",
+      "sessions": [
+        {
+          "id": "sonrisas-dental-health-20260910-backfill-1",
+          "workerId": "research-worker-1",
+          "phase": "research",
+          "startedAt": "2026-09-10T17:55:50.315Z",
+          "endedAt": "2026-09-10T18:04:26.949Z",
+          "model": {
+            "id": "gpt-5.6-sol",
+            "name": "GPT-5.6 Sol",
+            "evidence": "Same-task worker turn-context model identity; independently checked against runtime records on 2026-09-10. See docs/research-effort-backfill-audit.md."
+          },
+          "evidence": "docs/research-effort-backfill-audit.md#sonrisas-dental-health",
+          "description": "Recorded single-organization research screen assessed Sonrisas's whole-organization denominator, clinical outcome bridge, finances, Bay attribution, and room for more funding. It was an early screen, not the complete report process. Partial elapsed interval only; excludes later report construction and independent audits."
+        }
+      ]
+    },
+    "Marin Treatment Center": {
+      "coverage": "partial",
+      "sessions": [
+        {
+          "id": "marin-treatment-center-20260910-backfill-1",
+          "workerId": "research-worker-1",
+          "phase": "source-audit",
+          "startedAt": "2026-09-10T18:10:56.521Z",
+          "endedAt": "2026-09-10T18:27:22.626Z",
+          "model": {
+            "id": "gpt-5.6-sol",
+            "name": "GPT-5.6 Sol",
+            "evidence": "Same-task worker turn-context model identity; independently checked against runtime records on 2026-09-10. See docs/research-effort-backfill-audit.md."
+          },
+          "evidence": "docs/research-effort-backfill-audit.md#marin-treatment-center",
+          "description": "Recorded single-organization independent source-and-model audit checked the finite-survival bridge, treatment attribution, matched fiscal accounting, null case, and geographic uncertainty for Marin Treatment Center. Independent audit interval only; excludes original research, author revisions, integration, and release work."
+        },
+        {
+          "id": "backfill-worker2-20260910-4",
+          "workerId": "research-worker-2",
+          "phase": "research",
+          "startedAt": "2026-09-10T18:07:33.744Z",
+          "endedAt": "2026-09-10T18:11:48.266Z",
+          "model": {
+            "id": "gpt-5.6-sol",
+            "name": "GPT-5.6 Sol",
+            "evidence": "Explicit matching runtime turn context independently checked 2026-09-10; see docs/research-effort-backfill-audit.md."
+          },
+          "evidence": "docs/research-effort-backfill-audit.md#additional-researcher-2-intervals",
+          "description": "Research and modeling for Marin Treatment Center. Organization-specific opioid-treatment evidence, finance, geography, whole-gift model, tests, and report packet. Partial interval only; not total report effort."
+        },
+        {
+          "id": "backfill-worker2-20260910-5",
+          "workerId": "research-worker-2",
+          "phase": "modeling",
+          "startedAt": "2026-09-10T18:12:05.280Z",
+          "endedAt": "2026-09-10T18:28:27.664Z",
+          "model": {
+            "id": "gpt-5.6-sol",
+            "name": "GPT-5.6 Sol",
+            "evidence": "Explicit matching runtime turn context independently checked 2026-09-10; see docs/research-effort-backfill-audit.md."
+          },
+          "evidence": "docs/research-effort-backfill-audit.md#additional-researcher-2-intervals",
+          "description": "Model and report revision for Marin Treatment Center. Single-organization model and report revision: finite survival, medication mix, denominator/cost boundaries, ordinary-gift priors, null guards, synchronized report JSON, and auditor corrections. Partial interval only; not total report effort."
+        }
+      ]
+    },
+    "HIV Education and Prevention Project of Alameda County (HEPPAC)": {
+      "coverage": "partial",
+      "sessions": [
+        {
+          "id": "heppac-20260910-backfill-1",
+          "workerId": "research-worker-1",
+          "phase": "source-audit",
+          "startedAt": "2026-09-10T18:27:33.801Z",
+          "endedAt": "2026-09-10T18:35:53.771Z",
+          "model": {
+            "id": "gpt-5.6-sol",
+            "name": "GPT-5.6 Sol",
+            "evidence": "Same-task worker turn-context model identity; independently checked against runtime records on 2026-09-10. See docs/research-effort-backfill-audit.md."
+          },
+          "evidence": "docs/research-effort-backfill-audit.md#heppac",
+          "description": "Recorded single-organization independent source-and-model audit checked HEPPAC's five-month evidence period, finite fatal-event bridge, donation attribution, null case, and geographic priors. Independent audit interval only; not total report effort."
+        },
+        {
+          "id": "backfill-worker3-20260910-7",
+          "workerId": "research-worker-3",
+          "phase": "research",
+          "startedAt": "2026-09-10T17:58:15.153Z",
+          "endedAt": "2026-09-10T18:01:21.151Z",
+          "model": {
+            "id": "gpt-5.6-sol",
+            "name": "GPT-5.6 Sol",
+            "evidence": "Verified same-turn runtime model identity; see docs/research-effort-backfill-audit.md."
+          },
+          "evidence": "Initial organization-specific harm-reduction research covering naloxone, MOUD navigation, syringe access, drug checking, finances, local geography, and missing outcome volumes. See docs/research-effort-backfill-audit.md.",
+          "description": "Initial evidence-gate interval only; not the report's total research time."
+        },
+        {
+          "id": "backfill-worker3-20260910-8",
+          "workerId": "research-worker-3",
+          "phase": "modeling",
+          "startedAt": "2026-09-10T18:10:20.540Z",
+          "endedAt": "2026-09-10T18:23:01.321Z",
+          "model": {
+            "id": "gpt-5.6-sol",
+            "name": "GPT-5.6 Sol",
+            "evidence": "Verified same-turn runtime model identity; see docs/research-effort-backfill-audit.md."
+          },
+          "evidence": "Constructed the publishable whole-organization scenario model and report with overlap sensitivity, finite survival, ordinary-gift assumptions, geography, nulls, and full activity ledger. See docs/research-effort-backfill-audit.md.",
+          "description": "Report and model construction interval only; excludes initial screening, later corrections, independent audit, integration, and release work."
+        },
+        {
+          "id": "backfill-worker3-20260910-9",
+          "workerId": "research-worker-3",
+          "phase": "modeling",
+          "startedAt": "2026-09-10T18:23:08.585Z",
+          "endedAt": "2026-09-10T18:37:47.743Z",
+          "model": {
+            "id": "gpt-5.6-sol",
+            "name": "GPT-5.6 Sol",
+            "evidence": "Verified same-turn runtime model identity; see docs/research-effort-backfill-audit.md."
+          },
+          "evidence": "Corrected and synchronized the HEPPAC model after source review: five-month comparator period, outcome additionality, finite survival, realization, null weighting, and gross-resource labels. See docs/research-effort-backfill-audit.md.",
+          "description": "Bounded model/source correction interval only; excludes independent auditor time, integration, and release work."
+        }
+      ]
+    },
+    "Ceres Community Project": {
+      "coverage": "partial",
+      "sessions": [
+        {
+          "id": "ceres-community-project-20260910-backfill-1",
+          "workerId": "research-worker-1",
+          "phase": "source-audit",
+          "startedAt": "2026-09-10T18:36:07.426Z",
+          "endedAt": "2026-09-10T18:45:36.592Z",
+          "model": {
+            "id": "gpt-5.6-sol",
+            "name": "GPT-5.6 Sol",
+            "evidence": "Same-task worker turn-context model identity; independently checked against runtime records on 2026-09-10. See docs/research-effort-backfill-audit.md."
+          },
+          "evidence": "docs/research-effort-backfill-audit.md#ceres-community-project",
+          "description": "Recorded single-organization independent source-and-model audit checked Ceres's randomized hospitalization null, exploratory mortality bridge, client-bounded denominator, whole-organization cost, and funding uncertainty. Independent audit interval only; not total report effort."
+        },
+        {
+          "id": "backfill-worker2-20260910-3",
+          "workerId": "research-worker-2",
+          "phase": "research",
+          "startedAt": "2026-09-10T17:54:35.355Z",
+          "endedAt": "2026-09-10T17:58:02.101Z",
+          "model": {
+            "id": "gpt-5.6-sol",
+            "name": "GPT-5.6 Sol",
+            "evidence": "Explicit matching runtime turn context independently checked 2026-09-10; see docs/research-effort-backfill-audit.md."
+          },
+          "evidence": "docs/research-effort-backfill-audit.md#additional-researcher-2-intervals",
+          "description": "Initial research and modeling for Ceres Community Project. Initial organization-specific randomized-evidence review and whole-gift report/model/test packet. Partial interval only; not total report effort."
+        },
+        {
+          "id": "backfill-worker2-20260910-6",
+          "workerId": "research-worker-2",
+          "phase": "modeling",
+          "startedAt": "2026-09-10T18:28:42.255Z",
+          "endedAt": "2026-09-10T18:35:07.350Z",
+          "model": {
+            "id": "gpt-5.6-sol",
+            "name": "GPT-5.6 Sol",
+            "evidence": "Explicit matching runtime turn context independently checked 2026-09-10; see docs/research-effort-backfill-audit.md."
+          },
+          "evidence": "docs/research-effort-backfill-audit.md#additional-researcher-2-intervals",
+          "description": "Report and model preparation for Ceres Community Project. Single-organization v2 report-content, finite scenario model, saved results, tests, and evidence-boundary synchronization. Partial interval only; not total report effort."
+        },
+        {
+          "id": "backfill-worker2-20260910-7",
+          "workerId": "research-worker-2",
+          "phase": "modeling",
+          "startedAt": "2026-09-10T18:35:52.048Z",
+          "endedAt": "2026-09-10T18:45:35.623Z",
+          "model": {
+            "id": "gpt-5.6-sol",
+            "name": "GPT-5.6 Sol",
+            "evidence": "Explicit matching runtime turn context independently checked 2026-09-10; see docs/research-effort-backfill-audit.md."
+          },
+          "evidence": "docs/research-effort-backfill-audit.md#additional-researcher-2-intervals",
+          "description": "Audit-driven model and report revision for Ceres Community Project. Single-organization audit-driven correction and synchronization of recipient denominator, volunteer-resource boundary, funding-room sources, model outputs, report JSON, and tests. Partial interval only; not total report effort."
+        }
+      ]
+    },
+    "SisterWeb Community Doula Network": {
+      "coverage": "partial",
+      "sessions": [
+        {
+          "id": "sisterweb-20260910-backfill-1",
+          "workerId": "research-worker-1",
+          "phase": "source-audit",
+          "startedAt": "2026-09-10T18:46:12.096Z",
+          "endedAt": "2026-09-10T18:51:43.443Z",
+          "model": {
+            "id": "gpt-5.6-sol",
+            "name": "GPT-5.6 Sol",
+            "evidence": "Same-task worker turn-context model identity; independently checked against runtime records on 2026-09-10. See docs/research-effort-backfill-audit.md."
+          },
+          "evidence": "docs/research-effort-backfill-audit.md#sisterweb",
+          "description": "Recorded single-organization independent source-and-model audit checked SisterWeb's nonprofit identity, sponsored-contract transition, expense proxy, maternal and infant outcome bridge, signed harm, and nested geography. Independent audit interval only; not total report effort."
+        },
+        {
+          "id": "backfill-worker3-20260910-5",
+          "workerId": "research-worker-3",
+          "phase": "research",
+          "startedAt": "2026-09-10T17:50:00.384Z",
+          "endedAt": "2026-09-10T17:54:00.888Z",
+          "model": {
+            "id": "gpt-5.6-sol",
+            "name": "GPT-5.6 Sol",
+            "evidence": "Verified same-turn runtime model identity; see docs/research-effort-backfill-audit.md."
+          },
+          "evidence": "Initial organization-specific doula-care research covering legal boundary, contracts, expense uncertainty, finite maternal and infant outcomes, nulls, and harms. See docs/research-effort-backfill-audit.md.",
+          "description": "Initial research packet interval only; not the report's total research time."
+        },
+        {
+          "id": "backfill-worker3-20260910-6",
+          "workerId": "research-worker-3",
+          "phase": "modeling",
+          "startedAt": "2026-09-10T18:38:11.264Z",
+          "endedAt": "2026-09-10T18:45:41.850Z",
+          "model": {
+            "id": "gpt-5.6-sol",
+            "name": "GPT-5.6 Sol",
+            "evidence": "Verified same-turn runtime model identity; see docs/research-effort-backfill-audit.md."
+          },
+          "evidence": "Built and synchronized the bounded whole-project report model, including contract and EIN corrections, finite morbidity, null and harm cases, geography, and JSON output. See docs/research-effort-backfill-audit.md.",
+          "description": "Report-model construction interval only; excludes earlier research, independent audit, integration, and release work."
+        }
+      ]
+    },
+    "Safe & Sound": {
+      "coverage": "partial",
+      "sessions": [
+        {
+          "id": "safe-and-sound-20260910-backfill-1",
+          "workerId": "research-worker-1",
+          "phase": "source-audit",
+          "startedAt": "2026-09-10T18:52:20.344Z",
+          "endedAt": "2026-09-10T19:03:48.586Z",
+          "model": {
+            "id": "gpt-5.6-sol",
+            "name": "GPT-5.6 Sol",
+            "evidence": "Same-task worker turn-context model identity; independently checked against runtime records on 2026-09-10. See docs/research-effort-backfill-audit.md."
+          },
+          "evidence": "docs/research-effort-backfill-audit.md#safe-and-sound",
+          "description": "Recorded single-organization independent source-and-model audit checked Safe & Sound's whole-organization cost boundary, audited outlay floor, partner-resource sensitivities, signed scenarios, and funding uncertainty. Independent audit interval only; not total report effort."
+        },
+        {
+          "id": "backfill-worker3-20260910-2",
+          "workerId": "research-worker-3",
+          "phase": "research",
+          "startedAt": "2026-09-10T17:28:40.852Z",
+          "endedAt": "2026-09-10T17:37:38.636Z",
+          "model": {
+            "id": "gpt-5.6-sol",
+            "name": "GPT-5.6 Sol",
+            "evidence": "Verified same-turn runtime model identity; see docs/research-effort-backfill-audit.md."
+          },
+          "evidence": "Organization-specific whole-organization child-safety research and bounded health model with null, harm, funding, and geography checks. See docs/research-effort-backfill-audit.md.",
+          "description": "Initial research packet interval only; excludes later authoring, independent audit, integration, and release work."
+        }
+      ]
+    },
+    "California Coalition for Youth": {
+      "coverage": "partial",
+      "sessions": [
+        {
+          "id": "california-coalition-for-youth-20260910-backfill-1",
+          "workerId": "research-worker-1",
+          "phase": "source-audit",
+          "startedAt": "2026-09-10T19:35:39.243Z",
+          "endedAt": "2026-09-10T19:36:25.131Z",
+          "model": {
+            "id": "gpt-5.6-sol",
+            "name": "GPT-5.6 Sol",
+            "evidence": "Same-task worker turn-context model identity; independently checked against runtime records on 2026-09-10. See docs/research-effort-backfill-audit.md."
+          },
+          "evidence": "docs/research-effort-backfill-audit.md#california-coalition-for-youth",
+          "description": "Recorded single-organization final correction recheck verified CalYouth's requested guards, saved-value equality, null wording, and geography disclosures. Narrow final recheck only; excludes original research, model construction, earlier audit, and integration."
+        },
+        {
+          "id": "backfill-worker2-20260910-8",
+          "workerId": "research-worker-2",
+          "phase": "source-audit",
+          "startedAt": "2026-09-10T19:30:33.671Z",
+          "endedAt": "2026-09-10T19:32:24.512Z",
+          "model": {
+            "id": "gpt-5.6-sol",
+            "name": "GPT-5.6 Sol",
+            "evidence": "Explicit matching runtime turn context independently checked 2026-09-10; see docs/research-effort-backfill-audit.md."
+          },
+          "evidence": "docs/research-effort-backfill-audit.md#additional-researcher-2-intervals",
+          "description": "Independent source and model audit for California Coalition for Youth. Independent single-organization audit of formula, sources, geography, whole-gift boundary, null/harm guards, and material corrections. Partial interval only; not total report effort."
+        },
+        {
+          "id": "backfill-worker3-20260910-11",
+          "workerId": "research-worker-3",
+          "phase": "research",
+          "startedAt": "2026-09-10T19:04:56.552Z",
+          "endedAt": "2026-09-10T19:27:04.759Z",
+          "model": {
+            "id": "gpt-5.6-sol",
+            "name": "GPT-5.6 Sol",
+            "evidence": "Verified same-turn runtime model identity; see docs/research-effort-backfill-audit.md."
+          },
+          "evidence": "Organization-specific statewide youth-crisis research and whole-gift model covering call units, finite morbidity, null and harm cases, gross resources, local priors, and funding uncertainty. See docs/research-effort-backfill-audit.md.",
+          "description": "Research and model packet interval only; excludes later independent audit, integration, and release work."
+        }
+      ]
+    },
+    "New Eyes for the Needy": {
+      "coverage": "partial",
+      "sessions": [
+        {
+          "id": "backfill-worker2-20260910-1",
+          "workerId": "research-worker-2",
+          "phase": "research",
+          "startedAt": "2026-09-10T16:14:26.816Z",
+          "endedAt": "2026-09-10T16:22:38.755Z",
+          "model": {
+            "id": "gpt-5.6-sol",
+            "name": "GPT-5.6 Sol",
+            "evidence": "Explicit matching runtime turn context independently checked 2026-09-10; see docs/research-effort-backfill-audit.md."
+          },
+          "evidence": "docs/research-effort-backfill-audit.md#additional-researcher-2-intervals",
+          "description": "Research and model audit for New Eyes for the Needy. Organization-specific primary-source and whole-gift audit, scenario arithmetic, Bay/SF allocation limits, and bounded report-68 artifact. Partial interval only; not total report effort."
+        },
+        {
+          "id": "backfill-worker3-20260910-1",
+          "workerId": "research-worker-3",
+          "phase": "source-audit",
+          "startedAt": "2026-09-10T16:23:18.169Z",
+          "endedAt": "2026-09-10T16:28:04.359Z",
+          "model": {
+            "id": "gpt-5.6-sol",
+            "name": "GPT-5.6 Sol",
+            "evidence": "Verified same-turn runtime model identity; see docs/research-effort-backfill-audit.md."
+          },
+          "evidence": "Independent organization-level source and arithmetic audit of unique-recipient costs, weighted scenarios, gross resources, hypothetical local shares, and funding-room limits. See docs/research-effort-backfill-audit.md.",
+          "description": "Completed independent audit only; excludes original research, author revisions, integration, release work, and idle time."
+        }
+      ]
+    },
+    "Youth ALIVE!": {
+      "coverage": "partial",
+      "sessions": [
+        {
+          "id": "backfill-worker2-20260910-2",
+          "workerId": "research-worker-2",
+          "phase": "research",
+          "startedAt": "2026-09-10T16:34:49.371Z",
+          "endedAt": "2026-09-10T16:42:46.114Z",
+          "model": {
+            "id": "gpt-5.6-sol",
+            "name": "GPT-5.6 Sol",
+            "evidence": "Explicit matching runtime turn context independently checked 2026-09-10; see docs/research-effort-backfill-audit.md."
+          },
+          "evidence": "docs/research-effort-backfill-audit.md#additional-researcher-2-intervals",
+          "description": "Research and modeling for Youth ALIVE! Organization-specific violence-intervention evidence review, financial and public-funding boundary, whole-gift model, tests, and evidence packet. Partial interval only; not total report effort."
+        }
+      ]
+    },
+    "Walk San Francisco": {
+      "coverage": "partial",
+      "sessions": [
+        {
+          "id": "backfill-worker3-20260910-3",
+          "workerId": "research-worker-3",
+          "phase": "research",
+          "startedAt": "2026-09-10T17:37:38.864Z",
+          "endedAt": "2026-09-10T17:43:58.023Z",
+          "model": {
+            "id": "gpt-5.6-sol",
+            "name": "GPT-5.6 Sol",
+            "evidence": "Verified same-turn runtime model identity; see docs/research-effort-backfill-audit.md."
+          },
+          "evidence": "Organization-specific street-safety policy research and whole-gift model covering injury outcomes, public implementation resources, attribution, and funding uncertainty. See docs/research-effort-backfill-audit.md.",
+          "description": "Initial research packet interval only; not the report's total research time."
+        }
+      ]
+    },
+    "Friends of the Urban Forest": {
+      "coverage": "partial",
+      "sessions": [
+        {
+          "id": "backfill-worker3-20260910-4",
+          "workerId": "research-worker-3",
+          "phase": "research",
+          "startedAt": "2026-09-10T17:43:59.766Z",
+          "endedAt": "2026-09-10T17:49:43.736Z",
+          "model": {
+            "id": "gpt-5.6-sol",
+            "name": "GPT-5.6 Sol",
+            "evidence": "Verified same-turn runtime model identity; see docs/research-effort-backfill-audit.md."
+          },
+          "evidence": "Organization-specific urban-forestry research and whole-gift health model covering verified tree activity, finite tree survival, local attribution, and funding uncertainty. See docs/research-effort-backfill-audit.md.",
+          "description": "Initial research packet interval only; not the report's total research time."
+        }
+      ]
+    },
+    "California Immunization Coalition": {
+      "coverage": "partial",
+      "sessions": [
+        {
+          "id": "backfill-worker3-20260910-10",
+          "workerId": "research-worker-3",
+          "phase": "research",
+          "startedAt": "2026-09-10T18:46:25.611Z",
+          "endedAt": "2026-09-10T19:04:36.022Z",
+          "model": {
+            "id": "gpt-5.6-sol",
+            "name": "GPT-5.6 Sol",
+            "evidence": "Verified same-turn runtime model identity; see docs/research-effort-backfill-audit.md."
+          },
+          "evidence": "Organization-specific statewide immunization-policy research and whole-gift model, including MMR-matched health calibration, gross-resource proxy, local priors, nulls, and favorable-tail disclosure. See docs/research-effort-backfill-audit.md.",
+          "description": "Research and model packet interval only; excludes later independent audit, integration, and release work."
+        }
+      ]
+    }
+  }
+}

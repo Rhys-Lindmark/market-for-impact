@@ -24,6 +24,6 @@ test('California Walks whole-gift report preserves local and resource boundaries
  expect(data.evaluated).toHaveLength(14);
  numericParity(data.evaluated,data.model.scenarios.map((s:{id:string;inputs:Parameters<typeof calculate>[0]})=>({id:s.id,...calculate(s.inputs)})));
  expect(data.evaluated[0].sf.donor_usd_per_10_qaly).toBeGreaterThan(600e6);
- await page.goto('/research');await expect(page.locator('[data-research-slug="california-walks"]')).toContainText('(California)');
+ await page.goto('/archive/expanded-geography-research');await expect(page.locator('[data-research-slug="california-walks"]')).toContainText('(California)');
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 });

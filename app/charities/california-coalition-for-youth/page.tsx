@@ -1,0 +1,3 @@
+import CharityResearchReport,{type CharityReportContent} from '@/components/CharityResearchReport';import report from '@/data/california/calyouth-report.json';
+export const metadata={title:'California Coalition for Youth — GiveBetter research',description:'Whole-gift youth crisis support with finite morbidity, local attribution and funding uncertainty.'};
+export default function Page(){const content:CharityReportContent={...report,nutshell:{...report.nutshell,body:<>{report.nutshell.body} <a href="/api/calyouth-model">Inspect the model, assumptions and scenarios</a>.</>}};return <CharityResearchReport content={content}/>;}

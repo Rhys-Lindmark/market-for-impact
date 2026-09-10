@@ -1,0 +1,274 @@
+{
+  "organization": "Youth ALIVE!",
+  "eyebrow": "CHARITY RESEARCH · BAY AREA · VIOLENCE PREVENTION",
+  "program": "Whole-gift violence prevention, intervention and healing",
+  "donationUrl": "https://www.youthalive.org/donate/",
+  "published": "10 September 2026",
+  "modelVersion": "youth-alive-v2",
+  "nutshell": {
+    "headline": "A credible local violence-intervention mechanism, but no verified marginal gift price or capacity gap.",
+    "body": "Our signed prior-weighted illustration is $27.34M donor / $28.08M gross resources per 10 modeled QALYs. All quantified benefit is in Oakland/Alameda. The favorable 5% scenario supplies 66.1% of expected benefit; this is not a verified marginal donation offer.",
+    "whyItMayWork": "Locally pioneered hospital-based peer intervention addresses violent reinjury, with encouraging but low-quality pooled evidence.",
+    "whyWeAreCautious": "The organization's uncontrolled non-reinjury rate is not a causal effect. A current $5M state award makes new-gift additionality uncertain, and the QALY anchor is a model with important limitations.",
+    "recommendationBlocker": "Obtain the current CalVIP budget, unique referral/enrollment/completion and waitlist flow, comparison-group outcomes, partner resources and a priced next-gift staffing plan."
+  },
+  "summary": [
+    {
+      "label": "MODELED ORDINARY GIFT",
+      "value": "$27.34M",
+      "detail": "donor cost per 10 signed expected QALYs; gross $28.08M"
+    },
+    {
+      "label": "CENTRAL",
+      "value": "$14.29M",
+      "detail": "donor cost per 10; gross $15.04M"
+    },
+    {
+      "label": "FAVORABLE",
+      "value": "$2.07M",
+      "detail": "5% weight; 66.10% of signed expectation"
+    },
+    {
+      "label": "BAY / SF",
+      "value": "100% / 0%",
+      "detail": "all quantified service is Oakland/Alameda; SF nested"
+    },
+    {
+      "label": "RFMF",
+      "value": "Unverified",
+      "detail": "$5M current CalVIP award; no priced next-gift use"
+    }
+  ],
+  "programSection": {
+    "body": "Youth ALIVE! (EIN 94-3143254) serves Oakland through Caught in the Crossfire hospital intervention, violence interruption, Pathways mentoring, Teens on Target, counseling, homicide-family support and advocacy.",
+    "steps": [
+      {
+        "title": "Reach survivors at the bedside",
+        "detail": "Caught in the Crossfire specialists offer safety, healing and practical support after violent injury, aiming to prevent retaliation and recurrence."
+      },
+      {
+        "title": "Support youth, families and neighborhoods",
+        "detail": "2025 reported 118 CiC clients, 260 mediations, 131 bedside assessments, 72 Pathways youth, 70 families, 91 counseling clients/3,255 hours; overlap unknown. These counts are not summed as distinct beneficiaries."
+      },
+      {
+        "title": "Change practice and policy",
+        "detail": "Youth ALIVE supports community prevention and advocacy; replication and policy spillovers receive no modeled QALYs."
+      }
+    ],
+    "boundary": "All gift cash is charged. Only CiC-like service receives QALYs; violence interruption, Pathways, TNT, counseling, family support, and policy are zero-credit. FY2024 whole-organization expense was $7,305,670. Program allocation is a judgment, not an observed expense share; this is a partial-health model of a whole gift."
+  },
+  "model": {
+    "headline": "$27.34M per 10 modeled Bay Area QALYs; giving HOLD.",
+    "body": "Only an additional CiC-like course receives quantified health. The directly reported five-year modeled difference is 4.64−4.62=.020 QALY per participant, reduced by evidence-transfer and gift-additionality priors. No lifetime extrapolation is added.",
+    "equation": {
+      "label": "CENTRAL GIFT",
+      "expression": "$100,000 × 40% allocation × 35% additionality × 90% realization ÷ $1,800 × .020 QALY × 50% transfer",
+      "result": "0.070 QALY; $14.29M donor / $15.04M gross per10"
+    },
+    "giftHeading": "Illustrative $100,000 unrestricted gift",
+    "inputs": [
+      {
+        "key": "allocation",
+        "label": "CiC allocation",
+        "best": "40% central",
+        "range": "20%–70%",
+        "confidence": "Low; analyst prior",
+        "basis": "The ordinary gift spans the full organization. Other activities retain costs but receive no separate health credit."
+      },
+      {
+        "key": "funding",
+        "label": "Funding additionality and realization",
+        "best": "35% × 90%",
+        "range": "15%–60% additionality; 80%–95% realization",
+        "confidence": "Low; analyst priors",
+        "basis": "Public contracts and the new state award may fund activity without the gift. Enrollment and completion also constrain delivery."
+      },
+      {
+        "key": "price",
+        "label": "Cost per added client",
+        "best": "$1,800",
+        "range": "$1,484.97–$2,500",
+        "confidence": "Low; historical benchmark plus judgments",
+        "basis": "The favorable floor is $267,294 divided by 180 minimum comprehensive clients in the July2023–September2024 county contract. It is not a current marginal offer or complete resource cost."
+      },
+      {
+        "key": "health",
+        "label": "Five-year QALY anchor",
+        "best": "4.64−4.62=.020",
+        "range": "−25% / 0% / 20% / 50% / 90% transfer",
+        "confidence": "Limited modeled evidence; transfer is judgmental",
+        "basis": "NICE summarizes a five-year undiscounted healthcare-payer Markov model, not observed trial QALYs. Potentially serious limitations and no probabilistic sensitivity analysis. Negative transfer represents a harm stress."
+      },
+      {
+        "key": "gross",
+        "label": "External resources per realized client",
+        "best": "$750 central",
+        "range": "$300–$1,500",
+        "confidence": "Very low; unsourced sensitivity",
+        "basis": "Induced partner/clinical/housing/education resources are added to all donor cash; incomplete, not a lower bound. Index-injury emergency costs excluded; avoided costs not netted."
+      },
+      {
+        "key": "geography",
+        "label": "Bay / SF share",
+        "best": "100% / 0%",
+        "range": "fixed credited-service boundary",
+        "confidence": "Service-scope attribution",
+        "basis": "Quantified CiC-like delivery is Oakland/Alameda. No direct SF delivery or additional policy/replication spillover is credited."
+      }
+    ],
+    "sensitivity": [
+      {
+        "case": "Harm 10%",
+        "headline": "−0.0048 QALY",
+        "detail": "Signed burden stress, not an observed Youth ALIVE harm."
+      },
+      {
+        "case": "Null 35%",
+        "headline": "Not defined",
+        "detail": "No positive QALY; cost ratios null."
+      },
+      {
+        "case": "Cautious positive 35%",
+        "headline": "$147.06M donor / $150.81M gross",
+        "detail": "0.0068 gift QALY."
+      },
+      {
+        "case": "Central 15%",
+        "headline": "$14.29M donor / $15.04M gross",
+        "detail": "0.070 gift QALY."
+      },
+      {
+        "case": "Favorable 5%",
+        "headline": "$2.07M donor / $2.23M gross",
+        "detail": "0.483647 QALY; 66.1% of signed expected benefit."
+      },
+      {
+        "case": "Signed expectation",
+        "headline": "$27.34M donor / $28.08M gross",
+        "detail": "0.036582 QALY; removing the favorable case gives $76.61M donor per10."
+      }
+    ],
+    "uncertaintyBoundary": "Weights and transfer inputs are analyst priors, not confidence intervals. Zero funding produces zero QALYs and null cost/geography/tail ratios. Published cost records conflict: PubMed reports $3,574/$3,515 and a $2,941 ICER; NICE reports $3,574/$3,015 and $27,950. We use the directly reported QALY difference rather than reverse-engineering a preferred cost pair.",
+    "fundingBoundary": "FY2024 revenue $8.894M, expense $7.306M, surplus $1.588M and net assets $5.186M; $5.379M program-service revenue. A $5M CalVIP Cohort5 award covers April2026–September2029, with service through March2029. This is funding, not modeled health. No current waitlist, restricted-award budget or priced next-client plan is verified. Health-producing marginal room remains unpriced."
+  },
+  "evidence": [
+    {
+      "key": "0",
+      "design": "local five-year undiscounted healthcare-payer Markov model",
+      "population": "Chong et al. 2015 + NICE Appendix H",
+      "result": "4.64 vs 4.62 modeled QALYs = .020/participant",
+      "transfer": "not observed donor impact; NICE found potentially serious limitations; published $3,015/$3,515 comparator-cost and ICER records conflict"
+    },
+    {
+      "key": "1",
+      "design": "systematic review/meta-analysis",
+      "population": "Jawa et al. 2026",
+      "result": "10 pooled studies, OR .60 (95% CI .38-.94)",
+      "transfer": "low-quality evidence; I2 64.7%; conditional recommendation"
+    },
+    {
+      "key": "2",
+      "design": "uncontrolled program reporting",
+      "population": "Youth ALIVE 2025",
+      "result": "118 CiC clients; 96% not reinjured",
+      "transfer": "no concurrent counterfactual; complement is not effectiveness"
+    }
+  ],
+  "reservations": [
+    "The five-year QALY anchor is modeled, not trial-measured; the source has potentially serious limitations.",
+    "Uncontrolled 96% non-reinjury is not 96% effectiveness.",
+    "2026 pooled evidence is low quality and heterogeneous.",
+    "Current contract funding may displace new donations.",
+    "Ordinary-gift allocation, marginal client price and external resources are uncertain.",
+    "Other portfolio benefits remain unquantified, not proven absent."
+  ],
+  "excludedBenefits": [
+    "Violence interruption",
+    "Pathways and Teens on Target",
+    "Counseling and family support outside the credited CiC course",
+    "Statewide policy and national replication",
+    "Criminal-justice and economic benefits"
+  ],
+  "sources": [
+    {
+      "publisher": "Youth ALIVE!",
+      "title": "2025 results",
+      "url": "https://www.youthalive.org/results/",
+      "published": "2025 reporting",
+      "sourceType": "Official uncontrolled outcomes",
+      "retrieved": "2026-09-10"
+    },
+    {
+      "publisher": "Youth ALIVE!",
+      "title": "Caught in the Crossfire",
+      "url": "https://www.youthalive.org/programs/intervention/caught-in-the-crossfire/",
+      "published": "Undated/current",
+      "sourceType": "Official program",
+      "retrieved": "2026-09-10"
+    },
+    {
+      "publisher": "Youth ALIVE!",
+      "title": "Ways to donate",
+      "url": "https://www.youthalive.org/donate/",
+      "published": "Undated/current",
+      "sourceType": "Official donation and EIN",
+      "retrieved": "2026-09-10"
+    },
+    {
+      "publisher": "Alameda County",
+      "title": "Historical Youth ALIVE service contract",
+      "url": "https://www.acgov.org/board/bos_calendar/documents/DocsAgendaReg_07_09_24/HEALTH%20CARE%20SERVICES/Regular%20Calendar/HCSA_371657.pdf",
+      "published": "2024-07-09",
+      "sourceType": "Official contract",
+      "retrieved": "2026-09-10"
+    },
+    {
+      "publisher": "Chong et al.",
+      "title": "Hospital violence intervention cost-effectiveness",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25728889/",
+      "published": "2015",
+      "sourceType": "Peer-reviewed model",
+      "retrieved": "2026-09-10"
+    },
+    {
+      "publisher": "NICE",
+      "title": "Rehabilitation After Traumatic Injury, Appendix H",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK579689/bin/niceng211er5-apph-et1.pdf",
+      "published": "2022",
+      "sourceType": "Independent evidence appraisal",
+      "retrieved": "2026-09-10"
+    },
+    {
+      "publisher": "Jawa et al.",
+      "title": "Hospital-based violence intervention systematic review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42611686/",
+      "published": "2026-08-18",
+      "sourceType": "Peer-reviewed systematic review",
+      "retrieved": "2026-09-10"
+    },
+    {
+      "publisher": "Becker et al.",
+      "title": "Oakland violence intervention evaluation",
+      "url": "https://doi.org/10.1016/j.jadohealth.2003.09.003",
+      "published": "2004",
+      "sourceType": "Retrospective matched evaluation",
+      "retrieved": "2026-09-10"
+    },
+    {
+      "publisher": "IRS via ProPublica",
+      "title": "Youth Alive EIN94-3143254",
+      "url": "https://projects.propublica.org/nonprofits/organizations/943143254",
+      "published": "FY2024; filed2025-07-18",
+      "sourceType": "IRS filing",
+      "retrieved": "2026-09-10"
+    },
+    {
+      "publisher": "California BSCC",
+      "title": "CalVIP Cohort5 funding recommendations",
+      "url": "https://www.bscc.ca.gov/wp-content/uploads/2026/02/Attachment-F-2-CalVIP-Funding-Recommendations_Final.pdf",
+      "published": "2026-02",
+      "sourceType": "Official funding recommendations",
+      "retrieved": "2026-09-10"
+    }
+  ]
+}

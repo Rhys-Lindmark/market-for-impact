@@ -1,0 +1,3 @@
+import CharityResearchReport,{type CharityReportContent} from '@/components/CharityResearchReport';import report from '@/data/bay/youth-alive-report.json';
+export const metadata={title:'Youth ALIVE! — GiveBetter research',description:'Whole-gift Oakland violence-intervention research with finite health and funding uncertainty.'};
+export default function Page(){const content:CharityReportContent={...report,nutshell:{...report.nutshell,body:<>{report.nutshell.body} <a href="/api/youth-alive-model">Inspect the model, assumptions and scenarios</a>.</>}};return <CharityResearchReport content={content}/>;}

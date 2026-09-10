@@ -1,12 +1,12 @@
 # Market for Impact backlog
 
-## Operation Access — expanded whole-gift coverage accepted, publication pending
+## Current authoritative checkpoint —68/115
 
-Count-neutral named-case-mix model replaces selected abnormal-FIT programme price. Current specialties,21 added explicit clinical pathways and finite later-care counterfactuals; central donor $1.947M US/$3.245M Bay/$24.335M SF per10Q.9170independent and1946author checks; diagnosis frequencies and resource priors remain weak, no funding offer. Historical endpoint preserved. Mechanical top four now GLIDE/Breathe/PVF/PHC; PHC summary and shared hearing caveat added using its existing sourced photo. HSC recipient decision is not bypassed or introduced. Goal67/115 remains in progress.
+New Eyes advances the reviewed set to68 once this branch is merged and canonical-verified. Its very-low-confidence weighted ordinary-gift model is $78,651/10 U.S. QALYs; removing the5% favorable scenario gives $100,714, and illustrative gross resources give $219,881. Hypothetical2% Bay/.25% SF shares imply $3.93M/$31.46M, but no local recipient allocation or marginal funding offer is verified, so it is not an SF recommendation. ReCARES, Ear of the Lion, Alliance for Smiles, Youth ALIVE! and Acterra remain negative screens and do not inflate the count. Continue high-EV screening without tuning findings toward100K.
 
-## Current authoritative checkpoint —67/115
+## Operation Access — expanded whole-gift coverage published
 
-ViaHeart66 and SIRUM67 published; Clinic whole-organization correction count-neutral. Latest live exacta309acd5831406c1d0a101ae2e66338cd6f45dfc (PR251/v170) canonical390/768 reports/APIs/index verified,446tests,14focused checks/build pass. Source and current plan: docs/sf-progress.md/json. Earlier publication-pending entries are historical. Next new candidates NewEyes/ReCARES; accepted OA v2 awaits homepage-aware integration. GLIDE/Breathe partial-coverage diagnostics must not be called whole-org expected returns; draftPR249 preserves research. Never inflate count with revisions/screens or tune estimates toward100K.
+Count-neutral named-case-mix model replaces selected abnormal-FIT programme price. Current specialties,21 added explicit clinical pathways and finite later-care counterfactuals; central donor $1.947M US/$3.245M Bay/$24.335M SF per10Q.9170independent and1946author checks; diagnosis frequencies and resource priors remain weak, no funding offer. Historical endpoint preserved. Mechanical top four now GLIDE/Breathe/PVF/PHC; PHC summary and shared hearing caveat added using its existing sourced photo. PR254, exact c18b172ef505281329e74cc7236383aff45f0cc0, Sites v171; canonical report/API/home/research and390/768 no-overflow checks passed. Count remains67/115 because this is a correction.
 
 ## Clinic by the Bay — accepted whole-organization correction
 

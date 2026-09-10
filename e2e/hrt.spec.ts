@@ -10,6 +10,6 @@ test('HRT whole gift and24 signed API cases preserve supply-chain boundaries',as
   for(const[k,v]of Object.entries(expected)){if(typeof v==='number')expect(Math.abs(data.evaluated[i][k]-v)).toBeLessThanOrEqual(1e-10*Math.max(1,Math.abs(v)));else expect(data.evaluated[i][k]).toEqual(v);}
  }
  expect(data.evaluated[0].donor_sf_per_10q).toBeGreaterThan(120e6);
- await page.goto('/research');await expect(page.locator('[data-research-slug="harm-reduction-therapeutics"]')).toContainText('(U.S.)');
+ await page.goto('/archive/expanded-geography-research');await expect(page.locator('[data-research-slug="harm-reduction-therapeutics"]')).toContainText('(U.S.)');
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 });

@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';import {EXPECTED_RESEARCH_COUNT} from './research-contract';
 test('FUF research links to explicit SF whole-gift model',async({page})=>{
  await page.goto('/research');await expect(page.locator('[data-research-slug]')).toHaveCount(EXPECTED_RESEARCH_COUNT);
- const row=page.locator('[data-research-slug="friends-of-the-urban-forest"]');await expect(row).toHaveAttribute('data-estimate-geography','San Francisco');
+ const row=page.locator('[data-research-slug="friends-of-the-urban-forest"]');await expect(row).toHaveAttribute('data-estimate-geography','Bay Area');
  await expect(row).not.toContainText('(Bay Area)');
  await row.locator('a').first().click();await expect(page.getByRole('heading',{level:1,name:'Friends of the Urban Forest',exact:true})).toBeVisible();
  await expect(page.locator('#summary')).toContainText('$1.053');

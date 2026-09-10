@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';import {EXPECTED_RESEARCH_COUNT} from './research-contract';
 test('Safe & Sound preserves whole-org uncertainty and SF model',async({page})=>{
  await page.goto('/research');await expect(page.locator('[data-research-slug]')).toHaveCount(EXPECTED_RESEARCH_COUNT);
- const row=page.locator('[data-research-slug="safe-and-sound"]');await expect(row).toHaveAttribute('data-estimate-geography','San Francisco');
+ const row=page.locator('[data-research-slug="safe-and-sound"]');await expect(row).toHaveAttribute('data-estimate-geography','Bay Area');
  await row.locator('a').first().click();await expect(page.getByRole('heading',{level:1,name:'Safe & Sound',exact:true})).toBeVisible();
  await expect(page.locator('#summary')).toContainText('$505');
  const response=await page.request.get('/api/safe-sound-model');expect(response.ok()).toBe(true);const {evaluated:r,verifiedMarginalFundingOffer}=await response.json();

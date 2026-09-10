@@ -1,5 +1,11 @@
 # Market for Impact backlog
 
+## Bay Area research list / Expanded Geography Research — September 10
+
+Current verified published checkpoint: **79/115** through CalYouth (PR268, Sites v184). This interface reorganization adds no reports. Keep 62 SF/Bay reports in the main list and move 5 California-wide, 7 U.S.-wide and 5 international reports into **Expanded Geography Research**. All 79 reports and their models remain available. Bay-wide rows use their Bay price, not their smaller SF allocation; no new spillover benefits are invented. Remove redundant name and price geography labels as requested. The old international archive URL serves the expanded archive for existing bookmarks.
+
+Validation includes report/API model tests, production build, responsive archive navigation, Bay-price parity for Via Heart/HEPPAC, all-79 report-layout coverage and unique membership checks. Next: finish this canonical publication, then adapt accepted BVHPF/NFP PRs to the new grouping before adding them. Preserve explicit subjective local-share and funding-room disclosures inside reports.
+
 ## California Coalition for Youth — accepted finite crisis-support report
 
 Full FY2025 organization expense charged; finite crisis-contact morbidity only, no mortality or policy credit. Weighted $440K donor/$527K illustrative gross per10 total QALYs; Bay20%/SF2% are explicitly unsourced nested priors, not observed callers. Repeat overlap, 988 substitution, public funding and marginal capacity unresolved. Source/model audit ACCEPT; giving HOLD. Root corrected caller-supplied gift numerator consistency and tests exact accepted default, zero-access and double-gift cases. 482 tests, lint zero errors and production build pass. Report79 only after prior releases and canonical verification. This is the third additional California-wide organization, not a new SF service provider.

@@ -17,6 +17,6 @@ test('Fistula report retains global cost, full resources and unknown local price
   }
  }
  expect(data.evaluated[0].donor_per_10q).toBeCloseTo(76285.65,1);expect(data.evaluated[0].sf_direct_per_10q).toBeNull();
- await page.goto('/research');const row=page.locator('[data-research-slug="fistula-foundation"]');await expect(row).toContainText('(International)');await expect(row).not.toContainText('$76');
+ await page.goto('/archive/international-research');const row=page.locator('[data-research-slug="fistula-foundation"]');await expect(row).toContainText('Fistula Foundation');await expect(row).toContainText('$76K');
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 });

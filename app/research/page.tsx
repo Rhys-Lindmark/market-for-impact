@@ -13,7 +13,7 @@ export default function ResearchIndex(){
    <thead><tr><th scope="col">Organization</th><th scope="col">$ per better life</th></tr></thead>
    <tbody>{unifiedResearch.map(item=><tr key={item.href} data-research-slug={item.href.split('/').at(-1)} data-geography={item.scope} data-estimate-geography={item.estimateGeography} data-cost-per-ten-qalys={item.localUsdPerTenQalys??undefined}>
     <th scope="row"><a className={styles.rowLink} href={item.href}><strong>{item.organization}</strong><span>{item.program}</span></a></th>
-    <td><a href={item.href} title={`${item.estimateGeography} estimate. ${item.localStatus}`} aria-label={item.organization+': '+price(item.localUsdPerTenQalys)+' per 10 '+item.estimateGeography+' QALYs'}>{price(item.localUsdPerTenQalys)}</a></td>
+    <td><a href={item.href} title={`${item.estimateGeography} estimate. ${item.localStatus}`} aria-label={item.organization+': '+price(item.localUsdPerTenQalys)+' per 10 '+item.estimateGeography+' QALYs. '+item.localStatus}>{price(item.localUsdPerTenQalys)}</a></td>
    </tr>)}</tbody>
   </table></section>
   <footer className={styles.footer}><a href="/">Our top charities</a><a href="/research/city-theory">What makes city giving cost-effective?</a><a href="/research/large-bay-nonprofits">Regional research</a><a href="/archive/expanded-geography-research">Expanded Geography Research</a><a href="/archive">Full archive</a></footer>

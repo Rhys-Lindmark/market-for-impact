@@ -1,0 +1,3 @@
+import CharityResearchReport,{type CharityReportContent} from '@/components/CharityResearchReport';import report from '@/data/sf/bvhpf-report.json';
+export const metadata={title:'Bayview Hunters Point Foundation — GiveBetter research',description:'Whole-gift behavioral-health research with explicit SF service attribution and marginal-funding uncertainty.'};
+export default function Page(){const content:CharityReportContent={...report,nutshell:{...report.nutshell,body:<>{report.nutshell.body} <a href="/api/bvhpf-model">Inspect the model, assumptions and scenarios</a>.</>}};return <CharityResearchReport content={content}/>;}

@@ -1,5 +1,11 @@
 # San Francisco giving — active phase plan
 
+## Current block — Bayview report80 and continued audited research
+
+Start2026-09-10T22:16:28Z. Prior79 reports and research-time headers are live at v186; full PR272 CI passed. Current integration: Bayview Hunters Point Foundation (root), NFP resource-realization correction (new_eyes_report68), independent NFP audit/high-EV discovery (high_ev_pipeline), and a new outcome-first/transfer report (recares_report69). Report80 exits only after source/model validation, responsive checks, exact-source publication and canonical report/API/index checks. No report count is awarded to screens. New organization timers and actual AI identities follow docs/research-effort.md; explicit pause preserved.
+
+The Bayview release candidate contains63 local and17 expanded reports, using the Bay90% subjective residence allocation without presenting service location as residence. Counts toward SF outcome-first. NFP requires a gross-resource correction before publication. Stall checkpoint:20–30 minutes without a report/evidence milestone triggers reassignment or a concrete dependency fix, not polishing.
+
 ## User priority: per-organization research provenance
 
 Bay-only regrouping is published and canonical-verified (PR271 / Sites v185); count remains79/115. All79 reports now have a research-time and AI-model disclosure near the title, with honest historical unknowns. Follow docs/research-effort.md and AGENTS.md for future timed research intervals. Recovered26 verified single-organization intervals for12 reports, explicitly partial;67 reports remain unrecorded. This metadata change adds no reports and does not change cost-effectiveness estimates.

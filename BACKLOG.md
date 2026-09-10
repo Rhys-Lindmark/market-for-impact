@@ -1,5 +1,11 @@
 # Market for Impact backlog
 
+## Bayview Hunters Point Foundation — accepted distinct SF organization
+
+Release candidate80: $236.13M is total/site-attributed, not resident-specific. Subjective SF65%/Bay90% resident priors imply $363.28M SF/$262.37M Bay; measured residence remains unavailable. The new Bay-only list uses $262.37M with the assumption disclosed in the report, tooltip and accessible label. Final independent re-audit accepted. New release includes verified partial timing; no count before canonical verification.
+
+EIN94-1747575, not Bayview Senior Services. Whole FY2025 expense against explicitly partial behavioral-health benefit, giving HOLD. Final City amendments distinguished from superseded proposal; negative net assets show fragility, not proven liquidity. Known-gross accounting boundary is incomplete; verified marginal prices null. Earlier source/model audit accepted. Next: corrected NFP after its external-resource realization audit, then the highest-EV new organization; Westside retains material unresolved corrections.
+
 ## Research-time / AI-model provenance on every report
 
 User priority: show actual organization-specific research minutes and AI model near the title on every old/new report. Implemented shared header for all79 reports, including expanded geography;26 verified intervals across12 reports are explicitly partial, while67 historical records remain unknown. Follow docs/research-effort.md for timestamped author/modeling/audit intervals, actual model identity evidence and partial-history coverage; exclude integration, deployment and idle waits. AGENTS.md and the new-report release checklist require available provenance records. No research count or cost-effectiveness estimate changes. Validation:487 tests passed, lint0 errors/3 existing warnings, production build passed;4 responsive checks passed, including every79 report header on phone390/tablet768. Next: publish, verify canonical headers, then integrate accepted BVHPF/NFP reports with their available provenance.

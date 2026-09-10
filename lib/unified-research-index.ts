@@ -10,7 +10,7 @@ const localGeography=(sf:number|null|undefined)=>sf!==null&&sf!==undefined?'San 
 export const unifiedResearch=[
  ...californiaResearch.map(r=>({organization:r.organization+' (California)',program:r.program,href:r.href,scope:'California',localUsdPerTenQalys:r.sfUsdPerTenQalys as number|null,estimateGeography:'San Francisco',localStatus:'Modeled SF share of statewide health; see report'})),
  ...sortedResearchPrograms.map(r=>({organization:r.organization,program:r.program,href:r.href,scope:'SF',localUsdPerTenQalys:r.centralUsdPerTenQalys as number|null,estimateGeography:'San Francisco',localStatus:'modeled'})),
- ...bayResearch.map(r=>({organization:r.organization+' (Bay Area)',program:r.program,href:r.href,scope:'Bay',localUsdPerTenQalys:localPrice(r.sfUsdPerTenQalys,r.bayUsdPerTenQalys),estimateGeography:localGeography(r.sfUsdPerTenQalys),localStatus:r.sfUsdPerTenQalys===null?'Modeled Bay Area estimate; SF share not established':'Modeled SF share; see report'})),
+ ...bayResearch.map(r=>({organization:r.organization+(r.scope==='SF'?'':' (Bay Area)'),program:r.program,href:r.href,scope:r.scope??'Bay',localUsdPerTenQalys:localPrice(r.sfUsdPerTenQalys,r.bayUsdPerTenQalys),estimateGeography:localGeography(r.sfUsdPerTenQalys),localStatus:r.sfUsdPerTenQalys===null?'Modeled Bay Area estimate; SF share not established':'Modeled SF share; see report'})),
  ...usResearch.map(r=>{
   const sf=r.href==='/charities/remedy-alliance'?remedyLocalScenarios[0].sfUsdPer10Q:r.sfUsdPerTenQalys;
   const bay=r.href==='/charities/remedy-alliance'?remedyLocalScenarios[0].bayUsdPer10Q:r.bayUsdPerTenQalys;

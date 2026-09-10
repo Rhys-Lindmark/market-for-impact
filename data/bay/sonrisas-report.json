@@ -1,0 +1,98 @@
+{
+  "organization":"Sonrisas Dental Health",
+  "eyebrow":"CHARITY RESEARCH · BAY AREA · CLINICAL DENTISTRY",
+  "program":"Safety-net dental clinics, community screening, navigation, and oral-health programs",
+  "donationUrl":"https://sonrisasdental.org/give/",
+  "published":"10 September 2026",
+  "modelVersion":"sonrisas-whole-org-v2",
+  "nutshell":{
+    "headline":"Sonrisas directly treats dental disease, but it does not report the completed symptomatic-treatment outcomes needed for an empirical QALY estimate.",
+    "body":"Under an explicitly judgmental signed prior-weighted illustration, a $100,000 unrestricted gift corresponds to $34.68 million per better life (10 modeled QALYs), or $39.45 million including a gross-resource sensitivity. The weighted result is strongly favorable-tail-sensitive: the 5%-weight favorable case contributes 76.9% of expected net QALYs. These are not empirical marginal estimates; verified marginal donor and gross costs remain unknown.",
+    "whyItMayWork":"Sonrisas operates three San Mateo County clinic locations, treats patients facing financial and access barriers, offers discounted uninsured care, and has a direct mechanism for relieving dental pain and eating difficulty.",
+    "whyWeAreCautious":"Public reporting mixes clinic and community reach and does not provide diagnosis, symptomatic status, completed plans, loss to follow-up, before/after pain or function, recurrence, payer counterfactual, or current marginal capacity.",
+    "recommendationBlocker":"Obtain one fiscal-year table of deduplicated symptomatic patients, completed treatment plans, validated pre/post pain or oral-health quality of life, counterfactual access, and a dated next-$100,000 staffing or chair plan."
+  },
+  "summary":[
+    {"label":"MODELED ORDINARY GIFT","value":"$34.68M","detail":"signed prior-weighted per 10 modeled QALYs; not an empirical marginal quote"},
+    {"label":"CENTRAL ILLUSTRATION","value":"$37.41M","detail":"per 10 modeled QALYs using temporary pain/function relief only"},
+    {"label":"FAVORABLE ILLUSTRATION","value":"$2.255M","detail":"requires jointly favorable symptoms, completion, duration, attribution, and funding"},
+    {"label":"BAY / SF SHARE","value":"100% / 0%","detail":"delivery-scope assumptions; SF residence is not measured"},
+    {"label":"FUNDING ROOM","value":"Unknown–moderate","detail":"live appeal and rural expansion, but no priced current incremental treatment tranche"}
+  ],
+  "programSection":{
+    "body":"Sonrisas operates clinics in San Mateo and Half Moon Bay and a weekly La Honda clinic. It also provides school and community screening, education, navigation, community-health-worker support, disability acclimation, provider engagement, and oral-health coalition work.",
+    "steps":[
+      {"title":"Reach clinic and community participants","detail":"Sonrisas reports 8,000+ people across the organization, nearly 5,000 clinic patients, nearly 4,500 community-program beneficiaries, and 15,000 visits. These figures are not reconciled as unique people."},
+      {"title":"Diagnose and manage oral disease","detail":"Clinic services can include evaluation, preventive care, fillings, and broader treatment. The public data do not report symptomatic diagnosis mix or completed treatment plans."},
+      {"title":"Support access beyond treatment","detail":"Screening, education, navigation, disability acclimation, and coalition work may matter, but they receive no direct treatment QALYs without completed patient outcomes."}
+    ],
+    "boundary":"The full FY2025 IRS expense of $6,354,606 is used. A $100,000 gift maps retrospectively to 78.68 of approximately 5,000 reported clinic-patient equivalents. The service page was updated in March 2026 and does not explicitly assign that count to FY2025, so the cost/output period match is approximate. The broader 8,000-person reach is not used in the treatment numerator, and the clinic-patient allocation is accounting scale rather than a verified marginal purchase."
+  },
+  "model":{
+    "headline":"Signed prior-weighted modeled ordinary gift: $34.68M per 10 QALYs; central: $37.41M.",
+    "body":"The model counts only finite relief of symptomatic toothache and eating difficulty after attributable completed treatment. It gives no credit to screening reach, tooth counts, mortality, sepsis admissions, school attendance, caregiver productivity, or speculative savings.",
+    "equation":{"label":"CENTRAL MODELED GIFT COST","expression":"10 × $100,000 ÷ [78.68 clinic-patient equivalents × 35% funding additionality × 35% symptomatic-treated share × 75% completion × 0.007395 finite resolved-state QALY × 50% attributable resolution]","result":"$37,409,998 per 10 modeled QALYs; 0.026731 gift-attributed QALY"},
+    "inputColumnLabel":"Harm / null / cautious / central / favorable judgments",
+    "inputs":[
+      {"key":"clinicPatients","label":"Approximate clinic-patient equivalents","confidence":"Moderate as retrospective accounting scale; low as unique completed treatment","best":"78.68 per $100,000 gift share","range":"same base in all scenarios","basis":"$100,000 / $6,354,606 × approximately 5,000 clinic patients. The model excludes the broader 8,000-person reach and 4,500 community beneficiaries from its treatment base."},
+      {"key":"weights","label":"Scenario prior weights","confidence":"Subjective; not empirically calibrated","best":"5% harm / 35% null / 30% cautious / 25% central / 5% favorable","range":"fixed for the illustration","basis":"No completion or outcome denominator exists, so null receives 35%; favorable receives only 5% because it requires several favorable conditions jointly."},
+      {"key":"fundingAdditionality","label":"Ordinary-gift funding additionality","confidence":"Low","best":"35% central","range":"10% null; 20% cautious; 35% central; 60% favorable; 25% harm","basis":"Community need, a live giving route, discounted uninsured care, and rural expansion support some additionality. The FY2025 surplus, net assets, insurance/public payment, and absence of a current priced capacity tranche support displacement risk."},
+      {"key":"symptomaticShare","label":"Clinic patients receiving treatment for symptomatic caries","confidence":"Low","best":"35%","range":"0% / 20% / 35% / 50%","basis":"Sonrisas does not publish diagnosis or symptom mix. Screening and asymptomatic prevention do not enter this pathway."},
+      {"key":"completion","label":"Completed pain-relieving treatment share","confidence":"Low","best":"75%","range":"0% / 60% / 75% / 90%","basis":"No completed-plan or loss-to-follow-up denominator is public. An initial visit, screen, navigation contact, or treatment plan does not count as completion."},
+      {"key":"disabilityWeight","label":"Symptomatic-caries disability scalar","confidence":"Moderate for the GBD state; low for transfer to Sonrisas","best":"0.010","range":"0.005 / 0.010 / 0.019","basis":"IHME defines symptomatic caries as toothache causing some difficulty eating. This DALY-derived weight is used once per person-state, not per tooth, and is not a Sonrisas utility measure."},
+      {"key":"finiteDuration","label":"Resolved symptomatic-state duration","confidence":"Low","best":"0.75 years","range":"0.25 / 0.75 / 1.5 years","basis":"Benefit stops when later usual care, exfoliation, recurrence, spontaneous resolution, or another provider would erase the difference. No lifetime credit is used."},
+      {"key":"attribution","label":"Attributable resolution above later usual care","confidence":"Low","best":"50%","range":"30% / 50% / 75%","basis":"Jointly accounts for treatment elsewhere, spontaneous resolution or exfoliation, recurrence, and treatments that do not change symptoms; it is not multiplied by a duplicate counterfactual factor."},
+      {"key":"harm","label":"Signed treatment-harm stress","confidence":"Very low; no Sonrisas incidence alleged","best":"5% scenario weight","range":"0.002 QALY harm per incremental completed symptomatic person in harm case","basis":"Represents possible procedural pain, anxiety, adverse events, overtreatment, and opportunity cost. It is a stress test, not an observed organization harm rate."},
+      {"key":"grossMultiplier","label":"Modeled gross-resource multiplier","confidence":"Low sensitivity, not audited value","best":"1.10× central","range":"1.05×–1.25×","basis":"Stresses patient/caregiver and school/community partner time. Outside medical treatment and public or insurance resources caused by marginal plans remain unknown."},
+      {"key":"bayShare","label":"Bay Area direct-health share","confidence":"Moderate for delivery scope; not residence-measured","best":"100%","range":"100% in all scenarios","basis":"Current clinics and stated beneficiaries are in San Mateo County."},
+      {"key":"sfShare","label":"San Francisco direct-health share","confidence":"Moderate for delivery scope; not residence-measured","best":"0%","range":"0% in all scenarios","basis":"No SF clinic or SF-resident caseload is reported. This is not proof that no SF resident is ever served."}
+    ],
+    "giftHeading":"Illustrative $100,000 unrestricted gift",
+    "sensitivity":[
+      {"case":"Harm (5% prior weight)","headline":"−0.00472 modeled QALY","detail":"No positive cost ratio; a signed stress for treatment burden or adverse outcomes, not a claim of observed Sonrisas harm."},
+      {"case":"Null (35%)","headline":"No positive QALYs","detail":"No completed attributable symptomatic relief; donor and gross cost ratios are null."},
+      {"case":"Cautious (30%)","headline":"$1.422B modeled donor cost per 10 QALYs","detail":"0.000703 gift QALY and $1.635B modeled gross-resource cost."},
+      {"case":"Central (25%)","headline":"$37.41M modeled donor cost per 10 QALYs","detail":"0.026731 gift QALY and $41.15M modeled gross-resource cost."},
+      {"case":"Favorable (5%)","headline":"$2.255M modeled donor cost per 10 QALYs","detail":"0.44349 gift QALY and $2.368M modeled gross-resource cost; relies on jointly favorable assumptions."},
+      {"case":"Signed prior-weighted","headline":"$34.68M modeled donor cost per 10 QALYs","detail":"0.028832 expected net gift QALY and $39.45M modeled gross-resource cost. The 5%-weight favorable case contributes 0.022174 QALY, 76.9% of expected net QALYs, so the weighted ratio is strongly right-tail-sensitive and falls below the $37.41M central ratio despite 70% combined harm, null, and cautious weight. Positive-only donor cost is $34.40M."}
+    ],
+    "uncertaintyBoundary":"Scenario values and weights are analyst priors, not confidence intervals or measured Sonrisas marginal effects. The 5%-weight favorable case supplies 76.9% of expected net QALYs, making the weighted headline strongly favorable-tail-sensitive. External trials support the pain/function mechanism but compare active dental approaches rather than timely effective care versus no care. A zero-funding sensitivity returns zero QALYs and null ratios and Bay share.",
+    "fundingBoundary":"RFMF is unknown-to-moderate. Sonrisas says 70,000 county residents lack a dental home and is expanding rural care. A completed Coastside campaign raised $50,000 for 300 visits for 100 neighbors, showing a historical operational price but not a current open tranche. FY2025 produced an $814,024 surplus and $4.09M net assets, and public sources do not separate restricted or capital gifts, insurance displacement, current waitlists, chair or staff constraints, or treatment-plan completions purchased by the next $100,000. Verified marginal donor and gross costs are null."
+  },
+  "evidence":[
+    {"key":"sonrisas-output","design":"Official organization service pages","population":"Current whole organization in San Mateo County","result":"Sonrisas reports 8,000+ people across programs, nearly 5,000 clinic patients at 15,000 annual visits, and nearly 4,500 community-program beneficiaries.","transfer":"These establish service scale but not deduplicated people, diagnosis, completed symptomatic treatment, or health outcomes. The model uses only the approximate clinic-patient count as its retrospective treatment base."},
+    {"key":"gbd-caries","design":"GBD 2021 nonfatal disease-state methods","population":"Symptomatic deciduous and permanent caries","result":"Symptomatic caries is described as toothache causing some difficulty eating; disability weight 0.010 (0.005–0.019).","transfer":"Used once per temporary person-state as a sensitivity scalar. It is DALY-derived and not a Sonrisas-measured QALY gain."},
+    {"key":"cariedaway","design":"Pragmatic school-based cluster-randomized trial","population":"Children aged 5–13; 160 completed oral-health quality-of-life assessments","result":"Untreated decay was associated with worse oral-health quality of life; both active packages showed small changes and no between-group quality-of-life difference.","transfer":"Supports a pain/function mechanism but does not estimate Sonrisas impact, effective care versus no timely care, or preference-based QALYs. Follow-up for this outcome was limited."},
+    {"key":"fiction","design":"Three-arm randomized trial in 72 UK dental practices","population":"1,144 children aged 3–7 with primary-molar dentinal caries","result":"Across about three years, there was no evidence of overall differences among three active approaches in pain or sepsis episodes; related reporting found no quality-of-life or anxiety differences.","transfer":"Shows that the choice among active management approaches is not the modeled benefit. Credit requires attributable resolution above persistent symptoms or later usual care."},
+    {"key":"finance","design":"IRS Form 990 accounting data","population":"Whole Sonrisas Dental Health legal organization, FY ending June 2025","result":"Expense $6.355M, revenue $7.169M, contributions $3.746M, program revenue $3.336M, surplus $814K, and net assets $4.090M.","transfer":"Full organization expense remains in the denominator. Revenue mix is not donor-caused leverage, and marginal capacity is unverified."}
+  ],
+  "reservations":[
+    "The approximate 5,000 clinic patients are not reconciled to unique people or completed treatment plans; the broader 8,000 reach mixes clinic and community programs.",
+    "The March 2026 service-page count is not explicitly tied to the FY ending June 2025 expense period.",
+    "Visit-based child and access-barrier percentages cannot be treated as patient percentages.",
+    "Diagnosis, symptomatic status, completion, attrition, recurrence, and before/after outcomes are unavailable.",
+    "The IHME disability weight is DALY-derived, not a Sonrisas utility measure.",
+    "External randomized trials do not estimate Sonrisas care versus no timely local care.",
+    "Scenario weights, funding additionality, symptomatic share, completion, finite duration, attribution, harm, geography, and gross factors are priors.",
+    "Payer mix, liquid unrestricted reserves, marginal chair and staff capacity, and external resources are unpriced."
+  ],
+  "excludedBenefits":[
+    "Screening, education, navigation, and community-health-worker reach without completed clinical outcomes",
+    "Preventive dentistry and asymptomatic disease without a measured health-state bridge",
+    "Disability acclimation without validated anxiety or function change",
+    "Provider training and Oral Health Coalition policy or capacity effects",
+    "Aesthetic, self-image, school-attendance, caregiver, productivity, and tooth-retention effects",
+    "Emergency-department, sepsis, and mortality effects",
+    "Speculative avoided health-care spending"
+  ],
+  "sources":[
+    {"publisher":"Sonrisas Dental Health","title":"Patients","url":"https://sonrisasdental.org/patients/","published":"Updated 2026-03-31","retrieved":"2026-09-10","sourceType":"Official organization service page"},
+    {"publisher":"Sonrisas Dental Health","title":"Programs","url":"https://sonrisasdental.org/programs/","published":"Updated 2026-03-23","retrieved":"2026-09-10","sourceType":"Official organization program and output page"},
+    {"publisher":"Sonrisas Dental Health","title":"Give","url":"https://sonrisasdental.org/give/","published":"Undated","retrieved":"2026-09-10","sourceType":"Official organization donation and gift-example page"},
+    {"publisher":"Sonrisas Dental Health","title":"Sonrisas Dental Health homepage","url":"https://sonrisasdental.org/","published":"Undated/current","retrieved":"2026-09-10","sourceType":"Official organization need and completed-campaign page"},
+    {"publisher":"Internal Revenue Service, mirrored by ProPublica Nonprofit Explorer","title":"Sonrisas Dental Health filings, EIN 94-3390196","url":"https://projects.propublica.org/nonprofits/organizations/943390196","published":"FY2025 filing received 2026-05-13","retrieved":"2026-09-10","sourceType":"IRS Form 990 data"},
+    {"publisher":"Institute for Health Metrics and Evaluation","title":"GBD 2021 Disability Weights","url":"https://ghdx.healthdata.org/record/ihme-data/gbd-2021-disability-weights","published":"2024; DOI 10.6069/485B-DX41","retrieved":"2026-09-10","sourceType":"Official primary burden-of-disease data record; legacy oral-disorders appendix now redirects"},
+    {"publisher":"BMC Oral Health / PubMed","title":"Silver diamine fluoride, atraumatic restorations, and oral health-related quality of life in children aged 5–13 years","url":"https://pubmed.ncbi.nlm.nih.gov/35413873/","published":"2022-04-12","retrieved":"2026-09-10","sourceType":"Peer-reviewed pragmatic cluster-randomized trial"},
+    {"publisher":"NIHR Health Technology Assessment / PubMed","title":"Best-practice prevention alone or with conventional or biological caries management for 3- to 7-year-olds: the FiCTION three-arm RCT","url":"https://pubmed.ncbi.nlm.nih.gov/31928611/","published":"2020-01","retrieved":"2026-09-10","sourceType":"Peer-reviewed randomized trial report"}
+  ]
+}

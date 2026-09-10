@@ -1,5 +1,17 @@
 # Market for Impact backlog
 
+## Sonrisas Dental Health — accepted release after SisterWeb
+
+Whole-organization safety-net dental report, independently audited; donor HOLD. Signed donor/gross $34.684M/$39.453M per 10 QALYs, with finite symptomatic relief only and explicit 76.9% favorable-tail dependence. Approximately matched FY2025 expense/current clinic output, DALY-derived scalar, payer displacement and unverified marginal capacity are disclosed. 464 tests, lint zero errors, production build, four phone/tablet checks and exact accepted-output comparison passed. Count becomes 73 only after prior canonical releases and its verification. Next accepted Safe & Sound; CIC MMR/full-schedule correction and FUF audit remain pending.
+
+## SisterWeb — accepted release after Ceres
+
+Whole-project finite-morbidity model, independently audited, giving HOLD. Signed weighted donor/gross $63.245M/$73.364M per 10 QALYs; 25% null, 10% harm, strong favorable-tail dependence. New EIN/no filing, unresolved Heluna contract transition, public-funding overlap and expense proxies are disclosed. Marginal offer unverified. Root output matches accepted JSON exactly; 461 tests, lint zero errors, production build, and four phone/tablet checks passed. Report 72 only after canonical publication following Ceres. Next: accepted Sonrisas, Safe & Sound audit, new SF and California-wide research.
+
+## Ceres Community Project — accepted release after HEPPAC
+
+Independently audited whole-organization report with randomized primary null evidence and an expressly exploratory mortality bridge. Weighted donor/gross: $258.168M/$302.994M per 10 QALYs; donor HOLD. Client-bounded course denominator, finite survival, 60% null weight, reported volunteer value, and dated funding target/waitlist remain explicit. No verified marginal funding offer. 458 tests, lint zero errors, production build, and four Ceres/HEPPAC phone/tablet checks passed. Counts as report 71 only after exact-source canonical verification, following HEPPAC. Ceres does not satisfy the California-wide cohort requirement. Next: accepted SisterWeb and Sonrisas, then Safe & Sound after audit.
+
 ## HEPPAC — accepted next report (70 after both releases are verified)
 
 Whole-organization conditional harm-reduction model, independently audited; donor HOLD. Weighted $10.864M/10 QALYs overall, $11.112M Bay and $265.457M SF under unmeasured nested geographic priors. Includes 20% no-benefit weight, finite fatal-event survival and explicit outcome-versus-donation attribution. Historical engagement data are not annualized; the county amendment is requested, not presumed executed. Gross resource multiplier is illustrative, not observed. Full portfolio costs and unquantified services remain visible.

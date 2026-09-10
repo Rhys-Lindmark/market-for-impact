@@ -1,0 +1,114 @@
+{
+  "organization": "SisterWeb Community Doula Network",
+  "eyebrow": "CHARITY RESEARCH · SAN FRANCISCO · EXPLORATORY",
+  "program": "Culturally congruent prenatal, birth, postpartum, workforce, and hospital-systems support",
+  "donationUrl": "https://www.sisterweb.org/donate",
+  "published": "10 September 2026",
+  "modelVersion": "sisterweb-whole-project-v2",
+  "nutshell": {
+    "headline": "Doula care can improve experience and some delivery outcomes, but SisterWeb has no controlled local clinical outcomes or current public whole-project expense.",
+    "body": "Under an explicitly judgmental signed prior-weighted illustration, a $100,000 unrestricted gift corresponds to $63.2 million per better life (10 modeled QALYs), or $73.4 million under an illustrative gross-resource sensitivity. Central is $96.4 million. Maternal and infant deaths receive zero credit; only finite morbidity is modeled.",
+    "whyItMayWork": "Randomized evidence supports lower cesarean rates in pooled trials and more consistent improvements in anxiety, postpartum follow-up and breastfeeding initiation. SisterWeb provides unusually intensive, culturally congruent care and reports constrained enrollment and a prior program closure for lack of funds.",
+    "whyWeAreCautious": "The US-only cesarean RCT subgroup is inconclusive, SisterWeb reports no controlled clinical comparison, 103 client episodes are not completed births, public and Medi-Cal funding can displace gifts, and current standalone expense is unavailable.",
+    "recommendationBlocker": "Obtain a current whole-project budget and new-entity filing, unduplicated enrollment/completion/birth counts, payer billing and collections, a priced next-$100,000 use, residence shares, and comparative linked birth outcomes."
+  },
+  "summary": [
+    {"label": "MODELED ORDINARY GIFT", "value": "$63.2M", "detail": "signed prior-weighted donor cost per 10 modeled QALYs; not an empirical quote"},
+    {"label": "CENTRAL ILLUSTRATION", "value": "$96.4M", "detail": "per 10 modeled QALYs; mortality gets zero credit"},
+    {"label": "FAVORABLE STRESS", "value": "$5.18M", "detail": "still far above the discovery threshold and supplies most weighted QALYs"},
+    {"label": "BAY / SF SHARE", "value": "100% / 98.05%", "detail": "signed service-geography-informed assumptions; SF is nested within Bay"},
+    {"label": "FUNDING ROOM", "value": "Plausible, unpriced", "detail": "private-funding need is credible, but public awards and Medi-Cal create substitution"}
+  ],
+  "programSection": {
+    "body": "SisterWeb provides no-cost culturally congruent prenatal, labor/birth and postpartum doula support in San Francisco. It also employs and mentors doulas, trains apprentices and community members, coordinates with hospitals, distributes supplies, conducts research and field-building, and works on systems accountability.",
+    "steps": [
+      {"title": "Enroll a pregnant client", "detail": "The 103 FY2023-24 clients are treated as unique care episodes, not completed courses, births, infants or dyads."},
+      {"title": "Provide full-spectrum doula care", "detail": "The intended model includes intake, three prenatal visits, birth attendance, four postpartum visits and between-visit support; completion is not publicly reported."},
+      {"title": "Coordinate with clinical partners", "detail": "The Champion Dyad Initiative links doulas with five SF birthing partners. Doulas provide nonclinical support and are not credited for obstetric decisions."},
+      {"title": "Build workforce and systems", "detail": "Training, apprenticeship, mentoring, supplies, advocacy, research and hospital feedback may matter, but receive no separate QALYs in this model."}
+    ],
+    "boundary": "This is a whole-SisterWeb-project model, not a whole-Heluna model. SisterWeb appears separately tax-exempt in 2025 and a 2026 HRC award lists no sponsor, but a Heluna-sponsored DPH contract runs through June 2027 and remains on an April 2026 program list. The legal/operational transition is unresolved. No current standalone filing exists, so $0.9M–$1.5M annual expense is an explicit proxy range."
+  },
+  "model": {
+    "headline": "Signed prior-weighted modeled ordinary gift: $63.2M per 10 QALYs; central: $96.4M.",
+    "body": "The model converts 103 client episodes to completed-course sensitivities, assigns finite cesarean-recovery, psychosocial and preterm-morbidity QALYs, scales a $100,000 gift against an annual expense proxy, and applies gift deployability and realization. A 25% null and 10% net-harm case are included. Ordinary obstetric care is usual care and not added.",
+    "equation": {
+      "label": "CENTRAL MODELED GIFT COST",
+      "expression": "10 × $100,000 ÷ [103 episodes × 80% completion × 0.00395 finite QALY/completion × ($100,000 ÷ $1.2M expense proxy) × 45% deployability × 85% realization]",
+      "result": "$96,388,562 per 10 modeled QALYs; 0.010375 gift-attributed QALY"
+    },
+    "inputColumnLabel": "Harm / null / central / favorable-stress judgments",
+    "inputs": [
+      {"key": "clientEpisodes", "label": "FY2023-24 clients receiving care", "confidence": "Moderate as people receiving some care; low as completed courses", "best": "103", "range": "103 in all cases", "basis": "Official one-pager. Care-coordination events, births and infants are not added."},
+      {"key": "completion", "label": "Full-course completion", "confidence": "Low; current completion not reported", "best": "80%", "range": "60% harm / 80% null and central / 90% favorable", "basis": "SisterWeb describes intended scope and survey eligibility for completers, but supplies no attrition denominator."},
+      {"key": "expenseProxy", "label": "Annual whole-project expense proxy", "confidence": "Very low; not audited current expense", "best": "$1.2M", "range": "$1.5M / $1.2M / $0.9M", "basis": "April 2026 DPH lists $512.5K and HRC awards $300K annually; these may total $812.5K if nonoverlapping. The $0.9M favorable floor is therefore tight, not a safe lower bound; central allows other resources."},
+      {"key": "cesareanChange", "label": "Absolute cesarean change", "confidence": "Low for pooled trials; very low for SisterWeb", "best": "1.5 percentage points avoided", "range": "0.5pp harm / 0 / 1.5pp / 4pp benefit", "basis": "Pooled RCT crude difference was 6.1pp, but heterogeneity and small-study concerns were material and the US-only subgroup CI crossed one. Central heavily shrinks it."},
+      {"key": "cesareanQaly", "label": "Finite QALY per cesarean avoided", "confidence": "Low; judgmental morbidity bridge", "best": "0.03", "range": "0.03 / 0 / 0.03 / 0.08", "basis": "Short recovery and complication sensitivity only; no maternal mortality credit or avoided-cost deduction."},
+      {"key": "psychosocial", "label": "Finite anxiety/birth-experience benefit", "confidence": "Low-moderate direction; low magnitude", "best": "30% × 0.04 utility × 0.25 year", "range": "10% × -0.04 × .25 / 0 / 30% × .04 × .25 / 50% × .08 × .50", "basis": "Clinical-trial reviews most consistently support anxiety and negative birth-experience direction; magnitude and SisterWeb transfer are judgmental and time-limited."},
+      {"key": "preterm", "label": "Finite preterm morbidity sensitivity", "confidence": "Very low; not a SisterWeb or RCT estimate", "best": "0.1pp × 0.5 QALY", "range": "0 / 0 / 0.1pp × .5 / 0.5pp × 1", "basis": "Observational associations are not imported causally. No infant death is credited and the morbidity quantity is explicitly bounded."},
+      {"key": "giftDeployability", "label": "Gift funding/capacity deployability", "confidence": "Low", "best": "45%", "range": "20% harm / 45% null-central / 70% favorable", "basis": "Private gifts are flexible and capacity need is credible, but public contracts and Medi-Cal can substitute."},
+      {"key": "realization", "label": "Gift-to-completed-outcome realization", "confidence": "Low", "best": "85%", "range": "75% / 85% / 85% / 95%", "basis": "Discounts delay, hiring, continuity failure and incomplete service."},
+      {"key": "weights", "label": "Scenario prior weights", "confidence": "Subjective; not empirically calibrated", "best": "10% harm / 25% null / 60% central / 5% favorable", "range": "fixed for illustration", "basis": "Local clinical effects and current marginal finances are missing. A small favorable weight preserves the RCT-positive tail without letting it become the central claim."},
+      {"key": "grossMultiplier", "label": "Illustrative gross-resource multiplier", "confidence": "Very low; sensitivity only", "best": "1.15×", "range": "1.30× / 1.15× / 1.15× / 1.05×", "basis": "Flags partner coordination and in-kind resources. Neither measured nor a lower bound; counterfactual ordinary obstetric care is excluded."},
+      {"key": "geography", "label": "Bay and nested SF impact shares", "confidence": "High for service location; low for residence", "best": "100% Bay / 95% SF", "range": "Bay 100%; SF 95% except 100% favorable", "basis": "City award specifies SF homes, community settings and birthing facilities. Beneficiary residence is not separately tabulated."}
+    ],
+    "giftHeading": "Illustrative $100,000 unrestricted gift",
+    "sensitivity": [
+      {"case": "Harm (10% prior weight)", "headline": "Modeled net harm", "detail": "−0.000711 gift QALY; conflict, privacy/autonomy loss, distress or delayed escalation sensitivity; no positive cost ratio."},
+      {"case": "Null (25%)", "headline": "No positive QALYs", "detail": "Gift and resources are spent; health QALYs are zero and stand-alone cost is infinite."},
+      {"case": "Central (60%)", "headline": "$96.4M donor cost per 10 QALYs", "detail": "0.010375 gift QALY; $111M illustrative gross-resource sensitivity; $36.9M whole-project expense-proxy diagnostic."},
+      {"case": "Favorable stress (5%)", "headline": "$5.18M donor cost per 10 QALYs", "detail": "0.19316 gift QALY; $5.44M illustrative gross sensitivity. This case contributes most weighted QALYs."},
+      {"case": "Signed prior-weighted", "headline": "$63.2M donor cost per 10 QALYs", "detail": "0.015812 signed expected gift QALY; $73.4M illustrative gross sensitivity; 100% assumed Bay and 98.05% assumed nested SF share."}
+    ],
+    "uncertaintyBoundary": "Scenario inputs and weights are analyst priors, not confidence intervals, audited SisterWeb finances or observed causal effects. Maternal and infant mortality credit is zero. The favorable case dominates weighted QALYs despite only 5% weight, so the headline is right-tail-sensitive. Zero funding additionality returns zero QALYs; the harm case permits negative QALYs.",
+    "fundingBoundary": "RFMF is plausible but unpriced. SisterWeb says private gifts enable full-spectrum care beyond restricted government funding, a Latine-serving program closed for lack of funds, and referrals continued during closed enrollment. Against this, April 2026 DPH lists $512.5K and HRC awards $300K annually; if nonoverlapping, current public awards total $812.5K. The Heluna/new-EIN recipient transition and overlap are unresolved. Medi-Cal can also reimburse roughly $3,153–$3,263 for a standard package. No current budget, contract crosswalk, payer reconciliation, wait-list price or next-$100,000 commitment is public."
+  },
+  "evidence": [
+    {"key": "dias-meta", "design": "Systematic review and meta-analysis; primary analysis of randomized trials", "population": "Seven RCTs for cesarean outcome; 2,497 participants across eight RCTs overall", "result": "Cesarean 17.5% versus 23.6%, RR 0.71 (0.53–0.95); I2 60.1% and borderline small-study evidence. US-only RCT subgroup RR 0.71 (0.47–1.06).", "transfer": "Supports a possible cesarean pathway, but not a SisterWeb effect. Central shrinks far below the crude absolute difference."},
+    {"key": "groves-review", "design": "Systematic review of 21 clinical/pilot interventions, 17 randomized", "population": "Heterogeneous doula programs and perinatal populations", "result": "Most consistent evidence for anxiety, postpartum follow-up and breastfeeding initiation; cesarean and pain results varied.", "transfer": "Supports a finite psychosocial pathway and zero mortality claim; fidelity, crossover and population transfer remain uncertain."},
+    {"key": "sisterweb-output", "design": "Organization impact one-pager", "population": "FY2023-24 SisterWeb activities", "result": "103 clients received care; 85% initiated breastfeeding, 61% continued at six weeks; seven benefited doulas, 20 trainees and 131 coordination instances.", "transfer": "Establishes scale and portfolio, not completed courses, comparison outcomes or mother-infant dyads."},
+    {"key": "time-use", "design": "SisterWeb process/time-use study", "population": "Community doula program in San Francisco", "result": "Documents intensive prenatal, birth, postpartum and between-visit work within a cohort/mentor model.", "transfer": "Supports implementation intensity, not clinical causal outcomes."},
+    {"key": "funding", "design": "Official local-government funding records", "population": "Historical and current SisterWeb project scope", "result": "Historic city funding was $900K annually; a 2022 Heluna-sponsored contract scheduled $675K annually through June 2027; April 2026 DPH lists that contract at $512.5K; a separate HRC award is $300K annually and lists no sponsor.", "transfer": "If current lines are nonoverlapping they total $812.5K. This anchors a tight expense floor but does not resolve overlap, legal recipient, total expense or marginal private funding."}
+  ],
+  "reservations": [
+    "The current legal entity appears new and has no public Form 990 or audited standalone expense.",
+    "A Heluna-sponsored contract remains active post-new-EIN; the legal/operational transition, recipient entity and overlap with the sponsor-free HRC award are not reconciled.",
+    "The newest 2024-25 Canva impact report was not reliably machine-readable; the model uses the latest accessible 103-client figure from FY2023-24.",
+    "Clients receiving any care are not completed courses, births, infants or dyads; attrition and birth attendance are unknown.",
+    "SisterWeb has no controlled local maternal or infant clinical endpoint evaluation.",
+    "Pooled doula trials are heterogeneous, and the US-only cesarean subgroup was inconclusive.",
+    "Cesarean, psychosocial, preterm morbidity, completion, expense, deployability, realization, weights, geography and gross multipliers are explicit priors.",
+    "Medi-Cal reimbursement and public contracts may complement or displace unrestricted gifts.",
+    "Doulas are nonmedical support; clinical outcomes are not automatically attributed to them.",
+    "The signed expected value is dominated by the 5% favorable stress case and should not be used for fine ranking."
+  ],
+  "excludedBenefits": [
+    "Maternal mortality and infant mortality",
+    "Breastfeeding initiation and continuation",
+    "Postpartum follow-up beyond the finite psychosocial allowance",
+    "Care coordination and hospital-systems accountability",
+    "Doula wages, benefits, career development, apprenticeship, mentoring and workforce diversity",
+    "Perinatal supplies and broader family support",
+    "Research, advocacy, training dissemination and national field-building",
+    "Avoided obstetric spending, because it is not donor cash and local causality is unmeasured"
+  ],
+  "sources": [
+    {"publisher": "Internal Revenue Service EO BMF via ProPublica Nonprofit Explorer API", "title": "Sisterweb Community Doula Network (EIN 93-1924851)", "url": "https://projects.propublica.org/nonprofits/api/v2/organizations/931924851.json", "published": "IRS ruling date 2025-02", "retrieved": "2026-09-10", "sourceType": "IRS-derived exempt-organization registry record; active 501(c)(3), no filings returned"},
+    {"publisher": "SisterWeb", "title": "Donate", "url": "https://www.sisterweb.org/donate", "published": "Undated/current", "retrieved": "2026-09-10", "sourceType": "Official organization donation page"},
+    {"publisher": "Givebutter, linked from SisterWeb", "title": "SisterWeb donation campaign", "url": "https://givebutter.com/zkqA3S", "published": "Current campaign", "retrieved": "2026-09-10", "sourceType": "Officially linked donation campaign and EIN identity"},
+    {"publisher": "SisterWeb", "title": "Our Impact", "url": "https://www.sisterweb.org/our-impact", "published": "Current page", "retrieved": "2026-09-10", "sourceType": "Official organization impact hub"},
+    {"publisher": "SisterWeb", "title": "2023-2024 Fiscal Year Impact One-Pager", "url": "https://www.sisterweb.org/_files/ugd/4a398c_f0d3efad68eb4f02b50daee9d80295fb.pdf", "published": "FY2023-24", "retrieved": "2026-09-10", "sourceType": "Official organization impact report"},
+    {"publisher": "SisterWeb", "title": "Listening with Care: How SisterWeb Monitors Client Satisfaction Surveys", "url": "https://www.sisterweb.org/post/listening-with-care-how-sisterweb-monitors-client-satisfaction-surveys", "published": "2025-04-22", "retrieved": "2026-09-10", "sourceType": "Official organization methods post"},
+    {"publisher": "San Francisco Human Rights Commission", "title": "RFP 100 Grant Agreement for Commission Approval", "url": "https://media.api.sf.gov/documents/HRC_RFP_100_Grant_Agreement_Commission_Approval_20260209.pdf", "published": "2026-02-09", "retrieved": "2026-09-10", "sourceType": "Official city award list"},
+    {"publisher": "San Francisco Health Commission", "title": "DPH Contracts Report", "url": "https://media.api.sf.gov/documents/FINAL_Monthly_HC_Report_May_4_2021_.cleaned_1_0.pdf", "published": "2021-05-04", "retrieved": "2026-09-10", "sourceType": "Official city contract report"},
+    {"publisher": "San Francisco Health Commission", "title": "Contract 1000026912: Heluna Health, Fiscal Sponsor of SisterWeb", "url": "https://media.api.sf.gov/documents/HC_Memo_-1-26912_Heluna_Health_98PmbWb.pdf", "published": "2022-11-08", "retrieved": "2026-09-10", "sourceType": "Official city contract summary"},
+    {"publisher": "San Francisco Department of Public Health", "title": "Contracted Programs", "url": "https://media.api.sf.gov/documents/DPH_Contracted_Programs_4-17-26.pdf", "published": "2026-04-17", "retrieved": "2026-09-10", "sourceType": "Official current contracted-program list"},
+    {"publisher": "Obstetrics & Gynecology / PubMed", "title": "Intrapartum Doula Support and Cesarean Delivery Rates: A Systematic Review and Meta-analysis", "url": "https://pubmed.ncbi.nlm.nih.gov/40403310/", "published": "2025-05-22", "retrieved": "2026-09-10", "sourceType": "Peer-reviewed systematic review and meta-analysis"},
+    {"publisher": "JAMA Network Open / PubMed", "title": "Doula Care and Health Outcomes: A Systematic Review", "url": "https://pubmed.ncbi.nlm.nih.gov/42012826/", "published": "2026-04-01", "retrieved": "2026-09-10", "sourceType": "Peer-reviewed systematic review"},
+    {"publisher": "Cochrane", "title": "Continuous support for women during childbirth", "url": "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD003766.pub6/pdf/CDSR/CD003766/CD003766_abstract.pdf", "published": "2017", "retrieved": "2026-09-10", "sourceType": "Systematic review"},
+    {"publisher": "Women's Health", "title": "What, when, and how long? Doula time use in a community doula program in San Francisco", "url": "https://journals.sagepub.com/doi/full/10.1177/17455057231155302", "published": "2023", "retrieved": "2026-09-10", "sourceType": "Peer-reviewed SisterWeb process study"},
+    {"publisher": "SisterWeb", "title": "Update about Semilla Sagrada Community Doula Program", "url": "https://www.sisterweb.org/post/update-about-sisterweb-s-semilla-sagrada-community-doula-program-anuncio-sobre-el-programa-de-doul", "published": "2023-12-22; updated 2025-03-25", "retrieved": "2026-09-10", "sourceType": "Official organization funding/closure notice"},
+    {"publisher": "Maternal and Child Health Journal / PubMed Central", "title": "An Interprofessional Collaboration Between a Community-Based Doula Organization and Clinical Partners: The Champion Dyad Initiative", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12172575/", "published": "2025", "retrieved": "2026-09-10", "sourceType": "Peer-reviewed SisterWeb implementation study"},
+    {"publisher": "California Department of Health Care Services", "title": "Medi-Cal FFS Doula Billing Codes Chart", "url": "https://www.dhcs.ca.gov/providers-partners/medi-cal-ffs-doula-billing-codes-chart/", "published": "Rates effective 2024-01-01", "retrieved": "2026-09-10", "sourceType": "Official state reimbursement schedule"}
+  ]
+}

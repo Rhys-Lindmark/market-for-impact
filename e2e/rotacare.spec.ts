@@ -6,7 +6,7 @@ test('Bay research stays outside SF ranking and exposes full-resource and durati
  await expect(page.locator('table')).toHaveCount(1);
  const row=page.locator('[data-research-slug="rotacare-bay-area"]');
  await expect(row).toHaveCount(1);await expect(row).toContainText('$3.4M');
- await expect(row).toContainText('(Bay Area)');
+ await expect(row).not.toContainText('(Bay Area)');
  await row.locator('a').first().click();
  await expect(page.locator('article')).toContainText('$3,395,514');
  await expect(page.locator('article')).toContainText('central calendar5 only');

@@ -2,7 +2,7 @@ import {EXPECTED_INTERNATIONAL_COUNT} from './research-contract';
 import {test,expect} from '@playwright/test';
 test('AMF global report does not alter SF recommendations',async({page})=>{
  await page.goto('/archive/international-research');
- const sf=page.locator('[data-research-slug]');await expect(sf).toHaveCount(EXPECTED_INTERNATIONAL_COUNT);
+ const sf=page.locator('[data-research-slug][data-geography="International"]');await expect(sf).toHaveCount(EXPECTED_INTERNATIONAL_COUNT);
  const amf=page.locator('[data-research-slug="against-malaria-foundation"]');await expect(amf).toContainText('$4K');
  await amf.locator('a').first().click();
  await expect(page.getByRole('heading',{level:1,name:'Against Malaria Foundation',exact:true})).toBeVisible();

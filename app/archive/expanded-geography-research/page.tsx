@@ -1,0 +1,12 @@
+import type {Metadata} from 'next';
+/* eslint-disable @next/next/no-html-link-for-pages -- Preserve established native navigation. */
+import {expandedGeographyResearch} from '@/lib/expanded-geography-research';
+import styles from '../../research/research-index.module.css';
+import '../../givebetter.css';
+const price=(v:number|null)=>v===null?'Not estimated':new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',notation:'compact',minimumFractionDigits:v>=1e6&&v<1e9?1:0,maximumFractionDigits:v>=1e6&&v<1e9?1:0}).format(v);
+export const metadata:Metadata={title:'Expanded Geography Research — GiveBetter x SF',alternates:{canonical:'https://ai.rhyslindmark.com/givebetter/archive/expanded-geography-research'},description:'California-wide, U.S.-wide and international research preserved outside the Bay Area list.'};
+export default function ExpandedGeographyResearch(){return <div className="givebetter"><header className="givebetter-masthead"><a href="/">Give<span>Better</span> <small>x SF</small></a></header><main className={styles.shell}>
+ <section className={styles.intro}><h1>Expanded Geography Research</h1><p>California-wide, U.S.-wide and international organizations.</p><p className={styles.caveat}>Estimated dollars per better life (10 QALYs) across each organization’s modeled geography—not just the Bay Area. These are uncertain research estimates, not verified donation offers.</p></section>
+ <section aria-label="Expanded geography organization research" id="top-research"><table className={styles.table}><caption>{expandedGeographyResearch.length} archived reports. Geography and cost boundaries differ; each report preserves its local-attribution assumptions.</caption><thead><tr><th scope="col">Organization</th><th scope="col">$ per better life</th></tr></thead><tbody>{expandedGeographyResearch.map(r=><tr key={r.href} data-research-slug={r.href.split('/').at(-1)} data-geography={r.geography} data-cost-per-ten-qalys={r.overallPrice??undefined}><th scope="row"><a className={styles.rowLink} href={r.href}><strong>{r.organization} ({r.geography})</strong><span>{r.program}</span></a></th><td><a href={r.href} aria-label={r.organization+': '+price(r.overallPrice)+' per 10 QALYs across '+r.geography}>{price(r.overallPrice)}</a></td></tr>)}</tbody></table></section>
+ <footer className={styles.footer}><a href="/research">Bay Area research</a><a href="/archive">Full archive</a><a href="/">Our top charities</a></footer>
+ </main></div>;}

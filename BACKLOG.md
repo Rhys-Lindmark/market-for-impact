@@ -2,9 +2,19 @@
 
 ## Bayview Hunters Point Foundation — accepted distinct SF organization
 
-Final correction supersedes the earlier geographic headline below: $236.13M is total/site-attributed, not resident-specific. Subjective SF65%/Bay90% resident priors imply $363.28M SF/$262.37M Bay; measured residence remains unavailable. Final independent re-audit accepted; 488 tests and updated phone/tablet checks pass. Ordinal depends on NFP release order; do not count before canonical verification.
+Release candidate80: $236.13M is total/site-attributed, not resident-specific. Subjective SF65%/Bay90% resident priors imply $363.28M SF/$262.37M Bay; measured residence remains unavailable. The new Bay-only list uses $262.37M with the assumption disclosed in the report, tooltip and accessible label. Final independent re-audit accepted. New release includes verified partial timing; no count before canonical verification.
 
-EIN94-1747575, not Bayview Senior Services. Whole FY2025 expense against explicitly partial behavioral-health benefit; weighted $236.13M per10 modeled SF QALYs, giving HOLD. Geography is site-of-service assumption, not verified all-client residence. Final City amendments distinguished from superseded proposal; negative net assets show fragility, not proven liquidity. Known-gross accounting boundary is incomplete; verified marginal prices null. Source/model audit accepted; 485 tests, lint zero errors, build and four phone/tablet checks pass. Report80 only after preceding releases and canonical verification. Next accepted NFP, then Westside after material audit corrections.
+EIN94-1747575, not Bayview Senior Services. Whole FY2025 expense against explicitly partial behavioral-health benefit, giving HOLD. Final City amendments distinguished from superseded proposal; negative net assets show fragility, not proven liquidity. Known-gross accounting boundary is incomplete; verified marginal prices null. Earlier source/model audit accepted. Next: corrected NFP after its external-resource realization audit, then the highest-EV new organization; Westside retains material unresolved corrections.
+
+## Research-time / AI-model provenance on every report
+
+User priority: show actual organization-specific research minutes and AI model near the title on every old/new report. Implemented shared header for all79 reports, including expanded geography;26 verified intervals across12 reports are explicitly partial, while67 historical records remain unknown. Follow docs/research-effort.md for timestamped author/modeling/audit intervals, actual model identity evidence and partial-history coverage; exclude integration, deployment and idle waits. AGENTS.md and the new-report release checklist require available provenance records. No research count or cost-effectiveness estimate changes. Validation:487 tests passed, lint0 errors/3 existing warnings, production build passed;4 responsive checks passed, including every79 report header on phone390/tablet768. Next: publish, verify canonical headers, then integrate accepted BVHPF/NFP reports with their available provenance.
+
+## Bay Area research list / Expanded Geography Research — September 10
+
+Current verified published checkpoint: **79/115** through CalYouth (PR268, Sites v184). This interface reorganization adds no reports. Keep 62 SF/Bay reports in the main list and move 5 California-wide, 7 U.S.-wide and 5 international reports into **Expanded Geography Research**. All 79 reports and their models remain available. Bay-wide rows use their Bay price, not their smaller SF allocation; no new spillover benefits are invented. Remove redundant name and price geography labels as requested. The old international archive URL serves the expanded archive for existing bookmarks.
+
+Validation includes report/API model tests, production build, responsive archive navigation, Bay-price parity for Via Heart/HEPPAC, all-79 report-layout coverage and unique membership checks. Next: finish this canonical publication, then adapt accepted BVHPF/NFP PRs to the new grouping before adding them. Preserve explicit subjective local-share and funding-room disclosures inside reports.
 
 ## California Coalition for Youth — accepted finite crisis-support report
 

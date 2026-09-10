@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';
 import {EXPECTED_RESEARCH_COUNT} from './research-contract';
 test('SisterWeb exposes expense uncertainty and signed whole-project estimate',async({page})=>{
  await page.goto('/research');await expect(page.locator('[data-research-slug]')).toHaveCount(EXPECTED_RESEARCH_COUNT);
- const row=page.locator('[data-research-slug="sisterweb"]');await expect(row).toHaveAttribute('data-estimate-geography','San Francisco');
+ const row=page.locator('[data-research-slug="sisterweb"]');await expect(row).toHaveAttribute('data-estimate-geography','Bay Area');
  await row.locator('a').first().click();await expect(page.getByRole('heading',{level:1,name:'SisterWeb Community Doula Network'})).toBeVisible();
  await expect(page.locator('#summary')).toContainText('$63.2M');
  const response=await page.request.get('/api/sisterweb-model');expect(response.ok()).toBe(true);const {evaluated:r,verifiedMarginalFundingOffer}=await response.json();

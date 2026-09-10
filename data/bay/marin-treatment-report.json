@@ -1,0 +1,276 @@
+{
+  "organization": "Marin Treatment Center",
+  "eyebrow": "CHARITY RESEARCH · BAY AREA · EXPLORATORY",
+  "program": "Opioid agonist treatment and related whole-organization services",
+  "published": "10 September 2026",
+  "modelVersion": "mtc-whole-org-v2",
+  "nutshell": {
+    "headline": "Medication treatment can reduce overdose deaths; the added impact of a donation here is highly uncertain.",
+    "body": "Under an explicitly judgmental prior-weighted illustration, a $100,000 unrestricted gift corresponds to $7.13 million per better life (10 modeled QALYs), with a $24.21 million central scenario. This is not an empirical marginal estimate. The matched retrospective whole-organization resource ratio is $4.24 million weighted and $8.47 million central. Verified marginal donor and gross costs are unknown.",
+    "whyItMayWork": "Methadone and buprenorphine treatment are associated with lower mortality while people remain in treatment, and MTC reports a local opioid treatment program in San Rafael.",
+    "whyWeAreCautious": "The public client count covers an 11-month County-reported contract metric with uncertain coverage, retained person-years and medication mix are unknown, the evidence is observational, and neither organizational access nor ordinary-gift additionality is measured.",
+    "recommendationBlocker": "Before recommending a donation, obtain current whole-organization volume, medication mix, observed retained person-years, residence shares, and a priced marginal funding use that increases initiation or retention."
+  },
+  "summary": [
+    {
+      "label": "MODELED ORDINARY GIFT",
+      "value": "$7.13M",
+      "detail": "prior-weighted per 10 modeled QALYs; not an empirical marginal quote"
+    },
+    {
+      "label": "CENTRAL ILLUSTRATION",
+      "value": "$24.21M",
+      "detail": "per 10 QALYs under 50% assumed methadone mix, 30% access and 35% gift additionality"
+    },
+    {
+      "label": "RETROSPECTIVE GROSS",
+      "value": "$4.24M",
+      "detail": "weighted per 10 QALYs; average matched-period ratio, not a marginal quote"
+    },
+    {
+      "label": "BAY / SF SHARE",
+      "value": "98.23% / unknown",
+      "detail": "Bay share is scenario-based; SF share is null, not zero"
+    },
+    {
+      "label": "FUNDING ROOM",
+      "value": "Medium-low",
+      "detail": "plausible financial assistance, but no priced gap or capacity pathway"
+    }
+  ],
+  "programSection": {
+    "body": "MTC provides outpatient and telehealth opioid-use-disorder treatment in San Rafael, including methadone and buprenorphine, alongside counseling, mental-health and primary-care coordination, testing/linkage, withdrawal management, jail continuity work, outreach and education.",
+    "steps": [
+      {
+        "title": "Initiate medication treatment",
+        "detail": "A licensed opioid treatment program dispenses or coordinates medication; the public evidence does not report the current medication mix."
+      },
+      {
+        "title": "Retain patients safely",
+        "detail": "The County packet reports 85.6% remained in treatment but does not define person-years. Risk can be elevated during induction and after cessation."
+      },
+      {
+        "title": "Provide wraparound services",
+        "detail": "Counseling, care coordination, testing/linkage and other services may matter, but this review assigns no separate QALYs without disjoint current recipients and outcomes."
+      }
+    ],
+    "boundary": "The cost boundary is the entire organization. The 257 clients are a County-reported contract metric for 2023-07-01 to 2024-05-31 whose payer and whole-organization coverage are unknown. Unquantified pathways remain in cost and receive zero added QALY credit."
+  },
+  "model": {
+    "headline": "Prior-weighted modeled ordinary gift: $7.13M per 10 QALYs; central: $24.21M.",
+    "body": "We pair the FY2023-24 County-contract client count with FY-ending-June-2024 whole-organization expenses for a retrospective accounting scale. Each scenario separately sets synthetic retained exposure, medication mix, clinical transfer, organizational access/substitution, and ordinary-gift funding additionality. Marginal gross cost is unknown; the reported gross figure is retrospective.",
+    "equation": {
+      "label": "CENTRAL DONOR COST PER BETTER LIFE",
+      "expression": "10 × $100,000 ÷ {[257 × 0.70 years × ((50% × 0.0249 + 50% × 0.0052) × 45% × 5.875 finite-survival QALYs/death + 0.03 morbidity QALY/year) × 30% access] × ($100,000 ÷ $3,191,947) × 35% gift additionality}",
+      "result": "$24,213,034 per 10 QALYs; 0.04130 gift-attributed QALY"
+    },
+    "inputColumnLabel": "Null / central / upside judgments",
+    "inputs": [
+      {
+        "key": "clients",
+        "label": "Observed County-contract clients",
+        "confidence": "Moderate for the reported metric; low for whole-organization coverage",
+        "best": "257",
+        "range": "257 in every scenario",
+        "basis": "County FY2024-25 renewal packet reports unduplicated OTP clients for 2023-07-01 through 2024-05-31."
+      },
+      {
+        "key": "retainedYears",
+        "label": "Synthetic retained treatment-years per client",
+        "confidence": "Low; not observed",
+        "best": "0.70",
+        "range": "0.40 / 0.70 / 0.90",
+        "basis": "The reported 85.6% retention does not identify duration, so exposure is an explicit scenario prior."
+      },
+      {
+        "key": "methadoneShare",
+        "label": "Assumed methadone share",
+        "confidence": "Low; MTC mix unknown",
+        "best": "50%",
+        "range": "0% / 50% / 100%",
+        "basis": "Prevents applying the larger methadone mortality difference to all clients."
+      },
+      {
+        "key": "mortalityEvidence",
+        "label": "Evidence mortality-rate difference",
+        "confidence": "Moderate for pooled association; low for local causality",
+        "best": "0.01505 per person-year",
+        "range": "0.0052 / 0.01505 / 0.0249",
+        "basis": "Linear interpolation between pooled buprenorphine and methadone differences from Sordo et al."
+      },
+      {
+        "key": "clinicalTransfer",
+        "label": "Clinical causal-transfer factor",
+        "confidence": "Low",
+        "best": "45%",
+        "range": "0% / 45% / 70%",
+        "basis": "Discounts observational confounding, heterogeneous settings and local transfer; the null case assigns no clinical effect."
+      },
+      {
+        "key": "survivalTail",
+        "label": "Finite death-averted survival tail",
+        "confidence": "Low; judgmental lifetime bridge",
+        "best": "5.875 QALYs",
+        "range": "2.842 / 5.875 / 9.915",
+        "basis": "Sum through 10/20/30 years using 85%/93%/96% annual subsequent survival, 0.65/0.70/0.80 utility, 3% health discounting and 0.50/0.50/0.25-year delay. Broad priors truncate the tail; age, relapse/recovery and competing mortality are unobserved."
+      },
+      {
+        "key": "morbidity",
+        "label": "Morbidity QALY per retained year",
+        "confidence": "Low",
+        "best": "0.03",
+        "range": "0 / 0.03 / 0.08",
+        "basis": "Small explicit allowance; the null case has zero and MTC has no utility measurement."
+      },
+      {
+        "key": "access",
+        "label": "Organizational access/substitution additionality",
+        "confidence": "Low",
+        "best": "30%",
+        "range": "10% / 30% / 60%",
+        "basis": "Separates treatment effect from whether MTC adds treatment versus alternative providers or care that would occur anyway."
+      },
+      {
+        "key": "giftAdditionality",
+        "label": "Ordinary-gift funding/capacity additionality",
+        "confidence": "Low",
+        "best": "35%",
+        "range": "10% / 35% / 70%",
+        "basis": "No public waitlist, marginal budget or capacity quote; a gift may displace baseline funding."
+      },
+      {
+        "key": "bayShare",
+        "label": "Bay Area impact share",
+        "confidence": "Low-moderate",
+        "best": "90%",
+        "range": "75% / 90% / 100%",
+        "basis": "San Rafael location and Marin contract, with telehealth boundaries and residence distribution unknown."
+      },
+      {
+        "key": "sfShare",
+        "label": "San Francisco-proper impact share",
+        "confidence": "Unknown",
+        "best": "null",
+        "range": "unknown in every scenario",
+        "basis": "No current residence data; unknown must not be converted to zero."
+      }
+    ],
+    "giftHeading": "Illustrative $100,000 unrestricted gift",
+    "sensitivity": [
+      {
+        "case": "Null (25% prior weight)",
+        "headline": "No positive QALYs",
+        "detail": "Zero mortality and morbidity credit; no finite positive-benefit cost ratio."
+      },
+      {
+        "case": "Central (60%)",
+        "headline": "$24.21M modeled ordinary-gift cost per 10 QALYs",
+        "detail": "0.04130 gift-attributed QALY; $8.475M retrospective gross ratio; verified marginal costs unknown."
+      },
+      {
+        "case": "Upside (15%)",
+        "headline": "$1.300M modeled ordinary-gift cost per 10 QALYs",
+        "detail": "0.76945 gift-attributed QALYs; $909,745 retrospective gross ratio; verified marginal costs unknown."
+      },
+      {
+        "case": "Prior-weighted",
+        "headline": "$7.133M modeled ordinary-gift cost per 10 QALYs",
+        "detail": "0.14020 signed expected gift QALY; $4.243M weighted retrospective gross ratio; 98.23% QALY-weighted Bay share and unknown SF share."
+      }
+    ],
+    "uncertaintyBoundary": "Scenario values and 25% null / 60% central / 15% upside weights are subjective priors, not confidence intervals or empirically calibrated probabilities. The jointly favorable case receives lower weight because local outcomes and marginal funding are unverified. The weighted cost divides donor cash by weighted QALYs rather than averaging ratios. Positive-only expected QALYs conditional on a positive case are 0.18693 ($5.35M/10 QALYs); signed expected QALYs including the null are 0.14020.",
+    "fundingBoundary": "RFMF is medium-low and unpriced. MTC publishes a financial-assistance route, but the latest filing shows a $523,226 surplus and $4.03M net assets, and no public source identifies a waitlist, scholarship shortfall, capacity bottleneck, incremental start price, or retained-years-per-dollar offer. The $7.13M result is a conditional modeled ordinary-gift illustration; verified marginal donor cost is unknown. Existing public and insurance resources are baseline. Patient time/travel, outside medical care, and any public or insurance payments causally unlocked by a gift are unknown external resources. Marginal gross resources and cost are unknown."
+  },
+  "evidence": [
+    {
+      "key": "county",
+      "design": "Local administrative contract report",
+      "population": "County-reported opioid treatment program metric; payer and whole-organization coverage unknown",
+      "result": "257 unduplicated people served from 2023-07-01 to 2024-05-31; 85.6% reported remaining in treatment.",
+      "transfer": "Useful local volume evidence, but it does not establish treatment person-years, medication mix, payer scope, whole-organization reach or marginal donation effects."
+    },
+    {
+      "key": "sordo-methadone",
+      "design": "Systematic review and meta-analysis of observational cohorts",
+      "population": "122,885 people treated with methadone",
+      "result": "11.3 versus 36.1 all-cause deaths per 1,000 person-years in versus out of treatment; unadjusted difference 24.9 (95% CI 13.6–36.1).",
+      "transfer": "Strong severe-endpoint association, but not randomized access and not MTC-specific. Clinical transfer and access are discounted separately."
+    },
+    {
+      "key": "sordo-buprenorphine",
+      "design": "Systematic review and meta-analysis of three observational cohorts",
+      "population": "15,831 people treated with buprenorphine",
+      "result": "4.3 versus 9.5 deaths per 1,000 person-years; difference 5.2 (95% CI −1.0–11.4).",
+      "transfer": "The absolute-difference interval crosses zero. Medication mix must be explicit; the methadone estimate cannot be applied to everyone."
+    },
+    {
+      "key": "finance",
+      "design": "IRS Form 990 accounting data",
+      "population": "Whole Marin Treatment Center organization",
+      "result": "FY2024 expenses $3.192M; FY2025 expenses $3.893M, surplus $523K and net assets $4.032M.",
+      "transfer": "FY2024 is used only for a matched-period retrospective resource ratio. FY2025 informs current funding room, not historical client pricing."
+    }
+  ],
+  "reservations": [
+    "The public 257-client denominator is an 11-month County-reported contract metric whose payer and whole-organization coverage are unknown.",
+    "Client count multiplied by assumed retained years is synthetic exposure, not observed person-years.",
+    "MTC medication mix is unknown; scenario interpolation is not a local prescribing estimate.",
+    "Mortality comparisons are observational time-in versus time-out associations with heterogeneity and possible selection/confounding.",
+    "Clinical transfer, access/substitution, gift additionality, finite survival, morbidity and geography are judgmental priors.",
+    "FY2024 expense and the service window are approximately rather than exactly aligned; the service data end one month before fiscal year-end.",
+    "The reported gross-resource figure is retrospective; marginal gross resources and marginal gross cost are unknown.",
+    "Bay share is modeled; SF-proper share is unknown, not zero."
+  ],
+  "excludedBenefits": [
+    "Counseling and mental-health outcomes beyond the small morbidity allowance",
+    "Primary care and care-coordination outcomes",
+    "HIV/HCV testing, linkage and treatment outcomes",
+    "Jail medication continuity outcomes",
+    "Withdrawal-management benefits; no positive credit because risk can rise after cessation",
+    "Outreach and education reach",
+    "Employment, emergency-service and criminal-justice effects"
+  ],
+  "sources": [
+    {
+      "publisher": "Marin Treatment Center",
+      "title": "Marin Treatment Center",
+      "url": "https://marintreatmentcenter.org/",
+      "published": "Undated",
+      "retrieved": "2026-09-10",
+      "sourceType": "Official organization program page"
+    },
+    {
+      "publisher": "County of Marin",
+      "title": "FY 2024-25 Marin Treatment Center contract-renewal staff packet",
+      "url": "https://marin.granicus.com/MetaViewer.php?clip_id=12321&meta_id=1339626&view_id=",
+      "published": "2024",
+      "retrieved": "2026-09-10",
+      "sourceType": "Official local-government contract packet"
+    },
+    {
+      "publisher": "Internal Revenue Service, mirrored by ProPublica Nonprofit Explorer",
+      "title": "Marin Treatment Center nonprofit filings, EIN 94-2347249",
+      "url": "https://projects.propublica.org/nonprofits/organizations/942347249",
+      "published": "FY2024 filing 2025-05-15; FY2025 filing 2026-04-02",
+      "retrieved": "2026-09-10",
+      "sourceType": "IRS Form 990 data"
+    },
+    {
+      "publisher": "The BMJ",
+      "title": "Mortality risk during and after opioid substitution treatment: systematic review and meta-analysis of cohort studies",
+      "url": "https://www.bmj.com/content/357/bmj.j1550",
+      "published": "2017-04-26",
+      "retrieved": "2026-09-10",
+      "sourceType": "Peer-reviewed systematic review and meta-analysis"
+    },
+    {
+      "publisher": "Marin Treatment Center",
+      "title": "Uninsured / under-insured coverage",
+      "url": "https://marintreatmentcenter.org/uninsured-under-insured-coverage/",
+      "published": "Undated",
+      "retrieved": "2026-09-10",
+      "sourceType": "Official financial-assistance page"
+    }
+  ],
+  "donationUrl": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HGDG7NYRVZN6U"
+}

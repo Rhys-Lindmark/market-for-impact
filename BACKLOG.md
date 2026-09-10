@@ -1,5 +1,11 @@
 # Market for Impact backlog
 
+## Next release — Marin Treatment Center (69/115 after canonical verification)
+
+Independent source/model audit accepted a conditional whole-gift opioid-treatment model, not a verified marginal offer. Weighted ordinary-gift estimate: $7.133M per 10 QALYs overall; central $24.213M. Bay share is a judgment (98.23% outcome-weighted); SF residence share and marginal gross resources remain unknown. Finite survival, medication mix, clinical transfer, alternative care, funding replacement and a true null scenario are explicit. Major unquantified services keep their costs; this is an unfavorable/high-uncertainty finding, not zero impact.
+
+Root integration: report, model/API, Bay index and phone/tablet contract. 452 repository tests passed; lint has no errors and three existing warnings; production build and both phone/tablet checks passed. Exact-source release pending. Session began 2026-09-10T18:11:24Z. Next: HEPPAC independent review and Ceres full report; finish existing research rather than repeated screens. MTC contributes wider-Bay coverage, not the separate requirement for three additional California-wide organizations.
+
 ## Current authoritative checkpoint —68/115
 
 New Eyes advances the reviewed set to68 once this branch is merged and canonical-verified. Its very-low-confidence weighted ordinary-gift model is $78,651/10 U.S. QALYs; removing the5% favorable scenario gives $100,714, and illustrative gross resources give $219,881. Hypothetical2% Bay/.25% SF shares imply $3.93M/$31.46M, but no local recipient allocation or marginal funding offer is verified, so it is not an SF recommendation. ReCARES, Ear of the Lion, Alliance for Smiles, Youth ALIVE! and Acterra remain negative screens and do not inflate the count. Continue high-EV screening without tuning findings toward100K.

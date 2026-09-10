@@ -6,9 +6,10 @@ test('homepage and research copy refinements',async({page})=>{
  await expect(page.getByText('Our four lowest central estimates so far.',{exact:false})).toHaveCount(0);
  expect(await page.locator('.givebetter-masthead small').evaluate(el=>getComputedStyle(el).fontFamily===getComputedStyle(el.parentElement!).fontFamily)).toBe(true);
  await page.goto('/research');
+ await expect(page.locator('tbody')).not.toContainText('Not estimated');
  await expect(page.locator('#top-research').getByRole('columnheader',{name:'Organization',exact:true})).toBeVisible();
  await expect(page.getByRole('columnheader',{name:'$ per better life',exact:true})).toBeVisible();
- for(const cell of await page.locator('tbody td').all()) expect(await cell.innerText()).toMatch(/^(?:\$[\d,]+(?:\.\dM|[KBT])?|Not estimated)$/);
+ for(const cell of await page.locator('tbody td').all()) expect(await cell.innerText()).toMatch(/^\$[\d,]+(?:\.\dM|[KBT])?\n(?:SF|BAY AREA)$/);
 });
 
 test('all published reports use readable research architecture',async({page},testInfo)=>{

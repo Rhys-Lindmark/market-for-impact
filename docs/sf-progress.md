@@ -1,5 +1,11 @@
 # San Francisco giving — active phase plan
 
+## 68→115 category tracker — September 10
+
+Track 47 remaining unique organization reports and 49 category slots. Targets are 10 each for SF outcome-first organizations, SF universe/new coverage, policy and systems leverage, and other-city transfers with real Bay implementers; plus 3 each for EA/Charity-Entrepreneurship mechanisms tied to real organizations, wider Bay/California, and selective US/international comparators. Exactly two genuinely cross-cutting organizations may satisfy two named category slots, while each organization counts once toward 115. Screens, duplicate program reviews, revisions and hypothetical ventures do not count.
+
+The main `/givebetter/research` index is for SF/Bay donor decisions. International comparator reports remain part of the 68-report corpus but belong in the linked archive. US/Bay organizations must show a modeled local price or a justified zero/unknown—not their national value relabeled as local.
+
 ## Resumed block — September 10, 16:12 UTC
 
 **67/115 remained the published count through the Operation Access correction.** The hourly heartbeat is active again with `/givebetter` as canonical and the 115-report finish line. Root owns Site integration while three research workers cover New Eyes and the next high-EV pipeline; finished slots are refilled immediately. Operation Access named-case-mix v2 is count-neutral and published in PR254/Sites v171 from exact c18b172ef505281329e74cc7236383aff45f0cc0: central donor estimates are $1.947M US, $3.245M Bay and $24.335M SF per 10 QALYs. The change preserves the historical abnormal-FIT model, replaces the ranked whole-organization value, and mechanically changes the homepage fourth pick to Project Homeless Connect without double-counting its shared hearing pathway.

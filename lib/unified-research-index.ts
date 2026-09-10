@@ -1,15 +1,19 @@
 import {sortedResearchPrograms} from './sf-research-index';
-import {internationalResearch} from './international-research-index';
 import {usResearch} from './us-research-index';
 import {remedyLocalScenarios} from './local-impact-data';
 import {bayResearch} from './bay-research-index';
 import {californiaResearch} from './california-research-index';
-// Every displayed comparison price has the same SF-resident denominator.
-// Unknown local effects sort last; never substitute a global/national price.
+const localPrice=(sf:number|null|undefined,bay:number|null|undefined)=>sf??bay??null;
+const localGeography=(sf:number|null|undefined)=>sf!==null&&sf!==undefined?'San Francisco':'Bay Area';
+// Every displayed comparison price is local: SF when modeled, otherwise Bay Area.
+// Never substitute a global or national price. International comparators live in the archive.
 export const unifiedResearch=[
- ...californiaResearch.map(r=>({organization:r.organization+' (California)',program:r.program,href:r.href,scope:'California',sfUsdPerTenQalys:r.sfUsdPerTenQalys as number|null,localStatus:'Modeled local share of statewide health; see report'})),
- ...sortedResearchPrograms.map(r=>({organization:r.organization,program:r.program,href:r.href,scope:'SF',sfUsdPerTenQalys:r.centralUsdPerTenQalys as number|null,localStatus:'modeled'})),
- ...bayResearch.map(r=>({organization:r.organization+' (Bay Area)',program:r.program,href:r.href,scope:'Bay',sfUsdPerTenQalys:r.sfUsdPerTenQalys as number|null,localStatus:'Bay estimate in report; SF resident effect not established'})),
- ...usResearch.map(r=>({organization:r.organization+' (U.S.)',program:r.program,href:r.href,scope:'US',sfUsdPerTenQalys:r.href==='/charities/remedy-alliance'?remedyLocalScenarios[0].sfUsdPer10Q:r.sfUsdPerTenQalys as number|null,localStatus:'Very uncertain local-share judgment; see report'})),
- ...internationalResearch.map(r=>({organization:r.organization+' (International)',program:r.program,href:r.href,scope:'International',sfUsdPerTenQalys:null as number|null,localStatus:'No local estimate yet'})),
-].sort((a,b)=>(a.sfUsdPerTenQalys??Infinity)-(b.sfUsdPerTenQalys??Infinity)||a.organization.localeCompare(b.organization));
+ ...californiaResearch.map(r=>({organization:r.organization+' (California)',program:r.program,href:r.href,scope:'California',localUsdPerTenQalys:r.sfUsdPerTenQalys as number|null,estimateGeography:'San Francisco',localStatus:'Modeled SF share of statewide health; see report'})),
+ ...sortedResearchPrograms.map(r=>({organization:r.organization,program:r.program,href:r.href,scope:'SF',localUsdPerTenQalys:r.centralUsdPerTenQalys as number|null,estimateGeography:'San Francisco',localStatus:'modeled'})),
+ ...bayResearch.map(r=>({organization:r.organization+' (Bay Area)',program:r.program,href:r.href,scope:'Bay',localUsdPerTenQalys:localPrice(r.sfUsdPerTenQalys,r.bayUsdPerTenQalys),estimateGeography:localGeography(r.sfUsdPerTenQalys),localStatus:r.sfUsdPerTenQalys===null?'Modeled Bay Area estimate; SF share not established':'Modeled SF share; see report'})),
+ ...usResearch.map(r=>{
+  const sf=r.href==='/charities/remedy-alliance'?remedyLocalScenarios[0].sfUsdPer10Q:r.sfUsdPerTenQalys;
+  const bay=r.href==='/charities/remedy-alliance'?remedyLocalScenarios[0].bayUsdPer10Q:r.bayUsdPerTenQalys;
+  return {organization:r.organization+' (U.S.)',program:r.program,href:r.href,scope:'US',localUsdPerTenQalys:localPrice(sf,bay),estimateGeography:localGeography(sf),localStatus:'Very uncertain modeled local-share judgment; see report'};
+ }),
+].sort((a,b)=>(a.localUsdPerTenQalys??Infinity)-(b.localUsdPerTenQalys??Infinity)||a.organization.localeCompare(b.organization));

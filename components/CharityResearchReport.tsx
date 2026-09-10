@@ -101,13 +101,13 @@ export default function CharityResearchReport({ content }: { content: CharityRep
         <header className="report-heading">
           <h1>{content.organization}</h1><p className="report-program">{content.program}</p>
           {effort.recorded?<details className="report-research-effort" data-research-effort="recorded"><summary>{effort.label}</summary><p>{effort.details}</p></details>:<p className="report-research-effort" data-research-effort="not-recorded" title={effort.details} aria-description={effort.details}>{effort.label}</p>}
+          <p className="report-date">Published: {content.published}.</p>
           <a className="report-donate" href={donationUrl || '#funding'} {...(donationUrl ? {target:'_blank',rel:'noreferrer'} : {})}>Donate</a>
         </header>
         <nav className="report-contents" aria-label="Table of Contents">
           <h2>Table of Contents</h2>
           {headings.map(([id,label]) => <a key={id} href={'#'+id}>{label}</a>)}
         </nav>
-        <p className="report-date">Published: {content.published}. Cost-effectiveness model: {content.modelVersion}.</p>
         <article>
           <section id="summary"><span id="nutshell" />
             <h2>Summary</h2>
@@ -169,7 +169,7 @@ export default function CharityResearchReport({ content }: { content: CharityRep
             <ol className="report-sources">{content.sources.map(source => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.title}</a>. {source.publisher}. {source.sourceType}. Published: {source.published}; retrieved: {source.retrieved}.</li>)}</ol>
           </section>
         </article>
-        <footer className="report-footer"><a href="/research">All research</a> · <a href="/">Our top charities</a><p>GiveBetter x SF is not affiliated with GiveWell or the organizations reviewed.</p></footer>
+        <footer className="report-footer"><p className="report-model-version">Cost-effectiveness model: {content.modelVersion}.</p><a href="/research">All research</a> · <a href="/">Our top charities</a><p>GiveBetter x SF is not affiliated with GiveWell or the organizations reviewed.</p></footer>
       </div>
     </main>
   );

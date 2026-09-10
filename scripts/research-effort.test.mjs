@@ -8,10 +8,10 @@ const data=(sessions=[session],coverage='complete')=>({version:1,timeBasis:'Summ
 test('published registry validates and unknown is never zero',()=>{
  const registry=JSON.parse(fs.readFileSync('data/research-effort.json','utf8'));validateResearchEffort(registry);
  const result=researchEffortSummary(registry,'Missing historic record');
- assert.equal(result.minutes,null);assert.equal(result.recorded,false);assert.match(result.label,/time: not recorded/);assert.match(result.label,/AI model: not recorded/);
+ assert.equal(result.minutes,null);assert.equal(result.recorded,false);assert.equal(result.label,'Research time: not recorded on an unrecorded AI model');
 });
 test('time comes from timestamps and is not rounded up',()=>{
- const r=researchEffortSummary(validateResearchEffort(data()),'Example');assert.equal(r.minutes,20.05);assert.equal(r.label,'20 min of tracked research with Fixture model');
+ const r=researchEffortSummary(validateResearchEffort(data()),'Example');assert.equal(r.minutes,20.05);assert.equal(r.label,'Research time: 20 min on Fixture model');
 });
 test('parallel workers sum separately and partial history remains disclosed',()=>{
  const d=data([session,{...session,id:'two',workerId:'auditor',model:null}],'partial');validateResearchEffort(d);

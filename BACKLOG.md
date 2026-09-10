@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Research-page navigation and metadata — user priority
+
+Apply the shared left-side desktop table of contents to all80 published reports, retaining compact above-content navigation on phones/tablets. Move the cost-effectiveness model version to the report footer; keep publication date and measured research provenance near the title. Research provenance reads “Research time: [time] on [AI model]”; historical unknowns remain explicit rather than invented. No research count, sources, assumptions or numerical findings change. Validate all report metadata plus desktop/mobile anchor navigation before exact-source publication.
+
 ## Bayview Hunters Point Foundation — accepted distinct SF organization
 
 Release candidate80: $236.13M is total/site-attributed, not resident-specific. Subjective SF65%/Bay90% resident priors imply $363.28M SF/$262.37M Bay; measured residence remains unavailable. The new Bay-only list uses $262.37M with the assumption disclosed in the report, tooltip and accessible label. Final independent re-audit accepted. New release includes verified partial timing; no count before canonical verification.

@@ -1,4 +1,4 @@
-import {calculate as nfpModel} from './nfp-model.mjs';
+import {calculatePublishedLifetimeBestGuess as nfpModel} from './nfp-portfolio-model.mjs';
 const nfp=nfpModel().weighted;
 import sirumData from '@/data/us/sirum-model-v1.json';
 import {calculate as sirumModel} from './sirum-model.mjs';

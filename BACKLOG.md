@@ -2,7 +2,7 @@
 
 ## Changent / Nurse-Family Partnership — audited national comparator
 
-Whole legal-organization expense charged; explicit unmodeled Child First benefits. Corrected annual-family/full-course unit alignment retained. Signed expected donor/gross cost is $15.10M/$21.04M per 10 total QALYs; Bay2.5%/SF0.2% are unmeasured allocation priors, not local delivery evidence. No verified marginal offer. Default snapshot, zero-funding/zero-gift, double-gift, gross boundary and validation tests pass. Full local validation: 483 tests, lint zero errors/three existing warnings, production build and two phone/tablet report/API checks. Do not count until canonical publication. Bayview remains draft pending separate resident attribution; report ordinal depends on release order.
+Accepted v4 models both NFP and material Child First activity against full organization expense. Lifetime benefits use baseline-discounted survival and a transparent50% post-follow-up persistence prior; the follow-up-bound diagnostic is retained separately. Weighted donor/gross $10.24M/$15.49M per10 QALYs, with84.46% favorable-tail dependence and unmeasured Bay/SF shares. Giving HOLD; no verified marginal offer.496 tests and lint0 errors pass; final build and responsive verification underway. Published baseline80 includes BVHPF and shared UI releasev188; NFP becomes81 only after canonical publication. Next accepted MiracleFeet and Spectrum, then independently audited new Bay organizations.
 
 ## Research-page navigation and metadata — user priority
 

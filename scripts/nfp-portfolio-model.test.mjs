@@ -11,13 +11,20 @@ const compactFresh = {
   diagnostics: fresh.diagnostics,
   weighted: fresh.weighted,
   noFavorable: fresh.noFavorable,
-  actuarialAnchoredNfpMortalityHorizonSensitivity: (() => {
+  publishedLifetimeBestGuess: (() => {
     const sensitivity = calculateNfpMortalityHorizonSensitivity();
     return {
       assumedMeanCounterfactualDeathAge: sensitivity.assumptions.assumedMeanCounterfactualDeathAge,
       remainingLifeYearsAtAge10: sensitivity.assumptions.remainingLifeYearsAtAge10,
       healthUtility: sensitivity.assumptions.healthUtility,
       annualDiscountRate: sensitivity.assumptions.annualDiscountRate,
+      discountFromPregnancyBaselineYears: sensitivity.assumptions.discountFromPregnancyBaselineYears,
+      observedWindowYearsAfterAssumedDeath: sensitivity.assumptions.observedWindowYearsAfterAssumedDeath,
+      postAge20PersistencePrior: sensitivity.assumptions.postAge20PersistencePrior,
+      discountedAtAge10QalyPerPreventedDeath: sensitivity.discountedAtAge10QalyPerPreventedDeath,
+      fullyCreditedObservedWindowQaly: sensitivity.fullyCreditedObservedWindowQaly,
+      fullLifetimeBaselineQaly: sensitivity.fullLifetimeBaselineQaly,
+      postAge20BaselineQaly: sensitivity.postAge20BaselineQaly,
       discountedFiniteQalyPerPreventedDeath: sensitivity.discountedFiniteQalyPerPreventedDeath,
       positiveNfpQalyScale: sensitivity.positiveNfpQalyScale,
       weightedGiftQaly: sensitivity.weighted.giftQaly,
@@ -107,12 +114,27 @@ assert(fresh.weighted.childFirstShareOfSignedExpectedQaly < 0.15);
 // The separate actuarial-anchored sensitivity extends only positive NFP
 // survival credit. It leaves harm/null and every Child First assumption intact.
 const horizon = calculateNfpMortalityHorizonSensitivity();
+assert.strictEqual(horizon.scenarios.length, 5);
+assert.strictEqual(horizon.scenarios.find(({name}) => name === 'central').donorCostPer10Qaly, 9988359.139298167);
+assert.strictEqual(horizon.scenarios.reduce((sum, scenario) => sum + scenario.weight * scenario.giftQaly, 0), horizon.weighted.giftQaly);
 assert(horizon.discountedFiniteQalyPerPreventedDeath > 9);
 assert(horizon.discountedFiniteQalyPerPreventedDeath < 30);
 assert(horizon.weighted.giftQaly > fresh.weighted.giftQaly);
 assert(horizon.weighted.donorCostPer10Qaly < fresh.weighted.donorCostPer10Qaly);
 assert.strictEqual(horizon.scenarioQalyPerCompletedCourse.find(({ name }) => name === "harm").nfpQalyPerCompletedCourse, -0.01);
 assert.strictEqual(horizon.scenarioQalyPerCompletedCourse.find(({ name }) => name === "null").nfpQalyPerCompletedCourse, 0);
+const zeroPersistence = calculateNfpMortalityHorizonSensitivity(inputs, scenarios, {
+  ...horizon.assumptions,
+  postAge20PersistencePrior: 0,
+});
+const fullPersistence = calculateNfpMortalityHorizonSensitivity(inputs, scenarios, {
+  ...horizon.assumptions,
+  postAge20PersistencePrior: 1,
+});
+assert.strictEqual(zeroPersistence.discountedFiniteQalyPerPreventedDeath, horizon.fullyCreditedObservedWindowQaly);
+assert.strictEqual(fullPersistence.discountedFiniteQalyPerPreventedDeath, horizon.fullLifetimeBaselineQaly);
+assert(zeroPersistence.weighted.giftQaly < horizon.weighted.giftQaly);
+assert(horizon.weighted.giftQaly < fullPersistence.weighted.giftQaly);
 
 // Invalid parameters fail loudly.
 assert.throws(() => calculatePortfolio({ ...inputs, gift: -1 }), RangeError);

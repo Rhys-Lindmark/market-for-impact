@@ -1,5 +1,13 @@
 # Market for Impact backlog
 
+## Safe & Sound — accepted release after Sonrisas
+
+Whole-organization finite stress/family-functioning model, independently audited, giving HOLD. Signed donor/gross $504.929M/$521.229M per 10 QALYs; 35% null, 10% harm and 81.87% favorable-tail dependence. Full GAAP expense is separated from gross resource outlay including direct donor benefits. No central mortality/maltreatment/policy credit or verified marginal offer. 467 tests, lint zero errors, production build, four phone/tablet checks and exact accepted-output comparison passed. Count 74 only after prior releases and canonical verification. Next corrected CIC, then FUF after tree-survival/current-finance audit corrections.
+
+## Sonrisas Dental Health — accepted release after SisterWeb
+
+Whole-organization safety-net dental report, independently audited; donor HOLD. Signed donor/gross $34.684M/$39.453M per 10 QALYs, with finite symptomatic relief only and explicit 76.9% favorable-tail dependence. Approximately matched FY2025 expense/current clinic output, DALY-derived scalar, payer displacement and unverified marginal capacity are disclosed. 464 tests, lint zero errors, production build, four phone/tablet checks and exact accepted-output comparison passed. Count becomes 73 only after prior canonical releases and its verification. Next accepted Safe & Sound; CIC MMR/full-schedule correction and FUF audit remain pending.
+
 ## SisterWeb — accepted release after Ceres
 
 Whole-project finite-morbidity model, independently audited, giving HOLD. Signed weighted donor/gross $63.245M/$73.364M per 10 QALYs; 25% null, 10% harm, strong favorable-tail dependence. New EIN/no filing, unresolved Heluna contract transition, public-funding overlap and expense proxies are disclosed. Marginal offer unverified. Root output matches accepted JSON exactly; 461 tests, lint zero errors, production build, and four phone/tablet checks passed. Report 72 only after canonical publication following Ceres. Next: accepted Sonrisas, Safe & Sound audit, new SF and California-wide research.

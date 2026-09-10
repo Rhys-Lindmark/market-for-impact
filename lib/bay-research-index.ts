@@ -1,4 +1,8 @@
 import data from '@/data/bay/rotacare-cea-v2.json';
+import {calculate as safeSoundModel} from './safe-sound-model.mjs';
+const safeSound=safeSoundModel();
+import {calculate as sonrisasModel} from './sonrisas-model.mjs';
+const sonrisas=sonrisasModel().weighted;
 import {calculate as sisterwebModel} from './sisterweb-model.mjs';
 const sisterweb=sisterwebModel().weighted;
 import {calculate as ceresModel} from './ceres-community-model.mjs';
@@ -25,4 +29,6 @@ export const bayResearch=[{organization:'RotaCare Bay Area',program:'Whole-gift 
 {organization:'Marin Treatment Center',program:'Conditional whole-gift opioid treatment access',href:'/charities/marin-treatment-center',bayUsdPerTenQalys:marinTreatment.inputs.gift*10/marinTreatment.weighted.bayQaly,sfUsdPerTenQalys:null},
 {organization:'HEPPAC',program:'Conditional whole-gift harm reduction',href:'/charities/heppac',bayUsdPerTenQalys:heppac.bayDonorPer10Qaly,sfUsdPerTenQalys:heppac.sfDonorPer10Qaly},
 {organization:'Ceres Community Project',program:'Whole-gift medically tailored meal support',href:'/charities/ceres-community-project',bayUsdPerTenQalys:ceres.inputs.giftUsd*10/ceres.weighted.bayQaly,sfUsdPerTenQalys:null},
-{organization:'SisterWeb Community Doula Network',program:'Whole-project prenatal and postpartum support',href:'/charities/sisterweb',bayUsdPerTenQalys:sisterweb.bayDonorPer10Qaly,sfUsdPerTenQalys:sisterweb.sfDonorPer10Qaly}];
+{organization:'SisterWeb Community Doula Network',program:'Whole-project prenatal and postpartum support',href:'/charities/sisterweb',bayUsdPerTenQalys:sisterweb.bayDonorPer10Qaly,sfUsdPerTenQalys:sisterweb.sfDonorPer10Qaly},
+{organization:'Sonrisas Dental Health',program:'Whole-gift safety-net dental care',href:'/charities/sonrisas-dental-health',bayUsdPerTenQalys:sonrisas.modeledOrdinaryGiftCostPer10Qaly,sfUsdPerTenQalys:null},
+{organization:'Safe & Sound',program:'Whole-gift child and family support',href:'/charities/safe-and-sound',bayUsdPerTenQalys:safeSound.inputs.gift*10/safeSound.weighted.bayQaly,sfUsdPerTenQalys:safeSound.inputs.gift*10/safeSound.weighted.sfQaly}];

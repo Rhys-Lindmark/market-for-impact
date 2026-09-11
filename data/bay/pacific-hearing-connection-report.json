@@ -1,0 +1,334 @@
+{
+  "organization": "Pacific Hearing Connection",
+  "eyebrow": "Exploratory Bay charity research",
+  "program": "Whole-gift cost; supported hearing-aid health quantified",
+  "published": "11 September 2026",
+  "modelVersion": "pacific-hearing-connection-whole-gift-partial-hearing-v1",
+  "donationUrl": "https://www.pacifichearingconnection.org/donate",
+  "nutshell": {
+    "headline": "Low historical expense, but the return depends on unmeasured treatment volume and persistence",
+    "body": "A $10,000 whole gift yields 0.10664 prior-weighted Bay QALYs, or $937,721 per10. This is a prior-driven exploratory hypothesis, not measured or purchasable health impact.",
+    "whyItMayWork": "Refurbished devices, clinical fitting and donated professional resources can lower barriers for people otherwise unable to obtain hearing care.",
+    "whyWeAreCautious": "Annual unique treatment offers are unknown; 91.8% of signed expectation comes from the10% favorable world.",
+    "recommendationBlocker": "HOLD a giving recommendation. Verify unique completed fits, support, actual alternative-care timing and what new funding changes. Unknowns permit transparent modeling, not a claim of verified cost-effectiveness."
+  },
+  "summary": [
+    {
+      "label": "Whole-gift Bay estimate",
+      "value": "$937,721",
+      "detail": "Per10 modeledQALYs; partial hearing-health scope."
+    },
+    {
+      "label": "Whole2024 expense",
+      "value": "$184,099",
+      "detail": "Inventory adjustment and nonmodeled program costs retained; fees not subtracted."
+    },
+    {
+      "label": "Favorable-tail dependence",
+      "value": "91.8%",
+      "detail": "Subjective10% favorable world, not a confidence interval."
+    },
+    {
+      "label": "Verified marginal price",
+      "value": "Unknown",
+      "detail": "$10,000 cap is diagnostic, not an offered tranche."
+    }
+  ],
+  "programSection": {
+    "body": "EIN81-2591375. Pacific Hearing Connection provides low-cost hearing care, including refurbished aids and fitting, in the Bay Area. It is separate from Pacific Hearing Service, which contributes space; clinical time and devices also have opportunity costs.",
+    "steps": [
+      {
+        "title": "Retain whole organization cost",
+        "detail": "All historical expense remains in the denominator, including outreach, administration and inventory adjustment."
+      },
+      {
+        "title": "Model deduplicated person-course offers",
+        "detail": "30/75/150 annual offers are explicit judgments, not screenings, bilateral devices or observed completed patients."
+      },
+      {
+        "title": "Complete treatment and sustain incremental benefit",
+        "detail": "Completion converts offered courses to fits; effective years include ramp, nonuse and alternative-care catch-up."
+      },
+      {
+        "title": "Count Bay health and independent harms",
+        "detail": "MostlyBay is qualitative;85/95/99% are priors. Incremental harms are subtracted before residence allocation."
+      }
+    ],
+    "boundary": "Only hearing-aid health quantified; other diagnostic/education benefits remain unquantified. Whole accounting expense is not complete societal resources. Do not credit the same outcome again to funders, suppliers, supporting practice or another hearing charity."
+  },
+  "model": {
+    "headline": "$937,721 per10 modeled Bay QALYs",
+    "body": "The accepted Ear of the Lion model also lacks measured annual courses. PHC is therefore modeled under the same exploratory standard, with independently stated throughput and geography judgments; common clinical/funding priors prevent silent favorable transfer.",
+    "equation": {
+      "label": "Signed Bay health",
+      "expression": "gift / whole expense × annual person-course offers × funding response × (utility × clinical transfer × completion × effective incremental years − harm per offer) × Bay share",
+      "result": "0.1066415352609194 Bay QALYs per$10000"
+    },
+    "inputs": [
+      {
+        "key": "expense",
+        "label": "WholeFY2024 expense",
+        "confidence": "High accounting; incomplete societal resources",
+        "best": "184099",
+        "range": "No lower program-only headline",
+        "basis": "Original990-EZ;45900inventory adjustment retained, donatedspace/labor not fully valued."
+      },
+      {
+        "key": "courses",
+        "label": "Annual person-course offers",
+        "confidence": "Very low",
+        "best": "75",
+        "range": "30–150",
+        "basis": "Analyst prior, not empirical range. Existing500contact target and85service target do not identify fittedpeople. No additional dedup factor on person-defined denominator."
+      },
+      {
+        "key": "clinical",
+        "label": "HUI3 anchor × clinical transfer × completion",
+        "confidence": "External controlled evidence; uncertain local transfer",
+        "best": ".12 × .5 × .8",
+        "range": "Transfer0–.75; completion.6–.9",
+        "basis": "Common Ear benchmark; localage/severity/device/support distribution unknown. .12 is utility not annualQALYs."
+      },
+      {
+        "key": "years",
+        "label": "Effective incremental exposure",
+        "confidence": "Very low",
+        "best": ".5years",
+        "range": ".25–2years",
+        "basis": "Finite present-value exposure until alternativeaccess/needresolution; includes ramp/nonuse/mortality/catchup. No further discount or adherence factor. Two-year favorable case extrapolates short-termutility with longer communication evidence."
+      },
+      {
+        "key": "funding",
+        "label": "Cash-created capacity",
+        "confidence": "Very low",
+        "best": ".5",
+        "range": "0–.75",
+        "basis": "Existing grants, reserves, donatedstock and staffing constrain response. Not a measured funding gap."
+      },
+      {
+        "key": "bay",
+        "label": "Bay resident share",
+        "confidence": "Qualitative scope, exact share unknown",
+        "best": ".95",
+        "range": ".85–.99",
+        "basis": "Official mostlyBay with occasionalexceptions, not provider address."
+      },
+      {
+        "key": "harm",
+        "label": "Additional health harm per offer",
+        "confidence": "Very low",
+        "best": ".0005QALY",
+        "range": "0–.003",
+        "basis": "Hypothetical netdiscomfort/accessburden not already in nonuse/utility; not observed localadverseevent rate."
+      }
+    ],
+    "giftHeading": "$10,000 whole gift; no scaling assurance",
+    "sensitivity": [
+      {
+        "case": "funding_null",
+        "headline": "Not defined per10; weight0.2",
+        "detail": "BayQ0; complete matrix in model/results."
+      },
+      {
+        "case": "clinical_null",
+        "headline": "Not defined per10; weight0.2",
+        "detail": "BayQ0; complete matrix in model/results."
+      },
+      {
+        "case": "harm",
+        "headline": "Not defined per10; weight0.1",
+        "detail": "BayQ-0.00580530040901906; complete matrix in model/results."
+      },
+      {
+        "case": "cautious",
+        "headline": "$82,509,356 per10; weight0.2",
+        "detail": "BayQ0.0012119837696022249; complete matrix in model/results."
+      },
+      {
+        "case": "central",
+        "headline": "$2,199,018 per10; weight0.2",
+        "detail": "BayQ0.04547485320398264; complete matrix in model/results."
+      },
+      {
+        "case": "favorable",
+        "headline": "$102,161 per10; weight0.1",
+        "detail": "BayQ0.9788469790710433; complete matrix in model/results."
+      },
+      {
+        "case": "generic_utility",
+        "headline": "Utility .01 rather than .12",
+        "detail": "$12,495,531 per10; BayQ0.008002861232271768."
+      },
+      {
+        "case": "quarter_year",
+        "headline": "Cap effective exposure at .25years",
+        "detail": "$6,156,758 per10; BayQ0.01624231391805496."
+      },
+      {
+        "case": "half_courses",
+        "headline": "Half annual course offers",
+        "detail": "$1,875,442 per10; BayQ0.0533207676304597."
+      },
+      {
+        "case": "all_bay",
+        "headline": "100% Bay diagnostic",
+        "detail": "$924,888 per10; BayQ0.10812117393359008."
+      },
+      {
+        "case": "full_funding",
+        "headline": "100% funding response diagnostic",
+        "detail": "$599,875 per10; BayQ0.16670134003986986."
+      },
+      {
+        "case": "extra_resources",
+        "headline": "Add50% cost diagnostic, not measured societal cost",
+        "detail": "$1,406,581 per10; BayQ0.07109435684061294."
+      }
+    ],
+    "uncertaintyBoundary": "Subjective mass below$1M/10 is0.1; below$100k/10 is0. These are selected-world masses, not calibrated probabilities. Excluding favorable world yields$10,277,683 per10.",
+    "fundingBoundary": "2024revenue156127, netassets241791, cash/savings/investments163983. Programrevenue15604 is not proven entirelypatientfees. Current2026–27 AbilityCentral support is for education/training/screening; grant amount and remainingbalance unknown. Past129987SCCHA and26500AbilityCentral commitments are not added as currentmarginal cash. Patient sliding fees and requiredvolunteer service may impede completion; their fullburdens are not priced."
+  },
+  "evidence": [
+    {
+      "key": "local_delivery",
+      "design": "Official clinical pathway and original990-EZ",
+      "population": "Low-income/underinsured people; mostlyBay, exact demographicsunknown",
+      "result": "Real treatment pathway and wholeexpense; no annual distinct treatmentoffers/fits in return or prior grant records.",
+      "transfer": "30/75/150 is a labeled prior, never servicecount-as-health."
+    },
+    {
+      "key": "hui3",
+      "design": "Community-centre randomized delayed-start study;3month endpoint",
+      "population": "Older aid-seeking adults;264fitted and163delayed analyzed",
+      "result": "HUI3 difference approximately.12 at3months. At1year66%response and71.4%use amongrespondents, not demonstratedutilitypersistence.",
+      "transfer": "Controls received modifiedHUI3 excludingaid-use questions. Endpointutility needs integration overtime. Five-year model not imported; .5effectiveyears judgmental."
+    },
+    {
+      "key": "generic_null",
+      "design": "ACHIEVE randomized generic quality-of-life analysis",
+      "population": "Selected70–84yearolds willingto use aids with structured support",
+      "result": "No significant overall RAND36physical/mental component effect over3years.",
+      "transfer": "RAND36points notQALYs; instrument-sensitive null/lowutility sensitivity retained, not proof hearingcare haszero value."
+    },
+    {
+      "key": "communication",
+      "design": "ACHIEVE randomized communication follow-up",
+      "population": "Trial participants with fitting and reinforcement",
+      "result": "Communication benefit persisted3years; this does not measure3yearHUI3 benefit.",
+      "transfer": "Supports considering longer exposure, not automatically transferring trial-support quality or adding cognition/survival bonuses."
+    }
+  ],
+  "reservations": [
+    "Annual course volume and its clinical completion are not measured; result is prior-driven.",
+    "Favorable duration and throughput dominate expectation; rank alone would overstate certainty.",
+    "Inventory adjustment may be stockconsumption orwritedown; neitherassumption justifies removing it.",
+    "Screening/grant targets and IOI-HA/COSI improvement percentages are not treatment counts or QALYs.",
+    "Currentpublic/charitable support and OTC/insurance/otherclinic alternatives can displace newgift impact.",
+    "Requiredvolunteer hours, patientfees and transport have unquantifiedcosts; nonuse is lostbenefit, not automaticallyharm.",
+    "Complete societal resource cost and all organizationalhealth benefits remain unknown."
+  ],
+  "excludedBenefits": [
+    "Dementia and mortality prevention",
+    "Unquantified screening, waxremoval, education and communityservice benefits",
+    "Automatic extra benefit forbilateral orreplacementdevices",
+    "Lifetimebenefits, productivity and caregiverbonus"
+  ],
+  "sources": [
+    {
+      "publisher": "Pacific Hearing Connection",
+      "title": "Current organization identity and Bay mission",
+      "url": "https://www.pacifichearingconnection.org/",
+      "published": "Current",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Pacific Hearing Connection",
+      "title": "Eligibility, fees, donated resources and geography",
+      "url": "https://www.pacifichearingconnection.org/faq",
+      "published": "Current",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Pacific Hearing Connection",
+      "title": "Donation uses",
+      "url": "https://www.pacifichearingconnection.org/donate",
+      "published": "Current",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "IRS via ProPublica",
+      "title": "FY2024 Form990-EZ",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202502889349201655/IRS990EZ",
+      "published": "Filed2025-10-15",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "IRS via ProPublica",
+      "title": "FY2024 ScheduleO",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202502889349201655/IRS990ScheduleO",
+      "published": "Filed2025-10-15",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "El Camino Health",
+      "title": "FY25 application summary, PDFpp183–184",
+      "url": "https://www.elcaminohealth.org/sites/default/files/2024-05/packet_fincomm_052824.pdf",
+      "published": "2024-05-28",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Ability Central",
+      "title": "2026–2027 grant portfolio",
+      "url": "https://abilitycentral.org/philanthropy/grants-2026-2027",
+      "published": "2026–2027",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Santa Clara County Housing Authority",
+      "title": "Approved board minutes",
+      "url": "https://res.cloudinary.com/dpmykpsih/image/upload/santa-clara-site-299/media/ed0ee46f68794b1e8ec7a288873f0e6e/3-27-25-gb-minutes-signed.pdf",
+      "published": "2025-03-27",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Ability Central",
+      "title": "2025 award announcement",
+      "url": "https://philanthropy.abilitycentral.org/2025/01/14/ability-central-awards-grants-to-12-organizations-supporting-disability-communities/",
+      "published": "2025-01-14",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Kaur et al.",
+      "title": "Cost-utility analysis of hearing aid device for older adults in the community: delayed start study",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7709244/",
+      "published": "2020",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "ACHIEVE investigators",
+      "title": "Hearing intervention and health-related quality of life",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11582982/",
+      "published": "2024",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "ACHIEVE investigators",
+      "title": "Three-year communication outcomes",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11637286/",
+      "published": "2024",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    }
+  ]
+}

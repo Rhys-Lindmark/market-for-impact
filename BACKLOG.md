@@ -1,5 +1,11 @@
 # Market for Impact backlog
 
+## Pacific Hearing Connection — candidate93
+
+615tests, lint0errors/3existingwarnings, productionbuild and two phone/tablet checks pass, including sixth-place ordering. Canonical publication remains. Recorded wall gap around07:54–08:32 is not asserted as active research; original worker research remains5m34s.
+
+92/100 verified via Season of Sharing PR287/v202. Pacific Hearing Connection independent audit accepted whole accounting expense/partial hearing-health model, $937,721 per10BayQ. 91.79%favorable-tail dependence; HOLD giving, no priced marginal offer. Symmetric clinical assumptions with Ear of the Lion; unknown volume/geography explicitly prior-driven. Validate and exact-source publish before count93. Next accepted Dentists on Wheels and BATS; five deliberate new candidates; after100 top-ten comparability/funding synthesis.
+
 ## Season of Sharing — candidate92
 
 Verification:594tests, lint0errors/3existingwarnings, productionbuild, two phone/tablet report/index/API checks pass. Exact-source publish and canonical verification remain.

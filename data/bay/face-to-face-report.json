@@ -1,0 +1,353 @@
+{
+  "organization": "Face to Face — Sonoma County AIDS Network",
+  "eyebrow": "Exploratory whole-gift Bay research",
+  "program": "Finite unique-person overdose prevention within a whole HIV-support organization",
+  "published": "11 September 2026",
+  "modelVersion": "face-to-face-whole-gift-unique-cohort-v1",
+  "nutshell": {
+    "headline": "A credible rescue mechanism; whole-gift value remains highly uncertain",
+    "body": "Signed prior-weighted estimate: $1,328,757 per 10 Bay QALYs, or 0.075258 per $10,000. This is not measured Face to Face impact.",
+    "whyItMayWork": "Low-barrier naloxone access can reach a witnessed overdose before an effective alternative. The organization describes ongoing county outreach and hundreds of reversals.",
+    "whyWeAreCautious": "The favorable 10% world contributes 92.6% of signed expected health; central is $3,598,461 per 10. Absolute reporting, recurrence, alternatives and cash response are not verified.",
+    "recommendationBlocker": "HOLD giving recommendation. Exploratory publication is defensible; no verified marginal funding offer or measured mortality benefit."
+  },
+  "summary": [
+    {
+      "label": "Gross annual cost",
+      "value": "$2,263,089",
+      "detail": "All programs and netted fundraising costs included."
+    },
+    {
+      "label": "Survival model",
+      "value": "One finite trajectory per person",
+      "detail": "A reported rescue is not equated with a death prevented."
+    },
+    {
+      "label": "Subjective scenario mass",
+      "value": "10% below $1M per 10 QALYs",
+      "detail": "0% below $100K; judgment weights, not calibrated probabilities."
+    }
+  ],
+  "programSection": {
+    "body": "Face to Face provides HIV-related support, housing assistance, testing, prevention supplies, overdose education and referral services in Sonoma County. This narrow health model credits only incremental overdose-survival benefit, while charging the whole organization.",
+    "steps": [
+      {
+        "title": "Fund additional access",
+        "detail": "A small unrestricted gift may expand or maintain delivery beyond existing public/donor support; the fraction is uncertain."
+      },
+      {
+        "title": "Reach a genuinely different rescue opportunity",
+        "detail": "Reported events are discounted and converted to unique-person equivalents; alternatives and nonfatal overdoses reduce causal mortality benefit."
+      },
+      {
+        "title": "Compare finite survival",
+        "detail": "Integrate with-versus-without survival for each unique person, one support year and a finite common-risk follow-up. Subtract independent morbidity harm."
+      }
+    ],
+    "boundary": "No added HIV prevention, PrEP, housing, MOUD referral, drug-checking or other health credit. These omissions may understate true portfolio benefits, but no defensible nonoverlapping local outcomes were identified. Whole-cost dilution remains. Medication, volunteers, EMS and partner resource values are not fully reconciled."
+  },
+  "model": {
+    "headline": "$1,328,757 per 10 Bay QALYs",
+    "body": "Six correlated judgment worlds, including funding-null, rescue-null and harm, are averaged in signed QALYs before inversion. No coefficient tuned after first output.",
+    "equation": {
+      "label": "Unique-cohort signed health",
+      "expression": "gift / gross expense × (reported events × validity / events per person) × funding × [utility × integral(discounted survival with rescue − survival without rescue) − harm] × Bay share",
+      "result": "0.07525830883941727 Bay QALYs/$10,000"
+    },
+    "inputs": [
+      {
+        "key": "expense",
+        "label": "Gross whole annual expense",
+        "best": "2263089",
+        "range": "2024 historical basis",
+        "basis": "Part IX plus netted event costs; all portfolio costs, no public-revenue subtraction.",
+        "confidence": "High accounting"
+      },
+      {
+        "key": "events",
+        "label": "Reported rescue-event equivalent",
+        "best": "200",
+        "range": "100–500",
+        "basis": "Analyst numerical interpretation of undated hundreds, not observed exact annual throughput.100 discounts stale/ambiguous claim; no inflation for unreported rescues.",
+        "confidence": "Low"
+      },
+      {
+        "key": "validity",
+        "label": "Credible relevant-event fraction",
+        "best": ".5",
+        "range": ".3–.8",
+        "basis": "Discounts uncertain reporting year, duplicate reports of same event, and misclassification; distinct from repeated genuine events in same person.",
+        "confidence": "Very low"
+      },
+      {
+        "key": "repeats",
+        "label": "Rescue opportunities per unique person",
+        "best": "2",
+        "range": "1.5–3; diagnostic 10",
+        "basis": "Unobserved recurrence; unique cohort=events×validity/repeats. Each person has one finite survival trajectory.",
+        "confidence": "Very low"
+      },
+      {
+        "key": "fatality",
+        "label": "Otherwise-fatal probability per opportunity",
+        "best": ".15",
+        "range": ".05–.25 plus zero",
+        "basis": "Net of equally timely alternative naloxone/EMS, spontaneous recovery and attribution. Not certainty of death after an observed reversal.",
+        "confidence": "Very low"
+      },
+      {
+        "key": "otherHazard",
+        "label": "Common mortality hazard in support year",
+        "best": ".2/year",
+        "range": ".1–.3",
+        "basis": "Includes other competing fatal risks; active incremental hazard removed is repeats×fatality. No org-specific mortality estimate.",
+        "confidence": "Very low"
+      },
+      {
+        "key": "postHazard",
+        "label": "Common post-support mortality hazard",
+        "best": ".25/year",
+        "range": ".15–.5",
+        "basis": "Both arms face same hazard after one year; accounts for later overdose and other mortality without assuming continuing donor support.",
+        "confidence": "Very low"
+      },
+      {
+        "key": "horizon",
+        "label": "Finite follow-up",
+        "best": "5 years",
+        "range": "2–8 years",
+        "basis": "One year active support, finite subsequent survival credit, 3% discount; favorable 8 years is assumption not measured life expectancy.",
+        "confidence": "Very low"
+      },
+      {
+        "key": "utility",
+        "label": "Utility while alive",
+        "best": ".7",
+        "range": ".6–.8",
+        "basis": "Judgment, not measured QALYs or valuation of a person; only health-adjusted survival in this model.",
+        "confidence": "Very low"
+      },
+      {
+        "key": "funding",
+        "label": "Gift capacity response",
+        "best": ".3",
+        "range": "0–.6",
+        "basis": "Unknown additional service versus funded public/donor baseline, reserves and substitution; no verified marginal tranche.",
+        "confidence": "Very low"
+      },
+      {
+        "key": "bay",
+        "label": "Bay health fraction",
+        "best": ".98",
+        "range": ".95–.99",
+        "basis": "Sonoma service footprint; rescue location and residence not census-verified.",
+        "confidence": "Moderate"
+      },
+      {
+        "key": "harm",
+        "label": "Independent harm QALY per additional person",
+        "best": ".001",
+        "range": "0–.01",
+        "basis": "Judgment for morbidity such as precipitated withdrawal or delay; no measured incidence, no repeat event harm multiplier.",
+        "confidence": "Very low"
+      }
+    ],
+    "giftHeading": "Small $10,000 diagnostic; no linear $100,000 capacity assurance",
+    "sensitivity": [
+      {
+        "case": "funding_null",
+        "headline": "Undefined per 10; weight 0.2",
+        "detail": "Bay QALYs 0; unique baseline person-equivalents 50; finite Q per unique 0.42882628927998306. Full matrix saved."
+      },
+      {
+        "case": "rescue_null",
+        "headline": "Undefined per 10; weight 0.2",
+        "detail": "Bay QALYs 0; unique baseline person-equivalents 50; finite Q per unique 0. Full matrix saved."
+      },
+      {
+        "case": "harm",
+        "headline": "Undefined per 10; weight 0.1",
+        "detail": "Bay QALYs-0.0006495546573731746; unique baseline person-equivalents 50; finite Q per unique 0. Full matrix saved."
+      },
+      {
+        "case": "cautious",
+        "headline": "$300,914,228 per 10; weight 0.2",
+        "detail": "Bay QALYs 0.00033232061024485073; unique baseline person-equivalents 10; finite Q per unique 0.08116538079141149. Full matrix saved."
+      },
+      {
+        "case": "central",
+        "headline": "$3,598,461 per 10; weight 0.2",
+        "detail": "Bay QALYs 0.027789655874849602; unique baseline person-equivalents 50; finite Q per unique 0.42882628927998306. Full matrix saved."
+      },
+      {
+        "case": "favorable",
+        "headline": "$143,474 per 10; weight 0.1",
+        "detail": "Bay QALYs 0.696988690081357; unique baseline person-equivalents 266.6666666666667; finite Q per unique 0.9963001500300053. Full matrix saved."
+      },
+      {
+        "case": "half_events",
+        "headline": "Half categorical event rate",
+        "detail": "$2,657,514 per 10; Bay QALYs 0.037629154419708634."
+      },
+      {
+        "case": "repeat10",
+        "headline": "Ten rescue opportunities per person",
+        "detail": "$2,828,569 per 10; Bay QALYs 0.03535356767227561."
+      },
+      {
+        "case": "one_year",
+        "headline": "No survival credit after support year",
+        "detail": "$10,500,290 per 10; Bay QALYs 0.009523546282645678."
+      },
+      {
+        "case": "half_fatality",
+        "headline": "Half otherwise-fatal probability after alternatives",
+        "detail": "$2,445,781 per 10; Bay QALYs 0.040886731249627634."
+      },
+      {
+        "case": "half_funding",
+        "headline": "Half gift response",
+        "detail": "$2,657,514 per 10; Bay QALYs 0.037629154419708634."
+      },
+      {
+        "case": "full_funding",
+        "headline": "Full response except funding-null world",
+        "detail": "$739,977 per 10; Bay QALYs 0.1351393419314912."
+      },
+      {
+        "case": "double_resources",
+        "headline": "Double whole expense for hypothetical omitted resources",
+        "detail": "$2,657,514 per 10; Bay QALYs 0.037629154419708634."
+      }
+    ],
+    "uncertaintyBoundary": "Without favorable world, renormalized cost is $16,188,681 per 10. Prior weights are subjective. Event opportunity counts are modeled as a constant hazard in a closed aligned cohort, not recovered person-time; selection of survivors and actual event timing are unknown. First-year full removal applies only to the net otherwise-fatal component after alternatives, not every overdose. Repeated events never restart follow-up. During the one-year active interval, survival with rescue is exp(-otherHazard*t), and counterfactual survival is exp(-(otherHazard + repeats*fatality)*t). The repeats parameter serves both as the event-to-person divisor and as a modeled annual Poisson rescue-opportunity rate. Neither that prospective rate nor net fatality is statistically inferred from reported successful reversals; both are explicit analyst transfers from a selected-survivor activity description.",
+    "fundingBoundary": "2024 gross cost $2,263,089 includes $59,068 event costs netted from reported revenue and excluded from Part IX. Government grants $132,330, noncash contributions $397,827, net assets $1,482,170 and public investments $920,149 are not a funding gap. State medication supply and city-funded activities already exist. In-kind contributions cannot be subtracted without expense reconciliation. Paid/donated inputs, restricted public contracts, current allocation and complete societal cost remain incompletely identified. A general donation mechanism, if offered, would not establish a cash-priced additional cohort, current expansion capacity, or the modeled funding response."
+  },
+  "evidence": [
+    {
+      "key": "categorical_events",
+      "design": "Current official organizational service page",
+      "population": "Unspecified last-year overdose activity",
+      "result": "Hundreds of reversals and thousands of kits claimed; exact year, verification, repeated people and numerator definitions absent.",
+      "transfer": "100/200/500 event equivalents are analyst priors, not observed precision. Reporting validity and unique-person recurrence are separate assumptions."
+    },
+    {
+      "key": "city_mixed",
+      "design": "Provider report to public funder",
+      "population": "Mixed harm-reduction/HIV-HCV participants",
+      "result": "425 cumulative unduplicated participants; 121 quarter, with inconsistent term and quarter labels.",
+      "transfer": "Not naloxone-specific people, rescue events, deaths prevented or an extra additive cohort; not used in survival denominator."
+    },
+    {
+      "key": "observational_positive",
+      "design": "Massachusetts interrupted time series, 19 communities, 2002–2009",
+      "population": "Communities with overdose education/naloxone rollout",
+      "result": "Adjusted mortality ratios .73(low) and .54(high) versus no implementation; acute-care differences nonsignificant.",
+      "transfer": "Observational pre-fentanyl community effect does not identify current Sonoma net rescue probability or donor marginal impact."
+    },
+    {
+      "key": "randomized_null",
+      "design": "HEALing Communities cluster-randomized multicomponent intervention",
+      "population": "67 communities in four states during fentanyl/pandemic period",
+      "result": "Primary opioid mortality reduction not statistically significant; a RR.91,95% CI.76–1.09. Naloxone distribution increased 79%.",
+      "transfer": "Not proof naloxone pharmacology fails; shows more distribution need not translate into demonstrated marginal mortality reduction. Supports explicit null and alternatives."
+    },
+    {
+      "key": "survival_bridge",
+      "design": "Analyst finite survival model, not a clinical study",
+      "population": "Synthetic unique rescued-person cohort",
+      "result": "Counterfactual excess hazard only during one support year; common post-support mortality; finite 2–8 years and 3% discount.",
+      "transfer": "No source validates the org-specific hazard, utility, recurrence, finite horizon or capacity coefficients. Cohort mathematics prevents repeated rescue double credit but does not make those inputs empirical. During the one-year active interval, survival with rescue is exp(-otherHazard*t), and counterfactual survival is exp(-(otherHazard + repeats*fatality)*t). The repeats parameter serves both as the event-to-person divisor and as a modeled annual Poisson rescue-opportunity rate. Neither that prospective rate nor net fatality is statistically inferred from reported successful reversals; both are explicit analyst transfers from a selected-survivor activity description."
+    }
+  ],
+  "reservations": [
+    "The primary categorical event claim is weaker than an audited annual rescue ledger.",
+    "Whole portfolio costs are dated 2024; current prices and program mix can differ.",
+    "Reported successful rescues are selected survivors, not a prospective at-risk denominator.",
+    "EMS, peers, pharmacies and state-supported distribution are real alternatives.",
+    "Unique-person and hazard assumptions are not measured.",
+    "Favorable world drives 92.6% of expected benefit.",
+    "No verified donation route is included; donationUrl omitted."
+  ],
+  "excludedBenefits": [
+    "HIV transmission prevention and PrEP treatment",
+    "Housing and non-medical case-management health",
+    "Referral contacts counted as completed MOUD",
+    "Drug checking credited independently",
+    "Unlimited lifetime survival or repeated rescue restart"
+  ],
+  "sources": [
+    {
+      "publisher": "Face to Face",
+      "title": "Current overdose prevention services",
+      "url": "https://f2f.org/services/overdose-prevention/",
+      "published": "Undated; retrieved 2026-09-11",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "IRS via ProPublica",
+      "title": "Original FY June 2024 Form 990",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202541299349302689/IRS990",
+      "published": "Submitted 2025-05-09",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Face to Face via City of Santa Rosa",
+      "title": "Opioid Settlement Funds status report",
+      "url": "https://www.srcity.org/DocumentCenter/View/46925/-Opioid-Settlement-Funds-Program-FY-20242025-Year-End-Report-PDF?bidId=",
+      "published": "Signed 2025-07-17",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Face to Face",
+      "title": "COPHRI",
+      "url": "https://f2f.org/what-is-cophri/",
+      "published": "2026-07-22",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Walley et al.",
+      "title": "Massachusetts overdose education and naloxone study",
+      "url": "https://www.bmj.com/content/346/bmj.f174",
+      "published": "2013-01-31",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "NIH",
+      "title": "HEALing Communities randomized trial results",
+      "url": "https://www.nih.gov/news-events/news-releases/nih-funded-intervention-did-not-impact-opioid-related-overdose-death-rates-over-evaluation-period",
+      "published": "2024-06-16",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "HEALing Communities investigators",
+      "title": "Exploratory community-level cohort analysis",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13430559/",
+      "published": "2026",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "DHCS",
+      "title": "Naloxone Distribution Project",
+      "url": "https://www.dhcs.ca.gov/individuals/naloxone-distribution-project/",
+      "published": "Current program",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Face to Face",
+      "title": "Syringe services",
+      "url": "https://f2f.org/services/syringe-services-program/",
+      "published": "Undated",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    }
+  ]
+}

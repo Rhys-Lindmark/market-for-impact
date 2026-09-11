@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Face to Face — final candidate 100
+
+99/100 verified via PR295. Face to Face Sonoma County AIDS Network, EIN68-0052664: whole gross cost $2,263,089; partial overdose-survival model $1.329M/10 Bay QALYs. Each unique person receives one finite survival trajectory, not a lifetime per reversal. Independent audit accepted; no verified marginal offer and HOLD giving. Renderer summary schema corrected at integration without numerical changes. Verification: 715 tests, lint zero errors/three existing warnings, production build; responsive/canonical publication gates remain. After100: HEPPAC corrected cohort model, source/readability repairs, scope-aware top-ten recommendations, public-source marginal funding diligence, and donor homepage/library synthesis. Count alone does not finish the goal.
+
 ## Oakland Eviction Defense Center — candidate 99
 
 98/100 verified via PR294. Distinct Collective Legal Services EIN94-3188860 adds an independently audited whole-cost, partial housing-health report: $21.355M per 10 Bay QALYs, HOLD giving. Approximately 1,200 clients are not full cases or prevented evictions; public funding remains in full cost. Verification: 693 tests, lint zero errors/three existing warnings, production build and two phone/tablet interactions pass. Canonical publication pending. Face to Face is accepted for final report100; post100 HEPPAC correction, comparable top-ten funding diligence and donor design remain required.

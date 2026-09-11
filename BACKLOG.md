@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Dentists on Wheels — accepted release candidate, September 11
+
+93/100 canonically verified; this distinct EIN 84-2234407 report is the candidate for 94. Whole FY2024 expense $103,749 and 249 reported patients anchor an explicitly partial symptomatic-health model, not 512 procedure-as-person outcomes. Signed expectation $1,584,848 per 10 Bay QALYs; favorable tail 86.5%; HOLD giving, no verified marginal offer. Independent audit preserved coefficients. Verification: 634 tests passed, lint zero errors with three existing warnings, production build and phone/tablet report-table-API checks passed. Next: canonical publication, then audited BATS and Health Mobile; HIF also accepted. Post-100 synthesis and marginal funding diligence remain required.
+
 ## Donor-route repair
 
 Verification:615tests, lint0errors3existingwarnings, productionbuild and two phone/tablet donor-flow checks pass. Exact-source deploy/canonical checks remain; count stays93.

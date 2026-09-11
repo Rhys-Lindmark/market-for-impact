@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Research-list wording cleanup
+
+Remove whole-gift/whole-organization wording from /givebetter/research only, including its introduction. Display-only formatter leaves report/model scopes and numeric sources unchanged. Formatter tests, lint and production build pass; rendered89 rows retain identical order and prices within cross-runtime floating-point serialization tolerance. Canonical release verification follows. Next: top-ten V2 and staff-giving cohort; original110 milestone remains complete.
+
 ## Selected ten alpha milestone — final seven release candidate
 
 103 published before this release; seven distinct reviewed organizations complete the original110 after canonical verification: Alameda Health Consortium, Rainbow Community Center, Easy Does It, Acknowledge Alliance, Marin County Bicycle Coalition, Silicon Valley Bicycle Coalition and Oakland LGBTQ Community Center. Independent audits accept exploratory publication with giving on hold. Unfavorable results retained; these central scenarios do not change the homepage four. Finite partial-health models preserve total organization expense, public/partner baselines and unquantified benefits rather than declaring them zero. Original snapshots and model tests retained; production build and lint pass; final responsive/canonical gates remain. Staff-giving extra cohort separate: Bike East Bay draft; Causa Justa closure checkpoint; Cityside unestimated skeleton, neither counted as published reports. Next: fulfill list wording cleanup, extra cohort diligence and freeze diverse top-ten V2 set under PR305 requirements.

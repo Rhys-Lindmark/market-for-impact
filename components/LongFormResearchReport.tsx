@@ -26,7 +26,7 @@ function Markdown({text}:{text:string}) {
   return <p key={i}><Inline text={block.text}/></p>;
  })}</>;
 }
-export default function LongFormResearchReport({organization,program,markdown,sources,donationUrl,modelVersion,modelUrl,minutes,modelLabel,sectionTitles={},sectionOrder=[]}:{organization:string;program:string;markdown:string;sources:Source[];donationUrl:string;modelVersion:string;modelUrl:string;minutes:number;modelLabel:string;sectionTitles?:Record<string,string>;sectionOrder?:string[]}){
+export default function LongFormResearchReport({organization,program,markdown,sources,donationUrl,modelVersion,modelUrl,minutes,modelLabel,sectionTitles={},sectionOrder=[]}:{organization:string;program:string;markdown:string;sources:Source[];donationUrl?:string;modelVersion:string;modelUrl:string;minutes:number;modelLabel:string;sectionTitles?:Record<string,string>;sectionOrder?:string[]}){
  const sections=(reportSections(markdown) as Section[]).map(section=>({...section,title:sectionTitles[section.id]??section.title}));
  if(sectionOrder.length){if(sectionOrder.length!==sections.length||new Set(sectionOrder).size!==sections.length||sectionOrder.some(id=>!sections.some(s=>s.id===id)))throw Error('Incomplete report section order');sections.sort((a,b)=>sectionOrder.indexOf(a.id)-sectionOrder.indexOf(b.id));}
  return <main className="givebetter charity-report">
@@ -35,7 +35,7 @@ export default function LongFormResearchReport({organization,program,markdown,so
    <header className="report-heading"><h1>{organization}</h1><p className="report-program">{program}</p>
     <details className="report-research-effort"><summary>V2 research: {minutes} minutes on {modelLabel}</summary><p>Source review, model revision and report preparation. Independent audit and publishing are separate.</p></details>
     <p className="report-date">Updated: 11 September 2026 · V2 beta research</p>
-    <a className="report-donate" href={donationUrl} target="_blank" rel="noreferrer">Donate</a>
+    {donationUrl?<a className="report-donate" href={donationUrl} target="_blank" rel="noreferrer">Donate</a>:<p className="report-date">Donation route not verified.</p>}
    </header>
    <nav className="report-contents" aria-label="Table of Contents"><h2>Table of Contents</h2>{sections.map((section)=><a key={section.id} href={'#'+section.id}>{section.title}</a>)}<a href="#sources">Sources</a></nav>
    <article>{sections.map((section)=><section key={section.id} id={section.id}><h2>{section.title}</h2><Markdown text={section.markdown}/></section>)}

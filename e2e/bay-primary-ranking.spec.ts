@@ -11,7 +11,7 @@ test('Bay-first table selects all explicit Bay outputs and homepage shares its p
  }
  const slugs=await page.locator('[data-research-slug]').evaluateAll(nodes=>nodes.map(n=>n.getAttribute('data-research-slug')));
  expect(slugs.indexOf('spur')).toBeLessThan(slugs.indexOf('operation-access'));
- await page.goto('/');await expect(page.locator('#project-homeless-connect')).toContainText('$774K');
+ await page.goto('/');await expect(page.locator('.sf-home-charity')).toHaveCount(4);
  const response=await page.request.get('/api/phc-portfolio-model');expect(response.ok()).toBe(true);
  const central=(await response.json()).evaluated.find((s:{id:string})=>s.id==='central');
  expect(central.donor_sf_per_10q).toBe(798863.3403891586);expect(central.donor_bay_per_10q).toBe(774408.3401731638);

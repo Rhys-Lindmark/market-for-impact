@@ -17,7 +17,7 @@ test(key+' whole-gift API and report match every signed scenario',async({page,re
 });
 }
 test('new shortlist has explicit whole-gift boundaries',async({page})=>{
- await page.goto('/');await expect(page.locator('.sf-home-research-note')).toHaveCount(1);
+ await page.goto('/');await expect(page.locator('.sf-home-research-note')).toHaveCount(2);
  await expect(page.locator('#pacific-vision-foundation')).toContainText('unrestricted');
- await expect(page.locator('#project-homeless-connect')).toContainText('whole-gift');
+ await expect(page.locator('#recares')).toContainText('Whole-organization research');
 });

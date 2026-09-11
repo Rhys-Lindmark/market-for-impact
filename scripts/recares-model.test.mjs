@@ -14,6 +14,8 @@ test('ReCARES full expense and signed Bay expectation match independent audit',(
 test('ReCARES preserves zero, scale bound and complete report evidence',()=>{
  assert.equal(calculate({...inputs,giftUsd:0}).weighted.bayDonorCostPer10Qaly,null);
  assert.throws(()=>calculate({...inputs,giftUsd:100000}),RangeError);
+ assert.throws(()=>calculate({...inputs,maxModeledGiftUsd:100000,giftUsd:100000}),RangeError);
+ for(const key of ['paymentFeeUsd','totalExpenseUsd','reportedRecipientEquivalents'])for(const value of [NaN,Infinity])assert.throws(()=>calculate({...inputs,[key]:value}),RangeError);
  assert.ok(report.evidence.length>=4);assert.ok(report.evidence.some(r=>r.key==='controlled-aids'));
  assert.equal(new Set(report.sources.map(s=>s.url)).size,report.sources.length);
  assert.ok(report.nutshell.body.includes('$185,910'));

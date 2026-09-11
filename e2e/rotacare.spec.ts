@@ -15,5 +15,5 @@ test('Bay research stays outside SF ranking and exposes full-resource and durati
  expect(d.evaluated).toHaveLength(10);expect(d.evaluated[0].sf.donor_usd_per_10_qaly).toBeNull();
  expect(d.evaluated[0].bay.donor_usd_per_10_qaly).toBeCloseTo(3395513.98448,2);
  await page.goto('/');
- expect(await page.locator('.sf-home-charity').evaluateAll(ns=>ns.map(n=>n.id))).toEqual(['glide','breathe-california','pacific-vision-foundation','project-homeless-connect']);
+ expect(await page.locator('.sf-home-charity').evaluateAll(ns=>ns.map(n=>n.id))).toEqual(['recares','glide','breathe-california','pacific-vision-foundation']);
 });

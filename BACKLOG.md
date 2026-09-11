@@ -1,5 +1,15 @@
 # Market for Impact backlog
 
+## Current user override: get to 100, not 115
+
+Post-100 acceptance now covers the top10 recommendations, their marginal funding room and cross-report synthesis, per the edited goal. BayLegal release candidate:527 tests pass, lint0errors/3existingwarnings, production build and2phone/tablet interaction checks pass. Model/report/API/index preserve$24.43M per10BayQALYs and HOLD; no new published count until canonical deployment verification.
+
+The finish line is100 unique independently researched organizations; last canonical verification86/100. Older115 targets below are historical. Target roughly15minutes of actual research per organization, with audit/integration/publishing overhead recorded separately; longer blocks should deliver multiple reports when safe. Prioritize plausible top-ten candidates over category quotas and never force favorable estimates. Root plus three gpt-6-astra/low research workers should remain productively assigned, with no nested workers or worker Site edits. Keep coherent per-item PRs and batch shared verification/publication where safe. After100, finish cross-report synthesis, top-four selection, marginal-funding diligence and donor-facing design. Issue191 is the goal tracker;119 is an unrelated merged GLIDE PR. Hourly schedule remains active; email disabled pending explicit approval.
+
+## Verified86; BayLegal integration and BAMRU research
+
+La Casa PR281/v196 sourceeee16b4fc27be20084445e5bbee49162396966ad passed canonical phone/tablet report,index,API,home,archive checks after publication2026-09-11T04:49:20.523823Z.86=67local+19expanded; no top-four change.525tests,lint0errors3oldwarnings,build,14responsive checks. Next finish existing BayLegal unfavorable research with complete finite prior matrices and resource/partner overlap caveats. New research bet:BAMRU whole-organization rescue readiness. Unknown Bay attribution and marginal room need bounded assumptions, not automatic rejection; do not turn rescues into lives saved.
+
 ## La Casa publication phase — September10
 
 Actual block start2026-09-11T04:39:07Z.85 verified reports; La Casa is accepted exploratory release candidate86. Whole FY2025 IRS expense is retained against an explicitly partial adult-advocacy health pathway. Prior-weighted Bay estimate$22.70M/10Q, not the all-beneficiary$22.46M. No marginal funding offer; public agreement/proposed award semantics preserved; no mortality or unmeasured portfolio benefit added. Five original closed Sol intervals retained, with current lead attribution handled separately. Final independent geographic/schema check accepted; tests, lint, build and responsive checks precede publication.

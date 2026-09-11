@@ -39,7 +39,7 @@ const picksBySlug = [
   { slug: 'compass-family-services', name: 'Compass Family Services', program: 'Help families catch up on rent', overview: 'C-Rent combines back-rent and move-in assistance with case management for families at risk of losing their homes.', opinion: 'A promising family-homelessness prevention option, with a clearer audited cost starting point.', evidence: 'Audited program spending and external prevention research. The family count and health effect need local verification.', reservation: 'The $9,704 cost per family is an accounting ratio, not a confirmed price for an additional family.', model: compass.modeledBridge },
 ];
 
-const selectedSlugs=['recares','project-homeless-connect','pacific-hearing-connection','pacific-vision-foundation'];
+const selectedSlugs=unifiedResearch.filter(row=>row.localUsdPerTenQalys!==null&&Number.isFinite(row.localUsdPerTenQalys)&&row.localUsdPerTenQalys>0).slice(0,4).map(row=>row.href.split('/').at(-1)!);
 const scopes:Record<string,string>={recares:'Whole organization; equipment-health component','project-homeless-connect':'Whole sponsored project; clinical-health components','pacific-hearing-connection':'Whole accounting cost; hearing-health component','pacific-vision-foundation':'Whole gift; first-eye health component'};
 const picks = selectedSlugs.map(slug => {
   const item=unifiedResearch.find(row=>row.href==='/charities/'+slug);
@@ -48,7 +48,7 @@ const picks = selectedSlugs.map(slug => {
   const pick = picksBySlug.find(p => p.slug === row.slug);
   if (!pick) throw new Error('Missing homepage summary for ' + row.slug);
   const rank = researchRankBySlug.get(row.slug);
-  return { ...pick, model: { bestCostPerTenQalysUsd: item.localUsdPerTenQalys, costPerQalyUsd: item.localUsdPerTenQalys / 10, positiveEffectRangeUsd: pick.model?.positiveEffectRangeUsd ?? rank?.positiveEffectRangeUsd } };
+  return { ...pick, scope:scopes[row.slug]??item.program, model: { bestCostPerTenQalysUsd: item.localUsdPerTenQalys, costPerQalyUsd: item.localUsdPerTenQalys / 10, positiveEffectRangeUsd: pick.model?.positiveEffectRangeUsd ?? rank?.positiveEffectRangeUsd } };
 });
 
 export default function SanFranciscoHome() {
@@ -57,7 +57,7 @@ export default function SanFranciscoHome() {
     <main>
       <section className="sf-home-intro">
         <h1>Our Top Charities</h1>
-        <p className="sf-home-lead">Four starting points for giving in the San Francisco Bay Area.</p>
+        <p className="sf-home-lead">The four lowest central estimates in our Bay Area research.</p>
         <small>Last updated: September 2026</small>
       </section>
       <section className="sf-home-principles" aria-label="How to give better">
@@ -70,7 +70,7 @@ export default function SanFranciscoHome() {
         <div><p className="sf-home-eyebrow">CHARITY {i + 1} OF 4</p><h2>{pick.program}</h2>
           <div className="sf-home-charity-body">
             <section><h3>Overview</h3><p>{pick.overview}</p></section>
-            <section><h3>Cost-effectiveness</h3><p className="sf-home-scope">{scopes[pick.slug]}</p><p>Our modeled estimate is <strong>{money.format(pick.model.bestCostPerTenQalysUsd)} per better life (10 QALYs)</strong>. {pick.opinion}</p></section>
+            <section><h3>Cost-effectiveness</h3><p className="sf-home-scope">{pick.scope}</p><p>Our modeled estimate is <strong>{money.format(pick.model.bestCostPerTenQalysUsd)} per better life (10 QALYs)</strong>. {pick.opinion}</p></section>
             <section><h3>Evidence of impact</h3><p>{pick.evidence}</p><p>{pick.reservation}</p></section>
             <section><h3>Organization and research</h3><div className="sf-home-org-card"><h4>{pick.name}</h4><a className="sf-home-report" href={`${root}/charities/${pick.slug}`}>Full research report</a></div></section>
           </div>

@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## HAC V2 — validated, publication pending
+
+110 alpha and 5/10 V2 live through HOPE PR312/Sites224. HAC V2 evaluates the ordinary charitable recipient, separating c4 activity and preserving the historical conditional developer model. Central $23,307,277 per 10 Bay QALYs; partial housing-health only, no calibrated probability expectation. Three original years reconcile gross costs; related-party/event discrepancies and current policy/public-funding baseline remain explicit. 487 model checks, full suite, narrative/anchor checks, lint/build and phone/tablet/desktop report/API/index parity pass. Next exact-source release and remaining PHC/Pacific Hearing/NEMS/FUF. No verified marginal offer or new alpha count.
+
 ## HOPE V2 — accepted and validated, release pending
 
 110 alpha and 4/10 V2 live through GLIDE PR302/Sites223. All ten V2 author packets now independently accepted; remaining six need root publication. HOPE's expanded report preserves central $554,660 and weighted $763,248/10 Bay QALYs while updating official nine-site/>6,000 cumulative claims without treating them as annual unique beneficiaries. Missing annual finances remain missing; county-funded hardware and San Mateo eligibility are explicit. No verified donation recipient route, so no fabricated Donate button. 59 model checks, narrative anchors, full suite, lint/build and phone/tablet/desktop tests pass, including shared SPUR renderer regression. Next exact-source canonical release, then HAC/PHC/Pacific Hearing/NEMS/FUF. No priced marginal offer.

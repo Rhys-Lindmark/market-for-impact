@@ -1,78 +1,82 @@
-import type { Metadata } from 'next';
-import glide from '@/data/san-francisco/glide-rental-assistance-qaly-bridge-audit-v1.json';
-import compass from '@/data/san-francisco/compass-c-rent-qaly-bridge-audit-v1.json';
-import { researchRankBySlug } from '@/lib/research-cost-ranking.mjs';
+import type {Metadata} from 'next';
 import {unifiedResearch} from '@/lib/unified-research-index';
-
+import readiness from '@/data/donor-readiness.json';
 import './sf-home.css';
 import './givebetter.css';
-/* eslint-disable @next/next/no-img-element -- Static editorial photos with reserved dimensions. */
-
-export const metadata: Metadata = {
-  title: 'Our Top Charities — GiveBetter x SF',
-  description: 'Our Bay Area giving shortlist after 100 reports, with gift scope, health estimates and funding questions.',
-  alternates: { canonical: 'https://ai.rhyslindmark.com/givebetter' },
-  openGraph: { title: 'Our top San Francisco charities', description: 'Four current picks, transparent estimates, and the research behind them.' },
+/* eslint-disable @next/next/no-img-element -- Sourced editorial photographs with reserved dimensions. */
+export const metadata:Metadata={
+  title:'Our Bay Area Shortlist — GiveBetter x SF',
+  description:'Promising Bay Area giving leads, selected for evidence as well as estimated impact. Further donor diligence is required.',
+  alternates:{canonical:'https://ai.rhyslindmark.com/givebetter'},
+  openGraph:{title:'Our Bay Area giving shortlist',description:'Research leads and the evidence needed before a grant.'},
 };
-
-const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumSignificantDigits: 3 });
-const root = 'https://ai.rhyslindmark.com/givebetter';
-function GivingIllustration({ index, label }: { index:number; label:string }) {
-  return <div className="sf-home-illustration"><img src={`${root}/images/givebetter-principles.png`} alt={label} width="600" height="200" style={{transform:`translateX(-${index * 100 / 3}%)`}} /></div>;
+const root='https://ai.rhyslindmark.com/givebetter';
+const money=(value:number)=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',notation:'compact',minimumFractionDigits:value>=1e6?1:0,maximumFractionDigits:value>=1e6?1:0}).format(value);
+function GivingIllustration({index,label}:{index:number;label:string}){
+  return <div className="sf-home-illustration"><img src={root+'/images/givebetter-principles.png'} alt={label} width="600" height="200" style={{transform:`translateX(-${index*100/3}%)`}}/></div>;
 }
-const photos: Record<string, { src: string; caption: string; source: string }> = {
-  'san-francisco-aids-foundation': { src: '/images/sfaf.jpg', caption: 'Harm reduction at San Francisco AIDS Foundation. Photo: SFAF.', source: 'https://www.sfaf.org/health-services/overdose-prevention-response/' },
-  'project-homeless-connect': { src: '/images/phc.jpg', caption: 'Reading and prescription glasses services. Photo: Project Homeless Connect, 2015.', source: 'https://www.projecthomelessconnect.org/v44a0929/' },
-  glide: { src: '/images/glide.jpg', caption: 'GLIDE Women’s Center staff. Photo: GLIDE. The housing model reviews rental assistance separately.', source: 'https://www.glide.org/compassionate-case-management-at-glides-womens-center/' },
-  'breathe-california': { src: '/images/breathe.png', caption: 'Breathe California community outreach, 2019. Photo: Breathe California; not a pictured cessation session.', source: 'https://lungsrus.org/' },
+const editorial:Record<string,{name:string;program:string;overview:string;scope:string;evidence:string;next:string;photo:string;caption:string;source:string}>={
+  recares:{
+    name:'The ReCARES Network',program:'Make useful medical equipment accessible',
+    overview:'ReCARES redistributes donated mobility aids and home-health supplies through San Francisco, Oakland and Marin.',
+    scope:'Reported organization expenses; modeled equipment-related health.',
+    evidence:'Current distribution sites and original annual filings support a real, low-cost service. The health estimate remains highly uncertain: receiving equipment is not the same as using it safely and benefiting from it.',
+    next:'Establish whether money is the limiting factor. Reconcile available reserves and restrictions with a specific plan for additional safe, useful equipment transfers.',
+    photo:'/images/recares.png',caption:'ReCARES volunteers in San Francisco. Photo: ReCARES.',source:'https://www.recares.org/',
+  },
+  'project-homeless-connect':{
+    name:'Project Homeless Connect',program:'Connect people to practical health care',
+    overview:'Project Homeless Connect helps people experiencing homelessness access glasses, hearing care, dental care and other practical support.',
+    scope:'An ordinary gift to the sponsored project; modeled optical, hearing and dental benefits.',
+    evidence:'Current services and fiscal sponsorship by Community Initiatives provide a clearer operating foundation. Clinical studies inform the model, but additional local treatment and lasting benefit are not directly measured.',
+    next:'Confirm current project funding and sponsor restrictions, then identify additional appointments a grant would enable. Account for shared patients and partner contributions.',
+    photo:'/images/phc.jpg',caption:'Glasses services. Photo: Project Homeless Connect, 2015.',source:'https://www.projecthomelessconnect.org/v44a0929/',
+  },
+  'compass-family-services':{
+    name:'Compass Family Services',program:'Help families stay housed',
+    overview:'Compass’s C-Rent program combines rental assistance with case management for families at risk of losing their homes.',
+    scope:'C-Rent program only—not an unrestricted gift to Compass.',
+    evidence:'Audited program expenses offer a stronger cost anchor than an assumed budget. Outside research supports homelessness prevention, but the local causal effect and health gains remain estimates.',
+    next:'Confirm that a gift can fund additional C-Rent support and establish its current cost and capacity. The model does not value the organization’s other services.',
+    photo:'/images/compass.jpg',caption:'Photo: Compass Family Services. Its broader work is pictured, not a verified C-Rent outcome.',source:'https://www.compass-sf.org/our-programs',
+  },
+  'san-francisco-aids-foundation':{
+    name:'San Francisco AIDS Foundation',program:'Improve access to prevention and care',
+    overview:'San Francisco AIDS Foundation provides sexual-health services, HIV prevention, harm reduction and support for people affected by HIV.',
+    scope:'An ordinary gift; modeled overdose-prevention and PrEP benefits.',
+    evidence:'Current audited financial statements and established clinical services support further diligence. The estimated allocation of new donations across services is a judgment, not an offered funding package.',
+    next:'Obtain a current marginal budget: which additional people could be served, what other funding already covers, and which constraints a donation would resolve.',
+    photo:'/images/sfaf.jpg',caption:'Harm reduction at San Francisco AIDS Foundation. Photo: SFAF.',source:'https://www.sfaf.org/health-services/overdose-prevention-response/',
+  },
 };
-const picksBySlug = [
-  {slug:'hearing-and-speech-center',name:'Hearing and Speech Center',program:'Improve access to hearing care',overview:'Hearing assessment, devices and follow-up aim to reduce communication barriers for people who would otherwise miss care.',opinion:'An uncertain modeled lead, not a verified marginal funding recommendation.',evidence:'External hearing research informs the health assumptions; local incremental treatment and lasting use require verification.',reservation:'Shared patients and partner delivery must not be counted twice. Confirm current additional capacity and which services a donation funds.',model:null},
-  {slug:'friends-of-the-urban-forest',name:'Friends of the Urban Forest',program:'Plant and care for city trees',overview:'Friends of the Urban Forest supports street-tree planting, care and community participation in San Francisco.',opinion:'A highly uncertain tree-health hypothesis, not a verified marginal giving opportunity.',evidence:'Reported planting and accounting costs inform the model; survival, future exposure and health attribution require assumptions.',reservation:'Benefits arrive over time. Existing public funding, maintenance capacity and what an additional gift changes need verification.',model:null},
-  {slug:'hope-pacifica',name:'HOPE Pacifica',program:'Make overdose rescue supplies accessible',overview:'HOPE maintains local naloxone access points and community support in Pacifica. This exploratory estimate models additional rescue coverage, not doses as lives saved.',opinion:'A low central scenario worth investigating, with giving on hold until operating costs and additional coverage are verified.',evidence:'Nine listed locations establish activity. Annual costs, distinct at-risk coverage and the effect of extra money remain explicit assumptions.',reservation:'The central scenario is about $555K per10 Bay QALYs; the separate probability-weighted estimate is $763K. No annual expense statement or marginal funding offer has been verified.',model:null},
-  {slug:'pacific-hearing-connection',name:'Pacific Hearing Connection',program:'Help people hear and stay connected',overview:'Hearing tests, suitable devices and follow-up help people who face financial, transport or language barriers. The estimate charges whole accounting costs and quantifies hearing health.',opinion:'One of our leading whole-cost hypotheses, with a highly uncertain benefit estimate.',evidence:'Clinical hearing evidence supports the pathway; local completed fittings, lasting use and additional gift response remain assumptions.',reservation:'Confirm additional fitting appointments and follow-up—not just donated devices or screening. Existing grants may already cover part of the work.',model:null},
-  { slug: 'recares', name: 'The ReCARES Network', program: 'Make useful medical equipment accessible', overview: 'ReCARES redistributes donated mobility aids and home-health supplies through San Francisco, Oakland and Marin. The model charges the whole organization’s reported accounting expenses.', opinion: 'A very uncertain exploratory estimate, not a verified giving recommendation or marginal funding offer.', evidence: 'Lean reported delivery costs make this worth investigating. Controlled walking-aid studies do not establish the assumed quality-of-life gain.', reservation: 'A favorable scenario supplies 69% of expected benefit. Unique recipients, safe use and additional cash-enabled capacity are unmeasured; donated equipment and volunteer resources are not fully valued.', model: null },
-  { slug: 'project-homeless-connect', name: 'Project Homeless Connect', program: 'Connect people to practical health care', overview: 'The whole-gift model includes glasses, hearing aids and dental care for people facing homelessness, with other portfolio health still unquantified.', opinion: 'A conditional whole-gift estimate with substantial uncertainty, not a verified marginal funding offer.', evidence: 'External clinical utility evidence and local services inform explicit assumptions about earlier, additional care.', reservation: 'Shared hearing outcomes with the Hearing and Speech Center must not be counted twice. Actual marginal capacity, alternative care and full portfolio benefits need further verification.', model: null },
-  { slug: 'operation-access', name: 'Operation Access', program: 'Help patients complete needed diagnostic care', overview: 'Operation Access coordinates donated specialist care for uninsured patients. This review models follow-up after an abnormal stool test for an SF adult.', opinion: 'A conditional diagnostic-access estimate, not the value of an ordinary unrestricted gift to the whole organization.', evidence: 'Local records establish the pathway; additional health and financing effects are analyst judgments.', reservation: 'Donated care consumes resources. Including assumed outside resources raises the central price to about $1.01M per10 QALYs. Marginal capacity is unverified.', model: null },
-  { slug: 'pacific-vision-foundation', name: 'Pacific Vision Foundation', program: 'Support eye-care access', overview: 'The foundation supports shared clinical care, education and facilities. The whole-gift model quantifies only earlier first-eye surgery health.', opinion: 'A whole-gift, partial-health estimate—not a complete organization expected return.', evidence: 'An external randomized study anchors one year of earlier-care benefit; marginal allocation and local additionality remain judgments.', reservation: 'Health from 90% of the assumed gift allocation is unquantified, not zero. Clinical capacity and marginal funding room are unverified.', model: null },
-  { slug: 'breathe-california', name: 'Breathe California', program: 'Help more adults quit smoking', overview: 'A proposed additional six-session course could produce sustained quits and prevent later illness.', opinion: 'An attractive mechanism to investigate, but current SF delivery and marginal pricing are not verified.', evidence: 'External lifetime health calibration; local quit effect, cost and funding additionality are judgments.', reservation: 'This is a conditional course model, not an available local offer. It excludes medication costs; free existing support changes the counterfactual.', model: null },
-  { slug: 'glide', name: 'GLIDE', program: 'Keep a housing crisis from becoming homelessness', overview: 'Rental, deposit, and move-in assistance helps San Francisco residents resolve a cash shortfall and stay housed.', opinion: 'Our strongest current housing lead. A relatively small, well-timed payment may prevent a much larger crisis.', evidence: 'Encouraging local reporting and outside prevention studies. The health gain and current delivery cost are estimates.', reservation: 'The $3,077 case cost is modeled from a historical cohort. Confirm what a new gift would actually fund.', model: glide.modeledBridge },
-  { slug: 'compass-family-services', name: 'Compass Family Services', program: 'Help families catch up on rent', overview: 'C-Rent combines back-rent and move-in assistance with case management for families at risk of losing their homes.', opinion: 'A promising family-homelessness prevention option, with a clearer audited cost starting point.', evidence: 'Audited program spending and external prevention research. The family count and health effect need local verification.', reservation: 'The $9,704 cost per family is an accounting ratio, not a confirmed price for an additional family.', model: compass.modeledBridge },
-];
-
-const selectedSlugs=unifiedResearch.filter(row=>row.localUsdPerTenQalys!==null&&Number.isFinite(row.localUsdPerTenQalys)&&row.localUsdPerTenQalys>0).slice(0,4).map(row=>row.href.split('/').at(-1)!);
-const scopes:Record<string,string>={recares:'Whole organization; equipment-health component','project-homeless-connect':'Whole sponsored project; clinical-health components','pacific-hearing-connection':'Whole accounting cost; hearing-health component','pacific-vision-foundation':'Whole gift; first-eye health component'};
-const picks = selectedSlugs.map(slug => {
-  const item=unifiedResearch.find(row=>row.href==='/charities/'+slug);
-  if(!item || item.localUsdPerTenQalys===null)throw new Error('Missing shortlist estimate: '+slug);
-  const row = {slug: item.href.split('/').at(-1)!};
-  const pick = picksBySlug.find(p => p.slug === row.slug);
-  if (!pick) return {slug:row.slug,name:item.organization,program:item.program,overview:item.program,opinion:'An exploratory health estimate; read the report before making a giving decision.',evidence:'See the research report for sources, assumptions and uncertainty.',reservation:'Marginal funding room is not verified.',scope:item.program,model:{bestCostPerTenQalysUsd:item.localUsdPerTenQalys,costPerQalyUsd:item.localUsdPerTenQalys/10,positiveEffectRangeUsd:undefined}};
-  const rank = researchRankBySlug.get(row.slug);
-  return { ...pick, scope:scopes[row.slug]??item.program, model: { bestCostPerTenQalysUsd: item.localUsdPerTenQalys, costPerQalyUsd: item.localUsdPerTenQalys / 10, positiveEffectRangeUsd: pick.model?.positiveEffectRangeUsd ?? rank?.positiveEffectRangeUsd } };
+const picks=readiness.homepageSlugs.map(slug=>{
+  const entry=unifiedResearch.find(row=>row.href==='/charities/'+slug);
+  if(!entry||entry.localUsdPerTenQalys===null||!editorial[slug])throw new Error('Incomplete editorial shortlist: '+slug);
+  return {slug,...editorial[slug],price:entry.localUsdPerTenQalys};
 });
-
-export default function SanFranciscoHome() {
+export default function SanFranciscoHome(){
   return <div className="sf-home givebetter">
     <header className="givebetter-masthead"><a href={root}>Give<span>Better</span> <small>x SF</small></a></header>
     <main>
       <section className="sf-home-intro">
-        <h1>Our Top Charities</h1>
-        <p className="sf-home-lead">The four lowest central estimates in our Bay Area research.</p>
-        <small>Last updated: September 2026</small>
+        <h1>Our Bay Area Shortlist</h1>
+        <p className="sf-home-lead">Promising giving leads, selected for evidence as well as estimated impact.</p>
+        <small>Last reviewed: September 11, 2026</small>
+        <details className="sf-home-selection"><summary>What this shortlist means</summary><p>These are priorities for donor diligence, not fully vetted grant recommendations. None has a verified plan supporting a $10 million gift at the modeled return. We consider current operations, financial transparency, the strength and scope of the evidence, and what additional funding could change—not just the lowest estimate.</p><p>HOPE Pacifica remains in the research directory pending annual financial and additional-coverage evidence. The Hearing and Speech Center remains there pending resolution of its charitable-recipient status. Neither concern changes the underlying model estimates.</p></details>
       </section>
       <section className="sf-home-principles" aria-label="How to give better">
-        <div><GivingIllustration index={0} label="Illustration of San Francisco Bay" /><h2>Give to cost-effective programs</h2><p>We compare how much an additional donation could improve health in the Bay Area.</p></div>
-        <div><GivingIllustration index={1} label="Illustration of research books" /><h2>Donate based on evidence</h2><p>Read the research behind each estimate, including the assumptions and what could change our view.</p></div>
-        <div><GivingIllustration index={2} label="Illustration of choosing a charity" /><h2>Pick a charity</h2><p>Explore our current shortlist, then check each report’s giving options and funding limitations.</p></div>
+        <div><GivingIllustration index={0} label="Illustration of San Francisco Bay"/><h2>Look for meaningful impact</h2><p>Compare how a donation could improve health in the Bay Area.</p></div>
+        <div><GivingIllustration index={1} label="Illustration of research books"/><h2>Follow the evidence</h2><p>Separate promising estimates from verified results and additional funding needs.</p></div>
+        <div><GivingIllustration index={2} label="Illustration of choosing a charity"/><h2>Choose with care</h2><p>Read the report and confirm what your gift would fund before donating.</p></div>
       </section>
-      <section aria-label="Four current charity picks">{picks.map((pick, i) => <article className="sf-home-charity" id={pick.slug} key={pick.slug}>
-        <figure>{photos[pick.slug] ? <><img src={`${root}${photos[pick.slug].src}`} alt={photos[pick.slug].caption} width="480" height="480" loading="lazy" /><figcaption><a href={photos[pick.slug].source}>{photos[pick.slug].caption}</a></figcaption></> : <div className="sf-home-research-note"><h3>{pick.name}</h3><p>{scopes[pick.slug]}</p><p>{pick.evidence}</p></div>}</figure>
-        <div><p className="sf-home-eyebrow">CHARITY {i + 1} OF 4</p><h2>{pick.program}</h2>
+      <section aria-label="Four research leads">{picks.map((pick,i)=><article className="sf-home-charity" id={pick.slug} key={pick.slug}>
+        <figure><img src={root+pick.photo} alt={pick.caption} width="480" height="480" loading="lazy"/><figcaption><a href={pick.source}>{pick.caption}</a></figcaption></figure>
+        <div><p className="sf-home-eyebrow">RESEARCH LEAD {i+1} OF 4</p><h2>{pick.program}</h2>
           <div className="sf-home-charity-body">
             <section><h3>Overview</h3><p>{pick.overview}</p></section>
-            <section><h3>Cost-effectiveness</h3><p className="sf-home-scope">{pick.scope}</p><p>Our modeled estimate is <strong>{money.format(pick.model.bestCostPerTenQalysUsd)} per better life (10 QALYs)</strong>. {pick.opinion}</p></section>
-            <section><h3>Evidence of impact</h3><p>{pick.evidence}</p><p>{pick.reservation}</p></section>
+            <section><h3>Cost-effectiveness</h3><p><strong>{money(pick.price)} per better life (10 QALYs)</strong>, modeled.</p><p className="sf-home-scope">{pick.scope}</p></section>
+            <section><h3>Why investigate</h3><p>{pick.evidence}</p></section>
+            <section><h3>Before recommending a grant</h3><p>{pick.next}</p></section>
             <section><h3>Organization and research</h3><div className="sf-home-org-card"><h4>{pick.name}</h4><a className="sf-home-report" href={`${root}/charities/${pick.slug}`}>Full research report</a></div></section>
           </div>
         </div>

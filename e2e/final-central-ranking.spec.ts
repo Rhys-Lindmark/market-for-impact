@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { centralBayAdapters } from '../lib/central-bay-adapters.mjs';
+import readiness from '../data/donor-readiness.json' with {type:'json'};
 
 test('central Bay prices reconcile across directory and homepage', async ({ page, request }) => {
   await page.route('https://market-for-impact.rhyslindmark.chatgpt.site/_next/**', async route => {
@@ -15,7 +16,7 @@ test('central Bay prices reconcile across directory and homepage', async ({ page
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
   const response = await page.goto('/');
   expect(response?.ok()).toBe(true);
-  expect(await page.locator('article.sf-home-charity').evaluateAll(rows => rows.map(row => row.id))).toEqual(ranked.slice(0,4).map(row => row.slug));
+  expect(await page.locator('article.sf-home-charity').evaluateAll(rows => rows.map(row => row.id))).toEqual(readiness.homepageSlugs);
   await expect(page.getByText('Ten priorities for giving', { exact: true })).toHaveCount(0);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
 });

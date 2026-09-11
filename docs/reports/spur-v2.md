@@ -88,7 +88,7 @@ These are the latest three Form 990 years linked from the official disclosure pa
 
 ### SPUR — functional expense shares
 
-Fiscal years ended March31. Denominator is original Form990 functional expense, NOT audited/gross addback totals.
+Fiscal years ended March 31. Denominator is original Form 990 functional expense, NOT audited/gross addback totals.
 
 | Year | Denominator ($) | Program | Management/general | Fundraising | Total |
 |---|---:|---:|---:|---:|---:|
@@ -160,7 +160,7 @@ For procurement, an [October 7, 2025 Board President release](https://sfbos.org/
 
 ### Housing production: stronger scale evidence, weaker donor attribution
 
-The [Controller’s October 29, 2025 Family Zoning economic analysis](https://media.api.sf.gov/documents/250700_economic_impact_final.pdf), pp18–21, forecasts 8,504–14,646 additional produced units over 2026–45, with 463–1,031 additional losses: **8,041–13,615 net units**. Modeled citywide price reductions reach 2.5%–4.2%. These are conditional forecasts, not observed outcomes, and the analysis predates some amendments. Its model uses historical parcels and market conditions, not randomized adoption.
+The [Controller’s October 29, 2025 Family Zoning economic analysis](https://media.api.sf.gov/documents/250700_economic_impact_final.pdf), pp. 18–21, forecasts 8,504–14,646 additional produced units over 2026–45, with 463–1,031 additional losses: **8,041–13,615 net units**. Modeled citywide price reductions reach 2.5%–4.2%. These are conditional forecasts, not observed outcomes, and the analysis predates some amendments. Its model uses historical parcels and market conditions, not randomized adoption.
 
 This provides a useful scale discipline. Legal housing capacity should not be treated as completed housing, and gross production should not omit lost units. It does not supply SPUR’s contribution or the effect of a gift today. The current comparator already includes adoption. A future implementation model must identify what remains changeable, rather than taking a fraction of the entire pre-adoption forecast and calling it an observed marginal return. The forecast’s twenty-year horizon cannot be inserted into a shorter health model without a completion and comparator-catch-up schedule.
 
@@ -317,7 +317,7 @@ V2 retains the accepted v3 health coefficients and all ten scenario outputs. New
 
 The result remains approximately $2.19M/10 Bay QALYs in the central ordinary-gift illustration. It is not the earlier clean-heat-only SF estimate and not a full annual-expenditure ratio. The executive summary and full narrative must travel with that scope when reused.
 
-This is a shorter, evidence-limited public-source V2 rather than a claim to reproduce the supplied roughly 10,749-word GiveWell reference or its monitoring access. Independent acceptance is pending. Actual wordcount, research interval and test result are recorded in the handoff. No Site edits, outreach, dependency installations, new checkouts or nested agents were used.
+This assessment relies on public sources and does not include organizational interviews or private monitoring records. Its conclusions remain limited by the absence of measured SPUR-specific health outcomes and a verified additional funding opportunity.
 
 ## Model input appendix: inherited coordinates, not observations
 

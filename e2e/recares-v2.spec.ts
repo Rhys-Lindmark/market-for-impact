@@ -33,6 +33,6 @@ test('V2 report retains full depth, navigation and central estimate parity',asyn
  const row=page.locator('tr').filter({has:page.locator('a[href$="/charities/recares"]')});
  await expect(row).toContainText('$75K');
  await page.goto('/');
- await expect(page.locator('#recares')).toContainText('$74.7K');
+ await expect(page.locator('#recares')).toContainText('$75K');
  await expect(page.getByText('Ten priorities for giving',{exact:true})).toHaveCount(0);
 });

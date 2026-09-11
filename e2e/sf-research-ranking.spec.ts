@@ -1,7 +1,8 @@
 import {EXPECTED_RESEARCH_COUNT} from './research-contract';
 import { expect, test } from '@playwright/test';
+import readiness from '../data/donor-readiness.json' with {type:'json'};
 
-test('homepage matches the four lowest central research estimates', async ({ page }) => {
+test('research remains numerically sorted while homepage uses reviewed editorial selection', async ({ page }) => {
   await page.goto('/research');
   const cards = page.locator('[data-research-slug]');
   await expect(cards).toHaveCount(EXPECTED_RESEARCH_COUNT);
@@ -16,5 +17,5 @@ test('homepage matches the four lowest central research estimates', async ({ pag
   }
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.goto('/');
-  expect(await page.locator('.sf-home-charity').evaluateAll(nodes => nodes.map(n => n.id))).toEqual(rows.filter(row=>Number.isFinite(row.cost)&&row.cost>0).slice(0,4).map(row=>row.slug));
+  expect(await page.locator('.sf-home-charity').evaluateAll(nodes => nodes.map(n => n.id))).toEqual(readiness.homepageSlugs);
 });

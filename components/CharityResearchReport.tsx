@@ -5,6 +5,7 @@ import researchEffort from '@/data/research-effort.json';
 import historicalEffort from '@/data/research-effort-historical-estimates.json';
 import assignedEffort from '@/data/research-effort-assigned-estimates.json';
 import {researchEffortSummary} from '@/lib/research-effort.mjs';
+import DonorReadiness from './DonorReadiness';
 
 export type CharityEvidence = {
   key: string;
@@ -112,6 +113,7 @@ export default function CharityResearchReport({ content }: { content: CharityRep
           {headings.map(([id,label]) => <a key={id} href={'#'+id}>{label}</a>)}
         </nav>
         <article>
+          <DonorReadiness organization={content.organization}/>
           <section id="summary"><span id="nutshell" />
             <h2>Summary</h2>
             <p><strong>{content.nutshell.headline}</strong></p>

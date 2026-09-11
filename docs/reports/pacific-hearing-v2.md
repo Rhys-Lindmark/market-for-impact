@@ -226,6 +226,6 @@ We retain partial health scope. Education, community connection, ear-wax treatme
 
 ## 8. Research provenance and model boundary
 
-This additional review began at 17:10:35 UTC on September 11, 2026. The final handoff records the actual ending time after tests and source checks; earlier research remains separately preserved and is not backfilled. The configured identity recorded by parent dispatch is gpt-6-astra / low, user-facing GPT-6 Astra Light. No Site files were edited, no organizations contacted, no dependencies installed and no nested agents used.
+This assessment was reviewed September 11, 2026 using public sources. We did not contact the organization or review private monitoring records.
 
 The original model and its first saved result are preserved separately. V2's wrapper adds validation for whitespace-equivalent scenario identities and nonfinite derived shares, with exact default-result parity. The accompanying data includes all worlds, diagnostics, three years of finance, source links and explicit unknowns. Probability weights remain subjective and were not changed to cross a ranking threshold. Full model version: `pacific-hearing-connection-depth-v2-unchanged-base`; historical calculation version retained inside the parity-locked result.

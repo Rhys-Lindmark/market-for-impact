@@ -289,7 +289,7 @@ The most important new findings are the three-year c3 cost reconciliation, the d
 
 Sources were retrieved September 11, 2026 unless explicitly marked inherited. Filing years are 2022–2024; the impact report concerns 2025 and does not establish 2026 finances. Original-source links appear beside relevant claims. The companion source and finance ledgers preserve access limitations and exact boundaries. No outreach was performed, so we make no claim about organizational responsiveness, confidential budgets or willingness to accept a specific grant.
 
-The executable model and tests are supplied outside the Site for independent review. Scenario inputs were locked before the first executable output, which is preserved in the results file. The final audit memo records actual research intervals and verification. The renderer JSON contains navigable `longForm` sections rather than implying that a compact summary displays the entire report. Independent acceptance remains pending at author handoff.
+The model, assumptions and saved results are available for independent review. Scenario assumptions were specified before the first calculation and were not subsequently adjusted to improve the result.
 
 ## Model input appendix
 

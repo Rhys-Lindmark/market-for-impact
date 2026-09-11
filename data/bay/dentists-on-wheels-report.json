@@ -1,0 +1,290 @@
+{
+  "organization": "Dentists on Wheels",
+  "eyebrow": "Exploratory whole-gift Bay research",
+  "program": "Whole dental-clinic cost; finite symptomatic relief quantified",
+  "published": "11 September 2026",
+  "modelVersion": "dentists-on-wheels-whole-gift-symptomatic-health-v1",
+  "nutshell": {
+    "headline": "Completed dental treatment is real; additional pain relief remains uncertain",
+    "body": "Our signed prior-weighted model yields 0.06310 Bay QALYs per$10,000 whole gift, or $1,584,848 per10. This is an exploratory estimate, not measured clinic QALYs.",
+    "whyItMayWork": "Volunteer-supported dental treatment can relieve painful disease for patients who otherwise wait or cannot obtain care.",
+    "whyWeAreCautious": "The favorable10%world supplies86.5% of signed expectation. Symptomatic share, duration and funding response are assumptions.",
+    "recommendationBlocker": "HOLD a giving recommendation: current cash-created capacity and patient counterfactual outcomes remain unverified. The reported patient count is not a count of lives saved."
+  },
+  "summary": [
+    {
+      "label": "Bay whole-gift estimate",
+      "value": "$1,584,848",
+      "detail": "Per10 modeledQALYs; partial symptomatic-health scope."
+    },
+    {
+      "label": "WholeFY2024 expense",
+      "value": "$103,749",
+      "detail": "No program-only denominator or fees subtraction."
+    },
+    {
+      "label": "Reported annual treatment",
+      "value": "249 patients /512 procedures",
+      "detail": "Procedure count is not unique people or distinct pain episodes."
+    },
+    {
+      "label": "Favorable-tail share",
+      "value": "86.5%",
+      "detail": "Subjective scenarios, not calibrated probability."
+    }
+  ],
+  "programSection": {
+    "body": "Dentists on Wheels, EIN84-2234407, delivers free East Bay dentistry at the St. Vincent de Paul clinic in Pittsburg. Its2024return records179extractions,228fillings,14rootcanals,50crowns/bridges and41dentures, totaling512procedures for249additionalpatients across50clinicdays.",
+    "steps": [
+      {
+        "title": "Pay whole historical organization cost",
+        "detail": "Include administration, staffing and all clinical services, even benefits not modeled."
+      },
+      {
+        "title": "Identify unique symptomatic patient episodes",
+        "detail": "Start with249patients, not512procedures; apply a uniqueness/episode-equivalence judgment and symptomatic share."
+      },
+      {
+        "title": "Relieve symptoms beyond realistic alternative care",
+        "detail": "Successful relief × utility gain × finite incremental duration until other care or needresolution. Not all fillings or dentures treat activepain."
+      },
+      {
+        "title": "Model donor response and harms",
+        "detail": "Funding response reflects staff/volunteer/stock constraints and reserves; subtract incremental procedural/access harms before Bay attribution."
+      }
+    ],
+    "boundary": "Only finite symptomatic relief is quantified. Prevention, chewing/denture function and other nonpain benefits remain unquantified, with costs retained. No lifetime, mortality, sepsis-prevention, income or screening-to-health credit. Partner infrastructure and volunteer opportunity costs are notfree and not fully valued."
+  },
+  "model": {
+    "headline": "$1,584,848 per10 Bay QALYs",
+    "body": "This historical-rate diagnostic does not promise a current purchasable slot. Primary completed-treatment evidence anchors scale; reportedadditionalpatients is not causaladditionality. Patient-year/dedup and clinically useful pain episodes remain uncertain.",
+    "equation": {
+      "label": "Net Bay symptomatic health",
+      "expression": "gift / whole expense ×249reportedpatients × fundingresponse × (unique-episodefactor × symptomaticshare × successfulrelief × utility × incrementalyears − harmperpatient) × Bayshare",
+      "result": "0.06309754566911488 Bay QALYs per$10000"
+    },
+    "inputs": [
+      {
+        "key": "cost",
+        "label": "Whole2024expense",
+        "confidence": "High accounting; not complete resources",
+        "best": "103749",
+        "range": "No selective clinical cost denominator",
+        "basis": "Originalreturn reconcilesexpense. Servicevalue621424 is fee-basedvaluation, not an additional validatedresourcebill."
+      },
+      {
+        "key": "patients",
+        "label": "Reported patients × uniqueepisode factor",
+        "confidence": "Moderate reportedcount; lowepisodeconversion",
+        "best": "249 × .9",
+        "range": "Factor.75–1",
+        "basis": "249additionalpatients is providerreported.512procedures sumexactly but cannot become512people orpainreliefepisodes."
+      },
+      {
+        "key": "symptoms",
+        "label": "Symptomatic share × successfulrelief",
+        "confidence": "Low",
+        "best": ".6 × .85",
+        "range": ".3–.8 × .6–.95",
+        "basis": "Procedure mix confirms treatment, notbaselinepain orresolvedsymptoms. Completion is not a separatemultiplier because procedures are reportedcompleted; reliefsuccess is distinct."
+      },
+      {
+        "key": "utility",
+        "label": "Utility gain while relief is incremental",
+        "confidence": "Very low",
+        "best": ".05",
+        "range": ".025–.10",
+        "basis": "Analystjudgment. Observational EQ5D before/after changes do not identify untreatedcausalbenefit. No pain-scale/OHIP conversion."
+      },
+      {
+        "key": "duration",
+        "label": "Incremental symptomatic duration",
+        "confidence": "Very low",
+        "best": ".25year",
+        "range": ".05–.5year",
+        "basis": "Until alternative dentalcare, spontaneousresolution orneedresolution. Not toothlifespan, treatmentdurability or lifetime. No independentlymeasuredlocalduration. Expected incremental painful time averages across zero-benefit/prompt-alternative and delayed-care patients, not three extra months for every eligible person. Fundingresponse is the separate budget/capacityresponse, not this same accesscomparison."
+      },
+      {
+        "key": "funding",
+        "label": "Newgift capacityresponse",
+        "confidence": "Very low",
+        "best": ".3",
+        "range": "0–.6",
+        "basis": "Lottery-likeavailability suggests constraint but not cashconstraint; unrestrictedassets729582 andexistingpublic/partnerfunding are fundedbaseline."
+      },
+      {
+        "key": "Bay",
+        "label": "Bay health share",
+        "confidence": "Strong localfootprint, unmeasured residence",
+        "best": ".98",
+        "range": ".95–1",
+        "basis": "EastBayclinicnotproof everypatient is Bayresident."
+      },
+      {
+        "key": "harm",
+        "label": "Independent incremental harmQ perpatient",
+        "confidence": "Very low",
+        "best": ".0002",
+        "range": "0–.003",
+        "basis": "Hypothetical postoperativepain/complications or accessburden not already netted inutility; not observedadverseeventrate."
+      }
+    ],
+    "giftHeading": "$10,000 diagnostic cap; no linear$100,000 assurance",
+    "sensitivity": [
+      {
+        "case": "funding_null",
+        "headline": "Not defined per10; weight0.2",
+        "detail": "BayQ0. Full coefficients/output retained in results."
+      },
+      {
+        "case": "clinical_null",
+        "headline": "Not defined per10; weight0.15",
+        "detail": "BayQ0. Full coefficients/output retained in results."
+      },
+      {
+        "case": "harm",
+        "headline": "Not defined per10; weight0.05",
+        "detail": "BayQ-0.021168204030882223. Full coefficients/output retained in results."
+      },
+      {
+        "case": "cautious",
+        "headline": "Not defined per10; weight0.25",
+        "detail": "BayQ-0.0007552572795882371. Full coefficients/output retained in results."
+      },
+      {
+        "case": "central",
+        "headline": "$2,559,314 per10; weight0.25",
+        "detail": "BayQ0.039072976607003436. Full coefficients/output retained in results."
+      },
+      {
+        "case": "favorable",
+        "headline": "$183,229 per10; weight0.1",
+        "detail": "BayQ0.545765260388052. Full coefficients/output retained in results."
+      },
+      {
+        "case": "full_funding",
+        "headline": "Full cash response",
+        "detail": "$693,702 per10; BayQ0.1441541644377295."
+      },
+      {
+        "case": "one_month",
+        "headline": "Cap incremental pain duration at one month",
+        "detail": "$9,302,550 per10; BayQ0.010749741111962524."
+      },
+      {
+        "case": "half_utility",
+        "headline": "Half all utility assumptions",
+        "detail": "$3,264,916 per10; BayQ0.03062866396603823."
+      },
+      {
+        "case": "half_symptomatic",
+        "headline": "Half symptomatic share",
+        "detail": "$3,264,916 per10; BayQ0.03062866396603823."
+      },
+      {
+        "case": "service_fee_value",
+        "headline": "Add reported servicefeevalue; NOT validated societalprice",
+        "detail": "$11,077,589 per10; BayQ0.009027235246796283."
+      }
+    ],
+    "uncertaintyBoundary": "Selected-world mass below$1M/10:0.1; below$100k/10:0. These are judgments, not empirical probabilities. Without favorable world:$10,562,116 per10.",
+    "fundingBoundary": "2024revenue196470 includes30980governmentgrants. Cash229364 plus savings500218 equals729582netassets, allreportedwithoutdonorrestrictions atyearend; zero liabilities. Surplus92721 does not prove zero marginalneed, but rejects an assumed emergencycashgap. Return records59864salaryexpense despite0employees; staffingclassification unresolved, fullcost retained. Partnerrooms/equipment and10685reportedvolunteerhours imply substantial unpricedresources. Reported621424servicefeevalue is not a rigorous opportunitycost measure and cannot simply be called donorleveragedQALYs."
+  },
+  "evidence": [
+    {
+      "key": "actual_treatment",
+      "design": "OriginalFY2024 Form990 PartIII",
+      "population": "249reportedadditionalpatients,50clinicdays",
+      "result": "512completedprocedures reconcile to179extractions+228fillings+14rootcanals+50crowns/bridges+41dentures.",
+      "transfer": "No untreatedcomparison, unique symptomatic episodes or measured utility. Do not mix newersecondary2025totals with2024cost."
+    },
+    {
+      "key": "pain_mechanism",
+      "design": "Prospective dental practice before/after pain study",
+      "population": "Root-canal patients, not all charity dentalpatients",
+      "result": "Half reported severe pain beforetreatment; pain metrics improved aftercare.",
+      "transfer": "No untreatedcounterfactual orQALYgain. Relievingdentalpain is plausible, but magnitude/duration here remainjudgments."
+    },
+    {
+      "key": "active_comparator_null",
+      "design": "Swedish prospective nonrandomized rootcanal vs extraction cohort",
+      "population": "65patients afterthirdmolar exclusions;37rootcanalinitiations and28extractions",
+      "result": "One-yearQALYs rounded.83 ineachgroup; no significant intergroupdifference. Healthstatevalues rose.80to.87 forrootcanal and.79to.85 forextraction amongavailableobservations.",
+      "transfer": "Activecomparatornull is not dentalcarevsnocare null. Before/after rises mayreflectconfounding, recovery and missingdata; .06/.07 is not imported as causalutility.27%rootcanals incomplete byoneyear underlines need to distinguishstarts/completions."
+    }
+  ],
+  "reservations": [
+    "Wholecash/partialhealth scope is explicit; nonpainrestorativebenefits omitted, notzero.",
+    "Reported patients are not causal additional patients and multipleprocedures mayaddress oneepisode.",
+    "Painutility and duration priors dominate evidence; no measured organizationQALYs.",
+    "Large unrestrictedreserves and volunteers make cashresponse uncertain.",
+    "Lottery-likeaccess mayreflectclinicianavailability, not a shortage ofdonations.",
+    "Source2025filing lead notprimaryrecovered; model deliberately synchronized to2024financial/activityyear.",
+    "Complete societalresourceprice unknown; headline doesnotvalue donatedlabor orpartnercapital fully."
+  ],
+  "excludedBenefits": [
+    "Lifetime toothretention",
+    "Dementia, mortality orsepsisaversion",
+    "Prevention/screening QALYs withoutclinicalfollowthrough",
+    "Unquantifieddentures/chewing and nonpainrestorativefunction",
+    "Employment, confidence and socialvalue bonuses"
+  ],
+  "sources": [
+    {
+      "publisher": "Dentists on Wheels",
+      "title": "Organization and local clinic",
+      "url": "https://dentistsonwheels.org/",
+      "published": "Undated",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Dentists on Wheels",
+      "title": "Restorative services and limited availability",
+      "url": "https://dentistsonwheels.org/services",
+      "published": "Undated",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "IRS via ProPublica",
+      "title": "Original calendar2024 Form990",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202521359349313442/IRS990",
+      "published": "Filed2025-05-15",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "St. Vincent de Paul of Contra Costa County",
+      "title": "A Legacy of Smiles",
+      "url": "https://www.svdp-cc.org/2023/05/25/a-legacy-of-smiles/",
+      "published": "2023-05-25",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Wigsten et al.",
+      "title": "Root canal versus extraction: prospective controlled economic cohort",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10441609/",
+      "published": "2023",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Wigsten et al.",
+      "title": "Comparing quality of life with root canal treatment or extraction",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31843125/",
+      "published": "2020",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Law et al.",
+      "title": "Root canal therapy reduces multiple dimensions of pain",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25190605/",
+      "published": "2014",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    }
+  ]
+}

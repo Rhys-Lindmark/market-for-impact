@@ -13,6 +13,6 @@ test('SPUR whole portfolio and canonical-model navigation',async({page})=>{
  expect(d.evaluated[0].bayIncludingSfNetQaly).toBeCloseTo(.4564,8);
  await page.goto('/research');const row=page.locator('[data-research-slug="spur"]');
  await expect(row).toBeVisible();
- expect(Number(await row.getAttribute('data-cost-per-ten-qalys'))).toBeCloseTo(d.evaluated[0].sfUsdPer10Qaly,2);
+ expect(Number(await row.getAttribute('data-cost-per-ten-qalys'))).toBeCloseTo(d.evaluated[0].bayUsdPer10Qaly,2);
  expect(errors).toEqual([]);
 });

@@ -13,5 +13,5 @@ test('Operation Access whole gift keeps case mix and historical program distinct
  const response=await request.get('/api/oa-portfolio-model');expect(response.ok()).toBe(true);const data=await response.json();expect(data.evaluated).toHaveLength(9);
  for(const[i,s]of data.model.scenarios.entries())parity(data.evaluated[i],{id:s.id,...calculate(data.model,s)});
  const historical=await request.get('/api/sf-surgical-access-models');expect(historical.ok()).toBe(true);expect((await historical.json()).oa.evaluated.find((s:{name:string})=>s.name==='central').costPerTenQalys).toBe(600000);
- await page.goto('/research');await expect(page.locator('[data-research-slug="operation-access"]')).toContainText('$24.3M');
+ await page.goto('/research');await expect(page.locator('[data-research-slug="operation-access"]')).toHaveAttribute('data-cost-per-ten-qalys',String(data.evaluated.find((s:{id:string})=>s.id==='central').regions.bay.donor_per_10q));
 });

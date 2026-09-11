@@ -12,6 +12,6 @@ test('Clinic whole gift publishes named care and explicit weighted estimate',asy
  const links=page.getByRole('link',{name:'Donate',exact:true});await expect(links).toHaveCount(2);for(const link of await links.all())await expect(link).toHaveAttribute('href','https://www.clinicbythebay.org/donate');
  const response=await request.get('/api/clinic-portfolio-model');expect(response.ok()).toBe(true);const data=await response.json();expect(data.evaluated).toHaveLength(34);parity(data.expected,expectedValue(data.model));
  for(const[i,s]of data.model.scenarios.entries())parity(data.evaluated[i],{id:s.id,...calculate(inputsFor(data.model,s))});
- await page.goto('/research');await expect(page.locator('[data-research-slug="clinic-by-the-bay"]')).toContainText('$2.9M');
+ await page.goto('/research');await expect(page.locator('[data-research-slug="clinic-by-the-bay"]')).toHaveAttribute('data-cost-per-ten-qalys',String(data.expected.donor_bay_per_10q));
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 });

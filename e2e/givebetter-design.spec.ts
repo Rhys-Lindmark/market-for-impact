@@ -22,8 +22,10 @@ for (const width of [390, 768, 1280]) {
     expect((await row.boundingBox())!.height).toBeLessThan(135);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     await page.screenshot({path:testInfo.outputPath(`givebetter-research-${width}.png`),fullPage:true});
+    const destination=await row.locator('a').first().getAttribute('href');
+    expect(destination).toMatch(/^\/charities\//);
     await row.locator('a').first().click();
-    await expect(page).toHaveURL(/charities\/glide$/);
+    expect(new URL(page.url()).pathname).toBe(destination);
     await expect(page.getByRole('heading',{level:1})).toBeVisible();
   });
 }

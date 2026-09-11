@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Breathe V2 — validated, publication pending
+
+110/110 alpha reports remain published; ReCARES V2 is live through PR310/Sites220 (1/10 V2). Breathe's independently audited long-form V2 now uses FY2025 whole expense of $1,379,590 and explicit clinical-subset allocation: central $10,751,762 and weighted $12,346,598 per 10 Bay QALYs. Historical $5,739,210 coverage model/API remains separately accessible; no clinical coefficients tuned toward ranking. Three-year spending buckets now show the FY2024 zero-filled filing anomaly rather than inventing missing spending. Full model suite, lint (zero errors, three existing warnings), production build, phone/tablet report/API/index parity and desktop left-ToC checks pass. PR301 preserves its existing scoped follow-up work. Next: exact-commit release and canonical verification, then SPUR and the other accepted V2 drafts. No new live V2 count until deployment is verified.
+
 ## ReCARES V2 — accepted, release verification pending
 
 First frozen-cohort V2 report integrated with full prose, left ToC, three-year filings, reconciled annual spending shares and versioned model/API. Source-only update lowers central $128,892 to $74,720 and weighted $185,910 to $107,774 per10 Bay QALYs; no clinical/funding priors changed. Ranking now explicitly uses central, separately disclosed from that source update. Accrual expense is not cash paid; reserves and uncertain safe unique use keep giving on HOLD. Independent core/source audit accepted, 56 model checks plus parser/full-suite tests passed. Desktop/phone/tablet navigation, no overflow and index/home/API parity passed using new-build assets. Final build and canonical release gate remain. Alpha110 unchanged; V2 not counted live before verification. Next accepted drafts: Breathe and SPUR; GLIDE/HAC/HOPE research underway.
@@ -663,6 +667,10 @@ During active research blocks, the coordinating agent must keep every available 
 - [ ] **MFI-024 — Geography lens beginning with India.** Separate headquarters, service geography, target population, grant geography, evaluator coverage, and locally registered donation vehicles before comparing opportunities.
   - [x] Publish the first auditable India lens. The standalone page separates five geography fields, reconciles all 50 GiveWell rows explicitly naming India, distinguishes 36 India-only from 14 unallocated multi-country rows, and preserves ACE's one current India-explicit opportunity and native shrimp-welfare metrics without turning organization-wide funding room into India-specific room. Headquarters, donation vehicle, tax treatment, and India-program funding room remain visibly unassessed. Verified 2026-08-30 with deterministic regeneration, 112 unit tests, lint, production build, and 21 responsive/browser checks across 390 px and 768 px with no page overflow or console errors.
   - [ ] Add India-native evaluators and locally registered candidates, then verify service geographies, receiving entities, donation rails, legal constraints, and $100K / $1M / $10M marginal plans before publishing any India recommendation or ranking.
+
+## Breathe whole-gift correction — September 11, 2026
+
+Integrated audited expanded clinical coverage: whole-gift cost with partial cessation, asthma and prescription CPAP health. Central $5.74M per 10 Bay QALYs is not complete organization expected value or a verified marginal offer. Report, API, ranking, scope labels and donor questions agree; historical cessation API preserved. Count remains 100. Full unit suite, lint (zero errors), production build and phone/tablet report/API/ranking checks pass. Publish and canonical-verify next; then integrate GLIDE in its own worktree/PR. See docs/breathe-release-status.md.
 
 ## Operating tracks
 

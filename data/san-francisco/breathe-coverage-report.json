@@ -1,0 +1,805 @@
+{
+  "organization": "Breathe California",
+  "eyebrow": "Exploratory whole-gift cost · partial clinical health",
+  "program": "EIN 94-1156307; cessation, child/adult asthma and prescription CPAP access",
+  "donationUrl": "https://lungsrus.org/donate/",
+  "published": "11 September 2026 — coverage revision",
+  "modelVersion": "breathe-ein941156307-expanded-clinical-coverage-v2",
+  "nutshell": {
+    "headline": "A broad lung-health gift cannot inherit the price of one cessation course.",
+    "body": "The expanded clinical subset gives $5,739,210 per 10 Bay QALYs, retaining the full $100,000 gift. This is a conditional partial-health calculation—not complete whole-organization expected value, a guaranteed lower bound or a verified funding offer.",
+    "whyItMayWork": "Additional supported quitting, asthma home visits and safe prescription CPAP access can improve health beyond existing care.",
+    "whyWeAreCautious": "Marginal allocations, actual episodes, alternatives and geography are priors. CPAP quality-of-life results differ by instrument and include a negative EQ-5D bound; substantial portfolio benefits remain unquantified.",
+    "recommendationBlocker": "No verified cash-created cohort or complete resource budget. Whole-organization expected QALYs remain unresolved, not zero."
+  },
+  "summary": [
+    {
+      "label": "Bay clinical-subset price",
+      "value": "$5,739,210",
+      "detail": "Per10 Bay QALYs; 0.17424000265609785 modeled Bay QALYs/$100,000."
+    },
+    {
+      "label": "All-beneficiary / SF price",
+      "value": "$4,471,248 / $66,297,544",
+      "detail": "Distinct nested geographies; do not add health across regions."
+    },
+    {
+      "label": "Associated partial resource envelope",
+      "value": "$132,250",
+      "detail": "Whole gift plus modeled nominal outside inputs; not complete societal cost."
+    },
+    {
+      "label": "Whole-organization expectation",
+      "value": "Unresolved",
+      "detail": "Unquantified activities may have positive or negative health; no residual-zero assumption."
+    }
+  ],
+  "programSection": {
+    "body": "Exact recipient is the lungsrus.org operator, EIN 94-1156307. Exclude Golden Gate Public Health Partnership94-0836760 and separate regional affiliates.",
+    "steps": [
+      {
+        "title": "Adult cessation (15%)",
+        "detail": "Blended offered-course prior; not several independent people across delivery formats. Allocation is a marginal analyst prior, not audited spending."
+      },
+      {
+        "title": "All-age asthma (25%)",
+        "detail": "Child home-visit health plus adult home-visit subset; workshops are not assigned the full home-visit effect. Allocation is a marginal analyst prior, not audited spending."
+      },
+      {
+        "title": "Prescription CPAP (25%)",
+        "detail": "Safe donated equipment, consumables and external clinical calibration; replacements are not new people. Allocation is a marginal analyst prior, not audited spending."
+      },
+      {
+        "title": "Senior/COPD (10%)",
+        "detail": "Education, assessment and referral; health unresolved, not silently classified as overhead. Allocation is a marginal analyst prior, not audited spending."
+      },
+      {
+        "title": "Clean-air/youth (10%)",
+        "detail": "Unresolved activity effects; no extra credit for remediation already counted in asthma. Allocation is a marginal analyst prior, not audited spending."
+      },
+      {
+        "title": "TB/other education (5%)",
+        "detail": "No verified additional diagnostic/treatment-completion cohort. Allocation is a marginal analyst prior, not audited spending."
+      },
+      {
+        "title": "Central enabling cost (10%)",
+        "detail": "Already retained once in the full gift. Allocation is a marginal analyst prior, not audited spending."
+      }
+    ],
+    "boundary": "Quantified allocations total 65%; remaining 25% distinct activities have unresolved health and 10% central cost is retained. Whole gift stays priced. Eight CPAP-eligible counties include Monterey, San Benito and Santa Cruz, so they are not eight Bay counties. No pooling of separate Breathe affiliates."
+  },
+  "model": {
+    "headline": "Whole $100,000 cost; expanded clinical subset, not full expected return",
+    "body": "Cessation uses finite smoking/quit/dead trajectories with later quitting, relapse and mortality in both arms. Child/adult asthma use distinct age and service fractions. CPAP uses one integrated trial year, not device-life multiplication. CPAP/asthma symptom dimensions can overlap within people; no duplicate survival bonus or claim of a fully modeled joint utility state.",
+    "equation": {
+      "label": "Conditional Bay clinical-subset calculation",
+      "expression": "Whole-gift cessation and child-asthma health + additional CPAP episodes × integrated one-year effect × transfer + adult home-visit symptom health, each geography-adjusted; signed harms retained",
+      "result": "0.17424000265609785 Bay QALYs; $5,739,210 per 10 Bay QALYs. Whole-organization expected QALYs: unresolved."
+    },
+    "inputs": [
+      {
+        "key": "gift_usd",
+        "label": "gift usd",
+        "confidence": "Explicit analyst prior",
+        "best": "100000",
+        "range": "Foundation coefficients retained unchanged; scenario ranges are not confidence intervals",
+        "basis": "Unverified local marginal input; see research review for state, allocation, payer and geographic assumptions."
+      },
+      {
+        "key": "discount",
+        "label": "discount",
+        "confidence": "Explicit analyst prior",
+        "best": "0.03",
+        "range": "Foundation coefficients retained unchanged; scenario ranges are not confidence intervals",
+        "basis": "Unverified local marginal input; see research review for state, allocation, payer and geographic assumptions."
+      },
+      {
+        "key": "cessation_allocation",
+        "label": "cessation allocation",
+        "confidence": "Explicit analyst prior",
+        "best": "0.15",
+        "range": "Foundation coefficients retained unchanged; scenario ranges are not confidence intervals",
+        "basis": "Unverified local marginal input; see research review for state, allocation, payer and geographic assumptions."
+      },
+      {
+        "key": "asthma_allocation",
+        "label": "asthma allocation",
+        "confidence": "Explicit analyst prior",
+        "best": "0.25",
+        "range": "Foundation coefficients retained unchanged; scenario ranges are not confidence intervals",
+        "basis": "Unverified local marginal input; see research review for state, allocation, payer and geographic assumptions."
+      },
+      {
+        "key": "cessation_cash_per_offer",
+        "label": "cessation cash per offer",
+        "confidence": "Explicit analyst prior",
+        "best": "250",
+        "range": "Foundation coefficients retained unchanged; scenario ranges are not confidence intervals",
+        "basis": "Unverified local marginal input; see research review for state, allocation, payer and geographic assumptions."
+      },
+      {
+        "key": "asthma_cash_per_offer",
+        "label": "asthma cash per offer",
+        "confidence": "Explicit analyst prior",
+        "best": "1200",
+        "range": "Foundation coefficients retained unchanged; scenario ranges are not confidence intervals",
+        "basis": "Unverified local marginal input; see research review for state, allocation, payer and geographic assumptions."
+      },
+      {
+        "key": "cessation_additionality",
+        "label": "cessation additionality",
+        "confidence": "Explicit analyst prior",
+        "best": "0.4",
+        "range": "Foundation coefficients retained unchanged; scenario ranges are not confidence intervals",
+        "basis": "Unverified local marginal input; see research review for state, allocation, payer and geographic assumptions."
+      },
+      {
+        "key": "asthma_additionality",
+        "label": "asthma additionality",
+        "confidence": "Explicit analyst prior",
+        "best": "0.35",
+        "range": "Foundation coefficients retained unchanged; scenario ranges are not confidence intervals",
+        "basis": "Unverified local marginal input; see research review for state, allocation, payer and geographic assumptions."
+      },
+      {
+        "key": "extra_six_month_quit",
+        "label": "extra six month quit",
+        "confidence": "Explicit analyst prior",
+        "best": "0.03",
+        "range": "Foundation coefficients retained unchanged; scenario ranges are not confidence intervals",
+        "basis": "Unverified local marginal input; see research review for state, allocation, payer and geographic assumptions."
+      },
+      {
+        "key": "background_quit_hazard",
+        "label": "background quit hazard",
+        "confidence": "Explicit analyst prior",
+        "best": "0.04",
+        "range": "Foundation coefficients retained unchanged; scenario ranges are not confidence intervals",
+        "basis": "Unverified local marginal input; see research review for state, allocation, payer and geographic assumptions."
+      },
+      {
+        "key": "relapse_hazard",
+        "label": "relapse hazard",
+        "confidence": "Explicit analyst prior",
+        "best": "0.1",
+        "range": "Foundation coefficients retained unchanged; scenario ranges are not confidence intervals",
+        "basis": "Unverified local marginal input; see research review for state, allocation, payer and geographic assumptions."
+      },
+      {
+        "key": "smoking_mortality",
+        "label": "smoking mortality",
+        "confidence": "Explicit analyst prior",
+        "best": "0.012",
+        "range": "Foundation coefficients retained unchanged; scenario ranges are not confidence intervals",
+        "basis": "Unverified local marginal input; see research review for state, allocation, payer and geographic assumptions."
+      },
+      {
+        "key": "quit_mortality",
+        "label": "quit mortality",
+        "confidence": "Explicit analyst prior",
+        "best": "0.008",
+        "range": "Foundation coefficients retained unchanged; scenario ranges are not confidence intervals",
+        "basis": "Unverified local marginal input; see research review for state, allocation, payer and geographic assumptions."
+      },
+      {
+        "key": "smoking_utility",
+        "label": "smoking utility",
+        "confidence": "Explicit analyst prior",
+        "best": "0.75",
+        "range": "Foundation coefficients retained unchanged; scenario ranges are not confidence intervals",
+        "basis": "Unverified local marginal input; see research review for state, allocation, payer and geographic assumptions."
+      },
+      {
+        "key": "quit_utility",
+        "label": "quit utility",
+        "confidence": "Explicit analyst prior",
+        "best": "0.77",
+        "range": "Foundation coefficients retained unchanged; scenario ranges are not confidence intervals",
+        "basis": "Unverified local marginal input; see research review for state, allocation, payer and geographic assumptions."
+      },
+      {
+        "key": "cessation_horizon",
+        "label": "cessation horizon",
+        "confidence": "Explicit analyst prior",
+        "best": "10",
+        "range": "Foundation coefficients retained unchanged; scenario ranges are not confidence intervals",
+        "basis": "Unverified local marginal input; see research review for state, allocation, payer and geographic assumptions."
+      },
+      {
+        "key": "mortality_recovery_lag",
+        "label": "mortality recovery lag",
+        "confidence": "Explicit analyst prior",
+        "best": "2",
+        "range": "Foundation coefficients retained unchanged; scenario ranges are not confidence intervals",
+        "basis": "Unverified local marginal input; see research review for state, allocation, payer and geographic assumptions."
+      },
+      {
+        "key": "cessation_delay",
+        "label": "cessation delay",
+        "confidence": "Explicit analyst prior",
+        "best": "0.5",
+        "range": "Foundation coefficients retained unchanged; scenario ranges are not confidence intervals",
+        "basis": "Unverified local marginal input; see research review for state, allocation, payer and geographic assumptions."
+      },
+      {
+        "key": "asthma_extra_symptom_free_days",
+        "label": "asthma extra symptom free days",
+        "confidence": "External trial anchor, not local effect",
+        "best": "24.4",
+        "range": "Foundation coefficients retained unchanged; scenario ranges are not confidence intervals",
+        "basis": "24.4 annualized incremental symptom-free days over active nurse comparator; independent transfer and utility priors."
+      },
+      {
+        "key": "asthma_transfer",
+        "label": "asthma transfer",
+        "confidence": "Explicit analyst prior",
+        "best": "0.5",
+        "range": "Foundation coefficients retained unchanged; scenario ranges are not confidence intervals",
+        "basis": "Unverified local marginal input; see research review for state, allocation, payer and geographic assumptions."
+      },
+      {
+        "key": "asthma_child_fraction",
+        "label": "asthma child fraction",
+        "confidence": "Explicit analyst prior",
+        "best": "0.6",
+        "range": "Foundation coefficients retained unchanged; scenario ranges are not confidence intervals",
+        "basis": "Unverified local marginal input; see research review for state, allocation, payer and geographic assumptions."
+      },
+      {
+        "key": "asthma_utility_gap",
+        "label": "asthma utility gap",
+        "confidence": "Explicit analyst prior",
+        "best": "0.1",
+        "range": "Foundation coefficients retained unchanged; scenario ranges are not confidence intervals",
+        "basis": "Unverified local marginal input; see research review for state, allocation, payer and geographic assumptions."
+      },
+      {
+        "key": "asthma_years",
+        "label": "asthma years",
+        "confidence": "Explicit analyst prior",
+        "best": "1",
+        "range": "Foundation coefficients retained unchanged; scenario ranges are not confidence intervals",
+        "basis": "Unverified local marginal input; see research review for state, allocation, payer and geographic assumptions."
+      },
+      {
+        "key": "asthma_delay",
+        "label": "asthma delay",
+        "confidence": "Explicit analyst prior",
+        "best": "0.25",
+        "range": "Foundation coefficients retained unchanged; scenario ranges are not confidence intervals",
+        "basis": "Unverified local marginal input; see research review for state, allocation, payer and geographic assumptions."
+      },
+      {
+        "key": "cessation_external_per_offer",
+        "label": "cessation external per offer",
+        "confidence": "Explicit analyst prior",
+        "best": "100",
+        "range": "Foundation coefficients retained unchanged; scenario ranges are not confidence intervals",
+        "basis": "Unverified local marginal input; see research review for state, allocation, payer and geographic assumptions."
+      },
+      {
+        "key": "asthma_external_per_offer",
+        "label": "asthma external per offer",
+        "confidence": "Explicit analyst prior",
+        "best": "300",
+        "range": "Foundation coefficients retained unchanged; scenario ranges are not confidence intervals",
+        "basis": "Unverified local marginal input; see research review for state, allocation, payer and geographic assumptions."
+      },
+      {
+        "key": "cessation_bay_share",
+        "label": "cessation bay share",
+        "confidence": "Explicit analyst prior",
+        "best": "0.75",
+        "range": "Foundation coefficients retained unchanged; scenario ranges are not confidence intervals",
+        "basis": "Unverified local marginal input; see research review for state, allocation, payer and geographic assumptions."
+      },
+      {
+        "key": "cessation_sf_share",
+        "label": "cessation sf share",
+        "confidence": "Explicit analyst prior",
+        "best": "0.05",
+        "range": "Foundation coefficients retained unchanged; scenario ranges are not confidence intervals",
+        "basis": "Unverified local marginal input; see research review for state, allocation, payer and geographic assumptions."
+      },
+      {
+        "key": "asthma_bay_share",
+        "label": "asthma bay share",
+        "confidence": "Explicit analyst prior",
+        "best": "0.8",
+        "range": "Foundation coefficients retained unchanged; scenario ranges are not confidence intervals",
+        "basis": "Unverified local marginal input; see research review for state, allocation, payer and geographic assumptions."
+      },
+      {
+        "key": "asthma_sf_share",
+        "label": "asthma sf share",
+        "confidence": "Explicit analyst prior",
+        "best": "0.08",
+        "range": "Foundation coefficients retained unchanged; scenario ranges are not confidence intervals",
+        "basis": "Unverified local marginal input; see research review for state, allocation, payer and geographic assumptions."
+      },
+      {
+        "key": "cessation_harm_per_added_offer",
+        "label": "cessation harm per added offer",
+        "confidence": "Explicit analyst prior",
+        "best": "0",
+        "range": "Foundation coefficients retained unchanged; scenario ranges are not confidence intervals",
+        "basis": "Unverified local marginal input; see research review for state, allocation, payer and geographic assumptions."
+      },
+      {
+        "key": "asthma_harm_per_added_offer",
+        "label": "asthma harm per added offer",
+        "confidence": "Explicit analyst prior",
+        "best": "0",
+        "range": "Foundation coefficients retained unchanged; scenario ranges are not confidence intervals",
+        "basis": "Unverified local marginal input; see research review for state, allocation, payer and geographic assumptions."
+      },
+      {
+        "key": "independent_harm_q",
+        "label": "independent harm q",
+        "confidence": "Explicit analyst prior",
+        "best": "0",
+        "range": "Foundation coefficients retained unchanged; scenario ranges are not confidence intervals",
+        "basis": "Gift-date present-value QALY loss; not scaled by activity."
+      },
+      {
+        "key": "harm_bay_share",
+        "label": "harm bay share",
+        "confidence": "Explicit analyst prior",
+        "best": "0.8",
+        "range": "Foundation coefficients retained unchanged; scenario ranges are not confidence intervals",
+        "basis": "Unverified local marginal input; see research review for state, allocation, payer and geographic assumptions."
+      },
+      {
+        "key": "harm_sf_share",
+        "label": "harm sf share",
+        "confidence": "Explicit analyst prior",
+        "best": "0.05",
+        "range": "Foundation coefficients retained unchanged; scenario ranges are not confidence intervals",
+        "basis": "Unverified local marginal input; see research review for state, allocation, payer and geographic assumptions."
+      },
+      {
+        "key": "cpap_allocation",
+        "label": "CPAP allocation",
+        "best": "25%",
+        "range": "Exact signed scenarios in model; not charity confidence bounds",
+        "basis": "Distinct clinical allocation; not observed marginal spending.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "cpap_cash_per_episode",
+        "label": "Donor cash per complete CPAP episode",
+        "best": "$500",
+        "range": "Exact signed scenarios in model; not charity confidence bounds",
+        "basis": "$250 sensitivity; not retail price or an advertised quote. Recipient fees and donor/partner boundaries need verification.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "cpap_additionality",
+        "label": "CPAP financing additionality",
+        "best": "0.5",
+        "range": "Exact signed scenarios in model; not charity confidence bounds",
+        "basis": "0 replacement;0.8 joint stress. Additional access versus public/donor baseline, not another adherence factor.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "cpap_qaly_one_year",
+        "label": "Integrated one-year CPAP QALYs",
+        "best": "0.005",
+        "range": "Exact signed scenarios in model; not charity confidence bounds",
+        "basis": "PREDICT EQ-5D95%CI −0.034–0.044; SF-6D0.018(0.003–0.034) is separate instrument sensitivity. No device-life multiplier.",
+        "confidence": "External trial anchor; uncertain transfer"
+      },
+      {
+        "key": "cpap_relative_transfer",
+        "label": "CPAP relative clinical transfer",
+        "best": "0.8",
+        "range": "Exact signed scenarios in model; not charity confidence bounds",
+        "basis": "Changes whole trial contrast for local service/population; trial already includes adherence and comparator care. No extra generic adherence/survival penalty.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "cpap_delay",
+        "label": "CPAP implementation delay",
+        "best": "0.25year",
+        "range": "Exact signed scenarios in model; not charity confidence bounds",
+        "basis": "3% discount applies to delay only; no second within-year catch-up haircut.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "cpap_outside_per_episode",
+        "label": "Outside resources per nominal CPAP episode",
+        "best": "$400",
+        "range": "Exact signed scenarios in model; not charity confidence bounds",
+        "basis": "$800 sensitivity. Unpriced real equipment alternative use, setup, patient time/shipping and supplies outside donor budget; not retail charge.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "cpap_bay_share",
+        "label": "CPAP Bay share",
+        "best": "0.8",
+        "range": "Exact signed scenarios in model; not charity confidence bounds",
+        "basis": "Future-residence prior, not observed eligible-county share.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "cpap_sf_share",
+        "label": "CPAP SF share",
+        "best": "0.08",
+        "range": "Exact signed scenarios in model; not charity confidence bounds",
+        "basis": "Nested in Bay; no-SF scenario retained.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "adult_asthma_days_per_fortnight",
+        "label": "Adult incremental symptom-free days/fortnight",
+        "best": "2.02",
+        "range": "Exact signed scenarios in model; not charity confidence bounds",
+        "basis": "HomeBASE randomized endpoint contrast; not empirically integrated QALYs. Signed −1day diagnostic.",
+        "confidence": "External trial anchor; uncertain transfer"
+      },
+      {
+        "key": "adult_asthma_transfer",
+        "label": "Adult home-visit transfer",
+        "best": "0.5",
+        "range": "Exact signed scenarios in model; not charity confidence bounds",
+        "basis": "Lower intensity and timing relative to about4.9 trial visits; no additional duplicate within-year haircut.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "adult_asthma_symptom_utility_gap",
+        "label": "Adult symptom-day utility gap",
+        "best": "0.1",
+        "range": "Exact signed scenarios in model; not charity confidence bounds",
+        "basis": "Unvalidated utility mapping, at most one year; no survival/urgent-care bonus.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "adult_asthma_homevisit_fraction",
+        "label": "Adult home-visit-equivalent share",
+        "best": "0.8",
+        "range": "Exact signed scenarios in model; not charity confidence bounds",
+        "basis": "Of40% adult share; other20% adult workshop/other receives no assumed full visit effect.",
+        "confidence": "Explicit uncalibrated prior"
+      }
+    ],
+    "giftHeading": "One unrestricted $100,000 gift",
+    "sensitivity": [
+      {
+        "case": "central",
+        "headline": "$5,739,210 per 10 Bay QALYs",
+        "detail": "Signed Bay QALYs 0.17424000265609785; all-beneficiary 0.2236512166850345; SF 0.015083514919644905. These are unweighted scenarios, not posterior probabilities."
+      },
+      {
+        "case": "cpap_sf6d_measure",
+        "headline": "$2,626,681 per 10 Bay QALYs",
+        "detail": "Signed Bay QALYs 0.38070861017428687; all-beneficiary 0.4817369760827708; SF 0.0357303756714638. These are unweighted scenarios, not posterior probabilities."
+      },
+      {
+        "case": "cpap_eq5d_lower_ci",
+        "headline": "No finite positive price per 10 Bay QALYs",
+        "detail": "Signed Bay QALYs -0.4451658198984694; all-beneficiary -0.5506060615081744; SF -0.04685706733581181. These are unweighted scenarios, not posterior probabilities."
+      },
+      {
+        "case": "cpap_eq5d_upper_ci",
+        "headline": "$1,260,008 per 10 Bay QALYs",
+        "detail": "Signed Bay QALYs 0.7936458252106648; all-beneficiary 0.9979084948782433; SF 0.07702409717510159. These are unweighted scenarios, not posterior probabilities."
+      },
+      {
+        "case": "cpap_financing_replacement",
+        "headline": "$10,545,297 per 10 Bay QALYs",
+        "detail": "Signed Bay QALYs 0.09482899976448668; all-beneficiary 0.12438746307052055; SF 0.007142414630483788. These are unweighted scenarios, not posterior probabilities."
+      },
+      {
+        "case": "cpap_no_utility_effect",
+        "headline": "$10,545,297 per 10 Bay QALYs",
+        "detail": "Signed Bay QALYs 0.09482899976448668; all-beneficiary 0.12438746307052055; SF 0.007142414630483788. These are unweighted scenarios, not posterior probabilities."
+      },
+      {
+        "case": "adult_asthma_null",
+        "headline": "$6,208,553 per 10 Bay QALYs",
+        "detail": "Signed Bay QALYs 0.1610681154743887; all-beneficiary 0.20718635770789806; SF 0.013766326201473991. These are unweighted scenarios, not posterior probabilities."
+      },
+      {
+        "case": "all_replacement",
+        "headline": "No finite positive price per 10 Bay QALYs",
+        "detail": "Signed Bay QALYs 0; all-beneficiary 0; SF 0. These are unweighted scenarios, not posterior probabilities."
+      },
+      {
+        "case": "no_sf",
+        "headline": "$5,739,210 per 10 Bay QALYs",
+        "detail": "Signed Bay QALYs 0.17424000265609785; all-beneficiary 0.2236512166850345; SF 0. These are unweighted scenarios, not posterior probabilities."
+      },
+      {
+        "case": "zero_gift",
+        "headline": "No finite positive price per 10 Bay QALYs",
+        "detail": "Signed Bay QALYs 0; all-beneficiary 0; SF 0. These are unweighted scenarios, not posterior probabilities."
+      },
+      {
+        "case": "new_path_harm",
+        "headline": "No finite positive price per 10 Bay QALYs",
+        "detail": "Signed Bay QALYs -0.24250763521223603; all-beneficiary -0.2972833306503828; SF -0.02659124886718848. These are unweighted scenarios, not posterior probabilities."
+      },
+      {
+        "case": "cheap_cpap_high_response",
+        "headline": "$807,528 per 10 Bay QALYs",
+        "detail": "Signed Bay QALYs 1.2383474414036875; all-beneficiary 1.5537855151195212; SF 0.12149425879440384. These are unweighted scenarios, not posterior probabilities."
+      },
+      {
+        "case": "copay_not_free_resource",
+        "headline": "$5,739,210 per 10 Bay QALYs",
+        "detail": "Signed Bay QALYs 0.17424000265609785; all-beneficiary 0.2236512166850345; SF 0.015083514919644905. These are unweighted scenarios, not posterior probabilities."
+      },
+      {
+        "case": "no_discount",
+        "headline": "$5,345,605 per 10 Bay QALYs",
+        "detail": "Signed Bay QALYs 0.1870695618223009; all-beneficiary 0.24066230769609678; SF 0.015976814014941824. These are unweighted scenarios, not posterior probabilities."
+      }
+    ],
+    "uncertaintyBoundary": "No scenario weights assigned and no whole-organization expected-value estimate. CPAP negative EQ-5D trial-bound and adverse symptom scenarios can make total quantified health negative; no finite positive price then exists. Trial confidence intervals do not become charity intervals. Unresolved senior/COPD, youth/environmental, TB/other and workshop health is not zero and prevents treating the subset as a guaranteed lower bound.",
+    "fundingBoundary": "Verified funding room remains unknown. DHCS-funded asthma delivery managed by The Center at Sierra Health Foundation, Medi-Cal supports, Kick It California and existing providers/donors are baseline. CPAP low inventory or a waitlist does not prove cash rather than suitable machines, prescriptions or calibration is binding. The $132,250 gross partial envelope includes nominal external inputs even when financing replaces another funder, but omits unresolved branches’ outside resources. Fees are financing transfers, not free resources. No invoice, accepted restricted tranche or full economic-cost estimate is claimed."
+  },
+  "evidence": [
+    {
+      "key": "cessation",
+      "design": "Randomized long-term cessation intervention; external",
+      "population": "Lung Health Study middle-aged adults with airway obstruction",
+      "result": "Supports quitting-health mechanism over 14.5 years; intervention more intensive than Ash Kickers.",
+      "transfer": "Do not read arm mortality as conditional state hazard or local course efficacy; all state coefficients are priors."
+    },
+    {
+      "key": "asthma",
+      "design": "Healthy Homes II randomized active-comparator trial",
+      "population": "Children with asthma",
+      "result": "24.4 additional symptom-free days/year, not QALYs.",
+      "transfer": "Child share only, separate one-year utility/transfer priors. Adult benefit now uses separate adult evidence rather than extrapolation from children."
+    },
+    {
+      "key": "null",
+      "design": "2024 randomized trial",
+      "population": "626 Philadelphia children",
+      "result": "No overall between-group primary asthma-control advantage.",
+      "transfer": "Different intervention, but supports explicit null sensitivity."
+    },
+    {
+      "key": "recipient",
+      "design": "Official giving/domain plus historical municipal agreement",
+      "population": "EIN 94-1156307 regional organization",
+      "result": "Legal identity distinguished from similarly named affiliates.",
+      "transfer": "18-county scope does not verify current SF marginal cohort or funding room."
+    },
+    {
+      "key": "cpap_predict",
+      "design": "PREDICT randomized trial and one-year economic evaluation",
+      "population": "278 adults age65+ with symptomatic obstructive sleep apnea; CPAP plus supportive care versus supportive care",
+      "result": "EQ-5D incremental QALY0.005(95%CI −0.034–0.044); SF-6D0.018(0.003–0.034).",
+      "transfer": "Instrument dependence and signed bounds retained. Integrated ITT year includes adherence, survival and comparator access. No later device-life, cardiovascular or accident credit."
+    },
+    {
+      "key": "cpap_save",
+      "design": "SAVE randomized cardiovascular-outcome trial",
+      "population": "Established cardiovascular disease and minimally sleepy obstructive sleep apnea",
+      "result": "No cardiovascular-event prevention demonstrated.",
+      "transfer": "Different population; supports withholding automatic survival/stroke-prevention credit, not a claim all CPAP symptom benefits are zero."
+    },
+    {
+      "key": "adult_homebase",
+      "design": "HomeBASE randomized home-visit intervention",
+      "population": "366 low-income adults with uncontrolled asthma; about4.9 visits over one year",
+      "result": "2.02 additional symptom-free days/fortnight; no between-group urgent-care improvement.",
+      "transfer": "Endpoint days are converted using explicit0.5 transfer,0.1 utility gap and at most one year. Lower-intensity workshops do not inherit home-visit effects."
+    },
+    {
+      "key": "cpap_delivery",
+      "design": "Official Sleep Safe eligibility and delivery descriptions",
+      "population": "Prescription holders in Alameda, Contra Costa, Monterey, San Benito, San Francisco, San Mateo, Santa Clara and Santa Cruz",
+      "result": "Donated machines cleaned, consumables replaced; external prescription/calibration required; inventory/waiting limitations described.",
+      "transfer": "Eight service counties are not all Bay counties. Safe additional completed episodes, actual fees and marginal stock/cash capacity are unmeasured."
+    }
+  ],
+  "reservations": [
+    "Marginal allocations and unit costs are unverified.",
+    "Mortality recovery is a cohort-calendar proxy, not exact individual smoking history.",
+    "Public and alternative access can erase marginal health.",
+    "SF/Bay future health shares are priors.",
+    "Gross associated resource envelope is partial; unquantified branches' outside inputs are unmeasured.",
+    "Secondary financial extract is context only; current primary filing unavailable.",
+    "CPAP adds one-year health, not lifetime benefit per machine.",
+    "Signed CPAP instrument uncertainty materially changes the total.",
+    "Remaining25% distinct activities are not merely overhead and not assumed zero benefit."
+  ],
+  "excludedBenefits": [
+    "Senior/COPD education-to-changed-care effects",
+    "Youth/environmental and TB/other education health",
+    "Adult workshop-only, camp and caregiver benefits",
+    "CPAP cardiovascular mortality, accidents or post-first-year health",
+    "Cessation lifetime tail beyond finite model or duplicate disease rewards",
+    "Asthma mortality and health beyond one year",
+    "Full joint patient utility-state effects and complete outside-resource costs"
+  ],
+  "sources": [
+    {
+      "publisher": "City of San Jose",
+      "title": "Senior Health and Wellness grant: legal recipient/EIN",
+      "url": "https://records.sanjoseca.gov/Contracts/CON667613-000.pdf",
+      "published": "2022",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary historical contract pp1–2; identity only, not current funding"
+    },
+    {
+      "publisher": "Breathe California",
+      "title": "Official donation page",
+      "url": "https://lungsrus.org/donate/",
+      "published": "Undated current",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary current recipient address/domain and unrestricted giving"
+    },
+    {
+      "publisher": "Breathe California",
+      "title": "About us / portfolio",
+      "url": "https://lungsrus.org/about-us/",
+      "published": "Undated current",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary service breadth, not marginal allocation"
+    },
+    {
+      "publisher": "Breathe California",
+      "title": "Ash Kickers",
+      "url": "https://lungsrus.org/ash-kickers-smoking-cessation-program/",
+      "published": "Undated current",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary six-session service; uncontrolled six-week success not causal sustained quit"
+    },
+    {
+      "publisher": "Breathe California",
+      "title": "Asthma services",
+      "url": "https://lungsrus.org/asthma/",
+      "published": "Undated current",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary all-age visits, equipment and follow-up; children/adults not interchangeable"
+    },
+    {
+      "publisher": "Breathe California",
+      "title": "County resources",
+      "url": "https://lungsrus.org/county-resources/",
+      "published": "Undated current",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary18-county scope includes SF; directory not verified cohort capacity"
+    },
+    {
+      "publisher": "Anthonisen et al.; Annals of Internal Medicine",
+      "title": "Lung Health Study14.5-year mortality randomized trial",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15710956/",
+      "published": "2005-02-15",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary randomized cohort; middle-aged mild airway obstruction; not Ash Kickers or conditional state hazard"
+    },
+    {
+      "publisher": "Krieger et al.; Archives of Pediatrics and Adolescent Medicine",
+      "title": "Seattle–King County Healthy Homes II",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2810206/",
+      "published": "2009",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary randomized child asthma study;24.4 additional symptom-free days/year over nurse comparator, indexed text"
+    },
+    {
+      "publisher": "Bryant-Stephens et al.; JAMA Pediatrics",
+      "title": "Community Health Workers Linking Clinics and Schools",
+      "url": "https://jamanetwork.com/journals/jamapediatrics/fullarticle/2825197",
+      "published": "2024-10-21",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary randomized trial;626 children, no overall between-group primary advantage"
+    },
+    {
+      "publisher": "California DHCS",
+      "title": "Asthma Community Supports definition updates",
+      "url": "https://www.dhcs.ca.gov/wp-content/uploads/2025/10/Community-Supports-February-2025-Service-Definition-Updates.pdf",
+      "published": "2025; effective2026-01-01",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary existing payer boundary; APS education/assessment vs remediation supplies/modifications"
+    },
+    {
+      "publisher": "Kick It California",
+      "title": "FAQs and existing free cessation support",
+      "url": "https://kickitca.org/faqs",
+      "published": "Undated current",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary free baseline services and conditional patch access"
+    },
+    {
+      "publisher": "ProPublica / IRS",
+      "title": "EIN 94-1156307 FY2025 extract",
+      "url": "https://projects.propublica.org/nonprofits/organizations/941156307",
+      "published": "Filed2026-05-16",
+      "retrieved": "2026-09-08",
+      "sourceType": "Secondary IRS-derived financial context; raw current filing failed access"
+    },
+    {
+      "publisher": "Breathe California affiliates",
+      "title": "Separate regional affiliates",
+      "url": "https://www.breathecalifornia.org/",
+      "published": "Undated current",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary alliance directory, not consolidated entity"
+    },
+    {
+      "publisher": "Breathe California",
+      "title": "Prescription CPAP request",
+      "url": "https://lungsrus.org/requesting-a-cpap-machine/",
+      "published": "Undated",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary source reused from accepted coverage-v2 review; not newly fetched"
+    },
+    {
+      "publisher": "Breathe California",
+      "title": "Sleep apnea and inventory",
+      "url": "https://lungsrus.org/sleep-apnea/",
+      "published": "Undated",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary source reused from accepted coverage-v2 review; not newly fetched"
+    },
+    {
+      "publisher": "Breathe California",
+      "title": "All-age asthma home visits",
+      "url": "https://lungsrus.org/asthma-home-visits/",
+      "published": "Undated",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary source reused from accepted coverage-v2 review; not newly fetched"
+    },
+    {
+      "publisher": "Breathe California",
+      "title": "Adult asthma workshops",
+      "url": "https://lungsrus.org/asthma-education-workshop-for-adults/",
+      "published": "Undated",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary source reused from accepted coverage-v2 review; not newly fetched"
+    },
+    {
+      "publisher": "PREDICT investigators / NIHR",
+      "title": "CPAP economic evaluation",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK299286/",
+      "published": "2015",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary source reused from accepted coverage-v2 review; not newly fetched"
+    },
+    {
+      "publisher": "SAVE investigators",
+      "title": "CPAP for prevention of cardiovascular events",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27571048/",
+      "published": "2016",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary source reused from accepted coverage-v2 review; not newly fetched"
+    },
+    {
+      "publisher": "HomeBASE investigators",
+      "title": "Community health worker home visits for adults with asthma",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25419871/",
+      "published": "2015",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary source reused from accepted coverage-v2 review; not newly fetched"
+    },
+    {
+      "publisher": "Breathe California",
+      "title": "Senior health and wellness",
+      "url": "https://lungsrus.org/senior-health-wellness-internship/",
+      "published": "Undated",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary source reused from accepted coverage-v2 review; not newly fetched"
+    },
+    {
+      "publisher": "Breathe California",
+      "title": "World TB Day public-health event",
+      "url": "https://lungsrus.org/world-tb-day/",
+      "published": "2025-03-25 event",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary source reused from accepted coverage-v2 review; not newly fetched"
+    },
+    {
+      "publisher": "Breathe California",
+      "title": "Financial disclosures",
+      "url": "https://lungsrus.org/financials/",
+      "published": "Historical2020–21 audit linked",
+      "retrieved": "2026-09-08",
+      "sourceType": "Primary source reused from accepted coverage-v2 review; not newly fetched"
+    }
+  ]
+}

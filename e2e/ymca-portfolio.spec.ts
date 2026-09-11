@@ -4,7 +4,7 @@ test('YMCA research ranks the whole gift and preserves program history',async({p
  await page.goto('/research');
  await expect(page.locator('[data-research-slug]')).toHaveCount(EXPECTED_RESEARCH_COUNT);
  const row=page.locator('[data-research-slug="ymca-greater-sf"]');
- await expect(row).toContainText('$9.5M');
+ await expect(row).toContainText('$6.2M');
  await row.locator('a').first().click();
  await expect(page.locator('article')).toContainText('30%');
  await expect(page.locator('article')).toContainText('assuming distinct health increments');

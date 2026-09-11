@@ -1,0 +1,400 @@
+# Breathe California: whole-organization V2 assessment
+
+Draft for independent audit, not a donation recommendation. Assessment date: September 11, 2026. Exact recipient: Breathe California of the Bay Area, Golden Gate and Central Coast, EIN 94-1156307, operator of lungsrus.org. This is not the similarly named Sacramento organization or a consolidated assessment of the Breathe alliance. Public sources only; no organizational interviews, confidential monitoring files, or verified marginal funding offer.
+
+## Summary
+
+**What do they do?** Breathe California operates a broad lung-health and environmental portfolio, not merely a smoking-cessation course. Its advertised services include cessation counseling, asthma home visits, prescription respiratory-equipment access, senior education and assessments, tuberculosis education, and clean-air work. The strongest direct health case is that it can help someone obtain and use effective care who otherwise would not receive comparable care soon. However, a gift to the organization also supports prevention, environmental programs and central functions. A clinical course estimate cannot represent the entire gift without accounting for that allocation.
+
+**Reasons to investigate:**
+
+- Effective cessation and respiratory care can improve health when they reach people who otherwise miss care. [More](#4-causal-evidence-and-the-finite-health-bridge)
+- Current services and newer IRS filings support continued organizational activity. [More](#2-current-operations-spending-and-financial-interpretation)
+
+**Main reservations:**
+
+- Current completed-care counts and a marginal funding plan are missing. [More](#3-delivery-and-monitoring-what-is-known-missing-and-potentially-biased)
+- The clinical subtotal does not measure all of the organization's policy and environmental benefits. [More](#5-whole-gift-model-results-and-comparisons)
+
+The public financials page still points readers to a 2020–2021 audit as its most current information. That is a genuine transparency limitation, but it is not evidence that Breathe has stopped operating. We inspected three newer original IRS returns. The return for the year ended June 2025 reports $1,373,246 of functional expenses, plus $6,344 of event costs netted against revenue: a $1,379,590 whole-expense boundary. It also reports that independent financial-statement auditing occurred. We have not obtained that newer auditor’s report. The June 2024 return contains anomalous zero current-year totals; we do not interpret them as zero operations. The June 2023 return reports $1,159,379 of expenses.
+
+The latest filing’s largest program is environmental health, at $511,139. Lung-health education and services account for $407,539, anti-tobacco programs $299,166, and community health $25,046. These are broad accounting categories, not prices of additional completed treatments. In particular, anti-tobacco work includes prevention and policy activities, while lung-health work includes several different services. We use this observed broad mix as a provisional guide to an ordinary gift, with explicitly judgmental subdivisions. That assumption remains uncertain because historical average spending does not determine where the next donation goes.
+
+**What do you get for your dollar?** Our central clinical-subset calculation is **$10.75 million per 10 Bay Area QALYs**, retaining the entire donor gift in cost. An illustrative signed scenario mixture gives **$12.35 million per 10 Bay QALYs**. These are different statistics, neither a verified funding offer nor complete whole-organization expected value. The model quantifies cessation, child and adult asthma home-visit pathways, and prescription CPAP access. Environmental, policy, senior, tuberculosis and other effects remain unresolved where we cannot trace additional delivery to finite health. Unquantified effects are not assumed to be zero; therefore the clinical-subset estimate is not a guaranteed upper bound on the organization’s cost-effectiveness.
+
+The first new results are preserved, not adjusted to make the organization appear competitive. About 81.3% of the signed mixture’s modeled Bay health comes from its 10%-weight favorable scenario. Removing that scenario and renormalizing the others raises the price to $59.56 million per 10 Bay QALYs. The weights are subjective judgments, not estimated probabilities from Breathe’s data. The favorable scenario reuses a previously published CPAP diagnostic combining cheaper delivery, stronger additionality and the larger alternative utility instrument effect. It should not be mistaken for a typical patient forecast.
+
+**Monitoring and information sharing.** Monitoring is the central evidentiary weakness. All three IRS returns repeat the same pandemic-era service narrative, including 453 respiratory-equipment recipients and 170 asthma-home-visit individuals. We cannot treat those numbers as independent annual observations, current capacity, or completed sustained treatment. The cessation webpage’s claim that over 60% are tobacco-free at six weeks lacks a dated denominator, comparison group and long-term follow-up. Current pages establish advertised referral and service routes, and the website advertised a July 2026 asthma camp; they do not establish delivered cohorts or additional donor-funded slots.
+
+**Our qualitative assessment.** Our status is **HOLD for a high-confidence donation recommendation; retain as exploratory research**. The most useful next evidence would connect a dated program ledger to a whole-resource budget and an additional-gift plan: unique recipients, completed service, sustained use, alternatives available without Breathe, county of residence, public or insurance funding, and which bottleneck cash can change. A current audit and explanation of the anomalous filing would improve financial confidence. Until then, donors interested specifically in lung-health access should ask what a bounded gift changes, rather than infer that a waiting list, referral, screening or donated machine automatically represents an additional health gain.
+
+The practical comparison is not between Breathe and doing nothing in a world without healthcare. It is between additional Breathe activity and the existing combination of public programs, insurance, other charities, household effort and future treatment. We also do not assume that environmental advocacy is less valuable because it is harder to quantify. Its missing implementation and exposure data are a limitation of this evaluation, not a demonstrated absence of benefit. The report preserves a reproducible earlier model and a separate residual-health diagnostic so readers can inspect these disagreements without confusing a clinical subtotal with a complete assessment.
+
+## 1. What the organization does, and what a donor would fund
+
+### 1.1 Legal and geographic scope
+
+The relevant organization is the San Jose-based operator of lungsrus.org with EIN 94-1156307. Its current name includes Bay Area, Golden Gate and Central Coast. Similar branding is not a reason to combine separate affiliates’ revenue, service counts or clinical outcomes. The current IRS return identifies the same EIN and address as the website. This identity boundary matters because search results frequently return Sacramento and Southern California affiliates with different finances and programs. Their annual reports cannot repair a missing year for this recipient. [Original FY2025 return](https://projects.propublica.org/nonprofits/full_text/202641369349300219/IRS990)
+
+The Bay Area is the primary geography for this assessment, not the organization’s headquarters alone. Current CPAP and indoor-assessment eligibility covers Alameda, Contra Costa, San Francisco, San Mateo and Santa Clara, but also Monterey, San Benito and Santa Cruz. The latter three are outside the conventional nine-county Bay Area used here. An eight-county eligibility list therefore cannot be converted to 100% Bay impact, nor does counting counties produce a reliable patient-weighted share. The model’s Bay fractions remain explicit judgments. San Francisco is nested within Bay results; the two should never be added. [Indoor assessment eligibility](https://lungsrus.org/free-indoor-air-assessments/)
+
+### 1.2 Cessation: from an offer to sustained quitting
+
+Breathe advertises Ash Kickers as a six-session facilitated program, alongside shorter individual and group formats and a teen service. These formats differ in intensity and cannot be treated as interchangeable completed courses. The relevant patient journey begins with someone wanting help, continues through enrollment and meaningful participation, and ends with additional sustained abstinence compared with the support that person would otherwise use. Simply identifying a smoker or delivering a quit kit does not establish that final change. [Current cessation services](https://lungsrus.org/quit-smoking-services/)
+
+The model prices offered-service equivalents rather than assuming everyone offered help completes six sessions. Its incremental quitting coefficient must consequently absorb the relationship between the blended offer and the randomized intervention evidence. We do not multiply the website’s end-of-program success percentage by all outreach contacts. That would combine a selected or undefined completion denominator with a broader service denominator and then mistake observed quitting for causally additional quitting. The model instead uses a modest judgmental difference in six-month quitting and finite subsequent trajectories.
+
+A donor could plausibly help pay for facilitator time, scheduling, accessible formats, follow-up or the practical work needed to maintain a cohort. But these are possible mechanisms, not documented marginal offers. A current public page does not specify the next cohort’s start date, open seats, funded facilitator hours, or a price for an additional participant. Nor is it clear whether a general gift would expand this service instead of another program. The expenditure allocation in the model is therefore a provisional ordinary-gift hypothesis, not a restriction imposed by the donor or accepted by the organization.
+
+### 1.3 Asthma: assessment, remediation and follow-up
+
+The home-visit pathway combines assessment of respiratory triggers, education, remediation resources and follow-up. Its plausible benefit is improved asthma management and a healthier indoor environment, not an automatic cure for asthma. Breathe advertises all-age eligibility and several follow-ups, and identifies public Asthma Mitigation Project support. The clinical model separates children from adults and distinguishes home visits from lower-intensity workshops. [Home-visit service](https://lungsrus.org/asthma-home-visits/)
+
+A completed home visit is an intermediate service, not necessarily an exposure change. A household may receive useful advice but lack authority or funds to change a building condition. Equipment may be unsuitable, unused, or already obtainable elsewhere. Conversely, an assessment may successfully connect someone to care or repairs with benefits beyond the narrow symptom-day calculation. The public material does not provide a linked dataset showing assessment, recommended action, action completed, sustained exposure change and subsequent symptoms. Those missing links are represented by transfer and additionality judgments rather than treated as observed success.
+
+The public indoor-assessment page includes fall-risk assessment, and the air-purifier page addresses seniors with respiratory conditions. We do not add a second full asthma benefit for a purifier delivered during an already modeled home-visit episode. We also do not award fall-prevention QALYs merely because a fall-risk assessment occurs. The latter requires a separate bridge through effective modifications, adherence, baseline risk and prevented injuries. The current packet does not establish those quantities. [Air-purifier service](https://lungsrus.org/air-purifier-program/)
+
+### 1.4 CPAP: equipment is one part of treatment
+
+Sleep Safe is a clinically plausible access intervention because positive airway pressure treatment requires a working device and suitable supplies. Breathe describes cleaning donated equipment and replacing relevant consumables, with a prescription required and calibration or instruction supplied through the recipient’s clinician. Its page also describes demand and occasional waits for particular machine types. Those details establish a pathway and potential constraints, not a count of extra successfully treated people per dollar. [Prescription equipment request](https://lungsrus.org/requesting-a-cpap-machine/)
+
+The necessary chain is suitable equipment supply, safe preparation, prescription and settings, recipient access, sustained use, and improvement relative to alternative treatment. The donor’s cash may affect some links but not others. A warehouse full of unsuitable older machines is not equivalent to usable inventory. A suitable machine cannot substitute for clinical assessment when a prescription or settings are missing. A replacement for a device already financed by insurance may avert a delay without creating a new lifetime of treatment. We model one integrated trial year per additional episode, not seven years because a machine might physically last seven years.
+
+The October 2024 acceptance policy demonstrates selectivity about equipment models. It is evidence against treating every donated machine as interchangeable usable supply. It does not tell us current stocks, rejection rates, preparation cost, or the number of prescriptions waiting for each machine. We would want those quantities before interpreting cash as the binding constraint. [Dated equipment policy](https://lungsrus.org/wp-content/uploads/2024/10/Acceptable-CPAP-Machines-9Oct24.pdf)
+
+### 1.5 Environmental and tobacco-policy work
+
+Environmental health is the largest reported FY2025 program category. It includes clean-air education, secondhand-smoke protection and transportation-related activity. Breathe’s current multi-unit-housing page describes helping owners and managers consider and implement smoke-free policies. This could improve health if it changes exposure for people who would otherwise remain exposed. The expenditure category cannot be dismissed as overhead merely because its clinical effect is harder to estimate. [Housing-policy assistance](https://lungsrus.org/smoke-free-multi-unit-housing/)
+
+The relevant causal chain is specific: additional organizational effort changes a policy or its implementation; implementation changes actual exposure rather than only written rules; the changed exposure persists for a finite period; and that exposure difference changes health. Each step has an alternative explanation. A jurisdiction may already have planned the policy, another coalition may have supplied decisive effort, compliance may be low, or residents may move between settings. Counting an ordinance as though Breathe alone permanently protected every resident would substantially overstate certainty and could duplicate benefits already attributed to public agencies or other advocates.
+
+Breathe’s Clean Cars for All page is especially useful disconfirmation. It points to a publicly funded vehicle-retirement/replacement program but explicitly identifies GRID Alternatives as the authorized application-assistance partner. We do not assign vehicle grants, replacement cars or resulting air-quality benefits to Breathe simply because its website links to that program. The Silicon Valley Clean Cities role is a separate coordination and education mechanism, but this review did not establish a current additional fleet-conversion denominator attributable to a new Breathe gift. [Clean Cars for All](https://lungsrus.org/clean-cars-for-all/) · [Coalition role](https://lungsrus.org/silicon-valley-clean-cities-coalition/)
+
+### 1.6 Senior, tuberculosis and community services
+
+The senior program’s advertised activities include education, lung-health screening, breathing exercises, indoor assessment and respiratory equipment. Several overlap the cessation, asthma or CPAP mechanisms already modeled. A senior contact must not receive a generic extra QALY merely for belonging to another program label. Distinct improvements through COPD care, fall prevention or other referrals remain possible, but we lack a completed-care denominator and incremental outcome bridge. [Senior program description](https://lungsrus.org/senior-health-wellness-internship/)
+
+The tuberculosis webpage describes presentations, partnerships, awareness and advocacy, with links to updated county risk-assessment materials. It does not establish that Breathe itself diagnosed or completed preventive treatment for a current cohort. The disease can have serious health consequences, but the seriousness of tuberculosis is not a multiplier for educational attendance. We would need to know how many additional eligible people were tested, assessed, started appropriate treatment and completed it beyond the public-health baseline. [Tuberculosis activities](https://lungsrus.org/tuberculosis/)
+
+Community health and volunteer training may enable several programs simultaneously. Their costs stay in the whole budget. Their benefits cannot automatically be added as another independent layer above the services volunteers deliver. For example, a volunteer trained to support a cessation class contributes to that class; counting both the trainee and every class participant as separate health outcomes would be wrong. Capacity-building may also have future benefits beyond the current cohort, but the public sources do not establish its duration or incremental scale.
+
+## 2. Current operations, spending and financial interpretation
+
+### 2.1 What is current, and what is merely still online?
+
+The site advertises services with identifiable intake or referral pathways, and its staff-and-key-volunteers page lists roles for asthma, equipment provision, senior health and environmental education. This is stronger than an archived mission statement. The page combines employees and volunteers, however, so it cannot be read as a full-time-equivalent staffing table or available clinical capacity. It also identifies a tobacco-control grant role without stating the grant’s current uncommitted balance. [Current team page](https://lungsrus.org/our-staff/)
+
+The asthma camp page advertised July 27–31, 2026 in San Jose. That is a dated indication of planned recent programming. We did not verify attendance, completion, cancellation status or clinical follow-up, and therefore do not turn the scheduled camp into an observed treated cohort. Similarly, a form being available does not mean an intake is immediately accepted. A current program-status assessment should distinguish open information, active enrollment, staffed delivery, completed delivery and measured outcomes. [Camp announcement](https://lungsrus.org/asthma-summer-camp-superstuff/)
+
+The stale financial webpage creates a different issue. It describes the 2020–2021 audit as current, whereas the newer IRS return says a financial-statement audit occurred. We have neither the newer auditor’s opinion nor its notes, so we do not claim an unqualified opinion or independently audited program outcomes. An IRS checkbox is evidence that the filer reported an audit; it does not replace reading the audit. Updating the public link would be useful, but this review cannot infer why the website has not been updated. [Financials page](https://lungsrus.org/financials/)
+
+### 2.2 Latest three original returns
+
+| Fiscal year ended June | Functional expenses | Additional netted event cost | Whole-expense use in this assessment | Revenue | Interpretation |
+|---|---:|---:|---:|---:|---|
+| 2023 | $1,159,379 | None shown in inspected return | $1,159,379 | $1,333,909 | Original return; not a current delivery denominator |
+| 2024 | $0 reported | Unresolved | Not used | $0 reported | Anomalous zero current-year original; not zero operations |
+| 2025 | $1,373,246 | $6,344 | $1,379,590 | $1,648,480 | Latest original return; gross expense boundary, not pure cash flow |
+
+Sources: [FY2023](https://projects.propublica.org/nonprofits/full_text/202323109349300502/IRS990), [FY2024](https://projects.propublica.org/nonprofits/full_text/202511359349318961/IRS990), [FY2025](https://projects.propublica.org/nonprofits/full_text/202641369349300219/IRS990). All inspected September 11, 2026. The tax-form header year differs from the fiscal year ending in June; the dates above are fiscal-year ends. Submission dates are November 6, 2023; May 15, 2025; and May 15, 2026 respectively. ProPublica’s summary displays a next-day filing date for the latter two; that difference is not treated as a change in accounting period.
+
+The FY2024 anomaly is visible in the original rendered filing, including program and functional-expense totals, rather than only in a secondary summary. The FY2025 prior-year columns show $888,864 of expenses and $1,485,579 of revenue, figures also appearing as comparative columns in the anomalous filing. We do not promote those comparative figures to a fully reconciled replacement FY2024 statement. An amended return or the corresponding audited statements would be the appropriate resolution. This also means a three-year spending growth rate would create false precision.
+
+The latest expense boundary adds event direct costs because those costs were netted against event revenue rather than included in functional expenses. It does not add gross event receipts as an expense, and it does not subtract government grants from costs. Public grants finance resources; they do not make resources disappear. The filing’s accounting expenses also include items such as depreciation, so calling this number pure annual cash spending would be inaccurate. It is the best inspected whole-accounting-cost boundary, with a separate incomplete allowance for outside resources in the clinical model.
+
+### Spending breakdown
+
+The three-year comparison below uses reported accounting buckets, not inferred patient activity. The anomalous FY2024 filing cannot support an interpolated spending breakdown.
+
+| Accounting bucket | FY2023 | FY2024 | FY2025 |
+|---|---:|---|---:|
+| Environmental health | $392,951 | Unusable zero-filled return | $511,139 |
+| Lung-health education/services | $50,466 | Same anomaly | $407,539 |
+| Anti-tobacco | $217,883 | Same anomaly | $299,166 |
+| Other/community health | $461,018 | Same anomaly | $25,046 |
+| Total program services | $1,122,318 | Same anomaly | $1,242,890 |
+| Management/general | $36,745 | Same anomaly | $130,356 |
+| Fundraising functional expense | $316 | Same anomaly | $0 reported |
+| Functional expense total | $1,159,379 | Same anomaly | $1,373,246 |
+| Additional separately netted event costs | None reported | Unresolved | $6,344 |
+| Total including known event addback | $1,159,379 | Not defensibly measurable | $1,379,590 |
+
+Subtotals are not additional costs. FY2023 program, management and fundraising shares were 96.80%, 3.17% and 0.03%; environmental, lung-health, tobacco and community buckets represented 33.89%, 4.35%, 18.79% and 39.76% of total expense. The FY2023 [Schedule O](https://projects.propublica.org/nonprofits/full_text/202323109349300502/IRS990ScheduleO), inspected September 11, 2026, identifies the $461,018 other-program bucket as community health. Large changes in accounting mix do not establish changes in clinical productivity, especially when the program narratives repeat older counts.
+
+| FY2025 category | Reported cost | Share | How it enters the assessment |
+|---|---:|---:|---|
+| Environmental health | $511,139 | 37.1% | Retained in cost; distinct policy/environmental health unresolved |
+| Lung-health education and services | $407,539 | 29.5% | Subdivided by explicit priors among asthma, CPAP and other lung/senior activity |
+| Anti-tobacco programs | $299,166 | 21.7% | Direct cessation subshare is a prior; prevention/policy remainder unresolved |
+| Community health | $25,046 | 1.8% | Retained; no separate generic contact-to-health multiplier |
+| Management/general | $130,356 | 9.4% | Retained once as enabling cost |
+| Netted event direct expense | $6,344 | 0.5% | Added to retain whole cost |
+| Total | $1,379,590 | 100% | Denominator for the broad-mix proxy |
+
+The first four sum to $1,242,890 in reported program services. Adding management/general produces $1,373,246 of functional expenses. These arithmetic identities are tested in the executable packet. The categories are not themselves patient pathways. The model’s within-category splits therefore must remain labeled assumptions even though their parent totals come from an original filing.
+
+### 2.4 Public funding, reserves and complements
+
+FY2025 government grants are $749,252. Program revenue includes $65,740 labeled CPAP machines, hoses and masks. Neither figure establishes a marginal shortfall: government grants may be restricted to particular activities or periods, and equipment revenue is not a unique-patient count. A fee can be a financing contribution without revealing the fully loaded service cost or the health benefit created by another donor’s gift. We do not divide fees by an assumed copayment and call the result observed machines.
+
+The return reports $1,774,416 in net assets without donor restrictions and $220,153 with restrictions. It separately reports cash of $391,907, temporary savings of $51,864, publicly traded investments of $1,040,556, and substantial fixed and other assets. Unrestricted net assets are not synonymous with idle spendable cash; operating commitments and the nature of assets matter. Conversely, a positive reserve balance is not evidence that an additional gift has no value. The correct donor question is whether a proposed expansion would otherwise be funded, delayed, or displaced by these resources.
+
+The asset roll-forward is arithmetically explained. Beginning net assets of $1,483,421 plus the $275,234 revenue surplus, $95,338 unrealized investment gains and $140,576 prior-period adjustment produce ending net assets of $1,994,569. We therefore do not describe that difference as an unexplained missing amount. The reason for the prior-period adjustment and the anomalous prior filing still merits the audit notes, but those are separate questions from whether the displayed equation adds up.
+
+Donated machines, volunteer time, clinical calibration, medication and public infrastructure are material complements. The model adds limited outside-resource allowances for modeled nominal clinical episodes. It does not pretend to have a complete societal cost account for the environmental, advocacy or other unresolved branches. A donor-price estimate and a gross-resource estimate answer different questions. Counting the whole gift avoids cherry-picking only program expenditures, but does not by itself make the resource denominator complete.
+
+## 3. Delivery and monitoring: what is known, missing and potentially biased
+
+### 3.1 Repeated annual narratives
+
+The three original filings repeat the same pandemic-era service description, including 453 recipients of CPAP or other respiratory equipment, 170 asthma-home-visit individuals and 12 camp children. They also repeat broader contacts, education and media counts. Those numbers may describe genuine historical activity. The problem is their period and interpretation, not proof they are fictitious. Repetition prevents treating them as three independent years of measured delivery or as a verified current run rate.
+
+The wording combines people, equipment, education, physician reports and media audiences. These are different units. A physician report may concern someone already counted as a home-visit recipient; a caregiver may accompany a patient; a respiratory-equipment recipient may receive supplies rather than a first machine. Adding all these counts would exaggerate the number of people whose health could change. The model instead uses explicit offered-episode costs and additionality assumptions, while acknowledging that this is a weaker basis than a current deduplicated ledger.
+
+The narrative also says smokers were assisted to quit through several formats. That is not a controlled number of additional sustained quitters. Without the original denominator, follow-up period and missingness rule, even the word “quit” can conceal different outcomes: a quit attempt, point-prevalence abstinence, completion of a course, or abstinence at a longer assessment. The model’s six-month difference is not claimed to be measured by the filing.
+
+### 3.2 Cessation monitoring needed
+
+A useful cohort ledger would start with everyone offered or enrolled in a dated service and identify modality, number of contacts and baseline tobacco use. It would report attendance and follow-up separately rather than quietly remove people who disengage. Six- and twelve-month abstinence should specify whether it is self-reported or biochemically verified, continuous or point-prevalence, and how missing participants are treated. None of these details is supplied by an undated six-week success claim.
+
+Even a complete before-and-after ledger would not by itself identify the counterfactual. People enrolling in cessation support are often already motivated to stop. Some would use another free service or quit without formal support. A comparator, a credible natural experiment, or a carefully justified transfer from relevant randomized evidence is needed to estimate the incremental effect. This report uses the latter approach with large uncertainty and does not relabel it local causal evidence.
+
+The weakest link for a small ordinary gift may be earlier than clinical efficacy: the gift might not create an additional offer at all. A funded cohort with unused seats may need recruitment rather than another facilitator, while an oversubscribed cohort may need staff. These imply different costs and additionality. Monitoring should distinguish interested people, eligible people, scheduled people and completed service, with reasons for each drop-off. That would also reveal whether language, transport, timing or clinical support is the relevant barrier.
+
+### 3.3 Equipment monitoring needed
+
+For CPAP, we would want incoming machines classified by usable model and condition, rejection reasons, preparation time, consumable cost and devices actually delivered. Deliveries should distinguish first access, replacement, temporary loan, supplies-only support and repeat service to the same person. A device-count ledger alone cannot answer whether the recipient completed clinical setup or used treatment beyond the first nights.
+
+Follow-up should identify whether the machine remained usable, whether the person obtained clinical assistance, and whether comparable treatment would have been available through insurance or another source. A return or discontinuation can be informative rather than automatically a failure: the machine might be safely reused by another recipient. However, health must be attributed to each finite treatment episode without assigning a new lifetime every time the same machine moves or the same patient receives supplies.
+
+Current wait-list language does not reveal which constraint is binding. A shortage of a specific model may be solved by donated inventory, not cash; a cleaning backlog might respond to staff time; a prescription barrier may require a clinical partner. These are empirically distinguishable. A donor-ready plan would specify which bottleneck a gift addresses and the expected completed episodes under that change, rather than price raw inventory.
+
+### 3.4 Asthma and environmental monitoring needed
+
+For asthma, the key denominator is a unique person or household receiving a defined intervention over a defined period. The ledger should link assessment, equipment or remediation, follow-up and symptom measurement. It should distinguish a home intervention from a workshop or camp, because those services differ from the randomized home-visit evidence. Changes in medication or outside clinical care should be recorded, not automatically attributed to Breathe.
+
+Symptom improvement among returning participants can be biased by selection and regression to the mean. People may enroll when symptoms are unusually bad and improve even without intervention. Those who remain in follow-up may differ from those who move or become unreachable. A randomized effect from another setting helps address causal interpretation, but only if the delivered service and population are sufficiently comparable. The model’s transfer factors reflect this uncertainty; they are not corrections estimated from a Breathe monitoring audit.
+
+For environmental and policy work, monitoring should track a named project from organizational contribution to implemented change. An ordinance list should include adoption date, effective date, implementation responsibilities, affected population and evidence of compliance or exposure change. Historical organizational contribution should be distinguished from the contribution of the current annual budget and the prospective next gift. A media impression or workshop attendee is not an exposed resident whose risk has changed.
+
+### 3.5 Information sharing and what this review did not do
+
+We did not request private patient records, interview staff, observe a service, verify a sample of beneficiaries or audit a monitoring database. We therefore cannot assess the organization’s responsiveness to diligence or the internal quality of its data systems. A listed database-management role indicates that such work has an organizational home, not that the specific outcome controls above are implemented. The report’s monitoring critique is about the public evidence available to this decision, not a claim that internal records do not exist.
+
+The most efficient next disclosure would be a compact, dated table rather than a large collection of testimonials: program, county, unique eligible people, completed intervention, relevant follow-up, cost, existing funding and additional capacity. Testimonials may reveal practical barriers or unintended consequences, but they do not establish average causal effects or funding room. We would use them to refine questions and failure modes, not as an extra numerical health coefficient.
+
+## 4. Causal evidence and the finite health bridge
+
+### 4.1 Cessation
+
+The accepted packet uses the Lung Health Study as evidence that an intensive cessation intervention can improve long-term health in middle-aged people with airway obstruction. It is not an Ash Kickers evaluation. Its randomized arm comparison cannot be read directly as the mortality hazard of every person who quits, because quitting is a post-randomization behavior and the intervention differs in intensity. The model therefore labels the state hazards and incremental quit probability as judgments rather than source-derived local estimates. [Primary study](https://pubmed.ncbi.nlm.nih.gov/15710956/)
+
+The finite calculation starts with one additional initial quitter compared with a smoker and follows the difference in the probability of being alive in smoker and former-smoker states. Both sides can subsequently quit, relapse or die. This matters because assuming everyone in the comparison group smokes forever gives too much credit to an intervention that may merely accelerate a quit. Similarly, assuming a six-month quitter never relapses exaggerates persistence. The model does neither.
+
+The central horizon is ten years, with a two-year lag before the lower former-smoker mortality hazard applies, a 3% discount rate and a small utility difference between living states. These are simplifying priors, not detailed disease-specific natural history. The mortality-recovery lag is a cohort-calendar approximation, so someone who later quits is not tracked by exact time since their own quit. The model is inspectable and finite, but this simplification is one reason not to claim precise lifetime health or detailed subgroup predictions.
+
+### 4.2 Child asthma
+
+The retained child anchor is Healthy Homes II: 24.4 additional symptom-free days per year over an active nurse comparator, not 24.4 QALYs and not improvement over no care. The model applies the effect only to the assumed child share, with a transfer factor and a judgmental utility gap for symptomatic days. It uses at most one year and adds no survival or separate hospitalization benefit. [Primary child study](https://pmc.ncbi.nlm.nih.gov/articles/PMC2810206/)
+
+The active comparator is important. A local home visit delivered alongside existing asthma support should not inherit the entire before-and-after improvement seen among intervention recipients. The external incremental contrast is already smaller than that total change. At the same time, the model must not mechanically subtract another identical comparator effect. The additionality parameter concerns whether the gift creates the modeled service instead of replacing equivalent access; transfer concerns how the local delivered service compares with the trial intervention. They are related uncertainties but not intended to penalize the same counterfactual twice.
+
+A later Philadelphia randomized trial in the accepted source packet did not show an overall primary asthma-control advantage between groups. We retain this as a reason for null sensitivity, not as proof all home visits are ineffective. Different interventions, populations and usual-care systems can yield different results. The correct conclusion is that clinical transfer is uncertain and that a local service label alone does not establish a positive effect. [Randomized null evidence](https://jamanetwork.com/journals/jamapediatrics/fullarticle/2825197)
+
+### 4.3 Adult asthma
+
+HomeBASE studied low-income adults with uncontrolled asthma and an intervention averaging about 4.9 visits over a year. The accepted anchor is 2.02 additional symptom-free days per fortnight, with no between-group urgent-care improvement. The model applies an explicit transfer factor, a symptom-day utility prior and a home-visit fraction, rather than extrapolating the child effect to every adult workshop participant. [Primary adult study](https://pubmed.ncbi.nlm.nih.gov/25419871/)
+
+An endpoint symptom-free-day contrast does not prove that the full difference existed from the first day of the year. The transfer factor partly represents lower intensity and the time profile of benefit, which are not separately measured for Breathe. The one-year cap prevents an unsupported permanent gain, but it does not validate the within-year trajectory. We preserve this limitation rather than claiming the annualization is a direct observed QALY result.
+
+### 4.4 CPAP
+
+PREDICT’s one-year economic evaluation used randomized assignment in older adults and measured integrated quality-adjusted survival. The retained EQ-5D contrast is 0.005 QALY, with a 95% interval from −0.034 to 0.044. The alternative SF-6D contrast is larger, at 0.018. Monthly questionnaire missingness and imputation are relevant to interpretation. This is an integrated intention-to-treat year: adherence, discontinuation, deaths and comparator treatment are already reflected in that contrast. We do not multiply it by another generic adherence or survival fraction. [PREDICT economic evaluation](https://www.ncbi.nlm.nih.gov/books/NBK299286/)
+
+The instrument difference is consequential rather than a technical footnote. Choosing the larger measure solely because it improves the ranking would be unjustified. The central case retains EQ-5D and the alternative measure remains a clearly labeled sensitivity. Negative bounds are allowed to produce negative total quantified health. A negative statistical bound is not a claim that CPAP usually harms people; it shows that the available generic-utility evidence does not pin down a large positive local effect with confidence.
+
+The SAVE trial did not demonstrate prevention of cardiovascular events in its studied population with established cardiovascular disease and minimally sleepy sleep apnea. We therefore withhold an automatic cardiovascular survival bonus. This population is not identical to symptomatic older adults or every Breathe recipient, so the finding does not erase possible symptom benefits. It does constrain a tempting but unsupported move from “CPAP treats sleep apnea” to “every donated machine prevents a fatal event.” [SAVE trial](https://pubmed.ncbi.nlm.nih.gov/27571048/)
+
+### 4.5 Joint benefits and omissions
+
+Someone can have asthma, sleep apnea and tobacco dependence. The model adds distinct pathway gains as a first-order approximation but does not model the full joint utility state of each unique person. It must therefore avoid adding another generic senior-health gain or duplicate survival bonus for the same improvement. The small finite effects and explicit service splits reduce, but do not eliminate, overlap uncertainty. A linked recipient ledger would be needed to estimate overlap directly.
+
+Environmental and policy effects could be important enough to change the overall conclusion. They are not assigned zero. However, the current public packet does not identify a defensible current affected-person denominator, exposure change and donor contribution for those branches. Rather than hide that gap inside a wide but arbitrary positive coefficient, the model leaves complete organization QALYs unresolved and provides a residual diagnostic. The diagnostic asks how much additional Bay health the omitted pathways would need to supply; it does not assert that they do supply it.
+
+## 5. Whole-gift model, results and comparisons
+
+### 5.1 What changed from the accepted earlier calculator?
+
+The earlier coverage model retained a $100,000 gift but assumed 15% cessation, 25% asthma and 25% CPAP allocation. It produced 0.17424000265609785 Bay QALYs, or $5,739,210.197176861 per 10 Bay QALYs. That exact old result remains reproducible in this packet. The V2 revision does not quietly rewrite the old coefficient family or pretend it had observed program allocations.
+
+The new central broad mix follows FY2025 category costs as a proxy for future marginal spending. Within anti-tobacco, the direct-cessation share is 40%; within lung health, asthma is 35%, CPAP 45%, and other lung/senior activity 20%. Those internal shares are judgments. The resulting gift allocations are 8.6741% cessation, 10.3392% asthma and 13.2933% CPAP, totaling 32.3065%. The remaining gift supports unquantified programs and enabling costs; it is not removed from the denominator.
+
+This is a substantive scope revision, not a clinical efficacy discovery. Every retained central unit cost, clinical effect, state parameter and geographic share is unchanged from the accepted coverage model. The report makes the allocation difference visible so a reader can disagree with the spending proxy without conflating that disagreement with the clinical evidence. A current marginal budget could justify a different allocation, but the public record does not establish one.
+
+### 5.2 Equations and units
+
+For cessation, offered-service equivalents equal gift × cessation allocation ÷ cash cost per offer. Additional people equal those offers × additionality. Their health is additional people × incremental six-month quitting × finite QALYs per additional initial quitter, less any specified harm. The trajectory is computed numerically in the portable model, with death absorbing and later quitting and relapse in both arms.
+
+For child asthma, additional home-visit equivalents are multiplied by child share, incremental symptom-free days divided by 365, local transfer, symptomatic-day utility gap, a finite discounted duration and delay. Adult asthma uses the adult share and home-visit fraction, with symptom-free days per fortnight divided by 14. These are separate age/service pathways, not two benefits assigned to every home visit.
+
+For CPAP, additional treatment episodes equal gift × CPAP allocation ÷ episode cost × additionality. They receive the integrated one-year trial effect × relative transfer and delay discount. Geography is applied once to each pathway. The total retains signed contributions; if health is nonpositive, the calculator returns no finite positive cost per 10 QALYs rather than a misleading negative bargain.
+
+### 5.3 Worked central gift
+
+A $100,000 gift allocates approximately $8,674 to cessation, $10,339 to asthma and $13,293 to CPAP under the new proxy. At the retained costs, these correspond to roughly 34.70 cessation offers, 8.62 asthma offers and 26.59 nominal CPAP episodes. Additionality reduces them before health is calculated. These fractional quantities are expected service equivalents in a model, not actual people promised to a donor.
+
+The central result is **0.09300800818512407 Bay QALYs**, giving **$10,751,762.342975779 per 10 Bay QALYs**. Its gross partial-resource price is **$12,546,127.758921355**. Outside inputs are charged on nominal services, not only on successful incremental episodes, because resources can be consumed even when a service substitutes for another payer or fails to produce extra health. The full external-resource bill remains incomplete.
+
+### 5.4 Signed scenario mixture
+
+| Scenario | Weight | Deliberate difference from central |
+|---|---:|---|
+| Funded replacement | 20% | All three delivery additionalities zero |
+| Adverse | 10% | Negative CPAP and adult symptom effects; slightly negative incremental cessation |
+| Cautious | 30% | Halved delivery additionalities, lower quitting difference, zero CPAP utility effect |
+| Central | 30% | New spending proxy and retained central clinical family |
+| Favorable | 10% | Cheaper CPAP episodes, higher additionality/transfer and SF-6D effect |
+
+These weights were written before the new model was evaluated. They are an illustrative evaluator judgment about the quantified subset, not a fitted posterior or a probability distribution supplied by the charity. The scenarios intentionally include null and adverse outcomes. They do not resolve the omitted policy and education pathways; a weighted subtotal is still a subtotal.
+
+The mixture gives **0.08099396834886188 Bay QALYs per $100,000**, or **$12,346,598.399682583 per 10 Bay QALYs**. All-beneficiary health is 0.1027932694181985 QALY, priced at $9,728,263.393701926 per 10. San Francisco health is 0.007479073242037732 QALY, priced at $133,706,405.54491243. These nested geographies are alternatives for interpretation, not additive outcomes.
+
+The favorable world contributes **81.3427%** of signed expected Bay health. Without it, the remaining weights renormalize to 0.01679035585197142 Bay QALYs and $59,557,999.1762108 per 10. The favorable tail does not make the model useless, but it makes the estimate fragile. A reader who doubts cheap, additional CPAP delivery or prefers the central utility instrument should not rely on the mixture as a stable point forecast.
+
+### 5.5 Thresholds and residual health
+
+At $100,000 of donor cost, a $1 million-per-10-QALY threshold requires one Bay QALY; a $100,000 threshold requires ten. The signed clinical subtotal supplies about 0.081. Thus unresolved pathways would need about 0.919 additional Bay QALY per $100,000 to reach the former threshold, or 9.919 to reach the latter, holding the subtotal fixed. This is a requirement, not evidence that the missing benefits exist or are impossible.
+
+Annualizing the same scale relation yields about 1.1174 modeled clinical-subset Bay QALYs against the $1,379,590 whole-expense boundary. This is a mathematical diagnostic of the marginal model, not an observed annual impact estimate. It assumes the same spending response and unit economics across the year, which have not been verified. We do not use annualization to claim the organization actually produced that health in FY2025.
+
+The residual calculator accepts a user-specified signed Bay QALY quantity and displays the combined diagnostic. It never replaces the evaluator’s unresolved whole-organization field with a numerical default. This makes disagreement inspectable: a donor can state the policy benefit they believe is plausible and see its implication, while the report preserves the distinction between that belief and public evidence.
+
+### 5.6 Model limitations and validation
+
+The portable model is bounded to gifts from a small positive numerical floor through $100,000, with zero allowed separately. The ceiling is an analysis boundary, not verified capacity. It rejects malformed containers, nonfinite coefficients, invalid weights and duplicate trimmed scenario names. Signed results, zero gifts, exact old-baseline parity and exact saved new outputs are regression-tested. A failed tiny-input test led to a validation-only floor; no central coefficient or saved result was changed.
+
+The model does not establish marginal allocation, actual additional offers, complete resource cost or a complete portfolio value. Its precision is computational, not evidentiary. Reporting full-precision outputs enables audit and reproduction; donor-facing summaries round appropriately. The key decision is not whether the last decimal is correct, but whether the allocation and completed-care assumptions describe what an extra gift can actually change.
+
+### 5.7 Parameter register: assumptions that drive the result
+
+The following register is part of the substantive model explanation, not a claim that the parameters were measured locally. It makes clear which question would need to be answered before a coefficient could be replaced with evidence. Exact executable values and all scenario overrides are in the model file; the prose here explains their interpretation.
+
+| Input group | Central value | Interpretation and evidence status |
+|---|---|---|
+| Whole annual expense | $1,379,590 | Original accounting expenses plus netted event cost; not a current marginal budget |
+| Direct cessation within anti-tobacco | 40% | Judgment about the direct-service fraction of a category also containing prevention and policy |
+| Asthma within lung health | 35% | Judgment, not an observed home-visit cost allocation |
+| CPAP within lung health | 45% | Judgment; other lung/senior activities retain the remainder |
+| Cessation cash per offer | $250 | Retained delivery-cost prior; not a quoted Ash Kickers seat price |
+| Asthma cash per offer | $1,200 | Retained home-visit-equivalent prior; not cost divided by the repeated historical count |
+| CPAP cash per episode | $500 | Retained service prior, including more than the donated device’s purchase price |
+| Cessation additionality | 0.40 | Net additional offered-care equivalents rather than financing substitution |
+| Asthma additionality | 0.35 | Net additional comparable service, conditional on the budget response |
+| CPAP additionality | 0.50 | Net additional episode relative to available equipment/coverage alternatives |
+| Incremental six-month quitting | 0.03 | Three-percentage-point judgment for an offered-service equivalent, not 60% observed success |
+| Background quitting hazard | 0.04/year | Both trajectories can quit later; not a measured Breathe cohort rate |
+| Relapse hazard | 0.10/year | Both trajectories can return to smoking; not permanent initial success |
+| Smoker/former-smoker mortality | 0.012/0.008 per year | Broad state priors; not trial arm rates assigned to individual quitters |
+| Living-state utilities | 0.75/0.77 | Small state-quality difference; no additional disease-specific bonus |
+| Cessation horizon and recovery lag | 10 years / 2 years | Finite cohort approximation, with no lifetime tail added |
+| Child asthma transfer / utility gap | 0.50 / 0.10 | Local-service transfer and unvalidated conversion of symptom-free days into utility |
+| Child share | 0.60 | Unknown local age mix; adult evidence applied separately |
+| Adult home-visit fraction | 0.80 of adult share | Other adult formats do not receive the full home-visit effect |
+| Adult transfer / utility gap | 0.50 / 0.10 | Intensity/time-profile judgment and symptom-day utility judgment |
+| Asthma duration | 1 year | No permanent trigger-removal benefit or extra survival assumed |
+| CPAP trial QALY / relative transfer | 0.005 / 0.80 | Integrated one-year EQ-5D contrast and local-population/service judgment |
+| Delays | 0.5 year cessation; 0.25 year asthma/CPAP | Timing priors, separate from the finite duration of the clinical effect |
+| Discount | 3% annually | Applied to future health, not a probability of program success |
+| Bay shares | 0.75 cessation; 0.80 asthma/CPAP | Patient-health location priors, not county-count averages |
+| SF shares | 0.05 cessation; 0.08 asthma/CPAP | Subsets of Bay shares, not an extra benefit stream |
+| Outside resources per nominal offer | $100 cessation; $300 asthma; $400 CPAP | Partial complementary-resource allowances, not observed invoices |
+
+The three additionality values deliberately combine whether the marginal budget creates a genuinely additional comparable service and whether it substitutes for another source. We do not add a second generic funding-room discount on top. This avoids mechanically penalizing the same uncertain access counterfactual twice. It also means the values should not be described as measured patient-level coverage rates: they are net response assumptions for an ordinary gift. Better evidence could separate budget response from patient alternatives, but multiplying newly separated terms should preserve their joint meaning rather than silently double-discount it.
+
+The distinction between transfer and additionality is equally important. Transfer asks whether the local intervention, population and delivered intensity produce a trial-like contrast. Additionality asks whether the donor creates that intervention beyond the baseline. For example, a lower-intensity home visit may have a smaller effect even if it is completely additional. An excellent trial-like service may have no additional donor effect if another funder already pays for it. These are conceptually separate, although the public evidence does not identify them independently with precision.
+
+The clinical utility values are not monetary willingness-to-pay measures. A utility difference of 0.1 for a symptom-free day is an analyst mapping to a health-quality scale, not a claim that every participant rates that day the same way. The asthma pathways would benefit from directly measured generic utility or a validated mapping in a comparable population. Until then, symptom-day evidence is a stronger anchor than the QALY conversion. Reporting the two separately makes that weak link visible.
+
+The central cessation calculation yields about 0.1300 QALY per additional initial quitter over its finite trajectory. That is much smaller than a generic claim about lifetime years gained from quitting, because the comparator can quit later, the intervention group can relapse, mortality is finite and the horizon is limited. It should not be read as the total personal value of quitting. It is the modeled incremental difference between two trajectories under a particular set of assumptions. This answers the donor question more directly than awarding the full lifetime difference to every reported quit attempt.
+
+### 5.8 How to interpret sensitivity without changing the question
+
+There are three separable dimensions of disagreement: portfolio allocation, clinical effect and marginal delivery. The saved old-allocation diagnostic changes the first while retaining the new subjective scenario family. Its weighted Bay price is $6,552,112.130998517 per 10 QALYs, compared with $12,346,598.399682583 under the spending proxy. That does not mean either allocation is observed. It shows how much of the revision comes from asking an organization-wide spending question rather than assuming most of the next gift reaches direct clinical work.
+
+The old central result is a different comparison again: it used the old allocation and no scenario weights. Comparing that $5.739 million directly with the new weighted $12.347 million conflates allocation and uncertainty aggregation. The packet preserves both intermediate comparisons so a reader can identify the source of the change. A revised index should not imply that a newly discovered trial suddenly cut Breathe’s effectiveness in half; the clinical central coefficients were retained.
+
+Clinical-instrument sensitivity changes CPAP’s one-year effect while leaving a delivery pathway in place. Marginal-delivery sensitivity changes the number of additional episodes. The favorable scenario combines both, which is why it should be treated as a joint favorable world, not a single better-supported measurement. A donor who believes CPAP can be supplied cheaply still needs to ask whether it is additional and whether the relevant generic-utility effect applies to the recipients.
+
+The replacement scenario is exactly zero for the quantified subset, not negative: if the gift merely replaces other financing, it does not by itself create the modeled health difference. The adverse scenario is a separate clinical possibility and should not be described as the ordinary consequence of public funding. It yields negative signed Bay health, and the calculator appropriately leaves the positive-price field blank. Keeping these cases distinct prevents a rhetorical switch between “not additional” and “harmful.”
+
+A favorable scenario alone still gives approximately $1.518 million per 10 Bay QALYs under the new spending proxy. Thus this particular quantified family does not clear $1 million even in its favorable joint world. That is evidence about the modeled family, not a proof that no restricted opportunity or omitted policy benefit could do better. The threshold diagnostic is useful precisely because it states how much extra health would be needed without inventing it.
+
+### 5.9 Resource and geographic accounting checks
+
+The central gift retains about $9,909 for the reported management/general and netted-event share. About $57,785 remains in distinct unquantified activities after the modeled clinical allocations. Those figures are accounting labels derived from the whole-budget proxy. The legacy core’s fixed 10% enabling label was corrected in the wrapper without changing any clinical, price or geographic result; the old baseline remains exact. This avoids preserving an obsolete presentation assumption merely because the clinical formulas were reused.
+
+Bay attribution is applied to health, not to costs. The donor still gives the entire $100,000 even when some recipients live outside the Bay Area. Removing non-Bay spending from the numerator while also multiplying health by a Bay share would answer a different restricted-program question. Likewise, public grants remain in the annual expense boundary even though their existence affects the marginal-gift counterfactual. Geography, funding and cost are different operations and should not be used as interchangeable discounts.
+
+The model’s outside-resource allowances are attached to nominal clinical offers because unsuccessful or replacement activity can still consume labor, equipment and clinical support. They are not multiplied by the health additionality parameter. However, they do not cover every external input to every program, so the result is called a partial resource envelope. The whole-cost scope is complete with respect to the selected organizational accounting denominator, not complete with respect to society’s resources or the organization’s health benefits.
+
+## 6. Additional funding, alternatives and practical diligence
+
+### 6.1 Existing access is part of the baseline
+
+Free cessation support, public asthma funding, insurance or other equipment access, and existing donors all belong in the counterfactual. A service may be medically useful while another donation merely changes who pays. Conversely, a publicly financed program can still leave gaps in eligibility, timing, language, practical access or suitable equipment. The report does not assume public funding makes philanthropy redundant; it requires the gap to be identified rather than inferred from need alone.
+
+The prior source packet includes Kick It California’s free support and DHCS asthma-service definitions. These are relevant alternatives, not exact substitutes for every local person. Someone may prefer or need a different format, while an insurer-covered benefit may be difficult to obtain in practice. The model’s additionality assumptions leave room for those barriers, but a current local denominator is needed to distinguish a plausible access gap from a generic narrative about underserved people. [Kick It California](https://kickitca.org/faqs) · [DHCS service definitions](https://www.dhcs.ca.gov/wp-content/uploads/2025/10/Community-Supports-February-2025-Service-Definition-Updates.pdf)
+
+### 6.2 What the public funding leads do and do not show
+
+The earlier funding memo located a Santa Clara County contract-register lead for a $31,000 agreement ending June 2026 and a separate older agreement. It also found a 2026 Peninsula Health Care District recommendation for $60,000 for Seniors Breathe Easy. These are bounded documentary leads, not a current unpaid cessation commitment or a verified grant disbursement. This V2 does not silently upgrade a recommendation into an executed contract or assume an expired agreement renewed. [County register](https://files.santaclaracounty.gov/exjcpb1596/2025-04/sa-bc-report-for-month-of-march-2025.pdf?VersionId=QK.vJ54RAPAOzH1gAXh2kHooskE_RG20) · [District recommendation](https://www.peninsulahealthcaredistrict.org/files/f490e5538/CGP%2B2026%2BFinal%2BSpreadsheet%2BRecommendations%2B%2B-%2BCopy.pdf)
+
+The current asthma page explicitly names public support, and the latest filing reports substantial government grants. Those facts make public funding overlap a necessary diligence question. They do not tell us which future cohort is already fully financed, whether a grant reimburses actual delivery, or whether an unrestricted gift permits otherwise unfunded work. The accounting category and the marginal funding plan need to be linked before a donor can buy a specified amount of additional care.
+
+### 6.3 A bounded donor request
+
+We would ask for a current plan at several gift sizes, but would not send money based only on a generic per-patient estimate. The plan should name the program and locality, specify what staff or equipment can be added, and show existing commitments alongside the extra cost. It should distinguish an unrestricted gift’s expected use from an accepted restricted gift. A donation button or a general mission appeal is not an agreement to fund the clinical allocation used here.
+
+For cessation, the most useful offer would identify a dated extra cohort or follow-up capacity and the alternatives participants would otherwise use. For CPAP, it would identify suitable inventory, preparation and clinical support rather than only a machine target. For asthma, it would identify additional eligible households, the actual intervention package, public reimbursement and remediation resources. For policy, it would identify a prospective decision or implementation bottleneck and Breathe’s specific role, not retroactively sell credit for a completed ordinance.
+
+### 6.4 Five decision-changing questions
+
+1. What additional completed services would unrestricted gifts of $10,000, $25,000 and $100,000 enable over the next year, by program and county, beyond already financed work?
+2. What are the full organizational and complementary resource costs of those services, including staff, donated equipment, clinical partners, participant fees and public reimbursements?
+3. What would the same people or projects receive without the gift, and which documented bottleneck—cash, suitable inventory, staffing, prescription access, recruitment or implementation—changes?
+4. What dated unique-person monitoring exists for completion, sustained use or abstinence, symptoms, alternatives and adverse outcomes, with missingness and repeat-service rules?
+5. Can the organization provide the latest audit, reconcile the anomalous FY2024 return, and state any restrictions, committed reserves and accepted gift-designation route for the proposed work?
+
+These questions are drafts for diligence, not outreach already performed. The absence of answers is an uncertainty, not an accusation that the organization lacks such records. It prevents a high-confidence recommendation today while leaving a clear path for a better assessment.
+
+## 7. Qualitative assessment and strongest disconfirmation
+
+### 7.1 Positive organizational case
+
+The organization offers concrete service pathways rather than only broad awareness claims. Prescription requirements, equipment selectivity, identifiable staff roles and public-funded partnerships indicate that delivery depends on real operational work. A cross-program organization may also discover needs that a narrowly specialized provider misses. These features make Breathe worth investigating as an access organization, even though they do not establish cost-effectiveness.
+
+Its portfolio could plausibly generate benefits that our clinical subtotal misses. Smoke-free implementation may affect many residents, and effective coordination could improve other institutions’ actions. A strictly clinic-only ranking can undervalue those benefits. The appropriate response is to keep the omitted pathways visible and seek their causal bridge, not to label the organization ineffective because some effects cannot yet be quantified.
+
+### 7.2 Most important reservations
+
+The public record does not currently connect additional funding to a defined completed-care cohort. The latest original program categories also show that a large part of the organization is not the direct clinical activity previously emphasized. The combination means a favorable course-level number is particularly easy to overgeneralize. This is the decisive reason for an organization-wide scope repair.
+
+The repeated service narrative and anomalous filing complicate monitoring and financial interpretation. They are reasons to request current source documents, not reasons to invent corrected counts or infer misconduct. The report should be fair about both limits: the data are insufficient for strong claims, and the insufficiency itself does not establish that actual services are poor.
+
+Clinical evidence is not uniformly favorable. Generic CPAP utility results depend on the instrument and admit signed uncertainty. Home-visit effects depend on population, intensity and comparator. Cessation health depends on persistence and alternatives over time. We retain these contradictions because they matter more than a polished single estimate. A donor who wants confidence at the $100,000-per-10-QALY threshold should not treat this evidence base as close to establishing it.
+
+### 7.3 What would change our view?
+
+A documented low-cost, additional CPAP pathway with suitable stock and clinical follow-up could improve the direct-care case. It would need to show that recipients lack timely alternatives and that the delivered treatment resembles the evidence population, rather than simply supply a smaller accounting cost. Stronger utility evidence in the actual recipient mix would also matter; choosing a favorable instrument without justification would not.
+
+A current cessation ledger and a realistic extra-cohort budget could distinguish a genuinely cheap access bottleneck from funded routine programming. A comparable asthma package with reliable follow-up and public-funding reconciliation could improve transfer confidence. For the environmental portfolio, a named implementation project with credible exposure changes and attributable effort could dominate the subtotal, but that would be a new evidence-based pathway rather than a generic multiplier on advocacy spending.
+
+Evidence could also worsen the estimate: recipients may mostly replace already covered equipment, classes may draw people with strong alternatives, home visits may be less intensive than assumed, or marginal gifts may support entirely different work. The report’s scenarios include some of these possibilities but are not exhaustive. The right monitoring plan should be capable of revealing them rather than only collecting success stories.
+
+## 8. Decision and revision record
+
+The organization remains **exploratory, not donor-ready on this evidence**. The V2 report offers a more current financial and operational account, a more defensible whole-budget allocation proxy, signed finite clinical calculations and explicit unresolved branches. It does not provide a complete whole-organization expected QALY estimate or a verified purchase of additional care. Those distinctions should remain visible in any research index, summary card or calculator.
+
+The old clinical-subset result remains reproducible, the first new results remain unchanged, and source facts are separated from judgments in the companion ledger and prior lock. The latest finance source resolves the asset roll-forward while raising a separate prior-year filing question. Current operation evidence is stronger than the old public audit date suggests, but current completed delivery is still unverified. No new grant, interview or participant outcome is fabricated to fill those gaps.
+
+This is a public-source evidence-limited V2, not an assertion that it has the depth of a grantmaker’s direct monitoring relationship. Its final measured wordcount and focused wall interval are recorded in the handoff after drafting and tests. The requested reference length is a target only where evidence supports substantive content; omitted information is identified rather than padded with generic intervention history. Independent audit is required before integration.

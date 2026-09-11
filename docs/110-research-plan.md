@@ -4,8 +4,8 @@ User-directed September 11, 2026. Supersedes the old 100-report finish line. Bas
 
 ## A. Lessons-driven discovery (~2 hours planning)
 
-- [ ] A1: Synthesize what existing reports taught us: small causal gains versus service counts; finite health duration; full gift versus convenient program cost; existing public funding; marginal delivery bottlenecks; speculative allocation and citywide spillovers; external benchmark calibration.
-- [ ] A2: Brainstorm 100 distinct new candidates. Each row: real organization or labeled hypothesis, mechanism/outcome, Bay reach, evidence lead, reason it might beat current top-ten estimates, biggest disqualifier, existing-report duplicate check. Hypotheses are discovery only.
+- [x] A1: Synthesize what existing reports taught us: small causal gains versus service counts; finite health duration; full gift versus convenient program cost; existing public funding; marginal delivery bottlenecks; speculative allocation and citywide spillovers; external benchmark calibration. See110-discovery-lessons.md and the clinical/air calibration memos.
+- [x] A2: Brainstorm 100 distinct new candidates. Each row: real organization or labeled hypothesis, mechanism/outcome, Bay reach, evidence lead, reason it might beat current top-ten estimates, biggest disqualifier, existing-report duplicate check. Hypotheses are discovery only. See110-discovery-ledger.md; independent audit verifies100stableIDs and25comparative rows, not100legal-entity audits.
 - [ ] A3: Screen to 25 with explicit comparative reasons. Evaluate magnitude, changeability, costs, causal evidence, donor additionality, Bay share and chance of changing our top ten. No invented numerical probabilities or cause quotas.
 - [ ] A4: Select 10 genuinely new organizations; retain ranked alternates. Prefer credible sub-$100k or plausibly sub-$1M per10 Bay QALYs, without forcing estimates. Explain why these ten shots are better than the alternatives.
 
@@ -26,4 +26,4 @@ Root owns Site edits, review, tests and publishing. Three research workers use G
 
 Hourly heartbeat: build-market-for-impact-hourly, active. No overlapping runs. Preserve explicit pause control. No external outreach/email newly authorized. Missing outreach/photo approval must not stop unrelated planning and research. Preserve pending Breathe/GLIDE PR corrections rather than mixing them into this discovery branch.
 
-Progress: brainstorm0/100; screened0/25; selected0/10; new published0/10 (overall100/110); V2 completed0/10. Phase A active: astra_health_screen34 candidates; astra_policy_screen33; astra_universe_screen33. Root deduplicates and synthesizes. Worker outputs are drafts until reviewed; do not count assignments as completed work.
+Progress: brainstorm100/100; first-pass comparative screens25/25 received; final selection0/10; new published0/10 (overall100/110); V2 completed0/10. Phase A remains active: root compares common-prior/whole-cost results and challenges the proposed ten. The two-hour planning target is not yet a completed-time claim. Three workers are checking rescue-model consistency, systems calibration and strongest excluded clinical alternatives. Raw findings and corrections are preserved in the110-discovery documents; no donor-facing model changes in this branch.

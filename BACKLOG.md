@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Current priority: 110 reports, then top-ten V2 — Phase A active
+
+Published100/110 unchanged. [Staged plan](docs/110-research-plan.md):100 brainstorm entries now deduplicated into a [stable ledger](docs/110-discovery-ledger.md); first-pass comparisons received for25, finalten not yet selected. Root plus three workers are challenging whole-cost, finite-health and additionality assumptions. Repair-delay literature sharply limits generic equipment-reuse extrapolation; original990s correct EDI/HERS and several netted-expense boundaries; rescue cohorts must not be inferred from doses; refinery baseline harm is not achievable rule reduction. Preserve these contrary findings when selecting ten high-EV shots. Next: resolve independent selection challenges, then ten new~15min reports and top-ten V2. Documentation only; no new published prices or verified marginal offers.
+
 ## PVF whole-gift correction — active, not published
 
 100 reports unchanged. Dedicated research/pvf-whole-gift-release worktree ports the accepted PR249 PVF assets only; no OA/Clinic regression. Independent review and 3,862 author checks accept central $7,936,507.94 per 10 Bay QALYs for whole-gift cost with first-eye health only; 90% assumed allocation health remains unquantified, not zero. Report/API/ranking now wired together locally; historical conditional $714,286 model/API preserved. Initial build passes. Remaining: reconcile synthesis text/tests, source metadata/readability, responsive report/API/index parity, lint and final build; commit/PR/exact-source deployment. No new count or verified marginal offer. Current block started2026-09-11T11:02:33Z.

@@ -1,0 +1,46 @@
+# Repair and compression: finite clinical bridge calibration
+
+**Yes: reasonable explicitly subjective finite priors are possible without perfect local outcomes.** The sources constrain duration and caution against large utility assumptions; none supplies an EDI/ILRCSF/HERS-specific preference-based QALY estimate. These are candidate scenario inputs, not a locked model, posterior or recommendation. Do not require perfect outcomes, but do not label symptom/volume changes as measured utilities.
+
+## Primary evidence that changes the screen
+
+**Wheelchair repair consequences:** [Worobey et al.,2021](https://pubmed.ncbi.nlm.nih.gov/33845000/), [full paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC8501145/), surveyed people with spinal cord injury.310(56%) reported repairs;127(42% of repair group as reported) experienced an adverse consequence, median **5 days**, IQR2–17.3. Consequences include being stranded, backup-chair use, missed activities and injury. This is self-reported observational evidence, not a randomized repair-delay effect; total consequence days are not necessarily all removable by a charity. SCI/full-time-chair users may be more affected than walker users. Backup use need not imply an equal health loss to being bedbound. Do not turn the median into mean or apply42% twice if an eligible denominator already selects consequential breakdowns.
+
+**Controlled maintenance evidence:** [Hansen et al.,2004](https://pubmed.ncbi.nlm.nih.gov/15473115/) randomized216 eligible manual-chair users to active OT checklist check-up versus user-initiated usual services, followed one year.99% of inspected chairs needed maintenance; accidents fell to none in active group (p=.03), while satisfaction did not change. Abstract does not supply the absolute accident counts/severity required for an injury-QALY bridge. It supports maintaining safe equipment, not a per-repair mortality reduction. [Maintenance-training RCT](https://pubmed.ncbi.nlm.nih.gov/34174224/),147 SCI users, improves maintenance capacity/performance—not measured additional QALYs. Do not transfer skills endpoint as health utility.
+
+**Compression versus no compression:** [Blom et al.,2022](https://pubmed.ncbi.nlm.nih.gov/35657063/),75 randomized women with mild breast-cancer-related arm lymphedema. At six months, volume progression16% compression versus57% no compression;43% of controls did not progress. Controls who progressed received treatment, so prolonged untreated counterfactual is inappropriate. Subjective symptoms generally did not differ, except reduced tension at one month. Volume progression is not .41 QALY or41% disabling disease avoided. [Six-month HRQoL follow-up](https://pubmed.ncbi.nlm.nih.gov/37211678/) uses LyQLI, not EQ5D; [publisher report](https://www.tandfonline.com/doi/pdf/10.1080/0284186X.2023.2213442) describes only minor group differences. No invented conversion.
+
+**Active-comparator null:** [McNeely et al.,2022](https://pubmed.ncbi.nlm.nih.gov/34614195/) finds improved arm volume with nighttime compression added to daytime treatment, but **no between-group QoL difference**. That does not prove no benefit of initial compression versus inaccessible care. [PLACE trial](https://pmc.ncbi.nlm.nih.gov/articles/PMC10028125/),143 randomized patients with subclinical swelling, also found no group difference in FACT-B/TOI change at12–24months. Preventive mild/subclinical cohorts may understate relief in severe symptomatic patients, but HERS severity mix is unknown. Do not assume all HERS products serve severe lymphedema or all need nighttime garments.
+
+## Candidate finite priors — judgments, not fitted source estimates
+
+Define an episode as a **completed clinically relevant repair or supported compression course**, not a referral, item, workshop or invoice. Utility is average incremental utility during the additional useful period relative to best accessible alternative, incorporating modest/zero-benefit cases within the chosen clinical cohort. Duration ends at alternative repair/treatment, recovery, discontinuation or replacement. Funding response and Bay share are separate and applied once. If using observed all-repair counts, add a consequential/clinically-relevant gate; do not multiply again when the denominator already contains only such episodes.
+
+| Clinical episode | Central candidate | Favorable candidate | Null / independent harm |
+|---|---|---|---|
+| EDI/ILRCSF mobility restoration | .05 utility × **3 additional days** /365 ≈ .00041 QALY | .15 × **21 additional days** /365 ≈ .0086 QALY | Zero if promptly available alternative/backup restores equivalent function. Harm stress: −.05×2days/365≈−.00027 per affected episode for poor fit/failure. Not a calibrated injury frequency. |
+| HERS clinically indicated compression | .005 utility × **.25 additional year** = .00125 QALY | .03 × **.5 additional year** = .015 QALY | Zero for no symptomatic/functional gain versus alternative; harm stress−.01×.05year=−.0005 for discomfort/skin problems. Not population event frequency. |
+
+Why these are reasonable to test: repair days are explicitly shorter centrally than the observed five-day median because some usual-care delay remains;21days is a tail/slow-alternative scenario beyond reported upper quartile, not a population mean. Utility .05/.15 is an analyst judgment about temporary partial loss/restoration, not a disability-state value. HERS central utility is small given symptom/QoL nulls; favorable requires more symptomatic, adherent, otherwise underserved patients. Six-month favorable duration is a course horizon, not lifelong disease cure. Neither range is exhaustive: a severe bedbound breakdown or sustained severe compression benefit could exceed it, but cannot become the typical case without evidence.
+
+These are different from .05 mobility utility for half a year: that older device-provision prior would grossly overextend an ordinary short repair-delay episode. EDI attendant continuity has its own cohort/duration and must not silently inherit repair yield. No avoided ulcer/hospitalization bonus is added here; observational associations are confounded and could double-count temporary utility loss. A future explicit complication pathway can be tested separately with finite severity and overlap accounting.
+
+## Required additional Bay episodes at verified whole gross expense
+
+Cost envelopes from original-return audit `/private/tmp/mfi-110-universe-screen25.md`: EDI$2,166,918;ILRCSF$1,851,048;HERS$1,426,264. HERS separately donated facilities/services still need reconciliation; these are not full societal costs.
+
+| Organization | Net additional Bay episodes needed per annual whole-budget equivalent, central | Favorable | Interpretation |
+|---|---:|---:|---|
+| EDI | about52,700 | about2,510 | To beat$1m/10; repairs alone look demanding without a large consequential-episode count. |
+| ILRCSF | about45,000 | about2,145 | Over650 all-direct-service people is not a repair ceiling, but indicates scale mismatch for the central repair-only bridge. |
+| HERS | about11,400 | about951 | These must be clinically useful compression courses, not all products or sales. |
+
+At$100k/10, multiply every required count by10. At.5 cash-response ×.9 Bay fraction, required **observed eligible** counts are another2.22times these net counts. These fractions are illustrations, not assigned organization priors. Counts use whole annual budget scaling solely as a screening diagnostic; a$10k gift's capacity response may be nonlinear. Null/harm worlds have no finite positive-health price. The thresholds are computed before any probability weights; no weights invented or optimized.
+
+## Comparative decision
+
+**Repair remains clinically intelligible but no longer looks like an obvious low-cost winner.** EDI is preferable to ILRCSF for whole-mission concentration and essential attendant-care possibilities, but current tax/contract support and short alternative waits strongly limit marginal leverage. ILRCSF has richer source evidence on services but broader dilution. HERS has a plausible longer benefit period, yet objective volume evidence cannot support a large average utility; its gross inventory/event costs materially reduce the apparent advantage.
+
+Among these, deepen **EDI's unique consequential repair/attendant episodes and wait-time counterfactual first**, rather than mandate trial-quality local measurement. If the actual scale is far below even favorable thresholds, a repair-only top10 hypothesis fails; a full exploratory report could still be honest and unfavorable. HERS requires product/severity/adherence mix before its utility prior can sensibly be weighted. Compared with WCRC, repair has a more direct function bridge; WCRC grants could unlock larger clinical benefits but treatment completion additionality is unmeasured. No perfect-local-outcomes requirement and no automatic source-availability ranking.
+
+Observed research start2026-09-11 **14:40:22 UTC**; source/calculation checkpoint **14:42:23 UTC**, elapsed2m01s. Final artifact after checkpoint. Existing wholecosts reused; new primary literature checked. Some PubMed/PMC opens hit empty/captcha responses; indexed primary abstracts/publisher full-text snippets supplied cited evidence. No fabricated EQ5D mapping, new model run, Site changes, outreach, installs or agents.

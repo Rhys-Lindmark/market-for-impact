@@ -28,6 +28,7 @@ export type CharityReportContent = {
   eyebrow: string;
   program: string;
   donationUrl?: string;
+  donationNote?: string;
   published: string;
   modelVersion: string;
   nutshell: {
@@ -104,7 +105,7 @@ export default function CharityResearchReport({ content }: { content: CharityRep
           <h1>{content.organization}</h1><p className="report-program">{content.program}</p>
           <details className="report-research-effort" data-research-effort={effort.recorded?'recorded':effort.estimated?'estimated':'not-recorded'}><summary>{effort.label}</summary><ul aria-label="Research phases">{effort.bullets.map(bullet=><li key={bullet}>{bullet}</li>)}</ul></details>
           <p className="report-date">Published: {content.published}.</p>
-          <a className="report-donate" href={donationUrl || '#funding'} {...(donationUrl ? {target:'_blank',rel:'noreferrer'} : {})}>Donate</a>
+          <a className="report-donate" href={donationUrl || '#funding'} {...(donationUrl ? {target:'_blank',rel:'noreferrer'} : {})}>{donationUrl ? 'Donate' : 'Funding limitations'}</a>
         </header>
         <nav className="report-contents" aria-label="Table of Contents">
           <h2>Table of Contents</h2>
@@ -165,7 +166,7 @@ export default function CharityResearchReport({ content }: { content: CharityRep
             <h2>5. Funding and previous grants</h2>
             <p>{content.model.fundingBoundary}</p>
             <p>This review does not establish a verified marginal funding offer or a complete history of grants.</p>
-            {donationUrl ? <><p><a className="report-donate" href={donationUrl} target="_blank" rel="noreferrer">Donate</a></p><p className="report-donation-note">Opens the organization’s giving page. A general donation may not fund the specific activity modeled here; confirm allocation with the recipient.</p></> : <p>We have not verified a suitable donation route for this reviewed activity. Confirm the legal recipient and intended allocation before donating.</p>}
+            {donationUrl ? <><p><a className="report-donate" href={donationUrl} target="_blank" rel="noreferrer">Donate</a></p><p className="report-donation-note">{content.donationNote || 'Opens the organization’s giving page. A general donation may not fund the specific activity modeled here; confirm allocation with the recipient.'}</p></> : <p>We have not verified a suitable donation route for this reviewed activity. Confirm the legal recipient and intended allocation before donating.</p>}
           </section>
           <section id="sources"><h2>6. Sources</h2>
             <ol className="report-sources">{content.sources.map(source => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.title}</a>. {source.publisher}. {source.sourceType}. Published: {source.published}; retrieved: {source.retrieved}.</li>)}</ol>

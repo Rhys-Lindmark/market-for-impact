@@ -1,5 +1,6 @@
-import type {Metadata} from 'next';
-import CharityResearchReport,{type CharityReportContent} from '@/components/CharityResearchReport';
-import report from '@/data/san-francisco/glide-coverage-report.json';
-export const metadata:Metadata={title:'GLIDE Foundation — whole-gift research',description:'Whole Foundation gift cost, finite named health pathways and explicit uncertainty.'};
-export default function Page(){const content:CharityReportContent={...report,nutshell:{...report.nutshell,body:<>{report.nutshell.body} <a href="/api/glide-coverage-model">Inspect the clinical and housing model</a>. <a href="/archive/glide-rental-assistance">Historical rental-assistance-only research</a>.</>}};return <CharityResearchReport content={content}/>;}
+import LongFormResearchReport from '@/components/LongFormResearchReport';
+import report from '@/data/san-francisco/glide-v2-report.json';
+import {markdown} from '@/lib/glide-v2-narrative.mjs';
+import {VERSION} from '@/lib/glide-v2-model.mjs';
+export const metadata={title:'GLIDE Foundation — V2 research | GiveBetter x SF',description:'Full Foundation gift, finite clinical and housing health, three-year finances and current funding.'};
+export default function Page(){return <LongFormResearchReport organization="GLIDE Foundation" program="Food, health access, family support, housing assistance and advocacy" markdown={markdown} sources={report.sources} donationUrl="https://www.glide.org/give/" modelVersion={VERSION} modelUrl="/api/glide-v2-model" minutes={36} modelLabel="GPT-6 Astra Light" sectionTitles={{'what-glide-currently-does-and-what-its-activity-counts-establish':'1. What do they do?','three-year-finances-annual-spending-and-accounting-boundaries':'Spending breakdown','monitoring-quality-accountability-and-the-highest-value-evidence':'2. Monitoring and information sharing','qualitative-value-policy-and-what-the-health-calculation-cannot-settle':'3. Qualitative assessment','results-changes-from-the-accepted-model-and-threshold-interpretation':'4. What do you get for your dollar?','room-for-more-funding-and-what-an-ordinary-donor-can-actually-buy':'5. Funding and previous grants'}}/>;}

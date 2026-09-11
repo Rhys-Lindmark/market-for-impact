@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## GLIDE V2 — validation complete, publication pending
+
+110 alpha reports and 3/10 V2 remain live through SPUR PR311/Sites222. GLIDE's accepted V2 now renders its entire 10,539-word narrative and labeled summary, three-year Foundation spending, current public funding/youth services and finite distinct clinical cohorts. Central $4,890,657/10 Bay QALYs preserves the accepted broad-gift model, not the historical rental-only estimate; no complete expected value or funding offer claimed. Full saved-output tests, independent survival/source audit, full suite, lint/build and phone/tablet/desktop checks pass. Merge retains Breathe/SPUR/ReCARES changes and rental-only archive. Next exact-source canonical release; then remaining accepted frozen-cohort V2 reports. Research effort and integration time remain separately recorded.
+
 ## SPUR V2 — validation complete, canonical release pending
 
 110/110 alpha and 2/10 V2 live (ReCARES and Breathe through PR301/Sites221). SPUR's independently accepted V2 is integrated with full ~7,200-word narrative, labeled summary, left ToC and three-year spending reconciliation. Central $2,191,060 per 10 Bay QALYs remains unchanged; no probability-weighted expectation invented. Housing, transit and heat pathways remain partial health estimates; governance and economic-security benefits unquantified. Existing public funding/adopted policies constrain incremental credit. 174 model checks plus narrative/ranking parity and full model suite pass; lint zero errors/three existing warnings, production build and phone/tablet/desktop checks pass. Next exact-commit canonical release, then accepted GLIDE/HOPE/HAC/Pacific Hearing drafts and PHC/NEMS cross-audits. V2 is an internal review set, not the removed homepage ten-priority section.

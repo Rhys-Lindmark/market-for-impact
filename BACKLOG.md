@@ -1,5 +1,11 @@
 # Market for Impact backlog
 
+## MELP publication and clinical-prior comparison — September 10
+
+84/115 canonically verified (65 Bay/SF, 19 expanded), including ReCARES PR279/v194. Current block started 2026-09-11T03:12:46Z. MELP/AbleCloset is accepted for exploratory publication, not a giving recommendation: weighted $3,009,665 per 10 Bay QALYs; 91.8% favorable-tail dependence; no verified marginal offer. Keep full planned organization expense and forecast-denominator uncertainty. Shared clinical-prior swaps are diagnostics, not changed base estimates: MELP $1.32M and ReCARES $507K under the opposing matched utility/duration family.
+
+524 unit/model tests, lint zero errors (three existing warnings), production build and four responsive report/API checks pass. Final metadata/index checks and exact-source deployment remain; count85 only after canonical verification. Advance Peace remains an accepted partial-pathway memo, not a whole-organization ranking; public baseline funding and unquantified pathways prevent counting it. Next: finish MELP, then highest-EV accepted whole-organization handoff. Prioritize useful top-ten opportunities over category quotas.
+
 ## ReCARES publication phase — in progress
 
 83/115 published. Independently audited ReCARES model/report/source ledger preserved here; two focused tests pass. Core weighted Bay estimate$185,910/10Q from whole FY2024 expense; prior-weighted favorable tail69.3%; no verified marginal offer, giving HOLD. Added controlled walking-aid and rollator null-QoL reservations to report and qualified pre-output-weight chronology as author-attested. No research count increment yet.

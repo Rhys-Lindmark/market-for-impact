@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## FUF V2 — validated; final frozen report ready
+
+110 alpha and 9/10 V2 live. FUF accepted full narrative, three original financial years and latest annual output integrated. Preferred source update yields central $1,652,627/10 Bay QALYs; separate weighted $941,689. Funding/clinical priors unchanged; 84.9% favorable-tail dependence. 164 packet checks, full suite, narrative/anchors, lint/build and responsive report/API/index/home transition verified. Historical model retained. Next publish exact source; then final central-statistic corrections (Face to Face, DOW, Clinic), plan reconciliation and additional staff-giving outcomes. No verified marginal offer.
+
 ## NEMS V2 — validated, release next
 
 110 alpha and 8/10 V2 live. NEMS expanded report distinguishes Foundation recipient94-3171797 from operator94-1722562 and reconciles six original returns. Ordinary Foundation gift central/Bay estimate is null, not the preserved conditional HBV $1.201M diagnostic. Full suite, independent packet tests, narrative anchors, lint/build pass; responsive report/API/index checks cover retained single research row and null semantics. Next exact-source publication, FUF V2, then final scope/content/ranking audit. No new alpha count or marginal offer.

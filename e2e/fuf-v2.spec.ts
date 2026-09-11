@@ -1,0 +1,12 @@
+import {test,expect} from '@playwright/test';
+test('FUF V2 central ranking and homepage transition',async({page,request})=>{
+ const home=await request.get('/');expect(home.ok()).toBe(true);expect(await home.text()).toContain('Hearing and Speech Center');
+ await page.route('https://market-for-impact.rhyslindmark.chatgpt.site/_next/**',async route=>{const u=new URL(route.request().url());await route.fulfill({response:await request.get(u.pathname+u.search)});});
+ await page.goto('/charities/friends-of-the-urban-forest');await expect(page.getByRole('heading',{level:1})).toContainText('Friends of the Urban Forest');
+ const body=await page.locator('article').innerText();expect(body.split(/\s+/).length).toBeGreaterThan(4900);expect(body).toContain('84.9');
+ const links=page.locator('.report-contents a');for(let i=0;i<await links.count();i++){const h=await links.nth(i).getAttribute('href');await expect(page.locator('[id="'+h!.slice(1)+'"]')).toHaveCount(1);}
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+ await page.setViewportSize({width:1365,height:900});const t=await page.locator('.report-contents').boundingBox(),a=await page.locator('article').boundingBox();expect(t!.x+t!.width).toBeLessThan(a!.x);
+ const r=await request.get('/api/fuf-model');expect(r.ok()).toBe(true);const d=await r.json();const c=d.evaluated.scenarios.find((s:{name:string})=>s.name==='central');expect(c.modeledOrdinaryGiftCostPer10Qaly).toBeCloseTo(1652627.0127335358,6);
+ await page.goto('/research');await expect(page.locator('[data-research-slug="friends-of-the-urban-forest"]')).toHaveAttribute('data-cost-per-ten-qalys',String(c.modeledOrdinaryGiftCostPer10Qaly));
+});

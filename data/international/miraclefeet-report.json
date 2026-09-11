@@ -1,0 +1,325 @@
+{
+  "organization": "MiracleFeet",
+  "eyebrow": "CHARITY RESEARCH · EXPANDED GEOGRAPHY · CHILD MOBILITY",
+  "program": "Global partner-clinic support for Ponseti clubfoot treatment",
+  "donationUrl": "https://www.miraclefeet.org/donate",
+  "published": "10 September 2026",
+  "modelVersion": "miraclefeet-v5-explicit-prior-finite-qaly",
+  "nutshell": {
+    "headline": "A strong treatment mechanism and grant-specific attribution anchor support a favorable modeled estimate, but the QALY bridge and current marginality are uncertain.",
+    "body": "The explicit-prior $100,000 ordinary-gift model yields 44.486 expected QALYs, or $22,479 donor and $47,487 modeled gross resources per 10 QALYs. Central is $22,368/$39,143; downside is net harmful with no positive ratio; favorable is $3,381/$4,226. Excluding favorable gives $60,372 donor/10. These are modeled judgments, not observed QALYs or a verified marginal offer.",
+    "whyItMayWork": "Untreated clubfoot is a serious lifelong mobility and pain burden; Ponseti treatment has a strong clinical mechanism. MiracleFeet reports a whole-organization cost per new enrollment, and GiveWell documented an exact durable-counterfactual adjustment chain for a defined expansion grant.",
+    "whyWeAreCautious": "The GiveWell anchor is grant- and country-specific, current unrestricted-gift additionality is unknown, new enrollment is not durable completion, Good Feet at Four is new, full partner/public resources are unpriced, and no suitable untreated-versus-treated generic-utility estimate was found.",
+    "recommendationBlocker": "Obtain inception-cohort age-four correction/non-relapse, a preference-based untreated-versus-Ponseti utility bridge, external counterfactual study results from the 2023 expansion countries, current unrestricted liquidity, a priced next unfunded package, and consolidated partner/public/family resource use."
+  },
+  "summary": [
+    {
+      "label": "MODELED ORDINARY GIFT",
+      "value": "$22,479",
+      "detail": "donor per 10 prior-modeled QALYs; modeled gross resources $47,487"
+    },
+    {
+      "label": "CENTRAL",
+      "value": "$22,368",
+      "detail": "donor per 10 modeled QALYs; modeled gross $39,143"
+    },
+    {
+      "label": "NO-FAVORABLE",
+      "value": "$60,372",
+      "detail": "donor per 10 after removing and renormalizing the 10% favorable case"
+    },
+    {
+      "label": "BAY / SF SHARE",
+      "value": "0% / 0%",
+      "detail": "international operating impact; no invented local spillover"
+    },
+    {
+      "label": "FUNDING ROOM",
+      "value": "Weak–moderate",
+      "detail": "unverified; no priced next unrestricted-gift package"
+    }
+  ],
+  "programSection": {
+    "body": "MiracleFeet supplies technical, organizational and financial support to government and NGO clinics in low- and middle-income countries. Local clinicians deliver serial casting, usually a minor Achilles tenotomy, and several years of nighttime bracing. MiracleFeet supports training, braces and supplies, parent educators, follow-up, referral, clinics, data systems and health-system integration.",
+    "steps": [
+      {
+        "title": "Find and enroll",
+        "detail": "Referral and awareness systems identify children with congenital clubfoot and enroll them at partner clinics; enrollment is not completion."
+      },
+      {
+        "title": "Correct and brace",
+        "detail": "Clinicians use serial casts and usually tenotomy, followed by nighttime bracing for several years; attendance and adherence matter."
+      },
+      {
+        "title": "Sustain local systems",
+        "detail": "MiracleFeet trains providers, funds inputs and partners, opens clinics, supports follow-up and embeds treatment within public systems."
+      }
+    ],
+    "boundary": "The $567 denominator is MiracleFeet's FY2025 cash-basis whole-organization steady-state cost per new enrollment: all administration and fundraising are included. It is not a cohort lifetime cost, completed treatment, marginal price or full value of government, partner and family resources."
+  },
+  "model": {
+    "headline": "Prior-weighted ordinary gift: $22,479 donor / $47,487 modeled gross resources per 10 modeled QALYs.",
+    "body": "The model uses exact GiveWell grant arithmetic, then separately discounts transfer from a defined 2023 expansion grant to a current unrestricted gift. It does not reapply correction or relapse. Annual utility-gain priors are explicitly bridged from disability-weight proxies and integrated over finite survival-adjusted horizons at 3%. Casting, tenotomy, bracing, travel and complication burden is charged to every attributed treated enrollment, including failures and relapses. Observed QALYs and verified marginal donor/gross costs remain null.",
+    "equation": {
+      "label": "CENTRAL MODELED GIFT COST",
+      "expression": "10 × $100,000 ÷ [33.1735 durable corrections × (Σ years 1–40: 0.08 × 0.99^(year−1) ÷ 1.03^(year−0.5)) − 88.1834 treated enrollments × 0.10 burden]",
+      "result": "$22,367.51 donor per 10 modeled QALYs; 1.613516 gross lifetime QALYs/correction and 44.707700 net gift QALYs"
+    },
+    "inputColumnLabel": "Evidence anchors and unweighted conditional sensitivities",
+    "inputs": [
+      {
+        "key": "wholeOrg",
+        "label": "Whole-organization steady-state cost per new enrollment",
+        "confidence": "High reporting; low marginal interpretation",
+        "best": "$567",
+        "range": "$567 fixed",
+        "basis": "FY2025 cash expense $10.126M / 17,846 starts = $567.40; official report rounds to $567. Program-only $458 is not used."
+      },
+      {
+        "key": "grantAnchor",
+        "label": "2023 grant-specific durable counterfactual ratio",
+        "confidence": "Medium for defined grant; low current transfer",
+        "best": "3,681 / 9,785 = 37.6188%",
+        "range": "15%–60% sensitivity",
+        "basis": "GiveWell's chain already combines 91% counterfactual, 78% initial correction and 53% non-relapse. It is not a clinical success rate."
+      },
+      {
+        "key": "currentTransfer",
+        "label": "Current unrestricted-gift transfer from 2023 grant",
+        "confidence": "Very low analyst sensitivity",
+        "best": "50% central",
+        "range": "20%–80%",
+        "basis": "Separate haircut for unrestricted allocation, current funding displacement, country mix and marginal-versus-average throughput; not measured by MiracleFeet."
+      },
+      {
+        "key": "qalyBridge",
+        "label": "Annual utility-gain prior",
+        "confidence": "Very low explicit proxy transfer",
+        "best": "0.08 central",
+        "range": "0 / 0.02 / 0.08 / 0.15",
+        "basis": "Central is below the GBD 2021 congenital-limb proxy disability weight 0.124 and older 0.231/0.369 clubfoot proxies, allowing for QALY/DALY non-equivalence and residual treated gait impairment. No suitable direct untreated-versus-Ponseti generic utility was found."
+      },
+      {
+        "key": "finite",
+        "label": "Finite duration, survival, discount and treatment burden",
+        "confidence": "Very low analyst priors",
+        "best": "40 years, 99% annual survival, 3%, minus 0.10 QALY per treated enrollment",
+        "range": "20–50 years; 98%–99.5% survival; 3%; 0.05–0.10 burden",
+        "basis": "Midpoint-discounted gross lifetime sums yield 0.256/1.614/3.577 QALYs per durable correction. Treatment burden applies to every attributed treated enrollment, including failures and relapses. GiveWell's 53% non-relapse factor is already inside the durable-correction anchor and is not applied again."
+      },
+      {
+        "key": "weights",
+        "label": "Scenario prior weights",
+        "confidence": "Subjective",
+        "best": "5% harm / 20% null / 30% downside / 35% central / 10% favorable",
+        "range": "fixed illustration",
+        "basis": "Strong clinical mechanism and external grant anchor support positive mass; utility and current-gift uncertainty motivate 25% harm/null and 30% downside. Favorable remains non-modal."
+      },
+      {
+        "key": "gross",
+        "label": "Gross-resource multiplier prior",
+        "confidence": "Very low",
+        "best": "1.75× central",
+        "range": "1.25×–2.5×",
+        "basis": "Complete government clinician, clinic, partner, commodity and family resources are unpriced. Weighted modeled gross resources are $211,250, while verified complete gross cost remains null."
+      },
+      {
+        "key": "geography",
+        "label": "Direct Bay / SF health share",
+        "confidence": "High",
+        "best": "0% / 0%",
+        "range": "fixed",
+        "basis": "MiracleFeet delivers through overseas partners. Headquarters, donors, vendors and advocacy are not local beneficiary health impact."
+      }
+    ],
+    "giftHeading": "Conditional $100,000 unrestricted gift to MiracleFeet",
+    "sensitivity": [
+      {
+        "case": "Independent harm (5%)",
+        "headline": "−1.7637 modeled QALYs",
+        "detail": "All attributed treated enrollments incur burden with zero health gain; ratios not defined."
+      },
+      {
+        "case": "Null (20%)",
+        "headline": "No modeled QALY",
+        "detail": "Current-gift activity with no net utility gain; ratios not defined."
+      },
+      {
+        "case": "Downside (30%)",
+        "headline": "−2.1734 modeled QALYs",
+        "detail": "0.2559 gross lifetime QALY/durable correction is outweighed by burden across every treated enrollment; ratios not defined."
+      },
+      {
+        "case": "Central (35%)",
+        "headline": "$22,368 modeled donor per 10 QALYs",
+        "detail": "1.6135 gross lifetime QALYs/correction, 8.8183 burden QALYs and 44.7077 net gift QALYs; modeled gross $39,143/10."
+      },
+      {
+        "case": "Favorable (10%)",
+        "headline": "$3,381 modeled donor per 10 QALYs",
+        "detail": "3.5773 gross lifetime QALYs/correction, 7.0547 burden QALYs and 295.7869 net gift QALYs; modeled gross $4,226/10."
+      },
+      {
+        "case": "Prior-weighted",
+        "headline": "$22,479 modeled donor per 10 QALYs",
+        "detail": "44.4862 expected QALYs and $47,487 modeled gross/10. Favorable supplies 66.49%; no-favorable donor cost is $60,372."
+      }
+    ],
+    "uncertaintyBoundary": "Scenario weights, annual utilities, horizons, survival, treatment burden, current-gift transfer and gross multipliers are analyst priors, not confidence intervals. Null and independent harm are explicit; all-zero current-gift transfer returns zero QALYs and null ratios. Observed QALY/correction, verified marginal-gift cost and verified complete gross-resource cost remain null.",
+    "fundingBoundary": "Room for more funding is weak–moderate and unverified. GiveWell's 2023 formal grant page anticipated a July 2027 renewal decision and very roughly estimated about $1M annual room above its then-current bar, but that dated forecast is not a verified open 2026 gap. MiracleFeet accepts unrestricted gifts and has executed costed expansions, while current unrestricted liquidity, committed awards, the next unfunded package and additional durable corrections per next dollar remain unknown."
+  },
+  "evidence": [
+    {
+      "key": "givewell",
+      "design": "July2023 blog forecast chain; August2023 formal grant comparison",
+      "population": "Defined 2023 Philippines, Chad and Côte d'Ivoire expansion grant",
+      "result": "9,785 supported enrollments × 91% counterfactual × 78% initial correction × 53% non-relapse = 3,681 durable counterfactual corrections; formal grant write-up estimated about 8.1× cash.",
+      "transfer": "Exact for GiveWell's forecast, not observed effect or current ordinary-gift estimate. A separate 50% central transfer haircut is applied. GiveWell's $543 NGO + $109 government cost and ~6 DALYs/treated child use different cost and health units and are calibration context only. The later formal summary uses about50% long-term success rather than the blog chain's41.34%; these versions are not numerically identical."
+    },
+    {
+      "key": "clinical",
+      "design": "Systematic reviews and clinical evidence",
+      "population": "Children with congenital clubfoot receiving Ponseti pathways",
+      "result": "Clinical literature supports high correction and major functional improvement, but relapse and repeat treatment occur and long-term evidence is largely observational.",
+      "transfer": "Supports the mechanism, not MiracleFeet causal attribution or generic-utility magnitude."
+    },
+    {
+      "key": "qaly",
+      "design": "DALY model, Cochrane review and preference-based-measure review",
+      "population": "LMIC clubfoot programs and congenital mobility impairment literature",
+      "result": "Published cost-effectiveness work modeled DALYs with proxy disability weights; no suitable untreated-versus-Ponseti QALY estimate was found.",
+      "transfer": "No DALY-to-QALY conversion. Report uses an explicit finite annual-utility prior bridge and labels modeled rather than observed QALYs."
+    },
+    {
+      "key": "output",
+      "design": "Official FY2025 organization reporting",
+      "population": "Whole global operating portfolio",
+      "result": "17,846 new enrollments, 60 new clinics, 1,400+ providers, 49 partners/37 countries; Good Feet at Four newly introduced.",
+      "transfer": "Starts and infrastructure are not completed durable corrections; the GiveWell adjustment bridge is required."
+    },
+    {
+      "key": "finance",
+      "design": "Official FY2025 cash and audited accrual reporting",
+      "population": "Whole MiracleFeet organization",
+      "result": "Cash expense $10.126M, accrual expense $9.959M, end net assets $16.740M, $567 total cost/new enrollment, $10.2M cash raised and $4M future pledges.",
+      "transfer": "Supports historical whole-organization unit cost, not marginal capacity or complete economic resources. GiveWell's historical ~$1M annual RFMF estimate and July 2027 renewal plan do not prove a current open gap."
+    }
+  ],
+  "reservations": [
+    "No direct generic-utility/QALY estimate exists for one additional durable clubfoot correction; disability-weight-to-utility values are explicit uncertain priors.",
+    "GiveWell's 37.6188% ratio is a forecast for a defined 2023 expansion grant, not a clinical success rate or current ordinary-gift parameter.",
+    "FY2025 new enrollments are starts, not completed treatment or Good Feet at Four outcomes.",
+    "The multi-year treatment pathway is represented by a steady-state annual whole-organization denominator rather than a cohort lifetime-cost study.",
+    "Full government, partner, commodity and family resources are unknown; multiplier gross values are modeled priors only.",
+    "Current unrestricted liquidity, grant commitments, displacement and a priced next unfunded package are not public.",
+    "Scenario probabilities are judgmental; the $22,479 headline is modeled rather than observed or verified.",
+    "Direct Bay and San Francisco health impact is zero.",
+    "GiveWell's July2023 blog footnotes imply 41.34% long-term clinical correction (78% initial ×53% non-relapse), whereas its August2023 formal summary uses about50%. We retain the precisely documented older 3,681/9,785 counterfactual ratio as a conservative calibration, not a claim that the versions are identical; the scenario range spans both."
+  ],
+  "excludedBenefits": [
+    "Mortality effects",
+    "Caregiver time, distress and household spillovers",
+    "Earnings and educational gains",
+    "Stigma and social-participation effects not captured by the illustrative finite QALY total",
+    "Provider training, policy, advocacy and health-system learning spillovers",
+    "Value of information from GiveWell's separate evaluation grant"
+  ],
+  "sources": [
+    {
+      "publisher": "MiracleFeet",
+      "title": "FY2025 Impact Report",
+      "url": "https://e1.nmcdn.io/assets/miraclefeet/wp-content/uploads/2025/11/MF_AnnualReport_2025_FinalPostProof_Website.pdf",
+      "published": "2025-11-18",
+      "retrieved": "2026-09-10",
+      "sourceType": "Official output and financial report"
+    },
+    {
+      "publisher": "MiracleFeet",
+      "title": "Impact & Stewardship",
+      "url": "https://www.miraclefeet.org/about-us/financials",
+      "published": "Current",
+      "retrieved": "2026-09-10",
+      "sourceType": "Official financial/report index"
+    },
+    {
+      "publisher": "MiracleFeet",
+      "title": "Our Model",
+      "url": "https://www.miraclefeet.org/about-us/our-model",
+      "published": "Current as of July 2026",
+      "retrieved": "2026-09-10",
+      "sourceType": "Official delivery model and current footprint"
+    },
+    {
+      "publisher": "GiveWell",
+      "title": "MiracleFeet — Clubfoot Treatment (January 2023)",
+      "url": "https://www.givewell.org/research/grants/miraclefeet-clubfoot-treatment-january-2023",
+      "published": "2023-08",
+      "retrieved": "2026-09-10",
+      "sourceType": "Formal external grant write-up, cost-effectiveness and RFMF forecast"
+    },
+    {
+      "publisher": "GiveWell",
+      "title": "Ponseti Casting for Clubfoot",
+      "url": "https://www.givewell.org/international/technical/programs/ponseti-casting-for-clubfoot",
+      "published": "2022 review; current page",
+      "retrieved": "2026-09-10",
+      "sourceType": "Formal intervention review and NGO/government resource estimate"
+    },
+    {
+      "publisher": "GiveWell",
+      "title": "Why we're funding clubfoot treatment through MiracleFeet",
+      "url": "https://blog.givewell.org/2023/07/07/miraclefeet-clubfoot-treatment-grant/",
+      "published": "2023-07-07",
+      "retrieved": "2026-09-10",
+      "sourceType": "External grant summary"
+    },
+    {
+      "publisher": "GiveWell",
+      "title": "MiracleFeet grant footnotes",
+      "url": "https://www.givewell.org/sources/blog-post/MiracleFeet-grant",
+      "published": "2023",
+      "retrieved": "2026-09-10",
+      "sourceType": "Exact grant adjustment chain"
+    },
+    {
+      "publisher": "International Orthopaedics / PubMed",
+      "title": "Cost-effectiveness of club-foot treatment in low-income and middle-income countries",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28588918/",
+      "published": "2016/2017",
+      "retrieved": "2026-09-10",
+      "sourceType": "Peer-reviewed DALY model"
+    },
+    {
+      "publisher": "Institute for Health Metrics and Evaluation",
+      "title": "Global Burden of Disease Study 2021 Disability Weights",
+      "url": "https://ghdx.healthdata.org/record/ihme-data/gbd-2021-disability-weights",
+      "published": "2024-05-11",
+      "retrieved": "2026-09-10",
+      "sourceType": "Official disability-weight table and DOI 10.6069/485b-dx41"
+    },
+    {
+      "publisher": "Cochrane",
+      "title": "Interventions for congenital talipes equinovarus",
+      "url": "https://www.cochrane.org/evidence/CD008602_interventions-congenital-talipes-equinovarus-clubfoot",
+      "published": "Evidence current to 2021-05",
+      "retrieved": "2026-09-10",
+      "sourceType": "Systematic review"
+    },
+    {
+      "publisher": "Bray et al.",
+      "title": "Preference-based measures of health in congenital lower-limb mobility impairment",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7175543/",
+      "published": "2020",
+      "retrieved": "2026-09-10",
+      "sourceType": "Systematic review of utility measurement"
+    },
+    {
+      "publisher": "Internal Revenue Service, mirrored by ProPublica Nonprofit Explorer",
+      "title": "MiracleFeet filing record, EIN 27-3764203",
+      "url": "https://projects.propublica.org/nonprofits/organizations/273764203",
+      "published": "Current filing history",
+      "retrieved": "2026-09-10",
+      "sourceType": "Legal identity and Form 990 record"
+    }
+  ]
+}

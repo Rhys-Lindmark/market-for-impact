@@ -6,6 +6,10 @@ import {reportSections,markdownBlocks,safeReportLink} from '@/lib/report-markdow
 import {groupReportSections} from '@/lib/report-contents.mjs';
 import contentsMap from '@/data/report-contents-map.json';
 import DonorReadiness from './DonorReadiness';
+import {researchEffortSummary} from '@/lib/research-effort.mjs';
+import researchEffort from '@/data/research-effort.json';
+import historicalEffort from '@/data/research-effort-historical-estimates.json';
+import assignedEffort from '@/data/research-effort-assigned-estimates.json';
 type Section={id:string;title:string;markdown:string};
 type Block={type:'heading';level:number;id:string;text:string}|{type:'list';ordered:boolean;items:string[]}|{type:'table';headers:string[];rows:string[][]}|{type:'paragraph';text:string};
 type Source={title:string;url:string;publisher:string;published:string;retrieved:string;limit?:string};
@@ -30,6 +34,8 @@ function Markdown({text}:{text:string}) {
  })}</>;
 }
 export default function LongFormResearchReport({organization,program,markdown,sources,donationUrl,modelVersion,modelUrl,minutes,modelLabel,sectionTitles={},sectionOrder=[]}:{organization:string;program:string;markdown:string;sources:Source[];donationUrl?:string;modelVersion:string;modelUrl:string;minutes:number;modelLabel:string;sectionTitles?:Record<string,string>;sectionOrder?:string[]}){
+ const effortOrganization=organization==='HOPE Pacifica'?'HOPE: Healing, Overdose Prevention, and Education':organization;
+ const earlierEffort=researchEffortSummary(researchEffort,effortOrganization,{...historicalEffort,...assignedEffort});
  const sections=(reportSections(markdown) as Section[]).map(section=>({...section,title:sectionTitles[section.id]??section.title}));
  if(sectionOrder.length){if(sectionOrder.length!==sections.length||new Set(sectionOrder).size!==sections.length||sectionOrder.some(id=>!sections.some(s=>s.id===id)))throw Error('Incomplete report section order');sections.sort((a,b)=>sectionOrder.indexOf(a.id)-sectionOrder.indexOf(b.id));}
  const groups=groupReportSections(sections,(contentsMap as Record<string,Record<string,string>>)[organization]) as {id:string;title:string;sections:Section[]}[];
@@ -37,8 +43,8 @@ export default function LongFormResearchReport({organization,program,markdown,so
   <header className="givebetter-masthead"><a href="/">Give<span>Better</span> <small>x SF</small></a></header>
   <div className="report-reading-column">
    <header className="report-heading"><h1>{organization}</h1><p className="report-program">{program}</p>
-    <details className="report-research-effort"><summary>V2 research: {minutes} minutes on {modelLabel}</summary><p>Source review, model revision and report preparation. Independent audit and publishing are separate.</p></details>
-    <p className="report-date">Updated: 11 September 2026 · V2 beta research</p>
+    <details className="report-research-effort"><summary>Latest research: {minutes} minutes on {modelLabel}</summary><ul><li>v1: {earlierEffort.label.replace('Research time: ','')}</li><li>v2: {minutes} min on {modelLabel}</li></ul>{earlierEffort.estimated&&<p>Earlier research time was estimated before tracking began.</p>}</details>
+    <p className="report-date">Updated: 11 September 2026</p>
     {donationUrl?<a className="report-donate" href={donationUrl} target="_blank" rel="noreferrer">Donate</a>:<p className="report-date">Donation route not verified.</p>}
    </header>
    <nav className="report-contents" aria-label="Table of Contents"><h2>Table of Contents</h2>{groups.map(group=>group.sections.length>1?<details className="report-contents-group" key={group.id}><summary><a data-toc-primary href={'#'+group.id}>{group.title}</a></summary><div>{group.sections.map(section=><a key={section.id} href={'#'+section.id}>{section.title.replace(/^\d+[.)]\s*/, '')}</a>)}</div></details>:<a data-toc-primary key={group.id} href={'#'+group.id}>{group.title}</a>)}<a data-toc-primary href="#sources">6. Sources</a></nav>

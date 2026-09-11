@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Research headers — simplified September 11
+
+Removed visible version/beta labels from all ten long-form report headers. Latest-review time stays visible; existing first-pass effort and current-review effort appear as v1/v2 only inside the disclosure. Historical estimates retain their estimate marker. Cost-effectiveness models and rankings are unchanged. Production build, focused lint and all-ten-report disclosure/anchor checks at phone and tablet widths pass. Next: publish this presentation-only change; research expansion remains complete.
+
 ## FUF V2 — validated; final frozen report ready
 
 110 alpha and 9/10 V2 live. FUF accepted full narrative, three original financial years and latest annual output integrated. Preferred source update yields central $1,652,627/10 Bay QALYs; separate weighted $941,689. Funding/clinical priors unchanged; 84.9% favorable-tail dependence. 164 packet checks, full suite, narrative/anchors, lint/build and responsive report/API/index/home transition verified. Historical model retained. Next publish exact source; then final central-statistic corrections (Face to Face, DOW, Clinic), plan reconciliation and additional staff-giving outcomes. No verified marginal offer.

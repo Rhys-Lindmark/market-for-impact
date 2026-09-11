@@ -5,6 +5,15 @@ test('V2 contents share seven primary links and retain original anchors',async({
  await page.route('https://market-for-impact.rhyslindmark.chatgpt.site/_next/**',async route=>{const u=new URL(route.request().url());await route.fulfill({response:await request.get(u.pathname+u.search)});});
  for(const [slug,name]of reports){
   const response=await page.goto('/charities/'+slug);expect(response?.ok(),slug).toBe(true);
+  const effort=page.locator('.report-research-effort');
+  await expect(effort.locator('summary')).not.toContainText(/v2|beta/i);
+  await expect(page.locator('.report-heading .report-date').first()).toHaveText('Updated: 11 September 2026');
+  await expect(effort.locator('ul')).not.toBeVisible();
+  await effort.locator('summary').click();
+  await expect(effort.locator('li')).toHaveCount(2);
+  await expect(effort.locator('li').first()).toContainText('v1:');
+  await expect(effort.locator('li').last()).toContainText('v2:');
+  await effort.locator('summary').click();
   await expect(page.locator('[data-toc-primary]')).toHaveText(['Summary','1. What do they do?','2. Monitoring and information sharing','3. Qualitative assessment','4. What do you get for your dollar?','5. Funding and previous grants','6. Sources']);
   for(const id of Object.keys((mappings as Record<string,Record<string,string>>)[name]))await expect(page.locator('[id="'+id+'"]')).toHaveCount(1);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);

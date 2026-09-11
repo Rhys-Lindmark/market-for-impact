@@ -1,0 +1,285 @@
+{
+  "organization": "Legal Link",
+  "eyebrow": "EXPLORATORY CHARITY RESEARCH · BAY AREA",
+  "program": "Legal First Aid training and community legal navigation",
+  "published": "11 September 2026",
+  "modelVersion": "legal-link-whole-gift-partial-health-v1",
+  "nutshell": {
+    "headline": "A credible upstream legal-access mechanism, but an unproven marginal health return.",
+    "body": "A $100,000 unrestricted whole-organization gift produces 0.216759 signed prior-weighted modeled Bay QALYs: $4.61 million per 10. This retains every organizational expense but quantifies only a training-to-health pathway. The 5% favorable world supplies 99.73% of signed benefit; central cost is $73.52 million per 10. These are explicit judgment scenarios, not measured effects or a complete valuation of Legal Link.",
+    "whyItMayWork": "Training existing frontline workers can help clients respond to legal problems earlier, reducing failed referrals and avoidable housing or benefits disruptions without requiring an attorney for every interaction.",
+    "whyWeAreCautious": "The strongest evaluation measures perceived legal capability immediately after training, not additional client outcomes. Bay residence, recurring skill use, unique cases, health effects and gift-funded expansion remain unmeasured.",
+    "recommendationBlocker": "HOLD a health-cost-effectiveness recommendation. Obtain an incremental Bay workplan and attributable client outcomes; do not buy an already-funded role twice."
+  },
+  "summary": [
+    {
+      "label": "BAY WHOLE GIFT",
+      "value": "$4.61M",
+      "detail": "per 10 modeled Bay QALYs; full cost, partial health scope"
+    },
+    {
+      "label": "CENTRAL CASE",
+      "value": "$73.52M",
+      "detail": "0.013602 Bay QALY per $100,000"
+    },
+    {
+      "label": "TAIL DEPENDENCE",
+      "value": "99.73%",
+      "detail": "of signed benefit from the 5% favorable world"
+    },
+    {
+      "label": "SF WHOLE GIFT",
+      "value": "$10.26M",
+      "detail": "SF share is a prior, not observed beneficiary residence"
+    },
+    {
+      "label": "FUNDING ROOM",
+      "value": "Unverified",
+      "detail": "new SF advocate is already city-grant-funded"
+    }
+  ],
+  "programSection": {
+    "body": "Legal Link is a distinct nonprofit, EIN 84-4291701. Its 2025 annual report lists 586 newly certified partners nationwide, including 195 in California; those are trainees, not clients. Its California network also received 244 consultations. A Tipping Point-supported SF initiative trained 58 staff across 11 organizations; these are not added as another cohort. Santa Clara work includes Sacred Heart Community Service and the Tenant Power Toolkit.",
+    "steps": [
+      {
+        "title": "Train and support existing workers",
+        "detail": "Issue spotting, practical navigation, referral and escalation operate inside partner organizations; their existing services remain in the counterfactual."
+      },
+      {
+        "title": "Improve a material client outcome",
+        "detail": "Model only the incremental probability of resolution attributable to training, not every successful partner case or a reported financial return."
+      },
+      {
+        "title": "Translate selected resolutions into finite health",
+        "detail": "One primary person per unique case; a health-relevant share, small utility change, finite duration and adverse effects are separately specified."
+      },
+      {
+        "title": "Keep historical work inside the cost boundary",
+        "detail": "Historical consultations, technical assistance, digital tools and national network work remain costed without separate additive QALYs. Future grant-funded direct service is excluded from additional benefits and its future costs are not in this historical baseline. Omitted effects are unknown, not proven zero."
+      }
+    ],
+    "boundary": "All FY expense remains in the denominator. Annual training output is a scale proxy for the whole organization, not a claim that all spending purchases certifications. FY July 2024–June 2025 costs and calendar-2025 output are temporally mismatched. Older trained cohorts and repeat/advanced trainings are not separately counted. Effects of national policy, litigation or political persuasion are not modeled. Partner casework and attorney support cannot be added again as separate Legal Link benefits."
+  },
+  "model": {
+    "headline": "Prior-weighted $4.61M per 10 modeled Bay QALYs; central $73.52M.",
+    "body": "Gift divided by whole expense times annual certifications yields training equivalents. Funding additionality and delivery convert these into additional training, then active use, annual cases and uniqueness yield case equivalents. Incremental material resolution, health relevance, utility and duration produce gross health benefit; adverse burden is subtracted before geographic attribution. No empirical utility or causal client-effect estimate is claimed.",
+    "equation": {
+      "label": "SIGNED PRIOR-WEIGHTED BAY COST",
+      "expression": "10 × $100,000 ÷ 0.2167593063 signed Bay QALY",
+      "result": "$4,613,412 per 10 modeled Bay QALYs"
+    },
+    "inputColumnLabel": "Source anchors and explicit analyst judgments",
+    "inputs": [
+      {
+        "key": "expense",
+        "label": "Whole cost",
+        "confidence": "High historical",
+        "best": "$765,831",
+        "range": "FY ended June 2025",
+        "basis": "IRS Form 990; program $515,395, administration $180,776, fundraising $69,660. Filing says compiled/reviewed, not independently audited."
+      },
+      {
+        "key": "training",
+        "label": "Training scale",
+        "confidence": "Reported output; weak marginal transfer",
+        "best": "586 annual",
+        "range": "calendar 2025",
+        "basis": "Annual report; not cumulative certifications, estimated family reach or baseline trainee caseload."
+      },
+      {
+        "key": "funding",
+        "label": "Funding and delivery",
+        "confidence": "Very low",
+        "best": "30% × 80%",
+        "range": "funding 0–70%; delivery 60–100%",
+        "basis": "Judgments about substitution by grants/fees, capacity, timing and the historical-cost/output transfer. No marginal offer."
+      },
+      {
+        "key": "use",
+        "label": "Active worker and unique cases",
+        "confidence": "Very low",
+        "best": "60% × 10 × 80%",
+        "range": "40–85% active; 5–25 cases; 70–90% unique",
+        "basis": "One year of case generation only. No lifelong staff productivity or family-member multiplier. Not inferred from the pretraining caseload."
+      },
+      {
+        "key": "causal",
+        "label": "Additional resolution",
+        "confidence": "Very low",
+        "best": "10 percentage points",
+        "range": "0–25 points",
+        "basis": "Judgment relative to existing partner support, other training and timely attorney care; not the evaluator's observed success fraction. This gate includes attribution to Legal Link, so no second attribution multiplier is applied."
+      },
+      {
+        "key": "health",
+        "label": "Finite health bridge",
+        "confidence": "Very low",
+        "best": "30% × 0.03 utility × 1 year",
+        "range": "20–50% health-relevant; .02–.06 utility; .5–2 years",
+        "basis": "No instrument-specific health result supports these values. They are modest illustrative packages, not legal-capability-score conversions. Duration is incremental over alternative care; no mortality credit."
+      },
+      {
+        "key": "harm",
+        "label": "Signed adverse burden",
+        "confidence": "Very low",
+        "best": "0.00025 QALY per unique case",
+        "range": "0–.001 in declared worlds",
+        "basis": "Judgment for distress, erroneous navigation, missed escalation or delayed better assistance; harm-only world has no offsetting benefits. Not an observed adverse-event rate and not a maximum possible harm."
+      },
+      {
+        "key": "geography",
+        "label": "Bay attribution",
+        "confidence": "Very low",
+        "best": "195/586 × 75% = 24.96%",
+        "range": "60–90% Bay within California; SF 30–45% of Bay",
+        "basis": "California trainee fraction anchors a proxy, not expense share or residence. Uniform yield across locations is assumed; future national expansion could lower local yield."
+      },
+      {
+        "key": "time",
+        "label": "Delay and discount",
+        "confidence": "Judgment",
+        "best": "1-year benefit start; 3% annual",
+        "range": "maximum 2 benefit years",
+        "basis": "Six months delivery plus six months average case accrual; continuously discounted finite utility. Skill durability and alternative-care timing are not measured."
+      },
+      {
+        "key": "weights",
+        "label": "Scenario probabilities",
+        "confidence": "Subjective judgment",
+        "best": "45% null / 10% harm / 20% cautious / 20% central / 5% favorable",
+        "range": "fixed before first run",
+        "basis": "Not frequencies from the evaluation. Joint favorable assumptions represent a stress world, not independent confidence intervals."
+      }
+    ],
+    "giftHeading": "$100,000 unrestricted whole-organization gift — hypothetical, not an available tranche",
+    "sensitivity": [
+      {
+        "case": "Funding null (25%)",
+        "headline": "0 Bay QALY",
+        "detail": "No additional delivery; cost per QALY undefined."
+      },
+      {
+        "case": "Health null (20%)",
+        "headline": "0 Bay QALY",
+        "detail": "Additional training but no additional modeled health or harm."
+      },
+      {
+        "case": "Harm (10%)",
+        "headline": "−0.021359 Bay QALY",
+        "detail": "Retained in signed expectation; cost per QALY undefined."
+      },
+      {
+        "case": "Cautious (20%)",
+        "headline": "$83.97B per 10",
+        "detail": "0.000011910 Bay QALY; small gross benefit almost offset by modeled harms."
+      },
+      {
+        "case": "Central (20%)",
+        "headline": "$73.52M per 10",
+        "detail": "18.36 additional training equivalents and 88.15 unique case equivalents nationally; 0.013602 Bay QALY."
+      },
+      {
+        "case": "Favorable stress (5%)",
+        "headline": "$231,297 per 10",
+        "detail": "4.323448 Bay QALYs; simultaneous high funding, use, case yield, resolution and finite health effects."
+      },
+      {
+        "case": "Without favorable world",
+        "headline": "$1.62B per 10",
+        "detail": "Remaining 95% probability mass renormalized; no coefficient change."
+      }
+    ],
+    "uncertaintyBoundary": "The 5% subjective mass below $1M and 0% below $100k are properties of this finite scenario set, not calibrated probabilities or proof that stronger outcomes are impossible. Complete societal resources and verified marginal gross costs are unknown and remain null. Existing partner staff time, supervision, referral attorneys, courts and treatment/services may require additional resources; none is assumed free. Historical expense includes public and fee-funded operations, so those revenues are neither subtracted from cost nor added again. The gift model is diagnostically linear only up to $100,000, without asserting that any such amount can currently be absorbed.",
+    "fundingBoundary": "The FY2025 filing reports revenue $818,902, government grants $252,832, program fees/sponsorship $257,292, unrestricted net assets $450,300 and cash/temporary investments $509,767. Liabilities are $126,133. Noncash contributions of $28,741 are already included in contributions; they are not an extra expense adjustment or proof of donated partner labor. These historical balances do not identify present freely deployable cash. A July 2026 official job description identifies a new SF direct-client advocate, salary $60,000–$75,000, already funded by a two-year MOHCD grant through June 2028, with an October/November 2026 target start. Salary is not loaded program cost. The application deadline has passed; current hiring status is unverified. There is no verified unfunded advocate slot, training waitlist price or unrestricted 2026 budget gap. A prior proposed city funding cut must not be described as an enacted total funding loss."
+  },
+  "reservations": [
+    "The four-state study is uncontrolled immediate pre/post self-report, not a trial of client outcomes; its 13,734 clients were reported prior caseload, not incremental beneficiaries.",
+    "The Fellows summary reports selected resolved cases and estimated financial benefit without a credible untreated comparison. Its linked full-report button currently resolves to the 2024 annual report; a full Fellows methods report was not obtained.",
+    "Fellows partners include already-reviewed Homeless Prenatal Program, Compass and Hamilton Families. Distinct legal recipient does not imply independent client impact; do not sum their full outcomes with Legal Link's.",
+    "A successful resolution may improve income or legal security without measurable health change. Money recovered is not converted into QALYs.",
+    "Certification output and fiscal cost periods differ, and national partner-delivered work complicates attribution and resource accounting.",
+    "The strong favorable tail dominates. The model is a transparent exploratory rejection of a strong health claim, not a comprehensive judgment of social value.",
+    "Before revising: obtain current whole budget, restricted award commitments, marginal Bay training/case plan, unique client residence, sustained tool use, usual-care outcomes, referral capacity and health follow-up."
+  ],
+  "evidence": [
+    {
+      "key": "capability",
+      "design": "Four-state paired pre/post assessment",
+      "population": "Frontline training participants",
+      "result": "Immediate perceived legal-capability gains without untreated comparison.",
+      "transfer": "Not client health or a causal estimate of additional resolutions. Prior caseload cannot become incremental reach."
+    },
+    {
+      "key": "bay-delivery",
+      "design": "Organizational annual output report",
+      "population": "SF and Santa Clara partner networks",
+      "result": "Actual Bay implementation documented.",
+      "transfer": "Geographic output is not measured beneficiary residence; partner outcomes overlap and funding is already present."
+    },
+    {
+      "key": "funded-capacity",
+      "design": "Official hiring document",
+      "population": "Planned SF direct-client advocate",
+      "result": "City grant supports the new role.",
+      "transfer": "Already-funded capacity, not a verified donation opening; current hiring status and loaded costs remain unknown."
+    }
+  ],
+  "excludedBenefits": [
+    "Justice, dignity and procedural fairness",
+    "Financial recovery and debt relief",
+    "Older cohort and consultation effects not separately identifiable",
+    "National policy/system change",
+    "Already-funded new direct service",
+    "Mortality and lifetime worker/family multipliers"
+  ],
+  "sources": [
+    {
+      "publisher": "IRS via ProPublica",
+      "title": "Legal Link Form 990, FY July 2024–June 2025",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202620499349300032/IRS990",
+      "published": "Filed February 18, 2026",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary financial filing"
+    },
+    {
+      "publisher": "Legal Link",
+      "title": "2025 Impact Report",
+      "url": "https://legallink.org/wp-content/uploads/2026/04/2025-Impact-Report-Legal-Link-1.pdf",
+      "published": "2026; reports calendar 2025",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary self-reported output"
+    },
+    {
+      "publisher": "James Teufel / Legal Link",
+      "title": "Four-state Legal First Aid evaluation",
+      "url": "https://legallink.org/wp-content/uploads/2026/01/J.-Teufel-Legal-Link-4-State-Evaluation-of-Legal-First-Aid-December-2025-1.pdf",
+      "published": "Drafted November 9, 2025",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary uncontrolled evaluation"
+    },
+    {
+      "publisher": "Legal Link",
+      "title": "Fellows three-year evaluation summary",
+      "url": "https://legallink.org/2025-legal-first-aid-evaluation-copy/",
+      "published": "2025 evaluation summary; page date unspecified",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary organizational summary, not full methods"
+    },
+    {
+      "publisher": "Legal Link",
+      "title": "Legal Empowerment Advocate job description",
+      "url": "https://legallink.org/wp-content/uploads/2026/07/2026-Legal-Empowerment-Advocate-Job-Description-Legal-Link.pdf",
+      "published": "July 2026",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary current funding/capacity document"
+    },
+    {
+      "publisher": "Legal Link",
+      "title": "Official donation page and legal identity",
+      "url": "https://legallink.org/donate/",
+      "published": "Undated",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary identity; payment workflow not verified"
+    }
+  ]
+}

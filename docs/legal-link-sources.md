@@ -1,0 +1,26 @@
+# Legal Link source and decision ledger
+
+The renderer JSON contains the canonical source URLs, factual claims and limitations. No outreach; no Site changes. All nonfinancial conversion parameters in the portable model are analyst judgments. No original client health dataset was found.
+
+## Primary evidence audit
+
+1. IRS 990: Parts VIII–X and XII read directly from primary filing through ProPublica. All expense categories reconcile. Filing period must not be called calendar 2025. Noncash gifts must not be added to already inclusive contribution totals. Reviewed/compiled financial statements are not an audit. Full societal cost remains unknown.
+2. Calendar-2025 annual report: printed pp4–7 establish current annual geography and actual Bay projects. Cumulative certifications, network membership and estimated families reached are excluded from the denominator. Full-text PDF read in memory when the web renderer intermittently refused the URL. No bulk PDF stored.
+3. Four-state evaluation: executive summary/methods and results inspected. 336 paired participants; perceived capability rises 54 to 76/100, with 91% improving and 8% declining. Neither percentage is a measured health effect or adverse-event rate. Reported client count is explicitly pretest/prior-month caseload. Selection, social-desirability, immediate timing and absent untreated comparison prevent a causal health inference. Cross-state transfer and ongoing use remain unknown.
+4. Fellows summary: selection and attribution unresolved. Clicking its advertised report link returned the 2024 Impact Report at https://legallink.org/wp-content/uploads/2025/05/Legal-Link-Annual-Impact-Report-2024-1.pdf . Do not claim to have read the unavailable full Fellows study. Selected successes without escalation do not establish what usual partner assistance would have accomplished.
+5. Official July-2026 hiring PDF: strongest contemporary funding counterfactual. The new direct-service pathway is already grant-supported, not an identified donation vacancy. Neither employment salary nor the existence of a job advert establishes marginal donor room. Grant amount, loaded cost, executed contract and hiring status were not obtained. The document reports the grant; this is not an independent city-contract audit.
+6. Donation page: organization and EIN verified. Embedded payment was not completed or tested; donationUrl intentionally omitted.
+
+## Model decision ledger, locked before first run
+
+No calibration to the requested threshold. Low, central and favorable combinations were chosen as explicit internally coherent assumptions, with 45% null and 10% adverse mass. First-run results were retained despite extreme favorable-tail dependence. In the central world, causal attribution is a 10-percentage-point change in resolution probability relative to the existing partner service; it is not a 10% success rate. The active-use factor is allowed to include workers not serving clients and retention over the single modeled year. The 80% uniqueness factor prevents repeated client episodes from all becoming distinct health beneficiaries. No multiplicative credit for family members.
+
+The finite health model is not validated by a health-utility instrument. .03 for one year means a small temporary change in health-related quality of life among the selected health-relevant resolutions, not .03 per person trained. The health share separates ordinary legal/economic success from health improvement. Harm is imposed on every unique handled case independently of successful resolution; it can include delayed appropriate escalation. Alternatives converge within the declared duration by assumption. A missed deadline could cause greater harm than these scenarios; the set is not exhaustive.
+
+Whole-gift comparison includes non-Bay and unquantified operations in historical expense. Scaling annual certification output with all expenses is an imperfect productivity proxy, not a training budget allocation. Unmodeled ongoing-cohort, tool, consultation, direct-service and systemic pathways may have either sign; this is not a complete whole-organization QALY accounting. Current direct-service funding is kept in the counterfactual. The historical denominator does not include future expansion costs; the timing mismatch is an explicit limitation rather than invented current accounting.
+
+Priority data that could change the decision: (1) unrestricted current budget and independently additional Bay deployment; (2) prospective unique local cases and incremental resolutions compared with existing services; (3) retained tool use and health-relevant case mix; (4) client health follow-up and alternative-care timing; (5) incremental partner/attorney/public costs and capacity. An unknown marginal quote does not erase the value of this exploratory model, but prevents treating it as a giving recommendation.
+
+## Reproduction
+
+Use any compatible modern Node runtime, with no packages: `node --test /private/tmp/mfi-legal-link-model.test.mjs`. Import `runModel` from the adjacent model for full numeric rows. The JSON report uses the BayLegal renderer field shape. No Site renderer was run. Independent content/renderer acceptance remains for the parent.

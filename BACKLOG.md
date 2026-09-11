@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Post100: audited source/readability correction
+
+100/100 canonically verified through PR296/v211 (79 Bay +21 expanded). Correct Pacific Hearing Connection grant publisher to Santa Clara County Health Authority / Santa Clara Family Health Plan, preserving amount and modeled results. Improve Dentists on Wheels and Health Mobile word spacing without changing inputs, URLs or donation status. Independent acceptance retained in docs/post100-source-copy-audit.md. 59 relevant model tests, six phone/tablet interactions, lint zero errors/three existing warnings and production build pass. Next: accepted HEPPAC cohort correction; scope-aware top-ten recommendations and public-source marginal funding diligence; homepage/library redesign. No verified additional-gift offer found for the three proposed leaders; precise donor questions prepared, not outreach.
+
 ## Face to Face — final candidate 100
 
 99/100 verified via PR295. Face to Face Sonoma County AIDS Network, EIN68-0052664: whole gross cost $2,263,089; partial overdose-survival model $1.329M/10 Bay QALYs. Each unique person receives one finite survival trajectory, not a lifetime per reversal. Independent audit accepted; no verified marginal offer and HOLD giving. Renderer summary schema corrected at integration without numerical changes. Verification: 715 tests, lint zero errors/three existing warnings, production build; responsive/canonical publication gates remain. After100: HEPPAC corrected cohort model, source/readability repairs, scope-aware top-ten recommendations, public-source marginal funding diligence, and donor homepage/library synthesis. Count alone does not finish the goal.

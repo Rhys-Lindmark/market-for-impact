@@ -8,6 +8,7 @@ test('Pacific Hearing Connection price and identity remain distinct',async({page
  await row.locator('a').first().click();await expect(page.locator('h1')).toHaveText('Pacific Hearing Connection');
  await expect(page.locator('#evidence')).toContainText('modifiedHUI3');
  await expect(page.locator('#evidence')).toContainText('RAND36');
+ await expect(page.locator('#sources')).toContainText('Santa Clara County Health Authority / Santa Clara Family Health Plan');
  await expect(page.locator('.report-research-effort summary')).toContainText('6 min');
  const response=await page.request.get('/api/pacific-hearing-connection-model');expect(response.ok()).toBe(true);const a=await response.json();
  expect(a.evaluated.bayCostPer10).toBe(937720.9335493005);expect(a.anchors.expense).toBe(184099);

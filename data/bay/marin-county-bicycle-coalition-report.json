@@ -1,0 +1,420 @@
+{
+  "organization": "Marin County Bicycle Coalition",
+  "eyebrow": "Exploratory whole-gift Bay research",
+  "program": "Finite road-injury prevention and youth physical activity within a broader cycling organization",
+  "published": "11 September 2026",
+  "modelVersion": "marin-county-bicycle-coalition-whole-gift-finite-v1",
+  "nutshell": {
+    "headline": "A real road-design opportunity, but not a demonstrated high-return ordinary gift",
+    "body": "The research list uses the central scenario: $457,782,005 per 10 Bay QALYs. The signed subjective mixture is $28,647,385 per 10 Bay QALYs; the central scenario is $457,782,005. These charge the whole organization while quantifying two pathways, not its complete expected value.",
+    "whyItMayWork": "Technical review can improve a reconstruction design before it becomes expensive to change. Bikes and supported riding can also enable genuinely additional physical activity.",
+    "whyWeAreCautious": "Current corridor crash exposure, MCBC's residual contribution and cash-created capacity are unmeasured. Favorable assumptions supply more than 100% of signed expected health because other worlds include net harm.",
+    "recommendationBlocker": "Not a current top-ten giving recommendation on this evidence. A useful case requires corridor-specific safety data, an additional implementation task and a credible ordinary-gift response—not retrospective credit for completed infrastructure."
+  },
+  "summary": [
+    {
+      "label": "WHOLE EXPENSE",
+      "value": "$1,425,170",
+      "detail": "Original FY2025 Form 990; all programs and overhead retained."
+    },
+    {
+      "label": "BAY MIXTURE",
+      "value": "$28,647,385",
+      "detail": "Per 10 Bay QALYs; subjective, signed and partial-health."
+    },
+    {
+      "label": "CENTRAL",
+      "value": "$457,782,005",
+      "detail": "Near-zero net benefit; highly unstable as a precise price."
+    },
+    {
+      "label": "FAVORABLE",
+      "value": "$2,626,225",
+      "detail": "Still above $1M; 10% declared scenario weight, not measured probability."
+    }
+  ],
+  "programSection": {
+    "body": "MCBC is the distinct California nonprofit EIN 68-0419394. It works on street/trail access, cycling education and youth bicycle access. Its public return identifies four major program areas; the calculation does not substitute the much smaller road-program expense for the whole recipient's cost.",
+    "steps": [
+      {
+        "title": "Improve a live design rather than recount old projects",
+        "detail": "San Marin Drive has an unresolved reconstruction opportunity. Quantify only a judgmental improvement in injury risk attributable to technical design and implementation work beyond agency and partner baseline; no campaign persuasion or election-strategy effect is modeled."
+      },
+      {
+        "title": "Bound the period of additional safety",
+        "detail": "Apply a finite interval before the alternative design catches up, delayed to construction. Annual fatal and serious-injury rates are explicit unverified priors, not measured local crashes."
+      },
+      {
+        "title": "Count additional activity, not bicycle handouts as health",
+        "detail": "Start with a historical Cory's Ride participation floor, then require extra sustained activity beyond other exercise and a finite utility proxy. Do not award lifetime cardiovascular prevention to each participant."
+      },
+      {
+        "title": "Keep the organization's full resource boundary visible",
+        "detail": "Retain school education, trail, administrative and fundraising costs. Other benefits remain unquantified. Agency construction, volunteers and other partner costs are not fully priced, so this is not a complete social-resource ratio."
+      }
+    ],
+    "boundary": "One annual whole-budget equivalent supports a share of a finite road opportunity plus one youth cohort. Future road benefits are not annual outputs to repeat every subsequent year; repeated gifts cannot each claim the same completed project. Safe Routes to Schools, other corridors, trails, accessibility, air quality and wellbeing may matter but are not silently assigned zero."
+  },
+  "model": {
+    "headline": "$28,647,385 per 10 Bay QALYs",
+    "body": "Weighted finite Bay health per annual-budget equivalent is 0.4974869442335213 QALYs. A bounded $10,000 analytic gift yields 0.003490720013987954 Bay QALYs. This is not a verified donation package. The central net is just 0.031132066861424303 Bay QALYs per budget equivalent.",
+    "equation": {
+      "label": "Whole-gift finite signed health",
+      "expression": "gift / whole expense × funding response × Bay share × [(annual fatal burden + annual serious-injury burden) × safety reduction × discounted additional exposure years × MCBC contribution × realization + additional active youth × utility × duration × nonoverlap − harm]",
+      "result": "0.003490720013987954 Bay QALYs per $10,000 in the declared mixture"
+    },
+    "inputs": [
+      {
+        "key": "wholeExpense",
+        "label": "Whole expense",
+        "best": "$1,425,170",
+        "range": "FY July 2024–June 2025",
+        "confidence": "Filed accounting anchor",
+        "basis": "Original IRS return controls. Public annual report shows $1,420,027, a $5,143 lower total not reconciled here. No separately netted event expense or inventory cost appears on the return to add back."
+      },
+      {
+        "key": "fatalPerYear",
+        "label": "Baseline fatalities on affected corridor",
+        "best": "0.10/year",
+        "range": "0.03–0.20 in nonnull scenarios",
+        "confidence": "Very uncertain / judgment",
+        "basis": "Not observed San Marin incidence. No contemporary multi-year corridor series was retrieved. Avoids assigning a countywide death burden to a 1.6-mile concept. A single reported fatal crash does not estimate a stable annual rate."
+      },
+      {
+        "key": "seriousPerYear",
+        "label": "Baseline serious injuries",
+        "best": "0.50/year",
+        "range": "0.20–2/year",
+        "confidence": "Very uncertain / judgment",
+        "basis": "Distinct surviving injured people, not all crashes or all injuries. Rates require corridor and severity verification."
+      },
+      {
+        "key": "healthBurden",
+        "label": "Finite health per fatal/serious event",
+        "best": "10 / 2 QALYs",
+        "range": "5–15 / 0.5–3",
+        "confidence": "Very uncertain / judgment",
+        "basis": "Integrated finite healthy years lost or disability burden, not observed local ages or permanent lifetime multipliers. Fatal and nonfatal people are disjoint; no injury benefit added to someone already counted as a fatality."
+      },
+      {
+        "key": "safetyReduction",
+        "label": "Local injury-burden reduction",
+        "best": "20%",
+        "range": "0, 10–40%; signed diagnostics permitted",
+        "confidence": "Very uncertain / judgment",
+        "basis": "FHWA total-crash evidence is not a causal fatality coefficient for this median-divided corridor. This parameter includes design/severity transfer. An older primary study found modest frequency change but no significant rate effect."
+      },
+      {
+        "key": "time",
+        "label": "Additional exposure and delay",
+        "best": "3 years after 4-year delay",
+        "range": "1–5 years; 2–6-year delay",
+        "confidence": "Judgment informed by project status",
+        "basis": "Counterfactual convergence window, not physical asset lifespan. Integrate (1.03)^(-t) over delay to delay+years. Finite fatal Q is already integrated; do not multiply by another survival horizon."
+      },
+      {
+        "key": "contribution",
+        "label": "Annual funded work's share of incremental design improvement",
+        "best": "25%",
+        "range": "10–50%",
+        "confidence": "Very uncertain / judgment",
+        "basis": "Contribution of this annual-budget work cohort relative to agencies, designers, other organizations and MCBC's own past/future funded work. It is not credit for all MCBC effort over the project's life. Future MCBC work is neither free nor credited to this gift: its share must be excluded here. This is separate from realization and ordinary cash response."
+      },
+      {
+        "key": "realization",
+        "label": "Implementation realization",
+        "best": "50%",
+        "range": "25–80%",
+        "confidence": "Very uncertain / judgment",
+        "basis": "Whether the relevant design is built within the modeled window, conditional on technical work. Includes unresolved approvals and complementary public resources. No claim that the pipeline is already approved."
+      },
+      {
+        "key": "youthScale",
+        "label": "Cory's Ride cohort",
+        "best": "60",
+        "range": "30–120 modeled people",
+        "confidence": "Historical floor plus scale prior",
+        "basis": "60+ participants reported for 2024–2025; 60 is a conservative floor, not 60 observed additional active riders. Scale .5–2 is judgment about current delivery. Participation is not a unique long-term outcome audit."
+      },
+      {
+        "key": "activity",
+        "label": "Additional sustained activity",
+        "best": "30% × 50% = 9 youth",
+        "range": "10–70% uptake; 30–80% beyond alternatives",
+        "confidence": "Very uncertain / judgment",
+        "basis": "First fraction means extra cycling among recipients; second removes replacement of other exercise/access. Neither is a trial-estimated local response. Repeated participants/activity periods must be deduplicated here."
+      },
+      {
+        "key": "activityHealth",
+        "label": "Finite physical-activity utility",
+        "best": "0.01 for 0.5 year; 80% nonoverlap",
+        "range": "0.003–0.03 for 0.25–1 year; 50–80% nonoverlap",
+        "confidence": "Very uncertain / judgment",
+        "basis": "Generic short-term physical-health proxy, not a measured EQ-5D gain or converted fitness score. Excludes injury prevention already in road pathway, future mortality and separately added mental-health gains."
+      },
+      {
+        "key": "funding",
+        "label": "Ordinary cash response",
+        "best": "50%",
+        "range": "0–80%",
+        "confidence": "Very uncertain / judgment",
+        "basis": "Additional organizational work from an unrestricted gift beyond already financed activity. Distinct from clinical/behavioral alternatives, partner contribution and project realization. No priced residual capacity verified."
+      },
+      {
+        "key": "bay",
+        "label": "Bay benefit share",
+        "best": "98%",
+        "range": "98% across declared worlds",
+        "confidence": "Judgment",
+        "basis": "Marin setting but road users may live elsewhere. Same share applies to harms; not verified beneficiary residences."
+      },
+      {
+        "key": "harm",
+        "label": "Additional adverse health burden",
+        "best": "0.1 QALY per budget equivalent",
+        "range": "0–1 across worlds",
+        "confidence": "Very uncertain / judgment",
+        "basis": "Residual injury exposure from new riding, displaced traffic and other health burdens beyond the baseline safety reduction. Not a valuation of inconvenience or political disagreement. No overlap with injuries already netted in safetyReduction."
+      },
+      {
+        "key": "weights",
+        "label": "Joint subjective worlds",
+        "best": "20% funding-null; 20% health-null; 10% harm",
+        "range": "20% cautious; 20% central; 10% favorable",
+        "confidence": "Judgment, not calibrated probabilities",
+        "basis": "Locked before first calculation. No assumption was tuned to a target ranking; favorable outcomes do not determine the central estimate."
+      }
+    ],
+    "giftHeading": "$10,000 analytic illustration—not a priced project or student package",
+    "sensitivity": [
+      {
+        "case": "funding-null",
+        "headline": "No positive finite price",
+        "detail": "20% weight; no additional Bay health."
+      },
+      {
+        "case": "health-null",
+        "headline": "No positive finite price",
+        "detail": "20% weight; no net clinical gain or burden."
+      },
+      {
+        "case": "harm",
+        "headline": "Net harm: -0.49 Bay QALYs",
+        "detail": "10% weight per annual-budget equivalent; no positive finite price."
+      },
+      {
+        "case": "cautious",
+        "headline": "Net harm: -0.012040949493146364 Bay QALYs",
+        "detail": "20% weight; small benefits do not offset the declared adverse burden."
+      },
+      {
+        "case": "central",
+        "headline": "$457,782,005 per 10 Bay QALYs",
+        "detail": "20% weight; road Q 0.12753483032943735 plus activity Q 0.036 minus harm 0.1, then funding 0.5 and Bay 0.98."
+      },
+      {
+        "case": "favorable",
+        "headline": "$2,626,225 per 10 Bay QALYs",
+        "detail": "10% weight; 5.426687207598657 finite Bay QALYs per annual-budget equivalent. This is not an expected or recommended return."
+      },
+      {
+        "case": "without-favorable",
+        "headline": "No positive finite price",
+        "detail": "Other weights renormalized: -0.05020197391816046 Bay QALYs."
+      },
+      {
+        "case": "no-road-benefit",
+        "headline": "No positive finite price",
+        "detail": "Weighted Bay Q -0.009661942499999993; equivalent to zero MCBC technical contribution while retaining youth activity and harm."
+      },
+      {
+        "case": "no-activity-benefit",
+        "headline": "$38,780,254 per 10 Bay QALYs",
+        "detail": "Road-only quantified benefits; all costs and harms retained."
+      },
+      {
+        "case": "zero-harm",
+        "headline": "$22,368,347 per 10 Bay QALYs",
+        "detail": "Even removing the entire adverse-burden prior does not reach $1M."
+      },
+      {
+        "case": "half-road-risk",
+        "headline": "$58,429,560 per 10 Bay QALYs",
+        "detail": "Halve both baseline fatal and serious-injury rates; no other inputs changed."
+      }
+    ],
+    "uncertaintyBoundary": "This is a whole-cost, two-pathway exploratory model, not a complete organization valuation. More than 100% favorable-tail share (109.082%) is mathematically possible because other scenarios reduce the signed total; it is not a probability. None of these six subjective scenarios is below $1M/10 Bay QALYs; that is not evidence of zero real-world probability. Corridor burden and current MCBC marginal response are the main unobserved variables. Publicly funded school services are not credited as newly created by ordinary donations. Finite duration and partial scope may omit meaningful health, rather than proving it absent.",
+    "fundingBoundary": "FY2025 return revenue $1,573,506, surplus $148,336, net assets $479,220, liabilities $73,806 and cash/savings $449,808 do not establish either excess reserves or an unfunded opportunity. The annual report's different revenue/expense summary is unreconciled. No current incremental staff or design-task price was verified. An official donation link exists, but checkout was not independently inspected, so no donationUrl is supplied. Whole accounting expense includes all four program areas; it is not the full cost of public construction, volunteered time or partner capital. The broader water project is baseline context, not a free donor-purchased intervention or an MCBC benefit. Incremental street-design construction and maintenance costs remain unpriced; completeResourceCostPer10 is null."
+  },
+  "evidence": [
+    {
+      "key": "finance",
+      "design": "Original FY2025 IRS Form 990",
+      "population": "Whole legal recipient EIN 68-0419394",
+      "result": "Expense $1,425,170; reported school program $666,915, Cory's Ride $190,882, road work $104,257 and off-road $85,744.",
+      "transfer": "Retain whole expense rather than road-only numerator. Program statements establish mechanisms, not causal health outputs."
+    },
+    {
+      "key": "live-project",
+      "design": "Official MCBC concept announcement, July 16, 2026",
+      "population": "1.6 miles west of Simmons Lane, within a 2.7-mile San Marin corridor",
+      "result": "Buffered/protected lane concepts and possible intersection changes; analysis remains necessary.",
+      "transfer": "A real design opportunity, not built lanes, verified crash reduction or a priced additional donor task."
+    },
+    {
+      "key": "public-baseline",
+      "design": "Marin Water current project schedule and funding disclosure",
+      "population": "Proposed ARC pipeline, not a bicycle route",
+      "result": "Environmental review and design ongoing; estimated construction 2027–2029, operation 2030; schedule conditional.",
+      "transfer": "Agency baseline and complementary resources must be separated from MCBC technical contribution. No water-health benefit credited."
+    },
+    {
+      "key": "road-review",
+      "design": "FHWA technical evidence summary",
+      "population": "Four-lane undivided road conversions",
+      "result": "Summarizes 19–47% total-crash reductions and 29% across 45 sites.",
+      "transfer": "Total crashes are not fatalities, and San Marin has a median and differing intersections. The model's severity effect is an explicit judgment."
+    },
+    {
+      "key": "road-negative",
+      "design": "FHWA 2004 matched before/after primary evaluation",
+      "population": "12 road diets and 25 comparison sections, California/Washington",
+      "result": "Approximately 6% lower crash frequency; rate analysis did not indicate a statistically significant safety effect.",
+      "transfer": "Small observational sample, exposure and selection issues; preserves health-null and low-effect worlds rather than assuming the larger summary effect applies."
+    },
+    {
+      "key": "local-program",
+      "design": "MCBC 2025 annual report",
+      "population": "60+ Cory's Ride middle/high-school participants",
+      "result": "Participation and supported riding documented; school program operates under TAM/Parametrix baseline.",
+      "transfer": "Not additional physical activity or measured utility. Completed infrastructure and program aspirations do not count as current marginal outcomes."
+    },
+    {
+      "key": "cycling-null",
+      "design": "2022 school randomized intervention",
+      "population": "122 Spanish adolescents",
+      "result": "Knowledge improved but cycling/active commuting rates did not change.",
+      "transfer": "Education alone need not create activity. Cory's equipment/ongoing support differs; uncertainty is not automatic zero."
+    },
+    {
+      "key": "fitness-null",
+      "design": "2012 randomized cycling-to-school trial",
+      "population": "53 children aged 10–13, 12 weeks",
+      "result": "No significant randomized-group fitness difference, P=.486; substantial cycling uptake also occurred in controls.",
+      "transfer": "As-treated fitness associations do not replace randomized findings or provide a QALY conversion."
+    },
+    {
+      "key": "fitness-positive",
+      "design": "2012 randomized trial, primary abstract",
+      "population": "43 previously noncycling children in Denmark",
+      "result": "Cardiometabolic composite improved 0.58 SD; fitness difference was not statistically significant.",
+      "transfer": "Supports a plausible health pathway, not finite QALYs per Marin child or lifetime disease prevention."
+    },
+    {
+      "key": "school-baseline",
+      "design": "Current official Marin SR2S description",
+      "population": "60 schools, over 29,000 students in program footprint",
+      "result": "TAM-managed infrastructure, guards and education financed through established arrangements.",
+      "transfer": "Footprint is not a measured donor-created participant denominator. No 29,000-person health multiplication."
+    }
+  ],
+  "reservations": [
+    "No contemporary corridor fatal/serious-injury denominator verified.",
+    "Large street-configuration and severity transfer uncertainty.",
+    "Ordinary-gift additional work and project implementation are not observed.",
+    "Whole cost retains substantial programs whose health is unquantified.",
+    "Favorable tail exceeds signed total; central is near zero, not precisely known.",
+    "Public and partner construction resources are not fully priced.",
+    "Reported financial summaries differ; original filed expense takes precedence."
+  ],
+  "excludedBenefits": [
+    "Already completed guardrails, paths or past projects credited to a new gift",
+    "All county residents or school footprint treated as changed health outcomes",
+    "Water-supply benefits from the ARC pipeline",
+    "Lifetime youth cardiovascular prevention or repeated annual credit for the same road project",
+    "Trail access, other street work, SRTS, accessibility, social connection and air quality: unquantified, not zero",
+    "Election/campaign persuasion effects"
+  ],
+  "sources": [
+    {
+      "publisher": "IRS via ProPublica",
+      "title": "MCBC original FY2025 Form 990",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202640509349300714/IRS990",
+      "published": "Submitted 2026-02-19",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "MCBC",
+      "title": "Novato Needs a Safer San Marin Drive",
+      "url": "https://marinbike.org/news/novato-needs-a-safer-san-marin-drive/",
+      "published": "2026-07-16",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Marin Water",
+      "title": "Atmospheric River Capture project status and funding",
+      "url": "https://marinwater.org/yourwater/atmospheric-river-capture-arc-project/",
+      "published": "Undated current page; 2026 review timeline",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "FHWA",
+      "title": "Road Diet Desk Reference: Why Consider a Road Diet?",
+      "url": "https://highways.dot.gov/safety/other/road-diets/road-diet-desk-reference/2-why-consider-road-diet",
+      "published": "Undated agency technical summary",
+      "retrieved": "2026-09-11",
+      "sourceType": "Official evidence synthesis"
+    },
+    {
+      "publisher": "FHWA",
+      "title": "Evaluation of Lane Reduction Road Diet Measures and Their Effects on Crashes and Injuries",
+      "url": "https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-04-082.pdf",
+      "published": "2004",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "MCBC",
+      "title": "2025 Annual Report",
+      "url": "https://marinbike.org/wp-content/uploads/2025/11/2025-Annual-Report.pdf",
+      "published": "2025; November upload path",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Aranda-Balboa et al.",
+      "title": "School-based cycling knowledge and commuting randomized trial",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9367827/",
+      "published": "2022-08-05",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Borrestad et al.",
+      "title": "Randomized cycling-to-school fitness trial",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22637363/",
+      "published": "2012-05",
+      "retrieved": "2026-09-11; abstract via Europe PMC API",
+      "sourceType": "Primary abstract"
+    },
+    {
+      "publisher": "Østergaard et al.",
+      "title": "Bicycling to school improves the cardiometabolic risk factor profile",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3533114/",
+      "published": "2012-10-31",
+      "retrieved": "2026-09-11; abstract via Europe PMC API",
+      "sourceType": "Primary abstract"
+    },
+    {
+      "publisher": "Marin Safe Routes to Schools",
+      "title": "About the TAM program",
+      "url": "https://www.saferoutestoschools.org/about/",
+      "published": "Undated current page",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    }
+  ]
+}

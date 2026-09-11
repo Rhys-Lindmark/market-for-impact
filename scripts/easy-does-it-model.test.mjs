@@ -1,0 +1,18 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';
+import {calculate,worlds} from '../lib/easy-does-it-model.mjs';
+const read=s=>JSON.parse(fs.readFileSync(new URL('./../data/bay/easy-does-it-'+s,import.meta.url)));
+test('exact full saved output parity',()=>assert.deepEqual(calculate(),read('results.json')));
+test('independent central equation',()=>{const q=1000/2166918*.25*.8*((872/1.5*.15*.5+476/2*.05*3)/365-(872/1.5+476/2)*.00001);assert.ok(Math.abs(q-calculate().central.bayQ)<1e-18);});
+test('weighted health before inversion',()=>{const r=calculate();assert.equal(r.bayQ,r.rows.reduce((s,w)=>s+w.weight*w.bayQ,0));assert.equal(r.bayCostPer10,10/(r.bayQ/1000));});
+test('null and signed harm retained',()=>{const r=calculate();assert.equal(r.rows[0].bayQ,0);assert.equal(r.rows[1].bayQ,0);assert.ok(r.rows[2].bayQ<0);assert.equal(r.rows[2].bayCostPer10,null);});
+test('zero gift finite',()=>{const r=calculate({gift:0});assert.equal(r.bayQ,0);assert.equal(r.bayCostPer10,null);});
+test('audit tiny gift per-dollar overflow',()=>assert.throws(()=>calculate({gift:1e-300,expense:1e-300,careHours:1e100})));
+test('whitespace identity and duplicate rejection',()=>{assert.throws(()=>calculate({scenarios:[{...worlds[0],id:' ',weight:1}]}));assert.throws(()=>calculate({scenarios:[{...worlds[0],id:'x',weight:.5},{...worlds[0],id:' x ',weight:.5}]}));});
+for(const o of [null,42,'bad',[],{expense:Number.MIN_VALUE},{expense:Infinity},{careHours:Number.MAX_VALUE,repairHours:Number.MAX_VALUE},{gift:10001},{scenarios:[]},{scenarios:[null]},{scenarios:[worlds[0],worlds[0]]}])test('reject malformed '+JSON.stringify(o),()=>assert.throws(()=>calculate(o)));
+test('reject missing coefficient',()=>{const w={...worlds[0]};delete w.harm;assert.throws(()=>calculate({scenarios:[w]}));});
+test('reject invalid weights',()=>assert.throws(()=>calculate({scenarios:[{...worlds[0],weight:.5}]})));
+test('finite complete results',()=>{const check=v=>{if(typeof v==='number')assert.ok(Number.isFinite(v));else if(v&&typeof v==='object')Object.values(v).forEach(check);};check(calculate());check(read('diagnostics.json'));});
+test('renderer summary objects',()=>{for(const s of read('report.json').summary)for(const k of ['label','value','detail'])assert.equal(typeof s[k],'string');});
+test('renderer canonical arrays and rows',()=>{const r=read('report.json');for(const k of ['summary','evidence','reservations','excludedBenefits','sources'])assert.ok(Array.isArray(r[k])&&r[k].length);for(const s of r.model.sensitivity)for(const k of ['case','headline','detail'])assert.equal(typeof s[k],'string');for(const s of r.evidence)for(const k of ['key','design','population','result','transfer'])assert.equal(typeof s[k],'string');for(const s of r.model.inputs)for(const k of ['key','label','confidence','best','range','basis'])assert.equal(typeof s[k],'string');});
+test('donation route not invented',()=>assert.equal(read('report.json').donationUrl,undefined));
+test('bounded local proportional scaling',()=>assert.ok(Math.abs(calculate({gift:2000}).bayQ-2*calculate().bayQ)<1e-18));

@@ -1,0 +1,362 @@
+{
+  "organization": "Berkeley NEED — Needle Exchange Emergency Distribution",
+  "eyebrow": "EXPLORATORY CHARITY RESEARCH · BAY AREA",
+  "program": "Whole-organization harm reduction; finite naloxone-access pathway quantified",
+  "published": "11 September 2026",
+  "modelVersion": "berkeley-need-whole-gift-unique-cohort-v1",
+  "donationUrl": "https://www.berkeleyneed.org/donate/",
+  "nutshell": {
+    "headline": "A small, real harm-reduction provider with plausible leverage, but uncertain additional rescue coverage.",
+    "body": "The research list uses the central scenario: $2,079,004 per 10 Bay QALYs. The signed subjective mixture gives $586,345 per 10 modeled Bay QALYs; the central world gives $2.08 million. All $357,858 of historical organizational expense is retained, but only one naloxone-access pathway is quantified. The 10% favorable world supplies 92.19% of signed modeled benefit. This is not a complete valuation of NEED's syringe, wound-care, navigation or drug-checking work.",
+    "whyItMayWork": "Volunteer-supported distribution can put supplies and timely overdose response within reach of people missed by other services. A small whole budget means even a few additional finite survivor trajectories could matter.",
+    "whyWeAreCautious": "The available naloxone count is from 2022. Kits, repeat visits, secondary exchangers and reported reversals do not identify unique current people or deaths prevented. Public supplies, existing peers and EMS already provide rescue capacity.",
+    "recommendationBlocker": "Conditional research candidate, not a verified marginal offer. Confirm current unique at-risk reach, additional access beyond public and peer alternatives, and what new unrestricted funding would change."
+  },
+  "summary": [
+    {
+      "label": "BAY WHOLE GIFT",
+      "value": "$586K",
+      "detail": "per 10 modeled Bay QALYs; signed subjective mixture, partial health"
+    },
+    {
+      "label": "CENTRAL WORLD",
+      "value": "$2.08M",
+      "detail": "per 10 modeled Bay QALYs"
+    },
+    {
+      "label": "WHOLE EXPENSE",
+      "value": "$357,858",
+      "detail": "year ending June 2025; no program-cost substitution"
+    },
+    {
+      "label": "FAVORABLE TAIL",
+      "value": "92.19%",
+      "detail": "of signed benefit comes from a 10% subjective world"
+    },
+    {
+      "label": "MARGINAL ROOM",
+      "value": "Unverified",
+      "detail": "a donation route exists; a priced additional service tranche does not"
+    }
+  ],
+  "programSection": {
+    "body": "Needle Exchange Emergency Distribution, EIN 26-0529276, is a distinct Berkeley legal recipient, not Berkeley Free Clinic or HEPPAC. NEED supplies harm-reduction materials through neighborhood sites and resource navigation. Its official history identifies a 2025 HEPPAC partnership for Thursday drug checking; partner outcomes cannot be attributed in full to both organizations. The current site also updates the locations of Berkeley Free Clinic and the Housing Assistance Center, so older proximity descriptions should not be assumed current.",
+    "steps": [
+      {
+        "title": "Fund the whole organization",
+        "detail": "Use the internally consistent FY2025 total expense of $357,858, including $213,229 syringes/exchange supplies and $5,000 East Bay Drug Checking Project. Do not substitute a supply-only budget or subtract government revenue."
+      },
+      {
+        "title": "Convert distribution into a unique risk cohort",
+        "detail": "Start with the city's 2,135 naloxone kits distributed during calendar 2022. Explicit current-volume, effective-reach and repeat-kit priors yield 85.4, 427 or 1,281 at-risk person equivalents—not observed unique people. Kits are not doses or rescue events."
+      },
+      {
+        "title": "Change timely rescue beyond alternatives",
+        "detail": "Model overdose opportunities among that prospective cohort, the fraction otherwise potentially fatal, and an increase in timely successful rescue beyond existing peers, public supplies and EMS. Do not assign high risk merely because someone picked up a kit."
+      },
+      {
+        "title": "Follow finite survivor trajectories once",
+        "detail": "Integrate supported versus baseline survival over one active year, followed by common mortality for a finite 5–15-year horizon. Repeated opportunities do not restart lifetime credit. Deduct independent harms, then apply funding response and Bay residence to both signs."
+      }
+    ],
+    "boundary": "This is whole organizational cost with partial quantified health. It is not a full social-resource calculation: volunteer time, any off-book donated/public naloxone, EMS, clinical care and partner resources remain unpriced, not free. The return reports zero noncash contributions, which does not establish that all public or volunteer resources are captured. Syringe infection prevention, wound care, navigation and drug checking remain explicitly unquantified, not zero. No cross-pathway benefits are added, avoiding overlap with the modeled survival pathway and existing HEPPAC research."
+  },
+  "model": {
+    "headline": "$586,345 per 10 modeled Bay QALYs in the signed subjective mixture",
+    "body": "A hypothetical $10,000 unrestricted gift is scaled against full historical expense. Joint worlds vary current kit volume, the unique at-risk cohort, rescue access, finite survival and funding response. The central world estimates 427 annual at-risk person equivalents and 1.721295 additional Bay QALYs per annual budget-equivalent; the gift therefore produces 0.04809995 Bay QALY. None of these current cohort, risk, access, geography or funding coefficients is a measured NEED outcome.",
+    "equation": {
+      "label": "SIGNED HEALTH BEFORE DIVISION",
+      "expression": "10 × $10,000 / 0.17054814832082482 weighted Bay QALYs",
+      "result": "$586,344.68 per 10 Bay QALYs"
+    },
+    "inputColumnLabel": "Observed anchors and explicit analyst priors",
+    "inputs": [
+      {
+        "key": "expense",
+        "label": "Whole historical expense",
+        "best": "$357,858",
+        "range": "FY July 2024–June 2025",
+        "confidence": "High for filed total; not audited",
+        "basis": "Original Form 990 Parts I and IX agree. No event or inventory cost addback identified. All expense is classified as program, but the model retains the entire total rather than interpreting that classification as zero overhead."
+      },
+      {
+        "key": "kits",
+        "label": "Historical annual kits",
+        "best": "2,135",
+        "range": "Current scale 0.5–1.5 × historical",
+        "confidence": "Dated administrative output",
+        "basis": "City June 2023 report, NEED calendar-2022 section. 390 reported reversals and 6,089 individuals served are separately recorded but are not unique current risk or counterfactual death counts. No newer annual naloxone count verified."
+      },
+      {
+        "key": "cohort",
+        "label": "Unique at-risk person equivalents",
+        "best": "427",
+        "range": "85.4–1,281",
+        "confidence": "Very low; judgment",
+        "basis": "Kits × current-volume factor × eligible risk-network reach share / annual kits per person. Central 2,135 × 1 × 0.6 / 3. Reach defines membership in a distinct relevant risk network before an event, including people covered through bystanders; 2–5 kits/person addresses repeated provision. Conditional on this cohort, rescueIncrement alone captures improved event-time availability, witnessing and response beyond baseline. Do not discount the same unavailable kit in both factors. Secondary distribution does not create additional people automatically."
+      },
+      {
+        "key": "risk",
+        "label": "Prospective overdose opportunity and severity",
+        "best": "0.2 opportunities/year × 10% potentially fatal without timely rescue",
+        "range": "0.1–0.3 × 5–15%",
+        "confidence": "Very low; judgment, not rescue-selected evidence",
+        "basis": "These describe the modeled at-risk cohort before an overdose, not the fraction of reported reversals that would have died. Product is 0.5–4.5% annual potentially lethal hazard before rescue. No local prospective risk cohort was observed."
+      },
+      {
+        "key": "rescue",
+        "label": "Existing and additional rescue",
+        "best": "65% baseline + 10 percentage points",
+        "range": "Baseline 60–80%; increment 0–20 points in declared worlds",
+        "confidence": "Mechanism supported; local increment unknown",
+        "basis": "Includes witness presence, kit availability, recognition, successful use and alternatives. Massachusetts interrupted-time-series evidence supports plausibility, not this coefficient. A null world retains public/peer rescue with no donor-created improvement."
+      },
+      {
+        "key": "survival",
+        "label": "Competing mortality and finite follow-up",
+        "best": "4% other hazard while active; 6% total afterward; 10 years",
+        "range": "Other 3–7%; later total 4–10%; 5–15 years",
+        "confidence": "Explicit extrapolation",
+        "basis": "One active year only. Post-overdose studies show substantial mortality but concern selected survivors, not all kit recipients; they motivate caution rather than supply baseline recipient mortality. Later hazard includes recurrent overdose and other causes; no new treatment survival effect is claimed."
+      },
+      {
+        "key": "utility",
+        "label": "Utility and discount",
+        "best": "0.7 utility; 3% annual discount",
+        "range": "Utility 0.6–0.75",
+        "confidence": "Judgment",
+        "basis": "Quality adjustment for finite survivor time, not a local measured preference score. No infinite lifetime, full-health lifetime or repeated full-life credit."
+      },
+      {
+        "key": "funding",
+        "label": "Ordinary-gift funding response",
+        "best": "50%",
+        "range": "0–75%",
+        "confidence": "Unverified",
+        "basis": "Probability/fraction-equivalent that extra money expands or sustains useful delivery instead of replacing public grants, other donations or reserves. Separate from rescue substitution. Government revenue share is not an impact discount."
+      },
+      {
+        "key": "geography",
+        "label": "Bay residence share",
+        "best": "95%",
+        "range": "90–99%",
+        "confidence": "Local-service prior",
+        "basis": "Berkeley sites and East Bay mission support locality, but neither residence nor secondary-network reach is measured. Apply to benefits and harms. No SF-only estimate."
+      },
+      {
+        "key": "harm",
+        "label": "Independent burden per person",
+        "best": "0.0002 QALY",
+        "range": "0–0.002 in declared worlds",
+        "confidence": "Signed judgment",
+        "basis": "Potential distress, privacy burden, withdrawal-related burden or delayed appropriate care not already inside mortality. Not an observed adverse-event rate. The harm-only world has unchanged rescue and a negative net result."
+      },
+      {
+        "key": "weights",
+        "label": "Joint scenario weights",
+        "best": "25% funding null / 10% harm",
+        "range": "25% cautious / 30% central / 10% favorable",
+        "confidence": "Subjective, not calibrated",
+        "basis": "Locked before first execution of this model. These are correlated joint worlds, not statistical confidence intervals or evidence-derived probabilities."
+      }
+    ],
+    "giftHeading": "$10,000 whole-gift diagnostic—not an available service package",
+    "sensitivity": [
+      {
+        "case": "Funding null (25%)",
+        "headline": "0 Bay QALY",
+        "detail": "No additional delivery from ordinary funding; no finite favorable price."
+      },
+      {
+        "case": "Harm (10%)",
+        "headline": "−0.01133550 Bay QALY per gift",
+        "detail": "No additional rescue, independent burden retained; no negative bargain price."
+      },
+      {
+        "case": "Cautious (25%)",
+        "headline": "$949.32M per 10 Bay QALYs",
+        "detail": "0.0001053383 Bay QALY per gift; approximately null, not a stable rank."
+      },
+      {
+        "case": "Central (30%)",
+        "headline": "$2.079M per 10 Bay QALYs",
+        "detail": "0.0480999489 Bay QALY per gift; 427 annual unique-risk person equivalents."
+      },
+      {
+        "case": "Favorable (10%)",
+        "headline": "$63,603 per 10 Bay QALYs",
+        "detail": "1.5722537925 Bay QALYs per gift; jointly greater reach, risk, rescue increment, persistence and funding response."
+      },
+      {
+        "case": "Remove favorable world",
+        "headline": "$6.755M per 10 Bay QALYs",
+        "detail": "Other worlds renormalized to 100%; same underlying coefficients."
+      },
+      {
+        "case": "Cap every horizon at five years",
+        "headline": "$1.363M per 10 Bay QALYs",
+        "detail": "One-year active support unchanged; shorter finite survivor tail."
+      },
+      {
+        "case": "Halve rescue increment",
+        "headline": "$1.189M per 10 Bay QALYs",
+        "detail": "Independent harms unchanged; additional timely access is decisive."
+      },
+      {
+        "case": "Double kits per unique person",
+        "headline": "$1.173M per 10 Bay QALYs",
+        "detail": "Halves unique cohort and both signs. Repeated distribution cannot be counted as new people."
+      }
+    ],
+    "uncertaintyBoundary": "Weighted annual Bay QALYs are 6.103201926179373; weighted all-beneficiary QALYs are 6.1851826688587686. The all-beneficiary price is $578,573, not the Bay result. The favorable world supplies 92.1883% of signed expected health. Ten percent of declared subjective weight lies below $1M and below $100k per 10 Bay QALYs; these are not calibrated probabilities and omit unquantified pathways. The central estimate is a distinct scenario, not the mixture. A finite cohort prevents recurrent-rescue lifetime multiplication, but does not establish the uncertain cohort or funding inputs.",
+    "fundingBoundary": "FY2025 revenue $496,946 includes $445,659 government contributions; year-end cash/savings and net assets are $164,078, with zero liabilities and a $139,088 surplus. The form does not provide a usable donor-restriction split. These replace the older $24,990 reserve/$42,698 deficit story. Public naloxone is available through California's NDP, but NEED's actual receipt, valuation and remaining capacity were not verified. The donation page accepts help and states syringe donations are not currently needed; that is not proof all cash work is funded. A $0–$10,000 model domain is an analytic cap, not verified room. Current staffing, grant renewals, supplies, unique reach and marginal uses remain unanswered."
+  },
+  "evidence": [
+    {
+      "key": "finance",
+      "design": "FY2025 original Form 990 and Schedule O",
+      "population": "Whole legal recipient, EIN 26-0529276",
+      "result": "$357,858 expense; $496,946 revenue; $164,078 net assets. Part III's grants/revenue cells conflict with Parts I/VIII/IX.",
+      "transfer": "Use reconciled whole total; do not derive program allocation from malformed Part III. Filing is not an audit; Schedule O says no Form 990 review was or will be conducted."
+    },
+    {
+      "key": "outputs",
+      "design": "City biennial syringe-services administrative report, June 27, 2023",
+      "population": "NEED calendar-2022 activity, separate from Berkeley Free Clinic",
+      "result": "2,135 kits and 390 reported reversals, alongside 515,361 syringes. Counts establish historical delivery, not counterfactual health.",
+      "transfer": "Current scale and unique risk conversion are assumptions. Do not confuse the separate clinic's 1,820 kits with NEED's output or sum partner counts without deduplication."
+    },
+    {
+      "key": "clinical",
+      "design": "Massachusetts community interrupted-time-series analysis, 2013",
+      "population": "Communities with different overdose-education/naloxone implementation intensity",
+      "result": "Lower adjusted overdose death rates were associated with implementation; nonrandomized evidence supports plausibility.",
+      "transfer": "Does not identify deaths per kit, NEED's current incremental effect, or conditional fatality among all recipients. Existing California access changes the counterfactual."
+    },
+    {
+      "key": "randomized-null",
+      "design": "HEALing Communities cluster-randomized multicomponent trial, 2024",
+      "population": "67 communities across Kentucky, Massachusetts, New York and Ohio",
+      "result": "Primary opioid-overdose mortality adjusted rate ratio 0.91, 95% CI 0.76–1.09, P=0.30: no statistically detectable reduction over the primary comparison period.",
+      "transfer": "This evaluates a multicomponent implementation package, not naloxone pharmacology alone. It challenges automatic distribution-to-mortality claims and supports null/implementation uncertainty; it is not proof that naloxone has no benefit. Existing coefficients are unchanged."
+    },
+    {
+      "key": "prognosis",
+      "design": "Linked Massachusetts post-overdose observational cohort, published online June 20, 2019",
+      "population": "11,557 qualifying patients after ED treatment for nonfatal opioid overdose",
+      "result": "5.5% died within one year, including substantial early mortality.",
+      "transfer": "Selected survivors are not a random distribution cohort. Use finite competing mortality scenarios, not this rate as automatic risk for kit recipients or perpetual annual survival."
+    },
+    {
+      "key": "baseline",
+      "design": "Current official NEED service pages and DHCS NDP documentation",
+      "population": "Berkeley/East Bay delivery and statewide eligible distributors",
+      "result": "Real neighborhood naloxone access and a HEPPAC drug-checking partnership coexist with publicly supplied naloxone.",
+      "transfer": "Private money may support distribution rather than buy scarce drug inventory. Current additional staffing or supply capacity has not been priced or verified."
+    }
+  ],
+  "reservations": [
+    "Historical service counts and current finances refer to different periods. The volume multiplier is not evidence that 2025/2026 output equals 2022 output.",
+    "The claimed approximately 20,000 primary/secondary exchangers in the latest return is not a unique patient count. It is excluded from the rescue denominator.",
+    "The favorable tail drives the result. A less favorable reach or rescue-access assumption moves the mixture above $1M; there is no robust recommendation at the displayed price.",
+    "Ordinary funding may replace public grants or reserves. The current financial surplus does not prove no need, but contradicts a current insolvency narrative based on old accounts.",
+    "Reported reversal is not otherwise-certain death. A model of prospective risk and one finite survival trajectory is necessary even when reversal reports are numerous.",
+    "The whole organization has important unquantified pathways. This partial-health price must not be labeled complete organization expected return or full social cost."
+  ],
+  "excludedBenefits": [
+    "Syringe access and HIV/HCV prevention: plausible and central to NEED's mission, but current unique susceptible people, additional sterile coverage, incidence and effective prevention beyond other sources were not established. No infections-averted number is manufactured from one million syringes.",
+    "Wound-care supplies and resource navigation: actual services, but clinical episodes, completion and additional health were not measured. No hospitalizations avoided or treatment-retention benefit assigned automatically.",
+    "HEPPAC-partnered drug checking: kept inside cost and service description, not counted again as additional mortality benefit.",
+    "Safe disposal, dignity, knowledge, family effects, housing and community wellbeing: unquantified, not claimed absent."
+  ],
+  "sources": [
+    {
+      "publisher": "IRS via ProPublica",
+      "title": "NEED FY2025 Form 990",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202621309349300527/IRS990",
+      "published": "Submitted May 10, 2026; year ended June 30, 2025",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary financial filing"
+    },
+    {
+      "publisher": "IRS via ProPublica",
+      "title": "NEED FY2025 Schedule O",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202621309349300527/IRS990ScheduleO",
+      "published": "Submitted May 10, 2026",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary filing supplement"
+    },
+    {
+      "publisher": "City of Berkeley",
+      "title": "Biennial Syringe Services Report: separate NEED calendar-2022 section, pages 6–7",
+      "url": "https://berkeleyca.gov/sites/default/files/documents/2023-06-27%20Item%2050%20Biennial%20Syringe%20Services%20Report.pdf",
+      "published": "June 27, 2023",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary administrative activity report"
+    },
+    {
+      "publisher": "Berkeley NEED",
+      "title": "About NEED and organizational history",
+      "url": "https://berkeleyneed.org/about/",
+      "published": "Undated live page; includes 2025 updates",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary service and identity"
+    },
+    {
+      "publisher": "Berkeley NEED",
+      "title": "Services and projects",
+      "url": "https://www.berkeleyneed.org/sp/index.php",
+      "published": "Undated live page; includes 2025 updates",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary service scope"
+    },
+    {
+      "publisher": "Berkeley NEED",
+      "title": "Donation route and current in-kind request",
+      "url": "https://www.berkeleyneed.org/donate/",
+      "published": "Undated",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary giving page, not a marginal price"
+    },
+    {
+      "publisher": "DHCS",
+      "title": "Naloxone Distribution Project",
+      "url": "https://www.dhcs.ca.gov/individuals/naloxone-distribution-project/",
+      "published": "Undated live program page",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary public-supply baseline"
+    },
+    {
+      "publisher": "DHCS",
+      "title": "NDP frequently asked questions",
+      "url": "https://www.dhcs.ca.gov/individuals/naloxone-distribution-project/ndp-frequently-asked-questions/",
+      "published": "Live page includes April 2026 product update",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary public program requirements"
+    },
+    {
+      "publisher": "Walley et al., BMJ",
+      "title": "Opioid overdose rates and implementation of overdose education and nasal naloxone distribution in Massachusetts",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4688551/",
+      "published": "January 2013",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary observational intervention study"
+    },
+    {
+      "publisher": "Weiner et al., Annals of Emergency Medicine",
+      "title": "One-Year Mortality of Patients After Emergency Department Treatment for Nonfatal Opioid Overdose",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31229387/",
+      "published": "Online June 20, 2019; January 2020 issue",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary retrospective prognosis cohort"
+    },
+    {
+      "publisher": "HEALing Communities Study Consortium, NEJM",
+      "title": "Community-Based Cluster-Randomized Trial to Reduce Opioid Overdose Deaths",
+      "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2401177",
+      "published": "2024; September 19 journal issue",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary randomized multicomponent implementation trial"
+    }
+  ]
+}

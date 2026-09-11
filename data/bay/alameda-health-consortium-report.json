@@ -1,0 +1,378 @@
+{
+  "organization": "Alameda Health Consortium",
+  "eyebrow": "EXPLORATORY CHARITY RESEARCH · BAY AREA",
+  "program": "Whole-organization coverage access, behavioral-care coordination and workforce support",
+  "published": "11 September 2026",
+  "modelVersion": "alameda-health-consortium-whole-gift-three-pathways-v1",
+  "nutshell": {
+    "headline": "Real regional care infrastructure, but a weak ordinary-gift health case under current evidence.",
+    "body": "The research list uses the central scenario: $21,867,330 per 10 Bay QALYs. The signed subjective mixture gives $8.386 million per 10 modeled Bay QALYs; the central world gives $21.867 million. All $7,594,840 of annual organizational expense is retained. Three pathways are modeled, but their incremental clinical delivery is largely assumed. The 10% favorable world supplies 94.44% of signed expected health.",
+    "whyItMayWork": "A consortium can make existing health services more accessible through enrollment assistance, coordination and a more capable workforce. Small improvements across many patients can matter if they actually change retained care.",
+    "whyWeAreCautious": "Completed enrollment transactions, coordinator minutes and trained workers are not additional healthy life. County agencies, member clinics and CHCN already deliver and finance services. Randomized renewal and low-intensity community-health-worker evidence includes important null findings.",
+    "recommendationBlocker": "Not a leading giving recommendation on this model. Establish additional retained coverage and clinical care, resolve partner overlap, and identify a current unrestricted funding use before treating modeled benefits as purchasable."
+  },
+  "summary": [
+    {
+      "label": "SIGNED BAY MIXTURE",
+      "value": "$8.386M",
+      "detail": "per 10 modeled Bay QALYs; not a verified marginal price"
+    },
+    {
+      "label": "CENTRAL WORLD",
+      "value": "$21.867M",
+      "detail": "whole organizational cost, three modeled pathways"
+    },
+    {
+      "label": "WHOLE EXPENSE",
+      "value": "$7,594,840",
+      "detail": "year ending June 2025"
+    },
+    {
+      "label": "FAVORABLE TAIL",
+      "value": "94.44%",
+      "detail": "of signed expected health from a 10% subjective world"
+    }
+  ],
+  "programSection": {
+    "body": "Alameda Health Consortium, EIN 51-0189590, is an association supporting eight member community health centers. It is not the sum of those clinics, Alameda Alliance for Health, or the separately named Community Health Center Network (CHCN). Its FY2025 return describes workforce development, integrated behavioral-health support and eligibility/enrollment. Shared website descriptions must be read carefully: several analytics and complex-care services are explicitly CHCN activities.",
+    "steps": [
+      {
+        "title": "Keep the entire recipient cost",
+        "detail": "Retain $7,594,840, including $917,613 management/general cost. Schedule O identifies $3,931,379 clinic subcontractor expense already inside this total. Do not subtract public revenue or count the same subcontract expense again as an outside cost."
+      },
+      {
+        "title": "Turn assistance into additional coverage-years",
+        "detail": "Separate 7,323 new enrollments from 9,339 renewals. Apply explicit incremental, deduplicated fractions and finite months before alternative enrollment or restored coverage. County-funded baseline is not donor-created access."
+      },
+      {
+        "title": "Test clinical coordination rather than count minutes as health",
+        "detail": "Convert 130,977 pediatric coordination minutes into person-course equivalents using an assumed time requirement, then restrict to a clinical-fit subgroup and genuinely additional care entry. Apply a finite external collaborative-care benchmark, local transfer, AHC contribution and overlap adjustment."
+      },
+      {
+        "title": "Require productive care after training",
+        "detail": "The 83 trained community health workers first become a hypothetical active-role fraction, then additional patient-course equivalents, then finite health. Training itself receives no QALY. Remove likely overlap with coverage and behavioral-care outcomes."
+      }
+    ],
+    "boundary": "Whole organizational cost, broader but incomplete quantified health. The three modeled pathways do not value every policy, training, HIV, CalFresh, quality-improvement or member-clinic benefit. Unpriced additional public treatment, provider time and patient resources are not free. Some clinic resources are already included as subcontract expense, so a full-resource extension must reconcile rather than blindly add them. No complete social-cost price or guaranteed lower bound is claimed."
+  },
+  "model": {
+    "headline": "$8,386,424 per 10 modeled Bay QALYs",
+    "body": "Six joint signed worlds model whole-budget-equivalent health and scale an illustrative $10,000 ordinary gift. Central pre-funding pathway QALYs are 5.06235 coverage, 0.17054296875 behavioral care after overlap, and 0.83 workforce after overlap. Subtract 1 QALY of independent annual burden, apply 70% funding response and 98% Bay share: 3.4731445765625 Bay QALYs per annual budget-equivalent. Current additional patients and clinical gains are not observed.",
+    "equation": {
+      "label": "SIGNED HEALTH BEFORE DIVISION",
+      "expression": "10 × $10,000 / 0.011924033312157705 weighted Bay QALYs",
+      "result": "$8,386,424.07 per 10 Bay QALYs"
+    },
+    "inputColumnLabel": "Source anchors and explicit priors",
+    "inputs": [
+      {
+        "key": "cost",
+        "label": "Whole expense",
+        "best": "$7,594,840",
+        "range": "FY July 2024–June 2025",
+        "confidence": "High for filed total",
+        "basis": "Original 990, not program-only cost: $6,677,227 program plus $917,613 management/general. No netted event/inventory expense identified. The return reports an audit occurred; the separate audit itself was not inspected."
+      },
+      {
+        "key": "coverage",
+        "label": "Additional coverage fractions",
+        "best": "10% new / 3% renewals",
+        "range": "3–25% new / 1–10% renewals in positive worlds",
+        "confidence": "Very low; judgment",
+        "basis": "Applied to 7,323/9,339 transactions, not assumed unique people. Fractions jointly address repeat transactions, ordinary alternative completion and AHC-enabled assistance within the partnership. Do not add another generic partner-attribution haircut."
+      },
+      {
+        "key": "coverage-health",
+        "label": "Coverage utility and duration",
+        "best": "0.01 × 0.5 years",
+        "range": "0.005–0.02 × 0.25–1 year",
+        "confidence": "Judgment informed by mixed insurance evidence",
+        "basis": "Short procedural gaps differ from never-insured populations. Oregon randomized evidence supports some mental-health benefit but not automatic physical-health or mortality improvement. No lifetime coverage credit."
+      },
+      {
+        "key": "bh-reach",
+        "label": "Pediatric person-course equivalents",
+        "best": "130,977 minutes / 120 = 1,091.475",
+        "range": "60–240 minutes per person; current scale 0.75–1",
+        "confidence": "Output observed, conversion unobserved",
+        "basis": "These are coordination minutes, not completed psychotherapy or unique patients. Clinical-fit fraction 25% (10–50%) and incremental trial-like care entry 25% (10–50%) yield 68.2171875 central entry equivalents. Not all pediatric patients are adolescents with depression."
+      },
+      {
+        "key": "bh-health",
+        "label": "Finite collaborative-care benchmark",
+        "best": "0.04 QALY per trial-like entry × 50% transfer",
+        "range": "External 0.02–0.09; transfer 25–75%",
+        "confidence": "External randomized economic analysis; uncertain local transfer",
+        "basis": "ROAD trial economic analysis mapped depression scores to adult-derived utility categories over 12 months. It is a QALY, not an annual utility to multiply by more years. The trial includes adherence failures; the entry factor means newly offered comparable care, not a second completion adjustment."
+      },
+      {
+        "key": "bh-credit",
+        "label": "AHC contribution and non-overlap",
+        "best": "25% × 50%",
+        "range": "Contribution 10–50%; non-overlap 25–75%",
+        "confidence": "Judgment",
+        "basis": "Care-entry improvement concerns the coordination package versus ordinary clinic practice; AHC contribution separates consortium support from county/clinic inputs. Non-overlap excludes benefit already credited to coverage. These factors are distinct but correlated and unmeasured."
+      },
+      {
+        "key": "workforce",
+        "label": "Productive workforce pathway",
+        "best": "83 × 50% active roles × 20 extra courses",
+        "range": "25–75% active roles; 5–80 extra courses per role",
+        "confidence": "Training count observed; all downstream counts assumed",
+        "basis": "Active role is employment/continued productive practice, not a claim AHC created a new job. Extra course equivalents represent better care after the full training/support package relative to ordinary practice, not every patient contact. AHC contribution of 20% (10–40%) separates its role from employers and other training."
+      },
+      {
+        "key": "workforce-health",
+        "label": "Finite health and workforce overlap",
+        "best": "0.01 QALY/course × 50% non-overlap",
+        "range": "0.002–0.02 QALY/course; 25–75% non-overlap",
+        "confidence": "Judgment, not measured training effect",
+        "basis": "A bounded course-level health prior, at most one year, incorporating clinical nulls within average benefit. CHW trials show mixed outcomes; trained workers are not automatically effective interventions. Excludes benefits already counted in enrollment or behavioral care."
+      },
+      {
+        "key": "funding",
+        "label": "Ordinary money response",
+        "best": "70%",
+        "range": "0–90%",
+        "confidence": "Unknown",
+        "basis": "Fraction-equivalent of historical useful delivery sustained or expanded rather than replaced by grants, clinic fees or reserves. This is separate from clinical/partner attribution, applies once to net health, and is not a verified funding offer."
+      },
+      {
+        "key": "geography-harm",
+        "label": "Bay share and independent burden",
+        "best": "98%; 1 QALY annual burden before funding",
+        "range": "95–99%; 0–3 QALYs in declared worlds",
+        "confidence": "Judgment",
+        "basis": "Local geography strongly supports Bay delivery but not perfect residency. Both signs receive Bay and funding factors. Burden covers erroneous coverage disruption, privacy/admin distress or inappropriate care not already in clinical benchmarks; not an observed adverse-event rate."
+      },
+      {
+        "key": "worlds",
+        "label": "Subjective joint worlds",
+        "best": "40% null / 10% harm",
+        "range": "20% cautious / 20% central / 10% favorable",
+        "confidence": "Uncalibrated judgments",
+        "basis": "Defined before first execution. Correlated joint assumptions, not confidence intervals. The favorable world simultaneously assumes substantially more incremental retained care and workforce effect."
+      }
+    ],
+    "giftHeading": "$10,000 ordinary-gift diagnostic, not a confirmed tranche",
+    "sensitivity": [
+      {
+        "case": "Funding null (20%)",
+        "headline": "0 Bay QALY",
+        "detail": "New money does not change useful delivery; no favorable finite price."
+      },
+      {
+        "case": "Health null (20%)",
+        "headline": "0 Bay QALY",
+        "detail": "More activity, no modeled clinical gain or harm."
+      },
+      {
+        "case": "Harm (10%)",
+        "headline": "−0.0027097345 Bay QALY per gift",
+        "detail": "Negative health retained in the mixture; no negative bargain price."
+      },
+      {
+        "case": "Cautious (20%)",
+        "headline": "$1.023B per 10 Bay QALYs",
+        "detail": "0.0000977219 Bay QALY per gift; approximately null."
+      },
+      {
+        "case": "Central (20%)",
+        "headline": "$21.867M per 10 Bay QALYs",
+        "detail": "0.0045730319 Bay QALY per gift; 3.4731445766 annual budget-equivalent Bay QALYs."
+      },
+      {
+        "case": "Favorable (10%)",
+        "headline": "$888,032 per 10 Bay QALYs",
+        "detail": "0.11260856 Bay QALY per gift; 85.5243996 annual Bay QALYs. This is not the best estimate."
+      },
+      {
+        "case": "Remove favorable world",
+        "headline": "$135.710M per 10 Bay QALYs",
+        "detail": "Other worlds renormalized, no coefficients changed."
+      },
+      {
+        "case": "Coverage only / no non-overlapping broader health",
+        "headline": "$15.113M per 10 Bay QALYs",
+        "detail": "Behavioral and workforce benefits excluded, independent burden retained."
+      },
+      {
+        "case": "No workforce health",
+        "headline": "$12.094M per 10 Bay QALYs",
+        "detail": "Preserves uncertainty that training does not add clinically meaningful care."
+      },
+      {
+        "case": "Half coverage duration",
+        "headline": "$12.177M per 10 Bay QALYs",
+        "detail": "Alternative insurance or restored eligibility arrives sooner; other pathways unchanged."
+      }
+    ],
+    "uncertaintyBoundary": "Signed annual Bay QALYs are 9.056112516050783; all-beneficiary QALYs are 9.153258143046875, yielding an all-beneficiary price of $8.297M rather than the Bay price. Favorable-tail share is 94.4383%. Ten percent of declared subjective weight is below $1M/10 Bay QALYs; none below $100k. Neither is a calibrated probability. Coverage attribution, clinical transfer, overlap and workforce effects can jointly be near zero. New enrollment and renewal transactions may concern the same person or overlapping coverage gap. additionalCoveragePeople means modeled nonoverlapping coverage-person-period equivalents: newAdditional and renewalAdditional must include within-coverage duplicate-person/gap adjustment, not merely causal attribution. The separate behavioral-health and CHW overlap factors address cross-pathway duplication and cannot fix duplicate coverage gaps. These adjustments are judgments, not verified unique-person counts. The broadened model does not turn the unfavorable coverage-only screening into a favorable expected return.",
+    "fundingBoundary": "FY2025 revenue $7,444,727 includes $2,167,773 government contributions, $629,056 management-service fees and $120,434 clinic-member fees. Net assets $3,114,294 include $1,487,539 restricted and $1,626,755 unrestricted; cash $3,220,322, liabilities $2,074,333. A $150,113 deficit is not proof of a current cash bottleneck. HHS lists $1.5M RECESS awards over a July 2022–June 2025 performance period; February 2026 entries are $0 administrative actions, not a new award or proof no replacement exists. County and clinic baseline remains. Current budget, restrictions, renewed grants and which added staff or clinical access a gift buys are unknown; no donation checkout or priced marginal offer verified."
+  },
+  "evidence": [
+    {
+      "key": "financial",
+      "design": "Original FY2025 Form 990 and Schedule O",
+      "population": "AHC legal recipient, not all member-clinic spending",
+      "result": "$7,594,840 whole expense; $3,931,379 clinic subcontractors included. Three operating categories and dated output counts reported.",
+      "transfer": "Keep full cost, reconcile subcontract resources, and do not label shared CHCN services as AHC-owned outcomes."
+    },
+    {
+      "key": "retention-positive",
+      "design": "Randomized navigator-outreach study, NBER working paper 34191 (2025)",
+      "population": "Wisconsin Medicaid renewal population receiving written baseline outreach",
+      "result": "Additional call about assistance increased renewal by about one percentage point and reduced procedural denials by 1.1 points.",
+      "transfer": "This is outreach assignment, not intensive-assistance treatment-on-treated or AHC's completed-transaction denominator. It disciplines rather than directly supplies the model's incremental fraction."
+    },
+    {
+      "key": "retention-null",
+      "design": "Federal randomized evaluation, 7,468 Norfolk Medicaid cases, June–November 2024",
+      "population": "Clients already receiving three business-as-usual reminders",
+      "result": "Added credibility texts and phone calls did not significantly increase renewals.",
+      "transfer": "A strong baseline may leave little margin. No proof all hands-on assistance is ineffective; retain null worlds and short alternative-care waits."
+    },
+    {
+      "key": "insurance-health",
+      "design": "Oregon randomized insurance experiment, 2013",
+      "population": "Low-income adults offered Medicaid through a lottery",
+      "result": "Some depression and financial-protection improvements, without significant measured physical-health improvements over two years.",
+      "transfer": "Different age/eligibility mix and coverage gap. No direct QALY coefficient or mortality effect transferred to AHC renewals."
+    },
+    {
+      "key": "behavioral",
+      "design": "ROAD adolescent collaborative-care randomized economic analysis, 2016",
+      "population": "101 adolescents aged 13–17 with depression in nine Washington primary-care clinics",
+      "result": "Estimated 0.04 additional QALY over 12 months, with 0.02–0.09 interval, based on depression-score utility mapping.",
+      "transfer": "Adult-derived utility categories and symptom interpolation, not directly elicited local utility. Trial treatment exceeds coordination alone. Clinical fit, new entry, transfer and AHC contribution are separate explicit priors."
+    },
+    {
+      "key": "chw-mixed",
+      "design": "Original randomized CHW delivery studies, 2014 and 2017",
+      "population": "Low-income posthospital or diabetes patients, not newly trained workers",
+      "result": "A posthospital trial improved timely primary care; a low-intensity diabetes trial found no significant overall glycemic or health-related-quality-of-life improvement.",
+      "transfer": "Training has no direct health credit. Need actual productive roles and additional patient care; course QALYs remain judgmental and null plausible."
+    },
+    {
+      "key": "public-baseline",
+      "design": "HHS RECESS award record and official integrated-care descriptions",
+      "population": "AHC, county agencies and eight member clinics",
+      "result": "Time-limited publicly financed enrollment and existing integrated-care support are documented.",
+      "transfer": "Award targets are not outputs. No current unfunded tranche inferred from an ended performance period or a zero-dollar administrative entry."
+    }
+  ],
+  "reservations": [
+    "Unique patients, incremental retained coverage and completed clinical pathways are not measured; output counts cannot be equated with health.",
+    "The $3.931M clinic subcontract boundary is material: adding all clinic costs again double counts, while ignoring other induced clinical resources makes a donor-cost diagnostic look like total social cost.",
+    "CHCN analytics, complex care and shared leadership are not automatically the same legal recipient's additional impact.",
+    "Coordination minutes include heterogeneous pediatric needs. A small depression trial cannot apply to every child or every minute.",
+    "The workforce path is particularly prior-driven and contributes strongly in the favorable tail. Jobs, contacts and training certificates are not QALYs.",
+    "Overlap factors are coarse judgments, not patient-level deduplication. Different names for programs do not make their health independent.",
+    "No policy passage, statutory eligibility expansion, mortality reduction or statewide population benefit is credited without a causal chain."
+  ],
+  "excludedBenefits": [
+    "CalFresh health and economic benefits from 2,409 reported transactions; no separate finite clinical bridge established.",
+    "Health gains from training 51 HIV providers/care-team members; retained suppression or prevention beyond existing clinics is unknown.",
+    "Other medical/dental workforce, quality improvement, Long COVID work and advocacy outcomes not captured by the three pathways.",
+    "Unpriced patient financial protection and clinician time savings; minutes saved are not automatically extra completed visits or health.",
+    "Independent outcomes of CHCN, public agencies and member clinics; no duplicate organizational claim."
+  ],
+  "sources": [
+    {
+      "publisher": "IRS via ProPublica",
+      "title": "AHC FY2025 Form 990",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202630899349300798/IRS990",
+      "published": "Submitted March 30, 2026; year ended June 30, 2025",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary financial filing"
+    },
+    {
+      "publisher": "IRS via ProPublica",
+      "title": "AHC FY2025 Schedule O",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202630899349300798/IRS990ScheduleO",
+      "published": "Submitted March 30, 2026",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary subcontract and governance detail"
+    },
+    {
+      "publisher": "Alameda Health Consortium",
+      "title": "About AHC",
+      "url": "https://www.alamedahealthconsortium.org/about/",
+      "published": "Undated live page",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary identity"
+    },
+    {
+      "publisher": "Alameda Health Consortium",
+      "title": "Integrated Behavioral Health",
+      "url": "https://www.alamedahealthconsortium.org/integrated-behavioral-health/",
+      "published": "Undated live page",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary service scope"
+    },
+    {
+      "publisher": "Alameda Health Consortium / CHCN",
+      "title": "Data for better care",
+      "url": "https://www.alamedahealthconsortium.org/expertise/data-better-care/",
+      "published": "Undated live page",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary shared-organization boundary"
+    },
+    {
+      "publisher": "HHS TAGGS",
+      "title": "RECESS award 2Y2CMS331871",
+      "url": "https://taggs.hhs.gov/Detail/AwardDetail?arg_AwardNum=2Y2CMS331871&arg_ProgOfficeCode=190",
+      "published": "Performance July 19, 2022–June 30, 2025; actions through February 27, 2026",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary public grant record"
+    },
+    {
+      "publisher": "Myerson, Espeseth and Dague, NBER",
+      "title": "Navigating Medicaid: Experimental Evidence on Administrative Burden and Coverage Loss",
+      "url": "https://www.nber.org/papers/w34191",
+      "published": "2025 working paper",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary randomized-study abstract; full PDF unavailable"
+    },
+    {
+      "publisher": "US Office of Evaluation Sciences",
+      "title": "Increasing Medicaid Renewals With Text Message Reminders",
+      "url": "https://oes.gsa.gov/projects/2406-increasing-medicaid-renewals-with-texts/",
+      "published": "2025; trial June–November 2024",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary randomized evaluation"
+    },
+    {
+      "publisher": "Baicker et al., NEJM",
+      "title": "The Oregon Experiment — Effects of Medicaid on Clinical Outcomes",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3701298/",
+      "published": "2013",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary randomized insurance study"
+    },
+    {
+      "publisher": "Wright et al., JAMA Pediatrics",
+      "title": "Costs and Cost-effectiveness of Collaborative Care for Adolescents With Depression",
+      "url": "https://jamanetwork.com/journals/jamapediatrics/fullarticle/2553826",
+      "published": "Online September 19, 2016; November 2016 issue",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary randomized economic analysis"
+    },
+    {
+      "publisher": "Kangovi et al., JAMA Internal Medicine",
+      "title": "Patient-centered community health worker intervention to improve posthospital outcomes",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24515422/",
+      "published": "2014",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary randomized CHW delivery study"
+    },
+    {
+      "publisher": "Peer-AID investigators, Preventing Chronic Disease",
+      "title": "Randomized Controlled Trial of a CHW Self-Management Support Intervention Among Low-Income Adults With Diabetes",
+      "url": "https://www.cdc.gov/pcd/issues/2017/16_0344.htm",
+      "published": "2017; trial 2010–2014",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary randomized CHW study"
+    }
+  ]
+}

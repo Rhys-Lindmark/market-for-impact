@@ -1,0 +1,36 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {calculate,scenarios} from '../lib/berkeley-need-model.mjs';
+const r=calculate();
+assert.deepEqual(r,JSON.parse(readFileSync(new URL('../data/bay/berkeley-need-results.json',import.meta.url))));
+const report=JSON.parse(readFileSync(new URL('../data/bay/berkeley-need-report.json',import.meta.url)));
+for(const e of report.evidence)for(const k of ['key','design','population','result','transfer'])assert.ok(typeof e[k]==='string'&&e[k].trim());
+for(const e of report.model.sensitivity)for(const k of ['case','headline','detail'])assert.ok(typeof e[k]==='string'&&e[k].trim());
+assert.ok(report.evidence.some(e=>e.key==='randomized-null'));
+assert.equal(r.bayCostPer10,586344.6832145376);
+assert.equal(r.weightedAnnualBayQ,6.103201926179373);
+assert.equal(r.results.find(x=>x.id==='central').bayCostPer10,2079004.2872646614);
+assert.equal(r.favorableShare,0.9218826518968483);
+assert.equal(r.results[0].bayCostPer10,null);
+assert.ok(r.results[1].annualBayQ<0);
+for(const value of [null,42,'bad',[],false])assert.throws(()=>calculate(value));
+for(const value of [null,[],{},'bad'])assert.throws(()=>calculate({worlds:value}));
+for(const key of ['gift','wholeExpense','historicalKits'])for(const value of [NaN,Infinity,-1,'2'])assert.throws(()=>calculate({[key]:value}));
+for(const patch of [{id:' '},{weight:NaN},{rescueIncrement:.9},{activeYears:11},{horizon:21},{kitsPerPerson:0},{funding:2}])assert.throws(()=>calculate({worlds:[{...scenarios[3],weight:1,...patch}]}));
+assert.throws(()=>calculate({worlds:[{...scenarios[3],weight:.5},{...scenarios[3],weight:.5}]}));
+assert.throws(()=>calculate({worlds:[{...scenarios[3],weight:.9}]}));
+const nullResult=calculate({worlds:[{...scenarios[3],weight:1,rescueIncrement:0,harmPerPerson:0}]});
+assert.equal(nullResult.weightedAnnualBayQ,0);assert.equal(nullResult.bayCostPer10,null);
+const harm=calculate({worlds:[{...scenarios[3],weight:1,rescueIncrement:-.1,harmPerPerson:0}]});
+assert.ok(harm.weightedAnnualBayQ<0);assert.equal(harm.bayCostPer10,null);
+assert.equal(calculate({gift:0}).weightedGiftBayQ,0);
+assert.equal(calculate({historicalKits:0}).bayCostPer10,null);
+assert.equal(calculate({historicalKits:2135/2}).weightedAnnualBayQ,r.weightedAnnualBayQ/2);
+const repeats=calculate({worlds:scenarios.map(s=>({...s,kitsPerPerson:s.kitsPerPerson*2}))});
+assert.equal(repeats.weightedAnnualBayQ,r.weightedAnnualBayQ/2);
+for(const row of r.results)assert.ok(Math.abs(row.qPerPerson)<=row.maxPerPerson);
+for(const horizon of [0,1,5,10,20]){
+ const stress=calculate({worlds:[{...scenarios[3],weight:1,horizon,activeYears:Math.min(1,horizon),discount:0,otherHazard:0,postHazard:0}]});
+ assert.ok(Number.isFinite(stress.weightedAnnualBayQ));
+}
+console.log('NEED v1: exact snapshot, signed/null, duplicate cohort, bounds and malformed-input assertions passed.');

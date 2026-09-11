@@ -1,0 +1,31 @@
+# Phase 110 pool audit
+
+Review date 2026-09-11. Bounded read-only acceptance: **100 unique stable IDs and exactly 25 comparative-screen rows pass.** H01–H34, P01–P33, U01–U33 are discovery entries, not 100 verified new legal organizations. No mechanism-only row occupies the provisional 25. No matched published name was found for those 25 in the current home-ranked research-index files; this is a targeted name/alias check, not an EIN census.
+
+## Required corrections / dispositions
+
+| IDs | Finding | Disposition |
+|---|---|---|
+| U09 | Ledger correctly rejects StarVista as closed, but universe-pool row 9 still describes a reserve operating crisis organization and header still calls twelve initial organization leads. Health-pool already records closure and transfers to indexed Felton/SF Public Health Foundation. | Make the source row explicitly CLOSED/EXCLUDED; preserve stable ID/history. Do not count successors as new. Official https://star-vista.org/ was previously inspected by health; this audit's fresh web and native fetch failed, so no fabricated independent reconfirmation. |
+| H17 | HOPE pool says $10,000 grant recommendation, but existing primary-source checkpoint already resolves board adoption August 26, 2025, agreement through June 30, 2026, EIN 99-2104067. Whole annual expense and aligned units remain missing; public grant passage is not payment or marginal room. | Keep finance-first comparative HOLD, update the outdated recommendation-only characterization. Reuse `/private/tmp/mfi-hope-identity-capacity-checkpoint.md`, not another generic naloxone screen. Primary https://sanmateocounty.legistar.com/LegislationDetail.aspx?FullText=1&GUID=CDE2FD32-C53E-4466-A63B-8423077CEAAC&ID=7523215&Options=&Search= and https://www.hope4change650.org/narcan-locations-information . |
+| H23 | SF Hep B Free is an unresolved fiscal project, not an established additional legal organization. Policy pool explicitly flags SF Public Health Foundation sponsorship; that sponsor is indexed. | Keep project hypothesis only, never advance as a new legal-org report absent recipient proof. Do not label simply “not indexed” without the sponsor warning. Existing primary lead https://npin.cdc.gov/organization/san-francisco-hep-b-free-campaign is a program listing, not proof of separate incorporation. |
+
+## Boundaries that pass but must survive narrowing
+
+- **H01 Berkeley NEED:** fresh official about-page explicitly states incorporation in 2008 and exemption in 2009. HEPPAC FTIR partnership and Berkeley Free Clinic collaboration do not establish identity duplication. Retain separate candidate; count only NEED's additional contribution and public/partner complements. https://www.berkeleyneed.org/about/index.php (page says Updated 2026; no exact publication day inferred).
+- **P04 ANRF:** Foundation and Americans for Nonsmokers' Rights are separate sister organizations, not interchangeable names/budgets. Current official sources confirm Foundation educational nonprofit versus sister advocacy entity. Retain Foundation only; do not assign all ANR policy wins to it. https://no-smoke.org/about-us/jobs/ ; https://no-smoke.org/materials-services/resource-library/ .
+- **P31 Alameda Health Consortium:** consortium and Community Health Center Network/member clinics require separate finance and contribution boundaries. Member 290,000+ reach is not consortium-caused treatment. Eight members cannot become eight extra reports from this row. Existing primary https://www.alamedahealthconsortium.org/ .
+- **H05/Peninsula versus indexed Rebuilding Together SF**, **P01/P02 versus indexed BayLegal**, **U01/U02 versus indexed MELP/ReCARES**, and **H18 Mission Neighborhood Health Center versus indexed Mission Neighborhood Centers** are not name-based duplicates. No adverse legal-identity evidence found here; retain exact recipient checks before report selection.
+- **H31 CommuniCare+OLE**, **P26 Health in Partnership/Human Impact Partners**, and **U15/H09 Samaritan correction** are already single-entry alias/cross-lane treatments. **H26/P20 CHC** correction also passes. Do not reopen retired IDs as extra candidates.
+
+## Mechanism overlap and filler risk
+
+U22/U23 heat transport versus cooling repair; U25/U26/U27 diabetes medication/rescue/power; U30/U31 postpartum follow-up versus urgent transport; U32/U33 silica prevention versus detection/removal are distinct actions but highly correlated evidence/implementation clusters. They are acceptable explicitly requested brainstorm hypotheses, **not independent organization bets**. Before the final ten, merge each cluster into one search family and choose at most one absent demonstrably separate recipients and marginal pathways. U18–U33 and H20–H23/H26 lack verified delivery recipients; their generic CDC/EPA mechanism links do not establish Bay nonprofit programs or cost-effectiveness.
+
+No stronger new real-organization replacement was substantiated in this bounded audit. Prefer promoting an already named reserve with a resolved recipient/denominator rather than manufacturing another name to preserve a favorable count. U09 may remain a rejected stable entry; the ledger does not need 100 viable candidates. Existing U05 Center for Independent Living, H09 Samaritan House and U08 Contra Costa Crisis Center are real reserves, but not proven superior to the comparative 25 and must not be added twice.
+
+## Evidence/process
+
+Inspected ledger and targeted portions of all three source pools; prior whole-finance/bridge screens remain `/private/tmp/mfi-110-universe-screen25.md` and `/private/tmp/mfi-110-access-bridges.md`. Programmatic ledger result `{count:100, unique:100, comparative:25}`. Targeted current-index name search returned no selected-name matches; route aliases checked against prior retained inventory. No assertion of full all-100 EIN verification or current closure census.
+
+Measured continuation interval **2026-09-11 14:45:53–14:46:42 UTC (49 seconds)** covers this bounded verification segment; prior pre-compaction inspection is not assigned an invented duration. Artifact writing follows the end observation. Space Saver: existing files/runtime only, no installs, downloads, Site edits, outreach or nested agents. Dispatch identity evidence: parent requested GPT-6 Astra/low, not worker backend introspection.

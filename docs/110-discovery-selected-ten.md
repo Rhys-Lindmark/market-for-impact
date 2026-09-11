@@ -1,0 +1,28 @@
+# Selected ten: manager decision
+
+September11,2026. Existing publication baseline100; these ten are new assignments, not published reports. Discovery ledger100entries,25comparative screens, current-source and independent counterfactual challenges completed. Independent recommendation: astra_universe_screen, with health/policy source checks. This locks the ten report slots; a negative completed report remains a report, not grounds to shop for a winner. Replace only a duplicate, nonexistent recipient, or materially invalid research scope.
+
+| Slot | ID / organization | Why spend a scarce report slot? | Strongest excluded alternative / reservation |
+|---|---|---|---|
+| 1 | H02 Micah's Hugs | Very small verified whole expense plus annual naloxone distribution; test genuinely additional risk-network coverage rather than doses. | HERS has longer possible morbidity relief but much higher gross cost and weak compression utility evidence. Micah school distribution/public inventory may sharply reduce risk concentration. |
+| 2 | H01 Berkeley NEED | Lean sustained harm-reduction outreach with potential survival and nonoverlapping infection pathways. | NICJR has large violence-prevention upside but a much larger national expense envelope and shared implementation credit. NEED's repeated exchanges are not unique people. |
+| 3 | H17 HOPE | Small local access infrastructure could be inexpensive; unusually uncertain whole expense is a reason for a wide model, not a fabricated filing. | ANRF has an actual funding shock but weak ordinary-gift Bay exposure transmission. HOPE's public grant and free supply are the baseline, not donor leverage. |
+| 4 | P31 Alameda Health Consortium | Actual enrollment/renewal scale and additional care-coordination pathways make a broad access model worth testing. | Law Foundation has broader legal leverage but a larger whole-resource envelope. Renewal experiments weaken the optimistic coverage-only case; do not ignore that result. |
+| 5 | P03 Marin County Bicycle Coalition | A live San Marin design opportunity offers a concrete systems lever, plus the wider portfolio. | CBE's measured refinery reduction scale weakens its current whole-cost hypothesis. Neither can receive all public infrastructure or regulatory benefits. |
+| 6 | H04 Rainbow Community Center | Relatively small actual clinical/mental-health organization; retained care might provide substantial finite benefit. | WCRC has stronger aid counts but a less direct clinical-treatment pathway. Rainbow's current completed-care scale is unknown. |
+| 7 | H25 Acknowledge Alliance | Supervised therapy and school delivery offer a finite symptom mechanism with plausible low delivery costs. | LCC has a small local distress trial but no current course scale and a larger whole expense. School reach and training are not clinical improvements. |
+| 8 | P16 Silicon Valley Bicycle Coalition | Actual local implementation channels and potentially larger corridor exposure than Marin; test forward-looking design/timing, not completed lanes. | Justice in Aging has large systems upside but diffuse national allocation and no equally bounded Bay implementation cohort. SVBC may still fail the finite whole-cost test. |
+| 9 | H03 Oakland LGBTQ Community Center | Current ART/PrEP/PEP and related treatment pathways may create consequential retained-care gains. | BACC's diagnostic mechanism ended; WCRC remains the better cancer reserve. Oakland's tests are not treatment starts and its broad $4.957M expense/partner resources must remain. |
+| 10 | U01 Easy Does It | Emergency attendant continuity and independent-living access may matter more than the weak repair-only economics. | ILRCSF has broader scope and no larger established emergency pathway. EDI is the weakest selection; short alternative waits and funded contracts may defeat the hypothesis. |
+
+## What this does and does not establish
+
+Selection favors plausible competitive benefit density, not cause quotas or proof of current funding room. Three rescue organizations share uncertain priors; they are different delivery comparisons, not independent efficacy confirmations. Two cycling organizations likewise share causal evidence. Keep common-prior sensitivities and public/partner resource boundaries aligned across reports.
+
+The last seven are low-confidence exploratory choices. Most first-pass central partial-pathway scenarios do not beat $1M/10 Bay QALYs. Their broader whole-gift pathways might change that, but a favorable tail is not a best estimate. Existing source evidence already rejected optimistic BACC diagnostics, long repair durations and refinery-burden attribution; do not reintroduce them during authoring.
+
+Planning's roughly two-hour target was an effort target, not a minimum to fill with waits. Workers' measured parallel intervals are retained individually, root planning began14:26:47UTC, and this selection was recorded after15:10UTC. Do not call this two elapsed clock hours. Finish remaining already-live coverage checks, then use approximately15research minutes per report, separate from integration, independent audit and deployment. No research time is imputed to an organization from shared planning.
+
+## Release acceptance
+
+For each: exact legal recipient/current source dates; whole-gift allocation and resource scope; reproducible finite signed/null model and sensitivity; clearly labeled priors; inspectable sources and prior versions; donation status/funding uncertainty; independent numerical/claim audit; report/API/index/homepage parity; relevant tests/lint/build and responsive interaction; exact-commit canonical deployment. Count only published reports. After110, freeze and audit the resulting top10 to V2 as the staged plan requires.

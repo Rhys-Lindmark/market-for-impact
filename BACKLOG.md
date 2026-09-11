@@ -1,5 +1,17 @@
 # Market for Impact backlog
 
+## ReCARES V2 — accepted, release verification pending
+
+First frozen-cohort V2 report integrated with full prose, left ToC, three-year filings, reconciled annual spending shares and versioned model/API. Source-only update lowers central $128,892 to $74,720 and weighted $185,910 to $107,774 per10 Bay QALYs; no clinical/funding priors changed. Ranking now explicitly uses central, separately disclosed from that source update. Accrual expense is not cash paid; reserves and uncertain safe unique use keep giving on HOLD. Independent core/source audit accepted, 56 model checks plus parser/full-suite tests passed. Desktop/phone/tablet navigation, no overflow and index/home/API parity passed using new-build assets. Final build and canonical release gate remain. Alpha110 unchanged; V2 not counted live before verification. Next accepted drafts: Breathe and SPUR; GLIDE/HAC/HOPE research underway.
+
+## Current priority: top-ten V2 — alpha110 complete
+
+Verified110 alpha reports (89 Bay +21 expanded) through PR307 / Sites218; original selected ten independently audited and published. See [current plan](docs/110-research-plan.md) and [frozen V2 cohort](docs/110-v2-frozen-review-set.md). V2 published0/10; ReCARES, Breathe and SPUR first-wave research underway, with cross-audits before release. Each receives roughly30 additional research minutes, three-year filing/current-operation checks, substantive GiveWell-style prose and yearly spending breakdowns. SPUR and HAC are deliberate distinct-mechanism research slots, not numerical-rank substitutions.
+
+Homepage cleanup PR309 / Sites219 verified at https://ai.rhyslindmark.com/givebetter: removed the entire ten-priority section, retaining four picks. V2 is an internal review queue. PR308 also removes whole-gift/whole-organization wording from research-list display only; canonical list verified, estimates unchanged.
+
+Staff-personal-giving cohort: five screened separately. Bike East Bay and Sogorea Te have independently reviewed exploratory drafts; Causa Justa closed, Cityside and KQED lack a defensible causal numerator and retain inspectable unestimated checkpoints. None of this extra cohort is yet published or counted. Personal gifts are not GiveWell endorsements. Next: accept V2 audits and integrate long-form reports with versioned models; preserve unfavorable estimates.
+
 ## PVF whole-gift correction — active, not published
 
 100 reports unchanged. Dedicated research/pvf-whole-gift-release worktree ports the accepted PR249 PVF assets only; no OA/Clinic regression. Independent review and 3,862 author checks accept central $7,936,507.94 per 10 Bay QALYs for whole-gift cost with first-eye health only; 90% assumed allocation health remains unquantified, not zero. Report/API/ranking now wired together locally; historical conditional $714,286 model/API preserved. Initial build passes. Remaining: reconcile synthesis text/tests, source metadata/readability, responsive report/API/index parity, lint and final build; commit/PR/exact-source deployment. No new count or verified marginal offer. Current block started2026-09-11T11:02:33Z.
@@ -691,3 +703,9 @@ Walk SF is the next distinct organization (PR217): central $5.80M/10 SF QALYs an
 Current accepted count47/115 (46SF-indexed plusAMF). WalkSF full CI nowgreen. New Incentives PR218 adds one distinct international organization, not a local health claim: central $43,073/10 global QALYs, public-resource fiscal stress $66,332, transfer-excluded proxy $55,478. Representative core; fundedbaseline throughMarch2028, catchment denominator and standardized-course coverage/efficacy distinctions preserved. Model includes10finite/null/harm scenarios, primary evidence, explicit uncalibrated mortality/lifetime judgments; no verified current marginal offer.
 
 299 unit tests, lint/build, independent source/model/guard audit and six phone/tablet report/API/ranking checks passed. Increment47→48 only after exact-source public deployment and canonical verification. Next RemedyAlliance accepted lifetime-dedup corrections awaiting final audit; national/core impact must not be presented as SF impact. Existing YMCA/NewDoor whole-org revisions remain ready and add no counts.
+## Homepage ranking correction — September 11, 2026
+
+User requested the four lowest central estimates, not a separate editorial selection. Homepage now derives those four from the same finite positive-price Bay research list. Current main selects ReCARES, GLIDE, Breathe California, and Project Homeless Connect. Research models and 100-report count are unchanged. Production build, focused lint, and phone/tablet ranking-parity tests pass. Pending independent model corrections remain in their separate PRs; publication and canonical verification of this UI correction are next.
+## Current priority: 110 reports, then top-ten V2
+
+See [the staged plan](docs/110-research-plan.md): ~2h lessons-driven100-candidate brainstorm →25 screened →10 selected; ~15 research minutes each for10 new reports; then ~15 additional research minutes each for the top10 versioned V2 reviews. Track all phase counts separately. This supersedes100 as the finish line; no quotas or manufactured cheap estimates. Hourly schedule and parallel research resumed; outreach remains unapproved.

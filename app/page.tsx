@@ -4,7 +4,6 @@ import compass from '@/data/san-francisco/compass-c-rent-qaly-bridge-audit-v1.js
 import { researchRankBySlug } from '@/lib/research-cost-ranking.mjs';
 import {unifiedResearch} from '@/lib/unified-research-index';
 
-import priorities from '@/data/bay/donor-priorities.json';
 import './sf-home.css';
 import './givebetter.css';
 /* eslint-disable @next/next/no-img-element -- Static editorial photos with reserved dimensions. */
@@ -28,6 +27,7 @@ const photos: Record<string, { src: string; caption: string; source: string }> =
   'breathe-california': { src: '/images/breathe.png', caption: 'Breathe California community outreach, 2019. Photo: Breathe California; not a pictured cessation session.', source: 'https://lungsrus.org/' },
 };
 const picksBySlug = [
+  {slug:'hope-pacifica',name:'HOPE Pacifica',program:'Make overdose rescue supplies accessible',overview:'HOPE maintains local naloxone access points and community support in Pacifica. This exploratory estimate models additional rescue coverage, not doses as lives saved.',opinion:'A low central scenario worth investigating, with giving on hold until operating costs and additional coverage are verified.',evidence:'Five listed locations establish activity. Annual costs, distinct at-risk coverage and the effect of extra money remain explicit assumptions.',reservation:'The central scenario is about $555K per10 Bay QALYs; the separate probability-weighted estimate is $763K. No annual expense statement or marginal funding offer has been verified.',model:null},
   {slug:'pacific-hearing-connection',name:'Pacific Hearing Connection',program:'Help people hear and stay connected',overview:'Hearing tests, suitable devices and follow-up help people who face financial, transport or language barriers. The estimate charges whole accounting costs and quantifies hearing health.',opinion:'One of our leading whole-cost hypotheses, with a highly uncertain benefit estimate.',evidence:'Clinical hearing evidence supports the pathway; local completed fittings, lasting use and additional gift response remain assumptions.',reservation:'Confirm additional fitting appointments and follow-up—not just donated devices or screening. Existing grants may already cover part of the work.',model:null},
   { slug: 'recares', name: 'The ReCARES Network', program: 'Make useful medical equipment accessible', overview: 'ReCARES redistributes donated mobility aids and home-health supplies through San Francisco, Oakland and Marin. The model charges the whole organization’s cash costs.', opinion: 'A very uncertain exploratory estimate, not a verified giving recommendation or marginal funding offer.', evidence: 'Lean reported delivery costs make this worth investigating. Controlled walking-aid studies do not establish the assumed quality-of-life gain.', reservation: 'A favorable scenario supplies 69% of expected benefit. Unique recipients, safe use and additional cash-enabled capacity are unmeasured; donated equipment and volunteer resources are not fully valued.', model: null },
   { slug: 'project-homeless-connect', name: 'Project Homeless Connect', program: 'Connect people to practical health care', overview: 'The whole-gift model includes glasses, hearing aids and dental care for people facing homelessness, with other portfolio health still unquantified.', opinion: 'A conditional whole-gift estimate with substantial uncertainty, not a verified marginal funding offer.', evidence: 'External clinical utility evidence and local services inform explicit assumptions about earlier, additional care.', reservation: 'Shared hearing outcomes with the Hearing and Speech Center must not be counted twice. Actual marginal capacity, alternative care and full portfolio benefits need further verification.', model: null },
@@ -39,7 +39,7 @@ const picksBySlug = [
   { slug: 'compass-family-services', name: 'Compass Family Services', program: 'Help families catch up on rent', overview: 'C-Rent combines back-rent and move-in assistance with case management for families at risk of losing their homes.', opinion: 'A promising family-homelessness prevention option, with a clearer audited cost starting point.', evidence: 'Audited program spending and external prevention research. The family count and health effect need local verification.', reservation: 'The $9,704 cost per family is an accounting ratio, not a confirmed price for an additional family.', model: compass.modeledBridge },
 ];
 
-const selectedSlugs=['recares','project-homeless-connect','pacific-hearing-connection','pacific-vision-foundation'];
+const selectedSlugs=unifiedResearch.filter(row=>row.localUsdPerTenQalys!==null&&Number.isFinite(row.localUsdPerTenQalys)&&row.localUsdPerTenQalys>0).slice(0,4).map(row=>row.href.split('/').at(-1)!);
 const scopes:Record<string,string>={recares:'Whole organization; equipment-health component','project-homeless-connect':'Whole sponsored project; clinical-health components','pacific-hearing-connection':'Whole accounting cost; hearing-health component','pacific-vision-foundation':'Whole gift; first-eye health component'};
 const picks = selectedSlugs.map(slug => {
   const item=unifiedResearch.find(row=>row.href==='/charities/'+slug);
@@ -48,7 +48,7 @@ const picks = selectedSlugs.map(slug => {
   const pick = picksBySlug.find(p => p.slug === row.slug);
   if (!pick) throw new Error('Missing homepage summary for ' + row.slug);
   const rank = researchRankBySlug.get(row.slug);
-  return { ...pick, model: { bestCostPerTenQalysUsd: item.localUsdPerTenQalys, costPerQalyUsd: item.localUsdPerTenQalys / 10, positiveEffectRangeUsd: pick.model?.positiveEffectRangeUsd ?? rank?.positiveEffectRangeUsd } };
+  return { ...pick, scope:scopes[row.slug]??item.program, model: { bestCostPerTenQalysUsd: item.localUsdPerTenQalys, costPerQalyUsd: item.localUsdPerTenQalys / 10, positiveEffectRangeUsd: pick.model?.positiveEffectRangeUsd ?? rank?.positiveEffectRangeUsd } };
 });
 
 export default function SanFranciscoHome() {
@@ -57,7 +57,7 @@ export default function SanFranciscoHome() {
     <main>
       <section className="sf-home-intro">
         <h1>Our Top Charities</h1>
-        <p className="sf-home-lead">Four starting points for giving in the San Francisco Bay Area.</p>
+        <p className="sf-home-lead">The four lowest central estimates in our Bay Area research.</p>
         <small>Last updated: September 2026</small>
       </section>
       <section className="sf-home-principles" aria-label="How to give better">
@@ -70,13 +70,12 @@ export default function SanFranciscoHome() {
         <div><p className="sf-home-eyebrow">CHARITY {i + 1} OF 4</p><h2>{pick.program}</h2>
           <div className="sf-home-charity-body">
             <section><h3>Overview</h3><p>{pick.overview}</p></section>
-            <section><h3>Cost-effectiveness</h3><p className="sf-home-scope">{scopes[pick.slug]}</p><p>Our modeled estimate is <strong>{money.format(pick.model.bestCostPerTenQalysUsd)} per better life (10 QALYs)</strong>. {pick.opinion}</p></section>
+            <section><h3>Cost-effectiveness</h3><p className="sf-home-scope">{pick.scope}</p><p>Our modeled estimate is <strong>{money.format(pick.model.bestCostPerTenQalysUsd)} per better life (10 QALYs)</strong>. {pick.opinion}</p></section>
             <section><h3>Evidence of impact</h3><p>{pick.evidence}</p><p>{pick.reservation}</p></section>
             <section><h3>Organization and research</h3><div className="sf-home-org-card"><h4>{pick.name}</h4><a className="sf-home-report" href={`${root}/charities/${pick.slug}`}>Full research report</a></div></section>
           </div>
         </div>
       </article>)}</section>
-      <section className="sf-home-priorities" id="giving-priorities"><h2>Ten priorities for giving</h2><p>Our editorial shortlist after 100 reports—not simply the ten lowest estimates. General support is possible today; a larger gift intended to expand care needs a confirmed funding plan.</p><ol>{priorities.map(item=>{const row=unifiedResearch.find(r=>r.href==='/charities/'+item.slug)!;return <li key={item.slug}><a href={root+'/research/city-theory#'+item.slug}>{row.organization}</a><span>{item.scope}</span></li>})}</ol><p><a href={root+'/research/city-theory'}>Why these ten, and what to ask before giving</a></p><p className="sf-home-note">A better life means 10 additional QALYs: ten years of full-health equivalent, potentially shared across people. No marginal health offer has been verified for this shortlist.</p></section>
       <footer className="sf-home-footer"><a href={`${root}/research`}>All research</a><p>Independent research. Not affiliated with GiveWell or the organizations reviewed.</p></footer>
     </main>
   </div>;

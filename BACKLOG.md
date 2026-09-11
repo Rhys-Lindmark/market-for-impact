@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## GLIDE V2 — validation complete, publication pending
+
+110 alpha reports and 3/10 V2 remain live through SPUR PR311/Sites222. GLIDE's accepted V2 now renders its entire 10,539-word narrative and labeled summary, three-year Foundation spending, current public funding/youth services and finite distinct clinical cohorts. Central $4,890,657/10 Bay QALYs preserves the accepted broad-gift model, not the historical rental-only estimate; no complete expected value or funding offer claimed. Full saved-output tests, independent survival/source audit, full suite, lint/build and phone/tablet/desktop checks pass. Merge retains Breathe/SPUR/ReCARES changes and rental-only archive. Next exact-source canonical release; then remaining accepted frozen-cohort V2 reports. Research effort and integration time remain separately recorded.
+
 ## SPUR V2 — validation complete, canonical release pending
 
 110/110 alpha and 2/10 V2 live (ReCARES and Breathe through PR301/Sites221). SPUR's independently accepted V2 is integrated with full ~7,200-word narrative, labeled summary, left ToC and three-year spending reconciliation. Central $2,191,060 per 10 Bay QALYs remains unchanged; no probability-weighted expectation invented. Housing, transit and heat pathways remain partial health estimates; governance and economic-security benefits unquantified. Existing public funding/adopted policies constrain incremental credit. 174 model checks plus narrative/ranking parity and full model suite pass; lint zero errors/three existing warnings, production build and phone/tablet/desktop checks pass. Next exact-commit canonical release, then accepted GLIDE/HOPE/HAC/Pacific Hearing drafts and PHC/NEMS cross-audits. V2 is an internal review set, not the removed homepage ten-priority section.
@@ -671,6 +675,10 @@ During active research blocks, the coordinating agent must keep every available 
 - [ ] **MFI-024 — Geography lens beginning with India.** Separate headquarters, service geography, target population, grant geography, evaluator coverage, and locally registered donation vehicles before comparing opportunities.
   - [x] Publish the first auditable India lens. The standalone page separates five geography fields, reconciles all 50 GiveWell rows explicitly naming India, distinguishes 36 India-only from 14 unallocated multi-country rows, and preserves ACE's one current India-explicit opportunity and native shrimp-welfare metrics without turning organization-wide funding room into India-specific room. Headquarters, donation vehicle, tax treatment, and India-program funding room remain visibly unassessed. Verified 2026-08-30 with deterministic regeneration, 112 unit tests, lint, production build, and 21 responsive/browser checks across 390 px and 768 px with no page overflow or console errors.
   - [ ] Add India-native evaluators and locally registered candidates, then verify service geographies, receiving entities, donation rails, legal constraints, and $100K / $1M / $10M marginal plans before publishing any India recommendation or ranking.
+
+## GLIDE whole-gift correction — September 11, 2026
+
+Audited named clinical and housing pathways now retain the whole Foundation gift; central $4.89M per 10 Bay QALYs remains partial health, not complete expected organization return or verified funding room. Local report/API/index, donor scope and historical rental-only archive are integrated. All 20 saved scenarios reproduce, 801 author and 648 independent checks pass; full unit suite, lint and focused phone/tablet tests pass. Publication pending. Count remains 100. Reconcile with Breathe PR301 before merge; then exact-commit deployment and canonical verification. See docs/glide-release-status.md.
 
 ## Breathe whole-gift correction — September 11, 2026
 

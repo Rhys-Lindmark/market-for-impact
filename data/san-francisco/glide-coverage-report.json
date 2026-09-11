@@ -1,0 +1,483 @@
+{
+  "organization": "GLIDE Foundation",
+  "eyebrow": "Whole-gift, partial-health diagnostic",
+  "program": "Named clinical and housing pathways; unresolved whole-organization expectation",
+  "published": "Draft — not published",
+  "modelVersion": "glide-foundation-material-coverage-v2",
+  "donationUrl": "https://www.glide.org/give/",
+  "nutshell": {
+    "headline": "About $4.89 million per 10 modeled Bay QALYs — a diagnostic, not a complete expected return",
+    "body": "The central $100,000 Foundation gift produces 0.2044715224666835 modeled Bay QALYs and 0.19621004681146392 SF QALYs. Bay donor cost is $4,890,657 per 10, using an explicit 0.99 Bay-share prior; SF is $5,096,579 using 0.95. No probability weights or complete organization expectation have been assigned.",
+    "whyItMayWork": "Integrated access can relieve specific unmet health and housing needs when cash changes useful care beyond public and other existing services.",
+    "whyWeAreCautious": "Clinical fidelity, unique course counts, marginal allocation and alternatives are weak priors. Policy, infection prevention and other material pathways remain unquantified; their effects are not assumed zero.",
+    "recommendationBlocker": "No verified marginal funding offer. The diagnostic is not a ranking-ready complete whole-organization expectation or a guaranteed lower bound."
+  },
+  "summary": [
+    {
+      "label": "Central Bay diagnostic",
+      "value": "$4,890,657",
+      "detail": "Per 10 modeled Bay QALYs; explicit 0.99 geography prior."
+    },
+    {
+      "label": "Central SF diagnostic",
+      "value": "$5,096,579",
+      "detail": "Per 10 modeled SF QALYs; explicit 0.95 geography prior."
+    },
+    {
+      "label": "Whole gift retained",
+      "value": "$100,000",
+      "detail": "Foundation gift, not a separate Church gift. Allocation is a prior."
+    },
+    {
+      "label": "Complete expected return",
+      "value": "Unresolved",
+      "detail": "No scenario probabilities or total unquantified-health estimate."
+    }
+  ],
+  "programSection": {
+    "body": "The Foundation combines meals, rental access, family and safety services, overdose support and clinical linkage. This version expands named health pathways while retaining all gift dollars. Historical consolidated accounts include Church and property affiliates and are not a precise Foundation-only marginal budget.",
+    "steps": [
+      {
+        "title": "Retain the whole gift",
+        "detail": "Allocate the full gift across named activities and enabling operations; overhead does not earn a second health award."
+      },
+      {
+        "title": "Identify additional useful courses",
+        "detail": "Apply capacity, current public/donor baseline, target symptoms, meaningful service dose and distinct person-condition-time assumptions."
+      },
+      {
+        "title": "Integrate joint survival and finite symptom benefit",
+        "detail": "Rescue-only, medication-only and shared cohorts are exclusive. Each intervention ends independently; finite survival gaps may persist, but no event restarts lifetime credit."
+      },
+      {
+        "title": "Keep unresolved pathways visible",
+        "detail": "Publish named diagnostics and signed scenarios without inventing residual health or expected-value weights."
+      }
+    ],
+    "boundary": "Quantified components: joint rescue/MOUD survival, finite housing morbidity, meals, selected parenting/child symptoms, safety advocacy, behavioral groups, selected HCV morbidity and wound care. Policy, syringe/infection prevention and transmission, HIV/STI, vaccination, other referral and affiliate effects remain unresolved. Administration/property costs stay in the denominator; neither all omitted spending nor all omitted health is overhead."
+  },
+  "model": {
+    "headline": "Central Bay diagnostic: $4,890,657 per 10 QALYs",
+    "body": "Not a probability-weighted estimate. Nominal courses are constrained by allocated cash and assumed capacity; extra funded years increase relevant delivery costs. Central survival benefit dominates the small named symptom contributions. Legacy rental-only estimates describe a different gift scope and must not be used as this whole-gift headline.",
+    "equation": {
+      "label": "Named-pathway Bay diagnostic",
+      "expression": "(joint finite rescue/MOUD QALYs + finite housing QALYs + sum of distinct symptom-course QALYs − independent harm) × explicit Bay share; cost per 10 = whole gift × 10 / positive Bay QALYs",
+      "result": "0.2044715224666835 Bay QALYs; exact donor ratio 4890656.595775775"
+    },
+    "inputs": [
+      {
+        "key": "gift",
+        "label": "Whole Foundation gift",
+        "best": "$100,000",
+        "range": "$100,000 capacity prior; zero-capacity stress",
+        "basis": "Entire gift retained even above modeled capacity. Not an available priced tranche.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "allocation",
+        "label": "Named marginal allocation",
+        "best": "{\"rescue\":0.1,\"housing\":0.1,\"meals\":0.22,\"parenting\":0.04,\"childcare\":0.06,\"women\":0.05,\"moud\":0.03,\"behavioral\":0.02,\"infection_linkage\":0.01,\"wound_care\":0.01,\"policy\":0.04,\"common_operations\":0.28,\"property_affiliate\":0.04}",
+        "range": "Fixed central ledger; scenario delivery changes",
+        "basis": "Retains v1 top-level allocation priors; subdivides 7% other HEAT and 10% family. Entire gift costed; allocation does not cancel out of benefits. Not observed budget fractions. Service counts constrain plausibility, not QALYs.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "funding",
+        "label": "Funding additionality",
+        "best": "0.4",
+        "range": "0–0.8",
+        "basis": "Prior 0.4 [0,0.8]: current public grants, other donors and fixed capacity remain in no-gift world. Not estimated from contributions ratio.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "geography",
+        "label": "Bay / SF health shares",
+        "best": "0.99 / 0.95",
+        "range": "Nested prior; zero SF scenario",
+        "basis": "Bay0.99/SF0.95 priors, nested. No additional indirect Bay/SF benefit assigned; policy spillovers unresolved.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "rescue",
+        "label": "Rescue-support cost and active protection",
+        "best": "$500; one year",
+        "range": "Null/adverse rescue and capacity stresses",
+        "basis": "Rescue nominal annual unique-person safer-use/rescue-support package, not price per dose. MOUD Foundation cost is annualized access/support cost prior, minimum one annual budget unit for setup; active durations above one year scale Foundation/external costs linearly. External cost includes medication, prescribing, labs and public clinical delivery. 3%*30.77m/56 enrollees≈16.5k is only a plausibility check, not audited program cost or evidence of additional patients.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "moud",
+        "label": "MOUD annual support and effective duration",
+        "best": "$16,000 Foundation + $6,000 outside; 0.5 year",
+        "range": "Three-year funded sensitivity scales costs",
+        "basis": "Both rescue and medication compare with same current-care hazard. Medication effect shrunk halfway from observed HR0.63 toward1; no-gift treatment share handles replacement of existing accessible medication, retention handles effective funded-course completion, funding additionality handles donor displacement. None is a second multiplication by trial ITT adherence.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "joint",
+        "label": "Joint survival assumptions",
+        "best": "Baseline hazard 0.07; rescue reduction 0.005; observed medication HR 0.63 with 0.5 transfer",
+        "range": "No effects, adverse effects, zero/maximum overlap",
+        "basis": "Three exclusive cohorts rescue-only/MOUD-only/both. While active h=(base-rescueReduction)*(1-(1-HR)*transfer) for both; remove each factor when its active period ends. Equal baseline hazard after funded care preserves but does not create a survival gap, capped at15years. No separate opioid deaths added to all-cause.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "survival_horizon",
+        "label": "Finite survival follow-up",
+        "best": "15 years; utility 0.7; delay 0.25 year",
+        "range": "Effects end with funded exposure; 3% discount",
+        "basis": "Follow-up is not fifteen years of purchased medication or rescue support. Same baseline hazard applies after each exposure ends.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "housing",
+        "label": "Complete housing episode",
+        "best": "$10,000; one-year health window",
+        "range": "Capacity and additionality stresses",
+        "basis": "10k complete access/stabilization episode is a new prior, not v1 transfer-oriented3077. Current965254/317≈3045 is transfer per reported person, not full cost. 10% consolidated scale/317≈9706 contextual only. Stability difference0.112*0.5 transfer from prior VA evidence, capped by current80% no-gift stability. Unique-health exclusion prevents housing mood/safety stacking.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "meals",
+        "label": "meals course",
+        "best": "$1080; utility 0.015; 0.0821917808219178 years",
+        "range": "0.015 utility [-0.01,0.05]; selected share [0,0.5]; course30days [7,90] with proportional meal costs.",
+        "basis": "Thirty-day 90-meal course at12/meal; meal supply consumed and replaces inadequate intake in selected20%, with50% symptom-response/local transfer. 0.015 utility for physical/mental symptoms only, not hunger preference or tailored-diet disease effect. Distinct symptom-time65%. No future mortality. Cost plausibility22%*30.77m/620513≈10.9/meal, not observed marginal price.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "parenting",
+        "label": "parenting course",
+        "best": "$4500; utility 0.03; 0.5 years",
+        "range": "Utility[-0.02,0.08], target[0,0.6], transfer[0,0.8], window[0,1].",
+        "basis": "One caregiver per meaningful class/support course; distressed share30%, trial-to-GLIDE delivery35%, unique mood/safety70%. Utility.03 and half-year window are weak priors; not trial-derived QALYs; catchup2/year. No child benefit in this row.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "childcare",
+        "label": "childcare course",
+        "best": "$13000; utility 0.03; 0.5 years",
+        "range": "Utility[-0.02,0.06], target[0,0.5], delivery[0,0.6], H[0,1].",
+        "basis": "One child with selected emotional/behavioral symptoms in meaningful socioemotional activity; not childcare economic value. Selected20%, effective-fidelity20% sharply below targeted12-week IY. Clinical utility and benefit probability weak priors; no parent spillover or lifetime conduct/crime/earnings.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "women",
+        "label": "women course",
+        "best": "$4000; utility 0.04; 0.5 years",
+        "range": "Utility[-0.04,0.1], target[0,0.7], response[0,0.7], unique[0,1].",
+        "basis": "One selected crisis/safety-support course;35% relevant trauma/abuse symptoms,30% effective clinical gain probability,60% distinct mood/safety outside housing/CBT. Weak positive central despite null advocacy counterweight, acknowledging intensive successful cases; no homicide survival or outreach multiplier.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "behavioral",
+        "label": "behavioral course",
+        "best": "$6000; utility 0.08; 0.5 years",
+        "range": "Utility[-0.05,0.2], target[0,0.8], response[0,0.7], H[0,1].",
+        "basis": "One course rather than attendee visit;40% persistent depression,30% meaningful CBT-response/local delivery,60% distinct symptom-time. Mixed outpatient groups not BRIGHT's32hour residential protocol. Utility.08 separate judgment, no substance-use mortality added.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "infection_linkage",
+        "label": "infection linkage course",
+        "best": "$300; utility 0.03; 3 years",
+        "range": "Actionable[0,.2], earlier cure difference[-.05,.2], utility[-.01,.08], H[0,5].",
+        "basis": "One unique testing/linkage episode;6% actionable RNA-positive untreated HCV,5% earlier effective cure difference vs existing public referral,60% distinct morbidity. No 44.2point colocated RCT transplant and no paused peer program. Three-year symptom benefit only with later-care catchup; no liver deaths or transmission added. Treatment resource charged separately per selected patient, not per all test.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "wound_care",
+        "label": "wound care course",
+        "best": "$600; utility 0.06; 0.038356164383561646 years",
+        "range": "Utility[-.03,.15], target[0,.8], response[0,.9], days[0,60] with duration-sensitive resources.",
+        "basis": "One acute wound-care course with partner medical resources;40% clinically symptomatic wounds,50% earlier meaningful healing relative to accessible public care,70% distinct physical symptom-time. Utility.06 and14day window clinical judgment, not measured GLIDE trial; no unobserved admissions or sepsis mortality.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "resources",
+        "label": "Outside common resources",
+        "best": "20% of gift plus branch inputs",
+        "range": "0–80% common prior",
+        "basis": "0.2 [0,0.8] gross associated volunteer/common partner resources beyond branch-specific costs, not causal net cost or waived charges. Excludes clinical resources separately specified.",
+        "confidence": "Explicit uncalibrated prior"
+      }
+    ],
+    "giftHeading": "Twenty unweighted scenarios, not probabilities or purchasable offers",
+    "sensitivity": [
+      {
+        "case": "central",
+        "headline": "Bay donor $4,890,657 per 10 QALYs",
+        "detail": "Exact Bay QALYs 0.2044715224666835; donor ratio 4890656.595775775; SF QALYs 0.19621004681146392, donor ratio 5096578.9787558075. Gross resource envelope 129940.2564102564; Bay resource ratio 6354931.720696158. Negative/zero benefit has no finite positive-health price."
+      },
+      {
+        "case": "no_additional_funding",
+        "headline": "Bay donor No finite positive-health ratio per 10 QALYs",
+        "detail": "Exact Bay QALYs 0; donor ratio null; SF QALYs 0, donor ratio null. Gross resource envelope 129940.2564102564; Bay resource ratio null. Negative/zero benefit has no finite positive-health price."
+      },
+      {
+        "case": "zero_absorbable_capacity",
+        "headline": "Bay donor No finite positive-health ratio per 10 QALYs",
+        "detail": "Exact Bay QALYs 0; donor ratio null; SF QALYs 0, donor ratio null. Gross resource envelope 100000; Bay resource ratio null. Negative/zero benefit has no finite positive-health price."
+      },
+      {
+        "case": "harm_only",
+        "headline": "Bay donor No finite positive-health ratio per 10 QALYs",
+        "detail": "Exact Bay QALYs -0.099; donor ratio null; SF QALYs -0.095, donor ratio null. Gross resource envelope 129940.2564102564; Bay resource ratio null. Negative/zero benefit has no finite positive-health price."
+      },
+      {
+        "case": "no_favorable_clinical_effect",
+        "headline": "Bay donor No finite positive-health ratio per 10 QALYs",
+        "detail": "Exact Bay QALYs -0.0012138027564102566; donor ratio null; SF QALYs -0.001164760220797721, donor ratio null. Gross resource envelope 129940.2564102564; Bay resource ratio null. Negative/zero benefit has no finite positive-health price."
+      },
+      {
+        "case": "weak_delivery",
+        "headline": "Bay donor $100,242,178 per 10 QALYs",
+        "detail": "Exact Bay QALYs 0.009975840754274901; donor ratio 100242177.5399206; SF QALYs 0.009572776481374905, donor ratio 104462900.80475935. Gross resource envelope 129940.2564102564; Bay resource ratio 130254942.52659728. Negative/zero benefit has no finite positive-health price."
+      },
+      {
+        "case": "favorable_delivery",
+        "headline": "Bay donor $1,388,876 per 10 QALYs",
+        "detail": "Exact Bay QALYs 0.7200068421551898; donor ratio 1388875.6904124818; SF QALYs 0.690915656613566, donor ratio 1447354.666850902. Gross resource envelope 129940.2564102564; Bay resource ratio 1804708.6333416975. Negative/zero benefit has no finite positive-health price."
+      },
+      {
+        "case": "no_moud_effect",
+        "headline": "Bay donor $4,905,307 per 10 QALYs",
+        "detail": "Exact Bay QALYs 0.20386082127255614; donor ratio 4905307.423749796; SF QALYs 0.1956240204130589, donor ratio 5111846.683697157. Gross resource envelope 129940.2564102564; Bay resource ratio 6373969.044131828. Negative/zero benefit has no finite positive-health price."
+      },
+      {
+        "case": "no_rescue_effect",
+        "headline": "Bay donor $331,978,290 per 10 QALYs",
+        "detail": "Exact Bay QALYs 0.0030122451714812543; donor ratio 331978289.63844126; SF QALYs 0.00289053829586585, donor ratio 345956322.88637567. Gross resource envelope 129940.2564102564; Bay resource ratio 431373440.78257424. Negative/zero benefit has no finite positive-health price."
+      },
+      {
+        "case": "no_survival_overlap",
+        "headline": "Bay donor $4,890,149 per 10 QALYs",
+        "detail": "Exact Bay QALYs 0.2044927422859365; donor ratio 4890149.101730603; SF QALYs 0.1962304092642825, donor ratio 5096050.116540312. Gross resource envelope 129940.2564102564; Bay resource ratio 6354272.281632595. Negative/zero benefit has no finite positive-health price."
+      },
+      {
+        "case": "maximum_survival_overlap",
+        "headline": "Bay donor $4,891,164 per 10 QALYs",
+        "detail": "Exact Bay QALYs 0.20445030264743042; donor ratio 4891164.195166175; SF QALYs 0.19618968435864534, donor ratio 5097107.95075212. Gross resource envelope 129940.2564102564; Bay resource ratio 6355591.296645583. Negative/zero benefit has no finite positive-health price."
+      },
+      {
+        "case": "adverse_moud",
+        "headline": "Bay donor $4,917,184 per 10 QALYs",
+        "detail": "Exact Bay QALYs 0.20336842332156477; donor ratio 4917184.210150495; SF QALYs 0.19515151732877425, donor ratio 5124223.545314727. Gross resource envelope 129940.2564102564; Bay resource ratio 6389401.7708341945. Negative/zero benefit has no finite positive-health price."
+      },
+      {
+        "case": "adverse_rescue",
+        "headline": "Bay donor No finite positive-health ratio per 10 QALYs",
+        "detail": "Exact Bay QALYs -0.3969623958082906; donor ratio null; SF QALYs -0.3809235111291677, donor ratio null. Gross resource envelope 129940.2564102564; Bay resource ratio null. Negative/zero benefit has no finite positive-health price."
+      },
+      {
+        "case": "adverse_group_health",
+        "headline": "Bay donor $4,981,273 per 10 QALYs",
+        "detail": "Exact Bay QALYs 0.20075189647969702; donor ratio 4981272.991865034; SF QALYs 0.1926407087431436, donor ratio 5191010.802048826. Gross resource envelope 129940.2564102564; Bay resource ratio 6472678.898124276. Negative/zero benefit has no finite positive-health price."
+      },
+      {
+        "case": "no_distinct_symptom_health",
+        "headline": "Bay donor $4,977,376 per 10 QALYs",
+        "detail": "Exact Bay QALYs 0.20090907555217236; donor ratio 4977375.946067297; SF QALYs 0.19279153714602396, donor ratio 5186949.670112236. Gross resource envelope 129940.2564102564; Bay resource ratio 6467615.066822272. Negative/zero benefit has no finite positive-health price."
+      },
+      {
+        "case": "fully_funded_three_year_moud",
+        "headline": "Bay donor $4,879,379 per 10 QALYs",
+        "detail": "Exact Bay QALYs 0.204944133098219; donor ratio 4879378.515903904; SF QALYs 0.1966635620639475, donor ratio 5084826.032363016. Gross resource envelope 129940.2564102564; Bay resource ratio 6340276.954792497. Negative/zero benefit has no finite positive-health price."
+      },
+      {
+        "case": "longer_funded_symptom_courses",
+        "headline": "Bay donor $4,894,917 per 10 QALYs",
+        "detail": "Exact Bay QALYs 0.20429355730518642; donor ratio 4894916.967479977; SF QALYs 0.19603927216154252, donor ratio 5101018.734531766. Gross resource envelope 128440.2564102564; Bay resource ratio 6287043.904100429. Negative/zero benefit has no finite positive-health price."
+      },
+      {
+        "case": "zero_discount",
+        "headline": "Bay donor $4,038,060 per 10 QALYs",
+        "detail": "Exact Bay QALYs 0.24764369697790217; donor ratio 4038059.5678525683; SF QALYs 0.23763789103940106, donor ratio 4208083.128604256. Gross resource envelope 129940.2564102564; Bay resource ratio 5247064.956466518. Negative/zero benefit has no finite positive-health price."
+      },
+      {
+        "case": "no_direct_sf",
+        "headline": "Bay donor $4,890,657 per 10 QALYs",
+        "detail": "Exact Bay QALYs 0.2044715224666835; donor ratio 4890656.595775775; SF QALYs 0, donor ratio null. Gross resource envelope 129940.2564102564; Bay resource ratio 6354931.720696158. Negative/zero benefit has no finite positive-health price."
+      },
+      {
+        "case": "large_gift_capacity_held",
+        "headline": "Bay donor $48,906,566 per 10 QALYs",
+        "detail": "Exact Bay QALYs 0.2044715224666835; donor ratio 48906565.95775774; SF QALYs 0.19621004681146392, donor ratio 50965789.78755808. Gross resource envelope 1029940.2564102564; Bay resource ratio 50370841.082678124. Negative/zero benefit has no finite positive-health price."
+      }
+    ],
+    "uncertaintyBoundary": "All twenty cases are unweighted diagnostics. Central is not an expectation; favorable delivery is not selected as a forecast. Null funding, zero capacity, independent harm and adverse clinical effects are retained. Missing policy, transmission and other effects prevent a complete organization claim. Overlap exclusions are explicit priors, not validated linked-person records.",
+    "fundingBoundary": "FY2025 final audited consolidated expenses $30,766,602 reconcile program $18,342,460, Church $1,922,106, management/general $7,766,659 and development $2,735,377. Historical cash $5,908,995 is not current spare funding. Foundation-only allocation and affiliate flows remain unresolved. Central gross associated funding 132985.2564102564 includes the full gift and outside inputs; excluding rental cash transfers once (3045) gives gross resource envelope 129940.2564102564, not identified net induced cost or a complete societal estimate. HCV drug/lab cost is associated with nominal actionable patients, not only successful cures. Existing public prescribing, HSH/Abode rental funding, other donors and routine alternatives remain baseline. General Foundation giving is distinct from Church giving and does not confirm a clinical/rental restriction or extra capacity."
+  },
+  "evidence": [
+    {
+      "key": "accounts",
+      "design": "FY2025 final consolidated audit",
+      "population": "Foundation, Church and property context",
+      "result": "Expense components reconcile, but no Foundation-only marginal budget is established.",
+      "transfer": "Do not replace final audit with impact-report figures labeled pending audit or infer funding room from historical cash."
+    },
+    {
+      "key": "moud",
+      "design": "Observational Massachusetts post-overdose cohort",
+      "population": "2012–2014 survivors; monthly medication exposure",
+      "result": "Buprenorphine adjusted all-cause HR 0.63; median receipt four months.",
+      "transfer": "Not randomized mortality benefit or GLIDE retention. No all-cause plus opioid-death addition; no-gift treatment and financed exposure are separate assumptions."
+    },
+    {
+      "key": "behavioral",
+      "design": "BRIGHT nonrandomized site-period comparison",
+      "population": "299 persistently depressed residential substance-use participants",
+      "result": "Sixteen two-hour CBT sessions differ from mixed outpatient groups.",
+      "transfer": "No attendee-to-course or depression-score-to-QALY conversion. Selected symptom and fidelity priors gate benefit."
+    },
+    {
+      "key": "advocacy",
+      "design": "Randomized advocacy counterweight",
+      "population": "Twelve-week advocacy versus usual community services",
+      "result": "Depression difference 2.66 points was below five-unit clinical threshold; no significant HRQoL improvement.",
+      "transfer": "Null counterweight does not prove all advocacy ineffective; local short utility benefit remains weak and signed."
+    },
+    {
+      "key": "meals",
+      "design": "Medically tailored meal trials",
+      "population": "Selected diabetic food-insecure patients, not generic communal meals",
+      "result": "Small crossover symptom findings coexist with a larger trial showing no glycemic benefit.",
+      "transfer": "No meal-to-diabetes-death model. Only finite relief where consumed meals replace inadequate intake is quantified."
+    },
+    {
+      "key": "families",
+      "design": "Selected parenting/child intervention trials",
+      "population": "Clinically selected children and caregivers",
+      "result": "Targeted trial effects and limited persistence do not establish effects of ordinary childcare.",
+      "transfer": "Local curriculum, baseline symptoms and dose unknown; no future crime, earnings or parent-plus-child lifetime multiplier."
+    },
+    {
+      "key": "hcv",
+      "design": "Low-threshold HCV treatment randomized trial",
+      "population": "RNA-positive recent injectors",
+      "result": "Enhanced colocated care improved cure relative to facilitated referral.",
+      "transfer": "GLIDE referral may resemble the comparator. No use of the full trial effect per test; paused peer navigation is not presumed restarted."
+    }
+  ],
+  "reservations": [
+    "No current accepted additional-gift plan or Foundation-only marginal ledger.",
+    "Reported service totals do not identify unique completed clinical courses.",
+    "Joint survival removes repeated mortality credit but symptom overlap still needs linked data.",
+    "Public clinical delivery and partner resources are neither free nor necessarily additional.",
+    "Capacity and geographic shares are priors, not observations.",
+    "Central is a named-pathway diagnostic, not an expected-return headline."
+  ],
+  "excludedBenefits": [
+    "Unidentified policy and community-organizing health",
+    "Syringe infection prevention and secondary transmission",
+    "Unmodeled HIV/STI and vaccination benefits",
+    "Other referral, property and affiliate effects",
+    "Earnings, childcare economic value, spiritual value and other non-health outcomes"
+  ],
+  "sources": [
+    {
+      "publisher": "GLIDE",
+      "title": "Final FY2025 consolidated audit",
+      "url": "https://www.glide.org/wp-content/uploads/2026/03/GLIDE-Foundation-2024-25-SA-FS-Final.pdf",
+      "published": "FY2025; exact publication day not established",
+      "retrieved": "2026-09-11 (prior evidence reviewed; not freshly fetched)",
+      "sourceType": "Primary; reused audited source ledger"
+    },
+    {
+      "publisher": "GLIDE",
+      "title": "Financials and annual reports",
+      "url": "https://www.glide.org/financials-annual-reports/",
+      "published": "Undated",
+      "retrieved": "2026-09-11 (prior evidence reviewed; not freshly fetched)",
+      "sourceType": "Primary; reused audited source ledger"
+    },
+    {
+      "publisher": "GLIDE",
+      "title": "Foundation and Church giving",
+      "url": "https://www.glide.org/give/",
+      "published": "Undated",
+      "retrieved": "2026-09-11 (prior evidence reviewed; not freshly fetched)",
+      "sourceType": "Primary; reused audited source ledger"
+    },
+    {
+      "publisher": "GLIDE",
+      "title": "Welcome Center",
+      "url": "https://www.glide.org/programs/welcome-center/",
+      "published": "Undated",
+      "retrieved": "2026-09-11 (prior evidence reviewed; not freshly fetched)",
+      "sourceType": "Primary; reused audited source ledger"
+    },
+    {
+      "publisher": "San Francisco HSH",
+      "title": "Problem-solving funding update",
+      "url": "https://www.sf.gov/documents/37979/Problem_Solving_Program_Update_3.5.25.pdf",
+      "published": "2025-03-10",
+      "retrieved": "2026-09-11 (prior evidence reviewed; not freshly fetched)",
+      "sourceType": "Primary; reused audited source ledger"
+    },
+    {
+      "publisher": "Larochelle et al.",
+      "title": "Medication after nonfatal overdose",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29913516/",
+      "published": "2018",
+      "retrieved": "2026-09-09",
+      "sourceType": "Primary; reused audited source ledger"
+    },
+    {
+      "publisher": "Watkins et al.",
+      "title": "BRIGHT depression intervention",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21646576/",
+      "published": "2011",
+      "retrieved": "2026-09-09",
+      "sourceType": "Primary; reused audited source ledger"
+    },
+    {
+      "publisher": "Tiwari et al.",
+      "title": "Community advocacy trial",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20682933/",
+      "published": "2010",
+      "retrieved": "2026-09-09",
+      "sourceType": "Primary; reused audited source ledger"
+    },
+    {
+      "publisher": "Berkowitz et al.",
+      "title": "Medically tailored meals trial",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30421335/",
+      "published": "2018",
+      "retrieved": "2026-09-09",
+      "sourceType": "Primary; reused audited source ledger"
+    },
+    {
+      "publisher": "Doyle et al.",
+      "title": "Food-as-medicine trial",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38147326/",
+      "published": "2024",
+      "retrieved": "2026-09-09",
+      "sourceType": "Primary; reused audited source ledger"
+    },
+    {
+      "publisher": "Hutchings et al.",
+      "title": "Targeted parenting trial",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17350966/",
+      "published": "2007",
+      "retrieved": "2026-09-09",
+      "sourceType": "Primary; reused audited source ledger"
+    },
+    {
+      "publisher": "Trial investigators",
+      "title": "Parenting longer-term counterweight",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33573694/",
+      "published": "2021",
+      "retrieved": "2026-09-09",
+      "sourceType": "Primary; reused audited source ledger"
+    },
+    {
+      "publisher": "Eckhardt et al.",
+      "title": "Low-threshold HCV care trial",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35285851/",
+      "published": "2022",
+      "retrieved": "2026-09-09",
+      "sourceType": "Primary; reused audited source ledger"
+    }
+  ]
+}

@@ -16,12 +16,14 @@ import {expectedValue as clinic} from '../lib/clinic-portfolio-model.mjs';
 import {calculate as sfaf} from '../lib/sfaf-portfolio-model.mjs';
 import {calculate as phc,inputsFor} from '../lib/phc-portfolio-model.mjs';
 import fs from 'node:fs';
+import {calculate as glide} from '../lib/glide-coverage-model.mjs';
 import {calculate as breathe} from '../lib/breathe-v2-model.mjs';
 const read=name=>JSON.parse(fs.readFileSync(new URL('../data/san-francisco/'+name,import.meta.url)));
 const central=d=>d.scenarios.find(s=>s.id==='central');
-test('fourteen explicit Bay adapters match model outputs',()=>{
+test('fifteen explicit Bay adapters match model outputs',()=>{
  const h=read('hpp-model-v1.json'),f=read('felton-model-v1.json'),p=read('sfphf-model-v1.json'),c=read('code-tenderloin-model-v1.json'),w=read('walk-sf-cea-v1.json'),s=read('spur-portfolio-cea-v3.json'),o=read('oa-portfolio-model-v2.json'),n=read('newdoor-portfolio-v1.json'),cl=read('clinic-portfolio-model-v2.json'),a=read('sfaf-portfolio-model-v1.json'),ph=read('phc-portfolio-model-v1.json');
  const expected={
+  glide:glide(read('glide-coverage-v2.json')).bay.donor_per_10q,
   'breathe-california':breathe().central.bay.donor_per_10q,
   'pacific-vision-foundation':pvf(pvfCentral).prices.bay.donor,
   'homeless-prenatal-program':hpp(central(h).inputs).bay.donor_per_10q,
@@ -37,7 +39,7 @@ test('fourteen explicit Bay adapters match model outputs',()=>{
   'san-francisco-aids-foundation':sfaf(central(a).inputs).bay.donor_per_10q,
   'project-homeless-connect':phc(inputsFor(ph,central(ph))).donor_bay_per_10q,
  };
-assert.equal(rows.filter(r=>Object.hasOwn(r,'bayUsdPerTenQalys')).length,14);
+assert.equal(rows.filter(r=>Object.hasOwn(r,'bayUsdPerTenQalys')).length,15);
  for(const [slug,value] of Object.entries(expected)){
   assert.ok(Number.isFinite(value)&&value>0,slug);
   const row=rows.find(r=>r.slug===slug);assert.equal(row.bayUsdPerTenQalys,value,slug);

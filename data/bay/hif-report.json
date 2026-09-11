@@ -1,0 +1,246 @@
+{
+  "organization": "Housing Industry Foundation",
+  "eyebrow": "Exploratory whole-cost, partial-health research",
+  "program": "Emergency Housing Fund; affordable housing and renovations remain unquantified",
+  "published": "11 September 2026",
+  "modelVersion": "hif-whole-cost-ehf-health-v1",
+  "donationUrl": "https://www.hifinfo.org/donate/",
+  "nutshell": {
+    "headline": "Real housing assistance; weak evidence for cost-effective health gains",
+    "body": "A $10,000 unrestricted gift yields 0.0012382481 expected Bay QALYs in the quantified prevention pathway, or $80,759,258 per 10. All organizational expenses are charged, but this is not a complete valuation of HIF’s health impact.",
+    "whyItMayWork": "Timely assistance can prevent some homelessness. HIF has actual funded-household records and a relevant Santa Clara randomized comparison.",
+    "whyWeAreCautious": "Housing outcomes are not measured health utility. The favorable world contributes 103.3% of net expectation because negative worlds offset benefits. Affordable housing, rehousing and renovations remain unquantified.",
+    "recommendationBlocker": "Not a favorable health-giving recommendation. Preserve this unfavorable exploratory result; resolve accounting comparability and marginal program mix before treating it as a whole-organization ranking."
+  },
+  "summary": [
+    {
+      "label": "Bay cost per 10 modeled QALYs",
+      "value": "$80,759,258",
+      "detail": "Whole cost; EHF prevention health only; signed subjective scenarios."
+    },
+    {
+      "label": "2025 whole expense proxy",
+      "value": "$4,039,790",
+      "detail": "Original management annual report, not an audited statement."
+    },
+    {
+      "label": "Actual EHF assistance",
+      "value": "502 households",
+      "detail": "$931,044 disbursed in 2025; 667 applications are not recipients."
+    }
+  ],
+  "programSection": {
+    "body": "HIF, EIN 94-3100671, is distinct from Season of Sharing and GLIDE. Its current service area is Alameda, San Mateo and Santa Clara counties. Historical 2025 output covers the latter two. Trained partner case managers apply; HIF pays approved landlords or utilities.",
+    "steps": [
+      {
+        "title": "Charge the whole portfolio",
+        "detail": "Retain housing, renovation, fundraising, events and administration. Do not call grants the total cost or treat landlord concessions and partner labor as free."
+      },
+      {
+        "title": "Model an additional funding response",
+        "detail": "A small unrestricted gift scales the historical portfolio only through an explicit response prior. Existing reserves, other donors, publicly supported casework and allocation changes may absorb the gift."
+      },
+      {
+        "title": "Count finite incremental days, then health",
+        "detail": "For the prevention-relevant portion of EHF households, transfer randomized homeless-days avoided over one year. Apply assumed utility loss only to those days; subtract signed harms."
+      }
+    ],
+    "boundary": "All organization costs, but partial benefits: rehousing, affordable rents and renovations are not assigned zero social value. Their health contributions remain unquantified. No mortality, lifetime, income or avoided-public-cost credit. External casework and in-kind resource overlap are not fully reconciled."
+  },
+  "model": {
+    "headline": "Whole-cost EHF prevention-health component",
+    "body": "The formula uses actual funded households rather than dividing dollars by an invented grant. Neither reported stability nor declined applications establishes causal impact or unmet fundable demand. The offer-based trial anchor is deliberately not inflated to its receipt-based IV estimate.",
+    "equation": {
+      "label": "Net Bay QALYs",
+      "expression": "gift / whole expense × 502 × funding response × [prevention share × 7.5 days × transfer × affected persons / 365 × utility − harm per household] × Bay share",
+      "result": "0.001238248121842221 expected Bay QALYs per $10,000"
+    },
+    "inputs": [
+      {
+        "key": "expense",
+        "label": "Whole 2025 expenditures",
+        "confidence": "Medium",
+        "best": "$4,039,790",
+        "range": "$3,835,012 older IRS gross-cost sensitivity",
+        "basis": "Management summary includes events and in-kind support. Its comparative 2024 figures differ from the IRS; no invented reconciliation."
+      },
+      {
+        "key": "households",
+        "label": "Funded EHF households",
+        "confidence": "Medium",
+        "best": "502",
+        "range": "Not a causal outcome",
+        "basis": "Annual report p4. Current rules disallow previous EHF recipients; exact historical dedup methodology not published."
+      },
+      {
+        "key": "response",
+        "label": "Funding response",
+        "confidence": "Very low",
+        "best": "50% central",
+        "range": "0–90%",
+        "basis": "Judgment about replacement funding, reserves and delivery capacity, not an observed marginal tranche."
+      },
+      {
+        "key": "days",
+        "label": "Homeless-days anchor",
+        "confidence": "Moderate for trial; low transfer",
+        "best": "7.5 over 12 months",
+        "range": "5.7 covariate-adjusted sensitivity; transfer 0–1.5",
+        "basis": "Santa Clara pre-pandemic randomized offer, Table2; HIF selects households able to sustain housing and has different alternatives."
+      },
+      {
+        "key": "prevention",
+        "label": "Prevention-relevant share",
+        "confidence": "Low",
+        "best": "66%",
+        "range": "50–80%",
+        "basis": "Judgment informed by reported34% previously homeless; survey denominator is unspecified. Rehousing benefits omitted."
+      },
+      {
+        "key": "health",
+        "label": "Health utility and persons",
+        "confidence": "Very low",
+        "best": "0.10 utility; one person",
+        "range": "0–0.20 utility; 1–2.34 person-equivalents",
+        "basis": "Not measured QALYs. Favorable household multiplier is optimistic, not proven spillover. Health duration limited to modeled days within one year."
+      },
+      {
+        "key": "harm",
+        "label": "Harm per additional household",
+        "confidence": "Very low",
+        "best": "0.0002 QALY",
+        "range": "0–0.003",
+        "basis": "Signed prior for adverse/displaced housing choices and delays; not an observed HIF harm estimate."
+      },
+      {
+        "key": "bay",
+        "label": "Bay health share",
+        "confidence": "Moderate",
+        "best": "99%",
+        "range": "97–100%",
+        "basis": "Bay eligibility; small judgmental allowance for migration. No separate SF estimate."
+      }
+    ],
+    "sensitivity": [
+      {
+        "case": "funding_null",
+        "headline": "20% weight; no finite cost per10",
+        "detail": "Bay QALYs0: donor replaces existing funding or no added capacity."
+      },
+      {
+        "case": "health_null",
+        "headline": "20% weight; no finite cost per10",
+        "detail": "Bay QALYs0 despite additional assistance."
+      },
+      {
+        "case": "harm",
+        "headline": "5% weight; negative health",
+        "detail": "Bay QALYs −0.0018453186923082635; no finite positive cost-effectiveness ratio."
+      },
+      {
+        "case": "cautious",
+        "headline": "20% weight; negative net health",
+        "detail": "Bay QALYs −0.00011197048439416031; harm prior exceeds small modeled benefit."
+      },
+      {
+        "case": "central",
+        "headline": "25% weight; $340,053,545 per10",
+        "detail": "Bay QALYs0.00029407133498428496."
+      },
+      {
+        "case": "favorable",
+        "headline": "10% weight; $7,816,223 per10",
+        "detail": "Bay QALYs0.01279390319590395;103.3% of weighted net benefit. Other worlds offset it."
+      }
+    ],
+    "uncertaintyBoundary": "These are prior-driven scenario weights, not statistical probabilities. No selected world crosses $1M per10 for quantified prevention health; this is not a zero probability for HIF’s true total value. No forced common health bridge with SoS or GLIDE.",
+    "fundingBoundary": "2025 cash $923,199 and unrestricted net assets $1,435,113 do not establish current excess cash or a shortage. Current expansion into Alameda is real service scope, not a priced marginal grant. The $5,000 major-gift threshold is a fundraising tier, not a household purchase. General donations may fund all programs."
+  },
+  "evidence": [
+    {
+      "key": "trial",
+      "design": "Randomized offer;578 pre-pandemic observations",
+      "population": "Santa Clara at-risk applicants in2019–2020, selected against eligibility for other assistance",
+      "result": "7.5 fewer recorded homeless-days at12months; covariate-adjusted estimate5.7. No measured QALYs.",
+      "transfer": "HIF’s sustainable-income selection differs. Offer ITT is used without a receipt uplift; no statistically detectable benefit in the pandemic sample. Utility and household effects remain judgments."
+    },
+    {
+      "key": "operations",
+      "design": "Organization administrative and survey reporting",
+      "population": "HIF2025 EHF and other programs",
+      "result": "502 EHF households and$931,044 disbursements; other portfolio activity documented.",
+      "transfer": "Self-reported improvement lacks comparator and published response denominator. Do not count all stable households as prevented homelessness."
+    },
+    {
+      "key": "finance",
+      "design": "Original2025 management summary and2024 IRS return",
+      "population": "Whole legal organization",
+      "result": "$4,039,7902025 expenditure proxy;2024 IRS gross resource expense$3,835,012 after adding$286,460 event costs.",
+      "transfer": "Different2024 management figures remain unreconciled. Keep all expenses; no program-only denominator or presumed free complements."
+    }
+  ],
+  "reservations": [
+    "A complete whole-organization health estimate is unavailable; partial-pathway ranking must be labeled.",
+    "HIF’s2024 Form990 PartIII program labels/descriptions and grants versus expenses contain inconsistencies; use whole totals, not those program ratios.",
+    "Current public baseline and partner resources may substitute for donor support. Do not separately credit identical outcomes to HIF and its referring agencies.",
+    "The management financial summary is not a substitute for a current audit; accounting differences and in-kind overlap require reconciliation.",
+    "No verified marginal $10,000 tranche, waiting-list reason breakdown or incremental funded-household commitment.",
+    "Unfavorable quantified health result does not establish that housing security has little nonhealth value."
+  ],
+  "excludedBenefits": [
+    "Rehousing and AHI health remain unquantified, not assumed absent.",
+    "Renovation safety and habitability gains remain unquantified; no whole-shelter service credit.",
+    "No income, mortality, lifetime, crime, childdevelopment or public savings converted to QALYs."
+  ],
+  "sources": [
+    {
+      "publisher": "Housing Industry Foundation",
+      "title": "2025 Annual Report, pp4,6,8–11,15–16",
+      "url": "https://www.hifinfo.org/wp-content/uploads/2025-HIF-Annual-Report.pdf",
+      "published": "2025 reporting year; release date not established",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary management report"
+    },
+    {
+      "publisher": "HIF / IRS",
+      "title": "2024 Form990, original return",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202503189349314685/IRS990",
+      "published": "Filed2025-11-15",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary tax return"
+    },
+    {
+      "publisher": "Housing Industry Foundation",
+      "title": "Emergency Housing Fund eligibility and delivery",
+      "url": "https://www.hifinfo.org/programs/emergency-housing-fund/",
+      "published": "Current; undated",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary organization"
+    },
+    {
+      "publisher": "Phillips and Sullivan",
+      "title": "Do homelessness prevention programs prevent homelessness? Tables2/A6",
+      "url": "https://sites.nd.edu/james-sullivan/files/2023/04/SCC_homelessness_prevention-8-1.pdf",
+      "published": "2023-04",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary randomized trial"
+    },
+    {
+      "publisher": "Housing Industry Foundation",
+      "title": "Donation routes and legal identity",
+      "url": "https://www.hifinfo.org/donate/",
+      "published": "Current; undated",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary organization"
+    },
+    {
+      "publisher": "Housing Industry Foundation",
+      "title": "Current staff and program responsibilities",
+      "url": "https://www.hifinfo.org/team/",
+      "published": "Current; includes2026 staff",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary organization"
+    }
+  ],
+  "donationNote": "General donations may support all HIF programs; no priced, additional Emergency Housing Fund allocation has been verified."
+}

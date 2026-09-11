@@ -1,0 +1,421 @@
+{
+  "organization": "Pacific Vision Foundation",
+  "eyebrow": "Whole organization · ordinary unrestricted gift · finite earlier-eye-care health",
+  "program": "Conditional whole-portfolio value of a $100,000 ordinary gift",
+  "donationUrl": "https://pacificvisionfoundation.org/ways-to-give/",
+  "published": "September 8, 2026",
+  "modelVersion": "pvf-whole-portfolio-v1",
+  "nutshell": {
+    "headline": "An ordinary PVF gift supports a broad clinical, educational and facilities portfolio—not only selected cataract cases.",
+    "body": "Central whole-gift donor cost is $17,857,143 per10 SF QALYs, $7,936,508 Bay and $7,142,857 US. The historical $714,286 selected-case calculation remains a conditional program comparison, not the organization headline.",
+    "whyItMayWork": "PVF supports a real shared pathway for uninsured people to receive earlier eye care, alongside clinician training and infrastructure.",
+    "whyWeAreCautious": "Only first-eye earlier-care health is quantified. Marginal allocation, actual earlier access, first-eye case mix and residence are unmeasured. Partner outcomes cannot all be attributed independently to PVF.",
+    "recommendationBlocker": "No verified ordinary-gift allocation, costed extra surgical cohort or counterfactual queue. The partial-health model does not establish a threshold-passing recommendation."
+  },
+  "summary": [
+    {
+      "label": "Central ordinary gift /10 QALYs",
+      "value": "$17.86M SF /$7.94M Bay /$7.14M US",
+      "detail": "Same full $100,000 cost; health0.056 SF /0.126 Bay /0.14 US."
+    },
+    {
+      "label": "Explicit marginal allocation",
+      "value": "10% first-eye /90% unquantified",
+      "detail": "Not the990 program ratio. Remaining clinical, educational, building and central spending stays priced."
+    },
+    {
+      "label": "Central resources",
+      "value": "$125,000 gross /$100,369 net",
+      "detail": "Net offsets explicitly assumed otherwise-later outside surgery resources; no claimed general savings."
+    },
+    {
+      "label": "Historical program comparison",
+      "value": "$714,286 donor/10 QALYs",
+      "detail": "All spend on selected SF first-eye courses. Preserved separately; not an ordinary gift price."
+    }
+  ],
+  "programSection": {
+    "body": "PVF funds eye-care access, education/research and the institute. It controls a real-estate entity and holds91% of PVSC LLC in the FY2024 filing. Lions and CPMC partners examine, refer and treat patients. The current charity pathway includes non-cataract care; low-vision rehabilitation and training are not assigned invented QALYs.",
+    "steps": [
+      {
+        "title": "Allocate the ordinary gift",
+        "detail": "10% first-eye support;10% other clinical,15% education/research,40% building/capital and25% central/other support. These are explicit priors, not audited shares."
+      },
+      {
+        "title": "Support unique assigned courses",
+        "detail": "$10,000 at$1,000/course funds10 nominal first-eye courses;50% financing additionality yields5 added courses. Failed referrals stay within course costing."
+      },
+      {
+        "title": "Transfer the finite trial contrast",
+        "detail": "0.056 integrated one-year trial QALY ×50% local clinical/comparator fit; no second eye, extra duration, success multiplier or lifetime blindness avoidance."
+      },
+      {
+        "title": "Retain partners and regional scope",
+        "detail": "One shared outcome, outside clinical inputs, real later-care baseline and nested patient-residence priors. SF clinical location alone is insufficient."
+      }
+    ],
+    "boundary": "The current patient page specifies uninsured physician-referred Lions patients. Broader impact-report underinsured wording is not assumed to expand core eligibility."
+  },
+  "model": {
+    "headline": "Whole-gift cost with a finite, already-integrated first-year health stream",
+    "body": "The modeled benefit is earlier first-eye surgery versus otherwise delayed surgery, not permanent denial. The legacy clinical coefficient is unchanged; the revision corrects the donation and geographic scope.",
+    "equation": {
+      "label": "Whole gift, finite first-eye assignment effect",
+      "expression": "Nominal courses = gift × first-eye allocation / direct cash per course. Added courses = nominal × financing additionality. Benefit = added × integrated first-year trial QALY × local clinical/timing transfer. Subtract added-course extra harm and independent gift-date losses. Regional Q = benefit × benefit share − losses × loss share. All price numerators retain the entire gift.",
+      "result": "US0.14 /Bay0.126 /SF0.056 QALYs. SF donor/gross/net prices $17,857,143 /$22,321,429 /$17,923,113 per10 QALYs."
+    },
+    "inputs": [
+      {
+        "key": "gift",
+        "label": "Whole unrestricted gift",
+        "best": "$100,000",
+        "range": "Domain $1–$1 billion",
+        "basis": "Entire ordinary gift retained; no priced restricted offer.",
+        "confidence": "Specified gift"
+      },
+      {
+        "key": "first_eye_allocation",
+        "label": "Direct first-eye course allocation",
+        "best": "10%",
+        "range": "5–40%; zero",
+        "basis": "Marginal portfolio prior, not historical charity-care expense ratio. Other90% cost retained.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "course_cash",
+        "label": "Direct cash per assigned unique first-eye course",
+        "best": "$1,000",
+        "range": "$500–$2,000; $250 unverified sensitivity",
+        "basis": "Legacy constructed cash budget includes referral/noncompletion costs. Separate portfolio allocation retains central costs; no second-eye benefit.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "trial_q",
+        "label": "Integrated first-year trial QALY effect",
+        "best": "0.056",
+        "range": "0.006 external lower-coordinate stress",
+        "basis": "Economic randomized-assignment analysis among288/306 with six-month utility extrapolation; not a local observed effect or full-cohort outcome.",
+        "confidence": "External integrated economic-trial result; transfer uncertain"
+      },
+      {
+        "key": "clinical_timing_transfer",
+        "label": "Local clinical/comparator transfer",
+        "best": "50%",
+        "range": "12.5–100%; zero; −50% harm",
+        "basis": "Joint population, severity, actual waiting-time and pathway-fit prior. No permanent-denial or lifetime extension.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "funding_additionality",
+        "label": "Funding additionality",
+        "best": "50%",
+        "range": "25–75%; zero",
+        "basis": "Added support versus existing PVF/Lions/CPMC/clinical financing; distinct from clinical transfer.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "shared_harm_q",
+        "label": "Extra shared harm per added course",
+        "best": "0 gift-date PV QALY",
+        "range": "0.04 stress",
+        "basis": "Outside complications already incorporated in trial. Costs of failed referrals remain.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "independent_harm_q",
+        "label": "Independent donor harm",
+        "best": "0 gift-date PV QALY",
+        "range": "0.2 at zero activity",
+        "basis": "Independent of additional surgery; no second discount.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "displaced_alternative_q",
+        "label": "Other displaced care health",
+        "best": "0 gift-date PV QALY",
+        "range": "1 at target failure",
+        "basis": "Distinct lost alternative clinic/resource use; not canceled by zero cataract effect.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "public_outside_per_course",
+        "label": "Outside public resources",
+        "best": "$0",
+        "range": "$500 stress",
+        "basis": "Narrow uninsured route, not proof of zero public resources throughout organization/partners. Real inputs only, no transfer sum.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "private_outside_per_course",
+        "label": "Outside private/partner resources",
+        "best": "$2,500",
+        "range": "$2,000–$4,000; zero donor-pays case",
+        "basis": "Clinical/facility/lens inputs beyond direct cash and internal charity transfer. Unpriced prior, not charges.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "counterfactual_outside_per_course",
+        "label": "Otherwise later outside-care resources",
+        "best": "$2,500",
+        "range": "$0–$4,000 scenarios",
+        "basis": "Unpriced offset conditional on later surgery, not permanent denial. No offset to retained whole-gift cash.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "resource_wait_years",
+        "label": "Timing of counterfactual outside cost",
+        "best": "1 year",
+        "range": "0.25 short-wait sensitivity",
+        "basis": "Cost valuation parameter; health remains the already integrated one-year trial transfer. Shorter clinical wait requires separate clinical transfer judgment.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "resource_discount",
+        "label": "Continuous resource discount",
+        "best": "3%",
+        "range": "Domain 0–20%",
+        "basis": "No extra within-year health discount applied to integrated trial result.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "other_real_savings",
+        "label": "Other net real resource savings",
+        "best": "$0 gift-date dollars",
+        "range": "$150,000 diagnostic; signed domain",
+        "basis": "Separate resource savings, not patient welfare or transfers; negative denotes additional cost.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "bay_share",
+        "label": "Bay share of benefit",
+        "best": "90%",
+        "range": "70–95%",
+        "basis": "Unmeasured future residence share, not geography inferred from SF clinic location.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "sf_share",
+        "label": "SF share of benefit",
+        "best": "40%",
+        "range": "20–60%; zero",
+        "basis": "Independent nested residence prior; wider California/Nevada pathway retained.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "harm_bay_share",
+        "label": "Bay share of losses",
+        "best": "90%",
+        "range": "Nested domain 0–100%",
+        "basis": "Separate allocation of shared/independent/displaced-alternative harm.",
+        "confidence": "Explicit uncalibrated prior"
+      },
+      {
+        "key": "harm_sf_share",
+        "label": "SF share of losses",
+        "best": "40%",
+        "range": "Nested domain 0–100%",
+        "basis": "Can differ from health share; regions never summed.",
+        "confidence": "Explicit uncalibrated prior"
+      }
+    ],
+    "giftHeading": "The full ordinary gift across18 scenarios",
+    "sensitivity": [
+      {
+        "case": "central",
+        "headline": "SF donor $17,857,143/10 QALYs",
+        "detail": "US/Bay/SF QALYs 0.14 / 0.126 / 0.056. Donor US/Bay/SF $7,142,857 / $7,936,508 / $17,857,143. Gross resources $125,000; gross US/Bay/SF prices $8,928,571 / $9,920,635 / $22,321,429. Net resources $100,369; net US/Bay/SF prices $7,169,245 / $7,965,828 / $17,923,113. Prices per10 QALYs; signed net-resource diagnostics retained."
+      },
+      {
+        "case": "favorable_joint",
+        "headline": "SF donor $496,032/10 QALYs",
+        "detail": "US/Bay/SF QALYs 3.36 / 3.192 / 2.016. Donor US/Bay/SF $297,619 / $313,283 / $496,032. Gross resources $260,000; gross US/Bay/SF prices $773,810 / $814,536 / $1,289,683. Net resources $103,547; net US/Bay/SF prices $308,174 / $324,394 / $513,624. Prices per10 QALYs; signed net-resource diagnostics retained."
+      },
+      {
+        "case": "pessimistic_positive",
+        "headline": "SF donor $2,666,666,667/10 QALYs",
+        "detail": "US/Bay/SF QALYs 0.001875 / 0.0013125 / 0.000375. Donor US/Bay/SF $533,333,333 / $761,904,762 / $2,666,666,667. Gross resources $110,000; gross US/Bay/SF prices $586,666,667 / $838,095,238 / $2,933,333,333. Net resources $100,074; net US/Bay/SF prices $533,727,393 / $762,467,704 / $2,668,636,964. Prices per10 QALYs; signed net-resource diagnostics retained."
+      },
+      {
+        "case": "no_quantified_allocation",
+        "headline": "SF donor No finite positive-health ratio/10 QALYs",
+        "detail": "US/Bay/SF QALYs 0 / 0 / 0. Donor US/Bay/SF No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Gross resources $100,000; gross US/Bay/SF prices No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Net resources $100,000; net US/Bay/SF prices No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Prices per10 QALYs; signed net-resource diagnostics retained."
+      },
+      {
+        "case": "replacement_only",
+        "headline": "SF donor No finite positive-health ratio/10 QALYs",
+        "detail": "US/Bay/SF QALYs 0 / 0 / 0. Donor US/Bay/SF No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Gross resources $125,000; gross US/Bay/SF prices No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Net resources $100,000; net US/Bay/SF prices No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Prices per10 QALYs; signed net-resource diagnostics retained."
+      },
+      {
+        "case": "no_timing_advantage",
+        "headline": "SF donor No finite positive-health ratio/10 QALYs",
+        "detail": "US/Bay/SF QALYs 0 / 0 / 0. Donor US/Bay/SF No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Gross resources $125,000; gross US/Bay/SF prices No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Net resources $100,369; net US/Bay/SF prices No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Prices per10 QALYs; signed net-resource diagnostics retained."
+      },
+      {
+        "case": "shorter_wait_transfer",
+        "headline": "SF donor $71,428,571/10 QALYs",
+        "detail": "US/Bay/SF QALYs 0.035 / 0.0315 / 0.014. Donor US/Bay/SF $28,571,429 / $31,746,032 / $71,428,571. Gross resources $125,000; gross US/Bay/SF prices $35,714,286 / $39,682,540 / $89,285,714. Net resources $100,093; net US/Bay/SF prices $28,598,114 / $31,775,682 / $71,495,285. Prices per10 QALYs; signed net-resource diagnostics retained."
+      },
+      {
+        "case": "no_credit_future_resource_offset",
+        "headline": "SF donor $17,857,143/10 QALYs",
+        "detail": "US/Bay/SF QALYs 0.14 / 0.126 / 0.056. Donor US/Bay/SF $7,142,857 / $7,936,508 / $17,857,143. Gross resources $125,000; gross US/Bay/SF prices $8,928,571 / $9,920,635 / $22,321,429. Net resources $112,500; net US/Bay/SF prices $8,035,714 / $8,928,571 / $20,089,286. Prices per10 QALYs; signed net-resource diagnostics retained."
+      },
+      {
+        "case": "additional_public_resources",
+        "headline": "SF donor $17,857,143/10 QALYs",
+        "detail": "US/Bay/SF QALYs 0.14 / 0.126 / 0.056. Donor US/Bay/SF $7,142,857 / $7,936,508 / $17,857,143. Gross resources $130,000; gross US/Bay/SF prices $9,285,714 / $10,317,460 / $23,214,286. Net resources $102,869; net US/Bay/SF prices $7,347,816 / $8,164,241 / $18,369,541. Prices per10 QALYs; signed net-resource diagnostics retained."
+      },
+      {
+        "case": "donor_pays_clinical_resources",
+        "headline": "SF donor $62,500,000/10 QALYs",
+        "detail": "US/Bay/SF QALYs 0.04 / 0.036 / 0.016. Donor US/Bay/SF $25,000,000 / $27,777,778 / $62,500,000. Gross resources $100,000; gross US/Bay/SF prices $25,000,000 / $27,777,778 / $62,500,000. Net resources $100,000; net US/Bay/SF prices $25,000,000 / $27,777,778 / $62,500,000. Prices per10 QALYs; signed net-resource diagnostics retained."
+      },
+      {
+        "case": "shared_extra_harm",
+        "headline": "SF donor No finite positive-health ratio/10 QALYs",
+        "detail": "US/Bay/SF QALYs -0.06 / -0.054 / -0.024. Donor US/Bay/SF No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Gross resources $125,000; gross US/Bay/SF prices No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Net resources $100,369; net US/Bay/SF prices No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Prices per10 QALYs; signed net-resource diagnostics retained."
+      },
+      {
+        "case": "independent_harm_no_activity",
+        "headline": "SF donor No finite positive-health ratio/10 QALYs",
+        "detail": "US/Bay/SF QALYs -0.2 / -0.18 / -0.08. Donor US/Bay/SF No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Gross resources $100,000; gross US/Bay/SF prices No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Net resources $100,000; net US/Bay/SF prices No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Prices per10 QALYs; signed net-resource diagnostics retained."
+      },
+      {
+        "case": "target_failure_displaces_alternative",
+        "headline": "SF donor No finite positive-health ratio/10 QALYs",
+        "detail": "US/Bay/SF QALYs -1 / -0.9 / -0.4. Donor US/Bay/SF No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Gross resources $125,000; gross US/Bay/SF prices No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Net resources $100,369; net US/Bay/SF prices No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Prices per10 QALYs; signed net-resource diagnostics retained."
+      },
+      {
+        "case": "no_sf_health",
+        "headline": "SF donor No finite positive-health ratio/10 QALYs",
+        "detail": "US/Bay/SF QALYs 0.14 / 0.126 / 0. Donor US/Bay/SF $7,142,857 / $7,936,508 / No finite positive-health ratio. Gross resources $125,000; gross US/Bay/SF prices $8,928,571 / $9,920,635 / No finite positive-health ratio. Net resources $100,369; net US/Bay/SF prices $7,169,245 / $7,965,828 / No finite positive-health ratio. Prices per10 QALYs; signed net-resource diagnostics retained."
+      },
+      {
+        "case": "negative_clinical_transfer",
+        "headline": "SF donor No finite positive-health ratio/10 QALYs",
+        "detail": "US/Bay/SF QALYs -0.14 / -0.126 / -0.056. Donor US/Bay/SF No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Gross resources $125,000; gross US/Bay/SF prices No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Net resources $100,369; net US/Bay/SF prices No finite positive-health ratio / No finite positive-health ratio / No finite positive-health ratio. Prices per10 QALYs; signed net-resource diagnostics retained."
+      },
+      {
+        "case": "low_cash_unverified",
+        "headline": "SF donor $4,464,286/10 QALYs",
+        "detail": "US/Bay/SF QALYs 0.56 / 0.504 / 0.224. Donor US/Bay/SF $1,785,714 / $1,984,127 / $4,464,286. Gross resources $200,000; gross US/Bay/SF prices $3,571,429 / $3,968,254 / $8,928,571. Net resources $101,478; net US/Bay/SF prices $1,812,102 / $2,013,447 / $4,530,256. Prices per10 QALYs; signed net-resource diagnostics retained."
+      },
+      {
+        "case": "zero_outside_resource_scenario",
+        "headline": "SF donor $17,857,143/10 QALYs",
+        "detail": "US/Bay/SF QALYs 0.14 / 0.126 / 0.056. Donor US/Bay/SF $7,142,857 / $7,936,508 / $17,857,143. Gross resources $100,000; gross US/Bay/SF prices $7,142,857 / $7,936,508 / $17,857,143. Net resources $100,000; net US/Bay/SF prices $7,142,857 / $7,936,508 / $17,857,143. Prices per10 QALYs; signed net-resource diagnostics retained."
+      },
+      {
+        "case": "net_saving_diagnostic",
+        "headline": "SF donor $17,857,143/10 QALYs",
+        "detail": "US/Bay/SF QALYs 0.14 / 0.126 / 0.056. Donor US/Bay/SF $7,142,857 / $7,936,508 / $17,857,143. Gross resources $125,000; gross US/Bay/SF prices $8,928,571 / $9,920,635 / $22,321,429. Net resources $-49,631; net US/Bay/SF prices $-3,545,041 / $-3,938,934 / $-8,862,602. Prices per10 QALYs; signed net-resource diagnostics retained."
+      }
+    ],
+    "uncertaintyBoundary": "Joint favorable donor price is not a calibrated interval or expected return; no tuning to meet $100,000/10. The trial estimated a first-year difference using baseline/six-month utility, assumed from month1 through11 further months. It excluded18/306 for missing utility. Transfer uncertainty is explicit. This partial-health result does not establish that excluded portfolio programs have zero benefit.",
+    "fundingBoundary": "FY2024 functional expense$2,500,604 omits$4,037,544 rental costs already netted in revenue. The$294,366 charity-care transfer to PVSC is not a second cost on top of its clinical resources. Gross resources count all nominal outside inputs; net counts added outside inputs minus an assumed later-care offset. Restricted assets, property debt, insurance/public baseline, partner capacity and the actual next-gift package remain unresolved."
+  },
+  "evidence": [
+    {
+      "key": "organization",
+      "design": "Current primary program descriptions and2025 impact report",
+      "population": "Mixed clinical access, training and facilities portfolio",
+      "result": "2,542 surgeries in2025;570 charity cases cumulative since2020, not all annual first-eye cases.",
+      "transfer": "No division of mixed/cumulative output into annual foundation cost; annual charity first-eye count and residence unknown."
+    },
+    {
+      "key": "clinical",
+      "design": "Randomized-assignment economic analysis among288 of306 older women",
+      "population": "First-eye expedited surgery versus roughly one-year wait",
+      "result": "0.056 integrated QALY difference;18 missing six-month EQ-5D outcomes excluded.",
+      "transfer": "Utility shape was assumed for the year; no automatic attrition/success multiplier or extra falls effect. Local transfer remains a judgment."
+    },
+    {
+      "key": "finance",
+      "design": "Primary990 and related-entity schedule",
+      "population": "PVF, disregarded property entity and controlled surgery-center interest",
+      "result": "Internal charity transfer and separate rental netting expose broader financial scope.",
+      "transfer": "Standalone filing is not consolidated clinical revenue, whole resource consumption or marginal allocation."
+    }
+  ],
+  "reservations": [
+    "An ordinary gift cannot inherit100% selected-case allocation or100% SF residency.",
+    "Current referrals, clinical suitability, first-eye status and real wait without the gift are unknown.",
+    "PVSC/Lions/CPMC outcomes are jointly produced and must not be added again across reports.",
+    "The outside clinical cost and otherwise-later offset are both priors, not invoices or payer charges.",
+    "No consolidated audit was obtained; the current balance sheet does not identify unrestricted marginal funding room."
+  ],
+  "excludedBenefits": [
+    "Other cataract/second-eye, retina, corneal and glaucoma care",
+    "Low-vision rehabilitation and other clinical support",
+    "Residency, fellowship, research and professional education",
+    "Future facilities and surgery-center sustainability benefits",
+    "Fall-related gains already included in trial utility; no separate addition",
+    "Health beyond the one-year earlier-care contrast"
+  ],
+  "sources": [
+    {
+      "title": "What we do",
+      "publisher": "Pacific Vision Foundation",
+      "url": "https://pacificvisionfoundation.org/about/what-we-do/",
+      "published": "Undated current page",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary funding body, shared clinical pathway and wider mission."
+    },
+    {
+      "title": "For patients",
+      "publisher": "Pacific Vision Foundation",
+      "url": "https://pacificvisionfoundation.org/for-patients/",
+      "published": "Undated current page",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary uninsured eligibility and Lions referral route; narrower than impact report wording."
+    },
+    {
+      "title": "2025 impact report",
+      "publisher": "Pacific Vision Foundation",
+      "url": "https://pacificvisionfoundation.org/wp-content/uploads/2026/07/FINAL-DIGITAL-PVF-Impact-Report-2025.pdf",
+      "published": "Announced June 11, 2026; July 2026 PDF path",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary2025 activities/text; screenshot failed so chart shares/revenue not used. Annual surgery versus cumulative charity counts distinguished."
+    },
+    {
+      "title": "FY2024 Form990",
+      "publisher": "Pacific Vision Foundation; IRS filing hosted by ProPublica",
+      "url": "https://projects.propublica.org/nonprofits/organizations/942422439/202533219349304088/full",
+      "published": "November 17, 2025 filing",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary e-file return read; rental expenses netted outside functional expenses. Not an obtained consolidated audit."
+    },
+    {
+      "title": "FY2024 related organizations",
+      "publisher": "Pacific Vision Foundation; IRS ScheduleR",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202533219349304088/IRS990ScheduleR",
+      "published": "November 17, 2025 filing",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary SFOC/PVSC ownership and internal charity-care transfer; not independent duplicate resources."
+    },
+    {
+      "title": "Cost effectiveness of expedited cataract surgery",
+      "publisher": "First-eye trial economic investigators; British Journal of Ophthalmology",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2095519/",
+      "published": "2007",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary extraction retained from accepted legacy audit; direct current NIH access challenge. Missing18/306 and assumed one-year utility shape retained."
+    },
+    {
+      "title": "Monthly giving and exact recipient",
+      "publisher": "Pacific Vision Foundation",
+      "url": "https://pacificvisionfoundation.org/",
+      "published": "Undated current page; 2026 footer",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary EIN94-2422439; $250 monthly surgery appeal not a verified one-time complete course quote."
+    },
+    {
+      "title": "Ways to give",
+      "publisher": "Pacific Vision Foundation",
+      "url": "https://pacificvisionfoundation.org/ways-to-give/",
+      "published": "Undated official giving route",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Ordinary recipient; no independently verified cataract-restricted open tranche."
+    }
+  ]
+}

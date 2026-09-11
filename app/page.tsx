@@ -4,7 +4,6 @@ import compass from '@/data/san-francisco/compass-c-rent-qaly-bridge-audit-v1.js
 import { researchRankBySlug } from '@/lib/research-cost-ranking.mjs';
 import {unifiedResearch} from '@/lib/unified-research-index';
 
-import priorities from '@/data/bay/donor-priorities.json';
 import './sf-home.css';
 import './givebetter.css';
 /* eslint-disable @next/next/no-img-element -- Static editorial photos with reserved dimensions. */
@@ -77,7 +76,6 @@ export default function SanFranciscoHome() {
           </div>
         </div>
       </article>)}</section>
-      <section className="sf-home-priorities" id="giving-priorities"><h2>Ten priorities for giving</h2><p>Our editorial shortlist after 100 reports—not simply the ten lowest estimates. General support is possible today; a larger gift intended to expand care needs a confirmed funding plan.</p><ol>{priorities.map(item=>{const row=unifiedResearch.find(r=>r.href==='/charities/'+item.slug)!;return <li key={item.slug}><a href={root+'/research/city-theory#'+item.slug}>{row.organization}</a><span>{item.scope}</span></li>})}</ol><p><a href={root+'/research/city-theory'}>Why these ten, and what to ask before giving</a></p><p className="sf-home-note">A better life means 10 additional QALYs: ten years of full-health equivalent, potentially shared across people. No marginal health offer has been verified for this shortlist.</p></section>
       <footer className="sf-home-footer"><a href={`${root}/research`}>All research</a><p>Independent research. Not affiliated with GiveWell or the organizations reviewed.</p></footer>
     </main>
   </div>;

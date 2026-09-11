@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Homepage: keep V2 selection internal
+
+Removed the entire “Ten priorities for giving” homepage section and its unused import. The four featured charities and all-research link remain unchanged. The ten-organization V2 cohort is an internal deep-review queue, not an additional public recommendation list. Verify the canonical homepage after release; continue the V2 research separately.
+
 ## Research-list wording cleanup
 
 Remove whole-gift/whole-organization wording from /givebetter/research only, including its introduction. Display-only formatter leaves report/model scopes and numeric sources unchanged. Formatter tests, lint and production build pass; rendered89 rows retain identical order and prices within cross-runtime floating-point serialization tolerance. Canonical release verification follows. Next: top-ten V2 and staff-giving cohort; original110 milestone remains complete.

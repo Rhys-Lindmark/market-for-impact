@@ -748,6 +748,10 @@ Current accepted count47/115 (46SF-indexed plusAMF). WalkSF full CI nowgreen. Ne
 User requested the four lowest central estimates, not a separate editorial selection. Homepage now derives those four from the same finite positive-price Bay research list. Current main selects ReCARES, GLIDE, Breathe California, and Project Homeless Connect. Research models and 100-report count are unchanged. Production build, focused lint, and phone/tablet ranking-parity tests pass. Pending independent model corrections remain in their separate PRs; publication and canonical verification of this UI correction are next.
 ## Current priority: 110 reports, then top-ten V2
 
+### Final staff-giving alpha: Sogorea Te
+
+Independent accepted packet integrated without coefficient changes. Central readiness-only diagnostic $59.2B/10BayQALYs; signed mixture $1.17B. Complete organizational health remains unestimated; cultural and community mission value is not treated as zero. No verified marginal offer. Five staff leads yielded Bike East Bay and Sogorea Te reports, Causa Justa closure, and Cityside/KQED unestimated findings (preserved in docs/reports). Count111→112 only after canonical deployment verification; original110 and ten V2 milestones separate. Research-page contents standardization remains a pending user clarification following the screenshot comparison.
+
 ### Bike East Bay staff-giving alpha
 
 Accepted independent primary-source and arithmetic audit is preserved with a standalone model, report, API and central-ranked Bay entry. Central $104.28M per10 Bay QALYs versus separate signed mixture $19.09M; no coefficient retuning. This is whole annual expense with partial road-safety/activity health, not complete organization value or a marginal giving recommendation. Source-qualified personal staff giving is not GiveWell endorsement. Full tests, build and lint passed; publication advances110 to111 only after canonical checks. Sogorea Te remains the second accepted packet; three other staff leads remain explicit non-report findings. Original110 milestone and ten V2 counts stay separate.

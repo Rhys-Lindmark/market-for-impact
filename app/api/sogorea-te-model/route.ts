@@ -1,0 +1,2 @@
+import {calculate,worlds,expense} from '@/lib/sogorea-te-model.mjs';
+export function GET(){return Response.json({modelVersion:'sogorea-te-readiness-v1',completeOrganizationEstimate:null,verifiedMarginalFundingOffer:null,interpretation:'Readiness-only subjective diagnostic. Other mission benefits unquantified, not zero. Directory uses central case; signed mixture remains separate. Capital and external resource costs incomplete.',expense,worlds,evaluated:calculate()});}

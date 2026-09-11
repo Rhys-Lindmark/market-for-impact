@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## MiracleFeet — accepted international calibration report
+
+Published baseline81 includes Changent/NFP (PR270,v189) with canonical report/API/archive checks. MiracleFeet is the next audited comparator, in Expanded Geography Research only: $22,479 donor/$47,487 modeled gross per10 QALYs, zero direct Bay/SF credit. Exact GiveWell grant chain, whole-organization cost, finite utility priors, burden on all treated enrollments, signed uncertainty and unverified current funding room are explicit. Do not count until exact-source publication. Next accepted Spectrum and Berkeley Free Clinic, then corrected/audited La Casa, Code for America and Bay Area Legal Aid.
+
 ## Changent / Nurse-Family Partnership — audited national comparator
 
 Accepted v4 models both NFP and material Child First activity against full organization expense. Lifetime benefits use baseline-discounted survival and a transparent50% post-follow-up persistence prior; the follow-up-bound diagnostic is retained separately. Weighted donor/gross $10.24M/$15.49M per10 QALYs, with84.46% favorable-tail dependence and unmeasured Bay/SF shares. Giving HOLD; no verified marginal offer.496 tests and lint0 errors pass; final build and responsive verification underway. Published baseline80 includes BVHPF and shared UI releasev188; NFP becomes81 only after canonical publication. Next accepted MiracleFeet and Spectrum, then independently audited new Bay organizations.

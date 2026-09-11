@@ -60,6 +60,18 @@ We inspected the three latest located original Form 990 returns, not just an agg
 | End-of-year net assets | 3,285,858 | 2,595,103 | 2,327,068 |
 | Cash and savings | 2,352,170 | 918,214 | 1,054,801 |
 
+### FUF — functional expense shares
+
+Fiscal years ended June; original whole functional expense, not lower annual-impact-report expense.
+
+| Year | Denominator ($) | Program | Management/general | Fundraising | Total |
+|---|---:|---:|---:|---:|---:|
+| 2023 | 4,655,009 | 70.87% | 14.25% | 14.88% | 100.00% |
+| 2024 | 5,673,426 | 72.91% | 13.47% | 13.62% | 100.00% |
+| 2025 | 5,410,095 | 73.65% | 16.04% | 10.31% | 100.00% |
+
+Shares are calculated as category expense divided by the stated annual denominator. Rounding may make displayed shares differ slightly from 100%.
+
 The functional expense rows sum exactly to whole expense in each year. Government grants are a component of revenue, not extra resources to add to total revenue. The original event, gaming, and inventory direct-expense lines do not show a separate netted expense requiring an add-back. This differs from organizations where a return's headline expense omits costs netted against fundraising revenue.
 
 FY2025 government grants of $3,761,445 are about 73% of total revenue. This is strong evidence that public funding is a central part of the organization, not a minor outside alternative. It is not evidence that 73% of every donor's gift is displaced, nor that all government revenue is restricted to the street-tree output used here. Grant restrictions, renewal dates, allowable costs, and staff capacity determine how an ordinary gift changes the funded plan.

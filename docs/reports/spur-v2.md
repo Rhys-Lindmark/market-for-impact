@@ -86,6 +86,18 @@ These are the latest three Form 990 years linked from the official disclosure pa
 | [2023 / March 31, 2024](https://www.spur.org/sites/default/files/2025-01/SPUR_2023_Form_990.pdf), Part IX | $6,531,776 | $1,085,332 | $1,156,967 | $8,774,075 |
 | [2024 / March 31, 2025](https://www.spur.org/sites/default/files/2026-02/SPUR_2024_Form_990.pdf), Part IX | $4,319,540 | $770,385 | $987,899 | $6,077,824 |
 
+### SPUR — functional expense shares
+
+Fiscal years ended March31. Denominator is original Form990 functional expense, NOT audited/gross addback totals.
+
+| Year | Denominator ($) | Program | Management/general | Fundraising | Total |
+|---|---:|---:|---:|---:|---:|
+| 2023 | 8,437,499 | 76.54% | 10.45% | 13.01% | 100.00% |
+| 2024 | 8,774,075 | 74.44% | 12.37% | 13.19% | 100.00% |
+| 2025 | 6,077,824 | 71.07% | 12.68% | 16.25% | 100.00% |
+
+Shares are calculated as category expense divided by the stated annual denominator. Rounding may make displayed shares differ slightly from 100%.
+
 The latest return adds $30,000 to audited expense in Schedule D; Part IX places $30,000 in investment management. The previous return explicitly describes its analogous reconciliation as investment-management fees. FY2024–25 additionally reports $236,161 event costs outside functional expenses. Thus the gross accounting benchmark is **$6,313,985**, rather than either $6,047,824 audited functional expense or $6,077,824 tax functional expense alone. This is a resource-boundary clarification, not a reason to multiply the marginal-gift price by annual spending.
 
 The original 2022 filing itself contains a reconciliation discrepancy: Schedule D’s $8,438,592 differs from Part IX’s $8,437,499 by $1,093. Preserve both in the financial ledger and use the explicitly identified Part IX value in this table. The older gross-cost series is not fully reconciled here. The 2023 filing reports $185,934 netted event costs; those are additional to its functional expenses, not an extra program-health multiplier.

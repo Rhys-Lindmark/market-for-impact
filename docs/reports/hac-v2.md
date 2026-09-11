@@ -74,6 +74,18 @@ The [official financial page](https://housingactioncoalition.org/financials) lin
 | [2023](https://housingactioncoalition.org/s/SFHAC-2023-990-5.pdf) | $710,606 | $130,794 | $137,442 | $978,842 | $56,989 | $1,035,831 |
 | [2024](https://housingactioncoalition.org/s/SFHAC-2024-990-2-1.pdf) | $798,441 | $197,890 | $110,489 | $1,106,820 | $132,144 | $1,238,964 |
 
+### HAC — gross accounting shares
+
+Calendar years; denominator includes netted event expense. Functional subtotal is not another category.
+
+| Year | Denominator ($) | Program | Management/general | Fundraising | Netted event costs | Total |
+|---|---:|---:|---:|---:|---:|---:|
+| 2022 | 1,242,085 | 66.14% | 8.72% | 10.67% | 14.47% | 100.00% |
+| 2023 | 1,035,831 | 68.60% | 12.63% | 13.27% | 5.50% | 100.00% |
+| 2024 | 1,238,964 | 64.44% | 15.97% | 8.92% | 10.67% | 100.00% |
+
+Shares are calculated as category expense divided by the stated annual denominator. Rounding may make displayed shares differ slightly from 100%.
+
 Gross accounting expense adds direct event costs excluded from Part IX to avoid making fundraising events costless. It is not a measure of full societal resources or the cost of a particular additional activity. We do not subtract event sponsorships from the expense boundary or call the event's accounting loss the cost of producing housing. Revenue, costs and social benefits answer different questions.
 
 The latest return's program category combines educational work rather than providing separate audited totals for developer assistance, policy implementation and general education. The three-way allocation in the model is not derived from the program percentage. We use the complete gift in the numerator, so allocating a smaller fraction to quantified work does not remove management or fundraising costs from the hypothetical donor budget.

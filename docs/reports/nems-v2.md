@@ -84,6 +84,38 @@ For operating NEMS, the principal program categories reconcile as follows:
 | 2023 | $96,188,631 | $67,295,764 | $27,668,386 | $39,603,373 | $230,756,154 |
 | 2024 | $132,122,348 | $75,830,507 | $38,610,487 | $36,593,988 | $283,157,330 |
 
+### NEMS operator — whole known accounting shares
+
+Calendar years; use operator broader known accounting expense. Do not add Foundation expenses.
+
+| Year | Denominator ($) | Program | Management/general | Fundraising | Netted rental | Netted gaming | Total |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| 2022 | 183,986,996 | 73.95% | 25.91% | 0.00% | 0.13% | 0.01% | 100.00% |
+| 2023 | 305,787,476 | 75.46% | 24.46% | 0.00% | 0.08% | 0.01% | 100.00% |
+| 2024 | 354,570,511 | 79.86% | 20.07% | 0.00% | 0.07% | 0.01% | 100.00% |
+
+### NEMS operator — within-program mix
+
+Denominator is PROGRAM expense only; this nested mix must not be added to functional shares.
+
+| Year | Denominator ($) | Managed care | Medical | Pharmacy | Other programs | Total |
+|---|---:|---:|---:|---:|---:|---:|
+| 2022 | 136,064,977 | 30.64% | 38.33% | 15.52% | 15.51% | 100.00% |
+| 2023 | 230,756,154 | 41.68% | 29.16% | 11.99% | 17.16% | 100.00% |
+| 2024 | 283,157,330 | 46.66% | 26.78% | 13.64% | 12.92% | 100.00% |
+
+### NEMS Foundation — whole known accounting shares
+
+Separate recipient; calendar years, including identified netted rental costs. Intercompany elimination unresolved.
+
+| Year | Denominator ($) | Program | Management/general | Fundraising | Netted rental | Total |
+|---|---:|---:|---:|---:|---:|---:|
+| 2022 | 387,448 | 46.37% | 46.83% | 0.00% | 6.80% | 100.00% |
+| 2023 | 510,367 | 59.25% | 35.57% | 0.00% | 5.18% | 100.00% |
+| 2024 | 445,051 | 58.17% | 41.83% | 0.00% | 0.00% | 100.00% |
+
+Shares are calculated as category expense divided by the stated annual denominator. Rounding may make displayed shares differ slightly from 100%.
+
 Sources: original [2022 return](https://projects.propublica.org/nonprofits/full_text/202322989349302202/IRS990), [2023 return](https://projects.propublica.org/nonprofits/full_text/202442829349300639/IRS990) and [2024 return](https://projects.propublica.org/nonprofits/full_text/202523019349302247/IRS990), Part III. Other programs include dental, PACE and ancillary services; they are not a residual amount assumed to have no health value.
 
 The supporting functions and known separately netted costs are:

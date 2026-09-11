@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## SPUR V2 — validation complete, canonical release pending
+
+110/110 alpha and 2/10 V2 live (ReCARES and Breathe through PR301/Sites221). SPUR's independently accepted V2 is integrated with full ~7,200-word narrative, labeled summary, left ToC and three-year spending reconciliation. Central $2,191,060 per 10 Bay QALYs remains unchanged; no probability-weighted expectation invented. Housing, transit and heat pathways remain partial health estimates; governance and economic-security benefits unquantified. Existing public funding/adopted policies constrain incremental credit. 174 model checks plus narrative/ranking parity and full model suite pass; lint zero errors/three existing warnings, production build and phone/tablet/desktop checks pass. Next exact-commit canonical release, then accepted GLIDE/HOPE/HAC/Pacific Hearing drafts and PHC/NEMS cross-audits. V2 is an internal review set, not the removed homepage ten-priority section.
+
 ## Breathe V2 — validated, publication pending
 
 110/110 alpha reports remain published; ReCARES V2 is live through PR310/Sites220 (1/10 V2). Breathe's independently audited long-form V2 now uses FY2025 whole expense of $1,379,590 and explicit clinical-subset allocation: central $10,751,762 and weighted $12,346,598 per 10 Bay QALYs. Historical $5,739,210 coverage model/API remains separately accessible; no clinical coefficients tuned toward ranking. Three-year spending buckets now show the FY2024 zero-filled filing anomaly rather than inventing missing spending. Full model suite, lint (zero errors, three existing warnings), production build, phone/tablet report/API/index parity and desktop left-ToC checks pass. PR301 preserves its existing scoped follow-up work. Next: exact-commit release and canonical verification, then SPUR and the other accepted V2 drafts. No new live V2 count until deployment is verified.

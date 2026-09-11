@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Legal Link accepted release candidate89
+
+88/100 verified via BAMRU PR283/v198. LegalLink independent audit accepted full historical expense with partial training-to-health scope,$4.613M/10BayQALYs and99.73%favorabletail; HOLD giving. Do not treat prior trainee caseload as incremental clients or the city-funded planned advocate as an unfunded slot.536tests,lint0errors3oldwarnings,productionbuild and2phone/tablet checks pass. Exact-source publication and canonical verification remain. Original focused researcher intervals8m45s exclude scheduling gap; integration time is separate. Next Greenlight final audit; CAL-PEP evidence checkpoint; PVF advertised monthly250surgery claim requires clarification, not a verified offer. After100:top10 synthesis/funding diligence.
+
 ## BAMRU accepted exploratory report — candidate88
 
 87/100 canonically verified via BayLegal PR282/v197. BAMRU independent audit accepts corrected finite-input guards and exact saved-model parity; default$4.414M/10BayQALYs,98.37%favorable-tail dependence, HOLD giving. Current annual cash expense is an explicit40k–100k assumption, not verified financial accounts. Recorded original researcher interval11m21s, separate from integration and scheduling gaps.529tests,lint0errors3existingwarnings,productionbuild pass; responsive verification and exact-source publication required before count88. Research workers now focus LegalLink, GreenlightClinic and BRFN. After100, synthesize and investigate top10 marginal funding room. Do not force favorable findings or convert unknown room to a donation offer.

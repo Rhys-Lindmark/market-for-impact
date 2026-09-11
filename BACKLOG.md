@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Breathe V2 — validated, publication pending
+
+110/110 alpha reports remain published; ReCARES V2 is live through PR310/Sites220 (1/10 V2). Breathe's independently audited long-form V2 now uses FY2025 whole expense of $1,379,590 and explicit clinical-subset allocation: central $10,751,762 and weighted $12,346,598 per 10 Bay QALYs. Historical $5,739,210 coverage model/API remains separately accessible; no clinical coefficients tuned toward ranking. Three-year spending buckets now show the FY2024 zero-filled filing anomaly rather than inventing missing spending. Full model suite, lint (zero errors, three existing warnings), production build, phone/tablet report/API/index parity and desktop left-ToC checks pass. PR301 preserves its existing scoped follow-up work. Next: exact-commit release and canonical verification, then SPUR and the other accepted V2 drafts. No new live V2 count until deployment is verified.
+
 ## ReCARES V2 — accepted, release verification pending
 
 First frozen-cohort V2 report integrated with full prose, left ToC, three-year filings, reconciled annual spending shares and versioned model/API. Source-only update lowers central $128,892 to $74,720 and weighted $185,910 to $107,774 per10 Bay QALYs; no clinical/funding priors changed. Ranking now explicitly uses central, separately disclosed from that source update. Accrual expense is not cash paid; reserves and uncertain safe unique use keep giving on HOLD. Independent core/source audit accepted, 56 model checks plus parser/full-suite tests passed. Desktop/phone/tablet navigation, no overflow and index/home/API parity passed using new-build assets. Final build and canonical release gate remain. Alpha110 unchanged; V2 not counted live before verification. Next accepted drafts: Breathe and SPUR; GLIDE/HAC/HOPE research underway.

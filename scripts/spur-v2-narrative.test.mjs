@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {reportSections,markdownBlocks} from '../lib/report-markdown.mjs';
+import {calculateAll} from '../lib/spur-v2-model.mjs';
+import {researchCostRanking} from '../lib/research-cost-ranking.mjs';
+const {markdown}=JSON.parse(fs.readFileSync(new URL('../data/san-francisco/spur-v2-narrative.json',import.meta.url)));
+assert.equal(markdown,fs.readFileSync(new URL('../docs/reports/spur-v2.md',import.meta.url),'utf8'));
+assert(markdown.split(/\s+/).length>7000);
+const sections=reportSections(markdown);assert.equal(sections.length,10);
+const ids=new Set(sections.map(s=>s.id));
+for(const s of sections)for(const b of markdownBlocks(s.markdown))if(b.id)ids.add(b.id);
+for(const m of markdown.matchAll(/\]\(#([^)]*)\)/g))assert(ids.has(m[1]),m[1]);
+const central=calculateAll().find(s=>s.id==='central');
+assert.equal(researchCostRanking.find(s=>s.slug==='spur').bayUsdPerTenQalys,central.bayUsdPer10Qaly);
+assert.equal(central.weightedExpectation,null);

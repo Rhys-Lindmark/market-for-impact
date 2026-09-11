@@ -1,0 +1,3 @@
+import {calculate,DEFAULT_INPUTS,EVIDENCE_BRIDGE} from '@/lib/lacasa-model.mjs';
+import report from '@/data/bay/lacasa-report.json';
+export function GET(){return Response.json({modelVersion:report.modelVersion,inputs:DEFAULT_INPUTS,evidenceBridge:EVIDENCE_BRIDGE,sources:report.sources,evaluated:calculate(),verifiedMarginalFundingOffer:null,completeSocietalResourcesUsd:null,interpretation:'Exploratory whole-gift cost with a partial adult advocacy health pathway. Other portfolio benefits are unquantified, not established zero. Bay and SF shares are analyst priors. Gross multipliers are sensitivities, not complete resource accounting.'});}

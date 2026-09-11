@@ -1,5 +1,11 @@
 # Market for Impact backlog
 
+## La Casa publication phase — September10
+
+Actual block start2026-09-11T04:39:07Z.85 verified reports; La Casa is accepted exploratory release candidate86. Whole FY2025 IRS expense is retained against an explicitly partial adult-advocacy health pathway. Prior-weighted Bay estimate$22.70M/10Q, not the all-beneficiary$22.46M. No marginal funding offer; public agreement/proposed award semantics preserved; no mortality or unmeasured portfolio benefit added. Five original closed Sol intervals retained, with current lead attribution handled separately. Final independent geographic/schema check accepted; tests, lint, build and responsive checks precede publication.
+
+Next high-EV discovery should change mechanisms, not tune prior unfavorable reports. Unknown funding room is a caveat, not automatically a reason to abandon an otherwise defensible exploratory model.
+
 ## Verified85 and next La Casa handoff
 
 MELP PR280/v195 source03ff5ff67bc35806d682452db016190a51cb6290 canonically verified at390/768 after native publication2026-09-11T04:25:05.401561Z.85 total=66 local+19 expanded; no top-four change.524tests,lint0errors3oldwarnings,build,16responsive checks. Shared clinical-prior API and reciprocal report disclosures preserve both base models. CodeQL passes; remote mobile workflow pending at verification.

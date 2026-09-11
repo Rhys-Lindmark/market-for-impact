@@ -1,0 +1,312 @@
+{
+  "organization": "La Casa de las Madres",
+  "eyebrow": "EXPLORATORY CHARITY RESEARCH · BAY AREA",
+  "program": "Domestic-violence shelter, advocacy, counseling, crisis response and prevention",
+  "donationUrl": "https://www.lacasa.org/donate",
+  "published": "10 September 2026",
+  "modelVersion": "lacasa-whole-org-v1",
+  "nutshell": {
+    "headline": "Our exploratory model estimates $22.70 million per 10 Bay QALYs; this is not a giving recommendation.",
+    "body": "A $100,000 ordinary whole-organization gift produces 0.044061 signed prior-weighted Bay QALYs, or $22,695,319 per 10. Across all modeled beneficiaries, the estimate is $22,460,767 donor cash and $26,728,312 modeled gross resources per 10 QALYs. Observed QALYs and verified marginal capacity remain unknown.",
+    "whyItMayWork": "Safety-focused advocacy and practical support may reduce abuse and improve short-term health. External intensive post-shelter advocacy trials provide some support for this pathway.",
+    "whyWeAreCautious": "The external intervention differs from La Casa's mixed services. Additionality, advocacy dose, geography and the finite utility bridge are judgments; a 5%-weight favorable world supplies 86.9% of all-beneficiary expected net benefit.",
+    "recommendationBlocker": "Establish a priced additional service or preservation plan, its funding counterfactual, unduplicated recipients, advocacy dose and finite health outcomes before recommending a gift."
+  },
+  "summary": [
+    {
+      "label": "BAY WHOLE GIFT",
+      "value": "$22.70M",
+      "detail": "$22,695,319 per 10 signed prior-weighted Bay QALYs; residence shares are assumptions"
+    },
+    {
+      "label": "ALL BENEFICIARIES",
+      "value": "$22.46M",
+      "detail": "$22,460,767 donor cash per 10 modeled QALYs, not the Bay ranking field"
+    },
+    {
+      "label": "MODELED GROSS",
+      "value": "$26.73M",
+      "detail": "all-beneficiary resource sensitivity; verified complete gross resources are unavailable"
+    },
+    {
+      "label": "GIVING VERDICT",
+      "value": "HOLD",
+      "detail": "no verified marginal capacity or observed QALY estimate"
+    }
+  ],
+  "programSection": {
+    "body": "La Casa de las Madres, EIN 94-2330864, provides emergency shelter, community advocacy and counseling, police-response follow-up, statewide crisis lines, supportive-housing services and prevention. Its 2025 report describes 1,384 Bay Area survivors of all ages receiving direct services.",
+    "steps": [
+      {
+        "title": "Connect with safety and support",
+        "detail": "Survivors reach crisis response, shelter, a community office or partner co-locations."
+      },
+      {
+        "title": "Receive appropriate advocacy",
+        "detail": "Only an assumed adult-eligible fraction receiving an intensive-advocacy-equivalent dose enters the health bridge."
+      },
+      {
+        "title": "Count finite additional benefit",
+        "detail": "Apply funding additionality and a signed finite QALY effect; other contacts and overlapping programs are not separately added."
+      }
+    ],
+    "boundary": "All FY2025 IRS expense of $4,560,661 is charged. The 1,384 direct-service umbrella is non-additive: 885 community-office users, 815 co-location users, 231 sheltered people, 6,571 shelter service-days, 2,226 police contacts and 6,151 calls/texts are not summed. This retains whole-organization costs while leaving non-advocacy health pathways unquantified, not proven zero."
+  },
+  "model": {
+    "headline": "Signed expected Bay cost: $22,695,319 per 10 QALYs",
+    "body": "Compute each joint scenario's signed QALYs, weight health outcomes, then divide the whole gift by the weighted result. Do not average prices or discard harmful worlds.",
+    "equation": {
+      "label": "CENTRAL ADVOCACY PATHWAY",
+      "expression": "QBay = (100000 / 4560661) × 1384 × .70 adult-eligible × .20 full advocacy dose × .15 funding additionality × .05 finite QALY × .98 Bay share",
+      "result": "Central Bay QALYs = 0.031226; all-beneficiary central donor cost = $31,383,574 per 10 QALYs. The prior-weighted Bay headline is not this central scenario."
+    },
+    "inputColumnLabel": "Source anchors and analyst judgments",
+    "inputs": [
+      {
+        "key": "cost",
+        "label": "Whole annual expense",
+        "best": "$4,560,661 FY2025 IRS",
+        "range": "Annual report: $4,525,216",
+        "confidence": "Reported accounting; reconciliation incomplete",
+        "basis": "No overhead or non-advocacy cost removed. Reported $95,586 in-kind input is not assumed included in IRS expense or mechanically added."
+      },
+      {
+        "key": "recipients",
+        "label": "Broad direct-service umbrella",
+        "best": "1,384",
+        "range": "885 community-office subset diagnostic",
+        "confidence": "Organization-reported, not a verified unique-dose census",
+        "basis": "Mixed ages and services; overlapping outputs are not added."
+      },
+      {
+        "key": "adult",
+        "label": "Adult eligibility and full advocacy dose",
+        "best": "70% × 20% central",
+        "range": "Adult share 50–85%; dose 5–50%",
+        "confidence": "Analyst priors",
+        "basis": "External intensive post-shelter advocacy evidence cannot be assigned to every person, child, call or brief contact."
+      },
+      {
+        "key": "additionality",
+        "label": "Funding additionality",
+        "best": "15% central",
+        "range": "0–40%",
+        "confidence": "Analyst prior; no marginal offer",
+        "basis": "Public funding, other gifts, reserves and operational capacity may replace or constrain a gift's additional services."
+      },
+      {
+        "key": "qaly",
+        "label": "Finite QALY bridge",
+        "best": "0.05 per full advocacy equivalent",
+        "range": "−0.02 harm to 0.15 favorable",
+        "confidence": "Unvalidated cross-study heuristic",
+        "basis": "1/8 responders × (0.85−0.63) modeled annual utility gap × 2 years = 0.055, rounded down to 0.05. A 24-month abuse endpoint does not establish continuous two-year remission. Advocate-state utility is only 0.65. The 0.15 tail is a wide judgment, not measured benefit; no mortality credit."
+      },
+      {
+        "key": "geo",
+        "label": "Recipient geography",
+        "best": "98% Bay / 85% SF central",
+        "range": "Bay 90–99%; nested SF 70–95%",
+        "confidence": "Analyst residence priors",
+        "basis": "Annual report supports Bay presence, not exact residence shares. Statewide hotline receives no direct health credit."
+      },
+      {
+        "key": "weights",
+        "label": "Joint scenario weights",
+        "best": "5/25/20/25/20/5%",
+        "range": "Harm / funding-null / evidence-null / cautious / central / favorable",
+        "confidence": "Subjective priors, not statistical confidence",
+        "basis": "Null and negative outcomes are retained. Favorable contribution is 86.9% of all-beneficiary weighted net QALYs."
+      },
+      {
+        "key": "resources",
+        "label": "Gross-resource multiplier",
+        "best": "1.15 central",
+        "range": "1.10–1.50",
+        "confidence": "Sensitivity, not complete accounting",
+        "basis": "Intended to encompass unreconciled in-kind and unpriced partner inputs. Verified complete gross resource cost remains unavailable."
+      }
+    ],
+    "giftHeading": "Illustrative $100,000 ordinary gift",
+    "sensitivity": [
+      {
+        "case": "harm",
+        "headline": "Negative Bay health outcome",
+        "detail": "5% weight; −0.011470 Bay QALYs. Nonpositive outcomes have no positive cost-effectiveness ratio."
+      },
+      {
+        "case": "funding-null",
+        "headline": "Zero additional health",
+        "detail": "25% weight; funding additionality zero. Full gift cost remains."
+      },
+      {
+        "case": "evidence-null",
+        "headline": "Zero health effect",
+        "detail": "20% weight; the transferred advocacy effect is zero."
+      },
+      {
+        "case": "cautious",
+        "headline": "0.000341 Bay QALYs",
+        "detail": "25% weight; low adult eligibility, dose and funding additionality."
+      },
+      {
+        "case": "central",
+        "headline": "0.031226 Bay QALYs",
+        "detail": "20% weight; 0.05 finite QALY per full advocacy equivalent. All-beneficiary central price is $31,383,574 per 10."
+      },
+      {
+        "case": "favorable",
+        "headline": "0.766096 Bay QALYs",
+        "detail": "5% weight; 0.15 finite QALY per equivalent. All-beneficiary favorable price is $1,292,264 per 10, not a quoted donation offer."
+      },
+      {
+        "case": "favorable contribution removed",
+        "headline": "$171,517,256 per 10 all-beneficiary QALYs",
+        "detail": "Original-weight favorable contribution is removed without renormalization; this is the saved model diagnostic, not a Bay ratio."
+      }
+    ],
+    "uncertaintyBoundary": "The finite bridge combines heterogeneous advocacy and state-utility evidence. Duration, response, eligibility and dose are not measured La Casa effects. No mortality, lifetime or separate additive shelter/prevention benefit is credited. Linear gift scaling is an accounting assumption, not verified large-gift absorption capacity.",
+    "fundingBoundary": "No verified marginal funding offer. FY2025 IRS revenue is $5,062,993, surplus $502,332 and net assets $13,476,875; assets are not all current unrestricted cash. A city executed-agreement report lists Verona Hotel support services through June2027, total NTE $1,332,681, supporting 65 housing units. A draft FY2026–27 plan recommends $165,000 for shelter/case management; final executed award was not verified. These are baseline funding records, not prices for additional advocacy. Public funding and private gifts overlap; no entire grant is subtracted from whole expense. Promotional $100 shelter-night examples are not binding marginal prices."
+  },
+  "evidence": [
+    {
+      "key": "monitoring",
+      "design": "Organization-reported FY2025 activity and finances",
+      "population": "La Casa's mixed-age direct-service population",
+      "result": "Annual report gives a broad 1,384 Bay survivor umbrella alongside overlapping service counts and self-reported outcomes.",
+      "transfer": "Outputs establish delivery, not causal QALYs. Do not sum contacts or interpret success surveys as effects versus a counterfactual."
+    },
+    {
+      "key": "advocacy-trial",
+      "design": "Randomized trial, Sullivan and Bybee",
+      "population": "278 former shelter residents receiving ten weeks of advocacy or control",
+      "result": "Authors report reduced violence and better quality-of-life-related outcomes across two-year follow-up, with 95% retained.",
+      "transfer": "An intensive post-shelter intervention is not La Casa's whole portfolio. Present-day dose, adult eligibility and response remain uncertain."
+    },
+    {
+      "key": "cochrane",
+      "design": "Systematic review of randomized and quasi-randomized advocacy trials",
+      "population": "Women experiencing intimate partner abuse in varied settings",
+      "result": "Intensive advocacy may improve some short-term quality-of-life and abuse outcomes; evidence is heterogeneous, often low quality, and several outcomes include no benefit.",
+      "transfer": "The NNT≈8 at 24 months is not observed QALY gain or proof of two continuous years without abuse. Null and harm priors remain explicit."
+    },
+    {
+      "key": "utility",
+      "design": "UK decision-model state utilities",
+      "population": "Modeled abused and not-abused states, not La Casa participants",
+      "result": "Utilities used include 0.63 abused/unidentified, 0.65 seeing an advocate and 0.85 not abused.",
+      "transfer": "Combining the 0.22 gap with an advocacy response rate and finite duration is an analyst heuristic; the full gap is not the measured effect of seeing an advocate."
+    },
+    {
+      "key": "cti-null",
+      "design": "Randomized critical-time-intervention trial",
+      "population": "136 women in nine Dutch shelters",
+      "result": "At nine months PTSD improved, but primary quality of life and several re-abuse and mental-health outcomes were null.",
+      "transfer": "Different intervention and setting; supports caution rather than supplying a La Casa coefficient."
+    },
+    {
+      "key": "public-baseline",
+      "design": "City executed-agreement reporting and draft funding recommendations",
+      "population": "La Casa housing support and shelter programs",
+      "result": "Documented Verona support agreement extends through June2027; separate FY2026–27 shelter support is proposed.",
+      "transfer": "Distinguish executed baseline agreements from proposals; neither demonstrates gift-triggered additional capacity."
+    }
+  ],
+  "reservations": [
+    "The modeled result is unfavorable and is not a recommendation to give.",
+    "86.9% of all-beneficiary expected net QALYs comes from a 5%-weight favorable prior.",
+    "No observed La Casa QALY effect, verified advocacy-dose mix or marginal funding offer was found.",
+    "Public funding, other donors and reserves complicate additionality; assets do not establish unrestricted liquid availability.",
+    "The two-year health bridge assumes persistence not established by a 24-month outcome measurement.",
+    "Bay and SF shares are unmeasured residence priors; all costs are retained even for unquantified services.",
+    "In-kind reconciliation and complete external resource costs remain unknown."
+  ],
+  "excludedBenefits": [
+    "Mortality prevention and lifetime effects",
+    "Separate additive hotline, police-response, shelter, prevention and co-location QALYs",
+    "Child and caregiver health effects beyond the modeled adult advocacy pathway",
+    "Financial savings, housing value and taxpayer savings as QALYs"
+  ],
+  "sources": [
+    {
+      "publisher": "La Casa de las Madres",
+      "title": "FY2025 annual report",
+      "url": "https://www.lacasa.org/s/2025-Annual-Report.pdf",
+      "published": "FY2025; publication date unspecified",
+      "retrieved": "2026-09-11",
+      "sourceType": "Official annual report"
+    },
+    {
+      "publisher": "IRS via ProPublica",
+      "title": "La Casa filing index, EIN 94-2330864",
+      "url": "https://projects.propublica.org/nonprofits/organizations/942330864",
+      "published": "FY2025 filing; filed 2026-02-28 per index",
+      "retrieved": "2026-09-10",
+      "sourceType": "Tax-filing mirror"
+    },
+    {
+      "publisher": "La Casa de las Madres / auditor",
+      "title": "FY2024 financial statements",
+      "url": "https://www.lacasa.org/s/La-Casa-Final-24-FS-1.pdf",
+      "published": "FY2024; issue date not recorded",
+      "retrieved": "2026-09-10",
+      "sourceType": "Official audited financial statements"
+    },
+    {
+      "publisher": "La Casa de las Madres",
+      "title": "Official giving page",
+      "url": "https://www.lacasa.org/donate",
+      "published": "Undated",
+      "retrieved": "2026-09-11",
+      "sourceType": "Official donation route"
+    },
+    {
+      "publisher": "Sullivan and Bybee / PubMed",
+      "title": "Intensive advocacy randomized trial",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/10028208/",
+      "published": "1999",
+      "retrieved": "2026-09-10",
+      "sourceType": "Primary randomized study"
+    },
+    {
+      "publisher": "Cochrane / PubMed Central",
+      "title": "Advocacy interventions for women experiencing intimate partner abuse",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9392211/",
+      "published": "Date not recorded in accepted source map",
+      "retrieved": "2026-09-10",
+      "sourceType": "Systematic review"
+    },
+    {
+      "publisher": "PubMed Central",
+      "title": "Intimate-partner-violence utility-state decision model",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6119435/",
+      "published": "Date not recorded in accepted source map",
+      "retrieved": "2026-09-10",
+      "sourceType": "Decision-model utility calibration"
+    },
+    {
+      "publisher": "International Journal of Public Health",
+      "title": "Dutch critical time intervention randomized trial",
+      "url": "https://link.springer.com/article/10.1007/s00038-017-1067-1",
+      "published": "2017",
+      "retrieved": "2026-09-10",
+      "sourceType": "Primary randomized study"
+    },
+    {
+      "publisher": "San Francisco Department of Homelessness and Supportive Housing",
+      "title": "FY2025–26 Q1 executed-agreement report",
+      "url": "https://media.api.sf.gov/documents/Ch_21B_FY_2025-26_Q1_Report_1HVXzm9.pdf",
+      "published": "2025-10-31",
+      "retrieved": "2026-09-11",
+      "sourceType": "Government executed-agreement report"
+    },
+    {
+      "publisher": "City and County of San Francisco",
+      "title": "Draft FY2026–27 funding recommendations",
+      "url": "https://media.api.sf.gov/documents/Draft_2026-2027_Action_Plan_Funding_Recommendations_Excerpt_KULWnVn.pdf",
+      "published": "FY2026–27 draft; exact issue date not recorded",
+      "retrieved": "2026-09-11",
+      "sourceType": "Proposed government funding, not executed award"
+    }
+  ]
+}

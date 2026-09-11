@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Three selected local rescue reports — release candidate
+
+Baseline100 published; Micah's Hugs, Berkeley NEED and HOPE Pacifica add three distinct recipients when this release is canonically verified. All three independently accepted as exploratory research, giving on hold. Central scenarios are $4.752M, $2.079M and $555K per10 Bay QALYs; separate signed weighted estimates ($411K, $586K, $763K) are tail-sensitive and are not substituted for the explicitly central ranking. Whole costs and partial-health scope retained; HOPE annual expenses remain unobserved priors. Report/API/index parity, original saved-output tests, 744 suite tests, lint without errors and phone/tablet navigation checks passed before final build. No verified marginal funding offer. Next: exact-commit publication/canonical checks, then AHC/Rainbow/EDI accepted packets and remaining selected ten. V2 requirements live in discovery PR305 (30min, operating-status/three-year filings, GiveWell-depth prose and spending breakdown, at least two distinct mechanisms).
+
 ## PVF whole-gift correction — active, not published
 
 100 reports unchanged. Dedicated research/pvf-whole-gift-release worktree ports the accepted PR249 PVF assets only; no OA/Clinic regression. Independent review and 3,862 author checks accept central $7,936,507.94 per 10 Bay QALYs for whole-gift cost with first-eye health only; 90% assumed allocation health remains unquantified, not zero. Report/API/ranking now wired together locally; historical conditional $714,286 model/API preserved. Initial build passes. Remaining: reconcile synthesis text/tests, source metadata/readability, responsive report/API/index parity, lint and final build; commit/PR/exact-source deployment. No new count or verified marginal offer. Current block started2026-09-11T11:02:33Z.

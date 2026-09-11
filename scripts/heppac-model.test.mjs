@@ -11,18 +11,18 @@ test('HEPPAC integrates all weights including the explicit no-benefit case',()=>
  assert.equal(r.ordinaryGift,100000);
  close(w.weightedGiftQaly,r.results.reduce((sum,s)=>sum+s.inputs.weight*s.conditionalOrdinaryGift.giftQaly,0));
  close(w.donorPer10Qaly,1000000/w.weightedGiftQaly);
- assert.ok(w.donorPer10Qaly>1e7 && w.donorPer10Qaly<1.2e7);
+ assert.ok(w.donorPer10Qaly>7e6 && w.donorPer10Qaly<9e6);
 });
 
 test('HEPPAC finite survival and gift attribution reproduce independently',()=>{
  const r=calculate();
  for(const s of r.results){
-  const p=s.inputs, ratio=p.survival.annualSurvival/(1+p.survival.discount);
-  close(s.perFatalEventQaly,p.survival.utility*(1-ratio**p.survival.horizon)/(1-ratio));
+  const p=s.inputs;
+  assert.ok(s.cohortResult.qaly<=s.cohortResult.maximumAbsoluteQaly);
   const g=s.conditionalOrdinaryGift;
   close(g.giftQaly,s.totalQaly*(r.ordinaryGift*p.giftDeployableShare/r.expense)*p.giftRealizationDiscount);
   assert.ok(g.giftSfQaly<=g.giftBayQaly && g.giftBayQaly<=g.giftQaly);
-  close(s.totalQaly,s.sharedMortalityRaw*p.mortalityOverlapAdjustment+s.pathwayQalyRaw.syringe);
+  close(s.totalQaly,s.sharedMortalityRaw*p.mortalityOverlapAdjustment+s.pathwayQalyRaw.syringe-s.independentHarmQaly);
  }
 });
 

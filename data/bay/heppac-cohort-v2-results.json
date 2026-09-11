@@ -1,0 +1,323 @@
+{
+  "expense": 4953186,
+  "ordinaryGift": 100000,
+  "zeroCreditPathways": [
+    "drop-in basic needs",
+    "HIV/HCV screening-counseling-referral-linkage",
+    "community/mobile outreach and condoms",
+    "abscess wound care",
+    "acupuncture/herbalist",
+    "B-DUHB interventions",
+    "unresolved fiscal-sponsorship/pass-through activity"
+  ],
+  "noBenefit": {
+    "weight": 0.2,
+    "totalQaly": 0,
+    "giftQaly": 0,
+    "grossResources": 110000.00000000001,
+    "illustrativeWholeOrgSpendingPer10AttributedQaly": null,
+    "illustrativeGrossPer10AttributedQaly": null,
+    "conditionalOrdinaryGiftDonorPer10Qaly": null,
+    "conditionalOrdinaryGiftGrossPer10Qaly": null,
+    "interpretation": "infinite/undefined spending per QALY"
+  },
+  "conditionalOrdinaryGiftWeighted": {
+    "scenarioWeights": {
+      "downside": 0.24,
+      "central": 0.48,
+      "favorable-stress": 0.08,
+      "no-benefit": 0.2
+    },
+    "gift": 100000,
+    "weightedGiftQaly": 0.1255735512718731,
+    "weightedBayGiftQaly": 0.12294876734953836,
+    "weightedSfGiftQaly": 0.005272188014768938,
+    "donorPer10Qaly": 7963460.377376357,
+    "grossResources": 114000,
+    "grossPer10Qaly": 9078344.830209047,
+    "bayDonorPer10Qaly": 8133469.099019436,
+    "sfDonorPer10Qaly": 189674571.01277646,
+    "interpretation": "reasoned-prior conditional estimate including explicit no-benefit weight; not a verified funding offer or empirically identified effect"
+  },
+  "results": [
+    {
+      "name": "downside",
+      "pathwayQalyRaw": {
+        "naloxone": 0.24613642871457997,
+        "moud": 0.3125,
+        "syringe": 0.09375,
+        "drugChecking": 0.004192436878559396
+      },
+      "sharedMortalityRaw": 0.5628288655931394,
+      "sharedMortalityAdjusted": 0.4502630924745115,
+      "totalQaly": 0.5440130924745115,
+      "illustrativeWholeOrgSpendingPer10AttributedQaly": 91049021.95404553,
+      "illustrativeGrossResources": 5448504.600000001,
+      "illustrativeGrossPer10AttributedQaly": 100153924.14945011,
+      "conditionalOrdinaryGift": {
+        "gift": 100000,
+        "annualOrgAttributedQaly": 0.5440130924745115,
+        "giftQaly": 0.0015376332111580629,
+        "giftBayQaly": 0.0013069882294843534,
+        "giftSfQaly": 0,
+        "donorPer10Qaly": 650350156.814611,
+        "grossResources": 110000.00000000001,
+        "grossPer10Qaly": 715385172.4960722,
+        "bayDonorPer10Qaly": 765117831.5466012,
+        "sfDonorPer10Qaly": null
+      },
+      "inputs": {
+        "name": "downside",
+        "weight": 0.24,
+        "giftDeployableShare": 0.2,
+        "giftRealizationDiscount": 0.7,
+        "bayImpactSharePrior": 0.85,
+        "sfImpactSharePrior": 0,
+        "grossMultiplier": 1.1,
+        "mortalityOverlapAdjustment": 0.8,
+        "survival": {
+          "horizon": 5,
+          "annualSurvival": 0.65,
+          "utility": 0.55,
+          "discount": 0.03
+        },
+        "naloxone": {
+          "reversals": 20,
+          "otherwiseFatal": 0.05,
+          "attribution": 0.6,
+          "outcomeAdditionality": 0.25
+        },
+        "moud": {
+          "starts": 10,
+          "retainedEffective": 0.5,
+          "qalyPerRetainedEffectiveEngagementSensitivity": 0.25,
+          "outcomeAdditionality": 0.25
+        },
+        "syringe": {
+          "infectionsAverted": 0.25,
+          "attribution": 0.5,
+          "qaly": 3,
+          "outcomeAdditionality": 0.25
+        },
+        "checking": {
+          "fatalOverdosesAverted": 0.05,
+          "attribution": 0.25,
+          "outcomeAdditionality": 0.25
+        }
+      },
+      "oldEventLinearNaloxoneQaly": 0.20123697017085102,
+      "cohortInputs": {
+        "uniquePeople": 6.666666666666667,
+        "opportunitiesPerPersonYear": 3,
+        "otherwiseFatal": 0.05,
+        "baselineRescue": 0,
+        "rescueIncrement": 1,
+        "otherHazard": 0.1,
+        "postHazard": 0.1,
+        "activeYears": 1,
+        "horizonYears": 5,
+        "utility": 0.55,
+        "discount": 0.03,
+        "delayYears": 0
+      },
+      "cohortResult": {
+        "baseHazard": 0.25,
+        "supportedHazard": 0.1,
+        "activeSurvivalYears": 0.06554547578741798,
+        "postSupportSurvivalYears": 0.38197530369363647,
+        "survivalGap": 0.12603663496455464,
+        "qPerPerson": 0.24613642871457997,
+        "qaly": 1.6409095247638665,
+        "maximumAbsoluteQaly": 17.042902702037146
+      },
+      "independentHarmQaly": 0
+    },
+    {
+      "name": "central",
+      "pathwayQalyRaw": {
+        "naloxone": 6.478450241759676,
+        "moud": 3.75,
+        "syringe": 1.625,
+        "drugChecking": 0.14317996585830978
+      },
+      "sharedMortalityRaw": 10.371630207617986,
+      "sharedMortalityAdjusted": 7.26014114533259,
+      "totalQaly": 8.88514114533259,
+      "illustrativeWholeOrgSpendingPer10AttributedQaly": 5574684.654955576,
+      "illustrativeGrossResources": 5696163.899999999,
+      "illustrativeGrossPer10AttributedQaly": 6410887.353198912,
+      "conditionalOrdinaryGift": {
+        "gift": 100000,
+        "annualOrgAttributedQaly": 8.88514114533259,
+        "giftQaly": 0.06861374654797367,
+        "giftBayQaly": 0.06518305922057498,
+        "giftSfQaly": 0.0013722749309594735,
+        "donorPer10Qaly": 14574338.967204122,
+        "grossResources": 114999.99999999999,
+        "grossPer10Qaly": 16760489.812284738,
+        "bayDonorPer10Qaly": 15341409.439162236,
+        "sfDonorPer10Qaly": 728716948.360206
+      },
+      "inputs": {
+        "name": "central",
+        "weight": 0.48,
+        "giftDeployableShare": 0.45,
+        "giftRealizationDiscount": 0.85,
+        "bayImpactSharePrior": 0.95,
+        "sfImpactSharePrior": 0.02,
+        "grossMultiplier": 1.15,
+        "mortalityOverlapAdjustment": 0.7,
+        "survival": {
+          "horizon": 10,
+          "annualSurvival": 0.75,
+          "utility": 0.65,
+          "discount": 0.03
+        },
+        "naloxone": {
+          "reversals": 50,
+          "otherwiseFatal": 0.1,
+          "attribution": 0.75,
+          "outcomeAdditionality": 0.5
+        },
+        "moud": {
+          "starts": 25,
+          "retainedEffective": 0.6,
+          "qalyPerRetainedEffectiveEngagementSensitivity": 0.5,
+          "outcomeAdditionality": 0.5
+        },
+        "syringe": {
+          "infectionsAverted": 1,
+          "attribution": 0.65,
+          "qaly": 5,
+          "outcomeAdditionality": 0.5
+        },
+        "checking": {
+          "fatalOverdosesAverted": 0.25,
+          "attribution": 0.5,
+          "outcomeAdditionality": 0.5
+        }
+      },
+      "oldEventLinearNaloxoneQaly": 4.295398975749293,
+      "cohortInputs": {
+        "uniquePeople": 25,
+        "opportunitiesPerPersonYear": 2,
+        "otherwiseFatal": 0.1,
+        "baselineRescue": 0,
+        "rescueIncrement": 1,
+        "otherHazard": 0.07,
+        "postHazard": 0.07,
+        "activeYears": 1,
+        "horizonYears": 10,
+        "utility": 0.65,
+        "discount": 0.03,
+        "delayYears": 0
+      },
+      "cohortResult": {
+        "baseHazard": 0.27,
+        "supportedHazard": 0.07,
+        "activeSurvivalYears": 0.08771191968435343,
+        "postSupportSurvivalYears": 0.9754183763992856,
+        "survivalGap": 0.16901432556909513,
+        "qPerPerson": 0.6910346924543654,
+        "qaly": 17.275867311359136,
+        "maximumAbsoluteQaly": 140.68478989597054
+      },
+      "independentHarmQaly": 0
+    },
+    {
+      "name": "favorable-stress",
+      "pathwayQalyRaw": {
+        "naloxone": 90.88229725621842,
+        "moud": 26.25,
+        "syringe": 14.400000000000002,
+        "drugChecking": 2.047552590618478
+      },
+      "sharedMortalityRaw": 119.1798498468369,
+      "sharedMortalityAdjusted": 71.50790990810214,
+      "totalQaly": 85.90790990810214,
+      "illustrativeWholeOrgSpendingPer10AttributedQaly": 576569.2594894402,
+      "illustrativeGrossResources": 6439141.8,
+      "illustrativeGrossPer10AttributedQaly": 749540.0373362723,
+      "conditionalOrdinaryGift": {
+        "gift": 100000,
+        "annualOrgAttributedQaly": 85.90790990810214,
+        "giftQaly": 1.1533740119770977,
+        "giftBayQaly": 1.1418402718573266,
+        "giftSfQaly": 0.057668700598854886,
+        "donorPer10Qaly": 867021.4428412636,
+        "grossResources": 130000,
+        "grossPer10Qaly": 1127127.8756936425,
+        "bayDonorPer10Qaly": 875779.2351931955,
+        "sfDonorPer10Qaly": 17340428.85682527
+      },
+      "inputs": {
+        "name": "favorable-stress",
+        "weight": 0.08,
+        "giftDeployableShare": 0.7,
+        "giftRealizationDiscount": 0.95,
+        "bayImpactSharePrior": 0.99,
+        "sfImpactSharePrior": 0.05,
+        "grossMultiplier": 1.3,
+        "mortalityOverlapAdjustment": 0.6,
+        "survival": {
+          "horizon": 20,
+          "annualSurvival": 0.82,
+          "utility": 0.75,
+          "discount": 0.03
+        },
+        "naloxone": {
+          "reversals": 137,
+          "otherwiseFatal": 0.15,
+          "attribution": 0.85,
+          "outcomeAdditionality": 0.75
+        },
+        "moud": {
+          "starts": 50,
+          "retainedEffective": 0.7,
+          "qalyPerRetainedEffectiveEngagementSensitivity": 1,
+          "outcomeAdditionality": 0.75
+        },
+        "syringe": {
+          "infectionsAverted": 3,
+          "attribution": 0.8,
+          "qaly": 8,
+          "outcomeAdditionality": 0.75
+        },
+        "checking": {
+          "fatalOverdosesAverted": 1,
+          "attribution": 0.75,
+          "outcomeAdditionality": 0.75
+        }
+      },
+      "oldEventLinearNaloxoneQaly": 47.687499835504354,
+      "cohortInputs": {
+        "uniquePeople": 91.33333333333333,
+        "opportunitiesPerPersonYear": 1.5,
+        "otherwiseFatal": 0.15,
+        "baselineRescue": 0,
+        "rescueIncrement": 1,
+        "otherHazard": 0.04,
+        "postHazard": 0.04,
+        "activeYears": 1,
+        "horizonYears": 20,
+        "utility": 0.75,
+        "discount": 0.03,
+        "delayYears": 0
+      },
+      "cohortResult": {
+        "baseHazard": 0.26499999999999996,
+        "supportedHazard": 0.04,
+        "activeSurvivalYears": 0.09983686991642271,
+        "postSupportSurvivalYears": 1.9813378203648064,
+        "survivalGap": 0.1935834891764675,
+        "qPerPerson": 1.560881017710922,
+        "qaly": 142.5604662842642,
+        "maximumAbsoluteQaly": 1034.3183254991952
+      },
+      "independentHarmQaly": 0
+    }
+  ],
+  "modelVersion": "heppac-whole-gift-unique-naloxone-cohort-v2",
+  "originalEventLinearBayPrice": 11112456.578235215,
+  "correctionBoundary": "Naloxone within-person recurrence corrected; other pathways and coarse cross-pathway overlap retained, unresolved. All coefficients subjective, no new measured outcomes."
+}

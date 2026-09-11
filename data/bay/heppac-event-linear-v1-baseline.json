@@ -1,0 +1,245 @@
+{
+  "expense": 4953186,
+  "ordinaryGift": 100000,
+  "zeroCreditPathways": [
+    "drop-in basic needs",
+    "HIV/HCV screening-counseling-referral-linkage",
+    "community/mobile outreach and condoms",
+    "abscess wound care",
+    "acupuncture/herbalist",
+    "B-DUHB interventions",
+    "unresolved fiscal-sponsorship/pass-through activity"
+  ],
+  "noBenefit": {
+    "weight": 0.2,
+    "totalQaly": 0,
+    "giftQaly": 0,
+    "grossResources": 110000.00000000001,
+    "illustrativeWholeOrgSpendingPer10AttributedQaly": null,
+    "illustrativeGrossPer10AttributedQaly": null,
+    "conditionalOrdinaryGiftDonorPer10Qaly": null,
+    "conditionalOrdinaryGiftGrossPer10Qaly": null,
+    "interpretation": "infinite/undefined spending per QALY"
+  },
+  "conditionalOrdinaryGiftWeighted": {
+    "scenarioWeights": {
+      "downside": 0.24,
+      "central": 0.48,
+      "favorable-stress": 0.08,
+      "no-benefit": 0.2
+    },
+    "gift": 100000,
+    "weightedGiftQaly": 0.09204865275559485,
+    "weightedBayGiftQaly": 0.0899891030358304,
+    "weightedSfGiftQaly": 0.003767091867408174,
+    "donorPer10Qaly": 10863820.056716893,
+    "grossResources": 114000,
+    "grossPer10Qaly": 12384754.864657259,
+    "bayDonorPer10Qaly": 11112456.578235215,
+    "sfDonorPer10Qaly": 265456759.53690445,
+    "interpretation": "reasoned-prior conditional estimate including explicit no-benefit weight; not a verified funding offer or empirically identified effect"
+  },
+  "results": [
+    {
+      "name": "downside",
+      "perFatalEventQaly": 1.3415798011390068,
+      "pathwayQalyRaw": {
+        "naloxone": 0.20123697017085102,
+        "moud": 0.3125,
+        "syringe": 0.09375,
+        "drugChecking": 0.004192436878559396
+      },
+      "sharedMortalityRaw": 0.5179294070494104,
+      "sharedMortalityAdjusted": 0.4143435256395283,
+      "totalQaly": 0.5080935256395283,
+      "illustrativeWholeOrgSpendingPer10AttributedQaly": 97485713.75251265,
+      "illustrativeGrossResources": 5448504.600000001,
+      "illustrativeGrossPer10AttributedQaly": 107234285.12776393,
+      "conditionalOrdinaryGift": {
+        "gift": 100000,
+        "annualOrgAttributedQaly": 0.5080935256395283,
+        "giftQaly": 0.001436107862485559,
+        "giftBayQaly": 0.0012206916831127251,
+        "giftSfQaly": 0,
+        "donorPer10Qaly": 696326526.8036618,
+        "grossResources": 110000.00000000001,
+        "grossPer10Qaly": 765959179.4840281,
+        "bayDonorPer10Qaly": 819207678.5925432,
+        "sfDonorPer10Qaly": null
+      },
+      "inputs": {
+        "name": "downside",
+        "weight": 0.24,
+        "giftDeployableShare": 0.2,
+        "giftRealizationDiscount": 0.7,
+        "bayImpactSharePrior": 0.85,
+        "sfImpactSharePrior": 0,
+        "grossMultiplier": 1.1,
+        "mortalityOverlapAdjustment": 0.8,
+        "survival": {
+          "horizon": 5,
+          "annualSurvival": 0.65,
+          "utility": 0.55,
+          "discount": 0.03
+        },
+        "naloxone": {
+          "reversals": 20,
+          "otherwiseFatal": 0.05,
+          "attribution": 0.6,
+          "outcomeAdditionality": 0.25
+        },
+        "moud": {
+          "starts": 10,
+          "retainedEffective": 0.5,
+          "qalyPerRetainedEffectiveEngagementSensitivity": 0.25,
+          "outcomeAdditionality": 0.25
+        },
+        "syringe": {
+          "infectionsAverted": 0.25,
+          "attribution": 0.5,
+          "qaly": 3,
+          "outcomeAdditionality": 0.25
+        },
+        "checking": {
+          "fatalOverdosesAverted": 0.05,
+          "attribution": 0.25,
+          "outcomeAdditionality": 0.25
+        }
+      }
+    },
+    {
+      "name": "central",
+      "perFatalEventQaly": 2.2908794537329564,
+      "pathwayQalyRaw": {
+        "naloxone": 4.295398975749293,
+        "moud": 3.75,
+        "syringe": 1.625,
+        "drugChecking": 0.14317996585830978
+      },
+      "sharedMortalityRaw": 8.188578941607604,
+      "sharedMortalityAdjusted": 5.732005259125322,
+      "totalQaly": 7.357005259125322,
+      "illustrativeWholeOrgSpendingPer10AttributedQaly": 6732611.742877681,
+      "illustrativeGrossResources": 5696163.899999999,
+      "illustrativeGrossPer10AttributedQaly": 7742503.504309332,
+      "conditionalOrdinaryGift": {
+        "gift": 100000,
+        "annualOrgAttributedQaly": 7.357005259125322,
+        "giftQaly": 0.056813019168176514,
+        "giftBayQaly": 0.05397236820976768,
+        "giftSfQaly": 0.0011362603833635302,
+        "donorPer10Qaly": 17601599.327784788,
+        "grossResources": 114999.99999999999,
+        "grossPer10Qaly": 20241839.2269525,
+        "bayDonorPer10Qaly": 18527999.292405043,
+        "sfDonorPer10Qaly": 880079966.3892394
+      },
+      "inputs": {
+        "name": "central",
+        "weight": 0.48,
+        "giftDeployableShare": 0.45,
+        "giftRealizationDiscount": 0.85,
+        "bayImpactSharePrior": 0.95,
+        "sfImpactSharePrior": 0.02,
+        "grossMultiplier": 1.15,
+        "mortalityOverlapAdjustment": 0.7,
+        "survival": {
+          "horizon": 10,
+          "annualSurvival": 0.75,
+          "utility": 0.65,
+          "discount": 0.03
+        },
+        "naloxone": {
+          "reversals": 50,
+          "otherwiseFatal": 0.1,
+          "attribution": 0.75,
+          "outcomeAdditionality": 0.5
+        },
+        "moud": {
+          "starts": 25,
+          "retainedEffective": 0.6,
+          "qalyPerRetainedEffectiveEngagementSensitivity": 0.5,
+          "outcomeAdditionality": 0.5
+        },
+        "syringe": {
+          "infectionsAverted": 1,
+          "attribution": 0.65,
+          "qaly": 5,
+          "outcomeAdditionality": 0.5
+        },
+        "checking": {
+          "fatalOverdosesAverted": 0.25,
+          "attribution": 0.5,
+          "outcomeAdditionality": 0.5
+        }
+      }
+    },
+    {
+      "name": "favorable-stress",
+      "perFatalEventQaly": 3.64009349443285,
+      "pathwayQalyRaw": {
+        "naloxone": 47.687499835504354,
+        "moud": 26.25,
+        "syringe": 14.400000000000002,
+        "drugChecking": 2.047552590618478
+      },
+      "sharedMortalityRaw": 75.98505242612283,
+      "sharedMortalityAdjusted": 45.5910314556737,
+      "totalQaly": 59.991031455673706,
+      "illustrativeWholeOrgSpendingPer10AttributedQaly": 825654.4153036976,
+      "illustrativeGrossResources": 6439141.8,
+      "illustrativeGrossPer10AttributedQaly": 1073350.7398948069,
+      "conditionalOrdinaryGift": {
+        "gift": 100000,
+        "annualOrgAttributedQaly": 59.991031455673706,
+        "giftQaly": 0.8054217208484199,
+        "giftBayQaly": 0.7973675036399357,
+        "giftSfQaly": 0.040271086042420995,
+        "donorPer10Qaly": 1241585.5869228535,
+        "grossResources": 130000,
+        "grossPer10Qaly": 1614061.2629997095,
+        "bayDonorPer10Qaly": 1254126.8554776297,
+        "sfDonorPer10Qaly": 24831711.73845707
+      },
+      "inputs": {
+        "name": "favorable-stress",
+        "weight": 0.08,
+        "giftDeployableShare": 0.7,
+        "giftRealizationDiscount": 0.95,
+        "bayImpactSharePrior": 0.99,
+        "sfImpactSharePrior": 0.05,
+        "grossMultiplier": 1.3,
+        "mortalityOverlapAdjustment": 0.6,
+        "survival": {
+          "horizon": 20,
+          "annualSurvival": 0.82,
+          "utility": 0.75,
+          "discount": 0.03
+        },
+        "naloxone": {
+          "reversals": 137,
+          "otherwiseFatal": 0.15,
+          "attribution": 0.85,
+          "outcomeAdditionality": 0.75
+        },
+        "moud": {
+          "starts": 50,
+          "retainedEffective": 0.7,
+          "qalyPerRetainedEffectiveEngagementSensitivity": 1,
+          "outcomeAdditionality": 0.75
+        },
+        "syringe": {
+          "infectionsAverted": 3,
+          "attribution": 0.8,
+          "qaly": 8,
+          "outcomeAdditionality": 0.75
+        },
+        "checking": {
+          "fatalOverdosesAverted": 1,
+          "attribution": 0.75,
+          "outcomeAdditionality": 0.75
+        }
+      }
+    }
+  ]
+}

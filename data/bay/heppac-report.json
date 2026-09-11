@@ -4,39 +4,39 @@
   "program": "Harm reduction, overdose prevention, treatment navigation, drug checking, and wraparound services",
   "donationUrl": "https://heppac.org/donate/",
   "published": "10 September 2026",
-  "modelVersion": "heppac-whole-org-v5",
+  "modelVersion": "heppac-whole-gift-unique-naloxone-cohort-v2",
   "nutshell": {
     "headline": "HEPPAC addresses fatal overdose and infection risks, but current organization-level outcomes and the next-gift counterfactual are not public.",
-    "body": "Under an explicitly judgmental prior-weighted illustration, a $100,000 unrestricted gift corresponds to $10.86 million per better life (10 modeled QALYs), or $12.38 million under an illustrative gross-resource sensitivity. The central whole-organization accounting diagnostic is $6.73 million in reported spending per 10 scenario-attributed QALYs. Neither is an empirically identified marginal quote.",
+    "body": "The corrected unique-naloxone-cohort model estimates $8,133,469 per 10 Bay QALYs for an illustrative $100,000 whole-organization gift. All-beneficiary cost is $7,963,460 per 10 QALYs; these are different denominators. No verified marginal offer. Recurrence correction alone with old severe survival assumptions gives $12,849,714 per 10 Bay QALYs versus the preserved old $11,112,457; separately revised survival priors improve the combined estimate.",
     "whyItMayWork": "Naloxone rescue, medication treatment, and sterile-syringe access have credible severe-endpoint mechanisms. HEPPAC operates an integrated East Bay harm-reduction portfolio and its official donation page says gifts support community services.",
     "whyWeAreCautious": "HEPPAC does not publicly report current unique participants, annual reversals, retained medication treatment, infections averted, checking-linked behavior or cross-program overlap. A same-system navigation study is observational and noncurrent, and a newer randomized peer-navigation trial was inconclusive.",
     "recommendationBlocker": "Obtain a dated next-$100,000 budget, successor-contract status, current unduplicated people and events, treatment starts and retention, infection outcomes, drug-checking behavior, residence shares, and person-level cross-program linkage before recommending a gift on health cost-effectiveness."
   },
   "summary": [
     {
-      "label": "MODELED ORDINARY GIFT",
-      "value": "$10.86M",
-      "detail": "prior-weighted donor cost per 10 modeled QALYs; includes a 20% no-benefit prior"
+      "label": "BAY WHOLE-GIFT ESTIMATE",
+      "value": "$8,133,469",
+      "detail": "Per10 Bay QALYs;20% no-benefit prior, not calibrated."
     },
     {
-      "label": "CENTRAL GIFT ILLUSTRATION",
-      "value": "$17.60M",
-      "detail": "per 10 modeled QALYs; 45% deployability and 85% realization are analyst priors"
+      "label": "CENTRAL BAY GIFT",
+      "value": "$15,341,409",
+      "detail": "Central scenario, not a verified quote."
     },
     {
-      "label": "WHOLE-ORG DIAGNOSTIC",
-      "value": "$6.73M",
-      "detail": "reported annual spending per 10 central scenario QALYs; not marginal donor cost"
+      "label": "WHOLE EXPENSE",
+      "value": "$4,953,186",
+      "detail": "FY2025 full legal-organization cost retained."
     },
     {
       "label": "BAY / SF SHARE",
-      "value": "97.76% / 4.09%",
-      "detail": "QALY-weighted assumed shares; SF is nested within Bay and neither is measured residence"
+      "value": "97.91% / 4.20%",
+      "detail": "Weighted prior geography; SF nested in Bay, not residence observations."
     },
     {
       "label": "FUNDING ROOM",
-      "value": "Plausible, unverified",
-      "detail": "moderate reserves, but no priced next-gift use and a public amendment only maintained existing staffing"
+      "value": "Unverified",
+      "detail": "No priced next-gift capacity."
     }
   ],
   "programSection": {
@@ -62,22 +62,22 @@
     "boundary": "The model uses the entire FY2025 expense of $4,953,186. Events, items and people are never summed as recipients. Naloxone, navigation and checking share mortality endpoints and receive an explicit overlap sensitivity; person-level overlap remains unresolved. Fiscal-sponsorship/pass-through activity inside expense is also unresolved."
   },
   "model": {
-    "headline": "Prior-weighted modeled ordinary gift: $10.86M per 10 QALYs; central: $17.60M.",
-    "body": "The executable first models annual organization-attributed QALYs under explicit pathway, causal-additionality and overlap judgments. It then scales a hypothetical $100,000 unrestricted gift pro rata to annual expense, applies funding deployability and realization discounts, and weights downside, central, favorable and no-benefit cases. The separate gross-resource figures are illustrative multipliers, not measured estimates or lower bounds.",
+    "headline": "$8,133,469 per10 Bay QALYs; $7,963,460 all-beneficiary.",
+    "body": "The executable first models annual organization-attributed QALYs under explicit pathway, causal-additionality and overlap judgments. It then scales a hypothetical $100,000 unrestricted gift pro rata to annual expense, applies funding deployability and realization discounts, and weights downside, central, favorable and no-benefit cases. The separate gross-resource figures are illustrative multipliers, not measured estimates or lower bounds. V2 replaces only within-naloxone event-linear survival with one finite trajectory per synthetic unique person. Other pathway values and coarse cross-pathway overlap remain unchanged and unvalidated.",
     "equation": {
-      "label": "CENTRAL MODELED GIFT COST",
-      "expression": "10 × $100,000 ÷ [7.357 central annual organization-attributed QALYs × ($100,000 ÷ $4,953,186 expense) × 45% deployability × 85% realization]",
-      "result": "$17,601,599 per 10 modeled QALYs; 0.056813 gift-attributed QALY"
+      "label": "BAY WHOLE-GIFT EXPECTATION",
+      "expression": "10 × $100,000 / sum(world weight × whole-gift QALYs × Bay share)",
+      "result": "0.12294876734953836 Bay QALYs per$100,000; $8,133,469 per10 Bay QALYs"
     },
     "inputColumnLabel": "Downside / central / favorable-stress judgments",
     "inputs": [
       {
         "key": "navigationVolume",
-        "label": "Annual retained-effective treatment engagements",
+        "label": "Annual treatment starts (prior; before retention)",
         "confidence": "Very low; judgment-only",
         "best": "25",
         "range": "10 / 25 / 50",
-        "basis": "No current HEPPAC outcome volume exists. Anderson et al. observed 119 SUN recipients within a five-month, all-SUD, noncurrent cohort; it is transfer context and is never annualized into HEPPAC outcomes."
+        "basis": "No current HEPPAC outcome volume exists. Anderson et al. observed 119 SUN recipients within a five-month, all-SUD, noncurrent cohort; it is transfer context and is never annualized into HEPPAC outcomes. Model additionally multiplies retainedEffective .50/.60/.70; these starts are not already retained engagements."
       },
       {
         "key": "navigationQaly",
@@ -89,11 +89,11 @@
       },
       {
         "key": "naloxoneReversals",
-        "label": "Annual reported reversal events",
+        "label": "Annual rescue-opportunity equivalents (prior)",
         "confidence": "Very low for current HEPPAC",
         "best": "50",
         "range": "20 / 50 / 137",
-        "basis": "Twenty and 50 are scenario values. The 137 figure is an old snapshot with no clean annual window and appears only in the favorable stress case."
+        "basis": "Twenty and 50 are scenario values. The 137 figure is an old snapshot with no clean annual window and appears only in the favorable stress case. None is observed current annual throughput or prospective person-time."
       },
       {
         "key": "naloxoneFatalityBridge",
@@ -105,11 +105,11 @@
       },
       {
         "key": "finiteFatalQaly",
-        "label": "Finite survival-adjusted QALYs per fatal event",
+        "label": "Legacy finite QALY term for drug checking only",
         "confidence": "Low; judgmental",
         "best": "2.291",
         "range": "1.342 / 2.291 / 3.640",
-        "basis": "Discounted finite sums use 5/10/20-year horizons, annual survival 65%/75%/82%, utility 0.55/0.65/0.75 and 3% discounting."
+        "basis": "Discounted finite sums use 5/10/20-year horizons, annual survival 65%/75%/82%, utility 0.55/0.65/0.75 and 3% discounting. Retained only in unchanged drug-checking pathway, NOT the revised naloxone term."
       },
       {
         "key": "infectionBenefit",
@@ -190,37 +190,107 @@
         "best": "2%",
         "range": "0% / 2% / 5%",
         "basis": "No SF site was found, but that does not exclude SF residents. Zero applies only to the downside assumption, not as a measured fact."
+      },
+      {
+        "key": "cohortRecurrence",
+        "label": "Opportunities per synthetic selected person-year",
+        "best": "2",
+        "range": "3 / 2 / 1.5",
+        "basis": "Unique people=20/50/137 opportunity equivalents divided by recurrence. The same factor is an assumed one-year Poisson rate, not inferred from reported successful survivors.",
+        "confidence": "Very low; subjective, not calibrated"
+      },
+      {
+        "key": "supportedMortality",
+        "label": "Common supported/post-support mortality hazard",
+        "best": ".07/year",
+        "range": ".10 / .07 / .04",
+        "basis": "Historical first-year overdose-survivor all-cause rates provide scale only. This is remaining mortality with the selected rescue component; counterfactual adds only the missing-rescue component. No source identifies a constant long-run Bay hazard.",
+        "confidence": "Very low; subjective, not calibrated"
+      },
+      {
+        "key": "cohortSupport",
+        "label": "Active support and follow-up",
+        "best": "1 year active;10 years follow-up",
+        "range": "1 active;5 / 10 / 20 follow-up",
+        "basis": "One unique trajectory; after support both arms have the same hazard. Annual discount3%; utility.55/.65/.75, delay0. No repeated lifetime restart.",
+        "confidence": "Very low; subjective, not calibrated"
+      },
+      {
+        "key": "rescueComponent",
+        "label": "Baseline and extra rescue in selected component",
+        "best": "0 baseline;1 increment",
+        "range": "Fixed conditional component",
+        "basis": "Not all overdoses or absence of EMS. Old attribution.60/.75/.85 and outcomeAdditionality.25/.50/.75 remain outside the trajectory; budget deployability/realization are separate.",
+        "confidence": "Very low; subjective, not calibrated"
+      },
+      {
+        "key": "navigationRetention",
+        "label": "Retained-effective share of starts",
+        "best": ".60",
+        "range": ".50 / .60 / .70",
+        "basis": "Unchanged prior; multiply starts before QALY per retained-effective engagement.",
+        "confidence": "Very low; subjective, not calibrated"
       }
     ],
     "giftHeading": "Illustrative $100,000 unrestricted gift",
     "sensitivity": [
       {
-        "case": "No benefit (20% prior weight)",
-        "headline": "No positive QALYs",
-        "detail": "The gift and an assumed 1.10× gross resource amount are spent; QALYs are zero and stand-alone cost is infinite."
+        "case": "downside",
+        "headline": "$765,117,832 per10 Bay QALYs",
+        "detail": "Weight0.24; Bay giftQALYs0.0013069882294843534. Full cohort assumptions in API."
       },
       {
-        "case": "Downside (24%)",
-        "headline": "$696M modeled donor cost per 10 QALYs",
-        "detail": "0.001436 gift QALY; $766M illustrative gross-resource sensitivity."
+        "case": "central",
+        "headline": "$15,341,409 per10 Bay QALYs",
+        "detail": "Weight0.48; Bay giftQALYs0.06518305922057498. Full cohort assumptions in API."
       },
       {
-        "case": "Central (48%)",
-        "headline": "$17.60M modeled donor cost per 10 QALYs",
-        "detail": "0.056813 gift QALY; $20.24M illustrative gross-resource sensitivity."
+        "case": "favorable-stress",
+        "headline": "$875,779 per10 Bay QALYs",
+        "detail": "Weight0.08; Bay giftQALYs1.1418402718573266. Full cohort assumptions in API."
       },
       {
-        "case": "Favorable stress (8%)",
-        "headline": "$1.242M modeled donor cost per 10 QALYs",
-        "detail": "0.80542 gift QALY; $1.614M illustrative gross-resource sensitivity; this case still supplies most weighted QALYs."
+        "case": "No benefit",
+        "headline": "No finite positive price",
+        "detail": "20% prior; all cost retained."
       },
       {
-        "case": "Prior-weighted",
-        "headline": "$10.86M modeled donor cost per 10 QALYs",
-        "detail": "0.092049 expected gift QALY; $12.38M illustrative gross-resource sensitivity; 97.76% Bay and 4.09% nested SF outcome shares are assumed, not measured."
+        "case": "Old event-linear diagnostic",
+        "headline": "$11,112,457 per10 Bay QALYs",
+        "detail": "Preserved old version, not current estimate."
+      },
+      {
+        "case": "Recurrence correction; old severe mortality",
+        "headline": "$12,849,714 per10 Bay QALYs",
+        "detail": "Separates structural correction from revised survival assumptions."
+      },
+      {
+        "case": "10× recurrence",
+        "headline": "$12,068,836 per10 Bay QALYs",
+        "detail": "Fixed opportunity totals; smaller synthetic cohort."
+      },
+      {
+        "case": "Two-year horizon",
+        "headline": "$16,547,195 per10 Bay QALYs",
+        "detail": "Finite horizon sensitivity."
+      },
+      {
+        "case": "Independent morbidity harm",
+        "headline": "$8,197,141 per10 Bay QALYs",
+        "detail": ".01Q harm per credited person; not a calibrated harm-world probability."
+      },
+      {
+        "case": "Naloxone null",
+        "headline": "$20,456,517 per10 Bay QALYs",
+        "detail": "Other pathways retained."
+      },
+      {
+        "case": "Adverse rescue increment",
+        "headline": "No finite positive price",
+        "detail": "Signed negative net total; not zero cost."
       }
     ],
-    "uncertaintyBoundary": "Scenario values and weights are analyst priors, not confidence intervals, observed HEPPAC outcomes or empirically calibrated probabilities. The favorable stress case contributes most expected QALYs despite only 8% weight, so the headline is right-tail-sensitive. Zero deployability or zero outcomes returns zero QALYs and no finite cost ratio. The five-month Anderson study is never annualized.",
+    "uncertaintyBoundary": "Scenario values and weights are analyst priors, not confidence intervals, observed HEPPAC outcomes or empirically calibrated probabilities. The favorable stress case contributes most expected QALYs despite only 8% weight, so the headline is right-tail-sensitive. Zero deployability or zero outcomes returns zero QALYs and no finite cost ratio. The five-month Anderson study is never annualized. New supported survival assumptions separately increase health credit; they are not evidence that deduplication improves effectiveness. The exact old baseline and structural-only sensitivity must remain inspectable. Cross-program overlap is still not identified.",
     "fundingBoundary": "RFMF is plausible but unverified. FY2025 net assets of $2.363M equal about 5.7 months of expense and the organization ran a $209K surplus. The November 14, 2025 county staff recommendation requested a $700K increase through August 31, 2026 primarily to maintain existing navigator staffing; without an executed amendment or later budget, it is a dated public-funding baseline rather than a verified gap. HEPPAC's donation page gives examples and says donations support services, but it does not price health-outcome capacity or commit the next $100,000. Verified marginal donor and gross costs remain unknown."
   },
   "evidence": [
@@ -265,6 +335,13 @@
       "population": "Whole HEPPAC legal organization",
       "result": "FY2025 revenue $5.162M, expense $4.953M, surplus $209K and net assets $2.363M.",
       "transfer": "Full expense is the whole-organization denominator; fiscal-sponsorship/pass-through composition and marginal funding remain unresolved."
+    },
+    {
+      "key": "unique_cohort_survival_revision",
+      "design": "Analyst finite-cohort model with historical survivor mortality context",
+      "population": "Synthetic HEPPAC selected high-risk cohort; unique people and person-time unobserved",
+      "result": "One active year; finite5/10/20-year follow-up; supported common hazards.10/.07/.04; utility.55/.65/.75. All are explicit priors.",
+      "transfer": "Historical first-year mortality4.7–7.8/100 person-years supports scale only, not prospective cohort selection or constant long-run hazards. Recurrence-only correction worsens old price; survival-prior revision separately improves it."
     }
   ],
   "reservations": [
@@ -272,7 +349,7 @@
     "Unlimited naloxone refills make item, person and event deduplication essential; reported reversals are not deaths averted.",
     "Navigation, naloxone and checking may benefit the same person and share mortality; an overlap sensitivity is not person-level deduplication.",
     "MOUD QALYs per retained-effective engagement are bounded sensitivities, not estimates derived quantitatively from the Sordo meta-analysis.",
-    "Fatal-event QALYs use finite survival, utility and discounting priors; age, relapse, competing mortality and event timing are unobserved.",
+    "Naloxone now uses unique-cohort finite survival; drug checking retains the old finite-event sensitivity. Neither pathway has observed current local prognosis.",
     "Gift deployability, realization, scenario weights, geography and gross multipliers are analyst priors.",
     "The $700K county document is a staff-requested amendment to maintain staffing, not evidence in this packet of execution, expiry-created need or private-gift additionality.",
     "Bay and SF shares are service-geography-informed assumptions; beneficiary residence is unknown.",
@@ -401,6 +478,22 @@
       "published": "Undated/current",
       "retrieved": "2026-09-10",
       "sourceType": "Official state program page"
+    },
+    {
+      "publisher": "Annals of Internal Medicine",
+      "title": "Medication for Opioid Use Disorder After Nonfatal Opioid Overdose and Association With Mortality",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6387681/",
+      "published": "2018",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary historical cohort; reused evidence"
+    },
+    {
+      "publisher": "JAMA Psychiatry",
+      "title": "Causes of Death After Nonfatal Opioid Overdose",
+      "url": "https://jamanetwork.com/journals/jamapsychiatry/fullarticle/2685326",
+      "published": "2018",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary historical cohort"
     }
   ]
 }

@@ -746,7 +746,11 @@ Current accepted count47/115 (46SF-indexed plusAMF). WalkSF full CI nowgreen. Ne
 ## Homepage ranking correction — September 11, 2026
 
 User requested the four lowest central estimates, not a separate editorial selection. Homepage now derives those four from the same finite positive-price Bay research list. Current main selects ReCARES, GLIDE, Breathe California, and Project Homeless Connect. Research models and 100-report count are unchanged. Production build, focused lint, and phone/tablet ranking-parity tests pass. Pending independent model corrections remain in their separate PRs; publication and canonical verification of this UI correction are next.
-## Current priority: 110 reports, then top-ten V2
+## Donor-readiness and editorial review — September 11, 2026
+
+The completed research milestone remains112 reports (91Bay+21expanded), with ten V2 reviews. New user-requested review separates homepage selection from numerical ranking. ReCARES, PHC, Compass C-Rent and SFAF form an explicitly conditional diligence shortlist, not approved major-gift recommendations. HOPE's unverified annual expenses and Hearing/Speech's unresolved charitable-recipient status are visible in their reports and the directory. All four homepage leads have authentic credited photos. Current cheapest ten were independently vetted; current leaders and V2 reports were copy-edited without changing model values. See docs/donor-readiness-plan.md and docs/donor-readiness-audit.md. 824 tests, build, lint (zero errors) and affected responsive checks passed; canonical publication verification is next. No new research cohort or outreach is authorized.
+
+## Completed milestone: 110 reports, then top-ten V2
 
 ### V2 contents structure
 

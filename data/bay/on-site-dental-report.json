@@ -1,0 +1,323 @@
+{
+  "organization": "On-Site Dental Care Foundation",
+  "eyebrow": "Exploratory whole-gift Bay research",
+  "program": "Whole mobile dental organization; finite symptomatic relief",
+  "published": "11 September 2026",
+  "modelVersion": "on-site-dental-care-foundation-whole-gift-finite-pain-v1",
+  "nutshell": {
+    "headline": "Unduplicated patients are reported; additional pain relief is not measured",
+    "body": "Signed prior-weighted estimate: $5,322,482 per 10 Bay QALYs, or 0.018788 Bay QALYs per $10,000. This is not a clinic-measured QALY result.",
+    "whyItMayWork": "Established mobile dentistry can complete restorative care for people who otherwise wait for treatment.",
+    "whyWeAreCautious": "The favorable 10% world supplies 90.6% of signed expectation. Existing public funding and an unmeasured completed-treatment mix weaken additionality.",
+    "recommendationBlocker": "HOLD a giving recommendation pending current cash-created capacity and counterfactual clinical outcomes. Reportability does not mean favorable economics."
+  },
+  "summary": [
+    {
+      "label": "Bay whole-gift estimate",
+      "value": "$5,322,482",
+      "detail": "Per 10 modeled QALYs; partial finite pain-related health."
+    },
+    {
+      "label": "Whole FY2025 expense",
+      "value": "$1,157,224",
+      "detail": "All program/support cost; verified original return."
+    },
+    {
+      "label": "Dated patients",
+      "value": "1,101 unduplicated",
+      "detail": "231 service days; not completed plans or visits."
+    },
+    {
+      "label": "Public grants",
+      "value": "$746,848",
+      "detail": "Funded baseline; not subtracted from whole cost."
+    }
+  ],
+  "programSection": {
+    "body": "On-Site Dental Care Foundation Inc., EIN 77-0495262, provides mobile dentistry primarily in Alameda and Santa Clara counties. The fiscal year ending June 2025 return reports 1,101 unduplicated patients over 231 service days. Its population includes homeless people, migrant workers, low-income families, LGBTQ+ people and people with HIV/AIDS. It is distinct from Health Mobile and Dentists on Wheels.",
+    "steps": [
+      {
+        "title": "Whole-organization resource boundary",
+        "detail": "All costs retained, not only the most attractive procedure or grant."
+      },
+      {
+        "title": "Patients to completed symptomatic care",
+        "detail": "1101 unduplicated patients × completed restorative share × symptomatic share; no 7500-visit multiplier."
+      },
+      {
+        "title": "Finite benefit beyond alternative care",
+        "detail": "Relief success × utility × expected incremental duration."
+      },
+      {
+        "title": "Signed whole-gift additionality",
+        "detail": "Apply cash response and Bay fraction; subtract independent harm."
+      }
+    ],
+    "boundary": "Only finite symptomatic dental relief is quantified. Prevention, chewing and denture function, tooth retention, education, employability and other benefits remain unquantified, with all costs retained. No lifetime, mortality, cardiovascular or sepsis bonus is added. Donated labor and partner capital are unknown resources, not free resources."
+  },
+  "model": {
+    "headline": "$5,322,482 per 10 Bay QALYs",
+    "body": "Dated whole cost and patient count anchor scale. Treatment completion, symptoms, utility, duration and funding response remain priors. The donor estimate is not a complete societal resource price.",
+    "equation": {
+      "label": "Signed finite Bay dental health",
+      "expression": "gift / whole expense × 1,101 unduplicated patients × funding response × (completed restorative share × symptomatic share × successful relief × utility gain × incremental years − harm per patient) × Bay share",
+      "result": "0.018788226596039313 Bay QALYs / $10000"
+    },
+    "inputs": [
+      {
+        "key": "expense",
+        "label": "Whole fiscal-year expense",
+        "best": "1157224",
+        "range": "Prior FY: 1331040",
+        "basis": "Original whole cost, including 1098847 program + 55836 management + 2541 fundraising. No selective 200000-grant denominator.",
+        "confidence": "High accounting"
+      },
+      {
+        "key": "patients",
+        "label": "Unduplicated annual patients",
+        "best": "1101",
+        "range": "Dated return, not undated website figure of 1500",
+        "basis": "Original 1101 unduplicated patients, 231 days. No additional deduplication discount applied. A patient is not a completed treatment plan or a separate pain episode per visit.",
+        "confidence": "Moderate; provider-reported"
+      },
+      {
+        "key": "completion",
+        "label": "Completed restorative share",
+        "best": ".65",
+        "range": ".4–.9",
+        "basis": "Excludes screening, cleaning-only and incomplete courses. 90% completion in the public application is a target, not observed whole-organization completion.",
+        "confidence": "Very low"
+      },
+      {
+        "key": "symptomatic",
+        "label": "Symptomatic share among completed care",
+        "best": ".5",
+        "range": ".3–.7",
+        "basis": "Not all restorative care treats active pain; no clinical-mix counts supplied.",
+        "confidence": "Very low"
+      },
+      {
+        "key": "relief",
+        "label": "Successful symptomatic relief",
+        "best": ".85",
+        "range": ".6–.95",
+        "basis": "Analyst prior; treatment-plan completion and hygiene improvement are not pain resolution.",
+        "confidence": "Very low"
+      },
+      {
+        "key": "utility",
+        "label": "Utility difference while pain relief is incremental",
+        "best": ".05",
+        "range": ".025–.10",
+        "basis": "Judgment, not observed clinic EQ5D. An active-comparator study cannot identify the causal effect versus no treatment.",
+        "confidence": "Very low"
+      },
+      {
+        "key": "duration",
+        "label": "Expected incremental painful time",
+        "best": ".25 year",
+        "range": ".05–.5 year",
+        "basis": "Averages across patients with prompt alternatives or zero benefit until equivalent care or resolution of need. Not tooth life or 3 extra months for every person.",
+        "confidence": "Very low"
+      },
+      {
+        "key": "funding",
+        "label": "New-gift capacity response",
+        "best": ".3",
+        "range": "0–.6",
+        "basis": "Separate cash response; public contracts, paid clinicians, appointments and short-term liabilities constrain what additional cash does.",
+        "confidence": "Very low"
+      },
+      {
+        "key": "Bay",
+        "label": "Bay fraction",
+        "best": ".98",
+        "range": ".95–1",
+        "basis": "Primary service counties Alameda/Santa Clara support a high Bay prior; residence was not censused.",
+        "confidence": "Moderate footprint"
+      },
+      {
+        "key": "harm",
+        "label": "Independent harm Q per additional patient",
+        "best": ".0002",
+        "range": "0–.003",
+        "basis": "Hypothetical complications/access burden not already netted in utility. No observed harm rate.",
+        "confidence": "Very low"
+      }
+    ],
+    "giftHeading": "$10,000 cap; no linear $100,000 assurance",
+    "sensitivity": [
+      {
+        "case": "funding_null",
+        "headline": "Not defined per 10; weight 0.2",
+        "detail": "Bay Q 0; full world coefficients retained in results."
+      },
+      {
+        "case": "clinical_null",
+        "headline": "Not defined per 10; weight 0.15",
+        "detail": "Bay Q 0; full world coefficients retained in results."
+      },
+      {
+        "case": "harm",
+        "headline": "Not defined per 10; weight 0.05",
+        "detail": "Bay Q -0.008391478227205795; full world coefficients retained in results."
+      },
+      {
+        "case": "cautious",
+        "headline": "Not defined per 10; weight 0.25",
+        "detail": "Bay Q -0.0003705760509633399; full world coefficients retained in results."
+      },
+      {
+        "case": "central",
+        "headline": "$10,989,604 per 10; weight 0.25",
+        "detail": "Bay Q 0.009099509202626284; full world coefficients retained in results."
+      },
+      {
+        "case": "favorable",
+        "headline": "$587,352 per 10; weight 0.1",
+        "detail": "Bay Q 0.17025567219483867; full world coefficients retained in results."
+      },
+      {
+        "case": "one_month",
+        "headline": "Cap incremental painful time at one month",
+        "detail": "$33,980,553 per 10; Bay Q 0.0029428596608132907."
+      },
+      {
+        "case": "half_utility",
+        "headline": "Half utility",
+        "detail": "$11,074,976 per 10; Bay Q 0.009029364662491875."
+      },
+      {
+        "case": "half_completion",
+        "headline": "Half completed restorative share",
+        "detail": "$11,074,976 per 10; Bay Q 0.009029364662491875."
+      },
+      {
+        "case": "half_symptoms",
+        "headline": "Half symptomatic share",
+        "detail": "$11,074,976 per 10; Bay Q 0.009029364662491875."
+      },
+      {
+        "case": "prior_cost",
+        "headline": "Prior FY2024 whole expense",
+        "detail": "$6,121,923 per 10; Bay Q 0.016334735796350974."
+      },
+      {
+        "case": "full_response",
+        "headline": "Full cash response",
+        "detail": "$2,518,880 per 10; Bay Q 0.03970018933780323."
+      },
+      {
+        "case": "double_resources",
+        "headline": "Double expense: hypothetical unpriced resources",
+        "detail": "$10,644,964 per 10; Bay Q 0.009394113298019657."
+      }
+    ],
+    "uncertaintyBoundary": "Subjective scenario mass below $1M per 10 QALYs: 0.1; below $100k: 0. These are not calibrated probabilities. Excluding and renormalizing the favorable world gives $51,059,213 per 10. Priors were locked before first evaluation; no result tuning.",
+    "fundingBoundary": "FY2025 revenue of $1,233,793 includes $746,848 in government grants and $137,137 in program revenue. Retain all $1,157,224 of expense, including $342,817 in staff costs and $349,950 for contracted dentists: this is not an all-volunteer model. Assets are $418,219 and liabilities $281,532; unrestricted net assets are $91,687 and restricted net assets $45,000. Cash and savings lines are blank, not independently verified liquid-cash zeros. Schedule L reports a loan TO the organization from managing director Cheryl Walter for short-term cash flow: original principal $23,195, balance $4,000. The return marks no default, no board/committee approval and no written agreement. These disclosure facts require governance review but do not establish misconduct or cash-created treatment capacity. Public contracts are baseline; no current unfunded slot is verified. Complete donated-resource opportunity cost remains unknown."
+  },
+  "evidence": [
+    {
+      "key": "dated_denominator",
+      "design": "Original FY2025 Form 990, Part III",
+      "population": "1101 unduplicated patients / 231 days",
+      "result": "Actual reported patients, but no completed-procedure or pain-resolution counts.",
+      "transfer": "Do not use undated website figures of 1401 or 1500 patients or 7500 visits as FY2025 outcomes. The provider's counterfactual claim is not causal proof."
+    },
+    {
+      "key": "public_program",
+      "design": "Public funder application, June 2025",
+      "population": "Sunnyvale program, not whole organization",
+      "result": "200000 recommended renewal; 330 people, 1300 services and 90% completed plans are targets. Narrative figures of 75% retention and 90% improved oral hygiene are provider reports, not controlled pain outcomes.",
+      "transfer": "99% of metrics met is not 99% of patients benefiting. Do not multiply all patients by hygiene or retention as QALYs."
+    },
+    {
+      "key": "active_comparator_null",
+      "design": "Prospective nonrandomized Swedish root canal versus extraction study",
+      "population": "65 adults",
+      "result": "No significant intergroup QALY difference; approximately .83 QALY each over one year.",
+      "transfer": "Both received treatment; the null is not a care-versus-no-care null. Before-and-after utility changes do not validate a .05 causal gain. No organization-specific utility or untreated duration was measured."
+    },
+    {
+      "key": "alternatives",
+      "design": "Current DHCS benefit notice",
+      "population": "Medi-Cal members, not measured clinic insurance case mix",
+      "result": "Some adult members lose full dental benefits July 2026; members under 19 retain full benefits.",
+      "transfer": "Coverage is not an actual timely appointment, but low income or homelessness does not prove there is no covered alternative."
+    }
+  ],
+  "reservations": [
+    "Completed plans and painful case mix are unmeasured despite the unduplicated patient count.",
+    "Whole-gift funding response is unknown amid public contracts and paid-clinician constraints.",
+    "Website counters are undated and inconsistent; the dated filing takes precedence.",
+    "Finite utility and duration priors dominate, not clinic-measured QALYs.",
+    "No complete societal resource valuation; non-pain benefits remain unquantified.",
+    "No current donation checkout verified; donation URL omitted.",
+    "The official homepage links to an iATS donation checkout, but that checkout could not be fetched. Its operation was not verified, so no donation URL is advertised."
+  ],
+  "excludedBenefits": [
+    "Lifetime tooth preservation",
+    "Mortality/sepsis/cardiovascular prevention",
+    "Employment or confidence bonus",
+    "Screening-only visits as health",
+    "Unmeasured non-pain function"
+  ],
+  "sources": [
+    {
+      "publisher": "IRS via ProPublica",
+      "title": "Original FY ending June 2025 Form 990",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202621349349313292/IRS990",
+      "published": "Submission 2026-05-14",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "IRS via ProPublica",
+      "title": "Original Schedule O",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202621349349313292/IRS990ScheduleO",
+      "published": "Submission 2026-05-14",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "IRS via ProPublica",
+      "title": "Original Schedule L",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202621349349313292/IRS990ScheduleL",
+      "published": "Submission 2026-05-14",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "On-Site Dental Care Foundation",
+      "title": "Official services and program overview",
+      "url": "https://www.osdcf.org/",
+      "published": "Undated",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "El Camino Healthcare District",
+      "title": "June 17 2025 board packet, PDF index 248 / printed 249",
+      "url": "https://elcaminohealthcaredistrict.org/sites/default/files/2025-06/packet_dbod_061725.pdf",
+      "published": "2025-06-17",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Wigsten et al.",
+      "title": "Prospective controlled dental economic cohort",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10441609/",
+      "published": "2023-06-29",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "California DHCS",
+      "title": "Medi-Cal dental benefit changes",
+      "url": "https://www.dhcs.ca.gov/news/stakeholder-news-april-27-2026/",
+      "published": "2026-04-27",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    }
+  ]
+}

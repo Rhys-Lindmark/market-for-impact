@@ -3,6 +3,7 @@ import '@/app/givebetter.css';
 import '@/app/report-reading.css';
 import researchEffort from '@/data/research-effort.json';
 import historicalEffort from '@/data/research-effort-historical-estimates.json';
+import assignedEffort from '@/data/research-effort-assigned-estimates.json';
 import {researchEffortSummary} from '@/lib/research-effort.mjs';
 
 export type CharityEvidence = {
@@ -85,7 +86,7 @@ function Scenarios({ rows }: { rows: CharityReportContent['model']['sensitivity'
 }
 export default function CharityResearchReport({ content }: { content: CharityReportContent }) {
   const donationUrl = content.donationUrl?.trim();
-  const effort = researchEffortSummary(researchEffort,content.organization,historicalEffort);
+  const effort = researchEffortSummary(researchEffort,content.organization,{...historicalEffort,...assignedEffort});
   const headings = [
     ['summary', 'Summary'],
     ['program', '1. What do they do?'],

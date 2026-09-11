@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Research metadata regression assertions — September 10
+
+Updated four stale browser-test expectations after PR275: whole minutes, frozen historical estimates, and concise mixed-model labels. Twelve phone/tablet checks passed, including every one of the83 published report pages. This is test-only; no research estimates or publication counts change. Next: use explicit Bay outputs in the Bay-first ranking, then publish independently audited ReCARES.
+
 ## Research-time display follow-up — September 10
 
 Verification:500 unit/model tests passed; lint0 errors/3 existing warnings; production build passed; phone390/tablet768 browser tests passed, covering current mixed-model labels, whole-minute formatting, historical details expansion and frozen assignment on reload. No new report counted. Next: exact-source publication and canonical verification, then independently challenged high-EV candidates rather than category filling.

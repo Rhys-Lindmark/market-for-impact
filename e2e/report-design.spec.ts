@@ -23,6 +23,7 @@ test('all published reports use readable research architecture',async({page},tes
  const expandedReports=await page.locator('[data-research-slug]').evaluateAll(rows=>rows.map(row=>({href:row.querySelector('a')!.getAttribute('href')!})));
  const reports=[...localReports,...expandedReports];
  const registry=JSON.parse(fs.readFileSync('data/research-effort.json','utf8'));
+ const assigned=JSON.parse(fs.readFileSync('data/research-effort-assigned-estimates.json','utf8')).minutesByOrganization;
  const seenOrganizations=new Set<string>();
  expect(new Set(reports.map(r=>r.href)).size).toBe(EXPECTED_PUBLISHED_COUNT);
  for(const item of reports){
@@ -38,8 +39,9 @@ test('all published reports use readable research architecture',async({page},tes
   await expect(page.locator('.report-footer .report-model-version')).toContainText('Cost-effectiveness model:');
   await expect(page.getByRole('navigation',{name:'Table of Contents'}).locator('a')).toHaveCount(7);
   const effort=page.locator('.report-heading [data-research-effort]');
-  if(registry.organizations[organization]?.sessions.length){await expect(effort).toHaveAttribute('data-research-effort','recorded');if(registry.organizations[organization].coverage==='partial')await expect(effort.locator('summary')).toContainText('+ min');}
-  else {await expect(effort).toHaveAttribute('data-research-effort','estimated');await expect(effort.locator('summary')).toContainText('~18 min');}
+  if(registry.organizations[organization]?.sessions.length){await expect(effort).toHaveAttribute('data-research-effort','recorded');const minutes=registry.organizations[organization].sessions.reduce((sum:number,s:{startedAt:string;endedAt:string})=>sum+(Date.parse(s.endedAt)-Date.parse(s.startedAt))/60000,0);await expect(effort.locator('summary')).toContainText(Math.round(minutes)+' min');if(registry.organizations[organization].coverage==='partial')await expect(effort.locator('summary')).toContainText('Research time: ~');}
+  else {await expect(effort).toHaveAttribute('data-research-effort','estimated');expect(assigned[organization]).toBeGreaterThanOrEqual(15);expect(assigned[organization]).toBeLessThanOrEqual(20);await expect(effort.locator('summary')).toContainText('~'+assigned[organization]+' min');}
+  await expect(effort.locator('summary')).not.toContainText(/\d\+ min|\d\.\d+ min/);
   await effort.locator('summary').click();await expect(effort.locator('ul')).toBeVisible();expect(await effort.locator('li').count()).toBeLessThanOrEqual(5);
   await expect(effort).not.toContainText('wall-clock intervals');await expect(effort).not.toContainText('partial total');
   for(const heading of ['Summary','1. What do they do?','2. Monitoring and information sharing','3. Qualitative assessment','4. What do you get for your dollar?','5. Funding and previous grants','6. Sources']) await expect(page.getByRole('heading',{name:heading,exact:true})).toBeVisible();

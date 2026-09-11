@@ -296,7 +296,7 @@ test('phone donors can inspect the Five Keys model without treating credential o
 
 test('phone donors can inspect the GLIDE rental-assistance model without treating retention as causal impact', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'phone-390');
-  await page.goto('/charities/glide', { waitUntil: 'domcontentloaded' });
+  await page.goto('/archive/glide-rental-assistance', { waitUntil: 'domcontentloaded' });
   const review = page.locator('.report-reading-column article');
   await expect(page.getByRole('heading', { level: 1, name: 'GLIDE Foundation', exact: true })).toBeVisible();
   await expect(review).toContainText('A concrete prevention tool. A credible outside study. A very uncertain GLIDE effect.');

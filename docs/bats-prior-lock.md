@@ -1,0 +1,9 @@
+# BATS prior lock — before first model execution
+
+Historical whole expense $1,371,759; February2026 licensed/listed capacity165 concurrent slots, NOT observed annual people or available slots. Use slot-years×occupancy to avoid treating turnover as full patient-years. Methadone share, occupancy, access additionality, funding, Bay residence, causal transfer and survival are judgments.
+
+Weights: funding-null40%, clinical-null15%, harm10%, cautious15%, central15%, favorable5%. Central occupancy.75, methadone share.8, access additionality.30, funding.10, causal transfer.45, Bay.95, finite10-year survival with annualsurvival.93 utility.70 discount.03, additional transition-harm death-equivalent.0002 per additional treatmentyear. Favorable occupancy1,methadone1,access.60,funding.50,causal.70,Bay1,20years,.96survival,.80utility,harm.0001. Cautious occupancy.5,methadone.5,access.1,funding.05,causal.2,Bay.85,5years,.85survival,.65utility,harm.0005. Harmworld central delivery with zero mortality benefit and.003 extra death-equivalent risk. Clinicalnull zero benefit/harm. These are uncalibrated joint worlds, not confidence intervals.
+
+Mortality-rate anchors .0248 methadone and.0052 buprenorphine are subtraction of reported pooled in/out all-cause rates from Sordo2017. Not randomized effects; no contemporary fentanyl multiplier. No added overdose mortality atop all-cause mortality, and no morbidity credit. Transition harm represents incremental adverse departures/induction beyond the study's average treatment pattern, not automatic double subtraction of observed induction deaths. Finite survival values are not demonstrated local survival.
+
+Funding prior low given service revenue above expense, unrestricted reserves and acceptance of insured patients, but cash alone does not establish zero marginal benefit. No funding offer verified. Lock before outputs; unfavorable result retained. Diagnostic gifts0–10000 only.

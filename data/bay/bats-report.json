@@ -1,0 +1,299 @@
+{
+  "organization": "Berkeley Addiction Treatment Services",
+  "eyebrow": "EXPLORATORY CHARITY RESEARCH · BAY AREA",
+  "program": "Whole-gift opioid-treatment access; mortality pathway only",
+  "published": "11 September 2026",
+  "modelVersion": "bats-whole-gift-mortality-v1",
+  "nutshell": {
+    "headline": "Real medication treatment, but weak evidence that a new gift creates additional care.",
+    "body": "The signed prior-weighted model gives $36.29 million per 10 Bay QALYs for a hypothetical $10,000 whole-organization gift. The central world is $97.92 million. This is an unfavorable accounting-based hypothesis, not a measured local effect or purchasable return.",
+    "whyItMayWork": "Additional retained medication treatment can reduce mortality among adults with opioid use disorder.",
+    "whyWeAreCautious": "Capacity is not observed treatment volume. Existing service revenue and substantial unrestricted cash challenge donation additionality. Local treatment time, alternatives and survival remain assumptions.",
+    "recommendationBlocker": "HOLD giving. Obtain dose-days, current cash commitments and a specific unfunded access or retention opportunity."
+  },
+  "summary": [
+    {
+      "label": "BAY WHOLE GIFT",
+      "value": "$36.29M",
+      "detail": "per 10 modeled Bay QALYs; mortality scope only"
+    },
+    {
+      "label": "CENTRAL WORLD",
+      "value": "$97.92M",
+      "detail": "per 10 Bay QALYs"
+    },
+    {
+      "label": "FAVORABLE WORLD",
+      "value": "$1.90M",
+      "detail": "5% subjective weight; not a funding offer"
+    },
+    {
+      "label": "TAIL DEPENDENCE",
+      "value": "95.58%",
+      "detail": "of signed expectation from favorable world"
+    },
+    {
+      "label": "FUNDING ROOM",
+      "value": "Unknown",
+      "detail": "No verified marginal tranche"
+    }
+  ],
+  "programSection": {
+    "body": "Berkeley Addiction Treatment Services, Inc., EIN 94-2832154, is a separate nonprofit from BAART's treatment network. The official clinic describes methadone maintenance, withdrawal management, counseling and screening. Contra Costa County's February 2026 directory lists adult patients age 18+, methadone/buprenorphine services, Drug Medi-Cal certification, acceptance of new beneficiaries and capacity of 165 at its Berkeley location. These are service eligibility and capacity disclosures, not a measured age distribution, residency census or utilization count.",
+    "steps": [
+      {
+        "title": "Retain all organizational spending",
+        "detail": "Use $1,371,759 FYJune2025 total expense, including administration and unquantified work; do not price only medicines or subtract reimbursements."
+      },
+      {
+        "title": "Model occupied treatment-years",
+        "detail": "165 concurrent slots times an assumed occupancy fraction, not 165 observed unique patients or donor-available places."
+      },
+      {
+        "title": "Apply separate counterfactuals",
+        "detail": "Access additionality discounts medication time otherwise supplied by BATS or alternatives. Funding additionality discounts gifts replacing existing resources."
+      },
+      {
+        "title": "Count finite net Bay health",
+        "detail": "Transfer an observational mortality association cautiously, subtract signed incremental transition risk, and apply finite survival and Bay-residence judgments."
+      }
+    ],
+    "boundary": "Whole historical organizational cash cost; partial mortality benefits. External clinical care, patient travel/time and additional public resources are not assumed free. Complete-resource and verified marginal prices remain null. No separate overdose benefit is added to all-cause mortality."
+  },
+  "model": {
+    "headline": "$36,290,155 per 10 modeled Bay QALYs",
+    "body": "The $10,000 diagnostic gift represents a share of whole historical expense. Slot occupancy, medication mix, access and funding additionality, mortality causal transfer, future survival and Bay residence are explicit analyst judgments, not observed BATS outcomes. First-run coefficients are preserved.",
+    "equation": {
+      "label": "SIGNED EXPECTATION BEFORE DIVISION",
+      "expression": "10 × $10,000 / 0.002755568302228597 Bay QALYs",
+      "result": "$36,290,154.70932942 per 10 Bay QALYs"
+    },
+    "inputColumnLabel": "Historical anchors and explicit assumptions",
+    "inputs": [
+      {
+        "key": "expense",
+        "label": "Whole annual expense",
+        "best": "$1,371,759",
+        "range": "FY July2024–June2025",
+        "confidence": "High historical",
+        "basis": "Filed IRS return: $894,339 programme plus $477,420 administration. No netted event cost add-back found."
+      },
+      {
+        "key": "capacity",
+        "label": "Concurrent capacity",
+        "best": "165 slots",
+        "range": "Not an observed patient count",
+        "confidence": "County-listed capacity",
+        "basis": "February2026 directory; age18+ and accepting new beneficiaries. No occupancy or dose-day ledger published."
+      },
+      {
+        "key": "occupancy",
+        "label": "Occupied slot-years",
+        "best": "75%",
+        "range": "50–100%",
+        "confidence": "Judgment",
+        "basis": "Central123.75 treatment-years; assumes a fixed165-slot footprint for one year, not annual turnover counted as full years."
+      },
+      {
+        "key": "mix",
+        "label": "Methadone share",
+        "best": "80%",
+        "range": "50–100%",
+        "confidence": "Judgment",
+        "basis": "Clinic emphasizes methadone; county also lists buprenorphine. No measured medication mix."
+      },
+      {
+        "key": "mortality",
+        "label": "Mortality association",
+        "best": "0.0248 / 0.0052 per year",
+        "range": "Methadone / buprenorphine",
+        "confidence": "External observational evidence",
+        "basis": "Difference between pooled out-of-treatment and in-treatment all-cause mortality rates, not randomized causal effects or current Bay rates."
+      },
+      {
+        "key": "transfer",
+        "label": "Causal mortality transfer",
+        "best": "45%",
+        "range": "0–70%",
+        "confidence": "Judgment",
+        "basis": "Accounts for confounding, selection and different patients, care and drug environment; no fentanyl multiplier."
+      },
+      {
+        "key": "access",
+        "label": "Access additionality",
+        "best": "30%",
+        "range": "10–60%",
+        "confidence": "Judgment",
+        "basis": "Equivalent treatment time otherwise obtainable through this or another provider must not be attributed to the gift."
+      },
+      {
+        "key": "funding",
+        "label": "Funding additionality",
+        "best": "10%",
+        "range": "0–50%",
+        "confidence": "Judgment",
+        "basis": "Low central prior given service revenue above cost and unrestricted reserves; neither financial fact proves zero current need."
+      },
+      {
+        "key": "survival",
+        "label": "Finite survival",
+        "best": "10-year horizon",
+        "range": "5–20 years",
+        "confidence": "Judgment",
+        "basis": "Central93% annual survival,0.70utility and3%discount produce4.319489514249647 QALYs per modeled death averted. No local age/lifespan distribution was measured."
+      },
+      {
+        "key": "harm",
+        "label": "Additional transition risk",
+        "best": "0.0002 per added year",
+        "range": "0–0.003",
+        "confidence": "Signed judgment",
+        "basis": "Extra induction/discontinuation risk beyond the source's average comparison; not a second subtraction of ordinary treatment deaths."
+      },
+      {
+        "key": "bay",
+        "label": "Bay-resident share",
+        "best": "95%",
+        "range": "85–100%",
+        "confidence": "Judgment",
+        "basis": "Berkeley clinic and Contra Costa access support Bay concentration, not an exact residence proportion. Applied to both signs."
+      },
+      {
+        "key": "weights",
+        "label": "Joint-world weights",
+        "best": "55% null;10% harm",
+        "range": "15% cautious;15% central;5% favorable",
+        "confidence": "Uncalibrated prior",
+        "basis": "Locked before first execution. Not confidence intervals or probabilities medication itself fails."
+      }
+    ],
+    "giftHeading": "$10,000 unrestricted diagnostic — not a quoted package",
+    "sensitivity": [
+      {
+        "case": "Funding null (40%)",
+        "headline": "0 Bay QALY",
+        "detail": "No additional delivery."
+      },
+      {
+        "case": "Clinical null (15%)",
+        "headline": "0 Bay QALY",
+        "detail": "No modeled mortality gain or harm."
+      },
+      {
+        "case": "Harm (10%)",
+        "headline": "−0.0003331700301708075 Bay QALY",
+        "detail": "Retained in expectation; no positive bargain price."
+      },
+      {
+        "case": "Cautious (15%)",
+        "headline": "$7.615B per 10",
+        "detail": "0.000013131690340720065 Bay QALY."
+      },
+      {
+        "case": "Central (15%)",
+        "headline": "$97,916,608.81414448 per 10",
+        "detail": "0.0010212771991502485 Bay QALY;0.027063791817658934 additional treatment-years."
+      },
+      {
+        "case": "Favorable (5%)",
+        "headline": "$1,898,452.5536823655 per 10",
+        "detail": "0.05267447943644065 Bay QALY; full occupancy,60% access,50% funding,70% transfer and20-year horizon."
+      },
+      {
+        "case": "Favorable access and funding both100%",
+        "headline": "Approximately $569,536 per 10",
+        "detail": "Mechanical3.33×output stress, not a new estimate; precisely the counterfactual most challenged by current financial and access evidence."
+      }
+    ],
+    "uncertaintyBoundary": "Exact signed Bay expectation0.002755568302228597 QALYs/$10,000; price$36,290,154.70932942/10. Favorable share0.9557825039909112. No declared world beats$1M/10, but the non-exhaustive scenario set cannot exclude unmodeled opportunities. No morbidity, cognitive, infection, crime or family-benefit credit. The model enforces finite5–20year scenario horizons and a0–$10,000 gift domain; neither establishes marginal absorptive capacity.",
+    "fundingBoundary": "FYJune2025 revenue$3,187,442 includes$2,811,794 service fees and$375,648 nonrecurring employee-retention-credit refund/interest. Excluding the latter, fees exceed expenses by$1,440,035. Cash$3,006,182; all$3,211,834 net assets unrestricted; liabilities$323,134. Unknown future commitments/recoupment risks prevent equating reserves with free cash. No verified marginal donor package or complete-resource price."
+  },
+  "evidence": [
+    {
+      "key": "finance",
+      "design": "Filed FYJune2025 IRS990",
+      "population": "Whole legal recipient EIN94-2832154",
+      "result": "$1,371,759 expense; service fees$2,811,794; cash$3,006,182.",
+      "transfer": "Retain all cost; nonrecurringERC/interest not ordinary revenue. Financial surplus challenges but does not disprove marginal room."
+    },
+    {
+      "key": "capacity",
+      "design": "County provider directory, February2026",
+      "population": "Adults18+ seeking opioid treatment; Contra Costa Medi-Cal access",
+      "result": "BATS listed as accepting beneficiaries, Drug Medi-Cal certified, capacity165.",
+      "transfer": "Capacity and eligibility are not observed occupancy, age distribution or Bay-residence proportion."
+    },
+    {
+      "key": "clinical",
+      "design": "Original systematic review/meta-analysis of19 observational cohorts",
+      "population": "Methadone and buprenorphine treatment cohorts assembled beforeSeptember2016",
+      "result": "In/out all-cause rates11.3/36.1 and4.3/9.5 deaths per1,000person-years, respectively.",
+      "transfer": "Nonrandom treatment entry/exit, time-varying confounding and induction/cessation risks limit causal transport. Finite survival is separately assumed; no extra overdose credit."
+    }
+  ],
+  "reservations": [
+    "Observed retained-treatment time and medication mix are unavailable; occupied slot-years are assumed.",
+    "No patient-age distribution or precise Bay residence data were located. Adult18+ eligibility is not an age-mix estimate.",
+    "Substantial cash and service reimbursement materially weaken unrestricted donor additionality.",
+    "Historical observational mortality is not a contemporary Bay causal effect; induction and discontinuation can harm.",
+    "The favorable world supplies95.58% of signed expected benefit despite only5% weight.",
+    "Partner, payer and patient incremental resources remain unpriced. No recommendation follows from this partial model."
+  ],
+  "excludedBenefits": [
+    "Morbidity and quality-of-life improvement during treatment",
+    "Infection prevention and other medical care",
+    "Crime, earnings and family spillovers",
+    "Separate overdose mortality atop all-cause mortality",
+    "Unbounded lifetime survival"
+  ],
+  "sources": [
+    {
+      "publisher": "IRS via ProPublica",
+      "title": "BATS Form990, FY ending June30,2025",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202600569349300925/IRS990",
+      "published": "Submitted February25,2026",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary financial filing"
+    },
+    {
+      "publisher": "IRS via ProPublica",
+      "title": "BATS ScheduleO",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202600569349300925/IRS990ScheduleO",
+      "published": "Submitted February25,2026",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary filing supplement"
+    },
+    {
+      "publisher": "Berkeley Addiction Treatment Services",
+      "title": "Official services and identity",
+      "url": "https://batsrecovery.com/",
+      "published": "Undated",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary provider description"
+    },
+    {
+      "publisher": "Contra Costa Health",
+      "title": "DMC-ODS Provider Directory, BATS page43",
+      "url": "https://www.cchealth.org/home/showpublisheddocument/16892/639059656556870000",
+      "published": "February1,2026",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary county directory"
+    },
+    {
+      "publisher": "Sordo et al., BMJ",
+      "title": "Mortality risk during and after opioid substitution treatment",
+      "url": "https://doi.org/10.1136/bmj.j1550",
+      "published": "April26,2017",
+      "retrieved": "2026-09-11",
+      "sourceType": "Original cohort evidence synthesis"
+    },
+    {
+      "publisher": "Europe PMC",
+      "title": "Full-text XML of Sordo et al.",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5421454/fullTextXML",
+      "published": "2017",
+      "retrieved": "2026-09-11",
+      "sourceType": "Original article full text mirror"
+    }
+  ]
+}

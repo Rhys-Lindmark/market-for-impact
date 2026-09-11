@@ -1,0 +1,22 @@
+import assert from 'node:assert/strict';import {calculate,worlds} from '../lib/bats-model.mjs';
+const r=calculate();assert.equal(r.expense,1371759);assert.equal(r.rows[0].bayQ,0);assert.equal(r.rows[1].bayQ,0);assert.ok(r.rows[2].bayQ<0);assert.equal(r.rows[2].costPer10,null);assert.equal(r.bayCostPer10,100000/r.bayQ);assert.equal(calculate({gift:5000}).bayQ,r.bayQ/2);assert.equal(calculate({gift:0}).bayCostPer10,null);assert.equal(r.completeResourcePrice,null);
+for(const patch of [{horizon:21},{horizon:1.5},{funding:NaN},{occupancy:2}])assert.throws(()=>calculate({scenarios:worlds.map((s,i)=>i? s:{...s,...patch})}));
+assert.throws(()=>calculate({scenarios:[]}));assert.throws(()=>calculate({gift:10001}));
+for(const value of [42,'bad',[],null])assert.throws(()=>calculate(value));
+assert.throws(()=>calculate({scenarios:worlds.map((s,i)=>i?s:{...s,id:' '})}));
+assert.throws(()=>calculate({scenarios:[[]]}));
+// Finite signed rows can cancel, leaving a finite aggregate with an infinite price.
+const positive={...worlds[4],id:'positive',weight:.4,harm:0};
+const rate=positive.methadone*.0248+(1-positive.methadone)*.0052;
+const negative={...positive,id:'negative',transfer:0,harm:rate*positive.transfer};
+const tiny={...positive,id:'tiny',weight:.2,occupancy:1e-300};
+assert.throws(()=>calculate({scenarios:[positive,negative,tiny]}),/Aggregate numerical overflow/);
+assert.throws(()=>calculate({scenarios:[{...positive,weight:1,occupancy:1e-310}]}),/Row numerical overflow/);
+const {readFileSync}=await import('node:fs');
+const saved=JSON.parse(readFileSync(new URL('../data/bay/bats-results.json',import.meta.url),'utf8'));
+assert.equal(r.bayQ,saved.bayQalys);assert.equal(r.bayCostPer10,saved.bayCostPer10);assert.equal(r.favorableShare,saved.favorableShare);
+const report=JSON.parse(readFileSync(new URL('../data/bay/bats-report.json',import.meta.url),'utf8'));
+for(const e of report.evidence)for(const k of ['key','design','population','result','transfer'])assert.ok(typeof e[k]==='string'&&e[k].length);
+for(const s of report.model.sensitivity)for(const k of ['case','headline','detail'])assert.ok(typeof s[k]==='string'&&s[k].length);
+assert.equal(report.model.headline,'$36,290,155 per 10 modeled Bay QALYs');
+console.log('Base15 assertions plus malformed-input, exact-snapshot and renderer checks passed');

@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## BATS — accepted candidate95
+
+94/100 verified via Dentists on Wheels PR290/v205. Berkeley Addiction Treatment Services (EIN94-2832154, not BAART) adds whole-cost mortality research at $36.29M per10 Bay QALYs, explicitly unfavorable and not a giving recommendation. Actual capacity165 is not observed utilization. Whole expense$1,371,759, service revenue and reserves constrain funding assumptions. Independent source/model audit plus finite-price regression preserve every default result. Verification:635 tests, lint zero errors/three existing warnings, production build; canonical publication pending. Next: audited Health Mobile, HIF and On-Site, then two deliberate remaining candidates. Parallel top-ten comparability and funding synthesis underway; no priced marginal offers invented.
+
 ## Dentists on Wheels — accepted release candidate, September 11
 
 93/100 canonically verified; this distinct EIN 84-2234407 report is the candidate for 94. Whole FY2024 expense $103,749 and 249 reported patients anchor an explicitly partial symptomatic-health model, not 512 procedure-as-person outcomes. Signed expectation $1,584,848 per 10 Bay QALYs; favorable tail 86.5%; HOLD giving, no verified marginal offer. Independent audit preserved coefficients. Verification: 634 tests passed, lint zero errors with three existing warnings, production build and phone/tablet report-table-API checks passed. Next: canonical publication, then audited BATS and Health Mobile; HIF also accepted. Post-100 synthesis and marginal funding diligence remain required.

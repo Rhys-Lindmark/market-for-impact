@@ -68,6 +68,18 @@ The latest original return located in the current index is FY2024, submitted Oct
 | Year-end pledges receivable | 0 | 870 | 26,500 |
 | Year-end net assets | 238,998 | 269,763 | 241,791 |
 
+### Pacific Hearing — natural expense shares
+
+Whole reported expense denominator. Other includes inventory adjustment; program-service expense is an overlapping functional classification, not added here.
+
+| Year | Denominator ($) | Salaries/benefits | Contractors | Grants | Occupancy | Printing | Other | Total |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| 2022 | 88,147 | 74.86% | 16.58% | 0.00% | 0.00% | 0.80% | 7.75% | 100.00% |
+| 2023 | 125,230 | 70.04% | 8.29% | 0.00% | 0.16% | 0.47% | 21.03% | 100.00% |
+| 2024 | 184,099 | 46.48% | 16.01% | 2.72% | 0.00% | 0.46% | 34.33% | 100.00% |
+
+Shares are calculated as category expense divided by the stated annual denominator. Rounding may make displayed shares differ slightly from 100%.
+
 Sources: original [FY2022 return](https://projects.propublica.org/nonprofits/full_text/202333069349202103/IRS990EZ), [FY2023 return](https://projects.propublica.org/nonprofits/full_text/202442749349200414/IRS990EZ), [FY2024 return](https://projects.propublica.org/nonprofits/full_text/202502889349201655/IRS990EZ), and their Schedule O links in the source ledger. Revenue is contributions plus program-service revenue in these returns. Program-service revenue is not proven to be entirely patient fees. We retain gross whole expense rather than subtracting fees from costs while ignoring their role in financing the service.
 
 ### What changed inside expense

@@ -3,6 +3,8 @@ import type {ReactNode} from 'react';
 import '@/app/givebetter.css';
 import '@/app/report-reading.css';
 import {reportSections,markdownBlocks,safeReportLink} from '@/lib/report-markdown.mjs';
+import {groupReportSections} from '@/lib/report-contents.mjs';
+import contentsMap from '@/data/report-contents-map.json';
 type Section={id:string;title:string;markdown:string};
 type Block={type:'heading';level:number;id:string;text:string}|{type:'list';ordered:boolean;items:string[]}|{type:'table';headers:string[];rows:string[][]}|{type:'paragraph';text:string};
 type Source={title:string;url:string;publisher:string;published:string;retrieved:string;limit?:string};
@@ -29,6 +31,7 @@ function Markdown({text}:{text:string}) {
 export default function LongFormResearchReport({organization,program,markdown,sources,donationUrl,modelVersion,modelUrl,minutes,modelLabel,sectionTitles={},sectionOrder=[]}:{organization:string;program:string;markdown:string;sources:Source[];donationUrl?:string;modelVersion:string;modelUrl:string;minutes:number;modelLabel:string;sectionTitles?:Record<string,string>;sectionOrder?:string[]}){
  const sections=(reportSections(markdown) as Section[]).map(section=>({...section,title:sectionTitles[section.id]??section.title}));
  if(sectionOrder.length){if(sectionOrder.length!==sections.length||new Set(sectionOrder).size!==sections.length||sectionOrder.some(id=>!sections.some(s=>s.id===id)))throw Error('Incomplete report section order');sections.sort((a,b)=>sectionOrder.indexOf(a.id)-sectionOrder.indexOf(b.id));}
+ const groups=groupReportSections(sections,(contentsMap as Record<string,Record<string,string>>)[organization]) as {id:string;title:string;sections:Section[]}[];
  return <main className="givebetter charity-report">
   <header className="givebetter-masthead"><a href="/">Give<span>Better</span> <small>x SF</small></a></header>
   <div className="report-reading-column">
@@ -37,9 +40,9 @@ export default function LongFormResearchReport({organization,program,markdown,so
     <p className="report-date">Updated: 11 September 2026 · V2 beta research</p>
     {donationUrl?<a className="report-donate" href={donationUrl} target="_blank" rel="noreferrer">Donate</a>:<p className="report-date">Donation route not verified.</p>}
    </header>
-   <nav className="report-contents" aria-label="Table of Contents"><h2>Table of Contents</h2>{sections.map((section)=><a key={section.id} href={'#'+section.id}>{section.title}</a>)}<a href="#sources">Sources</a></nav>
-   <article>{sections.map((section)=><section key={section.id} id={section.id}><h2>{section.title}</h2><Markdown text={section.markdown}/></section>)}
-    <section id="sources"><h2>Sources</h2><ol className="report-sources">{sources.map(source=><li key={source.url}><a href={source.url}>{source.title}</a>. {source.publisher}. Published: {source.published}; retrieved: {source.retrieved}. {source.limit}</li>)}</ol></section>
+   <nav className="report-contents" aria-label="Table of Contents"><h2>Table of Contents</h2>{groups.map(group=>group.sections.length>1?<details className="report-contents-group" key={group.id}><summary><a data-toc-primary href={'#'+group.id}>{group.title}</a></summary><div>{group.sections.map(section=><a key={section.id} href={'#'+section.id}>{section.title.replace(/^\d+[.)]\s*/, '')}</a>)}</div></details>:<a data-toc-primary key={group.id} href={'#'+group.id}>{group.title}</a>)}<a data-toc-primary href="#sources">6. Sources</a></nav>
+   <article>{groups.map(group=><section key={group.id} id={group.id}><h2>{group.title}</h2>{group.sections.map(section=><section className="report-subsection" key={section.id} id={section.id}>{group.id!=='research-summary'&&<h3>{section.title.replace(/^\d+[.)]\s*/, '')}</h3>}<Markdown text={section.markdown}/></section>)}</section>)}
+    <section id="sources"><h2>6. Sources</h2><ol className="report-sources">{sources.map(source=><li key={source.url}><a href={source.url}>{source.title}</a>. {source.publisher}. Published: {source.published}; retrieved: {source.retrieved}. {source.limit}</li>)}</ol></section>
    </article>
    <footer className="report-footer"><a href="/research">All research</a><p className="report-model-version">Cost-effectiveness model: <a href={modelUrl}>{modelVersion}</a></p><p>Independent public-source research. Not affiliated with GiveWell or the organization reviewed.</p></footer>
   </div>

@@ -748,6 +748,10 @@ Current accepted count47/115 (46SF-indexed plusAMF). WalkSF full CI nowgreen. Ne
 User requested the four lowest central estimates, not a separate editorial selection. Homepage now derives those four from the same finite positive-price Bay research list. Current main selects ReCARES, GLIDE, Breathe California, and Project Homeless Connect. Research models and 100-report count are unchanged. Production build, focused lint, and phone/tablet ranking-parity tests pass. Pending independent model corrections remain in their separate PRs; publication and canonical verification of this UI correction are next.
 ## Current priority: 110 reports, then top-ten V2
 
+### V2 contents structure
+
+Standardized all ten V2 reports to Summary plus six numbered headings, with original sections nested under explicit independently reviewed group mappings. All101 original section anchors and bodies retained; spending, revision details and input appendices are not removed. Expandable subsections keep the left contents compact. Full unit suite/build/lint and phone/tablet ten-report navigation/anchor checks passed; desktop SPUR visual inspection passed. Count112 and all model coefficients unchanged. Publish and canonical-check this UX correction before final goal completion.
+
 ### Final acceptance sweep — September 11
 
 112 distinct canonical reports verified (91 Bay,21 expanded); ten V2 APIs and nine priced V2 central values reconcile, NEMS ordinary-gift value remains null. Original discovery100→25→10 and frozen eight-leader/two-policy review selection independently verified. Staff extras completed as two published reports plus three non-report findings, not five publications. Added missing calculated annual category shares to SPUR,HAC,NEMS,Pacific Hearing,FUF without changing costs or health models. Denominators distinguish function,gross costs,within-program mix and separate legal entities. See final-canonical-audit.md,final-selection-audit.md,final-spending-shares.md. Contents-list UX standardization remains the open user clarification; no claim of ten exactly30-minute or reference-length reports.

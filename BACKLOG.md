@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Program-first summaries — September 11
+
+Both report formats now lead with what the organization does, why the mechanism interests us, then reservations and cost-effectiveness. Standard reports no longer use the caution-first nutshell headline; funding prerequisites move to the funding section. Ten long-form editorial summaries replace dense opening accounting/revision prose, using existing report evidence and unchanged estimates. Original narratives and detailed research sections remain in source. JSON validation, focused lint, production build and phone/tablet checks across the ten long-form and current top-ten reports pass. Next: publish; no new research or stronger recommendation is implied.
+
 ## Report banners — removed September 11
 
 Removed status banners and the generic “Before a major gift” disclosure from both report templates. The ten organization-specific caveats now appear as plain text within Funding and previous grants, not above Summary. No research estimates, directory ordering or shortlist judgments changed. Production build, focused lint and all-ten affected report checks at phone/tablet widths pass. Next: publish this scoped presentation change.

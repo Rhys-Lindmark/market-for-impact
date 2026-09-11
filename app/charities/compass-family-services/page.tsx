@@ -46,7 +46,7 @@ const content: CharityReportContent = {
     { label: 'FUNDING ROOM', value: 'Not published', detail: 'the $100,000 gift is a scenario, not a current marginal offer' },
   ],
   programSection: {
-    body: 'Compass describes C-Rent as homelessness prevention for families facing a housing crisis. It can provide back-rent or move-in financial assistance, case management, and problem-solving. Our model ends at six-month recorded homelessness because that is the outcome and horizon in the closest randomized study.',
+    body: 'Compass Family Services helps families facing a housing crisis. Its C-Rent program provides back-rent or move-in financial assistance, case management, and problem-solving to help families remain housed.',
     steps: [
       { title: 'Identify imminent risk', detail: 'A San Francisco family with at least one minor child seeks help while facing arrears, eviction, or a move-in barrier.' },
       { title: 'Assess the cash gap', detail: 'Staff review eligibility, household circumstances, available aid, and whether a bounded payment can resolve the crisis.' },

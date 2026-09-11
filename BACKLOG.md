@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Pacific Hearing V2 — validated, release next
+
+110 alpha and 7/10 V2 live through PHC PR314/Sites226. Pacific Hearing full accepted narrative and three-year original finance evidence integrated. Central library now uses $2,199,018/10 Bay QALYs, not weighted $937,721; preferred coefficients unchanged. API preserves both and finite diagnostics. 131 packet checks, current-wrapper parity, narrative/anchor checks, lint/build and responsive report/API/index checks pass. Next exact-source publication, then NEMS ordinary-gift scope correction and FUF V2. No verified marginal offer.
+
 ## PHC V2 — integrated; responsive verification and release next
 
 110 alpha and 6/10 V2 live through HAC PR313/Sites225. PHC full 6,151-word accepted narrative, three-year sponsor financial context and funding-transition audit integrated without changing the conditional central $774,408/10 Bay QALYs. 4,441 preserved-model checks, narrative parity/anchors and production build pass. Next: responsive report/API/index interaction check, lint and publish exact source; then Pacific Hearing, NEMS and FUF. The post-2025 funding-loss clinical baseline is not verified. Author research20m27s; root integration separately measured.

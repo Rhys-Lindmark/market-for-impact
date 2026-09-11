@@ -1,4 +1,5 @@
-import CharityResearchReport,{type CharityReportContent} from '@/components/CharityResearchReport';
-import report from '@/data/bay/pacific-hearing-connection-report.json';
-export const metadata={title:'Pacific Hearing Connection — GiveBetter research',description:'Whole-accounting-cost hearing-access research with finite clinical assumptions and Bay attribution.'};
-export default function Page(){const content:CharityReportContent={...report,nutshell:{...report.nutshell,body:<>{report.nutshell.body} <a href="/api/pacific-hearing-connection-model">Inspect the model, assumptions and scenarios</a>.</>}};return <CharityResearchReport content={content}/>;}
+import LongFormResearchReport from '@/components/LongFormResearchReport';
+import report from '@/data/bay/pacific-hearing-v2-report.json';
+import {modelVersion} from '@/lib/pacific-hearing-v2-model.mjs';
+export const metadata={title:'Pacific Hearing Connection — V2 research | GiveBetter x SF'};
+export default function Page(){return <LongFormResearchReport organization={report.organization} program={report.program} markdown={report.markdown} sources={report.sources} donationUrl={report.donationUrl} modelVersion={modelVersion} modelUrl="/api/pacific-hearing-connection-model" minutes={18} modelLabel="GPT-6 Astra Light"/>;}

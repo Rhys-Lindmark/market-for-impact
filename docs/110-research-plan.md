@@ -16,6 +16,10 @@ User-directed September 11, 2026. Supersedes the old 100-report finish line. Bas
 
 ## C. Top-ten V2 (~30 additional research minutes each)
 
+### Additional user-requested alpha cohort: GiveWell staff personal giving
+
+September 11 addition: find five additional genuinely new Bay Area organizations for approximately fifteen-minute v1 alpha research through https://blog.givewell.org/category/staff-personal-giving/. Keep this cohort separately counted (screened0/5, published0/5), beyond the already selected ten rather than silently replacing their slots. Read individual posts, retain staff member/year/source and personal-giving rationale, verify current local operations, and deduplicate against both published reports and selected ten. Personal donations are candidate-discovery signals, not GiveWell institutional recommendations or cost-effectiveness evidence. Select the most promising local mechanisms, not simply the largest gifts; report any shortage of eligible new examples instead of fabricating five. Include accepted additional reports in the eventual top-ten selection snapshot if published before that freeze; do not silently change the original110 milestone or count screens as reports.
+
 - [ ] C0: After110 are published, freeze the top10 by central positive Bay estimates from the complete research list. Preserve the selection snapshot so moving ranks do not create an endless review loop.
 - [ ] C1–C10: Re-audit causal effects, costs, realistic allocation, duration/survival/utility, alternatives, attribution, overlap, funding baseline and current room. Publish versioned beta/V2 estimates with old/new results and reasons. Worsening estimates are acceptable. Unsupported precision is not.
 - [ ] C11: Recompute the research ordering and homepage four from the accepted estimates; verify canonical report/API/index parity and retain historical versions.

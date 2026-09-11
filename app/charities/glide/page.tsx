@@ -30,6 +30,7 @@ const content: CharityReportContent = {
   eyebrow: 'CHARITY RESEARCH · SAN FRANCISCO',
   program: 'Welcome Center rental assistance for eviction, back-rent, move-in, and deposit crises',
   donationUrl: review.organization.donationUrl,
+  donationNote: 'Choose GLIDE Foundation programs on the giving page, not the separate Church option. This is general program support; a rental-assistance allocation and additional funded case are not verified.',
   published: '8 September 2026',
   modelVersion: model.version,
   nutshell: {

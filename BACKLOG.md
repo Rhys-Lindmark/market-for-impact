@@ -1,5 +1,11 @@
 # Market for Impact backlog
 
+## Donor-route repair
+
+Verification:615tests, lint0errors3existingwarnings, productionbuild and two phone/tablet donor-flow checks pass. Exact-source deploy/canonical checks remain; count stays93.
+
+93/100 verified. Primary GLIDE giving page checked September11: old ways-to-give returned404; use /give/ with explicit Foundation-versus-Church and no verified rental allocation. Reports without an external giving route now label their internal anchor Funding limitations, not Donate. Homepage no longer promises a giving link in every report. No model/ranking changes. Next DOW and BATS accepted reports, then remaining deliberate research and top-ten funding synthesis.
+
 ## Pacific Hearing Connection — candidate93
 
 615tests, lint0errors/3existingwarnings, productionbuild and two phone/tablet checks pass, including sixth-place ordering. Canonical publication remains. Recorded wall gap around07:54–08:32 is not asserted as active research; original worker research remains5m34s.

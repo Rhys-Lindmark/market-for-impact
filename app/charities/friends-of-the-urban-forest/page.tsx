@@ -1,4 +1,4 @@
-import CharityResearchReport,{type CharityReportContent} from '@/components/CharityResearchReport';
-import report from '@/data/sf/fuf-report.json';
-export const metadata={title:'Friends of the Urban Forest — GiveBetter research',description:'San Francisco street-tree research with finite survival, whole-gift costs and explicit health uncertainty.'};
-export default function Page(){const content:CharityReportContent={...report,nutshell:{...report.nutshell,body:<>{report.nutshell.body} <a href="/api/fuf-model">Inspect the model, assumptions and scenarios</a>.</>}};return <CharityResearchReport content={content}/>;}
+import LongFormResearchReport from '@/components/LongFormResearchReport';
+import report from '@/data/sf/fuf-v2-report.json';
+export const metadata={title:'Friends of the Urban Forest — V2 research | GiveBetter x SF'};
+export default function Page(){return <LongFormResearchReport organization={report.organization} program={report.program} markdown={report.markdown} sources={report.sources} donationUrl={report.donationUrl} modelVersion="fuf-depth-v2-2025-sources" modelUrl="/api/fuf-model" minutes={19} modelLabel="GPT-6 Astra Light"/>;}

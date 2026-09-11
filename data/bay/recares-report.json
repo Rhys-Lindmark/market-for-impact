@@ -1,0 +1,347 @@
+{
+  "organization": "The ReCARES Network",
+  "eyebrow": "EXPLORATORY CHARITY RESEARCH · BAY AREA",
+  "program": "Reuse and redistribution of medical equipment and home-health supplies",
+  "donationUrl": "https://www.recares.org/financial-donations/",
+  "published": "Draft for independent audit — not published",
+  "modelVersion": "recares-whole-org-v2",
+  "nutshell": {
+    "headline": "ReCARES has unusually lean cash delivery, but recipient health gains and additional capacity are unmeasured.",
+    "body": "A $10,000 whole-organization gift corresponds to $185,910 per 10 modeled Bay QALYs under explicit subjective priors. The central scenario is $128,892. The 5%-weight favorable scenario contributes 69.3% of signed expected Bay benefit. These are exploratory estimates, not measured returns or a verified recommendation.",
+    "whyItMayWork": "Existing donated inventory, volunteer participation and local distribution provide a plausible low-cash-cost route to mobility and self-care access.",
+    "whyWeAreCautious": "The filing does not define unique recipients or device mix; health effects, safe use, resident shares and cash-driven expansion are unmeasured. Null and net harm remain plausible.",
+    "recommendationBlocker": "Obtain a priced small marginal plan, current reserve restrictions, unique recipients/device mix, counterfactual access and safe-use follow-up before recommending a gift."
+  },
+  "summary": [
+    {
+      "label": "BAY MODELED WHOLE GIFT",
+      "value": "$185,910",
+      "detail": "per 10 signed prior-weighted QALYs; not an empirical estimate"
+    },
+    {
+      "label": "CENTRAL BAY",
+      "value": "$128,892",
+      "detail": "analyst scenario, not measured device benefit"
+    },
+    {
+      "label": "SF MODELED WHOLE GIFT",
+      "value": "$486,998",
+      "detail": "subjective resident allocation, not opening-hours allocation"
+    },
+    {
+      "label": "COMPLETE RESOURCE COST",
+      "value": "Unknown",
+      "detail": "donated equipment, volunteer and downstream costs not valued"
+    },
+    {
+      "label": "MARGINAL OFFER",
+      "value": "Unverified",
+      "detail": "$10k illustration; no $100k scale assurance"
+    }
+  ],
+  "programSection": {
+    "body": "The nonprofit collects donated equipment and supplies and redistributes them through Oakland, San Francisco and Marin operations. Large items may be matched directly between donors and recipients.",
+    "steps": [
+      {
+        "title": "Coordinate and screen donations",
+        "detail": "Operating cash supports organizational coordination and logistics; donated inventory is not purchased at retail prices by the gift."
+      },
+      {
+        "title": "Match supplies and equipment",
+        "detail": "Users have diverse needs and may receive multiple items or make repeat visits. Unique users and primary device classes are not published."
+      },
+      {
+        "title": "Enable finite use",
+        "detail": "Only additional safe recipient use is credited. Economic savings, recycling and caregiver benefits remain outside this health model."
+      }
+    ],
+    "boundary": "The full $111,205 FY2024 legal-entity expense is divided by 9,770 reported recipient-equivalents. Items and repeated narratives are not added to recipients. The approximately $11.38 ratio is retrospective, not a marginal offer or cost per verified unique person."
+  },
+  "model": {
+    "headline": "Signed prior-weighted Bay model: $185,910 per 10 QALYs.",
+    "body": "Additional service volume is reduced for repeat recipients; each unique recipient enters one dominant needs group. Within each group, unmet counterfactual access, safe use, utility and finite duration determine benefit. Independent harms are subtracted before applying nested resident shares. All downstream coefficients are judgments.",
+    "equation": {
+      "label": "CENTRAL BAY MODEL",
+      "expression": "U = ($10,000 / ($111,205 / 9,770)) × 0.50 × 0.65; Q = U × [0.20×0.50×0.85×0.05×0.50 + 0.15×0.40×0.85×0.03×0.50 + 0.65×0.30×0.90×0.005×0.08 − 0.0001] × 0.95; cost = 10 × $10,000 / Q",
+      "result": "285.531226 assumed additional unique recipients; 0.775843 Bay QALYs; $128,892 per 10."
+    },
+    "inputColumnLabel": "Measured accounting versus explicit analyst judgments",
+    "inputs": [
+      {
+        "key": "cost",
+        "label": "Whole-organization cash cost per reported recipient-equivalent",
+        "best": "$11",
+        "range": "$111,205 / 9,770",
+        "confidence": "Verified historical accounting; low marginal interpretation",
+        "basis": "All organizational expenses, including nonprogram costs, are charged. Filing lower-bound recipients are a modeling denominator, not a known unique-person census."
+      },
+      {
+        "key": "prior",
+        "label": "Subjective scenario weights",
+        "best": "15% harm / 35% null / 20% cautious / 25% central / 5% favorable",
+        "range": "Fixed illustrative weights",
+        "confidence": "Analyst judgment; not statistical confidence",
+        "basis": "The author reports specifying these subjective weights before calculating outputs; that chronology is not independently verified. Half the weight reflects null/harm given missing outcomes. These are judgments, not measured probabilities."
+      },
+      {
+        "key": "throughput",
+        "label": "Cash-to-additional-service fraction",
+        "best": "50% central",
+        "range": "25%–75%",
+        "confidence": "Unverified analyst prior",
+        "basis": "Models additional operations versus replacing other donors, using reserves or funding activity that would happen anyway. It is separate from recipient access to alternative equipment."
+      },
+      {
+        "key": "dedup",
+        "label": "Unique recipients per reported recipient-equivalent",
+        "best": "65% central",
+        "range": "50%–80%",
+        "confidence": "Unverified analyst prior",
+        "basis": "Deduplicates visits/repeat users. No public definition resolves how many unique people the 9,770 describes. Repeat supplies are represented through finite duration, not additional people."
+      },
+      {
+        "key": "mix",
+        "label": "Mutually exclusive primary-needs groups",
+        "best": "20% mobility / 15% bathing-transfer / 65% supplies-other",
+        "range": "10%–30% / 10%–20% / 50%–80%",
+        "confidence": "Unmeasured portfolio mix",
+        "basis": "Assign each modeled unique recipient one dominant pathway to prevent stacking multiple devices. Shares sum to one. These are not observed device frequencies."
+      },
+      {
+        "key": "unmet",
+        "label": "Without this delivery, access would remain unmet",
+        "best": "50% mobility / 40% bathing / 30% supplies",
+        "range": "15%–70% across scenarios and categories",
+        "confidence": "Analyst counterfactual prior",
+        "basis": "Accounts for insurance, purchase, other charity and delivery delays. The intake instrument distinguishes reasons but publishes no frequencies."
+      },
+      {
+        "key": "use",
+        "label": "Safe, effective use conditional on unmet need",
+        "best": "85% / 85% / 90%",
+        "range": "70%–95%",
+        "confidence": "Analyst prior",
+        "basis": "Prevents treating every donated device as clinically suitable. Separate independent harms remain possible even when no benefit is realized."
+      },
+      {
+        "key": "utility",
+        "label": "Annual recipient health-utility gain",
+        "best": "0.05 / 0.03 / 0.005",
+        "range": "0–0.08 / 0–0.04 / 0–0.01",
+        "confidence": "Unvalidated analyst bridge",
+        "basis": "Mobility/comfort/self-care benefits only. External literature does not identify these coefficients. No statistical-life, income or retail-value conversion is used."
+      },
+      {
+        "key": "duration",
+        "label": "Finite effective benefit duration",
+        "best": "0.50 / 0.50 / 0.08 years",
+        "range": "0.25–0.75 / 0.25–0.50 / 0.05–0.12",
+        "confidence": "Analyst prior",
+        "basis": "Effective duration incorporates temporary need and discontinuation. No lifetime, repeated-year or caregiver credit. Horizons are below one year; no material multiyear discounting assumed."
+      },
+      {
+        "key": "harm",
+        "label": "Independent burden per incremental unique recipient",
+        "best": "0.0001 QALY central",
+        "range": "0–0.002",
+        "confidence": "Analyst stress test, not observed harm",
+        "basis": "Subtracted independently of positive benefit; includes possible unsuitable equipment, failed travel and other burdens. Harm scenario has no positive utility and can be negative."
+      },
+      {
+        "key": "geo",
+        "label": "Bay and SF resident shares",
+        "best": "95% Bay / 30% SF central",
+        "range": "85%–98% Bay; 20%–40% SF",
+        "confidence": "Unknown empirical shares; subjective nested allocations",
+        "basis": "SF is nested inside Bay. Site hours never determine residence. Overseas-aid caption and users from outside local sites motivate explicit dilution; magnitude is unknown."
+      },
+      {
+        "key": "resources",
+        "label": "Complete societal resource cost",
+        "best": "Unavailable",
+        "range": "Unpriced donated equipment, labor, travel and follow-up",
+        "confidence": "Not measured",
+        "basis": "Gross donation means donor cash before fees, not total resources. No retail-value multiplier is claimed. Extra resource-price scenarios are arithmetic stress tests only."
+      }
+    ],
+    "giftHeading": "Illustrative $10,000 unrestricted check",
+    "sensitivity": [
+      {
+        "case": "harm (15.0% prior)",
+        "headline": "-0.197675 Bay QALYs; Unavailable per 10",
+        "detail": "109.819702 assumed unique recipients; benefit 0 less independent harm 0.219639 before geography."
+      },
+      {
+        "case": "null (35.0% prior)",
+        "headline": "0 Bay QALYs; Unavailable per 10",
+        "detail": "109.819702 assumed unique recipients; benefit 0 less independent harm 0 before geography."
+      },
+      {
+        "case": "cautious_positive (20.0% prior)",
+        "headline": "0.004576 Bay QALYs; $21,853,827 per 10",
+        "detail": "131.783643 assumed unique recipients; benefit 0.018562 less independent harm 0.013178 before geography."
+      },
+      {
+        "case": "central (25.0% prior)",
+        "headline": "0.775843 Bay QALYs; $128,892 per 10",
+        "detail": "285.531226 assumed unique recipients; benefit 0.84523 less independent harm 0.028553 before geography."
+      },
+      {
+        "case": "favorable (5.0% prior)",
+        "headline": "7.453388 Bay QALYs; $13,417 per 10",
+        "detail": "527.134571 assumed unique recipients; benefit 7.631854 less independent harm 0.026357 before geography."
+      },
+      {
+        "case": "No favorable tail, other weights renormalized",
+        "headline": "$574,975 per 10 Bay QALYs",
+        "detail": "Sensitivity only; no measured preference for this reweighting."
+      }
+    ],
+    "uncertaintyBoundary": "The priors are neither measured effects nor confidence intervals. Null and harm count in expected benefit. No complete societal cost is available. A zero-gift case returns zero benefit and unavailable ratios. The implementation deliberately rejects gifts above the $10k modeled bound.",
+    "fundingBoundary": "Current marginal funding room is unverified. Historical cash/savings/investments equal about 1.59 years of operating expenses; restrictions are unknown. Storage and limited opening hours identify possible constraints, but no priced plan or waiting-list count establishes that money is the binding constraint. The illustration is a $10,000 check with zero assumed processing fee; electronic fees are not asserted. $10k is about 9% of annual expense. The model rejects gifts above $10k and does not warrant linear $100k scaling. Public insurance, other charities, reserves and the existing direct-matching system may replace gift-funded access."
+  },
+  "evidence": [
+    {
+      "key": "filing",
+      "design": "FY2024 IRS 990-EZ self-report",
+      "population": "Whole ReCARES legal entity",
+      "result": "The filing reports more than 9,770 recipients and 42,000 items; all annual costs are included.",
+      "transfer": "Recipient counts may include repeat visits. No matched outcomes or resident data accompany these totals."
+    },
+    {
+      "key": "mechanism",
+      "design": "Official operations and intake descriptions",
+      "population": "Current users and volunteers",
+      "result": "Reused equipment is distributed with limited storage and first-come-first-served access.",
+      "transfer": "Operational constraints are real; whether another gift expands safe useful delivery remains unknown."
+    },
+    {
+      "key": "clinical",
+      "design": "WHO provision guidance and assistive-device evidence reviews",
+      "population": "Wheelchair users and community-dwelling older adults, not a ReCARES cohort",
+      "result": "Appropriate matching and follow-up matter; evidence is heterogeneous and does not supply a portfolio QALY coefficient.",
+      "transfer": "Supports caution and mechanism plausibility only; all numeric utility assumptions remain independent analyst priors."
+    },
+    {
+      "key": "controlled-aids",
+      "design": "Randomized walking-aid and rollator trials",
+      "population": "Older Brazilian emergency patients and post-rehabilitation COPD patients; not ReCARES users",
+      "result": "Functional improvements did not establish randomized quality-of-life improvements. The rollator trial found no between-group quality-of-life effect; 8 of 18 participants used it less than three times weekly.",
+      "transfer": "Neither study validates the modeled utility or duration. A 0–100 health rating is not preference-weighted utility. Installed-shower adaptation evidence cannot be transferred directly to portable aids."
+    }
+  ],
+  "reservations": [
+    "Cash efficiency is not health cost-effectiveness.",
+    "No unique-recipient denominator, device-category distribution or matched use outcomes.",
+    "Repeat visits, alternative coverage and inappropriate fit can sharply lower benefit.",
+    "No priced marginal expansion or current restricted/unrestricted cash split.",
+    "The favorable tail supplies most expected Bay benefit.",
+    "Resident geography and any overseas allocation are unmeasured.",
+    "Complete societal resources are unknown; cash donations cannot be described as all-in intervention costs."
+  ],
+  "excludedBenefits": [
+    "Retail replacement value and recipient financial savings",
+    "Landfill diversion and climate effects",
+    "Caregiver health and time savings",
+    "Hospitalizations, deaths and falls added independently of the utility pathway",
+    "Long-term independence extrapolated beyond the specified finite periods"
+  ],
+  "sources": [
+    {
+      "publisher": "The ReCARES Network / IRS, mirrored by ProPublica",
+      "title": "FY2024 Form 990-EZ and Schedule O",
+      "url": "https://projects.propublica.org/nonprofits/organizations/943213876/202501339349200530/full",
+      "published": "Filed 2025-05-13",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary legal-entity self-report"
+    },
+    {
+      "publisher": "ReCARES",
+      "title": "About ReCARES",
+      "url": "https://www.recares.org/about/",
+      "published": "Undated current page",
+      "retrieved": "2026-09-11",
+      "sourceType": "Official operations description"
+    },
+    {
+      "publisher": "ReCARES",
+      "title": "Receive Equipment and Supplies",
+      "url": "https://www.recares.org/receive/",
+      "published": "Undated current page",
+      "retrieved": "2026-09-11",
+      "sourceType": "Official recipient instructions"
+    },
+    {
+      "publisher": "ReCARES",
+      "title": "Donate/Receive Large DME",
+      "url": "https://www.recares.org/largedme",
+      "published": "Undated current page",
+      "retrieved": "2026-09-11",
+      "sourceType": "Official matching-system instructions"
+    },
+    {
+      "publisher": "ReCARES",
+      "title": "Financial Donations",
+      "url": "https://www.recares.org/financial-donations/",
+      "published": "Undated current page",
+      "retrieved": "2026-09-11",
+      "sourceType": "Official giving route"
+    },
+    {
+      "publisher": "ReCARES",
+      "title": "Liability Waiver and Acceptance Form",
+      "url": "https://www.recares.org/liability/",
+      "published": "Undated current page",
+      "retrieved": "2026-09-11",
+      "sourceType": "Official intake instrument"
+    },
+    {
+      "publisher": "StopWaste",
+      "title": "October 17, 2025 Bay Area Reuse & Repair Network meeting notes",
+      "url": "https://www.stopwaste.org/sites/default/files/101725%20Bay%20Area%20ReuseRepair%20Network%20Meeting%20Notes.pdf",
+      "published": "2025-10-17",
+      "retrieved": "2026-09-11",
+      "sourceType": "Public agency record of ReCARES presentation"
+    },
+    {
+      "publisher": "World Health Organization",
+      "title": "Wheelchair provision guidelines",
+      "url": "https://www.who.int/publications/i/item/9789240074521/",
+      "published": "2023-06-05",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary official practice guideline"
+    },
+    {
+      "publisher": "Marasinghe et al., BMC Geriatrics",
+      "title": "Impact of assistive devices on community-dwelling older adults and informal caregivers",
+      "url": "https://link.springer.com/article/10.1186/s12877-022-03557-8",
+      "published": "2022-11-24; updated after 2023 correction",
+      "retrieved": "2026-09-11",
+      "sourceType": "Peer-reviewed systematic review"
+    },
+    {
+      "publisher": "Fotteler et al., JMIR Aging",
+      "title": "Effectiveness of assistive technologies and influence of frailty",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9016506/",
+      "published": "2022",
+      "retrieved": "2026-09-11",
+      "sourceType": "Peer-reviewed review of randomized trials"
+    },
+    {
+      "publisher": "Polesel et al., JAMA Network Open",
+      "title": "Walking aids prescribed in a geriatric emergency department",
+      "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2841747",
+      "published": "2025",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary randomized trial"
+    },
+    {
+      "publisher": "Gupta et al., Chest",
+      "title": "Effect of rollator use on health-related quality of life in individuals with COPD",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17035442/",
+      "published": "2006-10",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary randomized trial"
+    }
+  ]
+}

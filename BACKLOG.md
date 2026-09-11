@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Report banners — removed September 11
+
+Removed status banners and the generic “Before a major gift” disclosure from both report templates. The ten organization-specific caveats now appear as plain text within Funding and previous grants, not above Summary. No research estimates, directory ordering or shortlist judgments changed. Production build, focused lint and all-ten affected report checks at phone/tablet widths pass. Next: publish this scoped presentation change.
+
 ## Research headers — simplified September 11
 
 Removed visible version/beta labels from all ten long-form report headers. Latest-review time stays visible; existing first-pass effort and current-review effort appear as v1/v2 only inside the disclosure. Historical estimates retain their estimate marker. Cost-effectiveness models and rankings are unchanged. Production build, focused lint and all-ten-report disclosure/anchor checks at phone and tablet widths pass. Next: publish this presentation-only change; research expansion remains complete.

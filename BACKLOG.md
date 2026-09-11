@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## HOPE V2 — accepted and validated, release pending
+
+110 alpha and 4/10 V2 live through GLIDE PR302/Sites223. All ten V2 author packets now independently accepted; remaining six need root publication. HOPE's expanded report preserves central $554,660 and weighted $763,248/10 Bay QALYs while updating official nine-site/>6,000 cumulative claims without treating them as annual unique beneficiaries. Missing annual finances remain missing; county-funded hardware and San Mateo eligibility are explicit. No verified donation recipient route, so no fabricated Donate button. 59 model checks, narrative anchors, full suite, lint/build and phone/tablet/desktop tests pass, including shared SPUR renderer regression. Next exact-source canonical release, then HAC/PHC/Pacific Hearing/NEMS/FUF. No priced marginal offer.
+
 ## GLIDE V2 — validation complete, publication pending
 
 110 alpha reports and 3/10 V2 remain live through SPUR PR311/Sites222. GLIDE's accepted V2 now renders its entire 10,539-word narrative and labeled summary, three-year Foundation spending, current public funding/youth services and finite distinct clinical cohorts. Central $4,890,657/10 Bay QALYs preserves the accepted broad-gift model, not the historical rental-only estimate; no complete expected value or funding offer claimed. Full saved-output tests, independent survival/source audit, full suite, lint/build and phone/tablet/desktop checks pass. Merge retains Breathe/SPUR/ReCARES changes and rental-only archive. Next exact-source canonical release; then remaining accepted frozen-cohort V2 reports. Research effort and integration time remain separately recorded.

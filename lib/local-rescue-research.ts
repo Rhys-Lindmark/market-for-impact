@@ -1,6 +1,6 @@
 import {calculate as micahModel} from './micahs-hugs-model.mjs';
 import {calculate as needModel} from './berkeley-need-model.mjs';
-import {calculate as hopeModel} from './hope-pacifica-model.mjs';
+import {calculate as hopeModel} from './hope-v2-model.mjs';
 // Rank these reports by their explicitly identified central scenario, not a
 // probability-weighted result dominated by a speculative favorable tail.
 export const localRescueResearch=[

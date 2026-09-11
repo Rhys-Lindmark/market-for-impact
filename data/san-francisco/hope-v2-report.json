@@ -1,0 +1,632 @@
+{
+  "organization": "HOPE: Healing, Overdose Prevention, and Education",
+  "eyebrow": "Exploratory whole-gift Bay research",
+  "program": "Pacifica naloxone access within a whole community-support organization",
+  "published": "2026-09-11",
+  "modelVersion": "hope-pacifica-depth-v2-unchanged-priors",
+  "nutshell": {
+    "headline": "Potentially inexpensive access, but neither annual cost nor additional risk coverage is measured",
+    "body": "The signed prior-weighted estimate is $763,248 per 10 Bay QALYs, or 0.0131019 QALYs per illustrative $1,000 gift. Annual whole expense is an explicit $20,000–$100,000 prior, not a filing or the $10,000 county grant. This is modeled naloxone health at whole-organization cost, not measured impact or a complete portfolio return.",
+    "whyItMayWork": "A small volunteer organization can put naloxone near an overdose that would otherwise lack timely rescue. Existing locations are concrete, while statewide medication supply can complement local stocking and outreach.",
+    "whyWeAreCautious": "The favorable 5% delivery family supplies 65.7% of signed expected health. Without it, the renormalized estimate is $2,113,122 per 10. The separate central-cost/central-delivery scenario is $554,660. Annual packs, network deduplication, hazard change, cost and cash response are all unverified. Current county alternatives include free distribution hardware, not only medication; no residual cash bottleneck is verified.",
+    "recommendationBlocker": "HOLD giving recommendation: first verify whole expenses and grant balances, annual use-ready risk-network coverage, and what an extra unrestricted gift can change beyond existing grants and free supply."
+  },
+  "summary": [
+    {
+      "label": "Ordinary gift scope",
+      "value": "Whole organization, partial health",
+      "detail": "All assumed operating costs retained; only incremental naloxone survival minus harms quantified. Education, grief support and other outcomes are not assigned invented health."
+    },
+    {
+      "label": "Cost evidence",
+      "value": "No observed annual expense",
+      "detail": "Three cost priors: $20k (20%), $40k (50%), $100k (30%). These are not confidence bounds or verified budgets."
+    },
+    {
+      "label": "Subjective threshold mass",
+      "value": "22.5% below $1M; 3.5% below $100k per 10 Bay QALYs",
+      "detail": "Weights are analyst judgments, not calibrated chances or evidence that a giving offer exists."
+    }
+  ],
+  "programSection": {
+    "body": "HOPE is a Pacifica nonprofit combining overdose prevention, family resources, education and memorial/support events. The current native dedicated page lists nine Bay access locations; homepage list is shorter. Location listing does not verify stock, hours or unique recipients.",
+    "steps": [
+      {
+        "title": "Support the whole operating portfolio",
+        "detail": "An unrestricted gift may support delivery, insurance, transport, events or administration. Model response concerns additional risk coverage per whole-budget unit; it is not an earmarked dispenser purchase."
+      },
+      {
+        "title": "Convert supply into use-ready risk-network coverage",
+        "detail": "Assumed annual two-device packs × ready fraction ÷ repeated packs per recipient-network × deduplicated at-risk conversion. Recipients may be bystanders; several kits can protect the same person. No extra network multiplier or doses-as-lives shortcut."
+      },
+      {
+        "title": "Compare finite survival under current and improved access",
+        "detail": "One active year of a small net mortality-hazard difference, followed by common risk in both arms. Each person has one finite trajectory. Independent morbidity harms are subtracted."
+      }
+    ],
+    "boundary": "Whole-expense prior includes fundraising and non-naloxone activities, but donated medication, volunteer time, venue support, EMS and partner resources are unpriced complements. No complete societal cost estimate. Public medication and paid grants are existing resources, not private donor-created supply. Unquantified support outcomes mean this is partial-health, not a complete-return claim or guaranteed lower bound."
+  },
+  "model": {
+    "headline": "$763,248 per 10 Bay QALYs — highly prior-dependent",
+    "body": "Three cost worlds crossed with six delivery worlds, 18 complete signed rows. Average QALYs per fixed $1,000 gift before dividing cost by health. Cost and delivery priors are independent for transparency, not because independence is observed; fixed-high-cost sensitivity tests that favorable efficiency is not assured. No coefficients changed after first calculation.",
+    "equation": {
+      "label": "Whole-gift finite risk-network model",
+      "expression": "gift / assumed whole annual expense × (annual pack equivalents × ready / repeat packs × risk-network conversion) × cash response × [utility × discounted integral(S_with − S_current) − independent harm] × Bay fraction",
+      "result": "0.013101904653691494 Bay QALYs per $1,000; all-geography 0.01351529391759723"
+    },
+    "inputs": [
+      {
+        "key": "expense",
+        "label": "Whole annual gross expense",
+        "best": "$40,000 central",
+        "range": "$20,000–$100,000; no observed amount",
+        "basis": "Includes all ordinary operations, not grant hardware alone. Low/high costs reflect uncertainty about a small volunteer organization and event/support spending; in-kind resource cost unknown.",
+        "confidence": "Very low; analyst prior unless explicitly stated"
+      },
+      {
+        "key": "packs",
+        "label": "Annual two-device-pack equivalents",
+        "best": "1,500",
+        "range": "750–3,000",
+        "basis": "Unobserved annual flow. Cumulative website quantities cannot identify year, device versus pack, purchases, end-user distribution or usage. NDP defines one nasal unit as two devices; HOPE units are not reconciled.",
+        "confidence": "Very low; analyst prior unless explicitly stated"
+      },
+      {
+        "key": "ready",
+        "label": "Use-ready rather than duplicate inventory fraction",
+        "best": ".5",
+        "range": ".3–.8",
+        "basis": "Judgment for stock kept usable and accessible, not reserve/expired or ineffective placement. Does not mean administered in an overdose.",
+        "confidence": "Very low; analyst prior unless explicitly stated"
+      },
+      {
+        "key": "repeats",
+        "label": "Annual packs per recipient-network equivalent",
+        "best": "3",
+        "range": "3–5",
+        "basis": "Deduplicates repeated access; not a prospective overdose-opportunity rate.",
+        "confidence": "Very low; analyst prior unless explicitly stated"
+      },
+      {
+        "key": "riskNetwork",
+        "label": "Deduplicated at-risk-person conversion",
+        "best": ".8",
+        "range": ".5–.8",
+        "basis": "Joint relevance/network-overlap prior. Bystander recipients are not automatically at-risk people. Central implied200 prospective people, not observed unique beneficiaries.",
+        "confidence": "Very low; analyst prior unless explicitly stated"
+      },
+      {
+        "key": "hazards",
+        "label": "Current-care and incrementally avoided annual hazard",
+        "best": ".070 baseline; .002 reduction",
+        "range": "Baseline .07–.10; reduction 0–.004 plus signed diagnostic capability",
+        "basis": "Net reduction includes use, overdose occurrence, timely alternatives and clinical effectiveness. Not statistically inferred from distributions or selected successful rescues. Supported central hazard .068; do not add overdose mortality twice.",
+        "confidence": "Very low; analyst prior unless explicitly stated"
+      },
+      {
+        "key": "duration",
+        "label": "Active access and finite follow-up",
+        "best": "1 active year; 10-year horizon",
+        "range": "5–10 years; 1- and 2-year diagnostic",
+        "basis": "After one year both arms have common mortality hazard .07–.10. Survival advantage can persist; no continuing program effect or restart per rescue.",
+        "confidence": "Very low; analyst prior unless explicitly stated"
+      },
+      {
+        "key": "utility",
+        "label": "Utility while alive",
+        "best": ".65",
+        "range": ".6–.7",
+        "basis": "Analyst health-state prior, not a local utility study. Annual discount3%, implemented as ln(1.03) continuous rate.",
+        "confidence": "Very low; analyst prior unless explicitly stated"
+      },
+      {
+        "key": "funding",
+        "label": "Additional coverage response to whole gift",
+        "best": ".5",
+        "range": "0–.7",
+        "basis": "Separately addresses substitution of public/donor baseline and non-rescue allocation, not an extra efficacy factor. Existing medication supply is a complement and alternative.",
+        "confidence": "Very low; analyst prior unless explicitly stated"
+      },
+      {
+        "key": "bay",
+        "label": "Bay health share",
+        "best": ".95",
+        "range": ".9–.98",
+        "basis": "Locations establish Bay delivery, not recipient residence or all later rescue locations. No SF-specific share asserted.",
+        "confidence": "Very low; analyst prior unless explicitly stated"
+      },
+      {
+        "key": "harm",
+        "label": "Independent adverse QALY per additional covered person",
+        "best": ".00002",
+        "range": "0–.0005",
+        "basis": "Stress for adverse morbidity or misdirected response, not a measured naloxone harm rate. No separate mortality harm counted twice.",
+        "confidence": "Very low; analyst prior unless explicitly stated"
+      }
+    ],
+    "giftHeading": "Illustrative $1,000 gift; no $10k or $100k scaling assurance",
+    "sensitivity": [
+      {
+        "case": "lean__funding_null",
+        "headline": "No finite positive price per 10; joint weight 4.0%",
+        "detail": "Bay Q 0; whole expense prior $20000; 200 modeled risk people per annual budget unit; 0 additional person-equivalents per gift. Gross Q 0, harm Q 0."
+      },
+      {
+        "case": "lean__access_null",
+        "headline": "No finite positive price per 10; joint weight 4.0%",
+        "detail": "Bay Q 0; whole expense prior $20000; 200 modeled risk people per annual budget unit; 5 additional person-equivalents per gift. Gross Q 0, harm Q 0."
+      },
+      {
+        "case": "lean__harm",
+        "headline": "No finite positive price per 10; joint weight 2.0%",
+        "detail": "Bay Q -0.002375; whole expense prior $20000; 200 modeled risk people per annual budget unit; 5 additional person-equivalents per gift. Gross Q 0, harm Q 0.0025."
+      },
+      {
+        "case": "lean__cautious",
+        "headline": "$52,503,549 per 10; joint weight 4.0%",
+        "detail": "Bay Q 0.00019046331394379304; whole expense prior $20000; 22.5 modeled risk people per annual budget unit; 0.225 additional person-equivalents per gift. Gross Q 0.00021612590438199226, harm Q 0.0000045."
+      },
+      {
+        "case": "lean__central",
+        "headline": "$277,330 per 10; joint weight 5.0%",
+        "detail": "Bay Q 0.03605815484060929; whole expense prior $20000; 200 modeled risk people per annual budget unit; 5 additional person-equivalents per gift. Gross Q 0.03805595246379926, harm Q 0.0001."
+      },
+      {
+        "case": "lean__favorable",
+        "headline": "$29,630 per 10; joint weight 1.0%",
+        "detail": "Bay Q 0.3374975550388841; whole expense prior $20000; 600 modeled risk people per annual budget unit; 21 additional person-equivalents per gift. Gross Q 0.3445952602437593, harm Q 0.00021."
+      },
+      {
+        "case": "central_cost__funding_null",
+        "headline": "No finite positive price per 10; joint weight 10.0%",
+        "detail": "Bay Q 0; whole expense prior $40000; 200 modeled risk people per annual budget unit; 0 additional person-equivalents per gift. Gross Q 0, harm Q 0."
+      },
+      {
+        "case": "central_cost__access_null",
+        "headline": "No finite positive price per 10; joint weight 10.0%",
+        "detail": "Bay Q 0; whole expense prior $40000; 200 modeled risk people per annual budget unit; 2.5 additional person-equivalents per gift. Gross Q 0, harm Q 0."
+      },
+      {
+        "case": "central_cost__harm",
+        "headline": "No finite positive price per 10; joint weight 5.0%",
+        "detail": "Bay Q -0.0011875; whole expense prior $40000; 200 modeled risk people per annual budget unit; 2.5 additional person-equivalents per gift. Gross Q 0, harm Q 0.00125."
+      },
+      {
+        "case": "central_cost__cautious",
+        "headline": "$105,007,099 per 10; joint weight 10.0%",
+        "detail": "Bay Q 0.00009523165697189652; whole expense prior $40000; 22.5 modeled risk people per annual budget unit; 0.1125 additional person-equivalents per gift. Gross Q 0.00010806295219099613, harm Q 0.00000225."
+      },
+      {
+        "case": "central_cost__central",
+        "headline": "$554,660 per 10; joint weight 12.5%",
+        "detail": "Bay Q 0.018029077420304646; whole expense prior $40000; 200 modeled risk people per annual budget unit; 2.5 additional person-equivalents per gift. Gross Q 0.01902797623189963, harm Q 0.00005."
+      },
+      {
+        "case": "central_cost__favorable",
+        "headline": "$59,260 per 10; joint weight 2.5%",
+        "detail": "Bay Q 0.16874877751944206; whole expense prior $40000; 600 modeled risk people per annual budget unit; 10.5 additional person-equivalents per gift. Gross Q 0.17229763012187965, harm Q 0.000105."
+      },
+      {
+        "case": "high_cost__funding_null",
+        "headline": "No finite positive price per 10; joint weight 6.0%",
+        "detail": "Bay Q 0; whole expense prior $100000; 200 modeled risk people per annual budget unit; 0 additional person-equivalents per gift. Gross Q 0, harm Q 0."
+      },
+      {
+        "case": "high_cost__access_null",
+        "headline": "No finite positive price per 10; joint weight 6.0%",
+        "detail": "Bay Q 0; whole expense prior $100000; 200 modeled risk people per annual budget unit; 1 additional person-equivalents per gift. Gross Q 0, harm Q 0."
+      },
+      {
+        "case": "high_cost__harm",
+        "headline": "No finite positive price per 10; joint weight 3.0%",
+        "detail": "Bay Q -0.000475; whole expense prior $100000; 200 modeled risk people per annual budget unit; 1 additional person-equivalents per gift. Gross Q 0, harm Q 0.0005."
+      },
+      {
+        "case": "high_cost__cautious",
+        "headline": "$262,517,747 per 10; joint weight 6.0%",
+        "detail": "Bay Q 0.00003809266278875862; whole expense prior $100000; 22.5 modeled risk people per annual budget unit; 0.045000000000000005 additional person-equivalents per gift. Gross Q 0.00004322518087639846, harm Q 9.000000000000002e-7."
+      },
+      {
+        "case": "high_cost__central",
+        "headline": "$1,386,649 per 10; joint weight 7.5%",
+        "detail": "Bay Q 0.007211630968121859; whole expense prior $100000; 200 modeled risk people per annual budget unit; 1 additional person-equivalents per gift. Gross Q 0.0076111904927598515, harm Q 0.00002."
+      },
+      {
+        "case": "high_cost__favorable",
+        "headline": "$148,149 per 10; joint weight 1.5%",
+        "detail": "Bay Q 0.0674995110077768; whole expense prior $100000; 600 modeled risk people per annual budget unit; 4.199999999999999 additional person-equivalents per gift. Gross Q 0.06891905204875184, harm Q 0.000042."
+      },
+      {
+        "case": "fixed_20k",
+        "headline": "$389,256 per 10 Bay QALYs",
+        "detail": "Signed expected Bay Q per $1,000: 0.02569000912488529. Sensitivity only, not a new assigned probability. Full matrices saved."
+      },
+      {
+        "case": "fixed_40k",
+        "headline": "$778,513 per 10 Bay QALYs",
+        "detail": "Signed expected Bay Q per $1,000: 0.012845004562442645. Sensitivity only, not a new assigned probability. Full matrices saved."
+      },
+      {
+        "case": "fixed_100k",
+        "headline": "$1,946,282 per 10 Bay QALYs",
+        "detail": "Signed expected Bay Q per $1,000: 0.005138001824977057. Sensitivity only, not a new assigned probability. Full matrices saved."
+      },
+      {
+        "case": "half_network",
+        "headline": "$1,526,496 per 10 Bay QALYs",
+        "detail": "Signed expected Bay Q per $1,000: 0.006550952326845747. Sensitivity only, not a new assigned probability. Full matrices saved."
+      },
+      {
+        "case": "half_hazard_gain",
+        "headline": "$1,544,117 per 10 Bay QALYs",
+        "detail": "Signed expected Bay Q per $1,000: 0.006476191683117564. Sensitivity only, not a new assigned probability. Full matrices saved."
+      },
+      {
+        "case": "half_funding",
+        "headline": "$1,526,496 per 10 Bay QALYs",
+        "detail": "Signed expected Bay Q per $1,000: 0.006550952326845747. Sensitivity only, not a new assigned probability. Full matrices saved."
+      },
+      {
+        "case": "one_year_only",
+        "headline": "$10,854,317 per 10 Bay QALYs",
+        "detail": "Signed expected Bay Q per $1,000: 0.0009212924394145644. Sensitivity only, not a new assigned probability. Full matrices saved."
+      },
+      {
+        "case": "two_year_horizon",
+        "headline": "$3,479,370 per 10 Bay QALYs",
+        "detail": "Signed expected Bay Q per $1,000: 0.0028740832461949823. Sensitivity only, not a new assigned probability. Full matrices saved."
+      },
+      {
+        "case": "double_expense_resource_stress",
+        "headline": "$1,526,496 per 10 Bay QALYs",
+        "detail": "Signed expected Bay Q per $1,000: 0.006550952326845747. Sensitivity only, not a new assigned probability. Full matrices saved."
+      },
+      {
+        "case": "v2_halfFunding",
+        "headline": "$1,526,496 per10 Bay QALYs",
+        "detail": "V2 diagnostic only; no assigned probability change. Full signed matrix in model data."
+      },
+      {
+        "case": "v2_quarterFunding",
+        "headline": "$3,052,991 per10 Bay QALYs",
+        "detail": "V2 diagnostic only; no assigned probability change. Full signed matrix in model data."
+      },
+      {
+        "case": "v2_halfPacks",
+        "headline": "$1,526,496 per10 Bay QALYs",
+        "detail": "V2 diagnostic only; no assigned probability change. Full signed matrix in model data."
+      },
+      {
+        "case": "v2_doubleRepeats",
+        "headline": "$1,526,496 per10 Bay QALYs",
+        "detail": "V2 diagnostic only; no assigned probability change. Full signed matrix in model data."
+      },
+      {
+        "case": "v2_halfHazardGain",
+        "headline": "$1,544,117 per10 Bay QALYs",
+        "detail": "V2 diagnostic only; no assigned probability change. Full signed matrix in model data."
+      },
+      {
+        "case": "v2_horizon1",
+        "headline": "$10,854,317 per10 Bay QALYs",
+        "detail": "V2 diagnostic only; no assigned probability change. Full signed matrix in model data."
+      },
+      {
+        "case": "v2_horizon2",
+        "headline": "$3,479,370 per10 Bay QALYs",
+        "detail": "V2 diagnostic only; no assigned probability change. Full signed matrix in model data."
+      },
+      {
+        "case": "v2_horizon5",
+        "headline": "$1,300,404 per10 Bay QALYs",
+        "detail": "V2 diagnostic only; no assigned probability change. Full signed matrix in model data."
+      },
+      {
+        "case": "v2_expense20000",
+        "headline": "$389,256 per10 Bay QALYs",
+        "detail": "V2 diagnostic only; no assigned probability change. Full signed matrix in model data."
+      },
+      {
+        "case": "v2_expense40000",
+        "headline": "$778,513 per10 Bay QALYs",
+        "detail": "V2 diagnostic only; no assigned probability change. Full signed matrix in model data."
+      },
+      {
+        "case": "v2_expense100000",
+        "headline": "$1,946,282 per10 Bay QALYs",
+        "detail": "V2 diagnostic only; no assigned probability change. Full signed matrix in model data."
+      }
+    ],
+    "uncertaintyBoundary": "Central survival with improved access is exp(-.068t), versus exp(-.070t) during the first year. Afterward multiply each year-one survival by exp(-.07(t-1)); discount by exp(-ln(1.03)t), integrate through ten years, and multiply utility. Historical survivor cohorts do not identify community-distribution hazards or constant long-term prognosis. Funding-null and access-null have combined40% mass, harm10%, cautious20%, central25%, favorable5%; no favorable-only normalization. Financial and delivery scale may be dependent. No Bay effect claimed just because an organization is headquartered locally.",
+    "fundingBoundary": "County adopted up to $10,000 for dispenser purchase/installation, agreement August26,2025–June30,2026, reimbursed against invoices and required evidence. Adoption is not proof of full payment, completed reporting, remaining balance or recurring annual expense. Earlier agreement risk assessment described volunteer-only operation; current annual staffing/cost is unknown. Official pages also name YouthPoint Health and private fundraising; amounts and restrictions are not reconciled. DHCS makes medication available free to approved organizations; HOPE current source and inventory are not independently verified. Ask (1) full annual gross costs, restricted balances and contributed inputs; (2) dated pack/refill/use-ready coverage with network dedup; (3) what additional $1,000 would sustain or expand, and which staff/stock/venue resource is actually limiting. General donation is not a verified marginal offer. V2: county offers free hardware/shipping and repair coordination for eligible San Mateo County locations; the listed San Francisco site is not automatically covered. Ask what useful gap remains beyond this program."
+  },
+  "evidence": [
+    {
+      "key": "identity",
+      "design": "Official mission and county recipient record; secondary IRS identity delivery",
+      "population": "HOPE Pacifica, EIN99-2104067",
+      "result": "Distinct local nonprofit; not Pacifica Resource Center or another HOPE. Prior IRS-derived identity record lacked annual filings; this is not an original990 or observed zero expense.",
+      "transfer": "Recipient identity and service existence do not verify financial scale. Current cost remains an explicit prior."
+    },
+    {
+      "key": "distribution",
+      "design": "Current official website pages",
+      "population": "Nine listed Bay access points",
+      "result": "Fresh native dedicated page and homepage both claim over6,000 cumulative undefined units. Earlier cached over3,000 statement is historical, not a current contradiction. Annual flow and unique risk people remain unknown.",
+      "transfer": "No measured annual unique at-risk cohort or observed rescue denominator. Unknown hours, repeats, networks, stockouts and alternatives require separate priors."
+    },
+    {
+      "key": "county",
+      "design": "Adopted public grant and original agreement",
+      "population": "Pacifica-area dispenser installation",
+      "result": "Up to$10,000 throughJune30,2026, with invoice reimbursement and maintenance duties. Historical volunteer-only assessment; no annual operating financial statement.",
+      "transfer": "A grant ceiling is not whole annual expense, payment or new funding capacity. Installed public baseline already exists."
+    },
+    {
+      "key": "naloxone_positive",
+      "design": "Massachusetts interrupted time series,2002–2009",
+      "population": "19 communities with overdose education/naloxone implementation",
+      "result": "Adjusted mortality ratios.73(low) and.54(high) versus no implementation; observational association.",
+      "transfer": "Supports mechanism, not current Bay effect per kit or .002 hazard difference; confounding and changed drug supply limit transfer."
+    },
+    {
+      "key": "naloxone_null",
+      "design": "HEALing Communities cluster-randomized multicomponent trial",
+      "population": "67 communities across four states",
+      "result": "Primary opioid mortality aRR.91,95%CI.76–1.09,P=.30. Separate randomized distribution analysis found79% higher naloxone distribution.",
+      "transfer": "More distribution need not yield demonstrated mortality change. This does not isolate naloxone pharmacology; it supports substantial null and implementation uncertainty."
+    },
+    {
+      "key": "mortality",
+      "design": "Historical post-overdose cohort studies",
+      "population": "Selected overdose survivors, not ordinary dispenser recipients",
+      "result": "Larochelle reported4.7 all-cause deaths/100 person-years; Olfson7.783/100 person-years in first-year cohorts.",
+      "transfer": "Only scale context for priors; not Bay-specific prognosis or .07 constant hazard validation. One-year risk differs from hazard; long follow-up and effect duration are assumptions."
+    },
+    {
+      "key": "public_hardware",
+      "design": "Current county FAQ and January2026 launch notice",
+      "population": "San Mateo County host organizations",
+      "result": "County offers free stand boxes and shipping subject to selection; hosts obtain medication and maintain/report stock.",
+      "transfer": "Stronger funded alternative. Residual coordination or coverage may matter, but a private hardware purchase is not automatically additional."
+    }
+  ],
+  "reservations": [
+    "No original annual financials or measured annual cohort; modeled cost is as uncertain as benefit.",
+    "Current cumulative units and annual person/network conversion remain unmeasured; cached total discrepancy resolved in native page.",
+    "Community-distribution users cannot inherit selected rescued-survivor hazard models.",
+    "Unknown current grants, public supply and volunteer response may yield no additional coverage.",
+    "Favorable family drives 65.7% of signed expected benefit.",
+    "Whole-cost partial-health model omits grief/support benefits, but does not establish a lower bound.",
+    "Official homepage links PayPal giving; destination fetch did not verify recipient display or checkout. donationUrl omitted; no gift sent."
+  ],
+  "excludedBenefits": [
+    "Automatic deaths prevented from doses distributed",
+    "Lifetime restart for repeated rescues",
+    "Unmeasured MOUD referral completion or infection prevention",
+    "Unmeasured grief, family support and education health",
+    "Unbounded future survival and cost-free volunteer/medication inputs"
+  ],
+  "sources": [
+    {
+      "publisher": "HOPE",
+      "title": "Current native Narcan locations page",
+      "url": "https://www.hope4change650.org/narcan-locations-information",
+      "published": "Undated current page",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary native HTML; nine listed locations, over6000 cumulative undefined units; not annual recipients"
+    },
+    {
+      "publisher": "San Mateo County Health",
+      "title": "Naloxone Stand Box FAQ",
+      "url": "https://www.smchealth.org/sites/main/files/file-attachments/help_expand_access_to_naloxone_in_san_mateo_county_faq.pdf?1759531506=",
+      "published": "Undated current PDF",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary full PDF text; free hardware/shipping, restocking and monthly-report duties, eligibility/prioritization"
+    },
+    {
+      "publisher": "San Mateo County Health",
+      "title": "Overdose Prevention Coalition current access page",
+      "url": "https://www.smchealth.org/post/san-mateo-county-overdose-prevention-coalition",
+      "published": "Page originally2024-09-10; includes2026 updates, not all content dated2024",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary current service page"
+    },
+    {
+      "publisher": "San Mateo County Health",
+      "title": "County stand-box program launch",
+      "url": "https://www.smchealth.org/post/overdose-prevention-coalition-launches-naloxone-program-expands-free-access-county",
+      "published": "2026-01-29; February2026 newsletter",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary current alternative"
+    },
+    {
+      "publisher": "IRS",
+      "title": "EO filing requirement codes",
+      "url": "https://www.irs.gov/irm/part3/irm_03-013-012",
+      "published": "Current manual; subsection dated2022-01-01",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary administrative rules: code02 may be used when receipts unknown; not audited budget"
+    },
+    {
+      "publisher": "CDC / MMWR",
+      "title": "8mg versus4mg naloxone comparison",
+      "url": "https://www.cdc.gov/mmwr/volumes/73/wr/mm7305a4.htm",
+      "published": "2024-02-08",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary nonrandomized comparison; no survival advantage, more withdrawal at8mg; not HOPE harm rate"
+    },
+    {
+      "publisher": "HOPE",
+      "title": "Official homepage and five listed access locations",
+      "url": "https://www.hope4change650.org/",
+      "published": "Undated; accessed 2026-09-11",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary",
+      "accessStatus": "Freshly fetched V2 on2026-09-11; no annual financial or clinical outcome observation supplied"
+    },
+    {
+      "publisher": "HOPE",
+      "title": "Mission and legal-status description",
+      "url": "https://www.hope4change650.org/about",
+      "published": "Undated; accessed 2026-09-11",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary",
+      "accessStatus": "Freshly fetched V2 on2026-09-11; no annual financial or clinical outcome observation supplied"
+    },
+    {
+      "publisher": "HOPE",
+      "title": "Newsletter issue index; issue contents not retrieved",
+      "url": "https://www.hope4change650.org/hope-highlights-newsletter",
+      "published": "Lists December 2025 and April 9, 2026 issues; page undated",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary",
+      "accessStatus": "Freshly fetched V2 on2026-09-11; no annual financial or clinical outcome observation supplied"
+    },
+    {
+      "publisher": "County of San Mateo",
+      "title": "Adopted Measure K agreement item 25-734",
+      "url": "https://sanmateocounty.legistar.com/LegislationDetail.aspx?FullText=1&GUID=CDE2FD32-C53E-4466-A63B-8423077CEAAC&ID=7523215&Options=&Search=",
+      "published": "Adopted 2025-08-26",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary",
+      "accessStatus": "Inherited accepted evidence unless refreshed explicitly in V2 narrative; prior retrieval remains separate"
+    },
+    {
+      "publisher": "County of San Mateo",
+      "title": "Original HOPE grant agreement and risk assessment",
+      "url": "https://sanmateocounty.legistar.com/View.ashx?GUID=5FEEA3C1-A530-4DBF-9526-717613ED8645&ID=14759669&M=F",
+      "published": "Agreement term 2025-08-26 to 2026-06-30; reused inspected original",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary",
+      "accessStatus": "Inherited accepted evidence unless refreshed explicitly in V2 narrative; prior retrieval remains separate"
+    },
+    {
+      "publisher": "ProPublica, IRS-derived data",
+      "title": "HOPE identity record, EIN 99-2104067; not an original annual return",
+      "url": "https://projects.propublica.org/nonprofits/api/v2/organizations/992104067.json",
+      "published": "Record publication date unknown; reused prior identity check",
+      "retrieved": "2026-09-11",
+      "sourceType": "Secondary delivery of IRS identity data",
+      "accessStatus": "Freshly fetched V2 on2026-09-11; no annual financial or clinical outcome observation supplied"
+    },
+    {
+      "publisher": "DHCS",
+      "title": "Naloxone Distribution Project",
+      "url": "https://www.dhcs.ca.gov/individuals/naloxone-distribution-project/",
+      "published": "Undated; accessed 2026-09-11",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary",
+      "accessStatus": "Inherited accepted evidence unless refreshed explicitly in V2 narrative; prior retrieval remains separate"
+    },
+    {
+      "publisher": "DHCS",
+      "title": "NDP FAQ: free supply, two-device units and alternatives",
+      "url": "https://www.dhcs.ca.gov/individuals/naloxone-distribution-project/ndp-frequently-asked-questions/",
+      "published": "Current FAQ; April 2026 product change stated",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary",
+      "accessStatus": "Freshly fetched V2 on2026-09-11; no annual financial or clinical outcome observation supplied"
+    },
+    {
+      "publisher": "Walley et al., BMJ",
+      "title": "Overdose education and naloxone: interrupted time series",
+      "url": "https://www.bmj.com/content/346/bmj.f174",
+      "published": "2013-01-31",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary",
+      "accessStatus": "Inherited accepted evidence unless refreshed explicitly in V2 narrative; prior retrieval remains separate"
+    },
+    {
+      "publisher": "HEALing Communities investigators, NEJM",
+      "title": "Community-Based Cluster-Randomized Trial to Reduce Opioid Overdose Deaths",
+      "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2401177",
+      "published": "2024",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary",
+      "accessStatus": "Inherited accepted evidence unless refreshed explicitly in V2 narrative; prior retrieval remains separate"
+    },
+    {
+      "publisher": "HEALing Communities investigators",
+      "title": "Randomized overdose education and naloxone distribution analysis",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11628717/",
+      "published": "2024",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary",
+      "accessStatus": "Inherited accepted evidence unless refreshed explicitly in V2 narrative; prior retrieval remains separate"
+    },
+    {
+      "publisher": "Larochelle et al.",
+      "title": "Historical overdose-survivor mortality cohort",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29913516/",
+      "published": "2018",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary",
+      "accessStatus": "Inherited accepted evidence unless refreshed explicitly in V2 narrative; prior retrieval remains separate"
+    },
+    {
+      "publisher": "Olfson et al.",
+      "title": "Causes of death after nonfatal opioid overdose",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29926090/",
+      "published": "2018",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary",
+      "accessStatus": "Inherited accepted evidence unless refreshed explicitly in V2 narrative; prior retrieval remains separate"
+    }
+  ],
+  "longForm": {
+    "markdown": "# HOPE Pacifica: whole-gift overdose-prevention assessment\n\nV2 evidence review, September11,2026. Legal recipient: HOPE Healing Overdose Prevention and Education Inc, EIN99-2104067. This evaluates a hypothetical ordinary $1,000 gift, not a dispenser purchase offer. Whole operating cost remains an explicit prior. The quantified outcome is finite naloxone-access health; complete organizational health and complete resource cost remain unresolved.\n\n## Summary\n\n**What do they do?** HOPE is a Pacifica community nonprofit combining overdose-prevention access, education, family resources and remembrance. Its strongest modeled pathway is getting usable naloxone into a network where it could change an otherwise fatal emergency. Current official information identifies nine distribution locations across Pacifica, Half Moon Bay, San Bruno, Belmont, South San Francisco and San Francisco. This is evidence of a real access network, not a count of unique people protected or rescues caused. [More](#1-organization-and-current-delivery)\n\n**Reasons to investigate:**\n\n- A small local organization may solve last-mile access and stocking problems using medication supplied through public programs.\n- A timely response to an opioid overdose can have a large health consequence; low organizational expense could make even a small additional effect worthwhile.\n- There are specific sites and an adopted historical installation grant, rather than only an aspiration to launch a service.\n\n**Reservations and giving status:**\n\n- HOLD giving recommendation: no original annual expense, dated unique risk cohort or priced additional-capacity plan has been verified.\n- Current county provision includes free distribution hardware as well as a route to free medication. A donor must identify what HOPE adds beyond that baseline.\n- The favorable delivery family supplies65.7% of modeled expected benefit despite only5% subjective weight.\n- A distribution count is several causal steps away from mortality, and a previously rescued population cannot stand in for ordinary dispenser recipients.\n\n**Cost-effectiveness.** The retained signed mixture estimates $763,248 per10 Bay QALYs; the distinct central-cost/central-delivery case is $554,660. Both are unchanged from alpha. Annual expense worlds are $20,000, $40,000 and $100,000, not observed budgets. The model averages signed QALYs per fixed gift before inverting; it does not average favorable price ratios. Null and harm cases remain. The new source evidence does not identify a defensible replacement coefficient, so we preserve the result and expose the stronger funding challenge instead of making an arbitrary adjustment. [More](#5-finite-model-and-oldnew-comparison)\n\nHalving the funding response raises the mixture to $1.53million; quartering it raises it to $3.05million. Halving annual pack-equivalents has the same first-order price effect. Limiting the survival horizon to five years raises it to $1.30million, and to two years raises it to $3.48million. These are diagnostics, not new assigned probabilities. They show that a superficially competitive central estimate can disappear without an extreme assumption. They also show which empirical information matters most.\n\n**Monitoring.** The earlier cached dedicated page said over3,000 distributions and listed fewer sites. A fresh native fetch now agrees with the homepage’s over6,000 claim and lists nine locations. That resolves a current-page discrepancy, but not the unit, time period, annual flow, repeat use or beneficiary network. We found no annual cohort or local causal outcome evaluation. Count reconciliation and a small, carefully designed follow-up would be more informative than another cumulative milestone. [More](#3-monitoring-and-the-unique-person-denominator)\n\n**Qualitative assessment.** The local network could have value even when the medication and box are publicly supplied: choosing a neglected site, arranging permission, keeping stock usable and accessible, and building trust can matter. Conversely, an existing host may obtain the same box and stock without HOPE or an additional donation. The public evidence supports both possibilities. A general fundraising appeal does not settle between them. Community support and remembrance may be important, but no invented grief utility or treatment-completion benefit is added. [More](#7-qualitative-judgment-and-strongest-alternative)\n\nThe model gives each person one finite survival trajectory. Repeat packs reduce unique coverage; they do not create repeated lives saved. Nevertheless, about92% of central gross modeled survival benefit occurs after the one-year active access window. That is a consequence of a persistent survival gap under common subsequent mortality, not continuing organizational protection. It makes later prognosis consequential and explains why short-horizon diagnostics are much worse. Neither the long horizon nor its utility value is locally measured.\n\nThe absence of annual statements is equally material. The latest IRS-derived index contains no return, and its administrative small-filer code is not an expense measurement. We cannot provide a truthful three-year spending trend or verify whether a small gift supplements or displaces existing resources. Those limitations remain visible rather than being filled with the installation grant.\n\nThe new county hardware program is the most decision-relevant discovery in this pass. It changes the diligence question from “can a charity buy a cheap box?” to “which useful access gap would remain after public hardware, medication and existing partners?” The appropriate next step is a reconciled whole budget, a dated coverage ledger, and a small additional-gift plan identifying that gap. No outreach has been sent. A deeper report makes the uncertainties inspectable; it does not turn absent measurements into evidence.\n\n## 1. Organization and current delivery\n\n### Legal and program boundary\n\nHOPE’s legal identity is distinct from Pacifica Resource Center, which appears as one access location, and from unrelated charities named HOPE. The official mission covers education, support and advocacy as well as overdose prevention. We evaluate the ordinary legal recipient, not a hypothetical naloxone-only affiliate. An unrestricted donation may support events, transport, administration, insurance, memorial work or distribution. Charging only dispenser hardware while assigning the whole nonprofit’s benefits would misstate the donation being evaluated. [Official mission](https://www.hope4change650.org/about)\n\nThe current IRS-derived record identifies the exact EIN and April2024 tax-exemption ruling month. That is identity evidence, not an original annual financial statement. The county’s grant record describes founding in March2024. Founding and exemption dates serve different purposes; neither is an observed start date for the cumulative distribution total. We do not divide that total by elapsed years to create an annual throughput observation.\n\n### Current access network\n\nThe native Narcan page, retrieved in this pass, lists Lytt, Longboard, Fog Zone, Pacifica Resource Center, Cameron’s Pub, San Bruno Catholic Worker Hospitality House, Hearts for Humanity, West Bay Alano Club and San Francisco European Collision Repair. The homepage still presents a shorter list. The dedicated page is our current site-count source. Its nine entries establish listed access points, not independently inspected stock or operating hours. [Current locations](https://www.hope4change650.org/narcan-locations-information)\n\nThese locations imply a plausible mix of host organizations, patrons and community contacts. They do not identify the risk profile of people taking medication or the eventual person on whom it is used. Someone may carry naloxone for a family member, obtain it for workplace readiness, or refill supplies after expiration. Such uses can be valuable, but each implies a different conversion from packs to incremental health. The model therefore does not equate visitor, collector, bystander and at-risk beneficiary.\n\nThe official homepage advertises late2026 events and a February2027 fundraiser. A scheduled event is evidence of planned activity, not verified attendance, revenue or completed overdose prevention. The newsletter index lists December2025 and April9,2026 issues, but accessible text did not expose their contents. We do not claim those issues contain financial or outcome data. These distinctions matter because a current-looking website can coexist with unmeasured delivery outcomes.\n\n### From medication to health\n\nThe practical chain is: usable stock is available; someone obtains and retains it; the network includes an opioid-overdose risk; the stock is near the emergency; someone recognizes and responds; the response improves the outcome relative to the fastest available alternative; survival or morbidity differs for a finite time. Failure at any step can make another distributed pack have little marginal health value. Success can matter greatly, but the chain cannot be replaced by the statement that naloxone works pharmacologically.\n\nWe distinguish preparation from administration. A pack can be use-ready without ever being used, and the absence of a rescue report does not prove that stocking it was pointless. Conversely, a reported administration does not prove death was otherwise certain. The model uses an expected net hazard difference across covered people rather than interpreting every successful response as one life saved. This is a deliberate constraint on the most tempting source-to-model shortcut.\n\n## 2. Finances and the public-resource boundary\n\n### What was and was not found\n\nNo original annual Form990,990-EZ or audited financial statement was located for HOPE in this bounded review. The current ProPublica API, directly fetched, returns no filings with or without extracted data. Its underlying record was updated August19,2026 and names the correct entity. This means the index does not supply annual finances; it does not prove that no regulatory filing or internal statement exists. Zero-valued metadata fields must not be described as zero expense or zero assets. [IRS-derived record](https://projects.propublica.org/nonprofits/api/v2/organizations/992104067.json)\n\nThe record’s filing-requirement code02 needs particular caution. Current IRS instructions associate it with smaller organizations, but also allow assignment when gross receipts cannot be determined. It is not an audited statement that annual expense is below $50,000, and receipts would not be identical to expense anyway. We therefore do not use that code to delete the $100,000 expense world or increase the lean-world probability. [IRS administrative instructions](https://www.irs.gov/irm/part3/irm_03-013-012)\n\nThe requested three-year financial comparison cannot honestly be populated. For2023, no whole-organization statement was located, and the county describes founding in2024. For2024 and2025, no original annual revenue, expense, asset, liability or functional breakdown was found. For2026, public operations and funding-source descriptions exist but no reconciled year-to-date accounts were located. “Not located” is not zero, and a grant document is not a substitute annual return.\n\n| Financial question | Current evidence | Model treatment |\n| --- | --- | --- |\n| Whole annual expense | Unobserved | $20k/$40k/$100k subjective worlds |\n| Functional spending | Unobserved | Whole operating envelope includes non-rescue work |\n| Revenue and unrestricted balances | Unobserved | No assumption of cash starvation or cash surplus |\n| Public installation grant | Historical adopted maximum | Funded baseline, not total expense |\n| Medication/volunteer/host resources | Incomplete | Complete resource cost unresolved |\n\n### The installation grant\n\nThe county adopted up to $10,000 for installation in August2025, with a term ending June30,2026. The public record identifies approximate hardware prices of $300–$500 and HOPE’s stocking/maintenance responsibility. It is a one-time award, not a promise of renewal. We have no verified closeout, final payment, unspent balance or current replacement request. The end of the term alone does not establish that a new donor must now finance every operating cost. [County adopted item](https://sanmateocounty.legistar.com/LegislationDetail.aspx?FullText=1&GUID=CDE2FD32-C53E-4466-A63B-8423077CEAAC&ID=7523215&Options=&Search=)\n\nThe county memorandum attributes part of a historical county mortality decline to naloxone access. That administrative statement is not a controlled causal estimate and does not identify HOPE’s contribution. We do not use the county death totals to calibrate the model’s hazard reduction. The grant’s proposed accessible siting also does not establish universal around-the-clock availability at every listed business. Current instructions to check hours are a more appropriate limitation.\n\n### A stronger current alternative: free hardware\n\nSan Mateo County Health now offers a free stand-box program. Its FAQ describes free hardware and shipping, while hosts obtain and replenish medication. Eligibility is for locations in San Mateo County; the listed San Francisco site is not automatically covered by this program. Selection also depends on availability and location criteria; the county offers help with damaged units. Hosts must report restocking and reported reversals monthly. This is a current funded alternative, not proof every application will be approved or every useful site is covered. [County FAQ](https://www.smchealth.org/sites/main/files/file-attachments/help_expand_access_to_naloxone_in_san_mateo_county_faq.pdf?1759531506=)\n\nThis evidence weakens a simple private-hardware-purchase story. A donor should first ask whether a proposed location can receive public equipment. It does not eliminate a coordination role: permissions, host recruitment, replenishment, outreach and access monitoring may still need work. The correct residual is the work that would not happen under the public route, not the retail value of all supplies that happen to pass through a nonprofit.\n\nThe program’s January29,2026 launch notice and current application route are more relevant to today’s comparator than a2025 statement that few dispensing machines existed. We do not infer that the original grant was unnecessary when awarded. Counterfactuals change over time. A previously additional installation model can become less additional as public provision expands, even if the organization continues doing worthwhile work. [Launch notice](https://www.smchealth.org/post/overdose-prevention-coalition-launches-naloxone-program-expands-free-access-county)\n\n### Cash cost versus all resources\n\nThe modeled expense envelope is intended to cover all ordinary organizational operating costs, including fundraising and support activities. It is not a complete societal resource bill. Medication procurement, volunteer time, host space, transport, emergency response and clinical follow-up may be paid by someone else or donated. Those complements can enable genuine cash leverage, but they do not have zero opportunity cost merely because HOPE does not pay for them.\n\nNor should every public dollar be mechanically added to the next private gift. The relevant full-resource calculation would identify resources actually changed by the counterfactual donation. Existing stock that would otherwise expire may have a different opportunity cost from scarce stock diverted from another high-risk network. Without quantities and alternatives, assigning a retail price to all public medication would create another unsupported estimate. We leave the full-resource result unresolved and explain what would be needed to estimate it.\n\n## 3. Monitoring and the unique-person denominator\n\n### Units and time periods\n\nThe current dedicated page and homepage now both report over6,000 Narcan distributions. The previous cached3,000 statement is historical evidence, not a continuing contradiction in the freshly fetched page. This is a useful correction, but the current term still does not identify devices, paired units, packs, people or annual flow. The numerical base therefore remains a prior of1,500 annual two-device-pack equivalents rather than an asserted fraction of the cumulative total.\n\nDHCS defines a nasal unit as two4mg devices and advises against separating them. It also reports a switch from branded Narcan to generic supply in April2026. HOPE’s colloquial brand usage does not establish the exact product in every current dispenser. These facts make a consistent stock ledger important; they do not by themselves show that HOPE’s cumulative count should be halved or doubled. [DHCS FAQ](https://www.dhcs.ca.gov/individuals/naloxone-distribution-project/ndp-frequently-asked-questions/)\n\nA useful annual table would distinguish stock received, stock installed, stock taken, stock expired or damaged, and stock remaining. It would state the unit and date range. Transfers between storage and a dispenser are not necessarily end-user distributions. Restocking is not automatically consumption. Even perfectly reconciled inventory would still not identify how many distinct people gained additional protection, but it would remove a major accounting ambiguity.\n\n### Coverage rather than contacts\n\nThe central conversion is1,500 packs ×.5 use-ready fraction ÷3 repeat packs per network ×.8 risk/network factor =200 prospective at-risk person-equivalents per annual operating budget. Every factor is an analyst judgment. The first reduction concerns usable accessible stock rather than reserve or ineffective placement. The repeat divisor avoids treating several packs supporting one network as several independent people. The final factor accounts jointly for risk relevance and overlapping networks.\n\nThe definitions matter. The ready fraction is not an administration probability; administration and timely alternatives enter the net hazard difference. The repeat divisor is not an overdose rate. The network factor is not a measured fraction of collectors who personally use opioids. A bystander may protect someone else, and several bystanders may protect the same person. We do not add an unobserved multiplier because one collector might know several people: without network data, that would preferentially count upside while ignoring overlap.\n\nThe small $1,000 gift reaches2.5 additional person-equivalents in the central cost/delivery world:200 ×1,000/40,000 ×.5 funding response. This is not a claim that two or three identifiable people were newly protected by a donation. It is the expectation of a model relating whole-budget spending to incremental coverage. The distinction prevents the arithmetic from being presented as a purchased treatment slot.\n\n### What a useful follow-up could measure\n\nA low-burden monitoring system could use anonymous site/date/unit records and optional follow-up without collecting unnecessary identifying information. Relevant questions include whether the recipient already had usable naloxone, whether this replaced expired stock, whether an alternative was promptly available, and whether the pack remained accessible. Reports of use should state whether the same incident appears in several channels. A program can learn from these data without publishing private health details.\n\nSelf-reported reversals would be informative, but not sufficient for causal mortality. Reports may omit unsuccessful events, people who cannot be contacted, or administration by another responder. Reports may also be duplicated by the collector, host and emergency service. A denominator of successful reports is selected on surviving long enough to report. We would not import its apparent survival into a prospective risk cohort or multiply it by an assumed death probability without a separately justified counterfactual.\n\n### Geographic attribution\n\nAll nine listed locations are in the nine-county Bay region, but the model’s95% central Bay share remains a judgment. People travel, carry medication elsewhere and obtain it for contacts outside their home county. A site address is not the eventual beneficiary’s residence or the location of all future health gains. Conversely, a San Francisco location does not justify assigning an SF share to the entire network. We retain no separate SF estimate for this packet.\n\nThe added sites strengthen evidence that the organization is not limited to two cities. They do not justify multiplying modeled health by9/5. Site counts differ in throughput, hours, users and alternatives. A newly listed location may replace another point, formalize existing delivery or have little traffic. The right update would use additional useful coverage, not an equal-benefit assumption for every pin on a map.\n\n## 4. Causal evidence and finite health\n\n### Biological efficacy is not the distribution effect\n\nNaloxone can reverse opioid respiratory depression, but the organization-level comparison is access with an additional gift versus access without it. Another bystander, emergency service or existing pack may already provide timely treatment. Some packs never encounter an emergency, and some overdoses involve other substances or circumstances that naloxone alone does not resolve. The model’s net hazard reduction is meant to include these probabilities, not to be multiplied by a second generic rescue fraction.\n\nWalley and colleagues’ Massachusetts interrupted time-series study found lower community overdose mortality associated with overdose-education/naloxone implementation: adjusted ratios.73 and.54 for lower/higher implementation compared with none. It is observational and from2002–2009. It supports plausibility but does not identify a modern Bay effect per pack, remove confounding or establish that another unit is valuable where distribution is already extensive. [Primary study](https://www.bmj.com/content/346/bmj.f174)\n\nThe HEALing Communities trial is an important counterweight. Its multicomponent community intervention did not demonstrate a statistically significant primary overdose-mortality reduction: adjusted rate ratio.91,95% interval.76–1.09. A separate randomized distribution analysis found79% more naloxone distribution. These results show that increasing distribution does not mechanically establish a detectable mortality change. They do not isolate naloxone’s pharmacology or prove that all targeted access is ineffective. [Mortality trial](https://www.nejm.org/doi/full/10.1056/NEJMoa2401177) [Distribution analysis](https://pmc.ncbi.nlm.nih.gov/articles/PMC11628717/)\n\nThe coexistence of plausible efficacy and uncertain marginal delivery is exactly why null worlds remain in the model. A wide trial interval should not be translated into a precise charity probability. Nor should a positive observational estimate be applied to a cumulative website number. The studies constrain our confidence and identify failure modes; they do not provide the local coefficients used in this exploratory calculation.\n\n### Avoiding selected-survivor mortality transfer\n\nHistorical post-overdose cohorts have high subsequent mortality. Larochelle reported4.7 all-cause deaths per100 person-years; Olfson reported7.783 in a first-year cohort. These are selected survivors of an overdose, not the average person indirectly reached by a dispenser. Age, substance use, treatment, calendar period and selection all affect the transfer. We retain these studies only as historical scale context, not as a measurement of HOPE’s baseline or ten-year prognosis. [Larochelle](https://pubmed.ncbi.nlm.nih.gov/29913516/) [Olfson](https://pubmed.ncbi.nlm.nih.gov/29926090/)\n\nThe central current-care hazard of.07 per year is therefore a strong prior, not a fact about HOPE recipients. Its avoided hazard is only.002 during one year, after which both arms share.07. The model does not suppose every covered person overdoses, or that every overdose would be fatal. A future empirical calibration should start with the prospective risk network and its actual alternatives, not select people because a rescue succeeded and work backward.\n\n### One trajectory per person\n\nDuring the first year, central survival is exp(−.068t) with improved access and exp(−.070t) under current care. After year one, each year-one survival probability is multiplied by exp(−.07(t−1)). The difference can persist because someone alive at year one may remain alive later, even though there is no continuing program effect. The integral stops at ten years. It does not restart whenever another pack is distributed or another overdose occurs.\n\nThis is a finite cohort model, not a repeated-rescue model. Repeats only reduce the estimated distinct covered population. The model’s future survival is also not a forecast that every saved person lives ten years: common subsequent mortality reduces the survival gap continuously. A shorter horizon is still a legitimate conservative boundary, especially when long-run prognosis and the utility of survival are uncertain.\n\nThe central discounted survival difference is.0009366601 years during active support plus.0107728637 years afterward per covered person. Multiplying their sum by.65 utility gives.0076111905QALY before the independent harm. Thus92.0009% of gross modeled survival benefit comes after year one. This is not a second favorable-scenario weight; it is a temporal decomposition of the central row. A model can be mathematically finite while still depending strongly on unmeasured later life. The report therefore shows short horizons prominently rather than describing the ten-year cutoff as sufficient proof of conservatism.\n\n### Harms and omitted morbidity\n\nIndependent morbidity harms are subtracted per additional covered person. The central amount.00002QALY is a judgment, not an observed HOPE adverse-event rate. The adverse world uses zero mortality gain and a larger morbidity decrement. These cases keep the calculation signed without implying that ordinary naloxone distribution usually causes harm.\n\nA CDC comparison of8mg and4mg products found no observed survival advantage for the higher dose and more withdrawal signs/symptoms. It was not randomized and is not a HOPE evaluation. We use it to reject “more dose is always more benefit,” not to map its event rate to our harm coefficient or suggest withholding an appropriate emergency response. [Primary MMWR](https://www.cdc.gov/mmwr/volumes/73/wr/mm7305a4.htm)\n\nNo separate brain-injury prevention, treatment engagement, infection prevention or family-survival benefit is added. Such effects might exist, but a common positive story is not sufficient to quantify them. Likewise, grief support is not assigned a generic utility bonus. Keeping those pathways unresolved is more honest than expanding the model until it appears complete.\n\n## 5. Finite model and old/new comparison\n\n### Cost, coverage and health equation\n\nFor each cost/delivery world, BayQALYs = gift/whole-expense prior × annual distinct risk-person equivalents × funding response × [utility × discounted survival difference − independent harm] × Bay share. The annual person-equivalent conversion is packs ×ready/repeats ×riskNetwork. Cost, coverage and clinical effects are not separately observed; their product is an explicit conditional estimate.\n\nThe discount rate is3% annually, implemented continuously as ln(1.03). During active support, the survival integral uses the two hazards. Afterward, it carries the year-one survival gap forward under common mortality. An independent numerical integration test checks this closed form, and a person-time bound prevents gross survival benefit exceeding the finite available utility-weighted lifetime of the additional cohort.\n\n### Scenarios and expected value\n\nThree cost worlds—$20,000 at20%, $40,000 at50%, $100,000 at30%—are crossed with six delivery worlds. Delivery weights are20% funding-null,20% access-null,10% harm,20% cautious,25% central and5% favorable. They are subjective judgments, not empirical frequencies or confidence intervals. Independence of expense and delivery is a simplifying assumption, not an observed property of this nonprofit.\n\nThe expected Bay health per $1,000 is.013101904653691494QALY, implying $763,247.8074233638 per10. The central cost/delivery row is $554,659.5517271358. A central row can be better than the mixture because the mixture includes null and harmful possibilities. The favorable family contributes65.6865% of net expected Bay health. Removing it and renormalizing the remainder yields $2,113,122.33.\n\n| Quantity | Alpha | V2 preferred |\n| --- | --- | --- |\n| Weighted Bay price/10Q | $763,247.81 | $763,247.81 |\n| Central Bay price/10Q | $554,659.55 | $554,659.55 |\n| Observed annual expense | Unknown | Unknown |\n| Current listed sites | Five in prior inspected evidence | Nine in native dedicated page |\n| Annual unique risk people | Unknown | Unknown |\n| Verified marginal offer | None located | None located |\n\nNo numerical coefficient was changed to compensate for the new public hardware alternative. The preferred result is a continuity estimate, not a claim that the new evidence leaves confidence unchanged. It strengthens the reason to investigate lower funding response. An arbitrary replacement value would conceal judgment rather than improve the evidence. The next table makes the implication visible without assigning unsupported probabilities.\n\n### Decision-relevant diagnostics\n\n| Diagnostic | Weighted dollars/10 Bay QALYs |\n| --- | ---: |\n| Preferred retained prior | $763,248 |\n| Half funding response | $1,526,496 |\n| Quarter funding response | $3,052,991 |\n| Half annual pack-equivalents | $1,526,496 |\n| Double repeat packs/network | $1,526,496 |\n| Half net hazard reduction | $1,544,117 |\n| Five-year horizon for all worlds | $1,300,404 |\n| Two-year horizon | $3,479,370 |\n| One-year horizon | $10,854,317 |\n| Fixed $20,000 expense | $389,256 |\n| Fixed $40,000 expense | $778,513 |\n| Fixed $100,000 expense | $1,946,282 |\n\nThe same numerical result for half packs and doubled repeats follows from their algebraic roles, not independent evidence confirming the reduction. Nor should these stresses be stacked automatically: some may describe the same uncertainty. The half-hazard result is slightly more than double the base price because harms remain while positive survival benefit falls. This illustrates why signed models should not be treated as a single positive product under every change.\n\nThe cost/delivery dependence diagnostic pairs a low-cost cautious state, central-cost central state and high-cost favorable state. It is not another evaluator expectation: its different weights and absence of the full null/harm family make it unsuitable as a replacement headline. Its purpose is to inspect how favorable delivery can require a larger budget. The complete paired outputs are saved so a reviewer can see the assumptions rather than only a selected favorable ratio.\n\n### Threshold interpretation\n\nKeeping every central factor except annual risk coverage fixed, about111 annual person-equivalents would be needed to reach $1million per10 BayQALYs, compared with the current200 prior. About1,109 would be needed to reach $100,000. Alternatively, holding coverage fixed requires funding response about.277 for the first threshold and2.773 for the second. A response above one is outside the model’s admissible range, so funding response alone cannot deliver the $100,000 target under the other central inputs.\n\nThese are conditional thresholds, not estimates of actual coverage or an invitation to choose the parameters that clear them. Their practical use is to structure diligence: can the organization support the relevant order of magnitude after deduplication and alternatives? If not, a high-return conclusion fails without needing a perfect trial. If yes, it remains necessary to examine the clinical and expense assumptions.\n\n## 6. What would an additional donation change?\n\n### The most plausible residual bottlenecks\n\nPublic supply does not automatically reach every high-risk network. Someone must identify hosts, obtain authorization, coordinate ordering, keep inventory usable and make locations discoverable. A small nonprofit may be well placed to do that work. A useful donation might support reliable replenishment, extend a neglected location’s availability or sustain an activity whose existing grant has genuinely ended. These are plausible mechanisms, not verified current projects.\n\nThe competing explanation is that hosts or county staff would provide equivalent access anyway, or that stock and volunteer attention rather than money are limiting. A gift might replace another donor’s funds or support general events without increasing risk coverage. The funding-null world covers that possibility. Public provision is neither automatically a substitute nor automatically free leverage; the local allocation of responsibility determines which it is.\n\nA specific request should identify the current baseline before describing the proposed change. Existing boxes, stock, committed grants and volunteer commitments belong in the baseline. If the proposed site already qualifies for public hardware, the private budget should explain the remaining cost. If the problem is a replenishment backlog, a credible plan should show its scale and why an additional person-hour or transport expense addresses it.\n\n### Spendable marginal room\n\nNo current restricted balance, unrestricted cash balance, staffing budget or priced $1,000 tranche was located. The absence of a public offer does not prove the organization cannot use funds well. It means the analysis cannot tell a donor what the next gift will purchase. The model’s small gift ceiling is a safeguard against broad scaling claims, not a certificate that $1,000 is absorbable at the modeled rate.\n\nThe official site links a general PayPal donation route. The prior pass did not verify its recipient display at checkout, and this review did not conduct a transaction. No donation URL is added to the structured report solely because a button exists. Even a verified payment route would establish how to send funds, not the counterfactual benefit of sending them.\n\n### Three unsent questions\n\n1. What were whole gross expenses, revenue, restricted balances and contributed resources for the latest completed year, and what remains committed after the2025–26 installation grant? Please distinguish event costs, operating costs and publicly supplied medication or hardware.\n2. For a dated twelve-month period, how many paired units were received, stocked, collected and expired; how many distinct risk networks gained usable access; and what evidence separates that access from repeat or otherwise available supply?\n3. What specifically would an additional unrestricted $1,000 change now, beyond the county free-box program, NDP medication and existing commitments? Which location or maintenance gap, complementary resources, time period and expected additional coverage would it support?\n\nThese questions are deliberately narrower than a request for a perfect impact evaluation. A reconciled budget and an operationally specific plan could materially improve the decision even if local mortality remains too rare to estimate precisely. No question has been sent and no organizational response is implied.\n\n## 7. Qualitative judgment and strongest alternative\n\nHOPE’s comparative possibility is local trust and implementation, not proprietary medication or hardware. A network of willing hosts may create access where a government application route alone does not. Community members affected by overdose may recognize barriers that a generic distribution plan misses. These are hypotheses about organizational advantage; the public record does not quantify them or show that they are absent elsewhere.\n\nThe strongest immediate alternative for eligible San Mateo County hosts is not “do nothing.” It is using the county’s free equipment route and public medication supply, possibly with another existing partner. That hardware route does not automatically extend to the listed San Francisco site. A fair comparison would ask whether HOPE reaches different people, maintains better uptime, lowers practical barriers or accelerates deployment. If the same useful coverage happens promptly without an extra gift, the incremental health is small even when the service itself is valuable.\n\nOther health interventions may offer more directly measured treatment effects, but cross-charity ranking is not resolved by noting that naloxone can save lives. A low-cost access mechanism with sparse data can be worth investigating; a precise-looking ratio should still receive less confidence than its missing denominator permits. The report keeps the promising possibility and the unfavorable scenarios together rather than forcing a binary good/bad label.\n\nCommunity healing, education and remembrance should not be dismissed because this health model does not quantify them. They may be reasons some donors value the organization independently of BayQALYs. They also consume real resources within an ordinary gift. A donor prioritizing those outcomes should assess their quality and importance directly instead of treating them as an unexplained positive residual that rescues a health ranking.\n\n## 8. Decision and reproducibility\n\nRetain HOPE as an exploratory access hypothesis and HOLD an actionable health-based giving recommendation. The new source check improves current operations and reveals a materially stronger public alternative. It does not supply annual finances, unique coverage or a local mortality effect. The result therefore remains prior-driven, with unchanged old/new prices and explicit evidence changes.\n\nThe packet preserves the original model, full18-row signed outputs and all new diagnostic matrices. Tests compare original numerical fields exactly, check the closed-form survival integral independently, verify threshold arithmetic and reject malformed/nonfinite inputs. Passing tests establish computational consistency, not the truth of the hazard, expense or funding priors.\n\nSource dates distinguish dated government actions, undated mutable pages and retrieval times. Failed full-text retrievals are not described as successful reads; inherited primary evidence remains labeled. The current native page supersedes older cached operational text without rewriting that earlier provenance. No Site files changed, no outreach occurred and no prior research time was backfilled.\n\nModel version: `hope-pacifica-depth-v2-unchanged-priors`. The structured model data and full narrative must travel together in integration. A short report card alone would omit the public-hardware counterfactual and the uncertainty that governs the donation decision.\n",
+    "summaryMarkdown": "**What do they do?** HOPE is a Pacifica community nonprofit combining overdose-prevention access, education, family resources and remembrance. Its strongest modeled pathway is getting usable naloxone into a network where it could change an otherwise fatal emergency. Current official information identifies nine distribution locations across Pacifica, Half Moon Bay, San Bruno, Belmont, South San Francisco and San Francisco. This is evidence of a real access network, not a count of unique people protected or rescues caused. [More](#1-organization-and-current-delivery)\n\n**Reasons to investigate:**\n\n- A small local organization may solve last-mile access and stocking problems using medication supplied through public programs.\n- A timely response to an opioid overdose can have a large health consequence; low organizational expense could make even a small additional effect worthwhile.\n- There are specific sites and an adopted historical installation grant, rather than only an aspiration to launch a service.\n\n**Reservations and giving status:**\n\n- HOLD giving recommendation: no original annual expense, dated unique risk cohort or priced additional-capacity plan has been verified.\n- Current county provision includes free distribution hardware as well as a route to free medication. A donor must identify what HOPE adds beyond that baseline.\n- The favorable delivery family supplies65.7% of modeled expected benefit despite only5% subjective weight.\n- A distribution count is several causal steps away from mortality, and a previously rescued population cannot stand in for ordinary dispenser recipients.\n\n**Cost-effectiveness.** The retained signed mixture estimates $763,248 per10 Bay QALYs; the distinct central-cost/central-delivery case is $554,660. Both are unchanged from alpha. Annual expense worlds are $20,000, $40,000 and $100,000, not observed budgets. The model averages signed QALYs per fixed gift before inverting; it does not average favorable price ratios. Null and harm cases remain. The new source evidence does not identify a defensible replacement coefficient, so we preserve the result and expose the stronger funding challenge instead of making an arbitrary adjustment. [More](#5-finite-model-and-oldnew-comparison)\n\nHalving the funding response raises the mixture to $1.53million; quartering it raises it to $3.05million. Halving annual pack-equivalents has the same first-order price effect. Limiting the survival horizon to five years raises it to $1.30million, and to two years raises it to $3.48million. These are diagnostics, not new assigned probabilities. They show that a superficially competitive central estimate can disappear without an extreme assumption. They also show which empirical information matters most.\n\n**Monitoring.** The earlier cached dedicated page said over3,000 distributions and listed fewer sites. A fresh native fetch now agrees with the homepage’s over6,000 claim and lists nine locations. That resolves a current-page discrepancy, but not the unit, time period, annual flow, repeat use or beneficiary network. We found no annual cohort or local causal outcome evaluation. Count reconciliation and a small, carefully designed follow-up would be more informative than another cumulative milestone. [More](#3-monitoring-and-the-unique-person-denominator)\n\n**Qualitative assessment.** The local network could have value even when the medication and box are publicly supplied: choosing a neglected site, arranging permission, keeping stock usable and accessible, and building trust can matter. Conversely, an existing host may obtain the same box and stock without HOPE or an additional donation. The public evidence supports both possibilities. A general fundraising appeal does not settle between them. Community support and remembrance may be important, but no invented grief utility or treatment-completion benefit is added. [More](#7-qualitative-judgment-and-strongest-alternative)\n\nThe model gives each person one finite survival trajectory. Repeat packs reduce unique coverage; they do not create repeated lives saved. Nevertheless, about92% of central gross modeled survival benefit occurs after the one-year active access window. That is a consequence of a persistent survival gap under common subsequent mortality, not continuing organizational protection. It makes later prognosis consequential and explains why short-horizon diagnostics are much worse. Neither the long horizon nor its utility value is locally measured.\n\nThe absence of annual statements is equally material. The latest IRS-derived index contains no return, and its administrative small-filer code is not an expense measurement. We cannot provide a truthful three-year spending trend or verify whether a small gift supplements or displaces existing resources. Those limitations remain visible rather than being filled with the installation grant.\n\nThe new county hardware program is the most decision-relevant discovery in this pass. It changes the diligence question from “can a charity buy a cheap box?” to “which useful access gap would remain after public hardware, medication and existing partners?” The appropriate next step is a reconciled whole budget, a dated coverage ledger, and a small additional-gift plan identifying that gap. No outreach has been sent. A deeper report makes the uncertainties inspectable; it does not turn absent measurements into evidence.",
+    "sections": [
+      {
+        "id": "section-1",
+        "title": "1. Organization and current delivery",
+        "markdown": "## 1. Organization and current delivery\n\n### Legal and program boundary\n\nHOPE’s legal identity is distinct from Pacifica Resource Center, which appears as one access location, and from unrelated charities named HOPE. The official mission covers education, support and advocacy as well as overdose prevention. We evaluate the ordinary legal recipient, not a hypothetical naloxone-only affiliate. An unrestricted donation may support events, transport, administration, insurance, memorial work or distribution. Charging only dispenser hardware while assigning the whole nonprofit’s benefits would misstate the donation being evaluated. [Official mission](https://www.hope4change650.org/about)\n\nThe current IRS-derived record identifies the exact EIN and April2024 tax-exemption ruling month. That is identity evidence, not an original annual financial statement. The county’s grant record describes founding in March2024. Founding and exemption dates serve different purposes; neither is an observed start date for the cumulative distribution total. We do not divide that total by elapsed years to create an annual throughput observation.\n\n### Current access network\n\nThe native Narcan page, retrieved in this pass, lists Lytt, Longboard, Fog Zone, Pacifica Resource Center, Cameron’s Pub, San Bruno Catholic Worker Hospitality House, Hearts for Humanity, West Bay Alano Club and San Francisco European Collision Repair. The homepage still presents a shorter list. The dedicated page is our current site-count source. Its nine entries establish listed access points, not independently inspected stock or operating hours. [Current locations](https://www.hope4change650.org/narcan-locations-information)\n\nThese locations imply a plausible mix of host organizations, patrons and community contacts. They do not identify the risk profile of people taking medication or the eventual person on whom it is used. Someone may carry naloxone for a family member, obtain it for workplace readiness, or refill supplies after expiration. Such uses can be valuable, but each implies a different conversion from packs to incremental health. The model therefore does not equate visitor, collector, bystander and at-risk beneficiary.\n\nThe official homepage advertises late2026 events and a February2027 fundraiser. A scheduled event is evidence of planned activity, not verified attendance, revenue or completed overdose prevention. The newsletter index lists December2025 and April9,2026 issues, but accessible text did not expose their contents. We do not claim those issues contain financial or outcome data. These distinctions matter because a current-looking website can coexist with unmeasured delivery outcomes.\n\n### From medication to health\n\nThe practical chain is: usable stock is available; someone obtains and retains it; the network includes an opioid-overdose risk; the stock is near the emergency; someone recognizes and responds; the response improves the outcome relative to the fastest available alternative; survival or morbidity differs for a finite time. Failure at any step can make another distributed pack have little marginal health value. Success can matter greatly, but the chain cannot be replaced by the statement that naloxone works pharmacologically.\n\nWe distinguish preparation from administration. A pack can be use-ready without ever being used, and the absence of a rescue report does not prove that stocking it was pointless. Conversely, a reported administration does not prove death was otherwise certain. The model uses an expected net hazard difference across covered people rather than interpreting every successful response as one life saved. This is a deliberate constraint on the most tempting source-to-model shortcut.\n"
+      },
+      {
+        "id": "section-2",
+        "title": "2. Finances and the public-resource boundary",
+        "markdown": "## 2. Finances and the public-resource boundary\n\n### What was and was not found\n\nNo original annual Form990,990-EZ or audited financial statement was located for HOPE in this bounded review. The current ProPublica API, directly fetched, returns no filings with or without extracted data. Its underlying record was updated August19,2026 and names the correct entity. This means the index does not supply annual finances; it does not prove that no regulatory filing or internal statement exists. Zero-valued metadata fields must not be described as zero expense or zero assets. [IRS-derived record](https://projects.propublica.org/nonprofits/api/v2/organizations/992104067.json)\n\nThe record’s filing-requirement code02 needs particular caution. Current IRS instructions associate it with smaller organizations, but also allow assignment when gross receipts cannot be determined. It is not an audited statement that annual expense is below $50,000, and receipts would not be identical to expense anyway. We therefore do not use that code to delete the $100,000 expense world or increase the lean-world probability. [IRS administrative instructions](https://www.irs.gov/irm/part3/irm_03-013-012)\n\nThe requested three-year financial comparison cannot honestly be populated. For2023, no whole-organization statement was located, and the county describes founding in2024. For2024 and2025, no original annual revenue, expense, asset, liability or functional breakdown was found. For2026, public operations and funding-source descriptions exist but no reconciled year-to-date accounts were located. “Not located” is not zero, and a grant document is not a substitute annual return.\n\n| Financial question | Current evidence | Model treatment |\n| --- | --- | --- |\n| Whole annual expense | Unobserved | $20k/$40k/$100k subjective worlds |\n| Functional spending | Unobserved | Whole operating envelope includes non-rescue work |\n| Revenue and unrestricted balances | Unobserved | No assumption of cash starvation or cash surplus |\n| Public installation grant | Historical adopted maximum | Funded baseline, not total expense |\n| Medication/volunteer/host resources | Incomplete | Complete resource cost unresolved |\n\n### The installation grant\n\nThe county adopted up to $10,000 for installation in August2025, with a term ending June30,2026. The public record identifies approximate hardware prices of $300–$500 and HOPE’s stocking/maintenance responsibility. It is a one-time award, not a promise of renewal. We have no verified closeout, final payment, unspent balance or current replacement request. The end of the term alone does not establish that a new donor must now finance every operating cost. [County adopted item](https://sanmateocounty.legistar.com/LegislationDetail.aspx?FullText=1&GUID=CDE2FD32-C53E-4466-A63B-8423077CEAAC&ID=7523215&Options=&Search=)\n\nThe county memorandum attributes part of a historical county mortality decline to naloxone access. That administrative statement is not a controlled causal estimate and does not identify HOPE’s contribution. We do not use the county death totals to calibrate the model’s hazard reduction. The grant’s proposed accessible siting also does not establish universal around-the-clock availability at every listed business. Current instructions to check hours are a more appropriate limitation.\n\n### A stronger current alternative: free hardware\n\nSan Mateo County Health now offers a free stand-box program. Its FAQ describes free hardware and shipping, while hosts obtain and replenish medication. Eligibility is for locations in San Mateo County; the listed San Francisco site is not automatically covered by this program. Selection also depends on availability and location criteria; the county offers help with damaged units. Hosts must report restocking and reported reversals monthly. This is a current funded alternative, not proof every application will be approved or every useful site is covered. [County FAQ](https://www.smchealth.org/sites/main/files/file-attachments/help_expand_access_to_naloxone_in_san_mateo_county_faq.pdf?1759531506=)\n\nThis evidence weakens a simple private-hardware-purchase story. A donor should first ask whether a proposed location can receive public equipment. It does not eliminate a coordination role: permissions, host recruitment, replenishment, outreach and access monitoring may still need work. The correct residual is the work that would not happen under the public route, not the retail value of all supplies that happen to pass through a nonprofit.\n\nThe program’s January29,2026 launch notice and current application route are more relevant to today’s comparator than a2025 statement that few dispensing machines existed. We do not infer that the original grant was unnecessary when awarded. Counterfactuals change over time. A previously additional installation model can become less additional as public provision expands, even if the organization continues doing worthwhile work. [Launch notice](https://www.smchealth.org/post/overdose-prevention-coalition-launches-naloxone-program-expands-free-access-county)\n\n### Cash cost versus all resources\n\nThe modeled expense envelope is intended to cover all ordinary organizational operating costs, including fundraising and support activities. It is not a complete societal resource bill. Medication procurement, volunteer time, host space, transport, emergency response and clinical follow-up may be paid by someone else or donated. Those complements can enable genuine cash leverage, but they do not have zero opportunity cost merely because HOPE does not pay for them.\n\nNor should every public dollar be mechanically added to the next private gift. The relevant full-resource calculation would identify resources actually changed by the counterfactual donation. Existing stock that would otherwise expire may have a different opportunity cost from scarce stock diverted from another high-risk network. Without quantities and alternatives, assigning a retail price to all public medication would create another unsupported estimate. We leave the full-resource result unresolved and explain what would be needed to estimate it.\n"
+      },
+      {
+        "id": "section-3",
+        "title": "3. Monitoring and the unique-person denominator",
+        "markdown": "## 3. Monitoring and the unique-person denominator\n\n### Units and time periods\n\nThe current dedicated page and homepage now both report over6,000 Narcan distributions. The previous cached3,000 statement is historical evidence, not a continuing contradiction in the freshly fetched page. This is a useful correction, but the current term still does not identify devices, paired units, packs, people or annual flow. The numerical base therefore remains a prior of1,500 annual two-device-pack equivalents rather than an asserted fraction of the cumulative total.\n\nDHCS defines a nasal unit as two4mg devices and advises against separating them. It also reports a switch from branded Narcan to generic supply in April2026. HOPE’s colloquial brand usage does not establish the exact product in every current dispenser. These facts make a consistent stock ledger important; they do not by themselves show that HOPE’s cumulative count should be halved or doubled. [DHCS FAQ](https://www.dhcs.ca.gov/individuals/naloxone-distribution-project/ndp-frequently-asked-questions/)\n\nA useful annual table would distinguish stock received, stock installed, stock taken, stock expired or damaged, and stock remaining. It would state the unit and date range. Transfers between storage and a dispenser are not necessarily end-user distributions. Restocking is not automatically consumption. Even perfectly reconciled inventory would still not identify how many distinct people gained additional protection, but it would remove a major accounting ambiguity.\n\n### Coverage rather than contacts\n\nThe central conversion is1,500 packs ×.5 use-ready fraction ÷3 repeat packs per network ×.8 risk/network factor =200 prospective at-risk person-equivalents per annual operating budget. Every factor is an analyst judgment. The first reduction concerns usable accessible stock rather than reserve or ineffective placement. The repeat divisor avoids treating several packs supporting one network as several independent people. The final factor accounts jointly for risk relevance and overlapping networks.\n\nThe definitions matter. The ready fraction is not an administration probability; administration and timely alternatives enter the net hazard difference. The repeat divisor is not an overdose rate. The network factor is not a measured fraction of collectors who personally use opioids. A bystander may protect someone else, and several bystanders may protect the same person. We do not add an unobserved multiplier because one collector might know several people: without network data, that would preferentially count upside while ignoring overlap.\n\nThe small $1,000 gift reaches2.5 additional person-equivalents in the central cost/delivery world:200 ×1,000/40,000 ×.5 funding response. This is not a claim that two or three identifiable people were newly protected by a donation. It is the expectation of a model relating whole-budget spending to incremental coverage. The distinction prevents the arithmetic from being presented as a purchased treatment slot.\n\n### What a useful follow-up could measure\n\nA low-burden monitoring system could use anonymous site/date/unit records and optional follow-up without collecting unnecessary identifying information. Relevant questions include whether the recipient already had usable naloxone, whether this replaced expired stock, whether an alternative was promptly available, and whether the pack remained accessible. Reports of use should state whether the same incident appears in several channels. A program can learn from these data without publishing private health details.\n\nSelf-reported reversals would be informative, but not sufficient for causal mortality. Reports may omit unsuccessful events, people who cannot be contacted, or administration by another responder. Reports may also be duplicated by the collector, host and emergency service. A denominator of successful reports is selected on surviving long enough to report. We would not import its apparent survival into a prospective risk cohort or multiply it by an assumed death probability without a separately justified counterfactual.\n\n### Geographic attribution\n\nAll nine listed locations are in the nine-county Bay region, but the model’s95% central Bay share remains a judgment. People travel, carry medication elsewhere and obtain it for contacts outside their home county. A site address is not the eventual beneficiary’s residence or the location of all future health gains. Conversely, a San Francisco location does not justify assigning an SF share to the entire network. We retain no separate SF estimate for this packet.\n\nThe added sites strengthen evidence that the organization is not limited to two cities. They do not justify multiplying modeled health by9/5. Site counts differ in throughput, hours, users and alternatives. A newly listed location may replace another point, formalize existing delivery or have little traffic. The right update would use additional useful coverage, not an equal-benefit assumption for every pin on a map.\n"
+      },
+      {
+        "id": "section-4",
+        "title": "4. Causal evidence and finite health",
+        "markdown": "## 4. Causal evidence and finite health\n\n### Biological efficacy is not the distribution effect\n\nNaloxone can reverse opioid respiratory depression, but the organization-level comparison is access with an additional gift versus access without it. Another bystander, emergency service or existing pack may already provide timely treatment. Some packs never encounter an emergency, and some overdoses involve other substances or circumstances that naloxone alone does not resolve. The model’s net hazard reduction is meant to include these probabilities, not to be multiplied by a second generic rescue fraction.\n\nWalley and colleagues’ Massachusetts interrupted time-series study found lower community overdose mortality associated with overdose-education/naloxone implementation: adjusted ratios.73 and.54 for lower/higher implementation compared with none. It is observational and from2002–2009. It supports plausibility but does not identify a modern Bay effect per pack, remove confounding or establish that another unit is valuable where distribution is already extensive. [Primary study](https://www.bmj.com/content/346/bmj.f174)\n\nThe HEALing Communities trial is an important counterweight. Its multicomponent community intervention did not demonstrate a statistically significant primary overdose-mortality reduction: adjusted rate ratio.91,95% interval.76–1.09. A separate randomized distribution analysis found79% more naloxone distribution. These results show that increasing distribution does not mechanically establish a detectable mortality change. They do not isolate naloxone’s pharmacology or prove that all targeted access is ineffective. [Mortality trial](https://www.nejm.org/doi/full/10.1056/NEJMoa2401177) [Distribution analysis](https://pmc.ncbi.nlm.nih.gov/articles/PMC11628717/)\n\nThe coexistence of plausible efficacy and uncertain marginal delivery is exactly why null worlds remain in the model. A wide trial interval should not be translated into a precise charity probability. Nor should a positive observational estimate be applied to a cumulative website number. The studies constrain our confidence and identify failure modes; they do not provide the local coefficients used in this exploratory calculation.\n\n### Avoiding selected-survivor mortality transfer\n\nHistorical post-overdose cohorts have high subsequent mortality. Larochelle reported4.7 all-cause deaths per100 person-years; Olfson reported7.783 in a first-year cohort. These are selected survivors of an overdose, not the average person indirectly reached by a dispenser. Age, substance use, treatment, calendar period and selection all affect the transfer. We retain these studies only as historical scale context, not as a measurement of HOPE’s baseline or ten-year prognosis. [Larochelle](https://pubmed.ncbi.nlm.nih.gov/29913516/) [Olfson](https://pubmed.ncbi.nlm.nih.gov/29926090/)\n\nThe central current-care hazard of.07 per year is therefore a strong prior, not a fact about HOPE recipients. Its avoided hazard is only.002 during one year, after which both arms share.07. The model does not suppose every covered person overdoses, or that every overdose would be fatal. A future empirical calibration should start with the prospective risk network and its actual alternatives, not select people because a rescue succeeded and work backward.\n\n### One trajectory per person\n\nDuring the first year, central survival is exp(−.068t) with improved access and exp(−.070t) under current care. After year one, each year-one survival probability is multiplied by exp(−.07(t−1)). The difference can persist because someone alive at year one may remain alive later, even though there is no continuing program effect. The integral stops at ten years. It does not restart whenever another pack is distributed or another overdose occurs.\n\nThis is a finite cohort model, not a repeated-rescue model. Repeats only reduce the estimated distinct covered population. The model’s future survival is also not a forecast that every saved person lives ten years: common subsequent mortality reduces the survival gap continuously. A shorter horizon is still a legitimate conservative boundary, especially when long-run prognosis and the utility of survival are uncertain.\n\nThe central discounted survival difference is.0009366601 years during active support plus.0107728637 years afterward per covered person. Multiplying their sum by.65 utility gives.0076111905QALY before the independent harm. Thus92.0009% of gross modeled survival benefit comes after year one. This is not a second favorable-scenario weight; it is a temporal decomposition of the central row. A model can be mathematically finite while still depending strongly on unmeasured later life. The report therefore shows short horizons prominently rather than describing the ten-year cutoff as sufficient proof of conservatism.\n\n### Harms and omitted morbidity\n\nIndependent morbidity harms are subtracted per additional covered person. The central amount.00002QALY is a judgment, not an observed HOPE adverse-event rate. The adverse world uses zero mortality gain and a larger morbidity decrement. These cases keep the calculation signed without implying that ordinary naloxone distribution usually causes harm.\n\nA CDC comparison of8mg and4mg products found no observed survival advantage for the higher dose and more withdrawal signs/symptoms. It was not randomized and is not a HOPE evaluation. We use it to reject “more dose is always more benefit,” not to map its event rate to our harm coefficient or suggest withholding an appropriate emergency response. [Primary MMWR](https://www.cdc.gov/mmwr/volumes/73/wr/mm7305a4.htm)\n\nNo separate brain-injury prevention, treatment engagement, infection prevention or family-survival benefit is added. Such effects might exist, but a common positive story is not sufficient to quantify them. Likewise, grief support is not assigned a generic utility bonus. Keeping those pathways unresolved is more honest than expanding the model until it appears complete.\n"
+      },
+      {
+        "id": "section-5",
+        "title": "5. Finite model and old/new comparison",
+        "markdown": "## 5. Finite model and old/new comparison\n\n### Cost, coverage and health equation\n\nFor each cost/delivery world, BayQALYs = gift/whole-expense prior × annual distinct risk-person equivalents × funding response × [utility × discounted survival difference − independent harm] × Bay share. The annual person-equivalent conversion is packs ×ready/repeats ×riskNetwork. Cost, coverage and clinical effects are not separately observed; their product is an explicit conditional estimate.\n\nThe discount rate is3% annually, implemented continuously as ln(1.03). During active support, the survival integral uses the two hazards. Afterward, it carries the year-one survival gap forward under common mortality. An independent numerical integration test checks this closed form, and a person-time bound prevents gross survival benefit exceeding the finite available utility-weighted lifetime of the additional cohort.\n\n### Scenarios and expected value\n\nThree cost worlds—$20,000 at20%, $40,000 at50%, $100,000 at30%—are crossed with six delivery worlds. Delivery weights are20% funding-null,20% access-null,10% harm,20% cautious,25% central and5% favorable. They are subjective judgments, not empirical frequencies or confidence intervals. Independence of expense and delivery is a simplifying assumption, not an observed property of this nonprofit.\n\nThe expected Bay health per $1,000 is.013101904653691494QALY, implying $763,247.8074233638 per10. The central cost/delivery row is $554,659.5517271358. A central row can be better than the mixture because the mixture includes null and harmful possibilities. The favorable family contributes65.6865% of net expected Bay health. Removing it and renormalizing the remainder yields $2,113,122.33.\n\n| Quantity | Alpha | V2 preferred |\n| --- | --- | --- |\n| Weighted Bay price/10Q | $763,247.81 | $763,247.81 |\n| Central Bay price/10Q | $554,659.55 | $554,659.55 |\n| Observed annual expense | Unknown | Unknown |\n| Current listed sites | Five in prior inspected evidence | Nine in native dedicated page |\n| Annual unique risk people | Unknown | Unknown |\n| Verified marginal offer | None located | None located |\n\nNo numerical coefficient was changed to compensate for the new public hardware alternative. The preferred result is a continuity estimate, not a claim that the new evidence leaves confidence unchanged. It strengthens the reason to investigate lower funding response. An arbitrary replacement value would conceal judgment rather than improve the evidence. The next table makes the implication visible without assigning unsupported probabilities.\n\n### Decision-relevant diagnostics\n\n| Diagnostic | Weighted dollars/10 Bay QALYs |\n| --- | ---: |\n| Preferred retained prior | $763,248 |\n| Half funding response | $1,526,496 |\n| Quarter funding response | $3,052,991 |\n| Half annual pack-equivalents | $1,526,496 |\n| Double repeat packs/network | $1,526,496 |\n| Half net hazard reduction | $1,544,117 |\n| Five-year horizon for all worlds | $1,300,404 |\n| Two-year horizon | $3,479,370 |\n| One-year horizon | $10,854,317 |\n| Fixed $20,000 expense | $389,256 |\n| Fixed $40,000 expense | $778,513 |\n| Fixed $100,000 expense | $1,946,282 |\n\nThe same numerical result for half packs and doubled repeats follows from their algebraic roles, not independent evidence confirming the reduction. Nor should these stresses be stacked automatically: some may describe the same uncertainty. The half-hazard result is slightly more than double the base price because harms remain while positive survival benefit falls. This illustrates why signed models should not be treated as a single positive product under every change.\n\nThe cost/delivery dependence diagnostic pairs a low-cost cautious state, central-cost central state and high-cost favorable state. It is not another evaluator expectation: its different weights and absence of the full null/harm family make it unsuitable as a replacement headline. Its purpose is to inspect how favorable delivery can require a larger budget. The complete paired outputs are saved so a reviewer can see the assumptions rather than only a selected favorable ratio.\n\n### Threshold interpretation\n\nKeeping every central factor except annual risk coverage fixed, about111 annual person-equivalents would be needed to reach $1million per10 BayQALYs, compared with the current200 prior. About1,109 would be needed to reach $100,000. Alternatively, holding coverage fixed requires funding response about.277 for the first threshold and2.773 for the second. A response above one is outside the model’s admissible range, so funding response alone cannot deliver the $100,000 target under the other central inputs.\n\nThese are conditional thresholds, not estimates of actual coverage or an invitation to choose the parameters that clear them. Their practical use is to structure diligence: can the organization support the relevant order of magnitude after deduplication and alternatives? If not, a high-return conclusion fails without needing a perfect trial. If yes, it remains necessary to examine the clinical and expense assumptions.\n"
+      },
+      {
+        "id": "section-6",
+        "title": "6. What would an additional donation change?",
+        "markdown": "## 6. What would an additional donation change?\n\n### The most plausible residual bottlenecks\n\nPublic supply does not automatically reach every high-risk network. Someone must identify hosts, obtain authorization, coordinate ordering, keep inventory usable and make locations discoverable. A small nonprofit may be well placed to do that work. A useful donation might support reliable replenishment, extend a neglected location’s availability or sustain an activity whose existing grant has genuinely ended. These are plausible mechanisms, not verified current projects.\n\nThe competing explanation is that hosts or county staff would provide equivalent access anyway, or that stock and volunteer attention rather than money are limiting. A gift might replace another donor’s funds or support general events without increasing risk coverage. The funding-null world covers that possibility. Public provision is neither automatically a substitute nor automatically free leverage; the local allocation of responsibility determines which it is.\n\nA specific request should identify the current baseline before describing the proposed change. Existing boxes, stock, committed grants and volunteer commitments belong in the baseline. If the proposed site already qualifies for public hardware, the private budget should explain the remaining cost. If the problem is a replenishment backlog, a credible plan should show its scale and why an additional person-hour or transport expense addresses it.\n\n### Spendable marginal room\n\nNo current restricted balance, unrestricted cash balance, staffing budget or priced $1,000 tranche was located. The absence of a public offer does not prove the organization cannot use funds well. It means the analysis cannot tell a donor what the next gift will purchase. The model’s small gift ceiling is a safeguard against broad scaling claims, not a certificate that $1,000 is absorbable at the modeled rate.\n\nThe official site links a general PayPal donation route. The prior pass did not verify its recipient display at checkout, and this review did not conduct a transaction. No donation URL is added to the structured report solely because a button exists. Even a verified payment route would establish how to send funds, not the counterfactual benefit of sending them.\n\n### Three unsent questions\n\n1. What were whole gross expenses, revenue, restricted balances and contributed resources for the latest completed year, and what remains committed after the2025–26 installation grant? Please distinguish event costs, operating costs and publicly supplied medication or hardware.\n2. For a dated twelve-month period, how many paired units were received, stocked, collected and expired; how many distinct risk networks gained usable access; and what evidence separates that access from repeat or otherwise available supply?\n3. What specifically would an additional unrestricted $1,000 change now, beyond the county free-box program, NDP medication and existing commitments? Which location or maintenance gap, complementary resources, time period and expected additional coverage would it support?\n\nThese questions are deliberately narrower than a request for a perfect impact evaluation. A reconciled budget and an operationally specific plan could materially improve the decision even if local mortality remains too rare to estimate precisely. No question has been sent and no organizational response is implied.\n"
+      },
+      {
+        "id": "section-7",
+        "title": "7. Qualitative judgment and strongest alternative",
+        "markdown": "## 7. Qualitative judgment and strongest alternative\n\nHOPE’s comparative possibility is local trust and implementation, not proprietary medication or hardware. A network of willing hosts may create access where a government application route alone does not. Community members affected by overdose may recognize barriers that a generic distribution plan misses. These are hypotheses about organizational advantage; the public record does not quantify them or show that they are absent elsewhere.\n\nThe strongest immediate alternative for eligible San Mateo County hosts is not “do nothing.” It is using the county’s free equipment route and public medication supply, possibly with another existing partner. That hardware route does not automatically extend to the listed San Francisco site. A fair comparison would ask whether HOPE reaches different people, maintains better uptime, lowers practical barriers or accelerates deployment. If the same useful coverage happens promptly without an extra gift, the incremental health is small even when the service itself is valuable.\n\nOther health interventions may offer more directly measured treatment effects, but cross-charity ranking is not resolved by noting that naloxone can save lives. A low-cost access mechanism with sparse data can be worth investigating; a precise-looking ratio should still receive less confidence than its missing denominator permits. The report keeps the promising possibility and the unfavorable scenarios together rather than forcing a binary good/bad label.\n\nCommunity healing, education and remembrance should not be dismissed because this health model does not quantify them. They may be reasons some donors value the organization independently of BayQALYs. They also consume real resources within an ordinary gift. A donor prioritizing those outcomes should assess their quality and importance directly instead of treating them as an unexplained positive residual that rescues a health ranking.\n"
+      },
+      {
+        "id": "section-8",
+        "title": "8. Decision and reproducibility",
+        "markdown": "## 8. Decision and reproducibility\n\nRetain HOPE as an exploratory access hypothesis and HOLD an actionable health-based giving recommendation. The new source check improves current operations and reveals a materially stronger public alternative. It does not supply annual finances, unique coverage or a local mortality effect. The result therefore remains prior-driven, with unchanged old/new prices and explicit evidence changes.\n\nThe packet preserves the original model, full18-row signed outputs and all new diagnostic matrices. Tests compare original numerical fields exactly, check the closed-form survival integral independently, verify threshold arithmetic and reject malformed/nonfinite inputs. Passing tests establish computational consistency, not the truth of the hazard, expense or funding priors.\n\nSource dates distinguish dated government actions, undated mutable pages and retrieval times. Failed full-text retrievals are not described as successful reads; inherited primary evidence remains labeled. The current native page supersedes older cached operational text without rewriting that earlier provenance. No Site files changed, no outreach occurred and no prior research time was backfilled.\n\nModel version: `hope-pacifica-depth-v2-unchanged-priors`. The structured model data and full narrative must travel together in integration. A short report card alone would omit the public-hardware counterfactual and the uncertainty that governs the donation decision.\n"
+      }
+    ]
+  },
+  "currentEvidence": {
+    "reviewDate": "2026-09-11",
+    "listedSites": 9,
+    "cumulativeClaimLowerBound": 6000,
+    "annualExpense": null,
+    "annualUniqueRiskPeople": null,
+    "annualRescues": null,
+    "currentMarginalOffer": null
+  }
+}

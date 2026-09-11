@@ -1,4 +1,5 @@
-import CharityResearchReport,{type CharityReportContent} from '@/components/CharityResearchReport';
-import report from '@/data/bay/hope-pacifica-report.json';
-export const metadata={title:report.organization+' — GiveBetter research',description:report.program};
-export default function Page(){const content:CharityReportContent={...report,nutshell:{...report.nutshell,body:<>{report.nutshell.body} <a href="/api/hope-pacifica-model">Inspect the model and assumptions</a>.</>}};return <CharityResearchReport content={content}/>;}
+import LongFormResearchReport from '@/components/LongFormResearchReport';
+import report from '@/data/san-francisco/hope-v2-report.json';
+import {modelVersion} from '@/lib/hope-v2-model.mjs';
+export const metadata={title:'HOPE Pacifica — V2 research | GiveBetter x SF',description:'Naloxone access, public alternatives, finite survival and current operating evidence.'};
+export default function Page(){return <LongFormResearchReport organization="HOPE Pacifica" program="Community naloxone access" markdown={report.longForm.markdown} sources={report.sources} modelVersion={modelVersion} modelUrl="/api/hope-v2-model" minutes={21} modelLabel="GPT-6 Astra Light" sectionTitles={{'1-organization-and-current-delivery':'1. What do they do?','2-finances-and-the-public-resource-boundary':'Spending breakdown and financial evidence','3-monitoring-and-the-unique-person-denominator':'2. Monitoring and information sharing','5-finite-model-and-oldnew-comparison':'4. What do you get for your dollar?','6-what-would-an-additional-donation-change':'5. Funding and previous grants','7-qualitative-judgment-and-strongest-alternative':'3. Qualitative assessment'}}/>;}

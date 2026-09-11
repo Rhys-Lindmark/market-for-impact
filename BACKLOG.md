@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Top-ten substantive summaries — September 11
+
+All ten current leaders now have three introductory sentences, three evidence-based reasons, three reservations, concrete service-cost and health-conversion reasoning, monitoring disclosure and qualitative assessment. Two independent evidence passes checked units, arithmetic and recommendation status; no model coefficients or ranking changed. ReCARES explains $6.60 accounting expense per reported recipient and conditional mobility utility, not a guaranteed health return per item. Unresolved recipients remain research candidates. Three schema/arithmetic/status tests, four phone/tablet suites, focused lint and production build pass. See docs/top-ten-summary-plan.md. Next: publish exact source and verify all ten canonical summaries.
+
 ## SFAF general-giving presentation — September 11
 
 Removed the $100,000 illustrative gift framing from the SFAF report, including dependent sample totals and headcounts. Program description now explains services; summary and scenarios use cost per 10 QALYs, preserving all regional prices and null cases. The executable model retains its normalization and input assumptions; unit costs are not a promise of proportional scaling at any gift size. 23 model/report tests, phone/tablet checks, focused lint and build pass. Next: publish this presentation change.

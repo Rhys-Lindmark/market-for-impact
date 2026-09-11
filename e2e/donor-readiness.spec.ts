@@ -6,7 +6,12 @@ test('giving caveats live in funding sections without report banners',async({pag
   expect((await page.goto('/charities/'+row.slug))?.ok()).toBe(true);
   const overview=page.locator('#summary, #research-summary').first();
   await expect(overview.locator('p').first()).toContainText('What do they do?');
-  await expect(overview).toContainText('Why this approach interests us');
+  await expect(overview.locator('[data-summary-reasons] > li')).toHaveCount(3);
+  await expect(overview.locator('[data-summary-reservations] > li')).toHaveCount(3);
+  await expect(overview.locator('[data-summary-cost] > p')).toHaveCount(3);
+  await expect(overview.locator('[data-summary-monitoring]')).toBeVisible();
+  await expect(overview.locator('[data-summary-qualitative]')).toBeVisible();
+  for(const href of await overview.locator('a[href^="#"]').evaluateAll(links=>links.map(link=>link.getAttribute('href')!)))await expect(page.locator(href)).toHaveCount(1);
   await expect(overview).toContainText('Our main reservations');
   if(row.slug==='san-francisco-aids-foundation'){
    await expect(page.locator('main')).not.toContainText(/\$100,000|\$100K/i);

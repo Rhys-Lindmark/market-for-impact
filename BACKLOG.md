@@ -1,5 +1,13 @@
 # Market for Impact backlog
 
+## ReCARES publication phase — in progress
+
+83/115 published. Independently audited ReCARES model/report/source ledger preserved here; two focused tests pass. Core weighted Bay estimate$185,910/10Q from whole FY2024 expense; prior-weighted favorable tail69.3%; no verified marginal offer, giving HOLD. Added controlled walking-aid and rollator null-QoL reservations to report and qualified pre-output-weight chronology as author-attested. No research count increment yet.
+
+Integration accepted: shared report wrapper and full model API; weighted Bay row and explicit exploratory homepage summary; actual13-minute Astra metadata;505unit/model tests, lint0errors/3existing warnings, production build and26responsive checks including all84reports metadata. Independent final audit confirms exact default parity. Next: exact-source deploy and canonical verification; only then count84. ReCARES enters lowest-estimate shortlist, not verified giving recommendations. Shared clinical-prior sensitivity with MELP is the next comparative research refinement; neither family is empirically established.
+
+MELP/AbleCloset full research is underway with Astra; initial model is substantially less favorable than its screening sketch. Retain the finding rather than adjusting priors. Wider discovery screens are recorded in docs/high-ev-screen-handoff-2026-09-10.md. The immediate objective remains high-EV opportunities, not quota filling.
+
 ## Bay-primary ranking correction — September 10
 
 Published83 reports (64 Bay/SF,19 Expanded Geography); BFC PR276/v192 canonical checks passed. Correct12 adapters that previously forwarded SF-only prices despite explicit Bay outputs. Preserve all50 original SF prices/ranges/order exactly; Bay-first research table and homepage now share selected Bay prices. Computed Bay null never falls back to a positive SF number. No model inputs retuned. SPUR$2.19M, Operation Access$3.24M, PHC$774K per10 Bay QALYs. Existing top-four membership unchanged.

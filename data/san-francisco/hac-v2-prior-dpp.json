@@ -1,0 +1,101 @@
+{
+  "schema_version": "1.0.0",
+  "model_id": "hac-developer-pathway-conditional-cea-v1",
+  "version": 1,
+  "review_date": "2026-09-08",
+  "review_date_label": "September 8, 2026",
+  "organization": "Housing Action Coalition",
+  "slug": "housing-action-coalition",
+  "program": "Developer Pathway Program: additional technical-assistance project-year",
+  "status": "Conditional research model; actual regional program, hypothetical additional SF project",
+  "interpretation": "Illustrative central and stress scenarios, not a calibrated expected value, confidence interval, priced offer or recommendation.",
+  "recipient": {
+    "c3_ein": "83-1881525",
+    "c4_ein": "82-1817943",
+    "general_giving_url": "https://secure.qgiv.com/for/fosfhac/",
+    "restricted_program_offer_verified": false,
+    "correct_entity_acceptance_verified": false,
+    "note": "Memberships default to c4 unless requested otherwise. Do not represent a c3 gift as purchasing c4 advocacy. HAC and Onyx share delivery; count one project pathway."
+  },
+  "verified_program_facts": {
+    "program_duration_years": 1,
+    "participant_hours_per_month_approximate": 5,
+    "standard_participant_fee_usd": 500,
+    "eligible_alumni_fee_usd": 250,
+    "provider_claimed_annual_service_value_usd": 12000,
+    "pilot_selection_cap": 15,
+    "applications_open_at_review": false,
+    "existing_supporter": "Sobrato Family Foundation",
+    "technical_partner": "Onyx Equity Partners",
+    "geography": "Nine Bay Area counties or Sacramento County",
+    "sf_specific_project_verified": false,
+    "source_id": "dpp",
+    "caveat": "Fees are not full service costs; service value is not expenditure; participant hours are not provider hours; selection cap is not completed participants or SF projects."
+  },
+  "unit": "One hypothetical additional year of technical support for an identified SF housing project, including failed efforts; not a membership scholarship or construction grant.",
+  "cost_perspective": {
+    "currency": "USD",
+    "price_basis": "September 2026 analyst planning allowances, not quoted or audited costs",
+    "donor_cost_central_components": [
+      {"name": "Technical labor", "hours": 100, "fully_loaded_usd_per_hour": 100, "cost_usd": 10000},
+      {"name": "Coordination", "hours": 40, "fully_loaded_usd_per_hour": 75, "cost_usd": 3000},
+      {"name": "Other operating allowance", "cost_usd": 2000}
+    ],
+    "cost_judgment": "All hours, rates and allowances are judgments. Favorable/unfavorable budgets are 0.5x/2x the central allowance, not observed scale effects. Recruitment and failed effort must fit this whole-place budget; any omitted delivery expense must be added.",
+    "participant_fee_deducted": false,
+    "full_resource_cost_usd": null,
+    "full_resource_cost_per_10_qalys": null,
+    "unpriced_resources": ["Participant labor", "Incremental development and land opportunity costs", "Public subsidies and public delivery resources", "Follow-on operating and moving resources"],
+    "resource_note": "Full-resource comparison is unpriced, not zero. Include net incremental real resources against the same counterfactual, distinguish transfers and financing from resource costs. Private construction capital is neither a free input nor a donor expense."
+  },
+  "input_definitions": {
+    "net_sf_homes_H": "Conditional project net homes after demolition, replacement and offsetting construction; not all endorsed units.",
+    "incremental_completion_probability_p": "Difference in completion probability caused by additional support, conditional on genuinely additional delivery. Includes financing and other-provider counterfactual; do not multiply by another realization probability.",
+    "funding_additionality_a": "Probability/fraction that gift expands services beyond existing Sobrato support, fees and substitute funding; not a second attribution haircut on already donor-attributed outcomes.",
+    "health_affected_people_per_net_home": "Judged people experiencing health-relevant housing improvement per net added home, not total occupants or all people escaping homelessness.",
+    "net_annual_utility_change": "Signed judgment, net of shared displacement, construction and other health harms; not a measured DPP utility effect.",
+    "discounted_incremental_health_years": "Finite incremental health exposure after completion, already discounted to gift date; not program duration, building life or observed follow-up.",
+    "donor_specific_harm_qalys": "Separate donor-caused health harm independent of service expansion. Do not use for shared intervention harms or financial opportunity cost already counted in cost."
+  },
+  "time_bridge": {
+    "effective_years_are_inputs_not_observed": true,
+    "illustrative_annual_discount_rate": 0.03,
+    "illustrative_benefit_start_year_after_gift": 3,
+    "continuous_flow_discount_formula": "E = exp(-ln(1+r)*start) * (1-exp(-ln(1+r)*duration))/ln(1+r)",
+    "calendar_interpretation_only": "At 3% annual discount and benefit starting at year 3, E=5 corresponds to 5.958932811498 years of subsequent health benefit ending at year 8.958932811498; E=2 corresponds to 2.259238871764 years ending at year 5.259238871764. These are implied illustrative durations, not evidence or extra multipliers. The core retains accepted E inputs.",
+    "catch_up_rule": "If support only accelerates otherwise inevitable construction, restrict exposure to occupied resident-years before counterfactual catch-up. For later actual completion or shorter health persistence, recompute E rather than retaining five years automatically. No benefit before completion."
+  },
+  "formulas": {
+    "attributable_net_homes": "H * p * a",
+    "net_qalys_per_home_h": "health_affected_people_per_net_home * net_annual_utility_change * discounted_incremental_health_years",
+    "incremental_qalys": "H * p * a * h - donor_specific_harm_qalys",
+    "cost_per_10_qalys": "10 * donor_cost_usd / incremental_qalys, only when incremental_qalys > 0; otherwise null with explicit null/harm status"
+  },
+  "scenarios": [
+    {"id":"central", "label":"Illustrative central", "input_status":"All modeled numerical inputs are analyst judgments", "donor_cost_usd":15000, "net_sf_homes_H":20, "incremental_completion_probability_p":0.1, "funding_additionality_a":0.5, "health_affected_people_per_net_home":0.1, "net_annual_utility_change":0.02, "discounted_incremental_health_years":5, "donor_specific_harm_qalys":0, "attributable_net_homes":1, "net_qalys_per_home_h":0.01, "incremental_qalys":0.01, "cost_per_10_qalys_usd":15000000, "outcome_status":"positive"},
+    {"id":"favorable", "label":"Favorable stress, not demonstrated program performance", "input_status":"All modeled numerical inputs are analyst judgments", "donor_cost_usd":7500, "net_sf_homes_H":100, "incremental_completion_probability_p":0.25, "funding_additionality_a":0.75, "health_affected_people_per_net_home":0.5, "net_annual_utility_change":0.02, "discounted_incremental_health_years":5, "donor_specific_harm_qalys":0, "attributable_net_homes":18.75, "net_qalys_per_home_h":0.05, "incremental_qalys":0.9375, "cost_per_10_qalys_usd":80000, "outcome_status":"positive", "caveat":"A 100-home SF project is not verified for this cohort and differs materially from the described low-density SF developer profile."},
+    {"id":"unfavorable", "label":"Unfavorable stress", "input_status":"All modeled numerical inputs are analyst judgments", "donor_cost_usd":30000, "net_sf_homes_H":5, "incremental_completion_probability_p":0.02, "funding_additionality_a":0.1, "health_affected_people_per_net_home":0.1, "net_annual_utility_change":0.01, "discounted_incremental_health_years":2, "donor_specific_harm_qalys":0, "attributable_net_homes":0.01, "net_qalys_per_home_h":0.002, "incremental_qalys":0.00002, "cost_per_10_qalys_usd":15000000000, "outcome_status":"positive"},
+    {"id":"null_funding", "inherits":"central", "overrides":{"funding_additionality_a":0}, "incremental_qalys":0, "cost_per_10_qalys_usd":null, "outcome_status":"null", "note":"Existing funding fully substitutes; donor spending still occurs."},
+    {"id":"null_completion", "inherits":"central", "overrides":{"incremental_completion_probability_p":0}, "incremental_qalys":0, "cost_per_10_qalys_usd":null, "outcome_status":"null", "note":"Project built anyway, remains unfinanceable, or net housing is offset elsewhere."},
+    {"id":"null_health", "inherits":"central", "overrides":{"net_annual_utility_change":0}, "incremental_qalys":0, "cost_per_10_qalys_usd":null, "outcome_status":"null"},
+    {"id":"shared_harm", "inherits":"central", "overrides":{"net_annual_utility_change":-0.004}, "incremental_qalys":-0.002, "cost_per_10_qalys_usd":null, "outcome_status":"harm", "note":"Signed net shared-health stress; h=-.002 already includes harms. Do not subtract them again."},
+    {"id":"donor_harm_with_zero_funding", "inherits":"central", "overrides":{"funding_additionality_a":0,"donor_specific_harm_qalys":0.001}, "incremental_qalys":-0.001, "cost_per_10_qalys_usd":null, "outcome_status":"harm", "note":"Regression/stress illustration only; no observed donor-specific harm is alleged."}
+  ],
+  "thresholds": {
+    "target_usd_per_10_qalys":100000,
+    "central_required_attributable_net_homes_strictly_more_than":150,
+    "favorable_required_attributable_net_homes_strictly_more_than":15,
+    "favorable_with_H_20_cost_per_10":400000,
+    "favorable_with_additionality_0_25_cost_per_10":240000
+  },
+  "sources": [
+    {"id":"dpp","title":"Developer Pathway Program","url":"https://housingactioncoalition.org/dpp","source_date_label":"Undated current program page; checked September 8, 2026","supports":"Service, regional eligibility, existing sponsor/partner, participant fees and claimed value, dose and closed pilot; not costs or causal outcomes"},
+    {"id":"cohort","title":"2026 Developer Pathway Program Collective","url":"https://housingactioncoalition.org/2026dppcollective","source_date_label":"2026 cohort; checked September 8, 2026","supports":"Named regional participants and SF-based developer, not verified SF project or program-produced units"},
+    {"id":"giving","title":"Donating to HAC","url":"https://secure.qgiv.com/for/fosfhac/","source_date_label":"Undated current giving form; checked September 8, 2026","supports":"General giving, EIN distinction and membership default, not restricted DPP offer"},
+    {"id":"home","title":"Housing Action Coalition","url":"https://housingactioncoalition.org/","source_date_label":"Current homepage; checked September 8, 2026","supports":"Educational/advocacy entity distinction"},
+    {"id":"supply","title":"Supply Shock Versus Demand Shock: The Local Effects of New Housing in Low-Income Areas","url":"https://www.philadelphiafed.org/community-development/housing-and-neighborhoods/supply-shock-versus-demand-shock-the-local-effects-of-new-housing-in-low-income-areas","source_date_label":"February 2020 working-paper summary; checked September 8, 2026","supports":"Large-building supply can reduce nearby rents; no HAC completion effect, small-infill transfer or QALY coefficient"}
+  ],
+  "independent_acceptance": {"audit_path":"/private/tmp/mfi-hac-audit.md","date_label":"September 8, 2026","scope":"Underlying brief arithmetic and causal-unit separation accepted as illustrative sensitivity, not empirically calibrated expected value; versioned asset subsequently verified arithmetically"},
+  "nonduplication": "Do not add the prior general HAC advocacy model, Onyx credit, or other advocates' full project effects for these same homes. No electoral, income-as-QALY or climate benefit added.",
+  "decisive_unknowns": ["Verified SF project and net units", "Unfunded advisory capacity and correct legal recipient", "Full marginal delivery cost", "Completion or acceleration difference against funded/public/other-provider baseline", "Resident health exposure and utility effect", "Net full-resource cost"]
+}

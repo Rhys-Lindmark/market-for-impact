@@ -4,6 +4,7 @@ import hac from '../data/san-francisco/hac-developer-pathway-cea-v1.json' with {
 import spur from '../data/san-francisco/spur-clean-heat-cea-v1.json' with {type:'json'};
 import {hacModel,resolveHacScenario,spurModel} from '../lib/urban-policy-model.mjs';
 import {researchCostRanking} from '../lib/research-cost-ranking.mjs';
+import {calculate as hacV2} from '../lib/hac-v2-model.mjs';
 const close=(a,b)=>assert.ok(Math.abs(a-b)<1e-9*Math.max(1,Math.abs(b)),a+' != '+b);
 test('all HAC scenarios resolve inheritance and recompute signed outcomes',()=>{
  for(const s of hac.scenarios){const r=hacModel(resolveHacScenario(hac,s));close(r.netQalys,s.incremental_qalys);assert.equal(r.status,s.outcome_status);s.cost_per_10_qalys_usd===null?assert.equal(r.costPerTenQalys,null):close(r.costPerTenQalys,s.cost_per_10_qalys_usd);}
@@ -13,7 +14,8 @@ test('all HAC scenarios resolve inheritance and recompute signed outcomes',()=>{
 test('historical SPUR clean-heat outcomes remain reproducible after portfolio revision',()=>{
  for(const s of spur.scenarios){const r=spurModel(s);close(r.netQalys,s.netQalys);assert.equal(r.status,s.signedStatus);s.usdPerTenQalys===null?assert.equal(r.costPerTenQalys,null):close(r.costPerTenQalys,s.usdPerTenQalys);}
  close(spurModel(spur.scenarios[0]).costPerTenQalys,13661202.18579235);
- assert.equal(researchCostRanking.find(s=>s.slug==='housing-action-coalition').centralUsdPerTenQalys,15000000);
+ assert.equal(researchCostRanking.find(s=>s.slug==='housing-action-coalition').centralUsdPerTenQalys,hacV2().sfCostPer10);
+ close(hacModel(hac.scenarios[0]).costPerTenQalys,15000000);
 });
 test('nulls preserve donor cost, independent harm survives replacement, invalid inputs fail',()=>{
  const h=hac.scenarios[0],s=spur.scenarios[0];

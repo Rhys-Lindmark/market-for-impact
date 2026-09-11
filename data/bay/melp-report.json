@@ -1,0 +1,327 @@
+{
+  "organization": "MELP/AbleCloset",
+  "eyebrow": "EXPLORATORY CHARITY RESEARCH · BAY AREA",
+  "program": "Free loans of reused durable medical equipment for adults and children",
+  "donationUrl": "https://www.freemedequip.org/donate/",
+  "published": "10 September 2026",
+  "modelVersion": "melp-whole-org-v1",
+  "nutshell": {
+    "headline": "Low-cost equipment access is plausible; this model does not support a high-impact giving recommendation.",
+    "body": "A $10,000 whole-organization check gift produces 0.03322629 signed prior-weighted Bay QALYs, or $3,009,665 per 10. Central: $1,725,534. The 3%-weight favorable world supplies 91.8% of expected net Bay benefit. Utility, duration and additionality are judgments, not measured effects.",
+    "whyItMayWork": "Volunteers repair, clean and lend donated equipment, potentially bridging unmet mobility and self-care needs.",
+    "whyWeAreCautious": "Current public support, historical cash reserves, a forecast denominator and unvalidated utility transfer leave substantial null or harm risk.",
+    "recommendationBlocker": "Verify a small priced cash-triggered expansion or service-preservation plan, current reserve restrictions, unique recipients, device-class mix and actual use before recommending a gift."
+  },
+  "summary": [
+    {
+      "label": "BAY WHOLE GIFT",
+      "value": "$3,009,665",
+      "detail": "per 10 signed subjective-prior QALYs"
+    },
+    {
+      "label": "CENTRAL BAY",
+      "value": "$1,725,534",
+      "detail": "not measured benefit"
+    },
+    {
+      "label": "SF WHOLE GIFT",
+      "value": "$59,475,360",
+      "detail": "unmeasured resident share"
+    },
+    {
+      "label": "SOCIETAL COST",
+      "value": "Unknown",
+      "detail": "donated equipment, labor and travel not fully priced"
+    }
+  ],
+  "programSection": {
+    "body": "MELP lends standard adult mobility and safety equipment; AbleCloset handles specialized pediatric equipment. Both are within EIN 27-1212734. Free loans are available from San Carlos and South San Francisco, without a residence restriction.",
+    "steps": [
+      {
+        "title": "Receive and prepare equipment",
+        "detail": "Volunteers inspect, repair, clean and inventory donations; not every incoming item is usable locally."
+      },
+      {
+        "title": "Match a recipient",
+        "detail": "Inventory is first-come and users arrange pickup. Multiple items or visits need not mean multiple people."
+      },
+      {
+        "title": "Enable finite additional use",
+        "detail": "Only otherwise-unmet, sustained safe health-improving use is credited; utility losses are subtracted separately."
+      }
+    ],
+    "boundary": "Use planned whole-organization $169,269 expense and inferred 3,429 planning client-equivalents from 960/.28. The resulting $49.37 unit cost is not a historical actual or a funded marginal offer. Full 2024 expense of $104,000 is disclosed but not paired with newer output forecasts."
+  },
+  "model": {
+    "headline": "Signed expected Bay cost: $3,009,665 per 10 QALYs",
+    "body": "Calculate each joint scenario independently, subtract harms, then average QALYs using weights locked before execution. Divide the whole gift by expected net QALYs; do not average cost ratios or discard negative worlds.",
+    "equation": {
+      "label": "CENTRAL",
+      "expression": "U = (10000 / (169269 / (960/.28))) × .75 plan realization × .30 cash additionality × .80 unique fraction; QBay = U × [Σ(primary-needs share × unmet access × safe use × utility × finite years) − .00015 harm] × .95",
+      "result": "U=36.4593; BayQALY=0.05795308; cost/10=$1,725,534"
+    },
+    "inputColumnLabel": "Evidence versus subjective assumptions",
+    "inputs": [
+      {
+        "key": "cashcost",
+        "label": "Full annual cost boundary",
+        "best": "$169,269 planned; $104,000 historical",
+        "range": "$166,269 alternative budget table",
+        "confidence": "Verified historical accounting; uncertain planning",
+        "basis": "Actual full legal-entity expense is disclosed separately from the newer planning budget. No overhead is excluded."
+      },
+      {
+        "key": "clients",
+        "label": "Client-equivalent planning denominator",
+        "best": "960 / .28 =3,428.57",
+        "range": "Explicitly inferred",
+        "confidence": "Low: inferred planning quantity",
+        "basis": "Projected district clients divided by a reported historical district share. This is not an actual annual unique census. Central plan realization is 75%; unique fraction is 80%."
+      },
+      {
+        "key": "cash",
+        "label": "Cash additionality",
+        "best": "30% central",
+        "range": "0–50%",
+        "confidence": "Subjective judgment",
+        "basis": "Accounts for other donors, public funding, reserves and operational capacity. Separate unmet-access factors address recipients' alternatives."
+      },
+      {
+        "key": "mix",
+        "label": "Exclusive dominant-need shares",
+        "best": "45/30/10/15%",
+        "range": "See saved scenario matrix",
+        "confidence": "Subjective judgment",
+        "basis": "Adult mobility, bathing/transfer, pediatric adaptive equipment and consumables. Shares are unmeasured and mutually exclusive; no device stacking."
+      },
+      {
+        "key": "utility",
+        "label": "Utility and finite years",
+        "best": ".03×.25 / .02×.25 / .02×.5 / .002×.05",
+        "range": "Zero clinical effect in null/harm; maximum duration .75 year",
+        "confidence": "Unvalidated analyst bridge",
+        "basis": "No clinical study supplies these coefficients for MELP. Years means incremental useful health-improving time before alternative access, need resolution, discontinuation or device failure ends the advantage—not the physical life of the equipment. The favorable pediatric .75-year horizon is an explicit extension assumption beyond AbleCloset’s usual six-month pediatric loan limit (extensions can be requested), not established pediatric evidence. No lifetime, developmental, mortality or caregiver credit is added."
+      },
+      {
+        "key": "geo",
+        "label": "Resident benefit allocation",
+        "best": "95% Bay / 3% SF",
+        "range": "90–98% Bay; 2–5% SF",
+        "confidence": "Subjective residence allocation",
+        "basis": "Historical county participation supports local presence, not current Bay/SF shares. PHCD share and opening hours are not residence allocation rules."
+      },
+      {
+        "key": "priors",
+        "label": "Joint scenario weights",
+        "best": "40/15/15/15/12/3%",
+        "range": "Cash null / clinical null / harm / cautious / central / favorable",
+        "confidence": "Uncalibrated joint scenario judgments",
+        "basis": "Weights were locked before execution. The cautious world becomes net negative after independent harms and is retained."
+      }
+    ],
+    "giftHeading": "Bounded $10,000 check gift only",
+    "sensitivity": [
+      {
+        "case": "cash_neutral_null",
+        "headline": "No positive net benefit per 10 Bay QALYs",
+        "detail": "Subjective weight 40%; 0.00 additional unique recipients; 0.000000 signed Bay QALYs. Negative and zero outcomes retain the whole gift cost."
+      },
+      {
+        "case": "clinical_null",
+        "headline": "No positive net benefit per 10 Bay QALYs",
+        "detail": "Subjective weight 15%; 36.46 additional unique recipients; 0.000000 signed Bay QALYs. Negative and zero outcomes retain the whole gift cost."
+      },
+      {
+        "case": "harm",
+        "headline": "No positive net benefit per 10 Bay QALYs",
+        "detail": "Subjective weight 15%; 15.19 additional unique recipients; -0.027344 signed Bay QALYs. Negative and zero outcomes retain the whole gift cost."
+      },
+      {
+        "case": "cautious_positive",
+        "headline": "No positive net benefit per 10 Bay QALYs",
+        "detail": "Subjective weight 15%; 9.11 additional unique recipients; -0.000748 signed Bay QALYs. Negative and zero outcomes retain the whole gift cost."
+      },
+      {
+        "case": "central",
+        "headline": "$1,725,534 per 10 Bay QALYs",
+        "detail": "Subjective weight 12%; 36.46 additional unique recipients; 0.057953 signed Bay QALYs. Negative and zero outcomes retain the whole gift cost."
+      },
+      {
+        "case": "favorable",
+        "headline": "$98,406 per 10 Bay QALYs",
+        "detail": "Subjective weight 3%; 96.21 additional unique recipients; 1.016194 signed Bay QALYs. Negative and zero outcomes retain the whole gift cost."
+      },
+      {
+        "case": "Shared clinical priors: central scenario only",
+        "headline": "MELP weighted $2,117,236; central $572,533",
+        "detail": "Diagnostic replacement of adult mobility, bathing and supply utility/duration with ReCARES central values. Other factors and pediatric pathway are unchanged. Not a replacement forecast."
+      },
+      {
+        "case": "Shared clinical priors: all three benefit-pathway worlds",
+        "headline": "MELP weighted $1,317,403; central $572,533",
+        "detail": "Corresponding ReCARES utility/duration values replace only three matched categories in cautious, central and favorable worlds. Null/harm worlds, weights, costs, mix, additionality, geography and pediatric inputs remain unchanged."
+      },
+      {
+        "case": "Reverse clinical comparison",
+        "headline": "ReCARES weighted $507,197 with MELP matched clinical values",
+        "detail": "Central-only reverse swap gives $250,711 weighted and $455,104 central. Swapping all three benefit-pathway worlds gives $507,197 weighted. Neither family is empirically established; these comparisons do not prove organizational superiority."
+      }
+    ],
+    "uncertaintyBoundary": "The lower utility and duration assumptions used here are not established MELP-specific differences from ReCARES. Shared clinical-prior diagnostics materially change both estimates: MELP is $1.32 million per 10 Bay QALYs with matched ReCARES values, while the reverse swap raises ReCARES to $507,197. These are sensitivity checks, not preferred estimates or clinical calibration. With the base priors unchanged, removing and renormalizing away MELP's favorable world gives $35,395,501 per 10 Bay QALYs. The favorable world alone creates the 3% subjective mass below both thresholds; its $98,406 result is close to $100,000 and does not merit empirical precision.",
+    "fundingBoundary": "No verified marginal offer. Historical cash of $193,488 is not current unrestricted cash. PHCD's $50,000 award in 2024–25 and Sequoia's $25,000 award in 2026–27 support a funded baseline; different periods are not summed. Complete societal resources are unknown."
+  },
+  "evidence": [
+    {
+      "key": "accounting",
+      "design": "2024 IRS self-report",
+      "population": "Whole legal entity",
+      "result": "$104,000 expenses, $193,488 cash/savings/investments and $195,635 net assets; no actual recipient count.",
+      "transfer": "Not current unrestricted liquidity or donation marginality."
+    },
+    {
+      "key": "delivery",
+      "design": "Public grant applications and official instructions",
+      "population": "Adult and pediatric borrowers",
+      "result": "Real repair/loan operations; reported 3,874 items in a recent 12-month period; newer forecast 960 district clients.",
+      "transfer": "Items, visits, people and forecasts are not interchangeable."
+    },
+    {
+      "key": "clinical",
+      "design": "Controlled walking-aid trials and provision guidance",
+      "population": "Older emergency-department patients and COPD patients, not MELP borrowers",
+      "result": "Some functional benefit but null quality-of-life findings; safe use and fit matter.",
+      "transfer": "No MELP utility coefficient identified; no QALY mapping invented."
+    }
+  ],
+  "reservations": [
+    "Whole-gift result is poor under stated priors; do not call this a high-EV recommendation.",
+    "Cash reserves and public grants may finance existing operations without the donor.",
+    "The denominator is inferred from a planning target and historical district share; actual unique users remain unknown.",
+    "All utility, duration, mix, use and causal access assumptions are judgments.",
+    "No delivery; first-come availability may exclude those most constrained.",
+    "Favorable tail dominates expected benefit despite small prior weight.",
+    "Complete donated equipment, volunteer, public partner and recipient resource costs are unpriced."
+  ],
+  "excludedBenefits": [
+    "Retail replacement value and recipient financial savings",
+    "Waste and climate benefits",
+    "Caregiver time and health",
+    "Separate falls, mortality and hospitalization benefits on top of utility",
+    "Lifetime pediatric development or independence",
+    "Overseas benefits of redirected equipment"
+  ],
+  "sources": [
+    {
+      "publisher": "MELP/AbleCloset / IRS, mirrored by ProPublica",
+      "title": "2024 Form990-EZ and ScheduleO",
+      "url": "https://projects.propublica.org/nonprofits/organizations/271212734/202530449349200108/full",
+      "published": "Filed 2025-02-13",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary source"
+    },
+    {
+      "publisher": "Peninsula Health Care District",
+      "title": "2025–26 Community Grants Program applicant packet, PDFp34",
+      "url": "https://www.peninsulahealthcaredistrict.org/files/0f4d5cc5b/10.6%2BPacket%2BFinal.pdf",
+      "published": "2025 grant cycle packet",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary source"
+    },
+    {
+      "publisher": "Peninsula Health Care District",
+      "title": "November18,2024 full applications, PDFp24",
+      "url": "https://www.peninsulahealthcaredistrict.org/files/6728bab7f/11.18%2BCHIC%2BPacket%2B1%2B(1).pdf?get_file=true",
+      "published": "2024-11-18",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary source"
+    },
+    {
+      "publisher": "Peninsula Health Care District",
+      "title": "July21,2025 award-expenditure packet, PDFp14",
+      "url": "https://www.peninsulahealthcaredistrict.org/files/b04aa6e68/CHIC%2BPacket%2BFinal%2B(002)%2B(002).pdf",
+      "published": "2025-07-21",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary source"
+    },
+    {
+      "publisher": "Sequoia Healthcare District",
+      "title": "Caring Community Grants",
+      "url": "https://www.seqhd.org/caring-community-grants",
+      "published": "Current 2026–27 listing",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary source"
+    },
+    {
+      "publisher": "San Mateo County",
+      "title": "Passed MeasureK resolution24-599",
+      "url": "https://sanmateocounty.legistar.com/LegislationDetail.aspx?G=1088EC25-A43A-408F-A57C-73C0A70269AB&GUID=F844D481-7E17-4B53-8583-F13C218C819E&ID=6821533&Options=&Search=",
+      "published": "2024-08-13",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary source"
+    },
+    {
+      "publisher": "MELP",
+      "title": "Program and giving instructions",
+      "url": "https://www.freemedequip.org/",
+      "published": "Currentundated",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary source"
+    },
+    {
+      "publisher": "MELP",
+      "title": "Frequently Asked Questions",
+      "url": "https://www.freemedequip.org/faq/",
+      "published": "Currentundated",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary source"
+    },
+    {
+      "publisher": "AbleCloset",
+      "title": "About Us",
+      "url": "https://ablecloset.com/our-team/",
+      "published": "Currentundated",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary source"
+    },
+    {
+      "publisher": "Community Foundation of San Carlos",
+      "title": "Medical Equipment Loan Program grantee account",
+      "url": "https://www.cfsancarlos.org/grant-recipients-old/melp",
+      "published": "2024-11-27",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary source"
+    },
+    {
+      "publisher": "Polesel etal., JAMA Network Open",
+      "title": "Walking Aids and Locomotion Training RCT",
+      "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2841747",
+      "published": "2025-11-21",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary source"
+    },
+    {
+      "publisher": "Gupta etal., Chest",
+      "title": "Rollator use and qualityoflife inCOPD RCT",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17035442/",
+      "published": "2006",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary source"
+    },
+    {
+      "publisher": "World Health Organization",
+      "title": "Wheelchair provision guidelines",
+      "url": "https://www.who.int/publications/i/item/9789240074521/",
+      "published": "2023-06-05",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary source"
+    },
+    {
+      "publisher": "AbleCloset",
+      "title": "How it works: pediatric loan periods and extensions",
+      "url": "https://ablecloset.com/how-it-works/",
+      "published": "Updated 2024-04-25",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary source"
+    }
+  ]
+}

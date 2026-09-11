@@ -215,3 +215,8 @@ These are analyst scenarios, not measured local effects or verified marginal fun
 All17 September7 research-model central formulas are mirrored in the existing [research workbook, Sep7 Research Models tab](https://docs.google.com/spreadsheets/d/10boGN2J7SHJhNtmzAkzbKnRy-jSnoUQROeUFTY6Jdcg/edit?gid=1202219418#gid=1202219418). Native outputs and visual layout match; user and GiveWell tabs preserved. These central outputs do not replace full uncertainty notes.
 
 Latest accepted research source: c93f4fab50deba8f4e0263a0a318647d9a2fb801, shared by GitHub main and Sites source, published v118. 227 tests, lint/build, independent audits, phone/tablet and GitHub mobile/security passed. All25 canonical report URLs returned200 with shared denominator; new report/API numbers and workbook formulas matched. Public access/domain/base unchanged.
+# September 10 continuation: MELP release
+
+Verified84/115:65 local and19 expanded. ReCARES deployed in PR279/v194 and verified on phone/tablet, including canonical model API. Current block actual start2026-09-11T03:12:46Z. MELP whole-organization report is the next accepted release; not counted until canonical validation. Shared device clinical-prior comparison retains both base estimates. Advance Peace is not yet eligible for whole-organization ranking.
+
+Buckets since68: outcome-first4/10; universe/new coverage2/10 (Berkeley Free Clinic, ReCARES); policy/systems2/10; other-city transfers0/10; EA/CE0/3; wider Bay/California6/3; selective comparators2/3. Counts describe coverage, not required quotas or evidence quality. MELP will add one universe/new-coverage report if published.

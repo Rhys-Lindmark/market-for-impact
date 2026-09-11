@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {calculate} from '../lib/nems-v2-model.mjs';
+import {researchRankBySlug} from '../lib/research-cost-ranking.mjs';
+import {localResearchEstimate} from '../lib/local-research-estimate.mjs';
+import report from '../data/san-francisco/nems-v2-report.json' with {type:'json'};
+import {reportSections,markdownBlocks} from '../lib/report-markdown.mjs';
+const r=researchRankBySlug.get('north-east-medical-services');assert.equal(r.centralUsdPerTenQalys,null);assert.equal(r.bayUsdPerTenQalys,null);assert.equal(localResearchEstimate(r).localUsdPerTenQalys,null);
+assert.equal(calculate().ordinaryFoundationGiftExpectedQalys,null);assert.equal(calculate().weightedExpectation,null);
+assert.equal(report.markdown.trimEnd(),fs.readFileSync(new URL('../docs/reports/nems-v2.md',import.meta.url),'utf8').trimEnd());assert(report.markdown.split(/\s+/).length>8000);
+const sections=reportSections(report.markdown);assert.equal(sections[0].id,'summary');assert.equal(sections.length,13);const ids=new Set(sections.map(s=>s.id));for(const s of sections)for(const b of markdownBlocks(s.markdown))if(b.id)ids.add(b.id);
+for(const m of report.markdown.matchAll(/\]\(#([^)]*)\)/g))assert(ids.has(m[1]),m[1]);

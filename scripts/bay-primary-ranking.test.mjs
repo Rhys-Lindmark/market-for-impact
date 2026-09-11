@@ -41,7 +41,8 @@ test('sixteen explicit Bay adapters match model outputs',()=>{
   'san-francisco-aids-foundation':sfaf(central(a).inputs).bay.donor_per_10q,
   'project-homeless-connect':phc(inputsFor(ph,central(ph))).donor_bay_per_10q,
  };
- assert.equal(rows.filter(r=>Object.hasOwn(r,'bayUsdPerTenQalys')).length,16);
+ assert.equal(rows.filter(r=>Object.hasOwn(r,'bayUsdPerTenQalys')).length,17);
+ assert.equal(rows.find(r=>r.slug==='north-east-medical-services').bayUsdPerTenQalys,null);
  for(const [slug,value] of Object.entries(expected)){
   assert.ok(Number.isFinite(value)&&value>0,slug);
   const row=rows.find(r=>r.slug===slug);assert.equal(row.bayUsdPerTenQalys,value,slug);

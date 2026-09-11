@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## NEMS V2 — validated, release next
+
+110 alpha and 8/10 V2 live. NEMS expanded report distinguishes Foundation recipient94-3171797 from operator94-1722562 and reconciles six original returns. Ordinary Foundation gift central/Bay estimate is null, not the preserved conditional HBV $1.201M diagnostic. Full suite, independent packet tests, narrative anchors, lint/build pass; responsive report/API/index checks cover retained single research row and null semantics. Next exact-source publication, FUF V2, then final scope/content/ranking audit. No new alpha count or marginal offer.
+
 ## Pacific Hearing V2 — validated, release next
 
 110 alpha and 7/10 V2 live through PHC PR314/Sites226. Pacific Hearing full accepted narrative and three-year original finance evidence integrated. Central library now uses $2,199,018/10 Bay QALYs, not weighted $937,721; preferred coefficients unchanged. API preserves both and finite diagnostics. 131 packet checks, current-wrapper parity, narrative/anchor checks, lint/build and responsive report/API/index checks pass. Next exact-source publication, then NEMS ordinary-gift scope correction and FUF V2. No verified marginal offer.

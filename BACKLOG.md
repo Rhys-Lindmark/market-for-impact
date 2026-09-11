@@ -1,5 +1,11 @@
 # Market for Impact backlog
 
+## Ear of the Lion — candidate 91
+
+Verification:575 model/unit tests pass, lint zero errors with three existing warnings, production build and two phone/tablet report/archive/API checks pass. Exact-source publishing and canonical verification remain.
+
+90/100 verified via Greenlight PR285/v200. Ear of the Lion independently audited after clinical measurement/retention disclosures; full historical cost with partial hearing-health scope. $1.311M per 10 Bay QALYs; $494K across modeled beneficiaries. Broader California/Nevada organization belongs in Expanded Geography Research, not the Bay-only table. HOLD giving; 94.17% favorable-tail dependence, no verified marginal offer. Original research interval4m24s, audit/integration separate. Validate and publish exact source before count91. Next Season of Sharing accepted housing-health component, PHC symmetric prior review, and top-ten funding diligence.
+
 ## Greenlight integration — candidate 90
 
 89/100 canonically verified via Legal Link PR284 / Sites v199. Greenlight independently audited: whole historical expense, finite partial psychotherapy health model, $3.535M per 10 Bay QALYs; HOLD giving. No coefficients retuned. Original research 8m44s; integration and audit separate. 565 tests, lint zero errors (three existing warnings), production build and two phone/tablet interactions pass. Exact-source publication and canonical checks remain before count 90. Next Ear of the Lion independent audit, Season of Sharing, TransForm, and top-ten marginal funding diligence. Goal remains 100 plus top-ten synthesis, not 115.

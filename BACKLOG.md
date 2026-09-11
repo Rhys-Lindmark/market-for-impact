@@ -690,3 +690,6 @@ Current accepted count47/115 (46SF-indexed plusAMF). WalkSF full CI nowgreen. Ne
 ## Homepage ranking correction — September 11, 2026
 
 User requested the four lowest central estimates, not a separate editorial selection. Homepage now derives those four from the same finite positive-price Bay research list. Current main selects ReCARES, GLIDE, Breathe California, and Project Homeless Connect. Research models and 100-report count are unchanged. Production build, focused lint, and phone/tablet ranking-parity tests pass. Pending independent model corrections remain in their separate PRs; publication and canonical verification of this UI correction are next.
+## Current priority: 110 reports, then top-ten V2
+
+See [the staged plan](docs/110-research-plan.md): ~2h lessons-driven100-candidate brainstorm →25 screened →10 selected; ~15 research minutes each for10 new reports; then ~15 additional research minutes each for the top10 versioned V2 reviews. Track all phase counts separately. This supersedes100 as the finish line; no quotas or manufactured cheap estimates. Hourly schedule and parallel research resumed; outreach remains unapproved.

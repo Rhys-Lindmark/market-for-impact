@@ -1,6 +1,6 @@
 // Update once when accepting a new distinct report. All browser contracts share it.
 // Kept independent of runtime data so a missing row still fails the release gate.
-export const EXPECTED_PUBLISHED_COUNT=97;
-export const EXPECTED_RESEARCH_COUNT=76;
+export const EXPECTED_PUBLISHED_COUNT=98;
+export const EXPECTED_RESEARCH_COUNT=77;
 export const EXPECTED_INTERNATIONAL_COUNT=6;
 export const EXPECTED_EXPANDED_COUNT=21;

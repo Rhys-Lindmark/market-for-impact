@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## On-Site Dental Care Foundation — candidate98
+
+97/100 verified via HIF PR293/v208. On-Site EIN77-0495262: whole expense $1,157,224 and1,101 unduplicated reported patients, not visits or completed treatment. Signed partial dental-health estimate $5.322M/10 Bay QALYs; HOLD giving, no verified marginal offer. Independent audit preserves results; readable prose corrected without numerical changes. Verification:674 tests, lint zeroerrors/three existing warnings, build and two phone/tablet report/index/API checks passed. Next canonical publish, OaklandEDC accepted audit, FaceToFace independent audit. Goal remains100 plus source/model corrections and donor synthesis.
+
 ## Housing Industry Foundation — accepted candidate97
 
 96/100 canonically verified via Health Mobile PR292/v207. HIF EIN94-3100671: $80.759M/10 Bay QALYs for prevention-health component with whole $4.03979M management expense, not complete HIF valuation. Actual502 EHF households; other housing and renovation benefits unquantified. Independent audit preserved adverse signed result and corrected aggregate overflow validation. Verification:655 tests, lint zero errors/three existing warnings, production build and two phone/tablet report/index/API checks pass. Next canonical publication; On-Site accepted, Oakland EDC audit, final candidate research. Post100 checklist includes source attribution, HEPPAC repeated-person correction, whole-gift comparability, marginal funding and UI synthesis.

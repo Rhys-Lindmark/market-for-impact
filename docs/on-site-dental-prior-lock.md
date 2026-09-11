@@ -1,0 +1,7 @@
+# On-Site Dental Care Foundation prior lock
+
+Start2026-09-11 08:49:37UTC. Saved before first model evaluation. Original FYendingJune2025 expense1157224 and1101unduplicatedpatients over231service days. Same fiscal-year denominator; do NOT use undated website1500patients/7500visits or1401patients. Unique factor fixed1 because original explicitlyunduplicated; no extra personcount discount. Still unknown annual completedrestorative share.
+
+Weights fundingnull.20 clinicalnull.15 harm.05 cautious.25 central.25 favorable.10, chosen same dental uncertainty structure before result, not calibrated or threshold-tuned. Allworldpatients1101. Completion.4/.65/.9, symptomaticamongcompleted.3/.5/.7, relief.6/.85/.95, utility.025/.05/.10, expectedincrementalpainyears.05/.25/.5, funding.1/.3/.6, Bay.95/.98/1, harmperadditionalpatient.0005/.0002/.0001. Null/harm worlds centralcoefficients exceptfunding0; relief0harm0; relief0harm.003 respectively.
+
+Completion excludes screeningonly/incompletecare; symptomatic removesnonpaincare. Annualpatients are not independenttoothprocedures. Years average extra painful time avoided until alternativecare/needresolution, includingprompt/zero-benefitcases. Fundingeffect separatecapacityresponse. Contractdentists349950paidalready; notallvolunteer. Publicfunding746848baseline, programrev137137includednotnetted. No assumption reserves or shorttermcashloan equals purchasableextrahealth. Allwholecost retained, unpricedresourcesunknown, nonpain/preventivemedicalbenefitsunquantified. Smallgiftcap10k. No output yet.

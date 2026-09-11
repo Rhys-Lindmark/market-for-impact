@@ -1,8 +1,8 @@
 # Market for Impact backlog
 
-## Current priority: 110 reports, then top-ten V2 — Phase A active
+## Current priority: 110 reports, then top-ten V2 — Phase B active
 
-Published100/110 unchanged. [Staged plan](docs/110-research-plan.md):100 brainstorm entries now deduplicated into a [stable ledger](docs/110-discovery-ledger.md); first-pass comparisons received for25, finalten not yet selected. Root plus three workers are challenging whole-cost, finite-health and additionality assumptions. Repair-delay literature sharply limits generic equipment-reuse extrapolation; original990s correct EDI/HERS and several netted-expense boundaries; rescue cohorts must not be inferred from doses; refinery baseline harm is not achievable rule reduction. Preserve these contrary findings when selecting ten high-EV shots. Next: resolve independent selection challenges, then ten new~15min reports and top-ten V2. Documentation only; no new published prices or verified marginal offers.
+Published100/110 unchanged. [Staged plan](docs/110-research-plan.md):100 brainstorm entries in the [stable ledger](docs/110-discovery-ledger.md),25 comparative screens and [ten selected organizations](docs/110-discovery-selected-ten.md). First three packets (Micah's Hugs, Berkeley NEED, HOPE) are drafted and undergoing independent acceptance; Alameda Health Consortium is next. Preserve contrary findings and distinguish central scenarios from optimistic-tail-dominated weighted estimates. V2 now receives roughly30 additional research minutes each, three-year filing/current-operation checks, GiveWell-depth prose summaries and sourced annual spending breakdowns. Five additional Bay alpha candidates from GiveWell staff personal-giving posts are separately queued, not institutional endorsements or substitutes for the selected ten. Next: integrate accepted packets on a dedicated release branch, validate and publish; no new published prices or verified marginal offers yet.
 
 ## PVF whole-gift correction — active, not published
 

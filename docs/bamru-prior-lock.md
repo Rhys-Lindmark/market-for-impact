@@ -1,0 +1,13 @@
+# BAMRU v1 prior specification before first model execution
+
+2026-09-11, after observed 04:44:29 UTC clock. Exact file-write second not claimed. Research began 04:42:58. No model output yet computed. All parameters below except 16 missions are explicit analyst judgments; the 2017 IRS extraction is not a current budget.
+
+Gift $5,000, maximum supported modeling scale $5,000; full annual cash-expense scenarios $40k–$100k. Small gift avoids claiming a $100k linear capacity expansion. Activity anchor 16 missions/29 deployment days in 2024, primary Sheriff release. A mission is not a patient or a life saved. Gift purchases a fractional contribution to readiness/capability on existing missions, not newly created emergencies.
+
+Six joint worlds weights: funding null .30; clinical null .20; harm .10; cautious .20; central .15; favorable .05. These express skepticism about cash and clinical additionality separately and retain a rare high-leverage world. Not calibrated and not fitted to any threshold.
+
+Cautious/central/favorable assumptions respectively: annual expense 100000/60000/40000; mission-volume multiplier .75/1/1.25; cash-caused readiness fraction .10/.30/.60; potentially health-responsive people per mission .20/.40/.70; probability BAMRU changes safe access versus best available alternative .10/.20/.40; conditional absolute mortality reduction .01/.04/.10; finite survival years 2/5/10 with utility .8 each; mutually exclusive surviving-patient morbidity expected QALY .001/.005/.020; Bay resident share .20/.40/.65, SF subset .02/.05/.10; independent harm .0005/.0005/.001 QALY per readiness-equivalent mission. Morbidity packages .01×.10yr/.02×.25yr/.04×.50yr apply as average incremental morbidity per responsive person outside the mortality gain; no disability lifetime or caregiver QALY.
+
+Harm world: expense80000, volume1, readiness.30, zero benefits, .01 harm/mission, Bay.4/SF.05. Clinical null: expense60000,volume1,readiness.3, zero benefit/harm. Funding null same but readiness0. Geography applies to patient net health; responder geography is separately uncertain, represented by same geographic shares only as a simplifying judgment. Add an all-harm-Bay sensitivity rather than hide it.
+
+Survival credit is capped at 10 years, already assumes utility .8 with no benefits beyond cap; no claim of actual life expectancy. Undiscounted finite years are a transparent modeling simplification and should be tested with 3% discounting. Whole cash includes all training/admin/equipment/community activity; no costs removed for nonrescue work. Complete societal resources unknown. Alternative rescue, incident acuity and cash additionality are separate causal gates, not repeated arbitrary discounts on the same quantity.

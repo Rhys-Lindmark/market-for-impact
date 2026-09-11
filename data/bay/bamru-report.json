@@ -1,0 +1,288 @@
+{
+  "organization": "Bay Area Mountain Rescue Unit",
+  "eyebrow": "Exploratory whole-organization research",
+  "program": "Volunteer wilderness search and rescue readiness",
+  "published": "11 September 2026",
+  "modelVersion": "bamru-whole-org-v1",
+  "donationUrl": "https://www.bamru.org/donate/",
+  "nutshell": {
+    "headline": "Real rescue capability; highly uncertain marginal health",
+    "body": "A $5,000 whole gift yields 0.01133 expected Bay QALYs in a subjective signed model, or $4,413,582 per10. This is not measured impact; current finances and a marginal readiness offer are unverified.",
+    "whyItMayWork": "Volunteer technical skills and equipment can make a time-critical rescue safer or earlier. The dated operational denominator is16missions in2024.",
+    "whyWeAreCautious": "Most rescue outcomes have multiple producers and alternative teams. Rescued people need not be Bay residents. A favorable5% world provides98.37% of signed expected Bay benefit.",
+    "recommendationBlocker": "HOLD giving on health cost-effectiveness. Need current whole cash accounts and a dated funding-caused capability gap; do not equate rescue contacts with deaths prevented."
+  },
+  "summary": [
+    {
+      "label": "Weighted Bay donor cost per10QALYs",
+      "value": "$4,413,582",
+      "detail": "Signed expectation before division; all six worlds retained."
+    },
+    {
+      "label": "Central Bay donor cost per10",
+      "value": "$24,606,299",
+      "detail": "Not the ranking headline."
+    },
+    {
+      "label": "Complete societal resources",
+      "value": "Unknown",
+      "detail": "Volunteer time, personal equipment, sheriff, aircraft, EMS and hospital resources are not fully priced."
+    }
+  ],
+  "programSection": {
+    "body": "BAMRU is an independent501(c)(3), EIN23-7098709, activated by San Mateo Sheriff and deployed across California. Whole gifts support training, equipment, readiness and deployment, not only successful rescue encounters.",
+    "steps": [
+      {
+        "title": "Maintain usable capability",
+        "detail": "Small gifts may improve or preserve trained-person/equipment readiness; cash additionality includes replacement of member giving or public equipment."
+      },
+      {
+        "title": "Change access relative to alternatives",
+        "detail": "Only a modeled fraction of missions involve responsive live patients and a useful change compared with other teams, helicopters, self-rescue or bystanders."
+      },
+      {
+        "title": "Finite net health",
+        "detail": "Absolute survival increment times2–10finiteyears at.8utility plus brief distinct survivor morbidity, less independent harms."
+      }
+    ],
+    "boundary": "All ordinary-gift cash is charged. Training, unsuccessful search, recovery, community activity and administration are not removed from expenses. No animal, bereavement or justice benefits credited."
+  },
+  "model": {
+    "headline": "Whole-gift readiness-equivalent model",
+    "body": "Current annual cash expenses are analyst assumptions $40k–$100k, not a verified updated2017 filing.16missions is a dated activity anchor, not an annual forecast guarantee. A fractional readiness-equivalent mission is accounting attribution across existing missions, not a newly created emergency. All causal and geographic coefficients are judgments locked before execution.",
+    "equation": {
+      "label": "Net Bay health",
+      "expression": "gift / whole cash expense ×16 ×volume ×cash additionality ×[responsive persons ×earlier safe access ×(absolute mortality improvement ×finite survival years ×utility + separate survivor morbidity utility ×years) −harm] ×Bay share",
+      "result": "0.011329 weighted Bay QALYs per $5,000"
+    },
+    "inputs": [
+      {
+        "key": "cost",
+        "label": "Whole annual cash expense",
+        "confidence": "Very low",
+        "best": "Central$60,000",
+        "range": "$40,000–$100,000 scenario assumptions",
+        "basis": "2017 IRS extraction$32,052 is old and original return not recovered. No inflation/revenue cap presented as current truth."
+      },
+      {
+        "key": "missions",
+        "label": "Dated mission anchor",
+        "confidence": "High for2024; low forecast",
+        "best": "16missions /29days",
+        "range": "Volume multiplier.75–1.25 in positiveworlds",
+        "basis": "Sheriff March2025release. Mission count is not patient count."
+      },
+      {
+        "key": "additionality",
+        "label": "Cash-caused readiness",
+        "confidence": "Very low",
+        "best": ".30 central",
+        "range": "0–.60",
+        "basis": "Members and donors fund cash; Sheriff also replaces equipment. No quoted tranche."
+      },
+      {
+        "key": "clinical",
+        "label": "Responsive live persons and differential access",
+        "confidence": "Very low",
+        "best": ".40person/mission ×.20 probability",
+        "range": ".20–.70 ×.10–.40 positiveworlds",
+        "basis": "Partner examples show co-production and sometimes low acuity; no representative patient register."
+      },
+      {
+        "key": "utility",
+        "label": "Survival and morbidity",
+        "confidence": "Very low",
+        "best": ".04 absolute mortality improvement ×5years ×.8utility +.02utility ×.25years",
+        "range": "Mortality.01–.10; survival2–10years; morbidity.001–.020QALY",
+        "basis": "Analyst finite packages, not effects estimated by SAR observational literature. Morbidity is on a disjoint survivor pathway, excluding the survival gain."
+      },
+      {
+        "key": "geography",
+        "label": "Bay-resident share",
+        "confidence": "Very low",
+        "best": ".40 central",
+        "range": ".20–.65 positiveworlds",
+        "basis": "Statewide missions; Bay residence unmeasured. SF.02–.10 nested subset, not additive."
+      }
+    ],
+    "giftHeading": "$5,000 small-gift scenario; larger scaling unsupported",
+    "sensitivity": [
+      {
+        "case": "funding_null",
+        "headline": "Weight0.3; Bay priceNot defined",
+        "detail": "BayQALY0; full scenario matrix in model. Negative/null cases retained."
+      },
+      {
+        "case": "clinical_null",
+        "headline": "Weight0.2; Bay priceNot defined",
+        "detail": "BayQALY0; full scenario matrix in model. Negative/null cases retained."
+      },
+      {
+        "case": "harm",
+        "headline": "Weight0.1; Bay priceNot defined",
+        "detail": "BayQALY-0.001200; full scenario matrix in model. Negative/null cases retained."
+      },
+      {
+        "case": "cautious",
+        "headline": "Weight0.2; Bay priceNot defined",
+        "detail": "BayQALY-0.000002; full scenario matrix in model. Negative/null cases retained."
+      },
+      {
+        "case": "central",
+        "headline": "Weight0.15; Bay price$24,606,299",
+        "detail": "BayQALY0.002032; full scenario matrix in model. Negative/null cases retained."
+      },
+      {
+        "case": "favorable",
+        "headline": "Weight0.05; Bay price$224,331",
+        "detail": "BayQALY0.222885; full scenario matrix in model. Negative/null cases retained."
+      },
+      {
+        "case": "All Bay residents",
+        "headline": "$2,840,089",
+        "detail": "BayQALY0.017605. Diagnostic only; no base retuning."
+      },
+      {
+        "case": "All current cash expenses $100k",
+        "headline": "$11,003,047",
+        "detail": "BayQALY0.004544. Diagnostic only; no base retuning."
+      },
+      {
+        "case": "All current cash expenses $32,052 (historical stress, not present fact)",
+        "headline": "$3,526,696",
+        "detail": "BayQALY0.014178. Diagnostic only; no base retuning."
+      },
+      {
+        "case": "All cash additionality 100%",
+        "headline": "$2,606,079",
+        "detail": "BayQALY0.019186. Diagnostic only; no base retuning."
+      },
+      {
+        "case": "Survival benefit discounted3% at year-end",
+        "headline": "$5,155,813",
+        "detail": "BayQALY0.009698. Diagnostic only; no base retuning."
+      },
+      {
+        "case": "Mortality credit zero",
+        "headline": "$496,534,191",
+        "detail": "BayQALY0.000101. Diagnostic only; no base retuning."
+      },
+      {
+        "case": "All modeled harm allocated to Bay; benefit geography unchanged",
+        "headline": "$4,504,660",
+        "detail": "BayQALY0.011100. Diagnostic only; no base retuning."
+      }
+    ],
+    "uncertaintyBoundary": "5% subjective mass below$1m/10 and0%below$100k/10, from this discrete scenario set only; not a calibrated probability or claim that unmodeled possibilities are impossible. Favorable tail98.37%; without it price~$257.57m/10.",
+    "fundingBoundary": "No priced marginal gift offer. Historical assets are not current liquidity. The model does not claim a donation creates demand or that volunteer/public complements scale freely. Current full cash expense and complete societal cost remain unknown."
+  },
+  "evidence": [
+    {
+      "key": "operations",
+      "design": "Primary Sheriff release",
+      "population": "BAMRU2024operations",
+      "result": "16missions over29days",
+      "transfer": "Credible output anchor, not efficacy, patient uniqueness or Bay-residence measurement."
+    },
+    {
+      "key": "partner",
+      "design": "Primary partner mission descriptions",
+      "population": "Selected2024NorthernCalifornia rescues",
+      "result": "BAMRU collaborated with other teams and helicopters; some people were in good condition, others dehydrated/nonambulatory.",
+      "transfer": "Mechanism and alternatives, not a representative denominator or a deaths-averted study."
+    },
+    {
+      "key": "clinical",
+      "design": "Retrospective SAR prognosis studies",
+      "population": "Othercountries and selected cases",
+      "result": "Time/acuity matter; no causal extra-team or donation effect established.",
+      "transfer": "No published survival coefficient copied. All absolute-risk improvements and finite utilities remain judgments."
+    }
+  ],
+  "reservations": [
+    "Current whole-organization accounts not verified; scenario costs are not observed unit prices.",
+    "98.37% favorable-tail dependence and largely judgmental clinical bridge.",
+    "Whole gift may replace member contributions, reimbursements or already-funded equipment without changing readiness.",
+    "Statewide incident locations and Bay victim residence are different; neither is comprehensively measured.",
+    "Responder injury, patient handling, delayed alternatives and unsafe deployment are independent harm pathways."
+  ],
+  "excludedBenefits": [
+    "Body recovery, family closure, animal rescue and non-health civic value remain unquantified.",
+    "No additional caregiver or lifetime disability benefit; no survival after10years.",
+    "No fiscal savings or donated equipment retail value converted into QALYs."
+  ],
+  "sources": [
+    {
+      "publisher": "BAMRU",
+      "title": "Organization, activity and identity",
+      "url": "https://www.bamru.org/",
+      "published": "Undated current page",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary organization"
+    },
+    {
+      "publisher": "BAMRU",
+      "title": "Donation scope",
+      "url": "https://www.bamru.org/donate/",
+      "published": "Undated current page",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary organization"
+    },
+    {
+      "publisher": "BAMRU",
+      "title": "Partners and mutual aid",
+      "url": "https://www.bamru.org/partners/",
+      "published": "Undated current page",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary organization"
+    },
+    {
+      "publisher": "San Mateo County Sheriff",
+      "title": "2024 missions and 2025 training release",
+      "url": "https://www.smcsheriff.com/sites/default/files/articles/03-06-2025%20Large-Scale%20Search%20and%20Rescue%20Training%20Exercise%20Happening%20this%20Weekend%20at%20Huddart%20Park%2C%20Park%20Closed%20and%20Traffic%20Delays%20Expected.pdf",
+      "published": "2025-03-06",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary government release"
+    },
+    {
+      "publisher": "San Mateo County Sheriff / Meliora",
+      "title": "Organizational assessment, pages362–363",
+      "url": "https://www.smcsheriff.com/sites/default/files/resources_files/Meliora%20Assessment%20-%20San%20Mateo%20County%20Sheriff%E2%80%99s%20Office.pdf",
+      "published": "July2024",
+      "retrieved": "2026-09-11",
+      "sourceType": "Government-commissioned assessment"
+    },
+    {
+      "publisher": "IRS via ProPublica API",
+      "title": "Historical2017 990-EZ extraction",
+      "url": "https://projects.propublica.org/nonprofits/api/v2/organizations/237098709.json",
+      "published": "Taxyear2017; current BMF extract2026",
+      "retrieved": "2026-09-11",
+      "sourceType": "IRS-derived extraction, original not verified"
+    },
+    {
+      "publisher": "Marin Search and Rescue",
+      "title": "2024 missions: Occidental and Lyons Lake",
+      "url": "https://marinsar.org/missions/2024",
+      "published": "2024",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary partner operational reports"
+    },
+    {
+      "publisher": "Adams et al.",
+      "title": "Search is a time-critical event: when search and rescue missions may become futile",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17590071/",
+      "published": "2007",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary observational study, abstract search"
+    },
+    {
+      "publisher": "Oshiro et al.",
+      "title": "Causes of death and characteristics of non-survivors rescued during recreational mountain activities in Japan",
+      "url": "https://bmjopen.bmj.com/content/12/2/e053935",
+      "published": "2022",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary retrospective study"
+    }
+  ]
+}

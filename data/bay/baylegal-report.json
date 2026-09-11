@@ -1,0 +1,320 @@
+{
+  "organization": "Bay Area Legal Aid",
+  "eyebrow": "EXPLORATORY CHARITY RESEARCH · BAY AREA",
+  "program": "Civil legal aid for housing, health and benefits access, survivor safety and vulnerable populations",
+  "published": "11 September 2026",
+  "modelVersion": "bay-area-legal-aid-whole-org-v1",
+  "nutshell": {
+    "headline": "Credible legal-outcome mechanisms do not establish a marginal health effect for an unrestricted whole-organization gift.",
+    "body": "A $100,000 unrestricted whole-organization gift yields 0.04092667 signed prior-weighted modeled Bay QALYs, or $24.43 million per 10. All expenses remain costed, but only three partial health pathways are quantified; this is not a complete valuation of BayLegal's impact. The $28.51 million historical pro-rata resource sensitivity is not verified marginal or complete societal cost.",
+    "whyItMayWork": "Randomized and quasi-experimental evidence supports improved housing-court outcomes, and eviction itself can increase homelessness and health-care use.",
+    "whyWeAreCautious": "Pathway client counts overlap, health is a second-stage bridge, 90.7% of revenue is government grants, unrestricted assets are $14.575m and no marginal expansion is priced.",
+    "recommendationBlocker": "HOLD giving for health cost-effectiveness. Verify the current payment route, flexible-funding gap, additional cases, unduplicated pathway mix and finite health outcomes."
+  },
+  "summary": [
+    {
+      "label": "BAY WHOLE GIFT",
+      "value": "$24.43M",
+      "detail": "per 10 modeled Bay QALYs; full cost, partial health scope; 35% null and 10% harm"
+    },
+    {
+      "label": "CENTRAL CASE",
+      "value": "$34.52M",
+      "detail": "0.02897 QALY per $100,000"
+    },
+    {
+      "label": "HISTORICAL RESOURCE PROXY",
+      "value": "$28.51M",
+      "detail": "pro-rata audited ratio; verified marginal and complete societal gross unavailable"
+    },
+    {
+      "label": "BAY / SF",
+      "value": "100% modeled Bay / $101.78M SF",
+      "detail": "Bay filing population, not audited residence; SF share is an unmeasured prior"
+    },
+    {
+      "label": "FUNDING ROOM",
+      "value": "Unverified",
+      "detail": "publicly funded, large unrestricted assets, no priced marginal slot"
+    }
+  ],
+  "programSection": {
+    "body": "BayLegal is a Bay-wide civil legal-aid organization. FY2024 Form 990 reports $30.239m expense, 208 employees and 258 volunteers.",
+    "steps": [
+      {
+        "title": "Secure health, income and consumer protections",
+        "detail": "$11.661m and 7,828 reported individuals; service mix and health outcomes are unpublished."
+      },
+      {
+        "title": "Prevent eviction and preserve housing",
+        "detail": "$7.889m and 9,719 reported individuals, including $3.896m granted to eight legal-aid organizations."
+      },
+      {
+        "title": "Support survivor safety",
+        "detail": "$3.741m and 4,637 survivors and children across family, restraining-order and immigration matters."
+      },
+      {
+        "title": "Serve other vulnerable populations",
+        "detail": "$2.092m for youth, exploited children, veterans and formerly incarcerated people receives zero separate QALY credit."
+      }
+    ],
+    "boundary": "The ordinary gift follows total-expense shares. Category populations are not summed as unique people; within-path uniqueness and cross-path overlap are separate discounts. The $3.896m housing subgrants are costed, but no separate partner outputs/QALYs are added because overlap with BayLegal's 9,719 is unresolved. All other spending remains costed. Quantified ledgers total $23,290,308; the remaining $6,948,536 remains fully costed with no separate quantified health benefit. Unquantified is not proven zero."
+  },
+  "model": {
+    "headline": "Prior-weighted $24.43M per 10 modeled Bay QALYs; central $34.52M.",
+    "body": "A $100,000 gift is allocated pro rata to FY2024 total expense. Each quantified program allocation converts to its own reported-individual equivalent, then passes funding, delivery, uniqueness, material-outcome and overlap gates before finite QALYs. The result covers selected pathways, not all health effects of the organization. It is an unfavorable exploratory model, not a recommended donation or a causal estimate.",
+    "equation": {
+      "label": "SIGNED PRIOR-WEIGHTED BAY COST",
+      "expression": "10 × $100,000 ÷ 0.04092667 signed expected QALY",
+      "result": "$24,433,943 per 10 modeled Bay QALYs"
+    },
+    "inputColumnLabel": "Source anchors and analyst priors",
+    "inputs": [
+      {
+        "key": "wholeExpense",
+        "label": "Whole expense",
+        "confidence": "High",
+        "best": "$30.239m",
+        "range": "fixed FY2024",
+        "basis": "Form 990; no niche-program denominator."
+      },
+      {
+        "key": "additionality",
+        "label": "Funding additionality",
+        "confidence": "Very low",
+        "best": "8% central",
+        "range": "2%–20%",
+        "basis": "No marginal quote; 90.7% government-funded and $14.575m unrestricted net assets."
+      },
+      {
+        "key": "delivery",
+        "label": "Delivery realization",
+        "confidence": "Low",
+        "best": "80%",
+        "range": "60%–100%",
+        "basis": "Gift-to-case timing and staffing/capacity uncertainty."
+      },
+      {
+        "key": "uniqueness",
+        "label": "Within-path uniqueness",
+        "confidence": "Low",
+        "best": "90%",
+        "range": "80%–95%",
+        "basis": "Reported individuals; deduplication method unavailable."
+      },
+      {
+        "key": "overlap",
+        "label": "Cross-path overlap adjustment",
+        "confidence": "Very low",
+        "best": "80%",
+        "range": "70%–90%",
+        "basis": "Individuals may appear in multiple program populations and benefits may overlap."
+      },
+      {
+        "key": "health",
+        "label": "Finite pathway QALYs",
+        "confidence": "Very low",
+        "best": "0.05×1y health / 0.03×2y housing / 0.05×2y DV central",
+        "range": "Harm −0.001×1y; cautious .02×1y/.02×1y/.03×1y; favorable .10×2y/.05×3y/.10×3y",
+        "basis": "Analyst utility-change × duration packages; no mortality and no benefit beyond three years."
+      },
+      {
+        "key": "gross",
+        "label": "Historical pro-rata audited-resource factor",
+        "confidence": "High historical accounting; marginal scaling unverified",
+        "best": "1.1669× sensitivity",
+        "range": "verified marginal gross null; complete societal gross null",
+        "basis": "$35.286m historical audited expense includes $5.047m donated services/facilities; another gift need not scale those resources."
+      },
+      {
+        "key": "weights",
+        "label": "Scenario weights",
+        "confidence": "Subjective",
+        "best": "10% harm / 35% null / 25% cautious / 25% central / 5% favorable",
+        "range": "fixed illustration",
+        "basis": "No BayLegal-measured health effect or priced marginal expansion."
+      }
+    ],
+    "giftHeading": "$100,000 unrestricted whole-organization gift",
+    "sensitivity": [
+      {
+        "case": "Harm (10%)",
+        "headline": "−0.000493 QALY",
+        "detail": "Cost not defined."
+      },
+      {
+        "case": "Null (35%)",
+        "headline": "0 QALY",
+        "detail": "Cost not defined."
+      },
+      {
+        "case": "Cautious (25%)",
+        "headline": "$533.98M per 10",
+        "detail": "0.001873 QALY; historical pro-rata resource proxy $623.11M."
+      },
+      {
+        "case": "Central (25%)",
+        "headline": "$34.52M per 10",
+        "detail": "0.028966 QALY; historical pro-rata resource proxy $40.29M."
+      },
+      {
+        "case": "Favorable stress (5%)",
+        "headline": "$1.50M per 10",
+        "detail": "0.665325 QALY; historical pro-rata resource proxy $1.75M."
+      },
+      {
+        "case": "Prior-weighted",
+        "headline": "$24.43M per 10",
+        "detail": "0.040927 QALY; 81.28% from favorable tail; historical pro-rata resource proxy $28.51M."
+      }
+    ],
+    "uncertaintyBoundary": "Without the favorable case, donor cost is $124.01M per 10 QALYs. QALYs and current SF residence are modeled, not observed. Verified marginal and complete societal gross resources are unknown. The 100% Bay allocation reflects reported direct-service populations, not independently measured residence. Other organizational benefits may be positive or negative and remain unquantified. The LSC enactment clarification changes no model coefficient.",
+    "fundingBoundary": "FY2024 filing verifies legal entity EIN 94-1631316, $28.500m government grants, $1.043m other contributions, $14.575m unrestricted net assets and $10.212m cash/temporary plus publicly traded investments. These are historical, not current unrestricted liquidity. No current official payment route or priced marginal capacity is verified. LSC's enacted FY2026 appropriation was $540m (Public Law 119-74, January 23, 2026), including $496.3m basic field programs/audits, versus $560m FY2025: a 3.57% nominal national reduction, not the proposed 46% cut. BayLegal's individual award and current local funding gap remain unknown; do not apply the national change to its entire government-grant ledger."
+  },
+  "reservations": [
+    "Program counts are pathway populations and cannot be added as unique clients.",
+    "Legal-outcome evidence varies by court and baseline assistance; health is a separate transfer.",
+    "The 5% favorable case supplies 81.28% of signed benefit.",
+    "Complete societal gross resources are unavailable despite an audited donated-services adjustment.",
+    "Current SF residence is unmeasured; displayed SF shares are priors.",
+    "Public funding dominance and unrestricted assets weaken ordinary-gift additionality.",
+    "This retains whole-gift costs but quantifies only selected health pathways; justice, economic and other omitted benefits are not proven zero.",
+    "FY2026 national LSC enactment must not be confused with an earlier proposal or applied to all BayLegal public revenue."
+  ],
+  "excludedBenefits": [
+    "Justice, dignity and procedural fairness",
+    "Client financial recoveries and debt relief",
+    "Public-benefit income and food security",
+    "Systemic litigation and policy spillovers",
+    "Partner/subgrantee outcomes",
+    "Mortality and indefinite lifetime tails"
+  ],
+  "sources": [
+    {
+      "publisher": "IRS filing via GuideStar",
+      "title": "Bay Area Legal Aid FY2024 Form 990",
+      "url": "https://pdf.guidestar.org/PDF_Images/2024/941/631/2024-941631316-202543219349317404-9.pdf",
+      "published": "FY ended 2024",
+      "retrieved": "2026-09-10",
+      "sourceType": "Primary financial and output filing"
+    },
+    {
+      "publisher": "Bay Area Legal Aid",
+      "title": "Official organization website",
+      "url": "https://baylegal.org/",
+      "published": "Current 2026",
+      "retrieved": "2026-09-10",
+      "sourceType": "Official identity; access blocked from research environment"
+    },
+    {
+      "publisher": "Seron, Van Ryzin & Frankel",
+      "title": "Impact of Legal Counsel on Outcomes for Poor Tenants",
+      "url": "https://doi.org/10.2307/3185408",
+      "published": "2001",
+      "retrieved": "2026-09-10",
+      "sourceType": "Randomized legal-outcome study"
+    },
+    {
+      "publisher": "Greiner, Pattanayak & Hennessy",
+      "title": "How Effective Are Limited Legal Assistance Programs?",
+      "url": "https://legalaidresearch.org/wp-content/uploads/2020/02/greiner-massachusetts-housing-court-2010.pdf",
+      "published": "2012",
+      "retrieved": "2026-09-10",
+      "sourceType": "Randomized counterevidence"
+    },
+    {
+      "publisher": "Cassidy & Currie",
+      "title": "Effects of Legal Representation on Tenant Outcomes",
+      "url": "https://www.nber.org/papers/w29836",
+      "published": "2022; journal 2023",
+      "retrieved": "2026-09-10",
+      "sourceType": "Quasi-experimental legal outcomes"
+    },
+    {
+      "publisher": "Collinson et al.",
+      "title": "Eviction and Poverty in American Cities",
+      "url": "https://economics.yale.edu/sites/default/files/2023-09/qjad042.pdf",
+      "published": "2023",
+      "retrieved": "2026-09-10",
+      "sourceType": "Judge-leniency health/housing study"
+    },
+    {
+      "publisher": "Cassidy et al.",
+      "title": "Universal Access to Counsel and Child Mental Health",
+      "url": "https://www.aeaweb.org/articles?id=10.1257%2Fpandp.20251006",
+      "published": "2025",
+      "retrieved": "2026-09-10",
+      "sourceType": "Instrumental-variable child outcome study"
+    },
+    {
+      "publisher": "Oregon Health Study Group",
+      "title": "Oregon Medicaid experiment clinical outcomes",
+      "url": "https://www.nejm.org/doi/full/10.1056/NEJMsa1212321",
+      "published": "2013-05-02",
+      "retrieved": "2026-09-10",
+      "sourceType": "Randomized health-access study"
+    },
+    {
+      "publisher": "Iverson et al.",
+      "title": "RISE intimate-partner-violence trial",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34813687/",
+      "published": "2021-11-23",
+      "retrieved": "2026-09-10",
+      "sourceType": "Randomized adjacent-intervention evidence"
+    },
+    {
+      "publisher": "Bay Area Legal Aid",
+      "title": "2017–18 Annual Report",
+      "url": "https://baylegal.org/wp-content/uploads/2019/07/Bay-Area-Legal-Aid-Annual-Report-2017-2018.pdf",
+      "published": "2018",
+      "retrieved": "2026-09-10",
+      "sourceType": "Historical SF case-share anchor"
+    },
+    {
+      "publisher": "Legal Services Corporation",
+      "title": "LSC appropriations: enacted FY2026 versus proposals",
+      "url": "https://www.lsc.gov/i-am-grantee/laws-regulations-and-guidance/lsc-appropriations",
+      "published": "FY2026 enacted January 23, 2026",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary grantmaker funding record; preserved accepted-queue verification"
+    },
+    {
+      "publisher": "Legal Services Corporation",
+      "title": "Current grantee list",
+      "url": "https://www.lsc.gov/about-lsc/our-grantees",
+      "published": "Current listing",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary grantee identity record; not an individual award amount"
+    }
+  ],
+  "evidence": [
+    {
+      "key": "financial",
+      "design": "FY2024 IRS filing and audited-statement reconciliation",
+      "population": "Whole legal entity and separately reported pathway populations",
+      "result": "$30.239m filing expenses; $35.286m audited expenses including donated services/facilities. The three pathway populations cannot be summed as unique clients.",
+      "transfer": "Historical accounting, not current funding room; marginal donated-resource scaling unverified."
+    },
+    {
+      "key": "housing",
+      "design": "Randomized and quasi-experimental legal-outcome studies",
+      "population": "NYC and Massachusetts tenants; not BayLegal clients",
+      "result": "Some studies improve legal outcomes; Massachusetts full-versus-limited assistance trial supplies important counterevidence.",
+      "transfer": "Local court and baseline assistance differ; legal outcomes do not directly identify QALYs."
+    },
+    {
+      "key": "health",
+      "design": "Eviction-to-health studies, Medicaid lottery and adjacent IPV trial",
+      "population": "External populations and interventions",
+      "result": "Support selected health mechanisms and substantial null possibilities; no BayLegal health effect measured.",
+      "transfer": "Utility-duration packages are explicit analyst judgments; no mortality or post-three-year benefit."
+    },
+    {
+      "key": "appropriations",
+      "design": "LSC enacted appropriation and grantee records",
+      "population": "National LSC system; BayLegal is listed as a grantee",
+      "result": "FY2026 enacted $540m, versus FY2025 $560m; the much larger proposed cut was not enacted as proposed.",
+      "transfer": "Does not identify BayLegal's award, unrestricted gap or additional cases. No automatic additionality update."
+    }
+  ]
+}

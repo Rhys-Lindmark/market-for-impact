@@ -49,6 +49,11 @@ test('report schema, identity and all regional output rows',()=>{
  for(const k of ['organization','eyebrow','program','published','modelVersion'])assert.ok(r[k]);assert.equal(r.modelVersion,m.model_id);assert.equal(r.donationUrl,m.organization.donation_url);
  for(const k of ['summary','evidence','reservations','excludedBenefits','sources'])assert.ok(Array.isArray(r[k])&&r[k].length);
  assert.equal(r.model.sensitivity.length,m.scenarios.length);
- for(const[i,s]of m.scenarios.entries())for(const reg of ['us','bay','sf'])assert.ok(r.model.sensitivity[i].detail.includes(s.outputs[reg].qaly.toPrecision(8)));
+ const money=new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});
+ for(const[i,s]of m.scenarios.entries())for(const reg of ['us','bay','sf']){
+  const price=s.outputs[reg].donor_per_10q;
+  assert.ok((r.model.sensitivity[i].headline+' '+r.model.sensitivity[i].detail).includes(price===null?'No finite positive ratio':money.format(price)));
+ }
+ assert.doesNotMatch(JSON.stringify(r),/100,000|100K|100k/);
  for(const source of r.sources)for(const key of ['publisher','title','url','published','retrieved','sourceType'])assert.ok(source[key]);
 });

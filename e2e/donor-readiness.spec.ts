@@ -8,6 +8,10 @@ test('giving caveats live in funding sections without report banners',async({pag
   await expect(overview.locator('p').first()).toContainText('What do they do?');
   await expect(overview).toContainText('Why this approach interests us');
   await expect(overview).toContainText('Our main reservations');
+  if(row.slug==='san-francisco-aids-foundation'){
+   await expect(page.locator('main')).not.toContainText(/\$100,000|\$100K/i);
+   await expect(overview).toContainText('$1.93 million per better life');
+  }
   const assessment=page.locator('#funding [data-funding-assessment], #research-funding [data-funding-assessment]');
   await expect(assessment).toContainText(row.reason);
   await expect(page.getByText('Before a major gift',{exact:true})).toHaveCount(0);

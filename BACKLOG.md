@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## SFAF general-giving presentation — September 11
+
+Removed the $100,000 illustrative gift framing from the SFAF report, including dependent sample totals and headcounts. Program description now explains services; summary and scenarios use cost per 10 QALYs, preserving all regional prices and null cases. The executable model retains its normalization and input assumptions; unit costs are not a promise of proportional scaling at any gift size. 23 model/report tests, phone/tablet checks, focused lint and build pass. Next: publish this presentation change.
+
 ## Program-first summaries — September 11
 
 Both report formats now lead with what the organization does, why the mechanism interests us, then reservations and cost-effectiveness. Standard reports no longer use the caution-first nutshell headline; funding prerequisites move to the funding section. Ten long-form editorial summaries replace dense opening accounting/revision prose, using existing report evidence and unchanged estimates. Original narratives and detailed research sections remain in source. JSON validation, focused lint, production build and phone/tablet checks across the ten long-form and current top-ten reports pass. Next: publish; no new research or stronger recommendation is implied.

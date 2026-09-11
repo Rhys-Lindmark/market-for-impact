@@ -1,22 +1,22 @@
 {
   "organization": "San Francisco AIDS Foundation",
-  "eyebrow": "Whole organization · ordinary unrestricted gift · SF, Bay and US health",
-  "program": "Conditional value of a $100,000 unrestricted SFAF gift",
+  "eyebrow": "San Francisco AIDS Foundation research",
+  "program": "HIV prevention and care, overdose prevention, and community health",
   "donationUrl": "https://donate.sfaf.org/campaign/773029/donate",
   "published": "September 8, 2026",
   "modelVersion": "sfaf-whole-organization-unrestricted-v1",
   "nutshell": {
     "headline": "An ordinary SFAF gift supports a broad portfolio; added overdose protection is its largest quantified health stream here.",
-    "body": "Central $2,018,525 per 10 SF QALYs for the whole gift, with 0.4954 SF QALYs per $100,000. Joint favorable assumptions yield $20,263, but are not a calibrated expected value or confidence bound. The earlier $56,328 figure applied only to hypothetical targeted naloxone spending.",
+    "body": "Our central estimate is about $1.93 million per better life (10 Bay Area QALYs), or $2.02 million when counting only benefits within San Francisco. This assesses general support across SFAF's services. The earlier $56,328 figure applied only to hypothetical targeted naloxone spending, not general donations.",
     "whyItMayWork": "SFAF delivers overdose prevention and PrEP alongside HIV, HCV, behavioral health, housing and community support. Flexible funds may extend protection to people not reached by current funding.",
     "whyWeAreCautious": "Marginal allocations, unique-person reach, effect beyond existing rescue/PrEP access and available funding room remain unmeasured. Most portfolio costs are retained with their health unquantified.",
     "recommendationBlocker": "No verified marginal unrestricted-gift budget or patient-linked additional-effect estimate. This replaces the scope of the organization estimate, not the historical program calculation or organization count."
   },
   "summary": [
     {
-      "label": "Central whole-gift donor cost /10 QALYs",
+      "label": "Central donor cost per 10 QALYs",
       "value": "$2,018,525 SF / $1,926,860 Bay / $1,905,230 US",
-      "detail": "Same $100,000 numerator; regional health is nested and never added."
+      "detail": "Regional benefits overlap: San Francisco is part of the Bay Area, which is part of the US. They are not added together."
     },
     {
       "label": "Explicit central allocation",
@@ -24,9 +24,9 @@
       "detail": "Marginal judgments, not audited expense shares or a donor restriction. Full gift cost retained."
     },
     {
-      "label": "Central associated resources",
-      "value": "$138,286",
-      "detail": "Includes unpriced outside medicine/lab/other resources. Gross envelope before funding replacement, not net social cost."
+      "label": "Including associated resources per 10 Bay QALYs",
+      "value": "$2,664,572",
+      "detail": "Includes a gross allowance for outside medicine, laboratory and other resources; not a net social-cost estimate."
     },
     {
       "label": "Historical comparison",
@@ -35,15 +35,15 @@
     }
   ],
   "programSection": {
-    "body": "The audit spans sexual health, substance/behavioral care, linkage/retention/social support, policy, management and fundraising. Current services support two modeled mechanisms, not all measured organization benefit. The central allocation ledger also reserves 5% for HCV, 15% for HIV linkage/social support, 15% for other substance/behavioral health, 10% for other sexual/trans care, 5% for policy and 15% for central operations.",
+    "body": "San Francisco AIDS Foundation provides HIV prevention and care, sexual health services, overdose prevention, substance-use support, and community services. Its work combines direct care with help accessing treatment, housing and social support.",
     "steps": [
       {
-        "title": "Allocate the ordinary gift",
-        "detail": "$15,000 direct overdose support and$20,000 direct PrEP access; remaining$65,000 retained. Central operations are priced separately from branch direct unit costs."
+        "title": "Support a range of services",
+        "detail": "The central model allocates 15% of additional support to overdose prevention, 20% to PrEP access and 65% to other services and central operations. These are modeling assumptions, not a donor restriction or a published budget for new donations."
       },
       {
-        "title": "Reach distinct additional people",
-        "detail": "At $300 and $700 per offer, the gift supports 50 overdose-response and 28.57 PrEP offers. Allowing for replacement of existing funding reduces these to 20 overdose-response participants and 8.57 PrEP offers. Assuming 90% of PrEP recipients are distinct from the overdose-response group leaves 7.71 people credited with PrEP benefits."
+        "title": "Reach additional people",
+        "detail": "The model starts with assumed costs of $300 per overdose-response offer and $700 per PrEP offer. It then adjusts for funding that would otherwise be available, people who already have access, and overlap between the two groups."
       },
       {
         "title": "Compare two finite trajectories",
@@ -57,12 +57,12 @@
     "boundary": "Neither a dose, a training nor a PrEP prescription is a causal life saved. All quantities beyond service existence are scenario inputs."
   },
   "model": {
-    "headline": "Whole gift, unique cohorts and finite clinical benefits",
-    "body": "Central overdose survival contributes 0.508789 US QALYs and disjoint PrEP morbidity 0.016082, before regional allocation. Both benefits compare actual available care with finite added protection. Death and infection remain possible after support ends.",
+    "headline": "Costs per better life across SFAF's services",
+    "body": "The model compares health with and without additional overdose-response and PrEP support. Overdose prevention accounts for most of its central quantified benefit. Other services remain included in costs but do not receive a separate quantified health benefit where the evidence is insufficient.",
     "equation": {
-      "label": "Finite-state whole-gift bridge",
+      "label": "Cost-effectiveness calculation",
       "expression": "Unique people = gift × branch allocation / direct offer cost × financing additionality (× disjoint fraction for PrEP). OD benefit integrates supported survival minus baseline survival. PrEP benefit integrates supported HIV-free survival minus baseline HIV-free survival × treated-HIV utility gap. Subtract distinct present-valued harms. Whole-gift price = 10 × gift / regional net Q.",
-      "result": "US 0.524871; Bay 0.518979; SF 0.495411 QALYs. SF donor $2,018,525 / gross associated resources $2,791,332 per 10 QALYs."
+      "result": "Central donor cost per 10 QALYs: $1,905,230 US; $1,926,860 Bay Area; $2,018,525 San Francisco. Including gross associated resources: $2,664,572 per 10 Bay Area QALYs."
     },
     "inputs": [
       {
@@ -162,90 +162,90 @@
         "basis": "Already gift-date PV, no extra discount. PrEP shared harm applies even to overlap-excluded people; independent harm survives zero funded activity."
       }
     ],
-    "giftHeading": "Same $100,000 ordinary gift in sixteen scenarios",
+    "giftHeading": "How cost-effectiveness changes under different assumptions",
     "sensitivity": [
       {
         "case": "central",
         "headline": "SF donor: $2,018,525/10 QALYs",
-        "detail": "US/Bay/SF QALYs: 0.52487114 / 0.51897915 / 0.49541118. US/Bay donor prices: $1,905,230 / $1,926,860. Gross associated resources $138,286; US/Bay/SF resource prices: $2,634,660 / $2,664,572 / $2,791,332 per 10 QALYs."
+        "detail": "US/Bay donor costs per 10 QALYs: $1,905,230 / $1,926,860. Including gross associated resources, US/Bay/SF costs: $2,634,660 / $2,664,572 / $2,791,332 per 10 QALYs."
       },
       {
         "case": "favorable joint",
         "headline": "SF donor: $20,263/10 QALYs",
-        "detail": "US/Bay/SF QALYs: 52.043531 / 51.487062 / 49.351272. US/Bay donor prices: $19,215 / $19,422. Gross associated resources $201,714; US/Bay/SF resource prices: $38,759 / $39,178 / $40,873 per 10 QALYs."
+        "detail": "US/Bay donor costs per 10 QALYs: $19,215 / $19,422. Including gross associated resources, US/Bay/SF costs: $38,759 / $39,178 / $40,873 per 10 QALYs."
       },
       {
         "case": "pessimistic positive",
         "headline": "SF donor: $2,583,049,910/10 QALYs",
-        "detail": "US/Bay/SF QALYs: 0.00041040290 / 0.00040575017 / 0.00038713925. US/Bay donor prices: $2,436,629,960 / $2,464,570,754. Gross associated resources $108,667; US/Bay/SF resource prices: $2,647,804,556 / $2,678,166,886 / $2,806,914,236 per 10 QALYs."
+        "detail": "US/Bay donor costs per 10 QALYs: $2,436,629,960 / $2,464,570,754. Including gross associated resources, US/Bay/SF costs: $2,647,804,556 / $2,678,166,886 / $2,806,914,236 per 10 QALYs."
       },
       {
         "case": "no quantified allocation",
         "headline": "SF donor: No finite positive ratio/10 QALYs",
-        "detail": "US/Bay/SF QALYs: 0.0000000 / 0.0000000 / 0.0000000. US/Bay donor prices: No finite positive ratio / No finite positive ratio. Gross associated resources $100,000; US/Bay/SF resource prices: No finite positive ratio / No finite positive ratio / No finite positive ratio per 10 QALYs."
+        "detail": "US/Bay donor costs per 10 QALYs: No finite positive ratio / No finite positive ratio. Including gross associated resources, US/Bay/SF costs: No finite positive ratio / No finite positive ratio / No finite positive ratio per 10 QALYs."
       },
       {
         "case": "replacement only",
         "headline": "SF donor: No finite positive ratio/10 QALYs",
-        "detail": "US/Bay/SF QALYs: 0.0000000 / 0.0000000 / 0.0000000. US/Bay donor prices: No finite positive ratio / No finite positive ratio. Gross associated resources $138,286; US/Bay/SF resource prices: No finite positive ratio / No finite positive ratio / No finite positive ratio per 10 QALYs."
+        "detail": "US/Bay donor costs per 10 QALYs: No finite positive ratio / No finite positive ratio. Including gross associated resources, US/Bay/SF costs: No finite positive ratio / No finite positive ratio / No finite positive ratio per 10 QALYs."
       },
       {
         "case": "no clinical increment",
         "headline": "SF donor: No finite positive ratio/10 QALYs",
-        "detail": "US/Bay/SF QALYs: 0.0000000 / 0.0000000 / 0.0000000. US/Bay donor prices: No finite positive ratio / No finite positive ratio. Gross associated resources $138,286; US/Bay/SF resource prices: No finite positive ratio / No finite positive ratio / No finite positive ratio per 10 QALYs."
+        "detail": "US/Bay donor costs per 10 QALYs: No finite positive ratio / No finite positive ratio. Including gross associated resources, US/Bay/SF costs: No finite positive ratio / No finite positive ratio / No finite positive ratio per 10 QALYs."
       },
       {
         "case": "quarter year preservation",
         "headline": "SF donor: $7,712,310/10 QALYs",
-        "detail": "US/Bay/SF QALYs: 0.13735843 / 0.13581931 / 0.12966285. US/Bay donor prices: $7,280,223 / $7,362,723. Gross associated resources $138,286; US/Bay/SF resource prices: $10,067,508 / $10,181,594 / $10,665,022 per 10 QALYs."
+        "detail": "US/Bay donor costs per 10 QALYs: $7,280,223 / $7,362,723. Including gross associated resources, US/Bay/SF costs: $10,067,508 / $10,181,594 / $10,665,022 per 10 QALYs."
       },
       {
         "case": "high recurrent risk",
         "headline": "SF donor: $749,173/10 QALYs",
-        "detail": "US/Bay/SF QALYs: 1.4084429 / 1.3937152 / 1.3348044. US/Bay donor prices: $710,004 / $717,507. Gross associated resources $138,286; US/Bay/SF resource prices: $981,834 / $992,209 / $1,036,000 per 10 QALYs."
+        "detail": "US/Bay donor costs per 10 QALYs: $710,004 / $717,507. Including gross associated resources, US/Bay/SF costs: $981,834 / $992,209 / $1,036,000 per 10 QALYs."
       },
       {
         "case": "five year health horizon",
         "headline": "SF donor: $4,301,174/10 QALYs",
-        "detail": "US/Bay/SF QALYs: 0.24582397 / 0.24315811 / 0.23249468. US/Bay donor prices: $4,067,952 / $4,112,550. Gross associated resources $138,286; US/Bay/SF resource prices: $5,625,396 / $5,687,070 / $5,947,909 per 10 QALYs."
+        "detail": "US/Bay donor costs per 10 QALYs: $4,067,952 / $4,112,550. Including gross associated resources, US/Bay/SF costs: $5,625,396 / $5,687,070 / $5,947,909 per 10 QALYs."
       },
       {
         "case": "prep fully overlaps",
         "headline": "SF donor: $2,068,896/10 QALYs",
-        "detail": "US/Bay/SF QALYs: 0.50878913 / 0.50370124 / 0.48334968. US/Bay donor prices: $1,965,451 / $1,985,304. Gross associated resources $138,286; US/Bay/SF resource prices: $2,717,938 / $2,745,392 / $2,860,987 per 10 QALYs."
+        "detail": "US/Bay donor costs per 10 QALYs: $1,965,451 / $1,985,304. Including gross associated resources, US/Bay/SF costs: $2,717,938 / $2,745,392 / $2,860,987 per 10 QALYs."
       },
       {
         "case": "negative rescue effect",
         "headline": "SF donor: No finite positive ratio/10 QALYs",
-        "detail": "US/Bay/SF QALYs: -0.25346281 / -0.25092819 / -0.24078967. US/Bay donor prices: No finite positive ratio / No finite positive ratio. Gross associated resources $138,286; US/Bay/SF resource prices: No finite positive ratio / No finite positive ratio / No finite positive ratio per 10 QALYs."
+        "detail": "US/Bay donor costs per 10 QALYs: No finite positive ratio / No finite positive ratio. Including gross associated resources, US/Bay/SF costs: No finite positive ratio / No finite positive ratio / No finite positive ratio per 10 QALYs."
       },
       {
         "case": "independent harm zero activity",
         "headline": "SF donor: No finite positive ratio/10 QALYs",
-        "detail": "US/Bay/SF QALYs: -0.10000000 / -0.098000000 / -0.090000000. US/Bay donor prices: No finite positive ratio / No finite positive ratio. Gross associated resources $138,286; US/Bay/SF resource prices: No finite positive ratio / No finite positive ratio / No finite positive ratio per 10 QALYs."
+        "detail": "US/Bay donor costs per 10 QALYs: No finite positive ratio / No finite positive ratio. Including gross associated resources, US/Bay/SF costs: No finite positive ratio / No finite positive ratio / No finite positive ratio per 10 QALYs."
       },
       {
         "case": "adverse shared burdens",
         "headline": "SF donor: No finite positive ratio/10 QALYs",
-        "detail": "US/Bay/SF QALYs: -0.36084314 / -0.35444942 / -0.32887453. US/Bay donor prices: No finite positive ratio / No finite positive ratio. Gross associated resources $138,286; US/Bay/SF resource prices: No finite positive ratio / No finite positive ratio / No finite positive ratio per 10 QALYs."
+        "detail": "US/Bay donor costs per 10 QALYs: No finite positive ratio / No finite positive ratio. Including gross associated resources, US/Bay/SF costs: No finite positive ratio / No finite positive ratio / No finite positive ratio per 10 QALYs."
       },
       {
         "case": "donor pays outside inputs",
         "headline": "SF donor: $2,590,435/10 QALYs",
-        "detail": "US/Bay/SF QALYs: 0.40760058 / 0.40328758 / 0.38603556. US/Bay donor prices: $2,453,382 / $2,479,620. Gross associated resources $100,000; US/Bay/SF resource prices: $2,453,382 / $2,479,620 / $2,590,435 per 10 QALYs."
+        "detail": "US/Bay donor costs per 10 QALYs: $2,453,382 / $2,479,620. Including gross associated resources, US/Bay/SF costs: $2,453,382 / $2,479,620 / $2,590,435 per 10 QALYs."
       },
       {
         "case": "no sf health",
         "headline": "SF donor: No finite positive ratio/10 QALYs",
-        "detail": "US/Bay/SF QALYs: 0.52487114 / 0.51897915 / 0.0000000. US/Bay donor prices: $1,905,230 / $1,926,860. Gross associated resources $138,286; US/Bay/SF resource prices: $2,634,660 / $2,664,572 / No finite positive ratio per 10 QALYs."
+        "detail": "US/Bay donor costs per 10 QALYs: $1,905,230 / $1,926,860. Including gross associated resources, US/Bay/SF costs: $2,634,660 / $2,664,572 / No finite positive ratio per 10 QALYs."
       },
       {
         "case": "zero health horizon",
         "headline": "SF donor: No finite positive ratio/10 QALYs",
-        "detail": "US/Bay/SF QALYs: 0.0000000 / 0.0000000 / 0.0000000. US/Bay donor prices: No finite positive ratio / No finite positive ratio. Gross associated resources $138,286; US/Bay/SF resource prices: No finite positive ratio / No finite positive ratio / No finite positive ratio per 10 QALYs."
+        "detail": "US/Bay donor costs per 10 QALYs: No finite positive ratio / No finite positive ratio. Including gross associated resources, US/Bay/SF costs: No finite positive ratio / No finite positive ratio / No finite positive ratio per 10 QALYs."
       }
     ],
-    "uncertaintyBoundary": "The central value is a judgmental partial-health best estimate for the whole gift. Joint favorable inputs are not a confidence bound or high-expected-value claim. Null and harm cases retain gift costs. Shorter protection and health horizons can substantially worsen value; new recurring risk can increase both need and survivor attrition.",
+    "uncertaintyBoundary": "The central value is a judgmental partial-health best estimate for the whole gift. Joint favorable inputs are not a confidence bound or high-expected-value claim. Null and harm cases retain gift costs. Shorter protection and health horizons can substantially worsen value; new recurring risk can increase both need and survivor attrition. These modeled unit costs are not a promise that impact scales proportionally with donation size.",
     "fundingBoundary": "May 2026 contract request remains conditional on appropriations; June partial restorations do not resolve the current Pick Up Crew gap. Public PrEP benefits and 340B operations remain baseline. Liquid assets do not establish spare cash or absence of need. Verified funding room remains null."
   },
   "evidence": [

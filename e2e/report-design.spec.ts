@@ -45,7 +45,15 @@ test('all published reports use readable research architecture',async({page},tes
   await effort.locator('summary').click();await expect(effort.locator('ul')).toBeVisible();expect(await effort.locator('li').count()).toBeLessThanOrEqual(5);
   await expect(effort).not.toContainText('wall-clock intervals');await expect(effort).not.toContainText('partial total');
   for(const heading of ['Summary','1. What do they do?','2. Monitoring and information sharing','3. Qualitative assessment','4. What do you get for your dollar?','5. Funding and previous grants','6. Sources']) await expect(page.getByRole('heading',{name:heading,exact:true})).toBeVisible();
-  await expect(page.locator('.report-heading .report-donate')).toHaveText('Donate');
+  const donation=page.locator('.report-heading .report-donate');
+  if(await donation.getAttribute('href')==='#funding'){
+   await expect(donation).toHaveText('Funding limitations');
+   await expect(page.getByRole('link',{name:'Donate',exact:true})).toHaveCount(0);
+  }else{
+   await expect(donation).toHaveText('Donate');
+   expect(await donation.getAttribute('href')).toMatch(/^https:\/\//);
+   await expect(page.locator('#funding .report-donate')).toHaveAttribute('href',(await donation.getAttribute('href'))!);
+  }
   await expect(page.locator('#funding')).toHaveCount(1);
   await expect(page.getByRole('table')).toHaveCount(0);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),item.href).toBe(true);

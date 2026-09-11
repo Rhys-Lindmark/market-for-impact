@@ -4,7 +4,7 @@ test('Pacific Hearing Connection price and identity remain distinct',async({page
  await page.goto('/research');await expect(page.locator('[data-research-slug]')).toHaveCount(EXPECTED_RESEARCH_COUNT);
  const row=page.locator('[data-research-slug="pacific-hearing-connection"]');
  await expect(row).toHaveAttribute('data-cost-per-ten-qalys','937720.9335493005');
- expect(await page.locator('[data-research-slug]').evaluateAll(rows=>rows.findIndex(r=>r.getAttribute('data-research-slug')==='pacific-hearing-connection'))).toBe(5);
+ expect(await page.locator('[data-research-slug]').evaluateAll(rows=>{const prices=rows.map(r=>Number(r.getAttribute('data-cost-per-ten-qalys')));return prices.every((p,i)=>i===0||prices[i-1]<=p);})).toBe(true);
  await row.locator('a').first().click();await expect(page.locator('h1')).toHaveText('Pacific Hearing Connection');
  await expect(page.locator('#evidence')).toContainText('modifiedHUI3');
  await expect(page.locator('#evidence')).toContainText('RAND36');

@@ -2,6 +2,8 @@
 
 Status: integrated locally; not yet published. Published report count remains 100.
 
+CI follow-up: full remote mobile run 34595571103 hit its 12-minute limit after recording stale geography/navigation assertions and an unresolved homepage-photo assertion. Corrected Bay-price checks, archive counts, current synthesis navigation, conditional donation fallback and historical-model navigation. The 100-report architecture loop passes locally; focused repaired checks pass. Required homepage image coverage is retained, not weakened. Full remote gate is not claimed green.
+
 - Accepted coverage-v2 model and independent report audit preserved. Central modeled cost is $5,739,210.197176861 per 10 Bay QALYs, retaining the whole gift but quantifying only cessation, asthma and CPAP health. This is not complete organization expected value.
 - Report, model API, ranking adapter, research-index scope, donor-priority questions and city-theory comparison now use the same scope. Historical cessation API remains separate.
 - Focused verification passes: 1,077 model checks across 14 scenarios and 200 random cases; ranking and fourteen explicit Bay adapters pass.

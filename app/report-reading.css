@@ -38,6 +38,14 @@
 .givebetter .report-footer { display:block; border-top:1px solid #dedede; margin-top:28px; padding:22px 0 0; font-size:14px; }
 .report-footer p { font-size:14px; color:#666; margin-top:12px; }
 .report-model-version { overflow-wrap:anywhere; }
+.report-table-scroll { overflow-x:auto; margin:24px 0; max-width:100%; }
+.report-table-scroll table { border-collapse:collapse; width:100%; font-size:15px; line-height:1.5; }
+.report-table-scroll th { background:#639db3; color:white; text-align:left; }
+.report-table-scroll th,.report-table-scroll td { padding:10px 12px; vertical-align:top; }
+.report-table-scroll tbody tr:nth-child(even) { background:#f4f4f4; }
+.report-table-scroll:focus-visible { outline:2px solid #367c99; }
+.charity-report article ul { list-style:disc; }
+.charity-report article ol { list-style:decimal; }
 @media(min-width:1050px) {
  .report-reading-column { display:grid; grid-template-columns:250px minmax(0,820px); column-gap:48px; max-width:1174px; }
  .report-heading { grid-column:2; }

@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## ReCARES V2 — accepted, release verification pending
+
+First frozen-cohort V2 report integrated with full prose, left ToC, three-year filings, reconciled annual spending shares and versioned model/API. Source-only update lowers central $128,892 to $74,720 and weighted $185,910 to $107,774 per10 Bay QALYs; no clinical/funding priors changed. Ranking now explicitly uses central, separately disclosed from that source update. Accrual expense is not cash paid; reserves and uncertain safe unique use keep giving on HOLD. Independent core/source audit accepted, 56 model checks plus parser/full-suite tests passed. Desktop/phone/tablet navigation, no overflow and index/home/API parity passed using new-build assets. Final build and canonical release gate remain. Alpha110 unchanged; V2 not counted live before verification. Next accepted drafts: Breathe and SPUR; GLIDE/HAC/HOPE research underway.
+
 ## Current priority: top-ten V2 — alpha110 complete
 
 Verified110 alpha reports (89 Bay +21 expanded) through PR307 / Sites218; original selected ten independently audited and published. See [current plan](docs/110-research-plan.md) and [frozen V2 cohort](docs/110-v2-frozen-review-set.md). V2 published0/10; ReCARES, Breathe and SPUR first-wave research underway, with cross-audits before release. Each receives roughly30 additional research minutes, three-year filing/current-operation checks, substantive GiveWell-style prose and yearly spending breakdowns. SPUR and HAC are deliberate distinct-mechanism research slots, not numerical-rank substitutions.

@@ -7,11 +7,13 @@ test('HEPPAC separates hypothetical SF attribution from total gift impact',async
  await expect(row).toHaveAttribute('data-estimate-geography','Bay Area');
  await row.locator('a').first().click();
  await expect(page.getByRole('heading',{level:1})).toContainText('HEPPAC');
- await expect(page.locator('#summary')).toContainText('$10.86M');
+ await expect(page.locator('#summary')).toContainText('$8,133,469');
  const response=await page.request.get('/api/heppac-model');expect(response.ok()).toBe(true);
  const data=await response.json(), w=data.evaluated.conditionalOrdinaryGiftWeighted;
  expect(data.verifiedMarginalFundingOffer).toBeNull();
- expect(w.donorPer10Qaly).toBeGreaterThan(10e6);expect(w.donorPer10Qaly).toBeLessThan(12e6);
+ expect(w.bayDonorPer10Qaly).toBeCloseTo(8133469.099019436,6);
+ expect(data.diagnostics.recurrenceWithOldSevereMortalityBayUsdPerTenQalys).toBeCloseTo(12849713.67318257,6);
+ expect(data.archive.eventLinearBayUsdPerTenQalys).toBeCloseTo(11112456.578235215,6);
  expect(w.sfDonorPer10Qaly).toBeGreaterThan(w.bayDonorPer10Qaly);
  expect(w.bayDonorPer10Qaly).toBeGreaterThan(w.donorPer10Qaly);
  await page.goto('/research');await expect(page.locator('[data-research-slug="heppac"]')).toHaveAttribute('data-cost-per-ten-qalys',String(w.bayDonorPer10Qaly));await page.goto('/charities/heppac');

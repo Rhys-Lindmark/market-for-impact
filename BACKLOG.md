@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## HEPPAC post100 model correction
+
+100/100 remain verified. Independently accepted v2 uses a finite unique-person naloxone cohort and archives original executable model/full snapshot. Structural recurrence correction alone worsens $11.112M to $12.850M/10 Bay QALYs; separately revised historical-scale survival priors yield $8.133M. Both changes explicit; no verified marginal offer or top-four promotion. Other pathways and unresolved cross-program overlap retained. Full output parity, independent integral, person bounds, signed/null cases, 717 tests, lint zero errors/three existing warnings and production build pass; responsive and canonical gates follow. Next donor-facing top-ten comparison, funding questions and synthesis/redesign.
+
 ## Post100: audited source/readability correction
 
 100/100 canonically verified through PR296/v211 (79 Bay +21 expanded). Correct Pacific Hearing Connection grant publisher to Santa Clara County Health Authority / Santa Clara Family Health Plan, preserving amount and modeled results. Improve Dentists on Wheels and Health Mobile word spacing without changing inputs, URLs or donation status. Independent acceptance retained in docs/post100-source-copy-audit.md. 59 relevant model tests, six phone/tablet interactions, lint zero errors/three existing warnings and production build pass. Next: accepted HEPPAC cohort correction; scope-aware top-ten recommendations and public-source marginal funding diligence; homepage/library redesign. No verified additional-gift offer found for the three proposed leaders; precise donor questions prepared, not outreach.

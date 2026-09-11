@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {calculate,finances,diagnostics} from '../lib/pacific-hearing-v2-model.mjs';
+import {calculate as prior} from '../lib/pacific-hearing-connection-model.mjs';
+import report from '../data/bay/pacific-hearing-v2-report.json' with {type:'json'};
+import {reportSections,markdownBlocks} from '../lib/report-markdown.mjs';
+assert.deepEqual(calculate(),prior());assert.equal(calculate().rows.find(r=>r.id==='central').bayCostPer10,2199017.543859649);assert.equal(calculate().bayCostPer10,937720.9335493005);
+assert.equal(finances.length,3);assert(diagnostics());assert.equal(report.markdown.trimEnd(),fs.readFileSync(new URL('../docs/reports/pacific-hearing-v2.md',import.meta.url),'utf8').trimEnd());
+assert(report.markdown.split(/\s+/).length>4900);const sections=reportSections(report.markdown);assert.equal(sections.length,9);
+const ids=new Set(sections.map(s=>s.id));for(const s of sections)for(const b of markdownBlocks(s.markdown))if(b.id)ids.add(b.id);
+for(const m of report.markdown.matchAll(/\]\(#([^)]*)\)/g))assert(ids.has(m[1]),m[1]);

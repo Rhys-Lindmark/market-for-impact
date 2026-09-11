@@ -1,3 +1,3 @@
-import {calculate,anchors,scenarios,modelVersion} from '@/lib/pacific-hearing-connection-model.mjs';
-import report from '@/data/bay/pacific-hearing-connection-report.json';
-export function GET(){return Response.json({modelVersion,anchors,scenarios,sources:report.sources,evaluated:calculate(),verifiedMarginalFundingOffer:null,completeSocietalResourcesUsd:null,interpretation:'Whole accounting expense; partial hearing health. Unknown treatment volume is explicitly modeled, not measured. No priced marginal offer.'});}
+import {calculate,anchors,scenarios,modelVersion,finances,diagnostics} from '@/lib/pacific-hearing-v2-model.mjs';
+import report from '@/data/bay/pacific-hearing-v2-report.json';
+export function GET(){const evaluated=calculate();return Response.json({modelVersion,anchors,scenarios,finances,diagnostics:diagnostics(),sources:report.sources,evaluated,rankingCentral:evaluated.rows.find(r=>r.id==='central'),verifiedMarginalFundingOffer:null,completeSocietalResourcesUsd:null,interpretation:'Central scenario used for ranking; signed subjective weighted result separately preserved. Whole accounting expense, partial hearing health; no priced marginal offer.'});}

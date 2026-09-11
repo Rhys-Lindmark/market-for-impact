@@ -1,0 +1,24 @@
+# Pacific Hearing Connection V2 independent audit
+
+Decision: **ACCEPT as an exploratory whole-accounting-cost / partial-hearing-health assessment; HOLD actionable giving recommendation. No mandatory numerical or source corrections found.**
+
+## Checks
+
+- Read the complete 4,978-word narrative, wrapper, historical calculator, tests and structured evidence. Ran 131 checks successfully. Independently checked the equation: gift / expense × annual offers × funding response × (utility × transfer × completion × effective years − harm) × Bay share. Signed health is averaged before inversion.
+- Preferred $937,720.9335493005 and central $2,199,017.543859649 reproduce exactly. Full saved and original-result parity pass. The favorable world's 91.8% contribution and 10% subjective weight are prominent; no claim of calibrated probability or a verified marginal price.
+- Independently fetched original FY2024 Form 990-EZ and Schedule O through native curl after browser refusal. Confirmed revenue $156,127, expense $184,099, program expense $157,150, salary $85,572, contractors $29,475; Schedule O $45,900 inventory-cost adjustment within $63,205 other expense, with inventory $60,200 to $45,050. Correctly not labeled cash expense, unique patient count, or a reason to remove cost from the preferred base. Three-year arithmetic identities pass; older filings were not independently fully re-extracted in this bounded audit.
+- Independently read March 27, 2025 Health Authority minutes: ratification of January 16 committee approval of $129,987 for training, education and mobile screening. Publisher is correctly Health Authority / Santa Clara Family Health Plan, not Housing Authority. No false inference of added fittings or remaining balance.
+- Independently read Ability Central's current 2026–27 portfolio: education, training materials and hearing screenings, with no amount in the inspected listing. Correctly distinguishes historical award, current listing, receivable and unknown available capacity.
+- Independently retrieved Kaur primary XML through Europe PMC after PMC browser challenge. Confirmed 264/163 analyzed, modified control HUI3, three-month utility .12, incomplete one-year response and 71.4% use among respondents. Report correctly treats utility as endpoint rather than immediate QALYs and longer duration as a prior. Did not re-audit every ACHIEVE/Barton source; their prior accepted boundaries are retained, not relabeled newly verified.
+- Whole expense includes outreach and unquantified work. Annual person-course offers and funding response remain priors. No unexplained extra allocation discount. Bilateral devices, repeat visits, partner-provider health and alternative-care exposure are distinguished. Complete-resource and verified marginal values remain null.
+- Independently compared all eight JSON section bodies with complete Markdown sections: exact parity including each section's own heading. Full `longForm.markdown` parity also passes. An initial comparison excluding headings failed only because JSON deliberately includes the headings; corrected topology comparison confirms no missing text. Canonical evidence and sensitivity fields pass.
+
+## HOPE final fixes
+
+Read existing independent audit and checked the current final packet. Source URLs now deduplicated (zero duplicates); county free-box eligibility expressly limited to San Mateo County, with the San Francisco site not automatically covered, in both relevant passages. Ran updated tests: **59/59 pass**, including unchanged original numeric outputs/full saved parity. The earlier auditor's two requested presentation fixes are resolved. ACCEPT that corrected exploratory packet; actionable giving remains HOLD under its existing caveats. No new coefficients or author-file edits made.
+
+## Scope and timing
+
+Read-only audit outside Site; no outreach, installs, browser UI, nested agents or numerical changes. Initial handoff/full-file reads began before the first explicit clock and are not assigned invented timing. Explicit observed clock interval: September 11, 2026, 17:31:10–17:32:17 UTC through primary and parity checks; memo writing followed. Dispatch provenance gpt-6-astra / low, not independent backend introspection. Existing Space Saver/token-saver instructions applied; no retained bulk downloads.
+
+Primary URLs: https://projects.propublica.org/nonprofits/full_text/202502889349201655/IRS990EZ ; https://projects.propublica.org/nonprofits/full_text/202502889349201655/IRS990ScheduleO ; https://res.cloudinary.com/dpmykpsih/image/upload/santa-clara-site-299/media/ed0ee46f68794b1e8ec7a288873f0e6e/3-27-25-gb-minutes-signed.pdf ; https://abilitycentral.org/philanthropy/grants-2026-2027 ; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7709244/fullTextXML . Retrieved September 11, 2026.

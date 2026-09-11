@@ -1,0 +1,24 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {calculate,diagnostics,inputs,scenarios,originalInputs} from '../lib/recares-v2-model.mjs';
+import {calculate as legacy,scenarios as oldScenarios} from '../lib/recares-v1-frozen.mjs';
+let n=0;const check=f=>{f();n++;};const close=(a,b)=>assert.ok(Math.abs(a-b)<=1e-10*Math.max(1,Math.abs(a),Math.abs(b)),`${a} vs ${b}`);
+const r=calculate(),data=JSON.parse(fs.readFileSync(new URL('../data/bay/recares-v2-model-data.json',import.meta.url)));
+check(()=>assert.deepEqual(r,data.evaluated));check(()=>assert.deepEqual(diagnostics(),data.diagnostics));check(()=>assert.deepEqual(scenarios,oldScenarios));
+check(()=>assert.deepEqual(calculate(originalInputs).weighted,legacy().weighted));
+check(()=>assert.deepEqual(calculate(originalInputs).rows,legacy().rows));
+check(()=>assert.equal(legacy().weighted.bayDonorCostPer10Qaly,185910.27585974694));
+check(()=>close(r.weighted.bayDonorCostPer10Qaly,185910.27585974694*(72583/111205)*(9770/11000)));
+check(()=>close(r.rows.find(x=>x.name==='central').bayQaly,(10000*11000/72583)*.5*.65*((.2*.5*.85*.05*.5)+(.15*.4*.85*.03*.5)+(.65*.3*.9*.005*.08)-.0001)*.95));
+check(()=>assert.equal(calculate({...inputs,giftUsd:0}).weighted.bayQaly,0));
+check(()=>assert.ok(r.rows.find(x=>x.name==='harm').bayQaly<0));
+check(()=>assert.equal(r.rows.find(x=>x.name==='null').bayQaly,0));
+check(()=>assert.equal(r.verifiedMarginalFundingOffer,null));
+check(()=>assert.equal(r.weighted.completeSocietalResourceCostPer10Qaly,null));
+for(const f of data.finances){check(()=>assert.equal(f.contractors+f.occupancy+f.printingShipping+f.other,f.expense));check(()=>assert.equal(f.contributions+f.investmentIncome,f.revenue));check(()=>assert.equal(f.cashSavingsInvestments+f.otherAssets-f.liabilities,f.netAssets));}
+for(const bad of [null,[],42,'bad',{...inputs,totalExpenseUsd:0},{...inputs,totalExpenseUsd:Number.MIN_VALUE},{...inputs,totalExpenseUsd:Infinity},{...inputs,giftUsd:10001},{...inputs,paymentFeeUsd:-1},{...inputs,reportedRecipientEquivalents:0},{...inputs,reportedItems:'11000'},{...inputs,externalResourceCostPerIncrementalUnique:-1}])check(()=>assert.throws(()=>calculate(bad)));
+for(const ss of [null,[],[null],scenarios.map(s=>({...s,name:' '})),scenarios.map(s=>({...s,name:'same'})),scenarios.map(s=>({...s,name:s.name+' '})),scenarios.map(s=>({...s,weight:NaN})),scenarios.map(s=>({...s,mix:[]})),scenarios.map(s=>({...s,mix:s.mix.map(d=>({...d,years:2}))})),[{...scenarios[4],weight:1}]])check(()=>assert.throws(()=>calculate(inputs,ss)));
+check(()=>assert.ok(data.diagnostics.cases.sharedClinicalFamily.weighted.bayDonorCostPer10Qaly>r.weighted.bayDonorCostPer10Qaly));
+check(()=>assert.ok(r.noFavorable.bayDonorCostPer10Qaly>r.weighted.bayDonorCostPer10Qaly));
+for(const key of Object.keys(inputs).filter(k=>k!=='externalResourceCostPerIncrementalUnique'))check(()=>assert.throws(()=>calculate({...inputs,[key]:null})));
+console.log(`${n}/${n} checks passed; full output/diagnostic and original numerical parity.`);

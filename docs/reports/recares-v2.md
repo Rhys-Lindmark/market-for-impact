@@ -1,0 +1,453 @@
+# The ReCARES Network: a deeper whole-gift assessment
+
+**V2 research draft · September 11, 2026 · EIN 94-3213876**
+
+This report evaluates an ordinary cash gift to the legal nonprofit, with Bay Area health as the primary outcome. It is not a clinical evaluation of a particular device, a valuation of all environmental and social benefits, or a recommendation to replace prescribed equipment. The illustrative gift is $10,000, with no assurance that the same return extends to a larger donation. The previous published calculator is preserved unchanged; the revised calculator updates verified financial and reported service-volume inputs to FY2025 while retaining the earlier subjective health and funding assumptions. Sources and calculations are separated so readers can distinguish new evidence from modeling judgment.
+
+## Summary
+
+**What do they do?** Redistribute donated medical equipment and supplies through three Bay sites. [More](#1-what-does-recares-actually-do)
+
+**Reasons to investigate—and hold:**
+
+- Lean reported expense and substantial activity offer plausible leverage.
+- HOLD giving: no verified priced additional-capacity offer.
+
+**Reservations:**
+
+- Unique useful safe use and incremental duration remain unmeasured.
+- Favorable-tail dependence and unvalued complementary resources matter.
+
+**What do you get for your dollar?** Our central estimate is about **$75,000 per better life (10 Bay QALYs)**; the separate weighted-scenario estimate is about **$108,000**. Updated financial inputs lower these modeled prices, not the uncertainty. [More](#5-the-whole-gift-model-step-by-step)
+
+**Monitoring:** Filing activity is not a deduplicated clinical outcome dataset. [More](#3-what-do-we-know-about-useful-safe-and-unique-use)
+
+**Qualitative judgment:** Plausible reuse leverage coexists with unresolved funding and service complements. [More](#8-qualitative-assessment-and-the-strongest-alternative)
+
+Accounting terminology matters throughout: FY2025 uses the accrual method. Its $72,583 is whole reported accounting expense, used here as a cash-cost proxy, not verified cash paid during the year. References below to a cash-budget or cash-leverage estimate distinguish the donor-dollar model from a complete societal-resource estimate; they do not convert accrual expense into a cash-flow statement. The $60,000 grants receivable further illustrates that distinction.
+
+ReCARES is a small medical-equipment reuse network with distribution sites in Oakland, San Francisco and Marin. Its appeal is straightforward: useful equipment can be available in one household but unaffordable, unavailable or delayed for another. A local organization can inspect, organize and redistribute donated goods using relatively little cash. A walker, wheelchair, transfer aid or supply package may then relieve a real limitation. But a donated item is not itself a health outcome. The relevant question is whether an additional gift produces safe, useful access that would not otherwise occur, and for how long that changes someone’s health.
+
+The most important new evidence in this review is the original FY2025 tax filing. It reports $72,583 of whole-organizational expense, more than 11,000 recipients, over 45,000 items and over 5,400 volunteer hours. The previous report used FY2024 expense of $111,205 and a reported-recipient floor of 9,770. Updating only those cash and activity inputs lowers the scenario-weighted Bay estimate from approximately **$185,910 to $107,774 per 10 QALYs**. The central scenario moves from **$128,892 to $74,720**. The research list and homepage use this central scenario; the previous list displayed the weighted estimate. The change of displayed statistic is separate from the FY2025 source update. Neither is a measured health return. These are calculations from a model, not observed health gains. We use the filing’s rounded recipient floor, not an invented exact total. [FY2025 original filing](https://projects.propublica.org/nonprofits/full_text/202621259349200012/IRS990EZ)
+
+We do not interpret the improved arithmetic as evidence that the organization suddenly became more clinically effective. Financial and service-volume changes can affect an accounting ratio without improving safe fit, adherence, health effect or donor additionality. Nor does the new filing resolve whether recipient counts are unique across visits, sites and agency pickups. Those uncertainties remain explicit. The low cash denominator is genuine as an accounting observation, but donated goods, volunteer labor, transport and other complementary resources are not fully valued. Calling the model a complete societal cost-effectiveness estimate would be incorrect.
+
+The clinical case is plausible but weaker than the headline price may suggest. Controlled walking-aid research shows functional gains in some settings, alongside null between-group quality-of-life findings. A small bathing-adaptation trial found a possible preference-utility improvement, but evaluated an installed shower rather than a portable chair. No primary evidence reviewed here establishes ReCARES’ central assumption of a 0.05 mobility utility improvement lasting half a year. Those values remain judgments about successful, otherwise-unmet use. The report therefore shows alternatives rather than disguising the judgments as a study result.
+
+The favorable scenario still provides **69.3% of expected net Bay benefit despite carrying only 5% of the subjective weight**. Removing it and renormalizing the remaining worlds raises the updated price to approximately $333,320. Applying the lower clinical utility-duration family previously used for another equipment-reuse report raises the updated weighted price to approximately $294,028. Halving both utility and duration raises it to approximately $554,748. These checks do not prove the preferred assumptions wrong; they show that the apparently competitive result is sensitive to unmeasured health inputs.
+
+There is also new reason to be careful about the funding story. FY2025 ended with $253,225 in cash, savings and investments, $60,000 in grants receivable and $313,082 in net assets. These are not a current unrestricted spending plan. They nevertheless make it inappropriate to describe ReCARES as visibly cash-starved on the basis of its small budget. The live recipient page distinguishes surplus supplies from high-demand items, while the volunteer page requests operational and database support. Extra cash could help, but no public priced plan links a new gift to additional safe equipment use after existing funds and other resource constraints. [FY2025 Schedule O](https://projects.propublica.org/nonprofits/full_text/202621259349200012/IRS990ScheduleO)
+
+Our conclusion is **retain ReCARES as a promising exploratory cash-leverage hypothesis, but HOLD a health-based giving recommendation**. The next useful evidence is not another generic statement that assistive devices help. It is a reconciled operating plan, device-class and unique-user data, and follow-up on safe use and alternative access. This review strengthens financial dating and makes the clinical and resource caveats more concrete. It does not verify an additional-gift offer, establish measured QALYs, or justify turning a prior-weighted price into a confident rank.
+
+## 1. What does ReCARES actually do?
+
+### 1.1 The organization and the service boundary
+
+The legal recipient in this assessment is The ReCARES Network, EIN 94-3213876. Its original filings cover the organization, not a separately priced restricted program. The current site describes a local reuse mission and volunteer-staffed distribution sites. The three locations are operating channels within that network; they are not three separately evaluated charities. The official history describes operations beginning in 1996. Tax-exemption timing and organizational founding are different administrative facts and should not be conflated. [Official organization page](https://www.recares.org/about)
+
+An ordinary donation can support the network’s work as management chooses. This report does not assume that every new dollar buys a particular mobility aid, nor that a donor can reserve a medically fitted equipment slot at the historical average cash cost. An unrestricted gift might maintain rent, pay a contractor, improve administration, organize inventory or support activities whose health effects are not measured. That broad allocation is one reason the model uses whole expense and a separate throughput-response assumption.
+
+The intended benefit has two distinct sides. Reuse may prevent useful goods from entering the waste stream, and redistribution may improve access for people with health-related needs. The first can occur even when the recipient would otherwise buy equivalent equipment immediately. The second can occur even when the reused equipment has little resale value. A health analysis must not treat these effects as interchangeable. Environmental savings are not automatically Bay QALYs, and retail savings are not automatically health improvements.
+
+### 1.2 A real recipient journey
+
+The current recipient process is open access: a person or someone acting on their behalf arrives during public hours and asks volunteers for available items. ReCARES does not promise a reservation or a complete inventory in advance. It does not require identification or insurance paperwork. Its instructions explicitly say that volunteers are not providing medical advice and that equipment quality and condition cannot be guaranteed. These features remove barriers, but they also limit what we can infer about clinical assessment and safe fit. [Current recipient instructions](https://www.recares.org/receive)
+
+The modeled causal journey therefore has more stages than “item distributed.” Someone must have a relevant need; an appropriate item must be available; they must be able to get it home; it must fit the person and setting; it must be used safely; and it must improve health relative to what would otherwise happen. The process can succeed at distribution and fail later. A wheelchair that cannot pass through a doorway, a transfer bench incompatible with a bathroom, or a rollator that a person cannot use safely is not equivalent to a successful clinical intervention.
+
+Conversely, an apparently simple donation can be valuable if it resolves a specific temporary gap. Someone recovering from an injury may need an aid before an insurer or supplier can arrange one. A caregiver may need a practical transfer solution for a few weeks. A person may have exhausted a small supply budget. The model allows such benefits, but the time credited must end when the need resolves or a comparable alternative would have arrived. Owning the item for a year is not enough to justify a year of incremental benefit.
+
+### 1.3 Inventory is heterogeneous, and that matters
+
+The native current donation page distinguishes consistently accepted goods, items accepted depending on space and demand, and excluded categories. It requests clean, working equipment with relevant parts. It also publishes Oakland-specific acceptance restrictions. This is stronger operational information than a generic claim that all donated equipment is useful, but it does not reveal the numerical distribution of devices actually reaching end users. [Current donation rules](https://www.recares.org/donate)
+
+The health model divides users into mobility, bathing/transfer and supplies/other categories. These are mutually exclusive dominant-need abstractions, not source-reported clinical case mix. They prevent us from independently counting a wheelchair, commode and supply bag for the same person as three full patient benefits. Yet they simplify reality: one person can have several distinct needs, and different supplies may have very different implications. The simplification may omit genuine additional benefit or overstate the relevance of a broad category. It is a modeling compromise pending better data.
+
+Current operations provide a useful warning against valuing each item equally. The live recipient page identifies an overabundance of some supplies while limiting quantities of certain high-demand goods when stocks are low. An extra box of a surplus item and an extra suitable rollator are not equivalent additions to health-producing capacity. The existence of excess inventory also means that a larger donation stream may not be the bottleneck for every category. Our model does not multiply total items by a common QALY value.
+
+### 1.4 Large equipment follows a different route
+
+The current large-DME system directly connects prospective donors and recipients. Parties arrange contact and transport themselves; optional notifications continue for 60 days. ReCARES explains that it cannot hold large equipment at its sites or guarantee the condition of items it does not possess. Standard wheelchairs and transfer benches are distinguished from this large-equipment route. [Large DME instructions](https://www.recares.org/largedme)
+
+A successful referral could be valuable, particularly where a large item would otherwise be discarded. But a referral registration, an email match and a completed safe handover are different outcomes. We have no completed-match denominator and no evidence that the FY2025 recipient total includes this newer system on a consistent basis. The revised base does not add an independent large-equipment benefit term. Doing so would risk both counting future capacity as current delivery and counting the same person twice.
+
+The new system can also substitute for storage rather than demonstrate an unfunded warehouse need. If matching is effective, more storage may not be the best next use of money. If transport prevents completion, a warehouse alone may not help. A donor-facing capacity plan should identify which constraint actually blocks useful transfers and how the proposed expenditure changes it. The mere existence of an online matching system does not identify that answer.
+
+### 1.5 Volunteers and access constraints
+
+The volunteer page identifies intake, inspection, sorting, cleaning, repairs and assistance, and now also requests support with databases and inventory organization. Medical training is not a stated universal prerequisite. This does not imply volunteers lack relevant expertise; it means the public description does not establish a standardized clinician-led assessment service. [Volunteer roles](https://www.recares.org/volunteer)
+
+The current FAQ says the network cannot collect or deliver goods and permits someone else to pick up on a recipient’s behalf. It also says there are no residency, citizenship or income requirements. [Current FAQ](https://www.recares.org/faq) These facts have separate consequences. Lack of delivery can exclude people with the greatest mobility constraints. Proxy collection can improve access, but makes collector identity a poor substitute for end-user identity. Open geography means a Bay distribution site does not prove that every health benefit accrues to a Bay resident.
+
+Current public hours are five per week in San Francisco, four in Oakland and three in Marin. [Locations](https://www.recares.org/locations) We do not use those hours as geographic weights. Throughput can differ by staffing, inventory, visitor patterns and proxy pickup, and a visitor’s residence need not match the site. The model’s Bay and SF shares remain explicitly subjective, with SF nested within Bay.
+
+## 2. What do three years of original filings show?
+
+### 2.1 Why the financial refresh mattered
+
+The browser search representation of the filing index still displayed FY2024 as the newest year during this review. Direct retrieval of the current index exposed a newer FY2025 filing, which we then opened in original reconstructed IRS form format. This is a concrete example of why an apparently current search result should not be treated as the final word on reporting freshness. We do not overwrite the earlier reviewer’s history: the old analysis used the latest filing it had located, while this review found a newer one.
+
+The latest three verified years are now 2023, 2024 and 2025. All are calendar-year 990-EZ filings. The numbers below are whole-organizational accounting figures; they are not a set of comparable unrestricted cash budgets, and the filings do not split every category by site or device class.
+
+| Financial line | FY2023 | FY2024 | FY2025 |
+|---|---:|---:|---:|
+| Contributions and grants | $84,146 | $99,355 | $189,628 |
+| Investment income | $4,784 | $7,578 | $7,144 |
+| Total revenue | $88,930 | $106,933 | $196,772 |
+| Professional fees / independent contractors | $67,957 | $96,634 | $54,640 |
+| Occupancy, rent, utilities and maintenance | $8,359 | $8,332 | $9,938 |
+| Printing, publications, postage and shipping | $3,071 | $2,851 | $2,435 |
+| Other expenses | $3,360 | $3,388 | $5,570 |
+| **Whole expense** | **$82,747** | **$111,205** | **$72,583** |
+| Reported program expense | $73,668 | $103,400 | $69,412 |
+| Revenue less expense | $6,183 | −$4,272 | $124,189 |
+| Cash, savings and investments, year end | $168,011 | $176,715 | $253,225 |
+| Other assets | $30,025 | $17,025 | $60,032 |
+| Liabilities | $5,231 | $5,207 | $175 |
+| Net assets | $192,805 | $188,533 | $313,082 |
+
+Sources: original [FY2023](https://projects.propublica.org/nonprofits/full_text/202401359349201805/IRS990EZ), [FY2024](https://projects.propublica.org/nonprofits/full_text/202501339349200530/IRS990EZ) and [FY2025](https://projects.propublica.org/nonprofits/full_text/202621259349200012/IRS990EZ) Forms 990-EZ. Separate gaming/fundraising direct expenses and inventory cost-of-goods lines are zero; no hidden addback from those lines was omitted. Salary lines report zero, but contractor expense is substantial: this is not evidence that all organizational work was unpaid.
+
+### Spending breakdown
+
+The natural-expense buckets below reconcile to each year's whole expense. Percentages are calculated from the original filings above and rounded; the separately reported program-expense total is a different functional classification, not an additional bucket.
+
+| Expense category | FY2023 amount (share) | FY2024 amount (share) | FY2025 amount (share) |
+|---|---:|---:|---:|
+| Professional fees / independent contractors | $67,957 (82.1%) | $96,634 (86.9%) | $54,640 (75.3%) |
+| Occupancy, rent, utilities and maintenance | $8,359 (10.1%) | $8,332 (7.5%) | $9,938 (13.7%) |
+| Printing, publications, postage and shipping | $3,071 (3.7%) | $2,851 (2.6%) | $2,435 (3.4%) |
+| Other expenses | $3,360 (4.1%) | $3,388 (3.0%) | $5,570 (7.7%) |
+| **Total** | **$82,747 (100%)** | **$111,205 (100%)** | **$72,583 (100%)** |
+
+### 2.2 Interpreting the change in costs
+
+The FY2025 reduction is concentrated in professional fees and contractor payments. Occupancy expense rises rather than disappears. We have not found a reconciliation explaining whether the contractor decline reflects a staffing change, a completed project, a difference in payment timing, a reduction in paid capacity, or another cause. It would be unjustified to describe the decline as proven efficiency improvement. It would be equally unjustified to assume it signals service deterioration merely because staffing expense fell.
+
+This matters because the health model uses expense per reported recipient as its starting productivity measure. If the lower expense is a sustainable operating configuration, it may be a useful current benchmark. If it reflects a temporary vacancy or deferred cost, it may understate the cost of maintaining delivery. If some work moved to volunteers, cash cost may decline without societal resource use declining. The source-only update cannot resolve these interpretations. Our preferred numerical display is therefore accompanied by the old-year comparison and resource tests, not presented as a permanent technological improvement.
+
+Program expense is reported separately from total expense, but we do not use the smaller program figure as the denominator. Administration and coordination help make redistribution possible. Excluding them would answer a different question from the ordinary-gift question. A donor cannot assume that their contribution receives all the benefits of overhead while avoiding its cost. Whole expense is the more appropriate starting point even when the program fraction is high.
+
+The detailed FY2025 Schedule O allocates the $5,570 other-expense line to liability insurance $2,777, office supplies $1,247, equipment repair supplies $772 and other categories $774. It also identifies $60,000 of grants receivable and $32 of other assets. [FY2025 Schedule O](https://projects.propublica.org/nonprofits/full_text/202621259349200012/IRS990ScheduleO) The repair-supply amount is not the total cost of repairing equipment: it excludes whatever labor, space, donated parts or contractor effort belongs to that activity. Dividing it by recipients would not yield a defensible marginal repair cost.
+
+### 2.3 Reported service activity
+
+| Activity description | FY2023 | FY2024 | FY2025 |
+|---|---:|---:|---:|
+| Reported recipients used as modeling floor | 8,934 | 9,770 | 11,000 |
+| Reported item floor | Over 25,000 | Over 42,000 | Over 45,000 |
+| Equipment donors | 4,817 | 4,521 | Approximately 4,700 |
+| Volunteer hours | Not established here | Not established here | Over 5,400 |
+
+These rows are source-reported service counts, not observed unique clinical completions. FY2024 and FY2025 use “more than” recipient language. The model deliberately uses the stated floors rather than inventing a more exact total. Nor does it infer a unique count by dividing items by an assumed number of items per person. That would simply hide a second unsupported assumption inside an apparently precise denominator.
+
+The FY2023 narrative also reports 13,750 units of direct services. Equipment donors plus recipients equal 13,751, almost the same number. This numerical proximity is a useful question for reconciliation, not proof of the unit definition. It suggests that a broad service-unit count should not be added to recipient counts as another population. We have not resolved the one-unit difference or demonstrated whether the totals count visits, transactions, agency pickups or distinct people. The report keeps this ambiguity visible.
+
+### 2.4 Assets, restrictions and liquidity
+
+The new filing improves the dating of financial information but does not establish current September 2026 cash availability. Cash/savings/investments are a combined balance-sheet line; they may include balances committed to future work. Grants receivable are not cash already received. Net assets are not automatically a discretionary reserve. The 990-EZ presentation does not supply the complete restricted-fund and board-designated commitment schedule needed for a marginal funding assessment.
+
+It is nevertheless important to acknowledge the scale of the balances rather than dismiss them. FY2025 cash/savings/investments equal about 3.49 times FY2025 expense. That is a retrospective ratio, not a claim of 3.49 years of current runway. The new surplus and receivables are relevant counterevidence to a simple “small budget means urgent cash gap” narrative. A reasonable donor should ask how existing balances are allocated and what new funding would accelerate beyond those commitments.
+
+The FY2023 net-asset reconciliation includes $942 of unrealized investment gains, and FY2025 includes $360. These explain why changes in net assets need not equal operating surplus exactly. [FY2023 Schedule O](https://projects.propublica.org/nonprofits/full_text/202401359349201805/IRS990ScheduleO) They are not additional health spending or donor leverage. Preserving accounting identities helps avoid mistaking investment valuation changes for operating resources newly deployed.
+
+## 3. What do we know about useful, safe and unique use?
+
+### 3.1 Distribution versus unique recipients
+
+Why it matters: the model’s health effects accrue to people over time, not to administrative transactions. If a person returns monthly for supplies, counting twelve visits as twelve year-long improvements would overstate benefit. If an agency collects for several clients, counting the collector as one person could understate reach. The direction of error is not knowable merely from the existence of proxy pickup.
+
+The earlier online intake instrument distinguishes the person picking up from an intended user and asks agencies how many clients they are collecting for. It also asks about insurance and reasons for using the service. That is a potentially useful measurement framework, but the web-cached form is not a response dataset, and its current native implementation was not verified. We do not claim that all recipients completed it or that identifiers were reconciled across sites. [Intake instrument](https://www.recares.org/liability/)
+
+Our central model retains a 65% unique-fraction judgment; other worlds use 50% or 80%. This is not a measured duplicate rate. The parameter can be understood as converting reported-recipient equivalents into distinct annual recipient need-episodes, with repeat supplies folded into the relevant episode’s finite duration. It should not be interpreted as proving that exactly 35% of reported people are duplicates. A real deduplication study might produce a different answer, and the model should then be updated transparently.
+
+An appropriate monitoring improvement would use a privacy-preserving end-user identifier, distinguish collectors from beneficiaries, record device class and track whether a visit supplied a new need or replenished an existing one. That information would help establish the denominator without requiring publication of private recipient records. We have not contacted the organization or asked for such data; this is an unsent research specification.
+
+### 3.2 Safe use is not guaranteed by a waiver
+
+Why it matters: a useful device for one person can be unsuitable for another. The model therefore includes a safe-use factor before positive benefit and subtracts a separate harm allowance. These terms should not be confused. A device that goes unused contributes no positive health benefit; a device that causes an incremental injury can contribute negative health. A recipient can experience both some useful function and some harm.
+
+The public instructions disclose inspection efforts but disclaim clinical advice and quality guarantees. A signed statement that a recipient has inspected an item is not independent evidence that it is safe for the person’s diagnosis, strength, balance, home environment or transfer technique. On the other hand, a liability disclaimer is not evidence that injuries occur frequently. We treat it as a limit on the service we can verify, not an allegation against ReCARES.
+
+WHO guidance emphasizes individual assessment, fitting, training and follow-up by trained personnel. [WHO wheelchair provision guidance](https://www.who.int/publications/i/item/9789240074521) That supports scrutinizing the service around a device, but does not supply a percentage to insert for ReCARES. The model’s central 85% successful safe-use assumption for mobility and bathing is therefore a prior, not a guideline compliance score. A generic volunteer orientation should not silently be treated as equivalent to a clinical rehabilitation service.
+
+### 3.3 Why failure and non-use need direct attention
+
+There are several ways equipment may fail to yield the modeled benefit without being defective. The person may already have an adequate aid; their need may resolve quickly; a caregiver may be unable to use the device; a home layout may prevent use; or another supplier may provide a better device shortly afterward. Some of these failures belong in unmet access, some in safe/useful use, and some in duration. The model needs clear boundaries to avoid applying the same reduction twice.
+
+We define unmet access as the chance that ReCARES changes access relative to the available alternative at the point of need. Safe use covers practical suitability and sustained enough use to support the modeled benefit. Duration then captures how long the incremental difference lasts among those qualifying cases. This is an abstraction, not a patient-level survival model. If future data mix these concepts—for example reporting “still using” without asking whether a replacement would otherwise exist—we should not label that duration evidence as fully causal.
+
+An older survey of 227 adults reported 29.3% of assistive devices abandoned, with variation by device and timing. [Phillips and Zhao](https://pubmed.ncbi.nlm.nih.gov/10171664/) It is a warning against assuming universal use, not a modern ReCARES abandonment rate. Device-level lifetime abandonment is different from person-level useful use during a short incremental interval. We do not insert 70.7% as an evidence-based safe-use coefficient or pretend that this historical survey measures the local service.
+
+### 3.4 Geography and who ultimately benefits
+
+The model’s central Bay fraction is 95%, with SF at 30% of total modeled health. Other worlds use different nested shares. These are informed only by the local service setting and uncertainty, not a residence survey. Current open eligibility makes that uncertainty relevant. A helper can collect for someone elsewhere, and an agency may redistribute supplies beyond the immediate catchment.
+
+We do not transform a site-hour ratio into a residence fraction, and we do not infer zero non-Bay benefit because the organization describes itself as local. The correct numerator is incremental health among Bay residents under the selected geographic definition. A future geographic audit should use intended-user residence where available and preserve unknown values instead of assigning every missing record to the pickup site.
+
+The same logic applies to equity claims. A mission to serve people with financial constraints is not a measured income distribution. Open access may reach people with urgent unmet need and people seeking convenience or environmental reuse. Both can be valid service purposes. Only the first necessarily establishes a health-access counterfactual, and even there the magnitude depends on the available alternatives.
+
+## 4. How strong is the clinical bridge?
+
+### 4.1 The question the evidence needs to answer
+
+The strongest version of the ReCARES hypothesis is not that assistive equipment is generally helpful. It is that a meaningful fraction of people served obtain a useful aid sooner or more reliably than they otherwise would, and that the difference produces measurable health improvement for a finite period. Each clause matters. A trial of a comprehensive rehabilitation service does not isolate the effect of a donated object. A study comparing two kinds of aid does not estimate the effect of access versus no access. A before-and-after improvement can reflect recovery, treatment or selection rather than equipment provision.
+
+Our review separates three kinds of findings: preference-weighted health utility, other health or functional measures, and satisfaction or participation outcomes. All can be important, but they cannot be swapped numerically. QALYs require a health-utility difference integrated over time. A ten-point mobility improvement, a favorable testimonial or a 0–100 self-rated health score is not automatically 0.10 utility. There may be validated mappings in some contexts, but no such mapping has been established for the mixed ReCARES service here.
+
+The following evidence is deliberately balanced. It includes functional improvements, null quality-of-life findings, limited-use evidence and safety concerns. None was selected because its coefficient produces a convenient rank. Where only a primary abstract was reviewed, that limitation is stated; a trial title or a protocol is not treated as a full results paper.
+
+### 4.2 Walking aids after an emergency-department assessment
+
+A 2025 randomized trial by Polesel and colleagues enrolled 75 older adults in Brazil, with mean age about 81. Participants received a walking-aid intervention involving physiotherapist assessment and training, with or without telemonitoring, or control care. At 90 days, walking aid versus control improved life-space mobility by 12.77 points, with a 95% interval of 1.06 to 24.54. However, the reported 0–100 health-rating comparison was −1.17, interval −7.34 to 4.99, not a significant between-group benefit. That rating is not a preference-weighted utility. [Primary trial](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2841747)
+
+Our interpretation is that a well-delivered aid service can improve function without establishing the utility coefficient used in our model. It would be wrong to claim the trial showed no useful benefit at all. It would also be wrong to take a within-group improvement or the mobility-score difference and convert it directly to QALYs. The trial’s selection and training are material differences from a broad, open-access reuse service. Its 90-day follow-up does not verify six months of incremental benefit for a typical ReCARES mobility recipient.
+
+### 4.3 Rollator use in COPD: sustained benefit is not automatic
+
+Gupta and colleagues randomized 31 people after COPD rehabilitation to a rollator or usual care for eight weeks. The abstract reports acute walking improvement with the device but no significant between-group improvement in the Chronic Respiratory Questionnaire or home walking capacity. Eight of eighteen rollator recipients used it less than three times per week. [Primary trial abstract](https://pubmed.ncbi.nlm.nih.gov/17035442/)
+
+This is evidence against assuming that provision reliably yields sustained quality-of-life gains. It is not evidence that every infrequently used aid is useless: a device might be valuable for occasional necessary trips. The reported use frequency is also not a permanent abandonment rate. COPD after rehabilitation is a specific population, so we do not apply its null result mechanically to every mobility aid. The appropriate consequence is continued uncertainty about use and effect, with explicit null worlds and shorter-duration alternatives.
+
+### 4.4 Powered wheelchairs: benefits beyond a simple utility measure
+
+Davies and colleagues followed a cohort receiving powered indoor/outdoor chairs. Sixty-four people were assessed initially and 51 completed follow-up about three months later. The abstract reports no significant EQ-5D health-state improvement, while some visual analogue ratings of mobility, quality of life and pain/discomfort improved. [Primary cohort abstract](https://pubmed.ncbi.nlm.nih.gov/12623619/)
+
+This reinforces a distinction rather than resolving it. People can report meaningful benefits that a generic health measure does not capture well. But an uncontrolled cohort cannot establish a causal utility gain, and a chosen powered chair is not representative of all ReCARES items. We therefore do not interpret the null EQ-5D finding as proof of zero social value, nor reinterpret the positive ratings as a quantified QALY effect. The report’s outcome metric is narrower than everything recipients might reasonably value.
+
+### 4.5 A more comprehensive wheelchair service in Indonesia
+
+A cohort study evaluated wheelchair provision following the WHO eight-step service approach, comparing 142 recipients with 167 people on a waiting list. It reported improvements in selected quality-of-life domains and satisfaction measures for some groups. The study did not supply a preference-utility coefficient for our model. It was nonrandomized, and the service involved more than distributing an unassessed item. [Primary full text](https://pmc.ncbi.nlm.nih.gov/articles/PMC4722611/)
+
+The useful lesson is that service quality and local access conditions are central to the effect. It is not a warrant to transfer an effect from a setting with large unmet wheelchair needs to an unknown mixture of Bay recipients, some of whom have alternatives. Nor does it identify the extra benefit of cleaning or redistributing a used chair compared with standard clinical provision. We use it to explain a plausible mechanism and its dependencies, not to establish a numeric multiplier.
+
+### 4.6 Bathing adaptation: a plausible utility gain with a poor device match
+
+The BATH-OUT feasibility randomized trial studied 60 older adults receiving expedited versus routine major bathing adaptations. At three months, the adjusted EQ-5D-5L change difference was 0.09, with a confidence interval from −0.003 to 0.18. Mean adaptation cost was approximately £4,878. The intervention was an installed level-access shower, not a donated shower chair or transfer bench. [Primary trial](https://link.springer.com/article/10.1186/s12889-018-6200-4)
+
+The result shows that meaningful utility improvement from better bathing access is possible, but its uncertainty includes zero and the intensity of the intervention differs substantially. A shower conversion changes the physical environment; a portable aid may or may not solve the same barrier. We retain a bathing pathway but do not label its 0.03 central utility and half-year duration as estimates from this trial. Transferring a point estimate while omitting the service difference, interval and waiting-time design would produce false precision.
+
+The later BATH-OUT-2 funder findings cover 296 randomized adults and report a 2.5-point SF-36 physical-component advantage at first follow-up, with interval 0.8–4.2. The funder also reports higher QALYs across the trial, but does not give a numeric QALY difference on the page inspected; attrition was higher than expected and worse in controls. [NIHR findings](https://sscr.nihr.ac.uk/research/care-economics/bath-out/) This strengthens the plausibility of expedited major adaptations, while leaving the portable-aid transfer unresolved. We do not treat the 2024 protocol as results or translate SF-36 points into utility.
+
+### 4.7 Knee scooters illustrate both short-term benefit and harm
+
+A multicenter randomized knee-scooter study compared supplementary scooter use with forearm crutches after lower-limb injury or surgery. Its analysis included 88 respondents after recruitment of 100 participants, and the mobility-aid period was generally six to eight weeks. Participants using scooters reported better function and some quality-of-life outcomes; the abstract reports SF-36 values rather than a directly usable incremental QALY estimate. [Primary study](https://pubmed.ncbi.nlm.nih.gov/38932517/)
+
+This is a closer example of finite temporary need than a lifetime disability model, but it compares devices, not donation access with no alternative. It may support a positive short-term effect for a subset of recipients without supporting six months for all mobility equipment. We do not add its results as a separate pathway on top of the existing mobility category. That would double count any scooter recipients already included there.
+
+Safety cannot be inferred from satisfaction alone. In a prospective scooter cohort, 118 users were analyzed, 44 reported falls and 18 reported injuries. There was no randomized alternative-device comparison establishing how many injuries were caused by scooter access rather than the underlying condition or another aid. [Primary safety study](https://pubmed.ncbi.nlm.nih.gov/37658457/) We do not apply these percentages to ReCARES or treat every fall as a QALY loss. They justify examining harms and training rather than assuming a free aid is risk-free.
+
+### 4.8 What the evidence does and does not change
+
+No new study in this pass supplies a locally calibrated utility-duration pair for ReCARES. The new financial information is much stronger than the new clinical calibration. Our preferred displayed model therefore retains the previous clinical priors and clearly labels the result as a continuity benchmark. We show a lower shared clinical family prominently, instead of silently making the favorable old family look evidence-derived or selecting a replacement because of its effect on the threshold.
+
+This choice is not an assertion that the earlier priors are the only reasonable ones. A skeptical analyst might prefer shorter durations, lower utilities or more null weight. Another might believe unmeasured independence benefits justify a positive tail. The right response is to expose the disagreement and its numerical consequences. A probability-weighted estimate can organize judgment; it cannot turn disagreement into statistically calibrated confidence when the probabilities themselves are judgments.
+
+## 5. The whole-gift model, step by step
+
+### 5.1 Starting with the right cost denominator
+
+The revised cash benchmark divides FY2025 whole expense of $72,583 by 11,000 reported-recipient equivalents. This is **$6.598 per reported equivalent**. Comparable ratios are $9.262 for FY2023 and $11.382 for FY2024. These ratios are not costs per clinical success, and the underlying counts are not verified unique patients. They are starting points for a model with additional filters, not the final impact estimate.
+
+A $10,000 gift divided by that benchmark gives 1,515.5 baseline-equivalent recipient units. The central throughput factor of 0.50 reduces this to 757.8 additional reported-recipient equivalents. The 0.65 unique-fraction assumption then reduces it to 492.5 incremental unique need-episodes. These are expected fractional quantities in a model, not a promise to serve 493 identified people. Their precision is computational only; the underlying assumptions do not merit four significant figures in donor prose.
+
+The throughput factor represents the share of historical average output that an additional unrestricted gift produces after allocation, capacity limitations and financing displacement. It does not measure recipient unmet access. A dollar can fund an additional distribution that has no health increment because the recipient already had an alternative; that is handled later. Conversely, a recipient can have substantial unmet need but receive no additional service because cash is not the operational bottleneck.
+
+### 5.2 The central clinical calculation
+
+For each incremental unique need-episode, the central model assigns a 20% mobility share, 15% bathing/transfer share and 65% supplies/other share. Within each category it applies unmet access, successful safe use, utility and duration. The calculation is:
+
+`492.5396 × [(0.20×0.50×0.85×0.05×0.50) + (0.15×0.40×0.85×0.03×0.50) + (0.65×0.30×0.90×0.005×0.08)]`
+
+This produces 1.4580 gross QALYs. A separate harm allowance of 0.0001 QALY per unique episode subtracts 0.04925, leaving 1.40876 net QALYs. Applying the central 95% Bay share gives **1.33832 Bay QALYs per $10,000**, or **$74,720 per 10 Bay QALYs**. The SF share gives 0.42263 SF QALYs, but SF is a subset rather than an additional benefit to add to Bay.
+
+The clinical terms should be read conditionally. The mobility utility assumption is not assigned to every item. It applies after the model has filtered for mobility need, unmet alternative access and successful safe use. The duration of half a year is the extra useful period before alternative access or need resolution, not the item’s engineering lifespan. This distinction prevents a durable object from generating perpetual benefits in the calculation.
+
+The central harm allowance is small, but not an empirical injury estimate. It aggregates possible incremental adverse consequences across the modeled recipient portfolio. It is not conditional on the positive safe-use filter, because that would remove harms from the people least likely to use equipment safely. The separate harm scenario tests a more adverse outcome without assigning simultaneous positive clinical gains. Future evidence could justify a different harm structure; the current coefficients remain judgments.
+
+### 5.3 The five worlds and their weights
+
+| World | Subjective weight | Bay QALYs per $10,000 | Dollars per 10 Bay QALYs |
+|---|---:|---:|---:|
+| Harm | 15% | −0.3410 | No positive return |
+| Null | 35% | 0 | No positive return |
+| Cautious positive | 20% | 0.00789 | $12.67M |
+| Central | 25% | 1.3383 | $74,720 |
+| Favorable | 5% | 12.8570 | $7,778 |
+| **Weighted expectation** | **100%** | **0.92786** | **$107,774** |
+
+The weighted estimate is calculated by averaging signed health quantities, then dividing cost by the resulting expected health. It is not an average of the five prices. Null and harmful worlds cannot be represented by a finite positive cost-per-QALY figure, but they still enter expected health. Dropping them from an average would materially overstate the model’s implications.
+
+The scenario weights were inherited from the published model. This review did not increase favorable weight after finding lower expenses. The favorable world bundles stronger throughput, greater uniqueness, more clinically relevant mix, more unmet access, safer use and larger or longer clinical gains. Such correlation is possible, but it is not empirically established. Readers should not interpret five hand-selected worlds as a fitted probability distribution over all possible futures.
+
+### 5.4 Why the favorable tail deserves special attention
+
+The favorable world contributes 69.283% of expected net Bay health. This ratio is unchanged by the source-only financial update because the updated cash/output ratio scales all worlds proportionally. The improved headline therefore does not reduce the model’s dependence on favorable clinical and operational assumptions. Removing the favorable world and renormalizing the remaining weights produces 0.30001 Bay QALYs per $10,000, or $333,320 per 10 Bay QALYs.
+
+This does not mean the favorable world must be deleted. Uncertain high-impact possibilities can legitimately affect expected value. It means that the reader should know which possibility is doing the work. The strongest challenge is not simply “the model has uncertainty”; it is whether the joint favorable assumptions describe a plausible marginal recipient portfolio after current funding and alternatives. A small change to that judgment can move the weighted result even if all verified financial numbers remain unchanged.
+
+The cautious-positive world is also informative. It contains positive benefits, but after modest use, clinical effect and harm assumptions its price is far above the target range. Thus the model’s apparent competitiveness is not robust across all positive-benefit narratives. A real donor who wants evidence of consistent benefit rather than an expected-value argument might reasonably require stronger validation than this model offers.
+
+### 5.5 Old versus new: exactly what changed
+
+| Specification | Central Bay price | Weighted Bay price |
+|---|---:|---:|
+| Published FY2024 base | $128,892 | $185,910 |
+| Change only expense to FY2025 | $84,127 | $121,343 |
+| Change only recipient floor to FY2025 | $114,480 | $165,122 |
+| Change both to FY2025 | $74,720 | $107,774 |
+
+The two one-input cases are bridge calculations, not preferred mixed-year estimates. They show the separate arithmetic contributions. The revised base uses matching FY2025 expense and activity. The full model output also records updated program expense, items, donors and balances, but those contextual fields do not mechanically change health output beyond the expense/recipient ratio.
+
+The exact identity is:
+
+`new price = old price × (72,583 / 111,205) × (9,770 / 11,000)`.
+
+This identity is independently tested. The old model is retained as a frozen sibling module and its numerical outputs are checked against the earlier accepted values. No earlier result is erased or relabeled as if it had used the new source. The source change is favorable; the funding interpretation remains cautious. Both facts can be true at once.
+
+### 5.6 Clinical and throughput alternatives
+
+| Diagnostic on FY2025 base | Central Bay price | Weighted Bay price |
+|---|---:|---:|
+| Retained clinical family | $74,720 | $107,774 |
+| Half positive-pathway utility | $154,855 | $232,849 |
+| Half positive-pathway duration | $154,855 | $232,849 |
+| Half both utility and duration | $333,904 | $554,748 |
+| Half throughput in every world | $149,441 | $215,549 |
+| Lower shared clinical family | $263,830 | $294,028 |
+
+The utility and duration tests leave the harm allowance unchanged, so their price effects are not exactly proportional. Halving throughput scales both positive effects and harms, so it doubles price. These distinctions are intentional. A diagnostic should modify the concept being tested, not quietly change every unfavorable assumption at the same time.
+
+The lower shared clinical family uses, in the central world, mobility utility 0.03 for 0.25 years, bathing utility 0.02 for 0.25 years, and supplies utility 0.002 for 0.05 years. Corresponding cautious and favorable values are included in the machine-readable data. This family came from a prior cross-organization comparability exercise; it is not validated specifically for ReCARES or the other organization. It shows that different reasonable clinical judgments can materially change the result while leaving accounting, geography and weights intact.
+
+We do not claim these tests span the full uncertainty. The recipient mix could be different; marginal cash could have nearly no effect; some donated equipment could substitute for a readily available alternative; or unmeasured clinical benefits could be larger. The purpose is to make the sensitivity concrete, not to label a handful of settings a complete confidence interval.
+
+## 6. Is the low cash cost also a low resource cost?
+
+### 6.1 Cash expense is real, but incomplete
+
+The filing’s whole expense is the correct denominator for a cash-budget benchmark. It is not necessarily the total value of resources used to deliver the service. Donated equipment, volunteer labor, recipient and donor transport, household installation, clinical advice supplied elsewhere, and publicly financed infrastructure can all matter. The existence of these complements does not destroy the case for a cash donation: a small coordination expenditure can unlock otherwise idle resources. It does mean the comparison must be labeled honestly.
+
+The opportunity cost of donated equipment is not automatically its new retail price. A used aid might otherwise be discarded, stored indefinitely, sold, returned to an insurer or given to another person. Its economic cost depends on that alternative use. The original purchase may be sunk, but a scarce usable item still has an opportunity cost if another recipient would benefit from it. Neither zero nor full retail replacement value is universally correct.
+
+Similarly, volunteer time can be both willingly donated and economically valuable. A donor-cash metric can properly exclude an out-of-pocket wage that is not paid, while a societal-resource metric should consider what else those volunteers could do. Replacing volunteer time with paid staff is a different intervention and may require different funding. This report does not pretend to know the market replacement wage or the volunteers’ opportunity cost.
+
+### 6.2 What the newly reported volunteer hours allow us to test
+
+The FY2025 filing reports over 5,400 volunteer hours. Using the stated floor, hypothetical valuations of $20, $35 or $50 per hour add $108,000, $189,000 or $270,000 to annual resources. These are arithmetic illustrations, not wage estimates or a claim that the donor must finance these amounts. Applying them to the same annual output benchmark yields weighted prices of approximately $268,138, $388,410 and $508,682 per 10 Bay QALYs.
+
+The calculation shows why cash leverage and full resource leverage should not be confused. It does not establish that the added cost would be incurred at the margin. Additional recipients may use spare volunteer capacity, or expansion may require substantially more time than the historical average. The observed hours are a starting point for sensitivity, not a complete marginal labor-production function.
+
+These resource prices still omit equipment and other complements. They should not be relabeled complete societal cost simply because one missing input was added. Nor should we add a dollar value for volunteer labor to both the cash denominator and a second external-resource surcharge in the same result. The machine-readable diagnostics each state exactly which illustrative resource charge is included.
+
+### 6.3 Equipment-value stress tests
+
+As a separate exercise, charging $10, $50 or $100 of equipment opportunity cost per reported-recipient equivalent yields weighted prices of approximately $271,107, $924,439 and $1,741,103. These scenarios deliberately do not claim an observed average device value. They also do not add a retail value for every one of 45,000 items, which would be especially misleading when units include heterogeneous supplies.
+
+The useful question is not whether one can make the ratio pass or fail by choosing a charge. It is whether the alternative use of the donated portfolio is material enough to change the comparison a donor cares about. If most goods would otherwise be discarded and volunteer capacity is genuinely spare, the donor-cash lens may capture a real coordination opportunity. If a marginal gift mainly reallocates scarce devices from equally needy users, the incremental social benefit could be much smaller even though recipient satisfaction remains high.
+
+This distinction also prevents double counting. We do not add the recipient’s avoided purchase expenditure as a QALY benefit, then separately count the device’s health effect as if the entire saving financed new health. Financial relief and environmental benefits are valid topics for a broader welfare analysis, but require their own causal accounting. The present health model leaves them unquantified rather than forcing them into a convenient scalar.
+
+## 7. What could an additional gift actually change?
+
+### 7.1 The strongest plausible funding case
+
+The best case for an ordinary gift is a coordination bottleneck: suitable donated equipment and people with unmet need already exist, but limited organization, space, repair effort or matching capacity prevents a useful transfer. In that case, a modest cash expenditure could unlock a larger stock of donated resources. The current small cash budget and substantial reported service activity make this a reasonable hypothesis worth investigating. The public operational constraints keep it from being merely a generic charitable narrative.
+
+There are several distinct possible increments. More intake capacity could prevent suitable donations being rejected. Better inventory information could reduce wasted visits and connect scarce goods to appropriate users. Paid coordination could make volunteer work more productive. A repair process could return usable equipment to service. Transport assistance could make an otherwise completed match usable for someone unable to collect it. These mechanisms are not interchangeable, and none is presently a verified donor offer in the material inspected.
+
+The model’s throughput assumption blends these possibilities into a single response factor. That is an economical way to express uncertainty at an exploratory stage, but it is not a substitute for selecting an actual marginal project. For a concrete donation decision, we would prefer a dated plan that names the constraint, cost, available complementary resources and expected additional safe uses. Without that, the model can estimate a conditional opportunity but cannot verify what the next dollar purchases.
+
+### 7.2 The strongest case against additional cash being decisive
+
+The opposing case is also plausible. A small unrestricted gift may add to already adequate balances, replace another donor’s support, fund general administration without changing throughput, or encounter an inventory, transport or clinical-fit constraint it cannot solve. The FY2025 surplus and higher balances make this possibility important. They do not prove it: a nonprofit can hold substantial assets while facing restrictions, future commitments or a valuable expansion opportunity. The missing fact is the allocation of those resources against a current plan.
+
+The current inventory signals also argue against a single cash-only story. If a site has too much of one category and too little of another, accepting more donations overall may not improve the clinically relevant mix. If appropriate equipment is available but recipients cannot collect it, a larger stock may not help. If safe matching requires expertise, adding general volunteer hours may not provide the necessary skill. A funding assessment should distinguish volume growth from growth in useful, otherwise-unavailable access.
+
+We therefore do not infer a funding gap from the statement that operating costs exist. Rent must be paid, but that does not establish that a new donor prevents closure. We also do not infer zero marginal value from a reserve ratio. Both shortcuts would bypass the same unanswered question: what changes in the counterfactual with and without this particular additional gift?
+
+### 7.3 Public and other-funder baseline
+
+A StopWaste memorandum’s indexed grant table identifies a $25,000 FY23–24 ReCARES training project called DME Donor Stop. The description concerns preparing human resources for donation operations. The direct PDF was not freshly rendered successfully in this review, so this remains a primary indexed-table finding with a retrieval qualification. [StopWaste grant memorandum](https://www.stopwaste.org/sites/default/files/WMA%209.25.24%20Grant%20Memo.pdf) It is not a current price for additional training, a verified unspent balance, or evidence that a renewal has been lost.
+
+This historical funding matters mainly as a counterfactual check. If a new gift is proposed for training, the donor should understand what the earlier grant already paid for, whether those activities continue, and what genuinely additional work remains. The grant should not simply be subtracted from a new gift or added again to annual expense without a period and allocation reconciliation. The same applies to named sponsors: a logo confirms a relationship more readily than it establishes an amount, renewal date or marginal commitment.
+
+The latest filing’s grants receivable is another reason to request a funded-baseline schedule. A receivable can represent money committed but not yet received; it need not be unrestricted or available for the same activity a new donor might fund. We cannot tell from the aggregate line whether it supports operations, a particular site, a future project or something else. The model leaves verified marginal funding room null rather than treating a balance-sheet label as a spending plan.
+
+### 7.4 Existing equipment coverage and recipient alternatives
+
+Medicare Part B can cover medically necessary provider-ordered DME, subject to eligibility, supplier and cost-sharing conditions. Its current walker page includes rollators and repairs to owned walkers. [CMS DME coverage](https://www.medicare.gov/coverage/durable-medical-equipment-dme-coverage), [walker coverage](https://www.medicare.gov/coverage/walkers). This establishes that publicly financed alternatives exist for some people; it does not establish timely access for every ReCARES user. We have not measured the local payer mix or the time recipients would wait under those alternatives.
+
+The distinction between formal coverage and realized access is central. A covered item may still be delayed, require a prescription, involve a supplier problem or create an unaffordable payment. A person without a practical alternative may benefit even in a system that nominally covers the category. Conversely, a person who can obtain an equivalent item promptly through insurance or ordinary purchase may gain convenience or financial savings without the modeled health increment.
+
+Our unmet-access priors are intended to represent that difference. They are not inferred from being older, disabled, low-income or a ReCARES visitor. No public source reviewed supplies a reliable distribution of alternative acquisition times by device class. A future follow-up should ask what the person would have used, how soon it could have arrived, and whether that alternative was realistic—not merely whether they appreciated receiving something free.
+
+### 7.5 Three unsent questions that would most improve a donor decision
+
+1. **What is the current funded operating plan?** Please reconcile cash, investments, receivables, restrictions and committed spending, explain the FY2025 contractor-cost decline, and identify the additional work a $10,000 unrestricted gift would enable beyond existing funds and expected grants.
+2. **Which operational constraint is binding for useful access?** For the proposed increment, specify equipment classes, suitable inventory or repair backlog, volunteer/clinical/transport complements, cost, timing and additional completed safe transfers—not merely additional visits or donations collected.
+3. **What happens after the item leaves?** What fraction of recipients are distinct end users, use the item safely, and lack a prompt alternative; how long does that incremental use last; and what adverse events or non-use are observed? A small, well-defined follow-up may be more informative than a larger unqualified recipient count.
+
+These questions have not been sent. They are a research agenda, not a claim that the organization has failed to answer them. No outreach or private monitoring review was undertaken for this report.
+
+## 8. Qualitative assessment and the strongest alternative
+
+### 8.1 What public transparency supports
+
+ReCARES publicly explains practical limitations rather than promising every item to every visitor. Its current rules distinguish availability, space and categories, and its filings report financial and service activity. These are useful features for an evaluator. They allow us to examine a real delivery process and identify where the model may fail. The availability of original filings also enabled a material update when cached summaries were stale.
+
+There are limits to that assessment. We have not evaluated how accurately internal records are collected, whether the organization proactively reports errors to funders, or how it responds to substantive questions. Public-source research does not justify assigning a “standout responsiveness” rating. Nor does an older lower-bound activity statement on an about page establish misleading conduct; it may simply be dated copy. The correct response is to use better-dated original evidence and disclose the discrepancy, not infer motives.
+
+The current native site differs from web-cached representations. Some old paths now fail while current paths describe a redesigned service. This is a source-maintenance issue for our own research as well as for the organization. We should not treat a cached old form, obsolete job page or historical news snippet as a verified current operating commitment. The source ledger marks where native current pages controlled the assessment and where an older source was retained only for context.
+
+### 8.2 Recipient feedback without overclaiming
+
+Recipient experiences can identify valuable functions that a generic utility instrument misses. A user may describe greater independence, easier caregiving or a successful match. Such testimony can guide questions and help understand why the service matters. It cannot by itself establish how common the experience is, how much improvement was caused by the service, or what would have happened without it.
+
+For this reason, we do not build the model from selected testimonials or use positive reviews as proof of the safe-use fraction. A systematic follow-up with a documented response rate would be more informative, particularly if it included people who did not find equipment or stopped using it. An evaluator should actively seek those less visible experiences rather than interpreting the absence of complaints on a public website as evidence of no harm or failure.
+
+Caregiver benefits are another plausible omitted area. A transfer aid can change the effort and stress involved in helping someone. But we do not automatically add a caregiver QALY for every recipient because the effect, number of caregivers and duration are unknown and may overlap the recipient pathway. A broader evaluation could measure this explicitly. Until then, it remains an unquantified possibility rather than an unexplained positive adjustment.
+
+### 8.3 The strongest alternative to the current model
+
+The strongest methodological rival is a narrower clinically supported access service: fewer recipients, higher apparent cash cost, but verified assessment, fitting, training, delivery and follow-up. Such a service might generate more health per successful case and fewer unsuitable distributions. ReCARES’ low cash cost is not enough to prove superiority over it, because the clinical product may differ materially. Conversely, adding clinical intensity where it is unnecessary could waste resources. The comparison requires matching need and service, not simply comparing budgets.
+
+The existing shared-clinical-family diagnostic is useful for this reason. It shows that some of the apparent difference between equipment-reuse organizations can come from different assumptions about utility and duration rather than independently documented clinical differences. Harmonizing that family does not harmonize every other input, and it does not prove equal populations. It is a test against silently giving one charity more optimistic clinical credit without local evidence.
+
+For a Bay-health donor, the key excluded alternative is also the recipient’s ordinary access route: an insurer, supplier, family purchase, another reuse service or no effective aid. The model’s benefit is only the difference from the best realistic alternative, not the difference from an imagined world with no health system. A compelling marginal project would identify people for whom those alternatives genuinely fail and deliver the right aid promptly. The public record does not yet show that selected cohort at a level sufficient for a confident recommendation.
+
+## 9. Decision, research priorities and revision control
+
+### 9.1 Current decision
+
+The updated cash/output evidence keeps ReCARES worth serious consideration. It is a real small-budget service with a plausible access mechanism and a large reported redistribution volume relative to expense. Under the retained clinical and funding priors, the updated estimate is competitive with the project’s exploratory Bay-health thresholds. That is a reason to investigate the bottleneck, not a reason to skip it.
+
+We retain **HOLD for an actionable giving recommendation**. The strongest unresolved issues are marginal capacity despite existing funding, distinct end-user counts, device-class mix, useful safe use and incremental duration. The new balance sheet does not solve the funding question, and the new activity total does not solve the causal one. Our model continues to return null for measured QALYs, measured unique recipients, measured geographic shares and verified marginal funding offer.
+
+An unfavorable result under alternative assumptions should remain visible alongside the preferred continuity estimate. We do not need to remove a charity merely because it has uncertainty, and we should not promote it merely because a favorable tail improves expected value. The appropriate level of confidence is constrained by what the evidence actually identifies. This report provides a transparent model and a decision-relevant evidence agenda, not a clinical effectiveness claim.
+
+### 9.2 What could change the conclusion
+
+A priced incremental plan could materially improve the funding case even without a randomized local trial. It would need to distinguish already funded work from additional work, describe the relevant complementary resources, and provide a credible link to more useful access. Actual device-class counts and deduplicated recipients could change the health denominator in either direction. A short follow-up could constrain use, alternative access and duration, although a simple before-and-after health survey would still not fully identify causality.
+
+Conversely, evidence that most marginal distributions replace promptly available alternatives, remain unused, or involve low-health-value surplus categories would weaken the estimate. A finding that cash mainly accumulates without a deployment plan would weaken the additional-gift case. A reconciliation showing that FY2025 expenses omit temporarily deferred work could raise the cost benchmark. None of these outcomes should be preselected; the purpose of follow-up is to distinguish them.
+
+The most useful future model would be a small number of specific recipient pathways with observed volumes and service processes, not an ever larger list of speculative benefits. For example, a documented temporary mobility-gap pathway could use a finite waiting-time distribution, a clear alternative and verified fitting/use. That would be more informative than counting all donations as equally effective while appending a generic uncertainty paragraph.
+
+### 9.3 What this review deliberately does not claim
+
+- No measured reduction in hospitalization, institutionalization, falls, mortality or caregiver illness is attributed to ReCARES.
+- No guarantee of equipment safety, clinical suitability, availability or delivery is implied.
+- No new-device retail value, avoided waste weight, testimonial score or volunteer satisfaction is converted into QALYs.
+- No current unrestricted reserve balance or additional-gift tranche is verified.
+- No inference is made that lower FY2025 contractor expense reflects either proven efficiency or proven loss of service quality.
+- No previous research timer, prior model result or published recommendation is rewritten retrospectively.
+
+### 9.4 Reproducibility and source record
+
+The accompanying structured data contain the three-year finances, full scenario matrices, preferred result, all one-input bridge calculations, clinical alternatives and resource benchmarks. The frozen original model is included separately. The test suite checks independent arithmetic, exact original numerical parity, exact saved-output parity, financial identities, signed/null behavior and invalid-input rejection. A passing test establishes computational consistency, not validity of the clinical priors.
+
+Source dates are stated at their actual level of precision. Original filing submission dates are preserved; undated current pages are labeled undated; access dates are not publication dates. The latest-three-year claim refers to the original filings located in this pass, not a guarantee that no amended filing or private audited statement exists. No private beneficiary data, donor communication or unpublished clinical dataset was available.
+
+The current report uses the GiveWell reference as a structural guide: explain delivery, interrogate monitoring, separate qualitative judgment and examine cost-effectiveness. It does not transfer New Incentives’ facts, adjustment percentages, evidence strength or organizational ratings. A long report is useful only insofar as it makes these distinctions clearer. The decision remains limited by the evidence, not improved merely by the number of words.

@@ -7,7 +7,7 @@ const price=(value:number|null)=>value===null?'Not estimated':new Intl.NumberFor
 export const metadata:Metadata={title:'GiveBetter x SF Research',description:'Bay Area research ordered by estimated cost per 10 additional quality-adjusted life years.'};
 export default function ResearchIndex(){
  return <div className="givebetter"><header className="givebetter-masthead"><a href="/">Give<span>Better</span> <small>x SF</small></a></header><main className={styles.shell}>
-  <section className={styles.intro}><h1>GiveBetter x SF Research</h1><p>Estimated dollars per better life in the San Francisco Bay Area (10 QALYs).</p><p className={styles.caveat}>These are uncertain research estimates, not verified donation offers. Expanded geography research is preserved in the archive.</p></section>
+  <section className={styles.intro}><h1>GiveBetter x SF Research</h1><p>Estimated dollars per better life in the San Francisco Bay Area (10 QALYs).</p><p className={styles.caveat}>These are uncertain research estimates, not verified donation offers. Program-specific and whole-organization estimates answer different questions; check gift scope before comparing.</p><p><a href="/#giving-priorities">Our ten giving priorities</a> · <a href="/research/city-theory">What we learned from 100 reports</a></p></section>
   <section aria-label="Organization research" id="top-research"><table className={styles.table}>
    <caption>{unifiedResearch.length} Bay Area reviews, ordered by estimated cost per 10 local QALYs. Only benefits quantified in each report are credited; unmodeled regional spillovers are excluded.</caption>
    <thead><tr><th scope="col">Organization</th><th scope="col">$ per better life</th></tr></thead>

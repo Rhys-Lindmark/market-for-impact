@@ -1,7 +1,7 @@
 import {EXPECTED_RESEARCH_COUNT} from './research-contract';
 import { expect, test } from '@playwright/test';
 
-test('research list is numeric ascending and its first four match the home page', async ({ page }) => {
+test('research list is numeric ascending while homepage uses scope-aware editorial selection', async ({ page }) => {
   await page.goto('/research');
   const cards = page.locator('[data-research-slug]');
   await expect(cards).toHaveCount(EXPECTED_RESEARCH_COUNT);
@@ -15,7 +15,6 @@ test('research list is numeric ascending and its first four match the home page'
     await expect(page.locator(`[data-research-slug="${row.slug}"] a`).first()).toHaveAttribute('href', `/charities/${row.slug}`);
   }
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-  const localRows=rows.filter(row=>Number.isFinite(row.cost)).map(row=>row.slug);
   await page.goto('/');
-  expect(await page.locator('.sf-home-charity').evaluateAll(nodes => nodes.map(n => n.id))).toEqual(localRows.slice(0,4));
+  expect(await page.locator('.sf-home-charity').evaluateAll(nodes => nodes.map(n => n.id))).toEqual(['recares','project-homeless-connect','pacific-hearing-connection','pacific-vision-foundation']);
 });

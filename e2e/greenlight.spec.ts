@@ -1,0 +1,20 @@
+import {test,expect} from '@playwright/test';
+import {EXPECTED_RESEARCH_COUNT} from './research-contract';
+test('Greenlight whole-gift report, evidence and model agree',async({page})=>{
+ await page.goto('/research');
+ await expect(page.locator('[data-research-slug]')).toHaveCount(EXPECTED_RESEARCH_COUNT);
+ const row=page.locator('[data-research-slug="greenlight-clinic"]');
+ await expect(row).toHaveAttribute('data-cost-per-ten-qalys','3535280.008500235');
+ await row.locator('a').first().click();
+ await expect(page.locator('h1')).toHaveText('Greenlight Clinic');
+ await expect(page.locator('#evidence')).toContainText('IMPACT');
+ await expect(page.locator('#evidence')).toContainText('.02937');
+ await expect(page.locator('.report-research-effort summary')).toContainText('9 min');
+ await expect(page.locator('.report-donate').first()).toHaveAttribute('href','https://www.greenlightclinic.org/donate/');
+ const response=await page.request.get('/api/greenlight-model');
+ expect(response.ok()).toBe(true);const model=await response.json();
+ expect(model.evaluated.bayCostPer10).toBe(3535280.008500235);
+ expect(model.inputs.wholeExpense).toBe(345616);
+ expect(model.verifiedMarginalFundingOffer).toBeNull();
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+});

@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Greenlight integration — candidate 90
+
+89/100 canonically verified via Legal Link PR284 / Sites v199. Greenlight independently audited: whole historical expense, finite partial psychotherapy health model, $3.535M per 10 Bay QALYs; HOLD giving. No coefficients retuned. Original research 8m44s; integration and audit separate. 565 tests, lint zero errors (three existing warnings), production build and two phone/tablet interactions pass. Exact-source publication and canonical checks remain before count 90. Next Ear of the Lion independent audit, Season of Sharing, TransForm, and top-ten marginal funding diligence. Goal remains 100 plus top-ten synthesis, not 115.
+
 ## Legal Link accepted release candidate89
 
 88/100 verified via BAMRU PR283/v198. LegalLink independent audit accepted full historical expense with partial training-to-health scope,$4.613M/10BayQALYs and99.73%favorabletail; HOLD giving. Do not treat prior trainee caseload as incremental clients or the city-funded planned advocate as an unfunded slot.536tests,lint0errors3oldwarnings,productionbuild and2phone/tablet checks pass. Exact-source publication and canonical verification remain. Original focused researcher intervals8m45s exclude scheduling gap; integration time is separate. Next Greenlight final audit; CAL-PEP evidence checkpoint; PVF advertised monthly250surgery claim requires clarification, not a verified offer. After100:top10 synthesis/funding diligence.

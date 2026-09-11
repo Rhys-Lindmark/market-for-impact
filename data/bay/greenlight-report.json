@@ -1,0 +1,285 @@
+{
+  "organization": "Greenlight Clinic",
+  "eyebrow": "Exploratory whole-organization research",
+  "program": "Free Bay youth psychotherapy and clinician supervision",
+  "published": "11 September 2026",
+  "modelVersion": "greenlight-whole-org-v1",
+  "donationUrl": "https://www.greenlightclinic.org/donate/",
+  "nutshell": {
+    "headline": "Real low-cash therapy access; health transfer remains uncertain",
+    "body": "A $10,000 whole gift yields 0.02829 expected Bay QALYs, or $3,535,280 per10, under signed subjective priors. Not measured clinic impact.",
+    "whyItMayWork": "Free supervised mental-health care can reduce morbidity when it creates effective treatment beyond available alternatives.",
+    "whyWeAreCautious": "Weekly census is not annual treatment completions. Modality, outcomes and gift-created capacity are unverified; favorable world supplies87.1% of expected Bay health.",
+    "recommendationBlocker": "HOLD giving recommendation pending current marginal capacity evidence. Independently audited for exploratory publication, not a verified donation offer."
+  },
+  "summary": [
+    {
+      "label": "Weighted Bay donor cost per10QALYs",
+      "value": "$3,535,280",
+      "detail": "Signed expectation before division; all six worlds retained."
+    },
+    {
+      "label": "Central Bay cost per10",
+      "value": "$5,948,461",
+      "detail": "Whole FY2024 cash expenses; not program-only."
+    },
+    {
+      "label": "Complete societal resources",
+      "value": "Unknown",
+      "detail": "Unpriced donated labor, patient time and complementary care; not a complete societal-cost estimate."
+    }
+  ],
+  "programSection": {
+    "body": "EIN47-3564756. Free individual, couples and group counseling for Bay residents14–26, with postgraduate clinician supervision. Current website says all sessions virtual.",
+    "steps": [
+      {
+        "title": "Fund whole operations",
+        "detail": "Charge all345616 FY2024 expense, including318951program and26665administration; no overhead subtraction."
+      },
+      {
+        "title": "Create or preserve additional therapy",
+        "detail": "Cash leverage permits reserves, displacement of other giving, supervision limits and funded baseline. Access additionality separately compares alternative care."
+      },
+      {
+        "title": "Finite net symptom health",
+        "detail": "Count a bounded benefiting fraction ×utility ×incremental years; deduct independent therapy/delayed-care harm. No suicide mortality credit."
+      }
+    ],
+    "boundary": "Cash gift model capped at10000. Existing capacity is an allocation anchor, not a verified new-slot offer. No assurance of linear100000 scaling."
+  },
+  "model": {
+    "headline": "Census-to-episode-equivalent whole-gift model",
+    "body": "75–80 young people weekly is an observed dated census. Active weeks, mean attended weeks, cross-episode dedup and all clinical/counterfactual coefficients are analyst priors locked before execution. Episode equivalents are not observed unique completions; response fraction includes noncompletion and modality mismatch.",
+    "equation": {
+      "label": "Net Bay health",
+      "expression": "gift / whole expense × (weekly census × active weeks / attended weeks × dedup) × cash additionality × [access additionality × benefiting fraction × utility × incremental years − harmQ/episode] × Bay share",
+      "result": "0.028286302572797566 expected Bay QALYs per$10000"
+    },
+    "inputs": [
+      {
+        "key": "wholeExpense",
+        "label": "Whole FY2024 expense",
+        "confidence": "High for dated filing",
+        "best": "$345,616",
+        "range": "Current2026budget unknown",
+        "basis": "Original IRS return; include all expenses, no program-only discount."
+      },
+      {
+        "key": "throughput",
+        "label": "Annual treatment-episode equivalents",
+        "confidence": "Low",
+        "best": "139.5 central",
+        "range": "88–237.5 in positive worlds",
+        "basis": "Observed75–80weekly; assumed44–50weeks,16–30attendedweeks,80–95%dedup. Not annual unique people/completions."
+      },
+      {
+        "key": "cash",
+        "label": "Cash-created/preserved capacity",
+        "confidence": "Very low",
+        "best": "50%",
+        "range": "0–80%",
+        "basis": "No currentfundingoffer; FY2024netassets237695 anddeficit93689 do not establish gift additionality."
+      },
+      {
+        "key": "access",
+        "label": "Treatment beyond best alternative",
+        "confidence": "Very low",
+        "best": "60%",
+        "range": "40–80% in positive worlds",
+        "basis": "Compare insurance/Medi-Cal, school care, other free clinics and state coaching; not assumed equivalent services."
+      },
+      {
+        "key": "clinical",
+        "label": "Benefiting fraction × utility × years",
+        "confidence": "Very low",
+        "best": "50% × .06 × .50",
+        "range": "Positive worlds35–75% × .04–.10 × .25–.75years",
+        "basis": "Judgments, not clinic trial measurements. Fraction includes noncompletion and treatment mismatch; duration ends at recovery/equivalent alternative access."
+      },
+      {
+        "key": "harm",
+        "label": "Independent harm per delivered episode",
+        "confidence": "Very low",
+        "best": ".0005Q",
+        "range": "0–.003Q",
+        "basis": "Signed prior for worsening or delayed appropriate care; not an observed adverse-event rate."
+      },
+      {
+        "key": "bay",
+        "label": "Bay-resident health share",
+        "confidence": "Moderate scope; low exact share",
+        "best": "98%",
+        "range": "95–100%",
+        "basis": "ExplicitBayeligibility; exact patient residence distribution unavailable."
+      }
+    ],
+    "giftHeading": "Small unrestricted gift, not earmarked unit purchase",
+    "sensitivity": [
+      {
+        "case": "funding_null",
+        "headline": "Weight0.2; Not defined per10",
+        "detail": "NetBayQ0; annualepisodeequivalents139.5. Full coefficients in portable model/results."
+      },
+      {
+        "case": "clinical_null",
+        "headline": "Weight0.15; Not defined per10",
+        "detail": "NetBayQ0; annualepisodeequivalents139.5. Full coefficients in portable model/results."
+      },
+      {
+        "case": "harm",
+        "headline": "Weight0.1; Not defined per10",
+        "detail": "NetBayQ-0.0059333190593028095; annualepisodeequivalents139.5. Full coefficients in portable model/results."
+      },
+      {
+        "case": "cautious",
+        "headline": "Weight0.2; $413,416,268 per10",
+        "detail": "NetBayQ0.00024188694967825563; annualepisodeequivalents88. Full coefficients in portable model/results."
+      },
+      {
+        "case": "central",
+        "headline": "Weight0.25; $5,948,461 per10",
+        "detail": "NetBayQ0.01681107066802463; annualepisodeequivalents139.5. Full coefficients in portable model/results."
+      },
+      {
+        "case": "favorable",
+        "headline": "Weight0.1; $406,034 per10",
+        "detail": "NetBayQ0.24628489421786037; annualepisodeequivalents237.5. Full coefficients in portable model/results."
+      },
+      {
+        "case": "half_utility_duration",
+        "headline": "Half utility and half duration",
+        "detail": "WeightedBayQ0.006267991426901535; $15,954,074 per10. Sensitivity only; base unchanged."
+      },
+      {
+        "case": "dfd_mapping",
+        "headline": "DFD bridge as ceiling sensitivity",
+        "detail": "WeightedBayQ0.013141921593004008; $7,609,237 per10. Sensitivity only; base unchanged."
+      },
+      {
+        "case": "no_favorable",
+        "headline": "Remove favorable world; renormalize",
+        "detail": "WeightedBayQ0.004064236834457253; $24,604,865 per10. Sensitivity only; base unchanged."
+      },
+      {
+        "case": "full_cash",
+        "headline": "All cash translates to capacity",
+        "detail": "WeightedBayQ0.04492242112633675; $2,226,060 per10. Sensitivity only; base unchanged."
+      },
+      {
+        "case": "half_access",
+        "headline": "Half incremental access",
+        "detail": "WeightedBayQ0.013607428475533544; $7,348,927 per10. Sensitivity only; base unchanged."
+      },
+      {
+        "case": "longer_courses",
+        "headline": "36 attended weeks per episode",
+        "detail": "WeightedBayQ0.01339260029756853; $7,466,810 per10. Sensitivity only; base unchanged."
+      }
+    ],
+    "uncertaintyBoundary": "Prior probability below$1M/10 is10%; below$100k/10 is0%. These are subjective discrete-world masses, not confidence intervals. Harm/null worlds retained. Favorable-tail dependence87.1%.",
+    "fundingBoundary": "FY2024revenue251927,expenses345616,netassets237695; governmentgrants20800. Currentcashneed, reserveavailability, pledgedgifts, clinician/supervision slots and2026budget unknown. Website private-only wording is not adopted as fact."
+  },
+  "evidence": [
+    {
+      "key": "return",
+      "design": "Original FY2024IRSreturn",
+      "population": "Greenlight wholeorganization",
+      "result": "345616expenses;75–80weekly clients; no annual completions.",
+      "transfer": "Credibledatedcost/activity, not treatment-effect or marginal-capacity evidence."
+    },
+    {
+      "key": "clinical_cbt",
+      "design": "Dickerson et al. randomized trial economic analysis",
+      "population": "212 adolescents ages 12–18; CBT plus treatment as usual versus treatment as usual",
+      "result": "Reported 12-month gain .067 QALY; 26.8 additional depression-free days × stated .4 utility decrement /365 = .02937 under a simple mapping. The discrepancy remains unreconciled, not a declared source error.",
+      "transfer": "No direct .067 transfer or claim of trial-quality therapy at Greenlight. Finite utility and duration remain analyst judgments; DFD ceiling sensitivity is separate."
+    },
+    {
+      "key": "clinical_impact",
+      "design": "IMPACT randomized active-comparator trial",
+      "population": "470 adolescents randomized to CBT, short-term psychoanalytic therapy or brief psychosocial intervention",
+      "result": "CBT and psychoanalytic therapy did not demonstrate superiority to brief psychosocial intervention.",
+      "transfer": "Effective alternative care may remove incremental benefit. This is not evidence all therapy is ineffective versus no access, nor a clinic-specific null result."
+    }
+  ],
+  "reservations": [
+    "Annual unique starts, completions, diagnosis mix, attendance and outcome measures unavailable.",
+    "Filing staffing inconsistency:22employees/0volunteers inPartI, volunteerclinicians inPartIII. Do not assume allclinical labor donated.",
+    "No verified current incremental capacity offer; reserve support may only delay later fundraising.",
+    "Clinical effects can vanish against effective alternative care. Soluna coaching is an alternative support, not an assumed therapy substitute.",
+    "Published external .067QALY was not imported; DFD utility mapping requires reconciliation.",
+    "Complete societal resources and counterfactual volunteer use remain unknown.",
+    "FY2024 Form990 expenses are the donor-cost proxy, not a verified2026 cash budget. The20800 government-grant entry is not proof of ongoing public support: beginning other liabilities also20800 fall to zero; grant/debt-forgiveness classification remains unreconciled. No recurring public-displacement amount is inferred."
+  ],
+  "excludedBenefits": [
+    "No suicide deaths, lifetime relapse prevention, employment/income or school attainment converted to health.",
+    "No added caregiver or training-downstream health; potential benefits remain unquantified.",
+    "No trial medical-cost savings netted from donated cash."
+  ],
+  "sources": [
+    {
+      "publisher": "Greenlight Clinic / IRS",
+      "title": "FY2024 Form 990, filed November 12, 2025",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202503169349303990/IRS990",
+      "published": "2025-11-12",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary return, recovered compressed HTML"
+    },
+    {
+      "publisher": "Greenlight Clinic / IRS",
+      "title": "FY2024 Schedule O",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202503169349303990/IRS990ScheduleO",
+      "published": "2025-11-12",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary return supplement"
+    },
+    {
+      "publisher": "Greenlight Clinic",
+      "title": "Current service and geographic scope",
+      "url": "https://www.greenlightclinic.org/",
+      "published": "Undated",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary organization"
+    },
+    {
+      "publisher": "Greenlight Clinic",
+      "title": "Intake",
+      "url": "https://www.greenlightclinic.org/get-help/",
+      "published": "Undated",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary organization"
+    },
+    {
+      "publisher": "Greenlight Clinic",
+      "title": "Donation scope",
+      "url": "https://www.greenlightclinic.org/donate/",
+      "published": "Undated",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary organization"
+    },
+    {
+      "publisher": "Dickerson et al., Pediatrics",
+      "title": "CBT economic evaluation in depressed youth declining antidepressants",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5810604/",
+      "published": "2018",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary randomized trial economic analysis"
+    },
+    {
+      "publisher": "Goodyer et al., Lancet Psychiatry",
+      "title": "IMPACT active-comparator adolescent depression trial",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27914903/",
+      "published": "2017",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary randomized controlled trial"
+    },
+    {
+      "publisher": "California DHCS",
+      "title": "State-funded virtual behavioral health alternatives",
+      "url": "https://www.dhcs.ca.gov/children-and-youth-behavioral-health-initiative-default/behavioral-health-virtual-services-platform-brightlife-kids-and-soluna/",
+      "published": "Current page includes2026 update",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary government"
+    }
+  ]
+}

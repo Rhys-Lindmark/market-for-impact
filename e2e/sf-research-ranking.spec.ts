@@ -1,7 +1,7 @@
 import {EXPECTED_RESEARCH_COUNT} from './research-contract';
 import { expect, test } from '@playwright/test';
 
-test('research list is numeric ascending while homepage uses scope-aware editorial selection', async ({ page }) => {
+test('homepage matches the four lowest central research estimates', async ({ page }) => {
   await page.goto('/research');
   const cards = page.locator('[data-research-slug]');
   await expect(cards).toHaveCount(EXPECTED_RESEARCH_COUNT);
@@ -16,5 +16,5 @@ test('research list is numeric ascending while homepage uses scope-aware editori
   }
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.goto('/');
-  expect(await page.locator('.sf-home-charity').evaluateAll(nodes => nodes.map(n => n.id))).toEqual(['recares','project-homeless-connect','pacific-hearing-connection','pacific-vision-foundation']);
+  expect(await page.locator('.sf-home-charity').evaluateAll(nodes => nodes.map(n => n.id))).toEqual(rows.filter(row=>Number.isFinite(row.cost)&&row.cost>0).slice(0,4).map(row=>row.slug));
 });

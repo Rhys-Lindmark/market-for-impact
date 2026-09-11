@@ -1,5 +1,6 @@
 import {test,expect} from '@playwright/test';
 test('Pacific Hearing V2 uses central ranking',async({page,request})=>{
+ const home=await request.get('/');expect(home.ok()).toBe(true);expect(await home.text()).toContain('Friends of the Urban Forest');
  await page.route('https://market-for-impact.rhyslindmark.chatgpt.site/_next/**',async route=>{const u=new URL(route.request().url());await route.fulfill({response:await request.get(u.pathname+u.search)});});
  await page.goto('/charities/pacific-hearing-connection');await expect(page.getByRole('heading',{level:1})).toContainText('Pacific Hearing Connection');
  const body=await page.locator('article').innerText();expect(body.split(/\s+/).length).toBeGreaterThan(4900);expect(body).toContain('91.8');

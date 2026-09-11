@@ -1,0 +1,912 @@
+{
+  "organization": "Pacific Vision Foundation",
+  "ein": "94-2422439",
+  "version": "pvf-whole-portfolio-v1",
+  "status": "independently accepted partial-health model; current integration reviewed September 11, 2026",
+  "date": "2026-09-08",
+  "legacyModel": "/private/tmp/mfi-pvf-model.json",
+  "legacySelectedCaseDonorPer10": 714285.7142857143,
+  "healthHorizonYears": 1,
+  "central": {
+    "gift": 100000,
+    "first_eye_allocation": 0.1,
+    "course_cash": 1000,
+    "trial_q": 0.056,
+    "clinical_timing_transfer": 0.5,
+    "funding_additionality": 0.5,
+    "shared_harm_q": 0,
+    "independent_harm_q": 0,
+    "displaced_alternative_q": 0,
+    "public_outside_per_course": 0,
+    "private_outside_per_course": 2500,
+    "counterfactual_outside_per_course": 2500,
+    "resource_wait_years": 1,
+    "resource_discount": 0.03,
+    "other_real_savings": 0,
+    "bay_share": 0.9,
+    "sf_share": 0.4,
+    "harm_bay_share": 0.9,
+    "harm_sf_share": 0.4
+  },
+  "parameterNotes": [
+    {
+      "key": "gift",
+      "label": "Whole unrestricted gift",
+      "best": "$100,000",
+      "range": "Domain $1–$1 billion",
+      "basis": "Entire ordinary gift retained; no priced restricted offer.",
+      "confidence": "Specified gift"
+    },
+    {
+      "key": "first_eye_allocation",
+      "label": "Direct first-eye course allocation",
+      "best": "10%",
+      "range": "5–40%; zero",
+      "basis": "Marginal portfolio prior, not historical charity-care expense ratio. Other90% cost retained.",
+      "confidence": "Explicit uncalibrated prior"
+    },
+    {
+      "key": "course_cash",
+      "label": "Direct cash per assigned unique first-eye course",
+      "best": "$1,000",
+      "range": "$500–$2,000; $250 unverified sensitivity",
+      "basis": "Legacy constructed cash budget includes referral/noncompletion costs. Separate portfolio allocation retains central costs; no second-eye benefit.",
+      "confidence": "Explicit uncalibrated prior"
+    },
+    {
+      "key": "trial_q",
+      "label": "Integrated first-year trial QALY effect",
+      "best": "0.056",
+      "range": "0.006 external lower-coordinate stress",
+      "basis": "Economic randomized-assignment analysis among288/306 with six-month utility extrapolation; not a local observed effect or full-cohort outcome.",
+      "confidence": "External integrated economic-trial result; transfer uncertain"
+    },
+    {
+      "key": "clinical_timing_transfer",
+      "label": "Local clinical/comparator transfer",
+      "best": "50%",
+      "range": "12.5–100%; zero; −50% harm",
+      "basis": "Joint population, severity, actual waiting-time and pathway-fit prior. No permanent-denial or lifetime extension.",
+      "confidence": "Explicit uncalibrated prior"
+    },
+    {
+      "key": "funding_additionality",
+      "label": "Funding additionality",
+      "best": "50%",
+      "range": "25–75%; zero",
+      "basis": "Added support versus existing PVF/Lions/CPMC/clinical financing; distinct from clinical transfer.",
+      "confidence": "Explicit uncalibrated prior"
+    },
+    {
+      "key": "shared_harm_q",
+      "label": "Extra shared harm per added course",
+      "best": "0 gift-date PV QALY",
+      "range": "0.04 stress",
+      "basis": "Outside complications already incorporated in trial. Costs of failed referrals remain.",
+      "confidence": "Explicit uncalibrated prior"
+    },
+    {
+      "key": "independent_harm_q",
+      "label": "Independent donor harm",
+      "best": "0 gift-date PV QALY",
+      "range": "0.2 at zero activity",
+      "basis": "Independent of additional surgery; no second discount.",
+      "confidence": "Explicit uncalibrated prior"
+    },
+    {
+      "key": "displaced_alternative_q",
+      "label": "Other displaced care health",
+      "best": "0 gift-date PV QALY",
+      "range": "1 at target failure",
+      "basis": "Distinct lost alternative clinic/resource use; not canceled by zero cataract effect.",
+      "confidence": "Explicit uncalibrated prior"
+    },
+    {
+      "key": "public_outside_per_course",
+      "label": "Outside public resources",
+      "best": "$0",
+      "range": "$500 stress",
+      "basis": "Narrow uninsured route, not proof of zero public resources throughout organization/partners. Real inputs only, no transfer sum.",
+      "confidence": "Explicit uncalibrated prior"
+    },
+    {
+      "key": "private_outside_per_course",
+      "label": "Outside private/partner resources",
+      "best": "$2,500",
+      "range": "$2,000–$4,000; zero donor-pays case",
+      "basis": "Clinical/facility/lens inputs beyond direct cash and internal charity transfer. Unpriced prior, not charges.",
+      "confidence": "Explicit uncalibrated prior"
+    },
+    {
+      "key": "counterfactual_outside_per_course",
+      "label": "Otherwise later outside-care resources",
+      "best": "$2,500",
+      "range": "$0–$4,000 scenarios",
+      "basis": "Unpriced offset conditional on later surgery, not permanent denial. No offset to retained whole-gift cash.",
+      "confidence": "Explicit uncalibrated prior"
+    },
+    {
+      "key": "resource_wait_years",
+      "label": "Timing of counterfactual outside cost",
+      "best": "1 year",
+      "range": "0.25 short-wait sensitivity",
+      "basis": "Cost valuation parameter; health remains the already integrated one-year trial transfer. Shorter clinical wait requires separate clinical transfer judgment.",
+      "confidence": "Explicit uncalibrated prior"
+    },
+    {
+      "key": "resource_discount",
+      "label": "Continuous resource discount",
+      "best": "3%",
+      "range": "Domain 0–20%",
+      "basis": "No extra within-year health discount applied to integrated trial result.",
+      "confidence": "Explicit uncalibrated prior"
+    },
+    {
+      "key": "other_real_savings",
+      "label": "Other net real resource savings",
+      "best": "$0 gift-date dollars",
+      "range": "$150,000 diagnostic; signed domain",
+      "basis": "Separate resource savings, not patient welfare or transfers; negative denotes additional cost.",
+      "confidence": "Explicit uncalibrated prior"
+    },
+    {
+      "key": "bay_share",
+      "label": "Bay share of benefit",
+      "best": "90%",
+      "range": "70–95%",
+      "basis": "Unmeasured future residence share, not geography inferred from SF clinic location.",
+      "confidence": "Explicit uncalibrated prior"
+    },
+    {
+      "key": "sf_share",
+      "label": "SF share of benefit",
+      "best": "40%",
+      "range": "20–60%; zero",
+      "basis": "Independent nested residence prior; wider California/Nevada pathway retained.",
+      "confidence": "Explicit uncalibrated prior"
+    },
+    {
+      "key": "harm_bay_share",
+      "label": "Bay share of losses",
+      "best": "90%",
+      "range": "Nested domain 0–100%",
+      "basis": "Separate allocation of shared/independent/displaced-alternative harm.",
+      "confidence": "Explicit uncalibrated prior"
+    },
+    {
+      "key": "harm_sf_share",
+      "label": "SF share of losses",
+      "best": "40%",
+      "range": "Nested domain 0–100%",
+      "basis": "Can differ from health share; regions never summed.",
+      "confidence": "Explicit uncalibrated prior"
+    }
+  ],
+  "allocationLedger": {
+    "firstEyeDirect": 0.1,
+    "otherClinical": 0.1,
+    "educationResearch": 0.15,
+    "buildingCapital": 0.4,
+    "centralOther": 0.25
+  },
+  "scenarios": {
+    "central": {},
+    "favorable_joint": {
+      "first_eye_allocation": 0.4,
+      "course_cash": 500,
+      "clinical_timing_transfer": 1,
+      "funding_additionality": 0.75,
+      "private_outside_per_course": 2000,
+      "counterfactual_outside_per_course": 2000,
+      "bay_share": 0.95,
+      "sf_share": 0.6
+    },
+    "pessimistic_positive": {
+      "first_eye_allocation": 0.05,
+      "course_cash": 2000,
+      "trial_q": 0.006,
+      "funding_additionality": 0.25,
+      "private_outside_per_course": 4000,
+      "counterfactual_outside_per_course": 4000,
+      "bay_share": 0.7,
+      "sf_share": 0.2
+    },
+    "no_quantified_allocation": {
+      "first_eye_allocation": 0
+    },
+    "replacement_only": {
+      "funding_additionality": 0
+    },
+    "no_timing_advantage": {
+      "clinical_timing_transfer": 0
+    },
+    "shorter_wait_transfer": {
+      "clinical_timing_transfer": 0.125,
+      "resource_wait_years": 0.25
+    },
+    "no_credit_future_resource_offset": {
+      "counterfactual_outside_per_course": 0
+    },
+    "additional_public_resources": {
+      "public_outside_per_course": 500
+    },
+    "donor_pays_clinical_resources": {
+      "course_cash": 3500,
+      "private_outside_per_course": 0,
+      "counterfactual_outside_per_course": 0
+    },
+    "shared_extra_harm": {
+      "shared_harm_q": 0.04
+    },
+    "independent_harm_no_activity": {
+      "first_eye_allocation": 0,
+      "independent_harm_q": 0.2
+    },
+    "target_failure_displaces_alternative": {
+      "clinical_timing_transfer": 0,
+      "displaced_alternative_q": 1
+    },
+    "no_sf_health": {
+      "sf_share": 0
+    },
+    "negative_clinical_transfer": {
+      "clinical_timing_transfer": -0.5
+    },
+    "low_cash_unverified": {
+      "course_cash": 250
+    },
+    "zero_outside_resource_scenario": {
+      "private_outside_per_course": 0,
+      "counterfactual_outside_per_course": 0
+    },
+    "net_saving_diagnostic": {
+      "other_real_savings": 150000
+    }
+  },
+  "results": {
+    "central": {
+      "courses": 10,
+      "added_courses": 5,
+      "benefit": 0.14,
+      "loss": 0,
+      "q": {
+        "us": 0.14,
+        "bay": 0.12600000000000003,
+        "sf": 0.05600000000000001
+      },
+      "gross_resources": 125000,
+      "net_resources": 100369.43083064364,
+      "future_offset": 12130.569169356351,
+      "prices": {
+        "us": {
+          "donor": 7142857.142857142,
+          "gross": 8928571.428571427,
+          "net": 7169245.059331688
+        },
+        "bay": {
+          "donor": 7936507.936507935,
+          "gross": 9920634.920634918,
+          "net": 7965827.843701875
+        },
+        "sf": {
+          "donor": 17857142.857142854,
+          "gross": 22321428.571428567,
+          "net": 17923112.64832922
+        }
+      }
+    },
+    "favorable_joint": {
+      "courses": 80,
+      "added_courses": 60,
+      "benefit": 3.36,
+      "loss": 0,
+      "q": {
+        "us": 3.36,
+        "bay": 3.1919999999999997,
+        "sf": 2.016
+      },
+      "gross_resources": 260000,
+      "net_resources": 103546.53597417902,
+      "future_offset": 116453.46402582098,
+      "prices": {
+        "us": {
+          "donor": 297619.04761904763,
+          "gross": 773809.5238095238,
+          "net": 308174.2142088661
+        },
+        "bay": {
+          "donor": 313283.20802005014,
+          "gross": 814536.3408521304,
+          "net": 324393.90969354333
+        },
+        "sf": {
+          "donor": 496031.74603174604,
+          "gross": 1289682.5396825396,
+          "net": 513623.6903481102
+        }
+      }
+    },
+    "pessimistic_positive": {
+      "courses": 2.5,
+      "added_courses": 0.625,
+      "benefit": 0.001875,
+      "loss": 0,
+      "q": {
+        "us": 0.001875,
+        "bay": 0.0013124999999999999,
+        "sf": 0.000375
+      },
+      "gross_resources": 110000,
+      "net_resources": 100073.88616612872,
+      "future_offset": 2426.1138338712703,
+      "prices": {
+        "us": {
+          "donor": 533333333.3333334,
+          "gross": 586666666.6666667,
+          "net": 533727392.8860199
+        },
+        "bay": {
+          "donor": 761904761.904762,
+          "gross": 838095238.0952382,
+          "net": 762467704.1228856
+        },
+        "sf": {
+          "donor": 2666666666.6666665,
+          "gross": 2933333333.3333335,
+          "net": 2668636964.4300995
+        }
+      }
+    },
+    "no_quantified_allocation": {
+      "courses": 0,
+      "added_courses": 0,
+      "benefit": 0,
+      "loss": 0,
+      "q": {
+        "us": 0,
+        "bay": 0,
+        "sf": 0
+      },
+      "gross_resources": 100000,
+      "net_resources": 100000,
+      "future_offset": 0,
+      "prices": {
+        "us": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        },
+        "bay": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        },
+        "sf": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        }
+      }
+    },
+    "replacement_only": {
+      "courses": 10,
+      "added_courses": 0,
+      "benefit": 0,
+      "loss": 0,
+      "q": {
+        "us": 0,
+        "bay": 0,
+        "sf": 0
+      },
+      "gross_resources": 125000,
+      "net_resources": 100000,
+      "future_offset": 0,
+      "prices": {
+        "us": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        },
+        "bay": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        },
+        "sf": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        }
+      }
+    },
+    "no_timing_advantage": {
+      "courses": 10,
+      "added_courses": 5,
+      "benefit": 0,
+      "loss": 0,
+      "q": {
+        "us": 0,
+        "bay": 0,
+        "sf": 0
+      },
+      "gross_resources": 125000,
+      "net_resources": 100369.43083064364,
+      "future_offset": 12130.569169356351,
+      "prices": {
+        "us": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        },
+        "bay": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        },
+        "sf": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        }
+      }
+    },
+    "shorter_wait_transfer": {
+      "courses": 10,
+      "added_courses": 5,
+      "benefit": 0.035,
+      "loss": 0,
+      "q": {
+        "us": 0.035,
+        "bay": 0.03150000000000001,
+        "sf": 0.014000000000000002
+      },
+      "gross_resources": 125000,
+      "net_resources": 100093.39931476077,
+      "future_offset": 12406.600685239231,
+      "prices": {
+        "us": {
+          "donor": 28571428.571428567,
+          "gross": 35714285.71428571,
+          "net": 28598114.089931644
+        },
+        "bay": {
+          "donor": 31746031.74603174,
+          "gross": 39682539.68253967,
+          "net": 31775682.322146267
+        },
+        "sf": {
+          "donor": 71428571.42857142,
+          "gross": 89285714.28571427,
+          "net": 71495285.22482911
+        }
+      }
+    },
+    "no_credit_future_resource_offset": {
+      "courses": 10,
+      "added_courses": 5,
+      "benefit": 0.14,
+      "loss": 0,
+      "q": {
+        "us": 0.14,
+        "bay": 0.12600000000000003,
+        "sf": 0.05600000000000001
+      },
+      "gross_resources": 125000,
+      "net_resources": 112500,
+      "future_offset": 0,
+      "prices": {
+        "us": {
+          "donor": 7142857.142857142,
+          "gross": 8928571.428571427,
+          "net": 8035714.2857142845
+        },
+        "bay": {
+          "donor": 7936507.936507935,
+          "gross": 9920634.920634918,
+          "net": 8928571.428571427
+        },
+        "sf": {
+          "donor": 17857142.857142854,
+          "gross": 22321428.571428567,
+          "net": 20089285.714285713
+        }
+      }
+    },
+    "additional_public_resources": {
+      "courses": 10,
+      "added_courses": 5,
+      "benefit": 0.14,
+      "loss": 0,
+      "q": {
+        "us": 0.14,
+        "bay": 0.12600000000000003,
+        "sf": 0.05600000000000001
+      },
+      "gross_resources": 130000,
+      "net_resources": 102869.43083064364,
+      "future_offset": 12130.569169356351,
+      "prices": {
+        "us": {
+          "donor": 7142857.142857142,
+          "gross": 9285714.285714285,
+          "net": 7347816.487903116
+        },
+        "bay": {
+          "donor": 7936507.936507935,
+          "gross": 10317460.317460315,
+          "net": 8164240.542114573
+        },
+        "sf": {
+          "donor": 17857142.857142854,
+          "gross": 23214285.714285713,
+          "net": 18369541.21975779
+        }
+      }
+    },
+    "donor_pays_clinical_resources": {
+      "courses": 2.857142857142857,
+      "added_courses": 1.4285714285714286,
+      "benefit": 0.04,
+      "loss": 0,
+      "q": {
+        "us": 0.04,
+        "bay": 0.036000000000000004,
+        "sf": 0.016
+      },
+      "gross_resources": 100000,
+      "net_resources": 100000,
+      "future_offset": 0,
+      "prices": {
+        "us": {
+          "donor": 25000000,
+          "gross": 25000000,
+          "net": 25000000
+        },
+        "bay": {
+          "donor": 27777777.777777776,
+          "gross": 27777777.777777776,
+          "net": 27777777.777777776
+        },
+        "sf": {
+          "donor": 62500000,
+          "gross": 62500000,
+          "net": 62500000
+        }
+      }
+    },
+    "shared_extra_harm": {
+      "courses": 10,
+      "added_courses": 5,
+      "benefit": 0.14,
+      "loss": 0.2,
+      "q": {
+        "us": -0.06,
+        "bay": -0.05399999999999999,
+        "sf": -0.024000000000000007
+      },
+      "gross_resources": 125000,
+      "net_resources": 100369.43083064364,
+      "future_offset": 12130.569169356351,
+      "prices": {
+        "us": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        },
+        "bay": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        },
+        "sf": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        }
+      }
+    },
+    "independent_harm_no_activity": {
+      "courses": 0,
+      "added_courses": 0,
+      "benefit": 0,
+      "loss": 0.2,
+      "q": {
+        "us": -0.2,
+        "bay": -0.18000000000000002,
+        "sf": -0.08000000000000002
+      },
+      "gross_resources": 100000,
+      "net_resources": 100000,
+      "future_offset": 0,
+      "prices": {
+        "us": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        },
+        "bay": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        },
+        "sf": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        }
+      }
+    },
+    "target_failure_displaces_alternative": {
+      "courses": 10,
+      "added_courses": 5,
+      "benefit": 0,
+      "loss": 1,
+      "q": {
+        "us": -1,
+        "bay": -0.9,
+        "sf": -0.4
+      },
+      "gross_resources": 125000,
+      "net_resources": 100369.43083064364,
+      "future_offset": 12130.569169356351,
+      "prices": {
+        "us": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        },
+        "bay": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        },
+        "sf": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        }
+      }
+    },
+    "no_sf_health": {
+      "courses": 10,
+      "added_courses": 5,
+      "benefit": 0.14,
+      "loss": 0,
+      "q": {
+        "us": 0.14,
+        "bay": 0.12600000000000003,
+        "sf": 0
+      },
+      "gross_resources": 125000,
+      "net_resources": 100369.43083064364,
+      "future_offset": 12130.569169356351,
+      "prices": {
+        "us": {
+          "donor": 7142857.142857142,
+          "gross": 8928571.428571427,
+          "net": 7169245.059331688
+        },
+        "bay": {
+          "donor": 7936507.936507935,
+          "gross": 9920634.920634918,
+          "net": 7965827.843701875
+        },
+        "sf": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        }
+      }
+    },
+    "negative_clinical_transfer": {
+      "courses": 10,
+      "added_courses": 5,
+      "benefit": -0.14,
+      "loss": 0,
+      "q": {
+        "us": -0.14,
+        "bay": -0.12600000000000003,
+        "sf": -0.05600000000000001
+      },
+      "gross_resources": 125000,
+      "net_resources": 100369.43083064364,
+      "future_offset": 12130.569169356351,
+      "prices": {
+        "us": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        },
+        "bay": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        },
+        "sf": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        }
+      }
+    },
+    "low_cash_unverified": {
+      "courses": 40,
+      "added_courses": 20,
+      "benefit": 0.56,
+      "loss": 0,
+      "q": {
+        "us": 0.56,
+        "bay": 0.5040000000000001,
+        "sf": 0.22400000000000003
+      },
+      "gross_resources": 200000,
+      "net_resources": 101477.7233225746,
+      "future_offset": 48522.276677425405,
+      "prices": {
+        "us": {
+          "donor": 1785714.2857142854,
+          "gross": 3571428.571428571,
+          "net": 1812102.2021888322
+        },
+        "bay": {
+          "donor": 1984126.9841269837,
+          "gross": 3968253.9682539674,
+          "net": 2013446.8913209243
+        },
+        "sf": {
+          "donor": 4464285.714285714,
+          "gross": 8928571.428571427,
+          "net": 4530255.50547208
+        }
+      }
+    },
+    "zero_outside_resource_scenario": {
+      "courses": 10,
+      "added_courses": 5,
+      "benefit": 0.14,
+      "loss": 0,
+      "q": {
+        "us": 0.14,
+        "bay": 0.12600000000000003,
+        "sf": 0.05600000000000001
+      },
+      "gross_resources": 100000,
+      "net_resources": 100000,
+      "future_offset": 0,
+      "prices": {
+        "us": {
+          "donor": 7142857.142857142,
+          "gross": 7142857.142857142,
+          "net": 7142857.142857142
+        },
+        "bay": {
+          "donor": 7936507.936507935,
+          "gross": 7936507.936507935,
+          "net": 7936507.936507935
+        },
+        "sf": {
+          "donor": 17857142.857142854,
+          "gross": 17857142.857142854,
+          "net": 17857142.857142854
+        }
+      }
+    },
+    "net_saving_diagnostic": {
+      "courses": 10,
+      "added_courses": 5,
+      "benefit": 0.14,
+      "loss": 0,
+      "q": {
+        "us": 0.14,
+        "bay": 0.12600000000000003,
+        "sf": 0.05600000000000001
+      },
+      "gross_resources": 125000,
+      "net_resources": -49630.56916935636,
+      "future_offset": 12130.569169356351,
+      "prices": {
+        "us": {
+          "donor": 7142857.142857142,
+          "gross": 8928571.428571427,
+          "net": -3545040.6549540255
+        },
+        "bay": {
+          "donor": 7936507.936507935,
+          "gross": 9920634.920634918,
+          "net": -3938934.0610600277
+        },
+        "sf": {
+          "donor": 17857142.857142854,
+          "gross": 22321428.571428567,
+          "net": -8862601.637385063
+        }
+      }
+    }
+  },
+  "finance": {
+    "period": "FY2024",
+    "filed": "2025-11-17",
+    "revenueNet": 1700850,
+    "functionalExpense": 2500604,
+    "rentalExpenseNetted": 4037544,
+    "grossRevenueArithmetic": 5738394,
+    "grossExpenseArithmetic": 6538148,
+    "charityTransfer": 294366,
+    "program": 591444,
+    "management": 1583598,
+    "fundraising": 325562,
+    "cash": 953695,
+    "savings": 15711,
+    "assets": 44359285,
+    "liabilities": 23505963,
+    "restrictedNetAssets": 15697279,
+    "unrestrictedNetAssets": 5156043,
+    "pvscOwnership": 0.91
+  },
+  "sources": [
+    {
+      "title": "What we do",
+      "publisher": "Pacific Vision Foundation",
+      "url": "https://pacificvisionfoundation.org/about/what-we-do/",
+      "published": "Undated current page",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary funding body, shared clinical pathway and wider mission."
+    },
+    {
+      "title": "For patients",
+      "publisher": "Pacific Vision Foundation",
+      "url": "https://pacificvisionfoundation.org/for-patients/",
+      "published": "Undated current page",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary uninsured eligibility and Lions referral route; narrower than impact report wording."
+    },
+    {
+      "title": "2025 impact report",
+      "publisher": "Pacific Vision Foundation",
+      "url": "https://pacificvisionfoundation.org/wp-content/uploads/2026/07/FINAL-DIGITAL-PVF-Impact-Report-2025.pdf",
+      "published": "Announced June 11, 2026; July 2026 PDF path",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary2025 activities/text; screenshot failed so chart shares/revenue not used. Annual surgery versus cumulative charity counts distinguished."
+    },
+    {
+      "title": "FY2024 Form990",
+      "publisher": "Pacific Vision Foundation; IRS filing hosted by ProPublica",
+      "url": "https://projects.propublica.org/nonprofits/organizations/942422439/202533219349304088/full",
+      "published": "November 17, 2025 filing",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary e-file return read; rental expenses netted outside functional expenses. Not an obtained consolidated audit."
+    },
+    {
+      "title": "FY2024 related organizations",
+      "publisher": "Pacific Vision Foundation; IRS ScheduleR",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202533219349304088/IRS990ScheduleR",
+      "published": "November 17, 2025 filing",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary SFOC/PVSC ownership and internal charity-care transfer; not independent duplicate resources."
+    },
+    {
+      "title": "Cost effectiveness of expedited cataract surgery",
+      "publisher": "First-eye trial economic investigators; British Journal of Ophthalmology",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2095519/",
+      "published": "2007",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary extraction retained from accepted legacy audit; direct current NIH access challenge. Missing18/306 and assumed one-year utility shape retained."
+    },
+    {
+      "title": "Monthly giving and exact recipient",
+      "publisher": "Pacific Vision Foundation",
+      "url": "https://pacificvisionfoundation.org/",
+      "published": "Undated current page; 2026 footer",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary EIN94-2422439; $250 monthly surgery appeal not a verified one-time complete course quote."
+    },
+    {
+      "title": "Ways to give",
+      "publisher": "Pacific Vision Foundation",
+      "url": "https://pacificvisionfoundation.org/ways-to-give/",
+      "published": "Undated official giving route",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Ordinary recipient; no independently verified cataract-restricted open tranche."
+    }
+  ]
+}

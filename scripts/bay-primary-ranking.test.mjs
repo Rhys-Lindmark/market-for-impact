@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {researchCostRanking as rows} from '../lib/research-cost-ranking.mjs';
+import {central as pvfCentral,calculate as pvf} from '../lib/pvf-portfolio-model.mjs';
 import {localResearchEstimate} from '../lib/local-research-estimate.mjs';
 import {calculate as hpp} from '../lib/hpp-model.mjs';
 import {calculate as felton} from '../lib/felton-model.mjs';
@@ -17,9 +18,10 @@ import {calculate as phc,inputsFor} from '../lib/phc-portfolio-model.mjs';
 import fs from 'node:fs';
 const read=name=>JSON.parse(fs.readFileSync(new URL('../data/san-francisco/'+name,import.meta.url)));
 const central=d=>d.scenarios.find(s=>s.id==='central');
-test('twelve explicit Bay adapters match model outputs without changing SF prices',()=>{
+test('thirteen explicit Bay adapters match model outputs',()=>{
  const h=read('hpp-model-v1.json'),f=read('felton-model-v1.json'),p=read('sfphf-model-v1.json'),c=read('code-tenderloin-model-v1.json'),w=read('walk-sf-cea-v1.json'),s=read('spur-portfolio-cea-v3.json'),o=read('oa-portfolio-model-v2.json'),n=read('newdoor-portfolio-v1.json'),cl=read('clinic-portfolio-model-v2.json'),a=read('sfaf-portfolio-model-v1.json'),ph=read('phc-portfolio-model-v1.json');
  const expected={
+  'pacific-vision-foundation':pvf(pvfCentral).prices.bay.donor,
   'homeless-prenatal-program':hpp(central(h).inputs).bay.donor_per_10q,
   'felton-institute':felton({...f.central_inputs,...central(f).overrides}).donor_bay_per_10q,
   'sf-public-health-foundation':sfphf(central(p).inputs).bay.donor_per_10q,
@@ -33,7 +35,7 @@ test('twelve explicit Bay adapters match model outputs without changing SF price
   'san-francisco-aids-foundation':sfaf(central(a).inputs).bay.donor_per_10q,
   'project-homeless-connect':phc(inputsFor(ph,central(ph))).donor_bay_per_10q,
  };
- assert.equal(rows.filter(r=>Object.hasOwn(r,'bayUsdPerTenQalys')).length,12);
+ assert.equal(rows.filter(r=>Object.hasOwn(r,'bayUsdPerTenQalys')).length,13);
  for(const [slug,value] of Object.entries(expected)){
   assert.ok(Number.isFinite(value)&&value>0,slug);
   const row=rows.find(r=>r.slug===slug);assert.equal(row.bayUsdPerTenQalys,value,slug);

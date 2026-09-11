@@ -1,20 +1,12 @@
 # Market for Impact backlog
 
-## Homepage: keep V2 selection internal
+## Current priority: top-ten V2 — alpha110 complete
 
-Removed the entire “Ten priorities for giving” homepage section and its unused import. The four featured charities and all-research link remain unchanged. The ten-organization V2 cohort is an internal deep-review queue, not an additional public recommendation list. Verify the canonical homepage after release; continue the V2 research separately.
+Verified110 alpha reports (89 Bay +21 expanded) through PR307 / Sites218; original selected ten independently audited and published. See [current plan](docs/110-research-plan.md) and [frozen V2 cohort](docs/110-v2-frozen-review-set.md). V2 published0/10; ReCARES, Breathe and SPUR first-wave research underway, with cross-audits before release. Each receives roughly30 additional research minutes, three-year filing/current-operation checks, substantive GiveWell-style prose and yearly spending breakdowns. SPUR and HAC are deliberate distinct-mechanism research slots, not numerical-rank substitutions.
 
-## Research-list wording cleanup
+Homepage cleanup PR309 / Sites219 verified at https://ai.rhyslindmark.com/givebetter: removed the entire ten-priority section, retaining four picks. V2 is an internal review queue. PR308 also removes whole-gift/whole-organization wording from research-list display only; canonical list verified, estimates unchanged.
 
-Remove whole-gift/whole-organization wording from /givebetter/research only, including its introduction. Display-only formatter leaves report/model scopes and numeric sources unchanged. Formatter tests, lint and production build pass; rendered89 rows retain identical order and prices within cross-runtime floating-point serialization tolerance. Canonical release verification follows. Next: top-ten V2 and staff-giving cohort; original110 milestone remains complete.
-
-## Selected ten alpha milestone — final seven release candidate
-
-103 published before this release; seven distinct reviewed organizations complete the original110 after canonical verification: Alameda Health Consortium, Rainbow Community Center, Easy Does It, Acknowledge Alliance, Marin County Bicycle Coalition, Silicon Valley Bicycle Coalition and Oakland LGBTQ Community Center. Independent audits accept exploratory publication with giving on hold. Unfavorable results retained; these central scenarios do not change the homepage four. Finite partial-health models preserve total organization expense, public/partner baselines and unquantified benefits rather than declaring them zero. Original snapshots and model tests retained; production build and lint pass; final responsive/canonical gates remain. Staff-giving extra cohort separate: Bike East Bay draft; Causa Justa closure checkpoint; Cityside unestimated skeleton, neither counted as published reports. Next: fulfill list wording cleanup, extra cohort diligence and freeze diverse top-ten V2 set under PR305 requirements.
-
-## Three selected local rescue reports — release candidate
-
-Baseline100 published; Micah's Hugs, Berkeley NEED and HOPE Pacifica add three distinct recipients when this release is canonically verified. All three independently accepted as exploratory research, giving on hold. Central scenarios are $4.752M, $2.079M and $555K per10 Bay QALYs; separate signed weighted estimates ($411K, $586K, $763K) are tail-sensitive and are not substituted for the explicitly central ranking. Whole costs and partial-health scope retained; HOPE annual expenses remain unobserved priors. Report/API/index parity, original saved-output tests, 744 suite tests, lint without errors and phone/tablet navigation checks passed before final build. No verified marginal funding offer. Next: exact-commit publication/canonical checks, then AHC/Rainbow/EDI accepted packets and remaining selected ten. V2 requirements live in discovery PR305 (30min, operating-status/three-year filings, GiveWell-depth prose and spending breakdown, at least two distinct mechanisms).
+Staff-personal-giving cohort: five screened separately. Bike East Bay and Sogorea Te have independently reviewed exploratory drafts; Causa Justa closed, Cityside and KQED lack a defensible causal numerator and retain inspectable unestimated checkpoints. None of this extra cohort is yet published or counted. Personal gifts are not GiveWell endorsements. Next: accept V2 audits and integrate long-form reports with versioned models; preserve unfavorable estimates.
 
 ## PVF whole-gift correction — active, not published
 

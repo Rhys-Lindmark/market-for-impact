@@ -1,0 +1,25 @@
+# Face to Face independent audit
+
+**ACCEPT for transparent exploratory publication; HOLD a giving recommendation. No numerical correction identified.** Requested hazard-transfer wording verified in final renderer JSON at09:30:04UTC, and21/21 tests rerun with exact saved parity. This is a model of a hypothetical new-gift rescue cohort, not an identified organizational mortality effect.
+
+## Tests and arithmetic
+
+Ran `/private/tmp/mfi-f2f-model-v1.test.mjs`: **21/21 pass**. Full saved-result parity, independent numerical survival integration, one-person100-opportunity bound, null/harm, zero inputs, finite derived outputs, malformed inputs/worlds, renderer fields and saved sensitivity matrices all pass. Default **$1,328,756.9378336074 per10 Bay QALYs** is preserved. Favorable10% world supplies92.6129% of expected benefit; that is not a probability.
+
+The recurrence architecture avoids HEPPAC's repeated future-stream addition. Synthetic unique people are `events*validity/repeats`. Each receives one survival difference integrated over one support year plus a finite tail with common post-support mortality. Increasing opportunities changes a probability trajectory, not the number of independent future lives. Separate morbidity harm remains signed. No unbounded lifetime or assumed continuing donor support appears.
+
+The **main uncertainty is identification**, not integration: a retrospective set of successful rescues is selected on survival and does not establish a prospective cohort or annual hazard. `repeats` simultaneously supplies events/person and an assumed one-year Poisson opportunity rate; `fatality` is the net otherwise-lethal probability after alternatives. Requested author wording makes this explicit, alongside `S_support(t)=exp(-otherHazard*t)` and `S_counterfactual(t)=exp(-(otherHazard+repeats*fatality)*t)` during year one. These are analyst transfers, not fitted hazards. Existing report already says the rescued survivors are not a prospective denominator and none of these coefficients is validated. No invented correction factor or base retuning requested.
+
+## Primary evidence and scope
+
+- Independently reopened [official overdose page](https://f2f.org/services/overdose-prevention/): categorical hundreds of reversals and thousands of kits in an unspecified last year. It provides no exact annual event count, unique people, event dates, verification method or incremental deaths prevented. The100/200/500 values are correctly labeled numerical priors, not observations. The425 mixed city participants are not used as a rescue cohort or added benefit.
+- Independently read original saved [FYJune2024 filing](https://projects.propublica.org/nonprofits/full_text/202541299349302689/IRS990): PartIX$2,204,021 plus PartVIII direct fundraising-event cost$59,068 = **$2,263,089 gross whole cost**. Government grants$132,330 and noncash contributions$397,827 confirmed. No subtraction of public revenue or unexplained subtraction of donated goods. Full economic resource cost remains unknown, appropriately distinct from this accounting denominator.
+- [Walley et al.](https://www.bmj.com/content/346/bmj.f174) primary search abstract/table evidence confirms observational community mortality ratios.73/.54; not a kit-level randomized coefficient. Direct page returned403 this interval, so no claim of new full-text reread.
+- [HEALing Communities primary trial](https://www.nejm.org/doi/abs/10.1056/NEJMoa2401177) confirms aRR.91,95%CI.76–1.09; the report correctly treats this as a multicomponent randomized null, not proof that naloxone cannot reverse overdose. The79% distribution statement remains from the author's shared2026 primary packet; its PMC page hit a browser challenge during this audit and was not independently freshly verified.
+- Bay.98 is a Sonoma-footprint prior, not a residence census. State medication supply, public-funded delivery, reserves, alternatives and gift response are disclosed. Funding response is separate from net otherwise-fatal probability; no current priced capacity or verified donation route is invented.
+
+## Renderer and recommendation boundary
+
+Canonical evidence entries have `key/design/population/result/transfer`; inputs label uncertainty, source dates are attached, costs and modeled health are clearly separated, and unverified donation URL is omitted. Other HIV/PrEP/housing/support benefits are not mechanically added. Favorable dependence and partial-health/full-cost scope must survive integration. No reason to promote this as a donor-ready offer or improve coefficients to cross$1M.
+
+Observed focused start **2026-09-11 09:26:10UTC**; primary/accounting/test checks through **09:26:48UTC**, then bounded source-confirmation and memo work. Final wording confirmation/time recorded below when available. Parent dispatch provenance `gpt-6-astra`/`low`, not runtime introspection. Existing runtime/source artifacts reused, Space Saver/Token Saver applied; no Site edits, downloads, dependencies, outreach or nested workers.

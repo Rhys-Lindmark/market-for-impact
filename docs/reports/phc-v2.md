@@ -198,7 +198,7 @@ The city-contract budget and 2025 funding transition are the most material addit
 
 One substantive evidence clarification is the interpretation of the glasses 41/113 diagnostic. It is not pure outcome attrition. Another is that no verified PHC-specific sponsorship rate remains different from no publicly available standard rate: the latter is now available. The dental baseline can be stated using the current DHCS FAQ's specified 2027 date rather than presenting all official dates as unresolved. These are improvements in accuracy without numerical changes.
 
-The V2 is therefore a stronger explanation of a still-conditional estimate, not a claim that more prose converted assumptions into observations. The model remains useful for identifying what would change the decision. Its apparent precision should not be mistaken for an estimate derived from audited PHC costs and a local causal evaluation.
+This assessment explains the conditional estimate more fully, while the underlying assumptions remain unverified. The model remains useful for identifying what would change the decision. Its apparent precision should not be mistaken for an estimate derived from audited PHC costs and a local causal evaluation.
 
 ## Decision and monitoring
 

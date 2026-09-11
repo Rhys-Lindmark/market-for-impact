@@ -13,18 +13,46 @@
     "recommendationBlocker": "No verified costed additional cohort or $100,000 peer-response funding offer."
   },
   "summary": [
-    {"label": "Central donor USD / 10 QALYs", "value": "$1.97M SF / $1.81M Bay / $1.77M US", "detail": "Same full gift in each nested geography. SF90% and Bay98% of US modeled health are residence priors, not measured service shares."},
-    {"label": "Whole-gift boundary", "value": "$100,000 once", "detail": "25% modeled peer-response allocation; 75% other work and overhead retains its cost with unquantified health. No promise that the organization allocates this way."},
-    {"label": "Current recipient", "value": "Code Tenderloin Inc · EIN 93-3030657", "detail": "Official site and current IRS record agree. Former sponsor Center for New Music is a different recipient; legacy contract transfer is not presumed."},
-    {"label": "Central gross resource envelope", "value": "$101,736", "detail": "Adds a judgmental public/partner supply allowance outside donor cash. This is not net societal cost; future medical care and family time are omitted."}
+    {
+      "label": "Central donor USD / 10 QALYs",
+      "value": "$1.97M SF / $1.81M Bay / $1.77M US",
+      "detail": "Same full gift in each nested geography. SF 90% and Bay 98% of US modeled health are residence priors, not measured service shares."
+    },
+    {
+      "label": "Whole-gift boundary",
+      "value": "$100,000 once",
+      "detail": "25% modeled peer-response allocation; 75% other work and overhead retains its cost with unquantified health. No promise that the organization allocates this way."
+    },
+    {
+      "label": "Current recipient",
+      "value": "Code Tenderloin Inc · EIN 93-3030657",
+      "detail": "Official site and current IRS record agree. Former sponsor Center for New Music is a different recipient; legacy contract transfer is not presumed."
+    },
+    {
+      "label": "Central gross resource envelope",
+      "value": "$101,736",
+      "detail": "Adds a judgmental public/partner supply allowance outside donor cash. This is not net societal cost; future medical care and family time are omitted."
+    }
   ],
   "programSection": {
     "body": "Code Tenderloin provides job readiness, training, youth and reentry support, casework, community events and outreach. The current ambassador page identifies drug-related emergency and recovery support; a September 1, 2026 DPH directory corroborates active barrier-removal services. This report quantifies only a prospective peer-response component of a general gift.",
     "steps": [
-      {"title": "Allocate the entire gift", "detail": "All $100,000 remains in the cost numerator, including other programs and institutional overhead."},
-      {"title": "Fund additional peer contact", "detail": "Central $60 per worker-hour and six hours per unique offered person-year include repeated and unsuccessful contacts. These are complete direct-delivery judgments, not a priced offer."},
-      {"title": "Change response beyond existing care", "detail": "Only a remaining gap in timely rescue counts. SFAF, SFCHC, DPH and other peers are part of the baseline and cannot also claim the same patient-time."},
-      {"title": "Count finite additional survival", "detail": "Peer response changes fatal OD hazard for one service year. Later survivors face the same recurrent-overdose and competing mortality hazards as the comparison group."}
+      {
+        "title": "Allocate the entire gift",
+        "detail": "All $100,000 remains in the cost numerator, including other programs and institutional overhead."
+      },
+      {
+        "title": "Fund additional peer contact",
+        "detail": "Central $60 per worker-hour and six hours per unique offered person-year include repeated and unsuccessful contacts. These are complete direct-delivery judgments, not a priced offer."
+      },
+      {
+        "title": "Change response beyond existing care",
+        "detail": "Only a remaining gap in timely rescue counts. SFAF, SFCHC, DPH and other peers are part of the baseline and cannot also claim the same patient-time."
+      },
+      {
+        "title": "Count finite additional survival",
+        "detail": "Peer response changes fatal OD hazard for one service year. Later survivors face the same recurrent-overdose and competing mortality hazards as the comparison group."
+      }
     ],
     "boundary": "No historical enrollment, referral, training credential or reported reversal is treated as a new life saved. Other clinical, employment, housing, art and policy impacts remain unquantified."
   },
@@ -37,101 +65,181 @@
       "result": "Central: 69.44 offered packages, 34.72 additional packages, 0.11676 extra people alive at service-year end, 0.564257 US QALYs and 0.507832 SF QALYs."
     },
     "inputs": [
-      {"key": "allocation", "label": "Peer-response allocation", "confidence": "Analyst judgment", "best": "25%", "range": "10–50% joint scenarios", "basis": "Marginal allocation is not inferred from the sponsor's historical expense mix; remaining portfolio and overhead cost stays."},
-      {"key": "cost", "label": "Direct worker-hour cash / hours per offered person-year", "confidence": "Provider wage anchor plus cost judgments", "best": "$60 / 6 hours = $360", "range": "$45–$90 / 3–12 hours", "basis": "Official ambassador wage is about $27/hour; payroll loading and direct logistics/supervision are judgments. Count two workers as two worker-hours; include failed and repeated contacts."},
-      {"key": "additionality", "label": "Financial additionality", "confidence": "Analyst judgment", "best": "50%", "range": "0–75%", "basis": "Addresses funding replacement, separate from actual no-gift rescue availability. No verified private expansion offer."},
-      {"key": "hazards", "label": "Annual fatal OD / other death hazards", "confidence": "Selected-cohort judgments", "best": "0.04 / 0.03", "range": "OD0.015–0.06; high other-death stress0.16", "basis": "Not risks for every program client. Constant hazards are not a fitted recovery or age-specific model; external survivor evidence cautions against full-lifetime rescue credit."},
-      {"key": "effect", "label": "Residual addressable gap / effective timely response", "confidence": "Analyst judgments; external mechanism evidence", "best": "10% / 90%", "range": "Zero gap through favorable25% / 95%", "basis": "Includes witnessing, timing, uptake and partner overlap. Central remaining OD hazard falls9%; no additional witness or adherence multiplier."},
-      {"key": "health", "label": "Utility / finite horizon", "confidence": "Analyst judgment", "best": "0.8 / 10 years", "range": "Utility0.7–1.0; horizons1–15 years", "basis": "Count extra alive-time once. Full-health utility sensitivity included; social status is not treated as human worth."},
-      {"key": "geography", "label": "SF / Bay resident shares", "confidence": "Nested residence priors", "best": "90% / 98%", "range": "SF80–95% joint cases", "basis": "The same full gift is divided by regional health. Shares apply to harms as well and are not measured clinic-location fractions."},
-      {"key": "resources", "label": "Other gross resources / shared harm per offer", "confidence": "Unpriced stress judgments", "best": "$25 / 0.0005 QALY", "range": "Zero extra cost; null and independent-harm cases", "basis": "Resources are outside donor cash and count all offers, including replacement and failure. No net societal cost or savings claim."}
+      {
+        "key": "allocation",
+        "label": "Peer-response allocation",
+        "confidence": "Analyst judgment",
+        "best": "25%",
+        "range": "10–50% joint scenarios",
+        "basis": "Marginal allocation is not inferred from the sponsor's historical expense mix; remaining portfolio and overhead cost stays."
+      },
+      {
+        "key": "cost",
+        "label": "Direct worker-hour cash / hours per offered person-year",
+        "confidence": "Provider wage anchor plus cost judgments",
+        "best": "$60 / 6 hours = $360",
+        "range": "$45–$90 / 3–12 hours",
+        "basis": "Official ambassador wage is about $27/hour; payroll loading and direct logistics/supervision are judgments. Count two workers as two worker-hours; include failed and repeated contacts."
+      },
+      {
+        "key": "additionality",
+        "label": "Financial additionality",
+        "confidence": "Analyst judgment",
+        "best": "50%",
+        "range": "0–75%",
+        "basis": "Addresses funding replacement, separate from actual no-gift rescue availability. No verified private expansion offer."
+      },
+      {
+        "key": "hazards",
+        "label": "Annual fatal OD / other death hazards",
+        "confidence": "Selected-cohort judgments",
+        "best": "0.04 / 0.03",
+        "range": "OD 0.015–0.06; high other-death scenario 0.16",
+        "basis": "Not risks for every program client. Constant hazards are not a fitted recovery or age-specific model; external survivor evidence cautions against full-lifetime rescue credit."
+      },
+      {
+        "key": "effect",
+        "label": "Residual addressable gap / effective timely response",
+        "confidence": "Analyst judgments; external mechanism evidence",
+        "best": "10% / 90%",
+        "range": "Zero gap through favorable 25% / 95%",
+        "basis": "Includes witnessing, timing, uptake and partner overlap. Central remaining OD hazard falls 9%; no additional witness or adherence multiplier."
+      },
+      {
+        "key": "health",
+        "label": "Utility / finite horizon",
+        "confidence": "Analyst judgment",
+        "best": "0.8 / 10 years",
+        "range": "Utility 0.7–1.0; horizons 1–15 years",
+        "basis": "Count extra alive-time once. Full-health utility sensitivity included; social status is not treated as human worth."
+      },
+      {
+        "key": "geography",
+        "label": "SF / Bay resident shares",
+        "confidence": "Nested residence priors",
+        "best": "90% / 98%",
+        "range": "SF 80–95% joint cases",
+        "basis": "The same full gift is divided by regional health. Shares apply to harms as well and are not measured clinic-location fractions."
+      },
+      {
+        "key": "resources",
+        "label": "Other gross resources / shared harm per offer",
+        "confidence": "Unpriced stress judgments",
+        "best": "$25 / 0.0005 QALY",
+        "range": "Zero extra cost; null and independent-harm cases",
+        "basis": "Resources are outside donor cash and count all offers, including replacement and failure. No net societal cost or savings claim."
+      }
     ],
     "giftHeading": "Same $100,000 unrestricted gift in every scenario",
     "sensitivity": [
-  {
-    "case": "central",
-    "headline": "SF donor: $1,969,157/10 QALYs",
-    "detail": "Central: 25% peer allocation and 50% funding additionality. Full $100,000 gift retained. US/Bay/SF QALYs: 0.56425725 / 0.55297211 / 0.50783153. US/Bay donor: $1,772,241/10 QALYs / $1,808,409/10 QALYs. Gross resources $101,736; SF resource: $2,003,344/10 QALYs."
-  },
-  {
-    "case": "favorable joint stress",
-    "headline": "SF donor: $45,762/10 QALYs",
-    "detail": "Joint favorable: 50% allocation, $45/hour, 3 hours/offer, 75% additionality, higher risk/gap, 15-year horizon; not a confidence bound or verified offer. Full $100,000 gift retained. US/Bay/SF QALYs: 23.002121 / 22.542079 / 21.852015. US/Bay donor: $43,474/10 QALYs / $44,361/10 QALYs. Gross resources $109,259; SF resource: $50,000/10 QALYs."
-  },
-  {
-    "case": "adverse joint stress",
-    "headline": "SF donor: $3,219,771,445/10 QALYs",
-    "detail": "Joint adverse: 10% allocation, $90/hour, 12 hours/offer, 20% additionality, lower risk/gap, 5-year horizon. Full $100,000 gift retained. US/Bay/SF QALYs: 0.00038822631 / 0.00038046179 / 0.00031058105. US/Bay donor: $2,575,817,156/10 QALYs / $2,628,384,853/10 QALYs. Gross resources $100,231; SF resource: $3,227,224,619/10 QALYs."
-  },
-  {
-    "case": "no additional activity",
-    "headline": "SF donor: no finite positive ratio",
-    "detail": "Zero funding additionality; shared effects vanish. Full $100,000 gift retained. US/Bay/SF QALYs: 0.0000000 / 0.0000000 / 0.0000000. Zero modeled health; no positive benefit ratio. US/Bay donor: no finite positive ratio / no finite positive ratio. Gross resources $101,736; SF resource: no finite positive ratio."
-  },
-  {
-    "case": "no residual coverage gap",
-    "headline": "SF donor: no finite positive ratio",
-    "detail": "Zero residual coverage gap; shared harm remains. Full $100,000 gift retained. US/Bay/SF QALYs: -0.017361111 / -0.017013889 / -0.015625000. Net modeled harm; no positive benefit ratio. US/Bay donor: no finite positive ratio / no finite positive ratio. Gross resources $101,736; SF resource: no finite positive ratio."
-  },
-  {
-    "case": "ineffective response",
-    "headline": "SF donor: no finite positive ratio",
-    "detail": "Zero rescue effectiveness; shared harm remains. Full $100,000 gift retained. US/Bay/SF QALYs: -0.017361111 / -0.017013889 / -0.015625000. Net modeled harm; no positive benefit ratio. US/Bay donor: no finite positive ratio / no finite positive ratio. Gross resources $101,736; SF resource: no finite positive ratio."
-  },
-  {
-    "case": "null without shared harm",
-    "headline": "SF donor: no finite positive ratio",
-    "detail": "Zero gap and shared harm: exact null. Full $100,000 gift retained. US/Bay/SF QALYs: 0.0000000 / 0.0000000 / 0.0000000. Zero modeled health; no positive benefit ratio. US/Bay donor: no finite positive ratio / no finite positive ratio. Gross resources $101,736; SF resource: no finite positive ratio."
-  },
-  {
-    "case": "independent donor harm",
-    "headline": "SF donor: no finite positive ratio",
-    "detail": "Zero additionality, independent 0.05 US QALY loss. Full $100,000 gift retained. US/Bay/SF QALYs: -0.050000000 / -0.049000000 / -0.045000000. Net modeled harm; no positive benefit ratio. US/Bay donor: no finite positive ratio / no finite positive ratio. Gross resources $101,736; SF resource: no finite positive ratio."
-  },
-  {
-    "case": "one year health window",
-    "headline": "SF donor: $38,114,805/10 QALYs",
-    "detail": "First service-year health only. Full $100,000 gift retained. US/Bay/SF QALYs: 0.029151694 / 0.028568660 / 0.026236524. US/Bay donor: $34,303,324/10 QALYs / $35,003,392/10 QALYs. Gross resources $101,736; SF resource: $38,776,520/10 QALYs."
-  },
-  {
-    "case": "high competing mortality",
-    "headline": "SF donor: $3,407,752/10 QALYs",
-    "detail": "Other-death hazard 0.16/year. Full $100,000 gift retained. US/Bay/SF QALYs: 0.32605398 / 0.31953290 / 0.29344858. US/Bay donor: $3,066,977/10 QALYs / $3,129,568/10 QALYs. Gross resources $101,736; SF resource: $3,466,914/10 QALYs."
-  },
-  {
-    "case": "one extra year delay",
-    "headline": "SF donor: $2,030,106/10 QALYs",
-    "detail": "Start 1.25 years after gift. Full $100,000 gift retained. US/Bay/SF QALYs: 0.54731691 / 0.53637057 / 0.49258522. US/Bay donor: $1,827,095/10 QALYs / $1,864,383/10 QALYs. Gross resources $101,736; SF resource: $2,065,350/10 QALYs."
-  },
-  {
-    "case": "full health utility",
-    "headline": "SF donor: $1,565,691/10 QALYs",
-    "detail": "Utility 1. Full $100,000 gift retained. US/Bay/SF QALYs: 0.70966184 / 0.69546860 / 0.63869566. US/Bay donor: $1,409,122/10 QALYs / $1,437,879/10 QALYs. Gross resources $101,736; SF resource: $1,592,873/10 QALYs."
-  },
-  {
-    "case": "zero extra resources lower bound",
-    "headline": "SF donor: $1,969,157/10 QALYs",
-    "detail": "Zero extra outside resources; unverified lower bound. Full $100,000 gift retained. US/Bay/SF QALYs: 0.56425725 / 0.55297211 / 0.50783153. US/Bay donor: $1,772,241/10 QALYs / $1,808,409/10 QALYs. Gross resources $100,000; SF resource: $1,969,157/10 QALYs."
-  },
-  {
-    "case": "no peer allocation",
-    "headline": "SF donor: no finite positive ratio",
-    "detail": "Zero peer allocation. Full $100,000 gift retained. US/Bay/SF QALYs: 0.0000000 / 0.0000000 / 0.0000000. Zero modeled health; no positive benefit ratio. US/Bay donor: no finite positive ratio / no finite positive ratio. Gross resources $100,000; SF resource: no finite positive ratio."
-  },
-  {
-    "case": "strong public baseline",
-    "headline": "SF donor: $17,702,938/10 QALYs",
-    "detail": "Gap 3% and additionality 20%: stronger public baseline. Full $100,000 gift retained. US/Bay/SF QALYs: 0.062764221 / 0.061508937 / 0.056487799. US/Bay donor: $15,932,644/10 QALYs / $16,257,800/10 QALYs. Gross resources $101,736; SF resource: $18,010,281/10 QALYs."
-  }
-],
+      {
+        "case": "central",
+        "headline": "SF donor: $1,969,157/10 QALYs",
+        "detail": "Central: 25% peer allocation and 50% funding additionality. Full $100,000 gift retained. US/Bay/SF QALYs: 0.56425725 / 0.55297211 / 0.50783153. US/Bay donor: $1,772,241/10 QALYs / $1,808,409/10 QALYs. Gross resources $101,736; SF resource: $2,003,344/10 QALYs."
+      },
+      {
+        "case": "favorable joint stress",
+        "headline": "SF donor: $45,762/10 QALYs",
+        "detail": "Joint favorable: 50% allocation, $45/hour, 3 hours/offer, 75% additionality, higher risk/gap, 15-year horizon; not a confidence bound or verified offer. Full $100,000 gift retained. US/Bay/SF QALYs: 23.002121 / 22.542079 / 21.852015. US/Bay donor: $43,474/10 QALYs / $44,361/10 QALYs. Gross resources $109,259; SF resource: $50,000/10 QALYs."
+      },
+      {
+        "case": "adverse joint stress",
+        "headline": "SF donor: $3,219,771,445/10 QALYs",
+        "detail": "Joint adverse: 10% allocation, $90/hour, 12 hours/offer, 20% additionality, lower risk/gap, 5-year horizon. Full $100,000 gift retained. US/Bay/SF QALYs: 0.00038822631 / 0.00038046179 / 0.00031058105. US/Bay donor: $2,575,817,156/10 QALYs / $2,628,384,853/10 QALYs. Gross resources $100,231; SF resource: $3,227,224,619/10 QALYs."
+      },
+      {
+        "case": "no additional activity",
+        "headline": "SF donor: no finite positive ratio",
+        "detail": "Zero funding additionality; shared effects vanish. Full $100,000 gift retained. US/Bay/SF QALYs: 0.0000000 / 0.0000000 / 0.0000000. Zero modeled health; no positive benefit ratio. US/Bay donor: no finite positive ratio / no finite positive ratio. Gross resources $101,736; SF resource: no finite positive ratio."
+      },
+      {
+        "case": "no residual coverage gap",
+        "headline": "SF donor: no finite positive ratio",
+        "detail": "Zero residual coverage gap; shared harm remains. Full $100,000 gift retained. US/Bay/SF QALYs: -0.017361111 / -0.017013889 / -0.015625000. Net modeled harm; no positive benefit ratio. US/Bay donor: no finite positive ratio / no finite positive ratio. Gross resources $101,736; SF resource: no finite positive ratio."
+      },
+      {
+        "case": "ineffective response",
+        "headline": "SF donor: no finite positive ratio",
+        "detail": "Zero rescue effectiveness; shared harm remains. Full $100,000 gift retained. US/Bay/SF QALYs: -0.017361111 / -0.017013889 / -0.015625000. Net modeled harm; no positive benefit ratio. US/Bay donor: no finite positive ratio / no finite positive ratio. Gross resources $101,736; SF resource: no finite positive ratio."
+      },
+      {
+        "case": "null without shared harm",
+        "headline": "SF donor: no finite positive ratio",
+        "detail": "Zero gap and shared harm: exact null. Full $100,000 gift retained. US/Bay/SF QALYs: 0.0000000 / 0.0000000 / 0.0000000. Zero modeled health; no positive benefit ratio. US/Bay donor: no finite positive ratio / no finite positive ratio. Gross resources $101,736; SF resource: no finite positive ratio."
+      },
+      {
+        "case": "independent donor harm",
+        "headline": "SF donor: no finite positive ratio",
+        "detail": "Zero additionality, independent 0.05 US QALY loss. Full $100,000 gift retained. US/Bay/SF QALYs: -0.050000000 / -0.049000000 / -0.045000000. Net modeled harm; no positive benefit ratio. US/Bay donor: no finite positive ratio / no finite positive ratio. Gross resources $101,736; SF resource: no finite positive ratio."
+      },
+      {
+        "case": "one year health window",
+        "headline": "SF donor: $38,114,805/10 QALYs",
+        "detail": "First service-year health only. Full $100,000 gift retained. US/Bay/SF QALYs: 0.029151694 / 0.028568660 / 0.026236524. US/Bay donor: $34,303,324/10 QALYs / $35,003,392/10 QALYs. Gross resources $101,736; SF resource: $38,776,520/10 QALYs."
+      },
+      {
+        "case": "high competing mortality",
+        "headline": "SF donor: $3,407,752/10 QALYs",
+        "detail": "Other-death hazard 0.16/year. Full $100,000 gift retained. US/Bay/SF QALYs: 0.32605398 / 0.31953290 / 0.29344858. US/Bay donor: $3,066,977/10 QALYs / $3,129,568/10 QALYs. Gross resources $101,736; SF resource: $3,466,914/10 QALYs."
+      },
+      {
+        "case": "one extra year delay",
+        "headline": "SF donor: $2,030,106/10 QALYs",
+        "detail": "Start 1.25 years after gift. Full $100,000 gift retained. US/Bay/SF QALYs: 0.54731691 / 0.53637057 / 0.49258522. US/Bay donor: $1,827,095/10 QALYs / $1,864,383/10 QALYs. Gross resources $101,736; SF resource: $2,065,350/10 QALYs."
+      },
+      {
+        "case": "full health utility",
+        "headline": "SF donor: $1,565,691/10 QALYs",
+        "detail": "Utility 1. Full $100,000 gift retained. US/Bay/SF QALYs: 0.70966184 / 0.69546860 / 0.63869566. US/Bay donor: $1,409,122/10 QALYs / $1,437,879/10 QALYs. Gross resources $101,736; SF resource: $1,592,873/10 QALYs."
+      },
+      {
+        "case": "zero extra resources lower bound",
+        "headline": "SF donor: $1,969,157/10 QALYs",
+        "detail": "Zero extra outside resources; unverified lower bound. Full $100,000 gift retained. US/Bay/SF QALYs: 0.56425725 / 0.55297211 / 0.50783153. US/Bay donor: $1,772,241/10 QALYs / $1,808,409/10 QALYs. Gross resources $100,000; SF resource: $1,969,157/10 QALYs."
+      },
+      {
+        "case": "no peer allocation",
+        "headline": "SF donor: no finite positive ratio",
+        "detail": "Zero peer allocation. Full $100,000 gift retained. US/Bay/SF QALYs: 0.0000000 / 0.0000000 / 0.0000000. Zero modeled health; no positive benefit ratio. US/Bay donor: no finite positive ratio / no finite positive ratio. Gross resources $100,000; SF resource: no finite positive ratio."
+      },
+      {
+        "case": "strong public baseline",
+        "headline": "SF donor: $17,702,938/10 QALYs",
+        "detail": "Gap 3% and additionality 20%: stronger public baseline. Full $100,000 gift retained. US/Bay/SF QALYs: 0.062764221 / 0.061508937 / 0.056487799. US/Bay donor: $15,932,644/10 QALYs / $16,257,800/10 QALYs. Gross resources $101,736; SF resource: $18,010,281/10 QALYs."
+      }
+    ],
     "uncertaintyBoundary": "One-year health clipping is $38.11M/10 SF QALYs. Joint favorable $45,762 is not an established local bargain; strong public baseline is $17.70M. These are structural stresses, not fitted probabilities.",
     "fundingBoundary": "Independent EIN and current services are verified. Public CHOPP and ambassador funding remains baseline; the sponsor/direct contract split, complete current budget and marginal gift allocation are unresolved."
   },
   "evidence": [
-    {"key": "current", "design": "Current official provider, IRS and September2026 DPH disclosures", "population": "Code Tenderloin services and current recipient", "result": "Standalone EIN and active barrier-removal/ambassador services supported.", "transfer": "Does not identify how many otherwise-fatal overdoses a general gift would prevent."},
-    {"key": "fentanyl", "design": "Coffin, Maya and Kahn2022 decision model", "population": "Modeled fentanyl/heroin users", "result": "Timely naloxone coverage reduces modeled fatal overdose risk; faster fentanyl progression constrains response.", "transfer": "Supports mechanism, not Code's actual residual access gap or response effect."},
-    {"key": "survival", "design": "Weiner et al.2020 Massachusetts retrospective survivor cohort", "population": "ED-treated nonfatal opioid overdose survivors", "result": "5.5% died within one year, with substantial early mortality.", "transfer": "Requires recurrent/competing mortality treatment; not a contemporary SF parameter estimate."},
-    {"key": "budget", "design": "FY2024 sponsor Form990 and June2025 CHOPP request", "population": "Historical sponsored project and planned public services", "result": "$4.77M historical Code program expenses; material prospective public funding described.", "transfer": "Not current standalone audited finances. Mixed CHOPP service units cannot become marginal cost per person."}
+    {
+      "key": "current",
+      "design": "Current official provider, IRS and September 2026 DPH disclosures",
+      "population": "Code Tenderloin services and current recipient",
+      "result": "Standalone EIN and active barrier-removal/ambassador services supported.",
+      "transfer": "Does not identify how many otherwise-fatal overdoses a general gift would prevent."
+    },
+    {
+      "key": "fentanyl",
+      "design": "Coffin, Maya and Kahn 2022 decision model",
+      "population": "Modeled fentanyl/heroin users",
+      "result": "Timely naloxone coverage reduces modeled fatal overdose risk; faster fentanyl progression constrains response.",
+      "transfer": "Supports mechanism, not Code's actual residual access gap or response effect."
+    },
+    {
+      "key": "survival",
+      "design": "Weiner et al. 2020 Massachusetts retrospective survivor cohort",
+      "population": "ED-treated nonfatal opioid overdose survivors",
+      "result": "5.5% died within one year, with substantial early mortality.",
+      "transfer": "Requires recurrent/competing mortality treatment; not a contemporary SF parameter estimate."
+    },
+    {
+      "key": "budget",
+      "design": "FY2024 sponsor Form 990 and June 2025 CHOPP request",
+      "population": "Historical sponsored project and planned public services",
+      "result": "$4.77M historical Code program expenses; material prospective public funding described.",
+      "transfer": "Not current standalone audited finances. Mixed CHOPP service units cannot become marginal cost per person."
+    }
   ],
   "reservations": [
     "No current complete independent budget or verified $100,000 marginal peer-response offer.",
@@ -140,19 +248,109 @@
     "Legacy sponsor contract transfer is not assumed; current public and partner services limit additionality.",
     "Finite constant-risk health model does not fit recovery transitions or age-specific survival."
   ],
-  "excludedBenefits": ["Medication-treatment enrollments and other clinical benefits", "Employment, education and training", "Housing, reentry and family outcomes", "Other overdose programs' same recipient-time", "Economic welfare and policy effects"],
+  "excludedBenefits": [
+    "Medication-treatment enrollments and other clinical benefits",
+    "Employment, education and training",
+    "Housing, reentry and family outcomes",
+    "Other overdose programs' same recipient-time",
+    "Economic welfare and policy effects"
+  ],
   "sources": [
-    {"publisher": "Code Tenderloin", "title": "Official general giving and independent EIN", "url": "https://www.codetenderloin.org/donate", "published": "Undated", "retrieved": "September 8, 2026", "sourceType": "Primary provider disclosure"},
-    {"publisher": "IRS", "title": "California EO Business Master File: EIN933030657", "url": "https://www.irs.gov/pub/irs-soi/eo_ca.csv", "published": "Current downloaded file", "retrieved": "September 8, 2026", "sourceType": "Primary regulator record; exact row preserved"},
-    {"publisher": "SV2", "title": "Grantee partner updates and celebration2025", "url": "https://sv2.org/grantee-celebration-2025/", "published": "June 2, 2025", "retrieved": "September 8, 2026", "sourceType": "Primary funder report"},
-    {"publisher": "Code Tenderloin", "title": "Community Ambassador Program", "url": "https://www.codetenderloin.org/community-ambassador-program", "published": "Undated", "retrieved": "September 8, 2026", "sourceType": "Primary role and indicative wage disclosure"},
-    {"publisher": "SFDPH", "title": "Treatment Navigation Guide", "url": "https://media.api.sf.gov/documents/Treatment_Navigation_Guide.pdf", "published": "September 1, 2026 retrieved version", "retrieved": "September 8, 2026", "sourceType": "Current primary directory"},
-    {"publisher": "Center for New Music / IRS", "title": "Form990, year ended September30,2024", "url": "https://projects.propublica.org/nonprofits/full_text/202542189349301889/IRS990", "published": "Filed August 6, 2025", "retrieved": "September 8, 2026", "sourceType": "Primary filed return rendered by ProPublica"},
-    {"publisher": "SFDPH", "title": "CHOPP agreement request, contract1000034290", "url": "https://media.api.sf.gov/documents/Center_for_New_Music_-_Code_Tenderloin_CHOPP_1000034290_HC_Memo_Template_FINAL_ZMq8hIY.pdf", "published": "June 2, 2025", "retrieved": "September 8, 2026", "sourceType": "Primary request, not expenditure record"},
-    {"publisher": "Coffin, Maya and Kahn", "title": "Modeling overdose and naloxone distribution with fentanyl versus heroin", "url": "https://pubmed.ncbi.nlm.nih.gov/35588609/", "published": "2022", "retrieved": "September 8, 2026", "sourceType": "Primary model abstract"},
-    {"publisher": "Weiner et al.", "title": "One-year mortality after ED treatment for nonfatal opioid overdose", "url": "https://pubmed.ncbi.nlm.nih.gov/31229387/", "published": "2020", "retrieved": "September 8, 2026", "sourceType": "Primary observational cohort abstract"},
-    {"publisher": "DHCS", "title": "Naloxone Distribution Project", "url": "https://www.dhcs.ca.gov/individuals/naloxone-distribution-project/", "published": "Current page", "retrieved": "September 8, 2026", "sourceType": "Primary state public-supply program"},
-    {"publisher": "San Francisco AIDS Foundation", "title": "Overdose prevention and response,2025 totals", "url": "https://www.sfaf.org/health-services/overdose-prevention-response/", "published": "2025 totals on current page", "retrieved": "September 8, 2026", "sourceType": "Primary partner baseline disclosure"},
-    {"publisher": "San Francisco Community Health Center", "title": "2025 impact report: Code Tenderloin partnership", "url": "https://www.sfcommunityhealth.org/impact-report-2025", "published": "September 2025", "retrieved": "September 8, 2026", "sourceType": "Primary partner disclosure; not causal evaluation"}
+    {
+      "publisher": "Code Tenderloin",
+      "title": "Official general giving and independent EIN",
+      "url": "https://www.codetenderloin.org/donate",
+      "published": "Undated",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary provider disclosure"
+    },
+    {
+      "publisher": "IRS",
+      "title": "California EO Business Master File: EIN 933030657",
+      "url": "https://www.irs.gov/pub/irs-soi/eo_ca.csv",
+      "published": "Current downloaded file",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary regulator record; exact row preserved"
+    },
+    {
+      "publisher": "SV2",
+      "title": "Grantee partner updates and celebration 2025",
+      "url": "https://sv2.org/grantee-celebration-2025/",
+      "published": "June 2, 2025",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary funder report"
+    },
+    {
+      "publisher": "Code Tenderloin",
+      "title": "Community Ambassador Program",
+      "url": "https://www.codetenderloin.org/community-ambassador-program",
+      "published": "Undated",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary role and indicative wage disclosure"
+    },
+    {
+      "publisher": "SFDPH",
+      "title": "Treatment Navigation Guide",
+      "url": "https://media.api.sf.gov/documents/Treatment_Navigation_Guide.pdf",
+      "published": "September 1, 2026 retrieved version",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Current primary directory"
+    },
+    {
+      "publisher": "Center for New Music / IRS",
+      "title": "Form 990, year ended September 30, 2024",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202542189349301889/IRS990",
+      "published": "Filed August 6, 2025",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary filed return rendered by ProPublica"
+    },
+    {
+      "publisher": "SFDPH",
+      "title": "CHOPP agreement request, contract 1000034290",
+      "url": "https://media.api.sf.gov/documents/Center_for_New_Music_-_Code_Tenderloin_CHOPP_1000034290_HC_Memo_Template_FINAL_ZMq8hIY.pdf",
+      "published": "June 2, 2025",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary request, not expenditure record"
+    },
+    {
+      "publisher": "Coffin, Maya and Kahn",
+      "title": "Modeling overdose and naloxone distribution with fentanyl versus heroin",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35588609/",
+      "published": "2022",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary model abstract"
+    },
+    {
+      "publisher": "Weiner et al.",
+      "title": "One-year mortality after ED treatment for nonfatal opioid overdose",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31229387/",
+      "published": "2020",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary observational cohort abstract"
+    },
+    {
+      "publisher": "DHCS",
+      "title": "Naloxone Distribution Project",
+      "url": "https://www.dhcs.ca.gov/individuals/naloxone-distribution-project/",
+      "published": "Current page",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary state public-supply program"
+    },
+    {
+      "publisher": "San Francisco AIDS Foundation",
+      "title": "Overdose prevention and response,2025 totals",
+      "url": "https://www.sfaf.org/health-services/overdose-prevention-response/",
+      "published": "2025 totals on current page",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary partner baseline disclosure"
+    },
+    {
+      "publisher": "San Francisco Community Health Center",
+      "title": "2025 impact report: Code Tenderloin partnership",
+      "url": "https://www.sfcommunityhealth.org/impact-report-2025",
+      "published": "September 2025",
+      "retrieved": "September 8, 2026",
+      "sourceType": "Primary partner disclosure; not causal evaluation"
+    }
   ]
 }

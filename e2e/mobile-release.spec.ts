@@ -85,7 +85,7 @@ test('phone donors can reach the core market from the top bar', async ({ page },
   await expect(menu.getByRole('link', { name: /San Francisco/ })).toBeVisible();
   await menu.getByRole('link', { name: /San Francisco/ }).click();
   await expect(page).toHaveURL(/\/san-francisco$/);
-  await expect(page.getByRole('heading', { name: /Our Top Charities/ })).toBeVisible();
+  await expect(page.getByRole('heading', { name: /Our Bay Area Shortlist/ })).toBeVisible();
 });
 
 test('phone donors can inspect the India geography contract without inferred funding room', async ({ page }, testInfo) => {

@@ -212,6 +212,6 @@ Until then, the displayed estimate should be accompanied by its central case, fa
 
 ## Sources and model version
 
-The accompanying source ledger contains original-return URLs, official annual and city reports, and primary research. Publication dates are included only where supported; an undated current page is not assigned an invented date. All sources were reviewed September 11, 2026. Source excerpts and the prior model remain outside the Site in the handoff packet.
+The accompanying source ledger contains original-return URLs, official annual and city reports, and primary research. Publication dates are included only where supported; an undated current page is not assigned an invented date. All sources were reviewed September 11, 2026. The source ledger includes excerpts and links supporting the assessment; the previous model remains available for comparison.
 
 Model version: FUF V2, source-only FY2025 expense/output update with unchanged signed priors; finite age-lag, geography, funding, exposure, and resource diagnostics. The historical executable and output are preserved. No current marginal giving offer is verified.

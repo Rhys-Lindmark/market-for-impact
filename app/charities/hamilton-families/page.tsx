@@ -50,7 +50,7 @@ const content: CharityReportContent = {
       { title: 'Identify imminent risk', detail: 'A housed family applies while facing arrears, eviction, or another resolvable housing crisis.' },
       { title: 'Assess sustainability', detail: 'Hamilton reviews eligibility, the cash gap, income plan, and other available public or private assistance.' },
       { title: 'Pay and support', detail: 'The program may pay rent and pair it with legal referrals, income planning, and case management.' },
-      { title: 'Verify housing stability', detail: 'A recommendation-grade version would link every eligible applicant to HMIS and verify housing at 3, 6, 12, and 24 months.' },
+      { title: 'Verify housing stability', detail: "Stronger evidence would link every eligible applicant to the Homeless Management Information System (HMIS) and verify their housing status at 3, 6, 12, and 24 months." },
     ],
     boundary: 'The model covers Hamilton’s prevention assistance only. It excludes emergency shelter, rapid rehousing, long-term subsidies, transitional housing, education services, and the separate cash-after-rapid-rehousing trial. The 127 reported FY2025 families remain an output, not a causal denominator.',
   },

@@ -349,8 +349,8 @@ The original model and input files remain alongside the V2 wrapper. The results 
 
 The historical allocation diagnostic was specified before its output was interpreted. Its broad categories come from the FY2025 Foundation return, while within-category splits remain judgments. The five- and ten-year horizons and reduced rescue-capacity cases isolate uncertainties without changing the accepted default. No scenario weights were added after observing results.
 
-This packet is outside the publication checkout. It does not change the website, launch a preview, install dependencies or contact the organization. It is ready for independent review of source fidelity, model boundaries and renderer consistency. A publication step should preserve the long-form sections and scope labels rather than displaying only the short summary.
+The long-form assessment and its scope limitations are necessary to interpret the headline estimate. No organizational interviews informed this assessment.
 
-The observed work interval begins September 11, 2026 at 16:38:24 UTC. It includes source review, model packaging, testing and writing, with a brief overlapping correction to an earlier Breathe audit. The final handoff records the observed end separately. Active research time was not metered, and elapsed wall time should not be represented as uninterrupted research. No delay was added to meet a nominal time target.
+This assessment was reviewed September 11, 2026. The source ledger distinguishes new financial and operational checks from clinical evidence retained from the previous assessment.
 
 This method leaves some important questions unanswered. It does so visibly: no current priced marginal offer, no complete portfolio expectation, no measured local utility conversion and no verified current allocation. Those are substantive limitations to carry into the published assessment, not blanks that a renderer or integration script should silently fill.

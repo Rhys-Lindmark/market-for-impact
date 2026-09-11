@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Immediate research-list copy cleanup
+
+User September 11: remove “whole-gift” and “whole-organization” wording from the canonical /givebetter/research page, including row descriptions and introductory caveat. Use concise plain-language descriptions; preserve substantive cost-scope distinctions inside full reports and models. This is display copy only, not authorization to change estimates, cost boundaries or ranking. Verify the rendered research list has neither phrase and numeric ordering is unchanged before publication. Separate focused implementation branch required; queued, not yet live.
+
 ## Current priority: 110 reports, then top-ten V2 — Phase B active
 
 Published100/110 unchanged. [Staged plan](docs/110-research-plan.md):100 brainstorm entries in the [stable ledger](docs/110-discovery-ledger.md),25 comparative screens and [ten selected organizations](docs/110-discovery-selected-ten.md). First three packets (Micah's Hugs, Berkeley NEED, HOPE) are drafted and undergoing independent acceptance; Alameda Health Consortium is next. Preserve contrary findings and distinguish central scenarios from optimistic-tail-dominated weighted estimates. V2 now receives roughly30 additional research minutes each, three-year filing/current-operation checks, GiveWell-depth prose summaries and sourced annual spending breakdowns. Five additional Bay alpha candidates from GiveWell staff personal-giving posts are separately queued, not institutional endorsements or substitutes for the selected ten. Next: integrate accepted packets on a dedicated release branch, validate and publish; no new published prices or verified marginal offers yet.

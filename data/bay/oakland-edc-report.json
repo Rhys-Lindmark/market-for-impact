@@ -1,0 +1,354 @@
+{
+  "organization": "Eviction Defense Center — Oakland",
+  "eyebrow": "Exploratory whole-gift Bay research",
+  "program": "Collective Legal Services; finite health effects of eviction defense",
+  "published": "11 September 2026",
+  "modelVersion": "oakland-eviction-defense-center-whole-gift-finite-health-v1",
+  "nutshell": {
+    "headline": "Legal representation can avert evictions; the local health bridge remains uncertain",
+    "body": "Signed prior-weighted estimate: $21,354,853 per 10 Bay QALYs (0.004683 Bay QALYs per $10,000). This is an exploratory whole-gift estimate, not measured EDC health outcomes.",
+    "whyItMayWork": "A focused law firm can preserve housing for vulnerable tenants who would otherwise lose it, with possible health benefits.",
+    "whyWeAreCautious": "The favorable 10% world supplies 109.7% of signed expectation. Local causal eviction reduction, full-case share and finite utility remain uncertain. A share above 100% means the other scenarios have negative net expected health; it is not a probability.",
+    "recommendationBlocker": "HOLD a giving recommendation: no verified current donation-created capacity or client health counterfactual. Preserve the unfavorable estimate rather than tuning it."
+  },
+  "summary": [
+    {
+      "label": "Bay whole-gift estimate",
+      "value": "$21,354,853",
+      "detail": "Per 10 modeled QALYs; housing-related health only."
+    },
+    {
+      "label": "Whole annual expense",
+      "value": "$1,751,392",
+      "detail": "Calendar 2024 original return."
+    },
+    {
+      "label": "Reported clients",
+      "value": "Approximately 1,200",
+      "detail": "Not full cases or prevented evictions."
+    },
+    {
+      "label": "Government grants",
+      "value": "$1,278,549",
+      "detail": "Existing public baseline, not subtracted from cost."
+    }
+  ],
+  "programSection": {
+    "body": "Collective Legal Services — Eviction Defense Center, EIN 94-3188860, serves Alameda County and Richmond tenants facing eviction. It is distinct from San Francisco Eviction Defense Collaborative. The dated return reports approximately 1,200 clients; the current undated website says over 2,000 and describes litigation alongside outreach and stabilization support.",
+    "steps": [
+      {
+        "title": "Use whole organization cost",
+        "detail": "Retain public-funded and privately funded operations, management and non-litigation work."
+      },
+      {
+        "title": "Identify unique qualifying cases",
+        "detail": "Clients × household equivalence × qualifying representation share; no family or appearance multiplier."
+      },
+      {
+        "title": "Apply causal eviction reduction",
+        "detail": "An explicit external-evidence transfer prior, not observed retention or material-benefit rates."
+      },
+      {
+        "title": "Model finite signed health",
+        "detail": "Health-relevant share × utility × incremental duration, less harms, with funding response and Bay attribution."
+      }
+    ],
+    "boundary": "Only health effects through avoided evictions are quantified. Housing security, due process, rent and debt relief, habitability work, economic gains and non-litigation support may matter but receive no extra QALY bonus. All costs remain. Donated labor, court resources and partner inputs are not fully priced. No mortality or lifetime extrapolation."
+  },
+  "model": {
+    "headline": "$21,354,853 per 10 Bay QALYs",
+    "body": "The historical client rate is not an offer to buy extra cases. The model separates cash response, qualifying service, legal effect and health effect to avoid treating every favorable settlement as a health gain.",
+    "equation": {
+      "label": "Signed incremental Bay housing health",
+      "expression": "gift / whole expense × clients × unique household factor × funding response × (representation share × causal eviction reduction × health-relevant share × utility × incremental years − harm per household) × Bay share",
+      "result": "0.004682776305932651 Bay QALYs per $10,000"
+    },
+    "inputs": [
+      {
+        "key": "expense",
+        "label": "Whole calendar-2024 expense",
+        "best": "1751392",
+        "range": "No program-only denominator",
+        "basis": "Original expense includes $1,589,609 program and $161,783 management; no grant, fee or investment-income subtraction.",
+        "confidence": "High accounting"
+      },
+      {
+        "key": "clients",
+        "label": "Reported annual clients",
+        "best": "1200",
+        "range": "Undated website says over 2000",
+        "basis": "Dated filing approximately 1,200 clients; not 1,200 full trials, households or prevented evictions.",
+        "confidence": "Moderate"
+      },
+      {
+        "key": "unique",
+        "label": "Unique household equivalence",
+        "best": ".9",
+        "range": ".8–1",
+        "basis": "Accounts for repeated clients or co-clients in one household; credit one health beneficiary per household, not every family member.",
+        "confidence": "Low"
+      },
+      {
+        "key": "represented",
+        "label": "Qualifying representation share",
+        "best": ".5",
+        "range": ".3–.7",
+        "basis": "Excludes brief advice and non-litigation contacts from the counsel causal bridge. Berkeley subset includes different service levels.",
+        "confidence": "Low"
+      },
+      {
+        "key": "arr",
+        "label": "Absolute eviction reduction",
+        "best": ".06",
+        "range": ".02–.15",
+        "basis": "Transfer judgment, not local 65% retention. NYC executed-warrant estimates .084/.058 support scale, not direct transport to East Bay law or existing alternatives. Favorable .15 assumes higher-risk targeted clients.",
+        "confidence": "Low"
+      },
+      {
+        "key": "health",
+        "label": "Health-relevant share of avoided evictions",
+        "best": ".4",
+        "range": ".2–.6",
+        "basis": "Separates housing/legal success from health improvement. Eviction does not invariably cause homelessness or poor health.",
+        "confidence": "Very low"
+      },
+      {
+        "key": "utility",
+        "label": "Utility among health-affected beneficiaries",
+        "best": ".05",
+        "range": ".02–.10",
+        "basis": "Analyst judgment for temporary health improvement; hospital visits are not converted mechanically into QALYs.",
+        "confidence": "Very low"
+      },
+      {
+        "key": "duration",
+        "label": "Incremental health duration",
+        "best": "1 year",
+        "range": ".25–2 years",
+        "basis": "Expected time until alternative housing/support or need resolution catches up. Finite undiscounted exposure, no recurrence or lifetime benefit.",
+        "confidence": "Very low"
+      },
+      {
+        "key": "funding",
+        "label": "New-gift capacity response",
+        "best": ".3",
+        "range": "0–.6",
+        "basis": "Separate budget response amid public contracts, staffing and reserves; no verified cash-priced additional case.",
+        "confidence": "Very low"
+      },
+      {
+        "key": "bay",
+        "label": "Bay health share",
+        "best": ".99",
+        "range": ".98–1",
+        "basis": "Alameda County and Richmond footprint, not a complete residence census.",
+        "confidence": "Moderate"
+      },
+      {
+        "key": "harm",
+        "label": "Harm QALY per additional household",
+        "best": ".0002",
+        "range": "0–.003",
+        "basis": "Independent assumed health loss from delayed escalation, unsafe housing retention or procedural error; not observed incidence and not already netted in utility.",
+        "confidence": "Very low"
+      }
+    ],
+    "giftHeading": "Small $10,000 diagnostic; no linear $100,000 promise",
+    "sensitivity": [
+      {
+        "case": "funding_null",
+        "headline": "Not defined per 10; weight 0.2",
+        "detail": "Bay QALYs 0. Full coefficients and signed outputs are saved."
+      },
+      {
+        "case": "legal_health_null",
+        "headline": "Not defined per 10; weight 0.2",
+        "detail": "Bay QALYs 0. Full coefficients and signed outputs are saved."
+      },
+      {
+        "case": "harm",
+        "headline": "Not defined per 10; weight 0.1",
+        "detail": "Bay QALYs -0.005494372476293142. Full coefficients and signed outputs are saved."
+      },
+      {
+        "case": "cautious",
+        "headline": "Not defined per 10; weight 0.2",
+        "detail": "Bay QALYs -0.00026536332243152876. Full coefficients and signed outputs are saved."
+      },
+      {
+        "case": "central",
+        "headline": "$136,503,305 per 10; weight 0.2",
+        "detail": "Bay QALYs 0.0007325829968390855. Full coefficients and signed outputs are saved."
+      },
+      {
+        "case": "favorable",
+        "headline": "$1,945,991 per 10; weight 0.1",
+        "detail": "Bay QALYs 0.051387696186804534. Full coefficients and signed outputs are saved."
+      },
+      {
+        "case": "website_volume",
+        "headline": "Undated website 2,000 clients; timing mismatch",
+        "detail": "$12,812,912 per 10; Bay QALYs 0.007804627176554421."
+      },
+      {
+        "case": "half_rep",
+        "headline": "Half qualifying representation share",
+        "detail": "$50,438,139 per 10; Bay QALYs 0.001982626664961356."
+      },
+      {
+        "case": "nyc084",
+        "headline": "Use .084 eviction reduction in positive worlds",
+        "detail": "$40,102,632 per 10; Bay QALYs 0.0024936019075112825."
+      },
+      {
+        "case": "duration_quarter",
+        "headline": "Cap incremental duration at three months",
+        "detail": "Not defined per 10; Bay QALYs -0.00001444967203230365."
+      },
+      {
+        "case": "half_utility",
+        "headline": "Half utility assumptions",
+        "detail": "$50,438,139 per 10; Bay QALYs 0.001982626664961356."
+      },
+      {
+        "case": "full_funding",
+        "headline": "Full cash response",
+        "detail": "$13,929,111 per 10; Bay QALYs 0.0071792092232921."
+      },
+      {
+        "case": "resources_double",
+        "headline": "Double expense for hypothetical unpriced resources",
+        "detail": "$42,709,706 per 10; Bay QALYs 0.0023413881529663256."
+      }
+    ],
+    "uncertaintyBoundary": "Subjective scenario mass below $1M per 10: 0; below $100k: 0. Not calibrated probabilities. Excluding and renormalizing the favorable world gives Not defined per 10. Coefficients were locked before first calculation; no threshold tuning. Here the non-favorable scenarios have a negative signed expectation, so their cost per positive QALY is undefined—not zero cost or zero impact.",
+    "fundingBoundary": "Original 2024 revenue is $2,249,592, including $1,278,549 government grants and $465,163 program revenue. Their detailed restrictions and whether program revenue includes contracts or fees are unverified. Whole expense is $1,751,392, including $1,328,429 staff costs. Cash $611,187 plus savings $1,302,388 equals $1,913,575 net assets, with zero reported liabilities; restriction status is not established by the return presentation. The Berkeley packet proposes existing contract continuation at $435,500 per year, not a marginal private funding gap. Its appended resolution has blank votes, so that packet alone does not prove execution. A gift may replace funding, support existing work or expand capacity; current allocation is unknown."
+  },
+  "evidence": [
+    {
+      "key": "local_volume",
+      "design": "Original calendar-2024 Form 990",
+      "population": "Approximately 1,200 clients across the whole firm",
+      "result": "General legal-aid output, not exact unique households or full litigation cases.",
+      "transfer": "Dated denominator chosen over undated website volume; no claim that clients are causal beneficiaries."
+    },
+    {
+      "key": "local_retention",
+      "design": "Provider report in Berkeley public contract packet",
+      "population": "Berkeley subset, first 11 months of FY2025",
+      "result": "Over 776 unduplicated tenants, over 96 unlawful-detainer actions, over 212 appearances; over 65% of cases resolved with tenants remaining home.",
+      "transfer": "Service levels and periods differ. Retention is descriptive, not an absolute causal reduction; appearances are not people. No local QALYs measured."
+    },
+    {
+      "key": "nyc_counsel",
+      "design": "Quasi-experimental NYC counsel rollout, 2016–2019",
+      "population": "Housing court cases; IV effect among induced representation compliers",
+      "result": "Executed warrants: −8.4 percentage points (SE2.1) main IV; −5.8 (SE3.4) address-fixed-effects. Possessory judgments: −32.1 points, a different outcome.",
+      "transfer": "Not a universal causal effect for all referrals. East Bay law, pandemic debt and existing counsel differ; local .06 remains judgment. No health outcome in this counsel paper."
+    },
+    {
+      "key": "positive_trial",
+      "design": "Massachusetts District Court randomized representation offer",
+      "population": "Selectively recruited eligible tenants",
+      "result": "About two-thirds offered full representation retained possession versus about one-third of controls.",
+      "transfer": "Small selected context, not population-wide health evidence; full versus limited service distinction matters."
+    },
+    {
+      "key": "active_comparator_null",
+      "design": "Separate Massachusetts Housing Court randomized study",
+      "population": "Full representation offer versus limited-assistance alternative",
+      "result": "No statistically significant substantive outcome advantage was found.",
+      "transfer": "Supports a legal null world and careful baseline comparison; do not conflate this court/study with the positive District Court trial."
+    },
+    {
+      "key": "health_bridge",
+      "design": "Judge-leniency instrumental-variable study, Chicago and NYC",
+      "population": "Tenants in eviction proceedings",
+      "result": "Eviction increased homelessness and hospital use over the following two years.",
+      "transfer": "Supports a causal health pathway, not a QALY coefficient. No assumption every prevented eviction prevents homelessness; finite utility and duration are explicit priors."
+    }
+  ],
+  "reservations": [
+    "Public funding and liquid assets do not prove zero marginal benefit, but undermine an assumed cash emergency.",
+    "Full-case and unique-household shares are not measured in the 1,200-client denominator.",
+    "65% retained housing is not 65 percentage points of causal benefit.",
+    "Legal outcomes and health outcomes require separate bridges.",
+    "One modeled beneficiary per household; no automatic child or family multiplier.",
+    "The two-year favorable duration is an assumption, not a measured local benefit period.",
+    "Harm and null worlds remain; long-run market/systemic effects are unquantified.",
+    "No donation route verified; donationUrl omitted."
+  ],
+  "excludedBenefits": [
+    "Mortality or lifetime health",
+    "Rent/debt relief counted again as QALYs",
+    "Family-member multiplication",
+    "Court appearances as independent cases",
+    "Unmeasured habitability and other support health gains"
+  ],
+  "sources": [
+    {
+      "publisher": "IRS via ProPublica",
+      "title": "Original calendar 2024 Form 990",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202503189349311670/IRS990",
+      "published": "Submission 2025-11-14",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "IRS via ProPublica",
+      "title": "Original Schedule O",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202503189349311670/IRS990ScheduleO",
+      "published": "Submission 2025-11-14",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Eviction Defense Center",
+      "title": "Organization and services",
+      "url": "https://www.evictiondefensecenteroakland.org/about",
+      "published": "Undated",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Berkeley Rent Stabilization Board",
+      "title": "June 16, 2025 contract amendment packet",
+      "url": "https://rentboard.berkeleyca.gov/sites/default/files/documents/06-16-2025_RSB_ITEM_8E1_ACTION_EDC_Contract_Amendment_Item.pdf",
+      "published": "2025-06-16",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Cassidy and Currie",
+      "title": "NYC legal representation quasi-experiment",
+      "url": "https://miketcassidy.com/files/cassidy-currie-2023-evictions-jpube.pdf",
+      "published": "2023-04-15",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Greiner, Pattanayak and Hennessy",
+      "title": "Massachusetts District Court randomized study",
+      "url": "https://harvardlawreview.org/print/vol-126/the-limits-of-unbundled-legal-assistance-a-randomized-study-in-a-massachusetts-district-court-and-prospects-for-the-future/",
+      "published": "2013",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Greiner, Pattanayak and Hennessy",
+      "title": "Massachusetts Housing Court randomized study",
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1880078",
+      "published": "2012-09-01",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Collinson et al.",
+      "title": "Eviction and Poverty in American Cities",
+      "url": "https://academic.oup.com/qje/article/139/1/57/7276608",
+      "published": "2024",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    }
+  ]
+}

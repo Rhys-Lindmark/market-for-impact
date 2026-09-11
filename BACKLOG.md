@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Oakland Eviction Defense Center — candidate 99
+
+98/100 verified via PR294. Distinct Collective Legal Services EIN94-3188860 adds an independently audited whole-cost, partial housing-health report: $21.355M per 10 Bay QALYs, HOLD giving. Approximately 1,200 clients are not full cases or prevented evictions; public funding remains in full cost. Verification: 693 tests, lint zero errors/three existing warnings, production build and two phone/tablet interactions pass. Canonical publication pending. Face to Face is accepted for final report100; post100 HEPPAC correction, comparable top-ten funding diligence and donor design remain required.
+
 ## On-Site Dental Care Foundation — candidate98
 
 97/100 verified via HIF PR293/v208. On-Site EIN77-0495262: whole expense $1,157,224 and1,101 unduplicated reported patients, not visits or completed treatment. Signed partial dental-health estimate $5.322M/10 Bay QALYs; HOLD giving, no verified marginal offer. Independent audit preserves results; readable prose corrected without numerical changes. Verification:674 tests, lint zeroerrors/three existing warnings, build and two phone/tablet report/index/API checks passed. Next canonical publish, OaklandEDC accepted audit, FaceToFace independent audit. Goal remains100 plus source/model corrections and donor synthesis.

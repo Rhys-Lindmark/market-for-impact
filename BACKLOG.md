@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Post100 donor synthesis — in validation
+
+100/100 published (79 Bay, 21 expanded). Integrated ten scope-aware donor diligence priorities, public-source funding evidence and two actionable questions each. Homepage now selects ReCARES, Project Homeless Connect, Pacific Hearing Connection and conditional PVF rather than automatically sorting unlike cost scopes. Research library remains one numeric table; city-theory synthesizes clinical bottlenecks, additionality, donated resource limits and housing/policy uncertainty. Three independent reviewers accepted claims/scopes/funding without mandatory corrections. No verified marginal health offer found. Production build, 717 model tests, lint (zero errors, three existing warnings), eight phone/tablet checks and desktop layout check passed. Prices checked against research rows; disclosures and all ten links checked. Durable provenance: docs/post100-donor-provenance.md. Remaining: exact-commit publish and canonical checks; resolve marginal-capacity evidence without inventing offers or unauthorized outreach. Three homepage panels remain neutral research summaries rather than the requested documentary photos; photo sourcing is unfinished.
+
 ## HEPPAC post100 model correction
 
 100/100 remain verified. Independently accepted v2 uses a finite unique-person naloxone cohort and archives original executable model/full snapshot. Structural recurrence correction alone worsens $11.112M to $12.850M/10 Bay QALYs; separately revised historical-scale survival priors yield $8.133M. Both changes explicit; no verified marginal offer or top-four promotion. Other pathways and unresolved cross-program overlap retained. Full output parity, independent integral, person bounds, signed/null cases, 717 tests, lint zero errors/three existing warnings and production build pass; responsive and canonical gates follow. Next donor-facing top-ten comparison, funding questions and synthesis/redesign.

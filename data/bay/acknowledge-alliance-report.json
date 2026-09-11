@@ -1,0 +1,328 @@
+{
+  "organization": "Acknowledge Alliance",
+  "eyebrow": "Exploratory whole-gift Bay research",
+  "program": "Finite counseling health within school resilience and educator support",
+  "published": "11 September 2026",
+  "modelVersion": "acknowledge-alliance-whole-gift-finite-counseling-v1",
+  "nutshell": {
+    "headline": "Sustained counseling is real, but the measured clinical component is small relative to whole spending",
+    "body": "The research list uses the central scenario: $340,080,357 per 10 Bay QALYs. Signed mixture $188,291,084 per 10 Bay QALYs; central $340,080,357. This is full expense divided by partial quantified counseling health, not complete expected value.",
+    "whyItMayWork": "On-site relationship-based therapy can help underserved youth who otherwise lack suitable sustained care.",
+    "whyWeAreCautious": "The annual report identifies 24 clients and their families, not thousands of clinical courses. Educator support and SEL may matter, but their health effects are not quantified here.",
+    "recommendationBlocker": "HOLD giving recommendation. No verified priced marginal capacity, and even the favorable modeled clinical world is above $1M per 10 Bay QALYs."
+  },
+  "summary": [
+    {
+      "label": "WHOLE EXPENSE",
+      "value": "$1,599,738",
+      "detail": "FY2025; all programs and overhead retained."
+    },
+    {
+      "label": "BAY MIXTURE",
+      "value": "$188,291,084",
+      "detail": "Per 10 Bay QALYs; partial counseling health."
+    },
+    {
+      "label": "CENTRAL",
+      "value": "$340,080,357",
+      "detail": "Distinct from the signed mixture."
+    },
+    {
+      "label": "FAVORABLE TAIL",
+      "value": "96.76%",
+      "detail": "Contribution of the favorable 10% world to signed expected health."
+    }
+  ],
+  "programSection": {
+    "body": "The current annual report documents counseling, educator consultation/coaching, SEL and outreach in Peninsula/South Bay schools. Form 990 specifically describes relationship-based, trauma-informed Beechwood counseling. An undated services page describes a broader high-school footprint; it does not override the current reported clinical denominator.",
+    "steps": [
+      {
+        "title": "Count clinical clients, not reach",
+        "detail": "Use 24 index youth, with 484 total sessions including 31 family sessions. Do not add family members or multiply 11,000 indirect students by a clinical effect."
+      },
+      {
+        "title": "Credit finite additional symptom health",
+        "detail": "Apply explicit completion, conditional utility, duration, clinical transfer and alternative-care assumptions; subtract a signed harm allowance."
+      },
+      {
+        "title": "Keep whole-gift boundaries",
+        "detail": "Retain all $1,599,738 of expense, existing funded baseline and uncertain ordinary-cash response. Other health pathways remain unknown, not zero."
+      }
+    ],
+    "boundary": "Counseling-only health numerator with whole-organization cost. No suicide survival awards from 23 interventions called life-saving by the organization. No teacher satisfaction-to-QALY conversion or training reach counted as completed care."
+  },
+  "model": {
+    "headline": "$188,291,084 per 10 Bay QALYs",
+    "body": "Signed annual Bay health 0.0849609; all-beneficiary 0.08501700000000001. Central meaningful completed-course equivalents 19.200000000000003, a judgment rather than observed completion.",
+    "equation": {
+      "label": "Finite signed counseling component",
+      "expression": "gift / whole expense × cash response × Bay share × [24 index clients × completion × utility × duration × transfer × access increment − 24 × harm]",
+      "result": "0.0005310925914118437 Bay QALYs per $10,000"
+    },
+    "inputs": [
+      {
+        "key": "expense",
+        "label": "Whole annual expense",
+        "best": "$1,599,738",
+        "range": "FY2025",
+        "basis": "Filed expense, including outreach, consultation, therapy, fundraising and administration. Not $167,455 Beechwood-only spending. External donated complements unpriced.",
+        "confidence": "Filed"
+      },
+      {
+        "key": "clients",
+        "label": "Index counseling clients",
+        "best": "24",
+        "range": "24 in every base world",
+        "basis": "Annual report p7: 24 clients and their families, 484 sessions and 19 average sessions/student. Count youth once, not family members or sessions; group/other pathways unquantified. These are not necessarily completed courses.",
+        "confidence": "Reported, unaudited service count"
+      },
+      {
+        "key": "completion",
+        "label": "Meaningful course fraction",
+        "best": ".8",
+        "range": ".5–.95",
+        "basis": "Nineteen average sessions supports sustained engagement but is not a completion or outcome rate. Higher than unknown-throughput Rainbow; judgment.",
+        "confidence": "Judgment"
+      },
+      {
+        "key": "utilityGain",
+        "label": "Conditional average utility improvement",
+        "best": ".06",
+        "range": "0–.1 in base worlds; signed overrides allowed",
+        "basis": "No local preference-based utility. Same .03/.06/.1 positive family as Rainbow. Conditional average for a meaningful completed course, not imported trial ITT.",
+        "confidence": "Judgment"
+      },
+      {
+        "key": "duration",
+        "label": "Finite health duration",
+        "best": ".5 years",
+        "range": ".25–1",
+        "basis": "Same positive horizon family as Rainbow. Persistence and time until an alternative can deliver comparable benefit; no lifetime mental-health credit.",
+        "confidence": "Judgment"
+      },
+      {
+        "key": "transfer",
+        "label": "Clinical population/modality transfer",
+        "best": ".5",
+        "range": ".3–.8",
+        "basis": "Younger elementary-age/complex-trauma and relationship-based care differs from depressed adolescent CBT trials. Lower central transfer than Rainbow .65 is judgment, not measured relative quality.",
+        "confidence": "Judgment"
+      },
+      {
+        "key": "access",
+        "label": "Counterfactual care increment",
+        "best": ".5",
+        "range": ".3–.7",
+        "basis": "Probability/fraction of modeled clinical improvement not obtained through school counselors, public services or other care. Separate from duration among incremental cases.",
+        "confidence": "Judgment"
+      },
+      {
+        "key": "funding",
+        "label": "Ordinary-cash response",
+        "best": ".4",
+        "range": "0–.65",
+        "basis": "Conditional cash-created delivery relative to historical whole budget; existing school contracts/grants retained. Does not claim deficit equals funding gap.",
+        "confidence": "Judgment"
+      },
+      {
+        "key": "bay",
+        "label": "Bay health share",
+        "best": ".98",
+        "range": ".98–1",
+        "basis": "San Mateo/Santa Clara service footprint; patient residences not observed. Applies equally to harms.",
+        "confidence": "Judgment"
+      },
+      {
+        "key": "harm",
+        "label": "Burden per index client",
+        "best": ".001 QALY",
+        "range": "0–.005",
+        "basis": "Independent short-lived adverse/burden allowance across all clients, including noncompleters; not a documented local harm rate.",
+        "confidence": "Judgment"
+      },
+      {
+        "key": "weights",
+        "label": "Signed scenario weights",
+        "best": "20% funding-null; 15% clinical-null; 10% harm",
+        "range": "25% cautious; 20% central; 10% favorable",
+        "basis": "Pre-output subjective beliefs, not calibrated probabilities.",
+        "confidence": "Judgment"
+      }
+    ],
+    "giftHeading": "$10,000 analytic illustration—not an available treatment package",
+    "sensitivity": [
+      {
+        "case": "funding_null",
+        "headline": "No positive finite price per 10; weight 0.2",
+        "detail": "Annual Bay QALYs 0; completed equivalents 19.200000000000003."
+      },
+      {
+        "case": "clinical_null",
+        "headline": "No positive finite price per 10; weight 0.15",
+        "detail": "Annual Bay QALYs 0; completed equivalents 19.200000000000003."
+      },
+      {
+        "case": "harm",
+        "headline": "No positive finite price per 10; weight 0.1",
+        "detail": "Annual Bay QALYs -0.04704; completed equivalents 19.200000000000003."
+      },
+      {
+        "case": "cautious",
+        "headline": "No positive finite price per 10; weight 0.25",
+        "detail": "Annual Bay QALYs -0.007820400000000002; completed equivalents 12."
+      },
+      {
+        "case": "central",
+        "headline": "$340,080,357 per 10; weight 0.2",
+        "detail": "Annual Bay QALYs 0.04704000000000001; completed equivalents 19.200000000000003."
+      },
+      {
+        "case": "favorable",
+        "headline": "$19,458,692 per 10; weight 0.1",
+        "detail": "Annual Bay QALYs 0.82212; completed equivalents 22.799999999999997."
+      },
+      {
+        "case": "without_favorable",
+        "headline": "$5,237,601,222",
+        "detail": "Remaining worlds renormalized; no retuning."
+      },
+      {
+        "case": "half_duration",
+        "headline": "$425,217,395",
+        "detail": "Named diagnostic with exact inputs/results saved separately."
+      },
+      {
+        "case": "double_resources",
+        "headline": "$376,582,169",
+        "detail": "Named diagnostic with exact inputs/results saved separately."
+      },
+      {
+        "case": "historic_hours_unverified",
+        "headline": "$7,830,436",
+        "detail": "UNVERIFIED scope diagnostic: treat old 10,965 hours as one-hour sessions and divide by current 19 sessions/student. Not current observed throughput and not a replacement estimate."
+      },
+      {
+        "case": "central_clinical_all_worlds",
+        "headline": "$808,806,310",
+        "detail": "Named diagnostic with exact inputs/results saved separately."
+      }
+    ],
+    "uncertaintyBoundary": "Favorable share 96.7645%. Subjective mass below $1M and $100k is zero in the declared worlds, not proof no such pathway exists. The partial numerator omits major educator and SEL work. Conditional utility-duration assumptions do not import an ITT effect and then penalize completion again. Annual report p7 is the current denominator; older 7,357/10,965 counseling hours refer to earlier periods and may have different service scope. No silent pooling. All-beneficiary price $188,166,837 is not the Bay price.",
+    "fundingBoundary": "FY2025 IRS expense $1,599,738; revenue $1,467,064; program revenue $1,116,502 and government contributions $55,000. Prior expense $2,490,164. Net assets $163,416 include $108,416 without donor restrictions and $55,000 restricted; liabilities $88,774. Annual report revenue $1,525,397 includes released restrictions and differs from IRS revenue; this model uses the common expense, not a claimed reconciled cash deficit. No proven funding gap, current patient slots or gift price. Public/school-funded contracts are baseline, not donor-created delivery. Intern supervision, in-kind assistance and school infrastructure are not fully priced economic resources; a double-resource diagnostic is not a valuation."
+  },
+  "evidence": [
+    {
+      "key": "finance",
+      "design": "Original FY2025 Form 990 and annual report",
+      "population": "Whole legal recipient EIN 77-0393676, formerly Cleo Eulau Center",
+      "result": "Both report $1,599,738 expense; IRS identifies $167,455 Beechwood counseling within broader spending.",
+      "transfer": "Use whole expense; do not substitute program-only cost or infer funding room from deficit."
+    },
+    {
+      "key": "denominator",
+      "design": "FY2024–2025 annual report pp3 and7",
+      "population": "24 counseling clients and their families",
+      "result": "484 sessions, including 31 family sessions; 19 average sessions/student. Satisfaction and coping observations, no controlled utility effect.",
+      "transfer": "Count 24 index clients once. Completion is a judgment; family benefits and educator/SEL health are unquantified. Older hours and undated high-school page cannot silently replace current data."
+    },
+    {
+      "key": "clinical_cbt",
+      "design": "Randomized CBT plus usual care versus usual care, economic analysis",
+      "population": "212 depressed adolescents declining/stopping antidepressants",
+      "result": "26.8 additional depression-free days and reported .067 QALYs at12 months. Simple .4×26.8/365 yields .02937; reconciliation unresolved.",
+      "transfer": "No coefficient imported. Local younger/trauma-focused relationship-based care differs. Central conditional .06×.5×.5=.015 QALY per meaningful completed course is an analyst proxy before access adjustment."
+    },
+    {
+      "key": "clinical_road",
+      "design": "Randomized collaborative-care economic evaluation",
+      "population": "101 adolescents13–17, nine Washington primary-care clinics",
+      "result": "Incremental .04 QALYs over12 months, CI .02–.09; substantial structured collaborative care.",
+      "transfer": "Supports possibility of finite mental-health gains, not local effectiveness or mortality. ITT benefit is not divided by local completed sessions."
+    },
+    {
+      "key": "clinical_null",
+      "design": "IMPACT randomized active-comparator adolescent depression trial",
+      "population": "Adolescents with major depression assigned CBT, short-term psychoanalytic therapy or brief psychosocial intervention",
+      "result": "No superiority of the specialized therapies over brief psychosocial intervention on the primary depression outcome.",
+      "transfer": "Appropriate alternative care can sharply reduce added benefit; not evidence all therapy has zero effect. Supports explicit clinical-null and access uncertainty."
+    },
+    {
+      "key": "school_scope",
+      "design": "Organization-reported educator/SEL outcomes",
+      "population": "680 educators and 874 SEL students in annual report; broader indirect reach",
+      "result": "Consultations, coping/satisfaction and classroom skills are reported; no causal preference-based health effect.",
+      "transfer": "Do not convert training or school reach directly to QALYs. Residual benefits are unknown, not zero."
+    }
+  ],
+  "reservations": [
+    "Full-cost partial-health estimate is not complete organization value or directly comparable to complete multi-pathway models.",
+    "Twenty-four clients are reported; completion, utility, causal transfer and marginal cash response are judgments.",
+    "The favorable 10% world supplies nearly all signed expected health; removing it sharply worsens the price.",
+    "Annual report and older web descriptions differ in scope and throughput; current annual data take priority.",
+    "Existing program revenue and school/public resources may finance baseline capacity; no additional donor-ready offer is verified."
+  ],
+  "excludedBenefits": [
+    "Educator support, SEL, training and school climate—unquantified, not zero.",
+    "Family spillovers without a deduplicated clinical denominator.",
+    "Suicide deaths averted inferred from crisis-intervention descriptions.",
+    "Academic achievement or subjective satisfaction counted as health utility."
+  ],
+  "sources": [
+    {
+      "publisher": "IRS via ProPublica",
+      "title": "Original FY2025 Form 990",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202611329349304406/IRS990",
+      "published": "Submitted May 12, 2026",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Acknowledge Alliance",
+      "title": "FY2024–2025 annual report, especially pages 3–8",
+      "url": "https://www.acknowledgealliance.org/s/Annual-Report-FY2024-2025-PDF-Version.pdf",
+      "published": "FY July 2024–June 2025; publication date not shown",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Acknowledge Alliance",
+      "title": "Executive director updates: current sessions versus historical hours",
+      "url": "https://www.acknowledgealliance.org/ed-updates",
+      "published": "January 29, 2025; January 28 and July 28, 2026",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Acknowledge Alliance",
+      "title": "Services",
+      "url": "https://www.acknowledgealliance.org/services",
+      "published": "Undated",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Dickerson et al., Pediatrics",
+      "title": "Cost-effectiveness of CBT for depressed adolescents",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5810604/",
+      "published": "2018",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Wright et al., JAMA Pediatrics",
+      "title": "Collaborative care for adolescent depression: economic evaluation",
+      "url": "https://jamanetwork.com/journals/jamapediatrics/fullarticle/2553826",
+      "published": "2016",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Goodyer et al., Lancet Psychiatry",
+      "title": "IMPACT randomized adolescent depression trial",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27914903/",
+      "published": "2017",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    }
+  ]
+}

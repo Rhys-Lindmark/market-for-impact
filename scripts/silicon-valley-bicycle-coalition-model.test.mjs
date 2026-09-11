@@ -1,0 +1,15 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import {calculate,worlds,annuity} from '../lib/silicon-valley-bicycle-coalition-model.mjs';
+const read=s=>JSON.parse(fs.readFileSync(new URL('./../data/bay/silicon-valley-bicycle-coalition-'+s,import.meta.url)));
+test('exact saved full output',()=>assert.deepEqual(calculate(),read('results.json')));
+test('finite integral numeric trapezoid',()=>{const rate=.0595588022415444,n=10000,dt=10/n;let s=0;for(let i=0;i<n;i++)s+=(Math.exp(-rate*i*dt)+Math.exp(-rate*(i+1)*dt))*dt/2;assert.ok(Math.abs(s-annuity(10,rate))<1e-7);});
+test('independent central equation',()=>{const d=Math.log(1.03),D=.8*(1-Math.exp(-(.03+d)*10))/(.03+d),I=.2*(1-Math.exp(-d))/d,Y=Math.exp(-d*2)*(1-Math.exp(-d*3))/d;const q=1000/1844918*.1*.3*.95*.2*Y*(.5*D+10*I);assert.ok(Math.abs(q-calculate().central.bayQ)<1e-17);});
+test('weighted health then inversion',()=>{const r=calculate();assert.equal(r.bayQ,r.rows.reduce((s,w)=>s+w.weight*w.bayQ,0));assert.equal(r.bayCostPer10,10/(r.bayQ/1000));});
+test('signed null worlds',()=>{const r=calculate();assert.equal(r.rows[0].bayQ,0);assert.equal(r.rows[1].bayQ,0);assert.ok(r.rows[2].bayQ<0);assert.equal(r.rows[2].bayCostPer10,null);});
+test('zero gift',()=>assert.equal(calculate({gift:0}).bayQ,0));
+test('whitespace identity guard',()=>{assert.throws(()=>calculate({scenarios:[{...worlds[0],id:' ',weight:1}]}));assert.throws(()=>calculate({scenarios:[{...worlds[0],id:'x',weight:.5},{...worlds[0],id:' x ',weight:.5}]}));});
+for(const v of [null,42,[],{expense:Number.MIN_VALUE},{gift:10001},{scenarios:[]},{scenarios:[null]},{scenarios:[worlds[0],worlds[0]]},{scenarios:[{...worlds[0],weight:1,deaths:Number.MAX_VALUE}]},{scenarios:[{...worlds[0],weight:1,years:Infinity}]}])test('reject '+JSON.stringify(v),()=>assert.throws(()=>calculate(v)));
+test('missing input',()=>{const w={...worlds[0],weight:1};delete w.bay;assert.throws(()=>calculate({scenarios:[w]}));});
+test('invalid total weights',()=>assert.throws(()=>calculate({scenarios:[worlds[0]]})));
+test('canonical report shapes',()=>{const r=read('report.json');for(const s of r.summary)for(const k of ['label','value','detail'])assert.equal(typeof s[k],'string');for(const s of r.evidence)for(const k of ['key','design','population','result','transfer'])assert.equal(typeof s[k],'string');for(const s of r.model.sensitivity)for(const k of ['case','headline','detail'])assert.equal(typeof s[k],'string');for(const s of r.model.inputs)for(const k of ['key','label','confidence','best','range','basis'])assert.equal(typeof s[k],'string');});
+test('all saved numbers finite',()=>{const visit=x=>{if(typeof x==='number')assert.ok(Number.isFinite(x));else if(x&&typeof x==='object')Object.values(x).forEach(visit);};visit(calculate());visit(read('diagnostics.json'));});
+test('no unverified donation route',()=>assert.equal(read('report.json').donationUrl,undefined));

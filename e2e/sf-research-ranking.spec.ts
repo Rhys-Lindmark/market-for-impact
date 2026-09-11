@@ -15,7 +15,7 @@ test('research list is numeric ascending and its first four match the home page'
     await expect(page.locator(`[data-research-slug="${row.slug}"] a`).first()).toHaveAttribute('href', `/charities/${row.slug}`);
   }
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-  const sfRows=await cards.evaluateAll(nodes=>nodes.filter(n=>n.getAttribute('data-estimate-geography')==='San Francisco'&&n.getAttribute('data-geography')==='SF').map(n=>n.getAttribute('data-research-slug')));
+  const localRows=rows.filter(row=>Number.isFinite(row.cost)).map(row=>row.slug);
   await page.goto('/');
-  expect(await page.locator('.sf-home-charity').evaluateAll(nodes => nodes.map(n => n.id))).toEqual(sfRows.slice(0,4));
+  expect(await page.locator('.sf-home-charity').evaluateAll(nodes => nodes.map(n => n.id))).toEqual(localRows.slice(0,4));
 });

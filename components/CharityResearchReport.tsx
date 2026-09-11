@@ -6,6 +6,7 @@ import historicalEffort from '@/data/research-effort-historical-estimates.json';
 import assignedEffort from '@/data/research-effort-assigned-estimates.json';
 import {researchEffortSummary} from '@/lib/research-effort.mjs';
 import DonorReadiness from './DonorReadiness';
+import TopTenSummary,{hasTopTenSummary} from './TopTenSummary';
 
 export type CharityEvidence = {
   key: string;
@@ -115,6 +116,7 @@ export default function CharityResearchReport({ content }: { content: CharityRep
         <article>
           <section id="summary"><span id="nutshell" />
             <h2>Summary</h2>
+            {hasTopTenSummary(content.organization)?<TopTenSummary organization={content.organization}/>:<>
             <p><strong>What do they do?</strong> {content.programSection.body} <a href="#program">More</a></p>
             <p><strong>Why this approach interests us</strong></p>
             <ul><li>{content.nutshell.whyItMayWork}</li></ul>
@@ -123,6 +125,7 @@ export default function CharityResearchReport({ content }: { content: CharityRep
             <p><strong>What do you get for your dollar?</strong></p>
             <p>{content.nutshell.body}</p>
             <dl className="report-summary">{content.summary.map(item => <div key={item.label}><dt>{item.label.toLowerCase()}</dt><dd><strong>{item.value}</strong> — {item.detail}</dd></div>)}</dl>
+            </>}
           </section>
           <section id="program">
             <h2>1. What do they do?</h2><p>{content.programSection.body}</p>

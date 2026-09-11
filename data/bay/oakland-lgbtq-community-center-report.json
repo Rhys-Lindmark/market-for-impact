@@ -1,0 +1,441 @@
+{
+  "organization": "Oakland LGBTQ Community Center",
+  "eyebrow": "Exploratory whole-gift Bay research",
+  "program": "Finite HIV prevention, earlier ART care and short STI morbidity within a broad community center",
+  "published": "11 September 2026",
+  "modelVersion": "oakland-lgbtq-center-whole-gift-clinical-v1",
+  "nutshell": {
+    "headline": "Real clinical access, but testing counts do not establish incremental retained care",
+    "body": "The research list uses the central scenario: $487,415,791 per 10 Bay QALYs. Signed mixture $34,551,066 per 10 Bay QALYs; central $487,415,791. Whole $4,957,230 expense is retained against partial quantified clinical health, not complete expected value.",
+    "whyItMayWork": "The Glenn Burke clinic offers PrEP, treatment and rapid ART linkage with experienced clinical partners. Additional sustained access can prevent infection and shorten illness.",
+    "whyWeAreCautious": "Starts, retention, positivity, patient alternatives and donor-created capacity are unobserved. The favorable10% world supplies99.21% of signed expected benefit.",
+    "recommendationBlocker": "HOLD giving recommendation. No priced additional clinical offer is verified, and even the favorable modeled world exceeds $1M per 10 Bay QALYs."
+  },
+  "summary": [
+    {
+      "label": "WHOLE EXPENSE",
+      "value": "$4,957,230",
+      "detail": "Calendar2024; all programs and administration retained."
+    },
+    {
+      "label": "BAY MIXTURE",
+      "value": "$34,551,066",
+      "detail": "Per10 Bay QALYs; partial clinical health."
+    },
+    {
+      "label": "CENTRAL",
+      "value": "$487,415,791",
+      "detail": "Distinct from weighted signed mixture."
+    },
+    {
+      "label": "FAVORABLE TAIL",
+      "value": "99.21%",
+      "detail": "Contribution of the10% favorable world."
+    }
+  ],
+  "programSection": {
+    "body": "Glenn Burke Wellness Clinic is a project of the Center, not a separate legal recipient. Official services include HIV/STI testing and treatment, PrEP/PEP enrollment, rapid ART linkage, vaccinations and navigation, in collaboration with LifeLong Medical Care and Bay Area Community Health. Services can be free or payer-covered, with county, foundation and Gilead support.",
+    "steps": [
+      {
+        "title": "Separate tests from clinical people",
+        "detail": "Use1,046 HIV-tested patients only as a scale anchor. Do not add686 syphilis and5,606 chlamydia/gonorrhea testing counts as unique clients or cured infections."
+      },
+      {
+        "title": "Model retained, additional care",
+        "detail": "Explicit uncertain starts, protected person-years, positivity and effective treatment bridge testing to outcomes; ART-positive and PrEP-negative pools are separated."
+      },
+      {
+        "title": "Limit health and attribution",
+        "detail": "Finite treated-era HIV morbidity and short STI symptom relief only. Retain partner contribution, public baseline, whole cost and signed harm."
+      }
+    ],
+    "boundary": "Housing, community support, youth/senior programs, therapy, vaccines, doxyPEP, gender care and other health pathways remain unquantified, not zero. This is not a complete organization return."
+  },
+  "model": {
+    "headline": "$34,551,066 per10 Bay QALYs",
+    "body": "Signed annual BayQ 1.434754559425406; all-beneficiaryQ 1.4349579211273749. Central modeled clinical people 836.8000000000001, PrEP starts 165.68640000000002, protected person-years 82.84320000000001. None is an observed completed-care count.",
+    "equation": {
+      "label": "Finite signed clinical component",
+      "expression": "gift / whole expense × cash response × partner contribution × Bay share × [PrEP infections avoided × finite HIV morbidity Q + earlier ART morbidity Q + nonoverlapping STI symptom Q − per-person harm]",
+      "result": "0.0028942666759972932 Bay QALYs per $10,000"
+    },
+    "inputs": [
+      {
+        "key": "expense",
+        "label": "Whole expense",
+        "best": "$4,957,230",
+        "range": "Calendar2024",
+        "basis": "Original filed expense. No clinic-only substitution; partner resources outside recipient are not fully valued.",
+        "confidence": "Filed"
+      },
+      {
+        "key": "tested",
+        "label": "HIV-tested patients",
+        "best": "1,046",
+        "range": "2024 reported service count",
+        "basis": "Not PrEP starts or a verified all-service unique denominator. Other tests are not added.",
+        "confidence": "Reported"
+      },
+      {
+        "key": "unique",
+        "label": "unique",
+        "best": "0.8",
+        "range": "0.6–1",
+        "basis": "Fraction of HIV-tested patient count representing unique index clinical people; repeat testing may already be deduplicated, so .8 is uncertainty rather than an observed correction.",
+        "confidence": "Analyst judgment; not observed local effect"
+      },
+      {
+        "key": "prepShare",
+        "label": "prepShare",
+        "best": "0.2",
+        "range": "0.05–0.4",
+        "basis": "Fraction of modeled HIV-negative people starting a PrEP program; not the observed testing-to-start conversion.",
+        "confidence": "Analyst judgment; not observed local effect"
+      },
+      {
+        "key": "prepYears",
+        "label": "prepYears",
+        "best": "0.5",
+        "range": "0.25–0.8",
+        "basis": "Mean retained protected person-years per starter within one year; no separate adherence factor.",
+        "confidence": "Analyst judgment; not observed local effect"
+      },
+      {
+        "key": "risk",
+        "label": "risk",
+        "best": "0.015",
+        "range": "0.005–0.04",
+        "basis": "Annual untreated/comparator HIV acquisition risk in retained sexual-risk cohort. .5–4% is below PROUD's high-risk9% deferred incidence; local risk is not measured.",
+        "confidence": "Analyst judgment; not observed local effect"
+      },
+      {
+        "key": "protection",
+        "label": "protection",
+        "best": "0.9",
+        "range": "0.7–0.99",
+        "basis": "Conditional efficacy during retained protected time. CDC99% requires prescribed use; .7–.99 judgments allow imperfect local protection. Not PROUD's ITT86% multiplied by a second adherence rate.",
+        "confidence": "Analyst judgment; not observed local effect"
+      },
+      {
+        "key": "prepAccess",
+        "label": "prepAccess",
+        "best": "0.4",
+        "range": "0.2–0.7",
+        "basis": "Fraction of protection not supplied by another clinic or current coverage.",
+        "confidence": "Analyst judgment; not observed local effect"
+      },
+      {
+        "key": "hivUtility",
+        "label": "hivUtility",
+        "best": "0.1",
+        "range": "0–0.15",
+        "basis": "Average treated-era morbidity utility difference after an averted infection, not an untreated-AIDS disability weight.",
+        "confidence": "Analyst judgment; not observed local effect"
+      },
+      {
+        "key": "hivYears",
+        "label": "hivYears",
+        "best": "10",
+        "range": "5–20",
+        "basis": "Finite effective morbidity years per infection avoided; includes persistence/survival/discount uncertainty in a single effective-year prior. No lifetime survival award or secondary transmission.",
+        "confidence": "Analyst judgment; not observed local effect"
+      },
+      {
+        "key": "positive",
+        "label": "positive",
+        "best": "0.01",
+        "range": "0.005–0.02",
+        "basis": "Fraction of unique clinical people already HIV-positive, removed from PrEP pool; not observed new diagnoses.",
+        "confidence": "Analyst judgment; not observed local effect"
+      },
+      {
+        "key": "artLink",
+        "label": "artLink",
+        "best": "0.7",
+        "range": "0.5–0.9",
+        "basis": "Fraction of HIV-positive pool entering supported ART care, not documented starts.",
+        "confidence": "Analyst judgment; not observed local effect"
+      },
+      {
+        "key": "artAccess",
+        "label": "artAccess",
+        "best": "0.5",
+        "range": "0.2–0.7",
+        "basis": "Share of ART access earlier/additional to ordinary clinical alternatives; includes already-in-care patients receiving no additional benefit.",
+        "confidence": "Analyst judgment; not observed local effect"
+      },
+      {
+        "key": "artUtility",
+        "label": "artUtility",
+        "best": "0.05",
+        "range": "0–0.1",
+        "basis": "Finite morbidity utility improvement from earlier care; analyst proxy, not START composite-event rate treated as QALYs.",
+        "confidence": "Analyst judgment; not observed local effect"
+      },
+      {
+        "key": "artYears",
+        "label": "artYears",
+        "best": "0.5",
+        "range": "0.25–2",
+        "basis": "Finite duration of earlier morbidity improvement before alternative care.",
+        "confidence": "Analyst judgment; not observed local effect"
+      },
+      {
+        "key": "stiEpisodes",
+        "label": "stiEpisodes",
+        "best": "0.2",
+        "range": "0.1–0.4",
+        "basis": "Nonoverlapping treatable STI episodes per clinical person; does not multiply all test counts.",
+        "confidence": "Analyst judgment; not observed local effect"
+      },
+      {
+        "key": "stiTreat",
+        "label": "stiTreat",
+        "best": "0.8",
+        "range": "0.5–0.95",
+        "basis": "Fraction of modeled episodes receiving effective treatment.",
+        "confidence": "Analyst judgment; not observed local effect"
+      },
+      {
+        "key": "stiSymptom",
+        "label": "stiSymptom",
+        "best": "0.3",
+        "range": "0.2–0.5",
+        "basis": "Fraction producing removable short-term symptoms; asymptomatic infections are common.",
+        "confidence": "Analyst judgment; not observed local effect"
+      },
+      {
+        "key": "stiAccess",
+        "label": "stiAccess",
+        "best": "0.5",
+        "range": "0.2–0.7",
+        "basis": "Fraction of treatment benefit not obtained promptly elsewhere.",
+        "confidence": "Analyst judgment; not observed local effect"
+      },
+      {
+        "key": "stiUtility",
+        "label": "stiUtility",
+        "best": "0.1",
+        "range": "0–0.2",
+        "basis": "Symptomatic utility loss relieved; unmeasured local proxy.",
+        "confidence": "Analyst judgment; not observed local effect"
+      },
+      {
+        "key": "stiYears",
+        "label": "stiYears",
+        "best": "0.02",
+        "range": "0.01–0.05",
+        "basis": "Short incremental symptom duration relieved, not duration of permanent complications.",
+        "confidence": "Analyst judgment; not observed local effect"
+      },
+      {
+        "key": "partner",
+        "label": "partner",
+        "best": "0.5",
+        "range": "0.3–0.7",
+        "basis": "Recipient contribution share of jointly produced clinical benefit. Avoids assigning LifeLong/BACH/provider impact wholly to this legal recipient; not an external-resource cost valuation.",
+        "confidence": "Analyst judgment; not observed local effect"
+      },
+      {
+        "key": "funding",
+        "label": "funding",
+        "best": "0.4",
+        "range": "0–0.65",
+        "basis": "Ordinary cash response relative to existing whole budget, separate from patient alternative care and partner attribution.",
+        "confidence": "Analyst judgment; not observed local effect"
+      },
+      {
+        "key": "bay",
+        "label": "bay",
+        "best": "0.98",
+        "range": "0.95–1",
+        "basis": "Bay share of benefits and harms, .95–1; Oakland footprint is not verified residences.",
+        "confidence": "Analyst judgment; not observed local effect"
+      },
+      {
+        "key": "harm",
+        "label": "harm",
+        "best": "0.00005",
+        "range": "0–0.0005",
+        "basis": "Independent QALY burden per modeled person from delivery/adverse experiences, including people without modeled clinical gains; not a local observed harm rate.",
+        "confidence": "Analyst judgment; not observed local effect"
+      },
+      {
+        "key": "weights",
+        "label": "Signed subjective weights",
+        "best": ".2 funding-null; .15 clinical-null; .1 harm",
+        "range": ".25 cautious; .2 central; .1 favorable",
+        "basis": "Locked before first output, not calibrated probabilities; joint scenarios allow correlation.",
+        "confidence": "Judgment"
+      }
+    ],
+    "giftHeading": "$10,000 analytic illustration—not a purchased clinical package",
+    "sensitivity": [
+      {
+        "case": "funding_null",
+        "headline": "No positive finite price per10; weight 0.2",
+        "detail": "Annual BayQ 0; PrEP component 0.4473532800000002, ART 0.07322, STI 0.040166400000000005, harm 0.04184, before partner/cash/Bay."
+      },
+      {
+        "case": "clinical_null",
+        "headline": "No positive finite price per10; weight 0.15",
+        "detail": "Annual BayQ 0; PrEP component 0, ART 0, STI 0, harm 0, before partner/cash/Bay."
+      },
+      {
+        "case": "harm",
+        "headline": "No positive finite price per10; weight 0.1",
+        "detail": "Annual BayQ -0.08200640000000002; PrEP component 0, ART 0, STI 0, harm 0.41840000000000005, before partner/cash/Bay."
+      },
+      {
+        "case": "cautious",
+        "headline": "No positive finite price per10; weight 0.25",
+        "detail": "Annual BayQ -0.0033742511943750005; PrEP component 0.0013660106250000003, ART 0.0015690000000000005, STI 0.0006276000000000003, harm 0.06276000000000001, before partner/cash/Bay."
+      },
+      {
+        "case": "central",
+        "headline": "$487,415,791 per10; weight 0.2",
+        "detail": "Annual BayQ 0.10170433728000004; PrEP component 0.4473532800000002, ART 0.07322, STI 0.040166400000000005, harm 0.04184, before partner/cash/Bay."
+      },
+      {
+        "case": "favorable",
+        "headline": "$3,482,527 per10; weight 0.1",
+        "detail": "Annual BayQ 14.234578947679998; PrEP component 27.278608895999994, ART 2.6359200000000005, STI 1.39118, harm 0.02092, before partner/cash/Bay."
+      },
+      {
+        "case": "without_favorable",
+        "headline": "$3,949,402,001",
+        "detail": "Other worlds renormalized, no retuning."
+      },
+      {
+        "case": "half_finite_hiv_horizon",
+        "headline": "$61,550,803",
+        "detail": "Diagnostic only; exact inputs and full outputs saved separately."
+      },
+      {
+        "case": "double_resources",
+        "headline": "$69,102,133",
+        "detail": "Diagnostic only; exact inputs and full outputs saved separately."
+      },
+      {
+        "case": "central_hiv_clinical_all_worlds",
+        "headline": "$142,065,779",
+        "detail": "Diagnostic only; exact inputs and full outputs saved separately."
+      },
+      {
+        "case": "prep_only",
+        "headline": "$39,751,799",
+        "detail": "Diagnostic only; exact inputs and full outputs saved separately."
+      }
+    ],
+    "uncertaintyBoundary": "Favorable share 99.2126%. Declared subjective mass below $1M and $100k is zero, not calibrated impossibility. All-beneficiary price $34,546,170 differs from Bay. Finite HIV morbidity uses effective years, not additional survival; no infection automatically earns a lifetime. PrEP risk and efficacy apply once during retained protected time. ART-positive clients cannot also be PrEP-negative clients. STI relief is restricted to residual symptoms, not HIV complications, with no permanent disability or secondary transmission. A prevention benefit and treatment benefit for distinct conditions may occur in one person but must not count the same utility loss twice.",
+    "fundingBoundary": "2024 revenue $4,325,439; government contributions $548,486; program fees $1,321,469; net assets $411,634 versus liabilities $4,171,979. The $631,791 deficit is not a marginal funding offer. Official clinic names county/Gilead/foundation support and LifeLong/BACH collaboration. Partner contribution shares health credit; funding estimates additional activity; patient access estimates substitution by alternative care. They are distinct but correlated judgments. No verified restricted gift pathway or treatment price. Whole accounting expense is not full economic resource cost; doubling resources is illustrative only."
+  },
+  "evidence": [
+    {
+      "key": "finance",
+      "design": "Original calendar2024 Form990",
+      "population": "Whole legal recipient EIN82-2258008",
+      "result": "Expense $4,957,230; reported HIV testing1,046, syphilis686, chlamydia/gonorrhea5,606.",
+      "transfer": "Tests can repeat by person, anatomical site and time. No observed PrEP starts, new HIV diagnoses, cure or retention inferred."
+    },
+    {
+      "key": "clinical_delivery",
+      "design": "Current official clinic service page",
+      "population": "Glenn Burke clinic clients and joint providers",
+      "result": "PrEP/PEP, HIV/STI treatment, rapid ART linkage and payer enrollment are offered with LifeLong/BACH and public/private funders.",
+      "transfer": "Actual care mechanism, but no annual completed-care or cash-created capacity denominator. Do not duplicate partner impact."
+    },
+    {
+      "key": "prep",
+      "design": "PROUD open-label randomized immediate versus deferred PrEP",
+      "population": "High-risk MSM in England; deferred comparator incidence9/100 person-years",
+      "result": "1.2 versus9.0 HIV infections/100 person-years;86% relative reduction,90%CI64–96.",
+      "transfer": "Local testing patients are not this selected high-risk cohort. Model uses lower .5–4% risk priors and separate conditional protection/retained time; it does not use the ITT estimate plus an extra adherence penalty."
+    },
+    {
+      "key": "prep_adherence",
+      "design": "CDC clinical guidance synthesizing PrEP evidence",
+      "population": "People taking oral/injectable PrEP as prescribed",
+      "result": "Sexual acquisition reduction about99% with prescribed use.",
+      "transfer": "Not99% benefit per referral. Retention, eligibility and alternative access are unknown; local protection .7–.99 is judgment."
+    },
+    {
+      "key": "art",
+      "design": "START randomized immediate versus deferred ART",
+      "population": "HIV-positive adults with CD4 above500",
+      "result": "Composite serious AIDS/non-AIDS/death endpoint1.8% versus4.1%, HR.43.",
+      "transfer": "Not a2.3% mortality reduction or QALY coefficient. Modern prompt alternative care is a stronger comparator than prolonged trial deferral; only finite morbidity proxy modeled."
+    },
+    {
+      "key": "sti",
+      "design": "CDC treatment guidelines",
+      "population": "People with chlamydia, often asymptomatic",
+      "result": "Prompt effective treatment is recommended; multiple-site/repeat tests and asymptomatic infections are common.",
+      "transfer": "No test-to-health shortcut. Model restricts benefit to additional effective treatment of symptomatic nonoverlapping episodes; permanent complications and transmission unquantified."
+    }
+  ],
+  "reservations": [
+    "Full expense with partial health is not complete expected value.",
+    "Almost all signed expected benefit comes from a jointly optimistic10% world.",
+    "HIV-tested patients do not establish new PrEP starts, unique STI episodes or ART retention.",
+    "Large partner/public-funded baseline and unknown marginal private response.",
+    "Finite morbidity-only HIV valuation is highly uncertain and omits survival rather than assuming it zero."
+  ],
+  "excludedBenefits": [
+    "Housing, community support and dignity—unquantified, not zero.",
+    "Mental-health courses inferred from therapy/social-group reach.",
+    "Vaccination, doxyPEP and gender-care health without completed-care denominators.",
+    "Secondary HIV/STI transmission and lifetime untreated-AIDS survival.",
+    "PrEP benefits for patients already HIV-positive or repeat test counts as new people."
+  ],
+  "sources": [
+    {
+      "publisher": "IRS via ProPublica",
+      "title": "Original Oakland LGBTQ Community Center FY2024 Form990",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202503219349308885/IRS990",
+      "published": "Filed November17,2025",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Oakland LGBTQ Community Center",
+      "title": "Glenn Burke Wellness Clinic services, funding and partners",
+      "url": "https://www.oaklandlgbtqcenter.org/clinic",
+      "published": "Undated current page",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "CDC",
+      "title": "Clinical guidance for PrEP",
+      "url": "https://www.cdc.gov/hivnexus/hcp/prep/index.html",
+      "published": "Current guidance, retrieved date below",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "McCormack et al. / UCL",
+      "title": "PROUD randomized PrEP trial",
+      "url": "https://discovery.ucl.ac.uk/id/eprint/1472392/",
+      "published": "2016",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "INSIGHT START Study Group / NEJM",
+      "title": "Initiation of antiretroviral therapy in early asymptomatic HIV infection",
+      "url": "https://www.nejm.org/doi/abs/10.1056/NEJMoa1506816",
+      "published": "2015",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "CDC",
+      "title": "Chlamydial infections treatment guidelines",
+      "url": "https://www.cdc.gov/std/treatment-guidelines/chlamydia.htm",
+      "published": "2021 guidelines, current page",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    }
+  ]
+}

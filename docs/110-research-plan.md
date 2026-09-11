@@ -6,13 +6,13 @@ User-directed September 11, 2026. Supersedes the old 100-report finish line. Bas
 
 - [x] A1: Synthesize what existing reports taught us: small causal gains versus service counts; finite health duration; full gift versus convenient program cost; existing public funding; marginal delivery bottlenecks; speculative allocation and citywide spillovers; external benchmark calibration. See110-discovery-lessons.md and the clinical/air calibration memos.
 - [x] A2: Brainstorm 100 distinct new candidates. Each row: real organization or labeled hypothesis, mechanism/outcome, Bay reach, evidence lead, reason it might beat current top-ten estimates, biggest disqualifier, existing-report duplicate check. Hypotheses are discovery only. See110-discovery-ledger.md; independent audit verifies100stableIDs and25comparative rows, not100legal-entity audits.
-- [ ] A3: Screen to 25 with explicit comparative reasons. Evaluate magnitude, changeability, costs, causal evidence, donor additionality, Bay share and chance of changing our top ten. No invented numerical probabilities or cause quotas.
-- [ ] A4: Select 10 genuinely new organizations; retain ranked alternates. Prefer credible sub-$100k or plausibly sub-$1M per10 Bay QALYs, without forcing estimates. Explain why these ten shots are better than the alternatives.
+- [x] A3: Screened25 with comparative reasons in the discovery ledger and selection memo; costs, causal evidence, Bay reach and donor additionality examined without numerical-probability invention.
+- [x] A4: Selected10 genuinely new organizations; rationale and alternates in110-discovery-selected-ten.md. Contrary model results retained.
 
 ## B. Ten new reports (~15 research minutes each)
 
-- [ ] B1–B10: Independently research, model, audit and publish each selected organization. Screens, revisions, duplicate programs and hypothetical ventures add zero to the count.
-- [ ] Verify overall110 published reports and complete links/sources/models. Preserve native units, source dates, whole-gift boundaries, finite QALYs, signed/null cases, Bay attribution and unknown marginal funding room. Hold/reject conclusions are valid research.
+- [x] B1–B10: All ten independently audited and published through PR306 (three) and PR307 (seven), Sites217/218. Screens, revisions, duplicate programs and hypotheses add zero.
+- [x] Verified110 distinct published reports:89 Bay +21 expanded; all ten new canonical reports/APIs and index prices checked. Hold conclusions and unquantified portfolio benefits retained.
 
 ## C. Top-ten V2 (~30 additional research minutes each)
 
@@ -39,4 +39,4 @@ Root owns Site edits, review, tests and publishing. Three research workers use G
 
 Hourly heartbeat: build-market-for-impact-hourly, active. No overlapping runs. Preserve explicit pause control. No external outreach/email newly authorized. Missing outreach/photo approval must not stop unrelated planning and research. Preserve pending Breathe/GLIDE PR corrections rather than mixing them into this discovery branch.
 
-Progress: brainstorm100/100; first-pass comparative screens25/25 received; final selection0/10; new published0/10 (overall100/110); V2 completed0/10. Phase A remains active: root compares common-prior/whole-cost results and challenges the proposed ten. The two-hour planning target is not yet a completed-time claim. Three workers are checking rescue-model consistency, systems calibration and strongest excluded clinical alternatives. Raw findings and corrections are preserved in the110-discovery documents; no donor-facing model changes in this branch.
+Progress: brainstorm100/100; comparative screens25/25; selected10/10; original new reports10/10 (overall110/110 verified, PR307/Sites218). V2 frozen10/10 in110-v2-frozen-review-set.md; published0/10. ReCARES/Breathe/SPUR first-wave drafts and independent audits underway. Staff-giving extra cohort screened5/5, published0/5; two exploratory drafts, one closure and two unestimated checkpoints—not five countable published reports. Homepage ten-priority section removed in PR309/Sites219: this V2 set is an internal queue, not public recommendations. Next: audited long-form V2 integration; do not retune coefficients to improve ranks.

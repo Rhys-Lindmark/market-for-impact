@@ -1,0 +1,432 @@
+{
+  "organization": "Micah's Hugs",
+  "eyebrow": "Exploratory whole-gift Bay research",
+  "program": "Risk-network naloxone access within education and recovery support",
+  "published": "11 September 2026",
+  "modelVersion": "micahs-hugs-whole-gift-network-cohort-v1",
+  "donationUrl": "https://micahshugs.org/donate/",
+  "nutshell": {
+    "headline": "A lean organization; the favorable tail, not the central case, looks inexpensive",
+    "body": "The research list uses the central scenario: $4,751,636 per 10 Bay QALYs. Signed prior-weighted estimate $410,820 per 10 Bay QALYs, or 0.243416 Bay QALYs per$10,000. Central $4,751,636 per 10 . These are exploratory assumptions, not measured impact.",
+    "whyItMayWork": "A stocked, accessible station or prepared peer may change timely rescue for someone otherwise missed. Actual low whole expense makes even a small additional high-risk network potentially consequential.",
+    "whyWeAreCautious": "The favorable10% world supplies 98.9% of signed expected benefit. Without it, renormalized price is $34,636,396 per 10 . Neither annual channel mix nor unique-risk coverage is known.",
+    "recommendationBlocker": "HOLD giving recommendation. No priced marginal capacity or validated dose-to-network clinical conversion; favorable expected price alone is not donor readiness."
+  },
+  "summary": [
+    {
+      "label": "WHOLE EXPENSE",
+      "value": "$66,076",
+      "detail": "Calendar 2025; all education, recovery housing and scholarship costs retained."
+    },
+    {
+      "label": "ACTIVITY, NOT OUTCOME",
+      "value": "15,000+ doses",
+      "detail": "Annual doses are not unique patients or rescues; the map includes other providers."
+    },
+    {
+      "label": "FAVORABLE TAIL",
+      "value": "98.9%",
+      "detail": "Share of signed expected benefit from the 10% favorable world; central price is $4.75M per 10 Bay QALYs."
+    },
+    {
+      "label": "SCOPE",
+      "value": "Partial health",
+      "detail": "Whole organization cost; unquantified recovery and education benefits are not assumed zero."
+    }
+  ],
+  "programSection": {
+    "body": "Micah's Hugs educates students, distributes naloxone and test strips, maintains or supports stations, and assists recovery housing and scholarships. Its own stations are described in Sonoma/Marin; its map also lists unrelated providers statewide.",
+    "steps": [
+      {
+        "title": "Convert dose units into a risk network",
+        "detail": "Separate station and school/general carriers, infer only a small relevant at-risk network, then deduplicate shared people."
+      },
+      {
+        "title": "Compare finite survival",
+        "detail": "Apply a small net fatal-risk difference for one support year to the selected at-risk people—not to every student or kit holder. Both arms then face common mortality."
+      },
+      {
+        "title": "Ask what cash actually changes",
+        "detail": "Scale only within a bounded$10,000illustration, with explicit funding-null and public/volunteer substitution."
+      }
+    ],
+    "boundary": "All organizational expense retained while only incremental naloxone-related survival/morbidity is modeled. Test strips, general education, recovery housing, scholarships and family support remain unquantified, not zero. Donated inventory, volunteer time, EMS and partner resources are incompletely valued; this is not complete social resource return."
+  },
+  "model": {
+    "headline": "$410,820 per 10 Bay QALYs",
+    "body": "Six correlated judgment worlds were locked before first output. Average signed QALYs, not prices. A favorable scenario is not the central case or a verified funding offer.",
+    "equation": {
+      "label": "Finite risk-network health",
+      "expression": "gift / whole expense × dose units / units per carrier × [station share × station network reach + (1−station share) × school/general network reach] × network dedup × cash response × [finite survival Q per person − morbidity harm] × Bay share",
+      "result": "0.24341586015886482 Bay QALYs/$10,000"
+    },
+    "inputs": [
+      {
+        "key": "expense",
+        "label": "Whole annual expense",
+        "best": "66076",
+        "range": "61176+4900;2025",
+        "basis": "All programs retained, not815 supplies budget; historical accounting envelope, not all economic resources.",
+        "confidence": "Accounting/activity anchor; not impact"
+      },
+      {
+        "key": "doses",
+        "label": "Annual dose units",
+        "best": "15000",
+        "range": "Reported15000+",
+        "basis": "Lower edge of original annual claim; cumulative38000excluded.",
+        "confidence": "Accounting/activity anchor; not impact"
+      },
+      {
+        "key": "unitsPerCarrier",
+        "label": "Dose units per distinct carrier",
+        "best": "4",
+        "range": "2–6",
+        "basis": "Judgment for repeated possession/refills/multiple-dose stock; not observed package size.",
+        "confidence": "Analyst judgment / uncertain"
+      },
+      {
+        "key": "stationShare",
+        "label": "Station versus school/general channel",
+        "best": ".25",
+        "range": ".1–.5",
+        "basis": "Unknown annual split. Residual explicitly school/general; map pins not owned stations.",
+        "confidence": "Analyst judgment / uncertain"
+      },
+      {
+        "key": "stationReach",
+        "label": "At-risk network members per station carrier",
+        "best": ".25",
+        "range": ".1–.5",
+        "basis": "Judgment, not all station users high risk; before shared-network dedup.",
+        "confidence": "Analyst judgment / uncertain"
+      },
+      {
+        "key": "schoolReach",
+        "label": "At-risk network members per school/general carrier",
+        "best": ".01",
+        "range": ".002–.05",
+        "basis": "Peer protection may concern someone else. No7% mortality among students.",
+        "confidence": "Analyst judgment / uncertain"
+      },
+      {
+        "key": "dedup",
+        "label": "Distinct-risk-network fraction",
+        "best": ".5",
+        "range": ".3–.65",
+        "basis": "Judgment eliminating repeated people reached by multiple carriers/channels.",
+        "confidence": "Analyst judgment / uncertain"
+      },
+      {
+        "key": "hazardGain",
+        "label": "Net annual fatal hazard reduction",
+        "best": ".001",
+        "range": "−.0002 to.003 plus0",
+        "basis": "One activeyear; already net of alternative rescue, availability/use and efficacy. Not estimated from doses or retrospective rescues.",
+        "confidence": "Analyst judgment / uncertain"
+      },
+      {
+        "key": "baselineHazard",
+        "label": "Selected at-risk cohort all-cause hazard",
+        "best": ".07/year",
+        "range": ".04–.10",
+        "basis": "Judgment comparable to HEPPAC; historical overdose cohorts are only rough scale anchors, not sampled Micah population.",
+        "confidence": "Analyst judgment / uncertain"
+      },
+      {
+        "key": "postHazard",
+        "label": "Common post-support hazard",
+        "best": ".07/year",
+        "range": ".04–.10",
+        "basis": "Same for both arms afteryear 1; no sustained funding assumed; constant extrapolation uncertain.",
+        "confidence": "Analyst judgment / uncertain"
+      },
+      {
+        "key": "horizon",
+        "label": "Finite follow-up",
+        "best": "10 years",
+        "range": "5–15;diagnostic1",
+        "basis": "Total horizon includes supportyear, not tenyears of program effectiveness.",
+        "confidence": "Analyst judgment / uncertain"
+      },
+      {
+        "key": "utility",
+        "label": "Health utility while alive",
+        "best": ".65",
+        "range": ".55–.75",
+        "basis": "Judgment, not value of person or measured local outcome.",
+        "confidence": "Analyst judgment / uncertain"
+      },
+      {
+        "key": "funding",
+        "label": "Ordinary gift capacity response",
+        "best": ".3",
+        "range": "0–.6",
+        "basis": "Cash-created/sustained access beyond funded baseline; not another clinical efficacy penalty.",
+        "confidence": "Analyst judgment / uncertain"
+      },
+      {
+        "key": "bay",
+        "label": "Bay benefit fraction",
+        "best": ".98",
+        "range": ".95–1",
+        "basis": "Own Sonoma/Marin footprint, with uncertain downstream geography; statewide third-party map excluded.",
+        "confidence": "Analyst judgment / uncertain"
+      },
+      {
+        "key": "harm",
+        "label": "Independent morbidity Q per new risk person",
+        "best": ".0002",
+        "range": "0–.002",
+        "basis": "Small signed allowance for adverse consequences; no measured incidence. Fatal harm separately represented by negativehazardGain.",
+        "confidence": "Analyst judgment / uncertain"
+      },
+      {
+        "key": "discount",
+        "label": "Annual health discount",
+        "best": ".03",
+        "range": "Fixed",
+        "basis": "Annual compounding; one finite trajectory per distinct risk person.",
+        "confidence": "Analyst judgment / uncertain"
+      },
+      {
+        "key": "gift",
+        "label": "Bounded gift diagnostic",
+        "best": "10000",
+        "range": "0–10000",
+        "basis": "Not assurance that15% ofannualexpense can be deployed; no linear100koffer.",
+        "confidence": "Analyst judgment / uncertain"
+      }
+    ],
+    "giftHeading": "Bounded$10,000illustration—not a current capacity commitment",
+    "sensitivity": [
+      {
+        "case": "funding_null",
+        "headline": "No positive finite price per 10 ; weight0.2",
+        "detail": "BayQ0; annual synthetic unique-risk cohort131.25; Q/person0.003803744023502164."
+      },
+      {
+        "case": "clinical_null",
+        "headline": "No positive finite price per 10 ; weight0.2",
+        "detail": "BayQ0; annual synthetic unique-risk cohort131.25; Q/person0."
+      },
+      {
+        "case": "harm",
+        "headline": "No positive finite price per 10 ; weight0.1",
+        "detail": "Bay Q-0.016119810933111284; annual synthetic unique-risk cohort131.25; Q/person-0.0007603048324360516."
+      },
+      {
+        "case": "cautious",
+        "headline": "$15,068,899,318 per 10 ; weight0.2",
+        "detail": "BayQ0.0000066361847595674125; annual synthetic unique-risk cohort8.85; Q/person0.0003521549264553287."
+      },
+      {
+        "case": "central",
+        "headline": "$4,751,636 per 10 ; weight0.2",
+        "detail": "BayQ0.021045382969140044; annual synthetic unique-risk cohort131.25; Q/person0.003803744023502164."
+      },
+      {
+        "case": "favorable",
+        "headline": "$41,525 per 10 ; weight0.1",
+        "detail": "BayQ2.40817437421396; annual synthetic unique-risk cohort1340.625; Q/person0.019882132705586527."
+      },
+      {
+        "case": "half_coverage",
+        "headline": "$821,639 per 10 ",
+        "detail": "Diagnostic changes only its named parameter family; complete inputs/results in sensitivity artifact."
+      },
+      {
+        "case": "one_year",
+        "headline": "$9,273,000 per 10 ",
+        "detail": "Diagnostic changes only its named parameter family; complete inputs/results in sensitivity artifact."
+      },
+      {
+        "case": "common_central_survival",
+        "headline": "$712,042 per 10 ",
+        "detail": "Diagnostic changes only its named parameter family; complete inputs/results in sensitivity artifact."
+      },
+      {
+        "case": "f2f_survival",
+        "headline": "$1,691,883 per 10 ",
+        "detail": "Diagnostic changes only its named parameter family; complete inputs/results in sensitivity artifact."
+      },
+      {
+        "case": "school_only",
+        "headline": "$2,264,686 per 10 ",
+        "detail": "Diagnostic changes only its named parameter family; complete inputs/results in sensitivity artifact."
+      },
+      {
+        "case": "half_cash",
+        "headline": "$821,639 per 10 ",
+        "detail": "Diagnostic changes only its named parameter family; complete inputs/results in sensitivity artifact."
+      },
+      {
+        "case": "double_resources",
+        "headline": "$821,639 per 10 ",
+        "detail": "Diagnostic changes only its named parameter family; complete inputs/results in sensitivity artifact."
+      }
+    ],
+    "uncertaintyBoundary": "For t≤1, S_without=exp(−baselineHazard×t), S_with=exp(−(baselineHazard−hazardGain)×t). Thereafter each arm carries its year 1survival forward with the same postHazard. Integrate their discounted difference to the finite horizon and multiply utility. No repeat rescue restarts survival. Channel/reach/dedup priors are not measured; all-cause .07 applies only to hypothesized at-risk network members, never all students. The central131.25 person-equivalents is model arithmetic, not a count. Continuous .03 F2F discount differs slightly; comparative sensitivity uses this model's annual3% consistently.",
+    "fundingBoundary": "Original2025 expense$61,176 plus$4,900netted event costs =$66,076. ScheduleO identifies$13,136 recoveryhousing,$7,300 scholarships,$815harm-reduction supplies and donated officer effort; supplies alone are not total cost. Cash/savings$94,114,CD/shareaccount$34,690 and$3,490fundsheld are not an inferred funding gap. Public naloxone is available, but Micah's exact inventory source is unverified. Host/adopt roles show refill labor is essential. Advertised sponsorship tiers buy recognition, not a verified station/annual capacity bundle."
+  },
+  "evidence": [
+    {
+      "key": "activity",
+      "design": "Original2025IRS990-EZ and current official education page",
+      "population": "AnnualSonoma distribution plus general school audiences",
+      "result": "15,000+annual doses;1,167 trainingparticipants at anOctober2025 school event;38,000cumulative doses on webpage.",
+      "transfer": "Different denominators cannot be added. No annual channel split, own-site count or unique high-risk recipient count. Each student receiving a box does not imply personal overdose risk."
+    },
+    {
+      "key": "counterfactual",
+      "design": "Official station and sponsorship descriptions",
+      "population": "Micah hosts/adopters and third-party map listings",
+      "result": "Host/adopters share refill duties; statewide map includes other suppliers.",
+      "transfer": "Do not count all pins as Micah. Cash must add useful availability beyond other peers, pharmacies, public supplies andEMS; no priced extra tranche."
+    },
+    {
+      "key": "positive",
+      "design": "Massachusetts observational interrupted time series",
+      "population": "19 communities,2002–2009",
+      "result": "Naloxone/education implementation associated with lower mortality; adjustedratios.73/.54 for low/high implementation.",
+      "transfer": "Not randomized or current Bay dose-to-death effect. Used only as mechanism support; no rate-ratio transfer."
+    },
+    {
+      "key": "null",
+      "design": "HEALing Communities cluster-randomized multicomponent intervention",
+      "population": "67 communities in fourstates during fentanyl/pandemic period",
+      "result": "Primary opioid mortality difference not significant; aRR.91,95%CI.76–1.09.",
+      "transfer": "Distribution growth is not sufficient proof of incremental mortality reduction. Supports clinical-null scenarios without denying naloxone reversal pharmacology."
+    },
+    {
+      "key": "mortality",
+      "design": "Historical US cohorts after nonfatal overdose",
+      "population": "Selected overdose survivors, not school attendees",
+      "result": "Larochelle4.7 and Olfson7.783all-cause deaths per 10 0 person-years in first-year observations.",
+      "transfer": "Rough scale only. Do not impose these risks on general recipients or claim10–15 year rates validated. Hazardgain, cohort selection and long-run utility remain judgments."
+    },
+    {
+      "key": "finite_bridge",
+      "design": "Analyst unique-person survival model",
+      "population": "Synthetic deduplicated risk networks",
+      "result": "Central131.25 person-equivalents, .001net annual hazard reduction forone year, then common .07 mortality through10 years.",
+      "transfer": "No repeated lifetime rescue credit. Numerically valid trajectory is not empirical calibration; school-only, common-survival andone-year sensitivities materially worsen price."
+    }
+  ],
+  "reservations": [
+    "The weighted headline is98.9%driven by the favorable world; central is$4.75M/10.",
+    "Annual channel mix and own-site count unknown; school recipients cannot inherit overdose-survivor risks.",
+    "No observed clinical effect, reported rescue ledger or verified prospective cohort.",
+    "Cash response and volunteer/public inventory scale unknown; sponsorship is not a priced offer.",
+    "Whole-cost partial-health scope omits potentially real recovery/education benefits.",
+    "No full economic resource valuation; external donated complements may increase cost."
+  ],
+  "excludedBenefits": [
+    "General school education or test strips automatically preventing overdose",
+    "Recovery-housing health, scholarships and family support—not assigned zero, simply unquantified",
+    "Third-party statewide map outcomes",
+    "All doses counted as successful rescues",
+    "Unlimited survival or repeatedly restarting follow-up"
+  ],
+  "sources": [
+    {
+      "key": "finance",
+      "publisher": "Micah's Hugs / IRS",
+      "title": "Original calendar2025 Form990-EZ",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202621969349200007/IRS990EZ",
+      "published": "Submitted2026-07-14",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "key": "finance_detail",
+      "publisher": "Micah's Hugs / IRS",
+      "title": "Original2025 ScheduleO",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202621969349200007/IRS990ScheduleO",
+      "published": "Submitted2026-07-14",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "key": "education",
+      "publisher": "Micah's Hugs",
+      "title": "Education and student distribution",
+      "url": "https://micahshugs.org/education/",
+      "published": "Undated; describes2025-10-17 event",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "key": "map",
+      "publisher": "Micah's Hugs",
+      "title": "Narcan locations",
+      "url": "https://micahshugs.org/narcan-boxes/",
+      "published": "Undated",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "key": "capacity",
+      "publisher": "Micah's Hugs",
+      "title": "Host, adopt and sponsor stations",
+      "url": "https://micahshugs.org/narcan-boxes/help-narcan-box/",
+      "published": "Undated",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "key": "donate",
+      "publisher": "Micah's Hugs",
+      "title": "Official donation page",
+      "url": "https://micahshugs.org/donate/",
+      "published": "Undated",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "key": "supply",
+      "publisher": "California DHCS",
+      "title": "Naloxone Distribution Project",
+      "url": "https://www.dhcs.ca.gov/individuals/naloxone-distribution-project/",
+      "published": "Current program; prior phase source",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "key": "mortality1",
+      "publisher": "Larochelle et al.",
+      "title": "Post-overdose mortality cohort",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29913516/",
+      "published": "2018",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "key": "mortality2",
+      "publisher": "Olfson et al.",
+      "title": "Causes of death after nonfatal overdose",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29926090/",
+      "published": "2018",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "key": "positive",
+      "publisher": "Walley et al.",
+      "title": "Community overdose education and naloxone",
+      "url": "https://www.bmj.com/content/346/bmj.f174",
+      "published": "2013",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "key": "null",
+      "publisher": "NIH / HEALing Communities investigators",
+      "title": "Randomized community intervention results",
+      "url": "https://www.nih.gov/news-events/news-releases/nih-funded-intervention-did-not-impact-opioid-related-overdose-death-rates-over-evaluation-period",
+      "published": "2024-06-16",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    }
+  ]
+}

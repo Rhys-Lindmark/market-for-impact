@@ -1,12 +1,12 @@
 # Market for Impact backlog
 
-## Immediate research-list copy cleanup
+## Current priority: top-ten V2 — alpha110 complete
 
-User September 11: remove “whole-gift” and “whole-organization” wording from the canonical /givebetter/research page, including row descriptions and introductory caveat. Use concise plain-language descriptions; preserve substantive cost-scope distinctions inside full reports and models. This is display copy only, not authorization to change estimates, cost boundaries or ranking. Verify the rendered research list has neither phrase and numeric ordering is unchanged before publication. Separate focused implementation branch required; queued, not yet live.
+Verified110 alpha reports (89 Bay +21 expanded) through PR307 / Sites218; original selected ten independently audited and published. See [current plan](docs/110-research-plan.md) and [frozen V2 cohort](docs/110-v2-frozen-review-set.md). V2 published0/10; ReCARES, Breathe and SPUR first-wave research underway, with cross-audits before release. Each receives roughly30 additional research minutes, three-year filing/current-operation checks, substantive GiveWell-style prose and yearly spending breakdowns. SPUR and HAC are deliberate distinct-mechanism research slots, not numerical-rank substitutions.
 
-## Current priority: 110 reports, then top-ten V2 — Phase B active
+Homepage cleanup PR309 / Sites219 verified at https://ai.rhyslindmark.com/givebetter: removed the entire ten-priority section, retaining four picks. V2 is an internal review queue. PR308 also removes whole-gift/whole-organization wording from research-list display only; canonical list verified, estimates unchanged.
 
-Published100/110 unchanged. [Staged plan](docs/110-research-plan.md):100 brainstorm entries in the [stable ledger](docs/110-discovery-ledger.md),25 comparative screens and [ten selected organizations](docs/110-discovery-selected-ten.md). First three packets (Micah's Hugs, Berkeley NEED, HOPE) are drafted and undergoing independent acceptance; Alameda Health Consortium is next. Preserve contrary findings and distinguish central scenarios from optimistic-tail-dominated weighted estimates. V2 now receives roughly30 additional research minutes each, three-year filing/current-operation checks, GiveWell-depth prose summaries and sourced annual spending breakdowns. Five additional Bay alpha candidates from GiveWell staff personal-giving posts are separately queued, not institutional endorsements or substitutes for the selected ten. Next: integrate accepted packets on a dedicated release branch, validate and publish; no new published prices or verified marginal offers yet.
+Staff-personal-giving cohort: five screened separately. Bike East Bay and Sogorea Te have independently reviewed exploratory drafts; Causa Justa closed, Cityside and KQED lack a defensible causal numerator and retain inspectable unestimated checkpoints. None of this extra cohort is yet published or counted. Personal gifts are not GiveWell endorsements. Next: accept V2 audits and integrate long-form reports with versioned models; preserve unfavorable estimates.
 
 ## PVF whole-gift correction — active, not published
 

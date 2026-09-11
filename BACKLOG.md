@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## PHC V2 — integrated; responsive verification and release next
+
+110 alpha and 6/10 V2 live through HAC PR313/Sites225. PHC full 6,151-word accepted narrative, three-year sponsor financial context and funding-transition audit integrated without changing the conditional central $774,408/10 Bay QALYs. 4,441 preserved-model checks, narrative parity/anchors and production build pass. Next: responsive report/API/index interaction check, lint and publish exact source; then Pacific Hearing, NEMS and FUF. The post-2025 funding-loss clinical baseline is not verified. Author research20m27s; root integration separately measured.
+
 ## HAC V2 — validated, publication pending
 
 110 alpha and 5/10 V2 live through HOPE PR312/Sites224. HAC V2 evaluates the ordinary charitable recipient, separating c4 activity and preserving the historical conditional developer model. Central $23,307,277 per 10 Bay QALYs; partial housing-health only, no calibrated probability expectation. Three original years reconcile gross costs; related-party/event discrepancies and current policy/public-funding baseline remain explicit. 487 model checks, full suite, narrative/anchor checks, lint/build and phone/tablet/desktop report/API/index parity pass. Next exact-source release and remaining PHC/Pacific Hearing/NEMS/FUF. No verified marginal offer or new alpha count.

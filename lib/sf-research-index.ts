@@ -57,5 +57,5 @@ export const topResearchPrograms = [
 export const sortedResearchPrograms = topResearchPrograms.map(item => {
   const model = researchRankBySlug.get(item.href.split('/').at(-1)!);
   if (!model) throw new Error('Missing central estimate for ' + item.href);
-  return { ...item, rank: model.rank, centralUsdPerTenQalys: model.centralUsdPerTenQalys, betterLifePrice: model.centralUsdPerTenQalys == null ? 'Not yet estimated' : '≈ ' + compactMoney.format(model.centralUsdPerTenQalys) };
+  return { ...item, rank: model.rank, centralUsdPerTenQalys: model.centralUsdPerTenQalys, ...(Object.hasOwn(model, 'bayUsdPerTenQalys') ? {bayUsdPerTenQalys: model.bayUsdPerTenQalys} : {}), betterLifePrice: model.centralUsdPerTenQalys == null ? 'Not yet estimated' : '≈ ' + compactMoney.format(model.centralUsdPerTenQalys) };
 }).sort((a, b) => a.rank - b.rank);

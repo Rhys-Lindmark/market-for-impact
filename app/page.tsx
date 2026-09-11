@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import glide from '@/data/san-francisco/glide-rental-assistance-qaly-bridge-audit-v1.json';
 import compass from '@/data/san-francisco/compass-c-rent-qaly-bridge-audit-v1.json';
-import { researchCostRanking, researchRankBySlug } from '@/lib/research-cost-ranking.mjs';
+import { researchRankBySlug } from '@/lib/research-cost-ranking.mjs';
+import {unifiedResearch} from '@/lib/unified-research-index';
 
 import './sf-home.css';
 import './givebetter.css';
@@ -35,11 +36,12 @@ const picksBySlug = [
   { slug: 'compass-family-services', name: 'Compass Family Services', program: 'Help families catch up on rent', overview: 'C-Rent combines back-rent and move-in assistance with case management for families at risk of losing their homes.', opinion: 'A promising family-homelessness prevention option, with a clearer audited cost starting point.', evidence: 'Audited program spending and external prevention research. The family count and health effect need local verification.', reservation: 'The $9,704 cost per family is an accounting ratio, not a confirmed price for an additional family.', model: compass.modeledBridge },
 ];
 
-const picks = researchCostRanking.slice(0, 4).map(row => {
+const picks = unifiedResearch.filter(row => row.localUsdPerTenQalys !== null).slice(0, 4).map(item => {
+  const row = {slug: item.href.split('/').at(-1)!};
   const pick = picksBySlug.find(p => p.slug === row.slug);
   if (!pick) throw new Error('Missing homepage summary for ' + row.slug);
   const rank = researchRankBySlug.get(row.slug)!;
-  return { ...pick, model: { bestCostPerTenQalysUsd: rank.centralUsdPerTenQalys, costPerQalyUsd: rank.centralUsdPerTenQalys / 10, positiveEffectRangeUsd: pick.model?.positiveEffectRangeUsd ?? rank.positiveEffectRangeUsd } };
+  return { ...pick, model: { bestCostPerTenQalysUsd: item.localUsdPerTenQalys, costPerQalyUsd: item.localUsdPerTenQalys / 10, positiveEffectRangeUsd: pick.model?.positiveEffectRangeUsd ?? rank.positiveEffectRangeUsd } };
 });
 
 export default function SanFranciscoHome() {

@@ -1,5 +1,11 @@
 # Market for Impact backlog
 
+## Bay-primary ranking correction — September 10
+
+Published83 reports (64 Bay/SF,19 Expanded Geography); BFC PR276/v192 canonical checks passed. Correct12 adapters that previously forwarded SF-only prices despite explicit Bay outputs. Preserve all50 original SF prices/ranges/order exactly; Bay-first research table and homepage now share selected Bay prices. Computed Bay null never falls back to a positive SF number. No model inputs retuned. SPUR$2.19M, Operation Access$3.24M, PHC$774K per10 Bay QALYs. Existing top-four membership unchanged.
+
+Verification:503 unit/model tests, lint0errors/3existing warnings, production build, four responsive ranking/home/API checks; independent model-selection audit accepted. Next: independently accepted ReCARES exploratory report ($186K weighted/10BayQ;69.3% favorable-tail dependence; giving HOLD), then MELP/AbleCloset high-EV research. Count stays83 until another report is deployed and verified. Category counts are discovery prompts, not quotas; next decision checkpoint100, broader goal115.
+
 ## Research metadata regression assertions — September 10
 
 Updated four stale browser-test expectations after PR275: whole minutes, frozen historical estimates, and concise mixed-model labels. Twelve phone/tablet checks passed, including every one of the83 published report pages. This is test-only; no research estimates or publication counts change. Next: use explicit Bay outputs in the Bay-first ranking, then publish independently audited ReCARES.

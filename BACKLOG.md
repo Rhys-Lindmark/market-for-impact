@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## BAMRU accepted exploratory report — candidate88
+
+87/100 canonically verified via BayLegal PR282/v197. BAMRU independent audit accepts corrected finite-input guards and exact saved-model parity; default$4.414M/10BayQALYs,98.37%favorable-tail dependence, HOLD giving. Current annual cash expense is an explicit40k–100k assumption, not verified financial accounts. Recorded original researcher interval11m21s, separate from integration and scheduling gaps.529tests,lint0errors3existingwarnings,productionbuild pass; responsive verification and exact-source publication required before count88. Research workers now focus LegalLink, GreenlightClinic and BRFN. After100, synthesize and investigate top10 marginal funding room. Do not force favorable findings or convert unknown room to a donation offer.
+
 ## Current user override: get to 100, not 115
 
 Post-100 acceptance now covers the top10 recommendations, their marginal funding room and cross-report synthesis, per the edited goal. BayLegal release candidate:527 tests pass, lint0errors/3existingwarnings, production build and2phone/tablet interaction checks pass. Model/report/API/index preserve$24.43M per10BayQALYs and HOLD; no new published count until canonical deployment verification.

@@ -12,7 +12,7 @@ import {spurPortfolioModel} from '../lib/spur-portfolio-model.mjs';
 import {calculate as oa} from '../lib/oa-portfolio-model.mjs';
 import {calculate as newdoorPortfolioModel} from '../lib/newdoor-portfolio-model.mjs';
 import {ymcaPortfolio,ymcaPortfolioModel} from '../lib/ymca-portfolio-model.mjs';
-import {expectedValue as clinic} from '../lib/clinic-portfolio-model.mjs';
+import {calculate as clinic,inputsFor as clinicInputs} from '../lib/clinic-portfolio-model.mjs';
 import {calculate as sfaf} from '../lib/sfaf-portfolio-model.mjs';
 import {calculate as phc,inputsFor} from '../lib/phc-portfolio-model.mjs';
 import fs from 'node:fs';
@@ -37,7 +37,7 @@ test('sixteen explicit Bay adapters match model outputs',()=>{
   'operation-access':oa(o,central(o)).regions.bay.donor_per_10q,
   'new-door-ventures':newdoorPortfolioModel(central(n),n.giftUsd).bayUsdPer10Qaly,
   'ymca-greater-sf':ymcaPortfolioModel(central(ymcaPortfolio)).bayUsdPer10Qaly,
-  'clinic-by-the-bay':clinic(cl).donor_bay_per_10q,
+  'clinic-by-the-bay':clinic(clinicInputs(cl,cl.scenarios.find(s=>s.id==='Central'))).donor_bay_per_10q,
   'san-francisco-aids-foundation':sfaf(central(a).inputs).bay.donor_per_10q,
   'project-homeless-connect':phc(inputsFor(ph,central(ph))).donor_bay_per_10q,
  };

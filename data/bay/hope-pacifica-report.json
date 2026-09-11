@@ -1,0 +1,462 @@
+{
+  "organization": "HOPE: Healing, Overdose Prevention, and Education",
+  "eyebrow": "Exploratory whole-gift Bay research",
+  "program": "Pacifica naloxone access within a whole community-support organization",
+  "published": "11 September 2026",
+  "modelVersion": "hope-pacifica-whole-gift-v1",
+  "nutshell": {
+    "headline": "Potentially inexpensive access, but neither annual cost nor additional risk coverage is measured",
+    "body": "The research list uses the central scenario: $554,660 per 10 Bay QALYs. The signed prior-weighted estimate is $763,248 per 10 Bay QALYs, or 0.0131019 QALYs per illustrative $1,000 gift. Annual whole expense is an explicit $20,000–$100,000 prior, not a filing or the $10,000 county grant. This is modeled naloxone health at whole-organization cost, not measured impact or a complete portfolio return.",
+    "whyItMayWork": "A small volunteer organization can put naloxone near an overdose that would otherwise lack timely rescue. Existing locations are concrete, while statewide medication supply can complement local stocking and outreach.",
+    "whyWeAreCautious": "The favorable 5% delivery family supplies 65.7% of signed expected health. Without it, the renormalized estimate is $2,113,122 per 10. The separate central-cost/central-delivery scenario is $554,660. Annual packs, network deduplication, hazard change, cost and cash response are all unverified.",
+    "recommendationBlocker": "HOLD giving recommendation: first verify whole expenses and grant balances, annual use-ready risk-network coverage, and what an extra unrestricted gift can change beyond existing grants and free supply."
+  },
+  "summary": [
+    {
+      "label": "Ordinary gift scope",
+      "value": "Whole organization, partial health",
+      "detail": "All assumed operating costs retained; only incremental naloxone survival minus harms quantified. Education, grief support and other outcomes are not assigned invented health."
+    },
+    {
+      "label": "Cost evidence",
+      "value": "No observed annual expense",
+      "detail": "Three cost priors: $20k (20%), $40k (50%), $100k (30%). These are not confidence bounds or verified budgets."
+    },
+    {
+      "label": "Subjective threshold mass",
+      "value": "22.5% below $1M; 3.5% below $100k per 10 Bay QALYs",
+      "detail": "Weights are analyst judgments, not calibrated chances or evidence that a giving offer exists."
+    }
+  ],
+  "programSection": {
+    "body": "HOPE is a Pacifica nonprofit focused on overdose prevention, family resources, community education and memorial/support events. Its website lists five naloxone dispensers in Pacifica and Half Moon Bay and acknowledges Measure K and YouthPoint Health grants. Listed business hours must be checked; universal 24/7 access is not established.",
+    "steps": [
+      {
+        "title": "Support the whole operating portfolio",
+        "detail": "An unrestricted gift may support delivery, insurance, transport, events or administration. Model response concerns additional risk coverage per whole-budget unit; it is not an earmarked dispenser purchase."
+      },
+      {
+        "title": "Convert supply into use-ready risk-network coverage",
+        "detail": "Assumed annual two-device packs × ready fraction ÷ repeated packs per recipient-network × deduplicated at-risk conversion. Recipients may be bystanders; several kits can protect the same person. No extra network multiplier or doses-as-lives shortcut."
+      },
+      {
+        "title": "Compare finite survival under current and improved access",
+        "detail": "One active year of a small net mortality-hazard difference, followed by common risk in both arms. Each person has one finite trajectory. Independent morbidity harms are subtracted."
+      }
+    ],
+    "boundary": "Whole-expense prior includes fundraising and non-naloxone activities, but donated medication, volunteer time, venue support, EMS and partner resources are unpriced complements. No complete societal cost estimate. Public medication and paid grants are existing resources, not private donor-created supply. Unquantified support outcomes mean this is partial-health, not a complete-return claim or guaranteed lower bound."
+  },
+  "model": {
+    "headline": "$763,248 per 10 Bay QALYs — highly prior-dependent",
+    "body": "Three cost worlds crossed with six delivery worlds, 18 complete signed rows. Average QALYs per fixed $1,000 gift before dividing cost by health. Cost and delivery priors are independent for transparency, not because independence is observed; fixed-high-cost sensitivity tests that favorable efficiency is not assured. No coefficients changed after first calculation.",
+    "equation": {
+      "label": "Whole-gift finite risk-network model",
+      "expression": "gift / assumed whole annual expense × (annual pack equivalents × ready / repeat packs × risk-network conversion) × cash response × [utility × discounted integral(S_with − S_current) − independent harm] × Bay fraction",
+      "result": "0.013101904653691494 Bay QALYs per $1,000; all-geography 0.01351529391759723"
+    },
+    "inputs": [
+      {
+        "key": "expense",
+        "label": "Whole annual gross expense",
+        "best": "$40,000 central",
+        "range": "$20,000–$100,000; no observed amount",
+        "basis": "Includes all ordinary operations, not grant hardware alone. Low/high costs reflect uncertainty about a small volunteer organization and event/support spending; in-kind resource cost unknown.",
+        "confidence": "Very low; analyst prior unless explicitly stated"
+      },
+      {
+        "key": "packs",
+        "label": "Annual two-device-pack equivalents",
+        "best": "1,500",
+        "range": "750–3,000",
+        "basis": "Unobserved annual flow. Cumulative website quantities cannot identify year, device versus pack, purchases, end-user distribution or usage. NDP defines one nasal unit as two devices; HOPE units are not reconciled.",
+        "confidence": "Very low; analyst prior unless explicitly stated"
+      },
+      {
+        "key": "ready",
+        "label": "Use-ready rather than duplicate inventory fraction",
+        "best": ".5",
+        "range": ".3–.8",
+        "basis": "Judgment for stock kept usable and accessible, not reserve/expired or ineffective placement. Does not mean administered in an overdose.",
+        "confidence": "Very low; analyst prior unless explicitly stated"
+      },
+      {
+        "key": "repeats",
+        "label": "Annual packs per recipient-network equivalent",
+        "best": "3",
+        "range": "3–5",
+        "basis": "Deduplicates repeated access; not a prospective overdose-opportunity rate.",
+        "confidence": "Very low; analyst prior unless explicitly stated"
+      },
+      {
+        "key": "riskNetwork",
+        "label": "Deduplicated at-risk-person conversion",
+        "best": ".8",
+        "range": ".5–.8",
+        "basis": "Joint relevance/network-overlap prior. Bystander recipients are not automatically at-risk people. Central implied200 prospective people, not observed unique beneficiaries.",
+        "confidence": "Very low; analyst prior unless explicitly stated"
+      },
+      {
+        "key": "hazards",
+        "label": "Current-care and incrementally avoided annual hazard",
+        "best": ".070 baseline; .002 reduction",
+        "range": "Baseline .07–.10; reduction 0–.004 plus signed diagnostic capability",
+        "basis": "Net reduction includes use, overdose occurrence, timely alternatives and clinical effectiveness. Not statistically inferred from distributions or selected successful rescues. Supported central hazard .068; do not add overdose mortality twice.",
+        "confidence": "Very low; analyst prior unless explicitly stated"
+      },
+      {
+        "key": "duration",
+        "label": "Active access and finite follow-up",
+        "best": "1 active year; 10-year horizon",
+        "range": "5–10 years; 1- and 2-year diagnostic",
+        "basis": "After one year both arms have common mortality hazard .07–.10. Survival advantage can persist; no continuing program effect or restart per rescue.",
+        "confidence": "Very low; analyst prior unless explicitly stated"
+      },
+      {
+        "key": "utility",
+        "label": "Utility while alive",
+        "best": ".65",
+        "range": ".6–.7",
+        "basis": "Analyst health-state prior, not a local utility study. Annual discount3%, implemented as ln(1.03) continuous rate.",
+        "confidence": "Very low; analyst prior unless explicitly stated"
+      },
+      {
+        "key": "funding",
+        "label": "Additional coverage response to whole gift",
+        "best": ".5",
+        "range": "0–.7",
+        "basis": "Separately addresses substitution of public/donor baseline and non-rescue allocation, not an extra efficacy factor. Existing medication supply is a complement and alternative.",
+        "confidence": "Very low; analyst prior unless explicitly stated"
+      },
+      {
+        "key": "bay",
+        "label": "Bay health share",
+        "best": ".95",
+        "range": ".9–.98",
+        "basis": "Locations establish Bay delivery, not recipient residence or all later rescue locations. No SF-specific share asserted.",
+        "confidence": "Very low; analyst prior unless explicitly stated"
+      },
+      {
+        "key": "harm",
+        "label": "Independent adverse QALY per additional covered person",
+        "best": ".00002",
+        "range": "0–.0005",
+        "basis": "Stress for adverse morbidity or misdirected response, not a measured naloxone harm rate. No separate mortality harm counted twice.",
+        "confidence": "Very low; analyst prior unless explicitly stated"
+      }
+    ],
+    "giftHeading": "Illustrative $1,000 gift; no $10k or $100k scaling assurance",
+    "sensitivity": [
+      {
+        "case": "lean__funding_null",
+        "headline": "No finite positive price per 10; joint weight 4.0%",
+        "detail": "Bay Q 0; whole expense prior $20000; 200 modeled risk people per annual budget unit; 0 additional person-equivalents per gift. Gross Q 0, harm Q 0."
+      },
+      {
+        "case": "lean__access_null",
+        "headline": "No finite positive price per 10; joint weight 4.0%",
+        "detail": "Bay Q 0; whole expense prior $20000; 200 modeled risk people per annual budget unit; 5 additional person-equivalents per gift. Gross Q 0, harm Q 0."
+      },
+      {
+        "case": "lean__harm",
+        "headline": "No finite positive price per 10; joint weight 2.0%",
+        "detail": "Bay Q -0.002375; whole expense prior $20000; 200 modeled risk people per annual budget unit; 5 additional person-equivalents per gift. Gross Q 0, harm Q 0.0025."
+      },
+      {
+        "case": "lean__cautious",
+        "headline": "$52,503,549 per 10; joint weight 4.0%",
+        "detail": "Bay Q 0.00019046331394379304; whole expense prior $20000; 22.5 modeled risk people per annual budget unit; 0.225 additional person-equivalents per gift. Gross Q 0.00021612590438199226, harm Q 0.0000045."
+      },
+      {
+        "case": "lean__central",
+        "headline": "$277,330 per 10; joint weight 5.0%",
+        "detail": "Bay Q 0.03605815484060929; whole expense prior $20000; 200 modeled risk people per annual budget unit; 5 additional person-equivalents per gift. Gross Q 0.03805595246379926, harm Q 0.0001."
+      },
+      {
+        "case": "lean__favorable",
+        "headline": "$29,630 per 10; joint weight 1.0%",
+        "detail": "Bay Q 0.3374975550388841; whole expense prior $20000; 600 modeled risk people per annual budget unit; 21 additional person-equivalents per gift. Gross Q 0.3445952602437593, harm Q 0.00021."
+      },
+      {
+        "case": "central_cost__funding_null",
+        "headline": "No finite positive price per 10; joint weight 10.0%",
+        "detail": "Bay Q 0; whole expense prior $40000; 200 modeled risk people per annual budget unit; 0 additional person-equivalents per gift. Gross Q 0, harm Q 0."
+      },
+      {
+        "case": "central_cost__access_null",
+        "headline": "No finite positive price per 10; joint weight 10.0%",
+        "detail": "Bay Q 0; whole expense prior $40000; 200 modeled risk people per annual budget unit; 2.5 additional person-equivalents per gift. Gross Q 0, harm Q 0."
+      },
+      {
+        "case": "central_cost__harm",
+        "headline": "No finite positive price per 10; joint weight 5.0%",
+        "detail": "Bay Q -0.0011875; whole expense prior $40000; 200 modeled risk people per annual budget unit; 2.5 additional person-equivalents per gift. Gross Q 0, harm Q 0.00125."
+      },
+      {
+        "case": "central_cost__cautious",
+        "headline": "$105,007,099 per 10; joint weight 10.0%",
+        "detail": "Bay Q 0.00009523165697189652; whole expense prior $40000; 22.5 modeled risk people per annual budget unit; 0.1125 additional person-equivalents per gift. Gross Q 0.00010806295219099613, harm Q 0.00000225."
+      },
+      {
+        "case": "central_cost__central",
+        "headline": "$554,660 per 10; joint weight 12.5%",
+        "detail": "Bay Q 0.018029077420304646; whole expense prior $40000; 200 modeled risk people per annual budget unit; 2.5 additional person-equivalents per gift. Gross Q 0.01902797623189963, harm Q 0.00005."
+      },
+      {
+        "case": "central_cost__favorable",
+        "headline": "$59,260 per 10; joint weight 2.5%",
+        "detail": "Bay Q 0.16874877751944206; whole expense prior $40000; 600 modeled risk people per annual budget unit; 10.5 additional person-equivalents per gift. Gross Q 0.17229763012187965, harm Q 0.000105."
+      },
+      {
+        "case": "high_cost__funding_null",
+        "headline": "No finite positive price per 10; joint weight 6.0%",
+        "detail": "Bay Q 0; whole expense prior $100000; 200 modeled risk people per annual budget unit; 0 additional person-equivalents per gift. Gross Q 0, harm Q 0."
+      },
+      {
+        "case": "high_cost__access_null",
+        "headline": "No finite positive price per 10; joint weight 6.0%",
+        "detail": "Bay Q 0; whole expense prior $100000; 200 modeled risk people per annual budget unit; 1 additional person-equivalents per gift. Gross Q 0, harm Q 0."
+      },
+      {
+        "case": "high_cost__harm",
+        "headline": "No finite positive price per 10; joint weight 3.0%",
+        "detail": "Bay Q -0.000475; whole expense prior $100000; 200 modeled risk people per annual budget unit; 1 additional person-equivalents per gift. Gross Q 0, harm Q 0.0005."
+      },
+      {
+        "case": "high_cost__cautious",
+        "headline": "$262,517,747 per 10; joint weight 6.0%",
+        "detail": "Bay Q 0.00003809266278875862; whole expense prior $100000; 22.5 modeled risk people per annual budget unit; 0.045000000000000005 additional person-equivalents per gift. Gross Q 0.00004322518087639846, harm Q 9.000000000000002e-7."
+      },
+      {
+        "case": "high_cost__central",
+        "headline": "$1,386,649 per 10; joint weight 7.5%",
+        "detail": "Bay Q 0.007211630968121859; whole expense prior $100000; 200 modeled risk people per annual budget unit; 1 additional person-equivalents per gift. Gross Q 0.0076111904927598515, harm Q 0.00002."
+      },
+      {
+        "case": "high_cost__favorable",
+        "headline": "$148,149 per 10; joint weight 1.5%",
+        "detail": "Bay Q 0.0674995110077768; whole expense prior $100000; 600 modeled risk people per annual budget unit; 4.199999999999999 additional person-equivalents per gift. Gross Q 0.06891905204875184, harm Q 0.000042."
+      },
+      {
+        "case": "fixed_20k",
+        "headline": "$389,256 per 10 Bay QALYs",
+        "detail": "Signed expected Bay Q per $1,000: 0.02569000912488529. Sensitivity only, not a new assigned probability. Full matrices saved."
+      },
+      {
+        "case": "fixed_40k",
+        "headline": "$778,513 per 10 Bay QALYs",
+        "detail": "Signed expected Bay Q per $1,000: 0.012845004562442645. Sensitivity only, not a new assigned probability. Full matrices saved."
+      },
+      {
+        "case": "fixed_100k",
+        "headline": "$1,946,282 per 10 Bay QALYs",
+        "detail": "Signed expected Bay Q per $1,000: 0.005138001824977057. Sensitivity only, not a new assigned probability. Full matrices saved."
+      },
+      {
+        "case": "half_network",
+        "headline": "$1,526,496 per 10 Bay QALYs",
+        "detail": "Signed expected Bay Q per $1,000: 0.006550952326845747. Sensitivity only, not a new assigned probability. Full matrices saved."
+      },
+      {
+        "case": "half_hazard_gain",
+        "headline": "$1,544,117 per 10 Bay QALYs",
+        "detail": "Signed expected Bay Q per $1,000: 0.006476191683117564. Sensitivity only, not a new assigned probability. Full matrices saved."
+      },
+      {
+        "case": "half_funding",
+        "headline": "$1,526,496 per 10 Bay QALYs",
+        "detail": "Signed expected Bay Q per $1,000: 0.006550952326845747. Sensitivity only, not a new assigned probability. Full matrices saved."
+      },
+      {
+        "case": "one_year_only",
+        "headline": "$10,854,317 per 10 Bay QALYs",
+        "detail": "Signed expected Bay Q per $1,000: 0.0009212924394145644. Sensitivity only, not a new assigned probability. Full matrices saved."
+      },
+      {
+        "case": "two_year_horizon",
+        "headline": "$3,479,370 per 10 Bay QALYs",
+        "detail": "Signed expected Bay Q per $1,000: 0.0028740832461949823. Sensitivity only, not a new assigned probability. Full matrices saved."
+      },
+      {
+        "case": "double_expense_resource_stress",
+        "headline": "$1,526,496 per 10 Bay QALYs",
+        "detail": "Signed expected Bay Q per $1,000: 0.006550952326845747. Sensitivity only, not a new assigned probability. Full matrices saved."
+      }
+    ],
+    "uncertaintyBoundary": "Central survival with improved access is exp(-.068t), versus exp(-.070t) during the first year. Afterward multiply each year-one survival by exp(-.07(t-1)); discount by exp(-ln(1.03)t), integrate through ten years, and multiply utility. Historical survivor cohorts do not identify community-distribution hazards or constant long-term prognosis. Funding-null and access-null have combined40% mass, harm10%, cautious20%, central25%, favorable5%; no favorable-only normalization. Financial and delivery scale may be dependent. No Bay effect claimed just because an organization is headquartered locally.",
+    "fundingBoundary": "County adopted up to $10,000 for dispenser purchase/installation, agreement August26,2025–June30,2026, reimbursed against invoices and required evidence. Adoption is not proof of full payment, completed reporting, remaining balance or recurring annual expense. Earlier agreement risk assessment described volunteer-only operation; current annual staffing/cost is unknown. Official pages also name YouthPoint Health and private fundraising; amounts and restrictions are not reconciled. DHCS makes medication available free to approved organizations; HOPE current source and inventory are not independently verified. Ask (1) full annual gross costs, restricted balances and contributed inputs; (2) dated pack/refill/use-ready coverage with network dedup; (3) what additional $1,000 would sustain or expand, and which staff/stock/venue resource is actually limiting. General donation is not a verified marginal offer."
+  },
+  "evidence": [
+    {
+      "key": "identity",
+      "design": "Official mission and county recipient record; secondary IRS identity delivery",
+      "population": "HOPE Pacifica, EIN99-2104067",
+      "result": "Distinct local nonprofit; not Pacifica Resource Center or another HOPE. Prior IRS-derived identity record lacked annual filings; this is not an original990 or observed zero expense.",
+      "transfer": "Recipient identity and service existence do not verify financial scale. Current cost remains an explicit prior."
+    },
+    {
+      "key": "distribution",
+      "design": "Current official website pages",
+      "population": "Five Pacifica/Half Moon Bay access points",
+      "result": "Homepage claims over6,000 Narcan; dedicated page over3,000, with no reconciled annual period or device/pack definition. Both acknowledge grant-funded dispensers.",
+      "transfer": "No measured annual unique at-risk cohort or observed rescue denominator. Unknown hours, repeats, networks, stockouts and alternatives require separate priors."
+    },
+    {
+      "key": "county",
+      "design": "Adopted public grant and original agreement",
+      "population": "Pacifica-area dispenser installation",
+      "result": "Up to$10,000 throughJune30,2026, with invoice reimbursement and maintenance duties. Historical volunteer-only assessment; no annual operating financial statement.",
+      "transfer": "A grant ceiling is not whole annual expense, payment or new funding capacity. Installed public baseline already exists."
+    },
+    {
+      "key": "naloxone_positive",
+      "design": "Massachusetts interrupted time series,2002–2009",
+      "population": "19 communities with overdose education/naloxone implementation",
+      "result": "Adjusted mortality ratios.73(low) and.54(high) versus no implementation; observational association.",
+      "transfer": "Supports mechanism, not current Bay effect per kit or .002 hazard difference; confounding and changed drug supply limit transfer."
+    },
+    {
+      "key": "naloxone_null",
+      "design": "HEALing Communities cluster-randomized multicomponent trial",
+      "population": "67 communities across four states",
+      "result": "Primary opioid mortality aRR.91,95%CI.76–1.09,P=.30. Separate randomized distribution analysis found79% higher naloxone distribution.",
+      "transfer": "More distribution need not yield demonstrated mortality change. This does not isolate naloxone pharmacology; it supports substantial null and implementation uncertainty."
+    },
+    {
+      "key": "mortality",
+      "design": "Historical post-overdose cohort studies",
+      "population": "Selected overdose survivors, not ordinary dispenser recipients",
+      "result": "Larochelle reported4.7 all-cause deaths/100 person-years; Olfson7.783/100 person-years in first-year cohorts.",
+      "transfer": "Only scale context for priors; not Bay-specific prognosis or .07 constant hazard validation. One-year risk differs from hazard; long follow-up and effect duration are assumptions."
+    }
+  ],
+  "reservations": [
+    "No original annual financials or measured annual cohort; modeled cost is as uncertain as benefit.",
+    "Two website cumulative totals remain unreconciled.",
+    "Community-distribution users cannot inherit selected rescued-survivor hazard models.",
+    "Unknown current grants, public supply and volunteer response may yield no additional coverage.",
+    "Favorable family drives 65.7% of signed expected benefit.",
+    "Whole-cost partial-health model omits grief/support benefits, but does not establish a lower bound.",
+    "Official homepage links PayPal giving; destination fetch did not verify recipient display or checkout. donationUrl omitted; no gift sent."
+  ],
+  "excludedBenefits": [
+    "Automatic deaths prevented from doses distributed",
+    "Lifetime restart for repeated rescues",
+    "Unmeasured MOUD referral completion or infection prevention",
+    "Unmeasured grief, family support and education health",
+    "Unbounded future survival and cost-free volunteer/medication inputs"
+  ],
+  "sources": [
+    {
+      "publisher": "HOPE",
+      "title": "Official homepage and five listed access locations",
+      "url": "https://www.hope4change650.org/",
+      "published": "Undated; accessed 2026-09-11",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "HOPE",
+      "title": "Free Narcan locations and information",
+      "url": "https://www.hope4change650.org/narcan-locations-information",
+      "published": "Undated; accessed 2026-09-11",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "HOPE",
+      "title": "Mission and legal-status description",
+      "url": "https://www.hope4change650.org/about",
+      "published": "Undated; accessed 2026-09-11",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "HOPE",
+      "title": "Newsletter issue index; issue contents not retrieved",
+      "url": "https://www.hope4change650.org/hope-highlights-newsletter",
+      "published": "Lists December 2025 and April 9, 2026 issues; page undated",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "County of San Mateo",
+      "title": "Adopted Measure K agreement item 25-734",
+      "url": "https://sanmateocounty.legistar.com/LegislationDetail.aspx?FullText=1&GUID=CDE2FD32-C53E-4466-A63B-8423077CEAAC&ID=7523215&Options=&Search=",
+      "published": "Adopted 2025-08-26",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "County of San Mateo",
+      "title": "Original HOPE grant agreement and risk assessment",
+      "url": "https://sanmateocounty.legistar.com/View.ashx?GUID=5FEEA3C1-A530-4DBF-9526-717613ED8645&ID=14759669&M=F",
+      "published": "Agreement term 2025-08-26 to 2026-06-30; reused inspected original",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "ProPublica, IRS-derived data",
+      "title": "HOPE identity record, EIN 99-2104067; not an original annual return",
+      "url": "https://projects.propublica.org/nonprofits/api/v2/organizations/992104067.json",
+      "published": "Record publication date unknown; reused prior identity check",
+      "retrieved": "2026-09-11",
+      "sourceType": "Secondary delivery of IRS identity data"
+    },
+    {
+      "publisher": "DHCS",
+      "title": "Naloxone Distribution Project",
+      "url": "https://www.dhcs.ca.gov/individuals/naloxone-distribution-project/",
+      "published": "Undated; accessed 2026-09-11",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "DHCS",
+      "title": "NDP FAQ: free supply, two-device units and alternatives",
+      "url": "https://www.dhcs.ca.gov/individuals/naloxone-distribution-project/ndp-frequently-asked-questions/",
+      "published": "Current FAQ; April 2026 product change stated",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Walley et al., BMJ",
+      "title": "Overdose education and naloxone: interrupted time series",
+      "url": "https://www.bmj.com/content/346/bmj.f174",
+      "published": "2013-01-31",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "HEALing Communities investigators, NEJM",
+      "title": "Community-Based Cluster-Randomized Trial to Reduce Opioid Overdose Deaths",
+      "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2401177",
+      "published": "2024",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "HEALing Communities investigators",
+      "title": "Randomized overdose education and naloxone distribution analysis",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11628717/",
+      "published": "2024",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Larochelle et al.",
+      "title": "Historical overdose-survivor mortality cohort",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29913516/",
+      "published": "2018",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Olfson et al.",
+      "title": "Causes of death after nonfatal opioid overdose",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29926090/",
+      "published": "2018",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    }
+  ]
+}

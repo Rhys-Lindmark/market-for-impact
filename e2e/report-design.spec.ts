@@ -13,7 +13,7 @@ test('homepage and research copy refinements',async({page})=>{
  for(const cell of await page.locator('tbody td').all()) expect(await cell.innerText()).toMatch(/^\$[\d,]+(?:\.\dM|[KBT])?$/);
 });
 
-test('all published reports use readable research architecture',async({page},testInfo)=>{
+test('all published reports use readable research architecture',async({page,context},testInfo)=>{
  test.setTimeout(180000);
  await page.goto('/research');
  await expect(page.locator('[data-research-slug]')).toHaveCount(EXPECTED_RESEARCH_COUNT);
@@ -27,6 +27,11 @@ test('all published reports use readable research architecture',async({page},tes
  const seenOrganizations=new Set<string>();
  expect(new Set(reports.map(r=>r.href)).size).toBe(EXPECTED_PUBLISHED_COUNT);
  for(const item of reports){
+  await test.step(item.href,async()=>{
+  // Release each report's document and client state before inspecting the next.
+  // Keep every assertion and the cross-report provenance check unchanged.
+  const page=await context.newPage();
+  try {
   const response=await page.goto(item.href);
   expect(response?.status(),item.href).toBe(200);
   await expect(page.locator('h1')).toBeVisible();
@@ -45,13 +50,23 @@ test('all published reports use readable research architecture',async({page},tes
   await effort.locator('summary').click();await expect(effort.locator('ul')).toBeVisible();expect(await effort.locator('li').count()).toBeLessThanOrEqual(5);
   await expect(effort).not.toContainText('wall-clock intervals');await expect(effort).not.toContainText('partial total');
   for(const heading of ['Summary','1. What do they do?','2. Monitoring and information sharing','3. Qualitative assessment','4. What do you get for your dollar?','5. Funding and previous grants','6. Sources']) await expect(page.getByRole('heading',{name:heading,exact:true})).toBeVisible();
-  await expect(page.locator('.report-heading .report-donate')).toHaveText('Donate');
+  const donation=page.locator('.report-heading .report-donate');
+  if(await donation.getAttribute('href')==='#funding'){
+   await expect(donation).toHaveText('Funding limitations');
+   await expect(page.getByRole('link',{name:'Donate',exact:true})).toHaveCount(0);
+  }else{
+   await expect(donation).toHaveText('Donate');
+   expect(await donation.getAttribute('href')).toMatch(/^https:\/\//);
+   await expect(page.locator('#funding .report-donate')).toHaveAttribute('href',(await donation.getAttribute('href'))!);
+  }
   await expect(page.locator('#funding')).toHaveCount(1);
   await expect(page.getByRole('table')).toHaveCount(0);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),item.href).toBe(true);
   await page.getByText('Model inputs and assumptions',{exact:true}).click();
   await expect(page.locator('.report-assumptions').first()).toBeVisible();
   expect(await page.locator('#summary p').first().evaluate(el=>parseFloat(getComputedStyle(el).fontSize))).toBeGreaterThanOrEqual(16);
+  } finally { await page.close(); }
+  });
  }
  for(const organization of Object.keys(registry.organizations))expect(seenOrganizations.has(organization),'Unmatched provenance organization: '+organization).toBe(true);
  await page.goto('/charities/breathe-california');

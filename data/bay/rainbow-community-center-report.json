@@ -1,0 +1,383 @@
+{
+  "organization": "Rainbow Community Center of Contra Costa County",
+  "eyebrow": "Exploratory whole-gift Bay research",
+  "program": "Finite psychotherapy access within a broad LGBTQ community organization",
+  "published": "11 September 2026",
+  "modelVersion": "rainbow-community-center-whole-gift-finite-therapy-v1",
+  "nutshell": {
+    "headline": "Real clinical services, but weakly measured throughput and limited ordinary-gift evidence",
+    "body": "The research list uses the central scenario: $38,725,116 per 10 Bay QALYs. Signed subjective mixture: $8,105,143 per 10 Bay QALYs. Central scenario: $38,725,116. This charges the whole organization but quantifies only finite psychotherapy health, not complete expected value.",
+    "whyItMayWork": "Affirming therapy can improve symptoms for people who otherwise lack suitable care. Trainee-supported clinical delivery is an actual service, not merely outreach reach.",
+    "whyWeAreCautious": "The favorable 10% scenario supplies 97.75% of signed expected benefit. Annual completed courses, current capacity and incremental private funding response are unknown.",
+    "recommendationBlocker": "HOLD giving recommendation. The central and weighted therapy-only estimates are above $1M per 10 Bay QALYs, and no priced marginal clinical capacity is verified."
+  },
+  "summary": [
+    {
+      "label": "WHOLE EXPENSE",
+      "value": "$1.273M",
+      "detail": "FY2025; all community, clinical and administrative spending retained."
+    },
+    {
+      "label": "BAY MIXTURE",
+      "value": "$8,105,143",
+      "detail": "Per 10 Bay QALYs; partial quantified health, not complete return."
+    },
+    {
+      "label": "CENTRAL",
+      "value": "$38,725,116",
+      "detail": "Distinct scenario, not the signed mixture."
+    },
+    {
+      "label": "FAVORABLE TAIL",
+      "value": "97.75%",
+      "detail": "Contribution of the 10% favorable world to signed expected health."
+    }
+  ],
+  "programSection": {
+    "body": "Rainbow provides mental-health counseling, youth/senior groups, community support, case management and sexual-health testing/navigation in Contra Costa County. Its detailed sexual-health page describes PrEP navigation and treatment referrals to public clinics. These are not verified treatment starts. The organization explicitly says it is not a crisis center.",
+    "steps": [
+      {
+        "title": "Estimate actual therapy delivery",
+        "detail": "Use a small clinician-capacity prior anchored only loosely to the six-name trainee roster; convert attended sessions into course starters, then meaningful completed person-condition courses."
+      },
+      {
+        "title": "Credit finite symptom change",
+        "detail": "Apply a bounded utility-duration proxy, adjusted for local treatment differences and realistic alternative care; no suicides or HIV infections automatically prevented."
+      },
+      {
+        "title": "Retain whole-gift scope",
+        "detail": "All costs remain, while unquantified community, housing and sexual-health pathways remain unknown—not zero. Cash response reflects existing public-funded baseline."
+      }
+    ],
+    "boundary": "Only psychotherapy symptom health is quantified. Peer support, senior/youth community services, housing navigation and HIV/STI linkage may matter but lack a nonoverlapping completed-care denominator here. They are not assigned zero benefit. No program-only cost substitution, free donated labor assumption, lifetime suicide-prevention award or referral-to-treatment shortcut."
+  },
+  "model": {
+    "headline": "$8,105,143 per 10 Bay QALYs",
+    "body": "Weighted annual Bay health is 1.57100132; a bounded $10,000 gift produces 0.012337845583078553. Central modeled completed unique courses are 100.8, not an observed count.",
+    "equation": {
+      "label": "Signed finite therapy health",
+      "expression": "gift / whole expense × funding × Bay share × [unique course starters × completion × utility gain × duration × local transfer × clinical access increment − unique starters × harm]",
+      "result": "0.012337845583078553 Bay QALYs per $10,000"
+    },
+    "inputs": [
+      {
+        "key": "expense",
+        "label": "Whole annual expense",
+        "best": "$1,273,319",
+        "range": "FY July 2024–June 2025",
+        "basis": "All programs and overhead retained. $1,110 depreciation and other noncash accounting entries not removed without reconciliation; not a complete economic-resource price.",
+        "confidence": "Filed accounting anchor"
+      },
+      {
+        "key": "clinicians",
+        "label": "Annual clinician equivalents",
+        "best": "5",
+        "range": "3–8",
+        "basis": "Six names on an undated trainee roster anchor only approximate scale. Five is not five observed FTE; eight allows other providers. Turnover and actual clinical hours unknown.",
+        "confidence": "Very uncertain / analyst judgment"
+      },
+      {
+        "key": "sessionsWeekly",
+        "label": "Attended sessions per clinician-week",
+        "best": "8",
+        "range": "5–12",
+        "basis": "Judgment, not a published caseload; excludes no-show appointments by definition.",
+        "confidence": "Very uncertain / analyst judgment"
+      },
+      {
+        "key": "weeks",
+        "label": "Clinical weeks per year",
+        "best": "40",
+        "range": "32–44",
+        "basis": "Judgment for trainee calendar/leave; no annual throughput reported.",
+        "confidence": "Very uncertain / analyst judgment"
+      },
+      {
+        "key": "sessionsPerStarter",
+        "label": "Average consumed sessions per course starter",
+        "best": "10",
+        "range": "8–12",
+        "basis": "Includes partial courses; not ten sessions observed per client. Trial protocols do not establish local delivery.",
+        "confidence": "Very uncertain / analyst judgment"
+      },
+      {
+        "key": "completion",
+        "label": "Meaningful-course completion fraction",
+        "best": ".70",
+        "range": ".50–.85",
+        "basis": "Judgment applied to benefit only. No trial intention-to-treat estimate is multiplied by completion.",
+        "confidence": "Very uncertain / analyst judgment"
+      },
+      {
+        "key": "unique",
+        "label": "Distinct person-condition course fraction",
+        "best": ".90",
+        "range": ".80–.95",
+        "basis": "Avoids treating repeat courses or couple/family encounters as additional clinical people. No multiple diagnoses added.",
+        "confidence": "Very uncertain / analyst judgment"
+      },
+      {
+        "key": "utilityGain",
+        "label": "Conditional symptom utility gain",
+        "best": ".06",
+        "range": ".03–.10 plus zero; signed diagnostics allowed",
+        "basis": "Preference-based value is an analyst proxy, not symptom-score conversion or LGBTQ identity value.",
+        "confidence": "Very uncertain / analyst judgment"
+      },
+      {
+        "key": "duration",
+        "label": "Finite benefit duration",
+        "best": ".5 year",
+        "range": ".25–1 year",
+        "basis": "Integrated short-term symptom benefit, not mortality or lifetime identity-related gain. Flat duration is a simplifying assumption.",
+        "confidence": "Very uncertain / analyst judgment"
+      },
+      {
+        "key": "transfer",
+        "label": "Local modality/population transfer",
+        "best": ".65",
+        "range": ".50–.80",
+        "basis": "Roster includes narrative/somatic approaches, not proven trial-protocol CBT. Trial populations are narrower than all ages/genders served.",
+        "confidence": "Very uncertain / analyst judgment"
+      },
+      {
+        "key": "access",
+        "label": "Benefit beyond alternative care",
+        "best": ".50",
+        "range": ".30–.70",
+        "basis": "Conditional on service delivered; other counseling/covered services may substitute. Not a second attendance discount.",
+        "confidence": "Very uncertain / analyst judgment"
+      },
+      {
+        "key": "funding",
+        "label": "Additional service from ordinary cash",
+        "best": ".40",
+        "range": "0–.65",
+        "basis": "Cash response beyond already financed public/private baseline; separate from clinical alternatives. Not proven funding room.",
+        "confidence": "Very uncertain / analyst judgment"
+      },
+      {
+        "key": "bay",
+        "label": "Bay benefit share",
+        "best": ".98",
+        "range": ".95–1",
+        "basis": "Contra Costa footprint, not verified patient residences. Same fraction applied to harms.",
+        "confidence": "Very uncertain / analyst judgment"
+      },
+      {
+        "key": "harm",
+        "label": "Independent burden per unique starter",
+        "best": ".001 QALY",
+        "range": "0–.005",
+        "basis": "Judgment for burdens/adverse experiences beyond clinical change; applies even to non-completers.",
+        "confidence": "Very uncertain / analyst judgment"
+      },
+      {
+        "key": "weights",
+        "label": "Joint subjective scenario weights",
+        "best": "20% funding-null; 15% clinical-null; 10% harm",
+        "range": "25% cautious; 20% central; 10% favorable",
+        "basis": "Locked before first output, not empirically calibrated. No coefficient retuning.",
+        "confidence": "Very uncertain / analyst judgment"
+      }
+    ],
+    "giftHeading": "$10,000 analytic illustration, not an available treatment package",
+    "sensitivity": [
+      {
+        "case": "funding_null",
+        "headline": "No positive finite price per 10; weight 0.2",
+        "detail": "Annual Bay QALYs 0; 144 modeled unique starters; 100.8 completed equivalents."
+      },
+      {
+        "case": "clinical_null",
+        "headline": "No positive finite price per 10; weight 0.15",
+        "detail": "Annual Bay QALYs 0; 144 modeled unique starters; 100.8 completed equivalents."
+      },
+      {
+        "case": "harm",
+        "headline": "No positive finite price per 10; weight 0.1",
+        "detail": "Annual Bay QALYs -0.28224; 144 modeled unique starters; 100.8 completed equivalents."
+      },
+      {
+        "case": "cautious",
+        "headline": "No positive finite price per 10; weight 0.25",
+        "detail": "Annual Bay QALYs -0.00874; 32 modeled unique starters; 16 completed equivalents."
+      },
+      {
+        "case": "central",
+        "headline": "$38,725,116 per 10; weight 0.2",
+        "detail": "Annual Bay QALYs 0.32880960000000004; 144 modeled unique starters; 100.8 completed equivalents."
+      },
+      {
+        "case": "favorable",
+        "headline": "$829,174 per 10; weight 0.1",
+        "detail": "Annual Bay QALYs 15.356483999999998; 501.59999999999997 modeled unique starters; 426.35999999999996 completed equivalents."
+      },
+      {
+        "case": "without_favorable",
+        "headline": "$324,156,279 per 10",
+        "detail": "Remaining worlds renormalized; does not retune underlying assumptions."
+      },
+      {
+        "case": "half_sessions",
+        "headline": "$16,210,286 per 10",
+        "detail": "Named diagnostic only; full inputs/results saved separately."
+      },
+      {
+        "case": "half_duration",
+        "headline": "$16,841,221 per 10",
+        "detail": "Named diagnostic only; full inputs/results saved separately."
+      },
+      {
+        "case": "half_cash",
+        "headline": "$16,210,286 per 10",
+        "detail": "Named diagnostic only; full inputs/results saved separately."
+      },
+      {
+        "case": "central_clinical_all_worlds",
+        "headline": "$31,759,148 per 10",
+        "detail": "Named diagnostic only; full inputs/results saved separately."
+      },
+      {
+        "case": "double_resources",
+        "headline": "$16,210,286 per 10",
+        "detail": "Named diagnostic only; full inputs/results saved separately."
+      }
+    ],
+    "uncertaintyBoundary": "No observed annual clinical-course denominator. The six-name roster is not six full-time providers. Clinical response is a conditional analyst utility-duration proxy; it is NOT an imported intention-to-treat coefficient with a second completion penalty. Completion controls clinically meaningful course delivery; unique fraction controls repeated person-condition counting; transfer controls modality/population; access controls alternate care; funding controls cash-created delivery. These separate concepts remain empirically uncertain and correlated. Favorable-world removal raises price sharply. Subjective mass below $1M is 0.1 and below $100k is 0; these are not calibrated probabilities.",
+    "fundingBoundary": "FY2025 expense $1,273,319 versus prior $1,752,448. Government contributions $1,232,945 of $1,494,629 revenue (~82.5%); fees $78,930. Net assets $454,076, liabilities $351,672 and surplus $221,310 do not prove cash room or lack of need. Annual clinical throughput and allocation of public contracts are unknown. Fee revenue is not all therapy revenue. The $10,609 MSW intern stipend line does not price full therapy delivery or donated supervision. All overhead retained; donated resources/partners unpriced. No donation link offered because destination/payment verification failed despite official site navigation link."
+  },
+  "evidence": [
+    {
+      "key": "finance",
+      "design": "Original FY2025 Form 990",
+      "population": "Whole legal recipient, EIN 68-0375857",
+      "result": "Expense $1,273,319; government revenue $1,232,945; broad program narrative with no annual completed-care count.",
+      "transfer": "Retain whole expense. Pandemic-era text is not proof of current service volumes; food Supply Train is explicitly described as ended August 2023."
+    },
+    {
+      "key": "roster",
+      "design": "Current undated official service and intern pages",
+      "population": "All-age clinical services and six listed trainees",
+      "result": "Individual, couples, family and adolescent therapy; several narrative/somatic modalities.",
+      "transfer": "Roster is not FTE or courses; modeled capacity and completion are judgments. Do not assume standardized CBT or add family members automatically."
+    },
+    {
+      "key": "pilot",
+      "design": "2015 randomized immediate treatment versus three-month waitlist",
+      "population": "63 young gay/bisexual men, New York City, symptomatic and not in regular care",
+      "result": "Affirmative CBT pilot reported symptom and behavioral improvements.",
+      "transfer": "Small narrow waitlist study; no QALY coefficient or Rainbow treatment-fidelity evidence. Do not generalize to all identities, ages, conditions or modalities."
+    },
+    {
+      "key": "active_comparator",
+      "design": "2022 three-arm randomized trial",
+      "population": "254 young sexual-minority men; ESTEEM versus HIV counseling/testing or affirmative community counseling",
+      "result": "Primary sexual-risk outcome not significantly better; secondary mental-health comparisons did not reach significance after false-discovery correction.",
+      "transfer": "Small-to-moderate nonsignificant advantages do not prove zero benefit, but sharply weaken claims of large added value over existing appropriate care. Supports clinical-null and alternative-care uncertainty."
+    },
+    {
+      "key": "qaly_bridge",
+      "design": "2018 trial-based economic evaluation of CBT plus usual care versus usual care",
+      "population": "212 adolescents with depression who declined/stopped antidepressants",
+      "result": "Reported 26.8 extra depression-free days and .067 QALYs over 12 months. Simple stated .4 decrement ×26.8/365 gives .02937; reconciliation unresolved.",
+      "transfer": "Neither figure is directly imported. Rainbow's central .06 ×.5 ×.65 = .0195 conditional Q per completed course is a judgment; youth CBT evidence does not validate local adult/family care."
+    },
+    {
+      "key": "sexual_health",
+      "design": "Detailed official HIV/STI service page",
+      "population": "Testing/navigation clients and public-clinic referrals",
+      "result": "PrEP information/referrals and treatment connections; public clinic schedules and payer access listed.",
+      "transfer": "No retained PrEP, ART or STI-treatment outcomes counted; broad clinical page wording must not override the detailed referral boundary."
+    }
+  ],
+  "reservations": [
+    "Whole-cost partial-health price is not complete organization value; important unquantified pathways could change it.",
+    "No annual unique course denominator or observed symptom utility; roster-based capacity is weak.",
+    "Public funding dominates reported revenue; current private cash-created capacity is unknown.",
+    "The favorable 10% world drives nearly all signed expected benefit.",
+    "Trial methods/populations differ from local narrative/somatic, couples and family care.",
+    "Official site says not a crisis center; no suicide mortality credit."
+  ],
+  "excludedBenefits": [
+    "HIV infections averted or ART retention inferred from testing/referrals",
+    "Suicide deaths averted or lifetime survival from routine counseling",
+    "Peer-group and family-member benefits added without deduplication",
+    "Current food-pantry benefit from discontinued Supply Train",
+    "Housing, social support, youth/senior wellbeing and dignity—unquantified, not zero"
+  ],
+  "sources": [
+    {
+      "publisher": "IRS via ProPublica",
+      "title": "Original Rainbow FY2025 Form 990",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202610619349300781/IRS990",
+      "published": "Submitted March 2, 2026",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "IRS via ProPublica",
+      "title": "Original FY2025 Schedule O",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202610619349300781/IRS990ScheduleO",
+      "published": "Submitted March 2, 2026",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Rainbow Community Center",
+      "title": "Clinical services",
+      "url": "https://rainbowcc.org/clinical-services/",
+      "published": "Undated current page",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Rainbow Community Center",
+      "title": "Clinical intern roster",
+      "url": "https://rainbowcc.org/our-clinical-interns/",
+      "published": "Undated current page",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Rainbow Community Center",
+      "title": "HIV and STI services",
+      "url": "https://rainbowcc.org/hiv-support-and-adult-programming/",
+      "published": "Undated current page",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Pachankis et al.",
+      "title": "Affirmative CBT pilot randomized trial",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26147563/",
+      "published": "2015",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Pachankis et al.",
+      "title": "Three-arm affirmative CBT trial",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9446477/",
+      "published": "2022",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Dickerson et al.",
+      "title": "Cost-effectiveness of CBT for depressed youth declining antidepressants",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5810604/",
+      "published": "2018",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Rainbow Community Center",
+      "title": "Official donation route linked from clinical page",
+      "url": "https://rainbowcc.org/donate/",
+      "published": "Undated",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    }
+  ]
+}

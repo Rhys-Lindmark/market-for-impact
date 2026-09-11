@@ -1,3 +1,3 @@
-import {calculate,inputs,scenarios,modelVersion} from '@/lib/recares-model.mjs';
-import sources from '@/data/bay/recares-source-ledger.json';
-export function GET(){return Response.json({modelVersion,inputs,scenarios,sources,verifiedMarginalFundingOffer:null,interpretation:'Exploratory whole-gift analyst priors, not measured ReCARES QALYs. Weighted Bay result includes signed null/harm scenarios. Complete societal resources unknown. Giving HOLD.',evaluated:calculate()});}
+import {calculate,diagnostics,inputs,scenarios,modelVersion} from '@/lib/recares-v2-model.mjs';
+import sources from '@/data/bay/recares-v2-sources.json';
+export function GET(){return Response.json({modelVersion,inputs,scenarios,sources,verifiedMarginalFundingOffer:null,rankingStatistic:'central scenario',interpretation:'Exploratory modeled health, not measured QALYs or an actionable marginal funding offer. Accrual expenses proxy donor cash costs; complete societal resources unknown. Giving HOLD.',evaluated:{...calculate(),publicationStatus:'independently_audited_exploratory_v2',basis:'FY2025 accrual expense and reported output update; original subjective health and funding priors retained'},diagnostics:diagnostics()});}

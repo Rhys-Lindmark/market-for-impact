@@ -23,7 +23,7 @@ test('all 50 SF reviews have unique, ascending central 10-QALY estimates', () =>
     assert.ok(Number.isFinite(r.centralUsdPerTenQalys) && r.centralUsdPerTenQalys > 0);
     if (i) assert.ok(rows[i - 1].centralUsdPerTenQalys <= r.centralUsdPerTenQalys);
   });
-  assert.deepEqual(rows.slice(0, 4).map(r => r.slug), ['breathe-california', 'project-homeless-connect', 'north-east-medical-services', 'hearing-and-speech-center']);
+  assert.deepEqual(rows.slice(0, 4).map(r => r.slug), ['project-homeless-connect', 'north-east-medical-services', 'hearing-and-speech-center', 'compass-family-services']);
   assert.ok(Math.abs(rows.find(r=>r.slug==='pacific-vision-foundation').bayUsdPerTenQalys-7936507.936507935)<.000001);
   assert.ok(Math.abs(rows.find(r=>r.slug==='san-francisco-aids-foundation').centralUsdPerTenQalys - 2018525) < 1);
   assert.ok(Math.abs(rows.find(r=>r.slug==='project-homeless-connect').centralUsdPerTenQalys - 798863.340389) < .001);

@@ -5,6 +5,11 @@ test('V2 contents share seven primary links and retain original anchors',async({
  await page.route('https://market-for-impact.rhyslindmark.chatgpt.site/_next/**',async route=>{const u=new URL(route.request().url());await route.fulfill({response:await request.get(u.pathname+u.search)});});
  for(const [slug,name]of reports){
   const response=await page.goto('/charities/'+slug);expect(response?.ok(),slug).toBe(true);
+  const overview=page.locator('#research-summary');
+  await expect(overview.locator('p').first()).toContainText('What do they do?');
+  await expect(overview).toContainText('Why this approach interests us');
+  await expect(overview).toContainText('Our main reservations');
+  await expect(overview).not.toContainText(/whole-gift|whole-organization|HOLD giving/);
   const effort=page.locator('.report-research-effort');
   await expect(effort.locator('summary')).not.toContainText(/v2|beta/i);
   await expect(page.locator('.report-heading .report-date').first()).toHaveText('Updated: 11 September 2026');

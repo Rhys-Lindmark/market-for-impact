@@ -115,13 +115,13 @@ export default function CharityResearchReport({ content }: { content: CharityRep
         <article>
           <section id="summary"><span id="nutshell" />
             <h2>Summary</h2>
-            <p><strong>{content.nutshell.headline}</strong></p>
+            <p><strong>What do they do?</strong> {content.programSection.body} <a href="#program">More</a></p>
+            <p><strong>Why this approach interests us</strong></p>
+            <ul><li>{content.nutshell.whyItMayWork}</li></ul>
+            <p><strong>Our main reservations</strong></p>
+            <ul><li>{content.nutshell.whyWeAreCautious}</li></ul>
+            <p><strong>What do you get for your dollar?</strong></p>
             <p>{content.nutshell.body}</p>
-            <ul>
-              <li><strong>Why it may work:</strong> {content.nutshell.whyItMayWork}</li>
-              <li><strong>Key reservation:</strong> {content.nutshell.whyWeAreCautious}</li>
-              <li><strong>Before recommending a donation:</strong> {content.nutshell.recommendationBlocker}</li>
-            </ul>
             <dl className="report-summary">{content.summary.map(item => <div key={item.label}><dt>{item.label.toLowerCase()}</dt><dd><strong>{item.value}</strong> — {item.detail}</dd></div>)}</dl>
           </section>
           <section id="program">
@@ -166,6 +166,7 @@ export default function CharityResearchReport({ content }: { content: CharityRep
           <section id="funding">
             <h2>5. Funding and previous grants</h2>
             <DonorReadiness organization={content.organization}/>
+            <p>{content.nutshell.recommendationBlocker}</p>
             <p>{content.model.fundingBoundary}</p>
             <p>This review does not establish a verified marginal funding offer or a complete history of grants.</p>
             {donationUrl ? <><p><a className="report-donate" href={donationUrl} target="_blank" rel="noreferrer">Donate</a></p><p className="report-donation-note">{content.donationNote || 'Opens the organization’s giving page. A general donation may not fund the specific activity modeled here; confirm allocation with the recipient.'}</p></> : <p>We have not verified a suitable donation route for this reviewed activity. Confirm the legal recipient and intended allocation before donating.</p>}

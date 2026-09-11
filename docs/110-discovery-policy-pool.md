@@ -109,4 +109,3 @@ Actual shared brainstorm/source interval began **2026-09-11 14:25:00 UTC**. This
 Source work and draft review completed **2026-09-11 14:29:16 UTC**; final decomposition/copy edit follows that clock boundary. No organization-specific duration is imputed from this shared interval.
 
 Parent requested preserving the full 33-wide batch after the first draft. Additional primary-source searches, nine rows, rename/partner checks and deterministic row-count verification completed **2026-09-11 14:31:33 UTC**. Total observed shared planning interval: **6 minutes 33 seconds**, not the 30-minute ceiling; no claim of instrumented active attention. Verified 33 numbered candidate rows. No full reports or new model values were produced.
-

@@ -84,4 +84,3 @@ No full reports or new probability estimates produced. Rows are a quality-limite
 - Read root's `docs/110-discovery-lessons.md` during this batch; its completed-care, donated-complement and fiscal-sponsor rules are reflected above.
 
 Completed bounded source-check/authoring interval: **2026-09-11 14:24:50–14:31:32 UTC (6m42s wall)**; final timestamp insertion follows. This is actual elapsed work, not a30-minute claim or active-token billing estimate.34 entries verified by sequential IDs1–34; published duplicates/aliases and closed StarVista excluded from that count. Full reports remain deferred.
-

@@ -82,4 +82,3 @@ Read root's `work/market-for-impact-110-discovery/docs/110-discovery-lessons.md`
 No new full report selected. Recommended immediate deepening is a comparative finance/unique-repair-episode check of EDI and ILRCSF, then HERS clinical product mix. This can eliminate weak candidates before committing one of ten slots.
 
 Final evidence/draft checkpoint **2026-09-11 14:31:33 UTC**; start14:25:16, elapsed6m17s, final save thereafter. No claim of thirty minutes spent. Expansion to33 includes explicit weak/negative and mechanism-only entries as root requested, not additional validated organizations.
-

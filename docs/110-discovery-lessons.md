@@ -31,4 +31,16 @@ Screen qualitatively on: plausible health-per-dollar advantage; causal evidence 
 
 At25: provide advance/hold/reject reasons for all100 and identify distinct evidence risks. At10: justify each selection against its best excluded alternative. Spread correlated model risk when expected promise is comparable; do not impose cause quotas. Record the central-versus-optimistic distinction before any model is computed.
 
-Phase status: lessons memo drafted; three worker batches pending. No candidates accepted or new reports counted yet. Remaining planning time should challenge the longlist and its priors, not repeatedly rewrite this memo.
+## Rank calibration before choosing new shots
+
+The current ReCARES report (`data/bay/recares-report.json`, model `recares-whole-org-v2`) illustrates why we must compare model assumptions, not just displayed prices. Its $185,910/10 Bay QALYs is a signed subjective-prior-weighted result; its separate central scenario is $128,892. The 5%-weight favorable scenario contributes 69.3% of expected benefit. Removing that tail and renormalizing yields $574,975. These are existing model outputs, not newly measured effects.
+
+For new repair/access candidates, compare both central scenarios and signed expected scenarios under aligned assumptions. Do not give a new organization a harsh whole-gift model while comparing it with an old selected-program price. Conversely, do not import ReCARES' unmeasured utility, device mix or six-month access horizon as evidence. EDI/ILRCSF emergency repair may have a larger per-person functional effect but a much shorter gain over insurance or another repair provider; it also costs more to dispatch skilled labor. A different mechanism can beat the current leaders without resembling equipment redistribution.
+
+## Unresolved mechanisms deserve a real implementer search
+
+Engineered-stone exposure is an example of a severe, preventable outcome worth investigating, not an automatically fundable intervention. The [California DIR release of May 22, 2026](https://dir.ca.gov/DIRNews/2026/2026-45.html), retrieved September11, identifies WOEMA's petition and a rulemaking process already underway. Existing enforcement and employer obligations belong in the counterfactual. A donor cannot be credited with initiating a process that already exists.
+
+[Worksafe](https://www.worksafe.org/), retrieved September11 (page publication date unstated), is a real Oakland-based worker-health/legal-support organization, but its homepage does not establish this specific silicosis delivery role. It describes a State Bar-funded support center and statewide work. Treat it only as an implementer lead; Bay headquarters are not Bay impact allocation. No Worksafe QALYs or shortlist promotion are inferred from occupational disease severity alone.
+
+Phase status: three initial worker pools received; deeper finance/denominator checks assigned to all three workers. Cross-lane CHC and Samaritan House duplicates need reconciliation, and closed StarVista must not advance. No new reports counted. Remaining planning should challenge the longlist and resolve mechanisms, not repeatedly rewrite this memo.

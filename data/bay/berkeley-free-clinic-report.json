@@ -1,0 +1,286 @@
+{
+  "organization": "Berkeley Free Clinic",
+  "eyebrow": "CHARITY RESEARCH · EAST BAY · EXPLORATORY",
+  "program": "Free medical, sexual-health, dental, counseling, benefits and outreach services",
+  "donationUrl": "https://www.berkeleyfreeclinic.org/donate-now",
+  "published": "10 September 2026",
+  "modelVersion": "berkeley-free-clinic-whole-org-v1",
+  "evidence": [
+    {
+      "key": "clinic-monitoring",
+      "population": "Berkeley Free Clinic clients",
+      "design": "Organization-reported FY2025 activity and finances",
+      "result": "The Form 990 reports 2,007 clients and 3,153 encounters on $453,528 of annual expense. Current service disclosures indicate limited operations during transition, including paused dental and TB services.",
+      "transfer": "These figures anchor costs and delivery scale, not causal health gains. No service-line outcome, treatment-linkage, or client-residence dataset was located. The model uses explicit priors rather than presenting encounters as QALYs."
+    },
+    {
+      "key": "chlamydia-screening",
+      "population": "High-risk women in an external chlamydia-screening trial",
+      "design": "Randomized trial, Scholes and colleagues, 1996",
+      "result": "Among 2,607 randomized women, verified pelvic inflammatory disease occurred in 9 of 1,009 assigned screening and 33 of 1,598 assigned usual care; reported relative risk was 0.44 (95% CI 0.20–0.90). Only 64% of the screening arm was screened; 7% of those screened tested positive and were treated.",
+      "transfer": "This supports a plausible testing-to-treatment mechanism, but it does not estimate Berkeley Free Clinic's effect. Its patient mix, positivity, alternative care and completed treatment are unknown; the trial effect is not multiplied by every clinic client."
+    },
+    {
+      "key": "coverage-access",
+      "population": "Low-income adults in the Oregon Medicaid experiment",
+      "design": "Randomized access to insurance, two-year follow-up",
+      "result": "The study found greater healthcare use and detection, fewer positive depression screens and less financial strain, without significant improvement in measured physical-health outcomes over two years.",
+      "transfer": "Coverage expansion is not the same intervention as a volunteer clinic. This mixed evidence argues against assuming that additional access reliably produces large health gains; it is contextual evidence, not a clinic-specific QALY conversion."
+    }
+  ],
+  "nutshell": {
+    "headline": "Very low cash cost and volunteer leverage create upside, but current limited operations, unknown service mix and unpriced marginal clinical throughput make health impact highly uncertain.",
+    "body": "Our signed whole-organization model estimates $3.85 million donated per 10 Bay-resident QALYs after an assumed residence allocation, compared with $3.62 million per 10 modeled QALYs across all beneficiaries. Verified complete gross resources are unavailable; an all-beneficiary volunteer-inclusive proxy is $12.28 million.",
+    "whyItMayWork": "The clinic reports 2,007 clients and 3,153 encounters on $453,528 expense and delivers free testing/treatment with 150 volunteers. A March 2026 City record links a $196,809 renovation to expanded capacity and hours.",
+    "whyWeAreCautious": "Dental/TB are paused during a move, service-line outcomes are unpublished, public lab funding overlaps, and total net assets/fund balances have unreported restriction and availability.",
+    "recommendationBlocker": "Obtain the added clients/hours attributable to the renovated facility, a restored-service timeline, unduplicated service-line counts, positivity/treatment/linkage and current volunteer/resource requirements."
+  },
+  "summary": [
+    {
+      "label": "BAY-RESIDENT ESTIMATE",
+      "value": "$3.85M",
+      "detail": "donor cost per10 modeled Bay-resident QALYs; residence share is an analyst prior, not observed client geography"
+    },
+    {
+      "label": "PRIOR-WEIGHTED GIFT",
+      "value": "$3.62M",
+      "detail": "donor cost per10 modeled QALYs across all beneficiaries;30% null,10% harm"
+    },
+    {
+      "label": "CENTRAL CASE",
+      "value": "$4.78M",
+      "detail": "0.20910 QALY per $100,000"
+    },
+    {
+      "label": "VERIFIED GROSS",
+      "value": "Unavailable",
+      "detail": "archival volunteer-hours proxy: $12.28M per 10"
+    },
+    {
+      "label": "BAY / SF RESIDENCE",
+      "value": "Unmeasured",
+      "detail": "subjective 80%–95% Bay and 3% SF; 100% Bay clinical service site"
+    },
+    {
+      "label": "FUNDING ROOM",
+      "value": "Unverified",
+      "detail": "$196,809 renovation is priced; added clinical throughput is not"
+    }
+  ],
+  "programSection": {
+    "body": "Berkeley Community Health Project, DBA Berkeley Free Clinic, is an independent volunteer-run clinic. FY2025 filing reports 2,007 clients, 3,153 encounters and $453,528 whole expense.",
+    "steps": [
+      {
+        "title": "Test and treat infections",
+        "detail": "Current STI testing/treatment plus HIV/hepatitis screening and referral; positivity/linkage not reported."
+      },
+      {
+        "title": "Provide medical and dental access",
+        "detail": "FY2025 includes acute/preventive care; dental and TB are currently paused during transition."
+      },
+      {
+        "title": "Offer counseling and navigation",
+        "detail": "Peer counseling, referrals and benefits enrollment receive no separate QALYs."
+      },
+      {
+        "title": "Mobilize volunteers",
+        "detail": "150 volunteers and seven employees are reported; current volunteer hours are unavailable."
+      }
+    ],
+    "boundary": "All FY2025 expense is charged against reported clinical clients. Nonclinical activity and transition costs reflected in that filing receive zero separate benefit; the accounting relationship of the separately reported $196,809 renovation is unknown. A general gift is not modeled as STI-only."
+  },
+  "model": {
+    "headline": "Prior-weighted $3.62M per 10 QALYs; central $4.78M.",
+    "body": "A $100,000 gift is scaled against whole expense and the 2,007-client denominator, then separately discounted for funding additionality, current capacity, uniqueness and material health realization. Finite signed QALYs are applied only after those gates.",
+    "equation": {
+      "label": "PRIOR-WEIGHTED COST",
+      "expression": "10 × $100,000 ÷ 0.27643778 signed expected QALY",
+      "result": "$3,617,451 per 10 modeled QALYs"
+    },
+    "inputColumnLabel": "Source anchors and analyst priors",
+    "inputs": [
+      {
+        "key": "wholeExpense",
+        "label": "Whole expense/client unit",
+        "confidence": "High accounting; moderate client semantics",
+        "best": "$453,528 / 2,007 = $225.97",
+        "range": "fixed FY2025",
+        "basis": "Form 990; clients not explicitly labeled unduplicated."
+      },
+      {
+        "key": "additionality",
+        "label": "Funding additionality",
+        "confidence": "Very low",
+        "best": "15% central",
+        "range": "3%–35%",
+        "basis": "Deficit and current renovation funding request versus public funding and substantial cash/investments of unreported restriction/availability."
+      },
+      {
+        "key": "capacity",
+        "label": "Current-service transfer",
+        "confidence": "Low",
+        "best": "70%",
+        "range": "40%–100%",
+        "basis": "Limited operation; dental/TB paused during move; City says renovated facility will expand capacity/hours but does not quantify them."
+      },
+      {
+        "key": "uniqueness",
+        "label": "Unique-client factor",
+        "confidence": "Low–moderate",
+        "best": "90%",
+        "range": "80%–95%",
+        "basis": "Filing says clients but does not publish deduplication method."
+      },
+      {
+        "key": "healthRealization",
+        "label": "Clients with material health gain",
+        "confidence": "Very low",
+        "best": "25%",
+        "range": "0%–50%",
+        "basis": "Unknown service mix, positivity, treatment and linkage."
+      },
+      {
+        "key": "finiteQaly",
+        "label": "QALY per health-benefiting client",
+        "confidence": "Very low",
+        "best": "0.02",
+        "range": "−0.002 to 0.06",
+        "basis": "Explicit finite acute/morbidity priors: central0.04 utility gain for0.5year=.02 QALY; cautious0.02 for0.5year=.01; favorable0.06 for1year=.06; harm−0.004 for0.5year=−.002. These are illustrative utility-duration packages, not measured effects; no mortality extrapolation."
+      },
+      {
+        "key": "gross",
+        "label": "Volunteer-inclusive resource proxy",
+        "confidence": "Very low; incomplete",
+        "best": "3.286× cash",
+        "range": "3.286×–4×",
+        "basis": "Undated archival listing indexed at approximately 2013: 31,000 hours/180 volunteers, scaled to current 150 under an unchanged-hours-per-volunteer assumption and valued at $40.14/hour; not current measured gross."
+      },
+      {
+        "key": "weights",
+        "label": "Scenario weights",
+        "confidence": "Subjective",
+        "best": "10% harm / 30% null / 30% cautious / 25% central / 5% favorable",
+        "range": "fixed illustration",
+        "basis": "Direct current outcomes and marginal capacity absent."
+      }
+    ],
+    "giftHeading": "$100,000 general whole-organization gift",
+    "sensitivity": [
+      {
+        "case": "Harm (10%)",
+        "headline": "−0.01062 QALY",
+        "detail": "Cost not defined."
+      },
+      {
+        "case": "Null (30%)",
+        "headline": "0 QALY",
+        "detail": "Cost not defined."
+      },
+      {
+        "case": "Cautious (30%)",
+        "headline": "$66.46M per 10",
+        "detail": "0.01505 QALY; volunteer proxy $218.42M."
+      },
+      {
+        "case": "Central (25%)",
+        "headline": "$4.78M per 10",
+        "detail": "0.20910 QALY; volunteer proxy $15.72M."
+      },
+      {
+        "case": "Favorable stress (5%)",
+        "headline": "$0.227M per 10",
+        "detail": "4.41424 QALYs; volunteer proxy $0.906M."
+      },
+      {
+        "case": "Prior-weighted",
+        "headline": "$3.62M per 10",
+        "detail": "0.27644 QALY; 79.84% from favorable tail; volunteer proxy $12.28M."
+      }
+    ],
+    "uncertaintyBoundary": "Without the favorable case, donor cost is $17.05M per 10 QALYs. Every health input is a prior rather than a BFC-measured effect.",
+    "fundingBoundary": "FY2025 deficit $81,552; total net assets/fund balances $1.193M with restriction/availability unreported; cash/investments $1.049M. The $196,809 renovation was already undertaken and is linked to capacity/hours, but added clinical throughput and its accounting relationship to FY2025 expense are unreported. City lab contract is up to $150,000 over three years; actual draw and marginal private gap remain unverified."
+  },
+  "reservations": [
+    "Current limited-service mix differs from FY2025 throughput.",
+    "No service-line count, positivity, treatment completion or achieved health outcomes were found.",
+    "The favorable 5% case supplies 79.84% of signed benefit.",
+    "Volunteer-inclusive resources use an undated, approximately 2013 archival hours proxy and are not verified complete gross.",
+    "The $196,809 renovation is not reconciled to FY2025 expense and has no added-throughput denominator.",
+    "Bay/SF residence is unmeasured; displayed local shares are priors.",
+    "Total net assets/fund balances have unreported restriction/availability; cash/investments and public lab support make marginal funding additionality uncertain."
+  ],
+  "excludedBenefits": [
+    "Benefits enrollment and financial protection",
+    "Peer counseling and referral utility",
+    "Homeless outreach",
+    "Volunteer learning/community effects",
+    "Dental/TB benefits while paused",
+    "Avoided transmission, deaths or lifetime tails not captured by finite blended prior"
+  ],
+  "sources": [
+    {
+      "publisher": "Berkeley Free Clinic",
+      "title": "Current services",
+      "url": "https://www.berkeleyfreeclinic.org/all-services",
+      "published": "Current 2026",
+      "retrieved": "2026-09-10",
+      "sourceType": "Official service status"
+    },
+    {
+      "publisher": "Berkeley Free Clinic",
+      "title": "Donate Now",
+      "url": "https://www.berkeleyfreeclinic.org/donate-now",
+      "published": "Current 2026",
+      "retrieved": "2026-09-10",
+      "sourceType": "Official donation route"
+    },
+    {
+      "publisher": "IRS filing via Candid",
+      "title": "Berkeley Community Health Project FY2025 Form 990",
+      "url": "https://docs.candid.org/efiles/8394485/c5a746bb-e3c1-454d-8daa-611d7ba08583.pdf",
+      "published": "FY ended 2025-06-30",
+      "retrieved": "2026-09-10",
+      "sourceType": "Primary financial/output filing"
+    },
+    {
+      "publisher": "City of Berkeley",
+      "title": "Laboratory-services contract authorization",
+      "url": "https://berkeleyca.gov/city-council-regular-meeting-eagenda-january-30-2024",
+      "published": "2024-01-30",
+      "retrieved": "2026-09-10",
+      "sourceType": "Official public funding baseline"
+    },
+    {
+      "publisher": "City of Berkeley",
+      "title": "Berkeley Free Clinic critical renovations funding item",
+      "url": "https://berkeleyca.gov/sites/default/files/2026-02/2026-03-10%20Item%2012%20Berkeley%20Free%20Clinic%20Critical%20Renovations%20Relinquishment.pdf",
+      "published": "2026-03-10",
+      "retrieved": "2026-09-10",
+      "sourceType": "Official current capital cost, capacity claim and funding request"
+    },
+    {
+      "publisher": "Scholes et al.",
+      "title": "Prevention of PID by chlamydia screening",
+      "url": "https://www.nejm.org/doi/full/10.1056/NEJM199605233342103",
+      "published": "1996-05-23",
+      "retrieved": "2026-09-10",
+      "sourceType": "Randomized trial"
+    },
+    {
+      "publisher": "Oregon Health Study Group",
+      "title": "Oregon Medicaid experiment clinical outcomes",
+      "url": "https://www.nejm.org/doi/full/10.1056/NEJMsa1212321",
+      "published": "2013-05-02",
+      "retrieved": "2026-09-10",
+      "sourceType": "Randomized lottery study"
+    },
+    {
+      "publisher": "Independent Sector",
+      "title": "2024 state volunteer-hour values",
+      "url": "https://independentsector.org/wp-content/uploads/2025/04/vovt-state-by-state-data-2025.pdf",
+      "published": "2025-04",
+      "retrieved": "2026-09-10",
+      "sourceType": "Generic volunteer valuation"
+    }
+  ]
+}

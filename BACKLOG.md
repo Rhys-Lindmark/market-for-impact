@@ -1,5 +1,11 @@
 # Market for Impact backlog
 
+## Research-time display follow-up — September 10
+
+Verification:500 unit/model tests passed; lint0 errors/3 existing warnings; production build passed; phone390/tablet768 browser tests passed, covering current mixed-model labels, whole-minute formatting, historical details expansion and frozen assignment on reload. No new report counted. Next: exact-source publication and canonical verification, then independently challenged high-EV candidates rather than category filling.
+
+Whole-minute labels (5.7 becomes6), no lower-bound plus sign, and a tilde for incomplete timing. Freeze user-requested assigned historical estimates of15–20min for the67 reports without recorded sessions; these are explicitly assigned estimates, not reconstructed measurements, and never change on reload. Keep the short historical note inside expandable details. Preserve exact session timestamps and assistant-model evidence. User-reported September10 lead context adds GPT-6 Astra Lite alongside recorded GPT-5.6 Sol, with no fabricated historical model replacement. New research workers switched explicitly to gpt-6-astra/low; actual new sessions must record that request evidence. This display-only release leaves82 published reports and every QALY estimate unchanged.
+
 ## MiracleFeet — accepted international calibration report
 
 Published baseline81 includes Changent/NFP (PR270,v189) with canonical report/API/archive checks. MiracleFeet is the next audited comparator, in Expanded Geography Research only: $22,479 donor/$47,487 modeled gross per10 QALYs, zero direct Bay/SF credit. Exact GiveWell grant chain, whole-organization cost, finite utility priors, burden on all treated enrollments, signed uncertainty and unverified current funding room are explicit. Do not count until exact-source publication. Next accepted Spectrum and Berkeley Free Clinic, then corrected/audited La Casa, Code for America and Bay Area Legal Aid.

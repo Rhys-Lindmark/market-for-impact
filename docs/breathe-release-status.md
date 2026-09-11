@@ -2,6 +2,8 @@
 
 Status: integrated locally; not yet published. Published report count remains 100.
 
+Follow-up resolution: release each report page in a finally block and give each report a named test step. Independent diff review confirms every assertion, provenance check and timeout is unchanged. The previously failing100-report tablet architecture check now passes in1.1minutes (1.3minutes runner total). This resolves that local failure, not the excluded required-photo checks or the remote apt installation failure.
+
 September11 follow-up: remote run34597461250 cancelled before tests when apt stalled downloading fonts-ipafont-gothic. Local remaining300-test run (six known photo/design cases explicitly excluded, not waived) ended283 passed/15 skipped/2 tablet timeouts. After a targeted retry, SFPHF passed; the100-report tablet architecture loop still timed out with a browser protocol session-closed error at a different assertion. Do not call the full gate green or keep repeating that loop unchanged. Phone100-report architecture passed. Next requires resolving the browser-runner failure and the independent required-photo gap; publication remains pending.
 
 CI follow-up: full remote mobile run 34595571103 hit its 12-minute limit after recording stale geography/navigation assertions and an unresolved homepage-photo assertion. Corrected Bay-price checks, archive counts, current synthesis navigation, conditional donation fallback and historical-model navigation. The 100-report architecture loop passes locally; focused repaired checks pass. Required homepage image coverage is retained, not weakened. Full remote gate is not claimed green.

@@ -13,7 +13,7 @@ test('homepage and research copy refinements',async({page})=>{
  for(const cell of await page.locator('tbody td').all()) expect(await cell.innerText()).toMatch(/^\$[\d,]+(?:\.\dM|[KBT])?$/);
 });
 
-test('all published reports use readable research architecture',async({page},testInfo)=>{
+test('all published reports use readable research architecture',async({page,context},testInfo)=>{
  test.setTimeout(180000);
  await page.goto('/research');
  await expect(page.locator('[data-research-slug]')).toHaveCount(EXPECTED_RESEARCH_COUNT);
@@ -27,6 +27,11 @@ test('all published reports use readable research architecture',async({page},tes
  const seenOrganizations=new Set<string>();
  expect(new Set(reports.map(r=>r.href)).size).toBe(EXPECTED_PUBLISHED_COUNT);
  for(const item of reports){
+  await test.step(item.href,async()=>{
+  // Release each report's document and client state before inspecting the next.
+  // Keep every assertion and the cross-report provenance check unchanged.
+  const page=await context.newPage();
+  try {
   const response=await page.goto(item.href);
   expect(response?.status(),item.href).toBe(200);
   await expect(page.locator('h1')).toBeVisible();
@@ -60,6 +65,8 @@ test('all published reports use readable research architecture',async({page},tes
   await page.getByText('Model inputs and assumptions',{exact:true}).click();
   await expect(page.locator('.report-assumptions').first()).toBeVisible();
   expect(await page.locator('#summary p').first().evaluate(el=>parseFloat(getComputedStyle(el).fontSize))).toBeGreaterThanOrEqual(16);
+  } finally { await page.close(); }
+  });
  }
  for(const organization of Object.keys(registry.organizations))expect(seenOrganizations.has(organization),'Unmatched provenance organization: '+organization).toBe(true);
  await page.goto('/charities/breathe-california');

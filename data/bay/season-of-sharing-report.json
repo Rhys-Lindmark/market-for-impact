@@ -1,0 +1,299 @@
+{
+  "organization": "Season of Sharing Fund",
+  "eyebrow": "Exploratory whole-organization research",
+  "program": "Emergency housing and critical-needs assistance, with food-bank grants",
+  "published": "11 September 2026",
+  "modelVersion": "season-of-sharing-whole-org-v1",
+  "donationUrl": "https://seasonofsharing.org/ways-to-give/",
+  "nutshell": {
+    "headline": "Credible housing prevention; uncertain health conversion",
+    "body": "The modeled housing-health component of a $10,000 whole gift yields 0.01326 expected Bay QALYs, or $7,541,069 per10. This is not measured health impact or a complete estimate of food-related benefits.",
+    "whyItMayWork": "Timely assistance can avert some homelessness; a Santa Clara randomized trial supports the causal housing pathway.",
+    "whyWeAreCautious": "Prevented homelessness is not a QALY. Finite health benefits and funding response are judgments;96.3% of expected health comes from the favorable world.",
+    "recommendationBlocker": "HOLD giving recommendation. Independently audited for exploratory publication; current marginal capacity and the unquantified food-health contribution remain unresolved."
+  },
+  "summary": [
+    {
+      "label": "Weighted Bay cost per10 modeled QALYs",
+      "value": "$7,541,069",
+      "detail": "Whole cash expense; housing-health component only. Foodhealth unquantified."
+    },
+    {
+      "label": "Whole FY2025 expense proxy",
+      "value": "$14,799,462",
+      "detail": "Audited resource expense$15,130,343 includes$330,881 donated advertising."
+    },
+    {
+      "label": "Favorable-tail dependence",
+      "value": "96.3%",
+      "detail": "Subjective scenario mass below$1M/10:0%; not a confidence interval."
+    }
+  ],
+  "programSection": {
+    "body": "EIN94-3019992, formerly Chronicle Season of Sharing Fund. Nine Bay counties use coordinating agencies and fiscal agents to pay landlords, utilities and other vendors. Gifts also support food banks.",
+    "steps": [
+      {
+        "title": "Charge whole operations",
+        "detail": "Keep sponsor-funded administration, fundraising, agent/county fees and food-bank allocations in whole expense; the100%-to-help claim is not zero overhead."
+      },
+      {
+        "title": "Deliver assistance beyond funded baseline",
+        "detail": "Model cash additionality for reserves, other donors/public sources and partner capacity. Convert the housing/family pool into grant equivalents, not observed unique households."
+      },
+      {
+        "title": "Convert only incremental housing to finite health",
+        "detail": "Absolute risk difference × transfer × effective affected persons × utility × avoided duration; independently subtract harms."
+      }
+    ],
+    "boundary": "No food-bank meal-to-QALY credit, no duplicated food recipient benefits. Food health is omitted, not asserted zero. Full societal costs of partnercasework/volunteering remain incomplete. No lifetime, mortality, income or fiscal-savings credit."
+  },
+  "model": {
+    "headline": "Whole-gift housing-health model",
+    "body": "Nearly5000families is an approximate activity statement.4482is months of rent, not unique families. The model uses housing/family dollars divided by an assumed grant size with dedup and housing relevance; no unsupported exact annual patient denominator.",
+    "equation": {
+      "label": "Net Bay housing health",
+      "expression": "gift/whole expense × ((family/housing pool − provider grants)/assumed grant × dedup) × cash additionality × [housing relevance × .038 × transfer × persons × utility × years − harmQ] × Bay share",
+      "result": "0.013260718850430987 expected Bay QALYs per$10000"
+    },
+    "inputs": [
+      {
+        "key": "cost",
+        "label": "Whole expense",
+        "confidence": "High forFY2025",
+        "best": "$14,799,462",
+        "range": "$15,130,343 with disclosed in-kind",
+        "basis": "IRS/audit reconciliation; sponsor operatingcosts retained."
+      },
+      {
+        "key": "delivery",
+        "label": "Grant-equivalent denominator",
+        "confidence": "Low",
+        "best": "4,248 annual equivalents",
+        "range": "2,875–5,478",
+        "basis": "$11,179,746 family/housing cash; $2,000–$3,500 assumed grant and90–98%dedup. Not observed distinct households."
+      },
+      {
+        "key": "housing",
+        "label": "Housing-relevant share",
+        "confidence": "Low",
+        "best": "75%",
+        "range": "50–90%",
+        "basis": "Pool includes critical needs; not every grant prevents homelessness."
+      },
+      {
+        "key": "cash",
+        "label": "Gift-created assistance",
+        "confidence": "Very low",
+        "best": "70%",
+        "range": "0–90%",
+        "basis": "Reserves and partner/publicfunding are alternatives; no dated incremental tranche."
+      },
+      {
+        "key": "causal",
+        "label": "Six-month homelessness risk difference",
+        "confidence": "Strong external trial; uncertain transfer",
+        "best": ".038 × .75",
+        "range": "Transfer.4–1.5",
+        "basis": "Adjusted ITT, not relative reduction or mortality. Favorable transfer>1 is an explicit high-risk extrapolation."
+      },
+      {
+        "key": "health",
+        "label": "Persons × utility × incremental years",
+        "confidence": "Very low",
+        "best": "1.5 × .10 × .50",
+        "range": "1–2.5 × .05–.20 × .25–1year",
+        "basis": "All analystjudgments; effective health-person equivalents are not measuredhouseholdsize. Duration ends with alternativehousing/convergence. Recorded homeless-days provide a narrower empirical anchor:2.5days avoided peroffer at6months versus6.94days implied by .038×.5years before transfer. Health persistence beyond recorded homelessness is unverified."
+      },
+      {
+        "key": "harm",
+        "label": "Independent harmQ per delivered grant",
+        "confidence": "Very low",
+        "best": ".0002",
+        "range": "0–.003",
+        "basis": "Potential delayed alternativecare, misallocation or instability; not measured adverseevents."
+      },
+      {
+        "key": "Bay",
+        "label": "Bay health share",
+        "confidence": "High scope, uncertain migration",
+        "best": "99%",
+        "range": "97–100%",
+        "basis": "Nine-county program; exact residence at healthbenefit time unavailable."
+      }
+    ],
+    "giftHeading": "$10,000 unrestricted gift; no linear large-scale assurance",
+    "sensitivity": [
+      {
+        "case": "funding_null",
+        "headline": "Weight0.15; Not defined per10",
+        "detail": "BayQ0; full inputmatrix in model and results. Signed/null cases retained."
+      },
+      {
+        "case": "health_null",
+        "headline": "Weight0.15; Not defined per10",
+        "detail": "BayQ0; full inputmatrix in model and results. Signed/null cases retained."
+      },
+      {
+        "case": "harm",
+        "headline": "Weight0.05; Not defined per10",
+        "detail": "BayQ-0.00596793514177745; full inputmatrix in model and results. Signed/null cases retained."
+      },
+      {
+        "case": "cautious",
+        "headline": "Weight0.2; Not defined per10",
+        "detail": "BayQ-0.0002289330456446901; full inputmatrix in model and results. Signed/null cases retained."
+      },
+      {
+        "case": "central",
+        "headline": "Weight0.3; $35,826,204 per10",
+        "detail": "BayQ0.0027912529986021616; full inputmatrix in model and results. Signed/null cases retained."
+      },
+      {
+        "case": "favorable",
+        "headline": "Weight0.15; $1,174,856 per10",
+        "detail": "BayQ0.08511684211378766; full inputmatrix in model and results. Signed/null cases retained."
+      },
+      {
+        "case": "audited_resources",
+        "headline": "Include disclosed donated advertising",
+        "detail": "$7,709,670 per10; BayQ0.012970724108477714. Base coefficients unchanged."
+      },
+      {
+        "case": "program_only_comparison",
+        "headline": "Sponsor-covered support excluded, comparison only",
+        "detail": "$6,814,626 per10; BayQ0.014674318593025681. Base coefficients unchanged."
+      },
+      {
+        "case": "full_cash",
+        "headline": "Cash additionality100%",
+        "detail": "$6,492,826 per10; BayQ0.015401614167985429. Base coefficients unchanged."
+      },
+      {
+        "case": "no_favorable",
+        "headline": "Remove favorable world and renormalize",
+        "detail": "$172,346,486 per10; BayQ0.000580226509838633. Base coefficients unchanged."
+      },
+      {
+        "case": "one_person",
+        "headline": "One health-beneficiary equivalent per episode",
+        "detail": "$19,042,871 per10; BayQ0.005251309076774491. Base coefficients unchanged."
+      },
+      {
+        "case": "half_health",
+        "headline": "Half utility and half duration",
+        "detail": "$34,223,251 per10; BayQ0.002921990047615619. Base coefficients unchanged."
+      }
+    ],
+    "uncertaintyBoundary": "Subjective weights fixed before execution. No world currently below$1M/10 for quantifiedhousinghealth; this does not establish a zero probability in reality, especially with omittedfoodbenefits.",
+    "fundingBoundary": "FY2025 cash$5.305M, unrestrictednetassets$5.233M andrestricted$2.664M. Sponsors pay supportingexpenses. These are fundedbaseline, not proof of eitherzero or unlimited room. Some county/agent fees included; other complementary public/partnercosts unknown."
+  },
+  "evidence": [
+    {
+      "key": "housing_trial",
+      "design": "Santa Clara randomized assistance offer,578observations",
+      "population": "At-risk applicants, not all nine-county grantrecipients",
+      "result": "Six-month adjusted ITT reduction3.8percentagepoints from4.1%control homelessness; rawtreatment0.9%.",
+      "transfer": "Administrative homelessness outcome, not measuredQALY. Grantrecipient effect is not automatically ITT; usingofferanchor with transfer is explicit conservative convention."
+    },
+    {
+      "key": "health_bridge",
+      "design": "Emergency rental-assistance lottery evidence, fourcities",
+      "population": "Pandemicprogram applicants under different housingpolicies",
+      "result": "Rentpayment/eviction-concern benefits with suggestive self-reportedhealth effects.",
+      "transfer": "Does not establish the model’sutility orduration. No symptom-score-to-QALY mapping invented."
+    },
+    {
+      "key": "finance",
+      "design": "Original auditedaccounts and990",
+      "population": "Whole organizationFY2025",
+      "result": "Supportcosts real despite sponsors covering them; foodandhousing grants distinct.",
+      "transfer": "No program-only or netfiscal-savings headline. Partner service costs incomplete."
+    },
+    {
+      "key": "housing_trial_duration",
+      "design": "Santa Clara trial Table2 and TableA6; independent source audit",
+      "population": "578 pre-March2020 applicants; not the full pandemic sample",
+      "result": "The .038 estimate is agency-month-strata-adjusted ITT. Effects were absent during the pandemic and stronger without children. Table2 reports 2.5 fewer recorded homeless-days at6months and7.5 at12months; covariate-adjusted TableA6 estimates are1.9 and5.7days.",
+      "transfer": "The untransferred .038 risk reduction × .5year assumption implies6.94days peroffer, exceeding the six-month2.5day estimate. Broader unrecorded health duration could differ, but is not established. These empirical duration anchors do not validate the assumed utility or household multiplier; coefficients unchanged."
+    }
+  ],
+  "reservations": [
+    "Health conversion is much weaker than housing prevention evidence.",
+    "Grant size, unique-recipient dedup and housing-specific allocation are priors; historical rent-month and family counts do not resolve them.",
+    "Foodhealth omitted; this quantifiedhousingcomponent is not a complete whole-org health valuation.",
+    "Favorable high-risk transfer and householdhealth multiplier dominate expectation.",
+    "No proven marginal funding tranche or guarantee of100000dollar scaling.",
+    "Same public/partner outcomes must not also be credited in full to recipient agencies or foodbanks."
+  ],
+  "excludedBenefits": [
+    "Food-relatedhealth remains unquantified; no mealcount conversion.",
+    "No long-run mortality, childdevelopment, income, legal or crime benefit added.",
+    "No avoided shelter/health-systemcosts subtracted from donatedcash."
+  ],
+  "sources": [
+    {
+      "publisher": "Season of Sharing Fund",
+      "title": "Identity, sponsor support and nine-county delivery",
+      "url": "https://seasonofsharing.org/about/",
+      "published": "Current",
+      "sourceType": "Primary organization",
+      "retrieved": "2026-09-11"
+    },
+    {
+      "publisher": "Season of Sharing Fund / Baker Tilly",
+      "title": "FY2025 audited financial statements",
+      "url": "https://seasonofsharing.org/wp-content/uploads/2025/12/Chronicle-Season-of-Sharing-Fund-AUD-6-30-25-FS.pdf",
+      "published": "2025-12-03",
+      "sourceType": "Primary audited accounts",
+      "retrieved": "2026-09-11"
+    },
+    {
+      "publisher": "Season of Sharing Fund / IRS",
+      "title": "FY2025 Form990",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202523169349301507/IRS990",
+      "published": "FY2025",
+      "sourceType": "Primary return",
+      "retrieved": "2026-09-11"
+    },
+    {
+      "publisher": "Season of Sharing Fund",
+      "title": "FY2024–2025 annual report",
+      "url": "https://seasonofsharing.org/wp-content/uploads/2025/09/Season-of-Sharing-Fund-Annual-Report-2024-2025.pdf",
+      "published": "2025",
+      "sourceType": "Primary annual report",
+      "retrieved": "2026-09-11"
+    },
+    {
+      "publisher": "Season of Sharing Fund",
+      "title": "Rental and housing assistance",
+      "url": "https://seasonofsharing.org/how-we-help/rental-and-housing-assistance/",
+      "published": "Current",
+      "sourceType": "Primary organization",
+      "retrieved": "2026-09-11"
+    },
+    {
+      "publisher": "Phillips and Sullivan",
+      "title": "Santa Clara homelessness-prevention randomized trial, author manuscript",
+      "url": "https://sites.nd.edu/james-sullivan/files/2023/04/SCC_homelessness_prevention-8-1.pdf",
+      "published": "2023-04",
+      "sourceType": "Primary randomized trial",
+      "retrieved": "2026-09-11"
+    },
+    {
+      "publisher": "Collinson et al.",
+      "title": "Emergency rental assistance during pandemic, four cities",
+      "url": "https://www.nber.org/system/files/working_papers/w32463/w32463.pdf",
+      "published": "May2024; revisedOctober2025",
+      "sourceType": "Primary randomized-lottery study, abstract inspected",
+      "retrieved": "2026-09-11"
+    },
+    {
+      "publisher": "Notre Dame researchers",
+      "title": "Santa Clara program context",
+      "url": "https://news.nd.edu/news/targeted-prevention-helps-stop-homelessness-before-it-starts/",
+      "published": "2023",
+      "sourceType": "Primary research institution",
+      "retrieved": "2026-09-11"
+    }
+  ]
+}

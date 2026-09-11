@@ -1,5 +1,11 @@
 # Market for Impact backlog
 
+## Season of Sharing — candidate92
+
+Verification:594tests, lint0errors/3existingwarnings, productionbuild, two phone/tablet report/index/API checks pass. Exact-source publish and canonical verification remain.
+
+91/100 canonically verified via Ear of the Lion PR286/v201 (71Bay+20expanded). Season of Sharing independent audit accepted whole-gift expense with explicitly partial housing-health component: $7.541M per10BayQ, 96.28%favorable-tail dependence. Food-health unquantified, not zero; no complete organizational effectiveness claim. Original research9m17s, audit/integration separate. Verify report/API/index and exact-source publish before count92. Next Pacific Hearing Connection accepted audit, Dentists on Wheels research, and top-ten funding/comparability work.
+
 ## Ear of the Lion — candidate 91
 
 Verification:575 model/unit tests pass, lint zero errors with three existing warnings, production build and two phone/tablet report/archive/API checks pass. Exact-source publishing and canonical verification remain.

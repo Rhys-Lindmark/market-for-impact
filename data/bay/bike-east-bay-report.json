@@ -1,0 +1,419 @@
+{
+  "organization": "Bike East Bay",
+  "eyebrow": "Exploratory whole-gift Bay research",
+  "program": "Prospective San Pablo corridor safety and finite activity access across the whole organization",
+  "published": "11 September 2026",
+  "modelVersion": "bike-east-bay-whole-gift-finite-v1",
+  "nutshell": {
+    "headline": "Stronger local injury data, but an unproven donor contribution",
+    "body": "Signed subjective mixture: $19,089,888 per 10 Bay QALYs. Central scenario: $104,277,379. Whole organization cost is retained while two health pathways are quantified; this is not complete expected value.",
+    "whyItMayWork": "An unresolved corridor design can affect many users. Bike East Bay also teaches cycling skills, which may enable additional activity for some people.",
+    "whyWeAreCautious": "The public agencies already plan safety work. Historical corridor injuries are not all preventable or donor-attributable, and education attendance is not measured additional health.",
+    "recommendationBlocker": "Not a competitive giving recommendation on this evidence. Need a concrete additional technical task, design-specific residual risk and a credible cash response. Historical staff giving is a discovery lead, not GiveWell endorsement."
+  },
+  "summary": [
+    {
+      "label": "WHOLE EXPENSE",
+      "value": "$1,908,395",
+      "detail": "2024 functional expense plus separately netted event and inventory costs."
+    },
+    {
+      "label": "BAY MIXTURE",
+      "value": "$19,089,888",
+      "detail": "Per 10 Bay QALYs; signed, subjective and partial-health."
+    },
+    {
+      "label": "CENTRAL",
+      "value": "$104,277,379",
+      "detail": "Finite annual-budget cohort; not a measured giving return."
+    },
+    {
+      "label": "STAFF PROVENANCE",
+      "value": "Devin Jacob, 2018",
+      "detail": "Personal-giving blog entry names Bike East Bay outside GiveWell's criteria."
+    }
+  ],
+  "programSection": {
+    "body": "The legal recipient is East Bay Bicycle Coalition, doing business as Bike East Bay, EIN 94-2585652. It provides education, events, technical street-safety work and other cycling programs in Alameda and Contra Costa counties. It is distinct from Marin and Silicon Valley bicycle coalitions.",
+    "steps": [
+      {
+        "title": "Use historical injuries as a scale anchor",
+        "detail": "CCTA's current project page provides a defined corridor and time period. Convert its fatal and severe-injury counts into annual historical rates, then remove risk expected to be addressed by existing projects."
+      },
+      {
+        "title": "Require actual implementation change",
+        "detail": "An annual cohort of technical work receives only a share of an additional design change, conditional on implementation. Agencies, other organizations and Bike East Bay's past/future work retain their own contributions."
+      },
+      {
+        "title": "Model finite, additional activity",
+        "detail": "Historical education attendance becomes activity only after judgments for additional cycling, alternative exercise, repeated participants, finite utility and overlap."
+      },
+      {
+        "title": "Charge the whole organization",
+        "detail": "Keep all programs, overhead, events and netted expenses. Other benefits remain unquantified—not zero. Public construction and volunteered resources are not fully priced."
+      }
+    ],
+    "boundary": "No completed lanes, petitions or countywide population totals are treated as donor-created health. One annual budget receives a finite project share, not repeated credit for the same project every year. Physical activity excludes road-injury health already counted. No electoral-persuasion pathway is modeled."
+  },
+  "model": {
+    "headline": "$19,089,888 per 10 Bay QALYs",
+    "body": "Weighted finite Bay health per annual-budget equivalent is 0.9996889638491746 QALYs; $10,000 yields 0.005238375513712699 Bay QALYs. Central finite Bay health is 0.18301140860764387 per budget equivalent. These are scenario outputs, not observed outcomes or available packages.",
+    "equation": {
+      "label": "Finite whole-gift health",
+      "expression": "gift / whole expense × cash response × Bay share × [(historical annual fatal/severe burden × current-risk scale × residual share × net reduction × discounted advantage-years × annual-work contribution × realization) + additional activity × finite utility × nonoverlap − residual harm]",
+      "result": "0.005238375513712699 Bay QALYs per $10,000"
+    },
+    "inputs": [
+      {
+        "key": "expense",
+        "label": "Whole accounting resource expense",
+        "best": "$1,908,395",
+        "range": "$1,897,776 + $7,478 + $3,141",
+        "basis": "2024 original return, including event and inventory costs netted outside Part IX. Noncash resources are not automatically added again. Not a 2026 budget or full public-construction cost.",
+        "confidence": "Original filing"
+      },
+      {
+        "key": "historicalRisk",
+        "label": "Five-year corridor injury anchor",
+        "best": "6 deaths / 35 severe injuries",
+        "range": "1.2 deaths and 7 severe injuries/year",
+        "basis": "CCTA reports July 2020–June 2025 on its 5.5-mile Contra Costa segment. Counts are people, not county totals; raw SWITRS records were not independently extracted.",
+        "confidence": "Primary agency summary"
+      },
+      {
+        "key": "riskScale",
+        "label": "Current untreated risk versus history",
+        "best": "1",
+        "range": "0.5–1 declared worlds",
+        "basis": "Historical traffic and reporting, pandemic conditions and future travel can differ. This is a judgment, not a forecast inferred from one year.",
+        "confidence": "Very uncertain / analyst judgment"
+      },
+      {
+        "key": "residual",
+        "label": "Risk remaining beyond existing improvements",
+        "best": "75%",
+        "range": "50–90%",
+        "basis": "Separately removes the impact of completed/committed corridor work, including Del Norte and Caltrans baseline. Not a measured segment-weighted estimate. Do not simply remove miles: injuries are not uniformly distributed.",
+        "confidence": "Very uncertain / analyst judgment"
+      },
+      {
+        "key": "health",
+        "label": "Finite loss per fatal/severe injury",
+        "best": "10 / 2 QALYs",
+        "range": "5–15 / 0.5–3",
+        "basis": "Integrated finite remaining health/disability priors, disjoint fatal and nonfatal people. No local age/severity utility data. Never multiply by another lifetime horizon.",
+        "confidence": "Very uncertain / analyst judgment"
+      },
+      {
+        "key": "reduction",
+        "label": "Net safety-burden reduction",
+        "best": "20%",
+        "range": "10–40%, zero; signed diagnostics allowed",
+        "basis": "Judgment includes design transfer and local severity effects. FHWA overall-crash results do not establish a mortality reduction here. Main rate covers existing corridor exposure; residual harm separately covers induced/displaced exposure.",
+        "confidence": "Very uncertain / analyst judgment"
+      },
+      {
+        "key": "time",
+        "label": "Counterfactual advantage and delay",
+        "best": "3 years after 4-year lag",
+        "range": "1–5 years; 2–6-year lag",
+        "basis": "Integrate annual burden over a finite advantage window discounted at 3%; alternative design eventually catches up. This is not the whole asset life. No selected construction date verified.",
+        "confidence": "Very uncertain / analyst judgment"
+      },
+      {
+        "key": "contribution",
+        "label": "Annual work cohort contribution",
+        "best": "10%",
+        "range": "3–25%",
+        "basis": "Conditional contribution of one annual budget's technical work, diluted by agencies, partners and Bike East Bay's own past/future work. No credit for entire multiyear organizational effort.",
+        "confidence": "Very uncertain / analyst judgment"
+      },
+      {
+        "key": "realization",
+        "label": "Actual implementation probability",
+        "best": "50%",
+        "range": "25–80%",
+        "basis": "Additional design must be built within modeled timing. Separate from contribution conditional on implementation. Current planning is not construction approval.",
+        "confidence": "Very uncertain / analyst judgment"
+      },
+      {
+        "key": "education",
+        "label": "Education participant equivalents",
+        "best": "1,158",
+        "range": "868.5–1,389.6 current modeled scale",
+        "basis": "Original 2024 report: 1,158 adults/children at 81 classes. Future scale .75–1.2 is judgment. Attendance not a verified unique treatment cohort.",
+        "confidence": "Historical output plus judgment"
+      },
+      {
+        "key": "additionalActivity",
+        "label": "Net additional active people",
+        "best": "10% × 30% = 34.74",
+        "range": "3–30% extra cycling; 20–50% beyond other activity",
+        "basis": "First fraction must include within-cohort repeat-person/activity-period adjustment and changed cycling; second removes substitute exercise/access. Not probability of health response; not imported trial ITT.",
+        "confidence": "Very uncertain / analyst judgment"
+      },
+      {
+        "key": "activityHealth",
+        "label": "Short-term activity utility",
+        "best": "0.005 for 0.5 year",
+        "range": "0.002–0.02 for 0.25–1 year",
+        "basis": "Generic finite preference-weighted proxy, not a measured fitness-to-QALY conversion. Additional nonoverlap .8 central (.5–.8) removes duplicated health periods, particularly across road and activity pathways.",
+        "confidence": "Very uncertain / analyst judgment"
+      },
+      {
+        "key": "cash",
+        "label": "Ordinary-gift additional work",
+        "best": "40%",
+        "range": "0–70%",
+        "basis": "Additional work after public/private funding substitution and capacity limits. Not empirically verified funding room and not a second implementation probability.",
+        "confidence": "Very uncertain / analyst judgment"
+      },
+      {
+        "key": "bay",
+        "label": "Bay share",
+        "best": "98%",
+        "range": "98% across declared worlds",
+        "basis": "Local exposure but not every traveler is a resident. Same share applied to harms; no headquarters-based 100% assumption.",
+        "confidence": "Very uncertain / analyst judgment"
+      },
+      {
+        "key": "harm",
+        "label": "Other added adverse health",
+        "best": "0.1 QALY/budget equivalent",
+        "range": "0–1",
+        "basis": "Induced cycling exposure, displaced traffic or other adverse health beyond the modeled treated-corridor net effect. Do not duplicate injuries already reduced in the main pathway.",
+        "confidence": "Very uncertain / analyst judgment"
+      },
+      {
+        "key": "weights",
+        "label": "Joint subjective worlds",
+        "best": "20% funding-null; 20% health-null; 10% harm",
+        "range": "20% cautious; 20% central; 10% favorable",
+        "basis": "Declared before first run; no empirical calibration or target-price tuning.",
+        "confidence": "Very uncertain / analyst judgment"
+      }
+    ],
+    "giftHeading": "$10,000 illustration—not a priced additional lane, course or package",
+    "sensitivity": [
+      {
+        "case": "funding-null",
+        "headline": "No positive finite price",
+        "detail": "20% weight; no additional health."
+      },
+      {
+        "case": "health-null",
+        "headline": "No positive finite price",
+        "detail": "20% weight; zero modeled clinical gain and harm."
+      },
+      {
+        "case": "harm",
+        "headline": "Net harm: -0.392 Bay QALYs",
+        "detail": "10% weight, per annual-budget equivalent."
+      },
+      {
+        "case": "cautious",
+        "headline": "Net harm: -0.00925655334437371 Bay QALYs",
+        "detail": "20% weight; no positive finite price."
+      },
+      {
+        "case": "central",
+        "headline": "$104,277,379 per 10 Bay QALYs",
+        "detail": "20% weight. Road Q 0.49738583828480576 + activity Q 0.06948 − harm 0.1, then funding .4 and Bay .98."
+      },
+      {
+        "case": "favorable",
+        "headline": "$1,900,531 per 10 Bay QALYs",
+        "detail": "10% weight; 10.041379927965206 finite Bay QALYs per budget equivalent."
+      },
+      {
+        "case": "without-favorable",
+        "headline": "No positive finite price",
+        "detail": "Other worlds renormalized: -0.004943365497051079 Bay QALYs."
+      },
+      {
+        "case": "no-road",
+        "headline": "$163,555,157 per 10 Bay QALYs",
+        "detail": "No corridor benefit; activity and whole cost/harm remain."
+      },
+      {
+        "case": "no-activity",
+        "headline": "$24,933,077 per 10 Bay QALYs",
+        "detail": "No physical-activity benefit; safety and whole cost/harm remain."
+      },
+      {
+        "case": "zero-harm",
+        "headline": "$17,080,586 per 10 Bay QALYs",
+        "detail": "Removing all adverse-burden priors still does not reach $1M."
+      },
+      {
+        "case": "half-residual-risk",
+        "headline": "$34,189,261 per 10 Bay QALYs",
+        "detail": "Halve the residual-risk fraction in every world; no other inputs changed. This is a stronger existing-project baseline, not a measured revised effect."
+      },
+      {
+        "case": "full-cash-response",
+        "headline": "$13,451,413 per 10 Bay QALYs",
+        "detail": "Set nonnull-world funding response to1; funding-null remains0."
+      }
+    ],
+    "uncertaintyBoundary": "Whole-cost partial-health model, not complete portfolio expected value. Favorable share 100.445% exceeds signed total because other worlds subtract health; it is not a probability. No declared world is below $1M/10 Bay QALYs, but this does not establish zero real-world probability. Stronger injury data improve the exposure anchor, not donor attribution. Future technical implementation, education activity and utility remain uncertain. Unquantified other programs could materially change the conclusion.",
+    "fundingBoundary": "2024 revenue $1,845,171; deficit $52,605; government contributions $684,673; reported noncash contributions $54,983; net assets $732,835; liabilities $115,390; cash/savings $635,662. These are historical, not verified 2026 unrestricted capacity. Current financials page links a 2025 impact report, but its PDF was not retrieved in this pass; latest original filing found was2024. No current priced extra staff/design task verified. Agency capital, maintenance, partner staff and donated time are not fully monetized; completeResourceCostPer10 is null. No donor receives all corridor benefits or free construction. Official site has donation navigation, but checkout/restriction terms not inspected; donationUrl omitted."
+  },
+  "evidence": [
+    {
+      "key": "staff",
+      "design": "2018 personal-giving statement",
+      "population": "GiveWell employee Devin Jacob's own donations",
+      "result": "Names Bike East Bay among local interests, outside organizations meeting GiveWell criteria.",
+      "transfer": "Discovery provenance only; neither organizational GiveWell endorsement nor proof of a 2026 gift."
+    },
+    {
+      "key": "finance",
+      "design": "Original 2024 IRS return",
+      "population": "East Bay Bicycle Coalition DBA Bike East Bay",
+      "result": "Whole expense $1,908,395 after netted-cost addbacks; actual education output stated.",
+      "transfer": "Historical accounting, not marginal donor capacity or program-only spending."
+    },
+    {
+      "key": "exposure",
+      "design": "CCTA agency SWITRS summary",
+      "population": "5.5-mile Contra Costa San Pablo corridor, July2020–June2025",
+      "result": "6 deaths and35 severely injured people; future recommendations still under development.",
+      "transfer": "Defined exposure scale, not a causal effect or all preventable burden. Existing projects require residual adjustment."
+    },
+    {
+      "key": "baseline",
+      "design": "Official organization corridor-status inventory",
+      "population": "Several distinct San Pablo segments",
+      "result": "Some improvements completed or funded; others still planned.",
+      "transfer": "Do not merge different segments or claim all22miles as new. Broad campaign establishes relevance, not commissioned work on the precise CCTA task."
+    },
+    {
+      "key": "road-positive",
+      "design": "FHWA official technical synthesis",
+      "population": "Four-lane undivided road diet settings",
+      "result": "19–47% total-crash reduction summarized.",
+      "transfer": "Not a fatality RR, not all protected designs, and not the exact CCTA layout."
+    },
+    {
+      "key": "road-negative",
+      "design": "2004 matched before/after primary study",
+      "population": "12 road diets and25comparison sections in California/Washington",
+      "result": "Approximately6% frequency reduction; no significant rate effect.",
+      "transfer": "Observational selection/exposure limitations and heterogeneous effects support null/harm uncertainty."
+    },
+    {
+      "key": "education-null",
+      "design": "2022 randomized school cycling intervention",
+      "population": "122 Spanish adolescents",
+      "result": "Knowledge improved but cycling/active commuting did not change.",
+      "transfer": "Attendance/skills cannot automatically generate sustained activity. Local adult services differ."
+    },
+    {
+      "key": "activity-positive",
+      "design": "2012 randomized trial, primary abstract",
+      "population": "43 previously noncycling Danish children",
+      "result": "Cardiometabolic composite improved; randomized fitness difference not significant.",
+      "transfer": "Plausible mechanism, not utility calibration or lifelong mortality prevention."
+    }
+  ],
+  "reservations": [
+    "Ordinary gift-to-implementation contribution remains unmeasured.",
+    "Historical risk needs adjustment for existing improvements and changing exposure.",
+    "Education is not observed additional physical activity.",
+    "Future public and partner resource cost is incomplete.",
+    "Favorable tail dominates; both central and favorable cases exceed $1M.",
+    "2024 finance is not a current funding ledger.",
+    "Staff giving is not an endorsement or causal evidence."
+  ],
+  "excludedBenefits": [
+    "Already completed or fully funded projects credited automatically to a new gift",
+    "Entire22-mile campaign burden or unrelated Alameda injury counts added to the5.5-mile CCTA cohort",
+    "Training attendance, signatures or event reach treated as health",
+    "Lifetime exercise mortality from a class",
+    "Other corridors, transit access, pollution, dignity and community wellbeing—unquantified, not zero",
+    "Electoral-persuasion effects"
+  ],
+  "sources": [
+    {
+      "publisher": "GiveWell Blog",
+      "title": "Staff personal donations: Devin Jacob entry",
+      "url": "https://blog.givewell.org/2018/12/10/staff-members-personal-donations-for-giving-season-2018/",
+      "published": "2018-12-10",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary personal-giving statement"
+    },
+    {
+      "publisher": "Bike East Bay",
+      "title": "Financials and legal-name disclosure",
+      "url": "https://bikeeastbay.org/financials/",
+      "published": "Undated current page",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "IRS via ProPublica",
+      "title": "East Bay Bicycle Coalition original 2024 Form 990",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202513149349306046/IRS990",
+      "published": "2024 reporting year; 2025 filing",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Bike East Bay",
+      "title": "Organization-hosted 2024 tax return",
+      "url": "https://bikeeastbay.org/wp-content/uploads/2025/12/EBBC-24-TaxFinal.public.pdf",
+      "published": "Prepared November 2025; December upload path",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "CCTA",
+      "title": "San Pablo Avenue Safety and Access Project",
+      "url": "https://ccta.ca.gov/projects/san-pablo-safety-and-access/",
+      "published": "Undated current 2026 project page; injury period July 2020–June 2025",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Bike East Bay",
+      "title": "Multimodal San Pablo Avenue campaign",
+      "url": "https://bikeeastbay.org/campaigns/sanpabloave/",
+      "published": "Undated current page, includes July 2026 completion update",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "FHWA",
+      "title": "Road Diet Desk Reference: evidence and tradeoffs",
+      "url": "https://highways.dot.gov/safety/other/road-diets/road-diet-desk-reference/2-why-consider-road-diet",
+      "published": "Undated official technical summary",
+      "retrieved": "2026-09-11",
+      "sourceType": "Official evidence synthesis"
+    },
+    {
+      "publisher": "FHWA",
+      "title": "Evaluation of Lane Reduction Road Diet Measures",
+      "url": "https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-04-082.pdf",
+      "published": "2004",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Aranda-Balboa et al.",
+      "title": "School cycling randomized trial",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9367827/",
+      "published": "2022-08-05",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Østergaard et al.",
+      "title": "Bicycling to school and cardiometabolic risk randomized trial",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3533114/",
+      "published": "2012-10-31; primary abstract accessed through Europe PMC",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary abstract"
+    }
+  ]
+}

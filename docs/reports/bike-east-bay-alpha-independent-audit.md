@@ -1,0 +1,13 @@
+# Bike East Bay independent audit
+
+ACCEPT for transparent exploratory publication; HOLD giving recommendation. No material source, arithmetic or scope correction found. Actual observed audit interval2026-09-11 16:03:44–16:04:34UTC (50seconds wall; includes initial Breathe memo read; active time not measured). Dispatch gpt-6-astra / low.
+
+Fresh original2024 IRS990 independently confirms functional expense1,897,776, netted eventcost7,478 and inventorycost3,141; whole gross1,908,395 is correct. Also verified1,158 education participants,81classes and governmentcontributions684,673. These are not additional cycling or health outcomes. Public education support remains baseline.
+
+Fresh CCTA primary page https://ccta.ca.gov/projects/san-pablo-safety-and-access/ confirms exact5.5-mile ContraCosta segment, July2020–June2025 **6 killed and35 severely injured people**, not a22-mile campaign exposure denominator. No finaldesign; construction funding/phasing/schedule remain undecided. SeparateCaltrans2027–2029 improvements, signals and existing localprojects justify residual-risk uncertainty rather than blankethistoricalcredit.
+
+Report/model correctly separate riskScale/residual, net reduction, realization, annual-budget contribution and cash response. Contribution explicitly includes agencies/other advocates and BikeEastBay's own past/future budgets. Realization handles whether improvements are built; lag and finite advantageyears avoid an immediate permanentaward. These are broad judgments, not measured annual donorcausality. Fatal/seriousQ finitepriors do not pretend FHWA total-crash reductions are a severity-specific mortality estimate. Activity effects use incremental cycling, exercise substitution and nonoverlap; publicclassattendance is not the healthdenominator. Harm remains signed and refers to extra/displaced exposure rather than the same baseline injuries counted twice.
+
+Reran portable test suite: saved full parity, gross addbacks, independent100,000-midpoint integral, central road/activity math, signed/null, bounded scaling, malformed inputs, trimmed IDs, finite outputs and canonical renderer/source checks pass. Exact Bay price19,089,887.645172846 per10Q; central104,277,378.90873168. Favorable10%world's share exceeds100% because other worlds subtract nethealth; without favorable netnegative. This is correctly disclosed, not a probability exceeding100%.
+
+All wholeexpense retained against two partial healthpathways. Other corridors, access/social/airquality health unquantified, notzero; full external constructionresourceprice unknown. No current priced marginaltechnicaltask or donationrestriction verified. No Site edits, installs, outreach or coefficientchanges.

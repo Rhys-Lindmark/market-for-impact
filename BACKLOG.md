@@ -748,6 +748,10 @@ Current accepted count47/115 (46SF-indexed plusAMF). WalkSF full CI nowgreen. Ne
 User requested the four lowest central estimates, not a separate editorial selection. Homepage now derives those four from the same finite positive-price Bay research list. Current main selects ReCARES, GLIDE, Breathe California, and Project Homeless Connect. Research models and 100-report count are unchanged. Production build, focused lint, and phone/tablet ranking-parity tests pass. Pending independent model corrections remain in their separate PRs; publication and canonical verification of this UI correction are next.
 ## Current priority: 110 reports, then top-ten V2
 
+### Bike East Bay staff-giving alpha
+
+Accepted independent primary-source and arithmetic audit is preserved with a standalone model, report, API and central-ranked Bay entry. Central $104.28M per10 Bay QALYs versus separate signed mixture $19.09M; no coefficient retuning. This is whole annual expense with partial road-safety/activity health, not complete organization value or a marginal giving recommendation. Source-qualified personal staff giving is not GiveWell endorsement. Full tests, build and lint passed; publication advances110 to111 only after canonical checks. Sogorea Te remains the second accepted packet; three other staff leads remain explicit non-report findings. Original110 milestone and ten V2 counts stay separate.
+
 ### Final central-ranking reconciliation — September 11, 2026
 
 110 reports and the ten selected V2 reviews are published. This follow-up replaces 22 weighted Bay directory bindings and Clinic by the Bay's weighted override with their existing central scenarios; no model coefficients or weighted diagnostic outputs change. Independent accessor/geography audit passed. Full Node test suite and phone/tablet directory-price, sorted-order, homepage-four parity, and overflow checks passed. Corrected HOPE's nine listed locations and ReCARES accounting-cost wording. Deployment and canonical verification remain required before closing C11. Next: publish the two accepted staff-giving alpha reports and preserve explicit dispositions for three other screened leads.

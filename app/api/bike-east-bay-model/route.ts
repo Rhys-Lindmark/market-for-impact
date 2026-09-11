@@ -1,0 +1,2 @@
+import {calculate,anchors,scenarios} from '@/lib/bike-east-bay-model.mjs';
+export function GET(){return Response.json({modelVersion:'bike-east-bay-whole-gift-finite-v1',verifiedMarginalFundingOffer:null,interpretation:'Central scenario is used in the directory. Signed mixture is a separate diagnostic. Full organization expenses with partial road-safety and activity benefits; public baseline and external resources remain uncertain.',anchors,scenarios,evaluated:calculate()});}

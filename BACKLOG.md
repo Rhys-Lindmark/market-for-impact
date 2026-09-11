@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Housing Industry Foundation — accepted candidate97
+
+96/100 canonically verified via Health Mobile PR292/v207. HIF EIN94-3100671: $80.759M/10 Bay QALYs for prevention-health component with whole $4.03979M management expense, not complete HIF valuation. Actual502 EHF households; other housing and renovation benefits unquantified. Independent audit preserved adverse signed result and corrected aggregate overflow validation. Verification:655 tests, lint zero errors/three existing warnings, production build and two phone/tablet report/index/API checks pass. Next canonical publication; On-Site accepted, Oakland EDC audit, final candidate research. Post100 checklist includes source attribution, HEPPAC repeated-person correction, whole-gift comparability, marginal funding and UI synthesis.
+
 ## Health Mobile — accepted candidate96
 
 95/100 verified via BATS PR291/v206. California-wide Health Mobile (EIN31-1658149) belongs in Expanded Geography Research, not the Bay-only list. Whole expense $363,688; partial finite dental-health estimate $2.042M/10 Bay QALYs and $1.820M/10 overall QALYs. Targets remain targets; annual completed patients unknown; $250,000 liability correction is not cash. HOLD giving. Independent audit preserved coefficients. Verification:654 tests, lint zero errors/three existing warnings, production build and two phone/tablet archive/report/API checks pass. Next canonical publication, HIF and On-Site accepted reports, Oakland EDC research; post100 scope/survival/funding corrections remain.

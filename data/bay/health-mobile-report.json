@@ -1,0 +1,339 @@
+{
+  "organization": "Health Mobile",
+  "eyebrow": "Exploratory whole-gift research · California",
+  "program": "Whole organization; finite symptomatic dental relief quantified",
+  "published": "11 September 2026",
+  "modelVersion": "health-mobile-whole-gift-finite-symptomatic-v1",
+  "nutshell": {
+    "headline": "Real dental delivery; patient volume and additional relief remain unmeasured",
+    "body": "The signed prior-weighted estimate is $2,041,966 per10 Bay QALYs (0.048972 per$10,000 gift). It is a judgment-led exploratory estimate, not measured clinic QALYs.",
+    "whyItMayWork": "Mobile treatment can shorten painful waits for patients who cannot obtain equivalent care promptly.",
+    "whyWeAreCautious": "The favorable10%world contributes96.4% of signed expected benefit. Targets are not completions, and whole-org Bay share is unknown.",
+    "recommendationBlocker": "HOLD a giving recommendation: actual annual treatment completion, local counterfactual access and cash-created capacity are unverified."
+  },
+  "summary": [
+    {
+      "label": "Bay whole-gift estimate",
+      "value": "$2,041,966",
+      "detail": "Per10 modeled QALYs; partial symptomatic-health scope."
+    },
+    {
+      "label": "Whole expense",
+      "value": "$363,688",
+      "detail": "FY ending June2025, verified original return."
+    },
+    {
+      "label": "Annual completed patients",
+      "value": "Unknown",
+      "detail": "300/600/1200 whole-org people priors—not observed treatment totals."
+    },
+    {
+      "label": "Gift scope",
+      "value": "Up to $10,000",
+      "detail": "No linear$100,000 scaling assurance."
+    }
+  ],
+  "programSection": {
+    "body": "Health Mobile (EIN31-1658149) reports seven mobile medical/dental units and a leased facility serving primarily uninsured low-income children throughout California. A current funder confirms San Jose dental treatment. This is not the similarly named Salinas Valley or other mobile-health programs.",
+    "steps": [
+      {
+        "title": "Retain whole cost",
+        "detail": "All medical, dental, education, administration and facility costs remain in denominator."
+      },
+      {
+        "title": "Separate people from completed treatment",
+        "detail": "Annual person prior × uniqueness × completed-restorative share × symptomatic share."
+      },
+      {
+        "title": "Estimate finite health beyond alternative care",
+        "detail": "Successful relief × utility × expected incremental painful time."
+      },
+      {
+        "title": "Apply funding response, harms and Bay attribution",
+        "detail": "No rescue, mortality or lifetime credit. Publicly funded baseline is not automatically new donor impact."
+      }
+    ],
+    "boundary": "Only finite symptomatic dental health is quantified. Primary medical care, nonpain dentistry, prevention, education, chewing and long-term tooth retention remain unquantified, with their costs retained. Complete societal resource cost is unknown: donated labor, partner support and capital may be absent from accounting."
+  },
+  "model": {
+    "headline": "$2,041,966 per10 Bay QALYs",
+    "body": "A whole-cost/partial-health diagnostic, not a verified offer to purchase extra treatments. FY2025 costs and current scale priors are not synchronized observed cost-effectiveness data.",
+    "equation": {
+      "label": "Signed incremental Bay health",
+      "expression": "gift / whole expense × annual people prior × funding × (unique × completed restorative share × symptomatic share × relief × utility × incremental years − harm/person) × Bay share",
+      "result": "0.048972419353951725 Bay QALYs per$10000"
+    },
+    "inputs": [
+      {
+        "key": "expense",
+        "label": "Whole historical organization expense",
+        "best": "363688",
+        "range": "FY2024 alternative476449",
+        "basis": "Original FY ending June2025 return, all functions retained. Not complete donated-resource cost.",
+        "confidence": "High accounting; low current marginal relevance"
+      },
+      {
+        "key": "people",
+        "label": "Annual service-recipient equivalents before residual dedup",
+        "best": "600 prior",
+        "range": "300–1200",
+        "basis": "Unknown actual annual whole-org volume. These are not observed unique annual people; the unique factor applies residual person/episode dedup. Central extrapolates modestly beyond one district target; neither400target nor1500services are measured completed treatment.",
+        "confidence": "Very low"
+      },
+      {
+        "key": "unique",
+        "label": "Unique person/episode adjustment",
+        "best": ".9",
+        "range": ".75–1",
+        "basis": "Annual throughput is service-recipient equivalents before this residual dedup factor, not observed unique people. No procedure-to-person equivalence.",
+        "confidence": "Very low"
+      },
+      {
+        "key": "completion",
+        "label": "Completed restorative treatment share",
+        "best": ".6",
+        "range": ".4–.8",
+        "basis": "Removes screening, education, cleaning-only visits and incomplete courses. Service menu is not completed-case mix.",
+        "confidence": "Very low"
+      },
+      {
+        "key": "symptomatic",
+        "label": "Symptomatic share among completed episodes",
+        "best": ".5",
+        "range": ".3–.7",
+        "basis": "Nonpain restorative/preventive care is not credited with immediate pain relief.",
+        "confidence": "Very low"
+      },
+      {
+        "key": "relief",
+        "label": "Successful symptomatic relief",
+        "best": ".85",
+        "range": ".6–.95",
+        "basis": "Provider90%pain-free target is not evidence of causal relief or clinic quality; prior remains judgment.",
+        "confidence": "Very low"
+      },
+      {
+        "key": "utility",
+        "label": "Incremental utility while pain is relieved",
+        "best": ".05",
+        "range": ".025–.10",
+        "basis": "Analyst judgment, not direct EQ5D/OHIP/pain-scale conversion. Adult active-comparator study does not establish effect in children.",
+        "confidence": "Very low"
+      },
+      {
+        "key": "years",
+        "label": "Expected incremental painful time",
+        "best": ".25year",
+        "range": ".05–.5year",
+        "basis": "Average time before equivalent alternative care or need resolution, including zero/prompt-alternative cases. Not tooth lifespan, nor a promise of three extra months for every patient.",
+        "confidence": "Very low"
+      },
+      {
+        "key": "funding",
+        "label": "Whole-gift capacity response",
+        "best": ".3",
+        "range": "0–.6",
+        "basis": "Separate budget/capacity response. Public contracts, paid staff, van and clinic capacity can make a gift displace baseline or pay liabilities. No verified priced expansion.",
+        "confidence": "Very low"
+      },
+      {
+        "key": "bay",
+        "label": "Bay share of incremental health",
+        "best": ".7",
+        "range": ".4–.9",
+        "basis": "Statewide/Northern California service scope. San Jose and district locations confirm some Bay activity, not whole-org residence mix.",
+        "confidence": "Low"
+      },
+      {
+        "key": "harm",
+        "label": "Harm QALY per additional person",
+        "best": ".0002",
+        "range": "0–.003",
+        "basis": "Independent hypothetical postoperative complications/access burdens not already netted in utility. No observed adverse-event rate.",
+        "confidence": "Very low"
+      }
+    ],
+    "giftHeading": "Small whole-gift diagnostic; no linear scale-up guarantee",
+    "sensitivity": [
+      {
+        "case": "funding_null",
+        "headline": "Not defined per10; weight0.2",
+        "detail": "BayQ0; all coefficients and signed output saved."
+      },
+      {
+        "case": "clinical_null",
+        "headline": "Not defined per10; weight0.15",
+        "detail": "BayQ0; all coefficients and signed output saved."
+      },
+      {
+        "case": "harm",
+        "headline": "Not defined per10; weight0.05",
+        "detail": "BayQ-0.010393524119575018; all coefficients and signed output saved."
+      },
+      {
+        "case": "cautious",
+        "headline": "Not defined per10; weight0.25",
+        "detail": "BayQ-0.00014270473592749828; all coefficients and signed output saved."
+      },
+      {
+        "case": "central",
+        "headline": "$10,815,598 per10; weight0.25",
+        "detail": "BayQ0.00924590583137194; all coefficients and signed output saved."
+      },
+      {
+        "case": "favorable",
+        "headline": "$211,791 per10; weight0.1",
+        "detail": "BayQ0.47216295286069365; all coefficients and signed output saved."
+      },
+      {
+        "case": "half_people",
+        "headline": "Half all annual people priors",
+        "detail": "$4,083,931 per10; BayQ0.024486209676975863."
+      },
+      {
+        "case": "one_month",
+        "headline": "Cap incremental duration at one month",
+        "detail": "$12,786,808 per10; BayQ0.007820559793009392."
+      },
+      {
+        "case": "half_utility",
+        "headline": "Half utility priors",
+        "detail": "$4,161,456 per10; BayQ0.024030049451727854."
+      },
+      {
+        "case": "bay40",
+        "headline": "All-world Bay share40%",
+        "detail": "$4,550,992 per10; BayQ0.0219732298013682."
+      },
+      {
+        "case": "fy2024_cost",
+        "headline": "Use prior-year whole expense476449",
+        "detail": "$2,675,075 per10; BayQ0.03738213586343974."
+      },
+      {
+        "case": "resources_double",
+        "headline": "Double expense: hypothetical unpriced resources, not measured",
+        "detail": "$4,083,931 per10; BayQ0.024486209676975863."
+      },
+      {
+        "case": "full_funding",
+        "headline": "Full cash response in every world",
+        "detail": "$1,105,294 per10; BayQ0.09047366836409229."
+      }
+    ],
+    "uncertaintyBoundary": "Subjective world mass below$1M/10:0.1; below$100k/10:0. Not calibrated probabilities. Excluding and renormalizing favorable world:$51,249,226 per10. Scenario coefficients and weights were saved before first evaluation; no threshold tuning.",
+    "fundingBoundary": "Original FY2025 revenue343009 includes69480governmentgrants and165229programrevenue; full expense363688 is not reduced by either. Staff costs201343 and7employees contradict an assumed all-volunteer model. Cash64992, assets282070, liabilities273183, netassets8887. Netassets moved from−220434 through−20679operating result plus250000prior-period correction; ScheduleO calls this correction of an overstated2024liability, not fresh cash. All expense is classified as program by filer; zero reported functional overhead does not justify reducing wholecost. Current restricted funds, contract renewal conditions, donated resources and unit utilization remain unknown."
+  },
+  "evidence": [
+    {
+      "key": "accounting",
+      "design": "Original Form990 and ScheduleO",
+      "population": "Whole legal organization, FY ending June2025",
+      "result": "Expense and revenue reconcile; liability correction explains netasset movement. No actual annual patients or completed procedures provided.",
+      "transfer": "No cost-per-treatment can be called observed. Accounting liabilities and geography require whole-org interpretation."
+    },
+    {
+      "key": "targets_not_outcomes",
+      "design": "Public funder application summary, June2025",
+      "population": "District proposed dental program, not entire organization",
+      "result": "400people/1500services annual targets;600improvedpeople inconsistent with400served;90%no-pain is a target. Dual funding recommendation110000; not a new private gap.",
+      "transfer": "No measured pain-free rate, completion count or causal additionality. May2026 search extraction repeats400/1500 and corrects improvedpeople to400, but full newerpacket was inaccessible and no actual outcome inferred."
+    },
+    {
+      "key": "delivery",
+      "design": "Current primary funder description",
+      "population": "San Jose low-income and unhoused patients",
+      "result": "Fillings, root canals and extractions are real service offerings.",
+      "transfer": "Does not establish completed annual mix or additional outcomes versus public/private alternatives."
+    },
+    {
+      "key": "active_comparator_null",
+      "design": "Prospective nonrandomized controlled Swedish dental cohort",
+      "population": "65adults;37rootcanal starts,28extractions",
+      "result": "No significant intergroupQALY difference; approximately.83QALYs each overone year. Before/after utility improvements are not untreated causal effects.",
+      "transfer": "Study compares two treatments, not care versus no care. No direct .05utility import; child-heavy and mobile-clinic transfer is especially uncertain."
+    },
+    {
+      "key": "public_alternative",
+      "design": "DHCS April2026 benefit notice",
+      "population": "Medi-Cal members, not measured Health Mobile patient insurance mix",
+      "result": "Under19 members retain full dental benefits; some adults transition to emergency-only coverage.",
+      "transfer": "Neither nominal coverage nor uninsured label establishes actual timely alternative care; no change to locked coefficients."
+    }
+  ],
+  "reservations": [
+    "No observed completed-treatment denominator: throughput and completion assumptions are independent weak links.",
+    "Public targets are not actuals, and metrics-met percentages do not reveal completed clinical episodes.",
+    "Cash shortage, staff bottlenecks and debt servicing are not interchangeable.",
+    "Statewide organization: do not assign100%Bay solely from headquarters or current spotlight.",
+    "FY2025 costs may understate or overstate FY2026/27 service costs.",
+    "Utility, duration, relief and harm are analyst priors, not measured Health Mobile effects.",
+    "Societal resources and unquantified medical/preventive benefits remain outside the numeric health estimate.",
+    "DHCS confirms under19 Medi-Cal members retain full dental benefits despite July2026 restrictions for some adults. Child-heavy service is not automatically without covered alternatives; eligibility and timely access still vary."
+  ],
+  "excludedBenefits": [
+    "Lifetime tooth retention",
+    "Mortality or sepsis prevention",
+    "Screening and education converted directly to QALYs",
+    "Unmeasured primary medical health gains",
+    "Employment or caregiver bonuses"
+  ],
+  "sources": [
+    {
+      "publisher": "IRS via ProPublica",
+      "title": "Original FY ending June 2025 Form 990",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202503609349300500/IRS990",
+      "published": "2025-12-26",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "IRS via ProPublica",
+      "title": "Original FY2025 Schedule O",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202503609349300500/IRS990ScheduleO",
+      "published": "2025-12-26",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "El Camino Health",
+      "title": "Current partner spotlight",
+      "url": "https://www.elcaminohealth.org/community/community-connections-newsletter/partner-spotlight-health-mobile-2026",
+      "published": "2026-02-19",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "El Camino Healthcare District",
+      "title": "June17 2025 board packet, PDF pages242–243 and73",
+      "url": "https://elcaminohealthcaredistrict.org/sites/default/files/2025-06/packet_dbod_061725.pdf",
+      "published": "2025-06-17",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Santa Clara County",
+      "title": "Mobile dental provider list",
+      "url": "https://files.santaclaracounty.gov/exjcpb1751/2024-12/eng_lohp-provider-list-aug-2024.pdf",
+      "published": "2024-08-01",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "Wigsten et al.",
+      "title": "Controlled prospective root canal versus extraction cohort",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10441609/",
+      "published": "2023-06-29",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    },
+    {
+      "publisher": "California DHCS",
+      "title": "Medi-Cal dental benefit changes",
+      "url": "https://www.dhcs.ca.gov/news/stakeholder-news-april-27-2026/",
+      "published": "2026-04-27",
+      "retrieved": "2026-09-11",
+      "sourceType": "Primary"
+    }
+  ]
+}

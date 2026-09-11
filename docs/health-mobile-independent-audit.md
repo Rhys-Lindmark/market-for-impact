@@ -1,0 +1,22 @@
+# Health Mobile — ACCEPT exploratory publication; HOLD giving
+
+Independent audit completed against final handoff, model, prior lock, report JSON/Markdown, original return/Schedule O, and portable tests. No material correction remains. This accepts transparent exploratory content, not a verified donation recommendation or complete whole-organization health estimate.
+
+## Verification
+
+- Independently read original IRS return and Schedule O: FY July2024–June2025, expense$363,688, governmentgrants$69,480, programrevenue$165,229, liabilities$273,183, netassets$8,887. The $250,000 adjustment is explicitly correction of an overstated prior liability, not fundraising, donated services or available cash. Full expense remains despite all expense being filer-classified program expense. External donated labor/capital and partner resources remain unknown, not zero.
+- Primary district May20,2025 packet p155 independently corroborates the June2025 source's inconsistent400individual/1500service/600improved targets. The final report calls these targets, not outcomes; 90%no-pain is not imported as causal relief. Newer May2026 extraction is explicitly search-only, not verified whole-packet evidence or actual delivery. Current funder spotlight supports actual restorative service offerings in SanJose, not whole-org volume.
+- Statewide return language is preserved. Central Bay70% and40–90%range are priors, not headquarters-derived residence facts. Bay headline and all-beneficiary denominator remain distinct. The parent should use this model's Bay output for any Bay index.
+- Final `people` definition is service-recipient equivalents before residual dedup. `unique`, `completion` and `symptomatic` now clearly remove different things; no sum of procedures or separate overlapping health paths. Utility/duration are not imported from the adult active-comparator observational study. Pediatric/mobile transfer is expressly uncertain. Expected painful duration already incorporates prompt alternatives/zero-duration cases; financing response is separate. No added second access penalty requested.
+- Public funding and fees support existing activity. Medi-Cal eligibility does not prove timely alternatives, but updated DHCS source correctly prevents treating child coverage as generally eliminated. No restricted marginal offer or slot price is invented; donationUrl is omitted because no route was verified.
+- Renderer evidence entries have key/design/population/result/transfer; required arrays present. The96.4%favorable-tail dependency is prominent in JSON and now Markdown. Source dateFeb19 independently verified in primary page metadata; author documented countyPDF's explicit8.1.2024 date.
+
+## Exact results and tests
+
+Independent arithmetic matches preserved output: BayQ/$10,000 = **0.048972419353951725**; Bay$/10Q = **2,041,965.688426433**; central = **10,815,597.93316234**. Favorable10%world supplies **96.41405490876438%** of signed expectation; excluding it and renormalizing yields **51,249,226.43337348**. Null and negative worlds remain signed. These are judgment-driven scenarios, not calibrated probabilities.
+
+Ran `/private/tmp/mfi-health-mobile-model-v1.test.mjs`: **19/19 pass**, including exact full saved-output parity, malformed/scalar/derived-overflow guards, central equation, accounting, signed worlds and schema. Initial independent-equation strictEqual failed solely at4e-18 due to arithmetic ordering; author replaced that comparison with tight tolerance while retaining exact default snapshot parity. No coefficient or saved result changed. Donation-link omission and dedup wording were presentation corrections only.
+
+Acceptance boundary: small cappedgift modeled; actual annual completed cases, symptom mix, alternative-care timing, Bay fraction and donor-caused additional capacity unmeasured. Unquantified medical/preventive benefits make this a finite symptomatic-dental component with wholecost, not a comprehensive health total. Archive labeling must preserve that limitation. HOLD giving until concrete capacity and outcome evidence.
+
+Actual independent audit interval: **2026-09-11 08:41:53–08:46:55 UTC** (5m02s wall, including author coordination/waits; not a claim of active-only time). Memo written immediately afterward. Model identity from parent dispatch: gpt-6-astra/low, not self-introspection. Space Saver/Token Saver applied; no Site edits, installs, outreach, nested agents or new bulk downloads. Prior checkpoint preserved.

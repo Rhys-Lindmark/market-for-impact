@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Health Mobile — accepted candidate96
+
+95/100 verified via BATS PR291/v206. California-wide Health Mobile (EIN31-1658149) belongs in Expanded Geography Research, not the Bay-only list. Whole expense $363,688; partial finite dental-health estimate $2.042M/10 Bay QALYs and $1.820M/10 overall QALYs. Targets remain targets; annual completed patients unknown; $250,000 liability correction is not cash. HOLD giving. Independent audit preserved coefficients. Verification:654 tests, lint zero errors/three existing warnings, production build and two phone/tablet archive/report/API checks pass. Next canonical publication, HIF and On-Site accepted reports, Oakland EDC research; post100 scope/survival/funding corrections remain.
+
 ## BATS — accepted candidate95
 
 94/100 verified via Dentists on Wheels PR290/v205. Berkeley Addiction Treatment Services (EIN94-2832154, not BAART) adds whole-cost mortality research at $36.29M per10 Bay QALYs, explicitly unfavorable and not a giving recommendation. Actual capacity165 is not observed utilization. Whole expense$1,371,759, service revenue and reserves constrain funding assumptions. Independent source/model audit plus finite-price regression preserve every default result. Verification:635 tests, lint zero errors/three existing warnings, production build; canonical publication pending. Next: audited Health Mobile, HIF and On-Site, then two deliberate remaining candidates. Parallel top-ten comparability and funding synthesis underway; no priced marginal offers invented.

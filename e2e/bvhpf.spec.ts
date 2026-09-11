@@ -6,7 +6,7 @@ test('BVHPF report separates Bay resident prior from verified SF service sites',
  await row.locator('a').first().click();await expect(page.getByRole('heading',{level:1,name:'Bayview Hunters Point Foundation for Community Improvement',exact:true})).toBeVisible();await expect(page.locator('#summary')).toContainText('$236.13');
  await expect(page.locator('#funding')).toContainText('$25,611,719');
  await expect(page.locator('main')).toContainText('$363.28M');await expect(page.locator('main')).toContainText('measured residence unavailable');
- await expect(page.locator('.report-research-effort summary')).toContainText('Research time: 3.1+ min on GPT-5.6 Sol Medium');
+ await expect(page.locator('.report-research-effort summary')).toContainText('Research time: ~3 min on GPT-6 Astra Lite + GPT-5.6 Sol');
  const response=await page.request.get('/api/bvhpf-model');expect(response.ok()).toBe(true);const {evaluated:r}=await response.json();expect(r.weighted.modeledOrdinaryGiftCostPer10Qaly).toBeGreaterThan(236e6);expect(r.weighted.verifiedMarginalGrossCostPer10Qaly).toBeNull();
  expect(r.weighted.sfImpactShare).toBeUndefined();expect(r.weighted.serviceSiteAttributed.sfImpactShare).toBe(1);
  expect(r.inputs.sfShareOfCreditedQaly).toBeUndefined();expect(r.inputs.serviceSiteAttributed.sfShareOfCreditedQaly).toBe(1);

@@ -13,6 +13,13 @@ test('annual expense column preserves ranking and explains fiscal sponsor missin
  await expect(phc.locator('summary')).toHaveText('Not available');
  await phc.locator('summary').click();
  await expect(phc).toContainText('not PHC');
+ await phc.locator('summary').click();
+ const anthony=page.locator('[data-research-slug="st-anthony-foundation"] [data-expense-details]');
+ await expect(anthony.locator('summary')).toHaveText('Not available');
+ await anthony.locator('summary').click();
+ await expect(anthony).toContainText('FY2024: $39,138,512');
+ await expect(anthony).toContainText('FY2023: $33,110,194');
+ await expect(anthony).toContainText('could overlap');
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
  await page.screenshot({path:'test-results/expenses-'+test.info().project.name+'.png'});
 });

@@ -11,6 +11,8 @@ test('expense averages use three actual consecutive years; never impute missing 
  assert.equal(expenseSummary(data.organizations['hope-pacifica']).average,null);
  assert.equal(expenseSummary(data.organizations['homeless-youth-alliance']).average,null);
  assert.equal(expenseSummary(data.organizations['sisterweb']).average,null);
+ assert.equal(expenseSummary(data.organizations['st-anthony-foundation']).average,null);
+ assert.equal(expenseSummary(data.organizations['st-anthony-foundation']).years[0].expenses,39138512);
  assert.equal(expenseSummary(data.organizations['rotacare-bay-area']).years[0].year,2025);
  assert.equal(expenseSummary(data.organizations['san-francisco-community-health-center']).years.find(y=>y.year===2024).expenses,17198992);
  assert.equal(expenseSummary(data.organizations['ymca-greater-sf']).years.find(y=>y.year===2023).expenses,105626717);

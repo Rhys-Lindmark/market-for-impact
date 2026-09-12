@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Research-table annual expense comparison — September 11
+
+Added a compact three-year average expense column with visible fiscal windows and expandable source/entity/accounting details. Actual whole-organization expenses are separate from program cost-effectiveness; missing years, PHC sponsor totals, HOPE model budgets and Breathe's anomalous zero are not silently substituted. Some historical extracted windows remain while newer filings await reconciliation. Unit checks, phone/tablet disclosure and ranking checks, lint and production build pass. Next: complete unverified expense series and refresh explicitly historical windows from newer original returns; keep cost-effectiveness ranking unchanged.
+
 ## Top-ten substantive summaries — September 11
 
 All ten current leaders now have three introductory sentences, three evidence-based reasons, three reservations, concrete service-cost and health-conversion reasoning, monitoring disclosure and qualitative assessment. Two independent evidence passes checked units, arithmetic and recommendation status; no model coefficients or ranking changed. ReCARES explains $6.60 accounting expense per reported recipient and conditional mobility utility, not a guaranteed health return per item. Unresolved recipients remain research candidates. Three schema/arithmetic/status tests, four phone/tablet suites, focused lint and production build pass. See docs/top-ten-summary-plan.md. Next: publish exact source and verify all ten canonical summaries.

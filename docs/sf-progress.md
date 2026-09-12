@@ -1,5 +1,13 @@
 # San Francisco giving — active phase plan
 
+## Current checkpoint — September 12 UTC
+
+112 reports are published (91 Bay + 21 expanded), including the completed original 110 milestone and two additional staff-giving discoveries. All ten frozen deeper reviews are published. Do not restart discovery or reinterpret the historical snapshots below as current work.
+
+Current finite phase: expense-table backfill, planned in docs/expense-backfill-plan.md. Baseline PR330 has 62/91 averages. Root integrates three independent financial research packets and refreshed original returns, preserving fiscal periods, entity boundaries and missingness. QALY estimates and shortlist selection are unchanged. The JSON/dashboard now track this current phase; older category assignments remain historical, not new quotas.
+
+## Historical planning snapshots
+
 ## Current block — Bayview report80 and continued audited research
 
 Start2026-09-10T22:16:28Z. Prior79 reports and research-time headers are live at v186; full PR272 CI passed. Current integration: Bayview Hunters Point Foundation (root), NFP resource-realization correction (new_eyes_report68), independent NFP audit/high-EV discovery (high_ev_pipeline), and a new outcome-first/transfer report (recares_report69). Report80 exits only after source/model validation, responsive checks, exact-source publication and canonical report/API/index checks. No report count is awarded to screens. New organization timers and actual AI identities follow docs/research-effort.md; explicit pause preserved.

@@ -391,9 +391,11 @@
     "hope-pacifica": {
       "entity": "HOPE Healing Overdose Prevention and Education Inc.",
       "basis": "No verified annual expense filings or statements found; modeled budgets are excluded.",
+      "note": "HOPE reports beginning operations in March 2024. Three completed operating years are not yet available as of September 2026; inception-period and subsequent actual statements remain missing.",
       "years": [],
       "sources": [
-        "https://projects.propublica.org/nonprofits/api/v2/organizations/992104067.json"
+        "https://projects.propublica.org/nonprofits/api/v2/organizations/992104067.json",
+        "https://pacvoice.org/january-2026-edition/"
       ]
     },
     "housing-industry-foundation": {
@@ -1807,9 +1809,21 @@
     "st-anthony-foundation": {
       "entity": "St. Anthony Foundation",
       "ein": "94-1513140",
-      "basis": "Not yet a comparable three-year whole-entity series",
-      "note": "Official https://www.stanthonysf.org/news/publications/ lists FY2024, FY2023 and 2022 reports and EIN. No Form 990 series found. FY2023 report https://www.stanthonysf.org/wp-content/uploads/impactReport_fy23-v6_web.pdf labels 33110194 as program expense distribution but includes administration/development and explicitly calls figures unaudited. 2022 report https://www.stanthonysf.org/wp-content/uploads/impactReport_fy22_web_compressed.pdf labels 28179715 Calendar Year 2022, whereas FY2024 donor period is 7/1/23–6/30/24; mixing these potentially overlapping periods is unsafe. FY2024 PDF https://www.stanthonysf.org/wp-content/uploads/impactReport_2024.pdf did not yield expense total via text. Retain unavailable until consistent full-year total series verified.",
-      "years": []
+      "basis": "Unaudited annual-report expense distributions, including administration or support services; not yet a comparable three-year series.",
+      "note": "FY2024 covers July 1, 2023–June 30, 2024. The FY2023 report labels a fiscal year but its exact dates remain unconfirmed. The older report covers calendar 2022 and could overlap FY2023, so it is excluded rather than averaged with these two years. A compatible third year and FY2023 date confirmation are still needed.",
+      "years": [
+        {
+          "year": 2024,
+          "expenses": 39138512,
+          "fiscalEnd": "2024-06-30",
+          "source": "https://www.stanthonysf.org/wp-content/uploads/impactReport_2024.pdf"
+        },
+        {
+          "year": 2023,
+          "expenses": 33110194,
+          "source": "https://www.stanthonysf.org/wp-content/uploads/impactReport_fy23-v6_web.pdf"
+        }
+      ]
     },
     "national-harm-reduction-coalition": {
       "entity": "National Harm Reduction Coalition",

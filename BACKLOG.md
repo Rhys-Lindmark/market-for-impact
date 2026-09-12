@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Residual expense audit — September 12 UTC
+
+81/91 three-year averages remain available. Added St. Anthony's sourced FY2023 and FY2024 actuals to its disclosure, without combining overlapping fiscal/calendar periods into a false average. HOPE's March 2024 start explains its insufficient three-year operating history. Three parallel residual audits found no additional defensible complete series. See docs/expense-residuals.md for precise resolution requirements. Research discovery and all ten deeper reviews are complete; issue #191 now reflects that checkpoint. Do not repeat unchanged failed-source checks on hourly runs. Resume only for a materially new document, viable source path or explicit user-authorized next task; no outreach.
+
 ## Expense-history backfill — September 12 UTC
 
 Financial comparison coverage increased from 62/91 to 81/91 local rows; 11 historical windows refreshed from original filings. Three research packets added clinic, community-service and systems series; root independently checked periods and integrated. Remaining ten: HOPE, PHC, MELP, Code Tenderloin, HYA, Micah's Hugs, St. Anthony, Breathe, BAMRU and SisterWeb. Missing/partial/contradictory years and project-versus-sponsor limits remain explicit; no modeled budgets substituted. Original 110 milestone and ten deeper reviews are complete (112 total reports); updated progress dashboard supersedes stale 100-report snapshots. Next: only targeted residual financial reconciliation, not another discovery cohort.

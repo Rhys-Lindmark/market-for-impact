@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Expense-history backfill — September 12 UTC
+
+Financial comparison coverage increased from 62/91 to 81/91 local rows; 11 historical windows refreshed from original filings. Three research packets added clinic, community-service and systems series; root independently checked periods and integrated. Remaining ten: HOPE, PHC, MELP, Code Tenderloin, HYA, Micah's Hugs, St. Anthony, Breathe, BAMRU and SisterWeb. Missing/partial/contradictory years and project-versus-sponsor limits remain explicit; no modeled budgets substituted. Original 110 milestone and ten deeper reviews are complete (112 total reports); updated progress dashboard supersedes stale 100-report snapshots. Next: only targeted residual financial reconciliation, not another discovery cohort.
+
 ## Research-table annual expense comparison — September 11
 
 Added a compact three-year average expense column with visible fiscal windows and expandable source/entity/accounting details. Actual whole-organization expenses are separate from program cost-effectiveness; missing years, PHC sponsor totals, HOPE model budgets and Breathe's anomalous zero are not silently substituted. Some historical extracted windows remain while newer filings await reconciliation. Unit checks, phone/tablet disclosure and ranking checks, lint and production build pass. Next: complete unverified expense series and refresh explicitly historical windows from newer original returns; keep cost-effectiveness ranking unchanged.

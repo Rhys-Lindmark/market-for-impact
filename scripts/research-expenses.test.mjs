@@ -10,6 +10,10 @@ test('expense averages use three actual consecutive years; never impute missing 
  assert.equal(expenseSummary(data.organizations['project-homeless-connect']).average,null);
  assert.equal(expenseSummary(data.organizations['hope-pacifica']).average,null);
  assert.equal(expenseSummary(data.organizations['homeless-youth-alliance']).average,null);
+ assert.equal(expenseSummary(data.organizations['sisterweb']).average,null);
+ assert.equal(expenseSummary(data.organizations['rotacare-bay-area']).years[0].year,2025);
+ assert.equal(expenseSummary(data.organizations['san-francisco-community-health-center']).years.find(y=>y.year===2024).expenses,17198992);
+ assert.equal(expenseSummary(data.organizations['ymca-greater-sf']).years.find(y=>y.year===2023).expenses,105626717);
 });
 test('expense records preserve identity, accounting basis, fiscal year and source',()=>{
  for(const [slug,row] of Object.entries(data.organizations)){

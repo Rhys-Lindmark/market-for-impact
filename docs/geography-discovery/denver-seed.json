@@ -1,0 +1,2978 @@
+{
+  "schemaVersion": 1,
+  "edition": "denver",
+  "stage": "discovery-first40",
+  "status": "Source-screened candidates pending independent acceptance; no alpha or beta claims",
+  "startedAt": "2026-09-13T19:16:57Z",
+  "completedAt": "2026-09-13T19:27:02.787Z",
+  "model": {
+    "id": "gpt-6-astra",
+    "name": "GPT-6 Astra Medium",
+    "effort": "medium",
+    "evidence": "Parent explicit phase dispatch"
+  },
+  "boundary": {
+    "cbsaCode": "19740",
+    "officialName": "Denver-Aurora-Centennial, CO",
+    "areaType": "Metropolitan Statistical Area",
+    "version": "OMB-23-01-2023-07-21",
+    "sourceRegister": "docs/geography-boundaries.json",
+    "source": "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2023/delineation-files/list1_2023.xlsx",
+    "countyFips": [
+      "08001",
+      "08005",
+      "08014",
+      "08019",
+      "08031",
+      "08035",
+      "08039",
+      "08047",
+      "08059",
+      "08093"
+    ],
+    "excludedExamples": [
+      "Boulder County",
+      "Weld County",
+      "El Paso County",
+      "Larimer County"
+    ],
+    "rule": "Service intersection with ten-county MSA is required; headquarters alone is insufficient. Beneficiary residence allocation remains an alpha research task."
+  },
+  "selectionMethod": "Outcome-first broad scan across overdose/infection prevention, treatment access, mental health, oral health, nutrition and benefit access, housing/temperature safety, child/domestic/sexual violence, disability, road safety and air pollution. Hypotheses are plausible research leads, not demonstrated high cost-effectiveness. Smaller direct-service, policy and referral organizations included alongside established clinical providers.",
+  "counts": {
+    "candidateOrganizations": 40,
+    "provisionalDiscoveryMemberships": 40,
+    "acceptedDiscoveryMemberships": 0,
+    "alpha": 0,
+    "beta": 0,
+    "screenedClosedExcluded": 1
+  },
+  "criticalFindings": [
+    "Eating Disorder Foundation ended programs in July2026 and is excluded; Ardent Grove separately screened as current nonprofit provider.",
+    "Bicycle Colorado's original990 lists Denver Streets Partnership DBA; count one organization.",
+    "CHN Access Point and HeyDenver, JAG Institute, KIND Chopper Topper, and Ensight Curtis Strong Center are not extra organizations.",
+    "Stout Street Foundation and Coalition's Stout Street Health Center are different; only the latter belongs to Colorado Coalition for the Homeless.",
+    "Broad provider service areas often include Boulder/Weld; those counties are outside this MSA."
+  ],
+  "evidenceLimits": [
+    "No estimated QALYs, full financial audit, current IRS/registry sweep, or donor-ready endorsements.",
+    "Current public service descriptions are treated as operational discovery evidence, not independently audited activity.",
+    "Search-index-only sources retained when direct pages failed; no repeated identical retries.",
+    "AllHealth Foundation/operating-network donor routing and Dental Lifeline national/local financial scope need alpha reconciliation.",
+    "Shared organizations may appear in CA/USA/SF but edition membership requires Denver evidence here; canonical aliases must reconcile centrally and time must not be reimported twice."
+  ],
+  "researchTime": {
+    "basis": "Dedicated organization-specific intervals only",
+    "sessionCount": 65,
+    "dedicatedSeconds": 81.76,
+    "allocation": "No batch allocation, no idle time assigned, partial coverage",
+    "closedExcludedSessionsCount": 1
+  },
+  "spaceSaver": {
+    "baselineFreeGiB": 61,
+    "method": "Reused existing checkout/runtime; only compact JSON records, no dependencies/builds/servers/downloads. Retained start/closed timing evidence."
+  },
+  "candidates": [
+    {
+      "discovery_id": "denver-seed-01",
+      "id": "harm-reduction-action-center",
+      "name": "Harm Reduction Action Center",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "org:harm-reduction-action-center",
+      "canonicalIdStatus": "Provisional operating-organization alias; legal name/EIN reconciliation pending",
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "overdose / infections",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08031"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Own site describes weekday Denver syringe access and donations supporting naloxone and safer-use supplies.",
+      "primary_sources": [
+        {
+          "url": "https://www.harmreductionactioncenter.org/",
+          "method": "direct_open_substantive_page_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": null,
+      "mechanism": "Naloxone distribution, sterile supplies and linkage to health services.",
+      "high_ev_hypothesis": "Low-cost supplies directed to people at high overdose/infection risk could avert severe harm.",
+      "concrete_falsifier": "Falsified if kits mostly replace other free supply, rarely reach overdose events, or marginal gifts cannot expand effective coverage.",
+      "whole_organization_gift_scope": "Drop-in operations, outreach, advocacy, snacks and safer-sex supplies also consume gifts.",
+      "identity_affiliate_note": "One organization; syringe access and naloxone are programs, not separate candidates.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "51b5b311-0b5b-48aa-8309-f64bd92cbec6",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:17:31.198Z",
+          "endedAt": "2026-09-13T19:17:32.257Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#harm-reduction-action-center"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-02",
+      "id": "colorado-health-network",
+      "name": "Colorado Health Network",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "org:colorado-health-network",
+      "canonicalIdStatus": "Provisional operating-organization alias; legal name/EIN reconciliation pending",
+      "legal_recipient": {
+        "canonical_legal_name": "Colorado Health Network Inc.",
+        "ein": null,
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "HIV / harm reduction",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08031"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Service list explicitly includes Denver Colfax clinical office, Hey Denver testing and Denver Access Point.",
+      "primary_sources": [
+        {
+          "url": "https://coloradohealthnetwork.org/",
+          "method": "direct_open_substantive_page_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": null,
+      "mechanism": "HIV prevention, medication access, integrated care and harm reduction.",
+      "high_ev_hypothesis": "Preventing infection and sustaining effective HIV treatment can create long-duration health benefits.",
+      "concrete_falsifier": "Falsified if public/insurance/pharmacy funding already covers marginal patients or most gifts serve outside the MSA.",
+      "whole_organization_gift_scope": "Whole statewide network includes housing, nutrition, transportation, dental and behavioral services.",
+      "identity_affiliate_note": "Colorado Health Network Inc.; count Access Point and Hey Denver inside CHN, not separately.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "60fc7c58-26df-489b-8d1f-c76ee0b11fe4",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:17:32.499Z",
+          "endedAt": "2026-09-13T19:17:33.542Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#colorado-health-network"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-03",
+      "id": "second-wind-fund",
+      "name": "Second Wind Fund",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "org:second-wind-fund",
+      "canonicalIdStatus": "Provisional operating-organization alias; legal name/EIN reconciliation pending",
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "youth mental health",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08031",
+        "08059"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Current site offers statewide youth referrals; own about page traces Jefferson County service and states current statewide availability. Historical eligibility document names all ten MSA counties, not used as current scale.",
+      "primary_sources": [
+        {
+          "url": "https://thesecondwindfund.org/",
+          "method": "direct_open_substantive_page_text"
+        },
+        {
+          "url": "https://www.thesecondwindfund.org/about",
+          "method": "search_result_full_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": null,
+      "mechanism": "Navigation and up to twelve funded therapy sessions for youth facing access barriers.",
+      "high_ev_hypothesis": "Targeting suicidal youth whose families otherwise cannot obtain therapy may address high-severity unmet need.",
+      "concrete_falsifier": "Falsified if funded therapy substitutes insured/free treatment, uptake is poor, or short courses have little durable effect.",
+      "whole_organization_gift_scope": "Statewide therapist payments plus navigation, outreach and administration; do not equate all contacts to completed therapy.",
+      "identity_affiliate_note": "One fund/network, not each therapist; formal registered-name precision remains to check.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "50d404bd-00c4-48b6-a515-d7db6e834591",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:17:33.765Z",
+          "endedAt": "2026-09-13T19:17:35.283Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#second-wind-fund"
+        },
+        {
+          "id": "73102a6e-3950-4277-bc28-eba0229085d9",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:20:41.652Z",
+          "endedAt": "2026-09-13T19:20:43.135Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#second-wind-fund"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-04",
+      "id": "wellpower",
+      "name": "WellPower",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "org:wellpower",
+      "canonicalIdStatus": "Provisional operating-organization alias; legal name/EIN reconciliation pending",
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "serious mental illness / addiction",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08031"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Current page explicitly describes counseling, medication, crisis care and opioid-medication walk-ins in Denver.",
+      "primary_sources": [
+        {
+          "url": "https://www.wellpower.org/",
+          "method": "direct_open_substantive_page_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": null,
+      "mechanism": "Outpatient psychiatry, crisis response and evidence-based addiction treatment access.",
+      "high_ev_hypothesis": "Serving high-need patients and filling treatment gaps may avert substantial morbidity.",
+      "concrete_falsifier": "Falsified if donations only replace reimbursement or support services with no incremental patient capacity.",
+      "whole_organization_gift_scope": "Entire mental-health provider includes housing, food, employment and education, not just medication visits.",
+      "identity_affiliate_note": "Well Power operating organization; reconcile historic Mental Health Center of Denver name before financial reuse.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "d7346587-1199-438d-a4ec-07a4f4431cd5",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:17:35.508Z",
+          "endedAt": "2026-09-13T19:17:36.594Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#wellpower"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-05",
+      "id": "jefferson-center",
+      "name": "Jefferson Center for Mental Health",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "org:jefferson-center",
+      "canonicalIdStatus": "Provisional operating-organization alias; legal name/EIN reconciliation pending",
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "rural mental health / overdose",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08059",
+        "08047",
+        "08019"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Own services page names Jefferson, Gilpin and Clear Creek; mobile MAT page names weekly outreach to those rural communities.",
+      "primary_sources": [
+        {
+          "url": "https://www.jcmh.org/",
+          "method": "direct_open_substantive_page_text"
+        },
+        {
+          "url": "https://www.jcmh.org/services/",
+          "method": "search_result_full_text"
+        },
+        {
+          "url": "https://www.jcmh.org/programs/mobile-medication-assisted-treatment/",
+          "method": "search_result_full_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": null,
+      "mechanism": "Psychiatry and mobile opioid-use treatment for people unable to reach clinics.",
+      "high_ev_hypothesis": "Reducing access barriers to effective addiction/mental-health treatment in underserved MSA areas could yield large benefits.",
+      "concrete_falsifier": "Falsified if mobile visits fail to produce retained treatment or donor funds merely replace contracted services.",
+      "whole_organization_gift_scope": "Whole center includes extensive counseling, pharmacy, residential and navigation costs.",
+      "identity_affiliate_note": "Jefferson Center for Mental Health; mobile MAT and Blue Spruce Pharmacy not separately counted.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "480bb5f7-12f7-4751-8f99-43efda3cbfab",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:17:53.657Z",
+          "endedAt": "2026-09-13T19:17:54.726Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#jefferson-center"
+        },
+        {
+          "id": "2957438b-2272-47e9-81de-75bc86039fbf",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:20:43.342Z",
+          "endedAt": "2026-09-13T19:20:44.627Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#jefferson-center"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-06",
+      "id": "aurora-mental-health",
+      "name": "Aurora Mental Health & Recovery",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "org:aurora-mental-health",
+      "canonicalIdStatus": "Provisional operating-organization alias; legal name/EIN reconciliation pending",
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "mental health / crisis",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08005",
+        "08001"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Own page explicitly serves Aurora through clinics, community teams and same-day crisis/nonemergency care.",
+      "primary_sources": [
+        {
+          "url": "https://www.auroramhr.org/",
+          "method": "direct_open_substantive_page_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": null,
+      "mechanism": "Rapid access to therapy, psychiatric treatment and addiction recovery.",
+      "high_ev_hypothesis": "Reducing delays for severe illness could prevent deterioration and improve functioning.",
+      "concrete_falsifier": "Falsified if rapid access does not increase effective treatment, or budget cuts mean gifts only displace other funds.",
+      "whole_organization_gift_scope": "Full recipient includes wraparound housing, adult education, cultural/language services and research.",
+      "identity_affiliate_note": "Aurora Mental Health & Recovery brand; reconcile historic Aurora Mental Health Center and affiliate scope; do not count each program.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "3f9f46ad-9d83-49c9-ace9-03495664ba22",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:17:54.966Z",
+          "endedAt": "2026-09-13T19:17:55.976Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#aurora-mental-health"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-07",
+      "id": "allhealth-network",
+      "name": "AllHealth Network",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "org:allhealth-network",
+      "canonicalIdStatus": "Provisional operating-organization alias; legal name/EIN reconciliation pending",
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "mental health / addiction",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08005",
+        "08035"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Own site lists clinical locations in Littleton, Centennial, Castle Rock, Parker and Highlands Ranch and an August 2026 Aurora partnership.",
+      "primary_sources": [
+        {
+          "url": "https://www.allhealthnetwork.org/",
+          "method": "direct_open_substantive_page_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": null,
+      "mechanism": "Therapy, psychiatry, crisis stabilization and substance-use care.",
+      "high_ev_hypothesis": "Access to effective treatment for high-need south-metro residents could have material health value.",
+      "concrete_falsifier": "Falsified if unrestricted donations do not expand clinically effective care beyond Medicaid/commercial reimbursement.",
+      "whole_organization_gift_scope": "Whole network includes intensive programs, pharmacy and Harmony/Estes Park activity outside this MSA.",
+      "identity_affiliate_note": "Operating network is the candidate, not separately linked All Health Network Foundation; resolve actual giving route and consolidated scope before alpha.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "fde00404-39c9-4513-9065-7ddaf7707e9e",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:17:56.225Z",
+          "endedAt": "2026-09-13T19:17:57.228Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#allhealth-network"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-08",
+      "id": "ardent-grove",
+      "name": "Ardent Grove",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "org:ardent-grove",
+      "canonicalIdStatus": "Provisional operating-organization alias; legal name/EIN reconciliation pending",
+      "legal_recipient": {
+        "canonical_legal_name": "Ardent Grove Foundation",
+        "ein": null,
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "affordable trauma therapy",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08031"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Own site identifies donor-funded nonprofit mental-health clinic at South Bellaire in Denver and low-cost/Medicaid care.",
+      "primary_sources": [
+        {
+          "url": "https://ardentgrove.org/",
+          "method": "direct_open_substantive_page_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": null,
+      "mechanism": "Subsidized trauma-informed counseling and eating-disorder access.",
+      "high_ev_hypothesis": "Training-supported low-cost care may expand treatment to patients otherwise priced out.",
+      "concrete_falsifier": "Falsified if trainees offer weak outcomes, treatment substitutes insured care, or clinical supervision makes full cost high.",
+      "whole_organization_gift_scope": "Whole foundation includes clinical training, community education and ketamine-assisted services; do not assume all gifts buy conventional therapy.",
+      "identity_affiliate_note": "Ardent Grove Foundation; ACE is a program, not separate organization. Distinct from closed Eating Disorder Foundation.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "1646cb76-6883-444d-8b66-c0592e25c640",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:18:26.688Z",
+          "endedAt": "2026-09-13T19:18:27.724Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#ardent-grove"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-09",
+      "id": "tepeyac",
+      "name": "Tepeyac Community Health Center",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "org:tepeyac",
+      "canonicalIdStatus": "Provisional operating-organization alias; legal name/EIN reconciliation pending",
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "primary / dental / reproductive care",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08031"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Own site identifies Denver nonprofit integrated clinic, appointment access and insurance-enrollment assistance at East48th Avenue.",
+      "primary_sources": [
+        {
+          "url": "https://www.tepeyachealth.org/",
+          "method": "direct_open_substantive_page_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": null,
+      "mechanism": "Affordable integrated treatment and insurance navigation.",
+      "high_ev_hypothesis": "Effective care for otherwise underserved patients could prevent and manage serious disease.",
+      "concrete_falsifier": "Falsified if donor funds primarily support capital/general subsidy without increasing effective care or access.",
+      "whole_organization_gift_scope": "Whole clinic includes medical, dental, behavioral, pharmacy and education; allocate full operating costs.",
+      "identity_affiliate_note": "Tepeyac Community Health Center; historical Clinica Tepeyac alias requires reconciliation.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "5fc9194b-7326-4d71-b4f0-9770eaecfc85",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:18:27.976Z",
+          "endedAt": "2026-09-13T19:18:29.020Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#tepeyac"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-10",
+      "id": "inner-city-health",
+      "name": "Inner City Health",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "ein:74-2426085",
+      "canonicalIdStatus": "Primary-source self-reported EIN; not registry verified",
+      "legal_recipient": {
+        "canonical_legal_name": "Inner City Health Center",
+        "ein": "74-2426085",
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": true,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "safety-net clinical care",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08031",
+        "08059"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Own about page describes medical, dental and behavioral visits for metro Denver patients at Denver and Wheat Ridge clinics.",
+      "primary_sources": [
+        {
+          "url": "https://www.innercityhealth.org/about-us",
+          "method": "direct_open_substantive_page_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": "L0: URL https://innercityhealth.org/ is not safe to open (non-retryable error)",
+      "mechanism": "Affordable integrated clinical treatment and coverage enrollment.",
+      "high_ev_hypothesis": "Low-income patients facing real care barriers may receive otherwise forgone effective treatment.",
+      "concrete_falsifier": "Falsified if clinic care merely shifts from other providers or expansion does not add clinical capacity.",
+      "whole_organization_gift_scope": "Whole faith-based recipient includes medical, dental, behavioral and operational/capital costs.",
+      "identity_affiliate_note": "Primary page directs checks to Inner City Health Center and identifies EIN 74-2426085; both clinics one recipient.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "7fa42620-d3ae-4019-b40e-1f78951150fe",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:18:29.249Z",
+          "endedAt": "2026-09-13T19:18:30.346Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#inner-city-health"
+        },
+        {
+          "id": "ac25e85f-1ae9-469f-87e6-6e1ae5130d33",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:20:14.272Z",
+          "endedAt": "2026-09-13T19:20:15.659Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#inner-city-health"
+        },
+        {
+          "id": "96fd9d79-ac44-42ac-8479-db8855f6ec12",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:21:27.936Z",
+          "endedAt": "2026-09-13T19:21:28.983Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#inner-city-health"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-11",
+      "id": "doctors-care",
+      "name": "Doctors Care",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "org:doctors-care",
+      "canonicalIdStatus": "Provisional operating-organization alias; legal name/EIN reconciliation pending",
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "clinical access / vaccination",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08005"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Own page offers integrated clinical care, immunizations and insurance help in Littleton at609WLittleton Blvd.",
+      "primary_sources": [
+        {
+          "url": "https://doctorscare.org/",
+          "method": "direct_open_substantive_page_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": null,
+      "mechanism": "Sliding-fee primary/behavioral care, vaccines and coverage navigation.",
+      "high_ev_hypothesis": "Removing financial barriers to proven treatment/prevention may generate meaningful health gains.",
+      "concrete_falsifier": "Falsified if beneficiaries already have comparable covered care or philanthropic subsidy yields no extra treatment.",
+      "whole_organization_gift_scope": "Entire organization includes insurance navigation, social-needs assistance and clinical care.",
+      "identity_affiliate_note": "Doctors Care nonprofit operating organization; distinguish from similarly named commercial clinics.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "d9d09b12-e759-423e-bf06-6e0a4bd5c231",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:18:30.569Z",
+          "endedAt": "2026-09-13T19:18:31.658Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#doctors-care"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-12",
+      "id": "kids-in-need-dentistry",
+      "name": "Kids In Need of Dentistry",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "org:kids-in-need-dentistry",
+      "canonicalIdStatus": "Provisional operating-organization alias; legal name/EIN reconciliation pending",
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "child oral health",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08001",
+        "08031"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Own programs page identifies Commerce City clinic and dental prevention in Denver-area elementary/Head Start settings.",
+      "primary_sources": [
+        {
+          "url": "https://kindsmiles.org/",
+          "method": "direct_open_substantive_page_text"
+        },
+        {
+          "url": "https://kindsmiles.org/programs/",
+          "method": "search_result_full_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": null,
+      "mechanism": "Dental treatment plus school-based sealants and fluoride.",
+      "high_ev_hypothesis": "Preventing and treating painful decay in high-risk children may be relatively low cost.",
+      "concrete_falsifier": "Falsified if prevention reaches already-served low-risk children, restorative uptake is low, or insurance covers the same marginal care.",
+      "whole_organization_gift_scope": "Whole charity includes clinic, school prevention, promotoras and administration.",
+      "identity_affiliate_note": "Kids In Need of Dentistry; Chopper Topper is its program, not a separate candidate.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "24a24f9f-17c5-4cfd-b9ab-1c5f78ea19cd",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:18:37.878Z",
+          "endedAt": "2026-09-13T19:18:38.886Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#kids-in-need-dentistry"
+        },
+        {
+          "id": "c56a646e-352a-4f8c-84dc-08598cdbf2ca",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:20:44.832Z",
+          "endedAt": "2026-09-13T19:20:46.086Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#kids-in-need-dentistry"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-13",
+      "id": "dental-lifeline-network",
+      "name": "Dental Lifeline Network",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "ein:84-6129064",
+      "canonicalIdStatus": "Primary-source self-reported EIN; not registry verified",
+      "legal_recipient": {
+        "canonical_legal_name": "Dental Lifeline Network",
+        "ein": "84-6129064",
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "adult oral health",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08031"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Colorado service page names a Denver-metro DDS coordinator and comprehensive treatment for financially eligible older/disabled/medically vulnerable people.",
+      "primary_sources": [
+        {
+          "url": "https://dentallifeline.org/colorado/",
+          "method": "direct_open_substantive_page_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": null,
+      "mechanism": "Coordination of donated comprehensive dental care.",
+      "high_ev_hypothesis": "Volunteer leverage may unlock costly essential treatment and relieve persistent pain.",
+      "concrete_falsifier": "Falsified if volunteer capacity rather than donor coordination is binding or services are already available elsewhere.",
+      "whole_organization_gift_scope": "National whole-organization giving does not automatically purchase Colorado DDS services; account for other states and programs.",
+      "identity_affiliate_note": "National Dental Lifeline Network EIN 84-6129064 nominated, not an invented separate Colorado chapter recipient; reconcile local legal affiliate before restriction claims.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "15a0263b-6c0a-48c4-989f-9de41d677684",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:18:39.105Z",
+          "endedAt": "2026-09-13T19:18:40.200Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#dental-lifeline-network"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-14",
+      "id": "stride",
+      "name": "STRIDE Community Health Center",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "ein:74-2477108",
+      "canonicalIdStatus": "Primary-source self-reported EIN; not registry verified",
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": "74-2477108",
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "safety-net clinical care",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08031",
+        "08059",
+        "08005"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Current about/locations pages describe Denver metro FQHC and clinics including Wheat Ridge, Englewood and Aurora.",
+      "primary_sources": [
+        {
+          "url": "https://www.stridechc.org/about",
+          "method": "direct_open_substantive_page_text"
+        },
+        {
+          "url": "https://www.stridechc.org/locations",
+          "method": "search_result_full_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": "L0: URL https://stridechc.org/ is not safe to open (non-retryable error)",
+      "mechanism": "Integrated medical, dental and behavioral treatment with sliding fees.",
+      "high_ev_hypothesis": "Removing multiple care barriers may avert morbidity among underserved families.",
+      "concrete_falsifier": "Falsified if additional dollars do not increase effective visits or treatment adherence beyond public reimbursement.",
+      "whole_organization_gift_scope": "Entire FQHC network, including pharmacy, school clinics and support services; no one-program efficiency extrapolation.",
+      "identity_affiliate_note": "STRIDE formerly Metro Community Provider Network; same organization; primary EIN 74-2477108.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "50313b55-c011-419f-b742-fd71a1ec644b",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:18:40.419Z",
+          "endedAt": "2026-09-13T19:18:41.485Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#stride"
+        },
+        {
+          "id": "c286a830-d956-4988-a47a-51336e95b543",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:20:15.885Z",
+          "endedAt": "2026-09-13T19:20:17.184Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#stride"
+        },
+        {
+          "id": "a75490fe-bcd6-4511-b178-d49c982498fc",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:21:29.204Z",
+          "endedAt": "2026-09-13T19:21:30.343Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#stride"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-15",
+      "id": "project-angel-heart",
+      "name": "Project Angel Heart",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "org:project-angel-heart",
+      "canonicalIdStatus": "Provisional operating-organization alias; legal name/EIN reconciliation pending",
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "medically tailored food",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08031",
+        "08005",
+        "08035"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Current meal delivery page lists Denver and Cherry Hills Village routes; eligibility page includes Douglas and broad I25 corridor.",
+      "primary_sources": [
+        {
+          "url": "https://www.projectangelheart.org/",
+          "method": "direct_open_substantive_page_text"
+        },
+        {
+          "url": "https://www.projectangelheart.org/meal-delivery-drivers/",
+          "method": "search_result_full_text"
+        },
+        {
+          "url": "https://www.projectangelheart.org/get-meals/",
+          "method": "search_result_full_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": null,
+      "mechanism": "Home-delivered medically tailored meals during serious illness.",
+      "high_ev_hypothesis": "Better nutrition and treatment adherence in severely ill patients might reduce complications.",
+      "concrete_falsifier": "Falsified if meals replace adequate existing food/support or claimed utilization changes lack causal controls.",
+      "whole_organization_gift_scope": "Full statewide meal production, delivery, advocacy and operations; exclude Boulder/Larimer/Pueblo and other non-MSA recipients.",
+      "identity_affiliate_note": "Project Angel Heart as a whole; partners/drivers not separate organizations.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "eef6b160-755f-40e1-8592-f3f6dfb95b8d",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:18:41.707Z",
+          "endedAt": "2026-09-13T19:18:42.720Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#project-angel-heart"
+        },
+        {
+          "id": "8821e8d5-0fb1-4864-ba55-b0badd476993",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:20:46.333Z",
+          "endedAt": "2026-09-13T19:20:47.740Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#project-angel-heart"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-16",
+      "id": "hunger-free-colorado",
+      "name": "Hunger Free Colorado",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "org:hunger-free-colorado",
+      "canonicalIdStatus": "Provisional operating-organization alias; legal name/EIN reconciliation pending",
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "nutrition benefits access",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08031"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Own SNAP outreach page explicitly describes Denver-metro on-site screening and application help at community locations.",
+      "primary_sources": [
+        {
+          "url": "https://hungerfreecolorado.org/",
+          "method": "direct_open_substantive_page_text"
+        },
+        {
+          "url": "https://hungerfreecolorado.org/partner-with-us/partner/snap-outreach/",
+          "method": "search_result_full_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": null,
+      "mechanism": "Food-benefit enrollment and nutrition-policy implementation.",
+      "high_ev_hypothesis": "Small navigation spending may connect vulnerable households to meaningful food support.",
+      "concrete_falsifier": "Falsified if enrollment would happen anyway or additional benefits do not improve health.",
+      "whole_organization_gift_scope": "Statewide policy, hotline, partner training and local navigation all share unrestricted gifts.",
+      "identity_affiliate_note": "One organization; SNAP PEAS partner activity cannot all be attributed to this recipient.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "85e7d9e3-a686-47db-8ede-83cdd1126551",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:18:53.451Z",
+          "endedAt": "2026-09-13T19:18:54.608Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#hunger-free-colorado"
+        },
+        {
+          "id": "8915dd8d-3f45-4cd5-bee7-849c3feb9a5e",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:20:58.678Z",
+          "endedAt": "2026-09-13T19:21:00.018Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#hunger-free-colorado"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-17",
+      "id": "benefits-in-action",
+      "name": "Benefits in Action",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "org:benefits-in-action",
+      "canonicalIdStatus": "Provisional operating-organization alias; legal name/EIN reconciliation pending",
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "health / food benefits navigation",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08001",
+        "08005",
+        "08031",
+        "08059"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Own page names food delivery across Adams, Arapahoe, Denver, Jefferson and health/food benefit assistance.",
+      "primary_sources": [
+        {
+          "url": "https://www.benefitsinaction.org/",
+          "method": "direct_open_substantive_page_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": null,
+      "mechanism": "Insurance/benefit enrollment plus food access for vulnerable people.",
+      "high_ev_hypothesis": "Targeted navigation may overcome administrative barriers to care and nutrition.",
+      "concrete_falsifier": "Falsified if application counts do not yield sustained benefits or care and other agencies substitute.",
+      "whole_organization_gift_scope": "Whole organization includes statewide literacy, food delivery and Colorado Springs work outside MSA.",
+      "identity_affiliate_note": "Benefits in Action; delivery is not a separately counted food charity.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "7d08c4c3-f45a-4c35-a938-3159f5620cbf",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:18:54.824Z",
+          "endedAt": "2026-09-13T19:18:55.815Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#benefits-in-action"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-18",
+      "id": "energy-outreach-colorado",
+      "name": "Energy Outreach Colorado",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "ein:74-2543881",
+      "canonicalIdStatus": "Primary-source self-reported EIN; not registry verified",
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": "74-2543881",
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "unsafe temperature / energy poverty",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08031",
+        "08001",
+        "08005",
+        "08059"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Own2026 funding-award page names Denver/Adams/Arapahoe/Jefferson outreach partners and home-energy programs.",
+      "primary_sources": [
+        {
+          "url": "https://energyoutreach.org/2026-ea-funding-awards/",
+          "method": "search_result_full_text"
+        },
+        {
+          "url": "https://energyoutreach.org/wp-content/uploads/2024-Form-990.pdf",
+          "method": "search_result_full_text_of_primary_990"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": "L0: URL https://www.energyoutreach.org/ is not safe to open (non-retryable error)",
+      "mechanism": "Utility assistance, emergency furnace work and efficiency upgrades.",
+      "high_ev_hypothesis": "Preventing unsafe heat/cold exposure and shutoffs for vulnerable households may avert acute health harm.",
+      "concrete_falsifier": "Falsified if grants only replace existing LEAP/utility resources or recipients face little temperature-related health risk.",
+      "whole_organization_gift_scope": "Whole statewide funder/operator includes bill payments, efficiency, education and advocacy; partner outputs not entirely attributable.",
+      "identity_affiliate_note": "Energy Outreach Colorado; primary990 identifies EIN 74-2543881; do not count funded partners as its branches.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "b5d144a6-02b6-49f3-995a-402acc2178cb",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:18:56.048Z",
+          "endedAt": "2026-09-13T19:18:57.029Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#energy-outreach-colorado"
+        },
+        {
+          "id": "00c46f3f-ac5a-482f-9911-e28e8d988edc",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:20:17.409Z",
+          "endedAt": "2026-09-13T19:20:18.845Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#energy-outreach-colorado"
+        },
+        {
+          "id": "79a55a9b-d1b0-4271-b4cf-1cc434b46025",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:21:30.563Z",
+          "endedAt": "2026-09-13T19:21:31.491Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#energy-outreach-colorado"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-19",
+      "id": "brothers-redevelopment",
+      "name": "Brothers Redevelopment",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "org:brothers-redevelopment",
+      "canonicalIdStatus": "Provisional operating-organization alias; legal name/EIN reconciliation pending",
+      "legal_recipient": {
+        "canonical_legal_name": "Brothers Redevelopment Inc.",
+        "ein": null,
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "home safety / housing access",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08035",
+        "08031",
+        "08005"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Own site gives Parker housing-navigation example; All Health's2026 page describes joint Aurora project.",
+      "primary_sources": [
+        {
+          "url": "https://brothersredevelopment.org/",
+          "method": "direct_open_substantive_page_text"
+        },
+        {
+          "url": "https://www.allhealthnetwork.org/",
+          "method": "direct_open_substantive_page_text_partner_corroboration"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": null,
+      "mechanism": "Home accessibility/repair, housing navigation and supportive housing.",
+      "high_ev_hypothesis": "Targeted safety/accessibility adaptations may prevent falls or enable functioning while housing stabilizes high-need residents.",
+      "concrete_falsifier": "Falsified if gifts mainly fund cosmetic repairs/general development or added housing has little causal health effect.",
+      "whole_organization_gift_scope": "Whole Brothers Redevelopment Inc. includes development, property management and helpline; full costs and affiliate allocations matter.",
+      "identity_affiliate_note": "Do not count Colorado Housing Connects/Paint-A-Thon as separate organizations; reconcile property subsidiaries.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "0985940b-2ce0-44ea-837a-c5d7748c2d56",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:18:57.250Z",
+          "endedAt": "2026-09-13T19:18:58.364Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#brothers-redevelopment"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-20",
+      "id": "colorado-coalition-homeless",
+      "name": "Colorado Coalition for the Homeless",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "org:colorado-coalition-homeless",
+      "canonicalIdStatus": "Provisional operating-organization alias; legal name/EIN reconciliation pending",
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "homelessness / complex clinical care",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08031"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Own site explicitly offers metro Denver housing support and health care through Stout Street Health Center.",
+      "primary_sources": [
+        {
+          "url": "https://www.coloradocoalition.org/",
+          "method": "direct_open_substantive_page_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": null,
+      "mechanism": "Integrated health care and supportive housing for people experiencing homelessness.",
+      "high_ev_hypothesis": "Combining effective treatment with stable housing may improve outcomes among very high-risk patients.",
+      "concrete_falsifier": "Falsified if observed housing retention fails to translate into net health gains or gifts substitute public housing/Medicaid funding.",
+      "whole_organization_gift_scope": "Whole statewide coalition includes housing development, property operations, employment, childcare and care.",
+      "identity_affiliate_note": "Stout Street Health Center belongs here; it is NOT Stout Street Foundation, the separate addiction charity also screened.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "19adce99-a7e7-4379-bf71-38fb6e6e9b64",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:19:04.672Z",
+          "endedAt": "2026-09-13T19:19:06.670Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#colorado-coalition-homeless"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-21",
+      "id": "family-tree",
+      "name": "Family Tree",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "org:family-tree",
+      "canonicalIdStatus": "Provisional operating-organization alias; legal name/EIN reconciliation pending",
+      "legal_recipient": {
+        "canonical_legal_name": "Family Tree, Inc.",
+        "ein": null,
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "domestic violence / housing",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08031"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Own site explicitly serves seven Denver-metro counties with domestic violence/housing programs; exact seven-country crosswalk remains unverified.",
+      "primary_sources": [
+        {
+          "url": "https://www.thefamilytree.org/",
+          "method": "direct_open_substantive_page_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": null,
+      "mechanism": "Shelter, survivor advocacy and integrated family/housing support.",
+      "high_ev_hypothesis": "Reducing exposure to violence and housing instability may prevent severe recurring harm.",
+      "concrete_falsifier": "Falsified if services shift clients from equivalent shelters or long-term violence/mental-health outcomes do not improve.",
+      "whole_organization_gift_scope": "Entire Family Tree Inc. includes homelessness/housing and domestic-violence operations, not just crisis contacts.",
+      "identity_affiliate_note": "One organization; do not separately count named shelters/programs. Do not presume its seven-county definition equals all ten MSA counties.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "e244922a-d060-40ee-9083-f54883c6314d",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:19:06.891Z",
+          "endedAt": "2026-09-13T19:19:08.175Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#family-tree"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-22",
+      "id": "atlantis-community",
+      "name": "Atlantis Community",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "org:atlantis-community",
+      "canonicalIdStatus": "Provisional operating-organization alias; legal name/EIN reconciliation pending",
+      "legal_recipient": {
+        "canonical_legal_name": "Atlantis Community, Inc.",
+        "ein": null,
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "disability / community living",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08001",
+        "08005",
+        "08019",
+        "08031",
+        "08035",
+        "08039",
+        "08059"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Own services/mobile-unit pages explicitly name these seven counties and disability services including transitions.",
+      "primary_sources": [
+        {
+          "url": "https://atlantiscommunity.org/",
+          "method": "direct_open_substantive_page_text"
+        },
+        {
+          "url": "https://atlantiscommunity.org/services/",
+          "method": "search_result_full_text"
+        },
+        {
+          "url": "https://atlantiscommunity.org/mobile-unit/",
+          "method": "search_result_full_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": null,
+      "mechanism": "Independent-living skills, accessibility support and transitions from institutional care.",
+      "high_ev_hypothesis": "Helping disabled people access suitable community support may improve sustained functioning and autonomy.",
+      "concrete_falsifier": "Falsified if transitions lack safe adequate care or gifts merely replace mandated/public supports.",
+      "whole_organization_gift_scope": "Whole recipient includes advocacy, peer support, referrals, youth services and mobile outreach.",
+      "identity_affiliate_note": "Atlantis Community Inc.; distinguish housing-related entities and national disability movements.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "957f47be-845c-4c46-b40f-019731abee5c",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:19:08.401Z",
+          "endedAt": "2026-09-13T19:19:09.421Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#atlantis-community"
+        },
+        {
+          "id": "72a498c0-2091-4bfe-a386-5da80c2902fe",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:21:00.511Z",
+          "endedAt": "2026-09-13T19:21:01.732Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#atlantis-community"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-23",
+      "id": "colorado-center-blind",
+      "name": "Colorado Center for the Blind",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "org:colorado-center-blind",
+      "canonicalIdStatus": "Provisional operating-organization alias; legal name/EIN reconciliation pending",
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "vision rehabilitation",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08005"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Current site offers Littleton adult, youth and older-blind training/support groups with September 2026 schedule.",
+      "primary_sources": [
+        {
+          "url": "https://cocenter.org/",
+          "method": "direct_open_substantive_page_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": null,
+      "mechanism": "Practical rehabilitation for independent mobility and daily living.",
+      "high_ev_hypothesis": "Restoring functioning after vision loss may create durable quality-of-life gains.",
+      "concrete_falsifier": "Falsified if training mostly serves out-of-MSA residents, duplicates vocational-rehab funding or fails to improve sustained functioning.",
+      "whole_organization_gift_scope": "Full residential/nonresidential training, enrichment, youth and professional education portfolio; resident origin not established by clinic location.",
+      "identity_affiliate_note": "Colorado Center for the Blind nonprofit; National Federation of the Blind affiliation is not same legal recipient.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "77d1571a-8f87-4a95-905d-55b226fdfeb7",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:19:09.667Z",
+          "endedAt": "2026-09-13T19:19:11.507Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#colorado-center-blind"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-24",
+      "id": "sungate-kids",
+      "name": "SungateKids",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "org:sungate-kids",
+      "canonicalIdStatus": "Provisional operating-organization alias; legal name/EIN reconciliation pending",
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "child trauma / abuse",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08005",
+        "08035",
+        "08039"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Own about page names Arapahoe, Douglas, Elbert and Lincoln service area; retain only first three in this MSA.",
+      "primary_sources": [
+        {
+          "url": "https://sungatekids.org/about/",
+          "method": "search_result_full_text"
+        },
+        {
+          "url": "https://sungatekids.org/programs-services/investigative-interview-program/",
+          "method": "search_result_full_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": "L0: Failed to fetch https://sungatekids.org/: (500) Internal Server Error",
+      "mechanism": "Child forensic interviewing, family advocacy and abuse prevention.",
+      "high_ev_hypothesis": "Trauma-sensitive response and better protective/referral pathways may reduce repeated harm.",
+      "concrete_falsifier": "Falsified if investigative outputs do not improve protection/treatment or prevention education has no measured effect.",
+      "whole_organization_gift_scope": "Whole organization includes justice-system coordination and education, not only treatment.",
+      "identity_affiliate_note": "Sungate Kids distinct from Denver CAC; old18th Judicial District label is not relied on as current legal boundary; Lincoln excluded.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "364aba44-c2be-4f05-bf1d-631876f19153",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:19:19.269Z",
+          "endedAt": "2026-09-13T19:19:20.344Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#sungate-kids"
+        },
+        {
+          "id": "bccfca5e-250b-4e3b-b645-280621d57d1f",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:20:19.073Z",
+          "endedAt": "2026-09-13T19:20:20.411Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#sungate-kids"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-25",
+      "id": "denver-childrens-advocacy",
+      "name": "Denver Children's Advocacy Center",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "org:denver-childrens-advocacy",
+      "canonicalIdStatus": "Provisional operating-organization alias; legal name/EIN reconciliation pending",
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "child trauma / abuse",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08031"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Current site identifies Denver children/family abuse services and operating center on Federal Blvd, with September 2026 updates. Own current Restore Childhood page explains local clinical intake and trauma-focused treatment.",
+      "primary_sources": [
+        {
+          "url": "https://www.denvercac.org/",
+          "method": "direct_open_substantive_page_text"
+        },
+        {
+          "url": "https://www.denvercac.org/restore-childhood/",
+          "method": "search_result_full_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": null,
+      "mechanism": "Child-centered trauma treatment, protective response and family support.",
+      "high_ev_hypothesis": "Improved access to trauma care/protection can address severe long-duration harm.",
+      "concrete_falsifier": "Falsified if forensic interviews mostly substitute public work and do not improve child safety or mental health.",
+      "whole_organization_gift_scope": "Full advocacy/prevention/training portfolio; current international outreach also must be excluded from Denver benefits.",
+      "identity_affiliate_note": "Denver Children's Advocacy Center; not the statewide alliance or Sungate Kids.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "f922f6fa-eee4-4809-a966-34953e7156eb",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:19:20.580Z",
+          "endedAt": "2026-09-13T19:19:21.715Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#denver-childrens-advocacy"
+        },
+        {
+          "id": "3bc6eec2-8f3d-4eff-a505-2d7de29f7d79",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:24:34.400Z",
+          "endedAt": "2026-09-13T19:24:35.876Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#denver-childrens-advocacy"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-26",
+      "id": "illuminate-colorado",
+      "name": "Illuminate Colorado",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "org:illuminate-colorado",
+      "canonicalIdStatus": "Provisional operating-organization alias; legal name/EIN reconciliation pending",
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "child maltreatment / parental recovery",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08031"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Current own team page identifies Denver-metro Honey child-care staff hired July 2025; organization works on child maltreatment prevention.",
+      "primary_sources": [
+        {
+          "url": "https://illuminatecolorado.org/meet-our-team/",
+          "method": "search_result_full_text"
+        },
+        {
+          "url": "https://illuminatecolorado.org/contact/",
+          "method": "search_result_full_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": "L0: URL https://www.illuminatecolorado.org/ is not safe to open (non-retryable error)",
+      "mechanism": "On-site child care, family support and prevention-system coordination.",
+      "high_ev_hypothesis": "Removing child-care barriers may enable parents to complete treatment/support while strengthening child safety.",
+      "concrete_falsifier": "Falsified if child care fails to increase effective parental treatment or broad prevention activities yield no measured harm reduction.",
+      "whole_organization_gift_scope": "Statewide policy, coalitions, education and mobile/on-site care all share costs; confirm partner treatment pathway.",
+      "identity_affiliate_note": "Illuminate Colorado organization, not Honey mobile classroom as separate charity; legal merger history to reconcile.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "18853545-9c46-46a4-b739-e3d00eba3f9a",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:19:21.963Z",
+          "endedAt": "2026-09-13T19:19:22.976Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#illuminate-colorado"
+        },
+        {
+          "id": "b89988c1-fe4e-4fb7-8abe-c7cb1ab68710",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:20:26.762Z",
+          "endedAt": "2026-09-13T19:20:28.292Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#illuminate-colorado"
+        },
+        {
+          "id": "1cb7cb2b-21ac-41ae-b40f-ef74d15932b6",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:24:33.195Z",
+          "endedAt": "2026-09-13T19:24:34.137Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#illuminate-colorado"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-27",
+      "id": "safehouse-denver",
+      "name": "SafeHouse Denver",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "org:safehouse-denver",
+      "canonicalIdStatus": "Provisional operating-organization alias; legal name/EIN reconciliation pending",
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "domestic violence",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08031"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Own active site describes emergency shelter, nonresidential counseling/advocacy and extended stay services to Denver survivors.",
+      "primary_sources": [
+        {
+          "url": "https://safehouse-denver.org/",
+          "method": "direct_open_substantive_page_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": null,
+      "mechanism": "Safety planning, shelter and survivor support.",
+      "high_ev_hypothesis": "Preventing repeated violence and addressing trauma may avert severe harm.",
+      "concrete_falsifier": "Falsified if support does not reduce exposure or improve mental health beyond available alternatives.",
+      "whole_organization_gift_scope": "Whole agency includes shelter occupancy, counseling, advocacy and education, not only hotline costs.",
+      "identity_affiliate_note": "Safe House Denver distinct from other Safehouse-branded charities; no confidential shelter address collected.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "5fd7b1c8-0093-409e-8cf1-1827453980fd",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:19:23.230Z",
+          "endedAt": "2026-09-13T19:19:24.536Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#safehouse-denver"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-28",
+      "id": "blue-bench",
+      "name": "The Blue Bench",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "org:blue-bench",
+      "canonicalIdStatus": "Provisional operating-organization alias; legal name/EIN reconciliation pending",
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "sexual violence / trauma",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08031"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Own site explicitly describes metro Denver survivor therapy, crisis intervention and prevention programs.",
+      "primary_sources": [
+        {
+          "url": "https://thebluebench.org/",
+          "method": "direct_open_substantive_page_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": null,
+      "mechanism": "Trauma-specific therapy, case management and prevention education.",
+      "high_ev_hypothesis": "Accessible survivor treatment may reduce persistent PTSD/depression; prevention may avert harm.",
+      "concrete_falsifier": "Falsified if treatment effects are small/short-lived or educational exposure does not change victimization.",
+      "whole_organization_gift_scope": "Full organization mixes clinical support, advocacy, restorative approaches and education.",
+      "identity_affiliate_note": "The Blue Bench; preserve historical alias reconciliation; not each hotline/program separately.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "942ecac1-21da-4e5e-a7c1-121f063e2eb0",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:19:31.374Z",
+          "endedAt": "2026-09-13T19:19:32.381Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#blue-bench"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-29",
+      "id": "stout-street-foundation",
+      "name": "Stout Street Foundation",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "org:stout-street-foundation",
+      "canonicalIdStatus": "Provisional operating-organization alias; legal name/EIN reconciliation pending",
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "addiction treatment",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08001",
+        "08031"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Own site explicitly serves adults across Denver metro and describes residential facility in Commerce City.",
+      "primary_sources": [
+        {
+          "url": "https://www.stoutstreet.org/",
+          "method": "direct_open_substantive_page_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": null,
+      "mechanism": "Residential addiction treatment, therapy and medication-assisted treatment.",
+      "high_ev_hypothesis": "Reaching resource-poor people with severe addiction may avert overdose and improve functioning.",
+      "concrete_falsifier": "Falsified if residential costs/attrition are high, MAT access weak, or outcomes reflect selection rather than treatment.",
+      "whole_organization_gift_scope": "Full foundation includes long-term recovery, short-term Serenity, vocational programming and operations.",
+      "identity_affiliate_note": "Separate organization from Colorado Coalition for the Homeless's Stout Street Health Center.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "a788fc22-4571-4d54-8ebd-19a1a46f4393",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:19:32.601Z",
+          "endedAt": "2026-09-13T19:19:33.671Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#stout-street-foundation"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-30",
+      "id": "step-denver",
+      "name": "Step Denver",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "org:step-denver",
+      "canonicalIdStatus": "Provisional operating-organization alias; legal name/EIN reconciliation pending",
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "addiction / recovery housing",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08031"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Own page identifies Denver residential recovery for men without resources and ongoing admissions.",
+      "primary_sources": [
+        {
+          "url": "https://stepdenver.org/",
+          "method": "direct_open_substantive_page_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": null,
+      "mechanism": "Peer-supported sober housing, employment and recovery community.",
+      "high_ev_hypothesis": "Stable recovery environment could reduce relapse and homelessness for high-risk men.",
+      "concrete_falsifier": "Falsified if sober-alumni statistics omit dropout, restrictions impede effective medications, or work demands create harms.",
+      "whole_organization_gift_scope": "Whole residential recovery organization includes housing/work supports, not only peer counseling.",
+      "identity_affiliate_note": "Step Denver operating charity; verify current legal name and any expansion before financial comparison.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "de22b2d5-4372-4feb-a0cb-ac5734263da8",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:19:33.889Z",
+          "endedAt": "2026-09-13T19:19:35.853Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#step-denver"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-31",
+      "id": "phoenix",
+      "name": "The Phoenix",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "org:phoenix",
+      "canonicalIdStatus": "Provisional operating-organization alias; legal name/EIN reconciliation pending",
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "addiction recovery / social support",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08031"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Own event pages identify free sober-community gym activities at2233Champa Street, Denver.",
+      "primary_sources": [
+        {
+          "url": "https://thephoenix.org/",
+          "method": "direct_open_substantive_page_text"
+        },
+        {
+          "url": "https://thephoenix.org/events/open-gym-denver/bd4fdcb3-c874-43e7-b10c-cab3f47dd6de",
+          "method": "search_result_full_text"
+        },
+        {
+          "url": "https://thephoenix.org/events/open-gym-denver/939c0035-c993-4d84-9183-5c427712bd10",
+          "method": "search_result_full_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": "L0: URL https://thephoenix.org/locations/colorado is not safe to open (non-retryable error)",
+      "mechanism": "Sober social networks and physical activity supporting recovery.",
+      "high_ev_hypothesis": "Low-cost peer/volunteer activities may reduce relapse or improve wellbeing at scale.",
+      "concrete_falsifier": "Falsified if participants were already stably recovering and attendance has no incremental relapse/health effect.",
+      "whole_organization_gift_scope": "Whole national Phoenix portfolio, app, events and facilities; Denver attendance fraction unmeasured.",
+      "identity_affiliate_note": "National The Phoenix organization nominated, not its Denver gym as separate nonprofit; existing USA identity can be reused after match.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "0c479b7b-b522-4a8e-8172-cc927c31398b",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:19:36.076Z",
+          "endedAt": "2026-09-13T19:19:37.065Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#phoenix"
+        },
+        {
+          "id": "1d8492c7-9fe1-4013-a69a-6e805b512e75",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:20:30.302Z",
+          "endedAt": "2026-09-13T19:20:32.067Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#phoenix"
+        },
+        {
+          "id": "4f335507-435f-4b36-8398-5d8164d8ba28",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:24:37.939Z",
+          "endedAt": "2026-09-13T19:24:39.226Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#phoenix"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-32",
+      "id": "bicycle-colorado",
+      "name": "Bicycle Colorado",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "ein:84-1201078",
+      "canonicalIdStatus": "Primary-source self-reported EIN; not registry verified",
+      "legal_recipient": {
+        "canonical_legal_name": "Bicycle Colorado",
+        "ein": "84-1201078",
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "road injury prevention",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08031"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Current own site describes road-safety advocacy affecting Denver; own 2023/24 Form 990 identifies Denver Streets Partnership as a DBA.",
+      "primary_sources": [
+        {
+          "url": "https://www.bicyclecolorado.org/",
+          "method": "direct_open_substantive_page_text"
+        },
+        {
+          "url": "https://bicyclecolorado.org/wp-content/uploads/2025/10/BC_6-30-24_990_PublicInspection.pdf",
+          "method": "search_result_full_text_of_primary_990"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": null,
+      "mechanism": "Safer transport policy, infrastructure advocacy and cycling education.",
+      "high_ev_hypothesis": "Policy changes affecting many road users may prevent injuries beyond direct-service scale.",
+      "concrete_falsifier": "Falsified if advocacy has little marginal influence or policy adoption does not reduce net injuries.",
+      "whole_organization_gift_scope": "Whole statewide organization includes races/events and education, not only safety advocacy.",
+      "identity_affiliate_note": "Bicycle Colorado EIN 84-1201078; Denver Streets Partnership is a DBA on its original990, not a separate candidate. Colorado Cycling merger history also requires alias reconciliation.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "e6192b8e-e3f5-40a6-a1eb-93fe9f2edbff",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:19:43.661Z",
+          "endedAt": "2026-09-13T19:19:44.674Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#bicycle-colorado"
+        },
+        {
+          "id": "30f73bd9-8ea0-4335-804a-1d991d715314",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:24:36.099Z",
+          "endedAt": "2026-09-13T19:24:37.696Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#bicycle-colorado"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-33",
+      "id": "cultivando",
+      "name": "Cultivando",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "org:cultivando",
+      "canonicalIdStatus": "Provisional operating-organization alias; legal name/EIN reconciliation pending",
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "air pollution / environmental health",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08001"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Own2025annual report describes Commerce City/Adams County environmental-health work and community-led air monitoring; plans continue 2026.",
+      "primary_sources": [
+        {
+          "url": "https://cultivando.org/wp-content/uploads/2026/05/Cultivando-Annual-Report-2025.pdf",
+          "method": "search_result_full_text_of_primary_report"
+        },
+        {
+          "url": "https://www.cultivando.org/post/cultivando-highlighted-by-rocky-mountain-pbs-for-air-monitoring-efforts",
+          "method": "search_result_full_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": "L0: Failed to fetch https://www.cultivando.org/: (400) Timeout fetching",
+      "mechanism": "Community-led pollution monitoring, health education and regulatory advocacy.",
+      "high_ev_hypothesis": "Targeted action around high industrial exposure could influence population-level respiratory risk.",
+      "concrete_falsifier": "Falsified if monitoring produces no emissions/exposure change or health claims rely only on symptom correlations.",
+      "whole_organization_gift_scope": "Whole organization includes promotoras, family education, gardens, trees and community events.",
+      "identity_affiliate_note": "Cultivando nonprofit distinct from its AIRE monitoring project and partner organizations.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "61bfdd65-7d76-4f70-8f4a-8ea6f9881229",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:19:44.896Z",
+          "endedAt": "2026-09-13T19:19:46.603Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#cultivando"
+        },
+        {
+          "id": "3733d5df-9112-4a22-914c-d7e3fd9216a2",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:20:28.637Z",
+          "endedAt": "2026-09-13T19:20:30.060Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#cultivando"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-34",
+      "id": "immunize-colorado",
+      "name": "Immunize Colorado",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "org:immunize-colorado",
+      "canonicalIdStatus": "Provisional operating-organization alias; legal name/EIN reconciliation pending",
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "infectious disease prevention",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08059",
+        "08005"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Own site lists Shotsfor Tots/Teens clinics in Lakewood, Aurora and Westminster alongside2026activity.",
+      "primary_sources": [
+        {
+          "url": "https://www.immunizecolorado.org/",
+          "method": "direct_open_substantive_page_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": null,
+      "mechanism": "Vaccine access, provider education and immunization policy.",
+      "high_ev_hypothesis": "Additional vaccination among undervaccinated people can prevent serious infections.",
+      "concrete_falsifier": "Falsified if support primarily shifts already-planned vaccinations or information fails to change uptake.",
+      "whole_organization_gift_scope": "Statewide advocacy, education, Ameri Corps and partner clinics; do not assign all administered doses to charity.",
+      "identity_affiliate_note": "Immunize Colorado independentc3; clinic partners not separate internal programs unless evidenced. Longmont excluded.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "11f9e303-89df-41b6-b8e6-07ff39ab6b3c",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:19:46.823Z",
+          "endedAt": "2026-09-13T19:19:47.953Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#immunize-colorado"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-35",
+      "id": "planned-parenthood-rocky-mountains",
+      "name": "Planned Parenthood of the Rocky Mountains",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "ein:84-0404253",
+      "canonicalIdStatus": "Primary-source self-reported EIN; not registry verified",
+      "legal_recipient": {
+        "canonical_legal_name": "Planned Parenthood of the Rocky Mountains, Inc.",
+        "ein": "84-0404253",
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "sexual / reproductive health",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08031"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Own Denver Central clinic page identifies PPRM operator at921E14th Ave and contraception, HIV/STI services.",
+      "primary_sources": [
+        {
+          "url": "https://www.plannedparenthood.org/planned-parenthood-rocky-mountains",
+          "method": "direct_open_substantive_page_text"
+        },
+        {
+          "url": "https://www.plannedparenthood.org/health-center/colorado/denver/80218/denver-central-health-center-2484-90210",
+          "method": "search_result_full_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": null,
+      "mechanism": "Affordable contraception, STI prevention/treatment and reproductive care.",
+      "high_ev_hypothesis": "Preventing untreated infections and enabling desired reproductive care may improve health.",
+      "concrete_falsifier": "Falsified if gifts mainly subsidize services otherwise reimbursed or benefit mostly out-of-MSA traveling patients.",
+      "whole_organization_gift_scope": "Whole multistate affiliate includes clinical, education, advocacy and assistance activities; no single-clinic restricted gift assumed.",
+      "identity_affiliate_note": "PPRMInc EIN 84-0404253; distinct from national PPFA and action organizations.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "80b290ca-ba43-4bd8-a67d-93c96275160d",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:19:48.236Z",
+          "endedAt": "2026-09-13T19:19:49.504Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#planned-parenthood-rocky-mountains"
+        },
+        {
+          "id": "a9245249-1972-4f07-bd40-3f3b6309aefb",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:21:03.392Z",
+          "endedAt": "2026-09-13T19:21:04.620Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#planned-parenthood-rocky-mountains"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-36",
+      "id": "judi-house",
+      "name": "Judi's House",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "org:judi-house",
+      "canonicalIdStatus": "Provisional operating-organization alias; legal name/EIN reconciliation pending",
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "child bereavement / mental health",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08001",
+        "08031",
+        "08005"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Own services page explicitly serves Metro Denver families at Aurora center and in schools/community settings.",
+      "primary_sources": [
+        {
+          "url": "https://judishouse.org/",
+          "method": "direct_open_substantive_page_text"
+        },
+        {
+          "url": "https://judishouse.org/find-support/grief-support-services/",
+          "method": "search_result_full_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": null,
+      "mechanism": "Grief assessment, group/individual counseling and caregiver support.",
+      "high_ev_hypothesis": "Targeted support after bereavement may prevent persistent psychological impairment.",
+      "concrete_falsifier": "Falsified if most grief resolves similarly without care or observed improvements lack controls/durability.",
+      "whole_organization_gift_scope": "Whole Judi's House/JAG Institute includes national research/training, not just local counseling.",
+      "identity_affiliate_note": "JAG Institute is not separately counted; confirm organization-level financialscope.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "409dfca9-953f-43a9-87ab-54bce0aa732d",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:19:56.810Z",
+          "endedAt": "2026-09-13T19:19:57.873Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#judi-house"
+        },
+        {
+          "id": "6a17f199-f08e-4efd-a9ef-cc50cb21205d",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:21:01.952Z",
+          "endedAt": "2026-09-13T19:21:03.157Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#judi-house"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-37",
+      "id": "denver-indian-health",
+      "name": "Denver Indian Health and Family Services",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "org:denver-indian-health",
+      "canonicalIdStatus": "Provisional operating-organization alias; legal name/EIN reconciliation pending",
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "integrated clinical / overdose",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08001",
+        "08005",
+        "08014",
+        "08031",
+        "08035",
+        "08059"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Own site expressly lists these six counties plus Boulder/Weld, which are excluded; offers integrated care and local naloxone/MAT.",
+      "primary_sources": [
+        {
+          "url": "https://www.dihfs.org/",
+          "method": "direct_open_substantive_page_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": null,
+      "mechanism": "Culturally responsive primary, dental, behavioral care, diabetes care and addiction treatment.",
+      "high_ev_hypothesis": "Trusted care access may improve engagement and effective treatment among underserved Native residents.",
+      "concrete_falsifier": "Falsified if donor money substitutes IHS/insurance funding or increased visits do not improve adherence/outcomes.",
+      "whole_organization_gift_scope": "Whole urban Indian health organization across broad servicearea; exclude non-MSAbeneﬁciaries.",
+      "identity_affiliate_note": "Denver Indian Health and Family Services distinct from Denver Indian Center and IHSgovernment.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "b58718d0-54f6-4107-a30c-769442a32f55",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:19:58.095Z",
+          "endedAt": "2026-09-13T19:19:59.173Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#denver-indian-health"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-38",
+      "id": "senior-support-services",
+      "name": "Senior Support Services",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "org:senior-support-services",
+      "canonicalIdStatus": "Provisional operating-organization alias; legal name/EIN reconciliation pending",
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "older adults / homelessness",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08031"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Own current site offers Denver seniors weekday drop-in and case management for benefits, housing, medical/mental care.",
+      "primary_sources": [
+        {
+          "url": "https://www.seniorsupportservices.org/",
+          "method": "direct_open_substantive_page_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": null,
+      "mechanism": "Low-barrier basic needs and healthcare / benefit linkage for homelessolder adults.",
+      "high_ev_hypothesis": "High-risk older people may benefit from maintaining food, shelter and treatment access.",
+      "concrete_falsifier": "Falsified if links do not yield sustained treatment/housing or services substitute otherdaycenters.",
+      "whole_organization_gift_scope": "Whole daycenter includes meals, storage, clothing, computers andsocialsupport; not all outputs haveequalhealthvalue.",
+      "identity_affiliate_note": "Senior Support Services Denver; distinguish similarlynamedcharities elsewhere.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "32a7fa0c-bfaa-4e4b-8d78-47162e0cd304",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:19:59.591Z",
+          "endedAt": "2026-09-13T19:20:02.325Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#senior-support-services"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-39",
+      "id": "ensight",
+      "name": "Ensight Skills Center",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "org:ensight",
+      "canonicalIdStatus": "Provisional operating-organization alias; legal name/EIN reconciliation pending",
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "low-vision rehabilitation",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08031"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Own current lowvisionreferral page explicitly separates Denver/Bouldercounty services from Northern Colorado/Weld.",
+      "primary_sources": [
+        {
+          "url": "https://ensightskills.org/low-vision-rehabilitation/",
+          "method": "search_result_full_text"
+        },
+        {
+          "url": "https://ensightskills.org/",
+          "method": "search_result_full_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": "L0: URL https://www.ensightskills.org/ is not safe to open (non-retryable error)",
+      "mechanism": "Lowvision assessment, assistivedevices anddailyfunction training.",
+      "high_ev_hypothesis": "Practical rehabilitation may yield persistent functionalbenefits at moderatecost.",
+      "concrete_falsifier": "Falsified if recipients would obtain equivalentcoveredcare or most gifts fundout-of-MSAservices.",
+      "whole_organization_gift_scope": "Whole Ensight includes Northern Colorado and Curtis Strong Center; exclude Boulder/Weld/Larimer benefits.",
+      "identity_affiliate_note": "Ensight Skills Center; Curtis Strong Center is operatedprogram, notseparatecandidate.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "3a77ec64-4fd1-4452-831d-cdec07f1b558",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:20:02.564Z",
+          "endedAt": "2026-09-13T19:20:03.516Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#ensight"
+        },
+        {
+          "id": "9c7e77fa-cb3b-4c57-a115-2efe2eb1446d",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:20:32.416Z",
+          "endedAt": "2026-09-13T19:20:33.895Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#ensight"
+        },
+        {
+          "id": "6d608ef1-4331-4291-9244-f09d79135d03",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:21:31.709Z",
+          "endedAt": "2026-09-13T19:21:32.788Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#ensight"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    },
+    {
+      "discovery_id": "denver-seed-40",
+      "id": "center-african-american-health",
+      "name": "The Center for African American Health",
+      "edition": "denver",
+      "status": "source-screened-provisional-discovery",
+      "canonicalOrganizationId": "org:center-african-american-health",
+      "canonicalIdStatus": "Provisional operating-organization alias; legal name/EIN reconciliation pending",
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "Identifiable operating organization; not a full current tax-status or gift-route audit",
+        "donation_payee_verified": false,
+        "scope": "Whole organization; not a standalone sponsored program or clinic"
+      },
+      "category": "community clinical / mental health",
+      "geographyBoundary": {
+        "cbsaCode": "19740",
+        "version": "OMB-23-01-2023-07-21",
+        "officialName": "Denver-Aurora-Centennial, CO"
+      },
+      "inScopeCountyAnchors": [
+        "08031"
+      ],
+      "countyAnchorMeaning": "Non-exhaustive intersection supported by named locality or service area; not a measured residence distribution or claim of all-county coverage",
+      "geography_evidence": "Own site expressly focusesgreatermetro Denver and offersoutpatientconsultations, behavioralhealth assistance andfamilyhealth programs.",
+      "primary_sources": [
+        {
+          "url": "https://caahealth.org/",
+          "method": "direct_open_substantive_page_text"
+        }
+      ],
+      "source_checked_at": "2026-09-13",
+      "source_read_scope": "Selected primary-page passages for identity, current operations and geographic fit; search-index full text explicitly distinguished from direct opens. No effectiveness estimate or original-three-year-financial audit.",
+      "failed_initial_open": null,
+      "mechanism": "Trusted culturallyresponsive care/navigation andprevention support.",
+      "high_ev_hypothesis": "Reaching people missedby conventionalservices could improvetreatmentuptake andchronicconditionmanagement.",
+      "concrete_falsifier": "Falsified if broadeducation/awareness doesnot improveeffectivecare orhealth outcomes.",
+      "whole_organization_gift_scope": "Full center includesnutrition, parenting, community events, space rental andwomen'ssupport, notonlyclinicalcare.",
+      "identity_affiliate_note": "The Center for African American Health distinctfrompartnerproviders; legalname/EINtoconfirm.",
+      "geographic_allocation_limit": "Denver edition includes only residents of the ten pinned MSA counties. Named service locations support discovery, not beneficiary-residence shares; exclude Boulder, Weld, all other non-MSA counties and out-of-state recipients. No SF/Bay dilution inherited.",
+      "research_intervals": [
+        {
+          "id": "50238fa8-104c-4777-81fe-2de9d91a5589",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:21:04.834Z",
+          "endedAt": "2026-09-13T19:21:05.929Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#center-african-american-health"
+        }
+      ],
+      "research_coverage": "partial",
+      "effort_limit": "Intervals capture individually timed source retrieval/checks only. Untimed slate synthesis and general coordination are not apportioned.",
+      "alpha_status": "not-started",
+      "donor_readiness": "not-assessed"
+    }
+  ],
+  "screenedOut": [
+    {
+      "id": "eating-disorder-foundation",
+      "name": "The Eating Disorder Foundation",
+      "status": "reject-closed",
+      "reason": "Own current homepage says programs concluded July2026 and website remains briefly as archive.",
+      "source": "https://www.eatingdisorderfoundation.org/",
+      "method": "direct_open_substantive_page_text",
+      "research_intervals": [
+        {
+          "id": "b06c986d-cd71-44f4-9d9c-64887abd74ad",
+          "workerId": "denver-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T19:17:57.455Z",
+          "endedAt": "2026-09-13T19:17:59.420Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task assignment: Astra Medium"
+          },
+          "evidence": "/tmp/givebetter-denver-seed.json#eating-disorder-foundation"
+        }
+      ]
+    }
+  ]
+}

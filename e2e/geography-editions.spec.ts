@@ -28,6 +28,13 @@ test('public progress is scoped and every planned edition resolves',async({reque
  const data=await response.json();
  expect(data.editions).toHaveLength(11);
  expect(data).not.toHaveProperty('activePackets');
+ for(const id of ['california','usa']){
+  const edition=data.editions.find((e:{id:string})=>e.id===id);
+  expect(edition.discoveryAccepted).toBe(100);
+  expect(edition.selectedAlphaIds).toHaveLength(25);
+  expect(edition.alphaPublished).toBe(0);
+  expect(edition.betaAcceptedPublished).toBe(0);
+ }
  for(const edition of data.editions){
   const path=['california','usa'].includes(edition.id)?'/'+edition.id:'/cities/'+edition.id;
   for(const suffix of ['', '/research'])expect((await request.get(path+suffix)).status()).toBe(200);

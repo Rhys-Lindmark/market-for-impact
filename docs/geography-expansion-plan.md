@@ -42,7 +42,7 @@ Stall interval: 20 active minutes without an accepted artifact/evidence mileston
 - [x] G1: Persist finite plan, model split, edition counters and phase acceptance.
 - [x] G2: Update existing hourly heartbeat, preserving cadence and explicit pause control.
 - [x] G3a: Eleven additive edition overview/research-progress routes, edition hub, scoped progress API and responsive checks. No premature reports or recommendations; existing SF preserved.
-- [ ] G3b: Edition-specific organization report data, comparison table and reusable report templates pass focused tests.
+- [x] G3b: Edition-specific organization report data, comparison table and reusable report templates pass focused tests. HRS and NCHH are the first accepted packets; per-report research-time headers, scoped APIs and financial disclosures verified on phone/tablet/desktop. Deployment remains a separate release gate.
 - [ ] G4: All eleven editions pass D100, A25, B10 and P4 below.
 - [ ] G5: Final count, cross-geography arithmetic, sources, photos, mobile and canonical deployment audit.
 

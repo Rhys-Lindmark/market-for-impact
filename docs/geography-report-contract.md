@@ -1,0 +1,17 @@
+# Edition report publication packet
+
+The published registry is `data/geography-reports.json`; validation and arithmetic live in `lib/geography-reports.mjs`. Initial accepted reports are HRS (California) and NCHH (USA). No mock report is published to fill the new editions.
+
+Research workers return evidence/model/narrative artifacts outside the Site checkout. Root alone integrates. An organization can appear in multiple editions, but each report needs an independently accepted geographic impact bridge and selection membership. Global research sessions have unique IDs; shared evidence uses the same session ID, never copied or divided batch timing. Each report references the intervals actually contributing to it. Aggregate research time must deduplicate IDs across editions.
+
+## Required report fields
+
+- Identity: `edition`, `boundaryVersion`, `organizationId` from accepted-cohorts.json, URL-safe `slug`, `organization`, `program`, ISO `published` and `updated` dates, `stage` (alpha or beta), verified `donationUrl` or null, and `acceptance: {status: "accepted", evidence}`.
+- Summary: `summary.what` has three clear sentences; `strengths` and `reservations` have three substantive bullets each. Explain why the mechanism interests us without claiming an endorsement.
+- Narrative: `sections.what`, `monitoring`, `qualitative`, `cost`, `funding` contain source-linked Markdown. Explain tangible services per dollar, the causal health bridge, present operations, funding limitations and spending buckets. Avoid redundant tables except useful financial/model comparisons.
+- Sources: records with `id`, `title`, `publisher`, HTTPS `url`, ISO `retrieved` date and `published` date or null. Unknown publication dates stay unknown.
+- Model: `version`, `costScope`, `geographicAttribution`, `formula`, `counterfactual`, `attribution`, `uncertainty`, `nativeOutcomes`; `inputs` with name, value, unit, basis (observed/judgment/unknown), rationale and sourceIds; `scenarios` with id, label, costUSD, allPopulationQalys, editionQalys and assumptions. A central scenario supplies the table price, calculated as 10 × costUSD / editionQalys. Null remains unestimated; zero or negative health is not a favorable price. Also include substantive `sensitivity` and exact `missingInputs`. These are scenario judgments, not probability confidence bounds. An inspectable unestimated skeleton is preferable to invented numbers.
+- Expenses: `annualExpenses` entries have year, amount, currency, periodMonths (null when unknown), comparable, entity, accountingBasis and sourceId. The mean is shown only for three consecutive comparable 12-month USD accounting years; no sponsor total or donated-service sticker value silently substitutes for recipient expense.
+- Timing: `timeCoverage` and `sessionIds` refer to global recorded sessions. Each session includes organizationId, stage, phase, workerId, actual UTC start/end, publishable evidence reference and actual model id/name/reasoningEffort/evidence. Alpha author: Astra low (Light); beta author: Astra medium. Root audits remain separately timed and labeled. The header rounds whole minutes; no budget-as-duration or reconstructed timestamps.
+
+Validation proves structure, identity nesting and arithmetic, not scientific truth. Root acceptance must check evidence, source freshness, recipient allocation, double counting, scenarios and units before changing published counters. Reports are ordered by their central edition-specific price, with unestimated reports last. Bay-only values cannot simply be relabeled CA or USA.

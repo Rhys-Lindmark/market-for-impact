@@ -1,6 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
+import {calculate as calculateOa} from '../lib/oa-portfolio-model.mjs';
+import {BOUNDS as oaBounds} from '../lib/oa-portfolio-foundation.mjs';
 import {validateEditionReports,reportPrice,formatEditionMoney,expenseAverage,editionResearchEffort,reportsForEdition,editionReportPath} from '../lib/geography-reports.mjs';
 const read=path=>JSON.parse(readFileSync(new URL('../'+path,import.meta.url)));
 
@@ -12,6 +14,27 @@ function fixture(){
  return {data:{schemaVersion:1,sessions:[session],reports:[r]},progress,r};
 }
 test('published registry matches accepted progress without mock records',()=>validateEditionReports(read('data/geography-reports.json'),read('docs/geography-progress.json')));
+test('Operation Access scenarios reproduce from the published input ledger',()=>{
+ const report=read('data/geography-reports.json').reports.find(r=>r.edition==='california'&&r.slug==='operation-access');
+ assert.ok(report);
+ const central_inputs={bay_share:0,sf_share:0};
+ for(const input of report.model.inputs)if(Object.hasOwn(oaBounds,input.name))central_inputs[input.name]=input.value;
+ const paths=report.model.inputs.filter(input=>input.name.startsWith('Pathway ')).map(input=>{
+  const match=input.name.match(/^Pathway (\S+) \((\S+)\)$/);assert.ok(match);
+  return {id:match[1],name:match[1],category:match[2],...JSON.parse(input.value)};
+ });
+ assert.equal(paths.length,21);
+ for(const scenario of report.model.scenarios){
+  const match=scenario.assumptions.match(/Override central inputs with (\{.*\})\. All direct/);
+  const result=calculateOa({foundation:{central_inputs},paths},match?JSON.parse(match[1]):{});
+  assert.ok(Math.abs(result.total_q-scenario.allPopulationQalys)<1e-10,scenario.id);
+  assert.equal(scenario.editionQalys,scenario.allPopulationQalys);
+  assert.equal(result.whole_gift_usd,scenario.costUSD);
+  assert.ok(result.gross_resource_usd>=scenario.costUSD);
+ }
+ assert.equal(report.model.scenarios.find(s=>s.id==='zero_activity').editionQalys,0);
+ assert.ok(report.model.scenarios.find(s=>s.id==='adverse_new_pathways').editionQalys<0);
+});
 test('price uses edition denominator, not global benefit; format and routes match contract',()=>{
  const {data,progress,r}=fixture();validateEditionReports(data,progress);
  assert.equal(reportPrice(r),100000);assert.equal(formatEditionMoney(56000),'$56K');assert.equal(formatEditionMoney(1400000),'$1.4M');
@@ -19,6 +42,26 @@ test('price uses edition denominator, not global benefit; format and routes matc
  r.model.scenarios[0].editionQalys=0;assert.equal(reportPrice(r),null);
  r.model.scenarios[0].editionQalys=-1;assert.equal(reportPrice(r),null);
  r.model.scenarios[0].editionQalys=null;assert.equal(reportPrice(r),null);
+});
+test('End Overdose shares clinical arithmetic, not geographic attribution or duplicate time',()=>{
+ const data=read('data/geography-reports.json');
+ const us=data.reports.find(r=>r.slug==='end-overdose'&&r.edition==='usa');
+ const ca=data.reports.find(r=>r.slug==='end-overdose'&&r.edition==='california');
+ assert.ok(us&&ca);
+ for(const scenario of us.model.scenarios){
+  const counterpart=ca.model.scenarios.find(s=>s.id===scenario.id);assert.ok(counterpart);
+  assert.equal(counterpart.allPopulationQalys,scenario.allPopulationQalys);
+  if(scenario.id==='no-additionality'){assert.equal(counterpart.editionQalys,0);continue;}
+  const p=JSON.parse(scenario.assumptions.match(/^\{[^}]+\}/)[0]);
+  let life=0;for(let k=1;k<=p.T;k++)life+=p.u*((1-p.m)/1.03)**k;
+  const q=scenario.costUSD*p.a/p.c*p.e*p.d*p.r*p.f*p.b*life/1.03;
+  assert.ok(Math.abs(q-scenario.allPopulationQalys)<1e-10);
+  assert.ok(Math.abs(q*p.g-scenario.editionQalys)<1e-10);
+  assert.equal(counterpart.editionQalys,null);
+ }
+ const ids=new Set([...us.sessionIds,...ca.sessionIds]);
+ const seconds=[...ids].reduce((sum,id)=>{const s=data.sessions.find(s=>s.id===id);return sum+(Date.parse(s.endedAt)-Date.parse(s.startedAt))/1000;},0);
+ assert.equal(seconds,865);
 });
 test('unestimated needs blockers; observed inputs need sources; stage and cohort are checked',()=>{
  const nullCase=fixture();nullCase.r.model.scenarios[0].editionQalys=null;assert.throws(()=>validateEditionReports(nullCase.data,nullCase.progress),/blocking inputs/);

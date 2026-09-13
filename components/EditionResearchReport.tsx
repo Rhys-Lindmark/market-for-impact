@@ -28,7 +28,7 @@ export default function EditionResearchReport({edition,slug}:{edition:string;slu
    <section id="summary"><h2>Summary</h2><Markdown text={'**What do they do?** '+report.summary.what.join(' ')}/>
     <p><strong>Why we’re interested in this organization:</strong></p><ul>{report.summary.strengths.map(s=><li key={s}><Markdown text={s}/></li>)}</ul>
     <p><strong>Our main reservations:</strong></p><ul>{report.summary.reservations.map(s=><li key={s}><Markdown text={s}/></li>)}</ul>
-    <p><strong>What do you get for your dollar? </strong>{price===null?'A reliable cost per better life has not been established.':formatEditionMoney(price)+' per better life: ten additional quality-adjusted life years in '+e.label+'.'}</p><Markdown text={report.model.nativeOutcomes}/>
+    <p><strong>What do you get for your dollar? </strong>{price===null?'A reliable cost per better life has not been established.':formatEditionMoney(price)+' per better life: ten additional quality-adjusted life years in '+e.label+'.'}{price!==null&&report.priceScope&&<> {report.priceScope}.</>}</p><Markdown text={report.model.nativeOutcomes}/>
    </section>
    {editionReportSections.map(([id,title]:string[])=><section id={id} key={id}><h2>{title}</h2><Markdown text={report.sections[id]}/>
     {id==='cost'&&<details className="report-method"><summary>Model, assumptions and sensitivity</summary><p>{report.model.costScope}</p><p>{report.model.geographicAttribution}</p><p className="report-equation">{report.model.formula}</p><dl className="report-assumptions">{report.model.inputs.map(i=><div key={i.name}><dt>{i.name}</dt><dd>{JSON.stringify(i.value)} {i.unit} ({i.basis}). {i.rationale} {i.sourceIds.map(id=><a key={id} href={'#source-'+id}>[{id}] </a>)}</dd></div>)}</dl>

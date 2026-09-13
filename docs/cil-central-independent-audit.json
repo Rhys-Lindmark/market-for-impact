@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "kind": "independent-model-audit",
+  "organizationId": "ein:23-7175191",
+  "edition": "california",
+  "input": "/tmp/givebetter-ca-estimate-revisions2.json",
+  "modelVersion": "ca-cil-alpha-v2-conditional-repair",
+  "decision": "accept-conditional-partial-pathway-with-display-guardrails",
+  "numericCorrectionRequired": false,
+  "summary": "The approximately $59 million per ten California QALYs result is mathematically correct and defensible as a transparent subjective repair/loaner contribution scenario. It is not a comprehensive whole-recipient return, a measured effect, or a donation endorsement.",
+  "requiredClarifications": [
+    {
+      "location": "proposedModel.inputs[f].rationale and cost paragraph",
+      "edit": "Define f explicitly as the fraction of the full gift allocated to repair/loaner activity INCLUDING its allocated recipient support. Then k's support factor is paid within that allocation, not again from the remaining gift.",
+      "reason": "This removes an ambiguity rather than requiring a numeric change. Direct wage employment loading and organization support loading represent different cost layers; do not apply the total/program ratio a second time elsewhere."
+    },
+    {
+      "location": "Every numeric headline, card, comparison table and sorting context",
+      "edit": "Use an adjacent visible label such as 'Repair/loaner health only; full gift charged; other benefits unestimated'. Do not silently place the number under an unqualified whole-organization return heading. Round public central to about $59 million.",
+      "reason": "Ninety percent of the central gift is outside the quantified branch. Its benefits are unknown, not zero. A generic total-return ranking would misrepresent this model; a clearly partial contribution estimate is acceptable."
+    },
+    {
+      "location": "proposedModel.attribution/input definitions",
+      "edit": "Keep m conditional on funding/capacity addition, s on completed appropriate delivery, a on absence of equivalent timely alternatives, and D on days gained conditional on those stages. Do not describe D as already population-averaged across failed/substituted episodes.",
+      "reason": "Under these definitions there is no necessary duplicate discount. If future empirical days-saved already averages across substitutions, remove the overlapping a/s factor rather than retaining both."
+    }
+  ],
+  "arithmetic": {
+    "method": "Independent JavaScript reconstruction of k, N and finite discounted utility using expm1, all three positive scenarios; zero branch checked.",
+    "central": {
+      "unitCostUSD": 450.3927899225193,
+      "additionalEpisodes": 4.440568421053229,
+      "editionQalys": 0.01689533022560418,
+      "pricePerTenUSD": 59187952.33043394
+    },
+    "favorable": {
+      "editionQalys": 3.6752904258494334,
+      "pricePerTenUSD": 272087.3411708355
+    },
+    "adverse": {
+      "editionQalys": 5.507581637880147e-7,
+      "pricePerTenUSD": 1815678941773.9749
+    },
+    "finding": "Only floating-point differences; no correction. Full $100,000 cost remains in price, not only the $10,000 repair allocation. Survival=1 for these short 2–60 day intervals is an explicit approximation, not an erroneous mortality model."
+  },
+  "sourceChecks": [
+    {
+      "url": "https://projects.propublica.org/nonprofits/full_text/202641359349312384/IRS990",
+      "method": "Independently read preserved original IRS HTML, gzip-decoded in memory, including Part IX and fiscal-year header.",
+      "finding": "FY2025 recipient total expenses $4,370,584 and program expenses $2,752,037 reconcile to support ratio 1.5881269. Not a repair-only budget or observed marginal support rate."
+    },
+    {
+      "url": "https://thecil.org/assistive-technology/",
+      "method": "Fresh primary page full text.",
+      "finding": "Northern Alameda County services, roughly month-long response time, nonemergency service and alternate emergency provider, plus repair/preparation volunteer needs. Supports California geography and plausible pathway but not 14 days saved or cash bindingness."
+    },
+    {
+      "url": "https://thecil.org/job-listings/",
+      "method": "Fresh primary page text.",
+      "finding": "$28 starting wage and benefits corroborated; 35% loading remains subjective."
+    },
+    {
+      "url": "https://jobs.gusto.com/postings/center-for-independent-living-inc-community-independent-living-specialist-e3d951ce-6b3c-4e55-b1bf-48c31cc1a655",
+      "method": "Fresh primary search retrieval.",
+      "finding": "$33.99/hour specialist vacancy corroborated, not repair technician wage."
+    },
+    {
+      "url": "https://experts.umn.edu/en/publications/wheelchair-repairs-delays-causes-and-associated-outcomes/",
+      "method": "Primary author-institution search retrieval after direct open failed; publisher/PubMed corroboration.",
+      "finding": "Cross-sectional SCI wheelchair repair survey N=301, median 14-day repair elapsed time, 76% all repairs completed. This does not identify CIL acceleration, utility or marginal donor effect; proposal correctly labels those judgments."
+    },
+    {
+      "url": "https://berkeleyca.gov/sites/default/files/documents/DRAFT_COB_PY24%20CAPER_SAGE_0.pdf",
+      "method": "Fresh primary PDF extracted text; page 2 and PR26 text. Screenshot failed with cache-miss; no independent visual match of draw rows.",
+      "finding": "Seven CIL rental accessibility projects confirmed; September 2025 cover and draft URL. Three CIL residential-access rows present. $211,600 total NOT independently visually verified here; retain only with root/author's preserved row-level visual verification, otherwise omit that nonessential sentence. Do not calculate unit cost by dividing draws by seven."
+    },
+    {
+      "url": "https://projects.propublica.org/nonprofits/full_text/202641359349312384/IRS990ScheduleO",
+      "method": "Independently read preserved original Schedule O HTML.",
+      "finding": "Audit-delay paragraph explicitly refers to preparation of the 2023 tax return; do not relabel as current FY2025 audit failure or resolved status."
+    }
+  ],
+  "remainingUncertainty": [
+    "f=.10, m=.50, s=.80, a=.50, 14 functional days and du=.10 are subjective scenario choices, not observed recipient parameters. This is acceptable if prominently disclosed.",
+    "A queue longer than an external median repair time makes acceleration uncertain, not logically impossible for a selected otherwise-unserved subgroup. No forced null or automatic zero is warranted.",
+    "Model omits other CIL program health/rights value and unknown induced third-party resources. It is donor-dollar partial health, not full societal cost effectiveness.",
+    "Favorable/adverse scenarios are joint stress tests, not confidence intervals; no exclusion of zero or harm."
+  ],
+  "timing": {
+    "model": {
+      "id": "gpt-6-astra",
+      "reasoningEffort": "medium",
+      "evidence": "Parent retained worker dispatch."
+    },
+    "priorAuthorSeconds": 376,
+    "priorAuthorCreditAdded": 0,
+    "auditStartObserved": "2026-09-13T23:26:09.345Z",
+    "creditedIntervals": [
+      {
+        "startedAt": "2026-09-13T23:28:59.096Z",
+        "endedAt": "2026-09-13T23:30:14.542Z",
+        "seconds": 75.446,
+        "evidence": "Focused CIL remainder: full proposal reread, municipal text and Schedule O original checks, scope/discount reasoning and audit drafting."
+      }
+    ],
+    "excluded": "Pre-compaction audit segment beginning 23:26:09.345Z was real work but no reliable pre-compaction end boundary is retained; conservatively not credited. No Houston time included."
+  },
+  "scope": "Read-only; no Site edits, acceptance-count changes, builds, installs or outreach."
+}

@@ -2,6 +2,8 @@
 
 ## Active priority — eleven-edition geographic expansion (September 13)
 
+California best-estimate revision: HRS now has an independently checked subjective central of about $3.1M/10 California QALYs with verified original three-year accounts. CIL has a clearly labeled repair/loaner-only contribution estimate, about $59M/10, charging full gift cost while leaving other benefits unestimated. Source and numerical audits preserved. These revise existing alpha reports, not new counts or beta approvals. Next: complete release gates, continue remaining California central-model reviews, and accept queued new reports.
+
 User priority: make California's donor page follow the SF presentation, keep progress secondary, and include SF/Bay Area as a full edition with report counts. Revisit every unestimated California model for a defensible best estimate using explicit judgment assumptions and sensitivity, rather than treating missing observed inputs as an automatic reason to stop modeling. Preserve genuinely unidentifiable cases without fabricated numbers. Final four photo-backed picks remain subject to evidence/readiness review. CA worker reviewing existing models while other workers continue USA and metro research.
 
 Tenth checkpoint: CA10/25 and USA10/25 accepted for pending release; every metro0/25 and beta0/10. Four access reports add original financials, finite clinical tests and actual time records. Independent Medium audit reproduced arithmetic and reopened decisive sources. HAH repeated annual service wording clarified; HAH/CCV checkout buttons withheld pending recipient-route/status verification. Next complete release gates, then queued clinical/environmental reports and metro acceptance. No new giving picks.

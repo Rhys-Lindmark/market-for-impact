@@ -57,11 +57,15 @@ test('End Overdose shares clinical arithmetic, not geographic attribution or dup
   const q=scenario.costUSD*p.a/p.c*p.e*p.d*p.r*p.f*p.b*life/1.03;
   assert.ok(Math.abs(q-scenario.allPopulationQalys)<1e-10);
   assert.ok(Math.abs(q*p.g-scenario.editionQalys)<1e-10);
-  assert.equal(counterpart.editionQalys,null);
+  const geo=JSON.parse(counterpart.assumptions.match(/^\{[^}]+\}/)[0]);
+  assert.ok(Math.abs(counterpart.editionQalys-q*geo.g_CA)<1e-10);
  }
  const ids=new Set([...us.sessionIds,...ca.sessionIds]);
  const seconds=[...ids].reduce((sum,id)=>{const s=data.sessions.find(s=>s.id===id);return sum+(Date.parse(s.endedAt)-Date.parse(s.startedAt))/1000;},0);
- assert.equal(seconds,865);
+ assert.equal(seconds,1210);
+ const central=ca.model.scenarios.find(s=>s.id==='central');
+ assert.ok(Math.abs(central.editionQalys/central.allPopulationQalys-(.15*.75/(.85+.15*.75)))<1e-12);
+ assert.equal(ca.model.scenarios.find(s=>s.id==='ca-zero').editionQalys,0);
 });
 test('unestimated needs blockers; observed inputs need sources; stage and cohort are checked',()=>{
  const nullCase=fixture();nullCase.r.model.scenarios[0].editionQalys=null;assert.throws(()=>validateEditionReports(nullCase.data,nullCase.progress),/blocking inputs/);

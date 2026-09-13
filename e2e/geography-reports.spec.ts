@@ -16,7 +16,7 @@ test('published research has measured headers, usable models and scoped canonica
   ['california','operation-access','Operation Access','8',true],
   ['usa','legal-action-center','Legal Action Center','10',false],
   ['usa','end-overdose','End Overdose','7',true],
-  ['california','end-overdose','End Overdose','14',true],
+  ['california','end-overdose','End Overdose','20',true],
   ['usa','surgery-on-sunday','Surgery on Sunday','5',true],
   ['usa','the-headstrong-project','The Headstrong Project','6',true],
   ['usa','dental-lifeline-network','Dental Lifeline Network','12',true],

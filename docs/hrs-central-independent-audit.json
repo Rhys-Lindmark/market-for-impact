@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "organizationId": "org:harm-reduction-services",
+  "edition": "california",
+  "input": "/tmp/givebetter-ca-estimate-revisions1.json",
+  "auditor": {
+    "worker": "expansion_method",
+    "model": "gpt-6-astra",
+    "reasoningEffort": "medium",
+    "role": "independent model/source audit, not original author"
+  },
+  "decision": "accept_as_explicit_subjective_conditional_central_estimate",
+  "numericChangeRequired": false,
+  "headline": "Approximately $3.1 million per ten California QALYs is defensible as the stated partial-health conditional scenario, not an empirically identified HRS effect or donor endorsement. Missing empirical identification alone is not a reason to revert to null.",
+  "arithmetic": {
+    "method": "Independent100000-step midpoint integration of stated survival functions, not reuse of author's closed form.",
+    "central": {
+      "people": 36.85208868794182,
+      "allQalys": 0.3303339760144866,
+      "californiaQalys": 0.32372729649419685,
+      "price10": 3089019.711434578
+    },
+    "favorablePrice10": 75006.41039281442,
+    "adversePrice10": 38172979633.44682,
+    "maxAbsoluteQalyDifference": 2.311e-10,
+    "expenseMean": 1899047.6666666667,
+    "verdict": "All three positive scenarios and expense mean reproduce. Zero if m or e is zero."
+  },
+  "modelFindings": [
+    {
+      "topic": "Survival and recurrence",
+      "verdict": "pass",
+      "evidence": "For t<=tau intervention hazard is lambda*(1-e)+mu; afterward both arms again have lambda+mu. The survival advantage after tau decays, rather than disappearing instantly or resetting after every rescue. Integrating survival differences counts each cohort member once; no repeated full-lifetime credit."
+    },
+    {
+      "topic": "Hazard versus annual probability",
+      "verdict": "pass_with_existing_judgment_label",
+      "evidence": "Ontario5.3% annual all-cause mortality is not identical to a0.05/year hazard (which implies4.88% mortality), but report calls it calibration and a simplifying prior, not an exact conversion. No forced numerical correction. California1863/100000 is all unintentional overdose after opioid presentation, not a pure opioid death endpoint; existing input wording accurately says unintentional overdose."
+    },
+    {
+      "topic": "d,m,x,e discounts",
+      "verdict": "no_required_double_discount",
+      "evidence": "d discounts current unique reach; m discounts financing/capacity additionality; x selects relevant recipients; e changes their fatal hazard versus other responses. These can represent separate mechanisms. However x must mean eligibility/usable access, not already-realized mortality reduction; community trial risk ratios cannot be treated as individual treated effect estimates. Proposal explicitly calls e a subjective transfer, so keep numeric value but clarify definitions."
+    },
+    {
+      "topic": "Full cost and noncash",
+      "verdict": "pass",
+      "evidence": "Uses recipient PartIX total including support, not SSP expense slice. No extra program fraction or subtraction of donated contributions. This is a full-accounting recipient-cost donor normalization, not literal marginal cash requirement or societal resource estimate. Unknown public/partner incremental resources correctly retained as limitation."
+    },
+    {
+      "topic": "Counterfactual and uncertainty",
+      "verdict": "pass",
+      "evidence": "Other naloxone, EMS and existing service funding continue without gift. Zero branch retained; stress scenarios not confidence bounds. No HIV/HCV/clinic added credit, and omitted harms prevent calling positive result a lower bound. Constant long-run risk and selected post-overdose calibration are substantial, disclosed judgments."
+    }
+  ],
+  "sourceChecks": [
+    {
+      "urls": [
+        "https://projects.propublica.org/nonprofits/full_text/202420889349301237/IRS990",
+        "https://projects.propublica.org/nonprofits/full_text/202531619349300013/IRS990",
+        "https://projects.propublica.org/nonprofits/full_text/202611289349303266/IRS990"
+      ],
+      "method": "Independently read preserved original IRS-render HTML; files are gzip despite.html suffix, decompressed in memory. Fresh web ScheduleO fetch failed; no newly downloaded files.",
+      "verified": "Same EIN68-0300656; July-June12month periods FY2023/24/25; PartIX totals1938389/2062785/1695969. FY2025 end net assets540198 without restrictions and234490 with restrictions. Not cash balances.",
+      "limitations": "Did not recover separate independent financial audit or verify every return line."
+    },
+    {
+      "urls": [
+        "https://projects.propublica.org/nonprofits/full_text/202420889349301237/IRS990ScheduleO",
+        "https://projects.propublica.org/nonprofits/full_text/202611289349303266/IRS990ScheduleO"
+      ],
+      "method": "Read and compared preserved original schedule text.",
+      "verified": "Same SSP5000 and overdose training500 annual narrative repeated, including donation-dependence description. Supports nominal scale only, not current unique/additional recipients.",
+      "limitations": "d=0.5 is not inferred statistically from textual repetition."
+    },
+    {
+      "urls": [
+        "https://projects.propublica.org/nonprofits/full_text/202611289349303266/IRS990ScheduleM"
+      ],
+      "method": "Read preserved original schedule.",
+      "verified": "384175 donated drugs/medical supplies at FMV; no naloxone units or current stock established."
+    },
+    {
+      "urls": [
+        "https://hrssac.org/about-us/services-programs/"
+      ],
+      "method": "Fresh primary page full text.",
+      "verified": "Current Sacramento counter and weekday mobile SSP explicitly include Narcan. County-funding disclaimer present; no claim that all resources are privately funded."
+    },
+    {
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7311279/",
+        "https://pubmed.ncbi.nlm.nih.gov/31561997/"
+      ],
+      "method": "Primary publication indexed abstract text; first PubMed direct fetch empty/captcha, alternate primary search succeeded.",
+      "verified": "California post-overdose1863 unintentional overdose deaths/100000personyears; Ontario2015-16 ED cohort5.3% all-cause and1.9% opioid mortality within1year. Selected cohorts, not HRS SSP baseline."
+    },
+    {
+      "urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/38884347/",
+        "https://www.bmj.com/content/346/bmj.f174"
+      ],
+      "method": "Fresh PubMed abstract and BMJ primary search text.",
+      "verified": "HEALing adjustedRR0.91 CI0.76-1.09 with bundled strategies; only38% strategies initiated by comparison-year start. Walley ecological RR0.73/0.54. Neither identifies individual HRS effect."
+    }
+  ],
+  "recommendedEditorialClarifications": [
+    {
+      "severity": "nonblocking",
+      "location": "proposedModel.inputs[x], N definition",
+      "change": "Describe x as the fraction who are opioid-risk and receive usable additional naloxone-response access, not people whose death risk is already effectively reduced. State e is conditional on this group and excludes reach/funding factors already represented by d,m,x."
+    },
+    {
+      "severity": "nonblocking",
+      "location": "proposedModel.sensitivity and UI numeric display",
+      "change": "Round human-facing central price to about$3.1m and stress outputs to about$75000/$38bn; retain precise floats only for reproducibility. Do not imply cent-level estimate accuracy."
+    },
+    {
+      "severity": "nonblocking",
+      "location": "qualitative HEALing paragraph",
+      "change": "May add delayed/partial implementation caveat; null community result is not evidence that delivered naloxone is ineffective."
+    },
+    {
+      "severity": "integration_required",
+      "location": "published HRS summary/model/cost/financial labels",
+      "change": "Remove superseded unpriced/original-return-unavailable assertions wherever rendered. Keep conditional/partial-health and not-donor-ready status. Do not describe98%CA share as observed or accounts as independently audited."
+    }
+  ],
+  "remainingLimitations": [
+    "No new direct HRS outcome measurement or verified marginal expansion plan.",
+    "No selected-value uncertainty distribution; central is not mathematical expected EV over possibilities.",
+    "No negative scenario magnitude quantified; positive branch does not establish net benefit.",
+    "E/Y uses accounting expenses including noncash; do not label it cash price per recipient."
+  ],
+  "researchInterval": {
+    "startedAt": "2026-09-13T23:21:03.172Z",
+    "endedAt": "2026-09-13T23:23:38.850Z",
+    "seconds": 155.678,
+    "kind": "focused_independent_hrs_model_audit",
+    "creditPolicy": "Actual single-organization source reading, arithmetic, reasoning and memo drafting. Separate from original author's516seconds; no batch allocation or full report credit."
+  },
+  "siteEdits": false
+}

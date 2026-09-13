@@ -11,7 +11,7 @@ test.beforeEach(async({page,baseURL})=>{
 
 test('published research has measured headers, usable models and scoped canonical links',async({page,request})=>{
  for(const [edition,slug,name,minutes,donate] of [
-  ['california','harm-reduction-services','Harm Reduction Services','19',true],
+  ['california','harm-reduction-services','Harm Reduction Services','28',true],
   ['usa','national-center-for-healthy-housing','National Center for Healthy Housing','20',true],
   ['california','operation-access','Operation Access','8',true],
   ['usa','legal-action-center','Legal Action Center','10',false],
@@ -27,7 +27,7 @@ test('published research has measured headers, usable models and scoped canonica
   ['california','disability-rights-california','Disability Rights California','8',true],
   ['usa','cribs-for-kids','Cribs for Kids','10',true],
   ['usa','upstream-usa','Upstream USA','11',true],
-  ['california','center-for-independent-living','Center for Independent Living','4',true],
+  ['california','center-for-independent-living','Center for Independent Living','11',true],
   ['california','comite-civico-del-valle','Comité Cívico del Valle','4',false],
   ['usa','help-america-hear','Help America Hear','11',false],
   ['usa','rx-outreach','Rx Outreach','9',true],
@@ -54,7 +54,9 @@ test('published research has measured headers, usable models and scoped canonica
 test('research table keeps unknown means unknown and shows audited recipient mean',async({page})=>{
  await page.goto('/california/research');
  const hrs=page.locator('tr').filter({hasText:'Harm Reduction Services'});
- await expect(hrs).toContainText('Not estimated');
+ await expect(hrs).toContainText('$3.1M');
+ await expect(hrs).toContainText('Overdose-prevention benefits only');
+ await expect(page.locator('tr').filter({hasText:'Center for Independent Living'})).toContainText('other benefits unestimated');
  await expect(page.locator('tr').filter({hasText:'Operation Access'})).toContainText('$1.9M');
  await expect(page.locator('tr').filter({hasText:'Operation Access'})).toContainText('$2.5M');
  await expect(page.locator('tr').filter({hasText:'Homeless Health Care Los Angeles'})).toContainText('$9.6M');

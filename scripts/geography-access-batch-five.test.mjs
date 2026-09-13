@@ -26,7 +26,9 @@ test('Medication access benchmarks use a secondary ITT effect only once',()=>{
 test('Local clinical thresholds are not estimated recipient yields',()=>{
  close(.1*14/365,.0038356164383561648);
  close((2.1/14)*.1,.015);
- for(const slug of ['center-for-independent-living','comite-civico-del-valle'])assert.equal(get(slug).model.scenarios[0].editionQalys,null);
+ assert.equal(get('comite-civico-del-valle').model.scenarios[0].editionQalys,null);
+ // CIL now has an independently reviewed partial repair model, tested separately.
+ assert.match(get('center-for-independent-living').priceScope,/other benefits unestimated/);
  assert.equal(get('comite-civico-del-valle').donationUrl,null);
  assert.match(get('comite-civico-del-valle').sections.qualitative,/no statistically detected effect/);
 });

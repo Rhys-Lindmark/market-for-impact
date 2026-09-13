@@ -89,6 +89,8 @@ Every update lists all eleven editions' published alpha x/25 and accepted beta x
 
 ## First checkpoint and next dispatch
 
+Latest September 13 checkpoint: California 6/25 and USA 6/25 prepared for publication, all beta 0/10. Western Center and WorkSafe retain unestimated marginal returns with transparent policy thresholds. The four preceding clinical reports are live via PR340. Continue the remaining accepted CA/USA cohort and independent metro selection; the older paragraphs below are historical checkpoints.
+
 September 13 batch checkpoint: ten edition alpha reports are accepted for publication (California 4, USA 6), with zero beta and picks. This batch adds Homeless Health Care Los Angeles, Surgery on Sunday, The Headstrong Project and Dental Lifeline Network; acceptance evidence is in geography-alpha-batch-two-acceptance.md. Publication remains a separate release gate. Legal Action Center and California End Overdose remain numerically unestimated. California policy reports, USA direct-service reports and metro discovery continue in parallel. Historical checkpoint paragraphs below describe earlier states, not current counts.
 
 Foundation packet: 40 provisional seeds (20 California, 20 USA), nine official MSA definitions/102 county memberships, stage/counting validation and local dashboard. Seeds are deliberately not accepted D100 or alpha reports: many retrievals are search excerpts and legal-recipient/EIN verification remains incomplete. Preserve these limitations. Shared source-retrieval intervals are not full report effort.

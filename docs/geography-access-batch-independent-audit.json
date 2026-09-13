@@ -1,0 +1,415 @@
+{
+  "schemaVersion": 1,
+  "auditType": "independent bounded alpha report acceptance",
+  "createdAt": "2026-09-13T22:55:43.218Z",
+  "model": {
+    "id": "gpt-6-astra",
+    "reasoningEffort": "medium",
+    "name": "GPT-6 Astra Medium",
+    "evidence": "Parent assigned retained Medium worker"
+  },
+  "inputFiles": [
+    {
+      "path": "/tmp/givebetter-ca-alpha-batch6.json",
+      "sha256": "00a2e0150db8e12d2a8cb31621766ff630ad0f1a03401ef43234c1f9d40bc62e"
+    },
+    {
+      "path": "/tmp/givebetter-usa-alpha-batch5.json",
+      "sha256": "24ff5295ccfc75055cbd2b60d0e50f1e9c86ffcef0837e6a46c938159058cbb9"
+    }
+  ],
+  "summary": {
+    "reportsReviewed": 4,
+    "acceptResearchAlpha": 4,
+    "holdResearchAlpha": 0,
+    "materialCorrections": 0,
+    "donationEndorsements": 0,
+    "sourceCoverage": "selective decisive primary reopening, not complete source reproduction"
+  },
+  "records": [
+    {
+      "edition": "california",
+      "organizationId": "ein:23-7175191",
+      "slug": "center-for-independent-living",
+      "status": "accept",
+      "notes": "Original IRS FY24/25 iframe finance confirmed functional splits, government grants, net assets. Residential scope and funding gap confirmed. CDC finite follow-up confirmed. Repair PubMed direct abstract retrieval limited; indexed original study confirms cross-sectional design; 14-day median not freshly exposed. No material numerical correction.",
+      "math": {
+        "mean": 3673179,
+        "q": 0.0038356164383561648,
+        "episodes": 260.71428571428567
+      },
+      "decisionScope": "Accept research-only alpha report, not donation endorsement or positive price.",
+      "materialCorrections": [],
+      "optionalEdits": [
+        {
+          "path": "reports[0].sections.funding",
+          "replace": "$3673179.00",
+          "with": "$3,673,179.00",
+          "reason": "Readability only."
+        }
+      ],
+      "verifiedSources": [
+        {
+          "url": "https://projects.propublica.org/nonprofits/full_text/202641359349312384/IRS990",
+          "retrieved": "2026-09-13",
+          "method": "fresh primary-source text retrieval",
+          "evidence": "FY2025 expenses $4,370,584; functional split 2,752,037 / 1,362,449 / 256,098; grants $3,223,822; restricted net assets $2,385,204; compensation $3,219,987. Direct Node fetch of original IRS HTML after web iframe failure."
+        },
+        {
+          "url": "https://projects.propublica.org/nonprofits/full_text/202521359349306602/IRS990",
+          "retrieved": "2026-09-13",
+          "method": "fresh primary-source text retrieval",
+          "evidence": "FY2023/24 comparative expenses $2,986,495/$3,662,458; FY2024 functional split confirmed."
+        },
+        {
+          "url": "https://thecil.org/residential-access/",
+          "retrieved": "2026-09-13",
+          "method": "fresh primary-source text retrieval",
+          "evidence": "Current Northern Alameda County service intersection; Berkeley HUD-financed modifications; surrounding-city consultations limited by funds."
+        },
+        {
+          "url": "https://www.cdc.gov/mmwr/volumes/65/su/su6501a10.htm",
+          "retrieved": "2026-09-13",
+          "method": "fresh primary-source text retrieval",
+          "evidence": "Original investigators' synthesis explicitly reports symptom days returning to baseline by 12 months and health costs by 2 months."
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39427781/",
+          "retrieved": "2026-09-13",
+          "method": "primary-source search text; direct retrieval limited",
+          "evidence": "Original indexed abstract confirms cross-sectional survey of wheelchair users; direct PubMed returned no abstract text, and the 14-day median was not freshly exposed."
+        }
+      ],
+      "sourceLimits": [
+        "Underlying audit findings/remediation not reopened; report already discloses limitation.",
+        "Other referenced clinical sources reviewed as narrative claims, not all re-fetched.",
+        "No recipient marginal yield inferred from conditional utility/duration."
+      ]
+    },
+    {
+      "edition": "california",
+      "organizationId": "org:comite-civico-del-valle",
+      "slug": "comite-civico-del-valle",
+      "status": "accept",
+      "notes": "Original IRS FY23/24 financial totals, asthma category and depreciation confirmed. Original Respira Sano report confirms family intervention randomized within clinic strata, no family effect; current official program search and CalEPA grant support operations. Direct current-page open failed; official beta and www program/28 provide alternate current indexed evidence. No donation route forced.",
+      "math": {
+        "mean": 4712091.666666667,
+        "q": 0.015,
+        "share": 0.019283804991521426,
+        "branchCeiling": 28.92570748728214
+      },
+      "decisionScope": "Accept research-only alpha with donationUrl null and central price null.",
+      "materialCorrections": [],
+      "optionalEdits": [
+        {
+          "path": "reports[1].sections.qualitative",
+          "replace": "found no effect of the family intervention at twelve months",
+          "with": "found no statistically detected effect of the family intervention at twelve months",
+          "reason": "Distinguishes absent detected effect from proof of an exact zero; subsequent caveat already makes this clear."
+        },
+        {
+          "path": "reports[1].sources[id=asthma]",
+          "action": "Optionally add current alternate official program URL https://www.ccvhealth.org/program/28 and annotate direct main-route retrieval failure in audit provenance.",
+          "reason": "Main new-route open failed here; official indexed alternative corroborates current program."
+        }
+      ],
+      "verifiedSources": [
+        {
+          "url": "https://projects.propublica.org/nonprofits/full_text/202533189349315318/IRS990",
+          "retrieved": "2026-09-13",
+          "method": "direct Node fetch original IRS HTML",
+          "evidence": "FY2024 whole-recipient expenses $6,458,632; functions 4,513,451 / 1,926,502 / 18,679; asthma $124,547; depreciation $831,661; government grants $1,591,989."
+        },
+        {
+          "url": "https://projects.propublica.org/nonprofits/full_text/202403199349314080/IRS990",
+          "retrieved": "2026-09-13",
+          "method": "direct Node fetch original IRS HTML",
+          "evidence": "FY2022/23 comparative expenses $3,025,205/$4,652,438."
+        },
+        {
+          "url": "https://www.ncbi.nlm.nih.gov/books/NBK599376/",
+          "retrieved": "2026-09-13",
+          "method": "fresh primary-source text retrieval",
+          "evidence": "Primary report: 400 youth; family randomization within clinic strata, clinic exposure tied to existing care, no detected family effect; community intervention shared."
+        },
+        {
+          "url": "https://calepa.ca.gov/2024/03/07/blog-ej-action-grants-announcement/",
+          "retrieved": "2026-09-13",
+          "method": "primary-source search text",
+          "evidence": "Primary grant announcement lists CCV $300,000 for Imperial Valley home asthma intervention."
+        },
+        {
+          "url": "https://www.ccvhealth.org/program/28",
+          "retrieved": "2026-09-13",
+          "method": "primary-source search text",
+          "evidence": "Current official indexed Respira Sano page attributes program to CalEPA EJ grant."
+        },
+        {
+          "url": "https://beta.ccvhealth.org/asthma-intervention",
+          "retrieved": "2026-09-13",
+          "method": "primary-source search text",
+          "evidence": "Official indexed page corroborates bilingual home intervention; no independent enrollment count."
+        }
+      ],
+      "sourceLimits": [
+        "Main asthma page direct open failed; alternate official text used.",
+        "Seattle PubMed direct retrieval empty; exact external effect was not freshly exposed in this audit; algebra independently verified.",
+        "Original lithium court opinion not reopened; report already limits claim to organization statement.",
+        "No ordinary giving route newly verified; keep null."
+      ]
+    },
+    {
+      "edition": "usa",
+      "organizationId": "org:help-america-hear",
+      "slug": "help-america-hear",
+      "status": "accept",
+      "notes": "Original 3-year IRS gross expense restoration and over120 repeated narrative confirmed; current program deposit/eligibility confirmed; ACHIEVE original generic composite null confirmed. All six numerical scenarios recompute exactly. CA registration flag remains unverified; research report can publish with explicit flag but no current eligibility or endorsement claim. Optional improvement: say service count narrative repeats over120 in all3 returns rather than imply a measured newFY25 matched cohort.",
+      "math": {
+        "mean": 416544.3333333333,
+        "price": 689123.7815575873
+      },
+      "decisionScope": "Accept research-only alpha. Hold donation endorsement/current giving-eligibility clearance until registry flag resolved.",
+      "materialCorrections": [],
+      "optionalEdits": [
+        {
+          "path": "reports[0].sections.monitoring",
+          "append": "The same 'over 120' service-count wording appears in all three reviewed returns; it is not a reconciled annual fitting cohort.",
+          "reason": "Fresh original returns repeat the narrative, weakening denominator precision; model already labels the count a rough anchor."
+        }
+      ],
+      "verifiedSources": [
+        {
+          "url": "https://projects.propublica.org/nonprofits/full_text/202620159349301802/IRS990",
+          "retrieved": "2026-09-13",
+          "method": "direct Node fetch original IRS HTML",
+          "evidence": "FY2025 functional $278,776 plus direct event $147,746 = gross $426,522; contributions to event need restoring when evaluating event profitability; over120 service narrative, $40,000 scholarships."
+        },
+        {
+          "url": "https://projects.propublica.org/nonprofits/full_text/202422629349300912/IRS990",
+          "retrieved": "2026-09-13",
+          "method": "direct Node fetch original IRS HTML",
+          "evidence": "FY2024 functional $298,757 plus event $138,238 = $436,995; repeated over120 service narrative."
+        },
+        {
+          "url": "https://projects.propublica.org/nonprofits/full_text/202312839349301416/IRS990",
+          "retrieved": "2026-09-13",
+          "method": "direct Node fetch original IRS HTML",
+          "evidence": "FY2023 functional $335,516 plus event $50,600 = $386,116; repeated over120 service narrative."
+        },
+        {
+          "url": "https://helpamericahear.org/help-america-hear-program",
+          "retrieved": "2026-09-13",
+          "method": "fresh primary-source text retrieval",
+          "evidence": "Current domestic program confirms moderate-to-profound eligibility, two aids, limited first-year service and refundable $250 deposit mechanics."
+        },
+        {
+          "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2826555",
+          "retrieved": "2026-09-13",
+          "method": "fresh primary-source text retrieval",
+          "evidence": "Primary ACHIEVE generic analysis finds no significant physical or mental RAND-36 composite change over three years."
+        },
+        {
+          "url": "https://link.springer.com/article/10.1186/s12913-020-05977-x",
+          "retrieved": "2026-09-13",
+          "method": "fresh primary-source text retrieval",
+          "evidence": "Original publisher text confirms delayed-start trial, modified control HUI scoring and five-year extrapolation assumptions; long-term utility not directly demonstrated."
+        }
+      ],
+      "sourceLimits": [
+        "CA original registry not resolved; primary indexed search did not return a match. Do not infer closure or clearance.",
+        "Schedule M and other clinical trials not all reopened; no contradictory result identified.",
+        "All six numerical scenarios including negative and null cases reproduced; late deterministic verification belongs to unallocated integration, not added organization minutes."
+      ]
+    },
+    {
+      "edition": "usa",
+      "organizationId": "ein:35-2378788",
+      "slug": "rx-outreach",
+      "status": "accept",
+      "notes": "Original IRS book expenses and all3 in-kind schedules reconcile. Current own clinic HTML confirms nearlyall purchasedinventory; current FilltheGap and patients pages support eligibility distinction. Original CLEANMeds publisher and original MI-FREEE PDF via ACC support causal caveats and .018 rate difference. Dated ownPDF confirms2024 counts/territories. All5 numerical scenarios and f/q required-yield thresholds recompute.",
+      "math": {
+        "mean": 15946974.666666666,
+        "netProxy": 11246655,
+        "price": 2040816.326530612,
+        "highRiskPrice": 466472.30320699705
+      },
+      "decisionScope": "Accept research-only alpha with central price null; no donor-ready ranking.",
+      "materialCorrections": [],
+      "optionalEdits": [],
+      "verifiedSources": [
+        {
+          "url": "https://projects.propublica.org/nonprofits/full_text/202531989349100408/IRS990PF",
+          "retrieved": "2026-09-13",
+          "method": "direct Node fetch original IRS HTML",
+          "evidence": "FY2024 book expenses $13,936,912, earned revenue $10,516,967, deficit $516,395 and unrestricted net assets $1,640,703 confirmed."
+        },
+        {
+          "url": "https://projects.propublica.org/nonprofits/full_text/202531989349100408/OtherExpensesSchedule",
+          "retrieved": "2026-09-13",
+          "method": "direct Node fetch original IRS HTML",
+          "evidence": "Purchased drugs $3,132,063; inventory in-kind $2,610,784 and other in-kind $79,473 already included."
+        },
+        {
+          "url": "https://projects.propublica.org/nonprofits/full_text/202402299349100110/IRS990PF",
+          "retrieved": "2026-09-13",
+          "method": "direct Node fetch original IRS HTML",
+          "evidence": "FY2023 book expenses $21,535,029 confirmed."
+        },
+        {
+          "url": "https://projects.propublica.org/nonprofits/full_text/202402299349100110/OtherExpensesSchedule",
+          "retrieved": "2026-09-13",
+          "method": "direct Node fetch original IRS HTML",
+          "evidence": "In-kind $12,383,022 plus $99,559; net proxy $9,052,448."
+        },
+        {
+          "url": "https://projects.propublica.org/nonprofits/full_text/202331939349100408/IRS990PF",
+          "retrieved": "2026-09-13",
+          "method": "direct Node fetch original IRS HTML",
+          "evidence": "FY2022 book expenses $12,368,983 confirmed."
+        },
+        {
+          "url": "https://projects.propublica.org/nonprofits/full_text/202331939349100408/OtherExpensesSchedule",
+          "retrieved": "2026-09-13",
+          "method": "direct Node fetch original IRS HTML",
+          "evidence": "In-kind $5,211,139 plus $40,367; net proxy $7,117,477."
+        },
+        {
+          "url": "https://rxoutreach.org/why_clinics/",
+          "retrieved": "2026-09-13",
+          "method": "direct Node HTML text; web open failed",
+          "evidence": "Own current HTML confirms nearly all medicine inventory purchased directly and patient-pay/clinic-pay/hybrid options."
+        },
+        {
+          "url": "https://rxoutreach.org/fill-the-gap/",
+          "retrieved": "2026-09-13",
+          "method": "fresh primary-source text retrieval",
+          "evidence": "Current eligibility is human age55+, income≤300%FPL, specified St Louis counties; no whole-recipient restricted-program assumption."
+        },
+        {
+          "url": "https://rxoutreach.org/patients/",
+          "retrieved": "2026-09-13",
+          "method": "direct Node HTML text",
+          "evidence": "Standard pharmacy does not require income/insurance eligibility; separately funded programs may."
+        },
+        {
+          "url": "https://rxoutreach.org/wp-content/uploads/2025/02/Printable-RxO-Two-Pager-2.18.25.pdf",
+          "retrieved": "2026-09-13",
+          "method": "primary PDF extracted text",
+          "evidence": "Dated2024 output sheet confirms34740 unique patients,188993 prescriptions and PR/VI activity."
+        },
+        {
+          "url": "https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1003590",
+          "retrieved": "2026-09-13",
+          "method": "fresh primary-source text retrieval",
+          "evidence": "Original CLEAN Meds report confirms10.1-point adherence difference with no significant available diabetes/BP/lipid differences; missing clinical measures explicitly noted."
+        },
+        {
+          "url": "https://www.acc.org/~/media/Non-Clinical/Files-PDFs-Excel-MS-Word-etc/Tools%20and%20Practice%20Support/Quality%20Programs/LDL%20Think%20Tank%202016/Patient%20Adherence/1%20Full%20Coverage%20for%20Preventive%20Medications%20After%20MI.pdf?la=en",
+          "retrieved": "2026-09-13",
+          "method": "original paper PDF extracted text; NEJM direct403",
+          "evidence": "Original NEJM paper mirrored by ACC confirms primary null and secondary first-major-event rates11.0 vs12.8 per100person-years; supports .018 only as conditional trial benchmark."
+        }
+      ],
+      "sourceLimits": [
+        "Pet and Deaconess pages not freshly reopened; their scope/funding caveats retained.",
+        "2023 annual-report printed subtotal discrepancy not re-audited; original returns used instead.",
+        "No trial adherence multiplier or repeated event-years added; h remains when clinical transport is zero."
+      ]
+    }
+  ],
+  "sessions": [
+    {
+      "id": "access-batch-independent-audit-20260913-1",
+      "organizationSlug": "center-for-independent-living",
+      "stage": "alpha",
+      "phase": "independent-audit",
+      "workerId": "expansion_method",
+      "startedAt": "2026-09-13T22:50:46.047Z",
+      "endedAt": "2026-09-13T22:51:25.297Z",
+      "seconds": 39.25,
+      "model": {
+        "id": "gpt-6-astra",
+        "name": "GPT-6 Astra Medium",
+        "reasoningEffort": "medium",
+        "evidence": "Parent dispatch retained Medium worker"
+      },
+      "coverage": "partial",
+      "method": "Actual dedicated report reading, source retrieval, reasoning and arithmetic interval; no allocation of setup/integration time."
+    },
+    {
+      "id": "access-batch-independent-audit-20260913-2",
+      "organizationSlug": "comite-civico-del-valle",
+      "stage": "alpha",
+      "phase": "independent-audit",
+      "workerId": "expansion_method",
+      "startedAt": "2026-09-13T22:51:25.297Z",
+      "endedAt": "2026-09-13T22:51:56.890Z",
+      "seconds": 31.593,
+      "model": {
+        "id": "gpt-6-astra",
+        "name": "GPT-6 Astra Medium",
+        "reasoningEffort": "medium",
+        "evidence": "Parent dispatch retained Medium worker"
+      },
+      "coverage": "partial",
+      "method": "Actual dedicated report reading, source retrieval, reasoning and arithmetic interval; no allocation of setup/integration time."
+    },
+    {
+      "id": "access-batch-independent-audit-20260913-3",
+      "organizationSlug": "help-america-hear",
+      "stage": "alpha",
+      "phase": "independent-audit",
+      "workerId": "expansion_method",
+      "startedAt": "2026-09-13T22:51:56.890Z",
+      "endedAt": "2026-09-13T22:52:44.920Z",
+      "seconds": 48.03,
+      "model": {
+        "id": "gpt-6-astra",
+        "name": "GPT-6 Astra Medium",
+        "reasoningEffort": "medium",
+        "evidence": "Parent dispatch retained Medium worker"
+      },
+      "coverage": "partial",
+      "method": "Actual dedicated report reading, source retrieval, reasoning and arithmetic interval; no allocation of setup/integration time."
+    },
+    {
+      "id": "access-batch-independent-audit-20260913-4",
+      "organizationSlug": "rx-outreach",
+      "stage": "alpha",
+      "phase": "independent-audit",
+      "workerId": "expansion_method",
+      "startedAt": "2026-09-13T22:52:44.920Z",
+      "endedAt": "2026-09-13T22:54:11.206Z",
+      "seconds": 86.286,
+      "model": {
+        "id": "gpt-6-astra",
+        "name": "GPT-6 Astra Medium",
+        "reasoningEffort": "medium",
+        "evidence": "Parent dispatch retained Medium worker"
+      },
+      "coverage": "partial",
+      "method": "Actual dedicated report reading, source retrieval, reasoning and arithmetic interval; no allocation of setup/integration time."
+    }
+  ],
+  "timing": {
+    "actualFocusedSeconds": 205.159,
+    "coverage": "partial",
+    "separateFromAuthorHeaders": true,
+    "primaryAuthorTimesModified": false,
+    "excluded": "Initial batch loading, skills, setup, final integration and final cross-report validation not allocated to organizations; no previous task time recredited."
+  },
+  "implementationGuardrails": [
+    "Root decides final acceptance and integrates; this artifact does not mutate counts.",
+    "Keep four central QALY/price values null; conditional cases must remain requirements or tests, not positive bounds.",
+    "Keep CCV donationUrl null. HAH registry ambiguity blocks donor-readiness clearance, not publication of a clearly qualified research report.",
+    "No Site edits, builds, dependencies, outreach or nested agents."
+  ],
+  "spaceSaver": {
+    "freeDiskGiB": 56,
+    "inputPacketsApproxKiB": 116,
+    "createdServers": 0,
+    "installedDependencies": 0,
+    "bulkDownloads": 0,
+    "cleanup": "None; unique inputs and audit evidence preserved."
+  }
+}

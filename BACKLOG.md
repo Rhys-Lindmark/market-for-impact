@@ -2,6 +2,8 @@
 
 ## Active priority — eleven-edition geographic expansion (September 13)
 
+Tenth checkpoint: CA10/25 and USA10/25 accepted for pending release; every metro0/25 and beta0/10. Four access reports add original financials, finite clinical tests and actual time records. Independent Medium audit reproduced arithmetic and reopened decisive sources. HAH repeated annual service wording clarified; HAH/CCV checkout buttons withheld pending recipient-route/status verification. Next complete release gates, then queued clinical/environmental reports and metro acceptance. No new giving picks.
+
 Ninth checkpoint: four more reports accepted locally, bringing CA8/25 and USA8/25 for the pending release. CCA/DRC retain unknown policy yield with transparent thresholds; Cribs/Upstream retain conditional health estimates, full recipient costs and funding counterfactuals. All metros0/25 and beta0/10. Source review and12 focused tests pass; complete release gates next. Then integrate queued clinical/access batches and independently accept NYC/Denver discovery.
 
 Eighth checkpoint: Los Angeles has 100 accepted discovery candidates and 25 selected alpha priorities, with ten alternates. This is discovery acceptance, not additional published research: California6/25, USA6/25, all nine metros0/25 and all beta0/10. The LA/Orange County boundary is explicit; root reopened the final60 primary-source leads and reused the initial40 independent audit. Identity, donation-sensitive yield and original finances remain report-level gates. Next: publish this acceptance record, accept queued alpha packets in batches, and independently review NYC and Denver pools. See docs/geography-discovery/los-angeles-cohort-final.json.

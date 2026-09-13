@@ -2,6 +2,8 @@
 
 ## Active priority — eleven-edition geographic expansion (September 13)
 
+User priority: make California's donor page follow the SF presentation, keep progress secondary, and include SF/Bay Area as a full edition with report counts. Revisit every unestimated California model for a defensible best estimate using explicit judgment assumptions and sensitivity, rather than treating missing observed inputs as an automatic reason to stop modeling. Preserve genuinely unidentifiable cases without fabricated numbers. Final four photo-backed picks remain subject to evidence/readiness review. CA worker reviewing existing models while other workers continue USA and metro research.
+
 Tenth checkpoint: CA10/25 and USA10/25 accepted for pending release; every metro0/25 and beta0/10. Four access reports add original financials, finite clinical tests and actual time records. Independent Medium audit reproduced arithmetic and reopened decisive sources. HAH repeated annual service wording clarified; HAH/CCV checkout buttons withheld pending recipient-route/status verification. Next complete release gates, then queued clinical/environmental reports and metro acceptance. No new giving picks.
 
 Ninth checkpoint: four more reports accepted locally, bringing CA8/25 and USA8/25 for the pending release. CCA/DRC retain unknown policy yield with transparent thresholds; Cribs/Upstream retain conditional health estimates, full recipient costs and funding counterfactuals. All metros0/25 and beta0/10. Source review and12 focused tests pass; complete release gates next. Then integrate queued clinical/access batches and independently accept NYC/Denver discovery.

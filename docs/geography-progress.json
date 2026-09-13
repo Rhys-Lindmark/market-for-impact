@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "updated": "2026-09-13T18:12:29Z",
-  "currentPhase": "Foundation; California and USA discovery",
+  "updated": "2026-09-13T19:08:43Z",
+  "currentPhase": "Edition page foundation and CA/USA100-candidate discovery",
   "issue": "https://github.com/Rhys-Lindmark/market-for-impact/issues/333",
   "canonicalBase": "https://ai.rhyslindmark.com/givebetter",
   "models": {
@@ -30,14 +30,35 @@
       "id": "california",
       "label": "California",
       "status": "confirmed",
-      "discoveryAccepted": 0,
+      "discoveryAccepted": 20,
       "alphaPublished": 0,
       "betaAcceptedPublished": 0,
       "topPicksPublished": 0,
-      "nextAction": "Expand provisional pool to100 and verify legal identity/geography before acceptance",
+      "nextAction": "Complete100-candidate pool; independently audit wave2/3 and compare candidates before selecting25",
       "boundaryVersion": "US-CA-state-v1",
-      "discoveryProvisional": 20,
-      "acceptedDiscoveryIds": [],
+      "discoveryProvisional": 40,
+      "acceptedDiscoveryIds": [
+        "org:end-overdose",
+        "org:harm-reduction-services",
+        "ein:95-4074970",
+        "org:tarzana-treatment-centers",
+        "org:champions-for-health",
+        "org:kheir-clinic",
+        "org:venice-family-clinic",
+        "org:clinica-romero",
+        "ein:85-1438188",
+        "org:housing-california",
+        "org:western-center-on-law-and-poverty",
+        "org:abundant-housing-la-education-fund",
+        "org:california-pan-ethnic-health-network",
+        "org:coalition-for-clean-air",
+        "ein:68-0417507",
+        "org:california-black-women-s-health-project",
+        "org:california-partnership-to-end-domestic-violence",
+        "org:california-wic-association",
+        "org:california-children-and-families-foundation",
+        "ein:94-3059243"
+      ],
       "alphaCohortIds": [],
       "betaIds": [],
       "topPickIds": []
@@ -46,14 +67,35 @@
       "id": "usa",
       "label": "USA",
       "status": "confirmed",
-      "discoveryAccepted": 0,
+      "discoveryAccepted": 20,
       "alphaPublished": 0,
       "betaAcceptedPublished": 0,
       "topPicksPublished": 0,
-      "nextAction": "Expand provisional pool to100 and verify legal identity/geography before acceptance",
+      "nextAction": "Complete100-candidate pool; independently audit wave2/3 and compare candidates before selecting25",
       "boundaryVersion": "USA-50-states-DC-v1",
-      "discoveryProvisional": 20,
-      "acceptedDiscoveryIds": [],
+      "discoveryProvisional": 40,
+      "acceptedDiscoveryIds": [
+        "org:national-center-for-healthy-housing",
+        "org:green-and-healthy-homes-initiative",
+        "ein:94-1730465",
+        "org:smart-growth-america",
+        "org:kids-and-car-safety",
+        "org:american-foundation-for-suicide-prevention",
+        "org:crisis-text-line",
+        "ein:95-4681287",
+        "ein:45-4619712",
+        "org:upstream-usa",
+        "ein:52-1974611",
+        "org:dollar-for",
+        "org:patient-advocate-foundation",
+        "org:prevent-cancer-foundation",
+        "org:campaign-for-tobacco-free-kids",
+        "org:food-research-and-action-center",
+        "ein:36-3673599",
+        "org:national-diaper-bank-network",
+        "org:partnership-to-end-addiction",
+        "ein:13-2756320"
+      ],
       "alphaCohortIds": [],
       "betaIds": [],
       "topPickIds": []
@@ -221,7 +263,31 @@
       "event": "First40 provisional CA/USA seeds returned; no alpha/beta publications. Nine official MSA county sets extracted.",
       "alphaPublished": 0,
       "betaAcceptedPublished": 0
+    },
+    {
+      "at": "2026-09-13T19:08:43Z",
+      "event": "Initial40 accepted for discovery,80 additional provisional candidates saved; eleven edition progress routes implemented. No new alpha/beta reports.",
+      "discoveryAccepted": 40,
+      "discoveryProvisional": 80,
+      "alphaPublished": 0,
+      "betaAcceptedPublished": 0
     }
   ],
-  "activePackets": []
+  "activePackets": [
+    {
+      "worker": "ca_discovery",
+      "task": "Final40 California candidates",
+      "artifact": "/tmp/givebetter-ca-discovery-wave3.json"
+    },
+    {
+      "worker": "usa_discovery",
+      "task": "Final40 USA candidates",
+      "artifact": "/tmp/givebetter-usa-discovery-wave3.json"
+    },
+    {
+      "worker": "expansion_method",
+      "task": "Independent80-candidate wave2 acceptance audit",
+      "artifact": "/tmp/givebetter-wave2-acceptance.json"
+    }
+  ]
 }

@@ -26,7 +26,15 @@ for(const edition of ['california','usa']){
  const seed=read('geography-discovery/'+edition+'-seed.json');
  assert.equal(seed.candidates.length,20); assert.equal(new Set(seed.candidates.map(c=>c.name)).size,20);
  assert.equal(seed.model.id,'gpt-6-astra'); assert.equal(seed.model.reasoning,'medium');
- assert.equal(p.editions.find(e=>e.id===edition).discoveryProvisional,20);
+ const wave=read('geography-discovery/'+edition+'-wave2.json');
+ assert.equal(wave.candidates.length,40);
+ assert.equal(new Set(wave.candidates.map(c=>c.name)).size,40);
+ assert.equal(wave.model.id,'gpt-6-astra'); assert.equal(wave.model.reasoning,'medium');
+ const accepted=Object.values(read('geography-discovery/initial40-acceptance.json').records).filter(r=>r.edition===edition&&r.status==='accept-for-discovery');
+ assert.equal(accepted.length,20);
+ const row=p.editions.find(e=>e.id===edition);
+ assert.equal(row.discoveryProvisional,40);
+ assert.deepEqual(row.acceptedDiscoveryIds,accepted.map(r=>r.canonicalOrganizationId));
+ for(const record of accepted){assert.equal(record.geographyBoundary,row.boundaryVersion);assert.ok(record.primarySources.length);assert.ok(record.verifiedEvidence);}
 }
-console.log('PASS:11 editions; stage models and nested counts;9 MSAs/102 counties;40 provisional seeds.');
-
+console.log('PASS:11 editions; stage models and nested counts;9 MSAs/102 counties;40 accepted discovery and80 provisional candidates.');

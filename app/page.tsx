@@ -81,7 +81,7 @@ export default function SanFranciscoHome(){
           </div>
         </div>
       </article>)}</section>
-      <footer className="sf-home-footer"><a href={`${root}/research`}>All research</a><p>Independent research. Not affiliated with GiveWell or the organizations reviewed.</p></footer>
+      <footer className="sf-home-footer"><a href={`${root}/research`}>All research</a> · <a href={`${root}/editions`}>Other cities and regions</a><p>Independent research. Not affiliated with GiveWell or the organizations reviewed.</p></footer>
     </main>
   </div>;
 }

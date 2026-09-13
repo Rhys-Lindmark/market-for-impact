@@ -17,6 +17,10 @@ test('published research has measured headers, usable models and scoped canonica
   ['usa','legal-action-center','Legal Action Center','10',false],
   ['usa','end-overdose','End Overdose','7',true],
   ['california','end-overdose','End Overdose','14',true],
+  ['usa','surgery-on-sunday','Surgery on Sunday','5',true],
+  ['usa','the-headstrong-project','The Headstrong Project','6',true],
+  ['usa','dental-lifeline-network','Dental Lifeline Network','12',true],
+  ['california','homeless-health-care-los-angeles','Homeless Health Care Los Angeles','6',true],
  ]){
   const route=`/${edition}/charities/${slug}`;
   await page.goto(route);
@@ -43,10 +47,14 @@ test('research table keeps unknown means unknown and shows audited recipient mea
  await expect(hrs).toContainText('Not estimated');
  await expect(page.locator('tr').filter({hasText:'Operation Access'})).toContainText('$1.9M');
  await expect(page.locator('tr').filter({hasText:'Operation Access'})).toContainText('$2.5M');
+ await expect(page.locator('tr').filter({hasText:'Homeless Health Care Los Angeles'})).toContainText('$9.6M');
  await page.goto('/usa/research');
  await expect(page.locator('tr').filter({hasText:'National Center for Healthy Housing'})).toContainText('$3.0M');
  await expect(page.locator('tr').filter({hasText:'Legal Action Center'})).toContainText('Not estimated');
  await expect(page.locator('tr').filter({hasText:'Legal Action Center'})).toContainText('$8.6M');
+ await expect(page.locator('tr').filter({hasText:'Surgery on Sunday'})).toContainText('$405K');
+ await expect(page.locator('tr').filter({hasText:'Surgery on Sunday'})).toContainText('Not estimated');
+ await expect(page.locator('tr').filter({hasText:'Dental Lifeline Network'})).toContainText('$744K');
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
 });
 test('desktop contents stay left and SF report still renders',async({page})=>{

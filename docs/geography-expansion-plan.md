@@ -23,7 +23,7 @@ These are budgets, not timers to fill. No sleeping, fabricated research duration
 
 ## Execution order and ownership
 
-September13 checkpoint: California and USA each have8 accepted alpha reports in the latest release. Los Angeles has100 accepted discovery candidates and25 selected priorities; its alpha and beta counts remain zero. NYC and Denver comparative packets await independent acceptance. Root is integrating while three workers continue bounded research; actual per-organization intervals remain separate from integration time.
+September 13 checkpoint: California and USA each have 10 accepted alpha reports prepared for the access-batch release (eight each currently live until deployment). Los Angeles has 100 accepted discovery candidates and 25 selected priorities; its alpha and beta counts remain zero. NYC and Denver comparative packets await independent acceptance. Root is integrating while three workers continue bounded research; actual per-organization intervals remain separate from integration time.
 
 Root is manager and sole Site owner. Three workers run independent useful research in parallel with stage-appropriate settings; no nested agents. Refill completed slots promptly when ready work remains. Workers browse/analyze and return isolated artifacts only: no Site edits, builds, servers, installs, deployment, outreach or credentials. Reuse shared evidence, entity identity and financial history across editions.
 

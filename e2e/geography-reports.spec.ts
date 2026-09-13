@@ -27,6 +27,10 @@ test('published research has measured headers, usable models and scoped canonica
   ['california','disability-rights-california','Disability Rights California','8',true],
   ['usa','cribs-for-kids','Cribs for Kids','10',true],
   ['usa','upstream-usa','Upstream USA','11',true],
+  ['california','center-for-independent-living','Center for Independent Living','4',true],
+  ['california','comite-civico-del-valle','Comité Cívico del Valle','4',false],
+  ['usa','help-america-hear','Help America Hear','11',false],
+  ['usa','rx-outreach','Rx Outreach','9',true],
  ]){
   const route=`/${edition}/charities/${slug}`;
   await page.goto(route);

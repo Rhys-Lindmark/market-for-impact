@@ -10,16 +10,21 @@ test.beforeEach(async({page,baseURL})=>{
 });
 
 test('published research has measured headers, usable models and scoped canonical links',async({page,request})=>{
- for(const [edition,slug,name,minutes] of [
-  ['california','harm-reduction-services','Harm Reduction Services','19'],
-  ['usa','national-center-for-healthy-housing','National Center for Healthy Housing','20'],
+ for(const [edition,slug,name,minutes,donate] of [
+  ['california','harm-reduction-services','Harm Reduction Services','19',true],
+  ['usa','national-center-for-healthy-housing','National Center for Healthy Housing','20',true],
+  ['california','operation-access','Operation Access','8',true],
+  ['usa','legal-action-center','Legal Action Center','10',false],
+  ['usa','end-overdose','End Overdose','7',true],
+  ['california','end-overdose','End Overdose','14',true],
  ]){
   const route=`/${edition}/charities/${slug}`;
   await page.goto(route);
   await expect(page.getByRole('heading',{name,exact:true})).toBeVisible();
   await expect(page.locator('.report-research-effort summary')).toHaveText(`Research time: ~${minutes} min on GPT-6 Astra Light`);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href','https://ai.rhyslindmark.com/givebetter'+route);
-  await expect(page.getByRole('link',{name:'Donate',exact:true})).toHaveAttribute('href',/^https:\/\//);
+  if(donate)await expect(page.locator('.report-donate')).toHaveAttribute('href',/^https:\/\//);
+  else await expect(page.locator('.report-donate')).toHaveCount(0);
   await expect(page.locator('.report-contents a')).toHaveCount(7);
   await page.getByText('Model, assumptions and sensitivity',{exact:true}).click();
   await expect(page.getByRole('heading',{name:'Unresolved inputs',exact:true})).toBeVisible();
@@ -27,6 +32,7 @@ test('published research has measured headers, usable models and scoped canonica
   const response=await request.get(`/api/geography-reports/${edition}/${slug}`);
   expect(response.ok()).toBeTruthy();
   const body=await response.json();
+  expect(body.organization).toBe(name);
   expect(JSON.stringify(body)).not.toContain('/tmp/');
   expect(JSON.stringify(body)).not.toContain('/Users/');
  }
@@ -35,8 +41,12 @@ test('research table keeps unknown means unknown and shows audited recipient mea
  await page.goto('/california/research');
  const hrs=page.locator('tr').filter({hasText:'Harm Reduction Services'});
  await expect(hrs).toContainText('Not estimated');
+ await expect(page.locator('tr').filter({hasText:'Operation Access'})).toContainText('$1.9M');
+ await expect(page.locator('tr').filter({hasText:'Operation Access'})).toContainText('$2.5M');
  await page.goto('/usa/research');
  await expect(page.locator('tr').filter({hasText:'National Center for Healthy Housing'})).toContainText('$3.0M');
+ await expect(page.locator('tr').filter({hasText:'Legal Action Center'})).toContainText('Not estimated');
+ await expect(page.locator('tr').filter({hasText:'Legal Action Center'})).toContainText('$8.6M');
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
 });
 test('desktop contents stay left and SF report still renders',async({page})=>{

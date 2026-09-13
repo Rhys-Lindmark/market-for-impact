@@ -1,4 +1,10 @@
 import {test,expect} from '@playwright/test';
+import reports from '../data/geography-reports.json' with {type:'json'};
+test.beforeEach(async({page,baseURL})=>{
+ if(baseURL?.startsWith('http://localhost:'))await page.route('https://market-for-impact.rhyslindmark.chatgpt.site/_next/**',async route=>{
+  await route.fulfill({response:await route.fetch({url:baseURL+new URL(route.request().url()).pathname})});
+ });
+});
 test('edition hub keeps eleven honest progress rows',async({page})=>{
  await page.goto('/editions');
  await expect(page.getByRole('heading',{name:'Cities and regions'})).toBeVisible();
@@ -10,7 +16,8 @@ test('California and Denver scopes, empty state and expandable counties',async({
  for(const route of ['/california/research','/cities/denver']){
   await page.goto(route);
   await expect(page.getByText('Research in progress',{exact:true})).toBeVisible();
-  await expect(page.getByText('0/25',{exact:true})).toBeVisible();
+  const edition=route.includes('denver')?'denver':'california';
+  await expect(page.getByText(`${reports.reports.filter(r=>r.edition===edition).length}/25`,{exact:true})).toBeVisible();
   await expect(page.getByRole('link',{name:'All editions'})).toBeVisible();
   await page.getByText('Which places count?',{exact:true}).click();
   if(route.includes('denver'))await expect(page.getByText('Denver County, Colorado',{exact:true})).toBeVisible();
@@ -32,7 +39,7 @@ test('public progress is scoped and every planned edition resolves',async({reque
   const edition=data.editions.find((e:{id:string})=>e.id===id);
   expect(edition.discoveryAccepted).toBe(100);
   expect(edition.selectedAlphaIds).toHaveLength(25);
-  expect(edition.alphaPublished).toBe(0);
+  expect(edition.alphaPublished).toBe(reports.reports.filter(r=>r.edition===id).length);
   expect(edition.betaAcceptedPublished).toBe(0);
  }
  for(const edition of data.editions){

@@ -26,7 +26,7 @@ function Inline({text}:{text:string}) {
  }
  parts.push(text.slice(last));return <>{parts}</>;
 }
-function Markdown({text}:{text:string}) {
+export function Markdown({text}:{text:string}) {
  return <>{(markdownBlocks(text) as Block[]).map((block,i)=>{
   if(block.type==='heading')return block.level===3?<h3 key={i} id={block.id}><Inline text={block.text}/></h3>:<h4 key={i} id={block.id}><Inline text={block.text}/></h4>;
   if(block.type==='list'){const items=block.items.map((item:string,j:number)=><li key={j}><Inline text={item}/></li>);return block.ordered?<ol key={i}>{items}</ol>:<ul key={i}>{items}</ul>;}

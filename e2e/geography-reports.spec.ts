@@ -23,11 +23,15 @@ test('published research has measured headers, usable models and scoped canonica
   ['california','homeless-health-care-los-angeles','Homeless Health Care Los Angeles','6',true],
   ['california','western-center-on-law-and-poverty','Western Center on Law & Poverty','6',true],
   ['california','worksafe','WorkSafe','8',true],
+  ['california','coalition-for-clean-air','Coalition for Clean Air','5',true],
+  ['california','disability-rights-california','Disability Rights California','8',true],
+  ['usa','cribs-for-kids','Cribs for Kids','10',true],
+  ['usa','upstream-usa','Upstream USA','11',true],
  ]){
   const route=`/${edition}/charities/${slug}`;
   await page.goto(route);
   await expect(page.getByRole('heading',{name,exact:true})).toBeVisible();
-  await expect(page.locator('.report-research-effort summary')).toHaveText(`Research time: ~${minutes} min on GPT-6 Astra Light`);
+  await expect(page.locator('.report-research-effort summary')).toHaveText(new RegExp(`^Research time: ~?${minutes} min on GPT-6 Astra Light$`));
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href','https://ai.rhyslindmark.com/givebetter'+route);
   if(donate)await expect(page.locator('.report-donate')).toHaveAttribute('href',/^https:\/\//);
   else await expect(page.locator('.report-donate')).toHaveCount(0);

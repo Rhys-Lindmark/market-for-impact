@@ -2,6 +2,8 @@
 
 ## Active priority — eleven-edition geographic expansion (September 13)
 
+Ninth checkpoint: four more reports accepted locally, bringing CA8/25 and USA8/25 for the pending release. CCA/DRC retain unknown policy yield with transparent thresholds; Cribs/Upstream retain conditional health estimates, full recipient costs and funding counterfactuals. All metros0/25 and beta0/10. Source review and12 focused tests pass; complete release gates next. Then integrate queued clinical/access batches and independently accept NYC/Denver discovery.
+
 Eighth checkpoint: Los Angeles has 100 accepted discovery candidates and 25 selected alpha priorities, with ten alternates. This is discovery acceptance, not additional published research: California6/25, USA6/25, all nine metros0/25 and all beta0/10. The LA/Orange County boundary is explicit; root reopened the final60 primary-source leads and reused the initial40 independent audit. Identity, donation-sensitive yield and original finances remain report-level gates. Next: publish this acceptance record, accept queued alpha packets in batches, and independently review NYC and Denver pools. See docs/geography-discovery/los-angeles-cohort-final.json.
 
 Seventh checkpoint: California 6/25 and USA 6/25 prepared for publication; all beta 0/10 and nine metros 0/25. Western Center and WorkSafe add policy implementation models with honest unknown central yields, finite break-even tests and audited recipient expenses. Original source and causal-reference checks pass; 23 model/provenance tests pass. No policy victory or training count is treated as a QALY. Next: complete release checks, then remaining California/USA drafts and LA/NYC/Denver comparative acceptance. See docs/geography-policy-alpha-acceptance.md.

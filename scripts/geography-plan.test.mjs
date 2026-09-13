@@ -36,10 +36,29 @@ for(const edition of ['california','usa']){
  const accepted=records.filter(r=>r.edition===edition&&r.status==='accept-for-discovery');
  assert.equal(accepted.length,edition==='california'?58:59);
  const row=p.editions.find(e=>e.id===edition);
- assert.equal(row.discoveryProvisional,40);
- assert.equal(row.discoveryHeld,edition==='california'?2:1);
+ assert.equal(row.discoveryProvisional,0);
+ assert.equal(row.discoveryHeld,2);
  assert.equal(row.discoveryHeld,row.heldDiscoveryIds.length);
- assert.deepEqual(row.acceptedDiscoveryIds,accepted.map(r=>r.canonicalOrganizationId));
+ const finalAudit=read('geography-discovery/'+edition+'-wave3-acceptance.json');
+ const finalPacket=read('geography-discovery/'+edition+'-cohort-final.json');
+ const cohort=read('geography-discovery/accepted-cohorts.json').editions.find(e=>e.id===edition);
+ const allAccepted=[...accepted,...finalAudit.records.filter(r=>r.status==='accept-for-discovery'),...finalPacket.replacements];
+ assert.equal(allAccepted.length,100);
+ assert.equal(new Set(allAccepted.map(r=>r.canonicalOrganizationId)).size,100);
+ assert.deepEqual([...row.acceptedDiscoveryIds].sort(),allAccepted.map(r=>r.canonicalOrganizationId).sort());
+ assert.deepEqual(row.acceptedDiscoveryIds,cohort.acceptedDiscoveryIds);
+ assert.equal(row.selectedAlphaIds.length,25);
+ assert.deepEqual(row.selectedAlphaIds,cohort.selectedAlphaIds);
+ assert.equal(new Set([...cohort.selectedAlphaIds,...cohort.alternateIds]).size,35);
+ for(const id of [...cohort.selectedAlphaIds,...cohort.alternateIds])assert.ok(row.acceptedDiscoveryIds.includes(id));
+ for(const id of row.alphaCohortIds)assert.ok(row.selectedAlphaIds.includes(id));
+ assert.equal(cohort.selection.length,25);
+ for(const choice of cohort.selection)assert.ok(choice.reason&&choice.decisiveQuestion&&choice.organizationId);
+ assert.ok(row.heldDiscoveryIds.every(id=>typeof id==='string'&&id.startsWith(edition+':')));
  for(const record of accepted){assert.equal(record.geographyBoundary,row.boundaryVersion);assert.ok(record.primarySources.length);assert.ok(record.verifiedEvidence||record.geographyEvidence);}
 }
-console.log('PASS:11 editions; stage models and nested counts;9 MSAs/102 counties;117 accepted discovery,3held and80 provisional candidates.');
+const denver=read('geography-discovery/denver-seed.json');
+assert.equal(denver.candidates.length,40);
+assert.equal(p.editions.find(e=>e.id==='denver').discoveryProvisional,40);
+assert.equal(p.editions.find(e=>e.id==='denver').discoveryAccepted,0);
+console.log('PASS:11 editions; nested publication/selection counts;9 MSAs/102 counties;200 accepted discovery,50 selected research priorities,4 historical holds and40 provisional Denver leads.');

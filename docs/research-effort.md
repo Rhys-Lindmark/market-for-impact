@@ -12,7 +12,9 @@ Rhys requested average-based estimates for older reports on September10. The sep
 4. The root owner validates and adds closed sessions to `data/research-effort.json`, keyed by the exact organization heading. Preserve IDs to prevent duplicate imports. Record `coverage: "partial"` unless all research contributing to that report is captured, including earlier versions.
 5. Preserve actual timestamps and the AI model that did that interval. Model changes require a new interval. A display name without evidence is not provenance. Evidence references must be safe to publish; do not expose private session logs, credentials or unrelated conversations.
 
-Time means summed dedicated researcher wall-clock intervals, including ordinary source/tool work, not measured CPU time or proof of continuous attention. Parallel researchers contribute separate researcher-minutes, which can exceed elapsed clock time. Display truncates to one decimal; underlying timestamps retain precision. This is not a quality score. Revisions add new intervals; they do not overwrite or double-count old work.
+Time means summed dedicated researcher wall-clock intervals, including source retrieval, reading, analysis, modeling and writing while focused on that organization—not merely the duration of individual tool calls. End an interval before switching organizations or doing integration, deployment or idle waiting. Parallel researchers contribute separate researcher-minutes, which can exceed elapsed clock time. Display rounds to whole minutes; underlying timestamps retain precision. This is not a quality score. Revisions add new intervals; they do not overwrite or double-count old work.
+
+For geographic expansion, every newly published organization report must display its recorded research-time/model summary near the title. Keep stage and geography references with the sessions so reused research is not counted twice across editions. Do not turn a 15-minute budget into a claimed duration, or assign general discovery/comparison time to individual reports. Missing intervals stay missing; do not reconstruct them from batch clocks.
 
 ## Historical backfill
 

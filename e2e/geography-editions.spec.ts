@@ -5,10 +5,13 @@ test.beforeEach(async({page,baseURL})=>{
   await route.fulfill({response:await route.fetch({url:baseURL+new URL(route.request().url()).pathname})});
  });
 });
-test('edition hub keeps eleven honest progress rows',async({page})=>{
+test('edition hub includes SF alongside eleven new editions',async({page})=>{
  await page.goto('/editions');
  await expect(page.getByRole('heading',{name:'Cities and regions'})).toBeVisible();
- await expect(page.locator('tbody tr')).toHaveCount(11);
+ await expect(page.locator('tbody tr')).toHaveCount(12);
+ const sf=page.locator('tbody tr').filter({hasText:'San Francisco Bay Area'});
+ await expect(sf.getByRole('link',{name:'San Francisco Bay Area',exact:true})).toHaveAttribute('href','https://ai.rhyslindmark.com/givebetter');
+ await expect(sf.getByRole('link',{name:'All Bay Area research',exact:true})).toHaveAttribute('href','https://ai.rhyslindmark.com/givebetter/research');
  await expect(page.getByRole('link',{name:'Denver',exact:true})).toHaveAttribute('href','https://ai.rhyslindmark.com/givebetter/cities/denver');
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
 });
@@ -24,6 +27,18 @@ test('California and Denver scopes, empty state and expandable counties',async({
   else await expect(page.getByText('Benefits to people throughout the state of California.',{exact:true})).toBeVisible();
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
  }
+});
+test('California donor page uses SF presentation with prices and secondary progress',async({page})=>{
+ await page.goto('/california');
+ await expect(page.getByRole('heading',{name:'Giving in California',exact:true})).toBeVisible();
+ await expect(page.locator('.sf-home-principles img')).toHaveCount(3);
+ for(const image of await page.locator('.sf-home-principles img').all())expect(await image.evaluate((el:HTMLImageElement)=>el.complete&&el.naturalWidth>0)).toBeTruthy();
+ await expect(page.getByRole('columnheader',{name:'$ per better life',exact:true})).toBeVisible();
+ const progress=page.locator('details').filter({has:page.locator('summary').filter({hasText:'Research progress'})});
+ await expect(progress).not.toHaveAttribute('open','');
+ await page.getByText('Research progress',{exact:true}).click();
+ await expect(page.getByText(/100\/100 candidates screened/)).toBeVisible();
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
 });
 test('invalid edition does not become a fabricated geography',async({request})=>{
  expect((await request.get('/cities/not-a-city')).status()).toBe(404);

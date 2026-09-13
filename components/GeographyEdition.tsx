@@ -6,6 +6,7 @@ import {canonicalBase,editionPath} from '@/lib/geography-editions.mjs';
 import {reportsForEdition} from '@/lib/geography-reports.mjs';
 import {reportRegistry} from '@/lib/published-geography-reports';
 import EditionResearchTable from './EditionResearchTable';
+import EditionDonorHome from './EditionDonorHome';
 import '@/app/givebetter.css';
 import '@/app/edition.css';
 export function editionMetadata(id:string,research=false):Metadata {
@@ -23,6 +24,7 @@ export default function GeographyEdition({id,research=false}:{id:string;research
  if(!edition||!path)notFound();
  const metro=boundaries.metros.find(row=>row.id===id);
  const reports=reportsForEdition(reportRegistry,id);
+ if(id==='california'&&!research)return <EditionDonorHome id={id} label={edition.label} reports={reports} discovery={edition.discoveryAccepted} alpha={edition.alphaPublished} beta={edition.betaAcceptedPublished}/>;
  return <div className="givebetter"><EditionMasthead label={edition.label}/><main className="gb-edition">
   <nav aria-label="Edition navigation"><a href={canonicalBase+'/editions'}>All editions</a> · <a href={canonicalBase+path+(research?'':'/research')}>{research?'Edition overview':'Research progress'}</a></nav>
   <h1>{edition.label}{research?' Research':' Giving'}</h1>

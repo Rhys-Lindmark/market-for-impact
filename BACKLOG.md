@@ -1,5 +1,9 @@
 # Market for Impact backlog
 
+## Active priority — eleven-edition geographic expansion (September 13)
+
+New user-authorized work supersedes the SF-only stop rule below. Build California, USA and nine confirmed metro editions (NYC, LA, Chicago, Houston, Denver, Seattle, Boston, Atlanta, Detroit), each with 100 discovery candidates → 25 published alpha reports → ten beta deep dives → four qualified picks. Discovery/beta: GPT-6 Astra Medium; alpha: GPT-6 Astra Light. Read [the expansion plan](docs/geography-expansion-plan.md) and [edition progress](docs/geography-progress.json). California/USA discovery is active with three independent workers; freeze exact MSA boundaries before city discovery acceptance. Keep the existing SF product and completed research intact. The hourly schedule now follows this expansion; report every edition's alpha x/25 and beta x/10 in updates.
+
 ## Residual expense audit — September 12 UTC
 
 81/91 three-year averages remain available. Added St. Anthony's sourced FY2023 and FY2024 actuals to its disclosure, without combining overlapping fiscal/calendar periods into a false average. HOPE's March 2024 start explains its insufficient three-year operating history. Three parallel residual audits found no additional defensible complete series. See docs/expense-residuals.md for precise resolution requirements. Research discovery and all ten deeper reviews are complete; issue #191 now reflects that checkpoint. Do not repeat unchanged failed-source checks on hourly runs. Resume only for a materially new document, viable source path or explicit user-authorized next task; no outreach.

@@ -1,0 +1,742 @@
+{
+  "schemaVersion": 1,
+  "status": "Complete county membership extracted from authoritative Census delineation workbook",
+  "retrievedAt": "2026-09-13",
+  "boundaryVersion": "OMB-23-01-2023-07-21",
+  "delineationDate": "2023-07-21",
+  "source": {
+    "publisher": "U.S. Census Bureau; OMB delineations",
+    "title": "List 1. Core Based Statistical Areas (CBSAs), Metropolitan Divisions, and Combined Statistical Areas (CSAs), July 2023",
+    "url": "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2023/delineation-files/list1_2023.xlsx",
+    "index": "https://www.census.gov/geographies/reference-files/time-series/demo/metro-micro/delineation-files.html",
+    "currentVersionCorroboration": "https://tigerweb.geo.census.gov/tigerwebmain/TIGERweb_main.html",
+    "versionEvidence": "Census delineation index lists July 2023; current TIGERweb release explicitly uses OMB Bulletin 23-01, July 21 2023."
+  },
+  "method": "Extracted sheet1 XML with standard-library ZIP/XML reader. Retained rows whose CBSA title starts with one of nine requested city names AND whose area type is Metropolitan Statistical Area; grouped on column A CBSA Code, not column B metropolitan division or column C CSA. County FIPS combines zero-padded state J and county K.",
+  "usageRules": [
+    "Use complete MSA membership, including outlying counties and cross-state counties; never substitute city proper, CSA, or metropolitan division.",
+    "Determine beneficiary residence/service coverage against these counties before accepting city discovery entries; headquarters alone does not qualify.",
+    "Pin this boundaryVersion in cohort membership and model records; future OMB revisions require explicit cohort migration.",
+    "USA proposed scope: 50 states plus District of Columbia, excluding territories and foreign beneficiaries. California scope: statewide California beneficiaries.",
+    "All nine MSA definitions are extracted; no unresolved county membership."
+  ],
+  "metros": [
+    {
+      "id": "new-york-city",
+      "cbsaCode": "35620",
+      "officialName": "New York-Newark-Jersey City, NY-NJ",
+      "areaType": "Metropolitan Statistical Area",
+      "boundaryVersion": "OMB-23-01-2023-07-21",
+      "countyCount": 22,
+      "counties": [
+        {
+          "fips": "34023",
+          "name": "Middlesex County",
+          "state": "New Jersey",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "34025",
+          "name": "Monmouth County",
+          "state": "New Jersey",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "34029",
+          "name": "Ocean County",
+          "state": "New Jersey",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "34035",
+          "name": "Somerset County",
+          "state": "New Jersey",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "36059",
+          "name": "Nassau County",
+          "state": "New York",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "36103",
+          "name": "Suffolk County",
+          "state": "New York",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "34013",
+          "name": "Essex County",
+          "state": "New Jersey",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "34019",
+          "name": "Hunterdon County",
+          "state": "New Jersey",
+          "centralOrOutlying": "Outlying"
+        },
+        {
+          "fips": "34027",
+          "name": "Morris County",
+          "state": "New Jersey",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "34037",
+          "name": "Sussex County",
+          "state": "New Jersey",
+          "centralOrOutlying": "Outlying"
+        },
+        {
+          "fips": "34039",
+          "name": "Union County",
+          "state": "New Jersey",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "34003",
+          "name": "Bergen County",
+          "state": "New Jersey",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "34017",
+          "name": "Hudson County",
+          "state": "New Jersey",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "34031",
+          "name": "Passaic County",
+          "state": "New Jersey",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "36005",
+          "name": "Bronx County",
+          "state": "New York",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "36047",
+          "name": "Kings County",
+          "state": "New York",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "36061",
+          "name": "New York County",
+          "state": "New York",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "36079",
+          "name": "Putnam County",
+          "state": "New York",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "36081",
+          "name": "Queens County",
+          "state": "New York",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "36085",
+          "name": "Richmond County",
+          "state": "New York",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "36087",
+          "name": "Rockland County",
+          "state": "New York",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "36119",
+          "name": "Westchester County",
+          "state": "New York",
+          "centralOrOutlying": "Central"
+        }
+      ]
+    },
+    {
+      "id": "los-angeles",
+      "cbsaCode": "31080",
+      "officialName": "Los Angeles-Long Beach-Anaheim, CA",
+      "areaType": "Metropolitan Statistical Area",
+      "boundaryVersion": "OMB-23-01-2023-07-21",
+      "countyCount": 2,
+      "counties": [
+        {
+          "fips": "06059",
+          "name": "Orange County",
+          "state": "California",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "06037",
+          "name": "Los Angeles County",
+          "state": "California",
+          "centralOrOutlying": "Central"
+        }
+      ]
+    },
+    {
+      "id": "chicago",
+      "cbsaCode": "16980",
+      "officialName": "Chicago-Naperville-Elgin, IL-IN",
+      "areaType": "Metropolitan Statistical Area",
+      "boundaryVersion": "OMB-23-01-2023-07-21",
+      "countyCount": 13,
+      "counties": [
+        {
+          "fips": "17031",
+          "name": "Cook County",
+          "state": "Illinois",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "17043",
+          "name": "DuPage County",
+          "state": "Illinois",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "17063",
+          "name": "Grundy County",
+          "state": "Illinois",
+          "centralOrOutlying": "Outlying"
+        },
+        {
+          "fips": "17111",
+          "name": "McHenry County",
+          "state": "Illinois",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "17197",
+          "name": "Will County",
+          "state": "Illinois",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "17037",
+          "name": "DeKalb County",
+          "state": "Illinois",
+          "centralOrOutlying": "Outlying"
+        },
+        {
+          "fips": "17089",
+          "name": "Kane County",
+          "state": "Illinois",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "17093",
+          "name": "Kendall County",
+          "state": "Illinois",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "17097",
+          "name": "Lake County",
+          "state": "Illinois",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "18073",
+          "name": "Jasper County",
+          "state": "Indiana",
+          "centralOrOutlying": "Outlying"
+        },
+        {
+          "fips": "18089",
+          "name": "Lake County",
+          "state": "Indiana",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "18111",
+          "name": "Newton County",
+          "state": "Indiana",
+          "centralOrOutlying": "Outlying"
+        },
+        {
+          "fips": "18127",
+          "name": "Porter County",
+          "state": "Indiana",
+          "centralOrOutlying": "Central"
+        }
+      ]
+    },
+    {
+      "id": "houston",
+      "cbsaCode": "26420",
+      "officialName": "Houston-Pasadena-The Woodlands, TX",
+      "areaType": "Metropolitan Statistical Area",
+      "boundaryVersion": "OMB-23-01-2023-07-21",
+      "countyCount": 10,
+      "counties": [
+        {
+          "fips": "48015",
+          "name": "Austin County",
+          "state": "Texas",
+          "centralOrOutlying": "Outlying"
+        },
+        {
+          "fips": "48039",
+          "name": "Brazoria County",
+          "state": "Texas",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "48071",
+          "name": "Chambers County",
+          "state": "Texas",
+          "centralOrOutlying": "Outlying"
+        },
+        {
+          "fips": "48157",
+          "name": "Fort Bend County",
+          "state": "Texas",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "48167",
+          "name": "Galveston County",
+          "state": "Texas",
+          "centralOrOutlying": "Outlying"
+        },
+        {
+          "fips": "48201",
+          "name": "Harris County",
+          "state": "Texas",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "48291",
+          "name": "Liberty County",
+          "state": "Texas",
+          "centralOrOutlying": "Outlying"
+        },
+        {
+          "fips": "48339",
+          "name": "Montgomery County",
+          "state": "Texas",
+          "centralOrOutlying": "Outlying"
+        },
+        {
+          "fips": "48407",
+          "name": "San Jacinto County",
+          "state": "Texas",
+          "centralOrOutlying": "Outlying"
+        },
+        {
+          "fips": "48473",
+          "name": "Waller County",
+          "state": "Texas",
+          "centralOrOutlying": "Central"
+        }
+      ]
+    },
+    {
+      "id": "denver",
+      "cbsaCode": "19740",
+      "officialName": "Denver-Aurora-Centennial, CO",
+      "areaType": "Metropolitan Statistical Area",
+      "boundaryVersion": "OMB-23-01-2023-07-21",
+      "countyCount": 10,
+      "counties": [
+        {
+          "fips": "08001",
+          "name": "Adams County",
+          "state": "Colorado",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "08005",
+          "name": "Arapahoe County",
+          "state": "Colorado",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "08014",
+          "name": "Broomfield County",
+          "state": "Colorado",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "08019",
+          "name": "Clear Creek County",
+          "state": "Colorado",
+          "centralOrOutlying": "Outlying"
+        },
+        {
+          "fips": "08031",
+          "name": "Denver County",
+          "state": "Colorado",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "08035",
+          "name": "Douglas County",
+          "state": "Colorado",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "08039",
+          "name": "Elbert County",
+          "state": "Colorado",
+          "centralOrOutlying": "Outlying"
+        },
+        {
+          "fips": "08047",
+          "name": "Gilpin County",
+          "state": "Colorado",
+          "centralOrOutlying": "Outlying"
+        },
+        {
+          "fips": "08059",
+          "name": "Jefferson County",
+          "state": "Colorado",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "08093",
+          "name": "Park County",
+          "state": "Colorado",
+          "centralOrOutlying": "Outlying"
+        }
+      ]
+    },
+    {
+      "id": "seattle",
+      "cbsaCode": "42660",
+      "officialName": "Seattle-Tacoma-Bellevue, WA",
+      "areaType": "Metropolitan Statistical Area",
+      "boundaryVersion": "OMB-23-01-2023-07-21",
+      "countyCount": 3,
+      "counties": [
+        {
+          "fips": "53061",
+          "name": "Snohomish County",
+          "state": "Washington",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "53033",
+          "name": "King County",
+          "state": "Washington",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "53053",
+          "name": "Pierce County",
+          "state": "Washington",
+          "centralOrOutlying": "Central"
+        }
+      ]
+    },
+    {
+      "id": "boston",
+      "cbsaCode": "14460",
+      "officialName": "Boston-Cambridge-Newton, MA-NH",
+      "areaType": "Metropolitan Statistical Area",
+      "boundaryVersion": "OMB-23-01-2023-07-21",
+      "countyCount": 7,
+      "counties": [
+        {
+          "fips": "25021",
+          "name": "Norfolk County",
+          "state": "Massachusetts",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "25023",
+          "name": "Plymouth County",
+          "state": "Massachusetts",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "25025",
+          "name": "Suffolk County",
+          "state": "Massachusetts",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "25009",
+          "name": "Essex County",
+          "state": "Massachusetts",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "25017",
+          "name": "Middlesex County",
+          "state": "Massachusetts",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "33015",
+          "name": "Rockingham County",
+          "state": "New Hampshire",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "33017",
+          "name": "Strafford County",
+          "state": "New Hampshire",
+          "centralOrOutlying": "Outlying"
+        }
+      ]
+    },
+    {
+      "id": "atlanta",
+      "cbsaCode": "12060",
+      "officialName": "Atlanta-Sandy Springs-Roswell, GA",
+      "areaType": "Metropolitan Statistical Area",
+      "boundaryVersion": "OMB-23-01-2023-07-21",
+      "countyCount": 29,
+      "counties": [
+        {
+          "fips": "13013",
+          "name": "Barrow County",
+          "state": "Georgia",
+          "centralOrOutlying": "Outlying"
+        },
+        {
+          "fips": "13035",
+          "name": "Butts County",
+          "state": "Georgia",
+          "centralOrOutlying": "Outlying"
+        },
+        {
+          "fips": "13045",
+          "name": "Carroll County",
+          "state": "Georgia",
+          "centralOrOutlying": "Outlying"
+        },
+        {
+          "fips": "13063",
+          "name": "Clayton County",
+          "state": "Georgia",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "13077",
+          "name": "Coweta County",
+          "state": "Georgia",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "13085",
+          "name": "Dawson County",
+          "state": "Georgia",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "13089",
+          "name": "DeKalb County",
+          "state": "Georgia",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "13097",
+          "name": "Douglas County",
+          "state": "Georgia",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "13113",
+          "name": "Fayette County",
+          "state": "Georgia",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "13117",
+          "name": "Forsyth County",
+          "state": "Georgia",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "13121",
+          "name": "Fulton County",
+          "state": "Georgia",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "13135",
+          "name": "Gwinnett County",
+          "state": "Georgia",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "13149",
+          "name": "Heard County",
+          "state": "Georgia",
+          "centralOrOutlying": "Outlying"
+        },
+        {
+          "fips": "13151",
+          "name": "Henry County",
+          "state": "Georgia",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "13159",
+          "name": "Jasper County",
+          "state": "Georgia",
+          "centralOrOutlying": "Outlying"
+        },
+        {
+          "fips": "13187",
+          "name": "Lumpkin County",
+          "state": "Georgia",
+          "centralOrOutlying": "Outlying"
+        },
+        {
+          "fips": "13199",
+          "name": "Meriwether County",
+          "state": "Georgia",
+          "centralOrOutlying": "Outlying"
+        },
+        {
+          "fips": "13211",
+          "name": "Morgan County",
+          "state": "Georgia",
+          "centralOrOutlying": "Outlying"
+        },
+        {
+          "fips": "13217",
+          "name": "Newton County",
+          "state": "Georgia",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "13227",
+          "name": "Pickens County",
+          "state": "Georgia",
+          "centralOrOutlying": "Outlying"
+        },
+        {
+          "fips": "13231",
+          "name": "Pike County",
+          "state": "Georgia",
+          "centralOrOutlying": "Outlying"
+        },
+        {
+          "fips": "13247",
+          "name": "Rockdale County",
+          "state": "Georgia",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "13255",
+          "name": "Spalding County",
+          "state": "Georgia",
+          "centralOrOutlying": "Outlying"
+        },
+        {
+          "fips": "13297",
+          "name": "Walton County",
+          "state": "Georgia",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "13015",
+          "name": "Bartow County",
+          "state": "Georgia",
+          "centralOrOutlying": "Outlying"
+        },
+        {
+          "fips": "13057",
+          "name": "Cherokee County",
+          "state": "Georgia",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "13067",
+          "name": "Cobb County",
+          "state": "Georgia",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "13143",
+          "name": "Haralson County",
+          "state": "Georgia",
+          "centralOrOutlying": "Outlying"
+        },
+        {
+          "fips": "13223",
+          "name": "Paulding County",
+          "state": "Georgia",
+          "centralOrOutlying": "Central"
+        }
+      ]
+    },
+    {
+      "id": "detroit",
+      "cbsaCode": "19820",
+      "officialName": "Detroit-Warren-Dearborn, MI",
+      "areaType": "Metropolitan Statistical Area",
+      "boundaryVersion": "OMB-23-01-2023-07-21",
+      "countyCount": 6,
+      "counties": [
+        {
+          "fips": "26163",
+          "name": "Wayne County",
+          "state": "Michigan",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "26087",
+          "name": "Lapeer County",
+          "state": "Michigan",
+          "centralOrOutlying": "Outlying"
+        },
+        {
+          "fips": "26093",
+          "name": "Livingston County",
+          "state": "Michigan",
+          "centralOrOutlying": "Outlying"
+        },
+        {
+          "fips": "26099",
+          "name": "Macomb County",
+          "state": "Michigan",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "26125",
+          "name": "Oakland County",
+          "state": "Michigan",
+          "centralOrOutlying": "Central"
+        },
+        {
+          "fips": "26147",
+          "name": "St. Clair County",
+          "state": "Michigan",
+          "centralOrOutlying": "Outlying"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "metroCount": 9,
+    "countyMembershipCount": 102,
+    "duplicateCountyWithinMetro": false,
+    "allFipsFiveDigits": true,
+    "allRowsExplicitlyMetropolitan": true
+  },
+  "effort": {
+    "model": "gpt-6-astra",
+    "reasoning": "medium",
+    "modelEvidence": "Parent dispatch confirmation",
+    "startedAt": "2026-09-13T18:10:13Z",
+    "completedAt": "2026-09-13T18:10:56Z",
+    "note": "43 seconds to verified extraction; artifact serialization follows. General geography planning work, not organization research time."
+  }
+}

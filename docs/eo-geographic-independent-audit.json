@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "kind": "independent-geographic-model-audit",
+  "organizationId": "org:end-overdose",
+  "edition": "california",
+  "decision": "accept-conditional-geographic-scenario-with-definition-clarification",
+  "numericCorrectionRequired": false,
+  "summary": "g=p*rho/(1-p+p*rho) correctly divides an unchanged all-population total using relative geographic yield. Approximately $13 million per ten CA QALYs is an inspectable subjective partial-naloxone scenario, not a measured or statistical expected return.",
+  "arithmetic": {
+    "central": {
+      "p": 0.15,
+      "rho": 0.75,
+      "g": 0.11688311688311688,
+      "Qall": 0.6582866193834341,
+      "Qca": 0.0769425918759858,
+      "Qelse": 0.5813440275074483,
+      "pricePerTen": 12996702.80943714
+    },
+    "favorable": {
+      "g": 0.6,
+      "Qca": 58.604111277072015,
+      "pricePerTen": 17063.6492595569
+    },
+    "pessimistic": {
+      "g": 0.005076142131979696,
+      "Qca": 6.833939493325894e-7,
+      "pricePerTen": 1463284831504.013
+    },
+    "donatedStock": {
+      "Qca": 0.1241009546386868,
+      "pricePerTen": 8057955.741851026
+    },
+    "geographyLowPrice": 151909513.35705748,
+    "geographyHighPrice": 3038190.2671411494,
+    "method": "Independently recalculated every scenario multiplier and price; zero scenarios have no finite positive price. Compared five existing scenario Qall values to accepted USA registry: exact equality for all five. New CA-only sensitivities retain central Qall.",
+    "nationalClinicalModel": "No re-audit or change to underlying clinical assumptions. CA allocation uses all-population QALYs, not USA-edition QALYs already multiplied by USA geography. Do not add CA return to USA return: nested geographies are not additive."
+  },
+  "requiredClarifications": [
+    {
+      "location": "proposedModel.geographicAttribution and inputs[p_CA,rho_CA]",
+      "edit": "Define p as a pre-yield share of marginal at-risk exposure/person-time geographically in California, with location/mobility handled there once. Define rho as CA/non-CA incremental health yield per that exposure, after relative differences in existing rescue/targeting. Remove wording that both p and rho absorb the same patient-location and alternative-rescue judgments unless a conditional factorization is specified.",
+      "reason": "Current wording assigns patient location, later mobility and alternatives to both terms, leaving possible duplicate adjustments. No numeric change is necessary if .15/.75 are explicitly interpreted as these distinct conditional judgments."
+    },
+    {
+      "location": "Formula interpretation / geographic paragraph",
+      "edit": "State that normalization holds the nationwide mean clinical yield fixed: the implied elsewhere yield is proportional to 1/(1-p+p*rho), and CA yield to rho/(1-p+p*rho). This is allocation calibration, not a separately demonstrated loss of total clinical benefit.",
+      "reason": "Lower rho reallocates benefit outside CA. It does not reduce Qall. If future evidence changes actual population mix/average yield, recompute national model rather than relying on fixed-total allocation."
+    },
+    {
+      "location": "Every published price/card",
+      "edit": "Keep visible 'subjective CA allocation; naloxone mortality pathway only; full recipient cost' and round central to about $13 million. Preserve Sold out caveat and zero-CA scenario.",
+      "reason": "Neither p=.15 nor rho=.75 is source-identified, and other portfolio benefits are unestimated."
+    }
+  ],
+  "sourceChecks": [
+    {
+      "url": "https://endoverdose.net/about/chapters/",
+      "method": "Fresh primary fulltext and independently inspected preserved HTML headings.",
+      "finding": "62 listed chapter cards,16 California cards confirmed. Directory conflicts with80+campaign; directory labels are imperfect (some geographictypos), so not a complete calibrated activity census."
+    },
+    {
+      "url": "https://endoverdose.net/campaign/",
+      "method": "Fresh primary relevant fulltext.",
+      "finding": "August2026 campaign describes80+chapters, expansiontoward100, Arkansasoperations and LosAngelesfundraiser. Establishes mixedgeography, not15% marginalexposure."
+    },
+    {
+      "url": "https://endoverdose.net/events/",
+      "method": "Fresh primary fulltext firstpage.",
+      "finding": "California and nonCalifornia events, past/future dates mixed; no attendee or completedkit weights. Supports footprint only."
+    },
+    {
+      "url": "https://store.endoverdose.net/products/narcan-kit-ca-residents",
+      "method": "Fresh primary extracted text.",
+      "finding": "CA kit product states two intranasaldoses, trainingrequired, shippingcharged and Soldout. Specificoffer is not current fulfilledstock or donation-sensitivecapacity."
+    },
+    {
+      "url": "https://www.dhcs.ca.gov/individuals/naloxone-distribution-project/ndp-frequently-asked-questions/",
+      "method": "Fresh primary FAQ relevant passages.",
+      "finding": "Public free supply to eligibleentities confirmed; not directindividualdistribution. This makes substitution plausible but doesnot establish California yield25%lowerthanelsewhere; lastmiletraining/distribution can complementpublicstock."
+    },
+    {
+      "url": "https://cdn.sanity.io/files/03xshhuu/production/fc944226581fe8e9a80cd6d39aa74f59574d954e.pdf",
+      "method": "Reused author source verification, not independently reopened in this bounded geographic audit.",
+      "finding": "Given four event figures sum5280 and5280/71733=7.3606289992% independently reproduced. Exact pagefigures/date remain priorauthorvisualevidence; not newindependentverification and not a lowerboundoncurrentCAhealth."
+    }
+  ],
+  "timing": {
+    "record": {
+      "organization": "End Overdose",
+      "session": {
+        "id": "8c9db338-1cd0-4fae-9736-8c6e1cf4bafe",
+        "workerId": "expansion_method",
+        "phase": "research",
+        "startedAt": "2026-09-13T23:43:00.835Z",
+        "endedAt": "2026-09-13T23:44:48.768Z",
+        "model": {
+          "id": "gpt-6-astra",
+          "name": "GPT-6 Astra Medium",
+          "evidence": "Parent retained Astra Medium dispatch"
+        },
+        "evidence": "end-overdose-geographic-independent-audit"
+      }
+    },
+    "seconds": 107.933,
+    "coverage": "bounded independent geographic audit only",
+    "authorSecondsRecredited": 0,
+    "houstonSecondsIncluded": 0,
+    "modelReasoningEffort": "medium"
+  },
+  "scope": "No Site edits, no full clinical redo or finance recredit, no acceptance-count change."
+}

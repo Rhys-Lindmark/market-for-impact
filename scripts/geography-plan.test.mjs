@@ -57,8 +57,27 @@ for(const edition of ['california','usa']){
  assert.ok(row.heldDiscoveryIds.every(id=>typeof id==='string'&&id.startsWith(edition+':')));
  for(const record of accepted){assert.equal(record.geographyBoundary,row.boundaryVersion);assert.ok(record.primarySources.length);assert.ok(record.verifiedEvidence||record.geographyEvidence);}
 }
+const la=read('geography-discovery/los-angeles-cohort-final.json');
+const laProgress=p.editions.find(e=>e.id==='los-angeles');
+const laCohort=read('geography-discovery/accepted-cohorts.json').editions.find(e=>e.id==='los-angeles');
+assert.equal(la.records.length,100);
+assert.equal(new Set(la.records.map(r=>r.canonicalOrganizationId)).size,100);
+assert.deepEqual(laProgress.acceptedDiscoveryIds,laCohort.acceptedDiscoveryIds);
+assert.deepEqual([...laProgress.acceptedDiscoveryIds].sort(),la.records.map(r=>r.canonicalOrganizationId).sort());
+assert.equal(laProgress.selectedAlphaIds.length,25);
+assert.deepEqual(laProgress.selectedAlphaIds,laCohort.selectedAlphaIds);
+assert.equal(new Set([...laCohort.selectedAlphaIds,...laCohort.alternateIds]).size,35);
+for(const id of [...laCohort.selectedAlphaIds,...laCohort.alternateIds])assert.ok(laProgress.acceptedDiscoveryIds.includes(id));
+for(const r of la.records){
+ assert.equal(r.status,'accept-for-discovery');
+ assert.equal(r.boundaryVersion,laProgress.boundaryVersion);
+ assert.ok(r.primarySources.length&&r.mechanism&&r.falsifier&&r.acceptanceBasis);
+ assert.ok(r.primarySources.every(s=>s.url.startsWith('https://')&&s.retrieved));
+ assert.ok(r.inScopeCountyAnchors.length&&r.inScopeCountyAnchors.every(c=>['06037','06059'].includes(c)));
+}
+assert.equal(laProgress.alphaPublished,0);
 const denver=read('geography-discovery/denver-seed.json');
 assert.equal(denver.candidates.length,40);
 assert.equal(p.editions.find(e=>e.id==='denver').discoveryProvisional,40);
 assert.equal(p.editions.find(e=>e.id==='denver').discoveryAccepted,0);
-console.log('PASS:11 editions; nested publication/selection counts;9 MSAs/102 counties;200 accepted discovery,50 selected research priorities,4 historical holds and40 provisional Denver leads.');
+console.log('PASS:11 editions; nested publication/selection counts;9 MSAs/102 counties;300 accepted discovery,75 selected research priorities,4 historical holds and40 provisional Denver leads.');

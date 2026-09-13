@@ -30,6 +30,8 @@ For all three: signature or auditor dates are not claimed as web-publication dat
 
 ## Release verification
 
+A separate Astra Medium reviewer reproduced all four central models, checked corrected surgical harm treatment and fresh primary financial extracts for the three USA reports, and confirmed current care boundaries and clinical comparators. No material blocker was found. The HHCLA county output was independently confirmed, but its audit PDF was not independently re-extracted. The 205.120 seconds of separate audit intervals are retained in the handoff packet and are not added to author-time headers.
+
 Twenty-one model, registry, geography and research-effort tests pass. The phone/tablet suite completed at 21:58:35 UTC with a passed terminal result and no failed tests; its report loop covers all ten edition reports, donation and contents links, model disclosures, scoped APIs and table prices, plus desktop contents and an existing SF report. Focused lint passes. Production output was built successfully from the unchanged runtime source. Full-repository lint retains the previously reproduced baseline of 178 link-rule errors and three warnings; this is not represented as a clean full lint run.
 
 Canonical live-route and API checks remain the post-deployment gate. No top picks or beta acceptance are claimed by this release.

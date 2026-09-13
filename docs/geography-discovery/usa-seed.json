@@ -1,0 +1,976 @@
+{
+  "schema_version": 1,
+  "task": "GiveBetter USA expansion: initial 20 discovery seeds toward 100, not final 25 or full reports",
+  "status": "provisional discovery seeds only; not accepted D100 entries, recommendations, or established threshold-clearing organizations",
+  "batch_started_at": "2026-09-13 18:05:34 UTC",
+  "batch_ended_at": "2026-09-13 18:10:07 UTC",
+  "model": {
+    "id": "gpt-6-astra",
+    "reasoning": "medium",
+    "evidence": "Parent agent explicitly assigned gpt-6-astra medium for this research worker; no private runtime log consulted"
+  },
+  "geography_rule": "Count only health gains for US residents. National coverage is not required for each intervention, but organization must have genuine domestic impact. US headquarters alone is insufficient.",
+  "valuation_rule": "<$100k per 10 USA QALYs means <$10k/QALY; <$1m per 10 means <$100k/QALY. Hypotheses below are qualitative opportunities to investigate, not estimated costs or likelihoods of clearing thresholds.",
+  "gift_scope_rule": "Default ordinary whole-organization gift: include overhead, all portfolio activities, country allocation, donor restrictions, additionality, substitution and real room for more funding. Do not cherry-pick program economics or credit the entire coalition policy result.",
+  "existing_report_overlap_check": "Read report file inventory and searched all data/**/*report.json for the 20 exact organization names (with FRAC regex); no matches. This is not a complete search of every report alias, historical source or discovery document.",
+  "workspace": {
+    "read_only": true,
+    "path": "/Users/rhyslindmark/Documents/Codex/2026-08-29/okay-you-re-gonna-make-this/work/market-for-impact-expense-residuals",
+    "baseline": "66 MB checkout; filesystem 62 GiB available",
+    "installs": 0,
+    "servers": 0,
+    "site_edits": 0
+  },
+  "provenance_note": "Per-organization helper intervals below measure sequential source retrieval only. Coverage is partial: earlier generic discovery, subsequent reading/synthesis, overlap checking and final artifact composition are not assigned or divided among organizations. Batch start/end is elapsed task span, never per-report research time. Start records were persisted with apply_patch and finished with repository research-session.mjs. No modeling or independent audit claimed.",
+  "candidates": [
+    {
+      "discovery_id": "usa-seed-01",
+      "name": "National Center for Healthy Housing",
+      "checked_primary_url": "https://nchh.org/policy/",
+      "source_check_date": "2026-09-13",
+      "source_check_method": "search_result_excerpt_only: returned text from primary-source URL; full page was not opened",
+      "mechanism": "Healthy housing policy and implementation",
+      "us_benefit_boundary": "US residents exposed to lead, asthma triggers and housing injury hazards; federal/state/local policy reach.",
+      "threshold_hypothesis": "Potential <$100k/10 via policy-induced reductions in lead and asthma exposure across many homes; <$1m/10 remains a plausible weaker screen if additional policy influence is small.",
+      "whole_organization_gift_scope": "Ordinary whole-organization gift funds research, technical assistance and advocacy; include all costs and do not book public remediation spending as the charity's own output.",
+      "key_disqualifier_or_uncertainty": "Attribution to changed policy, implementation probability and clinical QALY conversion; lead-related earnings are not automatically QALYs.",
+      "screen_priority": "priority",
+      "existing_report_overlap": "No exact-name match in data report JSON inventory",
+      "coverage": "partial",
+      "research_intervals": [
+        {
+          "id": "144526cb-9b08-4231-9dd3-d2a6608f84c2",
+          "workerId": "usa-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T18:06:42.671Z",
+          "endedAt": "2026-09-13T18:06:44.045Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task runtime assignment: gpt-6-astra medium"
+          },
+          "evidence": "/tmp/givebetter-usa-discovery-seed.json"
+        }
+      ],
+      "acceptance_status": "provisional_seed_not_accepted_D100",
+      "operating_geography_evidence": {
+        "source_url": "https://nchh.org/policy/",
+        "retrieval_method": "search_result_excerpt_only",
+        "source_supported_summary": "Primary organization's policy page describes changing national, state and local policy, eliminating lead poisoning in the United States, and engaging communities nationwide.",
+        "limitation": "National domestic policy scope explicitly supported; service delivery coverage not established.",
+        "independent_audit": false
+      },
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "unknown_not_checked_against_legal_or_registration_record",
+        "donation_payee_verified": false,
+        "source_url": null
+      }
+    },
+    {
+      "discovery_id": "usa-seed-02",
+      "name": "Green & Healthy Homes Initiative",
+      "checked_primary_url": "https://www.greenandhealthyhomes.org/about-us/",
+      "source_check_date": "2026-09-13",
+      "source_check_method": "search_result_excerpt_only: returned text from primary-source URL; full page was not opened",
+      "mechanism": "Housing remediation and systems coordination",
+      "us_benefit_boundary": "Low-income US families, children and older residents; interventions and technical assistance across US communities.",
+      "threshold_hypothesis": "Potential <$100k/10 if enduring asthma and injury reductions combine with public/private co-funding; otherwise test <$1m/10 using full project costs.",
+      "whole_organization_gift_scope": "Whole-org mix includes direct repairs, local demonstration and national systems work; count public funding as additional only with evidence.",
+      "key_disqualifier_or_uncertainty": "Before/after health claims lack a clear counterfactual; repairs can be expensive and public funds may substitute.",
+      "screen_priority": "priority",
+      "existing_report_overlap": "No exact-name match in data report JSON inventory",
+      "coverage": "partial",
+      "research_intervals": [
+        {
+          "id": "975be076-ca21-4036-9eb9-9f26eb230588",
+          "workerId": "usa-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T18:06:44.164Z",
+          "endedAt": "2026-09-13T18:06:45.616Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task runtime assignment: gpt-6-astra medium"
+          },
+          "evidence": "/tmp/givebetter-usa-discovery-seed.json"
+        }
+      ],
+      "acceptance_status": "provisional_seed_not_accepted_D100",
+      "operating_geography_evidence": {
+        "source_url": "https://www.greenandhealthyhomes.org/about-us/",
+        "retrieval_method": "search_result_excerpt_only",
+        "source_supported_summary": "Organization's about page says its impact is felt nationwide and separately describes Baltimore intervention results.",
+        "limitation": "Domestic national systems reach plus Baltimore direct work; number and coverage of active local sites not checked.",
+        "independent_audit": false
+      },
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "unknown_not_checked_against_legal_or_registration_record",
+        "donation_payee_verified": false,
+        "source_url": null
+      }
+    },
+    {
+      "discovery_id": "usa-seed-03",
+      "name": "Earthjustice",
+      "checked_primary_url": "https://earthjustice.org/our-work/clean-air-clean-water",
+      "source_check_date": "2026-09-13",
+      "source_check_method": "search_result_excerpt_only: returned text from primary-source URL; full page was not opened",
+      "mechanism": "Environmental litigation",
+      "us_benefit_boundary": "US-resident health from domestic air, water and toxic-exposure decisions; exclude overseas and ecological-only benefits.",
+      "threshold_hypothesis": "Potential <$100k/10 from small attributable shares of population-scale pollution reductions, conditional on litigation changing implementation.",
+      "whole_organization_gift_scope": "Unrestricted whole-org gift diluted by climate, biodiversity and international work; retain full portfolio expense or evidence-based allocation.",
+      "key_disqualifier_or_uncertainty": "Do not credit an entire regulation to one litigant; reversals, delays, substitution and current marginal funding matter.",
+      "screen_priority": "priority",
+      "existing_report_overlap": "No exact-name match in data report JSON inventory",
+      "coverage": "partial",
+      "research_intervals": [
+        {
+          "id": "7083a595-3857-44d9-86dd-979f7d77964d",
+          "workerId": "usa-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T18:06:45.734Z",
+          "endedAt": "2026-09-13T18:06:47.051Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task runtime assignment: gpt-6-astra medium"
+          },
+          "evidence": "/tmp/givebetter-usa-discovery-seed.json"
+        }
+      ],
+      "acceptance_status": "provisional_seed_not_accepted_D100",
+      "operating_geography_evidence": {
+        "source_url": "https://earthjustice.org/our-work/clean-air-clean-water",
+        "retrieval_method": "search_result_excerpt_only",
+        "source_supported_summary": "Clean air/water page names US federal Clean Air Act work and California, Northwest, Rocky Mountain and Washington DC offices; also identifies an International Program.",
+        "limitation": "Domestic work is explicit; total US share and international allocation unmeasured.",
+        "independent_audit": false
+      },
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "unknown_not_checked_against_legal_or_registration_record",
+        "donation_payee_verified": false,
+        "source_url": null
+      }
+    },
+    {
+      "discovery_id": "usa-seed-04",
+      "name": "Smart Growth America",
+      "checked_primary_url": "https://www.smartgrowthamerica.org/focus_areas/transportation-and-complete-streets/",
+      "source_check_date": "2026-09-13",
+      "source_check_method": "search_result_excerpt_only: returned text from primary-source URL; full page was not opened",
+      "mechanism": "Street safety policy and implementation",
+      "us_benefit_boundary": "US pedestrians, cyclists and road users affected by state/local street design and transport policy.",
+      "threshold_hypothesis": "Potential <$100k/10 through durable avoided fatal/injurious crashes across adopting jurisdictions; test <$1m/10 after attribution and adoption discounts.",
+      "whole_organization_gift_scope": "Whole organization includes broader land-use and economic development work; include that dilution.",
+      "key_disqualifier_or_uncertainty": "Adopting a Complete Streets policy is not a completed redesign; physical infrastructure and counterfactual adoption costs required.",
+      "screen_priority": "priority",
+      "existing_report_overlap": "No exact-name match in data report JSON inventory",
+      "coverage": "partial",
+      "research_intervals": [
+        {
+          "id": "29d026ca-859e-481e-b406-206c61e2cc6c",
+          "workerId": "usa-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T18:06:47.171Z",
+          "endedAt": "2026-09-13T18:06:49.035Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task runtime assignment: gpt-6-astra medium"
+          },
+          "evidence": "/tmp/givebetter-usa-discovery-seed.json"
+        }
+      ],
+      "acceptance_status": "provisional_seed_not_accepted_D100",
+      "operating_geography_evidence": {
+        "source_url": "https://www.smartgrowthamerica.org/focus_areas/transportation-and-complete-streets/",
+        "retrieval_method": "search_result_excerpt_only",
+        "source_supported_summary": "Organization describes a national roadway safety problem, work with communities adopting Complete Streets policies, and the State Smart Transportation Initiative.",
+        "limitation": "US community/state systems work supported; exact currently active locations not checked.",
+        "independent_audit": false
+      },
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "unknown_not_checked_against_legal_or_registration_record",
+        "donation_payee_verified": false,
+        "source_url": null
+      }
+    },
+    {
+      "discovery_id": "usa-seed-05",
+      "name": "Kids and Car Safety",
+      "checked_primary_url": "https://www.kidsandcars.org/accomplishments-and-history",
+      "source_check_date": "2026-09-13",
+      "source_check_method": "search_result_excerpt_only: returned text from primary-source URL; full page was not opened",
+      "mechanism": "Child vehicle injury prevention and product regulation",
+      "us_benefit_boundary": "US children exposed to nontraffic vehicle deaths/injuries; exclude pet welfare from USA human QALYs.",
+      "threshold_hypothesis": "Potential <$100k/10 because an additional childhood death prevented can yield substantial healthy life-years and safety rules apply to a vehicle fleet.",
+      "whole_organization_gift_scope": "Whole nonprofit includes data, advocacy, education and family support; assess ordinary donated funds across all work.",
+      "key_disqualifier_or_uncertainty": "Small absolute mortality burden, manufacturers' independent progress and uncertain marginal policy contribution may erase apparent upside.",
+      "screen_priority": "priority",
+      "existing_report_overlap": "No exact-name match in data report JSON inventory",
+      "coverage": "partial",
+      "research_intervals": [
+        {
+          "id": "158167f4-5daa-4bff-9723-5b8ed41b9bd0",
+          "workerId": "usa-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T18:06:49.152Z",
+          "endedAt": "2026-09-13T18:06:50.390Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task runtime assignment: gpt-6-astra medium"
+          },
+          "evidence": "/tmp/givebetter-usa-discovery-seed.json"
+        }
+      ],
+      "acceptance_status": "provisional_seed_not_accepted_D100",
+      "operating_geography_evidence": {
+        "source_url": "https://www.kidsandcars.org/accomplishments-and-history",
+        "retrieval_method": "search_result_excerpt_only",
+        "source_supported_summary": "Organization identifies itself as a national nonprofit; related primary education excerpt describes its national Look Before You Lock program.",
+        "limitation": "National remit supported; present program coverage and share of benefits outside US not verified.",
+        "independent_audit": false
+      },
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "unknown_not_checked_against_legal_or_registration_record",
+        "donation_payee_verified": false,
+        "source_url": null
+      }
+    },
+    {
+      "discovery_id": "usa-seed-06",
+      "name": "American Foundation for Suicide Prevention",
+      "checked_primary_url": "https://annual2022.afsp.org/project_2025",
+      "source_check_date": "2026-09-13",
+      "source_check_method": "search_result_excerpt_only: returned text from primary-source URL; full page was not opened",
+      "mechanism": "Suicide prevention systems, research and education",
+      "us_benefit_boundary": "US people served by health systems, emergency departments, corrections and firearm-community partnerships.",
+      "threshold_hypothesis": "Potential <$1m/10 if modest additional improvements in high-risk clinical pathways avert deaths; <$100k/10 needs strong systems influence.",
+      "whole_organization_gift_scope": "Unrestricted organization includes research, chapters, awareness and bereavement; cannot price only a promising clinical program.",
+      "key_disqualifier_or_uncertainty": "Project 2025 source is historical and goal is not an achieved effect; need current program evidence, full spending and causal suicide reduction.",
+      "screen_priority": "exploratory",
+      "existing_report_overlap": "No exact-name match in data report JSON inventory",
+      "coverage": "partial",
+      "research_intervals": [
+        {
+          "id": "c32028f7-9cfd-4cca-a260-8c97f2defc91",
+          "workerId": "usa-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T18:07:03.082Z",
+          "endedAt": "2026-09-13T18:07:05.322Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task runtime assignment: gpt-6-astra medium"
+          },
+          "evidence": "/tmp/givebetter-usa-discovery-seed.json"
+        }
+      ],
+      "acceptance_status": "provisional_seed_not_accepted_D100",
+      "operating_geography_evidence": {
+        "source_url": "https://annual2022.afsp.org/project_2025",
+        "retrieval_method": "search_result_excerpt_only",
+        "source_supported_summary": "2022 annual report describes its goal for the US annual suicide rate and work with firearm communities, health systems, emergency departments and corrections.",
+        "limitation": "US remit explicit in historical source; current national delivery footprint not checked.",
+        "independent_audit": false
+      },
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "unknown_not_checked_against_legal_or_registration_record",
+        "donation_payee_verified": false,
+        "source_url": null
+      }
+    },
+    {
+      "discovery_id": "usa-seed-07",
+      "name": "Crisis Text Line",
+      "checked_primary_url": "https://www.crisistextline.org/annual-trends/",
+      "source_check_date": "2026-09-13",
+      "source_check_method": "search_result_excerpt_only: returned text from primary-source URL; full page was not opened",
+      "mechanism": "Remote crisis counseling",
+      "us_benefit_boundary": "US users of crisis text/chat; exclude overseas partner conversations and international benefits.",
+      "threshold_hypothesis": "Potential <$1m/10 through low-cost volunteer-supported contacts relieving severe distress or reducing suicide risk; <$100k/10 requires sustained causal benefit.",
+      "whole_organization_gift_scope": "Whole-org counseling, volunteer training, technology and research; count US output only against honest portfolio costs.",
+      "key_disqualifier_or_uncertainty": "Immediate self-reported improvement is not durable QALYs or lives saved; 988 substitution and global aggregation are material.",
+      "screen_priority": "exploratory",
+      "existing_report_overlap": "No exact-name match in data report JSON inventory",
+      "coverage": "partial",
+      "research_intervals": [
+        {
+          "id": "2af63e8a-eae4-4561-a36c-7f3d5da286c6",
+          "workerId": "usa-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T18:07:05.438Z",
+          "endedAt": "2026-09-13T18:07:06.708Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task runtime assignment: gpt-6-astra medium"
+          },
+          "evidence": "/tmp/givebetter-usa-discovery-seed.json"
+        }
+      ],
+      "acceptance_status": "provisional_seed_not_accepted_D100",
+      "operating_geography_evidence": {
+        "source_url": "https://www.crisistextline.org/annual-trends/",
+        "retrieval_method": "search_result_excerpt_only",
+        "source_supported_summary": "Organization's annual-trends page explicitly discusses people in the United States seeking crisis support during 2025.",
+        "limitation": "US service population explicit; exclude overseas partners and globally aggregated contacts.",
+        "independent_audit": false
+      },
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "unknown_not_checked_against_legal_or_registration_record",
+        "donation_payee_verified": false,
+        "source_url": null
+      }
+    },
+    {
+      "discovery_id": "usa-seed-08",
+      "name": "The Trevor Project",
+      "checked_primary_url": "https://www.thetrevorproject.org/financial-reports/",
+      "source_check_date": "2026-09-13",
+      "source_check_method": "search_result_excerpt_only: returned text from primary-source URL; full page was not opened",
+      "mechanism": "LGBTQ youth crisis response and prevention",
+      "us_benefit_boundary": "US LGBTQ young people; separate any international services, research and web users.",
+      "threshold_hypothesis": "Potential <$1m/10 if services create durable distress reduction or avert suicide in a high-risk population; tighter threshold not established.",
+      "whole_organization_gift_scope": "Ordinary donation funds crisis services plus research, advocacy and education; use whole-org spending and US shares.",
+      "key_disqualifier_or_uncertainty": "No automatic conversion of contacts or self-reported safety to prevented suicides; verify current capacity, finances and country mix.",
+      "screen_priority": "exploratory",
+      "existing_report_overlap": "No exact-name match in data report JSON inventory",
+      "coverage": "partial",
+      "research_intervals": [
+        {
+          "id": "69659fec-f8f3-468a-a6c6-a9965e06752d",
+          "workerId": "usa-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T18:07:06.823Z",
+          "endedAt": "2026-09-13T18:07:08.768Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task runtime assignment: gpt-6-astra medium"
+          },
+          "evidence": "/tmp/givebetter-usa-discovery-seed.json"
+        }
+      ],
+      "acceptance_status": "provisional_seed_not_accepted_D100",
+      "operating_geography_evidence": {
+        "source_url": "https://www.thetrevorproject.org/research/",
+        "retrieval_method": "search_result_excerpt_only",
+        "source_supported_summary": "Organization's research page describes state-level analysis of more than 18,000 LGBTQ young people ages 13–24 across the United States.",
+        "limitation": "US population engagement established; research sample does not itself establish current crisis-service geographic coverage.",
+        "independent_audit": false
+      },
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": "95-4681287",
+        "organization_self_reported_name": "The Trevor Project",
+        "status": "organization_financial_reports_page_self_reports_name_501c3_and_EIN; canonical_legal_name_not_registry_verified",
+        "donation_payee_verified": false,
+        "source_url": "https://www.thetrevorproject.org/financial-reports/",
+        "retrieval_method": "search_result_excerpt_only"
+      }
+    },
+    {
+      "discovery_id": "usa-seed-09",
+      "name": "Shatterproof",
+      "checked_primary_url": "https://shatterproof.org/our-work/revolutionizing-addiction-treatment",
+      "source_check_date": "2026-09-13",
+      "source_check_method": "search_result_excerpt_only: returned text from primary-source URL; full page was not opened",
+      "mechanism": "Addiction treatment quality and insurance standards",
+      "us_benefit_boundary": "US people with substance-use disorders affected by insurers, providers and Treatment Atlas.",
+      "threshold_hypothesis": "Potential <$100k/10 from small additional uptake of effective treatment across large insured populations; must discount heavily to realized use.",
+      "whole_organization_gift_scope": "Whole-org portfolio includes standards, Atlas, stigma and other work; availability to millions is not service uptake.",
+      "key_disqualifier_or_uncertainty": "Provider listings and insurer endorsement do not prove treatment completion, evidence-based medication uptake or mortality effects.",
+      "screen_priority": "priority",
+      "existing_report_overlap": "No exact-name match in data report JSON inventory",
+      "coverage": "partial",
+      "research_intervals": [
+        {
+          "id": "34bc6512-13c7-4e33-8c0b-e3ade7f3e6ee",
+          "workerId": "usa-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T18:07:08.883Z",
+          "endedAt": "2026-09-13T18:07:10.361Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task runtime assignment: gpt-6-astra medium"
+          },
+          "evidence": "/tmp/givebetter-usa-discovery-seed.json"
+        }
+      ],
+      "acceptance_status": "provisional_seed_not_accepted_D100",
+      "operating_geography_evidence": {
+        "source_url": "https://shatterproof.org/about-us",
+        "retrieval_method": "search_result_excerpt_only",
+        "source_supported_summary": "Organization explicitly describes its mission as reversing the addiction crisis in the United States; treatment page describes expanding Atlas throughout the US.",
+        "limitation": "US national remit supported; covered population is potential reach, not actual patient treatment.",
+        "independent_audit": false
+      },
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "unknown_not_checked_against_legal_or_registration_record",
+        "donation_payee_verified": false,
+        "source_url": null
+      }
+    },
+    {
+      "discovery_id": "usa-seed-10",
+      "name": "Upstream USA",
+      "checked_primary_url": "https://upstream.org/wp-content/uploads/2025/04/Upstream-Contraceptive-Counseling-and-Care-FINAL.pdf",
+      "source_check_date": "2026-09-13",
+      "source_check_method": "search_result_excerpt_only: returned text from primary-source URL; full page was not opened",
+      "mechanism": "Patient-centered contraceptive access through healthcare systems",
+      "us_benefit_boundary": "US patients at partner healthcare organizations and affected by state/federal access policy.",
+      "threshold_hypothesis": "Potential <$1m/10 through reduced maternal morbidity and improved wellbeing when patients obtain desired contraception; tighter screen possible with durable systems change.",
+      "whole_organization_gift_scope": "Whole-org training, systems support and policy; use patient health/wellbeing only, not treating fewer births as inherently valuable.",
+      "key_disqualifier_or_uncertainty": "Need causal access and patient-health effect, reproductive autonomy protection and post-training persistence; visits and pregnancy avoidance alone do not establish QALYs.",
+      "screen_priority": "priority",
+      "existing_report_overlap": "No exact-name match in data report JSON inventory",
+      "coverage": "partial",
+      "research_intervals": [
+        {
+          "id": "0004f5a3-08fe-4f9f-8ed5-9a673583d47f",
+          "workerId": "usa-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T18:07:10.485Z",
+          "endedAt": "2026-09-13T18:07:11.690Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task runtime assignment: gpt-6-astra medium"
+          },
+          "evidence": "/tmp/givebetter-usa-discovery-seed.json"
+        }
+      ],
+      "acceptance_status": "provisional_seed_not_accepted_D100",
+      "operating_geography_evidence": {
+        "source_url": "https://upstream.org/wp-content/uploads/2025/04/Upstream-Contraceptive-Counseling-and-Care-FINAL.pdf",
+        "retrieval_method": "search_result_excerpt_only",
+        "source_supported_summary": "Organization's report names Texas, North Carolina, Massachusetts and Rhode Island state-policy work and US federal Title X efforts.",
+        "limitation": "US operating/policy scope explicit; exact current partner geography not established.",
+        "independent_audit": false
+      },
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "unknown_not_checked_against_legal_or_registration_record",
+        "donation_payee_verified": false,
+        "source_url": null
+      }
+    },
+    {
+      "discovery_id": "usa-seed-11",
+      "name": "Power to Decide",
+      "checked_primary_url": "https://powertodecide.org/sites/default/files/2023-03/BCBenefits%20Handout.pdf",
+      "source_check_date": "2026-09-13",
+      "source_check_method": "search_result_excerpt_only: returned text from primary-source URL; full page was not opened",
+      "mechanism": "Contraceptive access, information and policy",
+      "us_benefit_boundary": "Low-income US people facing contraceptive access barriers; historic BCBenefits national coverage.",
+      "threshold_hypothesis": "Potential <$1m/10 through inexpensive desired contraceptive access and health/wellbeing gains; screening does not use historic advertised supply price as full cost.",
+      "whole_organization_gift_scope": "Whole-org information, advocacy and access assistance; do not treat a restricted program marketing unit as whole-org economics.",
+      "key_disqualifier_or_uncertainty": "2023 program evidence needs current operation verification; genuine incremental access and QALYs uncertain; exclude intrinsic valuation of avoided births.",
+      "screen_priority": "exploratory",
+      "existing_report_overlap": "No exact-name match in data report JSON inventory",
+      "coverage": "partial",
+      "research_intervals": [
+        {
+          "id": "4e918125-00bf-4c50-ab0f-8f41288dd614",
+          "workerId": "usa-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T18:07:25.036Z",
+          "endedAt": "2026-09-13T18:07:26.722Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task runtime assignment: gpt-6-astra medium"
+          },
+          "evidence": "/tmp/givebetter-usa-discovery-seed.json"
+        }
+      ],
+      "acceptance_status": "provisional_seed_not_accepted_D100",
+      "operating_geography_evidence": {
+        "source_url": "https://powertodecide.org/news/share-benefits-birth-control-others",
+        "retrieval_method": "search_result_excerpt_only",
+        "source_supported_summary": "Historical organization page says BCBenefits recipients lived in all 50 states and Washington DC after its 2019 launch.",
+        "limitation": "Historical national receipt established; current BCBenefits operation and geographic eligibility unknown.",
+        "independent_audit": false
+      },
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "unknown_not_checked_against_legal_or_registration_record",
+        "donation_payee_verified": false,
+        "source_url": null
+      }
+    },
+    {
+      "discovery_id": "usa-seed-12",
+      "name": "Dollar For",
+      "checked_primary_url": "https://doh.wa.gov/sites/default/files/2025-11/CharityCareRuleRecommendationsAug2025.pdf",
+      "source_check_date": "2026-09-13",
+      "source_check_method": "search_result_excerpt_only: returned text from primary-source URL; full page was not opened",
+      "mechanism": "Hospital financial assistance navigation and policy",
+      "us_benefit_boundary": "US hospital charity-care beneficiaries; checked primary evidence confirms a Washington-based nonprofit assisting hospital patients. Nationwide current service coverage remains unverified.",
+      "threshold_hypothesis": "Potential <$1m/10 if low-cost assistance materially reduces distress and care avoidance across many patients; <$100k/10 unestablished.",
+      "whole_organization_gift_scope": "Whole-org case assistance, software, awareness and policy; face-value discharged bills are not cash benefit or QALYs.",
+      "key_disqualifier_or_uncertainty": "Debt relief may have limited health effects; own homepage blocked by robots, accessible state primary document and live intake form checked.",
+      "screen_priority": "exploratory",
+      "existing_report_overlap": "No exact-name match in data report JSON inventory",
+      "coverage": "partial",
+      "research_intervals": [
+        {
+          "id": "94b2e165-6b33-4b37-b8a6-0a7b56de1701",
+          "workerId": "usa-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T18:07:26.839Z",
+          "endedAt": "2026-09-13T18:07:30.241Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task runtime assignment: gpt-6-astra medium"
+          },
+          "evidence": "/tmp/givebetter-usa-discovery-seed.json"
+        }
+      ],
+      "acceptance_status": "provisional_seed_not_accepted_D100",
+      "operating_geography_evidence": {
+        "source_url": "https://doh.wa.gov/sites/default/files/2025-11/CharityCareRuleRecommendationsAug2025.pdf",
+        "retrieval_method": "search_result_excerpt_only",
+        "source_supported_summary": "Washington State-hosted primary document describes Dollar For as a nonprofit based in Vancouver, Washington helping patients apply for hospital financial assistance.",
+        "limitation": "Domestic mechanism and US operating entity supported; nationwide current coverage not established by this checked source.",
+        "independent_audit": false
+      },
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "unknown_not_checked_against_legal_or_registration_record",
+        "donation_payee_verified": false,
+        "source_url": null
+      }
+    },
+    {
+      "discovery_id": "usa-seed-13",
+      "name": "Patient Advocate Foundation",
+      "checked_primary_url": "https://www.patientadvocate.org/article/patient-advocate-foundation-releases-2025-annual-impact-report/",
+      "source_check_date": "2026-09-13",
+      "source_check_method": "search_result_excerpt_only: returned text from primary-source URL; full page was not opened",
+      "mechanism": "Complex care navigation and patient financial assistance",
+      "us_benefit_boundary": "US patients with chronic/life-threatening/debilitating conditions; reported 2025 services in 92% of US counties.",
+      "threshold_hypothesis": "Potential <$1m/10 if navigation/cost assistance unlocks effective otherwise forgone care with substantial survival or quality gains.",
+      "whole_organization_gift_scope": "Merged PAF/PAN whole organization includes case management and financial aid; consolidated expenses and donor restrictions required.",
+      "key_disqualifier_or_uncertainty": "March 2026 merger makes historic PAN/PAF totals unsafe to add; specialty drug prices, manufacturer funding and assistance substitution may undermine EV.",
+      "screen_priority": "exploratory",
+      "existing_report_overlap": "No exact-name match in data report JSON inventory",
+      "coverage": "partial",
+      "research_intervals": [
+        {
+          "id": "6ce81cca-70f1-4ed2-8fa3-52dfa60a517b",
+          "workerId": "usa-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T18:07:32.103Z",
+          "endedAt": "2026-09-13T18:07:33.439Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task runtime assignment: gpt-6-astra medium"
+          },
+          "evidence": "/tmp/givebetter-usa-discovery-seed.json"
+        }
+      ],
+      "acceptance_status": "provisional_seed_not_accepted_D100",
+      "operating_geography_evidence": {
+        "source_url": "https://www.patientadvocate.org/article/patient-advocate-foundation-releases-2025-annual-impact-report/",
+        "retrieval_method": "search_result_excerpt_only",
+        "source_supported_summary": "Organization's 2025 report release states that it serves the entire United States and reports patients in 92% of US counties.",
+        "limitation": "Explicit domestic service coverage; post-merger combined coverage and expense reconciliation still needed.",
+        "independent_audit": false
+      },
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "unknown_not_checked_against_legal_or_registration_record",
+        "donation_payee_verified": false,
+        "source_url": null
+      }
+    },
+    {
+      "discovery_id": "usa-seed-14",
+      "name": "Prevent Cancer Foundation",
+      "checked_primary_url": "https://preventcancer.org/wp-content/uploads/2024/07/Community-Grant-Guidelines-and-Submission-Instructions-2024.pdf",
+      "source_check_date": "2026-09-13",
+      "source_check_method": "search_result_excerpt_only: returned text from primary-source URL; full page was not opened",
+      "mechanism": "Cancer prevention, vaccination and screening access",
+      "us_benefit_boundary": "Proposed boundary is US-resident benefits of prevention and screening. Checked community-grant rules establish US-based recipient organizations, but not independently the geographic location of all beneficiaries; confirm projects before acceptance.",
+      "threshold_hypothesis": "Potential <$1m/10 if navigation expands guideline-concordant screening/vaccination with completed follow-up; selected access pathways may clear <$100k/10.",
+      "whole_organization_gift_scope": "Whole foundation also funds research and education; retain those costs and uncertainty rather than isolate a grant's best outcome.",
+      "key_disqualifier_or_uncertainty": "Screening requires actual follow-up and treatment; overdiagnosis, false positives and nonvalidated early-detection technologies can reverse apparent value.",
+      "screen_priority": "exploratory",
+      "existing_report_overlap": "No exact-name match in data report JSON inventory",
+      "coverage": "partial",
+      "research_intervals": [
+        {
+          "id": "ada83136-9589-4967-92f6-040d6f50b9e1",
+          "workerId": "usa-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T18:07:33.553Z",
+          "endedAt": "2026-09-13T18:07:35.036Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task runtime assignment: gpt-6-astra medium"
+          },
+          "evidence": "/tmp/givebetter-usa-discovery-seed.json"
+        }
+      ],
+      "acceptance_status": "provisional_seed_not_accepted_D100",
+      "operating_geography_evidence": {
+        "source_url": "https://preventcancer.org/wp-content/uploads/2024/07/Community-Grant-Guidelines-and-Submission-Instructions-2024.pdf",
+        "retrieval_method": "search_result_excerpt_only",
+        "source_supported_summary": "2024 community grant guidelines exclude projects of organizations not based in the United States.",
+        "limitation": "Recipient domicile restriction alone does not prove US-resident project beneficiaries; domestic output boundary still requires project-level confirmation.",
+        "independent_audit": false
+      },
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "unknown_not_checked_against_legal_or_registration_record",
+        "donation_payee_verified": false,
+        "source_url": null
+      }
+    },
+    {
+      "discovery_id": "usa-seed-15",
+      "name": "Campaign for Tobacco-Free Kids",
+      "checked_primary_url": "https://www.tobaccofreekids.org/our-work/us-tobacco-control",
+      "source_check_date": "2026-09-13",
+      "source_check_method": "search_result_excerpt_only: returned text from primary-source URL; full page was not opened",
+      "mechanism": "Tobacco policy advocacy and litigation",
+      "us_benefit_boundary": "US residents affected by federal/state/local tobacco policies; international/GHAI effects excluded.",
+      "threshold_hypothesis": "Potential <$100k/10 if an incremental fraction of tobacco policy changes reduces smoking initiation or improves cessation across large populations.",
+      "whole_organization_gift_scope": "Whole organization has substantial international advocacy; US benefits must face full unrestricted gift allocation and overhead.",
+      "key_disqualifier_or_uncertainty": "Counterfactual coalition credit, long lags and substitution between vaping and combustible smoking; anti-vaping activity cannot automatically receive smoking-reduction credit.",
+      "screen_priority": "priority",
+      "existing_report_overlap": "No exact-name match in data report JSON inventory",
+      "coverage": "partial",
+      "research_intervals": [
+        {
+          "id": "b1f13bb1-0662-4f09-bceb-dd085cfa7c66",
+          "workerId": "usa-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T18:07:53.566Z",
+          "endedAt": "2026-09-13T18:07:54.774Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task runtime assignment: gpt-6-astra medium"
+          },
+          "evidence": "/tmp/givebetter-usa-discovery-seed.json"
+        }
+      ],
+      "acceptance_status": "provisional_seed_not_accepted_D100",
+      "operating_geography_evidence": {
+        "source_url": "https://www.tobaccofreekids.org/our-work/us-tobacco-control",
+        "retrieval_method": "search_result_excerpt_only",
+        "source_supported_summary": "Organization's US tobacco-control page explicitly describes federal, state and local policy work in the United States.",
+        "limitation": "Domestic advocacy supported; organization also works globally so US benefit/spending share remains unmeasured.",
+        "independent_audit": false
+      },
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "unknown_not_checked_against_legal_or_registration_record",
+        "donation_payee_verified": false,
+        "source_url": null
+      }
+    },
+    {
+      "discovery_id": "usa-seed-16",
+      "name": "Food Research & Action Center",
+      "checked_primary_url": "https://frac.org/about/our-history",
+      "source_check_date": "2026-09-13",
+      "source_check_method": "search_result_excerpt_only: returned text from primary-source URL; full page was not opened",
+      "mechanism": "Nutrition safety-net policy and implementation",
+      "us_benefit_boundary": "US low-income residents affected by SNAP, school meals and related nutrition programs.",
+      "threshold_hypothesis": "Potential <$100k/10 if modest advocacy/implementation influence preserves or expands nutrition access for many; <$1m/10 if health effects are smaller.",
+      "whole_organization_gift_scope": "Whole-org research, policy, coalition and implementation work; publicly financed benefits are leverage only to attributable degree.",
+      "key_disqualifier_or_uncertainty": "Political attribution and benefits-to-QALYs evidence dominate; program dollars and meals are not health effects.",
+      "screen_priority": "priority",
+      "existing_report_overlap": "No exact-name match in data report JSON inventory",
+      "coverage": "partial",
+      "research_intervals": [
+        {
+          "id": "9d0d50f1-3289-473d-ba60-240e1e845793",
+          "workerId": "usa-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T18:07:54.891Z",
+          "endedAt": "2026-09-13T18:07:56.231Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task runtime assignment: gpt-6-astra medium"
+          },
+          "evidence": "/tmp/givebetter-usa-discovery-seed.json"
+        }
+      ],
+      "acceptance_status": "provisional_seed_not_accepted_D100",
+      "operating_geography_evidence": {
+        "source_url": "https://frac.org/about/our-history",
+        "retrieval_method": "search_result_excerpt_only",
+        "source_supported_summary": "Organization's history describes nationwide SNAP advocacy and 2026 work with state and municipal governments responding to US program changes.",
+        "limitation": "US policy and implementation remit explicit; attributable beneficiary coverage unmeasured.",
+        "independent_audit": false
+      },
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "unknown_not_checked_against_legal_or_registration_record",
+        "donation_payee_verified": false,
+        "source_url": null
+      }
+    },
+    {
+      "discovery_id": "usa-seed-17",
+      "name": "Feeding America",
+      "checked_primary_url": "https://www.feedingamerica.org/research/hunger-and-health",
+      "source_check_date": "2026-09-13",
+      "source_check_method": "search_result_excerpt_only: returned text from primary-source URL; full page was not opened",
+      "mechanism": "Food rescue/distribution systems and nutrition access",
+      "us_benefit_boundary": "US food-insecure households served by network food banks and healthcare partnerships.",
+      "threshold_hypothesis": "Potential <$1m/10 if low-cost rescued nutritious food causes durable health/wellbeing gains; <$100k/10 requires strong incremental food and health assumptions.",
+      "whole_organization_gift_scope": "Gift to national organization funds network services, grants, procurement and advocacy; national vs member costs and donated food valuations need reconciliation.",
+      "key_disqualifier_or_uncertainty": "Food insecurity associations do not establish intervention effect; donated-food accounting, substitution and weak clinical results may fail even broader threshold.",
+      "screen_priority": "exploratory",
+      "existing_report_overlap": "No exact-name match in data report JSON inventory",
+      "coverage": "partial",
+      "research_intervals": [
+        {
+          "id": "df761f62-2359-40d7-aaba-48b69d4a37ff",
+          "workerId": "usa-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T18:07:56.350Z",
+          "endedAt": "2026-09-13T18:07:57.930Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task runtime assignment: gpt-6-astra medium"
+          },
+          "evidence": "/tmp/givebetter-usa-discovery-seed.json"
+        }
+      ],
+      "acceptance_status": "provisional_seed_not_accepted_D100",
+      "operating_geography_evidence": {
+        "source_url": "https://www.feedingamerica.org/hunger-in-america/who-faces-hunger",
+        "retrieval_method": "search_result_excerpt_only",
+        "source_supported_summary": "Organization describes its network working with US communities, including the Wind River Reservation in Wyoming, and food insecurity across the US.",
+        "limitation": "Domestic network benefit supported; national office and member food-bank gift boundaries need separation.",
+        "independent_audit": false
+      },
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "unknown_not_checked_against_legal_or_registration_record",
+        "donation_payee_verified": false,
+        "source_url": null
+      }
+    },
+    {
+      "discovery_id": "usa-seed-18",
+      "name": "National Diaper Bank Network",
+      "checked_primary_url": "https://nationaldiaperbanknetwork.org/wp-content/uploads/2023/06/NDBN-Diaper-Check-2023_Executive-Summary-FINAL.pdf",
+      "source_check_date": "2026-09-13",
+      "source_check_method": "search_result_excerpt_only: returned text from primary-source URL; full page was not opened",
+      "mechanism": "Basic hygiene supply and policy",
+      "us_benefit_boundary": "US infants and caregivers served through diaper-bank network and domestic policy work.",
+      "threshold_hypothesis": "Potential <$1m/10 through low-cost reductions in infant skin problems and caregiver stress; <$100k/10 would need sizable durable mental-health effects.",
+      "whole_organization_gift_scope": "Whole national network organization includes member support, supply coordination and advocacy, not direct local-bank unit cost alone.",
+      "key_disqualifier_or_uncertainty": "Mostly observational evidence; transient rash reduction may yield too few QALYs, and employment benefits must not be relabeled as health.",
+      "screen_priority": "exploratory",
+      "existing_report_overlap": "No exact-name match in data report JSON inventory",
+      "coverage": "partial",
+      "research_intervals": [
+        {
+          "id": "1549b660-1ffb-4506-b445-337ccd2286bd",
+          "workerId": "usa-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T18:07:58.047Z",
+          "endedAt": "2026-09-13T18:07:59.659Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task runtime assignment: gpt-6-astra medium"
+          },
+          "evidence": "/tmp/givebetter-usa-discovery-seed.json"
+        }
+      ],
+      "acceptance_status": "provisional_seed_not_accepted_D100",
+      "operating_geography_evidence": {
+        "source_url": "https://nationaldiaperbanknetwork.org/wp-content/uploads/2023/04/Illinois_Diaper-Impact-Study-2023.pdf",
+        "retrieval_method": "search_result_excerpt_only",
+        "source_supported_summary": "Organization's primary fact sheet reports a study of families receiving diapers from Illinois diaper banks during July 2021–April 2022.",
+        "limitation": "At least one domestic network setting explicit; current all-state distribution coverage not checked.",
+        "independent_audit": false
+      },
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "unknown_not_checked_against_legal_or_registration_record",
+        "donation_payee_verified": false,
+        "source_url": null
+      }
+    },
+    {
+      "discovery_id": "usa-seed-19",
+      "name": "Partnership to End Addiction",
+      "checked_primary_url": "https://drugfree.org/",
+      "source_check_date": "2026-09-13",
+      "source_check_method": "direct_open_success: organization homepage returned readable page text",
+      "mechanism": "Family-supported addiction prevention and treatment engagement",
+      "us_benefit_boundary": "US families and people with substance-use disorders reached by helplines, digital support and provider work.",
+      "threshold_hypothesis": "Potential <$1m/10 if inexpensive family support induces entry/retention in effective treatment and reduces family distress; <$100k/10 contingent on mortality effects.",
+      "whole_organization_gift_scope": "Whole-org family services, research, communications and policy; separate proven clinical CRAFT from organization's own delivery.",
+      "key_disqualifier_or_uncertainty": "Evidence for clinical family interventions does not establish effects of this nonprofit's digital/helpline model; treatment quality and counterfactual uptake crucial.",
+      "screen_priority": "priority",
+      "existing_report_overlap": "No exact-name match in data report JSON inventory",
+      "coverage": "partial",
+      "research_intervals": [
+        {
+          "id": "4bf41cee-3eef-41f4-8564-3e4c5dd1f69d",
+          "workerId": "usa-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T18:07:59.779Z",
+          "endedAt": "2026-09-13T18:08:01.310Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task runtime assignment: gpt-6-astra medium"
+          },
+          "evidence": "/tmp/givebetter-usa-discovery-seed.json"
+        }
+      ],
+      "acceptance_status": "provisional_seed_not_accepted_D100",
+      "operating_geography_evidence": {
+        "source_url": "https://drugfree.org/",
+        "retrieval_method": "direct_open_success",
+        "source_supported_summary": "Successfully opened organizational homepage states it addresses addiction in the US and that families and professionals across the US use its resources.",
+        "limitation": "Explicit domestic remit and users; service usage by state not checked.",
+        "independent_audit": false
+      },
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "unknown_not_checked_against_legal_or_registration_record",
+        "donation_payee_verified": false,
+        "source_url": null
+      }
+    },
+    {
+      "discovery_id": "usa-seed-20",
+      "name": "Legal Action Center",
+      "checked_primary_url": "https://www.lac.org/assets/files/LAC-2025-Annual-Report.pdf",
+      "source_check_date": "2026-09-13",
+      "source_check_method": "search_result_excerpt_only: returned text from primary-source URL; full page was not opened",
+      "mechanism": "Addiction/mental-health insurance access and civil-rights advocacy",
+      "us_benefit_boundary": "US residents facing treatment and coverage barriers; national policy plus direct New York services.",
+      "threshold_hypothesis": "Potential <$100k/10 if legal/policy work creates small attributable increases in effective addiction or mental-health care; <$1m/10 broader screen.",
+      "whole_organization_gift_scope": "Whole organization also supports HIV and criminal-record discrimination work; include all costs and count only attributable US health effects.",
+      "key_disqualifier_or_uncertainty": "Legal wins/coverage entitlements require actual effective treatment uptake; coalition contribution and non-health portfolio share can dominate.",
+      "screen_priority": "priority",
+      "existing_report_overlap": "No exact-name match in data report JSON inventory",
+      "coverage": "partial",
+      "research_intervals": [
+        {
+          "id": "98c827d0-5f68-4766-8fa0-7d87be1f506b",
+          "workerId": "usa-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T18:08:01.427Z",
+          "endedAt": "2026-09-13T18:08:02.803Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task runtime assignment: gpt-6-astra medium"
+          },
+          "evidence": "/tmp/givebetter-usa-discovery-seed.json"
+        }
+      ],
+      "acceptance_status": "provisional_seed_not_accepted_D100",
+      "operating_geography_evidence": {
+        "source_url": "https://www.lac.org/assets/files/No-Health-No-Justice-Action-Guide.pdf",
+        "retrieval_method": "search_result_excerpt_only",
+        "source_supported_summary": "Organization's action guide discusses US federal mental-health/addiction parity, New York's statewide CHAMP helpline and advocacy for comparable programs in other states.",
+        "limitation": "Domestic national policy plus New York service context explicit; LAC's direct role in each partner service needs verification.",
+        "independent_audit": false
+      },
+      "legal_recipient": {
+        "canonical_legal_name": null,
+        "ein": null,
+        "status": "unknown_not_checked_against_legal_or_registration_record",
+        "donation_payee_verified": false,
+        "source_url": null
+      }
+    }
+  ],
+  "excluded_duplicates": [
+    {
+      "name": "PAN Foundation",
+      "reason": "Official PAN homepage says PAN and Patient Advocate Foundation became one organization following March 2026 strategic merger. Retain merged PAF only.",
+      "checked_primary_url": "https://www.panfoundation.org/",
+      "research_intervals": [
+        {
+          "id": "8f1b597e-111a-4fe4-ba59-6314a9ea097a",
+          "workerId": "usa-discovery-seed",
+          "phase": "research",
+          "startedAt": "2026-09-13T18:07:30.355Z",
+          "endedAt": "2026-09-13T18:07:31.987Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent task runtime assignment: gpt-6-astra medium"
+          },
+          "evidence": "/tmp/givebetter-usa-discovery-seed.json"
+        }
+      ],
+      "retrieval_method": "search_result_excerpt_only; official PAN homepage text returned in search, not opened"
+    }
+  ],
+  "next_pass": "Expand to 100 distinct entities across additional mechanisms before selecting final25. For these seeds collect current consolidated expenses, unrestricted funding scope, domestic output mix, strongest causal mechanism evidence and conservative threshold break-even cases. Prioritize policy/implementation additionality and service QALY duration; downgrade unsupported marketing ratios.",
+  "source_provenance_note": "All retained primary URLs except Partnership to End Addiction's homepage were seen as web search result text/excerpts, not directly opened full pages. Excerpts may be incomplete or stale. Failed open attempts are explicitly recorded. No source was independently audited. Legal recipient/EIN resolution is unverified unless explicitly marked organization-self-reported.",
+  "discovery_id_note": "usa-seed-NN values are local provisional row identifiers, not EINs, legal entity identifiers, or accepted D100 identifiers.",
+  "failed_direct_open_attempts": [
+    {
+      "url": "https://dollarfor.org/",
+      "outcome": "Fetch denied by robots.txt; no page contents retrieved"
+    },
+    {
+      "url": "https://powertodecide.org/bcbenefits",
+      "outcome": "Non-retryable safe-open error; no page contents retrieved"
+    },
+    {
+      "url": "https://afsp.org/our-work",
+      "outcome": "Cache miss; no page contents retrieved"
+    }
+  ],
+  "revision": {
+    "purpose": "Correct source-method provenance; add bounded operating-geography evidence and explicitly unresolved legal recipient/EIN fields.",
+    "started_at": "2026-09-13 18:11:46 UTC",
+    "ended_at": "2026-09-13 18:12:53 UTC",
+    "new_external_research": false,
+    "existing_research_intervals_preserved": true
+  }
+}

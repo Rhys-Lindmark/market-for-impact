@@ -2,6 +2,8 @@
 
 ## Active priority — eleven-edition geographic expansion (September 13)
 
+Checkpoint: additive overview/research-progress pages for all eleven editions plus a hub; existing SF recommendations preserved. Initial40 candidates accepted for discovery and80 additional provisional leads saved (each CA/USA:20/100 accepted +40 provisional,0/25 alpha,0/10 beta). Eight phone/tablet/API tests, geography ledger validation, focused lint and production build pass. Final40-per-pool discovery and independent wave2 acceptance are active; next implement edition report data/templates and select25 only after complete100-candidate comparison. See issue #333 and docs/geography-progress.json.
+
 New user-authorized work supersedes the SF-only stop rule below. Build California, USA and nine confirmed metro editions (NYC, LA, Chicago, Houston, Denver, Seattle, Boston, Atlanta, Detroit), each with 100 discovery candidates → 25 published alpha reports → ten beta deep dives → four qualified picks. Discovery/beta: GPT-6 Astra Medium; alpha: GPT-6 Astra Light. Read [the expansion plan](docs/geography-expansion-plan.md) and [edition progress](docs/geography-progress.json). California/USA discovery is active with three independent workers; freeze exact MSA boundaries before city discovery acceptance. Keep the existing SF product and completed research intact. The hourly schedule now follows this expansion; report every edition's alpha x/25 and beta x/10 in updates.
 
 ## Residual expense audit — September 12 UTC

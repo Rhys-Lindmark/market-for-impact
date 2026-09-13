@@ -41,7 +41,8 @@ Stall interval: 20 active minutes without an accepted artifact/evidence mileston
 - [x] G0b: Record authoritative MSA boundary versions and county/FIPS memberships before city discovery acceptance (nine metros, 102 county memberships; Census July2023/OMB23-01).
 - [x] G1: Persist finite plan, model split, edition counters and phase acceptance.
 - [x] G2: Update existing hourly heartbeat, preserving cadence and explicit pause control.
-- [ ] G3: Reusable edition routes, data model, research table and report templates pass focused tests.
+- [x] G3a: Eleven additive edition overview/research-progress routes, edition hub, scoped progress API and responsive checks. No premature reports or recommendations; existing SF preserved.
+- [ ] G3b: Edition-specific organization report data, comparison table and reusable report templates pass focused tests.
 - [ ] G4: All eleven editions pass D100, A25, B10 and P4 below.
 - [ ] G5: Final count, cross-geography arithmetic, sources, photos, mobile and canonical deployment audit.
 
@@ -84,10 +85,10 @@ Record actual run start/end and separate researcher versus integration effort; a
 
 ## Updates
 
-Every update lists all eleven editions' published alpha x/25 and accepted beta x/10, plus discovery x/100 while relevant. Also report changed artifacts, material findings, blockers and next action concisely. Totals are backed by accepted artifacts, not aspirations. City names and metro scope are confirmed; exact official boundary extraction remains a foundation step. Do not count prior SF work toward new totals without edition-specific acceptance.
+Every update lists all eleven editions' published alpha x/25 and accepted beta x/10, plus discovery x/100 while relevant. Also report changed artifacts, material findings, blockers and next action concisely. Totals are backed by accepted artifacts, not aspirations. City names, metro scope and official county memberships are recorded. Do not count prior SF work toward new totals without edition-specific acceptance.
 
 ## First checkpoint and next dispatch
 
 Foundation packet: 40 provisional seeds (20 California, 20 USA), nine official MSA definitions/102 county memberships, stage/counting validation and local dashboard. Seeds are deliberately not accepted D100 or alpha reports: many retrievals are search excerpts and legal-recipient/EIN verification remains incomplete. Preserve these limitations. Shared source-retrieval intervals are not full report effort.
 
-Next run: root begins reusable edition route/data plumbing under the Sites skills, while three Astra Medium workers (1) expand CA from20 toward60 across new mechanisms, (2) expand USA from20 toward60, and (3) audit legal identities, source/geographic fit and duplicate/affiliate handling of the initial40. Complete both100-candidate pools and independent comparative selection before alpha dispatch. City discovery can start in parallel as capacity opens using the pinned boundaries; no city confirmation blocker remains. Do not count the seeds as finished wide research or reduce the requested100-candidate search to them.
+Current checkpoint: edition page foundation implemented; initial40 accepted for discovery (20 CA,20 USA), with80 more provisional leads (40 each). No alpha/beta publication. Three Astra Medium workers now (1) finish CA's final40 candidates, (2) finish USA's final40, and (3) independently accept/hold/reject wave2 identities and geographic fit. Root integrates and verifies the page foundation and source-ledger counts. Complete both100-candidate pools and independent comparative selection before alpha dispatch. City discovery can start in parallel as capacity opens using the pinned boundaries; no city confirmation blocker remains. Do not count the seeds as finished wide research or reduce the requested100-candidate search to them.

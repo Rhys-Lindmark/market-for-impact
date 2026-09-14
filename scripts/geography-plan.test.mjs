@@ -97,4 +97,21 @@ for(const id of seattleProgress.selectedAlphaIds)assert.ok(seattleProgress.accep
 assert.ok(seattle.selection.revisedTop25.some(r=>r.name==='WithinReach'));
 assert.equal(seattle.researchTime.reasoningEffort,'medium');
 assert.equal(seattleProgress.alphaPublished,0);assert.equal(seattleProgress.betaAcceptedPublished,0);
-console.log('PASS:11 editions; nested publication/selection counts;9 MSAs/102 counties;400 accepted discovery,100 selected priorities; Seattle has no alpha/beta credit.');
+const nyc=read('geography-discovery/nyc-independent-acceptance.json');
+const nycProgress=p.editions.find(e=>e.id==='new-york-city');
+assert.equal(nyc.records.length,100);
+assert.equal(new Set(nyc.records.map(r=>r.canonicalOrganizationId)).size,100);
+assert.deepEqual(nycProgress.acceptedDiscoveryIds,nyc.records.map(r=>r.canonicalOrganizationId));
+assert.deepEqual(nycProgress.selectedAlphaIds,nyc.top25.map(r=>r.canonicalOrganizationId));
+assert.equal(nyc.top25.length,25);
+for(const r of nyc.records){
+ assert.ok(['accepted_discovery','accepted_with_recipient_correction'].includes(r.disposition));
+ assert.ok(r.independentEvidenceFinding&&r.mechanism&&r.falsifier);
+ assert.ok(r.primaryVerificationEvidence.length);
+ assert.ok(r.verifiedCountyFips.length&&r.verifiedCountyFips.every(f=>nyc.boundary.countyFips.includes(f)));
+ assert.equal(r.alphaAccepted,false);assert.equal(r.betaAccepted,false);
+}
+assert.ok(nycProgress.acceptedDiscoveryIds.includes('org:zufall-health-foundation'));
+assert.ok(!nycProgress.acceptedDiscoveryIds.includes('org:zufall-health'));
+assert.equal(nycProgress.alphaPublished,0);assert.equal(nycProgress.betaAcceptedPublished,0);
+console.log('PASS:11 editions; nested counts;9 MSAs/102 counties;500 accepted discovery,125 selected priorities; NYC/Seattle no alpha or beta credit.');

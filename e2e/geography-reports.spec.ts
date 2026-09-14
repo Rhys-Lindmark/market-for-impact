@@ -11,6 +11,8 @@ test.beforeEach(async({page,baseURL})=>{
 
 test('published research has measured headers, usable models and scoped canonical links',async({page,request})=>{
  for(const [edition,slug,name,minutes,donate] of [
+  ['california','national-health-law-program','National Health Law Program','26',true],
+  ['usa','national-health-law-program','National Health Law Program','24',true],
   ['usa','institute-for-safer-trucking','Institute for Safer Trucking','5',true],
   ['usa','us-alcohol-policy-alliance','US Alcohol Policy Alliance','8',true],
   ['california','harm-reduction-services','Harm Reduction Services','28',true],

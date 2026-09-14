@@ -6,6 +6,7 @@ import historicalEffort from '@/data/research-effort-historical-estimates.json';
 import assignedEffort from '@/data/research-effort-assigned-estimates.json';
 import {researchEffortSummary} from '@/lib/research-effort.mjs';
 import DonorReadiness from './DonorReadiness';
+import ReportExpenseAppendix from './ReportExpenseAppendix';
 import TopTenSummary,{hasTopTenSummary} from './TopTenSummary';
 
 export type CharityEvidence = {
@@ -101,7 +102,7 @@ export default function CharityResearchReport({ content }: { content: CharityRep
   ];
   return (
     <main className="givebetter charity-report">
-      <header className="givebetter-masthead"><a href="/">Give<span>Better</span> <small>x SF</small></a></header>
+      <header className="givebetter-masthead"><a href="/san-francisco">Give<span>Better</span> <small>x SF</small></a></header>
       <div className="report-reading-column">
         <header className="report-heading">
           <h1>{content.organization}</h1><p className="report-program">{content.program}</p>
@@ -177,8 +178,9 @@ export default function CharityResearchReport({ content }: { content: CharityRep
           <section id="sources"><h2>6. Sources</h2>
             <ol className="report-sources">{content.sources.map(source => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.title}</a>. {source.publisher}. {source.sourceType}. Published: {source.published}; retrieved: {source.retrieved}.</li>)}</ol>
           </section>
+          <ReportExpenseAppendix organization={content.organization}/>
         </article>
-        <footer className="report-footer"><p className="report-model-version">Cost-effectiveness model: {content.modelVersion}.</p><a href="/research">All research</a> · <a href="/">Our top charities</a><p>GiveBetter x SF is not affiliated with GiveWell or the organizations reviewed.</p></footer>
+        <footer className="report-footer"><p className="report-model-version">Cost-effectiveness model: {content.modelVersion}.</p><a href="/san-francisco/all">All research</a> · <a href="/san-francisco">Our top charities</a><p>GiveBetter x SF is not affiliated with GiveWell or the organizations reviewed.</p></footer>
       </div>
     </main>
   );

@@ -1,5 +1,3 @@
-import {notFound} from 'next/navigation';
-import GeographyEdition,{editionMetadata} from '@/components/GeographyEdition';
-type Props={params:Promise<{edition:string}>};
-export async function generateMetadata({params}:Props){const {edition}=await params;return editionMetadata(edition,true);}
-export default async function Page({params}:Props){const {edition}=await params;if(!['california','usa'].includes(edition))notFound();return <GeographyEdition id={edition} research/>;}
+import {notFound,permanentRedirect} from 'next/navigation';
+import {editionIds,canonicalBase,editionPath} from '@/lib/geography-editions.mjs';
+export default async function LegacyResearch({params}:{params:Promise<{edition:string}>}){const {edition}=await params;if(!editionIds.includes(edition))notFound();permanentRedirect(canonicalBase+editionPath(edition)+'/all');}

@@ -37,10 +37,10 @@ export default function EditionResearchReport({edition,slug}:{edition:string;slu
      {!!report.model.sensitivity.length&&<><h3>Sensitivity</h3><ul>{report.model.sensitivity.map(s=><li key={s}>{s}</li>)}</ul></>}
      {!!report.model.missingInputs.length&&<><h3>Unresolved inputs</h3><ul>{report.model.missingInputs.map(s=><li key={s}>{s}</li>)}</ul></>}
     </details>}
-    {id==='funding'&&!!report.annualExpenses.length&&<><h3>Annual spending</h3><ul>{report.annualExpenses.map(y=><li key={y.year}>{y.year}: {formatAnnualExpense(y)}; {y.entity}, {y.periodMonths===null?'period length unverified':y.periodMonths+'-month period'}, {y.accountingBasis}. <a href={'#source-'+y.sourceId}>Source</a></li>)}</ul></>}
    </section>)}
+   <section id="annual-expenses"><h2>Annual expenses</h2><p>Organization-level spending, including programs, administration and fundraising. The research list averages three comparable, consecutive full fiscal years when available.</p>{report.annualExpenses.length?<ul>{report.annualExpenses.map(y=><li key={y.year}>FY {y.year}: {formatAnnualExpense(y)}; {y.entity}, {y.periodMonths===null?'period length unverified':y.periodMonths+'-month period'}, {y.accountingBasis}. <a href={'#source-'+y.sourceId}>Source</a></li>)}</ul>:<p>Comparable annual spending has not yet been verified.</p>}</section>
    <section id="sources"><h2>6. Sources</h2><ol className="report-sources">{report.sources.map(s=><li id={'source-'+s.id} key={s.id}><a href={s.url}>{s.title}</a>. {s.publisher}. Published: {s.published??'not stated'}; retrieved: {s.retrieved}.</li>)}</ol></section>
   </article>
-  <footer className="report-footer"><a href={canonicalBase+editionPath(edition)+'/research'}>All {e.label} research</a><p>Cost-effectiveness model: <a href={canonicalBase+'/api/geography-reports/'+edition+'/'+slug}>{report.model.version}</a></p><p>Independent public-source research. Not affiliated with GiveWell or the organization reviewed.</p></footer>
+  <footer className="report-footer"><a href={canonicalBase+editionPath(edition)+'/all'}>All {e.label} research</a><p>Cost-effectiveness model: <a href={canonicalBase+'/api/geography-reports/'+edition+'/'+slug}>{report.model.version}</a></p><p>Independent public-source research. Not affiliated with GiveWell or the organization reviewed.</p></footer>
  </div></main>;
 }

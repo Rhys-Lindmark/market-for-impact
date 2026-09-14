@@ -1,0 +1,1469 @@
+{
+  "schemaVersion": 1,
+  "status": "independent-acceptance-recommended-with-three-mechanism-corrections",
+  "auditor": "usa_beta_one",
+  "independentOfAuthor": true,
+  "author": "seattle_acceptance",
+  "inputArtifacts": [
+    "/tmp/givebetter-houston-discovery.json",
+    "/tmp/givebetter-houston-selection.json"
+  ],
+  "inputHashes": [
+    {
+      "path": "/tmp/givebetter-houston-discovery.json",
+      "sha256": "850907df7c64b7c50ff04635424a618f7620ecef6a71ffdfac33776405176260"
+    },
+    {
+      "path": "/tmp/givebetter-houston-selection.json",
+      "sha256": "aa135508d4393a39d426b0d39828cdfb89bb1d6817cd83a42c72a4794b63ef47"
+    }
+  ],
+  "auditInterval": {
+    "start": "2026-09-14T06:08:23Z",
+    "end": "2026-09-14T06:11:07.508Z",
+    "actualAuditMinutes": 2.7418,
+    "authorMinutes": 0
+  },
+  "acceptedDiscoveryCountAfterCorrections": 100,
+  "acceptedSelectionCount": 25,
+  "acceptedAlphaCount": 0,
+  "donorReadyCount": 0,
+  "checks": {
+    "records100": true,
+    "uniqueIds": true,
+    "uniqueCanonicalRecipients": true,
+    "uniqueNames": true,
+    "noDuplicateKnownEIN": true,
+    "pinnedBoundary": true,
+    "allLocalIntersections": true,
+    "oneCohortEach": true,
+    "selected25": true,
+    "selectionSubset": true,
+    "all100Compared": true,
+    "priorityRanks1to25": true,
+    "noAlphaOrDonorCredit": true
+  },
+  "requiredCorrections": [
+    {
+      "ordinal": 1,
+      "id": "houston-bee-busy-wellness-center",
+      "field": "mechanismHypothesis",
+      "old": "Overdose prevention",
+      "replacement": "Accessible primary, dental and behavioral healthcare",
+      "reason": "Replacement FQHC inherited predecessor harm-reduction label. Current primary supports general healthcare and substance-use services, not a verified naloxone-delivery program.",
+      "source": "https://mybbwc.org/about/"
+    },
+    {
+      "ordinal": 74,
+      "id": "houston-elijah-rising",
+      "field": "mechanismHypothesis",
+      "old": "Refugee health access",
+      "replacement": "Sexual-exploitation survivor residential care and recovery",
+      "reason": "Elijah Rising replaced The Alliance but retained refugee mechanism. Primary describes anti-trafficking survivor care.",
+      "source": "https://elijahrising.org/restoration/"
+    },
+    {
+      "ordinal": 80,
+      "id": "houston-the-lighthouse-of-houston",
+      "field": "mechanismHypothesis",
+      "old": "Environmental health policy",
+      "replacement": "Low-vision rehabilitation, behavioral health and disability support",
+      "reason": "Lighthouse replaced environmental charity but inherited environmental label; corrected cohort already disability-pediatric.",
+      "source": "https://houstonlighthouse.org/donate/"
+    }
+  ],
+  "integrationInstruction": "Apply mechanism corrections to discovery records and every selected/alternate embedded copy by id. Keep the current selected 25; no substitute needed. Do not change author research intervals or assign audit time as research.",
+  "identityReview": "100 distinct screened recipient identities, not 100 completed IRS/processor crosswalks. Known EINs unique. Programs/brands such as NAM Clinic, Omega House, Grace Place, former AIDS Foundation Houston, former Center for Pursuit, HVL/HBF and coalition partners are appropriately distinguished. Exact tax identity and fund restrictions remain alpha prerequisites where incomplete.",
+  "selectionReview": "All ten cohorts cover all 100 once and compare selected candidates against reserves using health pathway, whole-recipient costs, substitution and harms. Twenty-five are defensible research priorities, not measured best-value charities. Clinical-access nine, addiction one, mental-health one, violence three, repair three, nutrition two, environment two, legal two and disability two. Excluding general housing from the selected set is an explicit health-only research tradeoff, not a zero-value conclusion. No ranking or membership change is compelled by this focused audit.",
+  "routeReview": {
+    "completedCheckoutVerification": false,
+    "unresolvedRoutes": [
+      {
+        "id": "houston-recovery-center",
+        "name": "Houston Recovery Center",
+        "qualification": "Named recipient/service confirmed; usable giving endpoint/payee completion unresolved, not donor-ready."
+      },
+      {
+        "id": "asian-american-health-coalition-hope-clinic",
+        "name": "Asian American Health Coalition HOPE Clinic",
+        "qualification": "Named recipient/service confirmed; usable giving endpoint/payee completion unresolved, not donor-ready."
+      },
+      {
+        "id": "el-centro-de-corazon",
+        "name": "El Centro de Corazon",
+        "qualification": "Named recipient/service confirmed; usable giving endpoint/payee completion unresolved, not donor-ready."
+      },
+      {
+        "id": "st-hope-healthcare",
+        "name": "St Hope Healthcare",
+        "qualification": "Named recipient/service confirmed; usable giving endpoint/payee completion unresolved, not donor-ready."
+      },
+      {
+        "id": "the-allice-collective",
+        "name": "The ALLICE Collective",
+        "qualification": "Named recipient/service confirmed; usable giving endpoint/payee completion unresolved, not donor-ready."
+      },
+      {
+        "id": "depression-and-bipolar-support-alliance-greater-houston",
+        "name": "re:MIND (formerly DBSA Greater Houston)",
+        "qualification": "Named recipient/service confirmed; usable giving endpoint/payee completion unresolved, not donor-ready."
+      },
+      {
+        "id": "houston-community-land-trust",
+        "name": "Houston Community Land Trust",
+        "qualification": "Named recipient/service confirmed; usable giving endpoint/payee completion unresolved, not donor-ready."
+      },
+      {
+        "id": "west-houston-assistance-ministries",
+        "name": "West Houston Assistance Ministries",
+        "qualification": "Named recipient/service confirmed; usable giving endpoint/payee completion unresolved, not donor-ready."
+      },
+      {
+        "id": "texas-environmental-justice-advocacy-services",
+        "name": "Texas Environmental Justice Advocacy Services",
+        "qualification": "Named recipient/service confirmed; usable giving endpoint/payee completion unresolved, not donor-ready."
+      }
+    ],
+    "resolvedDuringAudit": [
+      {
+        "id": "el-centro-de-corazon",
+        "recipientRoute": "https://www.elcentrodecorazon.org/donate-now/",
+        "status": "Recipient-owned donation instructions and mail/telephone route verified; transaction and restrictions not tested."
+      }
+    ],
+    "qualification": "Discovery eligibility relies on real named recipient and relevant activity, not verified payment settlement for all 100. Preserve explicit unresolved statuses; do not advertise 100 fully verified donation checkouts. All selected recipients have named organizational support routes, but payment processor settlement and donor marginality remain untested."
+  },
+  "staleOrScopeFindings": [
+    "Three replacement mechanism labels are materially wrong and must be fixed; underlying identities and cohort comparisons remain valid.",
+    "Santa Maria Jacquelyn campus closure/bed relocation is already distinguished from total organization closure; current nonprofit and giving continue. Avenue360 temporary Spring Cypress closure similarly does not negate other current clinics.",
+    "Common Threads local source is partly historical and current site signals SNAP-Ed loss/digital training transition. Retain as reserve with current physical Houston capacity unresolved, not confirmed unchanged school delivery. Healthy Futures likewise has historical local evidence plus current statewide policy scope.",
+    "HHRA exclusion should remain an unresolved payee/current-status lead, not a claim of nonexistence: current Allies in Hope primary page independently corroborates collaborative outreach. This new corroboration does not require replacing Bee Busy or adding a 101st active discovery.",
+    "Saved retrieval ordinals 1,74,80 originally refer to excluded predecessors. Match sources by URL and named identity, not ordinal alone; corrected replacement primary sources were independently reopened.",
+    "Wider statewide/national providers, Bayou watershed and out-of-MSA Walker/Grimes/Washington/Beaumont effects are not assumed fully local. Discovery county lists are minimum intersections, not health attribution fractions."
+  ],
+  "sourceReuse": [
+    "/tmp/houston-primary-retrieval.json",
+    "/tmp/houston-supplement-retrieval.json"
+  ],
+  "freshSourceChecks": [
+    {
+      "url": "https://www.whitehouse.gov/wp-content/uploads/2023/07/OMB-Bulletin-23-01.pdf",
+      "finding": "Official indexed delineation matches all ten counties; do not use older nine-county boundary."
+    },
+    {
+      "url": "https://mybbwc.org/about/",
+      "finding": "FQHC, Harris footprint and Give Donations route verified; not predecessor HHRA."
+    },
+    {
+      "url": "https://www.elcentrodecorazon.org/donate-now/",
+      "finding": "Named recipient mail, telephone and PayPal support route found; update previously unresolved route."
+    },
+    {
+      "url": "https://houstonlighthouse.org/donate/",
+      "finding": "Current nonprofit low-vision recipient and monetary giving verified."
+    },
+    {
+      "url": "https://elijahrising.org/restoration/",
+      "finding": "Current survivor residential care mechanism verified."
+    },
+    {
+      "url": "https://elijahrising.org/getinvolved/",
+      "finding": "Recipient-owned donation invitation verified."
+    },
+    {
+      "url": "https://houstonrecoverycenter.org/about-us/",
+      "finding": "Named government-linked nonprofit recovery service; gift policy exists, current checkout completion remains unresolved."
+    },
+    {
+      "url": "https://www.pursuitcenter.org/donate",
+      "finding": "Current named payee, Houston address and EIN 74-1272417 verified."
+    },
+    {
+      "url": "https://namigreaterhouston.org/get-involved/donate/",
+      "finding": "Current local affiliate giving route verified."
+    },
+    {
+      "url": "https://avda.org/about/our-clients/",
+      "finding": "Austin/Waller office scope corroborated; out-of-MSA Grimes/Washington excluded."
+    },
+    {
+      "url": "https://www.lotshouston.org/home.html",
+      "finding": "Current indexed named church community and Donate Now invitation; partner clinic ownership not inferred."
+    },
+    {
+      "url": "https://echoshouston.org/",
+      "finding": "Current 2025 local service metrics, Bissonnet location and clinical/benefits access confirmed."
+    },
+    {
+      "url": "https://www.aihhouston.org/",
+      "finding": "Current recipient, Houston sites, November 2026 event and Donate Today confirmed."
+    },
+    {
+      "url": "https://www.aihhouston.org/work",
+      "finding": "Primary partner page explicitly names Houston Harm Reduction Alliance outreach; adds service corroboration but does not resolve HHRA payee."
+    },
+    {
+      "url": "https://www.marchofdimes.org/our-work/mobile-health-centers",
+      "finding": "Current Houston Memorial Hermann partnership verified; national gift not restricted automatically."
+    },
+    {
+      "url": "https://www.linkedin.com/company/depression-and-bipolar-support-alliance-greater-houston",
+      "finding": "Organization-owned current re:MIND account corroborates former DBSA identity and active groups; checkout unresolved."
+    }
+  ],
+  "recordCoverage": [
+    {
+      "id": "houston-bee-busy-wellness-center",
+      "name": "Bee Busy Wellness Center",
+      "primaryLead": "https://mybbwc.org/about/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "clinical-access",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": true
+    },
+    {
+      "id": "houston-recovery-center",
+      "name": "Houston Recovery Center",
+      "primaryLead": "https://houstonrecoverycenter.org/about-us/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "addiction",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "the-council-on-recovery",
+      "name": "The Council on Recovery",
+      "primaryLead": "https://www.councilonrecovery.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "addiction",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "santa-maria-hostel",
+      "name": "Santa Maria Hostel",
+      "primaryLead": "https://www.santamariahostel.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "addiction",
+      "selected": true,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "open-door-mission",
+      "name": "Open Door Mission",
+      "primaryLead": "https://www.opendoorhouston.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "addiction",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "san-jose-clinic",
+      "name": "San Jose Clinic",
+      "primaryLead": "https://www.sanjoseclinic.org/",
+      "countyFips": [
+        "48201",
+        "48157"
+      ],
+      "cohort": "clinical-access",
+      "selected": true,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "christ-clinic",
+      "name": "Christ Clinic",
+      "primaryLead": "https://christclinickaty.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "clinical-access",
+      "selected": true,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "tomagwa-healthcare-ministries",
+      "name": "TOMAGWA HealthCare Ministries",
+      "primaryLead": "https://www.tomagwa.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "clinical-access",
+      "selected": true,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "ibn-sina-foundation",
+      "name": "Ibn Sina Foundation",
+      "primaryLead": "https://ibnsinafoundation.org/",
+      "countyFips": [
+        "48201",
+        "48157"
+      ],
+      "cohort": "clinical-access",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "shifa-healthcare-and-community-services",
+      "name": "Shifa Healthcare and Community Services",
+      "primaryLead": "https://www.shifausa.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "clinical-access",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "christus-foundation-for-healthcare",
+      "name": "CHRISTUS Foundation for HealthCare",
+      "primaryLead": "https://christusfoundation.org/",
+      "countyFips": [
+        "48201",
+        "48167"
+      ],
+      "cohort": "clinical-access",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "healthcare-for-the-homeless-houston",
+      "name": "Healthcare for the Homeless Houston",
+      "primaryLead": "https://www.homeless-healthcare.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "clinical-access",
+      "selected": true,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "asian-american-health-coalition-hope-clinic",
+      "name": "Asian American Health Coalition HOPE Clinic",
+      "primaryLead": "https://www.hopechc.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "clinical-access",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "vecino-health-centers",
+      "name": "Vecino Health Centers",
+      "primaryLead": "https://vecinohealthcenters.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "clinical-access",
+      "selected": true,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "el-centro-de-corazon",
+      "name": "El Centro de Corazon",
+      "primaryLead": "https://www.elcentrodecorazon.org/locations/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "clinical-access",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "spring-branch-community-health-center",
+      "name": "Spring Branch Community Health Center",
+      "primaryLead": "https://sbchc.net/",
+      "countyFips": [
+        "48201",
+        "48157",
+        "48339",
+        "48473",
+        "48291"
+      ],
+      "cohort": "clinical-access",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "accesshealth",
+      "name": "AccessHealth",
+      "primaryLead": "https://www.myaccesshealth.org/",
+      "countyFips": [
+        "48157",
+        "48473"
+      ],
+      "cohort": "clinical-access",
+      "selected": true,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "legacy-community-health",
+      "name": "Legacy Community Health",
+      "primaryLead": "https://www.legacycommunityhealth.org/",
+      "countyFips": [
+        "48201",
+        "48157"
+      ],
+      "cohort": "clinical-access",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "avenue-360-health-and-wellness",
+      "name": "Avenue 360 Health and Wellness",
+      "primaryLead": "https://avenue360.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "clinical-access",
+      "selected": true,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "allies-in-hope",
+      "name": "Allies in Hope (formerly AIDS Foundation Houston)",
+      "primaryLead": "https://www.aihhouston.org/work",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "clinical-access",
+      "selected": true,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "st-hope-healthcare",
+      "name": "St Hope Healthcare",
+      "primaryLead": "https://www.sthopehealthcare.com/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "clinical-access",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "the-rose",
+      "name": "The Rose",
+      "primaryLead": "https://therose.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "clinical-access",
+      "selected": true,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "st-vincent-s-house",
+      "name": "St Vincent's House",
+      "primaryLead": "https://www.stvhope.org/",
+      "countyFips": [
+        "48167"
+      ],
+      "cohort": "clinical-access",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "family-houston",
+      "name": "Family Houston",
+      "primaryLead": "https://familyhouston.org/",
+      "countyFips": [
+        "48201",
+        "48157",
+        "48339",
+        "48473"
+      ],
+      "cohort": "mental-health",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "the-allice-collective",
+      "name": "The ALLICE Collective",
+      "primaryLead": "https://www.theallice.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "mental-health",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "hope-and-healing-center-and-institute",
+      "name": "Hope and Healing Center and Institute",
+      "primaryLead": "https://hopeandhealingcenter.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "mental-health",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "crisis-intervention-of-houston",
+      "name": "Crisis Intervention of Houston",
+      "primaryLead": "https://www.crisishotline.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "mental-health",
+      "selected": true,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "mental-health-america-of-greater-houston",
+      "name": "Mental Health America of Greater Houston",
+      "primaryLead": "https://mhahouston.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "mental-health",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "nami-greater-houston",
+      "name": "NAMI Greater Houston",
+      "primaryLead": "https://namigreaterhouston.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "mental-health",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "depression-and-bipolar-support-alliance-greater-houston",
+      "name": "re:MIND (formerly DBSA Greater Houston)",
+      "primaryLead": "https://www.linkedin.com/company/depression-and-bipolar-support-alliance-greater-houston",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "mental-health",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "depelchin-children-s-center",
+      "name": "DePelchin Children's Center",
+      "primaryLead": "https://www.depelchin.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "violence-child-safety",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "the-children-s-assessment-center-foundation",
+      "name": "The Children's Assessment Center Foundation",
+      "primaryLead": "https://cachouston.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "violence-child-safety",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "child-advocates-of-fort-bend",
+      "name": "Child Advocates of Fort Bend",
+      "primaryLead": "https://www.cafb.org/",
+      "countyFips": [
+        "48157"
+      ],
+      "cohort": "violence-child-safety",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "children-s-safe-harbor",
+      "name": "Children's Safe Harbor",
+      "primaryLead": "https://childrenssafeharbor.org/",
+      "countyFips": [
+        "48339",
+        "48407"
+      ],
+      "cohort": "violence-child-safety",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "houston-area-women-s-center",
+      "name": "Houston Area Women's Center",
+      "primaryLead": "https://hawc.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "violence-child-safety",
+      "selected": true,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "fort-bend-women-s-center",
+      "name": "Fort Bend Women's Center",
+      "primaryLead": "https://www.fbwc.org/",
+      "countyFips": [
+        "48157"
+      ],
+      "cohort": "violence-child-safety",
+      "selected": true,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "montgomery-county-women-s-center",
+      "name": "Montgomery County Women's Center",
+      "primaryLead": "https://mcwctx.org/",
+      "countyFips": [
+        "48339"
+      ],
+      "cohort": "violence-child-safety",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "the-bridge-over-troubled-waters",
+      "name": "The Bridge Over Troubled Waters",
+      "primaryLead": "https://tbotw.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "violence-child-safety",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "bay-area-turning-point",
+      "name": "Bay Area Turning Point",
+      "primaryLead": "https://www.bayareaturningpoint.org/",
+      "countyFips": [
+        "48201",
+        "48167",
+        "48071"
+      ],
+      "cohort": "violence-child-safety",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "daya",
+      "name": "Daya",
+      "primaryLead": "https://www.dayahouston.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "violence-child-safety",
+      "selected": true,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "search-homeless-services",
+      "name": "SEARCH Homeless Services",
+      "primaryLead": "https://www.searchhomeless.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "housing-homelessness",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "the-beacon",
+      "name": "The Beacon",
+      "primaryLead": "https://www.beaconhomeless.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "housing-homelessness",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "star-of-hope-mission",
+      "name": "Star of Hope Mission",
+      "primaryLead": "https://www.sohmission.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "housing-homelessness",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "magnificat-houses",
+      "name": "Magnificat Houses",
+      "primaryLead": "https://mhihouston.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "housing-homelessness",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "covenant-house-texas",
+      "name": "Covenant House Texas",
+      "primaryLead": "https://www.covenanthousetx.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "housing-homelessness",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "grace-place",
+      "name": "Grace Place",
+      "primaryLead": "https://www.montrosegraceplace.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "housing-homelessness",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "the-montrose-center",
+      "name": "The Montrose Center",
+      "primaryLead": "https://montrosecenter.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "mental-health",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "new-hope-housing",
+      "name": "New Hope Housing",
+      "primaryLead": "https://www.newhopehousing.com/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "housing-homelessness",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "coalition-for-the-homeless-of-houston-harris-county",
+      "name": "Coalition for the Homeless of Houston/Harris County",
+      "primaryLead": "https://www.homelesshouston.org/",
+      "countyFips": [
+        "48201",
+        "48157",
+        "48339"
+      ],
+      "cohort": "housing-homelessness",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "lord-of-the-streets",
+      "name": "Lord of the Streets",
+      "primaryLead": "https://www.lotshouston.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "housing-homelessness",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "houston-habitat-for-humanity",
+      "name": "Houston Habitat for Humanity",
+      "primaryLead": "https://www.houstonhabitat.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "housing-homelessness",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "avenue-community-development-corporation",
+      "name": "Avenue Community Development Corporation",
+      "primaryLead": "https://www.avenuecdc.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "housing-homelessness",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "rebuilding-together-houston",
+      "name": "Rebuilding Together Houston",
+      "primaryLead": "https://rebuildingtogetherhouston.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "repair-heat",
+      "selected": true,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "the-restoration-team",
+      "name": "The Restoration Team",
+      "primaryLead": "https://www.therestorationteam.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "repair-heat",
+      "selected": true,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "west-street-recovery",
+      "name": "West Street Recovery",
+      "primaryLead": "https://www.weststreetrecovery.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "repair-heat",
+      "selected": true,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "houston-community-land-trust",
+      "name": "Houston Community Land Trust",
+      "primaryLead": "https://www.houstonclt.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "housing-homelessness",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "bakerripley",
+      "name": "BakerRipley",
+      "primaryLead": "https://bakerripley.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "basic-needs",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "northwest-assistance-ministries",
+      "name": "Northwest Assistance Ministries",
+      "primaryLead": "https://www.namonline.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "basic-needs",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "west-houston-assistance-ministries",
+      "name": "West Houston Assistance Ministries",
+      "primaryLead": "https://www.whamministries.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "basic-needs",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "echos",
+      "name": "Epiphany Community Health Outreach Services (ECHOS)",
+      "primaryLead": "https://echoshouston.org/client-services/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "basic-needs",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "humble-area-assistance-ministries",
+      "name": "Humble Area Assistance Ministries",
+      "primaryLead": "https://haamministries.org/",
+      "countyFips": [
+        "48201",
+        "48339"
+      ],
+      "cohort": "basic-needs",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "katy-christian-ministries",
+      "name": "Katy Christian Ministries",
+      "primaryLead": "https://ktcm.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "basic-needs",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "east-fort-bend-human-needs-ministry",
+      "name": "East Fort Bend Human Needs Ministry",
+      "primaryLead": "https://www.humanneeds.org/",
+      "countyFips": [
+        "48157"
+      ],
+      "cohort": "basic-needs",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "brazosport-cares",
+      "name": "Brazosport Cares",
+      "primaryLead": "https://brazosportcares.org/",
+      "countyFips": [
+        "48039"
+      ],
+      "cohort": "basic-needs",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "interfaith-of-the-woodlands",
+      "name": "Interfaith of The Woodlands",
+      "primaryLead": "https://woodlandsinterfaith.org/",
+      "countyFips": [
+        "48339"
+      ],
+      "cohort": "basic-needs",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "meals-on-wheels-montgomery-county",
+      "name": "Meals on Wheels Montgomery County",
+      "primaryLead": "https://www.mowmc.org/",
+      "countyFips": [
+        "48339"
+      ],
+      "cohort": "basic-needs",
+      "selected": true,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "interfaith-caring-ministries",
+      "name": "Interfaith Caring Ministries",
+      "primaryLead": "https://icmtx.org/",
+      "countyFips": [
+        "48167"
+      ],
+      "cohort": "basic-needs",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "galveston-county-food-bank",
+      "name": "Galveston County Food Bank",
+      "primaryLead": "https://www.galvestoncountyfoodbank.org/",
+      "countyFips": [
+        "48167"
+      ],
+      "cohort": "basic-needs",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "houston-food-bank",
+      "name": "Houston Food Bank",
+      "primaryLead": "https://www.houstonfoodbank.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "basic-needs",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "kids-meals",
+      "name": "Kids' Meals",
+      "primaryLead": "https://kidsmealsinc.org/",
+      "countyFips": [
+        "48201",
+        "48339"
+      ],
+      "cohort": "basic-needs",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "target-hunger",
+      "name": "Target Hunger",
+      "primaryLead": "https://targethunger.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "basic-needs",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "brighter-bites",
+      "name": "Brighter Bites",
+      "primaryLead": "https://www.brighterbites.org/",
+      "countyFips": [
+        "48201",
+        "48157"
+      ],
+      "cohort": "basic-needs",
+      "selected": true,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "common-threads",
+      "name": "Common Threads",
+      "primaryLead": "https://www.commonthreads.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "basic-needs",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "houston-elijah-rising",
+      "name": "Elijah Rising",
+      "primaryLead": "https://elijahrising.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "violence-child-safety",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": true
+    },
+    {
+      "id": "ymca-of-greater-houston",
+      "name": "YMCA of Greater Houston",
+      "primaryLead": "https://ymcahouston.org/",
+      "countyFips": [
+        "48201",
+        "48157"
+      ],
+      "cohort": "basic-needs",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "air-alliance-houston",
+      "name": "Air Alliance Houston",
+      "primaryLead": "https://airalliancehouston.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "environment-mobility",
+      "selected": true,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "texas-environmental-justice-advocacy-services",
+      "name": "Texas Environmental Justice Advocacy Services",
+      "primaryLead": "https://tejasbarrios.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "environment-mobility",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "bayou-city-waterkeeper",
+      "name": "Bayou City Waterkeeper",
+      "primaryLead": "https://bayoucitywaterkeeper.org/",
+      "countyFips": [
+        "48201",
+        "48167"
+      ],
+      "cohort": "environment-mobility",
+      "selected": true,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "bayou-preservation-association",
+      "name": "Bayou Preservation Association",
+      "primaryLead": "https://www.bayoupreservation.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "environment-mobility",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "houston-the-lighthouse-of-houston",
+      "name": "The Lighthouse of Houston",
+      "primaryLead": "https://houstonlighthouse.org/donate/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "disability-pediatric",
+      "selected": true,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": true
+    },
+    {
+      "id": "bikehouston",
+      "name": "BikeHouston",
+      "primaryLead": "https://www.bikehouston.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "environment-mobility",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "link-houston",
+      "name": "LINK Houston",
+      "primaryLead": "https://linkhouston.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "environment-mobility",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "lone-star-legal-aid",
+      "name": "Lone Star Legal Aid",
+      "primaryLead": "https://www.lonestarlegal.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "legal-systemic",
+      "selected": true,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "houston-volunteer-lawyers",
+      "name": "Houston Bar Foundation — supporting Houston Volunteer Lawyers",
+      "primaryLead": "https://www.makejusticehappen.org/get-involved/donate/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "legal-systemic",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "disability-rights-texas",
+      "name": "Disability Rights Texas",
+      "primaryLead": "https://disabilityrightstx.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "legal-systemic",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "texas-appleseed",
+      "name": "Texas Appleseed",
+      "primaryLead": "https://www.texasappleseed.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "legal-systemic",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "texas-housers",
+      "name": "Texas Housers",
+      "primaryLead": "https://texashousers.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "legal-systemic",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "children-at-risk",
+      "name": "CHILDREN AT RISK",
+      "primaryLead": "https://childrenatrisk.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "legal-systemic",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "texans-care-for-children",
+      "name": "Texans Care for Children",
+      "primaryLead": "https://txchildren.org/",
+      "countyFips": [
+        "48015",
+        "48039",
+        "48071",
+        "48157",
+        "48167",
+        "48201",
+        "48291",
+        "48339",
+        "48407",
+        "48473"
+      ],
+      "cohort": "legal-systemic",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "every-texan",
+      "name": "Every Texan",
+      "primaryLead": "https://everytexan.org/",
+      "countyFips": [
+        "48015",
+        "48039",
+        "48071",
+        "48157",
+        "48167",
+        "48201",
+        "48291",
+        "48339",
+        "48407",
+        "48473"
+      ],
+      "cohort": "legal-systemic",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "the-periwinkle-foundation",
+      "name": "The Periwinkle Foundation",
+      "primaryLead": "https://periwinklefoundation.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "disability-pediatric",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "march-of-dimes",
+      "name": "March of Dimes",
+      "primaryLead": "https://www.marchofdimes.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "disability-pediatric",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "healthy-futures-of-texas",
+      "name": "Healthy Futures of Texas",
+      "primaryLead": "https://hftx.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "legal-systemic",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "avda",
+      "name": "AVDA",
+      "primaryLead": "https://avda.org/about/",
+      "countyFips": [
+        "48201",
+        "48157",
+        "48015",
+        "48473"
+      ],
+      "cohort": "legal-systemic",
+      "selected": true,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "the-harris-center-foundation",
+      "name": "The Harris Center Foundation",
+      "primaryLead": "https://www.theharriscenterfoundation.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "disability-pediatric",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "association-for-the-advancement-of-mexican-americans",
+      "name": "Association for the Advancement of Mexican Americans",
+      "primaryLead": "https://www.aama.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "disability-pediatric",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "communities-in-schools-of-houston",
+      "name": "Communities In Schools of Houston",
+      "primaryLead": "https://www.cishouston.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "disability-pediatric",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "bo-s-place",
+      "name": "Bo's Place",
+      "primaryLead": "https://www.bosplace.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "mental-health",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "the-center-for-pursuit",
+      "name": "Pursuit Center (formerly The Center for Pursuit)",
+      "primaryLead": "https://www.pursuitcenter.org/",
+      "countyFips": [
+        "48201"
+      ],
+      "cohort": "disability-pediatric",
+      "selected": false,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    },
+    {
+      "id": "easter-seals-greater-houston",
+      "name": "Easter Seals Greater Houston",
+      "primaryLead": "https://eastersealshouston.org/",
+      "countyFips": [
+        "48201",
+        "48339"
+      ],
+      "cohort": "disability-pediatric",
+      "selected": true,
+      "review": "Identity, local mechanism, route status and comparative rationale reviewed using saved primary evidence plus targeted fresh checks; not a financial alpha audit.",
+      "correctionRequired": false
+    }
+  ],
+  "nextBottleneck": "Alpha work on selected 25: exact recipient financial scope, original expenses and clinical/causal/marginal model. Resolve actual giving payee where absent before a donor recommendation.",
+  "operations": {
+    "siteEdits": false,
+    "git": false,
+    "builds": false,
+    "installs": false,
+    "transactions": false,
+    "outreach": false
+  }
+}

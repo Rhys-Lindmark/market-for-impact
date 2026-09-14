@@ -78,8 +78,8 @@ for(const r of la.records){
 assert.equal(laProgress.alphaPublished,25);
 const denver=read('geography-discovery/denver-seed.json');
 assert.equal(denver.candidates.length,40);
-assert.equal(p.editions.find(e=>e.id==='denver').discoveryProvisional,40);
-assert.equal(p.editions.find(e=>e.id==='denver').discoveryAccepted,0);
+assert.equal(p.editions.find(e=>e.id==='denver').discoveryProvisional,0);
+assert.equal(p.editions.find(e=>e.id==='denver').discoveryAccepted,100);
 const seattle=read('geography-discovery/seattle-independent-acceptance.json');
 const seattleProgress=p.editions.find(e=>e.id==='seattle');
 assert.equal(seattle.records.length,100);
@@ -114,4 +114,22 @@ for(const r of nyc.records){
 assert.ok(nycProgress.acceptedDiscoveryIds.includes('org:zufall-health-foundation'));
 assert.ok(!nycProgress.acceptedDiscoveryIds.includes('org:zufall-health'));
 assert.equal(nycProgress.alphaPublished,0);assert.equal(nycProgress.betaAcceptedPublished,0);
-console.log('PASS:11 editions; nested counts;9 MSAs/102 counties;500 accepted discovery,125 selected priorities; NYC/Seattle no alpha or beta credit.');
+for(const city of ['denver','chicago','houston']){
+ const row=p.editions.find(e=>e.id===city);
+ const packet=read('geography-discovery/'+(city==='denver'?'denver-independent-acceptance.json':city+'-cohort-final.json'));
+ const selection=city==='denver'?packet.selected:read('geography-discovery/'+city+'-selection.json').selected;
+ assert.equal(packet.records.length,100);
+ assert.deepEqual(row.acceptedDiscoveryIds,packet.records.map(r=>r.canonicalOrganizationId));
+ assert.deepEqual(row.selectedAlphaIds,selection.map(r=>r.canonicalOrganizationId));
+ assert.equal(row.selectedAlphaIds.length,25);
+ assert.equal(row.alphaPublished,0);assert.equal(row.betaAcceptedPublished,0);assert.equal(row.topPicksPublished,0);
+ const boundary=b.metros.find(m=>m.id===city);
+ for(const record of packet.records){
+  const counties=record.inScopeCountyAnchors||record.countyFips;
+  assert.ok(counties.length&&counties.every(f=>boundary.counties.some(c=>c.fips===f)));
+  assert.ok(record.mechanism||record.mechanismHypothesis);
+  assert.ok(record.falsifier||record.majorDisqualifier);
+  assert.ok((record.primaryVerification||record.sources).length);
+ }
+}
+console.log('PASS:11 editions; nested counts;9 MSAs/102 counties;800 accepted discovery,200 selected priorities; no new alpha or beta credit for discovery.');

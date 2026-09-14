@@ -11,6 +11,8 @@ test.beforeEach(async({page,baseURL})=>{
 
 test('published research has measured headers, usable models and scoped canonical links',async({page,request})=>{
  for(const [edition,slug,name,minutes,donate] of [
+  ['usa','institute-for-safer-trucking','Institute for Safer Trucking','5',true],
+  ['usa','us-alcohol-policy-alliance','US Alcohol Policy Alliance','8',true],
   ['california','harm-reduction-services','Harm Reduction Services','28',true],
   ['usa','national-center-for-healthy-housing','National Center for Healthy Housing','20',true],
   ['california','operation-access','Operation Access','8',true],

@@ -11,6 +11,12 @@ test.beforeEach(async({page,baseURL})=>{
 
 test('published research has measured headers, usable models and scoped canonical links',async({page,request})=>{
  for(const [edition,slug,name,minutes,donate] of [
+  ['usa','shatterproof','Shatterproof','16',false],
+  ['usa','food-research-and-action-center','Food Research & Action Center','12',true],
+  ['usa','center-for-environmental-health','Center for Environmental Health','13',false],
+  ['usa','toxic-free-future','Toxic-Free Future','12',false],
+  ['usa','farmworker-justice','Farmworker Justice','12',false],
+  ['usa','earthjustice','Earthjustice','6',false],
   ['los-angeles','lestonnac-free-clinic','Lestonnac Free Clinic','7',true],
   ['los-angeles','streets-are-for-everyone','Streets Are For Everyone','11',true],
   ['los-angeles','breathe-southern-california','Breathe Southern California','11',true],
@@ -90,6 +96,9 @@ test('research table keeps unknown means unknown and shows audited recipient mea
  await expect(page.locator('tr').filter({hasText:'WorkSafe'}).getByTitle('Legal-protection health only; other impacts unestimated')).toHaveText('$161.3M');
  await expect(page.locator('tr').filter({hasText:'Disability Rights California'})).toContainText('$64.8M');
  await page.goto('/usa/all');
+ await expect(page.locator('tr').filter({hasText:'Shatterproof'})).toContainText('$44.8M');
+ await expect(page.locator('tr').filter({hasText:'Earthjustice'}).getByTitle('PM implementation health only; other impacts unestimated')).toHaveText('$35.4M');
+ await expect(page.locator('tr').filter({hasText:'Center for Environmental Health'})).toContainText('Not estimated');
  await expect(page.locator('tr').filter({hasText:'National Center for Healthy Housing'})).toContainText('$3.0M');
  await expect(page.locator('tr').filter({hasText:'Legal Action Center'})).toContainText('Not estimated');
  await expect(page.locator('tr').filter({hasText:'Legal Action Center'})).toContainText('$8.6M');

@@ -11,6 +11,14 @@ test.beforeEach(async({page,baseURL})=>{
 
 test('published research has measured headers, usable models and scoped canonical links',async({page,request})=>{
  for(const [edition,slug,name,minutes,donate] of [
+  ["los-angeles","communities-for-a-better-environment","Communities for a Better Environment","10",true],
+  ["los-angeles","east-yard-communities-for-environmental-justice","East Yard Communities for Environmental Justice","10",false],
+  ["los-angeles","vietnamese-american-cancer-foundation","Vital Access Care Foundation (Vietnamese American Cancer Foundation)","8",true],
+  ["los-angeles","maternal-mental-health-now","Maternal Mental Health NOW","7",true],
+  ["los-angeles","urban-peace-institute","Urban Peace Institute","10",true],
+  ["los-angeles","public-law-center","Public Law Center","10",true],
+  ["los-angeles","inner-city-law-center","Inner City Law Center","8",true],
+  ["los-angeles","human-options","Human Options","9",true],
   ['usa','shatterproof','Shatterproof','16',false],
   ['usa','food-research-and-action-center','Food Research & Action Center','12',true],
   ['usa','center-for-environmental-health','Center for Environmental Health','13',false],

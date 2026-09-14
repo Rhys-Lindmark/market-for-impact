@@ -1,0 +1,2039 @@
+{
+  "schemaVersion": 1,
+  "edition": "chicago",
+  "status": "independent-acceptance-with-required-corrections",
+  "reviewer": "usa_beta_one",
+  "authorWasDifferent": true,
+  "inputs": [
+    "/tmp/givebetter-chicago-discovery.json",
+    "/tmp/givebetter-chicago-selection.json"
+  ],
+  "auditInterval": {
+    "start": "2026-09-14T04:24:43Z",
+    "end": "2026-09-14T04:30:47.364Z",
+    "actualAuditMinutes": 6.072733333333334,
+    "authorMinutes": 0,
+    "alphaMinutes": 0,
+    "betaMinutes": 0
+  },
+  "decision": {
+    "discovery": "Accept 100 only after applying Erikson current-operation correction; operating institute retained on narrower current service basis.",
+    "selection": "Accept unchanged 25 as a side-by-side research-priority shortlist, not expected-value ranking or donor endorsement.",
+    "rootAcceptanceRequired": true,
+    "alphaCount": 0,
+    "betaCount": 0,
+    "donorReadyCount": 0
+  },
+  "checks": {
+    "records100": true,
+    "distinctCanonicalRecipients100": true,
+    "selected25": true,
+    "selectedAreDiscoverySubset": true,
+    "flagsAgree": true,
+    "all100ComparedOnce": true,
+    "boundaryMatchesPinned13": true,
+    "allAnchorsWithinBoundary": true,
+    "noAlphaBetaCredit": true
+  },
+  "coverage": {
+    "recordsIndependentlyReopened": 100,
+    "directHTMLLeadRecords": 97,
+    "primaryIndexedFallbackRecords": 3,
+    "description": "Every record received an independent current primary-lead retrieval and focused identity/service review. This is a discovery audit, not a complete verification of every source, EIN, donation checkout, annual output, county service share, or causal hypothesis. Three blocked records were checked through independently reopened primary indexed pages; targeted supplemental checks cover material recipient/closure issues."
+  },
+  "requiredPatches": [
+    {
+      "id": "erikson-institute",
+      "ordinal": 81,
+      "severity": "material-current-operations",
+      "before": {
+        "geographyEvidence": "Erikson current child/family clinic and practitioner program pages resolve403 and show Chicago clinical activity. Whole graduate institute, not clinic-only recipient.",
+        "mechanism": "Young-child clinical assessment/therapy may reduce developmental distress.",
+        "ein": null
+      },
+      "after": {
+        "geographyEvidence": "Erikson’s Center for Children and Families closed all locations effective June 30, 2025. The current Fussy Baby Network Chicago offers infant-specialist phone support and describes home visits; its international warmline reach must not be counted wholly inside the Chicago MSA. Retain the whole operating institute, not the closed clinic, as the recipient.",
+        "independentFinding": "The dedicated CCF closure notice overrides the stale general community-services page. Current Fussy Baby Network activity supports a narrower infant-family support hypothesis; no current CCF clinical intake or treatment output is credited.",
+        "mechanism": "Infant-specialist support may reduce parental distress and improve caregiving; professional training may improve downstream services. These are hypotheses, not continued CCF assessment or therapy delivery.",
+        "falsifier": "The closed CCF cannot deliver additional treatment. Remaining support or practitioner training may have no incremental durable health benefit, and broad institute costs or non-MSA reach may dominate.",
+        "ein": "36-2593545",
+        "canonicalOrganizationId": "ein:36-2593545",
+        "einStatus": "Observed on current primary Fussy Baby Network footer; not full tax-registry audit"
+      },
+      "sources": [
+        "https://www.erikson.edu/services/center-children-families/",
+        "https://www.erikson.edu/fussy-baby-network/"
+      ],
+      "selectionEffect": "Keep unselected. Update its alternative description and cohort reasoning to mention the clinical closure and narrower support/training hypothesis."
+    },
+    {
+      "id": "chicago-cred",
+      "field": "recipientRoute.verifiedScope",
+      "after": "Recipient identity is current; closed hosted campaign contains historical mail instructions only. Current donor checkout and mail fulfillment readiness remain unverified.",
+      "reason": "A closed campaign is not evidence that its mail address remains current."
+    }
+  ],
+  "supplementalSources": [
+    {
+      "ordinal": 15,
+      "url": "https://www.accessliving.org/our-services/housing-services/",
+      "method": "independently reopened indexed primary text",
+      "finding": "Actual Chicago disability housing services, Colbert/Williams participating-agency outreach and legal discrimination work. No assisted-living ownership; housing location caveat retained."
+    },
+    {
+      "ordinal": 36,
+      "url": "https://www.aidschicago.org/",
+      "method": "independently reopened indexed primary text",
+      "finding": "Current September 2026 activity and HIV case-management/housing partnerships. Partner outputs cannot be entirely allocated to intermediary-only cost."
+    },
+    {
+      "ordinal": 81,
+      "url": "https://www.erikson.edu/services/center-children-families/",
+      "method": "independently reopened primary page through web index",
+      "finding": "All CCF locations closed June 30, 2025. Material correction required."
+    },
+    {
+      "ordinal": 81,
+      "url": "https://www.erikson.edu/fussy-baby-network/",
+      "method": "independently reopened primary page through web index",
+      "finding": "Current Chicago infant-specialist support, worldwide phone reach, home-visit description and EIN 36-2593545. No annual counts accepted as current measured output."
+    },
+    {
+      "ordinal": 23,
+      "url": "https://cnt.org/projects/rainready-calumet-corridor",
+      "method": "independently reopened indexed primary text",
+      "finding": "Six actual Cook communities and public-funded Greenprint/CNT implementation partnership. Generic My RainReady form alone insufficient."
+    },
+    {
+      "ordinal": 10,
+      "url": "https://www.eriefamilyhealth.org/support/",
+      "method": "independently reopened primary text",
+      "finding": "Both online and mailed ordinary giving explicitly identify Erie Family Health Foundation, supporting provider rather than being provider."
+    },
+    {
+      "ordinal": 98,
+      "url": "https://app.etapestry.com/onlineforms/Porter-StarkeServices_1/donate.html",
+      "method": "independently fetched original HTML, HTTP 200",
+      "finding": "Donation form explicitly identifies Porter-Starke Services Foundation; retain grant-to-provider cost bridge."
+    },
+    {
+      "ordinal": 50,
+      "url": "https://tchpfreeclinic.org/give-help/",
+      "method": "independently reopened primary text",
+      "finding": "Own displayed tax identifier 36-447569 remains malformed. Free medical/dental care and no state/federal or insurance receipts are organization claims, not cost-free care."
+    },
+    {
+      "ordinal": 75,
+      "url": "https://chicagocred.networkforgood.com/projects/166881-chicago-cred",
+      "method": "independently fetched original HTML, HTTP 200",
+      "finding": "Campaign no longer accepts donations. Old mail instructions identify CRED via Vistria; do not describe them as newly verified current fulfillment instructions. Current CRED site supports active recipient, but route remains historical/unverified for donor use."
+    },
+    {
+      "ordinal": 70,
+      "url": "https://nwhp.net/support-nwhp/",
+      "method": "independently fetched original HTML, HTTP 200",
+      "finding": "PayPal shortcode appears as literal unrendered text. No checkout functionality verified."
+    },
+    {
+      "ordinal": null,
+      "url": "https://www.povertylaw.org/about-us/",
+      "method": "independently reopened indexed primary text",
+      "finding": "Primary sunset end of 2025 banner supports excluding Shriver."
+    }
+  ],
+  "recordCoverage": [
+    {
+      "ordinal": 1,
+      "id": "chicago-recovery-alliance",
+      "name": "Chicago Recovery Alliance",
+      "selected": true,
+      "leadAttempts": [
+        {
+          "url": "https://anypositivechange.org/cra-services/",
+          "finalUrl": "https://anypositivechange.org/cra-services/",
+          "status": 200,
+          "title": "CRA Services &#8211; Chicago Recovery Alliance",
+          "textLength": 5504
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 2,
+      "id": "above-beyond",
+      "name": "Above and Beyond Family Recovery Center",
+      "selected": true,
+      "leadAttempts": [
+        {
+          "url": "https://anb.today/fundraising-galas/",
+          "finalUrl": "https://aboveandbeyondfrc.org/2026gala/",
+          "status": 200,
+          "title": "2026 Gala - Above and Beyond Family Recovery Center",
+          "textLength": 18414
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 3,
+      "id": "haymarket-center",
+      "name": "Haymarket Center",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://haymarketcenter.org/",
+          "finalUrl": "https://haymarketcenter.org/",
+          "status": 200,
+          "title": "Home - Haymarket Center",
+          "textLength": 1954
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 4,
+      "id": "thresholds",
+      "name": "Thresholds",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.thresholds.org/programs-services/centers-for-mental-wellbeing",
+          "finalUrl": "https://www.thresholds.org/programs-services/centers-for-mental-wellbeing",
+          "status": 200,
+          "title": "Centers for Mental Wellbeing - Thresholds",
+          "textLength": 6189
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 5,
+      "id": "howard-brown",
+      "name": "Howard Brown Health",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://howardbrown.org/service/sexual-health-walk-in-clinic/",
+          "finalUrl": "https://howardbrown.org/service/sexual-health-walk-in-clinic/",
+          "status": 200,
+          "title": "Sexual and Reproductive Health Walk-in Clinic - Howard Brown Health",
+          "textLength": 4621
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 6,
+      "id": "project-vida",
+      "name": "Project VIDA",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://projectvida.org/about/",
+          "finalUrl": "https://projectvida.org/about/",
+          "status": 200,
+          "title": "About &#8211; Project VIDA",
+          "textLength": 5824
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 7,
+      "id": "communityhealth",
+      "name": "CommunityHealth",
+      "selected": true,
+      "leadAttempts": [
+        {
+          "url": "https://communityhealth.org/why-donate-to-communityhealth/",
+          "finalUrl": "https://communityhealth.org/why-donate-to-communityhealth/",
+          "status": 200,
+          "title": "Why Donate to CommunityHealth? - CommunityHealth",
+          "textLength": 4705
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 8,
+      "id": "dupage-health-coalition",
+      "name": "DuPage Health Coalition",
+      "selected": true,
+      "leadAttempts": [
+        {
+          "url": "https://dupagehealthcoalition.org/",
+          "finalUrl": "https://dupagehealthcoalition.org/",
+          "status": 200,
+          "title": "Home - DuPage Health Coalition",
+          "textLength": 3460
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 9,
+      "id": "family-health-partnership",
+      "name": "Family Health Partnership Clinic",
+      "selected": true,
+      "leadAttempts": [
+        {
+          "url": "https://hpclinic.org/our-mission/",
+          "finalUrl": "https://hpclinic.org/our-mission/",
+          "status": 200,
+          "title": "Our Mission - Family Health Partnership Clinic",
+          "textLength": 2248
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 10,
+      "id": "erie-family-health-foundation",
+      "name": "Erie Family Health Foundation",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.eriefamilyhealth.org/locations/waukegan/",
+          "finalUrl": "https://www.eriefamilyhealth.org/locations/waukegan/",
+          "status": 200,
+          "title": "Waukegan &#8211; Erie Family Health Centers",
+          "textLength": 4780
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 11,
+      "id": "healthlinc",
+      "name": "HealthLinc",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://healthlincchc.org/mission/support/",
+          "finalUrl": "https://healthlincchc.org/mission/support/",
+          "status": 200,
+          "title": "Ways to Support HealthLinc | HealthLinc",
+          "textLength": 16134
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 12,
+      "id": "legal-council-health-justice",
+      "name": "Legal Council for Health Justice",
+      "selected": true,
+      "leadAttempts": [
+        {
+          "url": "https://legalcouncil.org/about/",
+          "finalUrl": "https://legalcouncil.org/about/",
+          "status": 200,
+          "title": "About Legal Council - Legal Council for Health Justice",
+          "textLength": 4630
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 13,
+      "id": "legal-aid-chicago",
+      "name": "Legal Aid Chicago",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://legalaidchicago.org/get-involved/how-to-donate/",
+          "finalUrl": "https://legalaidchicago.org/get-involved/how-to-donate/",
+          "status": 200,
+          "title": "Donate - Legal Aid Chicago",
+          "textLength": 5114
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 14,
+      "id": "equip-for-equality",
+      "name": "Equip for Equality",
+      "selected": true,
+      "leadAttempts": [
+        {
+          "url": "https://www.equipforequality.org/give/",
+          "finalUrl": "https://www.equipforequality.org/give/",
+          "status": 200,
+          "title": "Give | Equip For Equality",
+          "textLength": 5492
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 15,
+      "id": "access-living",
+      "name": "Access Living",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.accessliving.org/our-services/",
+          "finalUrl": "https://www.accessliving.org/our-services/",
+          "status": 403,
+          "title": "Error 403 Forbidden",
+          "textLength": 33
+        },
+        {
+          "url": "https://www.accessliving.org/our-services/housing-services/transitioning-out-of-nursing-homes/",
+          "finalUrl": "https://www.accessliving.org/our-services/housing-services/transitioning-out-of-nursing-homes/",
+          "status": 403,
+          "title": "Error 403 Forbidden",
+          "textLength": 33
+        },
+        {
+          "url": "https://www.accessliving.org/contact/",
+          "finalUrl": "https://www.accessliving.org/contact/",
+          "status": 403,
+          "title": "Error 403 Forbidden",
+          "textLength": 33
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 16,
+      "id": "active-transportation-alliance",
+      "name": "Active Transportation Alliance",
+      "selected": true,
+      "leadAttempts": [
+        {
+          "url": "https://activetrans.org/about-us/get-involved/donation/",
+          "finalUrl": "https://activetransportation.org/about-us/get-involved/donation/",
+          "status": 200,
+          "title": "Support the Active Transportation Alliance | Active Transportation Alliance",
+          "textLength": 3217
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 17,
+      "id": "ride-illinois",
+      "name": "Ride Illinois",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.rideillinois.org/education/ride-illinois-safely",
+          "finalUrl": "https://www.rideillinois.org/education/ride-illinois-safely",
+          "status": 200,
+          "title": "Ride Illinois Safely Program &mdash; Ride Illinois",
+          "textLength": 8755
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 18,
+      "id": "respiratory-health-association",
+      "name": "Respiratory Health Association",
+      "selected": true,
+      "leadAttempts": [
+        {
+          "url": "https://resphealth.org/about-us/",
+          "finalUrl": "https://resphealth.org/about-us/",
+          "status": 200,
+          "title": "About Us - Respiratory Health Association",
+          "textLength": 2310
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 19,
+      "id": "environmental-law-policy-center",
+      "name": "Environmental Law & Policy Center",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://elpc.org/news/epa-delay-on-vehicle-pollution-standards-puts-midwest-communities-at-risk/",
+          "finalUrl": "https://elpc.org/news/epa-delay-on-vehicle-pollution-standards-puts-midwest-communities-at-risk/",
+          "status": 200,
+          "title": "EPA Delay on Vehicle Pollution Standards Puts Midwest Communities at Risk | Environmental Law &amp; Policy Center",
+          "textLength": 4353
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 20,
+      "id": "lvejo",
+      "name": "Little Village Environmental Justice Organization",
+      "selected": true,
+      "leadAttempts": [
+        {
+          "url": "https://lvejo.org/",
+          "finalUrl": "https://lvejo.org/",
+          "status": 200,
+          "title": "lvejochicago",
+          "textLength": 3238
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 21,
+      "id": "people-community-recovery",
+      "name": "People for Community Recovery",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.peopleforcommunityrecovery.org/",
+          "finalUrl": "https://www.peopleforcommunityrecovery.org/",
+          "status": 200,
+          "title": "Rise Up for Environmental Justice - People for Community Recovery",
+          "textLength": 16519
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 22,
+      "id": "metropolitan-planning-council",
+      "name": "Metropolitan Planning Council",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://metroplanning.org/",
+          "finalUrl": "https://metroplanning.org/",
+          "status": 200,
+          "title": "Home &#062; Metropolitan Planning Council",
+          "textLength": 2968
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 23,
+      "id": "center-neighborhood-technology",
+      "name": "Center for Neighborhood Technology",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://rainready.cnt.org/rainready/projects",
+          "error": "fetch failed"
+        },
+        {
+          "url": "https://rainready.cnt.org/",
+          "error": "fetch failed"
+        },
+        {
+          "url": "https://myrainready.cnt.org/",
+          "finalUrl": "https://myrainready.cnt.org/",
+          "status": 200,
+          "title": "My RainReady",
+          "textLength": 60138
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 24,
+      "id": "metropolitan-tenants",
+      "name": "Metropolitan Tenants Organization",
+      "selected": true,
+      "leadAttempts": [
+        {
+          "url": "https://www.tenants-rights.org/",
+          "finalUrl": "https://www.tenants-rights.org/",
+          "status": 200,
+          "title": "Metropolitan Tenants Organization_1 &#8211; Tenants helping tenants improve their lives since 1981.",
+          "textLength": 3707
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 25,
+      "id": "housing-action-illinois",
+      "name": "Housing Action Illinois",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://housingactionil.org/blog/2026/07/15/far-south-cdc-spotlight/",
+          "finalUrl": "https://housingactionil.org/blog/2026/07/15/far-south-cdc-spotlight/",
+          "status": 200,
+          "title": "Deepening the Foundations of Community: Spotlight on Far South CDC | Housing Action Illinois",
+          "textLength": 6069
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 26,
+      "id": "institute-nonviolence",
+      "name": "Institute for Nonviolence Chicago",
+      "selected": true,
+      "leadAttempts": [
+        {
+          "url": "https://www.nonviolencechicago.org/",
+          "finalUrl": "https://www.nonviolencechicago.org/",
+          "status": 200,
+          "title": "Community Violence Intervention | Institute For Nonviolence Chicago",
+          "textLength": 4804
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 27,
+      "id": "chicago-survivors",
+      "name": "Chicago Survivors",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://chicagosurvivors.org/program-overview/",
+          "finalUrl": "https://chicagosurvivors.org/program-overview/",
+          "status": 200,
+          "title": "Program Overview &#8211; Chicago Survivors",
+          "textLength": 6033
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 28,
+      "id": "youth-guidance",
+      "name": "Youth Guidance",
+      "selected": true,
+      "leadAttempts": [
+        {
+          "url": "https://www.youth-guidance.org/youth-guidance-chicago/",
+          "finalUrl": "https://www.youth-guidance.org/youth-guidance-chicago/",
+          "status": 200,
+          "title": "Youth Guidance Chicago &#8211; Youth Guidance",
+          "textLength": 10652
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 29,
+      "id": "brighton-park-neighborhood",
+      "name": "Brighton Park Neighborhood Council",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.bpncchicago.org/",
+          "finalUrl": "https://www.bpncchicago.org/",
+          "status": 200,
+          "title": "Home | Brighton Park Neighborhood Council Chicago",
+          "textLength": 8557
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 30,
+      "id": "everthrive",
+      "name": "EverThrive Illinois",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://everthriveil.org/meet-our-community-alignment-board-members/",
+          "finalUrl": "https://everthriveil.org/meet-our-community-alignment-board-members/",
+          "status": 200,
+          "title": "Meet Our Community Alignment Board Members - EverThrive Illinois",
+          "textLength": 3214
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 31,
+      "id": "sids-illinois",
+      "name": "Sudden Infant Death Services of Illinois",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://sidsillinois.org/",
+          "finalUrl": "https://sidsillinois.org/",
+          "status": 200,
+          "title": "Sudden Infant Death Services of Illinois",
+          "textLength": 2418
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 32,
+      "id": "chicago-volunteer-doulas",
+      "name": "Chicago Volunteer Doulas",
+      "selected": true,
+      "leadAttempts": [
+        {
+          "url": "https://www.thecvd.org/about",
+          "finalUrl": "https://www.thecvd.org/about",
+          "status": 200,
+          "title": "About | CVD Online",
+          "textLength": 4920
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 33,
+      "id": "new-moms",
+      "name": "New Moms",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://newmoms.org/annual-report-2025/",
+          "finalUrl": "https://newmoms.org/annual-report-2025/",
+          "status": 200,
+          "title": "FY25 Annual Report &#8211; New Moms",
+          "textLength": 48316
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 34,
+      "id": "family-focus",
+      "name": "Family Focus",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.family-focus.org/",
+          "finalUrl": "https://www.family-focus.org/",
+          "status": 200,
+          "title": "Home - Family Focus",
+          "textLength": 7390
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 35,
+      "id": "night-ministry",
+      "name": "The Night Ministry",
+      "selected": true,
+      "leadAttempts": [
+        {
+          "url": "https://thenightministry.org/street-medicine/",
+          "finalUrl": "https://thenightministry.org/street-medicine/",
+          "status": 200,
+          "title": "Outreach and Health &#8211; The Night Ministry",
+          "textLength": 1998
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 36,
+      "id": "aids-foundation-chicago",
+      "name": "AIDS Foundation Chicago",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.aidschicago.org/",
+          "finalUrl": "https://www.aidschicago.org/",
+          "status": 403,
+          "title": "Attention Required! | Cloudflare",
+          "textLength": 771
+        },
+        {
+          "url": "https://www.aidschicago.org/our-work/housing/",
+          "finalUrl": "https://www.aidschicago.org/our-work/housing/",
+          "status": 403,
+          "title": "Attention Required! | Cloudflare",
+          "textLength": 771
+        },
+        {
+          "url": "https://www.aidschicago.org/ways-to-give/",
+          "finalUrl": "https://www.aidschicago.org/ways-to-give/",
+          "status": 403,
+          "title": "Attention Required! | Cloudflare",
+          "textLength": 771
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 37,
+      "id": "open-door-health",
+      "name": "Open Door Health Center of Illinois",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://odhcil.org/",
+          "finalUrl": "https://odhcil.org/",
+          "status": 200,
+          "title": "Home Community - Open Door Health Center of Illinois",
+          "textLength": 11786
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 38,
+      "id": "coaction",
+      "name": "CoAction",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://coaction.care/",
+          "finalUrl": "https://coaction.care/",
+          "status": 200,
+          "title": "Home - CoAction",
+          "textLength": 4153
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 39,
+      "id": "mha-northwest-indiana",
+      "name": "Mental Health America of Northwest Indiana",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://mhanwi.org/",
+          "finalUrl": "https://mhanwi.org/",
+          "status": 200,
+          "title": "Mental Health Support in Northwest Indiana | Mental Health America of NWI",
+          "textLength": 6783
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 40,
+      "id": "ifn-free-clinic",
+      "name": "IFN Free Health Clinic",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://ifnclinic.com/",
+          "finalUrl": "https://ifnclinic.com/",
+          "status": 200,
+          "title": "IFN Health Clinic |",
+          "textLength": 1573
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 41,
+      "id": "lawndale-christian-health-center",
+      "name": "Lawndale Christian Health Center",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://lawndale.org/",
+          "finalUrl": "https://lawndale.org/",
+          "status": 200,
+          "title": "Lawndale Christian Health Center – Quality, Affordable Healthcare",
+          "textLength": 8083
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 42,
+      "id": "lawndale-christian-legal-center",
+      "name": "Lawndale Christian Legal Center",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://lclc.net/",
+          "finalUrl": "https://lclc.net/",
+          "status": 200,
+          "title": "Transforming Communities and Systems One Pilot at a Time - Lawndale Christian Legal Center",
+          "textLength": 8844
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 43,
+      "id": "chicago-family-health-center",
+      "name": "Chicago Family Health Center",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://chicagofamilyhealth.org/",
+          "finalUrl": "https://chicagofamilyhealth.org/",
+          "status": 200,
+          "title": "Chicago Family Health Center",
+          "textLength": 2525
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 44,
+      "id": "pcc-community-wellness-center",
+      "name": "PCC Community Wellness Center",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.pccwellness.org/",
+          "finalUrl": "https://www.pccwellness.org/",
+          "status": 200,
+          "title": "Home - PCC Community Wellness Center",
+          "textLength": 13038
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 45,
+      "id": "alivio-medical-center",
+      "name": "Alivio Medical Center",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.aliviomedicalcenter.org/",
+          "finalUrl": "https://alivio.org/",
+          "status": 200,
+          "title": "Home Page &#8226; Alivio Medical Center",
+          "textLength": 4002
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 46,
+      "id": "esperanza-health-centers",
+      "name": "Esperanza Health Centers",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.esperanzachicago.org/",
+          "finalUrl": "https://www.esperanzachicago.org/",
+          "status": 200,
+          "title": "| Esperanza Health Centers",
+          "textLength": 2104
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 47,
+      "id": "infant-welfare-society-of-chicago",
+      "name": "Infant Welfare Society of Chicago",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.iwsfamilyhealth.org/",
+          "finalUrl": "https://iwsfamilyhealth.org/",
+          "status": 200,
+          "title": "Home - Infant Welfare Society of Chicago",
+          "textLength": 16314
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 48,
+      "id": "old-irving-park-community-clinic",
+      "name": "Old Irving Park Community Clinic",
+      "selected": true,
+      "leadAttempts": [
+        {
+          "url": "https://www.oipcc.org/",
+          "finalUrl": "https://www.oipcc.org/",
+          "status": 200,
+          "title": "Old Irving Park Community Clinic - Free Health Care for the Uninsured",
+          "textLength": 2225
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 49,
+      "id": "bolingbrook-christian-health-center",
+      "name": "Bolingbrook Christian Health Center",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://bolingbrookchristianhealth.org/",
+          "error": "fetch failed"
+        },
+        {
+          "url": "https://www.bolingbrookhealth.org/",
+          "finalUrl": "https://www.bolingbrookhealth.org/",
+          "status": 200,
+          "title": "Bolingbrook Christian Health Center",
+          "textLength": 2462
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 50,
+      "id": "tri-city-health-partnership",
+      "name": "Tri City Health Partnership",
+      "selected": true,
+      "leadAttempts": [
+        {
+          "url": "https://tchpfreeclinic.org/",
+          "finalUrl": "https://tchpfreeclinic.org/",
+          "status": 200,
+          "title": "Home - Tri City Health Partnership",
+          "textLength": 3570
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 51,
+      "id": "vna-health-care",
+      "name": "VNA Health Care",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.vnahealth.com/",
+          "finalUrl": "https://vnahealth.com/",
+          "status": 200,
+          "title": "High-Quality Healthcare in Illinois | VNA Health Care",
+          "textLength": 7328
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 52,
+      "id": "primecare-health",
+      "name": "PrimeCare Health",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.primecarehealth.org/",
+          "finalUrl": "https://www.primecarehealth.org/",
+          "status": 200,
+          "title": "PrimeCare Health",
+          "textLength": 1499
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 53,
+      "id": "pillars-community-health",
+      "name": "Pillars Community Health",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://pillarscommunityhealth.org/",
+          "finalUrl": "https://pillarscommunityhealth.org/",
+          "status": 200,
+          "title": "Pillars Community Health: Health &amp; Social Services Near Chicago",
+          "textLength": 8488
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 54,
+      "id": "nami-chicago",
+      "name": "NAMI Chicago",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.namichicago.org/",
+          "finalUrl": "https://namichicago.org/",
+          "status": 200,
+          "title": "Home - NAMI Chicago",
+          "textLength": 14293
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 55,
+      "id": "nami-dupage",
+      "name": "NAMI DuPage",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://namidupage.org/",
+          "finalUrl": "https://namidupage.org/",
+          "status": 200,
+          "title": "Home | NAMI DuPage",
+          "textLength": 5530
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 56,
+      "id": "kenneth-young-center",
+      "name": "Kenneth Young Center",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.kennethyoung.org/",
+          "finalUrl": "https://www.kennethyoung.org/",
+          "status": 200,
+          "title": "Youth, Adult and Senior Services | Kenneth Young Center",
+          "textLength": 5845
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 57,
+      "id": "ecker-center-for-behavioral-health",
+      "name": "Ecker Center for Behavioral Health",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.eckercenter.org/",
+          "finalUrl": "https://www.eckercenter.org/",
+          "status": 200,
+          "title": "Behavioral Health Services | Ecker Center",
+          "textLength": 1200
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 58,
+      "id": "will-grundy-medical-clinic",
+      "name": "Will-Grundy Medical Clinic",
+      "selected": true,
+      "leadAttempts": [
+        {
+          "url": "https://www.wgmedclinic.org/",
+          "finalUrl": "https://willgrundymedicalclinic.org/",
+          "status": 200,
+          "title": "Will-Grundy Medical Clinic (WGMC)",
+          "textLength": 49
+        },
+        {
+          "url": "https://willgrundymedicalclinic.org/our-mission",
+          "finalUrl": "https://willgrundymedicalclinic.org/our-mission",
+          "status": 200,
+          "title": "WGMC — Our Mission",
+          "textLength": 3299
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 59,
+      "id": "greater-family-health",
+      "name": "Greater Family Health",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://greaterfamilyhealth.org/",
+          "finalUrl": "https://greaterfamilyhealth.org/",
+          "status": 200,
+          "title": "Greater Family Health - Quality Health Care at Affordable Prices",
+          "textLength": 5886
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 60,
+      "id": "nami-will-grundy",
+      "name": "NAMI Will-Grundy",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://namiwillgrundy.org/",
+          "finalUrl": "https://namiwg.org/",
+          "status": 200,
+          "title": "NAMI Will-Grundy - Support for Mental Health - NAMI Will-Grundy",
+          "textLength": 9840
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 61,
+      "id": "association-for-individual-development",
+      "name": "Association for Individual Development",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.aidcares.org/",
+          "finalUrl": "https://www.aidcares.org/",
+          "status": 200,
+          "title": "AID &#8902; Association for Individual Development &#8902; Empowering Individuals...",
+          "textLength": 6275
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 62,
+      "id": "bridge-communities",
+      "name": "Bridge Communities",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.bridgecommunities.org/",
+          "finalUrl": "https://www.bridgecommunities.org/",
+          "status": 200,
+          "title": "\r\nHome | Bridge Communities    ",
+          "textLength": 4427
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 63,
+      "id": "hesed-house",
+      "name": "Hesed House",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.hesedhouse.org/",
+          "finalUrl": "https://www.hesedhouse.org/",
+          "status": 200,
+          "title": "Home - Hesed House",
+          "textLength": 2647
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 64,
+      "id": "dupagepads",
+      "name": "DuPagePads",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://dupagepads.org/",
+          "finalUrl": "https://www.dupagepads.org/",
+          "status": 200,
+          "title": "The solution to end homelessness | DuPage Pads",
+          "textLength": 6711
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 65,
+      "id": "pads-lake-county",
+      "name": "PADS Lake County",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.padslakecounty.org/",
+          "finalUrl": "https://padslakecounty.org/",
+          "status": 200,
+          "title": "Homeless Assistance | PADS Lake County",
+          "textLength": 3988
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 66,
+      "id": "connections-for-the-homeless",
+      "name": "Connections for the Homeless",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.connect2home.org/",
+          "finalUrl": "https://www.connect2home.org/",
+          "status": 200,
+          "title": "Connections for the Homeless",
+          "textLength": 4927
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 67,
+      "id": "respond-now",
+      "name": "Respond Now",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://respondnow.org/",
+          "finalUrl": "https://respondnow.org/",
+          "status": 200,
+          "title": "Respond Now",
+          "textLength": 1398
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 68,
+      "id": "community-and-economic-development-association-of-cook-county",
+      "name": "Community and Economic Development Association of Cook County",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.cedaorg.net/",
+          "finalUrl": "https://www.cedaorg.net/en",
+          "status": 200,
+          "title": "CEDA",
+          "textLength": 7431
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 69,
+      "id": "rebuilding-together-metro-chicago",
+      "name": "Rebuilding Together Metro Chicago",
+      "selected": true,
+      "leadAttempts": [
+        {
+          "url": "https://www.rebuildingtogether-chi.com/",
+          "finalUrl": "https://www.rebuildingtogether-chi.com/",
+          "status": 200,
+          "title": "Rebuilding Together Metro Chicago",
+          "textLength": 1909
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 70,
+      "id": "north-west-housing-partnership",
+      "name": "North West Housing Partnership",
+      "selected": true,
+      "leadAttempts": [
+        {
+          "url": "https://www.nwhp.net/",
+          "finalUrl": "https://nwhp.net/",
+          "status": 200,
+          "title": "Home - North West Housing Partnership",
+          "textLength": 4766
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 71,
+      "id": "open-communities",
+      "name": "Open Communities",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.open-communities.org/",
+          "finalUrl": "https://www.open-communities.org/",
+          "status": 200,
+          "title": "Open Communities | housing | 1740 Ridge Avenue suite 117, Evanston, IL, USA",
+          "textLength": 5865
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 72,
+      "id": "housing-opportunity-development-corporation",
+      "name": "Housing Opportunity Development Corporation",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://hodc.org/",
+          "finalUrl": "https://hodc.org/",
+          "status": 200,
+          "title": "Expanding Housing Choices in Chicago&#039;s Northern Suburbs - HODC",
+          "textLength": 2666
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 73,
+      "id": "illinois-legal-aid-online",
+      "name": "Illinois Legal Aid Online",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.illinoislegalaid.org/",
+          "finalUrl": "https://www.illinoislegalaid.org/",
+          "status": 200,
+          "title": "Illinois Legal Aid Online",
+          "textLength": 10851
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 74,
+      "id": "beyond-legal-aid",
+      "name": "Beyond Legal Aid",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.beyondlegalaid.org/",
+          "finalUrl": "https://www.beyondlegalaid.org/",
+          "status": 200,
+          "title": "Beyond Legal Aid | Join the Justice Movement Today",
+          "textLength": 4103
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 75,
+      "id": "chicago-cred",
+      "name": "Chicago CRED Inc",
+      "selected": true,
+      "leadAttempts": [
+        {
+          "url": "https://www.chicagocred.org/",
+          "finalUrl": "https://www.chicagocred.org/",
+          "status": 200,
+          "title": "A Nonprofit for Reducing Gun Violence in Chicago | Chicago CRED",
+          "textLength": 5619
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 76,
+      "id": "chicago-abortion-fund",
+      "name": "Chicago Abortion Fund",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.chicagoabortionfund.org/",
+          "finalUrl": "https://www.chicagoabortionfund.org/",
+          "status": 200,
+          "title": "Chicago Abortion Fund | Support Access Today",
+          "textLength": 2240
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 77,
+      "id": "midwest-access-coalition",
+      "name": "Midwest Access Coalition",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.midwestaccesscoalition.org/",
+          "finalUrl": "https://www.midwestaccesscoalition.org/",
+          "status": 200,
+          "title": "Midwest Access Coalition",
+          "textLength": 6935
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 78,
+      "id": "repro-tlc",
+      "name": "Repro TLC",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://midwestaccessproject.org/",
+          "finalUrl": "https://reprotlc.org/",
+          "status": 200,
+          "title": "Repro TLC: Training, Liberation, and Community",
+          "textLength": 9677
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 79,
+      "id": "healthconnect-one",
+      "name": "HealthConnect One",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://healthconnectone.org/",
+          "finalUrl": "https://healthconnectone.org/",
+          "status": 200,
+          "title": "HealthConnect One - HealthConnect One",
+          "textLength": 11753
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 80,
+      "id": "children-s-research-triangle",
+      "name": "Children's Research Triangle",
+      "selected": true,
+      "leadAttempts": [
+        {
+          "url": "https://www.childrensresearchtriangle.org/",
+          "finalUrl": "https://childrensresearchtriangle.org/",
+          "status": 200,
+          "title": "Home - Children&#039;s Research Triangle",
+          "textLength": 3828
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 81,
+      "id": "erikson-institute",
+      "name": "Erikson Institute",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.erikson.edu/",
+          "finalUrl": "https://www.erikson.edu/",
+          "status": 403,
+          "title": "Just a moment...",
+          "textLength": 58
+        },
+        {
+          "url": "https://www.erikson.edu/services/center-children-families/",
+          "finalUrl": "https://www.erikson.edu/services/center-children-families/",
+          "status": 403,
+          "title": "Just a moment...",
+          "textLength": 58
+        },
+        {
+          "url": "https://www.erikson.edu/give/",
+          "finalUrl": "https://www.erikson.edu/give/",
+          "status": 403,
+          "title": "Just a moment...",
+          "textLength": 58
+        }
+      ],
+      "result": "accept after material closure/mechanism correction"
+    },
+    {
+      "ordinal": 82,
+      "id": "youth-outreach-services",
+      "name": "Youth Outreach Services",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.yos.org/",
+          "finalUrl": "https://www.yos.org/",
+          "status": 200,
+          "title": "Youth Outreach Services",
+          "textLength": 4192
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 83,
+      "id": "children-s-advocacy-center-of-north-and-northwest-cook-county",
+      "name": "Children's Advocacy Center of North and Northwest Cook County",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.cacnorthnw.org/",
+          "error": "fetch failed"
+        },
+        {
+          "url": "https://www.cachelps.org/",
+          "finalUrl": "https://www.cachelps.org/",
+          "status": 200,
+          "title": "Children's Advocacy Center of North and Northwest Cook County | Child Abuse",
+          "textLength": 5329
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 84,
+      "id": "chicago-children-s-advocacy-center",
+      "name": "Chicago Children's Advocacy Center",
+      "selected": true,
+      "leadAttempts": [
+        {
+          "url": "https://www.chicagocac.org/",
+          "finalUrl": "https://www.chicagocac.org/",
+          "status": 200,
+          "title": "Home - Chicago Children&#039;s Advocacy Center",
+          "textLength": 5248
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 85,
+      "id": "zacharias-sexual-abuse-center",
+      "name": "Zacharias Sexual Abuse Center",
+      "selected": true,
+      "leadAttempts": [
+        {
+          "url": "https://zcenter.org/",
+          "finalUrl": "https://zcenter.org/",
+          "status": 200,
+          "title": "Zacharias Sexual Abuse Center | ZCenter &#8211; From Here to Healing",
+          "textLength": 6805
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 86,
+      "id": "mujeres-latinas-en-accion",
+      "name": "Mujeres Latinas en Accion",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://mujereslatinasenaccion.org/",
+          "finalUrl": "https://mujereslatinasenaccion.org/",
+          "status": 200,
+          "title": "Mujeres Latinas en Acción",
+          "textLength": 4712
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 87,
+      "id": "ywca-metropolitan-chicago",
+      "name": "YWCA Metropolitan Chicago",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://ywcachicago.org/",
+          "finalUrl": "https://ywcachicago.org/",
+          "status": 200,
+          "title": "YWCA Metropolitan Chicago | Dignity For All",
+          "textLength": 4062
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 88,
+      "id": "apna-ghar",
+      "name": "Apna Ghar",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.apnaghar.org/",
+          "finalUrl": "https://apnaghar.org/",
+          "status": 200,
+          "title": "Homepage - Apna Ghar",
+          "textLength": 2871
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 89,
+      "id": "between-friends",
+      "name": "Between Friends",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.betweenfriendschicago.org/",
+          "finalUrl": "https://betweenfriendschicago.org/",
+          "status": 200,
+          "title": "Between Friends &#8211; Breaking the cycle of domestic violence and building a community free of abuse.",
+          "textLength": 5218
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 90,
+      "id": "sarah-s-inn",
+      "name": "Sarah's Inn",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://sarahsinn.org/",
+          "finalUrl": "https://sarahsinn.org/",
+          "status": 200,
+          "title": "Sarah&#x27;s Inn | Domestic Violence Support in Chicago",
+          "textLength": 4394
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 91,
+      "id": "connections-for-abused-women-and-their-children",
+      "name": "Connections for Abused Women and Their Children",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.cawc.org/",
+          "finalUrl": "https://www.cawc.org/",
+          "status": 200,
+          "title": "Connections for Abused Women and their Children - Domestic Violence Services Chicago",
+          "textLength": 8456
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 92,
+      "id": "turning-point",
+      "name": "Turning Point",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.turnpt.org/",
+          "finalUrl": "https://turnpt.org/",
+          "status": 200,
+          "title": "Home - Turning Point",
+          "textLength": 6208
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 93,
+      "id": "mutual-ground",
+      "name": "Mutual Ground",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://mutualground.org/",
+          "finalUrl": "https://mutualground.org/",
+          "status": 200,
+          "title": "Mutual Ground",
+          "textLength": 6270
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 94,
+      "id": "metropolitan-family-services",
+      "name": "Metropolitan Family Services",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.metrofamily.org/",
+          "finalUrl": "https://www.metrofamily.org/",
+          "status": 200,
+          "title": "Metropolitan Family Services",
+          "textLength": 4473
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 95,
+      "id": "center-on-halsted",
+      "name": "Center on Halsted",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.centeronhalsted.org/",
+          "finalUrl": "https://www.centeronhalsted.org/",
+          "status": 200,
+          "title": "Center on Halsted | Home",
+          "textLength": 130
+        },
+        {
+          "url": "https://db.centeronhalsted.org/behavioralhealth.html",
+          "finalUrl": "https://db.centeronhalsted.org/behavioralhealth.html",
+          "status": 200,
+          "title": "Center on Halsted - Chicago's Lesbian, Gay, Bisexual, Transgender and Queer Community Center",
+          "textLength": 7535
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 96,
+      "id": "meals-on-wheels-of-northwest-indiana",
+      "name": "Meals on Wheels of Northwest Indiana",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://mownwi.org/",
+          "finalUrl": "https://mownwi.org/",
+          "status": 200,
+          "title": "Meals On Wheels | Northwest Indiana",
+          "textLength": 4330
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 97,
+      "id": "food-bank-of-northwest-indiana",
+      "name": "Food Bank of Northwest Indiana",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://foodbanknwi.org/",
+          "finalUrl": "https://foodbanknwi.org/",
+          "status": 200,
+          "title": "Home - Food Bank of Northwest Indiana",
+          "textLength": 9398
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 98,
+      "id": "porter-starke-services-foundation",
+      "name": "Porter-Starke Services Foundation",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://www.porterstarke.org/",
+          "finalUrl": "https://www.porterstarke.org/",
+          "status": 200,
+          "title": "Mental Health Services | Porter-Starke Services",
+          "textLength": 7025
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 99,
+      "id": "nourishing-hope",
+      "name": "Nourishing Hope",
+      "selected": true,
+      "leadAttempts": [
+        {
+          "url": "https://www.nourishinghopechi.org/",
+          "finalUrl": "https://nourishinghopechi.org/",
+          "status": 200,
+          "title": "Chicago Food Pantry &amp; Social Services | Nourishing Hope Chicago",
+          "textLength": 4977
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    },
+    {
+      "ordinal": 100,
+      "id": "erie-neighborhood-house",
+      "name": "Erie Neighborhood House",
+      "selected": false,
+      "leadAttempts": [
+        {
+          "url": "https://eriehouse.org/",
+          "finalUrl": "https://eriehouse.org/",
+          "status": 200,
+          "title": "Home - Erie Neighborhood House",
+          "textLength": 3016
+        }
+      ],
+      "result": "discovery-level identity/service hypothesis accepted; causal and financial review pending"
+    }
+  ],
+  "comparativeAcceptance": [
+    {
+      "cohort": "Addiction and high-risk outreach",
+      "allMembersCompared": [
+        "chicago-recovery-alliance",
+        "above-beyond",
+        "haymarket-center",
+        "thresholds",
+        "howard-brown",
+        "project-vida",
+        "night-ministry",
+        "aids-foundation-chicago",
+        "open-door-health"
+      ],
+      "selected": [
+        "chicago-recovery-alliance",
+        "above-beyond",
+        "night-ministry"
+      ],
+      "decision": "Accept research-priority comparison",
+      "independentCaveat": "Published comparison remains judgment-based. Missing marginal inputs do not by themselves force future estimates to null."
+    },
+    {
+      "cohort": "Volunteer and clinical access",
+      "allMembersCompared": [
+        "communityhealth",
+        "dupage-health-coalition",
+        "family-health-partnership",
+        "erie-family-health-foundation",
+        "healthlinc",
+        "ifn-free-clinic",
+        "lawndale-christian-health-center",
+        "chicago-family-health-center",
+        "pcc-community-wellness-center",
+        "alivio-medical-center",
+        "esperanza-health-centers",
+        "infant-welfare-society-of-chicago",
+        "old-irving-park-community-clinic",
+        "bolingbrook-christian-health-center",
+        "tri-city-health-partnership",
+        "vna-health-care",
+        "primecare-health",
+        "will-grundy-medical-clinic",
+        "greater-family-health"
+      ],
+      "selected": [
+        "communityhealth",
+        "dupage-health-coalition",
+        "family-health-partnership",
+        "old-irving-park-community-clinic",
+        "tri-city-health-partnership",
+        "will-grundy-medical-clinic"
+      ],
+      "decision": "Accept research-priority comparison",
+      "independentCaveat": "Volunteer/donated care leverage is a testable hypothesis, not zero full-resource cost. Avoid automatic preference over FQHCs without later marginal accounting."
+    },
+    {
+      "cohort": "Legal and housing rights",
+      "allMembersCompared": [
+        "legal-council-health-justice",
+        "legal-aid-chicago",
+        "equip-for-equality",
+        "access-living",
+        "metropolitan-tenants",
+        "housing-action-illinois",
+        "lawndale-christian-legal-center",
+        "open-communities",
+        "housing-opportunity-development-corporation",
+        "illinois-legal-aid-online",
+        "beyond-legal-aid"
+      ],
+      "selected": [
+        "legal-council-health-justice",
+        "equip-for-equality",
+        "metropolitan-tenants"
+      ],
+      "decision": "Accept research-priority comparison",
+      "independentCaveat": "Published comparison remains judgment-based. Missing marginal inputs do not by themselves force future estimates to null."
+    },
+    {
+      "cohort": "Road and environmental health",
+      "allMembersCompared": [
+        "active-transportation-alliance",
+        "ride-illinois",
+        "respiratory-health-association",
+        "environmental-law-policy-center",
+        "lvejo",
+        "people-community-recovery",
+        "metropolitan-planning-council",
+        "center-neighborhood-technology"
+      ],
+      "selected": [
+        "active-transportation-alliance",
+        "respiratory-health-association",
+        "lvejo"
+      ],
+      "decision": "Accept research-priority comparison",
+      "independentCaveat": "Published comparison remains judgment-based. Missing marginal inputs do not by themselves force future estimates to null."
+    },
+    {
+      "cohort": "Violence and trauma",
+      "allMembersCompared": [
+        "institute-nonviolence",
+        "chicago-survivors",
+        "youth-guidance",
+        "chicago-cred",
+        "children-s-research-triangle",
+        "youth-outreach-services",
+        "children-s-advocacy-center-of-north-and-northwest-cook-county",
+        "chicago-children-s-advocacy-center",
+        "zacharias-sexual-abuse-center"
+      ],
+      "selected": [
+        "institute-nonviolence",
+        "youth-guidance",
+        "chicago-cred",
+        "children-s-research-triangle",
+        "chicago-children-s-advocacy-center",
+        "zacharias-sexual-abuse-center"
+      ],
+      "decision": "Accept research-priority comparison",
+      "independentCaveat": "CRED and Institute causal estimates need selection/trend/displacement controls; trauma service visits are not completed effective treatment."
+    },
+    {
+      "cohort": "Perinatal and family wellbeing",
+      "allMembersCompared": [
+        "brighton-park-neighborhood",
+        "everthrive",
+        "sids-illinois",
+        "chicago-volunteer-doulas",
+        "new-moms",
+        "family-focus",
+        "mha-northwest-indiana",
+        "healthconnect-one",
+        "erikson-institute",
+        "metropolitan-family-services",
+        "erie-neighborhood-house"
+      ],
+      "selected": [
+        "chicago-volunteer-doulas"
+      ],
+      "decision": "Accept research-priority comparison",
+      "independentCaveat": "Erikson CCF is closed; remaining support/training is the alternative hypothesis. No change to selected CVD."
+    },
+    {
+      "cohort": "Community mental health and disability",
+      "allMembersCompared": [
+        "pillars-community-health",
+        "nami-chicago",
+        "nami-dupage",
+        "kenneth-young-center",
+        "ecker-center-for-behavioral-health",
+        "nami-will-grundy",
+        "association-for-individual-development",
+        "center-on-halsted",
+        "porter-starke-services-foundation"
+      ],
+      "selected": [],
+      "decision": "Accept research-priority comparison",
+      "independentCaveat": "Published comparison remains judgment-based. Missing marginal inputs do not by themselves force future estimates to null."
+    },
+    {
+      "cohort": "Home safety, shelter and basic needs",
+      "allMembersCompared": [
+        "coaction",
+        "bridge-communities",
+        "hesed-house",
+        "dupagepads",
+        "pads-lake-county",
+        "connections-for-the-homeless",
+        "respond-now",
+        "community-and-economic-development-association-of-cook-county",
+        "rebuilding-together-metro-chicago",
+        "north-west-housing-partnership",
+        "meals-on-wheels-of-northwest-indiana",
+        "food-bank-of-northwest-indiana",
+        "nourishing-hope"
+      ],
+      "selected": [
+        "rebuilding-together-metro-chicago",
+        "north-west-housing-partnership",
+        "nourishing-hope"
+      ],
+      "decision": "Accept research-priority comparison",
+      "independentCaveat": "Published comparison remains judgment-based. Missing marginal inputs do not by themselves force future estimates to null."
+    },
+    {
+      "cohort": "Reproductive access",
+      "allMembersCompared": [
+        "chicago-abortion-fund",
+        "midwest-access-coalition",
+        "repro-tlc"
+      ],
+      "selected": [],
+      "decision": "Accept research-priority comparison",
+      "independentCaveat": "Published comparison remains judgment-based. Missing marginal inputs do not by themselves force future estimates to null."
+    },
+    {
+      "cohort": "Survivor services",
+      "allMembersCompared": [
+        "mujeres-latinas-en-accion",
+        "ywca-metropolitan-chicago",
+        "apna-ghar",
+        "between-friends",
+        "sarah-s-inn",
+        "connections-for-abused-women-and-their-children",
+        "turning-point",
+        "mutual-ground"
+      ],
+      "selected": [],
+      "decision": "Accept research-priority comparison",
+      "independentCaveat": "Published comparison remains judgment-based. Missing marginal inputs do not by themselves force future estimates to null."
+    }
+  ],
+  "limitations": [
+    "No claims of current treatment availability from old reports or archived campaigns.",
+    "No donor transaction or tax eligibility certification.",
+    "Geographic service anchors are nonexhaustive; they do not establish that all unrestricted recipient benefits accrue within the MSA.",
+    "Source excerpts and HTML fetch evidence are bounded in /tmp/chicago-independent-source-audit.json; no builds, installs, servers, Git or Site changes."
+  ],
+  "nextBottleneck": "Root applies the two record corrections and accepts discovery/selection, then assigns finite original financial/causal/marginal alpha reviews to the 25 selected recipients."
+}

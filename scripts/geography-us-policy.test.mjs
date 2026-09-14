@@ -7,7 +7,10 @@ for(const slug of ['center-for-science-in-the-public-interest','kids-and-car-saf
  for(const s of report.model.scenarios){
   const p=JSON.parse(s.assumptions.match(/\{[^}]+\}/)[0]);
   let H;
-  if(slug==='center-for-science-in-the-public-interest')H=p.H*p.dm/p.refdm*p.e*p.t/1.03**p.delay;
+  if(slug==='center-for-science-in-the-public-interest'){
+   p.Y=5;
+   H=1400000*p.dm/565*p.e*p.t/1.03**p.L*(p.f+(1-p.f)*(1-1.03**-p.accel));
+  }
   else{
    let A=0;
    for(let t=1;t<=p.T;t++)A+=(Math.min(p.cap,p.rate*Math.max(0,t-p.L1+1))-Math.min(p.cap,p.rate*Math.max(0,t-p.L0+1)))/1.03**t;
@@ -19,5 +22,5 @@ for(const slug of ['center-for-science-in-the-public-interest','kids-and-car-saf
  }
  assert.ok(report.model.scenarios.some(s=>s.editionQalys===0));
  assert.ok(report.model.scenarios.some(s=>s.editionQalys<0));
- assert.match(report.priceScope,/only/);
+ assert.match(report.priceScope,/only|partial-health/);
 });

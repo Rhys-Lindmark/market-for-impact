@@ -114,7 +114,7 @@ for(const r of nyc.records){
 assert.ok(nycProgress.acceptedDiscoveryIds.includes('org:zufall-health-foundation'));
 assert.ok(!nycProgress.acceptedDiscoveryIds.includes('org:zufall-health'));
 assert.equal(nycProgress.alphaPublished,0);assert.equal(nycProgress.betaAcceptedPublished,0);
-for(const city of ['denver','chicago','houston']){
+for(const city of ['denver','chicago','houston','boston']){
  const row=p.editions.find(e=>e.id===city);
  const packet=read('geography-discovery/'+(city==='denver'?'denver-independent-acceptance.json':city+'-cohort-final.json'));
  const selection=city==='denver'?packet.selected:read('geography-discovery/'+city+'-selection.json').selected;
@@ -132,4 +132,12 @@ for(const city of ['denver','chicago','houston']){
   assert.ok((record.primaryVerification||record.sources).length);
  }
 }
-console.log('PASS:11 editions; nested counts;9 MSAs/102 counties;800 accepted discovery,200 selected priorities; no new alpha or beta credit for discovery.');
+const boston=read('geography-discovery/boston-cohort-final.json');
+const bostonAudit=read('geography-discovery/boston-independent-acceptance.json');
+assert.equal(bostonAudit.acceptedDiscoveryCount,100);
+assert.equal(bostonAudit.acceptedSelectionCount,25);
+assert.ok(boston.records.find(r=>r.id==='boston-bay-state-community-services-including-moar').recipientRouteStatus.includes('not an unrestricted BSCS route'));
+assert.ok(boston.records.find(r=>r.id==='boston-planned-parenthood-league-of-massachusetts').selectionRationale.includes('cannot be presumed'));
+assert.equal(bostonAudit.acceptedAlphaCount,0);
+assert.equal(bostonAudit.acceptedBetaCount,0);
+console.log('PASS:11 editions; nested counts;9 MSAs/102 counties;900 accepted discovery,225 selected priorities; no new alpha or beta credit for discovery.');

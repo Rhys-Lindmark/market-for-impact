@@ -112,9 +112,9 @@ test('research table keeps unknown means unknown and shows audited recipient mea
  await page.goto('/usa/all');
  await expect(page.locator('tr').filter({hasText:'Shatterproof'})).toContainText('$44.8M');
  await expect(page.locator('tr').filter({hasText:'Earthjustice'}).getByTitle('PM implementation health only; other impacts unestimated')).toHaveText('$35.4M');
- await expect(page.locator('tr').filter({hasText:'Center for Environmental Health'})).toContainText('Not estimated');
+ await expect(page.locator('tr').filter({hasText:'Center for Environmental Health'})).toContainText('$2192.9M');
  await expect(page.locator('tr').filter({hasText:'National Center for Healthy Housing'})).toContainText('$3.0M');
- await expect(page.locator('tr').filter({hasText:'Legal Action Center'})).toContainText('Not estimated');
+ await expect(page.locator('tr').filter({hasText:'Legal Action Center'})).toContainText('$239.9M');
  await expect(page.locator('tr').filter({hasText:'Legal Action Center'})).toContainText('$8.6M');
  await expect(page.locator('tr').filter({hasText:'Surgery on Sunday'})).toContainText('$405K');
  await expect(page.locator('tr').filter({hasText:'Surgery on Sunday'})).toContainText('Not estimated');

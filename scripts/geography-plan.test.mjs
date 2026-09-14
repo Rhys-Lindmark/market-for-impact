@@ -115,7 +115,7 @@ assert.ok(nycProgress.acceptedDiscoveryIds.includes('org:zufall-health-foundatio
 assert.ok(!nycProgress.acceptedDiscoveryIds.includes('org:zufall-health'));
 assert.equal(nycProgress.alphaPublished,6);assert.equal(nycProgress.betaAcceptedPublished,0);
 for(const id of nycProgress.alphaCohortIds)assert.ok(nycProgress.selectedAlphaIds.includes(id));
-for(const city of ['denver','chicago','houston','boston','atlanta']){
+for(const city of ['denver','chicago','houston','boston','atlanta','detroit']){
  const row=p.editions.find(e=>e.id===city);
  const packet=read('geography-discovery/'+(city==='denver'?'denver-independent-acceptance.json':city+'-cohort-final.json'));
  const selection=city==='denver'?packet.selected:read('geography-discovery/'+city+'-selection.json').selected;
@@ -146,4 +146,12 @@ assert.equal(atl.records.find(r=>r.ordinal===38).canonicalOrganizationId,'ein:58
 assert.equal(atl.records.find(r=>r.ordinal===73).canonicalOrganizationId,'ein:58-1743333');
 assert.match(atl.records.find(r=>r.ordinal===5).primaryEvidence,/NEW patients/);
 assert.match(atl.records.find(r=>r.ordinal===89).recipientRouteStatus,/maintenance/);
-console.log('PASS:11 editions; nested counts;9 MSAs/102 counties;1000 accepted discovery,250 selected priorities; no new alpha or beta credit for discovery.');
+const detroit=read('geography-discovery/detroit-cohort-final.json');
+const detroitAudit=read('geography-discovery/detroit-independent-acceptance.json');
+assert.equal(detroitAudit.acceptedDiscoveryCount,100);assert.equal(detroitAudit.acceptedSelectionCount,25);
+assert.match(detroit.records.find(r=>r.ordinal===29).primaryEvidence,/ended\/transferred/);
+assert.match(detroit.records.find(r=>r.ordinal===55).primaryEvidence,/ended November 16, 2025/);
+assert.match(detroit.records.find(r=>r.ordinal===45).primaryEvidence,/resumed August 3, 2026/);
+assert.equal(p.editions.reduce((n,e)=>n+e.discoveryAccepted,0),1100);
+assert.equal(p.editions.reduce((n,e)=>n+e.selectedAlphaIds.length,0),275);
+console.log('PASS:11 editions; nested counts;9 MSAs/102 counties;1100 accepted discovery,275 selected priorities; no new alpha or beta credit for discovery.');

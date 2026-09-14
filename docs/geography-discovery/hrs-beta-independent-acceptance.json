@@ -1,0 +1,602 @@
+{
+  "status": "accepted-with-material-display-and-schema-corrections",
+  "retainedSessions": [
+    {
+      "id": "ca-hrs-model-revision-20260913-230907",
+      "organizationId": "org:harm-reduction-services",
+      "stage": "alpha",
+      "phase": "research",
+      "workerId": "ca_alpha_one",
+      "startedAt": "2026-09-13T23:09:07Z",
+      "endedAt": "2026-09-13T23:17:43Z",
+      "evidence": "Actual focused re-review: recovered and read original FY2023–2025 returns and schedules; detected repeated annual scale and conflicting audit boxes; refreshed operations; compared external mortality and community causal evidence; authored and numerically checked finite unique-person survival model. Prior research reused without recredit. Subsequent packaging/queue screening excluded.",
+      "model": {
+        "id": "gpt-6-astra",
+        "name": "GPT-6 Astra Light",
+        "reasoningEffort": "low",
+        "evidence": "Existing worker model retained; actual interval 516 seconds, not budget-derived."
+      }
+    },
+    {
+      "id": "ca-hrs-alpha-research-20260913-200948",
+      "organizationId": "org:harm-reduction-services",
+      "stage": "alpha",
+      "phase": "research",
+      "workerId": "ca_alpha_one",
+      "startedAt": "2026-09-13T20:09:48Z",
+      "endedAt": "2026-09-13T20:29:04Z",
+      "evidence": "California Harm Reduction Services alpha report, sources and model ca-hrs-alpha-v1; dedicated reading, causal assessment and writing interval.",
+      "model": {
+        "id": "gpt-6-astra",
+        "name": "GPT-6 Astra Light",
+        "reasoningEffort": "low",
+        "evidence": "Parent alpha-worker dispatch explicitly assigned gpt-6-astra / low; task runtime identity."
+      }
+    },
+    {
+      "id": "ca-beta-harm-reduction-services-20260914-seattle-medium",
+      "organizationId": "org:harm-reduction-services",
+      "stage": "beta",
+      "phase": "research",
+      "workerId": "seattle_acceptance",
+      "startedAt": "2026-09-14T09:03:29Z",
+      "endedAt": "2026-09-14T09:16:04.268Z",
+      "evidence": "Additional beta only: original three-year returns/reconciliation, current sources and public supply/partner limitations, unique-risk-person and finite survival/harm extension, all-scenario numerical verification, drafting and QA. Prior alpha and unrelated audits excluded; no padding to a requested approximate duration.",
+      "model": {
+        "id": "gpt-6-astra",
+        "name": "GPT-6 Astra Medium",
+        "reasoningEffort": "medium",
+        "evidence": "Parent assigned existing Astra Medium configuration; no nested agents."
+      }
+    }
+  ],
+  "corrections": [
+    {
+      "field": "summary.reservations",
+      "before": [
+        "No current HRS-specific dataset links additional unrestricted dollars to unique people, use of supplies, deaths prevented or sustained treatment.",
+        "State supplies, grant-funded operations, other providers and emergency response make total service counts a poor measure of a new donor's contribution.",
+        "Original recent returns now anchor total cost, but repeated self-reported reach and unmeasured marginal funding yield leave the numerical estimate highly judgment-dependent.",
+        "A 2026 library outreach pilot was paused in May; current advertised main services should not be confused with every previously offered route."
+      ],
+      "after": [
+        "No current HRS-specific dataset links additional unrestricted dollars to unique people, use of supplies, deaths prevented or sustained treatment.",
+        "State supplies, grant-funded operations, other providers and emergency response make total service counts a poor measure of a new donor's contribution.",
+        "Original recent returns now anchor total cost, but repeated self-reported reach and unmeasured marginal funding yield leave the numerical estimate highly judgment-dependent. A 2026 library outreach pilot was paused in May; current advertised main services should not be confused with every previously offered route."
+      ],
+      "reason": "Required exactly three; preserve library-pause warning by joining related uncertainty reservation."
+    },
+    {
+      "field": "priceScope",
+      "before": "Overdose-prevention benefits only",
+      "after": "Full ordinary unrestricted gift charged against a low-confidence overdose-prevention pathway only. Total-recipient expense proxy includes recognized noncash supplies; other portfolio health and unmeasured additional partner/public resources are excluded, with a separate resource-cost scenario. Not measured portfolio return or a donor endorsement.",
+      "reason": "Make full-gift, partial-health and external-resource boundary visible above the model."
+    },
+    {
+      "field": "sources.ca-clearinghouse",
+      "before": {
+        "published": "2022-03",
+        "title": "California harm reduction supplies clearinghouse"
+      },
+      "after": {
+        "published": null,
+        "title": "California harm reduction supplies clearinghouse (publication month 2022-03; exact day unknown)"
+      },
+      "reason": "Schema requires exact day or null; do not invent first-of-month publication."
+    },
+    {
+      "field": "sources.sac-opioid-2024",
+      "before": {
+        "published": "2024-07",
+        "title": "Sacramento opioid remediation activities"
+      },
+      "after": {
+        "published": null,
+        "title": "Sacramento opioid remediation activities (publication month 2024-07; exact day unknown)"
+      },
+      "reason": "Schema requires exact day or null; do not invent first-of-month publication."
+    },
+    {
+      "field": "sources.sac-directors-2024",
+      "before": {
+        "published": "2024-04",
+        "title": "Sacramento directors report April 2024"
+      },
+      "after": {
+        "published": null,
+        "title": "Sacramento directors report April 2024 (publication month 2024-04; exact day unknown)"
+      },
+      "reason": "Schema requires exact day or null; do not invent first-of-month publication."
+    },
+    {
+      "field": "model.scenarios.extra_unpriced_resources",
+      "before": {
+        "id": "extra_unpriced_resources",
+        "label": "extra unpriced resources",
+        "costUSD": 100000,
+        "allPopulationQalys": 0.3303339760121013,
+        "editionQalys": 0.3237272964918593,
+        "assumptions": "{\"C\":100000,\"E\":1695969,\"Y\":5000,\"d\":0.5,\"m\":0.5,\"x\":0.5,\"network\":1,\"K\":100,\"lambda\":0.02,\"mu\":0.03,\"e\":0.1,\"tau\":1,\"T\":10,\"u\":0.7,\"r\":0.03,\"g\":0.98,\"delay\":0,\"postLambda\":0.02,\"postMu\":0.03,\"harmPerProtected\":0,\"independentHarm\":0,\"extraResources\":100000}; all new and clinical/marginal parameters are explicit judgments, not confidence limits or offers.",
+        "parameters": {
+          "C": 100000,
+          "E": 1695969,
+          "Y": 5000,
+          "d": 0.5,
+          "m": 0.5,
+          "x": 0.5,
+          "network": 1,
+          "K": 100,
+          "lambda": 0.02,
+          "mu": 0.03,
+          "e": 0.1,
+          "tau": 1,
+          "T": 10,
+          "u": 0.7,
+          "r": 0.03,
+          "g": 0.98,
+          "delay": 0,
+          "postLambda": 0.02,
+          "postMu": 0.03,
+          "harmPerProtected": 0,
+          "independentHarm": 0,
+          "extraResources": 100000
+        },
+        "protectedRiskPeople": 36.85208868794182,
+        "pricePer10EditionQalys": 3089019.7114568832,
+        "resourceCostUSD": 200000,
+        "resourcePricePer10EditionQalys": 6178039.4229137665
+      },
+      "after": {
+        "id": "extra_unpriced_resources",
+        "label": "Added partner/public resources: $200,000 total cost",
+        "costUSD": 200000,
+        "allPopulationQalys": 0.3303339760121013,
+        "editionQalys": 0.3237272964918593,
+        "assumptions": "{\"C\":100000,\"E\":1695969,\"Y\":5000,\"d\":0.5,\"m\":0.5,\"x\":0.5,\"network\":1,\"K\":100,\"lambda\":0.02,\"mu\":0.03,\"e\":0.1,\"tau\":1,\"T\":10,\"u\":0.7,\"r\":0.03,\"g\":0.98,\"delay\":0,\"postLambda\":0.02,\"postMu\":0.03,\"harmPerProtected\":0,\"independentHarm\":0,\"extraResources\":100000}; all new and clinical/marginal parameters are explicit judgments, not confidence limits or offers. Displayed cost includes the $100,000 gift plus $100,000 hypothetical additional resources, with unchanged clinical health.",
+        "parameters": {
+          "C": 100000,
+          "E": 1695969,
+          "Y": 5000,
+          "d": 0.5,
+          "m": 0.5,
+          "x": 0.5,
+          "network": 1,
+          "K": 100,
+          "lambda": 0.02,
+          "mu": 0.03,
+          "e": 0.1,
+          "tau": 1,
+          "T": 10,
+          "u": 0.7,
+          "r": 0.03,
+          "g": 0.98,
+          "delay": 0,
+          "postLambda": 0.02,
+          "postMu": 0.03,
+          "harmPerProtected": 0,
+          "independentHarm": 0,
+          "extraResources": 100000
+        },
+        "protectedRiskPeople": 36.85208868794182,
+        "pricePer10EditionQalys": 6178039.4229137665,
+        "resourceCostUSD": 200000,
+        "resourcePricePer10EditionQalys": 6178039.4229137665
+      },
+      "reason": "Standard renderer uses costUSD, not resourceCostUSD; otherwise extra-resource scenario falsely shows unchanged price."
+    },
+    {
+      "field": "model.formula",
+      "before": "C/E*Y*d*m*x*network gives an expected additional unique risk-person cohort, capped at judgment K: N=min(...,K). From donation time until delay L both arms have hazard h=lambda+mu. During min(tau,T-L) the intervention reduces only opioid fatal hazard by lambda*e; afterward both arms have postLambda+postMu. Integrate u*(S_with-S_without)*exp(-r*t) over [0,T], then subtract harmPerProtected per N and independentHarm per gift. Q_CA=g*Q_all; price_10_CA=10*C/Q_CA only if Q_CA>0. Closed form: H=max(0,T-L),b=min(tau,H),A(k,z)=-expm1(-k*z)/k; q=u*exp(-(h+r)*L)*[A(h-lambda*e+r,b)-A(h+r,b)+exp(-h*b)*expm1(lambda*e*b)*exp(-r*b)*A(postLambda+postMu+r,H-b)]. Q_all=N*(q-harmPerProtected)-independentHarm. Delayed protection is discounted and survives baseline risk before delivery; no repeated-lifetime awards.",
+      "after": "C/E*Y*d*m*x*network gives an expected additional unique risk-person cohort, capped at judgment K: N=min(...,K). From donation time until delay L both arms have hazard h=lambda+mu. During min(tau,T-L) the intervention reduces only opioid fatal hazard by lambda*e; afterward both arms have postLambda+postMu. Integrate u*(S_with-S_without)*exp(-r*t) over [0,T], then subtract harmPerProtected per N and independentHarm per gift. Q_CA=g*Q_all; scenario cost=C+extraResources; price_10_CA=10*(C+extraResources)/Q_CA only if Q_CA>0. Closed form: H=max(0,T-L),b=min(tau,H),A(k,z)=-expm1(-k*z)/k; q=u*exp(-(h+r)*L)*[A(h-lambda*e+r,b)-A(h+r,b)+exp(-h*b)*expm1(lambda*e*b)*exp(-r*b)*A(postLambda+postMu+r,H-b)]. Q_all=N*(q-harmPerProtected)-independentHarm. Delayed protection is discounted and survives baseline risk before delivery; no repeated-lifetime awards.",
+      "reason": "Align displayed price formula with corrected total-resource scenario."
+    },
+    {
+      "field": "model.nativeOutcomes and sections.cost",
+      "before": "Native cohort and QALYs without direct native-cost quotient; extra-resource display insufficiently explicit.",
+      "after": "Added $339.19 nominal scale, $2,713.55/protected risk-person, finite survivor interpretation, and $200,000 resource numerator.",
+      "reason": "Expose donor-useful native bridge and prevent kit/reversal/survivor confusion."
+    },
+    {
+      "field": "sections.funding",
+      "before": "Functional expense breakdown only in research packet.",
+      "after": "All three original program/management/fundraising splits visible in report.",
+      "reason": "Keep whole-recipient spending inspectable for donors without inventing overdose allocation."
+    },
+    {
+      "field": "model.inputs.mu.rationale",
+      "before": "Range 0.02–0.05 only.",
+      "after": "Also identifies 0.10/year beta stress.",
+      "reason": "Resolve range/scenario mismatch without changing a parameter."
+    }
+  ],
+  "actualAuditInterval": {
+    "startedAt": "2026-09-14T09:20:15Z",
+    "endedAt": "2026-09-14T09:23:17.133Z",
+    "workerId": "usa_beta_one",
+    "model": "gpt-6-astra",
+    "reasoningEffort": "medium",
+    "phase": "independent-audit",
+    "authorResearchCreditSeconds": 0,
+    "seconds": 182.133
+  },
+  "authorProvenance": {
+    "newSessionUnchanged": true,
+    "betaResearchSeconds": 755.268,
+    "oldSessionsReusedWithoutModification": true
+  },
+  "financialEvidence": {
+    "verifiedYears": [
+      {
+        "year": 2023,
+        "revenue": 2040802,
+        "expenses": 1938389,
+        "program": 1793371,
+        "management": 130663,
+        "fundraising": 14355,
+        "noncashContributions": 617800,
+        "suppliesExpense": 841370,
+        "personnel": 819470,
+        "cashSavings": 564212,
+        "unrestrictedNetAssets": 566362,
+        "restrictedNetAssets": 163875,
+        "totalNetAssets": 730237,
+        "partIXSumVerified": true,
+        "noDisclosedEventGamingCOGSRentalAddback": true
+      },
+      {
+        "year": 2024,
+        "revenue": 1965174,
+        "expenses": 2062785,
+        "program": 1899810,
+        "management": 142100,
+        "fundraising": 20875,
+        "noncashContributions": 707799,
+        "suppliesExpense": 888785,
+        "personnel": 834081,
+        "cashSavings": 410237,
+        "unrestrictedNetAssets": 516009,
+        "restrictedNetAssets": 116617,
+        "totalNetAssets": 632626,
+        "partIXSumVerified": true,
+        "noDisclosedEventGamingCOGSRentalAddback": true
+      },
+      {
+        "year": 2025,
+        "revenue": 1838031,
+        "expenses": 1695969,
+        "program": 1496873,
+        "management": 190757,
+        "fundraising": 8339,
+        "noncashContributions": 384175,
+        "suppliesExpense": 529382,
+        "personnel": 815091,
+        "cashSavings": 619377,
+        "unrestrictedNetAssets": 540198,
+        "restrictedNetAssets": 234490,
+        "totalNetAssets": 774688,
+        "partIXSumVerified": true,
+        "noDisclosedEventGamingCOGSRentalAddback": true
+      }
+    ],
+    "meanAnnualExpense": 1899047.6666666667,
+    "supplyDecline": 359403,
+    "totalExpenseDecline": 366816,
+    "donatedGoods2025": 384175,
+    "reconciliation": "All three original Part IX functional totals verified, no disclosed netted event/gaming/rental/COGS expense. Original Schedule M fair-market-value goods contribution is not a stand-alone expense addback; Schedule D audit-reconciliation fields blank. Independent CPA financials/partner resources not established."
+  },
+  "sourceEvidence": {
+    "reusedOriginalArtifacts": [
+      {
+        "path": "/tmp/hrs25-new.html",
+        "sha256": "0a44aaa4c054a425a949522c0606ff6106bc58b1e543088718446e7e661bedf3",
+        "bytes": 43634,
+        "match": true
+      },
+      {
+        "path": "/tmp/hrs24-new.html",
+        "sha256": "9861aa8acefd5cddea14c98e0014fa0c06a83eb0f1b8b1cd51e7554858c35d5a",
+        "bytes": 43489,
+        "match": true
+      },
+      {
+        "path": "/tmp/hrs23-new.html",
+        "sha256": "e77914f79a4c9684c4b604f670c03b0fb9288e2d4a46fa8a7ea9fd5411123853",
+        "bytes": 43569,
+        "match": true
+      },
+      {
+        "path": "/tmp/hrs25-o.html",
+        "sha256": "7979d507c6f221b10eeb797a2cffc59abb0f5bcf43f5e586f163f8394d7cf946",
+        "bytes": 7600,
+        "match": true
+      },
+      {
+        "path": "/tmp/hrs23-o.html",
+        "sha256": "09aafea85718e9ffbb4de05cb6d2a034ce09daf211b317d3e2e62e85839da5a3",
+        "bytes": 7605,
+        "match": true
+      },
+      {
+        "path": "/tmp/hrs25-m.html",
+        "sha256": "03a4f19fb74c43bdbe3852d595cd1bce99b7f0b1426047c917a7654e23396a8c",
+        "bytes": 7919,
+        "match": true
+      },
+      {
+        "path": "/tmp/hrs-beta-d2023.html",
+        "sha256": "d3e86626ebd128f7c1f59badce5e04ff6ba2047c5e17961958b52db0d1f6825c",
+        "bytes": 129013,
+        "match": true
+      },
+      {
+        "path": "/tmp/hrs-beta-d2024.html",
+        "sha256": "912f3712d0051f08ef32258c2f45e90daf3e755cf1f0c9fe55ee4e0ebd64e1a7",
+        "bytes": 129010,
+        "match": true
+      },
+      {
+        "path": "/tmp/hrs-beta-d2025.html",
+        "sha256": "f90cad975b8fbd120e64d66a6f3aae9db56c09b3418287327e748d11b01e91d6",
+        "bytes": 129021,
+        "match": true
+      },
+      {
+        "path": "/tmp/hrs-beta-model.mjs",
+        "sha256": "47b8c66e9d4476534a7580d8e1083ac7b6d0355909281439978aaf73fdaea494",
+        "bytes": 3575,
+        "match": true
+      }
+    ],
+    "reopenedPrimaryPages": [
+      {
+        "url": "https://www.saclibrary.org/news/sacramento-public-library-partners-harm-reduction-services-support-community-health",
+        "finding": "May 14 pause and January–May two-branch pilot confirmed; not HRS-wide closure."
+      },
+      {
+        "url": "https://hrssac.org/about-us/services-programs/",
+        "finding": "Current Stockton Boulevard counter and weekday mobile route remain advertised; county nonfunding claim limited to SSP/drug-use supplies."
+      },
+      {
+        "url": "https://www.dhcs.ca.gov/individuals/naloxone-distribution-project/ndp-frequently-asked-questions/",
+        "finding": "Free qualified-entity naloxone subject to public funding, generic nasal product from April 2026; no HRS allocation established."
+      },
+      {
+        "url": "https://hrssac.org/donations-2/",
+        "finding": "Ordinary gift has broad uses; official Venmo route linked, no transaction made."
+      },
+      {
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31561997/",
+        "finding": "Primary indexed Ontario abstract confirms 5.3% all-cause and 1.9% opioid mortality in selected post-overdose cohort, not general SSP recipients."
+      }
+    ],
+    "clinicalReuse": "Prior accepted Walley, HEALing and California post-overdose source evidence reused; fresh PubMed pages for HEALing/California returned empty. No claim of fresh full-text access. Conditional 10% risk reduction remains an honest transfer judgment, not a causal HRS estimate.",
+    "date": "2026-09-14"
+  },
+  "mathAudit": {
+    "method": "Independent piecewise treated/untreated survival trajectories integrated with Simpson quadrature at mortality/protection discontinuities; no author closed-form import.",
+    "scenarioCount": 23,
+    "results": [
+      {
+        "id": "central",
+        "protectedRiskPeople": 36.85208868794182,
+        "allPopulationQalys": 0.3303339760120982,
+        "editionQalys": 0.3237272964918562,
+        "costUSD": 100000,
+        "pricePer10": 3089019.711456912,
+        "maxQalyError": 3.1086244689504383e-15
+      },
+      {
+        "id": "favorable",
+        "protectedRiskPeople": 188.68269408226217,
+        "allPopulationQalys": 13.332193805110684,
+        "editionQalys": 13.332193805110684,
+        "costUSD": 100000,
+        "pricePer10": 75006.41039411428,
+        "maxQalyError": 6.039613253960852e-14
+      },
+      {
+        "id": "adverse",
+        "protectedRiskPeople": 1.1792668380141387,
+        "allPopulationQalys": 0.000029107267019135238,
+        "editionQalys": 0.000026196540317221715,
+        "costUSD": 100000,
+        "pricePer10": 38172979633.596725,
+        "maxQalyError": 6.4848842441789234e-18
+      },
+      {
+        "id": "zero_funding",
+        "protectedRiskPeople": 0,
+        "allPopulationQalys": 0,
+        "editionQalys": 0,
+        "costUSD": 100000,
+        "pricePer10": null,
+        "maxQalyError": 0
+      },
+      {
+        "id": "zero_effect",
+        "protectedRiskPeople": 36.85208868794182,
+        "allPopulationQalys": 0,
+        "editionQalys": 0,
+        "costUSD": 100000,
+        "pricePer10": null,
+        "maxQalyError": 0
+      },
+      {
+        "id": "training_only",
+        "protectedRiskPeople": 3.685208868794182,
+        "allPopulationQalys": 0.03303339760120982,
+        "editionQalys": 0.03237272964918562,
+        "costUSD": 100000,
+        "pricePer10": 30890197.114569128,
+        "maxQalyError": 3.122502256758253e-16
+      },
+      {
+        "id": "five_person_capacity",
+        "protectedRiskPeople": 5,
+        "allPopulationQalys": 0.04481889463706097,
+        "editionQalys": 0.04392251674431975,
+        "costUSD": 100000,
+        "pricePer10": 22767365.673082117,
+        "maxQalyError": 4.163336342344337e-16
+      },
+      {
+        "id": "low_margin",
+        "protectedRiskPeople": 7.370417737588365,
+        "allPopulationQalys": 0.06606679520241965,
+        "editionQalys": 0.06474545929837125,
+        "costUSD": 100000,
+        "pricePer10": 15445098.55728456,
+        "maxQalyError": 6.106226635438361e-16
+      },
+      {
+        "id": "three_year_expense_mean",
+        "protectedRiskPeople": 32.911232875846714,
+        "allPopulationQalys": 0.2950090157276702,
+        "editionQalys": 0.28910883541311677,
+        "costUSD": 100000,
+        "pricePer10": 3458905.0126090692,
+        "maxQalyError": 2.7755575615628914e-15
+      },
+      {
+        "id": "low_opioid_risk",
+        "protectedRiskPeople": 36.85208868794182,
+        "allPopulationQalys": 0.08855251292914469,
+        "editionQalys": 0.08678146267056179,
+        "costUSD": 100000,
+        "pricePer10": 11523198.264082985,
+        "maxQalyError": 3.2751579226442118e-15
+      },
+      {
+        "id": "high_competing_mortality",
+        "protectedRiskPeople": 36.85208868794182,
+        "allPopulationQalys": 0.24288781130869827,
+        "editionQalys": 0.2380300550825243,
+        "costUSD": 100000,
+        "pricePer10": 4201150.143217431,
+        "maxQalyError": 2.1094237467877974e-15
+      },
+      {
+        "id": "one_year_survival_window",
+        "protectedRiskPeople": 36.85208868794182,
+        "allPopulationQalys": 0.024477265217679726,
+        "editionQalys": 0.02398771991332613,
+        "costUSD": 100000,
+        "pricePer10": 41687997.175774105,
+        "maxQalyError": 2.96637714392034e-15
+      },
+      {
+        "id": "quarter_year_protection",
+        "protectedRiskPeople": 36.85208868794182,
+        "allPopulationQalys": 0.08720361028573445,
+        "editionQalys": 0.08545953808001976,
+        "costUSD": 100000,
+        "pricePer10": 11701444.010423427,
+        "maxQalyError": 3.885780586188048e-16
+      },
+      {
+        "id": "five_year_durable_protection",
+        "protectedRiskPeople": 36.85208868794182,
+        "allPopulationQalys": 1.2139691866032334,
+        "editionQalys": 1.1896898028711687,
+        "costUSD": 100000,
+        "pricePer10": 840555.2418677744,
+        "maxQalyError": 5.773159728050814e-15
+      },
+      {
+        "id": "higher_recurrent_risk_after_protection",
+        "protectedRiskPeople": 36.85208868794182,
+        "allPopulationQalys": 0.23691793757958088,
+        "editionQalys": 0.23217957882798926,
+        "costUSD": 100000,
+        "pricePer10": 4307011.000053765,
+        "maxQalyError": 4.246603069191224e-15
+      },
+      {
+        "id": "six_month_delivery_delay",
+        "protectedRiskPeople": 36.85208868794182,
+        "allPopulationQalys": 0.3060076897023152,
+        "editionQalys": 0.2998875359082689,
+        "costUSD": 100000,
+        "pricePer10": 3334583.402979059,
+        "maxQalyError": 3.9968028886505635e-15
+      },
+      {
+        "id": "half_network_translation",
+        "protectedRiskPeople": 18.42604434397091,
+        "allPopulationQalys": 0.1651669880060491,
+        "editionQalys": 0.1618636482459281,
+        "costUSD": 100000,
+        "pricePer10": 6178039.422913824,
+        "maxQalyError": 1.5543122344752192e-15
+      },
+      {
+        "id": "treatment_burden",
+        "protectedRiskPeople": 36.85208868794182,
+        "allPopulationQalys": -0.038186910867320026,
+        "editionQalys": -0.03742317264997363,
+        "costUSD": 100000,
+        "pricePer10": null,
+        "maxQalyError": 3.066991105526995e-15
+      },
+      {
+        "id": "hypothetical_adverse_fatal_effect",
+        "protectedRiskPeople": 36.85208868794182,
+        "allPopulationQalys": -0.16492559675649093,
+        "editionQalys": -0.16162708482136112,
+        "costUSD": 100000,
+        "pricePer10": null,
+        "maxQalyError": 2.7755575615628914e-17
+      },
+      {
+        "id": "zero_activity_independent_harm",
+        "protectedRiskPeople": 0,
+        "allPopulationQalys": -0.05,
+        "editionQalys": -0.049,
+        "costUSD": 100000,
+        "pricePer10": null,
+        "maxQalyError": 0
+      },
+      {
+        "id": "no_local",
+        "protectedRiskPeople": 36.85208868794182,
+        "allPopulationQalys": 0.3303339760120982,
+        "editionQalys": 0,
+        "costUSD": 100000,
+        "pricePer10": null,
+        "maxQalyError": 3.1086244689504383e-15
+      },
+      {
+        "id": "extra_unpriced_resources",
+        "protectedRiskPeople": 36.85208868794182,
+        "allPopulationQalys": 0.3303339760120982,
+        "editionQalys": 0.3237272964918562,
+        "costUSD": 200000,
+        "pricePer10": 6178039.422913824,
+        "maxQalyError": 3.1086244689504383e-15
+      },
+      {
+        "id": "horizon_before_protection_end",
+        "protectedRiskPeople": 36.85208868794182,
+        "allPopulationQalys": 0.006281778219358624,
+        "editionQalys": 0.006156142654971452,
+        "costUSD": 100000,
+        "pricePer10": 162439380.63918003,
+        "maxQalyError": 2.491062911502695e-15
+      }
+    ],
+    "maxAbsoluteQalyError": 6.039613253960852e-14,
+    "centralPriceUnchanged": 3089019.7114568832,
+    "resourceScenarioCorrectedPrice": 6178039.4229137665,
+    "allZeroAndNegativeCasesRetained": true,
+    "finiteHorizonNote": "For the horizon-before-protection-end case, any extra-survivor scalar is at the earlier of accounting horizon and protection end, not literally the eventual protection end. No terminal survival value is added."
+  },
+  "readiness": {
+    "structuralValidation": "pass after corrections",
+    "betaPublicationEligible": true,
+    "donorEndorsement": false,
+    "marginEmpiricallyIdentified": false,
+    "nextBottleneck": "Matched current unique risk-person reach, costed incremental capacity and public/other-funder substitution; unpriced HIV/HCV/care pathways could change whole-portfolio ranking."
+  },
+  "reproductionScript": "/tmp/hrs-beta-independent-audit.mjs",
+  "inputPacketSHA256": "9169f65a7318e6e3254ea9134b453843edb13315f7fd7a4cace02b43c7b6c546"
+}

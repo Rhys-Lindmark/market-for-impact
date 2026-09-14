@@ -7,10 +7,13 @@ const get=slug=>data.reports.find(r=>r.edition==='los-angeles'&&r.slug===slug);
 const close=(a,b)=>assert.ok(Math.abs(a-b)<1e-9*Math.max(1,Math.abs(b)),`${a} != ${b}`);
 const verify=(r,values)=>{for(const [id,all,g=1] of values){const s=r.model.scenarios.find(s=>s.id===id);close(s.allPopulationQalys,all);close(s.editionQalys,all*g);}};
 test('Lestonnac finite clinical scenarios and original gross costs reproduce',()=>{
- const r=get('lestonnac-free-clinic'),q=(e,b,u)=>10000*e*b*u/1.03;
- verify(r,[['central',q(.35,.35,.02),.7],['poor',q(.1,.1,.005),.4],['favorable',q(.6,.7,.05),.9],['zero',0],['harm',q(.35,.35,-.005),.7]]);
- close(expenseAverage(r),4108413);close(reportPrice(r),10*4695553/(q(.35,.35,.02)*.7));
- assert.equal(r.model.scenarios.find(s=>s.id==='poor').costUSD,4695553*1.25);
+ const r=get('lestonnac-free-clinic');
+ for(const s of r.model.scenarios){
+  const x=JSON.parse(s.assumptions);let q=0;
+  for(const b of x.branches){const k=Math.log1p(x.d)+x.m+b.decay;q+=b.weight*b.utility*(-Math.expm1(-k*b.years))/k;}
+  const all=x.N*x.b*(x.e*q-x.h);close(all,s.allPopulationQalys);close(all*x.g,s.editionQalys);close(s.costUSD,x.E);
+ }
+ close(expenseAverage(r),7068289.666666667);close(reportPrice(r),4369540.64650792);
 });
 test('SAFE finite survival, injury discount, and public resource sensitivity reproduce',()=>{
  const r=get('streets-are-for-everyone');

@@ -62,7 +62,7 @@ test('published research has measured headers, usable models and scoped canonica
   ['usa','toxic-free-future','Toxic-Free Future','12',false],
   ['usa','farmworker-justice','Farmworker Justice','12',false],
   ['usa','earthjustice','Earthjustice','6',false],
-  ['los-angeles','lestonnac-free-clinic','Lestonnac Free Clinic','7',true],
+  ['los-angeles','lestonnac-free-clinic','Lestonnac Free Clinic','18',true],
   ['los-angeles','streets-are-for-everyone','Streets Are For Everyone','11',true],
   ['los-angeles','breathe-southern-california','Breathe Southern California','11',true],
   ['los-angeles','neighborhood-legal-services-los-angeles-county','Neighborhood Legal Services of Los Angeles County','8',true],
@@ -76,7 +76,7 @@ test('published research has measured headers, usable models and scoped canonica
   ['usa','national-health-law-program','National Health Law Program','24',true],
   ['usa','institute-for-safer-trucking','Institute for Safer Trucking','5',true],
   ['usa','us-alcohol-policy-alliance','US Alcohol Policy Alliance','8',true],
-  ['california','harm-reduction-services','Harm Reduction Services','28',true],
+  ['california','harm-reduction-services','Harm Reduction Services','40',true],
   ['usa','national-center-for-healthy-housing','National Center for Healthy Housing','20',true],
   ['california','operation-access','Operation Access','21',true],
   ['usa','legal-action-center','Legal Action Center','10',false],
@@ -84,7 +84,7 @@ test('published research has measured headers, usable models and scoped canonica
   ['california','end-overdose','End Overdose','20',true],
   ['usa','surgery-on-sunday','Surgery on Sunday','19',true],
   ['usa','the-headstrong-project','The Headstrong Project','6',true],
-  ['usa','dental-lifeline-network','Dental Lifeline Network','12',true],
+  ['usa','dental-lifeline-network','Dental Lifeline Network','24',true],
   ['california','homeless-health-care-los-angeles','Homeless Health Care Los Angeles','6',true],
   ['california','western-center-on-law-and-poverty','Western Center on Law & Poverty','11',true],
   ['california','worksafe','WorkSafe','14',true],
@@ -105,7 +105,7 @@ test('published research has measured headers, usable models and scoped canonica
   const route=`/${edition}/charities/${slug}`;
   await page.goto(route);
   await expect(page.getByRole('heading',{name,exact:true})).toBeVisible();
-  const models=(edition==='usa'&&['end-overdose','center-for-science-in-the-public-interest','surgery-on-sunday'].includes(slug))||(edition==='los-angeles'&&slug==='urban-peace-institute')||(edition==='california'&&slug==='operation-access')?'GPT-6 Astra Light \\+ GPT-6 Astra Medium':'GPT-6 Astra Light';
+  const models=(edition==='usa'&&['end-overdose','center-for-science-in-the-public-interest','surgery-on-sunday','dental-lifeline-network'].includes(slug))||(edition==='los-angeles'&&['urban-peace-institute','lestonnac-free-clinic'].includes(slug))||(edition==='california'&&['operation-access','harm-reduction-services'].includes(slug))?'GPT-6 Astra Light \\+ GPT-6 Astra Medium':'GPT-6 Astra Light';
   await expect(page.locator('.report-research-effort summary')).toHaveText(new RegExp(`^Research time: ~?${minutes} min on ${models}$`));
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href','https://ai.rhyslindmark.com/givebetter'+route);
   if(donate)await expect(page.locator('.report-donate')).toHaveAttribute('href',/^https:\/\//);

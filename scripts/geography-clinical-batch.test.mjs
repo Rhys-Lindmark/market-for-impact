@@ -17,7 +17,14 @@ test('HHCLA finite survival scenarios reproduce without treating reversals as de
 test('three clinical ledgers reproduce central and joint scenarios',()=>{
  for(const slug of ['surgery-on-sunday','the-headstrong-project','dental-lifeline-network']){
   const report=reports.find(r=>r.edition==='usa'&&r.slug===slug);assert.ok(report);
-  for(const scenario of report.model.scenarios.filter(s=>['central','favorable','pessimistic'].includes(s.id))){
+  for(const scenario of report.model.scenarios.filter(s=>slug==='dental-lifeline-network'||['central','favorable','pessimistic'].includes(s.id))){
+   if(slug==='dental-lifeline-network'){
+    const x=JSON.parse(scenario.assumptions.slice(0,scenario.assumptions.indexOf('}')+1)),d=Math.log1p(x.d),k=d+x.m+x.loss+x.catchup;
+    const q=x.u*Math.exp(-d*x.L)*(-Math.expm1(-k*x.T))/k,N=x.G/x.c*x.b;
+    const all=N*x.r*(x.s*q-x.h*Math.exp(-d*x.L))-N*x.ha;
+    near(all,scenario.allPopulationQalys);near(all*x.g,scenario.editionQalys);
+    near(x.G+N*(x.r*x.resource+(1-x.r)*x.unfinishedResource+x.patientResource),scenario.costUSD);continue;
+   }
    const p=params(scenario.assumptions);let q=0;
    if(slug==='surgery-on-sunday'){
     for(let t=1;t<=p.T;t++)q+=p.Δu*((1-p.m)/1.03)**t;
@@ -35,7 +42,7 @@ test('equivalent benefit does not erase additional surgical or dental harms',()=
  const dental=reports.find(r=>r.slug==='dental-lifeline-network');
  near(surgery.model.scenarios.find(s=>s.id==='equivalent-care-harm').editionQalys,-.02);
  assert.ok(surgery.model.scenarios.find(s=>s.id==='pessimistic').editionQalys<0);
- near(dental.model.scenarios.find(s=>s.id==='no-incremental-benefit').editionQalys,-.0025);
+ assert.ok(dental.model.scenarios.find(s=>s.id==='no-health-benefit').editionQalys<0);
  near(surgery.model.scenarios.find(s=>s.id==='zero-additionality').editionQalys,0);
  near(dental.model.scenarios.find(s=>s.id==='zero-capacity').editionQalys,0);
 });

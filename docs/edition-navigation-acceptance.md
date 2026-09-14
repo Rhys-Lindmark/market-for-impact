@@ -20,4 +20,6 @@ All full research lists use the existing SF CSS-module table: identical typograp
 
 Eleven focused plan/report/expense tests pass. Changed application and regression-test lint passes. Production build passes. 106 phone/tablet tests pass across redirects, all edition route pairs, full-table styling, existing SF shortlist and published reports/APIs. Four additional phone/tablet expense tests pass, exhaustively verifying all 93 stored expense records against each report's exact entity, basis, fiscal years, source links, mean and notes; no unresolved recipient mappings. Desktop USA list visually inspected against SF styling. Canonical post-deployment checks are the final release gate.
 
+Full-suite follow-up: the old AMF boundary test still opened the retired /research source file. Updated its source path to /san-francisco/all without changing any assertions or model data; all 859 tests now pass. This test-only follow-up does not change the deployed UI.
+
 Next: accept queued research batches and defensible California model revisions; retain the 100 discovery → 25 initial → 10 in-depth → 4 shortlisted workflow.

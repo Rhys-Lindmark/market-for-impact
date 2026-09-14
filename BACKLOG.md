@@ -2,6 +2,8 @@
 
 ## Active priority — eleven-edition geographic expansion (September 13)
 
+USA first deep review accepted (September 14): End Overdose's finite naloxone-pathway model is about $1.8M per ten USA QALYs, with full donation cost and explicit partial-health scope. Corrected stockout inference; original three-year accounts and survivor endpoint checked. USA25/25 initial and1/10 deep; CA14/25, LA14/25, eight metros0/25, other beta0/10. No giving pick. See docs/usa-end-overdose-beta-acceptance.md. Next: release, California clinical propagation, LA four-report batch and CSPI deep review.
+
 NYC discovery accepted (September 14):100 independently checked real recipient leads and25 comparative alpha priorities under the22-county MSA. Corrected Zufall's donor recipient to its Foundation, current MFJ giving route and affiliate boundaries. This adds no published reports or deep reviews. Evidence: docs/geography-discovery/nyc-independent-acceptance.json. Counts remain CA14/25, USA25/25, LA14/25 and eight metros0/25; all beta0/10. Next: NYC alpha, Denver acceptance and USA deep review.
 
 Seattle discovery accepted (September 14): all100 independently checked,25 comparatively selected,0/25 initial reports and0/10 deep reviews. Corrected rebranded WHA Education Network scope, LCSNW merger, PHRA EIN and conflicting operational counts. WithinReach replaces the former WLIHA selected slot. Evidence: docs/geography-discovery/seattle-independent-acceptance.json. Published counts remain CA14/25, USA25/25, LA14/25; eight other metros0/25; all beta0/10. Next: selected alpha work and independent NYC/Denver acceptance.

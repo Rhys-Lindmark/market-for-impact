@@ -11,6 +11,10 @@ test.beforeEach(async({page,baseURL})=>{
 
 test('published research has measured headers, usable models and scoped canonical links',async({page,request})=>{
  for(const [edition,slug,name,minutes,donate] of [
+  ['usa','remote-area-medical','Remote Area Medical','10',true],
+  ['usa','immunize-org','Immunize.org','10',true],
+  ['usa','green-and-healthy-homes-initiative','Green & Healthy Homes Initiative','6',true],
+  ['usa','american-nonsmokers-rights-foundation','American Nonsmokers’ Rights Foundation','7',true],
   ['california','national-health-law-program','National Health Law Program','26',true],
   ['usa','national-health-law-program','National Health Law Program','24',true],
   ['usa','institute-for-safer-trucking','Institute for Safer Trucking','5',true],

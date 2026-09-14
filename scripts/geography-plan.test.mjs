@@ -75,7 +75,7 @@ for(const r of la.records){
  assert.ok(r.primarySources.every(s=>s.url.startsWith('https://')&&s.retrieved));
  assert.ok(r.inScopeCountyAnchors.length&&r.inScopeCountyAnchors.every(c=>['06037','06059'].includes(c)));
 }
-assert.equal(laProgress.alphaPublished,22);
+assert.equal(laProgress.alphaPublished,25);
 const denver=read('geography-discovery/denver-seed.json');
 assert.equal(denver.candidates.length,40);
 assert.equal(p.editions.find(e=>e.id==='denver').discoveryProvisional,40);

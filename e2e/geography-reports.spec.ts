@@ -11,6 +11,9 @@ test.beforeEach(async({page,baseURL})=>{
 
 test('published research has measured headers, usable models and scoped canonical links',async({page,request})=>{
  for(const [edition,slug,name,minutes,donate] of [
+  ['los-angeles','hunger-action-los-angeles','Hunger Action Los Angeles','45',true],
+  ['los-angeles','illumination-foundation','Illumination Health + Home','5',true],
+  ['los-angeles','dayle-mcintosh-center','Dayle McIntosh Center','5',true],
   ['los-angeles','garment-worker-center','Garment Worker Center','18',true],
   ['los-angeles','housing-rights-center','Housing Rights Center','5',true],
   ['los-angeles','downtown-women-s-center',"Downtown Women's Center",'7',true],

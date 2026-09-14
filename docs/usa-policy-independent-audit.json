@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "auditType": "independent bounded source/model audit",
+  "model": {
+    "id": "gpt-6-astra",
+    "name": "GPT-6 Astra Medium",
+    "evidence": "Parent retained runtime dispatch"
+  },
+  "decisions": [
+    {
+      "organizationId": "org:center-for-science-in-the-public-interest",
+      "status": "accept-with-interpretation-condition",
+      "arithmetic": {
+        "scenariosReproduced": 8,
+        "maxEditionQalyError": 0,
+        "centralH": 187025.79838417712,
+        "centralAllQalysPer10000": 0.20866053659437464,
+        "centralUsaQalysPer10000": 0.2065739312284309
+      },
+      "requiredEdits": [
+        {
+          "location": "sections.cost and model delay input",
+          "text": "The original PLOS model already incorporates exposure-to-CVD clinical lags, its reformulation ramp, and discounted benefits. L=5 is an additional implementation delay before a rebased health stream, not a second clinical lag. t=.7 must represent transport/rebasing uncertainty not another charge for the same lag."
+        }
+      ],
+      "findings": [
+        "Full five-year CSPI charity denominator is coherent; do not use consolidated Action Fund expenses or apply a second sodium-budget fraction.",
+        "p*a is subjective incremental coalition influence times recipient credit, distinct from funding substitution b; no empirically identified probability is claimed.",
+        "Other pathways receive zero net credit by judgment, not a proved lower bound or complete portfolio valuation.",
+        "Original source supports 2.1m versus .7m discounted QALYs, not a new marginal-donation experiment. FDA still labels Phase II draft."
+      ],
+      "evidence": [
+        {
+          "url": "https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1002551",
+          "verified": "Methods explicitly incorporate lag; abstract gives discounted scenario scale."
+        },
+        {
+          "url": "https://www.cspi.org/sites/default/files/2026-05/2025_Form%20990_TAX%20RETURN_PUBLIC%20DISCLOSURE.pdf",
+          "verified": "Original PDF text identifies EIN23-7122879 and FY2025 expenses17926322; prior year17289504."
+        },
+        {
+          "url": "https://www.cspi.org/sites/default/files/2026-04/CSPI%20-%20FS%20FY25.pdf",
+          "verified": "Original consolidation schedule text gives recipient17916541 and consolidated19518975; disclosed9781 tax/audit difference valid."
+        },
+        {
+          "url": "https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/sodium-reduction-food-supply",
+          "verified": "PhaseII draft,2750 target and incomplete PhaseI assessment confirmed."
+        },
+        {
+          "url": "https://www.citizen.org/litigation/center-for-science-in-the-public-interest-v-food-and-drug-administration/",
+          "verified": "Counsel confirms delay litigation, denial of requested mandatory action and simultaneous voluntary targets; not exclusive CSPI causal credit."
+        }
+      ],
+      "timing": {
+        "startedAt": "2026-09-14T00:03:18.645Z",
+        "endedAt": "2026-09-14T00:03:40.908Z",
+        "creditedSeconds": 22.263,
+        "excluded": "Earlier focused work began2026-09-13T23:59:40.617Z but crossed compaction; conservatively no credit for entire interrupted segment ending2026-09-14T00:03:04.783Z. These are audit seconds only."
+      }
+    },
+    {
+      "organizationId": "org:kids-and-car-safety",
+      "status": "accept-as-subjective-hot-car-pathway-estimate",
+      "arithmetic": {
+        "scenariosReproduced": 9,
+        "maxEditionQalyError": 3.47e-18,
+        "centralAdoptionDifference": 1.7247803796467673,
+        "centralH": 704.1243421869962,
+        "centralUsaQalysPer10000": 0.10872641468101513,
+        "threeYearMeanExpenses": 261740.66666666666
+      },
+      "requiredEdits": [],
+      "clarifications": [
+        "Keep hot-car-only scope prominent wherever headline price appears; other portfolio health is not estimated.",
+        "Retain distinction between cash donor cost and unpriced hardware, government implementation and volunteer resources.",
+        "Adoption risk coverage cap, detection d, reliability k and rescue r must remain distinct conditional factors. F fractions are exposure coverage not efficacy-adjusted saved-death fractions.",
+        "The q=27 judgment approximately matches discounted healthy lifespan; annual benefit discount discounts event timing, so it is not duplicate lifetime discounting.",
+        "No existing law or industry rollout receives repeated new-gift credit. Same-path counterfactual correctly gives zero."
+      ],
+      "evidence": [
+        {
+          "url": "https://projects.propublica.org/nonprofits/full_text/202513039349301566/IRS990",
+          "verified": "Direct fetch of original IRS HTML after browser extraction error confirms EIN20-0024715 and256454 expenses."
+        },
+        {
+          "url": "https://projects.propublica.org/nonprofits/full_text/202420799349301032/IRS990",
+          "verified": "Direct original HTML confirms258364 functional expenses plus4517 event direct cost;262881 gross."
+        },
+        {
+          "url": "https://projects.propublica.org/nonprofits/full_text/202513039349301566/IRS990ScheduleD",
+          "verified": "303125 Coinbase/Bitcoin holding confirmed."
+        },
+        {
+          "url": "https://projects.propublica.org/nonprofits/full_text/202513039349301566/IRS990ScheduleM",
+          "verified": "300000 cryptocurrency contribution confirmed."
+        },
+        {
+          "url": "https://www.reginfo.gov/public/do/eAgendaViewRule?pubId=202510&RIN=2127-AM49",
+          "verified": "Official page reports prerule stage, planned July2026 ANPRM; not evidence of final rule or deployment."
+        },
+        {
+          "url": "https://www.nhtsa.gov/campaign/heatstroke",
+          "verified": "31 deaths in2025 confirmed."
+        },
+        {
+          "url": "https://injury.research.chop.edu/blog/posts/new-research-evaluates-technological-solutions-prevent-pediatric-vehicular-heatstroke",
+          "verified": "354 cases and10 scenarios, no universally effective single technology; source's universal2025 legal claim must not override regulator."
+        },
+        {
+          "url": "https://www.autosinnovate.org/posts/press-release/2024-industry-heatstroke-report",
+          "verified": "Industry describes voluntary commitment and263 available models in2024, not universal direct-detection effectiveness."
+        }
+      ],
+      "limits": [
+        "Bounded review, not every annual-return line or every technical PDF table reopened. NHTSA PDF returned but selected independently search term did not match; no new independent verification claimed of its12-system count.",
+        "Exact source publication dates not audited; distinguish return signature/filing dates from actual public publication if UI labels demand publication."
+      ],
+      "timing": {
+        "id": "2b847cf1-0c67-443e-840c-2dafead4b560",
+        "workerId": "expansion_method",
+        "phase": "source-audit",
+        "startedAt": "2026-09-14T00:03:49.122Z",
+        "endedAt": "2026-09-14T00:04:31.812Z",
+        "model": {
+          "id": "gpt-6-astra",
+          "name": "GPT-6 Astra Medium",
+          "evidence": "Parent retained runtime dispatch"
+        },
+        "evidence": "usa-batch8-independent-audit",
+        "creditedSeconds": 42.69
+      }
+    }
+  ],
+  "integration": {
+    "acceptedCountsChanged": false,
+    "authorTimeRecredited": false,
+    "sharedOverlap": "No same-outcome overlap between sodium and hot-car pathways. Within each coalition, credits to other charities cannot later be summed without checking shared causal attribution.",
+    "siteEdits": false
+  },
+  "retrieved": "2026-09-14",
+  "totalCreditedAuditSeconds": 64.953
+}

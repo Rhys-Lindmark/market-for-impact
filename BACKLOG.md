@@ -2,6 +2,8 @@
 
 ## Active priority — eleven-edition geographic expansion (September 13)
 
+USA policy batch: CSPI and Kids and Car Safety prepared for publication, bringing USA12/25 with California10/25, every metro0/25 and every beta0/10. Explicit prospective policy scenarios retain full recipient costs, counterfactual adoption, uncertain influence, zero and negative cases. Numerical model tests reproduce all scenarios. Independent source acceptance and release gates remain required; no automatic top-pick endorsement. Next: finish release, then other queued reports and metro discovery acceptance.
+
 End Overdose California geographic revision: explicit conditional central ~$13M/10 California QALYs, retaining the national clinical calculation and all recipient costs. Geography is a weak modeled prior, not an observed allocation. Adjacent naloxone-only scope, geography stress tests and California-zero/national-positive case retained; national and California benefits are not additive. Independent Medium audit confirms arithmetic and primary footprint. No new report or beta counts. Next: complete release checks and continue other California model reviews.
 
 California best-estimate revision: HRS now has an independently checked subjective central of about $3.1M/10 California QALYs with verified original three-year accounts. CIL has a clearly labeled repair/loaner-only contribution estimate, about $59M/10, charging full gift cost while leaving other benefits unestimated. Source and numerical audits preserved. These revise existing alpha reports, not new counts or beta approvals. Next: complete release gates, continue remaining California central-model reviews, and accept queued new reports.

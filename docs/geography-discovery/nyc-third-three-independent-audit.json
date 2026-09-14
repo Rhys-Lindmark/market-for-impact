@@ -1,0 +1,744 @@
+{
+  "schemaVersion": 1,
+  "input": "/tmp/givebetter-nyc-alpha-third-three.json",
+  "status": "three-corrected-reports-accepted-awaiting-root-publication",
+  "corrections": [
+    {
+      "slug": "we-act-for-environmental-justice",
+      "path": "priceScope",
+      "before": null,
+      "after": "Three projected years of all WE ACT charitable-recipient gross operating expense charged to conditional NYC heat-policy implementation. National, housing, toxic-exposure and other benefits remain unpriced and may dominate total value; coalition/household/public resources are stress-tested, not fully measured. This is not whole-portfolio return, a lower bound or a standalone comparative ranking.",
+      "reason": "Visible narrow health scope and dominant omitted mechanisms required at price display."
+    },
+    {
+      "slug": "the-center-for-great-expectations",
+      "path": "priceScope",
+      "before": null,
+      "after": "Whole CGE annual recognized expense charged to conditional finite maternal symptom-health from START. Residential, outpatient, infant/child, housing and training benefits remain unpriced and may dominate total value. External partner resources are stress-tested, not fully measured. Not whole-portfolio return, a lower bound or a standalone comparative ranking.",
+      "reason": "Visible narrow health scope and dominant omitted mechanisms required at price display."
+    },
+    {
+      "slug": "new-york-legal-assistance-group",
+      "path": "priceScope",
+      "before": null,
+      "after": "Whole NYLAG annual recognized expense, including donated legal services and event resources, charged to conditional finite coverage-access health for MSA residents. Housing, immigration, benefits, family-law and broader health effects remain unpriced and may dominate value. Not whole-portfolio return, a lower bound or a standalone comparative ranking.",
+      "reason": "Visible narrow health scope and dominant omitted mechanisms required at price display."
+    },
+    {
+      "slug": "we-act-for-environmental-justice",
+      "path": "model.inputs",
+      "before": [
+        {
+          "name": "C",
+          "value": 33762033,
+          "unit": "USD across three operating years",
+          "basis": "observed",
+          "rationale": "Three times FY2024 original gross expense; future constant scale is an assumption.",
+          "sourceIds": [
+            "return2024",
+            "schedule2024"
+          ]
+        },
+        {
+          "name": "D",
+          "value": 500,
+          "unit": "historical annual NYC heat deaths",
+          "basis": "observed",
+          "rationale": "Rounded current city estimate, predominantly statistically estimated heat-exacerbated deaths; not an observed campaign outcome.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "r",
+          "value": 0.01,
+          "unit": "fraction of heat deaths additionally prevented conditional on implementation",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "p",
+          "value": 0.25,
+          "unit": "coalition incremental implementation probability",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "a",
+          "value": 0.2,
+          "unit": "WE ACT coalition contribution fraction",
+          "basis": "judgment",
+          "rationale": "Explicit 20% contribution prior based on documented coalition co-founding and ongoing work; not an empirical attribution estimate.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "b",
+          "value": 0.5,
+          "unit": "funding response fraction",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "T",
+          "value": 5,
+          "unit": "annual mortality cohorts",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "lag",
+          "value": 4,
+          "unit": "years to first benefit",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "u",
+          "value": 0.6,
+          "unit": "health utility",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "m",
+          "value": 0.2,
+          "unit": "annual competing mortality hazard",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "L",
+          "value": 5,
+          "unit": "maximum remaining survival years",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "h",
+          "value": 0,
+          "unit": "net QALYs of adverse effects",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "g",
+          "value": 1,
+          "unit": "MSA fraction",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "d",
+          "value": 0.03,
+          "unit": "annual discount",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        }
+      ],
+      "after": [
+        {
+          "name": "C",
+          "value": 33762033,
+          "unit": "USD across three operating years",
+          "basis": "judgment",
+          "rationale": "Three future years at observed FY2024 gross operating expense, assuming constant scale; undiscounted costs charged upfront. This is a projection, not an observed three-year expense total.",
+          "sourceIds": [
+            "return2024",
+            "schedule2024"
+          ]
+        },
+        {
+          "name": "D",
+          "value": 500,
+          "unit": "historical annual NYC heat deaths",
+          "basis": "observed",
+          "rationale": "Rounded current city estimate, predominantly statistically estimated heat-exacerbated deaths; not an observed campaign outcome.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "r",
+          "value": 0.01,
+          "unit": "fraction of heat deaths additionally prevented conditional on implementation",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "p",
+          "value": 0.25,
+          "unit": "coalition incremental implementation probability",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "a",
+          "value": 0.2,
+          "unit": "WE ACT coalition contribution fraction",
+          "basis": "judgment",
+          "rationale": "Explicit 20% contribution prior based on documented coalition co-founding and ongoing work; not an empirical attribution estimate.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "b",
+          "value": 0.5,
+          "unit": "funding response fraction",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "T",
+          "value": 5,
+          "unit": "annual mortality cohorts",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "lag",
+          "value": 4,
+          "unit": "years to first benefit",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "u",
+          "value": 0.6,
+          "unit": "health utility",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "m",
+          "value": 0.2,
+          "unit": "annual competing mortality hazard",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "L",
+          "value": 5,
+          "unit": "maximum remaining survival years",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "h",
+          "value": 0,
+          "unit": "net QALYs of adverse effects",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "g",
+          "value": 1,
+          "unit": "MSA fraction",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "d",
+          "value": 0.03,
+          "unit": "annual discount",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        }
+      ],
+      "reason": "Distinguish projected denominator from observed annual anchor."
+    },
+    {
+      "slug": "we-act-for-environmental-justice",
+      "path": "sections.cost",
+      "before": "The conditional local heat-component price is approximately $361.2 million per 10 MSA QALYs, not complete portfolio cost-effectiveness.\n\nThe denominator is three years of the entire charitable recipient's gross operating expense. The scenario assumes an additional cooling-implementation package could reduce the city's annual heat mortality envelope by 1% beyond already funded and mandated protections. A 25% coalition probability, 20% WE ACT contribution and 50% ordinary funding response yield 0.125 attributable deaths avoided annually for five cohorts starting four years from valuation. These are transparent priors, not measured effects. Each death avoided is valued at no more than five remaining years with 0.6 utility and a 20% annual competing-mortality hazard, discounted 3%.\n\nAll modeled deaths are NYC-resident deaths, so the component's MSA share is 100%; this does not assign national benefits to New York. The parallel NYC-EJA scenario shares the same coalition opportunity and is correlated, not another independent citywide reduction. A combined giving model would need to reassess joint additionality rather than add both prices or benefits mechanically.\n\nPositive alternatives vary implementation, attribution, funding and survival. Complete replacement and a one-QALY adverse outcome are retained. Added $1 million induced household/public cost and 25% coalition-resource cases test omitted costs; neither is a measured invoice. Rent, electricity costs, grid effects and displacement can offset health gains.",
+      "after": "The conditional local heat-component price is approximately $361.2 million per 10 MSA QALYs, not complete portfolio cost-effectiveness.\n\nThe cost numerator is three years of the entire charitable recipient's gross operating expense. The scenario assumes an additional cooling-implementation package could reduce the city's annual heat mortality envelope by 1% beyond already funded and mandated protections. A 25% coalition probability, 20% WE ACT contribution and 50% ordinary funding response yield 0.125 attributable deaths avoided annually for five cohorts starting four years from valuation. These are transparent priors, not measured effects. Each death avoided is valued at no more than five remaining years with 0.6 utility and a 20% annual competing-mortality hazard, discounted 3%.\n\nAll modeled deaths are NYC-resident deaths, so the component's MSA share is 100%; this does not assign national benefits to New York. The parallel NYC-EJA scenario shares the same coalition opportunity and is correlated, not another independent citywide reduction. A combined giving model would need to reassess joint additionality rather than add both prices or benefits mechanically.\n\nPositive alternatives vary implementation, attribution, funding and survival. Complete replacement and a one-QALY adverse outcome are retained. Added $1 million induced household/public cost and 25% coalition-resource cases test omitted costs; neither is a measured invoice. Rent, electricity costs, grid effects and displacement can offset health gains.",
+      "reason": "Correct ratio terminology; QALYs are the denominator."
+    },
+    {
+      "slug": "we-act-for-environmental-justice",
+      "path": "sections.monitoring",
+      "before": "The impact report documents coalition work on the cooling-center law and a wider city/state/federal portfolio. These establish a role, not marginal deaths prevented. The 2026 policy agenda was prepared before final enactment of the residential cooling law, and the heat webpage retains a petition to pass it. The current Council record is authoritative: the law was enacted in January 2026 with key requirements beginning in 2030. New gifts can at most improve implementation beyond this baseline, not earn the law's full historical benefit. [Impact report](https://weact.org/wp-content/uploads/2026/05/WE-ACTs-2024-2025-Impact-Report-Final.pdf) [Current legal status](https://legistar.council.nyc.gov/LegislationDetail.aspx?GUID=156F95BB-CA74-44F3-A07B-A0E54EA0C10F&ID=6788510)",
+      "after": "The impact report documents coalition work on the cooling-center law and a wider city/state/federal portfolio. These establish a role, not marginal deaths prevented. The 2026 policy agenda was prepared before final enactment of the residential cooling law, and the heat webpage retains a petition to pass it. The current Council record is authoritative: the law was enacted in January 2026 with key requirements beginning in 2030. New gifts can at most improve implementation beyond this baseline, not earn the law's full historical benefit. [Impact report](https://weact.org/wp-content/uploads/2026/05/WE-ACTs-2024-2025-Impact-Report-Final.pdf) [Current legal status](https://legistar.council.nyc.gov/LegislationDetail.aspx?GUID=156F95BB-CA74-44F3-A07B-A0E54EA0C10F&ID=6788510) Tenant elections, hardship extensions and the separate NYCHA cooling-plan route limit the 2030 requirement; no universal cooling or additional law-passage benefit is assumed.",
+      "reason": "Reuse independently checked actual cooling-law implementation exceptions."
+    },
+    {
+      "slug": "we-act-for-environmental-justice",
+      "path": "sections.funding",
+      "before": "FY2024 gross expense is $11,254,011: Part IX $11,067,147 plus $186,864 separately netted event expense. Schedule D has no donated-service addback. FY2022 is $7,890,202: Part IX $7,618,578 plus $197,262 recognized donated services and $74,362 event expense. FY2023 original current-period gross is $13,137,650: Part IX $13,013,153 plus $124,497 event expense. Its audit reconciliation contains an additional $147,947 prior-year adjustment, not assigned to the current operating year; the next return's comparative expense also differs by $75,351. FY2023 is noncomparable pending reconciliation, not smoothed into a synthetic mean. [FY2024 original](https://projects.propublica.org/nonprofits/full_text/202513219349324771/IRS990) [FY2023 reconciliation](https://projects.propublica.org/nonprofits/full_text/202443169349303479/IRS990ScheduleD)\n\nFY2024 reports $2,428,022 government grants and $17,182,896 net assets, including $2,714,557 restricted. Cash and savings total $11,214,924. Those balances do not establish a new-gift capacity commitment. The impact report's fundraising categories differ from return revenue, so they are not substituted for accounting totals. Current national and local work remains in the whole-recipient scope. [Donate](https://weact.org/donate/)",
+      "after": "FY2024 gross expense is $11,254,011: Part IX $11,067,147 plus $186,864 separately netted event expense. Schedule D has no donated-service addback. FY2022 is $7,890,202: Part IX $7,618,578 plus $197,262 recognized donated services and $74,362 event expense. FY2023 original current-period gross is $13,137,650: Part IX $13,013,153 plus $124,497 event expense. Its audit reconciliation contains an additional $147,947 prior-year adjustment, not assigned to the current operating year; the next return's comparative expense also differs by $75,351. FY2023 is noncomparable pending reconciliation, not smoothed into a synthetic mean. [FY2024 original](https://projects.propublica.org/nonprofits/full_text/202513219349324771/IRS990) [FY2023 reconciliation](https://projects.propublica.org/nonprofits/full_text/202443169349303479/IRS990ScheduleD)\n\nFY2024 reports $2,428,022 government grants and $17,182,896 net assets, including $2,714,557 restricted. Cash and savings total $11,214,924. Those balances do not establish a new-gift capacity commitment. The impact report's fundraising categories differ from return revenue, so they are not substituted for accounting totals. Current national and local work remains in the whole-recipient scope. [Donate](https://weact.org/donate/)\n\nExpense appendix: FY2024 Part IX is $8,291,799 program, $2,360,382 management/general and $414,966 fundraising, totaling $11,067,147. Add separately netted event resources $186,864 to reach $11,254,011. FY2023 remains noncomparable; the three-year projected model cost is not a verified historical mean.",
+      "reason": "Expose original functional spending and avoid double addbacks."
+    },
+    {
+      "slug": "the-center-for-great-expectations",
+      "path": "sections.funding",
+      "before": "Latest original gross recognized expenses are $8,487,564 in 2023, $9,161,304 in 2024 and $8,917,294 in 2025. Starting with Part IX, add event costs $131,299/$158,961/$162,242 and audited bad-debt or credit-loss adjustments $880/$92,794/$14,970. Investment fees $12,698/$14,030/$21,416 are already in Part IX, not another addback. In-kind goods are also already recognized. Bad-debt losses are included conservatively in this accounting denominator, not asserted to be new clinical resources. [FY2025 original](https://projects.propublica.org/nonprofits/full_text/202641809349301399/IRS990) [Reconciliation](https://projects.propublica.org/nonprofits/full_text/202641809349301399/IRS990ScheduleD)\n\nFY2025 reports $2,876,745 government grants and $2,937,810 program revenue, with $8,025,893 net assets including $2,734,831 restricted. The impact report describes loss of major government funding, but no verified current marginal slot commitment is available. Existing reimbursement, partner hospitals and other donors remain in the baseline; a gift might preserve rather than expand services. [Current funding account](https://www.cge-nj.org/wp-content/uploads/2026/02/CGE_Impact_Report_2025.pdf) [Support](https://www.cge-nj.org/support/)",
+      "after": "Latest original gross recognized expenses are $8,487,564 in 2023, $9,161,304 in 2024 and $8,917,294 in 2025. Starting with Part IX, add event costs $131,299/$158,961/$162,242 and audited bad-debt or credit-loss adjustments $880/$92,794/$14,970. Investment fees $12,698/$14,030/$21,416 are already in Part IX, not another addback. In-kind goods are also already recognized. Bad-debt losses are included conservatively in this accounting denominator, not asserted to be new clinical resources. [FY2025 original](https://projects.propublica.org/nonprofits/full_text/202641809349301399/IRS990) [Reconciliation](https://projects.propublica.org/nonprofits/full_text/202641809349301399/IRS990ScheduleD)\n\nFY2025 reports $2,876,745 government grants and $2,937,810 program revenue, with $8,025,893 net assets including $2,734,831 restricted. The impact report describes loss of major government funding, but no verified current marginal slot commitment is available. Existing reimbursement, partner hospitals and other donors remain in the baseline; a gift might preserve rather than expand services. [Current funding account](https://www.cge-nj.org/wp-content/uploads/2026/02/CGE_Impact_Report_2025.pdf) [Support](https://www.cge-nj.org/support/)\n\nExpense appendix: FY2025 Part IX is $7,140,522 program, $1,168,155 management/general and $431,405 fundraising, totaling $8,740,082. Event expense $162,242 and bad-debt expense $14,970 yield $8,917,294. Investment fees are already included. The three-year recognized mean is $8,855,387.33; it includes accounting credit losses, not only newly consumed treatment resources.",
+      "reason": "Expose original functional spending and avoid double addbacks."
+    },
+    {
+      "slug": "new-york-legal-assistance-group",
+      "path": "sections.funding",
+      "before": "Gross annual recognized resources are $87,686,413 in FY2023, $99,702,741 in FY2024 and $100,312,616 in FY2025. These June-ending accrual amounts equal Part IX plus donated services ($40,861,954/$47,464,896/$42,371,761), uncollectible-account losses ($104,961/$551,204/$342,670), and separately netted event expense ($244,808/$211,189/$187,979). The audit reconciliation does not include event expense in its addbacks, so event resources are added once after that reconciliation. Credit losses are retained conservatively but are not described as new treatment resources. [FY2025 return](https://projects.propublica.org/nonprofits/full_text/202641329349300449/IRS990) [Audit reconciliation](https://projects.propublica.org/nonprofits/full_text/202641329349300449/IRS990ScheduleD)\n\nFY2025 government grants were $46,123,020; net assets were $25,176,283, including $692,750 restricted. Cash and savings were $2,335,335 while grants receivable were $24,308,323, so net assets are not all liquid cash.\n\nOn August 11, 2026, NYC Health + Hospitals announced a $23.7 million seven-year LegalHealth contract and reported nearly 4,000 patients served in 2025. Additional city funding also supports the partnership. This is a substantial existing commitment, not a new-gift funding gap, and materially limits marginality assumptions. [Current public contract](https://www.nychealthandhospitals.org/pressrelease/nyc-health-hospitals-commits-23-7-million-to-new-york-legal-assistance-groups-legalhealth-unit-for-free-legal-services-for-patients/) [Donate](https://nylag.org/donate-now/)",
+      "after": "Gross annual recognized resources are $87,686,413 in FY2023, $99,702,741 in FY2024 and $100,312,616 in FY2025. These June-ending accrual amounts equal Part IX plus donated services ($40,861,954/$47,464,896/$42,371,761), uncollectible-account losses ($104,961/$551,204/$342,670), and separately netted event expense ($244,808/$211,189/$187,979). The audit reconciliation does not include event expense in its addbacks, so event resources are added once after that reconciliation. Credit losses are retained conservatively but are not described as new treatment resources. [FY2025 return](https://projects.propublica.org/nonprofits/full_text/202641329349300449/IRS990) [Audit reconciliation](https://projects.propublica.org/nonprofits/full_text/202641329349300449/IRS990ScheduleD)\n\nFY2025 government grants were $46,123,020; net assets were $25,176,283, including $692,750 restricted. Cash and savings were $2,335,335 while grants receivable were $24,308,323, so net assets are not all liquid cash.\n\nOn August 11, 2026, NYC Health + Hospitals announced a $23.7 million seven-year LegalHealth contract and reported nearly 4,000 patients served in 2025. Additional city funding also supports the partnership. This is a substantial existing commitment, not a new-gift funding gap, and materially limits marginality assumptions. [Current public contract](https://www.nychealthandhospitals.org/pressrelease/nyc-health-hospitals-commits-23-7-million-to-new-york-legal-assistance-groups-legalhealth-unit-for-free-legal-services-for-patients/) [Donate](https://nylag.org/donate-now/)\n\nExpense appendix: FY2025 Part IX is $50,807,807 program, $5,180,481 management/general and $1,421,918 fundraising, totaling $57,410,206. Donated services $42,371,761, credit loss $342,670 and event resources $187,979 bring recognized gross expense to $100,312,616. These additions are not reassigned across functional categories without the audit allocation. The comparable three-year recognized mean is $95,900,590.",
+      "reason": "Expose original functional spending and avoid double addbacks."
+    },
+    {
+      "slug": "we-act-for-environmental-justice",
+      "path": "model.nativeCosts",
+      "before": null,
+      "after": "Central 500*0.01*0.25*0.2*0.5=0.125 donor-attributable deaths avoided per annual cohort, or 0.625 across five cohorts before timing discount. Three-year recipient cost / 0.625 = $54,019,252.80 per conditional death avoided. Finite competing-risk survival converts this into QALYs. Not observed campaign output.",
+      "reason": "Native death unit precedes finite survival valuation."
+    },
+    {
+      "slug": "the-center-for-great-expectations",
+      "path": "model.nativeCosts",
+      "before": null,
+      "after": "Whole annual expense / 53 historical START clients = $168250.83, a portfolio accounting ratio. Central effective additional clinical improvements =53*0.6*0.5*0.5=7.95; full expense / modeled improvement = $1121672.20. These are judgment-based clinical equivalents, not documented recoveries.",
+      "reason": "Separate historical service output from causal improvement."
+    },
+    {
+      "slug": "new-york-legal-assistance-group",
+      "path": "model.nativeCosts",
+      "before": null,
+      "after": "Whole annual expense / 250 historical eligibility gains = $401250.46, not marginal price per case. Central additional eligibility equivalents=250*0.5*0.5*0.25=15.625; effective local care equivalents=15.625*0.5*0.95=7.421875. Full expense / local care equivalent = $13515805.10 before finite utility and burden. Eligibility does not itself establish effective treatment.",
+      "reason": "Keep legal-to-clinical and geographic denominators explicit."
+    },
+    {
+      "slug": "the-center-for-great-expectations",
+      "path": "model.uncertainty",
+      "before": "Source-grounded historical reach with subjective clinical and donor priors. Finite duration and recurrence; no lifelong sobriety, avoided overdose or intergenerational QALYs inferred from a testimonial. This price is not a complete portfolio ranking.",
+      "after": "Source-grounded historical reach with subjective clinical and donor priors. Finite duration and recurrence; no lifelong sobriety, avoided overdose or intergenerational QALYs inferred from a testimonial. This price is not a complete portfolio ranking. The short symptom horizon assumes survival through modeled follow-up and does not separately estimate competing death; no mortality-prevention credit is claimed. A longer clinical extrapolation would require explicit competing mortality.",
+      "reason": "Make short-horizon survival simplification explicit without turning absence into zero central."
+    },
+    {
+      "slug": "new-york-legal-assistance-group",
+      "path": "model.uncertainty",
+      "before": "Partial-health judgment model. Historical eligibility count is observed but future volume, treatment conversion, clinical utility, recurrence and private-gift effect are not. High, low, zero and harm scenarios are not confidence bounds.",
+      "after": "Partial-health judgment model. Historical eligibility count is observed but future volume, treatment conversion, clinical utility, recurrence and private-gift effect are not. High, low, zero and harm scenarios are not confidence bounds. The short symptom horizon assumes survival through modeled follow-up and does not separately estimate competing death; no mortality-prevention credit is claimed. A longer clinical extrapolation would require explicit competing mortality.",
+      "reason": "Make short-horizon survival simplification explicit without turning absence into zero central."
+    },
+    {
+      "slug": "we-act-for-environmental-justice",
+      "path": "acceptance",
+      "before": {
+        "status": "proposed",
+        "evidence": "Root independent acceptance required."
+      },
+      "after": {
+        "status": "independently-accepted-corrected-awaiting-root-publication",
+        "evidence": "Independent original financial, source, finite causal and all-scenario audit; accepted as partial-health research, not donor endorsement."
+      },
+      "reason": "Independent corrected research acceptance only."
+    },
+    {
+      "slug": "the-center-for-great-expectations",
+      "path": "acceptance",
+      "before": {
+        "status": "proposed",
+        "evidence": "Root independent acceptance required."
+      },
+      "after": {
+        "status": "independently-accepted-corrected-awaiting-root-publication",
+        "evidence": "Independent original financial, source, finite causal and all-scenario audit; accepted as partial-health research, not donor endorsement."
+      },
+      "reason": "Independent corrected research acceptance only."
+    },
+    {
+      "slug": "new-york-legal-assistance-group",
+      "path": "acceptance",
+      "before": {
+        "status": "proposed",
+        "evidence": "Root independent acceptance required."
+      },
+      "after": {
+        "status": "independently-accepted-corrected-awaiting-root-publication",
+        "evidence": "Independent original financial, source, finite causal and all-scenario audit; accepted as partial-health research, not donor endorsement."
+      },
+      "reason": "Independent corrected research acceptance only."
+    }
+  ],
+  "scenarioChecks": [
+    {
+      "slug": "we-act-for-environmental-justice",
+      "id": "central",
+      "costUSD": 33762033,
+      "allPopulationQalys": 0.9347604475165979,
+      "editionQalys": 0.9347604475165979,
+      "pricePer10Qalys": 361183799.43970096,
+      "pass": true
+    },
+    {
+      "slug": "we-act-for-environmental-justice",
+      "id": "low",
+      "costUSD": 33762033,
+      "allPopulationQalys": 0.0013015371987690576,
+      "editionQalys": 0.0013015371987690576,
+      "pricePer10Qalys": 259401214440.36172,
+      "pass": true
+    },
+    {
+      "slug": "we-act-for-environmental-justice",
+      "id": "high",
+      "costUSD": 33762033,
+      "allPopulationQalys": 46.253403033241405,
+      "editionQalys": 46.253403033241405,
+      "pricePer10Qalys": 7299361.946565509,
+      "pass": true
+    },
+    {
+      "slug": "we-act-for-environmental-justice",
+      "id": "zero",
+      "costUSD": 33762033,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "pricePer10Qalys": null,
+      "pass": true
+    },
+    {
+      "slug": "we-act-for-environmental-justice",
+      "id": "adverse",
+      "costUSD": 33762033,
+      "allPopulationQalys": -1,
+      "editionQalys": -1,
+      "pricePer10Qalys": null,
+      "pass": true
+    },
+    {
+      "slug": "we-act-for-environmental-justice",
+      "id": "induced-cost",
+      "costUSD": 34762033,
+      "allPopulationQalys": 0.9347604475165979,
+      "editionQalys": 0.9347604475165979,
+      "pricePer10Qalys": 371881727.47737867,
+      "pass": true
+    },
+    {
+      "slug": "we-act-for-environmental-justice",
+      "id": "volunteer-cost",
+      "costUSD": 42202541.25,
+      "allPopulationQalys": 0.9347604475165979,
+      "editionQalys": 0.9347604475165979,
+      "pricePer10Qalys": 451479749.2996262,
+      "pass": true
+    },
+    {
+      "slug": "the-center-for-great-expectations",
+      "id": "central",
+      "costUSD": 8917294,
+      "allPopulationQalys": 0.6039667239468689,
+      "editionQalys": 0.6039667239468689,
+      "pricePer10Qalys": 147645452.08262926,
+      "pass": true
+    },
+    {
+      "slug": "the-center-for-great-expectations",
+      "id": "low",
+      "costUSD": 8917294,
+      "allPopulationQalys": 0.006442458927402261,
+      "editionQalys": 0.006442458927402261,
+      "pricePer10Qalys": 13841444858.998343,
+      "pass": true
+    },
+    {
+      "slug": "the-center-for-great-expectations",
+      "id": "high",
+      "costUSD": 8917294,
+      "allPopulationQalys": 6.023331494929441,
+      "editionQalys": 6.023331494929441,
+      "pricePer10Qalys": 14804587.805779498,
+      "pass": true
+    },
+    {
+      "slug": "the-center-for-great-expectations",
+      "id": "zero",
+      "costUSD": 8917294,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "pricePer10Qalys": null,
+      "pass": true
+    },
+    {
+      "slug": "the-center-for-great-expectations",
+      "id": "adverse",
+      "costUSD": 8917294,
+      "allPopulationQalys": -0.1325,
+      "editionQalys": -0.1325,
+      "pricePer10Qalys": null,
+      "pass": true
+    },
+    {
+      "slug": "the-center-for-great-expectations",
+      "id": "partner-cost",
+      "costUSD": 8957044,
+      "allPopulationQalys": 0.6039667239468689,
+      "editionQalys": 0.6039667239468689,
+      "pricePer10Qalys": 148303600.92467535,
+      "pass": true
+    },
+    {
+      "slug": "the-center-for-great-expectations",
+      "id": "volunteer-cost",
+      "costUSD": 11146617.5,
+      "allPopulationQalys": 0.6039667239468689,
+      "editionQalys": 0.6039667239468689,
+      "pricePer10Qalys": 184556815.10328656,
+      "pass": true
+    },
+    {
+      "slug": "new-york-legal-assistance-group",
+      "id": "central",
+      "costUSD": 100312616,
+      "allPopulationQalys": 1.1974581838578398,
+      "editionQalys": 1.1375852746649477,
+      "pricePer10Qalys": 881803045.7500868,
+      "pass": true
+    },
+    {
+      "slug": "new-york-legal-assistance-group",
+      "id": "low",
+      "costUSD": 100312616,
+      "allPopulationQalys": 0.006070616084318259,
+      "editionQalys": 0.004856492867454608,
+      "pricePer10Qalys": 206553615412.9595,
+      "pass": true
+    },
+    {
+      "slug": "new-york-legal-assistance-group",
+      "id": "high",
+      "costUSD": 100312616,
+      "allPopulationQalys": 45.01222569138405,
+      "editionQalys": 45.01222569138405,
+      "pricePer10Qalys": 22285637.837100152,
+      "pass": true
+    },
+    {
+      "slug": "new-york-legal-assistance-group",
+      "id": "zero",
+      "costUSD": 100312616,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "pricePer10Qalys": null,
+      "pass": true
+    },
+    {
+      "slug": "new-york-legal-assistance-group",
+      "id": "adverse",
+      "costUSD": 100312616,
+      "allPopulationQalys": -0.15625,
+      "editionQalys": -0.1484375,
+      "pricePer10Qalys": null,
+      "pass": true
+    },
+    {
+      "slug": "new-york-legal-assistance-group",
+      "id": "medical-cost",
+      "costUSD": 100468866,
+      "allPopulationQalys": 1.1974581838578398,
+      "editionQalys": 1.1375852746649477,
+      "pricePer10Qalys": 883176569.1551434,
+      "pass": true
+    },
+    {
+      "slug": "new-york-legal-assistance-group",
+      "id": "recognized-services",
+      "costUSD": 110905556.25,
+      "allPopulationQalys": 1.1974581838578398,
+      "editionQalys": 1.1375852746649477,
+      "pricePer10Qalys": 974920814.4652271,
+      "pass": true
+    },
+    {
+      "slug": "new-york-legal-assistance-group",
+      "id": "exclude-credit-loss",
+      "costUSD": 99969946,
+      "allPopulationQalys": 1.1974581838578398,
+      "editionQalys": 1.1375852746649477,
+      "pricePer10Qalys": 878790788.0527382,
+      "pass": true
+    }
+  ],
+  "auditInterval": {
+    "workerId": "usa_beta_one",
+    "model": "gpt-6-astra",
+    "reasoningEffort": "medium",
+    "startedAt": "2026-09-14T08:43:02Z",
+    "endedAt": "2026-09-14T08:45:41.556Z",
+    "actualSeconds": 159.556,
+    "authorResearchSeconds": 0,
+    "alphaCredit": 0,
+    "betaCredit": 0
+  },
+  "sourceAudit": [
+    {
+      "slug": "we-act-for-environmental-justice",
+      "decision": "accept-corrected",
+      "finance": "All three originals andScheduleD reopened:2022PartIX7618578+services197262+event74362=7890202;2023PartIX13013153+event124497=13137650. ScheduleD147947prior-year expense adjustment retained as unresolved/noncomparable, not current services;2024PartIX11067147+event186864=11254011. 2023ScheduleD revenue fields contain an anomalous203082under donatedservices while expensefieldblank; do not transplant revenue figure into expense. No fake three-year mean.",
+      "causal": "Reused same-turn independent2026DOHheat andoriginalCouncil law review. Existing coolinglaw/HEAP/centers baseline; p,a,b eachonce, finitecohorts/lag/survival. WEACT andNYCEJA samecoalition correlated, not additive separate citywideeffects. Dominant omitted mechanism warning visible.",
+      "bottleneck": "Additional implementation and gift response plus unresolved2023financial adjustment."
+    },
+    {
+      "slug": "the-center-for-great-expectations",
+      "decision": "accept-corrected",
+      "finance": "All three original returns/ScheduleD reopened. PartIX8355385/8909549/8740082 +events131299/158961/162242 +creditloss880/92794/14970 =8487564/9161304/8917294. Investmentfees alreadyPartIX, noadd twice. Financialyears arecalendar2023–25.",
+      "causal": "Fresh officialSTART confirms18monthdesign and8MSAcounties. Original2024PDFconfirms53clients/118555minutes;2025PDFconfirms reportedmajor federal/statefundingloss, not currentgift gap. FreshMilligan abstract confirms poolednonintegratedcomparisonnonsignificant; no causal pfrom uncontrolledgraduatemeasure. One-yearutilitywaning finite, child/othercareunpriced, p/a/bseparate.",
+      "bottleneck": "Currentdeduplicatedperson-time, alternativecare, clinicalconversion andfundinggap."
+    },
+    {
+      "slug": "new-york-legal-assistance-group",
+      "decision": "accept-corrected",
+      "finance": "All three original returns/ScheduleD reopened. PartIX46474690/51475452/57410206 +services40861954/47464896/42371761 +creditloss104961/551204/342670 +events244808/211189/187979 =87686413/99702741/100312616. EventnotpartofScheduleDaddback, soaddedonceafterauditbridge.",
+      "causal": "Fresh official H+H indexedprimary confirms23.7msevenyearcontract announcedAug11,2026 andnearly4000patients2025; not250eligibilitycohort andnotnewgiftgap. Testimony PDF direct403; fresh indexed original February testimony and March2025BudgetPriorities both independently confirm250undocumentedimmigrants attainingMedicaideligibility byestablishingPRUCOLstatus in2024. No claimedfreshdirectPDFread. OregonRCTlimitation reusedpriorindependentreview. f/a/p/b distinctjudgments, shortwaningutility, .95MSAsharesubjective, broaderlegalvalueunpriced.",
+      "bottleneck": "Currentlegaleligibilitytransfer, consequentialcare andprivatecapacitybeyondpubliccontract."
+    }
+  ],
+  "financialEvidence": "/tmp/nyc-third-financial-evidence.json",
+  "sourceReproduction": "/tmp/nyc-third-source-check.py",
+  "mathReproduction": "/tmp/nyc-third-independent-audit.mjs",
+  "sessionChecks": [
+    {
+      "id": "nyc-weact-20260914-worker1",
+      "seconds": 160
+    },
+    {
+      "id": "nyc-cge-20260914-worker1",
+      "seconds": 200
+    },
+    {
+      "id": "nyc-nylag-20260914-worker1",
+      "seconds": 223
+    }
+  ],
+  "timingConclusion": "Three retained author intervals160+200+223=583seconds are consecutive and nonoverlapping; prior sharedheat-source time not recounted. This audit cannot independently certify each second of author activity and supplies no authorcredit.",
+  "validation": {
+    "reportCount": 3,
+    "scenarioCount": 22,
+    "allScenariosPass": true,
+    "centralNumbersUnchanged": true,
+    "annualExpenseNumbersUnchanged": true,
+    "visiblePriceScopes": true,
+    "summaryThreeEach": true,
+    "modelSchemaFieldsPresent": true,
+    "weactUnresolvedComparabilityPreserved": true
+  },
+  "spaceSaver": "Existing runtime/sharedsources reused, alloriginalsprocessed in memory, compactledger only; noinstalls/builds/servers/Site/Git/nestedagents."
+}

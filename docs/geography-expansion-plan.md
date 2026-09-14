@@ -67,6 +67,8 @@ Whole-organization realistic unrestricted gift is default, with full costs and m
 
 ## Website contract
 
+Current publication checkpoint, September 14: California 14/25 initial reports, USA 19/25, and New York City, Los Angeles, Chicago, Houston, Denver, Seattle, Boston, Atlanta and Detroit each 0/25. All eleven have 0/10 accepted in-depth reviews. Older checkpoint paragraphs record history, not current counts. Root is publishing independently audited batches while three workers advance city research and acceptance.
+
 Published route contract (September 14):
 
 - /givebetter/ redirects to /givebetter/all, the editions directory.

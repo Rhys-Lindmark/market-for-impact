@@ -11,6 +11,12 @@ test.beforeEach(async({page,baseURL})=>{
 
 test('published research has measured headers, usable models and scoped canonical links',async({page,request})=>{
  for(const [edition,slug,name,minutes,donate] of [
+  ['los-angeles','lestonnac-free-clinic','Lestonnac Free Clinic','7',true],
+  ['los-angeles','streets-are-for-everyone','Streets Are For Everyone','11',true],
+  ['los-angeles','breathe-southern-california','Breathe Southern California','11',true],
+  ['los-angeles','neighborhood-legal-services-los-angeles-county','Neighborhood Legal Services of Los Angeles County','8',true],
+  ['los-angeles','climate-resolve','Climate Resolve','7',true],
+  ['los-angeles','coalition-for-clean-air','Coalition for Clean Air','13',true],
   ['usa','remote-area-medical','Remote Area Medical','10',true],
   ['usa','immunize-org','Immunize.org','10',true],
   ['usa','green-and-healthy-homes-initiative','Green & Healthy Homes Initiative','6',true],
@@ -65,6 +71,12 @@ test('published research has measured headers, usable models and scoped canonica
  }
 });
 test('research table keeps unknown means unknown and shows audited recipient mean',async({page})=>{
+ await page.goto('/los-angeles/all');
+ await expect(page.locator('tr').filter({hasText:'Lestonnac Free Clinic'})).toContainText('$2.8M');
+ await expect(page.locator('tr').filter({hasText:'Lestonnac Free Clinic'})).toContainText('$4.1M');
+ await expect(page.locator('tr').filter({hasText:'Breathe Southern California'})).toContainText('Not estimated');
+ await expect(page.locator('tr').filter({hasText:'Climate Resolve'}).getByTitle('Local heat health only; other impacts unestimated')).toHaveText('$14.1M');
+ await expect(page.locator('[data-expense-details]')).toHaveCount(0);
  await page.goto('/california/all');
  const hrs=page.locator('tr').filter({hasText:'Harm Reduction Services'});
  await expect(hrs).toContainText('$3.1M');

@@ -80,4 +80,21 @@ const denver=read('geography-discovery/denver-seed.json');
 assert.equal(denver.candidates.length,40);
 assert.equal(p.editions.find(e=>e.id==='denver').discoveryProvisional,40);
 assert.equal(p.editions.find(e=>e.id==='denver').discoveryAccepted,0);
-console.log('PASS:11 editions; nested publication/selection counts;9 MSAs/102 counties;300 accepted discovery,75 selected research priorities,4 historical holds and40 provisional Denver leads.');
+const seattle=read('geography-discovery/seattle-independent-acceptance.json');
+const seattleProgress=p.editions.find(e=>e.id==='seattle');
+assert.equal(seattle.records.length,100);
+assert.equal(new Set(seattle.records.map(r=>r.canonicalOrganizationId)).size,100);
+assert.deepEqual(seattleProgress.acceptedDiscoveryIds,seattle.records.map(r=>r.canonicalOrganizationId));
+assert.deepEqual(seattleProgress.selectedAlphaIds,seattle.selection.revisedTop25.map(r=>r.canonicalOrganizationId));
+assert.equal(seattleProgress.selectedAlphaIds.length,25);
+for(const r of seattle.records){
+ assert.equal(r.discoveryCredit,1);assert.equal(r.alphaCredit,0);assert.equal(r.betaCredit,0);
+ assert.ok(r.primaryLeadVerification&&r.mechanism&&r.falsifier&&r.wholeGiftScope);
+ assert.ok(r.sources.length&&r.sources.every(s=>s.url.startsWith('https://')&&s.retrievedAt));
+ assert.ok(r.verifiedCountyFips.length&&r.verifiedCountyFips.every(f=>['53033','53053','53061'].includes(f)));
+}
+for(const id of seattleProgress.selectedAlphaIds)assert.ok(seattleProgress.acceptedDiscoveryIds.includes(id));
+assert.ok(seattle.selection.revisedTop25.some(r=>r.name==='WithinReach'));
+assert.equal(seattle.researchTime.reasoningEffort,'medium');
+assert.equal(seattleProgress.alphaPublished,0);assert.equal(seattleProgress.betaAcceptedPublished,0);
+console.log('PASS:11 editions; nested publication/selection counts;9 MSAs/102 counties;400 accepted discovery,100 selected priorities; Seattle has no alpha/beta credit.');

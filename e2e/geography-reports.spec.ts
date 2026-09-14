@@ -33,6 +33,9 @@ test('published research has measured headers, usable models and scoped canonica
   ['usa','rx-outreach','Rx Outreach','9',true],
   ['usa','center-for-science-in-the-public-interest','Center for Science in the Public Interest','8',true],
   ['usa','kids-and-car-safety','Kids and Car Safety','9',true],
+  ['california','youth-alive','Youth ALIVE!','9',true],
+  ['california','vision-to-learn','Vision To Learn','7',true],
+  ['california','walk-san-francisco','Walk San Francisco','5',true],
  ]){
   const route=`/${edition}/charities/${slug}`;
   await page.goto(route);

@@ -1,0 +1,11 @@
+# USA safety-policy initial report acceptance
+
+Institute for Safer Trucking and US Alcohol Policy Alliance add two accepted initial reports. USA14/25, California13/25; every metro remains0/25 and every new edition remains0/10 in-depth. These are conditional policy estimates, not recommendations.
+
+Independent Astra Medium review reproduced all18 scenarios and checked the three original annual expense totals for each recipient. Root reopened current regulator, CDC and official giving pages. IST's approximate $1.65m/10 USA QALYs includes all five-year recipient costs and only prospective braking mortality benefits; USAPA's approximate $4.36m includes all recipient costs and only an uncertain alcohol-tax disease-mortality pathway. Policy influence, funding additionality and counterfactual implementation are judgments. Zero and harm cases remain explicit; excluded portfolio benefits are not proven absent.
+
+Acceptance corrections: USAPA's actual retail-price change already includes initial tax pass-through, so its additional retention factor now covers only subsequent avoidance/erosion. Maryland's raw comparison concerns per-capita ethanol, not total sales. IST's central adoption paths converge within25years; the weak scenario's paths converge later, so that scenario's truncation is disclosed. Filing signature dates are not asserted as public-release dates. The Illinois reanalysis publication date is corrected to June10,2019.
+
+Both official donation routes were observed, without submitting payment. USAPA's PayPal checkout could not be fetched, so only the official site's outbound route is confirmed. IST's own giving page identifies the recipient. Independent review could not retrieve the NY7% study abstract; the central elasticity is an explicit judgment, not derived from that coefficient. This bounded alpha check is not a complete beta audit.
+
+Verification: changed JSON parsed; model/registry/plan tests, changed-file lint, production build and responsive report/table checks required before release. Canonical APIs and phone routes checked after deployment. Author intervals preserved separately from audit and integration. Next: remaining selected USA/CA research and independent metro acceptance.

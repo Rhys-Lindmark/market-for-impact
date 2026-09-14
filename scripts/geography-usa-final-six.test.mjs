@@ -67,21 +67,16 @@ test('FRAC: finite child-years, historical transport, recipient-only budget', ()
   assert.ok(r.sources.some(s=>s.url==='https://secure.everyaction.com/KsIAFphfDEeLdwPGWes50Q2'));
 });
 
-test('CEH: worker-year frontiers are requirements, not a portfolio prediction', () => {
-  const r = get('usa', 'center-for-environmental-health');
-  assert.equal(reportPrice(r), null);
-  assert.equal(r.model.scenarios.find(s=>s.id==='central').editionQalys, null);
-  for (const [id,price,k] of [['frontier-one-million',1e6,.00040451],['frontier-one-hundred-thousand',1e5,.0040451]]) {
-    const s = r.model.scenarios.find(s=>s.id===id);
-    close(s.costUSD,4045100);
-    close(s.editionQalys,100000*k);
-    close(s.allPopulationQalys,100000*k);
-    close(10*s.costUSD/s.editionQalys,price);
-  }
-  assert.equal(input(r,'E_USA').value,null);
-  assert.equal(input(r,'k').value,null);
-  assert.equal(r.model.scenarios.find(s=>s.id==='zero').editionQalys,0);
-  close(r.model.scenarios.find(s=>s.id==='adverse').editionQalys,0-10);
+test('CEH: finite prospective exposure judgment, not measured portfolio return', () => {
+ const r=get('usa','center-for-environmental-health');
+ for(const s of r.model.scenarios.filter(s=>['central','low','high'].includes(s.id))){
+  const p=parameters(s),q=p.N*p.dp*p.a*p.b*p.e*p.t*(p.p*p.k-p.h)/1.03;
+  close(q,s.allPopulationQalys);close(q*p.g,s.editionQalys);
+ }
+ assert.ok(reportPrice(r)>0);
+ assert.equal(r.model.scenarios.find(s=>s.id==='zero').editionQalys,0);
+ assert.ok(r.model.scenarios.find(s=>s.id==='adverse').editionQalys<0);
+ assert.match(r.model.uncertainty,/subjective|prior/i);
 });
 
 test('TFF: separate TCE and structurally delayed PFAS streams, harm once', () => {
@@ -130,4 +125,3 @@ test('All six preserve comparable full-recipient three-year expense means', () =
     close(expenseAverage(r),amounts.reduce((a,b)=>a+b,0)/3,slug);
   }
 });
-

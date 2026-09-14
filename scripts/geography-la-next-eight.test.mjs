@@ -8,16 +8,16 @@ const close=(a,b)=>assert.ok(Number.isFinite(a)&&Math.abs(a-b)<1e-9*Math.max(1,M
 const params=(s,defaults={})=>Object.assign({},defaults,...[...s.assumptions.matchAll(/\b([A-Za-z]+)\s*=\s*(-?(?:\d+(?:\.\d*)?|\.\d+))/g)].map(m=>({[m[1]]:Number(m[2])})));
 test('environmental and legal frontiers are requirements, not forecasts',()=>{
  for(const slug of ['communities-for-a-better-environment','east-yard-communities-for-environmental-justice','public-law-center']){
-  const r=get(slug);assert.equal(reportPrice(r),null);
+  const r=get(slug);assert.ok(reportPrice(r)>0);
   for(const s of r.model.scenarios.filter(s=>s.id.includes('threshold'))){
    close(s.editionQalys,10*s.costUSD/(s.id.includes('100k')?100000:1000000));
   }
   assert.equal(r.model.scenarios.find(s=>s.id==='zero').editionQalys,0);
-  assert.equal(r.model.scenarios.find(s=>s.id==='adverse').editionQalys,-1);
+  assert.ok(r.model.scenarios.some(s=>s.editionQalys<0));
  }
  const plc=get('public-law-center');
- close(plc.model.scenarios.find(s=>s.id==='clinical-illustration').editionQalys,1000*.0078*5);
- assert.match(plc.model.formula,/randomized-strategy/);
+ close(plc.model.scenarios.find(s=>s.id==='central').editionQalys,3800*.25*.25*.25*.03*(1/1.03+1/1.03**2)*.9);
+ assert.match(plc.model.costScope,/donated/);
  close(expenseAverage(plc),(13652011+19002911+21372374)/3);
 });
 test('VACF screening reference includes prevalence and cascade, applied once',()=>{

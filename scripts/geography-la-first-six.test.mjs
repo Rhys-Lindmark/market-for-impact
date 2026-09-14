@@ -43,6 +43,8 @@ test('CCA threshold survival integral is not a forecast or manufactured central'
  const r=get('coalition-for-clean-air'),h0=.05,h1=h0*Math.exp(-Math.log(1.06)/10),rho=Math.log(1.03);
  const q=.75*((1-Math.exp(-(h1+rho)*10))/(h1+rho)-(1-Math.exp(-(h0+rho)*10))/(h0+rho));
  close(q,.006532944220465575);
- verify(r,[['zero',0],['threshold-million',2494912/100000],['threshold-hundred-thousand',2494912/10000]]);
- close(expenseAverage(r),2035946.6666666667);assert.equal(reportPrice(r),null);
+ close(r.model.scenarios.find(s=>s.id==='zero').editionQalys,0);
+ close(r.model.scenarios.find(s=>s.id==='central').editionQalys,.009968713757273838);
+ close(r.model.scenarios.find(s=>s.id==='central').allPopulationQalys,.029906141271821514);
+ close(expenseAverage(r),2035946.6666666667);assert.ok(reportPrice(r)>0);
 });

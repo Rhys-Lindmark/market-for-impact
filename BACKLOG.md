@@ -2,6 +2,8 @@
 
 ## Active priority — eleven-edition geographic expansion (September 13)
 
+Detroit D100/S25 accepted September14: all eleven editions now have100 source-screened candidates and25 comparative priorities (1100/275). No alpha or beta credit for discovery. Current service transfers/closures, Medicaid restart and giving-route limits are explicit. Evidence: docs/geography-discovery/detroit-independent-acceptance.json. Counts remain CA25/25 beta0/10; USA25/25 beta3/10; LA25/25 beta0/10; NYC6/25 beta0/10; Chicago Houston Denver Seattle Boston Atlanta Detroit each0/25 beta0/10. Deploy with the next accepted report batch; root next accepts UPI beta and NYC third three.
+
 NYC next three accepted September14: NYC6/25 beta0/10; CA25/25 beta0/10, USA25/25 beta3/10, LA25/25 beta0/10; Chicago Houston Denver Seattle Boston Atlanta Detroit each0/25 beta0/10. All twenty scenarios independently reproduced; partial-health scope and current-law/public-funding counterfactuals retained. Evidence: docs/geography-discovery/nyc-next-three-acceptance.md. Next: accepted UPI beta, NYC third three and Detroit discovery integration; ongoing OA/Lestonnac beta and NYC alpha. Deployment remains a release gate.
 
 California beta selection accepted September14: Operation Access, Harm Reduction Services, Walk SF, Coalition for Clean Air, Vision To Learn, California School-Based Health Alliance, Center for Independent Living, Western Center, Youth ALIVE! and Champions for Health. All25 compared, fifteen reserves retain reentry criteria. This is a research queue, not recommendations or ten completed beta reports. Evidence: docs/geography-discovery/california-beta-priorities.json. Operation Access is the first bounded review after Detroit acceptance.

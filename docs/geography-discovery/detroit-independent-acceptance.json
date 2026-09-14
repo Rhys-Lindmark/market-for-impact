@@ -1,0 +1,3990 @@
+{
+  "schemaVersion": 1,
+  "edition": "detroit",
+  "status": "accepted-D100-S25-with-applied-corrections",
+  "auditAuthor": "seattle_acceptance",
+  "proposalAuthor": "usa_beta_one",
+  "independentOfProposalAuthor": true,
+  "sourceHashes": [
+    {
+      "path": "/tmp/givebetter-detroit-discovery.json",
+      "sha256": "dd8507e941011beaa3cee1827bbfbb9343415072fe84c44db5658962a7cb404f"
+    },
+    {
+      "path": "/tmp/givebetter-detroit-selection.json",
+      "sha256": "7b37e48e0553bc3a64dc952ec61b8b23c27cd345efc45cb16ebd8ff362ea02f5"
+    }
+  ],
+  "auditIntervals": [
+    {
+      "start": "2026-09-14T08:34:44Z",
+      "end": "2026-09-14T08:45:26.703Z",
+      "model": "Astra",
+      "reasoningEffort": "Medium",
+      "activity": "Independent full-cohort primary evidence, recipient/boundary and comparative selection audit; no original report research credit."
+    }
+  ],
+  "actualAuditSeconds": 642.703,
+  "reportCredit": 0,
+  "alphaCredit": 0,
+  "betaCredit": 0,
+  "acceptedDiscoveryCount": 100,
+  "acceptedSelectionCount": 25,
+  "acceptedAlphaCount": 0,
+  "donorReadyCount": 0,
+  "boundary": {
+    "id": "detroit",
+    "cbsaCode": "19820",
+    "officialName": "Detroit-Warren-Dearborn, MI",
+    "areaType": "Metropolitan Statistical Area",
+    "boundaryVersion": "OMB-23-01-2023-07-21",
+    "countyCount": 6,
+    "counties": [
+      {
+        "fips": "26163",
+        "name": "Wayne County",
+        "state": "Michigan",
+        "centralOrOutlying": "Central"
+      },
+      {
+        "fips": "26087",
+        "name": "Lapeer County",
+        "state": "Michigan",
+        "centralOrOutlying": "Outlying"
+      },
+      {
+        "fips": "26093",
+        "name": "Livingston County",
+        "state": "Michigan",
+        "centralOrOutlying": "Outlying"
+      },
+      {
+        "fips": "26099",
+        "name": "Macomb County",
+        "state": "Michigan",
+        "centralOrOutlying": "Central"
+      },
+      {
+        "fips": "26125",
+        "name": "Oakland County",
+        "state": "Michigan",
+        "centralOrOutlying": "Central"
+      },
+      {
+        "fips": "26147",
+        "name": "St. Clair County",
+        "state": "Michigan",
+        "centralOrOutlying": "Outlying"
+      }
+    ]
+  },
+  "boundaryRegistry": "/Users/rhyslindmark/Documents/Codex/2026-08-29/okay-you-re-gonna-make-this/work/market-for-impact-california-six-surgery-beta/docs/geography-boundaries.json",
+  "validation": {
+    "records": 100,
+    "uniqueIds": 100,
+    "uniqueCanonicalRecipientsOrConsolidatedGroups": 100,
+    "knownEinCount": 13,
+    "knownEinsUnique": true,
+    "selected": 25,
+    "selectedUnique": 25,
+    "allCountyIntersectionsPinned": true,
+    "cohortsCoverAll100ExactlyOnce": true,
+    "selectionFlagsMatch": true,
+    "allZeroReportCredits": true
+  },
+  "corrections": [
+    {
+      "ordinal": 29,
+      "id": "detroit-common-ground",
+      "reason": "Material current-service narrowing; independent surviving-service verification supports keeping selection.",
+      "previous": {
+        "primaryEvidence": "Common Ground provides crisis and behavioral urgent care with Oakland-area and wider Michigan access. Services/pricing and public funding mean a donation does not buy all reported crisis contacts.",
+        "mechanismHypothesis": "mental pathway from the specific services described above to incremental finite health",
+        "selectionRationale": "Selected for initial alpha comparison. Common Ground and Starfish prioritize crisis access and delivered child/family clinical pathways. Hegira, Judson, Children’s Center, Oakland Family Services, Guidance Center, MiSide and Macomb Family Services are strong clinical reserves with public/payer and broad-portfolio constraints. Affirmations offers differentiated LGBTQ therapy, Gilda’s cancer support, Gesher residential/community support, and Rose Hill Foundation a clinical-provider funding route requiring full leveraged costs. Counseling sessions, social support and residential days are not interchangeable health units."
+      },
+      "replacement": {
+        "primaryEvidence": "Common Ground continues Michigan crisis lines, Oakland mobile services, virtual behavioral urgent care and Oxford/Rochester Hills trauma support. Its 2026 notice says adult Resource & Crisis Center care ended/transferred; do not model that former unit as current Common Ground delivery. Public funding, provider substitution and the post-transfer cost base are early alpha gates.",
+        "mechanismHypothesis": "Surviving crisis response, Oakland mobile intervention and trauma support may reduce finite distress and crisis harm; exclude transferred adult Resource & Crisis Center care.",
+        "selectionRationale": "Accepted priority for surviving crisis/mobile/resiliency pathways, with unusually valuable post-transfer finance/substitution questions. Hegira and Starfish remain direct alternatives; this is not a ranking of the former adult crisis unit."
+      }
+    },
+    {
+      "ordinal": 51,
+      "id": "detroit-cots",
+      "reason": "Replace older campaign with current instructions.",
+      "previous": {
+        "recipientRoute": "https://cotsgivingtuesday2024.funraise.org/",
+        "recipientRouteStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts.",
+        "ein": null,
+        "canonicalOrganizationId": "org:cots",
+        "einVerification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite."
+      },
+      "replacement": {
+        "recipientRoute": "https://cotsdetroit.org/donate/",
+        "recipientRouteStatus": "Official current COTS giving instructions and named Detroit-purpose mail lockbox; no transaction executed. Do not use the 2024 campaign as evidence of current capacity.",
+        "ein": "38-2420565",
+        "canonicalOrganizationId": "ein:38-2420565",
+        "einVerification": "Exact primary COTS matching-gifts page; full legal financial audit remains future."
+      }
+    },
+    {
+      "ordinal": 55,
+      "id": "detroit-neighborhood-service-organization",
+      "reason": "Material COPE closure restriction and primary identity enrichment.",
+      "previous": {
+        "primaryEvidence": "Neighborhood Service Organization provides metro Detroit housing, clinical and well-being services. Its public crisis relationships and partner clinics belong in whole-resource modeling.",
+        "ein": null,
+        "canonicalOrganizationId": "org:neighborhood-service-organization",
+        "einVerification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite."
+      },
+      "replacement": {
+        "primaryEvidence": "Neighborhood Service Organization provides metro Detroit housing, clinical and well-being services. Its public crisis relationships and partner clinics belong in whole-resource modeling. Its COPE program ended November 16, 2025; do not count that former service as current NSO capacity.",
+        "ein": "38-1561624",
+        "canonicalOrganizationId": "ein:38-1561624",
+        "einVerification": "Exact EIN and c3 on primary homepage."
+      }
+    },
+    {
+      "ordinal": 45,
+      "id": "detroit-planned-parenthood-of-michigan",
+      "reason": "Update decisive current reimbursement context.",
+      "previous": {
+        "primaryEvidence": "Current PPMI primary directory lists Detroit and Ferndale clinics and named giving instructions. Ann Arbor headquarters is outside the MSA; only local resident health counts, with current reimbursement/legal restrictions checked at alpha."
+      },
+      "replacement": {
+        "primaryEvidence": "Current PPMI primary directory lists Detroit and Ferndale clinics and named giving instructions. Ann Arbor headquarters is outside the MSA; only local resident health counts, with current reimbursement/legal restrictions checked at alpha. The current Detroit health-center page states Medicaid acceptance resumed August 3, 2026; a continuing blanket Medicaid ban must not be assumed."
+      }
+    },
+    {
+      "ordinal": 97,
+      "id": "detroit-brilliant-cities-detroit-program",
+      "reason": "Make proposed local giving designation explicit.",
+      "previous": {
+        "recipientRoute": "https://brilliantcities.org/donate/",
+        "recipientRouteStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+      },
+      "replacement": {
+        "recipientRoute": "https://brilliantcities.org/donate-brilliant-detroit/",
+        "recipientRouteStatus": "Official Detroit-specific designation; broader Cities choice remains distinct. Exact tax/legal perimeter must be reconciled at alpha; no transaction performed."
+      }
+    },
+    {
+      "ordinal": 72,
+      "id": "detroit-united-community-housing-coalition",
+      "reason": "Replace generic route status with exact retrieval limitation.",
+      "previous": {
+        "recipientRouteStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+      },
+      "replacement": {
+        "recipientRouteStatus": "Official named route or outbound link independently observed; live payment retrieval was script/security blocked. This verifies giving intent, not working checkout or a completed transaction."
+      }
+    },
+    {
+      "ordinal": 73,
+      "id": "detroit-legal-aid-and-defender-association",
+      "reason": "Replace generic route status with exact retrieval limitation.",
+      "previous": {
+        "recipientRouteStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+      },
+      "replacement": {
+        "recipientRouteStatus": "Official named route or outbound link independently observed; live payment retrieval was script/security blocked. This verifies giving intent, not working checkout or a completed transaction."
+      }
+    },
+    {
+      "ordinal": 81,
+      "id": "detroit-detroiters-working-for-environmental-justice",
+      "reason": "Replace generic route status with exact retrieval limitation.",
+      "previous": {
+        "recipientRouteStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+      },
+      "replacement": {
+        "recipientRouteStatus": "Official named route or outbound link independently observed; live payment retrieval was script/security blocked. This verifies giving intent, not working checkout or a completed transaction."
+      }
+    },
+    {
+      "ordinal": 87,
+      "id": "detroit-clean-water-fund-michigan",
+      "reason": "Replace generic route status with exact retrieval limitation.",
+      "previous": {
+        "recipientRouteStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+      },
+      "replacement": {
+        "recipientRouteStatus": "Official named route or outbound link independently observed; live payment retrieval was script/security blocked. This verifies giving intent, not working checkout or a completed transaction."
+      }
+    },
+    {
+      "ordinal": 98,
+      "id": "detroit-matrix-human-services",
+      "reason": "Add current original funder evidence instead of reliance solely on older indexed impact report.",
+      "previous": {
+        "primaryEvidence": "Matrix Human Services is a real Detroit nonprofit; a 2024 original impact report and February 2026 city contract record verify local work despite direct-site failures. Named intermediary giving is not a successful recipient checkout.",
+        "einVerification": "Named public/intermediary identity crosswalk, not original financial audit."
+      },
+      "replacement": {
+        "primaryEvidence": "Matrix Human Services is a real Detroit/Wayne recipient, independently confirmed by current 2026 HHS awards and an original Michigan Senate request identifying EIN 38-1358015. Named intermediary giving is not recipient-owned checkout; a legislative request is not an award.",
+        "einVerification": "Exact EIN in original 2026 Michigan Senate recipient request; original full financial audit remains future."
+      }
+    },
+    {
+      "ordinal": 9,
+      "id": "detroit-baldwin-center",
+      "reason": "Respect current in-kind intake limitation.",
+      "previous": {
+        "primaryEvidence": "Baldwin Center in Pontiac emphasizes food, clothing and other basic needs on its current site. Do not assume a separately operated medical clinic from historical descriptions."
+      },
+      "replacement": {
+        "primaryEvidence": "Baldwin Center in Pontiac emphasizes food, clothing and other basic needs on its current site. Do not assume a separately operated medical clinic from historical descriptions. A July 8, 2026 notice pauses clothing/household-item intake; do not describe those donations as currently accepted."
+      }
+    }
+  ],
+  "holds": [],
+  "acceptedSelectedIds": [
+    "detroit-huda-clinic",
+    "detroit-gary-burnstein-community-health-clinic",
+    "detroit-ferncare-free-clinic",
+    "detroit-community-first-health-centers",
+    "detroit-corktown-health",
+    "detroit-ruth-ellis-center",
+    "detroit-detroit-recovery-project",
+    "detroit-harm-reduction-michigan",
+    "detroit-face-addiction-now-formerly-families-against-narcotics",
+    "detroit-common-ground",
+    "detroit-starfish-family-services",
+    "detroit-arab-community-center-for-economic-and-social-services-access",
+    "detroit-black-mothers-breastfeeding-association",
+    "detroit-birth-detroit",
+    "detroit-hope-shelters",
+    "detroit-turning-point",
+    "detroit-haven",
+    "detroit-lacasa-center",
+    "detroit-detroit-justice-center",
+    "detroit-united-community-housing-coalition",
+    "detroit-lakeshore-legal-aid",
+    "detroit-we-the-people-of-detroit",
+    "detroit-detroit-greenways-coalition",
+    "detroit-gleaners-community-food-bank-of-southeastern-michigan",
+    "detroit-hope-clinic"
+  ],
+  "perRecord": [
+    {
+      "ordinal": 1,
+      "id": "detroit-covenant-community-care",
+      "name": "Covenant Community Care",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Detroit FQHC and named charitable giving; payer income remains in scope.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.covenantcommunitycare.org",
+          "finalUrl": "https://www.covenantcommunitycare.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:22.783Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.covenantcommunitycare.org/ways-to-support#give",
+          "finalUrl": "https://www.covenantcommunitycare.org/ways-to-support",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:22.783Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:covenant-community-care",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 2,
+      "id": "detroit-community-health-and-social-services-center-chass",
+      "name": "Community Health and Social Services Center (CHASS)",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "West Fort Detroit clinical/pharmacy services and CHASS named giving.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.chasscenter.org",
+          "finalUrl": "https://www.chasscenter.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:23.431Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.chasscenter.org/donate",
+          "finalUrl": "https://www.chasscenter.org/donate",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:23.431Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:community-health-and-social-services-center-chass",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 3,
+      "id": "detroit-detroit-community-health-connection",
+      "name": "Detroit Community Health Connection",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Correct DCHC site verified; CN itself names c3/EIN and discloses no opt-in. Not recipient-owned checkout.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.dchcquality.org",
+          "finalUrl": "https://www.dchcquality.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-followup-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "ein:38-2824772",
+      "payeeQualification": "Named public/intermediary identity crosswalk, not original financial audit.",
+      "routeStatus": "Named intermediary giving profile; recipient-owned checkout not claimed. Assess intermediary fees and recipient allocation before donation."
+    },
+    {
+      "ordinal": 4,
+      "id": "detroit-huda-clinic",
+      "name": "HUDA Clinic",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparative-research-priority",
+      "primaryVerification": "Free Detroit clinic plus named EIN donor form; single-day August 5 closure notice is not permanent closure.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.hudaclinic.org",
+          "finalUrl": "https://www.hudaclinic.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:23.428Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.hudaclinic.org/donate.html",
+          "finalUrl": "https://www.hudaclinic.org/donate.html",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:23.428Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "ein:37-1490937",
+      "payeeQualification": "Exact identifier on named primary page; original financial audit pending.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 5,
+      "id": "detroit-say-detroit",
+      "name": "SAY Detroit",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "S.A.Y. Detroit named charity; clinic is only one part of broader gift.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://saydetroit.org/",
+          "finalUrl": "https://saydetroit.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-last-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://saydetroit.org/giving/main.html",
+          "finalUrl": "https://saydetroit.org/giving/main.html",
+          "status": 200,
+          "artifact": "/tmp/detroit-last-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:say-detroit",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 6,
+      "id": "detroit-gary-burnstein-community-health-clinic",
+      "name": "Gary Burnstein Community Health Clinic",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparative-research-priority",
+      "primaryVerification": "Pontiac no-cost adult uninsured medical/dental/optometry; income eligibility explicit.",
+      "boundaryFips": [
+        "26125"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.garyburnsteinclinic.org",
+          "finalUrl": "https://garyburnsteinclinic.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:24.105Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://garyburnsteinclinic.org/donation/",
+          "finalUrl": "https://garyburnsteinclinic.org/donation/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:24.105Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:gary-burnstein-community-health-clinic",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 7,
+      "id": "detroit-ferncare-free-clinic",
+      "name": "FernCare Free Clinic",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparative-research-priority",
+      "primaryVerification": "Ferndale uninsured/no-other-PCP clinical care; generic medications and labs; named giving.",
+      "boundaryFips": [
+        "26125"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://ferncare.org",
+          "finalUrl": "https://ferncare.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:24.648Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://ferncare.org/donate",
+          "finalUrl": "https://ferncare.org/donate",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:24.648Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:ferncare-free-clinic",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 8,
+      "id": "detroit-world-medical-relief",
+      "name": "World Medical Relief",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Independent local-program page confirms Michigan prescriptions/DME and tri-county blanket support, not merely global shipments.",
+      "boundaryFips": [
+        "26125"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.worldmedicalrelief.org",
+          "finalUrl": "https://worldmedicalrelief.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:24.951Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.paypal.com/donate/?hosted_button_id=TJ42P49Q4KJ98",
+          "finalUrl": "https://www.paypal.com/donate/?hosted_button_id=TJ42P49Q4KJ98",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:24.951Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [
+        {
+          "url": "https://worldmedicalrelief.org/local-programs",
+          "finding": "Michigan prescription/DME eligibility; tri-county blankets.",
+          "retrieved": "2026-09-14",
+          "mechanism": "web primary page or explicit indexed primary source; search dates are crawl dates, not new operations dates"
+        }
+      ],
+      "payee": "org:world-medical-relief",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 9,
+      "id": "detroit-baldwin-center",
+      "name": "Baldwin Center",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Pontiac food/basic needs; current July notice suspends clothing/household-item intake, not financial giving or organization.",
+      "boundaryFips": [
+        "26125"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.baldwincenter.org",
+          "finalUrl": "https://baldwincenter.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:24.096Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://baldwincenter.org/donate/",
+          "finalUrl": "https://baldwincenter.org/donate/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:24.096Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:baldwin-center",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 10,
+      "id": "detroit-leader-dogs-for-the-blind",
+      "name": "Leader Dogs for the Blind",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Rochester Hills mobility/guide-dog program; national eligible population prevents all-local attribution.",
+      "boundaryFips": [
+        "26125"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.leaderdog.org/",
+          "finalUrl": "https://www.leaderdog.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-final-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.leaderdog.org/ways-to-give/",
+          "finalUrl": "https://www.leaderdog.org/ways-to-give/",
+          "status": 200,
+          "artifact": "/tmp/detroit-final-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:leader-dogs-for-the-blind",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 11,
+      "id": "detroit-michigan-lions-bear-lake-camp",
+      "name": "Michigan Lions Bear Lake Camp",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Lapeer accessible camp and named camp giving; recreation not treated as clinical efficacy.",
+      "boundaryFips": [
+        "26087"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.bearlakecamp.org/",
+          "finalUrl": "https://www.bearlakecamp.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-final-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.bearlakecamp.org/index.php/donating-making-a-difference",
+          "finalUrl": "https://www.bearlakecamp.org/index.php/donating-making-a-difference",
+          "status": 200,
+          "artifact": "/tmp/detroit-final-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:michigan-lions-bear-lake-camp",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 12,
+      "id": "detroit-detroit-health-care-for-the-homeless-advantage-health",
+      "name": "Detroit Health Care for the Homeless (Advantage Health)",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Advantage current Detroit clinical services plus Warren expansion; old brand counted once.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.ahdetroit.org",
+          "finalUrl": "https://ahcdetroit.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:27.203Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://ahdetroit.app.neoncrm.com/forms/donate",
+          "finalUrl": "https://ahdetroit.app.neoncrm.com/forms/donate",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:27.203Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:detroit-health-care-for-the-homeless-advantage-health",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 13,
+      "id": "detroit-community-first-health-centers",
+      "name": "Community First Health Centers",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparative-research-priority",
+      "primaryVerification": "Algonac/New Haven/Port Huron clinical access; named manual donation contact, not completed checkout.",
+      "boundaryFips": [
+        "26147"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.communityfirsthc.org/donate/",
+          "finalUrl": "https://communityfirsthc.org/donate/",
+          "status": 200,
+          "artifact": "/tmp/detroit-followup-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:community-first-health-centers",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 14,
+      "id": "detroit-mycare-health-center",
+      "name": "MyCare Health Center",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Macomb MyCare integrated clinical services; named c3 giving.",
+      "boundaryFips": [
+        "26099"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.mycarehealthcenter.org",
+          "finalUrl": "https://www.mycarehealthcenter.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:24.845Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.mycarehealthcenter.org/donate/",
+          "finalUrl": "https://www.mycarehealthcenter.org/donate/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:24.845Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:mycare-health-center",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 15,
+      "id": "detroit-honor-community-health",
+      "name": "Honor Community Health",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Oakland integrated care and clinics; Baldwin clinic name is not Baldwin Center recipient duplication.",
+      "boundaryFips": [
+        "26125"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://honorcommunityhealth.org",
+          "finalUrl": "https://honorcommunityhealth.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:25.157Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://honorcommunityhealth.org/about-us/donate/",
+          "finalUrl": "https://honorcommunityhealth.org/about-us/donate/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:25.157Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:honor-community-health",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 16,
+      "id": "detroit-corktown-health",
+      "name": "Corktown Health",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparative-research-priority",
+      "primaryVerification": "Detroit and Hazel Park medical/dental booking present; existing expansion not new-gift additionality.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://corktownhealth.org",
+          "finalUrl": "https://corktownhealth.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:26.472Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://corktownhealth.org/donate/",
+          "finalUrl": "https://corktownhealth.org/donate/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:26.472Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:corktown-health",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 17,
+      "id": "detroit-vivent-health-metro-detroit",
+      "name": "Vivent Health — Metro Detroit",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "UNIFIED redirect to Vivent Highland Park; national recipient, not separate old clinic charity.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://miunified.org",
+          "finalUrl": "https://viventhealth.org/locations/metro-detroit/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:26.596Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://viventhealth.org/donate/",
+          "finalUrl": "https://viventhealth.org/donate/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:26.596Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:vivent-health-metro-detroit",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 18,
+      "id": "detroit-ruth-ellis-center",
+      "name": "Ruth Ellis Center",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparative-research-priority",
+      "primaryVerification": "Highland Park youth housing/health services and named Ruth Ellis giving; clinical partner overlap retained.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.ruthelliscenter.org",
+          "finalUrl": "https://ruthelliscenter.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:26.434Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://ruthelliscenter.networkforgood.com/projects/227340-donate-today",
+          "finalUrl": "https://ruthelliscenter.networkforgood.com/projects/227340-donate-today",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:26.434Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:ruth-ellis-center",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 19,
+      "id": "detroit-gilda-s-club-metro-detroit",
+      "name": "Gilda’s Club Metro Detroit",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Royal Oak/Detroit/Grosse Pointe cancer support; no assumed measured psychotherapy efficacy.",
+      "boundaryFips": [
+        "26125"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.gildasclubdetroit.org/",
+          "finalUrl": "https://www.gildasclubdetroit.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-last-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.gildasclubdetroit.org/get-involved/donate/",
+          "finalUrl": "https://www.gildasclubdetroit.org/get-involved/donate/",
+          "status": 200,
+          "artifact": "/tmp/detroit-last-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:gilda-s-club-metro-detroit",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 20,
+      "id": "detroit-affirmations",
+      "name": "Affirmations",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Ferndale LGBTQ therapy/community support; named Affirmations c3 giving.",
+      "boundaryFips": [
+        "26125"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://goaffirmations.org",
+          "finalUrl": "https://goaffirmations.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-followup-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://goaffirmations.org/ways-to-give/",
+          "finalUrl": "https://goaffirmations.org/ways-to-give/",
+          "status": 200,
+          "artifact": "/tmp/detroit-followup-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:affirmations",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 21,
+      "id": "detroit-detroit-recovery-project",
+      "name": "Detroit Recovery Project",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparative-research-priority",
+      "primaryVerification": "Detroit recovery and behavioral programs despite site redesign; named donor form.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://recovery4detroit.com",
+          "finalUrl": "https://www.recovery4detroit.com/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:26.618Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://donorbox.org/detroit-recovery-project",
+          "finalUrl": "https://donorbox.org/detroit-recovery-project",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:26.618Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:detroit-recovery-project",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 22,
+      "id": "detroit-harm-reduction-michigan",
+      "name": "Harm Reduction Michigan",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparative-research-priority",
+      "primaryVerification": "Explicit Wayne/Detroit outreach on primary body; CN indexed named c3/EIN/Donate recovered independently after cache misses.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://harmreductionmi.org",
+          "finalUrl": "https://harmreductionmi.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:25.782Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [
+        {
+          "url": "https://www.charitynavigator.org/ein/812744973",
+          "finding": "Indexed platform names Harm Reduction Michigan, c3, EIN and Donate; direct open cache miss, indexed crawl last year.",
+          "retrieved": "2026-09-14",
+          "mechanism": "web primary page or explicit indexed primary source; search dates are crawl dates, not new operations dates"
+        }
+      ],
+      "payee": "ein:81-2744973",
+      "payeeQualification": "Named public/intermediary identity crosswalk, not original financial audit.",
+      "routeStatus": "Named intermediary giving profile; recipient-owned checkout not claimed. Assess intermediary fees and recipient allocation before donation."
+    },
+    {
+      "ordinal": 23,
+      "id": "detroit-face-addiction-now-formerly-families-against-narcotics",
+      "name": "Face Addiction Now (formerly Families Against Narcotics)",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparative-research-priority",
+      "primaryVerification": "Current Face Addiction Now and former Families Against Narcotics counted once; Macomb/Wayne programs.",
+      "boundaryFips": [
+        "26099"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.familiesagainstnarcotics.org",
+          "finalUrl": "https://faceaddictionnow.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:26.649Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://faceaddictionnow.org/donate",
+          "finalUrl": "https://faceaddictionnow.org/donate",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:26.649Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:face-addiction-now-formerly-families-against-narcotics",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 24,
+      "id": "detroit-care-of-southeastern-michigan",
+      "name": "CARE of Southeastern Michigan",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Macomb CARE prevention/recovery services and giving; employer/public alternatives remain.",
+      "boundaryFips": [
+        "26099"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.careofsem.com",
+          "finalUrl": "https://www.careofsem.com/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:26.895Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.careofsem.com/donate/",
+          "finalUrl": "https://www.careofsem.com/donate/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:26.895Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:care-of-southeastern-michigan",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 25,
+      "id": "detroit-shar",
+      "name": "SHAR",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Detroit SHAR services and donation telephone instructions; old anniversary appeal not current funding need.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.sharinc.org/donate.html",
+          "finalUrl": "https://www.sharinc.org/donate.html",
+          "status": 200,
+          "artifact": "/tmp/detroit-last-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:shar",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 26,
+      "id": "detroit-mariners-inn",
+      "name": "Mariners Inn",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Detroit Mariners Inn treatment/recovery housing; current named giving.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.marinersinn.org",
+          "finalUrl": "https://www.marinersinn.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-followup-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.marinersinn.org/donate",
+          "finalUrl": "https://www.marinersinn.org/donate",
+          "status": 200,
+          "artifact": "/tmp/detroit-followup-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:mariners-inn",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 27,
+      "id": "detroit-detroit-rescue-mission-ministries",
+      "name": "Detroit Rescue Mission Ministries",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Detroit Rescue Mission broad faith-based treatment/housing recipient, not multiple programs.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://drmm.org",
+          "finalUrl": "https://drmm.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:27.504Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://giving.drmm.org/-/XKQZFXJS",
+          "finalUrl": "https://giving.drmm.org/-/XKQZFXJS",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:27.504Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:detroit-rescue-mission-ministries",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 28,
+      "id": "detroit-hegira-health",
+      "name": "Hegira Health",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Wayne Hegira clinical services and named giving; public urgent-care counterpart matters.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.hegirahealth.org",
+          "finalUrl": "https://www.hegirahealth.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:28.880Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.hegirahealth.org/donate",
+          "finalUrl": "https://www.hegirahealth.org/donate",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:28.880Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:hegira-health",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 29,
+      "id": "detroit-common-ground",
+      "name": "Common Ground",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparative-research-priority",
+      "primaryVerification": "Accepted only surviving crisis/mobile/resiliency/virtual-care pathways; adult Resource & Crisis Center transfer explicitly excluded.",
+      "boundaryFips": [
+        "26125"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://commongroundhelps.org",
+          "finalUrl": "https://commongroundhelps.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:30.376Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://commongroundhelps.org/ways-to-give/donate/",
+          "finalUrl": "https://commongroundhelps.org/ways-to-give/donate/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:30.376Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [
+        {
+          "url": "https://commongroundhelps.org/press-release-ending-of-adult-crisis-services-at-the-resource-crisis-center/",
+          "finding": "2026 notice: adult Resource & Crisis Center care ended/transferred.",
+          "retrieved": "2026-09-14",
+          "mechanism": "web primary page or explicit indexed primary source; search dates are crawl dates, not new operations dates"
+        },
+        {
+          "url": "https://commongroundhelps.org/get-help/",
+          "finding": "Surviving Michigan crisis line, Oakland mobile teams, virtual clinical care, Oxford/Rochester support.",
+          "retrieved": "2026-09-14",
+          "mechanism": "web primary page or explicit indexed primary source; search dates are crawl dates, not new operations dates"
+        },
+        {
+          "url": "https://commongroundhelps.org/get-help/rochester-hills-resiliency-center/",
+          "finding": "Oakland site currently gives hours/free support, state/federal grant funded.",
+          "retrieved": "2026-09-14",
+          "mechanism": "web primary page or explicit indexed primary source; search dates are crawl dates, not new operations dates"
+        }
+      ],
+      "payee": "org:common-ground",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 30,
+      "id": "detroit-rose-hill-foundation",
+      "name": "Rose Hill Foundation",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Primary foundation page identifies fundraising partner and Holly clinical provider; charge provider resources as well as foundation.",
+      "boundaryFips": [
+        "26125"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.rosehillcenter.org",
+          "finalUrl": "https://www.rosehillcenter.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:28.973Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://give.rosehillfoundation.org/",
+          "finalUrl": "https://give.rosehillfoundation.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:28.973Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [
+        {
+          "url": "https://www.rosehillcenter.org/rose-hill-foundation/",
+          "finding": "Foundation is fundraising partner for Holly residential treatment center.",
+          "retrieved": "2026-09-14",
+          "mechanism": "web primary page or explicit indexed primary source; search dates are crawl dates, not new operations dates"
+        }
+      ],
+      "payee": "org:rose-hill-foundation",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 31,
+      "id": "detroit-judson-center",
+      "name": "Judson Center",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Primary Oakland service location lists autism/disability/outpatient services; Advantage clinical partnership is overlap, not recipient merger.",
+      "boundaryFips": [
+        "26125"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.judsoncenter.org",
+          "finalUrl": "https://judsoncenter.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:31.607Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://judsoncenter.org/donate-now/",
+          "finalUrl": "https://judsoncenter.org/donate-now/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:31.607Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [
+        {
+          "url": "https://judsoncenter.org/blog/location/oakland/",
+          "finding": "Royal Oak service location, clinical/disability/child programs.",
+          "retrieved": "2026-09-14",
+          "mechanism": "web primary page or explicit indexed primary source; search dates are crawl dates, not new operations dates"
+        }
+      ],
+      "payee": "org:judson-center",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 32,
+      "id": "detroit-oakland-family-services",
+      "name": "Oakland Family Services",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Pontiac/Royal Oak/Farmington Hills family/behavioral services and named giving.",
+      "boundaryFips": [
+        "26125"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.oaklandfamilyservices.org",
+          "finalUrl": "https://www.oaklandfamilyservices.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:28.099Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.oaklandfamilyservices.org/buildbrighterfutures",
+          "finalUrl": "https://www.oaklandfamilyservices.org/buildbrighterfutures",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:28.099Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:oakland-family-services",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 33,
+      "id": "detroit-the-guidance-center",
+      "name": "The Guidance Center",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Southgate/Downriver child-adult behavioral care and named Guidance Center giving.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.guidance-center.org",
+          "finalUrl": "https://www.guidance-center.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:28.617Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.guidance-center.org/donate-online/",
+          "finalUrl": "https://www.guidance-center.org/donate-online/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:28.617Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:the-guidance-center",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 34,
+      "id": "detroit-miside",
+      "name": "MiSide",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Primary MiSide history confirms 2023 combination and Detroit/Wayne reach; related corporate subsidiaries remain a full-finance gate.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://miside.org",
+          "finalUrl": "https://miside.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-followup-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://secure.qgiv.com/for/miside/",
+          "finalUrl": "https://secure.qgiv.com/for/miside/",
+          "status": 200,
+          "artifact": "/tmp/detroit-followup-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [
+        {
+          "url": "https://miside.org/about-us",
+          "finding": "2023 combination and Detroit/Wayne service.",
+          "retrieved": "2026-09-14",
+          "mechanism": "web primary page or explicit indexed primary source; search dates are crawl dates, not new operations dates"
+        },
+        {
+          "url": "https://miside.org/about-us/reports-financials",
+          "finding": "Related subsidiaries remain; not proof of single consolidated EIN.",
+          "retrieved": "2026-09-14",
+          "mechanism": "web primary page or explicit indexed primary source; search dates are crawl dates, not new operations dates"
+        }
+      ],
+      "payee": "org:miside",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 35,
+      "id": "detroit-gesher-human-services",
+      "name": "Gesher Human Services",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Gesher regional residential/behavioral/employment services and official linked giving; former names not extra rows.",
+      "boundaryFips": [
+        "26125"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.geshermi.org/",
+          "finalUrl": "https://www.geshermi.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-final-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://form-renderer-app.donorperfect.io/give/gesher-human-services/general-donation-new-copy",
+          "finalUrl": "https://form-renderer-app.donorperfect.io/give/gesher-human-services/general-donation-new-copy",
+          "status": 200,
+          "artifact": "/tmp/detroit-final-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:gesher-human-services",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 36,
+      "id": "detroit-starfish-family-services",
+      "name": "Starfish Family Services",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparative-research-priority",
+      "primaryVerification": "Primary NFP service page explicitly accepting new clients and Detroit delivery; program not second charity.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.starfishfamilyservices.org",
+          "finalUrl": "https://www.starfishfamilyservices.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:29.175Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.starfishfamilyservices.org/make-a-donation/",
+          "finalUrl": "https://www.starfishfamilyservices.org/make-a-donation/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:29.175Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [
+        {
+          "url": "https://www.starfishfamilyservices.org/services/nurse-family/",
+          "finding": "Accepting new clients; Detroit nurse home visiting.",
+          "retrieved": "2026-09-14",
+          "mechanism": "web primary page or explicit indexed primary source; search dates are crawl dates, not new operations dates"
+        }
+      ],
+      "payee": "org:starfish-family-services",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 37,
+      "id": "detroit-the-children-s-center-detroit",
+      "name": "The Children's Center Detroit",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Detroit Children's Center clinical/child-welfare services and own giving.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.thechildrenscenter.com",
+          "finalUrl": "https://www.thechildrenscenter.com/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:30.606Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.thechildrenscenter.com/donate/",
+          "finalUrl": "https://www.thechildrenscenter.com/donate/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:30.606Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:the-children-s-center-detroit",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 38,
+      "id": "detroit-macomb-family-services",
+      "name": "Macomb Family Services",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Correct Macomb Family site and four Macomb locations; CN named c3 profile crosswalk, not clinical bill payment.",
+      "boundaryFips": [
+        "26099"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://macombfamily.org/",
+          "finalUrl": "https://macombfamily.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-final-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "ein:38-2315965",
+      "payeeQualification": "Named public/intermediary identity crosswalk, not original financial audit.",
+      "routeStatus": "Named intermediary giving profile; recipient-owned checkout not claimed. Assess intermediary fees and recipient allocation before donation."
+    },
+    {
+      "ordinal": 39,
+      "id": "detroit-catholic-charities-of-southeast-michigan",
+      "name": "Catholic Charities of Southeast Michigan",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "CCSEM named regional charity; separate Livingston charity has distinct own c3/EIN.",
+      "boundaryFips": [
+        "26125"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://ccsem.org",
+          "finalUrl": "https://www.ccsem.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:30.397Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.ccsem.org/donate",
+          "finalUrl": "https://host.nxt.blackbaud.com/donor-form?svcid=tcs&formId=b0fa6ec9-95f7-4e45-8e93-6ddd53010f21&envid=p-cc1M7_haEki-uefXVsWfzw&zone=usa",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:30.397Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:catholic-charities-of-southeast-michigan",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 40,
+      "id": "detroit-arab-community-center-for-economic-and-social-services-access",
+      "name": "Arab Community Center for Economic and Social Services (ACCESS)",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparative-research-priority",
+      "primaryVerification": "ACCESS explicitly Wayne/Oakland/Macomb services; general gift also funds nonclinical/national work.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.accesscommunity.org",
+          "finalUrl": "https://www.accesscommunity.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:31.647Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://19997a.blackbaudhosting.com/19997a/ACCESS",
+          "finalUrl": "https://19997a.blackbaudhosting.com/19997a/ACCESS",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:31.647Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:arab-community-center-for-economic-and-social-services-access",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 41,
+      "id": "detroit-black-mothers-breastfeeding-association",
+      "name": "Black Mothers' Breastfeeding Association",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparative-research-priority",
+      "primaryVerification": "Detroit breastfeeding/doula support and named c3 giving; national training not all local.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://blackmothersbreastfeeding.org",
+          "finalUrl": "https://www.bmbfa.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:31.427Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://givebutter.com/BMBFA",
+          "finalUrl": "https://givebutter.com/BMBFA",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:31.427Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:black-mothers-breastfeeding-association",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 42,
+      "id": "detroit-birth-detroit",
+      "name": "Birth Detroit",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparative-research-priority",
+      "primaryVerification": "Operating Detroit birth center/prenatal/postpartum care; transfers/safety and payer substitution unresolved at discovery.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.birthdetroit.com",
+          "finalUrl": "https://www.birthdetroit.com/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:31.248Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.birthdetroit.com/donate",
+          "finalUrl": "https://www.birthdetroit.com/donate",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:31.248Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:birth-detroit",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 43,
+      "id": "detroit-focus-hope",
+      "name": "Focus HOPE",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Focus HOPE Detroit food/workforce services and named EIN gift page.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.focushope.edu",
+          "finalUrl": "https://www.focushope.edu/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:30.714Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.focushope.edu/get-involved/giving/",
+          "finalUrl": "https://www.focushope.edu/get-involved/giving/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:30.714Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:focus-hope",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 44,
+      "id": "detroit-alternatives-for-girls",
+      "name": "Alternatives for Girls",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Detroit youth/survivor shelter and stability; no duplicate trafficking program row.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://alternativesforgirls.org",
+          "finalUrl": "https://alternativesforgirls.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:33.200Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://secure.qgiv.com/for/afgdonationforms",
+          "finalUrl": "https://secure.qgiv.com/for/afgdonationforms",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:33.200Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:alternatives-for-girls",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 45,
+      "id": "detroit-planned-parenthood-of-michigan",
+      "name": "Planned Parenthood of Michigan",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Independent official Detroit clinic confirms current services/c3 and resumed Medicaid August 3, 2026; contact page names PPMI gifts.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [],
+      "independentBrowserEvidence": [
+        {
+          "url": "https://www.plannedparenthood.org/health-center/michigan/detroit/48201/detroit-health-center-2890-90630",
+          "finding": "Detroit clinic current c3, appointment services, Medicaid resumed August 3, 2026.",
+          "retrieved": "2026-09-14",
+          "mechanism": "web primary page or explicit indexed primary source; search dates are crawl dates, not new operations dates"
+        }
+      ],
+      "payee": "org:planned-parenthood-of-michigan",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 46,
+      "id": "detroit-mothering-justice",
+      "name": "Mothering Justice",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Official Mothering Justice ActBlue Charities charitable route, not electoral Action Fund; statewide Michigan policy intersection.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.motheringjustice.org",
+          "finalUrl": "https://www.motheringjustice.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:31.492Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://secure.actblue.com/donate/mothering-justice-1",
+          "finalUrl": "https://secure.actblue.com/donate/mothering-justice-1",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:31.492Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:mothering-justice",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 47,
+      "id": "detroit-michigan-organization-on-adolescent-sexual-health",
+      "name": "Michigan Organization on Adolescent Sexual Health",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "MOASH primary c3 identity and statewide adolescent-health work; statewide policy eligibility, not all-local events.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.moash.org",
+          "finalUrl": "https://www.moash.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:31.434Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.moash.org/support-moash",
+          "finalUrl": "https://www.moash.org/support-moash",
+          "status": 200,
+          "artifact": "/tmp/detroit-followup-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:michigan-organization-on-adolescent-sexual-health",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 48,
+      "id": "detroit-detroit-parent-network",
+      "name": "Detroit Parent Network",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Detroit Parent Network funders/giving page and Detroit parent support; appropriation requests not awards.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.detroitparentnetwork.com/funders",
+          "finalUrl": "https://www.detroitparentnetwork.com/funders",
+          "status": 200,
+          "artifact": "/tmp/detroit-last-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "ein:33-1054423",
+      "payeeQualification": "Exact identifier on named primary page; original financial audit pending.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 49,
+      "id": "detroit-wayne-metropolitan-community-action-agency",
+      "name": "Wayne Metropolitan Community Action Agency",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Wayne Metro private service agency with named gift; public assistance not newly donated benefit.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.waynemetro.org",
+          "finalUrl": "https://www.waynemetro.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:35.521Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.waynemetro.org/donate",
+          "finalUrl": "https://www.waynemetro.org/donate/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:35.521Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:wayne-metropolitan-community-action-agency",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 50,
+      "id": "detroit-cass-community-social-services",
+      "name": "Cass Community Social Services",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Cass Detroit housing/food/jobs services and own Blackbaud route.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://casscommunity.org",
+          "finalUrl": "https://casscommunity.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:31.870Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://host.nxt.blackbaud.com/donor-form/?svcid=renxt&formId=fdc5db48-0b3e-428c-8870-4d9e8c731ca2&envid=p-2U9P4PrtqU64kdQgu6l6DA&zone=usa",
+          "finalUrl": "https://host.nxt.blackbaud.com/donor-form/?svcid=renxt&formId=fdc5db48-0b3e-428c-8870-4d9e8c731ca2&envid=p-2U9P4PrtqU64kdQgu6l6DA&zone=usa",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:31.870Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:cass-community-social-services",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 51,
+      "id": "detroit-cots",
+      "name": "COTS",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Replace 2024 campaign with official current donation instructions; Chicago bank lockbox explicitly supports Detroit COTS.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://cotsdetroit.org",
+          "finalUrl": "https://cotsdetroit.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:32.511Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://cotsgivingtuesday2024.funraise.org/",
+          "finalUrl": "https://cotsgivingtuesday2024.funraise.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:32.511Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [
+        {
+          "url": "https://cotsdetroit.org/donate/",
+          "finding": "Current COTS mail donation instructions, Chicago lockbox explicitly funds Detroit.",
+          "retrieved": "2026-09-14",
+          "mechanism": "web primary page or explicit indexed primary source; search dates are crawl dates, not new operations dates"
+        },
+        {
+          "url": "https://cotsdetroit.org/double-donation/",
+          "finding": "COTS tax ID 38-2420565.",
+          "retrieved": "2026-09-14",
+          "mechanism": "web primary page or explicit indexed primary source; search dates are crawl dates, not new operations dates"
+        }
+      ],
+      "payee": "ein:38-2420565",
+      "payeeQualification": "Exact primary COTS matching-gifts page; full legal financial audit remains future.",
+      "routeStatus": "Official current COTS giving instructions and named Detroit-purpose mail lockbox; no transaction executed. Do not use the 2024 campaign as evidence of current capacity."
+    },
+    {
+      "ordinal": 52,
+      "id": "detroit-detroit-phoenix-center",
+      "name": "Detroit Phoenix Center",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Phoenix Center Detroit youth services and named giving with EIN 82-1262148.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.detroitphoenixcenter.org",
+          "finalUrl": "https://www.detroitphoenixcenter.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:32.148Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.detroitphoenixcenter.org/donate",
+          "finalUrl": "https://www.detroitphoenixcenter.org/blank-2",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:32.148Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:detroit-phoenix-center",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 53,
+      "id": "detroit-covenant-house-michigan",
+      "name": "Covenant House Michigan",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Covenant House Michigan Detroit site and affiliate giving; Grand Rapids outside local boundary.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://covenanthousemi.org",
+          "finalUrl": "https://covenanthousemi.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:32.577Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://covenanthousemi.org/donate/",
+          "finalUrl": "https://covenanthousemi.org/donate/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:32.577Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:covenant-house-michigan",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 54,
+      "id": "detroit-lighthouse",
+      "name": "Lighthouse",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Primary Lighthouse merger text confirms old South Oakland Shelter counted once.",
+      "boundaryFips": [
+        "26125"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://lighthousemi.org",
+          "finalUrl": "https://lighthousemi.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:32.861Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://secure.qgiv.com/for/lighthous/",
+          "finalUrl": "https://secure.qgiv.com/for/lighthous/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:32.861Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:lighthouse",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 55,
+      "id": "detroit-neighborhood-service-organization",
+      "name": "Neighborhood Service Organization",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "NSO primary c3/EIN and current housing/health; COPE ended November 16, 2025 and is excluded.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.nso-mi.org",
+          "finalUrl": "https://www.nso-mi.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-followup-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://donate.nso-mi.org/checkout/2340",
+          "finalUrl": "https://donate.nso-mi.org/checkout/2340",
+          "status": 200,
+          "artifact": "/tmp/detroit-followup-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "ein:38-1561624",
+      "payeeQualification": "Exact EIN and c3 on primary homepage.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 56,
+      "id": "detroit-hope-shelters",
+      "name": "HOPE Shelters",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparative-research-priority",
+      "primaryVerification": "HOPE low-barrier adult and recuperative shelters; retained as distinct health hypothesis with hospital-substitution gate.",
+      "boundaryFips": [
+        "26125"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.hopeshelters.org",
+          "finalUrl": "https://www.hopeshelters.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:32.548Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:hope-shelters",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 57,
+      "id": "detroit-south-oakland-citizens-for-the-homeless-soch",
+      "name": "South Oakland Citizens for the Homeless (SOCH)",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "SOCH Royal Oak Welcome Inn with check/PayPal giving; current clothing-intake pause does not mean service closure.",
+      "boundaryFips": [
+        "26125"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.sochwi.org",
+          "finalUrl": "https://www.sochwi.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:34.667Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.sochwi.org/donate",
+          "finalUrl": "https://www.sochwi.org/donate",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:34.667Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:south-oakland-citizens-for-the-homeless-soch",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 58,
+      "id": "detroit-community-housing-network",
+      "name": "Community Housing Network",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "CHN explicitly Oakland/Macomb PATH outreach and named EIN gift.",
+      "boundaryFips": [
+        "26125"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://communityhousingnetwork.org",
+          "finalUrl": "https://communityhousingnetwork.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:33.953Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://communityhousingnetwork.org/give/",
+          "finalUrl": "https://communityhousingnetwork.org/give/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:33.953Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:community-housing-network",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 59,
+      "id": "detroit-noah-at-central-noah-project",
+      "name": "Noah at Central (NOAH Project)",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "NOAH redirect and current 2026 Noah at Central donor form; Detroit casework/nursing/outreach.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://noahprojectdetroit.org/",
+          "finalUrl": "https://noahatcentral.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-final-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://noahprojectdetroit.networkforgood.com/projects/265684-individual-donors-2026",
+          "finalUrl": "https://noahprojectdetroit.networkforgood.com/projects/265684-individual-donors-2026",
+          "status": 200,
+          "artifact": "/tmp/detroit-final-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:noah-at-central-noah-project",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 60,
+      "id": "detroit-samaritas",
+      "name": "Samaritas",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Samaritas current Michigan clinical/housing/refugee services and named broad gift; local share not assumed one.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.samaritas.org",
+          "finalUrl": "https://samaritas.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:33.613Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://samaritas.org/donate/",
+          "finalUrl": "https://samaritas.org/donate/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:33.613Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:samaritas",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 61,
+      "id": "detroit-olhsa",
+      "name": "OLHSA",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "OLHSA giving explicitly Oakland/Livingston and own c3/EIN.",
+      "boundaryFips": [
+        "26125"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.olhsa.org",
+          "finalUrl": "https://www.olhsa.org/en-us/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:34.110Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.olhsa.org/take-action/donate",
+          "finalUrl": "https://www.olhsa.org/take-action/donate",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:34.110Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:olhsa",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 62,
+      "id": "detroit-mcrest",
+      "name": "MCREST",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "MCREST explicitly Macomb homeless-service mission, Mt Clemens facility and giving.",
+      "boundaryFips": [
+        "26099"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.mcrest.org",
+          "finalUrl": "https://www.mcrest.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-followup-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.mcrest.org/give",
+          "finalUrl": "https://www.mcrest.org/give",
+          "status": 200,
+          "artifact": "/tmp/detroit-followup-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:mcrest",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 63,
+      "id": "detroit-turning-point",
+      "name": "Turning Point",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparative-research-priority",
+      "primaryVerification": "Turning Point Macomb survivor services and named Turning Point Inc. gift instructions.",
+      "boundaryFips": [
+        "26099"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://turningpointmacomb.org",
+          "finalUrl": "https://turningpointmacomb.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:36.891Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://turningpointmacomb.org/donate/",
+          "finalUrl": "https://turningpointmacomb.org/help-us/donate/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:36.891Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:turning-point",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 64,
+      "id": "detroit-haven",
+      "name": "HAVEN",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparative-research-priority",
+      "primaryVerification": "HAVEN Oakland shelter/counseling/forensic nursing; active own giving, not guaranteed safety effect.",
+      "boundaryFips": [
+        "26125"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.haven-oakland.org",
+          "finalUrl": "https://haven-oakland.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:34.651Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://haven-oakland.org/give-back/",
+          "finalUrl": "https://haven-oakland.org/give-back/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:34.651Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:haven",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 65,
+      "id": "detroit-first-step",
+      "name": "First Step",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "First Step Wayne facilities/services and giving; individual safety response is not population violence reduction.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.firststep-mi.org",
+          "finalUrl": "https://www.firststep-mi.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:41.559Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.firststep-mi.org/donate/",
+          "finalUrl": "https://www.firststep-mi.org/donate/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:41.559Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:first-step",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 66,
+      "id": "detroit-lacasa-center",
+      "name": "LACASA Center",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparative-research-priority",
+      "primaryVerification": "LACASA Howell current facility/c3 and crisis/shelter/counseling/forensic giving appeal.",
+      "boundaryFips": [
+        "26093"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://lacasacenter.org",
+          "finalUrl": "https://lacasacenter.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:39.363Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://lacasacenter.org/emberofhope/",
+          "finalUrl": "https://lacasacenter.org/emberofhope/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:39.363Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:lacasa-center",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 67,
+      "id": "detroit-blue-water-safe-horizons",
+      "name": "Blue Water Safe Horizons",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Blue Water Safe Horizons St Clair crisis/survivor services, direct giving distinct from optional community-foundation endowment.",
+      "boundaryFips": [
+        "26147"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.bwsh.org",
+          "finalUrl": "https://bluewatersafehorizons.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:36.460Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://bluewatersafehorizons.org/donate/",
+          "finalUrl": "https://bluewatersafehorizons.org/donate/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:36.460Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:blue-water-safe-horizons",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 68,
+      "id": "detroit-lapeer-area-citizens-against-domestic-assault-lacada",
+      "name": "Lapeer Area Citizens Against Domestic Assault (LACADA)",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "LACADA primary explicitly Lapeer c3, shelter/crisis/support and financial giving.",
+      "boundaryFips": [
+        "26087"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.lacada.org",
+          "finalUrl": "https://lacada.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-followup-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://lacada.org/donate/",
+          "finalUrl": "https://lacada.org/donate/",
+          "status": 200,
+          "artifact": "/tmp/detroit-followup-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:lapeer-area-citizens-against-domestic-assault-lacada",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 69,
+      "id": "detroit-michigan-coalition-to-end-domestic-and-sexual-violence",
+      "name": "Michigan Coalition to End Domestic and Sexual Violence",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "MCEDSV primary all 83 Michigan counties hotline/legal/policy; named coalition form.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://mcedsv.org",
+          "finalUrl": "https://mcedsv.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:35.837Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://mcedsv.coalitionmanager.org/donormanager/donation/create",
+          "finalUrl": "https://mcedsv.coalitionmanager.org/donormanager/donation/create",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:35.837Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:michigan-coalition-to-end-domestic-and-sexual-violence",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 70,
+      "id": "detroit-detroit-justice-center",
+      "name": "Detroit Justice Center",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparative-research-priority",
+      "primaryVerification": "DJC Detroit legal/systemic work and c3/EIN; appointment-only, not walk-in attorney service.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://detroitjustice.org",
+          "finalUrl": "https://detroitjustice.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:36.261Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://detroitjustice.org/donate",
+          "finalUrl": "https://detroitjustice.org/donate/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:36.261Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:detroit-justice-center",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 71,
+      "id": "detroit-michigan-legal-services",
+      "name": "Michigan Legal Services",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Michigan Legal Services official EIN and Detroit giving; attorney ATJ pooled route distinguished.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.milegalservices.org/donate",
+          "finalUrl": "https://www.milegalservices.org/donate",
+          "status": 200,
+          "artifact": "/tmp/detroit-last-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "ein:23-7383477",
+      "payeeQualification": "Exact identifier on named primary page; original financial audit pending.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 72,
+      "id": "detroit-united-community-housing-coalition",
+      "name": "United Community Housing Coalition",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparative-research-priority",
+      "primaryVerification": "UCHC Detroit eviction/foreclosure services; official GiveSmart link blocked in retrieval, not verified checkout completion.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.uchcdetroit.org",
+          "finalUrl": "https://www.uchcdetroit.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:36.622Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://igfn.us/form/f9Lchw",
+          "finalUrl": "https://fundraise.givesmart.com/form/f9Lchw",
+          "status": 403,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:36.622Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:united-community-housing-coalition",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named route or outbound link independently observed; live payment retrieval was script/security blocked. This verifies giving intent, not working checkout or a completed transaction."
+    },
+    {
+      "ordinal": 73,
+      "id": "detroit-legal-aid-and-defender-association",
+      "name": "Legal Aid and Defender Association",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "LAD primary expressly Wayne/Oakland/Macomb civil legal c3; official PayPal link script/403 limitation.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://ladadetroit.org",
+          "finalUrl": "https://ladadetroit.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:36.231Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=32EMMTGLMMJG4&source=url",
+          "finalUrl": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=32EMMTGLMMJG4&source=url",
+          "status": 403,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:36.231Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:legal-aid-and-defender-association",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named route or outbound link independently observed; live payment retrieval was script/security blocked. This verifies giving intent, not working checkout or a completed transaction."
+    },
+    {
+      "ordinal": 74,
+      "id": "detroit-lakeshore-legal-aid",
+      "name": "Lakeshore Legal Aid",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparative-research-priority",
+      "primaryVerification": "Lakeshore regional legal services; direct non-attorney/mail giving distinct from pooled ATJ campaign.",
+      "boundaryFips": [
+        "26099"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://lakeshorelegalaid.org",
+          "finalUrl": "https://lakeshorelegalaid.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:39.199Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://lakeshorelegalaid.org/donate-now/",
+          "finalUrl": "https://lakeshorelegalaid.org/donate-now/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:39.199Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:lakeshore-legal-aid",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 75,
+      "id": "detroit-michigan-advocacy-program",
+      "name": "Michigan Advocacy Program",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "MAP primary specifically Livingston eligibility and direct non-attorney giving; affiliated MIRC/MPLP not extra rows.",
+      "boundaryFips": [
+        "26093"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://miadvocacy.org",
+          "finalUrl": "https://miadvocacy.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:36.716Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://miadvocacy.org/thank-you-your-interest-supporting-access-justice",
+          "finalUrl": "https://miadvocacy.org/thank-you-your-interest-supporting-access-justice",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:36.716Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:michigan-advocacy-program",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 76,
+      "id": "detroit-freedom-house-detroit",
+      "name": "Freedom House Detroit",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Freedom House Detroit shelter/legal/mental-health integration and named LGL donation page.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://freedomhousedetroit.org",
+          "finalUrl": "https://freedomhousedetroit.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-followup-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://freedomhousedetroit.org/donate/",
+          "finalUrl": "https://freedomhousedetroit.org/donate/",
+          "status": 200,
+          "artifact": "/tmp/detroit-followup-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:freedom-house-detroit",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 77,
+      "id": "detroit-disability-rights-michigan",
+      "name": "Disability Rights Michigan",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "DRM primary statewide disabled-resident legal eligibility and designated charitable giving.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.drmich.org",
+          "finalUrl": "https://www.drmich.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:37.653Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.drmich.org/donate/",
+          "finalUrl": "https://www.drmich.org/donate/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:37.653Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:disability-rights-michigan",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 78,
+      "id": "detroit-sugar-law-center",
+      "name": "Sugar Law Center",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Sugar Law Detroit worker/energy/community legal work and own c3 giving; national work allocation remains.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.sugarlaw.org",
+          "finalUrl": "https://www.sugarlaw.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-followup-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.sugarlaw.org/take-action",
+          "finalUrl": "https://www.sugarlaw.org/take-action",
+          "status": 200,
+          "artifact": "/tmp/detroit-followup-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:sugar-law-center",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 79,
+      "id": "detroit-michigan-league-for-public-policy",
+      "name": "Michigan League for Public Policy",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "MLPP current Michigan budget/health policy and named EveryAction donor page.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://mlpp.org",
+          "finalUrl": "https://mlpp.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:37.896Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://secure.everyaction.com/KKhhKFMRMECCP7O9JytNvA2",
+          "finalUrl": "https://secure.everyaction.com/KKhhKFMRMECCP7O9JytNvA2",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:37.896Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:michigan-league-for-public-policy",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 80,
+      "id": "detroit-st-patrick-senior-center",
+      "name": "St. Patrick Senior Center",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "St Patrick Detroit older-adult meals/wellness/new adult-day support and named giving.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://stpatsrctr.org",
+          "finalUrl": "https://stpatsrctr.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-followup-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://stpatsrctr.org/donate/",
+          "finalUrl": "https://stpatsrctr.org/donate/",
+          "status": 200,
+          "artifact": "/tmp/detroit-followup-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:st-patrick-senior-center",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 81,
+      "id": "detroit-detroiters-working-for-environmental-justice",
+      "name": "Detroiters Working for Environmental Justice",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "DWEJ Detroit environmental/energy policy services; official linked giving blocked by script protection, not closure.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://detroitenvironmentaljustice.org",
+          "finalUrl": "https://detroitenvironmentaljustice.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:38.496Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://secure.givelively.org/donate/detroiters-working-for-environmental-justice",
+          "finalUrl": "https://secure.givelively.org/donate/detroiters-working-for-environmental-justice",
+          "status": 403,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:38.496Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:detroiters-working-for-environmental-justice",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named route or outbound link independently observed; live payment retrieval was script/security blocked. This verifies giving intent, not working checkout or a completed transaction."
+    },
+    {
+      "ordinal": 82,
+      "id": "detroit-detroit-greenways-coalition",
+      "name": "Detroit Greenways Coalition",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparative-research-priority",
+      "primaryVerification": "Greenways current 2026 Detroit safer-streets testimony plus primary c3/EIN donation page; Canadian benefit excluded.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://detroitgreenways.org/",
+          "finalUrl": "https://detroitgreenways.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-last-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [
+        {
+          "url": "https://detroitgreenways.org/making-donations/",
+          "finding": "Primary c3/EIN and monetary form; public grants cannot fund day-to-day advocacy claim.",
+          "retrieved": "2026-09-14",
+          "mechanism": "web primary page or explicit indexed primary source; search dates are crawl dates, not new operations dates"
+        }
+      ],
+      "payee": "ein:46-4885673",
+      "payeeQualification": "Exact identifier on named primary page; original financial audit pending.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 83,
+      "id": "detroit-we-the-people-of-detroit",
+      "name": "We the People of Detroit",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparative-research-priority",
+      "primaryVerification": "WPD Detroit water access/research and direct mail/online giving; emergency water not equivalent to permanent connection.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.wethepeopleofdetroit.com",
+          "finalUrl": "https://www.wethepeopleofdetroit.com/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:38.174Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.wethepeopleofdetroit.com/get-involved",
+          "finalUrl": "https://www.wethepeopleofdetroit.com/get-involved",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:38.174Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:we-the-people-of-detroit",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 84,
+      "id": "detroit-freshwater-future",
+      "name": "Freshwater Future",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Independent August 2026 primary item confirms actual Detroit flooding partnerships beyond Great Lakes mission.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://freshwaterfuture.org",
+          "finalUrl": "https://freshwaterfuture.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:39.683Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "http://freshwaterfuture.org/donate",
+          "finalUrl": "https://freshwaterfuture.org/donate/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:39.683Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [
+        {
+          "url": "https://freshwaterfuture.org/freshwater-future-weekly-august-21-2026/",
+          "finding": "Author reports working with Detroit community organizations on flooding.",
+          "retrieved": "2026-09-14",
+          "mechanism": "web primary page or explicit indexed primary source; search dates are crawl dates, not new operations dates"
+        }
+      ],
+      "payee": "org:freshwater-future",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 85,
+      "id": "detroit-michigan-environmental-council",
+      "name": "Michigan Environmental Council",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "MEC state air/water/energy policy includes Detroit residents; primary own EIN donor instructions.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://environmentalcouncil.org",
+          "finalUrl": "https://environmentalcouncil.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:38.442Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://environmentalcouncil.org/donate/",
+          "finalUrl": "https://environmentalcouncil.org/donate/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:38.442Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:michigan-environmental-council",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 86,
+      "id": "detroit-ecology-center",
+      "name": "Ecology Center",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Ecology Center primary Michigan lead/energy work and Detroit programming; not merely Ann Arbor HQ.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.ecocenter.org",
+          "finalUrl": "https://www.ecocenter.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:38.510Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.ecocenter.org/support-our-work",
+          "finalUrl": "https://www.ecocenter.org/support-our-work",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:38.510Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:ecology-center",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 87,
+      "id": "detroit-clean-water-fund-michigan",
+      "name": "Clean Water Fund — Michigan",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Indexed primary Michigan Clean Water Fund form explicitly c3, distinct from c4; script-blocked live retrieval disclosed.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://cleanwaterfund.org/",
+          "finalUrl": "https://cleanwaterfund.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-final-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://support.cleanwater.org/page/155280/donate/1?locale=en-US",
+          "finalUrl": "https://support.cleanwater.org/page/155280/donate/1?locale=en-US",
+          "status": 403,
+          "artifact": "/tmp/detroit-last-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [
+        {
+          "url": "https://support.cleanwater.org/page/155280/donate/1?locale=en-US",
+          "finding": "Indexed form expressly Clean Water Fund Michigan, c3; no c4 substitution.",
+          "retrieved": "2026-09-14",
+          "mechanism": "web primary page or explicit indexed primary source; search dates are crawl dates, not new operations dates"
+        }
+      ],
+      "payee": "ein:52-1043444",
+      "payeeQualification": "Exact identifier on named primary page; original financial audit pending.",
+      "routeStatus": "Official named route or outbound link independently observed; live payment retrieval was script/security blocked. This verifies giving intent, not working checkout or a completed transaction."
+    },
+    {
+      "ordinal": 88,
+      "id": "detroit-east-michigan-environmental-action-council",
+      "name": "East Michigan Environmental Action Council",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "EMEAC primary Detroit environmental/community programs; support page links PayPal/NFG/Zelle.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://emeac.org",
+          "finalUrl": "https://emeac.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:39.824Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "http://emeac.org/support",
+          "finalUrl": "https://emeac.org/support/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:39.824Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:east-michigan-environmental-action-council",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 89,
+      "id": "detroit-friends-of-the-rouge",
+      "name": "Friends of the Rouge",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Friends Rouge watershed restoration/monitoring and own c3/EIN; ecological to health bridge unmeasured.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://therouge.org",
+          "finalUrl": "https://therouge.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:39.308Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://therouge.org/?form=FUNHDSPKPUA",
+          "finalUrl": "https://therouge.org/?form=FUNHDSPKPUA",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:39.308Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:friends-of-the-rouge",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 90,
+      "id": "detroit-livingston-county-catholic-charities",
+      "name": "Livingston County Catholic Charities",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Livingston Catholic explicitly county services/c3/EIN, distinct from CCSEM; own county donation instructions.",
+      "boundaryFips": [
+        "26093"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.livingstoncc.org",
+          "finalUrl": "https://www.livingstoncc.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:40.083Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.livingstoncc.org/donations/",
+          "finalUrl": "https://www.livingstoncc.org/donations/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:40.083Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:livingston-county-catholic-charities",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 91,
+      "id": "detroit-gleaners-community-food-bank-of-southeastern-michigan",
+      "name": "Gleaners Community Food Bank of Southeastern Michigan",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparative-research-priority",
+      "primaryVerification": "Gleaners Southeast Michigan food supply/current giving; ordinary gift not assumed matched or all-health.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.gcfb.org",
+          "finalUrl": "https://www.gcfb.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:40.408Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.gcfb.org/give-now/",
+          "finalUrl": "https://www.gcfb.org/give-now/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:40.408Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:gleaners-community-food-bank-of-southeastern-michigan",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 92,
+      "id": "detroit-forgotten-harvest",
+      "name": "Forgotten Harvest",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Forgotten Harvest Metro Detroit rescue/distribution and named gift; September match requires remaining capacity check.",
+      "boundaryFips": [
+        "26125"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.forgottenharvest.org",
+          "finalUrl": "https://www.forgottenharvest.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:40.005Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.forgottenharvest.org/donate/",
+          "finalUrl": "https://www.forgottenharvest.org/donate/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:40.005Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:forgotten-harvest",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 93,
+      "id": "detroit-hope-clinic",
+      "name": "Hope Clinic",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparative-research-priority",
+      "primaryVerification": "Hope Clinic primary Westland clinical delivery and Hope Medical Clinic Inc. EIN; no all-local attribution from Ypsilanti HQ.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://thehopeclinic.org/westland",
+          "finalUrl": "https://thehopeclinic.org/westland",
+          "status": 200,
+          "artifact": "/tmp/detroit-followup-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://thehopeclinic.org/donate-1",
+          "finalUrl": "https://thehopeclinic.org/donate-1",
+          "status": 200,
+          "artifact": "/tmp/detroit-followup-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:hope-clinic",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 94,
+      "id": "detroit-province-of-st-joseph-of-the-capuchin-order-soup-kitchen-designation",
+      "name": "Province of St. Joseph of the Capuchin Order — Soup Kitchen designation",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Primary Capuchin FAQ confirms shared Province EIN/c3; Detroit service center and monetary giving independently verified.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [],
+      "independentBrowserEvidence": [
+        {
+          "url": "https://www.cskdetroit.org/donate/faq/",
+          "finding": "All ministries share Province EIN/c3.",
+          "retrieved": "2026-09-14",
+          "mechanism": "web primary page or explicit indexed primary source; search dates are crawl dates, not new operations dates"
+        },
+        {
+          "url": "https://www.cskdetroit.org/locations/capuchin-services-center/",
+          "finding": "Current Detroit food/material support location.",
+          "retrieved": "2026-09-14",
+          "mechanism": "web primary page or explicit indexed primary source; search dates are crawl dates, not new operations dates"
+        }
+      ],
+      "payee": "ein:38-1525161",
+      "payeeQualification": "Exact identifier on named primary page; original financial audit pending.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 95,
+      "id": "detroit-detroit-black-community-food-sovereignty-network",
+      "name": "Detroit Black Community Food Sovereignty Network",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "DBCFSN Detroit farm/education and official linked eTapestry campaign; food co-op is not extra recipient.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.dbcfsn.org",
+          "finalUrl": "https://www.dbcfsn.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:40.608Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://app.etapestry.com/onlineforms/DetroitBlackCommunityFoodSecu/donation-20.html",
+          "finalUrl": "https://app.etapestry.com/onlineforms/DetroitBlackCommunityFoodSecu/donation-20.html",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:40.608Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:detroit-black-community-food-sovereignty-network",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 96,
+      "id": "detroit-keep-growing-detroit",
+      "name": "Keep Growing Detroit",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Keep Growing Detroit own EIN and unrestricted gift instructions; Detroit food-sovereignty programs.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.detroitagriculture.net",
+          "finalUrl": "https://www.detroitagriculture.net/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:40.466Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.detroitagriculture.net/donatehere",
+          "finalUrl": "https://www.detroitagriculture.net/donatehere",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:40.466Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "ein:80-0892277",
+      "payeeQualification": "Exact identifier on named primary page; original financial audit pending.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 97,
+      "id": "detroit-brilliant-cities-detroit-program",
+      "name": "Brilliant Cities — Detroit program",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Brilliant Cities site gives separate Detroit designation; link narrowed to Detroit giving, broader corporate perimeter still explicit.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://brilliantdetroit.org",
+          "finalUrl": "https://brilliantcities.org/detroit/",
+          "status": 200,
+          "artifact": "/tmp/detroit-primary-retrieval.json",
+          "originalRetrievalAt": "2026-09-14T08:20:41.854Z",
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [
+        {
+          "url": "https://brilliantcities.org/donate-brilliant-detroit/",
+          "finding": "Named Detroit gift designation distinct from Cities gift.",
+          "retrieved": "2026-09-14",
+          "mechanism": "web primary page or explicit indexed primary source; search dates are crawl dates, not new operations dates"
+        }
+      ],
+      "payee": "org:brilliant-cities-detroit-program",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official Detroit-specific designation; broader Cities choice remains distinct. Exact tax/legal perimeter must be reconciled at alpha; no transaction performed."
+    },
+    {
+      "ordinal": 98,
+      "id": "detroit-matrix-human-services",
+      "name": "Matrix Human Services",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Independent HHS 2026 awards verify current Matrix Detroit/Wayne early-childhood/HIV work; legislature confirms EIN, not requested award realization.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [],
+      "independentBrowserEvidence": [
+        {
+          "url": "https://taggs.hhs.gov/Detail/RecipDetail?arg_EntityId=eRfM%2F6hlMsK0ugKBLFtvAA%3D%3D",
+          "finding": "Federal funder current 2026 Matrix Detroit/Wayne clinical/early childhood awards.",
+          "retrieved": "2026-09-14",
+          "mechanism": "web primary page or explicit indexed primary source; search dates are crawl dates, not new operations dates"
+        },
+        {
+          "url": "https://senate.michigan.gov/information/legislatively-directed-spending-items/2026/matrix-human-servies/",
+          "finding": "Original appropriations request names legal recipient/EIN; requested funds not realized award.",
+          "retrieved": "2026-09-14",
+          "mechanism": "web primary page or explicit indexed primary source; search dates are crawl dates, not new operations dates"
+        }
+      ],
+      "payee": "ein:38-1358015",
+      "payeeQualification": "Exact EIN in original 2026 Michigan Senate recipient request; original full financial audit remains future.",
+      "routeStatus": "Named intermediary giving profile; recipient-owned checkout not claimed. Assess intermediary fees and recipient allocation before donation."
+    },
+    {
+      "ordinal": 99,
+      "id": "detroit-fish-and-loaves-community-food-pantry",
+      "name": "Fish and Loaves Community Food Pantry",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Fish & Loaves Taylor/Wayne client-choice pantry and own c3/EIN; undated October emergency appeal not assumed September 2026 demand.",
+      "boundaryFips": [
+        "26163"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://flcfp.org/",
+          "finalUrl": "https://www.flcfp.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-final-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.flcfp.org/donate.html",
+          "finalUrl": "https://www.flcfp.org/donate.html",
+          "status": 200,
+          "artifact": "/tmp/detroit-last-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:fish-and-loaves-community-food-pantry",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    },
+    {
+      "ordinal": 100,
+      "id": "detroit-blue-water-community-action",
+      "name": "Blue Water Community Action",
+      "disposition": "accepted-discovery",
+      "selectionDisposition": "accepted-comparison-alternative",
+      "primaryVerification": "Blue Water CAA Port Huron/St Clair housing/utilities/food and named monetary giving; driveway work not closure.",
+      "boundaryFips": [
+        "26147"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.bwcaa.org",
+          "finalUrl": "https://www.bwcaa.org/",
+          "status": 200,
+          "artifact": "/tmp/detroit-followup-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        },
+        {
+          "url": "https://www.bwcaa.org/donate/",
+          "finalUrl": "https://www.bwcaa.org/donate/",
+          "status": 200,
+          "artifact": "/tmp/detroit-followup-retrieval.json",
+          "originalRetrievalAt": null,
+          "originalRetrievalDate": "2026-09-14",
+          "retainedBodyReviewed": true
+        }
+      ],
+      "independentBrowserEvidence": [],
+      "payee": "org:blue-water-community-action",
+      "payeeQualification": "Named operating recipient and route screened; exact tax crosswalk remains an alpha prerequisite.",
+      "routeStatus": "Official named giving page, contact instructions, or outbound form observed; no transaction executed. Some payment forms require scripts."
+    }
+  ],
+  "comparativeAcceptance": {
+    "status": "accepted-research-selection-not-endorsement",
+    "all100Compared": true,
+    "cohorts": [
+      {
+        "id": "clinical",
+        "members": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          40,
+          80,
+          93
+        ],
+        "selected": [
+          4,
+          6,
+          7,
+          13,
+          40,
+          93
+        ],
+        "comparison": "HUDA, Burnstein and FernCare offer relatively legible uninsured clinical access; Community First adds outer-metro access, Hope Clinic adds documented Westland care, and ACCESS adds differentiated language/community reach despite a broad portfolio. CHASS, Covenant, Advantage, MyCare and Honor are close integrated-care alternatives, with larger public/payer scope to resolve. SAY, World Medical Relief, Leader Dogs, Bear Lake and St. Patrick retain distinct mechanisms but substantial wider-scope, mobility/recreation or donated-resource attribution questions. Selection is research tractability and potential, not measured superior efficacy."
+      },
+      {
+        "id": "hiv",
+        "members": [
+          16,
+          17,
+          18
+        ],
+        "selected": [
+          16,
+          18
+        ],
+        "comparison": "Corktown and Ruth Ellis are prioritized for differentiated local health and vulnerable-population access. Vivent’s current Metro Detroit delivery is a strong reserve, but the national merged payee and pharmacy/public HIV financing complicate a local ordinary-gift model. Clinical partner overlap, PrEP retention, viral suppression and housing links must not be added as independent full effects."
+      },
+      {
+        "id": "recovery",
+        "members": [
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27
+        ],
+        "selected": [
+          21,
+          22,
+          23
+        ],
+        "comparison": "Detroit Recovery Project, Harm Reduction Michigan and Face Addiction Now prioritize concrete local overdose/recovery pathways. CARE and Mariners Inn are close treatment/peer alternatives; SHAR and Rescue Mission remain relevant full-service comparators. Actual added high-risk delivery, alternative rescue, treatment retention, public naloxone and finite post-rescue survival determine value—not one kit, contact or rescue equals a life."
+      },
+      {
+        "id": "mental",
+        "members": [
+          19,
+          20,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39
+        ],
+        "selected": [
+          29,
+          36
+        ],
+        "comparison": "Common Ground and Starfish prioritize crisis access and delivered child/family clinical pathways. Hegira, Judson, Children’s Center, Oakland Family Services, Guidance Center, MiSide and Macomb Family Services are strong clinical reserves with public/payer and broad-portfolio constraints. Affirmations offers differentiated LGBTQ therapy, Gilda’s cancer support, Gesher residential/community support, and Rose Hill Foundation a clinical-provider funding route requiring full leveraged costs. Counseling sessions, social support and residential days are not interchangeable health units."
+      },
+      {
+        "id": "maternal",
+        "members": [
+          41,
+          42,
+          45,
+          46,
+          47,
+          48
+        ],
+        "selected": [
+          41,
+          42
+        ],
+        "comparison": "BMBFA and Birth Detroit prioritize concrete perinatal support and clinical delivery. PPMI is a strong direct-clinical reserve whose current funding/legal changes require early attention; Mothering Justice and MOASH provide longer policy/training pathways, while Detroit Parent Network supports family capacity. Do not assume midwife attendance or breastfeeding contact produces a fixed mortality gain; substitution, clinical safety and finite maternal/infant effects matter."
+      },
+      {
+        "id": "housing",
+        "members": [
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          90,
+          100
+        ],
+        "selected": [
+          56
+        ],
+        "comparison": "HOPE’s recuperative shelter creates a particularly testable health pathway. Wayne Metro, Cass, COTS, Phoenix, Covenant House, Lighthouse, NSO, SOCH, Community Housing Network, Noah, Samaritas, OLHSA, MCREST, Livingston Catholic and Blue Water are substantive differentiated alternatives. Their wider bundles, public contracts, rental/capital transfers and overlapping clinical partners make shelter or rent counts insufficient for ranking. No outer-county or youth population is judged less deserving."
+      },
+      {
+        "id": "survivor",
+        "members": [
+          44,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69
+        ],
+        "selected": [
+          63,
+          64,
+          66
+        ],
+        "comparison": "Turning Point, HAVEN and LACASA prioritize geographically differentiated survivor services with plausible clinical/safety pathways. First Step, Blue Water Safe Horizons, LACADA, Alternatives for Girls and MCEDSV remain close alternatives, including coalition and specialized youth work. Public victim-service funding, counterfactual shelter/legal access, repeat users and adverse safety responses require explicit modeling."
+      },
+      {
+        "id": "legal",
+        "members": [
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79
+        ],
+        "selected": [
+          70,
+          72,
+          74
+        ],
+        "comparison": "DJC, UCHC and Lakeshore prioritize direct legal/housing links while retaining systemic leverage. Michigan Legal Services, Legal Aid and Defender, MAP and Disability Rights Michigan are strong alternative legal pathways; Freedom House adds humanitarian stabilization, Sugar Law worker protections and MLPP policy. Consolidate affiliated programs, include public right-to-counsel and implementation response, and never translate recovered dollars one-for-one into QALYs."
+      },
+      {
+        "id": "environment",
+        "members": [
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89
+        ],
+        "selected": [
+          82,
+          83
+        ],
+        "comparison": "We the People of Detroit and Detroit Greenways prioritize locally traceable water access and injury/exposure pathways. DWEJ, Freshwater Future, MEC, Ecology Center, Clean Water Fund, EMEAC and Friends of the Rouge retain policy/exposure and ecological alternatives with larger coalition, geographic or biological-translation burdens. Public capital and regulation would continue in the counterfactual; all climate/national/watershed benefits are not local."
+      },
+      {
+        "id": "nutrition",
+        "members": [
+          9,
+          43,
+          91,
+          92,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99
+        ],
+        "selected": [
+          91
+        ],
+        "comparison": "Gleaners’ healthcare/nutrition initiatives merit the first clinical-food comparison; Forgotten Harvest is the close food-rescue alternative. Baldwin, Focus HOPE, Capuchin, DBCFSN, Keep Growing Detroit, Brilliant Cities, Matrix and Fish and Loaves offer distinct access/community pathways. Banking, rescue, pantry and consumption are linked stages, not each entitled to all health. Broad social portfolios and public food replacement remain in scope."
+      }
+    ],
+    "independentJudgment": "The 25 retain differentiated clinical access, overdose/recovery, maternal, crisis/child health, recuperative shelter, survivor safety, legal/housing, water, safe-streets and nutrition hypotheses. Comparable FQHC/behavioral/shelter/legal/food alternatives remain visible, not disqualified as ineffective. Common Ground remains for surviving pathways after correction. Six county scope is a minimum eligible-service/policy intersection, not a county quota or proof all six counties are represented among the 25. Lapeer camp/shelter alternatives are retained, while comparative selection prioritizes mechanism tractability; not every candidate is already high cost-effectiveness.",
+    "alphaGates": [
+      "Reconcile exact legal recipient/EIN and affiliates for every full financial denominator; brand/group screens do not certify consolidated tax perimeter.",
+      "Three years full expenses, payer/public grants, donated resources and partner costs.",
+      "Current post-transition operating capacity; funding requests or large grants are not ordinary-gift additionality.",
+      "Local resident benefit allocation independent of headquarters and state/national reach.",
+      "Clinical/policy counterfactuals, finite health, overlap, implementation and zero/harm scenarios.",
+      "Recheck actual giving allocation/fees/checkout before any donor recommendation; intermediary profiles are not opted-in recipient donation pages."
+    ]
+  },
+  "provenanceNotes": [
+    "All 100 records were evaluated, not a sample. Author retained primary bodies were reused and read independently; gaps were independently browsed.",
+    "Known primary tax IDs were optionally enriched only where seen. Unknown EIN is permitted at discovery, but not silently certified.",
+    "No original proposal file changed, no Site/Git/outreach, no nested agents or credit reassignment.",
+    "Author discovery intervals are preserved in original proposals and are not added to independent audit or future Operation Access beta time."
+  ]
+}

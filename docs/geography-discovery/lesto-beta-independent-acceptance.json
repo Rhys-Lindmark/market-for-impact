@@ -1,0 +1,648 @@
+{
+  "status": "accepted-with-accounting-clarifications",
+  "inputFile": "/tmp/givebetter-la-beta-lestonnac.json",
+  "inputSHA256": "cea2e084a0a394ace1392a89644d1209fc4006c3586916a11382465e6a5d435f",
+  "authorWorkerId": "usa_beta_one",
+  "independentAuditorWorkerId": "seattle_acceptance",
+  "auditInterval": {
+    "startedAt": "2026-09-14T08:59:20Z",
+    "endedAt": "2026-09-14T09:02:32.892Z",
+    "seconds": 192.892,
+    "model": "GPT-6 Astra Medium",
+    "reportCreditMinutes": 0,
+    "note": "Independent review interval only; original author research sessions unchanged and no new report/research credit."
+  },
+  "acceptedSession": {
+    "id": "la-beta-lestonnac-20260914-medium",
+    "organizationId": "org:lestonnac-free-clinic",
+    "stage": "beta",
+    "phase": "research",
+    "workerId": "usa_beta_one",
+    "startedAt": "2026-09-14T08:46:19Z",
+    "endedAt": "2026-09-14T08:57:06.385Z",
+    "evidence": "Actual focused additional research: reread three original returns and Schedules D/O, discovered omitted donated-service costs, checked current center/mobile operations and public coverage baseline, reviewed finite clinical transfer evidence, rebuilt whole-clinical-portfolio resource model and stress scenarios, and wrote donor-facing explanation. Earlier accepted author intervals retained, not recounted. No padding, outreach, installs, Site or Git edits. Metadata assembly after this stop is not research credit.",
+    "model": {
+      "id": "gpt-6-astra",
+      "name": "GPT-6 Astra Medium",
+      "reasoningEffort": "medium",
+      "evidence": "Parent-assigned Medium beta researcher."
+    }
+  },
+  "exactCorrections": [
+    {
+      "id": "not-pure-cash",
+      "severity": "clarification",
+      "target": "sections.cost / summary.strengths / cash-only scenario label",
+      "before": "cash/gross-accounting-only",
+      "after": "gross-accounting cost excluding separately disclosed donated services",
+      "reason": "Part IX includes depreciation and may include donated goods. The narrower series is not cash expenditure. Numeric results unchanged."
+    },
+    {
+      "id": "donated-service-inference",
+      "severity": "clarification",
+      "target": "sections.cost expense appendix",
+      "before": "Equal Schedule O donated-service income and expense, no explicit IRS exclusion rationale.",
+      "after": "Explain IRS Parts VIII/IX exclusion rule and detailed Part IX row check; valuation remains filer-reported, not independent GAAP verification.",
+      "reason": "Schedule O net-zero wording alone is not an audited expense bridge. The rule and detailed row perimeter support adding it once."
+    },
+    {
+      "id": "contractor-rounding",
+      "severity": "disclosure",
+      "target": "sections.cost unresolved accounting",
+      "before": "Other contractor total531382 without component reconciliation.",
+      "after": "Schedule O components283760+184547+63074=531381, a $1 difference from stated531382; retain filed Part IX total.",
+      "reason": "Original source inconsistency, no silent adjustment or extra cost."
+    }
+  ],
+  "financialVerification": {
+    "finance": [
+      {
+        "year": 2022,
+        "partIX": 3378797,
+        "eventDirectCost": 50553,
+        "donatedServices": 2922330,
+        "resourceBridge": 6351680
+      },
+      {
+        "year": 2023,
+        "partIX": 4165218,
+        "eventDirectCost": 35118,
+        "donatedServices": 3369000,
+        "resourceBridge": 7569336
+      },
+      {
+        "year": 2024,
+        "partIX": 4655295,
+        "eventDirectCost": 40258,
+        "donatedServices": 2588300,
+        "resourceBridge": 7283853
+      }
+    ],
+    "mean": 7068289.666666667,
+    "conclusion": "Add disclosed donated services once. IRS excludes them from Parts VIII/IX; Schedule O names annual equal income and expense; Part IX itemization has no separately matching services value. No evidence of double-counting was found. This does not independently validate the filer valuation or eliminate broader filing ambiguities.",
+    "eventAddback": "Part IX explicitly excludes Part VIII direct event costs. Each source amount retained once.",
+    "noOtherAddback": "No automatic addition of inventory/net-assets adjustments, already included supplies/labs, paid compensation, contractor services, depreciation or gross capital purchases.",
+    "currentLimit": "2024 accounting precedes surgery-center opening; no current cost or donor margin inferred."
+  },
+  "modelVerification": {
+    "scenarioCount": 18,
+    "method": "Independent 10,000-interval midpoint quadrature per branch, directly discounting survival and decay; recomputed all18 scenario all/local Q and prices from explicit parameters.",
+    "checks": [
+      {
+        "id": "central",
+        "branch": [
+          {
+            "name": "medical",
+            "numericalQ": 0.01538672777934778
+          },
+          {
+            "name": "dental",
+            "numericalQ": 0.021989124977674145
+          },
+          {
+            "name": "vision",
+            "numericalQ": 0.030244212579357138
+          },
+          {
+            "name": "surgery",
+            "numericalQ": 0.19338337767842434
+          }
+        ],
+        "allPopulationQalys": 25.64555086646109,
+        "editionQalys": 16.66960806319971,
+        "price": 4369540.646897413,
+        "absoluteQError": 1.4859011798762367e-9
+      },
+      {
+        "id": "poor",
+        "branch": [
+          {
+            "name": "medical",
+            "numericalQ": 0.0018686919678273662
+          },
+          {
+            "name": "dental",
+            "numericalQ": 0.008795649991069637
+          },
+          {
+            "name": "vision",
+            "numericalQ": 0.003372154283615862
+          },
+          {
+            "name": "surgery",
+            "numericalQ": 0.0078522878900431
+          }
+        ],
+        "allPopulationQalys": -0.1539264322176436,
+        "editionQalys": -0.061570572887057445,
+        "price": null,
+        "absoluteQError": 2.2494159312991258e-12
+      },
+      {
+        "id": "favorable",
+        "branch": [
+          {
+            "name": "medical",
+            "numericalQ": 0.02308009166902168
+          },
+          {
+            "name": "dental",
+            "numericalQ": 0.032983687466511126
+          },
+          {
+            "name": "vision",
+            "numericalQ": 0.045366318869035846
+          },
+          {
+            "name": "surgery",
+            "numericalQ": 0.2900750665176356
+          }
+        ],
+        "allPopulationQalys": 139.49140445608558,
+        "editionQalys": 125.54226401047703,
+        "price": 580191.3050884706,
+        "absoluteQError": 1.0580947673588526e-8
+      },
+      {
+        "id": "zero",
+        "branch": [
+          {
+            "name": "medical",
+            "numericalQ": 0.01538672777934778
+          },
+          {
+            "name": "dental",
+            "numericalQ": 0.021989124977674145
+          },
+          {
+            "name": "vision",
+            "numericalQ": 0.030244212579357138
+          },
+          {
+            "name": "surgery",
+            "numericalQ": 0.19338337767842434
+          }
+        ],
+        "allPopulationQalys": 0,
+        "editionQalys": 0,
+        "price": null,
+        "absoluteQError": 0
+      },
+      {
+        "id": "harm",
+        "branch": [
+          {
+            "name": "medical",
+            "numericalQ": 0.01538672777934778
+          },
+          {
+            "name": "dental",
+            "numericalQ": 0.021989124977674145
+          },
+          {
+            "name": "vision",
+            "numericalQ": 0.030244212579357138
+          },
+          {
+            "name": "surgery",
+            "numericalQ": 0.19338337767842434
+          }
+        ],
+        "allPopulationQalys": -17.5,
+        "editionQalys": -11.375,
+        "price": null,
+        "absoluteQError": 0
+      },
+      {
+        "id": "no-local",
+        "branch": [
+          {
+            "name": "medical",
+            "numericalQ": 0.01538672777934778
+          },
+          {
+            "name": "dental",
+            "numericalQ": 0.021989124977674145
+          },
+          {
+            "name": "vision",
+            "numericalQ": 0.030244212579357138
+          },
+          {
+            "name": "surgery",
+            "numericalQ": 0.19338337767842434
+          }
+        ],
+        "allPopulationQalys": 25.64555086646109,
+        "editionQalys": 0,
+        "price": null,
+        "absoluteQError": 0
+      },
+      {
+        "id": "cash-only",
+        "branch": [
+          {
+            "name": "medical",
+            "numericalQ": 0.01538672777934778
+          },
+          {
+            "name": "dental",
+            "numericalQ": 0.021989124977674145
+          },
+          {
+            "name": "vision",
+            "numericalQ": 0.030244212579357138
+          },
+          {
+            "name": "surgery",
+            "numericalQ": 0.19338337767842434
+          }
+        ],
+        "allPopulationQalys": 25.64555086646109,
+        "editionQalys": 16.66960806319971,
+        "price": 2816834.674335285,
+        "absoluteQError": 1.4859011798762367e-9
+      },
+      {
+        "id": "services-half",
+        "branch": [
+          {
+            "name": "medical",
+            "numericalQ": 0.01538672777934778
+          },
+          {
+            "name": "dental",
+            "numericalQ": 0.021989124977674145
+          },
+          {
+            "name": "vision",
+            "numericalQ": 0.030244212579357138
+          },
+          {
+            "name": "surgery",
+            "numericalQ": 0.19338337767842434
+          }
+        ],
+        "allPopulationQalys": 25.64555086646109,
+        "editionQalys": 16.66960806319971,
+        "price": 3593187.6606163494,
+        "absoluteQError": 1.4859011798762367e-9
+      },
+      {
+        "id": "services-one-half",
+        "branch": [
+          {
+            "name": "medical",
+            "numericalQ": 0.01538672777934778
+          },
+          {
+            "name": "dental",
+            "numericalQ": 0.021989124977674145
+          },
+          {
+            "name": "vision",
+            "numericalQ": 0.030244212579357138
+          },
+          {
+            "name": "surgery",
+            "numericalQ": 0.19338337767842434
+          }
+        ],
+        "allPopulationQalys": 25.64555086646109,
+        "editionQalys": 16.66960806319971,
+        "price": 5145893.633178477,
+        "absoluteQError": 1.4859011798762367e-9
+      },
+      {
+        "id": "cost-growth",
+        "branch": [
+          {
+            "name": "medical",
+            "numericalQ": 0.01538672777934778
+          },
+          {
+            "name": "dental",
+            "numericalQ": 0.021989124977674145
+          },
+          {
+            "name": "vision",
+            "numericalQ": 0.030244212579357138
+          },
+          {
+            "name": "surgery",
+            "numericalQ": 0.19338337767842434
+          }
+        ],
+        "allPopulationQalys": 25.64555086646109,
+        "editionQalys": 16.66960806319971,
+        "price": 6554310.97034612,
+        "absoluteQError": 1.4859011798762367e-9
+      },
+      {
+        "id": "half-unique",
+        "branch": [
+          {
+            "name": "medical",
+            "numericalQ": 0.01538672777934778
+          },
+          {
+            "name": "dental",
+            "numericalQ": 0.021989124977674145
+          },
+          {
+            "name": "vision",
+            "numericalQ": 0.030244212579357138
+          },
+          {
+            "name": "surgery",
+            "numericalQ": 0.19338337767842434
+          }
+        ],
+        "allPopulationQalys": 12.822775433230545,
+        "editionQalys": 8.334804031599855,
+        "price": 8739081.293794826,
+        "absoluteQError": 7.429505899381184e-10
+      },
+      {
+        "id": "weak-response",
+        "branch": [
+          {
+            "name": "medical",
+            "numericalQ": 0.01538672777934778
+          },
+          {
+            "name": "dental",
+            "numericalQ": 0.021989124977674145
+          },
+          {
+            "name": "vision",
+            "numericalQ": 0.030244212579357138
+          },
+          {
+            "name": "surgery",
+            "numericalQ": 0.19338337767842434
+          }
+        ],
+        "allPopulationQalys": 7.327300247560311,
+        "editionQalys": 4.762745160914203,
+        "price": 15293392.264140949,
+        "absoluteQError": 4.2454306736772196e-10
+      },
+      {
+        "id": "strong-response",
+        "branch": [
+          {
+            "name": "medical",
+            "numericalQ": 0.01538672777934778
+          },
+          {
+            "name": "dental",
+            "numericalQ": 0.021989124977674145
+          },
+          {
+            "name": "vision",
+            "numericalQ": 0.030244212579357138
+          },
+          {
+            "name": "surgery",
+            "numericalQ": 0.19338337767842434
+          }
+        ],
+        "allPopulationQalys": 51.29110173292218,
+        "editionQalys": 33.33921612639942,
+        "price": 2184770.3234487064,
+        "absoluteQError": 2.9718023597524734e-9
+      },
+      {
+        "id": "no-surgery",
+        "branch": [
+          {
+            "name": "medical",
+            "numericalQ": 0.01538672777934778
+          },
+          {
+            "name": "dental",
+            "numericalQ": 0.021989124977674145
+          },
+          {
+            "name": "vision",
+            "numericalQ": 0.030244212579357138
+          },
+          {
+            "name": "surgery",
+            "numericalQ": 0
+          }
+        ],
+        "allPopulationQalys": 20.907658113339693,
+        "editionQalys": 13.589977773670801,
+        "price": 5359723.997571007,
+        "absoluteQError": 1.2275940264316887e-9
+      },
+      {
+        "id": "short-wait",
+        "branch": [
+          {
+            "name": "medical",
+            "numericalQ": 0.00467172991956841
+          },
+          {
+            "name": "dental",
+            "numericalQ": 0.021989124977674145
+          },
+          {
+            "name": "vision",
+            "numericalQ": 0.008430385709039607
+          },
+          {
+            "name": "surgery",
+            "numericalQ": 0.01963071972510775
+          }
+        ],
+        "allPopulationQalys": 8.848503013334662,
+        "editionQalys": 5.75152695866753,
+        "price": 12664207.352837423,
+        "absoluteQError": 1.1194423166216438e-10
+      },
+      {
+        "id": "high-competing-mortality",
+        "branch": [
+          {
+            "name": "medical",
+            "numericalQ": 0.014841287806642697
+          },
+          {
+            "name": "dental",
+            "numericalQ": 0.02178020290586455
+          },
+          {
+            "name": "vision",
+            "numericalQ": 0.029124046517945017
+          },
+          {
+            "name": "surgery",
+            "numericalQ": 0.17346652926006373
+          }
+        ],
+        "allPopulationQalys": 24.47138367132634,
+        "editionQalys": 15.906399386362121,
+        "price": 4579196.600737344,
+        "absoluteQError": 2.1269226380127293e-9
+      },
+      {
+        "id": "rapid-decay",
+        "branch": [
+          {
+            "name": "medical",
+            "numericalQ": 0.010166227448159863
+          },
+          {
+            "name": "dental",
+            "numericalQ": 0.019562147330239713
+          },
+          {
+            "name": "vision",
+            "numericalQ": 0.019589092728171255
+          },
+          {
+            "name": "surgery",
+            "numericalQ": 0.06737975026977493
+          }
+        ],
+        "allPopulationQalys": 15.908611762326101,
+        "editionQalys": 10.340597645511966,
+        "price": 7043938.125918034,
+        "absoluteQError": 1.2534687954257606e-8
+      },
+      {
+        "id": "larger-burden",
+        "branch": [
+          {
+            "name": "medical",
+            "numericalQ": 0.01538672777934778
+          },
+          {
+            "name": "dental",
+            "numericalQ": 0.021989124977674145
+          },
+          {
+            "name": "vision",
+            "numericalQ": 0.030244212579357138
+          },
+          {
+            "name": "surgery",
+            "numericalQ": 0.19338337767842434
+          }
+        ],
+        "allPopulationQalys": 9.89555086646109,
+        "editionQalys": 6.432108063199708,
+        "price": 11324208.06434117,
+        "absoluteQError": 1.4859029562330761e-9
+      }
+    ],
+    "maxAbsoluteQError": 1.2534687954257606e-8,
+    "centralPrice": 4369540.646897413,
+    "judgmentAccepted": "Finite mutually exclusive four-package model, funding response b separate from clinically effective fraction e, no duplicate program health, harms on all added packages, zero and negative results preserved. Central accepted as explicit partial-health judgment, not measured CE or donor-ready endorsement."
+  },
+  "geographyVerification": {
+    "boundary": "Los Angeles and Orange counties only; Riverside/San Bernardino excluded",
+    "hours": {
+      "localApprox": 99,
+      "outsideFixedApprox": 42.4,
+      "outsideMobile": 12,
+      "proxy": 0.6453715775749674
+    },
+    "conclusion": "Published .65 is a rounded schedule-informed prior, not a measured beneficiary fraction; mixed-age web page and cross-county flow caveats adequate. No precise revised throughput inferred."
+  },
+  "primaryEvidence": [
+    {
+      "source": "Original 2022 IRS990 and Schedule O through IRS e-file reconstruction",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202343179349311669/IRS990ScheduleO",
+      "verification": "Independently downloaded original reconstructed return/schedule. Annual disclosed services and detailed expense perimeter checked; separate events agree."
+    },
+    {
+      "source": "Original 2023 IRS990 and Schedule O through IRS e-file reconstruction",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202413049349301991/IRS990ScheduleO",
+      "verification": "Independently downloaded original reconstructed return/schedule. Annual disclosed services and detailed expense perimeter checked; separate events agree."
+    },
+    {
+      "source": "Original 2024 IRS990 and Schedule O through IRS e-file reconstruction",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202543009349302119/IRS990ScheduleO",
+      "verification": "Independently downloaded original reconstructed return/schedule. Annual disclosed services and detailed expense perimeter checked; separate events agree."
+    },
+    {
+      "url": "https://www.irs.gov/instructions/i990",
+      "verification": "Primary reporting rule excludes donated services from Parts VIII/IX; not a claim this unaudited filer perfectly follows every rule."
+    },
+    {
+      "url": "https://www.lestonnacfreeclinic.org/medical",
+      "verification": "Riverside mobile two six-hour days; site mixes older service statistics, explicitly not treated as current measured throughput."
+    },
+    {
+      "url": "https://www.lestonnacfreeclinic.org/contactus",
+      "verification": "Current listed schedules partition LA/Orange from Inland Empire; recomputed rough hours proxy."
+    },
+    {
+      "url": "https://www.hoaghospitalfoundation.org/hoag-and-lestonnac-free-clinic-expand-free-surgical-care-in-orange-county.html",
+      "verification": "July3,2026 partner account confirms May2025 center and equipment/supply/operating support; no realized case count or gift offer."
+    },
+    {
+      "url": "https://www.lestonnacfreeclinic.org/aar2026",
+      "verification": "75% funding secured, future2000 exams/glasses; neither unrestricted promise nor fourfold match."
+    },
+    {
+      "url": "https://www.dhcs.ca.gov/services/medi-cal-dental-benefit-changes/",
+      "verification": "Current original notice delays specified dental cut to July1,2027; preserves emergencies and exemptions."
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17998508/",
+      "verification": "Primary glasses trial abstract: nursing-home immediate versus2-month delayed correction, no generic utility estimate."
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39325552/",
+      "verification": "Primary dental trial abstract: two active endodontic treatments and7-day outcomes, not no-care effect."
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17585002/",
+      "verification": "PubMed empty retrieval here; exact first-eye cataract result reused from independently checked OA/source audit and linked primary PMC2095519.0.056integratedfirst-year, not annual lifetime gain."
+    }
+  ],
+  "sourceRetrievalArtifacts": [
+    {
+      "file": "/tmp/lestonnac-audit-2022.html",
+      "sha256": "f2fccbcd5efedd91fa3f5cb4a1274036551d769a3298992d7525c6074891383a"
+    },
+    {
+      "file": "/tmp/lestonnac-audit-2023.html",
+      "sha256": "c4b8cf5e2244d7a437414cfcc2c91a3703fb8c392b1fa666931fa67fc42fe3c3"
+    },
+    {
+      "file": "/tmp/lestonnac-audit-2024.html",
+      "sha256": "4c40665d4afd292ccf4491a6103dcf279d09b9a8ed21815f4204837e701b1aed"
+    },
+    {
+      "file": "/tmp/lestonnac-audit-o2022.html",
+      "sha256": "70f364a2424de9db09b5cb91ceaf240703f85bb70cc2b4cfa561afa6e327bd97"
+    },
+    {
+      "file": "/tmp/lestonnac-audit-o2023.html",
+      "sha256": "a307ed7de0ec26bd16698f93e86092e9b3ebe189ac2d81b0e635db33a8265330"
+    },
+    {
+      "file": "/tmp/lestonnac-audit-o2024.html",
+      "sha256": "529b7372f899cde42c6c013b88039171e89f686f10268fa866e3c9d40ea6eb48"
+    }
+  ],
+  "sourceReuse": "Prior accepted Oregon/identity/financial context reused; decisive newly added Schedule O and all model results checked independently. No site/browser build, transaction, outreach or nested agents.",
+  "remainingResearchQuestions": [
+    "Unique patient geography and actual per-site/mobile throughput, especially LA/Orange versus Riverside/San Bernardino.",
+    "Marginal ordinary-donation budget and the specific clinician/equipment/supply bottleneck it would relax.",
+    "Current 2025–26 costs and completed procedures since surgery-center opening; independent clinical outcomes and complications.",
+    "Clinical treatment mix, completion/adherence, alternative care and sustained utility outcomes.",
+    "Reconciliation of Part III service revenue with Part VIII and explanation of functional accounting classifications.",
+    "Post-2024 original accounts and a reconciled donated-service valuation; explicit annual consumption versus inventory/net-asset adjustments.",
+    "Actual 2025–26 unique surgery types, completed cases, cost and complications; no current realized case count found in targeted primary searches.",
+    "Observed patient-level clinical mix and residence; finite symptom/utility trajectories and alternative-treatment delays."
+  ],
+  "donorReady": false,
+  "publicationBlockers": []
+}

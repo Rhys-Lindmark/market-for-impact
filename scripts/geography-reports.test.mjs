@@ -25,7 +25,8 @@ test('Operation Access scenarios reproduce from the published input ledger',()=>
  });
  assert.equal(paths.length,21);
  for(const scenario of report.model.scenarios){
-  const match=scenario.assumptions.match(/Override central inputs with (\{.*\})\. All direct/);
+  const match=scenario.assumptions.match(/Overrides on beta central vector: (\{.*\})\. California share/);
+  assert.ok(match,'Every scenario must carry its exact overrides');
   const result=calculateOa({foundation:{central_inputs},paths},match?JSON.parse(match[1]):{});
   assert.ok(Math.abs(result.total_q-scenario.allPopulationQalys)<1e-10,scenario.id);
   assert.equal(scenario.editionQalys,scenario.allPopulationQalys);

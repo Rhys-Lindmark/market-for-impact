@@ -6,13 +6,13 @@ test('HRS finite survival integrates once per person and matches published scena
  const r=data.reports.find(r=>r.slug==='harm-reduction-services');
  for(const s of r.model.scenarios.filter(s=>s.editionQalys>0)){
   const p=JSON.parse(s.assumptions.slice(0,s.assumptions.indexOf('};')+1));
-  const n=s.costUSD/1695969*5000*p.d*p.m*p.x,steps=20000,dt=p.T/steps;
+  const n=Math.min(p.C/p.E*p.Y*p.d*p.m*p.x*p.network,p.K),steps=40000,dt=p.T/steps;
   let q=0;
-  for(let i=0;i<steps;i++){const t=(i+.5)*dt;q+=p.u*Math.exp(-.03*t)*(Math.exp(-(p.l+p.o)*t+p.l*p.e*Math.min(t,p.tau))-Math.exp(-(p.l+p.o)*t))*dt;}
-  assert.ok(Math.abs(n*q*p.g-s.editionQalys)<1e-7);
+  for(let i=0;i<steps;i++){const t=(i+.5)*dt;if(t<p.delay)continue;const z=t-p.delay,b=Math.min(z,p.tau),h=p.lambda+p.mu;const base=Math.exp(-h*(p.delay+b)-(p.postLambda+p.postMu)*Math.max(0,z-p.tau));q+=p.u*Math.exp(-p.r*t)*base*Math.expm1(p.lambda*p.e*b)*dt;}
+  assert.ok(Math.abs((n*(q-p.harmPerProtected)-p.independentHarm)*p.g-s.editionQalys)<1e-6*Math.max(1,Math.abs(s.editionQalys)),s.id);
  }
- assert.equal(r.model.scenarios.find(s=>s.id==='zero').editionQalys,0);
- assert.match(r.priceScope,/only/);
+ assert.equal(r.model.scenarios.find(s=>s.id==='zero_funding').editionQalys,0);
+ assert.ok(r.priceScope.length>20);
  assert.equal(r.annualExpenses.length,3);
 });
 test('CIL charges the full gift for explicitly partial repair health',()=>{

@@ -17,6 +17,9 @@ test('published research has measured headers, usable models and scoped canonica
   ['new-york-city','new-york-lawyers-for-the-public-interest','New York Lawyers for the Public Interest','4',true],
   ['new-york-city','new-york-city-environmental-justice-alliance','New York City Environmental Justice Alliance','6',true],
   ['new-york-city','new-jersey-harm-reduction-coalition','New Jersey Harm Reduction Coalition','4',true],
+  ['new-york-city','northern-manhattan-perinatal-partnership',"Northern Manhattan Perinatal Partnership",'5',true],
+  ['new-york-city','common-justice',"Common Justice",'6',true],
+  ['new-york-city','newark-community-street-team',"Newark Community Street Team",'6',true],
   ['new-york-city','we-act-for-environmental-justice',"WE ACT for Environmental Justice",'3',true],
   ['new-york-city','the-center-for-great-expectations',"The Center for Great Expectations",'3',true],
   ['new-york-city','new-york-legal-assistance-group',"New York Legal Assistance Group",'4',true],
@@ -59,7 +62,7 @@ test('published research has measured headers, usable models and scoped canonica
   ['usa','toxic-free-future','Toxic-Free Future','12',false],
   ['usa','farmworker-justice','Farmworker Justice','12',false],
   ['usa','earthjustice','Earthjustice','6',false],
-  ['los-angeles','lestonnac-free-clinic','Lestonnac Free Clinic','7',true],
+  ['los-angeles','lestonnac-free-clinic','Lestonnac Free Clinic','18',true],
   ['los-angeles','streets-are-for-everyone','Streets Are For Everyone','11',true],
   ['los-angeles','breathe-southern-california','Breathe Southern California','11',true],
   ['los-angeles','neighborhood-legal-services-los-angeles-county','Neighborhood Legal Services of Los Angeles County','8',true],
@@ -73,15 +76,15 @@ test('published research has measured headers, usable models and scoped canonica
   ['usa','national-health-law-program','National Health Law Program','24',true],
   ['usa','institute-for-safer-trucking','Institute for Safer Trucking','5',true],
   ['usa','us-alcohol-policy-alliance','US Alcohol Policy Alliance','8',true],
-  ['california','harm-reduction-services','Harm Reduction Services','28',true],
+  ['california','harm-reduction-services','Harm Reduction Services','40',true],
   ['usa','national-center-for-healthy-housing','National Center for Healthy Housing','20',true],
-  ['california','operation-access','Operation Access','8',true],
+  ['california','operation-access','Operation Access','21',true],
   ['usa','legal-action-center','Legal Action Center','10',false],
   ['usa','end-overdose','End Overdose','47',true],
   ['california','end-overdose','End Overdose','20',true],
   ['usa','surgery-on-sunday','Surgery on Sunday','19',true],
   ['usa','the-headstrong-project','The Headstrong Project','6',true],
-  ['usa','dental-lifeline-network','Dental Lifeline Network','12',true],
+  ['usa','dental-lifeline-network','Dental Lifeline Network','24',true],
   ['california','homeless-health-care-los-angeles','Homeless Health Care Los Angeles','6',true],
   ['california','western-center-on-law-and-poverty','Western Center on Law & Poverty','11',true],
   ['california','worksafe','WorkSafe','14',true],
@@ -102,7 +105,7 @@ test('published research has measured headers, usable models and scoped canonica
   const route=`/${edition}/charities/${slug}`;
   await page.goto(route);
   await expect(page.getByRole('heading',{name,exact:true})).toBeVisible();
-  const models=(edition==='usa'&&['end-overdose','center-for-science-in-the-public-interest','surgery-on-sunday'].includes(slug))||(edition==='los-angeles'&&slug==='urban-peace-institute')?'GPT-6 Astra Light \\+ GPT-6 Astra Medium':'GPT-6 Astra Light';
+  const models=(edition==='usa'&&['end-overdose','center-for-science-in-the-public-interest','surgery-on-sunday','dental-lifeline-network'].includes(slug))||(edition==='los-angeles'&&['urban-peace-institute','lestonnac-free-clinic'].includes(slug))||(edition==='california'&&['operation-access','harm-reduction-services'].includes(slug))?'GPT-6 Astra Light \\+ GPT-6 Astra Medium':'GPT-6 Astra Light';
   await expect(page.locator('.report-research-effort summary')).toHaveText(new RegExp(`^Research time: ~?${minutes} min on ${models}$`));
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href','https://ai.rhyslindmark.com/givebetter'+route);
   if(donate)await expect(page.locator('.report-donate')).toHaveAttribute('href',/^https:\/\//);
@@ -121,8 +124,8 @@ test('published research has measured headers, usable models and scoped canonica
 });
 test('research table keeps unknown means unknown and shows audited recipient mean',async({page})=>{
  await page.goto('/los-angeles/all');
- await expect(page.locator('tr').filter({hasText:'Lestonnac Free Clinic'})).toContainText('$2.8M');
- await expect(page.locator('tr').filter({hasText:'Lestonnac Free Clinic'})).toContainText('$4.1M');
+ await expect(page.locator('tr').filter({hasText:'Lestonnac Free Clinic'})).toContainText('$4.4M');
+ await expect(page.locator('tr').filter({hasText:'Lestonnac Free Clinic'})).toContainText('$7.1M');
  await expect(page.locator('tr').filter({hasText:'Breathe Southern California'})).toContainText('$428.3M');
  await expect(page.locator('tr').filter({hasText:'Breathe Southern California'})).toContainText('$2.4M');
  await expect(page.locator('tr').filter({hasText:'Climate Resolve'}).getByTitle('Local heat health only; other impacts unestimated')).toHaveText('$14.1M');
@@ -148,7 +151,7 @@ test('research table keeps unknown means unknown and shows audited recipient mea
  await expect(page.locator('tr').filter({hasText:'Legal Action Center'})).toContainText('$8.6M');
  await expect(page.locator('tr').filter({hasText:'Surgery on Sunday'})).toContainText('$405K');
  await expect(page.locator('tr').filter({hasText:'Surgery on Sunday'})).toContainText('Not estimated');
- await expect(page.locator('tr').filter({hasText:'Dental Lifeline Network'})).toContainText('$744K');
+ await expect(page.locator('tr').filter({hasText:'Dental Lifeline Network'})).toContainText('$818K');
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
 });
 test('desktop contents stay left and SF report still renders',async({page})=>{

@@ -1,0 +1,978 @@
+{
+  "status": "accepted-with-precise-labeling-corrections",
+  "retainedSessions": [
+    {
+      "id": "usa-alpha-dental-lifeline-20260913-worker1",
+      "organizationId": "ein:84-6129064",
+      "stage": "alpha",
+      "phase": "research",
+      "workerId": "usa_alpha_one",
+      "startedAt": "2026-09-13T21:29:37Z",
+      "endedAt": "2026-09-13T21:41:37Z",
+      "evidence": "data/geography-reports.json#usa/dental-lifeline-network — original national and affiliate returns, visual annual-report denominator check, current eligibility and grant mechanism, clinical utility evidence, full-support oral-health model and report; contemporaneous checkpoints persisted.",
+      "model": {
+        "id": "gpt-6-astra",
+        "name": "GPT-6 Astra Light",
+        "reasoningEffort": "low",
+        "evidence": "Parent assigned current Astra Light worker; actual gpt-6-astra low."
+      }
+    },
+    {
+      "id": "usa-beta-dental-lifeline-20260914-worker1",
+      "organizationId": "ein:84-6129064",
+      "stage": "beta",
+      "phase": "research",
+      "workerId": "usa_beta_one",
+      "startedAt": "2026-09-14T09:07:18Z",
+      "endedAt": "2026-09-14T09:19:26.254Z",
+      "evidence": "data/geography-reports.json#usa/dental-lifeline-network — additional original six-return accounting, reciprocal reimbursement, completion definitions, current public and private funding, Medicare counterfactual, finite clinical model and donor-facing revision. Earlier alpha evidence reused without new credit.",
+      "model": {
+        "id": "gpt-6-astra",
+        "name": "GPT-6 Astra Medium",
+        "reasoningEffort": "medium",
+        "evidence": "Assigned Astra Medium bounded USA beta worker; actual gpt-6-astra medium."
+      }
+    }
+  ],
+  "corrections": [
+    {
+      "path": "model.formula",
+      "before": "d=ln(1.03); k=d+m+loss+catchup;",
+      "after": "discount=ln(1+d_input), with d_input=.03; k=discount+m+loss+catchup;",
+      "reason": "Avoid using d for both annual percentage input and its logarithm.",
+      "changesCentral": false
+    },
+    {
+      "path": "sections.cost",
+      "before": "An explicit resource scenario adds $2,000 per completed case, $200 per incomplete case and $100 patient travel/time per additional candidate,",
+      "after": "An explicit donor-plus-selected-resource scenario adds $2,000 per completed-care equivalent, $200 per remaining candidate equivalent and $100 patient travel/time per additional candidate,",
+      "reason": "Completion equivalents are not a measured binary completed/incomplete cohort; cost weighting is a judgment using the same equivalent-case convention.",
+      "changesCentral": false
+    },
+    {
+      "path": "sections.cost",
+      "after": "Added exclusion of already-paid clinical resources and limitation of donor-plus-selected-resource convention.",
+      "reason": "Group Part IX already contains lab reimbursements; adding an inclusive lab allowance again would double-count those paid resources. Resource scenarios are not a verified complete societal ICER.",
+      "changesCentral": false
+    },
+    {
+      "path": "model.scenarios[resource-cost].label and sensitivity",
+      "before": "Illustrative complete donor, clinical and patient resource cost",
+      "after": "Illustrative donor-plus-selected clinical and patient resources",
+      "reason": "Remove complete-resource claim not supported by measured opportunity costs or full net resource accounting.",
+      "changesCentral": false
+    },
+    {
+      "path": "model.attribution",
+      "after": "Explicit equivalent-yield rather than empirical binary completion interpretation.",
+      "reason": "Author model already permits partial-care equivalence; make that consistent with monitoring and resource allocation language.",
+      "changesCentral": false
+    },
+    {
+      "path": "sections.monitoring",
+      "before": "Our 65% eventual completed-care yield is a testable judgment,",
+      "after": "Our 0.65 eventual completed-care-equivalent yield per candidate is a testable judgment,",
+      "reason": "Prevent interpreting equivalent health yield as an observed national completion fraction.",
+      "changesCentral": false
+    }
+  ],
+  "reproduction": [
+    {
+      "id": "central",
+      "parameters": {
+        "G": 10000,
+        "c": 1300,
+        "b": 0.5,
+        "r": 0.65,
+        "u": 0.03,
+        "T": 3,
+        "L": 0.75,
+        "m": 0.04,
+        "loss": 0.0625,
+        "catchup": 0.06,
+        "s": 0.75,
+        "h": 0.001,
+        "ha": 0.0002,
+        "g": 1,
+        "d": 0.03,
+        "resource": 0,
+        "unfinishedResource": 0,
+        "patientResource": 0
+      },
+      "candidateEquivalents": 3.8461538461538463,
+      "completedEquivalents": 2.5,
+      "discountedUtility": 0.06690988854654314,
+      "allQ": 0.12224162318811595,
+      "editionQ": 0.12224162318811595,
+      "costUSD": 10000,
+      "donorCostUSD": 10000,
+      "donorPricePer10": 818051.9645596605,
+      "donorPlusSelectedResourcesPricePer10": 818051.9645596605,
+      "numericalAllQ": 0.1222416231837766,
+      "absoluteQError": 4.339348325110848e-12
+    },
+    {
+      "id": "favorable",
+      "parameters": {
+        "G": 10000,
+        "c": 675,
+        "b": 0.85,
+        "r": 0.9,
+        "u": 0.067,
+        "T": 5,
+        "L": 0.25,
+        "m": 0.02,
+        "loss": 0.035,
+        "catchup": 0.05,
+        "s": 0.9,
+        "h": 0.001,
+        "ha": 0.0001,
+        "g": 1,
+        "d": 0.03,
+        "resource": 0,
+        "unfinishedResource": 0,
+        "patientResource": 0
+      },
+      "candidateEquivalents": 12.592592592592592,
+      "completedEquivalents": 11.333333333333332,
+      "discountedUtility": 0.2420474254276941,
+      "allQ": 2.456374588026909,
+      "editionQ": 2.456374588026909,
+      "costUSD": 10000,
+      "donorCostUSD": 10000,
+      "donorPricePer10": 40710.40324526616,
+      "donorPlusSelectedResourcesPricePer10": 40710.40324526616,
+      "numericalAllQ": 2.4563745879105023,
+      "absoluteQError": 1.1640644004273781e-10
+    },
+    {
+      "id": "pessimistic",
+      "parameters": {
+        "G": 10000,
+        "c": 2500,
+        "b": 0.2,
+        "r": 0.35,
+        "u": 0.005,
+        "T": 1,
+        "L": 1,
+        "m": 0.1,
+        "loss": 0.2,
+        "catchup": 0.7,
+        "s": 0.4,
+        "h": 0.0005,
+        "ha": 0.00005,
+        "g": 0.98,
+        "d": 0.03,
+        "resource": 0,
+        "unfinishedResource": 0,
+        "patientResource": 0
+      },
+      "candidateEquivalents": 0.8,
+      "completedEquivalents": 0.27999999999999997,
+      "discountedUtility": 0.003030968841926967,
+      "allQ": 0.00016354618019873292,
+      "editionQ": 0.00016027525659475825,
+      "costUSD": 10000,
+      "donorCostUSD": 10000,
+      "donorPricePer10": 623926625.5105186,
+      "donorPlusSelectedResourcesPricePer10": 623926625.5105186,
+      "numericalAllQ": 0.00016354618016125265,
+      "absoluteQError": 3.748027279162902e-14
+    },
+    {
+      "id": "zero-capacity",
+      "parameters": {
+        "G": 10000,
+        "c": 1300,
+        "b": 0,
+        "r": 0.65,
+        "u": 0.03,
+        "T": 3,
+        "L": 0.75,
+        "m": 0.04,
+        "loss": 0.0625,
+        "catchup": 0.06,
+        "s": 0.75,
+        "h": 0.001,
+        "ha": 0.0002,
+        "g": 1,
+        "d": 0.03,
+        "resource": 0,
+        "unfinishedResource": 0,
+        "patientResource": 0
+      },
+      "candidateEquivalents": 0,
+      "completedEquivalents": 0,
+      "discountedUtility": 0.06690988854654314,
+      "allQ": 0,
+      "editionQ": 0,
+      "costUSD": 10000,
+      "donorCostUSD": 10000,
+      "donorPricePer10": null,
+      "donorPlusSelectedResourcesPricePer10": null,
+      "numericalAllQ": 0,
+      "absoluteQError": 0
+    },
+    {
+      "id": "zero-completion",
+      "parameters": {
+        "G": 10000,
+        "c": 1300,
+        "b": 0.5,
+        "r": 0,
+        "u": 0.03,
+        "T": 3,
+        "L": 0.75,
+        "m": 0.04,
+        "loss": 0.0625,
+        "catchup": 0.06,
+        "s": 0.75,
+        "h": 0.001,
+        "ha": 0.0002,
+        "g": 1,
+        "d": 0.03,
+        "resource": 0,
+        "unfinishedResource": 0,
+        "patientResource": 0
+      },
+      "candidateEquivalents": 3.8461538461538463,
+      "completedEquivalents": 0,
+      "discountedUtility": 0.06690988854654314,
+      "allQ": -0.0007692307692307693,
+      "editionQ": -0.0007692307692307693,
+      "costUSD": 10000,
+      "donorCostUSD": 10000,
+      "donorPricePer10": null,
+      "donorPlusSelectedResourcesPricePer10": null,
+      "numericalAllQ": -0.0007692307692307693,
+      "absoluteQError": 0
+    },
+    {
+      "id": "no-health-benefit",
+      "parameters": {
+        "G": 10000,
+        "c": 1300,
+        "b": 0.5,
+        "r": 0.65,
+        "u": 0,
+        "T": 3,
+        "L": 0.75,
+        "m": 0.04,
+        "loss": 0.0625,
+        "catchup": 0.06,
+        "s": 0.75,
+        "h": 0.001,
+        "ha": 0.0002,
+        "g": 1,
+        "d": 0.03,
+        "resource": 0,
+        "unfinishedResource": 0,
+        "patientResource": 0
+      },
+      "candidateEquivalents": 3.8461538461538463,
+      "completedEquivalents": 2.5,
+      "discountedUtility": 0,
+      "allQ": -0.0032144178366524515,
+      "editionQ": -0.0032144178366524515,
+      "costUSD": 10000,
+      "donorCostUSD": 10000,
+      "donorPricePer10": null,
+      "donorPlusSelectedResourcesPricePer10": null,
+      "numericalAllQ": -0.0032144178366524515,
+      "absoluteQError": 0
+    },
+    {
+      "id": "same-time-alternative",
+      "parameters": {
+        "G": 10000,
+        "c": 1300,
+        "b": 0.5,
+        "r": 0.65,
+        "u": 0.03,
+        "T": 3,
+        "L": 0.75,
+        "m": 0.04,
+        "loss": 0.0625,
+        "catchup": 0.06,
+        "s": 0,
+        "h": 0.001,
+        "ha": 0.0002,
+        "g": 1,
+        "d": 0.03,
+        "resource": 0,
+        "unfinishedResource": 0,
+        "patientResource": 0
+      },
+      "candidateEquivalents": 3.8461538461538463,
+      "completedEquivalents": 2.5,
+      "discountedUtility": 0.06690988854654314,
+      "allQ": -0.0032144178366524515,
+      "editionQ": -0.0032144178366524515,
+      "costUSD": 10000,
+      "donorCostUSD": 10000,
+      "donorPricePer10": null,
+      "donorPlusSelectedResourcesPricePer10": null,
+      "numericalAllQ": -0.0032144178366524515,
+      "absoluteQError": 0
+    },
+    {
+      "id": "low-completion",
+      "parameters": {
+        "G": 10000,
+        "c": 1300,
+        "b": 0.5,
+        "r": 0.35,
+        "u": 0.03,
+        "T": 3,
+        "L": 0.75,
+        "m": 0.04,
+        "loss": 0.0625,
+        "catchup": 0.06,
+        "s": 0.75,
+        "h": 0.001,
+        "ha": 0.0002,
+        "g": 1,
+        "d": 0.03,
+        "resource": 0,
+        "unfinishedResource": 0,
+        "patientResource": 0
+      },
+      "candidateEquivalents": 3.8461538461538463,
+      "completedEquivalents": 1.346153846153846,
+      "discountedUtility": 0.06690988854654314,
+      "allQ": 0.06546738290010977,
+      "editionQ": 0.06546738290010977,
+      "costUSD": 10000,
+      "donorCostUSD": 10000,
+      "donorPricePer10": 1527478.197082968,
+      "donorPlusSelectedResourcesPricePer10": 1527478.197082968,
+      "numericalAllQ": 0.0654673828977732,
+      "absoluteQError": 2.3365753776261045e-12
+    },
+    {
+      "id": "high-completion",
+      "parameters": {
+        "G": 10000,
+        "c": 1300,
+        "b": 0.5,
+        "r": 0.9,
+        "u": 0.03,
+        "T": 3,
+        "L": 0.75,
+        "m": 0.04,
+        "loss": 0.0625,
+        "catchup": 0.06,
+        "s": 0.75,
+        "h": 0.001,
+        "ha": 0.0002,
+        "g": 1,
+        "d": 0.03,
+        "resource": 0,
+        "unfinishedResource": 0,
+        "patientResource": 0
+      },
+      "candidateEquivalents": 3.8461538461538463,
+      "completedEquivalents": 3.4615384615384617,
+      "discountedUtility": 0.06690988854654314,
+      "allQ": 0.16955349009478776,
+      "editionQ": 0.16955349009478776,
+      "costUSD": 10000,
+      "donorCostUSD": 10000,
+      "donorPricePer10": 589784.3798089656,
+      "donorPlusSelectedResourcesPricePer10": 589784.3798089656,
+      "numericalAllQ": 0.16955349008877943,
+      "absoluteQError": 6.008332720242038e-12
+    },
+    {
+      "id": "low-funding-response",
+      "parameters": {
+        "G": 10000,
+        "c": 1300,
+        "b": 0.1,
+        "r": 0.65,
+        "u": 0.03,
+        "T": 3,
+        "L": 0.75,
+        "m": 0.04,
+        "loss": 0.0625,
+        "catchup": 0.06,
+        "s": 0.75,
+        "h": 0.001,
+        "ha": 0.0002,
+        "g": 1,
+        "d": 0.03,
+        "resource": 0,
+        "unfinishedResource": 0,
+        "patientResource": 0
+      },
+      "candidateEquivalents": 0.7692307692307693,
+      "completedEquivalents": 0.5,
+      "discountedUtility": 0.06690988854654314,
+      "allQ": 0.02444832463762319,
+      "editionQ": 0.02444832463762319,
+      "costUSD": 10000,
+      "donorCostUSD": 10000,
+      "donorPricePer10": 4090259.8227983024,
+      "donorPlusSelectedResourcesPricePer10": 4090259.8227983024,
+      "numericalAllQ": 0.02444832463675532,
+      "absoluteQError": 8.678717466903407e-13
+    },
+    {
+      "id": "one-year",
+      "parameters": {
+        "G": 10000,
+        "c": 1300,
+        "b": 0.5,
+        "r": 0.65,
+        "u": 0.03,
+        "T": 1,
+        "L": 0.75,
+        "m": 0.04,
+        "loss": 0.0625,
+        "catchup": 0.06,
+        "s": 0.75,
+        "h": 0.001,
+        "ha": 0.0002,
+        "g": 1,
+        "d": 0.03,
+        "resource": 0,
+        "unfinishedResource": 0,
+        "patientResource": 0
+      },
+      "candidateEquivalents": 3.8461538461538463,
+      "completedEquivalents": 2.5,
+      "discountedUtility": 0.026696576806147204,
+      "allQ": 0.04684166367487355,
+      "editionQ": 0.04684166367487355,
+      "costUSD": 10000,
+      "donorCostUSD": 10000,
+      "donorPricePer10": 2134851.586273637,
+      "donorPlusSelectedResourcesPricePer10": 2134851.586273637,
+      "numericalAllQ": 0.04684166367468094,
+      "absoluteQError": 1.9260981698465685e-13
+    },
+    {
+      "id": "high-mortality",
+      "parameters": {
+        "G": 10000,
+        "c": 1300,
+        "b": 0.5,
+        "r": 0.65,
+        "u": 0.03,
+        "T": 3,
+        "L": 0.75,
+        "m": 0.1,
+        "loss": 0.0625,
+        "catchup": 0.06,
+        "s": 0.75,
+        "h": 0.001,
+        "ha": 0.0002,
+        "g": 1,
+        "d": 0.03,
+        "resource": 0,
+        "unfinishedResource": 0,
+        "patientResource": 0
+      },
+      "candidateEquivalents": 3.8461538461538463,
+      "completedEquivalents": 2.5,
+      "discountedUtility": 0.0617605599649493,
+      "allQ": 0.11258663209762748,
+      "editionQ": 0.11258663209762748,
+      "costUSD": 10000,
+      "donorCostUSD": 10000,
+      "donorPricePer10": 888204.9150674193,
+      "donorPlusSelectedResourcesPricePer10": 888204.9150674193,
+      "numericalAllQ": 0.11258663209072936,
+      "absoluteQError": 6.8981209633278695e-12
+    },
+    {
+      "id": "fast-catchup",
+      "parameters": {
+        "G": 10000,
+        "c": 1300,
+        "b": 0.5,
+        "r": 0.65,
+        "u": 0.03,
+        "T": 3,
+        "L": 0.75,
+        "m": 0.04,
+        "loss": 0.0625,
+        "catchup": 1,
+        "s": 0.75,
+        "h": 0.001,
+        "ha": 0.0002,
+        "g": 1,
+        "d": 0.03,
+        "resource": 0,
+        "unfinishedResource": 0,
+        "patientResource": 0
+      },
+      "candidateEquivalents": 3.8461538461538463,
+      "completedEquivalents": 2.5,
+      "discountedUtility": 0.025051036825436534,
+      "allQ": 0.04375627621104104,
+      "editionQ": 0.04375627621104104,
+      "costUSD": 10000,
+      "donorCostUSD": 10000,
+      "donorPricePer10": 2285386.432741435,
+      "donorPlusSelectedResourcesPricePer10": 2285386.432741435,
+      "numericalAllQ": 0.04375627615460782,
+      "absoluteQError": 5.6433219208784635e-11
+    },
+    {
+      "id": "long-delay",
+      "parameters": {
+        "G": 10000,
+        "c": 1300,
+        "b": 0.5,
+        "r": 0.6182991259254641,
+        "u": 0.03,
+        "T": 3,
+        "L": 2,
+        "m": 0.04,
+        "loss": 0.0625,
+        "catchup": 0.06,
+        "s": 0.6958076147464146,
+        "h": 0.001,
+        "ha": 0.0002,
+        "g": 1,
+        "d": 0.03,
+        "resource": 0,
+        "unfinishedResource": 0,
+        "patientResource": 0
+      },
+      "candidateEquivalents": 3.8461538461538463,
+      "completedEquivalents": 2.378073561251785,
+      "discountedUtility": 0.0644827834083364,
+      "allQ": 0.1036876879976083,
+      "editionQ": 0.1036876879976083,
+      "costUSD": 10000,
+      "donorCostUSD": 10000,
+      "donorPricePer10": 964434.6588411407,
+      "donorPlusSelectedResourcesPricePer10": 964434.6588411407,
+      "numericalAllQ": 0.103687687993918,
+      "absoluteQError": 3.6902980671271735e-12
+    },
+    {
+      "id": "more-burden",
+      "parameters": {
+        "G": 10000,
+        "c": 1300,
+        "b": 0.5,
+        "r": 0.65,
+        "u": 0.03,
+        "T": 3,
+        "L": 0.75,
+        "m": 0.04,
+        "loss": 0.0625,
+        "catchup": 0.06,
+        "s": 0.75,
+        "h": 0.01,
+        "ha": 0.001,
+        "g": 1,
+        "d": 0.03,
+        "resource": 0,
+        "unfinishedResource": 0,
+        "patientResource": 0
+      },
+      "candidateEquivalents": 3.8461538461538463,
+      "completedEquivalents": 2.5,
+      "discountedUtility": 0.06690988854654314,
+      "allQ": 0.09715801650439772,
+      "editionQ": 0.09715801650439772,
+      "costUSD": 10000,
+      "donorCostUSD": 10000,
+      "donorPricePer10": 1029251.1477472746,
+      "donorPlusSelectedResourcesPricePer10": 1029251.1477472746,
+      "numericalAllQ": 0.09715801650005837,
+      "absoluteQError": 4.339348325110848e-12
+    },
+    {
+      "id": "resource-cost",
+      "parameters": {
+        "G": 10000,
+        "c": 1300,
+        "b": 0.5,
+        "r": 0.65,
+        "u": 0.03,
+        "T": 3,
+        "L": 0.75,
+        "m": 0.04,
+        "loss": 0.0625,
+        "catchup": 0.06,
+        "s": 0.75,
+        "h": 0.001,
+        "ha": 0.0002,
+        "g": 1,
+        "d": 0.03,
+        "resource": 2000,
+        "unfinishedResource": 200,
+        "patientResource": 100
+      },
+      "candidateEquivalents": 3.8461538461538463,
+      "completedEquivalents": 2.5,
+      "discountedUtility": 0.06690988854654314,
+      "allQ": 0.12224162318811595,
+      "editionQ": 0.12224162318811595,
+      "costUSD": 15653.846153846154,
+      "donorCostUSD": 10000,
+      "donorPricePer10": 818051.9645596605,
+      "donorPlusSelectedResourcesPricePer10": 1280565.959906853,
+      "numericalAllQ": 0.1222416231837766,
+      "absoluteQError": 4.339348325110848e-12
+    },
+    {
+      "id": "resource-high",
+      "parameters": {
+        "G": 10000,
+        "c": 1300,
+        "b": 0.5,
+        "r": 0.65,
+        "u": 0.03,
+        "T": 3,
+        "L": 0.75,
+        "m": 0.04,
+        "loss": 0.0625,
+        "catchup": 0.06,
+        "s": 0.75,
+        "h": 0.001,
+        "ha": 0.0002,
+        "g": 1,
+        "d": 0.03,
+        "resource": 5000,
+        "unfinishedResource": 400,
+        "patientResource": 250
+      },
+      "candidateEquivalents": 3.8461538461538463,
+      "completedEquivalents": 2.5,
+      "discountedUtility": 0.06690988854654314,
+      "allQ": 0.12224162318811595,
+      "editionQ": 0.12224162318811595,
+      "costUSD": 24000,
+      "donorCostUSD": 10000,
+      "donorPricePer10": 818051.9645596605,
+      "donorPlusSelectedResourcesPricePer10": 1963324.7149431852,
+      "numericalAllQ": 0.1222416231837766,
+      "absoluteQError": 4.339348325110848e-12
+    },
+    {
+      "id": "near-boundary",
+      "parameters": {
+        "G": 10000,
+        "c": 1300,
+        "b": 0.5,
+        "r": 0.65,
+        "u": 0.03,
+        "T": 3,
+        "L": 0.75,
+        "m": 0.04,
+        "loss": 0.0625,
+        "catchup": 0.06,
+        "s": 0.75,
+        "h": 0.001,
+        "ha": 0.0002,
+        "g": 0.98,
+        "d": 0.03,
+        "resource": 0,
+        "unfinishedResource": 0,
+        "patientResource": 0
+      },
+      "candidateEquivalents": 3.8461538461538463,
+      "completedEquivalents": 2.5,
+      "discountedUtility": 0.06690988854654314,
+      "allQ": 0.12224162318811595,
+      "editionQ": 0.11979679072435363,
+      "costUSD": 10000,
+      "donorCostUSD": 10000,
+      "donorPricePer10": 834746.9026118985,
+      "donorPlusSelectedResourcesPricePer10": 834746.9026118985,
+      "numericalAllQ": 0.1222416231837766,
+      "absoluteQError": 4.339348325110848e-12
+    }
+  ],
+  "auditSession": {
+    "id": "dln-beta-independent-20260914-seattle-medium",
+    "workerId": "seattle_acceptance",
+    "phase": "independent-acceptance",
+    "startedAt": "2026-09-14T09:25:07Z",
+    "endedAt": "2026-09-14T09:28:45.978Z",
+    "actualSeconds": 218.978,
+    "model": {
+      "id": "gpt-6-astra",
+      "reasoningEffort": "medium"
+    },
+    "author": "usa_beta_one",
+    "reportResearchCredit": false
+  },
+  "authorTiming": {
+    "newSession": {
+      "id": "usa-beta-dental-lifeline-20260914-worker1",
+      "organizationId": "ein:84-6129064",
+      "stage": "beta",
+      "phase": "research",
+      "workerId": "usa_beta_one",
+      "startedAt": "2026-09-14T09:07:18Z",
+      "endedAt": "2026-09-14T09:19:26.254Z",
+      "evidence": "data/geography-reports.json#usa/dental-lifeline-network — additional original six-return accounting, reciprocal reimbursement, completion definitions, current public and private funding, Medicare counterfactual, finite clinical model and donor-facing revision. Earlier alpha evidence reused without new credit.",
+      "model": {
+        "id": "gpt-6-astra",
+        "name": "GPT-6 Astra Medium",
+        "reasoningEffort": "medium",
+        "evidence": "Assigned Astra Medium bounded USA beta worker; actual gpt-6-astra medium."
+      }
+    },
+    "priorSessions": [
+      {
+        "id": "usa-alpha-dental-lifeline-20260913-worker1",
+        "organizationId": "ein:84-6129064",
+        "stage": "alpha",
+        "phase": "research",
+        "workerId": "usa_alpha_one",
+        "startedAt": "2026-09-13T21:29:37Z",
+        "endedAt": "2026-09-13T21:41:37Z",
+        "evidence": "data/geography-reports.json#usa/dental-lifeline-network — original national and affiliate returns, visual annual-report denominator check, current eligibility and grant mechanism, clinical utility evidence, full-support oral-health model and report; contemporaneous checkpoints persisted.",
+        "model": {
+          "id": "gpt-6-astra",
+          "name": "GPT-6 Astra Light",
+          "reasoningEffort": "low",
+          "evidence": "Parent assigned current Astra Light worker; actual gpt-6-astra low."
+        }
+      }
+    ],
+    "unchanged": true
+  },
+  "financialVerification": {
+    "rows": [
+      {
+        "year": 2023,
+        "national": 1758119,
+        "groupPartIX": 2584442,
+        "groupEvents": 0,
+        "groupGaming": 4000,
+        "groupGross": 2588442,
+        "twoReturnBridge": 4346561
+      },
+      {
+        "year": 2024,
+        "national": 2172269,
+        "groupPartIX": 2873974,
+        "groupEvents": 1382,
+        "groupGaming": 4300,
+        "groupGross": 2879656,
+        "twoReturnBridge": 5051925
+      },
+      {
+        "year": 2025,
+        "national": 2090255,
+        "groupPartIX": 3090873,
+        "groupEvents": 1110,
+        "groupGaming": 3500,
+        "groupGross": 3095483,
+        "twoReturnBridge": 5185738
+      }
+    ],
+    "nationalMean": 2006881,
+    "reciprocalFY2025Reimbursement": 1007229,
+    "elimination": "National PartIX already credits reimbursement while group includes shared payroll; sum keeps shared staff once. Do not restore national credit to two-return sum.",
+    "clinicalServices": "National103782/group12471071 are external clinical valuations reported in PartIII, not cash support expenses or measured opportunity cost; not added as retail costs or QALYs.",
+    "notConsolidated": true,
+    "nationalPayeeOnlyExpenseSeries": true,
+    "originalCPAReconciliationUnavailable": true
+  },
+  "primaryEvidence": [
+    {
+      "url": "https://projects.propublica.org/nonprofits/full_text/202410659349300341/IRS990",
+      "name": "national23-IRS990",
+      "retrieval": "Preserved primary original filed document independently read in audit; source ledger hash checked",
+      "checks": "Original entity, full fiscal period, PartIX expense; PartVIII event/gaming and clinical-service narrative inspected."
+    },
+    {
+      "url": "https://projects.propublica.org/nonprofits/full_text/202410659349300341/IRS990ScheduleD",
+      "name": "national23-IRS990ScheduleD",
+      "retrieval": "Preserved primary original filed document independently read in audit; source ledger hash checked",
+      "checks": "Blank audited reconciliation fields confirmed; not interpreted as no donated services."
+    },
+    {
+      "url": "https://projects.propublica.org/nonprofits/full_text/202541019349300404/IRS990",
+      "name": "national24-IRS990",
+      "retrieval": "Preserved primary original filed document independently read in audit; source ledger hash checked",
+      "checks": "Original entity, full fiscal period, PartIX expense; PartVIII event/gaming and clinical-service narrative inspected."
+    },
+    {
+      "url": "https://projects.propublica.org/nonprofits/full_text/202541019349300404/IRS990ScheduleD",
+      "name": "national24-IRS990ScheduleD",
+      "retrieval": "Preserved primary original filed document independently read in audit; source ledger hash checked",
+      "checks": "Blank audited reconciliation fields confirmed; not interpreted as no donated services."
+    },
+    {
+      "url": "https://projects.propublica.org/nonprofits/full_text/202630589349300233/IRS990",
+      "name": "national25-IRS990",
+      "retrieval": "Preserved primary original filed document independently read in audit; source ledger hash checked",
+      "checks": "Original entity, full fiscal period, PartIX expense; PartVIII event/gaming and clinical-service narrative inspected."
+    },
+    {
+      "url": "https://projects.propublica.org/nonprofits/full_text/202630589349300233/IRS990ScheduleD",
+      "name": "national25-IRS990ScheduleD",
+      "retrieval": "Preserved primary original filed document independently read in audit; source ledger hash checked",
+      "checks": "Blank audited reconciliation fields confirmed; not interpreted as no donated services."
+    },
+    {
+      "url": "https://projects.propublica.org/nonprofits/full_text/202630589349300233/IRS990ScheduleO",
+      "name": "national25-IRS990ScheduleO",
+      "retrieval": "Preserved primary original filed document independently read in audit; source ledger hash checked",
+      "checks": "Parent payroll on behalf of group and reimbursement accounting verified."
+    },
+    {
+      "url": "https://projects.propublica.org/nonprofits/full_text/202630589349300233/IRS990ScheduleR",
+      "name": "national25-IRS990ScheduleR",
+      "retrieval": "Preserved primary original filed document independently read in audit; source ledger hash checked",
+      "checks": "Reciprocal reimbursement amount1007229 and P/Q direction verified."
+    },
+    {
+      "url": "https://projects.propublica.org/nonprofits/full_text/202410659349300241/IRS990",
+      "name": "group23-IRS990",
+      "retrieval": "Preserved primary original filed document independently read in audit; source ledger hash checked",
+      "checks": "Original entity, full fiscal period, PartIX expense; PartVIII event/gaming and clinical-service narrative inspected."
+    },
+    {
+      "url": "https://projects.propublica.org/nonprofits/full_text/202410659349300241/IRS990ScheduleD",
+      "name": "group23-IRS990ScheduleD",
+      "retrieval": "Preserved primary original filed document independently read in audit; source ledger hash checked",
+      "checks": "Blank audited reconciliation fields confirmed; not interpreted as no donated services."
+    },
+    {
+      "url": "https://projects.propublica.org/nonprofits/full_text/202501019349300405/IRS990",
+      "name": "group24-IRS990",
+      "retrieval": "Preserved primary original filed document independently read in audit; source ledger hash checked",
+      "checks": "Original entity, full fiscal period, PartIX expense; PartVIII event/gaming and clinical-service narrative inspected."
+    },
+    {
+      "url": "https://projects.propublica.org/nonprofits/full_text/202501019349300405/IRS990ScheduleD",
+      "name": "group24-IRS990ScheduleD",
+      "retrieval": "Preserved primary original filed document independently read in audit; source ledger hash checked",
+      "checks": "Blank audited reconciliation fields confirmed; not interpreted as no donated services."
+    },
+    {
+      "url": "https://projects.propublica.org/nonprofits/full_text/202620589349301627/IRS990",
+      "name": "group25-IRS990",
+      "retrieval": "Preserved primary original filed document independently read in audit; source ledger hash checked",
+      "checks": "Original entity, full fiscal period, PartIX expense; PartVIII event/gaming and clinical-service narrative inspected."
+    },
+    {
+      "url": "https://projects.propublica.org/nonprofits/full_text/202620589349301627/IRS990ScheduleD",
+      "name": "group25-IRS990ScheduleD",
+      "retrieval": "Preserved primary original filed document independently read in audit; source ledger hash checked",
+      "checks": "Blank audited reconciliation fields confirmed; not interpreted as no donated services."
+    },
+    {
+      "url": "https://projects.propublica.org/nonprofits/full_text/202620589349301627/IRS990ScheduleO",
+      "name": "group25-IRS990ScheduleO",
+      "retrieval": "Preserved primary original filed document independently read in audit; source ledger hash checked",
+      "checks": "Parent payroll on behalf of group and reimbursement accounting verified."
+    },
+    {
+      "url": "https://projects.propublica.org/nonprofits/full_text/202620589349301627/IRS990ScheduleR",
+      "name": "group25-IRS990ScheduleR",
+      "retrieval": "Preserved primary original filed document independently read in audit; source ledger hash checked",
+      "checks": "Reciprocal reimbursement amount1007229 and P/Q direction verified."
+    },
+    {
+      "url": "https://dentallifeline.org/help/faq/",
+      "note": "Primary live FAQ: volunteer-linked waitlists, no emergency care, usual implant exclusion, benefit exhaustion and national EIN verified.",
+      "retrievedAt": "2026-09-14",
+      "retrieval": "Independent live primary-source web retrieval; annual numeric chart additionally verified from preserved original PDF rendering"
+    },
+    {
+      "url": "https://dentallifeline.org/success-stories/indiana-state-highlight-report-for-june-2020/",
+      "note": "Live original state report footnotes explicitly include linked-but-untreated people in patients served; completed-care denominator is different. Not national completion probability.",
+      "retrievedAt": "2026-09-14",
+      "retrieval": "Independent live primary-source web retrieval; annual numeric chart additionally verified from preserved original PDF rendering"
+    },
+    {
+      "url": "https://www.floridadental.org/docs/stateflfloridalibraries/default-document-library/dln-florida-dds-report-11-2024.pdf?sfvrsn=de3fbb3b_1",
+      "note": "Original one-page October2024 PDF read; 100served FY24 versus67 Q1FY25, both use same served definition; donated lab value already included in value of care.",
+      "retrievedAt": "2026-09-14",
+      "retrieval": "Independent live primary-source web retrieval; annual numeric chart additionally verified from preserved original PDF rendering"
+    },
+    {
+      "url": "https://www.maine.gov/dafs/bbm/procurementservices/sites/maine.gov.dafs.bbm.procurementservices/files/noi-docs/NOI%200320260179.pdf",
+      "note": "Original four-page procurement amendment read: +36463 revised72926, new end June30 2027, funding verifiedFY27; part-time coordinator and some lab subsidy possible. Not unrestricted available gap.",
+      "retrievedAt": "2026-09-14",
+      "retrieval": "Independent live primary-source web retrieval; annual numeric chart additionally verified from preserved original PDF rendering"
+    },
+    {
+      "url": "https://www.massdental.org/news/mds-foundation-awards-2026-access-to-care-grants/",
+      "note": "Primary 2026 donor announcement7500 to help30, partial funding not national all-in marginal price.",
+      "retrievedAt": "2026-09-14",
+      "retrieval": "Independent live primary-source web retrieval; annual numeric chart additionally verified from preserved original PDF rendering"
+    },
+    {
+      "url": "https://www.cms.gov/medicare/coverage/dental",
+      "note": "Current CMS rules include medically integrated dental services, including dialysis and specified cardiac/transplant/cancer contexts; coordination/documentation needed. MA and dual-eligible state benefits also possible.",
+      "retrievedAt": "2026-09-14",
+      "retrieval": "Independent live primary-source web retrieval; annual numeric chart additionally verified from preserved original PDF rendering"
+    },
+    {
+      "url": "https://dentallifeline.org/blog/dln-ri-donated-dental-services-achieves-milestone-of-9m-in-donated-treatment/",
+      "note": "August10 2026 official update reports88 served past year and national donation link; not88 additional completions.",
+      "retrievedAt": "2026-09-14",
+      "retrieval": "Independent live primary-source web retrieval; annual numeric chart additionally verified from preserved original PDF rendering"
+    },
+    {
+      "url": "https://www.nature.com/articles/bdj.2007.569",
+      "note": "Original RCT page reopened: older housebound adult denture oral-function mechanism, not generic utility or DDS whole case-mix effect.",
+      "retrievedAt": "2026-09-14",
+      "retrieval": "Independent live primary-source web retrieval; annual numeric chart additionally verified from preserved original PDF rendering"
+    },
+    {
+      "url": "https://dentallifeline.org/annualreport/",
+      "note": "Current primary annual-report landing page; existing original PDF and rendered pages independently inspected:4367 DDS individuals with licensee-state footnote,6038all-program reach.",
+      "retrievedAt": "2026-09-14",
+      "retrieval": "Independent live primary-source web retrieval; annual numeric chart additionally verified from preserved original PDF rendering"
+    }
+  ],
+  "sourceArtifacts": [
+    {
+      "path": "/tmp/givebetter-usa-beta-next.json",
+      "sha256": "2a14b4dcf5d61f5f1770c8dad02acf03148248c5ab0e2c5fcb9abf0d5bc7ffc0"
+    },
+    {
+      "path": "/tmp/dln-beta-source-ledger.json",
+      "sha256": "a84b9a3780ab5fbbe640d32cfef0f814060d1a4e7c52531abb6b25593abc7bfc"
+    },
+    {
+      "path": "/tmp/dln-ar25.pdf",
+      "sha256": "88d551e6eda930bcdfb04d7108d97abe744b93d6fb75d07c000bf767d767f01a"
+    },
+    {
+      "path": "/tmp/dln-ar25-p-08.png",
+      "sha256": "d9c116a72b72d900224c8e13e7839b42a93768b4cb7c0c3dd8c588b07a848281"
+    },
+    {
+      "path": "/tmp/dln-ar25-p-09.png",
+      "sha256": "e4fdb7b860f31c96aa30f21535334fcae44055a69847f9cb9383b8f7490fa252"
+    },
+    {
+      "path": "/tmp/dln-independent-audit.mjs",
+      "sha256": "ccbb5c80e25cd48ea93b742d4fd087874edcdeb5a7184c17cd1885f96371c326"
+    }
+  ],
+  "checks": {
+    "all18ScenariosReproduced": true,
+    "maximumAbsoluteNumericalQError": 1.1640644004273781e-10,
+    "centralPreserved": true,
+    "centralDonorPricePer10": 818051.9645596605,
+    "resourceScenarioPricePer10": 1280565.959906853,
+    "priorAndNewAuthorIntervalsUnchanged": true,
+    "annualCountNotCompletedPatients": true,
+    "inducedResourceAndDonorPriceDistinct": true,
+    "noSiteGitBuildCredentialsOrNestedAgents": true
+  },
+  "donorReady": false,
+  "remainingUncertainty": [
+    "National marginal donor-to-completion-equivalent c,b,r remain judgment; grant examples and matched counts do not identify them.",
+    "Clinical0.03utility, finite duration and hazards remain explicitly subjective, with no OHIP/QALY conversion or systemic lives-saved claim.",
+    "Source fulltext for prior non-denture utility studies reused from accepted alpha; fresh audit focused decisive new facts, original finances and all scenarios.",
+    "Resource scenarios are selected additional opportunity-cost allowances rather than complete societal estimates; paid lab reimbursements must not be added twice."
+  ]
+}

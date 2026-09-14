@@ -43,26 +43,24 @@ test('price uses edition denominator, not global benefit; format and routes matc
  r.model.scenarios[0].editionQalys=-1;assert.equal(reportPrice(r),null);
  r.model.scenarios[0].editionQalys=null;assert.equal(reportPrice(r),null);
 });
-test('End Overdose shares clinical arithmetic, not geographic attribution or duplicate time',()=>{
+test('End Overdose retains separately dated California arithmetic and deduplicates research time',()=>{
  const data=read('data/geography-reports.json');
  const us=data.reports.find(r=>r.slug==='end-overdose'&&r.edition==='usa');
  const ca=data.reports.find(r=>r.slug==='end-overdose'&&r.edition==='california');
  assert.ok(us&&ca);
- for(const scenario of us.model.scenarios){
-  const counterpart=ca.model.scenarios.find(s=>s.id===scenario.id);assert.ok(counterpart);
-  assert.equal(counterpart.allPopulationQalys,scenario.allPopulationQalys);
+ for(const scenario of ca.model.scenarios.filter(s=>['central','favorable','pessimistic','donatedstock','no-additionality'].includes(s.id))){
+  const counterpart=scenario;
   if(scenario.id==='no-additionality'){assert.equal(counterpart.editionQalys,0);continue;}
   const p=JSON.parse(scenario.assumptions.match(/^\{[^}]+\}/)[0]);
   let life=0;for(let k=1;k<=p.T;k++)life+=p.u*((1-p.m)/1.03)**k;
   const q=scenario.costUSD*p.a/p.c*p.e*p.d*p.r*p.f*p.b*life/1.03;
   assert.ok(Math.abs(q-scenario.allPopulationQalys)<1e-10);
-  assert.ok(Math.abs(q*p.g-scenario.editionQalys)<1e-10);
   const geo=JSON.parse(counterpart.assumptions.match(/^\{[^}]+\}/)[0]);
   assert.ok(Math.abs(counterpart.editionQalys-q*geo.g_CA)<1e-10);
  }
  const ids=new Set([...us.sessionIds,...ca.sessionIds]);
  const seconds=[...ids].reduce((sum,id)=>{const s=data.sessions.find(s=>s.id===id);return sum+(Date.parse(s.endedAt)-Date.parse(s.startedAt))/1000;},0);
- assert.equal(seconds,1210);
+ assert.equal(seconds,1210+2372);
  const central=ca.model.scenarios.find(s=>s.id==='central');
  assert.ok(Math.abs(central.editionQalys/central.allPopulationQalys-(.15*.75/(.85+.15*.75)))<1e-12);
  assert.equal(ca.model.scenarios.find(s=>s.id==='ca-zero').editionQalys,0);

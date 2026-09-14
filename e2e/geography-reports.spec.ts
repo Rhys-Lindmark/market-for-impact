@@ -43,7 +43,7 @@ test('published research has measured headers, usable models and scoped canonica
   ['usa','national-center-for-healthy-housing','National Center for Healthy Housing','20',true],
   ['california','operation-access','Operation Access','8',true],
   ['usa','legal-action-center','Legal Action Center','10',false],
-  ['usa','end-overdose','End Overdose','7',true],
+  ['usa','end-overdose','End Overdose','47',true],
   ['california','end-overdose','End Overdose','20',true],
   ['usa','surgery-on-sunday','Surgery on Sunday','5',true],
   ['usa','the-headstrong-project','The Headstrong Project','6',true],
@@ -68,7 +68,8 @@ test('published research has measured headers, usable models and scoped canonica
   const route=`/${edition}/charities/${slug}`;
   await page.goto(route);
   await expect(page.getByRole('heading',{name,exact:true})).toBeVisible();
-  await expect(page.locator('.report-research-effort summary')).toHaveText(new RegExp(`^Research time: ~?${minutes} min on GPT-6 Astra Light$`));
+  const models=edition==='usa'&&slug==='end-overdose'?'GPT-6 Astra Light \\+ GPT-6 Astra Medium':'GPT-6 Astra Light';
+  await expect(page.locator('.report-research-effort summary')).toHaveText(new RegExp(`^Research time: ~?${minutes} min on ${models}$`));
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href','https://ai.rhyslindmark.com/givebetter'+route);
   if(donate)await expect(page.locator('.report-donate')).toHaveAttribute('href',/^https:\/\//);
   else await expect(page.locator('.report-donate')).toHaveCount(0);

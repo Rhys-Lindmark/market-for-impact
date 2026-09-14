@@ -31,6 +31,8 @@ test('published research has measured headers, usable models and scoped canonica
   ['california','comite-civico-del-valle','Comité Cívico del Valle','4',false],
   ['usa','help-america-hear','Help America Hear','11',false],
   ['usa','rx-outreach','Rx Outreach','9',true],
+  ['usa','center-for-science-in-the-public-interest','Center for Science in the Public Interest','8',true],
+  ['usa','kids-and-car-safety','Kids and Car Safety','9',true],
  ]){
   const route=`/${edition}/charities/${slug}`;
   await page.goto(route);

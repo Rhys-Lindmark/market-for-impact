@@ -6,6 +6,7 @@ import {reportSections,markdownBlocks,safeReportLink} from '@/lib/report-markdow
 import {groupReportSections} from '@/lib/report-contents.mjs';
 import contentsMap from '@/data/report-contents-map.json';
 import DonorReadiness from './DonorReadiness';
+import ReportExpenseAppendix from './ReportExpenseAppendix';
 import LongFormSummary from './LongFormSummary';
 import {researchEffortSummary} from '@/lib/research-effort.mjs';
 import researchEffort from '@/data/research-effort.json';
@@ -41,7 +42,7 @@ export default function LongFormResearchReport({organization,program,markdown,so
  if(sectionOrder.length){if(sectionOrder.length!==sections.length||new Set(sectionOrder).size!==sections.length||sectionOrder.some(id=>!sections.some(s=>s.id===id)))throw Error('Incomplete report section order');sections.sort((a,b)=>sectionOrder.indexOf(a.id)-sectionOrder.indexOf(b.id));}
  const groups=groupReportSections(sections,(contentsMap as Record<string,Record<string,string>>)[organization]) as {id:string;title:string;sections:Section[]}[];
  return <main className="givebetter charity-report">
-  <header className="givebetter-masthead"><a href="/">Give<span>Better</span> <small>x SF</small></a></header>
+  <header className="givebetter-masthead"><a href="/san-francisco">Give<span>Better</span> <small>x SF</small></a></header>
   <div className="report-reading-column">
    <header className="report-heading"><h1>{organization}</h1><p className="report-program">{program}</p>
     <details className="report-research-effort"><summary>Latest research: {minutes} minutes on {modelLabel}</summary><ul><li>v1: {earlierEffort.label.replace('Research time: ','')}</li><li>v2: {minutes} min on {modelLabel}</li></ul>{earlierEffort.estimated&&<p>Earlier research time was estimated before tracking began.</p>}</details>
@@ -51,8 +52,9 @@ export default function LongFormResearchReport({organization,program,markdown,so
    <nav className="report-contents" aria-label="Table of Contents"><h2>Table of Contents</h2>{groups.map(group=>group.sections.length>1?<details className="report-contents-group" key={group.id}><summary><a data-toc-primary href={'#'+group.id}>{group.title}</a></summary><div>{group.sections.map(section=><a key={section.id} href={'#'+section.id}>{section.title.replace(/^\d+[.)]\s*/, '')}</a>)}</div></details>:<a data-toc-primary key={group.id} href={'#'+group.id}>{group.title}</a>)}<a data-toc-primary href="#sources">6. Sources</a></nav>
 <article>{groups.map(group=><section key={group.id} id={group.id}><h2>{group.title}</h2>{group.id==='research-funding'&&<DonorReadiness organization={organization}/>}{group.sections.map(section=><section className="report-subsection" key={section.id} id={section.id}>{group.id!=='research-summary'&&<h3>{section.title.replace(/^\d+[.)]\s*/, '')}</h3>}{group.id==='research-summary'?<LongFormSummary organization={organization}/>:<Markdown text={section.markdown}/>}</section>)}</section>)}
     <section id="sources"><h2>6. Sources</h2><ol className="report-sources">{sources.map(source=><li key={source.url}><a href={source.url}>{source.title}</a>. {source.publisher}. Published: {source.published}; retrieved: {source.retrieved}. {source.limit}</li>)}</ol></section>
+    <ReportExpenseAppendix organization={organization}/>
    </article>
-   <footer className="report-footer"><a href="/research">All research</a><p className="report-model-version">Cost-effectiveness model: <a href={modelUrl}>{modelVersion}</a></p><p>Independent public-source research. Not affiliated with GiveWell or the organization reviewed.</p></footer>
+   <footer className="report-footer"><a href="/san-francisco/all">All research</a><p className="report-model-version">Cost-effectiveness model: <a href={modelUrl}>{modelVersion}</a></p><p>Independent public-source research. Not affiliated with GiveWell or the organization reviewed.</p></footer>
   </div>
  </main>;
 }

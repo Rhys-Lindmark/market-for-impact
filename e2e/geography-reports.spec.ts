@@ -61,17 +61,17 @@ test('published research has measured headers, usable models and scoped canonica
  }
 });
 test('research table keeps unknown means unknown and shows audited recipient mean',async({page})=>{
- await page.goto('/california/research');
+ await page.goto('/california/all');
  const hrs=page.locator('tr').filter({hasText:'Harm Reduction Services'});
  await expect(hrs).toContainText('$3.1M');
- await expect(hrs).toContainText('Overdose-prevention benefits only');
- await expect(page.locator('tr').filter({hasText:'Center for Independent Living'})).toContainText('other benefits unestimated');
+ await expect(page.locator('[data-expense-details]')).toHaveCount(0);
+ await expect(page.locator('[data-research-table]')).toHaveCount(1);
  await expect(page.locator('tr').filter({hasText:'Operation Access'})).toContainText('$1.9M');
  await expect(page.locator('tr').filter({hasText:'Operation Access'})).toContainText('$2.5M');
  await expect(page.locator('tr').filter({hasText:'Homeless Health Care Los Angeles'})).toContainText('$9.6M');
  await expect(page.locator('tr').filter({hasText:'Western Center on Law & Poverty'})).toContainText('$6.9M');
  await expect(page.locator('tr').filter({hasText:'WorkSafe'})).toContainText('Not estimated');
- await page.goto('/usa/research');
+ await page.goto('/usa/all');
  await expect(page.locator('tr').filter({hasText:'National Center for Healthy Housing'})).toContainText('$3.0M');
  await expect(page.locator('tr').filter({hasText:'Legal Action Center'})).toContainText('Not estimated');
  await expect(page.locator('tr').filter({hasText:'Legal Action Center'})).toContainText('$8.6M');

@@ -11,6 +11,12 @@ test.beforeEach(async({page,baseURL})=>{
 
 test('published research has measured headers, usable models and scoped canonical links',async({page,request})=>{
  for(const [edition,slug,name,minutes,donate] of [
+  ['california','didi-hirsch-mental-health-services','Didi Hirsch Mental Health Services','14',true],
+  ['california','breathe-southern-california','Breathe Southern California','12',true],
+  ['california','champions-for-health','Champions for Health','7',true],
+  ['california','childrens-partnership',"The Children's Partnership",'9',true],
+  ['california','nourish-california','Nourish California','6',true],
+  ['california','california-school-based-health-alliance','California School-Based Health Alliance','7',true],
   ['los-angeles','hunger-action-los-angeles','Hunger Action Los Angeles','45',true],
   ['los-angeles','illumination-foundation','Illumination Health + Home','5',true],
   ['los-angeles','dayle-mcintosh-center','Dayle McIntosh Center','5',true],
@@ -56,7 +62,7 @@ test('published research has measured headers, usable models and scoped canonica
   ['usa','legal-action-center','Legal Action Center','10',false],
   ['usa','end-overdose','End Overdose','47',true],
   ['california','end-overdose','End Overdose','20',true],
-  ['usa','surgery-on-sunday','Surgery on Sunday','5',true],
+  ['usa','surgery-on-sunday','Surgery on Sunday','19',true],
   ['usa','the-headstrong-project','The Headstrong Project','6',true],
   ['usa','dental-lifeline-network','Dental Lifeline Network','12',true],
   ['california','homeless-health-care-los-angeles','Homeless Health Care Los Angeles','6',true],
@@ -79,7 +85,7 @@ test('published research has measured headers, usable models and scoped canonica
   const route=`/${edition}/charities/${slug}`;
   await page.goto(route);
   await expect(page.getByRole('heading',{name,exact:true})).toBeVisible();
-  const models=edition==='usa'&&['end-overdose','center-for-science-in-the-public-interest'].includes(slug)?'GPT-6 Astra Light \\+ GPT-6 Astra Medium':'GPT-6 Astra Light';
+  const models=edition==='usa'&&['end-overdose','center-for-science-in-the-public-interest','surgery-on-sunday'].includes(slug)?'GPT-6 Astra Light \\+ GPT-6 Astra Medium':'GPT-6 Astra Light';
   await expect(page.locator('.report-research-effort summary')).toHaveText(new RegExp(`^Research time: ~?${minutes} min on ${models}$`));
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href','https://ai.rhyslindmark.com/givebetter'+route);
   if(donate)await expect(page.locator('.report-donate')).toHaveAttribute('href',/^https:\/\//);

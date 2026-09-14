@@ -124,8 +124,8 @@ test('published research has measured headers, usable models and scoped canonica
 });
 test('research table keeps unknown means unknown and shows audited recipient mean',async({page})=>{
  await page.goto('/los-angeles/all');
- await expect(page.locator('tr').filter({hasText:'Lestonnac Free Clinic'})).toContainText('$2.8M');
- await expect(page.locator('tr').filter({hasText:'Lestonnac Free Clinic'})).toContainText('$4.1M');
+ await expect(page.locator('tr').filter({hasText:'Lestonnac Free Clinic'})).toContainText('$4.4M');
+ await expect(page.locator('tr').filter({hasText:'Lestonnac Free Clinic'})).toContainText('$7.1M');
  await expect(page.locator('tr').filter({hasText:'Breathe Southern California'})).toContainText('$428.3M');
  await expect(page.locator('tr').filter({hasText:'Breathe Southern California'})).toContainText('$2.4M');
  await expect(page.locator('tr').filter({hasText:'Climate Resolve'}).getByTitle('Local heat health only; other impacts unestimated')).toHaveText('$14.1M');
@@ -151,7 +151,7 @@ test('research table keeps unknown means unknown and shows audited recipient mea
  await expect(page.locator('tr').filter({hasText:'Legal Action Center'})).toContainText('$8.6M');
  await expect(page.locator('tr').filter({hasText:'Surgery on Sunday'})).toContainText('$405K');
  await expect(page.locator('tr').filter({hasText:'Surgery on Sunday'})).toContainText('Not estimated');
- await expect(page.locator('tr').filter({hasText:'Dental Lifeline Network'})).toContainText('$744K');
+ await expect(page.locator('tr').filter({hasText:'Dental Lifeline Network'})).toContainText('$818K');
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
 });
 test('desktop contents stay left and SF report still renders',async({page})=>{

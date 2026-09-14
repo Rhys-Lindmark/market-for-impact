@@ -1,0 +1,664 @@
+{
+  "schemaVersion": 1,
+  "input": "Accepted NYC initial research packet; corrected reports in data/geography-reports.json",
+  "status": "accepted-for-publication",
+  "corrections": [
+    {
+      "slug": "new-york-lawyers-for-the-public-interest",
+      "path": "priceScope",
+      "before": null,
+      "after": "Whole annual NYLPI recognized expense charged to a conditional near-term immigration-linked clinical-care component for MSA residents. Disability, environmental and wider legal benefits remain unpriced. Not measured whole-portfolio return or a proven lower bound.",
+      "reason": "Make partial-health scope visible at the price display without erasing explicit judgment central."
+    },
+    {
+      "slug": "new-york-city-environmental-justice-alliance",
+      "path": "priceScope",
+      "before": null,
+      "after": "Three years of whole-recipient NYC-EJA recognized expense charged to conditional additional heat-policy implementation for NYC residents. Other environmental effects remain unpriced; induced public, household and coalition resources are sensitivity assumptions. Not measured whole-portfolio return or a proven lower bound.",
+      "reason": "Make partial-health scope visible at the price display without erasing explicit judgment central."
+    },
+    {
+      "slug": "new-jersey-harm-reduction-coalition",
+      "path": "priceScope",
+      "before": null,
+      "after": "Whole annual NJHRC recognized expense, including donated supplies, charged to a conditional finite overdose-survival component for MSA residents. Service allocation, unique reach, rescue additionality and funding response are judgment priors; wider clinical, infection and policy effects remain unpriced. Not measured whole-portfolio return or a proven lower bound.",
+      "reason": "Make partial-health scope visible at the price display without erasing explicit judgment central."
+    },
+    {
+      "slug": "new-jersey-harm-reduction-coalition",
+      "path": "sections.cost",
+      "before": "The conditional partial-health estimate is about $10.5 million per 10 MSA QALYs. This is not the complete portfolio return or a lower bound.\n\nThe central resource bridge allocates 50% of annual recipient capacity to community overdose prevention and assumes $1,000 per unique risk-person year: approximately 1063 people. Neither number is a verified service allocation or actual annual reach. They are explicit planning priors given the absence of recipient-level outcome data. The encounter rate is 0.1 per person-year, additional timely rescue is 30%, and avoided mortality hazard per incremental encounter is 0.1. This yields a 0.003 annual hazard reduction for one year, before the 25% ordinary-gift response.\n\nBaseline mortality is 8% annually and utility 0.7, both judgments. After the first year, both groups face the same mortality hazard; any survival difference is followed for at most ten years with 3% discounting. Repeat overdose is therefore not awarded another lifetime. A 65% MSA share applies only to the modeled beneficiaries and is deliberately uncertain, with 40% and 80% alternatives. No full New Jersey or CSA denominator is substituted.\n\nWide positive alternatives vary delivery efficiency, rescue opportunity, substitution, funding and duration. Zero and net harm remain possible. A 25% added-resource case changes cost only, testing omitted partner and volunteer inputs without pretending those resources produce more beneficiaries.",
+      "after": "The conditional partial-health estimate is about $10.5 million per 10 MSA QALYs. This is not the complete portfolio return or a lower bound.\n\nThe central resource bridge allocates 50% of annual recipient capacity to community overdose prevention and assumes $1,000 per unique risk-person year: approximately 1063 people. Neither number is a verified service allocation or actual annual reach. They are explicit planning priors given the absence of recipient-level outcome data. The encounter rate is 0.1 per person-year, additional timely rescue is 30%, and avoided mortality hazard per incremental encounter is 0.1. This yields a 0.003 annual hazard reduction for one year, before the 25% ordinary-gift response.\n\nBaseline mortality hazard is 0.08 per year (about 7.69% annual death risk), and utility is 0.7; both are judgments. After the first year, both groups face the same mortality hazard; any survival difference is followed for at most ten years with 3% discounting. Repeat overdose is therefore not awarded another lifetime. A 65% MSA share applies only to the modeled beneficiaries and is deliberately uncertain, with 40% and 80% alternatives. No full New Jersey or CSA denominator is substituted.\n\nWide positive alternatives vary delivery efficiency, rescue opportunity, substitution, funding and duration. Zero and net harm remain possible. A 25% added-resource case changes cost only, testing omitted partner and volunteer inputs without pretending those resources produce more beneficiaries.",
+      "reason": "Hazard is not identical to annual mortality probability."
+    },
+    {
+      "slug": "new-jersey-harm-reduction-coalition",
+      "path": "model.formula",
+      "before": "U=C*f/k; delta=e*t*l; dlog=ln(1+d); F(v,t)=(1-exp(-v*t))/v; H=U*u*[F(m-delta+dlog,1)-F(m+dlog,1)+(exp(-(m-delta))-exp(-m))*exp(-dlog)*F(m+dlog,T-1)]; Qall=b*H-h; QMSA=g*Qall. Cost sensitivities change numerator only.",
+      "after": "U=C*f/k; delta=e*t*l; dlog=ln(1+d); F(v,t)=(1-exp(-v*t))/v; H=U*u*[F(m-delta+dlog,1)-F(m+dlog,1)+(exp(-(m-delta))-exp(-m))*exp(-dlog)*F(m+dlog,T-1)]; Qall=b*H-h; QMSA=g*Qall. Cost sensitivities change numerator only. The encounter-level mortality input l is mapped linearly into a hazard decrement delta=e*t*l as an approximation, not an exact probability-to-hazard identity.",
+      "reason": "Expose event-to-hazard modeling approximation."
+    },
+    {
+      "slug": "new-york-city-environmental-justice-alliance",
+      "path": "model.inputs",
+      "before": [
+        {
+          "name": "C",
+          "value": 7512648,
+          "unit": "USD across three operating years",
+          "basis": "observed",
+          "rationale": "Three times FY2024 original gross expense; future constant scale is an assumption.",
+          "sourceIds": [
+            "return2024",
+            "schedule2024"
+          ]
+        },
+        {
+          "name": "D",
+          "value": 500,
+          "unit": "historical annual NYC heat deaths",
+          "basis": "observed",
+          "rationale": "Rounded current city estimate, predominantly statistically estimated heat-exacerbated deaths; not an observed campaign outcome.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "r",
+          "value": 0.01,
+          "unit": "fraction of heat deaths additionally prevented conditional on implementation",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "p",
+          "value": 0.25,
+          "unit": "coalition incremental implementation probability",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "a",
+          "value": 0.2,
+          "unit": "NYC-EJA attribution fraction",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "b",
+          "value": 0.5,
+          "unit": "funding response fraction",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "T",
+          "value": 5,
+          "unit": "annual mortality cohorts",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "lag",
+          "value": 4,
+          "unit": "years to first benefit",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "u",
+          "value": 0.6,
+          "unit": "health utility",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "m",
+          "value": 0.2,
+          "unit": "annual competing mortality hazard",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "L",
+          "value": 5,
+          "unit": "maximum remaining survival years",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "h",
+          "value": 0,
+          "unit": "net QALYs of adverse effects",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "g",
+          "value": 1,
+          "unit": "MSA fraction",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "d",
+          "value": 0.03,
+          "unit": "annual discount",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        }
+      ],
+      "after": [
+        {
+          "name": "C",
+          "value": 7512648,
+          "unit": "USD across three operating years",
+          "basis": "judgment",
+          "rationale": "Three times observed FY2024 gross expense, assuming constant future scale and charging the three annual budgets upfront without cost discounting; not an observed three-year expenditure.",
+          "sourceIds": [
+            "return2024",
+            "schedule2024"
+          ]
+        },
+        {
+          "name": "D",
+          "value": 500,
+          "unit": "historical annual NYC heat deaths",
+          "basis": "observed",
+          "rationale": "Rounded current city estimate, predominantly statistically estimated heat-exacerbated deaths; not an observed campaign outcome.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "r",
+          "value": 0.01,
+          "unit": "fraction of heat deaths additionally prevented conditional on implementation",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "p",
+          "value": 0.25,
+          "unit": "coalition incremental implementation probability",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "a",
+          "value": 0.2,
+          "unit": "NYC-EJA attribution fraction",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "b",
+          "value": 0.5,
+          "unit": "funding response fraction",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "T",
+          "value": 5,
+          "unit": "annual mortality cohorts",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "lag",
+          "value": 4,
+          "unit": "years to first benefit",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "u",
+          "value": 0.6,
+          "unit": "health utility",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "m",
+          "value": 0.2,
+          "unit": "annual competing mortality hazard",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "L",
+          "value": 5,
+          "unit": "maximum remaining survival years",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "h",
+          "value": 0,
+          "unit": "net QALYs of adverse effects",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "g",
+          "value": 1,
+          "unit": "MSA fraction",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        },
+        {
+          "name": "d",
+          "value": 0.03,
+          "unit": "annual discount",
+          "basis": "judgment",
+          "rationale": "Explicit subjective assumption, not source-calibrated probability or measured treatment effect.",
+          "sourceIds": [
+            "heat",
+            "law",
+            "mortality"
+          ]
+        }
+      ],
+      "reason": "Future three-year expenditure is a projection anchored to an observed year, not observed cost."
+    },
+    {
+      "slug": "new-york-city-environmental-justice-alliance",
+      "path": "sections.monitoring",
+      "before": "The organization describes work on cooling access and implementation. The Council's enacted law requires covered rental sleeping rooms to have qualifying cooling by June 2030, subject to tenant elections and other conditions. Rules, affordability, uptake and enforcement therefore matter more than the existence of the law. Request a campaign-specific baseline, additional households able to use cooling, tenant costs, agency commitments and evidence of NYC-EJA's contribution. [Original law](https://legistar.council.nyc.gov/LegislationDetail.aspx?GUID=156F95BB-CA74-44F3-A07B-A0E54EA0C10F&ID=6788510)",
+      "after": "The organization describes work on cooling access and implementation. The Council's enacted law requires covered rental sleeping rooms to have qualifying cooling by June 2030, subject to tenant elections and other conditions. Rules, affordability, uptake and enforcement therefore matter more than the existence of the law. Request a campaign-specific baseline, additional households able to use cooling, tenant costs, agency commitments and evidence of NYC-EJA's contribution. [Original law](https://legistar.council.nyc.gov/LegislationDetail.aspx?GUID=156F95BB-CA74-44F3-A07B-A0E54EA0C10F&ID=6788510) The law also has hardship extensions and a separate NYCHA cooling-plan compliance route; the model does not assume universal cooling by 2030.",
+      "reason": "Preserve important statutory implementation exceptions."
+    },
+    {
+      "slug": "new-york-lawyers-for-the-public-interest",
+      "path": "sections.funding",
+      "before": "Gross recognized May-ending recipient expenses are $6,364,454 in 2023,$6,954,837 in 2024 and $8,609,977 in 2025. Starting from Form 990 PartIX, add donated services $42,067/$50,405/$73,579, netted rental costs $128,572/$133,411/$135,167 and netted event costs $293,978/$86,973/$558,923. Investment fees $26,271/$26,572/$26,410 already appear in PartIX and are not added again. FY 2024's ScheduleD also reconciles $65,497 fundraising expense excluded from audit expense but already included in the return; it is not a further addback. [Original FY 2025 return](https://projects.propublica.org/nonprofits/full_text/202621059349300347/IRS990) [Original FY 2024 reconciliation](https://projects.propublica.org/nonprofits/full_text/202541019349301504/IRS990ScheduleD)\n\nFY 2025 government grants were $1,826,105 and ending net assets $6,837,287, including $1,375,931 restricted. Cash and savings total $1,830,765; net assets also include receivables and other resources. Public support for the Immigrant Health Initiative and existing partner capacity remain in the baseline. No specific current unrestricted cash gap or extra case commitment was verified. [Current funding testimony](https://www.nylpi.org/resource/camilla-samuelsson-testimony-to-the-committees-on-mental-health-and-substance-use-joint-with-the-committee-on-health-and-the-committee-on-disabilities-march-19-2026/) [Donate](https://www.nylpi.org/donate)",
+      "after": "Gross recognized May-ending recipient expenses are $6,364,454 in 2023,$6,954,837 in 2024 and $8,609,977 in 2025. Starting from Form 990 PartIX, add donated services $42,067/$50,405/$73,579, netted rental costs $128,572/$133,411/$135,167 and netted event costs $293,978/$86,973/$558,923. Investment fees $26,271/$26,572/$26,410 already appear in PartIX and are not added again. FY 2024's ScheduleD also reconciles $65,497 fundraising expense excluded from audit expense but already included in the return; it is not a further addback. [Original FY 2025 return](https://projects.propublica.org/nonprofits/full_text/202621059349300347/IRS990) [Original FY 2024 reconciliation](https://projects.propublica.org/nonprofits/full_text/202541019349301504/IRS990ScheduleD)\n\nFY 2025 government grants were $1,826,105 and ending net assets $6,837,287, including $1,375,931 restricted. Cash and savings total $1,830,765; net assets also include receivables and other resources. Public support for the Immigrant Health Initiative and existing partner capacity remain in the baseline. No specific current unrestricted cash gap or extra case commitment was verified. [Current funding testimony](https://www.nylpi.org/resource/camilla-samuelsson-testimony-to-the-committees-on-mental-health-and-substance-use-joint-with-the-committee-on-health-and-the-committee-on-disabilities-march-19-2026/) [Donate](https://www.nylpi.org/donate)\n\nExpense appendix: FY2025 Part IX comprises $6,068,823 program, $1,186,367 management/general and $587,118 fundraising, totaling $7,842,308. Adding $73,579 recognized donated services, $135,167 separately netted rental expense and $558,923 event expense yields $8,609,977. Investment fees are already included. Comparable recognized annual expenses for FY2023–25 average $7,309,756; public clinical and unrecognized volunteer resources are not fully observed.",
+      "reason": "Expose original functional spending and addback-once basis."
+    },
+    {
+      "slug": "new-york-city-environmental-justice-alliance",
+      "path": "sections.funding",
+      "before": "Original annual gross expense is $1,125,024 in 2022, $2,192,165 in 2023 and $2,504,216 in 2024. Each Schedule D reports audited expense equal to Form 990 expense, without donated-service additions; event, gaming, rental-expense and inventory-cost lines are blank. The latest return uses accrual accounting. Its $5,696,887 net assets include $3,429,390 restricted resources, so the full balance is not unrestricted spending capacity. No specific extra campaign commitment for a new gift was verified. [Original return](https://projects.propublica.org/nonprofits/full_text/202523219349319307/IRS990)\n\nSchedule L discloses a $120,000 annual rental transaction associated with a board member; this is a governance question, not evidence of impropriety or an additional expense. [Disclosure](https://projects.propublica.org/nonprofits/full_text/202523219349319307/IRS990ScheduleL)\n\nThe city reports that HEAP cooling assistance closed June 5, 2026 with unmet demand. This makes affordability a concrete implementation concern, but does not prove NYC-EJA can secure more funding or that a gift does so. [Current public funding](https://www.nyc.gov/site/doh/about/press/pr2026/nyc-health-department-releases-report-on-heat-related-deaths.page) [Donate](https://nyc-eja.org/support-donate/)",
+      "after": "Original annual gross expense is $1,125,024 in 2022, $2,192,165 in 2023 and $2,504,216 in 2024. Each Schedule D reports audited expense equal to Form 990 expense, without donated-service additions; event, gaming, rental-expense and inventory-cost lines are blank. The latest return uses accrual accounting. Its $5,696,887 net assets include $3,429,390 restricted resources, so the full balance is not unrestricted spending capacity. No specific extra campaign commitment for a new gift was verified. [Original return](https://projects.propublica.org/nonprofits/full_text/202523219349319307/IRS990)\n\nSchedule L discloses a $120,000 annual rental transaction associated with a board member; this is a governance question, not evidence of impropriety or an additional expense. [Disclosure](https://projects.propublica.org/nonprofits/full_text/202523219349319307/IRS990ScheduleL)\n\nThe city reports that HEAP cooling assistance closed June 5, 2026 with unmet demand. This makes affordability a concrete implementation concern, but does not prove NYC-EJA can secure more funding or that a gift does so. [Current public funding](https://www.nyc.gov/site/doh/about/press/pr2026/nyc-health-department-releases-report-on-heat-related-deaths.page) [Donate](https://nyc-eja.org/support-donate/)\n\nExpense appendix: FY2024 functional expense is $2,364,603 program, $94,580 management/general and $45,033 fundraising, totaling $2,504,216. Program expense includes $1,129,170 grants, so recipient grants and member spending must not both be added to this cost basis. The comparable 2022–24 mean is $1,940,468.33. The model projects three years at the latest annual cost, not this historical mean.",
+      "reason": "Expose original functional spending and addback-once basis."
+    },
+    {
+      "slug": "new-jersey-harm-reduction-coalition",
+      "path": "sections.funding",
+      "before": "FY2024 Form 990 gross expense is $2,125,515, including $396,000 of donated supplies already in Part IX; adding the same stock again would double count it. The return reports $1,750,800 government grants, $262,236 net assets, $18,178 cash and $188,366 grants receivable. These historical figures do not establish a current cash gap. Event, rental and inventory cost lines are blank. Although the return indicates an audit, its Schedule D reconciliation is blank, so this is not independently verified audited total-resource expense. [Original FY2024 return](https://projects.propublica.org/nonprofits/full_text/202523219349324447/IRS990)\n\nOriginal FY2023 expense is $2,128,588, but FY2024's comparative column shows $2,136,736: an unresolved $8,148 difference. Original FY2022 expense is $746,927; its Schedule M medical donation value of $164,196 differs from Part VIII noncash revenue of $138,616. Both historical years are marked noncomparable, with no synthetic three-year average. All three returns use accrual accounting. [FY2023 original](https://projects.propublica.org/nonprofits/full_text/202401809349300715/IRS990) [FY2022 noncash disclosure](https://projects.propublica.org/nonprofits/full_text/202333199349327823/IRS990ScheduleM)\n\nNew Jersey's public naloxone programs already supply pharmacies and eligible community agencies. An ordinary gift may improve distribution or flexible services, but should not be assumed to purchase incremental medicine or reverse every reported overdose. [Public baseline](https://www.nj.gov/humanservices/news/pressreleases/2024/approved/20240913.shtml)",
+      "after": "FY2024 Form 990 gross expense is $2,125,515, including $396,000 of donated supplies already in Part IX; adding the same stock again would double count it. The return reports $1,750,800 government grants, $262,236 net assets, $18,178 cash and $188,366 grants receivable. These historical figures do not establish a current cash gap. Event, rental and inventory cost lines are blank. Although the return indicates an audit, its Schedule D reconciliation is blank, so this is not independently verified audited total-resource expense. [Original FY2024 return](https://projects.propublica.org/nonprofits/full_text/202523219349324447/IRS990)\n\nOriginal FY2023 expense is $2,128,588, but FY2024's comparative column shows $2,136,736: an unresolved $8,148 difference. Original FY2022 expense is $746,927; its Schedule M medical donation value of $164,196 differs from Part VIII noncash revenue of $138,616. Both historical years are marked noncomparable, with no synthetic three-year average. All three returns use accrual accounting. [FY2023 original](https://projects.propublica.org/nonprofits/full_text/202401809349300715/IRS990) [FY2022 noncash disclosure](https://projects.propublica.org/nonprofits/full_text/202333199349327823/IRS990ScheduleM)\n\nNew Jersey's public naloxone programs already supply pharmacies and eligible community agencies. An ordinary gift may improve distribution or flexible services, but should not be assumed to purchase incremental medicine or reverse every reported overdose. [Public baseline](https://www.nj.gov/humanservices/news/pressreleases/2024/approved/20240913.shtml)\n\nExpense appendix: FY2024 functional expense is $1,824,131 program, $267,124 management/general and $34,260 fundraising, totaling $2,125,515. In-kind supplies of $396,000 are already within program expense. Earlier original reporting discrepancies remain unresolved; no verified comparable three-year mean is supplied.",
+      "reason": "Expose original functional spending and addback-once basis."
+    },
+    {
+      "slug": "new-york-lawyers-for-the-public-interest",
+      "path": "model.nativeCosts",
+      "before": null,
+      "after": "Whole annual expense / 85 historical screened people = $101,293.85 per screened person, a portfolio accounting ratio. Central effective additional care equivalents = 85*0.25*0.5*0.5 = 5.3125 before the 85% residency allocation; full expense / local equivalent = about $1.91 million. These are judgment-based additional-care units, not documented clinical successes.",
+      "reason": "Add interpretable native accounting and causal unit."
+    },
+    {
+      "slug": "new-york-city-environmental-justice-alliance",
+      "path": "model.nativeCosts",
+      "before": null,
+      "after": "Central donor-attributable deaths avoided are 500*0.01*0.25*0.2*0.5 = 0.125 per annual cohort and 0.625 over five cohorts, before timing discount. Three-year recipient cost / 0.625 = $12,020,236.80 per conditional death avoided; finite competing-risk survival then determines QALYs. No deaths are claimed as observed campaign outcomes.",
+      "reason": "Expose native outcomes before finite survival."
+    },
+    {
+      "slug": "new-jersey-harm-reduction-coalition",
+      "path": "model.nativeCosts",
+      "before": null,
+      "after": "Central assumed U = 2,125,515*0.5/1000 = 1,062.7575 unique risk-person years. Whole-recipient expense / assumed risk-person year is $2,000, not the branch allocation cost of $1,000. Additional timely-rescue equivalents = U*0.1*0.3*0.25 = 7.97068125 before residency, giving $410,256.41 per modeled MSA rescue equivalent. A rescue is not a death averted; finite unique-person survival is calculated separately.",
+      "reason": "Separate full-gift cost, allocation cost and additional rescue units."
+    }
+  ],
+  "scenarioChecks": [
+    {
+      "slug": "new-york-lawyers-for-the-public-interest",
+      "scenario": "central",
+      "q": 0.24757281553398058,
+      "loc": 0.21043689320388348,
+      "c": 8609977,
+      "price": 409147695.96309114,
+      "pass": true
+    },
+    {
+      "slug": "new-york-lawyers-for-the-public-interest",
+      "scenario": "low",
+      "q": 0.0015473300970873791,
+      "loc": 0.0009283980582524274,
+      "c": 8609977,
+      "price": 92740144418.30063,
+      "pass": true
+    },
+    {
+      "slug": "new-york-lawyers-for-the-public-interest",
+      "scenario": "high",
+      "q": 5.547178398058252,
+      "loc": 5.269819478155339,
+      "c": 8609977,
+      "price": 16338276.929011347,
+      "pass": true
+    },
+    {
+      "slug": "new-york-lawyers-for-the-public-interest",
+      "scenario": "zero",
+      "q": 0,
+      "loc": 0,
+      "c": 8609977,
+      "price": null,
+      "pass": true
+    },
+    {
+      "slug": "new-york-lawyers-for-the-public-interest",
+      "scenario": "adverse",
+      "q": -0.02063106796116505,
+      "loc": -0.01753640776699029,
+      "c": 8609977,
+      "price": null,
+      "pass": true
+    },
+    {
+      "slug": "new-york-lawyers-for-the-public-interest",
+      "scenario": "clinical-cost",
+      "q": 0.24757281553398058,
+      "loc": 0.21043689320388348,
+      "c": 8636539.5,
+      "price": 410409950.8650519,
+      "pass": true
+    },
+    {
+      "slug": "new-york-lawyers-for-the-public-interest",
+      "scenario": "volunteer-cost",
+      "q": 0.24757281553398058,
+      "loc": 0.21043689320388348,
+      "c": 10762471.25,
+      "price": 511434619.9538639,
+      "pass": true
+    },
+    {
+      "slug": "new-york-city-environmental-justice-alliance",
+      "scenario": "central",
+      "q": 0.9347604475165979,
+      "loc": 0.9347604475165979,
+      "c": 7512648,
+      "price": 80369767.67640357,
+      "pass": true
+    },
+    {
+      "slug": "new-york-city-environmental-justice-alliance",
+      "scenario": "low",
+      "q": 0.0013015371987690576,
+      "loc": 0.0013015371987690576,
+      "c": 7512648,
+      "price": 57721346782.13704,
+      "pass": true
+    },
+    {
+      "slug": "new-york-city-environmental-justice-alliance",
+      "scenario": "high",
+      "q": 46.253403033241405,
+      "loc": 46.253403033241405,
+      "c": 7512648,
+      "price": 1624236.8144460223,
+      "pass": true
+    },
+    {
+      "slug": "new-york-city-environmental-justice-alliance",
+      "scenario": "zero",
+      "q": 0,
+      "loc": 0,
+      "c": 7512648,
+      "price": null,
+      "pass": true
+    },
+    {
+      "slug": "new-york-city-environmental-justice-alliance",
+      "scenario": "adverse",
+      "q": -1,
+      "loc": -1,
+      "c": 7512648,
+      "price": null,
+      "pass": true
+    },
+    {
+      "slug": "new-york-city-environmental-justice-alliance",
+      "scenario": "induced-cost",
+      "q": 0.9347604475165979,
+      "loc": 0.9347604475165979,
+      "c": 8512648,
+      "price": 91067695.7140813,
+      "pass": true
+    },
+    {
+      "slug": "new-york-city-environmental-justice-alliance",
+      "scenario": "volunteer-cost",
+      "q": 0.9347604475165979,
+      "loc": 0.9347604475165979,
+      "c": 9390810,
+      "price": 100462209.59550445,
+      "pass": true
+    },
+    {
+      "slug": "new-jersey-harm-reduction-coalition",
+      "scenario": "central",
+      "q": 3.1254718377777997,
+      "loc": 2.03155669455557,
+      "c": 2125515,
+      "price": 10462494.134159444,
+      "pass": true
+    },
+    {
+      "slug": "new-jersey-harm-reduction-coalition",
+      "scenario": "low",
+      "q": 0.01503235961559891,
+      "loc": 0.006012943846239564,
+      "c": 2125515,
+      "price": 3534899134.8543463,
+      "pass": true
+    },
+    {
+      "slug": "new-jersey-harm-reduction-coalition",
+      "scenario": "high",
+      "q": 77.34697377148217,
+      "loc": 61.87757901718574,
+      "c": 2125515,
+      "price": 343503.2581687891,
+      "pass": true
+    },
+    {
+      "slug": "new-jersey-harm-reduction-coalition",
+      "scenario": "zero",
+      "q": 0,
+      "loc": 0,
+      "c": 2125515,
+      "price": null,
+      "pass": true
+    },
+    {
+      "slug": "new-jersey-harm-reduction-coalition",
+      "scenario": "adverse",
+      "q": -0.1,
+      "loc": -0.065,
+      "c": 2125515,
+      "price": null,
+      "pass": true
+    },
+    {
+      "slug": "new-jersey-harm-reduction-coalition",
+      "scenario": "resources",
+      "q": 3.1254718377777997,
+      "loc": 2.03155669455557,
+      "c": 2656893.75,
+      "price": 13078117.667699303,
+      "pass": true
+    }
+  ],
+  "auditInterval": {
+    "workerId": "usa_beta_one",
+    "model": "gpt-6-astra",
+    "reasoningEffort": "medium",
+    "startedAt": "2026-09-14T08:31:24Z",
+    "endedAt": "2026-09-14T08:36:16.328Z",
+    "actualSeconds": 292.328,
+    "authorResearchSeconds": 0,
+    "alphaCredit": 0,
+    "betaCredit": 0
+  },
+  "sourceAudit": [
+    {
+      "slug": "new-york-lawyers-for-the-public-interest",
+      "decision": "accept-corrected",
+      "financial": "All three original returns and Schedule D reopened. Part IX5899837/6684048/7842308 plus services42067/50405/73579 plus rental128572/133411/135167 plus events293978/86973/558923 reproduce6364454/6954837/8609977. Investment fees already Part IX; 2024 fundraising65497 already included, not another addback.",
+      "causal": "Fresh March2026 testimony confirms85 FY2025 screening individuals and60 representation cases; no summation. p,a,b and g are explicit separate priors. Half-year clinical gains and per-person burden finite. No environment/immigration victory counted as observed health benefit.",
+      "nextBottleneck": "Effective additional care, residency and gift capacity response."
+    },
+    {
+      "slug": "new-york-city-environmental-justice-alliance",
+      "decision": "accept-corrected",
+      "financial": "Original Part IX and Schedule D verified1125024/2192165/2504216; event/rental/gaming/COGS blank; related-party rental120000 disclosed, not added twice.",
+      "causal": "Fresh2026 DOH report500 rounded deaths (7 direct2016–25;489 modeled exacerbated2014–23), not observed campaign outcomes. Enacted cooling law2030, tenant elections, hardship and NYCHA routes, existing cooling centers and HEAP closureJune5,2026 retained as counterfactual. p*a*b once; annual cohorts followed finite L and discounted fromlag4. ProjectionC basis corrected.",
+      "nextBottleneck": "Additional cooling affordability and implementation attributable to ordinary funding."
+    },
+    {
+      "slug": "new-jersey-harm-reduction-coalition",
+      "decision": "accept-corrected",
+      "financial": "Original2022–24 returns and Schedule M verified. 2022medical164196 vs noncash138616 unresolved; 2023original2128588 vs2024comparative2136736 unresolved; comparabilityflagsfalse preserved.2024in-kind396000 explicitlyPartIX, not added twice. No fictional three-year mean.",
+      "causal": "Current primary medetomidine material locates New Brunswick/Middlesex and statewide operations; public NJ naloxone school/portal access remains replacement baseline. Prior HEALing randomized aggregate-null counterevidence retained. Unique-person finite hazard model reproduced; fundingresponseonce, cost stress changes numerator only. 65%MSA share remains judgment, not New Jersey population proxy.",
+      "nextBottleneck": "Actual unique local risk-person reach, extra rescues beyond public supply and funding response."
+    }
+  ],
+  "financialEvidence": "/tmp/nyc-next-financial-evidence.json",
+  "mathReproduction": "/tmp/nyc-next-independent-audit.mjs",
+  "timingConclusion": "Retained author sessions are consecutive266+366+230=862seconds, without overlap. Audit adds no author credit and cannot independently certify each second of source work.",
+  "validation": {
+    "allScenariosPass": true,
+    "scenarioCount": 20,
+    "allCentralNumbersUnchanged": true,
+    "allAnnualExpenseNumbersUnchanged": true,
+    "allVisiblePriceScopes": true,
+    "summaryThreeEach": true,
+    "scenarioAssumptionsStrings": true,
+    "missingInputsAndSensitivityPresent": true
+  },
+  "spaceSaver": "Read-only original retrieval; compact evidence retained, no PDF downloads, installs, builds, Site/Git or nested agents."
+}

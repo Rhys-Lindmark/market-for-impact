@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 const d=JSON.parse(readFileSync(new URL('../data/geography-reports.json',import.meta.url)));
-const rows=d.reports.filter(r=>r.edition==='new-york-city');
+const rows=d.reports.filter(r=>r.edition==='new-york-city'&&['transportation-alternatives','onpoint-nyc','bergen-volunteer-medical-initiative'].includes(r.slug));
 const close=(a,b)=>assert.ok(Math.abs(a-b)<1e-8*Math.max(1,Math.abs(b)),a+' != '+b);
 test('NYC first three selected alpha reports preserve model and author provenance',()=>{
  assert.equal(rows.length,3);

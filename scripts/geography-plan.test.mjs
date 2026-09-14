@@ -113,7 +113,7 @@ for(const r of nyc.records){
 }
 assert.ok(nycProgress.acceptedDiscoveryIds.includes('org:zufall-health-foundation'));
 assert.ok(!nycProgress.acceptedDiscoveryIds.includes('org:zufall-health'));
-assert.equal(nycProgress.alphaPublished,3);assert.equal(nycProgress.betaAcceptedPublished,0);
+assert.equal(nycProgress.alphaPublished,6);assert.equal(nycProgress.betaAcceptedPublished,0);
 for(const id of nycProgress.alphaCohortIds)assert.ok(nycProgress.selectedAlphaIds.includes(id));
 for(const city of ['denver','chicago','houston','boston','atlanta']){
  const row=p.editions.find(e=>e.id===city);

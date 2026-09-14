@@ -1,22 +1,13 @@
-# Los Angeles: four clinical-portfolio reviews
+# Four Los Angeles reports accepted
 
-14 September 2026. Didi Hirsch, John Tracy Center, Sycamores and Bienestar advance LA from 14/25 to 18/25 initial reports. USA remains 25/25 with 1/10 deep reviews; California14/25. Eight other metros have no initial reports and all other editions have no accepted deep reviews. No giving picks are added.
+September14,2026: LA22/25 initial reports,0/10 deeper reviews. Adds Garment Worker Center, Housing Rights Center, Downtown Women's Center and Radiant Health Centers; not four recommendations.
 
-## Acceptance and source checks
+Independent original-source/model audits verified all twelve positive joint scenarios and zero/adverse handling. Central partial-health estimates are $88.14m/$94.67m/$165.15m/$175.98m per10 LA/Orange QALYs respectively, with full recipient costs. Unpriced portfolio pathways are not asserted worthless. GWC's income-to-health mapping, HRC's accommodation utility, DWC's additional housing and Radiant's clinical mix/transfer are explicit uncertain judgments.
 
-An independent Medium worker reviewed original financials, causal units, geography and scenario arithmetic from 03:47:30 to 03:56:12 UTC. This audit is not added to author research time. Root reviewed the report packets and independently read and rendered Didi Hirsch's 2025 annual report, PDF page6/printed9, resolving the auditor's remaining retrieval gap: 5,498 outpatient clients and32% depression are reported under Adult Services. The exact compatible adult denominator remains a modeling judgment, not a measured age distribution.
+Original financial corrections: GWC restores $153,503 netted rental expense; HRC retains extraordinary FY2023 rental-relief spending and unexplained prior-period adjustment. DWC restores netted events in all three audits and separately adds the current $405,000 approximate unrecognized volunteer value only to the model. Radiant restores original-return event costs and retains drug-program resources; current control findings were corrected, not repeated as current problems.
 
-Original return totals retain separately netted event costs and donated-service exclusions where applicable. Didi's full recognized expense average is $82,835,805.33; John Tracy's gross Form990 average is $5,881,974.67; Sycamores $66,488,530; Bienestar $9,453,637.67. They are accounting/resource measures, not cash flows or marginal treatment costs. No already-published California Didi record exists, so no unrelated record is patched.
+Direct clinical reviews retain cash-transfer null health findings, OTIS falls null evidence, Housing First's limited health gains, and the distinction between SMART trial strategies and medication-years. Radiant's group/Zoom counseling is not treated as identical to the CoBalT individual treatment protocol.
 
-Clinical checks preserve CoBalT's0.057 incremental twelve-month QALY per randomized offer, JTC's external communication effect of0.59 standard deviations (not QALYs), MICE's0.022 child and separately fitted0.090 combined family estimate (not their sum), SMART's composite disease-or-death strategy endpoint and PROUD's offer-based prevention effect. The local Bienestar trial found no PrEP-use improvement; outreach contacts earn no automatic prevention credit.
+Original author intervals preserved: GWC03:55:03–04:12:44UTC;HRC04:12:57–04:17:30;DWC04:18:53–04:25:40;Radiant04:25:40–04:32:34. Independent audit and root publication time are not counted as author effort.
 
-Root retains numerical clinical-component estimates with explicit price scopes, charging full recipient expense. They are not total-portfolio returns, lower bounds, or recommendation ranks. John Tracy remains unestimated because both a current eligible-course denominator and communication-to-health bridge lack a defensible anchor. Independent audit and source links remain in each report; exact model tests reproduce the positive, zero and adverse cases.
-
-## Measured author intervals
-
-- Didi: retained earlier source work22:46:23–22:51:20UTC September13 (297s), plus LA work03:15:02–03:22:46UTC September14 (464s). Total761s, shown13min; no California publication credit.
-- John Tracy:03:23:06–03:33:23 (617s), shown10min.
-- Sycamores:03:34:44–03:42:01 (437s), shown7min.
-- Bienestar:03:42:10–03:54:02 (712s), shown12min.
-
-All author intervals used GPT-6 Astra Light. No batch splitting, duplicate sessions or integration minutes are assigned to organizations. Tests, production build and responsive interaction checks are release gates, followed by exact-source canonical deployment verification. Next: the seven remaining LA priorities, California propagation of the USA End Overdose clinical revision, Denver discovery acceptance and USA CSPI deep review.
+Root normalized scenario text, rendered paragraph breaks and explicit partial-health price scopes. Registry counts, finite arithmetic, responsive report interactions and production publication are release gates. Remaining LA reports: HALA, Illumination and Dayle; no top picks until deeper review.

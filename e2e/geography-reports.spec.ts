@@ -11,6 +11,10 @@ test.beforeEach(async({page,baseURL})=>{
 
 test('published research has measured headers, usable models and scoped canonical links',async({page,request})=>{
  for(const [edition,slug,name,minutes,donate] of [
+  ['los-angeles','didi-hirsch-mental-health-services','Didi Hirsch Mental Health Services','13',true],
+  ['los-angeles','john-tracy-center','John Tracy Center','10',true],
+  ['los-angeles','sycamores','Sycamores','7',true],
+  ['los-angeles','bienestar-human-services','Bienestar Human Services','12',true],
   ["los-angeles","communities-for-a-better-environment","Communities for a Better Environment","10",true],
   ["los-angeles","east-yard-communities-for-environmental-justice","East Yard Communities for Environmental Justice","10",false],
   ["los-angeles","vietnamese-american-cancer-foundation","Vital Access Care Foundation (Vietnamese American Cancer Foundation)","8",true],

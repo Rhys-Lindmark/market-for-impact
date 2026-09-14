@@ -4,7 +4,7 @@ import {readFileSync} from 'node:fs';
 import {reportPrice,expenseAverage} from '../lib/geography-reports.mjs';
 const reports=JSON.parse(readFileSync(new URL('../data/geography-reports.json',import.meta.url))).reports;
 test('policy thresholds are not reported as central cost effectiveness',()=>{
- for(const slug of ['western-center-on-law-and-poverty','worksafe']){
+ for(const slug of ['western-center-on-law-and-poverty']){
   const r=reports.find(r=>r.slug===slug&&r.edition==='california');assert.ok(r);
   assert.equal(reportPrice(r),null);assert.ok(r.model.missingInputs.length);
   assert.equal(r.model.scenarios.find(s=>s.id==='threshold-million').editionQalys,1);

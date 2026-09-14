@@ -20,10 +20,10 @@ test('SAFE finite survival, injury discount, and public resource sensitivity rep
  close(r.model.scenarios.find(s=>s.id==='public-cost').costUSD,449963+.3125*7950000/125);
  close(expenseAverage(r),332876);assert.ok(r.priceScope);
 });
-test('Breathe conditional course diagnostic is not a portfolio rank or unsupported expense mean',()=>{
+test('Breathe central and broad alternatives retain finite health and original expense mean',()=>{
  const r=get('breathe-southern-california'),q=(N,b,u,ret,w)=>N*b*2.1/14*u*ret*w/1.03;
- verify(r,[['beam-diagnostic',q(100,.25,.1,.5,.75),.5],['beam-favorable',q(300,.75,.2,1,1),.9],['zero',0]]);
- assert.equal(reportPrice(r),null);assert.equal(expenseAverage(r),null);assert.equal(r.annualExpenses.find(y=>y.year===2023).comparable,false);
+ verify(r,[['central',q(100,.25,.1,.5,.75),.5],['high',q(300,.75,.2,1,1),.9],['low',q(30,.05,.03,.2,.5),.2],['zero',0]]);
+ assert.ok(reportPrice(r)>0);close(expenseAverage(r),2435019.3333333335);assert.equal(r.annualExpenses.find(y=>y.year===2023).comparable,true);
 });
 test('NLSLA legal benchmark and one-year health bridges reproduce',()=>{
  const r=get('neighborhood-legal-services-los-angeles-county');
@@ -46,4 +46,3 @@ test('CCA threshold survival integral is not a forecast or manufactured central'
  verify(r,[['zero',0],['threshold-million',2494912/100000],['threshold-hundred-thousand',2494912/10000]]);
  close(expenseAverage(r),2035946.6666666667);assert.equal(reportPrice(r),null);
 });
-

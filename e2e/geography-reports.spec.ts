@@ -93,7 +93,8 @@ test('research table keeps unknown means unknown and shows audited recipient mea
  await page.goto('/los-angeles/all');
  await expect(page.locator('tr').filter({hasText:'Lestonnac Free Clinic'})).toContainText('$2.8M');
  await expect(page.locator('tr').filter({hasText:'Lestonnac Free Clinic'})).toContainText('$4.1M');
- await expect(page.locator('tr').filter({hasText:'Breathe Southern California'})).toContainText('Not estimated');
+ await expect(page.locator('tr').filter({hasText:'Breathe Southern California'})).toContainText('$428.3M');
+ await expect(page.locator('tr').filter({hasText:'Breathe Southern California'})).toContainText('$2.4M');
  await expect(page.locator('tr').filter({hasText:'Climate Resolve'}).getByTitle('Local heat health only; other impacts unestimated')).toHaveText('$14.1M');
  await expect(page.locator('[data-expense-details]')).toHaveCount(0);
  await page.goto('/california/all');

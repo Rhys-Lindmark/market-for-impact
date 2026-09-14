@@ -67,6 +67,8 @@ Whole-organization realistic unrestricted gift is default, with full costs and m
 
 ## Website contract
 
+September 14 priority correction: published cost-effectiveness rows should have a reasoned central estimate, using transparent judgment inputs when direct measurement is missing. Do not leave the central value null merely because a marginal conversion rate is unknown while a defensible conditional model exists. Explain the chosen prior, retain zero/adverse and broad sensitivity cases, and label partial-health scope. Never turn a threshold into a forecast without causal assumptions or invent supporting evidence. If genuinely nonpositive, report that result instead of a fictional finite positive price. Expense approximations must be distinguished from verified comparable three-year averages.
+
 Current release checkpoint, September 14: California 14/25 initial reports, USA 25/25, Los Angeles 18/25, and New York City, Chicago, Houston, Denver, Seattle, Boston, Atlanta and Detroit each 0/25. USA has 1/10 accepted in-depth reviews (End Overdose); the other ten editions have 0/10. No new-edition picks qualify yet. NYC and Seattle discovery each have 100 accepted and 25 selected. Older checkpoint paragraphs record history, not current counts. Root is publishing independently audited batches while three workers advance city research and acceptance.
 
 Published route contract (September 14):

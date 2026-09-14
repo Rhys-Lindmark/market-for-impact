@@ -1,0 +1,355 @@
+{
+  "schemaVersion": 1,
+  "status": "three-corrected-reports-independently-accepted-awaiting-root-publication",
+  "input": "/tmp/givebetter-nyc-alpha-first-three.json",
+  "corrections": [
+    {
+      "slug": "transportation-alternatives",
+      "path": "priceScope",
+      "before": null,
+      "after": "Whole Transportation Alternatives recognized annual expense charged to a conditional, finite street-injury health component for MSA residents. Other portfolio effects and unrecognized volunteer/public implementation resources are not fully priced; public implementation is tested separately. This is not measured unrestricted whole-portfolio return or a lower bound.",
+      "reason": "Visible scope is needed wherever a partial-health central price appears. No numerical estimate removed."
+    },
+    {
+      "slug": "onpoint-nyc",
+      "path": "priceScope",
+      "before": null,
+      "after": "Whole On Point NYC recognized annual expense charged to a conditional, finite overdose-survival component for MSA residents. Clinical, infection and other health effects remain unpriced; recognized donated medical goods are included and unrecognized partner resources are stress-tested. Not a measured whole-portfolio return or proven lower bound.",
+      "reason": "Visible scope is needed wherever a partial-health central price appears. No numerical estimate removed."
+    },
+    {
+      "slug": "bergen-volunteer-medical-initiative",
+      "path": "priceScope",
+      "before": null,
+      "after": "Whole BVMI recognized annual expense, including donated services/goods and event costs, charged to a finite near-term clinical-health component for eligible MSA patients. Long-term prevention and wider social effects remain unpriced; additional partner and volunteer resources are stress-tested. Not a measured whole-portfolio return or proven lower bound.",
+      "reason": "Visible scope is needed wherever a partial-health central price appears. No numerical estimate removed."
+    },
+    {
+      "slug": "onpoint-nyc",
+      "path": "sections.qualitative",
+      "before": "A Vancouver model estimated 8.4–50.9 potentially averted deaths among 1,004 recorded overdose events, depending strongly on assumed community nonfatal overdose incidence. That historical, pre-fentanyl model is context for our 2% untreated-lethality judgment, not a modern New York causal rate. A further 50% transfer/alternative-rescue factor reflects contemporary community naloxone, emergency response and differences in severity. [Original mortality model](https://pubmed.ncbi.nlm.nih.gov/18839040/)\n\nA later Vancouver cohort found lower adjusted all-cause mortality among frequent users, but residual confounding and nonrandom selection limit causal transfer. Ontario's controlled interrupted time-series did not identify a statistically significant aggregate mortality improvement. Neither result warrants assigning all city overdose trends to OnPoint. Local difference-in-differences crime research provides reassurance against a simple crime-increase claim, not QALYs or proof that every possible adverse effect is absent. [Cohort](https://pubmed.ncbi.nlm.nih.gov/31770391/) [Ontario study](https://pubmed.ncbi.nlm.nih.gov/39104058/) [NYC crime study](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2811766)",
+      "after": "A Vancouver model estimated 8.4–50.9 potentially averted deaths among 1,004 recorded overdose events, depending strongly on assumed community nonfatal overdose incidence. Of those events, 453 met its potentially fatal definition, based on naloxone, emergency calling or ambulance use. The 8.4–50.9 estimate is modeled deaths across the 1,004-event program, not measured deaths or the fatality rate of its 453 severe events. That historical, pre-fentanyl model is context for our 2% untreated-lethality judgment, not a modern New York causal rate. A further 50% transfer/alternative-rescue factor reflects contemporary community naloxone, emergency response and differences in severity. [Original mortality model](https://pubmed.ncbi.nlm.nih.gov/18839040/)\n\nA later Vancouver cohort found lower adjusted all-cause mortality among frequent users, but residual confounding and nonrandom selection limit causal transfer. Ontario's controlled interrupted time-series did not identify a statistically significant aggregate mortality improvement. Neither result warrants assigning all city overdose trends to OnPoint. Local difference-in-differences crime research provides reassurance against a simple crime-increase claim, not QALYs or proof that every possible adverse effect is absent. [Cohort](https://pubmed.ncbi.nlm.nih.gov/31770391/) [Ontario study](https://pubmed.ncbi.nlm.nih.gov/39104058/) [NYC crime study](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2811766)",
+      "reason": "Make the severe-event subset and modeled-versus-observed distinction explicit; retain the honestly subjective 2% central."
+    },
+    {
+      "slug": "onpoint-nyc",
+      "path": "model.formula",
+      "before": "d=ln(1.03); delta=(E/U)*l*a; lambda1=m-delta>=0; F(k,t)=(1-exp(-k*t))/k. H=U*u*[F(lambda1+d,1)-F(m+d,1)+(exp(-lambda1)-exp(-m))*exp(-d)*F(m+d,T-1)]; Qall=b*H-h; QNYC=g*Qall; Price10=10*C/QNYC if positive.",
+      "after": "d=ln(1.03); delta=(E/U)*l*a; lambda1=m-delta>=0; F(k,t)=(1-exp(-k*t))/k. H=U*u*[F(lambda1+d,1)-F(m+d,1)+(exp(-lambda1)-exp(-m))*exp(-d)*F(m+d,T-1)]; Qall=b*H-h; QNYC=g*Qall; Price10=10*C/QNYC if positive. The event-level risk input is converted to an annual hazard decrement by the explicit linear approximation delta=(E/U)*l*a, not asserted to be an exact probability-to-hazard identity.",
+      "reason": "Clarify probability/hazard approximation without changing the internally consistent finite survival calculation."
+    },
+    {
+      "slug": "transportation-alternatives",
+      "path": "sections.funding",
+      "before": "March-ending audited expenses are $4,447,542 in FY2023, $5,135,283 in FY2024 and $5,186,682 in FY2025. Each reconciles to the original Form 990 expense plus separately netted fundraising costs of $67,853, $141,953 and $83,095 respectively. No additional donated-service adjustment is reported in Schedule D. Investment income is net and the audit does not itemize a further investment-management fee; unrecognized volunteer opportunity costs remain outside this measured series. [FY2025 audit](https://transalt.org/s/FY25-Transportation-Alternatives-Inc-Financial-Statement-FINAL-1.pdf) [FY2024/2023 audit](https://transalt.org/s/Transportation-Alternatives-Inc-24-AUD-FINAL.pdf)\n\nFY2025 support and revenue were $4,335,312 and ending net assets $3,270,676, of which $523,106 were restricted. The unrestricted decline was $426,460; the full $851,370 decline is not an unrestricted cash need. The board designated $1 million as a stability reserve. These facts support asking about capacity but do not identify gift additionality. The directory's displayed FY2025 period conflicts with the original audit: the report uses the year ended March 31, 2025, not March 2026. [Financial directory](https://transalt.org/financials) [Donation route](https://transalt.org/donate)",
+      "after": "March-ending audited expenses are $4,447,542 in FY2023, $5,135,283 in FY2024 and $5,186,682 in FY2025. Each reconciles to the original Form 990 expense plus separately netted fundraising costs of $67,853, $141,953 and $83,095 respectively. No additional donated-service adjustment is reported in Schedule D. Investment income is net and the audit does not itemize a further investment-management fee; unrecognized volunteer opportunity costs remain outside this measured series. [FY2025 audit](https://transalt.org/s/FY25-Transportation-Alternatives-Inc-Financial-Statement-FINAL-1.pdf) [FY2024/2023 audit](https://transalt.org/s/Transportation-Alternatives-Inc-24-AUD-FINAL.pdf)\n\nFY2025 support and revenue were $4,335,312 and ending net assets $3,270,676, of which $523,106 were restricted. The unrestricted decline was $426,460; the full $851,370 decline is not an unrestricted cash need. The board designated $1 million as a stability reserve. These facts support asking about capacity but do not identify gift additionality. The directory's displayed FY2025 period conflicts with the original audit: the report uses the year ended March 31, 2025, not March 2026. [Financial directory](https://transalt.org/financials) [Donation route](https://transalt.org/donate)\n\nExpense appendix: FY2025 recognized costs comprise $4,317,855 program services, $371,200 management/general and $497,627 fundraising. The comparable three-year recognized mean is $4,923,169. This is a gross recipient accounting series, not all public or volunteer opportunity cost. Schedule D, rather than the audit event-note subtotal alone, establishes the $67,853/$141,953/$83,095 tax-return reconciliations.",
+      "reason": "Expose whole-recipient functional spending and distinguish the reconciliation from an audit event-note subtotal."
+    },
+    {
+      "slug": "onpoint-nyc",
+      "path": "sections.funding",
+      "before": "Original June-ending accrual returns and Schedule D reconciliations report $11,980,572 in FY2023, $15,432,498 in FY2024 and $16,203,740 in FY2025. The FY2023 amended return supersedes its earlier filing and explicitly aligns with completed audited statements. The three returns report no separately netted fundraising, gaming or inventory expense, and no donated-service addback in Schedule D. FY2025 Schedule M reports $336,016 in donated drugs/medical supplies, already recognized as property rather than an additional service addback. We flag FY2023 as noncomparable pending confirmation of the exact merger-period perimeter rather than display an artificial three-year mean. [FY2025 return](https://projects.propublica.org/nonprofits/full_text/202621359349304162/IRS990) [FY2023 amendment](https://projects.propublica.org/nonprofits/full_text/202423619349300202/IRS990ScheduleO)\n\nFY2025 revenue was $19,268,609, including $18,181,362 government grants, and ending net assets were $18,520,698; cash was $6,815,648 and grants receivable $9,424,280. Net assets are not all spendable cash. Current city reporting explicitly funds sustained/expanded wraparound hours and services and names OnPoint in infrastructure investments. An ordinary donor cannot receive credit for all these appropriated services. [Current settlement report](https://www.nyc.gov/assets/doh/downloads/pdf/basas/opioid-settlement-funds-report-06032026.pdf)\n\nThe official financial directory still emphasizes older documents, so this review uses more recent original IRS filings. No verified current unfunded opening or dollar-specific capacity promise was assumed. [Financial directory](https://onpointnyc.org/financials/)",
+      "after": "Original June-ending accrual returns and Schedule D reconciliations report $11,980,572 in FY2023, $15,432,498 in FY2024 and $16,203,740 in FY2025. The FY2023 amended return supersedes its earlier filing and explicitly aligns with completed audited statements. The three returns report no separately netted fundraising, gaming or inventory expense, and no donated-service addback in Schedule D. FY2025 Schedule M reports $336,016 in donated drugs/medical supplies, already recognized as property rather than an additional service addback. We flag FY2023 as noncomparable pending confirmation of the exact merger-period perimeter rather than display an artificial three-year mean. [FY2025 return](https://projects.propublica.org/nonprofits/full_text/202621359349304162/IRS990) [FY2023 amendment](https://projects.propublica.org/nonprofits/full_text/202423619349300202/IRS990ScheduleO)\n\nFY2025 revenue was $19,268,609, including $18,181,362 government grants, and ending net assets were $18,520,698; cash was $6,815,648 and grants receivable $9,424,280. Net assets are not all spendable cash. Current city reporting explicitly funds sustained/expanded wraparound hours and services and names OnPoint in infrastructure investments. An ordinary donor cannot receive credit for all these appropriated services. [Current settlement report](https://www.nyc.gov/assets/doh/downloads/pdf/basas/opioid-settlement-funds-report-06032026.pdf)\n\nThe official financial directory still emphasizes older documents, so this review uses more recent original IRS filings. No verified current unfunded opening or dollar-specific capacity promise was assumed. [Financial directory](https://onpointnyc.org/financials/)\n\nExpense appendix: FY2025 Form 990 functional costs are $14,411,565 program services, $1,664,638 management/general and $127,537 fundraising, totaling $16,203,740. The earlier amended original amount is retained, but no comparable three-year average is accepted until the merger-period perimeter is resolved.",
+      "reason": "Add original functional spending without creating a misleading three-year mean."
+    },
+    {
+      "slug": "bergen-volunteer-medical-initiative",
+      "path": "sections.funding",
+      "before": "Original calendar-year audits report gross recognized expenses of $3,817,656 in 2023, $4,089,961 in 2024 and $4,513,270 in 2025, a comparable mean of $4,140,295.67. These restore $120,601, $136,375 and $119,967 respectively that the statements of activities net against event revenue. The functional expense statements explicitly show the pre-netting totals. Recognized donated goods and services are already included, not added twice. [2024/2023 audit](https://www.bvmi.org/wp-content/uploads/2025/05/BVMI-2024-Audited-Financial-Statements.pdf) [2025/2024 audit](https://www.bvmi.org/wp-content/uploads/2026/06/BVMI-2025-Audited-Financial-Statements-2025-24.pdf)\n\nThe 2025 audit recognizes $688,451 donated services and $267,377 donated goods; services include medical, medical-support, legal and other specialist time valued at comparable market rates. Its total differs from the impact report's broader volunteer valuation, so the model consistently uses audited recognition and tests higher opportunity cost separately.\n\nFY2025 government grants were $1,125,726. Ending net assets were $5,241,836, including $2,623,487 restricted; the liquidity note identifies $2,196,966 available for general expenditures after restrictions. Two donors supplied 53% of contribution/private-grant revenue, and the Garfield lease was signed in August 2025. Existing restricted expansion support remains in the counterfactual; a donor is not credited with the whole new center. No current quantified funding gap was verified. [2025 audit](https://www.bvmi.org/wp-content/uploads/2026/06/BVMI-2025-Audited-Financial-Statements-2025-24.pdf) [Ordinary gift route](https://www.bvmi.org/donate/)",
+      "after": "Original calendar-year audits report gross recognized expenses of $3,817,656 in 2023, $4,089,961 in 2024 and $4,513,270 in 2025, a comparable mean of $4,140,295.67. These restore $120,601, $136,375 and $119,967 respectively that the statements of activities net against event revenue. The functional expense statements explicitly show the pre-netting totals. Recognized donated goods and services are already included, not added twice. [2024/2023 audit](https://www.bvmi.org/wp-content/uploads/2025/05/BVMI-2024-Audited-Financial-Statements.pdf) [2025/2024 audit](https://www.bvmi.org/wp-content/uploads/2026/06/BVMI-2025-Audited-Financial-Statements-2025-24.pdf)\n\nThe 2025 audit recognizes $688,451 donated services and $267,377 donated goods; services include medical, medical-support, legal and other specialist time valued at comparable market rates. Its total differs from the impact report's broader volunteer valuation, so the model consistently uses audited recognition and tests higher opportunity cost separately.\n\nFY2025 government grants were $1,125,726. Ending net assets were $5,241,836, including $2,623,487 restricted; the liquidity note identifies $2,196,966 available for general expenditures after restrictions. Two donors supplied 53% of contribution/private-grant revenue, and the Garfield lease was signed in August 2025. Existing restricted expansion support remains in the counterfactual; a donor is not credited with the whole new center. No current quantified funding gap was verified. [2025 audit](https://www.bvmi.org/wp-content/uploads/2026/06/BVMI-2025-Audited-Financial-Statements-2025-24.pdf) [Ordinary gift route](https://www.bvmi.org/donate/)\n\nExpense appendix: FY2025 pre-netting functional costs are $3,590,542 program services, $363,872 management/general and $558,856 fundraising, totaling $4,513,270. The $119,967 event amount is already in that fundraising total and must not be added again.",
+      "reason": "Make full recognized functional spending and event addback-once treatment visible."
+    },
+    {
+      "slug": "transportation-alternatives",
+      "path": "model.nativeCosts",
+      "before": null,
+      "after": "Central: four conditional corridor opportunities; N*p*a*b=0.15 donor-attributable implemented corridor equivalents. Full recognized annual expense per such equivalent is $34,577,880 before finite injury conversion. These are judgment-based attribution units, not measured projects for sale.",
+      "reason": "Retain an interpretable native bridge before QALYs."
+    },
+    {
+      "slug": "onpoint-nyc",
+      "path": "model.nativeCosts",
+      "before": null,
+      "after": "Full annual recognized expense per 434 historical reported intervention events is $37,335.81, a mixed-portfolio accounting ratio, not cost per additional rescue. Central one-year survivor difference after funding/residency allocation is 0.99 people; subsequent survival differences are integrated finitely rather than awarding one lifetime per event.",
+      "reason": "Separate historical event accounting from incremental finite survival."
+    },
+    {
+      "slug": "bergen-volunteer-medical-initiative",
+      "path": "model.nativeCosts",
+      "before": null,
+      "after": "Full annual recognized expense per observed annual patient is $4,398.9. After the separate care-additionality and gift-response factors, cost per 256.5 modeled attributable patient equivalents is $17,595.59. Neither ratio treats each repeat visit as a new person.",
+      "reason": "Show both native accounting and explicit marginal patient units."
+    }
+  ],
+  "scenarioChecks": [
+    {
+      "slug": "transportation-alternatives",
+      "scenario": "central",
+      "pass": true,
+      "costUSD": 5186682,
+      "allPopulationQalys": 0.764603997321582,
+      "editionQalys": 0.7263737974555029,
+      "pricePer10Qalys": 71405136.28339866
+    },
+    {
+      "slug": "transportation-alternatives",
+      "scenario": "low",
+      "pass": true,
+      "costUSD": 5186682,
+      "allPopulationQalys": 0.00009400558795412373,
+      "editionQalys": 0.00008460502915871137,
+      "pricePer10Qalys": 613046535362.6029
+    },
+    {
+      "slug": "transportation-alternatives",
+      "scenario": "high",
+      "pass": true,
+      "costUSD": 5186682,
+      "allPopulationQalys": 49.047287351196786,
+      "editionQalys": 48.55681447768482,
+      "pricePer10Qalys": 1068167.6827015982
+    },
+    {
+      "slug": "transportation-alternatives",
+      "scenario": "zero",
+      "pass": true,
+      "costUSD": 5186682,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "pricePer10Qalys": null
+    },
+    {
+      "slug": "transportation-alternatives",
+      "scenario": "adverse",
+      "pass": true,
+      "costUSD": 5186682,
+      "allPopulationQalys": -0.25,
+      "editionQalys": -0.2375,
+      "pricePer10Qalys": null
+    },
+    {
+      "slug": "transportation-alternatives",
+      "scenario": "public-cost",
+      "pass": true,
+      "costUSD": 5486682,
+      "allPopulationQalys": 0.764603997321582,
+      "editionQalys": 0.7263737974555029,
+      "pricePer10Qalys": 75535241.21079147
+    },
+    {
+      "slug": "onpoint-nyc",
+      "scenario": "central",
+      "pass": true,
+      "costUSD": 16203740,
+      "allPopulationQalys": 4.289871590346155,
+      "editionQalys": 4.204074158539232,
+      "pricePer10Qalys": 38542945.22157104
+    },
+    {
+      "slug": "onpoint-nyc",
+      "scenario": "low",
+      "pass": true,
+      "costUSD": 16203740,
+      "allPopulationQalys": 0.08279048420559337,
+      "editionQalys": 0.07451143578503404,
+      "pricePer10Qalys": 2174664845.6416664
+    },
+    {
+      "slug": "onpoint-nyc",
+      "scenario": "high",
+      "pass": true,
+      "costUSD": 16203740,
+      "allPopulationQalys": 50.56137544886421,
+      "editionQalys": 50.05576169437557,
+      "pricePer10Qalys": 3237137.8341887677
+    },
+    {
+      "slug": "onpoint-nyc",
+      "scenario": "zero",
+      "pass": true,
+      "costUSD": 16203740,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "pricePer10Qalys": null
+    },
+    {
+      "slug": "onpoint-nyc",
+      "scenario": "adverse",
+      "pass": true,
+      "costUSD": 16203740,
+      "allPopulationQalys": -0.25,
+      "editionQalys": -0.245,
+      "pricePer10Qalys": null
+    },
+    {
+      "slug": "onpoint-nyc",
+      "scenario": "resource",
+      "pass": true,
+      "costUSD": 17824114,
+      "allPopulationQalys": 4.289871590346155,
+      "editionQalys": 4.204074158539232,
+      "pricePer10Qalys": 42397239.74372815
+    },
+    {
+      "slug": "bergen-volunteer-medical-initiative",
+      "scenario": "central",
+      "pass": true,
+      "costUSD": 4513270,
+      "allPopulationQalys": 2.9883495145631067,
+      "editionQalys": 2.9883495145631067,
+      "pricePer10Qalys": 15102885.315139702
+    },
+    {
+      "slug": "bergen-volunteer-medical-initiative",
+      "scenario": "low",
+      "pass": true,
+      "costUSD": 4513270,
+      "allPopulationQalys": 0.018677184466019424,
+      "editionQalys": 0.018303640776699034,
+      "pricePer10Qalys": 2465777194.3085217
+    },
+    {
+      "slug": "bergen-volunteer-medical-initiative",
+      "scenario": "high",
+      "pass": true,
+      "costUSD": 4513270,
+      "allPopulationQalys": 44.22757281553398,
+      "editionQalys": 44.22757281553398,
+      "pricePer10Qalys": 1020465.2239959257
+    },
+    {
+      "slug": "bergen-volunteer-medical-initiative",
+      "scenario": "zero",
+      "pass": true,
+      "costUSD": 4513270,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "pricePer10Qalys": null
+    },
+    {
+      "slug": "bergen-volunteer-medical-initiative",
+      "scenario": "adverse",
+      "pass": true,
+      "costUSD": 4513270,
+      "allPopulationQalys": -0.24902912621359224,
+      "editionQalys": -0.24902912621359224,
+      "pricePer10Qalys": null
+    },
+    {
+      "slug": "bergen-volunteer-medical-initiative",
+      "scenario": "partner-cost",
+      "pass": true,
+      "costUSD": 4769770,
+      "allPopulationQalys": 2.9883495145631067,
+      "editionQalys": 2.9883495145631067,
+      "pricePer10Qalys": 15961218.648473036
+    },
+    {
+      "slug": "bergen-volunteer-medical-initiative",
+      "scenario": "volunteer-cost",
+      "pass": true,
+      "costUSD": 4857495.5,
+      "allPopulationQalys": 2.9883495145631067,
+      "editionQalys": 2.9883495145631067,
+      "pricePer10Qalys": 16254777.014294997
+    }
+  ],
+  "sourceAudit": [
+    {
+      "slug": "transportation-alternatives",
+      "decision": "accept-with-exact-corrections",
+      "financial": "Independently reopened FY2025 and FY2024/23 original audits in memory and all three original Schedule D Part XII reconciliations. Return amounts 4379689,4993330,5103587 plus event adjustments 67853,141953,83095 equal recognized expense 4447542,5135283,5186682. No number changed. The 2024 audit event-note direct-benefit subtotal is 115697, so it must not replace the different Schedule D reconciliation amount.",
+      "causal": "Fresh NYC DOT April16,2026 source confirms 18.1% fatal/severe association, 26 events over2021–25 and proposed—not completed—31st Street implementation. Report correctly does not give a new donor historical credit. All transfer/coalition/donor factors once; 5-year incidence and 20-year conditional survival are finite and discounted in sequence.",
+      "nextBottleneck": "Resolve extra or accelerated corridor implementation attributable to additional ordinary funding and actual induced public/volunteer resource costs."
+    },
+    {
+      "slug": "onpoint-nyc",
+      "decision": "accept-with-exact-corrections",
+      "financial": "Reopened original FY2023–25 Form990/ScheduleD amounts and FY2023 amendment explanation (audit completed December9,2024). FY2023 merger perimeter remains unresolved and comparable=false is retained. FY2025 government grants18181362 and functional spending verified; donated medical property retained within recognized expense, not added twice.",
+      "causal": "Fresh primary third-year page confirms434 events overNov30,2023–Nov29,2024 and only25.3% of depressant interventions received naloxone. Events are not deaths. Fresh Milloy abstract confirms1004 events and453 severe-subset events; cohort association and controlled Ontario aggregate-null result are not causal mortality inputs. Current city June2026 settlement report reopened through web confirms sustained/expanded wraparound support, administration via Public Health Solutions and infrastructure investment. Unique-person one-year hazard difference then common post-year-one hazard prevents repeated lifetime credits.",
+      "nextBottleneck": "Current severity/unique-person distribution, public/private funding margin, and legal merger-year perimeter; retain finite judgment estimate meanwhile."
+    },
+    {
+      "slug": "bergen-volunteer-medical-initiative",
+      "decision": "accept-with-exact-corrections",
+      "financial": "Independently reopened both original audits and2025 impact report. Gross functional expenses3817656,4089961,4513270; event amounts120601,136375,119967 once;2025 donated services688451 and goods267377 already recognized. 1026 annual patients/9725 visits confirmed.",
+      "causal": "Fresh eligibility page requires and annually checks Bergen County residency, uninsured status, working household and250%FPL. Oregon randomized trial is qualitative caution, not transplanted clinic efficacy. Separate care replacement and gift response factors, one annual patient unit and finite clinical burden prevent duplicate credit. Partner diagnostic and volunteer opportunity costs remain explicit stresses rather than falsely measured full social costs.",
+      "nextBottleneck": "Condition-specific effective clinical response and the ordinary-gift capacity margin after committed expansion."
+    }
+  ],
+  "sourceReproduction": "/tmp/nyc-three-original-check.py",
+  "mathReproduction": "/tmp/nyc-three-independent-audit.mjs",
+  "sessionChecks": [
+    {
+      "id": "nyc-ta-20260914-worker1-resumed",
+      "seconds": 267,
+      "orderedNonoverlap": true,
+      "reportReference": true,
+      "model": {
+        "id": "gpt-6-astra",
+        "name": "GPT-6 Astra Light",
+        "reasoningEffort": "low",
+        "evidence": "Parent-assigned Light researcher."
+      },
+      "authorCreditUnchanged": true
+    },
+    {
+      "id": "nyc-onpoint-20260914-worker1",
+      "seconds": 336,
+      "orderedNonoverlap": true,
+      "reportReference": true,
+      "model": {
+        "id": "gpt-6-astra",
+        "name": "GPT-6 Astra Light",
+        "reasoningEffort": "low",
+        "evidence": "Parent-assigned Light researcher."
+      },
+      "authorCreditUnchanged": true
+    },
+    {
+      "id": "nyc-bvmi-20260914-worker1",
+      "seconds": 243,
+      "orderedNonoverlap": true,
+      "reportReference": true,
+      "model": {
+        "id": "gpt-6-astra",
+        "name": "GPT-6 Astra Light",
+        "reasoningEffort": "low",
+        "evidence": "Parent-assigned Light researcher."
+      },
+      "authorCreditUnchanged": true
+    }
+  ],
+  "retainedTimingWarnings": [
+    {
+      "organizationId": "org:transportation-alternatives",
+      "observedStart": "2026-09-14T07:23:59Z",
+      "resumedAt": "2026-09-14T07:56:50Z",
+      "creditResearchMinutes": false,
+      "reason": "Earlier source work occurred, but the open interval contains an unverified context/scheduling gap; no duration credited."
+    }
+  ],
+  "auditInterval": {
+    "workerId": "usa_beta_one",
+    "model": "gpt-6-astra",
+    "reasoningEffort": "medium",
+    "startedAt": "2026-09-14T08:13:38Z",
+    "endedAt": "2026-09-14T08:18:21.800Z",
+    "actualSeconds": 283.8,
+    "authorResearchSeconds": 0,
+    "alphaCredit": 0,
+    "betaCredit": 0
+  },
+  "timingConclusion": "Three reported resumed sessions are nonoverlapping and total846seconds (267+336+243). Earlier interrupted TA interval remains uncredited. This audit does not independently establish every second of author activity and adds no author minutes.",
+  "validation": {
+    "reportCount": 3,
+    "scenarioCount": 19,
+    "allScenariosPass": true,
+    "allCentralNumbersUnchanged": true,
+    "allAnnualExpenseNumbersUnchanged": true,
+    "allVisiblePriceScopes": true,
+    "summaryArraysEachThree": true,
+    "onPointThreeYearMeanNotInvented": true
+  },
+  "spaceSaver": "Existing runtime used; PDFs processed in memory, no installs/builds/servers/Site/Git or nested agents. One invalid scratch import removed; no unique evidence removed. Disk baseline57GiB free."
+}

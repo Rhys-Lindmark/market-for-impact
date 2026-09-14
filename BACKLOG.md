@@ -2,6 +2,8 @@
 
 ## Active priority — eleven-edition geographic expansion (September 13)
 
+Atlanta D100/S25 accepted September14: ten editions now total1000 source-screened candidates and250 selected research priorities; Detroit proposal remains pending independent audit. No publication or beta credit for discovery. Corrected current donation/identity routes, Grace Village eligibility and ACFB maintenance disclosure; ARC program pauses remain an alpha gate. Evidence: docs/geography-discovery/atlanta-independent-acceptance.json. Published totals remain CA25/25 beta0/10 USA25/25 beta3/10 LA25/25 beta0/10 NYC3/25 beta0/10; other seven metros0/25 beta0/10.
+
 NYC first three accepted September14: NYC3/25 beta0/10; CA25/25 beta0/10, USA25/25 beta3/10, LA25/25 beta0/10; Chicago Houston Denver Seattle Boston Atlanta Detroit each0/25 beta0/10. Transportation Alternatives, OnPoint NYC and BVMI preserve full recipient costs, finite health scenarios and official MSA scope. No picks. Evidence: docs/nyc-first-three-acceptance.md. Next: next NYC three; Atlanta discovery acceptance; Detroit discovery; California beta selection and UPI independent beta review.
 
 California final five accepted September14: CA25/25 beta0/10, USA25/25 beta3/10, LA25/25 beta0/10; eight other metros0/25 beta0/10. California's selected initial cohort is complete. CWC, CPEHN, CDA Foundation, Essential Access Health and California YIMBY Education Fund retain conditional partial-health models and no recommendation. See docs/california-final-five-acceptance.md. Boston D100/S25 goes live with this batch; Atlanta's proposal and NYC first three await independent acceptance. Next: California beta selection, NYC report integration, LA beta and remaining metro discovery.

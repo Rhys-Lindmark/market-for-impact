@@ -115,7 +115,7 @@ assert.ok(nycProgress.acceptedDiscoveryIds.includes('org:zufall-health-foundatio
 assert.ok(!nycProgress.acceptedDiscoveryIds.includes('org:zufall-health'));
 assert.equal(nycProgress.alphaPublished,3);assert.equal(nycProgress.betaAcceptedPublished,0);
 for(const id of nycProgress.alphaCohortIds)assert.ok(nycProgress.selectedAlphaIds.includes(id));
-for(const city of ['denver','chicago','houston','boston']){
+for(const city of ['denver','chicago','houston','boston','atlanta']){
  const row=p.editions.find(e=>e.id===city);
  const packet=read('geography-discovery/'+(city==='denver'?'denver-independent-acceptance.json':city+'-cohort-final.json'));
  const selection=city==='denver'?packet.selected:read('geography-discovery/'+city+'-selection.json').selected;
@@ -141,4 +141,9 @@ assert.ok(boston.records.find(r=>r.id==='boston-bay-state-community-services-inc
 assert.ok(boston.records.find(r=>r.id==='boston-planned-parenthood-league-of-massachusetts').selectionRationale.includes('cannot be presumed'));
 assert.equal(bostonAudit.acceptedAlphaCount,0);
 assert.equal(bostonAudit.acceptedBetaCount,0);
-console.log('PASS:11 editions; nested counts;9 MSAs/102 counties;900 accepted discovery,225 selected priorities; no new alpha or beta credit for discovery.');
+const atl=read('geography-discovery/atlanta-cohort-final.json');
+assert.equal(atl.records.find(r=>r.ordinal===38).canonicalOrganizationId,'ein:58-6212478');
+assert.equal(atl.records.find(r=>r.ordinal===73).canonicalOrganizationId,'ein:58-1743333');
+assert.match(atl.records.find(r=>r.ordinal===5).primaryEvidence,/NEW patients/);
+assert.match(atl.records.find(r=>r.ordinal===89).recipientRouteStatus,/maintenance/);
+console.log('PASS:11 editions; nested counts;9 MSAs/102 counties;1000 accepted discovery,250 selected priorities; no new alpha or beta credit for discovery.');

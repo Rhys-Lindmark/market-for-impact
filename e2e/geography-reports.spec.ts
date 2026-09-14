@@ -11,6 +11,9 @@ test.beforeEach(async({page,baseURL})=>{
 
 test('published research has measured headers, usable models and scoped canonical links',async({page,request})=>{
  for(const [edition,slug,name,minutes,donate] of [
+  ['new-york-city','transportation-alternatives','Transportation Alternatives','4',true],
+  ['new-york-city','onpoint-nyc','OnPoint NYC','6',true],
+  ['new-york-city','bergen-volunteer-medical-initiative','Bergen Volunteer Medical Initiative','4',true],
   ['california','community-water-center','Community Water Center','9',true],
   ['california','california-pan-ethnic-health-network','California Pan-Ethnic Health Network','7',true],
   ['california','california-dental-association-foundation','California Dental Association Foundation','4',true],

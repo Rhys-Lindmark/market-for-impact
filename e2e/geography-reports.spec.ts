@@ -11,6 +11,11 @@ test.beforeEach(async({page,baseURL})=>{
 
 test('published research has measured headers, usable models and scoped canonical links',async({page,request})=>{
  for(const [edition,slug,name,minutes,donate] of [
+  ['california','community-water-center','Community Water Center','9',true],
+  ['california','california-pan-ethnic-health-network','California Pan-Ethnic Health Network','7',true],
+  ['california','california-dental-association-foundation','California Dental Association Foundation','4',true],
+  ['california','essential-access-health','Essential Access Health','9',true],
+  ['california','california-yimby-education-fund','California YIMBY Education Fund','7',true],
   ['california','didi-hirsch-mental-health-services','Didi Hirsch Mental Health Services','14',true],
   ['california','breathe-southern-california','Breathe Southern California','12',true],
   ['california','champions-for-health','Champions for Health','7',true],

@@ -34,7 +34,7 @@ test('all four retain scopes, original expenses and nonpositive uncertainty',()=
   const r=report(slug);assert.ok(r);assert.equal(r.annualExpenses.length,3);
   assert.equal(r.model.scenarios.find(s=>s.id==='zero').editionQalys,0);
   assert.ok(r.model.scenarios.find(s=>s.id==='adverse').editionQalys<0);
-  if(slug==='john-tracy-center')assert.equal(reportPrice(r),null);
+  if(slug==='john-tracy-center')assert.ok(reportPrice(r)>0);
   else assert.match(r.priceScope,/full recipient/);
  }
 });

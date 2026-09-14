@@ -7,8 +7,9 @@ const get=slug=>data.reports.find(r=>r.edition==='usa'&&r.slug===slug);
 const close=(a,b)=>assert.ok(Math.abs(a-b)<1e-11,`${a} != ${b}`);
 const params=s=>s.assumptions.startsWith('{')?JSON.parse(s.assumptions.slice(0,s.assumptions.indexOf('}')+1)):Object.fromEntries([...s.assumptions.matchAll(/\b([A-Za-z]+)=(-?\d+(?:\.\d+)?(?:e-?\d+)?)/g)].map(m=>[m[1],+m[2]]));
 for(const slug of ['remote-area-medical','immunize-org','green-and-healthy-homes-initiative','american-nonsmokers-rights-foundation']){
- test(`${slug}: conditional probes reproduce without becoming portfolio estimates`,()=>{
-  const r=get(slug);assert.equal(reportPrice(r),null);
+ test(`${slug}: central judgments and alternatives reproduce with partial-health scope`,()=>{
+  const r=get(slug);assert.ok(reportPrice(r)>0);assert.ok(r.priceScope);
+  assert.match(r.model.scenarios[0].label,/judgment/);
   for(const s of r.model.scenarios.filter(s=>s.editionQalys!==null)){
    const p=params(s);let q;
    if(slug==='remote-area-medical'){

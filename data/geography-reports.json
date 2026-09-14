@@ -5123,12 +5123,12 @@
       "organization": "Help America Hear",
       "program": "Prescription hearing-aid access, professional fitting and student support",
       "published": "2026-09-13",
-      "updated": "2026-09-13",
+      "updated": "2026-09-14",
       "stage": "alpha",
       "donationUrl": null,
       "acceptance": {
         "status": "accepted",
-        "evidence": "docs/geography-access-batch-five-acceptance.md; independent Medium audit plus root review; research only."
+        "evidence": "docs/geography-access-batch-five-acceptance.md; independent Medium audit plus root review; research only.; docs/geography-central-estimates-acceptance.md"
       },
       "summary": {
         "what": [
@@ -5151,7 +5151,7 @@
         "what": "The [current program](https://helpamericahear.org/help-america-hear-program) provides two prescription hearing aids, custom molds and one year of limited service for eligible people with moderate to profound hearing loss. It screens income, assets, insurance and alternatives. A $250 deposit is applied to fitting if charged, or refundable when the clinician donates services; patients pay for evaluations, medical clearance, batteries and other excluded items. The [FAQ](https://helpamericahear.org/faq) still describes an application fee and a $36,000 income cap, while the current program page describes income tiers. Those discrepancies should be resolved from the current application, not blended into one rule. The [FY2025 return](https://projects.propublica.org/nonprofits/full_text/202620159349301802/IRS990) reports over 120 people receiving hearing aids/services and a separate scholarship program.",
         "monitoring": "The return provides service counts but no linked hearing thresholds, completion denominator, device-use logs, hearing handicap scores or long-term utility outcomes. [Schedule M](https://projects.propublica.org/nonprofits/full_text/202620159349301802/IRS990ScheduleM) records 164 contributed hearing-aid items valued at $123,000; that is not 164 newly treated people or a matched cohort of bilateral fittings. The [current site](https://helpamericahear.org/) describes events and scholarships but mixes current and older dates. Provider follow-up is useful, yet the [FAQ](https://helpamericahear.org/faq) offers only 3–5 visits or up to one year, depending on the provider. Sustained use, repairs, access barriers and replacement after that year determine health durability. The same ‘over 120’ wording appears in all three reviewed returns; it is not a reconciled annual fitting cohort.",
         "qualitative": "The [ACHIEVE communication analysis](https://pubmed.ncbi.nlm.nih.gov/39266468/) found a roughly 9-point advantage on the 40-point hearing-handicap scale through three years. [Placebo-controlled US research](https://pubmed.ncbi.nlm.nih.gov/28252160/) also supports genuine hearing benefit. A [Singapore delayed-start trial](https://pmc.ncbi.nlm.nih.gov/articles/PMC7709244/) estimated a 0.12 HUI utility difference at three months, but used selected volunteers, a modified scoring procedure and assumed long-term use. In contrast, [ACHIEVE's generic RAND-36 analysis](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2826555) found no significant physical or mental composite benefit. We therefore test a smaller 0.04 annual utility improvement without treating it as an observed recipient effect. The [primary cognition trial](https://pubmed.ncbi.nlm.nih.gov/37478886/) was null overall despite subgroup differences; no dementia prevention or mortality gain is credited.",
-        "cost": "Cost per 10 USA QALYs is not estimated because the next-dollar rate of additional completed fittings is unknown. A transparent conditional case uses $3,000 of recipient support per fitted patient, 60% funding/capacity additionality, 70% benefit not available elsewhere, 75% sustained use and four years of benefit. It yields about $690,000 per 10 USA QALYs; an efficient favorable case is about $22,000, while short use and weak benefit can produce no net gain. These are tests, not a bounded positive estimate. At the conditional clinical assumptions, a $1 million threshold requires at least 41% financing/capacity additionality at $3,000 per case. A donation that only replaces existing sponsor funding or sits behind a fixed provider quota may create no additional fittings.",
+        "cost": "Our best estimate: About $690,000 per 10 USA QALYs. A $10,000 normalization buys roughly two otherwise-additional fittings, each yielding about 0.073 net QALY before geography. Four-year use and 0.04 annual utility improvement are judgments; generic utility nulls and fixed capacity can erase benefits. We adopt $3,000 per supported fitting, rounded up from the historical non-in-kind diagnostic, and 60% financing/capacity additionality. Existing last-resort fitting capacity and modest reserves support a nonzero response, while the 40% discount allows sponsor and provider constraints. These are judgments, not measured marginal rates. Favorable, zero and adverse cases remain in the transparent model; positive scenarios are not confidence bounds or verified funding offers.",
         "funding": "The [FY2025 original return](https://projects.propublica.org/nonprofits/full_text/202620159349301802/IRS990) shows $278,776 functional expense plus $147,746 direct fundraising-event costs, giving $426,522 gross accounting expense. Removing $123,000 recorded donated aids gives a $303,522 non-in-kind expense proxy, not cash flow or marginal cost. Functional spending includes $40,000 scholarships. Event net income excludes $194,060 event contributions: adding those to $45,380 event receipts and subtracting direct costs gives $91,694 before other fundraising expenses, so the negative net-event line alone does not show a loss-making event. Revenue less functional expense was −$15,225 and unrestricted net assets $71,754. Small reserves support possible funding need, but do not establish available extra donated devices or clinicians. Original Medicare [does not cover aids](https://www.medicare.gov/coverage/hearing-aids); other coverage and charity programs may. [OTC aids](https://www.fda.gov/medical-devices/hearing-aids/otc-hearing-aids-what-you-should-know) are intended for adults with mild-to-moderate loss, not a universal alternative for this program's population.\n\nA [secondary index](https://www.causeiq.com/organizations/foundation-for-sight-and-sound,200878279/) includes a California registration flag that has not been resolved against the original registry. This does not establish national closure or ineligibility. We withhold a donation recommendation and checkout button until the relevant status is clarified; the research model is not legal or tax advice."
       },
       "sources": [
@@ -5280,13 +5280,13 @@
         }
       ],
       "model": {
-        "version": "usa-alpha-help-america-hear-2026-09-13",
+        "version": "usa-alpha-help-america-hear-2026-09-13-judgment-20260914",
         "costScope": "Ordinary unrestricted recipient support, with all recipient fundraising, operations and scholarships retained in the planning cost. G=$10,000 is normalization only. c=$3,000 is a conditional full-support cash-cost prior anchored to gross expenses less identifiable donated aids divided by a conservative120-patient denominator; this ratio is not a verified production function. Patient tests, travel and fitting costs and donated provider/device resource costs are separately disclosed, not claimed free to society.",
         "geographicAttribution": "Official program and return describe nationwide domestic services and no foreign operations. Conditional g=.99 allows incidental nonresident benefit; range.98–1. USA includes residents of50states and DC. Headquarters location and citizenship are not allocation keys.",
-        "formula": "D=sum[t=1..T]((1−m)/1.03)^t. N=(G/c)×b. Q_all=N×(s×u×p×D−h). Q_USA=Q_all×g. Price per10=10G/Q_USA only if positive. b is financing/provider/manufacturer additionality; s is benefit not otherwise obtained; p is sustained effective use; u is utility gain while using devices. h is an adverse-burden allowance retained for all additional fittings even when s=0. Main result is null because b and current marginal c are not empirically bounded.",
+        "formula": "D=sum[t=1..T]((1−m)/1.03)^t. N=(G/c)×b. Q_all=N×(s×u×p×D−h). Q_USA=Q_all×g. Price per10=10G/Q_USA only if positive. b is financing/provider/manufacturer additionality; s is benefit not otherwise obtained; p is sustained effective use; u is utility gain while using devices. h is an adverse-burden allowance retained for all additional fittings even when s=0. Central inputs are explicit judgments, with wide sensitivity tests.",
         "counterfactual": "The financial screen makes otherwise-unmet need plausible but does not prove no alternative care. s allows Medicare Advantage, Medicaid, veterans' programs, other charities, family purchase or suitable OTC options. b separately discounts existing sponsorship, fixed donated-device quotas, provider slots and reserves. c includes failed applications/administration through the whole-recipient historical anchor; p discounts post-fitting use, not completion twice.",
         "attribution": "No extra hearing gain is credited to both scholarship and standard-program recipients. Scholarship cash and awareness receive no assumed health benefit but remain in cost; their separate benefits are unquantified. Each recipient is counted once, not once per device. Clinical priors transfer from external trials with better follow-up, not from device retail values. The main uncertainty is donation-sensitive completed care, so numerical cases are conditional and do not establish a favorable bound.",
-        "uncertainty": "Hearing-specific function improves in randomized studies, but QALY measurement is sensitive to instrument and population. The Singapore .12 utility difference is not adopted directly. Age, hearing loss severity, fitting quality, ongoing use, repair access and alternatives could materially change benefit. The current program's manufacturer/provider constraint is missing; setting b=.6 is a scenario, not an estimated probability.",
+        "uncertainty": "We adopt $3,000 per supported fitting, rounded up from the historical non-in-kind diagnostic, and 60% financing/capacity additionality. Existing last-resort fitting capacity and modest reserves support a nonzero response, while the 40% discount allows sponsor and provider constraints. These are judgments, not measured marginal rates. Zero and adverse outcomes remain possible; the quantified pathway is not a complete portfolio valuation.",
         "nativeOutcomes": "The FY2025 return repeats an over-120 people/services narrative also present in earlier returns; this is not a verified annual cohort. It separately lists 164 donated device items, a different unit. Gross expense $426,522 minus $123,000 noncash aids equals $303,522, or $2,529.35 using a hypothetical 120-recipient denominator: a rough cost diagnostic, not an observed annual cost per patient. Conditional c=$3,000 and b=0.6 imply two additional fitted patients per arithmetic unit; net clinical QALYs per such patient are approximately 0.0733 before geography.",
         "inputs": [
           {
@@ -5330,10 +5330,10 @@
           },
           {
             "name": "c",
-            "value": null,
+            "value": 3000,
             "unit": "USD/marginal completed fitting",
-            "basis": "unknown",
-            "rationale": "Conditional3000 based on2529.35 historical full-recipient non-in-kind proxy with allowance for support. Current device/provider availability and mixed cohort prevent a measured marginal estimate; test700–4000.",
+            "basis": "judgment",
+            "rationale": "We adopt $3,000 per supported fitting, rounded up from the historical non-in-kind diagnostic, and 60% financing/capacity additionality. Existing last-resort fitting capacity and modest reserves support a nonzero response, while the 40% discount allows sponsor and provider constraints. These are judgments, not measured marginal rates.",
             "sourceIds": [
               "hah-99025",
               "hah-noncash",
@@ -5342,10 +5342,10 @@
           },
           {
             "name": "b",
-            "value": null,
+            "value": 0.6,
             "unit": "financing and capacity additionality",
-            "basis": "unknown",
-            "rationale": "Conditional.6; scenarios0–.9. Low reserves and deficits are compatible with need, but no verified manufacturer quota, provider slots or funding-contingent waiting list.",
+            "basis": "judgment",
+            "rationale": "We adopt $3,000 per supported fitting, rounded up from the historical non-in-kind diagnostic, and 60% financing/capacity additionality. Existing last-resort fitting capacity and modest reserves support a nonzero response, while the 40% discount allows sponsor and provider constraints. These are judgments, not measured marginal rates.",
             "sourceIds": [
               "hah-99025",
               "hah-program"
@@ -5431,11 +5431,11 @@
         "scenarios": [
           {
             "id": "central",
-            "label": "Not estimated: marginal completed fittings unbounded",
+            "label": "Best estimate — explicit judgment",
             "costUSD": 10000,
-            "allPopulationQalys": null,
-            "editionQalys": null,
-            "assumptions": "No observed current donation-to-additional-fitted-patient rate; manufacturer supply and provider availability could dominate. Conditional scenario below is not a positive bound or expected-value estimate."
+            "allPopulationQalys": 0.14657758694931936,
+            "editionQalys": 0.14511181107982615,
+            "assumptions": "c=3000; b=0.6; s=0.7; u=0.04; p=0.75; T=4; m=0.02; D=3.5375615940314136; h=0.001; g=0.99. Hearing/function only; no mortality or dementia prevention credited. We adopt $3,000 per supported fitting, rounded up from the historical non-in-kind diagnostic, and 60% financing/capacity additionality. Existing last-resort fitting capacity and modest reserves support a nonzero response, while the 40% discount allows sponsor and provider constraints. These are judgments, not measured marginal rates."
           },
           {
             "id": "conditional",
@@ -5490,7 +5490,7 @@
           "At conditional clinical inputs and c=$3000, achieving$1million per10 requires b≥.4135; achieving$100000 requires b≥4.135, impossible. Lower costs or larger sustained clinical benefit are required for the tighter threshold.",
           "At b=.6 and other conditional inputs, c must be≤$4353 for$1million per10 or≤$435 for$100000 per10. A free manufacturer device alone does not establish either full-support cost.",
           "At c3000 and b.6, annual effective-use utility u must be≥.02773 for$1million per10 or≥.27248 for$100000. Generic quality-of-life nulls make the former uncertain; the latter exceeds the adopted hearing-utility evidence.",
-          "Without current funding-sensitive completed fittings, the main price stays unestimated even though a conditional model is calculable. Zero manufacturer/provider capacity expansion means b=0.",
+          "The best estimate uses judgmental funding-sensitive fittings; current observed marginal capacity would improve it. Zero manufacturer/provider capacity expansion means b=0.",
           "Adding$1325 percase as an illustrative resource allowance for donated devices and external fitting/testing support increases the conditional social-cost price by44%, to about$993000 per10. This is not a procurement quote; actual donated opportunity cost and patient expenses are missing.",
           "Reducing benefit to one year, or substantial failure to obtain replacement/repairs after the included service year, erodes most of the four-year gain.",
           "No dementia, survival, earnings or scholarship-value addition is made. Communication points and device market values cannot be added to QALYs.",
@@ -5542,7 +5542,8 @@
       "timeCoverage": "complete",
       "sessionIds": [
         "usa-alpha-help-america-hear-20260913-worker1"
-      ]
+      ],
+      "priceScope": "Hearing and communication; full recipient support costs"
     },
     {
       "edition": "usa",
@@ -5552,12 +5553,12 @@
       "organization": "Rx Outreach",
       "program": "Affordable mail-order medicines, free-medication assistance and clinic support",
       "published": "2026-09-13",
-      "updated": "2026-09-13",
+      "updated": "2026-09-14",
       "stage": "alpha",
       "donationUrl": "https://rxoutreach.org/donation/",
       "acceptance": {
         "status": "accepted",
-        "evidence": "docs/geography-access-batch-five-acceptance.md; independent Medium audit plus root review; research only."
+        "evidence": "docs/geography-access-batch-five-acceptance.md; independent Medium audit plus root review; research only.; docs/geography-central-estimates-acceptance.md"
       },
       "summary": {
         "what": [
@@ -5580,7 +5581,7 @@
         "what": "The [current general pharmacy](https://rxoutreach.org/patients/) requires an available medication and valid prescription, not an income application, membership or insurance. Its [clinic service](https://rxoutreach.org/why_clinics/) supports patient-pay, clinic-pay and hybrid arrangements and can ship to a clinic for people without secure housing. [Fill the Gap](https://rxoutreach.org/fill-the-gap/) separately offers covered medicines free to eligible adults aged 55 or older, at or below 300% of the federal poverty level, in the St. Louis region; meeting eligibility does not guarantee enrollment. Current criteria allow insured patients and should not be replaced with older launch restrictions. Other [assistance pathways](https://rxoutreach.org/patient-assistance-programs/) include disaster relief and a Blue Circle Health partnership. An ordinary donation supports this mixed recipient, not exclusively the strongest free-medication pathway.",
         "monitoring": "A [dated 2024 overview](https://rxoutreach.org/wp-content/uploads/2025/02/Printable-RxO-Two-Pager-2.18.25.pdf) reports 34,740 unique patients, 188,993 shipped prescriptions and 2,534 facilities/clinics. Its geographic statement includes all 50 states, DC, Puerto Rico and the Virgin Islands. These are delivery outputs, not additional treatment or health outcomes. The [current donor page](https://rxoutreach.org/donors-supporters/) instead gives a loose 120,000-plus annual prescription claim without a reporting year; it is not a like-for-like trend. No usable recipient-level comparison of medication persistence, disease control, admissions or utility was found in this bounded review. A next evaluation should link human recipient-years, drug class, baseline cost-related nonadherence, alternative coverage, fills, actual use, harms and outcomes. [Pet prescriptions](https://rxoutreach.org/pets/) need a separate denominator.",
         "qualitative": "[CLEAN Meds](https://pmc.ncbi.nlm.nih.gov/articles/PMC8139488/) randomized 786 Canadian primary-care patients reporting cost-related nonadherence. Free essential medicines improved appropriate adherence by 10.1 percentage points at two years, but available diabetes, blood-pressure and lipid outcomes were not statistically different; missing clinical measurements limit interpretation. Its [one-year findings](https://pmc.ncbi.nlm.nih.gov/articles/PMC6784757/) included better blood pressure, illustrating why a short-term surrogate should not be assumed permanent. The US [MI-FREEE trial](https://www.nejm.org/doi/full/10.1056/NEJMsa1107913) improved adherence by 4–6 points after myocardial infarction; the primary vascular-event/revascularization outcome was not significantly reduced, although a secondary first-major-vascular-event rate was 11.0 versus 12.8 per 100 person-years. [ARTEMIS](https://jamanetwork.com/journals/jama/fullarticle/2720024) likewise improved medication persistence without a significant one-year cardiovascular-event reduction. These studies support plausibility, not a universal shipment-to-health multiplier. Our judgment is that targeted prevention of high-risk treatment interruption merits further diligence; the unrestricted recipient is not yet demonstrated to have unusually high health yield.",
-        "cost": "Cost per 10 USA QALYs is not estimated. The [2024 return](https://projects.propublica.org/nonprofits/full_text/202531989349100408/IRS990PF) implies about $401 of gross recipient expense per reported unique patient, or $74 per shipment. Neither is the marginal cost of a full year of additional treatment. The model disclosure uses a $400 patient-year cost benchmark and 50% funding additionality only to make thresholds concrete: reaching $1 million per 10 USA QALYs would require about 0.0082 net QALYs per additional patient-year before a 98% USA share; the $100,000 threshold requires about 0.082. Under an illustrative, attenuated [post-MI mechanism](https://www.nejm.org/doi/full/10.1056/NEJMsa1107913), the former requires roughly 48% of additional patient-years to have that high-risk clinical profile when each prevented event preserves two discounted QALYs. This is a question for measurement, not an estimate that 48% actually do. Other disease benefits remain unquantified.",
+        "cost": "Our best estimate: About $6.3 million per 10 USA QALYs through cardiovascular medication access. A $10,000 normalization supports about 12.5 additional patient-years after the funding discount. With 10% at post-MI-equivalent risk, half the trial event reduction and two discounted QALYs per event prevented, net benefit is about 0.0013 QALY per patient-year before geography. We adopt $400 per supported patient-year, anchored to $401 gross expense per unique patient, and 50% funding response. Our best-judgment post-MI-equivalent risk share is 10%, below the earlier 25% probe: the formulary spans broader cardiovascular, diabetes and respiratory conditions. Patient counts are not matched patient-years, so this remains a rough planning cost. Other clinical benefits remain unpriced. Favorable, zero and adverse cases remain in the transparent model; positive scenarios are not confidence bounds or verified funding offers.",
         "funding": "Original Form 990-PF book expenses were [$12,368,983 in 2022](https://projects.propublica.org/nonprofits/full_text/202331939349100408/IRS990PF), [$21,535,029 in 2023](https://projects.propublica.org/nonprofits/full_text/202402299349100110/IRS990PF) and [$13,936,912 in 2024](https://projects.propublica.org/nonprofits/full_text/202531989349100408/IRS990PF), averaging about $15.95 million. The [2024 expense schedule](https://projects.propublica.org/nonprofits/full_text/202531989349100408/OtherExpensesSchedule) already includes $3,132,063 of purchased drug costs, $2,610,784 of in-kind inventory and $79,473 of other in-kind expense; do not add drug costs again. Removing only identified in-kind expenses leaves a $11,246,655 non-in-kind expense proxy, not cash flow. The corresponding proxies rose from $7.12 million in 2022 and $9.05 million in 2023: the gross decline does not show improved efficiency. In 2024, prescription revenue was $10,516,967, contributions $2,892,140 and the book deficit $516,395. Year-end unrestricted net assets were $1,640,703, with $437,272 in savings/temporary cash investments; these are dated figures, not a current runway forecast. The 2026 [clinic page](https://rxoutreach.org/why_clinics/) says nearly all inventory is now purchased directly, so prior donated-drug shares may be obsolete. [Deaconess's December 2025 award](https://deaconess.org/dec-2025-deaconess-awards-organizations-dedicated-to-youth-older-adults/) supports Fill the Gap expansion but does not establish an unfunded patient quota or matching leverage. A current budget, program-specific subsidy schedule, committed grants and waitlist are needed."
       },
       "sources": [
@@ -5757,13 +5758,13 @@
         }
       ],
       "model": {
-        "version": "usa-rxo-alpha-1",
-        "costScope": "Unrestricted support to Rx Outreach Inc., EIN35-2378788. Recipient expenses include pharmacy procurement, dispensing, staff, systems, overhead and fundraising. Gross book expenses include in-kind inventory; c is unknown net recipient support needed per newly supported human patient-year, not retail drug value. Patient/clinic payments and sponsors can finance services without a new donation. Unmodeled pet services and other activities cannot be silently removed from the donation numerator. The cost of medication access borne by patients, providers or other funders is not free in a societal model; the reported donation skeleton does not claim total economic cost-effectiveness.",
-        "geographicAttribution": "Human health of residents of 50 states plus DC. Observed 2024 service includes Puerto Rico and Virgin Islands, which are excluded. Current pet prescriptions are not human QALYs and require separate allocation before human patient-years. No outcome-weighted territorial share is available. g=.98 is a sensitivity benchmark only; current St. Louis Fill the Gap human patients would be within boundary, but unrestricted allocations are not all Fill the Gap.",
+        "version": "usa-rxo-alpha-1-judgment-20260914",
+        "costScope": "Unrestricted support to Rx Outreach Inc., EIN35-2378788. Recipient expenses include pharmacy procurement, dispensing, staff, systems, overhead and fundraising. Gross book expenses include in-kind inventory; c is judgmental net recipient support needed per newly supported human patient-year, not retail drug value. Patient/clinic payments and sponsors can finance services without a new donation. Unmodeled pet services and other activities cannot be silently removed from the donation numerator. The cost of medication access borne by patients, providers or other funders is not free in a societal model; the reported donation skeleton does not claim total economic cost-effectiveness.",
+        "geographicAttribution": "Human health of residents of 50 states plus DC. Observed 2024 service includes Puerto Rico and Virgin Islands, which are excluded. Current pet prescriptions are not human QALYs and require separate allocation before human patient-years. No outcome-weighted territorial share is available. g=.98 is the central geographic judgment; current St. Louis Fill the Gap human patients would be within boundary, but unrestricted allocations are not all Fill the Gap.",
         "formula": "General skeleton: Q_USA = G × (b/c) × theta × g, where theta is net cumulative QALYs produced by one additional human patient-year of medication access, including later consequences discounted once. Inspectable post-MI test only: theta = f × e × t × q + z − h. f=share with trial-like high-risk post-MI prevention; e=0.018 fewer first major vascular events per patient-year (secondary MI-FREEE rate difference); t=transport/implementation attenuation; q=discounted net QALYs per event prevented; z=net health from other mechanisms; h=incremental adverse-treatment/access burden per supported human patient-year. Price = 10c/[b theta g] for positive theta. G=10000 merely normalizes disclosure arithmetic. No extra adherence multiplier is applied to e, which already measures intention-to-treat access effects.",
         "counterfactual": "Compare to the medication access patients would actually obtain through existing Rx Outreach sales, clinic subsidies, insurance, Medicare/Medicaid, manufacturer assistance or other cash pharmacies. [Current Medicare Part D](https://www.medicare.gov/health-drug-plans/part-d/basics/costs) has a $2,100 2026 covered-drug out-of-pocket cap, while [Cost Plus Drugs](https://www.markcubancostplusdrugcompany.com/) supplies an alternative cash/mail-order channel. These do not eliminate all barriers, but old retail sticker-price savings are not the counterfactual. An unrestricted gift could subsidize already-paid fills, replace renewed grant support, finance marketing or sustain operations rather than add patient-years. b includes that financing additionality; t captures clinical transport, not the same funding discount.",
         "attribution": "Do not attribute all efficacy of a prescribed drug to the dispensing charity. Prescribers, patients, manufacturers, clinics and public/private payers contribute. The trial event contrast incorporates access-induced uptake/adherence rather than treatment efficacy in fully adherent patients. Pharmacy-specific clinical mix and the share of services actually expanded by philanthropy remain unknown; no claim of zero alternative care.",
-        "uncertainty": "Main central value is null because b/c, theta and geographic human allocation are not jointly identified. Conditional values below are algebraic probes, not confidence bounds, a recipient expected value, or evidence that all other pathways have zero value. The post-MI trial's positive secondary endpoint coexists with a nonsignificant primary endpoint; t may be zero. q=2 is an explicit severity/lifetime judgment, not a measured Rx Outreach utility. A financial savings estimate is not a QALY. Access can also cause adverse effects or inappropriate treatment; h remains when modeled benefit is zero.",
+        "uncertainty": "We adopt $400 per supported patient-year, anchored to $401 gross expense per unique patient, and 50% funding response. Our best-judgment post-MI-equivalent risk share is 10%, below the earlier 25% probe: the formulary spans broader cardiovascular, diabetes and respiratory conditions. Patient counts are not matched patient-years, so this remains a rough planning cost. Other clinical benefits remain unpriced. Zero and adverse outcomes remain possible; the quantified pathway is not a complete portfolio valuation.",
         "nativeOutcomes": "Observed 2024: 34,740 unique patients; 188,993 shipments; gross recipient expense $401.18 per unique patient or $73.74 per shipment. Identified non-in-kind expense proxy $323.74 per unique patient or $59.51 per shipment. Unique people are not full patient-years, shipments have varying days supply and polypharmacy, and donated inventory fair values distort resource prices. Desired causal unit is additional appropriately treated human patient-year, separated by drug/risk class and alternative care.",
         "inputs": [
           {
@@ -5828,10 +5829,10 @@
           },
           {
             "name": "c",
-            "value": null,
+            "value": 400,
             "unit": "net unrestricted USD/supported human patient-year before financing adjustment",
-            "basis": "unknown",
-            "rationale": "Requires current marginal procurement/service cost, patient and clinic receipts, whole-recipient allocation and capacity. Benchmark400 is gross cost-per-unique-person scale, not an estimate.",
+            "basis": "judgment",
+            "rationale": "We adopt $400 per supported patient-year, anchored to $401 gross expense per unique patient, and 50% funding response. Our best-judgment post-MI-equivalent risk share is 10%, below the earlier 25% probe: the formulary spans broader cardiovascular, diabetes and respiratory conditions. Patient counts are not matched patient-years, so this remains a rough planning cost. Other clinical benefits remain unpriced.",
             "sourceIds": [
               "rxo-other24",
               "rxo-impact24",
@@ -5840,10 +5841,10 @@
           },
           {
             "name": "b",
-            "value": null,
+            "value": 0.5,
             "unit": "fraction of supported patient-years financing-additional",
-            "basis": "unknown",
-            "rationale": "Existing revenue, restricted grants, inventories, reserves and other donations may substitute. Benchmark.5 tests thresholds only.",
+            "basis": "judgment",
+            "rationale": "We adopt $400 per supported patient-year, anchored to $401 gross expense per unique patient, and 50% funding response. Our best-judgment post-MI-equivalent risk share is 10%, below the earlier 25% probe: the formulary spans broader cardiovascular, diabetes and respiratory conditions. Patient counts are not matched patient-years, so this remains a rough planning cost. Other clinical benefits remain unpriced.",
             "sourceIds": [
               "rxo-donors",
               "rxo-funder"
@@ -5851,10 +5852,10 @@
           },
           {
             "name": "theta",
-            "value": null,
+            "value": 0.0013,
             "unit": "net cumulative QALYs/additional human patient-year",
-            "basis": "unknown",
-            "rationale": "Need risk/class mix and durable causal health outcomes; does not equal prescriptions or adherence percentage.",
+            "basis": "judgment",
+            "rationale": "We adopt $400 per supported patient-year, anchored to $401 gross expense per unique patient, and 50% funding response. Our best-judgment post-MI-equivalent risk share is 10%, below the earlier 25% probe: the formulary spans broader cardiovascular, diabetes and respiratory conditions. Patient counts are not matched patient-years, so this remains a rough planning cost. Other clinical benefits remain unpriced.",
             "sourceIds": [
               "rxo-clean2",
               "rxo-artemis"
@@ -5862,10 +5863,10 @@
           },
           {
             "name": "g",
-            "value": null,
+            "value": 0.98,
             "unit": "fraction of net human outcome accruing to USA residents",
-            "basis": "unknown",
-            "rationale": "Territorial activity observed; benchmark.98 is judgment, not measured share.",
+            "basis": "judgment",
+            "rationale": "We adopt $400 per supported patient-year, anchored to $401 gross expense per unique patient, and 50% funding response. Our best-judgment post-MI-equivalent risk share is 10%, below the earlier 25% probe: the formulary spans broader cardiovascular, diabetes and respiratory conditions. Patient counts are not matched patient-years, so this remains a rough planning cost. Other clinical benefits remain unpriced.",
             "sourceIds": [
               "rxo-impact24",
               "rxo-pets"
@@ -5883,10 +5884,10 @@
           },
           {
             "name": "f",
-            "value": null,
+            "value": 0.1,
             "unit": "fraction of additional human patient-years with trial-like post-MI risk",
-            "basis": "unknown",
-            "rationale": "No recipient clinical mix; .25 and1 are tests, not cohort facts.",
+            "basis": "judgment",
+            "rationale": "We adopt $400 per supported patient-year, anchored to $401 gross expense per unique patient, and 50% funding response. Our best-judgment post-MI-equivalent risk share is 10%, below the earlier 25% probe: the formulary spans broader cardiovascular, diabetes and respiratory conditions. Patient counts are not matched patient-years, so this remains a rough planning cost. Other clinical benefits remain unpriced.",
             "sourceIds": [
               "rxo-gap",
               "rxo-impact24"
@@ -5915,10 +5916,10 @@
           },
           {
             "name": "z",
-            "value": null,
+            "value": 0,
             "unit": "net QALYs/patient-year from other clinical mechanisms",
-            "basis": "unknown",
-            "rationale": "Other chronic/specialty drugs, support and financial-stress health effects not quantified; set0 only in narrow test.",
+            "basis": "judgment",
+            "rationale": "We adopt $400 per supported patient-year, anchored to $401 gross expense per unique patient, and 50% funding response. Our best-judgment post-MI-equivalent risk share is 10%, below the earlier 25% probe: the formulary spans broader cardiovascular, diabetes and respiratory conditions. Patient counts are not matched patient-years, so this remains a rough planning cost. Other clinical benefits remain unpriced.",
             "sourceIds": [
               "rxo-pap"
             ]
@@ -5945,11 +5946,11 @@
         "scenarios": [
           {
             "id": "central",
-            "label": "Not estimated: marginal patient-years and clinical mix unknown",
+            "label": "Best estimate — explicit judgment",
             "costUSD": 10000,
-            "allPopulationQalys": null,
-            "editionQalys": null,
-            "assumptions": "No defensible positive distribution for additional human patient-years per unrestricted dollar or class-specific health gain. Dated shipment totals and low retail prices do not identify these inputs."
+            "allPopulationQalys": 0.01625,
+            "editionQalys": 0.015925,
+            "assumptions": "c=400; b=0.5; f=0.1; e=0.018; t=0.5; q=2; z=0; h=0.0005; g=0.98. We adopt $400 per supported patient-year, anchored to $401 gross expense per unique patient, and 50% funding response. Our best-judgment post-MI-equivalent risk share is 10%, below the earlier 25% probe: the formulary spans broader cardiovascular, diabetes and respiratory conditions. Patient counts are not matched patient-years, so this remains a rough planning cost. Other clinical benefits remain unpriced."
           },
           {
             "id": "conditional",
@@ -6045,7 +6046,8 @@
       "timeCoverage": "complete",
       "sessionIds": [
         "usa-alpha-rx-outreach-20260913-worker1"
-      ]
+      ],
+      "priceScope": "Medication access; cardiovascular health quantified"
     },
     {
       "edition": "california",
@@ -13997,7 +13999,7 @@
       "donationUrl": "https://www.ramusa.org/donate/",
       "acceptance": {
         "status": "accepted",
-        "evidence": "docs/usa-access-prevention-acceptance.md; independent source/model review and root corrections; initial research, not a qualified pick"
+        "evidence": "docs/usa-access-prevention-acceptance.md; independent source/model review and root corrections; initial research, not a qualified pick; docs/geography-central-estimates-acceptance.md"
       },
       "summary": {
         "what": [
@@ -14020,7 +14022,7 @@
         "what": "RAM's [clinic FAQ](https://www.ramusa.org/frequently-asked-questions/) describes free basic dental treatment, eye examinations and glasses, with general medical services. Patients normally choose dental or vision on a given day. No insurance or identification is required, but first-come access can mean an overnight wait. [Community hosts](https://www.ramusa.org/host-a-ram-clinic/) recruit volunteers, secure venues and arrange lodging; planning may take a year or more. RAM supplies equipment and operating systems and bears most delivery costs. [Tennessee telehealth](https://www.ramusa.org/) connects an on-site nurse with a volunteer physician as a bridge to continuing primary care.",
         "monitoring": "The [2025 impact account](https://www.ramusa.org/02/ram-by-the-numbers-our-impact-in-2025/) reports 32,770 patients, 7,999 eye exams, 15,013 pairs of glasses, 11,557 teeth extracted, 4,333 fillings and 4,228 telehealth encounters. These are different units, not additive health gains. Crucially, [Form 990 Part III](https://www.ramusa.org/wp-content/uploads/RAM-2025-990-Final-Public.pdf) says 7,402 of the reported patients were served in the Philippines and nine of 436 clinics were there, while the impact page frames the same headline around 27 states. The return's foreign-activity checklist and the audit's limited-foreign-operations description do not reconcile the outcome scope. Vision counts need location, unique recipients, pre/post acuity and sustained-use data; dental counts need patient-level pain and completion data.",
         "qualitative": "A [US randomized trial](https://pubmed.ncbi.nlm.nih.gov/16776781/) in 131 older adults with correctable impairment found better vision-specific function after immediate glasses or magnifiers than after delayed treatment at three months. It did not establish a RAM QALY gain. A [cross-sectional utility study](https://pure.johnshopkins.edu/en/publications/utility-and-uncorrected-refractive-error-4/) elicited substantial losses for uncorrected near and distance impairment, but hypothetical time-trade-off responses in selected patients are not a causal treatment effect. The conditional model therefore uses a smaller 0.04 utility improvement only for meaningfully corrected patients. The [VISIBLE trial](https://www.bmj.com/content/340/bmj.c2265) found no significant overall fall reduction and increased outdoor falls among less-active participants; no blanket fall-prevention credit is assigned. Appropriate prescription, adaptation and follow-up matter.",
-        "cost": "Cost per 10 USA QALYs remains unestimated. Retaining all recipient operating expenses except recorded donated labor gives a $10.52 million annual support-cost anchor, about $321 per reported patient, not a marginal quote. A conditional model allocates this entire cost against vision benefit alone, assumes half of historical throughput is financing-sensitive, and allows weak correction, nonuse, alternative access and geographic leakage. It gives about $1.33 million per 10 USA QALYs; a favorable case is about $69,000, and adverse or capacity-fixed cases have no positive price. These are tests, not a bounded forecast. At the conditional assumptions, reaching $1 million per 10 would require about 66% financing-sensitive throughput, or another 69 net QALYs from dental/medical care at the modeled annual scale. Public [per-service donation illustrations](https://telehealth.ramusa.org/grateful-for-your-support-how-you-directly-impact-our-success/) are not a full-recipient marginal production function.",
+        "cost": "Our best estimate: About $1.3 million per 10 USA QALYs from vision correction. The 7,999 annual exams imply about 3.8 funding-sensitive examinations per $10,000 at the $10.52 million cash-support anchor. We allow unsuccessful correction, alternative care, nonuse and geographic leakage, then value improved vision over three years. The separate full-resource scenario includes recorded donated labor. We adopt 50% financing-sensitive throughput: cash supports a demonstrated clinic network, but volunteers, hosts and replacement funding constrain expansion. The 75% USA health share is a cautious allocation judgment, not a raw patient share. Full cash-support expenses are charged against vision health; dental and other medical benefits remain unpriced. Favorable, zero and adverse cases remain in the transparent model; positive scenarios are not confidence bounds or verified funding offers.",
         "funding": "The [FY2025 audit](https://www.ramusa.org/wp-content/uploads/RAM-Final-2025-Audited-Financial-Statements.pdf) reports $19,852,655 total expenses, including $9,330,033 donated labor, versus $15,134,442 in 2024. [Schedule D](https://www.ramusa.org/wp-content/uploads/RAM-2025-990-Final-Public.pdf) reconciles $10,349,704 tax functional expense plus $172,918 rental expenses and donated labor to the audited total. Thus $10,522,622 is a non-volunteer expense proxy, still including depreciation and some in-kind supplies, not cash flow. General contributions fell from $9.12 million to $7.43 million and operating cash flow was −$1.46 million. Yet $6.91 million of financial assets remained available within a year. RAM acquired two headquarters buildings, spent $7.12 million on property/equipment and took a $2.5 million interest-only loan due December 2027, collateralized by a CD. Asset-sale gains and temporary rent are not repeatable clinic funding. These facts suggest possible funding need but do not establish extra clinician slots or a funding-contingent clinic backlog."
       },
       "sources": [
@@ -14122,13 +14124,13 @@
         }
       ],
       "model": {
-        "version": "usa-alpha-remote-area-medical-2026-09-13",
+        "version": "usa-alpha-remote-area-medical-2026-09-13-judgment-20260914",
         "costScope": "Ordinary unrestricted recipient support. All recipient functions, fundraising, rental expenses and depreciation are retained in C; only recorded volunteer labor is removed for a support-dollar throughput anchor. C=10522622 is not marginal cash cost. The full-resource sensitivity restores volunteer labor. Local host costs, volunteer travel, unrecorded supplies and patient waiting/travel are additional societal costs not fully measured. G=10000 is arithmetic normalization only.",
         "geographicAttribution": "USA means residents of 50 states and DC, not clinic citizenship or headquarters. Original return includes 7402 Philippine patients in 32770 total, while blog describes 27 states. 25368/32770=.7741 is a raw patient ratio, not a health-weighted share and not used as observed g. Unknown geographic/service-scope reconciliation; conditional g=.75 with .5 and 1 stress cases. Some reported international output may be affiliate activity outside recipient costs. That must be reconciled before using any total as a production denominator.",
-        "formula": "D=sum[t=1..T]((1−m)/1.03)^t. q_v=f×s×u×p×D−h. A=N_v×q_v+H_other. Q_all=(G/C)×b×A; Q_USA=Q_all×g; price=10G/Q_USA if positive. N_v is eye exams, not pairs. f is fraction yielding meaningful correction, p effective sustained use, s benefit not obtained otherwise. h is incremental adverse burden versus the actual alternative. It remains at s=0 only when an extra exam or prescription imposes new burden; identical replacement care cancels shared harms. H_other is annual-scale net dental/medical QALYs after deduplication and harms. Main b, g and H_other remain unknown; conditional tests set H_other=0, which is not a proven lower bound.",
+        "formula": "D=sum[t=1..T]((1−m)/1.03)^t. q_v=f×s×u×p×D−h. A=N_v×q_v+H_other. Q_all=(G/C)×b×A; Q_USA=Q_all×g; price=10G/Q_USA if positive. N_v is eye exams, not pairs. f is fraction yielding meaningful correction, p effective sustained use, s benefit not obtained otherwise. h is incremental adverse burden versus the actual alternative. It remains at s=0 only when an extra exam or prescription imposes new burden; identical replacement care cancels shared harms. H_other is annual-scale net dental/medical QALYs after deduplication and harms. Central b and g are judgments; H_other=0 leaves other health unpriced, not a proven lower bound.",
         "counterfactual": "b discounts donor replacement, reserves, fixed volunteer slots and local-host constraints, separately from s for patient alternatives. Patients may obtain later care through Medicaid, community clinics, other charities, family payments or low-cost optical services. No-insurance status does not prove no substitute. Public funding saved is not counted as a health gain; any downstream use is unmodeled. Donated clinician opportunity cost may include other care forgone. The negative alternative-care test means an extra duplicative exam or prescription with no extra correction benefit. It is not identical replacement care, for which shared burdens cancel.",
         "attribution": "Full recipient expense supports only the vision pathway in the conditional test; dental and medical benefits are not silently attributed to glasses. Two pairs do not create two independent QALY streams. Extractions/fillings can overlap within the same pain episode. Screening and telehealth encounters are not credited without treatment completion. Geography and affiliate-cost scope need reconciliation. A positive conditional number does not overcome unknown marginal throughput.",
-        "uncertainty": "Direct visual function benefit is credible, but severity and durable generic utility in this clinic population are unknown. The external utility study is cross-sectional and uses hypothetical states; its large utility deficits are not copied. Three-year durability exceeds the immediate-correction trial follow-up and is judgment. H_other can be positive or negative; holding it at zero does not establish the recipient's net effect. Cost and service mix may change after headquarters expansion.",
+        "uncertainty": "We adopt 50% financing-sensitive throughput: cash supports a demonstrated clinic network, but volunteers, hosts and replacement funding constrain expansion. The 75% USA health share is a cautious allocation judgment, not a raw patient share. Full cash-support expenses are charged against vision health; dental and other medical benefits remain unpriced. Zero and adverse outcomes remain possible; the quantified pathway is not a complete portfolio valuation.",
         "nativeOutcomes": "2025 N_v=7999 eye exams,15013 pairs; no unique meaningful-correction denominator. C/32770=$321.11 per reported patient and C/7999=$1315.49 per eye exam when all non-volunteer recipient cost is assigned to that pathway. The latter intentionally includes costs supporting dental and other services. Conditional b=.5 implies 3.80 additional exam-pathways per arithmetic unit, not a verified extra-patient promise.",
         "inputs": [
           {
@@ -14184,10 +14186,10 @@
           },
           {
             "name": "b",
-            "value": null,
+            "value": 0.5,
             "unit": "funding/capacity-sensitive throughput fraction",
-            "basis": "unknown",
-            "rationale": "Conditional.5, tests 0–1; volunteers determine clinic capacity and host planning takes a year or more. No funded-versus-unfunded expansion schedule.",
+            "basis": "judgment",
+            "rationale": "We adopt 50% financing-sensitive throughput: cash supports a demonstrated clinic network, but volunteers, hosts and replacement funding constrain expansion. The 75% USA health share is a cautious allocation judgment, not a raw patient share. Full cash-support expenses are charged against vision health; dental and other medical benefits remain unpriced.",
             "sourceIds": [
               "ram-faq",
               "ram-host",
@@ -14267,10 +14269,10 @@
           },
           {
             "name": "g",
-            "value": null,
+            "value": 0.75,
             "unit": "USA health share",
-            "basis": "unknown",
-            "rationale": "Conditional.75 is not the observed raw patient proportion. Geography/affiliate cost and vision case mix unresolved; test.5–1.",
+            "basis": "judgment",
+            "rationale": "We adopt 50% financing-sensitive throughput: cash supports a demonstrated clinic network, but volunteers, hosts and replacement funding constrain expansion. The 75% USA health share is a cautious allocation judgment, not a raw patient share. Full cash-support expenses are charged against vision health; dental and other medical benefits remain unpriced.",
             "sourceIds": [
               "ram-tax25",
               "ram-output25"
@@ -14278,10 +14280,10 @@
           },
           {
             "name": "H_other",
-            "value": null,
+            "value": 0,
             "unit": "net QALYs per annual historical scale",
-            "basis": "unknown",
-            "rationale": "Dental/medical pathways require unique symptomatic patients, causal relief duration, referrals and harm. Set 0 only in vision test, not an assertion of no other benefit.",
+            "basis": "judgment",
+            "rationale": "We adopt 50% financing-sensitive throughput: cash supports a demonstrated clinic network, but volunteers, hosts and replacement funding constrain expansion. The 75% USA health share is a cautious allocation judgment, not a raw patient share. Full cash-support expenses are charged against vision health; dental and other medical benefits remain unpriced.",
             "sourceIds": [
               "ram-output25"
             ]
@@ -14290,11 +14292,11 @@
         "scenarios": [
           {
             "id": "central",
-            "label": "Not estimated: marginal throughput and geographic clinical scope unresolved",
+            "label": "Best estimate — explicit judgment",
             "costUSD": 10000,
-            "allPopulationQalys": null,
-            "editionQalys": null,
-            "assumptions": "No defensible current donor-to-completed-care rate; ambiguous domestic versus Philippine output and unknown other-pathway net health. Conditional vision arithmetic is not an expected value."
+            "allPopulationQalys": 0.10042042779274961,
+            "editionQalys": 0.0753153208445622,
+            "assumptions": "C=10522622; N=7999; b=0.5; f=0.6; s=0.5; u=0.04; p=0.8; T=3; m=0.01; D=2.772964336014393; h=0.0002; g=0.75. Dental and medical net outcomes unquantified, set zero only for this vision-path test. We adopt 50% financing-sensitive throughput: cash supports a demonstrated clinic network, but volunteers, hosts and replacement funding constrain expansion. The 75% USA health share is a cautious allocation judgment, not a raw patient share. Full cash-support expenses are charged against vision health; dental and other medical benefits remain unpriced."
           },
           {
             "id": "conditional",
@@ -14399,7 +14401,8 @@
       "timeCoverage": "complete",
       "sessionIds": [
         "usa-alpha-remote-area-medical-20260913-worker1"
-      ]
+      ],
+      "priceScope": "Vision benefit; full cash-support costs"
     },
     {
       "edition": "usa",
@@ -14414,7 +14417,7 @@
       "donationUrl": "https://www.immunize.org/donate/",
       "acceptance": {
         "status": "accepted",
-        "evidence": "docs/usa-access-prevention-acceptance.md; independent source/model review and root corrections; initial research, not a qualified pick"
+        "evidence": "docs/usa-access-prevention-acceptance.md; independent source/model review and root corrections; initial research, not a qualified pick; docs/geography-central-estimates-acceptance.md"
       },
       "summary": {
         "what": [
@@ -14437,7 +14440,7 @@
         "what": "The [current organization](https://www.immunize.org/about/org/overview/) supplies clinician guidance, patient resources and coalition support, including an English/Spanish public-information site launched in 2025. Its [standing-order tools](https://www.immunize.org/clinical/topic/standing-orders-templates/) help authorized personnel assess and vaccinate eligible patients under an approved protocol. The [implementation guide](https://www.immunize.org/wp-content/uploads/catg.d/p3067.pdf) requires leadership support, a responsible champion, training and local legal compliance; downloading a template is not implementation. The [homepage](https://www.immunize.org/) was actively updating 2026–27 resources during review and distinguished professional-society guidance from CDC recommendations. This report evaluates the recipient, not individual clinical recommendations.",
         "monitoring": "The [FY2025 original return](https://projects.propublica.org/nonprofits/full_text/202640819349300504/IRS990) and [highlights](https://www.immunize.org/wp-content/uploads/2024-iac-major-projects.pdf) report 5.2 million educational downloads,5.7 million VIS/translation downloads and over 50000 newsletter subscribers. These include repeat use and do not count additional vaccinations. The [November appeal](https://www.immunize.org/wp-content/uploads/2025_appeal_letter.pdf) gives different download totals, so definitions or extraction periods need reconciliation. Honor rolls recognize existing policies; membership is not evidence the recipient caused adoption. A [recipient-authored five-clinic study](https://pubmed.ncbi.nlm.nih.gov/31630922/) found modest, uneven gains after standing orders. Its [original poster](https://www.izsummitpartners.org/content/uploads/2018/05/VanOss_Impact-of-Standing-Orders-Protocols.pdf) explicitly identifies changing denominators and data-extraction improvements behind some apparent gains.",
         "qualitative": "The [five-clinic evaluation](https://pubmed.ncbi.nlm.nih.gov/31630922/) was before/after, not randomized against equivalent support. In contrast, the [BE IMMUNE trial](https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/2843384) found a 5.1-percentage-point increase in vaccination during visits using reminders, automatically pended orders and clinician feedback; extra bidirectional texts did not add benefit. An [older inpatient randomized trial](https://jamanetwork.com/journals/jama/fullarticle/199810) found 42% versus 30% influenza vaccination with standing orders rather than reminders. These establish a workflow mechanism, not the impact of distributing a template. [Current test-negative evidence](https://www.cdc.gov/mmwr/volumes/75/wr/mm7509a2.htm) estimated 31% effectiveness against hospitalization in adults 65+ in 2025–26. Mortality conversion remains a model judgment: [CDC's methodology](https://www.cdc.gov/flu-burden/php/about-burden-prevented/how-cdc-estimates-vaccinations.html) also transfers inpatient effectiveness to deaths and identifies coverage and surveillance limitations. The BE IMMUNE trial enrolled patients aged 50 and older (mean 65.8), not exclusively those aged 65 and older. The model's three-percentage-point transfer to the older subgroup is an analyst judgment, not a measured subgroup effect. [Trial](https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/2843384)",
-        "cost": "Cost per 10 USA QALYs is unestimated because the number of new effective implementations caused by additional support is unknown. A fully disclosed, narrow older-adult influenza test assumes 1000 otherwise-additional implementations at annual scale,1000 eligible patients per practice, a 3-point uptake gain and 25% funding additionality. It yields about $10 million per 10 USA QALYs; an intentionally favorable large-scale case yields about $26000, while zero implementation or weak seasonal health benefit removes the positive price. These are conditional stress tests, not credible bounds. At the cautious clinical conversion, net additional doses must cost no more than about $43 of recipient support each to meet $1 million per 10, or $4.30 each for $100000 per 10. The absent input is a measured implementation-to-dose production rate, not simply another estimate of website reach.",
+        "cost": "Our best estimate: About $101 million per 10 USA QALYs through older-adult influenza protection. We assume 100 otherwise-additional practice implementations, each reaching 1,000 eligible patients with a three-percentage-point uptake increase. After funding response, this gives about 2.3 additional doses per $10,000, at 0.000451 net QALY per dose before geography for one influenza season. We choose 100 otherwise-attributable practice implementations per annual cost equivalent, rather than the earlier 1,000-case probe. For scale, this is 0.2% of roughly 50,000 subscribers; subscribers are not unique practices and this is not measured conversion. The small conversion allows passive use, duplication and equivalent free guidance. A further 25% funding response allows reserves and substitution. Other vaccine health remains unpriced. Favorable, zero and adverse cases remain in the transparent model; positive scenarios are not confidence bounds or verified funding offers.",
         "funding": "[FY2025 tax expense](https://projects.propublica.org/nonprofits/full_text/202640819349300504/IRS990) was $3,181,332; restoring $65,922 cost of goods sold gives $3,247,254. [Schedule D](https://projects.propublica.org/nonprofits/full_text/202640819349300504/IRS990ScheduleD) adds $81,792 donated services for $3,329,046 gross recognized resource expense, including $10,300 investment-management costs netted in the audited presentation. Payroll/benefits were $1.67 million; partnership and educational programs split most program spending. Contributions fell from $3.57 million to $2.63 million, including $437,500 government grants, yet tax revenue exceeded functional expense by $610,867. June 2025 unrestricted net assets were $6.90 million, with $1.40 million cash and $6.40 million securities. The [2023 audit](https://projects.propublica.org/nonprofits/display_audit/2023-06-GSAFAC-0000019639) found weak financial-statement preparation and segregation controls and an incorrect federal report, but no questioned costs or underlying cash/expenditure discrepancy; management reported correcting that form inDecember 2023. Current remediation needs checking. That audit also reported 47% pharmaceutical-company funding in 2023—not a current share or evidence of improper influence. Reserves and sponsor support require a specific funding-contingent plan before assigning strong marginal additionality."
       },
       "sources": [
@@ -14643,14 +14646,14 @@
         }
       ],
       "model": {
-        "version": "usa-alpha-immunize-org-2026-09-13",
+        "version": "usa-alpha-immunize-org-2026-09-13-judgment-20260914",
         "costScope": "Ordinary unrestricted recipient support retains all programs, fundraising, administration, merchandise cost and investment-management costs. C=3247254 is FY 2025 tax functional expense plus 65922 COGS, a non-donated-service expense anchor, not cash flow or marginal cost. Annual financial series additionally includes 81792 recognized donated services in 2025. Donated information, external clinician implementation labor, vaccines and administration are not free societal resources. G=10000 is normalization only.",
         "geographicAttribution": "USA residents of 50 states andDC are the target. US clinical schedules, domestic coalitions and practice guidance support a predominantly domestic pathway, but the public websites and global policy advising also reach abroad. FY 2025 ScheduleF records 26524 international guidance expense inEastAsia/Pacific andEurope; that expenditure percentage does not measure health share. Conditional g=.95, stress.8–.99, is a judgment for the older-adult influenza pathway, not observed outcome attribution. Other geography and vaccine pathways remain unquantified.",
-        "formula": "At annual recipient scale, N=K×V×delta additional at-visit influenza doses from otherwise-attributable implementations. q=tau×(rD×e×L+rH×e×qH+rI×e×qI)−h net QALY per dose. Q_all=(G/C)×b×N×q + Q_other; Q_USA=Q_all×g in conditional homogeneous-geography tests. Price=10G/Q_USA if positive. Main b,K,Q_other and g are unknown. K discounts adoption that equivalent freely available guidance would cause anyway; b separately discounts donor/sponsor replacement or reserve financing. tau discounts later alternative vaccination and incomplete seasonal protection. h is incremental adverse burden relative to the actual alternative; under identical timely replacement vaccination both incremental protection and incremental harm are zero. Conditional cases set Q_other=0, not as a lower-bound claim.",
+        "formula": "At annual recipient scale, N=K×V×delta additional at-visit influenza doses from otherwise-attributable implementations. q=tau×(rD×e×L+rH×e×qH+rI×e×qI)−h net QALY per dose. Q_all=(G/C)×b×N×q + Q_other; Q_USA=Q_all×g in conditional homogeneous-geography tests. Price=10G/Q_USA if positive. Central b, K and g are judgments; other health remains unpriced. K discounts adoption that equivalent freely available guidance would cause anyway; b separately discounts donor/sponsor replacement or reserve financing. tau discounts later alternative vaccination and incomplete seasonal protection. h is incremental adverse burden relative to the actual alternative; under identical timely replacement vaccination both incremental protection and incremental harm are zero. Conditional cases set Q_other=0, not as a lower-bound claim.",
         "counterfactual": "Existing clinic workflows, electronic-record vendors, professional societies, CDC guidance and other coalitions can substitute for Immunize.org materials. Templates already online may remain available without a new gift. K must count implementation actually induced, not honor-roll enrollment, pageviews or workshop attendance. b handles funding source replacement separately. Medicare already covers seasonal flu vaccine without patient payment at participating providers; clinical access and workflow can still limit receipt. tau allows later vaccination elsewhere and dose timing. No public-payer savings are converted to health. Identical timely vaccination elsewhere has the same ordinary adverse effects: set tau=0 and h=0. Negative probes require genuinely additional ineffective or duplicate doses, not shared counterfactual harms.",
         "attribution": "All recipient cost is retained while the conditional health calculation considers only older-adult influenza. Other vaccines, policies, translated safety information and reduced errors may matter greatly, but require separate age/pathogen-specific clinical bridges and counterfactuals. No generic vaccine QALY coefficient is applied to all output. No herd-immunity multiplier, indefinite recurring practice benefit, honor-roll causation, saved healthcare dollars or productivity is credited. Autonomy and consent concerns in policy advocacy are not erased by this narrow clinical calculation.",
-        "uncertainty": "Standing-order implementation is empirically plausible; funding-to-incremental-implementation remains unbounded. The recipient study is old and uncontrolled, with data artifacts. The recent randomized workflow package is more intensive than a template and measures vaccination during a visit, not full-season incremental coverage. Event risks and remaining quality-adjusted survival are explicit transfer judgments;31%hospitalization effectiveness is not randomized mortality evidence. Mild seasons, later catch-up and transient adverse burden can dominate the small marginal QALY gain. Numerical cases are not probabilities or confidence limits.",
-        "nativeOutcomes": "Observed 2025 downloads and 50000+subscribers demonstrate reach, not changed practice. Conditional K 1000, V 1000, delta.03 means 30000 additional at-visit doses per full annual scale before funding discount. With b.25 and C 3247254 this is 23.10 doses per arithmetic unit. Conditional q=.000451 QALY/dose after timing and harms; observed causal recipient doses per dollar remain unknown.",
+        "uncertainty": "We choose 100 otherwise-attributable practice implementations per annual cost equivalent, rather than the earlier 1,000-case probe. For scale, this is 0.2% of roughly 50,000 subscribers; subscribers are not unique practices and this is not measured conversion. The small conversion allows passive use, duplication and equivalent free guidance. A further 25% funding response allows reserves and substitution. Other vaccine health remains unpriced. Zero and adverse outcomes remain possible; the quantified pathway is not a complete portfolio valuation.",
+        "nativeOutcomes": "Observed downloads and roughly 50,000 subscribers demonstrate reach, not changed practice. The central judgment uses K=100, V=1000 and delta=.03: 3,000 additional at-visit doses per annual cost equivalent before funding response. With b=.25 and C=3247254 this is about 2.31 doses per $10,000 normalization. Each produces about .000451 net QALY before geography. The earlier 1,000-implementation alternative remains visible.",
         "inputs": [
           {
             "name": "G",
@@ -14704,10 +14707,10 @@
           },
           {
             "name": "b",
-            "value": null,
+            "value": 0.25,
             "unit": "funding-sensitive additionality",
-            "basis": "unknown",
-            "rationale": "Conditional.25, stress 0–.75. Significant unrestricted reserves and public/industry funding make simple proportional expansion uncertain.",
+            "basis": "judgment",
+            "rationale": "We choose 100 otherwise-attributable practice implementations per annual cost equivalent, rather than the earlier 1,000-case probe. For scale, this is 0.2% of roughly 50,000 subscribers; subscribers are not unique practices and this is not measured conversion. The small conversion allows passive use, duplication and equivalent free guidance. A further 25% funding response allows reserves and substitution. Other vaccine health remains unpriced.",
             "sourceIds": [
               "imm-tax25",
               "imm-funding"
@@ -14715,10 +14718,10 @@
           },
           {
             "name": "K",
-            "value": null,
+            "value": 100,
             "unit": "otherwise-attributable practice implementations per annual scale",
-            "basis": "unknown",
-            "rationale": "Conditional 1000 only a stress-test anchor, not inferred from 50000 subscribers. Tests 0–3000; no defensible observed range. Must exclude equivalent alternative implementation.",
+            "basis": "judgment",
+            "rationale": "We choose 100 otherwise-attributable practice implementations per annual cost equivalent, rather than the earlier 1,000-case probe. For scale, this is 0.2% of roughly 50,000 subscribers; subscribers are not unique practices and this is not measured conversion. The small conversion allows passive use, duplication and equivalent free guidance. A further 25% funding response allows reserves and substitution. Other vaccine health remains unpriced.",
             "sourceIds": [
               "imm-highlights",
               "imm-evaluation"
@@ -14835,10 +14838,10 @@
           },
           {
             "name": "g",
-            "value": null,
+            "value": 0.95,
             "unit": "USA resident health share",
-            "basis": "unknown",
-            "rationale": "Conditional.95, stress.8–.99; domestic guidance plus global activity, not cost-share attribution.",
+            "basis": "judgment",
+            "rationale": "We choose 100 otherwise-attributable practice implementations per annual cost equivalent, rather than the earlier 1,000-case probe. For scale, this is 0.2% of roughly 50,000 subscribers; subscribers are not unique practices and this is not measured conversion. The small conversion allows passive use, duplication and equivalent free guidance. A further 25% funding response allows reserves and substitution. Other vaccine health remains unpriced.",
             "sourceIds": [
               "imm-about",
               "imm-f25"
@@ -14846,10 +14849,10 @@
           },
           {
             "name": "Q_other",
-            "value": null,
+            "value": 0,
             "unit": "additional QALYs from other recipient pathways",
-            "basis": "unknown",
-            "rationale": "Other vaccines, policy and guidance cannot be valued without specific causal bridges; zero only in conditional influenza test.",
+            "basis": "judgment",
+            "rationale": "We choose 100 otherwise-attributable practice implementations per annual cost equivalent, rather than the earlier 1,000-case probe. For scale, this is 0.2% of roughly 50,000 subscribers; subscribers are not unique practices and this is not measured conversion. The small conversion allows passive use, duplication and equivalent free guidance. A further 25% funding response allows reserves and substitution. Other vaccine health remains unpriced.",
             "sourceIds": [
               "imm-highlights"
             ]
@@ -14858,11 +14861,11 @@
         "scenarios": [
           {
             "id": "central",
-            "label": "Not estimated: recipient support to effective implementation unbounded",
+            "label": "Best estimate — explicit judgment",
             "costUSD": 10000,
-            "allPopulationQalys": null,
-            "editionQalys": null,
-            "assumptions": "Current incremental implementations and doses caused by ordinary support are unknown. Web reach and recognition counts are not a conversion rate. Other vaccine and policy pathways are also unquantified."
+            "allPopulationQalys": 0.0010416493443383239,
+            "editionQalys": 0.0009895668771214077,
+            "assumptions": "C=3247254; b=0.25; K=100; V=1000; delta=0.03; rD=0.0006; rH=0.006; rI=0.05; e=0.3; L=5; qH=0.015; qI=0.005; tau=0.5; h=0.00005; g=0.95. One influenza season only, age65+; q=0.000451; additional doses=2.309643779020674. K is a hypothetical incremental implementation count, not observed downloads or honor-roll members. We choose 100 otherwise-attributable practice implementations per annual cost equivalent, rather than the earlier 1,000-case probe. For scale, this is 0.2% of roughly 50,000 subscribers; subscribers are not unique practices and this is not measured conversion. The small conversion allows passive use, duplication and equivalent free guidance. A further 25% funding response allows reserves and substitution. Other vaccine health remains unpriced."
           },
           {
             "id": "conditional",
@@ -14970,7 +14973,8 @@
       "timeCoverage": "complete",
       "sessionIds": [
         "usa-alpha-immunize-org-20260913-worker1"
-      ]
+      ],
+      "priceScope": "Older-adult influenza implementation"
     },
     {
       "edition": "usa",
@@ -14985,7 +14989,7 @@
       "donationUrl": "https://www.greenandhealthyhomes.org/donate/",
       "acceptance": {
         "status": "accepted",
-        "evidence": "docs/usa-access-prevention-acceptance.md; independent source/model review and root corrections; initial research, not a qualified pick"
+        "evidence": "docs/usa-access-prevention-acceptance.md; independent source/model review and root corrections; initial research, not a qualified pick; docs/geography-central-estimates-acceptance.md"
       },
       "summary": {
         "what": [
@@ -15008,7 +15012,7 @@
         "what": "GHHI's [Maryland services](https://www.greenandhealthyhomes.org/services/maryland-direct-services/) include assessments, hazard remediation, asthma education, energy upgrades, aging-in-place modifications and tenant advocacy. The [2024 recipient return](https://projects.propublica.org/nonprofits/full_text/202543189349314709/IRS990) describes direct service and technical-assistance partnerships across US states, alongside policy, data and financing work. Health depends on actual repairs and sustained exposure reduction, not the number of assessments, grant applications or policy announcements.",
         "monitoring": "In [2024](https://projects.propublica.org/nonprofits/full_text/202543189349314709/IRS990), Maryland recorded 875 asthma education/case-management home visits and 234 homes receiving healthy-housing/energy interventions; these are not 875 distinct treated children or 234 asthma-specific completions. Lancaster work included 220 lead-remediated homes and 77 healthy-homes interventions, financed with partners. The return also reports 303 cumulative Molina asthma members and a completed 461-member North Carolina fall-prevention pilot; the latter's payer ROI analysis was still prospective. Recipient-level tracking should identify unique residents, baseline hazards, completed repairs, health outcomes, alternatives, partner expenditure and what additional support changed.",
         "qualitative": "The [Baltimore study](https://www.greenandhealthyhomes.org/wp-content/uploads/GHHI-Improving-Health-Economic-and-Social-Outcomes-through-Integrated-Housing-Intervention-Environmental-Justice.pdf) followed 139 of 201 children with paired caregiver surveys and reported approximately 66% fewer hospitalizations and 28% fewer emergency visits. It had no concurrent control; selection, regression to the mean, seasonality and reporting could explain part of the change. In contrast, [Morgan's randomized trial](https://pubmed.ncbi.nlm.nih.gov/15356304/) of 937 urban children with atopic asthma found 0.81 fewer symptom days per fortnight in year one and 0.59 in year two. That is a clinical bridge, but generic utility per symptom day and transport to current GHHI clients remain judgments. [Lead-hazard randomization](https://pmc.ncbi.nlm.nih.gov/articles/PMC6233767/) reduced environmental lead but did not establish broad substantive neurobehavioral improvement. [Home-fall hazard removal](https://pmc.ncbi.nlm.nih.gov/articles/PMC8408671/) reduced the secondary fall rate, not the primary hazard of first falling or measured quality of life. Neither study licenses assigning every repair a large lifetime health gain. The lead trial enrolled a relatively low-exposure population; its null average neurobehavioral result does not establish zero benefit from targeting severe hazards. GHHI would need its own exposure distribution and sustained reduction before extrapolating larger effects.",
-        "cost": "The [recipient returns](https://projects.propublica.org/nonprofits/full_text/202543189349314709/IRS990) show 2022–24 expenses of $10.56 m, $14.49 m and $17.63 m, averaging $14.23 m. No cost-of-goods or direct-event expense add-back was identified. Separately, the [2025 consolidated audit](https://projects.propublica.org/nonprofits/display_audit/2025-12-GSAFAC-0000426133) reports $26.60 m, including subsidiaries and the CACLP advocacy entity; this is not substituted into the recipient series. Its Maryland services cost $3.65 m, state/local services $6.76 m and special initiatives $11.67 m. An illustrative $8,000 completed asthma intervention is a judgment, not a verified GHHI unit price. The [older randomized trial's economic study](https://pubmed.ncbi.nlm.nih.gov/16275376/) cost $1,469 per family in historical dollars for a different bundle, not current comprehensive repairs. With explicit portfolio and funding discounts, the symptom-only probe is about $172 m per 10 USA QALYs; even the favorable probe is $3.55 m. These are conditional tests, not a recipient valuation. Lead, serious injuries, other residents and policy effects could change the result but remain unquantified.",
+        "cost": "Our best estimate: About $172 million per 10 USA QALYs through reduced asthma symptoms. At the modeled cost, portfolio allocation and funding response, $10,000 produces about 0.125 additional interventions. Each contributes roughly 0.0047 net QALY before geography, using trial symptom-day reductions, a cautious utility conversion and two years of benefit. We adopt the cautious asthma model: $8,000 per completed intervention, 20% portfolio allocation and 50% funding response. The cost allows a broader contemporary housing bundle than the older trial; allocation is a judgment informed by a mixed portfolio, not a reported asthma spending share. Lead, falls and policy effects remain unpriced, not worthless. Favorable, zero and adverse cases remain in the transparent model; positive scenarios are not confidence bounds or verified funding offers.",
         "funding": "The [August 2026-issued audit](https://projects.propublica.org/nonprofits/display_audit/2025-12-GSAFAC-0000426133) reports $7.89 m unrestricted consolidated net assets, $1.65 m operating cash inflow and $12.32 m financial assets available within a year. It reports $17.10 m federal expenditure, including $8.96 m passed to subrecipients. The [grantmaking page](https://www.greenandhealthyhomes.org/thrivingcommunities/) describes resumed EPA work and a closed application round; it does not establish an unrestricted funding gap. Private support may cover gaps in reimbursable work, but it may also substitute for government, hospital or insurance funding. Contractor capacity, referrals, landlord permission and participant retention matter. [Blue Cross NC's pilot](https://mediacenter.bcbsnc.com/news/blue-cross-nc-and-green-healthy-homes-initiative-team-up-to-reduce-home-injuries-for-leading-cause-of-er-visits-this-fall-season) illustrates why services already financed by an insurer must not all be attributed to philanthropy. No current itemized next-dollar expansion plan was found."
       },
       "sources": [
@@ -15126,13 +15130,13 @@
         }
       ],
       "model": {
-        "version": "usa-ghhi-alpha-v1",
+        "version": "usa-ghhi-alpha-v1-judgment-20260914",
         "costScope": "Full charitable recipient support; 2022–24 standalone expense series. Latest consolidated 2025 accounts disclosed separately. Conditional c includes allocated delivery/administration costs, f includes the ordinary-support portfolio share; partner repair costs must be added or explicitly attributed, not treated as free.",
         "geographicAttribution": "USA-50-states-DC-v 1 residents. Operations are predominantly domestic; g=.99 is a judgment for this narrow direct-service probe, not an observed health-weighted share. Global climate spillovers excluded.",
         "formula": "Q_USA=(G*b*f/c)*[s*e*(d1+d2/1.03)*u/365-h]*g + G*theta_other; G=10000 computational normalization only. d1=.81*365/14; d2=.59*365/14. theta_other is net USA QALYs per unrestricted dollar from non-overlapping remaining pathways. Cost per 10=10G/Q_USA when positive.",
-        "counterfactual": "b measures additional service spending rather than reserves or replacement funding; s is the fraction of asthma benefit absent without GHHI after landlord, public, insurer and other-provider alternatives. Both currently unknown. h is incremental disruption or harm relative to the actual alternative. A different, less-disruptive option can deliver equivalent benefit while the extra repair adds harm; identical replacement repairs cancel shared burdens.",
+        "counterfactual": "b measures additional service spending rather than reserves or replacement funding; s is the fraction of asthma benefit absent without GHHI after landlord, public, insurer and other-provider alternatives. Both are currently judgmental rather than observed. h is incremental disruption or harm relative to the actual alternative. A different, less-disruptive option can deliver equivalent benefit while the extra repair adds harm; identical replacement repairs cancel shared burdens.",
         "attribution": "f isolates completed asthma remediation from lead, energy, grants, education and policy. e discounts trial transport, adherence and delivery differences. Do not credit public grant face value, partner-financed activity or coalition outcomes in full.",
-        "uncertainty": "Main central remains null because b, f, current c and theta_other cannot be bounded empirically. Conditional numbers are neither probability intervals nor positive bounds. The symptom pathway alone looks unlikely to be competitive at $100 k–$1 m per 10, while other pathways need distinct causal models.",
+        "uncertainty": "We adopt the cautious asthma model: $8,000 per completed intervention, 20% portfolio allocation and 50% funding response. The cost allows a broader contemporary housing bundle than the older trial; allocation is a judgment informed by a mixed portfolio, not a reported asthma spending share. Lead, falls and policy effects remain unpriced, not worthless. Zero and adverse outcomes remain possible; the quantified pathway is not a complete portfolio valuation.",
         "nativeOutcomes": "Completed and sustained hazard remediations; child symptom-free days; serious falls/injuries; measured exposure changes. Visits, homes, members, grants and dollars saved are not QALYs.",
         "inputs": [
           {
@@ -15261,21 +15265,21 @@
           },
           {
             "name": "theta_other",
-            "value": null,
+            "value": 0,
             "unit": "net USA QALYs per unrestricted USD",
-            "basis": "unknown",
-            "rationale": "Lead, injury, other residents, environmental grants and policy pathways net of partner attribution and costs remain unestimated.",
+            "basis": "judgment",
+            "rationale": "We adopt the cautious asthma model: $8,000 per completed intervention, 20% portfolio allocation and 50% funding response. The cost allows a broader contemporary housing bundle than the older trial; allocation is a judgment informed by a mixed portfolio, not a reported asthma spending share. Lead, falls and policy effects remain unpriced, not worthless.",
             "sourceIds": []
           }
         ],
         "scenarios": [
           {
             "id": "central",
-            "label": "Unestimated recipient-wide marginal health",
+            "label": "Best estimate — explicit judgment",
             "costUSD": 10000,
-            "allPopulationQalys": null,
-            "editionQalys": null,
-            "assumptions": "Donation-sensitive allocation, full unit costs and net other-pathway yield are unresolved."
+            "allPopulationQalys": 0.0005856947815533981,
+            "editionQalys": 0.000579837833737864,
+            "assumptions": "{\"c\":8000,\"b\":0.5,\"f\":0.2,\"s\":0.7,\"e\":0.75,\"u\":0.1,\"h\":0.0005,\"g\":0.99,\"d1\":21.117857142857144,\"d2\":15.382142857142856}; asthma symptom pathway only; other portfolio net health set to zero for this conditional probe, not an expected value. We adopt the cautious asthma model: $8,000 per completed intervention, 20% portfolio allocation and 50% funding response. The cost allows a broader contemporary housing bundle than the older trial; allocation is a judgment informed by a mixed portfolio, not a reported asthma spending share. Lead, falls and policy effects remain unpriced, not worthless."
           },
           {
             "id": "conditional-asthma",
@@ -15369,7 +15373,8 @@
       "timeCoverage": "complete",
       "sessionIds": [
         "usa-alpha-ghhi-20260913-worker1"
-      ]
+      ],
+      "priceScope": "Asthma symptom benefit; other health unpriced"
     },
     {
       "edition": "usa",
@@ -15384,7 +15389,7 @@
       "donationUrl": "https://no-smoke.org/donate/",
       "acceptance": {
         "status": "accepted",
-        "evidence": "docs/usa-access-prevention-acceptance.md; independent source/model review and root corrections; initial research, not a qualified pick"
+        "evidence": "docs/usa-access-prevention-acceptance.md; independent source/model review and root corrections; initial research, not a qualified pick; docs/geography-central-estimates-acceptance.md"
       },
       "summary": {
         "what": [
@@ -15407,7 +15412,7 @@
         "what": "The [foundation](https://no-smoke.org/about-us/) provides tobacco-policy surveillance, information, webinars, training and technical assistance to workers and public-health partners. Its scope includes workplaces, casinos, bars, music venues, housing, campuses and commercial-tobacco policies on Tribal lands. The [2024 return](https://no-smoke.org/wp-content/uploads/2024_ANRF_Form990.pdf), Schedule R, identifies Americans for Nonsmokers' Rights (EIN 94-2598713), a separate 501(c)(4). This report concerns ANRF, EIN 94-2922136; joint ANR/F publicity is not automatically attributable to the charitable recipient.",
         "monitoring": "The [2024 annual report](https://no-smoke.org/wp-content/uploads/ANRF-Annual-Report-OnePage-2024-Final.pdf) records 708 new laws analyzed, a database with 20,675 laws and a training institute with over 150 attendees. It also describes casino-worker and Tribal partnerships. These support implementation capacity but are not evidence of incremental health. The [July 1, 2026 summary](https://no-smoke.org/wp-content/uploads/pdf/SummaryUSPopList.pdf) lists 62.8% coverage for workplaces, restaurants and bars, and 47.9% when gambling venues are also required. Neither is the fraction of people newly protected by ANRF. Source population denominators are not a current 2026 census estimate, and tables include separate DC/territory sections. The [shareholder memo](https://no-smoke.org/wp-content/uploads/ANRF_Shareholder_Memo_2025.pdf) explicitly asks companies to study the financial implications of smoke-free policies, not to implement them; a successful report resolution is several steps short of exposure reduction. The July 2026 update also celebrates cancellation of a Detroit airport cigar lounge. The linked [ANR release](https://nonsmokersrights.org/press-release-july-16-2026) acknowledges that airport officials cited economic uncertainty as their primary reason. This is an affiliate/coalition claim with a material competing counterfactual, not a clean ANRF outcome.",
         "qualitative": "[CDC](https://www.cdc.gov/tobacco/secondhand-smoke/health.html) identifies secondhand smoke as a cause of coronary disease, stroke and lung cancer. In an [Irish controlled before-after study](https://pubmed.ncbi.nlm.nih.gov/16230313/), nonsmoking bar workers' cotinine fell much more after the Republic's smoke-free law than in Northern Ireland, with improved respiratory symptoms. That supports actual exposure reduction but does not measure ANRF or US QALYs. A [large US difference-in-differences study](https://pmc.ncbi.nlm.nih.gov/articles/PMC5665160/) found no short-term AMI or heart-failure hospitalization reduction after controlling county trends; it cannot exclude longer-term benefit. This materially tempers large immediate-effect claims. The conditional model uses a reduced cardiac pathway, explicit baseline-risk and latency judgments, and no automatic quitting, cancer, childhood or marijuana-health credit. Smoke-free housing enforcement must avoid eviction, inequitable punishment and displacement of smoking into more harmful settings; workplace alternatives should protect workers without using punitive enforcement as the health mechanism.",
-        "cost": "The [2024 Form 990](https://no-smoke.org/wp-content/uploads/2024_ANRF_Form990.pdf) reports $3,927,527 total expense: $3,091,233 program, $599,799 management and $236,495 fundraising, including $2,104,033 compensation/benefits and $860,628 other professional services. The full recipient cost is retained, not only technical-assistance spending. The [current IRS-released 2022 return](https://projects.propublica.org/nonprofits/full_text/202412899349302401/IRS990) has $3,455,347, superseding the older posted PDF's $3,448,307. [2023](https://no-smoke.org/wp-content/uploads/2024/12/Form-990-Return_for_ANRF2023-without-Schedule-B.pdf) has $3,473,448 functional expense plus $142 inventory cost netted from revenue, giving $3,473,590 gross. The consistent 2022–24 gross mean is $3,618,821. No current cost per additional protected worker-year is published. In the conditional cardiac test, 10,000 attributable protected person-years at the annual cost scale implies about $6.17 m per 10 USA QALYs; 100,000 implies $617 k. Neither yield is observed or the main estimate.",
+        "cost": "Our best estimate: About $6.2 million per 10 USA QALYs through smoke-free protection. The modeled annual yield implies about 25 additional protected person-years per $10,000, with roughly 0.00064 net QALY each before geography. This allows partial exposure reduction, latency and downside; a tenfold greater yield improves the price to about $617,000. We choose 10,000 net additional discounted protected person-years per annual cost equivalent. A planning construction is 50,000 exposed people × 50% probability of changing protection × 20% charitable contribution × 50% funding response × 90% enforcement × 4.58 discounted years: about 10,300, rounded to 10,000. These are judgments, not an observed pipeline. National reach and service cuts support a possible funding response; cumulative national coverage receives no credit. Favorable, zero and adverse cases remain in the transparent model; positive scenarios are not confidence bounds or verified funding offers.",
         "funding": "At [2024 year-end](https://no-smoke.org/wp-content/uploads/2024_ANRF_Form990.pdf), ANRF had $567,050 unrestricted net assets, $236,713 cash and $566,257 investments against $892,952 liabilities, including $552,126 deferred revenue. Its board-designated fund is not wholly disposable cash. Revenue fell short of functional expense by $138,184; government grants fell from $1.28 m to $742 k while fee-based program revenue rose from $104 k to $593 k. This suggests less financial slack than many large institutions, but a deficit alone does not prove the next gift adds effective implementation. Paid data/technical-assistance contracts, foundations, government staff, employers, unions and the lobbying affiliate are relevant substitutes or co-producers. Current public activity establishes continuing work, not a verified marginal hiring/campaign budget or causal adoption probability. More concretely, the [July 29, 2026 update](https://no-smoke.org/smokefree-lists-and-maps-july-1-2026/) says federal funding losses have already reduced the free lists/maps service and shifted some specialized outputs to paid quotes. This is observed service contraction and a plausible use of flexible funding; the remaining question is the exposure and health consequence of restoring those services."
       },
       "sources": [
@@ -15525,13 +15530,13 @@
         }
       ],
       "model": {
-        "version": "usa-anrf-alpha-v1",
+        "version": "usa-anrf-alpha-v1-judgment-20260914",
         "costScope": "All ANRF recipient costs, including administration, fundraising, data, education and grants; excludes the separate 501(c)(4). P must reflect portfolio allocation, paid-contract substitution and next-dollar capacity. Additional employer/public enforcement resources are separate social costs; no claim they are free.",
         "geographicAttribution": "P and N count previously exposed nonsmokers across all supported geography before allocation. The conditional g=0.99 then allocates resulting health benefits to residents of the 50 states and DC, including tribal residents. Territories, international beneficiaries and foreign tourists are excluded from the resulting USA total, not pre-excluded from P. g is a judgment, not an observed health-weighted share.",
         "formula": "Q_USA=(G/C)*P*[(rD*L+rM*qM)*z*w*t-h]*g; G=10000 normalization. P=sum_j N_j*delta_p_j*a_j*e_j*sum_t retention_jt/(1.03)^t, after ordinary-funding additionality and portfolio allocation. N_j is previously exposed nonsmoking residents across all supported geography, before applying g; delta_p is net adoption/maintenance/acceleration probability; a is charitable-recipient causal share if delta_p is coalition-level; e is enforcement. Do not discount the same attribution twice. Cost per 10=10G/Q_USA if positive.",
         "counterfactual": "Count only protection newly caused or preserved by additional unrestricted support relative to employers' voluntary policies, laws already scheduled, public enforcement, other nonprofits and paid contracts. P can be zero. If counting acceleration, count only the years gained, not lifetime policy benefits.",
         "attribution": "P is an explicitly unresolved net causal output, not total laws, covered population, press coverage, shareholder-report votes or the affiliate's lobbying success. Coalition contribution, enforcement, reversal and geographic attribution must be case-specific.",
-        "uncertainty": "Main central is null: P has no defensible positive bound. Conditional risk arithmetic shows what would matter if P were measured. Causal smoke toxicity is much firmer than recipient marginal effect or precise cardiac QALYs; even clinical parameters are judgments transported to a hypothetical worker population.",
+        "uncertainty": "We choose 10,000 net additional discounted protected person-years per annual cost equivalent. A planning construction is 50,000 exposed people × 50% probability of changing protection × 20% charitable contribution × 50% funding response × 90% enforcement × 4.58 discounted years: about 10,300, rounded to 10,000. These are judgments, not an observed pipeline. National reach and service cuts support a possible funding response; cumulative national coverage receives no credit. Zero and adverse outcomes remain possible; the quantified pathway is not a complete portfolio valuation.",
         "nativeOutcomes": "Additional discounted years of sustained smoke-free protection for previously exposed nonsmoking residents; verified reduction in exposure, coronary events and respiratory symptoms. No conversion of database records or policies into health without implementation.",
         "inputs": [
           {
@@ -15554,10 +15559,10 @@
           },
           {
             "name": "P",
-            "value": null,
+            "value": 10000,
             "unit": "additional attributable discounted protected person-years per annual-cost equivalent",
-            "basis": "unknown",
-            "rationale": "Must be measured across ordinary recipient support after funding substitution, policy counterfactual, charitable attribution, enforcement and durability. This is all-geography person-time before g; USA allocation occurs once.",
+            "basis": "judgment",
+            "rationale": "We choose 10,000 net additional discounted protected person-years per annual cost equivalent. A planning construction is 50,000 exposed people × 50% probability of changing protection × 20% charitable contribution × 50% funding response × 90% enforcement × 4.58 discounted years: about 10,300, rounded to 10,000. These are judgments, not an observed pipeline. National reach and service cuts support a possible funding response; cumulative national coverage receives no credit.",
             "sourceIds": []
           },
           {
@@ -15657,11 +15662,11 @@
         "scenarios": [
           {
             "id": "central",
-            "label": "Unestimated net marginal protection",
+            "label": "Best estimate — explicit judgment",
             "costUSD": 10000,
-            "allPopulationQalys": null,
-            "editionQalys": null,
-            "assumptions": "P and cohort-specific health risk are unresolved; no evidence-backed probability distribution."
+            "allPopulationQalys": 0.016358894541017795,
+            "editionQalys": 0.01619530559560762,
+            "assumptions": "{\"C\":3927527,\"P\":10000,\"rD\":0.001,\"rM\":0.002,\"z\":0.25,\"w\":0.5,\"t\":0.5,\"L\":10,\"qM\":0.3,\"h\":0.00002,\"g\":0.99}; P is a hypothetical net additional discounted protected person-year yield at the full annual recipient cost scale, not observed coverage. We choose 10,000 net additional discounted protected person-years per annual cost equivalent. A planning construction is 50,000 exposed people × 50% probability of changing protection × 20% charitable contribution × 50% funding response × 90% enforcement × 4.58 discounted years: about 10,300, rounded to 10,000. These are judgments, not an observed pipeline. National reach and service cuts support a possible funding response; cumulative national coverage receives no credit."
           },
           {
             "id": "conditional-10000",
@@ -15766,7 +15771,8 @@
       "timeCoverage": "complete",
       "sessionIds": [
         "usa-alpha-anrf-20260913-worker1"
-      ]
+      ],
+      "priceScope": "Smoke-free protection; cardiac health"
     }
     ,
     {
@@ -16580,13 +16586,13 @@
       "donationUrl": "https://www.zeffy.com/en-US/donation-form/bdb976f8-efe3-4d31-adc7-ab563a43a43e",
       "acceptance": {
         "status": "accepted",
-        "evidence": "Independent source/model review and corrected release checks: docs/la-first-six-acceptance.md"
+        "evidence": "docs/geography-central-estimates-acceptance.md; Medium revision and root source/model review; alpha revision only"
       },
       "summary": {
         "what": [
           "Breathe Southern California provides asthma support, clean-air education and advocacy, and has expanded local purifier distribution following the Boyle Heights warehouse fire.",
           "BEAM serves Los Angeles and San Bernardino counties, so its California scope cannot be copied into this edition.",
-          "The overall LA return remains unestimated; an explicitly conditional asthma slice shows what must be true for an ordinary gift to generate additional health."
+          "A judgment best estimate prices BEAM asthma-support health against full recipient costs, with broad ranges; purifier and policy effects remain separately unpriced."
         ],
         "strengths": [
           "A current insured asthma pathway and original accounts establish real operations and recipient-scale costs.",
@@ -16595,7 +16601,7 @@
         ],
         "reservations": [
           "Insurer-covered asthma and a separate public purifier program may replace services credited to private gifts.",
-          "A small BEAM-only estimate would misrepresent the recipient's larger 2026 response and policy portfolio.",
+          "The priced BEAM pathway omits potentially important purifier and policy effects, so it is not a complete portfolio ranking.",
           "Annual marginal patients, county mix, effective purifier use and health-relevant exposure reductions are unknown; past matching claims are not current offers."
         ]
       },
@@ -16603,8 +16609,8 @@
         "what": "Breathe Southern California (EIN 95-1641451) is distinct from similarly named Northern California organizations. The [BEAM page](https://www.breathesocal.org/beam) currently limits eligibility to Los Angeles and San Bernardino counties. LA County is within this edition; San Bernardino is outside, and Orange County patients are not listed as eligible. The [current homepage](https://www.breathesocal.org/) reports over 300 patients during 2024–2026, not an annual or gift-induced caseload.\n\nThe [official events list](https://www.breathesocal.org/events) also describes August 2026 purifier distributions to named neighborhoods and cities entirely in LA County. [BlueSky LA](https://www.breathesocal.org/bluesky-la) and [building-decarbonization outreach](https://www.breathesocal.org/buildings) have different mechanisms; workshops, maps and equipment counts are not themselves health outcomes. No donation, processor transaction or endorsement was made.",
         "monitoring": "A randomized King County study of 373 Medicaid-enrolled children found an additional 2.10 symptom-free days per two weeks (95% CI 1.17–3.05) and 1.31 fewer urgent-care events over 12 months. Its structured multi-contact intervention differs from a visit with optional follow-up. Outcomes included self-report, and caregiver questionnaire points are not preference-based QALYs. [Randomized Medicaid childhood-asthma home-visit outcomes and costs](https://pmc.ncbi.nlm.nih.gov/articles/PMC4605150/)\n\nThe adult HomeBASE trial similarly improved symptom-free days and asthma-related quality of life but did not improve unscheduled health-care use. This supports a morbidity pathway while cautioning against automatically assigning hospitalization savings or childhood effects to every adult. [HomeBASE randomized adult asthma trial](https://pubmed.ncbi.nlm.nih.gov/25419871/)\n\nFor BEAM, request unique-patient baseline severity, completed visits and supplies, symptom days or validated utility at follow-up, hospital claims, retention and alternative-provider availability. Compare against contemporaneous usual care and avoid selecting only high-utilization patients at a temporary peak. The public workshop page describes instruction, not controlled follow-up demonstrating fewer exacerbations. [Lung Power education workshops](https://www.breathesocal.org/lungpower)\n\nFor the new purifier response, obtain unique households, public-program eligibility, already-owned equipment, distribution dates, room size, effective clean-air delivery, actual use, replacement filters, baseline particulate exposure and symptom outcomes. A [randomized HEPA trial](https://pubmed.ncbi.nlm.nih.gov/21149427) found fewer unscheduled asthma visits but no significant symptom difference among smoke-exposed asthmatic children; it does not validate assigning the multi-contact BEAM trial benefit to each purifier. Warehouse-smoke, odor and later background pollution exposures are distinct.",
         "qualitative": "The clinical and environmental pathways are plausible, but their marginal funding mechanisms differ. A new gift might support navigation for otherwise unserved patients, effective filter use or people outside a public program's footprint. That hypothesis needs a costed queue and comparison against services already available.\n\nThe [public Palos response](https://www.aqmd.gov/palos) distinguishes the June smoke episode from ongoing cleanup monitoring and odors. It reports up to $5 million additional purifier funding, direct shipment and three years of replacement filters for eligible residents. This is an alternative-provider counterfactual—not funding received by Breathe. It makes gross distribution counts a particularly weak proxy for private-donation impact.\n\nThe [organization's LinkedIn account](https://www.linkedin.com/company/breathesocal) reports thousands of purifiers and a matching appeal ending September 4; the exact post date and subsequent fulfillment are unverified. That deadline has passed, so no active match or remaining donor gap is assumed. [AAFA's partner account](https://asthmaandallergyfriendly.com/USA/aafas-2026-asthma-capitals-report-highlights-certified-partners-driving-community-impact/) documents an order of 300 upgraded Rabbit Air units, not that the entire shipment was donated. The policy portfolio needs its own finite exposure and coalition-attribution model.",
-        "cost": "An overall LA portfolio price is not identified. This is not simply a lack of organization-specific trials: the latest response adds a potentially large distribution pathway whose private-funding margin, exposure and clinical outcomes cannot responsibly be replaced by a tiny asthma-only proxy.\n\nA conditional BEAM scenario uses full recipient annual expenses of $2,923,727, 100 annual courses (a judgment from the 300-plus cumulative count across three calendar-year labels), 25% marginal funding responsiveness, and a 50% LA-resident share. The latter is an explicit neutral scenario over the two named counties, not observed caseload or population weighting. Transferring half the childhood trial's symptom-day effect, retaining 75% for within-year timing, and assigning utility difference 0.10 gives about 0.00546 discounted QALYs per additional course over one year. The scenario yields about 0.0683 LA QALYs, or about $428.3 million per 10 LA QALYs. It is a priced component, not a whole-portfolio best estimate or recommendation.\n\nAt that clinical bridge, a $1 million price per 10 QALYs would require 5353.7 additional LA patient-years per annual recipient-cost normalization, compared with 12.5 in the conditional scenario. The corresponding maximum full-recipient cost is $546.12 per additional LA course; for a $100,000 target it is ten times tighter. These are exact break-even quantities, not forecast patient demand. No mortality, lifetime cure or overlapping hospitalization QALYs are added.",
-        "funding": "Original accrual returns for fiscal years ending June report expenses of $2,075,948 in 2023, $2,305,383 in 2024 and $2,923,727 in 2025: a three-year mean of $2,435,019.33. The 2024 return supplies the 2023 comparative. Its $4,719,274 revenue included $2,441,575 miscellaneous income; that unusually large category should not be assumed recurring clinical revenue. [Original Form 990, fiscal year ending June 2024 with 2023 comparative totals](https://projects.propublica.org/nonprofits/organizations/951641451/202501359349311575/full)\n\nFor 2025, revenue was $2,573,083, including $1,527,260 contributions and $814,003 rent. The return classifies every expense as program, with zero management/fundraising allocation; this does not establish zero overhead. It reports no independent financial-statement audit. Net assets were $10,700,896, including $4,612,972 restricted; Schedule O labels a $1,092,063 reconciliation addition only as a book/tax difference. Those facts merit clarification rather than interpreting the $350,644 revenue-expense deficit as proof that every gift funds additional care. [Original Form 990, fiscal year ending June 2025](https://projects.propublica.org/nonprofits/organizations/951641451/202611359349315411/full)\n\nGovernment-grant and program-fee rows on that historical return do not negate the current contracts on the BEAM page. Detailed payer receipts, current BEAM cost centers and contract reimbursement margins are needed before allocating ordinary donations. [BEAM services, eligibility, counties and managed-care contracts](https://www.breathesocal.org/beam)\n\nDHCS's finalized update removes assessment and self-management education from the Asthma Remediation Community Support beginning January 2026 because the Asthma Preventive Services benefit covers them; physical supplies and modifications remain complementary remediation services. This is a separation to avoid duplication, not elimination of all asthma support. The old all-in-one description should not be used to infer a new donor gap or a flat payment received for each patient. [Final asthma-remediation definitions and January 2026 benefit separation](https://www.dhcs.ca.gov/Documents/MCQMD/Community-Supports-February-2025-Service-Definition-Updates.pdf)\n\nCurrent DHCS resources describe a provider enrollment pathway for community organizations delivering asthma preventive services. A gift might improve access, pay unreimbursed navigation or serve people otherwise excluded, but a costed unmet queue and the alternative plan/provider response were not found. [Current CHW and asthma provider enrollment resources](https://www.dhcs.ca.gov/providers-partners/community-health-workers/)\n\nFresh LA review checked the retained original FY 2024/FY 2025 returns against the current index: FY 2025 remains the latest listed return. Parts VIII report no separate netted rental or event costs to add; reported zero expense allocations are not evidence of genuinely zero overhead. These accounts predate the 2026 warehouse response. A current response budget, grants and in-kind inventory are therefore needed before treating historical cost as current capacity. No active matching multiplier is used.\n\nThe 2023 expense is a prior-year comparator from the 2024 return. Its original gross basis, including any netted fundraising costs, was not independently verified, so no three-year comparable mean is shown."
+        "cost": "The donor-facing judgment best estimate is approximately $428.3 million per 10 LA QALYs for the BEAM asthma-support pathway, charging the full recipient annual cost. It is a partial-health estimate, not an expected return for all purifier, advocacy and other activities. Missing measurements widen uncertainty; they do not by themselves invalidate a transparent finite estimate.\n\nThe central BEAM judgment uses full recipient annual expenses of $2,923,727, 100 annual courses (a judgment from the 300-plus cumulative count across three calendar-year labels), 25% marginal funding responsiveness, and a 50% LA-resident share. The latter is an explicit neutral scenario over the two named counties, not observed caseload or population weighting. Transferring half the childhood trial's symptom-day effect, retaining 75% for within-year timing, and assigning utility difference 0.10 gives about 0.00546 discounted QALYs per additional course over one year. The scenario yields about 0.0683 LA QALYs, or about $428.3 million per 10 LA QALYs. It is a priced component, not a whole-portfolio estimate or recommendation. The annual course count is weakly anchored to a cumulative count, not measured throughput; the utility and funding inputs are explicit subjective priors.\n\nAt that clinical bridge, a $1 million price per 10 QALYs would require 5353.7 additional LA patient-years per annual recipient-cost normalization, compared with 12.5 in the conditional scenario. The corresponding maximum full-recipient cost is $546.12 per additional LA course; for a $100,000 target it is ten times tighter. These are exact break-even quantities, not forecast patient demand. No mortality, lifetime cure or overlapping hospitalization QALYs are added.",
+        "funding": "Original accrual returns for fiscal years ending June report expenses of $2,075,948 in 2023, $2,305,383 in 2024 and $2,923,727 in 2025: a three-year mean of $2,435,019.33. The 2024 return supplies the 2023 comparative. Its $4,719,274 revenue included $2,441,575 miscellaneous income; that unusually large category should not be assumed recurring clinical revenue. [Original Form 990, fiscal year ending June 2024 with 2023 comparative totals](https://projects.propublica.org/nonprofits/organizations/951641451/202501359349311575/full)\n\nFor 2025, revenue was $2,573,083, including $1,527,260 contributions and $814,003 rent. The return classifies every expense as program, with zero management/fundraising allocation; this does not establish zero overhead. It reports no independent financial-statement audit. Net assets were $10,700,896, including $4,612,972 restricted; Schedule O labels a $1,092,063 reconciliation addition only as a book/tax difference. Those facts merit clarification rather than interpreting the $350,644 revenue-expense deficit as proof that every gift funds additional care. [Original Form 990, fiscal year ending June 2025](https://projects.propublica.org/nonprofits/organizations/951641451/202611359349315411/full)\n\nGovernment-grant and program-fee rows on that historical return do not negate the current contracts on the BEAM page. Detailed payer receipts, current BEAM cost centers and contract reimbursement margins are needed before allocating ordinary donations. [BEAM services, eligibility, counties and managed-care contracts](https://www.breathesocal.org/beam)\n\nDHCS's finalized update removes assessment and self-management education from the Asthma Remediation Community Support beginning January 2026 because the Asthma Preventive Services benefit covers them; physical supplies and modifications remain complementary remediation services. This is a separation to avoid duplication, not elimination of all asthma support. The old all-in-one description should not be used to infer a new donor gap or a flat payment received for each patient. [Final asthma-remediation definitions and January 2026 benefit separation](https://www.dhcs.ca.gov/Documents/MCQMD/Community-Supports-February-2025-Service-Definition-Updates.pdf)\n\nCurrent DHCS resources describe a provider enrollment pathway for community organizations delivering asthma preventive services. A gift might improve access, pay unreimbursed navigation or serve people otherwise excluded, but a costed unmet queue and the alternative plan/provider response were not found. [Current CHW and asthma provider enrollment resources](https://www.dhcs.ca.gov/providers-partners/community-health-workers/)\n\nFresh LA review checked the retained original FY 2024/FY 2025 returns against the current index: FY 2025 remains the latest listed return. Parts VIII report no separate netted rental or event costs to add; reported zero expense allocations are not evidence of genuinely zero overhead. These accounts predate the 2026 warehouse response. A current response budget, grants and in-kind inventory are therefore needed before treating historical cost as current capacity. No active matching multiplier is used.\n\nThe original FY2023 return was independently reopened for this revision. Part IX confirms $2,075,948; the accrual checkbox is selected and Part VIII reports no separately netted rental, event, gaming or inventory costs. The comparable three-year reported-gross mean is therefore $2,435,019.33. Blank addback rows do not prove that volunteer resources or economic overhead are zero. [Original FY2023 return](https://projects.propublica.org/nonprofits/full_text/202401369349317700/IRS990)"
       },
       "sources": [
         {
@@ -16766,16 +16772,24 @@
           "url": "https://projects.propublica.org/nonprofits/organizations/951641451",
           "published": null,
           "retrieved": "2026-09-14"
+        },
+        {
+          "id": "original-990-23",
+          "title": "Original FY2023 Form 990; accrual and netted-cost rows independently reopened",
+          "url": "https://projects.propublica.org/nonprofits/full_text/202401369349317700/IRS990",
+          "publisher": "Breathe Southern California / IRS",
+          "published": "2024-05-15",
+          "retrieved": "2026-09-14"
         }
       ],
       "model": {
-        "version": "la-breathe-portfolio-and-beam-diagnostic-v1",
+        "version": "la-breathe-judgment-partial-health-v2",
         "costScope": "Ordinary gift/full recipient annual cost normalization, not a restricted BEAM or emergency-purifier gift. Latest annual cost is historical and predates 2026 response; insurer/public resources not subtracted.",
         "geographicAttribution": "BEAM LA+San Bernardino county eligibility requires exclusion of San Bernardino; g_LA=.5 is only a judgment scenario, varied .2-.9. Named 2026 purifier-event neighborhoods lie within LA County, so g_LA=1 can apply to those specifically verified households, not to all recipient activity or effects.",
-        "formula": "Q_LA(D)=(D/C)*N*b*(deltaSFD14/14)*deltaU*r*w*T*g/(1+d) + Q_filter_LA(D)+Q_policy_other_LA(D)-H_LA(D). C=2923727; illustrative N=100, b=.25, deltaSFD14=2.1, deltaU=.1, r=.5, w=.75, T=1, g=.5, d=.03. Filter skeleton: effective additional occupied-room person-days * health gain per reduced exposure-day; both unknown after alternative provision. Price=10*D/Q only for identified positive scope.",
+        "formula": "Q_LA(D)=(D/C)*N*b*(deltaSFD14/14)*deltaU*r*w*T*g/(1+d) + Q_filter_LA(D)+Q_policy_other_LA(D)-H_LA(D). C=2923727; central judgment N=100, b=.25, deltaSFD14=2.1, deltaU=.1, r=.5, w=.75, T=1, g=.5, d=.03. Filter skeleton: effective additional occupied-room person-days * health gain per reduced exposure-day; both unknown after alternative provision. Price=10*D/Q only for identified positive scope.",
         "counterfactual": "Medi-Cal asthma preventive services/Community Supports, alternative providers, existing purifiers, AQMD funded distribution, donors and partner resources continue absent a new gift. A gift cannot retroactively change June smoke exposure, past distributions or an expired match.",
         "attribution": "b is a subjective marginal responsiveness factor combining recipient allocation/capacity and substitution; clinical r and within-year w are separate. Do not apply both BEAM multimodal symptom gains and filtration gains to the same patient's same symptoms. Policy benefits need coalition counterfactual and geographic exposure allocation.",
-        "uncertainty": "Whole-portfolio central remains null because newly material filter response and broader policy pathways are not identified. Finite BEAM scenario is provided rather than claiming generic unknowability, but publishing it as portfolio return would be misleading. All marginal quantities and geographic share are explicitly judgments, not source-calibrated probabilities or empirical bounds.",
+        "uncertainty": "Finite judgment best estimate with broad joint scenarios, zero and harm. Unknown observed marginal inputs do not require suppressing the priced asthma pathway. The central is partial health at full gift cost, not a measured unrestricted-portfolio expectation.",
         "nativeOutcomes": "Additional LA asthma-support patient-years and symptom-free patient-days; additional effective occupied-room exposure-days from purifier use; implementation-induced exposure reduction. Patients, devices, screenings, maps and public grants are not health outcomes.",
         "inputs": [
           {
@@ -16908,22 +16922,22 @@
         "scenarios": [
           {
             "id": "central",
-            "label": "Whole portfolio unestimated; do not rank on narrow BEAM proxy",
-            "costUSD": 2923727,
-            "allPopulationQalys": null,
-            "editionQalys": null,
-            "assumptions": "Material 2026 relief, policy and outreach pathways unpriced; current ordinary-gift allocation unverified."
-          },
-          {
-            "id": "beam-diagnostic",
-            "label": "Conditional BEAM-only scenario, not overall return",
+            "label": "Judgment best estimate: BEAM health at full recipient cost",
             "costUSD": 2923727,
             "allPopulationQalys": 0.13652912621359223,
             "editionQalys": 0.06826456310679611,
             "assumptions": "N = 100; b = 0.25; g = 0.5; deltaSFD14 = 2.1; deltaU = 0.1; r = 0.5; w = 0.75; T = 1; d = 0.03."
           },
           {
-            "id": "beam-favorable",
+            "id": "low",
+            "label": "Weak annual delivery, responsiveness and health transfer",
+            "costUSD": 2923727,
+            "allPopulationQalys": 0.0006553398058252427,
+            "editionQalys": 0.00013106796116504855,
+            "assumptions": "N=30; b=.05; deltaSFD14=2.1; deltaU=.03; r=.2; w=.5; T=1; g=.2; d=.03. Joint judgment stress case, not confidence limits."
+          },
+          {
+            "id": "high",
             "label": "Strong asthma margin and local share; not confidence bound",
             "costUSD": 2923727,
             "allPopulationQalys": 6.553398058252427,
@@ -16945,6 +16959,22 @@
             "allPopulationQalys": null,
             "editionQalys": null,
             "assumptions": "Ineffective use, exposure substitution and harmful policy trade-offs not assigned a fabricated negative bound."
+          },
+          {
+            "id": "adverse",
+            "label": "Illustrative net harm, not a measured bound",
+            "costUSD": 2923727,
+            "allPopulationQalys": -0.1,
+            "editionQalys": -0.1,
+            "assumptions": "A net .1 LA QALY loss from displaced care or adverse effects; explicit stress test, not observed."
+          },
+          {
+            "id": "portfolio-unknown",
+            "label": "Unpriced remaining portfolio pathways",
+            "costUSD": 2923727,
+            "allPopulationQalys": null,
+            "editionQalys": null,
+            "assumptions": "Purifier response and policy may add or subtract health; no invented amount is added to the BEAM estimate."
           }
         ],
         "sensitivity": [
@@ -16968,10 +16998,10 @@
           "amount": 2075948,
           "currency": "USD",
           "periodMonths": 12,
-          "comparable": false,
+          "comparable": true,
           "entity": "Breathe Southern California, EIN 95-1641451",
-          "accountingBasis": "Prior-year expense comparator in FY2024 return; original FY2023 gross expense and netted costs not verified",
-          "sourceId": "990-24"
+          "accountingBasis": "Accrual Form 990 total expenses; fiscal year ending June 30; no separately netted direct costs identified",
+          "sourceId": "original-990-23"
         },
         {
           "year": 2024,
@@ -16980,7 +17010,7 @@
           "periodMonths": 12,
           "comparable": true,
           "entity": "Breathe Southern California, EIN 95-1641451",
-          "accountingBasis": "Accrual Form 990 total expenses; fiscal year ending June 30",
+          "accountingBasis": "Accrual Form 990 total expenses; fiscal year ending June 30; no separately netted direct costs identified",
           "sourceId": "990-24"
         },
         {
@@ -16990,7 +17020,7 @@
           "periodMonths": 12,
           "comparable": true,
           "entity": "Breathe Southern California, EIN 95-1641451",
-          "accountingBasis": "Accrual Form 990 total expenses; fiscal year ending June 30",
+          "accountingBasis": "Accrual Form 990 total expenses; fiscal year ending June 30; no separately netted direct costs identified",
           "sourceId": "990-25"
         }
       ],
@@ -16998,7 +17028,8 @@
       "sessionIds": [
         "ca-alpha-breathe-socal-20260913-worker1",
         "la-alpha-breathe-socal-20260914-worker1"
-      ]
+      ],
+      "priceScope": "Full recipient cost / BEAM asthma-support health only; judgment estimate, not measured whole-portfolio return."
     },
     {
       "edition": "los-angeles",
@@ -23985,13 +24016,13 @@
       "donationUrl": "https://jtc.org/donate/",
       "acceptance": {
         "status": "accepted",
-        "evidence": "docs/la-next-four-acceptance.md — independent primary-source, financial and model audit plus root scope acceptance."
+        "evidence": "docs/geography-central-estimates-acceptance.md; Medium revision and root source/model review; alpha revision only"
       },
       "summary": {
         "what": [
           "John Tracy Center provides pediatric audiology, communication support, preschool and family education, alongside worldwide and professional programs.",
           "Its local services can benefit Los Angeles and Orange County residents, but visitors and remote families cannot automatically be counted here.",
-          "A recent randomized parent-coaching trial supports a communication mechanism, but current donation-sensitive delivery and the conversion to health remain unresolved."
+          "A finite judgment estimate links additional parent-coaching offers to communication-related wellbeing, with broad ranges and no lifetime or device-benefit shortcut."
         ],
         "strengths": [
           "Specialist parent coaching offers a concrete pathway beyond awareness.",
@@ -24007,8 +24038,8 @@
       "sections": {
         "what": "This report covers John Tracy Clinic, EIN 95-1642393, doing business as John Tracy Center, rather than a restricted therapy program. Its [current service portfolio](https://jtc.org/) includes audiology, speech and language support, counseling, preschool, parent education and graduate professional training. The [parent-infant program](https://jtc.org/services/parent-infant-program/) describes weekly individual coaching and family-school support.\n\nThe LA edition counts residents of Los Angeles and Orange Counties. A local appointment is not proof of local residence: the [worldwide program](https://jtc.org/wwparentedu/) also serves remote families and international visitors. Training teachers can create benefits elsewhere. No headquarters-based geography percentage is imposed on the entire portfolio.",
         "monitoring": "The accessible [2023 newsletter](https://www.jtc.org/publish/publications/pdf_source/2023-August-Summer-Newsletter-Summer-Session.pdf) reports 1,110 unique children in audiology over nine months, distinct from 1,307 appointments. This is historical diagnostic activity, not current parent-coaching enrollment, diagnoses newly detected, or children whose outcomes depend on added funding. Its reported progress percentages lack a contemporaneous comparison group.\n\nThe website's 2023–24 annual-report announcement linked to a page returning not found during review. A current eligible-child denominator could therefore not be verified. The useful next ledger would distinguish unique children by service, residence, baseline access, payer, diagnosis, offered support and follow-up, and identify the additional service capacity purchased by unrestricted funding.",
-        "qualitative": "A [2025 randomized trial](https://pmc.ncbi.nlm.nih.gov/articles/PMC12278989/) assigned 96 parent-child dyads to six months of weekly telehealth parent-mediated communication support or control. The child-communication effect was 0.59 standard deviations immediately after treatment. Participants were 12–18 months old with bilateral hearing loss, no additional diagnoses and at least one hearing parent. Effects were stronger among children exposed to signs. This supports coaching, not a claim that spoken language is superior to signed language, nor an effect for every child receiving audiology.\n\nThe trial did not estimate preference-weighted health utility or lifetime persistence. A [nine-year Australian cohort](https://pubmed.ncbi.nlm.nih.gov/40059097/) links language and quality of life, but is observational; its PedsQL outcomes are not QALYs. Implant or hearing-aid benefits cannot all be attributed to the center's incremental counseling. A health model must value communication access and family-chosen functioning, not assign lower value to Deaf identity.\n\nA defensible central health price would need both a current donation-sensitive course count and an explicit utility trajectory. Supplying arbitrary values for both would make the result chiefly a manufactured price. The model instead retains the native communication bridge and exact break-even conditions.",
-        "cost": "FY2025 gross Form 990 expense is $6,479,214: Part IX $6,388,940 plus $90,274 of direct event costs netted in Part VIII. The comparable amounts are $5,818,364 for FY2024 and $5,348,346 for FY2023; their average is $5,881,974.67. All three returns use accrual accounting. No rental, gaming or inventory cost addback was reported. [2025](https://projects.propublica.org/nonprofits/full_text/202631959349302018/IRS990) [2024](https://projects.propublica.org/nonprofits/full_text/202511959349300981/IRS990) [2023](https://projects.propublica.org/nonprofits/full_text/202411979349302401/IRS990)\n\nFY2025 [Schedule D](https://projects.propublica.org/nonprofits/full_text/202631959349302018/IRS990ScheduleD) reconciles $6,283,680 audited-statement expense, minus $24,884 of fundraising adjustments and plus $130,144 investment expenses, to Part IX. No donated-service exclusion is recorded. The schedule's fundraising adjustment differs by $2 from the event loss shown in Part VIII; this is disclosed, not silently repaired. The chosen numerator is consistently gross Form 990 expense, not a claimed consolidated audit reconstruction.\n\nAt $1 million per 10 LA QALYs, this annual resource equivalent must produce 64.79214 net additional LA QALYs; at $100,000 it must produce 647.9214. If each genuinely additional LA child gained 0.1 discounted QALY, those thresholds require 647.9214 or 6,479.214 children respectively. The 0.1 is a threshold illustration, not a measured or best-estimate benefit. Medical devices, outside clinical services and family time remain additional social resources; reimbursements are not subtracted from full recipient cost.",
+        "qualitative": "A [2025 randomized trial](https://pmc.ncbi.nlm.nih.gov/articles/PMC12278989/) enrolled 96 parent-child dyads (94 were randomized) to six months of weekly telehealth parent-mediated communication support or control. The child-communication effect was 0.59 standard deviations immediately after treatment. Participants were 12–18 months old with bilateral hearing loss, no additional diagnoses and at least one hearing parent. Effects were stronger among children exposed to signs. This supports coaching, not a claim that spoken language is superior to signed language, nor an effect for every child receiving audiology.\n\nThe trial did not estimate preference-weighted health utility or lifetime persistence. A [nine-year Australian cohort](https://pubmed.ncbi.nlm.nih.gov/40059097/) links language and quality of life, but is observational; its PedsQL outcomes are not QALYs. Implant or hearing-aid benefits cannot all be attributed to the center's incremental counseling. A health model must value communication access and family-chosen functioning, not assign lower value to Deaf identity.\n\nThe judgment central assumes100 annual trial-compatible offers, .25 funding responsiveness, .8 local residence and half the trial effect. These are not measured enrollment or response fractions. The100-offer assumption is a small subset of historical audiology scale and consistent with current weekly coaching, but could be substantially wrong. A normative utility bridge of .02 per communication-score SD values reduced distress and improved family-chosen functioning, not Deaf identity or preference for speech over sign. Benefits retain fractions1,.5,.25 over three years, then stop. Both this health conversion and persistence are explicit judgments rather than claims from the trial.",
+        "cost": "FY2025 gross Form 990 expense is $6,479,214: Part IX $6,388,940 plus $90,274 of direct event costs netted in Part VIII. The comparable amounts are $5,818,364 for FY2024 and $5,348,346 for FY2023; their average is $5,881,974.67. All three returns use accrual accounting. No rental, gaming or inventory cost addback was reported. [2025](https://projects.propublica.org/nonprofits/full_text/202631959349302018/IRS990) [2024](https://projects.propublica.org/nonprofits/full_text/202511959349300981/IRS990) [2023](https://projects.propublica.org/nonprofits/full_text/202411979349302401/IRS990)\n\nFY2025 [Schedule D](https://projects.propublica.org/nonprofits/full_text/202631959349302018/IRS990ScheduleD) reconciles $6,283,680 audited-statement expense, minus $24,884 of fundraising adjustments and plus $130,144 investment expenses, to Part IX. No donated-service exclusion is recorded. The schedule's fundraising adjustment differs by $2 from the event loss shown in Part VIII; this is disclosed, not silently repaired. The chosen numerator is consistently gross Form 990 expense, not a claimed consolidated audit reconstruction.\n\nAt $1 million per 10 LA QALYs, this annual resource equivalent must produce 64.79214 net additional LA QALYs; at $100,000 it must produce 647.9214. If each genuinely additional LA child gained 0.1 discounted QALY, those thresholds require 647.9214 or 6,479.214 children respectively. The 0.1 is a threshold illustration, not a measured or best-estimate benefit. Medical devices, outside clinical services and family time remain additional social resources; reimbursements are not subtracted from full recipient cost.\n\nThe judgment parent-coaching central yields 0.197173 LA QALYs per $6,479,214 of full annual recipient cost, or approximately $328.61 million per10 LA QALYs. The implied donor-responsive local offers are100*.25*.8=20, with .295 transferred communication SD per offer and 1.670957 discounted retained years. No other diagnostic, device, preschool or caregiver health is added. Broad joint low/high cases, zero and harm reflect uncertainty rather than confidence limits.",
         "funding": "The [FY2025 return](https://projects.propublica.org/nonprofits/full_text/202631959349302018/IRS990) reports revenue of $7,476,166 and net assets of $44,510,062, including $43,100,349 without donor restrictions. Cash and savings total $2,284,951; net assets are not all spendable cash. [Schedule R](https://projects.propublica.org/nonprofits/full_text/202631959349302018/IRS990ScheduleR) identifies a disregarded building entity, already within recipient reporting, rather than a second clinical benefit stream. Existing resources weaken an automatic claim that another gift immediately adds a course, but do not prove no funding need.\n\nThe [preschool page](https://jtc.org/services/preschool/) explicitly describes LEA contracts and IEP placement. California [Early Start](https://www.dds.ca.gov/services/early-start/what-is-early-start/) provides evaluation and coordination without charge and uses insurance, regional centers and education agencies for needed services. Alternative publicly supported care belongs in the baseline. The center may improve quality, speed or accessibility relative to it; that difference must be measured rather than crediting all existing care to philanthropy.\n\nThe first donor-useful request is a concrete uncovered capacity proposal: marginal cost, eligible waiting children, payer alternatives, residence and expected communication or family-wellbeing gains. No current unrestricted gap was independently verified, and no outreach or donation was made."
       },
       "sources": [
@@ -24162,13 +24193,13 @@
         "la-alpha-john-tracy-center-20260914-worker1"
       ],
       "model": {
-        "version": "la-jtc-native-bridge-v1",
+        "version": "la-jtc-judgment-communication-health-v2",
         "costScope": "Whole recipient gross accrual Form 990 resources, including event costs; no program-only or net-of-reimbursement denominator.",
         "geographicAttribution": "Each pathway needs LA and Orange County residence attribution. International visits and online users are not assumed local.",
-        "formula": "Q_LA = N*b*g*t*k*0.59*A + Q_other_LA - H; A=sum from y=1 to T of w_y/(1.03^y). N=annual trial-compatible offered parent-coaching courses; b=donation-sensitive share after replacement funding; g=LA residence; t=effect transfer; k=utility gain per communication-score SD; w_y=persistence; Q_other_LA=non-overlapping additional portfolio health. Price10=10*C/Q_LA when positive, C=6479214. No numerical best estimate is identified.",
+        "formula": "Q_LA=N*b*g*t*k*.59*A; A=sum(w_y/1.03^y). Central N=100,b=.25,g=.8,t=.5,k=.02,w=[1,.5,.25],C=6479214. Price10=10*C/Q_LA. This is the parent-coaching partial-health branch at full recipient cost; Qportfolio=Q_LA+Qother-H, other health unidentified.",
         "counterfactual": "Publicly funded education, Early Start, insurance, existing endowment support and other providers continue. The controlled trial effect must be transferred to this service and its actual alternative, not compared to permanent absence of language access.",
         "attribution": "Count each unique child once. Do not credit implantation, hearing-aid provision, preschool and parent coaching with the same developmental gain. b reflects incremental resource response, while t reflects clinical transport; neither is an observed local estimate.",
-        "uncertainty": "No numerical central or finite range is proposed because eligible additional course volume and health utility mapping are both unresolved. The 0.59 SD randomized result is a native communication effect, not 0.59 QALY. Zero and adverse outcomes remain possible.",
+        "uncertainty": "The central and broad range are subjective judgments anchored to actual service format, historical scale and an external randomized communication effect. Eligible volume and preference utility are not measured. Their uncertainty does not automatically erase a finite central. Zero, harm and unpriced other pathways are retained.",
         "nativeOutcomes": "Additional eligible LA parent-coaching offers -> communication-score improvement relative to current alternatives -> finite preference-weighted health trajectory. Diagnostic appointments and uncontrolled progress percentages do not supply the missing steps.",
         "inputs": [
           {
@@ -24193,10 +24224,10 @@
           },
           {
             "name": "N",
-            "value": null,
+            "value": 100,
             "unit": "eligible annual parent-coaching offers",
-            "basis": "unknown",
-            "rationale": "Not identified by reviewed sources; requires explicit measurement or justified judgment before pricing.",
+            "basis": "judgment",
+            "rationale": "Judgment of 100 potentially trial-compatible annual offers, about9% of historical1110 audiology children over9months. Not measured enrollment or inferred directly from all diagnostic visits; current weekly coaching at three campuses makes this order of magnitude plausible. Test25–250.",
             "sourceIds": [
               "parent",
               "preschool",
@@ -24205,10 +24236,10 @@
           },
           {
             "name": "b",
-            "value": null,
+            "value": 0.25,
             "unit": "incremental funding responsiveness",
-            "basis": "unknown",
-            "rationale": "Not identified by reviewed sources; requires explicit measurement or justified judgment before pricing.",
+            "basis": "judgment",
+            "rationale": "Judgment .25 marginal resource responsiveness after public funding, assets and other donors; test .05–.6 and zero.",
             "sourceIds": [
               "parent",
               "preschool",
@@ -24217,10 +24248,10 @@
           },
           {
             "name": "g",
-            "value": null,
+            "value": 0.8,
             "unit": "LA resident share",
-            "basis": "unknown",
-            "rationale": "Not identified by reviewed sources; requires explicit measurement or justified judgment before pricing.",
+            "basis": "judgment",
+            "rationale": "Judgment .8 LA/Orange residence among in-person coaching offers, not whole worldwide recipient; test .5–.95.",
             "sourceIds": [
               "parent",
               "preschool",
@@ -24229,10 +24260,10 @@
           },
           {
             "name": "t",
-            "value": null,
+            "value": 0.5,
             "unit": "clinical effect transfer",
-            "basis": "unknown",
-            "rationale": "Not identified by reviewed sources; requires explicit measurement or justified judgment before pricing.",
+            "basis": "judgment",
+            "rationale": "Judgment half the external communication effect after modality, population and usual-care differences; test .2–.8 and zero.",
             "sourceIds": [
               "parent",
               "preschool",
@@ -24241,10 +24272,10 @@
           },
           {
             "name": "k",
-            "value": null,
+            "value": 0.02,
             "unit": "utility per communication-score SD",
-            "basis": "unknown",
-            "rationale": "Not identified by reviewed sources; requires explicit measurement or justified judgment before pricing.",
+            "basis": "judgment",
+            "rationale": "Explicit normative health bridge: one communication-score SD corresponds to .02 utility for a year through reduced distress and improved family-chosen functioning. This is not an estimated psychometric conversion or lower value assigned to Deaf identity; test .005–.05 and zero.",
             "sourceIds": [
               "rct25",
               "lochi25"
@@ -24252,10 +24283,10 @@
           },
           {
             "name": "T",
-            "value": null,
+            "value": 3,
             "unit": "finite persistence years",
-            "basis": "unknown",
-            "rationale": "Not identified by reviewed sources; requires explicit measurement or justified judgment before pricing.",
+            "basis": "judgment",
+            "rationale": "Finite3years with rapid fading; neither RCT nor cohort establishes persistence. Test1–5years.",
             "sourceIds": [
               "rct25",
               "lochi25"
@@ -24263,10 +24294,14 @@
           },
           {
             "name": "w_y",
-            "value": null,
+            "value": [
+              1,
+              0.5,
+              0.25
+            ],
             "unit": "year-specific retained effect fraction",
-            "basis": "unknown",
-            "rationale": "Not identified by reviewed sources; requires explicit measurement or justified judgment before pricing.",
+            "basis": "judgment",
+            "rationale": "Retained effect1,.5,.25 across years1–3, then zero; subjective fading rather than lifetime extrapolation.",
             "sourceIds": [
               "parent",
               "preschool",
@@ -24301,11 +24336,27 @@
         "scenarios": [
           {
             "id": "central",
-            "label": "Whole-portfolio health unestimated",
+            "label": "Judgment best estimate: parent-coaching communication health",
             "costUSD": 6479214,
-            "allPopulationQalys": null,
-            "editionQalys": null,
-            "assumptions": "No fabricated utility mapping or eligible-child count."
+            "allPopulationQalys": 0.24646618048240776,
+            "editionQalys": 0.19717294438592622,
+            "assumptions": "N=100; b=0.25; g=0.8; t=0.5; k=0.02; d_comm=.59; w=[1,0.5,0.25]; A=1.6709571558129341; 3% annual discount; no effects after year 3. Joint judgment scenario, not empirical confidence bounds."
+          },
+          {
+            "id": "low",
+            "label": "Weak eligible volume, transfer and persistence",
+            "costUSD": 6479214,
+            "allPopulationQalys": 0.0007160194174757282,
+            "editionQalys": 0.0003580097087378641,
+            "assumptions": "N=25; b=0.05; g=0.5; t=0.2; k=0.005; d_comm=.59; w=[1]; A=0.970873786407767; 3% annual discount; no effects after year 1. Joint judgment scenario, not empirical confidence bounds."
+          },
+          {
+            "id": "high",
+            "label": "Favorable eligible volume, transfer and persistence",
+            "costUSD": 6479214,
+            "allPopulationQalys": 11.53941467679038,
+            "editionQalys": 10.962443942950859,
+            "assumptions": "N=250; b=0.6; g=0.95; t=0.8; k=0.05; d_comm=.59; w=[1,1,0.75,0.5,0.25]; A=3.2597216601102765; 3% annual discount; no effects after year 5. Joint judgment scenario, not empirical confidence bounds."
           },
           {
             "id": "zero",
@@ -24322,6 +24373,14 @@
             "allPopulationQalys": -1,
             "editionQalys": -1,
             "assumptions": "One net LA QALY lost is an explicit stress test, not an empirical harm estimate."
+          },
+          {
+            "id": "portfolio-unknown",
+            "label": "Other recipient health unpriced",
+            "costUSD": 6479214,
+            "allPopulationQalys": null,
+            "editionQalys": null,
+            "assumptions": "No independent diagnostic, device, preschool, family or training health is added without a non-overlap model."
           }
         ],
         "sensitivity": [
@@ -24336,7 +24395,8 @@
           "Preference-weighted utility change attributable to communication improvement and finite persistence.",
           "Independent non-overlapping diagnostic, preschool, family and training pathways."
         ]
-      }
+      },
+      "priceScope": "Full recipient cost / parent-coaching communication-related health only; judgment estimate, not measured whole-portfolio return."
     },
     {
       "edition": "los-angeles",

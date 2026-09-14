@@ -1,0 +1,663 @@
+{
+  "schemaVersion": 1,
+  "edition": "california",
+  "status": "root-accepted-beta-research-priorities-not-endorsements",
+  "reviewer": "seattle_acceptance",
+  "sourceArtifact": "work/market-for-impact-california-six-surgery-beta/data/geography-reports.json",
+  "sourceSha256": "48eeb42a1cf437eabc42ed7e643e7a1a4b5493064c21c535fc9e6ea13661efba",
+  "comparisonInterval": {
+    "startedAt": "2026-09-14T08:28:52.732Z",
+    "endedAt": "2026-09-14T08:33:22.169Z",
+    "model": "gpt-6-astra",
+    "reasoningEffort": "medium",
+    "kind": "comparative-selection-review",
+    "countsAsIndividualBetaResearch": false,
+    "timingNote": "Wall-clock phase window begins at the verified Atlanta artifact completion boundary and includes the short handoff and report inspection. Exact token-active time is not separately measured; zero individual alpha/beta research credit is claimed.",
+    "wallClockSeconds": 269.437,
+    "activeResearchSeconds": null
+  },
+  "criteria": [
+    "Plausible expected net health per full recipient/associated resource cost, considering omitted portfolio pathways.",
+    "Strength and transferability of causal evidence; uncertainty is neither an automatic null nor permission to call priors measured.",
+    "Donation-sensitive marginal capacity versus grants, reserves, public/clinical substitutes and bottlenecks.",
+    "Value of information achievable in a bounded additional beta, reusing shared clinical/financial evidence.",
+    "Mechanism and geographic diversity where merited, without artificial quotas or default preference for large/famous recipients."
+  ],
+  "method": "Compared all25 current California alpha reports: summary, model/formula, central and sensitivity scope, counterfactual, missing inputs, funding and qualitative evidence. Reused accepted original-financial and primary evidence rather than repeating broad research or independently reaccepting each alpha. Conditional price references retain their exact report cost cohorts. Ranking is a qualitative decision judgment, not a statistically calibrated expected-value ranking. Live HRS funding page was rechecked; an OA budget PDF fetch failed, so no new verification of that file is claimed beyond accepted evidence.",
+  "selected": [
+    {
+      "rank": 1,
+      "slug": "operation-access",
+      "organizationId": "ein:94-3180356",
+      "organization": "Operation Access",
+      "status": "selected-for-beta-research-not-endorsement",
+      "reason": "Donated specialty-care coordination has one of the strongest positive partial-health hypotheses and clear California eligibility. Current layoffs/funding-source loss make the donor-response question concrete, while a current budget and existing diagnosis-specific model make a bounded beta unusually tractable.",
+      "mechanism": "Clinical referral → completed indicated treatment → finite symptom/function or survival gain.",
+      "donorMarginAssessment": "Loss of a major funder coexists with 16 months of operating cash and replacement support; provider slots may bind before cash. No verified incremental offer.",
+      "closestComparators": [
+        "harm-reduction-services",
+        "champions-for-health"
+      ],
+      "decisiveAuditQuestions": "Identify the current service/diagnosis mix, not ten specialty labels. Reconcile the $1.9m 2026 operating plan with full recognized and donated clinical resources. Determine which extra coordinated patients can actually obtain provider slots beyond existing grants; audit alternative-care catch-up, repeat visits and low-value procedures.",
+      "promotionDemotionTest": "Promote if a plausibly donation-sensitive queue of high-benefit indicated treatment remains after full provider costs; demote if spare coordination cash cannot obtain slots or most credited cases receive equivalent timely care.",
+      "modelReference": {
+        "version": "ca-oa-finite-whole-portfolio-alpha-v1",
+        "centralScenarioId": "central",
+        "costUSD": 100000,
+        "californiaQalys": 0.5136735945144643,
+        "conditionalUSDPer10CaliforniaQalys": 1946761.5440603334,
+        "scope": "Full ordinary gift in donor numerator. All ten specialty allocations sum to one and include recipient program, management, fundraising and failed-referral work. Separate gross associated resource sensitivity includes all nominal services, not merely health-credited cases; no waived-charge multiplier. Prospective cash per-service costs are judgments anchored to 2025 recipient cash-like scale.",
+        "warning": "A disclosed partial-health scenario, not measured whole-portfolio expected value or a calibrated probability distribution. Prices across differing modeled cost/funding cohorts must not be averaged or used as the sole ranking."
+      },
+      "sourceReportStage": "alpha",
+      "sourceAcceptance": {
+        "status": "accepted",
+        "evidence": "docs/geography-alpha-batch-acceptance.md#operation-access"
+      },
+      "newBetaCredit": 0
+    },
+    {
+      "rank": 2,
+      "slug": "harm-reduction-services",
+      "organizationId": "org:harm-reduction-services",
+      "organization": "Harm Reduction Services",
+      "status": "selected-for-beta-research-not-endorsement",
+      "reason": "A small, locally targeted recipient reaching high-risk people offers a plausible survival pathway with less geographic dilution than End Overdose and less large-contract complexity than HHCLA. County nonfunding of SSP is a specific clue worth testing, not proof of an unrestricted gap.",
+      "mechanism": "Additional outreach/supplies → timely effective overdose response and care → finite survival.",
+      "donorMarginAssessment": "State free stock, other grants and responders continue. The 5,000 reach scale and 10% incremental hazard effect are judgments needing modern local evidence.",
+      "closestComparators": [
+        "operation-access",
+        "homeless-health-care-los-angeles",
+        "end-overdose"
+      ],
+      "decisiveAuditQuestions": "Reconcile FY2025 inventory and donated supplies with grants, staff time and SSP expenses. Seek current unique opioid-risk reach, additional outreach hours and alternative-rescuer timing; stress recurrent overdose and competing mortality, using HEALing Communities as a counterweight rather than kits = lives.",
+      "promotionDemotionTest": "Promote if flexible outreach capacity demonstrably reaches otherwise-unprotected high-risk networks; demote if the margin mainly adds stock already freely available or uses duplicated/stale reach.",
+      "modelReference": {
+        "version": "ca-hrs-alpha-v2-conditional",
+        "centralScenarioId": "central",
+        "costUSD": 100000,
+        "californiaQalys": 0.3237272964918562,
+        "conditionalUSDPer10CaliforniaQalys": 3089019.711456912,
+        "scope": "Full ordinary unrestricted recipient gift, analytically normalized to C=$100,000. All portfolio/support costs remain in the denominator. E/Y is total recipient expense per nominal annual SSP person, NOT SSP-only unit cost. No naloxone purchase price, restricted gift allocation or extra leverage is assumed. Third-party incremental resource costs remain unknown; this is a donor-dollar rather than societal-cost estimate.",
+        "warning": "A disclosed partial-health scenario, not measured whole-portfolio expected value or a calibrated probability distribution. Prices across differing modeled cost/funding cohorts must not be averaged or used as the sole ranking."
+      },
+      "sourceReportStage": "alpha",
+      "sourceAcceptance": {
+        "status": "accepted",
+        "evidence": "docs/geography-report-acceptance.md#harm-reduction-services September 13 central revision: docs/california-central-estimates-acceptance.md."
+      },
+      "newBetaCredit": 0
+    },
+    {
+      "rank": 3,
+      "slug": "walk-san-francisco",
+      "organizationId": "ein:47-2000881",
+      "organization": "Walk San Francisco",
+      "status": "selected-for-beta-research-not-endorsement",
+      "reason": "Tightly local physical-injury prevention has credible external evidence and a live public implementation setting. A named acceleration question can be more discriminating than another generic policy-prior exercise, and the small recipient makes modest added capacity potentially relevant.",
+      "mechanism": "Additional advocacy/implementation support → earlier physical street changes → injury reduction during the time gained.",
+      "donorMarginAssessment": "SFMTA already funds much of the High Injury Network and approved Community Corners; a deficit does not establish unique influence.",
+      "closestComparators": [
+        "coalition-for-clean-air",
+        "worksafe"
+      ],
+      "decisiveAuditQuestions": "Identify one specific uncompleted physical package, baseline public delivery date and bottleneck. Verify whether added staff changes timing/design beyond public plans and co-advocates. Use disjoint fatal/severe exposure, disability/emergency access, traffic displacement, resident share and all capital/maintenance resources.",
+      "promotionDemotionTest": "Promote if an independently supported, donation-sensitive acceleration window exists; demote if the package is already funded/on schedule or only signage/awareness is being credited with engineering effects.",
+      "modelReference": {
+        "version": "ca-walk-sf-whole-portfolio-conditional-v1",
+        "centralScenarioId": "central",
+        "costUSD": 100000,
+        "californiaQalys": 0.22533298087679837,
+        "conditionalUSDPer10CaliforniaQalys": 4437876.764017752,
+        "scope": "Entire100000ordinary recipient gift. Allocation60000physical,15000otherpolicy,15000survivor,10000shared/reserve is judgment; physical allocation includes supporting costs. Public construction resources separately stress-tested; no restricted-donation denominator.",
+        "warning": "A disclosed partial-health scenario, not measured whole-portfolio expected value or a calibrated probability distribution. Prices across differing modeled cost/funding cohorts must not be averaged or used as the sole ranking."
+      },
+      "sourceReportStage": "alpha",
+      "sourceAcceptance": {
+        "status": "accepted",
+        "evidence": "docs/california-youth-mobility-acceptance.md"
+      },
+      "newBetaCredit": 0
+    },
+    {
+      "rank": 4,
+      "slug": "coalition-for-clean-air",
+      "organizationId": "org:coalition-for-clean-air",
+      "organization": "Coalition for Clean Air",
+      "status": "selected-for-beta-research-not-endorsement",
+      "reason": "Potentially broad California pollution gains and documented current filtration/monitoring create a promising policy and implementation hypothesis. Its modest budget and financial deterioration merit a targeted margin audit. The current conditional price is attractive within this cohort but driven by unmeasured probability/exposure assumptions.",
+      "mechanism": "Extra technical/policy capacity → additional or earlier exposure reduction → finite health improvement.",
+      "donorMarginAssessment": "Existing grants, YMCA upgrades, Clean Truck Check, ports agreements and public budgets are baseline; monitoring alone yields no exposure benefit.",
+      "closestComparators": [
+        "walk-san-francisco",
+        "comite-civico-del-valle",
+        "breathe-southern-california"
+      ],
+      "decisiveAuditQuestions": "Choose an actual future emissions-compliance or exposure project; separate ambient adult policy model from child YMCA filtration. Reconcile consultants and restricted projects, determine what a gift changes, quantify counterfactual dose/time/population and legal durability, and account for coalition credit and energy/transport harms.",
+      "promotionDemotionTest": "Promote if a live unfunded implementation step plausibly changes meaningful exposure at scale; demote if incremental work is primarily monitoring or publicity with no identified mitigation response.",
+      "modelReference": {
+        "version": "ca-cca-judgment-partial-health-v2",
+        "centralScenarioId": "central",
+        "costUSD": 10000,
+        "californiaQalys": 0.029906141271821514,
+        "conditionalUSDPer10CaliforniaQalys": 3343794.810941493,
+        "scope": "Five full latest-year gross reported recipient budgets, across all programs and support, normalized linearly to a $10,000 ordinary gift. No policy-only cost carveout. External social resources unpriced.",
+        "warning": "A disclosed partial-health scenario, not measured whole-portfolio expected value or a calibrated probability distribution. Prices across differing modeled cost/funding cohorts must not be averaged or used as the sole ranking."
+      },
+      "sourceReportStage": "alpha",
+      "sourceAcceptance": {
+        "status": "accepted",
+        "evidence": "docs/geography-remaining-estimates-acceptance.md; independent model review and root acceptance; no beta or recommendation upgrade."
+      },
+      "newBetaCredit": 0
+    },
+    {
+      "rank": 5,
+      "slug": "vision-to-learn",
+      "organizationId": "ein:45-3457853",
+      "organization": "Vision To Learn",
+      "status": "selected-for-beta-research-not-endorsement",
+      "reason": "Direct vision correction and substantial California delivery are promising, and Medicaid MOS creates a specific financing question. Additional beta should resolve marginal California routes and correction duration rather than repeat national eye-care evidence.",
+      "mechanism": "School-based eye care → effectively worn correction/referral completion → finite health/function gain.",
+      "donorMarginAssessment": "National unrestricted allocation, public reimbursement and restricted gifts may dominate; the donor must not assume automatic MOS matching or no prior correction from no Medicaid claim.",
+      "closestComparators": [
+        "operation-access",
+        "champions-for-health"
+      ],
+      "decisiveAuditQuestions": "Verify current California delivery allocation, qualified donor/MOS reimbursement mechanism and incremental rather than replacement payments. Reconcile unique children, replacements and referrals; use child-specific severity, effective wear and time to other correction. Preserve full costs and noncash optical inputs.",
+      "promotionDemotionTest": "Promote if additional California routes and sustained useful correction are supported; demote if the next dollar is out-of-state, reimburses existing activity or mainly repeats corrections with little counterfactual delay.",
+      "modelReference": {
+        "version": "ca-vtl-whole-recipient-conditional-v1",
+        "centralScenarioId": "central",
+        "costUSD": 100000,
+        "californiaQalys": 0.49910387587274435,
+        "conditionalUSDPer10CaliforniaQalys": 2003590.9323512611,
+        "scope": "Full ordinary national-recipient gift G retained; f allocates modeled delivery without shrinking denominator. Donated inputs/public leverage disclosed separately. Reuses prior data/us/vision-to-learn-v2.json structure, with fresh original accounts and independently scoped California allocation. Course cost covers core delivery; the 20% outside that allocation covers other recipient activities/support, avoiding a second charge for the same overhead.",
+        "warning": "A disclosed partial-health scenario, not measured whole-portfolio expected value or a calibrated probability distribution. Prices across differing modeled cost/funding cohorts must not be averaged or used as the sole ranking."
+      },
+      "sourceReportStage": "alpha",
+      "sourceAcceptance": {
+        "status": "accepted",
+        "evidence": "docs/california-youth-mobility-acceptance.md"
+      },
+      "newBetaCredit": 0
+    },
+    {
+      "rank": 6,
+      "slug": "california-school-based-health-alliance",
+      "organizationId": "org:california-school-based-health-alliance",
+      "organization": "California School-Based Health Alliance",
+      "status": "selected-for-beta-research-not-endorsement",
+      "reason": "A comparatively small intermediary may help public clinical resources reach students through implementation. Restricted versus flexible funding is unusually well documented, so a district-level bottleneck test could substantially update its moderate partial-health hypothesis.",
+      "mechanism": "Technical assistance → additional/earlier usable school care → completed effective treatment.",
+      "donorMarginAssessment": "Seven partner openings are not seven caused openings; LACOE, districts, clinics and CYBHI technical assistance/reimbursement are real substitutes.",
+      "closestComparators": [
+        "childrens-partnership",
+        "didi-hirsch-mental-health-services"
+      ],
+      "decisiveAuditQuestions": "Identify an ordinary-gift-sensitive assistance engagement, existing contract scope and alternative launch date. Trace incremental clinical hours, unique students, appropriate therapy and finite benefit beyond off-campus care. Charge full alliance and provider resources; do not convert screening initiation directly to remission.",
+      "promotionDemotionTest": "Promote if modest flexible assistance resolves a real service bottleneck beyond public TA; demote if it only supports already-funded openings or billing for existing treatment.",
+      "modelReference": {
+        "version": "ca-school-alliance-enabling-care-v2",
+        "centralScenarioId": "central",
+        "costUSD": 2290208,
+        "californiaQalys": 0.8528504322383295,
+        "conditionalUSDPer10CaliforniaQalys": 26853571.428571433,
+        "scope": "Full annual recipient gross expense, all functions. Only enabled mental-health care is priced. Additional public/provider clinical resources are disclosed in sensitivity; no claim of complete societal or portfolio return.",
+        "warning": "A disclosed partial-health scenario, not measured whole-portfolio expected value or a calibrated probability distribution. Prices across differing modeled cost/funding cohorts must not be averaged or used as the sole ranking."
+      },
+      "sourceReportStage": "alpha",
+      "sourceAcceptance": {
+        "status": "accepted",
+        "evidence": "docs/ca-six-surgery-acceptance.md"
+      },
+      "newBetaCredit": 0
+    },
+    {
+      "rank": 7,
+      "slug": "center-for-independent-living",
+      "organizationId": "ein:23-7175191",
+      "organization": "Center for Independent Living",
+      "status": "selected-for-beta-research-not-endorsement",
+      "reason": "The current repair-only price is poor, but it omits home-access and other potentially important pathways. A documented geographic funding limitation outside Berkeley and direct functional outcomes make one focused portfolio expansion worthwhile, without awarding lifetime mobility to a short loan.",
+      "mechanism": "Faster repair/loaner or home-access modification → fewer lost-function days or injuries.",
+      "donorMarginAssessment": "Government grants, insured vendors, Easy Does It, backups and repair volunteers may substitute; response queue is not measured days of function restored.",
+      "closestComparators": [
+        "california-dental-association-foundation",
+        "disability-rights-california"
+      ],
+      "decisiveAuditQuestions": "Test one actually donation-sensitive repair or outside-Berkeley home-access queue. Separate labor/inventory from money constraints, unique completed interventions, counterfactual functional days and home-injury risk. Model repair, home-access and Living Well separately with finite durations and all recipient costs.",
+      "promotionDemotionTest": "Promote if an unfunded accessible-home or repair margin has meaningful additional function/injury benefit; demote if only insured timing bridges of a few days remain or skilled labor is unavailable.",
+      "modelReference": {
+        "version": "ca-cil-alpha-v2-conditional-repair",
+        "centralScenarioId": "central",
+        "costUSD": 100000,
+        "californiaQalys": 0.016895330225604348,
+        "conditionalUSDPer10CaliforniaQalys": 59187952.33043336,
+        "scope": "Ordinary unrestricted gift, C=$100,000 analytical normalization. Full gift remains charged even though this model quantifies only a repair/loaner health pathway. f is an explicit marginal portfolio allocation, not a restricted donation. Unit cost k includes wages, employment loading, materials and allocated recipient support. This is donor-dollar cost, not a societal-cost estimate; donated device and partner resource opportunity costs remain unknown.",
+        "warning": "A disclosed partial-health scenario, not measured whole-portfolio expected value or a calibrated probability distribution. Prices across differing modeled cost/funding cohorts must not be averaged or used as the sole ranking."
+      },
+      "sourceReportStage": "alpha",
+      "sourceAcceptance": {
+        "status": "accepted",
+        "evidence": "docs/geography-access-batch-five-acceptance.md; independent Medium audit plus root review; research only. September 13 partial-health central reviewed: docs/california-central-estimates-acceptance.md."
+      },
+      "newBetaCredit": 0
+    },
+    {
+      "rank": 8,
+      "slug": "western-center-on-law-and-poverty",
+      "organizationId": "org:western-center-on-law-and-poverty",
+      "organization": "Western Center on Law & Poverty",
+      "status": "selected-for-beta-research-not-endorsement",
+      "reason": "Among broad legal-health policy recipients, its California remit, current renewal/dental/birth-center implementation work and relatively restricted operating assets offer a useful marginal-capacity test. Its high partial-health price is not evidence its unpriced legal portfolio is ineffective.",
+      "mechanism": "Additional legal/administrative capacity → usable coverage or care beyond existing mandates → finite health.",
+      "donorMarginAssessment": "Existing reporting requirements, public agencies, co-counsel, State Bar grants and board-controlled foundation support continue.",
+      "closestComparators": [
+        "national-health-law-program",
+        "california-pan-ethnic-health-network",
+        "worksafe"
+      ],
+      "decisiveAuditQuestions": "Select a currently feasible implementation bottleneck rather than a settled win. Reconcile operating recipient versus foundation transfers, restricted subcontract work and current unfunded staffing. Link net coverage/actual care duration to clinical benefit and partner costs; quantify alternative counsel and agency response.",
+      "promotionDemotionTest": "Promote if flexible capacity changes an identifiable large access problem beyond funded implementation; demote if evidence only concerns historic wins or existing mandatory reporting.",
+      "modelReference": {
+        "version": "ca-wclp-coverage-judgment-v2",
+        "centralScenarioId": "central",
+        "costUSD": 22229151,
+        "californiaQalys": 2.8843434819492884,
+        "conditionalUSDPer10CaliforniaQalys": 77068321.22843137,
+        "scope": "Three years of full recognized operating-recipient gross expense, including separately netted event benefits; excludes separate foundation and avoids transfer duplication. Only a coverage-health component is priced, not complete portfolio or societal return.",
+        "warning": "A disclosed partial-health scenario, not measured whole-portfolio expected value or a calibrated probability distribution. Prices across differing modeled cost/funding cohorts must not be averaged or used as the sole ranking."
+      },
+      "sourceReportStage": "alpha",
+      "sourceAcceptance": {
+        "status": "accepted",
+        "evidence": "docs/geography-remaining-estimates-acceptance.md; independent model review and root acceptance; no beta or recommendation upgrade."
+      },
+      "newBetaCredit": 0
+    },
+    {
+      "rank": 9,
+      "slug": "youth-alive",
+      "organizationId": "org:youth-alive",
+      "organization": "Youth ALIVE!",
+      "status": "selected-for-beta-research-not-endorsement",
+      "reason": "A high-risk hospital violence-intervention pathway is locally concrete and has newer, albeit low-quality, pooled evidence. Beta can test whether the notably conservative five-year modeled health anchor misses real net clinical benefit, while explicitly challenging overlap with the new CalVIP award.",
+      "mechanism": "Post-injury support → less repeat violence and improved recovery → finite health.",
+      "donorMarginAssessment": "The $5m 2026–29 state award explicitly covers CiC and related programs; Medi-Cal/community-health-worker reimbursement and existing county contracts may replace gifts.",
+      "closestComparators": [
+        "harm-reduction-services",
+        "homeless-health-care-los-angeles"
+      ],
+      "decisiveAuditQuestions": "Reconcile present CiC staffing, unique cases and waitlists with CalVIP-funded capacity and actual payer enrollment. Audit the five-year Markov anchor, unrounded health trajectories, new pooled reinjury evidence and local matched-study null. Separate counseling/violence-interruption gains and harms without duplicate patients or lifetimes.",
+      "promotionDemotionTest": "Promote if a distinct high-risk unfunded margin and defensible causal health increment survive; demote if gifts fund awarded services or only uncontrolled 96% not-reinjured statistics support benefit.",
+      "modelReference": {
+        "version": "ca-youth-alive-alpha-reuse-v2",
+        "centralScenarioId": "central",
+        "costUSD": 100000,
+        "californiaQalys": 0.0365823609957567,
+        "conditionalUSDPer10CaliforniaQalys": 27335578.480459288,
+        "scope": "Full ordinary recipient gift, not restricted CiC purchase. All uncredited program/advocacy costs retained. Partner/clinical resources separately added as sensitivity; not comprehensive societal cost. C=100000 normalization only.",
+        "warning": "A disclosed partial-health scenario, not measured whole-portfolio expected value or a calibrated probability distribution. Prices across differing modeled cost/funding cohorts must not be averaged or used as the sole ranking."
+      },
+      "sourceReportStage": "alpha",
+      "sourceAcceptance": {
+        "status": "accepted",
+        "evidence": "docs/california-youth-mobility-acceptance.md"
+      },
+      "newBetaCredit": 0
+    },
+    {
+      "rank": 10,
+      "slug": "champions-for-health",
+      "organizationId": "org:champions-for-health",
+      "organization": "Champions for Health",
+      "status": "selected-for-beta-research-not-endorsement",
+      "reason": "The San Diego specialty-care pathway is concrete and geographically clear; its crude alpha health unit leaves material information value. Reusing Operation Access indication-specific evidence can make this second clinical network comparison efficient rather than duplicative.",
+      "mechanism": "Coordination → completed indicated specialty care, with immunization assessed separately.",
+      "donorMarginAssessment": "Project Access is only one part of the recipient, provider slots are limited and state vaccine stock/contracts support other branches; historical immunization productivity changed sharply.",
+      "closestComparators": [
+        "operation-access",
+        "california-dental-association-foundation",
+        "essential-access-health"
+      ],
+      "decisiveAuditQuestions": "Reconcile current Project Access treatments and waiting times, diagnostic versus therapeutic/repeat visits, partner resources and donation-sensitive slots. Replace generic .05 utility with case-mix-specific finite paths where defensible. Investigate extra vaccine uptake only if an actual unserved eligible margin exists.",
+      "promotionDemotionTest": "Promote if high-benefit indicated treatment has real additional capacity and reasonable full resources; demote if current funding merely replaces contracts or referrals do not become effective treatment.",
+      "modelReference": {
+        "version": "ca-champions-alpha-v2-conditional",
+        "centralScenarioId": "central",
+        "costUSD": 2378718,
+        "californiaQalys": 0.7216984223300972,
+        "conditionalUSDPer10CaliforniaQalys": 32959999.999999996,
+        "scope": "Full recipient annual recognized economic resources, including donated services and gross event costs. Only specialty-care health is priced; other portfolio pathways remain unpriced. Resource normalization is not a funding request.",
+        "warning": "A disclosed partial-health scenario, not measured whole-portfolio expected value or a calibrated probability distribution. Prices across differing modeled cost/funding cohorts must not be averaged or used as the sole ranking."
+      },
+      "sourceReportStage": "alpha",
+      "sourceAcceptance": {
+        "status": "accepted",
+        "evidence": "docs/ca-six-surgery-acceptance.md"
+      },
+      "newBetaCredit": 0
+    }
+  ],
+  "alternates": [
+    {
+      "alternateOrder": 1,
+      "slug": "nourish-california",
+      "organizationId": "org:nourish-california",
+      "organization": "Nourish California",
+      "reasonNotInFirstTen": "Close policy reserve. Small budget and constrained flexible assets merit attention, but the produce pilot already has $20m additional funding and the next step is implementation of a paused funded program. A defensible short-horizon health bridge is less direct than the selected ten.",
+      "reentryTrigger": "A named gift-sensitive restart/expansion bottleneck, redeemed incremental benefit and finite health or separately valued food-security evidence.",
+      "modelReference": {
+        "version": "ca-nourish-implementation-slice-v2",
+        "centralScenarioId": "central",
+        "costUSD": 1710797,
+        "californiaQalys": 0.12135922330097088,
+        "conditionalUSDPer10CaliforniaQalys": 140969672.8,
+        "scope": "All recipient annual audited expenses, not restricted campaign cost. Priced health is only a conditional produce-incentive access component. Public incentive and unrecognized volunteer resources are separately disclosed, so central is a donor-resource price rather than complete societal cost-effectiveness.",
+        "warning": "A disclosed partial-health scenario, not measured whole-portfolio expected value or a calibrated probability distribution. Prices across differing modeled cost/funding cohorts must not be averaged or used as the sole ranking."
+      }
+    },
+    {
+      "alternateOrder": 2,
+      "slug": "worksafe",
+      "organizationId": "org:worksafe",
+      "organization": "WorkSafe",
+      "reasonNotInFirstTen": "Close nonclinical reserve with a credible inspection-to-injury bridge. Current large unrestricted net assets/cy pres/State Bar support, already-implemented public reforms and unmeasured legal-to-net-inspection yield weaken the present margin compared with Walk SF or CCA. Its unpriced systemic portfolio may be important.",
+      "reentryTrigger": "A specific otherwise-forgone legal/enforcement follow-up that changes actual hazard abatement despite public inspector constraints.",
+      "modelReference": {
+        "version": "ca-worksafe-conditional-inspection-v2",
+        "centralScenarioId": "central",
+        "costUSD": 100000,
+        "californiaQalys": 0.006201140516679454,
+        "conditionalUSDPer10CaliforniaQalys": 161260657.98868132,
+        "scope": "Full ordinary cash gift to Worksafe, Inc., all programs and support. Historical scale uses gross audited functional expenses including event direct benefits. Public enforcement, employer remediation and partner legal resources are excluded from donor denominator but required for a gross-resource estimate.",
+        "warning": "A disclosed partial-health scenario, not measured whole-portfolio expected value or a calibrated probability distribution. Prices across differing modeled cost/funding cohorts must not be averaged or used as the sole ranking."
+      }
+    },
+    {
+      "alternateOrder": 3,
+      "slug": "homeless-health-care-los-angeles",
+      "organizationId": "ein:95-4074970",
+      "organization": "Homeless Health Care Los Angeles",
+      "reasonNotInFirstTen": "Strong high-risk direct-service reserve. The broadly comparable overdose mechanism is represented by HRS; HHCLA adds a much larger government-contracted portfolio, a newer unreconciled $40m budget and no verified uncovered response queue. Not rejected for its higher partial price.",
+      "reentryTrigger": "A separately identifiable uncovered response or treatment margin with current full costs and unique-person outcomes beyond contracts/other responders.",
+      "modelReference": {
+        "version": "ca-hhcla-whole-cost-overdose-alpha-v1",
+        "centralScenarioId": "central",
+        "costUSD": 100000,
+        "californiaQalys": 0.10444189905615264,
+        "conditionalUSDPer10CaliforniaQalys": 9574701.427655535,
+        "scope": "Full recipient ordinary-gift cost. E is audited all-function annual expense, not harm-reduction program expense. C=100000 normalization only. Benefits of other portfolio functions are unquantified and assigned zero in the conditional numerical model, with costs retained; not a claim of zero actual health.",
+        "warning": "A disclosed partial-health scenario, not measured whole-portfolio expected value or a calibrated probability distribution. Prices across differing modeled cost/funding cohorts must not be averaged or used as the sole ranking."
+      }
+    },
+    {
+      "alternateOrder": 4,
+      "slug": "california-dental-association-foundation",
+      "organizationId": "ein:68-0411536",
+      "organization": "California Dental Association Foundation",
+      "reasonNotInFirstTen": "Direct pain relief is plausible, but current cash versus volunteer/provider bottlenecks and grant administration complicate the ordinary gift. OA and Champions offer more immediately inspectable specialty-care comparisons; the current dental model covers only short symptomatic relief.",
+      "reentryTrigger": "Current community clinic completed cases, otherwise untreated delay, receiving dental-home capacity and all partner resources; preserve prior timing-warning exclusion.",
+      "modelReference": {
+        "version": "ca-cda-symptomatic-care-v2",
+        "centralScenarioId": "central",
+        "costUSD": 4125766.8,
+        "californiaQalys": 0.6292742949287736,
+        "conditionalUSDPer10CaliforniaQalys": 65563885.784767166,
+        "scope": "All recipient annual expenses plus modeled unrecognized partner resources for the priced branch. Full portfolio cost, partial symptomatic dental health. Actual partner resources remain unknown.",
+        "warning": "A disclosed partial-health scenario, not measured whole-portfolio expected value or a calibrated probability distribution. Prices across differing modeled cost/funding cohorts must not be averaged or used as the sole ranking."
+      }
+    },
+    {
+      "alternateOrder": 5,
+      "slug": "national-health-law-program",
+      "organizationId": "org:national-health-law-program",
+      "organization": "National Health Law Program",
+      "reasonNotInFirstTen": "Substantial potential policy value, but the CA share is a transfer from a national model, much work is already publicly/coalitionally supported, and $21.5m unrestricted net assets require a clear current margin. Western Center is the more focused initial CA legal comparison.",
+      "reentryTrigger": "California-specific gift-sensitive implementation or case plan and influence beyond other counsel, with actual coverage/person-year consequences.",
+      "modelReference": {
+        "version": "ca-nhelp-rule-implementation-v2",
+        "centralScenarioId": "central",
+        "costUSD": 39107481,
+        "californiaQalys": 11.007095093284967,
+        "conditionalUSDPer10CaliforniaQalys": 35529338.729759924,
+        "scope": "Three years of all recipient programs/support at FY2025 audited resource cost including donated legal labor. One national implementation pathway quantified; other portfolio net health set zero, not a proven lower bound. Public treatment and wider social costs excluded.",
+        "warning": "A disclosed partial-health scenario, not measured whole-portfolio expected value or a calibrated probability distribution. Prices across differing modeled cost/funding cohorts must not be averaged or used as the sole ranking."
+      }
+    },
+    {
+      "alternateOrder": 6,
+      "slug": "disability-rights-california",
+      "organizationId": "org:disability-rights-california",
+      "organization": "Disability Rights California",
+      "reasonNotInFirstTen": "Rights and care implementation can matter greatly. About 91% public/State Bar funding, no specific unrestricted gap and unsettled FY2025 presentation boundaries lower the next bounded beta value; CIL offers a more direct functional-access comparison.",
+      "reentryTrigger": "A contract-excluded but feasible marginal case/monitoring cohort with additional usable care, plus final FY2025/consolidation reconciliation.",
+      "modelReference": {
+        "version": "ca-drc-conditional-individual-health-access-v2",
+        "centralScenarioId": "central",
+        "costUSD": 100000,
+        "californiaQalys": 0.015428615622571185,
+        "conditionalUSDPer10CaliforniaQalys": 64814629.1581117,
+        "scope": "Full ordinary-recipient donation, all functions. The historical annual-report expense denominator is $46,894,183; $100,000 is an analytical normalization, not a suggested gift. Only the individual access-to-care health pathway is quantified. Systemic litigation, policy, income, autonomy and other benefits are omitted, not assumed zero. Public care and other actors' incremental resources are excluded from the donor price but required for a social-cost estimate.",
+        "warning": "A disclosed partial-health scenario, not measured whole-portfolio expected value or a calibrated probability distribution. Prices across differing modeled cost/funding cohorts must not be averaged or used as the sole ranking."
+      }
+    },
+    {
+      "alternateOrder": 7,
+      "slug": "california-pan-ethnic-health-network",
+      "organizationId": "org:california-pan-ethnic-health-network",
+      "organization": "California Pan-Ethnic Health Network",
+      "reasonNotInFirstTen": "Policy reach is meaningful, but already-enacted protections are baseline and large unrestricted assets/surplus make donor sensitivity especially uncertain. Current coverage proxy does not capture its full portfolio, so exclusion is provisional rather than a measured-effect judgment.",
+      "reentryTrigger": "A specific future full-coverage implementation margin and verified capacity response, not an undated vacancy or budget dollars protected.",
+      "modelReference": {
+        "version": "ca-cpehn-coverage-capacity-v2",
+        "centralScenarioId": "central",
+        "costUSD": 4984085,
+        "californiaQalys": 0.3240346523925104,
+        "conditionalUSDPer10CaliforniaQalys": 153813333.33333334,
+        "scope": "Full annual recipient gross recognized resources including donated services, all functions. Priced coverage slice excludes other portfolio health; public clinical resources separately tested. Annual full cost is a ratio normalization, not a verified donation tranche; proportional scaling assumes the stated policy-capacity response.",
+        "warning": "A disclosed partial-health scenario, not measured whole-portfolio expected value or a calibrated probability distribution. Prices across differing modeled cost/funding cohorts must not be averaged or used as the sole ranking."
+      }
+    },
+    {
+      "alternateOrder": 8,
+      "slug": "comite-civico-del-valle",
+      "organizationId": "org:comite-civico-del-valle",
+      "organization": "Comité Cívico del Valle",
+      "reasonNotInFirstTen": "Local exposure work is important, but no unrestricted donation route is verified in the accepted alpha, its own home-visit comparison found no detected effect, and environmental review has not yet demonstrated mitigation. CCA is a cleaner first policy/exposure audit.",
+      "reentryTrigger": "Resolve unrestricted payee/route and identify an actual gift-sensitive mitigation or revised clinically effective asthma program; distinguish PM2.5, dust and energy-delay harms.",
+      "modelReference": {
+        "version": "ca-ccv-air-implementation-judgment-v2",
+        "centralScenarioId": "central",
+        "costUSD": 19375896,
+        "californiaQalys": 0.241461481251107,
+        "conditionalUSDPer10CaliforniaQalys": 802442522.0787122,
+        "scope": "Three years of full recorded recipient expense; selected air implementation health only. Outside mitigation resources unquantified.",
+        "warning": "A disclosed partial-health scenario, not measured whole-portfolio expected value or a calibrated probability distribution. Prices across differing modeled cost/funding cohorts must not be averaged or used as the sole ranking."
+      }
+    },
+    {
+      "alternateOrder": 9,
+      "slug": "breathe-southern-california",
+      "organizationId": "org:breathe-southern-california",
+      "organization": "Breathe Southern California",
+      "reasonNotInFirstTen": "Asthma and filtration remain credible, but BEAM insurer coverage, AQMD-funded purifier distribution, the expired match and unclear current payer cost centers make the ordinary margin less legible. Its very high BEAM-only price cannot rank the unpriced policy/purifier portfolio.",
+      "reentryTrigger": "A post-appeal unfunded beneficiary queue beyond insurer/AQMD alternatives, effective purifier exposure and full recipient/payer costs.",
+      "modelReference": {
+        "version": "ca-breathe-beam-judgment-v2",
+        "centralScenarioId": "central",
+        "costUSD": 2923727,
+        "californiaQalys": 0.13652912621359223,
+        "conditionalUSDPer10CaliforniaQalys": 214146759.82222223,
+        "scope": "Ordinary gift/full recipient annual cost normalization, not a restricted BEAM or emergency-purifier gift. Latest annual cost is historical and predates 2026 response; insurer/public resources not subtracted.",
+        "warning": "A disclosed partial-health scenario, not measured whole-portfolio expected value or a calibrated probability distribution. Prices across differing modeled cost/funding cohorts must not be averaged or used as the sole ranking."
+      }
+    },
+    {
+      "alternateOrder": 10,
+      "slug": "end-overdose",
+      "organizationId": "org:end-overdose",
+      "organization": "End Overdose",
+      "reasonNotInFirstTen": "Potentially useful national outreach, but California marginal allocation and relative rescue additionality are unmeasured and public/donated medication supply is substantial. HRS offers more targeted local evidence per beta hour.",
+      "reentryTrigger": "Current outcome-weighted California channel allocation and additional timely rescue yield, with stock, kits and repeated recipients reconciled.",
+      "modelReference": {
+        "version": "ca-end-overdose-alpha-v2-conditional-geography",
+        "centralScenarioId": "central",
+        "costUSD": 100000,
+        "californiaQalys": 0.0769425918759858,
+        "conditionalUSDPer10CaliforniaQalys": 12996702.80943714,
+        "scope": "Full ordinary recipient gift across all functions. National model conservatively quantifies the naloxone pathway while costing unquantified activities; C=100000 is normalization only.",
+        "warning": "A disclosed partial-health scenario, not measured whole-portfolio expected value or a calibrated probability distribution. Prices across differing modeled cost/funding cohorts must not be averaged or used as the sole ranking."
+      }
+    },
+    {
+      "alternateOrder": 11,
+      "slug": "community-water-center",
+      "organizationId": "ein:80-0267674",
+      "organization": "Community Water Center",
+      "reasonNotInFirstTen": "Public infrastructure leverage is real, but the current documented projects are funded/completed or scheduled, and the health conversion is unusually remote. The large partial-health price reflects those choices, not a finding that safe water lacks value.",
+      "reentryTrigger": "Named project delayed by flexible engagement/engineering resources, credible alternative date, actual exposure and substitute-water use.",
+      "modelReference": {
+        "version": "ca-cwc-project-acceleration-v2",
+        "centralScenarioId": "central",
+        "costUSD": 6434794,
+        "californiaQalys": 0.028762135922330102,
+        "conditionalUSDPer10CaliforniaQalys": 2237244833.755274,
+        "scope": "Whole annual gross recipient resources; priced health only from conditional project acceleration. Other portfolio outcomes unknown. Public capital/operation not included in donor central; additional resource sensitivity disclosed. Annual full cost is a ratio normalization, not a verified donation tranche; proportional scaling to an ordinary gift assumes the stated project-capacity response.",
+        "warning": "A disclosed partial-health scenario, not measured whole-portfolio expected value or a calibrated probability distribution. Prices across differing modeled cost/funding cohorts must not be averaged or used as the sole ranking."
+      }
+    },
+    {
+      "alternateOrder": 12,
+      "slug": "childrens-partnership",
+      "organizationId": "org:childrens-partnership",
+      "organization": "The Children's Partnership",
+      "reasonNotInFirstTen": "Renewal reform and child health matter, but AB2201 was held August13 and the pilot is publicly funded without controlled health outcomes. A revived-policy prior is less presently testable than CSHA implementation.",
+      "reentryTrigger": "A feasible funded successor reform or controlled pilot improvement and a distinct donation-sensitive role beyond five other sponsors.",
+      "modelReference": {
+        "version": "ca-tcp-renewal-slice-v1",
+        "centralScenarioId": "central",
+        "costUSD": 14929704,
+        "californiaQalys": 0.928868784243457,
+        "conditionalUSDPer10CaliforniaQalys": 160729957.26904434,
+        "scope": "All recipient accrual spending for three prospective years at FY2025 scale; no special gift restriction. Agency/public implementation spending is not added to recognized recipient expense. This is a private-donor price, not societal cost-effectiveness.",
+        "warning": "A disclosed partial-health scenario, not measured whole-portfolio expected value or a calibrated probability distribution. Prices across differing modeled cost/funding cohorts must not be averaged or used as the sole ranking."
+      }
+    },
+    {
+      "alternateOrder": 13,
+      "slug": "didi-hirsch-mental-health-services",
+      "organizationId": "ein:95-1816023",
+      "organization": "Didi Hirsch Mental Health Services",
+      "reasonNotInFirstTen": "Large mental-health/crisis portfolio may have substantial omitted value, yet public contracts, national backup, new crisis awards and weak donation-allocation evidence obscure the margin. The depression slice is not a valid complete recipient ranking.",
+      "reentryTrigger": "Current uncovered treatment/crisis coordination increment beyond public awards, with actual counterfactual callers/patients and appropriate finite outcomes.",
+      "modelReference": {
+        "version": "ca-didi-depression-component-v2",
+        "centralScenarioId": "central",
+        "costUSD": 80043834,
+        "californiaQalys": 3.6145880388349516,
+        "conditionalUSDPer10CaliforniaQalys": 221446629.98940152,
+        "scope": "Full annual recipient recognized resources, including donated services and restored event costs. The health numerator is only a depression-treatment component, not the complete portfolio. No program-only denominator or public-contract subtraction.",
+        "warning": "A disclosed partial-health scenario, not measured whole-portfolio expected value or a calibrated probability distribution. Prices across differing modeled cost/funding cohorts must not be averaged or used as the sole ranking."
+      }
+    },
+    {
+      "alternateOrder": 14,
+      "slug": "essential-access-health",
+      "organizationId": "org:essential-access-health",
+      "organization": "Essential Access Health",
+      "reasonNotInFirstTen": "EPT has strong randomized infection evidence, but free partner medication and large existing public/reimbursement streams make unrestricted leverage difficult to establish. Title X level funding is restored, while new state procurement is not yet confirmed as recipient revenue.",
+      "reentryTrigger": "Currently unfunded eligible EPT delivery and use beyond other free care, or another concretely priced California access pathway.",
+      "modelReference": {
+        "version": "ca-essential-ept-slice-v2",
+        "centralScenarioId": "central",
+        "costUSD": 46675922,
+        "californiaQalys": 0.8586848437270531,
+        "conditionalUSDPer10CaliforniaQalys": 543574541.2415442,
+        "scope": "Whole annual recipient gross recognized costs. Only EPT repeat-infection health priced, not complete portfolio. k includes modeled delivery resources; partner-resource stress tests additional unrecognized costs.",
+        "warning": "A disclosed partial-health scenario, not measured whole-portfolio expected value or a calibrated probability distribution. Prices across differing modeled cost/funding cohorts must not be averaged or used as the sole ranking."
+      }
+    },
+    {
+      "alternateOrder": 15,
+      "slug": "california-yimby-education-fund",
+      "organizationId": "ein:85-1438188",
+      "organization": "California YIMBY Education Fund",
+      "reasonNotInFirstTen": "Potential housing/welfare leverage remains interesting, but the c3-to-extra-occupied-home chain and health conversion are long, MAP is national, c4 labor is shared, SB79 is already operative, and cash/accrual years are incomparable. A health-focused first beta slate should resolve shorter causal chains first.",
+      "reentryTrigger": "c3-specific gift-sensitive California implementation yielding net completed occupied homes, with financing, displaced construction, resident effects and shared resources reconciled.",
+      "modelReference": {
+        "version": "ca-yimby-education-net-homes-v2",
+        "centralScenarioId": "central",
+        "costUSD": 9141486,
+        "californiaQalys": 0.20101335745065108,
+        "conditionalUSDPer10CaliforniaQalys": 454770076.7718504,
+        "scope": "Three years of whole-recipient FY2024 accrual cost, including national MAP and support functions. Partial California housing-health estimate. Private construction, public infrastructure and unrecognized shared/volunteer resources not in central donor cost; sensitivity added.",
+        "warning": "A disclosed partial-health scenario, not measured whole-portfolio expected value or a calibrated probability distribution. Prices across differing modeled cost/funding cohorts must not be averaged or used as the sole ranking."
+      }
+    }
+  ],
+  "topFourHypotheses": [
+    {
+      "rank": 1,
+      "slug": "operation-access",
+      "organization": "Operation Access",
+      "hypothesis": "Clinical referral → completed indicated treatment → finite symptom/function or survival gain.",
+      "test": "Identify the current service/diagnosis mix, not ten specialty labels. Reconcile the $1.9m 2026 operating plan with full recognized and donated clinical resources. Determine which extra coordinated patients can actually obtain provider slots beyond existing grants; audit alternative-care catch-up, repeat visits and low-value procedures.",
+      "notEndorsement": true
+    },
+    {
+      "rank": 2,
+      "slug": "harm-reduction-services",
+      "organization": "Harm Reduction Services",
+      "hypothesis": "Additional outreach/supplies → timely effective overdose response and care → finite survival.",
+      "test": "Reconcile FY2025 inventory and donated supplies with grants, staff time and SSP expenses. Seek current unique opioid-risk reach, additional outreach hours and alternative-rescuer timing; stress recurrent overdose and competing mortality, using HEALing Communities as a counterweight rather than kits = lives.",
+      "notEndorsement": true
+    },
+    {
+      "rank": 3,
+      "slug": "walk-san-francisco",
+      "organization": "Walk San Francisco",
+      "hypothesis": "Additional advocacy/implementation support → earlier physical street changes → injury reduction during the time gained.",
+      "test": "Identify one specific uncompleted physical package, baseline public delivery date and bottleneck. Verify whether added staff changes timing/design beyond public plans and co-advocates. Use disjoint fatal/severe exposure, disability/emergency access, traffic displacement, resident share and all capital/maintenance resources.",
+      "notEndorsement": true
+    },
+    {
+      "rank": 4,
+      "slug": "coalition-for-clean-air",
+      "organization": "Coalition for Clean Air",
+      "hypothesis": "Extra technical/policy capacity → additional or earlier exposure reduction → finite health improvement.",
+      "test": "Choose an actual future emissions-compliance or exposure project; separate ambient adult policy model from child YMCA filtration. Reconcile consultants and restricted projects, determine what a gift changes, quantify counterfactual dose/time/population and legal durability, and account for coalition credit and energy/transport harms.",
+      "notEndorsement": true
+    }
+  ],
+  "sequencing": "Start Operation Access and HRS. Walk SF and CCA are the first nonclinical beta tests. Reuse OA clinical anchors for Champions while retaining its own costs, cases, current capacity and recipient identity. Reuse national VTL/End Overdose evidence only where applicable; do not repeat research or add cross-edition benefits. Reuse existing legal-policy evidence for Western but verify its own next-dollar role.",
+  "newLiveCheck": {
+    "url": "https://hrssac.org/funding-sources/",
+    "date": "2026-09-14",
+    "finding": "Official page explicitly states Sacramento County does not fund HRS SSP or drug-use supplies; alternative sources do. This narrows one source of funding, not proof of unrestricted donor dependence."
+  },
+  "creditRules": {
+    "newAlphaCredit": 0,
+    "newBetaCredit": 0,
+    "noNewAuthorTimeForReusedEvidence": true,
+    "individualBetaIntervalsRequired": true,
+    "cdaTimingWarningPreserved": "Prior unexplained clock jump remains excluded; this selection does not restore omitted research credit."
+  },
+  "validation": {
+    "completedAlphaCohort": 25,
+    "selected": 10,
+    "excludedOrAlternate": 15,
+    "uniqueReviewed": 25,
+    "coverageComplete": true,
+    "selectedNonGenericClinical": [
+      "walk-san-francisco",
+      "coalition-for-clean-air",
+      "california-school-based-health-alliance",
+      "western-center-on-law-and-poverty"
+    ],
+    "allReportsRemainedUnchanged": true,
+    "siteGitOutreachActions": false
+  },
+  "limits": "No donor-ready recommendation, actual donation, verified current marginal offer or new beta report is created. All25 remain eligible for reassessment; exclusion does not imply no benefit, and unpriced rights, welfare or portfolio health are not automatically zero."
+}

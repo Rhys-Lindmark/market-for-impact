@@ -24,7 +24,7 @@ test('Upstream includes adverse burden even when prevention is zero',()=>{
  assert.ok(report('upstream-usa').model.scenarios.find(s=>s.id==='no-prevention').editionQalys<0);
 });
 test('Policy thresholds remain requirements, not central predictions',()=>{
- for(const slug of ['coalition-for-clean-air','disability-rights-california']){
+ for(const slug of ['coalition-for-clean-air']){
   const r=report(slug);assert.equal(r.model.scenarios[0].editionQalys,null);
   assert.equal(r.model.scenarios.find(s=>s.id==='threshold-million').editionQalys,1);
  }

@@ -67,13 +67,17 @@ Whole-organization realistic unrestricted gift is default, with full costs and m
 
 ## Website contract
 
-Proposed additive routes:
-- /givebetter/california and /givebetter/california/research
-- /givebetter/usa and /givebetter/usa/research
-- /givebetter/cities/<city-slug> and /givebetter/cities/<city-slug>/research
+Published route contract (September 14):
+
+- /givebetter/ redirects to /givebetter/all, the editions directory.
+- /givebetter/san-francisco and /givebetter/san-francisco/all.
+- /givebetter/california and /givebetter/california/all.
+- /givebetter/usa and /givebetter/usa/all.
+- /givebetter/<city-slug> and /givebetter/<city-slug>/all.
+- Legacy /research, /editions and /cities links redirect to the corresponding current route.
 - Edition-specific report routes beneath each edition, backed by shared organization identity/evidence rather than copied SF assumptions.
 
-Reuse GiveBetter x SF design, fonts, responsive behavior, left desktop contents and concise summaries. Landing pages show top four with photos and a link to all 25 reports. Tables use Organization, $ per better life, and Avg. annual expenses (3 years), with source/year disclosures. Show scope once in the page introduction, not redundant geography badges. Use integer thousands, one decimal millions.
+Reuse GiveBetter x SF design, fonts, responsive behavior, left desktop contents and concise summaries. Landing pages show top four with photos and a link to all reports once recommendations qualify; do not manufacture four picks for unfinished editions. Tables use Organization, $ per better life, and Avg. annual expenses (3 years). Fiscal-year details, sources and accounting scope live in each report's annual-expenses appendix, not list-row dropdowns. Remove repetitive readiness lines from the lists while retaining substantive scope and evidence in reports. Use integer thousands, one decimal millions.
 
 Reports follow the accepted GiveWell-style structure: three-sentence what they do; three substantive strengths; three reservations; concrete services per dollar and their health connection; monitoring disclosure; qualitative assessment; funding; annual spending breakdown; sources and model metadata at bottom. Version labels belong only in expandable provenance. Do not copy GiveWell's endorsement language where our evidence does not justify it. Do not invent photos, finances, recommendations or tracking data.
 

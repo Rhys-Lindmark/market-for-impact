@@ -1,0 +1,1158 @@
+{
+  "schemaVersion": 1,
+  "input": "/tmp/givebetter-la-beta-urban-peace.json",
+  "status": "corrected-beta-research-accepted-not-donor-ready",
+  "corrections": [
+    {
+      "path": "priceScope",
+      "before": "Conditional partial-health beta hypothesis, not an independently accepted donor recommendation.",
+      "after": "Whole annual UPI recognized operating expense, including regrants and non-LA work, charged to a conditional finite LA Peacemakers participant-health branch. External partner/public resources and other portfolio benefits are unmeasured; external resources are stress-tested separately. This is not measured unrestricted portfolio return, full social-cost effectiveness, a lower bound or a donor recommendation.",
+      "reason": "Existing label disclosed partiality but not full-recipient numerator and external-resource exclusion."
+    },
+    {
+      "path": "model.inputs",
+      "before": [
+        {
+          "name": "C",
+          "value": 8897684,
+          "unit": "USD per annual full recipient budget",
+          "basis": "observed",
+          "rationale": "Original FY2025 expense, audited-total reconciliation and grants retained once.",
+          "sourceIds": [
+            "upi-99025",
+            "upi-sd25",
+            "upi-si25"
+          ]
+        },
+        {
+          "name": "N",
+          "value": 1027,
+          "unit": "prospective engaged participant-equivalents for one full service year",
+          "basis": "judgment",
+          "rationale": "1,027 first-year enrollments anchors scale only; engagement and person-time not observed.",
+          "sourceIds": [
+            "upi-y1",
+            "upi-progress"
+          ]
+        },
+        {
+          "name": "r",
+          "value": 0.04,
+          "unit": "serious shooting/homicide victimizations per participant-year without the modeled increment",
+          "basis": "judgment",
+          "rationale": "Below annualized READI control benchmark; local mix and background declines uncertain.",
+          "sourceIds": [
+            "upi-readi-full",
+            "upi-current"
+          ]
+        },
+        {
+          "name": "e",
+          "value": 0.1,
+          "unit": "relative victimization reduction",
+          "basis": "judgment",
+          "rationale": "10% working transport judgment, not the READI TOT or GRYD retaliation coefficient.",
+          "sourceIds": [
+            "upi-readi-full",
+            "upi-gryd"
+          ]
+        },
+        {
+          "name": "f",
+          "value": 0.2,
+          "unit": "fatal share of avoided modeled victimizations",
+          "basis": "judgment",
+          "rationale": "20%; not estimated from the broadly defined UPI injury graph.",
+          "sourceIds": [
+            "upi-y1"
+          ]
+        },
+        {
+          "name": "u",
+          "value": 0.8,
+          "unit": "health utility while alive after initially avoided death",
+          "basis": "judgment",
+          "rationale": ".8 constant simplified utility, not measured recipient health.",
+          "sourceIds": []
+        },
+        {
+          "name": "T",
+          "value": 47,
+          "unit": "maximum downstream years after initially avoided death",
+          "basis": "judgment",
+          "rationale": "47-year finite cap, not a verified life expectancy.",
+          "sourceIds": []
+        },
+        {
+          "name": "m",
+          "value": 0.01,
+          "unit": "annual all-cause mortality after an initially avoided injury",
+          "basis": "judgment",
+          "rationale": "1% includes continuing violence and other mortality; illustrative constant hazard, not immunity or an age-specific life table.",
+          "sourceIds": []
+        },
+        {
+          "name": "d",
+          "value": 0.03,
+          "unit": "annual discount rate",
+          "basis": "judgment",
+          "rationale": "3% normative health and future-cost discount.",
+          "sourceIds": []
+        },
+        {
+          "name": "qa",
+          "value": 0.1,
+          "unit": "acute QALYs lost per nonfatal injury",
+          "basis": "judgment",
+          "rationale": ".1 immediate-area approximation; not derived from PTSD prevalence.",
+          "sourceIds": [
+            "upi-survivors"
+          ]
+        },
+        {
+          "name": "du",
+          "value": 0.05,
+          "unit": "annual chronic utility decrement per nonfatal injury",
+          "basis": "judgment",
+          "rationale": ".05 across all survivors as an expected average, not everyone permanently disabled.",
+          "sourceIds": [
+            "upi-survivors"
+          ]
+        },
+        {
+          "name": "Tn",
+          "value": 10,
+          "unit": "maximum chronic morbidity years",
+          "basis": "judgment",
+          "rationale": "10 years; beyond the observed follow-up and varied as a judgment.",
+          "sourceIds": [
+            "upi-survivors"
+          ]
+        },
+        {
+          "name": "a",
+          "value": 0.75,
+          "unit": "UPI-enabled fraction after partner continuation",
+          "basis": "judgment",
+          "rationale": ".75, separate from private gift response; no measured attributable fraction.",
+          "sourceIds": [
+            "upi-y1",
+            "upi-si25"
+          ]
+        },
+        {
+          "name": "b",
+          "value": 0.5,
+          "unit": "effective private-funding capacity response",
+          "basis": "judgment",
+          "rationale": ".5 after secured funding, reserves, substitution and allocation; no verified gift-sized gap.",
+          "sourceIds": [
+            "upi-99025",
+            "upi-bscc-contract",
+            "upi-city-cao",
+            "upi-city-final",
+            "upi-current"
+          ]
+        },
+        {
+          "name": "g",
+          "value": 1,
+          "unit": "LA share of modeled branch benefit",
+          "basis": "judgment",
+          "rationale": "1 for LA resident participant branch; local residence still to verify, no headquarters allocation.",
+          "sourceIds": [
+            "upi-y1"
+          ]
+        },
+        {
+          "name": "H",
+          "value": 0,
+          "unit": "additional LA QALYs lost outside modeled victimizations",
+          "basis": "judgment",
+          "rationale": "0 central is not safety evidence; additive worker/privacy/displacement harm retained in stress.",
+          "sourceIds": []
+        },
+        {
+          "name": "D",
+          "value": 1,
+          "unit": "finite years of risk reduction for the same cohort",
+          "basis": "judgment",
+          "rationale": "1 central; fractional bridge and two-year cases cannot be read as repeated new cohorts.",
+          "sourceIds": []
+        },
+        {
+          "name": "rho",
+          "value": 1,
+          "unit": "annual persistence of relative effect after first year",
+          "basis": "judgment",
+          "rationale": "1 irrelevant for central D=1; .5 in durability-only second-year stress.",
+          "sourceIds": []
+        }
+      ],
+      "after": [
+        {
+          "name": "C",
+          "value": 8897684,
+          "unit": "USD per annual full recipient budget",
+          "basis": "observed",
+          "rationale": "Original FY2025 expense, audited-total reconciliation and grants retained once.",
+          "sourceIds": [
+            "upi-99025",
+            "upi-sd25",
+            "upi-si25"
+          ]
+        },
+        {
+          "name": "N",
+          "value": 1027,
+          "unit": "prospective engaged participant-equivalents for one full service year",
+          "basis": "judgment",
+          "rationale": "1,027 first-year enrollments anchors scale only; engagement and person-time not observed.",
+          "sourceIds": [
+            "upi-y1",
+            "upi-progress"
+          ]
+        },
+        {
+          "name": "r",
+          "value": 0.04,
+          "unit": "serious shooting/homicide victimizations per participant-year without the modeled increment",
+          "basis": "judgment",
+          "rationale": "Below annualized READI control benchmark; local mix and background declines uncertain.",
+          "sourceIds": [
+            "upi-readi-full",
+            "upi-current"
+          ]
+        },
+        {
+          "name": "e",
+          "value": 0.1,
+          "unit": "relative victimization reduction",
+          "basis": "judgment",
+          "rationale": "10% working transport judgment, not the READI TOT or GRYD retaliation coefficient.",
+          "sourceIds": [
+            "upi-readi-full",
+            "upi-gryd"
+          ]
+        },
+        {
+          "name": "f",
+          "value": 0.2,
+          "unit": "fatal share of avoided modeled victimizations",
+          "basis": "judgment",
+          "rationale": "20%; not estimated from the broadly defined UPI injury graph.",
+          "sourceIds": [
+            "upi-y1"
+          ]
+        },
+        {
+          "name": "u",
+          "value": 0.8,
+          "unit": "health utility while alive after initially avoided death",
+          "basis": "judgment",
+          "rationale": ".8 constant simplified utility, not measured recipient health.",
+          "sourceIds": []
+        },
+        {
+          "name": "T",
+          "value": 47,
+          "unit": "maximum downstream years after initially avoided death",
+          "basis": "judgment",
+          "rationale": "47-year finite cap, not a verified life expectancy.",
+          "sourceIds": []
+        },
+        {
+          "name": "m",
+          "value": 0.01,
+          "unit": "annual all-cause death probability conditional on being alive",
+          "basis": "judgment",
+          "rationale": "1% annual death probability in discrete survival (1-m)^t; includes continuing violence and other mortality. This is not a continuous hazard or an age-specific recipient life table.",
+          "sourceIds": []
+        },
+        {
+          "name": "d",
+          "value": 0.03,
+          "unit": "annual discount rate",
+          "basis": "judgment",
+          "rationale": "3% normative health and future-cost discount.",
+          "sourceIds": []
+        },
+        {
+          "name": "qa",
+          "value": 0.1,
+          "unit": "acute QALYs lost per nonfatal injury",
+          "basis": "judgment",
+          "rationale": ".1 immediate-area approximation; not derived from PTSD prevalence.",
+          "sourceIds": [
+            "upi-survivors"
+          ]
+        },
+        {
+          "name": "du",
+          "value": 0.05,
+          "unit": "annual chronic utility decrement per nonfatal injury",
+          "basis": "judgment",
+          "rationale": ".05 across all survivors as an expected average, not everyone permanently disabled.",
+          "sourceIds": [
+            "upi-survivors"
+          ]
+        },
+        {
+          "name": "Tn",
+          "value": 10,
+          "unit": "maximum chronic morbidity years",
+          "basis": "judgment",
+          "rationale": "10 years; beyond the observed follow-up and varied as a judgment.",
+          "sourceIds": [
+            "upi-survivors"
+          ]
+        },
+        {
+          "name": "a",
+          "value": 0.75,
+          "unit": "UPI-enabled fraction after partner continuation",
+          "basis": "judgment",
+          "rationale": ".75, separate from private gift response; no measured attributable fraction.",
+          "sourceIds": [
+            "upi-y1",
+            "upi-si25"
+          ]
+        },
+        {
+          "name": "b",
+          "value": 0.5,
+          "unit": "effective private-funding capacity response",
+          "basis": "judgment",
+          "rationale": ".5 after secured funding, reserves, substitution and allocation; no verified gift-sized gap.",
+          "sourceIds": [
+            "upi-99025",
+            "upi-bscc-contract",
+            "upi-city-cao",
+            "upi-city-final",
+            "upi-current"
+          ]
+        },
+        {
+          "name": "g",
+          "value": 1,
+          "unit": "LA share of modeled branch benefit",
+          "basis": "judgment",
+          "rationale": "1 for LA resident participant branch; local residence still to verify, no headquarters allocation.",
+          "sourceIds": [
+            "upi-y1"
+          ]
+        },
+        {
+          "name": "H",
+          "value": 0,
+          "unit": "additional LA QALYs lost outside modeled victimizations",
+          "basis": "judgment",
+          "rationale": "0 central is not safety evidence; additive worker/privacy/displacement harm retained in stress.",
+          "sourceIds": []
+        },
+        {
+          "name": "D",
+          "value": 1,
+          "unit": "finite years of risk reduction for the same cohort",
+          "basis": "judgment",
+          "rationale": "1 central; fractional bridge and two-year cases cannot be read as repeated new cohorts.",
+          "sourceIds": []
+        },
+        {
+          "name": "rho",
+          "value": 1,
+          "unit": "annual persistence of relative effect after first year",
+          "basis": "judgment",
+          "rationale": "1 irrelevant for central D=1; .5 in durability-only second-year stress.",
+          "sourceIds": []
+        }
+      ],
+      "reason": "The actual annuity uses annual death probability, not continuous hazard. Preserve numbers."
+    },
+    {
+      "path": "sections.qualitative",
+      "before": "READI randomly offered intensive employment, cognitive-behavioral programming and support. Only 55% began programming. Its 12% lower victimization estimate is treatment-on-the-treated relative to control compliers, not a significant intent-to-treat reduction or a UPI coefficient. The primary violence index was not significantly improved; outreach-referred participants had a stronger 43% victimization estimate. The 11 events per 100 controls over 20 months is a rate benchmark, not the same estimation denominator. I retain r=.04 and e=.10 as uncertain transport judgments for heterogeneous UPI-supported services, not study-derived effects. [Original trial](https://pmc.ncbi.nlm.nih.gov/articles/PMC10898100/)\n\nA closer local study models nonrandomized GRYD incident response in 2014–17, using spatial-temporally sampled controls. It estimates roughly 14–18% lower retaliatory triggering, with meaningful model and inferential uncertainty. This is neither all violence nor the incremental effect of UPI, training, or Peacemakers. Existing GRYD is part of the baseline; the study supports mechanism plausibility without supporting direct transplantation of a headline reduction. [Original local study](https://www.pjeffreybrantingham.com/_files/ugd/50eba0_8b88fa1624d442979bbff5c880935271.pdf)\n\nMortality value is now an explicit finite survival calculation: .8 health utility, a 47-year cap, 1% annual all-cause mortality and 3% discounting produce 16.7227 QALYs per initially avoided death. The mortality hazard and cap are judgments, not a recipient life table; future victimization risk has not disappeared. Nonfatal value is .1 acute QALY plus .05 annual utility loss for at most ten years, with the same survival/discounting, totaling .5047 QALY. The small Boston cohort supports ongoing morbidity but does not estimate these parameters. Fatal and nonfatal branches are mutually exclusive. [Survivor study](https://pubmed.ncbi.nlm.nih.gov/32530586/)\n\nOnly one service year is central. Extra downstream health is not another program year. Continued exposure to violence, displacement to other people or neighborhoods, worker injury/burnout and privacy harms can erode or reverse benefit. No arrest, crime-cost dollar or reported mediation is directly converted to QALYs. The Richmond evidence previously reviewed remains contextual, not an additional credited channel.",
+      "after": "READI randomly offered intensive employment, cognitive-behavioral programming and support. Only 55% began programming. Its 12% lower victimization estimate is treatment-on-the-treated relative to control compliers, not a significant intent-to-treat reduction or a UPI coefficient. The primary violence index was not significantly improved; outreach-referred participants had a stronger 43% victimization estimate. The 11 events per 100 controls over 20 months is a rate benchmark, not the same estimation denominator. I retain r=.04 and e=.10 as uncertain transport judgments for heterogeneous UPI-supported services, not study-derived effects. [Original trial](https://pmc.ncbi.nlm.nih.gov/articles/PMC10898100/)\n\nA closer local study models nonrandomized GRYD incident response in 2014–17, using spatial-temporally sampled controls. It estimates roughly 14–18% lower retaliatory triggering, with meaningful model and inferential uncertainty. This is neither all violence nor the incremental effect of UPI, training, or Peacemakers. Existing GRYD is part of the baseline; the study supports mechanism plausibility without supporting direct transplantation of a headline reduction. [Original local study](https://www.pjeffreybrantingham.com/_files/ugd/50eba0_8b88fa1624d442979bbff5c880935271.pdf)\n\nMortality value is now an explicit finite survival calculation: .8 health utility, a 47-year cap, 1% annual all-cause mortality and 3% discounting produce 16.7227 QALYs per initially avoided death. The annual death probability and cap are judgments, not a recipient life table; future victimization risk has not disappeared. Nonfatal value is .1 acute QALY plus .05 annual utility loss for at most ten years, with the same survival/discounting, totaling .5047 QALY. The small Boston cohort supports ongoing morbidity but does not estimate these parameters. Fatal and nonfatal branches are mutually exclusive. [Survivor study](https://pubmed.ncbi.nlm.nih.gov/32530586/)\n\nOnly one service year is central. Extra downstream health is not another program year. Continued exposure to violence, displacement to other people or neighborhoods, worker injury/burnout and privacy harms can erode or reverse benefit. No arrest, crime-cost dollar or reported mediation is directly converted to QALYs. The Richmond evidence previously reviewed remains contextual, not an additional credited channel.",
+      "reason": "Align clinical prose with discrete survival formula."
+    },
+    {
+      "path": "sections.funding",
+      "before": "FY2025 revenue was $12,539,904, government grants $5,292,475, cash $6,898,638, unrestricted net assets $6,213,733 and total liabilities $2,716,158. Cash equals about 9.3 months of FY2025 expense before commitments; that is not a current runway. The balance includes restrictions and obligations, and the correct FY2025 audit is still needed. FY2024 audited notes document concentrated funding and accrued external grants, illustrating why gross cash is not a spendable gap. [Latest accounts](https://projects.propublica.org/nonprofits/full_text/202630969349301208/IRS990)\n\nUPI announced an $8 million Ballmer commitment over two years in July 2024 and says Peacemakers funding ends in 2026. This is historical committed support, not a fresh 2026 renewal or an extra amount to add to annual revenue. No verified remaining Peacemakers gap, renewal probability or marginal hiring budget was found. [Ballmer announcement](https://www.urbanpeaceinstitute.org/2024-7-17-upi-receives-8m-grant-from-ballmer-group/) [Dated cliff claim](https://www.urbanpeaceinstitute.org/homicides-drop-by-nearly-27-in-neighborhoods-most-impacted-by-violence-in-2025/)\n\nThe cliff is not all-recipient shutdown: BSCC identifies a separate UPI frontline-training contract from August 2025 through June 2029. Los Angeles also approved a $5.087 million Safe Passage award, with $3,438,380 in provider contracts including Community Partners and Alliance for Community Empowerment, recipient routes also appearing in UPI grants. Council authorization and appropriation do not by themselves prove every contract has been executed or replaces identical services. They do establish a material funded baseline to investigate, not zero public support. [BSCC](https://www.bscc.ca.gov/s_cpgpcalvipgrant/) [Named allocation](https://cityclerk.lacity.org/onlinedocs/2026/26-0542_rpt_cao_05-27-26.pdf) [Adopted recommendations](https://cityclerk.lacity.org/onlinedocs/2026/26-0542_rpt_ps_bf_06-16-26.pdf) [Final appropriation](https://cityclerk.lacity.org/onlinedocs/2026/26-0542_CAF_8-13-26.pdf)\n\nCentral b=.5 remains an explicitly subjective effective capacity response to ordinary private support after reserves, replacement donors, secured grants and current commitments; a=.75 separately represents the UPI-enabled share of service benefit. These discounts must not be estimated from the same loss twice. A short-bridge case credits only a quarter-year gap and then assumes other funding resumes. Complete replacement produces zero. UPI itself describes trust and information-sharing concerns with federal funding; the report treats these as documented organizational constraints, not an independent legal finding. [UPI statement](https://www.urbanpeaceinstitute.org/concerns-regarding-recent-changes-to-doj-cvipi-funding/)\n\nThe filing labeled FY2025 contains FY2024 statements plus a February 2026 corrective-action attachment about recurring contribution-recognition controls. The period mismatch remains unresolved; obtain the correctly matched audit, implementation evidence and a current unrestricted cash/commitments schedule before treating this as donor-ready.",
+      "after": "FY2025 revenue was $12,539,904, government grants $5,292,475, cash $6,898,638, unrestricted net assets $6,213,733 and total liabilities $2,716,158. Cash equals about 9.3 months of FY2025 expense before commitments; that is not a current runway. The balance includes restrictions and obligations, and the correct FY2025 audit is still needed. FY2024 audited notes document concentrated funding and accrued external grants, illustrating why gross cash is not a spendable gap. [Latest accounts](https://projects.propublica.org/nonprofits/full_text/202630969349301208/IRS990)\n\nUPI announced an $8 million Ballmer commitment over two years in July 2024 and says Peacemakers funding ends in 2026. This is historical committed support, not a fresh 2026 renewal or an extra amount to add to annual revenue. No verified remaining Peacemakers gap, renewal probability or marginal hiring budget was found. [Ballmer announcement](https://www.urbanpeaceinstitute.org/2024-7-17-upi-receives-8m-grant-from-ballmer-group/) [Dated cliff claim](https://www.urbanpeaceinstitute.org/homicides-drop-by-nearly-27-in-neighborhoods-most-impacted-by-violence-in-2025/)\n\nThe cliff is not all-recipient shutdown: BSCC identifies a separate UPI frontline-training contract from August 2025 through June 2029. Los Angeles also approved a $5.087 million Safe Passage award, with $3,438,380 in provider contracts including Community Partners and Alliance for Community Empowerment, recipient routes also appearing in UPI grants. Council authorization and appropriation do not by themselves prove every contract has been executed or replaces identical services. They do establish a material funded baseline to investigate, not zero public support. [BSCC](https://www.bscc.ca.gov/s_cpgpcalvipgrant/) [Named allocation](https://cityclerk.lacity.org/onlinedocs/2026/26-0542_rpt_cao_05-27-26.pdf) [Adopted recommendations](https://cityclerk.lacity.org/onlinedocs/2026/26-0542_rpt_ps_bf_06-16-26.pdf) [Final appropriation](https://cityclerk.lacity.org/onlinedocs/2026/26-0542_CAF_8-13-26.pdf)\n\nCentral b=.5 remains an explicitly subjective effective capacity response to ordinary private support after reserves, replacement donors, secured grants and current commitments; a=.75 separately represents the UPI-enabled share of service benefit. These discounts must not be estimated from the same loss twice. A short-bridge case credits only a quarter-year gap and then assumes other funding resumes. Complete replacement produces zero. UPI itself describes trust and information-sharing concerns with federal funding; the report treats these as documented organizational constraints, not an independent legal finding. [UPI statement](https://www.urbanpeaceinstitute.org/concerns-regarding-recent-changes-to-doj-cvipi-funding/)\n\nThe filing labeled FY2025 contains FY2024 statements plus a February 2026 corrective-action attachment about recurring contribution-recognition controls. The period mismatch remains unresolved; obtain the correctly matched audit, implementation evidence and a current unrestricted cash/commitments schedule before treating this as donor-ready.\n\nSeparately, GreenLight Fund announced a $1 million multi-year Oakland Peace Academy investment in October 2025, with cohorts expected in 2027–2029. This supports the existence of funded non-LA activity, not an extra LA benefit or proof that Peacemakers is fully renewed. It should not be added again to historical revenue without a recognition and payment schedule. [Funder announcement](https://greenlightfund.org/greenlight-invests-1m-to-launch-peace-academy/)",
+      "reason": "Current independent funder baseline clarifies whole-recipient scope without inferring local replacement."
+    },
+    {
+      "path": "sources",
+      "before": [
+        {
+          "id": "upi-99025",
+          "title": "FY2025 original accrual Form 990",
+          "publisher": "Urban Peace Institute / IRS",
+          "url": "https://projects.propublica.org/nonprofits/full_text/202630969349301208/IRS990",
+          "published": "2026-04-06",
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-audit24",
+          "title": "FY2024 audited statements with FY2023 comparative totals",
+          "publisher": "Urban Peace Institute / Armanino LLP",
+          "url": "https://docs.candid.org/efiles/9507579/c9e4bb9e-43f7-4903-bc14-803e25ab17f2.pdf",
+          "published": "2025-01-23",
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-audit-mismatch",
+          "title": "Audit filing labeled 2025: FY2024 statements and 2026 corrective-action attachment",
+          "publisher": "Urban Peace Institute / Federal Audit Clearinghouse",
+          "url": "https://projects.propublica.org/nonprofits/display_audit/2025-06-GSAFAC-0000403801",
+          "published": null,
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-y1",
+          "title": "LA Peacemakers Initiative Year One Report",
+          "publisher": "Urban Peace Institute",
+          "url": "https://www.urbanpeaceinstitute.org/wp-content/uploads/2025/05/LA-Peacemakers-Y1-Report.pdf",
+          "published": null,
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-progress",
+          "title": "LA Peacemakers Initiative Progress Report",
+          "publisher": "Urban Peace Institute",
+          "url": "https://www.urbanpeaceinstitute.org/wp-content/uploads/2026/01/LA-Peacemakers-Initiative-Progress-Report.pdf",
+          "published": null,
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-current",
+          "title": "2025 homicide trends and 2026 funding expiration",
+          "publisher": "Urban Peace Institute",
+          "url": "https://www.urbanpeaceinstitute.org/homicides-drop-by-nearly-27-in-neighborhoods-most-impacted-by-violence-in-2025/",
+          "published": "2026-02-19",
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-donate",
+          "title": "Current recipient donation page and EIN",
+          "publisher": "Urban Peace Institute",
+          "url": "https://www.urbanpeaceinstitute.org/donate/",
+          "published": null,
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-readi",
+          "title": "READI Chicago randomized trial policy brief",
+          "publisher": "University of Chicago Crime Lab",
+          "url": "https://crimelab.uchicago.edu/wp-content/uploads/sites/2/2023/08/READI-July-2023.pdf",
+          "published": null,
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-richmond",
+          "title": "Peacemaker Fellowship and urban gun violence in Richmond",
+          "publisher": "Bruno et al. / JAMA Network Open",
+          "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2853466",
+          "published": "2026-08-31",
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-survivors",
+          "title": "Patient-reported outcomes 6–12 months after firearm injury",
+          "publisher": "Herrera-Escobar et al. / Annals of Surgery",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32530586/",
+          "published": "2021-12-01",
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-calvip",
+          "title": "Coalition statement on new CalVIP funding",
+          "publisher": "GIFFORDS",
+          "url": "https://giffords.org/press-release/2026/02/calvip-coalition-statement-on-107-million-in-new-funding-for-community-violence-intervention/",
+          "published": null,
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-99023",
+          "title": "FY2023 original Form 990",
+          "publisher": "Urban Peace Institute / IRS",
+          "url": "https://projects.propublica.org/nonprofits/full_text/202441309349303054/IRS990",
+          "published": "2024-05-09",
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-99024",
+          "title": "FY2024 original Form 990",
+          "publisher": "Urban Peace Institute / IRS",
+          "url": "https://projects.propublica.org/nonprofits/full_text/202501079349300100/IRS990",
+          "published": "2025-04-16",
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-sd24",
+          "title": "FY2024 Schedule D expense reconciliation",
+          "publisher": "Urban Peace Institute / IRS",
+          "url": "https://projects.propublica.org/nonprofits/full_text/202501079349300100/IRS990ScheduleD",
+          "published": "2025-04-16",
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-sd25",
+          "title": "FY2025 Schedule D expense reconciliation",
+          "publisher": "Urban Peace Institute / IRS",
+          "url": "https://projects.propublica.org/nonprofits/full_text/202630969349301208/IRS990ScheduleD",
+          "published": "2026-04-06",
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-si25",
+          "title": "FY2025 Schedule I actual regrant recipients",
+          "publisher": "Urban Peace Institute / IRS",
+          "url": "https://projects.propublica.org/nonprofits/full_text/202630969349301208/IRS990ScheduleI",
+          "published": "2026-04-06",
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-readi-full",
+          "title": "READI Chicago original randomized study",
+          "publisher": "Bhatt et al. / Quarterly Journal of Economics",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10898100/",
+          "published": null,
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-gryd",
+          "title": "Local nonrandomized GRYD incident-response study",
+          "publisher": "Park et al. / Journal of the American Statistical Association",
+          "url": "https://www.pjeffreybrantingham.com/_files/ugd/50eba0_8b88fa1624d442979bbff5c880935271.pdf",
+          "published": "2021-04-22",
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-bscc-contract",
+          "title": "CalVIP capacity-building contracts and awards",
+          "publisher": "California BSCC",
+          "url": "https://www.bscc.ca.gov/s_cpgpcalvipgrant/",
+          "published": null,
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-ballmer",
+          "title": "Two-year Ballmer commitment announced in 2024",
+          "publisher": "Urban Peace Institute",
+          "url": "https://www.urbanpeaceinstitute.org/2024-7-17-upi-receives-8m-grant-from-ballmer-group/",
+          "published": "2024-07-17",
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-city-cao",
+          "title": "Safe Passage award and recipient allocation",
+          "publisher": "Los Angeles City Administrative Officer",
+          "url": "https://cityclerk.lacity.org/onlinedocs/2026/26-0542_rpt_cao_05-27-26.pdf",
+          "published": "2026-05-27",
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-city-adopted",
+          "title": "Adopted Safe Passage recommendations",
+          "publisher": "Los Angeles City Council",
+          "url": "https://cityclerk.lacity.org/onlinedocs/2026/26-0542_rpt_ps_bf_06-16-26.pdf",
+          "published": "2026-06-16",
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-city-final",
+          "title": "Mayor concurrence: Safe Passage funds appropriated",
+          "publisher": "Los Angeles City Clerk",
+          "url": "https://cityclerk.lacity.org/onlinedocs/2026/26-0542_CAF_8-13-26.pdf",
+          "published": "2026-08-13",
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-doj-stance",
+          "title": "UPI statement on constraints of federal replacement funding",
+          "publisher": "Urban Peace Institute",
+          "url": "https://www.urbanpeaceinstitute.org/concerns-regarding-recent-changes-to-doj-cvipi-funding/",
+          "published": "2025-10-24",
+          "retrieved": "2026-09-14"
+        }
+      ],
+      "after": [
+        {
+          "id": "upi-99025",
+          "title": "FY2025 original accrual Form 990",
+          "publisher": "Urban Peace Institute / IRS",
+          "url": "https://projects.propublica.org/nonprofits/full_text/202630969349301208/IRS990",
+          "published": "2026-04-06",
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-audit24",
+          "title": "FY2024 audited statements with FY2023 comparative totals",
+          "publisher": "Urban Peace Institute / Armanino LLP",
+          "url": "https://docs.candid.org/efiles/9507579/c9e4bb9e-43f7-4903-bc14-803e25ab17f2.pdf",
+          "published": "2025-01-23",
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-audit-mismatch",
+          "title": "Audit filing labeled 2025: FY2024 statements and 2026 corrective-action attachment",
+          "publisher": "Urban Peace Institute / Federal Audit Clearinghouse",
+          "url": "https://projects.propublica.org/nonprofits/display_audit/2025-06-GSAFAC-0000403801",
+          "published": null,
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-y1",
+          "title": "LA Peacemakers Initiative Year One Report",
+          "publisher": "Urban Peace Institute",
+          "url": "https://www.urbanpeaceinstitute.org/wp-content/uploads/2025/05/LA-Peacemakers-Y1-Report.pdf",
+          "published": null,
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-progress",
+          "title": "LA Peacemakers Initiative Progress Report",
+          "publisher": "Urban Peace Institute",
+          "url": "https://www.urbanpeaceinstitute.org/wp-content/uploads/2026/01/LA-Peacemakers-Initiative-Progress-Report.pdf",
+          "published": null,
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-current",
+          "title": "2025 homicide trends and 2026 funding expiration",
+          "publisher": "Urban Peace Institute",
+          "url": "https://www.urbanpeaceinstitute.org/homicides-drop-by-nearly-27-in-neighborhoods-most-impacted-by-violence-in-2025/",
+          "published": "2026-02-19",
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-donate",
+          "title": "Current recipient donation page and EIN",
+          "publisher": "Urban Peace Institute",
+          "url": "https://www.urbanpeaceinstitute.org/donate/",
+          "published": null,
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-readi",
+          "title": "READI Chicago randomized trial policy brief",
+          "publisher": "University of Chicago Crime Lab",
+          "url": "https://crimelab.uchicago.edu/wp-content/uploads/sites/2/2023/08/READI-July-2023.pdf",
+          "published": null,
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-richmond",
+          "title": "Peacemaker Fellowship and urban gun violence in Richmond",
+          "publisher": "Bruno et al. / JAMA Network Open",
+          "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2853466",
+          "published": "2026-08-31",
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-survivors",
+          "title": "Patient-reported outcomes 6–12 months after firearm injury",
+          "publisher": "Herrera-Escobar et al. / Annals of Surgery",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32530586/",
+          "published": "2021-12-01",
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-calvip",
+          "title": "Coalition statement on new CalVIP funding",
+          "publisher": "GIFFORDS",
+          "url": "https://giffords.org/press-release/2026/02/calvip-coalition-statement-on-107-million-in-new-funding-for-community-violence-intervention/",
+          "published": null,
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-99023",
+          "title": "FY2023 original Form 990",
+          "publisher": "Urban Peace Institute / IRS",
+          "url": "https://projects.propublica.org/nonprofits/full_text/202441309349303054/IRS990",
+          "published": "2024-05-09",
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-99024",
+          "title": "FY2024 original Form 990",
+          "publisher": "Urban Peace Institute / IRS",
+          "url": "https://projects.propublica.org/nonprofits/full_text/202501079349300100/IRS990",
+          "published": "2025-04-16",
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-sd24",
+          "title": "FY2024 Schedule D expense reconciliation",
+          "publisher": "Urban Peace Institute / IRS",
+          "url": "https://projects.propublica.org/nonprofits/full_text/202501079349300100/IRS990ScheduleD",
+          "published": "2025-04-16",
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-sd25",
+          "title": "FY2025 Schedule D expense reconciliation",
+          "publisher": "Urban Peace Institute / IRS",
+          "url": "https://projects.propublica.org/nonprofits/full_text/202630969349301208/IRS990ScheduleD",
+          "published": "2026-04-06",
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-si25",
+          "title": "FY2025 Schedule I actual regrant recipients",
+          "publisher": "Urban Peace Institute / IRS",
+          "url": "https://projects.propublica.org/nonprofits/full_text/202630969349301208/IRS990ScheduleI",
+          "published": "2026-04-06",
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-readi-full",
+          "title": "READI Chicago original randomized study",
+          "publisher": "Bhatt et al. / Quarterly Journal of Economics",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10898100/",
+          "published": null,
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-gryd",
+          "title": "Local nonrandomized GRYD incident-response study",
+          "publisher": "Park et al. / Journal of the American Statistical Association",
+          "url": "https://www.pjeffreybrantingham.com/_files/ugd/50eba0_8b88fa1624d442979bbff5c880935271.pdf",
+          "published": "2021-04-22",
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-bscc-contract",
+          "title": "CalVIP capacity-building contracts and awards",
+          "publisher": "California BSCC",
+          "url": "https://www.bscc.ca.gov/s_cpgpcalvipgrant/",
+          "published": null,
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-ballmer",
+          "title": "Two-year Ballmer commitment announced in 2024",
+          "publisher": "Urban Peace Institute",
+          "url": "https://www.urbanpeaceinstitute.org/2024-7-17-upi-receives-8m-grant-from-ballmer-group/",
+          "published": "2024-07-17",
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-city-cao",
+          "title": "Safe Passage award and recipient allocation",
+          "publisher": "Los Angeles City Administrative Officer",
+          "url": "https://cityclerk.lacity.org/onlinedocs/2026/26-0542_rpt_cao_05-27-26.pdf",
+          "published": "2026-05-27",
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-city-adopted",
+          "title": "Adopted Safe Passage recommendations",
+          "publisher": "Los Angeles City Council",
+          "url": "https://cityclerk.lacity.org/onlinedocs/2026/26-0542_rpt_ps_bf_06-16-26.pdf",
+          "published": "2026-06-16",
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-city-final",
+          "title": "Mayor concurrence: Safe Passage funds appropriated",
+          "publisher": "Los Angeles City Clerk",
+          "url": "https://cityclerk.lacity.org/onlinedocs/2026/26-0542_CAF_8-13-26.pdf",
+          "published": "2026-08-13",
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-doj-stance",
+          "title": "UPI statement on constraints of federal replacement funding",
+          "publisher": "Urban Peace Institute",
+          "url": "https://www.urbanpeaceinstitute.org/concerns-regarding-recent-changes-to-doj-cvipi-funding/",
+          "published": "2025-10-24",
+          "retrieved": "2026-09-14"
+        },
+        {
+          "id": "upi-greenlight-independent",
+          "title": "GreenLight Fund announces Oakland Peace Academy investment",
+          "publisher": "GreenLight Fund",
+          "url": "https://greenlightfund.org/greenlight-invests-1m-to-launch-peace-academy/",
+          "published": "2025-10-15",
+          "retrieved": "2026-09-14"
+        }
+      ],
+      "reason": "Retain primary source provenance for added baseline."
+    },
+    {
+      "path": "model.nativeCosts",
+      "before": null,
+      "after": "At central scale, full operating expense / 1,027 prospective engaged participant-equivalents is $8663.76; these are not verified engaged person-years. Full expense / 1.5405 modeled additional avoided victimizations is $5775841.61. Fatal events are 0.3081 of that total, not additional events. Finite survival and morbidity convert the mutually exclusive branches to QALYs.",
+      "reason": "Expose native donor-cost units before QALYs."
+    },
+    {
+      "path": "model.sensitivity",
+      "before": [
+        "Central qd=16.722700436719766, qn=0.5047303165397902, net QLA=5.7742936466569965, price/10=15409129.747239782.",
+        "At $1 million per 10 QALYs, the branch requires 23.74 net additional avoided victimizations versus 1.5404999999999998; holding other central assumptions fixed would require e=1.541, greater than 1.",
+        "Each of N, r, e, a and b proportionally changes gross benefit; a better clinical conversion alone cannot resolve weak donor response. No threshold is a giving recommendation.",
+        "A two-year durability claim discounts second-year effect and survival. If a second funded service year is required, the second annual cost is included too; price does not simply halve.",
+        "Attribution/private response a=b=1 gives price/10=5778423.655214918; this is a diagnostic, not default.",
+        "Using comparable mean operating expense gives price/10=10030716.05711163; it is not a claim that current capacity can be bought at historical cost.",
+        "Zero/full replacement and net harm have no finite beneficial price. Joint favorable/low-positive cases carry no assigned probabilities."
+      ],
+      "after": [
+        "Central qd=16.722700436719766, qn=0.5047303165397902, net QLA=5.7742936466569965, price/10=15409129.747239782.",
+        "At $1 million per 10 QALYs, the branch requires 23.74 net additional avoided victimizations versus 1.5404999999999998; holding other central assumptions fixed would require e=1.541, greater than 1.",
+        "Each of N, r, e, a and b proportionally changes gross benefit; a better clinical conversion alone cannot resolve weak donor response. No threshold is a giving recommendation.",
+        "A two-year durability claim discounts second-year effect and survival. If a second funded service year is required, the second annual cost is included too; price does not simply halve.",
+        "Attribution/private response a=b=1 gives price/10=5778423.655214918; this is a diagnostic, not default.",
+        "Using comparable mean operating expense gives price/10=10030716.05711163; it is not a claim that current capacity can be bought at historical cost.",
+        "Zero/full replacement and net harm have no finite beneficial price. Joint favorable/low-positive cases carry no assigned probabilities.",
+        "The quarter-year bridge also raises b from 0.5 to 1: its benefit is one-half of central, not one-quarter. It represents a fully responsive three-month gap; retaining central b=0.5 would yield one-quarter of central benefit. No permanently unfunded year is inferred."
+      ],
+      "reason": "Clarify simultaneous change behind temporary bridge stress."
+    },
+    {
+      "path": "acceptance",
+      "before": {
+        "status": "pending",
+        "evidence": "Isolated beta author proposal; requires independent acceptance before integration."
+      },
+      "after": {
+        "status": "independently-accepted-corrected-awaiting-root-publication",
+        "evidence": "Independent original-cost/source, causal scope and all22scenario audit. Accepted as a beta research report, not donor-ready or endorsed."
+      },
+      "reason": "Independent acceptance applies only to this finite corrected research revision."
+    }
+  ],
+  "scenarioChecks": [
+    {
+      "id": "central",
+      "costUSD": 8897684,
+      "qd": 16.722700436719773,
+      "qn": 0.5047303165397903,
+      "exposure": 1,
+      "avoidedVictimizations": 1.5404999999999998,
+      "allPopulationQalys": 5.774293646656999,
+      "editionQalys": 5.774293646656999,
+      "pricePer10Qalys": 15409129.747239774,
+      "maxAbsoluteError": 2.6645352591003757e-15,
+      "pass": true
+    },
+    {
+      "id": "lower-risk",
+      "costUSD": 8897684,
+      "qd": 16.722700436719773,
+      "qn": 0.5047303165397903,
+      "exposure": 1,
+      "avoidedVictimizations": 0.38512499999999994,
+      "allPopulationQalys": 1.4435734116642498,
+      "editionQalys": 1.4435734116642498,
+      "pricePer10Qalys": 61636518.9889591,
+      "maxAbsoluteError": 6.661338147750939e-16,
+      "pass": true
+    },
+    {
+      "id": "readi-risk",
+      "costUSD": 8897684,
+      "qd": 16.722700436719773,
+      "qn": 0.5047303165397903,
+      "exposure": 1,
+      "avoidedVictimizations": 2.5418250000000002,
+      "allPopulationQalys": 9.527584516984051,
+      "editionQalys": 9.527584516984051,
+      "pricePer10Qalys": 9338866.513478648,
+      "maxAbsoluteError": 3.552713678800501e-15,
+      "pass": true
+    },
+    {
+      "id": "lower-engagement",
+      "costUSD": 8897684,
+      "qd": 16.722700436719773,
+      "qn": 0.5047303165397903,
+      "exposure": 1,
+      "avoidedVictimizations": 0.75,
+      "allPopulationQalys": 2.8112432554318403,
+      "editionQalys": 2.8112432554318403,
+      "pricePer10Qalys": 31650352.500830494,
+      "maxAbsoluteError": 8.881784197001252e-16,
+      "pass": true
+    },
+    {
+      "id": "larger-effect",
+      "costUSD": 8897684,
+      "qd": 16.722700436719773,
+      "qn": 0.5047303165397903,
+      "exposure": 1,
+      "avoidedVictimizations": 3.0809999999999995,
+      "allPopulationQalys": 11.548587293313998,
+      "editionQalys": 11.548587293313998,
+      "pricePer10Qalys": 7704564.873619887,
+      "maxAbsoluteError": 5.329070518200751e-15,
+      "pass": true
+    },
+    {
+      "id": "weak-private-margin",
+      "costUSD": 8897684,
+      "qd": 16.722700436719773,
+      "qn": 0.5047303165397903,
+      "exposure": 1,
+      "avoidedVictimizations": 0.3081,
+      "allPopulationQalys": 1.1548587293313999,
+      "editionQalys": 1.1548587293313999,
+      "pricePer10Qalys": 77045648.73619887,
+      "maxAbsoluteError": 4.440892098500626e-16,
+      "pass": true
+    },
+    {
+      "id": "strong-private-margin",
+      "costUSD": 8897684,
+      "qd": 16.722700436719773,
+      "qn": 0.5047303165397903,
+      "exposure": 1,
+      "avoidedVictimizations": 3.0809999999999995,
+      "allPopulationQalys": 11.548587293313998,
+      "editionQalys": 11.548587293313998,
+      "pricePer10Qalys": 7704564.873619887,
+      "maxAbsoluteError": 5.329070518200751e-15,
+      "pass": true
+    },
+    {
+      "id": "full-replacement",
+      "costUSD": 8897684,
+      "qd": 16.722700436719773,
+      "qn": 0.5047303165397903,
+      "exposure": 1,
+      "avoidedVictimizations": 0,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "pricePer10Qalys": null,
+      "maxAbsoluteError": 0,
+      "pass": true
+    },
+    {
+      "id": "weak-upi-attribution",
+      "costUSD": 8897684,
+      "qd": 16.722700436719773,
+      "qn": 0.5047303165397903,
+      "exposure": 1,
+      "avoidedVictimizations": 0.5135,
+      "allPopulationQalys": 1.9247645488856664,
+      "editionQalys": 1.9247645488856664,
+      "pricePer10Qalys": 46227389.24171932,
+      "maxAbsoluteError": 6.661338147750939e-16,
+      "pass": true
+    },
+    {
+      "id": "quarter-year-bridge",
+      "costUSD": 8897684,
+      "qd": 16.722700436719773,
+      "qn": 0.5047303165397903,
+      "exposure": 0.25,
+      "avoidedVictimizations": 0.7702499999999999,
+      "allPopulationQalys": 2.8871468233284996,
+      "editionQalys": 2.8871468233284996,
+      "pricePer10Qalys": 30818259.49447955,
+      "maxAbsoluteError": 1.3322676295501878e-15,
+      "pass": true
+    },
+    {
+      "id": "finite-durability",
+      "costUSD": 8897684,
+      "qd": 16.722700436719773,
+      "qn": 0.5047303165397903,
+      "exposure": 1.4805825242718447,
+      "avoidedVictimizations": 2.2808373786407765,
+      "allPopulationQalys": 8.549318263254294,
+      "editionQalys": 8.549318263254294,
+      "pricePer10Qalys": 10407477.796496373,
+      "maxAbsoluteError": 1.7763568394002505e-15,
+      "pass": true
+    },
+    {
+      "id": "two-years-funded",
+      "costUSD": 17536212.155339807,
+      "qd": 16.722700436719773,
+      "qn": 0.5047303165397903,
+      "exposure": 1.9611650485436893,
+      "avoidedVictimizations": 3.021174757281553,
+      "allPopulationQalys": 11.32434287985159,
+      "editionQalys": 11.32434287985159,
+      "pricePer10Qalys": 15485412.567770666,
+      "maxAbsoluteError": 5.329070518200751e-15,
+      "pass": true
+    },
+    {
+      "id": "higher-mortality",
+      "costUSD": 8897684,
+      "qd": 12.163082068325604,
+      "qn": 0.4647904822042247,
+      "exposure": 1,
+      "avoidedVictimizations": 1.5404999999999998,
+      "allPopulationQalys": 4.320253375519605,
+      "editionQalys": 4.320253375519605,
+      "pricePer10Qalys": 20595282.79155585,
+      "maxAbsoluteError": 8.881784197001252e-16,
+      "pass": true
+    },
+    {
+      "id": "no-nonfatal-credit",
+      "costUSD": 8897684,
+      "qd": 16.722700436719773,
+      "qn": 0,
+      "exposure": 1,
+      "avoidedVictimizations": 1.5404999999999998,
+      "allPopulationQalys": 5.152264004553361,
+      "editionQalys": 5.152264004553361,
+      "pricePer10Qalys": 17269464.43764642,
+      "maxAbsoluteError": 1.7763568394002505e-15,
+      "pass": true
+    },
+    {
+      "id": "local-leakage",
+      "costUSD": 8897684,
+      "qd": 16.722700436719773,
+      "qn": 0.5047303165397903,
+      "exposure": 1,
+      "avoidedVictimizations": 1.5404999999999998,
+      "allPopulationQalys": 5.774293646656999,
+      "editionQalys": 5.196864281991299,
+      "pricePer10Qalys": 17121255.27471086,
+      "maxAbsoluteError": 2.6645352591003757e-15,
+      "pass": true
+    },
+    {
+      "id": "low-positive",
+      "costUSD": 8897684,
+      "qd": 9.447044662641746,
+      "qn": 0.0466386114738631,
+      "exposure": 1,
+      "avoidedVictimizations": 0.00625,
+      "allPopulationQalys": 0.006166745103691571,
+      "editionQalys": 0.006166745103691571,
+      "pricePer10Qalys": 14428493233.283825,
+      "maxAbsoluteError": 2.6020852139652106e-18,
+      "pass": true
+    },
+    {
+      "id": "favorable",
+      "costUSD": 8897684,
+      "qd": 21.764339549638994,
+      "qn": 1.0309237595033425,
+      "exposure": 1,
+      "avoidedVictimizations": 42.24000000000001,
+      "allPopulationQalys": 262.4910903452537,
+      "editionQalys": 262.4910903452537,
+      "pricePer10Qalys": 338970.8956710456,
+      "maxAbsoluteError": 3.410605131648481e-13,
+      "pass": true
+    },
+    {
+      "id": "zero",
+      "costUSD": 8897684,
+      "qd": 16.722700436719773,
+      "qn": 0.5047303165397903,
+      "exposure": 1,
+      "avoidedVictimizations": 0,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "pricePer10Qalys": null,
+      "maxAbsoluteError": 0,
+      "pass": true
+    },
+    {
+      "id": "adverse",
+      "costUSD": 8897684,
+      "qd": 16.722700436719773,
+      "qn": 0.5047303165397903,
+      "exposure": 1,
+      "avoidedVictimizations": -0.7702499999999999,
+      "allPopulationQalys": -3.8871468233284996,
+      "editionQalys": -3.8871468233284996,
+      "pricePer10Qalys": null,
+      "maxAbsoluteError": 1.3322676295501878e-15,
+      "pass": true
+    },
+    {
+      "id": "external-resources",
+      "costUSD": 11897684,
+      "qd": 16.722700436719773,
+      "qn": 0.5047303165397903,
+      "exposure": 1,
+      "avoidedVictimizations": 1.5404999999999998,
+      "allPopulationQalys": 5.774293646656999,
+      "editionQalys": 5.774293646656999,
+      "pricePer10Qalys": 20604570.40817124,
+      "maxAbsoluteError": 2.6645352591003757e-15,
+      "pass": true
+    },
+    {
+      "id": "historical-cost",
+      "costUSD": 5792030,
+      "qd": 16.722700436719773,
+      "qn": 0.5047303165397903,
+      "exposure": 1,
+      "avoidedVictimizations": 1.5404999999999998,
+      "allPopulationQalys": 5.774293646656999,
+      "editionQalys": 5.774293646656999,
+      "pricePer10Qalys": 10030716.057111625,
+      "maxAbsoluteError": 2.6645352591003757e-15,
+      "pass": true
+    },
+    {
+      "id": "additional-harm",
+      "costUSD": 8897684,
+      "qd": 16.722700436719773,
+      "qn": 0.5047303165397903,
+      "exposure": 1,
+      "avoidedVictimizations": 1.5404999999999998,
+      "allPopulationQalys": 4.774293646656999,
+      "editionQalys": 4.774293646656999,
+      "pricePer10Qalys": 18636650.06493732,
+      "maxAbsoluteError": 2.6645352591003757e-15,
+      "pass": true
+    }
+  ],
+  "auditInterval": {
+    "workerId": "usa_beta_one",
+    "model": "gpt-6-astra",
+    "reasoningEffort": "medium",
+    "startedAt": "2026-09-14T08:36:30Z",
+    "endedAt": "2026-09-14T08:38:40.714Z",
+    "actualSeconds": 130.714,
+    "authorResearchSeconds": 0,
+    "alphaCredit": 0,
+    "betaCredit": 0
+  },
+  "betaAcceptance": {
+    "status": "independently-accepted-corrected",
+    "independent": true,
+    "donorReady": false
+  },
+  "sourceAudit": {
+    "financial": "Reopened FY2024 original audit with FY2023comparative3185128/5293277, originalFY2024ScheduleD100000leasehold-disposal reconciliation to5393277; FY2025Form990 andScheduleD8897684, functional7075093/1264399/558192, government5292475 andcash6898638. Operating mean5792030 retained, separate disposal-loss disclosure preserved. Full recognized donor operating cost is not full external social cost.",
+    "currentFunding": "Fresh officialBSCC indexed primary confirms frontline trainingAug18,2025–Jun30,2029. Reopened CityMay2026CAO original namesCommunityPartners twice andAlliance, provider total3438380 andoverall5087000. Reused author adopted/finalappropriation retrieval; originalfinalPDF opened but text does not expose dollar total. Approval is not individual executed-contract proof. FreshGreenLight primary confirms distinct1mOaklandmulti-year commitment; not LA funding gap.",
+    "causal": "Retained READI randomized-design/TOT interpretation from prior primary review; directPMCchallenge persists, independent indexed source establishes intervention study but not allcoefficients. No READI headline supplies r/e. Reused original localGRYD authorPDF findings as nonrandomized retaliation pathway, not UPI effect. UPI monitoring injury percentages not forced into shooting units; prospectiveNexplicitjudgment.",
+    "clinical": "All22scenario arithmetic independently recomputed with discrete finite survival, exclusivefatal/nonfatal branches, D exposure and discounted second-year fullcost. Corrected hazard word to deathprobability. e,a,b eachonce. Linear multi-year approximation explicitly limited; currentcentral one-year. No false one-reversal/life or unlimitedsurvival.",
+    "geography": "LA participant branchg1 is an assumption; LA/Orange officialMSA retained, national/state/Oakland costs staynumerator, noheadquartershealthallocation.",
+    "auditMismatch": "Existing author visual check and original mismatchedpackage retained; in-memorypypdfcovertextencodedglyphs prevent independent textualread. Correct matchedFY2024audit independentlyverified; missingcorrectFY2025package remains explicit no cleanopinion inferred from ScheduleD."
+  },
+  "financialEvidence": "/tmp/upi-independent-financial-evidence.json",
+  "mathReproduction": "/tmp/upi-independent-audit.mjs",
+  "sourceReproduction": "/tmp/upi-independent-source-check.py",
+  "retainedAuthorSeconds": 932.957,
+  "timingConclusion": "Actual retained beta authorinterval08:01:55–08:17:27.957=932.957seconds,15.5493minutes; below approximate30min ceiling without paddedcredit. Audit separate; prioralpha not recounted. Reportresearch acceptance does not certify every authorsecond.",
+  "readinessChecklist": {
+    "all22ScenariosReproduced": true,
+    "centralAndAnnualExpenseNumbersUnchanged": true,
+    "threeOriginalConsecutiveOperatingPeriodsSupported": true,
+    "nonoperatingLossNotSilentlyMixed": true,
+    "partialScopeVisible": true,
+    "currentFundingReplacementBaselinePresent": true,
+    "finiteClinicalModel": true,
+    "independentAcceptance": true,
+    "correctFY2025AuditMatched": false,
+    "marginalGapVerified": false,
+    "donorReady": false
+  },
+  "nextBottleneck": "Correct matchedFY2025audit/control remediation plus currentaward/cash/commitment schedule that identifies extra otherwise-unfunded LA engagedperson-time. Conditional central remains defensible as judgment while these are unresolved.",
+  "spaceSaver": "Existing evidence and runtime reused; originals in memory, no additionalPDFimages, installs/builds/servers/Site/Git or nestedagents."
+}

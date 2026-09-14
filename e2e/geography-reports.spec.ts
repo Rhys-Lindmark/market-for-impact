@@ -43,7 +43,7 @@ test('published research has measured headers, usable models and scoped canonica
   ["los-angeles","east-yard-communities-for-environmental-justice","East Yard Communities for Environmental Justice","13",false],
   ["los-angeles","vietnamese-american-cancer-foundation","Vital Access Care Foundation (Vietnamese American Cancer Foundation)","8",true],
   ["los-angeles","maternal-mental-health-now","Maternal Mental Health NOW","7",true],
-  ["los-angeles","urban-peace-institute","Urban Peace Institute","10",true],
+  ["los-angeles","urban-peace-institute","Urban Peace Institute","25",true],
   ["los-angeles","public-law-center","Public Law Center","32",true],
   ["los-angeles","inner-city-law-center","Inner City Law Center","8",true],
   ["los-angeles","human-options","Human Options","9",true],
@@ -96,7 +96,7 @@ test('published research has measured headers, usable models and scoped canonica
   const route=`/${edition}/charities/${slug}`;
   await page.goto(route);
   await expect(page.getByRole('heading',{name,exact:true})).toBeVisible();
-  const models=edition==='usa'&&['end-overdose','center-for-science-in-the-public-interest','surgery-on-sunday'].includes(slug)?'GPT-6 Astra Light \\+ GPT-6 Astra Medium':'GPT-6 Astra Light';
+  const models=(edition==='usa'&&['end-overdose','center-for-science-in-the-public-interest','surgery-on-sunday'].includes(slug))||(edition==='los-angeles'&&slug==='urban-peace-institute')?'GPT-6 Astra Light \\+ GPT-6 Astra Medium':'GPT-6 Astra Light';
   await expect(page.locator('.report-research-effort summary')).toHaveText(new RegExp(`^Research time: ~?${minutes} min on ${models}$`));
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href','https://ai.rhyslindmark.com/givebetter'+route);
   if(donate)await expect(page.locator('.report-donate')).toHaveAttribute('href',/^https:\/\//);

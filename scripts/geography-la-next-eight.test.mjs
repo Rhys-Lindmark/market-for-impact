@@ -42,8 +42,10 @@ test('MMHN training and finite peer effects are deduplicated before discounting'
 test('UPI injury risk, finite health, coalition and funding attribution',()=>{
  const r=get('urban-peace-institute');
  for(const s of r.model.scenarios){
-  const p=params(s,{N:1027,r:.04,e:.1,f:.2,qd:20,qn:.5,a:.75,b:.5,g:1,H:0});
-  const q=p.N*p.r*p.e*(p.f*p.qd+(1-p.f)*p.qn)*p.a*p.b;
+  const p=JSON.parse(s.assumptions.slice(0,s.assumptions.indexOf('}')+1));
+  const A=T=>{let n=0;for(let t=1;t<=T;t++)n+=((1-p.m)/(1+p.d))**t;return n;};
+  let exposure=0;for(let t=0;t<Math.ceil(p.D);t++)exposure+=Math.min(1,p.D-t)*((1-p.m)*p.rho/(1+p.d))**t;
+  const q=p.N*p.r*p.e*(p.f*p.u*A(p.T)+(1-p.f)*(p.qa+p.du*A(p.Tn)))*p.a*p.b*exposure;
   close(s.allPopulationQalys,q-p.H);close(s.editionQalys,q*p.g-p.H);
  }
  close(expenseAverage(r),(3185128+5293277+8897684)/3);
@@ -73,7 +75,7 @@ test('Human Options finite counseling/safety branches and three original years',
 test('all eight retain actual author intervals and explicit component scope',()=>{
  const slugs=['communities-for-a-better-environment','east-yard-communities-for-environmental-justice','vietnamese-american-cancer-foundation','maternal-mental-health-now','urban-peace-institute','public-law-center','inner-city-law-center','human-options'];
  for(const slug of slugs){
-  const r=get(slug);assert.equal(r.stage,'alpha');assert.equal(r.acceptance.status,'accepted');
+  const r=get(slug);assert.equal(r.stage,slug==='urban-peace-institute'?'beta':'alpha');assert.equal(r.acceptance.status,'accepted');
   assert.equal(r.summary.what.length,3);
   for(const id of r.sessionIds){const s=data.sessions.find(x=>x.id===id);assert.ok(Date.parse(s.endedAt)>Date.parse(s.startedAt));assert.doesNotMatch(s.evidence,/\/tmp\//);}
   if(reportPrice(r)>0)assert.match(r.priceScope,/partial-health/);

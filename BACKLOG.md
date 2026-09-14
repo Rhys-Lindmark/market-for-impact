@@ -2,6 +2,8 @@
 
 ## Active priority — eleven-edition geographic expansion (September 13)
 
+UPI deeper review accepted September14: LA25/25 beta1/10 pending deployment. Central15.4M per10LAQALYs, no giving recommendation; original financial/regrant verification, finite survivor model and new public funding baseline. Twenty-two scenarios reproduce. CA25/25 beta0/10, USA25/25 beta3/10, NYC6/25 beta0/10; Chicago Houston Denver Seattle Boston Atlanta Detroit each0/25 beta0/10. All11 D100/S25 complete in source. Next NYC third3, fourth3 acceptance, OperationAccess and Lestonnac independent beta acceptance.
+
 Detroit D100/S25 accepted September14: all eleven editions now have100 source-screened candidates and25 comparative priorities (1100/275). No alpha or beta credit for discovery. Current service transfers/closures, Medicaid restart and giving-route limits are explicit. Evidence: docs/geography-discovery/detroit-independent-acceptance.json. Counts remain CA25/25 beta0/10; USA25/25 beta3/10; LA25/25 beta0/10; NYC6/25 beta0/10; Chicago Houston Denver Seattle Boston Atlanta Detroit each0/25 beta0/10. Deploy with the next accepted report batch; root next accepts UPI beta and NYC third three.
 
 NYC next three accepted September14: NYC6/25 beta0/10; CA25/25 beta0/10, USA25/25 beta3/10, LA25/25 beta0/10; Chicago Houston Denver Seattle Boston Atlanta Detroit each0/25 beta0/10. All twenty scenarios independently reproduced; partial-health scope and current-law/public-funding counterfactuals retained. Evidence: docs/geography-discovery/nyc-next-three-acceptance.md. Next: accepted UPI beta, NYC third three and Detroit discovery integration; ongoing OA/Lestonnac beta and NYC alpha. Deployment remains a release gate.

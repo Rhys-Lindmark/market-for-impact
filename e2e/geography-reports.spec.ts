@@ -16,11 +16,11 @@ test('published research has measured headers, usable models and scoped canonica
   ['los-angeles','sycamores','Sycamores','7',true],
   ['los-angeles','bienestar-human-services','Bienestar Human Services','12',true],
   ["los-angeles","communities-for-a-better-environment","Communities for a Better Environment","10",true],
-  ["los-angeles","east-yard-communities-for-environmental-justice","East Yard Communities for Environmental Justice","10",false],
+  ["los-angeles","east-yard-communities-for-environmental-justice","East Yard Communities for Environmental Justice","13",false],
   ["los-angeles","vietnamese-american-cancer-foundation","Vital Access Care Foundation (Vietnamese American Cancer Foundation)","8",true],
   ["los-angeles","maternal-mental-health-now","Maternal Mental Health NOW","7",true],
   ["los-angeles","urban-peace-institute","Urban Peace Institute","10",true],
-  ["los-angeles","public-law-center","Public Law Center","10",true],
+  ["los-angeles","public-law-center","Public Law Center","32",true],
   ["los-angeles","inner-city-law-center","Inner City Law Center","8",true],
   ["los-angeles","human-options","Human Options","9",true],
   ['usa','shatterproof','Shatterproof','16',false],
@@ -53,14 +53,14 @@ test('published research has measured headers, usable models and scoped canonica
   ['usa','the-headstrong-project','The Headstrong Project','6',true],
   ['usa','dental-lifeline-network','Dental Lifeline Network','12',true],
   ['california','homeless-health-care-los-angeles','Homeless Health Care Los Angeles','6',true],
-  ['california','western-center-on-law-and-poverty','Western Center on Law & Poverty','6',true],
+  ['california','western-center-on-law-and-poverty','Western Center on Law & Poverty','11',true],
   ['california','worksafe','WorkSafe','14',true],
   ['california','coalition-for-clean-air','Coalition for Clean Air','5',true],
   ['california','disability-rights-california','Disability Rights California','13',true],
   ['usa','cribs-for-kids','Cribs for Kids','10',true],
   ['usa','upstream-usa','Upstream USA','11',true],
   ['california','center-for-independent-living','Center for Independent Living','11',true],
-  ['california','comite-civico-del-valle','Comité Cívico del Valle','4',false],
+  ['california','comite-civico-del-valle','Comité Cívico del Valle','6',false],
   ['usa','help-america-hear','Help America Hear','11',false],
   ['usa','rx-outreach','Rx Outreach','9',true],
   ['usa','center-for-science-in-the-public-interest','Center for Science in the Public Interest','8',true],
@@ -105,7 +105,7 @@ test('research table keeps unknown means unknown and shows audited recipient mea
  await expect(page.locator('tr').filter({hasText:'Operation Access'})).toContainText('$1.9M');
  await expect(page.locator('tr').filter({hasText:'Operation Access'})).toContainText('$2.5M');
  await expect(page.locator('tr').filter({hasText:'Homeless Health Care Los Angeles'})).toContainText('$9.6M');
- await expect(page.locator('tr').filter({hasText:'Western Center on Law & Poverty'})).toContainText('$6.9M');
+ await expect(page.locator('tr').filter({hasText:'Western Center on Law & Poverty'})).toContainText('$7.1M');
  await expect(page.locator('tr').filter({hasText:'WorkSafe'})).toContainText('$161.3M');
  await expect(page.locator('tr').filter({hasText:'WorkSafe'}).getByTitle('Legal-protection health only; other impacts unestimated')).toHaveText('$161.3M');
  await expect(page.locator('tr').filter({hasText:'Disability Rights California'})).toContainText('$64.8M');

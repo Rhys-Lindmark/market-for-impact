@@ -1,0 +1,20 @@
+# USA initial cohort completion
+
+Six reports accepted for publication 14 September 2026: Shatterproof, Food Research & Action Center, Center for Environmental Health, Toxic-Free Future, Farmworker Justice and Earthjustice. USA reaches 25/25 initial organization reports. California remains 14/25 and Los Angeles 6/25; other metros remain 0/25. Every new edition remains 0/10 accepted in-depth reviews and has no automatic top-four endorsement.
+
+## Source and model acceptance
+
+The Astra Medium independent audit reproduced the numerical scenarios and checked original financial accounts and decisive clinical/policy sources. Root read the equations, scenario assumptions, source corrections and finance boundaries, independently checked the resulting test implementation, and reopened official FRAC financial/giving routes and Earthjustice's audited statement. Restricted direct clinical impact must not be confused with full portfolio effectiveness.
+
+- Shatterproof: audited gross 2024 resources 52,809,073 include 31,286,172 of donated resources. The 2025 reach paired with 2024 costs is a stationary-scale approximation, not an observed same-year ratio. Profile views are not treatment; starts and retention are distinct assumptions. Resource-excluding accrual expense is not cash flow. Other portfolio benefits are unpriced, and full treatment-provider costs are additional.
+- FRAC: retain the recipient rather than its separately active affiliate. Two-year cost is a judgment extrapolation from observed annual gross expense. The historical nutrition-to-lifetime bridge is explicitly attenuated, linearly allocated and delayed; current continuity and coalition effects are judgments. WIC grants are not assumed to become additional enrollments. Official giving route verified, processor checkout not independently certified.
+- CEH: full IRS expense includes investment-management fees omitted from audited operating totals. Legal agreements and tested products are not exposure reductions or health. Worker-year frontiers are conditional requirements, not a disguised central estimate.
+- Toxic-Free Future: both TCE and PFAS timing branches are retained. A rigid two-year shift of the health stream is a structural approximation, not EPA's estimated extension effect. Exemption uptake, early treatment, state rules and mitigation remain uncertain. Harm is subtracted once; historical policy wins are baseline.
+- Farmworker Justice: the occupational baseline is 52 deaths over twelve years, not 52 each year or all farmworker deaths. Original event addbacks are restored. Heat effectiveness, undercount, geography and policy contribution remain judgments; employer/public implementation costs are outside recipient expenses.
+- Earthjustice: original FY2025 audit confirms 183,685,874 expense including 16,809,973 donated services. Two annual budgets are a planning assumption. Alternative EPA mortality estimates are not added; only future additional implementation is credited, not the already-issued court order. Other pathways and public/compliance resources are not silently assigned zero social cost.
+
+## Verification and remaining diligence
+
+Seven dedicated tests reproduce finite scenario equations/frontiers, resident allocation, zero/downside cases and all six comparable expense means. Source provenance, cohort membership and original organization-specific timing are validated separately. Changed-file lint, full tests, production build, responsive model/table/API interactions and canonical production checks gate release. Broad repository lint retains the documented pre-existing 178 route-link errors and three warnings; no suppression or unrelated route rewrite is included.
+
+The next national phase is ten substantive in-depth reviews selected for plausible donor value and informative uncertainty resolution, not just the lowest speculative number. Current operations, three original financial years, actual marginal capacity and a defensible ordinary-gift model remain necessary before choosing four photo-backed recommendations.

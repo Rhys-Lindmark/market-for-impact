@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {reportPrice} from '../lib/geography-reports.mjs';
+import {formatEditionSensitivity,reportPrice} from '../lib/geography-reports.mjs';
 
 const registry=JSON.parse(fs.readFileSync(new URL('../data/geography-reports.json',import.meta.url)));
 const report=(edition,slug)=>registry.reports.find(r=>r.edition===edition&&r.slug===slug);
@@ -49,6 +49,7 @@ test('Seattle PHRA preserves reported gross cost, adverse and null worlds, and d
  assert.equal(r.ordinaryGiftPricePer10,null);
  assert.equal(r.donorDecision,'HOLD');
  assert.equal(r.summary.what.length,3);
+ assert.ok(r.model.sensitivity.every(note=>typeof note==='string'));
 });
 
 test('Houston TOMAGWA pairs same-year surgery reach and whole-recipient cost',()=>{
@@ -62,4 +63,13 @@ test('Houston TOMAGWA pairs same-year surgery reach and whole-recipient cost',()
  assert.ok(r.model.scenarios.some(s=>s.editionQalys===0));
  assert.ok(r.model.scenarios.some(s=>s.editionQalys<0));
  assert.match(r.summary.reservations.join(' '),/unverified|unknown/i);
+});
+
+test('structured legacy sensitivity scenarios render as text, not React objects',()=>{
+ const r=report('new-york-city','center-for-independence-of-the-disabled-new-york');
+ assert.ok(r);
+ assert.equal(typeof r.model.sensitivity[0],'object');
+ const rendered=formatEditionSensitivity(r.model.sensitivity[0]);
+ assert.match(rendered,/capacity-low/i);
+ assert.match(rendered,/per better life/i);
 });

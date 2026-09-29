@@ -2,7 +2,7 @@ import type {Metadata} from 'next';
 import {notFound} from 'next/navigation';
 import progress from '@/docs/geography-progress.json';
 import {canonicalBase,editionPath} from '@/lib/geography-editions.mjs';
-import {editionReportSections,editionResearchEffort,formatEditionMoney,formatAnnualExpense,reportPrice,editionReportPath} from '@/lib/geography-reports.mjs';
+import {editionReportSections,editionResearchEffort,formatEditionMoney,formatAnnualExpense,formatEditionSensitivity,reportPrice,editionReportPath} from '@/lib/geography-reports.mjs';
 import {getEditionReport,reportRegistry} from '@/lib/published-geography-reports';
 import {EditionMasthead} from './GeographyEdition';
 import {Markdown} from './LongFormResearchReport';
@@ -34,7 +34,7 @@ export default function EditionResearchReport({edition,slug}:{edition:string;slu
     {id==='cost'&&<details className="report-method"><summary>Model, assumptions and sensitivity</summary><p>{report.model.costScope}</p><p>{report.model.geographicAttribution}</p><p className="report-equation">{report.model.formula}</p><dl className="report-assumptions">{report.model.inputs.map(i=><div key={i.name}><dt>{i.name}</dt><dd>{JSON.stringify(i.value)} {i.unit} ({i.basis}). {i.rationale} {i.sourceIds.map(id=><a key={id} href={'#source-'+id}>[{id}] </a>)}</dd></div>)}</dl>
      {report.model.scenarios.map(s=><p key={s.id}><strong>{s.label}: </strong>Cost: {s.costUSD===null?'unknown':formatEditionMoney(s.costUSD)}; {e.label} QALYs: {s.editionQalys??'unknown'}; all-population QALYs: {s.allPopulationQalys??'unknown'}. {s.assumptions}</p>)}
      <p><strong>Counterfactual: </strong>{report.model.counterfactual}</p><p><strong>Attribution: </strong>{report.model.attribution}</p><p>{report.model.uncertainty}</p>
-     {!!report.model.sensitivity.length&&<><h3>Sensitivity</h3><ul>{report.model.sensitivity.map(s=><li key={s}>{s}</li>)}</ul></>}
+     {!!report.model.sensitivity.length&&<><h3>Sensitivity</h3><ul>{report.model.sensitivity.map((s,index)=><li key={index}>{formatEditionSensitivity(s)}</li>)}</ul></>}
      {!!report.model.missingInputs.length&&<><h3>Unresolved inputs</h3><ul>{report.model.missingInputs.map(s=><li key={s}>{s}</li>)}</ul></>}
     </details>}
    </section>)}

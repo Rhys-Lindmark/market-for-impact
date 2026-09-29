@@ -23,7 +23,9 @@ concurrency:
 jobs:
   mobile:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    # The full two-viewport suite now has 446 tests; 12 minutes repeatedly
+    # cancels the job after the geography cases pass, before the suite finishes.
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

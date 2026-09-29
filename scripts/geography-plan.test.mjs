@@ -97,7 +97,7 @@ for(const r of seattle.records){
 for(const id of seattleProgress.selectedAlphaIds)assert.ok(seattleProgress.acceptedDiscoveryIds.includes(id));
 assert.ok(seattle.selection.revisedTop25.some(r=>r.name==='WithinReach'));
 assert.equal(seattle.researchTime.reasoningEffort,'medium');
-assert.equal(seattleProgress.alphaPublished,0);assert.equal(seattleProgress.betaAcceptedPublished,0);
+assert.equal(seattleProgress.alphaPublished,1);assert.equal(seattleProgress.betaAcceptedPublished,0);
 const nyc=read('geography-discovery/nyc-independent-acceptance.json');
 const nycProgress=p.editions.find(e=>e.id==='new-york-city');
 assert.equal(nyc.records.length,100);

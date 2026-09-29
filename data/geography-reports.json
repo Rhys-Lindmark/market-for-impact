@@ -56036,6 +56036,520 @@
         "chicago789-will-grundy-medical-clinic-research",
         "will-grundy-medical-clinic-independent-source-audit-20260929"
       ]
+    },
+    {
+      "edition": "chicago",
+      "boundaryVersion": "OMB-23-01-2023-07-21",
+      "organizationId": "ein:36-3563802",
+      "slug": "legal-council-for-health-justice",
+      "organization": "Legal Council for Health Justice",
+      "program": "Medical-legal partnerships and health justice advocacy",
+      "published": "2026-09-29",
+      "updated": "2026-09-29",
+      "stage": "alpha",
+      "donationUrl": "https://legalcouncil.org/donate/",
+      "priceScope": "Illustrative whole-recipient scenario; not a comparable economic-efficiency ranking",
+      "acceptance": {
+        "status": "accepted",
+        "evidence": "Separate Medium independent reviewer recovered original return/ScheduleD; corrected full-recipient known-cost boundary, native denominator and time-period disclosures; scenarios checked. Accepted only as explicitly conditional historical alpha, not full economic ranking or donor recommendation."
+      },
+      "summary": {
+        "what": [
+          "Legal Council uses medical-legal partnerships to help people obtain health care, benefits, housing and disability-related support; its2024 report identifies1,610 clients.",
+          "A finite, judgment-based direct-client scenario gives4.8944 Chicago-MSA QALYs and about$7.82million per10, charging the whole recipient's adjusted expense envelope.",
+          "This is a historical partial-health illustration, not a complete portfolio ranking or a marginal donation price."
+        ],
+        "strengths": [
+          "Original return and ScheduleD now reconcile donated services and event costs.",
+          "Annual report supplies an individual-client count and documented medical-legal service mechanism.",
+          "Whole-recipient support costs remain charged; overlapping benefits and family members are not added."
+        ],
+        "reservations": [
+          "Resident share and every health/additionality coefficient remain uncalibrated judgments.",
+          "Unrecognized partner resources and the opportunity cost of donated services remain unknown.",
+          "Current funding gap and statewide systemic benefits are unmeasured; omitted benefits are not zero."
+        ]
+      },
+      "sections": {
+        "what": "Annual report 2024 p3 identifies 1,610 clients; p7 says individual clients. Legal assistance is not itself a QALY.",
+        "monitoring": "The annual report gives1,610 individual clients, not observed incremental health gains. Request resident counties, unique-year definitions, treatment/benefit counterfactual, unrecognized pro bono time, and costed marginal capacity. Primary FY2024 financial reconciliation is verified; current funding response is not.",
+        "qualitative": "One aggregate morbidity/stress relief pathway among 20% incrementally helped clients, .04 utility for one year, 40% funding additionality; all judged. Money/benefits recovered, class-action coverage, family members and partner healthcare benefits are not independently added.",
+        "cost": "Whole-recipient resource-adjusted accounting envelope: FY ended June30,2024 Form990 PartIX expense3,709,603 + ScheduleD recognized donated services/use100,400 + PartVIII direct event costs19,592 =3,829,595. ScheduleD audited-expense reference3,810,003 restores donated services but not the PartVIII direct event amount. Published donated-resource values are not verified opportunity costs; unrecognized volunteer/partner inputs remain unknown. No program-only numerator.",
+        "funding": "Original FY2024 return reports revenue5,456,290 and ending net assets3,445,358. These are dated balances, not current unrestricted cash or a priced funding gap. FY2025 filing is listed but not incorporated into this historical FY2024 illustration. No donation-responsive capacity expansion has been verified."
+      },
+      "sources": [
+        {
+          "id": "financial",
+          "title": "Original FY2024 Form 990, fiscal year ended June 30, 2024",
+          "publisher": "Legal Council for Health Justice / IRS, rendered by ProPublica",
+          "url": "https://projects.propublica.org/nonprofits/full_text/202403249349300540/IRS990",
+          "published": null,
+          "retrieved": "2026-09-29"
+        },
+        {
+          "id": "activity",
+          "title": "Native service evidence",
+          "publisher": "Legal Council for Health Justice",
+          "url": "https://legalcouncil.org/wp-content/uploads/2024/12/2024-Annual-Report-1.pdf",
+          "published": null,
+          "retrieved": "2026-09-29"
+        },
+        {
+          "id": "geography",
+          "title": "Mission and geographic scope",
+          "publisher": "Legal Council for Health Justice",
+          "url": "https://legalcouncil.org/about/",
+          "published": null,
+          "retrieved": "2026-09-29"
+        },
+        {
+          "id": "schedule-d",
+          "title": "Original FY2024 Schedule D: donated-service reconciliation",
+          "publisher": "Legal Council for Health Justice / IRS, rendered by ProPublica",
+          "url": "https://projects.propublica.org/nonprofits/full_text/202403249349300540/IRS990ScheduleD",
+          "published": null,
+          "retrieved": "2026-09-29"
+        }
+      ],
+      "model": {
+        "version": "chicago-legal-council-for-health-justice-alpha-v2-independent",
+        "formula": "Q_all=N*k*a*u*T*b; Q_MSA=Q_all*g; price10=10*C/Q_MSA if positive, otherwise null. FiniteT<=1year, no survival extrapolation or lifetime multiplier; undiscounted short-horizon illustration.",
+        "costScope": "Whole-recipient resource-adjusted accounting envelope: FY ended June30,2024 Form990 PartIX expense3,709,603 + ScheduleD recognized donated services/use100,400 + PartVIII direct event costs19,592 =3,829,595. ScheduleD audited-expense reference3,810,003 restores donated services but not the PartVIII direct event amount. Published donated-resource values are not verified opportunity costs; unrecognized volunteer/partner inputs remain unknown. No program-only numerator.",
+        "geographicAttribution": "Chicagoland medical and social provider partnerships; g=.95 assumed resident share within pinned 13-county Chicago MSA, not measured. Statewide advocacy benefits excluded from modeled direct-client pathway.",
+        "nativeOutcomes": "Annual report 2024 p3 identifies 1,610 clients; p7 says individual clients. Legal assistance is not itself a QALY.",
+        "counterfactual": "a represents incremental response beyond alternative services; b discounts replacement funding and capacity limits. Both are judgments, not observed causal estimates.",
+        "attribution": "One aggregate morbidity/stress relief pathway among 20% incrementally helped clients, .04 utility for one year, 40% funding additionality; all judged. Money/benefits recovered, class-action coverage, family members and partner healthcare benefits are not independently added.",
+        "uncertainty": "All conversion parameters are illustrative judgments without probabilities, calibration or recipient causal QALY evidence. Scenarios are not confidence intervals or exhaustive bounds. Benefits of rights and autonomy beyond health are unpriced. Costs are not comparable full economic resource costs.",
+        "sensitivity": [
+          "Zero additionality yields zero benefit and no finite price.",
+          "Poor and favorable vary multiple unsupported assumptions; these are illustrative scenarios, not probabilistic bounds.",
+          "Cost changes scale price proportionally; benefit factors scale price inversely.",
+          "Other organizational pathways are not quantified; omitted benefits are not demonstrated zero.",
+          "A50%cost allowance tests missing resources; not calibrated or complete. Lower local share and net-harm stresses show additional downside; no probability weights."
+        ],
+        "missingInputs": [
+          "Unrecognized donated/partner resource costs and valuation opportunity costs",
+          "Resident county distribution",
+          "Causal health utility and duration",
+          "Marginal funding/capacity"
+        ],
+        "inputs": [
+          {
+            "name": "C",
+            "value": 3829595,
+            "basis": "observed",
+            "unit": "USD; accounting expense plus stated addback",
+            "sourceIds": [
+              "financial",
+              "schedule-d"
+            ],
+            "rationale": "Whole-recipient resource-adjusted accounting envelope: FY ended June30,2024 Form990 PartIX expense3,709,603 + ScheduleD recognized donated services/use100,400 + PartVIII direct event costs19,592 =3,829,595. ScheduleD audited-expense reference3,810,003 restores donated services but not the PartVIII direct event amount. Published donated-resource values are not verified opportunity costs; unrecognized volunteer/partner inputs remain unknown. No program-only numerator."
+          },
+          {
+            "name": "N",
+            "value": 1610,
+            "basis": "observed",
+            "unit": "calls or clients as explicitly stated",
+            "sourceIds": [
+              "activity"
+            ],
+            "rationale": "Annual report 2024 p3 identifies 1,610 clients; p7 says individual clients. Legal assistance is not itself a QALY."
+          },
+          {
+            "name": "k",
+            "value": 1,
+            "basis": "judgment",
+            "unit": "fraction",
+            "sourceIds": [],
+            "rationale": "Assumed unique-person fraction; one when client count treated as individual."
+          },
+          {
+            "name": "a",
+            "value": 0.2,
+            "basis": "judgment",
+            "unit": "fraction",
+            "sourceIds": [],
+            "rationale": "One aggregate morbidity/stress relief pathway among 20% incrementally helped clients, .04 utility for one year, 40% funding additionality; all judged. Money/benefits recovered, class-action coverage, family members and partner healthcare benefits are not independently added."
+          },
+          {
+            "name": "u",
+            "value": 0.04,
+            "basis": "judgment",
+            "unit": "utility difference (dimensionless; may be negative in adverse stress)",
+            "sourceIds": [],
+            "rationale": "One aggregate morbidity/stress relief pathway among 20% incrementally helped clients, .04 utility for one year, 40% funding additionality; all judged. Money/benefits recovered, class-action coverage, family members and partner healthcare benefits are not independently added."
+          },
+          {
+            "name": "T",
+            "value": 1,
+            "basis": "judgment",
+            "unit": "years",
+            "sourceIds": [],
+            "rationale": "One aggregate morbidity/stress relief pathway among 20% incrementally helped clients, .04 utility for one year, 40% funding additionality; all judged. Money/benefits recovered, class-action coverage, family members and partner healthcare benefits are not independently added."
+          },
+          {
+            "name": "b",
+            "value": 0.4,
+            "basis": "judgment",
+            "unit": "fraction",
+            "sourceIds": [],
+            "rationale": "One aggregate morbidity/stress relief pathway among 20% incrementally helped clients, .04 utility for one year, 40% funding additionality; all judged. Money/benefits recovered, class-action coverage, family members and partner healthcare benefits are not independently added."
+          },
+          {
+            "name": "g",
+            "value": 0.95,
+            "basis": "judgment",
+            "unit": "fraction",
+            "sourceIds": [],
+            "rationale": "Chicagoland medical and social provider partnerships; g=.95 assumed resident share within pinned 13-county Chicago MSA, not measured. Statewide advocacy benefits excluded from modeled direct-client pathway."
+          }
+        ],
+        "scenarios": [
+          {
+            "id": "central",
+            "label": "Illustrative central",
+            "costUSD": 3829595,
+            "allPopulationQalys": 5.152000000000001,
+            "editionQalys": 4.894400000000001,
+            "assumptions": "{\"N\":1610,\"k\":1,\"a\":0.2,\"u\":0.04,\"T\":1,\"b\":0.4,\"g\":0.95}; all health conversions judged, not measured.",
+            "pricePer10Qalys": 7824442.219679632
+          },
+          {
+            "id": "poor",
+            "label": "Illustrative poor",
+            "costUSD": 3829595,
+            "allPopulationQalys": 0.010062500000000002,
+            "editionQalys": 0.009559375000000002,
+            "assumptions": "{\"N\":1610,\"k\":0.5,\"a\":0.05,\"u\":0.01,\"T\":0.25,\"b\":0.1,\"g\":0.95}; all health conversions judged, not measured.",
+            "pricePer10Qalys": 4006114416.4759717
+          },
+          {
+            "id": "favorable",
+            "label": "Illustrative favorable",
+            "costUSD": 3829595,
+            "allPopulationQalys": 36.064,
+            "editionQalys": 34.260799999999996,
+            "assumptions": "{\"N\":1610,\"k\":1,\"a\":0.4,\"u\":0.08,\"T\":1,\"b\":0.7,\"g\":0.95}; all health conversions judged, not measured.",
+            "pricePer10Qalys": 1117777.4599542336
+          },
+          {
+            "id": "zero",
+            "label": "No additional health benefit",
+            "costUSD": 3829595,
+            "allPopulationQalys": 0,
+            "editionQalys": 0,
+            "assumptions": "{\"N\":1610,\"k\":1,\"a\":0.2,\"u\":0.04,\"T\":1,\"b\":0,\"g\":0.95}; all health conversions judged, not measured.",
+            "pricePer10Qalys": null
+          },
+          {
+            "id": "external-cost",
+            "label": "Illustrative50%additional resource allowance",
+            "costUSD": 5744392.5,
+            "allPopulationQalys": 5.152000000000001,
+            "editionQalys": 4.894400000000001,
+            "assumptions": "{\"N\":1610,\"k\":1,\"a\":0.2,\"u\":0.04,\"T\":1,\"b\":0.4,\"g\":0.95}; judged sensitivity, not a measured outcome or confidence bound.",
+            "pricePer10Qalys": 11736663.329519449
+          },
+          {
+            "id": "geography-low",
+            "label": "Lower local resident attribution",
+            "costUSD": 3829595,
+            "allPopulationQalys": 5.152000000000001,
+            "editionQalys": 2.5760000000000005,
+            "assumptions": "{\"N\":1610,\"k\":1,\"a\":0.2,\"u\":0.04,\"T\":1,\"b\":0.4,\"g\":0.5}; judged sensitivity, not a measured outcome or confidence bound.",
+            "pricePer10Qalys": 14866440.217391301
+          },
+          {
+            "id": "adverse",
+            "label": "Net health harm stress",
+            "costUSD": 3829595,
+            "allPopulationQalys": -1.2880000000000003,
+            "editionQalys": -1.2236000000000002,
+            "assumptions": "{\"N\":1610,\"k\":1,\"a\":0.2,\"u\":-0.01,\"T\":1,\"b\":0.4,\"g\":0.95}; judged sensitivity, not a measured outcome or confidence bound.",
+            "pricePer10Qalys": null
+          }
+        ]
+      },
+      "annualExpenses": [
+        {
+          "year": 2024,
+          "amount": 3709603,
+          "currency": "USD",
+          "periodMonths": 12,
+          "comparable": true,
+          "entity": "Legal Council for Health Justice",
+          "accountingBasis": "Original Form990 PartIX whole-recipient tax expense, excluding100400 donated services and19592 direct event costs restored separately in model.",
+          "sourceId": "financial"
+        }
+      ],
+      "timeCoverage": "partial",
+      "sessionIds": [
+        "31eaaa21-2351-4b82-a681-a1bacc81344a",
+        "chicago-ten-twelve-independent-1",
+        "chicago-ten-twelve-independent-4"
+      ],
+      "donorReadiness": {
+        "status": "not-ready-for-top-pick",
+        "reason": "No current verified marginal funding gap, causal health conversion or complete external-resource cost.",
+        "contactStatus": "No outreach or donation."
+      }
+    },
+    {
+      "edition": "chicago",
+      "boundaryVersion": "OMB-23-01-2023-07-21",
+      "organizationId": "org:metropolitan-tenants",
+      "slug": "metropolitan-tenants-organization",
+      "organization": "Metropolitan Tenants Organization",
+      "program": "Tenant stabilization, organizing and advocacy",
+      "published": "2026-09-29",
+      "updated": "2026-09-29",
+      "stage": "alpha",
+      "donationUrl": "https://secure.lglforms.com/form_engine/s/04Wf1V0HnbJkBWTuSfhC6w?t=1463168968",
+      "priceScope": "Illustrative whole-recipient scenario; not a comparable economic-efficiency ranking",
+      "acceptance": {
+        "status": "accepted",
+        "evidence": "Separate Medium independent reviewer recovered original return/ScheduleD; corrected full-recipient known-cost boundary, native denominator and time-period disclosures; scenarios checked. Accepted only as explicitly conditional historical alpha, not full economic ranking or donor recommendation."
+      },
+      "summary": {
+        "what": [
+          "MTO helps tenants address housing problems through advice, organizing and advocacy. Evanston's2023 report records285 tenant-initiated calls.",
+          "An explicitly narrow Evanston-call scenario gives0.3648 local QALYs and about$21.81million per10, charging all recipient accounting expense.",
+          "The call count is not unique people; health conversion and the partly mismatched annual cost period make this a historical illustration, not an organization-wide ranking."
+        ],
+        "strengths": [
+          "Original city report distinguishes tenant calls from landlords, texts and city requests.",
+          "Original return and ScheduleD agree on whole-recipient accounting expense.",
+          "Evanston is inside the Chicago MSA; broader Chicago and policy effects are not double-counted."
+        ],
+        "reservations": [
+          "Only a narrow service component is modeled while all recipient expense is charged.",
+          "Unique-person and health coefficients are assumed; unrecognized resource costs remain unknown.",
+          "Fiscal-year expense only partly overlaps calendar-year calls; no current marginal funding estimate exists."
+        ]
+      },
+      "sections": {
+        "what": "Original City of Evanston 2023 report p1 records 305 calls, 285 tenant-initiated (20 landlord-initiated), 71 city requests and 29 texts. Only 285 tenant calls used; k=.8 assumed unique-person fraction. Exclude texts, requests, units and all Chicago calls rather than double count unverified overlap. This is a narrow documented pathway, not complete organizational impact.",
+        "monitoring": "Calendar2023 city report verifies285 tenant-initiated calls, not285 unique people or285 successful cases. Unique-call conversion, health effects, matched expense period, organization-wide outcomes and marginal funding response remain unknown. Source reconciliation completed; donation link recovered from the official About page.",
+        "qualitative": "285 tenant calls × .8 unique fraction × .2 incremental housing/stress responders × .04 utility × .5 years × .4 funding additionality. All conversions judged. Other recipient pathways provisionally zero; this omission does not establish a lower bound. No family or policy multiplication.",
+        "cost": "Whole-recipient FY ended June30,2023 PartIX expense795803. Original ScheduleD reconciles audited and return expense at795803; donated-service and direct event addbacks are not reported in the inspected fields. Blank fields do not prove no unrecognized volunteer or partner resources. This is an accounting-cost floor scenario, not measured full economic cost. All recipient support costs retained. Activity is calendar2023, whereas cost is July2022–June2023: the periods overlap only six months. This is a rough annual historical pairing, not exact contemporaneous matching. An augmented-cost sensitivity increases the numerator50% without treating that arbitrary allowance as complete.",
+        "funding": "FY2023 original return reports revenue802710 and net assets695883. These dated accounting balances do not establish current liquidity or a donation-sensitive gap. More recent FY2025 return is listed but not used in this historical scenario. No priced marginal capacity verified. Official About page links the donation form; no transaction attempted."
+      },
+      "sources": [
+        {
+          "id": "financial",
+          "title": "Original FY2023 Form 990, year ended June 30, 2023",
+          "publisher": "Metropolitan Tenants Organization / IRS, rendered by ProPublica",
+          "url": "https://projects.propublica.org/nonprofits/full_text/202441319349301004/IRS990",
+          "published": null,
+          "retrieved": "2026-09-29"
+        },
+        {
+          "id": "activity",
+          "title": "Native service evidence",
+          "publisher": "City of Evanston",
+          "url": "https://cityofevanston.civicweb.net/document/394371/2023%20MTO%20Landlord%20Tenants%20Services%20Report.pdf?handle=BBA52A5BDCB647EE9CE4A56F50233ED6",
+          "published": null,
+          "retrieved": "2026-09-29"
+        },
+        {
+          "id": "geography",
+          "title": "Mission and geographic scope",
+          "publisher": "Metropolitan Tenants Organization",
+          "url": "https://www.tenants-rights.org/about/",
+          "published": null,
+          "retrieved": "2026-09-29"
+        },
+        {
+          "id": "schedule-d",
+          "title": "Original FY2023 Schedule D reconciliation",
+          "publisher": "Metropolitan Tenants Organization / IRS, rendered by ProPublica",
+          "url": "https://projects.propublica.org/nonprofits/full_text/202441319349301004/IRS990ScheduleD",
+          "published": null,
+          "retrieved": "2026-09-29"
+        }
+      ],
+      "model": {
+        "version": "chicago-metropolitan-tenants-organization-alpha-v2-independent",
+        "formula": "Q_all=N*k*a*u*T*b; Q_MSA=Q_all*g; price10=10*C/Q_MSA if positive, otherwise null. FiniteT<=1year, no survival extrapolation or lifetime multiplier; undiscounted short-horizon illustration.",
+        "costScope": "Whole-recipient FY ended June30,2023 PartIX expense795803. Original ScheduleD reconciles audited and return expense at795803; donated-service and direct event addbacks are not reported in the inspected fields. Blank fields do not prove no unrecognized volunteer or partner resources. This is an accounting-cost floor scenario, not measured full economic cost. All recipient support costs retained.",
+        "geographicAttribution": "Modeled service cohort is specifically Evanston, Cook County, fully within pinned Chicago MSA; g=1 conditional on this cohort, not all organization outputs. Broader Chicago work confirmed by original mission page but unquantified here.",
+        "nativeOutcomes": "Original City of Evanston 2023 report p1 records 305 calls, 285 tenant-initiated (20 landlord-initiated), 71 city requests and 29 texts. Only 285 tenant calls used; k=.8 assumed unique-person fraction. Exclude texts, requests, units and all Chicago calls rather than double count unverified overlap. This is a narrow documented pathway, not complete organizational impact.",
+        "counterfactual": "a represents incremental response beyond alternative services; b discounts replacement funding and capacity limits. Both are judgments, not observed causal estimates.",
+        "attribution": "285 tenant calls × .8 unique fraction × .2 incremental housing/stress responders × .04 utility × .5 years × .4 funding additionality. All conversions judged. Other recipient pathways provisionally zero; this omission does not establish a lower bound. No family or policy multiplication.",
+        "uncertainty": "All conversion parameters are illustrative judgments without probabilities, calibration or recipient causal QALY evidence. Scenarios are not confidence intervals or exhaustive bounds. Benefits of rights and autonomy beyond health are unpriced. Costs are not comparable full economic resource costs.",
+        "sensitivity": [
+          "Zero additionality yields zero benefit and no finite price.",
+          "Poor and favorable vary multiple unsupported assumptions; these are illustrative scenarios, not probabilistic bounds.",
+          "Cost changes scale price proportionally; benefit factors scale price inversely.",
+          "Other organizational pathways are not quantified; omitted benefits are not demonstrated zero.",
+          "A50%cost allowance tests missing resources; not calibrated or complete. Lower local share and net-harm stresses show additional downside; no probability weights."
+        ],
+        "missingInputs": [
+          "Unrecognized donated-resource and external partner costs; matched calendar-year financials",
+          "Organizationwide unique annual tenant count",
+          "Call-to-person conversion and causal health utility",
+          "Marginal capacity and funding"
+        ],
+        "inputs": [
+          {
+            "name": "C",
+            "value": 795803,
+            "basis": "observed",
+            "unit": "USD; accounting expense plus stated addback",
+            "sourceIds": [
+              "financial",
+              "schedule-d"
+            ],
+            "rationale": "Whole-recipient FY ended June30,2023 PartIX expense795803. Original ScheduleD reconciles audited and return expense at795803; donated-service and direct event addbacks are not reported in the inspected fields. Blank fields do not prove no unrecognized volunteer or partner resources. This is an accounting-cost floor scenario, not measured full economic cost. All recipient support costs retained."
+          },
+          {
+            "name": "N",
+            "value": 285,
+            "basis": "observed",
+            "unit": "calls or clients as explicitly stated",
+            "sourceIds": [
+              "activity"
+            ],
+            "rationale": "Original City of Evanston 2023 report p1 records 305 calls, 285 tenant-initiated (20 landlord-initiated), 71 city requests and 29 texts. Only 285 tenant calls used; k=.8 assumed unique-person fraction. Exclude texts, requests, units and all Chicago calls rather than double count unverified overlap. This is a narrow documented pathway, not complete organizational impact."
+          },
+          {
+            "name": "k",
+            "value": 0.8,
+            "basis": "judgment",
+            "unit": "fraction",
+            "sourceIds": [],
+            "rationale": "Assumed unique-person fraction; one when client count treated as individual."
+          },
+          {
+            "name": "a",
+            "value": 0.2,
+            "basis": "judgment",
+            "unit": "fraction",
+            "sourceIds": [],
+            "rationale": "285 tenant calls × .8 unique fraction × .2 incremental housing/stress responders × .04 utility × .5 years × .4 funding additionality. All conversions judged. Other recipient pathways provisionally zero; this omission does not establish a lower bound. No family or policy multiplication."
+          },
+          {
+            "name": "u",
+            "value": 0.04,
+            "basis": "judgment",
+            "unit": "utility difference (dimensionless; may be negative in adverse stress)",
+            "sourceIds": [],
+            "rationale": "285 tenant calls × .8 unique fraction × .2 incremental housing/stress responders × .04 utility × .5 years × .4 funding additionality. All conversions judged. Other recipient pathways provisionally zero; this omission does not establish a lower bound. No family or policy multiplication."
+          },
+          {
+            "name": "T",
+            "value": 0.5,
+            "basis": "judgment",
+            "unit": "years",
+            "sourceIds": [],
+            "rationale": "285 tenant calls × .8 unique fraction × .2 incremental housing/stress responders × .04 utility × .5 years × .4 funding additionality. All conversions judged. Other recipient pathways provisionally zero; this omission does not establish a lower bound. No family or policy multiplication."
+          },
+          {
+            "name": "b",
+            "value": 0.4,
+            "basis": "judgment",
+            "unit": "fraction",
+            "sourceIds": [],
+            "rationale": "285 tenant calls × .8 unique fraction × .2 incremental housing/stress responders × .04 utility × .5 years × .4 funding additionality. All conversions judged. Other recipient pathways provisionally zero; this omission does not establish a lower bound. No family or policy multiplication."
+          },
+          {
+            "name": "g",
+            "value": 1,
+            "basis": "judgment",
+            "unit": "fraction",
+            "sourceIds": [],
+            "rationale": "Modeled service cohort is specifically Evanston, Cook County, fully within pinned Chicago MSA; g=1 conditional on this cohort, not all organization outputs. Broader Chicago work confirmed by original mission page but unquantified here."
+          }
+        ],
+        "scenarios": [
+          {
+            "id": "central",
+            "label": "Illustrative central",
+            "costUSD": 795803,
+            "allPopulationQalys": 0.3648,
+            "editionQalys": 0.3648,
+            "assumptions": "{\"N\":285,\"k\":0.8,\"a\":0.2,\"u\":0.04,\"T\":0.5,\"b\":0.4,\"g\":1}; all health conversions judged, not measured.",
+            "pricePer10Qalys": 21814775.219298244
+          },
+          {
+            "id": "poor",
+            "label": "Illustrative poor",
+            "costUSD": 795803,
+            "allPopulationQalys": 0.0017812500000000003,
+            "editionQalys": 0.0017812500000000003,
+            "assumptions": "{\"N\":285,\"k\":0.5,\"a\":0.05,\"u\":0.01,\"T\":0.25,\"b\":0.1,\"g\":1}; all health conversions judged, not measured.",
+            "pricePer10Qalys": 4467665964.91228
+          },
+          {
+            "id": "favorable",
+            "label": "Illustrative favorable",
+            "costUSD": 795803,
+            "allPopulationQalys": 6.384,
+            "editionQalys": 6.384,
+            "assumptions": "{\"N\":285,\"k\":1,\"a\":0.4,\"u\":0.08,\"T\":1,\"b\":0.7,\"g\":1}; all health conversions judged, not measured.",
+            "pricePer10Qalys": 1246558.5839598996
+          },
+          {
+            "id": "zero",
+            "label": "No additional health benefit",
+            "costUSD": 795803,
+            "allPopulationQalys": 0,
+            "editionQalys": 0,
+            "assumptions": "{\"N\":285,\"k\":0.8,\"a\":0.2,\"u\":0.04,\"T\":0.5,\"b\":0,\"g\":1}; all health conversions judged, not measured.",
+            "pricePer10Qalys": null
+          },
+          {
+            "id": "external-cost",
+            "label": "Illustrative50%additional resource allowance",
+            "costUSD": 1193704.5,
+            "allPopulationQalys": 0.3648,
+            "editionQalys": 0.3648,
+            "assumptions": "{\"N\":285,\"k\":0.8,\"a\":0.2,\"u\":0.04,\"T\":0.5,\"b\":0.4,\"g\":1}; judged sensitivity, not a measured outcome or confidence bound.",
+            "pricePer10Qalys": 32722162.82894737
+          },
+          {
+            "id": "geography-low",
+            "label": "Lower local resident attribution",
+            "costUSD": 795803,
+            "allPopulationQalys": 0.3648,
+            "editionQalys": 0.32832,
+            "assumptions": "{\"N\":285,\"k\":0.8,\"a\":0.2,\"u\":0.04,\"T\":0.5,\"b\":0.4,\"g\":0.9}; judged sensitivity, not a measured outcome or confidence bound.",
+            "pricePer10Qalys": 24238639.132553607
+          },
+          {
+            "id": "adverse",
+            "label": "Net health harm stress",
+            "costUSD": 795803,
+            "allPopulationQalys": -0.0912,
+            "editionQalys": -0.0912,
+            "assumptions": "{\"N\":285,\"k\":0.8,\"a\":0.2,\"u\":-0.01,\"T\":0.5,\"b\":0.4,\"g\":1}; judged sensitivity, not a measured outcome or confidence bound.",
+            "pricePer10Qalys": null
+          }
+        ]
+      },
+      "annualExpenses": [
+        {
+          "year": 2023,
+          "amount": 795803,
+          "currency": "USD",
+          "periodMonths": 12,
+          "comparable": true,
+          "entity": "Metropolitan Tenants Organization",
+          "accountingBasis": "Original Form990 fiscal yearJuly2022–June2023 expense; ScheduleD audited and tax totals reconcile. Unrecognized donated/external resources not measured.",
+          "sourceId": "financial"
+        }
+      ],
+      "timeCoverage": "partial",
+      "sessionIds": [
+        "be55640c-f70c-448b-970c-fe7e0ea40573",
+        "chicago-ten-twelve-independent-3",
+        "chicago-ten-twelve-independent-5"
+      ],
+      "donorReadiness": {
+        "status": "not-ready-for-top-pick",
+        "reason": "No current verified marginal funding gap, causal health conversion or complete external-resource cost.",
+        "contactStatus": "No outreach or donation."
+      }
     }
   ],
   "sessions": [
@@ -58630,6 +59144,102 @@
         "evidence": "Explicit parent dispatch to independent reviewer chicago_next_accept; actual runtime session"
       },
       "evidence": "work/geography-handoff-20260913/resumed-20260929/nyc-parker-beta-accepted.json"
+    },
+    {
+      "id": "31eaaa21-2351-4b82-a681-a1bacc81344a",
+      "workerId": "chicago-10-12-astra-alpha",
+      "phase": "research",
+      "startedAt": "2026-09-29T19:03:05.229Z",
+      "endedAt": "2026-09-29T19:04:45.801Z",
+      "model": {
+        "id": "gpt-6-astra",
+        "name": "GPT-6 Astra Light",
+        "evidence": "Parent dispatch identifies GPT-6 Astra low researcher runtime",
+        "reasoningEffort": "low"
+      },
+      "evidence": "chicago-ten-twelve-alpha.json",
+      "organizationId": "ein:36-3563802",
+      "stage": "alpha"
+    },
+    {
+      "id": "be55640c-f70c-448b-970c-fe7e0ea40573",
+      "workerId": "chicago-10-12-astra-alpha",
+      "phase": "research",
+      "startedAt": "2026-09-29T19:06:33.285Z",
+      "endedAt": "2026-09-29T19:07:55.371Z",
+      "model": {
+        "id": "gpt-6-astra",
+        "name": "GPT-6 Astra Light",
+        "evidence": "Parent dispatch identifies GPT-6 Astra low researcher runtime",
+        "reasoningEffort": "low"
+      },
+      "evidence": "chicago-ten-twelve-alpha.json",
+      "organizationId": "org:metropolitan-tenants",
+      "stage": "alpha"
+    },
+    {
+      "id": "chicago-ten-twelve-independent-1",
+      "workerId": "chicago-next-accept-independent",
+      "organizationId": "ein:36-3563802",
+      "stage": "alpha",
+      "phase": "source-audit",
+      "startedAt": "2026-09-29T19:10:12Z",
+      "endedAt": "2026-09-29T19:11:09Z",
+      "model": {
+        "id": "gpt-6-astra",
+        "name": "GPT-6 Astra Medium",
+        "reasoningEffort": "medium",
+        "evidence": "Explicit parent independent audit dispatch to chicago_next_accept; actual reviewer runtime"
+      },
+      "evidence": "work/geography-handoff-20260913/resumed-20260929/chicago-ten-twelve-accepted.json"
+    },
+    {
+      "id": "chicago-ten-twelve-independent-3",
+      "workerId": "chicago-next-accept-independent",
+      "organizationId": "org:metropolitan-tenants",
+      "stage": "alpha",
+      "phase": "source-audit",
+      "startedAt": "2026-09-29T19:11:32Z",
+      "endedAt": "2026-09-29T19:12:06Z",
+      "model": {
+        "id": "gpt-6-astra",
+        "name": "GPT-6 Astra Medium",
+        "reasoningEffort": "medium",
+        "evidence": "Explicit parent independent audit dispatch to chicago_next_accept; actual reviewer runtime"
+      },
+      "evidence": "work/geography-handoff-20260913/resumed-20260929/chicago-ten-twelve-accepted.json"
+    },
+    {
+      "id": "chicago-ten-twelve-independent-4",
+      "workerId": "chicago-next-accept-independent",
+      "organizationId": "ein:36-3563802",
+      "stage": "alpha",
+      "phase": "source-audit",
+      "startedAt": "2026-09-29T19:12:06Z",
+      "endedAt": "2026-09-29T19:12:42Z",
+      "model": {
+        "id": "gpt-6-astra",
+        "name": "GPT-6 Astra Medium",
+        "reasoningEffort": "medium",
+        "evidence": "Explicit parent independent audit dispatch to chicago_next_accept; actual reviewer runtime"
+      },
+      "evidence": "work/geography-handoff-20260913/resumed-20260929/chicago-ten-twelve-accepted.json"
+    },
+    {
+      "id": "chicago-ten-twelve-independent-5",
+      "workerId": "chicago-next-accept-independent",
+      "organizationId": "org:metropolitan-tenants",
+      "stage": "alpha",
+      "phase": "source-audit",
+      "startedAt": "2026-09-29T19:12:42Z",
+      "endedAt": "2026-09-29T19:13:11Z",
+      "model": {
+        "id": "gpt-6-astra",
+        "name": "GPT-6 Astra Medium",
+        "reasoningEffort": "medium",
+        "evidence": "Explicit parent independent audit dispatch to chicago_next_accept; actual reviewer runtime"
+      },
+      "evidence": "work/geography-handoff-20260913/resumed-20260929/chicago-ten-twelve-accepted.json"
     }
   ]
 }

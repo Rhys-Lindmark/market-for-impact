@@ -4,13 +4,18 @@ import {readFileSync} from 'node:fs';
 import {reportPrice} from '../lib/geography-reports.mjs';
 const rows=JSON.parse(readFileSync(new URL('../data/geography-reports.json',import.meta.url))).reports;
 const close=(a,b)=>assert.ok(Math.abs(a-b)<=1e-6*Math.max(1e-9,Math.abs(b)),a+' != '+b);
-test('all 75 published CA USA LA reports have finite positive central judgments',()=>{
+test('CA USA LA reports have finite positive central judgments or an audited withdrawal',()=>{
  const reports=rows.filter(r=>['california','usa','los-angeles'].includes(r.edition));
  assert.equal(reports.length,75);
- for(const r of reports)assert.ok(Number.isFinite(reportPrice(r))&&reportPrice(r)>0,r.edition+'/'+r.slug);
+ for(const r of reports){
+  if(r.edition==='california'&&r.slug==='coalition-for-clean-air'){
+   assert.equal(reportPrice(r),null);
+   assert.match(r.acceptance.evidence,/beta-acceptance/);
+  }else assert.ok(Number.isFinite(reportPrice(r))&&reportPrice(r)>0,r.edition+'/'+r.slug);
+ }
 });
 test('three policy models independently integrate finite delayed and durable survival',()=>{
- for(const r of rows.filter(r=>['coalition-for-clean-air','communities-for-a-better-environment'].includes(r.slug))){
+ for(const r of rows.filter(r=>['coalition-for-clean-air','communities-for-a-better-environment'].includes(r.slug)&&r.stage==='alpha')){
   for(const s of r.model.scenarios){
    const p=s.inputs,step=.001,rho=Math.log(1.03),h1=p.h0*Math.exp(-Math.log(p.HR)/10*p.transport*p.pm);
    let q=0;

@@ -25,7 +25,14 @@ for(const file of files){
   if(report.acceptance?.status!=='accepted')throw Error(`Report not accepted: ${report.slug}`);
   for(const source of report.sources){
    if(!Object.hasOwn(source,'published'))source.published=null;
-   if(!source.publisher)source.publisher=source.url.startsWith('https://doi.org/10.1056/')?'New England Journal of Medicine':source.url.includes('propublica.org')?'IRS, hosted by ProPublica':`${report.organization} (source host)`;
+   if(!source.publisher){
+    const sourceUrl=new URL(source.url);
+    source.publisher=sourceUrl.hostname==='doi.org'&&sourceUrl.pathname.startsWith('/10.1056/')
+     ?'New England Journal of Medicine'
+     :sourceUrl.hostname==='projects.propublica.org'
+      ?'IRS, hosted by ProPublica'
+      :`${report.organization} (source host)`;
+   }
   }
   for(const id of report.sessionIds){
    const session=newSessions.find(item=>item.id===id)??registry.sessions.find(item=>item.id===id);

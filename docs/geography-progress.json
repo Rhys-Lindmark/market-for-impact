@@ -1,7 +1,13 @@
 {
   "schemaVersion": 1,
-  "updated": "2026-09-14",
-  "currentPhase": "All eleven D100/S25 pools accepted; publish ready NYC alpha and LA beta while other selected research continues.",
+  "updated": "2026-09-29",
+  "currentPhase": "Publish accepted NYC25/25, Chicago6/25, California3/10 beta and USA5/10 beta; then resume next high-EV Chicago and deeper-review batches.",
+  "usageReserve": {
+    "minimumWeeklyRemainingPercent": 33,
+    "operationalStopRemainingPercent": 45,
+    "checkIntervalActiveMinutes": 15,
+    "atStop": "Checkpoint work and switch the existing heartbeat to daily usage checks until reset; do not consume credits or use a reset automatically."
+  },
   "issue": "https://github.com/Rhys-Lindmark/market-for-impact/issues/333",
   "canonicalBase": "https://ai.rhyslindmark.com/givebetter",
   "models": {
@@ -32,7 +38,7 @@
       "status": "confirmed",
       "discoveryAccepted": 100,
       "alphaPublished": 25,
-      "betaAcceptedPublished": 2,
+      "betaAcceptedPublished": 3,
       "topPicksPublished": 0,
       "nextAction": "Continue frozen beta priorities; verify current donor-ready capacity before selecting top four.",
       "boundaryVersion": "US-CA-state-v1",
@@ -168,7 +174,8 @@
       ],
       "betaIds": [
         "ein:94-3180356",
-        "org:harm-reduction-services"
+        "org:harm-reduction-services",
+        "ein:45-3457853"
       ],
       "topPickIds": [],
       "heldDiscoveryIds": [
@@ -211,7 +218,7 @@
       "status": "confirmed",
       "discoveryAccepted": 100,
       "alphaPublished": 25,
-      "betaAcceptedPublished": 4,
+      "betaAcceptedPublished": 5,
       "topPicksPublished": 0,
       "nextAction": "Continue frozen beta priorities; verify current donor-ready capacity before selecting top four.",
       "boundaryVersion": "USA-50-states-DC-v1",
@@ -349,7 +356,8 @@
         "org:end-overdose",
         "org:center-for-science-in-the-public-interest",
         "org:surgery-on-sunday",
-        "ein:84-6129064"
+        "ein:84-6129064",
+        "org:american-nonsmokers-rights-foundation"
       ],
       "topPickIds": [],
       "heldDiscoveryIds": [
@@ -391,10 +399,10 @@
       "label": "New York City",
       "status": "alpha-in-progress",
       "discoveryAccepted": 100,
-      "alphaPublished": 15,
+      "alphaPublished": 25,
       "betaAcceptedPublished": 0,
       "topPicksPublished": 0,
-      "nextAction": "Continue selected NYC ranks16–25; review completed beta packets for other editions.",
+      "nextAction": "Begin deeper reviews of the 25 accepted NYC reports; retain Ironbound's held draft outside the counted cohort and scrutinize comparable full-resource costs.",
       "boundaryVersion": "OMB-23-01-2023-07-21",
       "discoveryProvisional": 0,
       "acceptedDiscoveryIds": [
@@ -517,7 +525,7 @@
         "org:newark-community-street-team",
         "org:center-for-independence-of-the-disabled-new-york",
         "ein:13-3193119",
-        "org:ironbound-community-corporation",
+        "ein:13-4094385",
         "org:health-and-welfare-council-of-long-island",
         "org:charles-b-wang-community-health-center",
         "org:god-s-love-we-deliver",
@@ -541,7 +549,25 @@
         "ein:22-3619518",
         "org:northern-manhattan-perinatal-partnership",
         "ein:82-0993366",
-        "org:newark-community-street-team"
+        "org:newark-community-street-team",
+        "org:center-for-independence-of-the-disabled-new-york",
+        "ein:13-3193119",
+        "org:health-and-welfare-council-of-long-island",
+        "org:charles-b-wang-community-health-center",
+        "org:god-s-love-we-deliver",
+        "org:mobilization-for-justice",
+        "org:kings-against-violence-initiative",
+        "ein:13-3164464",
+        "org:citizens-housing-and-planning-council",
+        "ein:13-4094385"
+      ],
+      "selectionAmendments": [
+        {
+          "date": "2026-09-29",
+          "removed": "org:ironbound-community-corporation",
+          "added": "ein:13-4094385",
+          "reason": "Ironbound held after independent audit found insufficient financial scope and current exposure-pathway evidence; VOCAL-NY passed a separate primary-source and arithmetic audit. Neither candidate is assumed best in the unscreened remainder."
+        }
       ],
       "betaIds": [],
       "topPickIds": []
@@ -724,7 +750,7 @@
       "label": "Chicago",
       "status": "confirmed",
       "discoveryAccepted": 100,
-      "alphaPublished": 0,
+      "alphaPublished": 6,
       "betaAcceptedPublished": 0,
       "topPicksPublished": 0,
       "nextAction": "Research the accepted25 priorities using edition-specific health attribution, full recipient cost and actual author intervals; selection is not recommendation.",
@@ -832,7 +858,14 @@
         "ein:36-2734184",
         "org:erie-neighborhood-house"
       ],
-      "alphaCohortIds": [],
+      "alphaCohortIds": [
+        "org:chicago-recovery-alliance",
+        "org:above-beyond",
+        "ein:36-3145764",
+        "ein:36-3831793",
+        "org:dupage-health-coalition",
+        "ein:36-4277029"
+      ],
       "betaIds": [],
       "topPickIds": [],
       "selectedAlphaIds": [
@@ -1772,23 +1805,11 @@
     {
       "at": "2026-09-13T19:59:23Z",
       "event": "Accepted CA100/USA100 discovery and selected25 research priorities per edition; four held histories retained outside active cohorts; Denver40 provisional. No alpha/beta publication credit."
+    },
+    {
+      "at": "2026-09-29T18:07:03Z",
+      "event": "Integrated 18 independently accepted report updates: NYC 15→25/25 with held ICC replaced by VOCAL-NY; Chicago 0→6/25; California beta 2→3/10; USA beta 4→5/10. Acceptance is conditional research, not donor-readiness certification."
     }
   ],
-  "activePackets": [
-    {
-      "worker": "ca_discovery",
-      "task": "Los Angeles first40 discovery",
-      "artifact": "/tmp/givebetter-los-angeles-seed.json"
-    },
-    {
-      "worker": "usa_discovery",
-      "task": "NYC first40 discovery",
-      "artifact": "/tmp/givebetter-new-york-seed.json"
-    },
-    {
-      "worker": "expansion_method",
-      "task": "Denver final60 discovery",
-      "artifact": "/tmp/givebetter-denver-wave2.json"
-    }
-  ]
+  "activePackets": []
 }

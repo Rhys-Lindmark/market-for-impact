@@ -20,7 +20,11 @@ for(const slug of ['remote-area-medical','immunize-org','green-and-healthy-homes
    }else if(slug==='green-and-healthy-homes-initiative'){
     q=s.costUSD*p.b*p.f/p.c*(p.s*p.e*(p.d1+p.d2/1.03)*p.u/365-p.h);
    }else{
-    q=s.costUSD/p.C*p.P*((p.rD*p.L+p.rM*p.qM)*p.z*p.w*p.t-p.h);
+    const years=Array.from({length:p.T},(_,i)=>(p.retention*p.cohortSurvival)**i/(1+p.discount)**(i+1)).reduce((a,b)=>a+b,0);
+    const rescued=Array.from({length:p.lifeYears},(_,i)=>p.utility*p.rescuedSurvival**(i+1)/(1+p.discount)**(i+1)).reduce((a,b)=>a+b,0);
+    const protectedYears=p.N*p.dp*p.a*p.f*p.e*years*p.G/(p.C*p.annualCostMultiplier);
+    q=protectedYears*((p.rD*rescued+p.rM*p.qM)*p.excessRisk*p.exposureRemoval*p.transport-p.h);
+    close(s.costUSD,p.G+protectedYears*p.extraResourcePerPersonYear);
    }
    close(q,s.allPopulationQalys);close(q*p.g,s.editionQalys);
   }
@@ -39,5 +43,5 @@ test('recipient expense means retain original gross costs and separate entities'
  close(expenseAverage(get('green-and-healthy-homes-initiative')),14228339);
  close(expenseAverage(get('american-nonsmokers-rights-foundation')),3618821.3333333335);
  assert.equal(get('green-and-healthy-homes-initiative').donationUrl,'https://www.greenandhealthyhomes.org/donate/');
- assert.match(get('american-nonsmokers-rights-foundation').model.geographicAttribution,/before allocation/);
+ assert.match(get('american-nonsmokers-rights-foundation').model.geographicAttribution,/before applying g once/);
 });

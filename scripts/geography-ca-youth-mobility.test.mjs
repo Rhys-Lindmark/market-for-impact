@@ -15,11 +15,13 @@ test('Youth ALIVE weights signed five-year effects, not reinjury percentage',()=
 });
 test('Vision To Learn separates courses, use, additionality and geography',()=>{
  const r=report('vision-to-learn');
- const vectors={central:[.8,225,.5,.6,.6,.02,1,.125,.00005,.4],favorable:[.9,150,.8,.9,.8,.04,2,1/12,.00002,.6],adverse:[.65,400,.2,.3,.3,.005,.5,.25,.00005,.2]};
- for(const [id,[f,c,a,p,w,u,T,d,h,g]] of Object.entries(vectors)){
-  const s=r.model.scenarios.find(x=>x.id===id),D=(1-1.03**(-T))/Math.log(1.03);
-  const q=s.costUSD*f/c*a*(p*w*u*D-h)*1.03**(-d);
-  near(q,s.allPopulationQalys);near(q*g,s.editionQalys);
+ for(const id of ['central','favorable','adverse-positive','wear-decay','public-match-diagnostic']){
+  const s=r.model.scenarios.find(x=>x.id===id),p=JSON.parse(s.assumptions.slice(0,s.assumptions.indexOf('}')+1));
+  const k=Math.log1p(p.r)+p.fade,D=k===0?p.T:-Math.expm1(-k*p.T)/k;
+  const benefit=p.a*(p.p*p.w*p.u*D-p.h)*(1+p.r)**(-p.d);
+  const financed=p.G*p.f/p.c,additional=p.M/p.c;
+  near((financed+additional)*benefit,s.allPopulationQalys);
+  near((financed*p.g+additional)*benefit,s.editionQalys);
  }
  const central=r.model.scenarios[0],matched=r.model.scenarios.find(s=>s.id==='public-match-diagnostic');
  near(matched.editionQalys,central.editionQalys*2);

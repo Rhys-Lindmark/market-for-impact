@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 const read = p => JSON.parse(readFileSync(new URL('../docs/'+p, import.meta.url)));
 const p=read('geography-progress.json'), b=read('geography-boundaries.json');
+const reports=JSON.parse(readFileSync(new URL('../data/geography-reports.json',import.meta.url)));
 assert.equal(p.editions.length,11);
 assert.equal(new Set(p.editions.map(e=>e.id)).size,11);
 assert.equal(p.models.discovery.effort,'medium'); assert.equal(p.models.alpha.effort,'low'); assert.equal(p.models.beta.effort,'medium');
@@ -102,7 +103,13 @@ const nycProgress=p.editions.find(e=>e.id==='new-york-city');
 assert.equal(nyc.records.length,100);
 assert.equal(new Set(nyc.records.map(r=>r.canonicalOrganizationId)).size,100);
 assert.deepEqual(nycProgress.acceptedDiscoveryIds,nyc.records.map(r=>r.canonicalOrganizationId));
-assert.deepEqual(nycProgress.selectedAlphaIds,nyc.top25.map(r=>r.canonicalOrganizationId));
+const nycSelection=nyc.top25.map(r=>r.canonicalOrganizationId);
+for(const amendment of nycProgress.selectionAmendments??[]){
+ const index=nycSelection.indexOf(amendment.removed);
+ assert.ok(index>=0&&nycProgress.acceptedDiscoveryIds.includes(amendment.added));
+ nycSelection[index]=amendment.added;
+}
+assert.deepEqual(nycProgress.selectedAlphaIds,nycSelection);
 assert.equal(nyc.top25.length,25);
 for(const r of nyc.records){
  assert.ok(['accepted_discovery','accepted_with_recipient_correction'].includes(r.disposition));
@@ -113,7 +120,8 @@ for(const r of nyc.records){
 }
 assert.ok(nycProgress.acceptedDiscoveryIds.includes('org:zufall-health-foundation'));
 assert.ok(!nycProgress.acceptedDiscoveryIds.includes('org:zufall-health'));
-assert.equal(nycProgress.alphaPublished,15);assert.equal(nycProgress.betaAcceptedPublished,0);
+assert.equal(nycProgress.alphaPublished,reports.reports.filter(r=>r.edition==='new-york-city').length);
+assert.equal(nycProgress.betaAcceptedPublished,reports.reports.filter(r=>r.edition==='new-york-city'&&r.stage==='beta').length);
 for(const id of nycProgress.alphaCohortIds)assert.ok(nycProgress.selectedAlphaIds.includes(id));
 for(const city of ['denver','chicago','houston','boston','atlanta','detroit']){
  const row=p.editions.find(e=>e.id===city);
@@ -123,7 +131,9 @@ for(const city of ['denver','chicago','houston','boston','atlanta','detroit']){
  assert.deepEqual(row.acceptedDiscoveryIds,packet.records.map(r=>r.canonicalOrganizationId));
  assert.deepEqual(row.selectedAlphaIds,selection.map(r=>r.canonicalOrganizationId));
  assert.equal(row.selectedAlphaIds.length,25);
- assert.equal(row.alphaPublished,0);assert.equal(row.betaAcceptedPublished,0);assert.equal(row.topPicksPublished,0);
+ assert.equal(row.alphaPublished,reports.reports.filter(r=>r.edition===city).length);
+ assert.equal(row.betaAcceptedPublished,reports.reports.filter(r=>r.edition===city&&r.stage==='beta').length);
+ assert.equal(row.topPicksPublished,0);
  const boundary=b.metros.find(m=>m.id===city);
  for(const record of packet.records){
   const counties=record.inScopeCountyAnchors||record.countyFips;
@@ -154,4 +164,4 @@ assert.match(detroit.records.find(r=>r.ordinal===55).primaryEvidence,/ended Nove
 assert.match(detroit.records.find(r=>r.ordinal===45).primaryEvidence,/resumed August 3, 2026/);
 assert.equal(p.editions.reduce((n,e)=>n+e.discoveryAccepted,0),1100);
 assert.equal(p.editions.reduce((n,e)=>n+e.selectedAlphaIds.length,0),275);
-console.log('PASS:11 editions; nested counts;9 MSAs/102 counties;1100 accepted discovery,275 selected priorities; no new alpha or beta credit for discovery.');
+console.log('PASS:11 editions; nested counts;9 MSAs/102 counties;1100 accepted discovery,275 selected priorities; published alpha and beta counts verified separately.');

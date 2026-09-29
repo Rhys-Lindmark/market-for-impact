@@ -13,7 +13,7 @@ test('JTC communication judgments reproduce without lifetime or device double cr
  assert.match(r.model.inputs.find(i=>i.name==='k').rationale,/not an estimated psychometric conversion/);
  assert.ok(reportPrice(r)>0);assert.ok(r.priceScope);
 });
-test('six USA central models retain finite prices, judgment labels and no beta credit',()=>{
+test('six USA central models retain finite prices and judgment labels; ANRF has accepted beta credit',()=>{
  const slugs=['help-america-hear','rx-outreach','remote-area-medical','immunize-org','green-and-healthy-homes-initiative','american-nonsmokers-rights-foundation'];
- for(const slug of slugs){const r=data.reports.find(r=>r.edition==='usa'&&r.slug===slug);assert.ok(Number.isFinite(reportPrice(r)));assert.equal(r.stage,'alpha');assert.ok(r.priceScope);assert.match(r.model.scenarios[0].label,/judgment/);}
+ for(const slug of slugs){const r=data.reports.find(r=>r.edition==='usa'&&r.slug===slug);assert.ok(Number.isFinite(reportPrice(r)));assert.equal(r.stage,slug==='american-nonsmokers-rights-foundation'?'beta':'alpha');assert.ok(r.priceScope);assert.match(r.model.scenarios[0].label,/judgment/);}
 });

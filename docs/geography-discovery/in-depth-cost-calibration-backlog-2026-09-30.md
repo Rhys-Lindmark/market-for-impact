@@ -1,6 +1,30 @@
 # Recalibrate existing in-depth reviews
 
-Requested by Rhys on September 30, 2026. Queue this work in the research PR; geographic expansion and scheduled research remain paused. The immediate Institute for Progress, 1Day Sooner and Foundation for American Innovation corrections are separate from this pending backlog.
+Priority: **P0 — highest research priority.** Requested by Rhys on September 30, 2026. Recalibrate all remaining existing in-depth reviews before new geographic expansion or additional deep-review targets. Geographic expansion and scheduled research remain paused; prioritizing this queue does not restart them. The immediate Institute for Progress, 1Day Sooner and Foundation for American Innovation corrections are separate from this pending backlog.
+
+## Why this takes priority
+
+These model revisions exposed inconsistent impact coverage and cost boundaries:
+
+| Organization | Initial | Subsequent health-only | Latest health + income |
+| --- | ---: | ---: | ---: |
+| Institute for Progress | $3.6M | $88.3M | $325K |
+| 1Day Sooner | $3.2M | $63.8M | $9.0M |
+| Foundation for American Innovation | $49.6M | $1.93B | $52.6M |
+
+All figures are dollars per better life under the respective model version. These sequences are not confidence intervals, measured changes in effectiveness, or proof that the latest assumptions are correct. The latest denominator includes income-welfare equivalents, not only health QALYs. The next pass must audit coverage and consistency rather than aim for favorable rankings.
+
+## Execution and acceptance order
+
+- [ ] Reconcile the 37-report snapshot below against every existing deep review, including legacy work; publish the complete inventory before starting batches. Deduplicate shared organization research without dropping geography-specific models.
+- [ ] Audit current top-four recommendations first, then ranking-sensitive and policy/systemic reports, then every other existing deep review. This queue takes precedence over new report production when work is authorized to resume.
+- [ ] Establish a coherent annual-work or marginal-gift cost boundary for each report. Do not charge a full annual budget while arbitrarily discounting its benefits for an unspecified extra donation. Keep funding capacity as a separately evidenced question.
+- [ ] For every report, show a ledger of health effects, income/consumption effects, overlaps, net costs, harms and unquantified channels. Include income in the headline when modeled; an explicit justified zero-income case is different from silently omitting economic benefits. Missing evidence must be labeled, not replaced by a claimed measured effect.
+- [ ] Challenge scenario scale and stacked probabilities independently. Use empirical/base-rate anchors where available; distinguish a central judgment scenario from an empirically identified expected value. Do not force estimates to change or improve.
+- [ ] Explain each old-to-new change by input, source, scope or arithmetic correction. Test adverse and zero cases, welfare weights, income baselines, cost duration, implementation failure and overlapping discounts; do not present joint stress cases as confidence intervals.
+- [ ] Accept a batch only after independent evidence/arithmetic review and synchronized report/list/shortlist prices. Report recalibrated/remaining counts separately from existing publication counts.
+
+Finish line: every reconciled existing in-depth review has a reviewed health-and-income model, clear historical comparison, reproducible tests and synchronized published prices. This PR queues the work; it does not certify those reviews as already recalibrated.
 
 ## Definition of done for each review
 

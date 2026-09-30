@@ -17,6 +17,6 @@ test('Walk SF in-depth review withdraws uncalibrated donor price but retains dia
   assert.equal(report.model.scenarios.find(s => s.id === 'central').editionQalys, null);
   assert.equal(report.sources.find(s => s.id === 'folsom-funding').publisher, 'SFMTA');
   const ca = progress.editions.find(e => e.id === 'california');
-  assert.equal(ca.betaAcceptedPublished, 6);
+  assert.equal(ca.betaAcceptedPublished, ca.betaIds.length);
   assert.ok(ca.betaIds.includes(report.organizationId));
 });

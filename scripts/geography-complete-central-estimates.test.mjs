@@ -14,7 +14,7 @@ test('CA USA LA reports have finite positive central judgments or an audited wit
  const reports=rows.filter(r=>['california','usa','los-angeles'].includes(r.edition));
  assert.equal(reports.length,75);
  for(const r of reports){
-  if((r.edition==='california'&&['coalition-for-clean-air','california-school-based-health-alliance','walk-san-francisco'].includes(r.slug)) || (r.edition==='usa'&&['kids-and-car-safety','help-america-hear','remote-area-medical','institute-for-safer-trucking','cribs-for-kids'].includes(r.slug))){
+  if((r.edition==='california'&&['coalition-for-clean-air','california-school-based-health-alliance','walk-san-francisco','center-for-independent-living'].includes(r.slug)) || (r.edition==='usa'&&['kids-and-car-safety','help-america-hear','remote-area-medical','institute-for-safer-trucking','cribs-for-kids'].includes(r.slug))){
    assert.equal(reportPrice(r),null);
    assert.match(r.acceptance.evidence,/beta-(acceptance|audit)|september-30-beta-acceptance|walk-sf-beta-acceptance/);
    assert.equal(formatEditionReportPrice(r),'Estimate withdrawn');

@@ -4,16 +4,17 @@ import {readFileSync} from 'node:fs';
 const reports=JSON.parse(readFileSync(new URL('../data/geography-reports.json',import.meta.url))).reports;
 const get=slug=>reports.find(r=>r.slug===slug);
 const close=(a,b)=>assert.ok(Math.abs(a-b)<1e-9);
-const params=s=>Object.fromEntries([...s.assumptions.matchAll(/\b(c|b|s|u|p|T|m|h|g|f|e|t|q|z)=(\d+(?:\.\d+)?)/g)].map(m=>[m[1],+m[2]]));
+const params=s=>{const json=s.assumptions.match(/\{[^}]+\}/);return json?JSON.parse(json[0]):Object.fromEntries([...s.assumptions.matchAll(/\b(c|b|s|u|p|T|m|h|g|f|e|t|q|z)=(\d+(?:\.\d+)?)/g)].map(m=>[m[1],+m[2]]));};
 test('Hearing aid scenarios retain use, mortality, alternatives and harm',()=>{
  const r=get('help-america-hear');
  for(const s of r.model.scenarios){
+  if(s.id==='central'){assert.equal(s.allPopulationQalys,null);assert.equal(s.editionQalys,null);continue;}
   const p=params(s),D=Array.from({length:p.T},(_,i)=>((1-p.m)/1.03)**(i+1)).reduce((a,b)=>a+b,0);
   const q=s.costUSD/p.c*p.b*(p.s*p.u*p.p*D-p.h);
   close(q,s.allPopulationQalys);close(q*p.g,s.editionQalys);
  }
  assert.equal(r.donationUrl,null);
- close(r.model.scenarios[0].editionQalys,0.14511181107982615);
+ close(r.model.scenarios.find(s=>s.id==='alpha-retained-diagnostic').editionQalys,0.14511181107982615);
 });
 test('Medication access benchmarks use a secondary ITT effect only once',()=>{
  const r=get('rx-outreach');close(r.model.scenarios[0].editionQalys,0.015925);

@@ -1,16 +1,23 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {reportPrice} from '../lib/geography-reports.mjs';
+import {reportPrice,formatEditionReportPrice} from '../lib/geography-reports.mjs';
 const rows=JSON.parse(readFileSync(new URL('../data/geography-reports.json',import.meta.url))).reports;
 const close=(a,b)=>assert.ok(Math.abs(a-b)<=1e-6*Math.max(1e-9,Math.abs(b)),a+' != '+b);
+test('FernCare shows a conditional illustration without becoming rankable',()=>{
+ const r=rows.find(r=>r.edition==='detroit'&&r.slug==='ferncare-free-clinic');
+ assert.equal(reportPrice(r),null);
+ assert.equal(r.rankingEligible,false);
+ assert.equal(formatEditionReportPrice(r),'Illustrative $772K');
+});
 test('CA USA LA reports have finite positive central judgments or an audited withdrawal',()=>{
  const reports=rows.filter(r=>['california','usa','los-angeles'].includes(r.edition));
  assert.equal(reports.length,75);
  for(const r of reports){
-  if((r.edition==='california'&&r.slug==='coalition-for-clean-air') || (r.edition==='usa'&&r.slug==='kids-and-car-safety')){
+  if((r.edition==='california'&&r.slug==='coalition-for-clean-air') || (r.edition==='usa'&&['kids-and-car-safety','help-america-hear'].includes(r.slug))){
    assert.equal(reportPrice(r),null);
    assert.match(r.acceptance.evidence,/beta-acceptance/);
+   assert.equal(formatEditionReportPrice(r),'Estimate withdrawn');
   }else assert.ok(Number.isFinite(reportPrice(r))&&reportPrice(r)>0,r.edition+'/'+r.slug);
  }
 });

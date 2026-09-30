@@ -34,6 +34,6 @@ test('Lions Lighthouse has matched three-year full-resource costs and no recomme
  assert.match(report.priceScope,/HOLD/i);
  assert.equal(report.sessionIds.length,3);
  const edition=progress.editions.find(item=>item.id==='atlanta');
- assert.equal(edition.alphaPublished,1);
+ assert.equal(edition.alphaPublished,2);
  assert.equal(edition.betaAcceptedPublished,0);
 });

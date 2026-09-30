@@ -19,10 +19,10 @@ const page=readFileSync(new URL('../app/research/better-paying-jobs/page.tsx',im
 assert.match(page,/not four new organization reviews/);
 assert.match(page,/not measured QALYs or DALYs/);
 assert.match(page,/Year 10/);
-for(const [file,pattern] of [
- ['components/GeographyEdition.tsx',/<EarningsResearch id={id}/],
- ['components/EditionDonorHome.tsx',/<EarningsResearch id={id}/],
- ['app/san-francisco/page.tsx',/<EarningsResearch id="san-francisco"/],
- ['app/san-francisco/all/page.tsx',/<EarningsResearch id="san-francisco"/]
-])assert.match(readFileSync(new URL('../'+file,import.meta.url),'utf8'),pattern);
-console.log('Four earnings lanes, separate welfare arithmetic and edition links passed.');
+for(const file of ['components/GeographyEdition.tsx','components/EditionDonorHome.tsx','app/san-francisco/page.tsx','app/san-francisco/all/page.tsx'])assert.doesNotMatch(readFileSync(new URL('../'+file,import.meta.url),'utf8'),/EarningsResearch/);
+for(const file of ['components/EditionDonorHome.tsx','app/san-francisco/page.tsx']){
+ const source=readFileSync(new URL('../'+file,import.meta.url),'utf8');
+ assert.match(source,/sf-footer-separator/);
+ assert.doesNotMatch(source,/Independent research\. Not affiliated/);
+}
+console.log('Earnings research preserved; promotional blocks removed and home footers simplified.');

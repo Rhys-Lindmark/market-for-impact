@@ -1,6 +1,5 @@
 import type {Metadata} from 'next';
 import {topFourResearch} from '@/lib/unified-research-index';
-import EarningsResearch from '@/components/EarningsResearch';
 import '../sf-home.css';
 import '../givebetter.css';
 /* eslint-disable @next/next/no-img-element -- Sourced editorial photographs with reserved dimensions. */
@@ -97,8 +96,7 @@ export default function SanFranciscoHome(){
           </div>
         </div>
       </article>)}</section>
-      <EarningsResearch id="san-francisco"/>
-      <footer className="sf-home-footer"><a href={`${root}/san-francisco/all`}>All Bay Area research</a> · <a href={`${root}/all`}>All cities and regions</a><p>Independent research. Not affiliated with GiveWell or the organizations reviewed.</p></footer>
+      <footer className="sf-home-footer"><a href={`${root}/san-francisco/all`}>All San Francisco research</a><span className="sf-footer-separator" aria-hidden="true">·</span><a href={`${root}/all`}>All cities and regions</a></footer>
     </main>
   </div>;
 }

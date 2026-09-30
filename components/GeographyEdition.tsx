@@ -7,7 +7,6 @@ import {reportsForEdition} from '@/lib/geography-reports.mjs';
 import {reportRegistry} from '@/lib/published-geography-reports';
 import EditionResearchTable from './EditionResearchTable';
 import EditionDonorHome from './EditionDonorHome';
-import EarningsResearch from './EarningsResearch';
 import '@/app/givebetter.css';
 import '@/app/edition.css';
 import styles from '@/app/research/research-index.module.css';
@@ -34,9 +33,8 @@ export default function GeographyEdition({id,research=false}:{id:string;research
   <p className={styles.caveat}>Income gains can matter too. We show a separate <a href={canonicalBase+'/methodology/income'}>income-adjusted comparison</a> only where a report has enough evidence; otherwise the price remains health-only.</p>
   <p><a href={canonicalBase+path}>Our giving shortlist</a> · <a href={canonicalBase+'/all'}>All cities and regions</a></p></section>
   {reports.length?<EditionResearchTable reports={reports}/>:<p>Research reports are being prepared for this edition.</p>}
-  <EarningsResearch id={id}/>
   <details className="gb-edition-boundary"><summary>Research progress</summary><p>{edition.discoveryAccepted}/100 candidates screened · {edition.alphaPublished}/25 initial reports · {edition.betaAcceptedPublished}/10 in-depth reviews.</p></details>
   <details className="gb-edition-boundary"><summary>Which places count?</summary>{metro?<><p>{metro.officialName}. We use the Census/OMB July 2023 metropolitan statistical area, including these counties:</p><ul>{metro.counties.map(c=><li key={c.fips}>{c.name}, {c.state}</li>)}</ul><p><a href={boundaries.source.index}>Official geographic definitions</a></p></>:<p>{id==='california'?'Benefits to people throughout the state of California.':'Benefits to residents of the 50 United States and District of Columbia. Overseas and territorial effects are outside this edition’s main estimate.'}</p>}</details>
-  <footer><a href={canonicalBase+'/san-francisco'}>Explore the existing SF/Bay Area shortlist</a><p>Independent research. Not affiliated with GiveWell or the organizations reviewed.</p></footer>
+  <footer className="sf-home-footer"><a href={canonicalBase+path+'/all'}>All {edition.label} research</a><span className="sf-footer-separator" aria-hidden="true">·</span><a href={canonicalBase+'/all'}>All cities and regions</a></footer>
  </main></div>;
 }

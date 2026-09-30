@@ -2,7 +2,7 @@ import type {Metadata} from 'next';
 import {notFound} from 'next/navigation';
 import progress from '@/docs/geography-progress.json';
 import {canonicalBase,editionPath} from '@/lib/geography-editions.mjs';
-import {editionReportSections,editionResearchEffort,formatEditionMoney,formatAnnualExpense,formatEditionSensitivity,reportPrice,editionReportPath} from '@/lib/geography-reports.mjs';
+import {editionReportSections,editionResearchEffort,formatEditionMoney,formatEditionReportPrice,formatAnnualExpense,formatEditionSensitivity,reportPrice,editionReportPath} from '@/lib/geography-reports.mjs';
 import {getEditionReport,reportRegistry} from '@/lib/published-geography-reports';
 import {EditionMasthead} from './GeographyEdition';
 import {Markdown} from './LongFormResearchReport';
@@ -16,7 +16,7 @@ export function editionReportMetadata(edition:string,slug:string):Metadata{
 export default function EditionResearchReport({edition,slug}:{edition:string;slug:string}){
  const report=getEditionReport(edition,slug),e=progress.editions.find(e=>e.id===edition);
  if(!report||!e)notFound();
- const effort=editionResearchEffort(reportRegistry,report),price=reportPrice(report);
+ const effort=editionResearchEffort(reportRegistry,report),price=reportPrice(report),displayPrice=formatEditionReportPrice(report);
  return <main className="givebetter charity-report"><EditionMasthead label={e.label}/><div className="report-reading-column">
   <header className="report-heading"><h1>{report.organization}</h1><p className="report-program">{report.program}</p>
    <details className="report-research-effort"><summary>{effort.label}</summary><ul>{effort.bullets.map((s:string)=><li key={s}>{s}</li>)}</ul></details>
@@ -28,7 +28,7 @@ export default function EditionResearchReport({edition,slug}:{edition:string;slu
    <section id="summary"><h2>Summary</h2><Markdown text={'**What do they do?** '+report.summary.what.join(' ')}/>
     <p><strong>Why we’re interested in this organization:</strong></p><ul>{report.summary.strengths.map(s=><li key={s}><Markdown text={s}/></li>)}</ul>
     <p><strong>Our main reservations:</strong></p><ul>{report.summary.reservations.map(s=><li key={s}><Markdown text={s}/></li>)}</ul>
-    <p><strong>What do you get for your dollar? </strong>{price===null?'A reliable cost per better life has not been established.':formatEditionMoney(price)+' per better life: ten additional quality-adjusted life years in '+e.label+'.'}{price!==null&&report.priceScope&&<> {report.priceScope}.</>}</p><Markdown text={report.model.nativeOutcomes}/>
+    <p><strong>What do you get for your dollar? </strong>{price!==null?formatEditionMoney(price)+' per better life: ten additional quality-adjusted life years in '+e.label+'.':displayPrice.startsWith('Illustrative ')?displayPrice+' per better life under a historical annual-average scenario; the return from a new donation is not established.':displayPrice==='Estimate withdrawn'?'An earlier numerical estimate was withdrawn because its funding-to-impact bridge was not established.':'A reliable cost per better life has not been established.'}{price!==null&&report.priceScope&&<> {report.priceScope}.</>}</p><Markdown text={report.model.nativeOutcomes}/>
    </section>
    {editionReportSections.map(([id,title]:string[])=><section id={id} key={id}><h2>{title}</h2><Markdown text={report.sections[id]}/>
     {id==='cost'&&<details className="report-method"><summary>Model, assumptions and sensitivity</summary><p>{report.model.costScope}</p><p>{report.model.geographicAttribution}</p><p className="report-equation">{report.model.formula}</p><dl className="report-assumptions">{report.model.inputs.map(i=><div key={i.name}><dt>{i.name}</dt><dd>{JSON.stringify(i.value)} {i.unit} ({i.basis}). {i.rationale} {i.sourceIds.map(id=><a key={id} href={'#source-'+id}>[{id}] </a>)}</dd></div>)}</dl>

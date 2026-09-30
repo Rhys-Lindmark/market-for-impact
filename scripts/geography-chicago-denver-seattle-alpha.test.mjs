@@ -1,10 +1,25 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {formatEditionSensitivity,reportPrice} from '../lib/geography-reports.mjs';
+import {formatEditionSensitivity,formatEditionReportPrice,expenseAverage,reportPrice} from '../lib/geography-reports.mjs';
 
 const registry=JSON.parse(fs.readFileSync(new URL('../data/geography-reports.json',import.meta.url)));
 const report=(edition,slug)=>registry.reports.find(r=>r.edition===edition&&r.slug===slug);
+
+test('Denver KIND keeps the matched-year sealant illustration out of donor ranking',()=>{
+ const r=report('denver','kids-in-need-dentistry');
+ assert.ok(r);
+ const example=r.model.scenarios.find(s=>s.id==='illustrative-average');
+ const expected=9337/4*.00159*.75*.75*.9;
+ assert.ok(Math.abs(example.editionQalys-expected)<1e-10);
+ assert.equal(example.costUSD,1536905);
+ assert.equal(reportPrice(r),null);
+ assert.equal(r.rankingEligible,false);
+ assert.equal(formatEditionReportPrice(r),'Illustrative $8.2M');
+ assert.equal(expenseAverage(r),1658785);
+ assert.equal(r.model.scenarios.find(s=>s.id==='zero').editionQalys,0);
+ assert.ok(r.model.scenarios.find(s=>s.id==='adverse').editionQalys<0);
+});
 
 test('Denver HRAC uses audited project cost once and keeps the scenario conditional',()=>{
  const r=report('denver','harm-reduction-action-center');

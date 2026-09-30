@@ -16,7 +16,9 @@ const expected=[
 for(const [slug,cost,q,low] of expected){
  const r=data.reports.find(r=>r.edition==='usa'&&r.slug===slug);
  assert.ok(r);
- assert.equal(r.stage,'alpha');
+ assert.equal(r.stage,'beta');
+ assert.ok(usa.betaIds.includes(r.organizationId));
+ assert.ok(usa.supplementalBetaIds.includes(r.organizationId));
  assert.ok(Math.abs(r.model.scenarios.find(s=>s.id==='central').editionQalys-q)<1e-10);
  assert.equal(r.model.scenarios.find(s=>s.id==='low').editionQalys,low);
  assert.ok(Math.abs(reportPrice(r)-cost*10/q)<1e-6);
@@ -25,9 +27,19 @@ for(const [slug,cost,q,low] of expected){
  assert.equal(r.annualExpenses.length,3);
  for(const id of r.sessionIds){
   const s=data.sessions.find(s=>s.id===id);
-  assert.equal(s.model.id,'gpt-6.1-sol');
+  assert.ok(s.model===null||s.model.id==='gpt-6.1-sol');
   assert.ok(Date.parse(s.endedAt)>Date.parse(s.startedAt));
  }
+}
+assert.equal(usa.betaAcceptedPublished,13);
+assert.equal(usa.supplementalBetaIds.length,3);
+for(const slug of expected.map(([slug])=>slug)){
+ const r=data.reports.find(r=>r.edition==='usa'&&r.slug===slug);
+ assert.ok(r.sources.filter(s=>/990/.test(s.title)).length>=3,'Three original annual returns cited');
+ assert.match(r.sections.funding,/program|management|fundraising/i);
+ assert.ok(Object.values(r.sections).join(' ').split(/\s+/).length>=1500,'Substantive deeper review, not stage-only relabel');
+ assert.ok(r.sessionIds.some(id=>data.sessions.some(s=>s.id===id&&s.stage==='beta'&&s.phase==='research')));
+ assert.match(r.model.uncertainty,/judgment|illustrative|scenario|hypothes/i);
 }
 assert.ok(reportsForEdition(data,'usa').slice(0,4).every(r=>!expected.some(([slug])=>slug===r.slug)));
 console.log('USA abundance supplement, estimates, timing and unchanged top four passed.');

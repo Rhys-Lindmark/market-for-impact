@@ -12,7 +12,9 @@ for(const e of p.editions){
  let previous;
  for(const [ids,counter,max] of stages){
   assert.equal(e[ids].length,e[counter]); assert.equal(new Set(e[ids]).size,e[ids].length);
-  assert.ok(e[counter]>=0&&e[counter]<=max+(ids==='alphaCohortIds'?(e.supplementalAlphaIds?.length??0):0));
+  const extra=ids==='alphaCohortIds'?(e.supplementalAlphaIds?.length??0):ids==='betaIds'?(e.supplementalBetaIds?.length??0):0;
+  assert.ok(e[counter]>=0&&e[counter]<=max+extra);
+  if(ids==='betaIds')for(const id of e.supplementalBetaIds??[])assert.ok(e.supplementalAlphaIds?.includes(id)&&e.betaIds.includes(id));
   if(previous)for(const id of e[ids])assert.ok(previous.includes(id)||(ids==='alphaCohortIds'&&e.supplementalAlphaIds?.includes(id)));
   previous=e[ids];
  }

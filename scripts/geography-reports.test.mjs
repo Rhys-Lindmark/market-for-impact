@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {calculate as calculateOa} from '../lib/oa-portfolio-model.mjs';
 import {BOUNDS as oaBounds} from '../lib/oa-portfolio-foundation.mjs';
-import {validateEditionReports,reportPrice,incomeAdjustedReportPrice,formatEditionMoney,expenseAverage,editionResearchEffort,reportsForEdition,editionReportPath} from '../lib/geography-reports.mjs';
+import {validateEditionReports,reportPrice,researchListPrice,formatEditionReportPrice,incomeAdjustedReportPrice,formatEditionMoney,expenseAverage,editionResearchEffort,reportsForEdition,editionReportPath} from '../lib/geography-reports.mjs';
 const read=path=>JSON.parse(readFileSync(new URL('../'+path,import.meta.url)));
 
 // Synthetic fixtures live only in tests; never published or counted as research.
@@ -84,18 +84,20 @@ test('unestimated needs blockers; observed inputs need sources; stage and cohort
  data.sessions[0].model.reasoningEffort='medium';assert.throws(()=>validateEditionReports(data,progress),/Wrong author model/);data.sessions[0].model.reasoningEffort='low';
  progress.editions[0].selectedAlphaIds=[];assert.throws(()=>validateEditionReports(data,progress),/cohort/);
 });
-test('unknown runtime stays unknown; withdrawn beta prices never display as estimates',()=>{
+test('unknown runtime stays unknown; lists retain initial estimates without changing current models',()=>{
  const {data,progress,r}=fixture();
  data.sessions[0].model=null;
  validateEditionReports(data,progress);
  assert.match(editionResearchEffort(data,r).label,/unrecorded AI model/);
  const published=read('data/geography-reports.json');
- for(const slug of ['california-school-based-health-alliance','institute-for-safer-trucking','cribs-for-kids']){
-  const report=published.reports.find(item=>item.slug===slug);
-  assert.equal(report.stage,'beta',slug);
+ for(const report of published.reports.filter(r=>/withdrawn|withdrawal/i.test((r.priceScope??'')+' '+r.acceptance.evidence))){
+  const slug=report.slug;
   assert.equal(reportPrice(report),null,slug);
-  assert.match(report.priceScope,/withdrawn/i,slug);
+  assert.ok(researchListPrice(report)>0,slug);
+  assert.match(formatEditionReportPrice(report),/^\$/,slug);
  }
+ const school=published.reports.find(r=>r.slug==='california-school-based-health-alliance');
+ assert.equal(formatEditionReportPrice(school),'$26.9M');
 });
 test('header time uses whole focused intervals, and duplicate/overlapping sessions fail',()=>{
  const {data,progress,r}=fixture();assert.equal(editionResearchEffort(data,r).label,'Research time: 15 min on GPT-6 Astra Light');

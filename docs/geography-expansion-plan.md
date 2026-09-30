@@ -2,7 +2,19 @@
 
 ## Earnings research supplement — 30 September 2026
 
-The user requested a better-paying-jobs lane for SF/Bay Area, California, NYC and USA. Published discovery synthesis: /research/better-paying-jobs, with shared sections on each edition’s landing and full-list pages. Candidates and screening scenarios live in lib/better-paying-jobs.mjs.
+The user requested a better-paying-jobs lane for SF/Bay Area, California, NYC and USA. Published discovery synthesis: /research/better-paying-jobs. Its promotional blocks were subsequently removed from edition landing and full-list pages at the user's request. Candidates and screening scenarios live in lib/better-paying-jobs.mjs.
+
+### Next resumption: pipeline integration PR
+
+On the next user-authorized resumption of the long-term research task, create a dedicated pull request integrating better-paying jobs into holistic discovery, candidate selection and organization review—not a separate promotional section. Include the same treatment for [Coefficient Giving's Abundance and Growth fund](https://coefficientgiving.org/funds/abundance-and-growth/): evidence-informed leads spanning housing, access to productive labor markets, growth and other relevant mechanisms. Verify current sources at that time; fund inclusion is a lead, not proof of cost-effectiveness.
+
+- Cover SF/Bay Area, California, NYC and USA, applying the appropriate geographic benefit boundary.
+- Screen employment/training and policy/systemic mechanisms alongside health mechanisms using expected impact, causal evidence, costs, donor additionality and funding room—not category quotas.
+- Keep dollars per better life (10 QALYs/DALYs) as the main metric; use the documented income comparison with explicit assumptions, uncertainty and safeguards against double-counting health and earnings.
+- Reuse existing discovery evidence and abundance/growth reports, record actual organization-specific research/model times, and test pipeline integration without restoring the removed footer blocks.
+- Open and attach the PR with findings and verification; do not claim completion or resume scheduled research merely because this follow-up was recorded.
+
+This PR is queued for resumption, not requested for immediate implementation. Keep the long-term goal and scheduled research paused until the user resumes them, and preserve usage safeguards.
 
 Priorities: JVS Bay Area and JobTrain/Per Scholas Bay Area; JVS SoCal and Per Scholas LA; St. Nicks Alliance and Per Scholas NYC; Year Up United and the national Per Scholas network. Housing-policy leads are separate mechanisms, including Open New York, California YIMBY (501(c)(4), not automatically a charitable donation route) and existing housing/innovation research.
 

@@ -6,7 +6,9 @@ const report=slug=>rows.find(r=>r.slug===slug);
 const close=(a,b)=>assert.ok(Math.abs(a-b)<1e-9);
 test('Cribs for Kids scenarios reproduce without crediting commercial shipments',()=>{
  const r=report('cribs-for-kids');assert.ok(r);
- for(const s of r.model.scenarios.slice(0,3)){
+ assert.equal(r.model.scenarios.find(s=>s.id==='central').editionQalys,null);
+ assert.match(r.priceScope,/withdrawn/i);
+ for(const s of r.model.scenarios.filter(s=>['alpha-retained-diagnostic','favorable','pessimistic'].includes(s.id))){
   const p=Object.fromEntries([...s.assumptions.matchAll(/\b(a|c|b|u|r|e|L|g)=([0-9.]+)/g)].map(m=>[m[1],+m[2]]));
   const q=s.costUSD*p.a/p.c*p.b*p.u*p.r*p.e*p.L;
   close(q,s.allPopulationQalys);close(q*p.g,s.editionQalys);
@@ -24,10 +26,11 @@ test('Upstream includes adverse burden even when prevention is zero',()=>{
  assert.ok(report('upstream-usa').model.scenarios.find(s=>s.id==='no-prevention').editionQalys<0);
 });
 test('Policy thresholds remain requirements, not central predictions',()=>{
- for(const slug of ['coalition-for-clean-air']){
-  const r=report(slug);assert.ok(r.model.scenarios[0].editionQalys>0);
-  assert.equal(r.model.scenarios.find(s=>s.id==='zero').editionQalys,0);
- }
+ const r=report('coalition-for-clean-air');
+ assert.equal(r.stage,'beta');
+ assert.ok(r.model.scenarios.some(s=>s.editionQalys===0));
+ assert.ok(r.model.scenarios.some(s=>s.editionQalys>0));
+ assert.match(r.priceScope,/diagnostic/);
  const h0=.05,h1=h0*Math.exp(-Math.log(1.06)/10),rho=Math.log(1.03),T=10;
  const q=.75*((1-Math.exp(-(h1+rho)*T))/(h1+rho)-(1-Math.exp(-(h0+rho)*T))/(h0+rho));
  close(q,.006532944220465575);

@@ -78,7 +78,7 @@ test('public progress stays scoped and all eleven direct route pairs resolve',as
   expect(e.discoveryAccepted).toBe(100);
   expect(e.selectedAlphaIds).toHaveLength(25);
   expect(e.alphaPublished).toBe(reports.reports.filter(r=>r.edition===id).length);
-  expect(e.betaAcceptedPublished).toBe(0);
+  expect(e.betaAcceptedPublished).toBe(reports.reports.filter(r=>r.edition===id&&r.stage==='beta').length);
  }
  for(const e of data.editions)for(const suffix of ['', '/all'])expect((await request.get('/'+e.id+suffix,{maxRedirects:0})).status()).toBe(200);
 });

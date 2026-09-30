@@ -6,28 +6,32 @@ const report=slug=>data.reports.find(r=>r.edition==='california'&&r.slug===slug)
 const near=(a,b)=>assert.ok(Math.abs(a-b)<1e-10,`${a} != ${b}`);
 test('Youth ALIVE weights signed five-year effects, not reinjury percentage',()=>{
  const r=report('youth-alive');let total=0,weight=0;
- for(const s of r.model.scenarios.filter(s=>s.id!=='central')){
+ for(const s of r.model.scenarios.filter(s=>!['central','historical-alpha-central'].includes(s.id))){
   const p=JSON.parse(s.assumptions);
   const q=s.costUSD*p.cicAllocation*p.fundingAdditionality*p.serviceRealization/p.donorCostPerAddedClient*.02*p.evidenceTransfer;
   near(q,s.editionQalys);total+=p.weight*q;weight+=p.weight;
  }
- near(weight,1);near(total,r.model.scenarios[0].editionQalys);
+ near(weight,1);near(total,r.model.scenarios.find(s=>s.id==='historical-alpha-central').editionQalys);
+ assert.equal(r.model.scenarios[0].editionQalys,null);
 });
 test('Vision To Learn separates courses, use, additionality and geography',()=>{
  const r=report('vision-to-learn');
- const vectors={central:[.8,225,.5,.6,.6,.02,1,.125,.00005,.4],favorable:[.9,150,.8,.9,.8,.04,2,1/12,.00002,.6],adverse:[.65,400,.2,.3,.3,.005,.5,.25,.00005,.2]};
- for(const [id,[f,c,a,p,w,u,T,d,h,g]] of Object.entries(vectors)){
-  const s=r.model.scenarios.find(x=>x.id===id),D=(1-1.03**(-T))/Math.log(1.03);
-  const q=s.costUSD*f/c*a*(p*w*u*D-h)*1.03**(-d);
-  near(q,s.allPopulationQalys);near(q*g,s.editionQalys);
+ for(const id of ['central','favorable','adverse-positive','wear-decay','public-match-diagnostic']){
+  const s=r.model.scenarios.find(x=>x.id===id),p=JSON.parse(s.assumptions.slice(0,s.assumptions.indexOf('}')+1));
+  const k=Math.log1p(p.r)+p.fade,D=k===0?p.T:-Math.expm1(-k*p.T)/k;
+  const benefit=p.a*(p.p*p.w*p.u*D-p.h)*(1+p.r)**(-p.d);
+  const financed=p.G*p.f/p.c,additional=p.M/p.c;
+  near((financed+additional)*benefit,s.allPopulationQalys);
+  near((financed*p.g+additional)*benefit,s.editionQalys);
  }
  const central=r.model.scenarios[0],matched=r.model.scenarios.find(s=>s.id==='public-match-diagnostic');
  near(matched.editionQalys,central.editionQalys*2);
  near(matched.allPopulationQalys,central.allPopulationQalys+central.editionQalys);
 });
 test('Walk SF stops benefit at counterfactual opening and retains independent harm',()=>{
- const r=report('walk-san-francisco'),base=JSON.parse(r.model.scenarios[0].assumptions);
- for(const s of r.model.scenarios){
+ const r=report('walk-san-francisco'),base=JSON.parse(r.model.scenarios.find(s=>s.id==='historical-alpha-central').assumptions);
+ assert.equal(r.model.scenarios.find(s=>s.id==='central').editionQalys,null);
+ for(const s of r.model.scenarios.filter(s=>s.id!=='central')){
   let p=s.assumptions.startsWith('{')?JSON.parse(s.assumptions):{...base};
   if(s.id==='null')p.p=0;if(s.id==='fatal-null')p.eF=0;if(s.id==='harm-stress')p.H_CA=.3;
   let qF=0,qS=0,V=0;

@@ -6,7 +6,10 @@ const near=(a,b)=>assert.ok(Math.abs(a-b)<1e-8,`${a} != ${b}`);
 for(const slug of ['institute-for-safer-trucking','us-alcohol-policy-alliance'])test(`${slug}: all policy scenarios reproduce`,()=>{
  const r=data.reports.find(r=>r.edition==='usa'&&r.slug===slug);
  for(const s of r.model.scenarios){
-  const p=JSON.parse(s.assumptions.match(/Parameters (\{.*?\})/)[1]);let A=0,H;
+  if(s.id==='central'&&s.editionQalys===null){assert.match(r.priceScope,/withdrawn/i);continue;}
+  const parameters=s.assumptions.match(/Parameters (\{.*?\})/);
+  assert.ok(parameters,`Missing diagnostic parameters for ${slug}/${s.id}`);
+  const p=JSON.parse(parameters[1]);let A=0,H;
   if(slug==='institute-for-safer-trucking'){
    for(let t=1;t<=p.T;t++)A+=(Math.min(p.cap,p.rate*Math.max(0,t-p.L1+1))-Math.min(p.cap,p.rate*Math.max(0,t-p.L0+1)))/1.03**t;
    H=p.D*p.r*p.q*A;

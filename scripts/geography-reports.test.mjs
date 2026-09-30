@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {calculate as calculateOa} from '../lib/oa-portfolio-model.mjs';
 import {BOUNDS as oaBounds} from '../lib/oa-portfolio-foundation.mjs';
-import {validateEditionReports,reportPrice,formatEditionMoney,expenseAverage,editionResearchEffort,reportsForEdition,editionReportPath} from '../lib/geography-reports.mjs';
+import {validateEditionReports,reportPrice,researchListPrice,formatEditionReportPrice,incomeAdjustedReportPrice,formatEditionMoney,expenseAverage,editionResearchEffort,reportsForEdition,editionReportPath} from '../lib/geography-reports.mjs';
 const read=path=>JSON.parse(readFileSync(new URL('../'+path,import.meta.url)));
 
 // Synthetic fixtures live only in tests; never published or counted as research.
@@ -44,6 +44,27 @@ test('price uses edition denominator, not global benefit; format and routes matc
  r.model.scenarios[0].editionQalys=-1;assert.equal(reportPrice(r),null);
  r.model.scenarios[0].editionQalys=null;assert.equal(reportPrice(r),null);
 });
+test('income bridge contributes to headline welfare price and remains source-gated',()=>{
+ const {data,progress,r}=fixture();
+ r.model.incomeBridge={people:200,annualIncomeBeforeUSD:50000,annualIncomeGainUSD:500,years:1,causalShare:1,editionShare:1,independentShare:1,sourceIds:['s1'],rationale:'Synthetic only',counterfactual:'Synthetic baseline'};
+ validateEditionReports(data,progress);
+ const comparison=incomeAdjustedReportPrice(r);
+ assert.ok(comparison.incomeEquivalentYears>0.99&&comparison.incomeEquivalentYears<1);
+ assert.equal(comparison.price,reportPrice(r));
+ assert.ok(reportPrice(r)<100000);
+ r.model.incomeBridge.sourceIds=[];
+ assert.throws(()=>validateEditionReports(data,progress),/Income bridge needs/);
+});
+test('scenario income can price nonclinical benefits; losses cannot manufacture a positive price',()=>{
+ const {data,progress,r}=fixture();
+ const s=r.model.scenarios[0];s.editionQalys=0;s.allPopulationQalys=0;
+ const b={people:200,annualIncomeBeforeUSD:50000,annualIncomeGainUSD:500,years:1,causalShare:1,editionShare:1,independentShare:1,sourceIds:['s1'],rationale:'Synthetic only',counterfactual:'Synthetic baseline'};
+ s.incomePathways=[b];validateEditionReports(data,progress);
+ assert.ok(reportPrice(r)>0);
+ r.model.incomeBridge=b;assert.equal(reportPrice(r),incomeAdjustedReportPrice(r).price,'Legacy and scenario bridges must not both be counted');
+ s.incomePathways=[{...b,annualIncomeGainUSD:-500}];assert.equal(reportPrice(r),null);
+ s.incomePathways=[{...b,sourceIds:[]}];assert.throws(()=>validateEditionReports(data,progress),/Income pathway needs/);
+});
 test('End Overdose retains separately dated California arithmetic and deduplicates research time',()=>{
  const data=read('data/geography-reports.json');
  const us=data.reports.find(r=>r.slug==='end-overdose'&&r.edition==='usa');
@@ -72,6 +93,21 @@ test('unestimated needs blockers; observed inputs need sources; stage and cohort
  r.model.inputs[0].basis='observed';assert.throws(()=>validateEditionReports(data,progress),/source/);r.model.inputs[0].sourceIds=['s1'];validateEditionReports(data,progress);
  data.sessions[0].model.reasoningEffort='medium';assert.throws(()=>validateEditionReports(data,progress),/Wrong author model/);data.sessions[0].model.reasoningEffort='low';
  progress.editions[0].selectedAlphaIds=[];assert.throws(()=>validateEditionReports(data,progress),/cohort/);
+});
+test('unknown runtime stays unknown; lists retain initial estimates without changing current models',()=>{
+ const {data,progress,r}=fixture();
+ data.sessions[0].model=null;
+ validateEditionReports(data,progress);
+ assert.match(editionResearchEffort(data,r).label,/unrecorded AI model/);
+ const published=read('data/geography-reports.json');
+ for(const report of published.reports.filter(r=>/withdrawn|withdrawal/i.test((r.priceScope??'')+' '+r.acceptance.evidence))){
+  const slug=report.slug;
+  assert.equal(reportPrice(report),null,slug);
+  assert.ok(researchListPrice(report)>0,slug);
+  assert.match(formatEditionReportPrice(report),/^\$/,slug);
+ }
+ const school=published.reports.find(r=>r.slug==='california-school-based-health-alliance');
+ assert.equal(formatEditionReportPrice(school),'$26.9M');
 });
 test('header time uses whole focused intervals, and duplicate/overlapping sessions fail',()=>{
  const {data,progress,r}=fixture();assert.equal(editionResearchEffort(data,r).label,'Research time: 15 min on GPT-6 Astra Light');

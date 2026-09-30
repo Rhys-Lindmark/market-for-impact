@@ -1,0 +1,25 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {reportPrice,formatEditionReportPrice} from '../lib/geography-reports.mjs';
+const read=p=>JSON.parse(fs.readFileSync(new URL(p,import.meta.url)));
+const report=read('../data/geography-reports.json').reports.find(r=>r.edition==='california'&&r.slug==='center-for-independent-living');
+test('CIL negative beta withdraws donor ranking while preserving diagnostic math and audit uncertainty',()=>{
+ assert.equal(report.stage,'beta');assert.equal(report.acceptance.status,'accepted');
+ assert.equal(reportPrice(report),null);assert.equal(formatEditionReportPrice(report),'Estimate withdrawn');
+ const central=report.model.scenarios.find(s=>s.id==='central');
+ assert.equal(central.editionQalys,null);assert.equal(central.allPopulationQalys,null);
+ const legacy=report.model.scenarios.find(s=>s.id==='historical-alpha-central');
+ assert.equal(legacy.editionQalys,0.016895330225604348);
+ assert.equal(report.model.scenarios.length,5);
+ assert.match(report.priceScope,/withdrawn.*full gift cost.*other benefits unestimated.*HOLD/i);
+ assert.match(report.sections.monitoring,/original auditor report remained inaccessible/);
+ assert.match(report.sections.monitoring,/does not establish resolution/);
+ assert.ok(report.sources.some(s=>s.id==='cil-whill'));
+ const ca=read('../docs/geography-progress.json').editions.find(e=>e.id==='california');
+ assert.ok(ca.betaIds.includes(report.organizationId));assert.equal(ca.betaAcceptedPublished,ca.betaIds.length);
+ const sessions=read('../data/research-effort.json').organizations[report.organization].sessions;
+ assert.equal(sessions.length,2);assert.ok(sessions.every(s=>s.model===null&&s.endedAt));
+ const minutes=sessions.reduce((n,s)=>n+(Date.parse(s.endedAt)-Date.parse(s.startedAt))/60000,0);
+ assert.ok(Math.abs(minutes-5.80905)<1e-8);
+});

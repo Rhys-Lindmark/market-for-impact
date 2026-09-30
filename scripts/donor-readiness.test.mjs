@@ -2,14 +2,18 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import review from '../data/donor-readiness.json' with {type:'json'};
-test('editorial shortlist is explicit, audited and never silently price-filled',()=>{
+test('historical donor assessments remain explicit while homepage follows research',()=>{
  assert.equal(review.reviews.length,10);
  assert.equal(new Set(review.reviews.map(r=>r.slug)).size,10);
- assert.deepEqual(review.homepageSlugs,['recares','project-homeless-connect','compass-family-services','san-francisco-aids-foundation']);
- for(const slug of review.homepageSlugs)assert.equal(review.reviews.find(r=>r.slug===slug).homepage,true);
+ assert.deepEqual(review.historicalEditorialSlugs,['recares','project-homeless-connect','compass-family-services','san-francisco-aids-foundation']);
+ for(const slug of review.historicalEditorialSlugs)assert.equal(review.reviews.find(r=>r.slug===slug).homepage,true);
+ assert.match(review.selectionNote,/follows the research ranking/);
  for(const row of review.reviews){assert.ok(row.reason.length>80);assert.ok(row.short.length>10);}
- const source=fs.readFileSync(new URL('../app/page.tsx',import.meta.url),'utf8');
- assert.ok(!source.includes('.slice(0,4)'));
+ const source=fs.readFileSync(new URL('../app/san-francisco/page.tsx',import.meta.url),'utf8');
+ assert.match(source,/topFourResearch\.map/);
+ assert.doesNotMatch(source,/readiness\.homepageSlugs/);
+ assert.match(source,/hope4change650.org/);
+ assert.match(source,/hearingspeech.org/);
  for(const name of ['recares.png','compass.jpg','phc.jpg','sfaf.jpg'])assert.ok(fs.statSync(new URL('../public/images/'+name,import.meta.url)).size>1000);
 });
 test('financial and recipient blockers remain specific, not accusations',()=>{

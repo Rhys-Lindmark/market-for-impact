@@ -1,0 +1,7 @@
+# FernCare Free Clinic — Detroit initial review
+
+Accepted as a conditional initial report, **not** a donor recommendation or a rankable marginal-gift estimate. Current official fundraising reports more than 1,988 visits and 3,500 volunteer hours in 2025; visits are not distinct completed patients. Original 2022–24 990-EZ filings document spending, but 2024 recorded expense and 2025 visits are different periods. Historical 2019 residence percentages inform, but do not measure, a current Detroit-metro share.
+
+An illustrative annual-average scenario combines $207,136 gross recorded 2024 spending with a 2025 visit floor and explicit care-effect, additionality and geography judgments. It yields approximately $772,000 per ten modeled metro QALYs. Including 3,500 hours valued illustratively at $50/hour raises the ratio to approximately $1.42 million, still before other missing donated inputs. Zero/adverse and broad positive cases remain. This is not the expected result of the next donation; donor readiness is HOLD.
+
+An independent GPT-6 Astra Light audit checked the original returns, event-cost addbacks, current official visit disclosure, model arithmetic and distinct author/audit provenance. Full evidence is preserved in the task workspace at `outputs/detroit-ferncare-audit/accepted-packet.json` and `audit.md`; sessions are recorded in `data/geography-reports.json`. Reopen a marginal donor estimate with current distinct completed episodes by condition/residence, reconciled donated-resource cost and a priced additional-capacity plan.

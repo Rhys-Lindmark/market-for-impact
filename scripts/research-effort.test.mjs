@@ -5,6 +5,15 @@ import {spawnSync} from 'node:child_process';
 import {researchEffortSummary,validateResearchEffort} from '../lib/research-effort.mjs';
 const session={id:'one',workerId:'author',phase:'research',startedAt:'2026-01-01T10:00:00Z',endedAt:'2026-01-01T10:20:03Z',model:{id:'fixture-model',name:'Fixture model',evidence:'test-only identity'},evidence:'test-only timing'};
 const data=(sessions=[session],coverage='complete')=>({version:1,timeBasis:'Summed researcher intervals.',historicalCoverage:'Not recorded.',organizations:{Example:{coverage,sessions}}});
+test('published research has no unrecorded model labels after user confirmation',()=>{
+ const registry=JSON.parse(fs.readFileSync('data/research-effort.json','utf8'));
+ for(const name of Object.keys(registry.organizations))assert.doesNotMatch(researchEffortSummary(registry,name).label,/unrecorded AI model/);
+ const editions=JSON.parse(fs.readFileSync('data/geography-reports.json','utf8'));
+ for(const s of editions.sessions)assert.ok(s.model,'Published session '+s.id+' needs a model');
+ const confirmed=editions.sessions.filter(s=>/User-confirmed model assignment/.test(s.model.evidence));
+ assert.ok(confirmed.length>=24);
+ assert.ok(confirmed.every(s=>s.model.id==='gpt-6.1-sol'&&s.model.name==='GPT-6.1 Sol'));
+});
 test('published registry validates and unknown is never zero',()=>{
  const registry=JSON.parse(fs.readFileSync('data/research-effort.json','utf8'));validateResearchEffort(registry);
  const result=researchEffortSummary(registry,'Missing historic record');
@@ -34,7 +43,7 @@ test('user-reported lead attribution preserves actual assistant evidence and is 
  const d=data([{...session,startedAt:'2026-09-10T10:00:00Z',endedAt:'2026-09-10T10:05:42Z'}]);
  d.leadModelContext={name:'GPT-6 Astra Lite',startsAt:'2026-09-10T07:00:00Z',endsAt:'2026-09-11T07:00:00Z',evidence:'User report'};
  const before=JSON.stringify(d.organizations);
- assert.equal(researchEffortSummary(d,'Example').label,'Research time: 6 min on GPT-6 Astra Lite + Fixture model');
+ assert.equal(researchEffortSummary(d,'Example').label,'Research time: 6 min on Fixture model (GPT-6 Astra Lite time not recorded)');
  assert.equal(JSON.stringify(d.organizations),before);
  d.leadModelContext.endsAt='2026-09-10T09:00:00Z';
  assert.equal(researchEffortSummary(d,'Example').label,'Research time: 6 min on Fixture model');
@@ -42,7 +51,7 @@ test('user-reported lead attribution preserves actual assistant evidence and is 
 test('parallel workers sum separately and partial history remains disclosed',()=>{
  const d=data([session,{...session,id:'two',workerId:'auditor',model:null}],'partial');validateResearchEffort(d);
  const r=researchEffortSummary(d,'Example');assert.equal(r.minutes,40.1);assert.match(r.label,/unrecorded AI model/);
- assert.match(r.label,/~40 min/);assert.deepEqual(r.bullets,['Research — reviewed programs, finances and impact evidence.']);assert.doesNotMatch(r.label,/partial record/);
+ assert.equal(r.label,'Research time: ~20 min on Fixture model + ~20 min on an unrecorded AI model');assert.deepEqual(r.bullets,['Research — reviewed programs, finances and impact evidence.']);assert.doesNotMatch(r.label,/partial record/);
 });
 test('historical estimates use a frozen report average and never invent session timestamps',()=>{
  const registry=JSON.parse(fs.readFileSync('data/research-effort.json','utf8'));
@@ -54,7 +63,14 @@ test('historical estimates use a frozen report average and never invent session 
  assert.equal(estimated.label,'Research time: ~18 min on GPT-5.6 Sol Medium');
  assert.match(estimated.bullets.at(-1),/before time tracking/);
  const future=researchEffortSummary(registry,'Future organization',h);assert.equal(future.minutes,null);assert.equal(future.estimated,false);
- const recorded=researchEffortSummary(registry,'Marin Treatment Center',h);assert.equal(recorded.recorded,true);assert.equal(recorded.estimated,false);assert.equal(recorded.label,'Research time: ~37 min on GPT-6 Astra Lite + GPT-5.6 Sol');
+ const recorded=researchEffortSummary(registry,'Marin Treatment Center',h);assert.equal(recorded.recorded,true);assert.equal(recorded.estimated,false);assert.equal(recorded.label,'Research time: ~37 min on GPT-5.6 Sol Medium (GPT-6 Astra Lite time not recorded)');
+});
+test('mixed recorded models show their own minutes, not one total assigned to both',()=>{
+ const second={...session,id:'medium',workerId:'auditor',startedAt:'2026-01-01T11:00:00Z',endedAt:'2026-01-01T11:08:00Z',model:{id:'medium',name:'GPT-6 Astra Medium',evidence:'test identity'}};
+ const first={...session,model:{id:'light',name:'GPT-6 Astra Light',evidence:'test identity'}};
+ const result=researchEffortSummary(data([first,second]),'Example');
+ assert.equal(result.minutes,28.05);
+ assert.equal(result.label,'Research time: 20 min on GPT-6 Astra Light + 8 min on GPT-6 Astra Medium');
 });
 test('duplicate intervals overlapping worker time and unverified model identities reject',()=>{
  assert.throws(()=>validateResearchEffort(data([session,session])));

@@ -1,21 +1,25 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
+import {reportPrice,formatEditionReportPrice} from '../lib/geography-reports.mjs';
 const d=JSON.parse(readFileSync(new URL('../data/geography-reports.json',import.meta.url)));
 const rows=d.reports.filter(r=>r.edition==='new-york-city'&&['transportation-alternatives','onpoint-nyc','bergen-volunteer-medical-initiative'].includes(r.slug));
 const close=(a,b)=>assert.ok(Math.abs(a-b)<1e-8*Math.max(1,Math.abs(b)),a+' != '+b);
-test('NYC first three selected alpha reports preserve model and author provenance',()=>{
+test('NYC first three selected reports preserve model and author provenance',()=>{
  assert.equal(rows.length,3);
  for(const r of rows){
-  assert.equal(r.stage,'alpha');assert.equal(r.acceptance.status,'accepted');assert.ok(r.priceScope);
+  assert.ok(['alpha','beta'].includes(r.stage));assert.equal(r.acceptance.status,'accepted');assert.ok(r.priceScope);
   const ids=new Set(r.sources.map(s=>s.id));
   for(const p of r.model.inputs)for(const id of p.sourceIds)assert.ok(ids.has(id));
-  for(const id of r.sessionIds){const s=d.sessions.find(s=>s.id===id);assert.ok(s);assert.equal(s.organizationId,r.organizationId);assert.equal(s.model.reasoningEffort,'low');}
+  for(const id of r.sessionIds){const s=d.sessions.find(s=>s.id===id);assert.ok(s);assert.equal(s.organizationId,r.organizationId);assert.equal(s.model.reasoningEffort,s.phase==='research'&&s.stage==='alpha'?'low':'medium');}
   assert.ok(r.model.scenarios.some(s=>s.editionQalys===0));assert.ok(r.model.scenarios.some(s=>s.editionQalys<0));
  }
 });
-for(const r of rows)test(r.slug+' independently reproduces every scenario',()=>{
+for(const r of rows.filter(r=>r.stage==='alpha'))test(r.slug+' independently reproduces every scenario',()=>{
  for(const s of r.model.scenarios){
+  if(r.slug==='transportation-alternatives'&&s.id==='central'){
+   assert.equal(s.editionQalys,null);assert.equal(s.pricePer10Qalys,null);continue;
+  }
   const p=JSON.parse(s.assumptions);let q;
   if(r.slug==='transportation-alternatives'){
    let A=0;for(let j=1;j<=p.T;j++)A+=1/1.03**j;
@@ -41,4 +45,8 @@ test('OnPoint merger-period mean and uncredited TA interruption remain explicit'
  assert.equal(op.annualExpenses[0].comparable,false);
  assert.match(op.sections.monitoring,/not independently demonstrated deaths/);
  assert.equal(ta.timeCoverage,'partial');
+ assert.equal(ta.stage,'alpha');
+ assert.equal(reportPrice(ta),null);
+ assert.equal(formatEditionReportPrice(ta),'Estimate withdrawn');
+ assert.ok(ta.model.scenarios.some(s=>s.id==='alpha-central-diagnostic'&&s.pricePer10Qalys>0));
 });

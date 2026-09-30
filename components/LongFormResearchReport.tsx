@@ -38,6 +38,7 @@ export function Markdown({text}:{text:string}) {
 export default function LongFormResearchReport({organization,program,markdown,sources,donationUrl,modelVersion,modelUrl,minutes,modelLabel,sectionTitles={},sectionOrder=[]}:{organization:string;program:string;markdown:string;sources:Source[];donationUrl?:string;modelVersion:string;modelUrl:string;minutes:number;modelLabel:string;sectionTitles?:Record<string,string>;sectionOrder?:string[]}){
  const effortOrganization=organization==='HOPE Pacifica'?'HOPE: Healing, Overdose Prevention, and Education':organization;
  const earlierEffort=researchEffortSummary(researchEffort,effortOrganization,{...historicalEffort,...assignedEffort});
+ const earlierTime=earlierEffort.recorded||earlierEffort.estimated?earlierEffort.label.replace('Research time: ','')+' + ':'';
  const sections=(reportSections(markdown) as Section[]).map(section=>({...section,title:sectionTitles[section.id]??section.title}));
  if(sectionOrder.length){if(sectionOrder.length!==sections.length||new Set(sectionOrder).size!==sections.length||sectionOrder.some(id=>!sections.some(s=>s.id===id)))throw Error('Incomplete report section order');sections.sort((a,b)=>sectionOrder.indexOf(a.id)-sectionOrder.indexOf(b.id));}
  const groups=groupReportSections(sections,(contentsMap as Record<string,Record<string,string>>)[organization]) as {id:string;title:string;sections:Section[]}[];
@@ -45,7 +46,7 @@ export default function LongFormResearchReport({organization,program,markdown,so
   <header className="givebetter-masthead"><a href="/san-francisco">Give<span>Better</span> <small>x SF</small></a></header>
   <div className="report-reading-column">
    <header className="report-heading"><h1>{organization}</h1><p className="report-program">{program}</p>
-    <details className="report-research-effort"><summary>Latest research: {minutes} minutes on {modelLabel}</summary><ul><li>v1: {earlierEffort.label.replace('Research time: ','')}</li><li>v2: {minutes} min on {modelLabel}</li></ul>{earlierEffort.estimated&&<p>Earlier research time was estimated before tracking began.</p>}</details>
+    <details className="report-research-effort"><summary>Research time: {earlierTime}{minutes} min on {modelLabel}</summary><ul><li>v1: {earlierEffort.label.replace('Research time: ','')}</li><li>v2: {minutes} min on {modelLabel}</li></ul>{earlierEffort.estimated&&<p>Earlier research time was estimated before tracking began.</p>}</details>
     <p className="report-date">Updated: 11 September 2026</p>
     {donationUrl?<a className="report-donate" href={donationUrl} target="_blank" rel="noreferrer">Donate</a>:<p className="report-date">Donation route not verified.</p>}
    </header>

@@ -1,0 +1,7 @@
+# Georgia Harm Reduction Coalition — Atlanta initial review
+
+Accepted as a weak-confidence, conditional initial report, **not** a donor recommendation. The original 2024 collaborative annual report lists 32,000 naloxone units, 25,000 recipients and 4,000 reported reversal events across Georgia. These are not unique lives saved or a GHRC-only outcome. Five direct-service sites are in the metro, but the report does not disclose metro-resident shares.
+
+The illustrative central model uses original 2024 Form 990/Schedule D full-recipient expenses of $9,322,976 and explicit analyst priors for duplicate events, coalition attribution, survival, utility, donor response and metro share. It yields $110.5 million per ten modeled metro QALYs; zero/adverse and 0–100% metro-share cases are preserved. The annual report's different $9,368,880.18 expense-like total is a sensitivity case, not silently reconciled to the return. Funding room is unverified, so donor readiness is HOLD.
+
+An independent GPT-6 Astra Light audit checked source counts, expense arithmetic, all eight scenarios, source links and timing/model provenance. Full evidence and author/audit sessions are preserved in the task workspace at `outputs/atlanta-ghrc-audit/accepted-packet.json` and `audit.md`; sessions are recorded in `data/geography-reports.json`. Reopen donor qualification with deduplicated county-level rescues, partner contribution, survival outcomes, current full costs and a costed additional-gift path.

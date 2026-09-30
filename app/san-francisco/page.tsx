@@ -1,14 +1,13 @@
 import type {Metadata} from 'next';
-import {unifiedResearch} from '@/lib/unified-research-index';
-import readiness from '@/data/donor-readiness.json';
+import {topFourResearch} from '@/lib/unified-research-index';
 import '../sf-home.css';
 import '../givebetter.css';
 /* eslint-disable @next/next/no-img-element -- Sourced editorial photographs with reserved dimensions. */
 export const metadata:Metadata={
   title:'Our Bay Area Shortlist — GiveBetter x SF',
-  description:'Promising Bay Area giving leads, selected for evidence as well as estimated impact. Further donor diligence is required.',
+  description:'The four lowest modeled costs in our Bay Area research, with supporting evidence and reservations.',
   alternates:{canonical:'https://ai.rhyslindmark.com/givebetter/san-francisco'},
-  openGraph:{title:'Our Bay Area giving shortlist',description:'Research leads and the evidence needed before a grant.'},
+  openGraph:{title:'Our Bay Area giving shortlist',description:'The first four organizations in our ranked research list.'},
 };
 const root='https://ai.rhyslindmark.com/givebetter';
 const money=(value:number)=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',notation:'compact',minimumFractionDigits:value>=1e6?1:0,maximumFractionDigits:value>=1e6?1:0}).format(value);
@@ -32,6 +31,22 @@ const editorial:Record<string,{name:string;program:string;overview:string;scope:
     next:'Confirm current project funding and sponsor restrictions, then identify additional appointments a grant would enable. Account for shared patients and partner contributions.',
     photo:'/images/phc.jpg',caption:'Glasses services. Photo: Project Homeless Connect, 2015.',source:'https://www.projecthomelessconnect.org/v44a0929/',
   },
+  'hope-pacifica':{
+    name:'HOPE Pacifica',program:'Expand community access to naloxone',
+    overview:'HOPE provides community naloxone access and overdose-prevention support in Pacifica.',
+    scope:'Modeled naloxone-related benefit; operating costs are assumptions.',
+    evidence:'Community access points provide a practical route to overdose-response supplies. The modeled benefit depends on additional access beyond public alternatives.',
+    next:'Obtain annual operating financials and establish what extra funding adds to existing naloxone access. Missing financial evidence is not evidence of misconduct or inactivity.',
+    photo:'https://static.wixstatic.com/media/d891a5_570d50550ecb4b6faadbfdefc7b41b0a~mv2.jpg',caption:'Official logo: HOPE Pacifica.',source:'https://www.hope4change650.org/',
+  },
+  'hearing-and-speech-center':{
+    name:'Hearing and Speech Center of Northern California',program:'Help adults access supported hearing care',
+    overview:'The Center’s described pathway combines hearing assessment, fitted aids and follow-up, including a partnership with Project Homeless Connect.',
+    scope:'Conditional adult hearing-access model—not a verified donation offer.',
+    evidence:'Supported hearing care can improve hearing-related health and day-to-day communication. Local treatment costs and additional lasting benefit remain modeled assumptions.',
+    next:'Resolve the receiving entity’s charitable status before a direct gift. The prior IRS-data review did not verify reinstatement or a successor; this does not establish clinic closure.',
+    photo:'https://hearingspeech.org/wp-content/themes/hearingspeech/images/logo.png',caption:'Official logo: Hearing and Speech Center of Northern California.',source:'https://hearingspeech.org/',
+  },
   'compass-family-services':{
     name:'Compass Family Services',program:'Help families stay housed',
     overview:'Compass’s C-Rent program combines rental assistance with case management for families at risk of losing their homes.',
@@ -49,9 +64,9 @@ const editorial:Record<string,{name:string;program:string;overview:string;scope:
     photo:'/images/sfaf.jpg',caption:'Harm reduction at San Francisco AIDS Foundation. Photo: SFAF.',source:'https://www.sfaf.org/health-services/overdose-prevention-response/',
   },
 };
-const picks=readiness.homepageSlugs.map(slug=>{
-  const entry=unifiedResearch.find(row=>row.href==='/charities/'+slug);
-  if(!entry||entry.localUsdPerTenQalys===null||!editorial[slug])throw new Error('Incomplete editorial shortlist: '+slug);
+const picks=topFourResearch.map(entry=>{
+  const slug=entry.href.split('/').at(-1)!;
+  if(entry.localUsdPerTenQalys===null||!editorial[slug])throw new Error('Incomplete ranked shortlist: '+slug);
   return {slug,...editorial[slug],price:entry.localUsdPerTenQalys};
 });
 export default function SanFranciscoHome(){
@@ -60,9 +75,9 @@ export default function SanFranciscoHome(){
     <main>
       <section className="sf-home-intro">
         <h1>Our Bay Area Shortlist</h1>
-        <p className="sf-home-lead">Promising giving leads, selected for evidence as well as estimated impact.</p>
-        <small>Last reviewed: September 11, 2026</small>
-        <details className="sf-home-selection"><summary>What this shortlist means</summary><p>These are priorities for donor diligence, not fully vetted grant recommendations. None has a verified plan supporting a $10 million gift at the modeled return. We consider current operations, financial transparency, the strength and scope of the evidence, and what additional funding could change—not just the lowest estimate.</p><p>HOPE Pacifica remains in the research directory pending annual financial and additional-coverage evidence. The Hearing and Speech Center remains there pending resolution of its charitable-recipient status. Neither concern changes the underlying model estimates.</p></details>
+        <p className="sf-home-lead">The four lowest modeled costs in our Bay Area research.</p>
+        <small>Last updated: September 30, 2026</small>
+        <details className="sf-home-selection"><summary>What this shortlist means</summary><p>The same four organizations appear first in <a href={root+'/san-francisco/all'}>the full research list</a>, in the same order. These are research leads, not fully vetted grant recommendations. Low modeled cost does not establish financial transparency, a verified recipient or room for more funding.</p><p>HOPE Pacifica’s annual financials remain unverified. The Hearing and Speech Center’s charitable-recipient status needs resolution before a direct gift. Those concerns are retained in the reports and do not change the ranking.</p></details>
       </section>
       <section className="sf-home-principles" aria-label="How to give better">
         <div><GivingIllustration index={0} label="Illustration of San Francisco Bay"/><h2>Look for meaningful impact</h2><p>Compare how a donation could improve health in the Bay Area.</p></div>
@@ -70,7 +85,7 @@ export default function SanFranciscoHome(){
         <div><GivingIllustration index={2} label="Illustration of choosing a charity"/><h2>Choose with care</h2><p>Read the report and confirm what your gift would fund before donating.</p></div>
       </section>
       <section aria-label="Four research leads">{picks.map((pick,i)=><article className="sf-home-charity" id={pick.slug} key={pick.slug}>
-        <figure><img src={root+pick.photo} alt={pick.caption} width="480" height="480" loading="lazy"/><figcaption><a href={pick.source}>{pick.caption}</a></figcaption></figure>
+        <figure><img src={pick.photo.startsWith('https://')?pick.photo:root+pick.photo} alt={pick.caption} width="480" height="480" loading="lazy" style={pick.photo.startsWith('https://')?{objectFit:'contain',background:'#fff'}:undefined}/><figcaption><a href={pick.source}>{pick.caption}</a></figcaption></figure>
         <div><p className="sf-home-eyebrow">RESEARCH LEAD {i+1} OF 4</p><h2>{pick.program}</h2>
           <div className="sf-home-charity-body">
             <section><h3>Overview</h3><p>{pick.overview}</p></section>
@@ -81,7 +96,7 @@ export default function SanFranciscoHome(){
           </div>
         </div>
       </article>)}</section>
-      <footer className="sf-home-footer"><a href={`${root}/san-francisco/all`}>All Bay Area research</a> · <a href={`${root}/all`}>All cities and regions</a><p>Independent research. Not affiliated with GiveWell or the organizations reviewed.</p></footer>
+      <footer className="sf-home-footer"><a href={`${root}/san-francisco/all`}>All San Francisco research</a><span className="sf-footer-separator" aria-hidden="true">·</span><a href={`${root}/all`}>All cities and regions</a></footer>
     </main>
   </div>;
 }

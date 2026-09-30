@@ -1,0 +1,13 @@
+# Deep-review packet checkpoint — 30 September 2026
+
+The three beta packets below were independently reviewed, corrected where needed, and published in Site version 297. California is now 25/25 initial and 5/10 deep; USA is 25/25 and 10/10. Their earlier central prices are withdrawn, not moved into the giving shortlist. The acceptance boundaries are recorded in `september-30-beta-acceptance.md`.
+
+| Edition and recipient | Packet | Preliminary result | Timing |
+| --- | --- | --- | --- |
+| USA / Institute for Safer Trucking | `work/outputs/usa-ist-beta-next/handoff.md` | Original FY2022–24 costs and 13 model diagnostics checked by author. Recommend withdrawing the $1.65M/10 USA-QALY alpha headline: policy acceleration, recipient contribution and ordinary-gift response remain uncalibrated. Donor HOLD. | 24.54 dedicated author minutes, model identity unavailable in record. |
+| USA / Cribs for Kids | `work/outputs/usa-cribs-beta-next/review.md` | Original FY2023–25 costs, subsidiary relationship, behavior evidence and six alpha arithmetic cases reviewed. Recommend withdrawing the $3.74M/10 USA-QALY alpha headline pending demonstrated gift-induced safe-sleep behavior and mortality bridge. Donor HOLD. | 23.51 dedicated research minutes importable. Later modeling timer ran through interruption and is explicitly non-importable; no total-modeling duration claimed. |
+| California / California School-Based Health Alliance | `work/outputs/ca-sbha-beta-next/HANDOFF.md` | Original FY2023–25 costs and alpha arithmetic checked. Recommend withdrawing the $26.85M/10 CA-QALY headline because operating school care is not demonstrated to be caused by an additional Alliance gift. Donor HOLD. | 8.82 dedicated author minutes; early stop on decisive gate, model identity unavailable. |
+
+Chicago Children's Research Triangle was then accepted as a **conditional initial report only** in `chicago-crt-alpha-acceptance.md`, advancing Chicago to 14/25 initial and 1/10 deep after its separate deployment. Root's 3.91-minute supplemental source audit checked FY2022 and FY2023 originals, the FY2024 Schedule D $1,822 adjustment, and all 17 scenario outputs. The mixed reach, unobserved local starts, subjective transfer/attribution and newer grants remain prominent limitations. Donor status is HOLD. The interrupted auditor envelope is not imported as research time.
+
+Next block: continue high-EV, source-gated initial reports and the remaining deep-review queues. Do not repeat this author research. The Cribs worker's interrupted modeling duration remains unknown; only its 23.51-minute valid source-research record and the separately timed root audit are imported.

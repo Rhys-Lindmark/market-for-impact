@@ -1,12 +1,14 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {reportPrice,expenseAverage} from '../lib/geography-reports.mjs';
+import {reportPrice,formatEditionReportPrice,expenseAverage} from '../lib/geography-reports.mjs';
 const reports=JSON.parse(readFileSync(new URL('../data/geography-reports.json',import.meta.url))).reports;
 test('policy thresholds are not reported as central cost effectiveness',()=>{
  for(const slug of ['western-center-on-law-and-poverty']){
   const r=reports.find(r=>r.slug===slug&&r.edition==='california');assert.ok(r);
-  assert.ok(reportPrice(r)>0);assert.ok(r.model.missingInputs.length);
+  assert.equal(reportPrice(r),null);assert.equal(formatEditionReportPrice(r),'Estimate withdrawn');assert.ok(r.model.missingInputs.length);
+  assert.equal(r.stage,'beta');assert.equal(r.model.scenarios.find(s=>s.id==='central').editionQalys,null);
+  assert.ok(r.model.scenarios.find(s=>s.id==='historical-alpha-central').editionQalys>0);
   assert.equal(r.model.scenarios.find(s=>s.id==='zero').editionQalys,0);
   assert.ok(r.model.scenarios.find(s=>s.id==='adverse').editionQalys<0);
  }

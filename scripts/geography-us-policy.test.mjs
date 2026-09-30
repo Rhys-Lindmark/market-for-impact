@@ -5,6 +5,11 @@ const data=JSON.parse(readFileSync(new URL('../data/geography-reports.json',impo
 for(const slug of ['center-for-science-in-the-public-interest','kids-and-car-safety'])test(`${slug}: finite policy pathway reproduces every scenario`,()=>{
  const report=data.reports.find(r=>r.edition==='usa'&&r.slug===slug);
  for(const s of report.model.scenarios){
+  if(slug==='kids-and-car-safety'&&s.id==='central'){
+   assert.equal(s.allPopulationQalys,null);
+   assert.equal(s.editionQalys,null);
+   continue;
+  }
   const p=JSON.parse(s.assumptions.match(/\{[^}]+\}/)[0]);
   let H;
   if(slug==='center-for-science-in-the-public-interest'){
@@ -22,5 +27,5 @@ for(const slug of ['center-for-science-in-the-public-interest','kids-and-car-saf
  }
  assert.ok(report.model.scenarios.some(s=>s.editionQalys===0));
  assert.ok(report.model.scenarios.some(s=>s.editionQalys<0));
- assert.match(report.priceScope,/only|partial-health/);
+ assert.match(report.priceScope,/only|partial-health|mortality pathway/);
 });

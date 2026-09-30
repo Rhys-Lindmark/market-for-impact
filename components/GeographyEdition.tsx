@@ -28,12 +28,13 @@ export default function GeographyEdition({id,research=false}:{id:string;research
  if(!research)return <EditionDonorHome id={id} label={edition.label} reports={reports} discovery={edition.discoveryAccepted} alpha={edition.alphaPublished} beta={edition.betaAcceptedPublished}/>;
  return <div className="givebetter"><EditionMasthead label={edition.label}/><main className={styles.shell}>
   <section className={styles.intro}><h1>GiveBetter x {edition.label} Research</h1>
-  <p>Estimated dollars per better life in {edition.label} (10 QALYs).</p>
+  <p>Estimated dollars per better life in {edition.label} (10 healthy-year equivalents).</p>
   <p className={styles.caveat}>Sorted by modeled cost, not recommendation strength. These are uncertain research estimates, not verified donation offers. Cost boundaries differ; see each report before comparing.</p>
+  <p className={styles.caveat}>Prices include modeled health and <a href={canonicalBase+'/methodology/income'}>income benefits</a> where quantified. Older reports without income models await recalibration; income equivalents are not observed QALYs.</p>
   <p><a href={canonicalBase+path}>Our giving shortlist</a> · <a href={canonicalBase+'/all'}>All cities and regions</a></p></section>
   {reports.length?<EditionResearchTable reports={reports}/>:<p>Research reports are being prepared for this edition.</p>}
   <details className="gb-edition-boundary"><summary>Research progress</summary><p>{edition.discoveryAccepted}/100 candidates screened · {edition.alphaPublished}/25 initial reports · {edition.betaAcceptedPublished}/10 in-depth reviews.</p></details>
   <details className="gb-edition-boundary"><summary>Which places count?</summary>{metro?<><p>{metro.officialName}. We use the Census/OMB July 2023 metropolitan statistical area, including these counties:</p><ul>{metro.counties.map(c=><li key={c.fips}>{c.name}, {c.state}</li>)}</ul><p><a href={boundaries.source.index}>Official geographic definitions</a></p></>:<p>{id==='california'?'Benefits to people throughout the state of California.':'Benefits to residents of the 50 United States and District of Columbia. Overseas and territorial effects are outside this edition’s main estimate.'}</p>}</details>
-  <footer><a href={canonicalBase+'/san-francisco'}>Explore the existing SF/Bay Area shortlist</a><p>Independent research. Not affiliated with GiveWell or the organizations reviewed.</p></footer>
+  <footer className="sf-home-footer"><a href={canonicalBase+path+'/all'}>All {edition.label} research</a><span className="sf-footer-separator" aria-hidden="true">·</span><a href={canonicalBase+'/all'}>All cities and regions</a></footer>
  </main></div>;
 }

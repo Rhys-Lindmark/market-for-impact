@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {calculate as calculateOa} from '../lib/oa-portfolio-model.mjs';
 import {BOUNDS as oaBounds} from '../lib/oa-portfolio-foundation.mjs';
-import {validateEditionReports,reportPrice,formatEditionMoney,expenseAverage,editionResearchEffort,reportsForEdition,editionReportPath} from '../lib/geography-reports.mjs';
+import {validateEditionReports,reportPrice,incomeAdjustedReportPrice,formatEditionMoney,expenseAverage,editionResearchEffort,reportsForEdition,editionReportPath} from '../lib/geography-reports.mjs';
 const read=path=>JSON.parse(readFileSync(new URL('../'+path,import.meta.url)));
 
 // Synthetic fixtures live only in tests; never published or counted as research.
@@ -43,6 +43,17 @@ test('price uses edition denominator, not global benefit; format and routes matc
  r.model.scenarios[0].editionQalys=0;assert.equal(reportPrice(r),null);
  r.model.scenarios[0].editionQalys=-1;assert.equal(reportPrice(r),null);
  r.model.scenarios[0].editionQalys=null;assert.equal(reportPrice(r),null);
+});
+test('income bridge is separately priced, source-gated and does not change the health ranking',()=>{
+ const {data,progress,r}=fixture();
+ r.model.incomeBridge={people:200,annualIncomeBeforeUSD:50000,annualIncomeGainUSD:500,years:1,causalShare:1,editionShare:1,independentShare:1,sourceIds:['s1'],rationale:'Synthetic only',counterfactual:'Synthetic baseline'};
+ validateEditionReports(data,progress);
+ assert.equal(reportPrice(r),100000);
+ const comparison=incomeAdjustedReportPrice(r);
+ assert.ok(comparison.incomeEquivalentYears>0.99&&comparison.incomeEquivalentYears<1);
+ assert.ok(comparison.price<reportPrice(r));
+ r.model.incomeBridge.sourceIds=[];
+ assert.throws(()=>validateEditionReports(data,progress),/Income bridge needs/);
 });
 test('End Overdose retains separately dated California arithmetic and deduplicates research time',()=>{
  const data=read('data/geography-reports.json');

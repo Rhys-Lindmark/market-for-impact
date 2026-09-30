@@ -24,6 +24,7 @@ export default function EditionDonorHome({id,label,reports,discovery,alpha,beta}
    <section className="gb-edition-current" aria-labelledby="current-research">
     <h2 id="current-research">Current research</h2>
     <p>Estimated dollars per better life: ten additional quality-adjusted life years in {label}. Estimates are uncertain; these are research reports, not verified donation offers.</p>
+    {id==='usa'&&<p>For example, better housing policy in major U.S. cities could <a href="https://diegopuga.org/papers/Duranton_Puga_ECMA_2023.pdf">help millions of people find higher-paying jobs</a>. We consider income alongside health using a <a href={canonicalBase+'/methodology/income'}>separate, explicit comparison method</a>.</p>}
     <p><a href={canonicalBase+path+'/all'}>Read all {reports.length} {label} reports</a></p>
    </section>
    <details className="sf-home-selection">

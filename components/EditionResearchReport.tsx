@@ -2,7 +2,7 @@ import type {Metadata} from 'next';
 import {notFound} from 'next/navigation';
 import progress from '@/docs/geography-progress.json';
 import {canonicalBase,editionPath} from '@/lib/geography-editions.mjs';
-import {editionReportSections,editionResearchEffort,formatEditionMoney,formatEditionReportPrice,formatAnnualExpense,formatEditionSensitivity,reportPrice,editionReportPath} from '@/lib/geography-reports.mjs';
+import {editionReportSections,editionResearchEffort,formatEditionMoney,formatEditionReportPrice,formatAnnualExpense,formatEditionSensitivity,reportPrice,incomeAdjustedReportPrice,editionReportPath} from '@/lib/geography-reports.mjs';
 import {getEditionReport,reportRegistry} from '@/lib/published-geography-reports';
 import {EditionMasthead} from './GeographyEdition';
 import {Markdown} from './LongFormResearchReport';
@@ -16,7 +16,7 @@ export function editionReportMetadata(edition:string,slug:string):Metadata{
 export default function EditionResearchReport({edition,slug}:{edition:string;slug:string}){
  const report=getEditionReport(edition,slug),e=progress.editions.find(e=>e.id===edition);
  if(!report||!e)notFound();
- const effort=editionResearchEffort(reportRegistry,report),price=reportPrice(report),displayPrice=formatEditionReportPrice(report);
+ const effort=editionResearchEffort(reportRegistry,report),price=reportPrice(report),displayPrice=formatEditionReportPrice(report),incomeComparison=incomeAdjustedReportPrice(report);
  return <main className="givebetter charity-report"><EditionMasthead label={e.label}/><div className="report-reading-column">
   <header className="report-heading"><h1>{report.organization}</h1><p className="report-program">{report.program}</p>
    <details className="report-research-effort"><summary>{effort.label}</summary><ul>{effort.bullets.map((s:string)=><li key={s}>{s}</li>)}</ul></details>
@@ -31,12 +31,13 @@ export default function EditionResearchReport({edition,slug}:{edition:string;slu
     <p><strong>What do you get for your dollar? </strong>{price!==null?formatEditionMoney(price)+' per better life: ten additional quality-adjusted life years in '+e.label+'.':displayPrice.startsWith('Illustrative ')?displayPrice+' per better life under a historical annual-average scenario; the return from a new donation is not established.':displayPrice==='Estimate withdrawn'?'An earlier numerical estimate was withdrawn because its funding-to-impact bridge was not established.':'A reliable cost per better life has not been established.'}{price!==null&&report.priceScope&&<> {report.priceScope}.</>}</p><Markdown text={report.model.nativeOutcomes}/>
    </section>
    {editionReportSections.map(([id,title]:string[])=><section id={id} key={id}><h2>{title}</h2><Markdown text={report.sections[id]}/>
-    {id==='cost'&&<details className="report-method"><summary>Model, assumptions and sensitivity</summary><p>{report.model.costScope}</p><p>{report.model.geographicAttribution}</p><p className="report-equation">{report.model.formula}</p><dl className="report-assumptions">{report.model.inputs.map(i=><div key={i.name}><dt>{i.name}</dt><dd>{JSON.stringify(i.value)} {i.unit} ({i.basis}). {i.rationale} {i.sourceIds.map(id=><a key={id} href={'#source-'+id}>[{id}] </a>)}</dd></div>)}</dl>
+   {id==='cost'&&<details className="report-method"><summary>Model, assumptions and sensitivity</summary><p>{report.model.costScope}</p><p>{report.model.geographicAttribution}</p><p className="report-equation">{report.model.formula}</p><dl className="report-assumptions">{report.model.inputs.map(i=><div key={i.name}><dt>{i.name}</dt><dd>{JSON.stringify(i.value)} {i.unit} ({i.basis}). {i.rationale} {i.sourceIds.map(id=><a key={id} href={'#source-'+id}>[{id}] </a>)}</dd></div>)}</dl>
      {report.model.scenarios.map(s=><p key={s.id}><strong>{s.label}: </strong>Cost: {s.costUSD===null?'unknown':formatEditionMoney(s.costUSD)}; {e.label} QALYs: {s.editionQalys??'unknown'}; all-population QALYs: {s.allPopulationQalys??'unknown'}. {s.assumptions}</p>)}
      <p><strong>Counterfactual: </strong>{report.model.counterfactual}</p><p><strong>Attribution: </strong>{report.model.attribution}</p><p>{report.model.uncertainty}</p>
      {!!report.model.sensitivity.length&&<><h3>Sensitivity</h3><ul>{report.model.sensitivity.map((s,index)=><li key={index}>{formatEditionSensitivity(s)}</li>)}</ul></>}
      {!!report.model.missingInputs.length&&<><h3>Unresolved inputs</h3><ul>{report.model.missingInputs.map(s=><li key={s}>{s}</li>)}</ul></>}
     </details>}
+    {id==='cost'&&incomeComparison&&report.model.incomeBridge&&<div className="report-income-comparison"><h3>Income-adjusted comparison</h3><p>The headline price above remains health-only. Under a separate welfare conversion, this report estimates {incomeComparison.incomeEquivalentYears.toFixed(2)} income-equivalent healthy years in {e.label}, compared with {incomeComparison.healthQalys.toFixed(2)} modeled health QALYs. Combining them gives {formatEditionMoney(incomeComparison.price)} per ten equivalent healthy years; this is not a measured QALY or DALY result.</p><p>{report.model.incomeBridge.rationale} {report.model.incomeBridge.counterfactual} <a href={canonicalBase+'/methodology/income'}>Method and caveats</a>.</p></div>}
    </section>)}
    <section id="annual-expenses"><h2>Annual expenses</h2><p>Organization-level spending, including programs, administration and fundraising. The research list averages three comparable, consecutive full fiscal years when available.</p>{report.annualExpenses.length?<ul>{report.annualExpenses.map(y=><li key={y.year}>FY {y.year}: {formatAnnualExpense(y)}; {y.entity}, {y.periodMonths===null?'period length unverified':y.periodMonths+'-month period'}, {y.accountingBasis}. <a href={'#source-'+y.sourceId}>Source</a></li>)}</ul>:<p>Comparable annual spending has not yet been verified.</p>}</section>
    <section id="sources"><h2>6. Sources</h2><ol className="report-sources">{report.sources.map(s=><li id={'source-'+s.id} key={s.id}><a href={s.url}>{s.title}</a>. {s.publisher}. Published: {s.published??'not stated'}; retrieved: {s.retrieved}.</li>)}</ol></section>

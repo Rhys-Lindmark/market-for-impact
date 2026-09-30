@@ -2,6 +2,8 @@
 
 Every organization report uses a concise research-time summary near its title and phase bullets when expanded. Measured intervals stay in the original registry. Cost-effectiveness model versions are separate from AI model identities and appear in the report footer.
 
+When multiple verified AI models contributed, the summary shows rounded dedicated minutes separately for each model; it never attaches one aggregate duration to several model names. A user-reported lead model with no timed interval may appear as “time not recorded,” not as a share of another researcher's minutes. Historical estimates retain their tilde and stated assumed model.
+
 Rhys requested average-based estimates for older reports on September10. The separate data/research-effort-historical-estimates.json freezes the80 published organization names,13 available organization totals, their17.689724-minute arithmetic mean, and the user-supplied historical GPT-5.6 Sol Medium assumption. Missing older records display approximately18min with a tilde and a short estimate note. This is not a recovered timestamp or measured total; do not manufacture sessions to fill gaps. Recorded partial totals use a compact plus sign rather than lengthy caveats. New organizations outside that frozen inventory require their own actual records and do not inherit this estimate. Future model names should include the verified reasoning level when available; do not infer it from another worker.
 
 ## Future research

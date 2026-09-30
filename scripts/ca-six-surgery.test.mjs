@@ -13,11 +13,16 @@ const cases=[
 ];
 for(const [slug,q] of cases)test(slug+' CA central and partial-health safeguards',()=>{
  const r=d.reports.find(r=>r.edition==='california'&&r.slug===slug);
- close(r.model.scenarios.find(s=>s.id==='central').editionQalys,q);
+ const central=r.model.scenarios.find(s=>s.id==='central');
+ if(slug==='california-school-based-health-alliance'){
+  assert.equal(r.stage,'beta');assert.equal(central.editionQalys,null);
+  assert.match(r.priceScope,/withdrawn/i);
+  assert.match(r.sections.cost,/historical low and high calculations also reproduce/i);
+ }else close(central.editionQalys,q);
  assert.ok(r.priceScope.length);assert.equal(r.acceptance.status,'accepted');
  assert.equal(r.summary.reservations.length,3);
  assert.ok(r.model.scenarios.some(s=>s.editionQalys===0));
- assert.ok(r.model.scenarios.some(s=>s.editionQalys<0));
+ if(slug!=='california-school-based-health-alliance')assert.ok(r.model.scenarios.some(s=>s.editionQalys<0));
  assert.ok(r.model.scenarios.every(s=>typeof s.assumptions==='string'));
 });
 test('Surgery beta finite survival and resource scenarios',()=>{

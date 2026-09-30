@@ -73,6 +73,19 @@ test('unestimated needs blockers; observed inputs need sources; stage and cohort
  data.sessions[0].model.reasoningEffort='medium';assert.throws(()=>validateEditionReports(data,progress),/Wrong author model/);data.sessions[0].model.reasoningEffort='low';
  progress.editions[0].selectedAlphaIds=[];assert.throws(()=>validateEditionReports(data,progress),/cohort/);
 });
+test('unknown runtime stays unknown; withdrawn beta prices never display as estimates',()=>{
+ const {data,progress,r}=fixture();
+ data.sessions[0].model=null;
+ validateEditionReports(data,progress);
+ assert.match(editionResearchEffort(data,r).label,/unrecorded AI model/);
+ const published=read('data/geography-reports.json');
+ for(const slug of ['california-school-based-health-alliance','institute-for-safer-trucking','cribs-for-kids']){
+  const report=published.reports.find(item=>item.slug===slug);
+  assert.equal(report.stage,'beta',slug);
+  assert.equal(reportPrice(report),null,slug);
+  assert.match(report.priceScope,/withdrawn/i,slug);
+ }
+});
 test('header time uses whole focused intervals, and duplicate/overlapping sessions fail',()=>{
  const {data,progress,r}=fixture();assert.equal(editionResearchEffort(data,r).label,'Research time: 15 min on GPT-6 Astra Light');
  data.sessions.push({...data.sessions[0],id:'overlap'});assert.throws(()=>validateEditionReports(data,progress),/overlapping/);

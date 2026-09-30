@@ -20,6 +20,8 @@ For geographic expansion, every newly published organization report must display
 
 ## Historical backfill
 
+On September 30, 2026, Rhys explicitly confirmed that all then-unrecorded research models were GPT-6.1 Sol. The 24 affected geographic sessions (13 also present in the organization registry) now carry that user-confirmed attribution. Their actual intervals and previously recorded historical model identities are unchanged. This correction is based on explicit user testimony, not inferred runtime metadata.
+
 Accept only records that tie an organization to actual research start/end timestamps and a model identity. General project work logs, commit dates, file modification times, a request to spend an hour, and the user's example “20min with GPT-6 Astra” do not establish research duration. Keep partial history visibly partial. Unknown old work remains unknown even after a newly recorded revision.
 
 ## Release checklist

@@ -3,6 +3,7 @@ import type {EditionReport} from '@/lib/published-geography-reports';
 import {canonicalBase,editionPath} from '@/lib/geography-editions.mjs';
 import {editionReportPath,formatEditionMoney,reportPrice} from '@/lib/geography-reports.mjs';
 import highlights from '@/data/edition-highlights.json';
+import EarningsResearch from './EarningsResearch';
 import '@/app/sf-home.css';
 
 export default function EditionDonorHome({id,label,reports,discovery,alpha,beta}:{id:string;label:string;reports:EditionReport[];discovery:number;alpha:number;beta:number}){
@@ -47,6 +48,7 @@ export default function EditionDonorHome({id,label,reports,discovery,alpha,beta}
     {id==='usa'&&<p>For example, better housing policy in major U.S. cities could <a href="https://diegopuga.org/papers/Duranton_Puga_ECMA_2023.pdf">help millions of people find higher-paying jobs</a>. We consider income alongside health using a <a href={canonicalBase+'/methodology/income'}>separate, explicit comparison method</a>.</p>}
     <p><a href={canonicalBase+path+'/all'}>Read all {reports.length} {label} reports</a></p>
    </section>
+   <EarningsResearch id={id}/>
    <details className="sf-home-selection">
     <summary>Research progress</summary>
     <p>{discovery}/100 candidates screened · {alpha}/25 initial reports · {beta}/10 in-depth reviews.</p>

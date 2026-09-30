@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import {unifiedResearch} from '@/lib/unified-research-index';
 import {researchListDescription} from '@/lib/research-list-copy.mjs';
 import ResearchExpenses from '@/components/ResearchExpenses';
+import EarningsResearch from '@/components/EarningsResearch';
 import styles from '../../research/research-index.module.css';
 import '../../givebetter.css';
 const price=(value:number|null)=>value===null?'Not estimated':new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',notation:'compact',minimumFractionDigits:value>=1e6&&value<1e9?1:0,maximumFractionDigits:value>=1e6&&value<1e9?1:0}).format(value);
@@ -20,6 +21,7 @@ export default function ResearchIndex(){
    </tr>)}</tbody>
   </table></section>
   <p className={styles.expenseNote}>Expenses include programs, administration and fundraising. Fiscal years, sources and accounting scope are listed in each report.</p>
+  <EarningsResearch id="san-francisco"/>
   <footer className={styles.footer}><a href="/san-francisco">Our top charities</a><a href="/research/city-theory">What makes city giving cost-effective?</a><a href="/research/large-bay-nonprofits">Regional research</a><a href="/archive/expanded-geography-research">Expanded Geography Research</a><a href="/archive">Full archive</a></footer>
  </main></div>;
 }

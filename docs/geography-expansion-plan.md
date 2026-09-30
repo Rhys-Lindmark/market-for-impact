@@ -1,5 +1,15 @@
 # GiveBetter geographic expansion
 
+## Earnings research supplement — 30 September 2026
+
+The user requested a better-paying-jobs lane for SF/Bay Area, California, NYC and USA. Published discovery synthesis: /research/better-paying-jobs, with shared sections on each edition’s landing and full-list pages. Candidates and screening scenarios live in lib/better-paying-jobs.mjs.
+
+Priorities: JVS Bay Area and JobTrain/Per Scholas Bay Area; JVS SoCal and Per Scholas LA; St. Nicks Alliance and Per Scholas NYC; Year Up United and the national Per Scholas network. Housing-policy leads are separate mechanisms, including Open New York, California YIMBY (501(c)(4), not automatically a charitable donation route) and existing housing/innovation research.
+
+This is discovery research, not new accepted organization reports. Counts and rankings remain unchanged. Shared comparative research time is not allocated among organizations. Future focused reviews must record dedicated intervals and add earnings baselines, net causal gains, duration, donor additionality, geographic shares and overlap before publishing organization-specific income comparisons. Keep the existing health-only headline and separately label welfare-equivalent income estimates.
+
+This bounded update does not resume the paused broad goal or scheduled research. Continue honoring the user’s usage reserve.
+
 Authorized September 13, 2026. This is new work, superseding the old SF-only stop rule.
 
 ## Outcome and scope

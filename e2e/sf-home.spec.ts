@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
 
 for (const path of ['/san-francisco']) {
-  test(`SF front door ${path} has four evidence-reviewed leads and photographs`, async ({ page, request, baseURL }) => {
+  test(`SF front door ${path} has four ranked leads and official imagery`, async ({ page, request, baseURL }) => {
     if (baseURL && /^https?:\/\/(localhost|127\.0\.0\.1)(:|\/)/.test(baseURL)) {
       await page.route('https://ai.rhyslindmark.com/givebetter/**',async route=>{const u=new URL(route.request().url());await route.fulfill({response:await request.get(new URL(u.pathname.replace(/^\/givebetter/, '')+u.search,baseURL).href,{maxRedirects:0})});});
       await page.route('https://market-for-impact.rhyslindmark.chatgpt.site/_next/**',async route=>{const u=new URL(route.request().url());await route.fulfill({response:await request.get(new URL(u.pathname+u.search,baseURL).href)});});
@@ -9,20 +9,21 @@ for (const path of ['/san-francisco']) {
     await page.goto(path, { waitUntil: 'domcontentloaded' });
     await expect(page.getByRole('heading', { level: 1 })).toHaveText('Our Bay Area Shortlist');
     await expect(page.locator('.sf-home-charity')).toHaveCount(4);
-    await expect(page.locator('.sf-home-org-card h4')).toHaveText(['The ReCARES Network', 'Project Homeless Connect', 'Compass Family Services', 'San Francisco AIDS Foundation']);
+    await expect(page.locator('.sf-home-org-card h4')).toHaveText(['The ReCARES Network', 'HOPE Pacifica', 'Project Homeless Connect', 'Hearing and Speech Center of Northern California']);
     await expect(page.locator('.sf-home-charity-body section:nth-child(2) strong')).toHaveCount(4);
-    await expect(page.locator('#compass-family-services .sf-home-scope')).toContainText('not an unrestricted gift');
+    await expect(page.locator('#hearing-and-speech-center .sf-home-scope')).toContainText('not a verified donation offer');
     await expect(page.getByRole('link', { name: 'All Bay Area research', exact:true })).toHaveAttribute('href', 'https://ai.rhyslindmark.com/givebetter/san-francisco/all');
     await expect(page.getByRole('link', { name: 'All cities and regions', exact:true })).toHaveAttribute('href', 'https://ai.rhyslindmark.com/givebetter/all');
     await expect(page.locator('.sf-home-illustration')).toHaveCount(3);
     await expect(page.locator('#giving-priorities')).toHaveCount(0);
     await page.locator('.sf-home-selection summary').click();
     await expect(page.locator('.sf-home-selection')).toContainText('not fully vetted grant recommendations');
-    await expect(page.locator('.sf-home-selection')).toContainText('$10 million');
+    await expect(page.locator('.sf-home-selection')).toContainText('same order');
     const prices=await page.locator('.sf-home-charity-body section:nth-child(2) strong').allTextContents();
     const slugs=await page.locator('.sf-home-charity').evaluateAll(ns=>ns.map(n=>n.id));
     await page.getByRole('link', { name: 'All Bay Area research', exact:true }).click();
     await expect(page).toHaveURL(/\/san-francisco\/all$/);
+    expect(await page.locator('[data-research-slug]').evaluateAll(rows=>rows.slice(0,4).map(row=>row.getAttribute('data-research-slug')))).toEqual(slugs);
     for(let i=0;i<slugs.length;i++){
       const value=Number(await page.locator('[data-research-slug="'+slugs[i]+'"]').getAttribute('data-cost-per-ten-qalys'));
       const expected=new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',notation:'compact',minimumFractionDigits:value>=1e6?1:0,maximumFractionDigits:value>=1e6?1:0}).format(value);

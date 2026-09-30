@@ -9,3 +9,6 @@ export const unifiedResearch=[
  ...sortedResearchPrograms.map(r=>({organization:r.organization,program:r.program,href:r.href,scope:'SF',...localResearchEstimate(r)})),
  ...[...bayResearch,...selectedSevenResearch,...localRescueResearch.map(r=>({...r,scope:'Bay'}))].map(r=>({organization:r.organization,program:r.program,href:r.href,scope:r.scope??'Bay',localUsdPerTenQalys:r.bayUsdPerTenQalys as number|null,estimateGeography:'Bay Area',localStatus:r.href==='/charities/bayview-hunters-point-foundation'?'Subjective modeled Bay-resident allocation:90%; measured residence unavailable':'Modeled Bay Area impact; see report for assumptions'})),
 ].sort((a,b)=>(a.localUsdPerTenQalys??Infinity)-(b.localUsdPerTenQalys??Infinity)||a.organization.localeCompare(b.organization));
+
+// The front door and full list share the same numeric ranking.
+export const topFourResearch=unifiedResearch.filter(row=>row.localUsdPerTenQalys!==null).slice(0,4);

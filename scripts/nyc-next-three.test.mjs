@@ -1,14 +1,20 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import test from 'node:test';
+import {reportPrice,formatEditionReportPrice} from '../lib/geography-reports.mjs';
 const data=JSON.parse(fs.readFileSync(new URL('../data/geography-reports.json',import.meta.url)));
-test('NYC next three preserve finite causal bridges and all twenty scenarios',()=>{
+test('NYC next three preserve historical causal bridges while NJHRC withdraws its central',()=>{
  const slugs=['new-york-lawyers-for-the-public-interest','new-york-city-environmental-justice-alliance','new-jersey-harm-reduction-coalition'];
  let count=0;
  for(const [i,slug] of slugs.entries()){
   const r=data.reports.find(x=>x.edition==='new-york-city'&&x.slug===slug);
   assert.equal(r.acceptance.status,'accepted');assert.ok(r.priceScope);assert.equal(r.summary.what.length,3);assert.equal(r.summary.strengths.length,3);assert.equal(r.summary.reservations.length,3);
-  for(const s of r.model.scenarios){
+  if(i===2){
+   assert.equal(r.stage,'beta');assert.equal(reportPrice(r),null);assert.equal(formatEditionReportPrice(r),'Estimate withdrawn');
+   assert.equal(r.model.scenarios.find(s=>s.id==='central').editionQalys,null);
+   assert.match(r.acceptance.evidence,/nyc-njhrc-beta-audit/);
+  }
+  for(const s of r.model.scenarios.filter(s=>i!==2||s.id!=='central')){
    const x=JSON.parse(s.assumptions);let q;
    if(i===0)q=x.N*x.a*x.b*(x.p*x.u*x.t-x.h)/(1+x.d);
    if(i===1){const v=Math.log1p(x.d)+x.m;const life=x.u*(-Math.expm1(-v*x.L))/v;let A=0;for(let j=0;j<x.T;j++)A+=(1+x.d)**(-x.lag-j);q=x.D*x.r*x.p*x.a*x.b*life*A-x.h;}

@@ -44,14 +44,14 @@ for(const file of files){
   const index=registry.reports.findIndex(item=>item.edition===report.edition&&item.organizationId===report.organizationId);
   if(index<0)registry.reports.push(report);else registry.reports[index]=report;
   const edition=progress.editions.find(item=>item.id===report.edition);
-  if(!edition?.selectedAlphaIds.includes(report.organizationId))throw Error(`Report outside selected cohort: ${report.slug}`);
+  if(!edition?.selectedAlphaIds.includes(report.organizationId)&&!edition?.supplementalAlphaIds?.includes(report.organizationId))throw Error(`Report outside selected cohort: ${report.slug}`);
   if(!edition.alphaCohortIds.includes(report.organizationId))edition.alphaCohortIds.push(report.organizationId);
   if(report.stage==='beta'&&!edition.betaIds.includes(report.organizationId))edition.betaIds.push(report.organizationId);
   changed.push(`${report.edition}/${report.slug}:${report.stage}`);
  }
  for(const session of newSessions){
   if(session.phase==='review'||session.phase==='acceptance')session.phase='source-audit';
-  if(!session.model.reasoningEffort){
+  if(!session.model.reasoningEffort&&session.model.id!=='gpt-6.1-sol'){
    const effort=session.model.name==='GPT-6 Astra Light'?'low':session.model.name==='GPT-6 Astra Medium'?'medium':null;
    if(!effort||!session.model.evidence?.includes('dispatch')&&!session.model.evidence?.includes('runtime assignment'))throw Error(`Unknown model effort: ${session.id}`);
    session.model.reasoningEffort=effort;

@@ -16,3 +16,6 @@ Research workers return evidence/model/narrative artifacts outside the Site chec
 - Timing: `timeCoverage` and `sessionIds` refer to global recorded sessions. Each session includes organizationId, stage, phase, workerId, actual UTC start/end, publishable evidence reference and actual model id/name/reasoningEffort/evidence. Alpha author: Astra low (Light); beta author: Astra medium unless an explicitly authorized future plan changes the model. Root audits remain separately timed and labeled. The header rounds minutes separately per recorded AI model; no budget-as-duration or reconstructed timestamps.
 
 Validation proves structure, identity nesting and arithmetic, not scientific truth. Root acceptance must check evidence, source freshness, recipient allocation, double counting, scenarios and units before changing published counters. Reports are ordered by their central edition-specific price, with unestimated reports last. Bay-only values cannot simply be relabeled CA or USA.
+# Model override — 30 September 2026
+
+The user switched to GPT-6.1 Sol. New supplemental reports may record that verified runtime identity without inventing a reasoning effort. Historical Astra stage assignments remain unchanged.

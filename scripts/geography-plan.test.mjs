@@ -12,8 +12,8 @@ for(const e of p.editions){
  let previous;
  for(const [ids,counter,max] of stages){
   assert.equal(e[ids].length,e[counter]); assert.equal(new Set(e[ids]).size,e[ids].length);
-  assert.ok(e[counter]>=0&&e[counter]<=max);
-  if(previous)for(const id of e[ids])assert.ok(previous.includes(id));
+  assert.ok(e[counter]>=0&&e[counter]<=max+(ids==='alphaCohortIds'?(e.supplementalAlphaIds?.length??0):0));
+  if(previous)for(const id of e[ids])assert.ok(previous.includes(id)||(ids==='alphaCohortIds'&&e.supplementalAlphaIds?.includes(id)));
   previous=e[ids];
  }
 }
@@ -52,7 +52,7 @@ for(const edition of ['california','usa']){
  assert.deepEqual(row.selectedAlphaIds,cohort.selectedAlphaIds);
  assert.equal(new Set([...cohort.selectedAlphaIds,...cohort.alternateIds]).size,35);
  for(const id of [...cohort.selectedAlphaIds,...cohort.alternateIds])assert.ok(row.acceptedDiscoveryIds.includes(id));
- for(const id of row.alphaCohortIds)assert.ok(row.selectedAlphaIds.includes(id));
+ for(const id of row.alphaCohortIds)assert.ok(row.selectedAlphaIds.includes(id)||row.supplementalAlphaIds?.includes(id));
  assert.equal(cohort.selection.length,25);
  for(const choice of cohort.selection)assert.ok(choice.reason&&choice.decisiveQuestion&&choice.organizationId);
  assert.ok(row.heldDiscoveryIds.every(id=>typeof id==='string'&&id.startsWith(edition+':')));

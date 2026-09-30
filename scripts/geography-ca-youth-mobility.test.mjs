@@ -28,8 +28,9 @@ test('Vision To Learn separates courses, use, additionality and geography',()=>{
  near(matched.allPopulationQalys,central.allPopulationQalys+central.editionQalys);
 });
 test('Walk SF stops benefit at counterfactual opening and retains independent harm',()=>{
- const r=report('walk-san-francisco'),base=JSON.parse(r.model.scenarios[0].assumptions);
- for(const s of r.model.scenarios){
+ const r=report('walk-san-francisco'),base=JSON.parse(r.model.scenarios.find(s=>s.id==='historical-alpha-central').assumptions);
+ assert.equal(r.model.scenarios.find(s=>s.id==='central').editionQalys,null);
+ for(const s of r.model.scenarios.filter(s=>s.id!=='central')){
   let p=s.assumptions.startsWith('{')?JSON.parse(s.assumptions):{...base};
   if(s.id==='null')p.p=0;if(s.id==='fatal-null')p.eF=0;if(s.id==='harm-stress')p.H_CA=.3;
   let qF=0,qS=0,V=0;

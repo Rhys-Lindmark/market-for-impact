@@ -28,9 +28,9 @@ export default function GeographyEdition({id,research=false}:{id:string;research
  if(!research)return <EditionDonorHome id={id} label={edition.label} reports={reports} discovery={edition.discoveryAccepted} alpha={edition.alphaPublished} beta={edition.betaAcceptedPublished}/>;
  return <div className="givebetter"><EditionMasthead label={edition.label}/><main className={styles.shell}>
   <section className={styles.intro}><h1>GiveBetter x {edition.label} Research</h1>
-  <p>Estimated dollars per better life in {edition.label} (10 QALYs).</p>
+  <p>Estimated dollars per better life in {edition.label} (10 healthy-year equivalents).</p>
   <p className={styles.caveat}>Sorted by modeled cost, not recommendation strength. These are uncertain research estimates, not verified donation offers. Cost boundaries differ; see each report before comparing.</p>
-  <p className={styles.caveat}>Income gains can matter too. We show a separate <a href={canonicalBase+'/methodology/income'}>income-adjusted comparison</a> only where a report has enough evidence; otherwise the price remains health-only.</p>
+  <p className={styles.caveat}>Prices include modeled health and <a href={canonicalBase+'/methodology/income'}>income benefits</a> where quantified. Older reports without income models await recalibration; income equivalents are not observed QALYs.</p>
   <p><a href={canonicalBase+path}>Our giving shortlist</a> · <a href={canonicalBase+'/all'}>All cities and regions</a></p></section>
   {reports.length?<EditionResearchTable reports={reports}/>:<p>Research reports are being prepared for this edition.</p>}
   <details className="gb-edition-boundary"><summary>Research progress</summary><p>{edition.discoveryAccepted}/100 candidates screened · {edition.alphaPublished}/25 initial reports · {edition.betaAcceptedPublished}/10 in-depth reviews.</p></details>

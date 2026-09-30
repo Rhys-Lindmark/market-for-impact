@@ -19,3 +19,10 @@ test('invalid baselines and attribution shares do not generate prices',()=>{
  assert.throws(()=>incomeHealthyYearEquivalent({...base,annualIncomeGainUSD:-50000}));
  assert.throws(()=>incomeHealthyYearEquivalent({...base,causalShare:1.1}));
 });
+test('recurring flows discount each year and retain negative economic effects',()=>{
+ const p={people:200,annualIncomeBeforeUSD:50000,annualIncomeGainUSD:500,years:2,delayYears:5,discountRate:.03};
+ const one=.5*200*Math.log1p(.01);
+ assert.ok(Math.abs(incomeHealthyYearEquivalent(p)-one*(1/1.03**5+1/1.03**6))<1e-12);
+ assert.ok(incomeHealthyYearEquivalent({...p,annualIncomeGainUSD:-500})<0);
+ assert.throws(()=>incomeHealthyYearEquivalent({...p,delayYears:-1}));
+});

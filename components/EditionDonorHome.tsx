@@ -29,11 +29,11 @@ export default function EditionDonorHome({id,label,reports,discovery,alpha,beta}
    {picks.length===4&&<section aria-label="Four research leads">{picks.map((report,i)=>{
     const photo=photos[report.edition+'/'+report.slug];
     return <article className="sf-home-charity" key={report.slug} id={report.slug}>
-     <figure><img src={canonicalBase+photo.image} alt={photo.caption} width="480" height="480" loading="lazy"/><figcaption><a href={photo.source}>{photo.caption}</a></figcaption></figure>
+     <figure><img src={photo.image.startsWith('https://')?photo.image:canonicalBase+photo.image} alt={photo.caption} width="480" height="480" loading="lazy"/><figcaption><a href={photo.source}>{photo.caption}</a></figcaption></figure>
      <div><p className="sf-home-eyebrow">RESEARCH LEAD {i+1} OF 4</p><h2>{report.organization}</h2>
       <div className="sf-home-charity-body">
        <section><h3>Overview</h3><p>{report.summary.what.join(' ')}</p></section>
-       <section><h3>Cost-effectiveness</h3><p><strong>{formatEditionMoney(reportPrice(report))} per better life (10 QALYs)</strong>, modeled in {label}.</p></section>
+       <section><h3>Cost-effectiveness</h3><p><strong>{formatEditionMoney(reportPrice(report))} per better life (10 healthy-year equivalents)</strong>, modeled in {label}.</p></section>
        <section><h3>Why investigate</h3><p>{report.summary.strengths[0]}</p></section>
        <section><h3>Main reservation</h3><p>{report.summary.reservations[0]}</p></section>
        <section><h3>Organization and research</h3><div className="sf-home-org-card"><h4>{report.organization}</h4><a className="sf-home-report" href={canonicalBase+editionReportPath(report)}>Full research report</a></div></section>
@@ -43,8 +43,8 @@ export default function EditionDonorHome({id,label,reports,discovery,alpha,beta}
    })}</section>}
    <section className="gb-edition-current" aria-labelledby="current-research">
     <h2 id="current-research">Current research</h2>
-    <p>Estimated dollars per better life: ten additional quality-adjusted life years in {label}. Estimates are uncertain; these are research reports, not verified donation offers.</p>
-    {id==='usa'&&<p>For example, better housing policy in major U.S. cities could <a href="https://diegopuga.org/papers/Duranton_Puga_ECMA_2023.pdf">help millions of people find higher-paying jobs</a>. We consider income alongside health using a <a href={canonicalBase+'/methodology/income'}>separate, explicit comparison method</a>.</p>}
+    <p>Estimated dollars per better life: ten healthy-year equivalents from modeled health and income benefits in {label}. Estimates are uncertain; these are research reports, not verified donation offers.</p>
+    {id==='usa'&&<p>For example, better housing policy in major U.S. cities could <a href="https://diegopuga.org/papers/Duranton_Puga_ECMA_2023.pdf">help millions of people find higher-paying jobs</a>. We include income alongside health using an <a href={canonicalBase+'/methodology/income'}>explicit welfare comparison</a>.</p>}
     <p><a href={canonicalBase+path+'/all'}>Read all {reports.length} {label} reports</a></p>
    </section>
    <details className="sf-home-selection">

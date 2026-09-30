@@ -44,16 +44,26 @@ test('price uses edition denominator, not global benefit; format and routes matc
  r.model.scenarios[0].editionQalys=-1;assert.equal(reportPrice(r),null);
  r.model.scenarios[0].editionQalys=null;assert.equal(reportPrice(r),null);
 });
-test('income bridge is separately priced, source-gated and does not change the health ranking',()=>{
+test('income bridge contributes to headline welfare price and remains source-gated',()=>{
  const {data,progress,r}=fixture();
  r.model.incomeBridge={people:200,annualIncomeBeforeUSD:50000,annualIncomeGainUSD:500,years:1,causalShare:1,editionShare:1,independentShare:1,sourceIds:['s1'],rationale:'Synthetic only',counterfactual:'Synthetic baseline'};
  validateEditionReports(data,progress);
- assert.equal(reportPrice(r),100000);
  const comparison=incomeAdjustedReportPrice(r);
  assert.ok(comparison.incomeEquivalentYears>0.99&&comparison.incomeEquivalentYears<1);
- assert.ok(comparison.price<reportPrice(r));
+ assert.equal(comparison.price,reportPrice(r));
+ assert.ok(reportPrice(r)<100000);
  r.model.incomeBridge.sourceIds=[];
  assert.throws(()=>validateEditionReports(data,progress),/Income bridge needs/);
+});
+test('scenario income can price nonclinical benefits; losses cannot manufacture a positive price',()=>{
+ const {data,progress,r}=fixture();
+ const s=r.model.scenarios[0];s.editionQalys=0;s.allPopulationQalys=0;
+ const b={people:200,annualIncomeBeforeUSD:50000,annualIncomeGainUSD:500,years:1,causalShare:1,editionShare:1,independentShare:1,sourceIds:['s1'],rationale:'Synthetic only',counterfactual:'Synthetic baseline'};
+ s.incomePathways=[b];validateEditionReports(data,progress);
+ assert.ok(reportPrice(r)>0);
+ r.model.incomeBridge=b;assert.equal(reportPrice(r),incomeAdjustedReportPrice(r).price,'Legacy and scenario bridges must not both be counted');
+ s.incomePathways=[{...b,annualIncomeGainUSD:-500}];assert.equal(reportPrice(r),null);
+ s.incomePathways=[{...b,sourceIds:[]}];assert.throws(()=>validateEditionReports(data,progress),/Income pathway needs/);
 });
 test('End Overdose retains separately dated California arithmetic and deduplicates research time',()=>{
  const data=read('data/geography-reports.json');

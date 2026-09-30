@@ -6,12 +6,13 @@ const report=slug=>data.reports.find(r=>r.edition==='california'&&r.slug===slug)
 const near=(a,b)=>assert.ok(Math.abs(a-b)<1e-10,`${a} != ${b}`);
 test('Youth ALIVE weights signed five-year effects, not reinjury percentage',()=>{
  const r=report('youth-alive');let total=0,weight=0;
- for(const s of r.model.scenarios.filter(s=>s.id!=='central')){
+ for(const s of r.model.scenarios.filter(s=>!['central','historical-alpha-central'].includes(s.id))){
   const p=JSON.parse(s.assumptions);
   const q=s.costUSD*p.cicAllocation*p.fundingAdditionality*p.serviceRealization/p.donorCostPerAddedClient*.02*p.evidenceTransfer;
   near(q,s.editionQalys);total+=p.weight*q;weight+=p.weight;
  }
- near(weight,1);near(total,r.model.scenarios[0].editionQalys);
+ near(weight,1);near(total,r.model.scenarios.find(s=>s.id==='historical-alpha-central').editionQalys);
+ assert.equal(r.model.scenarios[0].editionQalys,null);
 });
 test('Vision To Learn separates courses, use, additionality and geography',()=>{
  const r=report('vision-to-learn');

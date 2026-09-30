@@ -13,9 +13,11 @@ test('JTC communication judgments reproduce without lifetime or device double cr
  assert.match(r.model.inputs.find(i=>i.name==='k').rationale,/not an estimated psychometric conversion/);
  assert.ok(reportPrice(r)>0);assert.ok(r.priceScope);
 });
-test('five USA central models remain finite while HAH has an audited withdrawal',()=>{
- const slugs=['rx-outreach','remote-area-medical','immunize-org','green-and-healthy-homes-initiative','american-nonsmokers-rights-foundation'];
+test('four USA central models remain finite while RAM and HAH have audited withdrawals',()=>{
+ const slugs=['rx-outreach','immunize-org','green-and-healthy-homes-initiative','american-nonsmokers-rights-foundation'];
  for(const slug of slugs){const r=data.reports.find(r=>r.edition==='usa'&&r.slug===slug);assert.ok(Number.isFinite(reportPrice(r)));assert.equal(r.stage,slug==='american-nonsmokers-rights-foundation'?'beta':'alpha');assert.ok(r.priceScope);assert.match(r.model.scenarios[0].label,/judgment/);}
  const hah=data.reports.find(r=>r.edition==='usa'&&r.slug==='help-america-hear');
  assert.equal(hah.stage,'beta');assert.equal(reportPrice(hah),null);assert.match(hah.acceptance.evidence,/usa-hear-beta-acceptance/);
+ const ram=data.reports.find(r=>r.edition==='usa'&&r.slug==='remote-area-medical');
+ assert.equal(ram.stage,'beta');assert.equal(reportPrice(ram),null);assert.match(ram.acceptance.evidence,/usa-ram-beta-audit/);
 });

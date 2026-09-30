@@ -14,9 +14,9 @@ test('CA USA LA reports have finite positive central judgments or an audited wit
  const reports=rows.filter(r=>['california','usa','los-angeles'].includes(r.edition));
  assert.equal(reports.length,75);
  for(const r of reports){
-  if((r.edition==='california'&&r.slug==='coalition-for-clean-air') || (r.edition==='usa'&&['kids-and-car-safety','help-america-hear'].includes(r.slug))){
+  if((r.edition==='california'&&r.slug==='coalition-for-clean-air') || (r.edition==='usa'&&['kids-and-car-safety','help-america-hear','remote-area-medical'].includes(r.slug))){
    assert.equal(reportPrice(r),null);
-   assert.match(r.acceptance.evidence,/beta-acceptance/);
+   assert.match(r.acceptance.evidence,/beta-(acceptance|audit)/);
    assert.equal(formatEditionReportPrice(r),'Estimate withdrawn');
   }else assert.ok(Number.isFinite(reportPrice(r))&&reportPrice(r)>0,r.edition+'/'+r.slug);
  }

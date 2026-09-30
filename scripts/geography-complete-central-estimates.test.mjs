@@ -14,7 +14,7 @@ test('CA USA LA reports have finite positive central judgments or an audited wit
  const reports=rows.filter(r=>['california','usa','los-angeles'].includes(r.edition));
  assert.equal(reports.length,75);
  for(const r of reports){
-  if((r.edition==='california'&&['coalition-for-clean-air','california-school-based-health-alliance','walk-san-francisco','center-for-independent-living'].includes(r.slug)) || (r.edition==='usa'&&['kids-and-car-safety','help-america-hear','remote-area-medical','institute-for-safer-trucking','cribs-for-kids'].includes(r.slug))){
+  if((r.edition==='california'&&['coalition-for-clean-air','california-school-based-health-alliance','walk-san-francisco','center-for-independent-living','western-center-on-law-and-poverty'].includes(r.slug)) || (r.edition==='usa'&&['kids-and-car-safety','help-america-hear','remote-area-medical','institute-for-safer-trucking','cribs-for-kids'].includes(r.slug))){
    assert.equal(reportPrice(r),null);
    assert.match(r.acceptance.evidence,/beta-(acceptance|audit)|september-30-beta-acceptance|walk-sf-beta-acceptance/);
    assert.equal(formatEditionReportPrice(r),'Estimate withdrawn');
@@ -38,7 +38,8 @@ test('three policy models independently integrate finite delayed and durable sur
 });
 test('WCLP coverage effect has two years only and distinct attribution factors',()=>{
  const r=rows.find(r=>r.slug==='western-center-on-law-and-poverty');
- close(r.model.scenarios[0].editionQalys,100000*.1*.2*.2*.25*.02*(1/1.03+.5/1.03**2));
+ assert.equal(r.model.scenarios[0].editionQalys,null);
+ close(r.model.scenarios.find(s=>s.id==='historical-alpha-central').editionQalys,100000*.1*.2*.2*.25*.02*(1/1.03+.5/1.03**2));
  assert.equal(r.annualExpenses.reduce((s,y)=>s+y.amount,0)/3,7097648);
 });
 test('USA legal and housing central models preserve finite native health bridges',()=>{

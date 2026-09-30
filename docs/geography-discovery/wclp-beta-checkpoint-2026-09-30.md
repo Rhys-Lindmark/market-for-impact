@@ -1,5 +1,7 @@
 # Western Center on Law & Poverty: California in-depth checkpoint
 
+Historical pre-acceptance checkpoint. Superseded by `wclp-beta-acceptance-2026-09-30.md` after root's independent source check and publication revision.
+
 The September 30 review is a **HOLD**, not an accepted in-depth report or a giving recommendation. California's in-depth count does not change. The published alpha's $77.07 million per 10 California QALYs is reproducible arithmetic but does not establish an ordinary-gift return; it should be withdrawn as a ranked donor estimate in the next release.
 
 Source audit: [enacted AB 2161](https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260AB2161) is now part of the no-gift baseline; the [September 2026 health-policy vacancy](https://wclp.org/wp-content/uploads/2026/09/2026-WCLP.Health-Policy-Advocate-Job-Announcement-1.pdf) indicates recruitable implementation capacity but not that a gift would create or preserve the post; the [2025 annual report](https://wclp.org/wp-content/uploads/2026/06/2025-Annual-Report-FINAL-compressed.pdf) documents existing coalition and implementation activity. Public funding and other advocates are also part of the counterfactual. No specific additional coverage or treatment caused by the next WCLP gift is evidenced. The research packet is at `work/outputs/ca-wclp-beta-20260930/pathway-review.md` in the shared task workspace; its companion contains the model checks.

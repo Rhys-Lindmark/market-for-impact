@@ -19,3 +19,7 @@ Validation proves structure, identity nesting and arithmetic, not scientific tru
 # Model override — 30 September 2026
 
 The user switched to GPT-6.1 Sol. New supplemental reports may record that verified runtime identity without inventing a reasoning effort. Historical Astra stage assignments remain unchanged.
+
+## Deeper-review calibration gate — 30 September 2026
+
+A deeper review must re-examine the cost-effectiveness model, not only expand its narrative or retain the alpha result by default. Provide a reproducible original-to-current comparison, identify which cost and causal assumptions changed (or why each stayed), source any external reference rates, and distinguish observed effects from judgment transfers. Check implementation failure, realization delay, geographic share, displacement, attribution, funding additionality and overlapping health/income outcomes. Report the latest accepted finite central price on the report, list and shortlist; preserve the original only as a diagnostic. Unchanged numbers can be justified after substantive re-examination, but changing a number is not itself evidence of better calibration. Existing reviews are queued in `geography-discovery/in-depth-cost-calibration-backlog-2026-09-30.md`; their prior publication counts do not imply this new pass is complete.

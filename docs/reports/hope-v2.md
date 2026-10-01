@@ -1,6 +1,6 @@
-# HOPE Pacifica: whole-gift overdose-prevention assessment
+# HOPE Pacifica: overdose-prevention assessment
 
-V2 evidence review, September 11, 2026. Legal recipient: HOPE Healing Overdose Prevention and Education Inc, EIN 99-2104067. This evaluates a hypothetical ordinary $1,000 gift, not a dispenser purchase offer. Annual operating cost remains an assumption because no annual financial statement was located. The quantified outcome is finite naloxone-access health; complete organizational health and complete resource cost remain unresolved.
+Health and income review, October 1, 2026. Legal recipient: HOPE Healing Overdose Prevention and Education Inc, EIN 99-2104067. This evaluates a hypothetical ordinary $1,000 gift, not a dispenser purchase offer. Annual operating cost remains an assumption because no annual financial statement was located. The quantified outcome is finite naloxone-access health; complete organizational health and complete resource cost remain unresolved.
 
 ## Summary
 
@@ -19,7 +19,7 @@ V2 evidence review, September 11, 2026. Legal recipient: HOPE Healing Overdose P
 - The favorable delivery family supplies 65.7% of modeled expected benefit despite only 5% subjective weight.
 - A distribution count is several causal steps away from mortality, and a previously rescued population cannot stand in for ordinary dispenser recipients.
 
-**Cost-effectiveness.** The retained signed mixture estimates $763,248 per 10 Bay QALYs; the distinct central-cost/central-delivery case is $554,660. Both are unchanged from the previous assessment. Annual expense worlds are $20,000, $40,000 and $100,000, not observed budgets. The model averages signed QALYs per fixed gift before inverting; it does not average favorable price ratios. Null and harm cases remain. The new source evidence does not identify a defensible replacement coefficient, so we preserve the result and expose the stronger funding challenge instead of making an arbitrary adjustment. [More](#5-finite-model-and-oldnew-comparison)
+**Cost-effectiveness.** The current central health-and-income estimate is $554,660 per better life, with zero quantified net-income credit because its sign is unidentified. Independent purchaser-savings and acquisition-cost cases are now included. The retained signed mixture estimates $763,248 per 10 Bay QALYs; the distinct central-cost/central-delivery case is $554,660. Both are unchanged from the previous assessment. Annual expense worlds are $20,000, $40,000 and $100,000, not observed budgets. The model averages signed QALYs per fixed gift before inverting; it does not average favorable price ratios. Null and harm cases remain. The new source evidence does not identify a defensible replacement coefficient, so we preserve the result and expose the stronger funding challenge instead of making an arbitrary adjustment. [More](#5-finite-model-and-oldnew-comparison)
 
 Halving the funding response raises the mixture to $1.53 million; quartering it raises it to $3.05 million. Halving annual pack-equivalents has the same first-order price effect. Limiting the survival horizon to five years raises it to $1.30 million, and to two years raises it to $3.48 million. These are diagnostics, not new assigned probabilities. They show that a superficially competitive central estimate can disappear without an extreme assumption. They also show which empirical information matters most.
 
@@ -59,7 +59,7 @@ We distinguish preparation from administration. A pack can be use-ready without 
 
 ### What was and was not found
 
-We did not locate an annual Form 990, Form 990-EZ or audited financial statement for HOPE. ProPublica’s IRS-derived record, updated August 19, 2026, identifies the organization but lists no filings. The available records therefore do not verify its annual income, expenses or assets. This does not establish that HOPE failed to file, lacks internal accounts or has no assets; the index’s zero-filled fields are not financial measurements. [IRS-derived record](https://projects.propublica.org/nonprofits/api/v2/organizations/992104067.json)
+We did not locate an annual Form 990, Form 990-EZ or audited financial statement for HOPE. ProPublica’s IRS-derived record, updated September 16, 2026, identifies the organization but lists no filings. The available records therefore do not verify its annual income, expenses or assets. This does not establish that HOPE failed to file, lacks internal accounts or has no assets; the index’s zero-filled fields are not financial measurements. [IRS-derived record](https://projects.propublica.org/nonprofits/api/v2/organizations/992104067.json)
 
 The record’s filing-requirement code 02 needs particular caution. Current IRS instructions associate it with smaller organizations, but also allow assignment when gross receipts cannot be determined. It is not an audited statement that annual expense is below $50,000, and receipts would not be identical to expense anyway. We therefore do not use that code to delete the $100,000 expense world or increase the lean-world probability. [IRS administrative instructions](https://www.irs.gov/irm/part3/irm_03-013-012)
 
@@ -171,7 +171,7 @@ Three cost worlds—$20,000 at 20%, $40,000 at 50%, $100,000 at 30%—are crosse
 
 The expected Bay health per $1,000 is .013101904653691494 QALY, implying $763,247.8074233638 per 10. The central cost/delivery row is $554,659.5517271358. A central row can be better than the mixture because the mixture includes null and harmful possibilities. The favorable family contributes 65.6865% of net expected Bay health. Removing it and renormalizing the remainder yields $2,113,122.33.
 
-| Quantity | Alpha | V2 preferred |
+| Quantity | Initial assessment | Current retained health assumptions |
 | --- | --- | --- |
 | Weighted Bay price/10Q | $763,247.81 | $763,247.81 |
 | Central Bay price/10Q | $554,659.55 | $554,659.55 |
@@ -202,6 +202,44 @@ No numerical coefficient was changed to compensate for the new public hardware a
 The same numerical result for half packs and doubled repeats follows from their algebraic roles, not independent evidence confirming the reduction. Nor should these stresses be stacked automatically: some may describe the same uncertainty. The half-hazard result is slightly more than double the base price because harms remain while positive survival benefit falls. This illustrates why signed models should not be treated as a single positive product under every change.
 
 The cost/delivery dependence diagnostic pairs a low-cost cautious state, central-cost central state and high-cost favorable state. It is not another evaluator expectation: its different weights and absence of the full null/harm family make it unsuitable as a replacement headline. Its purpose is to inspect how favorable delivery can require a larger budget. The complete paired outputs are saved so a reviewer can see the assumptions rather than only a selected favorable ratio.
+
+### Health and income recalibration — October 1
+
+The current headline is the **central marginal scenario: $554,660 per better life**, comprising .01802908 Bay health years and zero quantified net-income years per $1,000 of additional expense. The health coefficients remain continuity judgments after re-examination, not fresh measurements. The separately reported signed mixture is $763,248. An explicit zero economic central means the household net sign is unidentified, not that economic consequences do not exist.
+
+Naloxone access may avoid a household purchase, medical bills, caregiver costs or lost work. No HOPE-specific purchase, earnings or net-cost observation was located. We do not credit ordinary earnings merely because somebody survives: that would add baseline lifetime consumption to a survival benefit rather than identify a distinct change in living standards. Conditional-alive employment, caregiving and medical-cost effects remain unquantified.
+
+The [DHCS FAQ](https://www.dhcs.ca.gov/individuals/naloxone-distribution-project/ndp-frequently-asked-questions/) lists CalRx at $19 per two-device pack, plus tax and shipping, alongside free supply for eligible organizations. Avoided expenditure requires an actual counterfactual purchase, not taking another free pack or foregoing purchase. The $19 price is an external anchor; purchase incidence, acquisition burden and the $50,000 reference income are explicit sensitivity judgments, not HOPE observations.
+
+Income-equivalent years use the published comparison convention: 0.5 × affected holder-equivalents × Bay share × ln(1 + net one-year cash change / baseline annual income). This is a welfare comparison, not measured clinical QALYs. The central $1,000 model implies 3.125 additional ready-holder equivalents before geography. Risk/network conversion is not a measured unmet-access fraction, and its remaining 20% cannot simply be relabeled purchasers. A hypothetical purchaser group is partitioned out of clinical coverage before adding its savings.
+
+| Independent economic case | Bay health years | Income-equivalent years | Dollars per better life |
+| --- | ---: | ---: | ---: |
+| Retained central; no quantified net cash change | .01802908 | 0 | $554,660 |
+| 10% would purchase one $19 pack; those purchasers receive no added health credit | .01622617 | .00005640 | $614,154 |
+| All added holders incur $5 incremental acquisition cost, with no purchase saving | .01802908 | −.00014844 | $559,264 |
+| No health or harm; 10% avoid a $19 purchase | 0 | .00005640 | $177.3M |
+
+These are not confidence bounds. Purchaser savings are household welfare, not state procurement savings or proof of a net societal resource saving. Zero additional functional coverage means no added health or purchaser cohort while keeping the modeled expense. Adverse health and adverse cash remain signed; nonpositive combined benefit has no positive cost-effectiveness ratio.
+
+### Prognosis and money-response challenge
+
+A five-year cutoff is an analytic truncation, not a measured five-year life expectancy. The [Oslo prospective cohort](https://pmc.ncbi.nlm.nih.gov/articles/PMC2277385/) and [Australian ATOS follow-up](https://pmc.ncbi.nlm.nih.gov/articles/PMC9847452/) show substantial survival beyond ten years in selected historical populations. Neither identifies HOPE's age distribution or modern Bay Area fentanyl prognosis. Missing local data therefore does not justify deleting all later living time, nor does it justify importing a more favorable external hazard. The existing .07 common post-support hazard and ten-year horizon remain uncertain judgments.
+
+| Central horizon; other inputs fixed | Dollars per better life |
+| --- | ---: |
+| 1 year | $7.15M |
+| 2 years | $2.46M |
+| 5 years | $940,771 |
+| 10 years, retained | $554,660 |
+| 20 years | $395,864 |
+| Analytic infinite horizon under constant mortality and discount | $338,988 |
+
+The infinite case is a mathematical sensitivity, not local prognosis or immortality. Ten years captures about 61% of that modeled health. About 92% of central gross health occurs after the active year because the two survival curves retain their initial gap; this is not ongoing annual naloxone protection. Independently changing post-support hazard from .02 to .20 produces prices from $460,574 to $830,438 at ten years.
+
+Funding response measures additional functional coverage caused by extra money. It is separate from the net mortality benefit conditional on that coverage. Public medication and hardware may be complements or substitutes; their existence was already known and does not identify a new .25 rather than .5 response. Retain .5, alongside independent 0/.1/.25/.5/1 cases. At .25 the central price is $1.11M; at zero there is no additional benefit. Do not count the same public alternative twice by automatically lowering both money response and the clinical coefficient.
+
+The annual-work diagnostic instead charges the $40,000 assumed operating envelope against 200 risk-person equivalents, without an additional-gift response penalty: $277,330 per better life centrally. It is not a donation offer or an observed annual productivity estimate. Complete public, volunteer and clinical resource costs remain unpriced. The absence of annual statements prevents a measured three-year operating-expense average; 2023 predates the county's stated March 2024 founding, and no original 2024 or 2025 return was located.
 
 ### Threshold interpretation
 
@@ -251,4 +289,4 @@ The packet preserves the original model, full 18-row signed outputs and all new 
 
 Source dates distinguish dated government actions, undated mutable pages and retrieval times. Failed full-text retrievals are not described as successful reads; inherited primary evidence remains labeled. The current native page supersedes older cached operational text without rewriting that earlier provenance. No organizational interviews or private monitoring records informed this assessment.
 
-Model version: `hope-pacifica-depth-v2-unchanged-priors`. Read the numerical estimate alongside the full assessment: the public hardware alternative and uncertainty about additional coverage are central to the donation decision.
+Model version: `hope-health-income-calibration-2026-10-01`. Read the numerical estimate alongside the full assessment: the public hardware alternative and uncertainty about additional coverage are central to the donation decision.

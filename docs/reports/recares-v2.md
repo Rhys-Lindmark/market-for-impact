@@ -1,44 +1,26 @@
-# The ReCARES Network: a deeper whole-gift assessment
-
-**V2 research draft · September 11, 2026 · EIN 94-3213876**
-
-This report evaluates an ordinary cash gift to the legal nonprofit, with Bay Area health as the primary outcome. It is not a clinical evaluation of a particular device, a valuation of all environmental and social benefits, or a recommendation to replace prescribed equipment. The illustrative gift is $10,000, with no assurance that the same return extends to a larger donation. The previous published calculator is preserved unchanged; the revised calculator updates verified financial and reported service-volume inputs to FY2025 while retaining the earlier subjective health and funding assumptions. Sources and calculations are separated so readers can distinguish new evidence from modeling judgment.
-
 ## Summary
 
-**What do they do?** Redistribute donated medical equipment and supplies through three Bay sites. [More](#1-what-does-recares-actually-do)
+**What do they do?** ReCARES redistributes donated medical equipment and supplies through three Bay Area sites. Walkers, bathing aids and supplies can help people move around and manage daily care. Reuse can turn an idle item into safe access for someone facing a genuine barrier. [More](#1-what-does-recares-actually-do)
 
-**Reasons to investigate—and hold:**
+**Reasons to investigate this program:**
 
-- Lean reported expense and substantial activity offer plausible leverage.
-- HOLD giving: no verified priced additional-capacity offer.
+- Low reported operating cost relative to substantial distribution activity.
+- A practical way to improve mobility and self-care with equipment already available.
+- Established local sites, volunteers and original annual financial filings.
 
-**Reservations:**
+**Our main reservations:**
 
-- Unique useful safe use and incremental duration remain unmeasured.
-- Favorable-tail dependence and unvalued complementary resources matter.
+- Distributions are not unique recipients gaining correctly fitted, safely used equipment.
+- Local health effects, alternative access and duration remain modeled judgments.
+- Existing financial assets and complementary capacity limit what extra cash can achieve.
 
-**What do you get for your dollar?** Our central estimate is about **$75,000 per better life (10 Bay QALYs)**; the separate weighted-scenario estimate is about **$108,000**. Updated financial inputs lower these modeled prices, not the uncertainty. [More](#5-the-whole-gift-model-step-by-step)
+**What do you get for your dollar?** Our revised central estimate is **$264,000 per better life**, combining Bay health with explicitly assessed income-equivalent welfare. Historical FY2025 ratios are $1.61 per item and $6.60 per reported recipient, not guaranteed incremental prices. A successful otherwise-unmet mobility-aid recipient is now assigned .0075 QALY over three months rather than .025 over six. After recipient, safe-use, alternative-access and funding adjustments, an illustrative $10,000 gives .379 Bay health QALY. [More](#5-the-whole-gift-model-step-by-step)
 
-**Monitoring:** Filing activity is not a deduplicated clinical outcome dataset. [More](#3-what-do-we-know-about-useful-safe-and-unique-use)
+Net household savings receive a provisional zero central credit, not an assumption that reuse has no economic benefit. Many recipients would otherwise forgo equipment rather than purchase it. A small positive purchasing-power case gives $262,000 per better life; an adverse acquisition-cost case gives $690,000. These are judgment scenarios, not statistical bounds.
 
-**Qualitative judgment:** Plausible reuse leverage coexists with unresolved funding and service complements. [More](#8-qualitative-assessment-and-the-strongest-alternative)
+**What information has ReCARES shared?** Original filings supply expenses, activity and volunteer hours, not deduplicated causal outcomes. FY2023–24 use cash accounting and FY2025 accrual; the $88,845 arithmetic mean is not a reconciled comparable cash series. [More](#2-what-do-three-years-of-original-filings-show)
 
-Accounting terminology matters throughout: FY2025 uses the accrual method. Its $72,583 is whole reported accounting expense, used here as a cash-cost proxy, not verified cash paid during the year. References below to a cash-budget or cash-leverage estimate distinguish the donor-dollar model from a complete societal-resource estimate; they do not convert accrual expense into a cash-flow statement. The $60,000 grants receivable further illustrates that distinction.
-
-ReCARES is a small medical-equipment reuse network with distribution sites in Oakland, San Francisco and Marin. Its appeal is straightforward: useful equipment can be available in one household but unaffordable, unavailable or delayed for another. A local organization can inspect, organize and redistribute donated goods using relatively little cash. A walker, wheelchair, transfer aid or supply package may then relieve a real limitation. But a donated item is not itself a health outcome. The relevant question is whether an additional gift produces safe, useful access that would not otherwise occur, and for how long that changes someone’s health.
-
-The most important new evidence in this review is the original FY2025 tax filing. It reports $72,583 of whole-organizational expense, more than 11,000 recipients, over 45,000 items and over 5,400 volunteer hours. The previous report used FY2024 expense of $111,205 and a reported-recipient floor of 9,770. Updating only those cash and activity inputs lowers the scenario-weighted Bay estimate from approximately **$185,910 to $107,774 per 10 QALYs**. The central scenario moves from **$128,892 to $74,720**. The research list and homepage use this central scenario; the previous list displayed the weighted estimate. The change of displayed statistic is separate from the FY2025 source update. Neither is a measured health return. These are calculations from a model, not observed health gains. We use the filing’s rounded recipient floor, not an invented exact total. [FY2025 original filing](https://projects.propublica.org/nonprofits/full_text/202621259349200012/IRS990EZ)
-
-We do not interpret the improved arithmetic as evidence that the organization suddenly became more clinically effective. Financial and service-volume changes can affect an accounting ratio without improving safe fit, adherence, health effect or donor additionality. Nor does the new filing resolve whether recipient counts are unique across visits, sites and agency pickups. Those uncertainties remain explicit. The low cash denominator is genuine as an accounting observation, but donated goods, volunteer labor, transport and other complementary resources are not fully valued. Calling the model a complete societal cost-effectiveness estimate would be incorrect.
-
-The clinical case is plausible but weaker than the headline price may suggest. Controlled walking-aid research shows functional gains in some settings, alongside null between-group quality-of-life findings. A small bathing-adaptation trial found a possible preference-utility improvement, but evaluated an installed shower rather than a portable chair. No primary evidence reviewed here establishes ReCARES’ central assumption of a 0.05 mobility utility improvement lasting half a year. Those values remain judgments about successful, otherwise-unmet use. The report therefore shows alternatives rather than disguising the judgments as a study result.
-
-The favorable scenario still provides **69.3% of expected net Bay benefit despite carrying only 5% of the subjective weight**. Removing it and renormalizing the remaining worlds raises the updated price to approximately $333,320. Applying the lower clinical utility-duration family previously used for another equipment-reuse report raises the updated weighted price to approximately $294,028. Halving both utility and duration raises it to approximately $554,748. These checks do not prove the preferred assumptions wrong; they show that the apparently competitive result is sensitive to unmeasured health inputs.
-
-There is also new reason to be careful about the funding story. FY2025 ended with $253,225 in cash, savings and investments, $60,000 in grants receivable and $313,082 in net assets. These are not a current unrestricted spending plan. They nevertheless make it inappropriate to describe ReCARES as visibly cash-starved on the basis of its small budget. The live recipient page distinguishes surplus supplies from high-demand items, while the volunteer page requests operational and database support. Extra cash could help, but no public priced plan links a new gift to additional safe equipment use after existing funds and other resource constraints. [FY2025 Schedule O](https://projects.propublica.org/nonprofits/full_text/202621259349200012/IRS990ScheduleO)
-
-Our conclusion is **retain ReCARES as a promising exploratory cash-leverage hypothesis, but HOLD a health-based giving recommendation**. The next useful evidence is not another generic statement that assistive devices help. It is a reconciled operating plan, device-class and unique-user data, and follow-up on safe use and alternative access. This review strengthens financial dating and makes the clinical and resource caveats more concrete. It does not verify an additional-gift offer, establish measured QALYs, or justify turning a prior-weighted price into a confident rank.
+**Qualitative assessment:** ReCARES remains a promising mechanism, but a research rank is not a verified expansion offer. A priced plan, device-class data and follow-up on useful safe use would improve the giving case. The October 1 review reduces clinical assumptions and explicitly considers economic counterfactuals; earlier $74,720 central and $107,774 weighted prices are historical comparisons, not current results. [More](#8-qualitative-assessment-and-the-strongest-alternative)
 
 ## 1. What does ReCARES actually do?
 
@@ -226,9 +208,9 @@ The useful lesson is that service quality and local access conditions are centra
 
 The BATH-OUT feasibility randomized trial studied 60 older adults receiving expedited versus routine major bathing adaptations. At three months, the adjusted EQ-5D-5L change difference was 0.09, with a confidence interval from −0.003 to 0.18. Mean adaptation cost was approximately £4,878. The intervention was an installed level-access shower, not a donated shower chair or transfer bench. [Primary trial](https://link.springer.com/article/10.1186/s12889-018-6200-4)
 
-The result shows that meaningful utility improvement from better bathing access is possible, but its uncertainty includes zero and the intensity of the intervention differs substantially. A shower conversion changes the physical environment; a portable aid may or may not solve the same barrier. We retain a bathing pathway but do not label its 0.03 central utility and half-year duration as estimates from this trial. Transferring a point estimate while omitting the service difference, interval and waiting-time design would produce false precision.
+The result shows that meaningful utility improvement from better bathing access is possible, but its uncertainty includes zero and the intensity of the intervention differs substantially. A shower conversion changes the physical environment; a portable aid may or may not solve the same barrier. We retain a bathing pathway, now using .02 utility for .25 years centrally; neither value is an estimate of portable-aid effects from this trial. Transferring a point estimate while omitting the service difference, interval and waiting-time design would produce false precision.
 
-The later BATH-OUT-2 funder findings cover 296 randomized adults and report a 2.5-point SF-36 physical-component advantage at first follow-up, with interval 0.8–4.2. The funder also reports higher QALYs across the trial, but does not give a numeric QALY difference on the page inspected; attrition was higher than expected and worse in controls. [NIHR findings](https://sscr.nihr.ac.uk/research/care-economics/bath-out/) This strengthens the plausibility of expedited major adaptations, while leaving the portable-aid transfer unresolved. We do not treat the 2024 protocol as results or translate SF-36 points into utility.
+The October 1 review located the full BATH-OUT-2 funder report for 296 randomized adults. Table 2 gives an integrated QALY contrast of .052 (.026–.078) for expedited installed showers versus usual wait, including alternative participants. Narrative intervals and cost variants differ from the table, and attrition was material; we retain the explicitly labeled Table 2 contrast and do not import healthcare/social-care savings. The .005 portable-aid course is roughly one tenth that magnitude as an analyst transfer judgment, not an identified ReCARES effect. [NIHR full findings, Table 2](https://sscr.nihr.ac.uk/wp-content/uploads/2025/04/151.-BATH-OUT-2-findings.pdf)
 
 ### 4.7 Knee scooters illustrate both short-term benefit and harm
 
@@ -240,90 +222,76 @@ Safety cannot be inferred from satisfaction alone. In a prospective scooter coho
 
 ### 4.8 What the evidence does and does not change
 
-No new study in this pass supplies a locally calibrated utility-duration pair for ReCARES. The new financial information is much stronger than the new clinical calibration. Our preferred displayed model therefore retains the previous clinical priors and clearly labels the result as a continuity benchmark. We show a lower shared clinical family prominently, instead of silently making the favorable old family look evidence-derived or selecting a replacement because of its effect on the threshold.
+No study establishes a locally calibrated utility-duration pair for ReCARES. The October 1 review nevertheless changes the earlier continuity benchmark to a smaller and shorter clinical family, informed by mixed functional and health-quality evidence. Both old and new values are analyst judgments. The new numeric installed-shower anchor clarifies what evidence exists without turning it into a portable-aid effect.
 
 This choice is not an assertion that the earlier priors are the only reasonable ones. A skeptical analyst might prefer shorter durations, lower utilities or more null weight. Another might believe unmeasured independence benefits justify a positive tail. The right response is to expose the disagreement and its numerical consequences. A probability-weighted estimate can organize judgment; it cannot turn disagreement into statistically calibrated confidence when the probabilities themselves are judgments.
 
 ## 5. The whole-gift model, step by step
 
-### 5.1 Starting with the right cost denominator
+### 5.1 What donor money supports
 
-The revised cash benchmark divides FY2025 whole expense of $72,583 by 11,000 reported-recipient equivalents. This is **$6.598 per reported equivalent**. Comparable ratios are $9.262 for FY2023 and $11.382 for FY2024. These ratios are not costs per clinical success, and the underlying counts are not verified unique patients. They are starting points for a model with additional filters, not the final impact estimate.
+GiveBetter considers equipment reuse a promising low-cost mechanism: an appropriate aid can improve mobility or self-care without manufacturing another device. Space, coordination, safe handling and volunteer capacity still matter. FY2025 accrual expense of $72,583 divided by activity floors of 11,000 recipients and 45,000 items implies **$6.60 per recipient-equivalent** and **$1.61 per item**. These are historical accounting ratios, not incremental purchase prices or guaranteed clinical effects.
 
-A $10,000 gift divided by that benchmark gives 1,515.5 baseline-equivalent recipient units. The central throughput factor of 0.50 reduces this to 757.8 additional reported-recipient equivalents. The 0.65 unique-fraction assumption then reduces it to 492.5 incremental unique need-episodes. These are expected fractional quantities in a model, not a promise to serve 493 identified people. Their precision is computational only; the underlying assumptions do not merit four significant figures in donor prose.
+The illustrative $10,000 scale makes arithmetic reproducible; it does not imply the same return for a large real expansion. Baseline throughput of 1,515.5 recipient-equivalents is multiplied by a .50 marginal response and .65 unique-episode fraction, yielding **492.54 unique equivalents**. Funding response, uniqueness and recipient alternatives remain weak priors, not measurements. Existing money and constrained volunteers, equipment or space may reduce response to zero. [Funding](#7-what-could-an-additional-gift-actually-change)
 
-The throughput factor represents the share of historical average output that an additional unrestricted gift produces after allocation, capacity limitations and financing displacement. It does not measure recipient unmet access. A dollar can fund an additional distribution that has no health increment because the recipient already had an alternative; that is handled later. Conversely, a recipient can have substantial unmet need but receive no additional service because cash is not the operational bottleneck.
+### 5.2 Revised clinical calculation
 
-### 5.2 The central clinical calculation
+| Pathway | Mix | Otherwise-unmet | Safe use | Utility | Years | Conditional benefit |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Mobility | .20 | .50 | .85 | .03 | .25 | .0075 QALY |
+| Bathing/transfer | .15 | .40 | .85 | .02 | .25 | .005 QALY |
+| Supplies/other | .65 | .30 | .90 | .002 | .05 | .0001 QALY |
 
-For each incremental unique need-episode, the central model assigns a 20% mobility share, 15% bathing/transfer share and 65% supplies/other share. Within each category it applies unmet access, successful safe use, utility and duration. The calculation is:
+These remain analyst judgments. The October 1 review reduces mobility from .05 for six months to .03 for three months; functional trial results coexist with null health-quality contrasts, and professional fitting differs from reuse distribution. Bathing now uses .02 for three months rather than .03 for six. BATH-OUT-2's .052 integrated installed-shower QALY contrast is an external anchor, not a portable-chair effect or a utility rate to multiply by another duration. The .005 portable-aid course is a much smaller transfer judgment. Supplies lack a controlled local anchor; a zero-supplies case is exposed. [Clinical evidence](#4-how-strong-is-the-clinical-bridge)
 
-`492.5396 × [(0.20×0.50×0.85×0.05×0.50) + (0.15×0.40×0.85×0.03×0.50) + (0.65×0.30×0.90×0.005×0.08)]`
+`492.5396 × [(0.20×0.50×0.85×0.03×0.25) + (0.15×0.40×0.85×0.02×0.25) + (0.65×0.30×0.90×0.002×0.05) − 0.0001] × 0.95`
 
-This produces 1.4580 gross QALYs. A separate harm allowance of 0.0001 QALY per unique episode subtracts 0.04925, leaving 1.40876 net QALYs. Applying the central 95% Bay share gives **1.33832 Bay QALYs per $10,000**, or **$74,720 per 10 Bay QALYs**. The SF share gives 0.42263 SF QALYs, but SF is a subset rather than an additional benefit to add to Bay.
+This gives **.3790326 Bay health QALYs**. The .0001 harm allowance per unique episode is a judgment, not observed injury incidence, and is not eliminated by the safe-use filter on positive benefit. The SF subset is .1196945 QALY; it must not be added again to Bay benefit. Geographic shares remain unverified priors. A successful-use conditional effect is not an effect per item, per visit or per dollar without these filters.
 
-The clinical terms should be read conditionally. The mobility utility assumption is not assigned to every item. It applies after the model has filtered for mobility need, unmet alternative access and successful safe use. The duration of half a year is the extra useful period before alternative access or need resolution, not the item’s engineering lifespan. This distinction prevents a durable object from generating perpetual benefits in the calculation.
+### 5.3 Income and purchasing power
 
-The central harm allowance is small, but not an empirical injury estimate. It aggregates possible incremental adverse consequences across the modeled recipient portfolio. It is not conditional on the positive safe-use filter, because that would remove harms from the people least likely to use equipment safely. The separate harm scenario tests a more adverse outcome without assigning simultaneous positive clinical gains. Future evidence could justify a different harm structure; the current coefficients remain judgments.
+We explicitly examine avoided personal spending, acquisition costs, wages, caregiver time, public-payer incidence and environmental spillovers. Unquantified channels are not evidence of zero actual value. The central **net income-equivalent credit is provisionally zero**, because sources do not establish its net sign after alternatives and acquisition costs.
 
-### 5.3 The five worlds and their weights
+The [national 2025 reuse survey](https://catada.info/assets/aggr_reports25/performance%20measures) reports that most respondents could only afford or obtain equipment through reuse. This supports access but not blanket cash savings: someone who would otherwise forgo a walker does not save its purchase price. National device price-gap ledgers are valuations, not demonstrated household consumption changes. Health belongs to otherwise-unmet users; avoided purchases apply to a disjoint modeled group. The calculator rejects aggregate group shares above one, but this does not prove local group identities.
 
-| World | Subjective weight | Bay QALYs per $10,000 | Dollars per 10 Bay QALYs |
-|---|---:|---:|---:|
-| Harm | 15% | −0.3410 | No positive return |
-| Null | 35% | 0 | No positive return |
-| Cautious positive | 20% | 0.00789 | $12.67M |
-| Central | 25% | 1.3383 | $74,720 |
-| Favorable | 5% | 12.8570 | $7,778 |
-| **Weighted expectation** | **100%** | **0.92786** | **$107,774** |
+A small positive case uses a **1% counterfactual purchaser share**, **$45 one-off avoided personal expense**, and **$50,000 annual baseline**. All are explicit external-transfer judgments: the national none-above survey category is about .84%, not a measured purchaser rate; $45 illustrates 20% of a $225 daily-living price gap, not a Medicare-approved charge; $50,000 is the crosswalk reference, not measured recipient income. Coverage, supplements, price and payment exposure vary. [Medicare DME](https://www.medicare.gov/coverage/durable-medical-equipment-dme-coverage)
 
-The weighted estimate is calculated by averaging signed health quantities, then dividing cost by the resulting expected health. It is not an average of the five prices. Null and harmful worlds cannot be represented by a finite positive cost-per-QALY figure, but they still enter expected health. Dropping them from an average would materially overstate the model’s implications.
+Coefficient Giving's log-income framework contributes **.00210466 income-equivalent healthy years** in this case, separate from clinical QALYs. Combined with health it gives **$262,373 per better life**. Retaining half that positive credit as an incidence-offset sensitivity gives $263,099. The central zero-net-credit estimate is **$263,830**, not an assertion of exact cancellation. Pickup costs could overturn the small gain, and alternative purchasing may itself require travel.
 
-The scenario weights were inherited from the published model. This review did not increase favorable weight after finding lower expenses. The favorable world bundles stronger throughput, greater uniqueness, more clinically relevant mix, more unmet access, safer use and larger or longer clinical gains. Such correlation is possible, but it is not empirically established. Readers should not interpret five hand-selected worlds as a fitted probability distribution over all possible futures.
+Do not add ordinary baseline lifetime earnings merely because health or survival improves. Incremental wages conditional on survival, caregiver earnings and household spillovers require distinct causal incidence and overlap checks. Donor dollars stay in the numerator, without a second unexplained income-loss charge. Insurer savings and retail equipment value are not automatically household income.
 
-### 5.4 Why the favorable tail deserves special attention
+### 5.4 Independent signed sensitivities
 
-The favorable world contributes 69.283% of expected net Bay health. This ratio is unchanged by the source-only financial update because the updated cash/output ratio scales all worlds proportionally. The improved headline therefore does not reduce the model’s dependence on favorable clinical and operational assumptions. Removing the favorable world and renormalizing the remaining weights produces 0.30001 Bay QALYs per $10,000, or $333,320 per 10 Bay QALYs.
+| Case | Bay health | Income-equivalent years | Dollars per better life |
+| --- | ---: | ---: | ---: |
+| Central: provisional zero net income | .379033 | 0 | $263,830 |
+| Small positive purchaser bridge | .379033 | .002105 | $262,373 |
+| Higher purchase stress: .10; $225; $20,000 baseline | .379033 | .261731 | $156,064 |
+| 10% incur one incremental $3 pickup fare | .379033 | −.001404 | $264,810 |
+| All incur $20 acquisition burden; $20,000 baseline | .379033 | −.234073 | $689,849 |
+| Health null; small positive income | 0 | .002105 | $47,513,619 |
+| Complete null | 0 | 0 | No positive price |
+| Utility zero with harm and acquisition burden | Negative | Negative | No positive price |
 
-This does not mean the favorable world must be deleted. Uncertain high-impact possibilities can legitimately affect expected value. It means that the reader should know which possibility is doing the work. The strongest challenge is not simply “the model has uncertainty”; it is whether the joint favorable assumptions describe a plausible marginal recipient portfolio after current funding and alternatives. A small change to that judgment can move the weighted result even if all verified financial numbers remain unchanged.
+Income and health vary independently; positive health need not entail positive income. Higher purchase incidence is an upward stress, not a validated bound. Fares and acquisition burdens are hypothetical incremental costs, not an observed local travel distribution. These scenarios are not confidence intervals. Nonpositive benefits retain expenditure and sign rather than a fabricated positive price. The API separately exposes zero mobility, bathing and supplies, shorter duration, weaker uniqueness/safe use, zero funding response and original higher clinical assumptions.
 
-The cautious-positive world is also informative. It contains positive benefits, but after modest use, clinical effect and harm assumptions its price is far above the target range. Thus the model’s apparent competitiveness is not robust across all positive-benefit narratives. A real donor who wants evidence of consistent benefit rather than an expected-value argument might reasonably require stronger validation than this model offers.
+### 5.5 Annual work, ranking and tails
 
-### 5.5 Old versus new: exactly what changed
+The research table and homepage use the **central marginal case**, consistent with the accepted ranking convention. It is a judgment estimate, not statistically calibrated expected value. Signed weights .15/.35/.20/.25/.05 remain as a diagnostic; do not drop null or harmful cases or average their prices.
 
-| Specification | Central Bay price | Weighted Bay price |
-|---|---:|---:|
-| Published FY2024 base | $128,892 | $185,910 |
-| Change only expense to FY2025 | $84,127 | $121,343 |
-| Change only recipient floor to FY2025 | $114,480 | $165,122 |
-| Change both to FY2025 | $74,720 | $107,774 |
+Under reduced clinical values and zero net income, the marginal signed weighted benefit is **.3401034**, giving **$294,028 per better life**. The former cautious-positive case is now slightly negative after harm and is labeled cautious signed. The favorable case supplies about **88%** of the marginal mixture; removing it leaves .0412092 signed years. This tail matters even though it is not the headline statistic.
 
-The two one-input cases are bridge calculations, not preferred mixed-year estimates. They show the separate arithmetic contributions. The revised base uses matching FY2025 expense and activity. The full model output also records updated program expense, items, donors and balances, but those contextual fields do not mechanically change health output beyond the expense/recipient ratio.
+Annual work is a different question. Applying central health to 7,150 unique equivalents and $72,583 expense gives **5.5022646 Bay QALYs** and **$131,915 per better life**. Do not substitute that for an extra-donation return: it omits marginal throughput response. The annual weighted diagnostic is $266,350; favorable benefit exceeds 100% of its signed total, and removing that tail leaves net harm. Using the mixed-accounting raw expense mean $88,845 with fixed FY2025 activity gives $161,470 annual and $322,940 marginal. This is a cost stress, not a comparable cash-series correction.
 
-The exact identity is:
+### 5.6 Revision trail
 
-`new price = old price × (72,583 / 111,205) × (9,770 / 11,000)`.
+September's FY2025 update retained the higher clinical priors: **$74,720 central** and **$107,774 weighted**. Its FY2024 comparators were $128,892 and $185,910. These remain historical comparisons in frozen models, not current estimates.
 
-This identity is independently tested. The old model is retained as a frozen sibling module and its numerical outputs are checked against the earlier accepted values. No earlier result is erased or relabeled as if it had used the new source. The source change is favorable; the funding interpretation remains cautious. Both facts can be true at once.
-
-### 5.6 Clinical and throughput alternatives
-
-| Diagnostic on FY2025 base | Central Bay price | Weighted Bay price |
-|---|---:|---:|
-| Retained clinical family | $74,720 | $107,774 |
-| Half positive-pathway utility | $154,855 | $232,849 |
-| Half positive-pathway duration | $154,855 | $232,849 |
-| Half both utility and duration | $333,904 | $554,748 |
-| Half throughput in every world | $149,441 | $215,549 |
-| Lower shared clinical family | $263,830 | $294,028 |
-
-The utility and duration tests leave the harm allowance unchanged, so their price effects are not exactly proportional. Halving throughput scales both positive effects and harms, so it doubles price. These distinctions are intentional. A diagnostic should modify the concept being tested, not quietly change every unfavorable assumption at the same time.
-
-The lower shared clinical family uses, in the central world, mobility utility 0.03 for 0.25 years, bathing utility 0.02 for 0.25 years, and supplies utility 0.002 for 0.05 years. Corresponding cautious and favorable values are included in the machine-readable data. This family came from a prior cross-organization comparability exercise; it is not validated specifically for ReCARES or the other organization. It shows that different reasonable clinical judgments can materially change the result while leaving accounting, geography and weights intact.
-
-We do not claim these tests span the full uncertainty. The recipient mix could be different; marginal cash could have nearly no effect; some donated equipment could substitute for a readily available alternative; or unmeasured clinical benefits could be larger. The purpose is to make the sensitivity concrete, not to label a handful of settings a complete confidence interval.
+The October 1 revision to **$263,830** comes primarily from smaller health utility and shorter duration, not a worse filing or omitted income. Activity and expenses are source-reported; additionality, uniqueness, alternatives and utility remain judgments. The report supports transparent comparisons and sensitivities, not guaranteed outcomes or a priced expansion offer. Donor/accounting cost is distinct from total societal resources. [Resource costs](#6-is-the-low-cash-cost-also-a-low-resource-cost)
 
 ## 6. Is the low cash cost also a low resource cost?
+
+The dollar/QALY figures in this section are **historical resource-cost illustrations from the September higher-clinical model**, not the October central estimate. They show omitted societal inputs; the current central ranking is $263,830 and uses donor costs. Do not add device retail value as household income or silently replace the donor-cost numerator with a societal valuation.
 
 ### 6.1 Cash expense is real, but incomplete
 
@@ -421,11 +389,11 @@ For a Bay-health donor, the key excluded alternative is also the recipient’s o
 
 ### 9.1 Current decision
 
-The updated cash/output evidence keeps ReCARES worth serious consideration. It is a real small-budget service with a plausible access mechanism and a large reported redistribution volume relative to expense. Under the retained clinical and funding priors, the updated estimate is competitive with the project’s exploratory Bay-health thresholds. That is a reason to investigate the bottleneck, not a reason to skip it.
+The updated cash/output evidence keeps ReCARES worth serious consideration. It is a real small-budget service with a plausible access mechanism and a large reported redistribution volume relative to expense. Under the reduced clinical assumptions and retained funding-response prior, the central marginal estimate is approximately $264,000 per better life, with the net-income counterfactual explicitly reviewed. That is a reason to investigate the bottleneck, not a reason to skip it.
 
 We retain **HOLD for an actionable giving recommendation**. The strongest unresolved issues are marginal capacity despite existing funding, distinct end-user counts, device-class mix, useful safe use and incremental duration. The new balance sheet does not solve the funding question, and the new activity total does not solve the causal one. Our model continues to return null for measured QALYs, measured unique recipients, measured geographic shares and verified marginal funding offer.
 
-An unfavorable result under alternative assumptions should remain visible alongside the preferred continuity estimate. We do not need to remove a charity merely because it has uncertainty, and we should not promote it merely because a favorable tail improves expected value. The appropriate level of confidence is constrained by what the evidence actually identifies. This report provides a transparent model and a decision-relevant evidence agenda, not a clinical effectiveness claim.
+An unfavorable result under alternative assumptions should remain visible alongside the revised central judgment estimate. We do not need to remove a charity merely because it has uncertainty, and we should not promote it merely because a favorable tail improves expected value. The appropriate level of confidence is constrained by what the evidence actually identifies. This report provides a transparent model and a decision-relevant evidence agenda, not a clinical effectiveness claim.
 
 ### 9.2 What could change the conclusion
 

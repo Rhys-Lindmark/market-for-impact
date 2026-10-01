@@ -7,8 +7,10 @@ import {calculate as pacificHearingModel} from './pacific-hearing-v2-model.mjs';
 const pacificHearing=pacificHearingModel().rows.find(row=>row.id==='central')!;
 import {calculate as recaresModel} from './recares-calibrated-model.mjs';
 const recares=recaresModel().rows.find(row=>row.name==='central')!;
-import {calculate as fufModel} from './fuf-v2-model.mjs';
-const fuf=fufModel().scenarios.find(s=>s.name==='central')!;
+import {calculate as fufModel} from './fuf-calibrated-model.mjs';
+// Legacy index field name; current denominator includes health and income.
+// Current default SF and Bay attribution are both one, without summing them.
+const fuf={modeledOrdinaryGiftCostPer10Qaly:fufModel().bay.costPerBetterLifeUSD};
 import data from '@/data/bay/rotacare-cea-v2.json';
 import viaData from '@/data/bay/via-heart-model-v1.json';
 import {calculate as viaModel} from './via-heart-model.mjs';

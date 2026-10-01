@@ -1,13 +1,24 @@
 {
   "schemaVersion": 1,
-  "updated": "2026-09-30",
-  "currentPhase": "Bounded user-requested deep reviews of Institute for Progress, 1Day Sooner and Foundation for American Innovation complete. USA has 28 published reports and 13 in-depth reviews; broader expansion and schedules remain paused. See their acceptance packet for evidence, assumptions and measured research time.",
+  "updated": "2026-10-01",
+  "currentPhase": "Resumed October 1 with PR384 P0 recalibration before geographic expansion. Six of 40 published-cohort reviews recalibrated; 34 remain. Eleven accepted older model identities are tracked separately, none recalibrated. PHC published in Sites version317; Hearing and Speech Center source/calculation review is next. Publication counts below are not recalibration counts.",
+  "currentResearchModel": "GPT-6.1 Sol",
+  "recalibration": {
+    "publishedCohortTotal": 40,
+    "publishedCohortCompleted": 6,
+    "legacyModelTotal": 11,
+    "legacyModelCompleted": 0,
+    "completedReportIds": ["usa/institute-for-progress", "usa/1day-sooner", "usa/foundation-for-american-innovation", "san-francisco/recares", "san-francisco/hope-pacifica", "san-francisco/project-homeless-connect"],
+    "originalPendingQueue": 48,
+    "originalPendingQueueCompleted": 3,
+    "evidence": "geography-discovery/recalibration-inventory-2026-10-01.md"
+  },
   "usageReserve": {
     "userBaseline": "2026-09-29 around 09:00 America/Los_Angeles: 96% of weekly allowance remaining (user screenshot)",
-    "minimumWeeklyRemainingPercent": 33,
-    "operationalStopRemainingPercent": 45,
+    "minimumWeeklyRemainingPercent": 20,
+    "operationalStopRemainingPercent": 25,
     "checkIntervalActiveMinutes": 15,
-    "atStop": "Checkpoint work and switch the existing heartbeat to daily usage checks until reset; do not consume credits or use a reset automatically."
+    "atStop": "Do not start a new research batch at or below 25% remaining; checkpoint and keep at least the user's latest 20% minimum reserve. Respect later user pauses. Do not automatically consume credits or use a reset."
   },
   "issue": "https://github.com/Rhys-Lindmark/market-for-impact/issues/333",
   "canonicalBase": "https://ai.rhyslindmark.com/givebetter",

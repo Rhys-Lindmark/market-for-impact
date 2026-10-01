@@ -35,6 +35,7 @@ export type CharityReportContent = {
   published: string;
   modelVersion: string;
   calibrationDate?: string;
+  fundingAppendix?: React.ReactNode;
   nutshell: {
     headline: string;
     body: React.ReactNode;
@@ -59,6 +60,7 @@ export type CharityReportContent = {
     uncertaintyBoundary?: string;
     fundingBoundary: string;
     incomeLedger?: {paragraphs:string[];scenarios:Array<{case:string;headline:string;detail:string}>};
+    comparisonUnit?: string;
   };
   comparisonBridge?: {
     headline: string;
@@ -151,7 +153,7 @@ export default function CharityResearchReport({ content }: { content: CharityRep
           <section id="cost-effectiveness">
             <h2>4. What do you get for your dollar?</h2>
             <p><strong>{content.model.headline}</strong></p><p>{content.model.body}</p>
-            <p>A better life is our comparison unit of 10 additional {content.model.incomeLedger?'health years and income-welfare-equivalent years':'quality-adjusted life years (QALYs)'}, potentially spread across people. These are uncertain estimates, not measured returns or verified donation offers.</p>
+            <p>A better life is our comparison unit of 10 additional {content.model.comparisonUnit||(content.model.incomeLedger?'health years and income-welfare-equivalent years':'quality-adjusted life years (QALYs)')}, potentially spread across people. These are uncertain estimates, not measured returns or verified donation offers.</p>
             <h3>How we calculate the estimate</h3>
             <p className="report-equation"><strong>{content.model.equation.label}:</strong> {content.model.equation.expression}<br /><strong>{content.model.equation.result}</strong></p>
             <details className="report-method"><summary>Model inputs and assumptions</summary><Assumptions inputs={content.model.inputs}/></details>
@@ -178,6 +180,7 @@ export default function CharityResearchReport({ content }: { content: CharityRep
             <DonorReadiness organization={content.organization}/>
             <p>{content.nutshell.recommendationBlocker}</p>
             <p>{content.model.fundingBoundary}</p>
+            {content.fundingAppendix}
             <p>This review does not establish a verified marginal funding offer or a complete history of grants.</p>
             {donationUrl ? <><p><a className="report-donate" href={donationUrl} target="_blank" rel="noreferrer">Donate</a></p><p className="report-donation-note">{content.donationNote || 'Opens the organization’s giving page. A general donation may not fund the specific activity modeled here; confirm allocation with the recipient.'}</p></> : <p>We have not verified a suitable donation route for this reviewed activity. Confirm the legal recipient and intended allocation before donating.</p>}
           </section>

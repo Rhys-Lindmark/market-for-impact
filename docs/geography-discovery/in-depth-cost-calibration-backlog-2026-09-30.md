@@ -1,6 +1,15 @@
 # Recalibrate existing in-depth reviews
 
-Priority: **P0 — highest research priority.** Requested by Rhys on September 30, 2026. Recalibrate all remaining existing in-depth reviews before new geographic expansion or additional deep-review targets. Geographic expansion and scheduled research remain paused; prioritizing this queue does not restart them. The immediate Institute for Progress, 1Day Sooner and Foundation for American Innovation corrections are separate from this pending backlog.
+Priority: **P0 — highest research priority.** Requested by Rhys on September 30, 2026 and explicitly resumed October 1. Recalibrate all remaining existing in-depth reviews before new geographic expansion or additional deep-review targets. The immediate Institute for Progress, 1Day Sooner and Foundation for American Innovation corrections are separate from this pending backlog.
+
+## Resumed manager checkpoint — October 1
+
+- Current phase: ReCARES evidence/calibration decision. Inventory reconciled and independently spot-checked; `recalibration_inventory` also delivered the separate ReCARES challenge. Manager owns acceptance and integration.
+- Next action: resolve the ReCARES clinical/economic judgment and ranking-statistic gates listed in [the independent challenge](recares-recalibration-challenge-2026-10-01.md), then synchronize its report/list/shortlist/API only after acceptance. Continue HOPE, PHC and HSC next; no expansion ahead of this queue.
+- Exit criteria: accepted complete inventory, then tested and synchronized health/income models per batch. Recalibration counts are separate from publication counts.
+- Current allowance: 47% remaining at restart. Minimum reserve is **20%**, superseding previous thresholds. No new batch at or below 25% remaining; check before dispatch and every 15 active minutes. Never use reset credits.
+- Continuity: existing hourly heartbeat resumed with PR #384 first, latest usage guard, no overlapping runs. Active expansion goal is retained, not replaced.
+- Resource baseline: reused checkout 90 MB; filesystem 28 GiB free. No dependency installation, copied checkout or server started. Stall review after 20 active minutes without an evidence milestone.
 
 ## Why this takes priority
 
@@ -16,7 +25,7 @@ All figures are dollars per better life under the respective model version. Thes
 
 ## Execution and acceptance order
 
-- [ ] Reconcile the 37-report snapshot below against every existing deep review, including legacy work; publish the complete inventory before starting batches. Deduplicate shared organization research without dropping geography-specific models.
+- [x] Reconcile the 37-report snapshot against current beta, SF top-ten and explicitly accepted legacy re-reviews. [Inventory](recalibration-inventory-2026-10-01.md): 51 confirmed model identities, three already recalibrated, **48 pending** across 47 organizations. Legacy depth/provenance ambiguities remain listed and must be resolved before final coverage certification; distinct geographic models are preserved.
 - [ ] Audit current top-four recommendations first, then ranking-sensitive and policy/systemic reports, then every other existing deep review. This queue takes precedence over new report production when work is authorized to resume.
 - [ ] Establish a coherent annual-work or marginal-gift cost boundary for each report. Do not charge a full annual budget while arbitrarily discounting its benefits for an unspecified extra donation. Keep funding capacity as a separately evidenced question.
 - [ ] For every report, show a ledger of health effects, income/consumption effects, overlaps, net costs, harms and unquantified channels. Include income in the headline when modeled; an explicit justified zero-income case is different from silently omitting economic benefits. Missing evidence must be labeled, not replaced by a claimed measured effect.
@@ -36,9 +45,11 @@ Finish line: every reconciled existing in-depth review has a reviewed health-and
 - [ ] Add reproducible arithmetic and scenario tests; verify the current estimate reaches report, list and top-four selection consistently. Preserve the initial estimate as a diagnostic, not an override of a revised finite central value.
 - [ ] Record actual per-organization time and per-model identity. Have a separate reviewer challenge assumptions, sources, tail scenarios and funding capacity before accepting the correction.
 
-Prioritize ranking-sensitive reviews, policy/systemic models and broad portfolios first; do not fill a target count by changing prose or inventing a measured impact. Work in small reviewed batches, preserve the user's 33% allowance floor, and report reviewed/remaining counts when the task is explicitly resumed. No automatic resumption is authorized by this TODO.
+Prioritize ranking-sensitive reviews, policy/systemic models and broad portfolios first; do not fill a target count by changing prose or inventing a measured impact. Work in small reviewed batches, preserve the user's latest 20% remaining allowance floor, and report reviewed/remaining counts. Resumption was explicitly authorized October 1; later user pauses take precedence.
 
-## Current publication inventory: 37 other reviews pending
+## Original publication-cohort snapshot: 37 other reviews pending
+
+The October 1 reconciliation adds 11 accepted legacy identities: minimum **48 pending** in the complete queue. The tables below preserve the original cohort, not the complete denominator. Inventory acceptance checks confirmed 30 beta rows, ten SF summary keys and explicit legacy acceptance memos. First [ReCARES diagnostic packet](recares-recalibration-2026-10-01.md) passed independent arithmetic challenge; **0/48 newly accepted recalibrations** so far. Public prices remain unchanged: financial comparability, clinical judgment, income incidence and ranking-statistic decisions remain required. Latest tests add independent income-versus-health and adverse cases; arithmetic acceptance is not publication acceptance.
 
 ### San Francisco: 0/10 recalibration passes
 

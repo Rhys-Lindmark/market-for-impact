@@ -1,5 +1,11 @@
 # GiveBetter geographic expansion
 
+## Current execution override — October 1, 2026
+
+The user explicitly resumed work, starting with [PR #384](https://github.com/Rhys-Lindmark/market-for-impact/pull/384). Existing goal remains active. Complete the reconciled existing-review health-and-income recalibration backlog before new expansion or the queued earnings-pipeline PR. Read `geography-discovery/in-depth-cost-calibration-backlog-2026-09-30.md` and its current inventory rather than historical checkpoint paragraphs below. Current model: GPT-6.1 Sol. Use one bounded implementer and separate manager acceptance to limit usage. Existing hourly heartbeat is active with this priority.
+
+The latest remaining-usage floor is **20%**, replacing earlier 33% and 45% guards. Start no new research batch at or below 25% remaining; check usage before dispatch and every 15 active minutes, then checkpoint safely above 20%. Never spend reset credits or overlap runs. Research counts do not increase merely from recalibrating an existing report. Historical pause statements and model assignments below are superseded for current work, not rewritten as historical facts.
+
 ## Earnings research supplement — 30 September 2026
 
 The user requested a better-paying-jobs lane for SF/Bay Area, California, NYC and USA. Published discovery synthesis: /research/better-paying-jobs. Its promotional blocks were subsequently removed from edition landing and full-list pages at the user's request. Candidates and screening scenarios live in lib/better-paying-jobs.mjs.

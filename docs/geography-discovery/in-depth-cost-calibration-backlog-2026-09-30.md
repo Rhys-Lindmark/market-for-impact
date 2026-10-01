@@ -4,12 +4,12 @@ Priority: **P0 — highest research priority.** Requested by Rhys on September 3
 
 ## Resumed manager checkpoint — October 1
 
-- Current phase: **2/48 complete, 46 remaining.** ReCARES and HOPE clinical/income decisions accepted, independently challenged, integrated and published in Sites versions 315 and 316. [Acceptance](recares-calibration-acceptance-2026-10-01.md). Original prices are preserved as historical comparisons.
-- Next action: integrate and independently test Project Homeless Connect's proposed health/income ledger and sponsor/project cost boundary. HOPE's explicit income counterfactuals and survival/funding sensitivities are accepted and published; its central remains $554,660 after genuine re-examination. [Challenge](hope-pacifica-calibration-challenge-2026-10-01.md) withdrew the first proposal's unsupported central haircuts: retain the ten-year horizon and .5 funding-response continuity judgments, without claiming either is locally measured. Central price may remain unchanged after genuine re-examination. [HOPE acceptance](hope-calibration-acceptance-2026-10-01.md). PHC's source proposal is prepared but not accepted for publication; HSC follows. No expansion ahead of this queue.
+- Current phase: **6/40 published-cohort reviews recalibrated, 34 remaining; 0/11 older reviews complete.** This includes the three prior USA corrections and ReCARES, HOPE and PHC, accepted and published in Sites versions 315–317. Original prices remain historical comparisons. The old 48 denominator was an original pending queue (40 − 3 + 11), not the screenshot's published-review total; 3/48 of that historical queue are now complete.
+- Next action: Hearing and Speech Center source/calculation proposal, then independent challenge and integration. PHC's signed income ledger, receipt/use timing and sponsor/project cost boundary passed 343 current-model checks, 4,506 frozen checks, narrative parity and independent review; its central remains $774,408 after genuine re-examination, with $728,576 earnings and $776,988 acquisition-cost scenarios. [PHC acceptance](phc-calibration-acceptance-2026-10-01.md). HOPE retains $554,660 after its independent challenge withdrew unsupported haircuts. No expansion ahead of this queue.
 - Exit criteria: accepted complete inventory, then tested and synchronized health/income models per batch. Recalibration counts are separate from publication counts.
 - Current allowance: 47% remaining at restart. Minimum reserve is **20%**, superseding previous thresholds. No new batch at or below 25% remaining; check before dispatch and every 15 active minutes. Never use reset credits.
 - Continuity: existing hourly heartbeat resumed with PR #384 first, latest usage guard, no overlapping runs. Active expansion goal is retained, not replaced.
-- Resource baseline: reused checkout 90 MB; filesystem 28 GiB free. No dependency installation, copied checkout or server started. Stall review after 20 active minutes without an evidence milestone.
+- Resource baseline: reused checkout 93 MB before PHC build; filesystem 30 GiB free. No dependency installation, copied checkout or server started. Stall review after 20 active minutes without an evidence milestone.
 
 ## Why this takes priority
 
@@ -49,13 +49,13 @@ Prioritize ranking-sensitive reviews, policy/systemic models and broad portfolio
 
 ## Original publication-cohort snapshot: 37 other reviews pending
 
-The October 1 reconciliation adds 11 accepted legacy identities: **48 models in the new recalibration queue**. The tables below preserve the original cohort, not the complete denominator. Inventory checks confirmed 30 beta rows, ten SF summary keys and explicit legacy acceptance memos. ReCARES and HOPE are now **2/48 newly accepted and published**, leaving **46**; its central price changes from $74,720 to $263,830 with explicit income counterfactuals. Financial comparability remains disclosed rather than fabricated. HOPE retains its central price with newly explicit signed income, prognosis and funding sensitivities; other public prices are unchanged.
+The October 1 reconciliation adds 11 accepted legacy identities beyond the **40 published-cohort reviews**. Track them separately: **6/40 complete, 34 remaining; 0/11 older reviews complete**. The initial pending queue was 48 = 40 − 3 prior USA corrections + 11 older models; 3/48 of that historical queue are now complete. Inventory checks confirmed 30 geography beta rows and ten SF summary keys. ReCARES changes from $74,720 to $263,830; HOPE and PHC retain their central prices after substantive clinical/income review, with signed economic and funding/capacity scenarios. Financial comparability remains disclosed rather than fabricated.
 
-### San Francisco: 2/10 recalibration passes
+### San Francisco: 3/10 recalibration passes
 
 - [x] The ReCARES Network — [accepted and published](recares-calibration-acceptance-2026-10-01.md)
 - [x] HOPE Pacifica — [accepted and published](hope-calibration-acceptance-2026-10-01.md)
-- [ ] Project Homeless Connect
+- [x] Project Homeless Connect — [accepted and published](phc-calibration-acceptance-2026-10-01.md)
 - [ ] Hearing and Speech Center of Northern California
 - [ ] Compass Family Services
 - [ ] Hamilton Families

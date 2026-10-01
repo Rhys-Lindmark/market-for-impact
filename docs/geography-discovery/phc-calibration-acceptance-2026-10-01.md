@@ -1,6 +1,6 @@
 # Project Homeless Connect — accepted health and income calibration
 
-October 1. Independent challenge and implementation review accepted; production publication pending. This is a recalibration of existing research, not a new organization report.
+October 1. Independent challenge and implementation review accepted; published in Sites version 317. Native deployment `appgdep_6abea55ab6508191bd57dbd5354ba124` succeeded at 18:24:38 UTC, source `65bad64673948b04bee40825afcf5bf8a98bc854`. This is a recalibration of existing research, not a new organization report.
 
 - Central marginal donor price retained **$774,408.34 per better life**, 1.29130841 Bay health years and provisional zero net-income years. Income sign/incidence are unidentified, not measured absent. Clinical coefficients are retained after checking the source-to-utility bridges; no forced price movement.
 - Earnings eligibility is defined before actual use. The independent 10% eligible / 5% net disposable earnings case uses the existing delayed, discounted one-year use integral once: **$728,576.02**. No gross wage or lifetime-survival earnings added.

@@ -1,6 +1,8 @@
 # Existing in-depth recalibration inventory
 
-Current acceptance checkpoint: **2/48 original queued models completed, 46 remaining**. ReCARES and [HOPE](hope-calibration-acceptance-2026-10-01.md) are accepted and published. Counts below preserve the inventory-at-start snapshot; they do not silently recategorize all prior deep reviews as newly recalibrated.
+Current acceptance checkpoint: **6/40 published-cohort reviews recalibrated, 34 remaining**: the three September 30 USA corrections plus ReCARES, [HOPE](hope-calibration-acceptance-2026-10-01.md) and [Project Homeless Connect](phc-calibration-acceptance-2026-10-01.md). **0/11 older reviews recalibrated**; those are tracked separately. PHC is accepted and published in Sites version 317, source `65bad64673948b04bee40825afcf5bf8a98bc854`. Counts below preserve the inventory-at-start snapshot.
+
+The screenshot's publication cohort is 10 SF + 10 California + 13 USA + 3 NYC + 3 LA + 1 Chicago = **40**. The former **48** denominator meant the pending queue at restart: 40 − 3 previously corrected + 11 older models. It was not the number of published-cohort reviews. For historical reconciliation, 3/48 of that original pending queue are now published, leaving 45; current tracking uses **6/40 plus 0/11**, not one mixed denominator.
 
 October 1, 2026. Inventory-only reconciliation at `6a858c4965c0e86b18ec0713c8ae242ee97ca208`, branch `priority/recalibrate-in-depth-health-income`. The user explicitly resumed the goal October 1; this inventory itself implies no model acceptance, price change or geographic expansion. Scope is the September 30 backlog plus demonstrably accepted legacy re-reviews; initial exploratory models and uncertain legacy coverage remain visible separately.
 

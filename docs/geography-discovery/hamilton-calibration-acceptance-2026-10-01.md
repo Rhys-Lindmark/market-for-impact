@@ -1,6 +1,6 @@
 # Hamilton health and income recalibration
 
-October 1. Source proposal, independent source challenge, code audit and [final integration audit](hamilton-calibration-integration-audit-2026-10-01.md) accepted. Publication remains pending. Public checkpoint is 8/40, not 9/40; older models remain 0/11. Frozen native and VA bridges remain historical.
+October 1. Source proposal, independent source challenge, code audit and [final integration audit](hamilton-calibration-integration-audit-2026-10-01.md) accepted and published in Sites version323 at 19:49:01 UTC. Source `925de6fc4861d995cd95f3f4b53efdf2659c5817`; deployment `appgdep_6abeb9214cfc81919f304a1010bb1f10` succeeded. Public checkpoint is 9/40; older models remain 0/11. Frozen native and VA bridges remain historical.
 
 Current central conditional price is $1,388,888.89 per ten combined welfare-equivalent years: one-off tenant resources .03819720912626558 and residual noncash welfare/health proxy .03380279087373442 per modeled award. Neither component is measured Hamilton clinical QALYs. The $10K all-in cost, $5K payment, 80% net tenant incidence, $50K resource baseline and full-overlap allocation are judgments; the VA mid-retention needs local evidence.
 

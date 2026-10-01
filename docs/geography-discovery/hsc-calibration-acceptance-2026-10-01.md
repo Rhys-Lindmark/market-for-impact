@@ -1,6 +1,6 @@
 # Hearing and Speech Center — health and income calibration
 
-October 1. Source, arithmetic, code and [final integration audit](hsc-calibration-integration-audit-2026-10-01.md) accepted; publication pending. This is an existing public-cohort review, not a new organization report. Do not increment the published recalibration count until deployment succeeds.
+October 1. Source, arithmetic, code and [final integration audit](hsc-calibration-integration-audit-2026-10-01.md) accepted and published in Sites version319 at 18:58:30 UTC. Source `07762fd25c72a6921c11df5ef66a1dadce53fdae`; deployment `appgdep_6abead49f60081918c1c5b3823ec226d` succeeded. This is an existing public-cohort review, not a new organization report. Current acceptance is 7/40 public-cohort reviews and 0/11 older model identities. Compass Family Services is next.
 
 Central conditional SF-resident supported-course price remains **$1,250,000 per better life**, comprising .012 clinical health QALYs and a provisional net-income judgment of zero. Zero is a declared center amid unknown gains and costs, not empirical absence of economic benefits. The original $1,500 donor cash and $600 gross donated-stock allowance remain distinct.
 

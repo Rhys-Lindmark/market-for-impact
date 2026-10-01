@@ -1,6 +1,6 @@
 # ReCARES calibration acceptance
 
-October 1. Manager accepts the reduced clinical family and provisional zero-net-income central, with independent economic sensitivities. Implementation accepted; publication pending this checkpoint.
+October 1. Manager accepts the reduced clinical family and provisional zero-net-income central, with independent economic sensitivities. Implementation accepted and published successfully in Sites version 315 at source commit `7954fdbad8e6a7d454c1ff9e2bb06d31a3d7996b`, October 1 17:18:47 UTC.
 
 - Central marginal: $74,720.34 → **$263,829.55** per better life. Primary change: smaller utility and shorter duration, not a financial deterioration or silently omitted income.
 - Bay health .37903260; central income-equivalent welfare 0, explicitly provisional. Small purchaser credit .00210466 gives $262,372.67; adverse acquisition costs give $689,849.07. Unquantified wages/caregiver/payer channels are not claimed absent.
@@ -12,3 +12,5 @@ October 1. Manager accepts the reduced clinical family and provisional zero-net-
 - Historical review times remain separately labeled; October 1 clocked Sol source/model/reviewer intervals total **12m22s**. Integration/build time and untimed earlier work are not reconstructed as research.
 
 This is an accepted transparent judgment model, not empirically identified local effectiveness or a verified large-donation offer. Next P0 artifact is the HOPE Pacifica decision memo, still unaccepted and not integrated.
+
+Manager publication verification: native deployment `appgdep_6abe95eaa95c81918a80ec885f8f7699` returned succeeded and the existing public URL. Existing successful focused checks were reused; production build passed. No all-mobile-CI or fresh browser-render claim is made. Queued recalibrations now **1/48 complete, 47 remaining**; earlier three USA corrections are outside that denominator.

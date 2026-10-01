@@ -4,8 +4,8 @@ Priority: **P0 — highest research priority.** Requested by Rhys on September 3
 
 ## Resumed manager checkpoint — October 1
 
-- Current phase: ReCARES evidence/calibration decision. Inventory reconciled and independently spot-checked; `recalibration_inventory` also delivered the separate ReCARES challenge. Manager owns acceptance and integration.
-- Next action: resolve the ReCARES clinical/economic judgment and ranking-statistic gates listed in [the independent challenge](recares-recalibration-challenge-2026-10-01.md), then synchronize its report/list/shortlist/API only after acceptance. Continue HOPE, PHC and HSC next; no expansion ahead of this queue.
+- Current phase: **1/48 complete, 47 remaining.** ReCARES clinical/income decision accepted, independently challenged, integrated and published in Sites version 315. [Acceptance](recares-calibration-acceptance-2026-10-01.md). Original prices are preserved as historical comparisons.
+- Next action: independently challenge the proposed HOPE survival-horizon and funding-response revisions before integration. [HOPE decision](hope-pacifica-calibration-decision-2026-10-01.md) is a candidate, not accepted public arithmetic. PHC and HSC follow; no expansion ahead of this queue.
 - Exit criteria: accepted complete inventory, then tested and synchronized health/income models per batch. Recalibration counts are separate from publication counts.
 - Current allowance: 47% remaining at restart. Minimum reserve is **20%**, superseding previous thresholds. No new batch at or below 25% remaining; check before dispatch and every 15 active minutes. Never use reset credits.
 - Continuity: existing hourly heartbeat resumed with PR #384 first, latest usage guard, no overlapping runs. Active expansion goal is retained, not replaced.
@@ -49,11 +49,11 @@ Prioritize ranking-sensitive reviews, policy/systemic models and broad portfolio
 
 ## Original publication-cohort snapshot: 37 other reviews pending
 
-The October 1 reconciliation adds 11 accepted legacy identities: minimum **48 pending** in the complete queue. The tables below preserve the original cohort, not the complete denominator. Inventory acceptance checks confirmed 30 beta rows, ten SF summary keys and explicit legacy acceptance memos. First [ReCARES diagnostic packet](recares-recalibration-2026-10-01.md) passed independent arithmetic challenge; **0/48 newly accepted recalibrations** so far. Public prices remain unchanged: financial comparability, clinical judgment, income incidence and ranking-statistic decisions remain required. Latest tests add independent income-versus-health and adverse cases; arithmetic acceptance is not publication acceptance.
+The October 1 reconciliation adds 11 accepted legacy identities: **48 models in the new recalibration queue**. The tables below preserve the original cohort, not the complete denominator. Inventory checks confirmed 30 beta rows, ten SF summary keys and explicit legacy acceptance memos. ReCARES is now **1/48 newly accepted and published**, leaving **47**; its central price changes from $74,720 to $263,830 with explicit income counterfactuals. Financial comparability remains disclosed rather than fabricated. Other public prices are unchanged; HOPE is a proposed decision only.
 
-### San Francisco: 0/10 recalibration passes
+### San Francisco: 1/10 recalibration passes
 
-- [ ] The ReCARES Network
+- [x] The ReCARES Network — [accepted and published](recares-calibration-acceptance-2026-10-01.md)
 - [ ] HOPE Pacifica
 - [ ] Project Homeless Connect
 - [ ] Hearing and Speech Center of Northern California
@@ -108,6 +108,6 @@ The October 1 reconciliation adds 11 accepted legacy identities: minimum **48 pe
 
 ### Inventory gate
 
-- [ ] Before execution, reconcile this snapshot against every current `stage: beta` report, the SF top-ten summary registry, and legacy in-depth report/model files. Include legacy in-depth work outside those headline cohorts rather than silently dropping it; deduplicate reused organization research across geography while retaining distinct geographic denominators. Refresh the total and maintain artifact links as each recalibration is accepted.
+- [x] Before execution, reconcile this snapshot against every current `stage: beta` report, the SF top-ten summary registry, and accepted legacy in-depth report/model files. [Inventory](recalibration-inventory-2026-10-01.md) includes distinct geographic models and explicitly preserves unresolved provenance cases. Final coverage certification still requires resolving those ambiguities.
 
 Evidence inventory: `data/geography-reports.json`, `data/top-ten-summaries.json`, `docs/geography-progress.json`. This file records pending work, not completed re-audits or publication claims.

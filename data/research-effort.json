@@ -9,6 +9,77 @@
   "timeBasis": "Sum of recorded, organization-specific researcher wall-clock intervals. Parallel researchers are counted separately; this is not elapsed calendar time or a quality score.",
   "historicalCoverage": "Earlier reports did not consistently record organization-specific research intervals or AI model provenance. Missing records are unknown, not zero.",
   "organizations": {
+    "San Francisco AIDS Foundation": {
+      "coverage": "partial",
+      "sessions": [
+        {"id":"db0370ba-7c11-4af5-8a37-70b6963851d4","workerId":"sfaf-independent-alpha-reprioritize","phase":"source-audit","startedAt":"2026-10-01T21:32:18.950Z","endedAt":"2026-10-01T21:33:53.667Z","model":{"id":"gpt-6.1-sol","name":"GPT-6.1 Sol","evidence":"User explicitly confirmed current GPT-6.1 Sol; reused worker inherited parent model without override, not independent runtime metadata"},"evidence":"docs/geography-discovery/sfaf-independent-audit-2026-10-01.md"},
+        {
+          "id": "ddc48295-a652-4863-92d6-72c90542a39d",
+          "workerId": "melp_calibration",
+          "phase": "research",
+          "startedAt": "2026-10-01T21:16:10.263Z",
+          "endedAt": "2026-10-01T21:24:10.492Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed GPT-6.1 Sol; inherited parent model without override. No independent runtime metadata claim."
+          },
+          "evidence": "docs/geography-discovery/sfaf-calibration-decision-2026-10-01.md"
+        },
+        {
+          "id": "1e9fe6cb-85c8-48f9-9e47-5e44cb32cdef",
+          "workerId": "sfaf_calibration",
+          "phase": "modeling",
+          "startedAt": "2026-10-01T21:27:28.877Z",
+          "endedAt": "2026-10-01T21:30:19.117Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed GPT-6.1 Sol; inherited without override. No independent runtime metadata claim."
+          },
+          "evidence": "lib/sfaf-calibrated-model.mjs"
+        },
+        {
+          "id": "f98a93f6-b87e-4522-90eb-9f32f6f1a3f5",
+          "workerId": "root-sfaf-source",
+          "phase": "source-audit",
+          "startedAt": "2026-10-01T21:16:30.472Z",
+          "endedAt": "2026-10-01T21:17:21.356Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed GPT-6.1 Sol; inherited root model without override"
+          },
+          "evidence": "docs/geography-discovery/sfaf-calibration-source-challenge-2026-10-01.md"
+        },
+        {
+          "id": "21eda8f2-9c05-47d6-9047-6dc2ba036bed",
+          "workerId": "root-sfaf-financial",
+          "phase": "source-audit",
+          "startedAt": "2026-10-01T21:18:41.568Z",
+          "endedAt": "2026-10-01T21:19:13.473Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed GPT-6.1 Sol; inherited root model without override"
+          },
+          "evidence": "docs/geography-discovery/sfaf-calibration-source-challenge-2026-10-01.md"
+        },
+        {
+          "id": "ac35d3b2-7f6a-4bf8-bb2b-bdf588a3ea60",
+          "workerId": "root-sfaf-report",
+          "phase": "research",
+          "startedAt": "2026-10-01T21:28:03.710Z",
+          "endedAt": "2026-10-01T21:30:22.318Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User confirmed GPT-6.1 Sol for current research on September30,2026"
+          },
+          "evidence": "lib/sfaf-calibrated-report.mjs"
+        }
+      ]
+    },
     "Code Tenderloin": {
       "coverage": "partial",
       "sessions": [

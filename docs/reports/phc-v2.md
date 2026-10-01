@@ -1,6 +1,6 @@
-# Project Homeless Connect: V2 assessment of an ordinary project-directed gift
+# Project Homeless Connect: health and income assessment
 
-Research date: September 11, 2026. This review concerns the San Francisco project sponsored by Community Initiatives, not Pacific Hearing Connection or similarly named organizations in other cities. The accepted finite clinical model is preserved without coefficient changes.
+Research update: October 1, 2026. This review concerns the San Francisco project sponsored by Community Initiatives, not Pacific Hearing Connection or similarly named organizations in other cities. The clinical coefficients are retained after source review, with a newly explicit income ledger and signed earnings, household-saving and acquisition-cost sensitivities.
 
 ## Summary
 
@@ -158,7 +158,7 @@ The same discipline applies to referrals to housing, mental-health, addiction, o
 
 ## Model and exact results
 
-The executable model is the accepted `phc-whole-portfolio-finite-health-v1`, copied without numerical modification. V2 changes evidence, scope explanation, and the donor decision, not the coefficients. It uses no probability weights. The central row is a central scenario; favorable and cautious rows are joint assumption packages, not statistical confidence intervals.
+The current executable model is `phc-health-income-calibration-2026-10-01`. Its historical health-only calculation, `phc-whole-portfolio-finite-health-v1`, remains reproducible without coefficient changes. The current model adds separate net-income components and independently signed sensitivities after re-examining the clinical and financial evidence. It uses no probability weights. The central row is a central scenario; favorable and cautious rows are joint assumption packages, not statistical confidence intervals.
 
 For each pathway, nominal completed episodes equal gift times allocation divided by complete PHC cash cost. Additional episodes are the smaller of nominal episodes times financial additionality and the explicit additional-capacity cap. Distinct patient-years multiply this by the nonoverlap share. Gross health then multiplies by no-equivalent-alternative share, signed utility, and effective discounted years. Procedural harm is charged on every additional completed episode before overlap and alternative filters. Independent harm is subtracted separately.
 
@@ -187,6 +187,36 @@ The price per 10 QALYs is a normalization of the $100,000 scenario, not a litera
 In the preserved joint favorable case, donor Bay cost is $38,284.43507008588 per 10 QALYs. In the cautious case it is $597,333,399.0553555. Lower clinical allocation alone gives $3,097,633.360692655; lower financial additionality $3,872,041.7008658163; rapid equivalent alternatives $6,127,231.833437343; and limited additional capacity $5,043,653.38398519. These results show that plausible structural uncertainty dominates fine numerical precision. They do not describe measured frequencies of success.
 
 No funding additionality and no additional capacity each give zero modeled health. Null utility with no procedural harm also gives zero. Signed adverse utility gives −.7449863861329064 Bay QALYs, while an independent one-US-QALY harm with zero clinical activity gives −.98 Bay QALYs. Positive cost-effectiveness ratios are suppressed for zero and negative health; the gift cost remains. The central small harm inputs are stress-test priors, not documented adverse-event rates at PHC.
+
+### Health and income recalibration
+
+The current ranking uses a central marginal scenario of **$774,408 per better life**: 1.29130841 Bay health years plus **zero quantified net-income years** per $100,000 of modeled project support. Zero is a provisional response to unidentified net household effects, not a measured absence of economic benefits or a statistical best estimate. The cost denominator keeps all project support, including the 55% allocated to otherwise unquantified work. The sponsor's audited annual spending and PHC's historical city-contract budget are not substituted into it.
+
+Better vision can improve earning ability as well as daily functioning. The [THRIVE randomized trial](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0296115) studied 824 adults aged 35–65 in Bangladesh, selected for near-vision-intensive work and no prior glasses. Median monthly income was $47.10 with correction versus $35.30 in the control group at eight months, a 33.4% contrast. That supports a real earnings mechanism. It does not identify PHC's employment-responsive share, prescription mix, income, sustained earnings effect or benefit offsets. We therefore do not apply 33.4% to every PHC patient.
+
+Other plausible income effects include avoiding an actually paid clinical purchase, improved benefit access, caregiver time and patient acquisition costs. Insurance payments, donated-device accounting values and fundraising examples are not household disposable income. A recipient who would otherwise forego purchase has no purchase saving. We do not add ordinary lifetime earnings simply because health improves, or relabel a health-utility increase as a second income benefit. The external utility measure may partly capture downstream financial stress; that valuation overlap is unresolved, so we add no separate social-confidence or mental-health bonus.
+
+Income-equivalent years follow the project's [Coefficient Giving comparison convention](https://coefficientgiving.org/research/cost-effectiveness/): 0.5 × affected people × ln(1 + net disposable-income change / baseline income), with geography and the appropriate benefit time applied separately. Earnings use the original otherwise-unmet clinical cohort, with eligibility for an earnings response defined **before** effective use. The one-year flow receives the model's existing delayed, discounted and mortality-adjusted effective-use integral once. A one-off payment saving or acquisition cost is instead adjusted at receipt, without an additional year-duration or wearing filter. These welfare equivalents are not clinical QALYs.
+
+| Independent income case | Income-equivalent Bay years | Combined dollars per better life |
+| --- | ---: | ---: |
+| Retained central, net income unidentified | 0 | $774,408 |
+| 5% of additional glasses recipients would otherwise pay $50 once | .00162445 | $773,435 |
+| 10% of otherwise-unmet glasses recipients eligible for a 5% net annual earnings gain, before effective use | .08123197 | $728,576 |
+| All disjoint added clinical recipients incur $6 extra acquisition cost once | −.00428805 | $776,988 |
+| No health or procedural harm, with the purchase-saving case retained | .00162445 | $615.6M |
+
+The $50 purchase amount, 5% purchase incidence, 10% earnings-responsive share, 5% earnings change, $6 acquisition burden and $50,000 reference income are sensitivity judgments, not PHC measurements. The earnings change is **net disposable income after taxes, benefit substitution and other offsets**, not gross productivity. PHC's $50-per-pair fundraising example is not evidence for a household's purchase price. Counterfactual purchasers sit outside the original 70% otherwise-unmet glasses group; their share plus the unmet share cannot exceed one. Do not subtract their health credit twice: the original clinical model already excludes the equivalent-alternative group.
+
+For glasses, effective benefit time is .72810135 years after applying .75 use, a .1-year delay, 3% discount and .02 mortality hazard. The earnings case therefore credits .08123197 income-equivalent years, rather than the .11156684 from an undiscounted full-year illustration. The once-only purchase and acquisition cases are adjusted at .1-year receipt for glasses and .25-year receipt for hearing/dentures. The mortality term is prospective survival-to-receipt incidence, not a financial discount; it should not be applied again if future observations already condition completions on survival.
+
+All health scenarios retain separate income components. No added funding or capacity creates no added clinical recipients and no income from those nonexistent recipients. Null health need not imply null cash, and adverse health and adverse income remain signed; nonpositive totals have no positive price. Zero individual clinical pathways, half utility and half duration are shown separately, not silently stacked or interpreted as confidence intervals.
+
+### Annual spending and resource boundary
+
+A whole-PHC annual productivity estimate cannot be reconstructed from the available public records: project expenses and the corresponding annual completed cohort are missing. The sponsor's latest three returns and audits were rechecked October 1. They still describe all sponsored projects, not PHC. The historical $1,460,295 city-contract budget and the $19,976 PHC contributed-goods item are narrower records, not whole-project actual expense. The report's financial tables preserve those distinctions; no sponsor-sized PHC budget or three-year PHC average is fabricated.
+
+The $140,000 gross associated-resource case remains distinct from donor cost and produces $1.08M per better life centrally. It charges external resources per nominal episode, including replacement activity; it is not measured net induced social expenditure. Independent income cases do not transform those outside inputs into household income or public savings.
 
 ## What changed from the prior assessment
 

@@ -43,6 +43,7 @@ export default function LongFormResearchReport({organization,program,markdown,so
  const earlierEffort=researchEffortSummary(priorRegistry,effortOrganization,{...historicalEffort,...assignedEffort});
  const recentEffort=recentRegistry?researchEffortSummary(recentRegistry,effortOrganization):null;
  const totals=new Map<string,number>();
+ if(calibrationDate&&record&&earlierEffort.estimated&&earlierEffort.minutes!==null)totals.set(historicalEffort.model.name,earlierEffort.minutes);
  if(calibrationDate&&record){for(const s of record.sessions){const name=(s.model?.name??'GPT-6.1 Sol').replace('Astra Lite','Astra Light');totals.set(name,(totals.get(name)??0)+(Date.parse(s.endedAt)-Date.parse(s.startedAt))/60000);}totals.set(modelLabel,(totals.get(modelLabel)??0)+minutes);}
  const combinedTime=[...totals].map(([name,value])=>'~'+Math.round(value)+' min on '+name).join(' + ');
  const earlierTime=earlierEffort.recorded||earlierEffort.estimated?earlierEffort.label.replace('Research time: ','')+' + ':'';

@@ -1,0 +1,13 @@
+# Project Homeless Connect — accepted health and income calibration
+
+October 1. Independent challenge and implementation review accepted; production publication pending. This is a recalibration of existing research, not a new organization report.
+
+- Central marginal donor price retained **$774,408.34 per better life**, 1.29130841 Bay health years and provisional zero net-income years. Income sign/incidence are unidentified, not measured absent. Clinical coefficients are retained after checking the source-to-utility bridges; no forced price movement.
+- Earnings eligibility is defined before actual use. The independent 10% eligible / 5% net disposable earnings case uses the existing delayed, discounted one-year use integral once: **$728,576.02**. No gross wage or lifetime-survival earnings added.
+- Purchasers are a hypothetical disjoint subgroup of the original equivalent-alternative cohort; do not subtract health twice. One-off savings and acquisition costs receive receipt-date timing, not recurring-year or wearing multipliers: **$773,435.37** and **$776,988.49** respectively.
+- No-funding/no-capacity cases create no extra recipients or recipient income. Signed adverse health/cash and null-health/positive-income cases remain independently evaluable. Whole gift, capacity caps and gross associated resources remain distinct.
+- Three current sponsor filings/audits and PHC's historical city contract were rechecked. None supplies whole PHC annual expense/output; no sponsor-scale PHC budget or fabricated annual productivity ratio. Annual comparison remains unavailable for that specific evidence reason.
+- Current API, ranking adapter, summary, report and research provenance are synchronized. Historical model and saved outputs remain unchanged. Historical estimated Sol time, prior Astra deep-review time and actual new Sol time remain separate.
+- **343 current-model checks, 4,506 frozen-model checks**, narrative parity, ranking, summaries and research-registry regressions pass. Independent reviewer found no remaining concrete defect. These tests prove arithmetic and integration, not measured local effectiveness or capacity.
+
+Evidence: [source/calculation proposal](phc-calibration-decision-2026-10-01.md), [independent incidence/timing challenge](phc-calibration-challenge-2026-10-01.md), [code audit](phc-calibration-code-audit-2026-10-01.md). Source review 2m21s, challenge 1m17s and implementation acceptance 8m57s total 12m35s on GPT-6.1 Sol. The last interval includes inter-call/orchestration gaps, not instrumented active reasoning. Parent drafting/integration/build time excluded. No organizational outreach or donation performed.

@@ -1,5 +1,7 @@
 # Existing in-depth recalibration inventory
 
+Current acceptance checkpoint: **1/48 original queued models completed, 47 remaining**. ReCARES is [accepted and published](recares-calibration-acceptance-2026-10-01.md). Counts below preserve the inventory-at-start snapshot; they do not silently recategorize all prior deep reviews as newly recalibrated.
+
 October 1, 2026. Inventory-only reconciliation at `6a858c4965c0e86b18ec0713c8ae242ee97ca208`, branch `priority/recalibrate-in-depth-health-income`. The user explicitly resumed the goal October 1; this inventory itself implies no model acceptance, price change or geographic expansion. Scope is the September 30 backlog plus demonstrably accepted legacy re-reviews; initial exploratory models and uncertain legacy coverage remain visible separately.
 
 ## Reconciled counts

@@ -1,5 +1,7 @@
 # HOPE Pacifica: proposed calibration decision
 
+**Superseded proposal:** the subsequent [acceptance challenge](hope-pacifica-calibration-challenge-2026-10-01.md) withdraws the suggested central horizon/funding haircuts. Preserve the calculations below as a two-axis downside scenario, not accepted central parameters. The challenge recommends retaining the existing central health judgment, explicitly assessing income, and adding independent survival/funding/economic sensitivities. HOPE is not yet integrated or accepted as a completed recalibration.
+
 October 1, 2026. Recommend a transparent judgment central of **$1,881,542.41 per better life** for a hypothetical $1,000 extra gift: Bay health .005314788526 QALYs and provisional net income-equivalent years **0**. Change the central funding-response prior from .5 to .25 and finite survival horizon from ten to five years; retain other central inputs. These are analyst choices, not newly identified local effects. Publish only as an uncertain modeled comparison, not a verified capacity offer or giving recommendation. No product/model edits were made in this phase. Root owns independent acceptance, implementation and ranking convention.
 
 ## Source refresh and finances

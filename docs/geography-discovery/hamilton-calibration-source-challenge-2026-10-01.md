@@ -9,3 +9,5 @@ October 1, 2026. Independent root source check, not accepted recalibration or pu
 - Audit the proposed $10K all-in cost and $5K transfer as independent judgments, not an original audited prevention price. Do not charge common support again on an already all-in estimate. Show transfer/cost sensitivities, substitution and zero cases. Shared household awards and obligations across Hamilton, Compass and ERAP are allocated once; family members are not extra identical cash recipients.
 
 Root check closed at 19:31:17 UTC after 36.462 dedicated seconds. This phase does not include waiting, report integration or deployment.
+
+Integration link check: the current original Hamilton homepage's Donate Online link targets `https://give.hamiltonfamilies.org/give/485121`, not the provider's guessed base route. A direct automated request encountered a Cloudflare 403 challenge, so this verifies the official outbound target, not payment completion or an accepted prevention restriction. The public report uses that exact target; no checkout transaction was performed.

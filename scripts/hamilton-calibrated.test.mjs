@@ -1,0 +1,25 @@
+import assert from 'node:assert/strict';
+import {calculate,central,diagnostics,sharedSupportLoading} from '../lib/hamilton-calibrated-model.mjs';
+import {researchCostRanking} from '../lib/research-cost-ranking.mjs';
+const close=(a,b)=>assert.ok(Math.abs(a-b)<=1e-10*Math.max(1,Math.abs(b)),`${a} != ${b}`);
+const d=diagnostics(),r=d.central;
+const ranked=researchCostRanking.filter(x=>x.slug==='hamilton-families');assert.equal(ranked.length,1);close(ranked[0].bayUsdPerTenQalys,r.bay.costPerBetterLifeUSD);
+const cash=.5*Math.log1p(.8*5000/50000)/1.03**.25;
+close(r.cashPerCase,cash);close(r.cashPerCase,.03819720912626558);
+close(r.residualPerCase,.072-cash);close(r.combinedYears,.72);
+close(r.costPerBetterLifeUSD,1388888.888888889);
+for(const [id,price] of Object.entries({halfOverlap:1097711.655184558,noOverlap:907463.9983433569,cashOnly:2617992.3163872445,cautious:20438033.015908856,favorable:276500.0143005986,higherDose:1720780.626669343,loadedCost:1888877.6635364052,halfFunding:2777777.777777778}))close(d[id].costPerBetterLifeUSD,price);
+close(sharedSupportLoading,1+4976124/13822877);
+for(const id of ['noFunding','noCompletion','noPortfolio','noTransfer','allNull']){assert.equal(d[id].combinedYears,0,id);assert.equal(d[id].costPerBetterLifeUSD,null,id);assert.equal(d[id].inputs.donorBudgetUSD,100000);}
+assert.ok(d.replacementHarm.combinedYears<0);assert.equal(d.replacementHarm.costPerBetterLifeUSD,null);
+const surplus=calculate({baselineHouseholdResourcesUSD:25000});assert.ok(surplus.cashPerCase>.072);assert.equal(surplus.residualPerCase,0);close(surplus.combinedYears,surplus.cases*surplus.cashPerCase);
+const delayed=calculate({receiptDelayYears:1.25,overlapShare:0});close(delayed.cashPerCase,cash/1.03);close(delayed.residualPerCase,.072);
+const burden=calculate({completionShare:0,recipientBurdenUSD:250});assert.ok(burden.combinedYears<0);assert.equal(burden.costPerBetterLifeUSD,null);
+close(calculate({fundingAdditionality:0,recipientBurdenUSD:250,overlapShare:0}).recipientBurdenYears,d.replacementHarm.recipientBurdenYears);
+const scaled=calculate({donorBudgetUSD:200000});close(scaled.combinedYears,2*r.combinedYears);close(scaled.costPerBetterLifeUSD,r.costPerBetterLifeUSD);
+const geo=calculate({sfShare:.25,bayShare:.5});close(geo.sf.costPerBetterLifeUSD,4*r.costPerBetterLifeUSD);close(geo.bay.costPerBetterLifeUSD,2*r.costPerBetterLifeUSD);
+assert.equal(calculate({sfShare:0,bayShare:0}).sf.costPerBetterLifeUSD,null);
+for(const x of [{transferPerCaseUSD:10001},{donorBudgetUSD:0},{costPerCaseUSD:-1},{baselineHouseholdResourcesUSD:0},{recipientBurdenUSD:50000},{overlapShare:1.1},{completionShare:-.1},{portfolioShare:NaN},{sfShare:1,bayShare:.5},{receiptDelayYears:-1},{discountRate:Infinity},{transportedWelfareYears:-.01}])assert.throws(()=>calculate(x),RangeError);
+assert.equal(central.costPerCaseUSD,10000);assert.equal(central.transferPerCaseUSD,5000);
+assert.throws(()=>calculate({transferPerCaseUSD:0}),RangeError,'No TFA benefit without TFA');
+console.log('PASS: Hamilton all-in award, income/residual overlap, signed burdens, cash surplus, cost/dose, capacity, portfolio and nested geography.');

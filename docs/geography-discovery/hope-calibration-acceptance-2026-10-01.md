@@ -1,6 +1,6 @@
 # HOPE Pacifica — accepted health and income calibration
 
-October 1. Accepted implementation after the independent challenge and code-audit follow-up. Publication is pending the Sites build/deployment below; do not count this as a new published report.
+October 1. Accepted implementation after the independent challenge and code-audit follow-up. Production build passed and Sites version **316** deployed successfully October 1 at 17:54:08 UTC from commit 17741e6464e25f7d59ece4279089de5a903bc586. This completes one recalibration, not a new organization report. The P0 queue is now **2/48 completed, 46 remaining**.
 
 - Central marginal price retained: **$554,659.55 per better life**. Health .0180290774203 Bay years per $1,000; provisional net-income zero because sign/incidence are unidentified. No unsupported five-year/.25 funding haircut.
 - Counterfactual purchasers are removed from clinical coverage before avoided cash is credited, even with zero savings. Signed acquisition costs and null-health/positive-income cases remain independent. No baseline lifetime earnings added for survival.

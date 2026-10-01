@@ -4,8 +4,8 @@ Priority: **P0 — highest research priority.** Requested by Rhys on September 3
 
 ## Resumed manager checkpoint — October 1
 
-- Current phase: **1/48 complete, 47 remaining.** ReCARES clinical/income decision accepted, independently challenged, integrated and published in Sites version 315. [Acceptance](recares-calibration-acceptance-2026-10-01.md). Original prices are preserved as historical comparisons.
-- Next action: integrate and independently test HOPE's explicit income counterfactuals and survival/funding sensitivities. [Challenge](hope-pacifica-calibration-challenge-2026-10-01.md) withdrew the first proposal's unsupported central haircuts: retain the ten-year horizon and .5 funding-response continuity judgments, without claiming either is locally measured. Central price may remain unchanged after genuine re-examination. HOPE is not yet integrated or counted complete. PHC and HSC follow; no expansion ahead of this queue.
+- Current phase: **2/48 complete, 46 remaining.** ReCARES and HOPE clinical/income decisions accepted, independently challenged, integrated and published in Sites versions 315 and 316. [Acceptance](recares-calibration-acceptance-2026-10-01.md). Original prices are preserved as historical comparisons.
+- Next action: integrate and independently test Project Homeless Connect's proposed health/income ledger and sponsor/project cost boundary. HOPE's explicit income counterfactuals and survival/funding sensitivities are accepted and published; its central remains $554,660 after genuine re-examination. [Challenge](hope-pacifica-calibration-challenge-2026-10-01.md) withdrew the first proposal's unsupported central haircuts: retain the ten-year horizon and .5 funding-response continuity judgments, without claiming either is locally measured. Central price may remain unchanged after genuine re-examination. [HOPE acceptance](hope-calibration-acceptance-2026-10-01.md). PHC's source proposal is prepared but not accepted for publication; HSC follows. No expansion ahead of this queue.
 - Exit criteria: accepted complete inventory, then tested and synchronized health/income models per batch. Recalibration counts are separate from publication counts.
 - Current allowance: 47% remaining at restart. Minimum reserve is **20%**, superseding previous thresholds. No new batch at or below 25% remaining; check before dispatch and every 15 active minutes. Never use reset credits.
 - Continuity: existing hourly heartbeat resumed with PR #384 first, latest usage guard, no overlapping runs. Active expansion goal is retained, not replaced.
@@ -49,12 +49,12 @@ Prioritize ranking-sensitive reviews, policy/systemic models and broad portfolio
 
 ## Original publication-cohort snapshot: 37 other reviews pending
 
-The October 1 reconciliation adds 11 accepted legacy identities: **48 models in the new recalibration queue**. The tables below preserve the original cohort, not the complete denominator. Inventory checks confirmed 30 beta rows, ten SF summary keys and explicit legacy acceptance memos. ReCARES is now **1/48 newly accepted and published**, leaving **47**; its central price changes from $74,720 to $263,830 with explicit income counterfactuals. Financial comparability remains disclosed rather than fabricated. Other public prices are unchanged; HOPE is a proposed decision only.
+The October 1 reconciliation adds 11 accepted legacy identities: **48 models in the new recalibration queue**. The tables below preserve the original cohort, not the complete denominator. Inventory checks confirmed 30 beta rows, ten SF summary keys and explicit legacy acceptance memos. ReCARES and HOPE are now **2/48 newly accepted and published**, leaving **46**; its central price changes from $74,720 to $263,830 with explicit income counterfactuals. Financial comparability remains disclosed rather than fabricated. HOPE retains its central price with newly explicit signed income, prognosis and funding sensitivities; other public prices are unchanged.
 
-### San Francisco: 1/10 recalibration passes
+### San Francisco: 2/10 recalibration passes
 
 - [x] The ReCARES Network — [accepted and published](recares-calibration-acceptance-2026-10-01.md)
-- [ ] HOPE Pacifica
+- [x] HOPE Pacifica — [accepted and published](hope-calibration-acceptance-2026-10-01.md)
 - [ ] Project Homeless Connect
 - [ ] Hearing and Speech Center of Northern California
 - [ ] Compass Family Services

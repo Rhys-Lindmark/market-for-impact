@@ -4,12 +4,12 @@ Priority: **P0 — highest research priority.** Requested by Rhys on September 3
 
 ## Resumed manager checkpoint — October 1
 
-- Current phase: **11/40 published-cohort reviews recalibrated, 29 remaining; 0/11 older reviews complete.** The three prior USA corrections plus eight SF reviews are accepted and published through Sites version327. Original prices remain historical comparisons. The old48 denominator was an original pending queue (40 − 3 + 11), not the published-review cohort; 8/48 of that historical queue are complete.
-- Next action: Code Tenderloin source proposal and original sponsor financial receipts are integrated; root has independently checked current identity, paid-work assumptions and public funding. One reused implementer (`/root/hsc_calibration`) is producing the isolated calibrated model/tests. Then root verifies report/API/ranking/provenance and responsive rendering before publication; Code is not counted yet. SF AIDS Foundation follows. No expansion ahead of this queue.
+- Current phase: **12/40 published-cohort reviews recalibrated,28 remaining;0/11 older reviews complete.** Three prior USA corrections plus nine SF reviews are accepted and published through Sites version328. Original prices remain historical comparisons. The old48 denominator was an original pending queue (40 −3 +11), not the published-review cohort;9/48 of that historical queue are complete.
+- Next action: SF AIDS Foundation source/calculation review, then independent challenge, integration and publication. [Code Tenderloin acceptance](code-tenderloin-calibration-acceptance-2026-10-01.md): current health/income estimate $1.72M Bay/$1.87M SF; original sponsor accounts, explicit paid-work counterfactuals, finite clinical bridge and signed burdens checked. Twelve model/three integration tests, original1,222 assertions, eleven provenance tests and phone/tablet checks passed. No expansion ahead of this queue.
 - Exit criteria: accepted complete inventory, then tested and synchronized health/income models per batch. Recalibration counts are separate from publication counts.
 - Current allowance: 44% remaining at latest check. Minimum reserve is **20%**, superseding previous thresholds. No new batch at or below 25% remaining; check before dispatch and every15 active minutes. Never use reset credits.
 - Continuity: existing hourly heartbeat resumed with PR #384 first, latest usage guard, no overlapping runs. Active expansion goal is retained, not replaced.
-- Resource baseline: reused checkout 93 MB before PHC build; filesystem 30 GiB free. No dependency installation, copied checkout or server started. Stall review after 20 active minutes without an evidence milestone.
+- Resource baseline: reused checkout99MB before Code build;28GiB free. No dependency installation or copied checkout. Temporary server3107/session16020 stopped after Code publication; disposable14MB upload archive removed after accepted deployment. Source/evidence/dependencies preserved. Stall review after20 active minutes without an evidence milestone.
 
 ## Why this takes priority
 
@@ -49,9 +49,9 @@ Prioritize ranking-sensitive reviews, policy/systemic models and broad portfolio
 
 ## Original publication-cohort snapshot: 37 other reviews pending
 
-The October 1 reconciliation adds11 accepted legacy identities beyond the **40 published-cohort reviews**. Track them separately: **11/40 complete, 29 remaining; 0/11 older reviews complete**. The initial pending queue was48 = 40 − 3 prior USA corrections + 11 older models; 8/48 of that historical queue are now complete. Inventory checks confirmed30 geography beta rows and ten SF summary keys. ReCARES changes from $74,720 to $263,830; HOPE, PHC and Hearing and Speech Center retain their central prices after substantive clinical/income review, with signed economic and funding/capacity scenarios. Financial comparability remains disclosed rather than fabricated.
+The October1 reconciliation adds11 accepted legacy identities beyond the **40 published-cohort reviews**. Track them separately: **12/40 complete,28 remaining;0/11 older reviews complete**. The initial pending queue was48 =40 −3 prior USA corrections +11 older models;9/48 of that historical queue are now complete. Inventory checks confirmed30 geography beta rows and ten SF summary keys. Financial comparability and unquantified channels remain disclosed rather than fabricated.
 
-### San Francisco: 8/10 recalibration passes
+### San Francisco: 9/10 recalibration passes
 
 - [x] The ReCARES Network — [accepted and published](recares-calibration-acceptance-2026-10-01.md)
 - [x] HOPE Pacifica — [accepted and published](hope-calibration-acceptance-2026-10-01.md)
@@ -61,7 +61,7 @@ The October 1 reconciliation adds11 accepted legacy identities beyond the **40 p
 - [x] Hamilton Families — [accepted and published](hamilton-calibration-acceptance-2026-10-01.md)
 - [x] Friends of the Urban Forest — [accepted and published](fuf-calibration-acceptance-2026-10-01.md)
 - [x] MELP / AbleCloset — [accepted and published](melp-calibration-acceptance-2026-10-01.md)
-- [ ] Code Tenderloin
+- [x] Code Tenderloin — [accepted and published](code-tenderloin-calibration-acceptance-2026-10-01.md)
 - [ ] San Francisco AIDS Foundation
 
 ### California: 0/10

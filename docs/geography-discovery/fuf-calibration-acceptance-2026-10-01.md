@@ -1,6 +1,6 @@
 # FUF recalibration acceptance
 
-1 October 2026. ACCEPT scientific judgment disclosure, arithmetic and report integration. Publication pending; public count remains 9/40 until deployment succeeds. This is a conditional research estimate, not a verified marginal donation offer.
+1 October 2026. ACCEPT scientific judgment disclosure, arithmetic and report integration, published in Sites version325 at 20:11:07 UTC. Source `60a50270f24a3138e513641e7e4f3bfb751ee851`; deployment `appgdep_6abebe4e79008191a4327d2c7712dcca` succeeded. Public checkpoint is 10/40, 30 remaining; older models remain 0/11. This is a conditional research estimate, not a verified marginal donation offer.
 
 Current central is $6,597,720.431253185 per ten combined health and income-equivalent years. Per illustrative $100,000 donor budget: 0.14748279238566356 health years plus 0.004084708908121619 income-equivalent years. The former source-updated weighted $941,689 and central $1,652,627 remain frozen historical diagnostics, not current ranking values. No favorable scenario receives an invented probability.
 

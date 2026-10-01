@@ -34,6 +34,7 @@ export type CharityReportContent = {
   donationNote?: string;
   published: string;
   modelVersion: string;
+  calibrationDate?: string;
   nutshell: {
     headline: string;
     body: React.ReactNode;
@@ -57,6 +58,7 @@ export type CharityReportContent = {
     sensitivity: Array<{ case: string; headline: string; detail: string }>;
     uncertaintyBoundary?: string;
     fundingBoundary: string;
+    incomeLedger?: {paragraphs:string[];scenarios:Array<{case:string;headline:string;detail:string}>};
   };
   comparisonBridge?: {
     headline: string;
@@ -91,6 +93,9 @@ function Scenarios({ rows }: { rows: CharityReportContent['model']['sensitivity'
 export default function CharityResearchReport({ content }: { content: CharityReportContent }) {
   const donationUrl = content.donationUrl?.trim();
   const effort = researchEffortSummary(researchEffort,content.organization,{...historicalEffort,...assignedEffort});
+  const earlier=content.calibrationDate?researchEffortSummary({...researchEffort,organizations:{...researchEffort.organizations,[content.organization]:{coverage:'partial',sessions:(researchEffort.organizations[content.organization]?.sessions??[]).filter(s=>Date.parse(s.startedAt)<Date.parse(content.calibrationDate!))}}},content.organization,{...historicalEffort,...assignedEffort}):null;
+  const effortLabel=earlier?.estimated&&effort.recorded?earlier.label+' + '+effort.label.replace('Research time: ',''):effort.label;
+  const phaseBullets=earlier?.estimated&&effort.recorded?['v1: ~'+Math.round(earlier.minutes!)+' min on '+historicalEffort.model.name+'; estimated before tracking.',...effort.bullets]:effort.bullets;
   const headings = [
     ['summary', 'Summary'],
     ['program', '1. What do they do?'],
@@ -106,8 +111,8 @@ export default function CharityResearchReport({ content }: { content: CharityRep
       <div className="report-reading-column">
         <header className="report-heading">
           <h1>{content.organization}</h1><p className="report-program">{content.program}</p>
-          <details className="report-research-effort" data-research-effort={effort.recorded?'recorded':effort.estimated?'estimated':'not-recorded'}><summary>{effort.label}</summary><ul aria-label="Research phases">{effort.bullets.map(bullet=><li key={bullet}>{bullet}</li>)}</ul></details>
-          <p className="report-date">Published: {content.published}.</p>
+          <details className="report-research-effort" data-research-effort={effort.recorded?'recorded':effort.estimated?'estimated':'not-recorded'}><summary>{effortLabel}</summary><ul aria-label="Research phases">{phaseBullets.map(bullet=><li key={bullet}>{bullet}</li>)}</ul></details>
+          <p className="report-date">{content.calibrationDate?'Updated: '+content.calibrationDate:'Published: '+content.published}.</p>
           <a className="report-donate" href={donationUrl || '#funding'} {...(donationUrl ? {target:'_blank',rel:'noreferrer'} : {})}>{donationUrl ? 'Donate' : 'Funding limitations'}</a>
         </header>
         <nav className="report-contents" aria-label="Table of Contents">
@@ -146,12 +151,13 @@ export default function CharityResearchReport({ content }: { content: CharityRep
           <section id="cost-effectiveness">
             <h2>4. What do you get for your dollar?</h2>
             <p><strong>{content.model.headline}</strong></p><p>{content.model.body}</p>
-            <p>A better life is our comparison unit of 10 additional quality-adjusted life years (QALYs), potentially spread across people. These are uncertain estimates, not measured returns or verified donation offers.</p>
+            <p>A better life is our comparison unit of 10 additional {content.model.incomeLedger?'health years and income-welfare-equivalent years':'quality-adjusted life years (QALYs)'}, potentially spread across people. These are uncertain estimates, not measured returns or verified donation offers.</p>
             <h3>How we calculate the estimate</h3>
             <p className="report-equation"><strong>{content.model.equation.label}:</strong> {content.model.equation.expression}<br /><strong>{content.model.equation.result}</strong></p>
             <details className="report-method"><summary>Model inputs and assumptions</summary><Assumptions inputs={content.model.inputs}/></details>
             <h3>{content.model.giftHeading}</h3><Scenarios rows={content.model.sensitivity}/>
             {content.model.uncertaintyBoundary && <p><strong>Uncertainty.</strong> {content.model.uncertaintyBoundary}</p>}
+            {content.model.incomeLedger&&<div><h3>Health and income effects</h3>{content.model.incomeLedger.paragraphs.map(p=><p key={p}>{p}</p>)}<Scenarios rows={content.model.incomeLedger.scenarios}/></div>}
             {content.comparisonBridge && <div className="report-qaly-bridge">
               <h3>{content.comparisonBridge.headline}</h3><p>{content.comparisonBridge.body}</p>
               <p className="report-equation"><strong>{content.comparisonBridge.equation.label}:</strong> {content.comparisonBridge.equation.expression}<br /><strong>{content.comparisonBridge.equation.result}</strong></p>

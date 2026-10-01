@@ -33,10 +33,20 @@ test('assigned historical values are frozen integers for missing records only',(
  assert.match(assigned.basis,/randomly assigned/);
  assert.equal(Object.keys(assigned.minutesByOrganization).length,67);
  for(const [name,minutes]of Object.entries(assigned.minutesByOrganization)){
-  assert.ok(h.organizations.includes(name));assert.ok(!registry.organizations[name]?.sessions?.length);
+  assert.ok(h.organizations.includes(name));
+  const newerSessions=registry.organizations[name]?.sessions??[];
+  // A frozen missing-history estimate may later gain real revision intervals.
+  // Those new sessions must not rewrite or pretend to measure the old estimate.
+  assert.ok(newerSessions.every(s=>Date.parse(s.startedAt)>Date.parse(assigned.assignedOn+'T23:59:59Z')));
   assert.ok(Number.isInteger(minutes)&&minutes>=15&&minutes<=20);
-  const r=researchEffortSummary(registry,name,{...h,...assigned});
+  const historicalRegistry={...registry,organizations:{...registry.organizations,[name]:{coverage:'partial',sessions:[]}}};
+  const r=researchEffortSummary(historicalRegistry,name,{...h,...assigned});
   assert.equal(r.minutes,minutes);assert.match(r.label,new RegExp('~'+minutes+' min'));assert.equal(r.estimated,true);
+  if(newerSessions.length){
+   const current=researchEffortSummary(registry,name,{...h,...assigned});
+   assert.equal(current.recorded,true);assert.equal(current.estimated,false);
+   assert.equal(current.minutes,newerSessions.reduce((sum,s)=>sum+(Date.parse(s.endedAt)-Date.parse(s.startedAt))/60000,0));
+  }
  }
 });
 test('user-reported lead attribution preserves actual assistant evidence and is date bounded',()=>{

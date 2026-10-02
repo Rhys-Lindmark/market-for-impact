@@ -1,5 +1,9 @@
 # Recalibrate existing in-depth reviews
 
+## Current checkpoint — October 2
+
+**38/40 published-cohort recalibrations complete;2 remaining. Legacy reviews0/11.** Urban Peace Institute is published with independently reconsidered health and signed household resources; the report and tracker receipts are in `geography-discovery/upi-la-publication-2026-10-02.json` and `geography-discovery/upi-la-progress-publication-2026-10-02.json`. Next: Hunger Action LA (bounded research running), then Chicago Recovery Alliance, then the legacy inventory before geographic expansion. Repeated SF followups do not increment this cohort. Full objective, existing schedule and20% usage floor remain unchanged. Earlier checkpoints below are historical; use `geography-progress.json` and the linked inventory for current counts.
+
 Priority: **P0 — highest research priority.** Requested by Rhys on September 30, 2026 and explicitly resumed October 1. Recalibrate all remaining existing in-depth reviews before new geographic expansion or additional deep-review targets. The immediate Institute for Progress, 1Day Sooner and Foundation for American Innovation corrections are separate from this pending backlog.
 
 ## Resumed manager checkpoint — October 1

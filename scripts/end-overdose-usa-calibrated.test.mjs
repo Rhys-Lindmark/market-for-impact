@@ -1,7 +1,27 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {reportPrice} from '../lib/geography-reports.mjs';
 import {central,calculate,scenarios,originalUSA} from '../lib/end-overdose-usa-calibrated-model.mjs';
 const near=(a,b)=>assert.ok(Math.abs(a-b)<=Math.max(1e-12,Math.abs(b)*1e-11),`${a} != ${b}`);
+test('published USA registry matches every current scenario, frozen history and dedicated clock',()=>{
+ const data=JSON.parse(readFileSync(new URL('../data/geography-reports.json',import.meta.url)));
+ const report=data.reports.find(r=>r.edition==='usa'&&r.slug==='end-overdose');
+ const frozen=JSON.parse(readFileSync(new URL('../data/usa/end-overdose-usa-pre-recalibration-model.json',import.meta.url)));
+ assert.deepEqual(report.historicalModel,frozen.model);
+ for(const p of scenarios){
+  const id=p.id==='central-judgment'?'central':p.id,s=report.model.scenarios.find(s=>s.id===id),x=calculate(p);
+  assert.ok(s,id);near(s.editionQalys,x.healthQalysUSA);
+  assert.deepEqual(s.nativeOutputs,x);
+ }
+ near(reportPrice(report),2712178.1357609867);
+ const added=data.sessions.filter(s=>report.sessionIds.includes(s.id)&&s.model.id==='gpt-6.1-sol');
+ assert.equal(added.length,6);assert.equal(added.reduce((n,s)=>n+s.seconds,0),297);
+ assert.equal(new Set(data.sessions.map(s=>s.id)).size,data.sessions.length);
+ const effort=JSON.parse(readFileSync(new URL('../data/research-effort.json',import.meta.url))).organizations['End Overdose'];
+ assert.equal(effort.sessions.length,11);
+ assert.equal(effort.sessions.reduce((n,s)=>n+(Date.parse(s.endedAt)-Date.parse(s.startedAt))/1000,0),3879);
+});
 test('every candidate independently reconstructs finite clinical survival and signed cohort cash',()=>{
  for(const p of scenarios){
   const r=calculate(p),D=p.G*p.a/p.c*p.b*p.q;

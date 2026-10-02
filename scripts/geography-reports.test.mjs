@@ -82,7 +82,7 @@ test('End Overdose retains separately dated California arithmetic and deduplicat
  }
  const ids=new Set([...us.sessionIds,...ca.sessionIds]);
  const seconds=[...ids].reduce((sum,id)=>{const s=data.sessions.find(s=>s.id===id);return sum+(Date.parse(s.endedAt)-Date.parse(s.startedAt))/1000;},0);
- assert.equal(seconds,1210+2372);
+ assert.equal(seconds,1210+2372+297);
  const central=ca.model.scenarios.find(s=>s.id==='central');
  assert.ok(Math.abs(central.editionQalys/central.allPopulationQalys-(.15*.75/(.85+.15*.75)))<1e-12);
  assert.equal(ca.model.scenarios.find(s=>s.id==='ca-zero').editionQalys,0);

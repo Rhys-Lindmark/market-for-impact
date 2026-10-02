@@ -1,0 +1,22 @@
+import {test,expect} from '@playwright/test';
+test('End Overdose USA current price, signed resources, history and model-specific clocks match list',async({page,request})=>{
+ await page.route('https://market-for-impact.rhyslindmark.chatgpt.site/_next/**',async route=>{const u=new URL(route.request().url());await route.fulfill({response:await request.get(u.pathname+u.search)});});
+ await page.goto('/usa/charities/end-overdose');
+ await expect(page.getByRole('heading',{level:1,name:'End Overdose',exact:true})).toBeVisible();
+ await expect(page.locator('.report-research-effort summary')).toContainText('~7 min on GPT-6 Astra Light + ~40 min on GPT-6 Astra Medium + ~5 min on GPT-6.1 Sol');
+ await expect(page.locator('#summary')).toContainText('$2.7M');
+ await expect(page.locator('#cost')).toContainText('54.84 delivered two-dose kits');
+ await expect(page.locator('#cost')).toContainText('−0.001255');
+ await expect(page.locator('#cost')).toContainText('$1.76M');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+ const response=await request.get('/api/geography-reports/usa/end-overdose');expect(response.ok()).toBe(true);
+ const r=await response.json(),c=r.model.scenarios.find((s:any)=>s.id==='central');
+ expect(c.nativeOutputs.combinedDonationPricePer10USD).toBeCloseTo(2712178.1357609867,5);
+ expect(c.incomePathways.length).toBe(4);
+ expect(r.model.scenarios.length).toBe(31);
+ expect(r.model.scenarios.some((s:any)=>s.id==='historical-beta-central')).toBe(true);
+ await page.goto('/usa/all');
+ const row=page.locator('[data-research-table] tbody tr').filter({hasText:'End Overdose'});
+ await expect(row.locator('td').nth(0)).toContainText('$2.7M');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+});

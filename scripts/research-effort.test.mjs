@@ -45,7 +45,8 @@ test('assigned historical values are frozen integers for missing records only',(
   if(newerSessions.length){
    const current=researchEffortSummary(registry,name,{...h,...assigned});
    assert.equal(current.recorded,true);assert.equal(current.estimated,false);
-   assert.equal(current.minutes,newerSessions.reduce((sum,s)=>sum+(Date.parse(s.endedAt)-Date.parse(s.startedAt))/60000,0));
+   const expected=newerSessions.reduce((sum,s)=>sum+(Date.parse(s.endedAt)-Date.parse(s.startedAt))/60000,0);
+   assert.ok(Math.abs(current.minutes-expected)<1e-10);
   }
  }
 });

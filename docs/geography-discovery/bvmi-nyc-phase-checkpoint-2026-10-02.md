@@ -1,5 +1,7 @@
 # BVMI NYC recalibration phase
 
+Author calculator available while packet drafting remains live. Root initial read found material knowledge-boundary fixes before acceptance: own-property parameter validation, unknown reach placeholder not known zero, known absent earnings routes remain zero despite irrelevant unknown flags, raw pay knowledge separate from cash-log baseline knowledge, native patient throughput separate from unknown clinical utility. Corrections sent to implementer; candidate central ~29.39M remains unaccepted and unpublished. Two historical/audit reconciliation checks pass. Published count remains33/40. Source root receipt87.444seconds is closed; no review/integration clock credited.
+
 Previous turn made authoritative progress: ANRF report Sites357 and synchronized progress Sites358 published successfully; source/receipts pushed through b698f73. P0 now33/40,7 pending; legacy0/11. Full geographic expansion remains active.
 
 - [x] Freeze complete fifteen-case BVMI prior from b698f73 in data/new-york-city/bvmi-nyc-pre-recalibration-model.json. Historical central $15,102,885.315139702 is a clinical judgment, not measured causal benefit.

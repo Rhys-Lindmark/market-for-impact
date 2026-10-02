@@ -22,7 +22,14 @@ test('BVMI guards separate unknown values, absent work and raw pay from welfare'
  assert.throws(()=>run({toString:1}));assert.throws(()=>run({purchasers:.8,otherFree:.8}));
  assert.equal(run({reachKnown:false,patients:0,mentalPatients:0}).combinedNYC,null);
  for(const o of [{gift:0},{funding:0}])assert.equal(run({...o,reachKnown:false,healthKnown:false,cashKnown:false,earningsKnown:false}).combinedNYC,0);
- for(const o of [{recoveryPay:0},{workerShare:0},{completion:0}])assert.equal(run({...o,healthKnown:false,cashKnown:false,earningsKnown:false}).earningsEquivalentNYC,0);
+ for(const o of [{workerShare:0},{completion:0}])assert.equal(run({...o,healthKnown:false,cashKnown:false,earningsKnown:false}).earningsEquivalentNYC,0);
+ assert.equal(run({recoveryPay:0,earningsKnown:false}).earningsEquivalentNYC,null);
+ assert.equal(run({recoveryPay:0,earningsKnown:true,healthKnown:false,cashKnown:false}).earningsEquivalentNYC,0);
+ assert.equal(run({physicalResponse:0,mentalResponse:0,healthKnown:false}).earningsEquivalentNYC,null);
+ const overlap=run({recoveryIndependent:0,healthKnown:false});assert.equal(overlap.earningsEquivalentNYC,0);assert.equal(overlap.householdNetPayPVNYC,null);
+ assert.ok(resourceFlows({...central,recoveryIndependent:0,healthKnown:false}).every(f=>f.channel!=='pay'));
+ assert.ok(run({recoveryPay:-600,recoveryIndependent:0}).earningsEquivalentNYC<0);
+ assert.equal(run({recoveryPay:-600,recoveryIndependent:0,healthKnown:false}).earningsEquivalentNYC,null);
  const unknownCash=run({cashKnown:false});assert.equal(unknownCash.earningsEquivalentNYC,null);assert.ok(unknownCash.householdNetPayPVNYC>0);
  assert.equal(run({healthKnown:false}).healthNYC,null);assert.ok(run({healthKnown:false}).completedPatients>0);
  assert.ok(run(scenarios.failedOnly).combinedNYC<0);assert.equal(run(scenarios.failedOnly).donorCombinedPrice10,null);

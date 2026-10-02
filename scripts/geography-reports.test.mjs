@@ -107,7 +107,9 @@ test('unknown runtime stays unknown; lists retain initial estimates without chan
   assert.match(formatEditionReportPrice(report),/^\$/,slug);
  }
  const school=published.reports.find(r=>r.slug==='california-school-based-health-alliance');
- assert.equal(formatEditionReportPrice(school),'$26.9M');
+ assert.equal(formatEditionReportPrice(school),'$111.7M');
+ const historical=school.model.scenarios.find(s=>s.id==='historical-alpha-central');
+ assert.ok(Math.abs(10*historical.costUSD/historical.editionQalys-26853571.42857143)<.01);
 });
 test('header time uses whole focused intervals, and duplicate/overlapping sessions fail',()=>{
  const {data,progress,r}=fixture();assert.equal(editionResearchEffort(data,r).label,'Research time: 15 min on GPT-6 Astra Light');

@@ -4,6 +4,30 @@ import {readFileSync} from 'node:fs';
 import {central,cases,calculate,componentResourceFlows,historical} from '../lib/njhrc-nyc-calibrated-model.mjs';
 import * as archived from '../docs/geography-discovery/njhrc-nyc-recalibration-2026-10-02.calculate.mjs';
 import {incomeHealthyYearEquivalent as income} from '../lib/income-health-equivalence.mjs';
+import {reportPrice,researchListPrice,editionResearchEffort} from '../lib/geography-reports.mjs';
+test('NJHRC integrated report preserves history, local welfare price and closed model clocks',()=>{
+ const read=p=>JSON.parse(readFileSync(new URL('../'+p,import.meta.url),'utf8'));
+ const d=read('data/geography-reports.json'),r=d.reports.find(x=>x.edition==='new-york-city'&&x.slug==='new-jersey-harm-reduction-coalition');
+ assert.deepEqual(r.historicalModel,read('data/new-york-city/njhrc-nyc-pre-recalibration-model.json').model);
+ assert.equal(r.model.scenarios.length,22);
+ assert.ok(Math.abs(reportPrice(r)-19752539.732170835)<1e-6);
+ assert.equal(reportPrice(r),researchListPrice(r));
+ for(const [id,patch]of Object.entries(cases)){
+  const p={...central,...patch},v=calculate(p),s=r.model.scenarios.find(x=>x.id===id);
+  assert.deepEqual(s.parameters,p);
+  assert.deepEqual(s.nativeOutputs,JSON.parse(JSON.stringify(v)));
+  assert.equal(s.editionQalys,v.healthLocal);
+  assert.equal(s.incomeUnknown,v.resourcesLocal===null);
+  if(v.resourcesLocal!==null)assert.ok(Math.abs(s.incomePathways.reduce((n,f)=>n+income(f),0)-v.resourcesLocal)<1e-12);
+ }
+ assert.equal(new Set(r.sessionIds).size,10);
+ const fresh=d.sessions.filter(s=>r.sessionIds.slice(5).includes(s.id));
+ assert.equal(fresh.length,5);
+ assert.ok(Math.abs(fresh.reduce((n,s)=>n+(Date.parse(s.endedAt)-Date.parse(s.startedAt))/1000,0)-528.094)<1e-9);
+ assert.ok(fresh.every(s=>s.model.id==='gpt-6.1-sol'&&s.runtimeModel===null));
+ const header=editionResearchEffort(d,r).label;
+ assert.match(header,/4 min on GPT-6 Astra Light/);assert.match(header,/62 min on GPT-6 Astra Medium/);assert.match(header,/9 min on GPT-6.1 Sol/);
+});
 test('NJHRC portable candidate preserves21 author cases and shared signed component ledgers',()=>{
  for(const [id,patch]of Object.entries(cases)){
   const p={...central,...patch},r=calculate(p),flows=componentResourceFlows(p);

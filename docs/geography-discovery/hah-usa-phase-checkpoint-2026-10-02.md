@@ -1,0 +1,13 @@
+# Help America Hear USA: active P0 phase
+
+Previous goal turn made authoritative progress: KACS Sites346 succeeded; source9be53d02e8e9e9aca75664acef211f2f21953ddb, exact receipt retained. P0 remains26/40,14 pending; legacy0/11. New HAH work not counted.
+
+One bounded research-only implementer /root/wclp_calibration is active. Root exclusively owns checkout, integration, acceptance and publication. Actual user-confirmed model GPT-6.1 Sol; preserve raw unknown runtime and older intervals. Focused organization-specific source/modeling clocks exclude drafting/testing/integration/wait. Packet /private/tmp/hah-usa-20261002.*.
+
+Site source opening succeeded at422ea8caa313ed07e7f89661ccb71d1703615a73 before product editing; reuse this source result. Prior complete model frozen in data/usa/hah-usa-pre-recalibration-model.json; seven finite diagnostics plus unknown beta central. Original alpha689123.78 is not a verified donor offer.
+
+Acceptance: original finance/current recipient operation; independently evaluated completed-pair denominator and donor response; independent health magnitude, finite use/duration/counterfactual; signed household earnings/savings/burdens without retail-value benefits, recurring shadowtime or overlapping health; finite probabilities/domains and uncertainty; exact historical/current report/API/list parity; closed provenance imported once; independent numerical/scientific acceptance and responsive checks; native publication before27/40.
+
+Root fresh official program and FAQ check2026-10-02 confirmed refundable250 deposit contingent on provider charges, separate ambiguous FAQ fee descriptions, testing/maintenance expenses and2–6month matching. Fetch interval13:10:51–13:10:52UTC is only fetch timing, not certified full research duration; not imported as research effort. No outreach or confirmed capacity.
+
+Space121MB checkout/29GiBfree; compatible dependencies and Node24 reused. Usage39%remaining; no new batches<=25%, userminimum20%. Full eleven-edition goal and legacy remain required.

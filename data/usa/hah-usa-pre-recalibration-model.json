@@ -1,0 +1,221 @@
+{
+  "version": "usa-beta-help-america-hear-20260929-withdrawn-central",
+  "costScope": "Whole unrestricted recipient support. Gross historical costs retained; identifiable aid value removed only for non-in-kind accounting proxy, not cash flow. Donated clinician and patient resources incomplete. Scholarships remain costed and non-health benefit unquantified.",
+  "geographicAttribution": "Official program and return describe nationwide domestic services and no foreign operations. Conditional g=.99 allows incidental nonresident benefit; range.98–1. USA includes residents of50states and DC. Headquarters location and citizenship are not allocation keys.",
+  "formula": "D=sum[t=1..T]((1−m)/1.03)^t. N=(G/c)×b. Q_all=N×(s×u×p×D−h). Q_USA=Q_all×g. Price per10=10G/Q_USA only if positive. b is financing/provider/manufacturer additionality; s is benefit not otherwise obtained; p is sustained effective use; u is utility gain while using devices. h is an adverse-burden allowance retained for all additional fittings even when s=0. Numerical inputs are retained alpha diagnostic judgments; no beta central inputs are established.",
+  "counterfactual": "The financial screen makes otherwise-unmet need plausible but does not prove no alternative care. s allows Medicare Advantage, Medicaid, veterans' programs, other charities, family purchase or suitable OTC options. b separately discounts existing sponsorship, fixed donated-device quotas, provider slots and reserves. The alpha c attempted to include failed applications and administration through a whole-recipient cost anchor, but its completed-fitting denominator is unverified. p discounts post-fitting use rather than counting completion twice.",
+  "attribution": "No extra hearing gain is credited to both scholarship and standard-program recipients. Scholarship cash and awareness receive no assumed health benefit but remain in cost; their separate benefits are unquantified. Each recipient is counted once, not once per device. Clinical priors transfer from external trials with better follow-up, not from device retail values. The main uncertainty is donation-sensitive completed care, so numerical cases are conditional and do not establish a favorable bound.",
+  "uncertainty": "Central withdrawn: both completed-care denominator supporting c and donation-induced device/provider capacity supporting b lack calibration. This is unknown, not zero. Clinical priors support diagnostics only.",
+  "nativeOutcomes": "Annual services claim >120 people; completed new fittings unknown. Schedule M aid contribution/item counts 178/164/164; manufacturer says 100–150 aids annually plus scholarship aids. No linked completion or inventory ledger.",
+  "inputs": [
+    {
+      "name": "G",
+      "value": 10000,
+      "unit": "USD normalization",
+      "basis": "judgment",
+      "rationale": "Alpha diagnostic prior only, not beta central. Arithmetic only; not a funding commitment.",
+      "sourceIds": []
+    },
+    {
+      "name": "FY2025 gross accounting expense",
+      "value": 426522,
+      "unit": "USD",
+      "basis": "observed",
+      "rationale": "278776 PartIX +147746 PartVIII direct event costs; no asset-sale basis treated as operating expense.",
+      "sourceIds": [
+        "hah-99025"
+      ]
+    },
+    {
+      "name": "FY2025 donated aids",
+      "value": 123000,
+      "unit": "USD recorded fair value",
+      "basis": "observed",
+      "rationale": "Schedule M reports 164 contributions or items and $123,000 fair value; unit clarification is blank. The matching expense line is hearing aids and miscellaneous. Book value is not patient benefit or manufacturer opportunity cost.",
+      "sourceIds": [
+        "hah-noncash",
+        "hah-99025"
+      ]
+    },
+    {
+      "name": "c",
+      "value": 3000,
+      "unit": "USD/marginal completed fitting",
+      "basis": "judgment",
+      "rationale": "Retained alpha diagnostic only. The earlier $3,000 completed-fitting cost and 60% financing/capacity additionality reproduce the alpha calculation, but the annual new-fitting denominator and gift-induced capacity are not established. Low reserves do not calibrate marginal output.",
+      "sourceIds": [
+        "hah-99025",
+        "hah-noncash",
+        "hah-program"
+      ]
+    },
+    {
+      "name": "b",
+      "value": 0.6,
+      "unit": "financing and capacity additionality",
+      "basis": "judgment",
+      "rationale": "Retained alpha diagnostic only. The earlier $3,000 completed-fitting cost and 60% financing/capacity additionality reproduce the alpha calculation, but the annual new-fitting denominator and gift-induced capacity are not established. Low reserves do not calibrate marginal output.",
+      "sourceIds": [
+        "hah-99025",
+        "hah-program"
+      ]
+    },
+    {
+      "name": "s",
+      "value": 0.7,
+      "unit": "fraction of benefit not otherwise available",
+      "basis": "judgment",
+      "rationale": "Alpha diagnostic prior only, not beta central. Last-resort screening supports targeting; allow30% alternative access/benefit. Range0–.9. OTC alternatives do not cover all ages/severities.",
+      "sourceIds": [
+        "hah-program",
+        "hearing-medicare",
+        "hearing-otc"
+      ]
+    },
+    {
+      "name": "u",
+      "value": 0.04,
+      "unit": "QALY/year while effectively aided",
+      "basis": "judgment",
+      "rationale": "Alpha diagnostic prior only, not beta central. One-third of Singapore.12 short-term HUI difference, discounted for modified scoring and generic-US composite nulls. Stress0–.10; not an HHIE-to-QALY mapping.",
+      "sourceIds": [
+        "hearing-utility",
+        "hearing-generic",
+        "hearing-communication"
+      ]
+    },
+    {
+      "name": "p",
+      "value": 0.75,
+      "unit": "effective sustained-use fraction",
+      "basis": "judgment",
+      "rationale": "Alpha diagnostic prior only, not beta central. Allows nonuse, partial use, poor fit, maintenance and limited follow-up. Range.5–.9. Not a measured recipient adherence rate.",
+      "sourceIds": [
+        "hah-faq",
+        "hearing-utility"
+      ]
+    },
+    {
+      "name": "T",
+      "value": 4,
+      "unit": "years",
+      "basis": "judgment",
+      "rationale": "Alpha diagnostic prior only, not beta central. Conditional four-year benefit; evidence supports three-year communication effect and program allows application everyfiveyears, but that is not proof of durability. Range1–5.",
+      "sourceIds": [
+        "hearing-communication",
+        "hah-program"
+      ]
+    },
+    {
+      "name": "m",
+      "value": 0.02,
+      "unit": "annual competing mortality probability",
+      "basis": "judgment",
+      "rationale": "Alpha diagnostic prior only, not beta central. Broad mixed-age allowance; actual age mix absent. Range.01–.04; no mortality benefit credited.",
+      "sourceIds": []
+    },
+    {
+      "name": "h",
+      "value": 0.001,
+      "unit": "QALY/additional fitting",
+      "basis": "judgment",
+      "rationale": "Alpha diagnostic prior only, not beta central. Small acclimation/discomfort/adverse burden allowance, not an observed serious-harm rate; test0–.002. Retained when alternative benefit offsets hearing gains.",
+      "sourceIds": [
+        "hearing-cognition",
+        "hah-program"
+      ]
+    },
+    {
+      "name": "g",
+      "value": 0.99,
+      "unit": "USA resident health share",
+      "basis": "judgment",
+      "rationale": "Alpha diagnostic prior only, not beta central. Domestic mission and operations; outcome-weighted residence unknown. Range.98–1.",
+      "sourceIds": [
+        "hah-program",
+        "hah-99025"
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "central",
+      "label": "Whole-gift central not estimable",
+      "costUSD": 10000,
+      "allPopulationQalys": null,
+      "editionQalys": null,
+      "assumptions": "Both annual completed-fitting cost anchor and cash-to-additional-device/provider capacity unresolved; unknown, not zero."
+    },
+    {
+      "id": "alpha-retained-diagnostic",
+      "label": "alpha retained diagnostic",
+      "costUSD": 10000,
+      "allPopulationQalys": 0.14657758694931936,
+      "editionQalys": 0.14511181107982615,
+      "assumptions": "{\"G\":10000,\"c\":3000,\"b\":0.6,\"s\":0.7,\"u\":0.04,\"p\":0.75,\"T\":4,\"m\":0.02,\"h\":0.001,\"g\":0.99}; D=3.5375615940314136. Conditional diagnostic only. Device-derived people scenarios are hypothetical, not observed cohorts."
+    },
+    {
+      "id": "one-year",
+      "label": "one year",
+      "costUSD": 10000,
+      "allPopulationQalys": 0.03796116504854368,
+      "editionQalys": 0.03758155339805824,
+      "assumptions": "{\"G\":10000,\"c\":3000,\"b\":0.6,\"s\":0.7,\"u\":0.04,\"p\":0.75,\"T\":1,\"m\":0.02,\"h\":0.001,\"g\":0.99}; D=0.9514563106796116. Conditional diagnostic only. Device-derived people scenarios are hypothetical, not observed cohorts."
+    },
+    {
+      "id": "manufacturer-75-people-hypothetical",
+      "label": "manufacturer 75 people hypothetical",
+      "costUSD": 10000,
+      "allPopulationQalys": 0.10865755056831748,
+      "editionQalys": 0.1075709750626343,
+      "assumptions": "{\"G\":10000,\"c\":4046.96,\"b\":0.6,\"s\":0.7,\"u\":0.04,\"p\":0.75,\"T\":4,\"m\":0.02,\"h\":0.001,\"g\":0.99}; D=3.5375615940314136. Conditional diagnostic only. Device-derived people scenarios are hypothetical, not observed cohorts."
+    },
+    {
+      "id": "manufacturer-50-people-hypothetical",
+      "label": "manufacturer 50 people hypothetical",
+      "costUSD": 10000,
+      "allPopulationQalys": 0.07243836704554499,
+      "editionQalys": 0.07171398337508954,
+      "assumptions": "{\"G\":10000,\"c\":6070.44,\"b\":0.6,\"s\":0.7,\"u\":0.04,\"p\":0.75,\"T\":4,\"m\":0.02,\"h\":0.001,\"g\":0.99}; D=3.5375615940314136. Conditional diagnostic only. Device-derived people scenarios are hypothetical, not observed cohorts."
+    },
+    {
+      "id": "zero-capacity",
+      "label": "zero capacity",
+      "costUSD": 10000,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "assumptions": "{\"G\":10000,\"c\":3000,\"b\":0,\"s\":0.7,\"u\":0.04,\"p\":0.75,\"T\":4,\"m\":0.02,\"h\":0.001,\"g\":0.99}; D=3.5375615940314136. Conditional diagnostic only. Device-derived people scenarios are hypothetical, not observed cohorts."
+    },
+    {
+      "id": "utility-null-harm-retained",
+      "label": "utility null harm retained",
+      "costUSD": 10000,
+      "allPopulationQalys": -0.002,
+      "editionQalys": -0.00198,
+      "assumptions": "{\"G\":10000,\"c\":3000,\"b\":0.6,\"s\":0.7,\"u\":0,\"p\":0.75,\"T\":4,\"m\":0.02,\"h\":0.001,\"g\":0.99}; D=3.5375615940314136. Conditional diagnostic only. Device-derived people scenarios are hypothetical, not observed cohorts."
+    },
+    {
+      "id": "adverse",
+      "label": "adverse",
+      "costUSD": 10000,
+      "allPopulationQalys": -0.0003009708737864078,
+      "editionQalys": -0.0002949514563106797,
+      "assumptions": "{\"G\":10000,\"c\":4000,\"b\":0.2,\"s\":0.3,\"u\":0.01,\"p\":0.5,\"T\":1,\"m\":0.04,\"h\":0.002,\"g\":0.98}; D=0.9320388349514562. Conditional diagnostic only. Device-derived people scenarios are hypothetical, not observed cohorts."
+    }
+  ],
+  "sensitivity": [
+    "Alpha reproduced $689,123.78/ten USA QALYs. One-year benefit: $2,660,879.90.",
+    "Device-unit diagnostic assuming 50–75 bilateral people: $929,618.79–$1,394,428.19; not a confidence interval or new central.",
+    "Fixed capacity gives zero; utility null retaining harm gives −.00198 USA QALYs; original adverse gives −.0002949514563106797.",
+    "Equivalent hearing available elsewhere (s=0) leaves modeled fitting burden. Do not duplicate patient counterfactual discount in b.",
+    "No mortality, dementia, earnings, scholarship or device-retail-value benefits added. g=.99 remains diagnostic prior; domestic operations support direction, not measured residence share."
+  ],
+  "missingInputs": [
+    "Annual completed new-fitting cohort linked to devices, inventory and scholarships.",
+    "Costed unrestricted gift tranche with confirmed additional manufacturer allocations, provider appointments, patients ready to complete care and baseline funding.",
+    "Next-gift allocation across programs/fundraising/reserves and remaining grant/match restrictions.",
+    "HAH sustained use, age/severity, alternative care, unified fee terms and patient costs.",
+    "Current legal payee and relevant registry status, disinterested lease approval and conflict-policy enforcement.",
+    "Outcome-weighted USA resident allocation and complete donated-resource opportunity cost."
+  ]
+}

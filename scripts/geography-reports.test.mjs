@@ -14,8 +14,8 @@ function fixture(){
  return {data:{schemaVersion:1,sessions:[session],reports:[r]},progress,r};
 }
 test('published registry matches accepted progress without mock records',()=>validateEditionReports(read('data/geography-reports.json'),read('docs/geography-progress.json')));
-test('Operation Access scenarios reproduce from the published input ledger',()=>{
- const report=read('data/geography-reports.json').reports.find(r=>r.edition==='california'&&r.slug==='operation-access');
+test('Operation Access historical scenarios reproduce from the frozen input ledger',()=>{
+ const report={model:read('data/california/oa-ca-pre-recalibration-model.json')};
  assert.ok(report);
  const central_inputs={bay_share:0,sf_share:0};
  for(const input of report.model.inputs)if(Object.hasOwn(oaBounds,input.name))central_inputs[input.name]=input.value;

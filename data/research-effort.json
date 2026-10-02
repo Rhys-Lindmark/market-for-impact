@@ -9,6 +9,41 @@
   "timeBasis": "Sum of recorded, organization-specific researcher wall-clock intervals. Parallel researchers are counted separately; this is not elapsed calendar time or a quality score.",
   "historicalCoverage": "Earlier reports did not consistently record organization-specific research intervals or AI model provenance. Missing records are unknown, not zero.",
   "organizations": {
+    "Operation Access": {
+      "coverage": "partial",
+      "sessions": [
+        {
+          "id": "27e3cae4-9123-4006-8242-69f35bfe120b",
+          "workerId": "oa-calibration-20261002",
+          "phase": "research",
+          "startedAt": "2026-10-02T09:38:34.406Z",
+          "endedAt": "2026-10-02T09:51:43.623Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed model assignment; inherited without override, not independently verified runtime telemetry. Original research-and-modeling phase normalized to supported research without changing timestamps."
+          },
+          "evidence": "docs/geography-discovery/oa-ca-recalibration-2026-10-02.md",
+          "organizationId": "ein:94-3180356",
+          "stage": "beta"
+        },
+        {
+          "id": "oa-ca-root-cts-source-20261002",
+          "organizationId": "ein:94-3180356",
+          "stage": "beta",
+          "phase": "source-audit",
+          "workerId": "root-oa-cts",
+          "startedAt": "2026-10-02T09:40:58Z",
+          "endedAt": "2026-10-02T09:41:21Z",
+          "evidence": "docs/geography-discovery/oa-ca-phase-checkpoint-2026-10-02.md",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed model assignment; original CTS economic source audited without independent runtime metadata claim."
+          }
+        }
+      ]
+    },
     "San Francisco AIDS Foundation": {
       "coverage": "partial",
       "sessions": [

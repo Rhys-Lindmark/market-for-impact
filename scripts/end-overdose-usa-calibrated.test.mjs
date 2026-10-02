@@ -33,5 +33,6 @@ test('purchase alternative, independent harm, genuine zero and unknown remain di
 test('candidate rejects missing, invalid, nonfinite and extrapolated inputs',()=>{
  for(const p of [null,[],{},{...central,G:Infinity},{...central,G:100001},{...central,purchaseShare:1.01},{...central,T:1.5},{...central,unexpected:1},{...central,incomeBefore:6}])assert.throws(()=>calculate(p));
  assert.throws(()=>calculate(central,{income:'unknown'}));assert.throws(()=>calculate(central,{other:true}));
+ assert.throws(()=>calculate({...central,commonAliveShare:.9}),/must not overlap/);
  const missing={...central};delete missing.b;assert.throws(()=>calculate(missing),/Missing/);
 });

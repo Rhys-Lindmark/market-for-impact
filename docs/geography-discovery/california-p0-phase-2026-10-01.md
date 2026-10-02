@@ -8,6 +8,8 @@ Full objective remains California, USA and nine cities at D100/A25/B10/P4, with 
 
 Implementer: existing hsc_calibration internal worker. Root owns checkout edits and publishing. Assignment is a bounded approximately15-minute independent source/model reassessment; actual closed organization interval determines recorded time.
 
+Latest phase acceptance: all required items below completed. Vision To Learn published Sites334 with exact receipt vtl-ca-publication-2026-10-01.json; current price4280415.60703891, nineteen numerical/registry and two responsive/API/list checks passed. Preserved prior model and original-source receipts;849.802author+78.698root-source seconds imported once. Cohort14/40,26remaining,older0/11; geographic25/10 counts unchanged. Current phase exit achieved, not whole geographic goal. Next remaining nine California P0 identities before other cohorts/legacy and full expansion. Latest42%remaining, user20%floor preserved.
+
 - [x] Read current California beta row, source list, prior central ledger and headline adapter.
 - [x] Independently inspect primary Baltimore trial and Coefficient Giving crosswalk; one-year reading effect is not a measured lifetime earnings gain.
 - [x] Dispatch one private-artifact worker; usage57%used/43%left before dispatch.

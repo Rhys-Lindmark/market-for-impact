@@ -1,0 +1,285 @@
+{
+  "version": "ca-youth-alive-beta-withdrawn-v3",
+  "costScope": "Full ordinary recipient gift, not restricted CiC purchase. All uncredited program/advocacy costs retained. Partner/clinical resources separately added as sensitivity; not comprehensive societal cost. C=100000 normalization only.",
+  "geographicAttribution": "All quantified CiC-like benefit occurs in Oakland/Alameda, hence California share1. This is credited-service scope, not claim that all real recipient effects are local. National replication and statewide policy health are omitted, not credited at zero because of geography. No Bay-to-California population multiplier.",
+  "formula": "N=C*a*f*s/c, where a=CiC allocation, f=funding additionality, s=service realization, c=delivery and allocated overhead per added client before realization. q5=(4.64-4.62)=0.020 modeled five-year undiscounted QALYs. Q_CA=N*q5*t*g, with t=evidence transfer and g=1 for credited local service. GrossResources=C+N*x, x=external resources per realized client. Signed central illustration Q=sum_s weight_s*Q_s; price10=10*C/Q only when Q>0. No lifetime, recurring annual or independent psychotherapy benefit is added to q5.",
+  "counterfactual": "Risk-reduction referral and existing state/county/payer-supported service continue. A gift must add realized service beyond these sources; current CalVIP funds explicitly overlap CiC. Evidence transfer discounts the historical modeled intervention versus modern participants and standard care.",
+  "attribution": "One additional realized client course, not each contact or mediation, is the native unit. Reinjury, counseling, practical support and family outcomes within the same course cannot each receive duplicate health credit. Police/citywide homicide trends and coalition appropriation totals are not assigned to the recipient.",
+  "uncertainty": "Retains prior accepted v2 five-state subjective distribution for comparability. The central row is the prior-weighted signed illustration, not the separately labeled conditional central scenario. All weights, allocation, funding, realization, resource and transfer inputs are judgments. QALY difference has limited published precision; payer-cost records conflict. A finite five-year partial-health model can be computed, but marginal donor return is not established.",
+  "nativeOutcomes": "Unique hospital-intervention clients, service completion, violent reinjury/death and health utility. Current118clients and96%without reinjury are descriptive, not the causal change used in the model.",
+  "inputs": [
+    {
+      "name": "C",
+      "value": 100000,
+      "unit": "USD ordinary gift",
+      "basis": "judgment",
+      "rationale": "Normalization only",
+      "sourceIds": []
+    },
+    {
+      "name": "q5",
+      "value": 0.02,
+      "unit": "modeled undiscounted QALYs per participant overfiveyears",
+      "basis": "observed",
+      "rationale": "Observed publication/model output, not observed clinical effect;4.64minus4.62",
+      "sourceIds": [
+        "nice",
+        "chong"
+      ]
+    },
+    {
+      "name": "historical contract",
+      "value": 267294,
+      "unit": "USD contract amount",
+      "basis": "observed",
+      "rationale": "July2023–September2024record reused from accepted Bay report; fresh retrieval certificate failure",
+      "sourceIds": [
+        "county-contract"
+      ]
+    },
+    {
+      "name": "historical minimum comprehensive clients",
+      "value": 180,
+      "unit": "clients",
+      "basis": "observed",
+      "rationale": "Contract denominator, not extra clients or current demand",
+      "sourceIds": [
+        "county-contract"
+      ]
+    },
+    {
+      "name": "historical cost benchmark",
+      "value": 1484.9666666666667,
+      "unit": "USD per minimum comprehensive client",
+      "basis": "judgment",
+      "rationale": "Derived historical ratio used only favorable floor; not full resource or current marginal quote",
+      "sourceIds": [
+        "county-contract"
+      ]
+    },
+    {
+      "name": "a conditional central",
+      "value": 0.4,
+      "unit": "CiC allocation fraction",
+      "basis": "judgment",
+      "rationale": "Whole recipient scope; not measured marginal program budget",
+      "sourceIds": [
+        "results"
+      ]
+    },
+    {
+      "name": "f conditional central",
+      "value": 0.35,
+      "unit": "funding additionality fraction",
+      "basis": "judgment",
+      "rationale": "New state/county/payer funding may substitute; exact gap unknown",
+      "sourceIds": [
+        "calvip-scope",
+        "dhcs"
+      ]
+    },
+    {
+      "name": "s conditional central",
+      "value": 0.9,
+      "unit": "realization fraction",
+      "basis": "judgment",
+      "rationale": "Enrollment and delivery loss prior",
+      "sourceIds": []
+    },
+    {
+      "name": "c conditional central",
+      "value": 1800,
+      "unit": "USD per added client before realization",
+      "basis": "judgment",
+      "rationale": "Historical benchmark adjusted by judgment to include delivery and allocated overhead; not a verified current marginal cost or capacity quote.",
+      "sourceIds": [
+        "county-contract"
+      ]
+    },
+    {
+      "name": "t conditional central",
+      "value": 0.5,
+      "unit": "evidence-transfer multiplier",
+      "basis": "judgment",
+      "rationale": "Serious model limitations, local nonrandomized evidence and newer heterogeneous pooled results",
+      "sourceIds": [
+        "nice",
+        "becker",
+        "jawa"
+      ]
+    },
+    {
+      "name": "x conditional central",
+      "value": 750,
+      "unit": "USD external resources per realized client",
+      "basis": "judgment",
+      "rationale": "Unsourced sensitivity for induced partner care; no false full-cost precision",
+      "sourceIds": []
+    },
+    {
+      "name": "g",
+      "value": 1,
+      "unit": "California credited-service share",
+      "basis": "judgment",
+      "rationale": "Oakland/Alameda clinical footprint",
+      "sourceIds": [
+        "cic"
+      ]
+    },
+    {
+      "name": "weights",
+      "value": "harm0.10;null0.35;cautiousPositive0.35;conditionalCentral0.15;favorable0.05",
+      "unit": "scenario probability priors",
+      "basis": "judgment",
+      "rationale": "Retained v2 subjective distribution; not confidence interval or measured frequencies",
+      "sourceIds": []
+    },
+    {
+      "name": "other programs and policy health",
+      "value": null,
+      "unit": "incremental California QALYs",
+      "basis": "unknown",
+      "rationale": "Additional clinical/utilities or policy causal chains missing; numerical model assigns no credit while retaining costs",
+      "sourceIds": [
+        "results",
+        "evaluation2020"
+      ]
+    },
+    {
+      "name": "harm parameters",
+      "value": "{\"a\":0.2,\"f\":0.15,\"s\":0.8,\"c\":2500,\"t\":-0.25,\"x\":1500,\"weight\":0.1}",
+      "unit": "joint scenario vector",
+      "basis": "judgment",
+      "rationale": "Exact v2 priors; not independently estimated local parameters",
+      "sourceIds": [
+        "nice",
+        "county-contract",
+        "calvip-scope"
+      ]
+    },
+    {
+      "name": "null parameters",
+      "value": "{\"a\":0.2,\"f\":0.15,\"s\":0.8,\"c\":2500,\"t\":0,\"x\":1500,\"weight\":0.35}",
+      "unit": "joint scenario vector",
+      "basis": "judgment",
+      "rationale": "Exact v2 priors; not independently estimated local parameters",
+      "sourceIds": [
+        "nice",
+        "county-contract",
+        "calvip-scope"
+      ]
+    },
+    {
+      "name": "cautiousPositive parameters",
+      "value": "{\"a\":0.25,\"f\":0.2,\"s\":0.85,\"c\":2500,\"t\":0.2,\"x\":1500,\"weight\":0.35}",
+      "unit": "joint scenario vector",
+      "basis": "judgment",
+      "rationale": "Exact v2 priors; not independently estimated local parameters",
+      "sourceIds": [
+        "nice",
+        "county-contract",
+        "calvip-scope"
+      ]
+    },
+    {
+      "name": "central parameters",
+      "value": "{\"a\":0.4,\"f\":0.35,\"s\":0.9,\"c\":1800,\"t\":0.5,\"x\":750,\"weight\":0.15}",
+      "unit": "joint scenario vector",
+      "basis": "judgment",
+      "rationale": "Exact v2 priors; not independently estimated local parameters",
+      "sourceIds": [
+        "nice",
+        "county-contract",
+        "calvip-scope"
+      ]
+    },
+    {
+      "name": "favorableStress parameters",
+      "value": "{\"a\":0.7,\"f\":0.6,\"s\":0.95,\"c\":1484.9666666666667,\"t\":0.9,\"x\":300,\"weight\":0.05}",
+      "unit": "joint scenario vector",
+      "basis": "judgment",
+      "rationale": "Exact v2 priors; not independently estimated local parameters",
+      "sourceIds": [
+        "nice",
+        "county-contract",
+        "calvip-scope"
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "central",
+      "label": "Ordinary-gift central estimate withdrawn",
+      "costUSD": 100000,
+      "allPopulationQalys": null,
+      "editionQalys": null,
+      "assumptions": "The prior-weighted illustration is not a calibrated marginal ordinary-gift estimate. See historical-alpha-central for the preserved arithmetic."
+    },
+    {
+      "id": "historical-alpha-central",
+      "label": "Historical prior-weighted diagnostic, not donor price",
+      "costUSD": 100000,
+      "allPopulationQalys": 0.0365823609957567,
+      "editionQalys": 0.0365823609957567,
+      "assumptions": "Weighted sum of five old judgment scenarios, including null and harm. The resulting $27,335,578 per 10 QALYs is arithmetic only; gift response and causal health remain unverified."
+    },
+    {
+      "id": "harm",
+      "label": "harm",
+      "costUSD": 100000,
+      "allPopulationQalys": -0.004799999999999897,
+      "editionQalys": -0.004799999999999897,
+      "assumptions": "{\"name\":\"harm\",\"weight\":0.1,\"cicAllocation\":0.2,\"fundingAdditionality\":0.15,\"serviceRealization\":0.8,\"donorCostPerAddedClient\":2500,\"evidenceTransfer\":-0.25,\"externalResourcesPerClient\":1500,\"giftCashDirected\":20000,\"additionalCash\":3000,\"addedClientsBeforeRealization\":1.2,\"realizedAddedClients\":0.96,\"qalyPerRealizedClient\":-0.004999999999999893,\"giftQaly\":-0.004799999999999897,\"grossResources\":101440,\"externalResources\":1440,\"bayQaly\":-0.004799999999999897,\"sfQaly\":0,\"donorCostPer10Qaly\":null,\"grossCostPer10Qaly\":null}"
+    },
+    {
+      "id": "null",
+      "label": "null",
+      "costUSD": 100000,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "assumptions": "{\"name\":\"null\",\"weight\":0.35,\"cicAllocation\":0.2,\"fundingAdditionality\":0.15,\"serviceRealization\":0.8,\"donorCostPerAddedClient\":2500,\"evidenceTransfer\":0,\"externalResourcesPerClient\":1500,\"giftCashDirected\":20000,\"additionalCash\":3000,\"addedClientsBeforeRealization\":1.2,\"realizedAddedClients\":0.96,\"qalyPerRealizedClient\":0,\"giftQaly\":0,\"grossResources\":101440,\"externalResources\":1440,\"bayQaly\":0,\"sfQaly\":0,\"donorCostPer10Qaly\":null,\"grossCostPer10Qaly\":null}"
+    },
+    {
+      "id": "cautiousPositive",
+      "label": "cautiousPositive",
+      "costUSD": 100000,
+      "allPopulationQalys": 0.006799999999999856,
+      "editionQalys": 0.006799999999999856,
+      "assumptions": "{\"name\":\"cautiousPositive\",\"weight\":0.35,\"cicAllocation\":0.25,\"fundingAdditionality\":0.2,\"serviceRealization\":0.85,\"donorCostPerAddedClient\":2500,\"evidenceTransfer\":0.2,\"externalResourcesPerClient\":1500,\"giftCashDirected\":25000,\"additionalCash\":5000,\"addedClientsBeforeRealization\":2,\"realizedAddedClients\":1.7,\"qalyPerRealizedClient\":0.003999999999999915,\"giftQaly\":0.006799999999999856,\"grossResources\":102550,\"externalResources\":2550,\"bayQaly\":0.006799999999999856,\"sfQaly\":0,\"donorCostPer10Qaly\":147058823.5294149,\"grossCostPer10Qaly\":150808823.52941495}"
+    },
+    {
+      "id": "conditional-central",
+      "label": "Conditional central, not weighted illustration",
+      "costUSD": 100000,
+      "allPopulationQalys": 0.06999999999999851,
+      "editionQalys": 0.06999999999999851,
+      "assumptions": "{\"name\":\"central\",\"weight\":0.15,\"cicAllocation\":0.4,\"fundingAdditionality\":0.35,\"serviceRealization\":0.9,\"donorCostPerAddedClient\":1800,\"evidenceTransfer\":0.5,\"externalResourcesPerClient\":750,\"giftCashDirected\":40000,\"additionalCash\":14000,\"addedClientsBeforeRealization\":7.777777777777778,\"realizedAddedClients\":7,\"qalyPerRealizedClient\":0.009999999999999787,\"giftQaly\":0.06999999999999851,\"grossResources\":105250,\"externalResources\":5250,\"bayQaly\":0.06999999999999851,\"sfQaly\":0,\"donorCostPer10Qaly\":14285714.28571459,\"grossCostPer10Qaly\":15035714.285714606}"
+    },
+    {
+      "id": "favorableStress",
+      "label": "favorableStress",
+      "costUSD": 100000,
+      "allPopulationQalys": 0.4836472199151393,
+      "editionQalys": 0.4836472199151393,
+      "assumptions": "{\"name\":\"favorableStress\",\"weight\":0.05,\"cicAllocation\":0.7,\"fundingAdditionality\":0.6,\"serviceRealization\":0.95,\"donorCostPerAddedClient\":1484.9666666666667,\"evidenceTransfer\":0.9,\"externalResourcesPerClient\":300,\"giftCashDirected\":70000,\"additionalCash\":42000,\"addedClientsBeforeRealization\":28.283463152932725,\"realizedAddedClients\":26.86928999528609,\"qalyPerRealizedClient\":0.017999999999999617,\"giftQaly\":0.4836472199151393,\"grossResources\":108060.78699858583,\"externalResources\":8060.786998585827,\"bayQaly\":0.4836472199151393,\"sfQaly\":0,\"donorCostPer10Qaly\":2067622.7606052607,\"grossCostPer10Qaly\":2234289.427271931}"
+    }
+  ],
+  "sensitivity": [
+    "Historical diagnostic only: the prior-weighted arithmetic is $27.3356 million per ten California QALYs and gross-resource arithmetic $28.0821 million. Conditional central $14.2857 million; favorable $2.0676 million; cautious positive $147.0588 million. None is a verified ordinary-gift price; null and harm have no finite positive price.",
+    "Removing the favorable 5% case and renormalizing old weights gives $76.61 million per ten; that favorable tail supplies 66.10% of the old signed illustration. These weights are subjective, not measured probabilities.",
+    "At the old conditional case of seven assumed added clients per $100,000, reaching $1 million per ten would require 0.142857 QALY per client; reaching $100,000 requires 1.42857. These exceed the assumed 0.010 transferred five-year anchor by 14.29 and 142.86 times.",
+    "At the old 0.010 QALY per realized client, those two price thresholds require 100 or 1,000 genuinely additional clients per $100,000, versus seven in the conditional scenario. A program-output count cannot establish donor additionality.",
+    "Even at the published modeled 0.020 five-year QALY increment without a transfer discount, the thresholds require 50 or 500 genuinely additional clients per $100,000. A hospital-payer ICER is not an unrestricted donor price.",
+    "Non-CiC portfolio needs an additional0.96342QALY/$100k above the weighted model to reach$1M per ten, or9.96342QALYs for$100k, with overlap removed.",
+    "The five-year anchor is undiscounted. Applying a positive time discount without an annual utility trajectory would lower health, but an exact discounted conversion is not fabricated.",
+    "California scope retains every quantified Bay benefit. Additional statewide policy health could improve the result only after coalition contribution, implementation, payer displacement and clinical effects are modeled."
+  ],
+  "missingInputs": [
+    "Current costed next-dollar plan and staff/waitlist capacity reconciled to$5mCalVIPaward and county/payer funding.",
+    "Medi-Cal enrollment/claims and uncovered clients, not merely legal benefit eligibility.",
+    "Program-level marginal allocation and full delivery/partner costs rather than historical contract ratio.",
+    "Unique comparable enrollment/completion/reinjury data and validated health utilities, with attrition and confounding addressed.",
+    "Unrounded annual health trajectories and reconciliation of Chong/NICE cost/ICER inconsistency.",
+    "Independent causal outcomes for violence interruption, counseling, family support and additional policy changes; coalition and clinical overlap resolved."
+  ]
+}

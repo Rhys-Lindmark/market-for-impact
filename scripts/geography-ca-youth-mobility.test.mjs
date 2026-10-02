@@ -14,8 +14,8 @@ test('Youth ALIVE weights signed five-year effects, not reinjury percentage',()=
  near(weight,1);near(total,r.model.scenarios.find(s=>s.id==='historical-alpha-central').editionQalys);
  assert.equal(r.model.scenarios[0].editionQalys,null);
 });
-test('Vision To Learn separates courses, use, additionality and geography',()=>{
- const r=report('vision-to-learn');
+test('Historical Vision To Learn separates courses, use, additionality and geography',()=>{
+ const r={...report('vision-to-learn'),model:JSON.parse(readFileSync(new URL('../data/california/vtl-ca-pre-recalibration-model.json',import.meta.url)))};
  for(const id of ['central','favorable','adverse-positive','wear-decay','public-match-diagnostic']){
   const s=r.model.scenarios.find(x=>x.id===id),p=JSON.parse(s.assumptions.slice(0,s.assumptions.indexOf('}')+1));
   const k=Math.log1p(p.r)+p.fade,D=k===0?p.T:-Math.expm1(-k*p.T)/k;

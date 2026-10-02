@@ -1,51 +1,24 @@
 import assert from 'node:assert/strict';
-import data from '../data/san-francisco/hearing-access-cea-v2.json' with {type:'json'};
-import {hearingAccessModel} from '../lib/hearing-access-model.mjs';
-import {hearingCalibratedModel as calculate,hearingDiagnostics,incomeJudgments} from '../lib/hearing-calibrated-model.mjs';
+import {hearingCalibratedModel as calculate,hearingDiagnostics,central} from '../lib/hearing-calibrated-model.mjs';
 import {researchRankBySlug} from '../lib/research-cost-ranking.mjs';
 const close=(a,b)=>assert.ok(Math.abs(a-b)<1e-10*Math.max(1,Math.abs(b)));
-const central=data.scenarios.find(s=>s.name==='central'),d=hearingDiagnostics();
-close(d.central.healthYears,.012);assert.equal(d.central.incomeEquivalentYears,0);
-close(d.central.costPerTenQalys,1250000);
-close(researchRankBySlug.get('hearing-and-speech-center').bayUsdPerTenQalys,d.central.bayCostPerTenQalys);
-const earnings=.5*.5*.8*.1*(.515/1.03)*Math.log1p(.05);
-const loss=.5*.5*.8*.1*(.515/1.03)*Math.log1p(-.05);
-const burden=.5*.5*.8*Math.log1p(-6/50000)/(1.03**.25);
-close(d.earnings.incomeEquivalentYears,earnings);
-close(d.earningsLoss.incomeEquivalentYears,loss);
-close(d.acquisition.incomeEquivalentYears,burden);
-close(d.earnings.costPerTenQalys,1201162.5676101055);
-close(d.earningsLoss.costPerTenQalys,1305816.3521386024);
-close(d.acquisition.costPerTenQalys,1252486.6797875292);
-close(d.noHealthPositiveIncome.costPerTenQalys,15000/earnings);
-assert.equal(d.completeNull.costPerTenQalys,null);
-assert.equal(d.jointHarm.status,'harm');assert.equal(d.jointHarm.costPerTenQalys,null);
-for(const name of ['noFunding','noCompletion','noPortfolioCredit']){
- assert.equal(d[name].totalYears,0);assert.equal(d[name].costPerTenQalys,null);
- assert.equal(d[name].grossResourceCost,2100);
-}
-const j={...incomeJudgments,earningsShare:.1,netEarningsFraction:.05};
-for(const s of data.scenarios){
- const old=hearingAccessModel(s),r=calculate(s);
- assert.deepEqual(r.historicalHealthOnly,old);close(r.healthYears,old.netQalys);
- assert.equal(r.costPerTenQalys,old.costPerTenQalys);
- for(const income of [incomeJudgments,j,{...j,netEarningsFraction:-.05},{...incomeJudgments,acquisitionLossUSD:6}]){
-  const x=calculate(s,income);
-  close(x.healthYears+x.earningsYears+x.acquisitionYears,x.totalYears);
-  close(x.bayIncomeYears,x.incomeEquivalentYears);
-  if(x.totalYears>0)close(x.costPerTenQalys*x.totalYears,10*s.cash_cost_per_offer);
-  else assert.equal(x.costPerTenQalys,null);
- }
-}
-// Clinical instrument transfer and cash/earnings exposure are different ledgers.
-close(calculate({...central,local_transfer:0},j).incomeEquivalentYears,earnings);
-close(calculate(central,{...j,annualExposure:[0]}).healthYears,.012);
-assert.equal(calculate(central,{...j,annualExposure:[0]}).incomeEquivalentYears,0);
-const allocated=calculate({...central,donor_specific_harm_qaly_per_offer:.001},{...j,nonoverlapShare:0});
-assert.equal(allocated.healthYears,-.001);assert.equal(allocated.incomeEquivalentYears,0);
-const away=calculate(central,{...j,bayShare:0,sfShare:0});
-assert.equal(away.bayCostPerTenQalys,null);assert.equal(away.sfCostPerTenQalys,null);
-for(const [key,value]of [['baselineHouseholdIncomeUSD',0],['netEarningsFraction',-1],['acquisitionLossUSD',50000],['earningsShare',1.1],['receiptDelayYears',-1],['annualExposure',[1,1]],['annualExposure',[NaN]],['bayShare',.5]]){
- assert.throws(()=>calculate(central,{...incomeJudgments,[key]:value}));
-}
-console.log('PASS: frozen hearing parity, independent signed income arithmetic, incidence/time/geography/null/harm crossings and invalid inputs.');
+const c=calculate(),d=hearingDiagnostics();
+close(c.costPerTenQalys,1507782.8809835732);
+close(c.healthYears,.009715095408402447);close(c.incomeEquivalentYears,.00023328654312563876);
+close(researchRankBySlug.get('hearing-and-speech-center').bayUsdPerTenQalys,c.bayCostPerTenQalys);
+close(c.resourceCostPerTenQalys,1.4*c.costPerTenQalys);
+close(calculate({overlapHealthRetention:1}).costPerTenQalys,1360194.2070968456);
+assert.equal(calculate({duration:.375}).incomeEquivalentYears,c.incomeEquivalentYears);
+assert.equal(calculate({incomeDuration:.375}).healthYears,c.healthYears);
+ for(const overrides of [{incomeDuration:0},{incomeExposure:0},{earnerShare:0}]){const r=calculate(overrides);assert.equal(r.incomeEquivalentYears,0);close(r.healthYears,calculate({...overrides,overlapHealthRetention:1}).healthYears);}
+assert.equal(calculate({utility:-.11,overlapHealthRetention:.9}).healthYears,calculate({utility:-.11,overlapHealthRetention:1}).healthYears);
+for(const gain of [0,-.02])assert.equal(calculate({netResourceGain:gain,overlapHealthRetention:.9}).healthYears,calculate({netResourceGain:gain,overlapHealthRetention:1}).healthYears);
+assert.equal(calculate({funding:0}).costPerTenQalys,null);
+assert.equal(calculate({funding:0,donorHarm:.001}).healthYears,-.001);
+assert.equal(calculate({portfolioShare:0,donorHarm:.001}).healthYears,-.001);
+const geo=calculate({bayShare:.8,sfShare:.6});close(geo.bayTotalYears,c.totalYears*.8);close(geo.sfTotalYears,c.totalYears*.6);
+for(const value of [null,[],42,{unknown:1},{duration:Infinity},{netResourceGain:-1},{sfShare:1,bayShare:.5},{delay:.5,duration:.75},{incomeDuration:1,incomeDelay:.25}])assert.throws(()=>calculate(value),RangeError);
+let quadrature=0;const n=100000,dt=central.duration/n;for(let i=0;i<n;i++)quadrature+=Math.exp(-Math.log1p(central.discount)*(central.delay+(i+.5)*dt))*dt;
+close(quadrature,c.discountedCalendarYears);
+assert.equal(d['no additional funding'].totalYears,0);assert.equal(d['independent harm despite no funding'].status,'harm');
+console.log('PASS: independent hearing health/income, signed overlap, timing/geography, ranking and guards');

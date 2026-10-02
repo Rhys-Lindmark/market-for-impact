@@ -1,5 +1,7 @@
 # Kids and Car Safety USA: active P0 phase
 
+Live continuation checkpoint: prior goal turn was progress (CSPI publication, exact receipt, P0 count25/40, preserved KACS historical model). The same implementer handle was authoritatively confirmed running; no restart. Original twelve finite KACS scenarios independently reproduce in two passing historical tests, including negative policy effects, funding-null and the distinct unknown beta center. Site source opening succeeded at f2840b441982d95f9015c53c7fbfccb583a54c1e before product editing. Current helper findings expose reminder-versus-detection field-effect uncertainty and inaccessible original filings; fresh IRS-derived FY2023 functional expense258364 versus historical gross262881 remains unresolved, not silently reconciled. No current estimate or published count changed yet. Usage39%remaining.
+
 Previous goal continuation completed CSPI authoritative publication (Sites345), accepted cohort25/40,15pending,legacy0/11. Geographic counts remain unchanged; all eleven-edition expansion still required.
 
 Current bounded research-only implementer `/root/wclp_calibration` dispatched after usage39%remaining. Root owns source, integration, verification and publication. No new batches<=25%; preserve20%reserve. Actual research/model sessions must close before drafting/testing/wait; current assignment user-confirmed GPT-6.1 Sol, raw runtime unknown unless verified.

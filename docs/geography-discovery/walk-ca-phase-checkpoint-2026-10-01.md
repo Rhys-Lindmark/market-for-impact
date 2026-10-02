@@ -1,5 +1,7 @@
 # Walk San Francisco: active P0 recalibration checkpoint
 
+Superseding phase result: **published Sites337**, exact source5547b0a15e7fecf1b2aba63b4f20552b714c4876 and deployment appgdep_6abf58b75df081919e631a317f2d8e13 succeeded2026-10-02T07:09:54.901801+00:00. Exact receipt walk-ca-publication-2026-10-01.json. Current$878.4M conditional partial estimate includes finite health and household resources. Corrected survival/overlap equations, independent technical audit,22 numerical/registry checks,2 responsive checks and build passed. Public **17/40**,23pending; legacy0/11. Next Center for Independent Living; full remaining goal is not complete. Lower paragraphs are preserved phase-opening history, not current blockers or price.
+
 Previous goal turn: verified publication progress, Youth ALIVE Sites336. This turn: progress through source challenge, frozen historical model and passing tests; no Walk recalibration accepted or published. Counts remain 16/40,24 pending; legacy0/11. Full eleven-edition discovery/25 initial/10 deep/top-four objective remains active.
 
 Bounded author hsc_calibration is producing private walk-ca-20261001 source/model artifacts. Root reopened current official campaign and agency capital/fatality evidence, opened the existing Site, froze the prior model in data/california/walk-ca-pre-recalibration-model.json and updated historical formula tests to use it. Fifteen targeted historical/registry tests passed; source commit3afb0ac pushed to PR384 branch. No installs, new checkout or preview server.

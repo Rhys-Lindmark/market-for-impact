@@ -1,5 +1,7 @@
 # Walk San Francisco California: conditional model acceptance
 
+Release gate satisfied: Sites337 succeeded; exact source/archive/version/deployment receipt walk-ca-publication-2026-10-01.json. Public17/40,23remaining; older0/11. The prepublication gating paragraphs below are preserved history. No donor-ready shortlist inference follows.
+
 Independent reviewer alpha_reprioritize_held accepts the corrected model as an expressly conditional partial-portfolio estimate, not donor-ready or complete organizational EV. No material required correction remains in the calculator. Publication is pending until exact native source/archive/version/deployment evidence exists; public cohort remains16/40 in the meantime.
 
 Independent reconstruction gives health .0011169936819863675, income .000021439697733860868 and $878,400,104.7525077 per ten California equivalent years. All28 saved cases reconcile, private and production modules match, and the six numerical/model-contract tests pass. Root separately checked continuous finite clinical trajectories and all signed income cases against the common crosswalk. Costs are charged once; funding response, advocacy effort and conditional influence are separate but unverified judgments.

@@ -1,7 +1,30 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {reportPrice,scenarioIncomeEquivalent,editionResearchEffort} from '../lib/geography-reports.mjs';
 import {central,cases,calculate,selfTest} from '../lib/dental-lifeline-network-usa-calibrated-model.mjs';
 const close=(a,b,tol=1e-10)=>assert.ok(Math.abs(a-b)<=tol*Math.max(1,Math.abs(a),Math.abs(b)),`${a} != ${b}`);
+test('Integrated DLN report preserves history, every corrected case and unique focused clocks',()=>{
+ const d=JSON.parse(fs.readFileSync(new URL('../data/geography-reports.json',import.meta.url))),r=d.reports.find(r=>r.edition==='usa'&&r.slug==='dental-lifeline-network');
+ const frozen=JSON.parse(fs.readFileSync(new URL('../data/usa/dental-lifeline-network-usa-pre-recalibration-model.json',import.meta.url)));
+ assert.deepEqual(r.historicalModel,frozen.model);assert.equal(r.model.scenarios.length,26);
+ for(const [id,over] of Object.entries(cases)){
+  const s=r.model.scenarios.find(s=>s.id===id),out=calculate({...central,...over});
+  assert.deepEqual(s.parameters,{...central,...over});
+  assert.deepEqual(s.nativeOutputs,JSON.parse(JSON.stringify({...out,combinedDonationPricePer10USD:out.donorCombinedPrice?.value??null})));
+  if(out.resourcesUSA!==null)close(scenarioIncomeEquivalent(s),out.resourcesUSA);
+  else assert.equal(s.incomeUnknown,true);
+ }
+ close(reportPrice(r),1348057.7090743855);assert.equal(new Set(r.sessionIds).size,10);
+ const added=d.sessions.filter(s=>r.sessionIds.includes(s.id)&&s.model.id==='gpt-6.1-sol');
+ assert.equal(added.length,8);assert.equal(added.reduce((sum,s)=>sum+s.seconds,0),549);
+ const b=JSON.parse(fs.readFileSync(new URL('../data/research-effort.json',import.meta.url))).organizations[r.organizationId];
+ assert.deepEqual(b.sessions.map(s=>s.id).sort(),[...r.sessionIds].sort());
+ assert.match(editionResearchEffort(d,r).label,/12 min on GPT-6 Astra Light.*12 min on GPT-6 Astra Medium.*9 min on GPT-6.1 Sol/);
+ assert.match(r.sections.cost,/negative wage effects and direct cash burdens are fully charged/);
+ assert.match(r.sections.cost,/persistent \*\*net incremental cash obligation\*\*/);
+ assert.match(r.model.uncertainty,/clinical valuation window/);
+});
 function independent(p){
  const n=Math.min(p.G*p.b/p.c,p.capacity),c=n*p.r,buy=c*p.purchaseShare,free=(c-buy)*(1-p.s),added=(c-buy)*p.s;
  const z=Math.log1p(p.d),step=p.T/20000;

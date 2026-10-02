@@ -22,3 +22,15 @@ The preliminary calculator is not accepted. Root sent these material corrections
 - The Oregon paper specifies additive health/consumption utility. Financially mediated health and consumption can both be benefits: covariance alone does not establish double counting. Any overlap adjustment needs a duplicated welfare component, not an automatic conservative haircut. Combined willingness-to-pay cannot be added again.
 
 These are acceptance requirements, not research findings or newly measured coefficients. Counts remain19/40, legacy0/11. Root review/integration time is not recorded as organization research.
+
+## Named-pathway implementation checkpoint
+
+Root implemented `lib/wclp-ca-calibrated-model.mjs` and six focused tests. With the three historical tests, all nine pass under the existing Node24 runtime. This is not final source acceptance or a published recalibration. Current proposed partial annual-work estimate is $54,391,316.714552514 per ten combined health/resource-equivalent years.
+
+The observed anchors are1,208 annual technical-assistance responses, health expenses2,154,071, gross2025 operating expenses7,409,717, and comparable three-year average7,097,648. The response health share uses expense mix only as an explicit proxy. The25% eligibility/transfer relevance, five unique adults per relevant response, resolution probabilities.8 with/.6 without WCLP,90 added coverage days, and transferred Oregon health/resource coefficients remain forecast judgments—not observed local causal effects. This estimate charges the whole annual operating budget against one modeled pathway; it neither quantifies all portfolio benefits nor promises marginal unrestricted-gift capacity.
+
+Numerical acceptance now independently reconstructs1.0784557079987278 health years plus.22646728867162272 resource-equivalent years. Resources are a finite annual consumption flow, fractional exposure counted once; annual cost remains undiscounted. Signed with-minus-without resolution, failed-access process costs, and negative health survive independently. Full overlap adjusts positive health only, never negative health or unrelated harms. Nonfinite/invalid domains reject rather than clamp.
+
+Root separately rechecked the primary clinical paper https://pmc.ncbi.nlm.nih.gov/articles/PMC3701298/ , Table4, within verified09:21:11–09:21:27UTC (16seconds). It reports215.35 lower out-of-pocket spending; the inspected table does not establish recall duration. Table5's12-month utilization labels do not justify annualizing Table4. A subsequently messaged34-second interval had an unverified end and is explicitly rejected; only this16-second receipt and the prior29-second audit are importable. Supplement navigation/model review/tests are not additional recorded research.
+
+Next: collect the synchronized author memo/receipts and extra modeling interval, independently accept the chosen priors and limitations, integrate report/list/API and provenance, then run responsive/build/publication gates. Published count remains19/40; no unchanged old price or unaccepted draft counts toward completion.

@@ -1,5 +1,7 @@
 # Youth ALIVE! California: model acceptance and release gate
 
+Release gate satisfied: Sites336 succeeded with exact source/version/deployment receipt in youth-ca-publication-2026-10-01.json. Cohort16/40,24 remaining; older0/11. The historical phase-gate language below records prepublication acceptance, not an outstanding deployment blocker.
+
 Accept the revised **conditional partial-portfolio** health-and-income estimate for integration, not as a donor-ready shortlist recommendation or an empirical estimate of complete organizational value. Native publication remains pending until an exact deployment receipt exists.
 
 The independent technical reviewer reproduced $476,407,240.09041 per better life, versus $476,407,240.09040 in the proposal, and reconciled all 36 cases. Root independently integrated finite nonfatal, mortality and counseling trajectories and checked every signed resource pathway against the shared income crosswalk. Current health is 0.0014316240019768853 and income is 0.0006674205041692664 California equivalent years per illustrative $100,000. The prior weighted health illustration was $27,335,578; no inherited fixed welfare total is used to force the new result.

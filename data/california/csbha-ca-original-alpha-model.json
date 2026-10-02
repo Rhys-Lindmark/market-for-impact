@@ -1,0 +1,193 @@
+{
+  "sourceCommit": "80b84a15060e43b83ee4f203039da9effba1cc9f",
+  "organization": "California School-Based Health Alliance",
+  "model": {
+    "version": "ca-school-alliance-enabling-care-v2",
+    "costScope": "Full annual recipient gross expense, all functions. Only enabled mental-health care is priced. Additional public/provider clinical resources are disclosed in sensitivity; no claim of complete societal or portfolio return.",
+    "geographicAttribution": "g_CA=1 for explicitly modeled California school student care. Independent state denominator; no credit for national dissemination or nonresident downloads.",
+    "formula": "J=C*f/k; episodes=J*n*a*b; Q_CA=episodes*u*T/365*g_CA/(1+d). P10=10*C/Q_CA. C=E. T=112 days centrally, no later effect. Resource sensitivity C_social_proxy=C+episodes*z; same Q. Other portfolio QALYs remain unknown.",
+    "counterfactual": "Districts and clinics may start services with existing grants, state/county technical assistance or their own staff. Reimbursement for care already supplied does not cause that care. Credit additional treatment or earlier treatment versus the actual alternative, including off-campus access and finite waiting time.",
+    "attribution": "a combines partner/alternative-assistance and alternative-care displacement; b separately captures gift-dependent capacity and contract replacement. n counts completed episodes conditional on implementation, not all referrals. Utility is an average treatment difference; no extra completion or response factor.",
+    "uncertainty": "Implementation unit costs, completed-care yield and utility are subjective priors, not source-calibrated estimates. External evidence supports possible clinical pathways but not the alliance's particular treatment mix. Broad stress cases are not bounds. The utility prior represents expected net health area over the stated finite horizon, including treatment burden, within-horizon fade and competing mortality; it is not an endpoint score held indefinitely. No survival extension is credited.",
+    "nativeOutcomes": "Central 45.80416 substantial engagement-equivalents, 916.0832 conditional completed episodes, and 57.2552 net additional California episode-equivalents. Modeled outputs, not observed counts.",
+    "inputs": [
+      {
+        "name": "E",
+        "value": 2290208,
+        "unit": "USD/year gross recipient expense",
+        "basis": "observed",
+        "rationale": "Original full-recipient return including investment fees.",
+        "sourceIds": [
+          "990-25",
+          "schedule-2025"
+        ]
+      },
+      {
+        "name": "f",
+        "value": 0.4,
+        "unit": "fraction allocated to substantial implementation assistance",
+        "basis": "judgment",
+        "rationale": "Judgment near reported technical-assistance share; not marginal spending observed.",
+        "sourceIds": [
+          "990-25"
+        ]
+      },
+      {
+        "name": "k",
+        "value": 20000,
+        "unit": "USD per substantial engagement",
+        "basis": "judgment",
+        "rationale": "All-function allocated assistance resource assumption; not 2–5 included member hours or a quoted fee.",
+        "sourceIds": []
+      },
+      {
+        "name": "n",
+        "value": 20,
+        "unit": "completed care episodes per engagement conditional on implementation",
+        "basis": "judgment",
+        "rationale": "Judgment, not seven openings multiplied by an invented caseload.",
+        "sourceIds": []
+      },
+      {
+        "name": "a",
+        "value": 0.25,
+        "unit": "net implementation and alternative-care contribution",
+        "basis": "judgment",
+        "rationale": "Discount for public assistance, partner work and otherwise delivered care.",
+        "sourceIds": []
+      },
+      {
+        "name": "b",
+        "value": 0.25,
+        "unit": "ordinary-funding response",
+        "basis": "judgment",
+        "rationale": "Contract/reserve/capacity additionality, applied once.",
+        "sourceIds": []
+      },
+      {
+        "name": "u",
+        "value": 0.05,
+        "unit": "average utility difference",
+        "basis": "judgment",
+        "rationale": "Judgment, not conversion of a depression symptom effect.",
+        "sourceIds": []
+      },
+      {
+        "name": "T",
+        "value": 112,
+        "unit": "days",
+        "basis": "judgment",
+        "rationale": "Finite external trial horizon used conservatively; no claim of later persistence.",
+        "sourceIds": [
+          "ipt"
+        ]
+      },
+      {
+        "name": "g_CA",
+        "value": 1,
+        "unit": "California share of priced student care",
+        "basis": "judgment",
+        "rationale": "Direct California care only.",
+        "sourceIds": [
+          "impact"
+        ]
+      },
+      {
+        "name": "d",
+        "value": 0.03,
+        "unit": "annual discount rate",
+        "basis": "judgment",
+        "rationale": "One end-of-year delivery discount.",
+        "sourceIds": []
+      },
+      {
+        "name": "z",
+        "value": 2000,
+        "unit": "USD public/provider resources per additional episode",
+        "basis": "judgment",
+        "rationale": "Judgmental resource sensitivity, not observed billing.",
+        "sourceIds": []
+      },
+      {
+        "name": "Q_other_CA",
+        "value": null,
+        "unit": "California QALYs",
+        "basis": "unknown",
+        "rationale": "Other clinical and policy health not priced.",
+        "sourceIds": []
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "central",
+        "label": "Conditional enabled-care central",
+        "costUSD": 2290208,
+        "allPopulationQalys": 0.8528504322383295,
+        "editionQalys": 0.8528504322383295,
+        "assumptions": "f=.4; k=20000; n=20; a=.25; b=.25; u=.05; T=112; g=1; d=.03."
+      },
+      {
+        "id": "low",
+        "label": "Weak delivery and short benefit",
+        "costUSD": 2290208,
+        "allPopulationQalys": 0.00017057008644766588,
+        "editionQalys": 0.00016204158212528258,
+        "assumptions": "f=.2; k=50000; n=5; a=.05; b=.1; u=.01; T=28; g=.95; d=.03."
+      },
+      {
+        "id": "high",
+        "label": "Favorable implementation",
+        "costUSD": 2290208,
+        "allPopulationQalys": 51.17102593429979,
+        "editionQalys": 51.17102593429979,
+        "assumptions": "f=.6; k=10000; n=50; a=.5; b=.5; u=.1; T=112; g=1; d=.03."
+      },
+      {
+        "id": "zero",
+        "label": "No added delivered care",
+        "costUSD": 2290208,
+        "allPopulationQalys": 0,
+        "editionQalys": 0,
+        "assumptions": "a=0 or b=0."
+      },
+      {
+        "id": "adverse",
+        "label": "Net adverse stress",
+        "costUSD": 2290208,
+        "allPopulationQalys": -1,
+        "editionQalys": -1,
+        "assumptions": "One California QALY lost from displacement or harmful implementation; subjective stress, not measured."
+      },
+      {
+        "id": "portfolio",
+        "label": "Complete portfolio unpriced",
+        "costUSD": 2290208,
+        "allPopulationQalys": null,
+        "editionQalys": null,
+        "assumptions": "Other pathways may dominate either way."
+      },
+      {
+        "id": "clinical-resources",
+        "label": "Add attributed clinical resources",
+        "costUSD": 2404718.4,
+        "allPopulationQalys": 0.8528504322383295,
+        "editionQalys": 0.8528504322383295,
+        "assumptions": "Central clinical model; add 57.2552*2000 USD, applying a and b once, not to health again."
+      }
+    ],
+    "sensitivity": [
+      "Central price $26853571.428571433/10 CA QALYs; clinical-resource sensitivity $28196250.000000004.",
+      "Halving average utility or effective duration doubles price; no lifetime benefit.",
+      "An engagement that only finances already delivered visits yields zero new health.",
+      "Unrecognized volunteer and other public opportunity costs remain outside the recipient series."
+    ],
+    "missingInputs": [
+      "Current flexible-funding priorities and costed assistance engagements that cannot be covered by existing contracts",
+      "Alternative implementation dates and resources for each partner, including county/DHCS support and district staff",
+      "Incremental clinical hours, treatment completion, appropriate service mix and unique students attributable to assistance",
+      "Finite expected utility effects, dropout, recurrence and harm relative to actual community care",
+      "Marginal public and provider resources committed to any leveraged expansion, plus health opportunity costs",
+      "Policy-specific adoption probability changes and implementation attributable to a new recipient gift"
+    ]
+  }
+}

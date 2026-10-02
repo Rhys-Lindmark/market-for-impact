@@ -1,5 +1,7 @@
 # End Overdose USA: active recalibration checkpoint
 
+Implementation checkpoint: the candidate pure module is prepared in lib/end-overdose-usa-calibrated-model.mjs but is not wired to the public report or ranking. Three focused candidate tests plus two historical tests pass: all twenty current candidate cases independently reconstruct finite health and separate signed cohort log welfare; missing/nonfinite/extra inputs and extrapolated gifts are rejected; purchaser alternatives, harms, genuine zero and explicit unknown states remain distinct. This establishes arithmetic/guards only, not independent scientific acceptance. Source packet and review remain required before release.
+
 October 2, 2026. Published P0 progress remains 28/40; this research phase adds no completion count. Root preserved the exact pre-recalibration USA model in data/usa/end-overdose-usa-pre-recalibration-model.json before any product changes. The central historical donor price is $1,759,484.5799377698 per ten USA clinical QALYs.
 
 Two historical tests pass: every numeric scenario independently reconstructs offered/additional/delivered packages, two-dose units, unique credited administrations, three-day survivor gains, finite subsequent health and USA allocation. Unknown portfolio effects, genuine zero additionality and negative health remain distinct. Floating-point price comparison uses a relative numerical tolerance, not a change to the old data.

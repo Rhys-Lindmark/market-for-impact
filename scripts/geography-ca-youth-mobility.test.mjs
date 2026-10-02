@@ -34,8 +34,8 @@ test('Historical Vision To Learn separates courses, use, additionality and geogr
  near(matched.editionQalys,central.editionQalys*2);
  near(matched.allPopulationQalys,central.allPopulationQalys+central.editionQalys);
 });
-test('Walk SF stops benefit at counterfactual opening and retains independent harm',()=>{
- const r=report('walk-san-francisco'),base=JSON.parse(r.model.scenarios.find(s=>s.id==='historical-alpha-central').assumptions);
+test('Historical Walk SF stops benefit at counterfactual opening and retains independent harm',()=>{
+ const r={...report('walk-san-francisco'),model:JSON.parse(readFileSync(new URL('../data/california/walk-ca-pre-recalibration-model.json',import.meta.url)))},base=JSON.parse(r.model.scenarios.find(s=>s.id==='historical-alpha-central').assumptions);
  assert.equal(r.model.scenarios.find(s=>s.id==='central').editionQalys,null);
  for(const s of r.model.scenarios.filter(s=>s.id!=='central')){
   let p=s.assumptions.startsWith('{')?JSON.parse(s.assumptions):{...base};

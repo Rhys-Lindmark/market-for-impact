@@ -43,4 +43,15 @@ test('NJHRC knowledge and overlap guards preserve unknowns, known absence and si
  assert.throws(()=>run({buyer:.8,free:.8}));
  assert.throws(()=>run({death:.8,injury:.8}));
  assert.throws(()=>run({gift:25001}));
+ for(const patch of [{completion:0,acquisitionShare:0},{buyer:0,event:0,acquisitionShare:0}]){
+  const p={...central,...patch,cashKnown:false,healthKnown:false,earningsKnown:false};
+  const out=calculate(p),flows=componentResourceFlows(p);
+  assert.equal(out.cashEquivalentLocal,0);
+  assert.equal(out.rawCashPV_LocalUSD,0);
+  assert.equal(out.resourcesLocal,0);
+  assert.ok(out.combinedLocal<0,'Known offer harm survives absent cash routes');
+  assert.deepEqual(flows,{cash:[],pay:[]});
+  assert.equal(calculate({...p,reachKnown:false}).cashEquivalentLocal,0);
+ }
+ assert.equal(run({cashKnown:false,buyerSaving:0,rescueCash:0,acquisitionCash:0}).cashEquivalentLocal,null,'Unavailable amount placeholders do not establish absent routes');
 });

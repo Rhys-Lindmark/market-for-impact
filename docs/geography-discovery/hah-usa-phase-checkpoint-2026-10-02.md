@@ -11,3 +11,5 @@ Acceptance: original finance/current recipient operation; independently evaluate
 Root fresh official program and FAQ check2026-10-02 confirmed refundable250 deposit contingent on provider charges, separate ambiguous FAQ fee descriptions, testing/maintenance expenses and2–6month matching. Fetch interval13:10:51–13:10:52UTC is only fetch timing, not certified full research duration; not imported as research effort. No outreach or confirmed capacity.
 
 Space121MB checkout/29GiBfree; compatible dependencies and Node24 reused. Usage39%remaining; no new batches<=25%, userminimum20%. Full eleven-edition goal and legacy remain required.
+
+Historical verification passed two focused tests: all seven finite diagnostic scenarios independently reproduce; unknown beta, zero capacity and signed harms remain distinct. Frozen exact alpha price689123.7815575873. Published KACS14MiB archive and one-use integration generator removed after native upload/deploy success; unique research/provenance preserved. No server started.

@@ -1,5 +1,9 @@
 # CSPI USA: active recalibration phase
 
+## Authoritative live handoff
+
+The same author handle `/root/wclp_calibration` remains running; a bounded wait returned a substantive model update, then a later observation timeout without terminal status. No restart or extra research batch. Proposed, not accepted: annual full-recipient work normalization, direct .255-versus-.250 opportunity probability, modest-versus-short PLOS health scale, and25% durable/75% two-year acceleration. These are explicit revised judgments, not measured policy response or approved central numbers. Root requested exact scope/dose/ramp disclosure and population-wide food-price incidence distinct from avoided-CVD households; no gross societal savings, fatal baseline wages or erased independent harms. Await completed calculator, primary receipts and closed intervals before scientific acceptance/integration/counting.
+
 Root independently checked original FDA and PLOS sources in26 dedicated source seconds (closed receipt `cspi-usa-root-primary-2026-10-02.closed.json`). The check confirms draft/voluntary status on FDA's page, limits of category-based progress, finite disease-model scope and the inability to treat societal savings as disposable household income. These constraints were sent to the author. Existing implementer handle was authoritatively confirmed running this turn, so it was not restarted. Count remains24/40; publication depends on completed model/evidence and acceptance.
 
 Previous phase made concrete progress: IST accepted, verified and published Sites344; exact native publication receipt retained. Counts24/40 recalibrations published,16 pending; legacy0/11. Geographic report/deep-review counts unchanged. Full eleven-edition expansion remains required after P0.

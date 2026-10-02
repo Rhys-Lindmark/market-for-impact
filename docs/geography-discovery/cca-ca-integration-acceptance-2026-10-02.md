@@ -10,4 +10,6 @@ Only supported author research07:41:05.600–07:50:04UTC (538.4seconds) and root
 
 Verification: 22 targeted numerical, report-registry and full-goal plan checks pass; two responsive checks at390/768px pass, covering report price, research-model label, API scenario ledger, list price/spending and horizontal-overflow boundaries. Original 25 initial/10 in-depth California counts unchanged. Exact build and native publication receipt remain required before advancing published18/40.
 
+Publication completed: Sites339, source7e95c2eb147e7d3db09c1342e933664577cb94a9; native deployment appgdep_6abf72bb55888191982d95fa97c07c99 succeeded2026-10-02T09:00:55.688357+00:00. Exact receipt cca-ca-publication-2026-10-02.json proves the build/source/version/deployment chain. Published recalibrations advance19/40; geographic initial/deep counts unchanged. Independent production review accepted all29case parity with maximum income error1.36e-20.
+
 Space Saver reused the111MB checkout, compatible existing dependency runtime and browser. No new installation or bulk PDF was retained. The scoped3107 test server exited after the checks. Token Saver bounded this phase to the accepted model and actual production parity rather than repeating source research. Sites ownership kept checkout integration and publication with root; research workers returned proposals and read-only acceptance.

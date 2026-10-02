@@ -1,6 +1,6 @@
 # HOPE independent reassessment: source acceptance
 
-Accepted for integration as an uncertain planning model, not verified donation productivity. Previous goal turn yielded the technical review identifying input corrections; this turn corrects controls, preserves the first calibration, and changes current report/API/ranking source together. Publication is pending validation and native deployment.
+Accepted as an uncertain planning model, not verified donation productivity. This turn corrected controls, preserved the first calibration and changed current report/API/ranking source together. Native Sites version331 succeeded from d8dfb7214a4ed9f3dceaf5fe08f8ac34152cd257; exact publication receipt is the companion JSON.
 
 Current central: $931,745.122448699 per ten combined Bay health/resource-equivalent years, versus $554,659.5517271358. Health .010704764718305783 plus one-off resource .000027784086156129327 per exploratory $1,000. The main reason is .8 to .5 high-risk reach among nonpurchasers at mixed public-access sites, plus an independently uncertain 5% purchaser partition. These are judgments, not observed risk or earnings.
 
@@ -8,7 +8,7 @@ The survival magnitude remains a judgment after source/prognosis challenge; deco
 
 The old native model and first health/income module remain frozen. Current diagnostics are finite and unweighted; historical subjective weights are not recycled as new probabilities. Annual linear replication is explicitly not validated annual productivity or funding capacity.
 
-Technical review: /private/tmp/hope-independent-anchor-code-review-20261001.md. Independent quadrature matched; root corrected nonobject overrides and bounded extreme clinical/discount/time inputs. Original candidate packet's 21 cases, current wiring, 369 historical first-calibration checks, 59 original-model checks, narrative anchors and 11 provenance tests pass. Responsive checks and production publishing remain pending.
+Technical review: docs/geography-discovery/hope-independent-technical-review-2026-10-01.md. Independent quadrature matched; root corrected nonobject overrides and bounded extreme clinical/discount/time inputs. Original candidate packet's 21 cases, current wiring, 369 historical first-calibration checks, 59 original-model checks, narrative anchors and 11 provenance tests pass. Phone/tablet checks pass2/2; production build and native publication pass. First responsive run followed a legacy route to old production and failed equality; canonical local /san-francisco/all corrected the test and passed. No product ranking mismatch remained.
 
 Imported only closed dedicated research interval f431a538-c539-4cd3-b612-619e89ff495c: 707.921 seconds on user-confirmed inherited GPT-6.1 Sol. Integration/testing are not research minutes. Retained source receipts and calculations are durable companions.
 

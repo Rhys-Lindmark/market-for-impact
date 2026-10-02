@@ -1,5 +1,13 @@
 # Institute for Safer Trucking: active recalibration phase
 
+## Latest verified checkpoint
+
+The research author and independent reviewer have completed their bounded phases; neither is currently required to remain running. The independent memo is archived in `ist-usa-independent-acceptance-2026-10-02.md`. Root corrected the requested exact annual mean to 988148/3 in both the durable calculator and candidate module; rounded display remains $329,383. Central independently reproduced partial forecast is $1,744,391.9287411897 per ten combined health/resource-equivalent years. All43 named diagnostics are executable. Candidate regression tests cover signed/null guards, exact expense mean and independently reconstructed components; original historical tests remain separate. A first exact-equality scaling check differed only by floating-point rounding and was replaced with a tight relative tolerance, not a changed estimate.
+
+Published count remains23/40. This calculator is not yet integrated into public report/list/provenance records or deployed. Next action: apply the prepared registry integration, verify every scenario's health and resource serialization against the calculator, obtain final product acceptance and publish natively before counting24. No public price or completion count is changed by this checkpoint.
+
+Usage was verified again at39% remaining; the20% floor is preserved. Checkout117MB,29GiB free; no new installation, checkout or server was started. This turn corrected and preserved acceptance evidence rather than restarting research. The original phase notes below remain historical, not live worker-status claims.
+
 Previous goal turn made concrete progress: CSBHA published in Sites343 from c7540564f4ddf00cfe4f3aff1b0dc13810d6ea7c; native deployment succeeded and its exact receipt is preserved. Counts are 23/40 recalibrations published,17 pending; California10/10 recalibrated; legacy0/11. Metadata/receipt commit970c764 is pushed. No claim that the eleven-edition expansion is complete.
 
 The current bounded research-only implementer is `/root/wclp_calibration`, authoritatively confirmed running this turn. Root alone owns checkout edits, integration and publication. The scope is the USA Institute for Safer Trucking report, not a new invented installer. Research/model phases must close actual start/end receipts before artifact drafting or waits. User-confirmed GPT-6.1 Sol assignment does not independently identify runtime telemetry or reasoning level.

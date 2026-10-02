@@ -1,5 +1,7 @@
 # CSPI USA: active recalibration phase
 
+Root independently checked original FDA and PLOS sources in26 dedicated source seconds (closed receipt `cspi-usa-root-primary-2026-10-02.closed.json`). The check confirms draft/voluntary status on FDA's page, limits of category-based progress, finite disease-model scope and the inability to treat societal savings as disposable household income. These constraints were sent to the author. Existing implementer handle was authoritatively confirmed running this turn, so it was not restarted. Count remains24/40; publication depends on completed model/evidence and acceptance.
+
 Previous phase made concrete progress: IST accepted, verified and published Sites344; exact native publication receipt retained. Counts24/40 recalibrations published,16 pending; legacy0/11. Geographic report/deep-review counts unchanged. Full eleven-edition expansion remains required after P0.
 
 Root froze the current CSPI model in `data/usa/cspi-usa-pre-recalibration-model.json` fromdf24088. Initial price484088.1877269368/10USAhealth. Eleven historical scenarios are preserved; initial numerator charges five FY2025 recipient budgets=89631610, not one year's cost. Original formula uses an already discounted finite clinical scale and an additional delay, then a durable-versus-three-year-acceleration comparison. No income component was in the old model.

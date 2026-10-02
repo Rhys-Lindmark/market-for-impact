@@ -1,5 +1,7 @@
 # Lestonnac LA recalibration phase
 
+Current acceptance work: exact frozen18-case model equals b0cbdb8 source byte-for-structure; independent Simpson integration agrees with every historical local health output, maximum absolute error6.572520305780927e-14. Implementer live source interval ended20:11:17.472UTC,580.373seconds; modeling began20:11:17.559UTC. Source packet still incomplete, not imported or accepted. Fresh return/ScheduleO financial bridges reportedly reproduced; actual native cash/clinical/pay flows require main reading and challenge. No current product or count change. Current P0 remains36/40,legacy0/11; fullscopeactive.
+
 Previous goal turn was progress: Parker product and progress published Sites363/364, receipts preserved and pushed b0cbdb8. Current P0 published36/40,4 pending,legacy0/11; full geographic objective remains active.
 
 - [x] Freeze full18-case prior model from b0cbdb84322ee1406d6046a5a9df55d3c20fe518 in data/los-angeles/lestonnac-la-pre-recalibration-model.json.

@@ -1,5 +1,7 @@
 # Parker NYC recalibration phase
 
+Main independently reconstructed all13 frozen cases with stable exponential integral; three historical tests pass, including assumed1,368patients/171additional-access equivalents and prospective dental separation. Accounting-only removal of external allowances changes numerator, not physical benefits; no cash productivity is inferred. Existing implementer assigned one bounded four-companion packet. Next actual packet/source acceptance, no product/count advance until publication. NJHRC both native publications and PR push verified; exact deployment tarballs removed after saved/deployed receipts, durable evidence intact.
+
 Previous goal turn made evidence progress: corrected the unchanged-five comparison against current independent models and publication receipts. Current turn published NJHRC product Sites361/progress Sites362 and pushed89446bd. P0 published35/40,5 pending;legacy0/11, full geographic objective ACTIVE.
 
 - [x] Freeze complete Parker beta model from89446bd, including all13 scenarios and central7,711,757.941826708 augmented-resource health-only price. This is not a cash marginal quote.

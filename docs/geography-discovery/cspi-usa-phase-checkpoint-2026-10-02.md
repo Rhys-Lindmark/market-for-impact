@@ -1,0 +1,11 @@
+# CSPI USA: active recalibration phase
+
+Previous phase made concrete progress: IST accepted, verified and published Sites344; exact native publication receipt retained. Counts24/40 recalibrations published,16 pending; legacy0/11. Geographic report/deep-review counts unchanged. Full eleven-edition expansion remains required after P0.
+
+Root froze the current CSPI model in `data/usa/cspi-usa-pre-recalibration-model.json` fromdf24088. Initial price484088.1877269368/10USAhealth. Eleven historical scenarios are preserved; initial numerator charges five FY2025 recipient budgets=89631610, not one year's cost. Original formula uses an already discounted finite clinical scale and an additional delay, then a durable-versus-three-year-acceleration comparison. No income component was in the old model.
+
+Existing implementer `/root/wclp_calibration` was dispatched for bounded research-only health AND net-household-resource recalibration. Root alone edits, integrates and publishes. Required source domains: original charitable-recipient990s/audit separate from Action Fund, current primary FDA sodium status, sodium/BP causal evidence and finite cardiovascular outcomes. Reconsider prospective cost, additionality, strength-versus-timing contrast, clinical transport, income incidence/offsets, signed harms and overlap; do not mechanically preserve an old center or force a price change. Full portfolio and societal costs may remain unknown, but cannot be silently zero.
+
+Actual researcher UTC intervals must close before drafting/testing; current model attribution is user-confirmed GPT-6.1 Sol, not independently observed runtime. No integration/test/build time added. Private packet prefix `/private/tmp/cspi-usa-20261002`; author memo, calculator, results, source receipts and closed intervals precede independent acceptance.
+
+Usage checked39% remaining before dispatch; user floor20%, no new batches at/below25%. Reused117MB checkout and dependencies; no new install/server. IST temporary uploaded archive removed only after native success, all source/evidence retained. Next step: accept author packet, independently check science/arithmetic, integrate and verify public report/list/provenance, then native publication before counting25/40. Scheduled continuity/full objective remain active.

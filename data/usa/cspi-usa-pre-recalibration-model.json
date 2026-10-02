@@ -1,0 +1,294 @@
+{
+  "edition": "usa",
+  "slug": "center-for-science-in-the-public-interest",
+  "organization": "Center for Science in the Public Interest",
+  "sourceCommit": "df24088",
+  "initialPricePerBetterLife": 484088.1877269368,
+  "model": {
+    "version": "usa-cspi-sodium-partial-health-beta-v2",
+    "costScope": "Whole ordinary charitable-recipient gift. Five years of full FY2025 recipient expense at constant real scale; sodium is the only quantified health pathway. No restricted-project price, no affiliate double count, no historical victory credit. Additional external social costs remain unquantified.",
+    "geographicAttribution": "USA 50 states plus DC. g=.99 remains a judgmental national-coverage allowance, not a measured territorial allocation. The underlying clinical model covers ages30–84, so the discounted scale is not all-age measured health; no population multiplier fills missing age groups.",
+    "formula": "H=(2100000-700000)*(dm/565)*e*t/(1.03^L); S=fDurable+(1-fDurable)*(1-1.03^(-accelerationYears)); Qall(G)=G/(C*Y)*b*(p*a*H*S-h); Qusa=Qall*g; price10=10*G/Qusa only when Qusa>0. Central C=17926322,Y=5,dm=250,e=.5,t=.7,L=5,p=.2,a=.1,b=.5,g=.99,h=0,fDurable=1. Existing alpha values reproduced; additional timing scenarios vary S.",
+    "counterfactual": "Phase I-scale progress, government activity, private reformulation, and other advocates continue without this funding. Only a further 250 mg/day opportunity is considered; p is an incremental probability change attributable to the broader campaign rather than the unconditional chance FDA acts. b removes expenditure that would occur from reserves or replacement funding anyway.",
+    "attribution": "p=.2 is a subjective campaign-induced probability increment over five years; a=.1 allocates a tenth of that increment to charitable CSPI, excluding credit owed to its Action Fund, other advocates, researchers, officials, and manufacturers. The resulting p*a=.02 is not measured. Because all portfolio costs are charged, no additional sodium budget fraction is multiplied in; doing both would double-charge portfolio allocation.",
+    "uncertainty": "Retained judgmental sodium partial-health best guess, not a measured portfolio return. Durable change, policy acceleration, clinical transport and funding replacement are separate uncertainties. Central other-portfolio net health=0 is a judgment, not a proven lower bound. Missing observed marginal inputs alone do not force null.",
+    "nativeOutcomes": "Prospective policy response -> otherwise-unavailable sustained sodium reformulation -> consumed sodium -> blood pressure -> finite cardiovascular health. Success-case consumed change=250*.5=125mg/day; probability-weighted full-scale national change=125*.2*.1*.5=1.25mg/day before clinical transport. These are model expectations, not monitored outputs. No comments-to-QALYs shortcut.",
+    "inputs": [
+      {
+        "name": "C",
+        "value": 17926322,
+        "unit": "USD per recipient fiscal year",
+        "basis": "observed",
+        "rationale": "FY2025 Form 990 Part I/IX, all functional expenses; Part VIII direct-cost lines empty.",
+        "sourceIds": [
+          "cspi-99025"
+        ]
+      },
+      {
+        "name": "Y",
+        "value": 5,
+        "unit": "years of full recipient costs",
+        "basis": "judgment",
+        "rationale": "Sustained advocacy horizon; not one annual budget assigned a full national reform.",
+        "sourceIds": []
+      },
+      {
+        "name": "Qopt",
+        "value": 2100000,
+        "unit": "discounted QALYs over original 20-year simulation",
+        "basis": "observed",
+        "rationale": "Published simulated optimal scenario, not measured outcomes.",
+        "sourceIds": [
+          "sodium-us-model"
+        ]
+      },
+      {
+        "name": "Qshort",
+        "value": 700000,
+        "unit": "discounted QALYs over original 20-year simulation",
+        "basis": "observed",
+        "rationale": "Published short-term-only scenario.",
+        "sourceIds": [
+          "sodium-us-model"
+        ]
+      },
+      {
+        "name": "Sshort-minus-Sopt",
+        "value": 565,
+        "unit": "mg sodium/day",
+        "basis": "observed",
+        "rationale": "Reported 2036 medians 2789 and 2224; difference is an interpolation reference, not current intake.",
+        "sourceIds": [
+          "sodium-us-model"
+        ]
+      },
+      {
+        "name": "deltaS",
+        "value": 250,
+        "unit": "mg sodium/day beyond assumed counterfactual",
+        "basis": "judgment",
+        "rationale": "Phase I target3000 minus Phase II2750; achievable further reduction is uncertain and the current baseline is not assumed empirically known.",
+        "sourceIds": [
+          "fda-sodium",
+          "fda-progress"
+        ]
+      },
+      {
+        "name": "e",
+        "value": 0.5,
+        "unit": "fraction of incremental sodium opportunity implemented",
+        "basis": "judgment",
+        "rationale": "Discounts voluntary noncompliance, purchasing substitutions, and incomplete persistence; not fraction of food categories with any decrease.",
+        "sourceIds": [
+          "cspi-sodium-comment",
+          "fda-progress"
+        ]
+      },
+      {
+        "name": "t",
+        "value": 0.7,
+        "unit": "clinical and future-horizon transport factor",
+        "basis": "judgment",
+        "rationale": "Old population, treatment trends, nonlinearity, different reformulation ramp, and rebasing to future benefits justify a broad discount.",
+        "sourceIds": [
+          "sodium-us-model",
+          "sodium-bp",
+          "ssass"
+        ]
+      },
+      {
+        "name": "L",
+        "value": 5,
+        "unit": "additional years of benefit delay",
+        "basis": "judgment",
+        "rationale": "Five-year delay before the rebased already-discounted health stream; no claim of a final Phase II date. Original modeled clinical lag is not reapplied.",
+        "sourceIds": [
+          "fda-priorities26"
+        ]
+      },
+      {
+        "name": "p",
+        "value": 0.2,
+        "unit": "incremental campaign probability of achieving modeled opportunity",
+        "basis": "judgment",
+        "rationale": "Subjective 20-percentage-point coalition contribution over five years relative to government/industry background action; broad 0–.5 scenarios.",
+        "sourceIds": [
+          "cspi-sodium-comment",
+          "fda-sodium"
+        ]
+      },
+      {
+        "name": "a",
+        "value": 0.1,
+        "unit": "charitable CSPI share of coalition increment",
+        "basis": "judgment",
+        "rationale": "A tenth is a cautious opinion given sustained technical/legal work and many other actors; not a causal audit. Tested .01–.2.",
+        "sourceIds": [
+          "cspi-sodium-comment",
+          "cspi-99025",
+          "cspi-litigation-history"
+        ]
+      },
+      {
+        "name": "b",
+        "value": 0.5,
+        "unit": "additional effort enabled per dollar",
+        "basis": "judgment",
+        "rationale": "Allows half to replace reserves, donors, or otherwise-funded work over five years; reserves and loss are observed, this response is not.",
+        "sourceIds": [
+          "cspi-audit25"
+        ]
+      },
+      {
+        "name": "h",
+        "value": 0,
+        "unit": "net other-pathway QALYs lost per five-year effort",
+        "basis": "judgment",
+        "rationale": "Central assigns zero net non-sodium benefit or harm. Negative-outcome stress tests retain loss even if policy influence is zero.",
+        "sourceIds": []
+      },
+      {
+        "name": "g",
+        "value": 0.99,
+        "unit": "USA share of credited sodium health",
+        "basis": "judgment",
+        "rationale": "Near-national US pathway with small geographic/coverage allowance; not an audited outcome-weighted share.",
+        "sourceIds": []
+      },
+      {
+        "name": "marginal-resource-cost",
+        "value": null,
+        "unit": "incremental public and industry USD",
+        "basis": "unknown",
+        "rationale": "Required for a current social-cost model; historical external implementation/savings estimates are not added as donor savings.",
+        "sourceIds": [
+          "sodium-us-model"
+        ]
+      },
+      {
+        "name": "fDurable",
+        "value": 1,
+        "unit": "fraction of credited influence producing additional finite reform rather than timing only",
+        "basis": "judgment",
+        "rationale": "Central preserves alpha durable-change interpretation; timing-only and50:50 cases reveal dependence on that judgment.",
+        "sourceIds": [
+          "fda-sodium",
+          "cspi-petition23"
+        ]
+      },
+      {
+        "name": "accelerationYears",
+        "value": 3,
+        "unit": "years earlier identical finite health stream in timing sensitivity",
+        "basis": "judgment",
+        "rationale": "Simple present-value shift approximation, not a rerun of population survival. Both streams have finite20-year duration; later counterfactual ends3years later.",
+        "sourceIds": []
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "central",
+        "label": "Sodium partial-health best guess; durable-change interpretation",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.20866053659437464,
+        "editionQalys": 0.2065739312284309,
+        "assumptions": "Judgment scenario, not a confidence bound or restricted purchase. Inputs {\"C\":17926322,\"dm\":250,\"e\":0.5,\"t\":0.7,\"L\":5,\"p\":0.2,\"a\":0.1,\"b\":0.5,\"h\":0,\"g\":0.99,\"f\":1,\"accel\":3}; H=187025.79838417712; timing multiplier=1. G=$10,000 and Y=5. Price=484088.1877269368. h is not multiplied by policy-success probability."
+      },
+      {
+        "id": "favorable",
+        "label": "Favorable joint judgments",
+        "costUSD": 10000,
+        "allPopulationQalys": 6.566659262529442,
+        "editionQalys": 6.500992669904147,
+        "assumptions": "Judgment scenario, not a confidence bound or restricted purchase. Inputs {\"C\":17926322,\"dm\":350,\"e\":0.9,\"t\":1,\"L\":2,\"p\":0.5,\"a\":0.2,\"b\":0.8,\"h\":0,\"g\":0.99,\"f\":1,\"accel\":3}; H=735725.3025274082; timing multiplier=1. G=$10,000 and Y=5. Price=15382.266228808781. h is not multiplied by policy-success probability."
+      },
+      {
+        "id": "poor",
+        "label": "Weak policy influence and implementation",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.00006171168405278428,
+        "editionQalys": 0.00006109456721225645,
+        "assumptions": "Judgment scenario, not a confidence bound or restricted purchase. Inputs {\"C\":17926322,\"dm\":100,\"e\":0.1,\"t\":0.3,\"L\":10,\"p\":0.05,\"a\":0.02,\"b\":0.1,\"h\":0,\"g\":0.99,\"f\":1,\"accel\":3}; H=5531.31759746238; timing multiplier=1. G=$10,000 and Y=5. Price=1636806749.9779024. h is not multiplied by policy-success probability."
+      },
+      {
+        "id": "low-credit",
+        "label": "One-percent charitable share of coalition increment",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.020866053659437462,
+        "editionQalys": 0.020657393122843086,
+        "assumptions": "Judgment scenario, not a confidence bound or restricted purchase. Inputs {\"C\":17926322,\"dm\":250,\"e\":0.5,\"t\":0.7,\"L\":5,\"p\":0.2,\"a\":0.01,\"b\":0.5,\"h\":0,\"g\":0.99,\"f\":1,\"accel\":3}; H=187025.79838417712; timing multiplier=1. G=$10,000 and Y=5. Price=4840881.87726937. h is not multiplied by policy-success probability."
+      },
+      {
+        "id": "donor-substitution",
+        "label": "Only10% additional effort",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.04173210731887493,
+        "editionQalys": 0.04131478624568618,
+        "assumptions": "Judgment scenario, not a confidence bound or restricted purchase. Inputs {\"C\":17926322,\"dm\":250,\"e\":0.5,\"t\":0.7,\"L\":5,\"p\":0.2,\"a\":0.1,\"b\":0.1,\"h\":0,\"g\":0.99,\"f\":1,\"accel\":3}; H=187025.79838417712; timing multiplier=1. G=$10,000 and Y=5. Price=2420440.9386346843. h is not multiplied by policy-success probability."
+      },
+      {
+        "id": "timing-only",
+        "label": "Three-year acceleration, no durable extra reform",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.017706586893877975,
+        "editionQalys": 0.017529521024939196,
+        "assumptions": "Judgment scenario, not a confidence bound or restricted purchase. Inputs {\"C\":17926322,\"dm\":250,\"e\":0.5,\"t\":0.7,\"L\":5,\"p\":0.2,\"a\":0.1,\"b\":0.5,\"h\":0,\"g\":0.99,\"f\":0,\"accel\":3}; H=187025.79838417712; timing multiplier=0.0848583406468405. G=$10,000 and Y=5. Price=5704662.429608334. h is not multiplied by policy-success probability."
+      },
+      {
+        "id": "mixed-influence",
+        "label": "Half durable change, half three-year acceleration",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.11318356174412632,
+        "editionQalys": 0.11205172612668506,
+        "assumptions": "Judgment scenario, not a confidence bound or restricted purchase. Inputs {\"C\":17926322,\"dm\":250,\"e\":0.5,\"t\":0.7,\"L\":5,\"p\":0.2,\"a\":0.1,\"b\":0.5,\"h\":0,\"g\":0.99,\"f\":0.5,\"accel\":3}; H=187025.79838417712; timing multiplier=0.5424291703234203. G=$10,000 and Y=5. Price=892444.975697568. h is not multiplied by policy-success probability."
+      },
+      {
+        "id": "forward-cost-uncertain",
+        "label": "Unaudited scope-uncertain FY26 expense sensitivity",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.18587166545188674,
+        "editionQalys": 0.18401294879736788,
+        "assumptions": "Judgment scenario, not a confidence bound or restricted purchase. Inputs {\"C\":20124186,\"dm\":250,\"e\":0.5,\"t\":0.7,\"L\":5,\"p\":0.2,\"a\":0.1,\"b\":0.5,\"h\":0,\"g\":0.99,\"f\":1,\"accel\":3}; H=187025.79838417712; timing multiplier=1. G=$10,000 and Y=5. Price=543440.0168768471. h is not multiplied by policy-success probability."
+      },
+      {
+        "id": "no-influence",
+        "label": "No incremental policy influence",
+        "costUSD": 10000,
+        "allPopulationQalys": 0,
+        "editionQalys": 0,
+        "assumptions": "Judgment scenario, not a confidence bound or restricted purchase. Inputs {\"C\":17926322,\"dm\":250,\"e\":0.5,\"t\":0.7,\"L\":5,\"p\":0,\"a\":0.1,\"b\":0.5,\"h\":0,\"g\":0.99,\"f\":1,\"accel\":3}; H=187025.79838417712; timing multiplier=1. G=$10,000 and Y=5. Price=not defined for nonpositive health. h is not multiplied by policy-success probability."
+      },
+      {
+        "id": "downside",
+        "label": "No sodium gain plus adverse portfolio effect",
+        "costUSD": 10000,
+        "allPopulationQalys": -0.005578389141955612,
+        "editionQalys": -0.005522605250536055,
+        "assumptions": "Judgment scenario, not a confidence bound or restricted purchase. Inputs {\"C\":17926322,\"dm\":250,\"e\":0.5,\"t\":0.7,\"L\":5,\"p\":0,\"a\":0.1,\"b\":0.5,\"h\":100,\"g\":0.99,\"f\":1,\"accel\":3}; H=187025.79838417712; timing multiplier=1. G=$10,000 and Y=5. Price=not defined for nonpositive health. h is not multiplied by policy-success probability."
+      },
+      {
+        "id": "portfolio-harm",
+        "label": "Central sodium gain offset by1000QALY other-portfolio loss",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.15287664517481853,
+        "editionQalys": 0.15134787872307034,
+        "assumptions": "Judgment scenario, not a confidence bound or restricted purchase. Inputs {\"C\":17926322,\"dm\":250,\"e\":0.5,\"t\":0.7,\"L\":5,\"p\":0.2,\"a\":0.1,\"b\":0.5,\"h\":1000,\"g\":0.99,\"f\":1,\"accel\":3}; H=187025.79838417712; timing multiplier=1. G=$10,000 and Y=5. Price=660729.4455905495. h is not multiplied by policy-success probability."
+      }
+    ],
+    "sensitivity": [
+      "Central484088.19; timing-only5704662.43; half-durable mixture892444.98 dollars per10USAQALYs. The timing contrast assumes identical finite health streams shifted3years; it is not a new disease simulation.",
+      "Five full annual recipient budgets require896.3161netUSAQALYs to meet1million dollars per10, or8963.161 to meet100000. Central netUSAhealth is1851.5554.",
+      "Central effective p*a=.02. At b=.5 and g=.99, about .00968 durable effective attribution is required for1million dollars per10. If all influence is only3year acceleration, the requirement is about11.4percentage points instead.",
+      "A net other-portfolio loss of3740.516QALYs per full5year effort would erase central sodium gain before funding/geographic scaling. Zero-other-health is not a lower-bound claim.",
+      "Changing costs to the unverified FY26 impact-report scope increases price by about12.3%; it does not establish a current funding gap. The retained original FY25 tax/audit cost difference is only0.055%.",
+      "The original clinical-model uncertainty does not contain CSPI attribution, donation additionality, policy timing or whole-portfolio effects. Do not display it as a charity confidence interval."
+    ],
+    "missingInputs": [
+      "A donor-contingent sodium work package with budget, timing, reserve policy and replacement-funder counterfactual.",
+      "Whether the work changes eventual strength/compliance or only advances otherwise-identical reform, and by how long.",
+      "Sales-weighted consumed sodium and a current clinical model with explicit implementation ramps and survival.",
+      "Charity-versus-Action-Fund allocation of prospective work, external implementation costs and non-overlapping other-portfolio health.",
+      "Explanation of the9781dollar tax/audit expense difference and unrecognized in-kind resources; this small residual does not dominate the health model."
+    ]
+  }
+}

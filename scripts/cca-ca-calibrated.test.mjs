@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {calculate,diagnostics} from '../lib/cca-ca-calibrated-model.mjs';
+import {reportPrice,scenarioIncomeEquivalent,expenseAverage,validateEditionReports} from '../lib/geography-reports.mjs';
 const near=(a,b)=>assert.ok(Math.abs(a-b)<1e-10*Math.max(1,Math.abs(b)),`${a} != ${b}`);
 const saved=JSON.parse(readFileSync(new URL('../docs/geography-discovery/cca-ca-recalibration-2026-10-02.calculations.json',import.meta.url)));
 test('CCA reproducible candidate agrees with all independently reviewed saved cases',()=>{
@@ -53,4 +54,25 @@ test('CCA clock anomaly remains explicit and cannot be imported as full research
  near(a.claimableDedicatedSeconds,538.4);
  near(a.rawEnvelopeSeconds-a.excludedUnknownInterval.seconds,a.claimableDedicatedSeconds);
  assert.ok(a.excludedUnknownInterval.seconds>2200);
+});
+test('CCA live registry encodes every health and income scenario without changing the cohort counts',()=>{
+ const data=JSON.parse(readFileSync(new URL('../data/geography-reports.json',import.meta.url)));
+ const progress=JSON.parse(readFileSync(new URL('../docs/geography-progress.json',import.meta.url)));
+ validateEditionReports(data,progress);
+ const r=data.reports.find(r=>r.edition==='california'&&r.slug==='coalition-for-clean-air');
+ for(const [id,v] of Object.entries(diagnostics())){
+  const s=r.model.scenarios.find(s=>s.id===id);assert.ok(s,id);
+  near(s.editionQalys,v.caHealthYears);near(s.allPopulationQalys,v.healthYears);
+  near(scenarioIncomeEquivalent(s),v.caIncomeEquivalentYears);near(s.costUSD,v.donorCost);
+ }
+ near(reportPrice(r),10211794.843329143);near(expenseAverage(r),2043139);
+ assert.match(r.sections.cost,/\$10\.2 million/);assert.match(r.sections.cost,/\$3\.34 million/);
+ assert.equal(data.reports.filter(r=>r.edition==='california').length,25);
+ assert.equal(data.reports.filter(r=>r.edition==='california'&&r.stage==='beta').length,10);
+ const sessions=r.sessionIds.map(id=>data.sessions.find(s=>s.id===id));
+ const author=sessions.find(s=>s.startedAt==='2026-10-02T07:41:05.600Z');
+ assert.ok(author);assert.equal(author.endedAt,'2026-10-02T07:50:04.000Z');assert.equal(author.model.id,'gpt-6.1-sol');
+ assert.ok(!sessions.some(s=>s.endedAt==='2026-10-02T08:26:47.482Z'));
+ const root=sessions.find(s=>s.startedAt==='2026-10-02T07:42:45.000Z');assert.ok(root);
+ near((Date.parse(root.endedAt)-Date.parse(root.startedAt))/1000,30);
 });

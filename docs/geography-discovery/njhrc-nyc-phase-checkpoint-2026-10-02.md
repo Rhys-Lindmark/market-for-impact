@@ -1,5 +1,7 @@
 # NJHRC NYC recalibration phase
 
+Three historical tests now pass, including an explicit accounting/physical-production challenge: recomputing assumedreach=C*f/k after removing396Kdonatedstock preserves price mechanically, whereas holding physical outputs fixed changes the numerator. Future model must independently parameterize physical delivery rather than claim financial reconciliation validates capacity. Existing implementer confirmed running; full packet not yet available, no restart. Parent challenged double use of public alternatives, event versus hazard survival credit and repeated-victim duplication. Published remains34/40; author proposal not accepted.
+
 Previous goal turn made authoritative progress: BVMI product Sites359/progress Sites360 published and pushed through403cae8. P0 published34/40,6 pending; legacy0/11. Full geographic objective ACTIVE.
 
 - [x] Freeze full seven-case prior at403cae8 in data/new-york-city/njhrc-nyc-pre-recalibration-model.json; committed4744757.

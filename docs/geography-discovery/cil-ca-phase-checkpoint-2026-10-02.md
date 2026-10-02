@@ -1,0 +1,11 @@
+# Center for Independent Living: active P0 recalibration
+
+Previous goal turn completed a source-backed explanation of five unchanged SF estimates. This turn advances the next required recalibration: original CIL model frozen, historical regression isolated from later revisions, current source challenge and bounded implementer research underway. Counts remain 17/40 published recalibrations, 23 pending; legacy 0/11. The full geographic discovery/initial/deep/shortlist objective remains active.
+
+Opening Site source: a72d9797041f46b277510be6d2c8854a261531cc. Root owns integration and publication; hsc_calibration owns the private cil-ca-20261002 source/model packet. No new checkout, dependency installation or server. Baseline: checkout111MB, filesystem28GiB free. Latest usage41% remaining; floor20%, no new batches at25% or less.
+
+Current official AT page describes nonemergency repairs and roughly a month to respond, not measured function-days restored. Loaners depend on changing inventory; public lending and Easy Does It are relevant alternatives. Residential-access page limits publicly funded modifications to eligible Berkeley residents; nearby cities currently receive consultations only. Neither that funding gap nor a waiting period identifies a priced, donor-funded additional completed project.
+
+Root's focused source interval was 2026-10-02 07:12:26–07:12:56 UTC,30seconds, user-assigned GPT-6.1 Sol. Site setup, test and integration time excluded. Current sources: https://thecil.org/assistive-technology/at-loaners-and-repairs/ and https://thecil.org/residential-access/ . Author must preserve actual independent timing and any anomalies separately.
+
+Acceptance requires independently reconstructed finite health and net income, coherent recipient/counterfactual partitions, full support costs once, signed burdens, explicit source versus judgment parameters and tangible repair/function outputs. Do not force a price change or describe retained priors as newly validated. No acceptance/count advance until numerical and registry checks, independent technical review, responsive checks and publication evidence. Next after CIL: five remaining California P0 reviews, other published cohorts and legacy, then continued expansion.

@@ -5,6 +5,19 @@ import {reportPrice,formatEditionReportPrice} from '../lib/geography-reports.mjs
 const read=p=>JSON.parse(fs.readFileSync(new URL(p,import.meta.url)));
 const report=read('../data/geography-reports.json').reports.find(r=>r.edition==='california'&&r.slug==='center-for-independent-living');
 const historicalModel=read('../data/california/cil-ca-pre-recalibration-model.json');
+test('Frozen CIL repair diagnostic independently reconstructs support, completed episodes and finite function-days',()=>{
+ const p=Object.fromEntries(historicalModel.inputs.map(x=>[x.name,x.value]));
+ const cost=(p.w*p.b*p.h+p.p)*p.o;
+ const episodes=p.C*p.f/cost*p.m*p.s*p.a;
+ const years=p.D/365;
+ const benefit=p.du*Math.exp(-p.r*p.L)*(-Math.expm1(-p.r*years))/p.r;
+ const q=episodes*benefit*p.g_CA;
+ const prior=historicalModel.scenarios.find(s=>s.id==='historical-alpha-central');
+ assert.ok(Math.abs(cost-450.3927899225193)<1e-10);
+ assert.ok(Math.abs(episodes-4.440568421053229)<1e-10);
+ assert.ok(Math.abs(q-prior.editionQalys)<1e-12);
+ assert.ok(Math.abs(10*p.C/q-59187952.33043336)<1e-5);
+});
 test('CIL historical withdrawn review preserves diagnostic math without constraining later recalibration',()=>{
  assert.equal(report.stage,'beta');assert.equal(report.acceptance.status,'accepted');
  const historicalReport={...report,model:historicalModel};

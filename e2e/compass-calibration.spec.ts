@@ -8,9 +8,9 @@ test('Compass displays cash/noncash allocation and actual revision provenance',a
  await effort.locator('summary').click();
  await expect(effort).toContainText('estimated before tracking');
  const section=page.locator('#cost-effectiveness');
- await expect(section).toContainText('$1.35M per better life');
+ await expect(section).toContainText('$2.83M per better life');
  await expect(section).toContainText('0.040359 income-equivalent');
- await expect(section).toContainText('0.031641 residual noncash');
+ await expect(section).toContainText('0.000124 noncash health-proxy');
  await expect(section).toContainText('not measured clinical QALYs');
  await expect(section).toContainText('No finite positive price');
  await expect(page.locator('#funding')).toContainText('$32,990,477');

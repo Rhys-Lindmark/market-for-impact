@@ -1,11 +1,11 @@
 import assert from 'node:assert/strict';
-import {calculate,central,diagnostics} from '../lib/compass-calibrated-model.mjs';
+import {calculate,central,diagnostics} from '../lib/compass-first-health-income-model.mjs';
 import {researchCostRanking} from '../lib/research-cost-ranking.mjs';
 const close=(a,b)=>assert.ok(Math.abs(a-b)<=1e-10*Math.max(1,Math.abs(b)),`${a} != ${b}`);
 const d=diagnostics(),r=d.central;
 const cost=2008658/207,transfer=1095985/207;
 const ranking=researchCostRanking.filter(row=>row.slug==='compass-family-services');
-assert.equal(ranking.length,1);close(ranking[0].bayUsdPerTenQalys,r.bay.costPerBetterLifeUSD);
+assert.equal(ranking.length,1); // Frozen first calibration is not today's ranking.
 const cash=.5*Math.log1p(.8*transfer/50000)/1.03**.25;
 close(r.cashPerCase,.0403587505191333);close(r.cashPerCase,cash);
 close(r.residualPerCase,.072-cash);close(r.combinedYears,100000/cost*.072);

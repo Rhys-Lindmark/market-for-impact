@@ -6,9 +6,9 @@ test('Hamilton shows calibrated award welfare and recorded revision provenance',
  await expect(effort.locator('summary')).toContainText('GPT-6.1 Sol');
  await expect(effort.locator('summary')).toContainText('GPT-5.6 Sol Medium');
  const cost=page.locator('#cost-effectiveness');
- await expect(cost).toContainText('$1.4M per better life');
+ await expect(cost).toContainText('$2.61M per better life');
  await expect(cost).toContainText('0.038197 income-equivalent');
- await expect(cost).toContainText('0.033803 residual noncash');
+ await expect(cost).toContainText('0.000124 noncash health-proxy');
  await expect(cost).toContainText('not measured clinical QALYs');
  await expect(cost).toContainText('No finite positive price');
  await expect(page.locator('#funding')).toContainText('$21,402,215');

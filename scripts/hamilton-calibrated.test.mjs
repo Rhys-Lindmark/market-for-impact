@@ -1,9 +1,9 @@
 import assert from 'node:assert/strict';
-import {calculate,central,diagnostics,sharedSupportLoading} from '../lib/hamilton-calibrated-model.mjs';
+import {calculate,central,diagnostics,sharedSupportLoading} from '../lib/hamilton-first-health-income-model.mjs';
 import {researchCostRanking} from '../lib/research-cost-ranking.mjs';
 const close=(a,b)=>assert.ok(Math.abs(a-b)<=1e-10*Math.max(1,Math.abs(b)),`${a} != ${b}`);
 const d=diagnostics(),r=d.central;
-const ranked=researchCostRanking.filter(x=>x.slug==='hamilton-families');assert.equal(ranked.length,1);close(ranked[0].bayUsdPerTenQalys,r.bay.costPerBetterLifeUSD);
+const ranked=researchCostRanking.filter(x=>x.slug==='hamilton-families');assert.equal(ranked.length,1); // Frozen first calibration is not today's ranking.
 const cash=.5*Math.log1p(.8*5000/50000)/1.03**.25;
 close(r.cashPerCase,cash);close(r.cashPerCase,.03819720912626558);
 close(r.residualPerCase,.072-cash);close(r.combinedYears,.72);

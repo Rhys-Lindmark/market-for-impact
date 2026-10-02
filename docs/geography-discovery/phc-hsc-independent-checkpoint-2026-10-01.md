@@ -1,5 +1,7 @@
 # PHC/HSC independent reassessment checkpoint
 
+Latest acceptance supersedes the proposal-stage paragraphs below: HSC published Sites332 at $1507782.8809835732 after conservative income-overlap calibration; PHC published Sites333 at $1502592.5677180092. Current models, source/provenance, historical separation, numerical and phone/tablet checks passed; exact receipts are hsc-independent-publication-2026-10-01.json and phc-independent-publication-2026-10-01.json. All integration/publication prerequisites below are complete. Next California Vision To Learn phase is active; totals remain13/40 and0/11.
+
 Previous status-only turn: no progress. This turn advances durable evidence and independently verifies candidate arithmetic; no report price or publication count changed.
 
 ## Current finite phase

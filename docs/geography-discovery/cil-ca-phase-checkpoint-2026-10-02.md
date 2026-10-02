@@ -1,5 +1,7 @@
 # Center for Independent Living: active P0 recalibration
 
+Superseding phase result: published Sites338 on October2,2026; deployment appgdep_6abf5f8549f481918c51e33ffab08c1a succeeded07:38:56.967253UTC. Exact receipt cil-ca-publication-2026-10-02.json. Independent review, eleven numerical/registry checks, two responsive checks and build passed. Current conditional partial estimate $146.4M includes finite temporary health and disjoint one-off household resources; historical $59.2M preserved. Published count18/40,22pending; legacy0/11. Next Coalition for Clean Air. Full expansion remains active; lower paragraphs preserve opening history.
+
 Previous goal turn completed a source-backed explanation of five unchanged SF estimates. This turn advances the next required recalibration: original CIL model frozen, historical regression isolated from later revisions, current source challenge and bounded implementer research underway. Counts remain 17/40 published recalibrations, 23 pending; legacy 0/11. The full geographic discovery/initial/deep/shortlist objective remains active.
 
 Opening Site source: a72d9797041f46b277510be6d2c8854a261531cc. Root owns integration and publication; hsc_calibration owns the private cil-ca-20261002 source/model packet. No new checkout, dependency installation or server. Baseline: checkout111MB, filesystem28GiB free. Latest usage41% remaining; floor20%, no new batches at25% or less.

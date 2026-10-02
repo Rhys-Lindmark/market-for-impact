@@ -9,3 +9,16 @@ Implementer wclp_calibration is research-only, returning a bounded source/model 
 Root source audit09:06:07–09:06:36UTC,29seconds, user-confirmed GPT-6.1 Sol assignment, not runtime telemetry. Reopened the primary Oregon welfare paper https://pmc.ncbi.nlm.nih.gov/articles/PMC8081392/ . Table2's $569 annual control-complier out-of-pocket spending is not a local estimate; zero insured spending is an assumption despite positive self-reports. The .05 health difference maps self-rated categories. Consumption is modeled separately under a specified utility framework; combined willingness-to-pay is not another benefit to add. Household/per-capita resources and possible finance-mediated health overlap must be explicit. No local wage coefficient was established by this root check. This evidence changes the acceptance requirement: retain reported-spending/overlap diagnostics rather than blindly add gross coverage spending or combined welfare valuations.
 
 Latest remaining allowance41%, floor20%, no new costly batch<=25%; no resets/credits consumed. Existing112MB checkout/28GiBfree and compatible Node24/runtime reused, no install, bulk copy or test server. Current proposal is pending; active source/model interval will close before review/integration.
+
+## Acceptance challenge, 09:18 UTC
+
+The prior user-response turn yielded evidence distinguishing retained central assumptions from new scenario analysis for five SF reviews; it was not a new publication. The WCLP implementer is confirmed running now and has produced a preliminary calculator, receipts and timing start. Do not restart that worker because its memo has not arrived.
+
+The preliminary calculator is not accepted. Root sent these material corrections before integration:
+
+- A benchmark of 1,000 extra covered households must be tied to a named implementation mechanism and a defensible output/contribution judgment. A selected denominator alone is not WCLP's expected marginal productivity. Distinguish conditional program estimates from an unidentified donor forecast without abandoning the requested estimate.
+- Annual operating costs cannot silently share the benefit midpoint solely so discounting cancels. Specify cost timing separately. For resources, distinguish a one-off receipt from an annual flow and align fractional exposure with its actual timing.
+- Validate finite positive costs/resources and coherent household, adult, exposure, discount and receipt parameters; preserve separately signed health and resource losses.
+- The Oregon paper specifies additive health/consumption utility. Financially mediated health and consumption can both be benefits: covariance alone does not establish double counting. Any overlap adjustment needs a duplicated welfare component, not an automatic conservative haircut. Combined willingness-to-pay cannot be added again.
+
+These are acceptance requirements, not research findings or newly measured coefficients. Counts remain19/40, legacy0/11. Root review/integration time is not recorded as organization research.

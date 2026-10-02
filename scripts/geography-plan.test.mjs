@@ -17,7 +17,14 @@ assert.equal(p.usageReserve.minimumWeeklyRemainingPercent,20);
 assert.equal(p.usageReserve.operationalStopRemainingPercent,25);
 assert.equal(p.editions.length,11);
 assert.equal(new Set(p.editions.map(e=>e.id)).size,11);
-assert.equal(p.models.discovery.effort,'medium'); assert.equal(p.models.alpha.effort,'low'); assert.equal(p.models.beta.effort,'medium');
+for(const stage of ['discovery','alpha','beta']){
+ assert.equal(p.models[stage].model,'gpt-6.1-sol');
+ assert.equal(p.models[stage].effort,null); // Unknown reasoning is not fabricated.
+ assert.match(p.models[stage].evidence,/User-confirmed current model assignment/);
+}
+assert.equal(p.historicalPlannedModels.discovery.effort,'medium');
+assert.equal(p.historicalPlannedModels.alpha.effort,'low');
+assert.equal(p.historicalPlannedModels.beta.effort,'medium');
 for(const e of p.editions){
  assert.ok(e.boundaryVersion);
  const stages=[['acceptedDiscoveryIds','discoveryAccepted',100],['alphaCohortIds','alphaPublished',25],['betaIds','betaAcceptedPublished',10],['topPickIds','topPicksPublished',4]];

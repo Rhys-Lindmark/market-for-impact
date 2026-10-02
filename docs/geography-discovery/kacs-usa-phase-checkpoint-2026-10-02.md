@@ -1,0 +1,13 @@
+# Kids and Car Safety USA: active P0 phase
+
+Previous goal continuation completed CSPI authoritative publication (Sites345), accepted cohort25/40,15pending,legacy0/11. Geographic counts remain unchanged; all eleven-edition expansion still required.
+
+Current bounded research-only implementer `/root/wclp_calibration` dispatched after usage39%remaining. Root owns source, integration, verification and publication. No new batches<=25%; preserve20%reserve. Actual research/model sessions must close before drafting/testing/wait; current assignment user-confirmed GPT-6.1 Sol, raw runtime unknown unless verified.
+
+Frozen prior whole beta model `data/usa/kacs-usa-pre-recalibration-model.json`:13scenarios; centralnull (unidentified marginal influence), preserved original alpha diagnostic$919,739.6998087636 per10healthyears. Three historical expenses265887/262881/256454, average261740.66666666666; no new observed expense claim. Preserve alpha and unestimated-beta as separate history, not measured zeros.
+
+Exit criteria: original recipient finances/current operation; concrete forward work and annual fully loaded cost; independently judged direct timing/influence contrast; finite child health/survival; separate signed net household resource mechanisms/offsets/technology costs; explicit attribution/overlap/null/adverse alternatives; strict calculator and primary receipts with access limitations; actual researcher intervals. Conditional planning comparison may be estimated with explicit judgments; complete portfolio/priced gift productivity are not inferred from that branch. Independent scientific acceptance then report/list/API/provenance parity, proportional tests and responsive checks, native publication beforecount26.
+
+Root bounded primary check12:35:35–12:35:46UTC (11seconds), memo `kacs-usa-root-primary-2026-10-02.md`. NHTSA confirms31deaths2025; OIRA RIN2127-AM49 current page lists prereule status, not implemented requirement. Fulltext990 attempt inaccessible through webtool, not evidence nofiling. No integration or worker waiting counted asresearch.
+
+Space baseline reused120MB checkout,28GiBfree; no newinstall/server. Removed only uploaded CSPI14MiBarchive and one-use integration generator after native save/deploy success; all evidence and source preserved.

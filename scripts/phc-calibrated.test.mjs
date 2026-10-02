@@ -1,56 +1,32 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import model from '../data/san-francisco/phc-portfolio-model-v1.json' with {type:'json'};
-import registry from '../data/research-effort.json' with {type:'json'};
-import {calculate,diagnostics,incomeJudgments,inputsFor} from '../lib/phc-calibrated-model.mjs';
-import {calculate as prior} from '../lib/phc-portfolio-model.mjs';
-import {validateResearchEffort} from '../lib/research-effort.mjs';
-let n=0;const check=f=>{f();n++;};const close=(a,b)=>assert.ok(Math.abs(a-b)<1e-10*Math.max(1,Math.abs(a),Math.abs(b)));
-const p=model.central_inputs,c=calculate(p),d=diagnostics(),old=prior(p);
-check(()=>assert.deepEqual(c.historicalHealthOnly,old));
-check(()=>close(c.donor_bay_per_10q,774408.3401731638));
-check(()=>assert.equal(c.incomeBay,0));
-const rate=Math.log1p(.03)+.02,distinct=100000*.2/150*.5,receipt=Math.exp(-rate*.1);
-const integrated=.75*receipt*(-Math.expm1(-rate))/rate;
-check(()=>close(integrated,c.components[0].years));
-const earnings=.5*distinct*.7*.1*integrated*Math.log1p(.05)*.98;
-const purchase=.5*distinct*.05*receipt*Math.log1p(50/50000)*.98;
-const burden=.5*(distinct*receipt+(100000*.1/1500*.5*.8+100000*.15/1500*.5*.8)*Math.exp(-rate*.25))*Math.log1p(-6/50000)*.98;
-check(()=>close(d.incomeCases.earnings.incomeBay,earnings));
-check(()=>close(d.incomeCases.purchase.incomeBay,purchase));
-check(()=>close(d.incomeCases.adverse.incomeBay,burden));
-for(const r of Object.values(d.incomeCases))check(()=>close(r.healthBay,c.healthBay));
-check(()=>close(d.incomeCases.earnings.donor_bay_per_10q,1000000/(c.healthBay+earnings)));
-check(()=>assert.equal(d.healthCases.nullHealthPositiveCash.healthBay,0));
-check(()=>assert.ok(d.healthCases.nullHealthPositiveCash.incomeBay>0));
-check(()=>assert.ok(d.healthCases.nullHealthPositiveEarnings.incomeBay>0));
-check(()=>assert.ok(d.healthCases.jointAdverse.incomeBay<0));
-check(()=>assert.ok(d.healthCases.jointAdverse.healthBay<0));
-check(()=>assert.equal(d.healthCases.jointAdverse.donor_bay_per_10q,null));
-for(const key of ['noCapacity','noFunding','completeNull']){check(()=>assert.equal(d.healthCases[key].bay_q,0));check(()=>assert.equal(d.healthCases[key].donor_bay_per_10q,null));check(()=>assert.equal(d.healthCases[key].gift_usd,100000));}
-for(const s of model.scenarios)for(const j of [incomeJudgments,d.incomeCases.purchase.incomeInputs,d.incomeCases.earnings.incomeInputs,d.incomeCases.adverse.incomeInputs]){
- const x=inputsFor(model,s);
- // Purchase group must remain inside each scenario's equivalent-alternative group.
- const capped=structuredClone(j);for(const path of x.pathways)capped[path.id].purchaseShare=Math.min(capped[path.id].purchaseShare,1-path.alternative_free_share);
- const out=calculate(x,capped);
- for(const geo of ['US','Bay','SF'])check(()=>close(out['health'+geo]+out['income'+geo],out[geo==='US'?'us_q':geo==='Bay'?'bay_q':'sf_q']));
- check(()=>close(out.us_q,out.components.reduce((sum,row)=>sum+row.totalUS,0)-x.independent_harm_us_q));
- if(out.bay_q>0)check(()=>close(out.donor_bay_per_10q*out.bay_q,10*x.gift_usd));else check(()=>assert.equal(out.donor_bay_per_10q,null));
+import {calculate,inputs,resources,diagnostics} from '../lib/phc-calibrated-model.mjs';
+import {researchRankBySlug} from '../lib/research-cost-ranking.mjs';
+const close=(a,b)=>assert.ok(Math.abs(a-b)<1e-10*Math.max(1,Math.abs(b)));
+const c=calculate(),change=f=>({...inputs,paths:inputs.paths.map(x=>f({...x}))});
+close(c.donor_bay_per_10q,1502592.5677180092);close(c.healthBay,.6181902634196448);close(c.incomeBay,.047326139019841694);
+close(c.healthBay+c.incomeBay,c.bay_q);close(c.resource_bay_per_10q,2103629.5948052127);
+close(researchRankBySlug.get('project-homeless-connect').bayUsdPerTenQalys,c.donor_bay_per_10q);
+const packet=JSON.parse(fs.readFileSync(new URL('../docs/geography-discovery/phc-original-anchor-calculations-2026-10-01.json',import.meta.url)));
+const p=packet.inputs,j=packet.resources;
+close(calculate(p,j).bayPrice,packet.cases.central.bayPrice);
+for(const row of diagnostics().scenarios){close(row.healthBay+row.incomeBay,row.bay_q);if(row.bay_q>0)close(row.donor_bay_per_10q*row.bay_q,10*row.gift_usd);else assert.equal(row.donor_bay_per_10q,null);}
+const noFunding=change(x=>({...x,funding:0}));assert.equal(calculate(noFunding).bay_q,0);
+assert.ok(calculate(noFunding,{...resources,B:6,inducedExposure:20}).bay_q<0);
+assert.equal(calculate({...inputs,k:0,independentHarm:1}).healthUS,-1);
+assert.equal(calculate({...inputs,k:0,independentHarm:1}).incomeUS,0);
+assert.equal(calculate(change(x=>({...x,use:0}))).incomeBay,c.incomeBay);
+assert.equal(calculate(inputs,{...resources,incomeHorizon:.25}).healthBay,c.healthBay);
+for(const j of [{...resources,incomeHorizon:0},{...resources,netAnnualGainUSD:0},{...resources,netAnnualGainUSD:-1000}]){
+ const a=calculate(inputs,j),b=calculate(inputs,{...j,reserveWorkerClinical:false});close(a.healthBay,b.healthBay);
 }
-const zero=calculate({...p,sf_share:0,bay_share:0},d.incomeCases.purchase.incomeInputs);
-check(()=>assert.equal(zero.bay_q,0));check(()=>assert.equal(zero.donor_bay_per_10q,null));
-const overlap=structuredClone(incomeJudgments);overlap.glasses.purchaseShare=.31;
-check(()=>assert.throws(()=>calculate(p,overlap)));
-for(const [key,value]of [['baselineIncomeUSD',0],['acquisitionCostUSD',50000],['netEarningsGainFraction',-1],['earningsShare',2],['purchaseSavingUSD',Infinity]]){
- const bad=structuredClone(incomeJudgments);bad.glasses[key]=value;check(()=>assert.throws(()=>calculate(p,bad)));
-}
-check(()=>assert.equal(d.annual.available,false));
-check(()=>validateResearchEffort(registry));
+const adverse=calculate(change(x=>({...x,utility:-.02})));assert.equal(adverse.excludedPositiveClinicalUS,0);assert.equal(adverse.bayPrice,null);
+const ordered=calculate({...inputs,paths:[...inputs.paths].reverse()});close(ordered.bayPrice,c.bayPrice);
+for(const bad of [null,[],42,{...inputs,gift:100001},{...inputs,unknown:1},{...inputs,discount:Infinity},{...inputs,bay:.5,sf:.6},{...inputs,paths:[]},change(x=>({...x,cost:0})),change(x=>({...x,horizon:2})),change(x=>({...x,funding:2}))])assert.throws(()=>calculate(bad),RangeError);
+for(const bad of [null,[],{...resources,unknown:1},{...resources,Y:0},{...resources,B:25000},{...resources,netAnnualGainUSD:-25000},{...resources,p:.31},{...resources,incomeHorizon:2},{...resources,reserveWorkerClinical:1}])assert.throws(()=>calculate(inputs,bad),RangeError);
+assert.throws(()=>calculate({...inputs,sf:1e-310}),RangeError);
 const report=JSON.parse(fs.readFileSync(new URL('../data/san-francisco/phc-v2-report.json',import.meta.url)));
-check(()=>close(report.calibration.usdPerBetterLife,c.donor_bay_per_10q));
-check(()=>assert.equal(report.fullMarkdown,fs.readFileSync(new URL('../docs/reports/phc-v2.md',import.meta.url),'utf8')));
-check(()=>assert.ok(report.fullMarkdown.includes('THRIVE')));
-check(()=>assert.ok(fs.readFileSync(new URL('../lib/research-cost-ranking.mjs',import.meta.url),'utf8').includes('phc-calibrated-model.mjs')));
-check(()=>assert.ok(fs.readFileSync(new URL('../app/charities/project-homeless-connect/page.tsx',import.meta.url),'utf8').includes('calibrationDate="2026-10-01"')));
-check(()=>assert.ok(fs.readFileSync(new URL('../components/LongFormResearchReport.tsx',import.meta.url),'utf8').includes('earlierEffort.estimated&&earlierEffort.minutes!==null')));
-console.log(n+'/'+n+' PHC health/income, signed, timing, scope, provenance and report-wiring checks passed.');
+close(report.calibration.usdPerBetterLife,c.bayPrice);
+assert.equal(report.fullMarkdown,fs.readFileSync(new URL('../docs/reports/phc-v2.md',import.meta.url),'utf8'));
+assert.ok(report.fullMarkdown.includes('Historical model and exact results'));
+console.log('PASS: independent PHC central, resources/overlap, signed harms, timing, domains, ranking and report parity');

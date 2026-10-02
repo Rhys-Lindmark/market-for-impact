@@ -1,0 +1,17 @@
+# Remote Area Medical USA: finite P0 recalibration phase
+
+Previous goal turn was progress: Dental Lifeline Network published Sites353/354 and PR384 synced at f79aea1. Authoritative recalibration count31/40,9 pending; separate legacy0/11. This phase is not completed or counted. Full eleven-edition expansion and source-vetted top-four requirements remain active.
+
+- [x] Freeze exact11-case prior model from f79aea1 in data/usa/remote-area-medical-usa-pre-recalibration-model.json. Preserve null central as history, initial alpha and US-location vision diagnostics separately.
+- [x] Independently reconstruct all ten finite historical diagnostic cases, null central, identical-care cancellation and duplicative harm; scripts/remote-area-medical-usa-historical.test.mjs passes.
+- [x] Fresh root native access/host/acute-care source challenge and13-second source clock preserved in ram-usa-root-source-2026-10-02.json. Independently aggregate official2025map; count/scoping assertions reproduced. Coding/debugging excluded from research clock.
+- [ ] Read-only implementer /root/cribs_recalibration delivers original-source conditional clinical and signed household-income/resource model, reproducible calculator, source receipts and closed focused clocks in /private/tmp/ram-usa-20261002 companions. Root alone owns checkout writes/publication.
+- [ ] Separate reviewer independently challenges original clinical and financial anchors, treatment/counterfactual/duplicate cohorts, signed cash/earnings, timing and overlap; zero/negative/unknown behavior verified.
+- [ ] Root integrates accepted current model and historical comparison, sources, unique time sessions and list/report consistency; numerical and responsive checks pass.
+- [ ] Native publication succeeds with exact receipt; only then advance32/40 and publish synchronized progress. Next USA American Nonsmokers’ Rights Foundation, NYC3,LA3,Chicago1,legacy11,then geographic expansion.
+
+Current model is an explicit judgment comparison, not an identified expected donation return or verified clinical capacity. Reconsider vision assumptions and include defensible dental/acute-medical health and household effects rather than leaving a null price solely for missing causal local measurements. Avoid per-tooth distinct-person health, paired-glasses duplicate benefits, same-day medical/dental cash-trip duplication, retail-as-household-saving, and baseline lifetime wages of newly surviving people. Recipient costs and actual earnings losses stay signed. Do not freeze the original total through income-overlap arithmetic.
+
+Acceptance after all40 reviews must still independently revisit Compass/Hamilton benefit anchors: their retained totals currently rely on reallocating the old broad welfare envelope to cash/residual components. That accounting separation is not fresh evidence confirming central effectiveness. Repeat challenges do not increase completion counts.
+
+Usage37% remaining before dispatch; user floor20%, no new batches<=25%. Existing129M checkout/dependencies reused,30Gi free; no install/copy/server. One helper at a time. Stall review after20 active minutes without evidence advance. Do not create a replacement goal, consume reset/credits or alter the user's pause controls.

@@ -1,6 +1,6 @@
 # HRS California: integrated recalibration acceptance
 
-Source integrated and verified; native publication pending. This supersedes the proposal-only checkpoint for technical acceptance, not for live-publication proof. Exact publication receipt is required before claiming15/40 published-cohort recalibrations,25 remaining; older0/11. Geographic California counts remain25 initial/10deep.
+Published successfully as Sites335, source c32ce8099271d5b561296b475a59146627e3ce6e. Exact native source/archive/deployment receipt: hrs-ca-publication-2026-10-01.json. This supersedes the proposal-only checkpoint. Current published-cohort completion15/40,25 remaining; older0/11. Geographic California counts remain25 initial/10deep.
 
 Current $6,852,222.069522628 replaces $3,089,019.7114568832. All37 current cases, disjoint purchaser resource paths and health-only editionQalys match lib/hrs-ca-calibrated-model.mjs. Independent induced applicant/health harm persists without assigned benefits. The prior23 scenarios remain frozen and separately tested. Recent-overdose-selected risk is no longer blindly applied to general SSP recipients; local .01 risk remains a judgment, not empirical confirmation. Full source and financial limitations are preserved.
 

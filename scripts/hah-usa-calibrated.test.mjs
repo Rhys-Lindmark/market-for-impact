@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {calculate,defaults,cases,test as ownTests,correctionTest} from '../lib/hah-usa-calibrated-model.mjs';
+import {scenarioIncomeEquivalent,reportPrice,researchListPrice} from '../lib/geography-reports.mjs';
 const near=(a,b)=>assert.ok(Math.abs(a-b)<=1e-12*Math.max(1,Math.abs(b)),`${a} != ${b}`);
 test('HAH all38 candidates independently rebuild finite health and household cash before aggregation',()=>{
  assert.equal(Object.keys(cases).length,38);
@@ -57,4 +58,33 @@ test('HAH author clock receipts preserve361.722seconds without inventing a runti
  assert.equal(new Set(d.sessions.map(s=>s.id)).size,3);
  for(const s of d.sessions)assert.equal(s.model,null);
  assert.equal(d.userAssignedModel,'GPT-6.1 Sol');
+});
+test('all38 serialized cases reproduce exact independent income timing, sign and current prices',()=>{
+ const data=JSON.parse(readFileSync(new URL('../data/geography-reports.json',import.meta.url)));
+ const r=data.reports.find(r=>r.edition==='usa'&&r.slug==='help-america-hear');
+ for(const[id,o] of Object.entries(cases)){
+  const z=calculate(o),s=r.model.scenarios.find(s=>s.id===id);assert.ok(s,id);
+  z.healthYears===null?assert.equal(s.editionQalys,null):near(s.editionQalys,z.healthYears);
+  z.incomeYears===null?assert.equal(scenarioIncomeEquivalent(s),null):near(scenarioIncomeEquivalent(s),z.incomeYears);
+  z.price10===null?assert.equal(s.costPer10Qalys,null):near(s.costPer10Qalys,z.price10);
+ }
+ near(reportPrice(r),3067549.367123098);near(researchListPrice(r),3067549.367123098);
+ assert.equal(r.historicalModel.scenarios.length,8);
+ assert.equal(r.historicalModel.scenarios.find(s=>s.id==='central').editionQalys,null);
+ const old=r.model.scenarios.find(s=>s.id==='historical-alpha-central');near(10*old.costUSD/old.editionQalys,689123.7815575873);
+});
+test('HAH three closed source/model intervals are imported exactly once into both registries',()=>{
+ const data=JSON.parse(readFileSync(new URL('../data/geography-reports.json',import.meta.url)));
+ const effort=JSON.parse(readFileSync(new URL('../data/research-effort.json',import.meta.url)));
+ const r=data.reports.find(r=>r.edition==='usa'&&r.slug==='help-america-hear');
+ const closed=JSON.parse(readFileSync(new URL('../docs/geography-discovery/hah-usa-recalibration-2026-10-02.closed.json',import.meta.url)));
+ for(const s of closed.sessions){
+  assert.equal(r.sessionIds.filter(id=>id===s.id).length,1);
+  for(const list of [data.sessions,effort.organizations[r.organization].sessions]){
+   const matches=list.filter(x=>x.id===s.id);assert.equal(matches.length,1);
+   assert.equal(matches[0].startedAt,s.startedAt);assert.equal(matches[0].endedAt,s.endedAt);
+   assert.equal(matches[0].rawRuntimeModel,null);
+   assert.match(matches[0].model.evidence,/User-confirmed model assignment/);
+  }
+ }
 });

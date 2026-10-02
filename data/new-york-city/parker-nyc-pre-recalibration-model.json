@@ -1,0 +1,556 @@
+{
+  "edition": "new-york-city",
+  "slug": "parker-family-health-center",
+  "organizationId": "ein:22-3619518",
+  "frozenFromCommit": "89446bdb4559dde39c1b02b32bc23aaea2225b74",
+  "model": {
+    "version": "nyc-parker-beta-finite-clinical-v3",
+    "costScope": "Augmented recipient expense envelope: 2024 gross operating expense plus netted fiduciary fees and judgmental external medication/nursing allowances. Not a measured complete resource cost or a verified marginal cash-gift price. External medication allowance may overlap recognized prescription/supply expense; no arbitrary subtraction is made without reconciliation.",
+    "geographicAttribution": "Medical Monmouth residency criterion supports g=1 for the modeled medical cohort; sensitivity g=.95 allows leakage. Proposed dental service and state grant areas Monmouth/Ocean are within the official 22-county NYC MSA. Service eligibility is not a measured match of every beneficiary address.",
+    "formula": "C=C0+I+M*w+H*s*k+Cd; N=(D/share)*f; v=rho+ln(1+d); A=(1-exp(-v*T))/v; Qmedical=N*a*b*(p*u*A-h); Qdental=Nd*rd*ad*b*(pd*ud*Td-hd)*od; Qall=Qmedical+Qdental; QMSA=g*Qall; price10=10*C/QMSA if positive, otherwise null. Dental term is scenario-only, half-year undiscounted approximation; it is not included in central.",
+    "counterfactual": "Existing clinic operations, accumulated reserves, appropriated public/private funding, free medicines, other safety-net care and volunteer supply continue. a reflects treatment substituted from alternatives; b is the unknown proportional output response to new unrestricted funding beyond that baseline. Keeping b=.25 is an explicit prior, not inferred from a funding request or asset ratio; 0,.1,.15 and .5 sensitivities expose this uncertainty.",
+    "attribution": "One inferred medical cohort, with aggregate net clinical response, prevents additive counting of overlapping chronic disease, mental health, nutrition and screenings. Central dental and policy gains are unpriced, not proven zero; prospective dental scenario applies additionality and residual-overlap factors and adds an illustrative annual resource allowance.",
+    "uncertainty": "A deeper evidence review, not evidence of causal health effectiveness. Prices are conditional estimates without a calibrated posterior or confidence interval. Current marginal medical and dental output/cost curves are missing; financial solvency does not prove funding irrelevance, and an opening does not prove new gifts caused it. Sources attached to judgment inputs provide context only, not estimates of the numerical coefficients. High two-year gains assume persistence after one funded year; high-recurring-cost explicitly charges a second identical annual envelope.",
+    "nativeOutcomes": "Inferred 1,368 medical people become 171 additional clinical-access equivalents under a=.5 and b=.25; 42.75 modeled responders receive finite utility gain. These are conditional equivalents, not measured successes. Central QALYs are 3.147996.",
+    "inputs": [
+      {
+        "name": "C0",
+        "value": 1954936,
+        "unit": "USD reported recipient gross annual expense",
+        "basis": "observed",
+        "rationale": "FY2024 signed audit gross operating expense agrees with original return plus netted event cost; separate investment fee restoration I is not inside C0.",
+        "sourceIds": [
+          "audit2024",
+          "return2024",
+          "schedule2024"
+        ]
+      },
+      {
+        "name": "M",
+        "value": 1300000,
+        "unit": "USD reported medication-assistance value",
+        "basis": "observed",
+        "rationale": "Reported $1.3m assistance value, not acquisition cost; w explicitly adjusts.",
+        "sourceIds": [
+          "return2024",
+          "schedule2024"
+        ]
+      },
+      {
+        "name": "w",
+        "value": 0.25,
+        "unit": "resource-value fraction of reported medication value",
+        "basis": "judgment",
+        "rationale": "Explicit judgment; not source-calibrated local causal estimate.",
+        "sourceIds": [
+          "patients",
+          "audit",
+          "clinical"
+        ]
+      },
+      {
+        "name": "H",
+        "value": 10000,
+        "unit": "reported annual clinical-volunteer hours, rounded lower reference",
+        "basis": "observed",
+        "rationale": "Narrative says more than 10,000 annual volunteer hours; 10,000 used as a rounded reference, not verified payroll.",
+        "sourceIds": [
+          "return2024",
+          "schedule2024"
+        ]
+      },
+      {
+        "name": "s",
+        "value": 0.25,
+        "unit": "unrecognized nursing fraction of volunteer hours",
+        "basis": "judgment",
+        "rationale": "Explicit judgment; not source-calibrated local causal estimate.",
+        "sourceIds": [
+          "patients",
+          "audit",
+          "clinical"
+        ]
+      },
+      {
+        "name": "k",
+        "value": 50,
+        "unit": "USD resource value per nursing hour",
+        "basis": "judgment",
+        "rationale": "Explicit judgment; not source-calibrated local causal estimate.",
+        "sourceIds": [
+          "patients",
+          "audit",
+          "clinical"
+        ]
+      },
+      {
+        "name": "D",
+        "value": 342,
+        "unit": "reported diabetic patients",
+        "basis": "observed",
+        "rationale": "342 patients in FY2024 narrative; no additional cohorts summed.",
+        "sourceIds": [
+          "return2024",
+          "schedule2024"
+        ]
+      },
+      {
+        "name": "share",
+        "value": 0.25,
+        "unit": "approximate diabetes share of patients",
+        "basis": "judgment",
+        "rationale": "Approximately one quarter in original narrative; inferred total is approximate, not a measured unique count.",
+        "sourceIds": [
+          "return2024",
+          "schedule2024"
+        ]
+      },
+      {
+        "name": "f",
+        "value": 1,
+        "unit": "current cohort transfer fraction",
+        "basis": "judgment",
+        "rationale": "Explicit judgment; not source-calibrated local causal estimate.",
+        "sourceIds": [
+          "patients",
+          "audit",
+          "clinical"
+        ]
+      },
+      {
+        "name": "p",
+        "value": 0.25,
+        "unit": "meaningful clinical response fraction",
+        "basis": "judgment",
+        "rationale": "Explicit judgment; not source-calibrated local causal estimate.",
+        "sourceIds": [
+          "patients",
+          "audit",
+          "clinical"
+        ]
+      },
+      {
+        "name": "u",
+        "value": 0.1,
+        "unit": "utility gain among responders",
+        "basis": "judgment",
+        "rationale": "Explicit judgment; not source-calibrated local causal estimate.",
+        "sourceIds": [
+          "patients",
+          "audit",
+          "clinical"
+        ]
+      },
+      {
+        "name": "rho",
+        "value": 0.5,
+        "unit": "annual effect waning rate",
+        "basis": "judgment",
+        "rationale": "Explicit judgment; not source-calibrated local causal estimate.",
+        "sourceIds": [
+          "patients",
+          "audit",
+          "clinical"
+        ]
+      },
+      {
+        "name": "T",
+        "value": 1,
+        "unit": "maximum benefit years",
+        "basis": "judgment",
+        "rationale": "Explicit judgment; not source-calibrated local causal estimate.",
+        "sourceIds": [
+          "patients",
+          "audit",
+          "clinical"
+        ]
+      },
+      {
+        "name": "a",
+        "value": 0.5,
+        "unit": "care additionality fraction",
+        "basis": "judgment",
+        "rationale": "Explicit judgment; not source-calibrated local causal estimate.",
+        "sourceIds": [
+          "patients",
+          "audit",
+          "clinical"
+        ]
+      },
+      {
+        "name": "b",
+        "value": 0.25,
+        "unit": "funding-response fraction",
+        "basis": "judgment",
+        "rationale": "Uncalibrated .25 output-response prior retained from alpha. Audit availability and new funded expansion sharpen the need for 0/.1/.15 sensitivities; dated liquidity cannot estimate a present elasticity.",
+        "sourceIds": [
+          "audit2024",
+          "rural2026",
+          "impact-grant"
+        ]
+      },
+      {
+        "name": "h",
+        "value": 0.001,
+        "unit": "QALY treatment burden per attributable patient",
+        "basis": "judgment",
+        "rationale": "Explicit judgment; not source-calibrated local causal estimate.",
+        "sourceIds": [
+          "patients",
+          "audit",
+          "clinical"
+        ]
+      },
+      {
+        "name": "g",
+        "value": 1,
+        "unit": "MSA benefit fraction",
+        "basis": "judgment",
+        "rationale": "Explicit judgment; not source-calibrated local causal estimate.",
+        "sourceIds": [
+          "patients",
+          "audit",
+          "clinical"
+        ]
+      },
+      {
+        "name": "d",
+        "value": 0.03,
+        "unit": "annual discount rate",
+        "basis": "judgment",
+        "rationale": "Explicit judgment; not source-calibrated local causal estimate.",
+        "sourceIds": [
+          "patients",
+          "audit",
+          "clinical"
+        ]
+      },
+      {
+        "name": "I",
+        "value": 22722,
+        "unit": "USD annual netted fiduciary fees",
+        "basis": "observed",
+        "rationale": "Audit note3 nets 9,129 operating-fund and 13,593 endowment fiduciary fees from investment return; PartIX11f is zero. Restore once to resource cost.",
+        "sourceIds": [
+          "audit2024",
+          "return2024"
+        ]
+      },
+      {
+        "name": "Cd",
+        "value": 0,
+        "unit": "USD",
+        "basis": "judgment",
+        "rationale": "Scenario-only annual dental resource allowance, including space/clinical labor and annual capital use; not observed operating budget.",
+        "sourceIds": []
+      },
+      {
+        "name": "Nd",
+        "value": 0,
+        "unit": "planned annual dental patients",
+        "basis": "judgment",
+        "rationale": "Scenario only: 1,500 first-year forecast from grant proposal, not observed throughput.",
+        "sourceIds": [
+          "dental-grant"
+        ]
+      },
+      {
+        "name": "rd",
+        "value": 0,
+        "unit": "fraction",
+        "basis": "judgment",
+        "rationale": "Scenario-only fraction of planned dental cohort realized.",
+        "sourceIds": []
+      },
+      {
+        "name": "ad",
+        "value": 0,
+        "unit": "fraction",
+        "basis": "judgment",
+        "rationale": "Scenario-only dental additionality beyond other care.",
+        "sourceIds": []
+      },
+      {
+        "name": "pd",
+        "value": 0,
+        "unit": "fraction",
+        "basis": "judgment",
+        "rationale": "Scenario-only fraction with meaningful dental symptom improvement.",
+        "sourceIds": []
+      },
+      {
+        "name": "ud",
+        "value": 0,
+        "unit": "utility increment",
+        "basis": "judgment",
+        "rationale": "Scenario-only dental quality gain; not sourced from oral-specific preference scales.",
+        "sourceIds": []
+      },
+      {
+        "name": "Td",
+        "value": 0,
+        "unit": "years",
+        "basis": "judgment",
+        "rationale": "Scenario-only half-year benefit; no lifetime dental award.",
+        "sourceIds": []
+      },
+      {
+        "name": "hd",
+        "value": 0,
+        "unit": "QALY per attributable dental patient",
+        "basis": "judgment",
+        "rationale": "Scenario-only treatment burden.",
+        "sourceIds": []
+      },
+      {
+        "name": "od",
+        "value": 0,
+        "unit": "fraction",
+        "basis": "judgment",
+        "rationale": "Scenario-only residual-overlap adjustment; no measured deduplication.",
+        "sourceIds": []
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "central",
+        "label": "Broad direct-clinical health scenario",
+        "parameterOverrides": {},
+        "costUSD": 2427658,
+        "allPopulationQalys": 3.1479955910350492,
+        "editionQalys": 3.1479955910350492,
+        "pricePer10Qalys": 7711757.941826708,
+        "assumptions": "{\"C0\":1954936,\"M\":1300000,\"w\":0.25,\"H\":10000,\"s\":0.25,\"k\":50,\"D\":342,\"share\":0.25,\"f\":1,\"p\":0.25,\"u\":0.1,\"rho\":0.5,\"T\":1,\"a\":0.5,\"b\":0.25,\"h\":0.001,\"g\":1,\"d\":0.03,\"I\":22722,\"Cd\":0,\"Nd\":0,\"rd\":0,\"ad\":0,\"pd\":0,\"ud\":0,\"Td\":0,\"hd\":0,\"od\":0}"
+      },
+      {
+        "id": "low",
+        "label": "Small response and substantial alternative care",
+        "parameterOverrides": {
+          "share": 0.35,
+          "f": 0.75,
+          "p": 0.1,
+          "u": 0.03,
+          "T": 0.5,
+          "a": 0.25,
+          "b": 0.1,
+          "h": 0.0005,
+          "g": 0.95
+        },
+        "costUSD": 2427658,
+        "allPopulationQalys": 0.014984017479336044,
+        "editionQalys": 0.01423481660536924,
+        "pricePer10Qalys": 1705436794.3766203,
+        "assumptions": "{\"C0\":1954936,\"M\":1300000,\"w\":0.25,\"H\":10000,\"s\":0.25,\"k\":50,\"D\":342,\"share\":0.35,\"f\":0.75,\"p\":0.1,\"u\":0.03,\"rho\":0.5,\"T\":0.5,\"a\":0.25,\"b\":0.1,\"h\":0.0005,\"g\":0.95,\"d\":0.03,\"I\":22722,\"Cd\":0,\"Nd\":0,\"rd\":0,\"ad\":0,\"pd\":0,\"ud\":0,\"Td\":0,\"hd\":0,\"od\":0}"
+      },
+      {
+        "id": "high",
+        "label": "Larger clinical response and sustained benefit",
+        "parameterOverrides": {
+          "share": 0.2,
+          "f": 1.2,
+          "p": 0.4,
+          "u": 0.15,
+          "rho": 0.25,
+          "T": 2,
+          "a": 0.75,
+          "b": 0.5
+        },
+        "costUSD": 2427658,
+        "allPopulationQalys": 69.96336879631968,
+        "editionQalys": 69.96336879631968,
+        "pricePer10Qalys": 346989.86652107915,
+        "assumptions": "{\"C0\":1954936,\"M\":1300000,\"w\":0.25,\"H\":10000,\"s\":0.25,\"k\":50,\"D\":342,\"share\":0.2,\"f\":1.2,\"p\":0.4,\"u\":0.15,\"rho\":0.25,\"T\":2,\"a\":0.75,\"b\":0.5,\"h\":0.001,\"g\":1,\"d\":0.03,\"I\":22722,\"Cd\":0,\"Nd\":0,\"rd\":0,\"ad\":0,\"pd\":0,\"ud\":0,\"Td\":0,\"hd\":0,\"od\":0}"
+      },
+      {
+        "id": "zero",
+        "label": "Complete funding substitution",
+        "parameterOverrides": {
+          "b": 0
+        },
+        "costUSD": 2427658,
+        "allPopulationQalys": 0,
+        "editionQalys": 0,
+        "pricePer10Qalys": null,
+        "assumptions": "{\"C0\":1954936,\"M\":1300000,\"w\":0.25,\"H\":10000,\"s\":0.25,\"k\":50,\"D\":342,\"share\":0.25,\"f\":1,\"p\":0.25,\"u\":0.1,\"rho\":0.5,\"T\":1,\"a\":0.5,\"b\":0,\"h\":0.001,\"g\":1,\"d\":0.03,\"I\":22722,\"Cd\":0,\"Nd\":0,\"rd\":0,\"ad\":0,\"pd\":0,\"ud\":0,\"Td\":0,\"hd\":0,\"od\":0}"
+      },
+      {
+        "id": "adverse",
+        "label": "No clinical benefit with treatment burden",
+        "parameterOverrides": {
+          "p": 0,
+          "h": 0.005
+        },
+        "costUSD": 2427658,
+        "allPopulationQalys": -0.855,
+        "editionQalys": -0.855,
+        "pricePer10Qalys": null,
+        "assumptions": "{\"C0\":1954936,\"M\":1300000,\"w\":0.25,\"H\":10000,\"s\":0.25,\"k\":50,\"D\":342,\"share\":0.25,\"f\":1,\"p\":0,\"u\":0.1,\"rho\":0.5,\"T\":1,\"a\":0.5,\"b\":0.25,\"h\":0.005,\"g\":1,\"d\":0.03,\"I\":22722,\"Cd\":0,\"Nd\":0,\"rd\":0,\"ad\":0,\"pd\":0,\"ud\":0,\"Td\":0,\"hd\":0,\"od\":0}"
+      },
+      {
+        "id": "external-cost",
+        "label": "Full reported medication value and larger nursing resources",
+        "parameterOverrides": {
+          "w": 1,
+          "s": 0.5,
+          "k": 75
+        },
+        "costUSD": 3652658,
+        "allPopulationQalys": 3.1479955910350492,
+        "editionQalys": 3.1479955910350492,
+        "pricePer10Qalys": 11603122.985312123,
+        "assumptions": "{\"C0\":1954936,\"M\":1300000,\"w\":1,\"H\":10000,\"s\":0.5,\"k\":75,\"D\":342,\"share\":0.25,\"f\":1,\"p\":0.25,\"u\":0.1,\"rho\":0.5,\"T\":1,\"a\":0.5,\"b\":0.25,\"h\":0.001,\"g\":1,\"d\":0.03,\"I\":22722,\"Cd\":0,\"Nd\":0,\"rd\":0,\"ad\":0,\"pd\":0,\"ud\":0,\"Td\":0,\"hd\":0,\"od\":0}"
+      },
+      {
+        "id": "growth-cost",
+        "label": "Higher operating cost with unchanged outcomes",
+        "parameterOverrides": {
+          "C0": 2443670
+        },
+        "costUSD": 2916392,
+        "allPopulationQalys": 3.1479955910350492,
+        "editionQalys": 3.1479955910350492,
+        "pricePer10Qalys": 9264282.35257185,
+        "assumptions": "{\"C0\":2443670,\"M\":1300000,\"w\":0.25,\"H\":10000,\"s\":0.25,\"k\":50,\"D\":342,\"share\":0.25,\"f\":1,\"p\":0.25,\"u\":0.1,\"rho\":0.5,\"T\":1,\"a\":0.5,\"b\":0.25,\"h\":0.001,\"g\":1,\"d\":0.03,\"I\":22722,\"Cd\":0,\"Nd\":0,\"rd\":0,\"ad\":0,\"pd\":0,\"ud\":0,\"Td\":0,\"hd\":0,\"od\":0}"
+      },
+      {
+        "id": "recipient-only",
+        "label": "Reported recipient cost only; external resources excluded",
+        "parameterOverrides": {
+          "w": 0,
+          "s": 0
+        },
+        "costUSD": 1977658,
+        "allPopulationQalys": 3.1479955910350492,
+        "editionQalys": 3.1479955910350492,
+        "pricePer10Qalys": 6282276.90544431,
+        "assumptions": "{\"C0\":1954936,\"M\":1300000,\"w\":0,\"H\":10000,\"s\":0,\"k\":50,\"D\":342,\"share\":0.25,\"f\":1,\"p\":0.25,\"u\":0.1,\"rho\":0.5,\"T\":1,\"a\":0.5,\"b\":0.25,\"h\":0.001,\"g\":1,\"d\":0.03,\"I\":22722,\"Cd\":0,\"Nd\":0,\"rd\":0,\"ad\":0,\"pd\":0,\"ud\":0,\"Td\":0,\"hd\":0,\"od\":0}"
+      },
+      {
+        "id": "funding-low",
+        "label": "10% unrestricted funding response",
+        "parameterOverrides": {
+          "b": 0.1
+        },
+        "costUSD": 2427658,
+        "allPopulationQalys": 1.25919823641402,
+        "editionQalys": 1.25919823641402,
+        "pricePer10Qalys": 19279394.854566764,
+        "assumptions": "{\"C0\":1954936,\"M\":1300000,\"w\":0.25,\"H\":10000,\"s\":0.25,\"k\":50,\"D\":342,\"share\":0.25,\"f\":1,\"p\":0.25,\"u\":0.1,\"rho\":0.5,\"T\":1,\"a\":0.5,\"b\":0.1,\"h\":0.001,\"g\":1,\"d\":0.03,\"I\":22722,\"Cd\":0,\"Nd\":0,\"rd\":0,\"ad\":0,\"pd\":0,\"ud\":0,\"Td\":0,\"hd\":0,\"od\":0}"
+      },
+      {
+        "id": "funding-mid",
+        "label": "15% unrestricted funding response",
+        "parameterOverrides": {
+          "b": 0.15
+        },
+        "costUSD": 2427658,
+        "allPopulationQalys": 1.8887973546210295,
+        "editionQalys": 1.8887973546210295,
+        "pricePer10Qalys": 12852929.903044512,
+        "assumptions": "{\"C0\":1954936,\"M\":1300000,\"w\":0.25,\"H\":10000,\"s\":0.25,\"k\":50,\"D\":342,\"share\":0.25,\"f\":1,\"p\":0.25,\"u\":0.1,\"rho\":0.5,\"T\":1,\"a\":0.5,\"b\":0.15,\"h\":0.001,\"g\":1,\"d\":0.03,\"I\":22722,\"Cd\":0,\"Nd\":0,\"rd\":0,\"ad\":0,\"pd\":0,\"ud\":0,\"Td\":0,\"hd\":0,\"od\":0}"
+      },
+      {
+        "id": "dental-prospective",
+        "label": "Illustrative dental ramp with an added resource allowance",
+        "parameterOverrides": {
+          "Cd": 350000,
+          "Nd": 1500,
+          "rd": 0.5,
+          "ad": 0.5,
+          "pd": 0.4,
+          "ud": 0.05,
+          "Td": 0.5,
+          "hd": 0.001,
+          "od": 0.75
+        },
+        "costUSD": 2777658,
+        "allPopulationQalys": 3.7808080910350492,
+        "editionQalys": 3.7808080910350492,
+        "pricePer10Qalys": 7346730.998027401,
+        "assumptions": "{\"C0\":1954936,\"M\":1300000,\"w\":0.25,\"H\":10000,\"s\":0.25,\"k\":50,\"D\":342,\"share\":0.25,\"f\":1,\"p\":0.25,\"u\":0.1,\"rho\":0.5,\"T\":1,\"a\":0.5,\"b\":0.25,\"h\":0.001,\"g\":1,\"d\":0.03,\"I\":22722,\"Cd\":350000,\"Nd\":1500,\"rd\":0.5,\"ad\":0.5,\"pd\":0.4,\"ud\":0.05,\"Td\":0.5,\"hd\":0.001,\"od\":0.75}"
+      },
+      {
+        "id": "depression-proxy",
+        "label": "Depression-only insurance-transfer stress",
+        "parameterOverrides": {
+          "p": 0.0915
+        },
+        "costUSD": 2427658,
+        "allPopulationQalys": 1.043752386318828,
+        "editionQalys": 1.043752386318828,
+        "pricePer10Qalys": 23258945.62561929,
+        "assumptions": "{\"C0\":1954936,\"M\":1300000,\"w\":0.25,\"H\":10000,\"s\":0.25,\"k\":50,\"D\":342,\"share\":0.25,\"f\":1,\"p\":0.0915,\"u\":0.1,\"rho\":0.5,\"T\":1,\"a\":0.5,\"b\":0.25,\"h\":0.001,\"g\":1,\"d\":0.03,\"I\":22722,\"Cd\":0,\"Nd\":0,\"rd\":0,\"ad\":0,\"pd\":0,\"ud\":0,\"Td\":0,\"hd\":0,\"od\":0}",
+        "interpretation": "Replaces broad response prior; a=.5 denotes combined clinic transfer/additionality. Prevalence difference is not clinical responder probability. Utility and persistence remain unvalidated priors. Do not add to central."
+      },
+      {
+        "id": "high-recurring-cost",
+        "label": "Optimistic two-year benefit with two annual resource envelopes",
+        "parameterOverrides": {
+          "share": 0.2,
+          "f": 1.2,
+          "p": 0.4,
+          "u": 0.15,
+          "rho": 0.25,
+          "T": 2,
+          "a": 0.75,
+          "b": 0.5,
+          "C0": 3909872,
+          "I": 45444,
+          "M": 2600000,
+          "H": 20000
+        },
+        "costUSD": 4855316,
+        "allPopulationQalys": 69.96336879631968,
+        "editionQalys": 69.96336879631968,
+        "pricePer10Qalys": 693979.7330421583,
+        "assumptions": "{\"C0\":3909872,\"M\":2600000,\"w\":0.25,\"H\":20000,\"s\":0.25,\"k\":50,\"D\":342,\"share\":0.2,\"f\":1.2,\"p\":0.4,\"u\":0.15,\"rho\":0.25,\"T\":2,\"a\":0.75,\"b\":0.5,\"h\":0.001,\"g\":1,\"d\":0.03,\"I\":45444,\"Cd\":0,\"Nd\":0,\"rd\":0,\"ad\":0,\"pd\":0,\"ud\":0,\"Td\":0,\"hd\":0,\"od\":0}",
+        "interpretation": "Undiscounted second identical annual cost is a conservative accounting sensitivity, not a forecast of actual year2 spending. No duplicate cohort benefit."
+      }
+    ],
+    "missingInputs": [
+      "Verified unique annual patients and overlapping medical/dental cohorts.",
+      "Parker-controlled comparative clinical outcomes and benefit persistence.",
+      "Current 2026 unrestricted operating budget, cash commitments and residual funding gap beyond awarded grants.",
+      "Reconciliation of in-kind categories, medication opportunity cost and nursing hours.",
+      "Actual dental throughput, dental resource cost including donated space/clinical labor, baseline pain and waiting-time counterfactual.",
+      "Full-portfolio long-term prevention, policy, educational benefits and potential harms."
+    ],
+    "sensitivity": [
+      "Funding-response b is unmeasured: central .25, .1 and .15 sensitivities are not posterior probabilities.",
+      "Central price changes only through restoration of $22,722 investment fees; previous clinical priors retained.",
+      "Prospective dental scenario adds an illustrative resource allowance and discounts planned reach, substitution, response and overlap; no actual dental causal claim.",
+      "Zero funding response has no finite positive-benefit price; adverse treatment-burden scenario can be negative."
+    ],
+    "centralParameters": {
+      "C0": 1954936,
+      "M": 1300000,
+      "w": 0.25,
+      "H": 10000,
+      "s": 0.25,
+      "k": 50,
+      "D": 342,
+      "share": 0.25,
+      "f": 1,
+      "p": 0.25,
+      "u": 0.1,
+      "rho": 0.5,
+      "T": 1,
+      "a": 0.5,
+      "b": 0.25,
+      "h": 0.001,
+      "g": 1,
+      "d": 0.03,
+      "I": 22722,
+      "Cd": 0,
+      "Nd": 0,
+      "rd": 0,
+      "ad": 0,
+      "pd": 0,
+      "ud": 0,
+      "Td": 0,
+      "hd": 0,
+      "od": 0
+    },
+    "nativeCosts": "Augmented recipient annual expense envelope $2,427,658 / 1,368 inferred patients = $1,774.60 per inferred patient; $14,196.83 per additional clinical-access equivalent and $56,787.32 per modeled responder. These are accounting-model ratios, not clinic prices or donation quotes."
+  }
+}

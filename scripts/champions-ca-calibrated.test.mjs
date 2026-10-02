@@ -2,6 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {calculate,central,diagnostics} from '../lib/champions-ca-calibrated-model.mjs';
 import {incomeHealthyYearEquivalent} from '../lib/income-health-equivalence.mjs';
+import {readFileSync} from 'node:fs';
+import {scenarioIncomeEquivalent,reportPrice,researchListPrice,expenseAverage} from '../lib/geography-reports.mjs';
 
 const near=(actual,expected)=>assert.ok(Math.abs(actual-expected)<=1e-10*Math.max(1,Math.abs(expected)),`${actual} != ${expected}`);
 
@@ -73,4 +75,42 @@ test('malformed, out-of-domain and nonfinite overrides are rejected',()=>{
  for(const output of Object.values(diagnostics())){
   const visit=value=>{if(typeof value==='number')assert.ok(Number.isFinite(value));else if(value&&typeof value==='object')Object.values(value).forEach(visit);};visit(output);
  }
+});
+test('report/API scenarios serialize the same signed credited model, including unknowns',()=>{
+ const data=JSON.parse(readFileSync(new URL('../data/geography-reports.json',import.meta.url)));
+ const report=data.reports.find(r=>r.edition==='california'&&r.slug==='champions-for-health');
+ for(const[id,result]of Object.entries(diagnostics())){
+  const scenario=report.model.scenarios.find(s=>s.id===id);assert.ok(scenario,id);
+  if(result.healthYears===null)assert.equal(scenario.editionQalys,null);else near(scenario.editionQalys,result.healthYears);
+  if(result.incomeEquivalentYears===null)assert.equal(scenarioIncomeEquivalent(scenario),null);else near(scenarioIncomeEquivalent(scenario),result.incomeEquivalentYears);
+  if(result.partialPasdPrice10===null)assert.equal(scenario.costPer10Qalys,null);else near(scenario.costPer10Qalys,result.partialPasdPrice10);
+ }
+ near(reportPrice(report),central.partialPasdPrice10);near(researchListPrice(report),central.partialPasdPrice10);
+ near(expenseAverage(report),3670707);
+ const historical=report.model.scenarios.find(s=>s.id==='historical-alpha-central');near(10*historical.costUSD/historical.editionQalys,32960000);
+ assert.equal(report.model.scenarios.find(s=>s.id==='portfolio').editionQalys,null);
+ assert.match(report.sections.cost,/partial specialty-care/);assert.match(report.sections.cost,/not a quoted donation purchase or a complete-portfolio return/);
+ assert.match(report.sections.cost,/cancels the PASD expense share/);
+ assert.match(report.sections.monitoring,/Duplicate procedure records do not become new patients/);
+});
+test('closed source intervals preserved once in both timing registries; old models remain intact',()=>{
+ const geo=JSON.parse(readFileSync(new URL('../data/geography-reports.json',import.meta.url)));
+ const effort=JSON.parse(readFileSync(new URL('../data/research-effort.json',import.meta.url)));
+ const closed=JSON.parse(readFileSync(new URL('../docs/geography-discovery/champions-ca-recalibration-2026-10-02.closed.json',import.meta.url)));
+ const root=JSON.parse(readFileSync(new URL('../docs/geography-discovery/champions-ca-root-source-2026-10-02.closed.json',import.meta.url)));
+ const report=geo.reports.find(r=>r.edition==='california'&&r.slug==='champions-for-health');
+ let total=0;
+ for(const s of [...closed.sessions,root.session]){
+  assert.equal(report.sessionIds.filter(id=>id===s.id).length,1);
+  const g=geo.sessions.filter(x=>x.id===s.id),e=effort.organizations[report.organization].sessions.filter(x=>x.id===s.id);
+  assert.equal(g.length,1);assert.equal(e.length,1);
+  for(const entry of [g[0],e[0]]){
+   assert.equal(entry.startedAt,s.startedAt);assert.equal(entry.endedAt,s.endedAt);assert.equal(entry.model.id,'gpt-6.1-sol');
+   assert.match(entry.model.evidence,/user-confirmed model assignment/i);assert.doesNotMatch(entry.evidence,/\/private\/tmp\//);
+  }
+  total+=(Date.parse(s.endedAt)-Date.parse(s.startedAt))/1000;
+ }
+ near(total,795.597);
+ assert.equal(geo.sessions.find(s=>s.id==='8d787949-84ee-4208-9a56-df29661067ab').model.id,'gpt-6-astra');
+ assert.equal(report.model.historicalModel.version,'ca-champions-beta-withdrawn-v3');
 });

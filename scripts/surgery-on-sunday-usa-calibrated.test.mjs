@@ -1,7 +1,26 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {reportPrice,scenarioIncomeEquivalent,editionResearchEffort} from '../lib/geography-reports.mjs';
 import {central,calculate,scenarios} from '../lib/surgery-on-sunday-usa-calibrated-model.mjs';
 const near=(a,b)=>assert.ok(Math.abs(a-b)<=Math.max(1e-12,Math.abs(b)*1e-11),`${a} != ${b}`);
+test('integrated Surgery on Sunday report preserves history and matches every current scenario and clock',()=>{
+ const data=JSON.parse(readFileSync(new URL('../data/geography-reports.json',import.meta.url)));
+ const r=data.reports.find(r=>r.edition==='usa'&&r.slug==='surgery-on-sunday');
+ const frozen=JSON.parse(readFileSync(new URL('../data/usa/surgery-on-sunday-usa-pre-recalibration-model.json',import.meta.url)));
+ assert.deepEqual(r.historicalModel,frozen.model);assert.equal(r.model.scenarios.length,39);
+ for(const p of scenarios){
+  const s=r.model.scenarios.find(s=>s.id===(p.id==='central-judgment'?'central':p.id)),x=calculate(p);
+  assert.deepEqual({...s.nativeOutputs,parameters:p},JSON.parse(JSON.stringify(x)));
+  if(x.resourceEquivalentUSA!==null)near(scenarioIncomeEquivalent(s),x.resourceEquivalentUSA);
+  else assert.equal(s.incomeUnknown,true);
+ }
+ near(reportPrice(r),1235136.175867155);
+ assert.equal(r.sessionIds.length,8);
+ const added=data.sessions.filter(s=>r.sessionIds.includes(s.id)&&s.model.id==='gpt-6.1-sol');
+ assert.equal(added.length,5);assert.equal(added.reduce((n,s)=>n+s.seconds,0),378);
+ assert.match(editionResearchEffort(data,r).label,/5 min on GPT-6 Astra Light.*14 min on GPT-6 Astra Medium.*6 min on GPT-6.1 Sol/);
+});
 test('every Surgery on Sunday scenario independently reconstructs health and signed household/resource cohorts',()=>{
  for(const p of scenarios){
   const r=calculate(p);
@@ -17,9 +36,11 @@ test('every Surgery on Sunday scenario independently reconstructs health and sig
   const burden=p.nonbuyerTravel+p.nonbuyerLostPay+p.nonbuyerMedication;
   let cash=.5*p.g*(buyers*Math.log1p((p.purchaseCash-p.buyerIncrementalBurden)/p.recipientIncome)+nonbuyers*Math.log1p(-burden/p.recipientIncome))/(1+p.discount)**p.delay;
   const recovered=nonbuyers*p.recoveryShare*p.clinicalAdditionality;
+  let rawWage=0;for(let y=1;y<=p.incomeYears;y++)rawWage+=p.g*recovered*(1-p.mortality)**y*p.earningsGain;
+  near(r.functionalRecoveryGrossCashUSA,rawWage);
   let wage=0;
-  if(p.incomeYears>0)wage+=.5*recovered*p.g*Math.log1p(p.earningsGain/(p.recipientIncome-burden))/(1+p.discount)**p.delay;
-  for(let y=1;y<p.incomeYears;y++)wage+=.5*recovered*p.g*Math.log1p(p.earningsGain/p.recipientIncome)/(1+p.discount)**(p.delay+y);
+  if(p.incomeYears>0)wage+=.5*recovered*(1-p.mortality)*p.g*Math.log1p(p.earningsGain/(p.recipientIncome-burden))/(1+p.discount)**(p.delay+1);
+  for(let y=2;y<=p.incomeYears;y++)wage+=.5*recovered*(1-p.mortality)**y*p.g*Math.log1p(p.earningsGain/p.recipientIncome)/(1+p.discount)**(p.delay+y);
   wage*=p.incomeIndependent;
   const volunteer=.5*N*p.volunteersPerCase*p.g*p.volunteerIndependent*Math.log1p(-p.volunteerCash/p.volunteerIncome)/(1+p.discount)**p.delay;
   near(r.resourceEquivalentUSA,cash+wage+volunteer);
@@ -29,7 +50,7 @@ test('every Surgery on Sunday scenario independently reconstructs health and sig
   if(p.institutionalStatus!=='unknown')near(r.grossInstitutionalEnvelopeUSD,p.G+N*(p.donatedResourcePerAddedCase+p.complicationResourcePerAddedCase));
   else assert.equal(r.grossInstitutionalEnvelopeUSD,null);
  }
- near(calculate(central).combinedDonationPricePer10USD,1234530.1327560307);
+ near(calculate(central).combinedDonationPricePer10USD,1235136.175867155);
 });
 test('capacity, purchased care, genuine zero, unknown and independent harm remain distinct',()=>{
  assert.equal(calculate({...central,purchaseShare:1}).healthQalysUSA,0);

@@ -88,6 +88,8 @@ test('End Overdose retains separately dated California arithmetic and deduplicat
  assert.equal(ca.model.scenarios.find(s=>s.id==='ca-zero').editionQalys,0);
 });
 test('unestimated needs blockers; observed inputs need sources; stage and cohort are checked',()=>{
+ const zero=fixture();Object.assign(zero.r.model.scenarios[0],{costUSD:0,allPopulationQalys:0,editionQalys:0});validateEditionReports(zero.data,zero.progress);assert.equal(reportPrice(zero.r),null);
+ const negative=fixture();negative.r.model.scenarios[0].costUSD=-1;assert.throws(()=>validateEditionReports(negative.data,negative.progress),/nonnegative/);
  const nullCase=fixture();nullCase.r.model.scenarios[0].editionQalys=null;assert.throws(()=>validateEditionReports(nullCase.data,nullCase.progress),/blocking inputs/);
  let {data,progress,r}=fixture();r.model.scenarios=[];assert.throws(()=>validateEditionReports(data,progress),/blocking inputs/);r.model.missingInputs=['Unknown additional care'];validateEditionReports(data,progress);
  r.model.inputs[0].basis='observed';assert.throws(()=>validateEditionReports(data,progress),/source/);r.model.inputs[0].sourceIds=['s1'];validateEditionReports(data,progress);

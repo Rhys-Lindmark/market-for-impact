@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import * as current from '../lib/parker-nyc-calibrated-model.mjs';
 import * as archived from '../docs/geography-discovery/parker-nyc-recalibration-2026-10-02.calculate.mjs';
 import {incomeHealthyYearEquivalent} from '../lib/income-health-equivalence.mjs';
+import {reportPrice,editionResearchEffort} from '../lib/geography-reports.mjs';
 const close=(a,b)=>assert.ok(Math.abs(a-b)<=1e-10*Math.max(1,Math.abs(b)),`${a} != ${b}`);
 const run=overrides=>current.calculate({...current.central,...overrides});
 function equivalent(a,b){
@@ -12,6 +13,25 @@ function equivalent(a,b){
  assert.deepEqual(Object.keys(a),Object.keys(b));
  for(const k of Object.keys(b))equivalent(a[k],b[k]);
 }
+
+test('integrated Parker history, all current parameters/outputs, public signed price and ten clocks agree',()=>{
+ const data=JSON.parse(fs.readFileSync(new URL('../data/geography-reports.json',import.meta.url),'utf8'));
+ const r=data.reports.find(x=>x.edition==='new-york-city'&&x.slug==='parker-family-health-center');
+ const frozen=JSON.parse(fs.readFileSync(new URL('../data/new-york-city/parker-nyc-pre-recalibration-model.json',import.meta.url),'utf8'));
+ assert.deepEqual(r.historicalModel,frozen.model);assert.equal(r.model.scenarios.length,28);
+ for(const[id,overrides]of Object.entries(current.cases)){
+  const s=r.model.scenarios.find(x=>x.id===id),p={...current.central,...overrides},expected=current.calculate(p);
+  assert.deepEqual(s.parameters,p);equivalent(s.nativeOutputs,expected);
+  if(expected.resourcesLocal===null)assert.equal(s.incomeUnknown,true);
+  else close(s.incomePathways.reduce((n,f)=>n+incomeHealthyYearEquivalent(f),0),expected.resourcesLocal);
+  if(expected.donorPrice10===null)assert.equal(s.pricePer10Qalys,null);else close(s.pricePer10Qalys,expected.donorPrice10);
+ }
+ close(reportPrice(r),10187420.654228546);
+ assert.equal(r.sessionIds.length,10);assert.equal(new Set(r.sessionIds).size,10);
+ const header=editionResearchEffort(data,r).label;assert.match(header,/26 min on GPT-6 Astra Medium/);assert.match(header,/10 min on GPT-6\.1 Sol/);
+ const effort=JSON.parse(fs.readFileSync(new URL('../data/research-effort.json',import.meta.url),'utf8'));
+ assert.deepEqual(effort.organizations[r.organizationId].sessions,r.sessionIds.map(id=>data.sessions.find(s=>s.id===id)));
+});
 
 test('all27 Parker cases preserve author outputs and reproduce shared signed component ledgers',()=>{
  assert.equal(Object.keys(current.cases).length,27);

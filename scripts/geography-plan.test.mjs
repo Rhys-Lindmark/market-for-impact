@@ -13,6 +13,17 @@ assert.equal(p.recalibration.publishedCohortCompleted,p.recalibration.completedR
 assert.equal(new Set(p.recalibration.completedReportIds).size,p.recalibration.completedReportIds.length);
 for(const id of p.recalibration.completedReportIds)assert.ok(publicReviewIds.has(id),'Recalibration must identify an existing public review: '+id);
 assert.equal(p.recalibration.originalPendingQueue,p.recalibration.publishedCohortTotal-3+p.recalibration.legacyModelTotal);
+assert.equal(p.recalibration.legacyModelCompleted,p.recalibration.legacyCompletedReportIds.length);
+assert.equal(new Set(p.recalibration.legacyCompletedReportIds).size,p.recalibration.legacyModelCompleted);
+assert.equal(p.recalibration.originalPendingQueueCompleted,p.recalibration.publishedCohortCompleted-3+p.recalibration.legacyModelCompleted);
+for(const id of p.recalibration.legacyCompletedReportIds){
+ assert(!publicReviewIds.has(id),'Separate legacy identities must not inflate published-cohort completion');
+ if(id==='bay/pacific-hearing-connection'){
+  const receipt=read('geography-discovery/pacific-hearing-legacy-publication-2026-10-02.json');
+  assert.equal(receipt.deployment.status,'succeeded');
+  assert.equal(receipt.source.commit_sha,receipt.version.source.commit_sha);
+ }
+}
 assert.equal(p.usageReserve.minimumWeeklyRemainingPercent,20);
 assert.equal(p.usageReserve.operationalStopRemainingPercent,25);
 assert.equal(p.editions.length,11);

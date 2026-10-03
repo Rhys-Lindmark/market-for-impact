@@ -1,5 +1,17 @@
 # Operation Access legacy phase
 
+## Current acceptance hold — 2026-10-03 04:14 UTC
+
+Author terminal, four packets archived `operation-access-legacy-recalibration-2026-10-02.*`. Actual dedicated source273.432seconds +model/writing1242.619seconds =1516.051seconds (~25min), honest15min-target overrun. Preserve both actual intervals, model attribution user-confirmed Sol/raw runtime unknown; no retrospective trimming. Archive is original proposal, not production acceptance.
+
+Portable candidate `lib/operation-access-calibrated-model.mjs` is not wired to report/API/ranking. Root fixed symbol own-key validation, unknown numeric funding/capzero gates, gift-zero induced harms and explicit resource-only delay/discount names.36current cases, nine old complete-result hashes; focused command over current/historical and two original suites yielded10PASS. These validate only implemented arithmetic/guards, not scientific acceptance. Four explicit TODO tests now identify unresolved scientific gates.
+
+Independent reviewer `/root/cribs_independent_review` was dispatched alone after author terminal and is finalizing NEEDS_CORRECTION packet at `/private/tmp/operation-access-legacy-independent-review-20261002.{md,closed.json}`. Reviewer independently reconstructs clinical curves and old results, but identified four material resource-ledger requirements: (1) full buyer cash retention where buyer clinical benefit already cancels, (2) explicit response knowledge for success-dependent cash/pay, (3) split actual worker/success households BEFORE logarithmic valuation, (4) sequential actual negative travel/lostpay and positive savings/recovery flows so positive netting never attenuates negative burdens. Current candidate prices are not accepted/public; do not publish or count despite numeric tests passing.
+
+Next root action: start a contemporaneous dedicated modeling correction session before scientific cohort redesign; split buyer/free/unmet × response ×worker incidence once, preserve same household cash-before-pay baseline, sequential full-negative/positive-retained increments, separately expose known independent dollar routes while success-related quantities are unknown. Correct current candidate and replace TODO gates with independent analytic regressions; preserve historical nine-case hashes. Then one bounded reviewer recheck, report/API/ranking/provenance integration, native build/responsive/publication/count receipt. No count advance:legacy2/11/originalqueue39/48.
+
+PR384 description was stale (37-review original snapshot, schedules paused,33%floor, documentation-only). It is now corrected to actual40/40 cohort,2/11 legacy,39/48 originalqueue, three unresolved provenance gates, implementation evidence, active fullscope continuity and latest20%floor/25% operational guard. Durable body `pr-384-current-status.md` uses verified repository links. Full geographic goal remains active and unchanged.
+
 2026-10-03 03:46 UTC. Full geographic objective unchanged. Published cohort40/40; confirmed legacy2/11, original queue39/48. Clinic Sites375/product and376/progress succeeded; do not redo.
 
 Author `/root/cribs_recalibration` is sole live helper, dispatched for15dedicated minutes with isolated `/private/tmp/operation-access-legacy-recalibration-20261002.{md,calculate.mjs,receipts.json,closed.json}`. Root-only checkout/Git/Sites; helper noagents/builds/installs. Latest live usage98%remaining,25% no-new-batch guard and20%floor, noreset used. Revalidate handle before waiting/restarting.

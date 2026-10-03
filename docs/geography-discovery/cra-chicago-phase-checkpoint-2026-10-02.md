@@ -2,6 +2,8 @@
 
 ## Current accepted state
 
+Published: Sites371 succeeded from d05c40f862cef11c9bef76aa50a2b44a9446e908 on 2026-10-03T01:12:43.148461Z; exact receipt `cra-chicago-publication-2026-10-02.json`. Published-cohort count is now 40/40, original pending queue 37/48, legacy 0/11. Paragraphs below preserve pre-publication checkpoints. Next: legacy models and ambiguous depth-provenance classification, then the full geographic expansion. No additional initial/deep report or source-vetted shortlist completion is inferred from this recalibration.
+
 Previous goal turn: progress through evidence review; this phase now completes scientific acceptance and checkout integration. The author's four final companions are archived unchanged. Root's second original-return identity check is preserved separately with its already closed 79.253-second clock. All three returns name THE CHICAGO RECOVERY ALLIANCE, EIN 36-3809778; their hashes match the author's original-response evidence. This establishes identity, not current funding capacity or audit/return reconciliation.
 
 Independent review required three corrections: unknown clinical zero placeholders must stay unknown; mortality-changed/common-alive groups must be disjoint; the stated 9,000 reach sensitivity must actually exist. Final portable calculator has 43 current cases, with all original 40 outputs unchanged and the original 16-case history preserved. Independent scientific and integration acceptance are durable companions. Current price is $2,637,009.48 versus $4,080,401.52 historical, driven mainly by finite mortality-adjusted survival rather than the old five-year truncation. Signed household resources are negative centrally; saved-life baseline wages are excluded.

@@ -1,6 +1,6 @@
 # Recalibrate existing in-depth reviews
 
-Latest published checkpoint: **39/40 recalibrations,1 pending; legacy0/11**. HALA LA published Sites369: conditional $10.05M per better life versus historical clinical $9.77M. Nutrition-health credit independently reduced; signed restricted-food/freed-budget resources, actual cash outlays and lost pay added separately. Full13-case history and six per-model clocks preserved. Independent scientific/integration acceptance,32 focused checks,2 responsive checks and build passed. Next Chicago Recovery Alliance; legacy11 and full expansion remain required. Usage99% remaining; floor20%, no new batches<=25%. Exact receipt hala-la-publication-2026-10-02.json. Earlier checkpoints below are historical.
+Latest published checkpoint: **40/40 recalibrations complete; legacy0/11**. Chicago Recovery Alliance published Sites371: conditional $2.64M per better life versus historical clinical $4.08M. Finite mortality-adjusted health and signed household access/purchase/resource effects independently reconstructed. All16 historical cases,43 current cases and eight actual per-model sessions preserved. Independent scientific/integration acceptance,30 focused tests,2 responsive tests and build passed. Next legacy11 and depth-provenance classification, then full geographic expansion. Usage99% remaining; floor20%, no new batches<=25%. Exact receipt cra-chicago-publication-2026-10-02.json. Earlier checkpoints below are historical.
 
 ## Current checkpoint — October 2
 

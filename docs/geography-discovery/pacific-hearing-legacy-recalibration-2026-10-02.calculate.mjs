@@ -11,7 +11,21 @@ const scale=(v,s)=>s===0?0:v===null?null:v*s;
 const sum=(a,b)=>a===null||b===null?null:a+b;
 const survival=(p,t)=>(1-p.mortality)**t;
 const use=(p,t)=>Math.exp(-(p.nonuseHazard+p.catchupHazard)*t);
-export function utilityYears(p){const k=p.nonuseHazard+p.catchupHazard-Math.log(1-p.mortality)+Math.log1p(p.discount),T=p.years,r=p.ramp;if(p.mortality===1)return 0;let a;if(k===0)a=r===0?T:T<=r?T*T/(2*r):T-r/2;else if(r===0)a=-Math.expm1(-k*T)/k;else{const z=Math.min(r,T);a=(1-(1+k*z)*Math.exp(-k*z))/(r*k*k)+(T>r?(Math.exp(-k*r)-Math.exp(-k*T))/k:0);}return a*survival(p,p.delay)/(1+p.discount)**p.delay;}
+export function utilityYears(p){
+ const k=p.nonuseHazard+p.catchupHazard-Math.log1p(-p.mortality)+Math.log1p(p.discount),T=p.years,r=p.ramp;
+ if(p.mortality===1)return 0;
+ let a;
+ if(k===0)a=r===0?T:T<=r?T*T/(2*r):T-r/2;
+ else if(r===0)a=-Math.expm1(-k*T)/k;
+ else{
+  const z=Math.min(r,T);let rampArea;
+  if(k*z<1e-4){let term=z*z/(2*r);rampArea=term;for(let n=1;n<=8;n++){term*=(-k*z)*(n+1)/(n*(n+2));rampArea+=term;}}
+  else rampArea=(-Math.expm1(-k*z)-k*z*Math.exp(-k*z))/(r*k*k);
+  const tail=T>r?Math.exp(-k*r)*(-Math.expm1(-k*(T-r)))/k:0;
+  a=rampArea+tail;
+ }
+ return a*survival(p,p.delay)/(1+p.discount)**p.delay;
+}
 function flow(kind,people,base,gain,delay,p){return {kind,people,annualIncomeBeforeUSD:base,annualIncomeGainUSD:gain,years:1,causalShare:1,editionShare:1,independentShare:gain>0?(kind==='pay'?p.positivePayIndependent:p.positiveCashIndependent):1,delayYears:delay,discountRate:p.discount};}
 function value(flows){return flows.reduce((s,f)=>s+bridge(f),0);}
 function dollars(flows){return flows.reduce((s,f)=>s+f.people*f.annualIncomeGainUSD/(1+f.discountRate)**f.delayYears,0);}

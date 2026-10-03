@@ -11,7 +11,7 @@ test('Candidate central and all43 finite scenarios retain signed components',()=
  close(r.native.completedFits,r.native.purchaserFits+r.native.equivalentFreeFits+r.native.unmetFits);
 });
 test('Independent midpoint quadrature verifies clinical ramp, delay, catchup and finite horizon',()=>{
- for(const x of [{},{ramp:0},{years:.1},{ramp:3,years:2},{mortality:0,discount:0,nonuseHazard:0,catchupHazard:0},{delay:1,mortality:.15}]){
+ for(const x of [{},{ramp:0},{years:.1},{ramp:3,years:2},{mortality:0,discount:0,nonuseHazard:0,catchupHazard:0},{mortality:0,discount:0,nonuseHazard:1e-8,catchupHazard:0},{mortality:0,discount:0,nonuseHazard:1e-6,catchupHazard:0},{delay:1,mortality:.15}]){
   const p={...central,...x};let integral=0;const n=100000,dt=p.years/n;
   for(let i=0;i<n;i++){const t=(i+.5)*dt;integral+=Math.min(1,p.ramp===0?1:t/p.ramp)*Math.exp(-(p.nonuseHazard+p.catchupHazard)*t)*(1-p.mortality)**(p.delay+t)/(1+p.discount)**(p.delay+t)*dt;}
   close(utilityYears(p),integral,2e-9);

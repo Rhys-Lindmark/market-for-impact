@@ -1,5 +1,15 @@
 # Chicago Recovery Alliance recalibration phase
 
+## Current accepted state
+
+Previous goal turn: progress through evidence review; this phase now completes scientific acceptance and checkout integration. The author's four final companions are archived unchanged. Root's second original-return identity check is preserved separately with its already closed 79.253-second clock. All three returns name THE CHICAGO RECOVERY ALLIANCE, EIN 36-3809778; their hashes match the author's original-response evidence. This establishes identity, not current funding capacity or audit/return reconciliation.
+
+Independent review required three corrections: unknown clinical zero placeholders must stay unknown; mortality-changed/common-alive groups must be disjoint; the stated 9,000 reach sensitivity must actually exist. Final portable calculator has 43 current cases, with all original 40 outputs unchanged and the original 16-case history preserved. Independent scientific and integration acceptance are durable companions. Current price is $2,637,009.48 versus $4,080,401.52 historical, driven mainly by finite mortality-adjusted survival rather than the old five-year truncation. Signed household resources are negative centrally; saved-life baseline wages are excluded.
+
+Thirty focused Node tests and two phone/tablet checks pass. Current report/API/full-list price and per-model time agree. Eight sessions include all four untouched historical intervals plus the author's two and root's two actual closed intervals: 776.158 new dedicated seconds, approximately 13 minutes on user-confirmed GPT-6.1 Sol. Review, integration, tests and deployment add no research minutes. All other 125 reports and 366 old sessions remain logically identical. Existing checkout/runtime reused; about 144 MiB/30 GiB free; temporary 3107 test server exited. Native publication remains pending; counts stay 39/40 until success. Legacy 0/11, scope-classification audit, 152 initial slots, 83 deep slots and 44 vetted picks still remain in the full objective. Latest usage 99% remaining; do not start batches at or below 25%, preserve the 20% user floor and pause control.
+
+## Earlier checkpoints (historical)
+
 Previous goal turn: progress. HALA model/report/provenance independently accepted,32focusedtests and2responsivechecks passed; reportSites369 andtrackerSites370 succeeded with exactreceipts. PublishedP039/40; CRAsolepending; legacy0/11 and full11-edition expansion remain required. HALAtwo14MiBregenerablepublicationarchives removed aftersource/version/deployment receipts preserved; no unique source or evidence removed. Existingcheckout144MiB/30GiBfree; no3107listener.
 
 Root preserved complete16-case CRA historicalmodel in data/chicago/cra-pre-recalibration-model.json from5b007a4. Oldconditionalprice4080401.517585316. Freeze is historicalpreservation, not scientific acceptance of originalpriors or a completed recalibration. Root owns corresponding historical tests and scientific/integration acceptance.

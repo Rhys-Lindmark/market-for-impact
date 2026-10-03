@@ -1,5 +1,15 @@
 # Legacy coverage phase
 
+## Current accepted checkpoint
+
+The classification packet `legacy-depth-classification-2026-10-02.md` is now durable. Eleven older accepted model identities remain pending combined health/resource recalibration. Vision To Learn, YMCA and New Door have separate unresolved acceptance/depth provenance; do not erase them or count them among the eleven without stronger evidence. All 25 exploratory funnel rows remain initial-only metadata, not automatic deep-review acceptance.
+
+Current implementer `/root/cribs_recalibration` was revalidated running and is authoring the bounded Pacific Hearing Connection reassessment. Its early memo and calculator are in `/private/tmp/pacific-hearing-legacy-recalibration-20261002.*`; proposals are not accepted prices or publications. The original six worlds and all thirteen wrapper diagnostics are frozen at commit 78661fd in `data/bay/pacific-hearing-legacy-pre-recalibration-model.json`. `scripts/pacific-hearing-legacy-historical.test.mjs` passes both independent reconstruction and accounting-preservation tests. Deterministic freezing and testing are not organization research time.
+
+Exit criteria: close actual source/model clocks; independently audit person-level hearing delivery, finite utility, signed household costs/savings/pay, unknown-versus-zero guards and regional attribution; integrate consistent narrative/API/ranking/effort records; verify focused and responsive checks; obtain native successful publication before advancing legacy completion. Published cohort remains 40/40, legacy 0/11 and original pending queue 37/48. Geographic expansion and its full remaining deficits are unchanged. Latest live usage check: 99% remaining; no reset credit used.
+
+The earlier dispatch description below is historical, not the current running assignment.
+
 Previous goal turn: progress. CRA scientific model, original-source identity check, signed household ledger, historical preservation and report/provenance integration are accepted. Thirty focused tests and two responsive checks passed. Report publication Sites371 and count/tracker publication Sites372 both reached native terminal success with exact receipts. Confirmed published cohort is 40/40; the separate original pending queue is 37/48, legacy models 0/11. No additional geographic report or shortlist count was added.
 
 Current implementer: `/root/cribs_recalibration`, independently revalidated running after dispatch. Assignment is an approximately eight-minute, read-only cross-organization inventory/depth-provenance classification. It returns `/private/tmp/legacy-depth-classification-20261002.md`; root owns evidence acceptance and durable integration. No individual report research time may be apportioned from this inventory work. Reuse the existing checkout and runtimes; no nested workers, builds, installs, Git or Site edits.

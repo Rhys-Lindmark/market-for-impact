@@ -1,5 +1,7 @@
 # Recalibrate existing in-depth reviews
 
+Latest published checkpoint: **39/40 recalibrations,1 pending; legacy0/11**. HALA LA published Sites369: conditional $10.05M per better life versus historical clinical $9.77M. Nutrition-health credit independently reduced; signed restricted-food/freed-budget resources, actual cash outlays and lost pay added separately. Full13-case history and six per-model clocks preserved. Independent scientific/integration acceptance,32 focused checks,2 responsive checks and build passed. Next Chicago Recovery Alliance; legacy11 and full expansion remain required. Usage99% remaining; floor20%, no new batches<=25%. Exact receipt hala-la-publication-2026-10-02.json. Earlier checkpoints below are historical.
+
 ## Current checkpoint — October 2
 
 **38/40 published-cohort recalibrations complete;2 remaining. Legacy reviews0/11.** Urban Peace Institute is published with independently reconsidered health and signed household resources; the report and tracker receipts are in `geography-discovery/upi-la-publication-2026-10-02.json` and `geography-discovery/upi-la-progress-publication-2026-10-02.json`. Next: Hunger Action LA (bounded research running), then Chicago Recovery Alliance, then the legacy inventory before geographic expansion. Repeated SF followups do not increment this cohort. Full objective, existing schedule and20% usage floor remain unchanged. Earlier checkpoints below are historical; use `geography-progress.json` and the linked inventory for current counts.

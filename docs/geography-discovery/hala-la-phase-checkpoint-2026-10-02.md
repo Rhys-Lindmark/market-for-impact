@@ -2,6 +2,8 @@
 
 ## Current accepted scientific checkpoint
 
+Published as Sites369 from exactsource5db91f996acf0f0f5b1707ad61dca7e3f30dc12e; native deployment appgdep_6ac04a6479cc8191bd844416bad4bd88 succeeded2026-10-03T00:21:07.602234UTC. Exact receipt `hala-la-publication-2026-10-02.json`. Published P0 now39/40, ChicagoRecoveryAlliance remains; legacy0/11 and full expansion unfinished. Build's first attempt used obsolete system Node for childnpm, corrected by explicitNode24PATH; second build/package succeeded. No source/model retry, researchtime or failed check concealed. Tracker publication next.
+
 Final integration ACCEPT is archived in `hala-la-integration-acceptance-2026-10-02.md`. Corrected the sole stale active-scope sentence in What do they do to include signed household-resource pathways; regression added and32focusedtests rerunPASS. No numerical change. Phone/tablet2PASS remain applicable; publication next. No identified empirical-return or capacity claim follows from conditional acceptance.
 
 Integration checkpoint: current report now contains40current cases plus one displayed historical central; complete13-case historicalModel remains frozen. Six actual sessions are mirrored into the measured research registry, preserving the three original Astra sessions and adding only the two author Sol sessions and prospective root audit. Header shows16minGPT-6AstraMedium and10minGPT-6.1Sol. Source crosswalk entry labels October2 as inclusion of an inherited reference, not a fresh fetch; grossResources is a judgment/derived allowance, not an observed all-in opportunity cost.

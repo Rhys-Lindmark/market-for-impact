@@ -1,0 +1,9 @@
+# Chicago Recovery Alliance recalibration phase
+
+Previous goal turn: progress. HALA model/report/provenance independently accepted,32focusedtests and2responsivechecks passed; reportSites369 andtrackerSites370 succeeded with exactreceipts. PublishedP039/40; CRAsolepending; legacy0/11 and full11-edition expansion remain required. HALAtwo14MiBregenerablepublicationarchives removed aftersource/version/deployment receipts preserved; no unique source or evidence removed. Existingcheckout144MiB/30GiBfree; no3107listener.
+
+Root preserved complete16-case CRA historicalmodel in data/chicago/cra-pre-recalibration-model.json from5b007a4. Oldconditionalprice4080401.517585316. Freeze is historicalpreservation, not scientific acceptance of originalpriors or a completed recalibration. Root owns corresponding historical tests and scientific/integration acceptance.
+
+One read-only implementer /root/cribs_recalibration is dispatched for bounded15min source/model/writing. Required packet /private/tmp/cra-chicago-recalibration-20261002.{md,calculate.mjs,receipts.json,closed.json}. CurrentuserconfirmedGPT-6.1Sol attribution/rawruntimeunknown separated; prospectiveactualclocks only. Rebuild native additional outcomes, finite health, signed net household resources, counterfactual freepublicnaloxone, physicalcoverage/cash/grossboundaries; no forcedpricechange, no baselinewagesfromsavedlives, no missingevidence converted to knownzero. Otherportfolio/capacity remain separately unverified.
+
+Next: independently reproduce all16historycases, read/challenge usableearlypacket, finiteindependentaudit then integrateandtest beforepublication/count40/40. Latestusage99%remaining; stopnewbatch<=25%, preserveuser20%floor, no credits/reset. Scheduleandfullgoal retained. No expansionahead ofremainingP0/legacyqueue.

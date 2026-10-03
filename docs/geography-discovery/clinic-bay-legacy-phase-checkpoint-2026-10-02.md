@@ -2,6 +2,8 @@
 
 ## Accepted and published — 2026-10-03 03:42 UTC
 
+Progress publication also succeeded:Sites376/source9a326f691287ec0100aa66411819326d17d9ea1d, receipt `clinic-bay-legacy-progress-publication-2026-10-02.json`. Legacy2/11 and original queue39/48 now published. Both14MiB task-created deployment archives removed after native success; regenerable via existing plugin build/workflow, source/evidence/receipts retained. Checkout149MiB/31GiB free; no new dependencies/server retained. Next Operation Access author dispatched as sole live helper after Clinic author/reviewer terminal; actual-clock15mintarget, independent acceptance required. Full goal remains active.
+
 Supersedes candidate status below. Sites375 succeeded for source79d9709a8fb9f7a96aab621de264afa7421eec63; receipt `clinic-bay-legacy-publication-2026-10-02.json`. Unknown-reach/zero-uniqueness guard corrected; center unchanged. Independent conditional ACCEPT; empirical return/capacity/comprehensive resources HOLD.26focused checks,2responsive checks and build PASS. Report/API/list use Bay$17.49M/SF$24.99M;34historical scenarios/three weight stresses preserved. Five actual sessions823.365seconds (~14min current Sol), root QA/integration/deployment excluded; historical report JSON unchanged.
 
 Legacy2/11, original queue39/48; geographic counts unchanged and full scope required. Publish progress source next and persist receipt; then Operation Access legacy US/Bay/SF. One worker/usage guard unchanged. No3107listener retained. Sandbox Chromium launch error resolved with approved scoped launcher. Source-only save corrected by archive upload to same version before deployment.

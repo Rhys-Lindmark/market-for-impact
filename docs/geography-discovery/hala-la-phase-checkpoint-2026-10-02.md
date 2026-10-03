@@ -2,6 +2,8 @@
 
 ## Current accepted scientific checkpoint
 
+Tracker published as Sites370, exactsourcefdfcac9aba8b33ee09933f2ee28b50eec2b978c6; native deployment appgdep_6ac04af65370819196c5605e21288a87 succeeded2026-10-03T00:23:31.098088UTC. Receipt `hala-la-progress-publication-2026-10-02.json`. Structured count check:39unique publishedcohort IDs/40,36oforiginal48pendingqueue,legacy0/11; HALApublicationreceipt terminalsuccess. Next bounded phaseChicagoRecoveryAlliance, thenlegacy and full expansion. No goalcompletion claim. Regenerable two publication archives can be removed now that source/version/receipt are preserved; no unique evidence removed.
+
 Published as Sites369 from exactsource5db91f996acf0f0f5b1707ad61dca7e3f30dc12e; native deployment appgdep_6ac04a6479cc8191bd844416bad4bd88 succeeded2026-10-03T00:21:07.602234UTC. Exact receipt `hala-la-publication-2026-10-02.json`. Published P0 now39/40, ChicagoRecoveryAlliance remains; legacy0/11 and full expansion unfinished. Build's first attempt used obsolete system Node for childnpm, corrected by explicitNode24PATH; second build/package succeeded. No source/model retry, researchtime or failed check concealed. Tracker publication next.
 
 Final integration ACCEPT is archived in `hala-la-integration-acceptance-2026-10-02.md`. Corrected the sole stale active-scope sentence in What do they do to include signed household-resource pathways; regression added and32focusedtests rerunPASS. No numerical change. Phone/tablet2PASS remain applicable; publication next. No identified empirical-return or capacity claim follows from conditional acceptance.

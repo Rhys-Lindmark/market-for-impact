@@ -1,5 +1,11 @@
 # Pacific Vision Foundation legacy recalibration phase
 
+## Published checkpoint — 2026-10-03 17:34 UTC
+
+Product Sites379 succeeded at17:34:42.163339+00:00. Exact receipt `pvf-legacy-publication-2026-10-03.json`; pushed source91d8e51615b342e29e59785a4a961c1f375ba4b7. Current report/API/list parity accepted independently;12 focused tests,18 original full-output hashes,44 current diagnostics,2 phone/tablet checks and build PASS. Initial browser checks exposed duplicate citation keys and an incorrect assumed third Donate link; fresh sources now supersede same-URL display entries, actual two links verified, original historical report retained. No numerical or evidence check was weakened. Ten actual closed sessions total1185.663seconds, preserving raw-runtime unknown and user-confirmed GPT-6.1 Sol; integration/QA/waits excluded.
+
+Published cohort40/40; legacy4/11; original queue41/48, leaving seven confirmed legacy identities plus provenance gates. Next SPUR legacy, then remaining legacy/provenance and all geographic expansion. Usage97%remaining, floor20%, new-batch guard25%; existing schedule active, native blocked-goal discrepancy unchanged. Root publishes tracker receipt next; source-vetted shortlist counts and geographic counts do not advance for recalibration.
+
 ## Heartbeat checkpoint — 2026-10-03 16:24 UTC
 
 Independent scientific reviewer initially required material knowledge-boundary corrections. Author corrected them in a separate84.466-second interval; reviewer then ACCEPTED conditional science in a separate79.132-second targeted recheck. Initial reviewer251.663-second sessions and author601.324-second sessions are preserved independently; root source-audit68.613 seconds remains separate. No interval is yet imported into published research provenance, and deterministic QA/integration/waits are not research. See `pvf-legacy-independent-review-2026-10-03.*`, `pvf-legacy-correction-2026-10-03.*` and `pvf-legacy-final-review-2026-10-03.*`.

@@ -35,6 +35,8 @@ export type CharityReportContent = {
   published: string;
   modelVersion: string;
   calibrationDate?: string;
+  summaryReasons?: string[];
+  summaryReservations?: string[];
   fundingAppendix?: React.ReactNode;
   nutshell: {
     headline: string;
@@ -127,9 +129,9 @@ export default function CharityResearchReport({ content }: { content: CharityRep
             {hasTopTenSummary(content.organization)?<TopTenSummary organization={content.organization}/>:<>
             <p><strong>What do they do?</strong> {content.programSection.body} <a href="#program">More</a></p>
             <p><strong>Why this approach interests us</strong></p>
-            <ul><li>{content.nutshell.whyItMayWork}</li></ul>
+            <ul>{(content.summaryReasons??[content.nutshell.whyItMayWork]).map(reason=><li key={reason}>{reason}</li>)}</ul>
             <p><strong>Our main reservations</strong></p>
-            <ul><li>{content.nutshell.whyWeAreCautious}</li></ul>
+            <ul>{(content.summaryReservations??[content.nutshell.whyWeAreCautious]).map(reason=><li key={reason}>{reason}</li>)}</ul>
             <p><strong>What do you get for your dollar?</strong></p>
             <p>{content.nutshell.body}</p>
             <dl className="report-summary">{content.summary.map(item => <div key={item.label}><dt>{item.label.toLowerCase()}</dt><dd><strong>{item.value}</strong> — {item.detail}</dd></div>)}</dl>

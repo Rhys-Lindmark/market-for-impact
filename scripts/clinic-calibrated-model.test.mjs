@@ -10,15 +10,15 @@ test('current center reconstructs native courses and signed components',()=>{
  for(const n of r.native){near(n.completedCare,n.purchaserCare+n.otherwiseFreeCare+n.unmetCare);assert(n.uniqueOfferedHouseholds>=n.completedCare);}
  assert.equal(r.wholePortfolioCombined,null);assert.equal(r.comprehensiveGrossPrice10,null);
 });
-test('all38 deterministic cases are finite and retain signed resources',()=>{
- assert.equal(Object.keys(cases).length,38);
+test('all39 deterministic cases are finite and retain signed resources',()=>{
+ assert.equal(Object.keys(cases).length,39);
  for(const inputs of Object.values(cases)){const r=calculate(inputs);for(const v of Object.values(r))if(typeof v==='number')assert(Number.isFinite(v));}
  const n=calculate(cases.negativeWork),p=calculate(cases.positiveWork);assert(n.resourcesBay<calculate().resourcesBay);assert(p.resourcesBay>calculate().resourcesBay);
  near(n.payEquivalentAll,calculate(cases.negativeWorkNoOverlap).payEquivalentAll);
 });
 test('zeroes and unknowns have different semantics',()=>{
  for(const id of ['zeroGift','zeroFunding','zeroUnique']){const r=calculate(cases[id]);assert.equal(r.combinedSF,0);assert.equal(r.donorSFPrice10,null);}
- for(const id of ['unknownReach','unknownClinical','unknownCash','unknownPay'])assert.equal(calculate(cases[id]).combinedSF,null);
+ for(const id of ['unknownUniqueZero','unknownReach','unknownClinical','unknownCash','unknownPay'])assert.equal(calculate(cases[id]).combinedSF,null);
  assert.equal(calculate(cases.localZeroUnknown).combinedSF,0);
  assert.equal(calculate(cases.noWorkersUnknownReach).payEquivalentAll,0);
 });

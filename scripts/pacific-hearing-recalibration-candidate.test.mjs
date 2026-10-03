@@ -2,6 +2,8 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import {calculate,central,cases,historical,utilityYears} from '../docs/geography-discovery/pacific-hearing-legacy-recalibration-2026-10-02.calculate.mjs';
 import frozen from '../data/bay/pacific-hearing-legacy-pre-recalibration-model.json' with {type:'json'};
+import {calculate as live,modelVersion} from '../lib/pacific-hearing-calibrated-model.mjs';
+import fs from 'node:fs';
 const close=(a,b,t=1e-9)=>assert(Math.abs(a-b)<=t*Math.max(1,Math.abs(b)),`${a} != ${b}`);
 test('Candidate central and all43 finite scenarios retain signed components',()=>{
  assert.equal(Object.keys(cases).length,43);
@@ -32,4 +34,18 @@ test('Portable candidate preserves all13 diagnostic objects and accounting-only 
  const h=historical();assert.equal(h.worlds.length,6);assert.equal(Object.keys(h.diagnostics).length,13);
  for(const [id,r] of Object.entries(h.diagnostics))assert.deepEqual(r,frozen.diagnostics.cases[id]);
  const r=calculate(),a=calculate(cases.inventoryCostOnly);close(a.native.offered,r.native.offered);close(a.healthBay,r.healthBay);close(a.resourcesBay,r.resourcesBay);
+});
+test('Live model matches accepted portable proposal; report, summary, API and list use current model',()=>{
+ for(const x of Object.values(cases))assert.deepEqual(live(x),calculate(x));
+ assert.equal(modelVersion,'pacific-hearing-independent-health-resources-2026-10-02');
+ const read=f=>fs.readFileSync(new URL('../'+f,import.meta.url),'utf8');
+ const r=JSON.parse(read('data/bay/pacific-hearing-v2-report.json'));
+ assert.equal(r.markdown,read('docs/reports/pacific-hearing-v2.md'));
+ assert.equal((r.markdown.match(/### Current health and household-resource estimate/g)||[]).length,1);
+ assert(r.markdown.includes('$9.72 million'));assert(r.markdown.includes('−0.00348'));
+ const s=JSON.parse(read('data/report-summary-editorial.json'))['Pacific Hearing Connection'];
+ assert.equal(s.reasons.length,3);assert.equal(s.reservations.length,3);assert(s.cost.includes('$9.72M'));
+ assert(read('lib/bay-research-index.ts').includes('bayCostPer10:pacificHearingModel().donorPrice10'));
+ assert(read('app/api/pacific-hearing-connection-model/route.ts').includes('pacific-hearing-calibrated-model.mjs'));
+ assert(read('app/charities/pacific-hearing-connection/page.tsx').includes('legacyMinutesAlreadyRecorded'));
 });

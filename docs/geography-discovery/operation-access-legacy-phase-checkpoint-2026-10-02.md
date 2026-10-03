@@ -1,5 +1,11 @@
 # Operation Access legacy phase
 
+## Published completion — October3
+
+This supersedes all candidate/hold checkpoints below. Corrected scientific and integrated-report audits ACCEPT the conditional model; product Sites377 and progress Sites378 SUCCEEDED with exact receipts `operation-access-legacy-publication-2026-10-03.json` and `operation-access-legacy-progress-publication-2026-10-03.json`. Bay $7.63M/SF $57.25M per better life versus historical clinical Bay $3.24M/SF $24.33M. Separate signed health/resource ledgers and native services, explicit response/worker populations, full negative burdens, purchaser savings and unavailable knowledge are preserved. Forty current cases, nine old full-output hashes,25focused checks,2responsive checks and build PASS. Interrupted root interval remains excluded; eight new actual intervals are imported once, integration QA adds no research time. No identified unconditional expected value, verified marginal capacity or comprehensive economic cost is claimed.
+
+Current P0 cohort40/40, legacy3/11, original queue40/48. Full eleven-edition geographic goal remains active and incomplete; existing hourly automation ACTIVE,98%allowance remaining with25/20guard, no resets. Next Pacific Vision Foundation legacy. Root-only reusedcheckout/Git/Sites; all helpers terminal,3107listener gone. Disposable deployment archives may be deleted after successful receipts, preserving source and evidence.
+
 ## Current acceptance hold — 2026-10-03 04:14 UTC
 
 Author terminal, four packets archived `operation-access-legacy-recalibration-2026-10-02.*`. Actual dedicated source273.432seconds +model/writing1242.619seconds =1516.051seconds (~25min), honest15min-target overrun. Preserve both actual intervals, model attribution user-confirmed Sol/raw runtime unknown; no retrospective trimming. Archive is original proposal, not production acceptance.

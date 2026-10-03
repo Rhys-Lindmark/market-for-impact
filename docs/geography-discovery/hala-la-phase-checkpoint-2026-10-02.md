@@ -2,6 +2,8 @@
 
 ## Current accepted scientific checkpoint
 
+Final integration ACCEPT is archived in `hala-la-integration-acceptance-2026-10-02.md`. Corrected the sole stale active-scope sentence in What do they do to include signed household-resource pathways; regression added and32focusedtests rerunPASS. No numerical change. Phone/tablet2PASS remain applicable; publication next. No identified empirical-return or capacity claim follows from conditional acceptance.
+
 Integration checkpoint: current report now contains40current cases plus one displayed historical central; complete13-case historicalModel remains frozen. Six actual sessions are mirrored into the measured research registry, preserving the three original Astra sessions and adding only the two author Sol sessions and prospective root audit. Header shows16minGPT-6AstraMedium and10minGPT-6.1Sol. Source crosswalk entry labels October2 as inclusion of an inherited reference, not a fresh fetch; grossResources is a judgment/derived allowance, not an observed all-in opportunity cost.
 
 All32focused model/report/provenance tests pass. Phone390/tablet768 tests pass for title, timing, native cost text, API41scenarios/currentprice, researchlist$10.1M and no overflow. Structured HEAD comparison confirms all other reports, original sessions and HALA expense rows unchanged; exactlythree sessions added. Ephemeral3107server is closed. Final independent integration review is the only pre-publication acceptance still pending. No count advance or public deployment is claimed yet.

@@ -18,6 +18,8 @@ test('HALA report current price, 40 cases, full history and six actual sessions 
   else close(s.incomePathways.reduce((q,f)=>q+incomeHealthyYearEquivalent(f),0),o.resourcesLocal);
  }
  close(reportPrice(r),10050431.271134442);
+ assert.ok(r.sections.what.includes('nutrition-health and signed household-resource pathways'));
+ assert.ok(!r.sections.what.includes('prices only the Market Match nutrition-health component'));
  assert.equal(r.sessionIds.length,6);assert.equal(new Set(r.sessionIds).size,6);
  const label=editionResearchEffort(d,r).label;
  for(const text of ['16 min on GPT-6 Astra Medium','10 min on GPT-6.1 Sol'])assert.ok(label.includes(text),label);

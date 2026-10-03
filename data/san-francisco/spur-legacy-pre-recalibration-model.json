@@ -1,0 +1,101 @@
+{
+  "frozenFromCommit": "e8d7e9a",
+  "scope": "Original ten conditional clinical scenarios and original input/report source bytes; not new research or current empirical validation",
+  "files": [
+    {
+      "path": "lib/spur-v2-model.mjs",
+      "sha256": "aedeae36c477e8cbefa45b0c371ac4a65a02ebe4d2e905fe75cfcaea1e64e977"
+    },
+    {
+      "path": "data/san-francisco/spur-v2-priors.json",
+      "sha256": "7be0ae83fc95cb554bf591901c2b9283895410226b2fd918c9420050018982f7"
+    },
+    {
+      "path": "data/san-francisco/spur-v2-results.json",
+      "sha256": "5b2133d455860b05626492a47c5bd5a86fdcbd1594726438fde439ad0d480ccd"
+    },
+    {
+      "path": "data/san-francisco/spur-v2-finance.json",
+      "sha256": "1357b5ef7512270272fddf5d4eb8a912cf964f38ef96656a2a48381da3cd8ae8"
+    },
+    {
+      "path": "data/san-francisco/spur-v2-narrative.json",
+      "sha256": "5620fae40bcecc2dc9d8c76100c228a8c685700fdf9c7c9ee56d14437610b98e"
+    },
+    {
+      "path": "data/san-francisco/spur-v2-sources.json",
+      "sha256": "0cfa3cc1252e1f5970114c432b928211b52f582d0d4b08a90bc415d2b1ae8f1f"
+    },
+    {
+      "path": "data/san-francisco/spur-portfolio-cea-v3.json",
+      "sha256": "7be0ae83fc95cb554bf591901c2b9283895410226b2fd918c9420050018982f7"
+    },
+    {
+      "path": "data/san-francisco/spur-portfolio-report.json",
+      "sha256": "b7de1a15c4a69cd66d7115eb350507ae1d0759bb28d70887523b12985e7f20e1"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "central",
+      "resultSha256": "a90b32032e8b92505eb2839627fed424732ca1137a97096ad951b936f05ae76b",
+      "bayClinicalPrice10": 2191060.473269062,
+      "sfClinicalPrice10": 10853049.706967657
+    },
+    {
+      "id": "favorable",
+      "resultSha256": "9dbffb437266082d4186484a68de834c5e425ce16445e41c21f0f2689dc80035",
+      "bayClinicalPrice10": 19364.833462432223,
+      "sfClinicalPrice10": 81994.0964250574
+    },
+    {
+      "id": "pessimisticPositive",
+      "resultSha256": "7e2b8c1f321b08ba15479661f1271d5a750ca56243eddc5f5f525c2a0c361bbe",
+      "bayClinicalPrice10": 4003202562.0496397,
+      "sfClinicalPrice10": 22376370552.696354
+    },
+    {
+      "id": "nullGiftContribution",
+      "resultSha256": "9bd4aecf89042f32a3700f013ce817939ad92220622df85514881274250ca45f",
+      "bayClinicalPrice10": null,
+      "sfClinicalPrice10": null
+    },
+    {
+      "id": "nullPhysicalOutput",
+      "resultSha256": "9bd4aecf89042f32a3700f013ce817939ad92220622df85514881274250ca45f",
+      "bayClinicalPrice10": null,
+      "sfClinicalPrice10": null
+    },
+    {
+      "id": "centralDonorHarm",
+      "resultSha256": "bf56bbc66cf07d73ab0310e4e692531180b0cf865b4535afce028125124a7920",
+      "bayClinicalPrice10": null,
+      "sfClinicalPrice10": null
+    },
+    {
+      "id": "nullContributionDonorHarm",
+      "resultSha256": "b7fea76719111ff73e037f2b92deba72cc5ece6029fc5b0d774e704377eaaae7",
+      "bayClinicalPrice10": null,
+      "sfClinicalPrice10": null
+    },
+    {
+      "id": "centralZeroHousingSpillover",
+      "resultSha256": "56dcb31da7422d4b750e4970397593a8f96a7dd5bea53159a95f3af2970e7795",
+      "bayClinicalPrice10": 2522704.339051463,
+      "sfClinicalPrice10": 12963443.090484833
+    },
+    {
+      "id": "favorableZeroHousingSpillover",
+      "resultSha256": "9b18dacad6f86e35bc9e1f1e7cb759c40cdd0aaa745b7c3a0b18d67a1ab25373",
+      "bayClinicalPrice10": 46210.72088724584,
+      "sfClinicalPrice10": 212947.1890971039
+    },
+    {
+      "id": "historicalCentralSpilloverPrior",
+      "resultSha256": "a38b8b49f84e8ba18fe32c1e35f789d940e84458205b92e33031a925f3f6e1b6",
+      "bayClinicalPrice10": 1435956.346927053,
+      "sfClinicalPrice10": 6572893.387669252
+    }
+  ],
+  "calculateAllSha256": "ae402654460d7a44941d912ffd13554dece5a8b321ed2dd2e1c68e212eb97bf6"
+}

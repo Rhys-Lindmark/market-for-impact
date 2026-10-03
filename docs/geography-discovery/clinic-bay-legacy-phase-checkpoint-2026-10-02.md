@@ -1,5 +1,11 @@
 # Clinic by the Bay — legacy recalibration checkpoint
 
+## Accepted and published — 2026-10-03 03:42 UTC
+
+Supersedes candidate status below. Sites375 succeeded for source79d9709a8fb9f7a96aab621de264afa7421eec63; receipt `clinic-bay-legacy-publication-2026-10-02.json`. Unknown-reach/zero-uniqueness guard corrected; center unchanged. Independent conditional ACCEPT; empirical return/capacity/comprehensive resources HOLD.26focused checks,2responsive checks and build PASS. Report/API/list use Bay$17.49M/SF$24.99M;34historical scenarios/three weight stresses preserved. Five actual sessions823.365seconds (~14min current Sol), root QA/integration/deployment excluded; historical report JSON unchanged.
+
+Legacy2/11, original queue39/48; geographic counts unchanged and full scope required. Publish progress source next and persist receipt; then Operation Access legacy US/Bay/SF. One worker/usage guard unchanged. No3107listener retained. Sandbox Chromium launch error resolved with approved scoped launcher. Source-only save corrected by archive upload to same version before deployment.
+
 2026-10-03 03:30 UTC. Full geographic-expansion goal remains active and unchanged. P0 published cohort40/40; separate confirmed legacy queue1/11, original pending queue38/48. Clinic is a candidate, not published or countable yet. Pacific Hearing Connection Sites373/374 receipts remain authoritative; do not redo that phase.
 
 ## Current phase and ownership

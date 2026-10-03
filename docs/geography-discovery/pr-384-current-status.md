@@ -5,11 +5,11 @@ Highest research priority, requested by Rhys. This PR now contains implementatio
 ## Verified status — October 3, 2026 UTC
 
 - Published cohort: **40/40** reviewed, including the three prior USA policy revisions. These are conditional estimates, not verified marginal donation offers.
-- Confirmed additional legacy models: **2/11** published (Pacific Hearing Connection; Clinic by the Bay). The original remaining-work queue is **39/48**: 37 subsequent cohort reviews plus two legacy models. The different denominators refer to different inventories, not eight invented reviews.
+- Confirmed additional legacy models: **3/11** published (Pacific Hearing Connection; Clinic by the Bay; Operation Access legacy). The original remaining-work queue is **40/48**: 37 subsequent cohort reviews plus three legacy models. The different denominators refer to different inventories, not eight invented reviews.
 - Three further depth/provenance gates remain unresolved: legacy Vision To Learn, YMCA Greater SF portfolio, and New Door Ventures portfolio. Self-reported metadata is not sufficient evidence of independent acceptance.
-- Operation Access's legacy US/Bay/SF portfolio is currently being re-examined. Its completed California review is a distinct scope, not automatic acceptance of the legacy model.
+- Operation Access's legacy US/Bay/SF portfolio is independently recalibrated and published Sites377. Next: Pacific Vision Foundation legacy. Its completed California review is a distinct scope, not automatic acceptance of the legacy model.
 
-Latest publication evidence: Clinic by the Bay report/model Sites375, progress Sites376. Its conditional Bay cost is $17.49M per ten combined health/resource equivalents, versus the separate historical weighted $2.00M and unweighted clinical $7.98M. All 34 historical scenarios remain preserved; 39 current cases, independent clinical quadrature, signed household-resource reconstruction, focused tests and phone/tablet checks support the published integration. Actual dedicated sessions are recorded separately from deterministic QA, integration, deployment and waits.
+Latest publication evidence: Operation Access legacy Sites377 (Bay $7.63M/SF $57.25M). Clinic by the Bay report/model Sites375, progress Sites376. Its conditional Bay cost is $17.49M per ten combined health/resource equivalents, versus the separate historical weighted $2.00M and unweighted clinical $7.98M. All 34 historical scenarios remain preserved; 39 current cases, independent clinical quadrature, signed household-resource reconstruction, focused tests and phone/tablet checks support the published integration. Actual dedicated sessions are recorded separately from deterministic QA, integration, deployment and waits.
 
 ## Required acceptance for every model
 

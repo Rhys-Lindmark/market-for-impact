@@ -1,0 +1,524 @@
+{
+  "frozenFrom": "85b330a3fa5d7820823b8b483a30c8f17e6f12bc",
+  "scope": "Complete historical files remain unchanged; source-byte and all18 full-output hashes lock originals without duplicating large models.",
+  "files": [
+    {
+      "path": "data/san-francisco/pvf-portfolio-model-v1.json",
+      "sha256": "ae2039659fa0cd05eaca8cbfd8eef4426ba49a5a08743530d09653f67e36f415"
+    },
+    {
+      "path": "lib/pvf-portfolio-model.mjs",
+      "sha256": "dff759de6faf5bec81d4b9f737aa67c3ef149d3dd25e1d382d656b665e28d7ca"
+    },
+    {
+      "path": "data/san-francisco/pvf-portfolio-report.json",
+      "sha256": "c609b50c1de6d20a2b59152e7e4b099b8583b9d9e7fbdabe17e9e9ac0629a9ca"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "central",
+      "resultSha256": "1d14c8eb89a441e62d261bf1912bbbf8553734c32a8b17a156efb5c55e613399",
+      "q": {
+        "us": 0.14,
+        "bay": 0.12600000000000003,
+        "sf": 0.05600000000000001
+      },
+      "prices": {
+        "us": {
+          "donor": 7142857.142857142,
+          "gross": 8928571.428571427,
+          "net": 7169245.059331688
+        },
+        "bay": {
+          "donor": 7936507.936507935,
+          "gross": 9920634.920634918,
+          "net": 7965827.843701875
+        },
+        "sf": {
+          "donor": 17857142.857142854,
+          "gross": 22321428.571428567,
+          "net": 17923112.64832922
+        }
+      },
+      "grossResources": 125000,
+      "netResources": 100369.43083064364
+    },
+    {
+      "id": "favorable_joint",
+      "resultSha256": "4491cebd748d76b50f02892580f355da9614bf5c52ec8511e2201ed5e87332c0",
+      "q": {
+        "us": 3.36,
+        "bay": 3.1919999999999997,
+        "sf": 2.016
+      },
+      "prices": {
+        "us": {
+          "donor": 297619.04761904763,
+          "gross": 773809.5238095238,
+          "net": 308174.2142088661
+        },
+        "bay": {
+          "donor": 313283.20802005014,
+          "gross": 814536.3408521304,
+          "net": 324393.90969354333
+        },
+        "sf": {
+          "donor": 496031.74603174604,
+          "gross": 1289682.5396825396,
+          "net": 513623.6903481102
+        }
+      },
+      "grossResources": 260000,
+      "netResources": 103546.53597417902
+    },
+    {
+      "id": "pessimistic_positive",
+      "resultSha256": "1f7c8d57856886eebdc4d261ffdcff107f2ba64b650689bbe5c7717f73173050",
+      "q": {
+        "us": 0.001875,
+        "bay": 0.0013124999999999999,
+        "sf": 0.000375
+      },
+      "prices": {
+        "us": {
+          "donor": 533333333.3333334,
+          "gross": 586666666.6666667,
+          "net": 533727392.8860199
+        },
+        "bay": {
+          "donor": 761904761.904762,
+          "gross": 838095238.0952382,
+          "net": 762467704.1228856
+        },
+        "sf": {
+          "donor": 2666666666.6666665,
+          "gross": 2933333333.3333335,
+          "net": 2668636964.4300995
+        }
+      },
+      "grossResources": 110000,
+      "netResources": 100073.88616612872
+    },
+    {
+      "id": "no_quantified_allocation",
+      "resultSha256": "02f6a372fb21a13fbe33f295021fc41c4f143d37c125a2d49b7ef2bf6535e3d8",
+      "q": {
+        "us": 0,
+        "bay": 0,
+        "sf": 0
+      },
+      "prices": {
+        "us": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        },
+        "bay": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        },
+        "sf": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        }
+      },
+      "grossResources": 100000,
+      "netResources": 100000
+    },
+    {
+      "id": "replacement_only",
+      "resultSha256": "17a073f9f86c894c32b8014490a613287e168f2869894112b7f5d2cb049338f5",
+      "q": {
+        "us": 0,
+        "bay": 0,
+        "sf": 0
+      },
+      "prices": {
+        "us": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        },
+        "bay": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        },
+        "sf": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        }
+      },
+      "grossResources": 125000,
+      "netResources": 100000
+    },
+    {
+      "id": "no_timing_advantage",
+      "resultSha256": "1f3c70be7e9d23acda5470d9234afbba098d421c129b14555c3a8ecd6c8a27b4",
+      "q": {
+        "us": 0,
+        "bay": 0,
+        "sf": 0
+      },
+      "prices": {
+        "us": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        },
+        "bay": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        },
+        "sf": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        }
+      },
+      "grossResources": 125000,
+      "netResources": 100369.43083064364
+    },
+    {
+      "id": "shorter_wait_transfer",
+      "resultSha256": "1c556185fe1c4f3b748142098e64ea509eda635747c067d7928d13d8de5d8ef9",
+      "q": {
+        "us": 0.035,
+        "bay": 0.03150000000000001,
+        "sf": 0.014000000000000002
+      },
+      "prices": {
+        "us": {
+          "donor": 28571428.571428567,
+          "gross": 35714285.71428571,
+          "net": 28598114.089931644
+        },
+        "bay": {
+          "donor": 31746031.74603174,
+          "gross": 39682539.68253967,
+          "net": 31775682.322146267
+        },
+        "sf": {
+          "donor": 71428571.42857142,
+          "gross": 89285714.28571427,
+          "net": 71495285.22482911
+        }
+      },
+      "grossResources": 125000,
+      "netResources": 100093.39931476077
+    },
+    {
+      "id": "no_credit_future_resource_offset",
+      "resultSha256": "3f3452195c54cfb36acda602f3b5580e74d05880c824f1aea4a518322139401d",
+      "q": {
+        "us": 0.14,
+        "bay": 0.12600000000000003,
+        "sf": 0.05600000000000001
+      },
+      "prices": {
+        "us": {
+          "donor": 7142857.142857142,
+          "gross": 8928571.428571427,
+          "net": 8035714.2857142845
+        },
+        "bay": {
+          "donor": 7936507.936507935,
+          "gross": 9920634.920634918,
+          "net": 8928571.428571427
+        },
+        "sf": {
+          "donor": 17857142.857142854,
+          "gross": 22321428.571428567,
+          "net": 20089285.714285713
+        }
+      },
+      "grossResources": 125000,
+      "netResources": 112500
+    },
+    {
+      "id": "additional_public_resources",
+      "resultSha256": "e0aaef1a1672ee123a3ad13368e6b8c6c82169c9e6e57823f6603095e3b439bd",
+      "q": {
+        "us": 0.14,
+        "bay": 0.12600000000000003,
+        "sf": 0.05600000000000001
+      },
+      "prices": {
+        "us": {
+          "donor": 7142857.142857142,
+          "gross": 9285714.285714285,
+          "net": 7347816.487903116
+        },
+        "bay": {
+          "donor": 7936507.936507935,
+          "gross": 10317460.317460315,
+          "net": 8164240.542114573
+        },
+        "sf": {
+          "donor": 17857142.857142854,
+          "gross": 23214285.714285713,
+          "net": 18369541.21975779
+        }
+      },
+      "grossResources": 130000,
+      "netResources": 102869.43083064364
+    },
+    {
+      "id": "donor_pays_clinical_resources",
+      "resultSha256": "397185c636335adda125ba4494679fc6d443cf30fc5437b042e39102c5811b45",
+      "q": {
+        "us": 0.04,
+        "bay": 0.036000000000000004,
+        "sf": 0.016
+      },
+      "prices": {
+        "us": {
+          "donor": 25000000,
+          "gross": 25000000,
+          "net": 25000000
+        },
+        "bay": {
+          "donor": 27777777.777777776,
+          "gross": 27777777.777777776,
+          "net": 27777777.777777776
+        },
+        "sf": {
+          "donor": 62500000,
+          "gross": 62500000,
+          "net": 62500000
+        }
+      },
+      "grossResources": 100000,
+      "netResources": 100000
+    },
+    {
+      "id": "shared_extra_harm",
+      "resultSha256": "6c97823389d543a314df7c26c044fa71bbf95bf8b6115efb4af17df31d6aea21",
+      "q": {
+        "us": -0.06,
+        "bay": -0.05399999999999999,
+        "sf": -0.024000000000000007
+      },
+      "prices": {
+        "us": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        },
+        "bay": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        },
+        "sf": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        }
+      },
+      "grossResources": 125000,
+      "netResources": 100369.43083064364
+    },
+    {
+      "id": "independent_harm_no_activity",
+      "resultSha256": "8b187f1e4ee302898639817dfa473ee61948252c7ee8b08740206d9bfb660cfc",
+      "q": {
+        "us": -0.2,
+        "bay": -0.18000000000000002,
+        "sf": -0.08000000000000002
+      },
+      "prices": {
+        "us": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        },
+        "bay": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        },
+        "sf": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        }
+      },
+      "grossResources": 100000,
+      "netResources": 100000
+    },
+    {
+      "id": "target_failure_displaces_alternative",
+      "resultSha256": "164dfdf9c0eee3ee5c4fbe20fdb99a1976ddd66b195034e2fec1822a5a3bf703",
+      "q": {
+        "us": -1,
+        "bay": -0.9,
+        "sf": -0.4
+      },
+      "prices": {
+        "us": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        },
+        "bay": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        },
+        "sf": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        }
+      },
+      "grossResources": 125000,
+      "netResources": 100369.43083064364
+    },
+    {
+      "id": "no_sf_health",
+      "resultSha256": "2bee30c8305af5e5309aefc9a0fc495a757a25ec1cb1afad7f47358c18c9c132",
+      "q": {
+        "us": 0.14,
+        "bay": 0.12600000000000003,
+        "sf": 0
+      },
+      "prices": {
+        "us": {
+          "donor": 7142857.142857142,
+          "gross": 8928571.428571427,
+          "net": 7169245.059331688
+        },
+        "bay": {
+          "donor": 7936507.936507935,
+          "gross": 9920634.920634918,
+          "net": 7965827.843701875
+        },
+        "sf": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        }
+      },
+      "grossResources": 125000,
+      "netResources": 100369.43083064364
+    },
+    {
+      "id": "negative_clinical_transfer",
+      "resultSha256": "ef0de117bf539451044a44197bc71fcb1bdb2d96be93ab0beaffe0ba5360f088",
+      "q": {
+        "us": -0.14,
+        "bay": -0.12600000000000003,
+        "sf": -0.05600000000000001
+      },
+      "prices": {
+        "us": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        },
+        "bay": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        },
+        "sf": {
+          "donor": null,
+          "gross": null,
+          "net": null
+        }
+      },
+      "grossResources": 125000,
+      "netResources": 100369.43083064364
+    },
+    {
+      "id": "low_cash_unverified",
+      "resultSha256": "f5614b0e1695305e91a9c7fae1dfd53d92484b486859519f04ef23baef8077b5",
+      "q": {
+        "us": 0.56,
+        "bay": 0.5040000000000001,
+        "sf": 0.22400000000000003
+      },
+      "prices": {
+        "us": {
+          "donor": 1785714.2857142854,
+          "gross": 3571428.571428571,
+          "net": 1812102.2021888322
+        },
+        "bay": {
+          "donor": 1984126.9841269837,
+          "gross": 3968253.9682539674,
+          "net": 2013446.8913209243
+        },
+        "sf": {
+          "donor": 4464285.714285714,
+          "gross": 8928571.428571427,
+          "net": 4530255.50547208
+        }
+      },
+      "grossResources": 200000,
+      "netResources": 101477.7233225746
+    },
+    {
+      "id": "zero_outside_resource_scenario",
+      "resultSha256": "679415ad14e28aeea2d1ff87a35c40da2104a56efe9758c2152d7a514d073962",
+      "q": {
+        "us": 0.14,
+        "bay": 0.12600000000000003,
+        "sf": 0.05600000000000001
+      },
+      "prices": {
+        "us": {
+          "donor": 7142857.142857142,
+          "gross": 7142857.142857142,
+          "net": 7142857.142857142
+        },
+        "bay": {
+          "donor": 7936507.936507935,
+          "gross": 7936507.936507935,
+          "net": 7936507.936507935
+        },
+        "sf": {
+          "donor": 17857142.857142854,
+          "gross": 17857142.857142854,
+          "net": 17857142.857142854
+        }
+      },
+      "grossResources": 100000,
+      "netResources": 100000
+    },
+    {
+      "id": "net_saving_diagnostic",
+      "resultSha256": "7d94d290a50a587252423c5989bec0697040bf8ff30b3c5c6b024cad16e6e36c",
+      "q": {
+        "us": 0.14,
+        "bay": 0.12600000000000003,
+        "sf": 0.05600000000000001
+      },
+      "prices": {
+        "us": {
+          "donor": 7142857.142857142,
+          "gross": 8928571.428571427,
+          "net": -3545040.6549540255
+        },
+        "bay": {
+          "donor": 7936507.936507935,
+          "gross": 9920634.920634918,
+          "net": -3938934.0610600277
+        },
+        "sf": {
+          "donor": 17857142.857142854,
+          "gross": 22321428.571428567,
+          "net": -8862601.637385063
+        }
+      },
+      "grossResources": 125000,
+      "netResources": -49630.56916935636
+    }
+  ]
+}

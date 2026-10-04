@@ -1,5 +1,13 @@
 # North East Medical Services legacy phase checkpoint
 
+## Prepared integration — independent calculator accepted
+
+Reviewer `/root/nems_legacy_review` accepted the current calculator and unchanged conditional health coefficient, requiring a conditional numeric list disclosure rather than a bare placeholder. Durable review/closed clock: `nems-legacy-independent-review-2026-10-04.{md,closed.json}`. Fresh six original filings and economic-model XML were independently checked; source inconsistencies do not establish a specific corrected coefficient.
+
+Root prepared `lib/nems-current-report.mjs` (2,463 words), updated report/page/API/editorial/contents maps, and added the explicitly conditional $1.2M HBV health disclosure to SF full-list/library surfaces. Ordinary-gift ranking and API totals remain null, not invented. Report exposes native monitoring units and signed net-resource scenarios. Six contents groups and four actual closed research sessions are validated; total recorded current effort 8.99765 researcher-minutes on user-assigned GPT-6.1 Sol, raw runtime unknown. Historical 18-minute Astra display fallback is kept separately, not relabeled or double counted.
+
+Focused current report/model, historical/HBV/NEMS and provenance suite passes **25/25**. Initial report regression identified excessive legacy contents-map keys and a test conflating nine inherited filings with six freshly reread filings; corrected exact nine-section mapping and six-current-source assertion now pass. Corrected production rebuild completed successfully (exec session19871, exit0). Reviewer follow-up integration QA is active; output `/private/tmp/nems-legacy-integration-review-20261004.md`. Next: integration QA, phone/tablet report-header/TOC/API/list checks and verified Sites publication. Legacy accepted/published count remains 8/11 until those gates pass. No preview server started, no install/copy, usage96%remaining.
+
 ## Current handoff — author complete, independent challenge active
 
 The user changed current budgets to approximately 5 minutes per initial report and 15 per deep review; the October 4 override in `../geography-expansion-plan.md` and updated hourly heartbeat control current execution. Native overall goal is active. Historical budget statements below remain history, not current instructions.

@@ -1,5 +1,11 @@
 # Vision To Learn legacy coverage phase
 
+## Candidate packet: author clocks closed, independent acceptance pending
+
+Isolated artifacts: /private/tmp/vtl-legacy-author-20261004-calculate.mjs, -memo.md, -receipts.json, -closed.json and -calculations.json. Author source/modeling intervals closed at17:19:31.924UTC, totaling12.661 actual dedicated minutes (4.7583 source/7.9026 modeling); QA afterward is not research. User-assigned GPT-6.1 Sol remains distinct from null raw runtime metadata. Candidate national health0.5785942811 plus income-equivalent0.0033071385 gives conditional $1,718,504.14 per better life; retained unverified residence priors give Bay$21,481,301.78/SF$114,566,942.82. Complete gross-resource price and ordinary unrestricted-gift EV remain unknown; known donor-plus-new-public cash is only a cost floor.
+
+Root identified a material guard risk for independent challenge: positive gross future pay with larger fees can be net-negative, and the positive-future temporal-overlap guard must not erase that negative scenario. Author was asked to correct and test it before handoff. No production route, API, model consumer, report price or accepted count has been changed. Next separate reviewer begins only after sole author is terminal, with fresh usage check, original-source reconstruction and signed arithmetic/domain tests. Do not restart the worker just because an observation timed out.
+
 ## Evidence milestone: original sources and concrete consumer inventory
 
 Author reports fresh FY2023–25 original returns match the earlier California receipts; screens, examinations and pairs remain distinct. Clinical utility, adherence and academic sources were rechecked independently; ordinary unrestricted gifts have no automatic MOS public match. New candidate is still pending separate challenge; no additional coverage accepted. Root preservation now includes five original source hashes with old API/page copies. Separately,21 exploratory routes bind to their original funnel EINs,51 imports and14 API consumers in exploratory-coverage-topology-2026-10-04.json; three focused preservation/inventory checks PASS, not scientific acceptance.

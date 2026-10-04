@@ -1,5 +1,9 @@
 # Vision To Learn legacy coverage phase
 
+## Author terminal; sole independent reviewer dispatched
+
+Author returned terminal packet:118 assertions across42 finite cases and664 arithmetic/finance/geography/original-output checks pass. Mixed positive gross future pay with larger fees now computes negative net before applying the temporal guard, preserving the negative same-window effect. This is author QA, not independent acceptance. Immutable author memo/candidate/receipts/closed clocks are persisted beside this checkpoint. Reviewer /root/glide_legacy_review is assigned fresh primary-source and independent equation reconstruction, with its own actual clock and no checkout writes. Usage95%remaining before dispatch. Additional accepted coverage remains0/24; production prices unchanged.
+
 ## Candidate packet: author clocks closed, independent acceptance pending
 
 Isolated artifacts: /private/tmp/vtl-legacy-author-20261004-calculate.mjs, -memo.md, -receipts.json, -closed.json and -calculations.json. Author source/modeling intervals closed at17:19:31.924UTC, totaling12.661 actual dedicated minutes (4.7583 source/7.9026 modeling); QA afterward is not research. User-assigned GPT-6.1 Sol remains distinct from null raw runtime metadata. Candidate national health0.5785942811 plus income-equivalent0.0033071385 gives conditional $1,718,504.14 per better life; retained unverified residence priors give Bay$21,481,301.78/SF$114,566,942.82. Complete gross-resource price and ordinary unrestricted-gift EV remain unknown; known donor-plus-new-public cash is only a cost floor.

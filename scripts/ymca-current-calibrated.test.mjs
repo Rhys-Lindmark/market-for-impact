@@ -36,3 +36,20 @@ test('Disjoint cash declarations do not invent funding, health, local scope or c
  assert.throws(()=>calculate({disjointHouseholdRoutes:true}),/Bounded disjoint/);
  assert.throws(()=>calculate({routes:{fitness:{healthYears:2}}}),/integrated/);
 });
+test('Positive clinical route additions require exact distinct-increment hypotheses',()=>{
+ assert.throws(()=>calculate({distinctClinicalRoutes:[]}),/Overlapping positive clinical/);
+ assert.throws(()=>calculate({routes:{mental:{healthPerUnit:.02}}}),/every and only active positive/);
+ const supported=calculate(cases.therapyConditional);
+ assert.equal(supported.clinicalIncidence.status,'explicit unverified distinct clinical-increment hypothesis');
+ assert.deepEqual(supported.clinicalIncidence.activePositiveRoutes,['fitness','mental','dpp']);
+ for(const declared of [['fitness'],['fitness','dpp','dpp'],['fitness','dpp','unknown']])assert.throws(()=>calculate({distinctClinicalRoutes:declared}));
+});
+test('Clinical incidence restrictions never attenuate negative utility or independent harms',()=>{
+ const r=calculate(cases.negativeClinical);assert.ok(r.routes.mental.clinicalHealthyYears<0);assert.ok(r.routes.family.clinicalHealthyYears<0);
+ const independent=calculate(cases.nullWithIndependentHarm);
+ assert.equal(independent.geography.sf.clinicalHealthyYears,-.1);
+ assert.equal(independent.geography.restBay.clinicalHealthyYears,-.1);
+ assert.deepEqual(independent.clinicalIncidence.activePositiveRoutes,[]);
+ const negativeOnly=calculate({distinctClinicalRoutes:[],routes:{fitness:{healthPerUnit:-.01},dpp:{healthPerUnit:0}}});
+ assert.ok(negativeOnly.geography.bayIncludingSF.clinicalHealthyYears<0);
+});

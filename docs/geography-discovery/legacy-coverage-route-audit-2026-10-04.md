@@ -1,5 +1,9 @@
 # Legacy coverage route audit
 
+## Current checkpoint: October 4, after Changent publication
+
+Published original queue48/48, cohort40/40 and confirmed legacy11/11. Additional coverage remains0/24; Vision To Learn legacy is in isolated author reassessment. Exact exploratory topology is preserved in exploratory-coverage-topology-2026-10-04.json:21 entity/EIN-bound reports,51 imported model/review/bridge sources and14 API consumer routes, all with capture-time hashes. Three focused inventory/historical tests pass. These are coverage and preservation checks, not independent scientific acceptance or additional completed deep reviews. Earlier timing/count paragraphs below are historical.
+
 ## Decision: keep three published model boundaries in P0
 
 After the original 48-item queue, independently assess the published legacy Vision To Learn, YMCA of Greater San Francisco and New Door Ventures models. This is coverage repair, not proof of three previously accepted deep-review passes, and adds no accepted/publication count today. The unresolved historical acceptance metadata must remain explicit. A current public substantive cost-effectiveness model needs health and net-resource review regardless of whether an old independent memo can be recovered.

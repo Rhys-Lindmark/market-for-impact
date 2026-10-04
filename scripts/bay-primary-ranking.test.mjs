@@ -1,56 +1,70 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
 import {researchCostRanking as rows} from '../lib/research-cost-ranking.mjs';
-import {central as pvfCentral,calculate as pvf} from '../lib/pvf-portfolio-model.mjs';
 import {localResearchEstimate} from '../lib/local-research-estimate.mjs';
 import {calculate as hpp} from '../lib/hpp-model.mjs';
 import {calculate as felton} from '../lib/felton-model.mjs';
 import {calculate as sfphf} from '../lib/sfphf-model.mjs';
-import {calculate as code} from '../lib/code-tenderloin-model.mjs';
 import {walkSfModel} from '../lib/walk-sf-model.mjs';
-import {spurPortfolioModel} from '../lib/spur-portfolio-model.mjs';
-import {calculate as oa} from '../lib/oa-portfolio-model.mjs';
-import {ymcaPortfolio,ymcaPortfolioModel} from '../lib/ymca-portfolio-model.mjs';
-import {calculate as clinic,inputsFor as clinicInputs} from '../lib/clinic-portfolio-model.mjs';
-import {calculate as sfaf} from '../lib/sfaf-portfolio-model.mjs';
-import {calculate as phc,inputsFor} from '../lib/phc-portfolio-model.mjs';
-import fs from 'node:fs';
-import {calculate as hacV2} from '../lib/hac-v2-model.mjs';
-import {calculate as glide} from '../lib/glide-coverage-model.mjs';
-import {calculate as breathe} from '../lib/breathe-v2-model.mjs';
+import {calculate as hac} from '../lib/hac-calibrated-model.mjs';
+import {scenarios as glide} from '../lib/glide-calibrated-model.mjs';
+import {diagnostics as breathe} from '../lib/breathe-calibrated-model.mjs';
+import {calculate as pvf} from '../lib/pvf-calibrated-model.mjs';
+import {calculate as code} from '../lib/code-tenderloin-calibrated-model.mjs';
+import {calculate as spur} from '../lib/spur-calibrated-model.mjs';
+import {calculate as oa} from '../lib/operation-access-calibrated-model.mjs';
+import {calculate as ymca} from '../lib/ymca-current-calibrated-model.mjs';
+import {calculate as clinic} from '../lib/clinic-calibrated-model.mjs';
+import {calculate as sfaf} from '../lib/sfaf-calibrated-model.mjs';
+import {calculate as phc} from '../lib/phc-calibrated-model.mjs';
+import {hearingCalibratedModel as hearing} from '../lib/hearing-calibrated-model.mjs';
+import {calculate as compass,central as compassInputs} from '../lib/compass-calibrated-model.mjs';
+import {calculate as hamilton,central as hamiltonInputs} from '../lib/hamilton-calibrated-model.mjs';
+import {calculate as fuf,central as fufInputs} from '../lib/fuf-calibrated-model.mjs';
+import {calculate as selfhelp} from '../lib/selfhelp-current-model.mjs';
 const read=name=>JSON.parse(fs.readFileSync(new URL('../data/san-francisco/'+name,import.meta.url)));
 const central=d=>d.scenarios.find(s=>s.id==='central');
-test('sixteen explicit Bay adapters match model outputs',()=>{
- const h=read('hpp-model-v1.json'),f=read('felton-model-v1.json'),p=read('sfphf-model-v1.json'),c=read('code-tenderloin-model-v1.json'),w=read('walk-sf-cea-v1.json'),s=read('spur-portfolio-cea-v3.json'),o=read('oa-portfolio-model-v2.json'),n=read('newdoor-portfolio-v1.json'),cl=read('clinic-portfolio-model-v2.json'),a=read('sfaf-portfolio-model-v1.json'),ph=read('phc-portfolio-model-v1.json');
+test('all current Bay adapters match the selected current calculators, not historical diagnostics',()=>{
+ const h=read('hpp-model-v1.json'),f=read('felton-model-v1.json'),p=read('sfphf-model-v1.json'),w=read('walk-sf-cea-v1.json');
  const expected={
-  'housing-action-coalition':hacV2().bayCostPer10,
-  glide:glide(read('glide-coverage-v2.json')).bay.donor_per_10q,
-  'breathe-california':breathe().central.bay.donor_per_10q,
-  'pacific-vision-foundation':pvf(pvfCentral).prices.bay.donor,
+  'housing-action-coalition':hac().donorPriceBay,
+  glide:glide().find(s=>s.id==='conditional_center').result.bay.donorPer10HealthyYears,
+  'breathe-california':breathe().central.ledgers.bay.conditionalDonorPer10,
+  'pacific-vision-foundation':pvf().regions.bay.donorPrice10,
   'homeless-prenatal-program':hpp(central(h).inputs).bay.donor_per_10q,
   'felton-institute':felton({...f.central_inputs,...central(f).overrides}).donor_bay_per_10q,
   'sf-public-health-foundation':sfphf(central(p).inputs).bay.donor_per_10q,
-  'code-tenderloin':code({...c.central_inputs,...central(c).overrides}).donor_bay_per_10q,
+  'code-tenderloin':code().bayUsdPerBetterLife,
   'walk-san-francisco':walkSfModel(central(w),w.giftUsd).bayUsdPer10Qaly,
-  spur:spurPortfolioModel(central(s),s.budget.totalUsd).bayUsdPer10Qaly,
-  'operation-access':oa(o,central(o)).regions.bay.donor_per_10q,
-  'ymca-greater-sf':ymcaPortfolioModel(central(ymcaPortfolio)).bayUsdPer10Qaly,
-  'clinic-by-the-bay':clinic(clinicInputs(cl,cl.scenarios.find(s=>s.id==='Central'))).donor_bay_per_10q,
-  'san-francisco-aids-foundation':sfaf(central(a).inputs).bay.donor_per_10q,
-  'project-homeless-connect':phc(inputsFor(ph,central(ph))).donor_bay_per_10q,
+  spur:spur().regions.bay.price10,
+  'operation-access':oa().regions.bay.price10,
+  'ymca-greater-sf':ymca().geography.bayIncludingSF.donorUSDPer10CombinedEquivalentYears,
+  'clinic-by-the-bay':clinic().donorBayPrice10,
+  'san-francisco-aids-foundation':sfaf().bayUsdPerBetterLife,
+  'project-homeless-connect':phc().donor_bay_per_10q,
+  'hearing-and-speech-center':hearing({}).bayCostPerTenQalys,
+  'compass-family-services':compass(compassInputs).bay.costPerBetterLifeUSD,
+  'hamilton-families':hamilton(hamiltonInputs).bay.costPerBetterLifeUSD,
+  'friends-of-the-urban-forest':fuf(fufInputs).bay.costPerBetterLifeUSD,
+  'self-help-for-the-elderly':selfhelp().bay.usdPerBetterLife,
+  'north-east-medical-services':null,
+  'new-door-ventures':null,
  };
- assert.equal(rows.filter(r=>Object.hasOwn(r,'bayUsdPerTenQalys')).length,17);
- assert.equal(rows.find(r=>r.slug==='north-east-medical-services').bayUsdPerTenQalys,null);
- const newdoor=rows.find(r=>r.slug==='new-door-ventures');
- assert.equal(newdoor.bayUsdPerTenQalys,null);assert.equal(newdoor.estimateStatus,'conditional-net-harm');
- assert.match(localResearchEstimate(newdoor).localStatus,/ordinary-donation EV remains unknown/);
- for(const [slug,value] of Object.entries(expected)){
-  assert.ok(Number.isFinite(value)&&value>0,slug);
-  const row=rows.find(r=>r.slug===slug);assert.equal(row.bayUsdPerTenQalys,value,slug);
+ const adapters=rows.filter(r=>Object.hasOwn(r,'bayUsdPerTenQalys'));
+ assert.equal(new Set(adapters.map(r=>r.slug)).size,adapters.length);
+ assert.deepEqual(adapters.map(r=>r.slug).sort(),Object.keys(expected).sort());
+ for(const[slug,value]of Object.entries(expected)){
+  assert.ok(value===null||(Number.isFinite(value)&&value>0),slug);
+  const row=adapters.find(r=>r.slug===slug);assert.equal(row.bayUsdPerTenQalys,value,slug);
   assert.equal(localResearchEstimate(row).localUsdPerTenQalys,value,slug);
   assert.equal(localResearchEstimate(row).estimateGeography,'Bay Area');
  }
- assert.equal(rows.find(r=>r.slug==='project-homeless-connect').centralUsdPerTenQalys,798863.3403891586);
+ assert.equal(rows.find(r=>r.slug==='new-door-ventures').estimateStatus,'conditional-net-harm');
+ assert.match(localResearchEstimate(rows.find(r=>r.slug==='new-door-ventures')).localStatus,/ordinary-donation EV remains unknown/);
+ assert.equal(rows.find(r=>r.slug==='self-help-for-the-elderly').estimateStatus,'conditional-course');
+ assert.match(localResearchEstimate(rows.find(r=>r.slug==='self-help-for-the-elderly')).localStatus,/ordinary-donation EV/);
+ assert.equal(rows.find(r=>r.slug==='project-homeless-connect').centralUsdPerTenQalys,phc().donor_sf_per_10q);
 });
 test('Bay selection distinguishes missing model from explicit null, independent of price or scope',()=>{
  assert.equal(localResearchEstimate({centralUsdPerTenQalys:10}).localUsdPerTenQalys,10);

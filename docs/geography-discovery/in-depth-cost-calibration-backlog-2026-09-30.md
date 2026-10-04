@@ -1,5 +1,11 @@
 # Recalibrate existing in-depth reviews
 
+## Self-Help current-model publication — October 4
+
+Self-Help for the Elderly additional current-model coverage published Sites401: conditional prospective SF-resident 24-week therapeutic course $643K versus initial endpoint $2.4M and separate integrated health-only $600K diagnostic. Integrated health counted once plus signed travel/time resources; current six-week Sun-style is different, ordinary-donation EV unknown. Nineteen current cases and three frozen worlds, original FY2024 versus extracted-only FY2023/FY2025 finance limits, four actual Sol-assigned clocks7.0157minutes excluding abandoned time. Independent science/arithmetic and separate integration ACCEPT;24 focused tests,4 phone/tablet report/home checks,fresh build PASS. Same price/list/top-four; sourced official image. Original queue48/48,cohort40/40,legacy11/11;additional coverage4/24 published,20 remain. Next Huckleberry Youth Programs after repairing prior historical Bay-adapter test; full geographic program still required. Usage93%remaining;20%reserve/no newbatch<=25%.
+
+Exact receipt: selfhelp-current-publication-20261004.json. P0 remains incomplete; earlier entries are historical. No active researchworker or open clock. Previous goal turn was no-progress acknowledgement; this turn implemented and published accepted integration. Known broader Bay-adapter test uses obsolete historical models and requires separate correction; no full-suite pass is claimed.
+
 ## New Door current-model publication — October 4
 
 New Door Ventures additional current-model coverage published Sites399: conditional partial health plus signed net household resources yields Bay −0.064968/SF −0.029236 equivalents; no positive reference price or efficacy rank. Initial Bay $228.57M/SF $507.94M remain historical diagnostics; full ordinary-donation EV unknown. Original CY2023-25 finances, eight portfolio and three earlier employment worlds preserved. Independent source/math,13-case reconstruction,19 extra probes and separate integration acceptance;30 focused tests,2 responsive checks,build PASS. Five actual Sol clocks total15.898minutes;QA/idle excluded. Original queue48/48,cohort40/40,confirmed legacy11/11;additional coverage3/24 published,21 remain. Next21 exploratory boundaries before geographic expansion. Usage94%remaining;floor20%,no newbatch<=25%.

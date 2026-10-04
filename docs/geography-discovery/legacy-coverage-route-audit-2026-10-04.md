@@ -1,5 +1,9 @@
 # Legacy coverage route audit
 
+## Open final coverage gate — October4
+
+Root identified three live health-only draft pathways outside frozen24 additionalboundaries: Homeless Prenatal Program,Felton Institute,SF Public Health Foundation. Original statuses say independent acceptance pending; do not silently count them as accepted olddeepreviews or certify fullhealth-income coverage without classification. See public-coverage-audit-followup-20261004.md for exact routes/calculators/evidence. Frozenpublished5/24 remains correct; finalscope certificate must reconcile this explicit opengate and any other missinglive models before P0 acceptance/newexpansion.
+
 ## Huckleberry current-model publication — October 4
 
 Huckleberry Youth Programs additional current-model coverage published Sites403: conditional SF-resident behavioral course $4.22M versus initial health-only $3.69M. Integrated 32-week health plus signed household resources; causal exposure corrected for gains and burdens, exact log-domain guard and separate independent harms. Twenty current cases/three original worlds; original FY2025/FY2024 audits plus previouslyaudited2023 comparative, audited mean $8.68M. Five actual Sol-assigned closed clocks13.5728minutes, unknown raw runtime retained. Independent science/math and separate integration ACCEPT;27 focused tests,2 phone/tablet checks and native build PASS. Report/API/list prices synchronized, top four unchanged. Original queue48/48,cohort40/40,legacy11/11;additional coverage5/24,19 remain. Next RAMS then remaining public-model coverage before geographic expansion. Usage93% remaining;20% reserve/no new batch<=25%.

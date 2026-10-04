@@ -4,6 +4,10 @@ Published state remains **40/40 cohort; legacy7/11; original queue44/48**. GLIDE
 
 ## Current bounded phase
 
+October4 02:48UTC continuation: author packet complete and preserved beside this checkpoint as `breathe-legacy-recalibration-2026-10-04.*`; original isolated packet remains intact. Actual author interval01:46:45.120–01:55:07.367UTC (8.3708minutes), raw runtime null/user-assigned Sol distinguished. Seventeen candidate assertions pass, but this is not acceptance. Sole independent challenger `/root/breathe_legacy_review` is now active; inspect before dispatching any other worker. Allowance96%remaining. No product wiring or deployment yet.
+
+Root deterministic challenge found an untested material defect: a pure negative CPAP clinical case with fee/travel burden yields UShealth−0.35891470279133525 and cash−0.019822839376000028 at nonoverlapShare1, but both become0 at share0. Positive-overlap credit must not erase negative clinical or cash burdens. The reviewer has this counterexample and is challenging native effects, financial anomalies and the headline boundary independently. Next collect review, request bounded material correction from the terminal author if required, then fresh independent acceptance. No recalibration count increment.
+
 At the October4 01:42UTC heartbeat, root verified a clean checkout on `priority/recalibrate-in-depth-health-income` and live allowance96%remaining. Root reread the three execution skills and research-effort requirements. Sole isolated implementer `/root/breathe_legacy_author` is assigned Breathe California, using user-assigned GPT-6.1 Sol and distinguishing unknown raw runtime metadata. The implementer must not change this checkout, publish, install dependencies, start servers or spawn helpers. Expected packet: `/private/tmp/breathe-legacy-recalibration-20261004.{md,calculate.mjs,receipts.json,closed.json}`. Inspect worker status/artifacts before any replacement dispatch; no overlapping research. Scientific acceptance is still pending.
 
 ## Preserved baseline and evidence

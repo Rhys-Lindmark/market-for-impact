@@ -1,0 +1,19 @@
+# Breathe California legacy phase checkpoint
+
+Published state remains **40/40 cohort; legacy7/11; original queue44/48**. GLIDE product Sites385 and progress Sites386 are accepted and published. Four confirmed legacy models remain: Breathe California, North East Medical Services, HEPPAC and Changent/NFP; unresolved depth/provenance and exploratory-funnel classification gates precede geographic expansion. The full eleven-edition goal and existing schedule are unchanged.
+
+## Current bounded phase
+
+At the October4 01:42UTC heartbeat, root verified a clean checkout on `priority/recalibrate-in-depth-health-income` and live allowance96%remaining. Root reread the three execution skills and research-effort requirements. Sole isolated implementer `/root/breathe_legacy_author` is assigned Breathe California, using user-assigned GPT-6.1 Sol and distinguishing unknown raw runtime metadata. The implementer must not change this checkout, publish, install dependencies, start servers or spawn helpers. Expected packet: `/private/tmp/breathe-legacy-recalibration-20261004.{md,calculate.mjs,receipts.json,closed.json}`. Inspect worker status/artifacts before any replacement dispatch; no overlapping research. Scientific acceptance is still pending.
+
+## Preserved baseline and evidence
+
+Root froze complete original report calculate output, old baseline, old allocation result and five ranking worlds in `data/san-francisco/breathe-legacy-pre-recalibration-model.json`, with nine original-source SHA256 hashes. The current historical central list result must be distinguished from the weighted prior-world result; neither is overwritten. All original input/source files remain unchanged. `scripts/breathe-legacy-historical.test.mjs` and existing `scripts/breathe-v2.test.mjs` PASS (two test files). This is deterministic preservation QA, not new organization research or a completion count.
+
+## Acceptance and handoff
+
+Author must freshly verify the correct Bay Area operator/EIN941156307, continuing operations and latest three available comparable original filings; distinguish Southern California. Reconsider cessation, asthma and CPAP native delivery and finite clinical effects, then add signed net recipient income/consumption, fees, tobacco purchases, care/travel costs, transfers and unknown effects. No baseline survivor wages, GDP or forced numerical changes. Keep donor and gross resource boundaries distinct, positive-only overlap and full negative burdens. Require reproducible zero/adverse/unknown/delay/local/cost-stress cases and actual closed organization/model sessions, excluding setup/QA/waits.
+
+Next action: collect terminal author packet, dispatch a separate bounded independent source/arithmetic challenger, resolve material corrections, then root integrates report/API/list/editorial/provenance/contents and tests responsive parity before publication. Do not increment counts until independent acceptance, integration, original-output/hash tests, current arithmetic tests, responsive checks, build and successful deployment receipts. If pending, retain this checkpoint and wait for the next authorized continuation rather than repeating accepted GLIDE work.
+
+Usage guard: floor20%remaining; no new batches at or below25%, no expensive dispatch if unavailable; check before each dispatch and every15active research minutes. No reset credit used. Space Saver baseline: checkout160MiB, available30GiB; compatible checkout/dependencies reused, no installs/copies/preview servers. Frozen source and unique research artifacts are durable, not cleanup candidates.

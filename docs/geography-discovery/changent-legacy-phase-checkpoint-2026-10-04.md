@@ -1,5 +1,9 @@
 # Changent legacy phase checkpoint
 
+## Published: October 4, Sites version 393
+
+Source commit 2d73de1be3bcfaf15d4b58ec7ee4e09c1dc7f985 deployed successfully at 16:56:48 UTC. See changent-legacy-publication-2026-10-04.json. Published counts are now 40/40 cohort, 11/11 confirmed legacy and 48/48 original pending queue. P0 remains open for 24 additional public model boundaries; Vision To Learn is next. Earlier sections below are historical phase checkpoints, not current acceptance status.
+
 ## Current: accepted integration, verified release pending
 
 Independent scientific and integration review ACCEPT conditional. Current report has 2,238 words and preserves finite versus lifetime horizons, signed health/resources, speculative cash coefficients and unknown ordinary/local EV. Root fixed finite-signed-surplus validation without changing defaults and corrected blanket utilization-null source wording to acknowledge the modern secondary ED signal; original author receipt remains immutable. API, national archive-list price, summary/TOC and financial appendix synchronized. Four actual new sessions imported exactly once; about31 current Sol researcher-minutes, old5.6 sessions preserved. Earlier aborted writing start, overnight gap, unrelated diagnosis and QA excluded.20 focused tests,2 final phone/tablet checks and fresh build PASS; independent7 integration tests PASS separately. Browser sandbox initially prevented Chromium launch, scoped approved unsandboxed run passed, no3107 listener kept. Publication pending; accepted/published counts remain40/40cohort,10/11legacy,47/48originalqueue. Additional24 coverage boundaries remain separate, not silently completed.

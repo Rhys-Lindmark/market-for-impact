@@ -1,5 +1,9 @@
 # North East Medical Services legacy phase checkpoint
 
+## Release checks passed — publication next
+
+Phone390/tablet768 `e2e/sf-nems-current.spec.ts` both passed (exec7569,14.8s): actual9-minute Sol header, removed unsupported Astra18 claim, signed/adverse cash, six-group contents targets, spending appendix, no page overflow, current/historical API and explicitly conditional numeric list display with no ordinary-gift numeric rank. Preview launcher was test-owned and torn down; no retained server. Durable release verification JSON and integration review copied into this directory. Site owner/public access refreshed, latest Sites388; fresh credential held in memory only. Next fresh build/package/exact source save/deploy, terminal receipt, then advance legacy9/11 and originalqueue46/48. Until success counts remain8/11 and45/48.
+
 ## Integration correction — inherited header claim removed
 
 Independent integration QA accepted the conditional display, body, contents and API, but found the inherited page prop would append unsupported 18 minutes on Astra Light beyond the four current Sol sessions. Root removed that claim with `minutes={0}`, current Sol label and `legacyMinutesAlreadyRecorded`, leaving measured registry sessions and the separate historical fallback untouched. Earlier prepared-integration wording that called the hardcoded 18 minutes a supported fallback is superseded by this correction. A page-prop regression now guards against recurrence. Review receipt `/private/tmp/nems-legacy-integration-review-20261004.md` awaits durable import; corrected header must be rendered on phone/tablet before release. Build must be rerun after this correction. No completion increment or deployment yet.

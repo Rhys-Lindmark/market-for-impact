@@ -1,5 +1,7 @@
 # New Door Ventures current health/income reassessment
 
+Stable author packet received20:35UTC and preserved as newdoor-author-proposal/candidate/receipts/closed-20261004.*. Two actual author clocks total11.723minutes, closed before QA. Candidate13cases pass own self-test, conditional Bay$27.06M/SF$60.13M versus old$228.57M/$507.94M, full ordinary EV unknown. Candidate is NOT accepted or public. Root found post-net income/negative-health overlap attenuation and overly broad donation bounds; independent reviewer /root/newdoor_independent_review dispatched after author terminal, freshusage94%. Next: independent source/math verdict and material repairs preserving full negative burdens, then root integration/release. Do not count as3/24 until verified publication.
+
 Previous phase made verified progress: YMCA source/model/report integration published Sites397, tracker398. Additional current-model coverage2/24;22 remain. Original cohort40/40, confirmed legacy11/11, original queue48/48. Full P0 and geographic objective remain incomplete.
 
 Current author /root/newdoor_health_income_author is assigned an isolated source/model proposal, approximately15 substantive minutes with actual closed per-model timing. Fresh usage94%remaining; preserve20%, no new research<=25%. Root-only checkout/Git/Sites; no worker overlap. Independent reviewer required before integration.

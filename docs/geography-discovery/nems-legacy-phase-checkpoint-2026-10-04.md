@@ -1,5 +1,9 @@
 # North East Medical Services legacy phase checkpoint
 
+## Published product — tracker release next
+
+Sites389 succeeded from source6c756393627dfb9c73ce17ef34c4da2c012c67c7 at2026-10-04T05:41:47.158169+00:00. Exact saved-version/deployment/archive/source receipt is `nems-legacy-publication-2026-10-04.json`. Counts now40/40 cohort,9/11 confirmedlegacy,46/48originalqueue; HEPPAC and Changent/NFP remain, plus existing provenance/classification gates. Root updated progress JSON/HTML and inventory/backlog; next fresh tracker build/package/publish then PR384 body synchronization. Unique evidence retained; upload archive remains until receipt/cleanup. No repeat source review or NEMS re-dispatch needed.
+
 ## Release checks passed — publication next
 
 Phone390/tablet768 `e2e/sf-nems-current.spec.ts` both passed (exec7569,14.8s): actual9-minute Sol header, removed unsupported Astra18 claim, signed/adverse cash, six-group contents targets, spending appendix, no page overflow, current/historical API and explicitly conditional numeric list display with no ordinary-gift numeric rank. Preview launcher was test-owned and torn down; no retained server. Durable release verification JSON and integration review copied into this directory. Site owner/public access refreshed, latest Sites388; fresh credential held in memory only. Next fresh build/package/exact source save/deploy, terminal receipt, then advance legacy9/11 and originalqueue46/48. Until success counts remain8/11 and45/48.

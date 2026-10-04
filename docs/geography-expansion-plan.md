@@ -1,5 +1,19 @@
 # GiveBetter geographic expansion
 
+## Current execution override — October 4, 2026
+
+The user resumed the overall program and replaced the previous research budgets: approximately **5 actual organization-specific minutes per initial report**, then **15 minutes per in-depth review**, followed by **four featured giving opportunities per completed edition**. These are substantive research budgets, not timers to fill. Record actual per-model minutes; historical sessions remain unchanged. All new work uses GPT-6.1 Sol. This override supersedes older model assignments, parallel-worker instructions, research budgets and pause statements below.
+
+A native long-term goal was created and is active. The existing hourly heartbeat `build-market-for-impact-hourly` was updated in place, not duplicated. Start from the current backlog and checkpoints for PR #384; finish remaining existing-review recalibrations and legacy coverage gates before geographic expansion. Current accepted coverage is 40/40 published-cohort reviews and 8/11 confirmed legacy reviews; NEMS is in progress, with HEPPAC and Changent/NFP next. Additional provenance/classification gates remain before certifying complete coverage. Do not count a prepared packet as an accepted or published review.
+
+Preserve San Francisco and advance California, USA, New York City, Los Angeles, Chicago, Houston, Denver, Seattle, Boston, Atlanta and Detroit. Reuse their accepted discovery pools and existing reports. Complete at least 25 initial reports and ten in-depth reviews per new edition; existing USA reports beyond 25 are allowed. Select four evidence-informed featured opportunities after review, synchronize their prices with the full research list, and include images. Do not manufacture an endorsement where evidence or donation readiness does not support one.
+
+Every model assesses both clinical health (QALYs/DALYs) and signed net income/consumption welfare using [Coefficient Giving's comparison](https://coefficientgiving.org/research/cost-effectiveness/) and the repository's documented income-health equivalence. Keep **$ per better life** (ten healthy-year-equivalents) as the main comparison while exposing clinical and income-equivalent components separately; income equivalents are not measured clinical QALYs. Use causal net gains, relevant baseline income, finite duration, geographic attribution, discount/delay, harms and uncertainty. Account for costs, taxes, transfers, displacement and overlap; missing income evidence is not evidence of zero income impact. Do not force numerical changes or favorable results. Preserve old estimates as diagnostics and explain each revision.
+
+Use at most one isolated subagent at a time, with independent challenge before root acceptance. Root alone integrates and publishes after original-source checks, arithmetic tests, current-operations/financial checks and synchronized report/list/shortlist verification. After P0 acceptance, integrate the queued better-paying-jobs and abundance/growth pipeline PR into holistic research, without restoring promotional footer sections.
+
+Check live usage before each batch or dispatch and after 15 active minutes. Start no new research at or below 25% remaining; checkpoint safely above the **20% remaining floor**. If usage is unavailable, dispatch no expensive work. Never spend reset credits or overlap active runs. Reuse checkouts/dependencies under Space Saver; preserve unique evidence. Notify on meaningful completion, failure, material findings or needed user action, not unchanged hourly state. Persist accepted/remaining recalibration counts and edition initial x/25, deep x/10 and featured x/4 separately. The live progress files, not historical paragraphs, determine the next assignment.
+
 ## Current execution override — October 1, 2026
 
 The user explicitly resumed work, starting with [PR #384](https://github.com/Rhys-Lindmark/market-for-impact/pull/384). Existing goal remains active. Complete the reconciled existing-review health-and-income recalibration backlog before new expansion or the queued earnings-pipeline PR. Read `geography-discovery/in-depth-cost-calibration-backlog-2026-09-30.md` and its current inventory rather than historical checkpoint paragraphs below. Current model: GPT-6.1 Sol. Use one bounded implementer and separate manager acceptance to limit usage. Existing hourly heartbeat is active with this priority.
@@ -39,6 +53,8 @@ The user confirmed nine metro editions: New York City, Los Angeles, Chicago, Hou
 Tracking source: docs/geography-progress.json. Human dashboard: docs/geography-progress.html. Candidate packets: docs/geography-discovery/. [Expansion issue #333](https://github.com/Rhys-Lindmark/market-for-impact/issues/333). Boundary register: docs/geography-boundaries.json, extracted from Census July2023/OMB23-01 official MSA definitions. Method audit: docs/geography-method-audit.md.
 
 ## Models and research budgets
+
+The following table records the original September plan; the October 4 override above controls current execution (GPT-6.1 Sol, approximately 5-minute initial reports and 15-minute deep reviews).
 
 | Stage | Required worker model | Output |
 | --- | --- | --- |

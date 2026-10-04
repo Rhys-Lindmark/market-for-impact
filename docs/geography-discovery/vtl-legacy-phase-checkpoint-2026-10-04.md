@@ -1,5 +1,9 @@
 # Vision To Learn legacy coverage phase
 
+## Independent challenge: same-household netting flaw, acceptance held
+
+Reviewer found that purchaser/caregiver savings were logged separately from participation losses for those same households. Purchaser savings50 with participation cost10 must log net40 for purchaser households and net−10 for residual households, not add log50 to a second log−10 for the same purchaser. Central participationLoss0 leaves the point unchanged, but signed diagnostics still require cohort-level correction. Root requested independent purchaser/caregiver/residual reconstruction and simultaneous education/participation-window scrutiny. Original author candidate remains immutable; no current production price or accepted count changed. Next: reviewer returns explicit REVISE/ACCEPT conditions, root repairs and tests, then independent integration verification before publication.
+
 ## Author terminal; sole independent reviewer dispatched
 
 Author returned terminal packet:118 assertions across42 finite cases and664 arithmetic/finance/geography/original-output checks pass. Mixed positive gross future pay with larger fees now computes negative net before applying the temporal guard, preserving the negative same-window effect. This is author QA, not independent acceptance. Immutable author memo/candidate/receipts/closed clocks are persisted beside this checkpoint. Reviewer /root/glide_legacy_review is assigned fresh primary-source and independent equation reconstruction, with its own actual clock and no checkout writes. Usage95%remaining before dispatch. Additional accepted coverage remains0/24; production prices unchanged.

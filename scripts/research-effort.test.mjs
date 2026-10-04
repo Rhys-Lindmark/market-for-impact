@@ -69,7 +69,9 @@ test('historical estimates use a frozen report average and never invent session 
  const h=JSON.parse(fs.readFileSync('data/research-effort-historical-estimates.json','utf8'));
  assert.equal(h.samples.length,13);assert.equal(new Set(h.organizations).size,80);
  assert.equal(h.minutes,h.samples.reduce((sum,s)=>sum+s.minutes,0)/h.samples.length);
- const estimated=researchEffortSummary(registry,'GLIDE Foundation',h);
+ // Freeze the missing-history fixture independently of later actual GLIDE sessions.
+ const fixture={...registry,organizations:{...registry.organizations}};delete fixture.organizations['GLIDE Foundation'];
+ const estimated=researchEffortSummary(fixture,'GLIDE Foundation',h);
  assert.equal(estimated.recorded,false);assert.equal(estimated.estimated,true);
  assert.equal(estimated.label,'Research time: ~18 min on GPT-5.6 Sol Medium');
  assert.match(estimated.bullets.at(-1),/before time tracking/);

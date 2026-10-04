@@ -1,0 +1,214 @@
+{
+  "retrievedDate": "2026-10-04",
+  "receiptBasis": "SHA-256 of fetched response body; native web extracted text is separately identified. No API summary substituted for original IRS filing.",
+  "sources": [
+    {
+      "url": "https://projects.propublica.org/nonprofits/full_text/202441279349303249/IRS990",
+      "status": 200,
+      "sha256": "79fdde556697a39ae54d173c296db9964b37f32910f3b1207c079abfa938064e",
+      "locator": "Original Form 990 (2022), July 1 2022–June 30 2023, Part I lines12/18; Part IX line25",
+      "facts": {
+        "ein": "94-0997140",
+        "fiscalYear": 2023,
+        "revenue": 107067527,
+        "expenses": 105626717,
+        "programExpenses": 92722217
+      },
+      "extractionLimit": "Original filing rendering, not underlying XML; subsequent comparative differs."
+    },
+    {
+      "url": "https://projects.propublica.org/nonprofits/full_text/202531149349301013/IRS990",
+      "status": 200,
+      "sha256": "4bcb6e6c7ebbfc5adc8ec2ecc6ee8d74a071b1a49ff889bb673871ab97b042ab",
+      "locator": "Original Form 990 (2023), July1 2023–June30 2024, Part I lines12/18; Part IX line25",
+      "facts": {
+        "fiscalYear": 2024,
+        "revenue": 119199010,
+        "expenses": 111892141,
+        "programExpenses": 99892274,
+        "comparativeFY2023Revenue": 107620555,
+        "comparativeFY2023Expenses": 106179745,
+        "comparativeDeltaBoth": 553028
+      },
+      "extractionLimit": "No explicit explanation of comparative presentation delta extracted; NOT established as reclassification."
+    },
+    {
+      "url": "https://projects.propublica.org/nonprofits/full_text/202640789349301234/IRS990",
+      "status": 200,
+      "sha256": "337bc025ba65ba06ae1b272701abd24dd535434c143c3973d40961738dc36a1b",
+      "locator": "Original Form990 (2024), July1 2024–June30 2025; Part I12/18 and IX25",
+      "facts": {
+        "fiscalYear": 2025,
+        "revenue": 121580211,
+        "expenses": 117081068,
+        "programExpenses": 104248328
+      },
+      "extractionLimit": "IRS functional expense presentation differs from GAAP; not course unit costs."
+    },
+    {
+      "url": "https://media.ymcasf.org/wp-content/uploads/2025/11/12144641/Young-Mens-Christian-Association-of-San-Francisco-2025-Audit-FS-Final.pdf",
+      "status": 200,
+      "sha256": "59041961320d25eadea3cfe6fbd56d27429f9dba02442cb1961302b4e97a9d97",
+      "locator": "Audit datedOctober24 2025, printedp6 statementofactivities /PDFp7; FYJune30 2025",
+      "facts": {
+        "operatingRevenue": 120251623,
+        "operatingExpenses": 117874257,
+        "programExpenses": 104248328,
+        "governmentFeesGrants": 51161947,
+        "membershipDues": 22489121,
+        "childYouthFees": 18706577,
+        "campFees": 7040021,
+        "otherProgramFees": 3731299
+      },
+      "extractionLimit": "Native web PDF text extraction; full marginal resources outside YMCA accounts unknown."
+    },
+    {
+      "url": "https://www.ymcasf.org/program/diabetes-prevention/",
+      "status": 200,
+      "sha256": "1a5ff85690924cadffd69007a7f39f8a3efc85e38868fda6b00522ca11603240",
+      "locator": "Eligibility and FAQ: employer/insurance; membership; classroom;16sessions",
+      "facts": {
+        "ageMinimum": 18,
+        "bmiThreshold": 25,
+        "membershipRequired": false,
+        "classIsExercise": false,
+        "employerInsuranceCanPay": true
+      },
+      "extractionLimit": "No actual supported course cost, local incidence/QALY, marginal availability or coverage proportions."
+    },
+    {
+      "url": "https://www.ymcasf.org/location/mental-health-services-ymca/",
+      "status": 200,
+      "sha256": "78ffce472e30707ee772cde1d6d273ced529670c4d76149bb1adc15ae7d357be",
+      "locator": "Insurance/payment FAQ; clinicianmatchFAQ; CRC/therapy referralFAQ",
+      "facts": {
+        "eligibleServicesOftenFree": true,
+        "mediCalProgramEligibility": true,
+        "someSlidingFees": true,
+        "clinicianWaitUnknown": true,
+        "overlapWithBasicNeedsPossible": true
+      },
+      "extractionLimit": "No unique courses, clinical response/utilities, retention, duration, full cost or donorincrement measured."
+    },
+    {
+      "url": "https://www.ymcasf.org/program/family-resource-centers/",
+      "status": 200,
+      "sha256": "c4f2d0f37a20ab6dbbe64930fc5d5628492eb9ab03c7068116963f24c01d8c96",
+      "locator": "UrbanFRC /SafeStart services and weeklyfoodfunding",
+      "facts": {
+        "urbanServicesFree": true,
+        "urbanServesSFNeighborhoods": true,
+        "safeStartChildUnderAge": 6,
+        "foodFundedSFDepartmentDisabilityAging": true
+      },
+      "extractionLimit": "Households/episodes, marginal food/nettransfers and causal clinical bridge unknown; do not multiply benefit by family size."
+    },
+    {
+      "url": "https://www.ymcasf.org/program/before-afterschool-programs/",
+      "status": 200,
+      "sha256": "76f4c6d56370cb525ee398157382cd8c1c25d6bf637a1b1c2c409875f57232eb",
+      "locator": "Register;MonthlyTuition;ThirdPartyAssistance;FinancialAssistance",
+      "facts": {
+        "siblingDiscount": 0.2,
+        "facilityMemberDiscountUpTo": 0.2,
+        "alternativePaymentVouchersAccepted": true,
+        "remainingTuitionHouseholdPays": true,
+        "assistanceFirstComeFirstServed": true
+      },
+      "extractionLimit": "Rates vary by site/year; no exact next-gift scholarship amount, caregiveractualpay, alternativecarecost or capacity."
+    },
+    {
+      "url": "https://www.ymcasf.org/program/group-swim-lesson/",
+      "status": 200,
+      "sha256": "1d17f783227b33bb199a78ab00f5cd205b833ced43b33211e102e330c72a6ce8",
+      "locator": "Group Lesson Pricing",
+      "facts": {
+        "sixLessons": {
+          "facilityMember": 165,
+          "communityMember": 216
+        },
+        "sevenLessons": {
+          "facilityMember": 193,
+          "communityMember": 252
+        },
+        "eightLessons": {
+          "facilityMember": 220,
+          "communityMember": 288
+        }
+      },
+      "extractionLimit": "Customer retail prices NOT supported full course cost or donor quote; membership price difference is not demonstrated donor-caused fee relief; no local drowning risk effect."
+    },
+    {
+      "url": "https://www.ymcasf.org/program/camps/",
+      "status": 200,
+      "sha256": "005a4141888865b82cf403cc904506ac244563d37816e98e0959b398cb7775b7",
+      "locator": "Current program taxonomy",
+      "facts": {
+        "currentCampPrograms": true
+      },
+      "extractionLimit": "No validated donor-supported participant season cost or marginal capital/clinical payoff extracted."
+    },
+    {
+      "url": "https://www.ymcasf.org/donate/",
+      "status": 200,
+      "sha256": "5d35fe7ee796d9c2dbdc2895f4f40e71aaca4ec084870ac4b5ba5eaa7a2cd100",
+      "locator": "Give Online",
+      "facts": {
+        "oneTimeRecurringGeneralProgramsGiving": true
+      },
+      "extractionLimit": "Actual next-gift service allocation/capacity unknown; aggregate marketing reach not unique course denominators."
+    },
+    {
+      "url": "https://eprints.gla.ac.uk/89420/1/89420.pdf",
+      "status": 200,
+      "sha256": "415f7f145ba98631cdf345510efb64af09bed1c6645da9c36e9a16f8fc3f922d",
+      "locator": "Edwards etal BMC PublicHealth2013 13:1021 abstract/methods printedpp1–3",
+      "facts": {
+        "economicSample": 798,
+        "trialSampleShare": 0.55,
+        "courseWeeks": 16,
+        "incrementalQALYs": 0.027,
+        "observationStartMonth": 6,
+        "observationEndMonth": 12,
+        "baselineEQ5DCollected": false,
+        "economicAdherence": 0.62,
+        "mainTrialAdherence": 0.44
+      },
+      "extractionLimit": "Economic subgroup/adherence selection; no baselineEQ5D. Not ordinary membership RCT nor local cost. .2 transfer remains subjective."
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26378828/",
+      "status": 203,
+      "sha256": "758c5ca55bd927f5db8fb3a3ca9380d1c4b0d341c0fd1d1d3a8ccefbec6dfdd9",
+      "locator": "Author abstract read via native web (direct Node response is challenge, hash is NOT article body)",
+      "facts": {
+        "randomizedAdults": 509,
+        "attendedAtLeastOne": 161,
+        "attendedAtLeastNine": 103,
+        "ITTWeightLossKg": 2.3,
+        "ITTConfidenceIntervalKg": [
+          1.1,
+          3.4
+        ],
+        "followupMonths": 12
+      },
+      "extractionLimit": "Primary author abstract only, not fresh full-text. Weight outcome not local causal diabetes incidence/QALY; no point conversion certified."
+    },
+    {
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4605179/fullTextXML",
+      "status": 500,
+      "sha256": "0093841da7d6d312ae47676cb619b3d241b0701bb99ded8b210f994c8e3e4abd",
+      "locator": "Attempted originalfulltextXML",
+      "facts": null,
+      "extractionLimit": "150byte errorbody; no source extraction; not evidence."
+    },
+    {
+      "url": "https://www.ymcasf.org/program/before-after-school/",
+      "status": 404,
+      "sha256": "ef070494361b315a2df496bf609b8aef2b47d493ea6d1ab39004a27ec98fc34b",
+      "locator": "Mistyped URL corrected to before-afterschool-programs",
+      "facts": null,
+      "extractionLimit": "404body not evidence."
+    }
+  ]
+}

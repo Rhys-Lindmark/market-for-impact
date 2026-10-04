@@ -2,6 +2,10 @@
 
 ## Current source reassessment, no additional acceptance yet
 
+## Material independent incidence correction staged; acceptance held
+
+Separate reviewer identified unsupported addition of separately logged cash across possibly overlapping program households. Root staged lib/ymca-current-calibrated-model.mjs (not imported by public consumers) with an exact bounded disjointHouseholdRoutes declaration required for multiple active money-route or induced cohorts. Default supports at most one active cash cohort; overlapping joint-household calculations are rejected rather than independently logged. Named seven-route burdens and two-route geography worlds explicitly declare disjoint incidence as unverified hypotheses. Negative cash rows remain full; positive overlap is not used to certify unique households. Output discloses active routes/declaration/status. Four current correction checks plus three full historical-preservation checks PASS; all27 finite cases/50 author regression controls still pass. Original author candidate remains immutable. Source/audit review and clinical-overlap challenge pending; current public prices and additional count1/24 unchanged. Root technical correction/QA is not separately credited researchtime.
+
 ## Author packet frozen; independent challenge next
 
 Closed actual author/model clocks total14.71558minutes, ending18:08:35UTC before QA. Final packet QA at18:11:35UTC reports27 cases,50 self-test assertions,947 independent-formula arithmetic controls and84 historical/source preservation controls PASS. Fitness observed6–12month AUC discounted at.75year midpoint and locked to one integrated course, not a five-year re-integration. Proposed partial conditional Bay$12.88064M/SF$19.81637M; central income/therapy/family zeros are explicitly unidentified exclusions, not measured absence. Full portfolio expected value and complete gross costs remain unknown.

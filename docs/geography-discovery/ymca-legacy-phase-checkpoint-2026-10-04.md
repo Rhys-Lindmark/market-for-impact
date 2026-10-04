@@ -2,6 +2,10 @@
 
 ## Current source reassessment, no additional acceptance yet
 
+Author primary-source milestone at17:58UTC: original FY2023/24/25 IRS expenses105626717/111892141/117081068 match existing original-return appendix. FY2024 comparative FY2023 differs by553028 in both revenue and expenses, preserving surplus1440810; presentation/reclassification is only a possible explanation pending an explicit note. FY2025 GAAP audit expenses117874257 differ from IRS117081068, while program104248328 matches. These are preliminary author source findings awaiting separate reconstruction, not accepted model/publication. Free family-resource support, sliding-fee therapy and insured DPP motivate distinct donor/resource and household incidence ledgers. Author remains the sole live worker, confirmed running; next handoff is portable candidate and closed actual clocks.
+
+Root additionally preserved all three earlier DPP-only complete worlds and the original shared-engine hash in data/san-francisco/ymca-dpp-historical-diagnostic-20261004.json. Three historical tests PASS (seven portfolio worlds,seven source hashes,three earlier DPP worlds). Commit b8e914b pushed. Two saved/deployed VTL archive copies removed after durable receipts; source/evidence and compatible dependencies retained. No preview listener at3107. Live usage94%remaining.
+
 Vision To Learn report/API/list release395 and synchronized public progress release396 succeeded. Additional coverage1/24 published;23 remain. Original queue48/48, cohort40/40, confirmed legacy11/11 unchanged. Geographic expansion remains dependent on P0 acceptance.
 
 Sole isolated author /root/heppac_legacy_author is reassessing YMCA's complete public portfolio (fitness, mental health, family support, DPP, youth/aquatics/camp/capital). Approximate15-minute substantive research budget, actual author/model clocks; GPT-6.1 Sol user assignment with raw runtime identity left unknown. Fresh dispatch usage94%remaining. Root alone integrates/commits/publishes; a separate reviewer must challenge the terminal candidate before acceptance.

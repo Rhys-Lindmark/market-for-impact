@@ -18,4 +18,32 @@ The current New Door report explicitly leaves earnings outside its health model.
 
 ## Timing and counts
 
+## Linked exploratory routes retained for current-model assessment
+
+Repository inspection confirms all 21 remaining linked route files contain explicit QALY pricing or health-model consumers, not just candidate leads. Each remains a P0 current-model assessment item. This does not retroactively promote initial research to an accepted deep pass. Existing income mentions are not proof of net-consumption calibration; inspect formulas and sources before acceptance. Larkin's cash-housing report contains combined language and needs substantive verification rather than an assumption it lacks income.
+
+- Curry Senior Center: `curry-senior-center-cea-v1.json` and QALY bridge.
+- Eviction Defense Collaborative: `edc-full-scope-legal-defense-cea-v1.json`, bridge and `edc-qaly-decision-v2.json`.
+- Farming Hope: apprenticeship CEA and employment QALY bridge.
+- Five Keys: credential CEA and QALY bridge.
+- Harm Reduction Therapy Center: `hrtc-therapy-cea-v1.json`, `therapy-model.mjs`.
+- Homeless Youth Alliance: `hya-medication-access-cea-v1.json`, medication-access engine.
+- Huckleberry Youth Programs: counseling CEA, direct-QALY engine.
+- Institute on Aging: CEA and QALY bridge.
+- JCYC: MYEEP CEA, youth-jobs engine.
+- Larkin Street: cash-housing CEA and engine.
+- Lyon-Martin: earlier-care CEA and engine.
+- Mission Neighborhood Centers: dental CEA and prevention engine.
+- Openhouse: companionship CEA, supportive-health engine.
+- Progress Foundation: crisis CEA, supportive-health engine.
+- Project Open Hand: MTM CEA, heart-failure hospitalization bridge.
+- RAMS: depression CEA, signed-course-QALY engine.
+- SF–Marin Food Bank: Community Markets CEA, food-security QALY bridge.
+- Self-Help for the Elderly: falls CEA and engine.
+- SF LGBT Center: employment CEA and QALY bridge.
+- Tenderloin Housing Clinic: turnover CEA, room-turnover engine.
+- United Playaz: youth-mortality CEA and engine.
+
+Paths above are under `data/san-francisco/` or `lib/`; route slugs and exact imports are authoritative in `app/charities/*/page.tsx`. Current coverage queue therefore retains 24 additional boundaries (three published legacy plus these 21 exploratory routes) separately from the original accepted cohort/legacy inventory. Independent scope/arithmetic challenge is still required, and equivalent already-reviewed boundaries may only be closed with explicit source/model parity evidence. No new geographic expansion starts while this coverage is unresolved.
+
 This is repository/history coverage inspection, not organization-specific source research; no research minutes were assigned to charities. Published counts remain 40/40 cohort, 10/11 confirmed legacy, 47/48 original queue. Changent/NFP is the sole current isolated author. Three added coverage boundaries and unresolved funnel routes are shown separately until independently reviewed and published. Overall P0 and geographic goal remain incomplete.

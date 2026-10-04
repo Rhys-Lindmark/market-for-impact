@@ -47,5 +47,6 @@ test('Coalition for Clean Air three-year full-resource costs and edition counts 
  const edition=progress.editions.find(item=>item.id==='california');
  assert.equal(edition.alphaPublished,25);
  assert.equal(edition.betaAcceptedPublished,10);
- assert.equal(edition.topPicksPublished,0);
+ assert.equal(edition.topPicksPublished,edition.topPickIds.length);
+ assert.ok(edition.topPickIds.includes(report.organizationId));
 });

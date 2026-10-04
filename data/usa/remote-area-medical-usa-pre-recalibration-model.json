@@ -1,0 +1,276 @@
+{
+  "frozenFromCommit": "f79aea1",
+  "edition": "usa",
+  "slug": "remote-area-medical",
+  "model": {
+    "version": "usa-beta-remote-area-medical-withdrawal-2026-09-29",
+    "costScope": "Ordinary unrestricted recipient support. All recipient functions, fundraising, rental expenses and depreciation are retained in C; only recorded volunteer labor is removed for a support-dollar throughput anchor. C=10522622 is not marginal cash cost. The full-resource sensitivity restores volunteer labor. Local host costs, volunteer travel, unrecorded supplies and patient waiting/travel are additional societal costs not fully measured. G=10000 is arithmetic normalization only.",
+    "geographicAttribution": "All 7,999 eye exams and 15,013 glasses in the matched 2025 map occur in the 50-state boundary. A .75 haircut inferred from all-patient mix is unsupported for this vision-specific count. Use g_v=1 only as a USA-residency approximation to service location, and state that qualification. Do not allocate dental/medical health by the same all-patient fraction. Full recipient costs remain charged, including any foreign support. The map sums to 32,770 patients, matching the 2025 headline. Form 990 Part III says 7,402 Philippine patients, leaving 25,368 elsewhere, a 15-patient discrepancy against the map. Its 436 clinics do not equal 225 distinct 2025 map event IDs. The mapping of clinic-days, telehealth sessions and events is not documented. Zero Philippine procedure fields are unreported service data, not proof no procedures occurred.",
+    "formula": "D=sum(t=1..T)[((1-m)/1.03)^t]; H_v=N_v*(f*s*u*p*D-h); H_USA=g_v*H_v+H_d_USA+H_m_USA-H_cross; Q_USA=(G/C)*b*H_USA; price=10*G/Q_USA if Q_USA>0. This formula defines conditional diagnostic scenarios only. Whole-recipient central health is not estimable from the present evidence.",
+    "counterfactual": "RAM's host page says planning can take a year or longer, and hosts recruit local volunteers, secure venues and lodging. FAQ explicitly ties the number served to clinician availability. A functioning network and current event calendar are evidence of delivery, not proof that b=.5 of donation-proportional throughput is additional. Patient alternatives include delayed paid care, insurance-funded care, community health centers, dental schools and other charities. Erie lists community health centers on-site for continuing-care resources. RAM's 2024 patient questionnaire summary reports roughly 46% with some insurance; neither insurance nor lack of insurance identifies actual timely alternative access. Counterfactual timing should be pathway-specific. Identical replacement care cancels shared harms; extra duplicative care may retain incremental harms.",
+    "attribution": "All recipient costs retained. H_d and H_m must be net of alternative care, overlap and pathway harms, with H_cross only for remaining cross-pathway displacement or double counting. Shared b is a simplifying conditional historical-scale response, not measured marginal production. A full-recipient central requires all material health pathways and current cash response. RAM's current FAQ permits medical plus dental or vision on a day. It does not establish cross-day or cross-event deduplication. Count no second vision stream for two pairs, no separate dental QALY for every tooth or filling, no screening benefit without completed treatment, and no addition of overlapping whole-person utilities without adjustment.",
+    "uncertainty": "No empirical reason found to retain .6 meaningful correction, .5 additional patient benefit, .04 utility, .8 persistence and 3 years as the expected joint product. Full-resource and clinical-yield sensitivity change price greatly. Conversely ignoring all dental/medical health may understate benefit. Neither direction supports preserving the old number by default. N_v and financial expense are observed counts; C construction and every causal/utility/persistence parameter are judgments. g_v=1 is a service-location-based resident-health approximation, stronger than the old global .75, but not observed residence. H_d=H_m=0 is not an expected value.",
+    "nativeOutcomes": "2025 US-location map counts: 25,383 patients, 7,999 eye exams, 15,013 pairs, 11,557 extractions, 4,333 fillings, 3,609 cleanings, 5,523 medical exams and 1,315 women's-health services. Different units are not additive people or health outcomes. No observed additional output per unrestricted donation is established.",
+    "inputs": [
+      {
+        "name": "G",
+        "value": 10000,
+        "unit": "USD normalization",
+        "basis": "judgment",
+        "rationale": "Arithmetic scale only.",
+        "sourceIds": []
+      },
+      {
+        "name": "FY2025 gross expense",
+        "value": 19852655,
+        "unit": "USD",
+        "basis": "observed",
+        "rationale": "Audited total with all functions and donated services; independently visual-checked.",
+        "sourceIds": [
+          "ram-audit25"
+        ]
+      },
+      {
+        "name": "Recorded volunteer labor",
+        "value": 9330033,
+        "unit": "USD accounting value",
+        "basis": "observed",
+        "rationale": "Recognized expense and contribution, not donor cash or health benefit.",
+        "sourceIds": [
+          "ram-audit25",
+          "ram-tax25"
+        ]
+      },
+      {
+        "name": "C",
+        "value": 10522622,
+        "unit": "USD per annual historical service scale",
+        "basis": "judgment",
+        "rationale": "19852655−9330033; entire recipient remaining expense. Includes 172918 rental expense netted from tax return, depreciation and some noncash supplies. Not a marginal cash-cost estimate.",
+        "sourceIds": [
+          "ram-audit25",
+          "ram-tax25"
+        ]
+      },
+      {
+        "name": "N_v",
+        "value": 7999,
+        "unit": "eye exams in2025",
+        "basis": "observed",
+        "rationale": "2025 event rows locate 7,999 examinations in 27 US states; not unique meaningful corrections or measured resident health.",
+        "sourceIds": [
+          "map-data"
+        ]
+      },
+      {
+        "name": "b",
+        "value": 0.5,
+        "unit": "funding/capacity-sensitive throughput fraction",
+        "basis": "judgment",
+        "rationale": "Legacy diagnostic .5 only; no identified donation-to-additional-care response. Not a central expected value.",
+        "sourceIds": [
+          "ram-faq",
+          "ram-host",
+          "ram-audit25"
+        ]
+      },
+      {
+        "name": "f",
+        "value": 0.6,
+        "unit": "meaningful correction per eye exam",
+        "basis": "judgment",
+        "rationale": "Conditional 60%; .2–.9 stress. Exams can detect nonrefractive disease or produce small prescription changes. Recipient severity and dispensing completion absent.",
+        "sourceIds": [
+          "ram-faq",
+          "vision-rct"
+        ]
+      },
+      {
+        "name": "s",
+        "value": 0.5,
+        "unit": "fraction of benefit not otherwise obtained",
+        "basis": "judgment",
+        "rationale": "Allows later public, charitable or purchased correction. Test 0–.8. Access barriers support need but do not measure substitution.",
+        "sourceIds": [
+          "ram-faq"
+        ]
+      },
+      {
+        "name": "u",
+        "value": 0.04,
+        "unit": "QALY per effectively corrected year",
+        "basis": "judgment",
+        "rationale": "Small transfer judgment relative to cross-sectional uncorrected utility deficits; not a NEI-VFQ mapping or measured RAM treatment effect. Test 0–.08.",
+        "sourceIds": [
+          "vision-rct",
+          "vision-utility"
+        ]
+      },
+      {
+        "name": "p",
+        "value": 0.8,
+        "unit": "effective sustained use",
+        "basis": "judgment",
+        "rationale": "Allows nonuse, breakage, loss and poor adaptation. Test.5–.9; recipient follow-up missing.",
+        "sourceIds": [
+          "vision-rct",
+          "vision-harm"
+        ]
+      },
+      {
+        "name": "T",
+        "value": 3,
+        "unit": "years",
+        "basis": "judgment",
+        "rationale": "Conditional durability,1–4 years; not established by short trial.",
+        "sourceIds": [
+          "vision-rct"
+        ]
+      },
+      {
+        "name": "m",
+        "value": 0.01,
+        "unit": "annual competing mortality",
+        "basis": "judgment",
+        "rationale": "Mixed-age allowance; no survival benefit. Stress.005–.03.",
+        "sourceIds": []
+      },
+      {
+        "name": "h",
+        "value": 0.0002,
+        "unit": "QALY per additional exam pathway",
+        "basis": "judgment",
+        "rationale": "Adverse/adaptation burden allowance, not observed event rate. Includes weak-correction pathways. Test.0001–.0005; no broad falls benefit. Incremental relative to actual alternative care; shared burdens cancel under identical replacement.",
+        "sourceIds": [
+          "vision-harm"
+        ]
+      },
+      {
+        "name": "g",
+        "value": 1,
+        "unit": "USA vision health share in corrected diagnostic",
+        "basis": "judgment",
+        "rationale": "All 7,999 eye exams and 15,013 glasses in the matched 2025 map occur in the 50-state boundary. A .75 haircut inferred from all-patient mix is unsupported for this vision-specific count. Use g_v=1 only as a USA-residency approximation to service location, and state that qualification. Do not allocate dental/medical health by the same all-patient fraction. Full recipient costs remain charged, including any foreign support.",
+        "sourceIds": [
+          "map-owner",
+          "map-data"
+        ]
+      },
+      {
+        "name": "H_other",
+        "value": 0,
+        "unit": "net QALYs per annual historical scale",
+        "basis": "judgment",
+        "rationale": "Zero only in vision-only diagnostics. Whole-recipient dental/medical net benefit is unknown; additional hypothetical scenarios are not observations.",
+        "sourceIds": [
+          "ram-output25"
+        ]
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "central",
+        "label": "Whole-gift central not estimable",
+        "costUSD": 10000,
+        "allPopulationQalys": null,
+        "editionQalys": null,
+        "assumptions": "Incremental cash response and total net clinical health are unmeasured. Unknown, not zero; previous alpha price withdrawn."
+      },
+      {
+        "id": "alpha-reproduced",
+        "label": "Prior alpha — diagnostic only",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.10042042779274962,
+        "editionQalys": 0.07531532084456222,
+        "assumptions": "Old g=.75; other alpha assumptions retained; vision only. Conditional diagnostic, not a whole-recipient central estimate."
+      },
+      {
+        "id": "location-corrected-vision",
+        "label": "US-location vision — conditional diagnostic",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.10042042779274961,
+        "editionQalys": 0.10042042779274961,
+        "assumptions": "g_v=1; remaining alpha clinical and funding assumptions retained; other pathways unpriced. Conditional diagnostic, not a whole-recipient central estimate."
+      },
+      {
+        "id": "recorded-resource",
+        "label": "recorded-resource",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.05322644264665852,
+        "editionQalys": 0.05322644264665852,
+        "assumptions": "C=19852655, g_v=1. Recorded labor restored; unrecorded resources remain absent. Not a donation-dollar estimate. Conditional diagnostic, not a whole-recipient central estimate."
+      },
+      {
+        "id": "low-clinical-yield",
+        "label": "low-clinical-yield",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.0013542865676509101,
+        "editionQalys": 0.0013542865676509101,
+        "assumptions": "f=.3,s=.25,u=.02,p=.6,T=1,m=.02,h=.0005; base C,b,g. Illustrative, not a lower confidence bound. Conditional diagnostic, not a whole-recipient central estimate."
+      },
+      {
+        "id": "other-pathways-75-net",
+        "label": "other-pathways-75-net",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.13605793334982463,
+        "editionQalys": 0.13605793334982463,
+        "assumptions": "Add 50 annual USA dental and 25 medical net QALYs to corrected vision. Deliberately hypothetical values, not recipient observations. Conditional diagnostic, not a whole-recipient central estimate."
+      },
+      {
+        "id": "other-pathways-300-net",
+        "label": "other-pathways-300-net",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.24297045002104975,
+        "editionQalys": 0.24297045002104975,
+        "assumptions": "Add 200 annual USA dental and 100 medical net QALYs. Deliberately hypothetical, no inferred service-level conversion. Conditional diagnostic, not a whole-recipient central estimate."
+      },
+      {
+        "id": "no-new-throughput",
+        "label": "no-new-throughput",
+        "costUSD": 10000,
+        "allPopulationQalys": 0,
+        "editionQalys": 0,
+        "assumptions": "b=0: fixed clinician/host slots or complete replacement funding. Conditional diagnostic, not a whole-recipient central estimate."
+      },
+      {
+        "id": "identical-replacement",
+        "label": "identical-replacement",
+        "costUSD": 10000,
+        "allPopulationQalys": 0,
+        "editionQalys": 0,
+        "assumptions": "s=0 and incremental h=0: identical care otherwise received; shared burden cancels. Conditional diagnostic, not a whole-recipient central estimate."
+      },
+      {
+        "id": "duplicative-extra-care",
+        "label": "duplicative-extra-care",
+        "costUSD": 10000,
+        "allPopulationQalys": -0.0007601717518694486,
+        "editionQalys": -0.0007601717518694486,
+        "assumptions": "s=0 but h=.0002 remains only because care imposes a genuinely extra burden; not identical replacement. Conditional diagnostic, not a whole-recipient central estimate."
+      },
+      {
+        "id": "favorable-vision",
+        "label": "favorable-vision",
+        "costUSD": 10000,
+        "allPopulationQalys": 1.446097156939923,
+        "editionQalys": 1.446097156939923,
+        "assumptions": "b=1,f=.9,s=.8,u=.08,p=.9,T=4,m=.005,h=.0001,g=1. Joint optimistic assumptions, not an upper confidence bound. Conditional diagnostic, not a whole-recipient central estimate."
+      }
+    ],
+    "sensitivity": [
+      "At C=$10,522,622 and b=.5, $100,000 per 10 USA QALYs requires 2,104.524 annual net USA QALYs. Corrected conditional vision provides 211.337, leaving 1,893.187 from other pathways. At $1 million/10, required health is 210.452, just below the vision scenario. Small changes to uncertain clinical inputs move that threshold substantially.",
+      "The corrected vision-only scenario is $995,813 per 10 USA QALYs. Restoring recorded clinician labor raises it to $1,878,765. Neither is a marginal gift price.",
+      "The low-clinical-yield scenario is about $73.84 million per 10; the joint favorable vision case is about $69,152. These are assumption tests, not confidence bounds.",
+      "Hypothetical 75 or 300 annual net dental/medical QALYs change the price to about $734,981 or $411,573. These additions are deliberately unmeasured and do not fill the central outcome gap.",
+      "No new throughput or identical replacement produces zero additional modeled benefit; extra duplicative care can produce net harm.",
+      "US venue attribution improves the old geography assumption but does not establish residency or recipient-versus-affiliate cost alignment. All recipient costs remain charged."
+    ],
+    "missingInputs": [
+      "National 2025/26 unique resident patient-by-pathway cohort and duplicate rules; reconcile map/990 events and affiliate scope.",
+      "Vision pre/post corrected acuity, prior correction, dispensing, sustained use, severity and generic utility; alternative-care delay.",
+      "Dental unique symptomatic episodes and treatment completion, pain/function trajectories, complications, extraction/denture consequences and realistic alternative timing.",
+      "Medical/telehealth completed prescriptions/referrals and subsequent treatment/outcomes, net of service overlap.",
+      "Current unrestricted funding-contingent service expansion/maintenance plan with confirmed clinicians/hosts, reserves policy and replacement funding."
+    ]
+  }
+}

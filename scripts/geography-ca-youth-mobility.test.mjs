@@ -1,11 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
+import {expenseAverage} from '../lib/geography-reports.mjs';
 const data=JSON.parse(readFileSync(new URL('../data/geography-reports.json',import.meta.url)));
 const report=slug=>data.reports.find(r=>r.edition==='california'&&r.slug===slug);
 const near=(a,b)=>assert.ok(Math.abs(a-b)<1e-10,`${a} != ${b}`);
-test('Youth ALIVE weights signed five-year effects, not reinjury percentage',()=>{
- const r=report('youth-alive');let total=0,weight=0;
+test('Historical Youth ALIVE weights signed five-year effects, not reinjury percentage',()=>{
+ const r={...report('youth-alive'),model:JSON.parse(readFileSync(new URL('../data/california/youth-ca-pre-recalibration-model.json',import.meta.url)))};let total=0,weight=0;
  for(const s of r.model.scenarios.filter(s=>!['central','historical-alpha-central'].includes(s.id))){
   const p=JSON.parse(s.assumptions);
   const q=s.costUSD*p.cicAllocation*p.fundingAdditionality*p.serviceRealization/p.donorCostPerAddedClient*.02*p.evidenceTransfer;
@@ -14,8 +15,13 @@ test('Youth ALIVE weights signed five-year effects, not reinjury percentage',()=
  near(weight,1);near(total,r.model.scenarios.find(s=>s.id==='historical-alpha-central').editionQalys);
  assert.equal(r.model.scenarios[0].editionQalys,null);
 });
-test('Vision To Learn separates courses, use, additionality and geography',()=>{
- const r=report('vision-to-learn');
+test('Youth ALIVE expense mean uses latest three comparable years and retains older history',()=>{
+ const r=report('youth-alive');assert.deepEqual(r.annualExpenses.map(y=>y.year),[2023,2024,2025]);
+ assert.ok(Math.abs(expenseAverage(r)-7208761.333333333)<1e-8);
+ assert.match(r.sections.funding,/FY2022/);assert.match(r.sections.funding,/5,360,166/);
+});
+test('Historical Vision To Learn separates courses, use, additionality and geography',()=>{
+ const r={...report('vision-to-learn'),model:JSON.parse(readFileSync(new URL('../data/california/vtl-ca-pre-recalibration-model.json',import.meta.url)))};
  for(const id of ['central','favorable','adverse-positive','wear-decay','public-match-diagnostic']){
   const s=r.model.scenarios.find(x=>x.id===id),p=JSON.parse(s.assumptions.slice(0,s.assumptions.indexOf('}')+1));
   const k=Math.log1p(p.r)+p.fade,D=k===0?p.T:-Math.expm1(-k*p.T)/k;
@@ -28,8 +34,8 @@ test('Vision To Learn separates courses, use, additionality and geography',()=>{
  near(matched.editionQalys,central.editionQalys*2);
  near(matched.allPopulationQalys,central.allPopulationQalys+central.editionQalys);
 });
-test('Walk SF stops benefit at counterfactual opening and retains independent harm',()=>{
- const r=report('walk-san-francisco'),base=JSON.parse(r.model.scenarios.find(s=>s.id==='historical-alpha-central').assumptions);
+test('Historical Walk SF stops benefit at counterfactual opening and retains independent harm',()=>{
+ const r={...report('walk-san-francisco'),model:JSON.parse(readFileSync(new URL('../data/california/walk-ca-pre-recalibration-model.json',import.meta.url)))},base=JSON.parse(r.model.scenarios.find(s=>s.id==='historical-alpha-central').assumptions);
  assert.equal(r.model.scenarios.find(s=>s.id==='central').editionQalys,null);
  for(const s of r.model.scenarios.filter(s=>s.id!=='central')){
   let p=s.assumptions.startsWith('{')?JSON.parse(s.assumptions):{...base};

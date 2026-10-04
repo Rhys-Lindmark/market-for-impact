@@ -1,0 +1,303 @@
+{
+  "frozenFromCommit": "b0cbdb84322ee1406d6046a5a9df55d3c20fe518",
+  "edition": "los-angeles",
+  "slug": "lestonnac-free-clinic",
+  "organization": "Lestonnac Free Clinic",
+  "organizationId": "org:lestonnac-free-clinic",
+  "model": {
+    "version": "la-lestonnac-beta-resource-finite-mix-v3",
+    "costScope": "Whole recipient resource-cost denominator, including separately disclosed donated services; low-confidence judgment of its combined clinical health portfolio for LA and Orange County residents. Not measured patient outcomes, a cash-only donation return, a surgery-only price, or a complete societal analysis. Non-health benefits and unmeasured partner/patient costs are not valued.",
+    "geographicAttribution": "LA MSA comprises Los Angeles and Orange counties, not Riverside or San Bernardino. Listed fixed-clinic schedules imply approximately 99 local weekly hours and 42.4 outside; the medical page additionally lists 12 Riverside mobile hours, lowering the proxy to about 64%. g=.65 is a rounded judgment, not observed residence or current throughput: the medical page mixes historical statistics, surgery is concentrated in Orange, and cross-county patients and variable staffing remain unknown. No population-share shortcut.",
+    "formula": "For branch j, q_j = u_j * (1-exp(-(ln(1+d)+m+rho_j)*T_j))/(ln(1+d)+m+rho_j). q=sum(w_j*q_j). At annual full-resource normalization E: delivered=N*b, effective=N*b*e; Q_all=N*b*(e*q-h); Q_LA=g*Q_all. Price=10*E/Q_LA only if Q_LA>0. Benefits begin at completed treatment t=0, with continuous discounting equivalent to annual d, continuous mortality hazard m and decay rho. A delayed start requires an additional discount/survival factor and is not silently credited.",
+    "counterfactual": "Existing insurance/emergency/other clinic access and Hoag/public grants continue. e is the fraction of added packages with consequential effective care beyond that alternative, not funding leverage. b is the separate net funding-to-throughput response after substitution, reserves and volunteer bottlenecks, applied once. Finite T concerns how long the successful package differs from its alternative; shorter alternative waits are stressed.",
+    "attribution": "One patient-equivalent receives one primary clinical package; weights sum to one. Repeated visits, screenings, glasses and surgeries are not added as separate people or outcomes. No avoided mortality is separately credited. The generic harm/access burden is applied to all added packages, including those without benefit. Cash response is a conservative judgment on a full-resource cost normalization, not a measured grant production function.",
+    "uncertainty": "Very low confidence in the clinical and marginal parameters. Mix weights, utility changes, duration, decay, mortality, burden, local share and cash response are explicit subjective priors; trials establish plausibility and counterfactual dependence rather than calibrating these values. Costs are original-return-derived, but service valuations and the post-opening cost trajectory are uncertain. Non-health benefits are omitted; externally paid and patient resources are incompletely priced.",
+    "nativeOutcomes": "At normalization: 3500 added packages; 1225 effective packages; 796.25 local effective packages. Cost per delivered/effective/local effective package is 2081.100857142857/5946.0024489795915/9147.696075353218 USD. These prospective equivalents are not an observed surgery yield or an additional count on top of the reported patients.",
+    "inputs": [
+      {
+        "name": "E",
+        "value": 7283853,
+        "unit": "USD per annual resource normalization",
+        "basis": "observed",
+        "rationale": "Derived 2024 Part IX + events + separately disclosed donated-service expense; no claim of independent audit or current 2026 cost.",
+        "sourceIds": [
+          "lest24",
+          "lest-o2024"
+        ]
+      },
+      {
+        "name": "N",
+        "value": 10000,
+        "unit": "annual patient-package equivalent scale",
+        "basis": "judgment",
+        "rationale": "Carryforward of the 2024 over-10,000 patient claim; deduplication and current output unverified.",
+        "sourceIds": [
+          "lest24"
+        ]
+      },
+      {
+        "name": "e",
+        "value": 0.35,
+        "unit": "effective incremental care fraction",
+        "basis": "judgment",
+        "rationale": "Alternative care, incomplete treatment and low-benefit encounters reduce consequential yield.",
+        "sourceIds": [
+          "oregon-clinical",
+          "dhcs-dental"
+        ]
+      },
+      {
+        "name": "b",
+        "value": 0.35,
+        "unit": "net funding response fraction",
+        "basis": "judgment",
+        "rationale": "Ordinary additional support may substitute for partners/reserves or fail to unlock clinical hours.",
+        "sourceIds": [
+          "hoag26",
+          "lest24",
+          "lest-volunteer"
+        ]
+      },
+      {
+        "name": "g",
+        "value": 0.65,
+        "unit": "local health fraction",
+        "basis": "judgment",
+        "rationale": "Fixed-site hours plus Riverside mobile activity are a weak capacity proxy, not beneficiary residence.",
+        "sourceIds": [
+          "lest-locations",
+          "lest-medical"
+        ]
+      },
+      {
+        "name": "branches",
+        "value": [
+          {
+            "name": "medical",
+            "weight": 0.65,
+            "utility": 0.02,
+            "years": 1,
+            "decay": 0.5
+          },
+          {
+            "name": "dental",
+            "weight": 0.18,
+            "utility": 0.1,
+            "years": 0.25,
+            "decay": 1
+          },
+          {
+            "name": "vision",
+            "weight": 0.15,
+            "utility": 0.035,
+            "years": 1,
+            "decay": 0.25
+          },
+          {
+            "name": "surgery",
+            "weight": 0.02,
+            "utility": 0.08,
+            "years": 3,
+            "decay": 0.1
+          }
+        ],
+        "unit": "exclusive package weights and finite utility parameters",
+        "basis": "judgment",
+        "rationale": "Medical 65%, dental 18%, vision 15%, surgery 2% are not observed mix. Utilities, duration and decay are independent analyst judgments; the trials do not supply these numeric inputs.",
+        "sourceIds": [
+          "oregon-clinical",
+          "cataract-rct",
+          "glasses-rct",
+          "dental-rct"
+        ]
+      },
+      {
+        "name": "d",
+        "value": 0.03,
+        "unit": "annual discount rate",
+        "basis": "judgment",
+        "rationale": "Conventional rate expressed continuously as ln(1.03).",
+        "sourceIds": []
+      },
+      {
+        "name": "m",
+        "value": 0.02,
+        "unit": "annual continuous mortality hazard",
+        "basis": "judgment",
+        "rationale": "Competing-mortality simplification across unknown ages; no avoided deaths separately credited.",
+        "sourceIds": []
+      },
+      {
+        "name": "h",
+        "value": 0.0005,
+        "unit": "QALY burden per added package",
+        "basis": "judgment",
+        "rationale": "Treatment complications, travel and access burden net penalty on successful and unsuccessful packages alike; not an observed adverse-event rate.",
+        "sourceIds": []
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "central",
+        "label": "Best-judgment clinical portfolio",
+        "costUSD": 7283853,
+        "allPopulationQalys": 25.645550868747094,
+        "editionQalys": 16.66960806468561,
+        "assumptions": "{\"E\":7283853,\"N\":10000,\"e\":0.35,\"b\":0.35,\"g\":0.65,\"d\":0.03,\"m\":0.02,\"h\":0.0005,\"branches\":[{\"name\":\"medical\",\"weight\":0.65,\"utility\":0.02,\"years\":1,\"decay\":0.5},{\"name\":\"dental\",\"weight\":0.18,\"utility\":0.1,\"years\":0.25,\"decay\":1},{\"name\":\"vision\",\"weight\":0.15,\"utility\":0.035,\"years\":1,\"decay\":0.25},{\"name\":\"surgery\",\"weight\":0.02,\"utility\":0.08,\"years\":3,\"decay\":0.1}]}"
+      },
+      {
+        "id": "poor",
+        "label": "Joint weak delivery and short benefit",
+        "costUSD": 9104816.25,
+        "allPopulationQalys": -0.15392643221202007,
+        "editionQalys": -0.06157057288480803,
+        "assumptions": "{\"E\":9104816.25,\"N\":10000,\"e\":0.1,\"b\":0.1,\"g\":0.4,\"d\":0.03,\"m\":0.02,\"h\":0.0005,\"branches\":[{\"name\":\"medical\",\"weight\":0.65,\"utility\":0.008,\"years\":0.25,\"decay\":0.5},{\"name\":\"dental\",\"weight\":0.18,\"utility\":0.04000000000000001,\"years\":0.25,\"decay\":1},{\"name\":\"vision\",\"weight\":0.15,\"utility\":0.014000000000000002,\"years\":0.25,\"decay\":0.25},{\"name\":\"surgery\",\"weight\":0.02,\"utility\":0.032,\"years\":0.25,\"decay\":0.1}]}"
+      },
+      {
+        "id": "favorable",
+        "label": "Joint strong response and benefit",
+        "costUSD": 7283853,
+        "allPopulationQalys": 139.4914044678422,
+        "editionQalys": 125.54226402105797,
+        "assumptions": "{\"E\":7283853,\"N\":10000,\"e\":0.6,\"b\":0.7,\"g\":0.9,\"d\":0.03,\"m\":0.02,\"h\":0.0002,\"branches\":[{\"name\":\"medical\",\"weight\":0.65,\"utility\":0.03,\"years\":1,\"decay\":0.5},{\"name\":\"dental\",\"weight\":0.18,\"utility\":0.15000000000000002,\"years\":0.25,\"decay\":1},{\"name\":\"vision\",\"weight\":0.15,\"utility\":0.052500000000000005,\"years\":1,\"decay\":0.25},{\"name\":\"surgery\",\"weight\":0.02,\"utility\":0.12,\"years\":3,\"decay\":0.1}]}"
+      },
+      {
+        "id": "zero",
+        "label": "No funding response",
+        "costUSD": 7283853,
+        "allPopulationQalys": 0,
+        "editionQalys": 0,
+        "assumptions": "{\"E\":7283853,\"N\":10000,\"e\":0.35,\"b\":0,\"g\":0.65,\"d\":0.03,\"m\":0.02,\"h\":0.0005,\"branches\":[{\"name\":\"medical\",\"weight\":0.65,\"utility\":0.02,\"years\":1,\"decay\":0.5},{\"name\":\"dental\",\"weight\":0.18,\"utility\":0.1,\"years\":0.25,\"decay\":1},{\"name\":\"vision\",\"weight\":0.15,\"utility\":0.035,\"years\":1,\"decay\":0.25},{\"name\":\"surgery\",\"weight\":0.02,\"utility\":0.08,\"years\":3,\"decay\":0.1}]}"
+      },
+      {
+        "id": "harm",
+        "label": "Additional care without benefit, with burden",
+        "costUSD": 7283853,
+        "allPopulationQalys": -17.5,
+        "editionQalys": -11.375,
+        "assumptions": "{\"E\":7283853,\"N\":10000,\"e\":0,\"b\":0.35,\"g\":0.65,\"d\":0.03,\"m\":0.02,\"h\":0.005,\"branches\":[{\"name\":\"medical\",\"weight\":0.65,\"utility\":0.02,\"years\":1,\"decay\":0.5},{\"name\":\"dental\",\"weight\":0.18,\"utility\":0.1,\"years\":0.25,\"decay\":1},{\"name\":\"vision\",\"weight\":0.15,\"utility\":0.035,\"years\":1,\"decay\":0.25},{\"name\":\"surgery\",\"weight\":0.02,\"utility\":0.08,\"years\":3,\"decay\":0.1}]}"
+      },
+      {
+        "id": "no-local",
+        "label": "All gains outside the metro",
+        "costUSD": 7283853,
+        "allPopulationQalys": 25.645550868747094,
+        "editionQalys": 0,
+        "assumptions": "{\"E\":7283853,\"N\":10000,\"e\":0.35,\"b\":0.35,\"g\":0,\"d\":0.03,\"m\":0.02,\"h\":0.0005,\"branches\":[{\"name\":\"medical\",\"weight\":0.65,\"utility\":0.02,\"years\":1,\"decay\":0.5},{\"name\":\"dental\",\"weight\":0.18,\"utility\":0.1,\"years\":0.25,\"decay\":1},{\"name\":\"vision\",\"weight\":0.15,\"utility\":0.035,\"years\":1,\"decay\":0.25},{\"name\":\"surgery\",\"weight\":0.02,\"utility\":0.08,\"years\":3,\"decay\":0.1}]}"
+      },
+      {
+        "id": "cash-only",
+        "label": "Gross-accounting cost excluding disclosed donated services; not cash expenditure",
+        "costUSD": 4695553,
+        "allPopulationQalys": 25.645550868747094,
+        "editionQalys": 16.66960806468561,
+        "assumptions": "{\"E\":4695553,\"N\":10000,\"e\":0.35,\"b\":0.35,\"g\":0.65,\"d\":0.03,\"m\":0.02,\"h\":0.0005,\"branches\":[{\"name\":\"medical\",\"weight\":0.65,\"utility\":0.02,\"years\":1,\"decay\":0.5},{\"name\":\"dental\",\"weight\":0.18,\"utility\":0.1,\"years\":0.25,\"decay\":1},{\"name\":\"vision\",\"weight\":0.15,\"utility\":0.035,\"years\":1,\"decay\":0.25},{\"name\":\"surgery\",\"weight\":0.02,\"utility\":0.08,\"years\":3,\"decay\":0.1}]}"
+      },
+      {
+        "id": "services-half",
+        "label": "Half the filed donated-service valuation",
+        "costUSD": 5989703,
+        "allPopulationQalys": 25.645550868747094,
+        "editionQalys": 16.66960806468561,
+        "assumptions": "{\"E\":5989703,\"N\":10000,\"e\":0.35,\"b\":0.35,\"g\":0.65,\"d\":0.03,\"m\":0.02,\"h\":0.0005,\"branches\":[{\"name\":\"medical\",\"weight\":0.65,\"utility\":0.02,\"years\":1,\"decay\":0.5},{\"name\":\"dental\",\"weight\":0.18,\"utility\":0.1,\"years\":0.25,\"decay\":1},{\"name\":\"vision\",\"weight\":0.15,\"utility\":0.035,\"years\":1,\"decay\":0.25},{\"name\":\"surgery\",\"weight\":0.02,\"utility\":0.08,\"years\":3,\"decay\":0.1}]}"
+      },
+      {
+        "id": "services-one-half",
+        "label": "150% of filed donated-service valuation",
+        "costUSD": 8578003,
+        "allPopulationQalys": 25.645550868747094,
+        "editionQalys": 16.66960806468561,
+        "assumptions": "{\"E\":8578003,\"N\":10000,\"e\":0.35,\"b\":0.35,\"g\":0.65,\"d\":0.03,\"m\":0.02,\"h\":0.0005,\"branches\":[{\"name\":\"medical\",\"weight\":0.65,\"utility\":0.02,\"years\":1,\"decay\":0.5},{\"name\":\"dental\",\"weight\":0.18,\"utility\":0.1,\"years\":0.25,\"decay\":1},{\"name\":\"vision\",\"weight\":0.15,\"utility\":0.035,\"years\":1,\"decay\":0.25},{\"name\":\"surgery\",\"weight\":0.02,\"utility\":0.08,\"years\":3,\"decay\":0.1}]}"
+      },
+      {
+        "id": "cost-growth",
+        "label": "Post-center total resource costs 50% higher",
+        "costUSD": 10925779.5,
+        "allPopulationQalys": 25.645550868747094,
+        "editionQalys": 16.66960806468561,
+        "assumptions": "{\"E\":10925779.5,\"N\":10000,\"e\":0.35,\"b\":0.35,\"g\":0.65,\"d\":0.03,\"m\":0.02,\"h\":0.0005,\"branches\":[{\"name\":\"medical\",\"weight\":0.65,\"utility\":0.02,\"years\":1,\"decay\":0.5},{\"name\":\"dental\",\"weight\":0.18,\"utility\":0.1,\"years\":0.25,\"decay\":1},{\"name\":\"vision\",\"weight\":0.15,\"utility\":0.035,\"years\":1,\"decay\":0.25},{\"name\":\"surgery\",\"weight\":0.02,\"utility\":0.08,\"years\":3,\"decay\":0.1}]}"
+      },
+      {
+        "id": "half-unique",
+        "label": "Only half the patient scale is distinct packages",
+        "costUSD": 7283853,
+        "allPopulationQalys": 12.822775434373547,
+        "editionQalys": 8.334804032342806,
+        "assumptions": "{\"E\":7283853,\"N\":5000,\"e\":0.35,\"b\":0.35,\"g\":0.65,\"d\":0.03,\"m\":0.02,\"h\":0.0005,\"branches\":[{\"name\":\"medical\",\"weight\":0.65,\"utility\":0.02,\"years\":1,\"decay\":0.5},{\"name\":\"dental\",\"weight\":0.18,\"utility\":0.1,\"years\":0.25,\"decay\":1},{\"name\":\"vision\",\"weight\":0.15,\"utility\":0.035,\"years\":1,\"decay\":0.25},{\"name\":\"surgery\",\"weight\":0.02,\"utility\":0.08,\"years\":3,\"decay\":0.1}]}"
+      },
+      {
+        "id": "weak-response",
+        "label": "Only 10% funding response",
+        "costUSD": 7283853,
+        "allPopulationQalys": 7.327300248213455,
+        "editionQalys": 4.762745161338746,
+        "assumptions": "{\"E\":7283853,\"N\":10000,\"e\":0.35,\"b\":0.1,\"g\":0.65,\"d\":0.03,\"m\":0.02,\"h\":0.0005,\"branches\":[{\"name\":\"medical\",\"weight\":0.65,\"utility\":0.02,\"years\":1,\"decay\":0.5},{\"name\":\"dental\",\"weight\":0.18,\"utility\":0.1,\"years\":0.25,\"decay\":1},{\"name\":\"vision\",\"weight\":0.15,\"utility\":0.035,\"years\":1,\"decay\":0.25},{\"name\":\"surgery\",\"weight\":0.02,\"utility\":0.08,\"years\":3,\"decay\":0.1}]}"
+      },
+      {
+        "id": "strong-response",
+        "label": "70% funding response",
+        "costUSD": 7283853,
+        "allPopulationQalys": 51.29110173749419,
+        "editionQalys": 33.33921612937122,
+        "assumptions": "{\"E\":7283853,\"N\":10000,\"e\":0.35,\"b\":0.7,\"g\":0.65,\"d\":0.03,\"m\":0.02,\"h\":0.0005,\"branches\":[{\"name\":\"medical\",\"weight\":0.65,\"utility\":0.02,\"years\":1,\"decay\":0.5},{\"name\":\"dental\",\"weight\":0.18,\"utility\":0.1,\"years\":0.25,\"decay\":1},{\"name\":\"vision\",\"weight\":0.15,\"utility\":0.035,\"years\":1,\"decay\":0.25},{\"name\":\"surgery\",\"weight\":0.02,\"utility\":0.08,\"years\":3,\"decay\":0.1}]}"
+      },
+      {
+        "id": "no-surgery",
+        "label": "No incremental surgical benefit",
+        "costUSD": 7283853,
+        "allPopulationQalys": 20.9076581152283,
+        "editionQalys": 13.589977774898395,
+        "assumptions": "{\"E\":7283853,\"N\":10000,\"e\":0.35,\"b\":0.35,\"g\":0.65,\"d\":0.03,\"m\":0.02,\"h\":0.0005,\"branches\":[{\"name\":\"medical\",\"weight\":0.65,\"utility\":0.02,\"years\":1,\"decay\":0.5},{\"name\":\"dental\",\"weight\":0.18,\"utility\":0.1,\"years\":0.25,\"decay\":1},{\"name\":\"vision\",\"weight\":0.15,\"utility\":0.035,\"years\":1,\"decay\":0.25},{\"name\":\"surgery\",\"weight\":0.02,\"utility\":0,\"years\":3,\"decay\":0.1}]}"
+      },
+      {
+        "id": "short-wait",
+        "label": "Alternatives catch up within three months",
+        "costUSD": 7283853,
+        "allPopulationQalys": 8.848503013506884,
+        "editionQalys": 5.751526958779475,
+        "assumptions": "{\"E\":7283853,\"N\":10000,\"e\":0.35,\"b\":0.35,\"g\":0.65,\"d\":0.03,\"m\":0.02,\"h\":0.0005,\"branches\":[{\"name\":\"medical\",\"weight\":0.65,\"utility\":0.02,\"years\":0.25,\"decay\":0.5},{\"name\":\"dental\",\"weight\":0.18,\"utility\":0.1,\"years\":0.25,\"decay\":1},{\"name\":\"vision\",\"weight\":0.15,\"utility\":0.035,\"years\":0.25,\"decay\":0.25},{\"name\":\"surgery\",\"weight\":0.02,\"utility\":0.08,\"years\":0.25,\"decay\":0.1}]}"
+      },
+      {
+        "id": "high-competing-mortality",
+        "label": "10% annual continuous mortality hazard",
+        "costUSD": 7283853,
+        "allPopulationQalys": 24.471383674598528,
+        "editionQalys": 15.906399388489044,
+        "assumptions": "{\"E\":7283853,\"N\":10000,\"e\":0.35,\"b\":0.35,\"g\":0.65,\"d\":0.03,\"m\":0.1,\"h\":0.0005,\"branches\":[{\"name\":\"medical\",\"weight\":0.65,\"utility\":0.02,\"years\":1,\"decay\":0.5},{\"name\":\"dental\",\"weight\":0.18,\"utility\":0.1,\"years\":0.25,\"decay\":1},{\"name\":\"vision\",\"weight\":0.15,\"utility\":0.035,\"years\":1,\"decay\":0.25},{\"name\":\"surgery\",\"weight\":0.02,\"utility\":0.08,\"years\":3,\"decay\":0.1}]}"
+      },
+      {
+        "id": "rapid-decay",
+        "label": "Clinical benefit decays one additional unit annually",
+        "costUSD": 7283853,
+        "allPopulationQalys": 15.908611781610237,
+        "editionQalys": 10.340597658046654,
+        "assumptions": "{\"E\":7283853,\"N\":10000,\"e\":0.35,\"b\":0.35,\"g\":0.65,\"d\":0.03,\"m\":0.02,\"h\":0.0005,\"branches\":[{\"name\":\"medical\",\"weight\":0.65,\"utility\":0.02,\"years\":1,\"decay\":1.5},{\"name\":\"dental\",\"weight\":0.18,\"utility\":0.1,\"years\":0.25,\"decay\":2},{\"name\":\"vision\",\"weight\":0.15,\"utility\":0.035,\"years\":1,\"decay\":1.25},{\"name\":\"surgery\",\"weight\":0.02,\"utility\":0.08,\"years\":3,\"decay\":1.1}]}"
+      },
+      {
+        "id": "larger-burden",
+        "label": "Tenfold treatment and access burden",
+        "costUSD": 7283853,
+        "allPopulationQalys": 9.895550868747094,
+        "editionQalys": 6.432108064685611,
+        "assumptions": "{\"E\":7283853,\"N\":10000,\"e\":0.35,\"b\":0.35,\"g\":0.65,\"d\":0.03,\"m\":0.02,\"h\":0.005,\"branches\":[{\"name\":\"medical\",\"weight\":0.65,\"utility\":0.02,\"years\":1,\"decay\":0.5},{\"name\":\"dental\",\"weight\":0.18,\"utility\":0.1,\"years\":0.25,\"decay\":1},{\"name\":\"vision\",\"weight\":0.15,\"utility\":0.035,\"years\":1,\"decay\":0.25},{\"name\":\"surgery\",\"weight\":0.02,\"utility\":0.08,\"years\":3,\"decay\":0.1}]}"
+      }
+    ],
+    "sensitivity": [
+      "Joint poor/favorable scenarios are illustrative judgment combinations, not confidence intervals or probability-weighted bounds. Zero throughput yields zero health, while treatment without benefit can produce harm.",
+      "The finite clinical bridge and cash responsiveness dominate; a new facility or the target of 2,000 mobile exams does not establish either.",
+      "A short-wait scenario caps all conditional benefits at three months; a zero-surgical-benefit scenario retains its weight but assigns no benefit rather than reallocating it favorably.",
+      "Cash-only and 50%/150% donated-value scenarios distinguish gift accounting from resource costs; no automatic volunteer multiplier is applied.",
+      "N=5,000 tests duplication; local share zero and broad .4/.9 joint cases test resident attribution. Costs 50% higher test the post-center financial gap."
+    ],
+    "missingInputs": [
+      "Unique patient geography and actual per-site/mobile throughput, especially LA/Orange versus Riverside/San Bernardino.",
+      "Marginal ordinary-donation budget and the specific clinician/equipment/supply bottleneck it would relax.",
+      "Current 2025–26 costs and completed procedures since surgery-center opening; independent clinical outcomes and complications.",
+      "Clinical treatment mix, completion/adherence, alternative care and sustained utility outcomes.",
+      "Reconciliation of Part III service revenue with Part VIII and explanation of functional accounting classifications.",
+      "Post-2024 original accounts and a reconciled donated-service valuation; explicit annual consumption versus inventory/net-asset adjustments.",
+      "Actual 2025–26 unique surgery types, completed cases, cost and complications; no current realized case count found in targeted primary searches.",
+      "Observed patient-level clinical mix and residence; finite symptom/utility trajectories and alternative-treatment delays."
+    ]
+  }
+}

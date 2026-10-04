@@ -1,0 +1,14 @@
+# ANRF USA — bounded knowledge-boundary recheck
+
+The originally required corrections are resolved: unknown-reach placeholderN0 no longer manufactures zero; independently absent protection with absent attempts yields zero despite unavailable unrelated inputs; failed policy with known attempts retains its adverse cash; unknown health preserves the known attempt debit. finiteLifeQALYs no longer reports an unknown-health numeric placeholder. All24 listed aggregate prices remain unchanged. Existing scientific conditional acceptance/HOLD remains applicable.
+
+**Two remaining narrow corrections are required before final boundary acceptance:**
+
+1. With healthKnown:false, medicalCash0 and recoveryIndependent0, recovery welfare is structurally zero but actual recovery cash is not. Current householdPayPVUSDUSA incorrectly reports−$121.21682270404601, including recoveryPay times the unavailable event probability. The independence adjustment suppresses credited welfare, not actual cash. Separate raw-pay knowledge from recovery-welfare knowledge; report raw pay unknown unless event probability is known or worker/recoveryPay is structurally zero. resourceFlows should omit zero-independence recovery rows rather than expose numeric unknown-event populations that contribute no welfare. Reproduced an emitted recovery row with people0.000024168357085769238 despite healthKnown:false.
+2. Known health rM0 plus workerShare0 and attemptShare0 removes all modeled resource pathways even if monetary amounts are unavailable. Current resourcesKnown:false combination returnsnull instead of resourcezero. Recognize known-no-event and no-worker pathway absence separately from unavailable medicalCash/wage placeholders. Do not infer known-no-event from rM0 when healthKnown:false.
+
+These corrections do not require changing central or the24 listed aggregate scenarios. They prevent false identification of diagnostic raw cash and unnecessary unknowns in independent zero-pathway combinations. Core positive/negative scenario arithmetic and previously accepted sources were not reopened. Read-only direct numerical probes only; no new research clock, source hunt/build/product/Git/Sites changes. Memo is the sole artifact.
+
+## Final correction verification
+
+**ACCEPT corrected knowledge boundaries; no remaining blocker in this bounded scope.** Independently reran the exact two probes: unknown-health/event-dependent raw pay is null while known wage/resource welfare remains negative, and no zero-independence recovery rows are emitted. Known health rM0 with workerShare0/attemptShare0 yields resource/raw-pay/raw-medical zero despite unavailable cash. The counterexample with healthKnown:false and placeholderrM0 correctly remains unknown. Central remains$67,579,293.48805918/10; scientific conditional acceptance/HOLD is unchanged. No additional research or broadened review performed.

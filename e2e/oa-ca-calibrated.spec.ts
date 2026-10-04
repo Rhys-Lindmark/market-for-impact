@@ -1,0 +1,20 @@
+import {test,expect} from '@playwright/test';
+test('Operation Access current report, historical estimate, research header, API and list agree',async({page,request})=>{
+ await page.route('https://market-for-impact.rhyslindmark.chatgpt.site/_next/**',async route=>{const u=new URL(route.request().url());await route.fulfill({response:await request.get(u.pathname+u.search)});});
+ await page.goto('/california/charities/operation-access');
+ await expect(page.getByRole('heading',{level:1,name:'Operation Access',exact:true})).toBeVisible();
+ await expect(page.locator('.report-research-effort summary')).toContainText('GPT-6.1 Sol');
+ await expect(page.locator('#cost')).toContainText('$3.32 million');
+ await expect(page.locator('#cost')).toContainText('$1.88 million');
+ await expect(page.locator('#cost')).toContainText('household');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+ const response=await request.get('/api/geography-reports/california/operation-access');expect(response.ok()).toBe(true);
+ const report=await response.json(),central=report.model.scenarios.find((s:any)=>s.id==='central');
+ expect(central.editionQalys).toBeCloseTo(.30239317848068603,12);
+ expect(central.incomePathways.length).toBeGreaterThan(0);
+ expect(central.costPer10Qalys).toBeCloseTo(3316996.335873858,5);
+ await page.goto('/california/all');
+ const row=page.locator('[data-research-table] tbody tr').filter({hasText:'Operation Access'});
+ await expect(row.locator('td').nth(0)).toContainText('$3.3M');await expect(row.locator('td').nth(1)).toContainText('$2.5M');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+});

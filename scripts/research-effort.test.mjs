@@ -33,10 +33,21 @@ test('assigned historical values are frozen integers for missing records only',(
  assert.match(assigned.basis,/randomly assigned/);
  assert.equal(Object.keys(assigned.minutesByOrganization).length,67);
  for(const [name,minutes]of Object.entries(assigned.minutesByOrganization)){
-  assert.ok(h.organizations.includes(name));assert.ok(!registry.organizations[name]?.sessions?.length);
+  assert.ok(h.organizations.includes(name));
+  const newerSessions=registry.organizations[name]?.sessions??[];
+  // A frozen missing-history estimate may later gain real revision intervals.
+  // Those new sessions must not rewrite or pretend to measure the old estimate.
+  assert.ok(newerSessions.every(s=>Date.parse(s.startedAt)>Date.parse(assigned.assignedOn+'T23:59:59Z')));
   assert.ok(Number.isInteger(minutes)&&minutes>=15&&minutes<=20);
-  const r=researchEffortSummary(registry,name,{...h,...assigned});
+  const historicalRegistry={...registry,organizations:{...registry.organizations,[name]:{coverage:'partial',sessions:[]}}};
+  const r=researchEffortSummary(historicalRegistry,name,{...h,...assigned});
   assert.equal(r.minutes,minutes);assert.match(r.label,new RegExp('~'+minutes+' min'));assert.equal(r.estimated,true);
+  if(newerSessions.length){
+   const current=researchEffortSummary(registry,name,{...h,...assigned});
+   assert.equal(current.recorded,true);assert.equal(current.estimated,false);
+   const expected=newerSessions.reduce((sum,s)=>sum+(Date.parse(s.endedAt)-Date.parse(s.startedAt))/60000,0);
+   assert.ok(Math.abs(current.minutes-expected)<1e-10);
+  }
  }
 });
 test('user-reported lead attribution preserves actual assistant evidence and is date bounded',()=>{
@@ -58,7 +69,9 @@ test('historical estimates use a frozen report average and never invent session 
  const h=JSON.parse(fs.readFileSync('data/research-effort-historical-estimates.json','utf8'));
  assert.equal(h.samples.length,13);assert.equal(new Set(h.organizations).size,80);
  assert.equal(h.minutes,h.samples.reduce((sum,s)=>sum+s.minutes,0)/h.samples.length);
- const estimated=researchEffortSummary(registry,'GLIDE Foundation',h);
+ // Freeze the missing-history fixture independently of later actual GLIDE sessions.
+ const fixture={...registry,organizations:{...registry.organizations}};delete fixture.organizations['GLIDE Foundation'];
+ const estimated=researchEffortSummary(fixture,'GLIDE Foundation',h);
  assert.equal(estimated.recorded,false);assert.equal(estimated.estimated,true);
  assert.equal(estimated.label,'Research time: ~18 min on GPT-5.6 Sol Medium');
  assert.match(estimated.bullets.at(-1),/before time tracking/);

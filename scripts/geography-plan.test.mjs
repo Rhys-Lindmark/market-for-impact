@@ -3,9 +3,39 @@ import {readFileSync} from 'node:fs';
 const read = p => JSON.parse(readFileSync(new URL('../docs/'+p, import.meta.url)));
 const p=read('geography-progress.json'), b=read('geography-boundaries.json');
 const reports=JSON.parse(readFileSync(new URL('../data/geography-reports.json',import.meta.url)));
+const sfSummaries=JSON.parse(readFileSync(new URL('../data/top-ten-summaries.json',import.meta.url)));
+const publicReviewIds=new Set([
+ ...reports.reports.filter(r=>r.stage==='beta').map(r=>r.edition+'/'+r.slug),
+ ...Object.keys(sfSummaries).map(slug=>'san-francisco/'+slug),
+]);
+assert.equal(p.recalibration.publishedCohortTotal,publicReviewIds.size);
+assert.equal(p.recalibration.publishedCohortCompleted,p.recalibration.completedReportIds.length);
+assert.equal(new Set(p.recalibration.completedReportIds).size,p.recalibration.completedReportIds.length);
+for(const id of p.recalibration.completedReportIds)assert.ok(publicReviewIds.has(id),'Recalibration must identify an existing public review: '+id);
+assert.equal(p.recalibration.originalPendingQueue,p.recalibration.publishedCohortTotal-3+p.recalibration.legacyModelTotal);
+assert.equal(p.recalibration.legacyModelCompleted,p.recalibration.legacyCompletedReportIds.length);
+assert.equal(new Set(p.recalibration.legacyCompletedReportIds).size,p.recalibration.legacyModelCompleted);
+assert.equal(p.recalibration.originalPendingQueueCompleted,p.recalibration.publishedCohortCompleted-3+p.recalibration.legacyModelCompleted);
+for(const id of p.recalibration.legacyCompletedReportIds){
+ assert(!publicReviewIds.has(id),'Separate legacy identities must not inflate published-cohort completion');
+ if(id==='bay/pacific-hearing-connection'){
+  const receipt=read('geography-discovery/pacific-hearing-legacy-publication-2026-10-02.json');
+  assert.equal(receipt.deployment.status,'succeeded');
+  assert.equal(receipt.source.commit_sha,receipt.version.source.commit_sha);
+ }
+}
+assert.equal(p.usageReserve.minimumWeeklyRemainingPercent,20);
+assert.equal(p.usageReserve.operationalStopRemainingPercent,25);
 assert.equal(p.editions.length,11);
 assert.equal(new Set(p.editions.map(e=>e.id)).size,11);
-assert.equal(p.models.discovery.effort,'medium'); assert.equal(p.models.alpha.effort,'low'); assert.equal(p.models.beta.effort,'medium');
+for(const stage of ['discovery','alpha','beta']){
+ assert.equal(p.models[stage].model,'gpt-6.1-sol');
+ assert.equal(p.models[stage].effort,null); // Unknown reasoning is not fabricated.
+ assert.match(p.models[stage].evidence,/User-confirmed current model assignment/);
+}
+assert.equal(p.historicalPlannedModels.discovery.effort,'medium');
+assert.equal(p.historicalPlannedModels.alpha.effort,'low');
+assert.equal(p.historicalPlannedModels.beta.effort,'medium');
 for(const e of p.editions){
  assert.ok(e.boundaryVersion);
  const stages=[['acceptedDiscoveryIds','discoveryAccepted',100],['alphaCohortIds','alphaPublished',25],['betaIds','betaAcceptedPublished',10],['topPickIds','topPicksPublished',4]];

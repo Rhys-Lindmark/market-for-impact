@@ -1,0 +1,22 @@
+import {test,expect} from '@playwright/test';
+test('HAH report, signed household resources, history and per-model time agree with full list',async({page,request})=>{
+ await page.route('https://market-for-impact.rhyslindmark.chatgpt.site/_next/**',async route=>{const u=new URL(route.request().url());await route.fulfill({response:await request.get(u.pathname+u.search)});});
+ await page.goto('/usa/charities/help-america-hear');
+ await expect(page.getByRole('heading',{level:1,name:'Help America Hear',exact:true})).toBeVisible();
+ await expect(page.locator('.report-research-effort summary')).toContainText('~11 min on GPT-6 Astra Light + ~81 min on GPT-6 Astra Medium + ~6 min on GPT-6.1 Sol');
+ await expect(page.locator('#summary')).toContainText('$3.1M');
+ await expect(page.locator('#cost')).toContainText('0.412 additional HAH fittings');
+ await expect(page.locator('#cost')).toContainText('−0.00175');
+ await expect(page.locator('#cost')).toContainText('$689,124');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+ const response=await request.get('/api/geography-reports/usa/help-america-hear');expect(response.ok()).toBe(true);
+ const report=await response.json(),central=report.model.scenarios.find((s:any)=>s.id==='central');
+ expect(central.costPer10Qalys).toBeCloseTo(3067549.367123098,5);
+ expect(central.editionQalys).toBeCloseTo(.034349213660190184,12);
+ expect(central.combinedEquivalentYears).toBeCloseTo(.03259931236046741,12);
+ expect(central.incomePathways.length).toBe(8);
+ await page.goto('/usa/all');
+ const row=page.locator('[data-research-table] tbody tr').filter({hasText:'Help America Hear'});
+ await expect(row.locator('td').nth(0)).toContainText('$3.1M');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+});

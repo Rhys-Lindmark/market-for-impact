@@ -1,0 +1,458 @@
+{
+  "edition": "new-york-city",
+  "slug": "bergen-volunteer-medical-initiative",
+  "frozenFromCommit": "b698f73c8d9d810f44cffb10da3968c9d132203e",
+  "updated": "2026-09-29",
+  "model": {
+    "version": "nyc-bvmi-beta-clinical-v2",
+    "costScope": "Full audited gross recognized recipient cost, including donated services/goods and netted event direct-benefit costs. Outside care and other social resources incompletely measured. Annual cost is a normalization, not a requested gift or verified funding tranche.",
+    "geographicAttribution": "Bergen County residency verified annually by recipient eligibility; central g=1 for modeled patients within official22-county MSA, with .98 sensitivity. No headquarters or population-share shortcut.",
+    "formula": "Q=N*a*b*(c*u*t-h)*g/(1+d), with N=1026,a=.5,b=.5,c=.25,u=.1,t=.5,h=.0005,g=1,d=.03. One annual cohort only. Price10=10*C/Q only when Q>0. Mental-health-only scenario replaces aggregate N and utility assumptions; it is not added. The denominator (1+d) applies a year-end discount convention to the finite benefit area; it does not imply benefits persist for a full year.",
+    "counterfactual": "Other free/sliding-scale providers, emergency care, future insurance, volunteer availability, current grants and committed Garfield expansion continue. a removes care replacement; b removes funding replacement; they represent distinct constraints and appear once each.",
+    "attribution": "Annual patient cohort, not repeated visits. a discounts alternative effective care; b discounts replacement funding and capacity constraints. All clinical priors are finite and uncalibrated. Mental-health cohort overlaps total care and is evaluated separately.",
+    "uncertainty": "No controlled BVMI utility effect or ordinary-gift elasticity is identified. Source-linked judgments are contextual, not estimated from those sources. Zero, adverse and unknown wider-portfolio outcomes remain; scenarios are not confidence bounds.",
+    "nativeOutcomes": "1026 annual patients and9725 visits in2025;156 counseling patients overlap total. Neither clinical-control benchmarks nor counseling counts demonstrate incremental health.",
+    "inputs": [
+      {
+        "name": "C",
+        "value": 4513270,
+        "unit": "USD annual recognized gross recipient cost",
+        "basis": "observed",
+        "rationale": "Audited pre-event-netting functional expense total.",
+        "sourceIds": [
+          "audit25"
+        ]
+      },
+      {
+        "name": "N",
+        "value": 1026,
+        "unit": "distinct annual patients",
+        "basis": "observed",
+        "rationale": "2025 report distinct annual patients, not visits.",
+        "sourceIds": [
+          "impact25"
+        ]
+      },
+      {
+        "name": "a",
+        "value": 0.5,
+        "unit": "fraction",
+        "basis": "judgment",
+        "rationale": "Explicit modeling judgment; no source empirically estimates this factor. Sources are contextual only, not empirical calibration of this value.",
+        "sourceIds": [
+          "services",
+          "oregon"
+        ]
+      },
+      {
+        "name": "b",
+        "value": 0.5,
+        "unit": "fraction",
+        "basis": "judgment",
+        "rationale": "Explicit modeling judgment; no source empirically estimates this factor. Sources are contextual only, not empirical calibration of this value.",
+        "sourceIds": [
+          "audit25",
+          "berrie",
+          "state27",
+          "opening"
+        ]
+      },
+      {
+        "name": "c",
+        "value": 0.25,
+        "unit": "fraction",
+        "basis": "judgment",
+        "rationale": "Explicit modeling judgment; no source empirically estimates this factor. Sources are contextual only, not empirical calibration of this value.",
+        "sourceIds": [
+          "services",
+          "oregon"
+        ]
+      },
+      {
+        "name": "u",
+        "value": 0.1,
+        "unit": "health utility difference",
+        "basis": "judgment",
+        "rationale": "Explicit modeling judgment; no source empirically estimates this factor. Sources are contextual only, not empirical calibration of this value.",
+        "sourceIds": [
+          "services",
+          "oregon"
+        ]
+      },
+      {
+        "name": "t",
+        "value": 0.5,
+        "unit": "years of improvement",
+        "basis": "judgment",
+        "rationale": "Explicit modeling judgment; no source empirically estimates this factor. Sources are contextual only, not empirical calibration of this value.",
+        "sourceIds": [
+          "services",
+          "oregon"
+        ]
+      },
+      {
+        "name": "h",
+        "value": 0.0005,
+        "unit": "QALYs lost per attributable patient",
+        "basis": "judgment",
+        "rationale": "Explicit modeling judgment; no source empirically estimates this factor. Sources are contextual only, not empirical calibration of this value.",
+        "sourceIds": [
+          "services",
+          "oregon"
+        ]
+      },
+      {
+        "name": "g",
+        "value": 1,
+        "unit": "fraction",
+        "basis": "judgment",
+        "rationale": "Eligibility requires and annually verifies Bergen County residence; applying it to health assumes continued residency. Sources are contextual only, not empirical calibration of this value.",
+        "sourceIds": [
+          "services",
+          "msa2023"
+        ]
+      },
+      {
+        "name": "d",
+        "value": 0.03,
+        "unit": "annual discount rate",
+        "basis": "judgment",
+        "rationale": "Explicit modeling judgment; no source empirically estimates this factor. Sources are contextual only, not empirical calibration of this value.",
+        "sourceIds": [
+          "services",
+          "oregon"
+        ]
+      },
+      {
+        "name": "Nmental",
+        "value": 156,
+        "unit": "2025 counseling patients; separate scenario only",
+        "basis": "observed",
+        "rationale": "Overlaps total annual patients; no local causal outcome measured.",
+        "sourceIds": [
+          "opening",
+          "mental"
+        ]
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "central",
+        "label": "Alpha-comparable clinical prior",
+        "costUSD": 4513270,
+        "allPopulationQalys": 2.9883495145631067,
+        "editionQalys": 2.9883495145631067,
+        "pricePer10QalysUSD": 15102885.315139702,
+        "parameters": {
+          "N": 1026,
+          "a": 0.5,
+          "b": 0.5,
+          "c": 0.25,
+          "u": 0.1,
+          "t": 0.5,
+          "h": 0.0005,
+          "g": 1,
+          "d": 0.03
+        },
+        "effectivePatients": 256.5,
+        "assumptions": "One annual patient cohort, six months of utility gain for an assumed responding quarter of additional effective care. No permanent life extension or repeated visit rewards. Conditional judgment, not calibrated expected value."
+      },
+      {
+        "id": "lower-gift-response",
+        "label": "Public/private funding replacement",
+        "costUSD": 4513270,
+        "allPopulationQalys": 1.4941747572815534,
+        "editionQalys": 1.4941747572815534,
+        "pricePer10QalysUSD": 30205770.630279403,
+        "parameters": {
+          "N": 1026,
+          "a": 0.5,
+          "b": 0.25,
+          "c": 0.25,
+          "u": 0.1,
+          "t": 0.5,
+          "h": 0.0005,
+          "g": 1,
+          "d": 0.03
+        },
+        "effectivePatients": 128.25,
+        "assumptions": "Renewed public appropriation, committed foundation support and available assets motivate lower-response sensitivity, not an empirically estimated elasticity."
+      },
+      {
+        "id": "very-low-response",
+        "label": "Gift does little to expand effective care",
+        "costUSD": 4513270,
+        "allPopulationQalys": 0.5976699029126213,
+        "editionQalys": 0.5976699029126213,
+        "pricePer10QalysUSD": 75514426.57569851,
+        "parameters": {
+          "N": 1026,
+          "a": 0.5,
+          "b": 0.1,
+          "c": 0.25,
+          "u": 0.1,
+          "t": 0.5,
+          "h": 0.0005,
+          "g": 1,
+          "d": 0.03
+        },
+        "effectivePatients": 51.300000000000004,
+        "assumptions": "Volunteer recruitment, patient recruitment, existing slots or funded plans constrain the ordinary gift."
+      },
+      {
+        "id": "lower-clinical-benefit",
+        "label": "Small short-term clinical benefit",
+        "costUSD": 4513270,
+        "allPopulationQalys": 0.18677184466019423,
+        "editionQalys": 0.18677184466019423,
+        "pricePer10QalysUSD": 241646165.04223517,
+        "parameters": {
+          "N": 1026,
+          "a": 0.5,
+          "b": 0.5,
+          "c": 0.1,
+          "u": 0.05,
+          "t": 0.25,
+          "h": 0.0005,
+          "g": 1,
+          "d": 0.03
+        },
+        "effectivePatients": 256.5,
+        "assumptions": "Not all routine chronic care produces detectable near-term utility gains; subjective scenario, not trial-derived."
+      },
+      {
+        "id": "mental-health-only",
+        "label": "Separate mental-health component",
+        "costUSD": 4513270,
+        "allPopulationQalys": 0.35970873786407764,
+        "editionQalys": 0.35970873786407764,
+        "pricePer10QalysUSD": 125470124.15654522,
+        "parameters": {
+          "N": 156,
+          "a": 0.5,
+          "b": 0.5,
+          "c": 1,
+          "u": 0.02,
+          "t": 0.5,
+          "h": 0.0005,
+          "g": 1,
+          "d": 0.03
+        },
+        "effectivePatients": 39,
+        "assumptions": "Uses observed counseling patients but assumed mean utility improvement and duration. Replaces rather than adds to aggregate clinical scenario; not calibrated from PHQ-9. Full recipient cost retained; other care remains unknown, not zero."
+      },
+      {
+        "id": "outside-resources",
+        "label": "Whole recipient plus outside-care allowance",
+        "costUSD": 5539270,
+        "allPopulationQalys": 2.9883495145631067,
+        "editionQalys": 2.9883495145631067,
+        "pricePer10QalysUSD": 18536218.648473036,
+        "parameters": {
+          "N": 1026,
+          "a": 0.5,
+          "b": 0.5,
+          "c": 0.25,
+          "u": 0.1,
+          "t": 0.5,
+          "h": 0.0005,
+          "g": 1,
+          "d": 0.03
+        },
+        "effectivePatients": 256.5,
+        "assumptions": "Assumed 1000USD unrecognized net outside-resource cost for every annual patient, not only attributed patient equivalents. Only valid if genuinely outside recognized services/goods; not measured social cost."
+      },
+      {
+        "id": "higher-volunteer-cost",
+        "label": "Higher shadow value of recognized services",
+        "costUSD": 4857495.5,
+        "allPopulationQalys": 2.9883495145631067,
+        "editionQalys": 2.9883495145631067,
+        "pricePer10QalysUSD": 16254777.014294997,
+        "parameters": {
+          "N": 1026,
+          "a": 0.5,
+          "b": 0.5,
+          "c": 0.25,
+          "u": 0.1,
+          "t": 0.5,
+          "h": 0.0005,
+          "g": 1,
+          "d": 0.03
+        },
+        "effectivePatients": 256.5,
+        "assumptions": "50% uplift of already recognized donated services; sensitivity to opportunity cost, not another full addition or correction of the audit."
+      },
+      {
+        "id": "higher-forward-cost",
+        "label": "Higher post-opening cost, same effective throughput",
+        "costUSD": 5641587.5,
+        "allPopulationQalys": 2.9883495145631067,
+        "editionQalys": 2.9883495145631067,
+        "pricePer10QalysUSD": 18878606.643924627,
+        "parameters": {
+          "N": 1026,
+          "a": 0.5,
+          "b": 0.5,
+          "c": 0.25,
+          "u": 0.1,
+          "t": 0.5,
+          "h": 0.0005,
+          "g": 1,
+          "d": 0.03
+        },
+        "effectivePatients": 256.5,
+        "assumptions": "25% run-rate cost stress after June2026 opening. Not a verified budget or derived from lease cash payments."
+      },
+      {
+        "id": "expansion-case",
+        "label": "Hypothetical larger clinic with funded replacement",
+        "costUSD": 5641587.5,
+        "allPopulationQalys": 2.1844660194174756,
+        "editionQalys": 2.1844660194174756,
+        "pricePer10QalysUSD": 25825933.888888888,
+        "parameters": {
+          "N": 1500,
+          "a": 0.5,
+          "b": 0.25,
+          "c": 0.25,
+          "u": 0.1,
+          "t": 0.5,
+          "h": 0.0005,
+          "g": 1,
+          "d": 0.03
+        },
+        "effectivePatients": 187.5,
+        "assumptions": "1500 annual patients and25% higher full recipient cost are hypotheses, not current throughput or campaign projection accepted as fact. Existing committed expansion support remains in baseline."
+      },
+      {
+        "id": "geography",
+        "label": "Residency-change sensitivity",
+        "costUSD": 4513270,
+        "allPopulationQalys": 2.9883495145631067,
+        "editionQalys": 2.9285825242718446,
+        "pricePer10QalysUSD": 15411107.464428267,
+        "parameters": {
+          "N": 1026,
+          "a": 0.5,
+          "b": 0.5,
+          "c": 0.25,
+          "u": 0.1,
+          "t": 0.5,
+          "h": 0.0005,
+          "g": 0.98,
+          "d": 0.03
+        },
+        "effectivePatients": 256.5,
+        "assumptions": "Annual Bergen residency checks support g=1 baseline, but migration/exceptions may reduce retained MSA benefit."
+      },
+      {
+        "id": "low",
+        "label": "Joint weak case",
+        "costUSD": 4513270,
+        "allPopulationQalys": 0.018677184466019424,
+        "editionQalys": 0.018303640776699034,
+        "pricePer10QalysUSD": 2465777194.3085217,
+        "parameters": {
+          "N": 1026,
+          "a": 0.25,
+          "b": 0.1,
+          "c": 0.1,
+          "u": 0.05,
+          "t": 0.25,
+          "h": 0.0005,
+          "g": 0.98,
+          "d": 0.03
+        },
+        "effectivePatients": 25.650000000000002,
+        "assumptions": "Joint priors, not confidence interval."
+      },
+      {
+        "id": "high",
+        "label": "Joint favorable case",
+        "costUSD": 4513270,
+        "allPopulationQalys": 44.70570873786407,
+        "editionQalys": 44.70570873786407,
+        "pricePer10QalysUSD": 1009551.1574291246,
+        "parameters": {
+          "N": 1026,
+          "a": 0.8,
+          "b": 0.75,
+          "c": 0.5,
+          "u": 0.15,
+          "t": 1,
+          "h": 0.0002,
+          "g": 1,
+          "d": 0.03
+        },
+        "effectivePatients": 615.6,
+        "assumptions": "One year only, no subsequent benefit. Multiple favorable assumptions, not a demonstrated return."
+      },
+      {
+        "id": "zero",
+        "label": "No marginal effective care",
+        "costUSD": 4513270,
+        "allPopulationQalys": 0,
+        "editionQalys": 0,
+        "pricePer10QalysUSD": null,
+        "parameters": {
+          "N": 1026,
+          "a": 0.5,
+          "b": 0,
+          "c": 0.25,
+          "u": 0.1,
+          "t": 0.5,
+          "h": 0.0005,
+          "g": 1,
+          "d": 0.03
+        },
+        "effectivePatients": 0,
+        "assumptions": "No additional health attributable to gift; no positive QALY price."
+      },
+      {
+        "id": "adverse",
+        "label": "Net clinical burden exceeds benefit",
+        "costUSD": 4513270,
+        "allPopulationQalys": -0.43580097087378644,
+        "editionQalys": -0.43580097087378644,
+        "pricePer10QalysUSD": null,
+        "parameters": {
+          "N": 1026,
+          "a": 0.5,
+          "b": 0.5,
+          "c": 0.05,
+          "u": 0.02,
+          "t": 0.25,
+          "h": 0.002,
+          "g": 1,
+          "d": 0.03
+        },
+        "effectivePatients": 256.5,
+        "assumptions": "Illustrative screening/treatment/displacement burden, not observed harm."
+      },
+      {
+        "id": "portfolio-unknown",
+        "label": "Whole long-term portfolio remains unestimated",
+        "costUSD": 4513270,
+        "allPopulationQalys": null,
+        "editionQalys": null,
+        "pricePer10QalysUSD": null,
+        "assumptions": "Long-latency prevention, financial security, partner resources and wider effects not assumed zero; no complete portfolio rank."
+      }
+    ],
+    "sensitivity": [
+      "Alpha-comparable $15.10m/10; lower gift response $30.21m; separate mental-health component $125.47m.",
+      "Do not pair a future doubled patient count with unchanged historical cost or assign already committed expansion to a new donor.",
+      "Outside-resource allowance is applied to all1026 annual patients and must exclude already recognized services/goods.",
+      "Mental-health and aggregate clinical cases are alternatives, never additive."
+    ],
+    "missingInputs": [
+      "Current Garfield patient throughput, staffing/volunteer constraints and matched full-year budget.",
+      "Current contracts, restriction releases, pledge collectability and next-dollar funded/unfunded plan.",
+      "Local clinical baseline/follow-up, retention, utility and alternative care received.",
+      "Reconciled outside specialist/diagnostic resources net of already recognized in-kind inputs.",
+      "Long-latency prevention, financial protection and wider effects without overlap."
+    ],
+    "nativeCosts": "Full annual recognized expense per observed annual patient is $4,398.9. After the separate care-additionality and gift-response factors, cost per 256.5 modeled attributable patient equivalents is $17,595.59. Neither ratio treats each repeat visit as a new person."
+  }
+}

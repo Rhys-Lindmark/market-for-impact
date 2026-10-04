@@ -14,8 +14,8 @@ function fixture(){
  return {data:{schemaVersion:1,sessions:[session],reports:[r]},progress,r};
 }
 test('published registry matches accepted progress without mock records',()=>validateEditionReports(read('data/geography-reports.json'),read('docs/geography-progress.json')));
-test('Operation Access scenarios reproduce from the published input ledger',()=>{
- const report=read('data/geography-reports.json').reports.find(r=>r.edition==='california'&&r.slug==='operation-access');
+test('Operation Access historical scenarios reproduce from the frozen input ledger',()=>{
+ const report={model:read('data/california/oa-ca-pre-recalibration-model.json')};
  assert.ok(report);
  const central_inputs={bay_share:0,sf_share:0};
  for(const input of report.model.inputs)if(Object.hasOwn(oaBounds,input.name))central_inputs[input.name]=input.value;
@@ -82,12 +82,14 @@ test('End Overdose retains separately dated California arithmetic and deduplicat
  }
  const ids=new Set([...us.sessionIds,...ca.sessionIds]);
  const seconds=[...ids].reduce((sum,id)=>{const s=data.sessions.find(s=>s.id===id);return sum+(Date.parse(s.endedAt)-Date.parse(s.startedAt))/1000;},0);
- assert.equal(seconds,1210+2372);
+ assert.equal(seconds,1210+2372+297);
  const central=ca.model.scenarios.find(s=>s.id==='central');
  assert.ok(Math.abs(central.editionQalys/central.allPopulationQalys-(.15*.75/(.85+.15*.75)))<1e-12);
  assert.equal(ca.model.scenarios.find(s=>s.id==='ca-zero').editionQalys,0);
 });
 test('unestimated needs blockers; observed inputs need sources; stage and cohort are checked',()=>{
+ const zero=fixture();Object.assign(zero.r.model.scenarios[0],{costUSD:0,allPopulationQalys:0,editionQalys:0});validateEditionReports(zero.data,zero.progress);assert.equal(reportPrice(zero.r),null);
+ const negative=fixture();negative.r.model.scenarios[0].costUSD=-1;assert.throws(()=>validateEditionReports(negative.data,negative.progress),/nonnegative/);
  const nullCase=fixture();nullCase.r.model.scenarios[0].editionQalys=null;assert.throws(()=>validateEditionReports(nullCase.data,nullCase.progress),/blocking inputs/);
  let {data,progress,r}=fixture();r.model.scenarios=[];assert.throws(()=>validateEditionReports(data,progress),/blocking inputs/);r.model.missingInputs=['Unknown additional care'];validateEditionReports(data,progress);
  r.model.inputs[0].basis='observed';assert.throws(()=>validateEditionReports(data,progress),/source/);r.model.inputs[0].sourceIds=['s1'];validateEditionReports(data,progress);
@@ -107,7 +109,9 @@ test('unknown runtime stays unknown; lists retain initial estimates without chan
   assert.match(formatEditionReportPrice(report),/^\$/,slug);
  }
  const school=published.reports.find(r=>r.slug==='california-school-based-health-alliance');
- assert.equal(formatEditionReportPrice(school),'$26.9M');
+ assert.equal(formatEditionReportPrice(school),'$111.7M');
+ const historical=school.model.scenarios.find(s=>s.id==='historical-alpha-central');
+ assert.ok(Math.abs(10*historical.costUSD/historical.editionQalys-26853571.42857143)<.01);
 });
 test('header time uses whole focused intervals, and duplicate/overlapping sessions fail',()=>{
  const {data,progress,r}=fixture();assert.equal(editionResearchEffort(data,r).label,'Research time: 15 min on GPT-6 Astra Light');

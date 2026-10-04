@@ -7,6 +7,6 @@ test('HOPE V2 scope and complete prose match central comparison',async({page,req
  const links=page.locator('.report-contents a');for(let i=0;i<await links.count();i++){const h=await links.nth(i).getAttribute('href');await expect(page.locator('[id="'+h!.slice(1)+'"]')).toHaveCount(1);}
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
  await page.setViewportSize({width:1365,height:900});const t=await page.locator('.report-contents').boundingBox(),a=await page.locator('article').boundingBox();expect(t!.x+t!.width).toBeLessThan(a!.x);
- const r=await request.get('/api/hope-v2-model');expect(r.ok()).toBe(true);const d=await r.json();expect(d.evaluated.centralScenario.bayCostPer10).toBeCloseTo(554659.5517271358,6);expect(d.currentEvidence.annualExpense).toBeNull();
- await page.goto('/research');await expect(page.locator('[data-research-slug="hope-pacifica"]')).toHaveAttribute('data-cost-per-ten-qalys',String(d.evaluated.centralScenario.bayCostPer10));
+ const r=await request.get('/api/hope-v2-model');expect(r.ok()).toBe(true);const d=await r.json();expect(d.evaluated.centralScenario.bayCostPer10).toBeCloseTo(931745.122448699,6);expect(d.currentEvidence.annualExpense).toBeNull();
+ await page.goto('/san-francisco/all');await expect(page.locator('[data-research-slug="hope-pacifica"]')).toHaveAttribute('data-cost-per-ten-qalys',String(d.evaluated.centralScenario.bayCostPer10));
 });

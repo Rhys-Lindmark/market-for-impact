@@ -1,0 +1,24 @@
+import {test,expect} from '@playwright/test';
+test('Cribs donation price, clinical/resource model, history and per-model effort match full list',async({page,request})=>{
+ await page.route('https://market-for-impact.rhyslindmark.chatgpt.site/_next/**',async route=>{const u=new URL(route.request().url());await route.fulfill({response:await request.get(u.pathname+u.search)});});
+ await page.goto('/usa/charities/cribs-for-kids');
+ await expect(page.getByRole('heading',{level:1,name:'Cribs for Kids',exact:true})).toBeVisible();
+ await expect(page.locator('.report-research-effort summary')).toContainText('~10 min on GPT-6 Astra Light + ~33 min on GPT-6.1 Sol');
+ await expect(page.locator('#summary')).toContainText('$6.1M');
+ await expect(page.locator('#cost')).toContainText('5.44 additional supported packages');
+ await expect(page.locator('#cost')).toContainText('0.0009003');
+ await expect(page.locator('#cost')).toContainText('$3.74 million');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+ const response=await request.get('/api/geography-reports/usa/cribs-for-kids');expect(response.ok()).toBe(true);
+ const r=await response.json(),c=r.model.scenarios.find((s:any)=>s.id==='central');
+ expect(c.costPer10Qalys).toBeCloseTo(6096539.999634326,5);
+ expect(c.editionQalys).toBeCloseTo(.01550242940140146,12);
+ expect(c.incomePathways.length).toBe(2);
+ expect(r.model.scenarios.length).toBe(34);
+ expect(r.model.scenarios.some((s:any)=>s.id==='historical-alpha-central')).toBe(true);
+ expect(r.model.scenarios.some((s:any)=>s.id==='historical-unidentified-beta')).toBe(true);
+ await page.goto('/usa/all');
+ const row=page.locator('[data-research-table] tbody tr').filter({hasText:'Cribs for Kids'});
+ await expect(row.locator('td').nth(0)).toContainText('$6.1M');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+});

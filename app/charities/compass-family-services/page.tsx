@@ -3,6 +3,9 @@ import CharityResearchReport, { type CharityReportContent } from '@/components/C
 import review from '@/data/san-francisco/compass-family-services-review-v1.json';
 import model from '@/data/san-francisco/compass-c-rent-cea-v1.json';
 import bridge from '@/data/san-francisco/compass-c-rent-qaly-bridge-audit-v1.json';
+import {calculate,diagnostics,modelVersion as currentVersion} from '@/lib/compass-calibrated-model.mjs';
+import {preventionModelContent} from '@/lib/prevention-report-content.mjs';
+import receipts from '@/docs/geography-discovery/compass-calibration-receipts-2026-10-01.json';
 
 export const metadata: Metadata = {
   title: 'Compass C-Rent homelessness prevention — charity research | Market for Impact',
@@ -16,6 +19,7 @@ const compactMoney = new Intl.NumberFormat('en-US', { style: 'currency', currenc
 const bridgeMoney = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 2 });
 const number = new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 });
 const percent = new Intl.NumberFormat('en-US', { style: 'percent', maximumFractionDigits: 1 });
+const current=calculate(),cases=diagnostics();
 const cost = model.inputs.find((input) => input.key === 'gross_accounting_cost_per_reported_family_usd')!;
 const effect = model.inputs.find((input) => input.key === 'causal_six_month_homelessness_reduction')!;
 const evidenceKeys = new Set(['compass-c-rent-reporting', 'compass-c-rent-audit', 'santa-clara-prevention-rct', 'compass-prevention-public-contract']);
@@ -31,10 +35,11 @@ const content: CharityReportContent = {
   program: 'C-Rent back-rent and move-in assistance, case management, and problem-solving for families at risk of homelessness',
   donationUrl: review.organization.donationUrl,
   published: '1 September 2026',
-  modelVersion: model.version,
+  modelVersion: currentVersion,
+  calibrationDate: '1 October 2026',
   nutshell: {
-    headline: "Rental assistance may prevent homelessness, but Compass’s additional impact remains unmeasured.",
-    body: <>Compass reports that financial support prevented homelessness for <strong>207 at-risk families</strong> in FY2025. Its audit assigns <strong>{money.format(model.inputs.find((input) => input.key === 'audited_c_rent_program_expense_usd')!.best)}</strong> to C-Rent, or <strong>about {money.format(cost.best)} per reported family</strong>. Applying a discounted 2.0-point effect from a geographically relevant randomized trial gives a conditional estimate of <strong>about {money.format(model.bottomLine.costPerAdditionalHomelessnessEpisodeAvertedUsd)} per additional six-month homelessness episode averted</strong>. Our separate health-utility transfer produces a very-low-confidence central estimate of <strong>about {bridgeMoney.format(bridge.modeledBridge.bestCostPerTenQalysUsd)} per 10 QALYs</strong>. A null effect remains plausible.</>,
+    headline: 'Rental assistance and practical support for families facing a housing crisis.',
+    body: <>Compass reports <strong>207 prevention-classified families</strong> in FY2025. Audited C-Rent expense gives a historical ratio of <strong>about {money.format(cost.best)} per reported family</strong>. Our current conditional estimate is <strong>{bridgeMoney.format(current.costPerBetterLifeUSD!)} per better life</strong>: 0.040359 income-equivalent years plus 0.000124 independently modeled noncash health-proxy years per case. Neither component is a measured Compass clinical or income effect, and additional donor capacity remains unverified.</>,
     whyItMayWork: 'A temporary rent or move-in cash gap can trigger eviction and shelter entry even when a family could otherwise sustain housing. C-Rent pairs direct assistance with case management and problem-solving.',
     whyWeAreCautious: 'The 207-family count is an administrative classification without a comparison or published follow-up, and the closest randomized study found stronger effects for households without children.',
     recommendationBlocker: 'Compass has not published C-Rent’s applicant funnel, unique-household reconciliation, HMIS-linked outcomes, source-specific assistance ledger, or a dated marginal plan showing that a new private gift adds rather than displaces aid.',
@@ -42,8 +47,8 @@ const content: CharityReportContent = {
   summary: [
     { label: 'REPORTED COST BENCHMARK', value: '≈ $9,700', detail: 'FY2025 audited C-Rent expense per reported prevention-classified family; not a causal impact price' },
     { label: 'OUR CONDITIONAL BEST GUESS', value: '≈ $485K', detail: 'per additional family avoiding recorded homelessness within six months' },
-    { label: 'COST PER BETTER LIFE', value: '≈ $1.35M', detail: 'per 10 QALYs; very-low-confidence transfer from a VA housing model' },
-    { label: 'FUNDING ROOM', value: 'Not published', detail: 'the $100,000 gift is a scenario, not a current marginal offer' },
+    { label: 'COST PER BETTER LIFE', value: compactMoney.format(current.costPerBetterLifeUSD!), detail: 'per 10 combined income-equivalent/noncash-proxy years; not measured clinical QALYs' },
+    { label: 'FUNDING ROOM', value: 'Not published', detail: 'additional eligible awards are conditional, not a current marginal offer' },
   ],
   programSection: {
     body: 'Compass Family Services helps families facing a housing crisis. Its C-Rent program provides back-rent or move-in financial assistance, case management, and problem-solving to help families remain housed.',
@@ -55,20 +60,10 @@ const content: CharityReportContent = {
     ],
     boundary: 'This model covers C-Rent prevention only. It excludes Compass shelter, rapid rehousing, permanent subsidies, housing navigation, childcare, behavioral health, and the separate cash-after-rapid-rehousing trial. The 207 reported families are not assumed to be 207 additional outcomes.',
   },
-  model: {
-    headline: 'Our current model: roughly $485,000 per additional six-month homelessness episode averted.',
-    body: "The historical cost estimate comes from audited FY2025 C-Rent accounts: $2,008,658 divided by 207 reported prevention-classified families. We then discount the Santa Clara randomized 3.8-point offer effect to a 2.0-point Compass best guess because the family population, targeting, take-up, assistance rules, and outcome systems differ.",
-    equation: { label: 'CONDITIONAL COST PER ADDITIONAL HOMELESSNESS EPISODE AVERTED', expression: `${money.format(cost.best)} ÷ ${percent.format(effect.best)}`, result: `= ${money.format(model.bottomLine.costPerAdditionalHomelessnessEpisodeAvertedUsd)}` },
-    inputColumnLabel: 'Historical value / best guess',
-    inputs: model.inputs.slice(1).map((input) => ({ key: input.key, label: input.label, confidence: input.confidence, best: formatInput(input.best, input.unit), range: input.low === input.high ? 'Fixed historical value' : `${formatInput(input.low, input.unit)}–${formatInput(input.high, input.unit)}`, basis: input.basis })),
-    giftHeading: `What would ${money.format(model.bottomLine.giftUsd)} buy at FY2025 accounting cost?`,
-    sensitivity: model.sensitivity.map((row) => ({ case: row.case, headline: `${number.format(row.additionalHomelessnessEpisodesAvertedPer100k)} additional homelessness episodes averted`, detail: `${number.format(row.historicalEquivalentFamilyCasesPer100k)} historical-equivalent family cases · ${compactMoney.format(row.costPerAdditionalHomelessnessEpisodeAvertedUsd)} each` })),
-    uncertaintyBoundary: model.nullEffectBoundary,
-    fundingBoundary: model.fundingRoom.boundary,
-  },
+  model: preventionModelContent('compass',current,cases),
   comparisonBridge: {
-    headline: 'Our current best estimate: about $1.35 million per better life (10 QALYs).',
-    body: bridge.decision,
+    headline: 'Historical housing-utility bridge',
+    body: 'The original model divided the same program cost by a transported 0.072-QALY-labelled housing estimate. We preserve that calculation for comparison, but the current model independently calculates rent resources and a finite noncash health proxy instead of preserving that inherited total. A separate native judgment of a two-point six-month homelessness reduction gives about $485,000 per additional episode; it is not multiplied into either participant-level welfare estimate.',
     equation: {
       label: 'EXPLORATORY COST PER 10 QALYS · ONE BETTER LIFE',
       expression: `${money.format(bridge.modeledBridge.modeledDonorCostPerAssistedFamilyUsd.best)} ÷ ${bridge.modeledBridge.qalyPerAssistedFamily.best} QALY × 10`,
@@ -84,10 +79,12 @@ const content: CharityReportContent = {
   },
   evidence: review.evidence.filter((item) => evidenceKeys.has(item.key)),
   reservations: review.reservations,
-  excludedBenefits: [...new Set([...model.excludedBenefits, ...bridge.excludedBenefits])],
+  excludedBenefits: ['Child, partner, caregiver and school-continuity spillovers without measured household outcomes.','Causal earnings changes, avoided public costs and landlord welfare beyond the net tenant resource allocation.','Other Compass programs, recurring rental subsidies and benefits beyond the supported outcome horizon.'],
+  fundingAppendix:<><h3>Spending and financial records</h3><p>Original FY2025, FY2024 and FY2023 audits show consolidated expenses of $45,173,238, $30,660,547 and $23,137,645; their three-year mean is $32,990,477. Legal-entity Form 990 expenses are $44,554,916, $30,381,751 and $22,492,934. These accounting boundaries differ and are not blended. FY2023 tax-return totals were verified in the FY2024 return’s comparative column; the separate FY2023 original was scanned. FY2025’s return has a tax-year 2024 label but covers July 2024–June 2025.</p><p>C-Rent program expenses were $2,008,658 in FY2025, $1,258,441 in FY2024 and $1,258,722 in FY2023. FY2025 shared management/general/fundraising expense was $6,951,080 against $38,222,158 in program expenses; a proportional allocation raises the per-case cost to $11,468 and the current price to about $2.83M after independently rebuilding benefits. This support allocation is included in the current central cost, not added twice, and is not a verified marginal price. Current reporting and the live SF application route support ongoing operations, but do not establish new donor capacity.</p></>,
   sources: [
     ...review.sources.filter((source) => model.sources.some((modelSource) => modelSource.url === source.url)),
     ...bridge.sources.filter((source) => !review.sources.some((existing) => existing.url === source.url)),
+    ...receipts.sources.filter(source=>['audit-FY2024','audit-FY2023','990-FY2025','990-FY2024','990-FY2023-original','current-eligibility-status','primary-local-RCT','CG-crosswalk'].includes(source.id)).map(source=>({publisher:source.id==='CG-crosswalk'?'Coefficient Giving':source.id==='primary-local-RCT'?'Phillips and Sullivan':'Compass Family Services',title:source.id.replaceAll('-',' '),url:source.url,published:'Fiscal year or publication date described in this report',retrieved:'2026-10-01',sourceType:source.id.includes('audit')?'original audited financial statements':source.id.includes('990')?'original Form 990':source.id==='primary-local-RCT'?'author working paper':source.id==='CG-crosswalk'?'published welfare-comparison framework':'current program eligibility'})),
   ],
 };
 

@@ -1,0 +1,472 @@
+{
+  "version": "KACS USA beta 2026-09-29: unestimated marginal influence",
+  "costScope": "Whole-recipient donation perspective anchored to FY2024 $256,454/year; three-year gross mean $261,740.6667. Unpriced volunteer and incremental manufacturer/public implementation resources excluded, not zero.",
+  "geographicAttribution": "Beta diagnostics use US deaths in 50 states and DC, hence g=1 by outcome definition. Exact alpha reproduction retains its old arbitrary .99. Foreign spillovers uncounted.",
+  "formula": "Diagnostic only: F1(t)=min(cap,rate*max(0,t-L1+1)); F0(t)=min(cap,rate*max(0,t-L0+1)); A=sum(t=1..T)[F1-F0]/1.03^t; H=D*d*r*k*q*A; Q_USA(G)=G/(Y*C)*b*(p*a*H-h)*g; price=10*G/Q for positive Q. Current central null: additional effort, recipient influence and incremental adoption are unidentified. Inputs/scenarios retain alpha for reproduction only.",
+  "counterfactual": "Industry reminders/radar, regulatory work, other advocacy, public education and fleet turnover continue without the next gift. Past mandate and advocacy wins are not credited again. Same adoption, funding substitution and possible delay remain.",
+  "attribution": "Participation is documented, but alpha p=.2,a=.2,b=.5 are unsupported causal judgments. Beta does not turn an assumed small influence into a measured conservative central estimate. Recipient-specific marginal contribution and gift response remain unknown.",
+  "uncertainty": "Structural uncertainty dominates: revised counts, engineering-to-mortality transport, risk-weighted uptake, disablement/rescue, lumpy policy and correlated other actors. Scenarios are unweighted diagnostics, not confidence bounds; null does not mean proven zero.",
+  "nativeOutcomes": "Additional domestic child deaths prevented; intermediate adoption/alerts/rescues are not deaths. Diagnostic 27 discounted QALYs/death (20–30 sensitivity) is judgment; no observed marginal gift-to-death coefficient, nonfatal disability or family-health estimate.",
+  "inputs": [
+    {
+      "name": "C",
+      "value": 256454,
+      "unit": "USD/year all recipient reported expenses",
+      "basis": "observed",
+      "rationale": "FY2024 Form990 total functional expenses; direct cost lines require no addback.",
+      "sourceIds": [
+        "kacs-99024"
+      ]
+    },
+    {
+      "name": "Y",
+      "value": 5,
+      "unit": "years of recipient expenditure",
+      "basis": "judgment",
+      "rationale": "Historical alpha diagnostic only, not an identified beta central input. Finite sustained advocacy effort producing one adoption acceleration; not repeatedly credited every year.",
+      "sourceIds": []
+    },
+    {
+      "name": "historical-deaths",
+      "value": 37,
+      "unit": "reported USA deaths/year",
+      "basis": "observed",
+      "rationale": "NHTSA report historical mean; surveillance quantity rather than ascertainment-complete burden.",
+      "sourceIds": [
+        "nhtsa-door-test"
+      ]
+    },
+    {
+      "name": "deaths-2025",
+      "value": 31,
+      "unit": "reported USA deaths",
+      "basis": "observed",
+      "rationale": "Latest completed-year count reported by NHTSA.",
+      "sourceIds": [
+        "nhtsa-heatstroke"
+      ]
+    },
+    {
+      "name": "D",
+      "value": 30,
+      "unit": "future baseline deaths/year",
+      "basis": "judgment",
+      "rationale": "Historical alpha diagnostic only, not an identified beta central input. Near recent31 and below historical37; allows existing prevention progress.15–40 tested; weather and ascertainment uncertain.",
+      "sourceIds": [
+        "nhtsa-heatstroke",
+        "nhtsa-door-test"
+      ]
+    },
+    {
+      "name": "d",
+      "value": 0.8,
+      "unit": "probability of detection in relevant otherwise-fatal exposure",
+      "basis": "judgment",
+      "rationale": "Historical alpha diagnostic only, not an identified beta central input. Mechanistic working value, not measured field sensitivity; research shows substantial scenario heterogeneity.",
+      "sourceIds": [
+        "chop-tech25",
+        "tc-test25"
+      ]
+    },
+    {
+      "name": "r",
+      "value": 0.7,
+      "unit": "timely effective rescue conditional on detection and operating system",
+      "basis": "judgment",
+      "rationale": "Historical alpha diagnostic only, not an identified beta central input. Allows unavailable/ignoring caregiver, failed escalation, and deliberate leaving; a warning is not a rescue.",
+      "sourceIds": [
+        "chop-tech25"
+      ]
+    },
+    {
+      "name": "k",
+      "value": 0.9,
+      "unit": "fraction reliably operating and not disabled",
+      "basis": "judgment",
+      "rationale": "Historical alpha diagnostic only, not an identified beta central input. Allows sensor failure, nuisance-alert disablement and real-world degradation; technical accuracy alone is insufficient.",
+      "sourceIds": [
+        "nhtsa-door-test",
+        "tc-test25"
+      ]
+    },
+    {
+      "name": "q",
+      "value": 27,
+      "unit": "discounted QALYs per averted child death at event date",
+      "basis": "judgment",
+      "rationale": "Historical alpha diagnostic only, not an identified beta central input. Approximately a long 75-year future with utility around 0.9 and 3% annual discount, rounded; not a patient-specific life table. 20–30 QALYs tested. Nonfatal morbidity and family health are omitted.",
+      "sourceIds": []
+    },
+    {
+      "name": "rate",
+      "value": 0.05,
+      "unit": "additional risk-weighted protection fraction/year after adoption starts",
+      "basis": "judgment",
+      "rationale": "Historical alpha diagnostic only, not an identified beta central input. Slow replacement and unequal access to newer vehicles; not an observed market-penetration statistic.",
+      "sourceIds": []
+    },
+    {
+      "name": "cap",
+      "value": 0.8,
+      "unit": "maximum risk-weighted population share covered",
+      "basis": "judgment",
+      "rationale": "Historical alpha diagnostic only, not an identified beta central input. Leaves20% beyond this diffusion pathway because of older vehicles, noncovered settings or access constraints; distinct from detection efficacy.",
+      "sourceIds": []
+    },
+    {
+      "name": "L1",
+      "value": 3,
+      "unit": "future year of first stronger protection under accelerated path",
+      "basis": "judgment",
+      "rationale": "Historical alpha diagnostic only, not an identified beta central input. No asserted legal compliance date. Forward-looking model despite current prerule status.",
+      "sourceIds": [
+        "nhtsa-agenda26"
+      ]
+    },
+    {
+      "name": "L0",
+      "value": 6,
+      "unit": "future year of first comparable protection absent campaign acceleration",
+      "basis": "judgment",
+      "rationale": "Historical alpha diagnostic only, not an identified beta central input. Counterfactual adoption still happens through industry and government. A3-year difference is a subjective opportunity, not a measured delay.",
+      "sourceIds": [
+        "industry-reminders",
+        "nhtsa-agenda26"
+      ]
+    },
+    {
+      "name": "T",
+      "value": 20,
+      "unit": "years of adoption-difference accounting",
+      "basis": "judgment",
+      "rationale": "Historical alpha diagnostic only, not an identified beta central input. Finite horizon. At central year20 adoption differs by5percentagepoints; later residual benefit omitted.",
+      "sourceIds": []
+    },
+    {
+      "name": "p",
+      "value": 0.2,
+      "unit": "incremental coalition probability of the modeled acceleration",
+      "basis": "judgment",
+      "rationale": "Historical alpha diagnostic only, not an identified beta central input. Subjective policy/implementation influence, not unconditional adoption probability;0–.5 scenarios.",
+      "sourceIds": [
+        "kacs-policy",
+        "nhtsa-agenda26"
+      ]
+    },
+    {
+      "name": "a",
+      "value": 0.2,
+      "unit": "KACS share of coalition-induced acceleration probability",
+      "basis": "judgment",
+      "rationale": "Historical alpha diagnostic only, not an identified beta central input. Focused longstanding group but other advocates, engineers, regulators and manufacturers dominate much of delivery; tested.05–.3.",
+      "sourceIds": [
+        "kacs-policy",
+        "kacs-partners25"
+      ]
+    },
+    {
+      "name": "b",
+      "value": 0.5,
+      "unit": "net additional effort per dollar over five years",
+      "basis": "judgment",
+      "rationale": "Historical alpha diagnostic only, not an identified beta central input. Allows reserves, grant and donor substitution, and unpriced volunteer capacity. No verified marginal operating plan.",
+      "sourceIds": [
+        "kacs-99024",
+        "kacs-99024d",
+        "kacs-99024o"
+      ]
+    },
+    {
+      "name": "h",
+      "value": 0,
+      "unit": "other-portfolio net QALYs lost per five-year full-cost effort",
+      "basis": "judgment",
+      "rationale": "Historical alpha diagnostic only, not an identified beta central input. Central zero net credit for other work; adverse cases retain losses even if no acceleration occurs.",
+      "sourceIds": []
+    },
+    {
+      "name": "g",
+      "value": 0.99,
+      "unit": "fraction of credited health in50states+DC",
+      "basis": "judgment",
+      "rationale": "Historical alpha diagnostic only, not an identified beta central input. Near-national pathway; small boundary allowance, not a measured spending share.",
+      "sourceIds": []
+    },
+    {
+      "name": "central-adoption-path",
+      "value": [
+        {
+          "t": 1,
+          "with": 0,
+          "without": 0,
+          "discountedDifference": 0
+        },
+        {
+          "t": 2,
+          "with": 0,
+          "without": 0,
+          "discountedDifference": 0
+        },
+        {
+          "t": 3,
+          "with": 0.05,
+          "without": 0,
+          "discountedDifference": 0.04575708296765798
+        },
+        {
+          "t": 4,
+          "with": 0.1,
+          "without": 0,
+          "discountedDifference": 0.08884870479156888
+        },
+        {
+          "t": 5,
+          "with": 0.15000000000000002,
+          "without": 0,
+          "discountedDifference": 0.1293913176576246
+        },
+        {
+          "t": 6,
+          "with": 0.2,
+          "without": 0.05,
+          "discountedDifference": 0.12562263850254815
+        },
+        {
+          "t": 7,
+          "with": 0.25,
+          "without": 0.1,
+          "discountedDifference": 0.12196372670150303
+        },
+        {
+          "t": 8,
+          "with": 0.30000000000000004,
+          "without": 0.15000000000000002,
+          "discountedDifference": 0.11841138514709035
+        },
+        {
+          "t": 9,
+          "with": 0.35000000000000003,
+          "without": 0.2,
+          "discountedDifference": 0.11496250985154402
+        },
+        {
+          "t": 10,
+          "with": 0.4,
+          "without": 0.25,
+          "discountedDifference": 0.11161408723450876
+        },
+        {
+          "t": 11,
+          "with": 0.45,
+          "without": 0.30000000000000004,
+          "discountedDifference": 0.10836319148981428
+        },
+        {
+          "t": 12,
+          "with": 0.5,
+          "without": 0.35000000000000003,
+          "discountedDifference": 0.1052069820289459
+        },
+        {
+          "t": 13,
+          "with": 0.55,
+          "without": 0.4,
+          "discountedDifference": 0.10214270099897664
+        },
+        {
+          "t": 14,
+          "with": 0.6000000000000001,
+          "without": 0.45,
+          "discountedDifference": 0.09916767087279288
+        },
+        {
+          "t": 15,
+          "with": 0.65,
+          "without": 0.5,
+          "discountedDifference": 0.09627929210950763
+        },
+        {
+          "t": 16,
+          "with": 0.7000000000000001,
+          "without": 0.55,
+          "discountedDifference": 0.0934750408830171
+        },
+        {
+          "t": 17,
+          "with": 0.75,
+          "without": 0.6000000000000001,
+          "discountedDifference": 0.09075246687671557
+        },
+        {
+          "t": 18,
+          "with": 0.8,
+          "without": 0.65,
+          "discountedDifference": 0.08810919114244235
+        },
+        {
+          "t": 19,
+          "with": 0.8,
+          "without": 0.7000000000000001,
+          "discountedDifference": 0.05702860268119245
+        },
+        {
+          "t": 20,
+          "with": 0.8,
+          "without": 0.75,
+          "discountedDifference": 0.02768378770931675
+        }
+      ],
+      "unit": "year, protected-risk fraction with/without, discounted difference",
+      "basis": "judgment",
+      "rationale": "Historical alpha diagnostic only, not an identified beta central input. Explicit inspectable annual path; A=1.7247803796467673 discounted protected-risk years.",
+      "sourceIds": []
+    },
+    {
+      "name": "unpriced-resource-inputs",
+      "value": null,
+      "unit": "USD of volunteer time and accelerated implementation",
+      "basis": "unknown",
+      "rationale": "Reported cash costs do not value all donated labor or manufacturers’ incremental engineering/hardware; required for social-cost rather than donor-cost estimate.",
+      "sourceIds": [
+        "kacs-99024",
+        "tc-test25"
+      ]
+    },
+    {
+      "name": "beta-marginal-causal-effect",
+      "value": null,
+      "unit": "additional USA QALYs per ordinary gift",
+      "basis": "unknown",
+      "rationale": "Current funded effort, changed adoption and rescue against active baseline jointly unidentified.",
+      "sourceIds": [
+        "kacs-99024",
+        "nhtsa-agenda26",
+        "toyota-radar",
+        "kacs-partners25"
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "central",
+      "label": "Beta marginal return not estimable",
+      "costUSD": 10000,
+      "allPopulationQalys": null,
+      "editionQalys": null,
+      "assumptions": "Ordinary whole-recipient gift. No defensible expected recipient-specific influence or funding response; null is not zero."
+    },
+    {
+      "id": "alpha-diagnostic",
+      "label": "Withdrawn alpha central: diagnostic only",
+      "costUSD": 10000,
+      "allPopulationQalys": 0.10982466129395467,
+      "editionQalys": 0.10872641468101513,
+      "assumptions": "Historical alpha diagnostic, not beta expected value. Hot-car mortality only, all recipient reported costs. Inputs={\"C\":256454,\"Y\":5,\"D\":30,\"d\":0.8,\"r\":0.7,\"k\":0.9,\"q\":27,\"b\":0.5,\"p\":0.2,\"a\":0.2,\"rate\":0.05,\"cap\":0.8,\"L1\":3,\"L0\":6,\"T\":20,\"g\":0.99,\"h\":0}. Discounted incremental protected-risk years A=1.7247803796467673; full accelerated-adoption health H=704.1243421869962 QALYs. These are analyst scenarios, not measured charity effects."
+    },
+    {
+      "id": "favorable",
+      "label": "Stronger and faster marginal influence",
+      "costUSD": 10000,
+      "allPopulationQalys": 2.6465308463321784,
+      "editionQalys": 2.6200655378688564,
+      "assumptions": "Historical alpha diagnostic, not beta expected value. Five-year acceleration, higher reach and responsiveness; optimistic scenario not a confidence bound. Inputs={\"C\":256454,\"Y\":5,\"D\":40,\"d\":0.9,\"r\":0.9,\"k\":0.95,\"q\":30,\"b\":0.8,\"p\":0.5,\"a\":0.3,\"rate\":0.07,\"cap\":0.8,\"L1\":2,\"L0\":7,\"T\":20,\"g\":0.99,\"h\":0}. Discounted incremental protected-risk years A=3.0625650750183766; full accelerated-adoption health H=2827.972590271969 QALYs. These are analyst scenarios, not measured charity effects."
+    },
+    {
+      "id": "poor",
+      "label": "Little influence with weak coverage",
+      "costUSD": 10000,
+      "allPopulationQalys": 0.000020562275793075274,
+      "editionQalys": 0.00002035665303514452,
+      "assumptions": "Historical alpha diagnostic, not beta expected value. Only one-year acceleration, lower rescue and donor additionality. Inputs={\"C\":256454,\"Y\":5,\"D\":15,\"d\":0.5,\"r\":0.3,\"k\":0.7,\"q\":20,\"b\":0.1,\"p\":0.05,\"a\":0.05,\"rate\":0.03,\"cap\":0.5,\"L1\":5,\"L0\":6,\"T\":20,\"g\":0.99,\"h\":0}. Discounted incremental protected-risk years A=0.33481129372935403; full accelerated-adoption health H=10.546555752474651 QALYs. These are analyst scenarios, not measured charity effects."
+    },
+    {
+      "id": "one-year",
+      "label": "Only one-year acceleration",
+      "costUSD": 10000,
+      "allPopulationQalys": 0.037695487775973514,
+      "editionQalys": 0.037318532898213776,
+      "assumptions": "Historical alpha diagnostic, not beta expected value. Keeps all central inputs except counterfactual arrives sooner. Inputs={\"C\":256454,\"Y\":5,\"D\":30,\"d\":0.8,\"r\":0.7,\"k\":0.9,\"q\":27,\"b\":0.5,\"p\":0.2,\"a\":0.2,\"rate\":0.05,\"cap\":0.8,\"L1\":3,\"L0\":4,\"T\":20,\"g\":0.99,\"h\":0}. Discounted incremental protected-risk years A=0.5920021691957862; full accelerated-adoption health H=241.67896555248774 QALYs. These are analyst scenarios, not measured charity effects."
+    },
+    {
+      "id": "low-additionality",
+      "label": "Ten percent additional effort",
+      "costUSD": 10000,
+      "allPopulationQalys": 0.021964932258790933,
+      "editionQalys": 0.021745282936203023,
+      "assumptions": "Historical alpha diagnostic, not beta expected value. Most support replaces reserves or other funding. Inputs={\"C\":256454,\"Y\":5,\"D\":30,\"d\":0.8,\"r\":0.7,\"k\":0.9,\"q\":27,\"b\":0.1,\"p\":0.2,\"a\":0.2,\"rate\":0.05,\"cap\":0.8,\"L1\":3,\"L0\":6,\"T\":20,\"g\":0.99,\"h\":0}. Discounted incremental protected-risk years A=1.7247803796467673; full accelerated-adoption health H=704.1243421869962 QALYs. These are analyst scenarios, not measured charity effects."
+    },
+    {
+      "id": "no-acceleration",
+      "label": "Same adoption with or without effort",
+      "costUSD": 10000,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "assumptions": "Historical alpha diagnostic, not beta expected value. No technology benefit even if policy advocacy is active. Inputs={\"C\":256454,\"Y\":5,\"D\":30,\"d\":0.8,\"r\":0.7,\"k\":0.9,\"q\":27,\"b\":0.5,\"p\":0.2,\"a\":0.2,\"rate\":0.05,\"cap\":0.8,\"L1\":3,\"L0\":3,\"T\":20,\"g\":0.99,\"h\":0}. Discounted incremental protected-risk years A=0; full accelerated-adoption health H=0 QALYs. These are analyst scenarios, not measured charity effects."
+    },
+    {
+      "id": "no-influence",
+      "label": "No KACS marginal policy contribution",
+      "costUSD": 10000,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "assumptions": "Historical alpha diagnostic, not beta expected value. Other actors deliver identical acceleration. Inputs={\"C\":256454,\"Y\":5,\"D\":30,\"d\":0.8,\"r\":0.7,\"k\":0.9,\"q\":27,\"b\":0.5,\"p\":0.2,\"a\":0,\"rate\":0.05,\"cap\":0.8,\"L1\":3,\"L0\":6,\"T\":20,\"g\":0.99,\"h\":0}. Discounted incremental protected-risk years A=1.7247803796467673; full accelerated-adoption health H=704.1243421869962 QALYs. These are analyst scenarios, not measured charity effects."
+    },
+    {
+      "id": "downside",
+      "label": "No influence plus1QALY portfolio harm",
+      "costUSD": 10000,
+      "allPopulationQalys": -0.003899334773487643,
+      "editionQalys": -0.003860341425752766,
+      "assumptions": "Historical alpha diagnostic, not beta expected value. Illustrative harm from risk compensation, distraction, privacy-related health effects or other portfolio actions; not an observed estimate. Inputs={\"C\":256454,\"Y\":5,\"D\":30,\"d\":0.8,\"r\":0.7,\"k\":0.9,\"q\":27,\"b\":0.5,\"p\":0.2,\"a\":0,\"rate\":0.05,\"cap\":0.8,\"L1\":3,\"L0\":6,\"T\":20,\"g\":0.99,\"h\":1}. Discounted incremental protected-risk years A=1.7247803796467673; full accelerated-adoption health H=704.1243421869962 QALYs. These are analyst scenarios, not measured charity effects."
+    },
+    {
+      "id": "short-horizon",
+      "label": "Only ten years of incremental coverage",
+      "costUSD": 10000,
+      "allPopulationQalys": 0.054541825031098855,
+      "editionQalys": 0.05399640678078787,
+      "assumptions": "Historical alpha diagnostic, not beta expected value. Tests long-horizon dependence. Inputs={\"C\":256454,\"Y\":5,\"D\":30,\"d\":0.8,\"r\":0.7,\"k\":0.9,\"q\":27,\"b\":0.5,\"p\":0.2,\"a\":0.2,\"rate\":0.05,\"cap\":0.8,\"L1\":3,\"L0\":6,\"T\":10,\"g\":0.99,\"h\":0}. Discounted incremental protected-risk years A=0.8565714528540457; full accelerated-adoption health H=349.6867299131356 QALYs. These are analyst scenarios, not measured charity effects."
+    },
+    {
+      "id": "count-only-diagnostic",
+      "label": "Official completed-year count substitution only",
+      "costUSD": 10000,
+      "allPopulationQalys": 0.11348548333708652,
+      "editionQalys": 0.11348548333708652,
+      "assumptions": "Unweighted diagnostic, not expected value. Inputs={\"C\":256454,\"Y\":5,\"D\":31,\"d\":0.8,\"r\":0.7,\"k\":0.9,\"q\":27,\"b\":0.5,\"p\":0.2,\"a\":0.2,\"rate\":0.05,\"cap\":0.8,\"L1\":3,\"L0\":6,\"T\":20,\"g\":1,\"h\":0}; A=1.7247803796467673; H=727.5951535932295."
+    },
+    {
+      "id": "fully-substituted",
+      "label": "Fully substituted gift",
+      "costUSD": 10000,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "assumptions": "Unweighted diagnostic, not expected value. Inputs={\"C\":256454,\"Y\":5,\"D\":31,\"d\":0.8,\"r\":0.7,\"k\":0.9,\"q\":27,\"b\":0,\"p\":0.2,\"a\":0.2,\"rate\":0.05,\"cap\":0.8,\"L1\":3,\"L0\":6,\"T\":20,\"g\":1,\"h\":0}; A=1.7247803796467673; H=727.5951535932295."
+    },
+    {
+      "id": "policy-delay",
+      "label": "One-year delay rather than acceleration",
+      "costUSD": 10000,
+      "allPopulationQalys": -0.03387814342868346,
+      "editionQalys": -0.03387814342868346,
+      "assumptions": "Unweighted diagnostic, not expected value. Inputs={\"C\":256454,\"Y\":5,\"D\":31,\"d\":0.8,\"r\":0.7,\"k\":0.9,\"q\":27,\"b\":0.5,\"p\":0.2,\"a\":0.2,\"rate\":0.05,\"cap\":0.8,\"L1\":7,\"L0\":6,\"T\":20,\"g\":1,\"h\":0}; A=-0.5148883836630485; H=-217.20463487148967."
+    }
+  ],
+  "sensitivity": [
+    "Historical alpha diagnostic: Central A=1.72478038 and H=704.124342 QALYs before policy/funding credit. Effective p*a=.04 and b=.5 give13.941662 USAQALYs per five-year expense-equivalent cost $1,282,270.",
+    "Historical alpha diagnostic: One-year rather than three-year acceleration increases price to approximately $2.68M per10USAQALYs. b=.1 increases the central price fivefold. Matching counterfactual adoption removes modeled benefit.",
+    "Historical alpha diagnostic: To meet $1M/10, five-year effort requires12.8227 netUSAQALYs; at 27 Q/death this is.474915 discounted expected deaths. The $100k/10 threshold requires128.227 QALYs, or4.74915 deaths.",
+    "Historical alpha diagnostic: At central clinical/adoption inputs and b=.5,g=.99,h0, effective p*a must be at least.03679 for $1M/10 and.36790 for $100k/10. Central.04 narrowly clears the former and is far below the latter.",
+    "Historical alpha diagnostic: Central net other-portfolio harm above p*a*H=28.164974 QALYs per five-year effort erases estimated benefit before b/g. Zero-other-health is not a guaranteed lower bound.",
+    "Historical alpha diagnostic: A simple reminder is not direct detection. Treating industry’s2025 reminder commitment as universal effective protection, or treating statutory rulemaking deadlines as actual deployment, invalidates this model.",
+    "Historical alpha diagnostic: Hardware/public costs cannot be called zero. For an incremental social-cost calculation, compare cost and benefit of earlier/stronger adoption against later adoption, including other uses of sensors; do not debit every future detector while crediting only a brief acceleration.",
+    "A D31,g1 count-only variant holds all other alpha assumptions fixed. D35 would scale that hypothetical benefit by 35/31; neither identifies influence.",
+    "Same adoption or fully substituted funding produces zero; policy delay can produce negative QALYs. Survival/utility refinement cannot repair missing recipient attribution."
+  ],
+  "missingInputs": [
+    "Current marginal work package, operating budget, reserve liquidity/restrictions and staff/consultant capacity.",
+    "Recipient-specific change in adoption timing/specification/enforcement beyond other actors.",
+    "Risk-weighted deployed coverage, detection/reliability, rescue and nonfatal health outcomes.",
+    "Incremental implementation and volunteer costs, net other-portfolio health, probability weights including null/adverse outcomes."
+  ]
+}

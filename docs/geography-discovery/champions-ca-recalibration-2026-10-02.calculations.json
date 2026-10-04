@@ -1,0 +1,467 @@
+{
+  "version": "champions-ca-20261002-native-pasd-conditional-v1",
+  "historical": {
+    "cost": 2378718,
+    "healthYears": 0.7216984223300972,
+    "price10": 32960000,
+    "currentPublishedCentral": null
+  },
+  "central": {
+    "parameters": {
+      "gift": 100000,
+      "allocation": 0.3238936580279041,
+      "costPerPerson": 8457.117606131333,
+      "funding": 0.5,
+      "capacity": 20,
+      "uniqueProcedureFraction": 0.8,
+      "therapeuticFraction": 0.5,
+      "clinicalExposureYears": 0.5,
+      "resourceBenefitFraction": 0.5,
+      "clinicalTransfer": 1,
+      "healthGrossScale": 1,
+      "healthHarmScale": 1,
+      "gallstoneUtility": 0,
+      "diagnosticUtility": 0.01,
+      "medicineAnnual": 60,
+      "netPayPerDay": 100,
+      "paidCashIncidence": 0.5,
+      "postopLostDays": 3,
+      "netCashPerAppointment": 10,
+      "baselineConsumption": 30000,
+      "discount": 0.03,
+      "delayYears": 0.25,
+      "overlap": 0,
+      "independentHealthHarm": 0,
+      "independentIncomeHarm": 0,
+      "healthUnknown": false,
+      "incomeUnknown": false,
+      "otherPortfolioUnknown": true,
+      "incomeZero": false,
+      "allPatientHealthZero": false
+    },
+    "observed": {
+      "fy2024": {
+        "people": 79,
+        "appointments": 373,
+        "procedures": 45,
+        "categoryExpense": 872510,
+        "programExpense": 4193210,
+        "taxExpense": 4581892,
+        "eventExpense": 128162
+      },
+      "fy2025": {
+        "pasdExpense": 556597,
+        "programExpense": 1718456,
+        "taxExpense": 1963721,
+        "eventExpense": 99031
+      },
+      "grossResourceSeries": [
+        3621619,
+        5011784,
+        2378718
+      ],
+      "cashLikeSeries": [
+        3239627,
+        4710054,
+        2062752
+      ]
+    },
+    "costAnchors": {
+      "matched2024CategoryFull": 12405.737725477165,
+      "latest2025Same79Forecast": 8457.117606131333,
+      "whole2024RecipientPartial": 59620.93670886076
+    },
+    "nominalPeople": 3.829835094087898,
+    "additionalPeople": 1.914917547043949,
+    "procedureShare": 0.4556962025316456,
+    "therapeuticShare": 0.2278481012658228,
+    "grossHealth": 0.009270517234245088,
+    "overlapRemoved": 0,
+    "proceduralHarm": 0.004198644579118742,
+    "healthYears": 0.005071872655126345,
+    "incomeEquivalentYears": -0.001809875630476703,
+    "combinedYears": 0.0032619970246496426,
+    "partialPasdPrice10": 306560672.01882434,
+    "healthOnlyPrice10": 197165833.60768333,
+    "incomeOnlyPrice10": null,
+    "wholePortfolioCombinedYears": null,
+    "wholePortfolioPrice10": null,
+    "ledger": [
+      {
+        "id": "symptomatic_hernia",
+        "people": 0.1745241308698283,
+        "grossHealth": 0.0030953472460599337,
+        "proceduralHarm": 0.000692956813057993,
+        "healthNet": 0.0024023904330019406,
+        "firstYearMedications": 27,
+        "firstYearRestoredWork": 112.5,
+        "firstYearRecoveryLoss": 150,
+        "firstYearExtraTravel": 47.21518987341773,
+        "netFirstYearResources": -57.71518987341773,
+        "firstYearExposureYears": 1,
+        "receiptTimeYears": 0.75,
+        "incomeEquivalentYears": -0.00016435561109671195
+      },
+      {
+        "id": "severe_gallstone",
+        "people": 0.1308930981523712,
+        "grossHealth": 0,
+        "proceduralHarm": 0.0010394352195869894,
+        "healthNet": -0.0010394352195869894,
+        "firstYearMedications": 0,
+        "firstYearRestoredWork": 0,
+        "firstYearRecoveryLoss": 150,
+        "firstYearExtraTravel": 47.21518987341773,
+        "netFirstYearResources": -197.21518987341773,
+        "firstYearExposureYears": 1,
+        "receiptTimeYears": 0.75,
+        "incomeEquivalentYears": -0.0004221913752873339
+      },
+      {
+        "id": "unrepaired_fracture",
+        "people": 0.08726206543491415,
+        "grossHealth": 0.003439274717844371,
+        "proceduralHarm": 0.0012992940244837368,
+        "healthNet": 0.002139980693360634,
+        "firstYearMedications": 24,
+        "firstYearRestoredWork": 200,
+        "firstYearRecoveryLoss": 150,
+        "firstYearExtraTravel": 47.21518987341773,
+        "netFirstYearResources": 26.784810126582272,
+        "firstYearExposureYears": 1,
+        "receiptTimeYears": 0.75,
+        "incomeEquivalentYears": 0.00003808387127527736
+      },
+      {
+        "id": "refractory_aub",
+        "people": 0.04363103271745707,
+        "grossHealth": 0.0012789802856983754,
+        "proceduralHarm": 0.0004330980081612456,
+        "healthNet": 0.0008458822775371298,
+        "firstYearMedications": 25.5,
+        "firstYearRestoredWork": 0,
+        "firstYearRecoveryLoss": 150,
+        "firstYearExtraTravel": 47.21518987341773,
+        "netFirstYearResources": -171.71518987341773,
+        "firstYearExposureYears": 1,
+        "receiptTimeYears": 0.75,
+        "incomeEquivalentYears": -0.00012248162187395128
+      },
+      {
+        "id": "diagnostic_and_nonprocedural_management",
+        "people": 1.4786072198693783,
+        "grossHealth": 0.001456914984642407,
+        "proceduralHarm": 0.0007338605138287772,
+        "healthNet": 0.0007230544708136298,
+        "firstYearMedications": 0,
+        "firstYearRestoredWork": 0,
+        "firstYearRecoveryLoss": 0,
+        "firstYearExtraTravel": 47.21518987341773,
+        "netFirstYearResources": -47.21518987341773,
+        "firstYearExposureYears": 1,
+        "receiptTimeYears": 0.75,
+        "incomeEquivalentYears": -0.0011389308934939832
+      }
+    ]
+  },
+  "cases": {
+    "central": {
+      "additionalPeople": 1.914917547043949,
+      "healthYears": 0.005071872655126345,
+      "incomeEquivalentYears": -0.001809875630476703,
+      "combinedYears": 0.0032619970246496426,
+      "partialPasdPrice10": 306560672.01882434,
+      "wholePortfolioPrice10": null
+    },
+    "fundingLegacyQuarter": {
+      "additionalPeople": 0.9574587735219745,
+      "healthYears": 0.0025359363275631727,
+      "incomeEquivalentYears": -0.0009049378152383515,
+      "combinedYears": 0.0016309985123248213,
+      "partialPasdPrice10": 613121344.0376487,
+      "wholePortfolioPrice10": null
+    },
+    "fundingLow": {
+      "additionalPeople": 0.38298350940878984,
+      "healthYears": 0.001014374531025269,
+      "incomeEquivalentYears": -0.0003619751260953406,
+      "combinedYears": 0.0006523994049299285,
+      "partialPasdPrice10": 1532803360.094122,
+      "wholePortfolioPrice10": null
+    },
+    "fundingHigh": {
+      "additionalPeople": 3.0638680752703187,
+      "healthYears": 0.008114996248202153,
+      "incomeEquivalentYears": -0.002895801008762725,
+      "combinedYears": 0.005219195239439428,
+      "partialPasdPrice10": 191600420.01176524,
+      "wholePortfolioPrice10": null
+    },
+    "completeReplacement": {
+      "additionalPeople": 0,
+      "healthYears": 0,
+      "incomeEquivalentYears": 0,
+      "combinedYears": 0,
+      "partialPasdPrice10": null,
+      "wholePortfolioPrice10": null
+    },
+    "replacementIndependentHarms": {
+      "additionalPeople": 0,
+      "healthYears": -0.01,
+      "incomeEquivalentYears": -0.01,
+      "combinedYears": -0.02,
+      "partialPasdPrice10": null,
+      "wholePortfolioPrice10": null
+    },
+    "capacityHalfPatient": {
+      "additionalPeople": 0.5,
+      "healthYears": 0.0013243057548236938,
+      "incomeEquivalentYears": -0.0004725727312046937,
+      "combinedYears": 0.0008517330236190001,
+      "partialPasdPrice10": 1174076820.164863,
+      "wholePortfolioPrice10": null
+    },
+    "latest2025CostUnchanged79": {
+      "additionalPeople": 1.914917547043949,
+      "healthYears": 0.005071872655126345,
+      "incomeEquivalentYears": -0.001809875630476703,
+      "combinedYears": 0.0032619970246496426,
+      "partialPasdPrice10": 306560672.01882434,
+      "wholePortfolioPrice10": null
+    },
+    "wholeRecipientCostPartial": {
+      "additionalPeople": 0.8386315740753715,
+      "healthYears": 0.0022212092394497344,
+      "incomeEquivalentYears": -0.0007926288268705795,
+      "combinedYears": 0.001428580412579155,
+      "partialPasdPrice10": 699995597.8638983,
+      "wholePortfolioPrice10": null
+    },
+    "costDouble": {
+      "additionalPeople": 0.9574587735219745,
+      "healthYears": 0.0025359363275631727,
+      "incomeEquivalentYears": -0.0009049378152383515,
+      "combinedYears": 0.0016309985123248213,
+      "partialPasdPrice10": 613121344.0376487,
+      "wholePortfolioPrice10": null
+    },
+    "allGiftPasd": {
+      "additionalPeople": 5.9121798145210205,
+      "healthYears": 0.015659067503845332,
+      "incomeEquivalentYears": -0.005587869924642917,
+      "combinedYears": 0.010071197579202416,
+      "partialPasdPrice10": 99293057.46766956,
+      "wholePortfolioPrice10": null
+    },
+    "clinicalQuarterYear": {
+      "additionalPeople": 1.914917547043949,
+      "healthYears": 0.0004537723036951765,
+      "incomeEquivalentYears": -0.001809875630476703,
+      "combinedYears": -0.0013561033267815265,
+      "partialPasdPrice10": null,
+      "wholePortfolioPrice10": null
+    },
+    "clinicalFullYear": {
+      "additionalPeople": 1.914917547043949,
+      "healthYears": 0.01420588219326545,
+      "incomeEquivalentYears": -0.001809875630476703,
+      "combinedYears": 0.012396006562788747,
+      "partialPasdPrice10": 80671141.54342853,
+      "wholePortfolioPrice10": null
+    },
+    "clinicalTwoYears": {
+      "additionalPeople": 1.914917547043949,
+      "healthYears": 0.03207039358005871,
+      "incomeEquivalentYears": -0.001809875630476703,
+      "combinedYears": 0.030260517949582007,
+      "partialPasdPrice10": 33046360.99309771,
+      "wholePortfolioPrice10": null
+    },
+    "clinicalTransferHalf": {
+      "additionalPeople": 1.914917547043949,
+      "healthYears": 0.0004366140380038016,
+      "incomeEquivalentYears": -0.001809875630476703,
+      "combinedYears": -0.0013732615924729014,
+      "partialPasdPrice10": null,
+      "wholePortfolioPrice10": null
+    },
+    "healthZeroHarmsRetained": {
+      "additionalPeople": 1.914917547043949,
+      "healthYears": -0.004198644579118742,
+      "incomeEquivalentYears": -0.001809875630476703,
+      "combinedYears": -0.006008520209595445,
+      "partialPasdPrice10": null,
+      "wholePortfolioPrice10": null
+    },
+    "noTherapeuticProcedures": {
+      "additionalPeople": 1.914917547043949,
+      "healthYears": 0.0009364148064635533,
+      "incomeEquivalentYears": -0.0014750088620659784,
+      "combinedYears": -0.0005385940556024251,
+      "partialPasdPrice10": null,
+      "wholePortfolioPrice10": null
+    },
+    "allProceduresTherapeutic": {
+      "additionalPeople": 1.914917547043949,
+      "healthYears": 0.009207330503789137,
+      "incomeEquivalentYears": -0.0021447423988874277,
+      "combinedYears": 0.007062588104901709,
+      "partialPasdPrice10": 141591154.00004163,
+      "wholePortfolioPrice10": null
+    },
+    "incomeUnknown": {
+      "additionalPeople": 1.914917547043949,
+      "healthYears": 0.005071872655126345,
+      "incomeEquivalentYears": null,
+      "combinedYears": null,
+      "partialPasdPrice10": null,
+      "wholePortfolioPrice10": null
+    },
+    "healthUnknown": {
+      "additionalPeople": 1.914917547043949,
+      "healthYears": null,
+      "incomeEquivalentYears": -0.001809875630476703,
+      "combinedYears": null,
+      "partialPasdPrice10": null,
+      "wholePortfolioPrice10": null
+    },
+    "bothUnknown": {
+      "additionalPeople": 1.914917547043949,
+      "healthYears": null,
+      "incomeEquivalentYears": null,
+      "combinedYears": null,
+      "partialPasdPrice10": null,
+      "wholePortfolioPrice10": null
+    },
+    "incomeZero": {
+      "additionalPeople": 1.914917547043949,
+      "healthYears": 0.005071872655126345,
+      "incomeEquivalentYears": 0,
+      "combinedYears": 0.005071872655126345,
+      "partialPasdPrice10": 197165833.60768333,
+      "wholePortfolioPrice10": null
+    },
+    "incomeZeroIndependentHarm": {
+      "additionalPeople": 1.914917547043949,
+      "healthYears": 0.005071872655126345,
+      "incomeEquivalentYears": -0.01,
+      "combinedYears": -0.004928127344873655,
+      "partialPasdPrice10": null,
+      "wholePortfolioPrice10": null
+    },
+    "signedResourceHarm": {
+      "additionalPeople": 1.914917547043949,
+      "healthYears": 0.005071872655126345,
+      "incomeEquivalentYears": -0.011854127605414452,
+      "combinedYears": -0.006782254950288107,
+      "partialPasdPrice10": null,
+      "wholePortfolioPrice10": null
+    },
+    "independentHealthHarm": {
+      "additionalPeople": 1.914917547043949,
+      "healthYears": -0.09492812734487366,
+      "incomeEquivalentYears": -0.001809875630476703,
+      "combinedYears": -0.09673800297535036,
+      "partialPasdPrice10": null,
+      "wholePortfolioPrice10": null
+    },
+    "halfOverlap": {
+      "additionalPeople": 1.914917547043949,
+      "healthYears": 0.0004366140380038016,
+      "incomeEquivalentYears": -0.001809875630476703,
+      "combinedYears": -0.0013732615924729014,
+      "partialPasdPrice10": null,
+      "wholePortfolioPrice10": null
+    },
+    "fullOverlap": {
+      "additionalPeople": 1.914917547043949,
+      "healthYears": -0.004198644579118742,
+      "incomeEquivalentYears": -0.001809875630476703,
+      "combinedYears": -0.006008520209595445,
+      "partialPasdPrice10": null,
+      "wholePortfolioPrice10": null
+    },
+    "noCashWorkIncidence": {
+      "additionalPeople": 1.914917547043949,
+      "healthYears": 0.005071872655126345,
+      "incomeEquivalentYears": -0.0013457713440851295,
+      "combinedYears": 0.003726101311041216,
+      "partialPasdPrice10": 268377029.1046009,
+      "wholePortfolioPrice10": null
+    },
+    "noMedicineSavings": {
+      "additionalPeople": 1.914917547043949,
+      "healthYears": 0.005071872655126345,
+      "incomeEquivalentYears": -0.001939243913771445,
+      "combinedYears": 0.0031326287413549004,
+      "partialPasdPrice10": 319220719.26323694,
+      "wholePortfolioPrice10": null
+    },
+    "consumption15000": {
+      "additionalPeople": 1.914917547043949,
+      "healthYears": 0.005071872655126345,
+      "incomeEquivalentYears": -0.0036254092835574566,
+      "combinedYears": 0.0014464633715688888,
+      "partialPasdPrice10": 691341391.4625175,
+      "wholePortfolioPrice10": null
+    },
+    "consumption60000": {
+      "additionalPeople": 1.914917547043949,
+      "healthYears": 0.005071872655126345,
+      "incomeEquivalentYears": -0.0009042338094467216,
+      "combinedYears": 0.004167638845679624,
+      "partialPasdPrice10": 239944015.5513111,
+      "wholePortfolioPrice10": null
+    },
+    "mixed2024CategoryCostBoundary": {
+      "additionalPeople": 1.305418771520281,
+      "healthYears": 0.0034575471831583687,
+      "incomeEquivalentYears": -0.0012338106284464302,
+      "combinedYears": 0.0022237365547119383,
+      "partialPasdPrice10": 449693556.4966415,
+      "wholePortfolioPrice10": null
+    },
+    "undated335FutureThroughput": {
+      "additionalPeople": 8.120219977971177,
+      "healthYears": 0.02150730809452311,
+      "incomeEquivalentYears": -0.0076747890659455125,
+      "combinedYears": 0.013832519028577598,
+      "partialPasdPrice10": 72293412.20742425,
+      "wholePortfolioPrice10": null
+    },
+    "gallstonePositivePrior": {
+      "additionalPeople": 1.914917547043949,
+      "healthYears": 0.007973760698307535,
+      "incomeEquivalentYears": -0.001809875630476703,
+      "combinedYears": 0.006163885067830832,
+      "partialPasdPrice10": 162235341.6709497,
+      "wholePortfolioPrice10": null
+    },
+    "gallstoneNegativeWithFullOverlap": {
+      "additionalPeople": 1.914917547043949,
+      "healthYears": -0.007100532622299931,
+      "incomeEquivalentYears": -0.001809875630476703,
+      "combinedYears": -0.008910408252776635,
+      "partialPasdPrice10": null,
+      "wholePortfolioPrice10": null
+    },
+    "diagnosticZeroBenefit": {
+      "additionalPeople": 1.914917547043949,
+      "healthYears": 0.0036149576704839377,
+      "incomeEquivalentYears": -0.001809875630476703,
+      "combinedYears": 0.0018050820400072347,
+      "partialPasdPrice10": 553991440.7413815,
+      "wholePortfolioPrice10": null
+    },
+    "zeroAllFinancialBenefits": {
+      "additionalPeople": 1.914917547043949,
+      "healthYears": 0.005071872655126345,
+      "incomeEquivalentYears": -0.002546235477785096,
+      "combinedYears": 0.002525637177341249,
+      "partialPasdPrice10": 395939689.58467144,
+      "wholePortfolioPrice10": null
+    }
+  },
+  "scenarioWeights": null
+}
+

@@ -1,5 +1,5 @@
 import type {Metadata} from 'next';
 import CharityResearchReport,{type CharityReportContent} from '@/components/CharityResearchReport';
-import report from '@/data/san-francisco/pvf-portfolio-report.json';
-export const metadata:Metadata={title:'Pacific Vision Foundation — whole-gift research',description:'Whole-gift cost with partial first-eye health benefits; remaining portfolio impact unquantified.'};
-export default function Page(){const content:CharityReportContent={...report,published:'11 September 2026',donationUrl:'https://pacificvisionfoundation.org/get-involved/ways-to-give/',nutshell:{...report.nutshell,body:<>Our central whole-gift estimate is <strong>$7.94M per 10 Bay Area QALYs</strong> for the first-eye health component. The entire gift is costed, but health from the remaining 90% of assumed allocation is unquantified—not zero. This is not a complete expected organization return. The earlier $714,286 estimate assumes all donor cash supports selected surgery cases. <a href="/api/pvf-portfolio-model">Inspect the whole-gift model</a> or <a href="/api/sf-surgical-access-models">the historical conditional model</a>.</>}};return <CharityResearchReport content={content}/>;}
+import {pvfCalibratedReport as report} from '@/lib/pvf-calibrated-report.mjs';
+export const metadata:Metadata={title:'Pacific Vision Foundation — research',description:'Charitable eye-care access: clinical benefits and signed household resources.'};
+export default function Page(){const content:CharityReportContent={...report,published:'11 September 2026',donationUrl:'https://pacificvisionfoundation.org/get-involved/ways-to-give/'};return <CharityResearchReport content={content}/>;}

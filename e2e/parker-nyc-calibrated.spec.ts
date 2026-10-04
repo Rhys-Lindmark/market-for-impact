@@ -1,0 +1,20 @@
+import{test,expect}from'@playwright/test';
+test('Parker report API and full list agree on accepted combined estimate',async({page,request})=>{
+ await page.route('https://market-for-impact.rhyslindmark.chatgpt.site/_next/**',async route=>{const u=new URL(route.request().url());await route.fulfill({response:await request.get(u.pathname+u.search)});});
+ await page.goto('/new-york-city/charities/parker-family-health-center');
+ await expect(page.getByRole('heading',{level:1,name:'Parker Family Health Center',exact:true})).toBeVisible();
+ await expect(page.locator('.report-research-effort summary')).toContainText('26 min on GPT-6 Astra Medium');
+ await expect(page.locator('.report-research-effort summary')).toContainText('10 min on GPT-6.1 Sol');
+ await expect(page.locator('#summary')).toContainText('$10.2M');
+ await expect(page.locator('#cost')).toContainText('1.95 medical opportunities');
+ await expect(page.locator('#cost')).toContainText('$7.71M');
+ await expect(page.locator('#cost')).toContainText('+$103');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+ const response=await request.get('/api/geography-reports/new-york-city/parker-family-health-center');expect(response.ok()).toBe(true);
+ const r=await response.json();expect(r.model.scenarios.length).toBe(28);
+ expect(r.model.scenarios.find((s:any)=>s.id==='central').nativeOutputs.donorPrice10).toBeCloseTo(10187420.654228546,5);
+ expect(r.model.scenarios.find((s:any)=>s.id==='historical-clinical-central').pricePer10Qalys).toBeCloseTo(7711757.941826708,5);
+ await page.goto('/new-york-city/all');const row=page.locator('[data-research-table] tbody tr').filter({hasText:'Parker Family Health Center'});
+ await expect(row.locator('td').nth(0)).toContainText('$10.2M');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+});

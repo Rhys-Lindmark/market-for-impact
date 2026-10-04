@@ -1,0 +1,5 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import {createHash} from 'node:crypto';
+import {worlds,calculate,calculateAll} from '../lib/hac-v2-model.mjs';
+import frozen from '../data/san-francisco/hac-legacy-pre-recalibration-model.json' with {type:'json'};
+const hash=x=>createHash('sha256').update(x).digest('hex');
+test('HAC original eight source files, twelve full worlds and external-resource diagnostic remain exact',()=>{for(const f of frozen.files)assert.equal(hash(fs.readFileSync(f.path)),f.sha256,f.path);assert.equal(worlds.length,12);assert.equal(frozen.scenarios.length,12);for(const f of frozen.scenarios){const r=calculate({world:worlds.find(x=>x.id===f.id)});assert.equal(hash(JSON.stringify(r)),f.resultSha256,f.id);assert.equal(r.bayCostPer10,f.bayClinicalPrice10);assert.equal(r.sfCostPer10,f.sfClinicalPrice10);}const all=calculateAll();assert.equal(hash(JSON.stringify(all)),frozen.calculateAllSha256);assert.equal(hash(JSON.stringify(all.additionalResourceStress)),frozen.additionalResourceStressSha256);});

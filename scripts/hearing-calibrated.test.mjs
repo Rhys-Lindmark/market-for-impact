@@ -1,0 +1,24 @@
+import assert from 'node:assert/strict';
+import {hearingCalibratedModel as calculate,hearingDiagnostics,central} from '../lib/hearing-calibrated-model.mjs';
+import {researchRankBySlug} from '../lib/research-cost-ranking.mjs';
+const close=(a,b)=>assert.ok(Math.abs(a-b)<1e-10*Math.max(1,Math.abs(b)));
+const c=calculate(),d=hearingDiagnostics();
+close(c.costPerTenQalys,1507782.8809835732);
+close(c.healthYears,.009715095408402447);close(c.incomeEquivalentYears,.00023328654312563876);
+close(researchRankBySlug.get('hearing-and-speech-center').bayUsdPerTenQalys,c.bayCostPerTenQalys);
+close(c.resourceCostPerTenQalys,1.4*c.costPerTenQalys);
+close(calculate({overlapHealthRetention:1}).costPerTenQalys,1360194.2070968456);
+assert.equal(calculate({duration:.375}).incomeEquivalentYears,c.incomeEquivalentYears);
+assert.equal(calculate({incomeDuration:.375}).healthYears,c.healthYears);
+ for(const overrides of [{incomeDuration:0},{incomeExposure:0},{earnerShare:0}]){const r=calculate(overrides);assert.equal(r.incomeEquivalentYears,0);close(r.healthYears,calculate({...overrides,overlapHealthRetention:1}).healthYears);}
+assert.equal(calculate({utility:-.11,overlapHealthRetention:.9}).healthYears,calculate({utility:-.11,overlapHealthRetention:1}).healthYears);
+for(const gain of [0,-.02])assert.equal(calculate({netResourceGain:gain,overlapHealthRetention:.9}).healthYears,calculate({netResourceGain:gain,overlapHealthRetention:1}).healthYears);
+assert.equal(calculate({funding:0}).costPerTenQalys,null);
+assert.equal(calculate({funding:0,donorHarm:.001}).healthYears,-.001);
+assert.equal(calculate({portfolioShare:0,donorHarm:.001}).healthYears,-.001);
+const geo=calculate({bayShare:.8,sfShare:.6});close(geo.bayTotalYears,c.totalYears*.8);close(geo.sfTotalYears,c.totalYears*.6);
+for(const value of [null,[],42,{unknown:1},{duration:Infinity},{netResourceGain:-1},{sfShare:1,bayShare:.5},{delay:.5,duration:.75},{incomeDuration:1,incomeDelay:.25}])assert.throws(()=>calculate(value),RangeError);
+let quadrature=0;const n=100000,dt=central.duration/n;for(let i=0;i<n;i++)quadrature+=Math.exp(-Math.log1p(central.discount)*(central.delay+(i+.5)*dt))*dt;
+close(quadrature,c.discountedCalendarYears);
+assert.equal(d['no additional funding'].totalYears,0);assert.equal(d['independent harm despite no funding'].status,'harm');
+console.log('PASS: independent hearing health/income, signed overlap, timing/geography, ranking and guards');

@@ -1,0 +1,9 @@
+# PVF first-eye evidence / income boundary audit
+
+Contemporaneous bounded original-paper check, not a full clinical-literature update. Fresh primary-indexed PubMed abstract [PMID17585002](https://pubmed.ncbi.nlm.nih.gov/17585002/) confirms306 women older than70, expedited first-eye surgery versus roughly one-year waiting, and an integrated one-year .056 incremental QALY result. The economic perspective is health services/personal social services. This does not identify a local working-age disposable-income gain or a recurring utility multiplied by another duration. Do not separately credit falls already inside the measured health contrast or import a hypothetical lifetime extrapolation into a finite timing model.
+
+The search-indexed primary PMC result mentions a net-weekly-earnings unit cost, but the pertinent full table was not retrieved. That is not evidence of wages actually regained by PVF recipients. Treat actual employment, taxes/benefits and paid days as independently uncertain household priors; do not claim this trial measured local earnings. An explicit signed zero central pay judgment is permissible with positive/negative cases, but unsupported absence is not established.
+
+Retrieval limits: direct PMC returned a browser challenge; EuropePMC page returned an internal error; correct BMJ journal1675 route returned403. An initial journal1586 URL was incorrect and is not a source. No full-paper read, original utility shape, productivity table or new complication-rate extraction is claimed. Prior accepted full-paper evidence may be reused with its original scope/timing, not relabeled as newly read. This bounded failed access does not block an explicitly conditional planning model.
+
+Actual dedicated source-audit clock is stored separately and closes before deterministic tests, handoff and waiting. User-confirmed GPT-6.1 Sol; raw runtime metadata unavailable.

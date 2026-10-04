@@ -1,4 +1,4 @@
-import CharityResearchReport,{type CharityReportContent} from '@/components/CharityResearchReport';
-import report from '@/data/san-francisco/newdoor-portfolio-report.json';
-export const metadata={title:'New Door Ventures — GiveBetter research',description:'Whole-gift youth employment, education and career support; conditional health estimates for SF and the Bay Area.'};
-export default function Page(){const content:CharityReportContent={...report,nutshell:{...report.nutshell,body:<>{report.nutshell.body} <a href="/api/newdoor-portfolio-model">Inspect the whole-gift model</a>.</>}};return <CharityResearchReport content={content}/>;}
+import LongFormResearchReport from '@/components/LongFormResearchReport';
+import {markdown,sources,modelVersion} from '@/lib/newdoor-current-report.mjs';
+export const metadata={title:'New Door Ventures — GiveBetter research',description:'Paid youth employment, education and career support; finite conditional health and net household resource assessment.'};
+export default function Page(){return <LongFormResearchReport organization="New Door Ventures" program="Paid youth employment, education and career support" markdown={markdown} sources={sources} donationUrl="https://www.newdoor.org/donate/" modelVersion={modelVersion} modelUrl="/api/newdoor-portfolio-model" calibrationDate="2026-10-04" minutes={0} modelLabel="GPT-6.1 Sol" legacyMinutesAlreadyRecorded/>;}

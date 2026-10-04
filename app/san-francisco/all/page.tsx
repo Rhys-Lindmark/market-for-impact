@@ -7,7 +7,7 @@ import {calculate as currentNems} from '@/lib/nems-current-model.mjs';
 import styles from '../../research/research-index.module.css';
 import '../../givebetter.css';
 import '../../sf-home.css';
-const price=(value:number|null,organization?:string):string=>value===null?(organization==='North East Medical Services'?price(currentNems().bay.partialHealthUsdPerTen)+' · conditional HBV health; income and ordinary-gift total unknown':'Not estimated'):new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',notation:'compact',minimumFractionDigits:value>=1e6&&value<1e9?1:0,maximumFractionDigits:value>=1e6&&value<1e9?1:0}).format(value);
+const price=(value:number|null,organization?:string):string=>value===null?(organization==='New Door Ventures'?'Conditional reference: net harm':organization==='North East Medical Services'?price(currentNems().bay.partialHealthUsdPerTen)+' · conditional HBV health; income and ordinary-gift total unknown':'Not estimated'):new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',notation:'compact',minimumFractionDigits:value>=1e6&&value<1e9?1:0,maximumFractionDigits:value>=1e6&&value<1e9?1:0}).format(value);
 export const metadata:Metadata={title:'GiveBetter x SF Research',description:'Bay Area research ordered by estimated cost per 10 additional quality-adjusted life years.',alternates:{canonical:'https://ai.rhyslindmark.com/givebetter/san-francisco/all'}};
 export default function ResearchIndex(){
  return <div className="givebetter"><header className="givebetter-masthead"><a href="/san-francisco">Give<span>Better</span> <small>x SF</small></a></header><main className={styles.shell}>
@@ -17,7 +17,7 @@ export default function ResearchIndex(){
    <thead><tr><th scope="col">Organization</th><th scope="col">$ per better life</th><th scope="col">Avg. annual expenses<br />(3 years)</th></tr></thead>
    <tbody>{unifiedResearch.map(item=><tr key={item.href} data-research-slug={item.href.split('/').at(-1)} data-geography={item.scope} data-estimate-geography={item.estimateGeography} data-cost-per-ten-qalys={item.localUsdPerTenQalys??undefined}>
     <th scope="row"><a className={styles.rowLink} href={item.href}><strong>{item.organization}</strong><span>{researchListDescription(item.program)}</span></a></th>
-    <td><a href={item.href} title={`${item.estimateGeography} estimate. ${item.localStatus}`} aria-label={item.organization+': '+price(item.localUsdPerTenQalys,item.organization)+' per 10 '+item.estimateGeography+' QALYs. '+item.localStatus}>{price(item.localUsdPerTenQalys,item.organization)}</a></td>
+    <td><a href={item.href} title={`${item.estimateGeography} estimate. ${item.localStatus}`} aria-label={item.organization+': '+price(item.localUsdPerTenQalys,item.organization)+'. '+item.localStatus}>{price(item.localUsdPerTenQalys,item.organization)}</a>{item.organization==='New Door Ventures'&&<small>Conditional partial model; ordinary-donation EV unknown.</small>}</td>
     <td className={styles.expenses}><ResearchExpenses slug={item.href.split('/').at(-1)!} /></td>
    </tr>)}</tbody>
   </table></section>

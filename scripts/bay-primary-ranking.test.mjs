@@ -10,7 +10,6 @@ import {calculate as code} from '../lib/code-tenderloin-model.mjs';
 import {walkSfModel} from '../lib/walk-sf-model.mjs';
 import {spurPortfolioModel} from '../lib/spur-portfolio-model.mjs';
 import {calculate as oa} from '../lib/oa-portfolio-model.mjs';
-import {calculate as newdoorPortfolioModel} from '../lib/newdoor-portfolio-model.mjs';
 import {ymcaPortfolio,ymcaPortfolioModel} from '../lib/ymca-portfolio-model.mjs';
 import {calculate as clinic,inputsFor as clinicInputs} from '../lib/clinic-portfolio-model.mjs';
 import {calculate as sfaf} from '../lib/sfaf-portfolio-model.mjs';
@@ -35,7 +34,6 @@ test('sixteen explicit Bay adapters match model outputs',()=>{
   'walk-san-francisco':walkSfModel(central(w),w.giftUsd).bayUsdPer10Qaly,
   spur:spurPortfolioModel(central(s),s.budget.totalUsd).bayUsdPer10Qaly,
   'operation-access':oa(o,central(o)).regions.bay.donor_per_10q,
-  'new-door-ventures':newdoorPortfolioModel(central(n),n.giftUsd).bayUsdPer10Qaly,
   'ymca-greater-sf':ymcaPortfolioModel(central(ymcaPortfolio)).bayUsdPer10Qaly,
   'clinic-by-the-bay':clinic(clinicInputs(cl,cl.scenarios.find(s=>s.id==='Central'))).donor_bay_per_10q,
   'san-francisco-aids-foundation':sfaf(central(a).inputs).bay.donor_per_10q,
@@ -43,6 +41,9 @@ test('sixteen explicit Bay adapters match model outputs',()=>{
  };
  assert.equal(rows.filter(r=>Object.hasOwn(r,'bayUsdPerTenQalys')).length,17);
  assert.equal(rows.find(r=>r.slug==='north-east-medical-services').bayUsdPerTenQalys,null);
+ const newdoor=rows.find(r=>r.slug==='new-door-ventures');
+ assert.equal(newdoor.bayUsdPerTenQalys,null);assert.equal(newdoor.estimateStatus,'conditional-net-harm');
+ assert.match(localResearchEstimate(newdoor).localStatus,/ordinary-donation EV remains unknown/);
  for(const [slug,value] of Object.entries(expected)){
   assert.ok(Number.isFinite(value)&&value>0,slug);
   const row=rows.find(r=>r.slug===slug);assert.equal(row.bayUsdPerTenQalys,value,slug);

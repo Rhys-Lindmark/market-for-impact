@@ -1,5 +1,11 @@
 # Vision To Learn legacy coverage phase
 
+## Corrected science accepted conditionally; report integration next
+
+Separate reviewer ACCEPT conditional scientific overlay:54 independently reconstructed cohort combinations plus12 current legacy/CA/historical tests PASS. See vtl-legacy-corrected-acceptance-2026-10-04.md. Same-household netting, household-unique education, signed temporal/domain guards and current CA financial-proxy language are corrected; complete gross/ordinaryEV remain unknown. Current conditional legacy donor prices US$1.7185M/Bay$21.4813M/SF$114.5669M remain as proposed. This does not empirically identify utility, cash capacity, purchaser savings or resident shares.
+
+Next root phase: write and synchronize the legacy report/API/archive-list/editorial summary, finance appendix and actual per-model provenance (author12.6609min + independent2.33995min, no extra technical-QAclock). Update CA revision-date/diagnostic labels without changing frozenhistory or its current point. Require separate rendered integration challenge, arithmetic/provenance checks, responsive verification, build and native publication before advancing additional coverage from0/24. Sole reviewer now terminal, no active worker; checkout clean once this checkpoint is committed. Usage95%remaining, goal and hourly automation unchanged in scope. Full geographic expansion and remaining23 coverage boundaries remain required, not replaced by this finite phase.
+
 ## Root corrected overlay: 12 focused tests PASS, recheck pending
 
 Root staged lib/vtl-legacy-calibrated-model.mjs with purchaser/caregiver/residual household cash netted before log, household-unique future-income incidence and explicit rejection of unsupported overlapping education/participation windows. Positive-only overlap still leaves negative rows full; mixed positive gross pay with larger fees remains harmful and allowed without the unsupported joint window. Exact1000 gain/1000 loss cancels0; participation10 reconstructs−0.009928691119011141. All118 author regression controls across42 cases pass; five new corrected groups, five CA equation/provenance checks and two complete old-world/source preservation tests pass. Complete gross and ordinary-gift EV remain unknown; central candidate unchanged.

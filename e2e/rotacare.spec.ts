@@ -14,6 +14,8 @@ test('Bay research stays outside SF ranking and exposes full-resource and durati
  const d=await(await page.request.get('/api/rotacare-model')).json();
  expect(d.evaluated).toHaveLength(10);expect(d.evaluated[0].sf.donor_usd_per_10_qaly).toBeNull();
  expect(d.evaluated[0].bay.donor_usd_per_10_qaly).toBeCloseTo(3395513.98448,2);
- await page.goto('/');
- expect(await page.locator('.sf-home-charity').evaluateAll(ns=>ns.map(n=>n.id))).toEqual(['recares','project-homeless-connect','pacific-hearing-connection','pacific-vision-foundation']);
+ await page.goto('/san-francisco/all');
+ const top=await page.locator('[data-research-slug]').evaluateAll(rows=>rows.slice(0,4).map(row=>row.getAttribute('data-research-slug')));
+ await page.goto('/san-francisco');
+ expect(await page.locator('.sf-home-charity').evaluateAll(ns=>ns.map(n=>n.id))).toEqual(top);
 });

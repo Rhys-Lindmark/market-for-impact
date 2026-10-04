@@ -15,6 +15,14 @@ function GivingIllustration({index,label}:{index:number;label:string}){
   return <div className="sf-home-illustration"><img src={root+'/images/givebetter-principles.png'} alt={label} width="600" height="200" style={{transform:`translateX(-${index*100/3}%)`}}/></div>;
 }
 const editorial:Record<string,{name:string;program:string;overview:string;scope:string;evidence:string;next:string;photo:string;caption:string;source:string}>={
+  'self-help-for-the-elderly':{
+    name:'Self-Help for the Elderly',program:'Investigate trial-matched fall prevention',
+    overview:'Self-Help serves older adults through health, activity and practical support. We investigate a prospective therapeutic tai chi course, not its current six-week Sun-style class.',
+    scope:'Conditional 24-week course for SF residents; ordinary-donation expected value unknown.',
+    evidence:'An external randomized economic evaluation provides a finite health benchmark. Our estimate includes participant travel and time costs, with local clinical transfer and delivery cost still assumed.',
+    next:'Establish a trial-matched delivery proposal, fully supported price and additional places before treating the modeled course as an available funding opportunity.',
+    photo:'https://www.selfhelpelderly.org/wp-content/uploads/2014/08/elderly-couple-doing-tai-chi-and-other-senior-activities.jpg',caption:'Tai chi illustration on Self-Help’s service page; not evidence of the modeled curriculum.',source:'https://www.selfhelpelderly.org/our-services/activity-centers/tai-chi',
+  },
   recares:{
     name:'The ReCARES Network',program:'Make useful medical equipment accessible',
     overview:'ReCARES redistributes donated mobility aids and home-health supplies through San Francisco, Oakland and Marin.',
@@ -76,7 +84,7 @@ export default function SanFranciscoHome(){
       <section className="sf-home-intro">
         <h1>Our Bay Area Shortlist</h1>
         <p className="sf-home-lead">The four lowest modeled costs in our Bay Area research.</p>
-        <small>Last updated: September 30, 2026</small>
+        <small>Last updated: October 4, 2026</small>
         <details className="sf-home-selection"><summary>What this shortlist means</summary><p>The same four organizations appear first in <a href={root+'/san-francisco/all'}>the full research list</a>, in the same order. These are research leads, not fully vetted grant recommendations. Low modeled cost does not establish financial transparency, a verified recipient or room for more funding.</p><p>HOPE Pacifica’s annual financials remain unverified. The Hearing and Speech Center’s charitable-recipient status needs resolution before a direct gift. Those concerns are retained in the reports and do not change the ranking.</p></details>
       </section>
       <section className="sf-home-principles" aria-label="How to give better">
@@ -89,7 +97,7 @@ export default function SanFranciscoHome(){
         <div><p className="sf-home-eyebrow">RESEARCH LEAD {i+1} OF 4</p><h2>{pick.program}</h2>
           <div className="sf-home-charity-body">
             <section><h3>Overview</h3><p>{pick.overview}</p></section>
-            <section><h3>Cost-effectiveness</h3><p><strong>{money(pick.price)} per better life (10 QALYs)</strong>, modeled.</p><p className="sf-home-scope">{pick.scope}</p></section>
+            <section><h3>Cost-effectiveness</h3><p><strong>{money(pick.price)} per better life (10 health and income-equivalent years)</strong>, modeled.</p><p className="sf-home-scope">{pick.scope}</p></section>
             <section><h3>Why investigate</h3><p>{pick.evidence}</p></section>
             <section><h3>Before recommending a grant</h3><p>{pick.next}</p></section>
             <section><h3>Organization and research</h3><div className="sf-home-org-card"><h4>{pick.name}</h4><a className="sf-home-report" href={`${root}/charities/${pick.slug}`}>Full research report</a></div></section>

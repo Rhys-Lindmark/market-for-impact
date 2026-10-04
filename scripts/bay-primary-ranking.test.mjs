@@ -23,6 +23,7 @@ import {calculate as compass,central as compassInputs} from '../lib/compass-cali
 import {calculate as hamilton,central as hamiltonInputs} from '../lib/hamilton-calibrated-model.mjs';
 import {calculate as fuf,central as fufInputs} from '../lib/fuf-calibrated-model.mjs';
 import {calculate as selfhelp} from '../lib/selfhelp-current-model.mjs';
+import {calculate as huckleberry} from '../lib/huckleberry-current-model.mjs';
 const read=name=>JSON.parse(fs.readFileSync(new URL('../data/san-francisco/'+name,import.meta.url)));
 const central=d=>d.scenarios.find(s=>s.id==='central');
 test('all current Bay adapters match the selected current calculators, not historical diagnostics',()=>{
@@ -48,6 +49,7 @@ test('all current Bay adapters match the selected current calculators, not histo
   'hamilton-families':hamilton(hamiltonInputs).bay.costPerBetterLifeUSD,
   'friends-of-the-urban-forest':fuf(fufInputs).bay.costPerBetterLifeUSD,
   'self-help-for-the-elderly':selfhelp().bay.usdPerBetterLife,
+  'huckleberry-youth-programs':huckleberry().bay.usdPerBetterLife,
   'north-east-medical-services':null,
   'new-door-ventures':null,
  };

@@ -1,0 +1,11 @@
+# GLIDE legacy phase checkpoint
+
+Published state remains40/40 cohort; legacy6/11; original queue43/48. Housing Action Coalition product/progress publications and PR384 synchronized in the prior heartbeat. Full eleven-edition goal remains incomplete; five confirmed legacy reviews and depth/provenance gates precede expansion.
+
+Current phase: GLIDE Foundation legacy scientific recalibration. Sole isolated implementer `/root/glide_legacy_author` on user-confirmed GPT-6.1 Sol; artifacts expected `/private/tmp/glide-legacy-recalibration-20261004.{md,calculate.mjs,receipts.json,closed.json}`. Checkout readonly for implementer; root sole integration/Git/Sites. Do not dispatch another worker or duplicate this research while it is active. Separate independent review follows a terminal author packet.
+
+Root froze nine original source hashes, complete report calculate() output and the distinct current list-adapter coverage-world outputs in `data/san-francisco/glide-legacy-pre-recalibration-model.json`. Historical test and existing model/narrative tests PASS. All original source inputs untouched. This is deterministic baseline QA, not new research or accepted recalibration. Report and list historical lineage differ and must be explicitly reconciled rather than silently equated.
+
+Acceptance: fresh original-source financial/service passages and scoped causal evidence, independently reconsidered native delivery and finite clinical envelope, signed income/resource incidence with negative transfers/harms and uncertainty, reproducible zero/adverse/raw/local/resource-boundary guards, actual closed per-model intervals, independent challenge, synchronized report/API/list before publishing/count increment. Unknown is not zero; no forced price changes, empirical EV or funding capacity claims without evidence.
+
+Usage checked before dispatch:97% remaining; floor20%, no new research<=25%. No reset credit used. Checkout157MiB/free31GiB; existing dependencies reused, no new installs, copies or preview servers. Actual researcher clock separate from root integration and QA. Next action: collect author packet, independent challenge and material correction loop, then root integration, tests and publication. If pending at next heartbeat inspect agent/artifacts before acting.

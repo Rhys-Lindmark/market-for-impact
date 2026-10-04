@@ -1,2 +1,3 @@
-import {calculate, calculatePublishedLifetimeBestGuess, inputs} from '@/lib/nfp-portfolio-model.mjs';
-export function GET(){const evaluated=calculatePublishedLifetimeBestGuess();return Response.json({modelVersion:inputs.modelVersion,verifiedMarginalFundingOffer:null,interpretation:'Whole-organization NFP and Child First lifetime prior model; Bay and SF allocations are unmeasured subjective shares, not observed local impact.',evaluated,followupBoundDiagnostic:calculate()});}
+import {calculate,version} from '@/lib/changent-legacy-recalibration.mjs';
+import historical from '@/data/us/changent-legacy-pre-recalibration-model.json';
+export function GET(){return Response.json({modelVersion:version,verifiedMarginalFundingOffer:null,interpretation:'Conditional national-support finite health plus signed household-resource illustration; weighted and central distinct, not measured donation EV. Total Bay/SF allocation unknown.',evaluated:calculate(),historical,followupBoundDiagnostic:historical.portfolioFollowup,lifetimeDiagnostic:historical.portfolioPublishedLifetime});}

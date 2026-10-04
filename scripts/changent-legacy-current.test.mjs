@@ -33,3 +33,8 @@ test('old follow-up and lifetime diagnostics remain distinct and unmodified',()=
   assert.equal(r.financialYear,2025);
   assert.equal(r.serviceCountYear,2025);
 });
+
+test('compatibility adapter validates signed current surplus before substitution',()=>{
+  for(const value of [NaN,Infinity,-Infinity,'deficit',undefined,null])assert.throws(()=>calculate({...inputs,fy2024Surplus:value}),/finite signed number/);
+  for(const value of [-2489261,0,100])assert.equal(calculate({...inputs,fy2024Surplus:value}).inputs.fy2024Surplus,value);
+});

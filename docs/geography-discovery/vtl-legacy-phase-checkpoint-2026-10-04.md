@@ -1,5 +1,11 @@
 # Vision To Learn legacy coverage phase
 
+## Published Vision To Learn checkpoint — October 4
+
+Vision To Learn additional current-model coverage published Sites395: conditional national $1.72M versus historical $801K, Bay $21.48M/SF $114.57M remain unverified residence diagnostics. Finite health plus signed net household resources, same-household cash netting, unknown gross/ordinary-gift EV, original FY2023-25 finances and preserved eleven historical worlds. Independent scientific/integration acceptance;27 focused tests,2 responsive checks and fresh build PASS. Four actual Sol sessions total about17minutes; abandoned open timer excluded. Original queue48/48, cohort40/40, confirmed legacy11/11; additional coverage1/24 published,23 remain. Next YMCA Greater SF full portfolio, then New Door and21 exploratory boundaries before geographic expansion. Usage94%remaining;floor20%,no newbatch<=25%.
+
+Exact receipt: vtl-legacy-publication-2026-10-04.json. Next required action is YMCA Greater SF source/model reassessment with separate challenge; no old initial report is silently promoted to a completed deep review. The earlier checkpoints below are historical.
+
 ## Corrected science accepted conditionally; report integration next
 
 Separate reviewer ACCEPT conditional scientific overlay:54 independently reconstructed cohort combinations plus12 current legacy/CA/historical tests PASS. See vtl-legacy-corrected-acceptance-2026-10-04.md. Same-household netting, household-unique education, signed temporal/domain guards and current CA financial-proxy language are corrected; complete gross/ordinaryEV remain unknown. Current conditional legacy donor prices US$1.7185M/Bay$21.4813M/SF$114.5669M remain as proposed. This does not empirically identify utility, cash capacity, purchaser savings or resident shares.

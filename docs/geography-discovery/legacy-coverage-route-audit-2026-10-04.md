@@ -1,5 +1,11 @@
 # Legacy coverage route audit
 
+## Published Vision To Learn checkpoint — October 4
+
+Vision To Learn additional current-model coverage published Sites395: conditional national $1.72M versus historical $801K, Bay $21.48M/SF $114.57M remain unverified residence diagnostics. Finite health plus signed net household resources, same-household cash netting, unknown gross/ordinary-gift EV, original FY2023-25 finances and preserved eleven historical worlds. Independent scientific/integration acceptance;27 focused tests,2 responsive checks and fresh build PASS. Four actual Sol sessions total about17minutes; abandoned open timer excluded. Original queue48/48, cohort40/40, confirmed legacy11/11; additional coverage1/24 published,23 remain. Next YMCA Greater SF full portfolio, then New Door and21 exploratory boundaries before geographic expansion. Usage94%remaining;floor20%,no newbatch<=25%.
+
+Exact receipt: vtl-legacy-publication-2026-10-04.json. Next required action is YMCA Greater SF source/model reassessment with separate challenge; no old initial report is silently promoted to a completed deep review. The earlier checkpoints below are historical.
+
 ## Current checkpoint: October 4, after Changent publication
 
 Published original queue48/48, cohort40/40 and confirmed legacy11/11. Additional coverage remains0/24; Vision To Learn legacy is in isolated author reassessment. Exact exploratory topology is preserved in exploratory-coverage-topology-2026-10-04.json:21 entity/EIN-bound reports,51 imported model/review/bridge sources and14 API consumer routes, all with capture-time hashes. Three focused inventory/historical tests pass. These are coverage and preservation checks, not independent scientific acceptance or additional completed deep reviews. Earlier timing/count paragraphs below are historical.

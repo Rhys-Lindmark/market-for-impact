@@ -1,5 +1,11 @@
 # Legacy coverage route audit
 
+## YMCA current-model publication — October 4
+
+YMCA Greater SF additional current-model coverage published Sites397: conditional partial Bay $12.88M/SF $19.82M versus historical $6.18M/$9.50M. Finite health plus signed household-resource cases, exact clinical/cash incidence hypotheses, unknown complete gross/ordinary EV, original FY2023-25 finances and preserved seven portfolio plus three older DPP worlds. Independent source/math and integration acceptance;24 focused tests,2 responsive checks,fresh build PASS. Four actual Sol sessions total19.17minutes; QA/idle excluded. Original queue48/48,cohort40/40,confirmed legacy11/11; additional coverage2/24 published,22 remain. Next New Door Ventures then21 exploratory boundaries before geographic expansion. Usage94%remaining;floor20%,no newbatch<=25%.
+
+Exact receipt: ymca-current-publication-20261004.json. P0 remains incomplete; old checkpoints below are historical.
+
 ## Published Vision To Learn checkpoint — October 4
 
 Vision To Learn additional current-model coverage published Sites395: conditional national $1.72M versus historical $801K, Bay $21.48M/SF $114.57M remain unverified residence diagnostics. Finite health plus signed net household resources, same-household cash netting, unknown gross/ordinary-gift EV, original FY2023-25 finances and preserved eleven historical worlds. Independent scientific/integration acceptance;27 focused tests,2 responsive checks and fresh build PASS. Four actual Sol sessions total about17minutes; abandoned open timer excluded. Original queue48/48, cohort40/40, confirmed legacy11/11; additional coverage1/24 published,23 remain. Next YMCA Greater SF full portfolio, then New Door and21 exploratory boundaries before geographic expansion. Usage94%remaining;floor20%,no newbatch<=25%.

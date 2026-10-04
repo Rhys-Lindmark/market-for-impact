@@ -1,5 +1,13 @@
 # Breathe California legacy phase checkpoint
 
+## Accepted product publication
+
+Breathe report/model published Sites387 successfully at2026-10-04T05:09:57.802710Z; exact source/version/deployment and validation receipt is `breathe-legacy-publication-2026-10-04.json`. Accepted totals now40/40 cohort; legacy8/11; originalqueue45/48. Selected conditional Bay$10.75M unchanged after clinical/native-prior reassessment, with explicit no-net-cash reference and signed income/resource sensitivities; full portfolio remains unidentified. Fresh original FY2023–25 filings/operator checks and FY2025$65,740 aggregate equipment revenue reviewed; FY2024 anomaly is not treated as zero annual expense or closure.
+
+Independent focused correction and root integration ACCEPT,166 author regressions,18 focused/historical/provenance tests,2 phone/tabletchecks and fresh publication build PASS. Nine original hashes and complete historical models/worlds preserved. Four actual timed sessions retained with user-assignedSol/rawruntimenull; pure focused/integration QA and builds/waits/deploy excluded. Original rejected candidate and review remain durable; current portability imports are checkout-relative. Both workers terminal, no preview3107 listener.
+
+Next: publish updated tracker and retain its exact receipt, synchronize PR384, then NEMS/HEPPAC/Changent and unresolved provenance gates before expansion. Allowance96%remaining;20%floor/no newbatch<=25%, no reset. Checkout160MiB/free30GiB reused; upload archive owned by this phase can be removed only after both deployment receipts are saved. Earlier phase notes below are historical.
+
 Published state remains **40/40 cohort; legacy7/11; original queue44/48**. GLIDE product Sites385 and progress Sites386 are accepted and published. Four confirmed legacy models remain: Breathe California, North East Medical Services, HEPPAC and Changent/NFP; unresolved depth/provenance and exploratory-funnel classification gates precede geographic expansion. The full eleven-edition goal and existing schedule are unchanged.
 
 ## Current bounded phase

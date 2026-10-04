@@ -21,6 +21,10 @@ test('NEMS original finance sources and per-model closed provenance are explicit
   const record=JSON.parse(fs.readFileSync('data/research-effort.json')).organizations['North East Medical Services'];
   assert.equal(record.coverage,'partial');assert.equal(record.sessions.length,4);
   for(const s of record.sessions){assert.ok(Date.parse(s.endedAt)>Date.parse(s.startedAt));assert.equal(s.model.name,'GPT-6.1 Sol');assert.equal(s.rawRuntimeModel,null);assert.ok(fs.existsSync(s.evidence));}
+  const page=fs.readFileSync('app/charities/north-east-medical-services/page.tsx','utf8');
+  assert.match(page,/legacyMinutesAlreadyRecorded/);
+  assert.match(page,/minutes=\{0\}/);
+  assert.doesNotMatch(page,/GPT-6 Astra Light/);
 });
 test('conditional display does not insert unknown ordinary gifts into top-four ranking',async()=>{
   const {researchCostRanking}=await import('../lib/research-cost-ranking.mjs');

@@ -1,5 +1,9 @@
 # North East Medical Services legacy phase checkpoint
 
+## Integration correction — inherited header claim removed
+
+Independent integration QA accepted the conditional display, body, contents and API, but found the inherited page prop would append unsupported 18 minutes on Astra Light beyond the four current Sol sessions. Root removed that claim with `minutes={0}`, current Sol label and `legacyMinutesAlreadyRecorded`, leaving measured registry sessions and the separate historical fallback untouched. Earlier prepared-integration wording that called the hardcoded 18 minutes a supported fallback is superseded by this correction. A page-prop regression now guards against recurrence. Review receipt `/private/tmp/nems-legacy-integration-review-20261004.md` awaits durable import; corrected header must be rendered on phone/tablet before release. Build must be rerun after this correction. No completion increment or deployment yet.
+
 ## Prepared integration — independent calculator accepted
 
 Reviewer `/root/nems_legacy_review` accepted the current calculator and unchanged conditional health coefficient, requiring a conditional numeric list disclosure rather than a bare placeholder. Durable review/closed clock: `nems-legacy-independent-review-2026-10-04.{md,closed.json}`. Fresh six original filings and economic-model XML were independently checked; source inconsistencies do not establish a specific corrected coefficient.

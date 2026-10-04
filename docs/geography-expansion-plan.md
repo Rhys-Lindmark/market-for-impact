@@ -1,5 +1,17 @@
 # GiveBetter geographic expansion
 
+## Latest user scope and time-budget override — October4
+
+Active: California,USA,New York City,Los Angeles,Chicago,Houston,Denver; preserveSF. Seattle,Boston,Atlanta,Detroit are cut from active work and directory, not deleted. Their existing pages/data are retained as deferred archives. This supersedes older goal/schedule/plan mentions of eleven editions. Native goal remains active; latest explicit user scope governs its completion, not stale originalobjective text.
+
+Discovery/EIN overview and shortlist selection approximately60min peredition, then5min ×25 initial reports,15min ×10 deep reviews, four featured opportunities. Arithmetic is335 researchminutes (5h35), not330. Reuse accepted100-candidate discovery pools instead of restarting to fill60min. Track actual dedicated closed stage/model minutes, completed/target counts, estimated remaining research, and separate review/integration/publishing overhead. Do not reconstruct missing old time or call elapsed open turns productivework. New machine-readable scope/budget: geography-execution-budget.json.
+
+Latest published counts: CA25/25,10/10;USA28/25,13/10;NYC25/25,3/10;LA25/25,3/10;Chicago14/25,1/10;Houston2/25,0/10;Denver2/25,0/10. Remaining57 initial reports and43 deep reviews imply930 researchminutes (15h30), plus discovery revalidation where needed, top-four selection, independent review and publishing overhead. Treat approximately24 activehours as planning target, not guaranteed deadline. Four featured picks must not be confused with definitive evidence of unrestricted-giftEV.
+
+Stop the open-ended additionalSF exploratory/model audit from blocking citycompletion: originalcohort40/40,confirmedlegacy11/11,originalqueue48/48 are complete. Additionalcurrentcoverage5/24 and otherpendingdraftclassification remain a separate transparent maintenance lane, not falsely complete. Preserve completedHuckleberry and isolatedRAMS5.118minpacket; RAMS is notaccepted/published. Prioritize CA/USA topfour then missingNYC/LA deepreviews,Chicago,Houston,Denver. Integrate jobs/abundancegrowth as holistic pipelines in subsequentcitybatches.
+
+Batch severalacceptedreports with onecombinedreport+tracker build/deploy; no redundant per-report releases. Keep original-source/arithmetic/independentchallenge requirements, scope distinctions and health PLUS signed netincome/welfare components. User20%reserve/no newresearch<=25%,oneworker/rootalonepublishes unchanged. Eachworkbatch must record stagecount/time delta; after20active minutes without meaningfulmilestone investigate specific livehandle, do not reassure from flags. Existing hourlyautomation updated in place to this superseding scope.
+
 ## Current execution override — October 4, 2026
 
 The user resumed the overall program and replaced the previous research budgets: approximately **5 actual organization-specific minutes per initial report**, then **15 minutes per in-depth review**, followed by **four featured giving opportunities per completed edition**. These are substantive research budgets, not timers to fill. Record actual per-model minutes; historical sessions remain unchanged. All new work uses GPT-6.1 Sol. This override supersedes older model assignments, parallel-worker instructions, research budgets and pause statements below.

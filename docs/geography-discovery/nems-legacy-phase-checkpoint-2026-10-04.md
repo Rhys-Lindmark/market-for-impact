@@ -1,5 +1,15 @@
 # North East Medical Services legacy phase checkpoint
 
+## Current handoff — author complete, independent challenge active
+
+The user changed current budgets to approximately 5 minutes per initial report and 15 per deep review; the October 4 override in `../geography-expansion-plan.md` and updated hourly heartbeat control current execution. Native overall goal is active. Historical budget statements below remain history, not current instructions.
+
+Author `/root/nems_legacy_author` completed the four isolated packet artifacts above: actual research 118.642 seconds plus modeling 260.949 seconds (6.33 dedicated minutes), closed before QA. Candidate preserves the conditional HBV health price $1,201,090.59 while assessing finite signed household-resource scenarios; central household cash, combined welfare and ordinary Foundation-gift totals remain unknown. Six original 2022–2024 filings freshly validated; indexed 2025 audit remains inaccessible. No accepted count changes yet.
+
+Root froze complete historical outputs, three scenarios, eleven diagnostics, twelve allocation/geography variants and eight original-artifact hashes in `../../data/san-francisco/nems-legacy-pre-recalibration-model.json`. Regression `../../scripts/nems-legacy-historical.test.mjs` plus existing NEMS/HBV tests passed all six tests. Originals unchanged.
+
+Sole isolated independent reviewer `/root/nems_legacy_review` dispatched after a live 96% remaining check. Packet output: `/private/tmp/nems-legacy-independent-review-20261004.md` plus source receipts and closed clocks. Reviewer challenges original-source finance/entity boundaries, retained clinical priors, native care units, signed cash/overlap/harms and unknown guards. Reviewer must resolve honest conditional list display without either presenting unknown ordinary-gift impact as a number or leaving a misleading unsupported headline. Root waits for material findings before integration; no duplicate worker or publication. Reused checkout 160 MiB, 29 GiB free; no install or preview server.
+
 Published state **40/40 cohort; legacy8/11; original queue45/48**. Breathe product Sites387 and tracker Sites388 accepted and published, PR384 synchronized. Three confirmed legacy models remain: NEMS, HEPPAC, Changent/NFP. Unresolved depth/provenance and exploratory-funnel classification gates still precede the full geographic expansion goal; no new geography counts are claimed.
 
 Sole isolated implementer `/root/nems_legacy_author` dispatched after live96%remaining check on October4. Model user-assignedGPT-6.1Sol/rawruntimeunknown; author reads skills/AGENTS/research-effort, uses actual per-organization clocks and writes only `/private/tmp/nems-legacy-recalibration-20261004.{md,calculate.mjs,receipts.json,closed.json}`. Root is sole checkout/Git/Sites integrator. Inspect worker status/artifacts before dispatching another helper; no duplicate or concurrent research. Native goal and existing schedule are retained, not replaced.

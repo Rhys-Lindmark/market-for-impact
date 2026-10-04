@@ -1,5 +1,11 @@
 # Recalibrate existing in-depth reviews
 
+## New Door current-model publication — October 4
+
+New Door Ventures additional current-model coverage published Sites399: conditional partial health plus signed net household resources yields Bay −0.064968/SF −0.029236 equivalents; no positive reference price or efficacy rank. Initial Bay $228.57M/SF $507.94M remain historical diagnostics; full ordinary-donation EV unknown. Original CY2023-25 finances, eight portfolio and three earlier employment worlds preserved. Independent source/math,13-case reconstruction,19 extra probes and separate integration acceptance;30 focused tests,2 responsive checks,build PASS. Five actual Sol clocks total15.898minutes;QA/idle excluded. Original queue48/48,cohort40/40,confirmed legacy11/11;additional coverage3/24 published,21 remain. Next21 exploratory boundaries before geographic expansion. Usage94%remaining;floor20%,no newbatch<=25%.
+
+Exact receipt: newdoor-current-publication-20261004.json. P0 remains incomplete; old checkpoints below are historical.
+
 ## YMCA current-model publication — October 4
 
 YMCA Greater SF additional current-model coverage published Sites397: conditional partial Bay $12.88M/SF $19.82M versus historical $6.18M/$9.50M. Finite health plus signed household-resource cases, exact clinical/cash incidence hypotheses, unknown complete gross/ordinary EV, original FY2023-25 finances and preserved seven portfolio plus three older DPP worlds. Independent source/math and integration acceptance;24 focused tests,2 responsive checks,fresh build PASS. Four actual Sol sessions total19.17minutes; QA/idle excluded. Original queue48/48,cohort40/40,confirmed legacy11/11; additional coverage2/24 published,22 remain. Next New Door Ventures then21 exploratory boundaries before geographic expansion. Usage94%remaining;floor20%,no newbatch<=25%.

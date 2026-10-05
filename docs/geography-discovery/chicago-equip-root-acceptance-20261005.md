@@ -1,0 +1,9 @@
+# Equip for Equality — initial acceptance, October 5
+
+Accepted conditional initial comparison, not an observed marginal donation return. Independent original-source review verifies audited recognized costs and Cook County scope; the hypothetical 100-household cohort, clinical efficacy, incremental financial gains and annual-response assumptions remain explicit judgments. Statewide cost and limited local benefit are intentionally distinguished. Unrecognized professional resources, existing state obligations, co-counsel attribution and adverse/counterparty worlds remain visible.
+
+Independent reconstruction: 23 cases / 154 assertions passed. Central clinical 1.9134696955, signed resources +0.0579265949, combined 1.9713962905; $49,563,667.37194 per ten combined equivalents. Negative resource changes and clinical harms are not overlap-discounted; household gains and burdens net before log. Clinical-null retains financial effects, zero response yields zero, adverse combined effects remain negative, matched payer losses reduce value. Guard correction rejects negative discount/negative harm, including zero-cohort edge cases.
+
+FY2022/23/24 original expenses $8,102,494 / $9,358,418 / $9,770,963; comparable recognized-expense mean $9,077,291.6667. Root normalizes accounting-basis labels and display aliases, corrects copy spacing, and retains raw author report/calculator/cases. Auditor opinion date is not misrepresented as verified publication date.
+
+Author closed intervals 201.264 seconds; root original-source check 81 seconds and independent-probe interval 15.798 seconds. Total measured 298.062 seconds (4.9677 minutes), all GPT-6.1 Sol. Mixed root interval 66042421 omitted in full because it included unrelated administration. Initial packet accepted locally for the next multi-report Chicago release; live published count remains 14/25,1/10. No per-report build or padded waits.

@@ -1,0 +1,7 @@
+# Chicago Volunteer Doulas — accepted initial
+
+Root independently checked EIN/current giving and service terms, original FY2024 cost708622, event0 and negative asset/reserve filing fields. FY22/23 author original receipts retained; exact mean560608. Financial inconsistency is disclosed, not adjusted into invented expenses. Root independently read Cochrane26usable low-quality RCTs and current Illinois doula coverage notice; ordinary coverage/provider alternatives remain in counterfactual. Report distinguishes emotional birth experience from acute physical recovery and excludes mortality/Apgar lifetime and retail fee credit. Clinical and resource cohort/coefficients are explicit conditional judgments, not observed local effects.
+
+148independent arithmetic checks over23cases pass; production bridge/current schema also pass. Clinical.2668209697 and signed resources−.0746135085 yield.1922074612equivalents and36,867,559.4295 dollars per ten. Parent/provider household resources jointly logged; disjoint provider cohort and full unavoidable costs/harms survive clinical-null. Infant effect unknown-neutral with signed stresses. No required scientific correction remains.
+
+Author179.196seconds + root40.109seconds =219.305seconds GPT-6.1 Sol, partial coverage. Later fiscal-field extraction, coverage reread, math/testing/integration untimed/uncredited. No padded wait or release minutes. Pending combined publication, not yet a live-count claim.

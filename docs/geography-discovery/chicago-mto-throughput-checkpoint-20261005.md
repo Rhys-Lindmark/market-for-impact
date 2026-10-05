@@ -1,5 +1,7 @@
 # Metropolitan Tenants Organization — bounded review in progress
 
+Superseded after resumed model-first delivery by chicago-mto-accepted-checkpoint-20261005.md: independently accepted and liveSites425,Chicago9/10. The stopped-run history below is retained; excluded time remains excluded.
+
 Started this goal phase at 2026-10-05T22:09:27Z from clean pushed HEAD386f2f4 and verified Chicago25/25initial,8/10deep,0/4featured. Usage86%remaining; no reset credits spent. One isolated author assigned MTO; no additional author permitted this turn.
 
 Root original-source checks corroborate EIN36-3351193, FY ended June30,2025 recipient expense980346, program835318, revenue944614 and ending netassets601222. Original FY2023 expense795803 was independently verified. FY2025 ScheduleD expense subtotal/Form990 total agree at980346; no identified addback is not proof of absent outside resources. CAPER2025 page25 was rendered and inspected: approximately464 calls are joint MTO/LCBH, not MTO-only unique successes. Author-recovered City renewal memorandum page2 was independently rendered and inspected:365 MTO issues January1–October1,2025,21 text cases with unknown overlap,91600 joint contract ceiling versus36800 MTO base share. No annual extrapolation, clinical utility or causal net-resource gain is established by those counts. Generic annual8k–10k hotline range in original990 is not a deduplicated completed FY2025 outcome cohort.

@@ -1,5 +1,7 @@
 # Current scope override — October 4
 
+October5 latest accepted release Sites410: LA25/25 initial,5/10 deep,0 featured. CCA $10.031M and GWC $23.357M independently accepted and published; six responsive/30 Node checks pass. CA/USA/NYC complete as below. Next five LA deep reviews and four highlights, then Chicago/Houston/Denver. Remaining57initial+34deep=795 planned minutes, overhead separate. This supersedes dated LA staging/snapshot entries below. Receipt la-five-deep-publication-20261005.json; actual research gaps excluded. Usage90% remaining;20% reserve.
+
 The latest user request narrows active expansion to California, USA, New York City, Los Angeles, Chicago, Houston and Denver, preserving San Francisco. Seattle, Boston, Atlanta and Detroit are cut from active work/directory; archives remain intact.
 
 Original recalibration cohort40/40, confirmedlegacy11/11 and originalqueue48/48 are complete. Additional SF coverage5/24 and other pending public draft classifications remain unresolved **nonblocking maintenance**, not a reason to postpone city completion and not falsely marked accepted. RAMS source/model packet is preserved but held without independent acceptance or publication. This supersedes older checkpoints' requirement to finish all exploratory SF models first.

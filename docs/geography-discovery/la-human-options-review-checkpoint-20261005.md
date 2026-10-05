@@ -1,5 +1,7 @@
 # Human Options — bounded review checkpoint
 
+Updated: frozen handoff independently accepted and integrated; local LA9/10, live Sites4117/10 pending combined release. Acceptance la-human-options-root-acceptance-20261005.md supersedes pending notes below. Exact initial price44,650,773.22150923; author416.280s+root171.469s=587.749s(9.7958min), overhead excluded. Next Public Law Center then four features.
+
 Author /root/la_cca_deep remains live, isolated packet /private/tmp/la-human-options-deep-20261005. Current model/report/selftest are complete; final source receipts/evidence/manifest handoff is pending. Do not restart this worker or count the review as accepted until the frozen handoff and canonical integration are verified.
 
 Root original-source audit is saved in la-human-options-root-source-20261005.json. All three gross original financial denominators matched; PATH/CAP reference outcomes, attrition, intervention mismatch and uncertain serious adverse events were independently checked. Clinical harms are hypotheses, not derived from raw event imbalance.

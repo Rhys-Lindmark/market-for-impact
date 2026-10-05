@@ -1,0 +1,29 @@
+import {incomeHealthyYearEquivalent} from './income-health-equivalence.mjs';
+export const defaults={C:7595219,Np:1200,dp:.5,rp:.5,b:.5,ep:.17,up:.15,Tp:.5,Ns:498,ds:.5,rs:.5,es:.13,us:.1,Ts:.5,k:.8,g:.95,discount:.03,counselingDelay:1,safetyDelay:2,communityAdultUnique:.5,residentialHouseholdShare:.5,resourceOverlap:.5,communityCost:100,housingResourceGain:1200,positiveOverlap:.5,housingCost:600,baseline:20000,resourceYears:1,resourceDelay:1,partnerCostPerHousehold:0,partnerPeople:100,partnerBaseline:50000,landlordNetMargin:0,landlordPeople:20,landlordBaseline:60000,clinicalHarmPerPerson:0};
+const positiveOnly=(x,k)=>Math.max(x,0)*k+Math.min(x,0);
+export function calculate(overrides={}){
+ const p={...defaults,...overrides};for(const [k,v]of Object.entries(p))if(typeof v==='number'&&!Number.isFinite(v))throw Error(k);
+ for(const k of ['dp','rp','b','ds','rs','k','g','communityAdultUnique','residentialHouseholdShare','resourceOverlap','positiveOverlap'])if(p[k]<0||p[k]>1)throw Error(k);
+ if(p.C<=0||p.Np<0||p.Ns<0||p.Np+p.Ns>10000||p.baseline<=0||p.partnerPeople<=0||p.landlordPeople<=0||p.partnerBaseline<=0||p.landlordBaseline<=0||p.resourceYears<=0||p.resourceDelay<0||p.counselingDelay<0||p.safetyDelay<0||p.discount<0||p.Tp<0||p.Ts<0)throw Error('Invalid finite exposure');
+ const qCounsel=p.Np*p.dp*p.rp*p.b*p.ep*p.up*p.Tp/(1+p.discount)**p.counselingDelay;
+ const qSafety=p.Ns*p.ds*p.rs*p.b*p.es*p.us*p.Ts/(1+p.discount)**p.safetyDelay;
+ const community=p.Np*p.communityAdultUnique*p.b,residential=p.Ns*p.residentialHouseholdShare*p.b,joint=Math.min(community,residential*p.resourceOverlap);
+ const allHealth=positiveOnly(qCounsel,p.k)+positiveOnly(qSafety,p.k)-(community+residential-joint)*p.clinicalHarmPerPerson/(1+p.discount)**p.resourceDelay;
+ const path=(id,people,baseline,net,years=p.resourceYears)=>({id,people,annualIncomeBeforeUSD:baseline,annualIncomeGainUSD:net,years,editionShare:p.g,delayYears:p.resourceDelay,discountRate:p.discount,rationale:'Conditional one welfareperson per distinct adult survivor household. Overlapping community/housing resources net jointly BEFORE log; all negative costs survive clinical failure, only positive resources discounted for health overlap.',counterfactual:'Existing funded services, alternative providers, insurance and family resources without incremental ordinary-gift capacity; net taxes/benefits/work and displacement included by judgment. No survivor earnings or gross aid as clinicalQALYs.',sourceIds:['ho-services','ho-report25','ho-99025']});
+ const housingNet=positiveOnly(p.housingResourceGain,p.positiveOverlap)-p.housingCost;
+ const paths=[path('community-only',community-joint,p.baseline,-p.communityCost),path('housing-only',residential-joint,p.baseline,housingNet),path('joint-community-housing',joint,p.baseline,housingNet-p.communityCost)].filter(x=>x.people>0);
+ if(p.b>0&&p.partnerCostPerHousehold!==0)paths.push(path('partner-payer-opportunity-stress',p.partnerPeople,p.partnerBaseline,-(community+residential-joint)*p.partnerCostPerHousehold/p.partnerPeople,1));
+ if(p.b>0&&p.landlordNetMargin!==0)paths.push(path('landlord-counterparty-margin-stress',p.landlordPeople,p.landlordBaseline,residential*p.landlordNetMargin/p.landlordPeople,1));
+ const income=paths.reduce((a,x)=>a+incomeHealthyYearEquivalent(x),0),health=p.clinicalUnknown?null:p.g*allHealth,total=health===null||p.incomeUnknown?null:health+income;
+ return {inputs:p,costUSD:p.C,allPopulationQalys:p.clinicalUnknown?null:allHealth,editionQalys:health,qCounsel,qSafety,community,residential,joint,housingNet,incomePathways:paths,incomeUnknown:!!p.incomeUnknown,incomeEquivalent:income,totalEquivalent:total,price10:total>0?10*p.C/total:null};
+}
+export const cases=[['central',{}],['clinical-null',{rp:0,rs:0}],['financial-only',{rp:0,rs:0}],['complete-unknown',{clinicalUnknown:true,incomeUnknown:true}],['income-unknown',{incomeUnknown:true}],['zero-expansion',{b:0}],['clinical-adverse',{rp:0,rs:0,clinicalHarmPerPerson:.01}],
+ ['weak',{dp:.25,rp:.1,b:.1,up:.05,Tp:.25,ds:.35,rs:.1,us:.02,Ts:.25,k:.6,g:.85}],['strong',{dp:.9,rp:1,b:.75,up:.25,Tp:1,ds:.75,rs:1,us:.2,Ts:1,k:1,g:1}],
+ ['positive-net-housing',{housingResourceGain:3000}],['positive-with-payer-cost',{housingResourceGain:3000,partnerCostPerHousehold:500}],['positive-with-landlord-incidence',{housingResourceGain:3000,landlordNetMargin:100}],['adverse-housing-resources',{housingResourceGain:0,housingCost:2000}],['negative-housing-change',{housingResourceGain:-1000}],['negative-housing-no-overlap',{housingResourceGain:-1000,positiveOverlap:0}],
+ ['no-positive-overlap',{positiveOverlap:1}],['full-positive-overlap',{positiveOverlap:0}],['disjoint-households',{resourceOverlap:0}],['all-residential-overlap',{resourceOverlap:1}],
+ ['lower-resource-baseline',{baseline:10000}],['higher-resource-baseline',{baseline:40000}],['community-cost-zero',{communityCost:0}],['community-high-burden',{communityCost:500}],['unpriced-housing-neutral',{housingResourceGain:0,housingCost:0}],
+ ['two-year-resource-stress',{resourceYears:2}],['resource-delay-zero',{resourceDelay:0}],['resource-delay-three',{resourceDelay:3}],['three-year-mean-cost',{C:7588576}],
+ ['partner-cost-stress',{partnerCostPerHousehold:500}],['partner-low-income-incidence',{partnerCostPerHousehold:500,partnerBaseline:20000}],['landlord-margin-gain',{landlordNetMargin:100}],['landlord-margin-loss',{landlordNetMargin:-100}],
+ ['no-safety-health',{rs:0}],['no-counseling-health',{rp:0}],['negative-clinical-not-overlap',{ep:-.17,rs:0,k:0}]
+];
+export function serializedScenarios(){return cases.map(([id,p])=>({id,label:id.replaceAll('-',' '),...calculate(p),assumptions:'Finite conditional health and joint signed household resources; source scales are not completed causal outcomes. Partial portfolio and counterparty boundary.'}));}

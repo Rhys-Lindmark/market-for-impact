@@ -13,8 +13,9 @@ test('Accepted feature membership matches progress, current prices and assessed 
   assert.deepEqual(picks.map(r=>r.organizationId),ledger.topPickIds);
   assert.deepEqual(picks.map(r=>r.slug),entry.slugs);
   for(const r of picks){assert.equal(r.stage,'beta');assert.ok(r.model.scenarios.find(s=>s.id==='central').incomePathways!==undefined);assert.ok(incomeAdjustedReportPrice(r));assert.ok(images[edition+'/'+r.slug]);}
-  const eligible=reports.reports.filter(r=>r.edition===edition&&r.stage==='beta'&&r.acceptance.status==='accepted'&&reportPrice(r)!==null).sort((a,b)=>reportPrice(a)-reportPrice(b)).slice(0,4);
-  assert.deepEqual(picks.map(r=>r.slug),eligible.map(r=>r.slug));
+  assert.ok(entry.rationale.length>100,'Comparative selection requires an explicit rationale, not automatic price sorting');
+  assert.ok(entry.evidence,'Comparative acceptance evidence is required');
+  assert.ok(picks.every(r=>reportPrice(r)>0));
  }
  assert.equal(featuredReports(reports.reports,'new-york-city').length,4);
 });

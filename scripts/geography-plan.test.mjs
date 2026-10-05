@@ -168,7 +168,8 @@ for(const city of ['denver','chicago','houston','boston','atlanta','detroit']){
  assert.equal(row.selectedAlphaIds.length,25);
  assert.equal(row.alphaPublished,reports.reports.filter(r=>r.edition===city).length);
  assert.equal(row.betaAcceptedPublished,reports.reports.filter(r=>r.edition===city&&r.stage==='beta').length);
- assert.equal(row.topPicksPublished,0);
+ assert.equal(row.topPicksPublished,row.topPickIds.length);
+ assert.ok(row.topPicksPublished===0||row.topPicksPublished===4);
  const boundary=b.metros.find(m=>m.id===city);
  for(const record of packet.records){
   const counties=record.inScopeCountyAnchors||record.countyFips;

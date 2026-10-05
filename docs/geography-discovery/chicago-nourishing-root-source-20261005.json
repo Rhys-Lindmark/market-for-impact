@@ -1,0 +1,60 @@
+{
+  "session": {
+    "organization": "Nourishing Hope",
+    "session": {
+      "id": "8d8e987b-65da-4efc-92a1-8ca977dd6acd",
+      "workerId": "root-chicago-nourishing-source",
+      "phase": "source-audit",
+      "startedAt": "2026-10-05T18:59:45.980Z",
+      "endedAt": "2026-10-05T19:00:16.849Z",
+      "model": {
+        "id": "gpt-6.1-sol",
+        "name": "GPT-6.1 Sol",
+        "evidence": "User-confirmed model assignment: GPT-6.1 Sol for this task"
+      },
+      "evidence": "docs/geography-discovery/chicago-nourishing-root-source-20261005.json"
+    }
+  },
+  "finance": {
+    "url": "https://projects.propublica.org/nonprofits/full_text/202600359349301205/IRS990",
+    "status": 200,
+    "sha256": "96df64b206287d9fb58c95b54293ee18b769c4b3f604ec29a0d2dcfce5f7c975",
+    "fields": [
+      {
+        "field": "ReturnHeader[1]/TaxPeriodBeginDt[1]",
+        "value": "04-01-2024"
+      },
+      {
+        "field": "ReturnHeader[1]/TaxPeriodEndDt[1]",
+        "value": "03-31-2025"
+      },
+      {
+        "field": "Filer[1]/EIN[1]",
+        "value": "36-2734184"
+      },
+      {
+        "field": "IRS990[1]/CYTotalExpensesAmt[1]",
+        "value": "20,025,120"
+      },
+      {
+        "field": "PreparerFirmGrp[1]/PreparerFirmEIN[1]",
+        "value": "33-2621854"
+      },
+      {
+        "field": "IRS990[1]/FundraisingDirectExpensesAmt[1]",
+        "value": "374,347"
+      }
+    ]
+  },
+  "primaryChecks": [
+    {
+      "url": "https://nourishinghopechi.org/mental-wellness/",
+      "finding": "Licensed counseling and alternatives; Chicago residents14+ may request support; actual unique annual completed-client cohort not established from service page."
+    },
+    {
+      "url": "https://nourishinghopechi.org/reports-and-financials/",
+      "finding": "Official EIN36-2734184, own990/audits, reported FY2025food distribution and people not unique completedtherapycohort."
+    }
+  ],
+  "financialBoundary": "FY2025original annual20,025,120 functional expense plus374,347 directevent expense; inspectSchedD before accepting fullrecognized denominator."
+}

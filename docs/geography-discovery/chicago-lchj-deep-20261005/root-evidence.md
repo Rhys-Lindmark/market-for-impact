@@ -1,0 +1,9 @@
+# Independent Legal Council acceptance
+
+Root separately fetched original FY2025 990 and Schedule D, current 2025 annual PDF, prior Schedule D returns and FY2023 tax/event lines. FY2025 tax3,646,350+donated139,067+netted event15,151=3,800,568. Audit3,780,384−donated139,067+investment5,033=tax3,646,350: investment retained once. Original prior donated100,400/77,500 and FY2023 event11,648 checked; historical FY2024 initial preserved. Mean3,773,699.
+
+Current annual p6 visually shows47% zero income; that is not zero consumption or a valid log denominator. Over1600 client reference and mixed fiscal/calendar narratives remain judged cohort transfer. Original2015 HOP text independently checked:167 contacted,115 represented,74 awards; approvals are uncontrolled, historical and not current causal success. Official SSA994 ceiling checked, not an average. Original MLP RCT abstract mixed health endpoints checked, not utility calibration.
+
+Independent calculator reconstructs41 scenarios with314 numeric checks using separate signed household and counterparty formulas. Full negatives/process burdens and union harms, positive-only overlap, no-hop/no-award/zero/unknown and matched taxpayer displacement controls pass. Whole annual cost remains; partial local income headline excludes unknown-neutral outside incidence and is not full world net benefit or verified marginal EV. Unsupported clinical/current benefit priors explicitly remain judgments. Full initial diagnostic preserved. Root accepts bounded conditional model, not donation capacity.
+
+Closed root source audit21:05:43.162Z–21:10:12.030Z (268.868s); modeling21:11:22.848Z–21:12:21.743Z (58.895s). Author268.259s. Testing, source receipt packaging and integration/release excluded. No unexplained idle gap observed. One isolated author; root alone integrates/publishes.

@@ -19,8 +19,24 @@ test('SACHR current report/list/API price, signed welfare and model time agree',
  await expect(row).toContainText('$22.3M');
  const details=page.getByText('Research progress',{exact:true});
  await details.click();
- await expect(page.locator('.gb-edition-boundary').first()).toContainText('5/10 in-depth reviews');
+ await expect(page.locator('.gb-edition-boundary').first()).toContainText('7/10 in-depth reviews');
 });
+for(const [slug,name,price] of [['charles-b-wang-community-health-center','Charles B. Wang Community Health Center','$24.3M'],['sanctuary-for-families','Sanctuary for Families','$207.1M']]){
+ test(`${name} accepted health-income report agrees with research list and API`,async({page,request})=>{
+  await page.goto('/new-york-city/charities/'+slug);
+  await expect(page.locator('h1')).toHaveText(name);
+  await expect(page.locator('#summary')).toContainText(price+' per better life');
+  await expect(page.locator('.report-research-effort summary')).toContainText('min on GPT-6.1 Sol');
+  await expect(page.locator('.report-income-comparison')).toBeVisible();
+  await expect(page.locator('#annual-expenses')).toBeVisible();
+  await expect.poll(()=>page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+  const api=await request.get('/api/geography-reports/new-york-city/'+slug);expect(api.ok()).toBe(true);
+  const payload=await api.json();expect(payload.model.scenarios.some(s=>s.id==='central')).toBe(true);
+  await page.goto('/new-york-city/all');
+  const row=page.locator('tr').filter({has:page.locator('a[href$="/new-york-city/charities/'+slug+'"]')});
+  await expect(row).toContainText(price);
+ });
+}
 test('Samaritans reports revised welfare price without crediting stalled modeling time',async({page})=>{
  await page.goto('/new-york-city/charities/samaritans-of-new-york');
  await expect(page.locator('h1')).toHaveText('Samaritans of New York');

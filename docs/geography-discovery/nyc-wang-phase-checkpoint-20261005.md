@@ -1,0 +1,9 @@
+# NYC next deep-review batch
+
+Previous goal turn made authoritative progress: Sites407 published two accepted NYC deep reviews after source/model/phone/tablet/build checks. NYC is25/25 initial,5/10 deep. Remaining active-stage budget57initial+41deep=900researchminutes, plus overhead. Original40/40cohort and11/11legacy complete; optionalSF coverage remains nonblocking. Seven active editions; Seattle/Boston/Atlanta/Detroit deferred.
+
+Next isolated author dispatched: /root/nyc_wang_deep, Charles B. Wang Community Health Center (org:charles-b-wang-community-health-center), NYC. Minimal-context GPT-6.1 Sol worker, one author only, no nested workers/repo/Git/Sites writes. Artifact prefix /private/tmp/nyc-wang-beta-20261005-. Revalidate its current status and actual start confirmation; task creation alone is not proof of research. Freshusage92%remaining at dispatch; reserve20/no newwork<=25. Root remains integration/publishing owner.
+
+Do not inherit stale Samaritans modeling clocks. It is terminal complete, accepted/published; interrupted open and resumed elapsed modeling intervals excluded, recordednew source/review5.97min partial. Time actual organization/stage/model work only; no padded waits, no historical-minute fabrication, no idle/service elapsed credit. Use bounded~15min substantive deep review, original costs/current scope, health and signed household income/consumption, counterfactual/overlap/harms/delay/geography/uncertainty, preserve original model exactly, executable cases and independent challenge before stage credit.
+
+After Wang acceptance, continue another eligible NYC deep review in a bounded combined release, reach10 and select4. ThenLA,Chicago,Houston,Denver. Stop a stalled worker and preserve findings/unknown timing rather than keeping an open turn waiting indefinitely. Never claim active/complete from intentions or inflated publication counts.

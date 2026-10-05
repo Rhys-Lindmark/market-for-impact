@@ -1,5 +1,13 @@
 # NYC deep-review continuation
 
+## Superseding checkpoint — Sites407 published
+
+Both SACHR and Samaritans passed independent primary-source/model checks, registry/provenance validation, four phone/tablet checks and the native build. Verified deployment appgdep_6ac3154c0c348191b8efd2d68979e49c succeeded 2026-10-05T03:11:19.187735Z; receipt nyc-deep-batch-publication-20261005.json. Public NYC is now **25/25 initial, 5/10 deep**. Historical estimates retained; current references are22.33M and30.75M with health AND signed resources.
+
+SACHR measured new effort15.1698min. Samaritans measured new source+independent effort5.9707min, partial: its interrupted open modeling clock and34.393min resumed elapsed clock are excluded, not reported as productive or zero. Author is terminal complete. Do not leave a stale running claim; revalidate live status before starting any worker.
+
+Remaining active-stage budget57initial+41deep=900min (15active research hours) plus selection/verification/release overhead; discovery pools already accepted. Latest usage92%remaining, reserve20/no newwork<=25. Original40/40cohort and11/11legacy complete; optionalSF maintenance remains nonblocking. Next five NYC deep reviews, shortlist4, thenLA/Chicago/Houston/Denver. Older pending/running text below is historical.
+
 Previous goal turn changed authoritative scope/tracker and published Sites405; this turn accepted and published CA/USA four opportunities each in Sites406. Both are progress, not status restatements. Seven editions remain active; four removed cities remain deferred.
 
 SACHR author completed. Root independently accepted its final packet after original-source checks, exact engine/history parity and 281 numerical checks. Durable held packet: docs/geography-discovery/nyc-deep-batch-20261005/sachr-accepted-report.json; acceptance: docs/geography-discovery/nyc-sachr-independent-20261005.md. Actual author 10.6437 minutes plus independent root 4.5261 minutes = 15.1698 dedicated minutes. Initial $13.47M becomes conditional combined $22.33M; income is signed and slightly negative centrally. No public promotion yet.

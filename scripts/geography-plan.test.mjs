@@ -8,7 +8,10 @@ const publicReviewIds=new Set([
  ...reports.reports.filter(r=>r.stage==='beta').map(r=>r.edition+'/'+r.slug),
  ...Object.keys(sfSummaries).map(slug=>'san-francisco/'+slug),
 ]);
-assert.equal(p.recalibration.publishedCohortTotal,publicReviewIds.size);
+// The recalibration cohort is frozen. Later new deep reviews do not reopen it
+// or inflate its denominator; every originally completed review must survive.
+assert.equal(p.recalibration.publishedCohortTotal,40);
+assert.ok(publicReviewIds.size>=p.recalibration.publishedCohortTotal);
 assert.equal(p.recalibration.publishedCohortCompleted,p.recalibration.completedReportIds.length);
 assert.equal(new Set(p.recalibration.completedReportIds).size,p.recalibration.completedReportIds.length);
 for(const id of p.recalibration.completedReportIds)assert.ok(publicReviewIds.has(id),'Recalibration must identify an existing public review: '+id);

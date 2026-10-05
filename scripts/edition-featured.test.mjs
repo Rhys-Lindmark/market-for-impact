@@ -16,10 +16,10 @@ test('Accepted feature membership matches progress, current prices and assessed 
   const eligible=reports.reports.filter(r=>r.edition===edition&&r.stage==='beta'&&r.acceptance.status==='accepted'&&reportPrice(r)!==null).sort((a,b)=>reportPrice(a)-reportPrice(b)).slice(0,4);
   assert.deepEqual(picks.map(r=>r.slug),eligible.map(r=>r.slug));
  }
- assert.equal(featuredReports(reports.reports,'new-york-city').length,0);
+ assert.equal(featuredReports(reports.reports,'new-york-city').length,4);
 });
 test('Reject missing, alpha-only, historical-only and unaccepted replacements',()=>{
- for(const edition of ['california','usa']){
+ for(const edition of ['california','usa','new-york-city']){
   const id=selection.editions[edition].slugs[0],fixture=structuredClone(reports.reports);
   const r=fixture.find(r=>r.edition===edition&&r.slug===id);
   for(const mutation of [()=>r.stage='alpha',()=>r.acceptance.status='held',()=>r.model.scenarios.find(s=>s.id==='central').incomeUnknown=true]){

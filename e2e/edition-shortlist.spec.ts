@@ -3,7 +3,7 @@ import reports from '../data/geography-reports.json' with {type:'json'};
 import {reportPrice,formatEditionMoney} from '../lib/geography-reports.mjs';
 import {featuredReports} from '../lib/edition-featured.mjs';
 
-for(const edition of ['california','usa']){
+for(const edition of ['california','usa','new-york-city']){
  test(`${edition} landing page shows four ranked research leads with photos`,async({page})=>{
   await page.route('https://ai.rhyslindmark.com/givebetter/images/**',async route=>{
    const path=new URL(route.request().url()).pathname.replace('/givebetter','');
@@ -22,6 +22,7 @@ for(const edition of ['california','usa']){
    await image.scrollIntoViewIfNeeded();
    await expect.poll(()=>image.evaluate((img:HTMLImageElement)=>img.complete&&img.naturalWidth>0)).toBe(true);
   }
+  if(edition==='new-york-city')await page.screenshot({path:'/private/tmp/nyc-shortlist-'+test.info().project.name+'.png',fullPage:true});
   await expect(page.getByText('Our four-charity shortlist is being researched. Explore the full research list.')).toHaveCount(0);
   await page.goto('/'+edition+'/all');
   const shared=page.getByRole('region',{name:'Four featured opportunities'});

@@ -19,9 +19,9 @@ test('SACHR current report/list/API price, signed welfare and model time agree',
  await expect(row).toContainText('$22.3M');
  const details=page.getByText('Research progress',{exact:true});
  await details.click();
- await expect(page.locator('.gb-edition-boundary').first()).toContainText('7/10 in-depth reviews');
+ await expect(page.locator('.gb-edition-boundary').first()).toContainText('10/10 in-depth reviews');
 });
-for(const [slug,name,price] of [['charles-b-wang-community-health-center','Charles B. Wang Community Health Center','$24.3M'],['sanctuary-for-families','Sanctuary for Families','$207.1M']]){
+for(const [slug,name,price] of [['charles-b-wang-community-health-center','Charles B. Wang Community Health Center','$24.3M'],['sanctuary-for-families','Sanctuary for Families','$207.1M'],['onpoint-nyc','OnPoint NYC','$29.4M'],['mobilization-for-justice','Mobilization for Justice','$44.1M'],['god-s-love-we-deliver',"God's Love We Deliver",'$41.1M']]){
  test(`${name} accepted health-income report agrees with research list and API`,async({page,request})=>{
   await page.goto('/new-york-city/charities/'+slug);
   await expect(page.locator('h1')).toHaveText(name);

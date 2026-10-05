@@ -6,7 +6,7 @@ const picks=featuredReports(data.reports,'chicago'),results=[];
 await Promise.all(['https://market-for-impact.rhyslindmark.chatgpt.site','https://ai.rhyslindmark.com/givebetter'].map(async base=>{
  for(const path of ['/chicago','/chicago/all']){
   const response=await fetch(base+path,{signal:AbortSignal.timeout(25000)});assert.equal(response.status,200);
-  const html=await response.text();let offset=-1;
+  const html=(await response.text()).replace(/<!--[\s\S]*?-->/g,'');let offset=-1;
   const section=path.endsWith('/all')?html.match(/<section[^>]*aria-label="Four featured opportunities"[\s\S]*?<\/section>/)?.[0]:html;
   assert.ok(section);
   for(const r of picks){const index=section.indexOf('/chicago/charities/'+r.slug,offset+1);assert.ok(index>offset);offset=index;if(!path.endsWith('/all'))assert.ok(section.includes(formatEditionMoney(reportPrice(r))+' per better life'));}

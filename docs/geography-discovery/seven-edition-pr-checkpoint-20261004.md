@@ -1,5 +1,7 @@
 # Current scope override — October 4
 
+October5 next bounded phase: Climate Resolve accepted/integrated (localLA6deep, publicSites4105deep). $14.115M initial → $22.867M health+signedresources; health unchanged, netresourcesnegative.281 reconstructionchecks/28cases,31 integration/provenance tests. Actual newSol author+root790.031s (13.167min) recorded separately; no padded time. Next sole author VACF, then MMHNow/HumanOptions/PublicLawCenter andfourfeatures. Combine CR+VACF release after responsive gates. Local remaining780plannedmin; public795untilrelease. Details la-climate-review-checkpoint-20261005.md. No completed-count increase on live site claimed yet.
+
 October5 latest accepted release Sites410: LA25/25 initial,5/10 deep,0 featured. CCA $10.031M and GWC $23.357M independently accepted and published; six responsive/30 Node checks pass. CA/USA/NYC complete as below. Next five LA deep reviews and four highlights, then Chicago/Houston/Denver. Remaining57initial+34deep=795 planned minutes, overhead separate. This supersedes dated LA staging/snapshot entries below. Receipt la-five-deep-publication-20261005.json; actual research gaps excluded. Usage90% remaining;20% reserve.
 
 The latest user request narrows active expansion to California, USA, New York City, Los Angeles, Chicago, Houston and Denver, preserving San Francisco. Seattle, Boston, Atlanta and Detroit are cut from active work/directory; archives remain intact.

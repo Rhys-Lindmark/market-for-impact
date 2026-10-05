@@ -1,0 +1,415 @@
+{
+  "status": "pending-root",
+  "organizationId": "org:public-law-center",
+  "inputs": [
+    {
+      "name": "C",
+      "value": 22224507,
+      "unit": "USD full annual recipient recognized resources",
+      "basis": "observed",
+      "rationale": "2025 audit expense22,061,260 plus163,247 netted event costs; contributed12,343,512 retained.",
+      "sourceIds": [
+        "plc-audit25"
+      ]
+    },
+    {
+      "name": "K",
+      "value": 3800,
+      "unit": "approximate legal matters per unspecified last year",
+      "basis": "observed",
+      "rationale": "Nearly3,800 cases on undated homepage; not unique persons or completed outcomes.",
+      "sourceIds": [
+        "plc-home",
+        "plc-health",
+        "plc-mlp",
+        "plc-mlp-rct"
+      ]
+    },
+    {
+      "name": "e",
+      "value": 0.25,
+      "unit": "health-relevant matter fraction",
+      "basis": "judgment",
+      "rationale": "Finite conditional judgment, not a measured local causal effect; tested independently in serialized scenarios.",
+      "sourceIds": [
+        "plc-home",
+        "plc-health",
+        "plc-mlp",
+        "plc-mlp-rct"
+      ]
+    },
+    {
+      "name": "a",
+      "value": 0.25,
+      "unit": "additional implemented clinical resolution probability",
+      "basis": "judgment",
+      "rationale": "Finite conditional judgment, not a measured local causal effect; tested independently in serialized scenarios.",
+      "sourceIds": [
+        "plc-home",
+        "plc-health",
+        "plc-mlp",
+        "plc-mlp-rct"
+      ]
+    },
+    {
+      "name": "b",
+      "value": 0.25,
+      "unit": "ordinary-funding response fraction",
+      "basis": "judgment",
+      "rationale": "Conditional annual-funded-work response prior: only one quarter of gross observed activity is attributed to maintaining this full annual recipient resource package relative to grants, replacement lawyers and other funded support that would continue in its absence. Not an extra haircut on already-measured incremental outcomes; neither observed conversion nor a marginal-gift estimate. b=1 annual-work sensitivity exposes this judgment.",
+      "sourceIds": [
+        "plc-home",
+        "plc-health",
+        "plc-mlp",
+        "plc-mlp-rct"
+      ]
+    },
+    {
+      "name": "q",
+      "value": 0.03,
+      "unit": "net annual clinical utility per changed case",
+      "basis": "judgment",
+      "rationale": "Finite conditional judgment, not a measured local causal effect; tested independently in serialized scenarios.",
+      "sourceIds": [
+        "plc-home",
+        "plc-health",
+        "plc-mlp",
+        "plc-mlp-rct"
+      ]
+    },
+    {
+      "name": "T",
+      "value": 2,
+      "unit": "finite clinical years",
+      "basis": "judgment",
+      "rationale": "Finite conditional judgment, not a measured local causal effect; tested independently in serialized scenarios.",
+      "sourceIds": [
+        "plc-home",
+        "plc-health",
+        "plc-mlp",
+        "plc-mlp-rct"
+      ]
+    },
+    {
+      "name": "z",
+      "value": 0.9,
+      "unit": "positive clinical deduplication factor",
+      "basis": "judgment",
+      "rationale": "Finite conditional judgment, not a measured local causal effect; tested independently in serialized scenarios.",
+      "sourceIds": [
+        "plc-home",
+        "plc-health",
+        "plc-mlp",
+        "plc-mlp-rct"
+      ]
+    },
+    {
+      "name": "g",
+      "value": 1,
+      "unit": "LA/Orange share of modeled direct clients",
+      "basis": "judgment",
+      "rationale": "Models direct Orange County households inside current LA metro; no wider litigation spillovers or nonlocal payer benefit inferred.",
+      "sourceIds": [
+        "plc-home",
+        "plc-health",
+        "plc-mlp",
+        "plc-mlp-rct"
+      ]
+    },
+    {
+      "name": "discount",
+      "value": 0.03,
+      "unit": "annual discount fraction",
+      "basis": "judgment",
+      "rationale": "Finite conditional judgment, not a measured local causal effect; tested independently in serialized scenarios.",
+      "sourceIds": [
+        "plc-home",
+        "plc-health",
+        "plc-mlp",
+        "plc-mlp-rct"
+      ]
+    },
+    {
+      "name": "healthDelay",
+      "value": 1,
+      "unit": "years to first clinical benefit",
+      "basis": "judgment",
+      "rationale": "Finite conditional judgment, not a measured local causal effect; tested independently in serialized scenarios.",
+      "sourceIds": [
+        "plc-home",
+        "plc-health",
+        "plc-mlp",
+        "plc-mlp-rct"
+      ]
+    },
+    {
+      "name": "uniqueHouseholdShare",
+      "value": 0.8,
+      "unit": "modeled unique client households per legal matter",
+      "basis": "judgment",
+      "rationale": "Judged .8 households per matter excludes repeat and institutional matters; not health efficacy and not measured.",
+      "sourceIds": [
+        "plc-home",
+        "plc-health",
+        "plc-mlp",
+        "plc-mlp-rct"
+      ]
+    },
+    {
+      "name": "financialShare",
+      "value": 0.5,
+      "unit": "financially relevant household fraction",
+      "basis": "judgment",
+      "rationale": "Judged half of modeled client households have a potentially material resource barrier; no local measured mix.",
+      "sourceIds": [
+        "plc-home",
+        "plc-health",
+        "plc-mlp",
+        "plc-mlp-rct"
+      ]
+    },
+    {
+      "name": "financialAdditionality",
+      "value": 0.25,
+      "unit": "additional resource-changing resolution fraction",
+      "basis": "judgment",
+      "rationale": "Judged .25 additional implemented resource resolution versus existing protection and other advocates; independent of clinical success.",
+      "sourceIds": [
+        "plc-home",
+        "plc-health",
+        "plc-mlp",
+        "plc-mlp-rct"
+      ]
+    },
+    {
+      "name": "resourceGain",
+      "value": 1500,
+      "unit": "USD net one-time change before health-overlap adjustment per financial resolution",
+      "basis": "judgment",
+      "rationale": "Judged $1,500 net one-time resource change, after taxes, benefit withdrawal, displacement, replacement work and alternative assistance. Not gross awards or avoided face-value debt.",
+      "sourceIds": [
+        "plc-home",
+        "plc-health",
+        "plc-mlp",
+        "plc-mlp-rct"
+      ]
+    },
+    {
+      "name": "positiveOverlap",
+      "value": 0.5,
+      "unit": "retained fraction of positive resource benefit",
+      "basis": "judgment",
+      "rationale": "Only positive resource change retained at .5 to avoid counting health-linked welfare twice; full negatives retained.",
+      "sourceIds": [
+        "plc-home",
+        "plc-health",
+        "plc-mlp",
+        "plc-mlp-rct"
+      ]
+    },
+    {
+      "name": "processCost",
+      "value": 100,
+      "unit": "USD full time/travel/work burden per exposed household",
+      "basis": "judgment",
+      "rationale": "Judged $100 actual lost household time/travel/work resources, charged to all exposed households even no resolution or no clinical gain.",
+      "sourceIds": [
+        "plc-home",
+        "plc-health",
+        "plc-mlp",
+        "plc-mlp-rct"
+      ]
+    },
+    {
+      "name": "baseline",
+      "value": 20000,
+      "unit": "USD annual household resources, one modeled welfareperson",
+      "basis": "judgment",
+      "rationale": "Judged $20,000 household-year baseline; one welfareperson reference, family spillovers unpriced.",
+      "sourceIds": [
+        "plc-home",
+        "plc-health",
+        "plc-mlp",
+        "plc-mlp-rct"
+      ]
+    },
+    {
+      "name": "resourceYears",
+      "value": 1,
+      "unit": "finite household-year equivalent, not lifetime recurring salary",
+      "basis": "judgment",
+      "rationale": "Central one-time gain and process burden occupy one finite household-year at delay1; two-year recurring-benefit scenario is a different hypothesis, not repeated lump collection.",
+      "sourceIds": [
+        "plc-home",
+        "plc-health",
+        "plc-mlp",
+        "plc-mlp-rct"
+      ]
+    },
+    {
+      "name": "resourceDelay",
+      "value": 1,
+      "unit": "years to first resource effect",
+      "basis": "judgment",
+      "rationale": "Finite conditional judgment, not a measured local causal effect; tested independently in serialized scenarios.",
+      "sourceIds": [
+        "plc-home",
+        "plc-health",
+        "plc-mlp",
+        "plc-mlp-rct"
+      ]
+    },
+    {
+      "name": "payerTransferShare",
+      "value": 0,
+      "unit": "fraction of signed recipient resource change matched to payer",
+      "basis": "unknown",
+      "rationale": "Unknown-neutral central0 is not observed absence of creditor or taxpayer loss; explicit .5 and1 matched transfer stress.",
+      "sourceIds": [
+        "plc-home",
+        "plc-health",
+        "plc-mlp",
+        "plc-mlp-rct"
+      ]
+    },
+    {
+      "name": "payerPeople",
+      "value": 100,
+      "unit": "disjoint local payer welfarepeople / household units",
+      "basis": "judgment",
+      "rationale": "Finite conditional judgment, not a measured local causal effect; tested independently in serialized scenarios.",
+      "sourceIds": [
+        "plc-home",
+        "plc-health",
+        "plc-mlp",
+        "plc-mlp-rct"
+      ]
+    },
+    {
+      "name": "payerBaseline",
+      "value": 60000,
+      "unit": "USD annual payer household resources",
+      "basis": "judgment",
+      "rationale": "Finite conditional judgment, not a measured local causal effect; tested independently in serialized scenarios.",
+      "sourceIds": [
+        "plc-home",
+        "plc-health",
+        "plc-mlp",
+        "plc-mlp-rct"
+      ]
+    },
+    {
+      "name": "partnerCostPerHousehold",
+      "value": 0,
+      "unit": "USD external provider resource burden per exposed client household",
+      "basis": "unknown",
+      "rationale": "Unknown-neutral central0 is not observed absence of outside healthcare/provider opportunity costs.",
+      "sourceIds": [
+        "plc-home",
+        "plc-health",
+        "plc-mlp",
+        "plc-mlp-rct"
+      ]
+    },
+    {
+      "name": "clinicalHarmPerHousehold",
+      "value": 0,
+      "unit": "QALYs additional clinical harm per exposed household",
+      "basis": "judgment",
+      "rationale": "Finite conditional judgment, not a measured local causal effect; tested independently in serialized scenarios.",
+      "sourceIds": [
+        "plc-home",
+        "plc-health",
+        "plc-mlp",
+        "plc-mlp-rct"
+      ]
+    }
+  ],
+  "central": {
+    "id": "central",
+    "label": "central",
+    "inputs": {
+      "C": 22224507,
+      "K": 3800,
+      "e": 0.25,
+      "a": 0.25,
+      "b": 0.25,
+      "q": 0.03,
+      "T": 2,
+      "z": 0.9,
+      "g": 1,
+      "discount": 0.03,
+      "healthDelay": 1,
+      "uniqueHouseholdShare": 0.8,
+      "financialShare": 0.5,
+      "financialAdditionality": 0.25,
+      "resourceGain": 1500,
+      "positiveOverlap": 0.5,
+      "processCost": 100,
+      "baseline": 20000,
+      "resourceYears": 1,
+      "resourceDelay": 1,
+      "payerTransferShare": 0,
+      "payerPeople": 100,
+      "payerBaseline": 60000,
+      "partnerCostPerHousehold": 0,
+      "clinicalHarmPerHousehold": 0
+    },
+    "costUSD": 22224507,
+    "exposure": 760,
+    "paid": 95,
+    "allPopulationQalys": 3.0675311056650014,
+    "editionQalys": 3.0675311056650014,
+    "incomePathways": [
+      {
+        "id": "financial-resolution-households",
+        "people": 95,
+        "annualIncomeBeforeUSD": 20000,
+        "annualIncomeGainUSD": 650,
+        "years": 1,
+        "editionShare": 1,
+        "delayYears": 1,
+        "discountRate": 0.03,
+        "rationale": "One welfareperson per distinct modeled client household, no unobserved family multiplier. Financial change and full legal-process burden net within the SAME household before log; only positive resources receive health-overlap adjustment.",
+        "counterfactual": "Existing legal protections, alternative advocates, hospital case managers, benefits eligibility and grants continue. Gain is net of taxes, benefit withdrawal, replacement income and moving/work costs by judgment, not gross recovered debt or ordinary survivor earnings.",
+        "sourceIds": [
+          "plc-home",
+          "plc-health",
+          "plc-mlp"
+        ]
+      },
+      {
+        "id": "other-exposed-households",
+        "people": 665,
+        "annualIncomeBeforeUSD": 20000,
+        "annualIncomeGainUSD": -100,
+        "years": 1,
+        "editionShare": 1,
+        "delayYears": 1,
+        "discountRate": 0.03,
+        "rationale": "One welfareperson per distinct modeled client household, no unobserved family multiplier. Financial change and full legal-process burden net within the SAME household before log; only positive resources receive health-overlap adjustment.",
+        "counterfactual": "Existing legal protections, alternative advocates, hospital case managers, benefits eligibility and grants continue. Gain is net of taxes, benefit withdrawal, replacement income and moving/work costs by judgment, not gross recovered debt or ordinary survivor earnings.",
+        "sourceIds": [
+          "plc-home",
+          "plc-health",
+          "plc-mlp"
+        ]
+      }
+    ],
+    "incomeUnknown": false,
+    "incomeEquivalent": -0.1431800760277302,
+    "totalEquivalent": 2.924351029637271,
+    "price10": 75998082.22324346,
+    "assumptions": "Finite conditional health and signed joint household resources. Legal case scale is not a completed causal clinical or cash outcome. Central is partial-world reference; unknown costs are not factual zero."
+  },
+  "cases": 37,
+  "boundary": "Conditional finite legal-health and signed household-resource component, not a complete portfolio or world return and not a verified next-dollar donor offer.",
+  "unresolved": [
+    "Dated unique household case mix and implemented additional clinical/resource resolutions.",
+    "Net collected benefits, actual enforceable creditor recovery and taxes/benefit withdrawal.",
+    "Actual client time, travel, moving and unpaid work burdens.",
+    "Marginal staffing/volunteer conversion, funded alternatives and unfunded donor tranche.",
+    "Outside provider/payer opportunity resources, nonlocal incidence and systemic litigation effects."
+  ],
+  "authorSeconds": 527.742
+}

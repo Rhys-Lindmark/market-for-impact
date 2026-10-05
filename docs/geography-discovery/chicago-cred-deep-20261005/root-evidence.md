@@ -1,0 +1,15 @@
+# Chicago CRED independent acceptance
+
+Root accepted this bounded proposal after 40 scenarios/347 independently reconstructed numeric checks. Author proposal files retain pending-root labels; registry acceptance is authoritative.
+
+Original calendar2024 Form990-PF freshly fetched: EIN81-3130448, book expenses$36,314,414 including$10,552,266 grants; $37,047,914 charitable cash is a different column, not an addback. Whole-recipient cost cannot be silently restricted to direct employment or a few trial participants.
+
+Root independently read original PNAS full text through Europe PMC XML after PMC browser access failed. The study analyzes324 men/2500 comparisons,111 alumni. Victimization was not significantly reduced in any phase. The73.4% alumni arrest association and11.3percentage-point survival difference do not identify physical QALYs, PTSD utility or randomized ITT/TOT. Completer selection, exclusions, policing measurements and changing contexts remain limitations.
+
+Root rendered and inspected both pages of the original May2026 CORNERS summary: updated matched comparisons, about60% fewer violent-crime arrests among West Side alumni, community shooting reductions shared with overlapping CVIs and survey changes throughDecember2025. These qualitative findings do not provide a numerical CRED-only shooting coefficient, clinical utility or net earnings estimate. Current official employment page confirms paid internships and one year of post-placement coaching, not causal additional disposable earnings. Donation route comes from the current official site; no transaction attempted.
+
+Conditional initial center remains$230,355,756.53:1.356311 health QALYs plus0.220138 signed household-resource equivalents. Full initial report is preserved once. The center is a limited-channel judgment reference, not empirically calibrated full portfolio or marginal-gift EV. Study completion111/324 is a sensitivity, not substituted for current all-program completion. Updated sources improve interpretation, not an unsupported numerical revaluation.
+
+Independent math checks reconstruct clinical signs/overlap and finite trauma duration, disjoint household resource branches, one-off stipend/process costs, later recurring net jobs, delayed jobs, full negative tax/care/attendance burdens, matched payer/job displacement, union harms, unknown economic cost and zero/null/adverse controls. Production income bridge matches each serialized pathway exactly once. Initial-price floating arithmetic differs below one-millionth dollar; exact original recorded number is retained in registry history.
+
+Author closed intervals total192.566seconds; root source41.010seconds and model48.779seconds, GPT-6.1 Sol, partial coverage. Root source record26ae19f6-e286-484e-ba3d-f13269ee7e96 spanned21:54:32.747Z–22:00:18.884Z with an unestablished root action gap: zero research credit, excluded from published session registries. Author evidence progressed during this period and is separately recorded. Later PDF inspection was untimed and is not assigned minutes. Integration/tests/release/idle excluded; no further author this turn.

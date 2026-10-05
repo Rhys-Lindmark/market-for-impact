@@ -1,0 +1,7 @@
+# Draft source receipts — root acceptance pending
+
+Original FY24 audit https://www.oipcc.org/s/FY24-FINAL-AUDIT-OIPCC.pdf directly downloaded and pages5,6,13 visually checked by root. Expense1,060,786 includes program1,004,756, management21,345, fundraising34,685. Nonfinancial contribution660,816 is already expensed; note3lists660,815 under a mislabeled2023heading and excludes nonqualifying volunteered time. Governmentgrant263,484, endingnetassets1,107,740. These are accounting resources, not measured marginal expansion/opportunity cost.
+
+Official https://www.oipcc.org/who-we-are and https://www.oipcc.org/finances checked: undated >2500 patient panel, not annual unique count; listed2024/2023/2022audit links, no verified2025audit at index. Root independently checked randomized Oregon study PMID23635051: financial/mental health direction cannot calibrate this clinic's utility, response or savings. Author report contains further CareLink/HBIA/service eligibility claims that still require root challenge. Complete-source and arithmetic acceptance is pending; source narratives and judgment parameters are not treated as observed outcomes.
+
+See ../chicago-old-irving-stall-checkpoint-20261005.md for execution anomaly and actual closed timings. Author341.974seconds and root135.931seconds were closed before unexplained gaps; no idle or release time credited. No registry update or live publication made.

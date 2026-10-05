@@ -8,6 +8,8 @@ Rhys requested average-based estimates for older reports on September10. The sep
 
 ## Future research
 
+Apply the [holistic jobs/abundance/growth protocol](geography-discovery/holistic-jobs-growth-protocol-2026-10-05.md) when discovering, selecting and reviewing organizations: assess health and signed net household resources, not health-only rankings or gross salary claims. The protocol does not add promotional sections or completed research counts.
+
 1. Before focused work, run `node scripts/research-session.mjs start --organization "Exact report heading" --worker "stable worker/session ID" --phase research --evidence "auditable research artifact reference" --model-id "verified runtime ID" --model-name "verified display name" --model-evidence "runtime metadata reference"`. Omit all model flags only if identity cannot be verified; record null, never infer it from the current UI or another worker.
 2. Persist the printed start record in the task's isolated artifact using apply_patch. Start separate records for author research, modeling and independent source audits. Use stable worker IDs across organizations.
 3. Before switching organizations, pausing, waiting idle or doing integration/testing/deployment, finish with `node scripts/research-session.mjs finish --record /absolute/path/to/start-record.json`; persist the closed record. Restart a new interval when research resumes. Do not time several organizations under one record or apportion a batch duration.

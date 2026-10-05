@@ -9,6 +9,103 @@
   "timeBasis": "Sum of recorded, organization-specific researcher wall-clock intervals. Parallel researchers are counted separately; this is not elapsed calendar time or a quality score.",
   "historicalCoverage": "Earlier reports did not consistently record organization-specific research intervals or AI model provenance. Missing records are unknown, not zero.",
   "organizations": {
+    "Old Irving Park Community Clinic": {
+      "coverage": "partial",
+      "sessions": [
+        {
+          "id": "chicago789-old-irving-park-community-clinic-research",
+          "organizationId": "org:old-irving-park-community-clinic",
+          "stage": "alpha",
+          "workerId": "chicago789_research",
+          "phase": "research",
+          "startedAt": "2026-09-29T18:42:03Z",
+          "endedAt": "2026-09-29T18:44:01Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Light",
+            "reasoningEffort": "low",
+            "evidence": "Explicit parent dispatch: gpt-6-astra low, named GPT-6 Astra Light"
+          },
+          "evidence": "work/geography-handoff-20260913/resumed-20260929/givebetter-chicago-seven-nine.json"
+        },
+        {
+          "id": "old-irving-park-community-clinic-independent-source-audit-20260929",
+          "organizationId": "org:old-irving-park-community-clinic",
+          "stage": "alpha",
+          "workerId": "chicago_next_accept",
+          "phase": "source-audit",
+          "startedAt": "2026-09-29T18:43:08Z",
+          "endedAt": "2026-09-29T18:44:00Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "reasoningEffort": "medium",
+            "evidence": "Inherited explicit original parent gpt-6-astra medium dispatch; independent acceptance manager"
+          },
+          "evidence": "work/geography-handoff-20260913/resumed-20260929/chicago-seven-nine-source-audit.json"
+        },
+        {
+          "id": "c24bdad4-9852-48eb-977d-8afc6695538b",
+          "workerId": "chicago-oipcc-deep-sol-20261005",
+          "phase": "research",
+          "startedAt": "2026-10-05T19:27:41.047Z",
+          "endedAt": "2026-10-05T19:29:49.674Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed model assignment: GPT-6.1 Sol"
+          },
+          "evidence": "docs/geography-discovery/chicago-oipcc-deep-20261005/evidence.md",
+          "organizationId": "org:old-irving-park-community-clinic",
+          "stage": "beta"
+        },
+        {
+          "id": "9d207a9a-3fed-4fb4-b512-e7afd7e4ffc6",
+          "workerId": "chicago-oipcc-deep-sol-20261005",
+          "phase": "modeling",
+          "startedAt": "2026-10-05T19:29:49.784Z",
+          "endedAt": "2026-10-05T19:33:23.131Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed model assignment: GPT-6.1 Sol"
+          },
+          "evidence": "docs/geography-discovery/chicago-oipcc-deep-20261005/evidence.md",
+          "organizationId": "org:old-irving-park-community-clinic",
+          "stage": "beta"
+        },
+        {
+          "id": "1d486b0d-b514-46a9-b85a-7abc5a5cd096",
+          "workerId": "root-old-irving-audit",
+          "phase": "source-audit",
+          "startedAt": "2026-10-05T19:27:51.667Z",
+          "endedAt": "2026-10-05T19:30:07.598Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed model assignment: GPT-6.1 Sol for this task"
+          },
+          "evidence": "docs/geography-discovery/chicago-oipcc-deep-20261005/evidence.md",
+          "organizationId": "org:old-irving-park-community-clinic",
+          "stage": "beta"
+        },
+        {
+          "id": "86d1b1cf-7747-4fe8-8eae-b30ddd7f7352",
+          "workerId": "root-old-irving-audit",
+          "phase": "source-audit",
+          "startedAt": "2026-10-05T20:20:33.721Z",
+          "endedAt": "2026-10-05T20:23:12.827Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed model assignment: GPT-6.1 Sol for this task"
+          },
+          "evidence": "docs/geography-discovery/chicago-oipcc-deep-20261005/evidence.md",
+          "organizationId": "org:old-irving-park-community-clinic",
+          "stage": "beta"
+        }
+      ]
+    },
     "Nourishing Hope": {
       "coverage": "partial",
       "historicalSessions": [],

@@ -8,6 +8,14 @@ Rhys requested average-based estimates for older reports on September10. The sep
 
 ## Future research
 
+### Bounded delivery (October 5 throughput correction)
+
+The human-requested fifteen-minute deep-review budget covers source checks, modeling and report drafting, not an open-ended authoring session. Target one author pass of about fifteen active minutes and one independent root source/arithmetic challenge of about five active minutes. Initial reports target five active minutes. Do not pad shorter completed work. Preserve all required evidence, signed health/resources and verification gates.
+
+Before handoff, authors validate the packet against the actual current registry schema in memory, with the candidate sessions and progress membership; return portable tests and a full initial diagnostic. Root imports exact source spans, preserving existing JSON style, rather than repeatedly reformatting a whole registry. Use one material correction pass for scientific or schema failures; if a required issue remains, checkpoint the specific unresolved question as pending and continue independent required work. Never accept weak evidence just to meet the timer, or let repeated cosmetic/schema polishing turn a short review into hours.
+
+Batch tests/build/publication across accepted reports. Track research, independent review, integration/release overhead and elapsed idle/tool time separately. A turn's displayed elapsed duration is not research provenance. After ten active minutes without a source/model/test/acceptance milestone, inspect the same live tool/worker handle and diagnose the bottleneck. End bounded productive phases with durable next actions; do not keep an idle turn open waiting for a future schedule. These are workflow limits, not a guarantee against host/service suspension.
+
 Apply the [holistic jobs/abundance/growth protocol](geography-discovery/holistic-jobs-growth-protocol-2026-10-05.md) when discovering, selecting and reviewing organizations: assess health and signed net household resources, not health-only rankings or gross salary claims. The protocol does not add promotional sections or completed research counts.
 
 1. Before focused work, run `node scripts/research-session.mjs start --organization "Exact report heading" --worker "stable worker/session ID" --phase research --evidence "auditable research artifact reference" --model-id "verified runtime ID" --model-name "verified display name" --model-evidence "runtime metadata reference"`. Omit all model flags only if identity cannot be verified; record null, never infer it from the current UI or another worker.

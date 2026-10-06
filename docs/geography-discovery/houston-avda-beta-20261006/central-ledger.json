@@ -1,0 +1,97 @@
+{
+  "central": {
+    "inputs": {
+      "C": 4051637,
+      "N": 2500,
+      "clinicalN": 2500,
+      "clinicalResponse": 0.25,
+      "unique": 0.5,
+      "b": 0.3,
+      "q": 0.03,
+      "T": 2,
+      "g": 1,
+      "delay": 0.5,
+      "discount": 0.03,
+      "success": 0.3,
+      "medicalGain": 100,
+      "workGain": 1500,
+      "transferGain": 800,
+      "overlap": 0.5,
+      "cost": 100,
+      "baseline": 25000,
+      "harm": 0.001,
+      "payerLoss": 800,
+      "payerPeople": 10000,
+      "payerBaseline": 35000,
+      "externalCost": 0,
+      "resourceYears": 1
+    },
+    "costUSD": 4051637,
+    "exposed": 1250,
+    "union": 375,
+    "clinicalPeople": 93.75,
+    "allPopulationQalys": 4.230099904740518,
+    "editionQalys": 4.230099904740518,
+    "incomePathways": [
+      {
+        "id": "changed-households",
+        "people": 112.5,
+        "annualIncomeBeforeUSD": 25000,
+        "annualIncomeGainUSD": 1100,
+        "years": 1,
+        "editionShare": 1,
+        "delayYears": 0.5,
+        "discountRate": 0.03,
+        "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+        "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+        "sourceIds": [
+          "services",
+          "finance",
+          "cg-cost"
+        ]
+      },
+      {
+        "id": "other-exposed",
+        "people": 1137.5,
+        "annualIncomeBeforeUSD": 25000,
+        "annualIncomeGainUSD": -100,
+        "years": 1,
+        "editionShare": 1,
+        "delayYears": 0.5,
+        "discountRate": 0.03,
+        "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+        "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+        "sourceIds": [
+          "services",
+          "finance",
+          "cg-cost"
+        ]
+      },
+      {
+        "id": "distinct-payer-provider-households",
+        "people": 10000,
+        "annualIncomeBeforeUSD": 35000,
+        "annualIncomeGainUSD": -9,
+        "years": 1,
+        "editionShare": 1,
+        "delayYears": 0.5,
+        "discountRate": 0.03,
+        "rationale": "Distinct dispersed payer households face full transfer losses on changed households and external costs on every exposed local household, without a second payer geographic haircut.",
+        "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+        "sourceIds": [
+          "services",
+          "finance",
+          "cg-cost"
+        ]
+      }
+    ],
+    "incomeEquivalent": -1.1265718039722357,
+    "incomeUnknown": false,
+    "totalEquivalent": 3.1035281007682824,
+    "price10": 13054938.987009693,
+    "costPer10Qalys": 13054938.987009693,
+    "incomeEquivalentYears": -1.1265718039722357,
+    "combinedEquivalentYears": 3.1035281007682824
+  },
+  "cases": 34
+}

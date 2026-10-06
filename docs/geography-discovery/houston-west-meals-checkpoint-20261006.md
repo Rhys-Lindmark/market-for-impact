@@ -1,0 +1,15 @@
+# Houston West Street / Meals on Wheels initial pair
+
+October 6, 2026. Prior goal turn made progress: Daya and The Restoration Team published in Sites434 with six live checks. This turn revalidated clean HEAD8dc0ec8, canonical cohort priorities17/18 and 84% remaining weekly usage before dispatch. Seven active editions only; four later-deferred cities remain preserved and outside expansion.
+
+Isolated author houston_west_meals_initial completed both initial source/model packets; root independently challenged original source boundaries and arithmetic. Source evidence, original receipt IDs, complete frozen first diagnostics, compact cases, calculator and closed model sessions are in houston-west-meals-initial-20261006/. West Street central157930552.13958064; Meals17856201.06872594 dollars per ten combined healthy-year-equivalents. Health-only components0.09727847854222367 and1.7539905263722666; signed net resources are separate and counted once by the headline function. These are conditional partial-channel references, not complete portfolio EV or verified next-dollar opportunities. No change was forced.
+
+Acceptance:192 independent root comparisons across48 cases;298 portable arithmetic checks; actual current registry in-memory author validation;25 focused tests passed. All prior reports, sessions and provenance remain parsed-deep-equal to HEAD. Responsive and publication evidence are recorded in the linked publication receipt, once available; acceptance does not itself establish publication.
+
+Actual closed partial organization-specific time: West author76.078s + root19.222s =95.300s; Meals author81.458s + root24.567s =106.025s, GPT-6.1 Sol. Additional untimed original/source/model checks remain unrecorded. These short intervals are not claimed to be five minutes; no padded waiting. Integration, test and release elapsed time are excluded.
+
+After verified publication: Houston18/25 initial,0/10deep,0/4featured; Denver2/25 initial,0/10deep,0/4featured. CA25/10/4,USA28/13/4,NYC25/10/4,LA25/10/4,Chicago25/10/4 complete. Next selected initial pair Brighter Bites and Air Alliance Houston, then Bayou City Waterkeeper, Lighthouse, Easter Seals, Lone Star Legal Aid and AVDA. Remaining30 initials+20deep =450 planned research minutes; comparative selection, independent review and release overhead are separate, not a completion-time guarantee.
+
+One author, no children; root alone integration/release. No unexplained execution gap observed at source/model handoff. End this bounded pair after release; no new author in the same turn. Hourly prompt must be refreshed from verified receipt, not presumed success. Runtime scheduler fault remains unresolved; active flags or prompt edits are not proof of throughput.
+
+Space Saver: reused checkout, dependencies, Node24 and installed Chrome;32GiB free at start. Isolated source packet is small; no installation or copied generated tree. Temporary release archive is regenerable and removable only after verified upload/live checks/push. No task-owned server may remain after responsive checks.

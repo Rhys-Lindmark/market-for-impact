@@ -1,0 +1,9 @@
+# Houston feature phase complete
+
+Houston 25/25 initial, 10/10 deep, 4/4 featured, accepted and published on Sites450. Root challenged the isolated comparative proposal; shared picks are AVDA, Meals Montgomery, Lighthouse, Air Alliance, not the cheapest four. All organization models and provenance remained byte-identical. Fourteen focused tests, two responsive tests (actual four logos, price/order parity, no overflow), four landing/list checks and two edition-index checks on both hosts passed. See the linked publication JSON for source/deployment IDs and evidence. Zero organization research minutes added by this general selection/release phase.
+
+Six active editions now have completed report and feature sets. Denver remains 2/25 initial, 0/10 deep, 0/4 featured; next action is two initial reports from the existing candidate pool with one combined release. Remaining planned organization research: 23×5 +10×15 =265 minutes, excluding review, selection and release overhead. Do not repeat completed discovery or reopen P0 (40/40 cohort, 11/11 legacy, 48/48 queue complete). Seattle/Boston/Atlanta/Detroit remain deferred per later human scope.
+
+Fresh usage80% remaining, ordinary usage allowed; preserve20%, no new research at/below25%, no reset credits. Hourly automation updated to this checkpoint and next bounded phase. Runtime recovery fault is unresolved; no assertion that an active schedule guarantees hourly execution. Previous diagnostic turn did not advance publication; this phase made authoritative progress and ends after receipt push and task archive cleanup rather than holding the turn open. No live author, build, deployment or preview handle remains required.
+
+Space baseline28GiB free, docs35MB/data36MB/build44MB; existing compatible dependencies reused, no installs or media downloads. The saved archive is regenerable from its source commit and will be removed only after the receipt is pushed; source, proposal and evidence are preserved.

@@ -1,0 +1,11 @@
+# Houston Bayou / Lighthouse initial pair
+
+The previous turn answered the scheduler question; it did not accept or publish this pair. This continuation verified 83% weekly usage remaining and the existing source checkout. Only the prepared two-report packet is in scope for this bounded turn; no new organizations will be dispatched.
+
+Original IRS and consolidated audited costs were checked independently. Lighthouse's related-party transfers are eliminated; full consolidated annual costs retain merchandise cost and direct donor benefits. Bayou's proposed repair fund and historical consent decree are not treated as delivered recipient-attributed benefits. The conditional reference models keep clinical health separate from signed net household resources, with full negative costs and positive-only overlap. Whole annual costs versus partial channels are not complete portfolio or marginal-gift EV.
+
+Root requested one material correction: Lighthouse full tuition and training-time burdens must appear in downside sensitivity, with the net-earnings definition explicit. Formula descriptions must match the clinical subgroup calculation. Acceptance and publication remain pending until the corrected packet and release gates pass. Frozen first diagnostics, original source receipts and actual closed model intervals are preserved. Untimed checks, integration, tests and idle time are not research minutes.
+
+Live counts before this release: Houston20/25 initial,0/10 deep,0/4 featured; Denver2/25,0/10,0/4. After verified acceptance and publication of this pair, Houston22/25; remaining26 initial +20 deep =430 planned research minutes, with selection, independent review and release overhead separate. Seattle,Boston,Atlanta,Detroit are deferred and preserved; the later human scope supersedes the stale native goal wording.
+
+Space Saver:31GiB free,93% capacity. Reuse Node24, installed dependencies and Chrome; no copied dependency trees. Temporary server port3107 checked unused before responsive testing. Keep one regenerable build and one release archive; remove only that exact archive after verified upload/live/push. Runtime/scheduler recovery is unresolved; short checkpointed turns are mitigation, not a watchdog repair.

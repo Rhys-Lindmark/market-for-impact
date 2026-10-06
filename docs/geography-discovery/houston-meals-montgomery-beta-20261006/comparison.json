@@ -1,0 +1,79 @@
+{
+  "organization": "Meals on Wheels Montgomery County",
+  "initial": {
+    "health": 1.7539905263684614,
+    "income": 1.0443751398603005,
+    "price10": 17856201.06872594
+  },
+  "burdenOnly": {
+    "id": "burden-accounting-only",
+    "label": "burden accounting only",
+    "overrides": {
+      "T": 0.75,
+      "resourceYears": 1
+    },
+    "costUSD": 4996818,
+    "exposed": 1178,
+    "union": 353.4,
+    "clinicalPeople": 141.35999999999999,
+    "allPopulationQalys": 0.9354616140631795,
+    "editionQalys": 0.9354616140631795,
+    "incomePathways": [
+      {
+        "id": "changed-households",
+        "people": 176.7,
+        "annualIncomeBeforeUSD": 20000,
+        "annualIncomeGainUSD": 270,
+        "years": 1,
+        "editionShare": 1,
+        "delayYears": 0.25,
+        "discountRate": 0.03,
+        "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+        "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+        "sourceIds": [
+          "services",
+          "finance",
+          "cg-cost"
+        ]
+      },
+      {
+        "id": "other-exposed",
+        "people": 1001.3,
+        "annualIncomeBeforeUSD": 20000,
+        "annualIncomeGainUSD": -30,
+        "years": 1,
+        "editionShare": 1,
+        "delayYears": 0.25,
+        "discountRate": 0.03,
+        "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+        "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+        "sourceIds": [
+          "services",
+          "finance",
+          "cg-cost"
+        ]
+      }
+    ],
+    "incomeEquivalent": 0.4300175721770565,
+    "incomeUnknown": false,
+    "totalEquivalent": 1.365479186240236,
+    "price10": 36593878.91336839,
+    "costPer10Qalys": 36593878.91336839,
+    "incomeEquivalentYears": 0.4300175721770565,
+    "combinedEquivalentYears": 1.365479186240236,
+    "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+  },
+  "current": {
+    "health": 0.911876546204371,
+    "income": 0.09397376029329296,
+    "total": 1.0058503064976638,
+    "price10": 49677551.10001157
+  },
+  "recognizedProgramCost": {
+    "costUSD": 2206008,
+    "price10": 21931772.409368187,
+    "scope": "Recognized home-delivery program expense only; excludes allocated fundraising, overhead and volunteer resources. Partial program cost sensitivity, not full annual portfolio or marginal-gift effectiveness."
+  },
+  "change": "Full exposure costs and harms plus a native meal-density duration proxy raise the conditional full-recipient-cost/meal-channel reference; the cost-aligned sensitivity isolates numerator scope, not measured whole-portfolio effectiveness.",
+  "actualAuthorMinutes": 3.0021
+}

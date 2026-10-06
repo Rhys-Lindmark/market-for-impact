@@ -1,0 +1,11 @@
+# Energy Outreach Colorado source checkpoint
+
+Original IRS FY2025/2024/2023 periods explicitly verified: Oct1–Sep30; full recognized cost adds netted direct event spending:76,988,385 /83,135,058 /65,890,165 USD. FY2025 original program utility cash assistance cost21,873,982, grants21,363,200; other efficiency/weatherization/furnace/publicLEAP/advocacy channels separate. No invented annualCfromcumulative410M.
+
+Own current homepage reports40,789households and120,328people served2025 across all programs, not unique bill-assistance cases. Center uses household envelope40789×billchannel.5×dedup.9, both fractions judgment; no individual count added tohouseholds. Denver share.45 judgment statewidebeneficiaries; native serviceandgeodistribution needproviderconfirmation. No currentannualnumber inferredfromI70repeated251historicalhomes.
+
+Current2026outreach award primary page funding derivesmandatory utilitycustomerEASBC, promotingLEAP/WAP andEOC enrollment. Publiclypaidutilitybaseline reducesincrementalresponse; donorroute own/donate redirectshttps://energyoutreach.donorsupport.co/page/FUNUXYHLTRW?element=XAFABFMS&elementType=textLink. LegalEIN74-2543881 independentlyverifiedoriginal990.
+
+Finite center b.25 additionality,response.2,q.01,halfyearhealth are explicit judgments about incremental temperature/security—notmeasured clinicaleffects. Netresource500 assumes billpaymentfrees otherwise paid household resources afterbenefitwithdrawal; positive-onlyoverlap.5, full15access/timecost each exposedhousehold. Distinctpayerloss150 perattributedhousehold is conservativejudged public/tariffincidence, notdonorresourcecost repeated. Publicfundingdoesnotvanish; no grossgrant/retailenergyplushealthdoublecount. No measuredmarginalgiftcapacityorwholeportfolioEV. Programcost21.874M recognizedbillchannel sensitivity excludesallocatedoverhead/volunteers.
+
+Sources: https://energyoutreach.org/ ; https://energyoutreach.org/2026-ea-funding-awards/ ; https://energyoutreach.org/donate/ ; https://projects.propublica.org/nonprofits/full_text/202640229349300114/IRS990 ; https://projects.propublica.org/nonprofits/full_text/202540159349301829/IRS990 ; https://projects.propublica.org/nonprofits/full_text/202440189349301404/IRS990 . Primarywebbodyreadwithscripts/stylesremoved; originalIRS HTMLreadwithperiodandfunctional/event/programlines.

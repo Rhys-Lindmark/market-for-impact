@@ -113,6 +113,23 @@ test('unknown runtime stays unknown; lists retain initial estimates without chan
  const historical=school.model.scenarios.find(s=>s.id==='historical-alpha-central');
  assert.ok(Math.abs(10*historical.costUSD/historical.editionQalys-26853571.42857143)<.01);
 });
+test('retained initial price includes its own signed income exactly once',()=>{
+ const {r}=fixture();
+ const original={...r.model.scenarios[0],id:'historical-alpha-central'};
+ const pathway={people:200,annualIncomeBeforeUSD:50000,annualIncomeGainUSD:500,years:1,sourceIds:['s1'],rationale:'Synthetic',counterfactual:'Synthetic'};
+ original.incomePathways=[pathway];
+ r.model.scenarios=[{...r.model.scenarios[0],editionQalys:-1,incomePathways:[]},original];
+ const income=.5*200*Math.log1p(.01);
+ assert.equal(reportPrice(r),null);
+ assert.equal(researchListPrice(r),1000000/(10+income));
+ r.model.incomeBridge={...pathway,annualIncomeGainUSD:5000};
+ assert.equal(researchListPrice(r),1000000/(10+income),'Current bridge must not alter history');
+ original.incomePathways=[{...pathway,annualIncomeGainUSD:-500}];
+ assert.equal(researchListPrice(r),1000000/(10+.5*200*Math.log1p(-.01)));
+ original.incomeUnknown=true;assert.equal(researchListPrice(r),null);
+ original.incomeUnknown=false;original.editionQalys=null;original.incomePathways=[pathway];
+ assert.equal(researchListPrice(r),null,'Unknown health is not observed zero');
+});
 test('header time uses whole focused intervals, and duplicate/overlapping sessions fail',()=>{
  const {data,progress,r}=fixture();assert.equal(editionResearchEffort(data,r).label,'Research time: 15 min on GPT-6 Astra Light');
  data.sessions.push({...data.sessions[0],id:'overlap'});assert.throws(()=>validateEditionReports(data,progress),/overlapping/);

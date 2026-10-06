@@ -1,0 +1,14 @@
+# Independent AVDA primary-source audit
+
+Current avda.org legal, counseling, donation and mission pages checked October 6. Houston recipient EIN 74-2141981, not Florida AVDA 59-2486620. Six legal counties include Grimes and Washington outside Houston MSA; Harris-only counseling. Representation/fees and public/pro bono alternatives remain explicit. Current counseling age descriptions conflict (homepage 12+, dedicated page 3+), so avoid unsupported exact eligibility age.
+
+Original IRS FY2023 202423049349301862 full functional expenses 4,051,637 with no direct event expense field. FY2022 202323199349318297 3,758,444, no direct event span. FY2021 202233199349310018 3,389,957 plus 90,557 direct event costs = 3,480,514. All full calendar-year periods and legal EIN checked in original fields. FY2023 narrative repeats 'IN 2022' 6,366 adults and children; do not relabel as matched 2023 causal outcomes or unique households. FY2022 same native count and narrative. Outreach/counseling/legal/BIPP outputs must not be added as disjoint clinical successes.
+
+Index currently lists FY2024 audit and flags material weakness; original download endpoint returned 403, not reviewed PDF or verified 2024 expense. Named 2024 annual report Canva link returns no readable text in web fetch. Both retrieval limits disclosed; no inferred current cost. Current service pages identify safety planning, protective orders, divorce/custody/support, trauma counseling, education/emergency resources. Transfers need counterparty/public-payer incidence; avoid household wealth or gross salaries counted as consumption. Safety risks, resource costs and court fees not erased by a success/overlap coefficient. General prevalence and cumulative 45-year outputs are not annual clinical success.
+
+Root source interval 18:55:42.720–18:56:49.001Z, 66.281 seconds, verified GPT-6.1 Sol. No setup, tests, release or waiting added. Calculator challenge is recorded separately when packet arrives.
+
+## Independent acceptance
+
+Frozen packet reviewed after handoff. No material scientific correction required. Root reconstruction112 comparisons/28cases reproduces health, signed net resources, sum and price separately. Portable175assertions/28cases and preintegration current schema pass. Original diagnostic remains identical to frozen initial report. Source web reads establish current narratives despite author direct-fetch403 receipts; newer audit remains unreviewed. Root timing66.281s plus author100.713s yields166.994 recorded partial seconds GPT6.1Sol; untimed analysis not fabricated. Registry/provenance/responsive/deployment gates recorded at release.
+Final local gates: 25 focused registry/provenance tests and two phone/tablet header/price/no-overflow checks passed. All previous reports, sessions and effort entries unchanged. Pending public release recorded in its separate receipt; proposed ten-review selection is not accepted beta research.

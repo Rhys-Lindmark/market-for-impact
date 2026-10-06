@@ -1,6 +1,6 @@
 # Denver pair checkpoint
 
-2026-10-06: two initial reports independently accepted and integrated; pending combined release. Denver6/25initial,0/10deep,0/4features. Other six active editions retain complete sets. Four deferred cities are not scope.
+2026-10-06: two initial reports independently accepted, integrated and published on Sites452, source43605aeb9a130d5d9a496ddf73723c21027dbecc. Eight both-host live checks passed; immutable IDs/results in publication.json. Denver6/25initial,0/10deep,0/4features. Other six active editions retain complete sets. Four deferred cities are not scope.
 
 Evidence: original-source root notes; 276 independent direct-equation checks/69 scenarios;424 portable author checks/69;24 focused registry/provenance tests;2 phone/tablet responsive checks. All162 previous reports/608 sessions and existing effort entries preserved. Available exact partial author/root intervals included; publication overhead excluded. Required new report/list prices synchronized through shared pricing helper; no numerical manipulation.
 

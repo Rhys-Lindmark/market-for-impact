@@ -1,0 +1,9 @@
+# Independent patient/household correction and primary clinical anchor
+
+Distinct 520 MST clients are clinical patients. The .9 uniqueness hypothesis deduplicates caregiver household resources only; it must not reduce patient health or patient process harms. Full clinical harms now apply to N patients, resource burdens to judged unique households. First complete diagnostic/calculator remain frozen unchanged.
+
+Read original START trial abstract https://pubmed.ncbi.nlm.nih.gov/29307527/ : 684 families randomized to MST versus active management-as-usual; 3–5 months of care, no significant out-of-home placement difference at 18 months. This is a direct warning against treating receipt or placement savings as additional health.
+
+Read author NIHR START II scientific summary https://www.ncbi.nlm.nih.gov/books/NBK557327/ : EQ-5D-3L-based QALYs slightly lower in MST, not significantly different; no robust employment/education benefit against intensive ordinary services. UK active-care comparison is not Savio's actual Colorado access counterfactual; missing baseline utility/attrition and setting differences limit transfer. An explicit strong-alternative clinical/resource-null regime is added, rather than silently generalizing null to all Colorado families.
+
+Current positive reference remains a conditional access-gap hypothesis, not trial calibration: .04 utility for one year equals 14.6 healthy-day-equivalents for a responder, with .4 response, .8 completion and .25 access additionality. This requires incremental mental-health functioning beyond available public care. No placement rates, crime savings or future child wages are converted into clinical utility. One-year persistence is a hypothesis bounded against treatment-only .25-year sensitivity and the trial's lack of superior long-term outcomes. Caregiver $250 net-resource gain is not established by the trial; null/negative regimes explicitly retained.

@@ -1,0 +1,9 @@
+# Daya bounded beta handoff
+Author packet frozen pending root independent source/arithmetic acceptance. No checkout edits or publication.
+Portable tests:233 comparisons/assertions,36 serialized cases; actual production registry validation passes in memory. Exact initial report/session IDs and calculator preserved.
+Initial265,395,047.30921248 per10 equivalents. Current limited reference:health−.07759180860450159,income−1.134817876806105,total−1.2124096854106066,no finite positive price. Burden-only total−.8528066953439788 isolates exposure correction; native program restriction separately changes resource calculation.
+Primary evidence supports plausible integrated mechanisms and comparative usual-service regimes, not Daya-specific causal QALY/income. Clinical overlap75–150 and resource intersection0–75 tested. Full broader564safety utility replaces the narrow clinical utility; high-dose hypothesis positive18.986M—not preferred/observed. Uniform100 burden may overstate brief users; weighted-intensity sensitivity explicitly included and remains nonpositive. This is not measured harm or a whole-portfolio effectiveness judgment.
+Closed actual Sol author minutes3.7907666667 (research1.31385,model/report2.4769166667); setup, tests, receipts, root review/wait excluded.
+Original2025PDF2pages extracted/rendered p1/p2; official byte/hash receipt saved. JAMA raw403 but original full text successfully web-rendered/read; PLOS original full text read. Root independently fetched FY2024 original finance. Source citations, vintage mismatch and limits retained.
+Exact evidence limits:unique household/dose/outcome overlap, local comparative effects, income after alternatives, time burden, privacy/retaliation harms, volunteer/payer opportunity resources and current marginal donor capacity.
+Next:root independent challenge and combined integration/release; author no additional organizations.

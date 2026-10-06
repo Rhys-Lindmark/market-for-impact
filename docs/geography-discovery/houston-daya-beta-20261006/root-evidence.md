@@ -1,0 +1,15 @@
+# Daya independent acceptance, 2026-10-06
+
+Root accepts this bounded deep-review packet after original-source and independent arithmetic challenge. This is a conditional annual partial-channel model, not a measured negative effect of Daya or a complete marginal-gift estimate. Initial $265,395,047.30921248 remains a frozen diagnostic, including its original signed income.
+
+Original official 2025 PDF was visually checked: service categories overlap; 75 counseling, 75 housing and 109 economic users cannot be added to 564 safety/crisis users or treated as completed effective doses. Root freshly confirmed FY2024 $1,928,451 tax expense plus $18,404 netted direct event expense = $1,946,855. Newer service outputs and older costs remain a disclosed mismatch.
+
+Root read original JAMA DVHF comparative study and PATH randomized trial. DVHF is weighted nonrandom, not a randomized local Daya study. PATH has 263 recruited and 64% twelve-month retention; eight psychological advocacy sessions plus follow-ups improved symptom outcomes against usual advocacy, not a measured Daya QALY or earnings coefficient. The clinical envelope uses maximal counseling/housing overlap, with wider and broad safety replacement sensitivities, not additive utility streams. Primary studies support mechanisms; retained utility, duration, additionality, response and exposure burdens are hypotheses.
+
+Root challenged uniform $100 costs for brief contacts and a narrow counseling-only model. Packet now contains service-intensity-weighted burden and low/high-dose broad safety replacement cases. The broader positive sensitivity is not promoted to central merely to yield a finite price. Monetary aid is not measured net new income. Restricted native work/housing groups, joint household logs, full signed negative costs, overlap, alternative services, taxes/benefits and distinct payer incidence are explicit. Unmodeled portfolio benefits remain unknown, not zero.
+
+Independent calculator reconstruction does not call the production income equivalence helper: 150 checks across36 cases pass, including health, signed income, totals/prices, partition coverage, zero exposure, zero additionality, geography and negative overlap. Portable packet233 checks and full current schema validate in memory. Current health −0.07759180860450159; income −1.1348178768061048; combined −1.2124096854106063; no finite positive current price. This arithmetic does not validate the hypothetical coefficients empirically.
+
+Actual root source interval retained separately in root closed receipt. Later integration/tests are not research minutes. Only report/list schema, preservation and responsive publication remain before release.
+
+Sources: https://www.dayahouston.org/services ; https://www.dayahouston.org/_files/ugd/9102b2_64ec8c371e6449ddb57a1886d738c429.pdf ; https://projects.propublica.org/nonprofits/full_text/202513159349304971/IRS990 ; https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2806371 ; https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0205485 ; https://coefficientgiving.org/research/cost-effectiveness/

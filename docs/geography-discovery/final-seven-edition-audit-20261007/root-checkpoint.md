@@ -2,6 +2,8 @@
 
 ## Third initial correction accepted; release pending
 
+Superseded by verified publication Sites477 source815b129e85f5def94c80ac8502f24e57922504ae succeeded16:32:10UTC; fourteen edition home/all parity cases passed16:32:40UTC, six tracker/HHH current-price/header cases on both hosts passed16:33:20UTC. Initial serial verifier network timeout resolved by bounded per-path concurrent checks, no repeat deployment. HHH $37.1M and66flag/330planned-minute tracker match source. All182other registry reports unchanged; full original diagnostic equals prior authoritative report. Preview3107 stopped;15MB task archive eligible for removal. Three corrections published/66flags remain; next Above and Beyond Chicago. Receipt ../houston-hhh-alpha-income-20261007/publication.json. Goal incomplete.
+
 HHH Houston independently source/math challenged and integrated: original $55.63M→conditional $37.06M per better life; annual-work cash-response boundary corrected, full clinical harm and signed household access/resource costs retained. Whole unaudited recipient expense/narrow dental scope and gift capacity unknown remain explicit. Fresh HRSA workbook confirms1499visits/595patients and screening659 is not treated depression; original five worlds retained. Portable213checks/36cases/schema pass. Three accepted corrections,66 flags remain (Houston0,Chicago6,other four15each). No stage/count/top-four promotion. Next combined release, then Above and Beyond Family Recovery Center Chicago. Author168.641seconds/rootsource86.477seconds Sol closed before tests/admin; no research clock open.
 
 ## Second correction accepted; release pending

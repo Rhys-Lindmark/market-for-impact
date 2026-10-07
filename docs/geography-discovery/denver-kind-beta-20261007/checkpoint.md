@@ -1,4 +1,4 @@
-# KIND accepted; publication phase
+# KIND accepted and published: Sites465
 
 Previous goal turn PROGRESS: HRAC verified Sites464 publication checkpoint pushed537d42d and heartbeat advanced KIND. This turn one isolated author completed KIND, root original source/arithmetic challenge accepted, all unrelated report/session/provenance preservation passes. Seven active editions only; four deferred cities unchanged.
 
@@ -6,4 +6,4 @@ Previous goal turn PROGRESS: HRAC verified Sites464 publication checkpoint pushe
 
 Author actual232.151s plus.232s freshclarification; root40.838s closedsource interval. Untimedpostclocksource/clarification not reconstructed; coveragepartial. Test/releaseoverhead not research. Generator initially emitted duplicate same-file operations rejected beforemutation; combinedhunks thenapplied. Portable selftest adaptedtocanonicalregistryratherthan duplicating190KBreport. No paddedwait.
 
-Denveracceptedregistry25initial/2deep/0features awaitsverifiedproductionreceipt. NextHungerFreeColorado, then7remainingdeepreviews, then4comparativefeatures.120plannedresearchminutesplusreview/releaseoverhead—notwall-clockguarantee. Goalactive. Usage77%remainingcheckedbeforeauthor; resetcreditsuntouched. Root-ownedpreviewtemporary exited afterchecks. No secondauthorinthisphase.
+Denver25initial/2deep/0features published on Sites465, sourcef153d480f4316ed187df7263d477e1960a3c5fca. Deployment succeeded2026-10-07T01:07:50.012065Z; six report/list/progress checks across both hosts passed01:08:00.514Z. Receiptpublication.json. NextHungerFreeColorado, then7remainingdeepreviews, then4comparativefeatures.120plannedresearchminutesplusreview/releaseoverhead—notwall-clockguarantee. Goalactive. Usage77%remainingcheckedbeforeauthorandafterrelease; resetcreditsuntouched. Root-ownedpreviewtemporary exited afterchecks. No secondauthorinthisphase. Firstpackagebuildinvocation inheritedsystemNode12 inchildprocess and failed; correctedNode24PATH propagation thenbuild/packagepassed, no redeployment duplicated. Exact regenerable release archive removed after verifiedreceipt; unique source/model/provenance retained.

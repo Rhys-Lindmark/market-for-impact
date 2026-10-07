@@ -1,0 +1,5 @@
+# Thriving Families deep review acceptance
+
+Root independently checked original MotherWise RCT, matched FY2023 original IRS cost/cohort and reconstructed health plus signed resources across45scenarios:190checks passed. Portable219checks and actual production schema memory pass. One material ITT/dose-transport clarification was incorporated into the attribution, inputs and narrative. Full frozen initial diagnostic is preserved. Current conditional partial-channel price $72.634545M versus initial $57.918926M, not empirical whole-portfolio deterioration or a marginal-gift quote. Health .413395 years; signed household-resource equivalents -.219062, no unsupported central work benefit. Finite burdens, unknown additional services and source-transport limitations retained.
+
+Scientifically accepted; publication and list/provenance synchronization require release evidence. Author406.878seconds plus root54.594seconds actual GPT-6.1Sol; earlier interrupted root interval excluded in full rather than reconstructed. No waits/tests/build/publication charged as research.

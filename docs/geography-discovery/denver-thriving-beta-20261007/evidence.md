@@ -1,0 +1,11 @@
+# Thriving Families beta source checkpoint
+
+Current own program and giving pages were read on 2026-10-07. MotherWise has six weeks plus coaching; La Luz has four weeks/six hours and refers to ROSE; WiseWellness counseling and Incredible Years are separate services. Childcare and transport are provided, but dose completion and net opportunity costs remain unobserved.
+
+Fresh original FY2024 and FY2023 IRS bodies returned HTTP 200 via Node after web errors. Full cost FY2024 is 1,899,069 + 30,675 = 1,929,744; FY2023 is 1,380,261 + 31,271 = 1,411,532. Original FY2023 describes 567 enrolled participants, not completed unique La Luz cases. Latest index reviewed still shows FY2024. The numerical reference will match historical FY2023 cost/cohort, with FY2024 cost sensitivity rather than claim current productivity.
+
+Direct MotherWise 30-month randomized evaluation independently read by root: 949 randomized, 748 respondents. Relationships changed, maternal/child well-being did not clearly improve. This does not invalidate separate La Luz/ROSE prevention, and does not prove all recipient benefits zero. Root original PDF: https://www.mathematica.org/download-media?MediaItemId=%7BBF239FFC-B516-461C-B644-3435EC6DF490%7D
+
+Original ROSE full manuscript successfully read through NIH BioC HTTP 200: https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_json/PMC4641029/unicode . Four antenatal 90-minute groups plus 50-minute postpartum booster; average 3.5 of five sessions attended. The six-month 16% versus 31% incidence difference is ITT with incomplete uptake, not completer efficacy. Local .7 is explicitly a judged dose/fidelity transport factor relative to trial assignment; completion=1 sensitivity declines that additional haircut. Current postpartum La Luz format is a substantive population/dose transport uncertainty. No measured utility or net earnings coefficient. Own marketing preterm-birth percentage is not accepted as universal clinical effect.
+
+Sources: https://thrivingfamiliescolorado.org/programs ; https://thrivingfamiliescolorado.org/word-of-thanks-giving ; https://projects.propublica.org/nonprofits/full_text/202531409349300438/IRS990 ; https://projects.propublica.org/nonprofits/full_text/202401089349301915/IRS990 ; https://www.coloradogives.org/organization/ThrivingFamilies/

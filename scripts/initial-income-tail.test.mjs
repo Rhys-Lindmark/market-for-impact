@@ -14,7 +14,9 @@ import * as yimby from '../docs/geography-discovery/ca-yimby-alpha-income-202610
 const data=JSON.parse(fs.readFileSync(new URL('../data/geography-reports.json',import.meta.url)));
 for(const [edition,slug,dir] of [
  ['california','california-pan-ethnic-health-network','ca-cpehn-alpha-income-20261007'],
- ['usa','national-health-law-program','usa-nhelp-alpha-income-20261007']
+ ['usa','national-health-law-program','usa-nhelp-alpha-income-20261007'],
+ ['usa','us-alcohol-policy-alliance','usa-usapa-alpha-income-20261007'],
+ ['usa','rx-outreach','usa-rxo-alpha-income-20261007']
 ])test(slug+' preserves original clinical reference and explicit unknown income',()=>{
  const r=data.reports.find(r=>r.edition===edition&&r.slug===slug);
  const original=JSON.parse(fs.readFileSync(new URL('../docs/geography-discovery/'+dir+'/original-report.json',import.meta.url)));
@@ -36,6 +38,27 @@ test('NHeLP optional payment sensitivity is independent of clinical benefit and 
  assert.equal(model.financialDiagnostic({q:0}).income,model.financialDiagnostic().income);
  assert.equal(model.financialDiagnostic({b:0}).income,0);
  assert.equal(r.model.scenarios.find(s=>s.id==='central').incomePathways,undefined);
+});
+test('USAPA source-based payment threshold is not credited as household income or welfare',async()=>{
+ const m=await import('../docs/geography-discovery/usa-usapa-alpha-income-20261007/model.mjs');m.tests();
+ const r=data.reports.find(r=>r.edition==='usa'&&r.slug==='us-alcohol-policy-alliance');
+ const d=r.model.paymentThresholdDiagnostic;
+ assert(Math.abs(d.paymentChange-32.15)<1e-10);
+ assert(Math.abs(m.paymentDiagnostic(d.breakEvenQuantityReduction).paymentChange)<1e-10);
+ assert.equal(d.income,null);assert.equal(d.welfare,null);
+ assert.equal(r.model.scenarios.find(s=>s.id==='central').incomePathways,undefined);
+ assert.equal(m.calculate({e:0}).income,null);
+});
+test('Rx Outreach dose-specific payment example is not an average patient income or clinical credit',async()=>{
+ const m=await import('../docs/geography-discovery/usa-rxo-alpha-income-20261007/model.mjs');m.tests();
+ const r=data.reports.find(r=>r.edition==='usa'&&r.slug==='rx-outreach');
+ const d=r.model.paymentCostDiagnostic;
+ assert.equal(d.days,360);assert.equal(d.payment,88);
+ assert.equal(m.paymentDiagnostic(0).outlayChange,88);
+ assert.equal(m.paymentDiagnostic(88).outlayChange,0);
+ assert.equal(d.income,null);assert.equal(d.welfare,null);
+ assert.equal(r.model.scenarios.find(s=>s.id==='central').incomePathways,undefined);
+ assert.equal(m.calculate({t:0}).income,null);
 });
 for(const [slug,model] of [['essential-access-health',essential],['california-yimby-education-fund',yimby]])test(slug+' independent signed-resource worlds reproduce',()=>{
  const report=data.reports.find(r=>r.edition==='california'&&r.slug===slug);model.tests();

@@ -9,6 +9,144 @@
   "timeBasis": "Sum of recorded, organization-specific researcher wall-clock intervals. Parallel researchers are counted separately; this is not elapsed calendar time or a quality score.",
   "historicalCoverage": "Earlier reports did not consistently record organization-specific research intervals or AI model provenance. Missing records are unknown, not zero.",
   "organizations": {
+    "Rx Outreach": {
+      "coverage": "partial",
+      "sessions": [
+        {
+          "id": "usa-alpha-rx-outreach-20260913-worker1",
+          "organizationId": "ein:35-2378788",
+          "stage": "alpha",
+          "phase": "research",
+          "workerId": "usa_alpha_one",
+          "startedAt": "2026-09-13T22:17:41Z",
+          "endedAt": "2026-09-13T22:26:34Z",
+          "evidence": "data/geography-reports.json#usa/rx-outreach — Original financial and in-kind reconciliation, current general and assistance pathways, resident/pet exclusions, randomized clinical bridge and required-yield modeling.",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Light",
+            "reasoningEffort": "low",
+            "evidence": "Parent assigned current Astra Light worker; actual gpt-6-astra low."
+          }
+        },
+        {
+          "id": "6636955a-0690-40b2-a4ee-d6689012df2b",
+          "workerId": "usa-rxo-alpha-income-20261007-author",
+          "phase": "research",
+          "startedAt": "2026-10-07T22:10:11.793Z",
+          "endedAt": "2026-10-07T22:11:35.294Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed model assignment in current research assignment"
+          },
+          "evidence": "docs/geography-discovery/usa-rxo-alpha-income-20261007/source-note.md",
+          "organizationId": "ein:35-2378788",
+          "edition": "usa",
+          "stage": "alpha"
+        },
+        {
+          "id": "f2c22a35-58e8-4f26-bbc3-6c03d60d49c9",
+          "workerId": "root-usa-rxo-income-audit",
+          "phase": "source-audit",
+          "startedAt": "2026-10-07T22:09:49.682Z",
+          "endedAt": "2026-10-07T22:10:43.817Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed model assignment: GPT-6.1 Sol; current root runtime"
+          },
+          "evidence": "docs/geography-discovery/usa-rxo-alpha-income-20261007/root-acceptance.md",
+          "organizationId": "ein:35-2378788",
+          "edition": "usa",
+          "stage": "alpha"
+        },
+        {
+          "id": "ea6c1e11-74ac-4536-953b-0b75fcd921a2",
+          "workerId": "root-usa-rxo-income-model",
+          "phase": "modeling",
+          "startedAt": "2026-10-07T22:11:12.807Z",
+          "endedAt": "2026-10-07T22:11:36.325Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed model assignment: GPT-6.1 Sol; current root runtime"
+          },
+          "evidence": "docs/geography-discovery/usa-rxo-alpha-income-20261007/root-acceptance.md",
+          "organizationId": "ein:35-2378788",
+          "edition": "usa",
+          "stage": "alpha"
+        }
+      ]
+    },
+    "US Alcohol Policy Alliance": {
+      "coverage": "partial",
+      "sessions": [
+        {
+          "id": "usa-alpha-usapa-20260913-worker1",
+          "organizationId": "org:us-alcohol-policy-alliance",
+          "stage": "alpha",
+          "phase": "research",
+          "workerId": "usa_alpha_one",
+          "startedAt": "2026-09-13T23:42:03Z",
+          "endedAt": "2026-09-13T23:49:36Z",
+          "evidence": "data/geography-reports.json#usa/us-alcohol-policy-alliance — Original three-year accounts, current operations/budget, clinical policy evidence including contrary findings, explicit best-estimate model, report writing and arithmetic validation; 453 actual focused seconds, no padding.",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Light",
+            "reasoningEffort": "low",
+            "evidence": "Parent assigned current Astra Light worker; actual gpt-6-astra low."
+          }
+        },
+        {
+          "id": "9bb5f1f1-8a3a-4dcf-a368-0bc0adcbd361",
+          "workerId": "usa-usapa-alpha-income-20261007-author",
+          "phase": "research",
+          "startedAt": "2026-10-07T22:06:46.438Z",
+          "endedAt": "2026-10-07T22:08:11.752Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed model assignment in current research assignment"
+          },
+          "evidence": "docs/geography-discovery/usa-usapa-alpha-income-20261007/source-note.md",
+          "organizationId": "org:us-alcohol-policy-alliance",
+          "edition": "usa",
+          "stage": "alpha"
+        },
+        {
+          "id": "a1228b7a-ab67-4a63-8576-588ad0d3f71f",
+          "workerId": "root-usa-usapa-income-audit",
+          "phase": "source-audit",
+          "startedAt": "2026-10-07T22:04:56.547Z",
+          "endedAt": "2026-10-07T22:05:51.531Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed model assignment: GPT-6.1 Sol; current root runtime"
+          },
+          "evidence": "docs/geography-discovery/usa-usapa-alpha-income-20261007/root-acceptance.md",
+          "organizationId": "org:us-alcohol-policy-alliance",
+          "edition": "usa",
+          "stage": "alpha"
+        },
+        {
+          "id": "fca9054a-b2dc-41f3-a586-8bfc2b32bb14",
+          "workerId": "root-usa-usapa-income-model",
+          "phase": "modeling",
+          "startedAt": "2026-10-07T22:08:04.770Z",
+          "endedAt": "2026-10-07T22:08:41.229Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed model assignment: GPT-6.1 Sol; current root runtime"
+          },
+          "evidence": "docs/geography-discovery/usa-usapa-alpha-income-20261007/root-acceptance.md",
+          "organizationId": "org:us-alcohol-policy-alliance",
+          "edition": "usa",
+          "stage": "alpha"
+        }
+      ]
+    },
     "California Pan-Ethnic Health Network": {
       "coverage": "partial",
       "sessions": [

@@ -1,0 +1,114 @@
+{
+  "publishedAt": "2026-10-07T23:47:00.861510+00:00",
+  "verifiedAt": "2026-10-07T23:48:13.190Z",
+  "projectId": "appgprj_6a938448e31c81918e35da08d93d95fd",
+  "versionNumber": 503,
+  "versionId": "appgprj_6a938448e31c81918e35da08d93d95fd~appgver_5884ee7e6154819194abaa9f4d82df69",
+  "deployId": "appgdep_6ac6d9e7bcb8819195026390cd8056f0",
+  "sourceCommit": "e6e3d2f1a16d3391888e1b60f6a41350d6551b7d",
+  "status": "succeeded",
+  "currentClinicalPrice": 361183799.43970096,
+  "incomeStatus": "assessed-unknown",
+  "notCompleteJointValuation": true,
+  "initialCombinedMeasuredSeconds": 50.24,
+  "capSeconds": 300,
+  "tests": {
+    "focusedPassed": 59,
+    "unrelatedReportsPreserved": 181
+  },
+  "live": {
+    "verifiedAt": "2026-10-07T23:48:13.190Z",
+    "checks": 8,
+    "apiChecks": 4,
+    "results": [
+      {
+        "base": "https://ai.rhyslindmark.com/givebetter",
+        "path": "/all",
+        "pass": true
+      },
+      {
+        "base": "https://ai.rhyslindmark.com/givebetter",
+        "path": "/new-york-city/all",
+        "pass": true
+      },
+      {
+        "base": "https://ai.rhyslindmark.com/givebetter",
+        "path": "/new-york-city/charities/we-act-for-environmental-justice",
+        "pass": true
+      },
+      {
+        "base": "https://ai.rhyslindmark.com/givebetter",
+        "path": "/new-york-city/charities/the-center-for-great-expectations",
+        "pass": true
+      },
+      {
+        "base": "https://market-for-impact.rhyslindmark.chatgpt.site",
+        "path": "/all",
+        "pass": true
+      },
+      {
+        "base": "https://market-for-impact.rhyslindmark.chatgpt.site",
+        "path": "/new-york-city/all",
+        "pass": true
+      },
+      {
+        "base": "https://market-for-impact.rhyslindmark.chatgpt.site",
+        "path": "/new-york-city/charities/we-act-for-environmental-justice",
+        "pass": true
+      },
+      {
+        "base": "https://market-for-impact.rhyslindmark.chatgpt.site",
+        "path": "/new-york-city/charities/the-center-for-great-expectations",
+        "pass": true
+      }
+    ],
+    "api": [
+      {
+        "base": "https://ai.rhyslindmark.com/givebetter",
+        "slug": "we-act-for-environmental-justice",
+        "price": 361183799.43970096,
+        "pass": true
+      },
+      {
+        "base": "https://ai.rhyslindmark.com/givebetter",
+        "slug": "the-center-for-great-expectations",
+        "price": 147645452.08262926,
+        "pass": true
+      },
+      {
+        "base": "https://market-for-impact.rhyslindmark.chatgpt.site",
+        "slug": "we-act-for-environmental-justice",
+        "price": 361183799.43970096,
+        "pass": true
+      },
+      {
+        "base": "https://market-for-impact.rhyslindmark.chatgpt.site",
+        "slug": "the-center-for-great-expectations",
+        "price": 147645452.08262926,
+        "pass": true
+      }
+    ]
+  },
+  "allSeven": {
+    "verifiedAt": "2026-10-07T23:47:24.553Z",
+    "checks": 14,
+    "passed": true,
+    "scope": "Seven active edition home/list prices and top-four ordering on both hosts"
+  },
+  "responsive": {
+    "verifiedAt": "2026-10-07T23:47:50.350Z",
+    "checks": 8,
+    "passed": true,
+    "structuredBrowserTeardown": true,
+    "widths": [
+      390,
+      768
+    ],
+    "scope": "Tracker, NYC list, WE ACT and CGE report headers; no horizontal overflow"
+  },
+  "initialLiveFailure": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(body.includes('GPT-6.1 Sol'))\n\n    at check (file:///Users/rhyslindmark/Documents/Codex/2026-08-29/okay-you-re-gonna-make-this/work/final-seven-edition-audit-20261007/weact-cge-live.mjs:14:177)\n    at file:///Users/rhyslindmark/Documents/Codex/2026-08-29/okay-you-re-gonna-make-this/work/final-seven-edition-audit-20261007/weact-cge-live.mjs:23:212\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async Promise.all (index 7)\n    at async file:///Users/rhyslindmark/Documents/Codex/2026-08-29/okay-you-re-gonna-make-this/work/final-seven-edition-audit-20261007/weact-cge-live.mjs:23:16 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: false,\n  expected: true,\n  operator: '==',\n  diff: 'simple'\n}\n\nNode.js v24.18.0\n",
+  "initialResponsiveFailure": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(body.includes('GPT-6.1 Sol'))\n\n    at check (file:///Users/rhyslindmark/Documents/Codex/2026-08-29/okay-you-re-gonna-make-this/work/final-seven-edition-audit-20261007/weact-cge-live.mjs:14:177)\n    at file:///Users/rhyslindmark/Documents/Codex/2026-08-29/okay-you-re-gonna-make-this/work/final-seven-edition-audit-20261007/weact-cge-live.mjs:19:270 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: false,\n  expected: true,\n  operator: '==',\n  diff: 'simple'\n}\n\nNode.js v24.18.0\n",
+  "secondLiveFailure": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(body.includes('26 older initial reports'))\n\n    at check (file:///Users/rhyslindmark/Documents/Codex/2026-08-29/okay-you-re-gonna-make-this/work/final-seven-edition-audit-20261007/weact-cge-live.mjs:12:20)\n    at file:///Users/rhyslindmark/Documents/Codex/2026-08-29/okay-you-re-gonna-make-this/work/final-seven-edition-audit-20261007/weact-cge-live.mjs:23:212\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async Promise.all (index 4)\n    at async file:///Users/rhyslindmark/Documents/Codex/2026-08-29/okay-you-re-gonna-make-this/work/final-seven-edition-audit-20261007/weact-cge-live.mjs:23:16 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: false,\n  expected: true,\n  operator: '==',\n  diff: 'simple'\n}\n\nNode.js v24.18.0\n",
+  "resolution": "Fresh APIs confirmed updated models. Phone/tablet same-release recheck passed. Both-host HTML/API verified with explicit Sites503 cache-bypassing query; no new research, build or deployment.",
+  "limitations": "Operational net household-resource amounts/incidence remain unknown, not zero; clinical seven-world references preserved."
+}

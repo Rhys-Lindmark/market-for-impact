@@ -9,6 +9,123 @@
   "timeBasis": "Sum of recorded, organization-specific researcher wall-clock intervals. Parallel researchers are counted separately; this is not elapsed calendar time or a quality score.",
   "historicalCoverage": "Earlier reports did not consistently record organization-specific research intervals or AI model provenance. Missing records are unknown, not zero.",
   "organizations": {
+    "Chicago Children's Advocacy Center": {
+      "coverage": "partial",
+      "sessions": [
+        {
+          "id": "9f0f0d97-8113-45e2-b2f5-c32474f050fb",
+          "workerId": "chicago-cac-alpha-author",
+          "phase": "research",
+          "startedAt": "2026-09-29T20:41:37.151Z",
+          "endedAt": "2026-09-29T20:43:00.143Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Light",
+            "evidence": "Parent confirmed spawn_agent model=gpt-6-astra reasoning_effort=low",
+            "reasoningEffort": "low"
+          },
+          "evidence": "outputs/chicago-cac-alpha/report.md",
+          "organizationId": "ein:36-4251865",
+          "stage": "alpha"
+        },
+        {
+          "id": "8e0558bf-4489-46b5-974a-95e20ed0fd73",
+          "workerId": "chicago-cac-alpha-author",
+          "phase": "modeling",
+          "startedAt": "2026-09-29T20:43:10.456Z",
+          "endedAt": "2026-09-29T20:50:22.702Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Light",
+            "evidence": "Parent confirmed spawn_agent model=gpt-6-astra reasoning_effort=low",
+            "reasoningEffort": "low"
+          },
+          "evidence": "outputs/chicago-cac-alpha/report-proposal.json",
+          "organizationId": "ein:36-4251865",
+          "stage": "alpha"
+        },
+        {
+          "id": "24b7b162-f4dd-4c94-be70-06131dc413ad",
+          "workerId": "chicago-cac-alpha-author",
+          "phase": "research",
+          "startedAt": "2026-09-29T20:50:40.723Z",
+          "endedAt": "2026-09-29T20:56:11.466Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Light",
+            "reasoningEffort": "low",
+            "evidence": "Parent confirmed spawn_agent model=gpt-6-astra reasoning_effort=low"
+          },
+          "evidence": "outputs/chicago-cac-alpha/source-notes.md",
+          "organizationId": "ein:36-4251865",
+          "stage": "alpha"
+        },
+        {
+          "id": "5678eaa5-9d16-4c66-9574-848e43196fe4",
+          "workerId": "chicago-cac-independent-auditor",
+          "phase": "source-audit",
+          "startedAt": "2026-09-29T20:59:04.321Z",
+          "endedAt": "2026-09-29T21:00:51.315Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent dispatch explicitly specified GPT-6 Astra Medium for this independent audit.",
+            "reasoningEffort": "medium"
+          },
+          "evidence": "docs/chicago-cac-alpha-acceptance.md",
+          "organizationId": "ein:36-4251865",
+          "stage": "alpha"
+        },
+        {
+          "id": "0387881c-d36d-4415-9996-f728d634667e",
+          "workerId": "root-cac-income-audit",
+          "phase": "source-audit",
+          "startedAt": "2026-10-07T17:31:19.180Z",
+          "endedAt": "2026-10-07T17:31:49.752Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed model assignment: GPT-6.1 Sol; current root runtime"
+          },
+          "evidence": "docs/geography-discovery/chicago-cac-alpha-income-20261007/root-acceptance.md",
+          "organizationId": "ein:36-4251865",
+          "edition": "chicago",
+          "stage": "alpha"
+        },
+        {
+          "id": "7a893141-fafa-40b2-a9fa-c8e85304a163",
+          "workerId": "root-cac-income-model",
+          "phase": "modeling",
+          "startedAt": "2026-10-07T17:37:39.075Z",
+          "endedAt": "2026-10-07T17:38:23.614Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed model assignment: GPT-6.1 Sol; current root runtime"
+          },
+          "evidence": "docs/geography-discovery/chicago-cac-alpha-income-20261007/root-model.md",
+          "organizationId": "ein:36-4251865",
+          "edition": "chicago",
+          "stage": "alpha"
+        },
+        {
+          "id": "484dbbf4-f7b6-48af-96a1-2ece76d1ea38",
+          "workerId": "cac-compact-challenge-20261007",
+          "phase": "research",
+          "startedAt": "2026-10-07T17:39:09.356Z",
+          "endedAt": "2026-10-07T17:39:57.424Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed model assignment: GPT-6.1 Sol"
+          },
+          "evidence": "work/chicago-cac-alpha-income-20261007/challenge.md",
+          "organizationId": "ein:36-4251865",
+          "edition": "chicago",
+          "stage": "alpha"
+        }
+      ]
+    },
     "Will-Grundy Medical Clinic": {
       "coverage": "partial",
       "sessions": [

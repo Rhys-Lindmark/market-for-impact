@@ -1,5 +1,9 @@
 # Final audit and first correction — October 7
 
+## Second correction accepted; release pending
+
+Children’s Research Triangle alpha correction accepted/integrated October7: original $913.21M → conditional $243.35M per better life. Annual-work accounting removes an inappropriate extra marginal-gift capacity discount; central signed household resources are slightly negative, not unexamined zero. Original seventeen-scenario diagnostic frozen; current36 cases/209 reconstruction checks and28 focused production/provenance tests pass. Two independently accepted corrections of original69 flags;67 remain (Chicago6,Houston1,other edition flags unchanged). This is accepted source state, not yet live publication. Both research clocks closed before integration; no elapsed Mac-setting/admin gap added as research. Next one combined release and both-host parity, then Houston Healthcare for the Homeless. No author live.
+
 ## Accepted publication receipt
 
 Sites475 sourceec188efb43d2301c78b2e52b1b26f5502319a18b published16:07:54UTC. Both hosts verified16:08:36UTC: current TOMAGWA24.3M list/report and per-model header; tracker68flags/340 planned research minutes. Fourteen edition home/all parity cases verify178 current list prices and all shared four selections; six phone/tablet checks passed. Temporary preview3107 stopped by structured teardown, one15MB archive eligible for removal after this durable receipt. Next Children’s Research Triangle, no live author or research clock. Original69flag audit below remains snapshot; one correction accepted/published,68remain. Overall goal stays active/incomplete; PR384 open.

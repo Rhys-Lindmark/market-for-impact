@@ -1,0 +1,3 @@
+# Independent challenge, awaiting bounded correction
+
+Clinical three-year cost/benefit boundary is coherent. Renewal paperwork effects can apply to the remediable cohort before narrower avoided-uninsurance factor; actual medical avoided cash costs cannot. One material correction requested: medical-saving joint group must be people*u*saverShare; remaining all-household group retains paperwork gains and full burdens. u=0 must remove medical gains but preserve paperwork. No retail insurance value, funded budget initiatives, national forecast or insurer dollars credited as household income. Resource dollars/groups remain judgment illustrations, broader portfolio unknown. Need final shared arithmetic/scenario check before acceptance.

@@ -9,6 +9,123 @@
   "timeBasis": "Sum of recorded, organization-specific researcher wall-clock intervals. Parallel researchers are counted separately; this is not elapsed calendar time or a quality score.",
   "historicalCoverage": "Earlier reports did not consistently record organization-specific research intervals or AI model provenance. Missing records are unknown, not zero.",
   "organizations": {
+    "Harm Reduction Action Center": {
+      "coverage": "partial",
+      "sessions": [
+        {
+          "id": "db9b580c-013a-41d5-a2cb-fcad4645dd86",
+          "workerId": "denver-1-3-astra-alpha",
+          "phase": "research",
+          "startedAt": "2026-09-29T19:16:00.103Z",
+          "endedAt": "2026-09-29T19:19:32.822Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Light",
+            "evidence": "Parent dispatch identifies GPT-6 Astra low researcher runtime",
+            "reasoningEffort": "low"
+          },
+          "evidence": "denver-first-three-alpha.json",
+          "organizationId": "org:harm-reduction-action-center",
+          "stage": "alpha"
+        },
+        {
+          "id": "954a144c-caf5-4190-b892-e0de7d8db346",
+          "workerId": "denver-1-3-astra-alpha",
+          "phase": "research",
+          "startedAt": "2026-09-29T19:28:19.808Z",
+          "endedAt": "2026-09-29T19:30:32.257Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Light",
+            "evidence": "Parent dispatch identifies GPT-6 Astra low researcher runtime",
+            "reasoningEffort": "low"
+          },
+          "evidence": "denver-first-three-followon.json",
+          "organizationId": "org:harm-reduction-action-center",
+          "stage": "alpha"
+        },
+        {
+          "id": "fad8467f-9833-4f7c-bb8d-fe781b004e65",
+          "workerId": "denver-hrac-deepen-astra",
+          "phase": "research",
+          "startedAt": "2026-09-29T20:41:37.719Z",
+          "endedAt": "2026-09-29T20:50:03.843Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Light",
+            "evidence": "Parent dispatch specifies GPT-6 Astra Light for this researcher",
+            "reasoningEffort": "low"
+          },
+          "evidence": "outputs/denver-hrac-deepen/alpha-packet.json",
+          "organizationId": "org:harm-reduction-action-center",
+          "stage": "alpha"
+        },
+        {
+          "id": "821ff82c-1971-4bda-9371-a4a29e57b6be",
+          "workerId": "denver-hrac-independent-audit-astra",
+          "phase": "source-audit",
+          "startedAt": "2026-09-29T20:52:59.056Z",
+          "endedAt": "2026-09-29T20:56:55.162Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent dispatch explicitly specifies GPT-6 Astra Medium for this independent audit",
+            "reasoningEffort": "medium"
+          },
+          "evidence": "outputs/denver-hrac-deepen/independent-audit.md",
+          "organizationId": "org:harm-reduction-action-center",
+          "stage": "alpha"
+        },
+        {
+          "id": "f0157dd9-6ad5-41ee-9046-fe5239e3c3ad",
+          "workerId": "denver-hrac-author",
+          "phase": "research",
+          "startedAt": "2026-10-07T00:45:01.034Z",
+          "endedAt": "2026-10-07T00:50:45.275Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "runtime model assignment: root GPT-6.1 Sol"
+          },
+          "evidence": "docs/geography-discovery/denver-hrac-beta-20261006/evidence.md",
+          "organizationId": "org:harm-reduction-action-center",
+          "edition": "denver",
+          "stage": "beta"
+        },
+        {
+          "id": "87971d28-9fb9-4303-b8ef-ad05e8afb9ff",
+          "workerId": "root-hrac-beta-audit-20261006",
+          "phase": "source-audit",
+          "startedAt": "2026-10-07T00:45:10.200Z",
+          "endedAt": "2026-10-07T00:46:19.991Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "runtime model assignment: root GPT-6.1 Sol"
+          },
+          "evidence": "docs/geography-discovery/denver-hrac-beta-20261006/root-source-note.md",
+          "organizationId": "org:harm-reduction-action-center",
+          "edition": "denver",
+          "stage": "beta"
+        },
+        {
+          "id": "c32833e9-38a9-4f19-979d-e8b1ffce66cc",
+          "workerId": "root-hrac-beta-audit-20261006",
+          "phase": "source-audit",
+          "startedAt": "2026-10-07T00:47:59.571Z",
+          "endedAt": "2026-10-07T00:48:38.547Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "runtime model assignment: root GPT-6.1 Sol"
+          },
+          "evidence": "docs/geography-discovery/denver-hrac-beta-20261006/root-arithmetic-checks.md",
+          "organizationId": "org:harm-reduction-action-center",
+          "edition": "denver",
+          "stage": "beta"
+        }
+      ]
+    },
     "AVDA": {
       "coverage": "partial",
       "sessions": [

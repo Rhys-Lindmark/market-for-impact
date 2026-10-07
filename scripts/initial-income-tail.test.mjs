@@ -9,7 +9,14 @@ import * as cp from '../docs/geography-discovery/ca-childrens-partnership-alpha-
 import * as nc from '../docs/geography-discovery/ca-nourish-alpha-income-20261007/model.mjs';
 import * as cwc from '../docs/geography-discovery/ca-cwc-alpha-income-20261007/model.mjs';
 import * as cda from '../docs/geography-discovery/ca-cda-alpha-income-20261007/model.mjs';
+import * as essential from '../docs/geography-discovery/ca-essential-alpha-income-20261007/model.mjs';
+import * as yimby from '../docs/geography-discovery/ca-yimby-alpha-income-20261007/model.mjs';
 const data=JSON.parse(fs.readFileSync(new URL('../data/geography-reports.json',import.meta.url)));
+for(const [slug,model] of [['essential-access-health',essential],['california-yimby-education-fund',yimby]])test(slug+' independent signed-resource worlds reproduce',()=>{
+ const report=data.reports.find(r=>r.edition==='california'&&r.slug===slug);model.tests();
+ for(const [id,x,h] of model.scenarios){const z=model.calculate(x,h),s=report.model.scenarios.find(s=>s.id===id);assert(s,id);assert.equal(s.editionQalys,z.editionQalys);if(id==='income-unknown'){assert.equal(scenarioIncomeEquivalent(s),null);continue;}assert(Math.abs(scenarioIncomeEquivalent(s)-z.income)<1e-10);}
+ assert(Math.abs(reportPrice(report)-model.calculate().price10)<1e-6);assert.equal(report.stage,'alpha');
+});
 for(const [slug,model,dir] of [['homeless-health-care-los-angeles',hh,'ca-hhcla-alpha-income-20261007'],['didi-hirsch-mental-health-services',dh,'ca-didihirsch-alpha-income-20261007'],['breathe-southern-california',br,'ca-breathe-alpha-income-20261007'],['childrens-partnership',cp,'ca-childrens-partnership-alpha-income-20261007'],['nourish-california',nc,'ca-nourish-alpha-income-20261007'],['community-water-center',cwc,'ca-cwc-alpha-income-20261007']])test(slug+' signed initial ledger reproduces without dropping access costs',()=>{
  const report=data.reports.find(r=>r.edition==='california'&&r.slug===slug);
  const ledger=JSON.parse(fs.readFileSync(new URL('../docs/geography-discovery/'+dir+'/ledger.json',import.meta.url)));

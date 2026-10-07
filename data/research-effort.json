@@ -9,6 +9,144 @@
   "timeBasis": "Sum of recorded, organization-specific researcher wall-clock intervals. Parallel researchers are counted separately; this is not elapsed calendar time or a quality score.",
   "historicalCoverage": "Earlier reports did not consistently record organization-specific research intervals or AI model provenance. Missing records are unknown, not zero.",
   "organizations": {
+    "Immunize.org": {
+      "coverage": "partial",
+      "sessions": [
+        {
+          "id": "usa-alpha-immunize-org-20260913-worker1",
+          "organizationId": "org:immunize-org",
+          "stage": "alpha",
+          "phase": "research",
+          "workerId": "usa_alpha_one",
+          "startedAt": "2026-09-13T22:41:59Z",
+          "endedAt": "2026-09-13T22:52:12Z",
+          "evidence": "data/geography-reports.json#usa/immunize-org — Original fiscal and federal-audit review, current program and geographic evidence, recipient-authored and randomized implementation studies, influenza health model, marginal-capacity and threshold analysis.",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Light",
+            "reasoningEffort": "low",
+            "evidence": "Parent assigned current Astra Light worker; actual gpt-6-astra low."
+          }
+        },
+        {
+          "id": "02e0e86b-052a-4ca8-bda0-398b5e88d42c",
+          "workerId": "usa-immunize-alpha-income-20261007-author",
+          "phase": "research",
+          "startedAt": "2026-10-07T22:58:59.681Z",
+          "endedAt": "2026-10-07T22:59:55.628Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed model assignment: GPT-6.1 Sol for current research task"
+          },
+          "evidence": "docs/geography-discovery/usa-immunize-alpha-income-20261007/source-note.md",
+          "organizationId": "org:immunize-org",
+          "edition": "usa",
+          "stage": "alpha"
+        },
+        {
+          "id": "0443d2a1-0c8a-4c92-8c15-afe59ab48083",
+          "workerId": "root-immunize-source",
+          "phase": "source-audit",
+          "startedAt": "2026-10-07T22:58:56.943Z",
+          "endedAt": "2026-10-07T22:59:14.525Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed model assignment: GPT-6.1 Sol for current research task"
+          },
+          "evidence": "docs/geography-discovery/usa-immunize-alpha-income-20261007/root-acceptance.md",
+          "organizationId": "org:immunize-org",
+          "edition": "usa",
+          "stage": "alpha"
+        },
+        {
+          "id": "339f832a-4872-4893-9f4b-f26d83eadb13",
+          "workerId": "root-immunize-model",
+          "phase": "modeling",
+          "startedAt": "2026-10-07T22:59:50.341Z",
+          "endedAt": "2026-10-07T22:59:58.885Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed model assignment: GPT-6.1 Sol for current research task"
+          },
+          "evidence": "docs/geography-discovery/usa-immunize-alpha-income-20261007/root-acceptance.md",
+          "organizationId": "org:immunize-org",
+          "edition": "usa",
+          "stage": "alpha"
+        }
+      ]
+    },
+    "The Headstrong Project": {
+      "coverage": "partial",
+      "sessions": [
+        {
+          "id": "usa-alpha-headstrong-20260913-worker1",
+          "organizationId": "ein:45-5261907",
+          "stage": "alpha",
+          "phase": "research",
+          "workerId": "usa_alpha_one",
+          "startedAt": "2026-09-13T21:22:52Z",
+          "endedAt": "2026-09-13T21:29:18Z",
+          "evidence": "data/geography-reports.json#usa/the-headstrong-project — original filings, audit and current annual-report visual checks, causal clinical evidence, counterfactual model and narrative; real checkpoints persisted in worker packet.",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Light",
+            "reasoningEffort": "low",
+            "evidence": "Parent assigned current Astra Light worker; actual gpt-6-astra low."
+          }
+        },
+        {
+          "id": "e40b2a23-0380-4ad3-a98f-be0647dffb62",
+          "workerId": "usa-headstrong-alpha-income-20261007-author",
+          "phase": "research",
+          "startedAt": "2026-10-07T22:57:01.916Z",
+          "endedAt": "2026-10-07T22:57:58.694Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed model assignment: GPT-6.1 Sol for current research task"
+          },
+          "evidence": "docs/geography-discovery/usa-headstrong-alpha-income-20261007/source-note.md",
+          "organizationId": "ein:45-5261907",
+          "edition": "usa",
+          "stage": "alpha"
+        },
+        {
+          "id": "976c473a-4278-4d4d-8927-7b4ecd91b480",
+          "workerId": "root-headstrong-source",
+          "phase": "source-audit",
+          "startedAt": "2026-10-07T22:56:58.966Z",
+          "endedAt": "2026-10-07T22:57:13.208Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed model assignment: GPT-6.1 Sol for current research task"
+          },
+          "evidence": "docs/geography-discovery/usa-headstrong-alpha-income-20261007/root-acceptance.md",
+          "organizationId": "ein:45-5261907",
+          "edition": "usa",
+          "stage": "alpha"
+        },
+        {
+          "id": "fedff8ef-a75a-4c1d-b9cd-a69315ec1c5d",
+          "workerId": "root-headstrong-model",
+          "phase": "modeling",
+          "startedAt": "2026-10-07T22:58:05.743Z",
+          "endedAt": "2026-10-07T22:58:18.174Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed model assignment: GPT-6.1 Sol for current research task"
+          },
+          "evidence": "docs/geography-discovery/usa-headstrong-alpha-income-20261007/root-acceptance.md",
+          "organizationId": "ein:45-5261907",
+          "edition": "usa",
+          "stage": "alpha"
+        }
+      ]
+    },
     "Green & Healthy Homes Initiative": {
       "coverage": "partial",
       "sessions": [

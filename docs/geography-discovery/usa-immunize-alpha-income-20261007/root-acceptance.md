@@ -1,0 +1,7 @@
+# Independent root acceptance
+
+Accepted scoped health-first resources assessment, not quantified total income or proof90%health. Root independently verified current original Medicare flu-vaccine page: PartB seasonal vaccination free only conditionalprovideracceptsassignment. Does not imply universalenrollment, allvisitcostszero, or retailvaccine privatepaymentdisplacement. At-visit clinicalprogram does not automatically cause whole extra trips. Privateillnesscopays, incremental time/care andpublicpayer incidence unknown. No ordinarysurvivorearnings credited. All7 original clinicalworlds preserved including negativepessimistic and identicalreplacement tau0/h0 cancellation.
+
+Independent arithmetic reproduced doses=10000/3247254*.25*100*1000*.03, q=.5*(.0006*.3*5+.006*.3*.015+.05*.3*.005)-.00005; clinical.000989566877121408 agrees serializedreference within floatingpointtolerance. Exactoriginalheadline remains101054312.05508229 (retain originalserialization, no forcedchange). Zeroadditionality/replacement and negativeq passed. Full currentregistry andscenario reconstruction verified by author beforeimport.
+
+Author55.947 + rootsource17.582 + rootmodel8.544 =82.073 actualseconds. Reserve30conservative seconds forpreclock originalmetadata/formula lookup, not measuredsession;max112.073 under300. No newdiscovery/wage search. GPT6.1Sol confirmed, allscienceclockclosed before tests/admin/release.

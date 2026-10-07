@@ -26,7 +26,9 @@ for(const [edition,slug,dir] of [
  ['usa','shatterproof','usa-shatterproof-alpha-income-20261007'],
  ['usa','farmworker-justice','usa-farmworker-justice-alpha-income-20261007'],
  ['usa','center-for-environmental-health','usa-ceh-alpha-income-20261007'],
- ['usa','toxic-free-future','usa-tff-alpha-income-20261007']
+ ['usa','toxic-free-future','usa-tff-alpha-income-20261007'],
+ ['usa','earthjustice','usa-earthjustice-alpha-income-20261007'],
+ ['new-york-city','transportation-alternatives','nyc-ta-alpha-income-20261007']
 ])test(slug+' preserves original clinical reference and explicit unknown income',()=>{
  const r=data.reports.find(r=>r.edition===edition&&r.slug===slug);
  const original=JSON.parse(fs.readFileSync(new URL('../docs/geography-discovery/'+dir+'/original-report.json',import.meta.url)));
@@ -34,7 +36,9 @@ for(const [edition,slug,dir] of [
  assert.equal(reportPrice(r),reportPrice(original));
  assert.equal(r.model.incomeAssessment.status,'assessed-unknown');
  assert.equal(r.model.incomeAssessment.evidence,r.acceptance.evidence);
- assert.equal(scenarioIncomeEquivalent(r.model.scenarios.find(s=>s.id==='combined-income-unknown')),null);
+ const unknown=r.model.scenarios.find(s=>s.id==='combined-income-unknown')??r.model.scenarios.find(s=>s.id==='central');
+ assert.equal(scenarioIncomeEquivalent(unknown),null);
+ if(slug==='transportation-alternatives')assert.equal(unknown.editionQalys,null);
  assert.equal(r.stage,'alpha');
 });
 test('NHeLP optional payment sensitivity is independent of clinical benefit and zero without capacity',async()=>{

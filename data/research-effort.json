@@ -9,6 +9,75 @@
   "timeBasis": "Sum of recorded, organization-specific researcher wall-clock intervals. Parallel researchers are counted separately; this is not elapsed calendar time or a quality score.",
   "historicalCoverage": "Earlier reports did not consistently record organization-specific research intervals or AI model provenance. Missing records are unknown, not zero.",
   "organizations": {
+    "Earthjustice": {
+      "coverage": "partial",
+      "sessions": [
+        {
+          "id": "usa-alpha-earthjustice-20260914-worker1",
+          "organizationId": "ein:94-1730465",
+          "stage": "alpha",
+          "phase": "research",
+          "workerId": "usa_alpha_one",
+          "startedAt": "2026-09-14T01:11:46Z",
+          "endedAt": "2026-09-14T01:17:42Z",
+          "evidence": "data/geography-reports.json#usa/earthjustice — actual 356 seconds (5m56) focused original audit/financial reading, primary court order, EPA native mortality and clinical methods, independent study limitations, modeling and writing. Finished before ~15-minute cap with targeted sources; no padding. Post-writing schema validation separate.",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Light",
+            "reasoningEffort": "low",
+            "evidence": "Parent assigned current Astra Light worker, gpt-6-astra low."
+          }
+        },
+        {
+          "id": "fd80e1ef-a116-41d5-be2b-fd6c055a393b",
+          "workerId": "usa-earthjustice-alpha-income-20261007-author",
+          "phase": "research",
+          "startedAt": "2026-10-07T23:25:40.355Z",
+          "endedAt": "2026-10-07T23:26:57.671Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed model assignment: GPT-6.1 Sol for current research task"
+          },
+          "evidence": "docs/geography-discovery/usa-earthjustice-alpha-income-20261007/source-note.md",
+          "organizationId": "ein:94-1730465",
+          "edition": "usa",
+          "stage": "alpha"
+        },
+        {
+          "id": "2ca0978a-57ee-4d56-add2-2cbebde0c655",
+          "workerId": "root-earthjustice-source",
+          "phase": "source-audit",
+          "startedAt": "2026-10-07T23:25:55.106Z",
+          "endedAt": "2026-10-07T23:26:47.430Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed model assignment: GPT-6.1 Sol for current research task"
+          },
+          "evidence": "docs/geography-discovery/usa-earthjustice-alpha-income-20261007/root-acceptance.md",
+          "organizationId": "ein:94-1730465",
+          "edition": "usa",
+          "stage": "alpha"
+        },
+        {
+          "id": "f72e452f-0241-48f4-8ad4-2d3648790b62",
+          "workerId": "root-earthjustice-review",
+          "phase": "modeling",
+          "startedAt": "2026-10-07T23:27:15.586Z",
+          "endedAt": "2026-10-07T23:27:31.219Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed model assignment: GPT-6.1 Sol for current research task"
+          },
+          "evidence": "docs/geography-discovery/usa-earthjustice-alpha-income-20261007/root-acceptance.md",
+          "organizationId": "ein:94-1730465",
+          "edition": "usa",
+          "stage": "alpha"
+        }
+      ]
+    },
     "Toxic-Free Future": {
       "coverage": "partial",
       "sessions": [
@@ -6898,7 +6967,7 @@
     "Champions for Health": {"coverage":"partial","sessions":[{"id":"8d787949-84ee-4208-9a56-df29661067ab","workerId":"ca-champions-beta-20260930","phase":"research","startedAt":"2026-09-30T14:16:23.094Z","endedAt":"2026-09-30T14:18:49.968Z","model":{"id":"gpt-6-astra","name":"GPT-6 Astra Medium","reasoningEffort":"medium","evidence":"Parent assignment for delegated in-depth research."},"evidence":"docs/geography-discovery/champions-beta-acceptance-2026-09-30.md"},{"id":"11806d1a-5980-4c93-a4d6-14f74ebb56fb","workerId":"ca-champions-beta-20260930","phase":"modeling","startedAt":"2026-09-30T14:19:03.719Z","endedAt":"2026-09-30T14:22:00.679Z","model":{"id":"gpt-6-astra","name":"GPT-6 Astra Medium","reasoningEffort":"medium","evidence":"Parent assignment for delegated in-depth research."},"evidence":"docs/geography-discovery/champions-beta-acceptance-2026-09-30.md"},{"id":"5ee47669-f1ea-4a9c-80fa-d70d8e3a2285","workerId":"champions-calibration-20261002","phase":"research","startedAt":"2026-10-02T10:19:58.404Z","endedAt":"2026-10-02T10:24:41.136Z","model":{"id":"gpt-6.1-sol","name":"GPT-6.1 Sol","evidence":"User-confirmed model assignment; inherited without override, not independent runtime telemetry. Original model-null receipts preserved."},"evidence":"docs/geography-discovery/champions-ca-recalibration-2026-10-02.md"},{"id":"0c684346-c21b-47ae-94ab-47006caa9fc1","workerId":"champions-calibration-20261002","phase":"modeling","startedAt":"2026-10-02T10:24:41.232Z","endedAt":"2026-10-02T10:32:05.752Z","model":{"id":"gpt-6.1-sol","name":"GPT-6.1 Sol","evidence":"User-confirmed model assignment; inherited without override, not independent runtime telemetry. Original model-null receipts preserved."},"evidence":"docs/geography-discovery/champions-ca-recalibration-2026-10-02.calculate.mjs"},{"id":"68871363-ec25-439e-b946-d6132c74999c","workerId":"champions-calibration-20261002","phase":"modeling","startedAt":"2026-10-02T10:33:35.770Z","endedAt":"2026-10-02T10:34:06.705Z","model":{"id":"gpt-6.1-sol","name":"GPT-6.1 Sol","evidence":"User-confirmed model assignment; inherited without override, not independent runtime telemetry. Original model-null receipts preserved."},"evidence":"docs/geography-discovery/champions-ca-recalibration-2026-10-02.calculate.mjs"},{"id":"c4712c93-1eec-4b80-bfa6-56982013793f","workerId":"root-champions-flu","phase":"source-audit","startedAt":"2026-10-02T10:22:05.470Z","endedAt":"2026-10-02T10:22:42.880Z","model":{"id":"gpt-6.1-sol","name":"GPT-6.1 Sol","evidence":"User-confirmed model assignment; inherited root, not independent runtime telemetry"},"evidence":"docs/geography-discovery/champions-ca-source-challenge-2026-10-02.md"}]},
     "Western Center on Law & Poverty": {"coverage":"partial","sessions":[{"id":"9bcf9a5a-e58a-4c7d-b722-d8390b2bbf7f","workerId":"atlanta-healing-bridge-alpha-20260930","phase":"research","startedAt":"2026-09-30T12:28:01.289Z","endedAt":"2026-09-30T12:30:11.731Z","model":{"id":"gpt-6.1-sol","name":"GPT-6.1 Sol","evidence":"User-confirmed model assignment on 2026-09-30: Rhys confirmed all currently unrecorded research models are GPT-6.1 Sol."},"evidence":"docs/geography-discovery/wclp-beta-acceptance-2026-09-30.md"},{"id":"38084e94-bf66-4062-8e8f-015ebdb9de7d","workerId":"root-wclp-beta-acceptance-20260930","phase":"source-audit","startedAt":"2026-09-30T13:45:18.862Z","endedAt":"2026-09-30T13:46:43.912Z","model":{"id":"gpt-6.1-sol","name":"GPT-6.1 Sol","evidence":"User-confirmed model assignment on 2026-09-30: Rhys confirmed all currently unrecorded research models are GPT-6.1 Sol."},"evidence":"docs/geography-discovery/wclp-beta-acceptance-2026-09-30.md"}]},
     "Center for Independent Living": {"coverage":"partial","sessions":[{"id":"3ea77d32-6725-4332-9351-c111dfdaad0a","workerId":"ca-cil-beta-20260930","phase":"research","startedAt":"2026-09-30T12:27:54.837Z","endedAt":"2026-09-30T12:30:40.716Z","model":{"id":"gpt-6.1-sol","name":"GPT-6.1 Sol","evidence":"User-confirmed model assignment on 2026-09-30: Rhys confirmed all currently unrecorded research models are GPT-6.1 Sol."},"evidence":"docs/geography-discovery/cil-beta-acceptance-2026-09-30.md"},{"id":"75b93df9-39b4-40e3-aeaf-b1c795b8ea7a","workerId":"ca-cil-beta-20260930","phase":"modeling","startedAt":"2026-09-30T12:30:40.814Z","endedAt":"2026-09-30T12:33:43.478Z","model":{"id":"gpt-6.1-sol","name":"GPT-6.1 Sol","evidence":"User-confirmed model assignment on 2026-09-30: Rhys confirmed all currently unrecorded research models are GPT-6.1 Sol."},"evidence":"docs/geography-discovery/cil-beta-acceptance-2026-09-30.md"}]},
-    "Transportation Alternatives": {"coverage":"partial","sessions":[{"id":"nyc-ta-20260914-worker1-resumed","workerId":"ca_alpha_one","phase":"research","startedAt":"2026-09-14T07:56:50Z","endedAt":"2026-09-14T08:01:17Z","model":{"id":"gpt-6-astra","name":"GPT-6 Astra Light","evidence":"Parent-assigned Astra Light researcher; original edition registry session."},"evidence":"docs/nyc-first-three-acceptance.md; original source/model interval, earlier unmeasured work excluded."},{"id":"a1ed6574-ddb7-4684-8d95-af7260b5297d","workerId":"nyc-ta-beta-author-astra-20260930","phase":"source-audit","startedAt":"2026-09-30T03:55:55.417Z","endedAt":"2026-09-30T03:58:41.149Z","model":{"id":"gpt-6-astra","name":"GPT-6 Astra Medium","evidence":"Parent task dispatch GPT-6 Astra Medium."},"evidence":"docs/geography-discovery/nyc-ta-alpha-correction-2026-09-29.md; bounded correction source gate, not complete beta."},{"id":"nyc-ta-compact-withdrawal-audit-20260930","workerId":"nyc-ta-withdrawal-audit","phase":"source-audit","startedAt":"2026-09-30T04:02:10Z","endedAt":"2026-09-30T04:05:13Z","model":{"id":"gpt-6-astra","name":"GPT-6 Astra Medium","evidence":"Parent task dispatch GPT-6 Astra Medium."},"evidence":"docs/geography-discovery/nyc-ta-alpha-correction-2026-09-29.md; independent compact audit, not complete beta."}]},
+    "Transportation Alternatives": {"coverage":"partial","sessions":[{"id":"nyc-ta-20260914-worker1-resumed","workerId":"ca_alpha_one","phase":"research","startedAt":"2026-09-14T07:56:50Z","endedAt":"2026-09-14T08:01:17Z","model":{"id":"gpt-6-astra","name":"GPT-6 Astra Light","evidence":"Parent-assigned Astra Light researcher; original edition registry session."},"evidence":"docs/nyc-first-three-acceptance.md; original source/model interval, earlier unmeasured work excluded."},{"id":"a1ed6574-ddb7-4684-8d95-af7260b5297d","workerId":"nyc-ta-beta-author-astra-20260930","phase":"source-audit","startedAt":"2026-09-30T03:55:55.417Z","endedAt":"2026-09-30T03:58:41.149Z","model":{"id":"gpt-6-astra","name":"GPT-6 Astra Medium","evidence":"Parent task dispatch GPT-6 Astra Medium."},"evidence":"docs/geography-discovery/nyc-ta-alpha-correction-2026-09-29.md; bounded correction source gate, not complete beta."},{"id":"nyc-ta-compact-withdrawal-audit-20260930","workerId":"nyc-ta-withdrawal-audit","phase":"source-audit","startedAt":"2026-09-30T04:02:10Z","endedAt":"2026-09-30T04:05:13Z","model":{"id":"gpt-6-astra","name":"GPT-6 Astra Medium","evidence":"Parent task dispatch GPT-6 Astra Medium."},"evidence":"docs/geography-discovery/nyc-ta-alpha-correction-2026-09-29.md; independent compact audit, not complete beta."},{"id":"1ff7242c-3414-4b64-899d-a1eaa98fe30c","workerId":"nyc-ta-alpha-income-20261007-author","phase":"research","startedAt":"2026-10-07T23:27:45.405Z","endedAt":"2026-10-07T23:28:49.483Z","model":{"id":"gpt-6.1-sol","name":"GPT-6.1 Sol","evidence":"User-confirmed model assignment: GPT-6.1 Sol for current research task"},"evidence":"docs/geography-discovery/nyc-ta-alpha-income-20261007/source-note.md","organizationId":"org:transportation-alternatives","edition":"new-york-city","stage":"alpha"},{"id":"1d7f2f1e-5b09-4784-ab14-6fbcbb7bec07","workerId":"root-ta-source","phase":"source-audit","startedAt":"2026-10-07T23:28:04.743Z","endedAt":"2026-10-07T23:28:25.432Z","model":{"id":"gpt-6.1-sol","name":"GPT-6.1 Sol","evidence":"User-confirmed model assignment: GPT-6.1 Sol for current research task"},"evidence":"docs/geography-discovery/nyc-ta-alpha-income-20261007/root-acceptance.md","organizationId":"org:transportation-alternatives","edition":"new-york-city","stage":"alpha"},{"id":"499bd47f-4469-4523-8e6a-dbbe016a693c","workerId":"root-ta-review","phase":"modeling","startedAt":"2026-10-07T23:28:55.019Z","endedAt":"2026-10-07T23:29:14.203Z","model":{"id":"gpt-6.1-sol","name":"GPT-6.1 Sol","evidence":"User-confirmed model assignment: GPT-6.1 Sol for current research task"},"evidence":"docs/geography-discovery/nyc-ta-alpha-income-20261007/root-acceptance.md","organizationId":"org:transportation-alternatives","edition":"new-york-city","stage":"alpha"}]},
     "Sogorea Te Land Trust": {"coverage":"partial","sessions":[{"id":"sogorea-te-20260911","workerId":"astra_policy_screen","phase":"research","startedAt":"2026-09-11T16:02:42Z","endedAt":"2026-09-11T16:07:31Z","model":{"id":"gpt-6-astra","name":"GPT-6 Astra Light","evidence":"Author records parent dispatch gpt-6-astra/low."},"evidence":"Observed focused research/model/validation interval. See docs/reports/sogorea-te-alpha-handoff.md; later memo writing and independent audit excluded; active time unmetered."}]},
     "Bike East Bay": {"coverage":"partial","sessions":[{"id":"bike-east-bay-20260911-initial","workerId":"astra_universe_screen","phase":"research","startedAt":"2026-09-11T15:52:23Z","endedAt":"2026-09-11T15:55:28Z","model":{"id":"gpt-6-astra","name":"GPT-6 Astra Light","evidence":"Author handoff records parent dispatch gpt-6-astra/low."},"evidence":"Conservative initial observed interval only, ending before the mixed SVBC correction recheck at15:55:28. Later Bike East Bay work through15:59:24 is not added because a clean restart time is unavailable. See bike-east-bay-alpha-handoff.md; active time unmetered."}]},
     "Alameda Health Consortium": {"coverage":"partial","sessions":[{"id":"alameda-health-consortium-20260911","workerId":"astra_policy_screen","phase":"research","startedAt":"2026-09-11T15:26:31Z","endedAt":"2026-09-11T15:34:17Z","model":{"id":"gpt-6-astra","name":"GPT-6 Astra Light","evidence":"Parent dispatch."},"evidence":"Author-reported research/model/verification wall interval; active minutes unmetered; shared planning excluded. "}]},

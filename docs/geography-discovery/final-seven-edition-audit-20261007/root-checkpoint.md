@@ -1,5 +1,13 @@
 # Final audit and first correction — October 7
 
+## Sixth correction scientifically accepted — CommunityHealth; not published
+
+At 17:03 UTC, the frozen CommunityHealth packet is durably copied into docs/geography-discovery/chicago-communityhealth-alpha-income-20261007. Root source and independent arithmetic acceptance are complete: conditional $17.596276M → $6.957908M per better life, health30.43145 and signed resources+.4020957433. Main change removes the inappropriate annual-work financing discount, not proof of greater clinical efficacy. Financial protection is independently additional, with full negative access burdens and explicit Oregon-to-free-clinic transport uncertainty. Current no-new-dental-referrals and full audited cost/in-kind boundary are checked. All five original worlds are deep-equal to the current initial report; alpha/HOLD remains unchanged.
+
+Portable222checks/36cases and production schema pass in memory. The first standalone schema invocation omitted its required checkout argument and failed; corrected invocation passed. This is not integrated production verification. No worker or research clock remains live. Author132.692s/root69.131s are the only measured new research intervals; untimed clarification/admin is not reconstructed.
+
+Live publication remains Sites479: five corrections published,64 structural flags remain. CommunityHealth is accepted-unpublished, not a sixth live correction. Registry/current list/shortlist and measured provenance have not yet changed. Next action: recover safe origin push for retained Night Ministry commits, then root-only CommunityHealth registry/provenance integration, focused preservation tests, one responsive/build/release and both-host verification. Do not restart completed CommunityHealth research. Git ls-remote at this checkpoint still shows origin1691858; local20979f3 plus the preserved source/receipt commits remain intact. No reflexive push retry was attempted. Overall goal remains incomplete; seven active editions only. Mac sleep clarification remains unanswered; settings unchanged.
+
 ## Fifth correction — Night Ministry accepted; release pending
 
 GitHub origin publication receipt push failed twice with remote Internal Server Error, requestCC0F/CC1B at16:54UTC. Verified origin still1691858, local scientificsourcefcb67daa and receipt74ba5f5 retained cleanly; Sites479/bothhostpublication alreadyverified and unaffected. Do not claim origin updated or discard commits. Stop reflexive retries; next turn inspectremote/service status and safely retry saved branch before further integration.15MB regenerable releasearchive removed; source and evidence preserved, preview stopped. Local checkpoint supplement follows; goal remains active.

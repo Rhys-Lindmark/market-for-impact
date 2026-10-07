@@ -1,0 +1,101 @@
+{
+  "comparison": {
+    "before": {
+      "health": 6.03469976104928,
+      "income": -2.5645914934728786,
+      "total": 3.4701082675764017,
+      "price": 9780164.58941876
+    },
+    "current": {
+      "health": 7.543374701311599,
+      "income": -3.218329455840766,
+      "total": 4.325045245470833,
+      "price": 7846907.505890246
+    },
+    "why": "Corrected patient-versus-household clinical units, while replacing unsupported earnings with judged otherwise-paid medical cash savings and coherent completion/response gates; not an observed performance change."
+  },
+  "central": {
+    "inputs": {
+      "C": 3393823,
+      "N": 2569,
+      "unique": 0.8,
+      "eligible": 1,
+      "completion": 1,
+      "b": 0.3,
+      "response": 0.4,
+      "q": 0.03,
+      "T": 1,
+      "g": 0.95,
+      "delay": 0.1,
+      "r": 0.03,
+      "harm": 0.0005,
+      "success": 0.3,
+      "workEligible": 0.5,
+      "workGain": 0,
+      "medicalGain": 200,
+      "overlap": 0.5,
+      "cost": 75,
+      "baseline": 20000,
+      "payerLoss": 0,
+      "externalCost": 0,
+      "payerPeople": 10000,
+      "payerBaseline": 50000
+    },
+    "costUSD": 3393823,
+    "clinicalExposed": 2569,
+    "exposed": 2055.2000000000003,
+    "union": 616.5600000000001,
+    "clinicalPeople": 308.28,
+    "changed": 184.96800000000002,
+    "working": 184.96800000000002,
+    "editionQalys": 7.543374701311599,
+    "allPopulationQalys": 7.940394422433262,
+    "incomePathways": [
+      {
+        "id": "medical-and-work-households",
+        "people": 184.96800000000002,
+        "annualIncomeBeforeUSD": 20000,
+        "annualIncomeGainUSD": 25,
+        "years": 1,
+        "editionShare": 0.95,
+        "delayYears": 0.1,
+        "discountRate": 0.03,
+        "rationale": "Same household and same-year medical spending, net work resources and net additional access costs are jointly logged. Only positive gains are overlap-adjusted; full negatives remain.",
+        "counterfactual": "Other primary-care/FQHC providers, Medicaid/CHP+, insurance, and otherwise-paid medical care. Positive work benefits apply only to an adult/caregiver subgroup with clinical response.",
+        "sourceIds": [
+          "services",
+          "finance",
+          "oregon-clinical",
+          "oregon-labor",
+          "cg-cost"
+        ]
+      },
+      {
+        "id": "other-exposed-households",
+        "people": 1870.2320000000002,
+        "annualIncomeBeforeUSD": 20000,
+        "annualIncomeGainUSD": -75,
+        "years": 1,
+        "editionShare": 0.95,
+        "delayYears": 0.1,
+        "discountRate": 0.03,
+        "rationale": "Same household and same-year medical spending, net work resources and net additional access costs are jointly logged. Only positive gains are overlap-adjusted; full negatives remain.",
+        "counterfactual": "Other primary-care/FQHC providers, Medicaid/CHP+, insurance, and otherwise-paid medical care. Positive work benefits apply only to an adult/caregiver subgroup with clinical response.",
+        "sourceIds": [
+          "services",
+          "finance",
+          "oregon-clinical",
+          "oregon-labor",
+          "cg-cost"
+        ]
+      }
+    ],
+    "incomeEquivalent": -3.218329455840766,
+    "incomeUnknown": false,
+    "totalEquivalent": 4.325045245470833,
+    "price10": 7846907.505890246,
+    "costPer10Qalys": 7846907.505890246,
+    "incomeEquivalentYears": -3.218329455840766,
+    "combinedEquivalentYears": 4.325045245470833
+  }
+}

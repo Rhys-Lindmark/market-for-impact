@@ -2,6 +2,8 @@
 
 ## Second correction accepted; release pending
 
+Superseded by verified publication: Sites476 sourcea7d73b454269a0c4916d4e05e317aa371daf008b succeeded16:22:16UTC; both hosts verified16:22:53UTC, fourteen edition home/all cases plus six tracker/CRT cases. CRT $243.3M current price/header and67flag/335planned-minute tracker match source. Six responsive checks passed and preview3107 is stopped. Detailed receipt: ../chicago-crt-alpha-income-20261007/publication.json. Two corrections published,67 flags remain; next Houston Healthcare for the Homeless. Hourly schedule updated with this handoff; goal remains incomplete.
+
 Children’s Research Triangle alpha correction accepted/integrated October7: original $913.21M → conditional $243.35M per better life. Annual-work accounting removes an inappropriate extra marginal-gift capacity discount; central signed household resources are slightly negative, not unexamined zero. Original seventeen-scenario diagnostic frozen; current36 cases/209 reconstruction checks and28 focused production/provenance tests pass. Two independently accepted corrections of original69 flags;67 remain (Chicago6,Houston1,other edition flags unchanged). This is accepted source state, not yet live publication. Both research clocks closed before integration; no elapsed Mac-setting/admin gap added as research. Next one combined release and both-host parity, then Houston Healthcare for the Homeless. No author live.
 
 ## Accepted publication receipt

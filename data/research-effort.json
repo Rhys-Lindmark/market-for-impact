@@ -9,6 +9,123 @@
   "timeBasis": "Sum of recorded, organization-specific researcher wall-clock intervals. Parallel researchers are counted separately; this is not elapsed calendar time or a quality score.",
   "historicalCoverage": "Earlier reports did not consistently record organization-specific research intervals or AI model provenance. Missing records are unknown, not zero.",
   "organizations": {
+    "Healthcare for the Homeless - Houston": {
+      "coverage": "partial",
+      "sessions": [
+        {
+          "id": "1cfd12da-b56d-4ee7-ac47-ee50b992dc56",
+          "workerId": "astra-health-houston-20260929",
+          "phase": "research",
+          "startedAt": "2026-09-29T18:54:20.966Z",
+          "endedAt": "2026-09-29T18:58:29.159Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Light",
+            "evidence": "Parent dispatch metadata",
+            "reasoningEffort": "low"
+          },
+          "evidence": "HHH alpha: original 2025 impact report, original 2024 audit and Form 990; partial author interval",
+          "organizationId": "org:healthcare-for-the-homeless-houston",
+          "stage": "alpha"
+        },
+        {
+          "id": "bad26211-1d1a-4665-a2f1-0d37c16b3ae0",
+          "workerId": "houston-first3-independent-audit",
+          "phase": "source-audit",
+          "startedAt": "2026-09-29T19:18:40.119Z",
+          "endedAt": "2026-09-29T19:20:13.019Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "evidence": "Parent audit dispatch metadata: gpt-6-astra medium",
+            "reasoningEffort": "medium"
+          },
+          "evidence": "Houston HHH canonical alpha: independent source and equation review",
+          "organizationId": "org:healthcare-for-the-homeless-houston",
+          "stage": "alpha"
+        },
+        {
+          "id": "d6181243-c961-4ddb-9c96-3ed113765dcd",
+          "workerId": "houston-hhh-followon-20260929",
+          "phase": "research",
+          "startedAt": "2026-09-29T20:15:29.572Z",
+          "endedAt": "2026-09-29T20:37:36.152Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Light",
+            "evidence": "Parent task runtime assignment: GPT-6 Astra with low reasoning effort (Light)",
+            "reasoningEffort": "low"
+          },
+          "evidence": "outputs/houston-hhh-followon/evidence.md",
+          "organizationId": "org:healthcare-for-the-homeless-houston",
+          "stage": "alpha"
+        },
+        {
+          "id": "4c11bbe9-0110-40ce-ba51-515a9c83f2c5",
+          "workerId": "houston-hhh-followon-20260929",
+          "phase": "modeling",
+          "startedAt": "2026-09-29T20:37:36.260Z",
+          "endedAt": "2026-09-29T20:41:04.049Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Light",
+            "evidence": "Parent task runtime assignment: GPT-6 Astra with low reasoning effort (Light)",
+            "reasoningEffort": "low"
+          },
+          "evidence": "outputs/houston-hhh-followon/corrected-model.json",
+          "organizationId": "org:healthcare-for-the-homeless-houston",
+          "stage": "alpha"
+        },
+        {
+          "id": "f2f9287a-e65e-4655-b793-08a239189bc7",
+          "workerId": "hhh-independent-audit-20260929",
+          "phase": "source-audit",
+          "startedAt": "2026-09-29T20:43:31.611Z",
+          "endedAt": "2026-09-29T20:45:16.975Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "reasoningEffort": "medium",
+            "evidence": "Parent audit dispatch"
+          },
+          "evidence": "docs/houston-hhh-correction-acceptance.md",
+          "organizationId": "org:healthcare-for-the-homeless-houston",
+          "stage": "alpha"
+        },
+        {
+          "id": "7a06c24e-e54f-44bb-8392-250f93c8fd95",
+          "workerId": "houston_west_meals_initial",
+          "phase": "research",
+          "startedAt": "2026-10-07T16:24:41.754Z",
+          "endedAt": "2026-10-07T16:27:30.395Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "runtime model assignment: GPT-6.1 Sol"
+          },
+          "evidence": "docs/geography-discovery/houston-hhh-alpha-income-20261007/evidence.md",
+          "organizationId": "org:healthcare-for-the-homeless-houston",
+          "edition": "houston",
+          "stage": "alpha"
+        },
+        {
+          "id": "2f0fe0a3-45a5-4488-a3ba-4c9958859e79",
+          "workerId": "root-hhh-income-source-audit-20261007",
+          "phase": "source-audit",
+          "startedAt": "2026-10-07T16:24:33.731Z",
+          "endedAt": "2026-10-07T16:26:00.208Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed model assignment: GPT-6.1 Sol"
+          },
+          "evidence": "docs/geography-discovery/houston-hhh-alpha-income-20261007/root-acceptance.md",
+          "organizationId": "org:healthcare-for-the-homeless-houston",
+          "edition": "houston",
+          "stage": "alpha"
+        }
+      ]
+    },
     "Children's Research Triangle": {
       "coverage": "partial",
       "sessions": [

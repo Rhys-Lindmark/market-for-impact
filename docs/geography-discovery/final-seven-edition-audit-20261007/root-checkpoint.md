@@ -1,5 +1,9 @@
 # Final audit and first correction — October 7
 
+## Third initial correction accepted; release pending
+
+HHH Houston independently source/math challenged and integrated: original $55.63M→conditional $37.06M per better life; annual-work cash-response boundary corrected, full clinical harm and signed household access/resource costs retained. Whole unaudited recipient expense/narrow dental scope and gift capacity unknown remain explicit. Fresh HRSA workbook confirms1499visits/595patients and screening659 is not treated depression; original five worlds retained. Portable213checks/36cases/schema pass. Three accepted corrections,66 flags remain (Houston0,Chicago6,other four15each). No stage/count/top-four promotion. Next combined release, then Above and Beyond Family Recovery Center Chicago. Author168.641seconds/rootsource86.477seconds Sol closed before tests/admin; no research clock open.
+
 ## Second correction accepted; release pending
 
 Superseded by verified publication: Sites476 sourcea7d73b454269a0c4916d4e05e317aa371daf008b succeeded16:22:16UTC; both hosts verified16:22:53UTC, fourteen edition home/all cases plus six tracker/CRT cases. CRT $243.3M current price/header and67flag/335planned-minute tracker match source. Six responsive checks passed and preview3107 is stopped. Detailed receipt: ../chicago-crt-alpha-income-20261007/publication.json. Two corrections published,67 flags remain; next Houston Healthcare for the Homeless. Hourly schedule updated with this handoff; goal remains incomplete.

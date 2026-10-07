@@ -24,7 +24,9 @@ for(const [edition,slug,dir] of [
  ['usa','the-headstrong-project','usa-headstrong-alpha-income-20261007'],
  ['usa','immunize-org','usa-immunize-alpha-income-20261007'],
  ['usa','shatterproof','usa-shatterproof-alpha-income-20261007'],
- ['usa','farmworker-justice','usa-farmworker-justice-alpha-income-20261007']
+ ['usa','farmworker-justice','usa-farmworker-justice-alpha-income-20261007'],
+ ['usa','center-for-environmental-health','usa-ceh-alpha-income-20261007'],
+ ['usa','toxic-free-future','usa-tff-alpha-income-20261007']
 ])test(slug+' preserves original clinical reference and explicit unknown income',()=>{
  const r=data.reports.find(r=>r.edition===edition&&r.slug===slug);
  const original=JSON.parse(fs.readFileSync(new URL('../docs/geography-discovery/'+dir+'/original-report.json',import.meta.url)));

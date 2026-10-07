@@ -1,0 +1,5 @@
+# Accepted initial-income audit: Community Water Center
+
+Original-source/model independent checks passed thirteen portable worlds/current schema. Full initial report/scenarios diagnostic preserved, stage alpha unchanged. Clinical .028762135922330102 unchanged, signed income -.0038426418738539644; conditional initial2237244833.755274→2582233005.00497. Householdcohort1.975 excludesresidentmultiplier/clinicalutility; fullhypothetical60utility/20time annualcost, notquotedrates. Genuineprivatepurchase600sensitivity netretention/positiveoverlap only, fullcostsallhouseholds; publicassistance caneraseactualpurchase savings. Completed/plannedpublicprojects baseline; currentSpringfieldJanuary2027timing; unknownbroaderpolicy/jobs welfare notzero.
+
+Author109.963+rootsource28.929+rootmodel39.657=178.549actualseconds under300initialcap, historicalcoveragepartial/no paddedwaits. No required material correction. No substantiveworkafterclosedintervals; schema/tests/integration/build/release separate overhead. Rootaloneintegrates/publishes; initialdiagnostic/181otherreports comparison beforebatchrelease.

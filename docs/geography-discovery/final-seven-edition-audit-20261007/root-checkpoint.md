@@ -1,5 +1,11 @@
 # Final audit and first correction — October 7
 
+## Sixth correction published and verified — CommunityHealth
+
+Sites480 source85853106ddd89121bc768aec12cc256e826a6d3e succeeded17:07:22UTC; both-host report/tracker verification17:07:44UTC and fourteen edition home/all parity cases17:07:50UTC. Current $7.0M list/report formatting and63olderflag/315planned-minute tracker match source. Six corrections published,63 flags remain (Chicago3,CA/USA/NYC/LA15each,Houston/Denver0). Author132.692s/root69.131s remain actual partial organization research, not elapsed release/admin time.222portablechecks/36cases,28focusedtests,6responsive checks pass;182otherreports unchanged/full originalfive-world diagnostic preserved, stagealpha unchanged. Next TriCity Health Partnership Chicago; no worker/research clock live. Publication receipt is chicago-communityhealth-alpha-income-20261007/publication.json.
+
+Supported Sites source and publication path is verified independent of the failing GitHub origin push. Do not let that secondary remote receipt failure unnecessarily block bounded science/publication; retain all local unpushed commits and diagnose or retry only with changed conditions. No force push, commit loss or reflexive retry loop. Goal remains incomplete; all seven counts/top-four targets are still live, final initial-income audit remains.15MB regenerable package may be removed after this receipt; preview3107 stopped by structured teardown. Mac sleep clarification pending, settings unchanged.
+
 ## Sixth correction scientifically accepted — CommunityHealth; not published
 
 At 17:03 UTC, the frozen CommunityHealth packet is durably copied into docs/geography-discovery/chicago-communityhealth-alpha-income-20261007. Root source and independent arithmetic acceptance are complete: conditional $17.596276M → $6.957908M per better life, health30.43145 and signed resources+.4020957433. Main change removes the inappropriate annual-work financing discount, not proof of greater clinical efficacy. Financial protection is independently additional, with full negative access burdens and explicit Oregon-to-free-clinic transport uncertainty. Current no-new-dental-referrals and full audited cost/in-kind boundary are checked. All five original worlds are deep-equal to the current initial report; alpha/HOLD remains unchanged.

@@ -1,0 +1,7 @@
+# PPRM deep review accepted for conditional publication
+
+Root independently read the original Turnaway socioeconomic manuscript and original FY2024 IRS regional cost/output; health publication and erratum identified, inaccessible corrected body disclosed rather than precise uncorrected risk coefficients imported. Earnings are zero centrally. Retained $1000/four-year existing-household consumption pressure is explicitly a strong uncalibrated judgment, not measured household income or wages. Unknown broader clinical/education channels, timely alternative providers, residency and marginal funding limitations preserved. This is a whole-regional annual-cost/local abortion-access partial reference, not empirical whole-portfolio expected value or a marginal-gift quote.
+
+One material correction repaired fractional resource periods: joint gain-minus-cost during the effect, cost-only rest of care year, later gains discounted at actual periods.244portable49case assertions,209independent reconstructions and actual production schema in-memory passed. Full frozen initial model/report preserved. Conditional price unchanged $95.173949M; health3.192 and signed resources3.854293. Numerical retention is not empirical validation of the consumption hypothesis; zero/negative/transient cases expose uncertainty.
+
+Measured author347.855seconds plus root118.920seconds actualGPT-6.1Sol, partial history; no tests/waits/release charged. Integration/report-list/header synchronization and public release require publication receipt.

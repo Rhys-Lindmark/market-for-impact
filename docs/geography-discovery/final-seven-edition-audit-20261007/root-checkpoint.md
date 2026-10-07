@@ -1,5 +1,9 @@
 # Final audit and first correction — October 7
 
+## Ninth correction verified — ChicagoCAC
+
+Sites483 source03366206dd11b5faa3552eb76667fb00f22ffcc8 succeeded17:47:39UTC; sixreport/list/trackerchecks bothhosts17:48:11 and14editionprice/featurecases17:48:13. Price131.156M→72.822M primarilyannual-work boundary, health1.791803/resources−.178236 conditionalhouseholdjudgments notempiricalEV. Fulloriginal15worlds/fullreportdiagnostic and182otherreports preserved; alpha/HOLD unchanged.28productiontests/6responsive/11reconstructionworldspass. Ninepublishedcorrections/60remaining; Chicagotail0, CA0/15 USA0/15 NYC0/15 LA0/15. NextCaliforniaNationalHealthLawProgram currentbacklogcheck. Closedmeasuredresearch123.179sec partial; previousauthor179.534elapsedallocation conservativelycharged, total302.713sec/2.713sec overrunrecorded exactly. Noopenauthortimingimported;noadditionalresearch. Source/checkpointfailure preserved but supersededbyacceptedmodel/challenge/publicationreceipt. Allworker/clocksstopped,preview3107stopped. Overallgoalactive/incomplete;GitHubsecondaryfailuredoesnotblockSites;noresetcreditsused.
+
 ## ChicagoCAC initial audit boundary — October7 17:35UTC
 
 Not accepted or published: author allocation179.534sec ended17:34:24 without a testable calculator/ledger. Adminhandoff also produced no artifact and was stopped17:35:55. Rootoriginalsource30.572sec closed; no liveworker/clock. Retainedfreshsources/initialdiagnostic, exactmodelingstep in chicago-cac-alpha-income-20261007/checkpoint.md; further combinedresearchallocation atmost89.894sec, not a new five-minute allowance. Never importopenauthor timing/countthisaccepted. Eightverifiedcorrections/61remain; CA0/15 USA0/15 NYC0/15 LA0/15 Chicago1. Sites482 unchanged. Resume compactcalculator and independentchallenge fromsources withoutrepeatdiscovery, or advance an independentfour-groupitem; overallgoalactive/incomplete.

@@ -1,5 +1,9 @@
 # Final audit and first correction — October 7
 
+## Fifth correction — Night Ministry accepted; release pending
+
+Original FY2025 audit/annualreport/youthhousing/currenthelp and original TorontoRCT independently checked. Night Ministry Chicago annualreference132.000775M→38.400448M; clinical2.879828/signedresources+.140508381896. Main change removes marginalgift discount from annualwork denominator, retains full processharm and householdburden; cash/housing/jobs/cohortoverlap/baseline are explicitly conditional judgments, not observed causal savings. Omitted nutrition/basicneeds/socialconnection remains unknown, notzero. Full original4worlddiagnostic identical;182otherreports unchanged/stagealpha/HOLD unchanged.221portablechecks/36cases/current-schema and28focusedtests pass. Five accepted corrections,64 frozen69snapshot flags remain (Chicago4,CA/USA/NYC/LA15each,Houston/Denver0). Author133.018s/root52.580sSol closed; partial untimed refinement not reconstructed. Next CommunityHealth Chicago; one combined responsive/build/deploy pending, goal incomplete.
+
 ## Fourth correction accepted — Above and Beyond; release pending
 
 Superseded by verified Sites478 sourcec4c21571e0be330391cd403f383ad3b5065c2f48, publication16:44:55UTC. Both-host14edition cases passed16:45:25UTC and6tracker/currentreport cases16:45:29UTC. $14.3M/65flags/325plannedminutes match live source;6responsivechecks passed with preview3107 stopped. Four corrections published,65 flags remain. Receipt chicago-above-alpha-income-20261007/publication.json. Next Chicago Night Ministry; no worker/research clock live.15MB taskarchive disposable after receipt; goal incomplete.

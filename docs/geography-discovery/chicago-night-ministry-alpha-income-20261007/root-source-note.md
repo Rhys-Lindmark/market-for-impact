@@ -1,0 +1,9 @@
+# Fresh independent source receipts
+
+October7 root read original FY2025 audit29pages in memory: https://thenightministry.org/wp-content/uploads/2026/06/The-Night-Ministry-AUD-06302025-FINAL.pdf . Physicalp24 consolidating TNM expense11,424,900 plus173,327 directevent costs nettedrevenue=11,598,227. TNMrevenue11,841,571/endingassets12,594,087/restricted3,636,346. Consolidatedexpense11,392,210 is not independently added to TNM. Physicalp26 in-kindexpense580,512 alreadycost; program specificassistance225,650 not established disjoint householdcash transfer. Subsidiary/eliminations preserved.
+
+Original FY2025 annualreport16pages https://thenightministry.org/wp-content/uploads/2026/05/The-Night-Ministry_FY2025-Annual-Report.pdf physicalp6:5400wholeorganization individuals,3631assessments,216 transitioned OR maintainedstablehousing,487youngpeoplehoused,57597encounters. Distinguish visits from people and housingmaintenance from causal newplacements. 983avoidedER/$2.7Mpublicsavings are claims, not causal health or household cash. Meals47781/hygienekits18822 from designated purchases/donations not automatically net consumption beyond alternatives; recognizedin-kind alreadycost.
+
+Fresh https://thenightministry.org/get-help/ and https://thenightministry.org/housing-programs-for-youth/ identify Chicago outreach/referrals/benefits-IDcase management, emergency/interim housing and long-term economicmobility support. These verify mechanisms, not causal earnings/net household cash or utility estimates. Joint housing/health/resources need deduplication.
+
+Fresh original TorontoRCT at https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0130281 (PMC initiallycaptcha) has378adults/24months, housing75.1%vs39.3%, clinical/context differences from youthTNM. Emergencyvisit/dayhospital effects not statisticallydifferent; no direct TNMcausal utility/netincome coefficient inferred. It supports uncertainty rather than treatingbednights asQALYs.

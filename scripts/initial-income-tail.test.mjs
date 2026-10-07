@@ -12,6 +12,31 @@ import * as cda from '../docs/geography-discovery/ca-cda-alpha-income-20261007/m
 import * as essential from '../docs/geography-discovery/ca-essential-alpha-income-20261007/model.mjs';
 import * as yimby from '../docs/geography-discovery/ca-yimby-alpha-income-20261007/model.mjs';
 const data=JSON.parse(fs.readFileSync(new URL('../data/geography-reports.json',import.meta.url)));
+for(const [edition,slug,dir] of [
+ ['california','california-pan-ethnic-health-network','ca-cpehn-alpha-income-20261007'],
+ ['usa','national-health-law-program','usa-nhelp-alpha-income-20261007']
+])test(slug+' preserves original clinical reference and explicit unknown income',()=>{
+ const r=data.reports.find(r=>r.edition===edition&&r.slug===slug);
+ const original=JSON.parse(fs.readFileSync(new URL('../docs/geography-discovery/'+dir+'/original-report.json',import.meta.url)));
+ for(const s of original.model.scenarios)assert.deepEqual(r.model.scenarios.find(x=>x.id===s.id),s);
+ assert.equal(reportPrice(r),reportPrice(original));
+ assert.equal(r.model.incomeAssessment.status,'assessed-unknown');
+ assert.equal(r.model.incomeAssessment.evidence,r.acceptance.evidence);
+ assert.equal(scenarioIncomeEquivalent(r.model.scenarios.find(s=>s.id==='combined-income-unknown')),null);
+ assert.equal(r.stage,'alpha');
+});
+test('NHeLP optional payment sensitivity is independent of clinical benefit and zero without capacity',async()=>{
+ const model=await import('../docs/geography-discovery/usa-nhelp-alpha-income-20261007/model.mjs');
+ const r=data.reports.find(r=>r.edition==='usa'&&r.slug==='national-health-law-program');
+ for(const [id,o] of [['oregon-payment-transfer-diagnostic',{}],['oregon-payment-clinical-null',{q:0}],['oregon-payment-no-capacity',{b:0}]]){
+  const z=model.financialDiagnostic(o),s=r.model.scenarios.find(s=>s.id===id);
+  assert(Math.abs(scenarioIncomeEquivalent(s)-z.income)<1e-10);
+  assert.equal(s.editionQalys,z.editionQalys);
+ }
+ assert.equal(model.financialDiagnostic({q:0}).income,model.financialDiagnostic().income);
+ assert.equal(model.financialDiagnostic({b:0}).income,0);
+ assert.equal(r.model.scenarios.find(s=>s.id==='central').incomePathways,undefined);
+});
 for(const [slug,model] of [['essential-access-health',essential],['california-yimby-education-fund',yimby]])test(slug+' independent signed-resource worlds reproduce',()=>{
  const report=data.reports.find(r=>r.edition==='california'&&r.slug===slug);model.tests();
  for(const [id,x,h] of model.scenarios){const z=model.calculate(x,h),s=report.model.scenarios.find(s=>s.id===id);assert(s,id);assert.equal(s.editionQalys,z.editionQalys);if(id==='income-unknown'){assert.equal(scenarioIncomeEquivalent(s),null);continue;}assert(Math.abs(scenarioIncomeEquivalent(s)-z.income)<1e-10);}

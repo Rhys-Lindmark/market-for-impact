@@ -1,0 +1,5 @@
+import assert from 'node:assert/strict';
+export const inputs={C:4984085,E:4984085,f:.3,k:224000,y:100,a:.1,b:.25,q:.02,d:.03};
+export function calculate(o={},clinical=true){const x={...inputs,...o},F=x.C*x.f/x.k,Y=F*x.y*x.a*x.b,health=clinical?Y*x.q/(1+x.d):0;return{x,F,Y,income:null,incomeUnknown:true,allPopulationQalys:health,editionQalys:health,costUSD:x.C,price10:null,healthOnlyDiagnosticPrice:health>0?10*x.C/health:null};}
+export const scenarios=[['central',{},true],['clinical-null-income-unknown',{},false],['financial-only-unestimated',{},false],['no-capacity-income-unknown',{b:0},true],['adverse-clinical-income-unknown',{q:-.02},true],['gift-100000-income-unknown',{C:100000},true]];
+export function tests(){assert(Math.abs(calculate().editionQalys-.3240346523925104)<1e-12);assert.equal(calculate().income,null);assert.equal(calculate().price10,null);assert.equal(calculate({b:0}).editionQalys,0);assert(Math.abs(calculate({C:100000}).healthOnlyDiagnosticPrice-calculate().healthOnlyDiagnosticPrice)<1e-6);}

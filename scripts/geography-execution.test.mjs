@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import progress from '../docs/geography-progress.json' with {type:'json'};
 import reports from '../data/geography-reports.json' with {type:'json'};
 import budget from '../docs/geography-execution-budget.json' with {type:'json'};
-import {activeEditions,remainingResearchMinutes,recordedEditionResearch,incomeAssessmentBacklog} from '../lib/geography-execution.mjs';
+import {activeEditions,remainingResearchMinutes,recordedEditionResearch,incomeAssessmentBacklog,documentedUnknownIncomeAssessments} from '../lib/geography-execution.mjs';
 test('Latest user scope retains seven active editions and archives four without deleting data',()=>{
  const active=activeEditions(progress);assert.equal(active.length,7);assert.deepEqual(active.map(e=>e.id),budget.activeEditionIds);
  for(const id of budget.deferredEditionIds)assert.ok(progress.editions.some(e=>e.id===id));
@@ -30,4 +30,13 @@ test('Economic-coverage triage cannot mistake published counts or health outputs
  assert.ok(pending.every(r=>r.stage==='alpha'),'Current deep reports have structured resource assessment');
  // Counts shrink only as report models actually acquire coverage; fixtures do not freeze69 forever.
  assert.ok(pending.length<=69);
+});
+test('Unknown dispositions require reviewed evidence and remain visibly distinct from numerical valuation',()=>{
+ const r={edition:'x',sources:[{id:'s'}],acceptance:{status:'accepted',evidence:'docs/a.md'},model:{scenarios:[{id:'central'}],incomeAssessment:{status:'assessed-unknown',acceptance:'independently-reviewed',evidence:'docs/a.md',sourceIds:['s']}}};
+ assert.equal(documentedUnknownIncomeAssessments({reports:[r]},'x').length,1);
+ assert.equal(incomeAssessmentBacklog({reports:[r]},'x').length,0);
+ const bad=structuredClone(r);bad.model.incomeAssessment.sourceIds=['missing'];
+ assert.equal(incomeAssessmentBacklog({reports:[bad]},'x').length,1);
+ const unreviewed=structuredClone(r);delete unreviewed.acceptance;
+ assert.equal(incomeAssessmentBacklog({reports:[unreviewed]},'x').length,1);
 });

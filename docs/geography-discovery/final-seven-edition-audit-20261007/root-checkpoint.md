@@ -1,5 +1,9 @@
 # Final audit and first correction — October 7
 
+## ChicagoCAC initial audit boundary — October7 17:35UTC
+
+Not accepted or published: author allocation179.534sec ended17:34:24 without a testable calculator/ledger. Adminhandoff also produced no artifact and was stopped17:35:55. Rootoriginalsource30.572sec closed; no liveworker/clock. Retainedfreshsources/initialdiagnostic, exactmodelingstep in chicago-cac-alpha-income-20261007/checkpoint.md; further combinedresearchallocation atmost89.894sec, not a new five-minute allowance. Never importopenauthor timing/countthisaccepted. Eightverifiedcorrections/61remain; CA0/15 USA0/15 NYC0/15 LA0/15 Chicago1. Sites482 unchanged. Resume compactcalculator and independentchallenge fromsources withoutrepeatdiscovery, or advance an independentfour-groupitem; overallgoalactive/incomplete.
+
 ## Eighth correction published and verified — Will-Grundy
 
 Sites482 source13d1d6846ac753c96e387472bdf170ebb7283053 succeeded17:26:24UTC,14editionhome/allpricecases passed17:26:48UTC andsixreport/trackerchecks bothhosts17:26:50UTC. Current$5.2M report/list and61flag/305plannedminute tracker matchsource. Eight corrections published,61remaining (CA15,USA15,NYC15,LA15,Chicago1,Houston0,Denver0). Next ChicagoCAC thenfour0/15groups. Noauthor/researchclocklive.222checks36cases/28production/6responsivepass;182othersunchanged/fulloriginalfiveworldpreserved. Actualauthor+root170.336seconds partialtiming, underfive-minutecap; untimedplanningnotreconstructed,tests/admin/releaseexcluded. Health3.626/signedresources−.0841007998 includejointmedicalhousingresources independentlyclinicalresponse. Allseveneditiontargetcounts/topfourremainlive; goalincomplete. Publicationreceiptchicago-willgrundy-alpha-income-20261007/publication.json.15MBregenerablearchive removableafterreceipt, preview3107stopped. GitHubsecondarypushfailure doesnotblockSites; retainunpushedcommits. Usernotificationonfullauditcompletionremainsconfigured.

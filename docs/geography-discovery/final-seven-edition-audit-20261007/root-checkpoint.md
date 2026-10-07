@@ -2,6 +2,8 @@
 
 ## Fourth correction accepted — Above and Beyond; release pending
 
+Superseded by verified Sites478 sourcec4c21571e0be330391cd403f383ad3b5065c2f48, publication16:44:55UTC. Both-host14edition cases passed16:45:25UTC and6tracker/currentreport cases16:45:29UTC. $14.3M/65flags/325plannedminutes match live source;6responsivechecks passed with preview3107 stopped. Four corrections published,65 flags remain. Receipt chicago-above-alpha-income-20261007/publication.json. Next Chicago Night Ministry; no worker/research clock live.15MB taskarchive disposable after receipt; goal incomplete.
+
 Chicago Above and Beyond initial correction source/math accepted:44.285M→14.349M per better life; health3.18640925/signedresources−.192269181864. Fresh original2024 audit financialp6–7 reconciles4,296,413expense;2023ownsnapshot1058groupclients/undefined42.9%recovery/fivejobs. Annual financing multiplier removed from annualwork boundary; unknown currentgiftcapacity retained. Jobs/retention/netgain and morbidity are explicitly conditional judgments, not measured causal outcomes; full resource losses retained. Original four-world diagnostic equals prior authoritative report;182otherreports unchanged. Portable185checks/36cases/current-schema and28focusedtests pass. Four corrections accepted,65structuralflags remain; frozen69snapshot unchanged. Next Night Ministry Chicago, no stage/count/featured promotion. Author311.981s/rootresumed41.410sSol; interrupted earlier rootstart excluded due Mac conversation, partial measured coverage. One combined responsive/build/publication pending; not yet claiming live price. Goal incomplete.
 
 ## Third initial correction accepted; release pending

@@ -1,0 +1,8 @@
+import assert from 'node:assert/strict';
+import {calculate,cases} from './model.mjs';
+let checks=0;const near=(a,b)=>{assert(Math.abs(a-b)<1e-8*Math.max(1,Math.abs(b)),`${a} != ${b}`);checks++;};
+for(const [id,o] of cases){const c=calculate(o),p=c.inputs;let years=0;for(let i=0;i<Math.ceil(p.T);i++)years+=Math.min(1,p.T-i)/(1+p.r)**(p.delay+i);const exposed=p.N*p.unique,health=(exposed*p.b*p.eligible*p.completion*p.response*p.q*years-exposed*p.harm/(1+p.r)**p.delay)*p.g;if(!p.clinicalUnknown)near(c.editionQalys,health);let income=0;for(const x of c.incomePathways){let y=0;for(let i=0;i<Math.ceil(x.years);i++)y+=Math.min(1,x.years-i)/(1+x.discountRate)**(x.delayYears+i);income+=.5*x.people*y*x.editionShare*Math.log((x.annualIncomeBeforeUSD+x.annualIncomeGainUSD)/x.annualIncomeBeforeUSD);}near(c.incomeEquivalent,income);if(!p.clinicalUnknown&&!p.incomeUnknown){near(c.totalEquivalent,health+income);if(!p.costUnknown&&health+income>0)near(c.price10,10*p.C/(health+income));else assert.equal(c.price10,null);}}
+assert(calculate({response:0}).incomeEquivalent>0);assert(calculate({completion:0}).incomeEquivalent<0);assert(calculate({completion:0}).editionQalys<0);assert(calculate({b:0}).incomeEquivalent<0);assert.equal(calculate({g:0}).totalEquivalent,0);
+near(calculate({medicalGain:-500,workGain:-500,overlap:0}).incomeEquivalent,calculate({medicalGain:-500,workGain:-500,overlap:1}).incomeEquivalent);
+assert.equal(calculate({C:543986}).inputs.C-calculate().inputs.C,2050*25);
+console.log(JSON.stringify({checks,scenarios:cases.length,price:calculate().price10,health:calculate().editionQalys,resources:calculate().incomeEquivalent}));

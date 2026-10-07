@@ -19,7 +19,8 @@ for(const [edition,slug,dir] of [
  ['usa','rx-outreach','usa-rxo-alpha-income-20261007'],
  ['usa','upstream-usa','usa-upstream-alpha-income-20261007'],
  ['usa','national-center-for-healthy-housing','usa-nchh-alpha-income-20261007'],
- ['usa','legal-action-center','usa-lac-alpha-income-20261007']
+ ['usa','legal-action-center','usa-lac-alpha-income-20261007'],
+ ['usa','green-and-healthy-homes-initiative','usa-ghhi-alpha-income-20261007']
 ])test(slug+' preserves original clinical reference and explicit unknown income',()=>{
  const r=data.reports.find(r=>r.edition===edition&&r.slug===slug);
  const original=JSON.parse(fs.readFileSync(new URL('../docs/geography-discovery/'+dir+'/original-report.json',import.meta.url)));

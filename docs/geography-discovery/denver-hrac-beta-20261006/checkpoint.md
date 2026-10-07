@@ -1,4 +1,4 @@
-# HRAC accepted; publication phase
+# HRAC accepted and published: Sites464
 
 Previous goal turn PROGRESS: accepted Denver queue pushed d2d1599, automation updated. This turn: one author, terminal accepted packet; no overlapping run. Seven active editions; four deferred cities remain deferred. Root's exact initial diagnostic comparison and all unrelated registry/source preservation checks pass.
 
@@ -6,4 +6,4 @@ Accepted checks:140 independent reconstruction checks across43 scenarios;224 por
 
 Recorded author344.241s and root108.767s; no waiting, integration, builds or deployment charged. Actual author completed before15-minute cap, no padded wait. Package/release overhead tracked separately by phase timestamps. Source failures and helper/schema/node/path mismatches were corrected before gates; none counted as passed. Root script exact-span and comma/indent failures changed no data; subsequent patch succeeded. Portable test adapted to read canonical registry instead of duplicating190KB report.
 
-Usage last checked77% remaining. No reset credits. No new author this turn. Current accepted registry Denver25initial/1deep/0featured awaits verified production release. Next independent phase: KIND deep review; then8 further queued deep reviews and4 comparative features.135planned research minutes remain, excluding review/release/feature-selection overhead. Goal remains active; do not mark completed.
+Usage last checked77% remaining. No reset credits. Denver25initial/1deep/0featured is published on Sites464, source5f86b2502979a7b03f2fc2eb38cb85d83faabfab. Deployment succeeded2026-10-07T00:56:00.966507Z; six report/list/progress checks across both hosts passed at00:56:13.083Z. Receipt: publication.json. Next independent phase: KIND deep review; then8 further queued deep reviews and4 comparative features.135planned research minutes remain, excluding review/release/feature-selection overhead. Goal remains active; do not mark completed. The subsequent question-answer turn was diagnostic only, not additional research; this continuation closes the publication receipt before dispatching a new author.

@@ -8,6 +8,7 @@ import * as br from '../docs/geography-discovery/ca-breathe-alpha-income-2026100
 import * as cp from '../docs/geography-discovery/ca-childrens-partnership-alpha-income-20261007/model.mjs';
 import * as nc from '../docs/geography-discovery/ca-nourish-alpha-income-20261007/model.mjs';
 import * as cwc from '../docs/geography-discovery/ca-cwc-alpha-income-20261007/model.mjs';
+import * as cda from '../docs/geography-discovery/ca-cda-alpha-income-20261007/model.mjs';
 const data=JSON.parse(fs.readFileSync(new URL('../data/geography-reports.json',import.meta.url)));
 for(const [slug,model,dir] of [['homeless-health-care-los-angeles',hh,'ca-hhcla-alpha-income-20261007'],['didi-hirsch-mental-health-services',dh,'ca-didihirsch-alpha-income-20261007'],['breathe-southern-california',br,'ca-breathe-alpha-income-20261007'],['childrens-partnership',cp,'ca-childrens-partnership-alpha-income-20261007'],['nourish-california',nc,'ca-nourish-alpha-income-20261007'],['community-water-center',cwc,'ca-cwc-alpha-income-20261007']])test(slug+' signed initial ledger reproduces without dropping access costs',()=>{
  const report=data.reports.find(r=>r.edition==='california'&&r.slug===slug);
@@ -21,4 +22,16 @@ for(const [slug,model,dir] of [['homeless-health-care-los-angeles',hh,'ca-hhcla-
  assert(model.calculate({positiveShare:0}).income<0);
  assert.equal(report.stage,'alpha');
  if(model===cwc){assert.equal(model.calculate({n:0}).income,model.calculate().income);assert.equal(model.calculate({u:0}).income,model.calculate().income);}
+});
+
+test('CDA full participation burdens survive clinical and alternative-care nulls',()=>{
+ const report=data.reports.find(r=>r.edition==='california'&&r.slug==='california-dental-association-foundation');
+ cda.tests();
+ for(const [id,x,h] of cda.scenarios){const z=cda.calculate(x,h),s=report.model.scenarios.find(s=>s.id===id);assert(s,id);assert.equal(s.editionQalys,z.editionQalys);if(id==='income-unknown'){assert.equal(scenarioIncomeEquivalent(s),null);continue;}assert(Math.abs(scenarioIncomeEquivalent(s)-z.income)<1e-12);}
+ assert(Math.abs(reportPrice(report)-cda.calculate().price10)<1e-6);
+ assert.equal(cda.calculate({a:0}).income,cda.calculate().income);
+ assert.equal(cda.calculate({s:0}).income,cda.calculate().income);
+ assert.equal(cda.calculate({b:0}).income,0);
+ assert.equal(cda.calculate({positiveShare:0,savings:200}).income,cda.calculate().income);
+ assert.equal(report.stage,'alpha');
 });

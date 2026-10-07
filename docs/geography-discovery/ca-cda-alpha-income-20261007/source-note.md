@@ -1,0 +1,9 @@
+# CDA Foundation signed-resource initial audit
+
+Fresh original https://www.cda.org/about/cda-foundation/cda-cares-connects/ opened October 7, 2026: volunteer dental services at no charge; no individual patient grants. Historical Trinity County event dated October 2024, and cumulative procedures/value/placements are not current unique courses. No-charge care is not a retail-value cash transfer; existing Medi-Cal/alternative care and public capacity remain counterfactual.
+
+Preserve original annual recipient expense $3,438,139 plus modeled $687,627.80 partner resources and original clinical model. Resource population uses N*b*g =168.468811 funding-responsive California delivered course-equivalents, with one unique household-equivalent per course as an explicit distribution judgment, not an observed client count. Clinical s and alternative-care a do not reduce cash or access burdens. Positive saving subgroup alone uses a*saverShare. One end-of-year resource change, not lifelong wages.
+
+Central hypothetical actual private spending avoided is zero; every additional accessed course bears $20 incremental travel/admin/opportunity cost at $20,000 annual household resources. No observed amount supports these judgment dollars. Conditional saving world assigns $200 actual avoided private spending to20% of households (a*.4), retaining80% after taxes/benefits/substitution and50% positive value after overlap; all groups retain FULL $20 burden. One joint log per saver/non-saver group. No retail care, ordinary survivor earnings or gross clinician wages. Other wellness/workforce/fluoridation/resource effects unknown. Disjoint payer consumption and additional real partner resources are separate stress scopes, never duplicate a transfer.
+
+Disk baseline22GiB available; reuse Node/read-only checkout; no dependencies, servers or generated trees.

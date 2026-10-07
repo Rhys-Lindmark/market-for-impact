@@ -1,5 +1,9 @@
 # Final audit and first correction — October 7
 
+## Eighth correction accepted — Will-Grundy; release pending
+
+Will-Grundy independentlysource/math accepted andintegrated:12.636014M→5.244345M conditionalannualwork reference. Clinical3.626/signedmedical+housingresources−.0841007998. OriginalScheduleDfreshconfirmsauditedC1,857,494; FY25ownannual shows1000+all-programproxy/23TBRAfamilies/5respite, not uniqueclinicalpeople. Clinical500/cohortoverlap/netcash/judgedmorbidity retainexplicituncertainty;housingresources included,retailcare/grants/wages notincome. Removedextramarginalfinancefactorfromannualwork. Rootmaterialchallenge separatedmedicalfinancialadditionalityfromclinicalresponse andmadehigheraccess75distinct; independentchecks confirmfinancialeffectssurvivea0. Fulloriginalfiveworlddiagnostic preserved,182othersunchanged,alphaunchanged.222portablechecks36cases/28productiontests pass; responsive/build/onepublicationpending. Sourceeight/61flags versusliveseven/62 untilreceipt. Next ChicagoCAC thenfour0/15groups. Author106.255+correction.385+rootsource38.183+rootmodel25.513=170.336seconds recorded partialresearch belowfive-minuteinitialcap; untimedclarificationunknown,tests/adminnotresearch. Noauthor/clocklive, goalincomplete. GitHuboriginsecondaryfailure doesnotblock verifiedsupportedSitespath.
+
 ## Seventh correction published — Tri City; five-minute cap confirmed
 
 Sites481 source44c4f75702227c43b0f1d6db5b338df42352f020 succeeded17:16:33UTC;14editionhome/allpricechecks passed17:16:50UTC, sixreport/trackerchecks bothhosts17:17:39UTC. First trackerfetch was briefly stale; fresh no-cache read confirms62flags/310plannedminutes, no duplicate deployment. TriCity$3.3M report/list agree. Seven corrections published,62flags remain (CA15,USA15,NYC15,LA15,Chicago2,Houston0,Denver0). Next Will-Grundy Medical Clinic Chicago, then ChicagoCAC and four15groups. No worker/researchclocklive; all seven report/deep/fourfeaturetargets stilllive. Goal incomplete.

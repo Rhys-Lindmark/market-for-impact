@@ -1,0 +1,2536 @@
+{
+  "defaults": {
+    "C": 1857494,
+    "N": 1000,
+    "k": 0.5,
+    "a": 0.3,
+    "medicalResourceAdditional": 0.3,
+    "u": 0.05,
+    "T": 0.5,
+    "H": 23,
+    "h": 0.5,
+    "w": 0,
+    "D": 0.5,
+    "o": 0.5,
+    "harm": 0.05,
+    "g": 0.98,
+    "unique": 0.8,
+    "medicalCash": 100,
+    "housingCash": 100,
+    "work": 0,
+    "cost": 25,
+    "baseline": 20000,
+    "years": 1,
+    "overlap": 0.5,
+    "cohortOverlap": 1,
+    "payerLoss": 0,
+    "externalCost": 0,
+    "payerPeople": 10000,
+    "payerBaseline": 50000,
+    "delay": 0,
+    "r": 0.03,
+    "unknown": false
+  },
+  "current": {
+    "costUSD": 1857494,
+    "allPopulationQalys": 3.7,
+    "editionQalys": 3.626,
+    "incomePathways": [
+      {
+        "id": "medical-and-housing-households",
+        "people": 11.5,
+        "annualIncomeBeforeUSD": 20000,
+        "annualIncomeGainUSD": 75,
+        "years": 1,
+        "editionShare": 0.98,
+        "delayYears": 0,
+        "discountRate": 0.03,
+        "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+        "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+        "sourceIds": [
+          "annual25",
+          "geo",
+          "cg-income"
+        ]
+      },
+      {
+        "id": "medical-only-changed-households",
+        "people": 108.5,
+        "annualIncomeBeforeUSD": 20000,
+        "annualIncomeGainUSD": 25,
+        "years": 1,
+        "editionShare": 0.98,
+        "delayYears": 0,
+        "discountRate": 0.03,
+        "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+        "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+        "sourceIds": [
+          "annual25",
+          "geo",
+          "cg-income"
+        ]
+      },
+      {
+        "id": "other-exposed-households",
+        "people": 280,
+        "annualIncomeBeforeUSD": 20000,
+        "annualIncomeGainUSD": -25,
+        "years": 1,
+        "editionShare": 0.98,
+        "delayYears": 0,
+        "discountRate": 0.03,
+        "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+        "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+        "sourceIds": [
+          "annual25",
+          "geo",
+          "cg-income"
+        ]
+      }
+    ],
+    "incomeUnknown": false,
+    "incomeEquivalent": -0.08410079980154575,
+    "totalEquivalent": 3.541899200198454,
+    "price10": 5244344.615724592,
+    "clinicalEpisodes": 500,
+    "housingFamilies": 23,
+    "resourceHouseholds": 400
+  },
+  "scenarios": [
+    {
+      "id": "central",
+      "label": "central",
+      "overrides": {},
+      "costUSD": 1857494,
+      "allPopulationQalys": 3.7,
+      "editionQalys": 3.626,
+      "incomePathways": [
+        {
+          "id": "medical-and-housing-households",
+          "people": 11.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "medical-only-changed-households",
+          "people": 108.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 280,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.08410079980154575,
+      "totalEquivalent": 3.541899200198454,
+      "price10": 5244344.615724592,
+      "clinicalEpisodes": 500,
+      "housingFamilies": 23,
+      "resourceHouseholds": 400,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {}"
+    },
+    {
+      "id": "clinical-null",
+      "label": "clinical-null",
+      "overrides": {
+        "u": 0,
+        "w": 0
+      },
+      "costUSD": 1857494,
+      "allPopulationQalys": -0.05,
+      "editionQalys": -0.049,
+      "incomePathways": [
+        {
+          "id": "medical-and-housing-households",
+          "people": 11.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "medical-only-changed-households",
+          "people": 108.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 280,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.08410079980154575,
+      "totalEquivalent": -0.13310079980154577,
+      "price10": null,
+      "clinicalEpisodes": 500,
+      "housingFamilies": 23,
+      "resourceHouseholds": 400,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {\"u\":0,\"w\":0}"
+    },
+    {
+      "id": "financial-only",
+      "label": "financial-only",
+      "overrides": {
+        "u": 0,
+        "w": 0,
+        "harm": 0
+      },
+      "costUSD": 1857494,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "incomePathways": [
+        {
+          "id": "medical-and-housing-households",
+          "people": 11.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "medical-only-changed-households",
+          "people": 108.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 280,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.08410079980154575,
+      "totalEquivalent": -0.08410079980154575,
+      "price10": null,
+      "clinicalEpisodes": 500,
+      "housingFamilies": 23,
+      "resourceHouseholds": 400,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {\"u\":0,\"w\":0,\"harm\":0}"
+    },
+    {
+      "id": "unknown-resource",
+      "label": "unknown-resource",
+      "overrides": {
+        "unknown": true
+      },
+      "costUSD": 1857494,
+      "allPopulationQalys": 3.7,
+      "editionQalys": 3.626,
+      "incomePathways": [
+        {
+          "id": "medical-and-housing-households",
+          "people": 11.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "medical-only-changed-households",
+          "people": 108.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 280,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": true,
+      "incomeEquivalent": -0.08410079980154575,
+      "totalEquivalent": 3.541899200198454,
+      "price10": null,
+      "clinicalEpisodes": 500,
+      "housingFamilies": 23,
+      "resourceHouseholds": 400,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {\"unknown\":true}"
+    },
+    {
+      "id": "no-additional-benefits",
+      "label": "no-additional-benefits",
+      "overrides": {
+        "a": 0,
+        "h": 0,
+        "medicalResourceAdditional": 0
+      },
+      "costUSD": 1857494,
+      "allPopulationQalys": -0.05,
+      "editionQalys": -0.049,
+      "incomePathways": [
+        {
+          "id": "other-exposed-households",
+          "people": 400,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.24515325272391533,
+      "totalEquivalent": -0.29415325272391535,
+      "price10": null,
+      "clinicalEpisodes": 500,
+      "housingFamilies": 23,
+      "resourceHouseholds": 400,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {\"a\":0,\"h\":0,\"medicalResourceAdditional\":0}"
+    },
+    {
+      "id": "no-exposure",
+      "label": "no-exposure",
+      "overrides": {
+        "N": 0,
+        "H": 0
+      },
+      "costUSD": 1857494,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "incomePathways": [],
+      "incomeUnknown": false,
+      "incomeEquivalent": 0,
+      "totalEquivalent": 0,
+      "price10": null,
+      "clinicalEpisodes": 0,
+      "housingFamilies": 0,
+      "resourceHouseholds": 0,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {\"N\":0,\"H\":0}"
+    },
+    {
+      "id": "no-gift-no-exposure",
+      "label": "no-gift-no-exposure",
+      "overrides": {
+        "N": 0,
+        "H": 0,
+        "C": 0
+      },
+      "costUSD": 0,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "incomePathways": [],
+      "incomeUnknown": false,
+      "incomeEquivalent": 0,
+      "totalEquivalent": 0,
+      "price10": null,
+      "clinicalEpisodes": 0,
+      "housingFamilies": 0,
+      "resourceHouseholds": 0,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {\"N\":0,\"H\":0,\"C\":0}"
+    },
+    {
+      "id": "adverse",
+      "label": "adverse",
+      "overrides": {
+        "u": -0.01,
+        "w": -0.01,
+        "medicalCash": -100,
+        "housingCash": -100,
+        "cost": 25
+      },
+      "costUSD": 1857494,
+      "allPopulationQalys": -0.8575,
+      "editionQalys": -0.84035,
+      "incomePathways": [
+        {
+          "id": "medical-and-housing-households",
+          "people": 11.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -225,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "medical-only-changed-households",
+          "people": 108.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -125,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 280,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.5686842898125807,
+      "totalEquivalent": -1.4090342898125807,
+      "price10": null,
+      "clinicalEpisodes": 500,
+      "housingFamilies": 23,
+      "resourceHouseholds": 400,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {\"u\":-0.01,\"w\":-0.01,\"medicalCash\":-100,\"housingCash\":-100,\"cost\":25}"
+    },
+    {
+      "id": "no-medical-cash",
+      "label": "no-medical-cash",
+      "overrides": {
+        "medicalCash": 0
+      },
+      "costUSD": 1857494,
+      "allPopulationQalys": 3.7,
+      "editionQalys": 3.626,
+      "incomePathways": [
+        {
+          "id": "medical-and-housing-households",
+          "people": 11.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "medical-only-changed-households",
+          "people": 108.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 280,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.23106574538666885,
+      "totalEquivalent": 3.394934254613331,
+      "price10": 5471369.577999563,
+      "clinicalEpisodes": 500,
+      "housingFamilies": 23,
+      "resourceHouseholds": 400,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {\"medicalCash\":0}"
+    },
+    {
+      "id": "no-housing-cash",
+      "label": "no-housing-cash",
+      "overrides": {
+        "housingCash": 0
+      },
+      "costUSD": 1857494,
+      "allPopulationQalys": 3.7,
+      "editionQalys": 3.626,
+      "incomePathways": [
+        {
+          "id": "medical-and-housing-households",
+          "people": 11.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "medical-only-changed-households",
+          "people": 108.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 280,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.09815317616134357,
+      "totalEquivalent": 3.527846823838656,
+      "price10": 5265234.271081128,
+      "clinicalEpisodes": 500,
+      "housingFamilies": 23,
+      "resourceHouseholds": 400,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {\"housingCash\":0}"
+    },
+    {
+      "id": "no-cash-resources",
+      "label": "no-cash-resources",
+      "overrides": {
+        "medicalCash": 0,
+        "housingCash": 0
+      },
+      "costUSD": 1857494,
+      "allPopulationQalys": 3.7,
+      "editionQalys": 3.626,
+      "incomePathways": [
+        {
+          "id": "medical-and-housing-households",
+          "people": 11.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "medical-only-changed-households",
+          "people": 108.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 280,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.2451532527239153,
+      "totalEquivalent": 3.3808467472760846,
+      "price10": 5494167.996513195,
+      "clinicalEpisodes": 500,
+      "housingFamilies": 23,
+      "resourceHouseholds": 400,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {\"medicalCash\":0,\"housingCash\":0}"
+    },
+    {
+      "id": "medical-cash-larger",
+      "label": "medical-cash-larger",
+      "overrides": {
+        "medicalCash": 200
+      },
+      "costUSD": 1857494,
+      "allPopulationQalys": 3.7,
+      "editionQalys": 3.626,
+      "incomePathways": [
+        {
+          "id": "medical-and-housing-households",
+          "people": 11.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 125,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "medical-only-changed-households",
+          "people": 108.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 280,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": 0.06249773645232318,
+      "totalEquivalent": 3.688497736452323,
+      "price10": 5035909.285351976,
+      "clinicalEpisodes": 500,
+      "housingFamilies": 23,
+      "resourceHouseholds": 400,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {\"medicalCash\":200}"
+    },
+    {
+      "id": "housing-cash-larger",
+      "label": "housing-cash-larger",
+      "overrides": {
+        "housingCash": 500
+      },
+      "costUSD": 1857494,
+      "allPopulationQalys": 3.7,
+      "editionQalys": 3.626,
+      "incomePathways": [
+        {
+          "id": "medical-and-housing-households",
+          "people": 11.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 275,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "medical-only-changed-households",
+          "people": 108.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 280,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.028239127951195958,
+      "totalEquivalent": 3.597760872048804,
+      "price10": 5162916.786468412,
+      "clinicalEpisodes": 500,
+      "housingFamilies": 23,
+      "resourceHouseholds": 400,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {\"housingCash\":500}"
+    },
+    {
+      "id": "net-work-positive",
+      "label": "net-work-positive",
+      "overrides": {
+        "work": 1000
+      },
+      "costUSD": 1857494,
+      "allPopulationQalys": 3.7,
+      "editionQalys": 3.626,
+      "incomePathways": [
+        {
+          "id": "medical-and-housing-households",
+          "people": 11.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 575,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "medical-only-changed-households",
+          "people": 108.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 280,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": 0.054528577923740607,
+      "totalEquivalent": 3.6805285779237407,
+      "price10": 5046813.142931359,
+      "clinicalEpisodes": 500,
+      "housingFamilies": 23,
+      "resourceHouseholds": 400,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {\"work\":1000}"
+    },
+    {
+      "id": "net-work-negative",
+      "label": "net-work-negative",
+      "overrides": {
+        "work": -1000
+      },
+      "costUSD": 1857494,
+      "allPopulationQalys": 3.7,
+      "editionQalys": 3.626,
+      "incomePathways": [
+        {
+          "id": "medical-and-housing-households",
+          "people": 11.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -925,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "medical-only-changed-households",
+          "people": 108.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 280,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.3720306066036325,
+      "totalEquivalent": 3.2539693933963676,
+      "price10": 5708394.196238028,
+      "clinicalEpisodes": 500,
+      "housingFamilies": 23,
+      "resourceHouseholds": 400,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {\"work\":-1000}"
+    },
+    {
+      "id": "negative-overlap-zero",
+      "label": "negative-overlap-zero",
+      "overrides": {
+        "medicalCash": -100,
+        "housingCash": -100,
+        "overlap": 0
+      },
+      "costUSD": 1857494,
+      "allPopulationQalys": 3.7,
+      "editionQalys": 3.626,
+      "incomePathways": [
+        {
+          "id": "medical-and-housing-households",
+          "people": 11.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -225,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "medical-only-changed-households",
+          "people": 108.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -125,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 280,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.5686842898125807,
+      "totalEquivalent": 3.057315710187419,
+      "price10": 6075571.436114892,
+      "clinicalEpisodes": 500,
+      "housingFamilies": 23,
+      "resourceHouseholds": 400,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {\"medicalCash\":-100,\"housingCash\":-100,\"overlap\":0}"
+    },
+    {
+      "id": "negative-overlap-one",
+      "label": "negative-overlap-one",
+      "overrides": {
+        "medicalCash": -100,
+        "housingCash": -100,
+        "overlap": 1
+      },
+      "costUSD": 1857494,
+      "allPopulationQalys": 3.7,
+      "editionQalys": 3.626,
+      "incomePathways": [
+        {
+          "id": "medical-and-housing-households",
+          "people": 11.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -225,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "medical-only-changed-households",
+          "people": 108.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -125,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 280,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.5686842898125807,
+      "totalEquivalent": 3.057315710187419,
+      "price10": 6075571.436114892,
+      "clinicalEpisodes": 500,
+      "housingFamilies": 23,
+      "resourceHouseholds": 400,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {\"medicalCash\":-100,\"housingCash\":-100,\"overlap\":1}"
+    },
+    {
+      "id": "positive-overlap-zero",
+      "label": "positive-overlap-zero",
+      "overrides": {
+        "overlap": 0
+      },
+      "costUSD": 1857494,
+      "allPopulationQalys": 3.7,
+      "editionQalys": 3.626,
+      "incomePathways": [
+        {
+          "id": "medical-and-housing-households",
+          "people": 11.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 175,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "medical-only-changed-households",
+          "people": 108.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 280,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": 0.07648037389988008,
+      "totalEquivalent": 3.70248037389988,
+      "price10": 5016890.874274839,
+      "clinicalEpisodes": 500,
+      "housingFamilies": 23,
+      "resourceHouseholds": 400,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {\"overlap\":0}"
+    },
+    {
+      "id": "positive-overlap-one",
+      "label": "positive-overlap-one",
+      "overrides": {
+        "overlap": 1
+      },
+      "costUSD": 1857494,
+      "allPopulationQalys": 3.7,
+      "editionQalys": 3.626,
+      "incomePathways": [
+        {
+          "id": "medical-and-housing-households",
+          "people": 11.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "medical-only-changed-households",
+          "people": 108.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 280,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.2451532527239153,
+      "totalEquivalent": 3.3808467472760846,
+      "price10": 5494167.996513195,
+      "clinicalEpisodes": 500,
+      "housingFamilies": 23,
+      "resourceHouseholds": 400,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {\"overlap\":1}"
+    },
+    {
+      "id": "cohorts-disjoint",
+      "label": "cohorts-disjoint",
+      "overrides": {
+        "cohortOverlap": 0
+      },
+      "costUSD": 1857494,
+      "allPopulationQalys": 3.7,
+      "editionQalys": 3.626,
+      "incomePathways": [
+        {
+          "id": "medical-only-changed-households",
+          "people": 120,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "housing-only-changed-households",
+          "people": 11.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 291.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.0981619808557222,
+      "totalEquivalent": 3.5278380191442777,
+      "price10": 5265247.411927827,
+      "clinicalEpisodes": 500,
+      "housingFamilies": 23,
+      "resourceHouseholds": 423,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {\"cohortOverlap\":0}"
+    },
+    {
+      "id": "cohorts-half-overlap",
+      "label": "cohorts-half-overlap",
+      "overrides": {
+        "cohortOverlap": 0.5
+      },
+      "costUSD": 1857494,
+      "allPopulationQalys": 3.7,
+      "editionQalys": 3.626,
+      "incomePathways": [
+        {
+          "id": "medical-and-housing-households",
+          "people": 11.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "medical-only-changed-households",
+          "people": 108.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 291.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.09114895581735827,
+      "totalEquivalent": 3.5348510441826417,
+      "price10": 5254801.338961386,
+      "clinicalEpisodes": 500,
+      "housingFamilies": 23,
+      "resourceHouseholds": 411.5,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {\"cohortOverlap\":0.5}"
+    },
+    {
+      "id": "no-net-access-cost",
+      "label": "no-net-access-cost",
+      "overrides": {
+        "cost": 0
+      },
+      "costUSD": 1857494,
+      "allPopulationQalys": 3.7,
+      "editionQalys": 3.626,
+      "incomePathways": [
+        {
+          "id": "medical-and-housing-households",
+          "people": 11.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 100,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "medical-only-changed-households",
+          "people": 108.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 50,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 280,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 0,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": 0.16085143217259362,
+      "totalEquivalent": 3.7868514321725937,
+      "price10": 4905114.534515334,
+      "clinicalEpisodes": 500,
+      "housingFamilies": 23,
+      "resourceHouseholds": 400,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {\"cost\":0}"
+    },
+    {
+      "id": "higher-net-access-cost",
+      "label": "higher-net-access-cost",
+      "overrides": {
+        "cost": 75
+      },
+      "costUSD": 1857494,
+      "allPopulationQalys": 3.7,
+      "editionQalys": 3.626,
+      "incomePathways": [
+        {
+          "id": "medical-and-housing-households",
+          "people": 11.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "medical-only-changed-households",
+          "people": 108.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 280,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.5749255745020497,
+      "totalEquivalent": 3.05107442549795,
+      "price10": 6087999.638674327,
+      "clinicalEpisodes": 500,
+      "housingFamilies": 23,
+      "resourceHouseholds": 400,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {\"cost\":75}"
+    },
+    {
+      "id": "extra-distinct-payer",
+      "label": "extra-distinct-payer",
+      "overrides": {
+        "payerLoss": 100
+      },
+      "costUSD": 1857494,
+      "allPopulationQalys": 3.7,
+      "editionQalys": 3.626,
+      "incomePathways": [
+        {
+          "id": "medical-and-housing-households",
+          "people": 11.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "medical-only-changed-households",
+          "people": 108.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 280,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "distinct-global-payers",
+          "people": 10000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -1.176,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Distinct global payer loss for local delivered services; recognized costs already in C are not repeated.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.2017021827992312,
+      "totalEquivalent": 3.4242978172007685,
+      "price10": 5424452.250238064,
+      "clinicalEpisodes": 500,
+      "housingFamilies": 23,
+      "resourceHouseholds": 400,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {\"payerLoss\":100}"
+    },
+    {
+      "id": "unrecognized-provider-cost",
+      "label": "unrecognized-provider-cost",
+      "overrides": {
+        "externalCost": 100
+      },
+      "costUSD": 1857494,
+      "allPopulationQalys": 3.7,
+      "editionQalys": 3.626,
+      "incomePathways": [
+        {
+          "id": "medical-and-housing-households",
+          "people": 11.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "medical-only-changed-households",
+          "people": 108.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 280,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "distinct-global-payers",
+          "people": 10000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -5.1254,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Distinct global payer loss for local delivered services; recognized costs already in C are not repeated.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.5966670713220817,
+      "totalEquivalent": 3.0293329286779183,
+      "price10": 6131693.160614935,
+      "clinicalEpisodes": 500,
+      "housingFamilies": 23,
+      "resourceHouseholds": 400,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {\"externalCost\":100}"
+    },
+    {
+      "id": "no-medical-household-resource-exposure",
+      "label": "no-medical-household-resource-exposure",
+      "overrides": {
+        "unique": 0
+      },
+      "costUSD": 1857494,
+      "allPopulationQalys": 3.7,
+      "editionQalys": 3.626,
+      "incomePathways": [
+        {
+          "id": "housing-only-changed-households",
+          "people": 11.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 11.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.000008804694378668557,
+      "totalEquivalent": 3.6259911953056214,
+      "price10": 5122720.657470981,
+      "clinicalEpisodes": 500,
+      "housingFamilies": 23,
+      "resourceHouseholds": 23,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {\"unique\":0}"
+    },
+    {
+      "id": "higher-household-baseline",
+      "label": "higher-household-baseline",
+      "overrides": {
+        "baseline": 30000
+      },
+      "costUSD": 1857494,
+      "allPopulationQalys": 3.7,
+      "editionQalys": 3.626,
+      "incomePathways": [
+        {
+          "id": "medical-and-housing-households",
+          "people": 11.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "medical-only-changed-households",
+          "people": 108.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 280,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.056025361939374164,
+      "totalEquivalent": 3.569974638060626,
+      "price10": 5203101.389563586,
+      "clinicalEpisodes": 500,
+      "housingFamilies": 23,
+      "resourceHouseholds": 400,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {\"baseline\":30000}"
+    },
+    {
+      "id": "no-local",
+      "label": "no-local",
+      "overrides": {
+        "g": 0
+      },
+      "costUSD": 1857494,
+      "allPopulationQalys": 3.7,
+      "editionQalys": 0,
+      "incomePathways": [
+        {
+          "id": "medical-and-housing-households",
+          "people": 11.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "medical-only-changed-households",
+          "people": 108.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 25,
+          "years": 1,
+          "editionShare": 0,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 280,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": 0,
+      "totalEquivalent": 0,
+      "price10": null,
+      "clinicalEpisodes": 500,
+      "housingFamilies": 23,
+      "resourceHouseholds": 400,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {\"g\":0}"
+    },
+    {
+      "id": "lower-household-baseline",
+      "label": "lower-household-baseline",
+      "overrides": {
+        "baseline": 10000
+      },
+      "costUSD": 1857494,
+      "allPopulationQalys": 3.7,
+      "editionQalys": 3.626,
+      "incomePathways": [
+        {
+          "id": "medical-and-housing-households",
+          "people": 11.5,
+          "annualIncomeBeforeUSD": 10000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "medical-only-changed-households",
+          "people": 108.5,
+          "annualIncomeBeforeUSD": 10000,
+          "annualIncomeGainUSD": 25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 280,
+          "annualIncomeBeforeUSD": 10000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.16857802655189383,
+      "totalEquivalent": 3.457421973448106,
+      "price10": 5372482.775504289,
+      "clinicalEpisodes": 500,
+      "housingFamilies": 23,
+      "resourceHouseholds": 400,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {\"baseline\":10000}"
+    },
+    {
+      "id": "delay-year",
+      "label": "delay-year",
+      "overrides": {
+        "delay": 1
+      },
+      "costUSD": 1857494,
+      "allPopulationQalys": 3.592233009708738,
+      "editionQalys": 3.520388349514563,
+      "incomePathways": [
+        {
+          "id": "medical-and-housing-households",
+          "people": 11.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "medical-only-changed-households",
+          "people": 108.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 280,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.08165126194324829,
+      "totalEquivalent": 3.438737087571315,
+      "price10": 5401674.954196329,
+      "clinicalEpisodes": 500,
+      "housingFamilies": 23,
+      "resourceHouseholds": 400,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {\"delay\":1}"
+    },
+    {
+      "id": "shorter-symptom-duration",
+      "label": "shorter-symptom-duration",
+      "overrides": {
+        "T": 0.05
+      },
+      "costUSD": 1857494,
+      "allPopulationQalys": 0.325,
+      "editionQalys": 0.3185,
+      "incomePathways": [
+        {
+          "id": "medical-and-housing-households",
+          "people": 11.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "medical-only-changed-households",
+          "people": 108.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 280,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.08410079980154575,
+      "totalEquivalent": 0.23439920019845426,
+      "price10": 79244894.9666787,
+      "clinicalEpisodes": 500,
+      "housingFamilies": 23,
+      "resourceHouseholds": 400,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {\"T\":0.05}"
+    },
+    {
+      "id": "longer-housing-duration",
+      "label": "longer-housing-duration",
+      "overrides": {
+        "D": 1
+      },
+      "costUSD": 1857494,
+      "allPopulationQalys": 3.7,
+      "editionQalys": 3.626,
+      "incomePathways": [
+        {
+          "id": "medical-and-housing-households",
+          "people": 11.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "medical-only-changed-households",
+          "people": 108.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 280,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.08410079980154575,
+      "totalEquivalent": 3.541899200198454,
+      "price10": 5244344.615724592,
+      "clinicalEpisodes": 500,
+      "housingFamilies": 23,
+      "resourceHouseholds": 400,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {\"D\":1}"
+    },
+    {
+      "id": "no-medical-resource-additionality",
+      "label": "no-medical-resource-additionality",
+      "overrides": {
+        "medicalResourceAdditional": 0
+      },
+      "costUSD": 1857494,
+      "allPopulationQalys": 3.7,
+      "editionQalys": 3.626,
+      "incomePathways": [
+        {
+          "id": "housing-only-changed-households",
+          "people": 11.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 388.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.23106574538666882,
+      "totalEquivalent": 3.394934254613331,
+      "price10": 5471369.577999563,
+      "clinicalEpisodes": 500,
+      "housingFamilies": 23,
+      "resourceHouseholds": 400,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {\"medicalResourceAdditional\":0}"
+    },
+    {
+      "id": "housing-health-negative-overlap",
+      "label": "housing-health-negative-overlap",
+      "overrides": {
+        "w": -0.03,
+        "o": 0
+      },
+      "costUSD": 1857494,
+      "allPopulationQalys": 3.5275000000000003,
+      "editionQalys": 3.4569500000000004,
+      "incomePathways": [
+        {
+          "id": "medical-and-housing-households",
+          "people": 11.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "medical-only-changed-households",
+          "people": 108.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 280,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.08410079980154575,
+      "totalEquivalent": 3.3728492001984547,
+      "price10": 5507195.518526909,
+      "clinicalEpisodes": 500,
+      "housingFamilies": 23,
+      "resourceHouseholds": 400,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {\"w\":-0.03,\"o\":0}"
+    },
+    {
+      "id": "2100-volunteer-hours-50-shadow-cost",
+      "label": "2100-volunteer-hours-50-shadow-cost",
+      "overrides": {
+        "C": 1962494
+      },
+      "costUSD": 1962494,
+      "allPopulationQalys": 3.7,
+      "editionQalys": 3.626,
+      "incomePathways": [
+        {
+          "id": "medical-and-housing-households",
+          "people": 11.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "medical-only-changed-households",
+          "people": 108.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 280,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.08410079980154575,
+      "totalEquivalent": 3.541899200198454,
+      "price10": 5540795.740008752,
+      "clinicalEpisodes": 500,
+      "housingFamilies": 23,
+      "resourceHouseholds": 400,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {\"C\":1962494}"
+    },
+    {
+      "id": "historical10000-hour-shadow-cost",
+      "label": "historical10000-hour-shadow-cost",
+      "overrides": {
+        "C": 2357494
+      },
+      "costUSD": 2357494,
+      "allPopulationQalys": 3.7,
+      "editionQalys": 3.626,
+      "incomePathways": [
+        {
+          "id": "medical-and-housing-households",
+          "people": 11.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "medical-only-changed-households",
+          "people": 108.5,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 280,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+          "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+          "sourceIds": [
+            "annual25",
+            "geo",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.08410079980154575,
+      "totalEquivalent": 3.541899200198454,
+      "price10": 6656016.636125355,
+      "clinicalEpisodes": 500,
+      "housingFamilies": 23,
+      "resourceHouseholds": 400,
+      "assumptions": "Conditional annual outreach and housing health/resources, judged cohort overlap and net cash effects; not verified portfolio EV or marginal gift. {\"C\":2357494}"
+    }
+  ]
+}
+

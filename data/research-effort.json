@@ -9,6 +9,107 @@
   "timeBasis": "Sum of recorded, organization-specific researcher wall-clock intervals. Parallel researchers are counted separately; this is not elapsed calendar time or a quality score.",
   "historicalCoverage": "Earlier reports did not consistently record organization-specific research intervals or AI model provenance. Missing records are unknown, not zero.",
   "organizations": {
+    "Will-Grundy Medical Clinic": {
+      "coverage": "partial",
+      "sessions": [
+        {
+          "id": "chicago789-will-grundy-medical-clinic-research",
+          "organizationId": "org:will-grundy-medical-clinic",
+          "stage": "alpha",
+          "workerId": "chicago789_research",
+          "phase": "research",
+          "startedAt": "2026-09-29T18:45:18Z",
+          "endedAt": "2026-09-29T18:46:58Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Light",
+            "reasoningEffort": "low",
+            "evidence": "Explicit parent dispatch: gpt-6-astra low, named GPT-6 Astra Light"
+          },
+          "evidence": "work/geography-handoff-20260913/resumed-20260929/givebetter-chicago-seven-nine.json"
+        },
+        {
+          "id": "will-grundy-medical-clinic-independent-source-audit-20260929",
+          "organizationId": "org:will-grundy-medical-clinic",
+          "stage": "alpha",
+          "workerId": "chicago_next_accept",
+          "phase": "source-audit",
+          "startedAt": "2026-09-29T18:45:54Z",
+          "endedAt": "2026-09-29T18:46:43Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Medium",
+            "reasoningEffort": "medium",
+            "evidence": "Inherited explicit original parent gpt-6-astra medium dispatch; independent acceptance manager"
+          },
+          "evidence": "docs/geography-discovery/final-seven-edition-audit-20261007/chicago-seven-nine-source-audit.json"
+        },
+        {
+          "id": "48f29462-4d00-4607-a724-8d84561d86e2",
+          "workerId": "houston_west_meals_initial",
+          "phase": "research",
+          "startedAt": "2026-10-07T17:19:22.024Z",
+          "endedAt": "2026-10-07T17:21:08.279Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "runtime model assignment: GPT-6.1 Sol"
+          },
+          "evidence": "docs/geography-discovery/chicago-willgrundy-alpha-income-20261007/evidence.md",
+          "organizationId": "org:will-grundy-medical-clinic",
+          "edition": "chicago",
+          "stage": "alpha"
+        },
+        {
+          "id": "edcc47a5-2b2f-4c53-94a0-e27ec4165180",
+          "workerId": "houston_west_meals_initial",
+          "phase": "modeling",
+          "startedAt": "2026-10-07T17:21:41.463Z",
+          "endedAt": "2026-10-07T17:21:41.848Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "runtime model assignment: GPT-6.1 Sol"
+          },
+          "evidence": "docs/geography-discovery/chicago-willgrundy-alpha-income-20261007/decision.md",
+          "organizationId": "org:will-grundy-medical-clinic",
+          "edition": "chicago",
+          "stage": "alpha"
+        },
+        {
+          "id": "bdb38c8e-f528-4e7d-8a3a-656f543ee35c",
+          "workerId": "root-willgrundy-income-source-audit-20261007",
+          "phase": "source-audit",
+          "startedAt": "2026-10-07T17:19:14.492Z",
+          "endedAt": "2026-10-07T17:19:52.675Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed model assignment: GPT-6.1 Sol; current root runtime"
+          },
+          "evidence": "docs/geography-discovery/chicago-willgrundy-alpha-income-20261007/root-acceptance.md",
+          "organizationId": "org:will-grundy-medical-clinic",
+          "edition": "chicago",
+          "stage": "alpha"
+        },
+        {
+          "id": "9e612baf-0027-407f-896f-c3ad89d59e55",
+          "workerId": "root-willgrundy-income-model-audit-20261007",
+          "phase": "modeling",
+          "startedAt": "2026-10-07T17:21:18.253Z",
+          "endedAt": "2026-10-07T17:21:43.766Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed model assignment: GPT-6.1 Sol; current root runtime"
+          },
+          "evidence": "docs/geography-discovery/chicago-willgrundy-alpha-income-20261007/root-acceptance.md",
+          "organizationId": "org:will-grundy-medical-clinic",
+          "edition": "chicago",
+          "stage": "alpha"
+        }
+      ]
+    },
     "Tri City Health Partnership": {
       "coverage": "partial",
       "sessions": [

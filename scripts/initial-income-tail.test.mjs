@@ -16,7 +16,8 @@ for(const [edition,slug,dir] of [
  ['california','california-pan-ethnic-health-network','ca-cpehn-alpha-income-20261007'],
  ['usa','national-health-law-program','usa-nhelp-alpha-income-20261007'],
  ['usa','us-alcohol-policy-alliance','usa-usapa-alpha-income-20261007'],
- ['usa','rx-outreach','usa-rxo-alpha-income-20261007']
+ ['usa','rx-outreach','usa-rxo-alpha-income-20261007'],
+ ['usa','upstream-usa','usa-upstream-alpha-income-20261007']
 ])test(slug+' preserves original clinical reference and explicit unknown income',()=>{
  const r=data.reports.find(r=>r.edition===edition&&r.slug===slug);
  const original=JSON.parse(fs.readFileSync(new URL('../docs/geography-discovery/'+dir+'/original-report.json',import.meta.url)));

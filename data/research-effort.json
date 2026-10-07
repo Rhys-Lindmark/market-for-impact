@@ -9,6 +9,75 @@
   "timeBasis": "Sum of recorded, organization-specific researcher wall-clock intervals. Parallel researchers are counted separately; this is not elapsed calendar time or a quality score.",
   "historicalCoverage": "Earlier reports did not consistently record organization-specific research intervals or AI model provenance. Missing records are unknown, not zero.",
   "organizations": {
+    "Upstream USA": {
+      "coverage": "partial",
+      "sessions": [
+        {
+          "id": "usa-alpha-upstream-usa-20260913-worker1",
+          "organizationId": "org:upstream-usa",
+          "stage": "alpha",
+          "phase": "research",
+          "workerId": "usa_alpha_one",
+          "startedAt": "2026-09-13T21:54:47Z",
+          "endedAt": "2026-09-13T22:05:47Z",
+          "evidence": "data/geography-reports.json#usa/upstream-usa — original 2023–2025 finance, recovered current impact and FreeBC data, controlled access and patient-health utility evidence, explicit adverse/zero model, thresholds and report.",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Light",
+            "reasoningEffort": "low",
+            "evidence": "Parent assigned current Astra Light worker; actual gpt-6-astra low."
+          }
+        },
+        {
+          "id": "e129fb3a-5e41-4497-b7da-ff02826ac230",
+          "workerId": "usa-upstream-alpha-income-20261007-author",
+          "phase": "research",
+          "startedAt": "2026-10-07T22:22:09.530Z",
+          "endedAt": "2026-10-07T22:24:24.909Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed model assignment in current research assignment"
+          },
+          "evidence": "docs/geography-discovery/usa-upstream-alpha-income-20261007/source-note.md",
+          "organizationId": "org:upstream-usa",
+          "edition": "usa",
+          "stage": "alpha"
+        },
+        {
+          "id": "f624a4d2-73fc-4037-9f9e-c7d8201699f9",
+          "workerId": "root-source-audit",
+          "phase": "source-audit",
+          "startedAt": "2026-10-07T22:21:10.971Z",
+          "endedAt": "2026-10-07T22:21:25.996Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed model assignment: GPT-6.1 Sol for this research task"
+          },
+          "evidence": "docs/geography-discovery/usa-upstream-alpha-income-20261007/source-note.md",
+          "organizationId": "org:upstream-usa",
+          "edition": "usa",
+          "stage": "alpha"
+        },
+        {
+          "id": "1063c5e7-f38d-487f-a8fa-a0ddfb90b60f",
+          "workerId": "root-model-audit",
+          "phase": "modeling",
+          "startedAt": "2026-10-07T22:23:50.736Z",
+          "endedAt": "2026-10-07T22:24:30.578Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed model assignment: GPT-6.1 Sol for this research task"
+          },
+          "evidence": "docs/geography-discovery/usa-upstream-alpha-income-20261007/root-acceptance.md",
+          "organizationId": "org:upstream-usa",
+          "edition": "usa",
+          "stage": "alpha"
+        }
+      ]
+    },
     "Rx Outreach": {
       "coverage": "partial",
       "sessions": [

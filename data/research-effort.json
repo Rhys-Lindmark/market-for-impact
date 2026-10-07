@@ -9,6 +9,95 @@
   "timeBasis": "Sum of recorded, organization-specific researcher wall-clock intervals. Parallel researchers are counted separately; this is not elapsed calendar time or a quality score.",
   "historicalCoverage": "Earlier reports did not consistently record organization-specific research intervals or AI model provenance. Missing records are unknown, not zero.",
   "organizations": {
+    "TOMAGWA HealthCare Ministries": {
+      "coverage": "partial",
+      "sessions": [
+        {
+          "id": "92055486-4c30-4ba8-bc76-f423df7540d0",
+          "workerId": "houston-alpha-next-2",
+          "phase": "research",
+          "startedAt": "2026-09-29T21:12:12.102Z",
+          "endedAt": "2026-09-29T21:18:41.880Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Light",
+            "evidence": "Worker launch metadata: gpt-6-astra low; requested by root",
+            "reasoningEffort": "low"
+          },
+          "evidence": "outputs/houston-alpha-next-2/evidence.md",
+          "organizationId": "org:tomagwa-healthcare-ministries",
+          "organization": "TOMAGWA HealthCare Ministries",
+          "edition": "houston",
+          "stage": "alpha"
+        },
+        {
+          "id": "3cc35c39-075f-4419-8e55-e095becc917d",
+          "workerId": "houston-alpha-next-2",
+          "phase": "modeling",
+          "startedAt": "2026-09-29T21:18:41.925Z",
+          "endedAt": "2026-09-29T21:22:58.956Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Light",
+            "evidence": "Worker launch metadata: gpt-6-astra low; requested by root",
+            "reasoningEffort": "low"
+          },
+          "evidence": "outputs/houston-alpha-next-2/proposed-registry-packet.json",
+          "organizationId": "org:tomagwa-healthcare-ministries",
+          "organization": "TOMAGWA HealthCare Ministries",
+          "edition": "houston",
+          "stage": "alpha"
+        },
+        {
+          "id": "5d86bbaf-aa75-4e5c-bd2f-72143fdba839",
+          "workerId": "chicago_alpha_next_2-tomagwa-audit",
+          "phase": "source-audit",
+          "startedAt": "2026-09-29T21:24:13.057Z",
+          "endedAt": "2026-09-29T21:26:03.429Z",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Light",
+            "reasoningEffort": "low",
+            "evidence": "Parent retained explicitly dispatched gpt-6-astra reasoning_effort=low"
+          },
+          "evidence": "docs/houston-tomagwa-alpha-acceptance.md",
+          "organizationId": "org:tomagwa-healthcare-ministries",
+          "stage": "alpha"
+        },
+        {
+          "id": "9b3282ed-1489-482f-9894-5fe4baed9b46",
+          "workerId": "houston_west_meals_initial",
+          "phase": "research",
+          "startedAt": "2026-10-07T15:55:28.159Z",
+          "endedAt": "2026-10-07T15:58:03.575Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "runtime model assignment: GPT-6.1 Sol"
+          },
+          "evidence": "docs/geography-discovery/houston-tomagwa-alpha-income-20261007/evidence.md",
+          "organizationId": "org:tomagwa-healthcare-ministries",
+          "edition": "houston",
+          "stage": "alpha"
+        },
+        {
+          "id": "9e511527-6643-4981-bd65-d344c9232433",
+          "workerId": "root-tomagwa-income-source-audit-20261007",
+          "phase": "source-audit",
+          "startedAt": "2026-10-07T15:58:16.115Z",
+          "endedAt": "2026-10-07T15:58:59.602Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed model assignment: GPT-6.1 Sol for this research; current root runtime"
+          },
+          "evidence": "docs/geography-discovery/houston-tomagwa-alpha-income-20261007/root-acceptance.md",
+          "organizationId": "org:tomagwa-healthcare-ministries",
+          "edition": "houston",
+          "stage": "alpha"
+        }
+      ]
+    },
     "Kids In Need of Dentistry": {
       "coverage": "partial",
       "sessions": [

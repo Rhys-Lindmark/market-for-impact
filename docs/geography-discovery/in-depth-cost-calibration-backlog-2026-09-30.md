@@ -1,5 +1,11 @@
 # Recalibrate existing in-depth reviews
 
+## Current scope and completion audit — October 7
+
+The entries below are historical checkpoints. The later [execution budget](../geography-execution-budget.json) supersedes their pre-expansion ordering: seven active editions only; additional SF coverage is a separate nonblocking maintenance lane (5/24 accepted, 19 remain), not unfinished work in the original 48-review queue. Original cohort40/40, confirmed legacy11/11 and original queue48/48 reconcile; PR384 remains open, PR385 is merged.
+
+All seven editions now have accepted initial/deep/top-four count targets, including published Denver Sites474. Root verified seven home/all pairs and178 list prices on both hosts. Overall completion is **not certified**: the independent [final audit](final-seven-edition-audit-20261007/audit.md) identified69 older initial reports needing signed health-and-resource assessment and five active broken acceptance references. The [69-report queue](final-seven-edition-audit-20261007/income-coverage-backlog.json) is a triage inventory, not proof economic effects are zero or that all historical source review was absent. Next: bounded TOMAGWA/Children’s Research Triangle correction passes, then remaining queue; preserve historical diagnostics, exact costs, harms and overlap. No new discovery or removed cities.
+
 ## Huckleberry current-model publication — October 4
 
 Huckleberry Youth Programs additional current-model coverage published Sites403: conditional SF-resident behavioral course $4.22M versus initial health-only $3.69M. Integrated 32-week health plus signed household resources; causal exposure corrected for gains and burdens, exact log-domain guard and separate independent harms. Twenty current cases/three original worlds; original FY2025/FY2024 audits plus previouslyaudited2023 comparative, audited mean $8.68M. Five actual Sol-assigned closed clocks13.5728minutes, unknown raw runtime retained. Independent science/math and separate integration ACCEPT;27 focused tests,2 phone/tablet checks and native build PASS. Report/API/list prices synchronized, top four unchanged. Original queue48/48,cohort40/40,legacy11/11;additional coverage5/24,19 remain. Next RAMS then remaining public-model coverage before geographic expansion. Usage93% remaining;20% reserve/no new batch<=25%.

@@ -1,0 +1,11 @@
+# Doctors Care deep-review checkpoint
+
+Prior goal turn PROGRESS: EOC published and both-host verified Sites468; clean pushedHEAD1ec752f. Human active scope remains seven editions, four deferred cities not resumed by stale goal text. Denver live25initial/5deep/0featured.
+
+Current bounded phase Doctors Care author `/root/houston_west_meals_initial` confirmed running by live agent inventory. Author packet adjacent `work/denver-doctors-care-beta-20261007/`; root primary-source challenge adjacent `work/denver-doctors-care-root-audit-20261007/`. No overlapping author or second organization dispatched.
+
+Root completed source challenge: originalIRS counts/costs, current slidingfee/insuredpopulation, original Oregon laborRCT and clinical/financial trial. See root-source-note.md. Closed source interval77.514secondsGPT6.1Sol, later source checks untimedpartial, never reconstructed. Sources materially challenge earlier favorable wage assumption; financial-protection resources require separate mixed-insurance and otherwise-paid spending counterfactual. Grossretailcare, 6000touchpoints and878insuranceclients cannot be added as earnedincome or separateclinicpatients. Correct insuranceclientcount in originalfiling is898.
+
+Next acceptance dependency is author compactcalculator/ledger and draft. Target15activeauthor minutes, one material correction, root independent equations then preserved original/reportlist/provenance tests and verified release. Do not increment counts before acceptance/publication. Remaining5deepreviews(includingthisone), then4comparativefeatures.
+
+Freshusagebeforedispatch: ordinaryUsageAllowedtrue,100%remaining, tworesetcreditsunchanged—not spent. Reserve20%, no newworkat≤25%orunknownusage. Keep hourlyautomation current after meaningful acceptance/release; activeflags are not actualthroughput.

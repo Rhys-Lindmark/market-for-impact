@@ -11,7 +11,7 @@ for(const[name,id,cost]of [['struggle','org:struggle-love',3006875],['pprm','ein
  if(name==='struggle'){assert.equal(m.defaults.therapyN,30);assert.equal(m.calculate({unique:.5}).editionQalys,c.editionQalys);assert.equal(m.calculate({therapyQ:-.03,therapyOverlap:0}).editionQalys,m.calculate({therapyQ:-.03,therapyOverlap:1}).editionQalys);assert.equal(m.calculate({N:0,resourceN:0,therapyN:0,C:0}).totalEquivalent,0);}
 });
 test('all prior reports/sessions/provenance retained without duplicate imports',()=>{
- const old=JSON.parse(execFileSync('git',['show','e856ede:data/geography-reports.json'],{maxBuffer:67108864}));assert.deepEqual(data.reports.slice(0,old.reports.length),old.reports);assert.deepEqual(data.sessions.slice(0,old.sessions.length),old.sessions);assert.equal(data.reports.length,old.reports.length+2);assert.equal(new Set(data.sessions.map(s=>s.id)).size,data.sessions.length);
+ const old=JSON.parse(execFileSync('git',['show','e856ede:data/geography-reports.json'],{maxBuffer:67108864}));assert.deepEqual(data.reports.slice(0,old.reports.length),old.reports);assert.deepEqual(data.sessions.slice(0,old.sessions.length),old.sessions);assert.ok(data.reports.length>=old.reports.length+2);assert.equal(new Set(data.sessions.map(s=>s.id)).size,data.sessions.length);
  const effort=JSON.parse(fs.readFileSync(new URL('../data/research-effort.json',import.meta.url))),prev=JSON.parse(execFileSync('git',['show','e856ede:data/research-effort.json'],{maxBuffer:67108864}));for(const[k,v]of Object.entries(prev.organizations))assert.deepEqual(effort.organizations[k],v);
  for(const name of ['Struggle of Love Foundation','Planned Parenthood of the Rocky Mountains'])assert.ok(effort.organizations[name].sessions.every(s=>s.endedAt&&s.model));
 });

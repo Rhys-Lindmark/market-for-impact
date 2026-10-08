@@ -65,7 +65,9 @@ for(const [edition,slug,dir] of [
  ['los-angeles','housing-rights-center','la-hrc-alpha-income-20261008'],
  ['los-angeles','illumination-foundation','la-illumination-alpha-income-20261008'],
  ['los-angeles','dayle-mcintosh-center','la-dayle-alpha-income-20261008'],
- ['los-angeles','communities-for-a-better-environment','la-cbe-alpha-income-20261008']
+ ['los-angeles','communities-for-a-better-environment','la-cbe-alpha-income-20261008'],
+ ['los-angeles','didi-hirsch-mental-health-services','la-didihirsch-alpha-income-20261008'],
+ ['los-angeles','john-tracy-center','la-jtc-alpha-income-20261008']
 ])test(slug+' preserves original clinical reference and explicit unknown income',()=>{
  const r=data.reports.find(r=>r.edition===edition&&r.slug===slug);
  const original=JSON.parse(fs.readFileSync(new URL('../docs/geography-discovery/'+dir+'/original-report.json',import.meta.url)));
@@ -77,6 +79,15 @@ for(const [edition,slug,dir] of [
  assert.equal(scenarioIncomeEquivalent(unknown),null);
  if(slug==='transportation-alternatives')assert.equal(unknown.editionQalys,null);
  assert.equal(r.stage,'alpha');
+});
+test('Didi LA interrupted root timer is retained as evidence, not measured provenance',()=>{
+ const r=data.reports.find(r=>r.edition==='los-angeles'&&r.slug==='didi-hirsch-mental-health-services');
+ assert(!r.sessionIds.includes('c5e45f98-301a-404a-84d2-1b2a825bb500'));
+ assert(!data.sessions.some(s=>s.id==='c5e45f98-301a-404a-84d2-1b2a825bb500'));
+ const raw=JSON.parse(fs.readFileSync(new URL('../docs/geography-discovery/la-didihirsch-alpha-income-20261008/root-closed.json',import.meta.url)));
+ assert.equal(raw.excludedFromMeasured,true);
+ assert.equal(raw.conservativeAllocationSeconds,175.108);
+ assert.equal(Date.parse(raw.session.endedAt)-Date.parse(raw.session.startedAt),175108);
 });
 test('NHeLP optional payment sensitivity is independent of clinical benefit and zero without capacity',async()=>{
  const model=await import('../docs/geography-discovery/usa-nhelp-alpha-income-20261007/model.mjs');

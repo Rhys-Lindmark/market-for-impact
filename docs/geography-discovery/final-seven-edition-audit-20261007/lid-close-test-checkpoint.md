@@ -1,0 +1,3 @@
+# Lid-close test baseline
+
+2026-10-07 17:57:29 America/Los_Angeles (2026-10-08T00:57:29Z). Verified production remains Sites506: CA15/15, USA14/15, NYC11/15, LA0/15 income-audit dispositions. HWCLI and KAVI accepted locally but not published; 67 focused tests passed and 181 unrelated reports unchanged. Research clocks closed. Packaging helper18232 cancelled before input, exit1; no package/source/deployment operation occurred. Isolated author finished. Usage93% remaining. First continuation should package/publish the existing accepted batch and verify before counting NYC13/15; do not redo source research. Compare timestamps/actions after reopen; no idle or suspension time counts as research.

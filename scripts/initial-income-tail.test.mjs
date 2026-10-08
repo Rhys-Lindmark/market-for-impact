@@ -68,7 +68,8 @@ for(const [edition,slug,dir] of [
  ['los-angeles','communities-for-a-better-environment','la-cbe-alpha-income-20261008'],
  ['los-angeles','didi-hirsch-mental-health-services','la-didihirsch-alpha-income-20261008'],
  ['los-angeles','john-tracy-center','la-jtc-alpha-income-20261008'],
- ['los-angeles','streets-are-for-everyone','la-safe-alpha-income-20261008']
+ ['los-angeles','streets-are-for-everyone','la-safe-alpha-income-20261008'],
+ ['los-angeles','breathe-southern-california','la-breathe-alpha-income-20261008']
 ])test(slug+' preserves original clinical reference and explicit unknown income',()=>{
  const r=data.reports.find(r=>r.edition===edition&&r.slug===slug);
  const original=JSON.parse(fs.readFileSync(new URL('../docs/geography-discovery/'+dir+'/original-report.json',import.meta.url)));

@@ -1,0 +1,7 @@
+# Dayle McIntosh Center independent acceptance
+
+Root checked current original Home Access, Community Transitions and Services pages. Home modifications have no client charge within existing public funder limits; excess may require donation/other resources, not necessarily household cash. Transitions can provide one-time move-in support but not ongoing rent. Existing Medi-Cal/CalOptima and voucher eligibility are not new-gift award cohorts. Unpaid caregiver time, ongoing food/rent, benefits withdrawn, private payments and full access burdens remain material and may be negative. Employee salaries and old placement counts are not consumer earnings.
+
+Accepted targeted assessed-unknown household-resource disposition. Retain partial conditional clinical $210,204,081.632653 per ten LA QALYs from $3,729,186 annual cost and0.17740787766990296clinicalQALYs. Provider package cost is not household savings; retained geographic fraction is judgment, not empirical calibration. No matched current household dollar/cohort bridge was identified in focused sources; unknown is not zero, full-portfolio valuation or90%health finding. All six original worlds and complete frozen report remain exact; combined unknown diagnostic does not withdraw clinical arithmetic.
+
+Independent original-source and arithmetic challenge plus portable shared-schema checks passed. Actual author57.823sec, root source29.329sec, root model15.418sec; combined102.570sec within300sec initial cap. Tests/admin/waits excluded; user-confirmed GPT-6.1 Sol with historical partial coverage.

@@ -12,3 +12,10 @@ Recorded 2026-10-08 01:33:15 UTC (2026-10-07 18:33:15 America/Los_Angeles), on t
 - Live weekly usage:8%used,92%remaining;20%reserve preserved, reset credits untouched.
 
 On reopening, compare new commits, accepted packets, verified publication receipts and tool-action timestamps with this baseline. Count actual measured substantive research only. The existence of an active goal/schedule or a long open turn does not prove progress. Do not assert that lid-close work will continue or blame sleep/service suspension without evidence. Preserve all local packets if execution stops.
+
+## Follow-up checkpoint — 2026-10-08 01:51 UTC
+
+- HEAD c61bcea; working tree clean. Sites510 publication verified at 01:46:47.320Z. Since the baseline, NLSLA, East Yard, ICLC and HRC were accepted and published: LA4/15, overall13 remaining. ICLC has a conditional numerical income amendment; the other three retain their clinical reference with income assessed-unknown.
+- California15/15, USA14/15, NYC14/15, LA4/15. Weekly usage checked again:92%remaining.
+- Downtown Women's Center is an unresolved checkpoint, not accepted or published. Author science closed01:50:09.281Z after121.979sec (1.979sec allocation overrun disclosed); root source audit16.698sec. Combined138.677sec used,161.323sec of the300sec initial-report cap remains. Its paid-work source anchor is verified, but no signed-resource model was frozen. Isolated packet: ../la-dwc-alpha-income-20261008/.
+- No author or research clock remains open. Next bounded work: complete DWC's model/independent acceptance within its remaining allowance, then Illumination Health+Home. No lid state has been observed or inferred from these actions.

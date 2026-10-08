@@ -9,6 +9,59 @@
   "timeBasis": "Sum of recorded, organization-specific researcher wall-clock intervals. Parallel researchers are counted separately; this is not elapsed calendar time or a quality score.",
   "historicalCoverage": "Earlier reports did not consistently record organization-specific research intervals or AI model provenance. Missing records are unknown, not zero.",
   "organizations": {
+    "Bienestar Human Services": {
+      "coverage": "partial",
+      "sessions": [
+        {
+          "id": "la-alpha-bienestar-20260914-worker1",
+          "organizationId": "org:bienestar-human-services",
+          "stage": "alpha",
+          "phase": "research",
+          "workerId": "ca_alpha_one",
+          "startedAt": "2026-09-14T03:42:10Z",
+          "endedAt": "2026-09-14T03:54:02Z",
+          "evidence": "docs/la-next-four-acceptance.md — source-grounded organization research and scenario development; actual worker interval, separate from root integration.",
+          "model": {
+            "id": "gpt-6-astra",
+            "name": "GPT-6 Astra Light",
+            "reasoningEffort": "low",
+            "evidence": "Parent-assigned Light researcher."
+          }
+        },
+        {
+          "id": "99eef6cc-87e8-466f-a6c0-e002d1682bfe",
+          "workerId": "root-income-audit",
+          "phase": "source-audit",
+          "startedAt": "2026-10-08T03:10:17.875Z",
+          "endedAt": "2026-10-08T03:10:57.916Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed model assignment: GPT-6.1 Sol for current research task"
+          },
+          "evidence": "docs/geography-discovery/la-bienestar-alpha-income-20261008/root-source-audit.md",
+          "organizationId": "org:bienestar-human-services",
+          "edition": "los-angeles",
+          "stage": "alpha"
+        },
+        {
+          "id": "070ca6a0-965c-496e-a7ce-ee727b3cc470",
+          "workerId": "root-income-model-audit",
+          "phase": "modeling",
+          "startedAt": "2026-10-08T03:13:23.886Z",
+          "endedAt": "2026-10-08T03:13:58.267Z",
+          "model": {
+            "id": "gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "evidence": "User-confirmed model assignment: GPT-6.1 Sol for current research task"
+          },
+          "evidence": "docs/geography-discovery/la-bienestar-alpha-income-20261008/root-acceptance.md",
+          "organizationId": "org:bienestar-human-services",
+          "edition": "los-angeles",
+          "stage": "alpha"
+        }
+      ]
+    },
     "Streets Are For Everyone": {
       "coverage": "partial",
       "sessions": [

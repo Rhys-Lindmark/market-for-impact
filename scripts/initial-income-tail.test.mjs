@@ -12,6 +12,14 @@ import * as cda from '../docs/geography-discovery/ca-cda-alpha-income-20261007/m
 import * as essential from '../docs/geography-discovery/ca-essential-alpha-income-20261007/model.mjs';
 import * as yimby from '../docs/geography-discovery/ca-yimby-alpha-income-20261007/model.mjs';
 const data=JSON.parse(fs.readFileSync(new URL('../data/geography-reports.json',import.meta.url)));
+test('ICLC source-linked conditional resources preserve diagnostics and signed nulls',async()=>{
+ const m=await import('../docs/geography-discovery/la-iclc-alpha-income-20261008/model.mjs');
+ const r=data.reports.find(r=>r.edition==='los-angeles'&&r.slug==='inner-city-law-center');
+ const o=JSON.parse(fs.readFileSync(new URL('../docs/geography-discovery/la-iclc-alpha-income-20261008/original-report.json',import.meta.url)));
+ for(const s of o.model.scenarios){const v=r.model.scenarios.find(x=>x.id===(s.id==='central'?'initial-central-diagnostic':s.id));assert.deepEqual(s.id==='central'?{...v,id:s.id,label:s.label}:v,s);}
+ for(const[id,x]of m.worlds){const z=m.calculate(x),s=r.model.scenarios.find(s=>s.id===id);assert(Math.abs(scenarioIncomeEquivalent(s)-z.income)<1e-10);}
+ assert(Math.abs(reportPrice(r)-m.calculate().price)<1e-7);assert(m.calculate({q:0}).income>0);assert(m.calculate({a:0}).income<0);assert.equal(m.calculate({b:0}).total,0);
+});
 for(const [edition,slug,dir] of [
  ['california','california-pan-ethnic-health-network','ca-cpehn-alpha-income-20261007'],
  ['usa','national-health-law-program','usa-nhelp-alpha-income-20261007'],
@@ -43,7 +51,8 @@ for(const [edition,slug,dir] of [
  ['new-york-city','kings-against-violence-initiative','nyc-kavi-alpha-income-20261008'],
  ['new-york-city','citizens-housing-and-planning-council','nyc-chpc-alpha-income-20261008'],
  ['los-angeles','neighborhood-legal-services-los-angeles-county','la-nlsla-alpha-income-20261008'],
- ['los-angeles','east-yard-communities-for-environmental-justice','la-eastyard-alpha-income-20261008']
+ ['los-angeles','east-yard-communities-for-environmental-justice','la-eastyard-alpha-income-20261008'],
+ ['los-angeles','housing-rights-center','la-hrc-alpha-income-20261008']
 ])test(slug+' preserves original clinical reference and explicit unknown income',()=>{
  const r=data.reports.find(r=>r.edition===edition&&r.slug===slug);
  const original=JSON.parse(fs.readFileSync(new URL('../docs/geography-discovery/'+dir+'/original-report.json',import.meta.url)));

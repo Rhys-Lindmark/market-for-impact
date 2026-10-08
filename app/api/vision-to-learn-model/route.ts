@@ -1,2 +1,3 @@
-import {visionToLearn,visionToLearnModel} from '@/lib/vision-to-learn-model.mjs';
-export function GET(){return Response.json({model:visionToLearn,evaluated:visionToLearn.scenarios.map(s=>({id:s.id,...visionToLearnModel(s.inputs)}))});}
+import {version,defaults,calculate,calculateAll} from '@/lib/vtl-legacy-calibrated-model.mjs';
+import historical from '@/data/us/vtl-legacy-pre-recalibration-model.json';
+export function GET(){return Response.json({version,defaults,current:calculate(),evaluated:calculateAll(),historical});}

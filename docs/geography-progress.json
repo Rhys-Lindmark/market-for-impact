@@ -1,17 +1,34 @@
 {
   "schemaVersion": 1,
-  "updated": "2026-09-30",
-  "currentPhase": "Bounded user-requested deep reviews of Institute for Progress, 1Day Sooner and Foundation for American Innovation complete. USA has 28 published reports and 13 in-depth reviews; broader expansion and schedules remain paused. See their acceptance packet for evidence, assumptions and measured research time.",
+  "updated": "2026-10-07",
+  "currentPhase": "Seven active edition targets live. Night Ministry Chicago initial correction independently accepted in source:132.0M→38.400M conditional annualwork reference, signed health/resources, original diagnostic preserved. Five corrections accepted;64initial flags remain (CA15,USA15,NYC15,LA15,Chicago4,Houston0,Denver0). Combined release pending; next CommunityHealth Chicago. Counts/stages unchanged,goal incomplete,20%reserve.",
+  "activeEditionIds": ["california","usa","new-york-city","los-angeles","chicago","houston","denver"],
+  "deferredEditionIds": ["seattle","boston","atlanta","detroit"],
+  "executionBudget": "geography-execution-budget.json",
+  "currentResearchModel": "GPT-6.1 Sol",
+  "recalibration": {
+    "publishedCohortTotal": 40,
+    "publishedCohortCompleted": 40,
+    "legacyModelTotal": 11,
+    "legacyModelCompleted": 11,
+    "additionalCoverageBoundaries": 24,
+    "additionalCoverageCompleted": 5,
+    "legacyCompletedReportIds": ["bay/pacific-hearing-connection","san-francisco/clinic-by-the-bay","san-francisco/operation-access","san-francisco/pacific-vision-foundation","san-francisco/spur","san-francisco/housing-action-coalition","san-francisco/glide","san-francisco/breathe-california","san-francisco/north-east-medical-services","bay/heppac","us/changent-nfp"],
+    "completedReportIds": ["usa/institute-for-progress","usa/1day-sooner","usa/foundation-for-american-innovation","san-francisco/recares","san-francisco/hope-pacifica","san-francisco/project-homeless-connect","san-francisco/hearing-and-speech-center","san-francisco/compass-family-services","san-francisco/hamilton-families","san-francisco/friends-of-the-urban-forest","san-francisco/melp-ablecloset","san-francisco/code-tenderloin","san-francisco/san-francisco-aids-foundation","california/vision-to-learn","california/harm-reduction-services","california/youth-alive","california/walk-san-francisco","california/center-for-independent-living","california/coalition-for-clean-air","california/western-center-on-law-and-poverty","california/operation-access","california/champions-for-health","california/california-school-based-health-alliance","usa/institute-for-safer-trucking","usa/center-for-science-in-the-public-interest","usa/kids-and-car-safety","usa/help-america-hear","usa/cribs-for-kids","usa/end-overdose","usa/surgery-on-sunday","usa/dental-lifeline-network","usa/remote-area-medical","usa/american-nonsmokers-rights-foundation","new-york-city/bergen-volunteer-medical-initiative","new-york-city/new-jersey-harm-reduction-coalition","new-york-city/parker-family-health-center","los-angeles/lestonnac-free-clinic","los-angeles/urban-peace-institute","los-angeles/hunger-action-los-angeles","chicago/chicago-recovery-alliance"],
+    "originalPendingQueue": 48,
+    "originalPendingQueueCompleted": 48,
+    "evidence": "geography-discovery/recalibration-inventory-2026-10-01.md"
+  },
   "usageReserve": {
     "userBaseline": "2026-09-29 around 09:00 America/Los_Angeles: 96% of weekly allowance remaining (user screenshot)",
-    "minimumWeeklyRemainingPercent": 33,
-    "operationalStopRemainingPercent": 45,
+    "minimumWeeklyRemainingPercent": 20,
+    "operationalStopRemainingPercent": 25,
     "checkIntervalActiveMinutes": 15,
-    "atStop": "Checkpoint work and switch the existing heartbeat to daily usage checks until reset; do not consume credits or use a reset automatically."
+    "atStop": "Do not start a new research batch at or below 25% remaining; checkpoint and keep at least the user's latest 20% minimum reserve. Respect later user pauses. Do not automatically consume credits or use a reset."
   },
   "issue": "https://github.com/Rhys-Lindmark/market-for-impact/issues/333",
   "canonicalBase": "https://ai.rhyslindmark.com/givebetter",
-  "models": {
+  "historicalPlannedModels": {
     "discovery": {
       "model": "gpt-6-astra",
       "effort": "medium"
@@ -23,6 +40,23 @@
     "beta": {
       "model": "gpt-6-astra",
       "effort": "medium"
+    }
+  },
+  "models": {
+    "discovery": {
+      "model": "gpt-6.1-sol",
+      "effort": null,
+      "evidence": "User-confirmed current model assignment; no independently verified reasoning level. Historical discovery records are unchanged."
+    },
+    "alpha": {
+      "model": "gpt-6.1-sol",
+      "effort": null,
+      "evidence": "User-confirmed current model assignment; no independently verified reasoning level. Historical initial-report records are unchanged."
+    },
+    "beta": {
+      "model": "gpt-6.1-sol",
+      "effort": null,
+      "evidence": "User-confirmed current model assignment; no independently verified reasoning level. Historical in-depth records are unchanged."
     }
   },
   "targets": {
@@ -40,7 +74,7 @@
       "discoveryAccepted": 100,
       "alphaPublished": 25,
       "betaAcceptedPublished": 10,
-      "topPicksPublished": 0,
+      "topPicksPublished": 4,
       "nextAction": "Frozen ten in-depth reviews complete; seek genuinely gift-sensitive evidence before naming any of four donor picks.",
       "boundaryVersion": "US-CA-state-v1",
       "discoveryProvisional": 0,
@@ -185,7 +219,7 @@
         "org:youth-alive",
         "org:champions-for-health"
       ],
-      "topPickIds": [],
+      "topPickIds": ["ein:94-3180356","ein:45-3457853","org:harm-reduction-services","org:coalition-for-clean-air"],
       "heldDiscoveryIds": [
         "california:child-abuse-prevention-center",
         "california:hearing-speech-center-northern-california"
@@ -232,8 +266,8 @@
       "discoveryAccepted": 100,
       "alphaPublished": 28,
       "betaAcceptedPublished": 13,
-      "topPicksPublished": 0,
-      "nextAction": "Original ten deeper reviews complete, plus three user-requested abundance/growth reviews. Broad expansion remains paused; pipeline-integration PR is queued for a future authorized resumption.",
+      "topPicksPublished": 4,
+      "nextAction": "Original ten deeper reviews complete, plus three abundance/growth reviews. Full expansion is active: finish P0 recalibration and legacy coverage first, then integrate better-paying-jobs and abundance/growth into the holistic health-and-income pipeline and complete a source-vetted top four.",
       "boundaryVersion": "USA-50-states-DC-v1",
       "discoveryProvisional": 0,
       "acceptedDiscoveryIds": [
@@ -383,7 +417,7 @@
         "ein:85-1103820",
         "ein:47-2239840"
       ],
-      "topPickIds": [],
+      "topPickIds": ["ein:87-2449729","org:center-for-science-in-the-public-interest","org:surgery-on-sunday","ein:84-6129064"],
       "heldDiscoveryIds": [
         "usa:usa-wave2-22",
         "usa:usa-provisional-069"
@@ -426,12 +460,12 @@
     {
       "id": "new-york-city",
       "label": "New York City",
-      "status": "alpha-in-progress",
+      "status": "confirmed",
       "discoveryAccepted": 100,
       "alphaPublished": 25,
-      "betaAcceptedPublished": 3,
-      "topPicksPublished": 0,
-      "nextAction": "Begin deeper reviews of the 25 accepted NYC reports; retain Ironbound's held draft outside the counted cohort and scrutinize comparable full-resource costs.",
+      "betaAcceptedPublished": 10,
+      "topPicksPublished": 4,
+      "nextAction": "NYC25initial/10deep/fourfeatured accepted for combined release; verify deployment receipt, then finish LA's remaining seven deep reviews.",
       "boundaryVersion": "OMB-23-01-2023-07-21",
       "discoveryProvisional": 0,
       "acceptedDiscoveryIds": [
@@ -601,9 +635,16 @@
       "betaIds": [
         "ein:22-3619518",
         "ein:20-2633437",
-        "ein:85-4099652"
+        "ein:85-4099652",
+        "org:st-ann-s-corner-of-harm-reduction",
+        "ein:13-3164464",
+        "org:charles-b-wang-community-health-center",
+        "ein:13-3193119",
+        "org:mobilization-for-justice",
+        "org:onpoint-nyc",
+        "org:god-s-love-we-deliver"
       ],
-      "topPickIds": []
+      "topPickIds": ["ein:22-3619518","ein:85-4099652","org:st-ann-s-corner-of-harm-reduction","org:charles-b-wang-community-health-center"]
     },
     {
       "id": "los-angeles",
@@ -611,9 +652,9 @@
       "status": "confirmed",
       "discoveryAccepted": 100,
       "alphaPublished": 25,
-      "betaAcceptedPublished": 3,
-      "topPicksPublished": 0,
-      "nextAction": "Continue frozen beta priorities; verify current donor-ready capacity before selecting top four.",
+      "betaAcceptedPublished": 10,
+      "topPicksPublished": 4,
+      "nextAction": "Complete and verified live on Sites412:25 initial,10 deep,four shared features. Receipt geography-discovery/la-ten-featured-publication-20261005.json. Next required edition Chicago.",
       "boundaryVersion": "OMB-23-01-2023-07-21",
       "discoveryProvisional": 0,
       "acceptedDiscoveryIds": [
@@ -748,9 +789,21 @@
       "betaIds": [
         "ein:36-4816075",
         "org:lestonnac-free-clinic",
-        "org:hunger-action-los-angeles"
+        "org:hunger-action-los-angeles",
+        "org:coalition-for-clean-air",
+        "org:garment-worker-center",
+        "org:climate-resolve",
+        "org:vietnamese-american-cancer-foundation",
+        "org:maternal-mental-health-now",
+        "org:human-options",
+        "org:public-law-center"
       ],
-      "topPickIds": [],
+      "topPickIds": [
+        "org:lestonnac-free-clinic",
+        "org:coalition-for-clean-air",
+        "org:hunger-action-los-angeles",
+        "org:vietnamese-american-cancer-foundation"
+      ],
       "selectedAlphaIds": [
         "org:lestonnac-free-clinic",
         "ein:47-3036490",
@@ -784,10 +837,10 @@
       "label": "Chicago",
       "status": "confirmed",
       "discoveryAccepted": 100,
-      "alphaPublished": 14,
-      "betaAcceptedPublished": 1,
-      "topPicksPublished": 0,
-      "nextAction": "Research the accepted25 priorities using edition-specific health attribution, full recipient cost and actual author intervals; selection is not recommendation.",
+      "alphaPublished": 25,
+      "betaAcceptedPublished": 10,
+      "topPicksPublished": 4,
+      "nextAction": "Ten Chicago deep reviews and four evidence-weighted features accepted for release; verify publication receipt. Then Houston and Denver remaining reports.",
       "boundaryVersion": "OMB-23-01-2023-07-21",
       "discoveryProvisional": 0,
       "acceptedDiscoveryIds": [
@@ -906,12 +959,32 @@
         "org:metropolitan-tenants",
         "ein:36-4251865",
         "org:youth-guidance",
-        "ein:36-4236142"
+        "ein:36-4236142",
+        "org:equip-for-equality",
+        "org:respiratory-health-association",
+        "org:lvejo",
+        "ein:36-3385886",
+        "org:institute-nonviolence",
+        "org:chicago-cred",
+        "ein:36-3314976",
+        "ein:27-3636022",
+        "ein:36-3803312",
+        "org:north-west-housing-partnership",
+        "ein:36-2734184"
       ],
       "betaIds": [
-        "org:chicago-recovery-alliance"
+        "org:chicago-recovery-alliance",
+        "org:old-irving-park-community-clinic",
+        "org:dupage-health-coalition",
+        "ein:36-4277029",
+        "ein:36-3563802",
+        "org:youth-guidance",
+        "org:north-west-housing-partnership",
+        "org:chicago-cred",
+        "org:metropolitan-tenants",
+        "ein:36-3314976"
       ],
-      "topPickIds": [],
+      "topPickIds": ["org:old-irving-park-community-clinic","ein:36-3563802","org:dupage-health-coalition","org:youth-guidance"],
       "selectedAlphaIds": [
         "org:chicago-recovery-alliance",
         "org:above-beyond",
@@ -946,10 +1019,10 @@
       "label": "Houston",
       "status": "confirmed",
       "discoveryAccepted": 100,
-      "alphaPublished": 2,
-      "betaAcceptedPublished": 0,
-      "topPicksPublished": 0,
-      "nextAction": "Research the accepted25 priorities using edition-specific health attribution, full recipient cost and actual author intervals; selection is not recommendation.",
+      "alphaPublished": 25,
+      "betaAcceptedPublished": 10,
+      "topPicksPublished": 4,
+      "nextAction": "Four evidence-weighted Houston features accepted; verify landing/full-list publication parity. Denver is the next research edition.",
       "boundaryVersion": "OMB-23-01-2023-07-21",
       "discoveryProvisional": 0,
       "acceptedDiscoveryIds": [
@@ -1056,10 +1129,44 @@
       ],
       "alphaCohortIds": [
         "org:healthcare-for-the-homeless-houston",
-        "org:tomagwa-healthcare-ministries"
+        "org:tomagwa-healthcare-ministries",
+        "org:san-jose-clinic",
+        "org:santa-maria-hostel",
+        "org:christ-clinic",
+        "org:rebuilding-together-houston",
+        "org:vecino-health-centers",
+        "org:accesshealth",
+        "org:avenue-360-health-and-wellness",
+        "org:allies-in-hope",
+        "org:the-rose",
+        "org:houston-area-women-s-center",
+        "org:crisis-intervention-of-houston",
+        "org:fort-bend-women-s-center",
+        "org:daya",
+        "org:the-restoration-team",
+        "org:west-street-recovery",
+        "org:meals-on-wheels-montgomery-county",
+        "org:brighter-bites",
+        "org:air-alliance-houston",
+        "org:bayou-city-waterkeeper",
+        "org:the-lighthouse-of-houston",
+        "org:easter-seals-greater-houston",
+        "org:lone-star-legal-aid",
+        "org:avda"
       ],
-      "betaIds": [],
-      "topPickIds": [],
+      "betaIds": [
+        "org:avda",
+        "org:the-lighthouse-of-houston",
+        "org:santa-maria-hostel",
+        "org:lone-star-legal-aid",
+        "org:crisis-intervention-of-houston",
+        "org:daya",
+        "org:meals-on-wheels-montgomery-county",
+        "org:the-rose",
+        "org:air-alliance-houston",
+        "org:bayou-city-waterkeeper"
+      ],
+      "topPickIds": ["org:avda", "org:meals-on-wheels-montgomery-county", "org:the-lighthouse-of-houston", "org:air-alliance-houston"],
       "selectedAlphaIds": [
         "org:healthcare-for-the-homeless-houston",
         "org:san-jose-clinic",
@@ -1092,12 +1199,12 @@
     {
       "id": "denver",
       "label": "Denver",
-      "status": "confirmed",
+      "status": "complete",
       "discoveryAccepted": 100,
-      "alphaPublished": 2,
-      "betaAcceptedPublished": 0,
-      "topPicksPublished": 0,
-      "nextAction": "Research the accepted25 priorities using edition-specific health attribution, full recipient cost and actual author intervals; selection is not recommendation.",
+      "alphaPublished": 25,
+      "betaAcceptedPublished": 10,
+      "topPicksPublished": 4,
+      "nextAction": "Four independently compared Denver features accepted; publish and verify shared home/all selection, then final seven-edition completion audit.",
       "boundaryVersion": "OMB-23-01-2023-07-21",
       "discoveryProvisional": 0,
       "acceptedDiscoveryIds": [
@@ -1204,10 +1311,44 @@
       ],
       "alphaCohortIds": [
         "org:harm-reduction-action-center",
-        "org:kids-in-need-dentistry"
+        "org:kids-in-need-dentistry",
+        "org:second-wind-fund",
+        "ein:84-1182130",
+        "ein:74-2543881",
+        "org:cultivando",
+        "ein:84-1201078",
+        "ein:84-1993572",
+        "org:rebuilding-together",
+        "org:benefits-in-action",
+        "org:hunger-free-colorado",
+        "org:doctors-care",
+        "org:colorado-consumer-health",
+        "ein:84-0782124",
+        "org:denver-childrens-advocacy",
+        "org:blue-bench",
+        "ein:84-0570279",
+        "org:immunize-colorado",
+        "org:colorado-health-network",
+        "org:jefferson-center",
+        "org:tepeyac",
+        "ein:84-6129064",
+        "org:struggle-love",
+        "ein:84-0404253",
+        "ein:61-1458290"
       ],
-      "betaIds": [],
-      "topPickIds": [],
+      "betaIds": [
+        "org:harm-reduction-action-center",
+        "org:kids-in-need-dentistry",
+        "org:hunger-free-colorado",
+        "org:rebuilding-together",
+        "ein:74-2543881",
+        "org:doctors-care",
+        "org:immunize-colorado",
+        "org:cultivando",
+        "ein:84-1993572",
+        "ein:84-0404253"
+      ],
+      "topPickIds": ["org:hunger-free-colorado","org:doctors-care","org:rebuilding-together","org:cultivando"],
       "selectedAlphaIds": [
         "org:harm-reduction-action-center",
         "org:second-wind-fund",

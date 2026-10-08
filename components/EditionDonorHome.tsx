@@ -3,15 +3,16 @@ import type {EditionReport} from '@/lib/published-geography-reports';
 import {canonicalBase,editionPath} from '@/lib/geography-editions.mjs';
 import {editionReportPath,formatEditionMoney,reportPrice} from '@/lib/geography-reports.mjs';
 import highlights from '@/data/edition-highlights.json';
+import {featuredReports} from '@/lib/edition-featured.mjs';
 import '@/app/sf-home.css';
 
 export default function EditionDonorHome({id,label,reports,discovery,alpha,beta}:{id:string;label:string;reports:EditionReport[];discovery:number;alpha:number;beta:number}){
  const path=editionPath(id);
- const photos=highlights as Record<string,{image:string;source:string;caption:string}>;
- const leading=reports.filter(r=>reportPrice(r)!==null).sort((a,b)=>reportPrice(a)!-reportPrice(b)!).slice(0,4);
- const picks=alpha>=25&&beta>=10&&leading.every(r=>photos[r.edition+'/'+r.slug])?leading:[];
+ const photos=highlights as Record<string,{image:string;source:string;caption:string;logo?:boolean}>;
+ const selected=featuredReports(reports,id);
+ const picks=selected.every(r=>photos[r.edition+'/'+r.slug])?selected:[];
  const principles=[
-  ['Look for meaningful impact',`Compare how a donation could improve health in ${label}.`,'Map illustration'],
+  ['Look for meaningful impact',`Compare how a donation could improve health and household resources in ${label}.`,'Map illustration'],
   ['Follow the evidence','Understand the outcomes, costs and assumptions behind each estimate.','Illustration of research books'],
   ['Choose with care','Read the report and confirm what additional donations could achieve.','Illustration of choosing a charity'],
  ];
@@ -29,7 +30,7 @@ export default function EditionDonorHome({id,label,reports,discovery,alpha,beta}
    {picks.length===4&&<section aria-label="Four research leads">{picks.map((report,i)=>{
     const photo=photos[report.edition+'/'+report.slug];
     return <article className="sf-home-charity" key={report.slug} id={report.slug}>
-     <figure><img src={photo.image.startsWith('https://')?photo.image:canonicalBase+photo.image} alt={photo.caption} width="480" height="480" loading="lazy"/><figcaption><a href={photo.source}>{photo.caption}</a></figcaption></figure>
+     <figure><img src={photo.image.startsWith('https://')?photo.image:canonicalBase+photo.image} alt={photo.caption} width="480" height="480" loading="lazy" style={photo.logo?{objectFit:'contain'}:undefined}/><figcaption><a href={photo.source}>{photo.caption}</a></figcaption></figure>
      <div><p className="sf-home-eyebrow">RESEARCH LEAD {i+1} OF 4</p><h2>{report.organization}</h2>
       <div className="sf-home-charity-body">
        <section><h3>Overview</h3><p>{report.summary.what.join(' ')}</p></section>
@@ -50,7 +51,7 @@ export default function EditionDonorHome({id,label,reports,discovery,alpha,beta}
    <details className="sf-home-selection">
     <summary>Research progress</summary>
     <p>{discovery}/100 candidates screened · {alpha}/25 initial reports · {beta}/10 in-depth reviews.</p>
-    <p>We are developing best estimates from costs, outcomes and explicit assumptions. The final shortlist will also consider current operations, financial evidence and room for more funding.</p>
+    <p>{picks.length===4?'Four featured opportunities are selected from accepted in-depth reviews using current modeled costs, operations and financial evidence. These are research comparisons, not confirmed offers to purchase additional impact.':'We are developing best estimates from costs, outcomes and explicit assumptions. The shortlist will also consider current operations, financial evidence and room for more funding.'}</p>
     <a href={canonicalBase+path+'/all'}>Detailed research and geographic scope</a>
    </details>
    <footer className="sf-home-footer"><a href={canonicalBase+path+'/all'}>All {label} research</a><span className="sf-footer-separator" aria-hidden="true">·</span><a href={canonicalBase+'/all'}>All cities and regions</a></footer>

@@ -1,0 +1,134 @@
+{
+  "organization": "California School-Based Health Alliance",
+  "organizationId": "org:california-school-based-health-alliance",
+  "edition": "california",
+  "updated": "2026-09-30",
+  "priceScope": "Central estimate withdrawn; uncalibrated historical clinical-access diagnostics",
+  "model": {
+    "version": "ca-school-alliance-bottleneck-beta-v3",
+    "costScope": "Latest annual gross recipient expense is observed, not an identified marginal gift tranche. Full incremental Alliance, district and provider resources remain unknown. No societal or complete-portfolio cost-effectiveness estimate.",
+    "geographicAttribution": "Only incremental health for California residents would count; no nationwide dissemination credit or assumption that every clinic patient is an enrolled student.",
+    "formula": "For each named engagement j, Q_CA = sum of California patients' finite utility trajectories under gift minus the same patients' trajectories without gift, net of displacement and harms. Delta C = Alliance + district + provider real resources under gift minus resources without gift, avoiding duplicate reimbursement transfers. Both require observed or defensibly calibrated causal inputs; Q and Delta C are presently unidentified.",
+    "counterfactual": "Existing contracts, county/district staffing, DHCS/Carelon TA, capacity grants, billing support, provider investment and off-campus care continue. Reimbursement of already-delivered treatment is not new treatment. The alternative opening date and clinical capacity must be identified district by district.",
+    "attribution": "No assumed .25 implementation or .25 funding multiplier is retained as a current estimate. A donor-sensitive bottleneck must distinguish assistance from already-funded services and alliance contribution from other partners. Count unique patient episodes and resource changes once.",
+    "uncertainty": "The alpha central and high/low values are mathematically reproducible but uncalibrated. Evidence supports possible health benefits of school care; it does not identify the ordinary gift's incremental care or utility. Unknown is not zero; adverse outcomes remain possible.",
+    "nativeOutcomes": "Observed: seven partnership openings in 2025, conference/webinar reach; a named 2026 SAC Health clinic at Pacific High School with 40 posted facility opening hours/week. Unknown: Alliance-gift-caused clinician hours, additional unique students, completed treatment and health.",
+    "inputs": [
+      {
+        "name": "E",
+        "value": 2290208,
+        "unit": "USD/year gross recipient expense FY2025",
+        "basis": "observed",
+        "rationale": "Original full-recipient return including investment costs; not full Alliance+provider cost.",
+        "sourceIds": [
+          "990-25",
+          "schedule-2025"
+        ]
+      },
+      {
+        "name": "gift-sensitive assistance capacity",
+        "value": null,
+        "unit": "unidentified",
+        "basis": "unknown",
+        "rationale": "Required causal or resource quantity not identified in reviewed public evidence.",
+        "sourceIds": []
+      },
+      {
+        "name": "incremental clinical hours",
+        "value": null,
+        "unit": "unidentified",
+        "basis": "unknown",
+        "rationale": "Required causal or resource quantity not identified in reviewed public evidence.",
+        "sourceIds": []
+      },
+      {
+        "name": "additional unique California students",
+        "value": null,
+        "unit": "unidentified",
+        "basis": "unknown",
+        "rationale": "Required causal or resource quantity not identified in reviewed public evidence.",
+        "sourceIds": []
+      },
+      {
+        "name": "completed effective treatment",
+        "value": null,
+        "unit": "unidentified",
+        "basis": "unknown",
+        "rationale": "Required causal or resource quantity not identified in reviewed public evidence.",
+        "sourceIds": []
+      },
+      {
+        "name": "finite net utility area",
+        "value": null,
+        "unit": "unidentified",
+        "basis": "unknown",
+        "rationale": "Required causal or resource quantity not identified in reviewed public evidence.",
+        "sourceIds": []
+      },
+      {
+        "name": "incremental district/provider resource cost",
+        "value": null,
+        "unit": "unidentified",
+        "basis": "unknown",
+        "rationale": "Required causal or resource quantity not identified in reviewed public evidence.",
+        "sourceIds": []
+      },
+      {
+        "name": "other portfolio California QALYs",
+        "value": null,
+        "unit": "unidentified",
+        "basis": "unknown",
+        "rationale": "Required causal or resource quantity not identified in reviewed public evidence.",
+        "sourceIds": []
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "central",
+        "label": "Ordinary-gift health effect unpriced",
+        "costUSD": 2290208,
+        "allPopulationQalys": null,
+        "editionQalys": null,
+        "assumptions": "Annual recipient cost is known; marginal provider resources and health are unidentified. Do not interpret as zero health."
+      },
+      {
+        "id": "historical-alpha-central",
+        "label": "Initial enabled-care estimate",
+        "costUSD": 2290208,
+        "allPopulationQalys": 0.8528504322383295,
+        "editionQalys": 0.8528504322383295,
+        "assumptions": "Original central scenario preserved from source commit 80b84a15060e43b83ee4f203039da9effba1cc9f: f=.4; k=20000; n=20; a=.25; b=.25; u=.05; T=112; g=1; d=.03. Later review findings remain in the report."
+      },
+      {
+        "id": "zero",
+        "label": "No additional care possibility",
+        "costUSD": 2290208,
+        "allPopulationQalys": 0,
+        "editionQalys": 0,
+        "assumptions": "Illustration only: implementation would occur anyway or billing covers existing care. Not a probability-weighted central or a bound."
+      },
+      {
+        "id": "portfolio",
+        "label": "Complete portfolio unpriced",
+        "costUSD": 2290208,
+        "allPopulationQalys": null,
+        "editionQalys": null,
+        "assumptions": "Policy, primary care, prevention, coordination and treatment-quality effects may matter but are not priced."
+      }
+    ],
+    "sensitivity": [
+      "Historical central: 0.8528504322383295 QALYs and $26,853,571.43/10 QALYs; withdrawn as a current decision estimate.",
+      "Historical low/high: 0.00016204158212528258 / 51.17102593429979 California QALYs; uncalibrated stress cases, not current bounds.",
+      "Historical clinical sensitivity adds $114,510.40 but omits unknown fixed and unsuccessful-delivery costs; it is not complete societal cost.",
+      "Benefits can be zero or negative. No probability, mortality multiplier, lifetime extrapolation or numeric adverse magnitude is supported."
+    ],
+    "missingInputs": [
+      "Named unfunded assistance engagement and current contract/grant coverage",
+      "Counterfactual provider, public TA, implementation date and clinical staffing",
+      "Gift-attributable clinician hours, unique students and completed effective treatment",
+      "Finite utility trajectory relative to actual alternative care including dropout and harms",
+      "Full incremental Alliance, district, provider, capital, billing and coordination resources",
+      "Costed ordinary-gift tranche and evidence that it changes the bottleneck"
+    ]
+  }
+}

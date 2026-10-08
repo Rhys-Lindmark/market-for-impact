@@ -1,0 +1,7 @@
+# IST integration acceptance — accepted with scientific limitations
+
+The calculator's conditional scientific acceptance is preserved in `ist-usa-independent-acceptance-2026-10-02.md`; the requested exact expense-mean correction is implemented. Independent final integration review accepted all43 scenarios, with income serialization error no larger than3.47e-18 and539.184 research seconds imported once. Nineteen tests pass. Final scientific limitations remain explicit; acceptance is not empirical validation of the policy-probability prior. Native publication remains a separate gate.
+
+Root integrated all43 current diagnostic scenarios, the original historical model/price, and closed research receipts. Nineteen focused current-model, historical and registry tests pass. These verify serialization, arithmetic and provenance, not empirical advocacy effectiveness. The regulatory forecast parameters use the registry's source-backed observed category with explicit text that they are NHTSA projections, not observed IST-caused outcomes; other parameters are declared judgments.
+
+Independent final integration review on the existing `/root/hsc_calibration` handle is complete. Phone/tablet checks and the production build passed. Published P0 count remains23/40 until native deployment succeeds; no new report/deep-review count is claimed. The complete independent memo is preserved alongside this acceptance record.

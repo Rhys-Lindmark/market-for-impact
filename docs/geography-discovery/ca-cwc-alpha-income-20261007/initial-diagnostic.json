@@ -1,0 +1,65 @@
+{
+  "originalReport": "original-report.json",
+  "originalVersion": "ca-cwc-project-acceleration-v2",
+  "originalScenarios": [
+    {
+      "id": "central",
+      "label": "Conditional project acceleration",
+      "costUSD": 6434794,
+      "allPopulationQalys": 0.028762135922330102,
+      "editionQalys": 0.028762135922330102,
+      "assumptions": "J=2;H=158;n=3;T=1;p=.1;a=.25;b=.25;u=.005;d=.03."
+    },
+    {
+      "id": "low",
+      "label": "Weak acceleration",
+      "costUSD": 6434794,
+      "allPopulationQalys": 0.000004271844660194175,
+      "editionQalys": 0.000004271844660194175,
+      "assumptions": "J=1;H=44;n=2;T=.25;p=.02;a=.1;b=.1;u=.001;d=.03."
+    },
+    {
+      "id": "high",
+      "label": "Favorable finite portfolio",
+      "costUSD": 6434794,
+      "allPopulationQalys": 9.069846356866812,
+      "editionQalys": 9.069846356866812,
+      "assumptions": "J=5;H=158;n=4;T=2;p=.3;a=.5;b=.5;u=.02;discount one benefit year at year1 and one at year2, no benefit later."
+    },
+    {
+      "id": "zero",
+      "label": "No added health",
+      "costUSD": 6434794,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "assumptions": "No acceleration or complete substitution."
+    },
+    {
+      "id": "adverse",
+      "label": "Net adverse stress",
+      "costUSD": 6434794,
+      "allPopulationQalys": -1,
+      "editionQalys": -1,
+      "assumptions": "One California QALY lost; subjective displacement/implementation stress."
+    },
+    {
+      "id": "portfolio",
+      "label": "Complete portfolio unpriced",
+      "costUSD": 6434794,
+      "allPopulationQalys": null,
+      "editionQalys": null,
+      "assumptions": "Unpriced policy and non-health effects may dominate."
+    },
+    {
+      "id": "capital-resource",
+      "label": "Add attributed capital stress",
+      "costUSD": 6447294,
+      "allPopulationQalys": 0.028762135922330102,
+      "editionQalys": 0.028762135922330102,
+      "assumptions": "2*$1m*.1*.25*.25=$12,500; no extra health."
+    }
+  ],
+  "originalPrice10": 2237244833.755274,
+  "clinicalCoefficientsUnchanged": true,
+  "authorSeconds": 109.963
+}

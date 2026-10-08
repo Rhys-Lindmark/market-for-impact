@@ -1,0 +1,20 @@
+import {test,expect} from '@playwright/test';
+test('Walk SF report, income-aware API and list agree on responsive layouts',async({page,request})=>{
+ await page.route('https://market-for-impact.rhyslindmark.chatgpt.site/_next/**',async route=>{const u=new URL(route.request().url());await route.fulfill({response:await request.get(u.pathname+u.search)});});
+ await page.goto('/california/charities/walk-san-francisco');
+ await expect(page.getByRole('heading',{level:1,name:'Walk San Francisco',exact:true})).toBeVisible();
+ await expect(page.locator('.report-research-effort summary')).toContainText('GPT-6.1 Sol');
+ await expect(page.locator('#summary')).toContainText('$878.4M');
+ await expect(page.locator('#cost')).toContainText('$4,437,877');
+ await expect(page.locator('#cost')).toContainText('Health and income');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+ const response=await request.get('/api/geography-reports/california/walk-san-francisco');expect(response.ok()).toBe(true);
+ const d=await response.json(),s=d.model.scenarios.find((s:{id:string})=>s.id==='central');
+ expect(s.editionQalys).toBeCloseTo(.001116993681986368,12);
+ const income=s.incomePathways.reduce((sum:number,p:any)=>sum+.5*p.people*Math.log1p(p.annualIncomeGainUSD/p.annualIncomeBeforeUSD)*p.causalShare*p.independentShare*p.editionShare/(1+p.discountRate)**p.delayYears,0);
+ expect(income).toBeCloseTo(.000021439697733860847,12);
+ expect(10*s.costUSD/(s.editionQalys+income)).toBeCloseTo(878400104.7525074,5);
+ await page.goto('/california/all');const row=page.locator('[data-research-table] tbody tr').filter({hasText:'Walk San Francisco'});
+ await expect(row.locator('td').nth(0)).toContainText('$878.4M');await expect(row.locator('td').nth(1)).toContainText('$948K');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+});

@@ -1,0 +1,5 @@
+# Original-source independent check
+
+Opened GHHI July2026 Home Electrification and Affordability PDF via original publication page. Four retired Baltimore homeowner cases, braided public/private grant funding and no household upfront fee. Actual observed annual bill reductions144,-157,124,1555USD; normalized to weather/2025rates229,-415,-535,2342USD. Higher consumption and supplier switching distinguish cash comparisons from causal savings. CaseA full non-solar intervention34000USD and caseC57500USD; not the8000USD judgment child-asthma bundle. No direct transfer to child-asthma households/current marginal giftmix or whole salaries. Preserve full incurred utility losses independently of clinical response; a conditional wholehouse sensitivity must have explicit separate cohort, cost and attribution.
+
+The initial pre-clock model/source-index lookup had no dedicated interval; preserve its duration as unknown, conservatively reserve30seconds instead of fabricating timestamps. Include that reserve in the300second initial cap. No empirical90%health inference.

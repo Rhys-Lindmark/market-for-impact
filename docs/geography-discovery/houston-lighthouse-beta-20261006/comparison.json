@@ -1,0 +1,98 @@
+{
+  "organization": "The Lighthouse of Houston",
+  "edition": "houston",
+  "before": {
+    "health": 4.193652287752109,
+    "income": 3.1494994598619597,
+    "price": 9807299.70933796
+  },
+  "burdenOnlyOldScope": {
+    "inputs": {
+      "C": 7201649,
+      "N": 1000,
+      "trainingN": 1000,
+      "clinicalN": 800,
+      "clinicalResponse": 0.4,
+      "unique": 1,
+      "b": 0.5,
+      "q": 0.015,
+      "T": 2,
+      "g": 0.95,
+      "delay": 0.5,
+      "discount": 0.03,
+      "success": 0.15,
+      "medicalGain": 100,
+      "workGain": 4000,
+      "transferGain": 0,
+      "overlap": 0.75,
+      "cost": 100,
+      "baseline": 25000,
+      "harm": 0.0005,
+      "payerLoss": 0,
+      "payerPeople": 10000,
+      "payerBaseline": 50000,
+      "externalCost": 0,
+      "resourceYears": 1,
+      "trainingCost": 0,
+      "trainingShare": 1,
+      "legacyIncome": true
+    },
+    "costUSD": 7201649,
+    "exposed": 1000,
+    "union": 500,
+    "clinicalPeople": 160,
+    "allPopulationQalys": 4.168038509671674,
+    "editionQalys": 3.95963658418809,
+    "incomePathways": [
+      {
+        "id": "changed-training-charged",
+        "people": 75,
+        "annualIncomeBeforeUSD": 25000,
+        "annualIncomeGainUSD": 2975,
+        "years": 1,
+        "editionShare": 0.95,
+        "delayYears": 0.5,
+        "discountRate": 0.03,
+        "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+        "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+        "sourceIds": [
+          "services",
+          "finance",
+          "cg-cost"
+        ]
+      },
+      {
+        "id": "unchanged-training-charged",
+        "people": 925,
+        "annualIncomeBeforeUSD": 25000,
+        "annualIncomeGainUSD": -100,
+        "years": 1,
+        "editionShare": 0.95,
+        "delayYears": 0.5,
+        "discountRate": 0.03,
+        "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+        "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+        "sourceIds": [
+          "services",
+          "finance",
+          "cg-cost"
+        ]
+      }
+    ],
+    "incomeEquivalent": 2.211559512617268,
+    "incomeUnknown": false,
+    "totalEquivalent": 6.1711960968053585,
+    "price10": 11669778.252109142,
+    "costPer10Qalys": 11669778.252109142,
+    "incomeEquivalentYears": 2.211559512617268,
+    "combinedEquivalentYears": 6.1711960968053585
+  },
+  "current": {
+    "health": 1.8727327061431496,
+    "income": -0.02319119004719583,
+    "price": 38937482.27507416
+  },
+  "why": "The model replaces speculative broad clinical/work cohorts with separate reported clinic/training contact envelopes and retains burdens on all exposures; scope and accounting revisions, not a demonstrated fourfold fall in whole-portfolio effectiveness.",
+  "activeAuthorMinutes": 4.0737,
+  "model": "GPT-6.1 Sol"
+}

@@ -1,0 +1,65 @@
+{
+  "originalReport": "original-report.json",
+  "originalVersion": "ca-nourish-implementation-slice-v2",
+  "originalScenarios": [
+    {
+      "id": "central",
+      "label": "Conditional nutrition-access central",
+      "costUSD": 1710797,
+      "allPopulationQalys": 0.12135922330097088,
+      "editionQalys": 0.12135922330097088,
+      "assumptions": "N=10000; T=.5; p=.1; a=.2; b=.25; u=.005; d=.03."
+    },
+    {
+      "id": "low",
+      "label": "Weak implementation and health",
+      "costUSD": 1710797,
+      "allPopulationQalys": 0.000024271844660194176,
+      "editionQalys": 0.000024271844660194176,
+      "assumptions": "N=1000; T=.25; p=.02; a=.05; b=.1; u=.001; d=.03."
+    },
+    {
+      "id": "high",
+      "label": "Favorable finite implementation",
+      "costUSD": 1710797,
+      "allPopulationQalys": 36.407766990291265,
+      "editionQalys": 36.407766990291265,
+      "assumptions": "N=50000; T=1; p=.25; a=.3; b=.5; u=.02; d=.03."
+    },
+    {
+      "id": "zero",
+      "label": "No added access",
+      "costUSD": 1710797,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "assumptions": "p=0 or b=0."
+    },
+    {
+      "id": "adverse",
+      "label": "Net adverse stress",
+      "costUSD": 1710797,
+      "allPopulationQalys": -1,
+      "editionQalys": -1,
+      "assumptions": "One California QALY lost from displaced better services or unintended effects; subjective stress, not observed."
+    },
+    {
+      "id": "portfolio",
+      "label": "Complete portfolio unpriced",
+      "costUSD": 1710797,
+      "allPopulationQalys": null,
+      "editionQalys": null,
+      "assumptions": "Other pathways are unknown."
+    },
+    {
+      "id": "public-resource",
+      "label": "Add attributable incentive face amount",
+      "costUSD": 1719797,
+      "allPopulationQalys": 0.12135922330097088,
+      "editionQalys": 0.12135922330097088,
+      "assumptions": "Same clinical model; adds 10000*6*30*.1*.2*.25=$9000. Face value is a conservative resource sensitivity, not net social cost."
+    }
+  ],
+  "originalPrice10": 140969672.8,
+  "clinicalCoefficientsUnchanged": true,
+  "authorSeconds": 119.834
+}

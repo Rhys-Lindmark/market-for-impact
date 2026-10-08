@@ -1,0 +1,11 @@
+# Tennyson source checkpoint
+
+Current own about, giving, school/day-treatment and outpatient pages identify Tennyson Center for Children, EIN61-1458290, with Denver therapeutic school and statewide community programs. School placements require district-approved IEP separate-school placement: public education alternative is material. Outpatient PCIT has approximately20 sessions, ages2–7, Medicaid/private-pay alternatives; this dose is not automatically all-school treatment.
+
+Original IRS FY2025/2024/2023 bodies fetchedHTTP200. Full expenses11,829,871 /13,581,906 /11,112,242 include171,197 /236,444 /324,771 netted fundraising expenses respectively. Original IDs202610569349300931 /202500429349300445 /202442159349300429. Annual financial totals differ from IRS; no asserted reconciliation.
+
+FY2025 original annual PDF body read pages1–5; donor-list remainder not scientific evidence. Page2 says therapeutic school/day treatment served63children (46priorFY),17transitions back to community schools; nearly1000childrenANDfamilies mixedunits not uniquechildren. TREE/newcommunityexpansion described withoutcausal earnings. Native63 served-student envelope is not completed-dose/response or17causalclinical successes.
+
+Original Cohen randomized trial PMID15187799 successfullyread NIH BioC abstract:229children8–14withsexual-abusePTSD randomizedTF-CBTvschildcenteredtherapy; betterclinical symptom andparent outcomes, no utility conversion. Tennyson uses broader trauma-informed/ARC/neurodevelopmental interventions and mixedautism/IDD; cannot assumeTF-CBTfidelity orallstudentsPTSD. Conditional .5eligible-subgroup and .03one-yearclinicalutility hypotheses are explicit (10.95healthydayequivalents), withactivealternativenull. PCIToriginal15279533 trial recurrence mechanism also located butnottransferred toschoolstudents.
+
+Caregiver net householdgain500aftertaxes/benefits/work/childcare isjudgment, no immediatechildsalary. Full10additionalaccess/timecost onallschoolhouseholds evenfailedclinicalbenefit; gainsjointlogged, fullnegativeearnings/harms. Residential,CBS,PCIT,TREEandotherbenefits unknownnotzero. WholeIRSannualcost/partialschoolreference isnotportfolioEV; annualschoolallocatedcostsensitivity provided.

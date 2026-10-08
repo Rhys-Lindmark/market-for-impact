@@ -1,0 +1,308 @@
+{
+  "frozenFromCommit": "403cae8",
+  "edition": "new-york-city",
+  "organizationId": "ein:85-4099652",
+  "slug": "new-jersey-harm-reduction-coalition",
+  "organization": "New Jersey Harm Reduction Coalition",
+  "model": {
+    "version": "nyc-njhrc-beta-central-withdrawal-2026-09-29",
+    "costScope": "Full annual gross recognized recipient expense, including donated supplies once. Not a verified audited resource total or marginal unrestricted-donation cost. All material recipient health pathways are in decision scope, but the historical numerical diagnostics quantify only a conditional overdose-survival pathway.",
+    "geographicAttribution": "Historical g=.65 is an unmeasured prior, not the beta central. The pinned NYC MSA includes Bergen, Essex, Hudson, Hunterdon, Middlesex, Monmouth, Morris, Ocean, Passaic, Somerset, Sussex and Union in New Jersey. Rescued beneficiary residence, rather than supply delivery location, is required. No whole-state or CSA attribution.",
+    "formula": "Historical diagnostics only: U=C*f/k; delta=e*t*l; dlog=ln(1+d); F(v,t)=(1-exp(-v*t))/v; H=U*u*[F(m-delta+dlog,1)-F(m+dlog,1)+(exp(-(m-delta))-exp(-m))*exp(-dlog)*F(m+dlog,T-1)]; Qall=b*H-h; QMSA=g*Qall. Cost sensitivities change numerator only. The encounter-level mortality input l is mapped linearly into a hazard decrement delta=e*t*l as an approximation, not an exact probability-to-hazard identity. With h=0 and numeratorCostUSD=C, C cancels from price. Unobserved f/k generates the output denominator; accounting revaluation must not be interpreted as physical added reach.",
+    "counterfactual": "State naloxone procurement, pharmacy access, other community distributors and emergency response continue. t credits only additional timely rescue beyond those alternatives. An ordinary gift does not buy all donated stock anew.",
+    "attribution": "f allocates an assumed capacity share, k turns that share into unique risk-person years, e*t*l gives a one-year mortality hazard difference, and b applies funding response once. No separately multiplied repeat-rescue lifetime or national affiliate credit.",
+    "uncertainty": "Whole-recipient central withdrawn. Actual unique reach, additional timely rescue, funded capacity, victim residence and material non-overdose outcomes are unidentified. Legacy priors remain explicit historical diagnostics; no calibrated uncertainty distribution or guaranteed lower bound is available.",
+    "nativeOutcomes": "The provider reported more than 10,000 doses and at least 140 reversal events by November 20, 2023. These are neither a current full-year unique cohort nor causal deaths averted. Supply recipient, overdose witness, repeat event and unique survivor are distinct units.",
+    "inputs": [
+      {
+        "name": "C",
+        "value": 2125515,
+        "unit": "USD annual gross expense",
+        "basis": "observed",
+        "rationale": "FY2024 Part IX including in-kind supplies; no separately netted event/rental/inventory expense. Audit status is internally inconsistent; source is the original return, not an independently reconciled audit.",
+        "sourceIds": [
+          "return2024",
+          "noncash2024"
+        ]
+      },
+      {
+        "name": "f",
+        "value": 0.5,
+        "unit": "assumed overdose-delivery capacity fraction",
+        "basis": "judgment",
+        "rationale": "Historical diagnostic only; no beta central value is adopted. Scenario assumption, not an NJHRC or external study estimate.",
+        "sourceIds": [
+          "work",
+          "state",
+          "walley",
+          "heal"
+        ]
+      },
+      {
+        "name": "k",
+        "value": 1000,
+        "unit": "USD allocated resources per unique risk-person year",
+        "basis": "judgment",
+        "rationale": "Historical diagnostic only; no beta central value is adopted. No verified annual unique NJHRC count; $1,000 is an explicit capacity prior, not a measured per-client cost or drug price.",
+        "sourceIds": [
+          "work",
+          "state",
+          "walley",
+          "heal"
+        ]
+      },
+      {
+        "name": "e",
+        "value": 0.1,
+        "unit": "potential rescue encounters per risk-person year",
+        "basis": "judgment",
+        "rationale": "Historical diagnostic only; no beta central value is adopted. Scenario assumption, not an NJHRC or external study estimate.",
+        "sourceIds": [
+          "work",
+          "state",
+          "walley",
+          "heal"
+        ]
+      },
+      {
+        "name": "t",
+        "value": 0.3,
+        "unit": "incremental timely rescue fraction versus alternatives",
+        "basis": "judgment",
+        "rationale": "Historical diagnostic only; no beta central value is adopted. Scenario assumption, not an NJHRC or external study estimate.",
+        "sourceIds": [
+          "work",
+          "state",
+          "walley",
+          "heal"
+        ]
+      },
+      {
+        "name": "l",
+        "value": 0.1,
+        "unit": "mortality hazard reduction per incremental rescue encounter",
+        "basis": "judgment",
+        "rationale": "Historical diagnostic only; no beta central value is adopted. Scenario assumption, not an NJHRC or external study estimate.",
+        "sourceIds": [
+          "work",
+          "state",
+          "walley",
+          "heal"
+        ]
+      },
+      {
+        "name": "b",
+        "value": 0.25,
+        "unit": "ordinary funding response",
+        "basis": "judgment",
+        "rationale": "Historical diagnostic only; no beta central value is adopted. Scenario assumption, not an NJHRC or external study estimate.",
+        "sourceIds": [
+          "work",
+          "state",
+          "walley",
+          "heal"
+        ]
+      },
+      {
+        "name": "m",
+        "value": 0.08,
+        "unit": "annual baseline all-cause mortality hazard",
+        "basis": "judgment",
+        "rationale": "Historical diagnostic only; no beta central value is adopted. Scenario assumption, not an NJHRC or external study estimate.",
+        "sourceIds": [
+          "work",
+          "state",
+          "walley",
+          "heal"
+        ]
+      },
+      {
+        "name": "u",
+        "value": 0.7,
+        "unit": "health utility",
+        "basis": "judgment",
+        "rationale": "Historical diagnostic only; no beta central value is adopted. Scenario assumption, not an NJHRC or external study estimate.",
+        "sourceIds": [
+          "work",
+          "state",
+          "walley",
+          "heal"
+        ]
+      },
+      {
+        "name": "T",
+        "value": 10,
+        "unit": "maximum survival horizon years",
+        "basis": "judgment",
+        "rationale": "Historical diagnostic only; no beta central value is adopted. Scenario assumption, not an NJHRC or external study estimate.",
+        "sourceIds": [
+          "work",
+          "state",
+          "walley",
+          "heal"
+        ]
+      },
+      {
+        "name": "g",
+        "value": 0.65,
+        "unit": "MSA beneficiary fraction",
+        "basis": "judgment",
+        "rationale": "Historical diagnostic only; no beta central value is adopted. Statewide delivery and Middlesex operations observed, but residence distribution unknown; .65 is not a measured population allocation.",
+        "sourceIds": [
+          "work",
+          "state",
+          "walley",
+          "heal"
+        ]
+      },
+      {
+        "name": "h",
+        "value": 0,
+        "unit": "net adverse QALYs",
+        "basis": "judgment",
+        "rationale": "Historical diagnostic only; no beta central value is adopted. Scenario assumption, not an NJHRC or external study estimate.",
+        "sourceIds": [
+          "work",
+          "state",
+          "walley",
+          "heal"
+        ]
+      },
+      {
+        "name": "d",
+        "value": 0.03,
+        "unit": "annual discount",
+        "basis": "judgment",
+        "rationale": "Historical diagnostic only; no beta central value is adopted. Scenario assumption, not an NJHRC or external study estimate.",
+        "sourceIds": [
+          "work",
+          "state",
+          "walley",
+          "heal"
+        ]
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "central",
+        "label": "Whole-gift central not estimable",
+        "costUSD": 2125515,
+        "allPopulationQalys": null,
+        "editionQalys": null,
+        "pricePer10Qalys": null,
+        "assumptions": "Unknown unique reach, causal rescue additionality, residence, funding response and other recipient health; unknown, not zero."
+      },
+      {
+        "id": "alpha-central-diagnostic",
+        "label": "Historical diagnostic — Conditional overdose-prevention component",
+        "costUSD": 2125515,
+        "allPopulationQalys": 3.125471837777779,
+        "editionQalys": 2.0315566945555563,
+        "pricePer10Qalys": 10462494.134159515,
+        "assumptions": "{\"C\":2125515,\"f\":0.5,\"k\":1000,\"e\":0.1,\"t\":0.3,\"l\":0.1,\"b\":0.25,\"m\":0.08,\"u\":0.7,\"T\":10,\"g\":0.65,\"h\":0,\"d\":0.03,\"numeratorCostUSD\":2125515}"
+      },
+      {
+        "id": "low",
+        "label": "Historical diagnostic — Sparse additional reach and extensive substitution",
+        "costUSD": 2125515,
+        "allPopulationQalys": 0.015032359615612126,
+        "editionQalys": 0.006012943846244851,
+        "pricePer10Qalys": 3534899134.8512383,
+        "assumptions": "{\"C\":2125515,\"f\":0.5,\"k\":2500,\"e\":0.03,\"t\":0.1,\"l\":0.05,\"b\":0.1,\"m\":0.08,\"u\":0.7,\"T\":5,\"g\":0.4,\"h\":0,\"d\":0.03,\"numeratorCostUSD\":2125515}"
+      },
+      {
+        "id": "high",
+        "label": "Historical diagnostic — Efficient targeted delivery and meaningful rescue gap",
+        "costUSD": 2125515,
+        "allPopulationQalys": 77.346973771482,
+        "editionQalys": 61.8775790171856,
+        "pricePer10Qalys": 343503.25816878985,
+        "assumptions": "{\"C\":2125515,\"f\":0.5,\"k\":500,\"e\":0.2,\"t\":0.5,\"l\":0.15,\"b\":0.5,\"m\":0.08,\"u\":0.7,\"T\":15,\"g\":0.8,\"h\":0,\"d\":0.03,\"numeratorCostUSD\":2125515}"
+      },
+      {
+        "id": "zero",
+        "label": "Historical diagnostic — Complete ordinary-gift replacement",
+        "costUSD": 2125515,
+        "allPopulationQalys": 0,
+        "editionQalys": 0,
+        "pricePer10Qalys": null,
+        "assumptions": "{\"C\":2125515,\"f\":0.5,\"k\":1000,\"e\":0.1,\"t\":0.3,\"l\":0.1,\"b\":0,\"m\":0.08,\"u\":0.7,\"T\":10,\"g\":0.65,\"h\":0,\"d\":0.03,\"numeratorCostUSD\":2125515}"
+      },
+      {
+        "id": "adverse",
+        "label": "Historical diagnostic — No incremental rescue with service-related burden",
+        "costUSD": 2125515,
+        "allPopulationQalys": -0.1,
+        "editionQalys": -0.065,
+        "pricePer10Qalys": null,
+        "assumptions": "{\"C\":2125515,\"f\":0.5,\"k\":1000,\"e\":0.1,\"t\":0,\"l\":0.1,\"b\":0.25,\"m\":0.08,\"u\":0.7,\"T\":10,\"g\":0.65,\"h\":0.1,\"d\":0.03,\"numeratorCostUSD\":2125515}"
+      },
+      {
+        "id": "resources",
+        "label": "Historical diagnostic — Added partner and volunteer resources",
+        "costUSD": 2656893.75,
+        "allPopulationQalys": 3.125471837777779,
+        "editionQalys": 2.0315566945555563,
+        "pricePer10Qalys": 13078117.667699393,
+        "assumptions": "{\"C\":2125515,\"f\":0.5,\"k\":1000,\"e\":0.1,\"t\":0.3,\"l\":0.1,\"b\":0.25,\"m\":0.08,\"u\":0.7,\"T\":10,\"g\":0.65,\"h\":0,\"d\":0.03,\"numeratorCostUSD\":2656893.75}"
+      }
+    ],
+    "missingInputs": [
+      "Original audit/990 reconciliation, donated-stock quantities and valuation, FY2023 comparative and FY2022 noncash/opening-balance differences.",
+      "Current deduplicated unique recipients and reversal victims, dates, repeat events, and county residence or defensible sampling.",
+      "Channel-specific additional timely access relative to public pharmacies, DIRECT, emergency response and other providers.",
+      "Costed ordinary-gift allocation and capacity plan, including public and in-kind commitments, replacement funding and service ceiling.",
+      "Provider-specific completed clinical care, treatment retention, infection/wound outcomes, policy attribution and overlap controls across material pathways."
+    ],
+    "sensitivity": [
+      "No numerical central beta is supported; all retained positive values are uncalibrated assumption tests.",
+      "Sparse additional reach and extensive substitution: 3,534,899,135 USD per 10 MSA QALYs. Scenario assumptions are judgments, not statistical confidence limits.",
+      "Efficient targeted delivery and meaningful rescue gap: 343,503 USD per 10 MSA QALYs. Scenario assumptions are judgments, not statistical confidence limits.",
+      "Complete ordinary-gift replacement: no finite positive-benefit price. Scenario assumptions are judgments, not statistical confidence limits.",
+      "No incremental rescue with service-related burden: no finite positive-benefit price. Scenario assumptions are judgments, not statistical confidence limits.",
+      "Added partner and volunteer resources: 13,078,118 USD per 10 MSA QALYs. Scenario assumptions are judgments, not statistical confidence limits.",
+      "At unchanged priors, five-year survival gives about $17.38 million/10; one year $125.93 million/10; halving timely-rescue additionality $20.94 million/10.",
+      "Revaluing in-kind stock while regenerating U=C*f/k leaves the zero-harm ratio unchanged. Holding physical reach fixed changes the numerator only; neither exercise estimates current marginal impact."
+    ],
+    "nativeCosts": "Historical diagnostic: U=C*f/k=1,062.7575 assumed risk-person years. This is generated from a $1,000 planning prior and is not an observed service count. No current verified marginal unit cost or current full-year cost per unique beneficiary is established."
+  },
+  "annualExpenses": [
+    {
+      "year": 2022,
+      "amount": 746927,
+      "sourceId": "return2022",
+      "currency": "USD",
+      "periodMonths": 12,
+      "comparable": false,
+      "entity": "New Jersey Harm Reduction Coalition, EIN85-4099652",
+      "accountingBasis": "Original accrual Form 990 gross recognized expense; in-kind supplies retained once, no separate event/rental/COGS. Historical reconciliation limitations disclosed."
+    },
+    {
+      "year": 2023,
+      "amount": 2128588,
+      "sourceId": "return2023",
+      "currency": "USD",
+      "periodMonths": 12,
+      "comparable": false,
+      "entity": "New Jersey Harm Reduction Coalition, EIN85-4099652",
+      "accountingBasis": "Original accrual Form 990 gross recognized expense; in-kind supplies retained once, no separate event/rental/COGS. Historical reconciliation limitations disclosed."
+    },
+    {
+      "year": 2024,
+      "amount": 2125515,
+      "sourceId": "return2024",
+      "currency": "USD",
+      "periodMonths": 12,
+      "comparable": true,
+      "entity": "New Jersey Harm Reduction Coalition, EIN85-4099652",
+      "accountingBasis": "Original accrual Form 990 gross recognized expense; in-kind supplies retained once, no separate event/rental/COGS. Historical reconciliation limitations disclosed."
+    }
+  ],
+  "sessionIds": [
+    "nyc-njhrc-20260914-worker1",
+    "d584d39d-92e7-413b-8513-41fb3ffc6268",
+    "f3190614-bd15-4caa-8846-e675db4097a9",
+    "c02bd291-7d58-4e43-bb3e-46ae423b74b5",
+    "ec0338f2-c835-45b1-8677-a7e25288b2cf"
+  ]
+}

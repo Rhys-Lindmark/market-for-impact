@@ -1,3 +1,3 @@
 import model from '@/data/san-francisco/phc-portfolio-model-v1.json';
-import {calculate,inputsFor} from '@/lib/phc-portfolio-model.mjs';
-export function GET(){return Response.json({model,evaluated:model.scenarios.map(s=>({id:s.id,...calculate(inputsFor(model,s))}))});}
+import {calculate,inputs,resources,scenarios,diagnostics,modelVersion} from '@/lib/phc-calibrated-model.mjs';
+export function GET(){return Response.json({model:{organization:model.organization,model_id:modelVersion,as_of:'2026-10-01',inputs,resources,unitNote:'Health QALYs plus separately valued net household resource-equivalent years; compatibility q fields include both.',supportedGiftUSD:{greaterThan:0,atMost:100000}},evaluated:scenarios.map(s=>({id:s.id,...calculate(s.inputs,s.resources)})),diagnostics:diagnostics(),historicalModel:model,historicalModelId:model.model_id});}

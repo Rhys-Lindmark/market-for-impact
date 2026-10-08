@@ -1,0 +1,278 @@
+{
+  "frozenFromCommit": "33d0bd6",
+  "edition": "usa",
+  "slug": "surgery-on-sunday",
+  "model": {
+    "version": "usa-beta-surgery-on-sunday-2026-09-14",
+    "costScope": "Whole ordinary recipient gift including program, administration, fundraising and separately netted event costs. Full reported cash-basis accounting expenses retain reported depreciation; this is not a pure bank-cash-flow measure. The $3,000 case-equivalent is calibrated to $2,943 per FY2023 surgical patient, not a contracted per-operation rate. No restricted best-procedure allocation, retail-bill savings, earnings or public-cost offsets.",
+    "geographicAttribution": "Routine 250-mile Lexington residency eligibility supports USA residents. Central g=1; pessimistic .99 allows exceptional nonresident cases. Citizenship is not residency. Independent affiliates are excluded. Actual residence extract is not available.",
+    "formula": "q_gross = Δu × sum[t=1..T]((1−m)^t/(1.03)^t). N_add = (G/c)×b. q_net = s×q_gross−h. Q_all = N_add×q_net. Q_USA = Q_all×g. Price per 10 = 10 × scenario costUSD / Q_USA only when Q_USA>0. Scenario costUSD=G for recipient-cash scenarios; the two resource-cost stresses explicitly add their opportunity-cost allowance. b is funding-driven operating/capacity additionality; s discounts gross benefit for equivalent counterfactual care. Perioperative loss h applies to every added patient-treatment equivalent, including s=0, and is not multiplied by s.",
+    "counterfactual": "Without the gift some care may still occur using reserves or other donors (b), and some patients may obtain equivalent care through other charities, insurance, public eligibility or later treatment (s). s is a fractional health-benefit discount, not necessarily a literal permanently untreated patient fraction. Conservative nonoperative care may be sufficient for some cases. No assumption that every billed procedure creates benefit. Even where equivalent benefit occurs elsewhere, this conservative formulation retains the full incremental perioperative burden h for every donation-enabled patient-treatment equivalent; it does not assume that alternative care perfectly offsets that harm.",
+    "attribution": "The $3,000 benchmark is per surgical-patient treatment equivalent because the original denominator counts patients, not operations. Repeated procedures per patient are implicitly averaged into the utility and harm assumptions; there is no extra credit for each procedure. Volunteer/facility cooperation complements cash; b discounts its operating response, reserve use and donor replacement once. s separately discounts health relative to alternative care, including later access. No independently measured case mix or funding response is claimed.",
+    "uncertainty": "A genuine working best judgment, not a probability-weighted measurement or endorsement. The $3,000 cash benchmark survives the cost correction, while the clinical persistence and marginal capacity assumptions remain weak. Five years extrapolates beyond the one- to two-year trials. Gross utility is a new independent prior, not trial net QALYs with duplicate harm deductions. There is no survival benefit or lifetime expansion. Positive, zero and adverse scenarios are judgment stresses, not confidence limits.",
+    "nativeOutcomes": "Observed FY2023: 86 surgical patients and $253,116 gross recipient expenses, including $13,847 of event costs outside Part IX. Derived average $2,943.21 per surgical patient includes assessment and referral overhead. The model uses 3.33 nominal patient-treatment equivalents per $10,000 and 2 additional equivalents after funding response. Patient-treatment equivalents are an approximation, not an observed count of distinct operations. Gross 0.22234 QALY and net 0.12340 QALY per added equivalent yield 0.24681 USA QALY.",
+    "inputs": [
+      {
+        "name": "G",
+        "value": 10000,
+        "unit": "USD normalization",
+        "basis": "judgment",
+        "rationale": "Small normalization relative to annual spending; no verified room-for-more-funding tranche.",
+        "sourceIds": []
+      },
+      {
+        "name": "FY2023 surgical patients",
+        "value": 86,
+        "unit": "patients",
+        "basis": "observed",
+        "rationale": "Matched year-ending June 2023 original filing; do not use later stale-date counts.",
+        "sourceIds": [
+          "sos-fy23"
+        ]
+      },
+      {
+        "name": "FY2023 full expense",
+        "value": 253116,
+        "unit": "USD",
+        "basis": "observed",
+        "rationale": "Original Part IX $239,269 plus Part VIII event direct expense $13,847. All reported recipient expenses; reported depreciation retained.",
+        "sourceIds": [
+          "sos-fy23"
+        ]
+      },
+      {
+        "name": "Historical expense per surgical patient",
+        "value": 2943.2093023255816,
+        "unit": "USD/patient",
+        "basis": "observed",
+        "rationale": "Derived arithmetic from observed gross recipient expense divided by 86 surgical patients in the matched year; not a procedure count or observed marginal price.",
+        "sourceIds": [
+          "sos-fy23"
+        ]
+      },
+      {
+        "name": "c",
+        "value": 3000,
+        "unit": "USD/patient-treatment equivalent",
+        "basis": "judgment",
+        "rationale": "Rounded from corrected matched $2,943 recipient cost per surgical patient. Stress $1,500–$5,000; no inflation update or binding current price is observed.",
+        "sourceIds": [
+          "sos-fy23",
+          "sos-donate",
+          "sos-partner"
+        ]
+      },
+      {
+        "name": "b",
+        "value": 0.6,
+        "unit": "gift/capacity additionality",
+        "basis": "judgment",
+        "rationale": "Discount for reserves, replacement donors and volunteer/OR constraints; stress .2–.9 and zero.",
+        "sourceIds": [
+          "sos-2024",
+          "sos-partner",
+          "sos-volunteer-call"
+        ]
+      },
+      {
+        "name": "s",
+        "value": 0.6,
+        "unit": "counterfactual health additionality",
+        "basis": "judgment",
+        "rationale": "Discount for alternative access, later treatment and conservative management; not a measured untreated share.",
+        "sourceIds": [
+          "sos-faq",
+          "cgall"
+        ]
+      },
+      {
+        "name": "Δu",
+        "value": 0.05,
+        "unit": "annual health-utility gain",
+        "basis": "judgment",
+        "rationale": "Independent annual utility prior for selected heterogeneous surgical patients, not a weighted trial estimate. Trial net QALYs anchor plausibility but are not plugged into the gross-utility formula.",
+        "sourceIds": [
+          "cataract-rct",
+          "hernia-rct",
+          "cgall",
+          "cgall24",
+          "nattina-economic"
+        ]
+      },
+      {
+        "name": "T",
+        "value": 5,
+        "unit": "years",
+        "basis": "judgment",
+        "rationale": "Explicit five-year judgment about relief persistence, not observed trial follow-up. No benefit after year five; stress one to ten years.",
+        "sourceIds": []
+      },
+      {
+        "name": "m",
+        "value": 0.01,
+        "unit": "annual mortality",
+        "basis": "judgment",
+        "rationale": "Simplified survival adjustment, not recipient age-specific life table; pessimistic .02.",
+        "sourceIds": []
+      },
+      {
+        "name": "h",
+        "value": 0.01,
+        "unit": "QALY/added patient-treatment equivalent",
+        "basis": "judgment",
+        "rationale": "Judgment allowance for pain, complications and rare fatal harm across a treatment episode, including repeated procedures; not an observed adverse-event rate. Retained even when s=0.",
+        "sourceIds": [
+          "nattina-safety"
+        ]
+      },
+      {
+        "name": "discount rate",
+        "value": 0.03,
+        "unit": "annual",
+        "basis": "judgment",
+        "rationale": "Conventional analyst discount choice.",
+        "sourceIds": []
+      },
+      {
+        "name": "g",
+        "value": 1,
+        "unit": "USA resident health share",
+        "basis": "judgment",
+        "rationale": "Residency eligibility strongly supports domestic boundary; pessimistic .99.",
+        "sourceIds": [
+          "sos-faq"
+        ]
+      },
+      {
+        "name": "Donated resource addition",
+        "value": 5000,
+        "unit": "USD/nominal case-equivalent",
+        "basis": "judgment",
+        "rationale": "Illustrative opportunity cost, not hospital retail charges; actual shadow cost unknown.",
+        "sourceIds": [
+          "sos-partner"
+        ]
+      },
+      {
+        "name": "2023 transition expense",
+        "value": 125061,
+        "unit": "USD / six months",
+        "basis": "observed",
+        "rationale": "Original July–December 2023 six-month period, separately shown. Used only in the explicit 42-month bridge, not as a full year.",
+        "sourceIds": [
+          "sos-transition"
+        ]
+      },
+      {
+        "name": "Current procedure mix and marginal funded queue",
+        "value": null,
+        "unit": "cases/severity/funding",
+        "basis": "unknown",
+        "rationale": "Exact key diligence gap; no inferred mix from the service menu.",
+        "sourceIds": [
+          "sos-types",
+          "sos-2024"
+        ]
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "central",
+        "label": "Working judgment central",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.24680642920507342,
+        "editionQalys": 0.24680642920507342,
+        "assumptions": "G=10000, c=3000, b=0.6, s=0.6, Δu=0.05, T=5, m=0.01, h=0.01, g=1. Gross QALY=0.22233869100422787; net per added patient-treatment equivalent=0.12340321460253671; additional equivalents=2. Full harm retained; judgment stress, not an empirical bound."
+      },
+      {
+        "id": "favorable",
+        "label": "Favorable selection and capacity",
+        "costUSD": 10000,
+        "allPopulationQalys": 5.185304902355682,
+        "editionQalys": 5.185304902355682,
+        "assumptions": "G=10000, c=1500, b=0.9, s=0.9, Δu=0.12, T=10, m=0.01, h=0.01, g=1. Gross QALY=0.9713527596954966; net per added patient-treatment equivalent=0.864217483725947; additional equivalents=6. Full harm retained; judgment stress, not an empirical bound."
+      },
+      {
+        "id": "pessimistic",
+        "label": "Low additionality and modest relief",
+        "costUSD": 10000,
+        "allPopulationQalys": -0.0005146196625506645,
+        "editionQalys": -0.0005094734659251579,
+        "assumptions": "G=10000, c=5000, b=0.2, s=0.2, Δu=0.01, T=2, m=0.02, h=0.005, g=0.99. Gross QALY=0.018567254218116693; net per added patient-treatment equivalent=-0.0012865491563766613; additional equivalents=0.4. Full harm retained; judgment stress, not an empirical bound."
+      },
+      {
+        "id": "zero-additionality",
+        "label": "Existing resources cover all marginal activity",
+        "costUSD": 10000,
+        "allPopulationQalys": 0,
+        "editionQalys": 0,
+        "assumptions": "G=10000, c=3000, b=0, s=0.6, Δu=0.05, T=5, m=0.01, h=0.01, g=1. Gross QALY=0.22233869100422787; net per added patient-treatment equivalent=0.12340321460253671; additional equivalents=0. Full harm retained; judgment stress, not an empirical bound."
+      },
+      {
+        "id": "equivalent-care-harm",
+        "label": "Equivalent gross benefit elsewhere, full perioperative loss",
+        "costUSD": 10000,
+        "allPopulationQalys": -0.02,
+        "editionQalys": -0.02,
+        "assumptions": "G=10000, c=3000, b=0.6, s=0, Δu=0.05, T=5, m=0.01, h=0.01, g=1. Gross QALY=0.22233869100422787; net per added patient-treatment equivalent=-0.01; additional equivalents=2. Full harm retained; judgment stress, not an empirical bound."
+      },
+      {
+        "id": "one-year-relief",
+        "label": "Only one year of incremental relief",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.03766990291262136,
+        "editionQalys": 0.03766990291262136,
+        "assumptions": "G=10000, c=3000, b=0.6, s=0.6, Δu=0.05, T=1, m=0.01, h=0.01, g=1. Gross QALY=0.04805825242718447; net per added patient-treatment equivalent=0.01883495145631068; additional equivalents=2. Full harm retained; judgment stress, not an empirical bound."
+      },
+      {
+        "id": "timing-only-one-year",
+        "label": "Equivalent operation otherwise occurs one year later",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.07611650485436894,
+        "editionQalys": 0.07611650485436894,
+        "assumptions": "G=10000, c=3000, b=0.6, s=1, Δu=0.05, T=1, m=0.01, h=0.01, g=1. Gross QALY=0.04805825242718447; net per added patient-treatment equivalent=0.03805825242718447; additional equivalents=2. Full harm retained; judgment stress, not an empirical bound. Gross relief lasts only until equivalent later care; retaining all current surgical harm without offsetting later harm is deliberately conservative."
+      },
+      {
+        "id": "higher-treatment-burden",
+        "label": "Greater short-term burden and complications",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.1668064292050734,
+        "editionQalys": 0.1668064292050734,
+        "assumptions": "G=10000, c=3000, b=0.6, s=0.6, Δu=0.05, T=5, m=0.01, h=0.05, g=1. Gross QALY=0.22233869100422787; net per added patient-treatment equivalent=0.0834032146025367; additional equivalents=2. Full harm retained; judgment stress, not an empirical bound."
+      },
+      {
+        "id": "resource-cost-added",
+        "label": "Central plus resource allowance for added equivalents",
+        "costUSD": 20000,
+        "allPopulationQalys": 0.24680642920507342,
+        "editionQalys": 0.24680642920507342,
+        "assumptions": "Central health unchanged. Cost = $10,000 + $5,000 × 2 added patient-treatment equivalents. Unmeasured opportunity-cost allowance, not retail charges or a complete societal estimate."
+      },
+      {
+        "id": "resource-cost",
+        "label": "Central plus gross nominal resource allowance",
+        "costUSD": 26666.666666666668,
+        "allPopulationQalys": 0.24680642920507342,
+        "editionQalys": 0.24680642920507342,
+        "assumptions": "Central health unchanged. Cost = $10,000 + $5,000 × 3.3333333333333335 nominal patient-treatment equivalents. Unmeasured opportunity-cost allowance, not retail charges or a complete societal estimate."
+      }
+    ],
+    "sensitivity": [
+      "Price scales with recipient cost and inversely with funding response. Positive health requires s × gross QALY > h; a procedure can therefore have zero or negative incremental value.",
+      "Central q_gross is 0.22234. At central s=.6 and h=.01, positive health requires q_gross > .01667. The $100,000 per 10 threshold requires q_gross ≥ .85 at the other central inputs; the $1 million threshold requires ≥ .10.",
+      "Five years is a persistence judgment, not trial follow-up. With only one year of relief the price is about $2.65 million per 10. The separate timing-only scenario assumes equivalent later care and limits benefit to one year rather than counting lifetime relief.",
+      "No observed procedure shares exist. A severe visual-impairment mix could exceed the central, while minimally symptomatic hernia or uncomplicated gallstone cases could fall well below it. The menu is not a mix distribution.",
+      "The adverse low-additionality scenario is net harmful. s=0 with b=.6 retains -.02 QALY of perioperative loss; b=0 gives zero operations and zero harm. Neither has a finite favorable price.",
+      "An illustrative $5,000 opportunity cost per added treatment equivalent gives about $810,000 per 10. Charging the same allowance to every nominal equivalent gives about $1.08 million. Both omit unresolved external costs and are sensitivities, not measured social returns."
+    ],
+    "missingInputs": [
+      "Dated 2024–2026 completed cases and surgical patients by procedure, plus reconciliation of changing patient counts with stale 2023 narrative dates.",
+      "Baseline utility/severity, follow-up utility and complications by procedure, and evidence for duration of additional relief.",
+      "Next unrestricted gift's funded case queue, cash bottleneck, clinician/facility slots, current budget and reserve deployment policy.",
+      "Alternative public/charitable/private care and waiting time for eligible patients without this service.",
+      "Actual donated labor/facility opportunity costs, downstream complication costs and patient travel/time costs.",
+      "Residence by patient, particularly exceptional out-of-area admissions."
+    ],
+    "priceScope": "Working judgment estimate of incremental USA surgical health from an ordinary unrestricted gift, charging all recipient support costs. It excludes unquantified assessment/referral benefits and unpriced external resources; it is neither a measured whole-portfolio return nor a full societal resource-cost estimate."
+  }
+}

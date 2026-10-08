@@ -1,0 +1,428 @@
+{
+  "central": {
+    "inputs": {
+      "C": 7201649,
+      "N": 911,
+      "trainingN": 411,
+      "clinicalN": 500,
+      "clinicalResponse": 0.4,
+      "unique": 0.8,
+      "b": 0.5,
+      "q": 0.015,
+      "T": 2,
+      "g": 0.95,
+      "delay": 0.5,
+      "discount": 0.03,
+      "success": 0.15,
+      "medicalGain": 100,
+      "workGain": 4000,
+      "transferGain": 0,
+      "overlap": 0.75,
+      "cost": 100,
+      "baseline": 25000,
+      "harm": 0.0005,
+      "payerLoss": 0,
+      "payerPeople": 10000,
+      "payerBaseline": 50000,
+      "externalCost": 0,
+      "resourceYears": 1,
+      "trainingCost": 0,
+      "trainingShare": 1,
+      "legacyIncome": false
+    },
+    "costUSD": 7201649,
+    "exposed": 728.8000000000001,
+    "union": 364.40000000000003,
+    "clinicalPeople": 80,
+    "allPopulationQalys": 1.9712975854138417,
+    "editionQalys": 1.8727327061431496,
+    "incomePathways": [
+      {
+        "id": "changed-training-charged",
+        "people": 24.66,
+        "annualIncomeBeforeUSD": 25000,
+        "annualIncomeGainUSD": 2975,
+        "years": 1,
+        "editionShare": 0.95,
+        "delayYears": 0.5,
+        "discountRate": 0.03,
+        "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+        "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+        "sourceIds": [
+          "services",
+          "finance",
+          "cg-cost"
+        ]
+      },
+      {
+        "id": "unchanged-training-charged",
+        "people": 304.14,
+        "annualIncomeBeforeUSD": 25000,
+        "annualIncomeGainUSD": -100,
+        "years": 1,
+        "editionShare": 0.95,
+        "delayYears": 0.5,
+        "discountRate": 0.03,
+        "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+        "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+        "sourceIds": [
+          "services",
+          "finance",
+          "cg-cost"
+        ]
+      },
+      {
+        "id": "nontraining-exposed",
+        "people": 400.00000000000006,
+        "annualIncomeBeforeUSD": 25000,
+        "annualIncomeGainUSD": -100,
+        "years": 1,
+        "editionShare": 0.95,
+        "delayYears": 0.5,
+        "discountRate": 0.03,
+        "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+        "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+        "sourceIds": [
+          "services",
+          "finance",
+          "cg-cost"
+        ]
+      }
+    ],
+    "incomeEquivalent": -0.02319119004719583,
+    "incomeUnknown": false,
+    "totalEquivalent": 1.8495415160959539,
+    "price10": 38937482.27507416,
+    "costPer10Qalys": 38937482.27507416,
+    "incomeEquivalentYears": -0.02319119004719583,
+    "combinedEquivalentYears": 1.8495415160959539
+  },
+  "burdenOnlyOldScope": {
+    "inputs": {
+      "C": 7201649,
+      "N": 1000,
+      "trainingN": 1000,
+      "clinicalN": 800,
+      "clinicalResponse": 0.4,
+      "unique": 1,
+      "b": 0.5,
+      "q": 0.015,
+      "T": 2,
+      "g": 0.95,
+      "delay": 0.5,
+      "discount": 0.03,
+      "success": 0.15,
+      "medicalGain": 100,
+      "workGain": 4000,
+      "transferGain": 0,
+      "overlap": 0.75,
+      "cost": 100,
+      "baseline": 25000,
+      "harm": 0.0005,
+      "payerLoss": 0,
+      "payerPeople": 10000,
+      "payerBaseline": 50000,
+      "externalCost": 0,
+      "resourceYears": 1,
+      "trainingCost": 0,
+      "trainingShare": 1,
+      "legacyIncome": true
+    },
+    "costUSD": 7201649,
+    "exposed": 1000,
+    "union": 500,
+    "clinicalPeople": 160,
+    "allPopulationQalys": 4.168038509671674,
+    "editionQalys": 3.95963658418809,
+    "incomePathways": [
+      {
+        "id": "changed-training-charged",
+        "people": 75,
+        "annualIncomeBeforeUSD": 25000,
+        "annualIncomeGainUSD": 2975,
+        "years": 1,
+        "editionShare": 0.95,
+        "delayYears": 0.5,
+        "discountRate": 0.03,
+        "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+        "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+        "sourceIds": [
+          "services",
+          "finance",
+          "cg-cost"
+        ]
+      },
+      {
+        "id": "unchanged-training-charged",
+        "people": 925,
+        "annualIncomeBeforeUSD": 25000,
+        "annualIncomeGainUSD": -100,
+        "years": 1,
+        "editionShare": 0.95,
+        "delayYears": 0.5,
+        "discountRate": 0.03,
+        "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+        "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+        "sourceIds": [
+          "services",
+          "finance",
+          "cg-cost"
+        ]
+      }
+    ],
+    "incomeEquivalent": 2.211559512617268,
+    "incomeUnknown": false,
+    "totalEquivalent": 6.1711960968053585,
+    "price10": 11669778.252109142,
+    "costPer10Qalys": 11669778.252109142,
+    "incomeEquivalentYears": 2.211559512617268,
+    "combinedEquivalentYears": 6.1711960968053585
+  },
+  "scenarios": [
+    {
+      "id": "central",
+      "health": 1.8727327061431496,
+      "income": -0.02319119004719583,
+      "total": 1.8495415160959539,
+      "price": 38937482.27507416
+    },
+    {
+      "id": "clinical-null",
+      "health": -0.3411012895149151,
+      "income": -0.02319119004719583,
+      "total": -0.3642924795621109,
+      "price": null
+    },
+    {
+      "id": "financial-only",
+      "health": -0.3411012895149151,
+      "income": -0.02319119004719583,
+      "total": -0.3642924795621109,
+      "price": null
+    },
+    {
+      "id": "current-cost-unknown",
+      "health": 1.8727327061431496,
+      "income": -0.02319119004719583,
+      "total": 1.8495415160959539,
+      "price": null
+    },
+    {
+      "id": "full-unknown",
+      "health": null,
+      "income": -0.02319119004719583,
+      "total": null,
+      "price": null
+    },
+    {
+      "id": "zero-expansion",
+      "health": -0.3411012895149151,
+      "income": -1.3671412671038627,
+      "total": -1.7082425566187778,
+      "price": null
+    },
+    {
+      "id": "true-zero",
+      "health": 0,
+      "income": 0,
+      "total": 0,
+      "price": null
+    },
+    {
+      "id": "adverse",
+      "health": -7.838680886465279,
+      "income": -1.648658991810425,
+      "total": -9.487339878275705,
+      "price": null
+    },
+    {
+      "id": "positive-net-access-resources",
+      "health": 1.8727327061431496,
+      "income": -1.1604195409020857,
+      "total": 0.7123131652410639,
+      "price": 101102286.90723115
+    },
+    {
+      "id": "no-resource-success",
+      "health": 1.8727327061431496,
+      "income": -1.3671412671038627,
+      "total": 0.5055914390392868,
+      "price": 142440089.8417981
+    },
+    {
+      "id": "no-gains",
+      "health": 1.8727327061431496,
+      "income": -1.3671412671038627,
+      "total": 0.5055914390392868,
+      "price": 142440089.8417981
+    },
+    {
+      "id": "negative-resource-overlap-zero",
+      "health": 1.8727327061431496,
+      "income": -1.5070418224354252,
+      "total": 0.3656908837077244,
+      "price": 196932691.53944406
+    },
+    {
+      "id": "negative-resource-overlap-one",
+      "health": 1.8727327061431496,
+      "income": 0.23182701715747867,
+      "total": 2.1045597233006283,
+      "price": 34219266.48251869
+    },
+    {
+      "id": "mixed-sign",
+      "health": 1.8727327061431496,
+      "income": -1.4019577475021743,
+      "total": 0.4707749586409753,
+      "price": 152974343.00221896
+    },
+    {
+      "id": "payer-loss-300",
+      "health": 1.8727327061431496,
+      "income": -0.09244160374583324,
+      "total": 1.7802911023973162,
+      "price": 40452086.68572435
+    },
+    {
+      "id": "external-provider-cost",
+      "health": 1.8727327061431496,
+      "income": -0.705441006415537,
+      "total": 1.1672916997276126,
+      "price": 61695367.162128404
+    },
+    {
+      "id": "annual-full-response",
+      "health": 4.086566701801215,
+      "income": 1.3207588870094713,
+      "total": 5.407325588810686,
+      "price": 13318319.531012312
+    },
+    {
+      "id": "half-geography",
+      "health": 0.9856487927069209,
+      "income": -0.012205889498524025,
+      "total": 0.9734429032083969,
+      "price": 73981216.3226409
+    },
+    {
+      "id": "all-unique",
+      "health": 2.3409158826789374,
+      "income": -0.02898898755899426,
+      "total": 2.311926895119943,
+      "price": 31149985.820059318
+    },
+    {
+      "id": "zero-resource-duration",
+      "health": 1.8727327061431496,
+      "income": -1.3671412671038627,
+      "total": 0.5055914390392868,
+      "price": 142440089.8417981
+    },
+    {
+      "id": "two-year-health",
+      "health": 1.8727327061431496,
+      "income": -0.02319119004719583,
+      "total": 1.8495415160959539,
+      "price": 38937482.27507416
+    },
+    {
+      "id": "full-volunteer-cost-hypothesis",
+      "health": 1.8727327061431496,
+      "income": -0.02319119004719583,
+      "total": 1.8495415160959539,
+      "price": 48660708.189980865
+    },
+    {
+      "id": "weak-clinical",
+      "health": 0.02787104309476244,
+      "income": -0.02319119004719583,
+      "total": 0.004679853047566608,
+      "price": 15388622093.047676
+    },
+    {
+      "id": "full-transfer-incidence",
+      "health": 1.8727327061431496,
+      "income": -0.02319119004719583,
+      "total": 1.8495415160959539,
+      "price": 38937482.27507416
+    },
+    {
+      "id": "full-tuition-and-foregone-time",
+      "health": 1.8727327061431496,
+      "income": -32.26276469282749,
+      "total": -30.39003198668434,
+      "price": null
+    },
+    {
+      "id": "participant-work-loss",
+      "health": 1.8727327061431496,
+      "income": -1.5658379480593123,
+      "total": 0.30689475808383726,
+      "price": 234661844.5021684
+    },
+    {
+      "id": "employment-displacement",
+      "health": 1.8727327061431496,
+      "income": -0.9466100844703088,
+      "total": 0.9261226216728408,
+      "price": 77761290.25972581
+    },
+    {
+      "id": "training-failure-with-burdens",
+      "health": -0.3411012895149151,
+      "income": -0.7014639087579504,
+      "total": -1.0425651982728654,
+      "price": null
+    },
+    {
+      "id": "four-year-placement-delay",
+      "health": 1.688672802574379,
+      "income": -0.02091186412431867,
+      "total": 1.6677609384500602,
+      "price": 43181542.5938257
+    },
+    {
+      "id": "weak-additional-training",
+      "health": -0.3078937795800441,
+      "income": -1.3469820159480128,
+      "total": -1.6548757955280569,
+      "price": null
+    },
+    {
+      "id": "burden-only-old-scope",
+      "health": 3.95963658418809,
+      "income": 2.211559512617268,
+      "total": 6.1711960968053585,
+      "price": 11669778.252109142
+    },
+    {
+      "id": "no-exposure",
+      "health": 0,
+      "income": 0,
+      "total": 0,
+      "price": null
+    },
+    {
+      "id": "ten-percent-certification-burdens",
+      "health": 1.8727327061431496,
+      "income": -3.247148540325225,
+      "total": -1.3744158341820756,
+      "price": null
+    },
+    {
+      "id": "public-payer-training-resources",
+      "health": 1.8727327061431496,
+      "income": -1.3877853149075223,
+      "total": 0.48494739123562725,
+      "price": 148503716.694928
+    },
+    {
+      "id": "short-measured-followup",
+      "health": 0.03332383618751628,
+      "income": -0.02319119004719583,
+      "total": 0.010132646140320452,
+      "price": 7107372447.699277
+    }
+  ]
+}

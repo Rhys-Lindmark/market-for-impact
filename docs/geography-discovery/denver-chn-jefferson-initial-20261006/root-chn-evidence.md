@@ -1,0 +1,9 @@
+# Root independent CHN source audit
+
+Own February 11, 2026 statement confirms 557 FY2025 PrEP navigation recipients across Denver and Colorado Springs, not adherent patients; no summing testing counts. Original three IRS bodies confirm functional expenses plus netted direct fundraising expenses: FY2025 $36,416,135, FY2024 $36,242,357, FY2023 $31,780,007, mean $34,812,833. No populated gaming or inventory cost fields appeared. Full annual recipient cost against a modeled PrEP channel is a partial-channel reference, not a complete portfolio benefit estimate. The 2026 referral platform announcement does not establish clinical outcomes.
+
+Sources independently opened: https://coloradohealthnetwork.org/blog/colorado-health-network-statement-on-proposed-federal-hiv-prevention-funding-cuts/ ; https://coloradohealthnetwork.org/blog/strengthening-quality-care-colorado-health-network-2026/ ; original IRS bodies 202632269349300238, 202541679349300779, 202421659349301537 via ProPublica full_text/IRS990. NEJM direct open returned 403; PubMed open lacked abstract; indexed original abstract is supporting retrieval, not a confirmed full-text read.
+
+Timing: root-chn-start.json interval was interrupted by the user's scheduler diagnosis. Entire interval excluded from accepted measured research rather than invent exact interruption boundaries. Closed source evidence preserved; no research minutes claimed from it.
+
+Independent alternate receipt succeeded: EBI EuropePMC core API EXT_ID26624850 AND SRC:MED returned the original trial abstract with matching DOI10.1056/nejmoa1506273,400enrolled,2vs14infections,86%relative reduction CI40–98,median9.3months; GI14%vs5%,renal18%vs10%. This is an original-author abstract retrieved via bibliographic service, not full-text access. https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:26624850%20AND%20SRC:MED&format=json&resultType=core

@@ -1,0 +1,43 @@
+{
+  "originalReport": "original-report.json",
+  "originalVersion": "ca-hhcla-whole-cost-overdose-alpha-v1",
+  "originalScenarios": [
+    {
+      "id": "central",
+      "label": "Cautious full-cost central",
+      "costUSD": 100000,
+      "allPopulationQalys": 0.10444189905615264,
+      "editionQalys": 0.10444189905615264,
+      "assumptions": "{\"id\":\"central\",\"lambda\":1,\"unique\":0.7,\"rescue\":0.3,\"delta\":0.2,\"funding\":0.3,\"utility\":0.7,\"m\":0.06,\"T\":20,\"L\":5.958024670560652,\"raw\":1.3912395577326737,\"D\":0.01752961842743169,\"q\":0.10444189905615264,\"price\":9574701.427655535}; g=1; all other quantified branches=0"
+    },
+    {
+      "id": "favorable",
+      "label": "Higher response yield and causal leverage",
+      "costUSD": 100000,
+      "allPopulationQalys": 6.247439665911243,
+      "editionQalys": 6.247439665911243,
+      "assumptions": "{\"id\":\"favorable\",\"lambda\":3,\"unique\":0.85,\"rescue\":0.6,\"delta\":0.35,\"funding\":0.8,\"utility\":0.8,\"m\":0.03,\"T\":30,\"L\":10.482157739408319,\"raw\":4.173718673198021,\"D\":0.5960070265326773,\"q\":6.247439665911243,\"price\":160065.57141422853}; g=1; all other quantified branches=0"
+    },
+    {
+      "id": "pessimistic",
+      "label": "Low marginal activity and heavy substitution",
+      "costUSD": 100000,
+      "allPopulationQalys": 0.00007790602551750972,
+      "editionQalys": 0.00007790602551750972,
+      "assumptions": "{\"id\":\"pessimistic\",\"lambda\":0.25,\"unique\":0.3,\"rescue\":0.05,\"delta\":0.05,\"funding\":0.1,\"utility\":0.6,\"m\":0.1,\"T\":10,\"L\":2.9865367215204635,\"raw\":0.34780988943316843,\"D\":0.00002608574170748763,\"q\":0.00007790602551750972,\"price\":12835977619.924221}; g=1; all other quantified branches=0"
+    },
+    {
+      "id": "null",
+      "label": "No incremental delivery or rescue",
+      "costUSD": 100000,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "assumptions": "funding=0 or rescue=0; no finite positive price"
+    }
+  ],
+  "originalPrice10": 9574701.427655535,
+  "clinicalCoefficientsUnchanged": true,
+  "authorSeconds": 120.904,
+  "authorCapSeconds": 120,
+  "budgetAllocationOverrunSeconds": 0.904
+}

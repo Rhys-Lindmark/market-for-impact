@@ -1,0 +1,225 @@
+{
+  "edition": "new-york-city",
+  "boundaryVersion": "OMB-23-01-2023-07-21",
+  "organizationId": "org:charles-b-wang-community-health-center",
+  "slug": "charles-b-wang-community-health-center",
+  "organization": "Charles B. Wang Community Health Center",
+  "program": "Multilingual community primary, dental and mental health care",
+  "published": "2026-09-29",
+  "updated": "2026-09-29",
+  "stage": "alpha",
+  "donationUrl": "https://www.cbwchc.org/give",
+  "acceptance": {
+    "status": "accepted",
+    "evidence": "givebetter-nyc-sixth-seventh-independent-acceptance.json: primary-source checks, independent reconstruction of every scenario, and explicit uncertainty review; accepted as conditional alpha modeling, not measured causal impact."
+  },
+  "summary": {
+    "what": [
+      "CBWCHC delivers multilingual primary, dental and mental-health care in Manhattan and Queens.",
+      "It reported over 70,000 patients in 2025, but patient counts and quality awards do not identify additional health caused by gifts.",
+      "A weak-confidence whole-recipient model implies about $24.3 million per 10 NYC-MSA QALYs."
+    ],
+    "strengths": [
+      "Direct clinical services provide a tangible health mechanism.",
+      "Language access and reduced fees address barriers even among insured patients.",
+      "Current original financial and patient reporting supports an explicit whole-recipient model."
+    ],
+    "reservations": [
+      "No controlled incremental utility estimate is available for this recipient.",
+      "Most revenue comes from existing patient services and other funding, making gift additionality uncertain.",
+      "Patient residence and effective care relative to alternative providers are not reported at the required MSA granularity."
+    ]
+  },
+  "sections": {
+    "what": "The center offers medical, dental, mental-health, social-work and support services at clinical sites in Manhattan and Queens. Its multilingual staffing can improve access and continuity. Services span prevention and chronic disease management; a visit is not equivalent to an additional healthy year. [Services and history](https://www.cbwchc.org/about-us) [Locations](https://www.cbwchc.org/locations)",
+    "monitoring": "Request patient-level residence, treatment completion, baseline severity and quality-of-life change, with alternative-provider comparison and durable follow-up. HRSA quality awards and screening performance demonstrate delivery quality, not donor causation. Oregon insurance randomization supplies a cautionary analogy: access can improve mental health while short-term measured physical effects remain undetected. It does not validate our clinic utility coefficient. [Original randomized evidence](https://doi.org/10.1056/NEJMsa1212321)",
+    "qualitative": "Language-concordant care may prevent misunderstandings and help people navigate specialist referrals. The counterfactual includes other community centers, hospitals and insured physician care; an uninsured-only screen would also miss real language barriers. Conversely, treating every existing patient as dependent on a donation greatly overstates marginal impact. [Provider context](https://www.cbwchc.org/about-us)",
+    "cost": "The central model retains $97,126,149 of annual recipient expense and 70,000 patients, rounded down from the reported lower threshold. It assumes 20% receive effective care beyond alternatives, 0.02 utility gain for 0.5 years, 30% marginal gift additionality and 95% MSA residence: 70,000 × 0.2 × 0.02 × 0.5 × 0.3 × 0.95 =39.9 MSA QALYs. This is $24,342,393 per 10 QALYs. These clinical and allocation coefficients are transparent judgments, not observed causal effects. No mortality credit or future-year persistence is added. External hospital, medication and household costs are excluded. An illustrative $1,000 of whole-portfolio cost corresponds to 0.721 historical patient equivalents before clinical, geographic and financial adjustments; this is not a promised extra patient or measured marginal unit cost.",
+    "funding": "The 2025 annual report's financial page reports $82,219,650 program expenses plus $14,906,499 general/administrative expense, totaling $97,126,149. Revenue is $89,787,848, of which $61,388,351 is patient services; the reported decrease in net assets is $7,338,301. Audit status, precise period dates and consolidation detail are not provided on that page, so no audited three-year mean is claimed. [Original report, printed page 11](https://cdn.prod.website-files.com/65525600ad11f5d8bc8c3450/6a21d66b1ec4b680b9058e9a_2025%20CBWCHC%20Annual%20Report_ForWeb.pdf)\n\nGiving is directed to the operating health center; the official page identifies programs exceeding conventional reimbursement. A budget deficit does not prove a 30% gift elasticity; unrestricted gifts may replace funds or maintain existing care. Our model follows the recipient-wide mix without claiming a restricted offer. [Official donation page](https://www.cbwchc.org/give)"
+  },
+  "sources": [
+    {
+      "id": "annual25",
+      "title": "2025 annual report, printed pages3 and11 visually verified",
+      "publisher": "Charles B. Wang Community Health Center",
+      "url": "https://cdn.prod.website-files.com/65525600ad11f5d8bc8c3450/6a21d66b1ec4b680b9058e9a_2025%20CBWCHC%20Annual%20Report_ForWeb.pdf",
+      "published": null,
+      "retrieved": "2026-09-29"
+    },
+    {
+      "id": "about",
+      "title": "About the center and current patient services",
+      "publisher": "Charles B. Wang Community Health Center",
+      "url": "https://www.cbwchc.org/about-us",
+      "published": null,
+      "retrieved": "2026-09-29"
+    },
+    {
+      "id": "locations",
+      "title": "Clinical site locations",
+      "publisher": "Charles B. Wang Community Health Center",
+      "url": "https://www.cbwchc.org/locations",
+      "published": null,
+      "retrieved": "2026-09-29"
+    },
+    {
+      "id": "give",
+      "title": "Official gift allocation and recipient",
+      "publisher": "Charles B. Wang Community Health Center",
+      "url": "https://www.cbwchc.org/give",
+      "published": null,
+      "retrieved": "2026-09-29"
+    },
+    {
+      "id": "oregon",
+      "title": "Oregon Experiment—Effects of Medicaid on Clinical Outcomes",
+      "publisher": "New England Journal of Medicine",
+      "url": "https://doi.org/10.1056/NEJMsa1212321",
+      "published": "2013-05-02",
+      "retrieved": "2026-09-29"
+    }
+  ],
+  "model": {
+    "version": "nyc-cbwchc-alpha-v1",
+    "costScope": "Full expense reported in2025 recipient annual report, not sponsor/related-foundation revenue or charity-care discount valuation. Hospital/referral/pharmaceutical costs outside reported expense excluded.",
+    "geographicAttribution": "g=.95 judgment: clinical sites in Manhattan and Queens, but residences not supplied. Central allows5% outside the 22-county MSA; g=.8 to1 sensitivity. Site address alone does not establish resident share.",
+    "formula": "Q_all=N*a*u*t*b; Q_MSA=Q_all*g; cost=C*f; price10=10*cost/Q_MSA. Mortality=0; health ends at t.",
+    "counterfactual": "Existing public/private insurance, federal grants, alternative community providers and other donors continue. a=.2 isolates care beyond alternatives; b=.3 separately accounts for donation-financing substitution.",
+    "attribution": "Ordinary unrestricted gifts assumed to support recipient-wide mix at average resource cost, scaled by .3 marginal capacity factor. No gift is automatically credited with all existing clinical visits.",
+    "uncertainty": "Weak-confidence utility and additionality model; no recipient-specific QALY study, measured gift elasticity, or patient residence distribution. Scenario endpoints are judgments, not confidence limits.",
+    "nativeOutcomes": "Distinct annual patients receiving additional effective clinical care, mapped to finite utility gain; visits, insurance status and quality awards do not independently add health.",
+    "inputs": [
+      {
+        "name": "C",
+        "value": 97126149,
+        "unit": "USD whole-recipient annual expense",
+        "basis": "observed",
+        "rationale": "All reported program and general/administrative expenses; no sponsor denominator.",
+        "sourceIds": [
+          "annual25"
+        ]
+      },
+      {
+        "name": "f",
+        "value": 1,
+        "unit": "forward expense multiplier",
+        "basis": "judgment",
+        "rationale": "Constant2025 expense before sensitivity; no scale economies assumed.",
+        "sourceIds": []
+      },
+      {
+        "name": "N",
+        "value": 70000,
+        "unit": "annual patients",
+        "basis": "observed",
+        "rationale": "70,000 rounded threshold from2025 recipient report.",
+        "sourceIds": [
+          "annual25"
+        ]
+      },
+      {
+        "name": "a",
+        "value": 0.2,
+        "unit": "additional effective-care fraction",
+        "basis": "judgment",
+        "rationale": "20%of observed patient volume represents effective care beyond alternatives; unmeasured.",
+        "sourceIds": []
+      },
+      {
+        "name": "u",
+        "value": 0.02,
+        "unit": "health utility increment",
+        "basis": "judgment",
+        "rationale": "Mean.02 improvement among additional effective-care recipients; explicit judgment, not Oregon coefficient.",
+        "sourceIds": []
+      },
+      {
+        "name": "t",
+        "value": 0.5,
+        "unit": "years of incremental utility gain",
+        "basis": "judgment",
+        "rationale": "Half-year average health improvement; no gain after this window.",
+        "sourceIds": []
+      },
+      {
+        "name": "b",
+        "value": 0.3,
+        "unit": "incremental gift-funded capacity fraction",
+        "basis": "judgment",
+        "rationale": "30% after alternative funding and capacity constraints; unmeasured.",
+        "sourceIds": []
+      },
+      {
+        "name": "g",
+        "value": 0.95,
+        "unit": "MSA-resident health share",
+        "basis": "judgment",
+        "rationale": "95% judged from five clinical sites; no patient residence dataset.",
+        "sourceIds": [
+          "locations"
+        ]
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "central",
+        "label": "Central",
+        "costUSD": 97126149,
+        "allPopulationQalys": 42,
+        "editionQalys": 39.9,
+        "assumptions": "{\"C\":97126149,\"f\":1,\"N\":70000,\"a\":0.2,\"u\":0.02,\"t\":0.5,\"b\":0.3,\"g\":0.95}; no mortality or benefit beyond t."
+      },
+      {
+        "id": "favorable",
+        "label": "Greater additional care and persistence",
+        "costUSD": 97126149,
+        "allPopulationQalys": 672,
+        "editionQalys": 672,
+        "assumptions": "{\"C\":97126149,\"f\":1,\"N\":70000,\"a\":0.4,\"u\":0.04,\"t\":1,\"b\":0.6,\"g\":1}; no mortality or benefit beyond t."
+      },
+      {
+        "id": "poor",
+        "label": "Mostly substitute care",
+        "costUSD": 121407686.25,
+        "allPopulationQalys": 0.4375,
+        "editionQalys": 0.35000000000000003,
+        "assumptions": "{\"C\":97126149,\"f\":1.25,\"N\":70000,\"a\":0.05,\"u\":0.005,\"t\":0.25,\"b\":0.1,\"g\":0.8}; no mortality or benefit beyond t."
+      },
+      {
+        "id": "zero",
+        "label": "No additional capacity",
+        "costUSD": 97126149,
+        "allPopulationQalys": 0,
+        "editionQalys": 0,
+        "assumptions": "{\"C\":97126149,\"f\":1,\"N\":70000,\"a\":0.2,\"u\":0.02,\"t\":0.5,\"b\":0,\"g\":0.95}; no mortality or benefit beyond t."
+      }
+    ],
+    "sensitivity": [
+      "At g=.8 central price rises to approximately$28.9m/10; at g=1 it is approximately$23.1m/10.",
+      "If b=.1 instead of.3, price triples. If benefit lasts .25 years instead of.5, price doubles.",
+      "A net39.9-QALY harm/displacement term offsets central geographic gain; unmeasured harms are not established zero."
+    ],
+    "missingInputs": [
+      "Audited2025 statements including consolidation, funding restrictions and liquidity.",
+      "Marginal staffing/program plan and how much extra capacity unrestricted gifts buy.",
+      "MSA patient residence shares and alternative-provider access.",
+      "Recipient-specific utility, duration and adverse-effects evidence for the clinical portfolio."
+    ]
+  },
+  "annualExpenses": [
+    {
+      "year": 2025,
+      "amount": 97126149,
+      "currency": "USD",
+      "periodMonths": null,
+      "comparable": false,
+      "entity": "Charles B. Wang Community Health Center",
+      "accountingBasis": "Original2025 annual-report financial summary; audit and exact dates not stated",
+      "sourceId": "annual25"
+    }
+  ],
+  "timeCoverage": "partial",
+  "sessionIds": [
+    "e81d81d2-4d60-451f-aac1-7eadec2ad76d"
+  ]
+}

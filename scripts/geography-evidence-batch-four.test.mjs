@@ -6,14 +6,15 @@ const report=slug=>rows.find(r=>r.slug===slug);
 const close=(a,b)=>assert.ok(Math.abs(a-b)<1e-9);
 test('Cribs for Kids scenarios reproduce without crediting commercial shipments',()=>{
  const r=report('cribs-for-kids');assert.ok(r);
- assert.equal(r.model.scenarios.find(s=>s.id==='central').editionQalys,null);
- assert.match(r.priceScope,/withdrawn/i);
- for(const s of r.model.scenarios.filter(s=>['alpha-retained-diagnostic','favorable','pessimistic'].includes(s.id))){
+ const m=r.historicalModel;assert.ok(m);
+ assert.equal(m.scenarios.find(s=>s.id==='central').editionQalys,null);
+ assert.match(m.version,/withdrawn/i);
+ for(const s of m.scenarios.filter(s=>['alpha-retained-diagnostic','favorable','pessimistic'].includes(s.id))){
   const p=Object.fromEntries([...s.assumptions.matchAll(/\b(a|c|b|u|r|e|L|g)=([0-9.]+)/g)].map(m=>[m[1],+m[2]]));
   const q=s.costUSD*p.a/p.c*p.b*p.u*p.r*p.e*p.L;
   close(q,s.allPopulationQalys);close(q*p.g,s.editionQalys);
  }
- assert.equal(r.model.scenarios.find(s=>s.id==='zero-additionality').editionQalys,0);
+ assert.equal(m.scenarios.find(s=>s.id==='zero-additionality').editionQalys,0);
  assert.equal(r.annualExpenses.find(e=>e.year===2025).amount,2633922+9231646+49675);
 });
 test('Upstream includes adverse burden even when prevention is zero',()=>{

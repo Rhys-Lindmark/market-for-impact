@@ -1,0 +1,5 @@
+# North West Housing Partnership initial checkpoint
+
+Pending root acceptance. Whole annual recipient cost; conditional limited home-modification channel, not complete portfolio or measured marginal gift EV. All throughput, completion, utility and actual spending amounts are judgments. Publicly funded alternatives remain. External 2019 CAPABLE functional evidence and 2025 overall ADL null do not establish local utility, falls or income. Original returns and Schedule D were fetched fresh; FY2023 inventory addback $729,996 was independently verified by root and counted once. Current support solicitation verified, checkout not tested. One welfareperson per household; clinical subset of resource union. Signed components preserve full negatives, then one joint log. Central outside resources are unknown-neutral, not observed zero.
+
+Research/model timestamps are actual focused intervals; no pre-phase idle gap credited. Tests and packet formatting are outside closed clocks. Full numerical initial diagnostic is preserved once. No prior initial report existed.

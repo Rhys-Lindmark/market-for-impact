@@ -1,0 +1,22 @@
+import {test,expect} from '@playwright/test';
+test('Pacific Hearing current Bay model, historical diagnostics and per-model times agree',async({page,request})=>{
+ await page.route('https://market-for-impact.rhyslindmark.chatgpt.site/_next/**',async route=>{const u=new URL(route.request().url());await route.fulfill({response:await request.get(u.pathname+u.search)});});
+ await page.goto('/charities/pacific-hearing-connection');
+ await expect(page.getByRole('heading',{level:1,name:'Pacific Hearing Connection',exact:true})).toBeVisible();
+ const effort=page.locator('.report-research-effort summary');
+ await expect(effort).toContainText('6 min on GPT-6 Astra Light');
+ await expect(effort).toContainText('31 min on GPT-6.1 Sol');
+ await expect(effort).not.toContainText('18 min');
+ await expect(page.locator('.report-heading')).not.toContainText('V2');
+ await expect(page.locator('#research-summary')).toContainText('$9.72M');
+ await expect(page.locator('#research-cost')).toContainText('−0.00348');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+ const response=await request.get('/api/pacific-hearing-connection-model');expect(response.ok()).toBe(true);
+ const r=await response.json();expect(r.rankingCentral.donorPrice10).toBeCloseTo(9718636.68369033,5);
+ expect(r.scenarios).toHaveLength(43);expect(Object.keys(r.historical.diagnostics)).toHaveLength(13);
+ expect(r.evaluated.resourcesBay).toBeLessThan(0);expect(r.evaluated.healthSF).toBeNull();
+ await page.goto('/san-francisco/all');
+ const row=page.locator('tr[data-research-slug="pacific-hearing-connection"]');
+ await expect(row).toContainText('$9.7M');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+});

@@ -1,0 +1,7 @@
+# Rebuilding Together Metro Chicago — accepted initial
+
+Root independently checked official EIN/giving/repair programs, county completed30-home publicly funded project(2023–May2025, not annual/marginal), original FY2025 expense2,993,738 and ScheduleD donated-service expense278,560. Full recognized annual3,272,298; comparable author prior-year original receipts2,248,873/2,085,610 retained, mean2,535,593.6667. No retail3.25multiplier or property appreciation counted as household resources.
+
+Root independently read primary2023Cochrane review: highrisk targeted hazard removalRaR.62, not generic independence modifications. Injury/hospitalization/medically attended fall and HRQoL evidence does not validate .01acuteQALY/fall. Author report now states that caveat; QALY area remains explicit weak prior with clinical-null and adverse cases. Annual local households, transport and actual avoided spending are judgments. No marginal gift capacity established.
+
+150independent reconstruction checks across23cases pass, with joint household logs, full mixed-sign costs, disjoint financial branches, clinical subset/union, finite duration, matched margin and outside burden. Clinical.0561637689 + resources.1936735113 =.2498372802equivalents;130,977,170.3386dollars per ten. Author178.248seconds plus root23.971seconds =202.219seconds GPT-6.1 Sol, partial coverage. Later ScheduleD/review rereads/math/testing/integration untimed/uncredited; no padded idle/release time. No required scientific correction remains. Pending combined publication.

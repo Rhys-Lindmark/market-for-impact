@@ -1,0 +1,75 @@
+{
+  "originalReport": "original-report.json",
+  "originalVersion": "ca-end-overdose-alpha-v2-conditional-geography",
+  "originalScenarios": [
+    {
+      "id": "central",
+      "label": "Conditional central — subjective California share",
+      "costUSD": 100000,
+      "allPopulationQalys": 0.6582866193834341,
+      "editionQalys": 0.0769425918759858,
+      "assumptions": "{\"a\":0.75,\"c\":50,\"e\":0.005,\"d\":0.5,\"r\":0.2,\"f\":0.2,\"b\":0.5,\"u\":0.75,\"m\":0.04,\"T\":30,\"g_CA\":0.11688311688311688,\"unpaid\":10}; calculated offers=1500; unique deaths=0.07500000000000001; finiteQALYs/death=9.040469572865828; gross resourceUSD=115000 Geographic assumptions p=0.15, rho=0.75, g_CA=0.11688311688311688. All-population QALYs unchanged; these geography values are judgments, not measured shares."
+    },
+    {
+      "id": "favorable",
+      "label": "Favorable clinical and geographic stress",
+      "costUSD": 100000,
+      "allPopulationQalys": 97.67351879512003,
+      "editionQalys": 58.604111277072015,
+      "assumptions": "{\"a\":0.85,\"c\":35,\"e\":0.05,\"d\":0.8,\"r\":0.3,\"f\":0.3,\"b\":0.8,\"u\":0.85,\"m\":0.02,\"T\":40,\"g_CA\":0.6,\"unpaid\":5}; calculated offers=2428.5714285714284; unique deaths=6.9942857142857155; finiteQALYs/death=14.383702420604887; gross resourceUSD=112142.85714285714 Geographic assumptions p=0.5, rho=1.5, g_CA=0.6. All-population QALYs unchanged; these geography values are judgments, not measured shares."
+    },
+    {
+      "id": "pessimistic",
+      "label": "Adverse clinical and geographic stress",
+      "costUSD": 100000,
+      "allPopulationQalys": 0.00013462860801852008,
+      "editionQalys": 6.833939493325894e-7,
+      "assumptions": "{\"a\":0.5,\"c\":100,\"e\":0.001,\"d\":0.25,\"r\":0.05,\"f\":0.05,\"b\":0.1,\"u\":0.65,\"m\":0.08,\"T\":15,\"g_CA\":0.005076142131979696,\"unpaid\":25}; calculated offers=500; unique deaths=0.00003125000000000001; finiteQALYs/death=4.4373589202904204; gross resourceUSD=112500 Geographic assumptions p=0.02, rho=0.25, g_CA=0.005076142131979696. All-population QALYs unchanged; these geography values are judgments, not measured shares."
+    },
+    {
+      "id": "donatedstock",
+      "label": "Donated stock; central subjective California share",
+      "costUSD": 100000,
+      "allPopulationQalys": 1.0617526119087648,
+      "editionQalys": 0.1241009546386868,
+      "assumptions": "{\"a\":0.75,\"c\":31,\"e\":0.005,\"d\":0.5,\"r\":0.2,\"f\":0.2,\"b\":0.5,\"u\":0.75,\"m\":0.04,\"T\":30,\"g_CA\":0.11688311688311688,\"unpaid\":10,\"stockResource\":19}; calculated offers=2419.3548387096776; unique deaths=0.1209677419354839; finiteQALYs/death=9.040469572865828; gross resourceUSD=170161.29032258067 Geographic assumptions p=0.15, rho=0.75, g_CA=0.11688311688311688. All-population QALYs unchanged; these geography values are judgments, not measured shares."
+    },
+    {
+      "id": "no-additionality",
+      "label": "No additional national rescue",
+      "costUSD": 100000,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "assumptions": "Setb=0orr=0; no finite favorable health price, regardless of observed total reach. Geographic assumptions p=0.15, rho=0.75, g_CA=0.11688311688311688. All-population QALYs unchanged; these geography values are judgments, not measured shares."
+    },
+    {
+      "id": "ca-zero",
+      "label": "National benefit, no California marginal benefit",
+      "costUSD": 100000,
+      "allPopulationQalys": 0.6582866193834341,
+      "editionQalys": 0,
+      "assumptions": "Hold central national clinical yield; set p=0 if marginal gift delivery and subsequent patient health are entirely outside California. No finite California price."
+    },
+    {
+      "id": "geography-low",
+      "label": "Central clinical yield; 1% California share",
+      "costUSD": 100000,
+      "allPopulationQalys": 0.6582866193834341,
+      "editionQalys": 0.0065828661938343415,
+      "assumptions": "Direct g_CA=0.01 sensitivity only; not a measured or probabilistic bound. All clinical assumptions held central."
+    },
+    {
+      "id": "geography-high",
+      "label": "Central clinical yield; 50% California share",
+      "costUSD": 100000,
+      "allPopulationQalys": 0.6582866193834341,
+      "editionQalys": 0.32914330969171707,
+      "assumptions": "Direct g_CA=0.5 sensitivity only; not a measured or probabilistic bound. All clinical assumptions held central."
+    }
+  ],
+  "originalPrice10": 12996702.80943714,
+  "clinicalCoefficientsUnchanged": true,
+  "authorSeconds": 211.77,
+  "authorCapSeconds": 100,
+  "budgetOverrunSeconds": 111.77
+}

@@ -1,0 +1,11 @@
+# Clinic by the Bay acceptance and integration
+
+Independent reviewer accepts the corrected conditional model. Root fixed unavailable uniqueness: numeric zero unique reach cannot establish absence when reach is unknown. Current center unchanged;39current cases now include this guard. Independent quadrature of the38author cases agreed within2.77e-12 clinical years and signed flow reconstruction within4.69e-17 equivalents. All34historical scenarios and three old weight stresses remain intact.
+
+Current report, API and Bay/SF ranking use the new unweighted health-plus-resource center: Bay$17,490,721.53021219/SF$24,986,745.043160275. Historical subjective weighted Bay$2,002,577.50/SF$2,860,825.00 and unweighted health central Bay$7.98M/SF$11.40M remain explicitly separate, not supporting evidence. Native course counts are calculated from current ledger, not manually inferred from annual visits.
+
+Five closed source/model/audit sessions imported once:584.757author+238.608reviewer=823.365seconds (~14min GPT-6.1 Sol). Attribution is user-confirmed; raw runtime identity/reasoning unknown. Historical missing work stays in its frozen estimated display; tests, integration, publication and waits are excluded.
+
+Verification:26focused numerical/history/ranking/report/provenance tests passed; two phone/tablet checks passed, including report/API/canonical Bay-table price parity, provenance header, three summary reasons and no horizontal overflow. Initial browser launch failed solely on sandbox macOS MachPort permission; rerun with scoped approved launcher passed. No server retained after checks. Original JSON report remains historical; current derived report integrates accepted model without rewriting frozen evidence. Financial appendix retains original accounting presentation.
+
+Empirical return, local clinical coefficients, current funding room, whole-portfolio value and comprehensive external resource cost remain unresolved. No zero substitution or favorable scenario weight is used to claim certainty. Publication and count advancement still require native successful deployment receipts. Full geographic objective remains active; no new report or depth count from this same-report revision.

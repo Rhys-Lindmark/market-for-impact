@@ -1,0 +1,20 @@
+import {test,expect} from '@playwright/test';
+test('DLN corrected USA report matches list, history and per-model effort',async({page,request})=>{
+ await page.route('https://market-for-impact.rhyslindmark.chatgpt.site/_next/**',async route=>{const u=new URL(route.request().url());await route.fulfill({response:await request.get(u.pathname+u.search)});});
+ await page.goto('/usa/charities/dental-lifeline-network');
+ await expect(page.getByRole('heading',{level:1,name:'Dental Lifeline Network',exact:true})).toBeVisible();
+ await expect(page.locator('.report-research-effort summary')).toContainText('~12 min on GPT-6 Astra Light + ~12 min on GPT-6 Astra Medium + ~9 min on GPT-6.1 Sol');
+ await expect(page.locator('#summary')).toContainText('$1.3M');
+ await expect(page.locator('#cost')).toContainText('3.33 additional candidate equivalents');
+ await expect(page.locator('#cost')).toContainText('−0.006849');
+ await expect(page.locator('#cost')).toContainText('$818K');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+ const response=await request.get('/api/geography-reports/usa/dental-lifeline-network');expect(response.ok()).toBe(true);
+ const r=await response.json(),c=r.model.scenarios.find((s:any)=>s.id==='central');
+ expect(c.nativeOutputs.combinedDonationPricePer10USD).toBeCloseTo(1348057.7090743855,5);expect(r.model.scenarios.length).toBe(26);
+ expect(c.incomePathways.length).toBe(8);expect(r.model.scenarios.some((s:any)=>s.id==='historical-beta-central')).toBe(true);
+ await page.goto('/usa/all');
+ const row=page.locator('[data-research-table] tbody tr').filter({hasText:'Dental Lifeline Network'});
+ await expect(row.locator('td').nth(0)).toContainText('$1.3M');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+});

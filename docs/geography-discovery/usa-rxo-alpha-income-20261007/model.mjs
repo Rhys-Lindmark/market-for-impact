@@ -1,0 +1,5 @@
+import assert from 'node:assert/strict';
+export const inputs={G:10000,c:400,b:.5,f:.1,e:.018,t:.5,q:2,z:0,h:.0005,g:.98};
+export function calculate(o={}){const x={...inputs,...o},patientYears=x.G*x.b/x.c,theta=x.f*x.e*x.t*x.q+x.z-x.h,all=patientYears*theta,health=all*x.g;return{x,patientYears,theta,allPopulationQalys:all,editionQalys:health,costUSD:x.G,income:null,combinedPrice:null,healthOnlyPrice:health>0?10*x.G/health:null};}
+export function paymentDiagnostic(alternativePayment=null){const pricePer90Days=22,fills=4,payment=pricePer90Days*fills;return{drug:'amlodipine10mg',pricePer90Days,fills,days:360,payer:'hypotheticalfullypatientpaid',payment,alternativePayment,outlayChange:alternativePayment===null?null:payment-alternativePayment,income:null,welfare:null};}
+export function tests(){assert(Math.abs(calculate().editionQalys-.015925)<1e-12);assert.equal(calculate().income,null);assert.equal(calculate({b:0}).editionQalys,0);assert(calculate({t:0}).editionQalys<0);assert.equal(paymentDiagnostic().payment,88);assert.equal(paymentDiagnostic(0).outlayChange,88);assert.equal(paymentDiagnostic(88).outlayChange,0);assert.equal(paymentDiagnostic().income,null);}

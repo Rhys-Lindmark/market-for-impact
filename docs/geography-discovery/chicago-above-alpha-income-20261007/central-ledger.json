@@ -1,0 +1,1918 @@
+{
+  "before": 44285029.54022803,
+  "current": {
+    "costUSD": 4296413,
+    "allPopulationQalys": 3.3541150000000006,
+    "editionQalys": 3.1864092500000005,
+    "incomePathways": [
+      {
+        "id": "incremental-retained-job-households",
+        "people": 0.75,
+        "annualIncomeBeforeUSD": 20000,
+        "annualIncomeGainUSD": 490,
+        "years": 1,
+        "editionShare": 0.95,
+        "delayYears": 0,
+        "discountRate": 0.03,
+        "rationale": "Five historical successful jobs are a descriptive envelope; causal share and retention are judgments, with joint full access costs.",
+        "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+        "sourceIds": [
+          "annual",
+          "protocol",
+          "cg-income"
+        ]
+      },
+      {
+        "id": "other-exposed-households",
+        "people": 845.6500000000001,
+        "annualIncomeBeforeUSD": 20000,
+        "annualIncomeGainUSD": -10,
+        "years": 1,
+        "editionShare": 0.95,
+        "delayYears": 0,
+        "discountRate": 0.03,
+        "rationale": "Full incremental time and access burden even when health and employment benefits fail; no patient fee.",
+        "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+        "sourceIds": [
+          "annual",
+          "protocol",
+          "cg-income"
+        ]
+      }
+    ],
+    "incomeUnknown": false,
+    "incomeEquivalent": -0.19226918186361058,
+    "totalEquivalent": 2.99414006813639,
+    "price10": 14349405.512862895,
+    "clinicalPatients": 1058,
+    "resourceHouseholds": 846.4000000000001,
+    "incrementalRetainedJobHouseholds": 0.75
+  },
+  "scenarios": [
+    {
+      "id": "central",
+      "label": "central",
+      "overrides": {},
+      "costUSD": 4296413,
+      "allPopulationQalys": 3.3541150000000006,
+      "editionQalys": 3.1864092500000005,
+      "incomePathways": [
+        {
+          "id": "incremental-retained-job-households",
+          "people": 0.75,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 490,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Five historical successful jobs are a descriptive envelope; causal share and retention are judgments, with joint full access costs.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 845.6500000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full incremental time and access burden even when health and employment benefits fail; no patient fee.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.19226918186361058,
+      "totalEquivalent": 2.99414006813639,
+      "price10": 14349405.512862895,
+      "clinicalPatients": 1058,
+      "resourceHouseholds": 846.4000000000001,
+      "incrementalRetainedJobHouseholds": 0.75,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {}"
+    },
+    {
+      "id": "clinical-null",
+      "label": "clinical-null",
+      "overrides": {
+        "u": 0
+      },
+      "costUSD": 4296413,
+      "allPopulationQalys": -0.05,
+      "editionQalys": -0.0475,
+      "incomePathways": [
+        {
+          "id": "incremental-retained-job-households",
+          "people": 0.75,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 490,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Five historical successful jobs are a descriptive envelope; causal share and retention are judgments, with joint full access costs.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 845.6500000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full incremental time and access burden even when health and employment benefits fail; no patient fee.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.19226918186361058,
+      "totalEquivalent": -0.23976918186361057,
+      "price10": null,
+      "clinicalPatients": 1058,
+      "resourceHouseholds": 846.4000000000001,
+      "incrementalRetainedJobHouseholds": 0.75,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {\"u\":0}"
+    },
+    {
+      "id": "financial-only",
+      "label": "financial-only",
+      "overrides": {
+        "u": 0,
+        "harm": 0,
+        "cost": 0
+      },
+      "costUSD": 4296413,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "incomePathways": [
+        {
+          "id": "incremental-retained-job-households",
+          "people": 0.75,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 500,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Five historical successful jobs are a descriptive envelope; causal share and retention are judgments, with joint full access costs.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 845.6500000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 0,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full incremental time and access burden even when health and employment benefits fail; no patient fee.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": 0.008796743235319846,
+      "totalEquivalent": 0.008796743235319846,
+      "price10": 4884095039.570385,
+      "clinicalPatients": 1058,
+      "resourceHouseholds": 846.4000000000001,
+      "incrementalRetainedJobHouseholds": 0.75,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {\"u\":0,\"harm\":0,\"cost\":0}"
+    },
+    {
+      "id": "unknown-resources",
+      "label": "unknown-resources",
+      "overrides": {
+        "unknown": true
+      },
+      "costUSD": 4296413,
+      "allPopulationQalys": 3.3541150000000006,
+      "editionQalys": 3.1864092500000005,
+      "incomePathways": [
+        {
+          "id": "incremental-retained-job-households",
+          "people": 0.75,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 490,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Five historical successful jobs are a descriptive envelope; causal share and retention are judgments, with joint full access costs.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 845.6500000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full incremental time and access burden even when health and employment benefits fail; no patient fee.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": true,
+      "incomeEquivalent": -0.19226918186361058,
+      "totalEquivalent": 2.99414006813639,
+      "price10": null,
+      "clinicalPatients": 1058,
+      "resourceHouseholds": 846.4000000000001,
+      "incrementalRetainedJobHouseholds": 0.75,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {\"unknown\":true}"
+    },
+    {
+      "id": "zero-additional-health",
+      "label": "zero-additional-health",
+      "overrides": {
+        "a": 0
+      },
+      "costUSD": 4296413,
+      "allPopulationQalys": -0.05,
+      "editionQalys": -0.0475,
+      "incomePathways": [
+        {
+          "id": "incremental-retained-job-households",
+          "people": 0.75,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 490,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Five historical successful jobs are a descriptive envelope; causal share and retention are judgments, with joint full access costs.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 845.6500000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full incremental time and access burden even when health and employment benefits fail; no patient fee.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.19226918186361058,
+      "totalEquivalent": -0.23976918186361057,
+      "price10": null,
+      "clinicalPatients": 1058,
+      "resourceHouseholds": 846.4000000000001,
+      "incrementalRetainedJobHouseholds": 0.75,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {\"a\":0}"
+    },
+    {
+      "id": "zero-job-additionality",
+      "label": "zero-job-additionality",
+      "overrides": {
+        "jobAdditional": 0
+      },
+      "costUSD": 4296413,
+      "allPopulationQalys": 3.3541150000000006,
+      "editionQalys": 3.1864092500000005,
+      "incomePathways": [
+        {
+          "id": "other-exposed-households",
+          "people": 846.4000000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full incremental time and access burden even when health and employment benefits fail; no patient fee.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.20107027175795109,
+      "totalEquivalent": 2.9853389782420496,
+      "price10": 14391709.053187625,
+      "clinicalPatients": 1058,
+      "resourceHouseholds": 846.4000000000001,
+      "incrementalRetainedJobHouseholds": 0,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {\"jobAdditional\":0}"
+    },
+    {
+      "id": "zero-retention",
+      "label": "zero-retention",
+      "overrides": {
+        "retention": 0
+      },
+      "costUSD": 4296413,
+      "allPopulationQalys": 3.3541150000000006,
+      "editionQalys": 3.1864092500000005,
+      "incomePathways": [
+        {
+          "id": "other-exposed-households",
+          "people": 846.4000000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full incremental time and access burden even when health and employment benefits fail; no patient fee.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.20107027175795109,
+      "totalEquivalent": 2.9853389782420496,
+      "price10": 14391709.053187625,
+      "clinicalPatients": 1058,
+      "resourceHouseholds": 846.4000000000001,
+      "incrementalRetainedJobHouseholds": 0,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {\"retention\":0}"
+    },
+    {
+      "id": "no-exposure",
+      "label": "no-exposure",
+      "overrides": {
+        "N": 0,
+        "jobN": 0
+      },
+      "costUSD": 4296413,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "incomePathways": [],
+      "incomeUnknown": false,
+      "incomeEquivalent": 0,
+      "totalEquivalent": 0,
+      "price10": null,
+      "clinicalPatients": 0,
+      "resourceHouseholds": 0,
+      "incrementalRetainedJobHouseholds": 0,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {\"N\":0,\"jobN\":0}"
+    },
+    {
+      "id": "no-gift-no-exposure",
+      "label": "no-gift-no-exposure",
+      "overrides": {
+        "N": 0,
+        "jobN": 0,
+        "C": 0
+      },
+      "costUSD": 0,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "incomePathways": [],
+      "incomeUnknown": false,
+      "incomeEquivalent": 0,
+      "totalEquivalent": 0,
+      "price10": null,
+      "clinicalPatients": 0,
+      "resourceHouseholds": 0,
+      "incrementalRetainedJobHouseholds": 0,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {\"N\":0,\"jobN\":0,\"C\":0}"
+    },
+    {
+      "id": "adverse",
+      "label": "adverse",
+      "overrides": {
+        "u": -0.01,
+        "netJobGain": -1000,
+        "cost": 25
+      },
+      "costUSD": 4296413,
+      "allPopulationQalys": -0.3904115,
+      "editionQalys": -0.370890925,
+      "incomePathways": [
+        {
+          "id": "incremental-retained-job-households",
+          "people": 0.75,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -1025,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Five historical successful jobs are a descriptive envelope; causal share and retention are judgments, with joint full access costs.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 845.6500000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full incremental time and access burden even when health and employment benefits fail; no patient fee.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.5211610594724653,
+      "totalEquivalent": -0.8920519844724653,
+      "price10": null,
+      "clinicalPatients": 1058,
+      "resourceHouseholds": 846.4000000000001,
+      "incrementalRetainedJobHouseholds": 0.75,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {\"u\":-0.01,\"netJobGain\":-1000,\"cost\":25}"
+    },
+    {
+      "id": "no-job-gain",
+      "label": "no-job-gain",
+      "overrides": {
+        "netJobGain": 0
+      },
+      "costUSD": 4296413,
+      "allPopulationQalys": 3.3541150000000006,
+      "editionQalys": 3.1864092500000005,
+      "incomePathways": [
+        {
+          "id": "incremental-retained-job-households",
+          "people": 0.75,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Five historical successful jobs are a descriptive envelope; causal share and retention are judgments, with joint full access costs.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 845.6500000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full incremental time and access burden even when health and employment benefits fail; no patient fee.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.20107027175795109,
+      "totalEquivalent": 2.9853389782420496,
+      "price10": 14391709.053187625,
+      "clinicalPatients": 1058,
+      "resourceHouseholds": 846.4000000000001,
+      "incrementalRetainedJobHouseholds": 0.75,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {\"netJobGain\":0}"
+    },
+    {
+      "id": "larger-job-net-gain",
+      "label": "larger-job-net-gain",
+      "overrides": {
+        "netJobGain": 5000
+      },
+      "costUSD": 4296413,
+      "allPopulationQalys": 3.3541150000000006,
+      "editionQalys": 3.1864092500000005,
+      "incomePathways": [
+        {
+          "id": "incremental-retained-job-households",
+          "people": 0.75,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 2490,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Five historical successful jobs are a descriptive envelope; causal share and retention are judgments, with joint full access costs.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 845.6500000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full incremental time and access burden even when health and employment benefits fail; no patient fee.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.1590902642882124,
+      "totalEquivalent": 3.027318985711788,
+      "price10": 14192138.391355613,
+      "clinicalPatients": 1058,
+      "resourceHouseholds": 846.4000000000001,
+      "incrementalRetainedJobHouseholds": 0.75,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {\"netJobGain\":5000}"
+    },
+    {
+      "id": "negative-job-net-gain",
+      "label": "negative-job-net-gain",
+      "overrides": {
+        "netJobGain": -1000
+      },
+      "costUSD": 4296413,
+      "allPopulationQalys": 3.3541150000000006,
+      "editionQalys": 3.1864092500000005,
+      "incomePathways": [
+        {
+          "id": "incremental-retained-job-households",
+          "people": 0.75,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -1010,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Five historical successful jobs are a descriptive envelope; causal share and retention are judgments, with joint full access costs.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 845.6500000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full incremental time and access burden even when health and employment benefits fail; no patient fee.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.21935288769684178,
+      "totalEquivalent": 2.967056362303159,
+      "price10": 14480388.89515714,
+      "clinicalPatients": 1058,
+      "resourceHouseholds": 846.4000000000001,
+      "incrementalRetainedJobHouseholds": 0.75,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {\"netJobGain\":-1000}"
+    },
+    {
+      "id": "negative-overlap-zero",
+      "label": "negative-overlap-zero",
+      "overrides": {
+        "netJobGain": -1000,
+        "overlap": 0
+      },
+      "costUSD": 4296413,
+      "allPopulationQalys": 3.3541150000000006,
+      "editionQalys": 3.1864092500000005,
+      "incomePathways": [
+        {
+          "id": "incremental-retained-job-households",
+          "people": 0.75,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -1010,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Five historical successful jobs are a descriptive envelope; causal share and retention are judgments, with joint full access costs.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 845.6500000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full incremental time and access burden even when health and employment benefits fail; no patient fee.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.21935288769684178,
+      "totalEquivalent": 2.967056362303159,
+      "price10": 14480388.89515714,
+      "clinicalPatients": 1058,
+      "resourceHouseholds": 846.4000000000001,
+      "incrementalRetainedJobHouseholds": 0.75,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {\"netJobGain\":-1000,\"overlap\":0}"
+    },
+    {
+      "id": "negative-overlap-one",
+      "label": "negative-overlap-one",
+      "overrides": {
+        "netJobGain": -1000,
+        "overlap": 1
+      },
+      "costUSD": 4296413,
+      "allPopulationQalys": 3.3541150000000006,
+      "editionQalys": 3.1864092500000005,
+      "incomePathways": [
+        {
+          "id": "incremental-retained-job-households",
+          "people": 0.75,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -1010,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Five historical successful jobs are a descriptive envelope; causal share and retention are judgments, with joint full access costs.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 845.6500000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full incremental time and access burden even when health and employment benefits fail; no patient fee.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.21935288769684178,
+      "totalEquivalent": 2.967056362303159,
+      "price10": 14480388.89515714,
+      "clinicalPatients": 1058,
+      "resourceHouseholds": 846.4000000000001,
+      "incrementalRetainedJobHouseholds": 0.75,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {\"netJobGain\":-1000,\"overlap\":1}"
+    },
+    {
+      "id": "positive-overlap-zero",
+      "label": "positive-overlap-zero",
+      "overrides": {
+        "overlap": 0
+      },
+      "costUSD": 4296413,
+      "allPopulationQalys": 3.3541150000000006,
+      "editionQalys": 3.1864092500000005,
+      "incomePathways": [
+        {
+          "id": "incremental-retained-job-households",
+          "people": 0.75,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 990,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Five historical successful jobs are a descriptive envelope; causal share and retention are judgments, with joint full access costs.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 845.6500000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full incremental time and access burden even when health and employment benefits fail; no patient fee.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.1836802894876181,
+      "totalEquivalent": 3.0027289605123824,
+      "price10": 14308361.015930206,
+      "clinicalPatients": 1058,
+      "resourceHouseholds": 846.4000000000001,
+      "incrementalRetainedJobHouseholds": 0.75,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {\"overlap\":0}"
+    },
+    {
+      "id": "positive-overlap-one",
+      "label": "positive-overlap-one",
+      "overrides": {
+        "overlap": 1
+      },
+      "costUSD": 4296413,
+      "allPopulationQalys": 3.3541150000000006,
+      "editionQalys": 3.1864092500000005,
+      "incomePathways": [
+        {
+          "id": "incremental-retained-job-households",
+          "people": 0.75,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Five historical successful jobs are a descriptive envelope; causal share and retention are judgments, with joint full access costs.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 845.6500000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full incremental time and access burden even when health and employment benefits fail; no patient fee.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.20107027175795109,
+      "totalEquivalent": 2.9853389782420496,
+      "price10": 14391709.053187625,
+      "clinicalPatients": 1058,
+      "resourceHouseholds": 846.4000000000001,
+      "incrementalRetainedJobHouseholds": 0.75,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {\"overlap\":1}"
+    },
+    {
+      "id": "otherwise-paid-cash",
+      "label": "otherwise-paid-cash",
+      "overrides": {
+        "cash": 100
+      },
+      "costUSD": 4296413,
+      "allPopulationQalys": 3.3541150000000006,
+      "editionQalys": 3.1864092500000005,
+      "incomePathways": [
+        {
+          "id": "incremental-retained-job-households",
+          "people": 0.75,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 540,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Five historical successful jobs are a descriptive envelope; causal share and retention are judgments, with joint full access costs.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 845.6500000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 40,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full incremental time and access burden even when health and employment benefits fail; no patient fee.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": 0.8120563899521609,
+      "totalEquivalent": 3.9984656399521614,
+      "price10": 10745154.233841067,
+      "clinicalPatients": 1058,
+      "resourceHouseholds": 846.4000000000001,
+      "incrementalRetainedJobHouseholds": 0.75,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {\"cash\":100}"
+    },
+    {
+      "id": "cash-with-full-counterparty",
+      "label": "cash-with-full-counterparty",
+      "overrides": {
+        "cash": 100,
+        "externalCost": 100
+      },
+      "costUSD": 4296413,
+      "allPopulationQalys": 3.3541150000000006,
+      "editionQalys": 3.1864092500000005,
+      "incomePathways": [
+        {
+          "id": "incremental-retained-job-households",
+          "people": 0.75,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 540,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Five historical successful jobs are a descriptive envelope; causal share and retention are judgments, with joint full access costs.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 845.6500000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 40,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full incremental time and access burden even when health and employment benefits fail; no patient fee.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "distinct-outside-payer",
+          "people": 10000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -10.050999999999998,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Distinct global payer/provider loss for local recipients; no repeat of recognized in-kind resources already in budget.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.19314464618925586,
+      "totalEquivalent": 2.9932646038107444,
+      "price10": 14353602.399634864,
+      "clinicalPatients": 1058,
+      "resourceHouseholds": 846.4000000000001,
+      "incrementalRetainedJobHouseholds": 0.75,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {\"cash\":100,\"externalCost\":100}"
+    },
+    {
+      "id": "extra-provider-resources",
+      "label": "extra-provider-resources",
+      "overrides": {
+        "externalCost": 100
+      },
+      "costUSD": 4296413,
+      "allPopulationQalys": 3.3541150000000006,
+      "editionQalys": 3.1864092500000005,
+      "incomePathways": [
+        {
+          "id": "incremental-retained-job-households",
+          "people": 0.75,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 490,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Five historical successful jobs are a descriptive envelope; causal share and retention are judgments, with joint full access costs.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 845.6500000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full incremental time and access burden even when health and employment benefits fail; no patient fee.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "distinct-outside-payer",
+          "people": 10000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -10.050999999999998,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Distinct global payer/provider loss for local recipients; no repeat of recognized in-kind resources already in budget.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -1.1974702180050274,
+      "totalEquivalent": 1.9889390319949731,
+      "price10": 21601531.92675068,
+      "clinicalPatients": 1058,
+      "resourceHouseholds": 846.4000000000001,
+      "incrementalRetainedJobHouseholds": 0.75,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {\"externalCost\":100}"
+    },
+    {
+      "id": "no-access-cost",
+      "label": "no-access-cost",
+      "overrides": {
+        "cost": 0
+      },
+      "costUSD": 4296413,
+      "allPopulationQalys": 3.3541150000000006,
+      "editionQalys": 3.1864092500000005,
+      "incomePathways": [
+        {
+          "id": "incremental-retained-job-households",
+          "people": 0.75,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 500,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Five historical successful jobs are a descriptive envelope; causal share and retention are judgments, with joint full access costs.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 845.6500000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 0,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full incremental time and access burden even when health and employment benefits fail; no patient fee.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": 0.008796743235319846,
+      "totalEquivalent": 3.1952059932353203,
+      "price10": 13446435.094000457,
+      "clinicalPatients": 1058,
+      "resourceHouseholds": 846.4000000000001,
+      "incrementalRetainedJobHouseholds": 0.75,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {\"cost\":0}"
+    },
+    {
+      "id": "higher-access-cost",
+      "label": "higher-access-cost",
+      "overrides": {
+        "cost": 25
+      },
+      "costUSD": 4296413,
+      "allPopulationQalys": 3.3541150000000006,
+      "editionQalys": 3.1864092500000005,
+      "incomePathways": [
+        {
+          "id": "incremental-retained-job-households",
+          "people": 0.75,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 475,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Five historical successful jobs are a descriptive envelope; causal share and retention are judgments, with joint full access costs.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 845.6500000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full incremental time and access burden even when health and employment benefits fail; no patient fee.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.49405673779700243,
+      "totalEquivalent": 2.692352512202998,
+      "price10": 15957839.77219421,
+      "clinicalPatients": 1058,
+      "resourceHouseholds": 846.4000000000001,
+      "incrementalRetainedJobHouseholds": 0.75,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {\"cost\":25}"
+    },
+    {
+      "id": "household-dedup-half",
+      "label": "household-dedup-half",
+      "overrides": {
+        "unique": 0.5
+      },
+      "costUSD": 4296413,
+      "allPopulationQalys": 3.3541150000000006,
+      "editionQalys": 3.1864092500000005,
+      "incomePathways": [
+        {
+          "id": "incremental-retained-job-households",
+          "people": 0.75,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 490,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Five historical successful jobs are a descriptive envelope; causal share and retention are judgments, with joint full access costs.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 528.25,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full incremental time and access burden even when health and employment benefits fail; no patient fee.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.11686782995437889,
+      "totalEquivalent": 3.0695414200456215,
+      "price10": 13996921.403120026,
+      "clinicalPatients": 1058,
+      "resourceHouseholds": 529,
+      "incrementalRetainedJobHouseholds": 0.75,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {\"unique\":0.5}"
+    },
+    {
+      "id": "no-household-grouping",
+      "label": "no-household-grouping",
+      "overrides": {
+        "unique": 0
+      },
+      "costUSD": 4296413,
+      "allPopulationQalys": 3.3541150000000006,
+      "editionQalys": 3.1864092500000005,
+      "incomePathways": [],
+      "incomeUnknown": false,
+      "incomeEquivalent": 0,
+      "totalEquivalent": 3.1864092500000005,
+      "price10": 13483556.765346445,
+      "clinicalPatients": 1058,
+      "resourceHouseholds": 0,
+      "incrementalRetainedJobHouseholds": 0,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {\"unique\":0}"
+    },
+    {
+      "id": "no-local",
+      "label": "no-local",
+      "overrides": {
+        "g": 0
+      },
+      "costUSD": 4296413,
+      "allPopulationQalys": 3.3541150000000006,
+      "editionQalys": 0,
+      "incomePathways": [
+        {
+          "id": "incremental-retained-job-households",
+          "people": 0.75,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 490,
+          "years": 1,
+          "editionShare": 0,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Five historical successful jobs are a descriptive envelope; causal share and retention are judgments, with joint full access costs.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 845.6500000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full incremental time and access burden even when health and employment benefits fail; no patient fee.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": 0,
+      "totalEquivalent": 0,
+      "price10": null,
+      "clinicalPatients": 1058,
+      "resourceHouseholds": 846.4000000000001,
+      "incrementalRetainedJobHouseholds": 0.75,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {\"g\":0}"
+    },
+    {
+      "id": "all-local",
+      "label": "all-local",
+      "overrides": {
+        "g": 1
+      },
+      "costUSD": 4296413,
+      "allPopulationQalys": 3.3541150000000006,
+      "editionQalys": 3.3541150000000006,
+      "incomePathways": [
+        {
+          "id": "incremental-retained-job-households",
+          "people": 0.75,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 490,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Five historical successful jobs are a descriptive envelope; causal share and retention are judgments, with joint full access costs.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 845.6500000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full incremental time and access burden even when health and employment benefits fail; no patient fee.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.20238861248801113,
+      "totalEquivalent": 3.1517263875119896,
+      "price10": 13631935.23721975,
+      "clinicalPatients": 1058,
+      "resourceHouseholds": 846.4000000000001,
+      "incrementalRetainedJobHouseholds": 0.75,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {\"g\":1}"
+    },
+    {
+      "id": "delay-year",
+      "label": "delay-year",
+      "overrides": {
+        "delay": 1
+      },
+      "costUSD": 4296413,
+      "allPopulationQalys": 3.256422330097088,
+      "editionQalys": 3.0936012135922333,
+      "incomePathways": [
+        {
+          "id": "incremental-retained-job-households",
+          "people": 0.75,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 490,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Five historical successful jobs are a descriptive envelope; causal share and retention are judgments, with joint full access costs.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 845.6500000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Full incremental time and access burden even when health and employment benefits fail; no patient fee.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.18666910860544714,
+      "totalEquivalent": 2.9069321049867862,
+      "price10": 14779887.678248784,
+      "clinicalPatients": 1058,
+      "resourceHouseholds": 846.4000000000001,
+      "incrementalRetainedJobHouseholds": 0.75,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {\"delay\":1}"
+    },
+    {
+      "id": "shorter-morbidity",
+      "label": "shorter-morbidity",
+      "overrides": {
+        "T": 0.25
+      },
+      "costUSD": 4296413,
+      "allPopulationQalys": 1.6520575000000002,
+      "editionQalys": 1.569454625,
+      "incomePathways": [
+        {
+          "id": "incremental-retained-job-households",
+          "people": 0.75,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 490,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Five historical successful jobs are a descriptive envelope; causal share and retention are judgments, with joint full access costs.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 845.6500000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full incremental time and access burden even when health and employment benefits fail; no patient fee.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.19226918186361058,
+      "totalEquivalent": 1.3771854431363895,
+      "price10": 31197054.989307676,
+      "clinicalPatients": 1058,
+      "resourceHouseholds": 846.4000000000001,
+      "incrementalRetainedJobHouseholds": 0.75,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {\"T\":0.25}"
+    },
+    {
+      "id": "longer-morbidity",
+      "label": "longer-morbidity",
+      "overrides": {
+        "T": 1
+      },
+      "costUSD": 4296413,
+      "allPopulationQalys": 6.758230000000001,
+      "editionQalys": 6.4203185000000005,
+      "incomePathways": [
+        {
+          "id": "incremental-retained-job-households",
+          "people": 0.75,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 490,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Five historical successful jobs are a descriptive envelope; causal share and retention are judgments, with joint full access costs.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 845.6500000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full incremental time and access burden even when health and employment benefits fail; no patient fee.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.19226918186361058,
+      "totalEquivalent": 6.22804931813639,
+      "price10": 6898489.046142637,
+      "clinicalPatients": 1058,
+      "resourceHouseholds": 846.4000000000001,
+      "incrementalRetainedJobHouseholds": 0.75,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {\"T\":1}"
+    },
+    {
+      "id": "undefined-response-null",
+      "label": "undefined-response-null",
+      "overrides": {
+        "p": 0
+      },
+      "costUSD": 4296413,
+      "allPopulationQalys": -0.05,
+      "editionQalys": -0.0475,
+      "incomePathways": [
+        {
+          "id": "incremental-retained-job-households",
+          "people": 0.75,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 490,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Five historical successful jobs are a descriptive envelope; causal share and retention are judgments, with joint full access costs.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 845.6500000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full incremental time and access burden even when health and employment benefits fail; no patient fee.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.19226918186361058,
+      "totalEquivalent": -0.23976918186361057,
+      "price10": null,
+      "clinicalPatients": 1058,
+      "resourceHouseholds": 846.4000000000001,
+      "incrementalRetainedJobHouseholds": 0.75,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {\"p\":0}"
+    },
+    {
+      "id": "weaker-validity-hypothesis",
+      "label": "weaker-validity-hypothesis",
+      "overrides": {
+        "v": 0.2
+      },
+      "costUSD": 4296413,
+      "allPopulationQalys": 1.3116460000000003,
+      "editionQalys": 1.2460637000000003,
+      "incomePathways": [
+        {
+          "id": "incremental-retained-job-households",
+          "people": 0.75,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 490,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Five historical successful jobs are a descriptive envelope; causal share and retention are judgments, with joint full access costs.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 845.6500000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full incremental time and access burden even when health and employment benefits fail; no patient fee.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.19226918186361058,
+      "totalEquivalent": 1.0537945181363897,
+      "price10": 40770880.14841929,
+      "clinicalPatients": 1058,
+      "resourceHouseholds": 846.4000000000001,
+      "incrementalRetainedJobHouseholds": 0.75,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {\"v\":0.2}"
+    },
+    {
+      "id": "matched-2023-snapshot-cost",
+      "label": "matched-2023-snapshot-cost",
+      "overrides": {
+        "C": 3446320
+      },
+      "costUSD": 3446320,
+      "allPopulationQalys": 3.3541150000000006,
+      "editionQalys": 3.1864092500000005,
+      "incomePathways": [
+        {
+          "id": "incremental-retained-job-households",
+          "people": 0.75,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 490,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Five historical successful jobs are a descriptive envelope; causal share and retention are judgments, with joint full access costs.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 845.6500000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full incremental time and access burden even when health and employment benefits fail; no patient fee.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.19226918186361058,
+      "totalEquivalent": 2.99414006813639,
+      "price10": 11510216.36120402,
+      "clinicalPatients": 1058,
+      "resourceHouseholds": 846.4000000000001,
+      "incrementalRetainedJobHouseholds": 0.75,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {\"C\":3446320}"
+    },
+    {
+      "id": "program-only-cost-not-allocated",
+      "label": "program-only-cost-not-allocated",
+      "overrides": {
+        "C": 3231072
+      },
+      "costUSD": 3231072,
+      "allPopulationQalys": 3.3541150000000006,
+      "editionQalys": 3.1864092500000005,
+      "incomePathways": [
+        {
+          "id": "incremental-retained-job-households",
+          "people": 0.75,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 490,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Five historical successful jobs are a descriptive envelope; causal share and retention are judgments, with joint full access costs.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 845.6500000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full incremental time and access burden even when health and employment benefits fail; no patient fee.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.19226918186361058,
+      "totalEquivalent": 2.99414006813639,
+      "price10": 10791318.79762419,
+      "clinicalPatients": 1058,
+      "resourceHouseholds": 846.4000000000001,
+      "incrementalRetainedJobHouseholds": 0.75,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {\"C\":3231072}"
+    },
+    {
+      "id": "asset-transfer-loss-inclusive",
+      "label": "asset-transfer-loss-inclusive",
+      "overrides": {
+        "C": 4347199
+      },
+      "costUSD": 4347199,
+      "allPopulationQalys": 3.3541150000000006,
+      "editionQalys": 3.1864092500000005,
+      "incomePathways": [
+        {
+          "id": "incremental-retained-job-households",
+          "people": 0.75,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 490,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Five historical successful jobs are a descriptive envelope; causal share and retention are judgments, with joint full access costs.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 845.6500000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full incremental time and access burden even when health and employment benefits fail; no patient fee.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.19226918186361058,
+      "totalEquivalent": 2.99414006813639,
+      "price10": 14519023.496137839,
+      "clinicalPatients": 1058,
+      "resourceHouseholds": 846.4000000000001,
+      "incrementalRetainedJobHouseholds": 0.75,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {\"C\":4347199}"
+    },
+    {
+      "id": "unrecognized-resource-cost",
+      "label": "unrecognized-resource-cost",
+      "overrides": {
+        "C": 5370516.25
+      },
+      "costUSD": 5370516.25,
+      "allPopulationQalys": 3.3541150000000006,
+      "editionQalys": 3.1864092500000005,
+      "incomePathways": [
+        {
+          "id": "incremental-retained-job-households",
+          "people": 0.75,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 490,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Five historical successful jobs are a descriptive envelope; causal share and retention are judgments, with joint full access costs.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 845.6500000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full incremental time and access burden even when health and employment benefits fail; no patient fee.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.19226918186361058,
+      "totalEquivalent": 2.99414006813639,
+      "price10": 17936756.891078617,
+      "clinicalPatients": 1058,
+      "resourceHouseholds": 846.4000000000001,
+      "incrementalRetainedJobHouseholds": 0.75,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {\"C\":5370516.25}"
+    },
+    {
+      "id": "housing-resource-illustration-not-measured",
+      "label": "housing-resource-illustration-not-measured",
+      "overrides": {
+        "cash": 50,
+        "externalCost": 50
+      },
+      "costUSD": 4296413,
+      "allPopulationQalys": 3.3541150000000006,
+      "editionQalys": 3.1864092500000005,
+      "incomePathways": [
+        {
+          "id": "incremental-retained-job-households",
+          "people": 0.75,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 515,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Five historical successful jobs are a descriptive envelope; causal share and retention are judgments, with joint full access costs.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 845.6500000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 15,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full incremental time and access burden even when health and employment benefits fail; no patient fee.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "distinct-outside-payer",
+          "people": 10000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -5.025499999999999,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Distinct global payer/provider loss for local recipients; no repeat of recognized in-kind resources already in budget.",
+          "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+          "sourceIds": [
+            "annual",
+            "protocol",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -0.19236804329615792,
+      "totalEquivalent": 2.9940412067038427,
+      "price10": 14349879.321567342,
+      "clinicalPatients": 1058,
+      "resourceHouseholds": 846.4000000000001,
+      "incrementalRetainedJobHouseholds": 0.75,
+      "assumptions": "Conditional historical service-scale annual reference, not causal recovery or current marginal gift capacity. {\"cash\":50,\"externalCost\":50}"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+import assert from 'node:assert/strict';import{calculate,planning}from'./rams-current-20261004-model.mjs';
+const near=(a,b)=>assert.ok(Math.abs(a-b)<1e-10*Math.max(1,Math.abs(b)));
+const r=calculate();near(r.healthHealthyYears,.057*.25*.5);near(r.incomeHealthyYearEquivalent,.5*.5*Math.log1p(-60/24000));
+near(r.diagnosticHealthOnlyCostPer10USD,4210526.315789474);
+assert.equal(calculate({causedCourseExposure:0}).combinedHealthyYearEquivalent,0);
+near(calculate({referenceQalys:-.057,positiveTransfer:0,households:[]}).healthHealthyYears,-.057*.5);
+assert.equal(calculate({referenceQalys:0}).costPer10CombinedUSD,null);
+near(calculate({sfShare:.4}).combinedHealthyYearEquivalent,r.combinedHealthyYearEquivalent*.4);
+assert.equal(calculate({sfShare:0}).costPer10CombinedUSD,null);
+assert.throws(()=>calculate({sfShare:.8,bayShare:.5}),/within/);
+near(calculate({edition:'bay',sfShare:.4,bayShare:.8}).combinedHealthyYearEquivalent,r.combinedHealthyYearEquivalent*.8);
+near(calculate({delayYears:2}).combinedHealthyYearEquivalent,r.combinedHealthyYearEquivalent/1.03**2);
+near(calculate({costPerOfferedCourseUSD:6000}).costPer10CombinedUSD,r.costPer10CombinedUSD*2);
+assert.ok(calculate({causedCourseExposure:0,independentGiftHarmHealthyYears:-.001}).combinedHealthyYearEquivalent<0);
+const h={id:'shared',people:2,annualNetConsumptionUSD:24000,years:1,rows:[{id:'net-recipient-pay',amountUSD:200,independentCredit:.5},{id:'caregiver-loss',amountUSD:-100,independentCredit:0}]};
+near(calculate({households:[h]}).incomeHealthyYearEquivalent,0);
+assert.throws(()=>calculate({households:[h,h]}),/household/);
+assert.throws(()=>calculate({households:[{...h,rows:[{id:'loss',amountUSD:-24000,independentCredit:0}]}]}),/domain/);
+assert.throws(()=>calculate({households:[{...h,rows:[{id:'unknown',amountUSD:null,independentCredit:0}]}]}),/cash/);
+const ledger=planning.households[0];
+const earning=calculate({households:[{...ledger,rows:[...ledger.rows,{id:'net-pay',amountUSD:200,independentCredit:.5}]}]});
+const zeroCredit=calculate({households:[{...ledger,rows:[...ledger.rows,{id:'net-pay',amountUSD:200,independentCredit:0}]}]});
+const fees=calculate({households:[{...ledger,rows:[...ledger.rows,{id:'recipient-fees',amountUSD:-150,independentCredit:0}]}]});
+assert.ok(earning.combinedHealthyYearEquivalent>r.combinedHealthyYearEquivalent);
+near(zeroCredit.combinedHealthyYearEquivalent,r.combinedHealthyYearEquivalent);
+assert.ok(fees.combinedHealthyYearEquivalent<r.combinedHealthyYearEquivalent);
+console.log(JSON.stringify({checks:'core plus positive-pay, zero-credit and fee/travel sensitivities passed',planning:r,sensitivities:{netPay200_creditHalf:earning,netPay200_creditZero:zeroCredit,addedRecipientFees150:fees}},null,2));
+

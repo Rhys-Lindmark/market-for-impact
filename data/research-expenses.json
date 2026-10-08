@@ -2,6 +2,8 @@
   "updated": "2026-09-12",
   "definition": "Average reported annual organization expenses over the latest three consecutive available fiscal years, including programs, administration and fundraising. Not a program budget or room for more funding; donated goods may be included.",
   "organizations": {
+    "vision-to-learn": {"entity":"Vision To Learn","ein":"453457853","basis":"Three original Form 990 returns for fiscal years ending June 30; national legal entity, not a marginal course budget.","note":"Annual spending includes program, administration and fundraising; noncash contribution revenue is not a verified cash-expense reconciliation.","years":[{"year":2025,"expenses":25497887,"source":"https://projects.propublica.org/nonprofits/full_text/202621359349308582/IRS990","fullYear":true},{"year":2024,"expenses":24131355,"source":"https://projects.propublica.org/nonprofits/full_text/202511289349304146/IRS990","fullYear":true},{"year":2023,"expenses":19589987,"source":"https://projects.propublica.org/nonprofits/full_text/202401359349308510/IRS990","fullYear":true}]},
+    "nurse-family-partnership": {"entity":"Changent / Nurse-Family Partnership","ein":"200234163","basis":"Latest three original Form 990 returns for fiscal years ending September 30; national support organization, not affiliate delivery budgets.","note":"Average annual expenses are separate from conditional cost-effectiveness and marginal funding capacity.","years":[{"year":2025,"expenses":31183784,"source":"https://projects.propublica.org/nonprofits/full_text/202612169349300431/IRS990","fullYear":true},{"year":2024,"expenses":30712013,"source":"https://projects.propublica.org/nonprofits/full_text/202531999349300748/IRS990","fullYear":true},{"year":2023,"expenses":40030887,"source":"https://projects.propublica.org/nonprofits/full_text/202402279349302750/IRS990","fullYear":true}]},
     "acknowledge-alliance": {
       "entity": "Acknowledge Alliance",
       "ein": "770393676",
@@ -670,7 +672,8 @@
           "expenses": 82747,
           "source": "https://projects.propublica.org/nonprofits/full_text/202401359349201805/IRS990EZ"
         }
-      ]
+      ],
+      "note": "FY2023 and FY2024 original returns use cash accounting; FY2025 uses accrual. The displayed $88,845 mean is an unadjusted arithmetic average of reported expenses, not a reconciled comparable cash-spending series or verified expansion budget."
     },
     "roots-community-health": {
       "entity": "Roots Community Health Center",
@@ -1248,28 +1251,27 @@
     },
     "huckleberry-youth-programs": {
       "entity": "Huckleberry Youth Programs Inc",
-      "basis": "Whole legal entity Form 990 Part IX total functional expenses; latest original reconstructed filings checked, fiscal-end year from printed reporting dates. Older fallback rows from IRS extracted API.",
-      "note": "Latest original filings checked; ProPublica extracted API lags these original returns.",
       "ein": "941687559",
+      "basis": "Comparable original audited June-fiscal-year total expenses, not mixed with Form990 expense convention.",
+      "note": "FY2023 previouslyaudited comparative in original FY2024 audit, not separately opened standalone2023 report. Separate IRS prior kept in huckleberry-finance-prior-20261004.json; no originalFY2025 Form990 opened in this pass.",
       "years": [
         {
           "year": 2025,
-          "expenses": 9320865,
-          "source": "https://projects.propublica.org/nonprofits/full_text/202640699349301324/IRS990",
+          "expenses": 9377959,
+          "source": "https://www.huckleberryyouth.org/wp-content/uploads/2026/02/101052_Huckleberry-Youth-Program_6.30.25-YE-FINAL-FS.pdf",
           "fiscalEnd": "202506"
         },
         {
           "year": 2024,
-          "expenses": 8764072,
-          "source": "https://projects.propublica.org/nonprofits/full_text/202501299349303445/IRS990",
+          "expenses": 8816252,
+          "source": "https://www.huckleberryyouth.org/wp-content/uploads/2025/05/101052.AUD_Huckleberry-Youth-Programs-Inc._6.30.24-YE-FINAL-FS.pdf",
           "fiscalEnd": "202406"
         },
         {
           "year": 2023,
-          "expenses": 7757013,
-          "source": "https://projects.propublica.org/nonprofits/api/v2/organizations/941687559.json",
-          "fiscalEnd": "202306",
-          "pdf": null
+          "expenses": 7839024,
+          "source": "https://www.huckleberryyouth.org/wp-content/uploads/2025/05/101052.AUD_Huckleberry-Youth-Programs-Inc._6.30.24-YE-FINAL-FS.pdf",
+          "fiscalEnd": "202306"
         }
       ]
     },
@@ -1351,33 +1353,7 @@
         }
       ]
     },
-    "self-help-for-the-elderly": {
-      "entity": "Self-help For The Elderly",
-      "basis": "Whole legal entity Form 990 Part IX total functional expenses; latest original reconstructed filings checked, fiscal-end year from printed reporting dates. Older fallback rows from IRS extracted API.",
-      "note": "Latest original filings checked; ProPublica extracted API lags these original returns.",
-      "ein": "941750717",
-      "years": [
-        {
-          "year": 2025,
-          "expenses": 33282597,
-          "source": "https://projects.propublica.org/nonprofits/full_text/202601199349302215/IRS990",
-          "fiscalEnd": "202506"
-        },
-        {
-          "year": 2024,
-          "expenses": 33179167,
-          "source": "https://projects.propublica.org/nonprofits/full_text/202530939349301818/IRS990",
-          "fiscalEnd": "202406"
-        },
-        {
-          "year": 2023,
-          "expenses": 30668421,
-          "source": "https://projects.propublica.org/nonprofits/api/v2/organizations/941750717.json",
-          "fiscalEnd": "202306",
-          "pdf": "https://projects.propublica.org/nonprofits/download-filing?path=download990pdf_05_2024_prefixes_92-94%2F941750717_202306_990_2024050722385909.pdf"
-        }
-      ]
-    },
+    "self-help-for-the-elderly": {"entity":"Self-help For The Elderly","basis":"FY June 2024 original organization-hosted Form 2023 verified; FY2023 and FY2025 IRS-derived extracted totals only.","note":"Original FY2023/FY2025 retrieval failed in bounded checks; those years are not original-return verified. Annual organization expenses are not marginal course costs.","ein":"941750717","years":[{"year":2025,"expenses":33282597,"source":"https://projects.propublica.org/nonprofits/organizations/941750717","fiscalEnd":"202506"},{"year":2024,"expenses":33179167,"source":"https://www.selfhelpelderly.org/wp-content/uploads/2025/05/SHE-2023-Form-990.pdf","fiscalEnd":"202406"},{"year":2023,"expenses":30668421,"source":"https://projects.propublica.org/nonprofits/organizations/941750717","fiscalEnd":"202306","pdf":"https://projects.propublica.org/nonprofits/download-filing?path=download990pdf_05_2024_prefixes_92-94%2F941750717_202306_990_2024050722385909.pdf"}]},
     "mission-neighborhood-centers": {
       "entity": "Mission Neighborhood Centers Inc",
       "basis": "Whole legal entity Form 990 Part IX total functional expenses; latest original reconstructed filings checked, fiscal-end year from printed reporting dates. Older fallback rows from IRS extracted API.",
@@ -1468,19 +1444,19 @@
         {
           "year": 2025,
           "expenses": 6505120,
-          "source": "https://projects.propublica.org/nonprofits/full_text/202631909349301423/IRS990",
+          "source": "https://www.newdoor.org/wp-content/uploads/2026/07/2025_Form-990_Public-Disclosure-Copy_NDV.pdf",
           "fiscalEnd": "202512"
         },
         {
           "year": 2024,
           "expenses": 6211850,
-          "source": "https://projects.propublica.org/nonprofits/full_text/202543229349300239/IRS990",
+          "source": "https://www.newdoor.org/wp-content/uploads/2025/11/2024_Forms-990_Public-Disclosure-Copy_NDV.pdf",
           "fiscalEnd": "202412"
         },
         {
           "year": 2023,
           "expenses": 5050598,
-          "source": "https://projects.propublica.org/nonprofits/full_text/202432289349303783/IRS990",
+          "source": "https://www.newdoor.org/wp-content/uploads/2024/08/2023_FORMS-990_PUBLIC-DISCLOSURE-COPY_NDV.pdf",
           "fiscalEnd": "202312"
         }
       ]

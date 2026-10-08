@@ -1,0 +1,2822 @@
+{
+  "central": {
+    "inputs": {
+      "C": 43421735,
+      "N": 25111,
+      "clinicalN": 12400,
+      "clinicalResponse": 0.3,
+      "unique": 0.8,
+      "b": 0.2,
+      "completion": 1,
+      "q": 0.02,
+      "T": 2,
+      "g": 0.5,
+      "delay": 1,
+      "discount": 0.03,
+      "success": 0.25,
+      "medicalGain": 100,
+      "workGain": 500,
+      "transferGain": 2000,
+      "overlap": 0.5,
+      "cost": 50,
+      "baseline": 20000,
+      "harm": 0.0005,
+      "payerLoss": 1000,
+      "payerPeople": 100000,
+      "payerBaseline": 50000,
+      "externalCost": 0,
+      "resourceYears": 1
+    },
+    "costUSD": 43421735,
+    "exposed": 20088.800000000003,
+    "union": 4017.7600000000007,
+    "clinicalPeople": 595.1999999999999,
+    "allPopulationQalys": 13.026098595532092,
+    "editionQalys": 6.513049297766046,
+    "incomePathways": [
+      {
+        "id": "changed-households",
+        "people": 1004.4400000000002,
+        "annualIncomeBeforeUSD": 20000,
+        "annualIncomeGainUSD": 1250,
+        "years": 1,
+        "editionShare": 0.5,
+        "delayYears": 1,
+        "discountRate": 0.03,
+        "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+        "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+        "sourceIds": [
+          "services",
+          "finance",
+          "cg-cost"
+        ]
+      },
+      {
+        "id": "other-exposed",
+        "people": 19084.360000000004,
+        "annualIncomeBeforeUSD": 20000,
+        "annualIncomeGainUSD": -50,
+        "years": 1,
+        "editionShare": 0.5,
+        "delayYears": 1,
+        "discountRate": 0.03,
+        "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+        "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+        "sourceIds": [
+          "services",
+          "finance",
+          "cg-cost"
+        ]
+      },
+      {
+        "id": "distinct-payer-provider-households",
+        "people": 100000,
+        "annualIncomeBeforeUSD": 50000,
+        "annualIncomeGainUSD": -5.022200000000001,
+        "years": 1,
+        "editionShare": 1,
+        "delayYears": 1,
+        "discountRate": 0.03,
+        "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+        "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+        "sourceIds": [
+          "services",
+          "finance",
+          "cg-cost"
+        ]
+      }
+    ],
+    "incomeEquivalent": -1.690934961026711,
+    "incomeUnknown": false,
+    "totalEquivalent": 4.822114336739335,
+    "price10": 90047087.16500767,
+    "costPer10Qalys": 90047087.16500767,
+    "incomeEquivalentYears": -1.690934961026711,
+    "combinedEquivalentYears": 4.822114336739335
+  },
+  "burdenOnly": {
+    "inputs": {
+      "C": 43421735,
+      "N": 25111,
+      "clinicalN": 6277.75,
+      "clinicalResponse": 0.3,
+      "unique": 0.8,
+      "b": 0.3,
+      "completion": 1,
+      "q": 0.02,
+      "T": 2,
+      "g": 0.5,
+      "delay": 1,
+      "discount": 0.03,
+      "success": 0.25,
+      "medicalGain": 100,
+      "workGain": 500,
+      "transferGain": 2000,
+      "overlap": 0.5,
+      "cost": 50,
+      "baseline": 20000,
+      "harm": 0.0005,
+      "payerLoss": 1000,
+      "payerPeople": 100000,
+      "payerBaseline": 50000,
+      "externalCost": 0,
+      "resourceYears": 1
+    },
+    "costUSD": 43421735,
+    "exposed": 20088.800000000003,
+    "union": 6026.64,
+    "clinicalPeople": 451.998,
+    "allPopulationQalys": 7.545844848713356,
+    "editionQalys": 3.772922424356678,
+    "incomePathways": [
+      {
+        "id": "changed-households",
+        "people": 1506.66,
+        "annualIncomeBeforeUSD": 20000,
+        "annualIncomeGainUSD": 1250,
+        "years": 1,
+        "editionShare": 0.5,
+        "delayYears": 1,
+        "discountRate": 0.03,
+        "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+        "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+        "sourceIds": [
+          "services",
+          "finance",
+          "cg-cost"
+        ]
+      },
+      {
+        "id": "other-exposed",
+        "people": 18582.140000000003,
+        "annualIncomeBeforeUSD": 20000,
+        "annualIncomeGainUSD": -50,
+        "years": 1,
+        "editionShare": 0.5,
+        "delayYears": 1,
+        "discountRate": 0.03,
+        "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+        "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+        "sourceIds": [
+          "services",
+          "finance",
+          "cg-cost"
+        ]
+      },
+      {
+        "id": "distinct-payer-provider-households",
+        "people": 100000,
+        "annualIncomeBeforeUSD": 50000,
+        "annualIncomeGainUSD": -7.5333,
+        "years": 1,
+        "editionShare": 1,
+        "delayYears": 1,
+        "discountRate": 0.03,
+        "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+        "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+        "sourceIds": [
+          "services",
+          "finance",
+          "cg-cost"
+        ]
+      }
+    ],
+    "incomeEquivalent": 3.5659481316138244,
+    "incomeUnknown": false,
+    "totalEquivalent": 7.3388705559705025,
+    "price10": 59166781.412535556,
+    "costPer10Qalys": 59166781.412535556,
+    "incomeEquivalentYears": 3.5659481316138244,
+    "combinedEquivalentYears": 7.3388705559705025
+  },
+  "scenarios": [
+    {
+      "id": "central",
+      "label": "central",
+      "overrides": {},
+      "costUSD": 43421735,
+      "exposed": 20088.800000000003,
+      "union": 4017.7600000000007,
+      "clinicalPeople": 595.1999999999999,
+      "allPopulationQalys": 13.026098595532092,
+      "editionQalys": 6.513049297766046,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 1004.4400000000002,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 1250,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 19084.360000000004,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -5.022200000000001,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -1.690934961026711,
+      "incomeUnknown": false,
+      "totalEquivalent": 4.822114336739335,
+      "price10": 90047087.16500767,
+      "costPer10Qalys": 90047087.16500767,
+      "incomeEquivalentYears": -1.690934961026711,
+      "combinedEquivalentYears": 4.822114336739335,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "clinical-null",
+      "label": "clinical null",
+      "overrides": {
+        "q": 0
+      },
+      "costUSD": 43421735,
+      "exposed": 20088.800000000003,
+      "union": 4017.7600000000007,
+      "clinicalPeople": 595.1999999999999,
+      "allPopulationQalys": -9.751844660194175,
+      "editionQalys": -4.8759223300970875,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 1004.4400000000002,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 1250,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 19084.360000000004,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -5.022200000000001,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -1.690934961026711,
+      "incomeUnknown": false,
+      "totalEquivalent": -6.566857291123799,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": -1.690934961026711,
+      "combinedEquivalentYears": -6.566857291123799,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "financial-only",
+      "label": "financial only",
+      "overrides": {
+        "q": 0
+      },
+      "costUSD": 43421735,
+      "exposed": 20088.800000000003,
+      "union": 4017.7600000000007,
+      "clinicalPeople": 595.1999999999999,
+      "allPopulationQalys": -9.751844660194175,
+      "editionQalys": -4.8759223300970875,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 1004.4400000000002,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 1250,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 19084.360000000004,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -5.022200000000001,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -1.690934961026711,
+      "incomeUnknown": false,
+      "totalEquivalent": -6.566857291123799,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": -1.690934961026711,
+      "combinedEquivalentYears": -6.566857291123799,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "current-cost-unknown",
+      "label": "current cost unknown",
+      "overrides": {
+        "costUnknown": true
+      },
+      "costUSD": null,
+      "exposed": 20088.800000000003,
+      "union": 4017.7600000000007,
+      "clinicalPeople": 595.1999999999999,
+      "allPopulationQalys": 13.026098595532092,
+      "editionQalys": 6.513049297766046,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 1004.4400000000002,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 1250,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 19084.360000000004,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -5.022200000000001,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -1.690934961026711,
+      "incomeUnknown": false,
+      "totalEquivalent": 4.822114336739335,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": -1.690934961026711,
+      "combinedEquivalentYears": 4.822114336739335,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "full-unknown",
+      "label": "full unknown",
+      "overrides": {
+        "clinicalUnknown": true,
+        "incomeUnknown": true,
+        "costUnknown": true
+      },
+      "costUSD": null,
+      "exposed": 20088.800000000003,
+      "union": 4017.7600000000007,
+      "clinicalPeople": 595.1999999999999,
+      "allPopulationQalys": null,
+      "editionQalys": null,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 1004.4400000000002,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 1250,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 19084.360000000004,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -5.022200000000001,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -1.690934961026711,
+      "incomeUnknown": true,
+      "totalEquivalent": null,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": -1.690934961026711,
+      "combinedEquivalentYears": null,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "zero-expansion",
+      "label": "zero expansion",
+      "overrides": {
+        "b": 0
+      },
+      "costUSD": 43421735,
+      "exposed": 20088.800000000003,
+      "union": 0,
+      "clinicalPeople": 0,
+      "allPopulationQalys": -9.751844660194175,
+      "editionQalys": -4.8759223300970875,
+      "incomePathways": [
+        {
+          "id": "other-exposed",
+          "people": 20088.800000000003,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": 0,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -12.205068525664936,
+      "incomeUnknown": false,
+      "totalEquivalent": -17.080990855762025,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": -12.205068525664936,
+      "combinedEquivalentYears": -17.080990855762025,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "true-zero",
+      "label": "true zero",
+      "overrides": {
+        "q": 0,
+        "harm": 0,
+        "medicalGain": 0,
+        "workGain": 0,
+        "transferGain": 0,
+        "cost": 0,
+        "payerLoss": 0
+      },
+      "costUSD": 43421735,
+      "exposed": 20088.800000000003,
+      "union": 4017.7600000000007,
+      "clinicalPeople": 595.1999999999999,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 1004.4400000000002,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 0,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 19084.360000000004,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 0,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0,
+      "incomeUnknown": false,
+      "totalEquivalent": 0,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": 0,
+      "combinedEquivalentYears": 0,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "adverse",
+      "label": "adverse",
+      "overrides": {
+        "q": -0.03,
+        "medicalGain": -300,
+        "workGain": -300,
+        "harm": 0.005
+      },
+      "costUSD": 43421735,
+      "exposed": 20088.800000000003,
+      "union": 4017.7600000000007,
+      "clinicalPeople": 595.1999999999999,
+      "allPopulationQalys": -131.68536148553116,
+      "editionQalys": -65.84268074276558,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 1004.4400000000002,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 350,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 19084.360000000004,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -5.022200000000001,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -12.241451671823103,
+      "incomeUnknown": false,
+      "totalEquivalent": -78.08413241458868,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": -12.241451671823103,
+      "combinedEquivalentYears": -78.08413241458868,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "positive-net-access-resources",
+      "label": "positive net access resources",
+      "overrides": {
+        "workGain": 500
+      },
+      "costUSD": 43421735,
+      "exposed": 20088.800000000003,
+      "union": 4017.7600000000007,
+      "clinicalPeople": 595.1999999999999,
+      "allPopulationQalys": 13.026098595532092,
+      "editionQalys": 6.513049297766046,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 1004.4400000000002,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 1250,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 19084.360000000004,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -5.022200000000001,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -1.690934961026711,
+      "incomeUnknown": false,
+      "totalEquivalent": 4.822114336739335,
+      "price10": 90047087.16500767,
+      "costPer10Qalys": 90047087.16500767,
+      "incomeEquivalentYears": -1.690934961026711,
+      "combinedEquivalentYears": 4.822114336739335,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "no-resource-success",
+      "label": "no resource success",
+      "overrides": {
+        "success": 0
+      },
+      "costUSD": 43421735,
+      "exposed": 20088.800000000003,
+      "union": 4017.7600000000007,
+      "clinicalPeople": 595.1999999999999,
+      "allPopulationQalys": 13.026098595532092,
+      "editionQalys": 6.513049297766046,
+      "incomePathways": [
+        {
+          "id": "other-exposed",
+          "people": 20088.800000000003,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": 0,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -12.205068525664936,
+      "incomeUnknown": false,
+      "totalEquivalent": -5.69201922789889,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": -12.205068525664936,
+      "combinedEquivalentYears": -5.69201922789889,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "no-gains",
+      "label": "no gains",
+      "overrides": {
+        "medicalGain": 0,
+        "workGain": 0,
+        "transferGain": 0
+      },
+      "costUSD": 43421735,
+      "exposed": 20088.800000000003,
+      "union": 4017.7600000000007,
+      "clinicalPeople": 595.1999999999999,
+      "allPopulationQalys": 13.026098595532092,
+      "editionQalys": 6.513049297766046,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 1004.4400000000002,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 19084.360000000004,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -5.022200000000001,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -17.081235750732247,
+      "incomeUnknown": false,
+      "totalEquivalent": -10.568186452966202,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": -17.081235750732247,
+      "combinedEquivalentYears": -10.568186452966202,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "negative-resource-overlap-zero",
+      "label": "negative resource overlap zero",
+      "overrides": {
+        "medicalGain": -300,
+        "transferGain": 0,
+        "overlap": 0
+      },
+      "costUSD": 43421735,
+      "exposed": 20088.800000000003,
+      "union": 4017.7600000000007,
+      "clinicalPeople": 595.1999999999999,
+      "allPopulationQalys": 13.026098595532092,
+      "editionQalys": 6.513049297766046,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 1004.4400000000002,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -350,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 19084.360000000004,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -5.022200000000001,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -20.775186972793826,
+      "incomeUnknown": false,
+      "totalEquivalent": -14.26213767502778,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": -20.775186972793826,
+      "combinedEquivalentYears": -14.26213767502778,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "negative-resource-overlap-one",
+      "label": "negative resource overlap one",
+      "overrides": {
+        "medicalGain": -300,
+        "transferGain": 0,
+        "overlap": 1
+      },
+      "costUSD": 43421735,
+      "exposed": 20088.800000000003,
+      "union": 4017.7600000000007,
+      "clinicalPeople": 595.1999999999999,
+      "allPopulationQalys": 13.026098595532092,
+      "editionQalys": 6.513049297766046,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 1004.4400000000002,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 150,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 19084.360000000004,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -5.022200000000001,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -14.64933412430705,
+      "incomeUnknown": false,
+      "totalEquivalent": -8.136284826541004,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": -14.64933412430705,
+      "combinedEquivalentYears": -8.136284826541004,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "mixed-sign",
+      "label": "mixed sign",
+      "overrides": {
+        "medicalGain": 300,
+        "workGain": -300
+      },
+      "costUSD": 43421735,
+      "exposed": 20088.800000000003,
+      "union": 4017.7600000000007,
+      "clinicalPeople": 595.1999999999999,
+      "allPopulationQalys": 13.026098595532092,
+      "editionQalys": 6.513049297766046,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 1004.4400000000002,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 800,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 19084.360000000004,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -5.022200000000001,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -6.909124771128155,
+      "incomeUnknown": false,
+      "totalEquivalent": -0.39607547336210924,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": -6.909124771128155,
+      "combinedEquivalentYears": -0.39607547336210924,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "payer-loss-300",
+      "label": "payer loss 300",
+      "overrides": {
+        "payerLoss": 300
+      },
+      "costUSD": 43421735,
+      "exposed": 20088.800000000003,
+      "union": 4017.7600000000007,
+      "clinicalPeople": 595.1999999999999,
+      "allPopulationQalys": 13.026098595532092,
+      "editionQalys": 6.513049297766046,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 1004.4400000000002,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 1250,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 19084.360000000004,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -1.5066600000000003,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 1.722433525497308,
+      "incomeUnknown": false,
+      "totalEquivalent": 8.235482823263354,
+      "price10": 52725184.341765046,
+      "costPer10Qalys": 52725184.341765046,
+      "incomeEquivalentYears": 1.722433525497308,
+      "combinedEquivalentYears": 8.235482823263354,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "external-provider-cost",
+      "label": "external provider cost",
+      "overrides": {
+        "externalCost": 100
+      },
+      "costUSD": 43421735,
+      "exposed": 20088.800000000003,
+      "union": 4017.7600000000007,
+      "clinicalPeople": 595.1999999999999,
+      "allPopulationQalys": 13.026098595532092,
+      "editionQalys": 6.513049297766046,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 1004.4400000000002,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 1250,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 19084.360000000004,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -15.066600000000003,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -11.444739076230608,
+      "incomeUnknown": false,
+      "totalEquivalent": -4.931689778464562,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": -11.444739076230608,
+      "combinedEquivalentYears": -4.931689778464562,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "annual-full-response",
+      "label": "annual full response",
+      "overrides": {
+        "b": 1
+      },
+      "costUSD": 43421735,
+      "exposed": 20088.800000000003,
+      "union": 20088.800000000003,
+      "clinicalPeople": 2976,
+      "allPopulationQalys": 104.13787161843717,
+      "editionQalys": 52.06893580921859,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 5022.200000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 1250,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 15066.600000000002,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -25.111000000000004,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 40.36069975760811,
+      "incomeUnknown": false,
+      "totalEquivalent": 92.4296355668267,
+      "price10": 4697815.233579067,
+      "costPer10Qalys": 4697815.233579067,
+      "incomeEquivalentYears": 40.36069975760811,
+      "combinedEquivalentYears": 92.4296355668267,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "half-geography",
+      "label": "half geography",
+      "overrides": {
+        "g": 0.5
+      },
+      "costUSD": 43421735,
+      "exposed": 20088.800000000003,
+      "union": 4017.7600000000007,
+      "clinicalPeople": 595.1999999999999,
+      "allPopulationQalys": 13.026098595532092,
+      "editionQalys": 6.513049297766046,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 1004.4400000000002,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 1250,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 19084.360000000004,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -5.022200000000001,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -1.690934961026711,
+      "incomeUnknown": false,
+      "totalEquivalent": 4.822114336739335,
+      "price10": 90047087.16500767,
+      "costPer10Qalys": 90047087.16500767,
+      "incomeEquivalentYears": -1.690934961026711,
+      "combinedEquivalentYears": 4.822114336739335,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "all-unique",
+      "label": "all unique",
+      "overrides": {
+        "unique": 1
+      },
+      "costUSD": 43421735,
+      "exposed": 25111,
+      "union": 5022.200000000001,
+      "clinicalPeople": 744,
+      "allPopulationQalys": 16.28262324441512,
+      "editionQalys": 8.14131162220756,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 1255.5500000000002,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 1250,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 23855.45,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -6.277750000000001,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -2.1137452373680237,
+      "incomeUnknown": false,
+      "totalEquivalent": 6.027566384839536,
+      "price10": 72038584.44299151,
+      "costPer10Qalys": 72038584.44299151,
+      "incomeEquivalentYears": -2.1137452373680237,
+      "combinedEquivalentYears": 6.027566384839536,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "zero-resource-duration",
+      "label": "zero resource duration",
+      "overrides": {
+        "resourceYears": 0
+      },
+      "costUSD": 43421735,
+      "exposed": 20088.800000000003,
+      "union": 4017.7600000000007,
+      "clinicalPeople": 595.1999999999999,
+      "allPopulationQalys": 13.026098595532092,
+      "editionQalys": 6.513049297766046,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 1004.4400000000002,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 19084.360000000004,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": 0,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -12.205068525664938,
+      "incomeUnknown": false,
+      "totalEquivalent": -5.692019227898892,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": -12.205068525664938,
+      "combinedEquivalentYears": -5.692019227898892,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "two-year-health",
+      "label": "two year health",
+      "overrides": {
+        "T": 2
+      },
+      "costUSD": 43421735,
+      "exposed": 20088.800000000003,
+      "union": 4017.7600000000007,
+      "clinicalPeople": 595.1999999999999,
+      "allPopulationQalys": 13.026098595532092,
+      "editionQalys": 6.513049297766046,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 1004.4400000000002,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 1250,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 19084.360000000004,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -5.022200000000001,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -1.690934961026711,
+      "incomeUnknown": false,
+      "totalEquivalent": 4.822114336739335,
+      "price10": 90047087.16500767,
+      "costPer10Qalys": 90047087.16500767,
+      "incomeEquivalentYears": -1.690934961026711,
+      "combinedEquivalentYears": 4.822114336739335,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "full-volunteer-cost-hypothesis",
+      "label": "full volunteer cost hypothesis",
+      "overrides": {
+        "C": 50000000
+      },
+      "costUSD": 50000000,
+      "exposed": 20088.800000000003,
+      "union": 4017.7600000000007,
+      "clinicalPeople": 595.1999999999999,
+      "allPopulationQalys": 13.026098595532092,
+      "editionQalys": 6.513049297766046,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 1004.4400000000002,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 1250,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 19084.360000000004,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -5.022200000000001,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -1.690934961026711,
+      "incomeUnknown": false,
+      "totalEquivalent": 4.822114336739335,
+      "price10": 103688955.73266207,
+      "costPer10Qalys": 103688955.73266207,
+      "incomeEquivalentYears": -1.690934961026711,
+      "combinedEquivalentYears": 4.822114336739335,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "weak-clinical",
+      "label": "weak clinical",
+      "overrides": {
+        "clinicalResponse": 0.1,
+        "q": 0.01
+      },
+      "costUSD": 43421735,
+      "exposed": 20088.800000000003,
+      "union": 4017.7600000000007,
+      "clinicalPeople": 198.4,
+      "allPopulationQalys": -5.955520784239797,
+      "editionQalys": -2.9777603921198983,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 1004.4400000000002,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 1250,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 19084.360000000004,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -5.022200000000001,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -1.690934961026711,
+      "incomeUnknown": false,
+      "totalEquivalent": -4.668695353146609,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": -1.690934961026711,
+      "combinedEquivalentYears": -4.668695353146609,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "full-transfer-incidence",
+      "label": "full transfer incidence",
+      "overrides": {
+        "payerLoss": 2000
+      },
+      "costUSD": 43421735,
+      "exposed": 20088.800000000003,
+      "union": 4017.7600000000007,
+      "clinicalPeople": 595.1999999999999,
+      "allPopulationQalys": 13.026098595532092,
+      "editionQalys": 6.513049297766046,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 1004.4400000000002,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 1250,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 19084.360000000004,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -10.044400000000001,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -6.567592041640172,
+      "incomeUnknown": false,
+      "totalEquivalent": -0.0545427438741255,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": -6.567592041640172,
+      "combinedEquivalentYears": -0.0545427438741255,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "participant-work-loss",
+      "label": "participant work loss",
+      "overrides": {
+        "workGain": -500,
+        "cost": 100
+      },
+      "costUSD": 43421735,
+      "exposed": 20088.800000000003,
+      "union": 4017.7600000000007,
+      "clinicalPeople": 595.1999999999999,
+      "allPopulationQalys": 13.026098595532092,
+      "editionQalys": 6.513049297766046,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 1004.4400000000002,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 450,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 19084.360000000004,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -5.022200000000001,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -22.67028155445692,
+      "incomeUnknown": false,
+      "totalEquivalent": -16.157232256690875,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": -22.67028155445692,
+      "combinedEquivalentYears": -16.157232256690875,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "distinct-work-displacement",
+      "label": "distinct work displacement",
+      "overrides": {
+        "payerLoss": 1500
+      },
+      "costUSD": 43421735,
+      "exposed": 20088.800000000003,
+      "union": 4017.7600000000007,
+      "clinicalPeople": 595.1999999999999,
+      "allPopulationQalys": 13.026098595532092,
+      "editionQalys": 6.513049297766046,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 1004.4400000000002,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 1250,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 19084.360000000004,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -7.533300000000001,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -4.129202263238943,
+      "incomeUnknown": false,
+      "totalEquivalent": 2.3838470345271032,
+      "price10": 182149837.51511475,
+      "costPer10Qalys": 182149837.51511475,
+      "incomeEquivalentYears": -4.129202263238943,
+      "combinedEquivalentYears": 2.3838470345271032,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "case-failure-with-burdens",
+      "label": "case failure with burdens",
+      "overrides": {
+        "b": 0.1,
+        "q": 0,
+        "medicalGain": 0,
+        "workGain": -200,
+        "cost": 50
+      },
+      "costUSD": 43421735,
+      "exposed": 20088.800000000003,
+      "union": 2008.8800000000003,
+      "clinicalPeople": 297.59999999999997,
+      "allPopulationQalys": -9.751844660194175,
+      "editionQalys": -4.8759223300970875,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 502.2200000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 750,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 19586.58,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -2.5111000000000003,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -9.850412359048303,
+      "incomeUnknown": false,
+      "totalEquivalent": -14.72633468914539,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": -9.850412359048303,
+      "combinedEquivalentYears": -14.72633468914539,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "four-year-case-delay",
+      "label": "four year case delay",
+      "overrides": {
+        "delay": 4
+      },
+      "costUSD": 43421735,
+      "exposed": 20088.800000000003,
+      "union": 4017.7600000000007,
+      "clinicalPeople": 595.1999999999999,
+      "allPopulationQalys": 11.920725483613097,
+      "editionQalys": 5.960362741806549,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 1004.4400000000002,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 1250,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 4,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 19084.360000000004,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 4,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -5.022200000000001,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 4,
+          "discountRate": 0.03,
+          "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -1.5474450260922525,
+      "incomeUnknown": false,
+      "totalEquivalent": 4.412917715714296,
+      "price10": 98396883.41655731,
+      "costPer10Qalys": 98396883.41655731,
+      "incomeEquivalentYears": -1.5474450260922525,
+      "combinedEquivalentYears": 4.412917715714296,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "weak-additional-case-outcome",
+      "label": "weak additional case outcome",
+      "overrides": {
+        "b": 0.0075
+      },
+      "costUSD": 43421735,
+      "exposed": 20088.800000000003,
+      "union": 150.66600000000003,
+      "clinicalPeople": 22.319999999999997,
+      "allPopulationQalys": -8.89767178810444,
+      "editionQalys": -4.44883589405222,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 37.666500000000006,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 1250,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 20051.133500000004,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -0.18833250000000004,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -11.810779677790975,
+      "incomeUnknown": false,
+      "totalEquivalent": -16.259615571843195,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": -11.810779677790975,
+      "combinedEquivalentYears": -16.259615571843195,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "original-coefficients-burden-only",
+      "label": "original coefficients burden only",
+      "overrides": {
+        "clinicalN": 6277.75,
+        "b": 0.3
+      },
+      "costUSD": 43421735,
+      "exposed": 20088.800000000003,
+      "union": 6026.64,
+      "clinicalPeople": 451.998,
+      "allPopulationQalys": 7.545844848713356,
+      "editionQalys": 3.772922424356678,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 1506.66,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 1250,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 18582.140000000003,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -7.5333,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 3.5659481316138244,
+      "incomeUnknown": false,
+      "totalEquivalent": 7.3388705559705025,
+      "price10": 59166781.412535556,
+      "costPer10Qalys": 59166781.412535556,
+      "incomeEquivalentYears": 3.5659481316138244,
+      "combinedEquivalentYears": 7.3388705559705025,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "housing-only-targeted-regime",
+      "label": "housing only targeted regime",
+      "overrides": {
+        "N": 12400,
+        "clinicalN": 12400,
+        "b": 0.3333333333333333
+      },
+      "costUSD": 43421735,
+      "exposed": 9920,
+      "union": 3306.6666666666665,
+      "clinicalPeople": 991.9999999999999,
+      "allPopulationQalys": 33.14770477896126,
+      "editionQalys": 16.57385238948063,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 826.6666666666666,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 1250,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 9093.333333333334,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -4.133333333333333,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 2.6263446204012473,
+      "incomeUnknown": false,
+      "totalEquivalent": 19.20019700988188,
+      "price10": 22615254.92558846,
+      "costPer10Qalys": 22615254.92558846,
+      "incomeEquivalentYears": 2.6263446204012473,
+      "combinedEquivalentYears": 19.20019700988188,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "strong-alternative-representation",
+      "label": "strong alternative representation",
+      "overrides": {
+        "b": 0
+      },
+      "costUSD": 43421735,
+      "exposed": 20088.800000000003,
+      "union": 0,
+      "clinicalPeople": 0,
+      "allPopulationQalys": -9.751844660194175,
+      "editionQalys": -4.8759223300970875,
+      "incomePathways": [
+        {
+          "id": "other-exposed",
+          "people": 20088.800000000003,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": 0,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -12.205068525664936,
+      "incomeUnknown": false,
+      "totalEquivalent": -17.080990855762025,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": -12.205068525664936,
+      "combinedEquivalentYears": -17.080990855762025,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "short-health-persistence",
+      "label": "short health persistence",
+      "overrides": {
+        "T": 0.5
+      },
+      "costUSD": 43421735,
+      "exposed": 20088.800000000003,
+      "union": 4017.7600000000007,
+      "clinicalPeople": 595.1999999999999,
+      "allPopulationQalys": -3.973203883495147,
+      "editionQalys": -1.9866019417475735,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 1004.4400000000002,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 1250,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 19084.360000000004,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -5.022200000000001,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -1.690934961026711,
+      "incomeUnknown": false,
+      "totalEquivalent": -3.6775369027742846,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": -1.690934961026711,
+      "combinedEquivalentYears": -3.6775369027742846,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "no-transfer-resource-effect",
+      "label": "no transfer resource effect",
+      "overrides": {
+        "transferGain": 0,
+        "payerLoss": 0
+      },
+      "costUSD": 43421735,
+      "exposed": 20088.800000000003,
+      "union": 4017.7600000000007,
+      "clinicalPeople": 595.1999999999999,
+      "allPopulationQalys": 13.026098595532092,
+      "editionQalys": 6.513049297766046,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 1004.4400000000002,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 250,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 19084.360000000004,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -8.566252966529568,
+      "incomeUnknown": false,
+      "totalEquivalent": -2.053203668763522,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": -8.566252966529568,
+      "combinedEquivalentYears": -2.053203668763522,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "one-hundred-dollar-opportunity-cost",
+      "label": "one hundred dollar opportunity cost",
+      "overrides": {
+        "cost": 100
+      },
+      "costUSD": 43421735,
+      "exposed": 20088.800000000003,
+      "union": 4017.7600000000007,
+      "clinicalPeople": 595.1999999999999,
+      "allPopulationQalys": 13.026098595532092,
+      "editionQalys": 6.513049297766046,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 1004.4400000000002,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 1200,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 19084.360000000004,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -5.022200000000001,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -13.88916008903074,
+      "incomeUnknown": false,
+      "totalEquivalent": -7.376110791264694,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": -13.88916008903074,
+      "combinedEquivalentYears": -7.376110791264694,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "no-exposure",
+      "label": "no exposure",
+      "overrides": {
+        "N": 0,
+        "clinicalN": 0
+      },
+      "costUSD": 43421735,
+      "exposed": 0,
+      "union": 0,
+      "clinicalPeople": 0,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "incomePathways": [],
+      "incomeEquivalent": 0,
+      "incomeUnknown": false,
+      "totalEquivalent": 0,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": 0,
+      "combinedEquivalentYears": 0,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    },
+    {
+      "id": "quarter-houston-share",
+      "label": "quarter houston share",
+      "overrides": {
+        "g": 0.25
+      },
+      "costUSD": 43421735,
+      "exposed": 20088.800000000003,
+      "union": 4017.7600000000007,
+      "clinicalPeople": 595.1999999999999,
+      "allPopulationQalys": 13.026098595532092,
+      "editionQalys": 3.256524648883023,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 1004.4400000000002,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 1250,
+          "years": 1,
+          "editionShare": 0.25,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 19084.360000000004,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.25,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -2.5111000000000003,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Distinct dispersed payer households face the full public transfer or compliance cost associated with Houston-attributed recipients, without a second payer geographic haircut.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -0.8454062547208534,
+      "incomeUnknown": false,
+      "totalEquivalent": 2.4111183941621697,
+      "price10": 180089601.17899334,
+      "costPer10Qalys": 180089601.17899334,
+      "incomeEquivalentYears": -0.8454062547208534,
+      "combinedEquivalentYears": 2.4111183941621697,
+      "assumptions": "Conditional finite annual legal safety and resources channel; full portfolio and marginal gift unknown."
+    }
+  ]
+}

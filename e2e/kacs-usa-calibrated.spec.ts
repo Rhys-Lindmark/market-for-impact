@@ -1,0 +1,22 @@
+import {test,expect} from '@playwright/test';
+test('KACS signed model, original comparison and per-model research remain distinct',async({page,request})=>{
+ await page.route('https://market-for-impact.rhyslindmark.chatgpt.site/_next/**',async route=>{const u=new URL(route.request().url());await route.fulfill({response:await request.get(u.pathname+u.search)});});
+ await page.goto('/usa/charities/kids-and-car-safety');
+ await expect(page.getByRole('heading',{level:1,name:'Kids and Car Safety',exact:true})).toBeVisible();
+ await expect(page.locator('.report-research-effort summary')).toContainText('~9 min on GPT-6 Astra Light + ~91 min on GPT-6 Astra Medium + ~8 min on GPT-6.1 Sol');
+ await expect(page.locator('#summary')).toContainText('current model estimates net harm');
+ await expect(page.locator('#cost')).toContainText('0.05351');
+ await expect(page.locator('#cost')).toContainText('−0.07927');
+ await expect(page.locator('#cost')).toContainText('−0.02576');
+ await expect(page.locator('#cost')).toContainText('Historical');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+ const response=await request.get('/api/geography-reports/usa/kids-and-car-safety');expect(response.ok()).toBe(true);
+ const report=await response.json(),central=report.model.scenarios.find((s:any)=>s.id==='central');
+ expect(central.editionQalys).toBeCloseTo(.05350730746770561,12);
+ expect(central.costPer10Qalys).toBeNull();expect(central.combinedEquivalentYears).toBeCloseTo(-.02576410645909554,12);
+ expect(central.incomePathways.length).toBe(4);
+ await page.goto('/usa/all');
+ const row=page.locator('[data-research-table] tbody tr').filter({hasText:'Kids and Car Safety'});
+ await expect(row.locator('td').nth(0)).toContainText('$920K');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+});

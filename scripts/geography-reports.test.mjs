@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {calculate as calculateOa} from '../lib/oa-portfolio-model.mjs';
 import {BOUNDS as oaBounds} from '../lib/oa-portfolio-foundation.mjs';
-import {validateEditionReports,reportPrice,researchListPrice,formatEditionReportPrice,incomeAdjustedReportPrice,formatEditionMoney,expenseAverage,editionResearchEffort,reportsForEdition,editionReportPath} from '../lib/geography-reports.mjs';
+import {validateEditionReports,reportPrice,researchListPrice,formatEditionReportPrice,incomeAdjustedReportPrice,formatEditionMoney,expenseAverage,editionResearchEffort,reportsForEdition,editionReportPath,scenarioIncomeEquivalent} from '../lib/geography-reports.mjs';
 const read=path=>JSON.parse(readFileSync(new URL('../'+path,import.meta.url)));
 
 // Synthetic fixtures live only in tests; never published or counted as research.
@@ -14,8 +14,8 @@ function fixture(){
  return {data:{schemaVersion:1,sessions:[session],reports:[r]},progress,r};
 }
 test('published registry matches accepted progress without mock records',()=>validateEditionReports(read('data/geography-reports.json'),read('docs/geography-progress.json')));
-test('Operation Access scenarios reproduce from the published input ledger',()=>{
- const report=read('data/geography-reports.json').reports.find(r=>r.edition==='california'&&r.slug==='operation-access');
+test('Operation Access historical scenarios reproduce from the frozen input ledger',()=>{
+ const report={model:read('data/california/oa-ca-pre-recalibration-model.json')};
  assert.ok(report);
  const central_inputs={bay_share:0,sf_share:0};
  for(const input of report.model.inputs)if(Object.hasOwn(oaBounds,input.name))central_inputs[input.name]=input.value;
@@ -70,9 +70,9 @@ test('End Overdose retains separately dated California arithmetic and deduplicat
  const us=data.reports.find(r=>r.slug==='end-overdose'&&r.edition==='usa');
  const ca=data.reports.find(r=>r.slug==='end-overdose'&&r.edition==='california');
  assert.ok(us&&ca);
- for(const scenario of ca.model.scenarios.filter(s=>['central','favorable','pessimistic','donatedstock','no-additionality'].includes(s.id))){
+ for(const scenario of ca.model.scenarios.filter(s=>['alpha-central-diagnostic','original-favorable','original-pessimistic','original-donatedstock','original-no-additionality'].includes(s.id))){
   const counterpart=scenario;
-  if(scenario.id==='no-additionality'){assert.equal(counterpart.editionQalys,0);continue;}
+  if(scenario.id==='original-no-additionality'){assert.equal(counterpart.editionQalys,0);continue;}
   const p=JSON.parse(scenario.assumptions.match(/^\{[^}]+\}/)[0]);
   let life=0;for(let k=1;k<=p.T;k++)life+=p.u*((1-p.m)/1.03)**k;
   const q=scenario.costUSD*p.a/p.c*p.e*p.d*p.r*p.f*p.b*life/1.03;
@@ -82,12 +82,19 @@ test('End Overdose retains separately dated California arithmetic and deduplicat
  }
  const ids=new Set([...us.sessionIds,...ca.sessionIds]);
  const seconds=[...ids].reduce((sum,id)=>{const s=data.sessions.find(s=>s.id===id);return sum+(Date.parse(s.endedAt)-Date.parse(s.startedAt))/1000;},0);
- assert.equal(seconds,1210+2372);
+ const newSessions=[...ids].map(id=>data.sessions.find(s=>s.id===id)).filter(s=>s.startedAt.startsWith('2026-10-07'));
+ const addedSeconds=newSessions.reduce((sum,s)=>sum+(Date.parse(s.endedAt)-Date.parse(s.startedAt))/1000,0);
+ assert.equal(newSessions.length,3);assert.ok(Math.abs(addedSeconds-273.704)<1e-9);
+ assert.ok(Math.abs(seconds-(1210+2372+297+addedSeconds))<1e-9);
  const central=ca.model.scenarios.find(s=>s.id==='central');
  assert.ok(Math.abs(central.editionQalys/central.allPopulationQalys-(.15*.75/(.85+.15*.75)))<1e-12);
+ assert.ok(Math.abs(scenarioIncomeEquivalent(central)-(-.008010558393771043))<1e-12);
+ assert.ok(Math.abs(reportPrice(ca)-14507043.380027534)<1e-6);
  assert.equal(ca.model.scenarios.find(s=>s.id==='ca-zero').editionQalys,0);
 });
 test('unestimated needs blockers; observed inputs need sources; stage and cohort are checked',()=>{
+ const zero=fixture();Object.assign(zero.r.model.scenarios[0],{costUSD:0,allPopulationQalys:0,editionQalys:0});validateEditionReports(zero.data,zero.progress);assert.equal(reportPrice(zero.r),null);
+ const negative=fixture();negative.r.model.scenarios[0].costUSD=-1;assert.throws(()=>validateEditionReports(negative.data,negative.progress),/nonnegative/);
  const nullCase=fixture();nullCase.r.model.scenarios[0].editionQalys=null;assert.throws(()=>validateEditionReports(nullCase.data,nullCase.progress),/blocking inputs/);
  let {data,progress,r}=fixture();r.model.scenarios=[];assert.throws(()=>validateEditionReports(data,progress),/blocking inputs/);r.model.missingInputs=['Unknown additional care'];validateEditionReports(data,progress);
  r.model.inputs[0].basis='observed';assert.throws(()=>validateEditionReports(data,progress),/source/);r.model.inputs[0].sourceIds=['s1'];validateEditionReports(data,progress);
@@ -107,7 +114,26 @@ test('unknown runtime stays unknown; lists retain initial estimates without chan
   assert.match(formatEditionReportPrice(report),/^\$/,slug);
  }
  const school=published.reports.find(r=>r.slug==='california-school-based-health-alliance');
- assert.equal(formatEditionReportPrice(school),'$26.9M');
+ assert.equal(formatEditionReportPrice(school),'$111.7M');
+ const historical=school.model.scenarios.find(s=>s.id==='historical-alpha-central');
+ assert.ok(Math.abs(10*historical.costUSD/historical.editionQalys-26853571.42857143)<.01);
+});
+test('retained initial price includes its own signed income exactly once',()=>{
+ const {r}=fixture();
+ const original={...r.model.scenarios[0],id:'historical-alpha-central'};
+ const pathway={people:200,annualIncomeBeforeUSD:50000,annualIncomeGainUSD:500,years:1,sourceIds:['s1'],rationale:'Synthetic',counterfactual:'Synthetic'};
+ original.incomePathways=[pathway];
+ r.model.scenarios=[{...r.model.scenarios[0],editionQalys:-1,incomePathways:[]},original];
+ const income=.5*200*Math.log1p(.01);
+ assert.equal(reportPrice(r),null);
+ assert.equal(researchListPrice(r),1000000/(10+income));
+ r.model.incomeBridge={...pathway,annualIncomeGainUSD:5000};
+ assert.equal(researchListPrice(r),1000000/(10+income),'Current bridge must not alter history');
+ original.incomePathways=[{...pathway,annualIncomeGainUSD:-500}];
+ assert.equal(researchListPrice(r),1000000/(10+.5*200*Math.log1p(-.01)));
+ original.incomeUnknown=true;assert.equal(researchListPrice(r),null);
+ original.incomeUnknown=false;original.editionQalys=null;original.incomePathways=[pathway];
+ assert.equal(researchListPrice(r),null,'Unknown health is not observed zero');
 });
 test('header time uses whole focused intervals, and duplicate/overlapping sessions fail',()=>{
  const {data,progress,r}=fixture();assert.equal(editionResearchEffort(data,r).label,'Research time: 15 min on GPT-6 Astra Light');

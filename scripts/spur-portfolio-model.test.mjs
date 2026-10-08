@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import data from '../data/san-francisco/spur-portfolio-cea-v3.json' with {type:'json'};
 import {spurPortfolioModel} from '../lib/spur-portfolio-model.mjs';
 import {researchCostRanking} from '../lib/research-cost-ranking.mjs';
+import {calculate as currentSpur} from '../lib/spur-calibrated-model.mjs';
 const close=(a,b)=>assert(Math.abs(a-b)<1e-9*Math.max(1,Math.abs(b)),a+' != '+b);
 test('SPUR portfolio matches independently checked signed scenario outputs',()=>{
   close(Object.values(data.budget.allocationUsd).reduce((a,b)=>a+b,0),data.budget.totalUsd);
@@ -17,7 +18,8 @@ test('SPUR portfolio matches independently checked signed scenario outputs',()=>
 test('SPUR ranking uses revised central SF result, not Bay or old/favorable prior',()=>{
   const r=spurPortfolioModel(data.scenarios.find(s=>s.id==='central'));
   close(r.sfNetQaly,.09214);close(r.bayIncludingSfNetQaly,.4564);
-  close(researchCostRanking.find(s=>s.slug==='spur').centralUsdPerTenQalys,r.sfUsdPer10Qaly);
+  close(researchCostRanking.find(s=>s.slug==='spur').centralUsdPerTenQalys,currentSpur().regions.sf.price10);
+  assert.notEqual(currentSpur().regions.sf.price10,r.sfUsdPer10Qaly);
   assert.equal(researchCostRanking.filter(s=>s.slug==='spur').length,1);
 });
 test('SPUR contribution null does not erase independent donor harm',()=>{

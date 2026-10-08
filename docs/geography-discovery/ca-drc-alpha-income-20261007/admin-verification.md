@@ -1,0 +1,5 @@
+# Batch administrative verification
+
+Original full report and five historical worlds independently deep-equal beforeintegration; diagnostic id/label are onlyhistoricalworld changes. Fourteen new scenarios reproduce shared reportPrice/scenarioIncomeEquivalent, currentregistry/progress schema passed. Combined batch28 focusedproduction/provenance/execution/featured tests pass;181otherreports deep-equal prebatch46aaf8bc4b358cd6d2e2f884ca5df6ee8954d1f8; all sessionIDs/evidence refs imported exactly. First patch output capture truncated; no partial registry modification, increasing capture budget for each individual patch resolved administrativefailure. No researchminute assigned to extraction/schema/tests/build.
+
+DRC measured268.282sec plus conservativeunclocked68.083sec allocation=>336.365sec, overcap36.365sec explicitlydisclosed. No forged/clamped actualinterval. Subsequent WorkSafe corrected timing workflowall scientificmessages clocked; no additionalorg research planned thisturn. Responsive/nativepublication/liveprice results recorded separately.

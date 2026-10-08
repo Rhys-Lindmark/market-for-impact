@@ -1,0 +1,62 @@
+# HOPE Pacifica: independent original health and income anchor
+October1local / October2UTC2026. **Unaccepted independent proposal; preserve current/historical models.** No checkout edits, testing/builds, Sites, installs, nested agents or publication/count claim. User-confirmed inherited GPT-6.1 Sol.
+
+## Recommendation and original-central challenge
+Propose central **$931,745.122448699 Bay per10combined equivalent years** for an exploratory $1,000 gift, versus historical/current$554,659.551727141. The difference follows a specific reach/counterfactual partition, not a desired ranking. Retain the finite ten-year surviving-cohort calculation and reconsider actual reach rather than shortening prognosis simply because local follow-up is absent.
+
+The original .8 risk/network conversion treats most ready unique holders as one high-risk-person/network equivalent. The [native distribution page](https://www.hope4change650.org/narcan-locations-information) instead identifies a mixed catchment: cannabis/bar/tobacco venues, a resource center, hospitality/faith/recovery settings and an auto-repair venue. Its over6,000 cumulative undefined units and nine sites establish activity, not annual people, risk, readiness, unique witnesses or mortality. Open access can reach opioid users/close witnesses and incidental lower-risk community members; unmeasured multiple-network reach is also possible. A midpoint **.5 among nonpurchasers** is a better explicit planning judgment than treating80%as identified. Test .25–.8 independently. It is NOT a new local survey result.
+
+## Primary endpoints and finite mortality bridge
+[Walley original BMJ](https://www.bmj.com/content/346/bmj.f174) observational community rate ratios .73/.54 support mortality plausibility, not HOPE hazard reduction per pack. [HEALing randomized mortality trial](https://www.nejm.org/doi/full/10.1056/NEJMoa2401177) found multicomponent RR.91(CI.76–1.09), compatible with no community effect. [Its original distribution paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC11628717/) found RR1.79 distribution, distinguishing proactive risk-network outreach from optional passive/self-request/box access. More stock is not identified incremental survival; passive HOPE venues cannot inherit active high-risk outreach reach by default. None supplies weights for favorable scenarios.
+
+Independently expose the original .002 net-hazard prior using an interpretable decomposition: at-risk-person overdose-event hazard .5/year, unrescued fatality .1, baseline effective rescue .8, incremental effective rescue +.04probability. Baseline opioid-fatal hazard=.01; other mortality=.06; total=.07. Supported first-year fatal hazard=.068. These are ALL local transfer judgments, not measured pharmacology/HOPE outcomes. The decomposition makes assumptions inspectable; it does not empirically validate .002. Risk/fatality/rescue alternatives should be varied separately. Baseline rescue includes other free naloxone, purchased stock, bystanders and EMS. Do not multiply another efficacy probability onto a hazard difference already net of alternatives.
+
+For service-relative t, first-year survival trajectories differ under .07/.068; afterward both face .07. The year-one survival gap persists without new service/rescue credit. Integrate discounted survival difference with utility .65, discount3%, horizon10, active1year, service delay0 (immediately usable extra stocking assumption). Retain .00002 gift-date clinical harm per added risk equivalent. Exact per-person active integral .0009366601313346434, later tail .010772863703680401, gross utility years .0076111904927597795. The large tail remains consequential; no claim of continuing ten-year distribution.
+
+The [Oslo original twenty-year cohort](https://pmc.ncbi.nlm.nih.gov/articles/PMC2277385/) and [ATOS original18–20year follow-up](https://pmc.ncbi.nlm.nih.gov/articles/PMC9847452/) show substantial long survival can occur in opioid-dependent cohorts, but neither identifies contemporary Bay post-rescue hazards or HOPE age mix. Ten years is a finite continuity judgment, not measured life expectancy. One/five/twenty-year and post-hazard alternatives remain necessary. No arbitrary five-year deletion is adopted centrally, and no endless lifetime horizon is used.
+
+## Cost, readiness, repetition, public alternatives
+Retain annual cash expense$40K and1,500 two-device packs/year as planning priors—not observed annual spending/flow. Ready share .5 concerns packs yielding usable, retained holder coverage, not actual successful rescue; repeats3means packs per unique holder/network-equivalent in that annual exposure window, not separate lives. Their ratio gives250 annual ready-holder equivalents before gift response. No annualization of over6,000 is claimed; device-versus-pack, distribution onset/date range and repeat recipient dedup remain unknown.
+
+[DHCS current FAQ](https://www.dhcs.ca.gov/individuals/naloxone-distribution-project/ndp-frequently-asked-questions/) provides free eligible-entity stock/shipping and defines two-device units. [County free-box FAQ](https://www.smchealth.org/sites/main/files/file-attachments/help_expand_access_to_naloxone_in_san_mateo_county_faq.pdf?1759531506=) leaves permission, restocking/reporting and priority selection to hosts. [January2026 public expansion](https://www.smchealth.org/post/overdose-prevention-coalition-launches-naloxone-program-expands-free-access-county) is a real alternative, not guaranteed equivalent access. HOPE coordination/recruitment/stocking can still change functional coverage; buying redundant hardware would not.
+
+Cash response .5 remains an unresolved midpoint: half the proportional expense/output-implied coverage changes after a gift, the remainder supports other work/substitution/capacity. It is separate from recipient rescue counterfactual, not a second free-naloxone efficacy penalty. Neither .5 nor lower.25 is measured;0/.25/1 are plausible. Expense includes whole organization cash activities in the hypothetical40K envelope, so no second generic administration charge. Public drugs/hardware, volunteer/host time, transport and emergency care are excluded real-resource complements; no complete social-cost ratio is identified.
+
+[Adopted grant25-734](https://sanmateocounty.legistar.com/LegislationDetail.aspx?FullText=1&GUID=CDE2FD32-C53E-4466-A63B-8423077CEAAC&ID=7523215&Options=&Search=) is a10Kmaximum one-time installation authorization for Aug2025–Jun2026, not annual expense, observed payment or current room. The IRS-derived index is unchanged/empty, not original accounts:2023predates founding, original2024/2025 annual accounts not located,2026not completed. Administrative zero fields cannot establish zero expense, balances, legal failure or a three-year mean.
+
+## Independent household resource central and no purchaser health double-credit
+Propose a small positive best-judgment purchaser share p=.05, with0–.20 alternatives. Mechanism: some incidental mixed-venue holders would otherwise buy naloxone, while most access is via free alternatives or would be foregone. One-in-twenty is explicitly a low uncertain incidence prior, NOT an observed purchase survey or a requirement that income be positive. [DHCS](https://www.dhcs.ca.gov/individuals/naloxone-distribution-project/ndp-frequently-asked-questions/) anchors $19per two-pack plus tax/shipping; only one avoided$19payment per distinct purchaser is credited, not all repeated packs. Net19 assumes no extra pickup cost relative to the purchase comparison, plausible for incidental self-service collection; tax/shipping and any additional saving are excluded. Negative net-cost cases remain plausible.
+
+M=(1000/40000)*1500*.5/3*.5=3.125 additional ready-holder equivalents.
+N=M*(1-.05)*.5=1.484375 additional health-risk equivalents.
+Purchasers already would have an equivalent pack and get ZERO additional health. Of the remaining95%, .5 are close-risk-network equivalents; the remainder has unquantified benefit. These are mutually exclusive counterfactual strata, not a claim that all residual holders are actual purchasers. Public-free alternative users remain within the baseline rescue comparison; do not count their free pack as retail saving.
+
+I=M*.05*.5*log1p(19/50000)/(1.03)^.5=.000029246406480136135 income-equivalent years. $50K is an annual household-resource reference, not measured incomes; .5 is the accepted CGcrosswalk. This is ONE resource-year window for one receipt at the funded-year midpoint, not repeated earnings over10years. Income timing .5 is independent of survival integration. No payroll, donor saved procurement, publicpayer or baseline lifetime survivor earnings added. Improved conditional-alive earnings/caregiver time could be real but lacks a separate recipient/resource counterfactual; emergency/medical spending after survival could be adverse. No clinical-free healthcare saving is invented.
+
+Bay health=.010704764718305783, income=.000027784086156129327, total=.01073254880446191. US health=.011268173387690298, income=.000029246406480136135. Health/income/burden Bay shares .95 are independently configurable residency priors, not proof from box sites. Portfolio factor1 standalone applies once to all effects; shared county/SFAF/Code/rescue cohorts assigned once. No new SF estimate proposed.
+
+## Exact finite alternatives and harms
+Companion calculations JSON contains inputs/formulas and21unweighted cases.
+
+| Case | Bay total years | Dollars/10 |
+|---|---:|---:|
+| independent central |.01073254880446191|931745.122448699|
+| risk share.25 |.00538016644530902|1858678.5560731161|
+| risk.8 with no purchasers (original) |.018029077420304476|554659.551727141|
+| no purchasers, new reach |.011268173387690298|887455.2827634256|
+| purchasers.20 |.009125675054776756|1095809.344511515|
+| five-year horizon |.0063390954612875345|1577512.1326172454|
+| twenty-year horizon |.0150266057102048|665486.2843182773|
+| half rescue increment |.005363454369297853|1864470.0432697318|
+| quarter-year active protection |.0028458361205172446|3513905.782523574|
+| no health/harm, positive purchaser cash |.000027784086156129327|359918261.9794009|
+| extra induced$5acquisition burden |.010435658959722252|958252.8557704183|
+
+Literal nochange funding0/exposure0 and assignment0 yield0/null price. Independently induced unsuccessful pickup exposure can remain with funding0 ONLY when the gift causes the attempted collection: E=(D/C)*packs*ready/repeats*b, b1stress; $5loss/E gives -.00029688984473965756 Bay years/null. This is not unchanged baseline pickup cost, and must exclude costs already in net19. Negative rescue or net purchasing resources remain signed; no positive ratio for total<=0. Annual work comparison must remove marginal funding response, not call the $1Kgift ratio an annual measured outcome.
+
+## Finite handoff
+This is a genuine independent original-magnitude challenge, but still a weakly identified planning estimate. The change is specifically .8→.5close-risk reach plus5%purchaser partition and independent receipt timing; clinical continuity was retained only after explicit endpoint/prognosis scrutiny. No point was chosen to preserve or force movement. Most value still rests on coverage yield and net mortality gain, not speculative cash. Current annual ledger, unique-network/repeat/readiness data and a priced incremental restocking plan are decisive missing evidence; absent original990s do not eliminate plausibility or imply zero costs.
+
+Root should challenge and independently calculate before changing current rankings. Preserve the existing central and earlier superseded proposals as history. Space Saver reused runtime/checkout,30GiBfree at start, retained only compact artifacts; no bulk downloads or servers. Actual continuous dedicated helper interval: October2UTC00:14:42.620–00:26:30.541,707.921seconds (11.7987minutes), closed before integration/testing/idle. Source/tool checkpoints at00:15:55,00:16:09,00:18:19,00:20:13 and00:24:00 show no long discontinuous stall in this phase. No padded15minute claim.
+
+Integration naming warning: calculations JSON healthYears and incomeEquivalentYears are ALL-REGION/US quantities BEFORE Bay attribution. They are not the existing API's Bay healthYears. Central Bay health is .010704764718305783 and Bay income .000027784086156129327; total .01073254880446191. Do not apply Bay twice. Proposed implementation should expose explicitly named healthAllRegionsYears/incomeAllRegionsYears plus separate Bay component fields.

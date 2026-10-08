@@ -1,0 +1,189 @@
+{
+  "capturedAt": "2026-10-04T17:57:03.769Z",
+  "status": "Earlier program-only historical diagnostic; not current portfolio estimate",
+  "source": {
+    "path": "lib/large-bay-impact-model.mjs",
+    "sha256": "46e446fa6de1234ebd50c401616711eefff69c1f5e86b98320e42b9193004cd3"
+  },
+  "model": {
+    "version": "ymca-dpp-v1",
+    "organization": "YMCA of Greater San Francisco",
+    "program": "Additional SF diabetes-prevention offers",
+    "geography": "Conditional San Francisco resident cohort; adult program, not children",
+    "verifiedMarginalOffer": false,
+    "reviewed": "2026-09-07",
+    "denominator": "USD per 10 incremental QALYs",
+    "formula": "Q = fundingAdditionality × (extraKg × utilityPerKg × transfer × Σ retention[t]/1.03^(t+0.5) − harmQalys); price = 10 × cost / Q if Q > 0",
+    "scenarios": [
+      {
+        "name": "Favorable joint scenario",
+        "cost": 200,
+        "extraKg": 3.4,
+        "utilityPerKg": 0.002,
+        "transfer": 1,
+        "retention": [
+          0.5,
+          1,
+          1,
+          1,
+          1,
+          0.5
+        ],
+        "fundingAdditionality": 0.8,
+        "harmQalys": 0
+      },
+      {
+        "name": "Central best guess",
+        "cost": 600,
+        "extraKg": 2.3,
+        "utilityPerKg": 0.0014,
+        "transfer": 0.75,
+        "retention": [
+          0.5,
+          1,
+          0.75,
+          0.25
+        ],
+        "fundingAdditionality": 0.5,
+        "harmQalys": 0
+      },
+      {
+        "name": "Pessimistic positive scenario",
+        "cost": 1200,
+        "extraKg": 1.1,
+        "utilityPerKg": 0.0007,
+        "transfer": 0.25,
+        "retention": [
+          0.25,
+          0.25
+        ],
+        "fundingAdditionality": 0.2,
+        "harmQalys": 0
+      }
+    ],
+    "sources": [
+      {
+        "publisher": "YMCA Greater SF",
+        "title": "Current local diabetes prevention program",
+        "url": "https://www.ymcasf.org/program/diabetes-prevention/",
+        "published": "Undated",
+        "sourceType": "Provider program disclosure",
+        "retrieved": "2026-09-07"
+      },
+      {
+        "publisher": "American Journal of Public Health",
+        "title": "Ackermann et al.: randomized YMCA offer trial",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/26378828/",
+        "published": "2015-09-17",
+        "sourceType": "Randomized trial",
+        "retrieved": "2026-09-07"
+      },
+      {
+        "publisher": "Obesity",
+        "title": "Ackermann et al.: weight change and health utility",
+        "url": "https://onlinelibrary.wiley.com/doi/10.1038/oby.2009.114",
+        "published": "2009",
+        "sourceType": "Observational utility association",
+        "retrieved": "2026-09-07"
+      },
+      {
+        "publisher": "Diabetes Care",
+        "title": "Kuo et al.: prospective NDPP cost and QALY analysis",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12178621/",
+        "published": "2024-11-20",
+        "sourceType": "Nonrandomized prospective comparison",
+        "retrieved": "2026-09-07"
+      },
+      {
+        "publisher": "SF Health Service System",
+        "title": "YMCA partnership and existing funded cohorts",
+        "url": "https://sfhss.org/dpp",
+        "published": "Undated",
+        "sourceType": "Public payer program",
+        "retrieved": "2026-09-07"
+      },
+      {
+        "publisher": "DHCS",
+        "title": "Medi-Cal diabetes prevention benefit",
+        "url": "https://www.dhcs.ca.gov/services/medi-cal-resources/diabetes-prevention-program-diabetes-prevention-program/",
+        "published": "Undated",
+        "sourceType": "Public benefit rules",
+        "retrieved": "2026-09-07"
+      }
+    ]
+  },
+  "evaluated": [
+    {
+      "name": "Favorable joint scenario",
+      "inputs": {
+        "name": "Favorable joint scenario",
+        "cost": 200,
+        "extraKg": 3.4,
+        "utilityPerKg": 0.002,
+        "transfer": 1,
+        "retention": [
+          0.5,
+          1,
+          1,
+          1,
+          1,
+          0.5
+        ],
+        "fundingAdditionality": 0.8,
+        "harmQalys": 0
+      },
+      "output": {
+        "netQalys": 0.024916328096154565,
+        "costPerTenQalys": 80268.64922800033,
+        "maximumCostFor100k": 249.16328096154564,
+        "equivalentYears": 4.580207370616648
+      }
+    },
+    {
+      "name": "Central best guess",
+      "inputs": {
+        "name": "Central best guess",
+        "cost": 600,
+        "extraKg": 2.3,
+        "utilityPerKg": 0.0014,
+        "transfer": 0.75,
+        "retention": [
+          0.5,
+          1,
+          0.75,
+          0.25
+        ],
+        "fundingAdditionality": 0.5,
+        "harmQalys": 0
+      },
+      "output": {
+        "netQalys": 0.0028633441268691526,
+        "costPerTenQalys": 2095451.9380667459,
+        "maximumCostFor100k": 28.633441268691527,
+        "equivalentYears": 2.3712994839496093
+      }
+    },
+    {
+      "name": "Pessimistic positive scenario",
+      "inputs": {
+        "name": "Pessimistic positive scenario",
+        "cost": 1200,
+        "extraKg": 1.1,
+        "utilityPerKg": 0.0007,
+        "transfer": 0.25,
+        "retention": [
+          0.25,
+          0.25
+        ],
+        "fundingAdditionality": 0.2,
+        "harmQalys": 0
+      },
+      "output": {
+        "netQalys": 0.00001869136158614814,
+        "costPerTenQalys": 642007803.6954249,
+        "maximumCostFor100k": 0.1869136158614814,
+        "equivalentYears": 0.48548991132852304
+      }
+    }
+  ]
+}

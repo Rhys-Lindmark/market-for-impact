@@ -1,0 +1,7 @@
+# Independent acceptance — Housing Rights Center
+
+2026-10-08 root independently retrieved June2026 accommodation examples and November2024 Ventura settlement. ESA fees/deposits and displacement mechanisms real, but no actualLA cash amount specified.197500settlement includesattorneyfees and outsideLA; notcredited. OriginalFY25ScheduleO webretrieval failed; curlredirect thencompressed/gzipdecode succeeded: governance only. OriginalFY25PartIII similarly checked: rent/utilityassistanceprocessing real, includinggrants1826166 exceedsprogram expense1612552 and cannot be assumedretainedclientcash. Publicfunding/alternativeprocessors remainbaseline. Cases/counseling notuniquegiftcausedpaidhouseholds.
+
+Independentmodel challenge retains finite discounted accommodation health and fullannualcost4696526, sixoriginalworlds. Targetedresources assessedunknown ratherthanzero; missingoperationalpayment/incidence bridge, notlackRCT orjudgmentbaselinealone. Fulldocumentation,travel,time,relocation andpayercosts independentlyscoped; overlaponlypositivegains, noautomaticretailhousingorordinarysurvivorwages. Portablearithmetic/schema passes. Currentclinicalreference94665647.34469165 unchanged,0.4961172433437499clinicalQALYs; combinedportfolio remainsunknown.
+
+Actual author59.187+13.201=72.388sec; rootoriginalsource58.670sec; independentmodel9.898sec; combined140.956sec below300initialcap. Tests/serialization/integration/publication overheadseparate. GPT-6.1Sol user-confirmedmodelassignment, closedrecordsretained. Acceptedforrootintegrationandverifiedpublication.

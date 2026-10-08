@@ -1,0 +1,11 @@
+# Frozen Immunize Colorado beta author packet
+
+Initial conditional $31,304,289.1508 → current $31,609,745.7387 per better life. Health remains .206628327843 healthy-year equivalents; signed household resources −.024086888474 → −.025850853476. The change corrects resource dependency on avoided illness and efficacy, not measured organizational performance. The prior .003 untreated morbidity judgment is explicitly decomposed as .2 illness risk × .015 loss per illness for continuity, not newly empirical calibration.
+
+Original infant influenza trial is inappropriate as a mixed-vaccine point estimate for the predominantly 4–18-year-old catch-up clinic. Its efficacy is shown only in a separately labeled flu risk/duration illustration. The original CDC lifetime model supports illness/resource mechanisms but its historical risk, whole-series benefits and premature-death productivity are not imported. No child wages, retail vaccine value or ordinary survivor earnings are counted.
+
+Patient health/harm and partner costs are independent of household grouping. Avoided-illness medical and adult/caregiver work flows share eligibility, completion, coalition additionality, illness risk and efficacy. Full access costs and delivered patient harm survive failed protection. Extra partner costs are per delivered patient, including at unique=0 or failed completion. Household components are joint logged with positive-only overlap and full negative losses.
+
+Whole annual recipient cost remains against a partial supported clinic channel. Other policy/education/partnership effects are unknown, not zero. Clinical utility, disease mix/risk, protection duration, household grouping, net cash, local residence and marginal donor capacity remain judgment/unknown inputs. No fake full portfolio or next-gift price is claimed.
+
+Portable 304 checks over 52 scenarios passed; actual production registry/progress schema passed in memory. Full initial report and original calculator retained; original session IDs preserved. Author interval 04:26:57.979–04:29:30.566 UTC = 152.587 seconds, GPT-6.1 Sol; no testing or handoff minutes. Root independently checks final calculator and alone integrates/publishes. No checkout edits or additional organization.

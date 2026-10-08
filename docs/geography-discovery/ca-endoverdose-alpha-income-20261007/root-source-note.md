@@ -1,0 +1,5 @@
+# Independent original-source check
+
+Root checked October7 California kit https://store.endoverdose.net/products/narcan-kit-ca-residents : $0, Sold out, certification required, shipping paid by recipient,7–14day shipment note. No verified dollar postage or marginal capacity. Original https://endoverdose.net/bulk-order/ is expressly Arkansas-only and free shipping; not California evidence. Existing accepted USA beta signed-resource analysis consulted as a boundary diagnostic, not imported as California outcomes.
+
+Root challenged cash geography: recipient sharep=.15 is not effectiveness-weighted clinicalg=.116883. Otherwise-buying-equivalent naloxone recipients cannot also receive full added clinical protection. No ordinary earnings of extra survivors; full incremental shipping/time losses remain signed, hypothetical amounts clearly judgments. Existing California clinical original preserved for audit unless buyer scenario jointly changes clinical eligibility. This scientific handoff was inside source interval139c3e55 (16.160seconds); tests/admin excluded.

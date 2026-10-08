@@ -1,0 +1,20 @@
+import {test,expect} from '@playwright/test';
+test('Compass displays cash/noncash allocation and actual revision provenance',async({page})=>{
+ await page.goto('/charities/compass-family-services');
+ await expect(page.getByRole('heading',{name:'Compass Family Services',exact:true})).toBeVisible();
+ const effort=page.locator('.report-research-effort');
+ await expect(effort.locator('summary')).toContainText('GPT-6.1 Sol');
+ await expect(effort.locator('summary')).toContainText('GPT-5.6 Sol Medium');
+ await effort.locator('summary').click();
+ await expect(effort).toContainText('estimated before tracking');
+ const section=page.locator('#cost-effectiveness');
+ await expect(section).toContainText('$2.83M per better life');
+ await expect(section).toContainText('0.040359 income-equivalent');
+ await expect(section).toContainText('0.000124 noncash health-proxy');
+ await expect(section).toContainText('not measured clinical QALYs');
+ await expect(section).toContainText('No finite positive price');
+ await expect(page.locator('#funding')).toContainText('$32,990,477');
+ await expect(page.locator('.report-heading')).not.toContainText('V2 beta');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+ await expect(page.locator('#sources a[href="https://coefficientgiving.org/research/cost-effectiveness/"]')).toHaveCount(1);
+});

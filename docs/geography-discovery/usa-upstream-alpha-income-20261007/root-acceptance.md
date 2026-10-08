@@ -1,0 +1,7 @@
+# Root independent acceptance — Upstream USA
+
+Accepted targeted assessed-unknown scope, not a numerical income recalibration or complete combined valuation. Fresh original FreeBC page verifies Colorado zero quoted out-of-pocket options/removal; original AEA M-CARES abstract verifies contraceptive access outcomes but not causal household earnings, consumption or Upstream gift-additional delivery. Current unique household/payer mix, alternative private payments, net access costs and unrestricted gift allocation remain unresolved. No avoided births/child expenditures, gross wages or retail care credited as income; all negative access burdens remain independent of clinical success.
+
+Root independently reproduces central clinical0.00016893904358000525, cost10000, clinical-only price591929478.7095355, and all six original worlds. Full initial diagnostic and original clinical scenarios preserved. Explicit unknown scenario is null not zero/no-material/90%-health. Public health-only reference is retained pending actual additional household resource evidence.
+
+Closed source audit15.025sec + author135.379sec + root modeling39.842sec =190.246sec, below300sec combined initial cap. Author exceeded120sec allocation by15.379sec, disclosed without clamping. No additional science; tests/integration/formatting/publication overhead excluded. Root reconstruction parser initially matched trailing prose in g; numeric parser corrected and all six worlds passed, no model modification.

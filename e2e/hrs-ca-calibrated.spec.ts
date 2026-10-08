@@ -1,0 +1,20 @@
+import {test,expect} from '@playwright/test';
+test('HRS report, income-aware API and California list agree',async({page,request})=>{
+ await page.route('https://market-for-impact.rhyslindmark.chatgpt.site/_next/**',async route=>{const u=new URL(route.request().url());await route.fulfill({response:await request.get(u.pathname+u.search)});});
+ await page.goto('/california/charities/harm-reduction-services');
+ await expect(page.getByRole('heading',{level:1,name:'Harm Reduction Services',exact:true})).toBeVisible();
+ await expect(page.locator('.report-research-effort summary')).toContainText('GPT-6.1 Sol');
+ await expect(page.locator('#summary')).toContainText('$6.9M');
+ await expect(page.locator('#cost')).toContainText('$6,852,222.069522628');
+ await expect(page.locator('#cost')).toContainText('$3,089,019.7114568832');
+ await expect(page.locator('#cost')).toContainText('Household income and consumption');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+ const response=await request.get('/api/geography-reports/california/harm-reduction-services');expect(response.ok()).toBe(true);
+ const d=await response.json(),c=d.model.scenarios.find((s:{id:string})=>s.id==='central');
+ expect(c.editionQalys).toBeCloseTo(.14572157053314494,10);
+ const income=c.incomePathways.reduce((sum:number,p:any)=>sum+.5*p.people*Math.log1p(p.annualIncomeGainUSD/p.annualIncomeBeforeUSD)*p.causalShare*p.editionShare*p.independentShare/(1+p.discountRate)**p.delayYears,0);
+ expect(income).toBeCloseTo(.0002164901213409561,10);expect(10*c.costUSD/(c.editionQalys+income)).toBeCloseTo(6852222.069522628,6);
+ await page.goto('/california/all');const row=page.locator('[data-research-table] tbody tr').filter({hasText:'Harm Reduction Services'});
+ await expect(row.locator('td').nth(0)).toContainText('$6.9M');await expect(row.locator('td').nth(1)).toContainText('$1.9M');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+});

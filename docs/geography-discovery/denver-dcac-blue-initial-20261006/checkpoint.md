@@ -1,0 +1,9 @@
+# Denver sixteen-report checkpoint
+
+Six active editions complete. Denver16/25 initial reports accepted,0/10 deep,0/4 features. Remaining9initial+10deep=195planned research minutes; independent review/release/feature overhead separate. Four cities deferred;20%reserve.
+
+DCAC and The Blue Bench accepted and published Sites458, source1623af63e979673cdd97710d1eb7853dde67af1d. Native terminal success and8canonical/native live checks passed2026-10-06T23:28:48.915Z. Source/math review406directchecks/80cases,500portablechecks/80cases,28focusedtests,2scope-time tests,2responsivephone/tablet checks. All172priorreports/628sessions/150effortentries preserved. Available actual partial research:DCAC196.683seconds(author140.711+root55.972),Blue205.230seconds. Root mixed/diagnosis intervals excluded in full. No padded duration. Per-report models assess health and signed net income, finite treatment/reference scope and full annual cost; unquantified other channels unknownnotzero.
+
+Previous goal turn classified evidence progress only: scheduler diagnosis established hung request/stale last-run and preserved exclusion note; did not publish research. This turn made concrete authoritative progress:2reports accepted, synchronized and live. No active researchworker/open clock, no pending release. Reuse clean source and dependency tree, not a fresh checkout. Next bounded pair Savio/Immunize Colorado. Remaining9initial*5+10deep*15=195planned researchminutes; independentreview/release/features overhead separate. Do not rediscover100acceptedcandidates or reopen completed P0.
+
+Hourlyautomation refreshed via supported tool with receipt and exact nextaction; no independent watchdog fabricated. Underlyingruntimefault not provenfixed.79%remaining at release, floor20/no newbatch<=25. Fourcutcitiesremain deferred. Goal incomplete.

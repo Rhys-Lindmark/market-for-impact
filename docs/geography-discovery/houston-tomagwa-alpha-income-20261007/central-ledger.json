@@ -1,0 +1,67 @@
+{
+  "comparison": {
+    "before": {
+      "health": 0.564696,
+      "income": 0,
+      "price": 43767974.27288311
+    },
+    "current": {
+      "health": 0.9411600000000001,
+      "income": 0.07661954647545077,
+      "price": 24283844.2623352
+    },
+    "why": "Annual-work accounting removes extra gift-capacity multiplier and retains full harm; signed otherwise-paid cash minus full net access cost added as explicit judgments, not observed performance improvement."
+  },
+  "central": {
+    "id": "central",
+    "label": "central",
+    "overrides": {},
+    "costUSD": 2471560,
+    "allPopulationQalys": 1.012,
+    "editionQalys": 0.9411600000000001,
+    "incomePathways": [
+      {
+        "id": "changed-households",
+        "people": 56.64,
+        "annualIncomeBeforeUSD": 20000,
+        "annualIncomeGainUSD": 75,
+        "years": 1,
+        "editionShare": 0.93,
+        "delayYears": 0,
+        "discountRate": 0.03,
+        "rationale": "Changed surgery households: overlap-adjusted positive cash/work and full net access cost jointly logged.",
+        "counterfactual": "Net additional resources relative to insured/public/private alternative care; same household-period components jointly logged.",
+        "sourceIds": [
+          "sfdp",
+          "patients-current",
+          "cg-income"
+        ]
+      },
+      {
+        "id": "other-exposed-households",
+        "people": 37.760000000000005,
+        "annualIncomeBeforeUSD": 20000,
+        "annualIncomeGainUSD": -25,
+        "years": 1,
+        "editionShare": 0.93,
+        "delayYears": 0,
+        "discountRate": 0.03,
+        "rationale": "Full additional access costs on exposed households without resource benefit.",
+        "counterfactual": "Net additional resources relative to insured/public/private alternative care; same household-period components jointly logged.",
+        "sourceIds": [
+          "sfdp",
+          "patients-current",
+          "cg-income"
+        ]
+      }
+    ],
+    "incomeUnknown": false,
+    "incomeEquivalent": 0.07661954647545077,
+    "totalEquivalent": 1.0177795464754509,
+    "price10": 24283844.2623352,
+    "clinicalExposed": 118,
+    "resourceHouseholds": 94.4,
+    "assumptions": "Conditional annual surgery-channel health and signed household resources; coefficients not locally causal. {}"
+  },
+  "persistenceNote": "Calculator and central result communicated before draft; separate ledger serialized after draft."
+}

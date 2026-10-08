@@ -1,0 +1,141 @@
+{
+  "project_id": "appgprj_6a938448e31c81918e35da08d93d95fd",
+  "savedVersion": {
+    "id": "appgprj_6a938448e31c81918e35da08d93d95fd~appgver_18c149445ba8819187c48e7200fd626c",
+    "project_id": "appgprj_6a938448e31c81918e35da08d93d95fd",
+    "version_number": 457,
+    "source": {
+      "commit_sha": "138d7532606f4f703c9056d14b3539df580113d4"
+    },
+    "archive_storage": {
+      "archive_format": "tar",
+      "sediment_file_id": "file_00000000d8748230b41e11a77efb3af0",
+      "content_hash": "sha256:147af1a3ade23ae9c500852a46babbecb77df7323cf40667bde89df10bb4aab5",
+      "size_bytes": 42393600,
+      "file_count": 605
+    },
+    "screenshot_url": null,
+    "deployment_id": null
+  },
+  "deployment": {
+    "id": "appgdep_6ac580db01fc81918f4880bdfd6003dd",
+    "project_id": "appgprj_6a938448e31c81918e35da08d93d95fd",
+    "title": "Market for Impact",
+    "version_id": "appgprj_6a938448e31c81918e35da08d93d95fd~appgver_18c149445ba8819187c48e7200fd626c",
+    "type": "publish",
+    "status": "succeeded",
+    "url": "https://market-for-impact.rhyslindmark.chatgpt.site",
+    "has_mcp": false,
+    "screenshot_asset_pointer": null,
+    "provider_deployment_id": "site---6a938448e31c81918e35da08d93d95fd",
+    "failure_message": null,
+    "env_set_revision": 0,
+    "updated_at": "2026-10-06T23:14:49.063715+00:00"
+  },
+  "sourceCommit": "138d7532606f4f703c9056d14b3539df580113d4",
+  "localChecks": {
+    "independentArithmetic": 165,
+    "scenarios": 40,
+    "portable": 253,
+    "focusedTests": 26,
+    "responsive": 2,
+    "previousReportsPreserved": 171,
+    "previousSessionsPreserved": 626,
+    "previousEffortEntriesPreserved": 149
+  },
+  "research": {
+    "coverage": "partial",
+    "sessions": [
+      {
+        "id": "be9baa6e-66c8-4a63-b32a-a648a9dc0149",
+        "workerId": "denver-spark-author",
+        "phase": "research",
+        "startedAt": "2026-10-06T23:06:27.252Z",
+        "endedAt": "2026-10-06T23:07:35.631Z",
+        "model": {
+          "id": "gpt-6.1-sol",
+          "name": "GPT-6.1 Sol",
+          "evidence": "runtime model assignment: GPT-6.1 Sol"
+        },
+        "evidence": "docs/geography-discovery/denver-cchi-spark-initial-20261006/spark-evidence.md",
+        "organizationId": "ein:84-0782124",
+        "edition": "denver",
+        "stage": "alpha"
+      },
+      {
+        "id": "1a0dad39-d379-4f3a-9d7b-e2a41978501c",
+        "workerId": "root-denver-cchi-spark-audit",
+        "phase": "source-audit",
+        "startedAt": "2026-10-06T22:55:00.271Z",
+        "endedAt": "2026-10-06T22:55:55.625Z",
+        "model": {
+          "id": "gpt-6.1-sol",
+          "name": "GPT-6.1 Sol",
+          "evidence": "runtime model assignment: root GPT-6.1 Sol"
+        },
+        "evidence": "docs/geography-discovery/denver-cchi-spark-initial-20261006/root-spark-evidence.md",
+        "organizationId": "ein:84-0782124",
+        "edition": "denver",
+        "stage": "alpha"
+      }
+    ],
+    "excludedInterval": "3090aedf-f21f-4134-9744-213e6bfa52e5: crossed into scheduler diagnosis; excluded in full."
+  },
+  "counts": {
+    "denver": {
+      "initial": 14,
+      "deep": 0,
+      "featured": 0
+    }
+  },
+  "remainingPlannedResearchMinutes": 205,
+  "liveVerification": {
+    "verifiedAt": "2026-10-06T23:15:25.753Z",
+    "checks": 6,
+    "results": [
+      {
+        "base": "https://ai.rhyslindmark.com/givebetter",
+        "path": "/denver/all",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "base": "https://ai.rhyslindmark.com/givebetter",
+        "path": "/denver/charities/spark-the-change-colorado",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "base": "https://ai.rhyslindmark.com/givebetter",
+        "path": "/all",
+        "status": 200,
+        "pass": true,
+        "denver": "14/25 initial · 0/10 deep"
+      },
+      {
+        "base": "https://market-for-impact.rhyslindmark.chatgpt.site",
+        "path": "/denver/all",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "base": "https://market-for-impact.rhyslindmark.chatgpt.site",
+        "path": "/denver/charities/spark-the-change-colorado",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "base": "https://market-for-impact.rhyslindmark.chatgpt.site",
+        "path": "/all",
+        "status": 200,
+        "pass": true,
+        "denver": "14/25 initial · 0/10 deep"
+      }
+    ]
+  },
+  "propagation": {
+    "initialCheckFailed": true,
+    "resolvedAt": "2026-10-06T23:15:25.753Z",
+    "newDeploymentRequired": false
+  }
+}

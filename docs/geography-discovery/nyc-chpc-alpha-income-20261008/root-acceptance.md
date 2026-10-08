@@ -1,0 +1,7 @@
+# Independent CHPC assessment
+
+Root independently opened Hidden Housing, the current DOB ADU portal and January2026 recommendations. Lower basement rent and homeowner rental receipts are plausible resource mechanisms, not evidence of a present rent-dollar or gift-responsive occupied household pipeline. Existing occupied illegal units, enacted legislation and public implementation are baseline; current portal says basement pilot applications await rules. A tenant rent payment is also owner revenue, so net resource incidence and differing household baselines must be modeled jointly, not counted twice. Construction, financing, relocation, temporary housing, tax, utility and time costs survive clinical-null outcomes.
+
+Accepted targeted assessed-unknown, not zero income or whole-portfolio expected value. Preserved all eight original worlds and full initial diagnostic. Independent calculator inspection reproduces cost3705810, health0.2853294414180609, retained clinical price129878290.2171773. No policy-population slogan, property asset value or fiscal budget credited as disposable income. Missing randomized trial is not the reason for unknown. Actual author/root intervals retained below five-minute initial cap; tests and publication are separate.
+
+Sources: https://chpcny.org/publication/hidden-housing/ ; https://www.nyc.gov/site/buildings/codes/adu.page ; https://chpcny.org/wp-content/uploads/2026/01/Housing-Recommendations-for-a-New-Administration-1.pdf .

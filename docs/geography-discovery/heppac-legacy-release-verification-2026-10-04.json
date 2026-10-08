@@ -1,0 +1,15 @@
+{
+  "organization": "HIV Education and Prevention Project of Alameda County (HEPPAC)",
+  "scientificReview": "heppac-legacy-independent-review-2026-10-04.md",
+  "integrationReview": "heppac-legacy-integration-review-2026-10-04.md",
+  "conditionalCentralBayPrice": 15262220.77152425,
+  "historicalCentralBayPrice": 15341409.439162236,
+  "conditionalWeightedBayPrice": 7988917.899119561,
+  "historicalWeightedBayPrice": 8133469.099019436,
+  "measuredWholeGiftEV": null,
+  "focusedTests": {"passed": 17, "command": "node --test scripts/heppac-current-report.test.mjs scripts/heppac-legacy-current.test.mjs scripts/heppac-legacy-historical.test.mjs scripts/research-effort.test.mjs"},
+  "responsiveTests": {"passed": 2, "command": "npx playwright test e2e/heppac.spec.ts", "routes": ["/san-francisco/all", "/charities/heppac", "/api/heppac-model"], "viewports": [390, 768]},
+  "initialFailures": ["Legacy /research test redirected to old production; corrected to canonical local route", "Cold API compilation exceeded default timeout; bounded60second timeout and subsequent responsive run passed", "Duplicate source key; citations merged by exact URL"],
+  "scopeLimits": ["July infographic author-inspected, not independently re-viewed", "Conditional priors, not verified capacity or empirical whole-gift EV"],
+  "buildAndPublication": "Pending native Sites workflow; no acceptance count increase yet"
+}

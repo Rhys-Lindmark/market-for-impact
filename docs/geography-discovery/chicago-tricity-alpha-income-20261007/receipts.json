@@ -1,0 +1,49 @@
+{
+  "selftest": {
+    "pass": true,
+    "checks": 222,
+    "cases": 36
+  },
+  "schema": {
+    "pass": true,
+    "memoryOnly": true,
+    "stage": "alpha",
+    "price": 3297061.72984776
+  },
+  "sources": [
+    {
+      "url": "https://tchpfreeclinic.org/become-a-patient/",
+      "accessed": "2026-10-07",
+      "reader": "author",
+      "finding": "Free medical/dental/medication/referral services; eligibility liveORwork, uninsured; not proofresidence."
+    },
+    {
+      "url": "https://tchpfreeclinic.org/give-help/",
+      "accessed": "2026-10-07",
+      "reader": "author",
+      "finding": "No publicfunding/insurance payments stated; malformedEIN onsite, originalreturn controls."
+    },
+    {
+      "url": "https://tri-city-health-partnership.givecloud.co/fundraising/forms/8NERL6EK",
+      "accessed": "2026-10-07",
+      "reader": "author",
+      "finding": "Own donation link opens; no transaction."
+    },
+    {
+      "url": "https://projects.propublica.org/nonprofits/full_text/202600979349301405/IRS990",
+      "accessed": "2026-10-07",
+      "reader": "root original compressedHTML",
+      "finding": "580unique medicalpatients;3390visits/3546meds/607dentalvisits notadded;6552directevent."
+    },
+    {
+      "url": "https://projects.propublica.org/nonprofits/full_text/202600979349301405/IRS990ScheduleD",
+      "accessed": "2026-10-07",
+      "reader": "root original compressedHTML",
+      "finding": "1379104auditedexpenses minus441010donatedservices/usefacilities=938094taxexpense; completeauditunread."
+    }
+  ],
+  "authorSeconds": 86.809,
+  "coverage": "partial; author clock closed before tests; source receipt administrative afterclose; no timing reconstruction",
+  "space": "28GiB available; reused runtime, compact source artifacts only"
+}
+

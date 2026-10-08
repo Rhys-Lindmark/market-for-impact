@@ -1,0 +1,365 @@
+{
+  "frozenFromCommit": "f7dd445cf821a99d215915ded855974229b16b28",
+  "edition": "usa",
+  "slug": "dental-lifeline-network",
+  "model": {
+    "version": "usa-beta-dental-lifeline-2026-09-14",
+    "costScope": "Ordinary national gift charged in full; explicit judgment of the DDS oral pain/function pathway, including whole-support and nonclinical portfolio burden. Donor-dollar price excludes donated clinical opportunity cost and patient time, which are included in separate resource scenarios. Not measured unrestricted-portfolio return, a deaths-prevented estimate, or a recommendation.",
+    "geographicAttribution": "Domestic DDS patient eligibility and state-based delivery support g=1 for residents of50states/DC; pessimistic .98 allows rare boundary/residence misclassification. Licensee scope is an organizational attribution issue, not foreign health: it is addressed by conservative c and b, not by pretending those US patients live elsewhere. No overseas outcomes are credited.",
+    "formula": "discount=ln(1+d_input), with d_input=.03; k=discount+m+loss+catchup; q=u*exp(-discount*L)*(1-exp(-k*T))/k. N=(G/c)*b extra candidate cases; C=N*r eventual completed-care equivalents. Q_all=C*(s*q-h*exp(-discount*L))-N*ha; Q_USA=g*Q_all. Cost=G+N*(r*resource+(1-r)*unfinishedResource+patientResource). Price per 10=10*Cost/Q_USA only if Q_USA>0. All gains stop at T after completion; no terminal value. r includes pre-completion death/dropout, so mortality is applied only after completion and not again through the lag.",
+    "counterfactual": "The no-new-gift world includes continued state contracts, private grants, insurance and Medicare medically linked dental care, existing volunteers and assets. b=.5 concerns extra supported candidates from the national gift rather than displaced funders or spare fixed costs. s=.75 concerns immediate clinical access additionality conditional on added completed care, and catchup=.06/year later alternative access. Maintenance failure is separate loss=.0625/year; competing mortality m=.04/year is an explicit population judgment, not a DLN survival estimate. National-to-licensee production is not credited automatically.",
+    "attribution": "c=$1,300 per candidate and r=.65 jointly replace alpha c=$2,000 completion-adjusted case prior. They are an explicit decomposition, not newly observed productivity. No further clinical success discount is applied: u averages case mix and incomplete symptom relief among completed-care equivalents. r also allows incomplete cases to contribute less than a whole completed package; it is not inferred from a half-year completion snapshot. b discounts the national gift response once. s handles benefit already achievable at completion; catchup is the later hazard that a remaining health gap closes. h and ha are excess burdens versus the comparator, not all pain from treatment that would also occur elsewhere. Here r is an eventual completed-care-equivalent yield, which may include weighted partial relief; it must not be reported as an observed probability of all-or-nothing completion. Candidate and completed counts in the model are additional equivalents, not national annual patients. Any completion status measured later should replace both this yield and the associated resource mix consistently.",
+    "uncertainty": "All causal conversion parameters are broad analyst judgments. Finite outcome accounting does not create clinical identification. The external denture trial supports selected oral function outcomes; it does not validate generic utility, national completion, mortality or marginal funding response. Medical-treatment access, systemic health, employment and nonclinical education remain unpriced, so the estimate is a partial health pathway with the whole gift charged. Unmeasured positive mechanisms are not automatically zero, but no unsupported survival bonus is added. Adverse and no-capacity cases remain explicit.",
+    "nativeOutcomes": "Reused FY2024–25 annual report: 4,367 DDS people served including licensees, not established completions; 6,038 across programs is not the clinical denominator. New primary state definitions show untreated matches can be included. Central $10,000 supports 3.8461538461538463 additional candidate cases and 2.5 completed-care equivalents after the funding and completion judgments, at $2,600 per added candidate and $4,000 per additional completion. Those completed cases yield 0.12224162318811595 modeled finite USA QALYs after utility, alternatives and excess harm.",
+    "inputs": [
+      {
+        "name": "G",
+        "value": 10000,
+        "unit": "USD normalization",
+        "basis": "judgment",
+        "rationale": "Calculation scale, not a grant offer.",
+        "sourceIds": []
+      },
+      {
+        "name": "c",
+        "value": 1300,
+        "unit": "USD full-support per candidate",
+        "basis": "judgment",
+        "rationale": "Judgment above the unmatched $1,187 two-return/served-person anchor. c/r=$2,000 per completed equivalent incorporates licensee, nonclinical and completion burden; range 675–2500 per candidate.",
+        "sourceIds": [
+          "dln-99025",
+          "dln-group25",
+          "dln-fl24"
+        ]
+      },
+      {
+        "name": "b",
+        "value": 0.5,
+        "unit": "fraction",
+        "basis": "judgment",
+        "rationale": "Extra national funding response after existing grants, reserves and volunteer constraints; .1–.85, including zero.",
+        "sourceIds": [
+          "dln-me27",
+          "dln-ma26",
+          "dln-faq"
+        ]
+      },
+      {
+        "name": "r",
+        "value": 0.65,
+        "unit": "completed equivalents per candidate",
+        "basis": "judgment",
+        "rationale": "65% eventual completion-equivalent yield, not observed. r covers failure, partial treatment and pre-completion death. Do not multiply an independently completion-adjusted c by r again.",
+        "sourceIds": [
+          "dln-fl24",
+          "dln-in20",
+          "dln-ma-history"
+        ]
+      },
+      {
+        "name": "u",
+        "value": 0.03,
+        "unit": "utility gain/year per completed equivalent",
+        "basis": "judgment",
+        "rationale": "0.03 case-mix oral pain/function judgment. Trial dental scores and GBD weights are not validated QALY mappings; range .005–.067.",
+        "sourceIds": [
+          "dental-denture-rct",
+          "dental-utility",
+          "dental-implant-rct"
+        ]
+      },
+      {
+        "name": "T",
+        "value": 3,
+        "unit": "years after completion",
+        "basis": "judgment",
+        "rationale": "Finite three-year horizon, one to five in scenarios. No lifetime extrapolation.",
+        "sourceIds": [
+          "dln-terms"
+        ]
+      },
+      {
+        "name": "L",
+        "value": 0.75,
+        "unit": "years to completed care",
+        "basis": "judgment",
+        "rationale": "Nine-month representative benefit lag, including planning/treatment. Historical state evidence supports delay but not a national mean. Benefits during treatment omitted; r includes pre-completion mortality.",
+        "sourceIds": [
+          "dln-ma-history",
+          "dln-faq"
+        ]
+      },
+      {
+        "name": "m",
+        "value": 0.04,
+        "unit": "continuous annual hazard",
+        "basis": "judgment",
+        "rationale": "4% competing mortality after completion for mixed older/disabled/fragile recipients; not an observed survival rate. 10% sensitivity.",
+        "sourceIds": []
+      },
+      {
+        "name": "loss",
+        "value": 0.0625,
+        "unit": "continuous annual hazard",
+        "basis": "judgment",
+        "rationale": "6.25% loss of benefit through recurrence, prosthesis use or maintenance failure; judgment, not measured.",
+        "sourceIds": [
+          "dln-terms"
+        ]
+      },
+      {
+        "name": "catchup",
+        "value": 0.06,
+        "unit": "continuous annual hazard",
+        "basis": "judgment",
+        "rationale": "6% later alternative-care catch-up, distinct from immediate alternative-care fraction. Broad sensitivity to one/year.",
+        "sourceIds": [
+          "cms-dental",
+          "dln-help"
+        ]
+      },
+      {
+        "name": "s",
+        "value": 0.75,
+        "unit": "fraction",
+        "basis": "judgment",
+        "rationale": "75% initial clinical health additionality after benefit exhaustion and available alternatives; zero tested.",
+        "sourceIds": [
+          "dln-help",
+          "cms-dental"
+        ]
+      },
+      {
+        "name": "h",
+        "value": 0.001,
+        "unit": "excess QALY burden per completion",
+        "basis": "judgment",
+        "rationale": "0.001 excess burden at completed care; not an observed complication rate. Applies regardless of benefit fraction.",
+        "sourceIds": []
+      },
+      {
+        "name": "ha",
+        "value": 0.0002,
+        "unit": "excess QALY burden per candidate",
+        "basis": "judgment",
+        "rationale": "0.0002 excess access/partial-treatment burden for every added candidate, including noncompleters; patient monetary resources counted separately.",
+        "sourceIds": []
+      },
+      {
+        "name": "g",
+        "value": 1,
+        "unit": "USA resident share",
+        "basis": "judgment",
+        "rationale": "Domestic 50-state/DC delivery; .98 sensitivity. This is not a claim of current access in every county.",
+        "sourceIds": [
+          "dln-help"
+        ]
+      },
+      {
+        "name": "d",
+        "value": 0.03,
+        "unit": "annual discount rate",
+        "basis": "judgment",
+        "rationale": "3% convention, converted to continuous ln(1.03).",
+        "sourceIds": []
+      },
+      {
+        "name": "resource",
+        "value": 0,
+        "unit": "USD per completed case",
+        "basis": "judgment",
+        "rationale": "Central donor-dollar accounting excludes this; resource scenario uses 2000, high 5000. Not retail charges. Additional opportunity-cost allowance must exclude lab/material/clinical resources already paid within c. The equivalent-case resource mix is hypothetical, not a measured completion-category expenditure.",
+        "sourceIds": []
+      },
+      {
+        "name": "unfinishedResource",
+        "value": 0,
+        "unit": "USD per incomplete case",
+        "basis": "judgment",
+        "rationale": "Separate resource scenarios use 200 or 400 for partial clinical resources. Additional opportunity-cost allowance must exclude lab/material/clinical resources already paid within c. The equivalent-case resource mix is hypothetical, not a measured completion-category expenditure.",
+        "sourceIds": []
+      },
+      {
+        "name": "patientResource",
+        "value": 0,
+        "unit": "USD per candidate",
+        "basis": "judgment",
+        "rationale": "Separate resource scenarios add 100 or 250 for patient/caregiver time and travel.",
+        "sourceIds": []
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "central",
+        "label": "Best-judgment completed oral-care pathway",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.12224162318811595,
+        "editionQalys": 0.12224162318811595,
+        "assumptions": "{\"G\":10000,\"c\":1300,\"b\":0.5,\"r\":0.65,\"u\":0.03,\"T\":3,\"L\":0.75,\"m\":0.04,\"loss\":0.0625,\"catchup\":0.06,\"s\":0.75,\"h\":0.001,\"ha\":0.0002,\"g\":1,\"d\":0.03,\"resource\":0,\"unfinishedResource\":0,\"patientResource\":0}; 3.8461538461538463 added candidates; 2.5 completed equivalents; q=0.06690988854654314. Explicit judgment, not measured yield."
+      },
+      {
+        "id": "favorable",
+        "label": "Efficient coordination and durable relief in severe cases",
+        "costUSD": 10000,
+        "allPopulationQalys": 2.456374588026909,
+        "editionQalys": 2.456374588026909,
+        "assumptions": "{\"G\":10000,\"c\":675,\"b\":0.85,\"r\":0.9,\"u\":0.067,\"T\":5,\"L\":0.25,\"m\":0.02,\"loss\":0.035,\"catchup\":0.05,\"s\":0.9,\"h\":0.001,\"ha\":0.0001,\"g\":1,\"d\":0.03,\"resource\":0,\"unfinishedResource\":0,\"patientResource\":0}; 12.592592592592592 added candidates; 11.333333333333332 completed equivalents; q=0.2420474254276941. Explicit judgment, not measured yield."
+      },
+      {
+        "id": "pessimistic",
+        "label": "Weak completion, mild symptoms and rapid alternative care",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.00016354618019873292,
+        "editionQalys": 0.00016027525659475825,
+        "assumptions": "{\"G\":10000,\"c\":2500,\"b\":0.2,\"r\":0.35,\"u\":0.005,\"T\":1,\"L\":1,\"m\":0.1,\"loss\":0.2,\"catchup\":0.7,\"s\":0.4,\"h\":0.0005,\"ha\":0.00005,\"g\":0.98,\"d\":0.03,\"resource\":0,\"unfinishedResource\":0,\"patientResource\":0}; 0.8 added candidates; 0.27999999999999997 completed equivalents; q=0.003030968841926967. Explicit judgment, not measured yield."
+      },
+      {
+        "id": "zero-capacity",
+        "label": "No extra capacity or all funding replaced",
+        "costUSD": 10000,
+        "allPopulationQalys": 0,
+        "editionQalys": 0,
+        "assumptions": "{\"G\":10000,\"c\":1300,\"b\":0,\"r\":0.65,\"u\":0.03,\"T\":3,\"L\":0.75,\"m\":0.04,\"loss\":0.0625,\"catchup\":0.06,\"s\":0.75,\"h\":0.001,\"ha\":0.0002,\"g\":1,\"d\":0.03,\"resource\":0,\"unfinishedResource\":0,\"patientResource\":0}; 0 added candidates; 0 completed equivalents; q=0.06690988854654314. Explicit judgment, not measured yield."
+      },
+      {
+        "id": "zero-completion",
+        "label": "Extra matching but no completed care",
+        "costUSD": 10000,
+        "allPopulationQalys": -0.0007692307692307693,
+        "editionQalys": -0.0007692307692307693,
+        "assumptions": "{\"G\":10000,\"c\":1300,\"b\":0.5,\"r\":0,\"u\":0.03,\"T\":3,\"L\":0.75,\"m\":0.04,\"loss\":0.0625,\"catchup\":0.06,\"s\":0.75,\"h\":0.001,\"ha\":0.0002,\"g\":1,\"d\":0.03,\"resource\":0,\"unfinishedResource\":0,\"patientResource\":0}; 3.8461538461538463 added candidates; 0 completed equivalents; q=0.06690988854654314. Explicit judgment, not measured yield."
+      },
+      {
+        "id": "no-health-benefit",
+        "label": "No incremental benefit but treatment burdens",
+        "costUSD": 10000,
+        "allPopulationQalys": -0.0032144178366524515,
+        "editionQalys": -0.0032144178366524515,
+        "assumptions": "{\"G\":10000,\"c\":1300,\"b\":0.5,\"r\":0.65,\"u\":0,\"T\":3,\"L\":0.75,\"m\":0.04,\"loss\":0.0625,\"catchup\":0.06,\"s\":0.75,\"h\":0.001,\"ha\":0.0002,\"g\":1,\"d\":0.03,\"resource\":0,\"unfinishedResource\":0,\"patientResource\":0}; 3.8461538461538463 added candidates; 2.5 completed equivalents; q=0. Explicit judgment, not measured yield."
+      },
+      {
+        "id": "same-time-alternative",
+        "label": "Same health benefit already available elsewhere",
+        "costUSD": 10000,
+        "allPopulationQalys": -0.0032144178366524515,
+        "editionQalys": -0.0032144178366524515,
+        "assumptions": "{\"G\":10000,\"c\":1300,\"b\":0.5,\"r\":0.65,\"u\":0.03,\"T\":3,\"L\":0.75,\"m\":0.04,\"loss\":0.0625,\"catchup\":0.06,\"s\":0,\"h\":0.001,\"ha\":0.0002,\"g\":1,\"d\":0.03,\"resource\":0,\"unfinishedResource\":0,\"patientResource\":0}; 3.8461538461538463 added candidates; 2.5 completed equivalents; q=0.06690988854654314. Explicit judgment, not measured yield."
+      },
+      {
+        "id": "low-completion",
+        "label": "35% eventual completed-care yield",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.06546738290010977,
+        "editionQalys": 0.06546738290010977,
+        "assumptions": "{\"G\":10000,\"c\":1300,\"b\":0.5,\"r\":0.35,\"u\":0.03,\"T\":3,\"L\":0.75,\"m\":0.04,\"loss\":0.0625,\"catchup\":0.06,\"s\":0.75,\"h\":0.001,\"ha\":0.0002,\"g\":1,\"d\":0.03,\"resource\":0,\"unfinishedResource\":0,\"patientResource\":0}; 3.8461538461538463 added candidates; 1.346153846153846 completed equivalents; q=0.06690988854654314. Explicit judgment, not measured yield."
+      },
+      {
+        "id": "high-completion",
+        "label": "90% eventual completed-care yield",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.16955349009478776,
+        "editionQalys": 0.16955349009478776,
+        "assumptions": "{\"G\":10000,\"c\":1300,\"b\":0.5,\"r\":0.9,\"u\":0.03,\"T\":3,\"L\":0.75,\"m\":0.04,\"loss\":0.0625,\"catchup\":0.06,\"s\":0.75,\"h\":0.001,\"ha\":0.0002,\"g\":1,\"d\":0.03,\"resource\":0,\"unfinishedResource\":0,\"patientResource\":0}; 3.8461538461538463 added candidates; 3.4615384615384617 completed equivalents; q=0.06690988854654314. Explicit judgment, not measured yield."
+      },
+      {
+        "id": "low-funding-response",
+        "label": "10% national funding response",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.02444832463762319,
+        "editionQalys": 0.02444832463762319,
+        "assumptions": "{\"G\":10000,\"c\":1300,\"b\":0.1,\"r\":0.65,\"u\":0.03,\"T\":3,\"L\":0.75,\"m\":0.04,\"loss\":0.0625,\"catchup\":0.06,\"s\":0.75,\"h\":0.001,\"ha\":0.0002,\"g\":1,\"d\":0.03,\"resource\":0,\"unfinishedResource\":0,\"patientResource\":0}; 0.7692307692307693 added candidates; 0.5 completed equivalents; q=0.06690988854654314. Explicit judgment, not measured yield."
+      },
+      {
+        "id": "one-year",
+        "label": "Benefits stop after one year",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.04684166367487355,
+        "editionQalys": 0.04684166367487355,
+        "assumptions": "{\"G\":10000,\"c\":1300,\"b\":0.5,\"r\":0.65,\"u\":0.03,\"T\":1,\"L\":0.75,\"m\":0.04,\"loss\":0.0625,\"catchup\":0.06,\"s\":0.75,\"h\":0.001,\"ha\":0.0002,\"g\":1,\"d\":0.03,\"resource\":0,\"unfinishedResource\":0,\"patientResource\":0}; 3.8461538461538463 added candidates; 2.5 completed equivalents; q=0.026696576806147204. Explicit judgment, not measured yield."
+      },
+      {
+        "id": "high-mortality",
+        "label": "10% annual continuous competing mortality hazard",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.11258663209762748,
+        "editionQalys": 0.11258663209762748,
+        "assumptions": "{\"G\":10000,\"c\":1300,\"b\":0.5,\"r\":0.65,\"u\":0.03,\"T\":3,\"L\":0.75,\"m\":0.1,\"loss\":0.0625,\"catchup\":0.06,\"s\":0.75,\"h\":0.001,\"ha\":0.0002,\"g\":1,\"d\":0.03,\"resource\":0,\"unfinishedResource\":0,\"patientResource\":0}; 3.8461538461538463 added candidates; 2.5 completed equivalents; q=0.0617605599649493. Explicit judgment, not measured yield."
+      },
+      {
+        "id": "fast-catchup",
+        "label": "Alternative treatment rapidly closes the health gap",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.04375627621104104,
+        "editionQalys": 0.04375627621104104,
+        "assumptions": "{\"G\":10000,\"c\":1300,\"b\":0.5,\"r\":0.65,\"u\":0.03,\"T\":3,\"L\":0.75,\"m\":0.04,\"loss\":0.0625,\"catchup\":1,\"s\":0.75,\"h\":0.001,\"ha\":0.0002,\"g\":1,\"d\":0.03,\"resource\":0,\"unfinishedResource\":0,\"patientResource\":0}; 3.8461538461538463 added candidates; 2.5 completed equivalents; q=0.025051036825436534. Explicit judgment, not measured yield."
+      },
+      {
+        "id": "long-delay",
+        "label": "Two-year delay to completed care",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.1036876879976083,
+        "editionQalys": 0.1036876879976083,
+        "assumptions": "{\"G\":10000,\"c\":1300,\"b\":0.5,\"r\":0.6182991259254641,\"u\":0.03,\"T\":3,\"L\":2,\"m\":0.04,\"loss\":0.0625,\"catchup\":0.06,\"s\":0.6958076147464146,\"h\":0.001,\"ha\":0.0002,\"g\":1,\"d\":0.03,\"resource\":0,\"unfinishedResource\":0,\"patientResource\":0}; 3.8461538461538463 added candidates; 2.378073561251785 completed equivalents; q=0.0644827834083364. Explicit judgment, not measured yield."
+      },
+      {
+        "id": "more-burden",
+        "label": "Higher treatment and incomplete-case burdens",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.09715801650439772,
+        "editionQalys": 0.09715801650439772,
+        "assumptions": "{\"G\":10000,\"c\":1300,\"b\":0.5,\"r\":0.65,\"u\":0.03,\"T\":3,\"L\":0.75,\"m\":0.04,\"loss\":0.0625,\"catchup\":0.06,\"s\":0.75,\"h\":0.01,\"ha\":0.001,\"g\":1,\"d\":0.03,\"resource\":0,\"unfinishedResource\":0,\"patientResource\":0}; 3.8461538461538463 added candidates; 2.5 completed equivalents; q=0.06690988854654314. Explicit judgment, not measured yield."
+      },
+      {
+        "id": "resource-cost",
+        "label": "Illustrative donor-plus-selected clinical and patient resources",
+        "costUSD": 15653.846153846154,
+        "allPopulationQalys": 0.12224162318811595,
+        "editionQalys": 0.12224162318811595,
+        "assumptions": "{\"G\":10000,\"c\":1300,\"b\":0.5,\"r\":0.65,\"u\":0.03,\"T\":3,\"L\":0.75,\"m\":0.04,\"loss\":0.0625,\"catchup\":0.06,\"s\":0.75,\"h\":0.001,\"ha\":0.0002,\"g\":1,\"d\":0.03,\"resource\":2000,\"unfinishedResource\":200,\"patientResource\":100}; 3.8461538461538463 added candidates; 2.5 completed equivalents; q=0.06690988854654314. Explicit judgment, not measured yield."
+      },
+      {
+        "id": "resource-high",
+        "label": "Higher donated-resource opportunity cost",
+        "costUSD": 24000,
+        "allPopulationQalys": 0.12224162318811595,
+        "editionQalys": 0.12224162318811595,
+        "assumptions": "{\"G\":10000,\"c\":1300,\"b\":0.5,\"r\":0.65,\"u\":0.03,\"T\":3,\"L\":0.75,\"m\":0.04,\"loss\":0.0625,\"catchup\":0.06,\"s\":0.75,\"h\":0.001,\"ha\":0.0002,\"g\":1,\"d\":0.03,\"resource\":5000,\"unfinishedResource\":400,\"patientResource\":250}; 3.8461538461538463 added candidates; 2.5 completed equivalents; q=0.06690988854654314. Explicit judgment, not measured yield."
+      },
+      {
+        "id": "near-boundary",
+        "label": "2% of health outside qualifying resident scope",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.12224162318811595,
+        "editionQalys": 0.11979679072435363,
+        "assumptions": "{\"G\":10000,\"c\":1300,\"b\":0.5,\"r\":0.65,\"u\":0.03,\"T\":3,\"L\":0.75,\"m\":0.04,\"loss\":0.0625,\"catchup\":0.06,\"s\":0.75,\"h\":0.001,\"ha\":0.0002,\"g\":0.98,\"d\":0.03,\"resource\":0,\"unfinishedResource\":0,\"patientResource\":0}; 3.8461538461538463 added candidates; 2.5 completed equivalents; q=0.06690988854654314. Explicit judgment, not measured yield."
+      }
+    ],
+    "sensitivity": [
+      "Efficient coordination and durable relief in severe cases: $40,710 per 10 USA QALYs; Q=2.456374588026909, total cost=10000.",
+      "Weak completion, mild symptoms and rapid alternative care: $623,926,626 per 10 USA QALYs; Q=0.00016027525659475825, total cost=10000.",
+      "No extra capacity or all funding replaced: no positive finite price; Q=0, total cost=10000.",
+      "Extra matching but no completed care: no positive finite price; Q=-0.0007692307692307693, total cost=10000.",
+      "No incremental benefit but treatment burdens: no positive finite price; Q=-0.0032144178366524515, total cost=10000.",
+      "Same health benefit already available elsewhere: no positive finite price; Q=-0.0032144178366524515, total cost=10000.",
+      "35% eventual completed-care yield: $1,527,478 per 10 USA QALYs; Q=0.06546738290010977, total cost=10000.",
+      "90% eventual completed-care yield: $589,784 per 10 USA QALYs; Q=0.16955349009478776, total cost=10000.",
+      "10% national funding response: $4,090,260 per 10 USA QALYs; Q=0.02444832463762319, total cost=10000.",
+      "Benefits stop after one year: $2,134,852 per 10 USA QALYs; Q=0.04684166367487355, total cost=10000.",
+      "10% annual continuous competing mortality hazard: $888,205 per 10 USA QALYs; Q=0.11258663209762748, total cost=10000.",
+      "Alternative treatment rapidly closes the health gap: $2,285,386 per 10 USA QALYs; Q=0.04375627621104104, total cost=10000.",
+      "Two-year delay to completed care: $964,435 per 10 USA QALYs; Q=0.1036876879976083, total cost=10000.",
+      "Higher treatment and incomplete-case burdens: $1,029,251 per 10 USA QALYs; Q=0.09715801650439772, total cost=10000.",
+      "Illustrative donor-plus-selected clinical and patient resources: $1,280,566 per 10 USA QALYs; Q=0.12224162318811595, total cost=15653.846153846154.",
+      "Higher donated-resource opportunity cost: $1,963,325 per 10 USA QALYs; Q=0.12224162318811595, total cost=24000.",
+      "2% of health outside qualifying resident scope: $834,747 per 10 USA QALYs; Q=0.11979679072435363, total cost=10000."
+    ],
+    "missingInputs": [
+      "Matched national/group/licensee audited support and donated-resource cost with all internal service fees and reimbursements eliminated, tied to a unique completed-care cohort.",
+      "Current unrestricted expansion budget, volunteer slot availability and grant commitments that identify marginal national funding response.",
+      "National eventual completion and partial-care outcomes, time to relief and repeat reporting across years.",
+      "Case mix, baseline severity, generic utility, symptom relapse, excess harm, patient mortality and alternative-care timing.",
+      "Current use of covered Medicare/Medicaid and charity alternatives; medical treatment truly unlocked, its timing and downstream resource costs.",
+      "Purpose, terms and liquidity implications of FY2025 national borrowing; restricted reserve commitments and current cash forecast."
+    ]
+  }
+}

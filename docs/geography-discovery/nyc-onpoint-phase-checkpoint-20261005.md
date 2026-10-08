@@ -1,0 +1,11 @@
+# NYC OnPoint held acceptance
+
+OnPoint independently accepted; public NYC remains 25/25 initial, 7/10 deep. One accepted held deep review awaits combined integration/publication. Conditional $/better life: $38.543M initial to $29.433M current, with unchanged clinical reference and separate hypothetical signed household-resource benefit. Complete historical diagnostics preserved. Evidence and assumptions are explicitly distinguished; no observed donor-capacity or household-gain claim.
+
+Author actual work 9.823 minutes and root dedicated model review 3.558 minutes, GPT-6.1 Sol. First mixed-purpose root source clock is excluded entirely. Independent finite-survival/log-resource probe passed 92 checks over 14 current and six historical cases. Nineteen focused tests, portable author tests and integration dry-run pass. No held-packet browser/build/deployment claim.
+
+Dedicated jobs/abundance pipeline PR #385 merged and five focused pipeline/income tests passed. Current public release remains Sites 408; corrected progress narrative will ship with the next substantive batch, not a separate redundant deploy.
+
+Remaining public-stage budget 57 initial +39 deep =870 planned research minutes; accepted-held-adjusted unaccepted research 57+38 =855 minutes. Top-four selection, independent review and integration overhead are separate. Next isolated author Mobilization for Justice, then God's Love We Deliver, then NYC top-four selection and one combined release. Fresh live usage 91% remaining, 20% floor/no new dispatch <=25% preserved. Revalidate actual worker artifacts and closed clocks on continuation; dispatch alone is not proof of productive research.
+
+Next author /root/nyc_mfj_deep confirmed actual organization-specific start 2026-10-05T04:18:35.806Z, session 9478eceb-4637-4aaa-8a00-55d711d096c0. Root separately checked current original operations, annual report and mixed medical-legal trial evidence and sent material cost/cohort/transfer challenges. Closed source audit a3c23e11-f8d1-4d39-a80f-afb6418121a0 lasted 63.532 seconds. Neither new review nor public stage count is accepted from this source checkpoint. Live worker and isolated artifacts must be revalidated on continuation.

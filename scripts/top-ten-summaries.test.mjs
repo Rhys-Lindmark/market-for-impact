@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import summaries from '../data/top-ten-summaries.json' with {type:'json'};
 import readiness from '../data/donor-readiness.json' with {type:'json'};
-import {calculate} from '../lib/recares-v2-model.mjs';
+import {calculate,inputs,scenarios} from '../lib/recares-calibrated-model.mjs';
 
 test('ten complete summaries use the requested structure and evidence links',()=>{
  assert.deepEqual(Object.keys(summaries).sort(),readiness.reviews.map(row=>row.slug).sort());
@@ -17,9 +17,9 @@ test('ten complete summaries use the requested structure and evidence links',()=
 });
 test('ReCARES service ratios and conditional benefit are not device promises',()=>{
  const model=calculate(),text=summaries.recares.cost.join(' ');
- assert.ok(text.includes('$'+model.costPerReportedRecipient.toFixed(2)));
- assert.ok(text.includes('$'+(model.inputs.totalExpenseUsd/model.inputs.reportedItems).toFixed(2)));
- const mobility=model.rows.find(row=>row.name==='central').mix.find(row=>row.name==='mobility');
+ assert.ok(text.includes('$'+(inputs.totalExpenseUsd/inputs.reportedRecipientEquivalents).toFixed(2)));
+ assert.ok(text.includes('$'+(inputs.totalExpenseUsd/inputs.reportedItems).toFixed(2)));
+ const mobility=scenarios.find(row=>row.name==='central').mix.find(row=>row.name==='mobility');
  assert.ok(text.includes(String(mobility.utility*mobility.years)+' QALYs'));
  assert.match(text,/analyst assumption/);assert.match(text,/not a measured effect per donated item/);
 });

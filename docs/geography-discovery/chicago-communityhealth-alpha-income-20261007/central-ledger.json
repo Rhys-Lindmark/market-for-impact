@@ -1,0 +1,1957 @@
+{
+  "defaults": {
+    "C": 21453697,
+    "N": 4147,
+    "a": 0.3,
+    "u": 0.05,
+    "T": 0.5,
+    "harm": 0.05,
+    "g": 0.98,
+    "unique": 0.8,
+    "resourceAdditional": 0.3,
+    "cash": 200,
+    "work": 0,
+    "cost": 25,
+    "baseline": 20000,
+    "years": 1,
+    "overlap": 0.5,
+    "payerLoss": 0,
+    "externalCost": 0,
+    "payerPeople": 10000,
+    "payerBaseline": 50000,
+    "delay": 0,
+    "r": 0.03,
+    "unknown": false
+  },
+  "current": {
+    "costUSD": 21453697,
+    "allPopulationQalys": 31.0525,
+    "editionQalys": 30.431449999999998,
+    "incomePathways": [
+      {
+        "id": "financial-protection-households",
+        "people": 995.2800000000001,
+        "annualIncomeBeforeUSD": 20000,
+        "annualIncomeGainUSD": 75,
+        "years": 1,
+        "editionShare": 0.98,
+        "delayYears": 0,
+        "discountRate": 0.03,
+        "rationale": "Judged net financial protection independent of clinical response; joint positive gains and full incremental access/time cost.",
+        "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+        "sourceIds": [
+          "services",
+          "eligibility",
+          "oregon-original",
+          "cg-income"
+        ]
+      },
+      {
+        "id": "other-exposed-households",
+        "people": 2322.32,
+        "annualIncomeBeforeUSD": 20000,
+        "annualIncomeGainUSD": -25,
+        "years": 1,
+        "editionShare": 0.98,
+        "delayYears": 0,
+        "discountRate": 0.03,
+        "rationale": "Full net incremental time/access costs even clinical or resource benefit fails.",
+        "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+        "sourceIds": [
+          "services",
+          "eligibility",
+          "oregon-original",
+          "cg-income"
+        ]
+      }
+    ],
+    "incomeUnknown": false,
+    "incomeEquivalent": 0.40209574329864917,
+    "totalEquivalent": 30.833545743298647,
+    "price10": 6957907.850952477,
+    "clinicalPatients": 4147,
+    "resourceHouseholds": 3317.6000000000004
+  },
+  "scenarios": [
+    {
+      "id": "central",
+      "label": "central",
+      "overrides": {},
+      "costUSD": 21453697,
+      "allPopulationQalys": 31.0525,
+      "editionQalys": 30.431449999999998,
+      "incomePathways": [
+        {
+          "id": "financial-protection-households",
+          "people": 995.2800000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Judged net financial protection independent of clinical response; joint positive gains and full incremental access/time cost.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 2322.32,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net incremental time/access costs even clinical or resource benefit fails.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": 0.40209574329864917,
+      "totalEquivalent": 30.833545743298647,
+      "price10": 6957907.850952477,
+      "clinicalPatients": 4147,
+      "resourceHouseholds": 3317.6000000000004,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {}"
+    },
+    {
+      "id": "clinical-null",
+      "label": "clinical-null",
+      "overrides": {
+        "u": 0
+      },
+      "costUSD": 21453697,
+      "allPopulationQalys": -0.05,
+      "editionQalys": -0.049,
+      "incomePathways": [
+        {
+          "id": "financial-protection-households",
+          "people": 995.2800000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Judged net financial protection independent of clinical response; joint positive gains and full incremental access/time cost.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 2322.32,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net incremental time/access costs even clinical or resource benefit fails.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": 0.40209574329864917,
+      "totalEquivalent": 0.3530957432986492,
+      "price10": 607588661.3522388,
+      "clinicalPatients": 4147,
+      "resourceHouseholds": 3317.6000000000004,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {\"u\":0}"
+    },
+    {
+      "id": "financial-only",
+      "label": "financial-only",
+      "overrides": {
+        "u": 0,
+        "harm": 0
+      },
+      "costUSD": 21453697,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "incomePathways": [
+        {
+          "id": "financial-protection-households",
+          "people": 995.2800000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Judged net financial protection independent of clinical response; joint positive gains and full incremental access/time cost.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 2322.32,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net incremental time/access costs even clinical or resource benefit fails.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": 0.40209574329864917,
+      "totalEquivalent": 0.40209574329864917,
+      "price10": 533546981.22396344,
+      "clinicalPatients": 4147,
+      "resourceHouseholds": 3317.6000000000004,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {\"u\":0,\"harm\":0}"
+    },
+    {
+      "id": "unknown-resources",
+      "label": "unknown-resources",
+      "overrides": {
+        "unknown": true
+      },
+      "costUSD": 21453697,
+      "allPopulationQalys": 31.0525,
+      "editionQalys": 30.431449999999998,
+      "incomePathways": [
+        {
+          "id": "financial-protection-households",
+          "people": 995.2800000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Judged net financial protection independent of clinical response; joint positive gains and full incremental access/time cost.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 2322.32,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net incremental time/access costs even clinical or resource benefit fails.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": true,
+      "incomeEquivalent": 0.40209574329864917,
+      "totalEquivalent": 30.833545743298647,
+      "price10": null,
+      "clinicalPatients": 4147,
+      "resourceHouseholds": 3317.6000000000004,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {\"unknown\":true}"
+    },
+    {
+      "id": "no-clinical-additionality",
+      "label": "no-clinical-additionality",
+      "overrides": {
+        "a": 0
+      },
+      "costUSD": 21453697,
+      "allPopulationQalys": -0.05,
+      "editionQalys": -0.049,
+      "incomePathways": [
+        {
+          "id": "financial-protection-households",
+          "people": 995.2800000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Judged net financial protection independent of clinical response; joint positive gains and full incremental access/time cost.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 2322.32,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net incremental time/access costs even clinical or resource benefit fails.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": 0.40209574329864917,
+      "totalEquivalent": 0.3530957432986492,
+      "price10": 607588661.3522388,
+      "clinicalPatients": 4147,
+      "resourceHouseholds": 3317.6000000000004,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {\"a\":0}"
+    },
+    {
+      "id": "no-resource-additionality",
+      "label": "no-resource-additionality",
+      "overrides": {
+        "resourceAdditional": 0
+      },
+      "costUSD": 21453697,
+      "allPopulationQalys": 31.0525,
+      "editionQalys": 30.431449999999998,
+      "incomePathways": [
+        {
+          "id": "other-exposed-households",
+          "people": 3317.6000000000004,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net incremental time/access costs even clinical or resource benefit fails.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -2.033301078092154,
+      "totalEquivalent": 28.398148921907843,
+      "price10": 7554611.062501146,
+      "clinicalPatients": 4147,
+      "resourceHouseholds": 3317.6000000000004,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {\"resourceAdditional\":0}"
+    },
+    {
+      "id": "no-benefit-full-burdens",
+      "label": "no-benefit-full-burdens",
+      "overrides": {
+        "a": 0,
+        "resourceAdditional": 0
+      },
+      "costUSD": 21453697,
+      "allPopulationQalys": -0.05,
+      "editionQalys": -0.049,
+      "incomePathways": [
+        {
+          "id": "other-exposed-households",
+          "people": 3317.6000000000004,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net incremental time/access costs even clinical or resource benefit fails.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -2.033301078092154,
+      "totalEquivalent": -2.082301078092154,
+      "price10": null,
+      "clinicalPatients": 4147,
+      "resourceHouseholds": 3317.6000000000004,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {\"a\":0,\"resourceAdditional\":0}"
+    },
+    {
+      "id": "no-exposure",
+      "label": "no-exposure",
+      "overrides": {
+        "N": 0
+      },
+      "costUSD": 21453697,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "incomePathways": [],
+      "incomeUnknown": false,
+      "incomeEquivalent": 0,
+      "totalEquivalent": 0,
+      "price10": null,
+      "clinicalPatients": 0,
+      "resourceHouseholds": 0,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {\"N\":0}"
+    },
+    {
+      "id": "no-gift-no-exposure",
+      "label": "no-gift-no-exposure",
+      "overrides": {
+        "N": 0,
+        "C": 0
+      },
+      "costUSD": 0,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "incomePathways": [],
+      "incomeUnknown": false,
+      "incomeEquivalent": 0,
+      "totalEquivalent": 0,
+      "price10": null,
+      "clinicalPatients": 0,
+      "resourceHouseholds": 0,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {\"N\":0,\"C\":0}"
+    },
+    {
+      "id": "adverse",
+      "label": "adverse",
+      "overrides": {
+        "u": -0.01,
+        "cash": -100,
+        "work": -100,
+        "cost": 75
+      },
+      "costUSD": 21453697,
+      "allPopulationQalys": -6.270499999999999,
+      "editionQalys": -6.145089999999999,
+      "incomePathways": [
+        {
+          "id": "financial-protection-households",
+          "people": 995.2800000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -275,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Judged net financial protection independent of clinical response; joint positive gains and full incremental access/time cost.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 2322.32,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net incremental time/access costs even clinical or resource benefit fails.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -11.02751186325543,
+      "totalEquivalent": -17.17260186325543,
+      "price10": null,
+      "clinicalPatients": 4147,
+      "resourceHouseholds": 3317.6000000000004,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {\"u\":-0.01,\"cash\":-100,\"work\":-100,\"cost\":75}"
+    },
+    {
+      "id": "zero-otherwise-paid-cash",
+      "label": "zero-otherwise-paid-cash",
+      "overrides": {
+        "cash": 0
+      },
+      "costUSD": 21453697,
+      "allPopulationQalys": 31.0525,
+      "editionQalys": 30.431449999999998,
+      "incomePathways": [
+        {
+          "id": "financial-protection-households",
+          "people": 995.2800000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Judged net financial protection independent of clinical response; joint positive gains and full incremental access/time cost.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 2322.32,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net incremental time/access costs even clinical or resource benefit fails.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -2.033301078092154,
+      "totalEquivalent": 28.398148921907843,
+      "price10": 7554611.062501146,
+      "clinicalPatients": 4147,
+      "resourceHouseholds": 3317.6000000000004,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {\"cash\":0}"
+    },
+    {
+      "id": "low-cash",
+      "label": "low-cash",
+      "overrides": {
+        "cash": 50
+      },
+      "costUSD": 21453697,
+      "allPopulationQalys": 31.0525,
+      "editionQalys": 30.431449999999998,
+      "incomePathways": [
+        {
+          "id": "financial-protection-households",
+          "people": 995.2800000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 0,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Judged net financial protection independent of clinical response; joint positive gains and full incremental access/time cost.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 2322.32,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net incremental time/access costs even clinical or resource benefit fails.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -1.4233107546645076,
+      "totalEquivalent": 29.008139245335492,
+      "price10": 7395750.833431949,
+      "clinicalPatients": 4147,
+      "resourceHouseholds": 3317.6000000000004,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {\"cash\":50}"
+    },
+    {
+      "id": "high-cash",
+      "label": "high-cash",
+      "overrides": {
+        "cash": 400
+      },
+      "costUSD": 21453697,
+      "allPopulationQalys": 31.0525,
+      "editionQalys": 30.431449999999998,
+      "incomePathways": [
+        {
+          "id": "financial-protection-households",
+          "people": 995.2800000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 175,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Judged net financial protection independent of clinical response; joint positive gains and full incremental access/time cost.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 2322.32,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net incremental time/access costs even clinical or resource benefit fails.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": 2.8253911641016733,
+      "totalEquivalent": 33.25684116410167,
+      "price10": 6450912.428555511,
+      "clinicalPatients": 4147,
+      "resourceHouseholds": 3317.6000000000004,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {\"cash\":400}"
+    },
+    {
+      "id": "net-work-positive",
+      "label": "net-work-positive",
+      "overrides": {
+        "work": 200
+      },
+      "costUSD": 21453697,
+      "allPopulationQalys": 31.0525,
+      "editionQalys": 30.431449999999998,
+      "incomePathways": [
+        {
+          "id": "financial-protection-households",
+          "people": 995.2800000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 175,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Judged net financial protection independent of clinical response; joint positive gains and full incremental access/time cost.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 2322.32,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net incremental time/access costs even clinical or resource benefit fails.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": 2.8253911641016733,
+      "totalEquivalent": 33.25684116410167,
+      "price10": 6450912.428555511,
+      "clinicalPatients": 4147,
+      "resourceHouseholds": 3317.6000000000004,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {\"work\":200}"
+    },
+    {
+      "id": "net-work-negative",
+      "label": "net-work-negative",
+      "overrides": {
+        "work": -100
+      },
+      "costUSD": 21453697,
+      "allPopulationQalys": 31.0525,
+      "editionQalys": 30.431449999999998,
+      "incomePathways": [
+        {
+          "id": "financial-protection-households",
+          "people": 995.2800000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Judged net financial protection independent of clinical response; joint positive gains and full incremental access/time cost.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 2322.32,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net incremental time/access costs even clinical or resource benefit fails.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -2.033301078092154,
+      "totalEquivalent": 28.398148921907843,
+      "price10": 7554611.062501146,
+      "clinicalPatients": 4147,
+      "resourceHouseholds": 3317.6000000000004,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {\"work\":-100}"
+    },
+    {
+      "id": "negative-overlap-zero",
+      "label": "negative-overlap-zero",
+      "overrides": {
+        "cash": -100,
+        "work": -100,
+        "overlap": 0
+      },
+      "costUSD": 21453697,
+      "allPopulationQalys": 31.0525,
+      "editionQalys": 30.431449999999998,
+      "incomePathways": [
+        {
+          "id": "financial-protection-households",
+          "people": 995.2800000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -225,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Judged net financial protection independent of clinical response; joint positive gains and full incremental access/time cost.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 2322.32,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net incremental time/access costs even clinical or resource benefit fails.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -6.940886641901132,
+      "totalEquivalent": 23.490563358098868,
+      "price10": 9132900.166314395,
+      "clinicalPatients": 4147,
+      "resourceHouseholds": 3317.6000000000004,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {\"cash\":-100,\"work\":-100,\"overlap\":0}"
+    },
+    {
+      "id": "negative-overlap-one",
+      "label": "negative-overlap-one",
+      "overrides": {
+        "cash": -100,
+        "work": -100,
+        "overlap": 1
+      },
+      "costUSD": 21453697,
+      "allPopulationQalys": 31.0525,
+      "editionQalys": 30.431449999999998,
+      "incomePathways": [
+        {
+          "id": "financial-protection-households",
+          "people": 995.2800000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -225,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Judged net financial protection independent of clinical response; joint positive gains and full incremental access/time cost.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 2322.32,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net incremental time/access costs even clinical or resource benefit fails.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -6.940886641901132,
+      "totalEquivalent": 23.490563358098868,
+      "price10": 9132900.166314395,
+      "clinicalPatients": 4147,
+      "resourceHouseholds": 3317.6000000000004,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {\"cash\":-100,\"work\":-100,\"overlap\":1}"
+    },
+    {
+      "id": "positive-overlap-zero",
+      "label": "positive-overlap-zero",
+      "overrides": {
+        "overlap": 0
+      },
+      "costUSD": 21453697,
+      "allPopulationQalys": 31.0525,
+      "editionQalys": 30.431449999999998,
+      "incomePathways": [
+        {
+          "id": "financial-protection-households",
+          "people": 995.2800000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 175,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Judged net financial protection independent of clinical response; joint positive gains and full incremental access/time cost.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 2322.32,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net incremental time/access costs even clinical or resource benefit fails.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": 2.8253911641016733,
+      "totalEquivalent": 33.25684116410167,
+      "price10": 6450912.428555511,
+      "clinicalPatients": 4147,
+      "resourceHouseholds": 3317.6000000000004,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {\"overlap\":0}"
+    },
+    {
+      "id": "positive-overlap-one",
+      "label": "positive-overlap-one",
+      "overrides": {
+        "overlap": 1
+      },
+      "costUSD": 21453697,
+      "allPopulationQalys": 31.0525,
+      "editionQalys": 30.431449999999998,
+      "incomePathways": [
+        {
+          "id": "financial-protection-households",
+          "people": 995.2800000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Judged net financial protection independent of clinical response; joint positive gains and full incremental access/time cost.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 2322.32,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net incremental time/access costs even clinical or resource benefit fails.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -2.033301078092154,
+      "totalEquivalent": 28.398148921907843,
+      "price10": 7554611.062501146,
+      "clinicalPatients": 4147,
+      "resourceHouseholds": 3317.6000000000004,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {\"overlap\":1}"
+    },
+    {
+      "id": "full-cash-counterparty",
+      "label": "full-cash-counterparty",
+      "overrides": {
+        "payerLoss": 200
+      },
+      "costUSD": 21453697,
+      "allPopulationQalys": 31.0525,
+      "editionQalys": 30.431449999999998,
+      "incomePathways": [
+        {
+          "id": "financial-protection-households",
+          "people": 995.2800000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Judged net financial protection independent of clinical response; joint positive gains and full incremental access/time cost.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 2322.32,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net incremental time/access costs even clinical or resource benefit fails.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "distinct-global-provider-payers",
+          "people": 10000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -19.507488000000002,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Distinct outside provider/payer losses for local care; do not add recognized donated resources already in C twice.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -1.5490336977973291,
+      "totalEquivalent": 28.882416302202667,
+      "price10": 7427943.969619976,
+      "clinicalPatients": 4147,
+      "resourceHouseholds": 3317.6000000000004,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {\"payerLoss\":200}"
+    },
+    {
+      "id": "external-unrecognized-provider-cost",
+      "label": "external-unrecognized-provider-cost",
+      "overrides": {
+        "externalCost": 100
+      },
+      "costUSD": 21453697,
+      "allPopulationQalys": 31.0525,
+      "editionQalys": 30.431449999999998,
+      "incomePathways": [
+        {
+          "id": "financial-protection-households",
+          "people": 995.2800000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Judged net financial protection independent of clinical response; joint positive gains and full incremental access/time cost.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 2322.32,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net incremental time/access costs even clinical or resource benefit fails.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "distinct-global-provider-payers",
+          "people": 10000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -40.6406,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Distinct outside provider/payer losses for local care; do not add recognized donated resources already in C twice.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -3.663616810607488,
+      "totalEquivalent": 26.767833189392512,
+      "price10": 8014730.534297268,
+      "clinicalPatients": 4147,
+      "resourceHouseholds": 3317.6000000000004,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {\"externalCost\":100}"
+    },
+    {
+      "id": "no-net-access-cost",
+      "label": "no-net-access-cost",
+      "overrides": {
+        "cost": 0
+      },
+      "costUSD": 21453697,
+      "allPopulationQalys": 31.0525,
+      "editionQalys": 30.431449999999998,
+      "incomePathways": [
+        {
+          "id": "financial-protection-households",
+          "people": 995.2800000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 100,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Judged net financial protection independent of clinical response; joint positive gains and full incremental access/time cost.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 2322.32,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 0,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net incremental time/access costs even clinical or resource benefit fails.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": 2.4323601544024154,
+      "totalEquivalent": 32.863810154402415,
+      "price10": 6528061.3839981295,
+      "clinicalPatients": 4147,
+      "resourceHouseholds": 3317.6000000000004,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {\"cost\":0}"
+    },
+    {
+      "id": "higher-net-access-cost",
+      "label": "higher-net-access-cost",
+      "overrides": {
+        "cost": 75
+      },
+      "costUSD": 21453697,
+      "allPopulationQalys": 31.0525,
+      "editionQalys": 30.431449999999998,
+      "incomePathways": [
+        {
+          "id": "financial-protection-households",
+          "people": 995.2800000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Judged net financial protection independent of clinical response; joint positive gains and full incremental access/time cost.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 2322.32,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net incremental time/access costs even clinical or resource benefit fails.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": -3.666055865765153,
+      "totalEquivalent": 26.765394134234846,
+      "price10": 8015460.894169757,
+      "clinicalPatients": 4147,
+      "resourceHouseholds": 3317.6000000000004,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {\"cost\":75}"
+    },
+    {
+      "id": "no-household-grouping",
+      "label": "no-household-grouping",
+      "overrides": {
+        "unique": 0
+      },
+      "costUSD": 21453697,
+      "allPopulationQalys": 31.0525,
+      "editionQalys": 30.431449999999998,
+      "incomePathways": [],
+      "incomeUnknown": false,
+      "incomeEquivalent": 0,
+      "totalEquivalent": 30.431449999999998,
+      "price10": 7049843.829327883,
+      "clinicalPatients": 4147,
+      "resourceHouseholds": 0,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {\"unique\":0}"
+    },
+    {
+      "id": "lower-household-baseline",
+      "label": "lower-household-baseline",
+      "overrides": {
+        "baseline": 10000
+      },
+      "costUSD": 21453697,
+      "allPopulationQalys": 31.0525,
+      "editionQalys": 30.431449999999998,
+      "incomePathways": [
+        {
+          "id": "financial-protection-households",
+          "people": 995.2800000000001,
+          "annualIncomeBeforeUSD": 10000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Judged net financial protection independent of clinical response; joint positive gains and full incremental access/time cost.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 2322.32,
+          "annualIncomeBeforeUSD": 10000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net incremental time/access costs even clinical or resource benefit fails.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": 0.7956020046554371,
+      "totalEquivalent": 31.227052004655434,
+      "price10": 6870228.094794734,
+      "clinicalPatients": 4147,
+      "resourceHouseholds": 3317.6000000000004,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {\"baseline\":10000}"
+    },
+    {
+      "id": "higher-household-baseline",
+      "label": "higher-household-baseline",
+      "overrides": {
+        "baseline": 40000
+      },
+      "costUSD": 21453697,
+      "allPopulationQalys": 31.0525,
+      "editionQalys": 30.431449999999998,
+      "incomePathways": [
+        {
+          "id": "financial-protection-households",
+          "people": 995.2800000000001,
+          "annualIncomeBeforeUSD": 40000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Judged net financial protection independent of clinical response; joint positive gains and full incremental access/time cost.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 2322.32,
+          "annualIncomeBeforeUSD": 40000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net incremental time/access costs even clinical or resource benefit fails.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": 0.20212446148720575,
+      "totalEquivalent": 30.633574461487203,
+      "price10": 7003328.007631553,
+      "clinicalPatients": 4147,
+      "resourceHouseholds": 3317.6000000000004,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {\"baseline\":40000}"
+    },
+    {
+      "id": "no-local",
+      "label": "no-local",
+      "overrides": {
+        "g": 0
+      },
+      "costUSD": 21453697,
+      "allPopulationQalys": 31.0525,
+      "editionQalys": 0,
+      "incomePathways": [
+        {
+          "id": "financial-protection-households",
+          "people": 995.2800000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Judged net financial protection independent of clinical response; joint positive gains and full incremental access/time cost.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 2322.32,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net incremental time/access costs even clinical or resource benefit fails.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": 0,
+      "totalEquivalent": 0,
+      "price10": null,
+      "clinicalPatients": 4147,
+      "resourceHouseholds": 3317.6000000000004,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {\"g\":0}"
+    },
+    {
+      "id": "all-local",
+      "label": "all-local",
+      "overrides": {
+        "g": 1
+      },
+      "costUSD": 21453697,
+      "allPopulationQalys": 31.0525,
+      "editionQalys": 31.0525,
+      "incomePathways": [
+        {
+          "id": "financial-protection-households",
+          "people": 995.2800000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Judged net financial protection independent of clinical response; joint positive gains and full incremental access/time cost.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 2322.32,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net incremental time/access costs even clinical or resource benefit fails.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": 0.4103017788761727,
+      "totalEquivalent": 31.46280177887617,
+      "price10": 6818749.693933428,
+      "clinicalPatients": 4147,
+      "resourceHouseholds": 3317.6000000000004,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {\"g\":1}"
+    },
+    {
+      "id": "delay-year",
+      "label": "delay-year",
+      "overrides": {
+        "delay": 1
+      },
+      "costUSD": 21453697,
+      "allPopulationQalys": 30.148058252427184,
+      "editionQalys": 29.54509708737864,
+      "incomePathways": [
+        {
+          "id": "financial-protection-households",
+          "people": 995.2800000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Judged net financial protection independent of clinical response; joint positive gains and full incremental access/time cost.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 2322.32,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 1,
+          "discountRate": 0.03,
+          "rationale": "Full net incremental time/access costs even clinical or resource benefit fails.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": 0.39038421679480506,
+      "totalEquivalent": 29.935481304173443,
+      "price10": 7166645.0864810515,
+      "clinicalPatients": 4147,
+      "resourceHouseholds": 3317.6000000000004,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {\"delay\":1}"
+    },
+    {
+      "id": "shorter-morbidity",
+      "label": "shorter-morbidity",
+      "overrides": {
+        "T": 0.25
+      },
+      "costUSD": 21453697,
+      "allPopulationQalys": 15.501249999999999,
+      "editionQalys": 15.191225,
+      "incomePathways": [
+        {
+          "id": "financial-protection-households",
+          "people": 995.2800000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Judged net financial protection independent of clinical response; joint positive gains and full incremental access/time cost.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 2322.32,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net incremental time/access costs even clinical or resource benefit fails.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": 0.40209574329864917,
+      "totalEquivalent": 15.593320743298648,
+      "price10": 13758260.573983187,
+      "clinicalPatients": 4147,
+      "resourceHouseholds": 3317.6000000000004,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {\"T\":0.25}"
+    },
+    {
+      "id": "longer-morbidity",
+      "label": "longer-morbidity",
+      "overrides": {
+        "T": 1
+      },
+      "costUSD": 21453697,
+      "allPopulationQalys": 62.155,
+      "editionQalys": 60.9119,
+      "incomePathways": [
+        {
+          "id": "financial-protection-households",
+          "people": 995.2800000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Judged net financial protection independent of clinical response; joint positive gains and full incremental access/time cost.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 2322.32,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net incremental time/access costs even clinical or resource benefit fails.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": 0.40209574329864917,
+      "totalEquivalent": 61.313995743298655,
+      "price10": 3498988.5653219386,
+      "clinicalPatients": 4147,
+      "resourceHouseholds": 3317.6000000000004,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {\"T\":1}"
+    },
+    {
+      "id": "cash-like-not-social-cost",
+      "label": "cash-like-not-social-cost",
+      "overrides": {
+        "C": 4551644
+      },
+      "costUSD": 4551644,
+      "allPopulationQalys": 31.0525,
+      "editionQalys": 30.431449999999998,
+      "incomePathways": [
+        {
+          "id": "financial-protection-households",
+          "people": 995.2800000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Judged net financial protection independent of clinical response; joint positive gains and full incremental access/time cost.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 2322.32,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net incremental time/access costs even clinical or resource benefit fails.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": 0.40209574329864917,
+      "totalEquivalent": 30.833545743298647,
+      "price10": 1476198.6953736104,
+      "clinicalPatients": 4147,
+      "resourceHouseholds": 3317.6000000000004,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {\"C\":4551644}"
+    },
+    {
+      "id": "three-percent-resource-opportunity-grossup",
+      "label": "three-percent-resource-opportunity-grossup",
+      "overrides": {
+        "C": 22097307.91
+      },
+      "costUSD": 22097307.91,
+      "allPopulationQalys": 31.0525,
+      "editionQalys": 30.431449999999998,
+      "incomePathways": [
+        {
+          "id": "financial-protection-households",
+          "people": 995.2800000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Judged net financial protection independent of clinical response; joint positive gains and full incremental access/time cost.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 2322.32,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net incremental time/access costs even clinical or resource benefit fails.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": 0.40209574329864917,
+      "totalEquivalent": 30.833545743298647,
+      "price10": 7166645.0864810515,
+      "clinicalPatients": 4147,
+      "resourceHouseholds": 3317.6000000000004,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {\"C\":22097307.91}"
+    },
+    {
+      "id": "program-half-allocation-hypothesis",
+      "label": "program-half-allocation-hypothesis",
+      "overrides": {
+        "C": 10726848.5
+      },
+      "costUSD": 10726848.5,
+      "allPopulationQalys": 31.0525,
+      "editionQalys": 30.431449999999998,
+      "incomePathways": [
+        {
+          "id": "financial-protection-households",
+          "people": 995.2800000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Judged net financial protection independent of clinical response; joint positive gains and full incremental access/time cost.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 2322.32,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net incremental time/access costs even clinical or resource benefit fails.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": 0.40209574329864917,
+      "totalEquivalent": 30.833545743298647,
+      "price10": 3478953.9254762386,
+      "clinicalPatients": 4147,
+      "resourceHouseholds": 3317.6000000000004,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {\"C\":10726848.5}"
+    },
+    {
+      "id": "lower-patient-scale",
+      "label": "lower-patient-scale",
+      "overrides": {
+        "N": 3000
+      },
+      "costUSD": 21453697,
+      "allPopulationQalys": 22.45,
+      "editionQalys": 22.000999999999998,
+      "incomePathways": [
+        {
+          "id": "financial-protection-households",
+          "people": 720,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Judged net financial protection independent of clinical response; joint positive gains and full incremental access/time cost.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 1680,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net incremental time/access costs even clinical or resource benefit fails.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": 0.29088189773232376,
+      "totalEquivalent": 22.29188189773232,
+      "price10": 9623995.451986678,
+      "clinicalPatients": 3000,
+      "resourceHouseholds": 2400,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {\"N\":3000}"
+    },
+    {
+      "id": "resource-benefit-without-clinical-response",
+      "label": "resource-benefit-without-clinical-response",
+      "overrides": {
+        "a": 0,
+        "cash": 200
+      },
+      "costUSD": 21453697,
+      "allPopulationQalys": -0.05,
+      "editionQalys": -0.049,
+      "incomePathways": [
+        {
+          "id": "financial-protection-households",
+          "people": 995.2800000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 75,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Judged net financial protection independent of clinical response; joint positive gains and full incremental access/time cost.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        },
+        {
+          "id": "other-exposed-households",
+          "people": 2322.32,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -25,
+          "years": 1,
+          "editionShare": 0.98,
+          "delayYears": 0,
+          "discountRate": 0.03,
+          "rationale": "Full net incremental time/access costs even clinical or resource benefit fails.",
+          "counterfactual": "Net otherwise-paid household cash relative to free clinics, Medicaid/HBIS, deferred care and patient-paid alternatives; no retail medicines or gross wages.",
+          "sourceIds": [
+            "services",
+            "eligibility",
+            "oregon-original",
+            "cg-income"
+          ]
+        }
+      ],
+      "incomeUnknown": false,
+      "incomeEquivalent": 0.40209574329864917,
+      "totalEquivalent": 0.3530957432986492,
+      "price10": 607588661.3522388,
+      "clinicalPatients": 4147,
+      "resourceHouseholds": 3317.6000000000004,
+      "assumptions": "Conditional annual recipient clinical and signed financial-protection hypothesis, not empirical portfolio EV or priced gift capacity. {\"a\":0,\"cash\":200}"
+    }
+  ]
+}
+
+

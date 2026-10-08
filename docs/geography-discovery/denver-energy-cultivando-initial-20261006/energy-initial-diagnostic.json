@@ -1,0 +1,2792 @@
+{
+  "edition": "denver",
+  "boundaryVersion": "OMB-23-01-2023-07-21",
+  "organizationId": "ein:74-2543881",
+  "slug": "energy-outreach-colorado",
+  "organization": "Energy Outreach Colorado",
+  "program": "Energy bill assistance, home efficiency and public energy-affordability access",
+  "published": "2026-10-06",
+  "updated": "2026-10-06",
+  "stage": "alpha",
+  "donationUrl": "https://energyoutreach.org/donate/",
+  "acceptance": {
+    "status": "pending",
+    "evidence": "docs/geography-discovery/denver-energy-cultivando-initial-20261006/acceptance.md"
+  },
+  "priceScope": "Conditional whole annual recipient cost against partial bill-assistance health and household-resource benefits; not whole-portfolio expected value or marginal gift price.",
+  "summary": {
+    "what": [
+      "Energy Outreach Colorado helps income-qualified households pay utility bills and improves home energy efficiency and safety.",
+      "Its statewide 2025 household total covers several programs, so a bill-assistance subset and Denver share are explicit judgments.",
+      "The initial reference includes health and signed net household resources, including a distinct public or tariff-payer loss."
+    ],
+    "strengths": [
+      "Current service, legal recipient and direct donation route are verified.",
+      "Original annual finances expose public and utility funding alongside cash assistance.",
+      "Clinical-null, financial-only, payer and cost-scope scenarios keep redistribution and health separate."
+    ],
+    "reservations": [
+      "Reported households are not a deduplicated annual bill-assistance cohort.",
+      "LEAP, WAP and utility obligations are important alternatives rather than entirely donor-created benefits.",
+      "Clinical utility, net cash displacement, county residence and marginal gift expansion are unmeasured."
+    ]
+  },
+  "sections": {
+    "what": "Energy Outreach Colorado, EIN 74-2543881, provides bill payment, emergency furnace repairs, efficiency upgrades and advocacy statewide. Current 2026 outreach awards are supported by mandatory utility-customer charges and promote access to LEAP, WAP and EOC programs, not new household income equal to the grant amount.",
+    "monitoring": "The current homepage reports 40,789 households and 120,328 individuals served in 2025 across programs. These are not added together. Request unique bill-assistance households, repeated payments, county residence, disconnections avoided, indoor temperatures and net recipient/payer resource changes. The cumulative $410M invested since1989 is not an annual denominator.",
+    "qualitative": "The center assigns half of the reported household envelope to bill assistance, with .9 deduplication and .45 Denver share as judgments. Incremental benefit share .25 reflects public/utility alternatives; .2 clinical response, .01 utility and half-year persistence are hypotheses about temperature/security, not measured recipient QALYs. Furnace, efficiency, institutional and policy benefits outside this channel are unknown rather than zero.",
+    "cost": "Whole FYending September2025 recognized cost is $76,988,385, including $79,557 netted direct event costs. Bill-program cost $21,873,982 is a cost-aligned recognized-channel sensitivity, excluding allocated overhead and volunteer costs. Net household resource gain $500 is judged after benefit withdrawal and otherwise-paid bills, halved for positive overlap; $15 participation burden is charged to all exposed households. A distinct $150 payer loss per attributed household tests tariff/public incidence. No gross grant, retail energy value or ordinary survivor wages are treated as net welfare.",
+    "funding": "Original full expenses are FY2023 $65,890,165, FY2024 $83,135,058, FY2025 $76,988,385. Original period headers confirm these fiscal years. FY2025 government grants $14,090,961 and restricted efficiency/furnace programs mean general donations do not automatically expand all observed services. The current donation page redirects to an owned donor-support payment route; actual next-gift capacity requires recipient confirmation."
+  },
+  "sources": [
+    {
+      "id": "services",
+      "title": "Current statewide2025 household outputs",
+      "url": "https://energyoutreach.org/",
+      "publisher": "Energy Outreach Colorado",
+      "published": null,
+      "retrieved": "2026-10-06"
+    },
+    {
+      "id": "outreach",
+      "title": "Current2026 mandatory-charge outreach awards",
+      "url": "https://energyoutreach.org/2026-ea-funding-awards/",
+      "publisher": "Energy Outreach Colorado",
+      "published": null,
+      "retrieved": "2026-10-06"
+    },
+    {
+      "id": "identity",
+      "title": "Direct donor route",
+      "url": "https://energyoutreach.org/donate/",
+      "publisher": "Energy Outreach Colorado",
+      "published": null,
+      "retrieved": "2026-10-06"
+    },
+    {
+      "id": "finance",
+      "title": "Original FY2025 IRS filing",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202640229349300114/IRS990",
+      "publisher": "IRS original filing",
+      "published": null,
+      "retrieved": "2026-10-06"
+    },
+    {
+      "id": "finance2024",
+      "title": "Original FY2024 IRS filing",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202540159349301829/IRS990",
+      "publisher": "IRS original filing",
+      "published": null,
+      "retrieved": "2026-10-06"
+    },
+    {
+      "id": "finance2023",
+      "title": "Original FY2023 IRS filing",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202440189349301404/IRS990",
+      "publisher": "IRS original filing",
+      "published": null,
+      "retrieved": "2026-10-06"
+    },
+    {
+      "id": "cg-cost",
+      "title": "Health and logarithmic income comparison",
+      "url": "https://coefficientgiving.org/research/cost-effectiveness/",
+      "publisher": "Coefficient Giving",
+      "published": null,
+      "retrieved": "2026-10-06"
+    }
+  ],
+  "model": {
+    "version": "energy-outreach-colorado-initial-20261006",
+    "costScope": "Whole statewide annual recipient cost against partial bill-assistance benefit reference; recognized bill-program sensitivity is not full social cost or marginal gift.",
+    "geographicAttribution": "Pinned ten-county Denver CBSA19740; .45 household share judged given statewide service and no county output distribution.",
+    "formula": "Exposed=N×channel×unique; incremental union=exposed×b; clinical people=union×response. Health=(clinical people×q×discounted finite duration−exposed×harm)×Denver share. Household joint-log net resources preserve full costs; distinct payer losses apply to the attributed union and local allocation once. Price=10C/(health+signed income equivalent).",
+    "counterfactual": "LEAP, WAP, utility payment plans, mandated utility-charge assistance, other community providers and household support without added recipient work.",
+    "attribution": ".25 incremental share, .5 bill-channel share and .9 deduplication are separate transparent judgments, not measured causal success.",
+    "uncertainty": "Native program overlap, public replacement funding, actual disposable resources, clinical response/duration, payer incidence and local capacity remain uncertain.",
+    "nativeOutcomes": "2025 primary homepage: 40,789 households and120,328 individuals across programs. FY2025 original cash-assistance program cost21,873,982; no matched unique bill-cohort result.",
+    "inputs": [
+      {
+        "name": "C",
+        "value": 76988385,
+        "unit": "USD annual",
+        "basis": "observed",
+        "rationale": "Explicit conditional judgment, not a measured causal recipient coefficient; adverse and null scenarios test this assumption.",
+        "sourceIds": [
+          "finance"
+        ]
+      },
+      {
+        "name": "N",
+        "value": 40789,
+        "unit": "annual participant household-equivalent hypothesis",
+        "basis": "judgment",
+        "rationale": "40,789 reported whole-program2025 households; not observed unique bill recipients.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "channel",
+        "value": 0.5,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": ".5 assigned bill-assistance subset judgment.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "unique",
+        "value": 0.9,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": ".9 repeated-household deduplication judgment.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "b",
+        "value": 0.25,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "Explicit conditional judgment, not a measured causal recipient coefficient; adverse and null scenarios test this assumption.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "response",
+        "value": 0.2,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "Explicit conditional judgment, not a measured causal recipient coefficient; adverse and null scenarios test this assumption.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "q",
+        "value": 0.01,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "Explicit conditional judgment, not a measured causal recipient coefficient; adverse and null scenarios test this assumption.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "T",
+        "value": 0.5,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "Explicit conditional judgment, not a measured causal recipient coefficient; adverse and null scenarios test this assumption.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "g",
+        "value": 0.45,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": ".45 Denver share judgment, not headquarters attribution.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "delay",
+        "value": 0,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "Explicit conditional judgment, not a measured causal recipient coefficient; adverse and null scenarios test this assumption.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "r",
+        "value": 0.03,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "Explicit conditional judgment, not a measured causal recipient coefficient; adverse and null scenarios test this assumption.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "harm",
+        "value": 0.0001,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "Explicit conditional judgment, not a measured causal recipient coefficient; adverse and null scenarios test this assumption.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "success",
+        "value": 1,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "Explicit conditional judgment, not a measured causal recipient coefficient; adverse and null scenarios test this assumption.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "workGain",
+        "value": 500,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "500 net annual bill-related household resources after benefit withdrawal, not gross grant.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "medicalGain",
+        "value": 0,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "Explicit conditional judgment, not a measured causal recipient coefficient; adverse and null scenarios test this assumption.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "overlap",
+        "value": 0.5,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "Explicit conditional judgment, not a measured causal recipient coefficient; adverse and null scenarios test this assumption.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "cost",
+        "value": 15,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "15 net incremental access/time burden on all exposed bill-household proxies.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "baseline",
+        "value": 20000,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "Explicit conditional judgment, not a measured causal recipient coefficient; adverse and null scenarios test this assumption.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "payerLoss",
+        "value": 150,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "150 distinct tariff/public payer loss per incremental household, judged incidence—not donor spending counted as welfare twice.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "externalCost",
+        "value": 0,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "Explicit conditional judgment, not a measured causal recipient coefficient; adverse and null scenarios test this assumption.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "payerPeople",
+        "value": 100000,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "Explicit conditional judgment, not a measured causal recipient coefficient; adverse and null scenarios test this assumption.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "payerBaseline",
+        "value": 50000,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "Explicit conditional judgment, not a measured causal recipient coefficient; adverse and null scenarios test this assumption.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "central",
+        "label": "central",
+        "overrides": {},
+        "costUSD": 76988385,
+        "exposed": 18355.05,
+        "union": 4588.7625,
+        "clinicalPeople": 917.7525,
+        "editionQalys": 1.2389658750000003,
+        "allPopulationQalys": 2.7532575000000006,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 4588.7625,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 235,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 13766.287499999999,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -15,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 100000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -3.0974146875,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": 6.63937825563082,
+        "incomeUnknown": false,
+        "totalEquivalent": 7.87834413063082,
+        "price10": 97721530.97586958,
+        "costPer10Qalys": 97721530.97586958,
+        "incomeEquivalentYears": 6.63937825563082,
+        "combinedEquivalentYears": 7.87834413063082,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "id": "clinical-null",
+        "label": "clinical null",
+        "overrides": {
+          "q": 0
+        },
+        "costUSD": 76988385,
+        "exposed": 18355.05,
+        "union": 4588.7625,
+        "clinicalPeople": 917.7525,
+        "editionQalys": -0.82597725,
+        "allPopulationQalys": -1.835505,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 4588.7625,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 235,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 13766.287499999999,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -15,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 100000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -3.0974146875,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": 6.63937825563082,
+        "incomeUnknown": false,
+        "totalEquivalent": 5.81340100563082,
+        "price10": 132432606.87750524,
+        "costPer10Qalys": 132432606.87750524,
+        "incomeEquivalentYears": 6.63937825563082,
+        "combinedEquivalentYears": 5.81340100563082,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "id": "financial-only",
+        "label": "financial only",
+        "overrides": {
+          "q": 0,
+          "harm": 0
+        },
+        "costUSD": 76988385,
+        "exposed": 18355.05,
+        "union": 4588.7625,
+        "clinicalPeople": 917.7525,
+        "editionQalys": 0,
+        "allPopulationQalys": 0,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 4588.7625,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 235,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 13766.287499999999,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -15,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 100000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -3.0974146875,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": 6.63937825563082,
+        "incomeUnknown": false,
+        "totalEquivalent": 6.63937825563082,
+        "price10": 115957220.74534099,
+        "costPer10Qalys": 115957220.74534099,
+        "incomeEquivalentYears": 6.63937825563082,
+        "combinedEquivalentYears": 6.63937825563082,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "id": "zero-benefit-full-burdens",
+        "label": "zero benefit full burdens",
+        "overrides": {
+          "b": 0
+        },
+        "costUSD": 76988385,
+        "exposed": 18355.05,
+        "union": 0,
+        "clinicalPeople": 0,
+        "editionQalys": -0.82597725,
+        "allPopulationQalys": -1.835505,
+        "incomePathways": [
+          {
+            "id": "other-exposed-households",
+            "people": 18355.05,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -15,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 100000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": 0,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -3.098576799099943,
+        "incomeUnknown": false,
+        "totalEquivalent": -3.9245540490999433,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": -3.098576799099943,
+        "combinedEquivalentYears": -3.9245540490999433,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "id": "no-exposure",
+        "label": "no exposure",
+        "overrides": {
+          "N": 0
+        },
+        "costUSD": 76988385,
+        "exposed": 0,
+        "union": 0,
+        "clinicalPeople": 0,
+        "editionQalys": 0,
+        "allPopulationQalys": 0,
+        "incomePathways": [],
+        "incomeEquivalent": 0,
+        "incomeUnknown": false,
+        "totalEquivalent": 0,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": 0,
+        "combinedEquivalentYears": 0,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "id": "no-gift-no-exposure",
+        "label": "no gift no exposure",
+        "overrides": {
+          "N": 0,
+          "C": 0
+        },
+        "costUSD": 0,
+        "exposed": 0,
+        "union": 0,
+        "clinicalPeople": 0,
+        "editionQalys": 0,
+        "allPopulationQalys": 0,
+        "incomePathways": [],
+        "incomeEquivalent": 0,
+        "incomeUnknown": false,
+        "totalEquivalent": 0,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": 0,
+        "combinedEquivalentYears": 0,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "id": "adverse",
+        "label": "adverse",
+        "overrides": {
+          "q": -0.02,
+          "workGain": -500,
+          "harm": 0.005
+        },
+        "costUSD": 76988385,
+        "exposed": 18355.05,
+        "union": 4588.7625,
+        "clinicalPeople": 917.7525,
+        "editionQalys": -45.428748750000004,
+        "allPopulationQalys": -100.952775,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 4588.7625,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -515,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 13766.287499999999,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -15,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 100000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -3.0974146875,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -32.355874515108766,
+        "incomeUnknown": false,
+        "totalEquivalent": -77.78462326510876,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": -32.355874515108766,
+        "combinedEquivalentYears": -77.78462326510876,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "id": "unknown",
+        "label": "unknown",
+        "overrides": {
+          "clinicalUnknown": true,
+          "incomeUnknown": true,
+          "costUnknown": true
+        },
+        "costUSD": null,
+        "exposed": 18355.05,
+        "union": 4588.7625,
+        "clinicalPeople": 917.7525,
+        "editionQalys": null,
+        "allPopulationQalys": null,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 4588.7625,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 235,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 13766.287499999999,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -15,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 100000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -3.0974146875,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": 6.63937825563082,
+        "incomeUnknown": true,
+        "totalEquivalent": null,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": 6.63937825563082,
+        "combinedEquivalentYears": null,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "id": "no-resources",
+        "label": "no resources",
+        "overrides": {
+          "workGain": 0,
+          "medicalGain": 0
+        },
+        "costUSD": 76988385,
+        "exposed": 18355.05,
+        "union": 4588.7625,
+        "clinicalPeople": 917.7525,
+        "editionQalys": 1.2389658750000003,
+        "allPopulationQalys": 2.7532575000000006,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 4588.7625,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -15,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 13766.287499999999,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -15,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 100000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -3.0974146875,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -6.196087430339794,
+        "incomeUnknown": false,
+        "totalEquivalent": -4.9571215553397945,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": -6.196087430339794,
+        "combinedEquivalentYears": -4.9571215553397945,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "id": "clinical-response-null",
+        "label": "clinical response null",
+        "overrides": {
+          "response": 0
+        },
+        "costUSD": 76988385,
+        "exposed": 18355.05,
+        "union": 4588.7625,
+        "clinicalPeople": 0,
+        "editionQalys": -0.82597725,
+        "allPopulationQalys": -1.835505,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 4588.7625,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 235,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 13766.287499999999,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -15,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 100000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -3.0974146875,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": 6.63937825563082,
+        "incomeUnknown": false,
+        "totalEquivalent": 5.81340100563082,
+        "price10": 132432606.87750524,
+        "costPer10Qalys": 132432606.87750524,
+        "incomeEquivalentYears": 6.63937825563082,
+        "combinedEquivalentYears": 5.81340100563082,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "id": "short-health",
+        "label": "short health",
+        "overrides": {
+          "T": 0.25
+        },
+        "costUSD": 76988385,
+        "exposed": 18355.05,
+        "union": 4588.7625,
+        "clinicalPeople": 917.7525,
+        "editionQalys": 0.20649431250000014,
+        "allPopulationQalys": 0.4588762500000003,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 4588.7625,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 235,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 13766.287499999999,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -15,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 100000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -3.0974146875,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": 6.63937825563082,
+        "incomeUnknown": false,
+        "totalEquivalent": 6.845872568130821,
+        "price10": 112459564.84553832,
+        "costPer10Qalys": 112459564.84553832,
+        "incomeEquivalentYears": 6.63937825563082,
+        "combinedEquivalentYears": 6.845872568130821,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "id": "one-year-health",
+        "label": "one year health",
+        "overrides": {
+          "T": 1
+        },
+        "costUSD": 76988385,
+        "exposed": 18355.05,
+        "union": 4588.7625,
+        "clinicalPeople": 917.7525,
+        "editionQalys": 3.303909000000001,
+        "allPopulationQalys": 7.3420200000000015,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 4588.7625,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 235,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 13766.287499999999,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -15,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 100000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -3.0974146875,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": 6.63937825563082,
+        "incomeUnknown": false,
+        "totalEquivalent": 9.943287255630821,
+        "price10": 77427497.58778413,
+        "costPer10Qalys": 77427497.58778413,
+        "incomeEquivalentYears": 6.63937825563082,
+        "combinedEquivalentYears": 9.943287255630821,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "id": "low-additionality",
+        "label": "low additionality",
+        "overrides": {
+          "b": 0.1
+        },
+        "costUSD": 76988385,
+        "exposed": 18355.05,
+        "union": 1835.505,
+        "clinicalPeople": 367.10100000000006,
+        "editionQalys": 1.9984014443252818e-16,
+        "allPopulationQalys": 4.440892098500626e-16,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 1835.505,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 235,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 16519.545,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -15,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 100000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -1.238965875,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": 0.7966282496703225,
+        "incomeUnknown": false,
+        "totalEquivalent": 0.7966282496703228,
+        "price10": 966428004.9302913,
+        "costPer10Qalys": 966428004.9302913,
+        "incomeEquivalentYears": 0.7966282496703225,
+        "combinedEquivalentYears": 0.7966282496703228,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "id": "all-additionality",
+        "label": "all additionality",
+        "overrides": {
+          "b": 1
+        },
+        "costUSD": 76988385,
+        "exposed": 18355.05,
+        "union": 18355.05,
+        "clinicalPeople": 3671.01,
+        "editionQalys": 7.43379525,
+        "allPopulationQalys": 16.519545,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 18355.05,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 235,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 100000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -12.38965875,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": 35.852091904714925,
+        "incomeUnknown": false,
+        "totalEquivalent": 43.28588715471493,
+        "price10": 17786024.51298356,
+        "costPer10Qalys": 17786024.51298356,
+        "incomeEquivalentYears": 35.852091904714925,
+        "combinedEquivalentYears": 43.28588715471493,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "id": "half-geography",
+        "label": "half geography",
+        "overrides": {
+          "g": 0.5
+        },
+        "costUSD": 76988385,
+        "exposed": 18355.05,
+        "union": 4588.7625,
+        "clinicalPeople": 917.7525,
+        "editionQalys": 1.3766287500000003,
+        "allPopulationQalys": 2.7532575000000006,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 4588.7625,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 235,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 13766.287499999999,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -15,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 100000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -3.441571875,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": 7.377075105251192,
+        "incomeUnknown": false,
+        "totalEquivalent": 8.753703855251192,
+        "price10": 87949496.89075445,
+        "costPer10Qalys": 87949496.89075445,
+        "incomeEquivalentYears": 7.377075105251192,
+        "combinedEquivalentYears": 8.753703855251192,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "id": "no-local-share",
+        "label": "no local share",
+        "overrides": {
+          "g": 0
+        },
+        "costUSD": 76988385,
+        "exposed": 18355.05,
+        "union": 4588.7625,
+        "clinicalPeople": 917.7525,
+        "editionQalys": 0,
+        "allPopulationQalys": 0,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 4588.7625,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 235,
+            "years": 1,
+            "editionShare": 0,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 13766.287499999999,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -15,
+            "years": 1,
+            "editionShare": 0,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 100000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": 0,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": 0,
+        "incomeUnknown": false,
+        "totalEquivalent": 0,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": 0,
+        "combinedEquivalentYears": 0,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "id": "no-positive-overlap",
+        "label": "no positive overlap",
+        "overrides": {
+          "overlap": 0
+        },
+        "costUSD": 76988385,
+        "exposed": 18355.05,
+        "union": 4588.7625,
+        "clinicalPeople": 917.7525,
+        "editionQalys": 1.2389658750000003,
+        "allPopulationQalys": 2.7532575000000006,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 4588.7625,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -15,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 13766.287499999999,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -15,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 100000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -3.0974146875,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -6.196087430339794,
+        "incomeUnknown": false,
+        "totalEquivalent": -4.9571215553397945,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": -6.196087430339794,
+        "combinedEquivalentYears": -4.9571215553397945,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "id": "full-positive-overlap",
+        "label": "full positive overlap",
+        "overrides": {
+          "overlap": 1
+        },
+        "costUSD": 76988385,
+        "exposed": 18355.05,
+        "union": 4588.7625,
+        "clinicalPeople": 917.7525,
+        "editionQalys": 1.2389658750000003,
+        "allPopulationQalys": 2.7532575000000006,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 4588.7625,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 485,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 13766.287499999999,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -15,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 100000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -3.0974146875,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": 19.31723355060867,
+        "incomeUnknown": false,
+        "totalEquivalent": 20.55619942560867,
+        "price10": 37452635.77472827,
+        "costPer10Qalys": 37452635.77472827,
+        "incomeEquivalentYears": 19.31723355060867,
+        "combinedEquivalentYears": 20.55619942560867,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "id": "negative-overlap-zero",
+        "label": "negative overlap zero",
+        "overrides": {
+          "workGain": -500,
+          "overlap": 0
+        },
+        "costUSD": 76988385,
+        "exposed": 18355.05,
+        "union": 4588.7625,
+        "clinicalPeople": 917.7525,
+        "editionQalys": 1.2389658750000003,
+        "allPopulationQalys": 2.7532575000000006,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 4588.7625,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -515,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 13766.287499999999,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -15,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 100000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -3.0974146875,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -32.355874515108766,
+        "incomeUnknown": false,
+        "totalEquivalent": -31.116908640108765,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": -32.355874515108766,
+        "combinedEquivalentYears": -31.116908640108765,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "id": "negative-overlap-one",
+        "label": "negative overlap one",
+        "overrides": {
+          "workGain": -500,
+          "overlap": 1
+        },
+        "costUSD": 76988385,
+        "exposed": 18355.05,
+        "union": 4588.7625,
+        "clinicalPeople": 917.7525,
+        "editionQalys": 1.2389658750000003,
+        "allPopulationQalys": 2.7532575000000006,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 4588.7625,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -515,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 13766.287499999999,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -15,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 100000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -3.0974146875,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -32.355874515108766,
+        "incomeUnknown": false,
+        "totalEquivalent": -31.116908640108765,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": -32.355874515108766,
+        "combinedEquivalentYears": -31.116908640108765,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "id": "mixed-resources",
+        "label": "mixed resources",
+        "overrides": {
+          "medicalGain": 300,
+          "workGain": -300
+        },
+        "costUSD": 76988385,
+        "exposed": 18355.05,
+        "union": 4588.7625,
+        "clinicalPeople": 917.7525,
+        "editionQalys": 1.2389658750000003,
+        "allPopulationQalys": 2.7532575000000006,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 4588.7625,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -165,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 13766.287499999999,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -15,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 100000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -3.0974146875,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -13.974664372367986,
+        "incomeUnknown": false,
+        "totalEquivalent": -12.735698497367986,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": -13.974664372367986,
+        "combinedEquivalentYears": -12.735698497367986,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "id": "no-access-cost",
+        "label": "no access cost",
+        "overrides": {
+          "cost": 0
+        },
+        "costUSD": 76988385,
+        "exposed": 18355.05,
+        "union": 4588.7625,
+        "clinicalPeople": 917.7525,
+        "editionQalys": 1.2389658750000003,
+        "allPopulationQalys": 2.7532575000000006,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 4588.7625,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 250,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 13766.287499999999,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 0,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 100000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -3.0974146875,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": 9.728388001857953,
+        "incomeUnknown": false,
+        "totalEquivalent": 10.967353876857953,
+        "price10": 70197775.9306664,
+        "costPer10Qalys": 70197775.9306664,
+        "incomeEquivalentYears": 9.728388001857953,
+        "combinedEquivalentYears": 10.967353876857953,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "id": "high-access-cost",
+        "label": "high access cost",
+        "overrides": {
+          "cost": 200
+        },
+        "costUSD": 76988385,
+        "exposed": 18355.05,
+        "union": 4588.7625,
+        "clinicalPeople": 917.7525,
+        "editionQalys": 1.2389658750000003,
+        "allPopulationQalys": 2.7532575000000006,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 4588.7625,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 50,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 13766.287499999999,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -200,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 100000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -3.0974146875,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -31.649610718172426,
+        "incomeUnknown": false,
+        "totalEquivalent": -30.410644843172424,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": -31.649610718172426,
+        "combinedEquivalentYears": -30.410644843172424,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "id": "payer-transfer-loss",
+        "label": "payer transfer loss",
+        "overrides": {
+          "payerLoss": 1000
+        },
+        "costUSD": 76988385,
+        "exposed": 18355.05,
+        "union": 4588.7625,
+        "clinicalPeople": 917.7525,
+        "editionQalys": 1.2389658750000003,
+        "allPopulationQalys": 2.7532575000000006,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 4588.7625,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 235,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 13766.287499999999,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -15,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 100000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -20.64943125,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -10.916807527588839,
+        "incomeUnknown": false,
+        "totalEquivalent": -9.677841652588839,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": -10.916807527588839,
+        "combinedEquivalentYears": -9.677841652588839,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "id": "external-care-cost",
+        "label": "external care cost",
+        "overrides": {
+          "externalCost": 100
+        },
+        "costUSD": 76988385,
+        "exposed": 18355.05,
+        "union": 4588.7625,
+        "clinicalPeople": 917.7525,
+        "editionQalys": 1.2389658750000003,
+        "allPopulationQalys": 2.7532575000000006,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 4588.7625,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 235,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 13766.287499999999,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -15,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 100000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -11.3571871875,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -1.6215883529926938,
+        "incomeUnknown": false,
+        "totalEquivalent": -0.38262247799269344,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": -1.6215883529926938,
+        "combinedEquivalentYears": -0.38262247799269344,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "id": "double-cost",
+        "label": "double cost",
+        "overrides": {
+          "C": 153976770
+        },
+        "costUSD": 153976770,
+        "exposed": 18355.05,
+        "union": 4588.7625,
+        "clinicalPeople": 917.7525,
+        "editionQalys": 1.2389658750000003,
+        "allPopulationQalys": 2.7532575000000006,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 4588.7625,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 235,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 13766.287499999999,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -15,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 100000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -3.0974146875,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": 6.63937825563082,
+        "incomeUnknown": false,
+        "totalEquivalent": 7.87834413063082,
+        "price10": 195443061.95173916,
+        "costPer10Qalys": 195443061.95173916,
+        "incomeEquivalentYears": 6.63937825563082,
+        "combinedEquivalentYears": 7.87834413063082,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "id": "program-recognized-cost",
+        "label": "program recognized cost",
+        "overrides": {
+          "C": 21873982
+        },
+        "costUSD": 21873982,
+        "exposed": 18355.05,
+        "union": 4588.7625,
+        "clinicalPeople": 917.7525,
+        "editionQalys": 1.2389658750000003,
+        "allPopulationQalys": 2.7532575000000006,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 4588.7625,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 235,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 13766.287499999999,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -15,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 100000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -3.0974146875,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": 6.63937825563082,
+        "incomeUnknown": false,
+        "totalEquivalent": 7.87834413063082,
+        "price10": 27764694.759847395,
+        "costPer10Qalys": 27764694.759847395,
+        "incomeEquivalentYears": 6.63937825563082,
+        "combinedEquivalentYears": 7.87834413063082,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "id": "quarter-bill-channel",
+        "label": "quarter bill channel",
+        "overrides": {
+          "channel": 0.25
+        },
+        "costUSD": 76988385,
+        "exposed": 9177.525,
+        "union": 2294.38125,
+        "clinicalPeople": 458.87625,
+        "editionQalys": 0.6194829375000002,
+        "allPopulationQalys": 1.3766287500000003,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 2294.38125,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 235,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 6883.143749999999,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -15,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 100000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -1.54870734375,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": 3.3197131142456833,
+        "incomeUnknown": false,
+        "totalEquivalent": 3.939196051745683,
+        "price10": 195441871.86591548,
+        "costPer10Qalys": 195441871.86591548,
+        "incomeEquivalentYears": 3.3197131142456833,
+        "combinedEquivalentYears": 3.939196051745683,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "id": "whole-household-envelope",
+        "label": "whole household envelope",
+        "overrides": {
+          "channel": 1
+        },
+        "costUSD": 76988385,
+        "exposed": 36710.1,
+        "union": 9177.525,
+        "clinicalPeople": 1835.505,
+        "editionQalys": 2.4779317500000007,
+        "allPopulationQalys": 5.506515000000001,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 9177.525,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 235,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 27532.574999999997,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -15,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 100000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -6.194829375,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": 13.278564607930914,
+        "incomeUnknown": false,
+        "totalEquivalent": 15.756496357930914,
+        "price10": 48861360.5785835,
+        "costPer10Qalys": 48861360.5785835,
+        "incomeEquivalentYears": 13.278564607930914,
+        "combinedEquivalentYears": 15.756496357930914,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "id": "household-deduplication",
+        "label": "household deduplication",
+        "overrides": {
+          "unique": 0.7
+        },
+        "costUSD": 76988385,
+        "exposed": 14276.15,
+        "union": 3569.0375,
+        "clinicalPeople": 713.8075,
+        "editionQalys": 0.9636401250000001,
+        "allPopulationQalys": 2.1414225,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 3569.0375,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 235,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 10707.1125,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -15,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 100000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -2.4091003125,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": 5.1639774488919405,
+        "incomeUnknown": false,
+        "totalEquivalent": 6.127617573891941,
+        "price10": 125641628.36797437,
+        "costPer10Qalys": 125641628.36797437,
+        "incomeEquivalentYears": 5.1639774488919405,
+        "combinedEquivalentYears": 6.127617573891941,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "id": "lower-net-resource-gain",
+        "label": "lower net resource gain",
+        "overrides": {
+          "workGain": 250
+        },
+        "costUSD": 76988385,
+        "exposed": 18355.05,
+        "union": 4588.7625,
+        "clinicalPeople": 917.7525,
+        "editionQalys": 1.2389658750000003,
+        "allPopulationQalys": 2.7532575000000006,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 4588.7625,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 110,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 13766.287499999999,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -15,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 100000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -3.0974146875,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": 0.24159125479495902,
+        "incomeUnknown": false,
+        "totalEquivalent": 1.4805571297949593,
+        "price10": 519996043.72350043,
+        "costPer10Qalys": 519996043.72350043,
+        "incomeEquivalentYears": 0.24159125479495902,
+        "combinedEquivalentYears": 1.4805571297949593,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "id": "higher-net-resource-gain",
+        "label": "higher net resource gain",
+        "overrides": {
+          "workGain": 1000
+        },
+        "costUSD": 76988385,
+        "exposed": 18355.05,
+        "union": 4588.7625,
+        "clinicalPeople": 917.7525,
+        "editionQalys": 1.2389658750000003,
+        "allPopulationQalys": 2.7532575000000006,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 4588.7625,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 485,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 13766.287499999999,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -15,
+            "years": 1,
+            "editionShare": 0.45,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 100000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -3.0974146875,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "LEAP, WAP, mandatory utility-funded assistance, utility payment plans and other community assistance without this recipient.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": 19.31723355060867,
+        "incomeUnknown": false,
+        "totalEquivalent": 20.55619942560867,
+        "price10": 37452635.77472827,
+        "costPer10Qalys": 37452635.77472827,
+        "incomeEquivalentYears": 19.31723355060867,
+        "combinedEquivalentYears": 20.55619942560867,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      }
+    ],
+    "sensitivity": [
+      {
+        "label": "clinical null",
+        "pricePer10Qalys": 132432606.87750524,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "label": "financial only",
+        "pricePer10Qalys": 115957220.74534099,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "label": "zero benefit full burdens",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "label": "no exposure",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "label": "no gift no exposure",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "label": "adverse",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "label": "unknown",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "label": "no resources",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "label": "clinical response null",
+        "pricePer10Qalys": 132432606.87750524,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "label": "short health",
+        "pricePer10Qalys": 112459564.84553832,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "label": "one year health",
+        "pricePer10Qalys": 77427497.58778413,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "label": "low additionality",
+        "pricePer10Qalys": 966428004.9302913,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "label": "all additionality",
+        "pricePer10Qalys": 17786024.51298356,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "label": "half geography",
+        "pricePer10Qalys": 87949496.89075445,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "label": "no local share",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "label": "no positive overlap",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "label": "full positive overlap",
+        "pricePer10Qalys": 37452635.77472827,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "label": "negative overlap zero",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "label": "negative overlap one",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "label": "mixed resources",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "label": "no access cost",
+        "pricePer10Qalys": 70197775.9306664,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "label": "high access cost",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "label": "payer transfer loss",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "label": "external care cost",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "label": "double cost",
+        "pricePer10Qalys": 195443061.95173916,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "label": "program recognized cost",
+        "pricePer10Qalys": 27764694.759847395,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "label": "quarter bill channel",
+        "pricePer10Qalys": 195441871.86591548,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "label": "whole household envelope",
+        "pricePer10Qalys": 48861360.5785835,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "label": "household deduplication",
+        "pricePer10Qalys": 125641628.36797437,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "label": "lower net resource gain",
+        "pricePer10Qalys": 519996043.72350043,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      },
+      {
+        "label": "higher net resource gain",
+        "pricePer10Qalys": 37452635.77472827,
+        "assumptions": "Conditional finite bill-assistance channel within whole recipient annual cost; half of reported household envelope assigned to bill aid as judgment, not measured causal effect."
+      }
+    ],
+    "missingInputs": [
+      "Annual unique bill households and county distribution",
+      "Causal indoor-temperature/security utility and persistence",
+      "Net bill resources after replacements/benefit withdrawal",
+      "Distinct utility/public payer incidence",
+      "Allocated overhead and marginal gift capacity"
+    ]
+  },
+  "annualExpenses": [
+    {
+      "year": 2023,
+      "amount": 65890165,
+      "sourceId": "finance2023",
+      "comparable": true,
+      "currency": "USD",
+      "periodMonths": 12,
+      "entity": "ein:74-2543881",
+      "accountingBasis": "IRS full functional expenses plus netted direct event expenses"
+    },
+    {
+      "year": 2024,
+      "amount": 83135058,
+      "sourceId": "finance2024",
+      "comparable": true,
+      "currency": "USD",
+      "periodMonths": 12,
+      "entity": "ein:74-2543881",
+      "accountingBasis": "IRS full functional expenses plus netted direct event expenses"
+    },
+    {
+      "year": 2025,
+      "amount": 76988385,
+      "sourceId": "finance",
+      "comparable": true,
+      "currency": "USD",
+      "periodMonths": 12,
+      "entity": "ein:74-2543881",
+      "accountingBasis": "IRS full functional expenses plus netted direct event expenses"
+    }
+  ],
+  "timeCoverage": "partial",
+  "sessionIds": [
+    "d51f799a-845b-43b2-a39a-9c270cb621ce"
+  ]
+}

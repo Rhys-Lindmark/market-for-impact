@@ -1,0 +1,14 @@
+{
+  "organization": "Maternal Mental Health NOW",
+  "auditedAt": "2026-10-05T14:54:47.320Z",
+  "status": "Source audit complete; candidate model and acceptance pending",
+  "session": {"id":"9a9d43e4-4473-4067-b34f-57e75864bbfc","workerId":"root-mmhn-20261005","phase":"source-audit","startedAt":"2026-10-05T14:53:37.531Z","endedAt":"2026-10-05T14:54:47.320Z","model":{"id":"gpt-6.1-sol","name":"GPT-6.1 Sol","evidence":"User-confirmed model assignment: GPT-6.1 Sol"},"evidence":"docs/geography-discovery/la-mmhn-root-source-20261005.json"},
+  "checks": [
+    {"url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC6518383/","finding":"Original PoNDER economic analysis Table 5 adjusted six-month QALY difference 0.002, CI -0.001 to 0.004. Lower-risk women; training included one assessment day, five therapy days and four half-days supervision. NHS/social-care savings of GBP82 are not household cash or a measured MMHN effect."},
+    {"url":"https://www.bmj.com/content/338/bmj.a3064.abstract","finding":"Original Dennis trial abstract: high-risk Canadian postpartum women, probable depression 14% vs 25% at 12 weeks; no between-group difference at 24 weeks after referral. Does not demonstrate permanent remission or a measured warmline effect."},
+    {"url":"https://maternalmentalhealthnow.org/donate/","finding":"Official FY2024-25 figures: 800+ trained providers, 150 warmline callers, 300 peer-group participants. Not a deduplicated patient roster or causal clinical outcome."},
+    {"url":"https://maternalmentalhealthnow.org/wp-content/uploads/2025/11/MMHN-Impact-Report-FY25.pdf","finding":"Official impact report page 18 labels FY25 operating budget USD1.17M, not audited operating expenses."},
+    {"url":"https://projects.propublica.org/nonprofits/full_text/202600839349201225/IRS990EZ","retrieval":"Direct Node fetch HTTP200; 176233 HTML characters","finding":"Original submitted IRS990EZ TotalExpensesAmt 1513. Preoperating standalone entity amount must not represent cost of the sponsored full program."}
+  ],
+  "acceptanceQuestions": ["Does the model match short and intensive training effects without claiming local causal measurement?", "Are signed household/provider/payer resources joint-netted, positive-only overlap and full harms preserved?", "Are clinical and resource populations explicit, finite and donor-responsive?", "Does the portable calculator reproduce the published conditional price and stress cases?"]
+}

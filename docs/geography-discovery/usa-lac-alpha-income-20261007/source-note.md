@@ -1,0 +1,5 @@
+# Legal Action Center source audit receipt
+
+Root original 2025 annual report direct web retrieval failed: 11,201,892byte PDF exceeds tool content limit. Search excerpt is not a full-document verification. Existing accepted report cites matched FY2025 869 clients,808 record-issue clients,37 SUD clients,24 HIV clients, versus calendar2025 annual report999clients1980cases; do not mix periods.
+
+Current initial model only prices prospective/direct retained MOUD clinical health at full annual8981593USD cost. It explicitly leaves employment/legal benefits largely unpriced. Author should inspect current original employment/records/legal-service pages or original report with bounded text extraction if necessary; no need fullPDF download unless decisive. Evaluate actual net income/benefits versus alternative counsel, continuing wages, benefit withdrawal/taxes/work/access costs, unique household overlap and funding response. Preserve complete initial diagnostic/scenarios; do not credit every record remedy as new paid job or apply MOUD response to financial burdens. No fresh annual report finding claimed from failed retrieval.

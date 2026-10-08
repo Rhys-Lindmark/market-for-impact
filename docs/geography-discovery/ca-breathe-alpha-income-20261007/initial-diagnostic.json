@@ -1,0 +1,65 @@
+{
+  "originalReport": "original-report.json",
+  "originalVersion": "ca-breathe-beam-judgment-v2",
+  "originalScenarios": [
+    {
+      "id": "central",
+      "label": "Judgment best estimate: BEAM health at full recipient cost",
+      "costUSD": 2923727,
+      "allPopulationQalys": 0.13652912621359223,
+      "editionQalys": 0.13652912621359223,
+      "assumptions": "N = 100; b = 0.25; gCA = 1; deltaSFD14 = 2.1; deltaU = 0.1; r = 0.5; w = 0.75; T = 1; d = 0.03."
+    },
+    {
+      "id": "low",
+      "label": "Weak annual delivery, responsiveness and health transfer",
+      "costUSD": 2923727,
+      "allPopulationQalys": 0.0006553398058252427,
+      "editionQalys": 0.0006225728155339806,
+      "assumptions": "N=30; b=.05; deltaSFD14=2.1; deltaU=.03; r=.2; w=.5; T=1; gCA=.95; d=.03. Joint judgment stress case, not confidence limits."
+    },
+    {
+      "id": "high",
+      "label": "Strong asthma margin and local share; not confidence bound",
+      "costUSD": 2923727,
+      "allPopulationQalys": 6.553398058252427,
+      "editionQalys": 6.553398058252427,
+      "assumptions": "N = 300; b = 0.75; gCA = 1; deltaU = 0.2; r = 1; w = 1. Other clinical assumptions are unchanged."
+    },
+    {
+      "id": "zero",
+      "label": "Full substitution or no health improvement",
+      "costUSD": 2923727,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "assumptions": "No additional health beyond existing payer/public/private provision."
+    },
+    {
+      "id": "downside",
+      "label": "Unquantified adverse net effect remains possible",
+      "costUSD": 2923727,
+      "allPopulationQalys": null,
+      "editionQalys": null,
+      "assumptions": "Ineffective use, exposure substitution and harmful policy trade-offs not assigned a fabricated negative bound."
+    },
+    {
+      "id": "adverse",
+      "label": "Illustrative net harm, not a measured bound",
+      "costUSD": 2923727,
+      "allPopulationQalys": -0.1,
+      "editionQalys": -0.1,
+      "assumptions": "A net .1 California QALY loss from displaced care or adverse effects; explicit stress test, not observed."
+    },
+    {
+      "id": "portfolio-unknown",
+      "label": "Unpriced remaining portfolio pathways",
+      "costUSD": 2923727,
+      "allPopulationQalys": null,
+      "editionQalys": null,
+      "assumptions": "Purifier response and policy may add or subtract health; no invented amount is added to the BEAM estimate."
+    }
+  ],
+  "originalPrice10": 214146759.82222223,
+  "clinicalCoefficientsUnchanged": true,
+  "authorSeconds": 76.736
+}

@@ -1,0 +1,3147 @@
+[
+  {
+    "id": "central",
+    "overrides": {},
+    "expected": {
+      "id": "central",
+      "label": "central",
+      "inputs": {
+        "C": 2520510,
+        "N": 384,
+        "unique": 0.8,
+        "b": 0.5,
+        "completion": 0.6,
+        "q": 0.03,
+        "T": 0.5,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": 1500,
+        "resourceYears": 1,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 0,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0
+      },
+      "costUSD": 2520510,
+      "exposed": 153.60000000000002,
+      "treated": 92.16000000000001,
+      "union": 153.60000000000002,
+      "allPopulationQalys": 1.372222129967041,
+      "editionQalys": 1.372222129967041,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 30.720000000000006,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 650,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 122.88000000000002,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.12319010823191706,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.495412238198958,
+      "price10": 16854951.000238217,
+      "costPer10Qalys": 16854951.000238217,
+      "incomeEquivalentYears": 0.12319010823191706,
+      "combinedEquivalentYears": 1.495412238198958,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "clinical-null",
+    "overrides": {
+      "q": 0
+    },
+    "expected": {
+      "id": "clinical-null",
+      "label": "clinical null",
+      "inputs": {
+        "C": 2520510,
+        "N": 384,
+        "unique": 0.8,
+        "b": 0.5,
+        "completion": 0.6,
+        "q": 0,
+        "T": 0.5,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": 1500,
+        "resourceYears": 1,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 0,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0
+      },
+      "costUSD": 2520510,
+      "exposed": 153.60000000000002,
+      "treated": 92.16000000000001,
+      "union": 153.60000000000002,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 30.720000000000006,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 650,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 122.88000000000002,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.12319010823191706,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.12319010823191706,
+      "price10": 204603278.31313378,
+      "costPer10Qalys": 204603278.31313378,
+      "incomeEquivalentYears": 0.12319010823191706,
+      "combinedEquivalentYears": 0.12319010823191706,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "financial-only",
+    "overrides": {
+      "q": 0
+    },
+    "expected": {
+      "id": "financial-only",
+      "label": "financial only",
+      "inputs": {
+        "C": 2520510,
+        "N": 384,
+        "unique": 0.8,
+        "b": 0.5,
+        "completion": 0.6,
+        "q": 0,
+        "T": 0.5,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": 1500,
+        "resourceYears": 1,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 0,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0
+      },
+      "costUSD": 2520510,
+      "exposed": 153.60000000000002,
+      "treated": 92.16000000000001,
+      "union": 153.60000000000002,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 30.720000000000006,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 650,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 122.88000000000002,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.12319010823191706,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.12319010823191706,
+      "price10": 204603278.31313378,
+      "costPer10Qalys": 204603278.31313378,
+      "incomeEquivalentYears": 0.12319010823191706,
+      "combinedEquivalentYears": 0.12319010823191706,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "full-unknown",
+    "overrides": {
+      "clinicalUnknown": true,
+      "incomeUnknown": true
+    },
+    "expected": {
+      "id": "full-unknown",
+      "label": "full unknown",
+      "inputs": {
+        "C": 2520510,
+        "N": 384,
+        "unique": 0.8,
+        "b": 0.5,
+        "completion": 0.6,
+        "q": 0.03,
+        "T": 0.5,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": 1500,
+        "resourceYears": 1,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 0,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0,
+        "clinicalUnknown": true,
+        "incomeUnknown": true
+      },
+      "costUSD": 2520510,
+      "exposed": 153.60000000000002,
+      "treated": 92.16000000000001,
+      "union": 153.60000000000002,
+      "allPopulationQalys": null,
+      "editionQalys": null,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 30.720000000000006,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 650,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 122.88000000000002,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.12319010823191706,
+      "incomeUnknown": true,
+      "totalEquivalent": null,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": 0.12319010823191706,
+      "combinedEquivalentYears": null,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "zero-expansion",
+    "overrides": {
+      "b": 0
+    },
+    "expected": {
+      "id": "zero-expansion",
+      "label": "zero expansion",
+      "inputs": {
+        "C": 2520510,
+        "N": 384,
+        "unique": 0.8,
+        "b": 0,
+        "completion": 0.6,
+        "q": 0.03,
+        "T": 0.5,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": 1500,
+        "resourceYears": 1,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 0,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0
+      },
+      "costUSD": 2520510,
+      "exposed": 0,
+      "treated": 0,
+      "union": 0,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "incomePathways": [],
+      "incomeEquivalent": 0,
+      "incomeUnknown": false,
+      "totalEquivalent": 0,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": 0,
+      "combinedEquivalentYears": 0,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "true-zero",
+    "overrides": {
+      "q": 0,
+      "gain": 0,
+      "cost": 0
+    },
+    "expected": {
+      "id": "true-zero",
+      "label": "true zero",
+      "inputs": {
+        "C": 2520510,
+        "N": 384,
+        "unique": 0.8,
+        "b": 0.5,
+        "completion": 0.6,
+        "q": 0,
+        "T": 0.5,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": 0,
+        "resourceYears": 1,
+        "cost": 0,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 0,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0
+      },
+      "costUSD": 2520510,
+      "exposed": 153.60000000000002,
+      "treated": 92.16000000000001,
+      "union": 153.60000000000002,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 30.720000000000006,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 0,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 122.88000000000002,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 0,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0,
+      "incomeUnknown": false,
+      "totalEquivalent": 0,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": 0,
+      "combinedEquivalentYears": 0,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "adverse",
+    "overrides": {
+      "q": -0.03,
+      "gain": -1500
+    },
+    "expected": {
+      "id": "adverse",
+      "label": "adverse",
+      "inputs": {
+        "C": 2520510,
+        "N": 384,
+        "unique": 0.8,
+        "b": 0.5,
+        "completion": 0.6,
+        "q": -0.03,
+        "T": 0.5,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": -1500,
+        "resourceYears": 1,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 0,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0
+      },
+      "costUSD": 2520510,
+      "exposed": 153.60000000000002,
+      "treated": 92.16000000000001,
+      "union": 153.60000000000002,
+      "allPopulationQalys": -1.372222129967041,
+      "editionQalys": -1.372222129967041,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 30.720000000000006,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -1600,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 122.88000000000002,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": -1.039288131646177,
+      "incomeUnknown": false,
+      "totalEquivalent": -2.411510261613218,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": -1.039288131646177,
+      "combinedEquivalentYears": -2.411510261613218,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "negative-resources",
+    "overrides": {
+      "gain": -1500
+    },
+    "expected": {
+      "id": "negative-resources",
+      "label": "negative resources",
+      "inputs": {
+        "C": 2520510,
+        "N": 384,
+        "unique": 0.8,
+        "b": 0.5,
+        "completion": 0.6,
+        "q": 0.03,
+        "T": 0.5,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": -1500,
+        "resourceYears": 1,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 0,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0
+      },
+      "costUSD": 2520510,
+      "exposed": 153.60000000000002,
+      "treated": 92.16000000000001,
+      "union": 153.60000000000002,
+      "allPopulationQalys": 1.372222129967041,
+      "editionQalys": 1.372222129967041,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 30.720000000000006,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -1600,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 122.88000000000002,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": -1.039288131646177,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.3329339983208639,
+      "price10": 75705996.1647674,
+      "costPer10Qalys": 75705996.1647674,
+      "incomeEquivalentYears": -1.039288131646177,
+      "combinedEquivalentYears": 0.3329339983208639,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "negative-no-overlap",
+    "overrides": {
+      "gain": -1500,
+      "positiveOverlap": 0
+    },
+    "expected": {
+      "id": "negative-no-overlap",
+      "label": "negative no overlap",
+      "inputs": {
+        "C": 2520510,
+        "N": 384,
+        "unique": 0.8,
+        "b": 0.5,
+        "completion": 0.6,
+        "q": 0.03,
+        "T": 0.5,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": -1500,
+        "resourceYears": 1,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 0,
+        "payerLoss": 0,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0
+      },
+      "costUSD": 2520510,
+      "exposed": 153.60000000000002,
+      "treated": 92.16000000000001,
+      "union": 153.60000000000002,
+      "allPopulationQalys": 1.372222129967041,
+      "editionQalys": 1.372222129967041,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 30.720000000000006,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -1600,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 122.88000000000002,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": -1.039288131646177,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.3329339983208639,
+      "price10": 75705996.1647674,
+      "costPer10Qalys": 75705996.1647674,
+      "incomeEquivalentYears": -1.039288131646177,
+      "combinedEquivalentYears": 0.3329339983208639,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "matched-payer",
+    "overrides": {
+      "payerLoss": 1500
+    },
+    "expected": {
+      "id": "matched-payer",
+      "label": "matched payer",
+      "inputs": {
+        "C": 2520510,
+        "N": 384,
+        "unique": 0.8,
+        "b": 0.5,
+        "completion": 0.6,
+        "q": 0.03,
+        "T": 0.5,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": 1500,
+        "resourceYears": 1,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 1500,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0
+      },
+      "costUSD": 2520510,
+      "exposed": 153.60000000000002,
+      "treated": 92.16000000000001,
+      "union": 153.60000000000002,
+      "allPopulationQalys": 1.372222129967041,
+      "editionQalys": 1.372222129967041,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 30.720000000000006,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 650,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 122.88000000000002,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "counterparty",
+          "people": 20,
+          "annualIncomeBeforeUSD": 60000,
+          "annualIncomeGainUSD": -2304.0000000000005,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "Distinct local payer/provider households. Matched transfer loss follows gain exposure; external care burden remains full. No complete world incidence claim.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": -0.26549414477658373,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.1067279851904572,
+      "price10": 22774430.878480446,
+      "costPer10Qalys": 22774430.878480446,
+      "incomeEquivalentYears": -0.26549414477658373,
+      "combinedEquivalentYears": 1.1067279851904572,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "external-care-cost",
+    "overrides": {
+      "externalCost": 300
+    },
+    "expected": {
+      "id": "external-care-cost",
+      "label": "external care cost",
+      "inputs": {
+        "C": 2520510,
+        "N": 384,
+        "unique": 0.8,
+        "b": 0.5,
+        "completion": 0.6,
+        "q": 0.03,
+        "T": 0.5,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": 1500,
+        "resourceYears": 1,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 0,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 300,
+        "harm": 0
+      },
+      "costUSD": 2520510,
+      "exposed": 153.60000000000002,
+      "treated": 92.16000000000001,
+      "union": 153.60000000000002,
+      "allPopulationQalys": 1.372222129967041,
+      "editionQalys": 1.372222129967041,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 30.720000000000006,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 650,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 122.88000000000002,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "counterparty",
+          "people": 20,
+          "annualIncomeBeforeUSD": 60000,
+          "annualIncomeGainUSD": -2304.0000000000005,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "Distinct local payer/provider households. Matched transfer loss follows gain exposure; external care burden remains full. No complete world incidence claim.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": -0.26549414477658373,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.1067279851904572,
+      "price10": 22774430.878480446,
+      "costPer10Qalys": 22774430.878480446,
+      "incomeEquivalentYears": -0.26549414477658373,
+      "combinedEquivalentYears": 1.1067279851904572,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "positive-access",
+    "overrides": {
+      "gain": 3000
+    },
+    "expected": {
+      "id": "positive-access",
+      "label": "positive access",
+      "inputs": {
+        "C": 2520510,
+        "N": 384,
+        "unique": 0.8,
+        "b": 0.5,
+        "completion": 0.6,
+        "q": 0.03,
+        "T": 0.5,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": 3000,
+        "resourceYears": 1,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 0,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0
+      },
+      "costUSD": 2520510,
+      "exposed": 153.60000000000002,
+      "treated": 92.16000000000001,
+      "union": 153.60000000000002,
+      "allPopulationQalys": 1.372222129967041,
+      "editionQalys": 1.372222129967041,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 30.720000000000006,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 1400,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 122.88000000000002,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.49178773415467075,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.8640098641217118,
+      "price10": 13521977.799122965,
+      "costPer10Qalys": 13521977.799122965,
+      "incomeEquivalentYears": 0.49178773415467075,
+      "combinedEquivalentYears": 1.8640098641217118,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "positive-matched",
+    "overrides": {
+      "gain": 3000,
+      "payerLoss": 3000
+    },
+    "expected": {
+      "id": "positive-matched",
+      "label": "positive matched",
+      "inputs": {
+        "C": 2520510,
+        "N": 384,
+        "unique": 0.8,
+        "b": 0.5,
+        "completion": 0.6,
+        "q": 0.03,
+        "T": 0.5,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": 3000,
+        "resourceYears": 1,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 3000,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0
+      },
+      "costUSD": 2520510,
+      "exposed": 153.60000000000002,
+      "treated": 92.16000000000001,
+      "union": 153.60000000000002,
+      "allPopulationQalys": 1.372222129967041,
+      "editionQalys": 1.372222129967041,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 30.720000000000006,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 1400,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 122.88000000000002,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "counterparty",
+          "people": 20,
+          "annualIncomeBeforeUSD": 60000,
+          "annualIncomeGainUSD": -4608.000000000001,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "Distinct local payer/provider households. Matched transfer loss follows gain exposure; external care burden remains full. No complete world incidence claim.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": -0.30142279867152316,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.0707993312955177,
+      "price10": 23538583.993609097,
+      "costPer10Qalys": 23538583.993609097,
+      "incomeEquivalentYears": -0.30142279867152316,
+      "combinedEquivalentYears": 1.0707993312955177,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "annual-full-response",
+    "overrides": {
+      "b": 1
+    },
+    "expected": {
+      "id": "annual-full-response",
+      "label": "annual full response",
+      "inputs": {
+        "C": 2520510,
+        "N": 384,
+        "unique": 0.8,
+        "b": 1,
+        "completion": 0.6,
+        "q": 0.03,
+        "T": 0.5,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": 1500,
+        "resourceYears": 1,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 0,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0
+      },
+      "costUSD": 2520510,
+      "exposed": 307.20000000000005,
+      "treated": 184.32000000000002,
+      "union": 307.20000000000005,
+      "allPopulationQalys": 2.744444259934082,
+      "editionQalys": 2.744444259934082,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 61.44000000000001,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 650,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 245.76000000000005,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.24638021646383412,
+      "incomeUnknown": false,
+      "totalEquivalent": 2.990824476397916,
+      "price10": 8427475.500119109,
+      "costPer10Qalys": 8427475.500119109,
+      "incomeEquivalentYears": 0.24638021646383412,
+      "combinedEquivalentYears": 2.990824476397916,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "weak-clinical",
+    "overrides": {
+      "q": 0.005,
+      "completion": 0.3
+    },
+    "expected": {
+      "id": "weak-clinical",
+      "label": "weak clinical",
+      "inputs": {
+        "C": 2520510,
+        "N": 384,
+        "unique": 0.8,
+        "b": 0.5,
+        "completion": 0.3,
+        "q": 0.005,
+        "T": 0.5,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": 1500,
+        "resourceYears": 1,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 0,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0
+      },
+      "costUSD": 2520510,
+      "exposed": 153.60000000000002,
+      "treated": 46.080000000000005,
+      "union": 153.60000000000002,
+      "allPopulationQalys": 0.1143518441639201,
+      "editionQalys": 0.1143518441639201,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 30.720000000000006,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 650,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 122.88000000000002,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.12319010823191706,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.23754195239583714,
+      "price10": 106107993.74924104,
+      "costPer10Qalys": 106107993.74924104,
+      "incomeEquivalentYears": 0.12319010823191706,
+      "combinedEquivalentYears": 0.23754195239583714,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "strong-clinical",
+    "overrides": {
+      "q": 0.06,
+      "completion": 0.8
+    },
+    "expected": {
+      "id": "strong-clinical",
+      "label": "strong clinical",
+      "inputs": {
+        "C": 2520510,
+        "N": 384,
+        "unique": 0.8,
+        "b": 0.5,
+        "completion": 0.8,
+        "q": 0.06,
+        "T": 0.5,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": 1500,
+        "resourceYears": 1,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 0,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0
+      },
+      "costUSD": 2520510,
+      "exposed": 153.60000000000002,
+      "treated": 122.88000000000002,
+      "union": 153.60000000000002,
+      "allPopulationQalys": 3.6592590132454434,
+      "editionQalys": 3.6592590132454434,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 30.720000000000006,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 650,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 122.88000000000002,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.12319010823191706,
+      "incomeUnknown": false,
+      "totalEquivalent": 3.7824491214773603,
+      "price10": 6663698.357998089,
+      "costPer10Qalys": 6663698.357998089,
+      "incomeEquivalentYears": 0.12319010823191706,
+      "combinedEquivalentYears": 3.7824491214773603,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "high-attendance-cost",
+    "overrides": {
+      "cost": 500
+    },
+    "expected": {
+      "id": "high-attendance-cost",
+      "label": "high attendance cost",
+      "inputs": {
+        "C": 2520510,
+        "N": 384,
+        "unique": 0.8,
+        "b": 0.5,
+        "completion": 0.6,
+        "q": 0.03,
+        "T": 0.5,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": 1500,
+        "resourceYears": 1,
+        "cost": 500,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 0,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0
+      },
+      "costUSD": 2520510,
+      "exposed": 153.60000000000002,
+      "treated": 92.16000000000001,
+      "union": 153.60000000000002,
+      "allPopulationQalys": 1.372222129967041,
+      "editionQalys": 1.372222129967041,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 30.720000000000006,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 250,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 122.88000000000002,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -500,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": -0.8984955322699281,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.4737265976971129,
+      "price10": 53206005.57901419,
+      "costPer10Qalys": 53206005.57901419,
+      "incomeEquivalentYears": -0.8984955322699281,
+      "combinedEquivalentYears": 0.4737265976971129,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "no-resource-success",
+    "overrides": {
+      "success": 0
+    },
+    "expected": {
+      "id": "no-resource-success",
+      "label": "no resource success",
+      "inputs": {
+        "C": 2520510,
+        "N": 384,
+        "unique": 0.8,
+        "b": 0.5,
+        "completion": 0.6,
+        "q": 0.03,
+        "T": 0.5,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0,
+        "gain": 1500,
+        "resourceYears": 1,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 0,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0
+      },
+      "costUSD": 2520510,
+      "exposed": 153.60000000000002,
+      "treated": 92.16000000000001,
+      "union": 153.60000000000002,
+      "allPopulationQalys": 1.372222129967041,
+      "editionQalys": 1.372222129967041,
+      "incomePathways": [
+        {
+          "id": "other-households",
+          "people": 153.60000000000002,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": -0.25453967812856326,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.1176824518384776,
+      "price10": 22551217.43974784,
+      "costPer10Qalys": 22551217.43974784,
+      "incomeEquivalentYears": -0.25453967812856326,
+      "combinedEquivalentYears": 1.1176824518384776,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "half-population",
+    "overrides": {
+      "N": 150
+    },
+    "expected": {
+      "id": "half-population",
+      "label": "half population",
+      "inputs": {
+        "C": 2520510,
+        "N": 150,
+        "unique": 0.8,
+        "b": 0.5,
+        "completion": 0.6,
+        "q": 0.03,
+        "T": 0.5,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": 1500,
+        "resourceYears": 1,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 0,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0
+      },
+      "costUSD": 2520510,
+      "exposed": 60,
+      "treated": 36,
+      "union": 60,
+      "allPopulationQalys": 0.5360242695183755,
+      "editionQalys": 0.5360242695183755,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 12,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 650,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 48,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.048121136028092606,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.5841454055464681,
+      "price10": 43148674.56060983,
+      "costPer10Qalys": 43148674.56060983,
+      "incomeEquivalentYears": 0.048121136028092606,
+      "combinedEquivalentYears": 0.5841454055464681,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "short-duration",
+    "overrides": {
+      "T": 0.25
+    },
+    "expected": {
+      "id": "short-duration",
+      "label": "short duration",
+      "inputs": {
+        "C": 2520510,
+        "N": 384,
+        "unique": 0.8,
+        "b": 0.5,
+        "completion": 0.6,
+        "q": 0.03,
+        "T": 0.25,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": 1500,
+        "resourceYears": 1,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 0,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0
+      },
+      "costUSD": 2520510,
+      "exposed": 153.60000000000002,
+      "treated": 92.16000000000001,
+      "union": 153.60000000000002,
+      "allPopulationQalys": 0.6861110649835205,
+      "editionQalys": 0.6861110649835205,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 30.720000000000006,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 650,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 122.88000000000002,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.12319010823191706,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.8093011732154376,
+      "price10": 31144277.10497134,
+      "costPer10Qalys": 31144277.10497134,
+      "incomeEquivalentYears": 0.12319010823191706,
+      "combinedEquivalentYears": 0.8093011732154376,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "one-year-health",
+    "overrides": {
+      "T": 1
+    },
+    "expected": {
+      "id": "one-year-health",
+      "label": "one year health",
+      "inputs": {
+        "C": 2520510,
+        "N": 384,
+        "unique": 0.8,
+        "b": 0.5,
+        "completion": 0.6,
+        "q": 0.03,
+        "T": 1,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": 1500,
+        "resourceYears": 1,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 0,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0
+      },
+      "costUSD": 2520510,
+      "exposed": 153.60000000000002,
+      "treated": 92.16000000000001,
+      "union": 153.60000000000002,
+      "allPopulationQalys": 2.744444259934082,
+      "editionQalys": 2.744444259934082,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 30.720000000000006,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 650,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 122.88000000000002,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.12319010823191706,
+      "incomeUnknown": false,
+      "totalEquivalent": 2.867634368165999,
+      "price10": 8789509.666854763,
+      "costPer10Qalys": 8789509.666854763,
+      "incomeEquivalentYears": 0.12319010823191706,
+      "combinedEquivalentYears": 2.867634368165999,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "negative-clinical-no-overlap",
+    "overrides": {
+      "q": -0.03,
+      "clinicalOverlap": 0
+    },
+    "expected": {
+      "id": "negative-clinical-no-overlap",
+      "label": "negative clinical no overlap",
+      "inputs": {
+        "C": 2520510,
+        "N": 384,
+        "unique": 0.8,
+        "b": 0.5,
+        "completion": 0.6,
+        "q": -0.03,
+        "T": 0.5,
+        "clinicalOverlap": 0,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": 1500,
+        "resourceYears": 1,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 0,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0
+      },
+      "costUSD": 2520510,
+      "exposed": 153.60000000000002,
+      "treated": 92.16000000000001,
+      "union": 153.60000000000002,
+      "allPopulationQalys": -1.372222129967041,
+      "editionQalys": -1.372222129967041,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 30.720000000000006,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 650,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 122.88000000000002,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.12319010823191706,
+      "incomeUnknown": false,
+      "totalEquivalent": -1.2490320217351238,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": 0.12319010823191706,
+      "combinedEquivalentYears": -1.2490320217351238,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "reported-adults-all-unique",
+    "overrides": {
+      "unique": 1
+    },
+    "expected": {
+      "id": "reported-adults-all-unique",
+      "label": "reported adults all unique",
+      "inputs": {
+        "C": 2520510,
+        "N": 384,
+        "unique": 1,
+        "b": 0.5,
+        "completion": 0.6,
+        "q": 0.03,
+        "T": 0.5,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": 1500,
+        "resourceYears": 1,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 0,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0
+      },
+      "costUSD": 2520510,
+      "exposed": 192,
+      "treated": 115.19999999999999,
+      "union": 192,
+      "allPopulationQalys": 1.715277662458801,
+      "editionQalys": 1.715277662458801,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 38.400000000000006,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 650,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 153.6,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.15398763528989634,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.8692652977486974,
+      "price10": 13483960.800190575,
+      "costPer10Qalys": 13483960.800190575,
+      "incomeEquivalentYears": 0.15398763528989634,
+      "combinedEquivalentYears": 1.8692652977486974,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "initial-opportunities",
+    "overrides": {
+      "N": 300,
+      "unique": 1
+    },
+    "expected": {
+      "id": "initial-opportunities",
+      "label": "initial opportunities",
+      "inputs": {
+        "C": 2520510,
+        "N": 300,
+        "unique": 1,
+        "b": 0.5,
+        "completion": 0.6,
+        "q": 0.03,
+        "T": 0.5,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": 1500,
+        "resourceYears": 1,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 0,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0
+      },
+      "costUSD": 2520510,
+      "exposed": 150,
+      "treated": 90,
+      "union": 150,
+      "allPopulationQalys": 1.3400606737959384,
+      "editionQalys": 1.3400606737959384,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 30,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 650,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 120,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.12030284007023154,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.46036351386617,
+      "price10": 17259469.824243937,
+      "costPer10Qalys": 17259469.824243937,
+      "incomeEquivalentYears": 0.12030284007023154,
+      "combinedEquivalentYears": 1.46036351386617,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "tax-recognized-cost",
+    "overrides": {
+      "C": 2515510
+    },
+    "expected": {
+      "id": "tax-recognized-cost",
+      "label": "tax recognized cost",
+      "inputs": {
+        "C": 2515510,
+        "N": 384,
+        "unique": 0.8,
+        "b": 0.5,
+        "completion": 0.6,
+        "q": 0.03,
+        "T": 0.5,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": 1500,
+        "resourceYears": 1,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 0,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0
+      },
+      "costUSD": 2515510,
+      "exposed": 153.60000000000002,
+      "treated": 92.16000000000001,
+      "union": 153.60000000000002,
+      "allPopulationQalys": 1.372222129967041,
+      "editionQalys": 1.372222129967041,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 30.720000000000006,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 650,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 122.88000000000002,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.12319010823191706,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.495412238198958,
+      "price10": 16821515.403870344,
+      "costPer10Qalys": 16821515.403870344,
+      "incomeEquivalentYears": 0.12319010823191706,
+      "combinedEquivalentYears": 1.495412238198958,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "zero-health-duration",
+    "overrides": {
+      "T": 0
+    },
+    "expected": {
+      "id": "zero-health-duration",
+      "label": "zero health duration",
+      "inputs": {
+        "C": 2520510,
+        "N": 384,
+        "unique": 0.8,
+        "b": 0.5,
+        "completion": 0.6,
+        "q": 0.03,
+        "T": 0,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": 1500,
+        "resourceYears": 1,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 0,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0
+      },
+      "costUSD": 2520510,
+      "exposed": 153.60000000000002,
+      "treated": 92.16000000000001,
+      "union": 153.60000000000002,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 30.720000000000006,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 650,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 122.88000000000002,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.12319010823191706,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.12319010823191706,
+      "price10": 204603278.31313378,
+      "costPer10Qalys": 204603278.31313378,
+      "incomeEquivalentYears": 0.12319010823191706,
+      "combinedEquivalentYears": 0.12319010823191706,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "union-harm",
+    "overrides": {
+      "harm": 0.005
+    },
+    "expected": {
+      "id": "union-harm",
+      "label": "union harm",
+      "inputs": {
+        "C": 2520510,
+        "N": 384,
+        "unique": 0.8,
+        "b": 0.5,
+        "completion": 0.6,
+        "q": 0.03,
+        "T": 0.5,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": 1500,
+        "resourceYears": 1,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 0,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0.005
+      },
+      "costUSD": 2520510,
+      "exposed": 153.60000000000002,
+      "treated": 92.16000000000001,
+      "union": 153.60000000000002,
+      "allPopulationQalys": 0.6098765022075736,
+      "editionQalys": 0.6098765022075736,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 30.720000000000006,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 650,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 122.88000000000002,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.12319010823191706,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.7330666104394907,
+      "price10": 34383096.48953858,
+      "costPer10Qalys": 34383096.48953858,
+      "incomeEquivalentYears": 0.12319010823191706,
+      "combinedEquivalentYears": 0.7330666104394907,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "no-resource-gain",
+    "overrides": {
+      "gain": 0
+    },
+    "expected": {
+      "id": "no-resource-gain",
+      "label": "no resource gain",
+      "inputs": {
+        "C": 2520510,
+        "N": 384,
+        "unique": 0.8,
+        "b": 0.5,
+        "completion": 0.6,
+        "q": 0.03,
+        "T": 0.5,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": 0,
+        "resourceYears": 1,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 0,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0
+      },
+      "costUSD": 2520510,
+      "exposed": 153.60000000000002,
+      "treated": 92.16000000000001,
+      "union": 153.60000000000002,
+      "allPopulationQalys": 1.372222129967041,
+      "editionQalys": 1.372222129967041,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 30.720000000000006,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 122.88000000000002,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": -0.25453967812856326,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.1176824518384776,
+      "price10": 22551217.43974784,
+      "costPer10Qalys": 22551217.43974784,
+      "incomeEquivalentYears": -0.25453967812856326,
+      "combinedEquivalentYears": 1.1176824518384776,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "geography-half",
+    "overrides": {
+      "g": 0.5
+    },
+    "expected": {
+      "id": "geography-half",
+      "label": "geography half",
+      "inputs": {
+        "C": 2520510,
+        "N": 384,
+        "unique": 0.8,
+        "b": 0.5,
+        "completion": 0.6,
+        "q": 0.03,
+        "T": 0.5,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 0.5,
+        "success": 0.2,
+        "gain": 1500,
+        "resourceYears": 1,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 0,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0
+      },
+      "costUSD": 2520510,
+      "exposed": 153.60000000000002,
+      "treated": 92.16000000000001,
+      "union": 153.60000000000002,
+      "allPopulationQalys": 1.372222129967041,
+      "editionQalys": 0.6861110649835205,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 30.720000000000006,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 650,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 122.88000000000002,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.06159505411595853,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.747706119099479,
+      "price10": 33709902.000476435,
+      "costPer10Qalys": 33709902.000476435,
+      "incomeEquivalentYears": 0.06159505411595853,
+      "combinedEquivalentYears": 0.747706119099479,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "delay-two-years",
+    "overrides": {
+      "delay": 2
+    },
+    "expected": {
+      "id": "delay-two-years",
+      "label": "delay two years",
+      "inputs": {
+        "C": 2520510,
+        "N": 384,
+        "unique": 0.8,
+        "b": 0.5,
+        "completion": 0.6,
+        "q": 0.03,
+        "T": 0.5,
+        "clinicalOverlap": 1,
+        "delay": 2,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": 1500,
+        "resourceYears": 1,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 0,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0
+      },
+      "costUSD": 2520510,
+      "exposed": 153.60000000000002,
+      "treated": 92.16000000000001,
+      "union": 153.60000000000002,
+      "allPopulationQalys": 1.303044584786502,
+      "editionQalys": 1.303044584786502,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 30.720000000000006,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 650,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 122.88000000000002,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.1169797512555188,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.4200243360420208,
+      "price10": 17749766.226016384,
+      "costPer10Qalys": 17749766.226016384,
+      "incomeEquivalentYears": 0.1169797512555188,
+      "combinedEquivalentYears": 1.4200243360420208,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "negative-overlap-one",
+    "overrides": {
+      "gain": -1500,
+      "positiveOverlap": 1
+    },
+    "expected": {
+      "id": "negative-overlap-one",
+      "label": "negative overlap one",
+      "inputs": {
+        "C": 2520510,
+        "N": 384,
+        "unique": 0.8,
+        "b": 0.5,
+        "completion": 0.6,
+        "q": 0.03,
+        "T": 0.5,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": -1500,
+        "resourceYears": 1,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 1,
+        "payerLoss": 0,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0
+      },
+      "costUSD": 2520510,
+      "exposed": 153.60000000000002,
+      "treated": 92.16000000000001,
+      "union": 153.60000000000002,
+      "allPopulationQalys": 1.372222129967041,
+      "editionQalys": 1.372222129967041,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 30.720000000000006,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -1600,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 122.88000000000002,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": -1.039288131646177,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.3329339983208639,
+      "price10": 75705996.1647674,
+      "costPer10Qalys": 75705996.1647674,
+      "incomeEquivalentYears": -1.039288131646177,
+      "combinedEquivalentYears": 0.3329339983208639,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "external-recognized-cost",
+    "overrides": {
+      "C": 2620510
+    },
+    "expected": {
+      "id": "external-recognized-cost",
+      "label": "external recognized cost",
+      "inputs": {
+        "C": 2620510,
+        "N": 384,
+        "unique": 0.8,
+        "b": 0.5,
+        "completion": 0.6,
+        "q": 0.03,
+        "T": 0.5,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": 1500,
+        "resourceYears": 1,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 0,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0
+      },
+      "costUSD": 2620510,
+      "exposed": 153.60000000000002,
+      "treated": 92.16000000000001,
+      "union": 153.60000000000002,
+      "allPopulationQalys": 1.372222129967041,
+      "editionQalys": 1.372222129967041,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 30.720000000000006,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 650,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 122.88000000000002,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.12319010823191706,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.495412238198958,
+      "price10": 17523662.927595705,
+      "costPer10Qalys": 17523662.927595705,
+      "incomeEquivalentYears": 0.12319010823191706,
+      "combinedEquivalentYears": 1.495412238198958,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "zero-resource-duration",
+    "overrides": {
+      "resourceYears": 0
+    },
+    "expected": {
+      "id": "zero-resource-duration",
+      "label": "zero resource duration",
+      "inputs": {
+        "C": 2520510,
+        "N": 384,
+        "unique": 0.8,
+        "b": 0.5,
+        "completion": 0.6,
+        "q": 0.03,
+        "T": 0.5,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": 1500,
+        "resourceYears": 0,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 0,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0
+      },
+      "costUSD": 2520510,
+      "exposed": 153.60000000000002,
+      "treated": 92.16000000000001,
+      "union": 153.60000000000002,
+      "allPopulationQalys": 1.372222129967041,
+      "editionQalys": 1.372222129967041,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 30.720000000000006,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 122.88000000000002,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": -0.25453967812856326,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.1176824518384776,
+      "price10": 22551217.43974784,
+      "costPer10Qalys": 22551217.43974784,
+      "incomeEquivalentYears": -0.25453967812856326,
+      "combinedEquivalentYears": 1.1176824518384776,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "half-resource-duration",
+    "overrides": {
+      "resourceYears": 0.5
+    },
+    "expected": {
+      "id": "half-resource-duration",
+      "label": "half resource duration",
+      "inputs": {
+        "C": 2520510,
+        "N": 384,
+        "unique": 0.8,
+        "b": 0.5,
+        "completion": 0.6,
+        "q": 0.03,
+        "T": 0.5,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": 1500,
+        "resourceYears": 0.5,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 0,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0
+      },
+      "costUSD": 2520510,
+      "exposed": 153.60000000000002,
+      "treated": 92.16000000000001,
+      "union": 153.60000000000002,
+      "allPopulationQalys": 1.372222129967041,
+      "editionQalys": 1.372222129967041,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 30.720000000000006,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 275,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 122.88000000000002,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": -0.06450507155275564,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.3077170584142852,
+      "price10": 19274123.433522586,
+      "costPer10Qalys": 19274123.433522586,
+      "incomeEquivalentYears": -0.06450507155275564,
+      "combinedEquivalentYears": 1.3077170584142852,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "two-year-health",
+    "overrides": {
+      "T": 2
+    },
+    "expected": {
+      "id": "two-year-health",
+      "label": "two year health",
+      "inputs": {
+        "C": 2520510,
+        "N": 384,
+        "unique": 0.8,
+        "b": 0.5,
+        "completion": 0.6,
+        "q": 0.03,
+        "T": 2,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": 1500,
+        "resourceYears": 1,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 0,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0
+      },
+      "costUSD": 2520510,
+      "exposed": 153.60000000000002,
+      "treated": 92.16000000000001,
+      "union": 153.60000000000002,
+      "allPopulationQalys": 5.408953250161346,
+      "editionQalys": 5.408953250161346,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 30.720000000000006,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 650,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 122.88000000000002,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.12319010823191706,
+      "incomeUnknown": false,
+      "totalEquivalent": 5.532143358393263,
+      "price10": 4556118.373497914,
+      "costPer10Qalys": 4556118.373497914,
+      "incomeEquivalentYears": 0.12319010823191706,
+      "combinedEquivalentYears": 5.532143358393263,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "negative-two-year-health",
+    "overrides": {
+      "T": 2,
+      "q": -0.03
+    },
+    "expected": {
+      "id": "negative-two-year-health",
+      "label": "negative two year health",
+      "inputs": {
+        "C": 2520510,
+        "N": 384,
+        "unique": 0.8,
+        "b": 0.5,
+        "completion": 0.6,
+        "q": -0.03,
+        "T": 2,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": 1500,
+        "resourceYears": 1,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 0,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0
+      },
+      "costUSD": 2520510,
+      "exposed": 153.60000000000002,
+      "treated": 92.16000000000001,
+      "union": 153.60000000000002,
+      "allPopulationQalys": -5.408953250161346,
+      "editionQalys": -5.408953250161346,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 30.720000000000006,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 650,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 122.88000000000002,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.12319010823191706,
+      "incomeUnknown": false,
+      "totalEquivalent": -5.285763141929429,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": 0.12319010823191706,
+      "combinedEquivalentYears": -5.285763141929429,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "zero-resource-external-cost",
+    "overrides": {
+      "resourceYears": 0,
+      "payerLoss": 1500,
+      "externalCost": 300
+    },
+    "expected": {
+      "id": "zero-resource-external-cost",
+      "label": "zero resource external cost",
+      "inputs": {
+        "C": 2520510,
+        "N": 384,
+        "unique": 0.8,
+        "b": 0.5,
+        "completion": 0.6,
+        "q": 0.03,
+        "T": 0.5,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": 1500,
+        "resourceYears": 0,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 1500,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 300,
+        "harm": 0
+      },
+      "costUSD": 2520510,
+      "exposed": 153.60000000000002,
+      "treated": 92.16000000000001,
+      "union": 153.60000000000002,
+      "allPopulationQalys": 1.372222129967041,
+      "editionQalys": 1.372222129967041,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 30.720000000000006,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 122.88000000000002,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "counterparty",
+          "people": 20,
+          "annualIncomeBeforeUSD": 60000,
+          "annualIncomeGainUSD": -2304.0000000000005,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "Distinct local payer/provider households. Matched transfer loss follows gain exposure; external care burden remains full. No complete world incidence claim.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": -0.643223931137064,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.728998198829977,
+      "price10": 34574982.545160644,
+      "costPer10Qalys": 34574982.545160644,
+      "incomeEquivalentYears": -0.643223931137064,
+      "combinedEquivalentYears": 0.728998198829977,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  },
+  {
+    "id": "three-year-mean",
+    "overrides": {
+      "C": 2192281.3333333335
+    },
+    "expected": {
+      "id": "three-year-mean",
+      "label": "three year mean",
+      "inputs": {
+        "C": 2192281.3333333335,
+        "N": 384,
+        "unique": 0.8,
+        "b": 0.5,
+        "completion": 0.6,
+        "q": 0.03,
+        "T": 0.5,
+        "clinicalOverlap": 1,
+        "delay": 0.25,
+        "discount": 0.03,
+        "g": 1,
+        "success": 0.2,
+        "gain": 1500,
+        "resourceYears": 1,
+        "cost": 100,
+        "baseline": 30000,
+        "positiveOverlap": 0.5,
+        "payerLoss": 0,
+        "payerPeople": 20,
+        "payerBaseline": 60000,
+        "externalCost": 0,
+        "harm": 0
+      },
+      "costUSD": 2192281.3333333335,
+      "exposed": 153.60000000000002,
+      "treated": 92.16000000000001,
+      "union": 153.60000000000002,
+      "allPopulationQalys": 1.372222129967041,
+      "editionQalys": 1.372222129967041,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 30.720000000000006,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 650,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        },
+        {
+          "id": "other-households",
+          "people": 122.88000000000002,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One welfare-equivalent person per participant household; signed resources jointly net before log. Positive overlap never reduces costs.",
+          "counterfactual": "Alternative free services continue. Gain is net access or work resources after taxes, benefits, replacement earnings and new costs, not retail counseling fees or ordinary survivor wages.",
+          "sourceIds": [
+            "z-services",
+            "z-99025"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.12319010823191706,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.495412238198958,
+      "price10": 14660046.757231768,
+      "costPer10Qalys": 14660046.757231768,
+      "incomeEquivalentYears": 0.12319010823191706,
+      "combinedEquivalentYears": 1.495412238198958,
+      "assumptions": "Conditional limited adult counseling channel; marginal gift and full portfolio unknown."
+    }
+  }
+]

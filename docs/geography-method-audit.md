@@ -1,5 +1,7 @@
 # GiveBetter expansion: data and acceptance audit
 
+Current execution uses the October 4 reduced seven-edition scope, GPT-6.1 Sol and actual 5-minute initial / 15-minute deep budgets; the historical audit below records earlier decisions. For holistic discovery/selection and health-plus-income review, apply [jobs, abundance and growth protocol](geography-discovery/holistic-jobs-growth-protocol-2026-10-05.md). Keep its workflow separate from accepted report counts and public promotion.
+
 Read-only audit of accepted `work/market-for-impact-expense-residuals`; no Site changes, builds, installs, servers, or external research. Space Saver and token-saver read and applied. Baseline: checkout 66 MB; filesystem 62 GiB available. No bulk artifacts generated.
 
 ## Scope and counting

@@ -1,4 +1,5 @@
-import CharityResearchReport,{type CharityReportContent} from '@/components/CharityResearchReport';
+import LongFormResearchReport from '@/components/LongFormResearchReport';
 import report from '@/data/us/nfp-report.json';
-export const metadata={title:'Changent / Nurse-Family Partnership — GiveBetter research',description:'Whole-organization national-gift analysis with finite QALY assumptions, historical gross costs, and explicit unmeasured local allocation.'};
-export default function Page(){const content:CharityReportContent={...report,nutshell:{...report.nutshell,body:<>{report.nutshell.body} <a href="/api/nfp-model">Inspect the model, assumptions and scenarios</a>.</>}};return <CharityResearchReport content={content}/>;}
+import {markdown,sources,modelVersion} from '@/lib/changent-current-report.mjs';
+export const metadata={title:'Changent / Nurse-Family Partnership — GiveBetter research',description:'Home-visiting support: finite health, net household resources and donation impact.'};
+export default function Page(){return <LongFormResearchReport organization={report.organization} program={report.program} markdown={markdown} sources={sources} donationUrl={report.donationUrl} modelVersion={modelVersion} modelUrl="/api/nfp-model" calibrationDate="2026-10-04" minutes={0} modelLabel="GPT-6.1 Sol" legacyMinutesAlreadyRecorded/>;}

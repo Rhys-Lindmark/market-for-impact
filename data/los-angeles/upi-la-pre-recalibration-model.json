@@ -1,0 +1,392 @@
+{
+  "schemaVersion": 1,
+  "organization": "Urban Peace Institute",
+  "slug": "urban-peace-institute",
+  "edition": "los-angeles",
+  "frozenFromCommit": "195226b",
+  "model": {
+    "version": "la-beta-upi-finite-participant-v2",
+    "costScope": "Full annual recipient expense including regrants, support costs and non-LA work, normalized to a prospective service cohort. This is not verified marginal cost. External partner costs unmeasured; explicit resource sensitivity only.",
+    "geographicAttribution": "g=1 for the modeled LA Peacemakers participant branch within LA County. This is not a claim that all UPI activity or benefit is local; Orange residents qualify but no separate Orange benefit is invented. National training and statewide justice work remain unquantified.",
+    "formula": "A(T,m,d)=sum(t=1..T)[((1-m)/(1+d))^t]; qd=u*A(T,m,d); qn=qa+du*A(Tn,m,d). E=sum(t=0..ceil(D)-1)[min(1,D-t)*((1-m)*rho/(1+d))^t]. V=N*r*e*a*b*E. Qall=V*(f*qd+(1-f)*qn)-H; QLA=V*(f*qd+(1-f)*qn)*g-H. price=10*C/QLA only if positive. Central D=1; downstream health starts at the avoided-event time, modeled as time zero of its exposure period.",
+    "counterfactual": "Existing public GRYD/Safe Passage, separate BSCC training, committed philanthropy and spendable reserves continue. a discounts service benefit that persists without UPI; b discounts capacity not changed by a new ordinary gift. Central preserves one service year, not permanent program operation. The bridge scenario models a temporary service gap, not an extra annual cohort or permanent funding loss.",
+    "attribution": "Only serious shooting/homicide participant victimization is modeled. UPI monitoring injury counts have broader/unclear definitions and do not supply the causal rate. Benefits to other victims, policy and training recipients are omitted. V already includes partner and donor additionality; no regrant, staff, retaliation or citywide-decline credit is added again.",
+    "uncertainty": "Partial-health judgment central retained despite unobserved marginal parameters. Finite competing mortality and health loss are explicit judgments. Scenarios vary scale, risk, effect, funding, attribution, exposure, survival, local share and resource scope; no probabilistic quantiles or recipient-wide effectiveness claim. For multi-year stress cases, the expected-event calculation is a low-risk linear approximation, not a joint competing-risk simulation of repeated injury in the same person. It cannot support large extrapolations or infinite cohorts.",
+    "nativeOutcomes": "Central expected net additional avoided victimizations 1.5404999999999998, including 0.3081 fatal events. These are fractional model expectations, not observed people saved.",
+    "inputs": [
+      {
+        "name": "C",
+        "value": 8897684,
+        "unit": "USD per annual full recipient budget",
+        "basis": "observed",
+        "rationale": "Original FY2025 expense, audited-total reconciliation and grants retained once.",
+        "sourceIds": [
+          "upi-99025",
+          "upi-sd25",
+          "upi-si25"
+        ]
+      },
+      {
+        "name": "N",
+        "value": 1027,
+        "unit": "prospective engaged participant-equivalents for one full service year",
+        "basis": "judgment",
+        "rationale": "1,027 first-year enrollments anchors scale only; engagement and person-time not observed.",
+        "sourceIds": [
+          "upi-y1",
+          "upi-progress"
+        ]
+      },
+      {
+        "name": "r",
+        "value": 0.04,
+        "unit": "serious shooting/homicide victimizations per participant-year without the modeled increment",
+        "basis": "judgment",
+        "rationale": "Below annualized READI control benchmark; local mix and background declines uncertain.",
+        "sourceIds": [
+          "upi-readi-full",
+          "upi-current"
+        ]
+      },
+      {
+        "name": "e",
+        "value": 0.1,
+        "unit": "relative victimization reduction",
+        "basis": "judgment",
+        "rationale": "10% working transport judgment, not the READI TOT or GRYD retaliation coefficient.",
+        "sourceIds": [
+          "upi-readi-full",
+          "upi-gryd"
+        ]
+      },
+      {
+        "name": "f",
+        "value": 0.2,
+        "unit": "fatal share of avoided modeled victimizations",
+        "basis": "judgment",
+        "rationale": "20%; not estimated from the broadly defined UPI injury graph.",
+        "sourceIds": [
+          "upi-y1"
+        ]
+      },
+      {
+        "name": "u",
+        "value": 0.8,
+        "unit": "health utility while alive after initially avoided death",
+        "basis": "judgment",
+        "rationale": ".8 constant simplified utility, not measured recipient health.",
+        "sourceIds": []
+      },
+      {
+        "name": "T",
+        "value": 47,
+        "unit": "maximum downstream years after initially avoided death",
+        "basis": "judgment",
+        "rationale": "47-year finite cap, not a verified life expectancy.",
+        "sourceIds": []
+      },
+      {
+        "name": "m",
+        "value": 0.01,
+        "unit": "annual all-cause death probability conditional on being alive",
+        "basis": "judgment",
+        "rationale": "1% annual death probability in discrete survival (1-m)^t; includes continuing violence and other mortality. This is not a continuous hazard or an age-specific recipient life table.",
+        "sourceIds": []
+      },
+      {
+        "name": "d",
+        "value": 0.03,
+        "unit": "annual discount rate",
+        "basis": "judgment",
+        "rationale": "3% normative health and future-cost discount.",
+        "sourceIds": []
+      },
+      {
+        "name": "qa",
+        "value": 0.1,
+        "unit": "acute QALYs lost per nonfatal injury",
+        "basis": "judgment",
+        "rationale": ".1 immediate-area approximation; not derived from PTSD prevalence.",
+        "sourceIds": [
+          "upi-survivors"
+        ]
+      },
+      {
+        "name": "du",
+        "value": 0.05,
+        "unit": "annual chronic utility decrement per nonfatal injury",
+        "basis": "judgment",
+        "rationale": ".05 across all survivors as an expected average, not everyone permanently disabled.",
+        "sourceIds": [
+          "upi-survivors"
+        ]
+      },
+      {
+        "name": "Tn",
+        "value": 10,
+        "unit": "maximum chronic morbidity years",
+        "basis": "judgment",
+        "rationale": "10 years; beyond the observed follow-up and varied as a judgment.",
+        "sourceIds": [
+          "upi-survivors"
+        ]
+      },
+      {
+        "name": "a",
+        "value": 0.75,
+        "unit": "UPI-enabled fraction after partner continuation",
+        "basis": "judgment",
+        "rationale": ".75, separate from private gift response; no measured attributable fraction.",
+        "sourceIds": [
+          "upi-y1",
+          "upi-si25"
+        ]
+      },
+      {
+        "name": "b",
+        "value": 0.5,
+        "unit": "effective private-funding capacity response",
+        "basis": "judgment",
+        "rationale": ".5 after secured funding, reserves, substitution and allocation; no verified gift-sized gap.",
+        "sourceIds": [
+          "upi-99025",
+          "upi-bscc-contract",
+          "upi-city-cao",
+          "upi-city-final",
+          "upi-current"
+        ]
+      },
+      {
+        "name": "g",
+        "value": 1,
+        "unit": "LA share of modeled branch benefit",
+        "basis": "judgment",
+        "rationale": "1 for LA resident participant branch; local residence still to verify, no headquarters allocation.",
+        "sourceIds": [
+          "upi-y1"
+        ]
+      },
+      {
+        "name": "H",
+        "value": 0,
+        "unit": "additional LA QALYs lost outside modeled victimizations",
+        "basis": "judgment",
+        "rationale": "0 central is not safety evidence; additive worker/privacy/displacement harm retained in stress.",
+        "sourceIds": []
+      },
+      {
+        "name": "D",
+        "value": 1,
+        "unit": "finite years of risk reduction for the same cohort",
+        "basis": "judgment",
+        "rationale": "1 central; fractional bridge and two-year cases cannot be read as repeated new cohorts.",
+        "sourceIds": []
+      },
+      {
+        "name": "rho",
+        "value": 1,
+        "unit": "annual persistence of relative effect after first year",
+        "basis": "judgment",
+        "rationale": "1 irrelevant for central D=1; .5 in durability-only second-year stress.",
+        "sourceIds": []
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "central",
+        "label": "Conditional partial participant-health estimate",
+        "costUSD": 8897684,
+        "allPopulationQalys": 5.7742936466569965,
+        "editionQalys": 5.7742936466569965,
+        "assumptions": "{\"C\":8897684,\"N\":1027,\"r\":0.04,\"e\":0.1,\"f\":0.2,\"u\":0.8,\"T\":47,\"m\":0.01,\"d\":0.03,\"qa\":0.1,\"du\":0.05,\"Tn\":10,\"a\":0.75,\"b\":0.5,\"g\":1,\"H\":0,\"D\":1,\"rho\":1}. Finite model equations above; stresses are not confidence bounds."
+      },
+      {
+        "id": "lower-risk",
+        "label": "Lower untreated participant risk",
+        "costUSD": 8897684,
+        "allPopulationQalys": 1.4435734116642491,
+        "editionQalys": 1.4435734116642491,
+        "assumptions": "{\"C\":8897684,\"N\":1027,\"r\":0.01,\"e\":0.1,\"f\":0.2,\"u\":0.8,\"T\":47,\"m\":0.01,\"d\":0.03,\"qa\":0.1,\"du\":0.05,\"Tn\":10,\"a\":0.75,\"b\":0.5,\"g\":1,\"H\":0,\"D\":1,\"rho\":1}. Finite model equations above; stresses are not confidence bounds."
+      },
+      {
+        "id": "readi-risk",
+        "label": "READI-like risk, not a local observation",
+        "costUSD": 8897684,
+        "allPopulationQalys": 9.527584516984048,
+        "editionQalys": 9.527584516984048,
+        "assumptions": "{\"C\":8897684,\"N\":1027,\"r\":0.066,\"e\":0.1,\"f\":0.2,\"u\":0.8,\"T\":47,\"m\":0.01,\"d\":0.03,\"qa\":0.1,\"du\":0.05,\"Tn\":10,\"a\":0.75,\"b\":0.5,\"g\":1,\"H\":0,\"D\":1,\"rho\":1}. Finite model equations above; stresses are not confidence bounds."
+      },
+      {
+        "id": "lower-engagement",
+        "label": "Only 500 annual engaged participant-equivalents",
+        "costUSD": 8897684,
+        "allPopulationQalys": 2.8112432554318394,
+        "editionQalys": 2.8112432554318394,
+        "assumptions": "{\"C\":8897684,\"N\":500,\"r\":0.04,\"e\":0.1,\"f\":0.2,\"u\":0.8,\"T\":47,\"m\":0.01,\"d\":0.03,\"qa\":0.1,\"du\":0.05,\"Tn\":10,\"a\":0.75,\"b\":0.5,\"g\":1,\"H\":0,\"D\":1,\"rho\":1}. Finite model equations above; stresses are not confidence bounds."
+      },
+      {
+        "id": "larger-effect",
+        "label": "Twenty-percent effect judgment",
+        "costUSD": 8897684,
+        "allPopulationQalys": 11.548587293313993,
+        "editionQalys": 11.548587293313993,
+        "assumptions": "{\"C\":8897684,\"N\":1027,\"r\":0.04,\"e\":0.2,\"f\":0.2,\"u\":0.8,\"T\":47,\"m\":0.01,\"d\":0.03,\"qa\":0.1,\"du\":0.05,\"Tn\":10,\"a\":0.75,\"b\":0.5,\"g\":1,\"H\":0,\"D\":1,\"rho\":1}. Finite model equations above; stresses are not confidence bounds."
+      },
+      {
+        "id": "weak-private-margin",
+        "label": "New funding mostly replaces other resources",
+        "costUSD": 8897684,
+        "allPopulationQalys": 1.1548587293313994,
+        "editionQalys": 1.1548587293313994,
+        "assumptions": "{\"C\":8897684,\"N\":1027,\"r\":0.04,\"e\":0.1,\"f\":0.2,\"u\":0.8,\"T\":47,\"m\":0.01,\"d\":0.03,\"qa\":0.1,\"du\":0.05,\"Tn\":10,\"a\":0.75,\"b\":0.1,\"g\":1,\"H\":0,\"D\":1,\"rho\":1}. Finite model equations above; stresses are not confidence bounds."
+      },
+      {
+        "id": "strong-private-margin",
+        "label": "Fully responsive new private funding",
+        "costUSD": 8897684,
+        "allPopulationQalys": 11.548587293313993,
+        "editionQalys": 11.548587293313993,
+        "assumptions": "{\"C\":8897684,\"N\":1027,\"r\":0.04,\"e\":0.1,\"f\":0.2,\"u\":0.8,\"T\":47,\"m\":0.01,\"d\":0.03,\"qa\":0.1,\"du\":0.05,\"Tn\":10,\"a\":0.75,\"b\":1,\"g\":1,\"H\":0,\"D\":1,\"rho\":1}. Finite model equations above; stresses are not confidence bounds."
+      },
+      {
+        "id": "full-replacement",
+        "label": "All modeled capacity financed anyway",
+        "costUSD": 8897684,
+        "allPopulationQalys": 0,
+        "editionQalys": 0,
+        "assumptions": "{\"C\":8897684,\"N\":1027,\"r\":0.04,\"e\":0.1,\"f\":0.2,\"u\":0.8,\"T\":47,\"m\":0.01,\"d\":0.03,\"qa\":0.1,\"du\":0.05,\"Tn\":10,\"a\":0.75,\"b\":0,\"g\":1,\"H\":0,\"D\":1,\"rho\":1}. Finite model equations above; stresses are not confidence bounds."
+      },
+      {
+        "id": "weak-upi-attribution",
+        "label": "Most benefit survives without UPI",
+        "costUSD": 8897684,
+        "allPopulationQalys": 1.9247645488856657,
+        "editionQalys": 1.9247645488856657,
+        "assumptions": "{\"C\":8897684,\"N\":1027,\"r\":0.04,\"e\":0.1,\"f\":0.2,\"u\":0.8,\"T\":47,\"m\":0.01,\"d\":0.03,\"qa\":0.1,\"du\":0.05,\"Tn\":10,\"a\":0.25,\"b\":0.5,\"g\":1,\"H\":0,\"D\":1,\"rho\":1}. Finite model equations above; stresses are not confidence bounds."
+      },
+      {
+        "id": "quarter-year-bridge",
+        "label": "Only a three-month service gap closed",
+        "costUSD": 8897684,
+        "allPopulationQalys": 2.8871468233284983,
+        "editionQalys": 2.8871468233284983,
+        "assumptions": "{\"C\":8897684,\"N\":1027,\"r\":0.04,\"e\":0.1,\"f\":0.2,\"u\":0.8,\"T\":47,\"m\":0.01,\"d\":0.03,\"qa\":0.1,\"du\":0.05,\"Tn\":10,\"a\":0.75,\"b\":1,\"g\":1,\"H\":0,\"D\":0.25,\"rho\":1}. Finite model equations above; stresses are not confidence bounds."
+      },
+      {
+        "id": "finite-durability",
+        "label": "Same cohort: one extra year at half effect without extra spending",
+        "costUSD": 8897684,
+        "allPopulationQalys": 8.549318263254293,
+        "editionQalys": 8.549318263254293,
+        "assumptions": "{\"C\":8897684,\"N\":1027,\"r\":0.04,\"e\":0.1,\"f\":0.2,\"u\":0.8,\"T\":47,\"m\":0.01,\"d\":0.03,\"qa\":0.1,\"du\":0.05,\"Tn\":10,\"a\":0.75,\"b\":0.5,\"g\":1,\"H\":0,\"D\":2,\"rho\":0.5}. Finite model equations above; stresses are not confidence bounds."
+      },
+      {
+        "id": "two-years-funded",
+        "label": "Same cohort: second funded service year, both costs included",
+        "costUSD": 17536212.155339807,
+        "allPopulationQalys": 11.324342879851585,
+        "editionQalys": 11.324342879851585,
+        "assumptions": "{\"C\":17536212.155339807,\"N\":1027,\"r\":0.04,\"e\":0.1,\"f\":0.2,\"u\":0.8,\"T\":47,\"m\":0.01,\"d\":0.03,\"qa\":0.1,\"du\":0.05,\"Tn\":10,\"a\":0.75,\"b\":0.5,\"g\":1,\"H\":0,\"D\":2,\"rho\":1}. Finite model equations above; stresses are not confidence bounds."
+      },
+      {
+        "id": "higher-mortality",
+        "label": "Shorter survival after the initially avoided death",
+        "costUSD": 8897684,
+        "allPopulationQalys": 4.320253375519606,
+        "editionQalys": 4.320253375519606,
+        "assumptions": "{\"C\":8897684,\"N\":1027,\"r\":0.04,\"e\":0.1,\"f\":0.2,\"u\":0.8,\"T\":47,\"m\":0.03,\"d\":0.03,\"qa\":0.1,\"du\":0.05,\"Tn\":10,\"a\":0.75,\"b\":0.5,\"g\":1,\"H\":0,\"D\":1,\"rho\":1}. Finite model equations above; stresses are not confidence bounds."
+      },
+      {
+        "id": "no-nonfatal-credit",
+        "label": "Mortality-only health branch",
+        "costUSD": 8897684,
+        "allPopulationQalys": 5.152264004553359,
+        "editionQalys": 5.152264004553359,
+        "assumptions": "{\"C\":8897684,\"N\":1027,\"r\":0.04,\"e\":0.1,\"f\":0.2,\"u\":0.8,\"T\":47,\"m\":0.01,\"d\":0.03,\"qa\":0,\"du\":0,\"Tn\":10,\"a\":0.75,\"b\":0.5,\"g\":1,\"H\":0,\"D\":1,\"rho\":1}. Finite model equations above; stresses are not confidence bounds."
+      },
+      {
+        "id": "local-leakage",
+        "label": "Only ninety percent of branch benefit local",
+        "costUSD": 8897684,
+        "allPopulationQalys": 5.7742936466569965,
+        "editionQalys": 5.196864281991297,
+        "assumptions": "{\"C\":8897684,\"N\":1027,\"r\":0.04,\"e\":0.1,\"f\":0.2,\"u\":0.8,\"T\":47,\"m\":0.01,\"d\":0.03,\"qa\":0.1,\"du\":0.05,\"Tn\":10,\"a\":0.75,\"b\":0.5,\"g\":0.9,\"H\":0,\"D\":1,\"rho\":1}. Finite model equations above; stresses are not confidence bounds."
+      },
+      {
+        "id": "low-positive",
+        "label": "Joint low-positive stress, not a confidence bound",
+        "costUSD": 8897684,
+        "allPopulationQalys": 0.006166745103691574,
+        "editionQalys": 0.006166745103691574,
+        "assumptions": "{\"C\":8897684,\"N\":500,\"r\":0.01,\"e\":0.02,\"f\":0.1,\"u\":0.7,\"T\":30,\"m\":0.03,\"d\":0.03,\"qa\":0.02,\"du\":0.01,\"Tn\":3,\"a\":0.25,\"b\":0.25,\"g\":1,\"H\":0,\"D\":1,\"rho\":1}. Finite model equations above; stresses are not confidence bounds."
+      },
+      {
+        "id": "favorable",
+        "label": "Joint favorable stress, not a confidence bound",
+        "costUSD": 8897684,
+        "allPopulationQalys": 262.4910903452534,
+        "editionQalys": 262.4910903452534,
+        "assumptions": "{\"C\":8897684,\"N\":2000,\"r\":0.066,\"e\":0.4,\"f\":0.25,\"u\":0.9,\"T\":55,\"m\":0.005,\"d\":0.03,\"qa\":0.2,\"du\":0.1,\"Tn\":10,\"a\":1,\"b\":0.8,\"g\":1,\"H\":0,\"D\":1,\"rho\":1}. Finite model equations above; stresses are not confidence bounds."
+      },
+      {
+        "id": "zero",
+        "label": "No additional victimization reduction",
+        "costUSD": 8897684,
+        "allPopulationQalys": 0,
+        "editionQalys": 0,
+        "assumptions": "{\"C\":8897684,\"N\":1027,\"r\":0.04,\"e\":0,\"f\":0.2,\"u\":0.8,\"T\":47,\"m\":0.01,\"d\":0.03,\"qa\":0.1,\"du\":0.05,\"Tn\":10,\"a\":0.75,\"b\":0.5,\"g\":1,\"H\":0,\"D\":1,\"rho\":1}. Finite model equations above; stresses are not confidence bounds."
+      },
+      {
+        "id": "adverse",
+        "label": "Increased victimization plus other incremental harm",
+        "costUSD": 8897684,
+        "allPopulationQalys": -3.8871468233284983,
+        "editionQalys": -3.8871468233284983,
+        "assumptions": "{\"C\":8897684,\"N\":1027,\"r\":0.04,\"e\":-0.05,\"f\":0.2,\"u\":0.8,\"T\":47,\"m\":0.01,\"d\":0.03,\"qa\":0.1,\"du\":0.05,\"Tn\":10,\"a\":0.75,\"b\":0.5,\"g\":1,\"H\":1,\"D\":1,\"rho\":1}. Finite model equations above; stresses are not confidence bounds."
+      },
+      {
+        "id": "external-resources",
+        "label": "Add hypothetical external delivery resources",
+        "costUSD": 11897684,
+        "allPopulationQalys": 5.7742936466569965,
+        "editionQalys": 5.7742936466569965,
+        "assumptions": "{\"C\":11897684,\"N\":1027,\"r\":0.04,\"e\":0.1,\"f\":0.2,\"u\":0.8,\"T\":47,\"m\":0.01,\"d\":0.03,\"qa\":0.1,\"du\":0.05,\"Tn\":10,\"a\":0.75,\"b\":0.5,\"g\":1,\"H\":0,\"D\":1,\"rho\":1}. Finite model equations above; stresses are not confidence bounds."
+      },
+      {
+        "id": "historical-cost",
+        "label": "Three-year mean operating expense, other inputs held fixed",
+        "costUSD": 5792030,
+        "allPopulationQalys": 5.7742936466569965,
+        "editionQalys": 5.7742936466569965,
+        "assumptions": "{\"C\":5792030,\"N\":1027,\"r\":0.04,\"e\":0.1,\"f\":0.2,\"u\":0.8,\"T\":47,\"m\":0.01,\"d\":0.03,\"qa\":0.1,\"du\":0.05,\"Tn\":10,\"a\":0.75,\"b\":0.5,\"g\":1,\"H\":0,\"D\":1,\"rho\":1}. Finite model equations above; stresses are not confidence bounds."
+      },
+      {
+        "id": "additional-harm",
+        "label": "Central benefit with one additional QALY of other harm",
+        "costUSD": 8897684,
+        "allPopulationQalys": 4.7742936466569965,
+        "editionQalys": 4.7742936466569965,
+        "assumptions": "{\"C\":8897684,\"N\":1027,\"r\":0.04,\"e\":0.1,\"f\":0.2,\"u\":0.8,\"T\":47,\"m\":0.01,\"d\":0.03,\"qa\":0.1,\"du\":0.05,\"Tn\":10,\"a\":0.75,\"b\":0.5,\"g\":1,\"H\":1,\"D\":1,\"rho\":1}. Finite model equations above; stresses are not confidence bounds."
+      }
+    ],
+    "sensitivity": [
+      "Central qd=16.722700436719766, qn=0.5047303165397902, net QLA=5.7742936466569965, price/10=15409129.747239782.",
+      "At $1 million per 10 QALYs, the branch requires 23.74 net additional avoided victimizations versus 1.5404999999999998; holding other central assumptions fixed would require e=1.541, greater than 1.",
+      "Each of N, r, e, a and b proportionally changes gross benefit; a better clinical conversion alone cannot resolve weak donor response. No threshold is a giving recommendation.",
+      "A two-year durability claim discounts second-year effect and survival. If a second funded service year is required, the second annual cost is included too; price does not simply halve.",
+      "Attribution/private response a=b=1 gives price/10=5778423.655214918; this is a diagnostic, not default.",
+      "Using comparable mean operating expense gives price/10=10030716.05711163; it is not a claim that current capacity can be bought at historical cost.",
+      "Zero/full replacement and net harm have no finite beneficial price. Joint favorable/low-positive cases carry no assigned probabilities.",
+      "The quarter-year bridge also raises b from 0.5 to 1: its benefit is one-half of central, not one-quarter. It represents a fully responsive three-month gap; retaining central b=0.5 would yield one-quarter of central benefit. No permanently unfunded year is inferred."
+    ],
+    "missingInputs": [
+      "Correctly matched FY2025 audit and evidence recurring revenue-recognition controls were implemented; current cash restrictions, payables and board commitments.",
+      "Peacemakers post-2026 renewal and termination status by award, remaining cash obligation, marginal gift allocation, trained-worker recruitment/retention and funded versus unfunded person-time.",
+      "Coalition-to-Schedule-I reconciliation (18 initiative members versus 17 annual legal grant routes), fiscal sponsors and partner cofunding/overlap with approved Safe Passage contracts.",
+      "Unique annual engaged participants, intensity, incident definitions, untreated risk and residence; independently linked person-time outcomes with credible comparisons.",
+      "UPI-specific causal contribution rather than all GRYD/CVI effectiveness, displacement and other-victim effects, worker health/privacy burden and diminishing returns.",
+      "Age-specific survival and finite nonfatal utility loss; no empirical probability distribution or complete portfolio price."
+    ],
+    "nativeCosts": "At central scale, full operating expense / 1,027 prospective engaged participant-equivalents is $8663.76; these are not verified engaged person-years. Full expense / 1.5405 modeled additional avoided victimizations is $5775841.61. Fatal events are 0.3081 of that total, not additional events. Finite survival and morbidity convert the mutually exclusive branches to QALYs."
+  }
+}

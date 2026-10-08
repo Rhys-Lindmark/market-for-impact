@@ -1,0 +1,292 @@
+{
+  "capturedAt": "2026-10-05T04:35:26.527Z",
+  "sourceRegistry": "data/geography-reports.json",
+  "report": {
+    "edition": "new-york-city",
+    "boundaryVersion": "OMB-23-01-2023-07-21",
+    "organizationId": "org:god-s-love-we-deliver",
+    "slug": "god-s-love-we-deliver",
+    "organization": "God's Love We Deliver",
+    "program": "Medically tailored meals, delivery and nutrition support",
+    "published": "2026-09-29",
+    "updated": "2026-09-29",
+    "stage": "alpha",
+    "donationUrl": "https://www.glwd.org/donate/",
+    "acceptance": {
+      "status": "accepted",
+      "evidence": "givebetter-nyc-sixth-seventh-independent-acceptance.json: primary-source checks, independent reconstruction of every scenario, and explicit uncertainty review; accepted as conditional alpha modeling, not measured causal impact."
+    },
+    "summary": {
+      "what": [
+        "God's Love We Deliver cooks and delivers meals tailored to serious illness and provides nutrition support.",
+        "Its reported reach includes ill clients, children and caregivers, so our health model adjusts meal volume before estimating patient health.",
+        "The central model implies about $43.6 million per 10 NYC-MSA QALYs."
+      ],
+      "strengths": [
+        "Concrete cooking and delivery operations reach people unable to meet nutrition needs.",
+        "Original tax reporting supports a cost denominator with direct event costs restored.",
+        "Current geographic reporting distinguishes the five boroughs from additional counties."
+      ],
+      "reservations": [
+        "A recent randomized diabetes pilot improved food security but found no differential quality-of-life or clinical improvement.",
+        "Service volume includes caregivers and children and is not a count of additional clinical benefits.",
+        "Medicaid contracts and capital expansion complicate marginal unrestricted-gift allocation."
+      ]
+    },
+    "sections": {
+      "what": "The recipient delivers tailored meals and dietitian support to people affected by illness. A new grocery transition program and Medicaid pathways expand the service mix. This analysis prices the whole recipient against one meal-supported health pathway, with other net health provisionally zero. [Current impact](https://www.glwd.org/about-us/2025-impact-summary-report/) [Healthcare partnerships](https://www.glwd.org/healthcare-partnerships/)",
+      "monitoring": "A 74-person randomized Maryland diabetes pilot used 12 meals weekly for 3 months plus dietitian calls. It reduced food insecurity, but clinical and diabetes-quality-of-life changes did not differ between arms at 6 months. This challenges translating meals into large health gains. Our 0.01 utility coefficient is a small subjective positive scenario, not a measured effect from that study; zero health remains plausible. [Original trial](https://link.springer.com/article/10.1007/s11606-024-09248-x)\n\nRequest residence, distinct clinical recipients, meals actually consumed, days exposed and controlled utility outcomes. Do not add hospitalization savings, reported satisfaction or meal counts as separate QALYs.",
+      "qualitative": "Home delivery may reduce physical burden and nutritional instability for people with complex illness. Alternative family support, other meal programs and insurance-funded nutrition remain available to varying degrees. Grocery transition and Medicaid expansion change the marginal service mix; it is not established that an unrestricted gift buys the historical average bundle. [Partner pathways](https://www.glwd.org/healthcare-partnerships/)",
+      "cost": "The model starts with FY2024 tax functional expense $49,631,474 and restores $2,377,336 direct fundraising-event costs plus $10,034 inventory cost netted outside that total, giving $52,018,844 recipient resources. A 1.1 forward multiplier gives $57,220,728.40. Benefit uses 4.2 million meals/624 meals per patient-year, 0.8 clinical-patient meal share, 0.5 incremental nutrition over alternatives, 0.01 utility gain, 0.5 gift additionality and 0.975 MSA share: 13.125 MSA QALYs. Price is $43,596,745 per 10. Exposure is volume-limited and capped at one year per client; no survival benefit or post-service continuation is credited. Volunteer time and external medical spending are excluded, so this is not full social cost effectiveness.",
+      "funding": "The operating recipient's FY2024 return spans July 1, 2023–June 30, 2024. It reports $42,055,419 program, $2,084,720 management and $5,491,335 fundraising functional costs. Programs include a food festival, so food/delivery direct costs alone would understate the recipient. The same return records 4.2 million meals and 15,839 clients/caregivers/children. [Original Form 990, pages 1–2, 9–10](https://e1.nmcdn.io/assets/glwd/wp-content/uploads/2025/05/Gods-Love-We-Deliver-Public-Disclosure-Copy-5-15-25.pdf)\n\nFor a $1,000 gift, scaling the whole recipient's forward cost corresponds to about 73 historical meal units before marginal-capacity and clinical adjustments; this is a portfolio equivalent, not a promised meal purchase. Public/insurance contracts and other fundraising continue; b=.5 discounts substitution. Current giving accepts ordinary gifts, with no verified restricted incremental offer. [Donation route](https://www.glwd.org/donate/)\n\nThe current 2025 impact page instead reports 3,689,816 meals and 15,115 people including children and caregivers. This model deliberately pairs FY2024 output with FY2024 expense before its assumed forward-cost multiplier; it is not a measured 2025 cost-effectiveness result. Substituting 2025 volume while retaining projected cost gives 11.530675 MSA QALYs and about $49.6 million per 10; this sensitivity does not repair the missing current expense."
+    },
+    "sources": [
+      {
+        "id": "form24",
+        "title": "Original FY2024 Form990; tax-year2023, year endedJune30,2024",
+        "publisher": "God's Love We Deliver",
+        "url": "https://e1.nmcdn.io/assets/glwd/wp-content/uploads/2025/05/Gods-Love-We-Deliver-Public-Disclosure-Copy-5-15-25.pdf",
+        "published": null,
+        "retrieved": "2026-09-29"
+      },
+      {
+        "id": "impact25",
+        "title": "2025 impact report and county distribution",
+        "publisher": "God's Love We Deliver",
+        "url": "https://www.glwd.org/about-us/2025-impact-summary-report/",
+        "published": null,
+        "retrieved": "2026-09-29"
+      },
+      {
+        "id": "trial",
+        "title": "Impact of Medically Tailored Meals on Clinical Outcomes Among Low-Income Adults with Type2 Diabetes: A Pilot Randomized Trial",
+        "publisher": "Journal of General Internal Medicine",
+        "url": "https://link.springer.com/article/10.1007/s11606-024-09248-x",
+        "published": "2024-12-13",
+        "retrieved": "2026-09-29"
+      },
+      {
+        "id": "partners",
+        "title": "Healthcare partnerships and Medicaid pathways",
+        "publisher": "God's Love We Deliver",
+        "url": "https://www.glwd.org/healthcare-partnerships/",
+        "published": null,
+        "retrieved": "2026-09-29"
+      },
+      {
+        "id": "donate",
+        "title": "Official donation route",
+        "publisher": "God's Love We Deliver",
+        "url": "https://www.glwd.org/donate/",
+        "published": null,
+        "retrieved": "2026-09-29"
+      }
+    ],
+    "model": {
+      "version": "nyc-glwd-alpha-v1",
+      "costScope": "FY2024 recipient functional expenses plus direct fundraising-event and inventory costs netted against revenue; all programs retained including festival; multiplied1.1 for forward cost. Volunteer time and outside clinical costs excluded.",
+      "geographicAttribution": "2025 distribution reports95% across NYC five boroughs,5% Hudson/Nassau/Suffolk/Westchester/Monroe combined. First four are MSA counties; MonroeNY is outside (MonroePA is inside). Without split/state detail set g=.975, sensitivity .95–1. Transfer of2025 geography to2024-volume projection explicit.",
+      "formula": "C=F+E+I; exposure=min(M/D,N)*r; Q_all=exposure*a*u*b; Q_MSA=Q_all*g; cost=C*f; price10=10*cost/Q_MSA. D=12*52meal units per supported-year; N caps at one-year per reported recipient; clinical share r; additional nutrition a; utility u; funding b.",
+      "counterfactual": "Ordinary public/private contracts, other donors, other meal providers and family food continue. a=.5 discounts alternative nutrition; b=.5 separately discounts financing substitution. No healthcare savings are converted into additional QALYs.",
+      "attribution": "Model follows unrestricted recipient portfolio. r=.8 removes caregiver/child meal units from the illness-utility calculation rather than valuing all recipients as ill adults. Nutrition counseling assumed included in utility, not added.",
+      "uncertainty": "Very weak causal and marginal estimate. Randomized pilot's null quality-of-life contrast makes zero material. Gift allocation, meal intensity and source-year transfer may dominate observed food volume.",
+      "nativeOutcomes": "Dose-equivalent patient-years of incremental nutrition while services occur; finite utility only, mortality zero.",
+      "inputs": [
+        {
+          "name": "F",
+          "value": 49631474,
+          "unit": "USD functional expenses",
+          "basis": "observed",
+          "rationale": "Whole-recipient Form990 PartIX total including depreciation.",
+          "sourceIds": [
+            "form24"
+          ]
+        },
+        {
+          "name": "E",
+          "value": 2377336,
+          "unit": "USD direct fundraising-event costs",
+          "basis": "observed",
+          "rationale": "PartVIII line8b, excluded from PartIX; restored without double counting festival program expenses.",
+          "sourceIds": [
+            "form24"
+          ]
+        },
+        {
+          "name": "I",
+          "value": 10034,
+          "unit": "USD inventory cost",
+          "basis": "observed",
+          "rationale": "PartVIII line10b, netted from revenue; restored.",
+          "sourceIds": [
+            "form24"
+          ]
+        },
+        {
+          "name": "f",
+          "value": 1.1,
+          "unit": "forward expense multiplier",
+          "basis": "judgment",
+          "rationale": "10%cost growth without automatic output growth.",
+          "sourceIds": []
+        },
+        {
+          "name": "M",
+          "value": 4200000,
+          "unit": "reported annual meals",
+          "basis": "observed",
+          "rationale": "FY2024 rounded report count; not2025 output.",
+          "sourceIds": [
+            "form24"
+          ]
+        },
+        {
+          "name": "D",
+          "value": 624,
+          "unit": "meals per supported patient-year",
+          "basis": "judgment",
+          "rationale": "12 weekly meals ×52; trial dose is a reference intensity, not proof a full-year exposure occurred.",
+          "sourceIds": [
+            "trial"
+          ]
+        },
+        {
+          "name": "N",
+          "value": 15839,
+          "unit": "annual individuals including caregivers/children",
+          "basis": "observed",
+          "rationale": "Exposure cap prevents lifetime multiplication or more than one year per individual.",
+          "sourceIds": [
+            "form24"
+          ]
+        },
+        {
+          "name": "r",
+          "value": 0.8,
+          "unit": "meal share for ill clients",
+          "basis": "judgment",
+          "rationale": "20% removed for caregiver/child meals; no clinical outcome assumed for those meals.",
+          "sourceIds": []
+        },
+        {
+          "name": "a",
+          "value": 0.5,
+          "unit": "additional nutrition share",
+          "basis": "judgment",
+          "rationale": "Half of nutritional support assumed available from alternatives.",
+          "sourceIds": []
+        },
+        {
+          "name": "u",
+          "value": 0.01,
+          "unit": "annual health utility increment",
+          "basis": "judgment",
+          "rationale": "Small subjective positive gain; pilot RCT does not establish it and zero is plausible.",
+          "sourceIds": [
+            "trial"
+          ]
+        },
+        {
+          "name": "b",
+          "value": 0.5,
+          "unit": "incremental gift-funded capacity share",
+          "basis": "judgment",
+          "rationale": "Half discounted for replacement funding and capacity constraints.",
+          "sourceIds": []
+        },
+        {
+          "name": "g",
+          "value": 0.975,
+          "unit": "MSA health share",
+          "basis": "judgment",
+          "rationale": "95%explicit boroughs plus half of pooled5%; state/county uncertainty remains.",
+          "sourceIds": [
+            "impact25"
+          ]
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "central",
+          "label": "Central",
+          "costUSD": 57220728.400000006,
+          "allPopulationQalys": 13.461538461538462,
+          "editionQalys": 13.125,
+          "assumptions": "{\"F\":49631474,\"E\":2377336,\"I\":10034,\"f\":1.1,\"M\":4200000,\"D\":624,\"N\":15839,\"r\":0.8,\"a\":0.5,\"u\":0.01,\"b\":0.5,\"g\":0.975}; zero mortality; no health after exposure."
+        },
+        {
+          "id": "favorable",
+          "label": "Greater nutritional and capacity gains",
+          "costUSD": 52018844,
+          "allPopulationQalys": 116.30769230769232,
+          "editionQalys": 116.30769230769232,
+          "assumptions": "{\"F\":49631474,\"E\":2377336,\"I\":10034,\"f\":1,\"M\":4200000,\"D\":624,\"N\":15839,\"r\":0.9,\"a\":0.8,\"u\":0.03,\"b\":0.8,\"g\":1}; zero mortality; no health after exposure."
+        },
+        {
+          "id": "poor",
+          "label": "Small utility and strong substitution",
+          "costUSD": 78028266,
+          "allPopulationQalys": 0.09692307692307693,
+          "editionQalys": 0.09207692307692308,
+          "assumptions": "{\"F\":49631474,\"E\":2377336,\"I\":10034,\"f\":1.5,\"M\":4200000,\"D\":1040,\"N\":15839,\"r\":0.6,\"a\":0.2,\"u\":0.002,\"b\":0.1,\"g\":0.95}; zero mortality; no health after exposure."
+        },
+        {
+          "id": "zero",
+          "label": "No incremental health utility",
+          "costUSD": 57220728.400000006,
+          "allPopulationQalys": 0,
+          "editionQalys": 0,
+          "assumptions": "{\"F\":49631474,\"E\":2377336,\"I\":10034,\"f\":1.1,\"M\":4200000,\"D\":624,\"N\":15839,\"r\":0.8,\"a\":0.5,\"u\":0,\"b\":0.5,\"g\":0.975}; zero mortality; no health after exposure."
+        }
+      ],
+      "sensitivity": [
+        "Zero utility yields zero QALYs regardless of meal output; small positive utility is not established by the cited randomized pilot.",
+        "g=.95–1 changes geographic price only modestly; changing b=.5 to.1 multiplies price5fold.",
+        "Changing D624 to1040 (20meals weekly) reduces dose-equivalent patient-years40%; future expenses2x historical without more output doubles price relative to f=1.",
+        "Net health harms of13.125 geographic QALYs erase the central benefit; dietary adverse effects and displaced care are not measured.",
+        "Current-volume sensitivity: replacing M=4200000 and N=15839 with 2025 M=3689816 and N=15115, holding all other central assumptions, gives 11.530675 MSA QALYs and $49,624,787 per 10. This is a cross-year sensitivity, not a matched current-year estimate."
+      ],
+      "missingInputs": [
+        "FY2025/2026 original expense and marginal unrestricted funding plan including capital expansion.",
+        "Actual meals delivered per distinct ill client, utilization and clinical eligibility, separating caregivers/children.",
+        "Utility effect versus available nutrition care, duration, mortality and adverse outcomes.",
+        "Patient county/state residence within the pooled5% outside five boroughs.",
+        "Current Medicaid reimbursement substitution and volunteer resource valuation."
+      ]
+    },
+    "annualExpenses": [
+      {
+        "year": 2024,
+        "amount": 49631474,
+        "currency": "USD",
+        "periodMonths": 12,
+        "comparable": true,
+        "entity": "God's Love We Deliver, Inc.",
+        "accountingBasis": "Form990 functional expenses; excludes direct costs netted against revenue, restored separately in model",
+        "sourceId": "form24"
+      }
+    ],
+    "timeCoverage": "partial",
+    "sessionIds": [
+      "f8e62570-aa69-4af8-956b-2b6a5e1e3ecb"
+    ]
+  },
+  "sessions": [
+    {
+      "id": "f8e62570-aa69-4af8-956b-2b6a5e1e3ecb",
+      "workerId": "nyc-alpha-resume",
+      "phase": "research",
+      "startedAt": "2026-09-29T16:27:27.423Z",
+      "endedAt": "2026-09-29T16:30:08.366Z",
+      "model": {
+        "id": "gpt-6-astra",
+        "name": "GPT-6 Astra Light",
+        "reasoningEffort": "low",
+        "evidence": "Parent agent explicitly confirmed dispatch arguments model=gpt-6-astra, reasoning_effort=low on2026-09-29; generic worker system wording was not used to infer identity."
+      },
+      "evidence": "work/geography-handoff-20260913/resumed-20260929/givebetter-nyc-alpha-seventh-three-resumed.json",
+      "organizationId": "org:god-s-love-we-deliver",
+      "stage": "alpha"
+    }
+  ]
+}

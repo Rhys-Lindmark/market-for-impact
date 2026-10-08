@@ -1,0 +1,8 @@
+import {test,expect} from '@playwright/test';import fs from 'node:fs';import {reportPrice,formatEditionMoney} from '../lib/geography-reports.mjs';
+const registry=JSON.parse(fs.readFileSync('data/geography-reports.json','utf8'));const r=registry.reports.find((r:{organizationId:string})=>r.organizationId==='org:youth-guidance');
+test.beforeEach(async({page,baseURL})=>{if(baseURL?.startsWith('http://localhost:'))await page.route('https://market-for-impact.rhyslindmark.chatgpt.site/_next/**',async route=>route.fulfill({response:await route.fetch({url:baseURL+new URL(route.request().url()).pathname})}));});
+test('Youth Guidance deep report API and list agree',async({page,request})=>{
+ await page.goto('/chicago/charities/'+r.slug);await expect(page.getByRole('heading',{name:r.organization,exact:true})).toBeVisible();await expect(page.locator('.report-research-effort summary')).toContainText('GPT-6.1 Sol');expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
+ const res=await request.get('/api/geography-reports/chicago/'+r.slug);expect(res.ok()).toBeTruthy();const data=await res.json();expect(data.model.version).toBe(r.model.version);expect(JSON.stringify(data)).not.toMatch(/\/tmp\/|\/Users\//);expect(data.model.scenarios.find((s:{id:string})=>s.id==='central').costPer10Qalys).toBeCloseTo(reportPrice(r),4);
+ await page.goto('/chicago/all');await expect(page.locator('tr').filter({hasText:r.organization})).toContainText(formatEditionMoney(reportPrice(r)));expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
+});

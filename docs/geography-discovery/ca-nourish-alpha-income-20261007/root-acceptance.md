@@ -1,0 +1,5 @@
+# Accepted initial-income audit: Nourish California
+
+Independent original-source and model checks recorded, thirteen portable worlds/currentschema pass. Preserve complete initial report/scenarios diagnostics and alpha stage. Clinical .12135922330097088 unchanged, signed household consumption .046447014579217905; initial140969672.8→101950739.23422824. Conditional food-EBT actualconsumption/displacedpurchase share afterretention/positiveoverlap, fullshopping/timecosts everyhousehold, notretailfoodvalue/ordinarysalary. PublicfundedrestartOct1baseline/no siteexpansion, AB1049Sep18veto now currentnarrative, originalpendingcampaign diagnosticpreserved. Broad immigrant/workforce/otherportfolio unknown.
+
+Author119.834+rootsource46.184+rootmodel37.735=203.753actualseconds under300initialcap, historicalcoveragepartial/no paddedwaits. No material correction required to frozen model. Source factual update deliveredwhileauthorclock active. Tests/integration/admin/release overhead excluded; rootalone integratespublishes. Fulloriginal/181otherreports comparison needed beforebatchrelease.

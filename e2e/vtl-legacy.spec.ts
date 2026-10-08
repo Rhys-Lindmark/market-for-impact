@@ -1,0 +1,22 @@
+import {test,expect} from '@playwright/test';
+test('Vision To Learn current report, archive price, API and financial appendix agree',async({page})=>{
+ test.setTimeout(60000);
+ await page.goto('/archive/expanded-geography-research');
+ const row=page.locator('[data-research-slug="vision-to-learn"]');
+ await expect(row).toHaveAttribute('data-cost-per-ten-qalys',String(1718504.1423220795));
+ await row.locator('a').first().click();
+ await expect(page.getByRole('heading',{level:1})).toHaveText('Vision To Learn');
+ await expect(page.locator('#research-summary')).toContainText('$1.72M');
+ await expect(page.locator('#research-summary')).toContainText('$801K');
+ const response=await page.request.get('/api/vision-to-learn-model');expect(response.ok()).toBe(true);
+ const data=await response.json();
+ expect(data.current.geography.us.donorPer10Combined).toBeCloseTo(1718504.1423220795,6);
+ expect(data.current.geography.us.incomeEquivalentYears).toBeGreaterThan(0);
+ expect(data.current.grossResourceUSD).toBeNull();expect(data.current.ordinaryWholeGiftExpectedValue).toBeNull();
+ await expect(page.locator('nav.report-contents [data-toc-primary]')).toHaveCount(7);
+ await expect(page.locator('a.report-donate')).toHaveCount(1);
+ await expect(page.locator('.report-research-effort summary')).toContainText('GPT-6.1 Sol');
+ await expect(page.locator('.report-research-effort summary')).toContainText('GPT-5.6 Sol');
+ await expect(page.locator('[data-expense-appendix]')).toHaveAttribute('data-average-expenses',String(23073076.333333332));
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+});

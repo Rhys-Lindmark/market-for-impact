@@ -1,0 +1,2172 @@
+{
+  "central": {
+    "inputs": {
+      "C": 4996818,
+      "N": 1178,
+      "clinicalN": 1178,
+      "clinicalResponse": 0.4,
+      "unique": 1,
+      "b": 0.3,
+      "q": 0.02,
+      "T": 0.7415959252971137,
+      "g": 1,
+      "delay": 0.25,
+      "discount": 0.03,
+      "success": 0.5,
+      "medicalGain": 0,
+      "foodGain": 600,
+      "workGain": 0,
+      "transferGain": 0,
+      "overlap": 0.5,
+      "cost": 30,
+      "baseline": 20000,
+      "harm": 0.001,
+      "payerLoss": 0,
+      "payerPeople": 100,
+      "payerBaseline": 50000,
+      "externalCost": 0,
+      "resourceYears": 0.7415959252971137
+    },
+    "costUSD": 4996818,
+    "exposed": 1178,
+    "union": 353.4,
+    "clinicalPeople": 141.35999999999999,
+    "allPopulationQalys": 0.911876546204371,
+    "editionQalys": 0.911876546204371,
+    "incomePathways": [
+      {
+        "id": "changed-households",
+        "people": 176.7,
+        "annualIncomeBeforeUSD": 20000,
+        "annualIncomeGainUSD": 192.47877758913413,
+        "years": 1,
+        "editionShare": 1,
+        "delayYears": 0.25,
+        "discountRate": 0.03,
+        "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+        "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+        "sourceIds": [
+          "services",
+          "finance",
+          "cg-cost"
+        ]
+      },
+      {
+        "id": "other-exposed",
+        "people": 1001.3,
+        "annualIncomeBeforeUSD": 20000,
+        "annualIncomeGainUSD": -30,
+        "years": 1,
+        "editionShare": 1,
+        "delayYears": 0.25,
+        "discountRate": 0.03,
+        "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+        "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+        "sourceIds": [
+          "services",
+          "finance",
+          "cg-cost"
+        ]
+      }
+    ],
+    "incomeEquivalent": 0.09397376029329296,
+    "incomeUnknown": false,
+    "totalEquivalent": 1.0058503064976638,
+    "price10": 49677551.10001157,
+    "costPer10Qalys": 49677551.10001157,
+    "incomeEquivalentYears": 0.09397376029329296,
+    "combinedEquivalentYears": 1.0058503064976638
+  },
+  "scenarios": [
+    {
+      "id": "central",
+      "label": "central",
+      "overrides": {},
+      "costUSD": 4996818,
+      "exposed": 1178,
+      "union": 353.4,
+      "clinicalPeople": 141.35999999999999,
+      "allPopulationQalys": 0.911876546204371,
+      "editionQalys": 0.911876546204371,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 176.7,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 192.47877758913413,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 1001.3,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -30,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.09397376029329296,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.0058503064976638,
+      "price10": 49677551.10001157,
+      "costPer10Qalys": 49677551.10001157,
+      "incomeEquivalentYears": 0.09397376029329296,
+      "combinedEquivalentYears": 1.0058503064976638,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    },
+    {
+      "id": "historical-alpha-central",
+      "label": "historical alpha central",
+      "overrides": {
+        "legacyExposure": true,
+        "T": 0.75,
+        "resourceYears": 1,
+        "medicalGain": 600,
+        "foodGain": 0
+      },
+      "costUSD": 4996818,
+      "exposed": 353.4,
+      "union": 353.4,
+      "clinicalPeople": 141.35999999999999,
+      "allPopulationQalys": 1.7539905263684614,
+      "editionQalys": 1.7539905263684614,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 176.7,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 270,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 176.7,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -30,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 1.0443751398603005,
+      "incomeUnknown": false,
+      "totalEquivalent": 2.798365666228762,
+      "price10": 17856201.06872594,
+      "costPer10Qalys": 17856201.06872594,
+      "incomeEquivalentYears": 1.0443751398603005,
+      "combinedEquivalentYears": 2.798365666228762,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    },
+    {
+      "id": "burden-accounting-only",
+      "label": "burden accounting only",
+      "overrides": {
+        "T": 0.75,
+        "resourceYears": 1
+      },
+      "costUSD": 4996818,
+      "exposed": 1178,
+      "union": 353.4,
+      "clinicalPeople": 141.35999999999999,
+      "allPopulationQalys": 0.9354616140631795,
+      "editionQalys": 0.9354616140631795,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 176.7,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 270,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 1001.3,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -30,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.4300175721770565,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.365479186240236,
+      "price10": 36593878.91336839,
+      "costPer10Qalys": 36593878.91336839,
+      "incomeEquivalentYears": 0.4300175721770565,
+      "combinedEquivalentYears": 1.365479186240236,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    },
+    {
+      "id": "fifteen-week-trial-duration",
+      "label": "fifteen week trial duration",
+      "overrides": {
+        "T": 0.28846153846153844,
+        "resourceYears": 0.28846153846153844
+      },
+      "costUSD": 4996818,
+      "exposed": 1178,
+      "union": 353.4,
+      "clinicalPeople": 141.35999999999999,
+      "allPopulationQalys": -0.3597929284858383,
+      "editionQalys": -0.3597929284858383,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 176.7,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 56.53846153846153,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 1001.3,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -30,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -0.4984355692196033,
+      "incomeUnknown": false,
+      "totalEquivalent": -0.8582284977054416,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": -0.4984355692196033,
+      "combinedEquivalentYears": -0.8582284977054416,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    },
+    {
+      "id": "low-access-burden",
+      "label": "low access burden",
+      "overrides": {
+        "cost": 10
+      },
+      "costUSD": 4996818,
+      "exposed": 1178,
+      "union": 353.4,
+      "clinicalPeople": 141.35999999999999,
+      "allPopulationQalys": 0.911876546204371,
+      "editionQalys": 0.911876546204371,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 176.7,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 212.47877758913413,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 1001.3,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.6782558131099234,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.5901323593142944,
+      "price10": 31423912.4229555,
+      "costPer10Qalys": 31423912.4229555,
+      "incomeEquivalentYears": 0.6782558131099234,
+      "combinedEquivalentYears": 1.5901323593142944,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    },
+    {
+      "id": "high-access-burden",
+      "label": "high access burden",
+      "overrides": {
+        "cost": 90
+      },
+      "costUSD": 4996818,
+      "exposed": 1178,
+      "union": 353.4,
+      "clinicalPeople": 141.35999999999999,
+      "allPopulationQalys": 0.911876546204371,
+      "editionQalys": 0.911876546204371,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 176.7,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 132.47877758913413,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 1001.3,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -90,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -1.6623840485850716,
+      "incomeUnknown": false,
+      "totalEquivalent": -0.7505075023807006,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": -1.6623840485850716,
+      "combinedEquivalentYears": -0.7505075023807006,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    },
+    {
+      "id": "half-cash-displacement",
+      "label": "half cash displacement",
+      "overrides": {
+        "foodGain": 300
+      },
+      "costUSD": 4996818,
+      "exposed": 1178,
+      "union": 353.4,
+      "clinicalPeople": 141.35999999999999,
+      "allPopulationQalys": 0.911876546204371,
+      "editionQalys": 0.911876546204371,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 176.7,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 81.23938879456706,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 1001.3,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -30,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -0.3904943721990012,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.5213821740053698,
+      "price10": 95837914.08926338,
+      "costPer10Qalys": 95837914.08926338,
+      "incomeEquivalentYears": -0.3904943721990012,
+      "combinedEquivalentYears": 0.5213821740053698,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    },
+    {
+      "id": "household-mapping-uncertainty",
+      "label": "household mapping uncertainty",
+      "overrides": {
+        "unique": 0.8
+      },
+      "costUSD": 4996818,
+      "exposed": 942.4000000000001,
+      "union": 282.72,
+      "clinicalPeople": 113.08800000000002,
+      "allPopulationQalys": 0.7295012369634971,
+      "editionQalys": 0.7295012369634971,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 141.36,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 192.47877758913413,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 801.0400000000001,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -30,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.07517900823463441,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.8046802451981315,
+      "price10": 62096938.87501443,
+      "costPer10Qalys": 62096938.87501443,
+      "incomeEquivalentYears": 0.07517900823463441,
+      "combinedEquivalentYears": 0.8046802451981315,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    },
+    {
+      "id": "caregiver-resource-hypothesis",
+      "label": "caregiver resource hypothesis",
+      "overrides": {
+        "workGain": 300
+      },
+      "costUSD": 4996818,
+      "exposed": 1178,
+      "union": 353.4,
+      "clinicalPeople": 141.35999999999999,
+      "allPopulationQalys": 0.911876546204371,
+      "editionQalys": 0.911876546204371,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 176.7,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 303.71816638370115,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 1001.3,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -30,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.5757802991120442,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.4876568453164152,
+      "price10": 33588512.13390685,
+      "costPer10Qalys": 33588512.13390685,
+      "incomeEquivalentYears": 0.5757802991120442,
+      "combinedEquivalentYears": 1.4876568453164152,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    },
+    {
+      "id": "caregiver-cost-adverse",
+      "label": "caregiver cost adverse",
+      "overrides": {
+        "workGain": -300
+      },
+      "costUSD": 4996818,
+      "exposed": 1178,
+      "union": 353.4,
+      "clinicalPeople": 141.35999999999999,
+      "allPopulationQalys": 0.911876546204371,
+      "editionQalys": 0.911876546204371,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 176.7,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -30,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 1001.3,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -30,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -0.8776536681189201,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.03422287808545088,
+      "price10": 1460081173.6299553,
+      "costPer10Qalys": 1460081173.6299553,
+      "incomeEquivalentYears": -0.8776536681189201,
+      "combinedEquivalentYears": 0.03422287808545088,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    },
+    {
+      "id": "no-exposure",
+      "label": "no exposure",
+      "overrides": {
+        "N": 0,
+        "clinicalN": 0
+      },
+      "costUSD": 4996818,
+      "exposed": 0,
+      "union": 0,
+      "clinicalPeople": 0,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "incomePathways": [],
+      "incomeEquivalent": 0,
+      "incomeUnknown": false,
+      "totalEquivalent": 0,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": 0,
+      "combinedEquivalentYears": 0,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    },
+    {
+      "id": "no-gift-no-exposure",
+      "label": "no gift no exposure",
+      "overrides": {
+        "C": 0,
+        "N": 0,
+        "clinicalN": 0
+      },
+      "costUSD": 0,
+      "exposed": 0,
+      "union": 0,
+      "clinicalPeople": 0,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "incomePathways": [],
+      "incomeEquivalent": 0,
+      "incomeUnknown": false,
+      "totalEquivalent": 0,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": 0,
+      "combinedEquivalentYears": 0,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    },
+    {
+      "id": "homefood-endpoint-transfer-hypothesis",
+      "label": "homefood endpoint transfer hypothesis",
+      "overrides": {
+        "q": 0.102,
+        "clinicalResponse": 1,
+        "T": 0.5,
+        "resourceYears": 0.5
+      },
+      "costUSD": 4996818,
+      "exposed": 1178,
+      "union": 353.4,
+      "clinicalPeople": 353.4,
+      "allPopulationQalys": 16.721376351379334,
+      "editionQalys": 16.721376351379334,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 176.7,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 120,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 1001.3,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -30,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -0.221380765377315,
+      "incomeUnknown": false,
+      "totalEquivalent": 16.49999558600202,
+      "price10": 3028375.355590467,
+      "costPer10Qalys": 3028375.355590467,
+      "incomeEquivalentYears": -0.221380765377315,
+      "combinedEquivalentYears": 16.49999558600202,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    },
+    {
+      "id": "clinical-null",
+      "label": "clinical null",
+      "overrides": {
+        "q": 0
+      },
+      "costUSD": 4996818,
+      "exposed": 1178,
+      "union": 353.4,
+      "clinicalPeople": 141.35999999999999,
+      "allPopulationQalys": -1.1693270175789743,
+      "editionQalys": -1.1693270175789743,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 176.7,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 192.47877758913413,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 1001.3,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -30,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.09397376029329296,
+      "incomeUnknown": false,
+      "totalEquivalent": -1.0753532572856814,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": 0.09397376029329296,
+      "combinedEquivalentYears": -1.0753532572856814,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    },
+    {
+      "id": "financial-only",
+      "label": "financial only",
+      "overrides": {
+        "q": 0,
+        "harm": 0
+      },
+      "costUSD": 4996818,
+      "exposed": 1178,
+      "union": 353.4,
+      "clinicalPeople": 141.35999999999999,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 176.7,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 192.47877758913413,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 1001.3,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -30,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.09397376029329296,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.09397376029329296,
+      "price10": 531724811.73519987,
+      "costPer10Qalys": 531724811.73519987,
+      "incomeEquivalentYears": 0.09397376029329296,
+      "combinedEquivalentYears": 0.09397376029329296,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    },
+    {
+      "id": "current-cost-unknown",
+      "label": "current cost unknown",
+      "overrides": {
+        "costUnknown": true
+      },
+      "costUSD": null,
+      "exposed": 1178,
+      "union": 353.4,
+      "clinicalPeople": 141.35999999999999,
+      "allPopulationQalys": 0.911876546204371,
+      "editionQalys": 0.911876546204371,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 176.7,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 192.47877758913413,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 1001.3,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -30,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.09397376029329296,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.0058503064976638,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": 0.09397376029329296,
+      "combinedEquivalentYears": 1.0058503064976638,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    },
+    {
+      "id": "full-unknown",
+      "label": "full unknown",
+      "overrides": {
+        "clinicalUnknown": true,
+        "incomeUnknown": true,
+        "costUnknown": true
+      },
+      "costUSD": null,
+      "exposed": 1178,
+      "union": 353.4,
+      "clinicalPeople": 141.35999999999999,
+      "allPopulationQalys": null,
+      "editionQalys": null,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 176.7,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 192.47877758913413,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 1001.3,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -30,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.09397376029329296,
+      "incomeUnknown": true,
+      "totalEquivalent": null,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": 0.09397376029329296,
+      "combinedEquivalentYears": null,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    },
+    {
+      "id": "zero-expansion",
+      "label": "zero expansion",
+      "overrides": {
+        "b": 0
+      },
+      "costUSD": 4996818,
+      "exposed": 1178,
+      "union": 0,
+      "clinicalPeople": 0,
+      "allPopulationQalys": -1.1693270175789743,
+      "editionQalys": -1.1693270175789743,
+      "incomePathways": [
+        {
+          "id": "other-exposed",
+          "people": 1178,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -30,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -0.8776536681189202,
+      "incomeUnknown": false,
+      "totalEquivalent": -2.0469806856978945,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": -0.8776536681189202,
+      "combinedEquivalentYears": -2.0469806856978945,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    },
+    {
+      "id": "true-zero",
+      "label": "true zero",
+      "overrides": {
+        "q": 0,
+        "harm": 0,
+        "medicalGain": 0,
+        "foodGain": 0,
+        "workGain": 0,
+        "transferGain": 0,
+        "cost": 0
+      },
+      "costUSD": 4996818,
+      "exposed": 1178,
+      "union": 353.4,
+      "clinicalPeople": 141.35999999999999,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 176.7,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 0,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 1001.3,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 0,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0,
+      "incomeUnknown": false,
+      "totalEquivalent": 0,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": 0,
+      "combinedEquivalentYears": 0,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    },
+    {
+      "id": "adverse",
+      "label": "adverse",
+      "overrides": {
+        "q": -0.03,
+        "medicalGain": -300,
+        "foodGain": -300,
+        "workGain": -300,
+        "harm": 0.005
+      },
+      "costUSD": 4996818,
+      "exposed": 1178,
+      "union": 353.4,
+      "clinicalPeople": 141.35999999999999,
+      "allPopulationQalys": -8.968440433569889,
+      "editionQalys": -8.968440433569889,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 176.7,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -697.4363327674023,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 1001.3,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -30,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -3.8588436476545787,
+      "incomeUnknown": false,
+      "totalEquivalent": -12.827284081224468,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": -3.8588436476545787,
+      "combinedEquivalentYears": -12.827284081224468,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    },
+    {
+      "id": "positive-net-access-resources",
+      "label": "positive net access resources",
+      "overrides": {
+        "workGain": 500
+      },
+      "costUSD": 4996818,
+      "exposed": 1178,
+      "union": 353.4,
+      "clinicalPeople": 141.35999999999999,
+      "allPopulationQalys": 0.911876546204371,
+      "editionQalys": 0.911876546204371,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 176.7,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 377.87775891341255,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 1001.3,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -30,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.8955203777912708,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.8073969239956418,
+      "price10": 27646489.454864476,
+      "costPer10Qalys": 27646489.454864476,
+      "incomeEquivalentYears": 0.8955203777912708,
+      "combinedEquivalentYears": 1.8073969239956418,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    },
+    {
+      "id": "no-resource-success",
+      "label": "no resource success",
+      "overrides": {
+        "success": 0
+      },
+      "costUSD": 4996818,
+      "exposed": 1178,
+      "union": 353.4,
+      "clinicalPeople": 141.35999999999999,
+      "allPopulationQalys": 0.911876546204371,
+      "editionQalys": 0.911876546204371,
+      "incomePathways": [
+        {
+          "id": "other-exposed",
+          "people": 1178,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -30,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -0.8776536681189202,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.03422287808545077,
+      "price10": 1460081173.62996,
+      "costPer10Qalys": 1460081173.62996,
+      "incomeEquivalentYears": -0.8776536681189202,
+      "combinedEquivalentYears": 0.03422287808545077,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    },
+    {
+      "id": "no-gains",
+      "label": "no gains",
+      "overrides": {
+        "medicalGain": 0,
+        "foodGain": 0,
+        "workGain": 0,
+        "transferGain": 0
+      },
+      "costUSD": 4996818,
+      "exposed": 1178,
+      "union": 353.4,
+      "clinicalPeople": 141.35999999999999,
+      "allPopulationQalys": 0.911876546204371,
+      "editionQalys": 0.911876546204371,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 176.7,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -30,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 1001.3,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -30,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -0.8776536681189201,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.03422287808545088,
+      "price10": 1460081173.6299553,
+      "costPer10Qalys": 1460081173.6299553,
+      "incomeEquivalentYears": -0.8776536681189201,
+      "combinedEquivalentYears": 0.03422287808545088,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    },
+    {
+      "id": "negative-resource-overlap-zero",
+      "label": "negative resource overlap zero",
+      "overrides": {
+        "medicalGain": -300,
+        "foodGain": 0,
+        "transferGain": 0,
+        "overlap": 0
+      },
+      "costUSD": 4996818,
+      "exposed": 1178,
+      "union": 353.4,
+      "clinicalPeople": 141.35999999999999,
+      "allPopulationQalys": 0.911876546204371,
+      "editionQalys": 0.911876546204371,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 176.7,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -252.47877758913413,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 1001.3,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -30,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -1.860166518015211,
+      "incomeUnknown": false,
+      "totalEquivalent": -0.94828997181084,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": -1.860166518015211,
+      "combinedEquivalentYears": -0.94828997181084,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    },
+    {
+      "id": "negative-resource-overlap-one",
+      "label": "negative resource overlap one",
+      "overrides": {
+        "medicalGain": -300,
+        "foodGain": 0,
+        "transferGain": 0,
+        "overlap": 1
+      },
+      "costUSD": 4996818,
+      "exposed": 1178,
+      "union": 353.4,
+      "clinicalPeople": 141.35999999999999,
+      "allPopulationQalys": 0.911876546204371,
+      "editionQalys": 0.911876546204371,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 176.7,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -252.47877758913413,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 1001.3,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -30,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -1.860166518015211,
+      "incomeUnknown": false,
+      "totalEquivalent": -0.94828997181084,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": -1.860166518015211,
+      "combinedEquivalentYears": -0.94828997181084,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    },
+    {
+      "id": "mixed-sign",
+      "label": "mixed sign",
+      "overrides": {
+        "medicalGain": 300,
+        "workGain": -300
+      },
+      "costUSD": 4996818,
+      "exposed": 1178,
+      "union": 353.4,
+      "clinicalPeople": 141.35999999999999,
+      "allPopulationQalys": 0.911876546204371,
+      "editionQalys": 0.911876546204371,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 176.7,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 81.23938879456706,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 1001.3,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -30,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -0.3904943721990012,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.5213821740053698,
+      "price10": 95837914.08926338,
+      "costPer10Qalys": 95837914.08926338,
+      "incomeEquivalentYears": -0.3904943721990012,
+      "combinedEquivalentYears": 0.5213821740053698,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    },
+    {
+      "id": "payer-loss-300",
+      "label": "payer loss 300",
+      "overrides": {
+        "payerLoss": 300
+      },
+      "costUSD": 4996818,
+      "exposed": 1178,
+      "union": 353.4,
+      "clinicalPeople": 141.35999999999999,
+      "allPopulationQalys": 0.911876546204371,
+      "editionQalys": 0.911876546204371,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 176.7,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 192.47877758913413,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 1001.3,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -30,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -393.12,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -0.297794051682214,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.614082494522157,
+      "price10": 81370468.04905635,
+      "costPer10Qalys": 81370468.04905635,
+      "incomeEquivalentYears": -0.297794051682214,
+      "combinedEquivalentYears": 0.614082494522157,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    },
+    {
+      "id": "external-provider-cost",
+      "label": "external provider cost",
+      "overrides": {
+        "externalCost": 100
+      },
+      "costUSD": 4996818,
+      "exposed": 1178,
+      "union": 353.4,
+      "clinicalPeople": 141.35999999999999,
+      "allPopulationQalys": 0.911876546204371,
+      "editionQalys": 0.911876546204371,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 176.7,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 192.47877758913413,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 1001.3,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -30,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -1178,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -1.0893481802163234,
+      "incomeUnknown": false,
+      "totalEquivalent": -0.17747163401195243,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": -1.0893481802163234,
+      "combinedEquivalentYears": -0.17747163401195243,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    },
+    {
+      "id": "annual-full-response",
+      "label": "annual full response",
+      "overrides": {
+        "b": 1
+      },
+      "costUSD": 4996818,
+      "exposed": 1178,
+      "union": 1178,
+      "clinicalPeople": 471.20000000000005,
+      "allPopulationQalys": 5.7680181950321785,
+      "editionQalys": 5.7680181950321785,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 589,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 192.47877758913413,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 589,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -30,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 2.361104426588457,
+      "incomeUnknown": false,
+      "totalEquivalent": 8.129122621620635,
+      "price10": 6146810.956830943,
+      "costPer10Qalys": 6146810.956830943,
+      "incomeEquivalentYears": 2.361104426588457,
+      "combinedEquivalentYears": 8.129122621620635,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    },
+    {
+      "id": "half-geography",
+      "label": "half geography",
+      "overrides": {
+        "g": 0.5
+      },
+      "costUSD": 4996818,
+      "exposed": 1178,
+      "union": 353.4,
+      "clinicalPeople": 141.35999999999999,
+      "allPopulationQalys": 0.911876546204371,
+      "editionQalys": 0.4559382731021855,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 176.7,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 192.47877758913413,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 1001.3,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -30,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.04698688014664648,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.5029251532488319,
+      "price10": 99355102.20002314,
+      "costPer10Qalys": 99355102.20002314,
+      "incomeEquivalentYears": 0.04698688014664648,
+      "combinedEquivalentYears": 0.5029251532488319,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    },
+    {
+      "id": "all-unique",
+      "label": "all unique",
+      "overrides": {
+        "unique": 1
+      },
+      "costUSD": 4996818,
+      "exposed": 1178,
+      "union": 353.4,
+      "clinicalPeople": 141.35999999999999,
+      "allPopulationQalys": 0.911876546204371,
+      "editionQalys": 0.911876546204371,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 176.7,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 192.47877758913413,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 1001.3,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -30,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.09397376029329296,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.0058503064976638,
+      "price10": 49677551.10001157,
+      "costPer10Qalys": 49677551.10001157,
+      "incomeEquivalentYears": 0.09397376029329296,
+      "combinedEquivalentYears": 1.0058503064976638,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    },
+    {
+      "id": "zero-resource-duration",
+      "label": "zero resource duration",
+      "overrides": {
+        "resourceYears": 0
+      },
+      "costUSD": 4996818,
+      "exposed": 1178,
+      "union": 353.4,
+      "clinicalPeople": 141.35999999999999,
+      "allPopulationQalys": 0.911876546204371,
+      "editionQalys": 0.911876546204371,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 176.7,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -30,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 1001.3,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -30,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -0.8776536681189201,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.03422287808545088,
+      "price10": 1460081173.6299553,
+      "costPer10Qalys": 1460081173.6299553,
+      "incomeEquivalentYears": -0.8776536681189201,
+      "combinedEquivalentYears": 0.03422287808545088,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    },
+    {
+      "id": "two-year-health",
+      "label": "two year health",
+      "overrides": {
+        "T": 2
+      },
+      "costUSD": 4996818,
+      "exposed": 1178,
+      "union": 353.4,
+      "clinicalPeople": 141.35999999999999,
+      "allPopulationQalys": 4.361703302464486,
+      "editionQalys": 4.361703302464486,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 176.7,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 192.47877758913413,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 1001.3,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -30,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.09397376029329296,
+      "incomeUnknown": false,
+      "totalEquivalent": 4.455677062757779,
+      "price10": 11214497.661343727,
+      "costPer10Qalys": 11214497.661343727,
+      "incomeEquivalentYears": 0.09397376029329296,
+      "combinedEquivalentYears": 4.455677062757779,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    },
+    {
+      "id": "full-volunteer-cost-hypothesis",
+      "label": "full volunteer cost hypothesis",
+      "overrides": {
+        "C": 6500000
+      },
+      "costUSD": 6500000,
+      "exposed": 1178,
+      "union": 353.4,
+      "clinicalPeople": 141.35999999999999,
+      "allPopulationQalys": 0.911876546204371,
+      "editionQalys": 0.911876546204371,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 176.7,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 192.47877758913413,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 1001.3,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -30,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.09397376029329296,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.0058503064976638,
+      "price10": 64621941.83379808,
+      "costPer10Qalys": 64621941.83379808,
+      "incomeEquivalentYears": 0.09397376029329296,
+      "combinedEquivalentYears": 1.0058503064976638,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    },
+    {
+      "id": "weak-clinical",
+      "label": "weak clinical",
+      "overrides": {
+        "clinicalResponse": 0.1,
+        "q": 0.01
+      },
+      "costUSD": 4996818,
+      "exposed": 1178,
+      "union": 353.4,
+      "clinicalPeople": 35.339999999999996,
+      "allPopulationQalys": -0.9091765721060561,
+      "editionQalys": -0.9091765721060561,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 176.7,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 192.47877758913413,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 1001.3,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -30,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.09397376029329296,
+      "incomeUnknown": false,
+      "totalEquivalent": -0.8152028118127631,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": 0.09397376029329296,
+      "combinedEquivalentYears": -0.8152028118127631,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    },
+    {
+      "id": "recognized-home-delivery-program-cost",
+      "label": "recognized home delivery program cost",
+      "overrides": {
+        "C": 2206008
+      },
+      "costUSD": 2206008,
+      "exposed": 1178,
+      "union": 353.4,
+      "clinicalPeople": 141.35999999999999,
+      "allPopulationQalys": 0.911876546204371,
+      "editionQalys": 0.911876546204371,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 176.7,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 192.47877758913413,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 1001.3,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -30,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.09397376029329296,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.0058503064976638,
+      "price10": 21931772.409368187,
+      "costPer10Qalys": 21931772.409368187,
+      "incomeEquivalentYears": 0.09397376029329296,
+      "combinedEquivalentYears": 1.0058503064976638,
+      "assumptions": "Recognized home-delivery program expense only; excludes allocated fundraising, overhead and volunteer resources. Partial program cost sensitivity, not full annual portfolio or marginal-gift effectiveness."
+    },
+    {
+      "id": "full-transfer-incidence",
+      "label": "full transfer incidence",
+      "overrides": {
+        "payerLoss": 600
+      },
+      "costUSD": 4996818,
+      "exposed": 1178,
+      "union": 353.4,
+      "clinicalPeople": 141.35999999999999,
+      "allPopulationQalys": 0.911876546204371,
+      "editionQalys": 0.911876546204371,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 176.7,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": 192.47877758913413,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 1001.3,
+          "annualIncomeBeforeUSD": 20000,
+          "annualIncomeGainUSD": -30,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 100,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -786.24,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 0.25,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing SNAP, grocery/meal providers and family meals; net grocery resources after displaced aid and replacement purchases, caregiver resources net not added again.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -0.6926788922606351,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.21919765394373592,
+      "price10": 227959465.3546152,
+      "costPer10Qalys": 227959465.3546152,
+      "incomeEquivalentYears": -0.6926788922606351,
+      "combinedEquivalentYears": 0.21919765394373592,
+      "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+    }
+  ]
+}

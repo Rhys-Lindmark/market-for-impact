@@ -1,0 +1,8 @@
+# Cultivando beta acceptance
+
+Root independently retrieved the current original 108-page Regulation 30 from the actual SOS version listing, distinguishing 2025 designation/benchmarks from April 2026 emission controls and delayed compliance. Source observations are in root-source-note.md; original annual/finance and labor-study receipts remain scoped, not transported into empirical local effects.
+
+270 portable checks across 45 scenarios and 188 separate root reconstruction checks pass. Production registry/progress validation, provenance validation, unchanged unrelated reports and full frozen initial diagnostic pass in 13 focused tests. Health remains 3.7044032321435134 years; signed income-equivalent welfare .4866243310580494; conditional price $3,599,241.4205161664 (unchanged). Current controls improve mechanism evidence but do not measure exposure, recipients' counterfactual influence or clinical/resource coefficients; missing other portfolio benefits are unknown, not zero. Explicit shared-household and actual-period sensitivities improve overlap handling. Distinct payer central assumption and restricted worker/advocate intersections are stated, not observed facts.
+
+Actual resumed author 221.576 seconds on GPT-6.1 Sol plus root closed original-source audit 74.768 seconds. Intervening untimed checks and excluded earlier open intervals are not added. Integration, deterministic tests and publication are separate from research minutes. Accepted in checkout; public deployment/live verification still required before a publication claim. No independent watchdog recovery is claimed.
+

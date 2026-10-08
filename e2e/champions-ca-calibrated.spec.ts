@@ -1,0 +1,22 @@
+import {test,expect} from '@playwright/test';
+test('Champions current report, research header, API and list share the partial health/resources estimate',async({page,request})=>{
+ await page.route('https://market-for-impact.rhyslindmark.chatgpt.site/_next/**',async route=>{const u=new URL(route.request().url());await route.fulfill({response:await request.get(u.pathname+u.search)});});
+ await page.goto('/california/charities/champions-for-health');
+ await expect(page.getByRole('heading',{level:1,name:'Champions for Health',exact:true})).toBeVisible();
+ await expect(page.locator('.report-research-effort summary')).toContainText('GPT-6.1 Sol');
+ await expect(page.locator('.report-research-effort summary')).toContainText('13 min');
+ await expect(page.locator('#cost')).toContainText('$306.56 million');
+ await expect(page.locator('#cost')).toContainText('$32.96 million');
+ await expect(page.locator('#cost')).toContainText('−0.0018099');
+ await expect(page.locator('#cost')).toContainText('partial specialty-care');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+ const response=await request.get('/api/geography-reports/california/champions-for-health');expect(response.ok()).toBe(true);
+ const report=await response.json(),central=report.model.scenarios.find((s:any)=>s.id==='central');
+ expect(central.editionQalys).toBeCloseTo(.005071872655126345,12);
+ expect(central.incomePathways[0].annualIncomeGainUSD).toBeLessThan(0);
+ expect(central.costPer10Qalys).toBeCloseTo(306560672.01882434,5);
+ await page.goto('/california/all');
+ const row=page.locator('[data-research-table] tbody tr').filter({hasText:'Champions for Health'});
+ await expect(row.locator('td').nth(0)).toContainText('$306.6M');await expect(row.locator('td').nth(1)).toContainText('$3.7M');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+});

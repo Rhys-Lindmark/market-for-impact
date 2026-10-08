@@ -1,0 +1,7 @@
+# Denver Rebuilding / Benefits initial release
+
+Published Denver10/25initial,0/10deep,0/4features through Sites454 from source66d8e180440cf085723526367863f60d155737a3. Eight checks passed on both hosts at2026-10-06T22:31:07.081Z; exact receipt publication.json. One reused isolated author, no children; root only checkout/Git/Sites. Native hourly-recovery fault unresolved, active flags not throughput.
+
+OriginalIRS/current recipient checks,308independent arithmeticchecks/75cases,466portablechecks and production schema passed. Closedpartial clocks kept, no padded5minutes. Untimed followupchecks and source integration/tests/publication separate. Rebuilding firstdiagnostic/model preserved; currentonly mechanism labels corrected withoutnumericchange. Benefits currentfoodclosure and sixmonthFY2022 accounted.
+
+Next: selected Hunger Free Colorado and Doctors Care from existing100candidate pool; verify exact IDs/absence before dispatch.15initial+10deep=225plannedresearchminutes remaining, feature/review/release overhead separate. Six other active editions complete; fourcutcitiesdeferred. Usage79%remaining;20%reserve intact,noresetcredits.28GiB free; existingNode24/dependencies/Chrome reused.24focusedtests,2responsivechecks,466portablechecks and preservation of166reports/616sessions/144effortentries passed. Current turn22:20:58Z through22:31:11Z release checkpoint; wall time is not organization research time. End after receipt push/temporary archive cleanup, no further author this turn.

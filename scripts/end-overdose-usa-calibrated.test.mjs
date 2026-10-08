@@ -19,8 +19,18 @@ test('published USA registry matches every current scenario, frozen history and 
  assert.equal(added.length,6);assert.equal(added.reduce((n,s)=>n+s.seconds,0),297);
  assert.equal(new Set(data.sessions.map(s=>s.id)).size,data.sessions.length);
  const effort=JSON.parse(readFileSync(new URL('../data/research-effort.json',import.meta.url))).organizations['End Overdose'];
- assert.equal(effort.sessions.length,11);
- assert.equal(effort.sessions.reduce((n,s)=>n+(Date.parse(s.endedAt)-Date.parse(s.startedAt))/1000,0),3879);
+ // The organization ledger includes later CA work; do not confuse it with the
+ // frozen USA recalibration boundary or remove legitimate new provenance.
+ const laterCA=effort.sessions.filter(s=>s.evidence.startsWith('docs/geography-discovery/ca-endoverdose-alpha-income-20261007/'));
+ const originalBoundary=effort.sessions.filter(s=>!laterCA.includes(s));
+ assert.equal(originalBoundary.length,11);
+ assert.equal(originalBoundary.reduce((n,s)=>n+(Date.parse(s.endedAt)-Date.parse(s.startedAt))/1000,0),3879);
+ assert.deepEqual(laterCA.map(s=>s.id).sort(),[
+  'e9e5040b-933e-4d01-81b8-5acf7ae0b830',
+  '139c3e55-6461-43a0-96e1-13f9aca5bed1',
+  '1194f8ea-7984-4ad3-a261-7be659c73b5b'
+ ].sort());
+ near(laterCA.reduce((n,s)=>n+(Date.parse(s.endedAt)-Date.parse(s.startedAt))/1000,0),273.704);
 });
 test('every candidate independently reconstructs finite clinical survival and signed cohort cash',()=>{
  for(const p of scenarios){

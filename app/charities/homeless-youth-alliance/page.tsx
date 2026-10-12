@@ -1,8 +1,10 @@
+import {impactMetadata} from '@/lib/impact-metadata.mjs';
+import {impactNode} from '@/components/ImpactMetric';
 import type { Metadata } from 'next';
 import CharityResearchReport, { type CharityReportContent } from '@/components/CharityResearchReport';
 import model from '@/data/san-francisco/hya-medication-access-cea-v1.json';
 import { medicationAccessModel } from '@/lib/medication-access-model.mjs';
-export const metadata: Metadata = { title: 'Homeless Youth Alliance: medication access | Market for Impact', description: 'A conditional $4.69M per 10-QALY model for supported buprenorphine initiation and retention.' };
+export const metadata: Metadata = impactMetadata({ title: 'Homeless Youth Alliance: medication access | Market for Impact', description: 'A conditional $4.69M per 10-QALY model for supported buprenorphine initiation and retention.' });
 const usd = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 2 });
 const scenarios = model.scenarios.map(s => ({ ...s, result: medicationAccessModel(s) }));
 const central = scenarios[1];
@@ -62,4 +64,4 @@ const content: CharityReportContent = {
   ],
   excludedBenefits: model.excluded, sources: model.sources,
 };
-export default function HYAReport() { return <CharityResearchReport content={{...content, donationUrl:"https://homelessyouthalliance.networkforgood.com/"}} />; }
+export default function HYAReport() { return impactNode(<CharityResearchReport content={{...content, donationUrl:"https://homelessyouthalliance.networkforgood.com/"}} />); }

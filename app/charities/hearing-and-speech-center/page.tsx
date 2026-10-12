@@ -1,3 +1,4 @@
+import {impactNode} from '@/components/ImpactMetric';
 import type {Metadata} from 'next';
 import CharityResearchReport,{type CharityReportContent} from '@/components/CharityResearchReport';
 import data from '@/data/san-francisco/hearing-access-cea-v2.json';
@@ -62,4 +63,4 @@ const content:CharityReportContent={
  {publisher:'DHCS',title:'Adult hearing-aid benefit and covered support',url:'https://www.dhcs.ca.gov/services/hearing-aid-benefit-cap-benefits-frequently-asked-questions-for-members/',published:'Current official coverage',retrieved:'2026-10-01',sourceType:'Primary coverage guidance'},
  ...[['2022','202301359349320515'],['2021','202211369349314371'],['2020','202131349349306533']].map(([year,id])=>({publisher:'Hearing and Speech Center / IRS',title:'FY'+year+' original Form 990',url:'https://projects.propublica.org/nonprofits/full_text/'+id+'/IRS990',published:year,retrieved:'2026-10-01',sourceType:'Primary return reconstruction'}))],
 };
-export default function Page(){return <CharityResearchReport content={content}/>;}
+export default function Page(){return impactNode(<CharityResearchReport content={content}/>);}

@@ -1,3 +1,6 @@
+import {impactMetadata} from '@/lib/impact-metadata.mjs';
+import {impactNode} from '@/components/ImpactMetric';
+import {formatImpactPrice,impactMetric,impactUnitExplanation} from '@/lib/impact-metric.mjs';
 import type { Metadata } from 'next';
 /* eslint-disable @next/next/no-html-link-for-pages -- Native navigation avoids the existing Vinext prefetch failure. */
 import {unifiedResearch} from '@/lib/unified-research-index';
@@ -7,13 +10,13 @@ import {calculate as currentNems} from '@/lib/nems-current-model.mjs';
 import styles from '../../research/research-index.module.css';
 import '../../givebetter.css';
 import '../../sf-home.css';
-const price=(value:number|null,organization?:string):string=>value===null?(organization==='New Door Ventures'?'Conditional reference: net harm':organization==='North East Medical Services'?price(currentNems().bay.partialHealthUsdPerTen)+' · conditional HBV health; income and ordinary-gift total unknown':'Not estimated'):new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',notation:'compact',minimumFractionDigits:value>=1e6&&value<1e9?1:0,maximumFractionDigits:value>=1e6&&value<1e9?1:0}).format(value);
-export const metadata:Metadata={title:'GiveBetter x SF Research',description:'Bay Area research ordered by estimated cost per ten combined health and income-equivalent years.',alternates:{canonical:'https://ai.rhyslindmark.com/givebetter/san-francisco/all'}};
+const price=(value:number|null,organization?:string):string=>value===null?(organization==='New Door Ventures'?'Conditional reference: net harm':organization==='North East Medical Services'?price(currentNems().bay.partialHealthUsdPerTen)+' · conditional HBV health; income and ordinary-gift total unknown':'Not estimated'):formatImpactPrice(value);
+export const metadata:Metadata=impactMetadata({title:'GiveBetter x SF Research',description:'Bay Area research ordered by estimated cost per ten combined health and income-equivalent years.',alternates:{canonical:'https://ai.rhyslindmark.com/givebetter/san-francisco/all'}});
 export default function ResearchIndex(){
- return <div className="givebetter"><header className="givebetter-masthead"><a href="/san-francisco">Give<span>Better</span> <small>x SF</small></a></header><main className={styles.shell}>
-  <section className={styles.intro}><h1>GiveBetter x SF Research</h1><p>Estimated dollars per better life in the San Francisco Bay Area (10 health and income-equivalent years).</p><p className={styles.caveat}>Sorted by modeled cost, not recommendation strength. These are uncertain research estimates, not verified donation offers. Cost boundaries differ; see each report before comparing.</p><p><a href="/san-francisco">Our giving shortlist</a> · <a href="/research/city-theory">What we learned from 100 reports</a></p></section>
+ return impactNode(<div className="givebetter"><header className="givebetter-masthead"><a href="/san-francisco">Give<span>Better</span> <small>x SF</small></a></header><main className={styles.shell}>
+  <section className={styles.intro}><h1>GiveBetter x SF Research</h1><p>Estimated {impactMetric().priceLabel} in the San Francisco Bay Area. {impactUnitExplanation}</p><p className={styles.caveat}>Sorted by modeled cost, not recommendation strength. These are uncertain research estimates, not verified donation offers. Cost boundaries differ; see each report before comparing.</p><p><a href="/san-francisco">Our giving shortlist</a> · <a href="/research/city-theory">What we learned from 100 reports</a></p></section>
   <section aria-label="Organization research" id="top-research"><table className={styles.table} data-research-table>
-   <caption>{unifiedResearch.length} Bay Area reviews, ordered by estimated cost per ten local health and income-equivalent years. Only benefits quantified in each report are credited; unmodeled regional spillovers are excluded.</caption>
+   <caption>{unifiedResearch.length} Bay Area reviews, ordered by estimated {impactMetric().priceLabel}. Only benefits quantified in each report are credited; unmodeled regional spillovers are excluded.</caption>
    <thead><tr><th scope="col">Organization</th><th scope="col">$ per better life</th><th scope="col">Avg. annual expenses<br />(3 years)</th></tr></thead>
    <tbody>{unifiedResearch.map(item=><tr key={item.href} data-research-slug={item.href.split('/').at(-1)} data-geography={item.scope} data-estimate-geography={item.estimateGeography} data-cost-per-ten-qalys={item.localUsdPerTenQalys??undefined}>
     <th scope="row"><a className={styles.rowLink} href={item.href}><strong>{item.organization}</strong><span>{researchListDescription(item.program)}</span></a></th>
@@ -23,5 +26,5 @@ export default function ResearchIndex(){
   </table></section>
   <p className={styles.expenseNote}>Expenses include programs, administration and fundraising. Fiscal years, sources and accounting scope are listed in each report.</p>
   <footer className={styles.footer}><a href="/san-francisco/all">All San Francisco research</a><span className="sf-footer-separator" aria-hidden="true">·</span><a href="/all">All cities and regions</a></footer>
- </main></div>;
+ </main></div>);
 }

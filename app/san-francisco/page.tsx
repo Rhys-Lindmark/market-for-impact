@@ -1,3 +1,5 @@
+import {formatImpactPrice,impactMetric} from '@/lib/impact-metric.mjs';
+import {impactNode} from '@/components/ImpactMetric';
 import type {Metadata} from 'next';
 import {topFourResearch} from '@/lib/unified-research-index';
 import '../sf-home.css';
@@ -12,7 +14,7 @@ export const metadata:Metadata={
 const root='https://ai.rhyslindmark.com/givebetter';
 const money=(value:number)=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',notation:'compact',minimumFractionDigits:value>=1e6?1:0,maximumFractionDigits:value>=1e6?1:0}).format(value);
 function GivingIllustration({index,label}:{index:number;label:string}){
-  return <div className="sf-home-illustration"><img src={root+'/images/givebetter-principles.png'} alt={label} width="600" height="200" style={{transform:`translateX(-${index*100/3}%)`}}/></div>;
+  return impactNode(<div className="sf-home-illustration"><img src={root+'/images/givebetter-principles.png'} alt={label} width="600" height="200" style={{transform:`translateX(-${index*100/3}%)`}}/></div>);
 }
 const editorial:Record<string,{name:string;program:string;overview:string;scope:string;evidence:string;next:string;photo:string;caption:string;source:string}>={
   'self-help-for-the-elderly':{
@@ -78,7 +80,7 @@ const picks=topFourResearch.map(entry=>{
   return {slug,...editorial[slug],price:entry.localUsdPerTenQalys};
 });
 export default function SanFranciscoHome(){
-  return <div className="sf-home givebetter">
+  return impactNode(<div className="sf-home givebetter">
     <header className="givebetter-masthead"><a href={root+'/san-francisco'}>Give<span>Better</span> <small>x SF</small></a></header>
     <main>
       <section className="sf-home-intro">
@@ -97,7 +99,7 @@ export default function SanFranciscoHome(){
         <div><p className="sf-home-eyebrow">RESEARCH LEAD {i+1} OF 4</p><h2>{pick.program}</h2>
           <div className="sf-home-charity-body">
             <section><h3>Overview</h3><p>{pick.overview}</p></section>
-            <section><h3>Cost-effectiveness</h3><p><strong>{money(pick.price)} per better life (10 health and income-equivalent years)</strong>, modeled.</p><p className="sf-home-scope">{pick.scope}</p></section>
+            <section><h3>Cost-effectiveness</h3><p><strong>{formatImpactPrice(pick.price)} per {impactMetric().label}</strong>, modeled.</p><p className="sf-home-scope">{pick.scope}</p></section>
             <section><h3>Why investigate</h3><p>{pick.evidence}</p></section>
             <section><h3>Before recommending a grant</h3><p>{pick.next}</p></section>
             <section><h3>Organization and research</h3><div className="sf-home-org-card"><h4>{pick.name}</h4><a className="sf-home-report" href={`${root}/charities/${pick.slug}`}>Full research report</a></div></section>
@@ -106,5 +108,5 @@ export default function SanFranciscoHome(){
       </article>)}</section>
       <footer className="sf-home-footer"><a href={`${root}/san-francisco/all`}>All San Francisco research</a><span className="sf-footer-separator" aria-hidden="true">·</span><a href={`${root}/all`}>All cities and regions</a></footer>
     </main>
-  </div>;
+  </div>);
 }

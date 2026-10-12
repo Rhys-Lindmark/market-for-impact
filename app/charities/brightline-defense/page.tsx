@@ -1,3 +1,4 @@
+import {impactNode} from '@/components/ImpactMetric';
 import type {Metadata} from 'next';
 import CharityResearchReport,{type CharityReportContent} from '@/components/CharityResearchReport';
 import data from '@/data/san-francisco/brightline-filtration-cea-v1.json';
@@ -33,4 +34,4 @@ const content:CharityReportContent={
  reservations:[...data.acceptanceGates,'The positive utility assumptions are speculative. A null or negative effect could reverse this provisional opinion.','General donation recipient Brightline Defense, EIN33-1131608, is linked through the official donation-provider account. This is not verification of a restricted offer or current legal standing.'],excludedBenefits:data.nonAdditivityAndExclusions,
  sources:data.sources.map(s=>({publisher:('publisher' in s?s.publisher:undefined)??'Primary research publisher',title:s.id,url:s.url,published:('date' in s?s.date:undefined)??('publication' in s?s.publication:undefined)??'Not stated',retrieved:('retrieved' in s?s.retrieved:undefined)??'2026-09-08 research audit',sourceType:s.access})),
 };
-export default function Page(){return <CharityResearchReport content={content}/>;}
+export default function Page(){return impactNode(<CharityResearchReport content={content}/>);}

@@ -1,3 +1,4 @@
+import {impactNode} from '@/components/ImpactMetric';
 import type { Metadata } from 'next';
 import CharityResearchReport, { type CharityReportContent } from '@/components/CharityResearchReport';
 import model from '@/data/san-francisco/sfchc-hcv-cea-v1.json';
@@ -68,4 +69,4 @@ const content: CharityReportContent = {
   excludedBenefits: ['Reduced onward transmission', 'Avoided future healthcare expenditure', 'Family welfare and income', 'Retreatment benefits and costs', 'Irreversible disease prevented before later usual-care cure'],
   sources: model.sources,
 };
-export default function SfchcResearchPage() { return <CharityResearchReport content={{...content, donationUrl:"https://www.sfcommunityhealth.org/donate"}} />; }
+export default function SfchcResearchPage() { return impactNode(<CharityResearchReport content={{...content, donationUrl:"https://www.sfcommunityhealth.org/donate"}} />); }

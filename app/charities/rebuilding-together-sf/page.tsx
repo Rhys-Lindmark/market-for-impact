@@ -1,8 +1,10 @@
+import {impactMetadata} from '@/lib/impact-metadata.mjs';
+import {impactNode} from '@/components/ImpactMetric';
 import type {Metadata} from 'next';
 import CharityResearchReport,{type CharityReportContent} from '@/components/CharityResearchReport';
 import data from '@/data/san-francisco/rtsf-falls-cea-v1.json';
 import {homeModificationModel} from '@/lib/home-environment-model.mjs';
-export const metadata:Metadata={title:'Rebuilding Together SF — fall prevention | Market for Impact',description:'Conditional cost per 10 QALYs for additional home fall-hazard modifications, with conflicting trials and explicit donor funding assumptions.'};
+export const metadata:Metadata=impactMetadata({title:'Rebuilding Together SF — fall prevention | Market for Impact',description:'Conditional cost per 10 QALYs for additional home fall-hazard modifications, with conflicting trials and explicit donor funding assumptions.'});
 const money=(n:number|null)=>n===null?'No finite positive price':new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',notation:'compact',maximumFractionDigits:2}).format(n);
 const core=data.scenarios.map(s=>({...s,result:homeModificationModel(s.inputs)})),central=core.find(s=>s.id==='central')!,r=central.result;
 const stress=data.stressTests.map(s=>({...s,result:homeModificationModel(s.inputs)}));
@@ -30,4 +32,4 @@ const content:CharityReportContent={
  reservations:[...data.fundingRoom.constraints,'The .01 central QALY loss per all-fall event is a judgment, not a calibrated injury-mix estimate; .05 favorable is also speculative. Repeated-event overlap could inflate the result.','No evidence warrants treating donated labor as costless or automatically translating years of fixture durability into years of utility benefit.'],excludedBenefits:data.safeguards,
  sources:Object.entries(data.sources).map(([title,s])=>({publisher:title.startsWith('rtsf')||title==='recipient'?'Rebuilding Together San Francisco':title==='harp'?'JAMA Network Open':'NIHR / NCBI Bookshelf',title,url:s.url,published:s.published??'Not stated',retrieved:'2026-09-08',sourceType:s.type})),
 };
-export default function Page(){return <CharityResearchReport content={content}/>;}
+export default function Page(){return impactNode(<CharityResearchReport content={content}/>);}

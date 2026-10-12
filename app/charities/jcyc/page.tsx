@@ -1,8 +1,10 @@
+import {impactMetadata} from '@/lib/impact-metadata.mjs';
+import {impactNode} from '@/components/ImpactMetric';
 import type { Metadata } from 'next';
 import CharityResearchReport, { type CharityReportContent } from '@/components/CharityResearchReport';
 import model from '@/data/san-francisco/jcyc-myeep-cea-v1.json';
 import { youthJobsDecisionModel } from '@/lib/youth-jobs-model.mjs';
-export const metadata: Metadata = { title: 'JCYC MYEEP summer jobs | Market for Impact', description: 'An explicit mortality-only $24.8M per 10-QALY research estimate for an additional MYEEP summer placement.' };
+export const metadata: Metadata = impactMetadata({ title: 'JCYC MYEEP summer jobs | Market for Impact', description: 'An explicit mortality-only $24.8M per 10-QALY research estimate for an additional MYEEP summer placement.' });
 const usd = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 2 });
 const scenarios = model.scenarios.map(s => ({ ...s, result: youthJobsDecisionModel(s) }));
 const central = scenarios[1];
@@ -62,4 +64,4 @@ const content: CharityReportContent = {
   ],
   excludedBenefits: model.excluded, sources: model.sources,
 };
-export default function JCYCReport() { return <CharityResearchReport content={content} />; }
+export default function JCYCReport() { return impactNode(<CharityResearchReport content={content} />); }

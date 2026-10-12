@@ -1,3 +1,4 @@
+import {impactNode} from '@/components/ImpactMetric';
 import type {Metadata} from 'next';
 import CharityResearchReport,{type CharityReportContent} from '@/components/CharityResearchReport';
 import data from '@/data/san-francisco/walk-sf-cea-v1.json';
@@ -11,4 +12,4 @@ const content:CharityReportContent={...report,modelVersion:data.modelId,
  model:{...report.model,headline:money(central.sfUsdPer10Qaly)+' per 10 SF QALYs; '+money(central.bayUsdPer10Qaly)+' per 10 Bay QALYs',
  sensitivity:data.scenarios.map(s=>{const r=walkSfModel(s,data.giftUsd);return {case:s.id,headline:money(r.sfUsdPer10Qaly)+' SF / '+money(r.bayUsdPer10Qaly)+' Bay per 10 QALYs',detail:r.sfNetQaly.toPrecision(5)+' SF QALYs and '+r.bayIncludingSfNetQaly.toPrecision(5)+' Bay QALYs including SF. Matched-build timing cost: '+money(r.sfTimingUsdPer10Qaly)+' per 10 SF QALYs; gross forward-resource stress: '+money(r.sfGrossStressUsdPer10Qaly)+'. Joint assumptions, not confidence limits.'};})}
 };
-export default function Page(){return <CharityResearchReport content={content}/>;}
+export default function Page(){return impactNode(<CharityResearchReport content={content}/>);}

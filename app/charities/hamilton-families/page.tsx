@@ -1,3 +1,4 @@
+import {impactNode} from '@/components/ImpactMetric';
 import type { Metadata } from 'next';
 import CharityResearchReport, { type CharityReportContent } from '@/components/CharityResearchReport';
 import review from '@/data/san-francisco/hamilton-families-review-v1.json';
@@ -80,5 +81,5 @@ const content: CharityReportContent = {
 };
 
 export default function HamiltonFamiliesResearchPage() {
-  return <CharityResearchReport content={content} />;
+  return impactNode(<CharityResearchReport content={content} />);
 }

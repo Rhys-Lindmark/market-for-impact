@@ -1,4 +1,5 @@
 import summaries from '@/data/top-ten-summaries.json';
+import {impactNode} from './ImpactMetric';
 import readiness from '@/data/donor-readiness.json';
 
 export function hasTopTenSummary(organization:string) {
@@ -11,7 +12,7 @@ export default function TopTenSummary({organization,longForm=false}:{organizatio
  const summary=(summaries as Record<string,{name:string;intro:string[];recommendation:string;reasons:string[];reservations:string[];cost:string[];monitoring:string;qualitative:string;sources:string[]}>)[row.slug];
  if(!summary)return null;
  const ids=longForm?{what:'research-what',cost:'research-cost',monitoring:'research-monitoring',qualitative:'research-qualitative'}:{what:'program',cost:'cost-effectiveness',monitoring:'evidence',qualitative:'reservations'};
- return <div data-top-ten-summary={row.slug}>
+ return impactNode(<div data-top-ten-summary={row.slug}>
   <p data-summary-intro><strong>What do they do?</strong> {summary.intro.join(' ')} <a href={'#'+ids.what}>More</a></p>
   <p><strong>{summary.recommendation}</strong></p>
   <ul data-summary-reasons>{summary.reasons.map(reason=><li key={reason}>{reason}</li>)}</ul>
@@ -23,5 +24,5 @@ export default function TopTenSummary({organization,longForm=false}:{organizatio
   <p data-summary-monitoring>{summary.monitoring} <a href={'#'+ids.monitoring}>More</a></p>
   <p><strong>What is GiveBetter’s qualitative assessment of {summary.name}?</strong></p>
   <p data-summary-qualitative>{summary.qualitative} <a href={'#'+ids.qualitative}>More</a></p>
- </div>;
+ </div>);
 }

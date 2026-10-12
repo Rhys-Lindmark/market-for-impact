@@ -1,3 +1,4 @@
+import {impactNode} from '@/components/ImpactMetric';
 import type {Metadata} from 'next';
 import {EditionMasthead} from '@/components/GeographyEdition';
 import {canonicalBase} from '@/lib/geography-editions.mjs';
@@ -9,7 +10,7 @@ import '@/app/report-reading.css';
 export const metadata:Metadata={title:'Better-paying jobs — GiveBetter Research',description:'Evidence and research priorities for improving earnings in the Bay Area, California, NYC and USA.',alternates:{canonical:canonicalBase+'/research/better-paying-jobs'}};
 const money=(x:number)=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(x);
 export default function EarningsResearchPage(){
- return <main className="givebetter charity-report"><EditionMasthead/><div className="report-reading-column">
+ return impactNode(<main className="givebetter charity-report"><EditionMasthead/><div className="report-reading-column">
   <header className="report-heading"><h1>Better-paying jobs</h1><p>Higher earnings can improve lives even when a program’s health effects are hard to measure.</p><small>Research synthesis · Updated {earningsResearchUpdated}</small></header>
   <article>
    <p>We are investigating two routes: helping people qualify for better-paid work, and removing housing barriers that keep them away from productive labor markets. This is a source-backed discovery brief, not four new organization reviews. The candidates below do not change the shortlist or report counts.</p>
@@ -25,7 +26,7 @@ export default function EarningsResearchPage(){
    <p>Suppose $1M supports 100 additional trainees whose counterfactual disposable income is $25,000 a year. Assume the income gain is net of the costs above, 80% of benefits occur in the edition, and the remaining transfer/additionality multiplier is applied once. Under our <a href={canonicalBase+'/methodology/income'}>Coefficient Giving-based comparison</a>, the following assumptions yield:</p>
    <ul>{earningsScreen.scenarios.map(s=>{
     const equivalent=incomeHealthyYearEquivalent({...earningsScreen,...s});
-    return <li key={s.id}><strong>{s.label}:</strong> {money(s.annualIncomeGainUSD)} annual gain for {s.years} years, with a {s.causalShare*100}% transfer/additionality multiplier: {equivalent.toFixed(1)} income-equivalent healthy years, or {money(10*earningsScreen.costUSD/equivalent)} per better life on this income-only comparison.</li>;
+    return impactNode(<li key={s.id}><strong>{s.label}:</strong> {money(s.annualIncomeGainUSD)} annual gain for {s.years} years, with a {s.causalShare*100}% transfer/additionality multiplier: {equivalent.toFixed(1)} income-equivalent healthy years, or {money(10*earningsScreen.costUSD/equivalent)} per better life on this income-only comparison.</li>);
    })}</ul>
    <p>These inputs are judgments for screening, not values established for any candidate. Zero additional earnings means zero credited income benefit. Income loss is harmful, not a positive cost-effectiveness ratio. The actual model should use yearly earnings changes and a consistent price base, not assume a flat gain.</p>
    <p>Our main list retains <strong>$ per better life: 10 QALYs or an explicitly labeled DALY-based estimate</strong>. Income-equivalent healthy years are a welfare comparison, not measured QALYs or DALYs. They can appear separately alongside health, with overlap removed; they do not silently change health-only rankings.</p>
@@ -37,5 +38,5 @@ export default function EarningsResearchPage(){
    <h2>Next evidence to collect</h2>
    <ul><li>A current marginal budget and a documented use for additional funding.</li><li>Administrative earnings follow-up against a credible counterfactual, including all enrolled participants—not just successful graduates.</li><li>Benefit duration, local resident share and transfer from evaluated cohorts to today’s labor market.</li><li>Net household gains, displacement of other workers and overlap with already-counted health or housing benefits.</li></ul>
   </article><footer className="report-footer"><a href={canonicalBase+'/methodology/income'}>Health and income method</a> · <a href={canonicalBase+'/all'}>All editions</a></footer>
- </div></main>;
+ </div></main>);
 }

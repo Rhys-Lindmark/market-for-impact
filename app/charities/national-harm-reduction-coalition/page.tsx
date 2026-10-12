@@ -1,3 +1,4 @@
+import {impactNode} from '@/components/ImpactMetric';
 import type { Metadata } from 'next';
 import CharityResearchReport, { type CharityReportContent } from '@/components/CharityResearchReport';
 import model from '@/data/san-francisco/dope-site-cea-v1.json';
@@ -67,4 +68,4 @@ const content: CharityReportContent = {
   excludedBenefits: ['Nonfatal overdose morbidity', 'Peer income, dignity and social connection', 'Electronic detection and button systems', 'Later healthcare and other public resource costs', 'Any separately counted SFAF benefit for the same event or person'],
   sources: model.sources,
 };
-export default function DopeResearchPage() { return <CharityResearchReport content={content} />; }
+export default function DopeResearchPage() { return impactNode(<CharityResearchReport content={content} />); }

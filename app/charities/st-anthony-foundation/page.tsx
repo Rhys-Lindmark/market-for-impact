@@ -1,3 +1,4 @@
+import {impactNode} from '@/components/ImpactMetric';
 import type {Metadata} from 'next';
 import CharityResearchReport,{type CharityReportContent} from '@/components/CharityResearchReport';
 import data from '@/data/san-francisco/st-anthony-diabetes-cea-v1.json';
@@ -64,4 +65,4 @@ const content:CharityReportContent={
  excludedBenefits:['Future healthcare savings as donor cash','Income and enrollment itself','Extra lifetime multiplier','Unmeasured caregiver benefits'],
  sources:data.sources,
 };
-export default function DiabetesResearchPage(){return <CharityResearchReport content={content}/>;}
+export default function DiabetesResearchPage(){return impactNode(<CharityResearchReport content={content}/>);}

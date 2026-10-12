@@ -1,3 +1,4 @@
+import {impactNode} from '@/components/ImpactMetric';
 /* eslint-disable @next/next/no-html-link-for-pages -- Native anchors avoid a confirmed Vinext production prefetch runtime error under the canonical /donate base path. */
 import '@/app/givebetter.css';
 import '@/app/report-reading.css';
@@ -8,6 +9,7 @@ import {researchEffortSummary} from '@/lib/research-effort.mjs';
 import DonorReadiness from './DonorReadiness';
 import ReportExpenseAppendix from './ReportExpenseAppendix';
 import TopTenSummary,{hasTopTenSummary} from './TopTenSummary';
+import {impactText,impactMetric,impactUnitExplanation,impactEquation} from '@/lib/impact-metric.mjs';
 
 export type CharityEvidence = {
   key: string;
@@ -87,14 +89,22 @@ export type CharityReportContent = {
 };
 
 function Assumptions({ inputs }: { inputs: CharityReportContent['model']['inputs'] }) {
-  return <dl className="report-assumptions">{inputs.map(input => <div key={input.key}>
+  return impactNode(<dl className="report-assumptions">{inputs.map(input => <div key={input.key}>
     <dt>{input.label}</dt><dd><strong>{input.best}</strong> (range: {input.range}). {input.basis} <em>{input.confidence}.</em></dd>
-  </div>)}</dl>;
+  </div>)}</dl>);
 }
 function Scenarios({ rows }: { rows: CharityReportContent['model']['sensitivity'] }) {
-  return <ul className="report-scenarios">{rows.map(row => <li key={row.case}><strong>{row.case}: {row.headline}.</strong> {row.detail}</li>)}</ul>;
+  return impactNode(<ul className="report-scenarios">{rows.map(row => <li key={row.case}><strong>{row.case}: {impactText(row.headline,{priceOnly:true})}.</strong> {row.detail}</li>)}</ul>);
 }
 export default function CharityResearchReport({ content }: { content: CharityReportContent }) {
+  content={...content,
+    nutshell:{...content.nutshell,body:impactNode(content.nutshell.body)},
+    summary:content.summary.map(item=>({...item,value:impactText(item.value,{priceOnly:/per (?:10|ten)|USD\/10|best guess|positive scenarios|cost per better|central estimate|central scenario|our best guess|positive stress|positive central|global health/i.test(item.label+' '+item.detail)&&!/native|course cost|donor cost per|gift size/i.test(item.label)}),detail:impactText(item.detail)})),
+    model:{...content.model,headline:impactText(content.model.headline),
+      equation:impactEquation(content.model.equation),
+    },
+    ...(content.comparisonBridge?{comparisonBridge:{...content.comparisonBridge,equation:impactEquation(content.comparisonBridge.equation)}}:{}),
+  };
   const donationUrl = content.donationUrl?.trim();
   const effort = researchEffortSummary(researchEffort,content.organization,{...historicalEffort,...assignedEffort});
   const earlier=content.calibrationDate?researchEffortSummary({...researchEffort,organizations:{...researchEffort.organizations,[content.organization]:{coverage:'partial',sessions:(researchEffort.organizations[content.organization]?.sessions??[]).filter(s=>Date.parse(s.startedAt)<Date.parse(content.calibrationDate!))}}},content.organization,{...historicalEffort,...assignedEffort}):null;
@@ -109,7 +119,7 @@ export default function CharityResearchReport({ content }: { content: CharityRep
     ['funding', '5. Funding and previous grants'],
     ['sources', '6. Sources'],
   ];
-  return (
+  return impactNode((
     <main className="givebetter charity-report">
       <header className="givebetter-masthead"><a href="/san-francisco">Give<span>Better</span> <small>x SF</small></a></header>
       <div className="report-reading-column">
@@ -155,7 +165,7 @@ export default function CharityResearchReport({ content }: { content: CharityRep
           <section id="cost-effectiveness">
             <h2>4. What do you get for your dollar?</h2>
             <p><strong>{content.model.headline}</strong></p><p>{content.model.body}</p>
-            <p>A better life is our comparison unit of 10 additional {content.model.comparisonUnit||(content.model.incomeLedger?'health years and income-welfare-equivalent years':'quality-adjusted life years (QALYs)')}, potentially spread across people. These are uncertain estimates, not measured returns or verified donation offers.</p>
+            <p>{impactMetric().years===1?impactUnitExplanation:'A better life is ten modeled health and income-equivalent years, potentially spread across people.'} These are uncertain estimates, not measured returns or verified donation offers.</p>
             <h3>How we calculate the estimate</h3>
             <p className="report-equation"><strong>{content.model.equation.label}:</strong> {content.model.equation.expression}<br /><strong>{content.model.equation.result}</strong></p>
             <details className="report-method"><summary>Model inputs and assumptions</summary><Assumptions inputs={content.model.inputs}/></details>
@@ -194,5 +204,5 @@ export default function CharityResearchReport({ content }: { content: CharityRep
         <footer className="report-footer"><p className="report-model-version">Cost-effectiveness model: {content.modelVersion}.</p><a href="/san-francisco/all">All research</a> · <a href="/san-francisco">Our top charities</a><p>GiveBetter x SF is not affiliated with GiveWell or the organizations reviewed.</p></footer>
       </div>
     </main>
-  );
+  ));
 }

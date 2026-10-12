@@ -6,6 +6,7 @@ import {reportPrice,researchListPrice} from '../lib/geography-reports.mjs';
 const registry=JSON.parse(fs.readFileSync(new URL('../data/geography-reports.json',import.meta.url)));
 test('public DALY label and compact precision apply consistently, including suffix boundaries',()=>{
  assert.equal(impactMetric().label,'DALY');
+ assert.equal(impactText('Annual expenses $685.22K; $11.17M budget.'),'Annual expenses $685K; $11.2M budget.');
  for(const [input,expected] of [[685220,'$685K'],[11170000,'$11.2M'],[2000000,'$2.0M'],[999499,'$999K'],[999500,'$1.0M'],[-685220,'-$685K'],[999950000,'$1B'],[377.8,'$378']])assert.equal(formatImpactMoney(input),expected);
 });
 test('all canonical geography comparisons scale exactly once and reverse without changing model data',()=>{

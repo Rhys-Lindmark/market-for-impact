@@ -36,10 +36,12 @@ test('comparison equation converts only price, retaining gift and clinical total
  assert.equal(e.expression,'Gift × yield × net QALYs');
 });
 test('model API display is labelled and leaves canonical prices, gifts and quantities intact',()=>{
- const original={giftUSD:100000,central:{costPerTenQalys:200000,netQalys:5},cases:[{price10:10000}]};
+ const original={giftUSD:100000,central:{costPerTenQalys:200000,usdPer10GlobalQalys:5000,usdPer10DirectSfQalys:null,netQalys:5},cases:[{price10:10000}]};
  const view=withImpactDisplay(original);
  assert.equal(view.central.costPerTenQalys,200000);assert.equal(view.giftUSD,100000);assert.equal(view.central.netQalys,5);
  assert.equal(view.comparisonDisplay.priceUSDByCanonicalField['central.costPerTenQalys'],20000);
  assert.equal(view.comparisonDisplay.priceUSDByCanonicalField['cases.0.price10'],1000);
+ assert.equal(view.comparisonDisplay.priceUSDByCanonicalField['central.usdPer10GlobalQalys'],500);
+ assert.equal(view.comparisonDisplay.priceUSDByCanonicalField['central.usdPer10DirectSfQalys'],null);
  assert.equal(original.comparisonDisplay,undefined);
 });

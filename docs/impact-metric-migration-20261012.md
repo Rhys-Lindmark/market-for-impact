@@ -2,7 +2,7 @@
 
 User request: replace public dollars per better life (ten years) with dollars per DALY-equivalent (one year), dividing comparison prices by ten, with a reversible backend setting. Clinical QALYs and income equivalents remain distinct source outcomes. This does not authorize the three held income assessments.
 
-Progress: **4/10 accepted locally; not published**. Root integrates; isolated adviser `daly_migration_audit` inventories and challenges bounded changes. No research minutes attributed to units migration. Baseline clean `66b5694`; Sites516; 29GiB free; existing compatible dependencies reused. Stall boundary: 20 active minutes without a deliverable/test milestone; checkpoint exact remaining work rather than idle.
+Progress: **9/10 accepted locally; publication pending**. Root integrates; isolated adviser `daly_migration_audit` inventories and challenges bounded changes. No research minutes attributed to units migration. Baseline clean `66b5694`; Sites516; 29GiB free initially; existing compatible dependencies reused. Stall boundary: 20 active minutes without a deliverable/test milestone; checkpoint exact remaining work rather than idle.
 
 - [x] M01 Inventory all report and public rendering families, including SF and archives.
 - [x] M02 Single backend-configurable metric and explicit source/display contracts.

@@ -2,10 +2,12 @@
 
 Edit **`impactMetricConfig.id` in `lib/impact-metric.mjs`**, then test, rebuild and publish. There is no visitor-facing toggle.
 
-- `daly-equivalent` (default): one modeled healthy-year welfare equivalent; canonical comparison prices divided by ten.
+Label/precision update accepted2026-10-12: Sites519, source `b761e6e0eb089a4e10b046fcd236b8f54c8ff04d`; deployment succeeded22:47:12UTC.19 focused tests and production build passed;320 production routes (298 reports) passed the DALY-equivalent/obsolete-unit and decimal-K/multi-decimal-M residual scan. Post-publication documentation does not alter the deployed runtime source. Regenerable15MiB local release archive removed after verification; hosted archive retained.
+
+- `daly-equivalent` (internal default ID, public label **DALY**): one modeled healthy-year welfare equivalent; canonical comparison prices divided by ten.
 - `better-life`: ten modeled equivalent years; restores canonical comparison prices and original comparison prose.
 
-DALY-equivalent is a presentation/comparison label, **not a claim that income welfare is clinical DALYs** or that a measured DALY averted is identical to a QALY gained. Health and signed household-resource inputs retain their original distinctions and assumptions.
+DALY is the user-requested short presentation label, **not a claim that income welfare is clinical DALYs** or that a measured DALY averted is identical to a QALY gained. Health and signed household-resource inputs retain their original distinctions and assumptions. `formatImpactMoney` centrally controls compact display precision:K has zero decimals, M exactly one, other suffixes zero. This is display rounding, never a change to stored values. Remaining compact currency in report prose is rounded without dividing native costs or budgets.
 
 ## Source versus presentation
 

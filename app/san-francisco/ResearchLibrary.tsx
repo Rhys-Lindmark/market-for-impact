@@ -1,5 +1,5 @@
 import {impactNode} from '@/components/ImpactMetric';
-import {formatImpactPrice,impactText,impactMetric} from '@/lib/impact-metric.mjs';
+import {formatImpactMoney,formatImpactPrice,impactText,impactMetric} from '@/lib/impact-metric.mjs';
 import type { Metadata } from 'next';
 /* eslint-disable @next/next/no-html-link-for-pages -- Native anchors avoid a confirmed Vinext production prefetch runtime error on this server-rendered brief. */
 import candidateUniverse from '@/data/san-francisco/candidate-universe-v1.json';
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 };
 
 const integer = new Intl.NumberFormat('en-US');
-const compactMoney = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 2 });
+const compactMoney = {format:formatImpactMoney};
 
 const outcomeLabels = new Map(sfOutcomes.outcomes.map((outcome) => [outcome.key, outcome.label]));
 const candidates = [...sfDiligence.candidates].sort((a, b) => a.name.localeCompare(b.name));

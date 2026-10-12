@@ -114,7 +114,7 @@ test('unknown runtime stays unknown; lists retain initial estimates without chan
   assert.match(formatEditionReportPrice(report),/^\$/,slug);
  }
  const school=published.reports.find(r=>r.slug==='california-school-based-health-alliance');
- assert.equal(formatEditionReportPrice(school),'$11.17M'); // Display-only one-year unit; canonical arithmetic below is unchanged.
+ assert.equal(formatEditionReportPrice(school),'$11.2M'); // Display-only one-year unit; canonical arithmetic below is unchanged.
  const historical=school.model.scenarios.find(s=>s.id==='historical-alpha-central');
  assert.ok(Math.abs(10*historical.costUSD/historical.editionQalys-26853571.42857143)<.01);
 });

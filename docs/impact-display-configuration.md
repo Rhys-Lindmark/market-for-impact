@@ -2,6 +2,12 @@
 
 Edit **`impactMetricConfig.id` in `lib/impact-metric.mjs`**, then test, rebuild and publish. There is no visitor-facing toggle.
 
+## QALY quantity precision
+
+`lib/health-display.mjs` owns the two-decimal presentation contract (`healthDisplayDecimals`, `formatQalys`, prose edits and QALY-labelled table cells). Shared React, Markdown and geography renderers apply it without rounding source data, calculator inputs, probabilities, money or raw API responses. Source links and version identifiers remain intact. Very small quantities can display as0.00; full precision remains in the model/API. Do not use rendered quantities for further calculations.
+
+Accepted2026-10-18: Sites520, runtime source `e6aee5bb6f54d8f5023ccc87042d6f9a2489f66f`, deployment `appgdep_6ad4f3115d08819180a3439895c581c1` succeeded.39 focused tests and production build passed. Local and production sweeps checked320 routes including298 reports with zero QALY-precision residuals. The custom-domain Project Homeless Connect page returned200 and1.32 US,1.29 Bay,1.25 SF QALYs; original long total absent. All tracked data files unchanged. Unrelated city-theory/e2e/build-info edits were preserved and excluded; release built in an isolated task-owned worktree using shared dependencies. Temporary release checkout/build/archive removed after verification; no shared dependencies removed. This post-publication receipt does not change runtime source.
+
 Label/precision update accepted2026-10-12: Sites519, source `b761e6e0eb089a4e10b046fcd236b8f54c8ff04d`; deployment succeeded22:47:12UTC.19 focused tests and production build passed;320 production routes (298 reports) passed the DALY-equivalent/obsolete-unit and decimal-K/multi-decimal-M residual scan. Post-publication documentation does not alter the deployed runtime source. Regenerable15MiB local release archive removed after verification; hosted archive retained.
 
 - `daly-equivalent` (internal default ID, public label **DALY**): one modeled healthy-year welfare equivalent; canonical comparison prices divided by ten.

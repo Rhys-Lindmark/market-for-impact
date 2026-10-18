@@ -16,6 +16,8 @@ test('All seven original YMCA portfolio worlds stay reproducible',()=>{
  for(const scenario of archive.evaluated)assert.deepEqual(ymcaPortfolioModel(scenario.inputs),scenario.output);
 });
 test('Seven original YMCA portfolio and earlier-DPP source hashes stay preserved',()=>{
- const overrides={'app/charities/ymca-greater-sf/page.tsx':'docs/geography-discovery/ymca-legacy-original-page-2026-10-04.tsx.txt','app/api/ymca-portfolio-model/route.ts':'docs/geography-discovery/ymca-legacy-original-api-2026-10-04.ts.txt'};
+ const overrides={'app/charities/ymca-greater-sf/page.tsx':'docs/geography-discovery/ymca-legacy-original-page-2026-10-04.tsx.txt','app/api/ymca-portfolio-model/route.ts':'docs/geography-discovery/ymca-legacy-original-api-2026-10-04.ts.txt',
+ // The live route now wraps its payload in withImpactDisplay (864f7bd, per-DALY display, 2026-10-12); the hashed original is frozen here.
+ 'app/api/sf-ymca-model/route.ts':'docs/geography-discovery/ymca-legacy-original-sf-api-2026-10-04.ts.txt'};
  for(const entry of archive.sources){const actual=crypto.createHash('sha256').update(fs.readFileSync(new URL('../'+(overrides[entry.path]??entry.path),import.meta.url))).digest('hex');assert.equal(actual,entry.sha256,entry.path);}
 });

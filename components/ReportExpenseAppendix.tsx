@@ -1,8 +1,8 @@
 import data from '@/data/research-expenses.json';
-import {expenseSummary} from '@/lib/research-expenses.mjs';
+import {expenseSummary,historicalContractExpenseSummary} from '@/lib/research-expenses.mjs';
 import {unifiedResearch} from '@/lib/unified-research-index';
 
-type ExpenseRecord={entity:string;basis:string;note?:string;sources?:string[];years:{year:number;expenses:number|null;source:string;fullYear?:boolean}[]};
+type ExpenseRecord={entity:string;basis:string;note?:string;sources?:string[];years:{year:number;expenses:number|null;source:string;fullYear?:boolean}[];historicalContractSpending?:{scope:string;note:string;years:{year:number;period:string;expenses:number;source:string;fullYear?:boolean}[]}};
 const records=data.organizations as Record<string,ExpenseRecord>;
 const normalize=(name:string)=>name.normalize('NFKC').toLocaleLowerCase('en-US').replace(/[’‘]/g,"'").replace(/[–—]/g,'-').trim();
 const money=(value:number)=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(value);
@@ -30,6 +30,7 @@ export function expenseRecordForOrganization(organization:string) {
 export default function ReportExpenseAppendix({organization,slug}:{organization:string;slug?:string}) {
  const record=slug?records[slug==='ear-of-the-lion'?'ear-of-lion':slug]:expenseRecordForOrganization(organization);
  const {average}=expenseSummary(record);
+ const historical=historicalContractExpenseSummary(record);
  const years=[...(record?.years??[])].sort((a,b)=>b.year-a.year);
  return <section id="annual-expenses" data-expense-appendix data-average-expenses={average??undefined}>
   <h2>Annual expenses: years and sources</h2>
@@ -39,6 +40,7 @@ export default function ReportExpenseAppendix({organization,slug}:{organization:
   {years.length>0&&<ul>{years.map((row,i)=><li key={row.year+'-'+i}><a href={row.source} target="_blank" rel="noreferrer">FY{row.year}: {row.expenses===null?'Unresolved':money(row.expenses)}</a>{row.fullYear===false&&' (partial fiscal year; excluded from the three-year mean)'}</li>)}</ul>}
   {average===null&&years.length>0&&<p>Three consecutive full-year expense totals are not verified.</p>}
   {record?.note&&<p>{record.note}</p>}
+  {historical.average!==null&&<div data-historical-contract-spending><h3>{record!.historicalContractSpending!.scope}</h3><p>Three-year historical city-contract spending average: <strong>{money(historical.average)}</strong>. {record!.historicalContractSpending!.note}</p><ul>{historical.years.map(row=><li key={row.year}><a href={row.source} target="_blank" rel="noreferrer">FY{row.period}: {money(row.expenses)}</a></li>)}</ul></div>}
   {!!record?.sources?.length&&<ul>{record.sources.map((source,i)=><li key={source}><a href={source} target="_blank" rel="noreferrer">Additional expense source {i+1}</a></li>)}</ul>}
  </section>;
 }

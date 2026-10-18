@@ -1,7 +1,17 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import data from '../data/research-expenses.json' with {type:'json'};
-import {expenseSummary} from '../lib/research-expenses.mjs';
+import {expenseSummary,historicalContractExpenseSummary} from '../lib/research-expenses.mjs';
+test('PHC list fallback uses actual historical contract costs, not sponsor totals or budgets',()=>{
+ const record=data.organizations['project-homeless-connect'];
+ const h=historicalContractExpenseSummary(record);
+ assert.equal(h.average,1284814);
+ assert.deepEqual(h.years.map(y=>y.expenses),[1394077,1199277,1261088]);
+ assert.equal(expenseSummary(record).average,null);
+ assert.equal(historicalContractExpenseSummary(data.organizations['hope-pacifica']).average,null);
+ assert.equal(historicalContractExpenseSummary({historicalContractSpending:{years:[{year:2023,expenses:100}]}}).average,null);
+ for(const row of h.years)assert.ok(row.source.includes('Consent-Item-11.21-Community-Initiatives-PHC.pdf'));
+});
 test('expense averages use three actual consecutive years; never impute missing data',()=>{
  assert.equal(expenseSummary().average,null);
  assert.equal(expenseSummary({years:[{year:2024,expenses:100}]}).average,null);

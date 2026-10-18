@@ -29,7 +29,12 @@ test('compact expense links open report appendices with accounting caveats',asyn
  for(const slug of ['project-homeless-connect','st-anthony-foundation']){
   await page.goto('/san-francisco/all');
   const link=page.locator('[data-research-slug="'+slug+'"] a[href$="#annual-expenses"]');
-  await expect(link).toHaveText('Not available');
+  if(slug==='project-homeless-connect'){
+   await expect(link).toContainText('$1.3M');
+   await expect(link).toContainText('FY2021–2023 city contract only');
+   await expect(link).toHaveAttribute('data-historical-contract-average','1284814');
+   await expect(link).not.toHaveAttribute('data-average-expenses');
+  }else await expect(link).toHaveText('Not available');
   await link.click();
   await expect(page.locator('#annual-expenses')).toHaveCount(1);
   await expect(page.locator('#annual-expenses')).toContainText(slug==='project-homeless-connect'?'not PHC':'could overlap');

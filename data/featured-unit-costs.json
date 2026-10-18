@@ -1,0 +1,566 @@
+{
+  "schemaVersion": 1,
+  "entries": {
+    "san-francisco/recares": {
+      "numerator": {
+        "ref": "inputs.totalExpenseUsd"
+      },
+      "denominator": {
+        "ref": "inputs.reportedItems"
+      },
+      "unit": "per redistributed equipment or supply item",
+      "denominatorLabel": "reported equipment and supply items",
+      "kind": "observed-average",
+      "scope": "FY2025 organization cash expenses divided by reported items. Items are not unique recipients or verified health improvements. Donated equipment and volunteer resources are excluded. This annual average is not the price of an additional item funded by a gift.",
+      "sourceIds": [
+        "irs2025",
+        "irsO2025"
+      ]
+    },
+    "san-francisco/self-help-for-the-elderly": {
+      "numerator": {
+        "ref": "inputs.courseCostUsd"
+      },
+      "denominator": {
+        "value": 1
+      },
+      "unit": "for one proposed 24-week fall-prevention course place",
+      "denominatorLabel": "proposed course place",
+      "kind": "assumed-unit",
+      "scope": "The existing model assumes this delivery cost for a trial-matched therapeutic tai chi course. It is not a quote for Self-Help's current class or an available donation offer; participant travel and time burdens are separate. Service additionality and clinical transfer are not included in this delivery unit price.",
+      "sourceIds": []
+    },
+    "san-francisco/hope-pacifica": {
+      "numerator": {
+        "ref": "inputs.annualCashExpenseUSD"
+      },
+      "denominator": {
+        "ref": "inputs.annualTwoDevicePacks"
+      },
+      "unit": "per two-device naloxone pack in the planning model",
+      "denominatorLabel": "assumed annual two-device packs",
+      "kind": "modeled-output",
+      "scope": "Both annual operating spending and annual pack throughput are planning assumptions, not verified financials or observed annual distribution. This is before funding response, readiness, repeated holders and unmet access; it is not a cost per overdose reversed or life saved.",
+      "sourceIds": []
+    },
+    "san-francisco/project-homeless-connect": {
+      "numerator": {
+        "ref": "inputs.glassesCost"
+      },
+      "denominator": {
+        "value": 1
+      },
+      "unit": "per glasses service in the delivery model",
+      "denominatorLabel": "modeled glasses service",
+      "kind": "assumed-unit",
+      "scope": "The existing optical pathway assumes this project delivery cost per service, not a verified provider quote. It excludes $100 per service of modeled partner resources, other project pathways and unallocated gift spending. It is not a whole-gift cost per additional patient or verified improved vision.",
+      "sourceIds": []
+    },
+    "denver/hunger-free-colorado": {
+      "numerator": {
+        "ref": "inputs.C"
+      },
+      "denominator": {
+        "ref": "inputs.N"
+      },
+      "unit": "per household SNAP application submitted",
+      "denominatorLabel": "application households",
+      "kind": "observed-average",
+      "scope": "FY2025 full recipient expense divided by HFC-plus-partner application households. Submitted applications, not approvals; partner costs/contributions are not all HFC. Not marginal gift cost.",
+      "sourceIds": [
+        "finance"
+      ],
+      "lead": "Up to about"
+    },
+    "denver/doctors-care": {
+      "numerator": {
+        "ref": "inputs.C"
+      },
+      "denominator": {
+        "ref": "inputs.N"
+      },
+      "unit": "per clinic client served in a year",
+      "denominatorLabel": "annual clinic clients",
+      "kind": "observed-average",
+      "scope": "FY2025 full organization expense against the clinic channel only. Not successful treatment or a marginal additional patient; coverage clients and ambassador touchpoints excluded.",
+      "sourceIds": [
+        "finance"
+      ]
+    },
+    "denver/rebuilding-together-colorado": {
+      "numerator": {
+        "ref": "inputs.C"
+      },
+      "denominator": {
+        "ref": "inputs.N"
+      },
+      "unit": "per low-income homeowner served",
+      "denominatorLabel": "reported homeowners",
+      "kind": "observed-average",
+      "scope": "FY2024 full expense / reported homeowner envelope. Distinct completed homes and repair dose are not established; do not say one completed home repair or falls prevented.",
+      "sourceIds": [
+        "finance"
+      ]
+    },
+    "denver/cultivando": {
+      "kind": "unknown",
+      "scope": "No delivered causal emissions-health cohort or defined implemented policy event in current model. N=10000 resident opportunities, changed=225, and testimony counts are not demonstrated interventions. Do not divide full budget by broad residents reached.",
+      "sourceIds": [
+        "finance",
+        "services",
+        "current-rule"
+      ]
+    },
+    "houston/avda": {
+      "numerator": {
+        "ref": "central.costUSD"
+      },
+      "denominator": {
+        "ref": "central.exposed"
+      },
+      "unit": "per modeled survivor-household service equivalent",
+      "denominatorLabel": "modeled survivor-household service equivalents",
+      "kind": "modeled-output",
+      "scope": "Whole FY2023 cost and later descriptive supported-survivor reference, with judged household deduplication. Not a matched observed annual cost per unique household, completed legal case or marginal gift offer. Use only with visible modeled label; raw N=2500 is adults/children, not unique households.",
+      "sourceIds": [
+        "finance",
+        "grant2025",
+        "services"
+      ]
+    },
+    "houston/meals-on-wheels-montgomery-county": {
+      "numerator": {
+        "ref": "inputs.C"
+      },
+      "denominator": {
+        "value": 227136,
+        "evidence": {
+          "ref": "report.sections.cost",
+          "includes": "227,136"
+        }
+      },
+      "unit": "per delivered meal",
+      "denominatorLabel": "delivered meals",
+      "kind": "observed-average",
+      "scope": "FY2025 full organization expense includes other services; not allocated marginal meal cost. Meal counts are not unique recipients or causal health outcomes.",
+      "sourceIds": [
+        "finance",
+        "services"
+      ],
+      "extractionEvidence": "sections.cost explicitly uses 227,136/(1,178*260) for FY2025 meal density; input N rationale confirms 1,178 unique home-delivered-meal clients."
+    },
+    "houston/the-lighthouse-of-houston": {
+      "numerator": {
+        "ref": "inputs.C"
+      },
+      "denominator": {
+        "ref": "inputs.N"
+      },
+      "unit": "per clinic or training contact",
+      "denominatorLabel": "clinic and training contacts",
+      "kind": "observed-average",
+      "scope": "FY2025 full consolidated expense / 500 clinic plus 411 training contacts; broader programs are in numerator. Contacts can overlap and are not unique people, completed treatment or placements. Not allocated marginal cost.",
+      "sourceIds": [
+        "finance",
+        "annual2025"
+      ]
+    },
+    "houston/air-alliance-houston": {
+      "kind": "unknown",
+      "scope": "No defined implemented emissions-reduction event or delivered clinical output. N=10000 and clinicalPeople=150 derive from hypothetical resident and response fractions, not interventions that can be bought. Sensors, hearings and permit holds are not final health outcomes.",
+      "sourceIds": [
+        "finance",
+        "services"
+      ]
+    },
+    "chicago/old-irving-park-community-clinic": {
+      "numerator": {
+        "ref": "central.costUSD"
+      },
+      "denominator": {
+        "ref": "central.annualPeople"
+      },
+      "unit": "per modeled annual patient equivalent",
+      "denominatorLabel": "modeled annual patient equivalents",
+      "kind": "modeled-output",
+      "scope": "FY2024 full audited expense (already includes donated resources) / undated rounded panel proxy 2500 times judged annual exposure fraction .5. Not measured annual unique patients or marginal care price.",
+      "sourceIds": [
+        "audit24",
+        "panel"
+      ]
+    },
+    "chicago/legal-council-for-health-justice": {
+      "numerator": {
+        "ref": "inputs.C"
+      },
+      "denominator": {
+        "ref": "inputs.N"
+      },
+      "unit": "per individual client assisted",
+      "denominatorLabel": "individual clients",
+      "kind": "observed-average",
+      "scope": "FY2025 whole recipient gross recognized expense / conservative individual-client reference. Includes advocacy and support, not only individual-case expense; no guarantee of benefit award, case completion or marginal offer.",
+      "sourceIds": [
+        "return2025",
+        "schedule2025",
+        "activity25"
+      ]
+    },
+    "chicago/dupage-health-coalition": {
+      "numerator": {
+        "ref": "inputs.C"
+      },
+      "denominator": {
+        "ref": "inputs.N"
+      },
+      "unit": "per coordinated-care enrollee",
+      "denominatorLabel": "enrollees",
+      "kind": "observed-average",
+      "scope": "FY2025 recipient-only expense / 5871 enrollees, not successful completed care. Excludes unknown partner opportunity costs; model separately assumes $5M partner resources. If matching the model's broader system boundary instead, use central:costUSD=9157450 and visibly label modeled system cost.",
+      "sourceIds": [
+        "audit25"
+      ]
+    },
+    "chicago/youth-guidance": {
+      "numerator": {
+        "ref": "central.costUSD"
+      },
+      "denominator": {
+        "ref": "central.gradHouseholds"
+      },
+      "unit": "per modeled additional graduation equivalent",
+      "denominatorLabel": "modeled additional graduation equivalents",
+      "kind": "modeled-output",
+      "scope": "Full national annual expense / modeled local BAM additional graduation equivalents, using trial transfer and conditional funded-work response. Other programs remain in cost; not observed diplomas, a Chicago-only program budget or verified marginal offer. More conservative than dividing by all students reached.",
+      "sourceIds": [
+        "audit25",
+        "annual25",
+        "bamqje",
+        "bam"
+      ],
+      "extractionEvidence": "central B=3621.5; gradProbability=.01785; gradHouseholds=64.643775. Cost section explains BAM reach 7243, funded response .5, trial graduation increment .0714 and transfer .25."
+    },
+    "los-angeles/lestonnac-free-clinic": {
+      "numerator": {
+        "ref": "central.costUSD"
+      },
+      "denominator": {
+        "sumField": {
+          "ref": "central.nativeOutputs.native",
+          "field": "completed"
+        }
+      },
+      "unit": "per modeled completed care package",
+      "denominatorLabel": "modeled completed care packages",
+      "kind": "modeled-output",
+      "scope": "Mixed medical, dental, vision and surgery package equivalents, not unique patients or surgeries. Includes judged funding response and branch completion; ordinary donation capacity is not verified. Additional clinical access is lower than completed packages.",
+      "sourceIds": [
+        "lest24",
+        "lest-o2024"
+      ]
+    },
+    "los-angeles/coalition-for-clean-air": {
+      "kind": "unknown",
+      "scope": "Existing model integrates older-adult survival-year changes; it does not expose a distinct avoided-death/event count. N=500000 is a hypothetical affected cohort, not a delivered service count. Do not infer deaths by dividing QALYs by an invented life expectancy.",
+      "sourceIds": [
+        "99025",
+        "wu"
+      ]
+    },
+    "los-angeles/hunger-action-los-angeles": {
+      "numerator": {
+        "ref": "inputs.supportCost"
+      },
+      "denominator": {
+        "ref": "inputs.redeemedScale"
+      },
+      "unit": "per $1 of redeemed food matching",
+      "denominatorLabel": "redeemed matching dollars",
+      "kind": "observed-average",
+      "scope": "FY2024 full recipient support cost / redeemed matching dollars, not $1 cash income, unique recipients or marginal next-dollar redemption. Model's funding-response-adjusted donor reference is 10000 / nativeOutputs.native.giftSupportedRedeemedUSD=1032.4572837291182, if preferred, but label it modeled.",
+      "sourceIds": [
+        "99024"
+      ]
+    },
+    "los-angeles/vietnamese-american-cancer-foundation": {
+      "numerator": {
+        "ref": "central.costUSD"
+      },
+      "denominator": {
+        "ref": "central.servicePeople"
+      },
+      "unit": "per modeled additional service participant",
+      "denominatorLabel": "modeled additional service participants",
+      "kind": "modeled-output",
+      "scope": "Whole annual cost / additional service participants inferred from mixed activities, HBV share, uniqueness and capacity assumptions. Not 124.95 observed completed treatments, a current queue or unrestricted-gift promise.",
+      "sourceIds": [
+        "vacf-99024",
+        "vacf-programs"
+      ]
+    },
+    "california/operation-access": {
+      "numerator": {
+        "ref": "inputs.Matched2025 expenses"
+      },
+      "denominator": {
+        "jsonSum": "inputs.Observed specialty counts"
+      },
+      "unit": "per specialty-care encounter coordinated",
+      "denominatorLabel": "reported specialty encounters",
+      "kind": "observed-average",
+      "scope": "FY2025 organizational cash-like coordination expense / observed specialty encounters. Not unique patients or surgeries, marginal added encounters, or full clinician/facility opportunity-resource cost. Includes organizational overhead/fundraising.",
+      "sourceIds": [
+        "990-2025",
+        "report"
+      ]
+    },
+    "california/vision-to-learn": {
+      "numerator": {
+        "ref": "inputs.cost"
+      },
+      "denominator": {
+        "value": 1
+      },
+      "unit": "for one modeled year of supported glasses care for a child",
+      "denominatorLabel": "modeled one-year glasses course",
+      "kind": "assumed-unit",
+      "scope": "Analyst all-in course cost, not current invoice, advertised $150 contribution or verified additional donation offer. Includes exam/device, outreach, support and replacement; one course is not a pair or every exam. Financial additionality and California share are separate.",
+      "sourceIds": [
+        "99025",
+        "glasses-current"
+      ],
+      "extractionEvidence": "sections.cost: C=300 cash/all-in per unique completed one-year supported course; allocation 175 examination/device +50 outreach/clinic +50 support +25 replacement."
+    },
+    "california/harm-reduction-services": {
+      "numerator": {
+        "ref": "central.costUSD"
+      },
+      "denominator": {
+        "ref": "central.suppliedPeople"
+      },
+      "unit": "per modeled person-equivalent supplied with naloxone access",
+      "denominatorLabel": "modeled supplied person-equivalents",
+      "kind": "modeled-output",
+      "scope": "Modeled supplied person-equivalents, not observed kits, doses or deaths prevented. Includes declared uniqueness, funding, naloxone relevance and capacity assumptions. Distinct additionally protected nonpurchasers are 32.25300821832978; ordinary gift response is not verified.",
+      "sourceIds": [
+        "hrs-990-2023",
+        "hrs-990-2024",
+        "hrs-990-2025",
+        "hrs-o-2025"
+      ]
+    },
+    "california/coalition-for-clean-air": {
+      "numerator": {
+        "ref": "native.donorCost"
+      },
+      "denominator": {
+        "multiply": [
+          {
+            "ref": "native.policyWeight"
+          },
+          {
+            "ref": "native.inputs.annualDeaths"
+          },
+          {
+            "ref": "native.inputs.activeYears"
+          },
+          {
+            "ref": "native.inputs.healthCA"
+          }
+        ]
+      },
+      "unit": "per projected premature-death equivalent averted",
+      "denominatorLabel": "projected premature-death equivalents averted over five years",
+      "kind": "modeled-output",
+      "scope": "Prospective regulatory projection with judged donor funding, policy response and realized preservation. Five-year event count, not guaranteed life saved, observed CCA-caused deaths or guaranteed marginal offer; no discount applied to native event count. Health model separately discounts welfare and finite survival tails.",
+      "sourceIds": [
+        "99025",
+        "carb-atberth-final"
+      ],
+      "extractionEvidence": "Existing default annualDeaths=230/12; activeYears=5; calculate policyWeight=(gift*policyShare/annualExpense)*funding*response*realization*assignment. NativeOutcomes explicitly names prospective prevented premature-death event equivalents."
+    },
+    "new-york-city/parker-family-health-center": {
+      "numerator": {
+        "ref": "central.costUSD"
+      },
+      "denominator": {
+        "sumField": {
+          "ref": "central.nativeOutputs.native",
+          "field": "completed"
+        }
+      },
+      "unit": "per modeled completed care package",
+      "denominatorLabel": "modeled completed care packages",
+      "kind": "modeled-output",
+      "scope": "Medical/dental package equivalents with judged financing and completion; not unique patients, cured disease or observed current donor capacity. Not all completed packages change timely care.",
+      "sourceIds": [
+        "audit2024",
+        "return2024",
+        "noncash"
+      ]
+    },
+    "new-york-city/new-jersey-harm-reduction-coalition": {
+      "numerator": {
+        "ref": "central.costUSD"
+      },
+      "denominator": {
+        "ref": "central.nativeOutputs.native.fulfilledRiskPeople"
+      },
+      "unit": "per modeled fulfilled overdose-prevention service opportunity",
+      "denominatorLabel": "modeled fulfilled risk-person service equivalents",
+      "kind": "modeled-output",
+      "scope": "Fulfilled risk-person equivalents with judged funding response/completion; not kits, observed rescue events, saved lives or guaranteed marginal offer. Planning doses are separate and cannot be substituted for observed output.",
+      "sourceIds": [
+        "return2024",
+        "noncash2024"
+      ]
+    },
+    "new-york-city/st-ann-s-corner-of-harm-reduction": {
+      "numerator": {
+        "ref": "central.costUSD"
+      },
+      "denominator": {
+        "divide": [
+          {
+            "multiply": [
+              {
+                "ref": "inputs.G"
+              },
+              {
+                "ref": "inputs.N"
+              },
+              {
+                "ref": "inputs.f"
+              },
+              {
+                "ref": "inputs.b"
+              }
+            ]
+          },
+          {
+            "ref": "inputs.C"
+          }
+        ]
+      },
+      "unit": "per modeled additional service engagement",
+      "denominatorLabel": "modeled additional service engagements",
+      "kind": "modeled-output",
+      "scope": "Historical unique reach mapped through current-scale and .25 funding assumptions; mathematical engagement equivalent, not retained patient, completed treatment or additional rescue. Not current available offer.",
+      "sourceIds": [
+        "return2025",
+        "schedule2025",
+        "impact",
+        "programs"
+      ],
+      "extractionEvidence": "model.nativeOutcomes explicitly gives E=1.0692042041443433 modeled additional engagements per $10K; sections.cost gives about $9353 per additional engagement."
+    },
+    "new-york-city/charles-b-wang-community-health-center": {
+      "numerator": {
+        "ref": "inputs.C"
+      },
+      "denominator": {
+        "ref": "inputs.N"
+      },
+      "unit": "per annual patient, using the reported 70,000-patient threshold",
+      "denominatorLabel": "annual patients in the rounded threshold proxy",
+      "kind": "observed-average",
+      "scope": "Full-recipient annual expense / rounded lower-threshold 70000 distinct-patient proxy. Not every patient receives added effective care, and not a marginal-gift price. Exact current patient count above threshold affects average.",
+      "sourceIds": [
+        "annual25"
+      ],
+      "lead": "Up to about"
+    },
+    "usa/institute-for-progress": {
+      "numerator": {
+        "ref": "central.costUSD"
+      },
+      "denominator": {
+        "multiply": [
+          {
+            "ref": "central.incomePathways.0.people"
+          },
+          {
+            "ref": "central.incomePathways.0.causalShare"
+          },
+          {
+            "ref": "central.incomePathways.0.editionShare"
+          }
+        ]
+      },
+      "unit": "per modeled additional skilled worker retained in the U.S.",
+      "denominatorLabel": "modeled additional skilled workers retained",
+      "kind": "modeled-output",
+      "scope": "Explicit 5000-worker conditional reform hypothesis times .25 implementation and .1 organizational contribution, not observed placements or all broad talent-pool reach. Full annual recipient expense once; hypothetical five-year income improvement starts after three years. No verified marginal work package.",
+      "sourceIds": [
+        "irs2024",
+        "income-evidence-1",
+        "income-evidence-2",
+        "income-evidence-3",
+        "income-evidence-4"
+      ],
+      "extractionEvidence": "sections.cost and input 'Income pathway central' explicitly state 5000 people, 25% implementation, 10% IFP attribution; positive income pathway has causalShare=.025."
+    },
+    "usa/center-for-science-in-the-public-interest": {
+      "numerator": {
+        "ref": "native.parameters.gift"
+      },
+      "denominator": {
+        "multiply": [
+          {
+            "ref": "native.delta"
+          },
+          {
+            "ref": "native.parameters.geography"
+          },
+          {
+            "ref": "native.successNonfatal"
+          },
+          {
+            "ref": "native.parameters.durableShare"
+          }
+        ]
+      },
+      "unit": "per projected nonfatal cardiovascular case averted",
+      "denominatorLabel": "projected nonfatal cases averted in the lasting-policy component",
+      "kind": "modeled-output",
+      "scope": "Only lasting 25% component counted as avoided cases. Timing-only acceleration moves events rather than establishing permanently prevented cases, so do not divide by raw national cases or use health shift as a native case count. Conditional projected sodium mechanism, not observed CSPI effect or guaranteed marginal offer; food-price and policy harms remain in DALY comparison.",
+      "sourceIds": [
+        "cspi-99025",
+        "sodium-us-model"
+      ],
+      "extractionEvidence": "Existing calculator successNonfatal =referenceCases * clinicalScale * caseTransport * nonfatalShare. delta=workYears*(withProbability-withoutProbability); lasting share=.25. Extracting this count adds no new parameter but should be independently accepted because it describes one component, not entire mixed timing model."
+    },
+    "usa/surgery-on-sunday": {
+      "numerator": {
+        "ref": "inputs.FY2023 full expense"
+      },
+      "denominator": {
+        "ref": "inputs.FY2023 surgical patients"
+      },
+      "unit": "per surgical patient served",
+      "denominatorLabel": "FY2023 surgical patients",
+      "kind": "observed-average",
+      "scope": "Matched year ending June2023 full recipient expense / surgical patients, not number of procedures or current marginal cost. Does not include all unrecognized volunteer opportunity resources. If preferring current modeled donor line, use central:costUSD / central:nativeOutputs.additionalPatientEquivalents =10000/1.6666666666666667=$6000 and mark modeled.",
+      "sourceIds": [
+        "sos-fy23"
+      ]
+    },
+    "usa/dental-lifeline-network": {
+      "numerator": {
+        "ref": "central.costUSD"
+      },
+      "denominator": {
+        "ref": "central.nativeOutputs.completed"
+      },
+      "unit": "per modeled completed dental-care course",
+      "denominatorLabel": "modeled completed dental-care courses",
+      "kind": "modeled-output",
+      "scope": "National DDS comparison uses judged candidate support cost, funding response and completion. Not measured current delivery per dollar; genuinely additional care is lower (1.54375), since some patients have alternatives. Ordinary gift portfolio return and provider capacity are not verified.",
+      "sourceIds": [
+        "dln-faq",
+        "dln-terms",
+        "dln-99025"
+      ]
+    }
+  }
+}

@@ -37,7 +37,7 @@ test('finite/unknown/nonpositive and exact display metadata',()=>{
 });
 test('comparison equation converts only price, retaining gift and clinical totals',()=>{
  const e=impactEquation({label:'Gift-time incremental health',expression:'Gift × yield × net QALYs',result:'$10,000 produces 26.466 net QALYs; full gift ÷ QALYs × 10 = $3,778'});
- assert.equal(e.result,'$10,000 produces 26.466 net QALYs; full gift ÷ QALYs = $378');
+ assert.equal(e.result,'$10,000 produces 26.47 net QALYs; full gift ÷ QALYs = $378');
  assert.equal(e.expression,'Gift × yield × net QALYs');
 });
 test('model API display is labelled and leaves canonical prices, gifts and quantities intact',()=>{

@@ -10,6 +10,7 @@ import DonorReadiness from './DonorReadiness';
 import ReportExpenseAppendix from './ReportExpenseAppendix';
 import TopTenSummary,{hasTopTenSummary} from './TopTenSummary';
 import {impactText,impactMetric,impactUnitExplanation,impactEquation} from '@/lib/impact-metric.mjs';
+import {formatQalyText,isQalyQuantityLabel} from '@/lib/health-display.mjs';
 
 export type CharityEvidence = {
   key: string;
@@ -90,7 +91,7 @@ export type CharityReportContent = {
 
 function Assumptions({ inputs }: { inputs: CharityReportContent['model']['inputs'] }) {
   return impactNode(<dl className="report-assumptions">{inputs.map(input => <div key={input.key}>
-    <dt>{input.label}</dt><dd><strong>{input.best}</strong> (range: {input.range}). {input.basis} <em>{input.confidence}.</em></dd>
+    <dt>{input.label}</dt><dd><strong>{isQalyQuantityLabel(input.label+' '+input.best)?formatQalyText(input.best,{quantityOnly:true}):input.best}</strong> (range: {isQalyQuantityLabel(input.label+' '+input.best)?formatQalyText(input.range,{quantityOnly:true}):input.range}). {input.basis} <em>{input.confidence}.</em></dd>
   </div>)}</dl>);
 }
 function Scenarios({ rows }: { rows: CharityReportContent['model']['sensitivity'] }) {

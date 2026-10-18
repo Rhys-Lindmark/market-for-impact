@@ -1,15 +1,18 @@
 import {Fragment,cloneElement,isValidElement,type ReactNode,type ReactElement} from 'react';
 import {impactTextEdits,impactText,legacyImpactText} from '@/lib/impact-metric.mjs';
+const textBlocks=new Set(['p','li','dt','dd','td','th','h1','h2','h3','h4','h5','h6']);
 
 /** Preserve links/markup while applying display-only edits across adjacent text leaves. */
 export function impactNode(node:ReactNode,priceOnly=false):ReactNode{
  const leaves:string[]=[];
- const collect=(n:ReactNode)=>{if(typeof n==='string')leaves.push(legacyImpactText(n));else if(Array.isArray(n))n.forEach(collect);else if(isValidElement(n)&&(typeof n.type==='string'||n.type===Fragment))collect((n.props as {children?:ReactNode}).children);};
- collect(node);const text=leaves.join(''),edits=impactTextEdits(text,{priceOnly});let offset=0;
+ const separate=(n:ReactNode)=>n!==node&&isValidElement(n)&&typeof n.type==='string'&&textBlocks.has(n.type);
+ const collect=(n:ReactNode)=>{if(separate(n))return;if(typeof n==='string'||typeof n==='number')leaves.push(legacyImpactText(String(n)));else if(Array.isArray(n))n.forEach(collect);else if(isValidElement(n)&&(typeof n.type==='string'||n.type===Fragment))collect((n.props as {children?:ReactNode}).children);};
+ collect(node);const text=leaves.join(' '),edits=impactTextEdits(text,{priceOnly});let offset=0;
  const visit=(n:ReactNode):ReactNode=>{
-  if(typeof n==='string'){
-   n=legacyImpactText(n);
-   const start=offset,end=start+n.length;offset=end;let out='',at=start;
+  if(separate(n))return impactNode(n,priceOnly);
+  if(typeof n==='string'||typeof n==='number'){
+   n=legacyImpactText(String(n));
+   const start=offset,end=start+n.length;offset=end+1;let out='',at=start;
    for(const e of edits){if(e.end<=start||e.start>=end)continue;out+=text.slice(at,Math.max(at,e.start));if(e.start>=start)out+=e.text;at=Math.min(end,e.end);}
    return out+text.slice(at,end);
   }

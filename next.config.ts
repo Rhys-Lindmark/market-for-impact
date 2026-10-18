@@ -1,10 +1,11 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  // ai.rhyslindmark.com/donate reverse-proxies this Sites deployment while
-  // stripping /donate. Serve immutable build assets from the stable Sites
-  // origin so both URLs resolve the same files without path-rewrite gaps.
-  assetPrefix: 'https://market-for-impact.rhyslindmark.chatgpt.site',
+  // The public Pages proxy strips /givebetter before forwarding to the app.
+  // Direct Cloudflare builds keep assets on that public path after cutover.
+  assetPrefix: process.env.GIVEBETTER_HOST === 'cloudflare'
+    ? (process.env.GIVEBETTER_ASSET_ORIGIN || 'https://ai.rhyslindmark.com/givebetter')
+    : 'https://market-for-impact.rhyslindmark.chatgpt.site',
 };
 
 export default nextConfig;

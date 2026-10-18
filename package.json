@@ -8,6 +8,10 @@
   "scripts": {
     "dev": "vinext dev",
     "build": "vinext build",
+    "build:cloudflare": "node scripts/cloudflare.mjs build",
+    "dev:cloudflare": "node scripts/cloudflare.mjs dev",
+    "deploy:cloudflare": "node scripts/cloudflare.mjs deploy",
+    "db:migrate:cloudflare": "node scripts/cloudflare.mjs migrate",
     "start": "vinext start",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "test:mobile": "playwright test",

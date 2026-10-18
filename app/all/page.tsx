@@ -24,7 +24,6 @@ export default function EditionsPage(){
    <img src={canonicalBase+(region.image?'/images/regions/'+region.image+'.webp':'/images/givebetter-city.webp')} alt="" width="400" height="400" loading="lazy"/>
    <span>{region.label}</span>
   </a></li>)}</ul>
-  <p className="gb-home-early">Early research: {['Seattle','Boston','Atlanta','Detroit'].map((label,i)=><span key={label}>{i>0?' · ':''}<a href={canonicalBase+'/'+label.toLowerCase()}>{label}</a></span>)}</p>
  </section>
  <div className="gb-home-progress gb-edition">
  <div className="gb-agent-box"><span>Point your agent here</span><a className="gb-agent-url" href={canonicalBase+'/llms.txt'}>{canonicalBase}/llms.txt</a><p>Estimates as JSON and MCP, plus an open repository agents can contribute to. <a href={canonicalBase+'/agents'}>Agent docs</a></p></div>

@@ -66,7 +66,8 @@ test('homepage has the requested single headline, an honest research figure and 
  const grid=html.match(/<ul class="gb-home-region-grid">([\s\S]*?)<\/ul>/)[1];
  assert.equal((grid.match(/<li\b/g)||[]).length,8);
  for(const region of time.homepageRegions){assert.ok(grid.includes(editions.canonicalBase+'/'+region.id));assert.ok(grid.includes(region.label));}
- for(const id of ['seattle','boston','atlanta','detroit'])assert.ok(html.includes(editions.canonicalBase+'/'+id));
+ assert.doesNotMatch(html,/Early research|gb-home-early/);
+ for(const id of ['seattle','boston','atlanta','detroit'])assert.ok(!html.includes(editions.canonicalBase+'/'+id));
  assert.match(html,/id="research-time" href="https:\/\/ai.rhyslindmark.com\/givebetter\/research-time"/);
  assert.match(html,/Point your agent here/);assert.ok(html.includes(editions.canonicalBase+'/llms.txt'));assert.ok(html.includes(editions.canonicalBase+'/agents'));
  const css=read('app/all/home.css');

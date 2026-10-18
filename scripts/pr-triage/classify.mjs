@@ -96,11 +96,12 @@ export async function classify({ files, author, readBase, readHead, listBase, or
     if (!area || !fromArea) { human.push(`${f.path}: outside the auto-eligible paths`); continue; }
     if (f.status === 'D' || f.status === 'R' || f.status === 'C') {
       human.push(`${f.from ?? f.path}: ${f.status === 'D' ? 'deleted' : 'renamed or copied'}`);
-      if (['recipe', 'template', 'parameters', 'draft-dir'].includes(fromArea) && f.status !== 'C') await notOwner(f.from ?? f.path, 'a file');
+      if (['record', 'recipe', 'template', 'parameters', 'draft-dir'].includes(fromArea) && f.status !== 'C') await notOwner(f.from ?? f.path, 'a file');
       continue;
     }
     if (f.status !== 'A' && f.status !== 'M') { human.push(`${f.path}: unsupported change type ${f.status}`); continue; }
     if (f.status === 'M') {
+      if (area === 'record') await notOwner(f.path, 'an estimate record');
       if (area === 'recipe' || area === 'template') await notOwner(f.path, area === 'recipe' ? 'an estimate recipe' : 'a template');
       if (area === 'parameters' && !(await notOwner(f.path, 'a parameter file'))) human.push(`${f.path}: edits shared parameters, which move every record that uses them`);
       if (area === 'template') human.push(`${f.path}: edits a template in place; publish a new template version instead`);
@@ -119,6 +120,7 @@ function checkRecord(f, { readBase, readHead, listBase, violations, human, notes
   if (!rec) { violations.push(`${f.path}: not valid JSON`); return; }
   const prev = f.status === 'M' ? parse(readBase(f.path) ?? '') : undefined;
   const tier = rec.status?.tier;
+  if (prev && (prev.status?.tier !== tier || !isDeepStrictEqual(prev.provenance?.audits, rec.provenance?.audits))) human.push(`${f.path}: changes tier or audits; a maintainer must review`);
   if (!['draft', 'retracted'].includes(tier)) {
     if (!passingAudit(rec)) violations.push(`${f.path}: tier "${tier}" is above draft without an independent passing audit`);
     if (!prev || prev.status?.tier !== tier || !isDeepStrictEqual(prev.provenance?.audits, rec.provenance?.audits)) human.push(`${f.path}: sets tier "${tier}" or changes audits; a maintainer must confirm the audit is independent`);

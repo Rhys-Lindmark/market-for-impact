@@ -16,6 +16,26 @@ const git = (...a) => execFileSync('git', a, { encoding: 'utf8', maxBuffer: 256 
 const blob = (sha, path) => { try { return git('show', `${sha}:${path}`); } catch { return null; } };
 const readJson = (p) => JSON.parse(readFileSync(p, 'utf8'));
 const MAX_FILE = 400_000;
+const verdictSchema = JSON.parse(readFileSync(new URL('./verdict.schema.json', import.meta.url), 'utf8'));
+
+// Validate every field before a model response can authorize a merge or reach the renderer.
+function schemaProblems(value, schema, path = 'review') {
+  if (schema.enum && !schema.enum.includes(value)) return [`${path}: invalid enum value`];
+  if (schema.type === 'object') {
+    if (!value || typeof value !== 'object' || Array.isArray(value)) return [`${path}: expected object`];
+    const errors = (schema.required ?? []).filter((key) => !Object.hasOwn(value, key)).map((key) => `${path}.${key}: missing`);
+    for (const key of Object.keys(value)) {
+      if (Object.hasOwn(schema.properties, key)) errors.push(...schemaProblems(value[key], schema.properties[key], `${path}.${key}`));
+      else if (schema.additionalProperties === false) errors.push(`${path}: unexpected field`);
+    }
+    return errors;
+  }
+  if (schema.type === 'array') {
+    if (!Array.isArray(value)) return [`${path}: expected array`];
+    return value.flatMap((item, i) => schemaProblems(item, schema.items, `${path}[${i}]`));
+  }
+  return schema.type && typeof value !== schema.type ? [`${path}: expected ${schema.type}`] : [];
+}
 // Keep PR-controlled text from pinging people or injecting HTML (including comment markers).
 export const inert = (s, max = 4000) => String(s ?? '').slice(0, max).replace(/@/g, '@\u200b').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const cell = (s, max) => inert(s, max).replace(/\\/g, '\\\\').replace(/\|/g, '\\|').replace(/[\r\n]+/g, ' ');
@@ -44,12 +64,10 @@ export function bundle(prPath, classPath, out) {
 export function verdict(raw, headSha) {
   let v;
   try { v = typeof raw === 'string' ? JSON.parse(raw) : raw; } catch { v = null; }
-  const problems = [];
-  if (!v || typeof v !== 'object') problems.push('reviewer returned no structured output');
-  const findings = Array.isArray(v?.findings) ? v.findings : [];
-  if (v && !Array.isArray(v.findings)) problems.push('findings missing');
-  if (v && !['pass', 'blocking'].includes(v.verdict)) problems.push(`unknown verdict ${JSON.stringify(v?.verdict)}`);
-  if (v && typeof v.summary !== 'string') problems.push('summary missing');
+  const problems = schemaProblems(v, verdictSchema);
+  // Discard malformed data so even blocking reviews render without throwing.
+  if (problems.length) v = { verdict: 'blocking', summary: 'Reviewer output did not match the verdict schema.', injectionSuspected: false, findings: [], sourcesChecked: [] };
+  const findings = v.findings;
   const blocking = findings.filter((f) => f?.severity === 'blocking');
   // The final verdict is computed here, not taken on the model's word: any blocking finding,
   // suspected prompt injection or malformed output blocks.

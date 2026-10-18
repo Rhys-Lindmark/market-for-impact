@@ -23,3 +23,17 @@ test('PR-controlled text cannot mention people or forge the comment marker', () 
   assert.match(comment, /@​everyone/);
   assert.ok(comment.startsWith('<!-- pr-triage -->'));
 });
+
+test('malformed nested output blocks and still renders a review', () => {
+  for (const raw of [null, [], { ...ok, findings: [null] },
+    { ...ok, findings: [{ ...ok.findings[0], severity: 'approve' }] },
+    { ...ok, findings: [{ severity: 'note' }] },
+    { ...ok, sourcesChecked: {} }, { ...ok, sourcesChecked: [null] },
+    { ...ok, sourcesChecked: [{ url: 'x', matches: 'yes', note: 'x' }] },
+    { ...ok, sourcesChecked: undefined }, { ...ok, extra: true }]) {
+    const result = verdict(JSON.stringify(raw), 'abc');
+    assert.equal(result.verdict, 'blocking');
+    assert.ok(result.problems.length);
+    assert.match(reviewBody(result), /Output problems/);
+  }
+});

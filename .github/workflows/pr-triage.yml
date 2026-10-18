@@ -131,8 +131,8 @@ jobs:
           ELIGIBLE: ${{ steps.classify.outputs.eligible }}
           GATE_OK: ${{ steps.pr.outputs.gate_ok }}
           ALLOWLISTED: ${{ steps.pr.outputs.allowlisted }}
-        run: |
           DRAFT: ${{ steps.pr.outputs.draft }}
+        run: |
           # Automatic reviews only for allowlisted authors keep API spend bounded; a maintainer can dispatch others.
           run=false
           if [ "$ELIGIBLE" = true ] && [ "$GATE_OK" = true ] && [ "$DRAFT" = false ]; then
@@ -182,7 +182,8 @@ jobs:
           gh api "repos/$REPO/statuses/$SHA" -f state="$state" -f context="$STATUS_CONTEXT" -f description="$desc" > /dev/null
 
   review:
-    needs: classify
+    # Set pending before review can publish success; otherwise label can overwrite it.
+    needs: [classify, label]
     if: needs.classify.outputs.current == 'true' && needs.classify.outputs.run_review == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 30

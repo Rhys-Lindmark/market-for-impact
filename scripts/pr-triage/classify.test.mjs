@@ -98,13 +98,28 @@ test('a tier above draft needs an independent passing audit, and any promotion n
 test('large median moves and narrowed ranges without new sources need a human', async () => {
   const path = `${E}org.json`;
   const base = { [path]: JSON.stringify(record()) };
+  const owners = { [path]: 'Rhys-Lindmark' };
   const moved = await pr([{ status: 'M', path }], { base, head: { [path]: JSON.stringify(record({ price: { p50: 400 } })) } });
   assert.match(moved.humanReasons.join(), /median moved/);
   const narrowed = await pr([{ status: 'M', path }], { base, head: { [path]: JSON.stringify(record({ price: { p10: 3000, p90: 6000 } })) } });
   assert.match(narrowed.humanReasons.join(), /narrowed/);
-  const sourced = await pr([{ status: 'M', path }], { base, head: { [path]: JSON.stringify(record({ price: { p50: 400 }, inputs: { x: { sources: [{ url: 'https://new.example' }] } } })) } });
+  const sourced = await pr([{ status: 'M', path }], { base, owners, head: { [path]: JSON.stringify(record({ price: { p50: 400 }, inputs: { x: { sources: [{ url: 'https://new.example' }] } } })) } });
   assert.equal(sourced.label, 'auto-eligible');
   assert.match(sourced.notes.join(), /new source/);
+});
+
+test('estimate ownership and all tier or audit edits are enforced', async () => {
+  const path = `${E}org.json`;
+  const base = { [path]: JSON.stringify(record()) };
+  for (const status of ['M', 'D']) {
+    const r = await pr([{ status, path }], { base, head: base, owners: { [path]: 'outsider' } });
+    assert.match(r.violations.join(), /another|edits an? /);
+  }
+  for (const change of [record({ audits: [{ independent: true, verdict: 'pass' }] }), record({ status: { tier: 'retracted' } })]) {
+    const r = await pr([{ status: 'M', path }], { base, head: { [path]: JSON.stringify(change) }, owners: { [path]: 'Rhys-Lindmark' } });
+    assert.equal(r.label, 'needs-human');
+    assert.match(r.humanReasons.join(), /changes tier or audits/);
+  }
 });
 
 test('a superseding record is compared with the record it replaces; id reuse fails', async () => {

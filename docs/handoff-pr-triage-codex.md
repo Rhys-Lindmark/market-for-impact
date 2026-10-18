@@ -44,3 +44,14 @@ The merger enables auto-merge only when all of these hold: `PR_AUTOMERGE=on` (th
 - actionlint and shellcheck were not available. The YAML structure and every `run:` block were checked with `bash -n` only.
 - Dependabot PRs get a read-only token under `workflow_run`, so their label job fails. They're needs-human anyway.
 - The repo has no LICENSE file yet.
+
+## Codex continuation (2026-10-18)
+
+- Verified all checks, including CodeQL, passed on `763d9fba`; the PR-ref CodeQL API returned zero open alerts. New commits must pass again before merge.
+- Fixed the review decision's `DRAFT:` shell command by moving it into the step environment. Executed the actual decision script for all 64 combinations of eligibility, gate, draft, allowlist, event and manual-review input; all passed.
+- Made the review depend on labeling, so a late label job cannot overwrite the final review status with pending or remove its labels.
+- Validate every field against the verdict schema before deciding pass. Malformed nested findings and sources now block and render a usable error comment.
+- Enforce estimate-record ownership for modifications/deletions, and route all existing tier/audit changes to a human, including draft/retracted transitions.
+- Validation: triage tests 13/13; BOTEC and research-effort tests 17/17; actionlint 1.7.12 passed both workflows; every shell block passed `bash -n`; patched classifier still reports #390 head `3e994c16` auto-eligible with no violations or human reasons. End-to-end AI review remains untested until the workflow is on main and the secret exists.
+- No PRs merged, comments posted, or repository settings changed. #390 remains a draft. Next: latest-head checks, Rhys's explicit merge OK for #391, then Rhys's settings checklist above.
+- Resource baseline: 28 GiB disk available; workspace 396 MiB; Codex family 125 processes / 3529 MiB RSS (RSS excludes compression/swap); system compressor about 5.4 GiB, swap 3.1 GiB, reported free-memory percentage 47–49%. Used one source-only worktree (117 MiB), existing Node 24, sequential tests with a 1 GiB watchdog, and a small temporary AJV/actionlint install. No servers or browser sessions started. Keep below the Space Saver task/family budgets (5/10 GiB) and recovery thresholds; remove temporary tooling after verification.

@@ -21,13 +21,10 @@ export default function EditionsPage(){
  return <div className="givebetter gb-home"><EditionMasthead/><main>
  <section className="gb-home-hero" aria-labelledby="giving-mission">
   <img src={canonicalBase+'/images/regions/hero.webp'} alt="" width="1800" height="693" fetchPriority="high"/>
-  <h1 id="giving-mission">We research programs that improve lives <em>the most per dollar</em>, for a given region.</h1>
- </section>
- <section className="gb-home-research" aria-labelledby="research-hours">
-  <div className="gb-home-research-art"><img src={canonicalBase+'/images/givebetter-principles.png'} alt="" width="420" height="140"/></div>
-  <div><h2 id="research-hours">{researchTime.hours===null?'Research grounded in evidence':`Backed by ${Math.floor(researchTime.hours).toLocaleString('en-US')}+ hours of AI research`}</h2>
-  <p>Logged research and source-review time, with shared sessions counted once. A partial total—not human-equivalent hours.</p>
-  <a href="#research-time">How we count research time</a></div>
+  <div className="gb-home-hero-copy">
+   <h1 id="giving-mission">We research programs that improve lives <em>the most per dollar</em>, for a given region.</h1>
+   <p className="gb-home-hero-research"><a href={canonicalBase+'/all#research-time'}>{researchTime.hours===null?'Research grounded in evidence':`Backed by ${Math.floor(researchTime.hours).toLocaleString('en-US')}+ hours of AI research`}</a></p>
+  </div>
  </section>
  <section className="gb-home-regions" aria-labelledby="choose-region">
   <h2 id="choose-region">Choose a city or region</h2>

@@ -58,7 +58,11 @@ test('homepage has the requested single headline, an honest research figure and 
  assert.equal((html.match(/<h1\b/g)||[]).length,1);
  assert.doesNotMatch(html,/Explore our giving funds|share our work openly|direct donations to the programs/i);
  assert.ok(html.includes(`Backed by ${Math.floor(time.homepageResearchTime(registry,reports).hours)}+ hours of AI research`));
- assert.match(html,/not human-equivalent hours|not human-equivalent/i);
+ const hero=html.match(/<section class="gb-home-hero"[^>]*>([\s\S]*?)<\/section>/)[1];
+ assert.match(hero,/<\/h1><p class="gb-home-hero-research"><a href="https:\/\/ai.rhyslindmark.com\/givebetter\/all#research-time">Backed by/);
+ assert.equal((hero.match(/<p\b/g)||[]).length,1);
+ assert.doesNotMatch(html,/class="gb-home-research|How we count research time|Logged research and source-review time/);
+ assert.match(html,/No AI-to-human productivity multiplier is applied/);
  const grid=html.match(/<ul class="gb-home-region-grid">([\s\S]*?)<\/ul>/)[1];
  assert.equal((grid.match(/<li\b/g)||[]).length,8);
  for(const region of time.homepageRegions){assert.ok(grid.includes(editions.canonicalBase+'/'+region.id));assert.ok(grid.includes(region.label));}

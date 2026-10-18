@@ -62,7 +62,11 @@ jobs:
 
       - name: Triage unit tests
         if: ${{ !cancelled() }}
-        run: node --test scripts/pr-triage/classify.test.mjs scripts/pr-triage/review.test.mjs
+        # Base branch copy, so PRs branched before the pipeline existed still pass.
+        run: |
+          dir=.triage-base/scripts/pr-triage
+          [ -f "$dir/classify.test.mjs" ] || dir=scripts/pr-triage
+          if [ -f "$dir/classify.test.mjs" ]; then node --test "$dir/classify.test.mjs" "$dir/review.test.mjs"; else echo "no triage tests yet"; fi
 
       - name: Classify changed paths
         if: ${{ !cancelled() }}

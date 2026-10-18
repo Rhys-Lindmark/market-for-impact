@@ -19,7 +19,8 @@ test('New Door reference is negative, not favorable sensitivity or historical nu
  assert.equal(row.centralUsdPerTenQalys,null);assert.equal(row.bayUsdPerTenQalys,null);assert.ok(currentResult.bayIncludingSfCombinedHealthyYearEquivalent<0);
  assert.equal(currentResult.ordinaryDonationExpectedValue,null);
  const local=localResearchEstimate(row);assert.equal(local.localUsdPerTenQalys,null);assert.match(local.localStatus,/Conditional partial model/);assert.match(local.localStatus,/EV remains unknown/);
- assert.match(read('app/san-francisco/all/page.tsx'),/Conditional partial model; ordinary-donation EV unknown/);
+ assert.match(read('app/san-francisco/all/page.tsx'),/researchListPrice/);
+ assert.match(read('lib/research-list-price.mjs'),/Complete ordinary-donation expected value remains unknown/);
  assert.match(read('app/api/newdoor-portfolio-model/route.ts'),/historicalPortfolio:historical,earlierEmploymentOnlyDiagnostic:earlier/);
  assert.match(read('app/charities/new-door-ventures/page.tsx'),/newdoor-current-report/);
 });

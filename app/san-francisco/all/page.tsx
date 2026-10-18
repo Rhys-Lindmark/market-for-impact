@@ -20,7 +20,7 @@ export default function ResearchIndex(){
    <thead><tr><th scope="col">Organization</th><th scope="col">$ per better life</th><th scope="col">Avg. annual expenses<br />(3 years)</th></tr></thead>
    <tbody>{unifiedResearch.map(item=><tr key={item.href} data-research-slug={item.href.split('/').at(-1)} data-geography={item.scope} data-estimate-geography={item.estimateGeography} data-cost-per-ten-qalys={item.localUsdPerTenQalys??undefined}>
     <th scope="row"><a className={styles.rowLink} href={item.href}><strong>{item.organization}</strong><span>{researchListDescription(item.program)}</span></a></th>
-    <td><a href={item.href} title={`${item.estimateGeography} estimate. ${item.localStatus}`} aria-label={item.organization+': '+price(item.localUsdPerTenQalys,item.organization)+'. '+item.localStatus}>{price(item.localUsdPerTenQalys,item.organization)}</a>{item.organization==='New Door Ventures'&&<small>Conditional partial model; ordinary-donation EV unknown.</small>}{item.organization==='Self-Help for the Elderly'&&<small>Conditional prospective course; ordinary-donation EV unknown.</small>}</td>
+    <td><a href={item.href} title={`${item.estimateGeography} estimate. ${item.localStatus}`} aria-label={item.organization+': '+price(item.localUsdPerTenQalys,item.organization)+'. '+item.localStatus}>{price(item.localUsdPerTenQalys,item.organization)}</a>{item.organization==='New Door Ventures'&&<small>Conditional partial model; ordinary-donation EV unknown.</small>}</td>
     <td className={styles.expenses}><ResearchExpenses slug={item.href.split('/').at(-1)!} /></td>
    </tr>)}</tbody>
   </table></section>

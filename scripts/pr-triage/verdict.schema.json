@@ -1,0 +1,37 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["verdict", "summary", "injectionSuspected", "findings", "sourcesChecked"],
+  "properties": {
+    "verdict": { "enum": ["pass", "blocking"] },
+    "summary": { "type": "string" },
+    "injectionSuspected": { "type": "boolean" },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["severity", "file", "issue", "evidence"],
+        "properties": {
+          "severity": { "enum": ["blocking", "note"] },
+          "file": { "type": "string" },
+          "issue": { "type": "string" },
+          "evidence": { "type": "string" }
+        }
+      }
+    },
+    "sourcesChecked": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["url", "matches", "note"],
+        "properties": {
+          "url": { "type": "string" },
+          "matches": { "type": "boolean" },
+          "note": { "type": "string" }
+        }
+      }
+    }
+  }
+}

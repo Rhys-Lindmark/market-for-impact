@@ -1,8 +1,7 @@
 import {compareEstimates,getEstimate,registryIndex,searchEstimates,templates} from '@/lib/open-botec';
 
 // Minimal stateless MCP server (Streamable HTTP, JSON responses only, no sessions).
-// Add to a client as a remote server: https://givebetter.rhyslindmark.workers.dev/api/mcp
-// (the ai.rhyslindmark.com proxy does not forward POST to this path).
+// Add to a client as a remote server: https://ai.rhyslindmark.com/givebetter/api/mcp
 type Rpc = {jsonrpc: '2.0'; id?: string | number | null; method: string; params?: Record<string, unknown>};
 
 const str = {type: 'string'} as const;

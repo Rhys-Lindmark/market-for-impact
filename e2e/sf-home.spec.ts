@@ -13,8 +13,8 @@ for (const path of ['/san-francisco']) {
     await expect(page.getByRole('heading', { level: 1 })).toHaveText('Our Bay Area Shortlist');
     await expect(page.locator('.sf-home-charity')).toHaveCount(4);
     await expect(page.locator('.sf-home-org-card h4')).toHaveText(expectedNames);
-    await expect(page.locator('.sf-home-charity-body section:nth-child(2)>p>strong')).toHaveCount(4);
-    await expect(page.locator('#self-help-for-the-elderly .sf-home-scope')).toContainText('ordinary-donation expected value unknown');
+    await expect(page.locator('[data-daly-comparison]')).toHaveCount(4);
+    await expect(page.locator('#self-help-for-the-elderly [data-cost-effectiveness]')).toContainText('About $600 for one 24-week fall-prevention course.');
     await expect(page.getByRole('link', { name: 'All San Francisco research', exact:true })).toHaveAttribute('href', 'https://ai.rhyslindmark.com/givebetter/san-francisco/all');
     await expect(page.getByRole('link', { name: 'All cities and regions', exact:true })).toHaveAttribute('href', 'https://ai.rhyslindmark.com/givebetter/all');
     await expect(page.locator('.sf-home-illustration')).toHaveCount(3);
@@ -22,7 +22,7 @@ for (const path of ['/san-francisco']) {
     await page.locator('.sf-home-selection summary').click();
     await expect(page.locator('.sf-home-selection')).toContainText('not fully vetted grant recommendations');
     await expect(page.locator('.sf-home-selection')).toContainText('same order');
-    const prices=await page.locator('.sf-home-charity-body section:nth-child(2)>p>strong').allTextContents();
+    const prices=await page.locator('[data-daly-comparison]').allTextContents();
     const slugs=await page.locator('.sf-home-charity').evaluateAll(ns=>ns.map(n=>n.id));
     await page.getByRole('link', { name: 'All San Francisco research', exact:true }).click();
     await expect(page).toHaveURL(/\/san-francisco\/all$/);
@@ -30,7 +30,7 @@ for (const path of ['/san-francisco']) {
     expect(await page.locator('[data-research-slug]').evaluateAll(rows=>rows.slice(0,4).map(row=>row.getAttribute('data-research-slug')))).toEqual(slugs);
     for(let i=0;i<slugs.length;i++){
       const value=Number(await page.locator('[data-research-slug="'+slugs[i]+'"]').getAttribute('data-cost-per-ten-qalys'));
-      expect(prices[i]).toBe(formatImpactPrice(value)+' per '+impactMetric().label);
+      expect(prices[i]).toBe('We estimate '+formatImpactPrice(value)+' per '+impactMetric().label+'.');
     }
     await page.goto(path);
     for (const img of await page.locator('.sf-home-charity img').all()) {

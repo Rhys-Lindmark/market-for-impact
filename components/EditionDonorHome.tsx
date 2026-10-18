@@ -32,7 +32,7 @@ export default function EditionDonorHome({id,label,reports,discovery,alpha,beta}
    {picks.length===4&&<section aria-label="Four research leads">{picks.map((report,i)=>{
     const photo=photos[report.edition+'/'+report.slug];
     return impactNode(<article className="sf-home-charity" key={report.slug} id={report.slug}>
-     <figure><img src={photo.image.startsWith('https://')?photo.image:canonicalBase+photo.image} alt={photo.caption} width="480" height="480" loading="lazy" style={photo.logo?{objectFit:'contain'}:undefined}/><figcaption><a href={photo.source}>{photo.caption}</a></figcaption></figure>
+     <figure><a href={photo.source}><img src={photo.image.startsWith('https://')?photo.image:canonicalBase+photo.image} alt={photo.caption} width="480" height="480" loading="lazy" style={photo.logo?{objectFit:'contain'}:undefined}/></a></figure>
      <div><p className="sf-home-eyebrow">RESEARCH LEAD {i+1} OF 4</p><h2>{report.organization}</h2>
       <div className="sf-home-charity-body">
        <section><h3>Overview</h3><p>{report.summary.what.join(' ')}</p></section>

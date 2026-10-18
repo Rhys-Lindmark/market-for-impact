@@ -39,7 +39,8 @@ test('LA landing has the same four current research leaders and loaded sourced i
   await expect(card.getByRole('heading',{name:picks[i].organization,exact:true}).first()).toBeVisible();
   await expect(card).toContainText(formatEditionMoney(reportPrice(picks[i])));
   await expect.poll(()=>card.locator('figure img').evaluate((img:HTMLImageElement)=>img.complete&&img.naturalWidth>0),{timeout:20000}).toBeTruthy();
-  await expect(card.locator('figcaption a')).toHaveAttribute('href',/^https:\/\//);
+  await expect(card.locator('figure a')).toHaveAttribute('href',/^https:\/\//);
+  await expect(card.locator('figcaption')).toHaveCount(0);
   if(page.viewportSize()?.width===390)await card.locator('figure').screenshot({path:'test-results/la-feature-'+picks[i].slug+'.png'});
  }
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();

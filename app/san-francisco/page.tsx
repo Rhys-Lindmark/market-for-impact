@@ -95,7 +95,7 @@ export default function SanFranciscoHome(){
         <div><GivingIllustration index={2} label="Illustration of choosing a charity"/><h2>Choose with care</h2><p>Read the report and confirm what your gift would fund before donating.</p></div>
       </section>
       <section aria-label="Four research leads">{picks.map((pick,i)=><article className="sf-home-charity" id={pick.slug} key={pick.slug}>
-        <figure><img src={pick.photo.startsWith('https://')?pick.photo:root+pick.photo} alt={pick.caption} width="480" height="480" loading="lazy" style={pick.photo.startsWith('https://')?{objectFit:'contain',background:'#fff'}:undefined}/><figcaption><a href={pick.source}>{pick.caption}</a></figcaption></figure>
+        <figure><a href={pick.source}><img src={pick.photo.startsWith('https://')?pick.photo:root+pick.photo} alt={pick.caption} width="480" height="480" loading="lazy" style={pick.photo.startsWith('https://')?{objectFit:'contain',background:'#fff'}:undefined}/></a></figure>
         <div><p className="sf-home-eyebrow">RESEARCH LEAD {i+1} OF 4</p><h2>{pick.program}</h2>
           <div className="sf-home-charity-body">
             <section><h3>Overview</h3><p>{pick.overview}</p></section>

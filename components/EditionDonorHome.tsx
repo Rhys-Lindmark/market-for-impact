@@ -32,9 +32,9 @@ export default function EditionDonorHome({id,label,reports}:{id:string;label:str
     {principles.map(([title,copy,alt],i)=><div key={title}><GivingIllustration index={i} label={alt}/><h2>{title}</h2><p>{copy}</p></div>)}
    </section>
    {picks.length===4&&<section aria-label="Four research leads">{picks.map((report,i)=>{
-    const photo=photos[report.edition+'/'+report.slug];
-    return impactNode(<article className={'sf-home-charity'+(photo?'':' sf-home-charity-without-image')} key={report.slug} id={report.slug}>
-     {photo&&<figure><a href={photo.source}><img src={photo.image.startsWith('https://')?photo.image:canonicalBase+photo.image} alt={photo.caption} width="480" height="480" loading="lazy" style={photo.logo?{objectFit:'contain'}:undefined}/></a></figure>}
+    const photo=photos[report.edition+'/'+report.slug]??{image:'/images/givebetter-city.webp',source:canonicalBase+editionReportPath(report),caption:`City illustration for ${report.organization}; not a photograph of its work.`,logo:true};
+    return impactNode(<article className="sf-home-charity" key={report.slug} id={report.slug}>
+     <figure><a href={photo.source}><img src={photo.image.startsWith('https://')?photo.image:canonicalBase+photo.image} alt={photo.caption} width="480" height="480" loading="lazy" style={photo.logo?{objectFit:'contain'}:undefined}/></a></figure>
      <div><p className="sf-home-eyebrow">RESEARCH LEAD {i+1} OF 4</p><h2>{report.organization}</h2>
       <div className="sf-home-charity-body">
        <section><h3>Overview</h3><p>{report.summary.what.join(' ')}</p></section>

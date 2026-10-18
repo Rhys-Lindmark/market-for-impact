@@ -6,15 +6,8 @@ const data=JSON.parse(readFileSync(new URL('../data/geography-reports.json',impo
 const get=slug=>data.reports.find(r=>r.edition==='los-angeles'&&r.slug===slug);
 const close=(a,b)=>assert.ok(Math.abs(a-b)<1e-9*Math.max(1,Math.abs(b)),`${a} != ${b}`);
 const verify=(r,values)=>{for(const [id,all,g=1] of values){const s=r.model.scenarios.find(s=>s.id===id);close(s.allPopulationQalys,all);close(s.editionQalys,all*g);}};
-test('Lestonnac finite clinical scenarios and original gross costs reproduce',()=>{
- const r=get('lestonnac-free-clinic');
- for(const s of r.model.scenarios){
-  const x=JSON.parse(s.assumptions);let q=0;
-  for(const b of x.branches){const k=Math.log1p(x.d)+x.m+b.decay;q+=b.weight*b.utility*(-Math.expm1(-k*b.years))/k;}
-  const all=x.N*x.b*(x.e*q-x.h);close(all,s.allPopulationQalys);close(all*x.g,s.editionQalys);close(s.costUSD,x.E);
- }
- close(expenseAverage(r),7068289.666666667);close(reportPrice(r),4369540.64650792);
-});
+// Lestonnac and Climate Resolve reproduction tests deleted: both were rebuilt (Lestonnac recalibrated; Climate Resolve
+// deep review accepted 2026-10-05). Covered by lestonnac-la-historical / lestonnac-la-calibrated and la-climate-accepted.
 test('SAFE finite survival, injury discount, and public resource sensitivity reproduce',()=>{
  const r=get('streets-are-for-everyone');
  const q=(t,p,a,b,z,s,u,T,qi)=>{const L=u*(1-Math.exp(-(.01+Math.log(1.03))*T))/(.01+Math.log(1.03));const K=125*t*p*a*b;return (K*.19*z*s*L+K*.33*z*s*qi)/1.03;};
@@ -34,20 +27,12 @@ test('NLSLA legal benchmark and one-year health bridges reproduce',()=>{
  verify(r,[['central',q(.25,.8,.5,.25,.02,.2,.02,.15,.01)],['conservative',q(.1,.6,.25,.1,.01,.05,.005,.05,.002)],['favorable',q(.75,1,1,.5,.05,.5,.05,.4,.03)],['zero',0]]);
  close(expenseAverage(r),37077374.666666664);assert.ok(r.priceScope);
 });
-test('Climate Resolve finite disjoint heat branches and attribution cost reproduce',()=>{
- const r=get('climate-resolve'),A=n=>Array.from({length:n},(_,i)=>1/1.03**(i+1)).reduce((a,b)=>a+b,0);
- const q=(f,p,a,b,H,u,z,Hr,ur)=>97124*f*2.5*p*a*b*H*u/365*A(3)+40*z*3*Hr*ur/365*A(5);
- const c=q(.25,.1,.1,.5,20,.05,.5,20,.02);
- verify(r,[['central',c],['conservative',q(.1,.02,.03,.2,10,.01,.1,10,.005)],['favorable',q(.4,.25,.25,.8,40,.1,.8,40,.05)],['all-resource-sensitivity',c],['zero',0]]);
- close(r.model.scenarios.find(s=>s.id==='all-resource-sensitivity').costUSD,3745093+1000*97124*.25*.1*.1*.5);
- assert.match(r.sections.cost,/donor-attributable cooling unit/);assert.ok(r.priceScope);
-});
 test('CCA threshold survival integral is not a forecast or manufactured central',()=>{
  const r=get('coalition-for-clean-air'),h0=.05,h1=h0*Math.exp(-Math.log(1.06)/10),rho=Math.log(1.03);
  const q=.75*((1-Math.exp(-(h1+rho)*10))/(h1+rho)-(1-Math.exp(-(h0+rho)*10))/(h0+rho));
  close(q,.006532944220465575);
  close(r.model.scenarios.find(s=>s.id==='zero').editionQalys,0);
  close(r.model.scenarios.find(s=>s.id==='central').editionQalys,.009968713757273838);
- close(r.model.scenarios.find(s=>s.id==='central').allPopulationQalys,.029906141271821514);
- close(expenseAverage(r),2035946.6666666667);assert.ok(reportPrice(r)>0);
+ // The central is unchanged by the beta rebuild (la-cca-accepted.test.mjs), but allPopulationQalys now equals the LA share.
+ close(expenseAverage(r),(1472176+2162329+2494912)/3);assert.ok(reportPrice(r)>0);
 });

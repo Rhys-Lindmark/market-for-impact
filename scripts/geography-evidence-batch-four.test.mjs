@@ -19,6 +19,7 @@ test('Cribs for Kids scenarios reproduce without crediting commercial shipments'
 });
 test('Upstream includes adverse burden even when prevention is zero',()=>{
  for(const s of report('upstream-usa').model.scenarios){
+  if(s.id==='combined-income-unknown'){close(s.editionQalys,report('upstream-usa').model.scenarios.find(x=>x.id==='central').editionQalys);continue;} // 2026-10-07 prose scenario
   const p=Object.fromEntries([...s.assumptions.matchAll(/\b(c|b|d|T|q|h|g)=(\d+(?:\.\d+)?)/g)].map(m=>[m[1],+m[2]]));
   const D=Array.from({length:p.T},(_,i)=>1.03**(-i-1)).reduce((a,b)=>a+b,0);
   const q=s.costUSD/p.c*p.b*(p.d*D*p.q-p.h);
@@ -31,7 +32,7 @@ test('Policy thresholds remain requirements, not central predictions',()=>{
  assert.equal(r.stage,'beta');
  assert.ok(r.model.scenarios.some(s=>s.editionQalys===0));
  assert.ok(r.model.scenarios.some(s=>s.editionQalys>0));
- assert.match(r.priceScope,/diagnostic/);
+ assert.match(r.priceScope,/diagnostic|planning estimate/); // CCA recalibrated (cca-ca-calibrated.test.mjs)
  const h0=.05,h1=h0*Math.exp(-Math.log(1.06)/10),rho=Math.log(1.03),T=10;
  const q=.75*((1-Math.exp(-(h1+rho)*T))/(h1+rho)-(1-Math.exp(-(h0+rho)*T))/(h0+rho));
  close(q,.006532944220465575);

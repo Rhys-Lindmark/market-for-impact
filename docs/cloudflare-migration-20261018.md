@@ -25,3 +25,15 @@ Follow docs/publishing.md. Inspect account resources and plan limits; provision/
 ## Space Saver
 
 Disk baseline: 21 GiB available, 95% used. Source clone 143 MiB. Reused a lockfile-identical dependency installation through per-package links; local Vite cache paths avoid writing shared dependencies. One production build directory (~48 MiB) and isolated local D1 state (~17 MiB) are regenerable. No browser installation or duplicate dependency installation. The task’s local preview on port 3118 was stopped after tests; no server needs to remain running. Production archives were not created. Keep concise evidence; clean local test traces after retaining outcomes.
+
+## Resumed resource setup
+
+Cloudflare MCP tools loaded and verified rhyslindmark@gmail.com. Account f53f66cf5f3fa18577e91e87b5100136 contains the existing Pages project with www and ai hostnames; initially no Workers or D1 databases. Created GiveBetter D1 fef36523-34e5-45f4-8fba-13c8ff9cc21c (WNAM) and bootstrap Worker givebetter, tag 7f48aea1121e43e9b75768063f39de70. Its bootstrap returns 503 while migration is prepared; no canonical traffic points to it. Temporary Worker origin: https://givebetter.rhyslindmark.workers.dev.
+
+Applied all 14 repository SQL migrations through D1 API after verifying the target had no user tables. Recorded them in d1_migrations with Wrangler-compatible journal columns. No old Sites data was altered. Connected GitHub repository 1351016147 / owner 194863602; connection UUID 3d6eefd9-9e5b-4f6e-9687-c0d8e3e565af.
+
+Blocker: builds/tokens list is empty, and Cloudflare OAuth rejects account and user API-token permission endpoints (9109). User was asked to create/select a build token via givebetter Settings → Builds, optionally connecting codex/cloudflare-deployment for the first test. Do not ask for token values in chat or repurpose stored MCP credentials. Once the token exists, configure/inspect the trigger through supported MCP APIs, set GIVEBETTER_ASSET_ORIGIN=https://givebetter.rhyslindmark.workers.dev for the pre-cutover build, and trigger a deployment. Eventually change trigger to main after merging the migration.
+
+Current size documentation checked through Cloudflare docs: 2026-09-04 changelog removes compressed limits; uncompressed Worker limit is 64 MiB across plans. The ~31.5 MiB upload is below that limit; this does not authorize a paid upgrade.
+
+Space Saver resumption samples: 16 GiB RAM, 33 GiB disk free, swap 0. Compressor physical storage 5.29 GiB then 5.42 GiB exceeds the 25% threshold. No local build/server or new browser page was launched; remote Cloudflare operations continued. Browser inventory showed no retained in-app tab; reset idle task CUA runtime before handoff. Largest measured Codex renderer PID1830 was ~855 MiB; no single over-budget process identified. Do not kill shared app or unrelated browsers. Before any new heavy local workload, follow Space Saver recovery and obtain two healthy samples 30 seconds apart.

@@ -2,7 +2,7 @@
 
 ## Current status
 
-Migration preparation only: Cloudflare is not serving GiveBetter yet. The database ID in wrangler.cloudflare.jsonc is deliberately a placeholder; deploy and remote migration commands refuse to use it. No automatic publishing relay exists.
+Cloudflare resources are provisioned, but canonical production still uses Sites. The GiveBetter Worker is a temporary bootstrap, not the application yet. All 14 schema migrations are applied to the new D1. The GitHub repository connection exists; its build token and first application deployment are pending. No automatic publishing relay exists.
 
 ## Existing routing
 

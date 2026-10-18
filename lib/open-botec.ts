@@ -7,8 +7,8 @@ type Dist = {p10: number | null; p50: number | null; p90: number | null; unit?: 
 type Estimate = (typeof registry.estimates)[number];
 
 export const openBotecBase = canonicalBase + '/api/open-botec';
-// The ai.rhyslindmark.com Pages proxy forwards only GET/HEAD for /givebetter, so MCP (POST) uses the Worker origin.
-export const mcpUrl = 'https://givebetter.rhyslindmark.workers.dev/api/mcp';
+// The ai.rhyslindmark.com Pages proxy allowlists POST/OPTIONS for this one path (rhyslindmark-website functions/_middleware.js).
+export const mcpUrl = canonicalBase + '/api/mcp';
 export const sourceRepo = 'https://github.com/Rhys-Lindmark/market-for-impact';
 export const sourceTree = registry.source;
 export const templates = registry.templates;

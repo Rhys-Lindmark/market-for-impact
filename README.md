@@ -308,9 +308,9 @@ When the ready queue drops below five items, replenish it from the research trac
 
 ## Deployment
 
-The public site is hosted with OpenAI Sites. Deploy only a commit that has passed the full validation sequence, and deploy that exact commit to the configured Sites source repository. Preserve the existing public URL and access settings; do not change domains, repository visibility, credentials, billing, or destructive settings as part of routine releases.
+The public site runs on Cloudflare Workers. Both Claude Opus and Codex can publish checked changes by pushing GitHub main; Workers Builds automatically builds, applies D1 migrations, and deploys. Verify the deployment and changed live page before reporting success. See [publishing instructions](docs/publishing.md). Preserve the existing public URL and access settings; do not change domains, repository visibility, credentials, billing, or destructive settings as part of routine releases.
 
-Current production URL: [market-for-impact.rhyslindmark.chatgpt.site](https://market-for-impact.rhyslindmark.chatgpt.site/)
+Current production URL: [ai.rhyslindmark.com/givebetter](https://ai.rhyslindmark.com/givebetter/). The previous OpenAI Sites deployment remains available for rollback.
 
 ## Contributing
 

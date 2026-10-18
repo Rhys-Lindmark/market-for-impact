@@ -1,5 +1,7 @@
 # Cloudflare migration checkpoint — 18 October 2026
 
+Status: **cut over to Cloudflare production**. Earlier checkpoint sections below preserve the preparation history; the final receipt at the end and docs/publishing.md describe the current setup.
+
 ## Objective and authorization
 
 Rhys requested moving GiveBetter to Cloudflare so Claude Opus and Codex can both publish through GitHub. Keep https://ai.rhyslindmark.com/givebetter/ and preserve other sites. Rhys explicitly approved Cloudflare MCP’s broad persistent account access in this chat. No scheduled Codex relay was created. Use the in-app browser, not the user’s Chrome, for subsequent browser work.
@@ -39,3 +41,19 @@ Current size documentation checked through Cloudflare docs: 2026-09-04 changelog
 Space Saver resumption samples: 16 GiB RAM, 33 GiB disk free, swap 0. Compressor physical storage 5.29 GiB then 5.42 GiB exceeds the 25% threshold. No local build/server or new browser page was launched; remote Cloudflare operations continued. Browser inventory showed no retained in-app tab; reset idle task CUA runtime before handoff. Largest measured Codex renderer PID1830 was ~855 MiB; no single over-budget process identified. Do not kill shared app or unrelated browsers. Before any new heavy local workload, follow Space Saver recovery and obtain two healthy samples 30 seconds apart.
 
 Captured six live Sites API payloads for later data reconciliation in ignored work/migration-sites-baseline.json. Final lightweight process accounting: Codex app family 90 processes, 3.99 GiB summed RSS (lower bound, excludes compressed/swapped memory). Largest family renderer PID1830 ~861 MiB. Idle task CUA runtime reset; no new browser tab, local server, or build was started during recovery.
+
+## Production cutover receipt
+
+User created the Workers Builds token in the dashboard. Configured the existing trigger for GitHub main, Node 22, provenance/release guard tests, native Cloudflare build, D1 migrations, and Worker deployment. Credentials stay in Cloudflare. No further account setup is required for either agent; GitHub push access is sufficient for routine publication.
+
+Merged migration PR #389. Push event for main 6b3c2c8e6e8382133c1bd177668141f063b81f77 automatically completed build 6db5de94-2e74-4c0b-b2f0-7018ac120ea4 successfully at 17:17:11 UTC. Deployed Worker version 95f41c9d-5e73-4d08-806f-48bfc910aee7; no pending D1 migrations. Dedicated database fef36523-34e5-45f4-8fba-13c8ff9cc21c contains 14 migrations, 3,570 grant rows (3,491 accepted plus 79 Coefficient), 1,254 organizations, 1,784 SF contracts, and 24 sources after seeding.
+
+Fetched the latest website middleware and changed only the GiveBetter upstream URL, guarded by GitHub's current file SHA. Routing commit 61a5f5ca52fc87511df196d5d058be2d443e9cc4 automatically completed Pages deployment eaa4dbec-4daf-42f9-ba00-649de04b5c38 at 17:19:06 UTC. No DNS, www, or other application routing changes. All 16 middleware checks passed.
+
+Canonical production checks: all six API summaries match the preserved Sites baseline; five representative pages and their JavaScript/CSS load; City Theory says “What we learned from 295 reports”; www and BYOW respond normally. Remote browser checks show tablet City Theory width 768/768 with three loaded stylesheets; phone SF width 390/390, three stylesheets, zero broken images, and a visually inspected screenshot. Evidence is retained in ignored work/cloudflare-canonical-checks.json and work/cloudflare-canonical-phone.webp. A subsequent navigation QA request hit Cloudflare Browser Run's rate limit; retry after cooldown, without upgrading billing.
+
+Concurrent main update 3097b9c (featured-unit rounding and its tests) was fetched, inspected, and preserved. Local focused checks after integration: 19 passed. The broad research-library mobile GitHub suite was still running at cutover; its result is tracked separately and is not claimed as passed. The Cloudflare build and deployment checks passed.
+
+The former Sites deployment and database remain intact for rollback. Normal publication now uses GitHub main only, as documented in AGENTS.md, CLAUDE.md, README.md, and docs/publishing.md. Social image metadata uses the canonical public URL.
+
+Resource boundary: compressor physical storage reached 6.89 GiB (451,356 × 16 KiB), exceeding the 4 GiB recovery threshold; no heavy local build, server, or browser was launched. Hosted builds and remote browser checks avoided increasing local workloads. Disk free 33 GiB. Task-generated dist (~45 MiB), isolated .wrangler/state (~16 MiB), and a corrupt screenshot are disposable; preserve baseline and accepted QA evidence.

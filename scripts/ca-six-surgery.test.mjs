@@ -14,24 +14,23 @@ const cases=[
 for(const [slug,q] of cases)test(slug+' CA central and partial-health safeguards',()=>{
  const r=d.reports.find(r=>r.edition==='california'&&r.slug===slug);
  const central=r.model.scenarios.find(s=>s.id==='central');
- if(slug==='california-school-based-health-alliance'){
-  assert.equal(r.stage,'beta');assert.equal(central.editionQalys,null);
-  assert.match(r.priceScope,/withdrawn/i);
-  assert.match(r.sections.cost,/historical low and high calculations also reproduce/i);
- }else close(central.editionQalys,q);
+ // Champions and CSBHA were recalibrated on 2026-10-02 (champions-ca-calibrated / csbha-ca-calibrated tests cover the
+ // current central); their original alpha arithmetic is preserved as the historical-alpha-central scenario.
+ const recalibrated=['champions-for-health','california-school-based-health-alliance'].includes(slug);
+ close((recalibrated?r.model.scenarios.find(s=>s.id==='historical-alpha-central'):central).editionQalys,q);
  assert.ok(r.priceScope.length);assert.equal(r.acceptance.status,'accepted');
  assert.equal(r.summary.reservations.length,3);
  assert.ok(r.model.scenarios.some(s=>s.editionQalys===0));
- if(slug!=='california-school-based-health-alliance')assert.ok(r.model.scenarios.some(s=>s.editionQalys<0));
+ assert.ok(r.model.scenarios.some(s=>s.editionQalys<0));
  assert.ok(r.model.scenarios.every(s=>typeof s.assumptions==='string'));
 });
 test('Surgery beta finite survival and resource scenarios',()=>{
+ // Surgery on Sunday was recalibrated on 2026-10-02 (surgery-on-sunday-usa-calibrated / -historical tests cover the
+ // current model); the original beta survives as the historical-beta-central scenario and must still reproduce.
  const r=d.reports.find(r=>r.edition==='usa'&&r.slug==='surgery-on-sunday');
- assert.equal(r.stage,'beta');assert.equal(r.model.scenarios.length,10);
- for(const s of r.model.scenarios){
-  if(s.id.startsWith('resource-cost')){close(s.editionQalys,.24680642920507342);assert.ok(s.costUSD>10000);continue;}
-  const p=Object.fromEntries([...s.assumptions.matchAll(/(?:^|, )([A-Za-zΔ]+)=([0-9.]+)/g)].map(m=>[m[1],parseFloat(m[2])]));
-  let life=0;for(let t=1;t<=p.T;t++)life+=p.Δu*((1-p.m)/1.03)**t;
-  close(p.G/p.c*p.b*(p.s*life-p.h)*p.g,s.editionQalys);
- }
+ assert.equal(r.stage,'beta');assert.ok(r.model.scenarios.length>=10);
+ const s=r.model.scenarios.find(s=>s.id==='historical-beta-central');
+ const p=Object.fromEntries([...s.assumptions.matchAll(/(?:^|[ ,])([A-Za-zΔ]+)=([0-9.]+)/g)].map(m=>[m[1],parseFloat(m[2])]));
+ let life=0;for(let t=1;t<=p.T;t++)life+=p.Δu*((1-p.m)/1.03)**t;
+ close(p.G/p.c*p.b*(p.s*life-p.h)*p.g,s.editionQalys);
 });

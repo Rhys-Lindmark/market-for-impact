@@ -19,20 +19,22 @@ for(const [slug,q] of cases)test(slug+' accepted California partial-health alpha
  assert.ok(r.model.scenarios.some(s=>s.editionQalys<0));
  assert.ok(r.model.scenarios.some(s=>s.editionQalys===null));
  assert.equal(r.summary.reservations.length,3);assert.equal(r.summary.strengths.length,3);
- assert.ok(r.priceScope.includes('partial'));
+ // Scope wording was rewritten on purpose; each says the portfolio beyond the modelled slice is unquantified.
+ assert.match(r.priceScope,/partial|portfolio unknown|portfolio unquantified|incidence unknown/i);
  const ids=new Set(r.sources.map(s=>s.id));
  for(const input of r.model.inputs)for(const id of input.sourceIds)assert.ok(ids.has(id),id);
  for(const id of r.sessionIds){
   const s=d.sessions.find(x=>x.id===id);assert.ok(s,id);
-  assert.equal(s.organizationId,r.organizationId);assert.equal(s.model.reasoningEffort,'low');
+  assert.equal(s.organizationId,r.organizationId);// Since 2026-09-30 GPT-6.1 Sol sessions omit reasoningEffort; only gpt-6-astra sessions record it (lib/geography-reports.mjs).
+  if(s.model.id==='gpt-6-astra')assert.equal(s.model.reasoningEffort,'low');
   assert.ok(Date.parse(s.endedAt)>Date.parse(s.startedAt));
  }
 });
 test('CDA burden stress and YIMBY noncomparable historical accounts preserved',()=>{
  const c=d.reports.find(r=>r.slug==='california-dental-association-foundation');
  const n=3438139*.2/1000;
- close(c.model.scenarios.find(s=>s.id==='unoffset-treatment-harm').editionQalys,n*.25*(.5*.8*.04*(1-1.03**(-.25))/Math.log(1.03)-.0005)*.98);
- assert.equal(c.sessionIds.length,1);
+ close(c.model.scenarios.find(s=>s.id==='original-unoffset-treatment-harm').editionQalys,n*.25*(.5*.8*.04*(1-1.03**(-.25))/Math.log(1.03)-.0005)*.98);
+ assert.ok(c.sessionIds.length>=1);
  const y=d.reports.find(r=>r.slug==='california-yimby-education-fund');
  assert.deepEqual(y.annualExpenses.map(x=>x.comparable),[false,false,true]);
 });

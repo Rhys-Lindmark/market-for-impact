@@ -1,6 +1,7 @@
 import data from '@/data/research-expenses.json';
 import {expenseSummary,historicalContractExpenseSummary} from '@/lib/research-expenses.mjs';
 import {unifiedResearch} from '@/lib/unified-research-index';
+import AnnualBudgetDisclosure from '@/components/AnnualBudgetDisclosure';
 
 type ExpenseRecord={entity:string;basis:string;note?:string;sources?:string[];years:{year:number;expenses:number|null;source:string;fullYear?:boolean}[];historicalContractSpending?:{scope:string;note:string;years:{year:number;period:string;expenses:number;source:string;fullYear?:boolean}[]}};
 const records=data.organizations as Record<string,ExpenseRecord>;
@@ -12,6 +13,7 @@ const reportAliases:Record<string,string>={
  [normalize('Ear of the Lion Foundation of California–Nevada')]:'ear-of-lion',
  [normalize('HIV Education and Prevention Project of Alameda County (HEPPAC)')]:'heppac',
  [normalize('HOPE: Healing, Overdose Prevention, and Education')]:'hope-pacifica',
+ [normalize('HOPE Pacifica')]:'hope-pacifica',
  [normalize('Richmond Area Multi-Services (RAMS)')]:'rams',
  [normalize('Bayview Hunters Point Foundation for Community Improvement')]:'bayview-hunters-point-foundation',
 };
@@ -34,6 +36,7 @@ export default function ReportExpenseAppendix({organization,slug}:{organization:
  const years=[...(record?.years??[])].sort((a,b)=>b.year-a.year);
  return <section id="annual-expenses" data-expense-appendix data-average-expenses={average??undefined}>
   <h2>Annual expenses: years and sources</h2>
+  <AnnualBudgetDisclosure edition="san-francisco" slug={slug??reportAliases[normalize(organization)]??(normalize(organization)===normalize('Project Homeless Connect')?'project-homeless-connect':'')}/>
   <p><strong>Average annual expenses (three consecutive fiscal years): {average===null?'Not available':money(average)}.</strong> Organization size is separate from the modeled cost-effectiveness of a donation.</p>
   <p>{record?.entity??organization}</p>
   <p>{record?.basis??'Three years of organization-level expenses have not yet been verified for this report. No other organization or fiscal sponsor budget has been substituted.'}</p>

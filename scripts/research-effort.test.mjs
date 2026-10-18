@@ -5,12 +5,19 @@ import {spawnSync} from 'node:child_process';
 import {researchEffortSummary,validateResearchEffort} from '../lib/research-effort.mjs';
 const session={id:'one',workerId:'author',phase:'research',startedAt:'2026-01-01T10:00:00Z',endedAt:'2026-01-01T10:20:03Z',model:{id:'fixture-model',name:'Fixture model',evidence:'test-only identity'},evidence:'test-only timing'};
 const data=(sessions=[session],coverage='complete')=>({version:1,timeBasis:'Summed researcher intervals.',historicalCoverage:'Not recorded.',organizations:{Example:{coverage,sessions}}});
-test('published research has no unrecorded model labels after user confirmation',()=>{
+test('historical confirmed model attribution is retained without inventing identities for later supplements',()=>{
  const registry=JSON.parse(fs.readFileSync('data/research-effort.json','utf8'));
- for(const name of Object.keys(registry.organizations))assert.doesNotMatch(researchEffortSummary(registry,name).label,/unrecorded AI model/);
+ const cutoff=Date.parse('2026-10-01T00:00:00Z');
+ for(const [name,record] of Object.entries(registry.organizations)){
+  const sessions=record.sessions.filter(s=>Date.parse(s.startedAt)<cutoff);
+  if(sessions.length)assert.doesNotMatch(researchEffortSummary({...registry,organizations:{[name]:{...record,sessions}}},name).label,/unrecorded AI model/);
+ }
  const editions=JSON.parse(fs.readFileSync('data/geography-reports.json','utf8'));
- for(const s of editions.sessions)assert.ok(s.model,'Published session '+s.id+' needs a model');
- const confirmed=editions.sessions.filter(s=>/User-confirmed model assignment/.test(s.model.evidence));
+ for(const s of editions.sessions){
+  if(Date.parse(s.startedAt)<cutoff)assert.ok(s.model,'Historical confirmed session '+s.id+' needs its recorded model');
+  if(s.model===null)assert.ok(Date.parse(s.startedAt)>=cutoff&&s.evidence,'Later unknown runtime identity stays null with dated evidence');
+ }
+ const confirmed=editions.sessions.filter(s=>/User-confirmed model assignment/.test(s.model?.evidence??''));
  assert.ok(confirmed.length>=24);
  assert.ok(confirmed.every(s=>s.model.id==='gpt-6.1-sol'&&s.model.name==='GPT-6.1 Sol'));
 });

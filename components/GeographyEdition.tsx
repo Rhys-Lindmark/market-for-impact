@@ -36,7 +36,7 @@ export default function GeographyEdition({id,research=false}:{id:string;research
   <p>Estimated {impactMetric().priceLabel} in {edition.label}. {impactUnitExplanation}</p>
   <p className={styles.caveat}>Sorted by modeled cost, not recommendation strength. These are uncertain research estimates, not verified donation offers. Cost boundaries differ; see each report before comparing.</p>
   <p className={styles.caveat}>Prices include modeled health and <a href={canonicalBase+'/methodology/income'}>income benefits</a> where quantified. Older reports without income models await recalibration; income equivalents are not observed QALYs.</p>
-  <p><a href={canonicalBase+path}>Our giving shortlist</a> · <a href={canonicalBase+'/all'}>All cities and regions</a></p></section>
+  <p><a href={canonicalBase+'/compare/cities'}>Compare the top four across cities</a></p><p><a href={canonicalBase+path}>Our giving shortlist</a> · <a href={canonicalBase+'/all'}>All cities and regions</a></p></section>
   {featured.length===4&&<section aria-label="Four featured opportunities"><h2>Four featured opportunities</h2><p>{featured.map((r,i)=><span key={r.slug}>{i>0&&' · '}<a href={canonicalBase+editionReportPath(r)}>{r.organization}</a></span>)}</p></section>}
   {reports.length?<EditionResearchTable reports={reports}/>:<p>Research reports are being prepared for this edition.</p>}
   <details className="gb-edition-boundary"><summary>Research progress</summary><p>{edition.discoveryAccepted}/100 candidates screened · {edition.alphaPublished}/25 initial reports · {edition.betaAcceptedPublished}/10 in-depth reviews.</p></details>

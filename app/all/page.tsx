@@ -16,6 +16,7 @@ export default function EditionsPage(){
  const incomeUnknown=editions.reduce((sum,e)=>sum+documentedUnknownIncomeAssessments(reports,e.id).length,0);
  return <div className="givebetter"><EditionMasthead/><main className="gb-edition"><h1>Cities and regions</h1>
  <p>Explore San Francisco and seven active editions. Each edition compares 25 organizations, examines ten in greater depth, and highlights four promising giving opportunities.</p>
+ <p><a href={canonicalBase+'/compare/cities'}>Compare the top four across cities</a></p>
  <div className="gb-edition-table-wrap"><table className="gb-edition-table" aria-label="Research by city and region"><thead><tr><th scope="col">Edition</th><th scope="col">Research reports</th><th scope="col">In-depth reviews</th></tr></thead><tbody><tr><th scope="row"><a href={canonicalBase+'/san-francisco'}>San Francisco</a></th><td>{unifiedResearch.length}</td><td>{readiness.reviews.length}</td></tr>{editions.map(e=><tr key={e.id}><th scope="row"><a href={canonicalBase+editionPath(e.id)}>{e.label}</a></th><td>{e.alphaPublished}/25</td><td>{e.betaAcceptedPublished}/10</td></tr>)}</tbody></table></div>
  <details><summary>Research time and progress</summary>
  <p>Budget per edition: 60 minutes for discovery, 5 × 25 minutes for initial reports, and 15 × 10 minutes for deep reviews: 335 minutes, including substantive independent review. Existing discovery pools are reused. New-report research remaining: {Math.floor(remaining/60)}h {remaining%60}m, before tests/publishing overhead.</p>

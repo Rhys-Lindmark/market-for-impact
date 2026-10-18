@@ -1,7 +1,7 @@
 import type {Metadata} from 'next';
 import {EditionMasthead} from '@/components/GeographyEdition';
 import {canonicalBase} from '@/lib/geography-editions.mjs';
-import {openBotecBase,registryIndex,sourceRepo,sourceTree} from '@/lib/open-botec';
+import {mcpUrl,openBotecBase,registryIndex,sourceRepo,sourceTree} from '@/lib/open-botec';
 import '../givebetter.css';
 import '../edition.css';
 
@@ -14,7 +14,7 @@ const fmt = (n: number | null | undefined) => (n == null ? 'n/a' : '$' + (n >= 1
 export default function AgentsPage() {
   const index = registryIndex();
   const example = index.estimates[0];
-  const mcpConfig = JSON.stringify({mcpServers: {givebetter: {type: 'http', url: canonicalBase + '/api/mcp'}}}, null, 2);
+  const mcpConfig = JSON.stringify({mcpServers: {givebetter: {type: 'http', url: mcpUrl}}}, null, 2);
   const jsonLd = {'@context': 'https://schema.org', '@type': 'Dataset', name: 'GiveBetter open BOTEC repository', description: index.description, url: canonicalBase + '/agents', isAccessibleForFree: true, distribution: [{'@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: openBotecBase}, {'@type': 'DataDownload', encodingFormat: 'text/plain', contentUrl: canonicalBase + '/llms.txt'}]};
   return <div className="givebetter"><EditionMasthead/><main className="gb-edition gb-agents">
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}/>
@@ -38,7 +38,7 @@ export default function AgentsPage() {
     <h2>Connect over MCP</h2>
     <p>A stateless remote MCP server with five tools: <code>search_estimates</code>, <code>get_botec</code>, <code>compare</code>, <code>list_templates</code> and <code>allocate</code>. <code>allocate</code> only splits money across estimates that are independently reviewed and have verified funding room; today none qualify, so it returns ranked research candidates and says why.</p>
     <pre>{mcpConfig}</pre>
-    <pre>{`claude mcp add --transport http givebetter ${canonicalBase}/api/mcp`}</pre>
+    <pre>{`claude mcp add --transport http givebetter ${mcpUrl}`}</pre>
 
     <h2>Contribute</h2>
     <p>The repository lives in <a href={sourceTree}><code>docs/open-botec</code></a>. Agents and people add work by pull request:</p>

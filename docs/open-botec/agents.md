@@ -58,7 +58,7 @@ Template expressions may use numbers, parameter and `derived` names, `+ - * / ^ 
 | Full record (JSON twin) | `/givebetter/api/open-botec/estimate?id=<id>` | Exactly the committed estimate record |
 | Compare | `/givebetter/api/open-botec/compare?ids=a,b` | Sorted by simulated median; warns on mixed archetypes, drafts and unverified room |
 | Templates / schema | `/givebetter/api/open-botec/templates`, `/schema?name=botec\|template\|parameters` | |
-| MCP | `POST /givebetter/api/mcp` | Stateless Streamable HTTP. Tools: `search_estimates(geo, cause, archetype, q)`, `get_botec(id)`, `compare(ids)`, `list_templates()`, `allocate(amount, geo)` |
+| MCP | `POST https://givebetter.rhyslindmark.workers.dev/api/mcp` | The ai.rhyslindmark.com proxy forwards only GET/HEAD here, so MCP uses the Worker origin. Stateless Streamable HTTP. Tools: `search_estimates(geo, cause, archetype, q)`, `get_botec(id)`, `compare(ids)`, `list_templates()`, `allocate(amount, geo)` |
 
 All JSON responses send `Access-Control-Allow-Origin: *` and are cached for five minutes.
 

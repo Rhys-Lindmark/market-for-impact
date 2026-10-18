@@ -1,5 +1,5 @@
 import {canonicalBase} from '@/lib/geography-editions.mjs';
-import {openBotecBase,registryIndex,sourceRepo,sourceTree} from '@/lib/open-botec';
+import {mcpUrl,openBotecBase,registryIndex,sourceRepo,sourceTree} from '@/lib/open-botec';
 
 // Plain-text entry point for agents (llmstxt.org format). Linked from /all and /agents.
 export async function GET() {
@@ -24,7 +24,7 @@ export async function GET() {
     '',
     '## MCP',
     '',
-    `- [MCP server](${canonicalBase}/api/mcp): stateless Streamable HTTP. Tools: search_estimates, get_botec, compare, list_templates, allocate`,
+    `- [MCP server](${mcpUrl}): stateless Streamable HTTP. Tools: search_estimates, get_botec, compare, list_templates, allocate`,
     '',
     '## Contribute',
     '',

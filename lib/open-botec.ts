@@ -7,6 +7,8 @@ type Dist = {p10: number | null; p50: number | null; p90: number | null; unit?: 
 type Estimate = (typeof registry.estimates)[number];
 
 export const openBotecBase = canonicalBase + '/api/open-botec';
+// The ai.rhyslindmark.com Pages proxy forwards only GET/HEAD for /givebetter, so MCP (POST) uses the Worker origin.
+export const mcpUrl = 'https://givebetter.rhyslindmark.workers.dev/api/mcp';
 export const sourceRepo = 'https://github.com/Rhys-Lindmark/market-for-impact';
 export const sourceTree = registry.source;
 export const templates = registry.templates;
@@ -67,7 +69,7 @@ export function registryIndex() {
     version: registry.registryVersion,
     docs: canonicalBase + '/agents',
     llmsTxt: canonicalBase + '/llms.txt',
-    mcp: canonicalBase + '/api/mcp',
+    mcp: mcpUrl,
     contribute: sourceTree,
     endpoints: {
       search: `${openBotecBase}?geo={geoId}&cause={causeArea}&archetype={archetypeId}&q={text}`,

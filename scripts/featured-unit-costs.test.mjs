@@ -44,5 +44,23 @@ test('native prices fail closed on missing, zero, negative or stale data; small 
   assert.throws(()=>evaluateUnitExpression({ref:'missing.value'},{}));
   assert.throws(()=>evaluateUnitExpression({value:4,evidence:{ref:'text',includes:'four'}},{text:'changed'}),/Stale/);
   assert.throws(()=>calculateUnitCost({kind:'observed-average',numerator:{value:10},denominator:{value:0}},{}));
-  assert.equal(formatNativeUnitMoney(150), '$150');assert.equal(formatNativeUnitMoney(1479.07),'$1,479');assert.equal(formatNativeUnitMoney(.25),'$0.25');assert.equal(formatNativeUnitMoney(28781.584),'$29K');assert.equal(formatNativeUnitMoney(5206772),'$5.2M');
+  for(const value of [0,-1,Infinity,NaN,null])assert.throws(()=>formatNativeUnitMoney(value));
+});
+test('About amounts round to two significant figures without changing native calculations',()=>{
+  const cases=[
+    [5412,'$5,400'],[1479.07,'$1,500'],[150,'$150'],[600,'$600'],
+    [1.61296,'$1.6'],[26.6667,'$27'],[.25,'$0.25'],[.0254,'$0.025'],
+    [999,'$1,000'],[9995,'$10K'],[28781.584,'$29K'],
+    [487462.6,'$490K'],[999999,'$1M'],[5206772,'$5.2M'],
+  ];
+  for(const [value,expected] of cases)assert.equal(formatNativeUnitMoney(value),expected);
+  for(const row of [...selected.map(nativeUnitForReport),...sf.map(nativeUnitForSF)]){
+    if(row.priceUSD===null)continue;
+    assert.equal(row.priceUSD,row.costUSD/row.units);
+    assert.ok(row.line.includes(formatNativeUnitMoney(row.priceUSD)));
+    const displayed=Number(formatNativeUnitMoney(row.priceUSD).replace(/[^\d.]/g,''));
+    const suffix=formatNativeUnitMoney(row.priceUSD).slice(-1);
+    const scale=({K:1e3,M:1e6,B:1e9,T:1e12})[suffix]??1;
+    assert.ok(Math.abs(displayed*scale-Number(row.priceUSD.toPrecision(2)))<=Number(row.priceUSD.toPrecision(2))*1e-12,row.key);
+  }
 });

@@ -1,9 +1,9 @@
 import {impactNode} from '@/components/ImpactMetric';
-import {formatImpactPrice,impactMetric,impactUnitExplanation} from '@/lib/impact-metric.mjs';
+import {impactMetric,impactUnitExplanation} from '@/lib/impact-metric.mjs';
 /* eslint-disable @next/next/no-img-element -- Reuse the existing editorial illustrations. */
 import type {EditionReport} from '@/lib/published-geography-reports';
 import {canonicalBase,editionPath} from '@/lib/geography-editions.mjs';
-import {editionReportPath,formatEditionMoney,reportPrice} from '@/lib/geography-reports.mjs';
+import {editionReportPath,formatEditionReportPrice,reportPrice} from '@/lib/geography-reports.mjs';
 import highlights from '@/data/edition-highlights.json';
 import {featuredReports} from '@/lib/edition-featured.mjs';
 import {nativeUnitForReport} from '@/lib/featured-unit-costs.mjs';
@@ -13,8 +13,7 @@ import '@/app/sf-home.css';
 export default function EditionDonorHome({id,label,reports,discovery,alpha,beta}:{id:string;label:string;reports:EditionReport[];discovery:number;alpha:number;beta:number}){
  const path=editionPath(id);
  const photos=highlights as Record<string,{image:string;source:string;caption:string;logo?:boolean}>;
- const selected=featuredReports(reports,id);
- const picks=selected.every(r=>photos[r.edition+'/'+r.slug])?selected:[];
+ const picks=featuredReports(reports,id);
  const principles=[
   ['Look for meaningful impact',`Compare how a donation could improve health and household resources in ${label}.`,'Map illustration'],
   ['Follow the evidence','Understand the outcomes, costs and assumptions behind each estimate.','Illustration of research books'],
@@ -33,12 +32,12 @@ export default function EditionDonorHome({id,label,reports,discovery,alpha,beta}
    </section>
    {picks.length===4&&<section aria-label="Four research leads">{picks.map((report,i)=>{
     const photo=photos[report.edition+'/'+report.slug];
-    return impactNode(<article className="sf-home-charity" key={report.slug} id={report.slug}>
-     <figure><a href={photo.source}><img src={photo.image.startsWith('https://')?photo.image:canonicalBase+photo.image} alt={photo.caption} width="480" height="480" loading="lazy" style={photo.logo?{objectFit:'contain'}:undefined}/></a></figure>
+    return impactNode(<article className={'sf-home-charity'+(photo?'':' sf-home-charity-without-image')} key={report.slug} id={report.slug}>
+     {photo&&<figure><a href={photo.source}><img src={photo.image.startsWith('https://')?photo.image:canonicalBase+photo.image} alt={photo.caption} width="480" height="480" loading="lazy" style={photo.logo?{objectFit:'contain'}:undefined}/></a></figure>}
      <div><p className="sf-home-eyebrow">RESEARCH LEAD {i+1} OF 4</p><h2>{report.organization}</h2>
       <div className="sf-home-charity-body">
        <section><h3>Overview</h3><p>{report.summary.what.join(' ')}</p></section>
-       <section><h3>Cost-effectiveness</h3><NativeUnitCost estimate={nativeUnitForReport(report)} reportHref={canonicalBase+editionReportPath(report)}/><p><strong>{formatImpactPrice(reportPrice(report))} per {impactMetric().label}</strong>, modeled in {label}.</p></section>
+       <section><h3>Cost-effectiveness</h3><NativeUnitCost estimate={nativeUnitForReport(report)} reportHref={canonicalBase+editionReportPath(report)}/><p><strong>{formatEditionReportPrice(report)} per {impactMetric().label}</strong>, modeled in {label}.</p><p>{report.stage==='alpha'?'Initial review.':'In-depth review.'}{reportPrice(report)===null?' Retained historical reference; a current combined estimate is unavailable.':''}</p></section>
        <section><h3>Why investigate</h3><p>{report.summary.strengths[0]}</p></section>
        <section><h3>Main reservation</h3><p>{report.summary.reservations[0]}</p></section>
        <section><h3>Organization and research</h3><div className="sf-home-org-card"><h4>{report.organization}</h4><a className="sf-home-report" href={canonicalBase+editionReportPath(report)}>Full research report</a></div></section>
@@ -55,7 +54,7 @@ export default function EditionDonorHome({id,label,reports,discovery,alpha,beta}
    <details className="sf-home-selection">
     <summary>Research progress</summary>
     <p>{discovery}/100 candidates screened · {alpha}/25 initial reports · {beta}/10 in-depth reviews.</p>
-    <p>{picks.length===4?'Four featured opportunities are selected from accepted in-depth reviews using current modeled costs, operations and financial evidence. These are research comparisons, not confirmed offers to purchase additional impact.':'We are developing best estimates from costs, outcomes and explicit assumptions. The shortlist will also consider current operations, financial evidence and room for more funding.'}</p>
+    <p>{picks.length===4?'These are the first four positive modeled prices in the full research list, in the same order. Initial reviews and retained historical references are included and labeled. These are research comparisons, not confirmed offers to purchase additional impact.':'We are developing best estimates from costs, outcomes and explicit assumptions.'}</p>
     <a href={canonicalBase+path+'/all'}>Detailed research and geographic scope</a>
    </details>
    <footer className="sf-home-footer"><a href={canonicalBase+path+'/all'}>All {label} research</a><span className="sf-footer-separator" aria-hidden="true">·</span><a href={canonicalBase+'/all'}>All cities and regions</a></footer>

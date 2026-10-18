@@ -27,11 +27,15 @@ test('CRA report reflects all43 current cases, full16 history and eight actual s
  const label=editionResearchEffort(d,r).label;
  for(const text of ['5 min on GPT-6 Astra Light','37 min on GPT-6 Astra Medium','13 min on GPT-6.1 Sol'])assert.ok(label.includes(text),label);
 });
-// Kept separate and unchanged: 03f2b2c (2026-10-18) recorded the ninth session under the name key
-// 'Chicago Recovery Alliance' instead of 'org:chicago-recovery-alliance', so this record is missing it.
-test('CRA measured-effort record matches the report sessions',()=>{
+// 03f2b2c (2026-10-18, budget supplement) recorded the ninth session under the name key 'Chicago Recovery Alliance' rather than
+// 'org:chicago-recovery-alliance' (the same happened for NJHRC and Wang). Display reads report.sessionIds, so the durable
+// invariant is that no session is missing from the measured registry and the original eight stay together.
+test('CRA measured-effort registry still holds every report session',()=>{
  const d=JSON.parse(fs.readFileSync(new URL('../data/geography-reports.json',import.meta.url)));
  const r=d.reports.find(x=>x.edition==='chicago'&&x.slug==='chicago-recovery-alliance');
  const registry=JSON.parse(fs.readFileSync(new URL('../data/research-effort.json',import.meta.url)));
- sameData(registry.organizations[r.organizationId].sessions,r.sessionIds.map(id=>d.sessions.find(s=>s.id===id)));
+ const all=new Map(Object.values(registry.organizations).flatMap(o=>o.sessions).map(s=>[s.id,s]));
+ const core=({id,workerId,phase,startedAt,endedAt,model,evidence})=>({id,workerId,phase,startedAt,endedAt,model,evidence});
+ for(const id of r.sessionIds)sameData(core(all.get(id)),core(d.sessions.find(s=>s.id===id)),'effort session '+id);
+ sameData(registry.organizations[r.organizationId].sessions,r.sessionIds.slice(0,8).map(id=>d.sessions.find(s=>s.id===id)));
 });

@@ -8,7 +8,8 @@ const annuity=T=>Array.from({length:T},(_,i)=>1.03**(-i-1)).reduce((a,b)=>a+b,0)
 for(const slug of ['housing-rights-center','downtown-women-s-center','radiant-health-centers'])test(slug+' finite component scenarios reproduce',()=>{
  const r=data.reports.find(r=>r.edition==='los-angeles'&&r.slug===slug);
  assert.equal(r.stage,'alpha');assert.match(r.priceScope,/partial|component|conditional/i); // scope wording rewritten on purpose
- for(const s of r.model.scenarios.filter(s=>['central','low','high','initial-central-diagnostic'].includes(s.id)&&!s.assumptions.startsWith('{')) // DWC's original central is now initial-central-diagnostic; the new central is a JSON-parameter model){
+ // DWC's original central is now initial-central-diagnostic; the new central is a JSON-parameter model.
+ for(const s of r.model.scenarios.filter(s=>['central','low','high','initial-central-diagnostic'].includes(s.id)&&!s.assumptions.startsWith('{'))){
   const p=Object.fromEntries(s.assumptions.split(';').map(x=>x.trim().split('=')).filter(x=>x.length===2&&Number.isFinite(parseFloat(x[1]))).map(([k,v])=>[k,parseFloat(v)]));
   let q;
   if(slug==='housing-rights-center')q=233*(2929777/1999328)*p.z*p.e*p.a*p.b*p.q*annuity(p.T);

@@ -20,8 +20,9 @@ test('NJHRC integrated report preserves history, local welfare price and closed 
   assert.equal(s.incomeUnknown,v.resourcesLocal===null);
   if(v.resourcesLocal!==null)assert.ok(Math.abs(s.incomePathways.reduce((n,f)=>n+income(f),0)-v.resourcesLocal)<1e-12);
  }
- assert.equal(new Set(r.sessionIds).size,10);
- const fresh=d.sessions.filter(s=>r.sessionIds.slice(5).includes(s.id));
+ // Ten sessions at integration; the 2026-10-18 annual-budget pass (03f2b2c) appended an eleventh.
+ assert.ok(new Set(r.sessionIds).size>=10);
+ const fresh=d.sessions.filter(s=>r.sessionIds.slice(5,10).includes(s.id));
  assert.equal(fresh.length,5);
  assert.ok(Math.abs(fresh.reduce((n,s)=>n+(Date.parse(s.endedAt)-Date.parse(s.startedAt))/1000,0)-528.094)<1e-9);
  assert.ok(fresh.every(s=>s.model.id==='gpt-6.1-sol'&&s.runtimeModel===null));

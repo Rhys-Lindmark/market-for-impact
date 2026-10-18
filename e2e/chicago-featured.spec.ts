@@ -20,8 +20,8 @@ test('Chicago shares four evidence-weighted features, loaded images and current 
  }
  await expect.poll(()=>page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
  await page.goto('/chicago/all');
- const shared=page.getByRole('region',{name:'Four featured opportunities'});
- const hrefs=await shared.locator('a').evaluateAll(a=>a.map(x=>new URL((x as HTMLAnchorElement).href).pathname));
- expect(hrefs).toEqual(picks.map(r=>'/givebetter/chicago/charities/'+r.slug));
+ await expect(page.getByRole('region',{name:'Four featured opportunities'})).toHaveCount(0);
+ const shared=page.getByRole('region',{name:'Organization research'});
+ for(const pick of picks)await expect(shared.locator('tbody th a[href$="/'+pick.slug+'"]').first()).toBeVisible();
  await expect.poll(()=>page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 });

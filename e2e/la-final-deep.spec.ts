@@ -46,6 +46,7 @@ test('LA landing has the same four current research leaders and loaded sourced i
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
  await page.screenshot({path:'test-results/la-featured-'+page.viewportSize()?.width+'.png',fullPage:true});
  await page.goto('/los-angeles/all');
- const shared=page.getByRole('region',{name:'Four featured opportunities'});
- for(const pick of picks)await expect(shared.getByRole('link',{name:pick.organization,exact:true})).toBeVisible();
+ await expect(page.getByRole('region',{name:'Four featured opportunities'})).toHaveCount(0);
+ const shared=page.getByRole('region',{name:'Organization research'});
+ for(const pick of picks)await expect(shared.locator('tbody th a[href$="/'+pick.slug+'"]').first()).toBeVisible();
 });

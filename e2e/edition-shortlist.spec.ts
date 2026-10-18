@@ -25,8 +25,9 @@ for(const edition of ['california','usa','new-york-city']){
   if(edition==='new-york-city')await page.screenshot({path:'/private/tmp/nyc-shortlist-'+test.info().project.name+'.png',fullPage:true});
   await expect(page.getByText('Our four-charity shortlist is being researched. Explore the full research list.')).toHaveCount(0);
   await page.goto('/'+edition+'/all');
-  const shared=page.getByRole('region',{name:'Four featured opportunities'});
-  for(const report of leaders)await expect(shared.getByRole('link',{name:report.organization,exact:true})).toBeVisible();
+  await expect(page.getByRole('region',{name:'Four featured opportunities'})).toHaveCount(0);
+  const shared=page.getByRole('region',{name:'Organization research'});
+  for(const report of leaders)await expect(shared.locator('tbody th a[href$="/'+report.slug+'"]').first()).toBeVisible();
   await page.setViewportSize({width:390,height:844});
   await expect.poll(()=>page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBe(true);
  });

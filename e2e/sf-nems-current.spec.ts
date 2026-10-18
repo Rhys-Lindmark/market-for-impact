@@ -24,8 +24,8 @@ test('NEMS conditional report, signed income, provenance and list boundary agree
  expect(api.historical.evaluated.central.costPerTenQalys).toBeCloseTo(1201090.5888876051,6);
  await page.goto('/san-francisco/all');
  const row=page.locator('[data-research-slug="north-east-medical-services"]');
- await expect(row).toContainText('$1.2M');
- await expect(row).toContainText('conditional HBV health; income and ordinary-gift total unknown');
+ await expect(row.locator('td').first()).toHaveText('$120K');
+ await expect(row.locator('td a').first()).toHaveAttribute('title',/Conditional HBV health-only reference/);
  expect(await row.getAttribute('data-cost-per-ten-qalys')).toBeNull();
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 });

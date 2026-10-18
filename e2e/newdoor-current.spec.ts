@@ -3,8 +3,9 @@ test('New Door signed reference/report/history/time/finance agree responsively',
  test.setTimeout(60000);
  await page.goto('/san-francisco/all');
  const row=page.locator('[data-research-slug="new-door-ventures"]');
- await expect(row).toContainText('Conditional reference: net harm');
- await expect(row).toContainText('Conditional partial model; ordinary-donation EV unknown.');
+ await expect(row.locator('td').first()).toHaveText('-$1.5MModeled harm');
+ await expect(row.locator('td a').first()).toHaveAttribute('title',/negative value means modeled harm/);
+ await expect(row).not.toContainText('Conditional partial model; ordinary-donation EV unknown.');
  expect(await row.getAttribute('data-cost-per-ten-qalys')).toBeNull();
  await row.locator('a').first().click();
  await expect(page.getByRole('heading',{level:1})).toHaveText('New Door Ventures');

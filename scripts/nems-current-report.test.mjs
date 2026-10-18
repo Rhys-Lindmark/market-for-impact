@@ -30,7 +30,8 @@ test('conditional display does not insert unknown ordinary gifts into top-four r
   const {researchCostRanking}=await import('../lib/research-cost-ranking.mjs');
   const row=researchCostRanking.find(r=>r.slug==='north-east-medical-services');
   assert.equal(row.centralUsdPerTenQalys,null);assert.equal(row.bayUsdPerTenQalys,null);
-  const index=fs.readFileSync('app/san-francisco/all/page.tsx','utf8');
-  assert.match(index,/currentNems\(\)\.bay\.partialHealthUsdPerTen/);
-  assert.match(index,/conditional HBV health; income and ordinary-gift total unknown/);
+  const {researchListPrice}=await import('../lib/research-list-price.mjs');
+  const display=researchListPrice(null,'North East Medical Services');
+  assert.equal(display.label,'$120K');
+  assert.match(display.detail,/Income and the ordinary-donation total remain unknown/);
 });

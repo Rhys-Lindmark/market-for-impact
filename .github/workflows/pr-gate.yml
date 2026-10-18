@@ -1,0 +1,84 @@
+# Job 1 of the PR pipeline (docs/open-botec/README.md, "Pull request pipeline").
+# Untrusted PR code runs here, so this workflow gets no secrets and a read-only token.
+# PR triage (pr-triage.yml) picks up the result through workflow_run.
+name: PR gate
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+concurrency:
+  group: pr-gate-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  gate:
+    name: gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Record the PR number for PR triage
+        env:
+          PR: ${{ github.event.pull_request.number }}
+        run: mkdir -p .pr-gate && printf '%s\n' "$PR" > .pr-gate/pr-number
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pr-gate
+          path: .pr-gate/pr-number
+          retention-days: 7
+
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      # The classifier comes from the base branch, so a PR cannot loosen its own classification.
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          path: .triage-base
+          sparse-checkout: scripts/pr-triage
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci --ignore-scripts
+
+      - name: Open BOTEC checks
+        run: node --test docs/open-botec/tools/check.test.mjs
+
+      - name: Research-effort checks
+        if: ${{ !cancelled() }}
+        run: node --test scripts/research-effort.test.mjs
+
+      - name: Triage unit tests
+        if: ${{ !cancelled() }}
+        # Base branch copy, so PRs branched before the pipeline existed still pass.
+        run: |
+          dir=.triage-base/scripts/pr-triage
+          [ -f "$dir/classify.test.mjs" ] || dir=scripts/pr-triage
+          if [ -f "$dir/classify.test.mjs" ]; then node --test "$dir/classify.test.mjs" "$dir/review.test.mjs"; else echo "no triage tests yet"; fi
+
+      - name: Classify changed paths
+        if: ${{ !cancelled() }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BASE: ${{ github.event.pull_request.base.sha }}
+          HEAD: ${{ github.event.pull_request.head.sha }}
+          AUTHOR: ${{ github.event.pull_request.user.login }}
+          REPO: ${{ github.repository }}
+        run: |
+          classifier=.triage-base/scripts/pr-triage/classify.mjs
+          # Bootstrap only: until the classifier is on the base branch, use the PR's copy.
+          # Any PR that changes scripts/ is needs-human regardless.
+          [ -f "$classifier" ] || { echo "::warning::base branch has no classifier; using the PR's copy"; classifier=scripts/pr-triage/classify.mjs; }
+          node "$classifier" --base "$BASE" --head "$HEAD" --author "$AUTHOR" --repo "$REPO"

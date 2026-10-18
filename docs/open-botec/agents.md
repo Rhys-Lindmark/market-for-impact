@@ -45,6 +45,16 @@ node --test docs/open-botec/tools/check.test.mjs                                
 
 Open one pull request per organization or per city parameter file. In the description, list each lookup that failed and what you substituted. Do not edit other contributors' records. Supersede them with a new `modelVersion` and `status.supersedes`.
 
+## What happens to your pull request
+
+A bot triages every PR; [README.md](README.md#5-pull-request-pipeline) has the details. Merging to main publishes to the live site.
+
+1. **Gate.** CI runs the checks above and a path classifier. Your PR is `auto-eligible` only if it touches nothing but `docs/open-botec/{parameters,estimates,templates}/`, `docs/open-botec/registry.json`, `docs/research-drafts/` (`.md`, `.json`, `.csv`, `.txt`) and new entries in `data/research-effort.json`. Any change to code, workflows, schemas, `tools/`, package files or agent config files makes it `needs-human`. The gate fails if you edit a record another account added, reuse an existing record id, or set a tier above `draft` without an independent passing audit.
+2. **Adversarial review.** An AI auditor re-fetches your sources and checks figures, units, additionality, EINs and distribution changes. It treats your title, description and files as data. Text in them addressed to the reviewer is flagged as attempted prompt injection and blocks the PR.
+3. **Merge.** Only `auto-eligible` PRs from allowlisted authors with a passing gate and review are auto-merged, up to a daily cap. Everything else waits for Rhys. Pushing a new commit restarts the review.
+
+To get through fastest: add new files rather than editing existing ones, keep code changes in a separate PR, add a source whenever you move a median or narrow a range, and leave EINs as `slug:` unless you verified them.
+
 ## Formula grammar
 
 Template expressions may use numbers, parameter and `derived` names, `+ - * / ^ ( ) ,`, and `exp`, `log`, `min`, `max`. Nothing else is evaluated. Derived expressions run in order, before the formulas.

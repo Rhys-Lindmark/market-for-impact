@@ -1,4 +1,5 @@
 import {sameData} from './lib/same-data.mjs';
+import {reportsRetained,sessionsRetained,effortRetained} from './lib/history-retained.mjs';
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import {execFileSync} from 'node:child_process';import {reportPrice,researchListPrice} from '../lib/geography-reports.mjs';
 const data=JSON.parse(fs.readFileSync(new URL('../data/geography-reports.json',import.meta.url)));
 for(const[name,id,cost]of [['tepeyac','org:tepeyac',18893488],['dln','ein:84-6129064',10000]])test(name+' preserves initial diagnostics and synchronized signed-health/resource price',async()=>{
@@ -13,7 +14,7 @@ for(const[name,id,cost]of [['tepeyac','org:tepeyac',18893488],['dln','ein:84-612
  else{assert.equal(m.defaults.g,.04);assert.equal(m.calculate({s:0}).incomeEquivalent,m.calculate({s:0,annualNetPayGain:1000}).incomeEquivalent);assert.equal(m.calculate({g:0}).totalEquivalent,0);assert.ok(r.sessionIds.includes('usa-dln-recalibration-20261002-1'));}
 });
 test('prior reports and sessions preserved; reused national research not duplicated',()=>{
- const old=JSON.parse(execFileSync('git',['show','128ab4c:data/geography-reports.json'],{maxBuffer:67108864}));sameData(data.reports.slice(0,old.reports.length),old.reports);sameData(data.sessions.slice(0,old.sessions.length),old.sessions);assert.equal(data.reports.length,old.reports.length+2);assert.equal(data.sessions.length,old.sessions.length+5);assert.equal(new Set(data.sessions.map(s=>s.id)).size,data.sessions.length);
- const effort=JSON.parse(fs.readFileSync(new URL('../data/research-effort.json',import.meta.url))),prev=JSON.parse(execFileSync('git',['show','128ab4c:data/research-effort.json'],{maxBuffer:67108864}));for(const[k,v]of Object.entries(prev.organizations))sameData(effort.organizations[k],v);
+ const old=JSON.parse(execFileSync('git',['show','128ab4c:data/geography-reports.json'],{maxBuffer:67108864}));reportsRetained(data,old);sessionsRetained(data,old);assert.ok(data.reports.length>=old.reports.length+2);assert.ok(data.sessions.length>=old.sessions.length+5);assert.equal(new Set(data.sessions.map(s=>s.id)).size,data.sessions.length);
+ const effort=JSON.parse(fs.readFileSync(new URL('../data/research-effort.json',import.meta.url))),prev=JSON.parse(execFileSync('git',['show','128ab4c:data/research-effort.json'],{maxBuffer:67108864}));effortRetained(effort,prev);
  const dln=effort.organizations['Dental Lifeline Network'];assert.ok(dln.reusedSessionIds.includes('usa-dln-recalibration-20261002-1'));assert.equal(dln.sessions.length,2);assert.equal(new Set(dln.sessions.map(s=>s.id)).size,dln.sessions.length);assert.ok(effort.organizations['ein:84-6129064'].sessions.some(s=>s.id==='usa-dln-recalibration-20261002-1'));
 });

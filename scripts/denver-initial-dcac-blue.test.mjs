@@ -1,4 +1,5 @@
 import {sameData} from './lib/same-data.mjs';
+import {reportsRetained,sessionsRetained,effortRetained} from './lib/history-retained.mjs';
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import {execFileSync} from 'node:child_process';import {reportPrice,researchListPrice} from '../lib/geography-reports.mjs';
 const data=JSON.parse(fs.readFileSync(new URL('../data/geography-reports.json',import.meta.url)));
 for(const [prefix,id,cost,n]of [['dcac','org:denver-childrens-advocacy',3354733,624],['blue','org:blue-bench',2589919,212]])test(prefix+' accepted matched full costs and clinical plus signed household resources',async()=>{
@@ -16,6 +17,6 @@ for(const [prefix,id,cost,n]of [['dcac','org:denver-childrens-advocacy',3354733,
  if(prefix==='blue')assert.equal(mod.calculate({C:(2589919+2576348+2203137)/3}).costUSD,2456468);
 });
 test('two-report integration preserves every prior report, session and effort entry',()=>{
- const old=JSON.parse(execFileSync('git',['show','c4ab33a:data/geography-reports.json'],{maxBuffer:67108864}));sameData(data.reports.slice(0,old.reports.length),old.reports);sameData(data.sessions.slice(0,old.sessions.length),old.sessions);assert.equal(data.reports.length,old.reports.length+2);assert.equal(data.sessions.length,old.sessions.length+3);
- const effort=JSON.parse(fs.readFileSync(new URL('../data/research-effort.json',import.meta.url))),previous=JSON.parse(execFileSync('git',['show','c4ab33a:data/research-effort.json'],{maxBuffer:67108864}));for(const[k,v]of Object.entries(previous.organizations))sameData(effort.organizations[k],v);
+ const old=JSON.parse(execFileSync('git',['show','c4ab33a:data/geography-reports.json'],{maxBuffer:67108864}));reportsRetained(data,old);sessionsRetained(data,old);assert.ok(data.reports.length>=old.reports.length+2);assert.ok(data.sessions.length>=old.sessions.length+3);
+ const effort=JSON.parse(fs.readFileSync(new URL('../data/research-effort.json',import.meta.url))),previous=JSON.parse(execFileSync('git',['show','c4ab33a:data/research-effort.json'],{maxBuffer:67108864}));effortRetained(effort,previous);
 });

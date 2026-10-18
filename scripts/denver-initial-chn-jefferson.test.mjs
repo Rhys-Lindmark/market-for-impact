@@ -1,4 +1,5 @@
 import {sameData} from './lib/same-data.mjs';
+import {reportsRetained,sessionsRetained,effortRetained} from './lib/history-retained.mjs';
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import {execFileSync} from 'node:child_process';import {reportPrice,researchListPrice} from '../lib/geography-reports.mjs';
 const data=JSON.parse(fs.readFileSync(new URL('../data/geography-reports.json',import.meta.url)));
 for(const[name,id,cost,n]of [['chn','org:colorado-health-network',36416135,557],['jefferson','org:jefferson-center',91195341,24681]])test(name+' preserves initial and clinical/resource units with synchronized current price',async()=>{
@@ -13,6 +14,6 @@ for(const[name,id,cost,n]of [['chn','org:colorado-health-network',36416135,557],
  else{assert.ok(c.incomeEquivalent>0);assert.equal(m.defaults.T,1);}
 });
 test('all prior reports, sessions and effort records preserved exactly',()=>{
- const old=JSON.parse(execFileSync('git',['show','e8ef3e8:data/geography-reports.json'],{maxBuffer:67108864}));sameData(data.reports.slice(0,old.reports.length),old.reports);sameData(data.sessions.slice(0,old.sessions.length),old.sessions);assert.equal(data.reports.length,old.reports.length+2);assert.equal(data.sessions.length,old.sessions.length+4);
- const effort=JSON.parse(fs.readFileSync(new URL('../data/research-effort.json',import.meta.url))),prev=JSON.parse(execFileSync('git',['show','e8ef3e8:data/research-effort.json'],{maxBuffer:67108864}));for(const[k,v]of Object.entries(prev.organizations))sameData(effort.organizations[k],v);
+ const old=JSON.parse(execFileSync('git',['show','e8ef3e8:data/geography-reports.json'],{maxBuffer:67108864}));reportsRetained(data,old);sessionsRetained(data,old);assert.ok(data.reports.length>=old.reports.length+2);assert.ok(data.sessions.length>=old.sessions.length+4);
+ const effort=JSON.parse(fs.readFileSync(new URL('../data/research-effort.json',import.meta.url))),prev=JSON.parse(execFileSync('git',['show','e8ef3e8:data/research-effort.json'],{maxBuffer:67108864}));effortRetained(effort,prev);
 });

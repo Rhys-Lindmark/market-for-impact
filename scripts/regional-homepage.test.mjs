@@ -59,20 +59,36 @@ test('homepage has the requested single headline, an honest research figure and 
  assert.doesNotMatch(html,/Explore our giving funds|share our work openly|direct donations to the programs/i);
  assert.ok(html.includes(`Backed by ${Math.floor(time.homepageResearchTime(registry,reports).hours)}+ hours of AI research`));
  const hero=html.match(/<section class="gb-home-hero"[^>]*>([\s\S]*?)<\/section>/)[1];
- assert.match(hero,/<\/h1><p class="gb-home-hero-research"><a href="https:\/\/ai.rhyslindmark.com\/givebetter\/all#research-time">Backed by/);
+ assert.match(hero,/<\/h1><p class="gb-home-hero-research"><a href="https:\/\/ai.rhyslindmark.com\/givebetter\/research-time">Backed by/);
  assert.equal((hero.match(/<p\b/g)||[]).length,1);
  assert.doesNotMatch(html,/class="gb-home-research|How we count research time|Logged research and source-review time/);
- assert.match(html,/No AI-to-human productivity multiplier is applied/);
+ assert.doesNotMatch(html,/No AI-to-human productivity multiplier is applied|Health and income assessment flags|<details|GiveBetter x SF/);
  const grid=html.match(/<ul class="gb-home-region-grid">([\s\S]*?)<\/ul>/)[1];
  assert.equal((grid.match(/<li\b/g)||[]).length,8);
  for(const region of time.homepageRegions){assert.ok(grid.includes(editions.canonicalBase+'/'+region.id));assert.ok(grid.includes(region.label));}
  for(const id of ['seattle','boston','atlanta','detroit'])assert.ok(html.includes(editions.canonicalBase+'/'+id));
- assert.match(html,/id="research-time"/);assert.match(html,/Health and income assessment flags/);
+ assert.match(html,/id="research-time" href="https:\/\/ai.rhyslindmark.com\/givebetter\/research-time"/);
  assert.match(html,/Point your agent here/);assert.ok(html.includes(editions.canonicalBase+'/llms.txt'));assert.ok(html.includes(editions.canonicalBase+'/agents'));
  const css=read('app/all/home.css');
  assert.match(css,/grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/);
  assert.match(css,/@media\(max-width:650px\)/);
  assert.match(css,/grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/);
+});
+test('dedicated research-time page retains the full methodology and all three progress tables',()=>{
+ const result=ts.transpileModule(read('app/research-time/page.tsx'),{compilerOptions:{module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX},reportDiagnostics:true});
+ assert.equal(result.diagnostics?.length,0);
+ const page={exports:{}};
+ vm.runInNewContext('(function(module,exports,require){'+result.outputText+'})')(page,page.exports,id=>imports[id]??(id.endsWith('.css')?{}:require(id)));
+ const html=renderToStaticMarkup(React.createElement(page.exports.default));
+ assert.equal(page.exports.metadata.alternates.canonical,editions.canonicalBase+'/research-time');
+ assert.match(html,/<h1>Research time and progress<\/h1>/);
+ assert.ok(html.includes(time.homepageResearchTime(registry,reports).hours.toFixed(1)+' recorded hours'));
+ for(const label of ['Research by city and region','Health and income assessment flags','Stage time and progress'])assert.ok(html.includes(label));
+ assert.equal((html.match(/<table\b/g)||[]).length,3);
+ assert.match(html,/No AI-to-human productivity multiplier is applied/);
+ assert.match(html,/historical time estimates, missing intervals, planned budgets, tests and publishing/);
+ assert.doesNotMatch(html,/<details|GiveBetter x SF/);
+ assert.ok(html.includes(editions.canonicalBase+'/all'));
 });
 test('all new illustrations exist, are optimized and reserve dimensions',async()=>{
  const ids=['hero',...time.homepageRegions.filter(r=>r.image).map(r=>r.image)];

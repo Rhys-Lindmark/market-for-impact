@@ -1,5 +1,15 @@
 # Concise Top 4 cost-effectiveness copy
 
+## Follow-up: two-significant-figure About amounts
+
+User requested less precise-looking service-cost estimates across all32 Top4 cards. The shared native-unit currency formatter now rounds presentation to two significant figures before selecting standard or compact notation; model inputs, priceUSD, and DALY formatting remain unchanged. Examples: $5,412 becomes $5,400, $1,479 becomes $1,500, and $26.67 becomes $27. Eight lightweight tests pass, including all32 React card renderings, all29 native prices, unchanged numerator/denominator arithmetic, small-dollar precision and compact-notation rollover boundaries.
+
+Published source3097b9c9d4e8a7196c7b9c302d032b92cc49fd1a as Sites527; deployment appgdep_6ad4ff7fec2481918320e8de76aed4b3 succeeded2026-10-18T17:22:36Z. Canonical HTTP verification passed for all eight pages,32/32 cards and29/29 native amounts, including Parker Family Health Center's $5,400. Three DALY-only cards remain unchanged. GitHub main received the source without force-push. No research, selection, routing, database or hosting migration changes.
+
+Space Saver gate:16GiB RAM, compressor6.58GiB (above4GiB trigger), swap0, Codex family2.78GiB RSS and largest process0.89GiB;33GiB disk free. Local builds/browser checks were not admitted. Source packaging could not complete without local build output, so supported remote-build fallback was used. No unrelated process was stopped. The task's isolated worktree and dependency symlink are removed after recording publication; shared dependencies and concurrent checkouts are preserved.
+
+## Original copy revision
+
 User-directed presentation revision across both homepage renderers and all29 existing native-unit descriptions. Cost sentences now use body typography, emphasize only currency, combine the native cost and DALY estimate in one paragraph, and link report assumptions through small footnotes. Removed the calculation dropdown, extra basis labels and duplicated SF scope paragraph. The three unsupported native outputs remain DALY-only. Backend cost expressions, source records, scientific assumptions and numeric fixtures are unchanged.
 
 Examples: Self-Help uses the requested “About $600 for one 24-week fall-prevention course.” ReCARES names crutches and walkers while retaining the mixed-item cost denominator; it does not reprice a walker as a separate unit. Qualifications remain in the referenced report and source-link title.

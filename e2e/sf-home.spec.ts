@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+import {formatImpactPrice,impactMetric} from '../lib/impact-metric.mjs';
 
 for (const path of ['/san-francisco']) {
   test(`SF front door ${path} has four ranked leads and official imagery`, async ({ page, request, baseURL }) => {
@@ -12,7 +13,7 @@ for (const path of ['/san-francisco']) {
     await expect(page.getByRole('heading', { level: 1 })).toHaveText('Our Bay Area Shortlist');
     await expect(page.locator('.sf-home-charity')).toHaveCount(4);
     await expect(page.locator('.sf-home-org-card h4')).toHaveText(expectedNames);
-    await expect(page.locator('.sf-home-charity-body section:nth-child(2) strong')).toHaveCount(4);
+    await expect(page.locator('.sf-home-charity-body section:nth-child(2)>p>strong')).toHaveCount(4);
     await expect(page.locator('#self-help-for-the-elderly .sf-home-scope')).toContainText('ordinary-donation expected value unknown');
     await expect(page.getByRole('link', { name: 'All San Francisco research', exact:true })).toHaveAttribute('href', 'https://ai.rhyslindmark.com/givebetter/san-francisco/all');
     await expect(page.getByRole('link', { name: 'All cities and regions', exact:true })).toHaveAttribute('href', 'https://ai.rhyslindmark.com/givebetter/all');
@@ -21,7 +22,7 @@ for (const path of ['/san-francisco']) {
     await page.locator('.sf-home-selection summary').click();
     await expect(page.locator('.sf-home-selection')).toContainText('not fully vetted grant recommendations');
     await expect(page.locator('.sf-home-selection')).toContainText('same order');
-    const prices=await page.locator('.sf-home-charity-body section:nth-child(2) strong').allTextContents();
+    const prices=await page.locator('.sf-home-charity-body section:nth-child(2)>p>strong').allTextContents();
     const slugs=await page.locator('.sf-home-charity').evaluateAll(ns=>ns.map(n=>n.id));
     await page.getByRole('link', { name: 'All San Francisco research', exact:true }).click();
     await expect(page).toHaveURL(/\/san-francisco\/all$/);
@@ -29,8 +30,7 @@ for (const path of ['/san-francisco']) {
     expect(await page.locator('[data-research-slug]').evaluateAll(rows=>rows.slice(0,4).map(row=>row.getAttribute('data-research-slug')))).toEqual(slugs);
     for(let i=0;i<slugs.length;i++){
       const value=Number(await page.locator('[data-research-slug="'+slugs[i]+'"]').getAttribute('data-cost-per-ten-qalys'));
-      const expected=new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',notation:'compact',minimumFractionDigits:value>=1e6?1:0,maximumFractionDigits:value>=1e6?1:0}).format(value);
-      expect(prices[i]).toBe(expected+' per better life (10 health and income-equivalent years)');
+      expect(prices[i]).toBe(formatImpactPrice(value)+' per '+impactMetric().label);
     }
     await page.goto(path);
     for (const img of await page.locator('.sf-home-charity img').all()) {

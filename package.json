@@ -69,7 +69,7 @@
     "data:india:build": "node scripts/build-india-geography.mjs --write",
     "data:renphil:check": "node scripts/refresh-renphil.mjs",
     "data:renphil:refresh": "node scripts/refresh-renphil.mjs --write",
-    "test": "node --test scripts/*.test.mjs"
+    "test": "scripts/run-guarded.sh --limit-mb 3072 --timeout 1800 -- node --test --test-concurrency=2 scripts/*.test.mjs"
   },
   "dependencies": {
     "drizzle-orm": "0.45.2",

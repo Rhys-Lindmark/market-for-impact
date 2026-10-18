@@ -1,0 +1,11 @@
+# The Rose deep review — verified publication
+
+Previous user-answer turn diagnosed the scheduler failure, but made no research/publication progress. This continuation accepted The Rose and published Sites447, source f6e444fa8a39840af88fa84de7d4f92dc87d65c3. Six live native/canonical report/list/count checks passed at 2026-10-06T20:41:34.942Z; receipt JSON preserves exact identifiers. Initial diagnostic, unrelated reports and old sessions were preserved exactly.
+
+Houston25/25 initial,8/10 deep,0/4 featured. Next Air Alliance Houston, then Bayou; select four after all ten comparative reviews. Denver2/25 initial,0/10 deep requires23 initial+10 deep. Other five active editions complete; preserve SF. Seattle/Boston/Atlanta/Detroit remain deferred. Remaining23 initial+12 deep=295 planned research minutes, excluding independent review, release and feature-selection overhead. Overall goal remains incomplete.
+
+Initial $42.016M to current conditional $238.295M. Health3.300950 and signed income-2.630090 combine .670860 equivalents. Full-exposure burdens and correcting 187 mixed navigations to 177 uninsured change the calculation; source evidence does not prove whole-portfolio deterioration. The full recipient budget covers other unknown benefits. Judged uninsured patient-share cost sensitivity gives $40.868M, not measured navigation cost or marginal-gift EV. Utility, household mapping, local share, response, net practical support and external treatment incidence remain explicit hypotheses, with null/adverse/alternative-provider sensitivities.
+
+Original return and controlled-trial abstracts independently checked; annual page22 visually inspected. 233 portable checks/36 cases,150 independent reconstruction checks,26 focused tests and2 responsive checks pass. Actual recorded author2.844267 min and root.51985 min GPT-6.1Sol are partial; later untimed reading/testing/integration/release excluded. No duration padding. The source-opening handle completed normally; no duplicated run or reset credit.
+
+Existing Node24/dependencies/Chrome reused. Preview ended. Source and receipts pushed before disposable archive cleanup. Usage81% remaining preserves20% reserve. Existing hourly task updated to Air Alliance/295 planned minutes; underlying runtime/scheduler recovery fault remains unresolved.

@@ -1,3 +1,5 @@
+import {withImpactDisplay} from '@/lib/impact-metric.mjs';
 import model from '@/data/san-francisco/oa-portfolio-model-v2.json';
 import {calculate} from '@/lib/oa-portfolio-model.mjs';
-export function GET(){return Response.json({model,evaluated:model.scenarios.map(s=>({id:s.id,...calculate(model,s)}))});}
+import {central,diagnostics} from '@/lib/operation-access-calibrated-model.mjs';
+export function GET(){return Response.json(withImpactDisplay({current:{inputs:central,evaluated:diagnostics()},historicalNotice:'The original model and evaluated fields are retained as history, not current ranking values.',model,evaluated:model.scenarios.map(s=>({id:s.id,...calculate(model,s)}))}));}

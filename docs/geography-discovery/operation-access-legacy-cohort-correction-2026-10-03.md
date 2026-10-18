@@ -1,0 +1,13 @@
+# Operation Access household-cohort correction
+
+Scientific candidate; not publication or conditional acceptance. The original nine-scenario model is unchanged. This corrects the four material reviewer requirements, not a demanded direction of price change.
+
+Buyer/free/unmet households are crossed with worker/nonworker incidence and relevant clinical response success/failure BEFORE nonlinear logarithmic valuation. Employment and response are explicitly assumed independent planning incidences; medicine and cyst recovery share the SAME response state. Counts retain the existing completed-course dedup approximation and post-onset common-alive midpoint survival, not wages from additional survivors.
+
+Every household receives sequential travel, buyer savings, medication savings, lost pay and response-related recovery increments, with its actual resource baseline updated after each increment. Negative burdens retain full welfare weight. Actual buyer savings retain full weight because matching buyer clinical effects already cancel. Only positive medicine/recovery flows use the separately uncertain overlap retention. At retention one, sequential logs telescope to the final net consumption ratio; population-weighted logs do not become the log of an average gain.
+
+`responseKnown` is independent of `healthKnown` (clinical utility/effect magnitude). Unknown response prevents clinical credit and success-dependent resources from being identified. Known independent currency components remain inspectable even if an earlier unknown increment prevents valuing a subsequent log increment. Known zero monetary magnitudes can establish zero response-linked dollars; unknown response alone cannot. A known nonnegative recovery with zero positive retention removes its welfare credit but not its unknown raw dollars. Negative recovery is explicitly an adverse consequence of clinical response; ordinary acquisition lost pay is not response-attenuated.
+
+No new source retrieval is claimed. All cost, geography, native-course, clinical, purchaser/payment, wage/benefit, capacity and income priors retain the bounded source interpretation in the original author and independent review packets. The amended model is still an uncertain conditional planning calculation, not identified donation expected value or comprehensive economic cost.
+
+Timing: the earlier open root session `63696b9b-9529-4532-95a3-c9f2aefb7fec` crossed interruption and a user status request. Its entire raw interval remains excluded pending activity separation; do not finish/import it as continuous dedicated research or fabricate a shorter duration. A new contemporaneous resumed modeling interval is recorded separately and closes before deterministic tests and reviewer waits.

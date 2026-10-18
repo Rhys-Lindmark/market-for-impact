@@ -1,3 +1,4 @@
+import {impactNode} from '@/components/ImpactMetric';
 import type { Metadata } from 'next';
 import CharityResearchReport, { type CharityReportContent } from '@/components/CharityResearchReport';
 import review from '@/data/san-francisco/sf-marin-food-bank-review-v1.json';
@@ -86,4 +87,4 @@ const content: CharityReportContent = {
   sources: [...review.sources, ...bridge.sources.filter((source) => !review.sources.some((existing) => existing.url === source.url))],
 };
 
-export default function SfMarinFoodBankResearchPage() { return <CharityResearchReport content={content} />; }
+export default function SfMarinFoodBankResearchPage() { return impactNode(<CharityResearchReport content={content} />); }

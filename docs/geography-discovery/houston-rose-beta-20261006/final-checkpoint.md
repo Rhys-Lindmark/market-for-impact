@@ -1,0 +1,9 @@
+# The Rose beta handoff
+
+Exact accepted initial report and calculator preserved. Current conditional full-recipient annual cost versus limited uninsured navigation/access channel: $238,294,990.10 per better life, health 3.3009497450 plus signed resources -2.6300901943 = 0.6708595507 equivalent healthy years. Initial $42,016,012.64; burden-only diagnostic retains187mixed clinical subgroup and separates accounting from observed177uninsured mapping. These changes do not measure whole-portfolio deterioration.
+
+Original IRS FY2025 income/expenses and unduplicated uninsured/navigation distinctions freshly read. AnnualPDF page22 rendered and visually checked at /private/tmp/rose-annual2025-p22-beta20261006.png. Current BCCS/partner care is external baseline, not demonstrated donation-induced treatment. Original Denver, LosAngeles and PNRP abstracts reviewed; time-to-resolution/treatment differences not imported asQALYs. Original CISNET relevant screening decision-analysis passages reviewed, not empirical local harm. Receipts preserve blocked raw journal/PubMed responses honestly alongside successfully read web originals.
+
+All-program recognized cost and a judged patient-share uninsured allocation quantify the cost-boundary effect, neither verified navigation/marginal cost. Household mapping, localshare, clinical utility, net resources, treatment resource incidence and new-donor capacity remain uncertain. Clinical-null/financial-only/adverse/unknown/no-exposure/failed-benefit/alternative and external-payer cases are explicit.
+
+Portable233 checks across36 scenarios and actual production registry schema passed in memory. Root independently checks originals and reconstructs arithmetic before integration. Author closed source/model/report clocks total2.844267 dedicated minutes GPT-6.1Sol; setup, receipts, validation and waiting excluded. No app edits/publication or accepted count claimed here.

@@ -1,0 +1,11 @@
+# SPUR legacy integration review
+
+Verdict: ACCEPT for the conditional selected-pathway comparison. No remaining material integration defect found. Identified unrestricted donation expected value, marginal capacity and comprehensive portfolio/public-resource cost remain HOLD.
+
+Read-only integration QA verified the portable engine against the accepted correction: all 38 current cases retain identical structure, native outputs, signed flows, knowledge flags and results. Current editorial summary agrees with the report module; the unique ranking row uses Bay $13,007,322.408862557 and SF $50,332,848.51823576 per ten combined health/resource equivalents. These are not clinical-QALY-only prices. Current API results are separately nested from the retained original evaluated history; the ten original outputs and inherited source evidence remain preserved.
+
+The actual exported narrative now explicitly labels the former nonoccupant clinical stream and favorable joint scenario historical, distinguishes current one-way tests, and states that selected rent/energy/travel/net-pay effects are valued while wider GDP effects remain unquantified. Current physical exposure, component-locality controls, independently allocated harms/taxes, signed household incidence and conservative unknowns agree with the accepted model. Financial expense proxies and selected original-return/indexed-abstract reading scopes do not claim marginal productivity, full-paper validation or verified funding capacity. Fresh page citations are distinct from inherited evidence.
+
+Eight unique actual Sol sessions total 1,611.217 seconds; user-confirmed assignment remains separate from unavailable raw runtime identification. The legacy 22-minute Astra component is a separate historical fallback, not a fabricated actual registry session. No integration QA time was added as research.
+
+Root reports 21 focused tests, 174 original checks, research validation and two responsive/API parity checks passing. Reviewer independently checked structural/narrative/provenance parity, not build, browser execution or deployment. Publication and release checks remain root-owned. Space Saver applied by reusing the existing checkout/runtime with no installs, copies, servers or cleanup of unique evidence.

@@ -1,0 +1,31 @@
+# Human Options — LA deep review
+Status: pending root acceptance. No checkout, Git or Sites edits/publication by author.
+
+## Recipient, sources and expense scope
+Current official services and donation page identify Human Options, EIN95-3667817, with Orange County shelter, counseling, legal advocacy and care management. CalOptima eligibility is required for ECM; no insurance-free universal clinical pathway assumed. Services and residence lie within LA–Long Beach–Anaheim MSA;95%benefit residence is judgment allowing relocation.
+Fresh original IRS990HTML200 hashes in source-receipts.json verify FY25 PartIX$7,312,028+event$283,191=$7,595,219; FY24$7,818,547+$256,966=$8,075,513; FY23$6,857,303+$237,693=$7,094,996; mean$7,588,576. No rental/gaming/inventorycost tags found. Full-recipient numerator includes overhead/eventcost, not a restricted program budget or marginal service queue.
+AnnualPDF20,379,476bytes exceedswebextractor. PDF skill prompted bundled pypdf memory-only read; fresh bodyhash retained, no20MBdownloadfile. Page3 mixed1,200healing individuals and498survivors/families confirmed; page18 differentfinancialpresentation $7,306,512 expenses/$7,001,134 revenue with restricted release explanation. It does not establish990audit reconciliation. No audit opinion inferred.
+
+## Clinical and causal interpretation
+Initial counseling/safety clinical component retained exactly within floating tolerance:1.7010274295LAQALYs. PATH compares specialist psychological sessions plus ordinary advocacy against ordinary advocacy; thresholddifference0.17, attrition/fidelity/utility mismatch explicit. CAP0.13 cumulative two-year no-repeat-violence difference is not an annual episode rate. HousingFirst observational findings are mechanism evidence, not another stacked health benefit.
+Clinical conversion utilities and half-year benefit areas are judgments; no measuredQALY attributed to questionnaire thresholds. Positive-only clinical overlap discounts positives, nevernegativeoutcomes. No homicide/suicide, lifetimecure, childmultiplier or ordinarysurvivorwages.
+PATHSAE imbalance is uncertain association, not inferredcausalharm. Hypothetical adversecase preserves unmeasuredclinicalharm without presenting an empirical estimate. Raw recordscale and historicalexitpercentages are not completed care or comparison-adjusted housing retention. Existing contracts/CalOptima/other providers and availablehousehold resources remaincounterfactual. Fundingresponse0.5 is judgment.
+
+## Household resource ledger
+Resourceexposure is independent of efficacy: community300adult household participants; residential124.5households aftercapacityprior. Half residential overlapscommunity,62.25joint;237.75community-only;62.25residential-only. One distinct survivorparticipant/HH andone welfareperson each; familymembers unpriced.
+Baseline$20,000annual disposable household resources is materialprior. Every communityHH incurs$100net time/travel/childcare/care-engagementburden. Residential netgain hypothesis$1,200consumed housing/food relief alreadyafter tax/benefit/displacedalternativeaid offsets; positivehealthoverlap0.5 appliedonly to thatpositivegain, then full$600moving/work/otherburden. Central residentialnet0; joint−100; communityonly−100. All costs persistclinicalnull. These are explicit resource hypotheses, not observed aid/rent prices or wages.
+Joint household resources BEFORE log through exact shared bridge0.5×persons×discountedfiniteyears×log(1+net/baseline)×localshare. One resourceyear delayedoneyear at3%, no perpetualhousingvalue or survivors' extra earnings. Housingservice value not added in full on top of safetyhealth.
+Positivehypotheses netrelief3,000, adverse0relief/2,000cost, negative−1,000change retainedfullregardlesspositiveoverlap. Matchedpositivepayercase allocates$500institutionalopportunitycost per unique serviceHH across100disjoint payerpersons at$50,000baseline. Its net income-equivalent remainspositive0.1383805427. Separate landlordmargin hypothesis$100/residentialHH across20one-person ownerHH at$60,000baseline, netof owncosts, notgrossrent; symmetricloss included.
+Counterparty/partner/nonlocalincidence unknown—notfactualzero. Centralneutralanchors keeppartialboundaryvisible; fiscal/providerstress is notdonorutility. Taxes/transfers and omitted family/legal/preventioneffects mean no fullworldEVclaim.
+
+## Arithmetic, diagnostics and controls
+Clinical1.7010274295409558; signedincome-0.6934827280146215; combined1.0075447015263341; proposedprice10$75383444.41188532, initialhealth-only$44650773.22150923. Price increase is judgment-led resource incidence, not observed harmfromHumanOptions. $10,000 conditionalshare yields0.0022396028732561313clinicalQALYs and-0.0009130516552776444incomeequivalents.
+Completeunknown andincomeunknown retainnull; financial-only/clinicalnull keepsburdens; zeroexpansion genuinely0newservices/benefits/costs; negativeclinical never discounted byoverlap.35serializedcases reproduceportablecalculator, includingjointHH,delay/duration,cost,positive/adverse,partner andlandlord incidence. Fullinitial report, model, scenarios, sensitivities and originalsessions preservedexactly in initial-diagnostic.json/reporthistory/historicalAlphaModel.
+
+## Actual clocks and validation
+Authorresearch e99c8b41:15:09:20.986–15:12:47.529UTC206.543s.
+Authormodeling7ee88547:15:12:47.627–15:16:17.364UTC209.737s.
+Total416.280s(6.938minutes), user-confirmedGPT-6.1Sol, no padding/unsupportedgap observed. Partialcoveragehonest; oldsessions keptseparate. Closedbeforetesting,packetformatting,integration/handoff. Rootsource/modelaudits separate notclaimedauthorwork.
+SelftestPASS35case arithmetic+frozenhistory+sign/null/negative/cohortguards+productionincomeparity. ActualcurrentvalidateEditionReportsPASS inmemorycandidatewithsessions/progressbetamembership andtemporaryacceptedstatusonly; durablepending-root.
+RootindependentprobePASS1,025checks/35cases includingfinalserializedreportparity; central75,383,444.41188532. No scientificcorrectionrequired aftersource/modelchallenge; signguard implementedfromstart.
+SpaceSaverreusedexistingNode24/check-out andbundledreader;27GiBfreebaseline;noinstalls/copies/servers. Only compactsource/calculator/evidencehistory retained, no bulkPDFbody or unrelatedcleanup.

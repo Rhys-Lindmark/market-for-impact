@@ -1,0 +1,25 @@
+# Zacharias Sexual Abuse Center — bounded deep review
+
+Pending root acceptance; no publication claim. Exact original alpha report, full model and original sessions are frozen once in initial-diagnostic.json. New evidence changes the cohort anchor and recognized resource boundary, not the strength of clinical causality. Initial price $17,225,231.773563232; conditional revised price $16,854,951.000238217 per ten combined equivalents.
+
+## Originals and source decisions
+
+Original FY25 IRS990 https://projects.propublica.org/nonprofits/full_text/202631359349307348/IRS990 and Schedule D https://projects.propublica.org/nonprofits/full_text/202631359349307348/IRS990ScheduleD were independently fetched HTTP200. Form 990 expense $2,454,250; event cost $61,260; government grants $1,236,493. Schedule D reports $5,000 donated services omitted from tax expenses: full recognized economic cost $2,520,510, not a second add of the event costs. FY24/23 originals and hashes are in source-receipts.json; gross costs $2,156,058/$1,900,276 include omitted donated services $5,000/$6,000. Original FY24 audit https://zcenter.org/wp-content/uploads/2026/01/FY24-Zacharias-Sexual-Abuse-Center-Short-FINAL-6.30.24-compressed.pdf page 7 independently confirms those prior functional gross totals; note 1 identifies volunteer services not recognized. These resources are not proven costless. Opinion dated December 17, 2024 is not verified publication date.
+
+Current recipient services https://zcenter.org/survivor-services/services/ and donation https://zcenter.org/donate-to-zcenter/ verify free English/Spanish counseling, Lake/northern Cook delivery and EIN36-3314976. Skokie offers counseling only; Gurnee offers broader advocacy. Gift route is verified on the website, not a completed checkout transaction.
+
+Official FY25 annual original https://zcenter.org/wp-content/uploads/2026/01/DRAFT-2025-Year-in-review.-DIGITAL.v2.pdf retained as annual25.pdf; page 1 rendered with existing bundled pypdfium2 and visually inspected. It says 447 counseled, 384 adults and 213 children, so reported categories conflict with the aggregate. Adult384 is a reported category, not confirmed unique household, current completion or success. The judged .8 uniqueness fraction does not resolve the factual discrepancy. Other clients/calls/students may overlap and are not added. A lower waitlist statement is not evidence of marginal donor-funded expansion.
+
+Original Cochrane adult review https://www.cochrane.org/evidence/CD013456_how-helpful-recovery-and-healing-are-support-and-psychological-interventions-after-exposure-sexual supports low-certainty short-term symptom improvement, with substantial attrition and limited adverse-event reporting. No local QALY conversion, child effect, income gain or durable employment effect follows from it. Utility .03, half-year duration and .6 additional clinical completion remain unsupported conditional judgments; no SMD-to-QALY shortcut was used.
+
+## Ledger and limits
+
+Adult384 × unique.8 × conditional annual-work response.5 =153.6 exposed household units; one modeled welfare-equivalent person per unit. Clinical92.16 is a subset of this union. Financial success30.72 is independently judged, not conditioned on clinical recovery. Hypothetical net access/work gain1500 after taxes, benefits, replacement earnings and new costs × positive retention.5 − full participation100 =650. Others lose100. All same-household components are jointly logged once. No retail counseling fee or ordinary survivor wages. Financial effects survive clinical null. Negative gains and symptoms are retained fully; clinical harm applies to the entire exposed union once.
+
+Clinical stream is discounted across each finite exposure year. Financial gains are one-off, with resourceYears between0 and1; zero duration removes gains but retains participation costs. Matched payer transfers follow the same exposure; external care costs remain full. Central zero external/payer losses and harms are unknown-neutral conditional references, not measured absence. Full annual cost is charged against a narrow adult channel; child, prevention and advocacy benefits/burdens, unrecognized volunteers and complete global incidence remain unknown. Annual response is not measured next-gift efficiency.
+
+## Verification and timing
+
+38 cases reproduce exactly after JSON serialization; current production income bridge and headline parity PASS. Actual current registry validation with candidate beta membership and new closed sessions in memory PASS. No checkout writes. Run Node24 selftest.mjs with checkout path to reproduce all gates.
+
+Closed author source interval22:47:00.666–22:47:46.698=46.032seconds. Modeling22:48:15.321–22:50:40.796=145.475seconds; single material correction22:51:09.702–22:51:19.906=10.204seconds. Total credited201.711seconds, not fifteen minutes. Untimed visual follow-up, tests and packaging excluded. No unsupported gap credited. Existing compatible runtime/dependencies reused; no installation, server, checkout copy or deletion. Original PDF/render retained for independent verification.

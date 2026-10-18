@@ -1,0 +1,53 @@
+{
+  "before": 44285029.54022803,
+  "current": {
+    "costUSD": 4296413,
+    "allPopulationQalys": 3.3541150000000006,
+    "editionQalys": 3.1864092500000005,
+    "incomePathways": [
+      {
+        "id": "incremental-retained-job-households",
+        "people": 0.75,
+        "annualIncomeBeforeUSD": 20000,
+        "annualIncomeGainUSD": 490,
+        "years": 1,
+        "editionShare": 0.95,
+        "delayYears": 0,
+        "discountRate": 0.03,
+        "rationale": "Five historical successful jobs are a descriptive envelope; causal share and retention are judgments, with joint full access costs.",
+        "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+        "sourceIds": [
+          "annual",
+          "protocol",
+          "cg-income"
+        ]
+      },
+      {
+        "id": "other-exposed-households",
+        "people": 845.6500000000001,
+        "annualIncomeBeforeUSD": 20000,
+        "annualIncomeGainUSD": -10,
+        "years": 1,
+        "editionShare": 0.95,
+        "delayYears": 0,
+        "discountRate": 0.03,
+        "rationale": "Full incremental time and access burden even when health and employment benefits fail; no patient fee.",
+        "counterfactual": "Net resources relative to other treatment, employment assistance and public benefits; no gross salary or retail care value.",
+        "sourceIds": [
+          "annual",
+          "protocol",
+          "cg-income"
+        ]
+      }
+    ],
+    "incomeUnknown": false,
+    "incomeEquivalent": -0.19226918186361058,
+    "totalEquivalent": 2.99414006813639,
+    "price10": 14349405.512862895,
+    "clinicalPatients": 1058,
+    "resourceHouseholds": 846.4000000000001,
+    "incrementalRetainedJobHouseholds": 0.75
+  },
+  "change": "Remove annual marginal-finance multiplier; add full process harm and signed resources grounded in five observed job outputs with judged retention and net gains. Not empirically calibrated improvement.",
+  "timingSeconds": 311.981
+}

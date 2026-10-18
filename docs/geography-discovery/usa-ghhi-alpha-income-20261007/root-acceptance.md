@@ -1,0 +1,7 @@
+# Root independent acceptance — GHHI
+
+Accepted scoped income assessment, not full joint valuation. Independently opened original July2026 affordability study: signed actual and weather/rate-normalized utility changes, four retired homeowners, braided public/private financing and no upfront household charge. Whole-house costs/cases cannot replace the original child-asthma bundle. No average306USD extrapolation to every child, insurer/public/contractor saving as cash, wage or arbitrarycash credit. Current marginal household/delivery/bill incidence, signed costs, finite timing and net baseline unresolved, not zero/90%health.
+
+Portable reconstruction passes all six original clinical worlds, central0.000579837833737864USAQALYs/$10000, clinical-only price172462012.96552253 unchanged. Report explicitly retains utility increases, rate/rent/access/maintenance burdens independent of clinical response and positive-only overlap. Complete original diagnostic preserved. Initial assessment independently challenged by root, no beta or endorsement upgrade.
+
+Actual author81.545sec + root source57.885sec + root model6.353sec + final13.65sec =159.43300000000002sec measured. Initial pre-clock lookup duration remains unknown, conservative30sec allowance separately disclosed, maximumallocation189.43300000000002sec under300cap. Tests/admin/release excluded. No active science clock. Root320MB/free25GiB, existingdependencies retained, no sourcePDF downloaded.

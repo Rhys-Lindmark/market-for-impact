@@ -1,0 +1,49 @@
+{
+  "originalReport": "original-report.json",
+  "originalVersion": "ca-tcp-renewal-slice-v1",
+  "originalScenarios": [
+    {
+      "id": "central",
+      "label": "Renewal-policy slice: subjective central, not full portfolio",
+      "costUSD": 14929704,
+      "allPopulationQalys": 0.928868784243457,
+      "editionQalys": 0.928868784243457,
+      "assumptions": "N=400000;r=.1;u=.5;q=.02;p=.05;a=.1;b=.25;T=2;lag=2;d=.03;other portfolio excluded."
+    },
+    {
+      "id": "zero",
+      "label": "No additional implementation or funding effect",
+      "costUSD": 14929704,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "assumptions": "p=0 or b=0; no finite positive health price."
+    },
+    {
+      "id": "poor",
+      "label": "Weak remedy and attribution stress",
+      "costUSD": 14929704,
+      "allPopulationQalys": 0.0008359819058191113,
+      "editionQalys": 0.0008359819058191113,
+      "assumptions": "r=.03;u=.25;q=.005;p=.01;a=.03;b=.1;other inputs central."
+    },
+    {
+      "id": "favorable",
+      "label": "Strong implemented reform stress, not likely upper bound",
+      "costUSD": 14929704,
+      "allPopulationQalys": 178.34280657474375,
+      "editionQalys": 178.34280657474375,
+      "assumptions": "r=.3;u=.8;q=.05;p=.2;a=.2;b=.5;T=2 and timing unchanged."
+    },
+    {
+      "id": "harm",
+      "label": "Unpriced harm outweighs modeled slice",
+      "costUSD": 14929704,
+      "allPopulationQalys": -1.0711312157565431,
+      "editionQalys": -1.0711312157565431,
+      "assumptions": "Stress only: 2 net additional QALYs lost elsewhere; not an observed harm estimate."
+    }
+  ],
+  "originalPrice10": 160729957.26904434,
+  "clinicalCoefficientsUnchanged": true,
+  "authorSeconds": 92.288
+}

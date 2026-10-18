@@ -1,0 +1,11 @@
+# PPRM beta source checkpoint
+
+Original latest indexed FY2024/2023/2022 IRS bodies were freshly retrieved HTTP 200. FY2024 legal recipient EIN84-0404253 full cost 66,931,878 +130,471 netted direct events=67,062,349; priorfull65,308,483/55,000,378 mean62,457,070. Original FY2024 says OVER56K clients/21centers CO,NV,NM,24% abortion,76%selfpay/Medicaid,36%≤138%FPL. Lowerrounded56K is not exact unique completed procedures or resident Denver count. Clinical recognized cost45,723,150 includes all clinic care; education2,200,707/17,927 contacts not additional unique patients.
+
+Original current own locations search/page identifies CO/NM/WY instead of historicalNV. Current homepage/donor directweb failed, earlier accepted donor receipt retained but not newly tested transaction. No current deliverycost or donor-response precision inferred from2024 deficit/current policy shifts.
+
+Root independently read original Turnaway economic manuscript PMC5803812: personalincome difference175/month at6months, little later; nohouseholdincome difference; poverty largely householdsize, publicassistance offsets employment. Therefore original1000annual×4years is not measured net earnings. A retained numerical consumption-pressure hypothesis must explicitly mean existing household discretionary resources after additional care/childcare expenses and transfers, not a fabricated income effect or newbirth intrinsic welfare. Zero/adverse/finite transient income alternatives are required.
+
+Root independently confirms original health study and erratum PMID32866402/DOI10.7326/L20-0984 exists; corrected body unavailable. No precise uncorrected physicalhealth percentage calibrated. Original q.02 remains utility judgment, not measuredQALY. Other contraception/STI/cancer effects unknown, notzero; native24%abortion permits disjoint other-patient sensitivity, no assumed all-serviceeffect.
+
+Primary sources: https://projects.propublica.org/nonprofits/full_text/202531819349300843/IRS990 ; https://projects.propublica.org/nonprofits/full_text/202412259349300996/IRS990 ; https://projects.propublica.org/nonprofits/full_text/202302279349303655/IRS990 ; https://pmc.ncbi.nlm.nih.gov/articles/PMC5803812/ ; https://pubmed.ncbi.nlm.nih.gov/31181576/ ; https://pubmed.ncbi.nlm.nih.gov/32866402/ ; https://www.plannedparenthood.org/planned-parenthood-rocky-mountains/locations

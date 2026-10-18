@@ -1,0 +1,9 @@
+# NYC-EJA independent initial-income acceptance
+
+Root accepts the targeted resource assessment, not a completed joint health-income valuation. Clinical reference $80,369,767.67640357 per ten MSA QALYs, clinical 0.9347604475165978 and three annual recipient budgets $7,512,648 unchanged. Seven original worlds and full initial diagnostic preserved.
+
+Fresh independent original checks: current NYC-EJA heat campaign describes enacted 2025 cooling laws, HEAP access, cooling centers and efficiency; the June 15 2026 city heat announcement explicitly links cooling access to affordable operating energy. New cooling use can increase electricity bills; efficient equipment or subsidies can reduce actual household payments. Neither source establishes a current gift-responsive household uptake and net-bill coefficient. Existing laws, HEAP and independent public/landlord implementation remain baseline; mortality counts are not ratepayer households. Missing operational amounts/incidence, not absent randomized studies or judged attribution alone, prevent numerical calibration.
+
+Full negative electricity, rent, access and administration burdens survive clinical-null worlds. Overlap applies only to positive gains. Public transfers, real implementation costs and the existing induced-cost diagnostic require disjoint scope; no duplicated cost, retail AC value or survivor wages.
+
+Independent portable validator passed actual report/progress schema, seven-world arithmetic reconstruction, exact diagnostic/scenario equality, null income and price preservation. Author 67.847 seconds plus root source/model audit 14.978 seconds = 82.825 measured dedicated seconds. Short serialized-draft inspection after clock closure excluded from measured registry and separately conservatively allocated 30 seconds; ceiling 112.825 seconds below the 300-second initial cap. No deep promotion or padded waits.

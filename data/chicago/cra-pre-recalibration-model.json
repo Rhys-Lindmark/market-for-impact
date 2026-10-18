@@ -1,0 +1,315 @@
+{
+  "edition": "chicago",
+  "slug": "chicago-recovery-alliance",
+  "organization": "Chicago Recovery Alliance",
+  "frozenFromCommit": "5b007a4",
+  "model": {
+    "version": "chicago-cra-beta-conditional-v2",
+    "costScope": "Single full-recipient boundary C*f+K. C includes all recorded support functions and settlement. K is unknown unrecognized donated/volunteer inputs needed by the same portfolio, net of recorded overlap. Displayed finite illustration conditionally K=0. Not complete economic cost or marginal gift price; induced external healthcare cost remains unpriced.",
+    "geographicAttribution": "Chicago/Cicero/Harvey sites establish MSA eligibility, not 95% residency. Staff describe statewide activity. g=.95 is judgment, tested at .75; national training receives no benefit credit.",
+    "formula": "deaths=N*c*r*h*e*a*b; L=sum(t=0..T-1)(s^t*u/(1+d)^(t+.5)); Q_all=deaths*L+H; Q_MSA=g*Q_all; cost=C*f+K; price10=10*cost/Q_MSA only when Q_MSA>0.",
+    "counterfactual": "EMS, peers, libraries, other outreach and donors continue. a selects reach lacking equivalent timely rescue without CRA; h is counterfactual fatal risk in that selected group, not population mortality. e is conditional prevention in that group. b is additional usable capacity beyond replacement finance. These unmeasured factors may be correlated and are not trial-calibrated.",
+    "attribution": "Whole recipient only; no credit for city decline or all reversals. Other portfolio health H is signed and unknown. Cross-recipient benefits overlap and cannot be added.",
+    "uncertainty": "Very low confidence. Central retains alpha assumptions for continuity, not calibrated expected value. K=0 and H=0 are conditional omissions, not established absence or lower bounds. Marginal donor price is unknown. Scenario ranges are not confidence intervals.",
+    "nativeOutcomes": "Conditional deaths prevented over one operating year, at most five subsequent survival years centrally, ten in favorable sensitivity; no perpetual cohort or separate infection/reversal credit.",
+    "inputs": [
+      {
+        "name": "C",
+        "value": 3908692,
+        "unit": "USD whole-recipient annual expense",
+        "basis": "observed",
+        "rationale": "All 2024 audited expense including settlement loss; later audit preferred to unreconciled earlier return.",
+        "sourceIds": [
+          "audit24"
+        ]
+      },
+      {
+        "name": "f",
+        "value": 1,
+        "unit": "forward expense multiplier",
+        "basis": "judgment",
+        "rationale": "Keeps full historicalcost while reducing output for cuts; cost growth tested separately.",
+        "sourceIds": []
+      },
+      {
+        "name": "N",
+        "value": 15000,
+        "unit": "annual reported people relying on services",
+        "basis": "judgment",
+        "rationale": "Translates source statement of over 15,000 annual reliance into model population; current distinct reach unverified and halved in sensitivity.",
+        "sourceIds": [
+          "cuts"
+        ]
+      },
+      {
+        "name": "c",
+        "value": 0.6,
+        "unit": "postcut usable-reach fraction",
+        "basis": "judgment",
+        "rationale": "40%reduction for staff/services; actual current volume unknown.",
+        "sourceIds": []
+      },
+      {
+        "name": "r",
+        "value": 0.6,
+        "unit": "opioid-overdose-risk fraction of reach",
+        "basis": "judgment",
+        "rationale": "Removes nonopioid/indirect service recipients.",
+        "sourceIds": []
+      },
+      {
+        "name": "h",
+        "value": 0.02,
+        "unit": "annual fatal-opioid-overdose probability",
+        "basis": "judgment",
+        "rationale": "Uncalibrated 2% fatal risk in people without equivalent timely rescue; external Ontario post-poisoning cohort is context, not CRA calibration.",
+        "sourceIds": [
+          "mortality"
+        ]
+      },
+      {
+        "name": "e",
+        "value": 0.15,
+        "unit": "conditional overdose mortality reduction",
+        "basis": "judgment",
+        "rationale": "Assumed 15% conditional mortality reduction before the separate alternative-rescue factor; no recipient trial supports this number. The HEALing Communities trial tested a broader community package and is not a direct test of CRA or naloxone alone.",
+        "sourceIds": [
+          "oend",
+          "heal"
+        ]
+      },
+      {
+        "name": "a",
+        "value": 0.5,
+        "unit": "share without equivalent alternative rescue",
+        "basis": "judgment",
+        "rationale": "Judged share without equivalent timely alternative rescue, not local deduplicated evidence.",
+        "sourceIds": [
+          "access",
+          "local2026"
+        ]
+      },
+      {
+        "name": "b",
+        "value": 0.5,
+        "unit": "marginal gift capacity fraction",
+        "basis": "judgment",
+        "rationale": "Illustrative capacity response, not priced donor tranche; grants/reserves may substitute for a gift. Zero response tested.",
+        "sourceIds": [
+          "cuts",
+          "city259502",
+          "pay259502"
+        ]
+      },
+      {
+        "name": "T",
+        "value": 5,
+        "unit": "years of residual survival credited",
+        "basis": "judgment",
+        "rationale": "Hard cap5years, not remaining life expectancy.",
+        "sourceIds": []
+      },
+      {
+        "name": "s",
+        "value": 0.9,
+        "unit": "annual conditional survival after rescue",
+        "basis": "judgment",
+        "rationale": "Judged survival allowing repeat overdose/comorbidity; not fitted or proven conservative.",
+        "sourceIds": []
+      },
+      {
+        "name": "u",
+        "value": 0.65,
+        "unit": "health utility while alive",
+        "basis": "judgment",
+        "rationale": "Accounts for chronic illness and substance-use burden; not age-dependent valuation.",
+        "sourceIds": []
+      },
+      {
+        "name": "d",
+        "value": 0.03,
+        "unit": "annual health discount rate",
+        "basis": "judgment",
+        "rationale": "3%discount with half-year timing.",
+        "sourceIds": []
+      },
+      {
+        "name": "g",
+        "value": 0.95,
+        "unit": "Chicago MSA share of modeled health",
+        "basis": "judgment",
+        "rationale": "Current service anchors inMSA; unknown resident/training leakage.",
+        "sourceIds": [
+          "geography"
+        ]
+      },
+      {
+        "name": "K",
+        "value": null,
+        "unit": "USD additional unrecognized resources",
+        "basis": "unknown",
+        "rationale": "Net-of-overlap opportunity cost of donated inputs/volunteers. Conditional zero; 25% and 100% expense add-ons not measured valuations.",
+        "sourceIds": [
+          "volunteers",
+          "access",
+          "donated2018"
+        ]
+      },
+      {
+        "name": "H",
+        "value": null,
+        "unit": "signed other-portfolio all-population QALYs",
+        "basis": "unknown",
+        "rationale": "Unknown infection, counseling/referral, displacement and adverse effects. Conditional zero; positive/negative stress tests are not occurrence claims.",
+        "sourceIds": [
+          "services"
+        ]
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "central",
+        "label": "Conditional recorded-spending baseline",
+        "costUSD": 3908692,
+        "allPopulationQalys": 10.083352370709239,
+        "editionQalys": 9.579184752173777,
+        "assumptions": "{\"C\":3908692,\"f\":1,\"K\":0,\"N\":15000,\"c\":0.6,\"r\":0.6,\"h\":0.02,\"e\":0.15,\"a\":0.5,\"b\":0.5,\"T\":5,\"s\":0.9,\"u\":0.65,\"d\":0.03,\"g\":0.95,\"H\":0}; deaths=4.05; capped discounted QALYs per death=2.489716634743022; H is signed all-population net other-portfolio QALYs. K=0 is a conditional omission, not evidence that external resources are free. price10=4080401.517585316"
+      },
+      {
+        "id": "favorable",
+        "label": "Restored reach and stronger exclusive rescue",
+        "costUSD": 3908692,
+        "allPopulationQalys": 243.1033682285803,
+        "editionQalys": 243.1033682285803,
+        "assumptions": "{\"C\":3908692,\"f\":1,\"K\":0,\"N\":15000,\"c\":1,\"r\":0.8,\"h\":0.02,\"e\":0.3,\"a\":0.8,\"b\":0.8,\"T\":10,\"s\":0.95,\"u\":0.75,\"d\":0.03,\"g\":1,\"H\":0}; deaths=46.080000000000005; capped discounted QALYs per death=5.275680734127176; H is signed all-population net other-portfolio QALYs. K=0 is a conditional omission, not evidence that external resources are free. price10=160783.12811876857"
+      },
+      {
+        "id": "poor",
+        "label": "Low reach, hazard, additionality and survival",
+        "costUSD": 4690430.399999999,
+        "allPopulationQalys": 0.0105038014313048,
+        "editionQalys": 0.00840304114504384,
+        "assumptions": "{\"C\":3908692,\"f\":1.2,\"K\":0,\"N\":15000,\"c\":0.4,\"r\":0.4,\"h\":0.005,\"e\":0.05,\"a\":0.2,\"b\":0.1,\"T\":2,\"s\":0.8,\"u\":0.5,\"d\":0.03,\"g\":0.8,\"H\":0}; deaths=0.012000000000000004; capped discounted QALYs per death=0.8753167859420663; H is signed all-population net other-portfolio QALYs. K=0 is a conditional omission, not evidence that external resources are free. price10=5581824864.402147"
+      },
+      {
+        "id": "zero-effect",
+        "label": "No incremental mortality reduction",
+        "costUSD": 3908692,
+        "allPopulationQalys": 0,
+        "editionQalys": 0,
+        "assumptions": "{\"C\":3908692,\"f\":1,\"K\":0,\"N\":15000,\"c\":0.6,\"r\":0.6,\"h\":0.02,\"e\":0,\"a\":0.5,\"b\":0.5,\"T\":5,\"s\":0.9,\"u\":0.65,\"d\":0.03,\"g\":0.95,\"H\":0}; deaths=0; capped discounted QALYs per death=2.489716634743022; H is signed all-population net other-portfolio QALYs. K=0 is a conditional omission, not evidence that external resources are free. price10=undefined for nonpositive QALYs"
+      },
+      {
+        "id": "zero-finance",
+        "label": "Gift fully substitutes existing finance",
+        "costUSD": 3908692,
+        "allPopulationQalys": 0,
+        "editionQalys": 0,
+        "assumptions": "{\"C\":3908692,\"f\":1,\"K\":0,\"N\":15000,\"c\":0.6,\"r\":0.6,\"h\":0.02,\"e\":0.15,\"a\":0.5,\"b\":0,\"T\":5,\"s\":0.9,\"u\":0.65,\"d\":0.03,\"g\":0.95,\"H\":0}; deaths=0; capped discounted QALYs per death=2.489716634743022; H is signed all-population net other-portfolio QALYs. K=0 is a conditional omission, not evidence that external resources are free. price10=undefined for nonpositive QALYs"
+      },
+      {
+        "id": "half-distinct-reach",
+        "label": "Only half of quoted reach is distinct",
+        "costUSD": 3908692,
+        "allPopulationQalys": 5.0416761853546195,
+        "editionQalys": 4.789592376086889,
+        "assumptions": "{\"C\":3908692,\"f\":1,\"K\":0,\"N\":7500,\"c\":0.6,\"r\":0.6,\"h\":0.02,\"e\":0.15,\"a\":0.5,\"b\":0.5,\"T\":5,\"s\":0.9,\"u\":0.65,\"d\":0.03,\"g\":0.95,\"H\":0}; deaths=2.025; capped discounted QALYs per death=2.489716634743022; H is signed all-population net other-portfolio QALYs. K=0 is a conditional omission, not evidence that external resources are free. price10=8160803.035170632"
+      },
+      {
+        "id": "lower-hazard",
+        "label": "One-quarter baseline fatal-overdose risk",
+        "costUSD": 3908692,
+        "allPopulationQalys": 2.5208380926773097,
+        "editionQalys": 2.3947961880434443,
+        "assumptions": "{\"C\":3908692,\"f\":1,\"K\":0,\"N\":15000,\"c\":0.6,\"r\":0.6,\"h\":0.005,\"e\":0.15,\"a\":0.5,\"b\":0.5,\"T\":5,\"s\":0.9,\"u\":0.65,\"d\":0.03,\"g\":0.95,\"H\":0}; deaths=1.0125; capped discounted QALYs per death=2.489716634743022; H is signed all-population net other-portfolio QALYs. K=0 is a conditional omission, not evidence that external resources are free. price10=16321606.070341265"
+      },
+      {
+        "id": "one-year-horizon",
+        "label": "Only one finite year of survival credited",
+        "costUSD": 3908692,
+        "allPopulationQalys": 2.5938793247675016,
+        "editionQalys": 2.4641853585291265,
+        "assumptions": "{\"C\":3908692,\"f\":1,\"K\":0,\"N\":15000,\"c\":0.6,\"r\":0.6,\"h\":0.02,\"e\":0.15,\"a\":0.5,\"b\":0.5,\"T\":1,\"s\":0.9,\"u\":0.65,\"d\":0.03,\"g\":0.95,\"H\":0}; deaths=4.05; capped discounted QALYs per death=0.6404640308067906; H is signed all-population net other-portfolio QALYs. K=0 is a conditional omission, not evidence that external resources are free. price10=15862004.806055257"
+      },
+      {
+        "id": "resource-plus25",
+        "label": "Unpriced resources equal 25% of recorded spending",
+        "costUSD": 4885865,
+        "allPopulationQalys": 10.083352370709239,
+        "editionQalys": 9.579184752173777,
+        "assumptions": "{\"C\":3908692,\"f\":1,\"K\":977173,\"N\":15000,\"c\":0.6,\"r\":0.6,\"h\":0.02,\"e\":0.15,\"a\":0.5,\"b\":0.5,\"T\":5,\"s\":0.9,\"u\":0.65,\"d\":0.03,\"g\":0.95,\"H\":0}; deaths=4.05; capped discounted QALYs per death=2.489716634743022; H is signed all-population net other-portfolio QALYs. K=0 is a conditional omission, not evidence that external resources are free. price10=5100501.896981645"
+      },
+      {
+        "id": "resource-plus100",
+        "label": "Unpriced resources equal recorded spending",
+        "costUSD": 7817384,
+        "allPopulationQalys": 10.083352370709239,
+        "editionQalys": 9.579184752173777,
+        "assumptions": "{\"C\":3908692,\"f\":1,\"K\":3908692,\"N\":15000,\"c\":0.6,\"r\":0.6,\"h\":0.02,\"e\":0.15,\"a\":0.5,\"b\":0.5,\"T\":5,\"s\":0.9,\"u\":0.65,\"d\":0.03,\"g\":0.95,\"H\":0}; deaths=4.05; capped discounted QALYs per death=2.489716634743022; H is signed all-population net other-portfolio QALYs. K=0 is a conditional omission, not evidence that external resources are free. price10=8160803.035170632"
+      },
+      {
+        "id": "settlement-normalized",
+        "label": "Remove disclosed settlement loss only",
+        "costUSD": 2096734,
+        "allPopulationQalys": 10.083352370709239,
+        "editionQalys": 9.579184752173777,
+        "assumptions": "{\"C\":2096734,\"f\":1,\"K\":0,\"N\":15000,\"c\":0.6,\"r\":0.6,\"h\":0.02,\"e\":0.15,\"a\":0.5,\"b\":0.5,\"T\":5,\"s\":0.9,\"u\":0.65,\"d\":0.03,\"g\":0.95,\"H\":0}; deaths=4.05; capped discounted QALYs per death=2.489716634743022; H is signed all-population net other-portfolio QALYs. K=0 is a conditional omission, not evidence that external resources are free. price10=2188843.88833214"
+      },
+      {
+        "id": "three-year-mean",
+        "label": "Descriptive historical mean, not forecast",
+        "costUSD": 2645417.3333333335,
+        "allPopulationQalys": 10.083352370709239,
+        "editionQalys": 9.579184752173777,
+        "assumptions": "{\"C\":2645417.3333333335,\"f\":1,\"K\":0,\"N\":15000,\"c\":0.6,\"r\":0.6,\"h\":0.02,\"e\":0.15,\"a\":0.5,\"b\":0.5,\"T\":5,\"s\":0.9,\"u\":0.65,\"d\":0.03,\"g\":0.95,\"H\":0}; deaths=4.05; capped discounted QALYs per death=2.489716634743022; H is signed all-population net other-portfolio QALYs. K=0 is a conditional omission, not evidence that external resources are free. price10=2761630.975676731"
+      },
+      {
+        "id": "msa75",
+        "label": "Only 75% of modeled health in MSA",
+        "costUSD": 3908692,
+        "allPopulationQalys": 10.083352370709239,
+        "editionQalys": 7.562514278031929,
+        "assumptions": "{\"C\":3908692,\"f\":1,\"K\":0,\"N\":15000,\"c\":0.6,\"r\":0.6,\"h\":0.02,\"e\":0.15,\"a\":0.5,\"b\":0.5,\"T\":5,\"s\":0.9,\"u\":0.65,\"d\":0.03,\"g\":0.75,\"H\":0}; deaths=4.05; capped discounted QALYs per death=2.489716634743022; H is signed all-population net other-portfolio QALYs. K=0 is a conditional omission, not evidence that external resources are free. price10=5168508.588941401"
+      },
+      {
+        "id": "other-net-negative",
+        "label": "Unmeasured portfolio net effect minus 12 QALYs",
+        "costUSD": 3908692,
+        "allPopulationQalys": -1.916647629290761,
+        "editionQalys": -1.820815247826223,
+        "assumptions": "{\"C\":3908692,\"f\":1,\"K\":0,\"N\":15000,\"c\":0.6,\"r\":0.6,\"h\":0.02,\"e\":0.15,\"a\":0.5,\"b\":0.5,\"T\":5,\"s\":0.9,\"u\":0.65,\"d\":0.03,\"g\":0.95,\"H\":-12}; deaths=4.05; capped discounted QALYs per death=2.489716634743022; H is signed all-population net other-portfolio QALYs. K=0 is a conditional omission, not evidence that external resources are free. price10=undefined for nonpositive QALYs"
+      },
+      {
+        "id": "other-net-positive",
+        "label": "Unmeasured portfolio net effect plus 10 QALYs",
+        "costUSD": 3908692,
+        "allPopulationQalys": 20.08335237070924,
+        "editionQalys": 19.079184752173777,
+        "assumptions": "{\"C\":3908692,\"f\":1,\"K\":0,\"N\":15000,\"c\":0.6,\"r\":0.6,\"h\":0.02,\"e\":0.15,\"a\":0.5,\"b\":0.5,\"T\":5,\"s\":0.9,\"u\":0.65,\"d\":0.03,\"g\":0.95,\"H\":10}; deaths=4.05; capped discounted QALYs per death=2.489716634743022; H is signed all-population net other-portfolio QALYs. K=0 is a conditional omission, not evidence that external resources are free. price10=2048668.2480259882"
+      },
+      {
+        "id": "no-alternative-gap",
+        "label": "Equivalent rescue available without CRA",
+        "costUSD": 3908692,
+        "allPopulationQalys": 0,
+        "editionQalys": 0,
+        "assumptions": "{\"C\":3908692,\"f\":1,\"K\":0,\"N\":15000,\"c\":0.6,\"r\":0.6,\"h\":0.02,\"e\":0.15,\"a\":0,\"b\":0.5,\"T\":5,\"s\":0.9,\"u\":0.65,\"d\":0.03,\"g\":0.95,\"H\":0}; deaths=0; capped discounted QALYs per death=2.489716634743022; H is signed all-population net other-portfolio QALYs. K=0 is a conditional omission, not evidence that external resources are free. price10=undefined for nonpositive QALYs"
+      }
+    ],
+    "sensitivity": [
+      "Sixteen cases include zero clinical effect, zero finance, no alternative-access gap and net-negative health; nonpositive QALYs have no finite price.",
+      "Settlement exclusion and descriptive historical mean do not establish recurring budgets. Additional resources can exceed illustrative 25%/100% sensitivities.",
+      "Distinct reach, hazard, horizon and geography materially affect results; favorable/poor cases are not probability bounds.",
+      "Correlated a,b,c,h,e point judgments do not quantify posterior uncertainty.",
+      "Cross-organization estimates cannot be summed; alternative-service factors do not establish deduplication."
+    ],
+    "missingInputs": [
+      "2025/2026 accounts, cash/restrictions, 2024 audit/return bridge, settlement payment status, controls and audit inconsistencies.",
+      "Grant conditions, renewals and reimbursement periods; payment date is not current-year revenue or donor room.",
+      "Priced unfunded whole-recipient restoration tranche, hiring timing/output and financing substitution.",
+      "Distinct opioid-risk reach, kit use, verified outcomes, alternative supply and MSA residence.",
+      "Donated supplies and volunteer opportunity cost net of recognized and supplier overlap.",
+      "Recipient causal mortality effect, repeat-event survival, utility and signed other-portfolio net health."
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+import assert from 'node:assert/strict';
+import {calculate,cases,defaults} from '../docs/geography-discovery/chicago-nourishing-hope-initial-20261005/model.mjs';
+let checks=0;
+const near=(a,b)=>{checks++;assert.ok(Number.isFinite(a)&&Math.abs(a-b)<1e-9*Math.max(1,Math.abs(b)));};
+const pos=(v,k)=>v>0?v*k:v;
+for(const[id,o]of cases){
+ const p={...defaults,...o},x=calculate(o),n=p.N*p.b,d=(1+p.discount)**p.delay;
+ let yf=0;for(let y=0;y<Math.ceil(p.T);y++)yf+=Math.min(1,p.T-y)/(1+p.discount)**(p.delay+y);
+ const h=p.g*(n*p.clinicalShare*p.completion*p.q*yf-n*p.harm/d);
+ let income=.5*p.g*(n*p.resourceSuccess*Math.log1p((pos(p.foodGain,p.positiveOverlap)+pos(p.benefitGain,p.positiveOverlap)-p.cost)/p.baseline)+n*(1-p.resourceSuccess)*Math.log1p(-p.cost/p.baseline))/d;
+ if(n&&(p.payerLoss||p.externalCost))income+=.5*p.g*p.payerPeople*Math.log1p(-n*(p.resourceSuccess*p.payerLoss+p.externalCost)/p.payerPeople/p.payerBaseline)/d;
+ near(x.union,n);near(x.clinicalPeople,n*p.clinicalShare*p.completion);near(x.incomeEquivalent,income);
+ if(p.clinicalUnknown)assert.equal(x.editionQalys,null);else near(x.editionQalys,h);
+ const total=p.clinicalUnknown||p.incomeUnknown?null:h+income;
+ if(total===null){assert.equal(x.totalEquivalent,null);assert.equal(x.price10,null);}
+ else{near(x.totalEquivalent,total);if(total>0)near(x.price10,10*p.C/total);else assert.equal(x.price10,null);}
+}
+assert.ok(calculate({q:0}).incomeEquivalent>0);assert.equal(calculate({b:0}).totalEquivalent,0);
+assert.equal(calculate({foodGain:-100,benefitGain:300}).incomePathways[0].annualIncomeGainUSD,-25);
+console.log(JSON.stringify({status:'PASS',cases:cases.length,independentChecks:checks,central:calculate()}));

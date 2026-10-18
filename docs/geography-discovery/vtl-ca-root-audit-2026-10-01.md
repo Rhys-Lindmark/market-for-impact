@@ -1,0 +1,11 @@
+# Vision To Learn: root source challenge
+
+Focused original-source audit 2026-10-02T03:21:46.464Z–03:23:05.162Z,78.698seconds. Closed record in vtl-ca-root-audit-2026-10-01.json; current model attribution user-confirmed GPT-6.1 Sol, not inferred runtime telemetry. Earlier manager inspection is not reconstructed into this interval.
+
+Primary child utility source: [Mannava et al2024](https://link.springer.com/article/10.1186/s13561-024-00552-0). Original publisher text directly opened; PMC was challenge-blocked. Hospital before-after data, Indonesian EQ5D-Y tariff, self/proxy responses, mixed treatments and best-corrected-acuity/pathology strata limit transport to California school spectacle delivery. Mild-VI median change.02 is not a randomized mean individual spectacle effect. A smaller central local utility may be defensible as a declared judgment, not an empirically identified half effect. Do not present the noncontrolled median as a causal calibration.
+
+Previous untimed manager inspection: [Baltimore cluster trial](https://jamanetwork.com/journals/jamaophthalmology/fullarticle/2783867) reports first-year reading improvement, with no sustained two-year effect or measured wage outcome. Native educational benefit should remain visible. A lifetime earnings multiplier is not identified by this trial.
+
+[Coefficient Giving crosswalk](https://coefficientgiving.org/research/cost-effectiveness/): annual resource-equivalent years=.5*people*log(1+netGain/baseline)*finite discounted years. This is a welfare comparison, not measured clinical health. One household purchase saving uses one household baseline and one receipt, not several family-member incomes. Caregiver time is not realized income without a cash/employment conversion. Purchasers and unmet-correction clinical strata should be disjoint where modeled, or have an explicit overlap rule; subtracting cash from the old clinical total does not independently identify health.
+
+Sent these material constraints to the implementer before acceptance. Outcome: evidence changes the current bridge choice and uncertainty labeling; no price adopted or count incremented by this audit alone. Root must reproduce final independent calculator and publication before acceptance.

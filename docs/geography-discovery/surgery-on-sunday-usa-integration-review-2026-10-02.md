@@ -1,0 +1,21 @@
+# Surgery on Sunday USA final integration review — 2026-10-02
+
+Decision: final integration ACCEPT; no required correction remains. The one stale prose sentence in sections.funding was corrected by root from60% to50% and independently rechecked, matching production central funding=.5 and the current cost section. Historical scenarios remain untouched.
+
+Read-only bounded review reused the earlier accepted scientific memo, Space Saver/Token Saver instructions and existing checkout/Node24. No new source research, research interval, edits to product/Git/Sites, installs, servers, builds or helpers. Workspace128M,27Gi free. Only this requested small acceptance file was written under /private/tmp.
+
+All38 production cases serialize correctly, plus the39th preserved historical central. Native outputs deeply reconcile against calculate for each complete/unknown case; prices and signed income sums match. Central donor combined is$1,235,136.175867155 from.08420218246533104 clinical QALYs and−.003239449809725051 household-resource equivalents. Gross institutional companion$2,305,587.5282853562 remains separately labeled.
+
+Central resource paths explicitly contain buyers.1666667 at net+$570, nonbuyers1.5 at−$200, first-year recovered survivors.22275 at$500 over baseline29800 with delay1.25, second-year survivors.2205225 at$500 over30000 with delay2.25, and8.3333333 volunteer equivalents at−$10 with delay.25. Earnings independence.25 is applied after the separate marginal log increments; surgical/purchase/volunteer costs stay earlier one-off flows. Common-alive earnings do not credit normal pay of newly surviving people. Equivalent buyers have clinical benefit and matching harm in both worlds, so incremental clinical0. Full nonbuyer harm and conditional alternative-care relief retain the accepted conservative formulation.
+
+historicalModel deeply equals the frozen10-case original model; historical price$405,175.8308002147 is preserved. Four original expense-period sources retain verified financial lineage and event addbacks. Three full-year observations are correctly marked incomparable/nonconsecutive; the six-month transition is explained, and no standard consecutive three-year mean is emitted. Cash costs, outcome duration, case mix, funding response, current capacity and cash impacts remain explicit judgments. Gross resources are not a measured net societal cost or retail cash savings.
+
+Fixed-baseline comparison against b44c729 showed every unrelated report, all old geography session objects and all existing organization research records unchanged. This includes California and other USA organizations. Surgery on Sunday report has8 unique session IDs:3 prior and5 new. Both registries contain the same8 session records once. New author167+59+84+49=359s and independent root19s total378researcher-seconds; raw runtime fields remain null. USA header is ~5min GPT-6 Astra Light + ~14min GPT-6 Astra Medium + ~6min GPT-6.1 Sol. This review adds no measured research credit.
+
+The shared validator's zero-cost accommodation remains bounded: costs must be nonnegative or explicit unknown. An independent in-memory mutation with central cost0 but positive synthetic benefit returned null from reportPrice and incomeAdjustedReportPrice; negative cost−1 was rejected by validateEditionReports. The actual zero-gift surgery case yields0benefit and null positive price. No mutation was written to disk.
+
+Focused current/historical/shared suites independently rerun:16tests passed,0failed. Direct serialization, timing, geography isolation, historical snapshot and zero/negative cost checks passed. Corrected50% funding prose independently verified. Root owns responsive UI and publication checks. No remaining blocker to final integration acceptance of the explicitly conditional partial comparison with HOLD.
+
+## Root release resolution
+
+The single stale response sentence was corrected to50% using apply_patch. A direct registry check returns true for the50% sentence and false for60%; historical cases remain unchanged. Final integration acceptance is resolved. Root's31 focused tests and2 phone/tablet checks passed; production build passed before the prose correction and the publishing workflow rebuilds the corrected source. No integration or deployment time is credited as research.

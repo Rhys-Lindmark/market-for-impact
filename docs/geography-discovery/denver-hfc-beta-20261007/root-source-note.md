@@ -1,0 +1,9 @@
+# HFC root original-source check
+
+Root actual closedsourceinterval34.924s GPT-6.1Sol; laterchecksuntimednotreconstructed.
+
+OriginalFYJune2025IRS rendered efile reopenedgzipaware:5007591functionalexpensesplus22889directeventexpenses=5030480fullannualcost;3008512clientservicesincludes1156919grants.17357applicationhouseholds explicitlyHFCANDpartners, not unique approved newrecipienthouseholds. Noassumeddoubleaddbackgrants. Officialdonation/resourcespages reopened; currentindexlinks2025originalreport, nofinancialtransaction.
+
+OriginalMITauthors2019SNAPrandomizedpaper opened: elderlyPennsylvania contactsample,9monthenrollment6%control/11%information/18%informationplusassistance; ITTcontactnotapplicationdenominator. SupportsmechanismnotHFCspecificcoefficientorhealthutility. Marginalenrolleeshealthier/higherresources; targetedwelfareandprivateapplication/publicadmincostsmatter. HistoricalparticipantbenefitsanddurationnotcurrentColoradoamounts.
+
+Challengefinitehealth/foodresourceamounts, approvalvsapplicationdenominator, noautomaticemploymentgain. Initial health omits receipt gate while resources require success; revise shared approved cohort before applying conditional healthresponse. Root initially misread payer g as taxpayer residence; actual code can coherently count full worldwide taxpayer loss for transfers TO Denver beneficiaries, with payer editionShare1. Preserve this main local-channel interpretation explicitly, not force all-state payer costs against Denver-only benefits. Statewide aligned and full-state-cost-only adverse diagnostics may expose boundary sensitivity. Recipientpositiveoverlapdoesnoterasepayernegative. Donorfundingadditionalitydistinctfromnavigationcounterfactual. Preservecompleteinitialdiagnostic.

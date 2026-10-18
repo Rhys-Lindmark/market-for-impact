@@ -1,0 +1,5 @@
+# Independent reconstruction
+
+Root independently computed every scenario income term with .5*people*editionShare*discountedYears*log(after/before), then combined it once with clinical benefit and annual cost.140checks/43scenarios passed. Central annual fatalities hypothesis6, healthyyears56.62after .38localprocessharm, cash-equivalent assistance6563.775before positive-overlap, signed household resources−1.137200581, price363613.41192919953. These are conditional judgments, not measured local causal outcomes.
+
+Checks cover clinical-null financial benefit, failed efficacy/full resource burdens, null and adverse price, household overlap not deleting negative resources, outside payer losses, no exposure, cash-recipient zero, retained already-discounted survival10, and one-year implementation delay. Preliminary failed effective-years check8.786vs10 caught the communicated inconsistency; corrected final model passes. Initial helper audit phase error created no clock; actual source-audit intervals are retained separately.

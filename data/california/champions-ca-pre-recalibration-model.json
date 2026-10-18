@@ -1,0 +1,167 @@
+{
+  "version": "ca-champions-beta-withdrawn-v3",
+  "costScope": "Full recipient annual recognized economic resources, including donated services and gross event costs. Only specialty-care health is priced; other portfolio pathways remain unpriced. Resource normalization is not a funding request.",
+  "geographicAttribution": "g_CA=1 for qualifying San Diego County resident specialty-care pathways. This is an independently reviewed California denominator, not a population allocation or imported LA share. Low scenario permits 5% nonresident/relocation leakage.",
+  "formula": "N=C*f/k; incremental effective treatment equivalents=N*a*b; Q_CA=N*a*b*u*T*g_CA/(1+d). Central T=1 year; u=0.05 utility improvement, so u*T=0.05 undiscounted QALY. Price10=10*C/Q_CA. Q_portfolio_CA=Q_specialty_CA+Q_other_CA with Q_other_CA unknown. No completion factor or response multiplier is applied twice.",
+  "counterfactual": "Existing contract-funded delivery and state vaccine supply continue; consider vaccinations at pharmacies/clinics, public coverage, other charity care, conservative treatment and later care. A gift must change uptake or treatment beyond this baseline.",
+  "attribution": "a discounts eventual alternative or public care; b separately discounts whether an unrestricted gift changes delivery rather than contracts, reserves or capacity. k includes coordination and partner resources; known donated resources are already in C, not added again.",
+  "uncertainty": "All numerical clinical and donor-response parameters are judgments. Broad joint scenarios are not confidence bounds. The narrow health component cannot establish a complete portfolio ranking. The utility prior represents expected net health area over the stated finite horizon, including treatment burden, within-horizon fade and competing mortality; it is not an endpoint score held indefinitely. No survival extension is credited.",
+  "nativeOutcomes": "Central resource normalization implies 118.9359 completed treatment pathways before counterfactual adjustment and 14.8669875 incremental treatment equivalents, yielding 0.7216984223300972 California QALYs over one year. These are modeled equivalents, not observed patients.",
+  "inputs": [
+    {
+      "name": "C",
+      "value": 2378718,
+      "unit": "USD annual gross recognized recipient resources",
+      "basis": "observed",
+      "rationale": "2025 return 1,963,721 + events 99,031 + donated services 315,966.",
+      "sourceIds": [
+        "original-2025-IRS990",
+        "original-2025-IRS990ScheduleD"
+      ]
+    },
+    {
+      "name": "f",
+      "value": 0.25,
+      "unit": "fraction of recipient resources",
+      "basis": "judgment",
+      "rationale": "Near but below the 556,597/1,963,721 reported Project Access share; allocation of incremental resources is not observed.",
+      "sourceIds": [
+        "original-2025-IRS990"
+      ]
+    },
+    {
+      "name": "k",
+      "value": 5000,
+      "unit": "USD full resources per completed treatment pathway",
+      "basis": "judgment",
+      "rationale": "Judgment including donated clinical opportunity costs, not a quoted fee or observed program average.",
+      "sourceIds": []
+    },
+    {
+      "name": "a",
+      "value": 0.5,
+      "unit": "net additional treatment-benefit fraction",
+      "basis": "judgment",
+      "rationale": "Alternative charity/public/later treatment discounted separately from funding response.",
+      "sourceIds": []
+    },
+    {
+      "name": "b",
+      "value": 0.25,
+      "unit": "funding-response fraction",
+      "basis": "judgment",
+      "rationale": "Judgment on capacity, unrestricted allocation response and contract replacement; applied once.",
+      "sourceIds": []
+    },
+    {
+      "name": "u",
+      "value": 0.05,
+      "unit": "utility improvement for one year",
+      "basis": "judgment",
+      "rationale": "Subjective net clinical benefit after treatment burdens; no empirical organization effect claimed.",
+      "sourceIds": []
+    },
+    {
+      "name": "T",
+      "value": 1,
+      "unit": "year",
+      "basis": "judgment",
+      "rationale": "Finite effect; no benefit beyond one year.",
+      "sourceIds": []
+    },
+    {
+      "name": "g_CA",
+      "value": 1,
+      "unit": "California share of priced health",
+      "basis": "judgment",
+      "rationale": "Current San Diego County resident eligibility; not a whole-portfolio share.",
+      "sourceIds": [
+        "pasd"
+      ]
+    },
+    {
+      "name": "d",
+      "value": 0.03,
+      "unit": "annual discount rate",
+      "basis": "judgment",
+      "rationale": "Conservative end-of-year timing.",
+      "sourceIds": []
+    },
+    {
+      "name": "Q_other_CA",
+      "value": null,
+      "unit": "California QALYs",
+      "basis": "unknown",
+      "rationale": "Vaccination and physician-support effects not included in the central health price.",
+      "sourceIds": []
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "central",
+      "label": "Ordinary-gift central estimate withdrawn",
+      "costUSD": 2378718,
+      "allPopulationQalys": null,
+      "editionQalys": null,
+      "assumptions": "No measured unrestricted-gift response, completed effective treatment unit or causal utility gain. Prior parameter arithmetic is retained in historical-alpha-central."
+    },
+    {
+      "id": "historical-alpha-central",
+      "label": "Historical specialty-care diagnostic, not donor price",
+      "costUSD": 2378718,
+      "allPopulationQalys": 0.7216984223300972,
+      "editionQalys": 0.7216984223300972,
+      "assumptions": "Old judged f=.25; k=5000; a=.5; b=.25; u=.05; T=1; g_CA=1; d=.03. Arithmetic implies $32.96 million per ten QALYs, not a verified marginal donation return."
+    },
+    {
+      "id": "low",
+      "label": "Low benefit / weak funding response",
+      "costUSD": 2378718,
+      "allPopulationQalys": 0.0007698116504854371,
+      "editionQalys": 0.0007313210679611652,
+      "assumptions": "f=.1; k=15000; a=.1; b=.05; u=.01; T=1; g_CA=.95; d=.03."
+    },
+    {
+      "id": "high",
+      "label": "Favorable treatment and capacity",
+      "costUSD": 2378718,
+      "allPopulationQalys": 27.713219417475727,
+      "editionQalys": 27.713219417475727,
+      "assumptions": "f=.4; k=2000; a=.8; b=.5; u=.15; T=1; g_CA=1; d=.03."
+    },
+    {
+      "id": "zero",
+      "label": "No additional health",
+      "costUSD": 2378718,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "assumptions": "Complete funding substitution or no clinical improvement."
+    },
+    {
+      "id": "harm",
+      "label": "Adverse stress test",
+      "costUSD": 2378718,
+      "allPopulationQalys": -1,
+      "editionQalys": -1,
+      "assumptions": "One net California QALY lost through adverse treatment or displaced superior services; subjective stress test, not forecast."
+    },
+    {
+      "id": "portfolio",
+      "label": "Complete portfolio remains unpriced",
+      "costUSD": 2378718,
+      "allPopulationQalys": null,
+      "editionQalys": null,
+      "assumptions": "Do not equate the priced specialty-care component with all portfolio health."
+    }
+  ],
+  "sensitivity": [
+    "Doubling full resources per completed pathway k doubles the component price, holding all other inputs fixed.",
+    "At fixed model parameters, proportional annual cost scaling changes output but not price. At the central normalization, reaching $1 million per ten QALYs requires 23.78718 California QALYs versus 0.7216984223300972 modeled; no such yield is demonstrated."
+  ],
+  "missingInputs": [
+    "Completed unique treatment pathways, indication mix and actual full partner resource cost.",
+    "Prospective utility and complication data with alternative-care timing.",
+    "Current unrestricted funding response and specialty-slot capacity.",
+    "Incremental vaccination and physician-support health; full portfolio remains unpriced."
+  ]
+}

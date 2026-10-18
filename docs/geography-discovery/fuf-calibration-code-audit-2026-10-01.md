@@ -1,0 +1,9 @@
+# FUF calibrated model: independent implementation challenge
+
+1 October 2026. ACCEPT arithmetic and boundaries for report integration, conditional on the scientific judgments in the independent source challenge. The model does not identify a measured local clinical effect or verified marginal price.
+
+Read the new implementation and independently expanded tests. Health uses planted-tree age-band mortality rates times tract population, causal/local judgments and remaining quality-adjusted years over a finite fifteen-year window. No extra survival, age lag, cardiovascular channel or scenario-probability mixture is present. Income uses six months of net incremental wages and the logarithmic reference crosswalk, with a distinct one-year resource-loss window for incurred applicant burdens. Payroll is already inside organizational cost; durable wage gains are not credited.
+
+Independent scenario equations agree with central health 0.14748279238566356, income 0.004084708908121619 and $6,597,720.431253185 per better life. Null funding, null benefit with implementation harm, failed paid exposure with incurred burden, partial portfolio, nested geographic attribution and invalid-input guards were exercised. Doubling donor budget doubles effects but leaves the linear conditional ratio unchanged; it does not prove real-world scalability. The ranking has exactly one current FUF row and uses the same central Bay price. The current report has nine sections and 3,979 words before editorial summary and sources; frozen prior report tests remain separate.
+
+Root implementation interval 20:02:42.223–20:03:52.861 UTC included integration/copying work, so it is deliberately EXCLUDED from research provenance rather than counted as a scientific research interval. Closed source-audit and author research/modeling intervals are the actual report provenance.

@@ -1,0 +1,431 @@
+{
+  "edition": "usa",
+  "slug": "american-nonsmokers-rights-foundation",
+  "frozenFromCommit": "8292441bd863dc946644957db6fa4c2ee1989c2c",
+  "updated": "2026-09-29",
+  "model": {
+    "version": "usa-anrf-beta-reconstructed-20260929",
+    "costScope": "Whole charitable recipient, including fundraising, administration, grants, data and education. One annual cost equivalent funds a prospective cohort with finite later benefits; P includes marginal funding response and portfolio allocation. Other ANR costs are not included or credited. The central ratio is donor support per health gain, not societal cost-effectiveness; a separate social-cost scenario adds implementation resources. No medical savings deducted.",
+    "geographicAttribution": "N and P include all supported geography before applying g once. g=.99 is a judgment of resident health, not office location, statutory coverage, or measured allocation. Only 50 states/DC including tribal residents count in USA; territories and foreign residents do not.",
+    "formula": "D=sum(t=1..T)[(retention*cohortSurvival)^(t-1)/(1+discount)^t]; L=sum(k=1..lifeYears)[utility*rescuedSurvival^k/(1+discount)^k]; P=N*dp*a*f*e*D; B=(rD*L+rM*qM)*excessRisk*exposureRemoval*transport-h; Pg=(G/(C*annualCostMultiplier))*P; Q_all=Pg*B; Q_USA=Q_all*g; costUSD=G+Pg*extraResourcePerPersonYear; costPer10=10*costUSD/Q_USA if Q_USA>0, otherwise null.",
+    "counterfactual": "Count protection newly caused, preserved, or accelerated relative to public implementation, voluntary employer choices, other nonprofit work and replacement funding. dp is net coalition change, a allocates its ANRF share, and f is next-dollar capacity response; these are different uncertainties, not repeated discounts for the same fact. If the same prior already includes one factor, omit that factor. The hypothetical cohort must exclude overlapping laws and beneficiaries; no observed beneficiary ledger was available to verify deduplication. No repeated annual cohorts are assumed.",
+    "attribution": "Neither database maintenance nor policy associations identify ANRF causal share. Health evidence is conditional on changed exposure. The 20% contribution and 50% funding response are explicitly judgmental. No credit to an affiliate’s work merely because branding is joint.",
+    "uncertainty": "The central is a reasoned but highly speculative planning prior, not a fitted posterior or verified opportunity. Its reach and adoption inputs retain alpha continuity while finite protection and survival correct hidden durability assumptions. Research-lead only; zero and adverse scenarios remain. Most benefit comes from mortality extrapolation.",
+    "nativeOutcomes": "Net additional, attributable, discounted years of smoke-free protection among previously exposed nonsmokers; conditional fatal and nonfatal coronary events avoided. No observed price per protected worker or successful law is available. Event values are discounted expected event equivalents because they inherit discounted protection years; they are not undiscounted event counts.",
+    "inputs": [
+      {
+        "name": "G",
+        "value": 10000,
+        "unit": "USD normalization",
+        "basis": "judgment",
+        "rationale": "Disclosure normalization, not a package.",
+        "sourceIds": []
+      },
+      {
+        "name": "C",
+        "value": 3927527,
+        "unit": "USD annual full recipient cost",
+        "basis": "observed",
+        "rationale": "FY2024 functional expenses; Part VIII shows no additional netted direct costs.",
+        "sourceIds": [
+          "anrf-tax24"
+        ]
+      },
+      {
+        "name": "N",
+        "value": 50000,
+        "unit": "previously exposed nonsmokers across supported geography",
+        "basis": "judgment",
+        "rationale": "Alpha planning cohort retained as a prior, not national coverage or a verified pipeline; ±10x tests.",
+        "sourceIds": []
+      },
+      {
+        "name": "dp",
+        "value": 0.5,
+        "unit": "net coalition protection probability",
+        "basis": "judgment",
+        "rationale": "50% judgment for a prospective collection of opportunities; subtract laws already scheduled, voluntary employer action and other actors.",
+        "sourceIds": []
+      },
+      {
+        "name": "a",
+        "value": 0.2,
+        "unit": "ANRF causal contribution conditional on coalition change",
+        "basis": "judgment",
+        "rationale": "20% allows for affiliate, public bodies, unions and other nonprofits; do not add ANR or coalition outcomes again.",
+        "sourceIds": []
+      },
+      {
+        "name": "f",
+        "value": 0.5,
+        "unit": "marginal funding response",
+        "basis": "judgment",
+        "rationale": "50% allows contract replacement, donor substitution and portfolio dilution; observed cuts motivate possible response, not this number.",
+        "sourceIds": []
+      },
+      {
+        "name": "e",
+        "value": 0.9,
+        "unit": "effective enforcement fraction",
+        "basis": "judgment",
+        "rationale": "90% effective exposure-protection coverage; separate from degree of SHS risk removed.",
+        "sourceIds": []
+      },
+      {
+        "name": "T",
+        "value": 5,
+        "unit": "years of additional protection",
+        "basis": "judgment",
+        "rationale": "Five-year finite horizon. Acceleration gets only years gained; one-year scenario.",
+        "sourceIds": []
+      },
+      {
+        "name": "retention",
+        "value": 0.95,
+        "unit": "annual persistence of policy protection",
+        "basis": "judgment",
+        "rationale": "95%; includes reversal and lost compliance; not an observed ANRF estimate.",
+        "sourceIds": []
+      },
+      {
+        "name": "cohortSurvival",
+        "value": 0.99,
+        "unit": "annual survival in protected risk set",
+        "basis": "judgment",
+        "rationale": "99%; no mortality benefit credited to members no longer alive.",
+        "sourceIds": []
+      },
+      {
+        "name": "discount",
+        "value": 0.03,
+        "unit": "annual discount rate",
+        "basis": "judgment",
+        "rationale": "3% year-end discounting on exposure years and event-conditional later health; distinct time intervals.",
+        "sourceIds": []
+      },
+      {
+        "name": "rD",
+        "value": 0.001,
+        "unit": "unexposed fatal coronary event risk per person-year",
+        "basis": "judgment",
+        "rationale": "0.001 retained from alpha; not observed among ANRF beneficiaries and may overstate younger-worker risk.",
+        "sourceIds": []
+      },
+      {
+        "name": "rM",
+        "value": 0.002,
+        "unit": "unexposed nonfatal coronary event risk per person-year",
+        "basis": "judgment",
+        "rationale": "0.002 retained; mutually exclusive fatal/nonfatal event branches.",
+        "sourceIds": []
+      },
+      {
+        "name": "excessRisk",
+        "value": 0.25,
+        "unit": "relative excess coronary risk from SHS",
+        "basis": "judgment",
+        "rationale": "0.25 informed by CDC coronary-disease association; transfer to fatal and nonfatal events is an assumption.",
+        "sourceIds": [
+          "cdc-shs"
+        ]
+      },
+      {
+        "name": "exposureRemoval",
+        "value": 0.5,
+        "unit": "fraction of excess SHS risk removed",
+        "basis": "judgment",
+        "rationale": "0.5 allows residual home and other exposures; cotinine reduction is not treated as linear health-risk reduction.",
+        "sourceIds": []
+      },
+      {
+        "name": "transport",
+        "value": 0.5,
+        "unit": "combined latency and causal-transport attenuation",
+        "basis": "judgment",
+        "rationale": "0.5; discounts immediate/full risk reversal and inconsistent US evidence. Not estimated by any cited study.",
+        "sourceIds": []
+      },
+      {
+        "name": "lifeYears",
+        "value": 15,
+        "unit": "maximum post-event years saved",
+        "basis": "judgment",
+        "rationale": "15 finite years; no lifetime horizon. Vary jointly with baseline risk for younger/older cohorts.",
+        "sourceIds": []
+      },
+      {
+        "name": "rescuedSurvival",
+        "value": 0.97,
+        "unit": "annual subsequent survival after avoided fatal event",
+        "basis": "judgment",
+        "rationale": "0.97; allows competing mortality, distinct from survival to policy-year entry.",
+        "sourceIds": []
+      },
+      {
+        "name": "utility",
+        "value": 0.85,
+        "unit": "quality weight of remaining survival",
+        "basis": "judgment",
+        "rationale": "0.85; neither symptom study nor mortality study measured this utility.",
+        "sourceIds": []
+      },
+      {
+        "name": "qM",
+        "value": 0.3,
+        "unit": "discounted QALYs lost per nonfatal event",
+        "basis": "judgment",
+        "rationale": "0.3 retained alpha assumption, defined here as total discounted loss over at most three years, not a perpetual annual decrement; no overlap with fatal events.",
+        "sourceIds": []
+      },
+      {
+        "name": "h",
+        "value": 0.00002,
+        "unit": "downside QALYs per protected person-year",
+        "basis": "judgment",
+        "rationale": "0.00002; illustrative displacement/enforcement penalty, not a measured bound.",
+        "sourceIds": []
+      },
+      {
+        "name": "g",
+        "value": 0.99,
+        "unit": "share of modeled health accruing to 50 states/DC residents",
+        "basis": "judgment",
+        "rationale": "0.99 retained alpha prior; apply once after all-population effects. Tribal residents included; territories and foreign residents excluded.",
+        "sourceIds": []
+      },
+      {
+        "name": "extraResourcePerPersonYear",
+        "value": 0,
+        "unit": "USD external implementation resources per net protected year",
+        "basis": "judgment",
+        "rationale": "Zero in donor-only central; $100 sensitivity is explicitly social cost, not verified employer expense.",
+        "sourceIds": []
+      },
+      {
+        "name": "annualCostMultiplier",
+        "value": 1,
+        "unit": "full annual-cost equivalents required",
+        "basis": "judgment",
+        "rationale": "One central funds one opportunity cohort; five-year repeat-funding scenario if future support is required. No claim continued maintenance is free.",
+        "sourceIds": []
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "central",
+        "label": "Central explicit judgment",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.012326790942759104,
+        "editionQalys": 0.012203523033331514,
+        "assumptions": "{\"G\":10000,\"C\":3927527,\"N\":50000,\"dp\":0.5,\"a\":0.2,\"f\":0.5,\"e\":0.9,\"T\":5,\"retention\":0.95,\"cohortSurvival\":0.99,\"discount\":0.03,\"rD\":0.001,\"rM\":0.002,\"excessRisk\":0.25,\"exposureRemoval\":0.5,\"transport\":0.5,\"lifeYears\":15,\"rescuedSurvival\":0.97,\"utility\":0.85,\"qM\":0.3,\"h\":0.00002,\"g\":0.99,\"extraResourcePerPersonYear\":0,\"annualCostMultiplier\":1}; All unchanged values inherit the central model. See explicit finite formula and standalone reproduction. The added-social-cost case is a social-resource sensitivity, all others use donor cost."
+      },
+      {
+        "id": "reach-low",
+        "label": "One tenth the prospective exposed cohort",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.0012326790942759104,
+        "editionQalys": 0.0012203523033331512,
+        "assumptions": "{\"G\":10000,\"C\":3927527,\"N\":5000,\"dp\":0.5,\"a\":0.2,\"f\":0.5,\"e\":0.9,\"T\":5,\"retention\":0.95,\"cohortSurvival\":0.99,\"discount\":0.03,\"rD\":0.001,\"rM\":0.002,\"excessRisk\":0.25,\"exposureRemoval\":0.5,\"transport\":0.5,\"lifeYears\":15,\"rescuedSurvival\":0.97,\"utility\":0.85,\"qM\":0.3,\"h\":0.00002,\"g\":0.99,\"extraResourcePerPersonYear\":0,\"annualCostMultiplier\":1}; All unchanged values inherit the central model. See explicit finite formula and standalone reproduction. The added-social-cost case is a social-resource sensitivity, all others use donor cost."
+      },
+      {
+        "id": "reach-high",
+        "label": "Ten times the prospective exposed cohort",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.12326790942759103,
+        "editionQalys": 0.12203523033331512,
+        "assumptions": "{\"G\":10000,\"C\":3927527,\"N\":500000,\"dp\":0.5,\"a\":0.2,\"f\":0.5,\"e\":0.9,\"T\":5,\"retention\":0.95,\"cohortSurvival\":0.99,\"discount\":0.03,\"rD\":0.001,\"rM\":0.002,\"excessRisk\":0.25,\"exposureRemoval\":0.5,\"transport\":0.5,\"lifeYears\":15,\"rescuedSurvival\":0.97,\"utility\":0.85,\"qM\":0.3,\"h\":0.00002,\"g\":0.99,\"extraResourcePerPersonYear\":0,\"annualCostMultiplier\":1}; All unchanged values inherit the central model. See explicit finite formula and standalone reproduction. The added-social-cost case is a social-resource sensitivity, all others use donor cost."
+      },
+      {
+        "id": "adoption-low",
+        "label": "Net coalition adoption probability 10%",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.002465358188551821,
+        "editionQalys": 0.0024407046066663024,
+        "assumptions": "{\"G\":10000,\"C\":3927527,\"N\":50000,\"dp\":0.1,\"a\":0.2,\"f\":0.5,\"e\":0.9,\"T\":5,\"retention\":0.95,\"cohortSurvival\":0.99,\"discount\":0.03,\"rD\":0.001,\"rM\":0.002,\"excessRisk\":0.25,\"exposureRemoval\":0.5,\"transport\":0.5,\"lifeYears\":15,\"rescuedSurvival\":0.97,\"utility\":0.85,\"qM\":0.3,\"h\":0.00002,\"g\":0.99,\"extraResourcePerPersonYear\":0,\"annualCostMultiplier\":1}; All unchanged values inherit the central model. See explicit finite formula and standalone reproduction. The added-social-cost case is a social-resource sensitivity, all others use donor cost."
+      },
+      {
+        "id": "adoption-high",
+        "label": "Net coalition adoption probability 80%",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.019722865508414567,
+        "editionQalys": 0.01952563685333042,
+        "assumptions": "{\"G\":10000,\"C\":3927527,\"N\":50000,\"dp\":0.8,\"a\":0.2,\"f\":0.5,\"e\":0.9,\"T\":5,\"retention\":0.95,\"cohortSurvival\":0.99,\"discount\":0.03,\"rD\":0.001,\"rM\":0.002,\"excessRisk\":0.25,\"exposureRemoval\":0.5,\"transport\":0.5,\"lifeYears\":15,\"rescuedSurvival\":0.97,\"utility\":0.85,\"qM\":0.3,\"h\":0.00002,\"g\":0.99,\"extraResourcePerPersonYear\":0,\"annualCostMultiplier\":1}; All unchanged values inherit the central model. See explicit finite formula and standalone reproduction. The added-social-cost case is a social-resource sensitivity, all others use donor cost."
+      },
+      {
+        "id": "charitable-share-low",
+        "label": "ANRF share 5%",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.003081697735689776,
+        "editionQalys": 0.0030508807583328784,
+        "assumptions": "{\"G\":10000,\"C\":3927527,\"N\":50000,\"dp\":0.5,\"a\":0.05,\"f\":0.5,\"e\":0.9,\"T\":5,\"retention\":0.95,\"cohortSurvival\":0.99,\"discount\":0.03,\"rD\":0.001,\"rM\":0.002,\"excessRisk\":0.25,\"exposureRemoval\":0.5,\"transport\":0.5,\"lifeYears\":15,\"rescuedSurvival\":0.97,\"utility\":0.85,\"qM\":0.3,\"h\":0.00002,\"g\":0.99,\"extraResourcePerPersonYear\":0,\"annualCostMultiplier\":1}; All unchanged values inherit the central model. See explicit finite formula and standalone reproduction. The added-social-cost case is a social-resource sensitivity, all others use donor cost."
+      },
+      {
+        "id": "charitable-share-high",
+        "label": "ANRF share 50%",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.030816977356897757,
+        "editionQalys": 0.03050880758332878,
+        "assumptions": "{\"G\":10000,\"C\":3927527,\"N\":50000,\"dp\":0.5,\"a\":0.5,\"f\":0.5,\"e\":0.9,\"T\":5,\"retention\":0.95,\"cohortSurvival\":0.99,\"discount\":0.03,\"rD\":0.001,\"rM\":0.002,\"excessRisk\":0.25,\"exposureRemoval\":0.5,\"transport\":0.5,\"lifeYears\":15,\"rescuedSurvival\":0.97,\"utility\":0.85,\"qM\":0.3,\"h\":0.00002,\"g\":0.99,\"extraResourcePerPersonYear\":0,\"annualCostMultiplier\":1}; All unchanged values inherit the central model. See explicit finite formula and standalone reproduction. The added-social-cost case is a social-resource sensitivity, all others use donor cost."
+      },
+      {
+        "id": "funding-response-low",
+        "label": "Only 10% of support adds capacity",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.002465358188551821,
+        "editionQalys": 0.0024407046066663024,
+        "assumptions": "{\"G\":10000,\"C\":3927527,\"N\":50000,\"dp\":0.5,\"a\":0.2,\"f\":0.1,\"e\":0.9,\"T\":5,\"retention\":0.95,\"cohortSurvival\":0.99,\"discount\":0.03,\"rD\":0.001,\"rM\":0.002,\"excessRisk\":0.25,\"exposureRemoval\":0.5,\"transport\":0.5,\"lifeYears\":15,\"rescuedSurvival\":0.97,\"utility\":0.85,\"qM\":0.3,\"h\":0.00002,\"g\":0.99,\"extraResourcePerPersonYear\":0,\"annualCostMultiplier\":1}; All unchanged values inherit the central model. See explicit finite formula and standalone reproduction. The added-social-cost case is a social-resource sensitivity, all others use donor cost."
+      },
+      {
+        "id": "zero-additionality",
+        "label": "Complete substitution by other funding",
+        "costUSD": 10000,
+        "allPopulationQalys": 0,
+        "editionQalys": 0,
+        "assumptions": "{\"G\":10000,\"C\":3927527,\"N\":50000,\"dp\":0.5,\"a\":0.2,\"f\":0,\"e\":0.9,\"T\":5,\"retention\":0.95,\"cohortSurvival\":0.99,\"discount\":0.03,\"rD\":0.001,\"rM\":0.002,\"excessRisk\":0.25,\"exposureRemoval\":0.5,\"transport\":0.5,\"lifeYears\":15,\"rescuedSurvival\":0.97,\"utility\":0.85,\"qM\":0.3,\"h\":0.00002,\"g\":0.99,\"extraResourcePerPersonYear\":0,\"annualCostMultiplier\":1}; All unchanged values inherit the central model. See explicit finite formula and standalone reproduction. The added-social-cost case is a social-resource sensitivity, all others use donor cost."
+      },
+      {
+        "id": "enforcement-low",
+        "label": "Only half of nominal protection implemented",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.006848217190421725,
+        "editionQalys": 0.006779735018517507,
+        "assumptions": "{\"G\":10000,\"C\":3927527,\"N\":50000,\"dp\":0.5,\"a\":0.2,\"f\":0.5,\"e\":0.5,\"T\":5,\"retention\":0.95,\"cohortSurvival\":0.99,\"discount\":0.03,\"rD\":0.001,\"rM\":0.002,\"excessRisk\":0.25,\"exposureRemoval\":0.5,\"transport\":0.5,\"lifeYears\":15,\"rescuedSurvival\":0.97,\"utility\":0.85,\"qM\":0.3,\"h\":0.00002,\"g\":0.99,\"extraResourcePerPersonYear\":0,\"annualCostMultiplier\":1}; All unchanged values inherit the central model. See explicit finite formula and standalone reproduction. The added-social-cost case is a social-resource sensitivity, all others use donor cost."
+      },
+      {
+        "id": "one-year-acceleration",
+        "label": "Only one year gained before other actors act",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.0029326119174059788,
+        "editionQalys": 0.002903285798231919,
+        "assumptions": "{\"G\":10000,\"C\":3927527,\"N\":50000,\"dp\":0.5,\"a\":0.2,\"f\":0.5,\"e\":0.9,\"T\":1,\"retention\":0.95,\"cohortSurvival\":0.99,\"discount\":0.03,\"rD\":0.001,\"rM\":0.002,\"excessRisk\":0.25,\"exposureRemoval\":0.5,\"transport\":0.5,\"lifeYears\":15,\"rescuedSurvival\":0.97,\"utility\":0.85,\"qM\":0.3,\"h\":0.00002,\"g\":0.99,\"extraResourcePerPersonYear\":0,\"annualCostMultiplier\":1}; All unchanged values inherit the central model. See explicit finite formula and standalone reproduction. The added-social-cost case is a social-resource sensitivity, all others use donor cost."
+      },
+      {
+        "id": "ten-year-protection",
+        "label": "Ten-year protection horizon",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.020151314573532603,
+        "editionQalys": 0.019949801427797276,
+        "assumptions": "{\"G\":10000,\"C\":3927527,\"N\":50000,\"dp\":0.5,\"a\":0.2,\"f\":0.5,\"e\":0.9,\"T\":10,\"retention\":0.95,\"cohortSurvival\":0.99,\"discount\":0.03,\"rD\":0.001,\"rM\":0.002,\"excessRisk\":0.25,\"exposureRemoval\":0.5,\"transport\":0.5,\"lifeYears\":15,\"rescuedSurvival\":0.97,\"utility\":0.85,\"qM\":0.3,\"h\":0.00002,\"g\":0.99,\"extraResourcePerPersonYear\":0,\"annualCostMultiplier\":1}; All unchanged values inherit the central model. See explicit finite formula and standalone reproduction. The added-social-cost case is a social-resource sensitivity, all others use donor cost."
+      },
+      {
+        "id": "retention-low",
+        "label": "20% annual protection loss",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.009279982945642569,
+        "editionQalys": 0.009187183116186142,
+        "assumptions": "{\"G\":10000,\"C\":3927527,\"N\":50000,\"dp\":0.5,\"a\":0.2,\"f\":0.5,\"e\":0.9,\"T\":5,\"retention\":0.8,\"cohortSurvival\":0.99,\"discount\":0.03,\"rD\":0.001,\"rM\":0.002,\"excessRisk\":0.25,\"exposureRemoval\":0.5,\"transport\":0.5,\"lifeYears\":15,\"rescuedSurvival\":0.97,\"utility\":0.85,\"qM\":0.3,\"h\":0.00002,\"g\":0.99,\"extraResourcePerPersonYear\":0,\"annualCostMultiplier\":1}; All unchanged values inherit the central model. See explicit finite formula and standalone reproduction. The added-social-cost case is a social-resource sensitivity, all others use donor cost."
+      },
+      {
+        "id": "retention-high",
+        "label": "1% annual protection loss",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.013309488166362364,
+        "editionQalys": 0.01317639328469874,
+        "assumptions": "{\"G\":10000,\"C\":3927527,\"N\":50000,\"dp\":0.5,\"a\":0.2,\"f\":0.5,\"e\":0.9,\"T\":5,\"retention\":0.99,\"cohortSurvival\":0.99,\"discount\":0.03,\"rD\":0.001,\"rM\":0.002,\"excessRisk\":0.25,\"exposureRemoval\":0.5,\"transport\":0.5,\"lifeYears\":15,\"rescuedSurvival\":0.97,\"utility\":0.85,\"qM\":0.3,\"h\":0.00002,\"g\":0.99,\"extraResourcePerPersonYear\":0,\"annualCostMultiplier\":1}; All unchanged values inherit the central model. See explicit finite formula and standalone reproduction. The added-social-cost case is a social-resource sensitivity, all others use donor cost."
+      },
+      {
+        "id": "young-low-risk",
+        "label": "Younger low cardiac risk with longer remaining life",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.002871749955869609,
+        "editionQalys": 0.0028430324563109128,
+        "assumptions": "{\"G\":10000,\"C\":3927527,\"N\":50000,\"dp\":0.5,\"a\":0.2,\"f\":0.5,\"e\":0.9,\"T\":5,\"retention\":0.95,\"cohortSurvival\":0.99,\"discount\":0.03,\"rD\":0.0002,\"rM\":0.0005,\"excessRisk\":0.25,\"exposureRemoval\":0.5,\"transport\":0.5,\"lifeYears\":25,\"rescuedSurvival\":0.97,\"utility\":0.85,\"qM\":0.3,\"h\":0.00002,\"g\":0.99,\"extraResourcePerPersonYear\":0,\"annualCostMultiplier\":1}; All unchanged values inherit the central model. See explicit finite formula and standalone reproduction. The added-social-cost case is a social-resource sensitivity, all others use donor cost."
+      },
+      {
+        "id": "older-high-risk",
+        "label": "Higher cardiac risk but shorter survival horizon",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.01489680245419781,
+        "editionQalys": 0.014747834429655831,
+        "assumptions": "{\"G\":10000,\"C\":3927527,\"N\":50000,\"dp\":0.5,\"a\":0.2,\"f\":0.5,\"e\":0.9,\"T\":5,\"retention\":0.95,\"cohortSurvival\":0.99,\"discount\":0.03,\"rD\":0.002,\"rM\":0.003,\"excessRisk\":0.25,\"exposureRemoval\":0.5,\"transport\":0.5,\"lifeYears\":8,\"rescuedSurvival\":0.95,\"utility\":0.85,\"qM\":0.3,\"h\":0.00002,\"g\":0.99,\"extraResourcePerPersonYear\":0,\"annualCostMultiplier\":1}; All unchanged values inherit the central model. See explicit finite formula and standalone reproduction. The added-social-cost case is a social-resource sensitivity, all others use donor cost."
+      },
+      {
+        "id": "no-mortality-credit",
+        "label": "Exclude all fatal-event benefits",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.00040912837249667763,
+        "editionQalys": 0.00040503708877171087,
+        "assumptions": "{\"G\":10000,\"C\":3927527,\"N\":50000,\"dp\":0.5,\"a\":0.2,\"f\":0.5,\"e\":0.9,\"T\":5,\"retention\":0.95,\"cohortSurvival\":0.99,\"discount\":0.03,\"rD\":0,\"rM\":0.002,\"excessRisk\":0.25,\"exposureRemoval\":0.5,\"transport\":0.5,\"lifeYears\":15,\"rescuedSurvival\":0.97,\"utility\":0.85,\"qM\":0.3,\"h\":0.00002,\"g\":0.99,\"extraResourcePerPersonYear\":0,\"annualCostMultiplier\":1}; All unchanged values inherit the central model. See explicit finite formula and standalone reproduction. The added-social-cost case is a social-resource sensitivity, all others use donor cost."
+      },
+      {
+        "id": "five-year-rescued-life",
+        "label": "Five-year remaining health horizon",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.00561456549966817,
+        "editionQalys": 0.005558419844671488,
+        "assumptions": "{\"G\":10000,\"C\":3927527,\"N\":50000,\"dp\":0.5,\"a\":0.2,\"f\":0.5,\"e\":0.9,\"T\":5,\"retention\":0.95,\"cohortSurvival\":0.99,\"discount\":0.03,\"rD\":0.001,\"rM\":0.002,\"excessRisk\":0.25,\"exposureRemoval\":0.5,\"transport\":0.5,\"lifeYears\":5,\"rescuedSurvival\":0.97,\"utility\":0.85,\"qM\":0.3,\"h\":0.00002,\"g\":0.99,\"extraResourcePerPersonYear\":0,\"annualCostMultiplier\":1}; All unchanged values inherit the central model. See explicit finite formula and standalone reproduction. The added-social-cost case is a social-resource sensitivity, all others use donor cost."
+      },
+      {
+        "id": "twenty-five-year-rescued-life",
+        "label": "Twenty-five-year remaining health horizon",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.016009874996923922,
+        "editionQalys": 0.015849776246954682,
+        "assumptions": "{\"G\":10000,\"C\":3927527,\"N\":50000,\"dp\":0.5,\"a\":0.2,\"f\":0.5,\"e\":0.9,\"T\":5,\"retention\":0.95,\"cohortSurvival\":0.99,\"discount\":0.03,\"rD\":0.001,\"rM\":0.002,\"excessRisk\":0.25,\"exposureRemoval\":0.5,\"transport\":0.5,\"lifeYears\":25,\"rescuedSurvival\":0.97,\"utility\":0.85,\"qM\":0.3,\"h\":0.00002,\"g\":0.99,\"extraResourcePerPersonYear\":0,\"annualCostMultiplier\":1}; All unchanged values inherit the central model. See explicit finite formula and standalone reproduction. The added-social-cost case is a social-resource sensitivity, all others use donor cost."
+      },
+      {
+        "id": "no-clinical-effect",
+        "label": "No transported cardiac effect; enforcement harms remain",
+        "costUSD": 10000,
+        "allPopulationQalys": -0.0004675752828533461,
+        "editionQalys": -0.00046289953002481263,
+        "assumptions": "{\"G\":10000,\"C\":3927527,\"N\":50000,\"dp\":0.5,\"a\":0.2,\"f\":0.5,\"e\":0.9,\"T\":5,\"retention\":0.95,\"cohortSurvival\":0.99,\"discount\":0.03,\"rD\":0.001,\"rM\":0.002,\"excessRisk\":0.25,\"exposureRemoval\":0.5,\"transport\":0,\"lifeYears\":15,\"rescuedSurvival\":0.97,\"utility\":0.85,\"qM\":0.3,\"h\":0.00002,\"g\":0.99,\"extraResourcePerPersonYear\":0,\"annualCostMultiplier\":1}; All unchanged values inherit the central model. See explicit finite formula and standalone reproduction. The added-social-cost case is a social-resource sensitivity, all others use donor cost."
+      },
+      {
+        "id": "half-exposure-removal",
+        "label": "Only 25% of excess risk removed",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.00592960782995288,
+        "editionQalys": 0.005870311751653351,
+        "assumptions": "{\"G\":10000,\"C\":3927527,\"N\":50000,\"dp\":0.5,\"a\":0.2,\"f\":0.5,\"e\":0.9,\"T\":5,\"retention\":0.95,\"cohortSurvival\":0.99,\"discount\":0.03,\"rD\":0.001,\"rM\":0.002,\"excessRisk\":0.25,\"exposureRemoval\":0.25,\"transport\":0.5,\"lifeYears\":15,\"rescuedSurvival\":0.97,\"utility\":0.85,\"qM\":0.3,\"h\":0.00002,\"g\":0.99,\"extraResourcePerPersonYear\":0,\"annualCostMultiplier\":1}; All unchanged values inherit the central model. See explicit finite formula and standalone reproduction. The added-social-cost case is a social-resource sensitivity, all others use donor cost."
+      },
+      {
+        "id": "low-transport",
+        "label": "Strong attenuation of clinical transport and latency",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.004650171207391635,
+        "editionQalys": 0.004603669495317719,
+        "assumptions": "{\"G\":10000,\"C\":3927527,\"N\":50000,\"dp\":0.5,\"a\":0.2,\"f\":0.5,\"e\":0.9,\"T\":5,\"retention\":0.95,\"cohortSurvival\":0.99,\"discount\":0.03,\"rD\":0.001,\"rM\":0.002,\"excessRisk\":0.25,\"exposureRemoval\":0.5,\"transport\":0.2,\"lifeYears\":15,\"rescuedSurvival\":0.97,\"utility\":0.85,\"qM\":0.3,\"h\":0.00002,\"g\":0.99,\"extraResourcePerPersonYear\":0,\"annualCostMultiplier\":1}; All unchanged values inherit the central model. See explicit finite formula and standalone reproduction. The added-social-cost case is a social-resource sensitivity, all others use donor cost."
+      },
+      {
+        "id": "high-harm",
+        "label": "Enforcement and displacement downside exceeds health gains",
+        "costUSD": 10000,
+        "allPopulationQalys": -0.01058439791705485,
+        "editionQalys": -0.010478553937884301,
+        "assumptions": "{\"G\":10000,\"C\":3927527,\"N\":50000,\"dp\":0.5,\"a\":0.2,\"f\":0.5,\"e\":0.9,\"T\":5,\"retention\":0.95,\"cohortSurvival\":0.99,\"discount\":0.03,\"rD\":0.001,\"rM\":0.002,\"excessRisk\":0.25,\"exposureRemoval\":0.5,\"transport\":0.5,\"lifeYears\":15,\"rescuedSurvival\":0.97,\"utility\":0.85,\"qM\":0.3,\"h\":0.001,\"g\":0.99,\"extraResourcePerPersonYear\":0,\"annualCostMultiplier\":1}; All unchanged values inherit the central model. See explicit finite formula and standalone reproduction. The added-social-cost case is a social-resource sensitivity, all others use donor cost."
+      },
+      {
+        "id": "added-social-cost",
+        "label": "Additional employer/public cost of $100 per net protected year",
+        "costUSD": 12337.87641426673,
+        "allPopulationQalys": 0.012326790942759104,
+        "editionQalys": 0.012203523033331514,
+        "assumptions": "{\"G\":10000,\"C\":3927527,\"N\":50000,\"dp\":0.5,\"a\":0.2,\"f\":0.5,\"e\":0.9,\"T\":5,\"retention\":0.95,\"cohortSurvival\":0.99,\"discount\":0.03,\"rD\":0.001,\"rM\":0.002,\"excessRisk\":0.25,\"exposureRemoval\":0.5,\"transport\":0.5,\"lifeYears\":15,\"rescuedSurvival\":0.97,\"utility\":0.85,\"qM\":0.3,\"h\":0.00002,\"g\":0.99,\"extraResourcePerPersonYear\":100,\"annualCostMultiplier\":1}; All unchanged values inherit the central model. See explicit finite formula and standalone reproduction. The added-social-cost case is a social-resource sensitivity, all others use donor cost."
+      },
+      {
+        "id": "recurring-support",
+        "label": "Five annual full-cost equivalents required for modeled outcomes",
+        "costUSD": 10000,
+        "allPopulationQalys": 0.0024653581885518204,
+        "editionQalys": 0.002440704606666302,
+        "assumptions": "{\"G\":10000,\"C\":3927527,\"N\":50000,\"dp\":0.5,\"a\":0.2,\"f\":0.5,\"e\":0.9,\"T\":5,\"retention\":0.95,\"cohortSurvival\":0.99,\"discount\":0.03,\"rD\":0.001,\"rM\":0.002,\"excessRisk\":0.25,\"exposureRemoval\":0.5,\"transport\":0.5,\"lifeYears\":15,\"rescuedSurvival\":0.97,\"utility\":0.85,\"qM\":0.3,\"h\":0.00002,\"g\":0.99,\"extraResourcePerPersonYear\":0,\"annualCostMultiplier\":5}; All unchanged values inherit the central model. See explicit finite formula and standalone reproduction. The added-social-cost case is a social-resource sensitivity, all others use donor cost."
+      }
+    ],
+    "sensitivity": [
+      "Central native cost: $427.74 per net discounted protected person-year; 23.3788 such years per $10,000; 0.0014612 fatal and 0.0029223 nonfatal discounted expected event equivalents avoided before geography.",
+      "At central clinical yield, $1m per10 USA QALYs requires at most $52.20 per net protected person-year. This is a threshold, not a forecast.",
+      "Finite five-year protection and conditional fifteen-year rescued survival replace rounded exposure duration and the unexplained ten-QALY mortality value. No policy benefits extend beyond T, although an averted event within T can have subsequent finite health benefits.",
+      "No mortality credit, no clinical transport and high downside cases challenge the dominant health pathway. Nonpositive QALYs have null finite cost per10; do not display a fabricated positive price.",
+      "The original lost beta’s $6,240,764.65 is not reproduced or accepted. The reconstructed model’s different central value must replace that number if this proposal is accepted.",
+      "Funding cuts establish service need, not health yield. Paid data quotes do not establish that unrestricted donations buy a restricted campaign or a specific quantity of protection."
+    ],
+    "missingInputs": [
+      "Costed marginal opportunity pipeline: exposed nonsmokers, ages, existing protection, expected adoption absent support, ANRF versus affiliate/coalition contribution and required follow-on costs.",
+      "Updated unrestricted reserves, renewed contracts, and a budget showing how extra gifts change staffing/services rather than substitute for fees or other grants.",
+      "Age-specific fatal/nonfatal risk, latency, competing mortality, quality weights and duration among actual beneficiaries.",
+      "Policy retention, enforcement, displacement/eviction effects, and USA-resident health share.",
+      "Explanation of FY2024 Schedule C category/narrative mismatch. No adverse legal conclusion is drawn."
+    ]
+  }
+}

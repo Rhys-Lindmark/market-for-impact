@@ -1,3 +1,4 @@
+import {impactNode} from '@/components/ImpactMetric';
 import type { Metadata } from 'next';
 import CharityResearchReport, { type CharityReportContent } from '@/components/CharityResearchReport';
 import review from '@/data/san-francisco/eviction-defense-collaborative-review-v1.json';
@@ -87,5 +88,5 @@ const content: CharityReportContent = {
 };
 
 export default function EvictionDefenseCollaborativeResearchPage() {
-  return <CharityResearchReport content={content} />;
+  return impactNode(<CharityResearchReport content={content} />);
 }

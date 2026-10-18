@@ -1,3 +1,5 @@
+import {impactNode} from '@/components/ImpactMetric';
+import {formatImpactMoney,formatImpactPrice,impactText,impactMetric} from '@/lib/impact-metric.mjs';
 import type { Metadata } from 'next';
 /* eslint-disable @next/next/no-html-link-for-pages -- Native anchors avoid a confirmed Vinext production prefetch runtime error on this server-rendered brief. */
 import candidateUniverse from '@/data/san-francisco/candidate-universe-v1.json';
@@ -32,7 +34,7 @@ export const metadata: Metadata = {
 };
 
 const integer = new Intl.NumberFormat('en-US');
-const compactMoney = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 2 });
+const compactMoney = {format:formatImpactMoney};
 
 const outcomeLabels = new Map(sfOutcomes.outcomes.map((outcome) => [outcome.key, outcome.label]));
 const candidates = [...sfDiligence.candidates].sort((a, b) => a.name.localeCompare(b.name));
@@ -54,7 +56,7 @@ const researchGates = [
 ];
 
 export default function SanFranciscoDonorPage() {
-  return (
+  return impactNode((
     <main className="sf-brief-shell">
       <header className="detail-topbar sf-brief-topbar">
         <a className="brand" href="/"><span className="brand-mark">M</span><span>Market for Impact</span></a>
@@ -86,7 +88,7 @@ export default function SanFranciscoDonorPage() {
       </section>
 
       <section className="sf-top-research" id="top-research" aria-labelledby="sf-top-research-title">
-        <aside className="sf-life-bettered-contract"><strong>Historical program-only research below $100K in central scenarios.</strong><span><a href="https://ai.rhyslindmark.com/givebetter/api/sf-naloxone-model">SFAF targeted naloxone outreach: about $56K per 10 QALYs.</a> <a href="https://ai.rhyslindmark.com/givebetter/api/sf-glasses-model">PHC prescription glasses: about $71K per 10 QALYs.</a> Both have very wide uncertainty and unverified marginal funding room. These are conditional research estimates, not verified donation offers.</span></aside>
+        <aside className="sf-life-bettered-contract"><strong>Historical program-only research below {formatImpactPrice(100000)} in central scenarios.</strong><span><a href="https://ai.rhyslindmark.com/givebetter/api/sf-naloxone-model">SFAF targeted naloxone outreach: about $56K per 10 QALYs.</a> <a href="https://ai.rhyslindmark.com/givebetter/api/sf-glasses-model">PHC prescription glasses: about $71K per 10 QALYs.</a> Both have very wide uncertainty and unverified marginal funding room. These are conditional research estimates, not verified donation offers.</span></aside>
         <header>
           <div><p className="kicker">GIVEWELL-STYLE PROGRAM REVIEWS · NOT YET RECOMMENDATIONS</p><h2 id="sf-top-research-title">The strongest cost-effectiveness work so far.</h2></div>
           <p>Sorted from lowest to highest central modeled dollars per 10 QALYs. This is not a ranking of evidence quality: cost scopes and assumptions differ, every model has a plausible null case, and marginal funding room remains unverified. Open each report to inspect the model.</p>
@@ -96,7 +98,7 @@ export default function SanFranciscoDonorPage() {
           {sortedResearchPrograms.map((item, index) => <article key={item.href} data-research-slug={item.href.split('/').at(-1)} data-cost-per-ten-qalys={item.centralUsdPerTenQalys}>
             <span>PROGRAM {index + 1} OF {topResearchPrograms.length}</span>
             <div><p>OVERVIEW</p><h3>{item.program}</h3><strong>{item.organization}</strong><p>{item.overview}</p></div>
-            <div><p>COST PER BETTER LIFE</p><h4>{'betterLifePrice' in item ? item.betterLifePrice : 'Not yet convertible'}</h4><strong>$ per 10 QALYs · one better life</strong><span><b>Native model:</b> {item.price} {item.unit}</span><small>{'bridgeState' in item ? item.bridgeState : 'Exploratory estimate'} · funding room not published</small></div>
+            <div><p>{impactMetric().priceLabel}</p><h4>{'betterLifePrice' in item ? impactText(item.betterLifePrice,{priceOnly:true}) : 'Not yet convertible'}</h4><strong>{impactMetric().priceLabel}</strong><span><b>Native model:</b> {item.price} {item.unit}</span><small>{'bridgeState' in item ? item.bridgeState : 'Exploratory estimate'} · funding room not published</small></div>
             <div><p>EVIDENCE OF IMPACT</p><h4>{item.evidence}</h4><span>{item.detail}</span></div>
             <a href={item.href}>Full research report →</a>
           </article>)}
@@ -372,7 +374,7 @@ export default function SanFranciscoDonorPage() {
           const reportedId = `${candidate.key}-reported-title`;
           const ladderId = `${candidate.key}-ladder-title`;
           const gapsId = `${candidate.key}-gaps-title`;
-          return (
+          return impactNode((
           <article className="sf-evidence-dossier" aria-labelledby={headingId} key={candidate.key}>
             <header>
               <div><p className="kicker">DEEP EVIDENCE DOSSIER {String(dossierIndex + 1).padStart(2, '0')} · NOT RANKED</p><h3 id={headingId}>{candidate.name}</h3></div>
@@ -416,7 +418,7 @@ export default function SanFranciscoDonorPage() {
               <ol>{dossier.missingForRecommendation.map((gap) => <li key={gap}>{gap}</li>)}</ol>
             </section>
           </article>
-          );
+          ));
         })}
         <p className="sf-brief-disclaimer"><strong>Important:</strong> inclusion means “selected for initial diligence,” not “recommended.” The cohort is intentionally small and does not yet represent the full Bay Area nonprofit field.</p>
       </section>
@@ -438,5 +440,5 @@ export default function SanFranciscoDonorPage() {
 
       <footer><strong>Market for Impact</strong><p>San Francisco research preview · sources retrieved August 30, 2026</p><a href="/">Explore the full market →</a></footer>
     </main>
-  );
+  ));
 }

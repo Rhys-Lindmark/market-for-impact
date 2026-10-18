@@ -1,0 +1,7 @@
+# Independent root acceptance — Shatterproof initial income scope
+
+Accepted October 7, 2026 after independent current Treatment Atlas FAQ checks and model challenge. Free navigation, submitted payment filters and insurer confirmation do not establish free treatment or additional household savings. Current private payments, alternatives, unique households, time/travel and resource incidence remain explicitly unknown. Positive overlap applies only to gains; incurred costs are independent of treatment response. No public-payer savings, retail bills or survivor earnings credited.
+
+Reconstructed all eight original clinical/cost worlds, including full recognized resources, distinct cash-like diagnostic, zero conversion and negative harms. Clinical reference remains $44,751,300.14946335 per ten USA QALYs, with 11.800567318407458 USA QALYs and $52,809,073 cost. This is an assessed-unknown income scope, not a complete joint valuation or proof of 90% health; alpha stage retained.
+
+Actual substantive intervals: author 55.903 seconds; independent root source audit 18.090 seconds; root model challenge 8.753 seconds; total 82.746 seconds on GPT-6.1 Sol. Separate conservative 30-second allocation for preclock metadata/model inspection gives a 112.746-second ceiling within the combined 300-second initial-report cap. Administration, tests and publishing excluded. Preimport validator passed arithmetic, frozen worlds and registry schema.

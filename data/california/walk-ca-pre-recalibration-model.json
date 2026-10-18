@@ -1,0 +1,262 @@
+{
+  "version": "ca-walk-sf-whole-portfolio-conditional-v1",
+  "costScope": "Entire100000ordinary recipient gift. Allocation60000physical,15000otherpolicy,15000survivor,10000shared/reserve is judgment; physical allocation includes supporting costs. Public construction resources separately stress-tested; no restricted-donation denominator.",
+  "geographicAttribution": "California benefit fraction .98central,.99favorable,.9adverse is judgment. IncludesSF+restCalifornia residents; excludes out-of-state visitors. No automatic statewide policy spillover and no duplication with SF/Bay edition donations.",
+  "formula": "Historical diagnostic only, not an expected donor return: qF=sum(k=1..TF)uF*exp(-hazard*(k-.5))/(1+r)^k. qS=sum(k=1..TS)uS/(1+r)^k. V=sum(t=start..start+delay-1)(1+r)^(-t). Qgross=p*b*V*(F*eF*qF+S*eS*qS). Qall=Qgross-H_CA; QCA=gCA*Qgross-H_CA, where harms are modeled in California. Price10=10*G/QCA only for a calibrated positive QCA. Ctiming=G+p*[K*((1+r)^(-(start-1))-(1+r)^(-(start+delay-1)))+M*V]. Cgross=G+p*K/(1+r)^(start-1)+p*M*V.",
+  "counterfactual": "Same physical package implemented later by public agency/coalition baseline. p jointly includes donor replacement and unique influence; no additional arbitrary attribution multiplier. Only acceleration window counts. Existing cameras/capital not newly purchased by gift.",
+  "attribution": "Risk share on disjoint package streets, not share of street length. Separate fatal/nonfatal injury categories; reduce intervention priors for transfer/displacement and subtract independent donor harms. No add-on for overlapping survivor distress, physical activity, emissions or other advocates' projects.",
+  "uncertainty": "All influence, targeting, effect-transfer, utility, duration, geography and cost inputs are judgments.Observed25fatalities and historicalseverecontext do not establish future package risk. Scenarios illustrate sensitivity, not statistical bounds; no verified project.",
+  "nativeOutcomes": "Additional early exposure-years to a physical traffic-calming package; Incremental fatal and severe nonfatal casualties avoided on disjoint streets; Finite survival and nonfatal impairment QALYs amongCalifornia residents.",
+  "inputs": [
+    {
+      "name": "G",
+      "value": 100000,
+      "unit": "USD",
+      "basis": "judgment",
+      "rationale": "Whole gift normalization, not recommended gift.",
+      "sourceIds": []
+    },
+    {
+      "name": "physical_allocation",
+      "value": 0.6,
+      "unit": "fraction of whole gift",
+      "basis": "judgment",
+      "rationale": "60000 physical implementation staff/support;15000otherpolicy,15000survivors,10000shared/reserve; no second .6 multiplier.",
+      "sourceIds": [
+        "impact"
+      ]
+    },
+    {
+      "name": "p",
+      "value": 0.1,
+      "unit": "joint probability of gift-caused acceleration",
+      "basis": "judgment",
+      "rationale": "Includes donor replacement, coalition alternatives, agency baseline and failure. Not measured from wins.",
+      "sourceIds": [
+        "schools",
+        "capital"
+      ]
+    },
+    {
+      "name": "b",
+      "value": 0.02,
+      "unit": "share of baseline casualty risk on package streets",
+      "basis": "judgment",
+      "rationale": "Hypothetical disjoint package; not street-length share or identified target list.",
+      "sourceIds": []
+    },
+    {
+      "name": "F",
+      "value": 25,
+      "unit": "traffic fatalities per year",
+      "basis": "observed",
+      "rationale": "2025 context applied as assumed future baseline; not25pedestrian-only deaths.",
+      "sourceIds": [
+        "fatal"
+      ]
+    },
+    {
+      "name": "S",
+      "value": 550,
+      "unit": "severe nonfatal traffic injuries per year",
+      "basis": "judgment",
+      "rationale": "Historical approx550severe injuries/year used as constructed nonfatal baseline; reconcile current protocol and fatal overlap before beta.",
+      "sourceIds": [
+        "severe"
+      ]
+    },
+    {
+      "name": "eF",
+      "value": 0.1,
+      "unit": "fractional fatality reduction",
+      "basis": "judgment",
+      "rationale": "Conservative transfer for physical package; fatal evidence uncertain and zero plausible.",
+      "sourceIds": [
+        "causal"
+      ]
+    },
+    {
+      "name": "eS",
+      "value": 0.2,
+      "unit": "fractional severe-injury reduction",
+      "basis": "judgment",
+      "rationale": "Physical traffic-calming transfer, not signage or advocacy alone.",
+      "sourceIds": [
+        "causal"
+      ]
+    },
+    {
+      "name": "start",
+      "value": 2,
+      "unit": "year of early exposure",
+      "basis": "judgment",
+      "rationale": "Package opens at start of year2; outcomes dated yearend.",
+      "sourceIds": []
+    },
+    {
+      "name": "delay",
+      "value": 2,
+      "unit": "years accelerated",
+      "basis": "judgment",
+      "rationale": "Onlyyears2–3incremental; no-gift package then catches up.",
+      "sourceIds": [
+        "capital"
+      ]
+    },
+    {
+      "name": "uF",
+      "value": 0.8,
+      "unit": "future utility",
+      "basis": "judgment",
+      "rationale": "Not SF casualty-specific measurement.",
+      "sourceIds": []
+    },
+    {
+      "name": "hazard",
+      "value": 0.02,
+      "unit": "annual competing mortality hazard",
+      "basis": "judgment",
+      "rationale": "Includes future causes of death over finite horizon.",
+      "sourceIds": []
+    },
+    {
+      "name": "TF",
+      "value": 30,
+      "unit": "years",
+      "basis": "judgment",
+      "rationale": "Finite survival benefit, not full lifetime credited without limit.",
+      "sourceIds": []
+    },
+    {
+      "name": "uS",
+      "value": 0.1,
+      "unit": "utility loss avoided per severe injury year",
+      "basis": "judgment",
+      "rationale": "Unverified severity mix, not every injury permanent.",
+      "sourceIds": []
+    },
+    {
+      "name": "TS",
+      "value": 3,
+      "unit": "years",
+      "basis": "judgment",
+      "rationale": "Finite nonfatal health loss.",
+      "sourceIds": []
+    },
+    {
+      "name": "r",
+      "value": 0.03,
+      "unit": "annual discount rate",
+      "basis": "judgment",
+      "rationale": "Separate event delay and subsequent health duration.",
+      "sourceIds": []
+    },
+    {
+      "name": "gCA",
+      "value": 0.98,
+      "unit": "California share of net benefit",
+      "basis": "judgment",
+      "rationale": "Residents from SF/restCalifornia;2% outside-state. Not measured residence share. Sensitivity .9–.99 not confidence bounds.",
+      "sourceIds": []
+    },
+    {
+      "name": "K",
+      "value": 1000000,
+      "unit": "USD capital per package",
+      "basis": "judgment",
+      "rationale": "Hypothetical current package cost, not a dated bid.",
+      "sourceIds": []
+    },
+    {
+      "name": "M",
+      "value": 20000,
+      "unit": "annual USD maintenance",
+      "basis": "judgment",
+      "rationale": "Hypothetical additional maintenance during acceleration.",
+      "sourceIds": []
+    },
+    {
+      "name": "H_CA",
+      "value": 0,
+      "unit": "California QALYs",
+      "basis": "judgment",
+      "rationale": "No independent donor harm central; adverse-harm scenario included.",
+      "sourceIds": []
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "central",
+      "label": "Ordinary-gift health effect unpriced",
+      "costUSD": 100000,
+      "allPopulationQalys": null,
+      "editionQalys": null,
+      "assumptions": "No identified gift-sensitive future project or calibrated influence probability. Unknown benefit is not zero benefit. Historical alpha assumptions remain diagnostic below."
+    },
+    {
+      "id": "historical-alpha-central",
+      "label": "Historical conditional calculation; not donor forecast",
+      "costUSD": 100000,
+      "allPopulationQalys": 0.22993161313959018,
+      "editionQalys": 0.22533298087679837,
+      "assumptions": "{\"p\":0.1,\"b\":0.02,\"F\":25,\"S\":550,\"eF\":0.1,\"eS\":0.2,\"start\":2,\"delay\":2,\"uF\":0.8,\"hazard\":0.02,\"TF\":30,\"uS\":0.1,\"TS\":3,\"gCA\":0.98,\"r\":0.03,\"K\":1000000,\"M\":20000,\"H_CA\":0}"
+    },
+    {
+      "id": "favorable",
+      "label": "Favorable joint stress",
+      "costUSD": 100000,
+      "allPopulationQalys": 37.13815494011909,
+      "editionQalys": 36.766773390717894,
+      "assumptions": "{\"p\":0.35,\"b\":0.08,\"F\":25,\"S\":550,\"eF\":0.35,\"eS\":0.4,\"start\":2,\"delay\":5,\"uF\":0.85,\"hazard\":0.01,\"TF\":40,\"uS\":0.15,\"TS\":5,\"gCA\":0.99,\"r\":0.03,\"K\":3000000,\"M\":60000,\"H_CA\":0}"
+    },
+    {
+      "id": "adverse",
+      "label": "Adverse positive joint stress",
+      "costUSD": 100000,
+      "allPopulationQalys": 0.00009697192709346115,
+      "editionQalys": 0.00008727473438411503,
+      "assumptions": "{\"p\":0.01,\"b\":0.005,\"F\":15,\"S\":300,\"eF\":0.02,\"eS\":0.05,\"start\":3,\"delay\":1,\"uF\":0.65,\"hazard\":0.05,\"TF\":15,\"uS\":0.03,\"TS\":1,\"gCA\":0.9,\"r\":0.03,\"K\":300000,\"M\":10000,\"H_CA\":0}"
+    },
+    {
+      "id": "null",
+      "label": "No incremental acceleration",
+      "costUSD": 100000,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "assumptions": "Central exceptp=0; funded agency/coalition work happens on same schedule."
+    },
+    {
+      "id": "fatal-null",
+      "label": "No fatality effect",
+      "costUSD": 100000,
+      "allPopulationQalys": 0.11560598677400342,
+      "editionQalys": 0.11329386703852336,
+      "assumptions": "Central excepteF=0; clinically important sensitivity to imprecise death evidence."
+    },
+    {
+      "id": "harm-stress",
+      "label": "Independent harm exceeds modeled benefit",
+      "costUSD": 100000,
+      "allPopulationQalys": -0.07006838686040981,
+      "editionQalys": -0.07466701912320162,
+      "assumptions": "Central plus0.3CaliforniaQALY independent adverse access/displacement/opportunity harm; hypothetical, not measured."
+    }
+  ],
+  "sensitivity": [
+    "p=.01or.35alone multiplies central benefit by.1or3.5; do not combine nonindependent donor and coalition multipliers twice.",
+    "Central qF12.308049,qS.282861,V1.857738; independently recalculated from finite formulas.",
+    "WithgCA=.9or1andotherscentral,priceabout$4.83mor$4.35m; geography less decisive than influence and targetrisk.",
+    "Do not import London all-casualty reduction as a precise SF fatal effect; fatal-null case remains.",
+    "Central timing resource and gross-forward costs are109288.68784243458and200802.8537777505; opportunity costs/trafficaccess mayadd harms.",
+    "Physical engineering model cannot price a signage-only, education-only or already-installed-camera gift."
+  ],
+  "missingInputs": [
+    "Verified ordinary-gift allocation and costed additional staff/organizing tranche.",
+    "Named package's agency-funded baseline opening date and gift-induced change probability.",
+    "Current disjoint street exposure, severity definition and California victim residence.",
+    "Design-specific net injury effect including traffic displacement and accessibility.",
+    "Victim age/utility/survival and nonfatal duration; avoid fatal/severe overlap.",
+    "Current engineering capital/maintenance costs and public opportunity costs.",
+    "Marginal survivor-support/other-policy outcomes not quantified inpartial health model."
+  ]
+}

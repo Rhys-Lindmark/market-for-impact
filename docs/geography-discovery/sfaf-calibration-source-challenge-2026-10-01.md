@@ -1,0 +1,17 @@
+# SFAF calibration: root source challenge
+
+October1,2026. Proposal-stage source checks, not publication acceptance or a count change.
+
+Current official PrEP/PEP page identifies the clinic at Strut and says insurance billing has begun. Enrollment can take up to two hours; follow-up starts at one month, then every three months. Benefits navigators help clients use assistance and insurance. Do not assume all access is costless or convert the full medication/lab price into household resources. Source: https://www.sfaf.org/health-services/prep-pep/
+
+Current official housing/benefits page describes MOHCD Plus Housing waitlist referrals and navigation of existing public/private benefits. It does not identify a privately funded extra recipient cohort, marginal grant amount or counterfactual net resource change. Public transfers can change recipient resources, but causal access, alternative funding and displacement must be identified; neither full subsidy totals nor a forced zero economic value are justified. Source: https://www.sfaf.org/support-services/housing-subsidies-financial-benefits/
+
+Current CDPH PrEP-AP search-indexed benefits specify eligible fully enrolled services at no cost after third-party payer/assistance use. Direct retrieval failed in the web reader and with a TLS-chain error, including a system-CA retry; no certificate verification bypass used. This is a retrieval limitation, not missing assistance. Source: https://www.cdph.ca.gov/Programs/CID/DOA/Pages/OA_adap_benefits_prepAP.aspx
+
+The PROUD primary indexed randomized-trial abstract confirms an86% relative acquisition reduction under its own population and comparison. This does not identify contemporary SFAF incidence, marginal access or treated-HIV utility loss. Source: https://pubmed.ncbi.nlm.nih.gov/26364263/
+
+Root independently reconstructs frozen central health-only outputs:20 additional OD people and7.714286 disjoint PrEP people; net all-US health .524871142708, Bay .518979150937 and SF .495411183856; donor prices $1,926,859.678648 Bay and $2,018,525.282809 SF. Gross associated resources $138,285.714286 are not net societal cost or participant income. Finite clinical effects remain conditional judgments unless fresh evidence warrants changes. Income must expose recipient incidence, actual net savings/earnings/transfers versus alternatives, duration, timing and signed induced burdens independently of clinical success; do not use health overlap to erase a distinct resource effect.
+
+Root independently read the original FY2025 audit’s activities/functional-expense tables (PDF pages6–7, units thousands). Functional expenses44.262M plus separately netted event costs2.527M and termination benefits.430M reconcile to gross47.219M. FY2024 comparative functional44.464M plus event1.795M reconcile to46.259M. The housing-subsidy expense3.054M is not automatically causal household gain from a new private gift. Government grants19.524M and340B revenues10.251M are distinct from clinical benefits or patient resources. Original: https://res.cloudinary.com/dxca8bsxf/image/upload/v1764782541/San-Francisco-AIDS-Foundation-Jun25AR-Final_hi9fek.pdf
+
+Actual dedicated root source audit21:16:30.472–21:17:21.356UTC,50.884seconds, and original-financial audit21:18:41.568–21:19:13.473UTC,31.905seconds, GPT-6.1 Sol user-confirmed. Both closed before integration/idle work. Next: finite source/calculation proposal and model acceptance. Current accepted checkpoint remains12/40; SF9/10.

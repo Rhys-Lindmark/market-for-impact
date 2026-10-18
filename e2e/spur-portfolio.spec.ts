@@ -1,18 +1,20 @@
 import {test,expect} from '@playwright/test';
-test('SPUR whole portfolio and canonical-model navigation',async({page})=>{
+test('SPUR historical portfolio API survives current report integration',async({page,request})=>{
  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
  await page.goto('/charities/spur');
  await expect(page.getByRole('heading',{level:1,name:'SPUR',exact:true})).toBeVisible();
  const article=page.locator('.report-reading-column article');
- for(const text of ['$10.85M','$2.19M','nonoccupant','No finite positive price'])await expect(article).toContainText(text);
+ for(const text of ['$10.85M','$2.19M','$13.01M','$50.33M','nonoccupant'])await expect(article).toContainText(text);
  await expect(article).not.toContainText('Pending final');
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
- const [response]=await Promise.all([page.waitForResponse(r=>r.url().includes('/api/sf-spur-portfolio')),page.getByRole('link',{name:'Inspect the model and sources →'}).click()]);
+ await expect(page.locator('.report-model-version a')).toHaveAttribute('href','/api/spur-v2-model');
+ const response=await request.get('/api/sf-spur-portfolio');
  const d=await response.json();expect(d.evaluated).toHaveLength(10);
  expect(d.evaluated[0].sfNetQaly).toBeCloseTo(.09214,8);
  expect(d.evaluated[0].bayIncludingSfNetQaly).toBeCloseTo(.4564,8);
- await page.goto('/research');const row=page.locator('[data-research-slug="spur"]');
+ await page.goto('/san-francisco/all');const row=page.locator('[data-research-slug="spur"]');
  await expect(row).toBeVisible();
- expect(Number(await row.getAttribute('data-cost-per-ten-qalys'))).toBeCloseTo(d.evaluated[0].bayUsdPer10Qaly,2);
+ const current=await (await request.get('/api/spur-v2-model')).json();
+ expect(Number(await row.getAttribute('data-cost-per-ten-qalys'))).toBeCloseTo(current.current.central.regions.bay.price10,2);
  expect(errors).toEqual([]);
 });

@@ -1,0 +1,432 @@
+{
+  "organization": "Institute for Safer Trucking",
+  "organizationId": "ein:84-4943816",
+  "edition": "usa",
+  "sourceCommit": "970c764",
+  "updated": "2026-09-30",
+  "priceScope": "Central estimate withdrawn; conditional braking-policy mortality diagnostics",
+  "model": {
+    "version": "usa-ist-beta-20260930-withdrawn-central",
+    "costScope": "All recipient program, management and fundraising expenses; five-year constant-FY2024 cost cohort. Only prospective AEB mortality health is quantified. Not restricted AEB efficiency, not total social cost.",
+    "geographicAttribution": "Domestic heavy-vehicle crash prevention. Central 99% of modeled health is assigned to residents of 50 states plus DC, allowing 1% nonresident road users. This is a judgment, not a measured residence share; foreign/territorial policy effects excluded.",
+    "formula": "Fj(t)=min(cap, rate*max(0,t-Lj+1)); A=sum(t=1..T)[F1(t)-F0(t)]/(1.03^t). H=D*r*q*A. Q_all=b*(p*a*H-h); Q_USA=g*Q_all. Cost=C*Y; price=10*Cost/Q_USA when positive. For normalized support G, multiply both cohort cost and Q by G/(C*Y); no linear scaling claim beyond small marginal support.",
+    "counterfactual": "Public agencies, manufacturers and other advocates continue. Both deployment paths ultimately converge; only acceleration is counted. D already removes pre-NPRM voluntary adoption; r allows subsequent erosion and transport. Existing donor/reserve/public substitution is represented by b.",
+    "attribution": "Congress, agencies, manufacturers and multiple advocates continue absent the gift. Historical Road Safe America participation does not identify IST's future marginal role; do not double count merger entities or coalition effects. Alpha p=.15, a=.10 and b=.50 lack calibration and are diagnostic only.",
+    "uncertainty": "Central withdrawn; no calibrated gift-sensitive policy acceleration, IST-specific contribution or funding capacity. Unknown is not zero. Retained alpha numerical inputs and scenarios are conditional diagnostics, not recommendation or confidence bounds.",
+    "nativeOutcomes": "Reports, survivor resources and advocacy engagements are observed service categories, not health units. Model bridge uses residual risk-weighted fleet deployment, additional crash fatalities prevented, then discounted QALYs; no policy-win-to-QALY shortcut.",
+    "inputs": [
+      {
+        "name": "C",
+        "value": 365248,
+        "unit": "USD / recipient year",
+        "basis": "observed",
+        "rationale": "FY2024 total functional expenses; no separately netted direct-event, rental, gaming or inventory costs reported. All programs and overhead charged.",
+        "sourceIds": [
+          "ist-irs24"
+        ]
+      },
+      {
+        "name": "Y",
+        "value": 5,
+        "unit": "recipient years",
+        "basis": "judgment",
+        "rationale": "Retained alpha diagnostic, not beta central. Five-year policy-support cohort priced at constant FY2024 annual scale; not a restricted AEB budget.",
+        "sourceIds": []
+      },
+      {
+        "name": "D",
+        "value": 106,
+        "unit": "annual fatalities prevented at completed AEB deployment",
+        "basis": "judgment",
+        "rationale": "Retained alpha diagnostic, not beta central. Sourced regulatory forecast of 106 AEB fatalities prevented annually at full residual-fleet deployment; not observed deaths. Based on four test vehicles; baseline adoption/dark/weather already adjusted.",
+        "sourceIds": [
+          "ist-aeb-rule"
+        ]
+      },
+      {
+        "name": "r",
+        "value": 0.5,
+        "unit": "remaining opportunity and transport multiplier",
+        "basis": "judgment",
+        "rationale": "Retained alpha diagnostic, not beta central. Halve the 2023 AEB opportunity for subsequent voluntary uptake, narrower eventual rule, real-world transport and execution. Does not reapply all historical uptake already removed from D.",
+        "sourceIds": [
+          "ist-aeb-rule",
+          "ist-agenda"
+        ]
+      },
+      {
+        "name": "q",
+        "value": 20,
+        "unit": "discounted QALYs per averted death",
+        "basis": "judgment",
+        "rationale": "Retained alpha diagnostic, not beta central. Rounded mixed-age adult road-user expectation; approximately decades of future survival adjusted for quality and 3% discounting at time of death. Range 10–25; not the regulator's monetary fatal-equivalent metric.",
+        "sourceIds": []
+      },
+      {
+        "name": "L1",
+        "value": 5,
+        "unit": "first deployment year with successful acceleration",
+        "basis": "judgment",
+        "rationale": "Retained alpha diagnostic, not beta central. Accounts for regulatory finalization plus new-vehicle compliance lead time; not a claim of a currently effective mandate.",
+        "sourceIds": [
+          "ist-agenda",
+          "ist-aeb-rule"
+        ]
+      },
+      {
+        "name": "L0",
+        "value": 7,
+        "unit": "first deployment year absent accelerated coalition effort",
+        "basis": "judgment",
+        "rationale": "Retained alpha diagnostic, not beta central. Same eventual adoption but two years later; public agencies, manufacturers and other advocates continue in the counterfactual.",
+        "sourceIds": []
+      },
+      {
+        "name": "rate",
+        "value": 0.07,
+        "unit": "fraction of residual opportunity deployed / year",
+        "basis": "judgment",
+        "rationale": "Retained alpha diagnostic, not beta central. Risk-weighted fleet replacement approximation; slower than immediate installation. Not observed current vehicle penetration.",
+        "sourceIds": []
+      },
+      {
+        "name": "cap",
+        "value": 1,
+        "unit": "maximum residual-opportunity coverage",
+        "basis": "judgment",
+        "rationale": "Retained alpha diagnostic, not beta central. Coverage is of the remaining D*r opportunity, not all trucks.",
+        "sourceIds": []
+      },
+      {
+        "name": "T",
+        "value": 25,
+        "unit": "future years",
+        "basis": "judgment",
+        "rationale": "Retained alpha diagnostic, not beta central. Central deployment paths converge before year 25. The poor scenario converges in years 32–33, so its 25-year truncation omits later positive acceleration benefit; it is not a complete-duration lower bound.",
+        "sourceIds": []
+      },
+      {
+        "name": "discount",
+        "value": 0.03,
+        "unit": "annual benefit discount rate",
+        "basis": "judgment",
+        "rationale": "Retained alpha diagnostic, not beta central. Discount event-year benefits; q is separately discounted from event onward, not double discounting the same interval.",
+        "sourceIds": []
+      },
+      {
+        "name": "p",
+        "value": 0.15,
+        "unit": "probability of acceleration due to incremental coalition work",
+        "basis": "judgment",
+        "rationale": "Retained alpha diagnostic, not beta central. Fifteen percent over five years recognizes pending statutory process and adverse policy climate. Not probability any rule ever passes. This is a subjective expected-value estimate, not identified causal likelihood.",
+        "sourceIds": [
+          "ist-agenda",
+          "ist-speed-withdrawal"
+        ]
+      },
+      {
+        "name": "a",
+        "value": 0.1,
+        "unit": "IST contribution conditional on coalition-enabled acceleration",
+        "basis": "judgment",
+        "rationale": "Retained alpha diagnostic, not beta central. Ten percent recognizes experienced staff, survivor engagement and stated participation while reserving 90% for agencies, manufacturers and other advocates. No historical rule credited wholesale.",
+        "sourceIds": [
+          "ist-team",
+          "ist-statement",
+          "ist-partners"
+        ]
+      },
+      {
+        "name": "b",
+        "value": 0.5,
+        "unit": "marginal support additionality",
+        "basis": "judgment",
+        "rationale": "Retained alpha diagnostic, not beta central. Half allows reserves, donor substitution and staff capacity; current public evidence does not identify a funded-versus-unfunded workplan.",
+        "sourceIds": [
+          "ist-irs24"
+        ]
+      },
+      {
+        "name": "g",
+        "value": 0.99,
+        "unit": "share of modeled road-user QALYs accruing to 50-state/DC residents",
+        "basis": "judgment",
+        "rationale": "Retained alpha diagnostic, not beta central. Domestic crash mechanism, with 1% allowance for nonresident road users. Not measured residence; test .95–1. No territorial or foreign regulatory effects credited.",
+        "sourceIds": []
+      },
+      {
+        "name": "h",
+        "value": 0,
+        "unit": "other net health harm over five-year cohort, before b and g",
+        "basis": "judgment",
+        "rationale": "Retained alpha diagnostic, not beta central. Other portfolio branches and technology-induced harm set net zero centrally; not proven zero or a lower bound. Negative outcomes included in sensitivity.",
+        "sourceIds": []
+      },
+      {
+        "name": "deploymentPaths",
+        "value": [
+          {
+            "year": 1,
+            "with": 0,
+            "without": 0
+          },
+          {
+            "year": 2,
+            "with": 0,
+            "without": 0
+          },
+          {
+            "year": 3,
+            "with": 0,
+            "without": 0
+          },
+          {
+            "year": 4,
+            "with": 0,
+            "without": 0
+          },
+          {
+            "year": 5,
+            "with": 0.07,
+            "without": 0
+          },
+          {
+            "year": 6,
+            "with": 0.14,
+            "without": 0
+          },
+          {
+            "year": 7,
+            "with": 0.21000000000000002,
+            "without": 0.07
+          },
+          {
+            "year": 8,
+            "with": 0.28,
+            "without": 0.14
+          },
+          {
+            "year": 9,
+            "with": 0.35000000000000003,
+            "without": 0.21000000000000002
+          },
+          {
+            "year": 10,
+            "with": 0.42000000000000004,
+            "without": 0.28
+          },
+          {
+            "year": 11,
+            "with": 0.49000000000000005,
+            "without": 0.35000000000000003
+          },
+          {
+            "year": 12,
+            "with": 0.56,
+            "without": 0.42000000000000004
+          },
+          {
+            "year": 13,
+            "with": 0.6300000000000001,
+            "without": 0.49000000000000005
+          },
+          {
+            "year": 14,
+            "with": 0.7000000000000001,
+            "without": 0.56
+          },
+          {
+            "year": 15,
+            "with": 0.77,
+            "without": 0.6300000000000001
+          },
+          {
+            "year": 16,
+            "with": 0.8400000000000001,
+            "without": 0.7000000000000001
+          },
+          {
+            "year": 17,
+            "with": 0.9100000000000001,
+            "without": 0.77
+          },
+          {
+            "year": 18,
+            "with": 0.9800000000000001,
+            "without": 0.8400000000000001
+          },
+          {
+            "year": 19,
+            "with": 1,
+            "without": 0.9100000000000001
+          },
+          {
+            "year": 20,
+            "with": 1,
+            "without": 0.9800000000000001
+          },
+          {
+            "year": 21,
+            "with": 1,
+            "without": 1
+          },
+          {
+            "year": 22,
+            "with": 1,
+            "without": 1
+          },
+          {
+            "year": 23,
+            "with": 1,
+            "without": 1
+          },
+          {
+            "year": 24,
+            "with": 1,
+            "without": 1
+          },
+          {
+            "year": 25,
+            "with": 1,
+            "without": 1
+          }
+        ],
+        "unit": "annual risk-weighted coverage fractions",
+        "basis": "judgment",
+        "rationale": "Retained alpha diagnostic, not beta central. Inspectable central paths, F1/F0. Multiplication by D*r yields averted-death opportunity; neither advocacy contacts nor report downloads enter health arithmetic.",
+        "sourceIds": []
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "central",
+        "label": "Whole-gift central not estimable",
+        "costUSD": 1826240,
+        "allPopulationQalys": null,
+        "editionQalys": null,
+        "assumptions": "Prior alpha headline withdrawn. Gift-sensitive capacity and attributable policy/deployment change uncalibrated; unknown, not zero."
+      },
+      {
+        "id": "alpha-reproduced",
+        "label": "Prior alpha — diagnostic only",
+        "costUSD": 1826240,
+        "allPopulationQalys": 11.18656184369774,
+        "editionQalys": 11.074696225260762,
+        "assumptions": "Conditional diagnostic, not beta central or confidence bound. Parameters {\"C\":365248,\"Y\":5,\"D\":106,\"r\":0.5,\"q\":20,\"b\":0.5,\"p\":0.15,\"a\":0.1,\"g\":0.99,\"L1\":5,\"L0\":7,\"rate\":0.07,\"cap\":1,\"T\":25,\"h\":0}; discounted deployment difference A=1.4071146973204707."
+      },
+      {
+        "id": "favorable",
+        "label": "favorable — conditional diagnostic",
+        "costUSD": 1826240,
+        "allPopulationQalys": 417.6784098254491,
+        "editionQalys": 413.5016257271946,
+        "assumptions": "Conditional diagnostic, not beta central or confidence bound. Parameters {\"C\":365248,\"Y\":5,\"D\":106,\"r\":0.8,\"q\":25,\"b\":0.8,\"p\":0.4,\"a\":0.2,\"g\":0.99,\"L1\":3,\"L0\":7,\"rate\":0.1,\"cap\":1,\"T\":25,\"h\":0}; discounted deployment difference A=3.0784080912842637."
+      },
+      {
+        "id": "poor",
+        "label": "poor — conditional diagnostic",
+        "costUSD": 1826240,
+        "allPopulationQalys": 0.005689841577705532,
+        "editionQalys": 0.005632943161928476,
+        "assumptions": "Conditional diagnostic, not beta central or confidence bound. Parameters {\"C\":365248,\"Y\":5,\"D\":106,\"r\":0.2,\"q\":10,\"b\":0.1,\"p\":0.03,\"a\":0.02,\"g\":0.99,\"L1\":8,\"L0\":9,\"rate\":0.04,\"cap\":1,\"T\":25,\"h\":0}; discounted deployment difference A=0.44731458944225877."
+      },
+      {
+        "id": "one-year",
+        "label": "one-year — conditional diagnostic",
+        "costUSD": 1826240,
+        "allPopulationQalys": 5.675940245817083,
+        "editionQalys": 5.619180843358912,
+        "assumptions": "Conditional diagnostic, not beta central or confidence bound. Parameters {\"C\":365248,\"Y\":5,\"D\":106,\"r\":0.5,\"q\":20,\"b\":0.5,\"p\":0.15,\"a\":0.1,\"g\":0.99,\"L1\":5,\"L0\":6,\"rate\":0.07,\"cap\":1,\"T\":25,\"h\":0}; discounted deployment difference A=0.7139547479015199."
+      },
+      {
+        "id": "low-additionality",
+        "label": "low-additionality — conditional diagnostic",
+        "costUSD": 1826240,
+        "allPopulationQalys": 2.237312368739548,
+        "editionQalys": 2.2149392450521526,
+        "assumptions": "Conditional diagnostic, not beta central or confidence bound. Parameters {\"C\":365248,\"Y\":5,\"D\":106,\"r\":0.5,\"q\":20,\"b\":0.1,\"p\":0.15,\"a\":0.1,\"g\":0.99,\"L1\":5,\"L0\":7,\"rate\":0.07,\"cap\":1,\"T\":25,\"h\":0}; discounted deployment difference A=1.4071146973204707."
+      },
+      {
+        "id": "no-acceleration",
+        "label": "no-acceleration — conditional diagnostic",
+        "costUSD": 1826240,
+        "allPopulationQalys": 0,
+        "editionQalys": 0,
+        "assumptions": "Conditional diagnostic, not beta central or confidence bound. Parameters {\"C\":365248,\"Y\":5,\"D\":106,\"r\":0.5,\"q\":20,\"b\":0.5,\"p\":0.15,\"a\":0.1,\"g\":0.99,\"L1\":5,\"L0\":5,\"rate\":0.07,\"cap\":1,\"T\":25,\"h\":0}; discounted deployment difference A=0."
+      },
+      {
+        "id": "adverse",
+        "label": "adverse — conditional diagnostic",
+        "costUSD": 1826240,
+        "allPopulationQalys": -0.5,
+        "editionQalys": -0.495,
+        "assumptions": "Conditional diagnostic, not beta central or confidence bound. Parameters {\"C\":365248,\"Y\":5,\"D\":106,\"r\":0.5,\"q\":20,\"b\":0.5,\"p\":0,\"a\":0.1,\"g\":0.99,\"L1\":5,\"L0\":7,\"rate\":0.07,\"cap\":1,\"T\":25,\"h\":1}; discounted deployment difference A=1.4071146973204707."
+      },
+      {
+        "id": "other-harm",
+        "label": "other-harm — conditional diagnostic",
+        "costUSD": 1826240,
+        "allPopulationQalys": 6.18656184369774,
+        "editionQalys": 6.124696225260763,
+        "assumptions": "Conditional diagnostic, not beta central or confidence bound. Parameters {\"C\":365248,\"Y\":5,\"D\":106,\"r\":0.5,\"q\":20,\"b\":0.5,\"p\":0.15,\"a\":0.1,\"g\":0.99,\"L1\":5,\"L0\":7,\"rate\":0.07,\"cap\":1,\"T\":25,\"h\":10}; discounted deployment difference A=1.4071146973204707."
+      },
+      {
+        "id": "class-7-8-only-ceiling",
+        "label": "Class 7–8 scope ceiling — diagnostic only",
+        "costUSD": 1826240,
+        "allPopulationQalys": 4.221344091961412,
+        "editionQalys": 4.179130651041798,
+        "assumptions": "Conditional diagnostic, not beta central or confidence bound. Parameters {\"C\":365248,\"Y\":5,\"D\":40,\"r\":0.5,\"q\":20,\"b\":0.5,\"p\":0.15,\"a\":0.1,\"g\":0.99,\"L1\":5,\"L0\":7,\"rate\":0.07,\"cap\":1,\"T\":25,\"h\":0}; discounted deployment difference A=1.4071146973204707. D=40 is the NPRM combined Class 7–8 fatality total used as a generous AEB scope ceiling, not a new forecast."
+      },
+      {
+        "id": "later-same-two-year-lead",
+        "label": "later-same-two-year-lead — conditional diagnostic",
+        "costUSD": 1826240,
+        "allPopulationQalys": 10.237288768098292,
+        "editionQalys": 10.134915880417308,
+        "assumptions": "Conditional diagnostic, not beta central or confidence bound. Parameters {\"C\":365248,\"Y\":5,\"D\":106,\"r\":0.5,\"q\":20,\"b\":0.5,\"p\":0.15,\"a\":0.1,\"g\":0.99,\"L1\":8,\"L0\":10,\"rate\":0.07,\"cap\":1,\"T\":30,\"h\":0}; discounted deployment difference A=1.2877092790060745."
+      },
+      {
+        "id": "poor-full-convergence",
+        "label": "poor-full-convergence — conditional diagnostic",
+        "costUSD": 1826240,
+        "allPopulationQalys": 0.0072038359334203415,
+        "editionQalys": 0.007131797574086138,
+        "assumptions": "Conditional diagnostic, not beta central or confidence bound. Parameters {\"C\":365248,\"Y\":5,\"D\":106,\"r\":0.2,\"q\":10,\"b\":0.1,\"p\":0.03,\"a\":0.02,\"g\":0.99,\"L1\":8,\"L0\":9,\"rate\":0.04,\"cap\":1,\"T\":35,\"h\":0}; discounted deployment difference A=0.5663393029418506."
+      },
+      {
+        "id": "no-funding-additionality",
+        "label": "no-funding-additionality — conditional diagnostic",
+        "costUSD": 1826240,
+        "allPopulationQalys": 0,
+        "editionQalys": 0,
+        "assumptions": "Conditional diagnostic, not beta central or confidence bound. Parameters {\"C\":365248,\"Y\":5,\"D\":106,\"r\":0.5,\"q\":20,\"b\":0,\"p\":0.15,\"a\":0.1,\"g\":0.99,\"L1\":5,\"L0\":7,\"rate\":0.07,\"cap\":1,\"T\":25,\"h\":0}; discounted deployment difference A=1.4071146973204707."
+      },
+      {
+        "id": "lower-remaining-opportunity",
+        "label": "lower-remaining-opportunity — conditional diagnostic",
+        "costUSD": 1826240,
+        "allPopulationQalys": 4.474624737479097,
+        "editionQalys": 4.429878490104306,
+        "assumptions": "Conditional diagnostic, not beta central or confidence bound. Parameters {\"C\":365248,\"Y\":5,\"D\":106,\"r\":0.2,\"q\":20,\"b\":0.5,\"p\":0.15,\"a\":0.1,\"g\":0.99,\"L1\":5,\"L0\":7,\"rate\":0.07,\"cap\":1,\"T\":25,\"h\":0}; discounted deployment difference A=1.4071146973204707."
+      }
+    ],
+    "sensitivity": [
+      "Alpha diagnostic only. Central A=1.4071146973 discounted residual-opportunity years and H=1491.5415792 QALYs before policy attribution and funding additionality.",
+      "Alpha diagnostic only. At other central inputs, p*a must exceed 0.0247353 to beat $1 million per 10 USA QALYs, or 0.2473531 to beat $100,000. Central p*a=0.015.",
+      "Alpha diagnostic only. Any omitted net harm exceeding 22.3731 QALYs over the five-year cohort erases central positive health before b and g. Harm is not discounted by p*a.",
+      "Alpha diagnostic only. Halving q or r doubles the price. Reducing b from .5 to .1 raises it fivefold. A one-year lead is tested directly; no lead means zero.",
+      "Alpha diagnostic only. Changing residence share from .99 to .95 raises price by .99/.95; this is small beside uncertain policy attribution. Excluded nonfatal benefits could improve health yield, but cannot repair zero policy additionality.",
+      "Extending the poor scenario to full convergence at T=35 raises USA QALYs to .0071318 and lowers conditional price to $2.561 billion; no likelihood is established.",
+      "Class-scope ceiling D=40 yields $4.370m per 10; current voluntary adoption and future rule coverage remain unknown."
+    ],
+    "missingInputs": [
+      "Current recipient budget, funded-versus-unfunded projects, staffing capacity and donor restrictions; no verified marginal workplan.",
+      "Evidence tying IST-specific work to a change in adoption timing or performance standard, with other advocates' and agency contributions separated.",
+      "Current voluntary AEB uptake by vehicle class, risk-weighted fleet turnover, future final-rule coverage/compliance and age-specific fatalities.",
+      "Social opportunity cost and unintended health effects of accelerated equipment requirements, and measured health from the rest of the portfolio.",
+      "Age/severity-specific residual crash cohort and survival/utility mapping; calibrated harms for future compliant systems versus legacy products.",
+      "Current class-specific voluntary uptake and compliance performance; public funding-contingent workplan separating IST/RSA/coalition contributions."
+    ]
+  }
+}

@@ -1,0 +1,3 @@
+# Root Blue Bench interval excluded
+
+Session 3bf34d3d-d87c-47f5-8b2a-eae25b585495, 2026-10-06T23:18:54.721Z to 2026-10-06T23:21:03.099Z, is excluded in full from research accounting because it crossed into responding to the user's scheduler diagnosis question. Do not apportion or import it. Primary service, donation and financial-page observations remain source leads; a fresh dedicated audit is needed before acceptance. The current two-report author packet remains isolated and unpublished. Root checkout remains clean at c4ab33a; Denver published count remains 14. Site opening is c4ab33adbf95785f2d7314e4778c6dfcf3d448fd, with no application changes or save/deploy performed this diagnostic segment.

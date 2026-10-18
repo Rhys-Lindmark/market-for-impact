@@ -1,0 +1,229 @@
+{
+  "edition": "chicago",
+  "boundaryVersion": "OMB-23-01-2023-07-21",
+  "organizationId": "org:will-grundy-medical-clinic",
+  "slug": "will-grundy-medical-clinic",
+  "organization": "Will-Grundy Medical Clinic",
+  "program": "Free healthcare, homelessness support and care coordination",
+  "published": "2026-09-29",
+  "updated": "2026-09-29",
+  "stage": "alpha",
+  "donationUrl": null,
+  "priceScope": "Illustrative whole-recipient accounting cost per 10 Chicago-MSA QALYs",
+  "acceptance": {
+    "status": "accepted",
+    "evidence": "Independent original-source and arithmetic audit; docs/geography-discovery/final-seven-edition-audit-20261007/chicago-seven-nine-source-audit.json. Accepted only as illustrative alpha recipient-accounting scenario, not calibrated expected value or qualified donation recommendation."
+  },
+  "summary": {
+    "what": [
+      "WGMC combines healthcare with homelessness support and care coordination across Will, Grundy and Kendall counties. Ordinary recipient costs include housing, administration and fundraising as well as clinic care.",
+      "Illustrative central annual Chicago-MSA QALYs: 1.470000; model assumptions are uncalibrated.",
+      "Illustrative cost per 10 MSA QALYs: $12,636,014; not a marginal donation price."
+    ],
+    "strengths": [
+      "Original audit retains housing and clinic costs.",
+      "Annual report exposes program activity and scope.",
+      "Recognized and unrecognized donations are distinguished."
+    ],
+    "reservations": [
+      "Financial-control finding and contributed-service documentation gaps.",
+      "Clinical person count and cross-year cost matching are uncertain.",
+      "Unrecognized volunteer and partner resources prevent full-cost comparison."
+    ]
+  },
+  "sections": {
+    "what": "WGMC combines healthcare with homelessness support and care coordination across Will, Grundy and Kendall counties. Ordinary recipient costs include housing, administration and fundraising as well as clinic care.",
+    "monitoring": "The FY2025 report counts over 1,000 individuals served and 1,707 patient visits. N=1,000 is a rounded floor of all individuals, not unique medical patients; k=.5 is an assumed clinical share. Disease-control trends are uncontrolled and are not causal QALY calibration. Activity in FY2025 is paired with FY2024 audited costs, an explicit cross-year limitation.",
+    "qualitative": "Integrated medical and housing support plausibly improves access and continuity. Model only bounded morbidity relief in the assumed clinical subset; housing and other health benefits are provisionally zero net QALYs. Do not add contacts, prescriptions or procedures to people. The annual report's $6.8M+ care valuation is a resource claim, not health benefit.",
+    "cost": "Full FY2024 audited expense is $1,857,494, including the housing program and all support costs. It already includes $182,874 recognized in-kind equipment, supplies and prescriptions. Over 10,000 volunteer hours are unrecognized in those accounts. A separate resource sensitivity values 10,000 hours at judged $50/hour and adds $500,000; this is neither a measured opportunity cost nor a complete partner-resource estimate.",
+    "funding": "Audit revenue is $2,488,509, including $2,090,709 grants/contracts; net assets are $1,953,389. Finding 2024-001 reports multiple auditor adjustments needed, repeating the prior year; the audit still gives an unmodified financial opinion. Supporting documentation for all contributed services was unavailable. Prior-year net assets were restated, so tax-return values should not be treated as comparable audit totals. No priced unfunded expansion was established."
+  },
+  "sources": [
+    {
+      "id": "audit24",
+      "title": "Original FY2024 single audit and financial statements",
+      "publisher": "Will-Grundy Medical Clinic / Federal Audit Clearinghouse via ProPublica",
+      "url": "https://projects.propublica.org/nonprofits/display_audit/2024-06-GSAFAC-0000370306",
+      "published": null,
+      "retrieved": "2026-09-29"
+    },
+    {
+      "id": "return24",
+      "title": "Original FY2024 Form 990 and reconciliation",
+      "publisher": "Will-Grundy Medical Clinic / IRS via ProPublica",
+      "url": "https://projects.propublica.org/nonprofits/organizations/363492306/202542119349300324/full",
+      "published": null,
+      "retrieved": "2026-09-29"
+    },
+    {
+      "id": "annual25",
+      "title": "FY2025 annual and contributed services report",
+      "publisher": "Will-Grundy Medical Clinic",
+      "url": "https://willgrundymedicalclinic.org/documents/annual-report-fy2025.pdf",
+      "published": null,
+      "retrieved": "2026-09-29"
+    },
+    {
+      "id": "geo",
+      "title": "Official recipient website",
+      "publisher": "Will-Grundy Medical Clinic",
+      "url": "https://willgrundymedicalclinic.org/?lang=en",
+      "published": null,
+      "retrieved": "2026-09-29"
+    }
+  ],
+  "model": {
+    "formula": "Q_all=N*k*a*u*T*b; Q_MSA=Q_all*g; cost=C; price10=10*C/Q_MSA",
+    "counterfactual": "a is the share with meaningful morbidity relief beyond equivalent alternative care; b separately discounts replacement funding and constrained volunteer capacity. No mortality benefit is credited.",
+    "attribution": "One morbidity pathway only. Other health pathways are provisionally assigned zero net benefit, not demonstrated zero or a lower bound. Visits, prescriptions and retail care values are not added as QALYs. Cross-recipient benefits cannot be summed without person-level deduplication.",
+    "uncertainty": "All utility, causal response, duration, funding additionality and residence parameters are illustrative judgments, not measured causal effects, calibrated expected values, confidence intervals or marginal gift purchase prices. Different accounting treatment of donated care prevents comparative economic-efficiency rankings.",
+    "sensitivity": [
+      "Poor and favorable scenarios vary several uncalibrated assumptions together; they are not exhaustive bounds.",
+      "Zero additionality produces zero QALYs and no finite price.",
+      "Changing cost alone scales price proportionally; changing any multiplicative benefit factor inversely scales price.",
+      "At otherwise central assumptions, k=.25/.5/1 yields half/base/double benefit. Volunteer addback is separate from $6.8M+ FY2025 care claims; do not add both without reconciliation."
+    ],
+    "missingInputs": [
+      "Recipient causal morbidity and health-utility outcomes with follow-up and alternative-care comparison.",
+      "Additional unrestricted dollars, priced unfunded expansion and binding staff/volunteer constraints.",
+      "Patient residence, overlap across services and clinics, and incremental economic cost of donated resources.",
+      "Annual unique clinical-patient count, matched cost/activity year, comprehensive external care resource valuation and remediation of financial-control finding."
+    ],
+    "version": "chicago-will-grundy-medical-clinic-alpha-v1",
+    "costScope": "Whole FY2024 audited recipient expense, retaining clinical, housing, support and recognized in-kind costs. Unrecognized volunteer time and external referred care are excluded centrally; recipient-budget scenario is not full economic cost.",
+    "geographicAttribution": "Official FY2025 report locates clinical service in Will and Grundy and homelessness/care coordination across Will, Grundy and Kendall, all in the pinned 13-county Chicago MSA. g=.98 is judged participant residence share, not observed.",
+    "nativeOutcomes": "FY2025 individuals across programs exceed 1,000; annual visits are 1,707. Neither is an observed unique clinical-patient count; k represents the missing split.",
+    "inputs": [
+      {
+        "name": "C",
+        "value": 1857494,
+        "basis": "observed",
+        "rationale": "Full FY2024 audited expense is $1,857,494, including the housing program and all support costs. It already includes $182,874 recognized in-kind equipment, supplies and prescriptions. Over 10,000 volunteer hours are unrecognized in those accounts. A separate resource sensitivity values 10,000 hours at judged $50/hour and adds $500,000; this is neither a measured opportunity cost nor a complete partner-resource estimate.",
+        "sourceIds": [
+          "audit24"
+        ],
+        "unit": "USD; observed financial amounts with stated boundary addback"
+      },
+      {
+        "name": "N",
+        "value": 1000,
+        "basis": "observed",
+        "rationale": "FY2025 individuals across programs exceed 1,000; annual visits are 1,707. Neither is an observed unique clinical-patient count; k represents the missing split.",
+        "sourceIds": [
+          "annual25"
+        ],
+        "unit": "persons/panel proxy as stated"
+      },
+      {
+        "name": "k",
+        "value": 0.5,
+        "basis": "judgment",
+        "rationale": "Assumed clinical share of all annual individuals; not measured",
+        "sourceIds": [],
+        "unit": "fraction"
+      },
+      {
+        "name": "a",
+        "value": 0.3,
+        "basis": "judgment",
+        "rationale": "Incremental responder fraction beyond equivalent alternative care",
+        "sourceIds": [],
+        "unit": "fraction"
+      },
+      {
+        "name": "u",
+        "value": 0.05,
+        "basis": "judgment",
+        "rationale": "Utility gain among incremental responders; no recipient measurement",
+        "sourceIds": [],
+        "unit": "QALY/year"
+      },
+      {
+        "name": "T",
+        "value": 0.5,
+        "basis": "judgment",
+        "rationale": "Duration of relief, no persistence beyond half-year",
+        "sourceIds": [],
+        "unit": "years"
+      },
+      {
+        "name": "b",
+        "value": 0.4,
+        "basis": "judgment",
+        "rationale": "Funding additionality after replacement finance and capacity constraints",
+        "sourceIds": [],
+        "unit": "fraction"
+      },
+      {
+        "name": "g",
+        "value": 0.98,
+        "basis": "judgment",
+        "rationale": "Official FY2025 report locates clinical service in Will and Grundy and homelessness/care coordination across Will, Grundy and Kendall, all in the pinned 13-county Chicago MSA. g=.98 is judged participant residence share, not observed.",
+        "sourceIds": [
+          "geo"
+        ],
+        "unit": "fraction"
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "central",
+        "label": "Illustrative central",
+        "costUSD": 1857494,
+        "allPopulationQalys": 1.5,
+        "editionQalys": 1.47,
+        "assumptions": "N=1000; k=0.5; a=.30; u=.05; T=.5; b=.4; g=0.98. Judged benefit conversion, not measured EV."
+      },
+      {
+        "id": "poor",
+        "label": "Illustrative poor case",
+        "costUSD": 1857494,
+        "allPopulationQalys": 0.025,
+        "editionQalys": 0.022500000000000003,
+        "assumptions": "k=0.25; a=.1; u=.02; T=.25; b=.2; g=.9. No probability assigned."
+      },
+      {
+        "id": "favorable",
+        "label": "Illustrative favorable case",
+        "costUSD": 1857494,
+        "allPopulationQalys": 28,
+        "editionQalys": 28,
+        "assumptions": "k=1; a=.5; u=.08; T=1; b=.7; g=1. Not an upper bound."
+      },
+      {
+        "id": "zero",
+        "label": "No additional health benefit",
+        "costUSD": 1857494,
+        "allPopulationQalys": 0,
+        "editionQalys": 0,
+        "assumptions": "b=0: all care replaced or constrained; zero benefit, no finite price."
+      },
+      {
+        "id": "volunteer-resource",
+        "label": "Judged volunteer-resource addback",
+        "costUSD": 2357494,
+        "allPopulationQalys": 1.5,
+        "editionQalys": 1.47,
+        "assumptions": "Same benefit; 10,000 unrecognized volunteer hours × judged $50/hour added. Rounded floor hours, not full resource cost."
+      }
+    ]
+  },
+  "annualExpenses": [
+    {
+      "year": 2024,
+      "amount": 1857494,
+      "currency": "USD",
+      "periodMonths": 12,
+      "comparable": true,
+      "entity": "Will-Grundy Medical Clinic",
+      "accountingBasis": "US GAAP audited accrual expense",
+      "sourceId": "audit24"
+    }
+  ],
+  "timeCoverage": "partial",
+  "sessionIds": [
+    "chicago789-will-grundy-medical-clinic-research",
+    "will-grundy-medical-clinic-independent-source-audit-20260929"
+  ]
+}
+

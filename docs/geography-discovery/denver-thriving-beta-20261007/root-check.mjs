@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import {defaults,cases,calculate} from './model.mjs';
+let checks=0;const near=(a,b)=>{assert(Number.isFinite(a)&&Number.isFinite(b));assert(Math.abs(a-b)<1e-10*Math.max(1,Math.abs(a),Math.abs(b)));checks++;};
+function independent(o){const p={...defaults,...o};let dy=0;for(let y=0;y<Math.ceil(p.T);y++)dy+=Math.min(1,p.T-y)/(1+p.r)**(p.delay+y);const clinical=p.N*p.b*p.eligible*p.completion*p.response;const mother=p.N*p.b*p.completion*p.motherQ*(p.motherQ>0?p.motherOverlap:1);const h=p.g*((clinical*p.q+mother)*dy-p.N*p.harm/(1+p.r)**p.delay);const exposed=p.N*p.unique,changed=exposed*p.b*p.eligible*p.completion*p.response;const positive=x=>x>0?x*p.overlap:x;const gain=positive(p.workGain)+positive(p.medicalGain)-p.cost;let income=.5*p.g*(changed*Math.log1p(gain/p.baseline)+(exposed-changed)*Math.log1p(-p.cost/p.baseline))/(1+p.r)**p.delay;if(p.N&&(p.payerLoss||p.externalCost))income+=.5*p.payerPeople*Math.log1p(-p.g*(changed*p.payerLoss+p.N*p.externalCost)/p.payerPeople/p.payerBaseline)/(1+p.r)**p.delay;return {h,income,total:h+income,price:h+income>0?10*p.C/(h+income):null};}
+for(const[id,o]of cases){const a=calculate(o),b=independent(o);near(a.incomeEquivalent,b.income);if(!o.clinicalUnknown)near(a.editionQalys,b.h);if(!o.clinicalUnknown&&!o.incomeUnknown){near(a.totalEquivalent,b.total);if(!o.costUnknown){if(b.price===null){assert.equal(a.price10,null);checks++;}else near(a.price10,b.price);}}}
+const base=calculate();near(base.editionQalys,.4133949961622133);near(base.incomeEquivalent,-.21906156909501992);near(base.price10,72634544.72564536);assert.equal(defaults.C,1380261+31271);checks++;assert.equal(defaults.N,567);checks++;
+near(calculate({unique:0}).editionQalys,base.editionQalys);assert.equal(calculate({unique:0}).incomeEquivalent,0);checks++;
+assert(calculate({b:0}).incomeEquivalent<0);checks++;assert(calculate({response:0}).totalEquivalent<0);checks++;
+near(calculate({workGain:-500,medicalGain:0,overlap:0}).incomeEquivalent,calculate({workGain:-500,medicalGain:0,overlap:1}).incomeEquivalent);
+near(calculate({motherQ:-.01,motherOverlap:0}).editionQalys,calculate({motherQ:-.01,motherOverlap:1}).editionQalys);
+assert(calculate({q:0,harm:0,cost:0,workGain:500}).price10>0);checks++;assert.equal(calculate({N:0,C:0}).price10,null);checks++;
+console.log(JSON.stringify({passed:checks,scenarios:cases.length,central:base.price10,health:base.editionQalys,income:base.incomeEquivalent}));

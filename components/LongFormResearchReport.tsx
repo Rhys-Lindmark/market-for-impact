@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-html-link-for-pages -- Canonical native navigation avoids Vinext prefetch failures. */
 import type {ReactNode} from 'react';
+import {impactText} from '@/lib/impact-metric.mjs';
 import '@/app/givebetter.css';
 import '@/app/report-reading.css';
 import {reportSections,markdownBlocks,safeReportLink} from '@/lib/report-markdown.mjs';
@@ -15,7 +16,8 @@ import assignedEffort from '@/data/research-effort-assigned-estimates.json';
 type Section={id:string;title:string;markdown:string};
 type Block={type:'heading';level:number;id:string;text:string}|{type:'list';ordered:boolean;items:string[]}|{type:'table';headers:string[];rows:string[][]}|{type:'paragraph';text:string};
 type Source={title:string;url:string;publisher:string;published:string;retrieved:string;limit?:string};
-function Inline({text}:{text:string}) {
+function Inline({text,priceOnly=false}:{text:string;priceOnly?:boolean}) {
+ text=impactText(text,{priceOnly});
  const parts:ReactNode[]=[];const pattern=/\[([^\]]+)\]\(([^\s]+)\)|\*\*([^*]+)\*\*|`([^`]+)`/g;
  let last=0,match;
  while((match=pattern.exec(text))){
@@ -31,13 +33,21 @@ export function Markdown({text}:{text:string}) {
  return <>{(markdownBlocks(text) as Block[]).map((block,i)=>{
   if(block.type==='heading')return block.level===3?<h3 key={i} id={block.id}><Inline text={block.text}/></h3>:<h4 key={i} id={block.id}><Inline text={block.text}/></h4>;
   if(block.type==='list'){const items=block.items.map((item:string,j:number)=><li key={j}><Inline text={item}/></li>);return block.ordered?<ol key={i}>{items}</ol>:<ul key={i}>{items}</ul>;}
-  if(block.type==='table')return <div className="report-table-scroll" key={i} tabIndex={0} role="region" aria-label="Research data table"><table><thead><tr>{block.headers.map((cell:string,j:number)=><th scope="col" key={j}><Inline text={cell}/></th>)}</tr></thead><tbody>{block.rows.map((row:string[],j:number)=><tr key={j}>{row.map((cell,k)=><td key={k}><Inline text={cell}/></td>)}</tr>)}</tbody></table></div>;
+  if(block.type==='table')return <div className="report-table-scroll" key={i} tabIndex={0} role="region" aria-label="Research data table"><table><thead><tr>{block.headers.map((cell:string,j:number)=><th scope="col" key={j}><Inline text={cell}/></th>)}</tr></thead><tbody>{block.rows.map((row:string[],j:number)=><tr key={j}>{row.map((cell,k)=><td key={k}><Inline text={cell} priceOnly={/better life|per\s*(?:10|ten)|USD\/10|\$\/10|\/10Q/i.test(block.headers[k])||(k>0&&/better life|per\s*(?:10|ten)|USD\/10|\$\/10|\/10Q/i.test(row[0]))}/></td>)}</tr>)}</tbody></table></div>;
   return <p key={i}><Inline text={block.text}/></p>;
  })}</>;
 }
-export default function LongFormResearchReport({organization,program,markdown,sources,donationUrl,modelVersion,modelUrl,minutes,modelLabel,sectionTitles={},sectionOrder=[]}:{organization:string;program:string;markdown:string;sources:Source[];donationUrl?:string;modelVersion:string;modelUrl:string;minutes:number;modelLabel:string;sectionTitles?:Record<string,string>;sectionOrder?:string[]}){
+export default function LongFormResearchReport({organization,program,markdown,sources,donationUrl,modelVersion,modelUrl,minutes,modelLabel,calibrationDate,legacyMinutesAlreadyRecorded=false,sectionTitles={},sectionOrder=[]}:{organization:string;program:string;markdown:string;sources:Source[];donationUrl?:string;modelVersion:string;modelUrl:string;minutes:number;modelLabel:string;calibrationDate?:string;legacyMinutesAlreadyRecorded?:boolean;sectionTitles?:Record<string,string>;sectionOrder?:string[]}){
  const effortOrganization=organization==='HOPE Pacifica'?'HOPE: Healing, Overdose Prevention, and Education':organization;
- const earlierEffort=researchEffortSummary(researchEffort,effortOrganization,{...historicalEffort,...assignedEffort});
+ const record=researchEffort.organizations[effortOrganization as keyof typeof researchEffort.organizations];
+ const priorRegistry=calibrationDate&&record?{...researchEffort,organizations:{...researchEffort.organizations,[effortOrganization]:{...record,sessions:record.sessions.filter(s=>s.startedAt<calibrationDate)}}}:researchEffort;
+ const recentRegistry=calibrationDate&&record?{...researchEffort,organizations:{...researchEffort.organizations,[effortOrganization]:{...record,sessions:record.sessions.filter(s=>s.startedAt>=calibrationDate)}}}:null;
+ const earlierEffort=researchEffortSummary(priorRegistry,effortOrganization,{...historicalEffort,...assignedEffort});
+ const recentEffort=recentRegistry?researchEffortSummary(recentRegistry,effortOrganization):null;
+ const totals=new Map<string,number>();
+ if(calibrationDate&&record&&earlierEffort.estimated&&earlierEffort.minutes!==null)totals.set(historicalEffort.model.name,earlierEffort.minutes);
+ if(calibrationDate&&record){for(const s of record.sessions){const name=(s.model?.name??'GPT-6.1 Sol').replace('Astra Lite','Astra Light');totals.set(name,(totals.get(name)??0)+(Date.parse(s.endedAt)-Date.parse(s.startedAt))/60000);}if(!legacyMinutesAlreadyRecorded)totals.set(modelLabel,(totals.get(modelLabel)??0)+minutes);}
+ const combinedTime=[...totals].map(([name,value])=>'~'+Math.round(value)+' min on '+name).join(' + ');
  const earlierTime=earlierEffort.recorded||earlierEffort.estimated?earlierEffort.label.replace('Research time: ','')+' + ':'';
  const sections=(reportSections(markdown) as Section[]).map(section=>({...section,title:sectionTitles[section.id]??section.title}));
  if(sectionOrder.length){if(sectionOrder.length!==sections.length||new Set(sectionOrder).size!==sections.length||sectionOrder.some(id=>!sections.some(s=>s.id===id)))throw Error('Incomplete report section order');sections.sort((a,b)=>sectionOrder.indexOf(a.id)-sectionOrder.indexOf(b.id));}
@@ -46,8 +56,8 @@ export default function LongFormResearchReport({organization,program,markdown,so
   <header className="givebetter-masthead"><a href="/san-francisco">Give<span>Better</span> <small>x SF</small></a></header>
   <div className="report-reading-column">
    <header className="report-heading"><h1>{organization}</h1><p className="report-program">{program}</p>
-    <details className="report-research-effort"><summary>Research time: {earlierTime}{minutes} min on {modelLabel}</summary><ul><li>v1: {earlierEffort.label.replace('Research time: ','')}</li><li>v2: {minutes} min on {modelLabel}</li></ul>{earlierEffort.estimated&&<p>Earlier research time was estimated before tracking began.</p>}</details>
-    <p className="report-date">Updated: 11 September 2026</p>
+    <details className="report-research-effort"><summary>Research time: {combinedTime||<>{earlierTime}{minutes} min on {modelLabel}</>}</summary><ul><li>v1: {earlierEffort.label.replace('Research time: ','')}</li>{!legacyMinutesAlreadyRecorded&&<li>v2: {minutes} min on {modelLabel}</li>}{recentEffort?.recorded&&<li>Calibration: {recentEffort.label.replace('Research time: ','')}</li>}</ul>{earlierEffort.estimated&&<p>Earlier research time was estimated before tracking began.</p>}</details>
+    <p className="report-date">Updated: {calibrationDate??'11 September 2026'}</p>
     {donationUrl?<a className="report-donate" href={donationUrl} target="_blank" rel="noreferrer">Donate</a>:<p className="report-date">Donation route not verified.</p>}
    </header>
    <nav className="report-contents" aria-label="Table of Contents"><h2>Table of Contents</h2>{groups.map(group=>group.sections.length>1?<details className="report-contents-group" key={group.id}><summary><a data-toc-primary href={'#'+group.id}>{group.title}</a></summary><div>{group.sections.map(section=><a key={section.id} href={'#'+section.id}>{section.title.replace(/^\d+[.)]\s*/, '')}</a>)}</div></details>:<a data-toc-primary key={group.id} href={'#'+group.id}>{group.title}</a>)}<a data-toc-primary href="#sources">6. Sources</a></nav>

@@ -1,0 +1,33 @@
+# KACS USA — independent scientific/numerical acceptance
+
+Conditional scientific ACCEPT of the signed partial forecast; **production domain correction verified, no remaining material blocker**. No forced positive estimate or changed central is warranted. Read-only packet/calculator/receipt review and finite Node24 validation; no new sources, checkout edits, publication or added research time.
+
+## Required correction
+
+`capacity` currently permits up to1e10 although the narrative promises a maximum of one additional annual work portfolio. Consequently `calculate({gift:1e10,cost:1,capacity:1e10})` accepts a direct probability increment **50,000,000.000000045**. Restrict capacity to **[0,1]**, consistent with the declared response unit, and explicitly reject any `pWithout+delta` outside[0,1] (not clamp). Add regressions for oversized capacity/effective probabilities. The central and all27 supplied scenarios are unaffected.
+
+**Resolved in production:** read-only verification of `/Users/rhyslindmark/Documents/Codex/2026-08-29/okay-you-re-gonna-make-this/work/market-for-impact-california-six-surgery-beta/lib/kacs-usa-calibrated-model.mjs` confirms capacity is bounded[0,1] and oversized capacity rejects. The immutable author archive still records the original gap. For valid inputs, `scale=min(gift/cost,capacity)` is in[0,1], so `pWithout+scale*(pWith−pWithout)=(1−scale)*pWithout+scale*pWith` is a convex combination of two validated probabilities. An additional defensive effective-probability guard is optional, not required for this domain. The large valid gift1e10/cost1 saturates at scale1, delta.0050000000000000044 and effective probability.255. All27 production cases and embedded assertions pass; central remains−.02576410645909554. This resolution adds no research interval and leaves the archived source/model packet unchanged.
+
+## Independent reconstruction
+
+Direct increment `(.255−.25)*(10000/256454)` = **.00019496673867438216**. Using risk coverage `min(.8,max(0,.05*(t−L+1)))` for early5 versus late6 over22years gives discounted exposure **.5580188228822568** and acquisition-timing contrast **.016252975423755065**. Undiscounted acquisition differences sum to **0**: equal eventual device acquisition is not a permanent additional100M annual purchase stream. At zero discount the device timing ledger also equals0.
+
+Post-event life utility `.95*Σ1.03^−s`, s1..60, = **26.29178548281342**, not60 guaranteed health-years or an income horizon. Discounted avoided fatal episodes **.002023589046302646**. Health `fatalEpisodes*(lifeUtilitySum+.2−.05)` independently gives **.05350730746770555**, matching the candidate **.05350730746770561**.
+
+Device resources `delta*100M*.5*log1p(−25/50000)*purchaseTiming` = **−.07923955184230766**. Separate baseline-alive nonfatal and otherwise-fatal-rescue episode cash logs give **−.000031862084493430604**; resources total **−.07927141392680115**. Combined **−.02576410645909554**, hence **null positive combined price**, not zero benefits or a finite favorable ratio. Health-only price **$1,868,903.6083595704**. Net device15 diagnostic yields **$16,845,027.436546728**; selection of15 solely to restore a positive price would be unjustified.
+
+All27 diagnostic cases evaluate and embedded assertions pass. Historical alpha independently reproduces **$919,739.6998087636**. Clinical-zero leaves device costs, rescue and economic harms intact; its combined result is **−.07937259337911629**. Zero policy increment removes the conditional streams but retains separately induced harms when specified. Unknown health/income yields null combined price. Revised overlap removes only positive nonfatal symptom credit when its own episode cash is positive; fatal survival, purchase costs, rescue loss and independent harms are not removed. Negative ordinary cash does not fabricate health gains.
+
+## Material scientific/public gates
+
+The standardized .005 response is an **elicitation convention**, not organization-calibrated causal evidence. Native advocacy/prerule activity provides a plausible mechanism, while public duties, industry alternatives, reserves and substitution motivate weak influence; these do not estimate .005. Report the whole annual recipient normalization as a partial forecast, not a quoted donor work purchase. The100K staff/support sketch is not an extra allocation multiplier or verified funding gap. No donor-ready recommendation or complete portfolio/lower-bound claim follows.
+
+Thirty-one2025 deaths anchor national burden, not KACS outcomes. Technology testing supports mechanism/comparator distinctions, not field efficacy .6. Risk ramp, one-year timing lead and fixed homogeneous purchaser/risk mapping remain judgments. The **100M household/device cohort mapped directly to the same risk coverage** is a particularly strong unresolved distribution assumption: risk targeting and buyer counts could change both ledgers. Household/device equivalence, incremental net price25 and equal eventual acquisitions/comparable service streams need to remain explicit. A50M cost-only case is a diagnostic of changed concentration/mapping, not observed targeting efficiency. No future replacement claim, MSRP credit or public reimbursement is income.
+
+Finite60-year child survival/.95 is an unvalidated prognosis prior, not an observed age-specific life table. Morbidity events equal fatal burden is a separate unknown-incidence bridge; the added nonfatal cohort must remain distinct from saved otherwise-fatal children. Symptom utility.2×1year and rescue harm.05 are unvalidated short-term priors. Actual household cash1000/−2500 is once-only, net of coverage, paid leave, taxes, benefits and costs; no lifetime wages of rescued children or price on caregiver shadow time is included.
+
+Financial originals were inaccessible in this phase: do not label all three amounts freshly original-audited. The FY2023 **4517** discrepancy remains unresolved, with both functional/gross means shown. FY2024 index cost256454 can be a transparent conditional normalizer but does not establish unrestricted cash, missing FY2025 accounts or marginal capacity. Retain old-model freeze and prior beta-null versus new negative-forecast distinction.
+
+## Provenance
+
+Three closed author source/model sessions total **442.930 seconds**; root11seconds is separate. Post-close testing, mechanical validation and this acceptance add zero research minutes. User-assigned inherited GPT-6.1 Sol is testimony, with runtime metadata unknown. This review checks supplied source mappings/access disclosures, not fresh original retrieval or byte-hash verification. Root owns domain correction, public integration and publication.

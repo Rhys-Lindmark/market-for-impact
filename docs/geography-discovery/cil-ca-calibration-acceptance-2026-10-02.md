@@ -1,0 +1,11 @@
+# CIL California health and income recalibration
+
+Accepted as a conditional partial planning estimate, not a donor-ready recommendation or complete organizational assessment. The current modeled price is $146,437,882.12 per ten combined California equivalent years: 0.005069201 health years plus 0.001759633 household-resource equivalents per illustrative $100,000. The historical $59,187,952.33 remains frozen separately.
+
+The main change is the temporary adult-function utility prior, 0.10 to 0.03, harmonized with the mixed mobility-device mechanism. It is not a measured CIL clinical result or independently identified posterior. The revised model also adds separate purchaser savings rather than income for people already credited with unmet health access. Purchaser incidence, net receipt, household baseline and delivery assumptions remain explicit judgments. Original auditor findings/remediation and priced additional capacity remain unverified.
+
+Independent technical review reproduced all 38 cases and the historical continuous-discount calculation. The finite work-income integral is encoded through equivalent present-value timing in the registry's fractional-year resource pathway; it must not be replaced by a bare start-date fractional year. Signed work cases keep a fixed clinical cohort; induced losses remain independent of successful delivery. Home modifications have a separate same-gift allocation and nonoverlapping cohort. Full support loading occurs once.
+
+Author research/modeling interval: 07:12:32.722–07:24:36.435 UTC on October 2, 2026,723.713 seconds. Root source check: 07:12:26–07:12:56 UTC,30seconds. Both assigned GPT-6.1 Sol by the user. Technical review, tests, integration and publication are excluded. Historical intervals and model identities remain preserved.
+
+Source packet: cil-ca-recalibration-2026-10-02.md, calculation and receipts companions; independent audit: cil-ca-independent-acceptance-2026-10-02.md. Eleven focused numerical/registry checks and two responsive checks passed. Independent production audit found no material integration mismatch; equivalent work timing preserves the signed finite resource integral. Exact native publication evidence is required before increasing the published count. No new geographic report or deep-review count is implied by this repeated recalibration.

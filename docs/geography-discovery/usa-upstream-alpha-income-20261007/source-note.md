@@ -1,0 +1,7 @@
+# Upstream USA targeted initial-income source audit
+
+Fresh root source audit, October 7, 2026. Current FreeBC original page https://www.freebc.org/ states Colorado availability and zero out-of-pocket online pills/patches/rings and in-person IUD/implant/shot procedure/removal. This identifies a potential private-payment pathway, not gift-additional unique patients, their actual alternative prices, disposable baselines or a current unrestricted gift's FreeBC allocation. Usual covered contraception may already cost zero; service retail values are not household savings.
+
+The original forthcoming AER Insights abstract https://www.aeaweb.org/articles?id=10.1257/aeri.20250644 reports randomized subsidized contraceptive access changed method choice and pregnancy/abortion at26months; birth effects inconclusive. It does not supply earnings/net household consumption coefficients. NBER fullpage403; no fullpaper verification claimed. Upstream impact/program direct opens returned tag-manager only, so no freshly checked scale claim.
+
+Existing clinical model remains an initial patient-health reference, not fewer births valued as welfare. Targeted education/work/care costs warrant assessment, but source evidence here cannot identify current causal household resources. Do not multiply partner population by salary or retail care. Preserve clinical inputs/scenarios and full initial diagnostic; root will independently challenge a portable packet before acceptance.

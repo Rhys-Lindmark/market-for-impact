@@ -1,0 +1,11 @@
+# Air Alliance Houston beta source checkpoint
+
+Original FYJuly2024–June2025 IRS990200 retrieved: EIN76-0461030, functional2,588,981; initial verified directevent5,809 yields2,594,790. Advocacy180,396, research377,813, totalprogram2,082,550; these are activity budgets, not one implemented campaign allocation.
+
+Current campaign page identifies Houston metro industrial permits, port coalition and transport work; EPA/TCEQ/industry and coalition partners are retained counterfactual. FY25 annual report:56,519 AirMail households over12permits, two concrete facilities onhold,12partners in legislativework, >70sensors14neighborhoods. NewSeptember2026 report100+sensors10communities uses different currentcoverage. Neither count is implemented sustained emissions change or unique beneficiaries. Annualreport's claimed cleaner recycler is descriptive, no controlled exposure difference. Cancelled EPA CommunityChangeGrant not delivered capacity.
+
+Primary Chay/Greenstone original CleanAirAct research and Hanna/Oliva refineryclosure labor research are relevant implemented-pollution mechanisms; not causal attribution to AAH, not direct measured localQALY or net wage coefficient. Primary study retrieval limitations and exact spans retained in source receipts.
+
+Initial b=.3enactment*.5implementation*.2recipientattribution=.03 remains explicit conditional judgment. N10,000 hypothesized residents not mail recipients or sensorcount; q=.003/response.5/T3 local causal doses unknown. Revised all-exposure accounting must keep resident process/time and health harms independentof b; no-effect policy does not cancel effort burdens. Exposure burden fraction should be tested independently because mail receipt ≠ ten dollars of actual active participation.
+
+Public compliance/provider/work displacement loss must be distinct incidence; salaries and hospitalretailbills not net resources. Preserve unknown-neutral medicalgain100 hypothesis onlyas net otherwisepaid resource savings after insurance/care substitutes with explicit null and adverse alternatives; workgain0 unknownnotmeasured. Fullannualcostpartialchannel excludes othercampaignbenefits asunknownnotzero. Advocacy-only and advocacy+research cost sensitivities notfullresource/giftproof.

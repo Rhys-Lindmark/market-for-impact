@@ -1,0 +1,3 @@
+# Bounded checkpoint; not accepted
+
+Original full annual coverage-capacity clinical ratio remains defensible only as a conditional prior. Its 16.6878 coverage-person-years do not prove unique household incidence, actual private medical spending displaced, future premium liability, or additional paperwork encounters. A hypothetical equivalence could be modeled, but a budget statement alone cannot select its central rates. Preserve original price and all diagnostics, do not flag this as completed signed-income coverage. Actual future baseline/cash/access mechanism is the specific open question. No material numeric revision was accepted; this checkpoint is not a publication-ready model. Root scientific consideration is separately closed. Broader impacts unknown, not zero.

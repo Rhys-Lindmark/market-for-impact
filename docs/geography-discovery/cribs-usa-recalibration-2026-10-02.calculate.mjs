@@ -1,0 +1,29 @@
+import {incomeHealthyYearEquivalent} from '/Users/rhyslindmark/Documents/Codex/2026-08-29/okay-you-re-gonna-make-this/work/market-for-impact-california-six-surgery-beta/lib/income-health-equivalence.mjs';
+// CDC/NCHS 2023 Table01.xlsx, total-population L_x, ages0..99 plus100+.
+// Last open interval lumped at end of year101; its maximum undiscounted
+// contribution to discounted L is0.002 and this approximation overvalues tail.
+export const personYears=[99514.984375,99419.40625,99383.515625,99358.8671875,99340.296875,99324.8828125,99310.734375,99297.8046875,99286.015625,99275.4765625,99265.9453125,99256.375,99244.609375,99227.578125,99202.5,99167.8203125,99123.34375,99069.640625,99007.5625,98937.9921875,98861.015625,98776.203125,98683.8359375,98585.0625,98480.9921875,98372.34375,98259.078125,98140.1875,98014.078125,97879.328125,97735.3359375,97582.3359375,97421.140625,97252.6875,97077.6640625,96896.2265625,96707.921875,96511.78125,96306.5546875,96091.1171875,95864.390625,95625.625,95375.328125,95114.859375,94845.140625,94565.5625,94273.7734375,93966.484375,93640.34375,93292.546875,92921.140625,92524.40625,92100.1171875,91645.078125,91155.1875,90627.265625,90058.8203125,89445.140625,88780,88059,87280.78125,86446.171875,85556.703125,84613.1484375,83614.8046875,82559.3125,81439.1796875,80251.96875,78999.359375,77677.515625,76288.09375,74824.609375,73274.015625,71625.5,69865.875,67984,65987.5625,63842.703125,61540.41796875,59085.609375,56466.4765625,53679.53125,50714.0859375,47600.40625,44354.96484375,40998.38671875,37537.171875,33979.1953125,30371.1796875,26767.28125,23227.171875,19813.220703125,16586.849609375,13604.39453125,10912.87109375,8546.19921875,6522.5185546875,4843.0380859375,3492.73876953125,2442.83740234375,4392.89453125];
+export const lifeQalys=personYears.reduce((v,Lx,age)=>v+.9*Lx/100000/1.03**(age+1),0);
+const G=10000; // Modest normalization only: no inferred linear scaling or verified capacity tranche.
+export const assumptions=[
+ {id:'central-judgment',a:.35,cashPackage:225,responseProbability:.5,conditionalAdditionality:.7,u:.18,r:.0015,e:.4,g:.995,partnerResource:125,purchaseShare:.2,purchaseCash:100,burdenCash:10,incomeBefore:30000},
+ {id:'favorable',a:.7,cashPackage:175,responseProbability:.85,conditionalAdditionality:.9,u:.4,r:.003,e:.6,g:1,partnerResource:75,purchaseShare:.4,purchaseCash:150,burdenCash:10,incomeBefore:25000},
+ {id:'downside',a:.2,cashPackage:450,responseProbability:.2,conditionalAdditionality:.3,u:.05,r:.0008,e:.2,g:.98,partnerResource:200,purchaseShare:.05,purchaseCash:75,burdenCash:25,incomeBefore:30000},
+ {id:'null-funding-response',a:.35,cashPackage:225,responseProbability:0,conditionalAdditionality:.7,u:.18,r:.0015,e:.4,g:.995,partnerResource:125,purchaseShare:.2,purchaseCash:100,burdenCash:10,incomeBefore:30000},
+ {id:'adverse-substitution',a:.35,cashPackage:225,responseProbability:.5,conditionalAdditionality:.7,u:.18,r:.0015,e:-.1,g:.995,partnerResource:125,purchaseShare:0,purchaseCash:0,burdenCash:25,incomeBefore:30000},
+];
+export function calculate(s){
+ const N=G*s.a/s.cashPackage*s.responseProbability*s.conditionalAdditionality;
+ const deaths=N*s.u*s.r*s.e, health=deaths*lifeQalys*s.g;
+ const resource=N===0?0:[
+  [s.purchaseShare,s.purchaseCash-s.burdenCash],
+  [1-s.purchaseShare,-s.burdenCash]
+ ].reduce((v,[share,gain])=>v+(share===0?0:incomeHealthyYearEquivalent({people:N*share,annualIncomeBeforeUSD:s.incomeBefore,annualIncomeGainUSD:gain,years:1,causalShare:1,editionShare:s.g,independentShare:1,delayYears:0,discountRate:0})),0);
+ const cost=G+N*s.partnerResource;
+ const price=(q,costScope=cost)=>q>0?10*costScope/q:null;
+ return {...s,donationUSD:G,additionalPackages:N,incrementalSaferSleepRiskPeriodEquivalent:N*s.u,expectedDeathsPrevented:deaths,healthQalysUSA:health,householdCashSavingsUSD:N*s.purchaseShare*s.purchaseCash*s.g,householdCashBurdensUSD:N*s.burdenCash*s.g,householdNetCashUSD:N*(s.purchaseShare*s.purchaseCash-s.burdenCash)*s.g,resourceHealthyYearEquivalentUSA:resource,combinedEquivalentUSA:health+resource,fullInstitutionalResourceUSD:cost,healthPricePer10FullResourceUSD:price(health),resourcePricePer10FullResourceUSD:price(resource),combinedPricePer10FullResourceUSD:price(health+resource),healthPricePer10DonationUSD:price(health,G),combinedPricePer10DonationUSD:price(health+resource,G)};
+}
+const original={G:10000,a:.5,c:500,b:.5,u:.2,r:.002,e:.5,L:27,g:.99};
+const oldHealth=original.G*original.a/original.c*original.b*original.u*original.r*original.e*original.L*original.g;
+const central=assumptions[0];
+console.log(JSON.stringify({domain:{normalizationUSD:G,capacityVerified:false,linearExtrapolationAuthorized:false},lifeQalys,lifeTableChecks:{rows:personYears.length,totalPersonYears:personYears.reduce((a,b)=>a+b,0),lifeExpectancy:personYears.reduce((a,b)=>a+b,0)/100000},originalReconstruction:{inputs:original,healthQalysUSA:oldHealth,pricePer10USD:10*original.G/oldHealth},scenarios:assumptions.map(calculate),stressScenarios:[calculate({...central,id:'zero-allocation',a:0}),calculate({...central,id:'safe-alternative-only',u:0}),calculate({...central,id:'mortality-null',e:0}),calculate({...central,id:'low-hazard-risk-difference',r:.000375,e:.4}),calculate({...central,id:'uptake-half',u:.09}),calculate({...central,id:'cashburden-only',purchaseShare:0,burdenCash:10})],lifetimeStress:[{id:'no-discount',qalys:personYears.reduce((a,b)=>a+.9*b/100000,0)},{id:'utility-.7',qalys:lifeQalys*.7/.9},{id:'five-percent-discount',qalys:personYears.reduce((a,b,i)=>a+.9*b/100000/1.05**(i+1),0)},{id:'beneficiary-survival-utility-30pct-lower',qalys:lifeQalys*.7}],unknown:{id:'unidentified-unrestricted-response',healthQalysUSA:null,resourceEquivalentUSA:null,combinedEquivalentUSA:null,pricePer10USD:null},incomeUnknown:{healthQalysUSA:calculate(central).healthQalysUSA,resourceEquivalentUSA:null,combinedEquivalentUSA:null,pricePer10USD:null}},null,2));

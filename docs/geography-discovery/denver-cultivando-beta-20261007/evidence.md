@@ -1,0 +1,17 @@
+# Cultivando beta: interrupted source checkpoint, not accepted research
+
+The current accepted initial report and calculator are preserved exactly in initial-diagnostic.json and initial-model.mjs. No new calculator, current beta report or accepted beta outcome exists. Root owns integration/publication.
+
+Verified source retrieval before interruption:
+
+- The original 2025 annual PDF was retrieved with curl and read through in-memory pypdf extraction, without retaining bulk PDF. https://cultivando.org/wp-content/uploads/2026/05/Cultivando-Annual-Report-2025.pdf . Page 11 reports formal Regulation 30 coalition participation, more than 20 leaders and more than 30 testimonies, benchmarks and hydrogen-sulfide inclusion. It does not measure emissions reductions, unique exposure beneficiaries or attributable QALYs. Page 5 reports revenue $1,132,325, not annual expenses. Other programs include Texas training, early-childhood support and emotional wellness; they are not all Denver pollution beneficiaries.
+- The owned donate page HTML was successfully retrieved and contains https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=4S4UWPDCAU6FA&source=url . Destination/transaction not newly verified. https://cultivando.org/donate/ .
+- Original author-hosted Hanna and Oliva paper was opened/read: https://remahanna.scholars.harvard.edu/sites/g/files/omnuum3176/files/remahanna/files/11_jpube_labor_supply.pdf . Mexico City refinery closure was associated with 19.7% sulfur-dioxide reduction and 1.3 hours / 3.5% weekly work increase. That is implemented closure and a different setting, not local net take-home earnings or Cultivando attribution.
+- Original NBER search abstract https://www.nber.org/papers/w10053 described Chay/Greenstone historical TSP and infant mortality evidence, not current toxic-air pollutant QALYs. Subsequent direct open failed; no full-paper read claimed.
+- Primary MIT abstract search https://globalchange.mit.edu/publication/13857 described uncertain SO2 regulatory effects; subsequent direct open failed. It challenges automatic rule-adoption-to-exposure inference, not proof this coalition has zero impact.
+
+No fresh Cultivando IRS expense check was completed by this author. Prior accepted FY2025 $1,508,452 and earlier source receipts are preserved, not represented as freshly checked. No current state-rule PDF read by this author occurred.
+
+Next unfinished question: establish the dated implemented Regulation 30 / Suncor abatement pathway and incremental counterfactual, then create a testable temporal/cohort ledger. Current advocates may overlap future beneficiary households: same-year resource gains and effort costs must be jointly logged, while year-zero costs cannot be capitalized into delayed benefits. Preserve full negative losses and explicitly state worker/payer cohort overlap assumptions. Retain judgments as judgments; do not derive empirical local QALYs or income from the Mexico/TSP studies.
+
+Execution anomaly: last verified successful tool result was 2026-10-07 04:34:48 UTC. On resumption the clock was 05:26:50 UTC; no established substantive work explains that gap. The entire open author interval starting 04:34:20.993 is excluded, including earlier source retrieval; no partial minutes reconstructed. No running tool handle or operation ID was returned: the last functions call completed, so underlying suspension/service cause is unknown. Root requested stop/checkpoint. No new source calls, model or report after resumption.

@@ -1,8 +1,10 @@
+import {impactMetadata} from '@/lib/impact-metadata.mjs';
+import {impactNode} from '@/components/ImpactMetric';
 import type { Metadata } from 'next';
 import CharityResearchReport, { type CharityReportContent } from '@/components/CharityResearchReport';
 import model from '@/data/san-francisco/hrtc-therapy-cea-v1.json';
 import { therapyDecisionModel } from '@/lib/therapy-model.mjs';
-export const metadata: Metadata = { title: 'Harm Reduction Therapy Center | Market for Impact', description: 'An exploratory $5.55M per 10-QALY model for an alcohol-focused mobile behavioral treatment course.' };
+export const metadata: Metadata = impactMetadata({ title: 'Harm Reduction Therapy Center | Market for Impact', description: 'An exploratory $5.55M per 10-QALY model for an alcohol-focused mobile behavioral treatment course.' });
 const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 2 });
 const scenarios = model.scenarios.map(s => ({ ...s, result: therapyDecisionModel(s) }));
 const central = scenarios[1];
@@ -62,4 +64,4 @@ const content: CharityReportContent = {
   ],
   excludedBenefits: model.excluded, sources: model.sources,
 };
-export default function HRTCReport() { return <CharityResearchReport content={{...content, donationUrl:"https://donorbox.org/harm-reduction-therapy-as-an-act-of-love"}} />; }
+export default function HRTCReport() { return impactNode(<CharityResearchReport content={{...content, donationUrl:"https://donorbox.org/harm-reduction-therapy-as-an-act-of-love"}} />); }

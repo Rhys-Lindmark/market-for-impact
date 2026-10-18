@@ -1,0 +1,8 @@
+# Independent NYLAG initial-income assessment
+
+Accepted as a targeted assessed-unknown disposition, not a completed joint health-and-income valuation. Root independently checked LegalHealth services and the original August 2026 H+H contract announcement: nearly 4,000 existing patients and $23.7M over seven years are funded baseline reach, not additional cash gains caused by a gift. Benefits, debt-payment and housing/work pathways can be material; missing actual retained payments, unique households and alternative delivery prevent a defensible numerical bridge within this initial scope. Lack of an RCT or uncertain gift attribution alone is not the reason.
+
+The eight frozen clinical worlds, including numerator-only diagnostic costs, are preserved. The compact calculator reproduces central MSA health 1.137585274664948 and retained $881,803,045.7500868 reference. The report explicitly leaves income unknown rather than assuming zero, 90% health, face-value debt as cash, or assigning whole-portfolio awards to 250 coverage cases. Signed burdens, positive-only overlap, benefit offsets and payer incidence are retained as required questions. Indexed 2024 outputs are labeled not freshly verified, not calibration evidence.
+
+Portable actual-schema/scenario validation passed. Author 72.422 seconds; root source audit 29.142 seconds; root modeling interval recorded separately. Prior untimed packet inspection is excluded from measured provenance with a conservative 60-second budget allowance, not manufactured timestamps. Combined conservative usage remains below the 300-second initial cap. Publication and live verification remain separate gates.
+

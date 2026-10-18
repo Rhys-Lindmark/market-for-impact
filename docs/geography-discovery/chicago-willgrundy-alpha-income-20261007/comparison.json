@@ -1,0 +1,72 @@
+{
+  "before": 12636013.605442178,
+  "current": {
+    "costUSD": 1857494,
+    "allPopulationQalys": 3.7,
+    "editionQalys": 3.626,
+    "incomePathways": [
+      {
+        "id": "medical-and-housing-households",
+        "people": 11.5,
+        "annualIncomeBeforeUSD": 20000,
+        "annualIncomeGainUSD": 75,
+        "years": 1,
+        "editionShare": 0.98,
+        "delayYears": 0,
+        "discountRate": 0.03,
+        "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+        "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+        "sourceIds": [
+          "annual25",
+          "geo",
+          "cg-income"
+        ]
+      },
+      {
+        "id": "medical-only-changed-households",
+        "people": 108.5,
+        "annualIncomeBeforeUSD": 20000,
+        "annualIncomeGainUSD": 25,
+        "years": 1,
+        "editionShare": 0.98,
+        "delayYears": 0,
+        "discountRate": 0.03,
+        "rationale": "Joint net household resource change after benefits, taxes and access/time costs.",
+        "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+        "sourceIds": [
+          "annual25",
+          "geo",
+          "cg-income"
+        ]
+      },
+      {
+        "id": "other-exposed-households",
+        "people": 280,
+        "annualIncomeBeforeUSD": 20000,
+        "annualIncomeGainUSD": -25,
+        "years": 1,
+        "editionShare": 0.98,
+        "delayYears": 0,
+        "discountRate": 0.03,
+        "rationale": "Full net additional access burden on exposed households even benefits fail; central maximum cohort overlap is judged, not observed.",
+        "counterfactual": "Otherwise-paid medical and housing consumption relative to public clinics, shelters, other housing and benefit support. No retail value or gross wages.",
+        "sourceIds": [
+          "annual25",
+          "geo",
+          "cg-income"
+        ]
+      }
+    ],
+    "incomeUnknown": false,
+    "incomeEquivalent": -0.08410079980154575,
+    "totalEquivalent": 3.541899200198454,
+    "price10": 5244344.615724592,
+    "clinicalEpisodes": 500,
+    "housingFamilies": 23,
+    "resourceHouseholds": 400
+  },
+  "change": "Annual gift multiplier removed; full harm and independent medical/housing joint resources added. All conditional inputs, not empirical improvement.",
+  "authorSeconds": 106.255,
+  "correctionSeconds": 0.385
+}
+

@@ -1,0 +1,96 @@
+{
+  "sourceCommit": "99434400da3983dce3084993d1c2db976e48a6b9",
+  "versionNumber": 467,
+  "deployment": {
+    "id": "appgdep_6ac5b2139f0c8191bf0ae5a360cd8b5c",
+    "project_id": "appgprj_6a938448e31c81918e35da08d93d95fd",
+    "title": "Market for Impact",
+    "version_id": "appgprj_6a938448e31c81918e35da08d93d95fd~appgver_7fa4acd8a8188191b73d10deaf990048",
+    "type": "publish",
+    "status": "succeeded",
+    "url": "https://market-for-impact.rhyslindmark.chatgpt.site",
+    "has_mcp": false,
+    "screenshot_asset_pointer": null,
+    "provider_deployment_id": "site---6a938448e31c81918e35da08d93d95fd",
+    "failure_message": null,
+    "env_set_revision": 0,
+    "updated_at": "2026-10-07T02:44:49.025599+00:00"
+  },
+  "live": {
+    "verifiedAt": "2026-10-07T02:45:00.852Z",
+    "checks": 6,
+    "results": [
+      {
+        "base": "https://market-for-impact.rhyslindmark.chatgpt.site",
+        "path": "/denver/all",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "base": "https://ai.rhyslindmark.com/givebetter",
+        "path": "/denver/all",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "base": "https://market-for-impact.rhyslindmark.chatgpt.site",
+        "path": "/denver/charities/rebuilding-together-colorado",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "base": "https://market-for-impact.rhyslindmark.chatgpt.site",
+        "path": "/all",
+        "status": 200,
+        "pass": true,
+        "denver": "25/25 initial · 4/10 deep"
+      },
+      {
+        "base": "https://ai.rhyslindmark.com/givebetter",
+        "path": "/denver/charities/rebuilding-together-colorado",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "base": "https://ai.rhyslindmark.com/givebetter",
+        "path": "/all",
+        "status": 200,
+        "pass": true,
+        "denver": "25/25 initial · 4/10 deep"
+      }
+    ]
+  },
+  "counts": {
+    "initial": 25,
+    "deep": 4,
+    "featured": 0
+  },
+  "estimate": {
+    "initial": 5863232.647516318,
+    "current": 5863232.647516318,
+    "health": 0.827871019047375,
+    "signedResources": 0.01251180323194287
+  },
+  "timing": {
+    "authorSeconds": 181.925,
+    "rootRecordedSourceSeconds": 57.63,
+    "coverage": "partial",
+    "model": "GPT-6.1 Sol",
+    "excluded": "Later primary checks, arithmetic, tests, integration/release and unexplained execution gap."
+  },
+  "checks": {
+    "independent": 178,
+    "portable": 250,
+    "scenarios": 48,
+    "focused": 27,
+    "responsive": 2,
+    "live": 6
+  },
+  "executionAnomaly": {
+    "lastExplicitCheckpoint": "2026-10-07T01:25:54Z",
+    "freshReleaseClock": "2026-10-07T02:44:53Z",
+    "outerElapsedSeconds": 4739,
+    "interpretation": "This outer release interval contains validation/build/save/release actions, but does not establish continuous work. The unexplained portion cannot be apportioned; none is organization research. Deployment approval review returned a deadline timeout; one permitted retry succeeded. Exact stall cause remains unproven. No additional author dispatched."
+  },
+  "next": "Energy Outreach Colorado; six deep reviews and four features remain"
+}

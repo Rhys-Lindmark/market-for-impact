@@ -1,0 +1,7 @@
+# Independent KAVI initial-income assessment
+
+Accepted health-first assessed-unknown, not zero income or an empirical 90% health share. Root independently checked KAVI hospital and recipient pages and the original Everytown November 2025 grant announcement: $100,000 over two years funds provider programs, not participant cash. Trauma follow-up, family support and referrals do not establish amounts of compensation or actual private payments avoided. No unsupported lifetime survivor earnings credited.
+
+Root inspected the preserved annual clinical calculation: cost $4,360,879, edition QALYs 0.3419640255032726, price $127,524,495.99287651 per ten QALYs. All seven original worlds remain intact. Household resource sharing, actual compensation/collections, net baseline, finite timing and full participant/caregiver access burdens remain unresolved. Negative burdens must be assessed independently of clinical success; lack of a randomized trial alone is not the reason for unknown income. Combined price is not claimed.
+
+Sources: https://www.kavibrooklyn.org/hospital ; https://www.kavibrooklyn.org/ ; https://everytownsupportfund.org/press/kings-against-violence-initiative-in-brooklyn-awarded-100000-support-grant-from-everytown-community-safety-fund-to-expand-hospital-based-and-community-programs/ . Author 36.520 seconds plus root source 11.271 and model 11.554 seconds totals 59.345 seconds, below the five-minute initial cap. Validation, integration and publication are administrative, not research minutes.

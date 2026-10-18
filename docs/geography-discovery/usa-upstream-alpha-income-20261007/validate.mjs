@@ -1,0 +1,21 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import {calculate,tests} from './model.mjs';
+import {reportPrice,scenarioIncomeEquivalent,validateEditionReports} from '../market-for-impact-california-six-surgery-beta/lib/geography-reports.mjs';
+const read=p=>JSON.parse(fs.readFileSync(new URL(p,import.meta.url)));
+const r=read('report.json'),o=read('original-report.json'),s=read('sessions.json');
+tests();
+assert.deepEqual(read('initial-diagnostic.json'),o);
+assert.deepEqual(read('ledger.json'),calculate());
+assert.equal(reportPrice(r),reportPrice(o));
+assert.equal(r.model.incomeAssessment.status,'assessed-unknown');
+assert.equal(r.model.incomeAssessment.acceptance,'independently-reviewed');
+assert.equal(r.model.incomeBridge,undefined);
+assert.equal(scenarioIncomeEquivalent(r.model.scenarios.find(x=>x.id==='combined-income-unknown')),null);
+for(const old of o.model.scenarios){assert.deepEqual(r.model.scenarios.find(x=>x.id===old.id),old);}
+const data=read('../market-for-impact-california-six-surgery-beta/data/geography-reports.json');
+data.reports=data.reports.map(x=>x.edition===r.edition&&x.slug===r.slug?r:x);
+data.sessions.push(...s);
+validateEditionReports(data,read('../market-for-impact-california-six-surgery-beta/docs/geography-progress.json'));
+assert(r.sessionIds.includes(s[0].id));
+console.log(JSON.stringify({passed:true,price:reportPrice(r),clinical:calculate().editionQalys,originalWorlds:o.model.scenarios.length,authorSeconds:135.379,allocationOverrunSeconds:15.379}));

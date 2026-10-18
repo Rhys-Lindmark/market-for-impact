@@ -1,0 +1,5 @@
+# Accepted bounded initial-income revision
+
+Frozen substantive source/model evidence: root-source-audit.md and root-model-check.md. One material correction retained full participation burdens separately from clinical alternative-care adjustment. Corrected clinical0.6292742949287736 unchanged; signedresources−0.08182189398248606; fullannualrecipient+partnercost4125766.8; conditionalprice75363023.21203616. Not empirical portfolio EV or observed patient cash.
+
+Author73.419+correction29.637=103.056seconds; independentroot65.331+36.279+37.946=139.556seconds; combined242.612seconds under300initialcap, actual GPT-6.1 Sol. No padded waits or science after closed clocks. Source/model hypothesis limits retained, all14portable worlds/sharedbridge and currentregistry schema/progress pass; complete originalreport/scenarios preserved. Corrected deterministic narrative matches frozen model and ledger. Pending production regressions/report-list-price/responsive/nativepublication before counter advancement. Only one accepted report this turn; CPEHN remains unresolved checkpoint, not completed. No further research dispatch this turn.

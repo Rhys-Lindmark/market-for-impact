@@ -1,0 +1,309 @@
+{
+  "report": {
+    "edition": "chicago",
+    "boundaryVersion": "OMB-23-01-2023-07-21",
+    "organizationId": "ein:36-3563802",
+    "slug": "legal-council-for-health-justice",
+    "organization": "Legal Council for Health Justice",
+    "program": "Medical-legal partnerships and health justice advocacy",
+    "published": "2026-09-29",
+    "updated": "2026-09-29",
+    "stage": "alpha",
+    "donationUrl": "https://legalcouncil.org/donate/",
+    "priceScope": "Illustrative whole-recipient scenario; not a comparable economic-efficiency ranking",
+    "acceptance": {
+      "status": "accepted",
+      "evidence": "Separate Medium independent reviewer recovered original return/ScheduleD; corrected full-recipient known-cost boundary, native denominator and time-period disclosures; scenarios checked. Accepted only as explicitly conditional historical alpha, not full economic ranking or donor recommendation."
+    },
+    "summary": {
+      "what": [
+        "Legal Council uses medical-legal partnerships to help people obtain health care, benefits, housing and disability-related support; its2024 report identifies1,610 clients.",
+        "A finite, judgment-based direct-client scenario gives4.8944 Chicago-MSA QALYs and about$7.82million per10, charging the whole recipient's adjusted expense envelope.",
+        "This is a historical partial-health illustration, not a complete portfolio ranking or a marginal donation price."
+      ],
+      "strengths": [
+        "Original return and ScheduleD now reconcile donated services and event costs.",
+        "Annual report supplies an individual-client count and documented medical-legal service mechanism.",
+        "Whole-recipient support costs remain charged; overlapping benefits and family members are not added."
+      ],
+      "reservations": [
+        "Resident share and every health/additionality coefficient remain uncalibrated judgments.",
+        "Unrecognized partner resources and the opportunity cost of donated services remain unknown.",
+        "Current funding gap and statewide systemic benefits are unmeasured; omitted benefits are not zero."
+      ]
+    },
+    "sections": {
+      "what": "Annual report 2024 p3 identifies 1,610 clients; p7 says individual clients. Legal assistance is not itself a QALY.",
+      "monitoring": "The annual report gives1,610 individual clients, not observed incremental health gains. Request resident counties, unique-year definitions, treatment/benefit counterfactual, unrecognized pro bono time, and costed marginal capacity. Primary FY2024 financial reconciliation is verified; current funding response is not.",
+      "qualitative": "One aggregate morbidity/stress relief pathway among 20% incrementally helped clients, .04 utility for one year, 40% funding additionality; all judged. Money/benefits recovered, class-action coverage, family members and partner healthcare benefits are not independently added.",
+      "cost": "Whole-recipient resource-adjusted accounting envelope: FY ended June30,2024 Form990 PartIX expense3,709,603 + ScheduleD recognized donated services/use100,400 + PartVIII direct event costs19,592 =3,829,595. ScheduleD audited-expense reference3,810,003 restores donated services but not the PartVIII direct event amount. Published donated-resource values are not verified opportunity costs; unrecognized volunteer/partner inputs remain unknown. No program-only numerator.",
+      "funding": "Original FY2024 return reports revenue5,456,290 and ending net assets3,445,358. These are dated balances, not current unrestricted cash or a priced funding gap. FY2025 filing is listed but not incorporated into this historical FY2024 illustration. No donation-responsive capacity expansion has been verified."
+    },
+    "sources": [
+      {
+        "id": "financial",
+        "title": "Original FY2024 Form 990, fiscal year ended June 30, 2024",
+        "publisher": "Legal Council for Health Justice / IRS, rendered by ProPublica",
+        "url": "https://projects.propublica.org/nonprofits/full_text/202403249349300540/IRS990",
+        "published": null,
+        "retrieved": "2026-09-29"
+      },
+      {
+        "id": "activity",
+        "title": "Native service evidence",
+        "publisher": "Legal Council for Health Justice",
+        "url": "https://legalcouncil.org/wp-content/uploads/2024/12/2024-Annual-Report-1.pdf",
+        "published": null,
+        "retrieved": "2026-09-29"
+      },
+      {
+        "id": "geography",
+        "title": "Mission and geographic scope",
+        "publisher": "Legal Council for Health Justice",
+        "url": "https://legalcouncil.org/about/",
+        "published": null,
+        "retrieved": "2026-09-29"
+      },
+      {
+        "id": "schedule-d",
+        "title": "Original FY2024 Schedule D: donated-service reconciliation",
+        "publisher": "Legal Council for Health Justice / IRS, rendered by ProPublica",
+        "url": "https://projects.propublica.org/nonprofits/full_text/202403249349300540/IRS990ScheduleD",
+        "published": null,
+        "retrieved": "2026-09-29"
+      }
+    ],
+    "model": {
+      "version": "chicago-legal-council-for-health-justice-alpha-v2-independent",
+      "formula": "Q_all=N*k*a*u*T*b; Q_MSA=Q_all*g; price10=10*C/Q_MSA if positive, otherwise null. FiniteT<=1year, no survival extrapolation or lifetime multiplier; undiscounted short-horizon illustration.",
+      "costScope": "Whole-recipient resource-adjusted accounting envelope: FY ended June30,2024 Form990 PartIX expense3,709,603 + ScheduleD recognized donated services/use100,400 + PartVIII direct event costs19,592 =3,829,595. ScheduleD audited-expense reference3,810,003 restores donated services but not the PartVIII direct event amount. Published donated-resource values are not verified opportunity costs; unrecognized volunteer/partner inputs remain unknown. No program-only numerator.",
+      "geographicAttribution": "Chicagoland medical and social provider partnerships; g=.95 assumed resident share within pinned 13-county Chicago MSA, not measured. Statewide advocacy benefits excluded from modeled direct-client pathway.",
+      "nativeOutcomes": "Annual report 2024 p3 identifies 1,610 clients; p7 says individual clients. Legal assistance is not itself a QALY.",
+      "counterfactual": "a represents incremental response beyond alternative services; b discounts replacement funding and capacity limits. Both are judgments, not observed causal estimates.",
+      "attribution": "One aggregate morbidity/stress relief pathway among 20% incrementally helped clients, .04 utility for one year, 40% funding additionality; all judged. Money/benefits recovered, class-action coverage, family members and partner healthcare benefits are not independently added.",
+      "uncertainty": "All conversion parameters are illustrative judgments without probabilities, calibration or recipient causal QALY evidence. Scenarios are not confidence intervals or exhaustive bounds. Benefits of rights and autonomy beyond health are unpriced. Costs are not comparable full economic resource costs.",
+      "sensitivity": [
+        "Zero additionality yields zero benefit and no finite price.",
+        "Poor and favorable vary multiple unsupported assumptions; these are illustrative scenarios, not probabilistic bounds.",
+        "Cost changes scale price proportionally; benefit factors scale price inversely.",
+        "Other organizational pathways are not quantified; omitted benefits are not demonstrated zero.",
+        "A50%cost allowance tests missing resources; not calibrated or complete. Lower local share and net-harm stresses show additional downside; no probability weights."
+      ],
+      "missingInputs": [
+        "Unrecognized donated/partner resource costs and valuation opportunity costs",
+        "Resident county distribution",
+        "Causal health utility and duration",
+        "Marginal funding/capacity"
+      ],
+      "inputs": [
+        {
+          "name": "C",
+          "value": 3829595,
+          "basis": "observed",
+          "unit": "USD; accounting expense plus stated addback",
+          "sourceIds": [
+            "financial",
+            "schedule-d"
+          ],
+          "rationale": "Whole-recipient resource-adjusted accounting envelope: FY ended June30,2024 Form990 PartIX expense3,709,603 + ScheduleD recognized donated services/use100,400 + PartVIII direct event costs19,592 =3,829,595. ScheduleD audited-expense reference3,810,003 restores donated services but not the PartVIII direct event amount. Published donated-resource values are not verified opportunity costs; unrecognized volunteer/partner inputs remain unknown. No program-only numerator."
+        },
+        {
+          "name": "N",
+          "value": 1610,
+          "basis": "observed",
+          "unit": "calls or clients as explicitly stated",
+          "sourceIds": [
+            "activity"
+          ],
+          "rationale": "Annual report 2024 p3 identifies 1,610 clients; p7 says individual clients. Legal assistance is not itself a QALY."
+        },
+        {
+          "name": "k",
+          "value": 1,
+          "basis": "judgment",
+          "unit": "fraction",
+          "sourceIds": [],
+          "rationale": "Assumed unique-person fraction; one when client count treated as individual."
+        },
+        {
+          "name": "a",
+          "value": 0.2,
+          "basis": "judgment",
+          "unit": "fraction",
+          "sourceIds": [],
+          "rationale": "One aggregate morbidity/stress relief pathway among 20% incrementally helped clients, .04 utility for one year, 40% funding additionality; all judged. Money/benefits recovered, class-action coverage, family members and partner healthcare benefits are not independently added."
+        },
+        {
+          "name": "u",
+          "value": 0.04,
+          "basis": "judgment",
+          "unit": "utility difference (dimensionless; may be negative in adverse stress)",
+          "sourceIds": [],
+          "rationale": "One aggregate morbidity/stress relief pathway among 20% incrementally helped clients, .04 utility for one year, 40% funding additionality; all judged. Money/benefits recovered, class-action coverage, family members and partner healthcare benefits are not independently added."
+        },
+        {
+          "name": "T",
+          "value": 1,
+          "basis": "judgment",
+          "unit": "years",
+          "sourceIds": [],
+          "rationale": "One aggregate morbidity/stress relief pathway among 20% incrementally helped clients, .04 utility for one year, 40% funding additionality; all judged. Money/benefits recovered, class-action coverage, family members and partner healthcare benefits are not independently added."
+        },
+        {
+          "name": "b",
+          "value": 0.4,
+          "basis": "judgment",
+          "unit": "fraction",
+          "sourceIds": [],
+          "rationale": "One aggregate morbidity/stress relief pathway among 20% incrementally helped clients, .04 utility for one year, 40% funding additionality; all judged. Money/benefits recovered, class-action coverage, family members and partner healthcare benefits are not independently added."
+        },
+        {
+          "name": "g",
+          "value": 0.95,
+          "basis": "judgment",
+          "unit": "fraction",
+          "sourceIds": [],
+          "rationale": "Chicagoland medical and social provider partnerships; g=.95 assumed resident share within pinned 13-county Chicago MSA, not measured. Statewide advocacy benefits excluded from modeled direct-client pathway."
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "central",
+          "label": "Illustrative central",
+          "costUSD": 3829595,
+          "allPopulationQalys": 5.152000000000001,
+          "editionQalys": 4.894400000000001,
+          "assumptions": "{\"N\":1610,\"k\":1,\"a\":0.2,\"u\":0.04,\"T\":1,\"b\":0.4,\"g\":0.95}; all health conversions judged, not measured.",
+          "pricePer10Qalys": 7824442.219679632
+        },
+        {
+          "id": "poor",
+          "label": "Illustrative poor",
+          "costUSD": 3829595,
+          "allPopulationQalys": 0.010062500000000002,
+          "editionQalys": 0.009559375000000002,
+          "assumptions": "{\"N\":1610,\"k\":0.5,\"a\":0.05,\"u\":0.01,\"T\":0.25,\"b\":0.1,\"g\":0.95}; all health conversions judged, not measured.",
+          "pricePer10Qalys": 4006114416.4759717
+        },
+        {
+          "id": "favorable",
+          "label": "Illustrative favorable",
+          "costUSD": 3829595,
+          "allPopulationQalys": 36.064,
+          "editionQalys": 34.260799999999996,
+          "assumptions": "{\"N\":1610,\"k\":1,\"a\":0.4,\"u\":0.08,\"T\":1,\"b\":0.7,\"g\":0.95}; all health conversions judged, not measured.",
+          "pricePer10Qalys": 1117777.4599542336
+        },
+        {
+          "id": "zero",
+          "label": "No additional health benefit",
+          "costUSD": 3829595,
+          "allPopulationQalys": 0,
+          "editionQalys": 0,
+          "assumptions": "{\"N\":1610,\"k\":1,\"a\":0.2,\"u\":0.04,\"T\":1,\"b\":0,\"g\":0.95}; all health conversions judged, not measured.",
+          "pricePer10Qalys": null
+        },
+        {
+          "id": "external-cost",
+          "label": "Illustrative50%additional resource allowance",
+          "costUSD": 5744392.5,
+          "allPopulationQalys": 5.152000000000001,
+          "editionQalys": 4.894400000000001,
+          "assumptions": "{\"N\":1610,\"k\":1,\"a\":0.2,\"u\":0.04,\"T\":1,\"b\":0.4,\"g\":0.95}; judged sensitivity, not a measured outcome or confidence bound.",
+          "pricePer10Qalys": 11736663.329519449
+        },
+        {
+          "id": "geography-low",
+          "label": "Lower local resident attribution",
+          "costUSD": 3829595,
+          "allPopulationQalys": 5.152000000000001,
+          "editionQalys": 2.5760000000000005,
+          "assumptions": "{\"N\":1610,\"k\":1,\"a\":0.2,\"u\":0.04,\"T\":1,\"b\":0.4,\"g\":0.5}; judged sensitivity, not a measured outcome or confidence bound.",
+          "pricePer10Qalys": 14866440.217391301
+        },
+        {
+          "id": "adverse",
+          "label": "Net health harm stress",
+          "costUSD": 3829595,
+          "allPopulationQalys": -1.2880000000000003,
+          "editionQalys": -1.2236000000000002,
+          "assumptions": "{\"N\":1610,\"k\":1,\"a\":0.2,\"u\":-0.01,\"T\":1,\"b\":0.4,\"g\":0.95}; judged sensitivity, not a measured outcome or confidence bound.",
+          "pricePer10Qalys": null
+        }
+      ]
+    },
+    "annualExpenses": [
+      {
+        "year": 2024,
+        "amount": 3709603,
+        "currency": "USD",
+        "periodMonths": 12,
+        "comparable": true,
+        "entity": "Legal Council for Health Justice",
+        "accountingBasis": "Original Form990 PartIX whole-recipient tax expense, excluding100400 donated services and19592 direct event costs restored separately in model.",
+        "sourceId": "financial"
+      }
+    ],
+    "timeCoverage": "partial",
+    "sessionIds": [
+      "31eaaa21-2351-4b82-a681-a1bacc81344a",
+      "chicago-ten-twelve-independent-1",
+      "chicago-ten-twelve-independent-4"
+    ],
+    "donorReadiness": {
+      "status": "not-ready-for-top-pick",
+      "reason": "No current verified marginal funding gap, causal health conversion or complete external-resource cost.",
+      "contactStatus": "No outreach or donation."
+    }
+  },
+  "sessions": [
+    {
+      "id": "31eaaa21-2351-4b82-a681-a1bacc81344a",
+      "workerId": "chicago-10-12-astra-alpha",
+      "phase": "research",
+      "startedAt": "2026-09-29T19:03:05.229Z",
+      "endedAt": "2026-09-29T19:04:45.801Z",
+      "model": {
+        "id": "gpt-6-astra",
+        "name": "GPT-6 Astra Light",
+        "evidence": "Parent dispatch identifies GPT-6 Astra low researcher runtime",
+        "reasoningEffort": "low"
+      },
+      "evidence": "chicago-ten-twelve-alpha.json",
+      "organizationId": "ein:36-3563802",
+      "stage": "alpha"
+    },
+    {
+      "id": "chicago-ten-twelve-independent-1",
+      "workerId": "chicago-next-accept-independent",
+      "organizationId": "ein:36-3563802",
+      "stage": "alpha",
+      "phase": "source-audit",
+      "startedAt": "2026-09-29T19:10:12Z",
+      "endedAt": "2026-09-29T19:11:09Z",
+      "model": {
+        "id": "gpt-6-astra",
+        "name": "GPT-6 Astra Medium",
+        "reasoningEffort": "medium",
+        "evidence": "Explicit parent independent audit dispatch to chicago_next_accept; actual reviewer runtime"
+      },
+      "evidence": "work/geography-handoff-20260913/resumed-20260929/chicago-ten-twelve-accepted.json"
+    },
+    {
+      "id": "chicago-ten-twelve-independent-4",
+      "workerId": "chicago-next-accept-independent",
+      "organizationId": "ein:36-3563802",
+      "stage": "alpha",
+      "phase": "source-audit",
+      "startedAt": "2026-09-29T19:12:06Z",
+      "endedAt": "2026-09-29T19:12:42Z",
+      "model": {
+        "id": "gpt-6-astra",
+        "name": "GPT-6 Astra Medium",
+        "reasoningEffort": "medium",
+        "evidence": "Explicit parent independent audit dispatch to chicago_next_accept; actual reviewer runtime"
+      },
+      "evidence": "work/geography-handoff-20260913/resumed-20260929/chicago-ten-twelve-accepted.json"
+    }
+  ]
+}

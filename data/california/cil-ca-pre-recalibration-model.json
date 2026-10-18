@@ -1,0 +1,243 @@
+{
+  "version": "ca-cil-alpha-v2-conditional-repair",
+  "costScope": "Ordinary unrestricted gift, C=$100,000 analytical normalization. Full gift remains charged even though this model quantifies only a repair/loaner health pathway. f is an explicit marginal portfolio allocation, not a restricted donation. Unit cost k includes wages, employment loading, materials and allocated recipient support. This is donor-dollar cost, not a societal-cost estimate; donated device and partner resource opportunity costs remain unknown.",
+  "geographicAttribution": "g_CA=1 for the short-duration direct-service scenario, based on Northern Alameda County eligibility. National advocacy benefits are not counted. This is an inference about weeks of local client benefit, not location of headquarters.",
+  "formula": "Historical diagnostic only, not expected donor return. k=(w*b*h+p)*o USD per attempted repair/loaner episode. N=C*f/k*m*s*a additional successfully restored-function episodes, where m is financing/capacity additionality, s is fit/completion success, and a excludes otherwise equivalent timely alternatives. q=du*exp(-r*L)*(1-exp(-r*D/365))/r for D days gained beginning L years after gift. Q_all=N*q; Q_CA=g_CA*Q_all; price_10_CA=10*C/Q_CA if positive. Each episode is counted only for the actual counterfactual interval with lost function; sum person-days without overlaps and no repeated lifetime award. Other CIL channels remain unestimated. Net harm extension: Qnet_CA=g_CA*N*q-H_CA; H_CA is unmeasured.",
+  "counterfactual": "CIL's existing grants, payroll and inventory, insured/vendor service, publicly financed device loan centers, Easy Does It emergency repair and individual backups continue. A donor-funded slot must actually accelerate restoration relative to these options. CIL's current month-long response queue is NOT itself the number of functional days lost or saved.",
+  "attribution": "m discounts replacement of grant/reserve funding or staffing constraints; a separately discounts equivalent alternative repair/loaner service and usable backups. s accounts for failed or unsuitable delivery. Do not count one disability-related utility improvement separately as avoided injury, isolation and mobility restoration. No attribution of all recipient work to the repair branch.",
+  "uncertainty": "Headline withdrawn after accepted September 30 negative in-depth review. A bottom-up subjective conditional central, not a measured CIL effect and not a comprehensive estimate of every recipient benefit. Wage and organization support scale have source anchors; allocation, labor time, materials, completion, substitution and health gain are judgments. Favorable/adverse scenarios are simultaneous stress tests, not confidence limits. Zero and harms are not excluded. Omitted institutional-transition, access, counseling, education and rights benefits could materially change a full-portfolio estimate; this partial model should not be read as proof of a poor overall return.",
+  "nativeOutcomes": "Historical diagnostic only; not observed or expected service yield. Central at C=$100,000: $10,000 of modeled portfolio allocation; 22.203 gross attempted slots at k=$450.39279; 11.101 after financing/capacity adjustment; 8.881 completed appropriate episodes; 4.441 that beat an equivalent alternative; 62.168 otherwise-lost functional person-days regained. With du=0.10, finite duration and start delay this produces 0.01689533 California QALYs. No episode, day or utility value is an observed CIL outcome.",
+  "inputs": [
+    {
+      "name": "C",
+      "value": 100000,
+      "unit": "USD ordinary gift",
+      "basis": "judgment",
+      "rationale": "Calculation normalization; not a verified funding request.",
+      "sourceIds": []
+    },
+    {
+      "name": "FY2025 total expenses",
+      "value": 4370584,
+      "unit": "USD/year",
+      "basis": "observed",
+      "rationale": "Original return Part IX recipient total; retained financial scale.",
+      "sourceIds": [
+        "99025"
+      ]
+    },
+    {
+      "name": "FY2025 program expenses",
+      "value": 2752037,
+      "unit": "USD/year",
+      "basis": "observed",
+      "rationale": "Original Part IX program column; not a repair-only budget.",
+      "sourceIds": [
+        "99025"
+      ]
+    },
+    {
+      "name": "f",
+      "value": 0.1,
+      "unit": "ordinary gift share supporting repair/loaner capacity",
+      "basis": "judgment",
+      "rationale": "A modest share within a broad portfolio. Core consumer services includes AT along with housing, home modification and transitions; repair-only allocation is not reported. Stress 0.02–0.25. The allocated share includes its corresponding support costs; k is therefore support-loaded, not a second charge to the total gift.",
+      "sourceIds": [
+        "99025",
+        "repairs"
+      ]
+    },
+    {
+      "name": "w",
+      "value": 34,
+      "unit": "USD direct wage/hour",
+      "basis": "judgment",
+      "rationale": "Rounded proxy from current $33.99/hour community independent-living specialist vacancy; not a verified repair technician wage. General CIL careers page states starting pay $28/hour. Stress $28–40.",
+      "sourceIds": [
+        "cil-job-specialist",
+        "cil-jobs"
+      ]
+    },
+    {
+      "name": "b",
+      "value": 1.35,
+      "unit": "employment-cost multiplier on wage",
+      "basis": "judgment",
+      "rationale": "35% benefits/payroll/paid-leave loading; CIL advertises extensive benefits but actual marginal load is unreported. Stress 1.2–1.5.",
+      "sourceIds": [
+        "cil-jobs"
+      ]
+    },
+    {
+      "name": "h",
+      "value": 4,
+      "unit": "staff hours per attempted episode",
+      "basis": "judgment",
+      "rationale": "Intake, handling, repair or loaner preparation, fitting and closeout combined. No local time-motion study; stress 2–8 hours.",
+      "sourceIds": [
+        "repairs",
+        "cil-at"
+      ]
+    },
+    {
+      "name": "p",
+      "value": 100,
+      "unit": "USD materials per attempted episode",
+      "basis": "judgment",
+      "rationale": "Average repair/cleaning/component allowance, not device retail price or CIL observed invoice. Stress $50–500; actual case mix could exceed this.",
+      "sourceIds": []
+    },
+    {
+      "name": "o",
+      "value": 1.5881269038170636,
+      "unit": "recipient support-loading factor",
+      "basis": "judgment",
+      "rationale": "Central proxy equals observed total/program expense ratio 1.5881269; applying average support loading to marginal service cost is a judgment. Stress 1.3–2, not an accounting confidence bound.",
+      "sourceIds": [
+        "99025"
+      ]
+    },
+    {
+      "name": "m",
+      "value": 0.5,
+      "unit": "financial/capacity additionality",
+      "basis": "judgment",
+      "rationale": "Half the modeled allocation adds usable service capacity after grant/reserve replacement and staffing constraints. Public grants are large, while requests and volunteer needs suggest unmet demand. Stress 0.1–0.8 plus zero.",
+      "sourceIds": [
+        "99025",
+        "cil-at"
+      ]
+    },
+    {
+      "name": "s",
+      "value": 0.8,
+      "unit": "completed appropriate-function fraction",
+      "basis": "judgment",
+      "rationale": "Repair/loaner can fail or be unsuitable. External SCI repair survey's completion data motivate uncertainty, not a measured CIL success rate. Stress 0.5–0.95.",
+      "sourceIds": [
+        "cil-repair-study-full"
+      ]
+    },
+    {
+      "name": "a",
+      "value": 0.5,
+      "unit": "fraction beating equivalent timely alternatives",
+      "basis": "judgment",
+      "rationale": "Half successful episodes deliver function otherwise lost after allowing insurance/vendors, state loan centers, EDI and backups. Stress 0.1–0.9.",
+      "sourceIds": [
+        "repairs"
+      ]
+    },
+    {
+      "name": "D",
+      "value": 14,
+      "unit": "functional days gained per truly additional episode",
+      "basis": "judgment",
+      "rationale": "Finite acceleration prior, not observed days saved. External survey median repair duration was 14 days; CIL reports roughly one month before responding, so its current service is not automatically faster. Stress 2–60 days.",
+      "sourceIds": [
+        "repairs",
+        "cil-repair-study-full"
+      ]
+    },
+    {
+      "name": "du",
+      "value": 0.1,
+      "unit": "health-utility increment during gained days",
+      "basis": "judgment",
+      "rationale": "Assumed health-related change from restored appropriate mobility function; not a valuation of the person's life. Stress 0.02–0.2. Does not monetize independence, rights or all social benefits.",
+      "sourceIds": []
+    },
+    {
+      "name": "L",
+      "value": 0.25,
+      "unit": "years before gained function begins",
+      "basis": "judgment",
+      "rationale": "Central quarter-year implementation/queue delay; stress 0.05–0.5.",
+      "sourceIds": []
+    },
+    {
+      "name": "r",
+      "value": 0.03,
+      "unit": "annual continuous QALY discount",
+      "basis": "judgment",
+      "rationale": "Explicit convention; survival set to one over at most 60 days with no mortality gain claimed.",
+      "sourceIds": []
+    },
+    {
+      "name": "g_CA",
+      "value": 1,
+      "unit": "California share of short direct health gain",
+      "basis": "judgment",
+      "rationale": "Local client eligibility and short horizon; no nationwide spillover credited.",
+      "sourceIds": [
+        "repairs"
+      ]
+    },
+    {
+      "name": "incremental partner/device opportunity cost",
+      "value": null,
+      "unit": "USD",
+      "basis": "unknown",
+      "rationale": "Donated equipment, public loan shipping, external repair and any public costs induced by expansion not measured.",
+      "sourceIds": []
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "central",
+      "label": "Estimate withdrawn — ordinary-gift effect unidentified",
+      "costUSD": 100000,
+      "allPopulationQalys": null,
+      "editionQalys": null,
+      "assumptions": "No verified marginal allocation, incremental completed services or counterfactual function/utility bridge. Unknown is not zero; legacy diagnostics are not expected returns."
+    },
+    {
+      "id": "historical-alpha-central",
+      "label": "Historical alpha central — diagnostic only",
+      "costUSD": 100000,
+      "allPopulationQalys": 0.016895330225604348,
+      "editionQalys": 0.016895330225604348,
+      "assumptions": "{\"f\":0.1,\"w\":34,\"b\":1.35,\"h\":4,\"p\":100,\"o\":1.5881269038170636,\"m\":0.5,\"s\":0.8,\"a\":0.5,\"days\":14,\"u\":0.1,\"g\":1,\"cost\":450.3927899225193,\"N\":4.440568421053229,\"q\":0.003804767458486105,\"Q\":0.016895330225604348,\"price\":59187952.33043336,\"L\":0.25}; r=0.03. All nonfinancial pathway inputs are judgments; not empirical bounds."
+    },
+    {
+      "id": "favorable",
+      "label": "Favorable joint stress scenario",
+      "costUSD": 100000,
+      "allPopulationQalys": 3.6752904258494232,
+      "editionQalys": 3.6752904258494232,
+      "assumptions": "{\"f\":0.25,\"w\":28,\"b\":1.2,\"h\":2,\"p\":50,\"o\":1.3,\"m\":0.8,\"s\":0.95,\"a\":0.9,\"days\":60,\"u\":0.2,\"g\":1,\"cost\":152.36,\"N\":112.23418220005249,\"q\":0.0327466227650537,\"Q\":3.6752904258494232,\"price\":272087.34117083624,\"L\":0.05}; r=0.03. All nonfinancial pathway inputs are judgments; not empirical bounds."
+    },
+    {
+      "id": "adverse",
+      "label": "Adverse joint stress scenario",
+      "costUSD": 100000,
+      "allPopulationQalys": 5.507581637880014e-7,
+      "editionQalys": 5.507581637880014e-7,
+      "assumptions": "{\"f\":0.02,\"w\":40,\"b\":1.5,\"h\":8,\"p\":500,\"o\":2,\"m\":0.1,\"s\":0.5,\"a\":0.1,\"days\":2,\"u\":0.02,\"g\":1,\"cost\":1960,\"N\":0.005102040816326531,\"q\":0.00010794860010244826,\"Q\":5.507581637880014e-7,\"price\":1815678941774.0188,\"L\":0.5}; r=0.03. All nonfinancial pathway inputs are judgments; not empirical bounds."
+    },
+    {
+      "id": "zero",
+      "label": "No added function",
+      "costUSD": 100000,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "assumptions": "m=0, a=0 or D=0: funding substitution, equal alternative service or no acceleration. No finite positive cost-per-QALY."
+    }
+  ],
+  "sensitivity": [
+    "Central partial-health price is about $59 million per ten California QALYs, favorable about $272,000 and adverse about $1.8 trillion. These joint stress scenarios are not confidence limits.",
+    "Halving f, m, s, a or du halves modeled QALYs. Doubling episode cost k doubles price. Longer counterfactual loss, not a longer loan recorded on paper, is needed to increase D.",
+    "At central delivery yield, reaching $1 million per ten QALYs requires roughly 59 times more health gain than the 14-day repair scenario supplies. Substantially longer unresolved access problems or separately demonstrated benefits from other programs could alter that assessment.",
+    "Current CIL response time is longer than the external median completed-repair time. Replacing D with that queue length without checking alternatives would overstate donation impact.",
+    "Home modifications are not added merely because a ramp is durable. Public funding substitution, who would otherwise remain without access, severity and duration are separate unresolved inputs.",
+    "The model's high partial-pathway price is not an estimate that unmodeled CIL services provide no value. Preserve this scope warning beside any displayed number."
+  ],
+  "missingInputs": [
+    "Actual marginal allocation to repair/loaner capacity and costed staffing plan.",
+    "Hours, materials, completed repairs/loaners, device fit and unique client follow-up.",
+    "Unfunded versus already-financed demand and whether money or skilled labor/inventory is limiting.",
+    "Counterfactual functional days without CIL, alternative providers, backups and measured utility.",
+    "Separate nonoverlapping home-access, institutional transition, Living Well and advocacy effects; these may dominate the partial model.",
+    "Marginal third-party resource cost and current audit/control remediation evidence."
+  ]
+}

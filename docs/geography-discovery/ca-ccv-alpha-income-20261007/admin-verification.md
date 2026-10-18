@@ -1,0 +1,7 @@
+# Administrative acceptance verification
+
+October7: author shared-registry/schema/reportPrice/scenarioIncomeEquivalent checks pass. Root independently reconstructs twelve new scenarios and preserves all six original worlds/full original report. Root uses independent shared equivalence calculation, not author-result-only evidence. All182 other reports deep-equal pre-integration commit22e3c297bed9fe988040d1765b5f2571b512a47f. First synchronous git comparison exceeded buffer twice; streaming original source passed without truncating registry.28 focused production/provenance/execution/featured tests pass; git diff --check pass.
+
+Combined actual closed source/model author165.513+root57.593+13.136=236.242seconds. Initialcap300seconds satisfied; historical coverage partial. Earlier unclocked root triage not reconstructed; no extra clock for administrative work. Currentconditionalprice382369728.9063537, clinical0.241461481251107, resources0.26527047306490414. Alpha unchanged. Stagecounts/topfour remain original. Author source/ROOT current modules reused, no installs/dependency copies.
+
+Phone/tablet preview first browser launch failed SIGABRT/EPERM in sandbox, structured launcher teardown ran. Retry uses permitted unsandboxed existing headless Chrome against task-owned finite preview. Responsive result and publication receipt recorded separately when verified; acceptance not publication.

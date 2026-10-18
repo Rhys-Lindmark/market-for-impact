@@ -1,0 +1,14 @@
+# Rebuilding Together Metro Chicago initial review
+Frozen packet pending root acceptance. No publication claim.
+
+Fresh original IRS990 and Schedule D returns for FY2025/2024/2023 each returned HTTP200. source-receipts.json preserves exact hashes, twelve-month July–June dates and original expense reconciliation fields. Tax costs $2,993,738/$2,005,331/$1,794,780 omit recognized donated services/use $278,560/$243,542/$290,830. Full comparable annual costs are $3,272,298/$2,248,873/$2,085,610, exact mean $2,535,593.6666666665. Event expense is zero; no rental addback identified. Unrecognized volunteer costs remain unknown, not assigned a promotional retail multiplier.
+
+Official overview, donation and county sources verify free local repairs, Safe at Home safety/accessibility work and current recipient. The county's thirty veteran homes were previously funded and completed across2023–May2025; not annual incremental donor output. Cumulative homes and donated service value do not become clinical outcomes or household cash.
+
+Primary Cochrane supports targeted high-risk fall-hazard interventions, not all accessibility modifications. External fall-rate ratio .62 is observed; local transport, selection, injury area and durability are judged. Uncertain/null serious-injury and quality-of-life endpoints limit the .01 average acute QALY-per-fall hypothesis. No fracture, mortality or independence utility is automatically added.
+
+N100 repair opportunities and .5 annual response imply50 household exposures,30 high-risk clinical residents,5.7 avoided falls under priors and one finite year. Resource-success20HH and other30HH are disjoint; clinical residents are a subset of all repair resource exposures. One welfareperson per household; other family welfare unpriced. Signed energy/care and actual one-time otherwise-paid spending preserve negatives separately, then net disruption costs before one log. Retail service value/property appreciation/gross wages/survivor earnings excluded. Matched contractor margins and outside care are explicit stresses; no complete-world central claim.
+
+Central health .05616376885536471 plus resources .1936735113012409 =.2498372801566056; price $130,977,170.33858293 per ten combined equivalents. Conditional annual-work reference, not a verified marginal expansion.
+
+Closed research51.846s + model/draft126.222s + narrow evidence-caveat write correction.180s =178.248s. Cross-organization gaps, test/formatting time excluded. Fresh handoff clock shows no unexplained greater-than-five-minute gap. selftest PASS23 cases including full-cost mean, mixed signs, clinical-null resources, union harms, unknown/zero/adverse controls, production bridge/headline and actual current registry with candidate sessions/progress. Complete new initial diagnostic preserved once; prior report/sessions absent.

@@ -1,0 +1,198 @@
+{
+  "published": true,
+  "version": {
+    "id": "appgprj_6a938448e31c81918e35da08d93d95fd~appgver_8ecbdd9dfd248191be55c8ffbdfa6744",
+    "project_id": "appgprj_6a938448e31c81918e35da08d93d95fd",
+    "version_number": 460,
+    "source": {
+      "commit_sha": "a3064de5dea34ed15e7515a1269fbb5f9f3fb957"
+    },
+    "archive_storage": {
+      "archive_format": "tar",
+      "sediment_file_id": "file_00000000626c8230bd69e3617f3c0288",
+      "content_hash": "sha256:8e1c1181d8abf608879e99f52ea18ad78aa23d602b768e84c22f2dfb61fb4648",
+      "size_bytes": 43069440,
+      "file_count": 605
+    },
+    "screenshot_url": null,
+    "deployment_id": null
+  },
+  "deployment": {
+    "id": "appgdep_6ac589f707ec8191a6f31aea75c3606d",
+    "project_id": "appgprj_6a938448e31c81918e35da08d93d95fd",
+    "title": "Market for Impact",
+    "version_id": "appgprj_6a938448e31c81918e35da08d93d95fd~appgver_8ecbdd9dfd248191be55c8ffbdfa6744",
+    "type": "publish",
+    "status": "succeeded",
+    "url": "https://market-for-impact.rhyslindmark.chatgpt.site",
+    "has_mcp": false,
+    "screenshot_asset_pointer": null,
+    "provider_deployment_id": "site---6a938448e31c81918e35da08d93d95fd",
+    "failure_message": null,
+    "env_set_revision": 0,
+    "updated_at": "2026-10-06T23:53:40.895739+00:00"
+  },
+  "live": {
+    "verifiedAt": "2026-10-06T23:53:48.304Z",
+    "checks": 8,
+    "results": [
+      {
+        "base": "https://ai.rhyslindmark.com/givebetter",
+        "path": "/denver/all",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "base": "https://ai.rhyslindmark.com/givebetter",
+        "path": "/denver/charities/colorado-health-network",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "base": "https://ai.rhyslindmark.com/givebetter",
+        "path": "/denver/charities/jefferson-center",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "base": "https://ai.rhyslindmark.com/givebetter",
+        "path": "/all",
+        "status": 200,
+        "pass": true,
+        "denver": "20/25 initial · 0/10 deep"
+      },
+      {
+        "base": "https://market-for-impact.rhyslindmark.chatgpt.site",
+        "path": "/denver/all",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "base": "https://market-for-impact.rhyslindmark.chatgpt.site",
+        "path": "/denver/charities/colorado-health-network",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "base": "https://market-for-impact.rhyslindmark.chatgpt.site",
+        "path": "/denver/charities/jefferson-center",
+        "status": 200,
+        "pass": true
+      },
+      {
+        "base": "https://market-for-impact.rhyslindmark.chatgpt.site",
+        "path": "/all",
+        "status": 200,
+        "pass": true,
+        "denver": "20/25 initial · 0/10 deep"
+      }
+    ]
+  },
+  "source": "a3064de5dea34ed15e7515a1269fbb5f9f3fb957",
+  "counts": {
+    "denver": {
+      "initial": 20,
+      "deep": 0,
+      "featured": 0
+    },
+    "remaining": {
+      "initial": 5,
+      "deep": 10,
+      "plannedResearchMinutes": 175
+    }
+  },
+  "verification": {
+    "independentArithmetic": 470,
+    "scenarios": 93,
+    "portableChecks": 580,
+    "focusedAndScopeTests": 30,
+    "responsiveTests": 2,
+    "preservedReports": 176,
+    "preservedSessions": 639,
+    "preservedEffortRecords": 154
+  },
+  "prices": [
+    {
+      "organization": "Colorado Health Network",
+      "price": 391574594.8149553,
+      "health": 0.9601631986536099,
+      "income": -0.030170919220644722
+    },
+    {
+      "organization": "Jefferson Center for Mental Health",
+      "price": 43127185.06852765,
+      "health": 21.03997135860124,
+      "income": 0.10570296609527441
+    }
+  ],
+  "sessions": [
+    {
+      "id": "caabb11d-1c77-4ab1-96ea-e171737c507c",
+      "workerId": "denver-chn-author",
+      "phase": "research",
+      "startedAt": "2026-10-06T23:44:03.581Z",
+      "endedAt": "2026-10-06T23:47:49.216Z",
+      "model": {
+        "id": "gpt-6.1-sol",
+        "name": "GPT-6.1 Sol",
+        "evidence": "runtime model assignment: GPT-6.1 Sol"
+      },
+      "evidence": "docs/geography-discovery/denver-chn-jefferson-initial-20261006/chn-evidence.md",
+      "organizationId": "org:colorado-health-network",
+      "edition": "denver",
+      "stage": "alpha"
+    },
+    {
+      "id": "01df399d-f7e4-4ac0-b243-0c9c1d961817",
+      "workerId": "denver-jefferson-author",
+      "phase": "research",
+      "startedAt": "2026-10-06T23:48:02.438Z",
+      "endedAt": "2026-10-06T23:50:21.268Z",
+      "model": {
+        "id": "gpt-6.1-sol",
+        "name": "GPT-6.1 Sol",
+        "evidence": "runtime model assignment: GPT-6.1 Sol"
+      },
+      "evidence": "docs/geography-discovery/denver-chn-jefferson-initial-20261006/jefferson-evidence.md",
+      "organizationId": "org:jefferson-center",
+      "edition": "denver",
+      "stage": "alpha"
+    },
+    {
+      "id": "350c3897-8825-40f6-a0bf-f02f26cb2742",
+      "workerId": "root-denver-chn-jefferson-audit",
+      "phase": "source-audit",
+      "startedAt": "2026-10-06T23:47:47.524Z",
+      "endedAt": "2026-10-06T23:48:28.156Z",
+      "model": {
+        "id": "gpt-6.1-sol",
+        "name": "GPT-6.1 Sol",
+        "evidence": "runtime model assignment: root GPT-6.1 Sol"
+      },
+      "evidence": "docs/geography-discovery/denver-chn-jefferson-initial-20261006/root-jefferson-evidence.md",
+      "organizationId": "org:jefferson-center",
+      "edition": "denver",
+      "stage": "alpha"
+    },
+    {
+      "id": "9165fc55-10a6-438d-85cf-ce02cc5b9c70",
+      "workerId": "root-denver-chn-jefferson-audit",
+      "phase": "source-audit",
+      "startedAt": "2026-10-06T23:49:45.715Z",
+      "endedAt": "2026-10-06T23:49:55.894Z",
+      "model": {
+        "id": "gpt-6.1-sol",
+        "name": "GPT-6.1 Sol",
+        "evidence": "runtime model assignment: root GPT-6.1 Sol"
+      },
+      "evidence": "docs/geography-discovery/denver-chn-jefferson-initial-20261006/root-jefferson-evidence.md",
+      "organizationId": "org:jefferson-center",
+      "edition": "denver",
+      "stage": "alpha"
+    }
+  ],
+  "excludedRootInterval": "root-chn-excluded.json",
+  "usageRemainingPercent": 78,
+  "next": "Tepeyac and ein:84-6129064 initial reports; one bounded pair, then release",
+  "runtimeWatchdogFixed": false
+}

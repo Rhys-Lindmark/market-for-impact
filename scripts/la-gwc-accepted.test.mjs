@@ -1,0 +1,25 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';
+import {validateEditionReports,reportPrice} from '../lib/geography-reports.mjs';
+const read=p=>JSON.parse(fs.readFileSync(new URL('../'+p,import.meta.url)));
+test('GWC corrected incidence, historical price and partial author timing are synchronized',()=>{
+ const d=read('data/geography-reports.json'),p=read('docs/geography-progress.json');
+ const r=d.reports.find(r=>r.edition==='los-angeles'&&r.slug==='garment-worker-center');
+ const packet=read('docs/geography-discovery/la-gwc-accepted-packet-20261005.json');
+ assert.deepEqual(r,packet.acceptedReports[0]);
+ assert.deepEqual(r.model.historicalAlphaModel,read(r.historical.initialReport).report.model);
+ assert.ok(Math.abs(reportPrice(r)-23356937.778449338)<1e-6);
+ const cases=Object.fromEntries(r.model.scenarios.map(s=>[s.id,s]));
+ assert.equal(cases.central.inputs.claimantUnits,194);
+ assert.equal(cases.central.incomePathways[2].people,94);
+ assert.ok(cases['concentrated-awards'].incomeEquivalentYears<cases.central.incomeEquivalentYears);
+ assert.ok(cases['lower-attribution'].incomeEquivalentYears<0);
+ assert.doesNotMatch(r.sections.cost,/263\.6/);
+ assert.equal(r.timeCoverage,'partial');assert.equal(r.excludedResearchSessions.length,1);
+ assert.ok(!d.sessions.some(s=>s.id===r.excludedResearchSessions[0].id));
+ validateEditionReports(d,p);
+ const missing=structuredClone(d),copy=missing.reports.find(x=>x===undefined||x.edition==='los-angeles'&&x.slug==='garment-worker-center');
+ copy.authorWorkerIds=['undeclared-author'];assert.throws(()=>validateEditionReports(missing,p),/Invalid excluded author clock/);
+ const auditOnly=structuredClone(d),bad=auditOnly.reports.find(x=>x.edition==='los-angeles'&&x.slug==='garment-worker-center');
+ bad.sessionIds=bad.sessionIds.filter(id=>id!=='db6a973d-8e22-4679-9830-693d48fdb8e4');
+ assert.throws(()=>validateEditionReports(auditOnly,p),/Missing author research interval/);
+});

@@ -1,0 +1,2944 @@
+{
+  "central": {
+    "inputs": {
+      "C": 2594790,
+      "N": 10000,
+      "clinicalN": 10000,
+      "clinicalResponse": 0.5,
+      "unique": 1,
+      "b": 0.03,
+      "completion": 1,
+      "q": 0.003,
+      "T": 3,
+      "g": 0.95,
+      "delay": 2,
+      "discount": 0.03,
+      "success": 0.5,
+      "medicalGain": 100,
+      "workGain": 0,
+      "transferGain": 0,
+      "overlap": 0.5,
+      "cost": 10,
+      "baseline": 30000,
+      "harm": 0.0001,
+      "payerLoss": 0,
+      "payerPeople": 10000,
+      "payerBaseline": 50000,
+      "externalCost": 0,
+      "resourceYears": 1,
+      "burdenN": 100,
+      "displacedPeople": 0,
+      "displacedGain": 0
+    },
+    "costUSD": 2594790,
+    "exposed": 10000,
+    "burdenExposed": 100,
+    "union": 300,
+    "clinicalPeople": 150,
+    "allPopulationQalys": 1.2263751182898337,
+    "editionQalys": 1.165056362375342,
+    "incomePathways": [
+      {
+        "id": "changed-engaged",
+        "people": 1.5,
+        "annualIncomeBeforeUSD": 30000,
+        "annualIncomeGainUSD": 40,
+        "years": 1,
+        "editionShare": 0.95,
+        "delayYears": 2,
+        "discountRate": 0.03,
+        "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+        "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+        "sourceIds": [
+          "services",
+          "finance",
+          "cg-cost"
+        ]
+      },
+      {
+        "id": "changed-not-engaged",
+        "people": 148.5,
+        "annualIncomeBeforeUSD": 30000,
+        "annualIncomeGainUSD": 50,
+        "years": 1,
+        "editionShare": 0.95,
+        "delayYears": 2,
+        "discountRate": 0.03,
+        "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+        "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+        "sourceIds": [
+          "services",
+          "finance",
+          "cg-cost"
+        ]
+      },
+      {
+        "id": "unchanged-engaged",
+        "people": 98.5,
+        "annualIncomeBeforeUSD": 30000,
+        "annualIncomeGainUSD": -10,
+        "years": 1,
+        "editionShare": 0.95,
+        "delayYears": 2,
+        "discountRate": 0.03,
+        "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+        "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+        "sourceIds": [
+          "services",
+          "finance",
+          "cg-cost"
+        ]
+      }
+    ],
+    "incomeEquivalent": 0.09691353942943785,
+    "incomeUnknown": false,
+    "totalEquivalent": 1.2619699018047799,
+    "price10": 20561425.405543473,
+    "costPer10Qalys": 20561425.405543473,
+    "incomeEquivalentYears": 0.09691353942943785,
+    "combinedEquivalentYears": 1.2619699018047799
+  },
+  "scenarios": [
+    {
+      "id": "central",
+      "label": "central",
+      "overrides": {},
+      "costUSD": 2594790,
+      "exposed": 10000,
+      "burdenExposed": 100,
+      "union": 300,
+      "clinicalPeople": 150,
+      "allPopulationQalys": 1.2263751182898337,
+      "editionQalys": 1.165056362375342,
+      "incomePathways": [
+        {
+          "id": "changed-engaged",
+          "people": 1.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 40,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "changed-not-engaged",
+          "people": 148.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 50,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "unchanged-engaged",
+          "people": 98.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.09691353942943785,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.2619699018047799,
+      "price10": 20561425.405543473,
+      "costPer10Qalys": 20561425.405543473,
+      "incomeEquivalentYears": 0.09691353942943785,
+      "combinedEquivalentYears": 1.2619699018047799,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "historical-alpha-central",
+      "label": "historical alpha central",
+      "overrides": {
+        "legacyExposure": true
+      },
+      "costUSD": 2594790,
+      "exposed": 10000,
+      "burdenExposed": 300,
+      "union": 300,
+      "clinicalPeople": 150,
+      "allPopulationQalys": 1.2075232001071585,
+      "editionQalys": 1.1471470401018005,
+      "incomePathways": [
+        {
+          "id": "changed-households",
+          "people": 150,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 40,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "other-exposed",
+          "people": 150,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.06709658185836902,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.2142436219601696,
+      "price10": 21369599.585058525,
+      "costPer10Qalys": 21369599.585058525,
+      "incomeEquivalentYears": 0.06709658185836902,
+      "combinedEquivalentYears": 1.2142436219601696,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "no-exposure",
+      "label": "no exposure",
+      "overrides": {
+        "N": 0,
+        "clinicalN": 0,
+        "burdenN": 0
+      },
+      "costUSD": 2594790,
+      "exposed": 0,
+      "burdenExposed": 0,
+      "union": 0,
+      "clinicalPeople": 0,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "incomePathways": [],
+      "incomeEquivalent": 0,
+      "incomeUnknown": false,
+      "totalEquivalent": 0,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": 0,
+      "combinedEquivalentYears": 0,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "no-gift-no-exposure",
+      "label": "no gift no exposure",
+      "overrides": {
+        "C": 0,
+        "N": 0,
+        "clinicalN": 0,
+        "burdenN": 0
+      },
+      "costUSD": 0,
+      "exposed": 0,
+      "burdenExposed": 0,
+      "union": 0,
+      "clinicalPeople": 0,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "incomePathways": [],
+      "incomeEquivalent": 0,
+      "incomeUnknown": false,
+      "totalEquivalent": 0,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": 0,
+      "combinedEquivalentYears": 0,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "participation-intensity-three-percent",
+      "label": "participation intensity three percent",
+      "overrides": {
+        "burdenN": 300
+      },
+      "costUSD": 2594790,
+      "exposed": 10000,
+      "burdenExposed": 300,
+      "union": 300,
+      "clinicalPeople": 150,
+      "allPopulationQalys": 1.2075232001071585,
+      "editionQalys": 1.1471470401018005,
+      "incomePathways": [
+        {
+          "id": "changed-engaged",
+          "people": 4.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 40,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "changed-not-engaged",
+          "people": 145.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 50,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "unchanged-engaged",
+          "people": 295.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.06706043828433345,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.2142074783861339,
+      "price10": 21370235.698505744,
+      "costPer10Qalys": 21370235.698505744,
+      "incomeEquivalentYears": 0.06706043828433345,
+      "combinedEquivalentYears": 1.2142074783861339,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "all-potential-residents-burden-adverse",
+      "label": "all potential residents burden adverse",
+      "overrides": {
+        "burdenN": 10000
+      },
+      "costUSD": 2594790,
+      "exposed": 10000,
+      "burdenExposed": 10000,
+      "union": 300,
+      "clinicalPeople": 150,
+      "allPopulationQalys": 0.2932051682474168,
+      "editionQalys": 0.278544909835046,
+      "incomePathways": [
+        {
+          "id": "changed-engaged",
+          "people": 150,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 40,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "unchanged-engaged",
+          "people": 9850,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -1.3808149672532308,
+      "incomeUnknown": false,
+      "totalEquivalent": -1.1022700574181847,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": -1.3808149672532308,
+      "combinedEquivalentYears": -1.1022700574181847,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "participation-intensity-ten-percent",
+      "label": "participation intensity ten percent",
+      "overrides": {
+        "burdenN": 1000
+      },
+      "costUSD": 2594790,
+      "exposed": 10000,
+      "burdenExposed": 1000,
+      "union": 300,
+      "clinicalPeople": 150,
+      "allPopulationQalys": 1.1415414864677957,
+      "editionQalys": 1.0844644121444058,
+      "incomePathways": [
+        {
+          "id": "changed-engaged",
+          "people": 15,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 40,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "changed-not-engaged",
+          "people": 135,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 50,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "unchanged-engaged",
+          "people": 985,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -0.037425415723532016,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.0470389964208737,
+      "price10": 24782171.522453815,
+      "costPer10Qalys": 24782171.522453815,
+      "incomeEquivalentYears": -0.037425415723532016,
+      "combinedEquivalentYears": 1.0470389964208737,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "no-active-process-burden",
+      "label": "no active process burden",
+      "overrides": {
+        "burdenN": 0
+      },
+      "costUSD": 2594790,
+      "exposed": 10000,
+      "burdenExposed": 0,
+      "union": 300,
+      "clinicalPeople": 150,
+      "allPopulationQalys": 1.2358010773811712,
+      "editionQalys": 1.1740110235121126,
+      "incomePathways": [
+        {
+          "id": "changed-not-engaged",
+          "people": 150,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 50,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.11184009000199005,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.2858511135141026,
+      "price10": 20179552.45929444,
+      "costPer10Qalys": 20179552.45929444,
+      "incomeEquivalentYears": 0.11184009000199005,
+      "combinedEquivalentYears": 1.2858511135141026,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "advocacy-research-cost-scope",
+      "label": "advocacy research cost scope",
+      "overrides": {
+        "C": 558209
+      },
+      "costUSD": 558209,
+      "exposed": 10000,
+      "burdenExposed": 100,
+      "union": 300,
+      "clinicalPeople": 150,
+      "allPopulationQalys": 1.2263751182898337,
+      "editionQalys": 1.165056362375342,
+      "incomePathways": [
+        {
+          "id": "changed-engaged",
+          "people": 1.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 40,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "changed-not-engaged",
+          "people": 148.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 50,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "unchanged-engaged",
+          "people": 98.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.09691353942943785,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.2619699018047799,
+      "price10": 4423314.68604512,
+      "costPer10Qalys": 4423314.68604512,
+      "incomeEquivalentYears": 0.09691353942943785,
+      "combinedEquivalentYears": 1.2619699018047799,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "recognized-all-program-cost",
+      "label": "recognized all program cost",
+      "overrides": {
+        "C": 2082550
+      },
+      "costUSD": 2082550,
+      "exposed": 10000,
+      "burdenExposed": 100,
+      "union": 300,
+      "clinicalPeople": 150,
+      "allPopulationQalys": 1.2263751182898337,
+      "editionQalys": 1.165056362375342,
+      "incomePathways": [
+        {
+          "id": "changed-engaged",
+          "people": 1.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 40,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "changed-not-engaged",
+          "people": 148.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 50,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "unchanged-engaged",
+          "people": 98.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.09691353942943785,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.2619699018047799,
+      "price10": 16502374.557599865,
+      "costPer10Qalys": 16502374.557599865,
+      "incomeEquivalentYears": 0.09691353942943785,
+      "combinedEquivalentYears": 1.2619699018047799,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "larger-benefit-envelope",
+      "label": "larger benefit envelope",
+      "overrides": {
+        "N": 50000,
+        "clinicalN": 50000
+      },
+      "costUSD": 2594790,
+      "exposed": 50000,
+      "burdenExposed": 100,
+      "union": 1500,
+      "clinicalPeople": 750,
+      "allPopulationQalys": 6.169579427814519,
+      "editionQalys": 5.8611004564237925,
+      "incomePathways": [
+        {
+          "id": "changed-engaged",
+          "people": 1.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 40,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "changed-not-engaged",
+          "people": 748.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 50,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "unchanged-engaged",
+          "people": 98.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.5442738994373981,
+      "incomeUnknown": false,
+      "totalEquivalent": 6.40537435586119,
+      "price10": 4050957.611284119,
+      "costPer10Qalys": 4050957.611284119,
+      "incomeEquivalentYears": 0.5442738994373981,
+      "combinedEquivalentYears": 6.40537435586119,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "smaller-benefit-envelope",
+      "label": "smaller benefit envelope",
+      "overrides": {
+        "N": 1000,
+        "clinicalN": 1000
+      },
+      "costUSD": 2594790,
+      "exposed": 1000,
+      "burdenExposed": 100,
+      "union": 30,
+      "clinicalPeople": 15,
+      "allPopulationQalys": 0.11415414864677956,
+      "editionQalys": 0.10844644121444058,
+      "incomePathways": [
+        {
+          "id": "changed-engaged",
+          "people": 1.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 40,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "changed-not-engaged",
+          "people": 13.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 50,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "unchanged-engaged",
+          "people": 98.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -0.0037425415723532016,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.10470389964208737,
+      "price10": 247821715.22453815,
+      "costPer10Qalys": 247821715.22453815,
+      "incomeEquivalentYears": -0.0037425415723532016,
+      "combinedEquivalentYears": 0.10470389964208737,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "distinct-displaced-worker-loss",
+      "label": "distinct displaced worker loss",
+      "overrides": {
+        "displacedPeople": 50,
+        "displacedGain": -1000
+      },
+      "costUSD": 2594790,
+      "exposed": 10000,
+      "burdenExposed": 100,
+      "union": 300,
+      "clinicalPeople": 150,
+      "allPopulationQalys": 1.2263751182898337,
+      "editionQalys": 1.165056362375342,
+      "incomePathways": [
+        {
+          "id": "changed-engaged",
+          "people": 1.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 40,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "changed-not-engaged",
+          "people": 148.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 50,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "unchanged-engaged",
+          "people": 98.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-displaced-workers",
+          "people": 1.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -1000,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.07414527138445438,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.2392016337597964,
+      "price10": 20939207.384090386,
+      "costPer10Qalys": 20939207.384090386,
+      "incomeEquivalentYears": 0.07414527138445438,
+      "combinedEquivalentYears": 1.2392016337597964,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "clinical-null",
+      "label": "clinical null",
+      "overrides": {
+        "q": 0
+      },
+      "costUSD": 2594790,
+      "exposed": 10000,
+      "burdenExposed": 100,
+      "union": 300,
+      "clinicalPeople": 150,
+      "allPopulationQalys": -0.009425959091337545,
+      "editionQalys": -0.008954661136770667,
+      "incomePathways": [
+        {
+          "id": "changed-engaged",
+          "people": 1.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 40,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "changed-not-engaged",
+          "people": 148.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 50,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "unchanged-engaged",
+          "people": 98.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.09691353942943785,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.08795887829266719,
+      "price10": 295000351.3421701,
+      "costPer10Qalys": 295000351.3421701,
+      "incomeEquivalentYears": 0.09691353942943785,
+      "combinedEquivalentYears": 0.08795887829266719,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "financial-only",
+      "label": "financial only",
+      "overrides": {
+        "q": 0,
+        "harm": 0
+      },
+      "costUSD": 2594790,
+      "exposed": 10000,
+      "burdenExposed": 100,
+      "union": 300,
+      "clinicalPeople": 150,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "incomePathways": [
+        {
+          "id": "changed-engaged",
+          "people": 1.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 40,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "changed-not-engaged",
+          "people": 148.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 50,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "unchanged-engaged",
+          "people": 98.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.09691353942943785,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.09691353942943785,
+      "price10": 267742775.18666527,
+      "costPer10Qalys": 267742775.18666527,
+      "incomeEquivalentYears": 0.09691353942943785,
+      "combinedEquivalentYears": 0.09691353942943785,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "current-cost-unknown",
+      "label": "current cost unknown",
+      "overrides": {
+        "costUnknown": true
+      },
+      "costUSD": null,
+      "exposed": 10000,
+      "burdenExposed": 100,
+      "union": 300,
+      "clinicalPeople": 150,
+      "allPopulationQalys": 1.2263751182898337,
+      "editionQalys": 1.165056362375342,
+      "incomePathways": [
+        {
+          "id": "changed-engaged",
+          "people": 1.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 40,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "changed-not-engaged",
+          "people": 148.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 50,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "unchanged-engaged",
+          "people": 98.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.09691353942943785,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.2619699018047799,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": 0.09691353942943785,
+      "combinedEquivalentYears": 1.2619699018047799,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "full-unknown",
+      "label": "full unknown",
+      "overrides": {
+        "clinicalUnknown": true,
+        "incomeUnknown": true,
+        "costUnknown": true
+      },
+      "costUSD": null,
+      "exposed": 10000,
+      "burdenExposed": 100,
+      "union": 300,
+      "clinicalPeople": 150,
+      "allPopulationQalys": null,
+      "editionQalys": null,
+      "incomePathways": [
+        {
+          "id": "changed-engaged",
+          "people": 1.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 40,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "changed-not-engaged",
+          "people": 148.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 50,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "unchanged-engaged",
+          "people": 98.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.09691353942943785,
+      "incomeUnknown": true,
+      "totalEquivalent": null,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": 0.09691353942943785,
+      "combinedEquivalentYears": null,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "zero-expansion",
+      "label": "zero expansion",
+      "overrides": {
+        "b": 0
+      },
+      "costUSD": 2594790,
+      "exposed": 10000,
+      "burdenExposed": 100,
+      "union": 0,
+      "clinicalPeople": 0,
+      "allPopulationQalys": -0.009425959091337545,
+      "editionQalys": -0.008954661136770667,
+      "incomePathways": [
+        {
+          "id": "unchanged-engaged",
+          "people": 100,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -0.01492692318671752,
+      "incomeUnknown": false,
+      "totalEquivalent": -0.023881584323488185,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": -0.01492692318671752,
+      "combinedEquivalentYears": -0.023881584323488185,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "true-zero",
+      "label": "true zero",
+      "overrides": {
+        "q": 0,
+        "harm": 0,
+        "medicalGain": 0,
+        "workGain": 0,
+        "transferGain": 0,
+        "cost": 0
+      },
+      "costUSD": 2594790,
+      "exposed": 10000,
+      "burdenExposed": 100,
+      "union": 300,
+      "clinicalPeople": 150,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "incomePathways": [
+        {
+          "id": "changed-engaged",
+          "people": 1.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 0,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "changed-not-engaged",
+          "people": 148.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 0,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "unchanged-engaged",
+          "people": 98.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 0,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0,
+      "incomeUnknown": false,
+      "totalEquivalent": 0,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": 0,
+      "combinedEquivalentYears": 0,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "adverse",
+      "label": "adverse",
+      "overrides": {
+        "q": -0.03,
+        "medicalGain": -300,
+        "workGain": -300,
+        "harm": 0.005
+      },
+      "costUSD": 2594790,
+      "exposed": 10000,
+      "burdenExposed": 100,
+      "union": 300,
+      "clinicalPeople": 150,
+      "allPopulationQalys": -12.829308728378589,
+      "editionQalys": -12.187843291959659,
+      "incomePathways": [
+        {
+          "id": "changed-engaged",
+          "people": 1.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -610,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "changed-not-engaged",
+          "people": 148.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -600,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "unchanged-engaged",
+          "people": 98.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -1.371744478983417,
+      "incomeUnknown": false,
+      "totalEquivalent": -13.559587770943075,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": -1.371744478983417,
+      "combinedEquivalentYears": -13.559587770943075,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "positive-net-access-resources",
+      "label": "positive net access resources",
+      "overrides": {
+        "workGain": 500
+      },
+      "costUSD": 2594790,
+      "exposed": 10000,
+      "burdenExposed": 100,
+      "union": 300,
+      "clinicalPeople": 150,
+      "allPopulationQalys": 1.2263751182898337,
+      "editionQalys": 1.165056362375342,
+      "incomePathways": [
+        {
+          "id": "changed-engaged",
+          "people": 1.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 290,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "changed-not-engaged",
+          "people": 148.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 300,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "unchanged-engaged",
+          "people": 98.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.6533391014655412,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.8183954638408832,
+      "price10": 14269668.241028203,
+      "costPer10Qalys": 14269668.241028203,
+      "incomeEquivalentYears": 0.6533391014655412,
+      "combinedEquivalentYears": 1.8183954638408832,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "no-resource-success",
+      "label": "no resource success",
+      "overrides": {
+        "success": 0
+      },
+      "costUSD": 2594790,
+      "exposed": 10000,
+      "burdenExposed": 100,
+      "union": 300,
+      "clinicalPeople": 150,
+      "allPopulationQalys": 1.2263751182898337,
+      "editionQalys": 1.165056362375342,
+      "incomePathways": [
+        {
+          "id": "unchanged-engaged",
+          "people": 100,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -0.01492692318671752,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.1501294391886245,
+      "price10": 22560851.949242618,
+      "costPer10Qalys": 22560851.949242618,
+      "incomeEquivalentYears": -0.01492692318671752,
+      "combinedEquivalentYears": 1.1501294391886245,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "no-gains",
+      "label": "no gains",
+      "overrides": {
+        "medicalGain": 0,
+        "workGain": 0,
+        "transferGain": 0
+      },
+      "costUSD": 2594790,
+      "exposed": 10000,
+      "burdenExposed": 100,
+      "union": 300,
+      "clinicalPeople": 150,
+      "allPopulationQalys": 1.2263751182898337,
+      "editionQalys": 1.165056362375342,
+      "incomePathways": [
+        {
+          "id": "changed-engaged",
+          "people": 1.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "changed-not-engaged",
+          "people": 148.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 0,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "unchanged-engaged",
+          "people": 98.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -0.014926923186717522,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.1501294391886245,
+      "price10": 22560851.949242618,
+      "costPer10Qalys": 22560851.949242618,
+      "incomeEquivalentYears": -0.014926923186717522,
+      "combinedEquivalentYears": 1.1501294391886245,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "negative-resource-overlap-zero",
+      "label": "negative resource overlap zero",
+      "overrides": {
+        "medicalGain": -300,
+        "transferGain": 0,
+        "overlap": 0
+      },
+      "costUSD": 2594790,
+      "exposed": 10000,
+      "burdenExposed": 100,
+      "union": 300,
+      "clinicalPeople": 150,
+      "allPopulationQalys": 1.2263751182898337,
+      "editionQalys": 1.165056362375342,
+      "incomePathways": [
+        {
+          "id": "changed-engaged",
+          "people": 1.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -310,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "changed-not-engaged",
+          "people": 148.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -300,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "unchanged-engaged",
+          "people": 98.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -0.6899093243139189,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.4751470380614231,
+      "price10": 54610253.08263769,
+      "costPer10Qalys": 54610253.08263769,
+      "incomeEquivalentYears": -0.6899093243139189,
+      "combinedEquivalentYears": 0.4751470380614231,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "negative-resource-overlap-one",
+      "label": "negative resource overlap one",
+      "overrides": {
+        "medicalGain": -300,
+        "transferGain": 0,
+        "overlap": 1
+      },
+      "costUSD": 2594790,
+      "exposed": 10000,
+      "burdenExposed": 100,
+      "union": 300,
+      "clinicalPeople": 150,
+      "allPopulationQalys": 1.2263751182898337,
+      "editionQalys": 1.165056362375342,
+      "incomePathways": [
+        {
+          "id": "changed-engaged",
+          "people": 1.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -310,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "changed-not-engaged",
+          "people": 148.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -300,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "unchanged-engaged",
+          "people": 98.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -0.6899093243139189,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.4751470380614231,
+      "price10": 54610253.08263769,
+      "costPer10Qalys": 54610253.08263769,
+      "incomeEquivalentYears": -0.6899093243139189,
+      "combinedEquivalentYears": 0.4751470380614231,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "mixed-sign",
+      "label": "mixed sign",
+      "overrides": {
+        "medicalGain": 300,
+        "workGain": -300
+      },
+      "costUSD": 2594790,
+      "exposed": 10000,
+      "burdenExposed": 100,
+      "union": 300,
+      "clinicalPeople": 150,
+      "allPopulationQalys": 1.2263751182898337,
+      "editionQalys": 1.165056362375342,
+      "incomePathways": [
+        {
+          "id": "changed-engaged",
+          "people": 1.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -160,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "changed-not-engaged",
+          "people": 148.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -150,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "unchanged-engaged",
+          "people": 98.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -0.35157014949817206,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.81348621287717,
+      "price10": 31897160.13529774,
+      "costPer10Qalys": 31897160.13529774,
+      "incomeEquivalentYears": -0.35157014949817206,
+      "combinedEquivalentYears": 0.81348621287717,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "payer-loss-300",
+      "label": "payer loss 300",
+      "overrides": {
+        "payerLoss": 300
+      },
+      "costUSD": 2594790,
+      "exposed": 10000,
+      "burdenExposed": 100,
+      "union": 300,
+      "clinicalPeople": 150,
+      "allPopulationQalys": 1.2263751182898337,
+      "editionQalys": 1.165056362375342,
+      "incomePathways": [
+        {
+          "id": "changed-engaged",
+          "people": 1.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 40,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "changed-not-engaged",
+          "people": 148.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 50,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "unchanged-engaged",
+          "people": 98.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 10000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -4.275,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -0.30606343923657914,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.858992923138763,
+      "price10": 30207350.14345204,
+      "costPer10Qalys": 30207350.14345204,
+      "incomeEquivalentYears": -0.30606343923657914,
+      "combinedEquivalentYears": 0.858992923138763,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "external-provider-cost",
+      "label": "external provider cost",
+      "overrides": {
+        "externalCost": 100
+      },
+      "costUSD": 2594790,
+      "exposed": 10000,
+      "burdenExposed": 100,
+      "union": 300,
+      "clinicalPeople": 150,
+      "allPopulationQalys": 1.2263751182898337,
+      "editionQalys": 1.165056362375342,
+      "incomePathways": [
+        {
+          "id": "changed-engaged",
+          "people": 1.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 40,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "changed-not-engaged",
+          "people": 148.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 50,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "unchanged-engaged",
+          "people": 98.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "distinct-payer-provider-households",
+          "people": 10000,
+          "annualIncomeBeforeUSD": 50000,
+          "annualIncomeGainUSD": -0.95,
+          "years": 1,
+          "editionShare": 1,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.0073660773581476074,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.1724224397334897,
+      "price10": 22131869.128927942,
+      "costPer10Qalys": 22131869.128927942,
+      "incomeEquivalentYears": 0.0073660773581476074,
+      "combinedEquivalentYears": 1.1724224397334897,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "annual-full-response",
+      "label": "annual full response",
+      "overrides": {
+        "b": 1
+      },
+      "costUSD": 2594790,
+      "exposed": 10000,
+      "burdenExposed": 100,
+      "union": 10000,
+      "clinicalPeople": 5000,
+      "allPopulationQalys": 41.1839432869477,
+      "editionQalys": 39.124746122600314,
+      "incomePathways": [
+        {
+          "id": "changed-engaged",
+          "people": 50,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 40,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "changed-not-engaged",
+          "people": 4950,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 50,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "unchanged-engaged",
+          "people": 50,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 3.713088497351795,
+      "incomeUnknown": false,
+      "totalEquivalent": 42.83783461995211,
+      "price10": 605723.8940811105,
+      "costPer10Qalys": 605723.8940811105,
+      "incomeEquivalentYears": 3.713088497351795,
+      "combinedEquivalentYears": 42.83783461995211,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "half-geography",
+      "label": "half geography",
+      "overrides": {
+        "g": 0.5
+      },
+      "costUSD": 2594790,
+      "exposed": 10000,
+      "burdenExposed": 100,
+      "union": 300,
+      "clinicalPeople": 150,
+      "allPopulationQalys": 1.2263751182898337,
+      "editionQalys": 0.6131875591449168,
+      "incomePathways": [
+        {
+          "id": "changed-engaged",
+          "people": 1.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 40,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "changed-not-engaged",
+          "people": 148.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 50,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "unchanged-engaged",
+          "people": 98.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.5,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.0510071260154936,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.6641946851604105,
+      "price10": 39066708.27053259,
+      "costPer10Qalys": 39066708.27053259,
+      "incomeEquivalentYears": 0.0510071260154936,
+      "combinedEquivalentYears": 0.6641946851604105,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "all-unique",
+      "label": "all unique",
+      "overrides": {
+        "unique": 1
+      },
+      "costUSD": 2594790,
+      "exposed": 10000,
+      "burdenExposed": 100,
+      "union": 300,
+      "clinicalPeople": 150,
+      "allPopulationQalys": 1.2263751182898337,
+      "editionQalys": 1.165056362375342,
+      "incomePathways": [
+        {
+          "id": "changed-engaged",
+          "people": 1.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 40,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "changed-not-engaged",
+          "people": 148.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 50,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "unchanged-engaged",
+          "people": 98.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.09691353942943785,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.2619699018047799,
+      "price10": 20561425.405543473,
+      "costPer10Qalys": 20561425.405543473,
+      "incomeEquivalentYears": 0.09691353942943785,
+      "combinedEquivalentYears": 1.2619699018047799,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "zero-resource-duration",
+      "label": "zero resource duration",
+      "overrides": {
+        "resourceYears": 0
+      },
+      "costUSD": 2594790,
+      "exposed": 10000,
+      "burdenExposed": 100,
+      "union": 300,
+      "clinicalPeople": 150,
+      "allPopulationQalys": 1.2263751182898337,
+      "editionQalys": 1.165056362375342,
+      "incomePathways": [
+        {
+          "id": "changed-engaged",
+          "people": 1.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "changed-not-engaged",
+          "people": 148.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 0,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "unchanged-engaged",
+          "people": 98.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -0.014926923186717522,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.1501294391886245,
+      "price10": 22560851.949242618,
+      "costPer10Qalys": 22560851.949242618,
+      "incomeEquivalentYears": -0.014926923186717522,
+      "combinedEquivalentYears": 1.1501294391886245,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "two-year-health",
+      "label": "two year health",
+      "overrides": {
+        "T": 2
+      },
+      "costUSD": 2594790,
+      "exposed": 10000,
+      "burdenExposed": 100,
+      "union": 300,
+      "clinicalPeople": 150,
+      "allPopulationQalys": 0.8265559467277737,
+      "editionQalys": 0.785228149391385,
+      "incomePathways": [
+        {
+          "id": "changed-engaged",
+          "people": 1.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 40,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "changed-not-engaged",
+          "people": 148.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 50,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "unchanged-engaged",
+          "people": 98.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.09691353942943785,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.8821416888208228,
+      "price10": 29414662.43896159,
+      "costPer10Qalys": 29414662.43896159,
+      "incomeEquivalentYears": 0.09691353942943785,
+      "combinedEquivalentYears": 0.8821416888208228,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "full-volunteer-cost-hypothesis",
+      "label": "full volunteer cost hypothesis",
+      "overrides": {
+        "C": 3200000
+      },
+      "costUSD": 3200000,
+      "exposed": 10000,
+      "burdenExposed": 100,
+      "union": 300,
+      "clinicalPeople": 150,
+      "allPopulationQalys": 1.2263751182898337,
+      "editionQalys": 1.165056362375342,
+      "incomePathways": [
+        {
+          "id": "changed-engaged",
+          "people": 1.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 40,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "changed-not-engaged",
+          "people": 148.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 50,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "unchanged-engaged",
+          "people": 98.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.09691353942943785,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.2619699018047799,
+      "price10": 25357181.6207628,
+      "costPer10Qalys": 25357181.6207628,
+      "incomeEquivalentYears": 0.09691353942943785,
+      "combinedEquivalentYears": 1.2619699018047799,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "weak-clinical",
+      "label": "weak clinical",
+      "overrides": {
+        "clinicalResponse": 0.1,
+        "q": 0.01
+      },
+      "costUSD": 2594790,
+      "exposed": 10000,
+      "burdenExposed": 100,
+      "union": 300,
+      "clinicalPeople": 30,
+      "allPopulationQalys": 0.8144414258294431,
+      "editionQalys": 0.7737193545379709,
+      "incomePathways": [
+        {
+          "id": "changed-engaged",
+          "people": 1.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 40,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "changed-not-engaged",
+          "people": 148.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 50,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "unchanged-engaged",
+          "people": 98.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.09691353942943785,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.8706328939674087,
+      "price10": 29803491.436852757,
+      "costPer10Qalys": 29803491.436852757,
+      "incomeEquivalentYears": 0.09691353942943785,
+      "combinedEquivalentYears": 0.8706328939674087,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "full-transfer-incidence",
+      "label": "full transfer incidence",
+      "overrides": {
+        "payerLoss": 0
+      },
+      "costUSD": 2594790,
+      "exposed": 10000,
+      "burdenExposed": 100,
+      "union": 300,
+      "clinicalPeople": 150,
+      "allPopulationQalys": 1.2263751182898337,
+      "editionQalys": 1.165056362375342,
+      "incomePathways": [
+        {
+          "id": "changed-engaged",
+          "people": 1.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 40,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "changed-not-engaged",
+          "people": 148.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 50,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "unchanged-engaged",
+          "people": 98.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.09691353942943785,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.2619699018047799,
+      "price10": 20561425.405543473,
+      "costPer10Qalys": 20561425.405543473,
+      "incomeEquivalentYears": 0.09691353942943785,
+      "combinedEquivalentYears": 1.2619699018047799,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "participant-net-resource-loss",
+      "label": "participant net resource loss",
+      "overrides": {
+        "workGain": -500,
+        "cost": 100
+      },
+      "costUSD": 2594790,
+      "exposed": 10000,
+      "burdenExposed": 100,
+      "union": 300,
+      "clinicalPeople": 150,
+      "allPopulationQalys": 1.2263751182898337,
+      "editionQalys": 1.165056362375342,
+      "incomePathways": [
+        {
+          "id": "changed-engaged",
+          "people": 1.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -550,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "changed-not-engaged",
+          "people": 148.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -450,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "unchanged-engaged",
+          "people": 98.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -100,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -1.164559141744073,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.000497220631269002,
+      "price10": 52185887648.660126,
+      "costPer10Qalys": 52185887648.660126,
+      "incomeEquivalentYears": -1.164559141744073,
+      "combinedEquivalentYears": 0.000497220631269002,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "policy-failure-with-burdens",
+      "label": "policy failure with burdens",
+      "overrides": {
+        "b": 0.1,
+        "q": 0,
+        "medicalGain": 0,
+        "workGain": -200,
+        "cost": 50
+      },
+      "costUSD": 2594790,
+      "exposed": 10000,
+      "burdenExposed": 100,
+      "union": 1000,
+      "clinicalPeople": 500,
+      "allPopulationQalys": -0.009425959091337545,
+      "editionQalys": -0.008954661136770667,
+      "incomePathways": [
+        {
+          "id": "changed-engaged",
+          "people": 5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -250,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "changed-not-engaged",
+          "people": 495,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -200,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "unchanged-engaged",
+          "people": 95,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -50,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": -1.5721500693679729,
+      "incomeUnknown": false,
+      "totalEquivalent": -1.5811047305047434,
+      "price10": null,
+      "costPer10Qalys": null,
+      "incomeEquivalentYears": -1.5721500693679729,
+      "combinedEquivalentYears": -1.5811047305047434,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "four-year-implementation-delay",
+      "label": "four year implementation delay",
+      "overrides": {
+        "delay": 4
+      },
+      "costUSD": 2594790,
+      "exposed": 10000,
+      "burdenExposed": 100,
+      "union": 300,
+      "clinicalPeople": 150,
+      "allPopulationQalys": 1.1559761695634214,
+      "editionQalys": 1.0981773610852503,
+      "incomePathways": [
+        {
+          "id": "changed-engaged",
+          "people": 1.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 40,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 4,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "changed-not-engaged",
+          "people": 148.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 50,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 4,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "unchanged-engaged",
+          "people": 98.5,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 4,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.0913503058058609,
+      "incomeUnknown": false,
+      "totalEquivalent": 1.1895276668911112,
+      "price10": 21813616.21274107,
+      "costPer10Qalys": 21813616.21274107,
+      "incomeEquivalentYears": 0.0913503058058609,
+      "combinedEquivalentYears": 1.1895276668911112,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    },
+    {
+      "id": "weak-attribution",
+      "label": "weak attribution",
+      "overrides": {
+        "b": 0.0075
+      },
+      "costUSD": 2594790,
+      "exposed": 10000,
+      "burdenExposed": 100,
+      "union": 75,
+      "clinicalPeople": 37.5,
+      "allPopulationQalys": 0.29952431025395526,
+      "editionQalys": 0.2845480947412575,
+      "incomePathways": [
+        {
+          "id": "changed-engaged",
+          "people": 0.375,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 40,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "changed-not-engaged",
+          "people": 37.125,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": 50,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        },
+        {
+          "id": "unchanged-engaged",
+          "people": 99.625,
+          "annualIncomeBeforeUSD": 30000,
+          "annualIncomeGainUSD": -10,
+          "years": 1,
+          "editionShare": 0.95,
+          "delayYears": 2,
+          "discountRate": 0.03,
+          "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+          "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+          "sourceIds": [
+            "services",
+            "finance",
+            "cg-cost"
+          ]
+        }
+      ],
+      "incomeEquivalent": 0.013033192467321321,
+      "incomeUnknown": false,
+      "totalEquivalent": 0.2975812872085788,
+      "price10": 87196006.99157122,
+      "costPer10Qalys": 87196006.99157122,
+      "incomeEquivalentYears": 0.013033192467321321,
+      "combinedEquivalentYears": 0.2975812872085788,
+      "assumptions": "Conditional finite annual policy channel; full portfolio, actual implementation and marginal gift unknown."
+    }
+  ]
+}

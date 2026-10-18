@@ -1,0 +1,254 @@
+{
+  "edition": "chicago",
+  "boundaryVersion": "OMB-23-01-2023-07-21",
+  "organizationId": "ein:36-3831793",
+  "slug": "communityhealth",
+  "organization": "CommunityHealth",
+  "program": "Free primary, specialty, dental, mental health and pharmacy care",
+  "published": "2026-09-29",
+  "updated": "2026-09-29",
+  "stage": "alpha",
+  "donationUrl": "https://communityhealth.org/ways-to-give/",
+  "acceptance": {
+    "status": "accepted",
+    "auditId": "chicago-next-three-independent-acceptance-20260929",
+    "scope": "Illustrative alpha recipient-budget scenario; not an evidence-calibrated expected value, comparable full-resource ranking, or marginal donation estimate.",
+    "evidence": "givebetter-chicago-next-three-accepted.json: independently accepted with clarifications. Illustrative alpha recipient-budget scenario; not an evidence-calibrated expected value, comparable full-resource ranking, or marginal donation estimate."
+  },
+  "summary": {
+    "what": [
+      "Volunteer-supported comprehensive care for uninsured Chicago adults.",
+      "Central model values bounded morbidity relief, not visits or prescription retail value as health.",
+      "Central illustrative cost: $17,596,276 per 10 Chicago-MSA QALYs (12.192180 annual modeled QALYs)."
+    ],
+    "strengths": [
+      "Original audit includes donated resources and support costs.",
+      "Reported unique annual patients avoid adding overlapping services.",
+      "Chicago service sites anchor the local benefit model."
+    ],
+    "reservations": [
+      "No recipient causal health or marginal expansion data.",
+      "Pharmaceutical accounting prices are not opportunity costs.",
+      "Patient residency and health-utility conversion remain modeled judgments."
+    ]
+  },
+  "sections": {
+    "what": "CommunityHealth provides medical, dental, medication and mental health care at Chicago sites. Its giving page identifies EIN 36-3831793. Dental waiting lists indicate unmet demand but do not establish whether money or volunteers constrain supply.",
+    "monitoring": "The 2024 report counts 4,147 patients, 24,695 visits and 23,579 prescriptions. Only patients enter the model, preventing duplicate credit across services. Request baseline illness, deduplicated clinical response, sustained utility, alternative care and resident county. The Oregon randomized Medicaid study increased utilization and reduced depression but found no significant measured physical-health gains in two years; coverage is not a direct trial of this clinic, and supplies no numerical calibration here.",
+    "qualitative": "Medical access can improve pain, function and mental health. Donated clinicians and medicines may stretch cash but their availability can constrain expansion. Financial relief and education have nonhealth value outside this QALY estimate. Mortality and all other net health are provisionally zero, not a proven lower bound.",
+    "cost": "Full 2024 audited expense is $21,453,697, including $12,728,899 consumed donated inventory, $3,995,847 donated services and $177,307 other in-kind expenses. Use expense rather than $12,475,722 inventory received. Model: 4,147 patients × 0.30 additional clinically improved share × 0.05 utility × 0.5 year × 0.4 funding additionality × 0.98 MSA share. This is an illustrative scenario, not a measured expected value or marginal purchase price.",
+    "funding": "Audit issued November 13, 2025 reports revenue $21,052,293, net assets $6,621,698 and donor restrictions $684,948. Government grants $1,000,893 and volunteer constraints make gift additionality uncertain. Full recipient overhead remains. In-kind expense totals $16,902,053; excluding it gives $4,551,644 cash-like expense, not cash flow, shown only as a sensitivity. No priced unfunded expansion was found."
+  },
+  "sources": [
+    {
+      "id": "audit24",
+      "title": "Original 2024/2023 audited financial statements",
+      "url": "https://3297edd6-b428-4c43-82cf-3cfd7802cbd6.filesusr.com/ugd/1781df_9f9f92ab32d64c938dfca5037bc0cf17.pdf",
+      "retrieved": "2026-09-29",
+      "published": null,
+      "publisher": "CommunityHealth (source host)"
+    },
+    {
+      "id": "annual",
+      "title": "2024 annual report",
+      "url": "https://commhealthchi.wixsite.com/annual-report-2024",
+      "retrieved": "2026-09-29",
+      "published": null,
+      "publisher": "CommunityHealth (source host)"
+    },
+    {
+      "id": "geo",
+      "title": "Current Chicago locations",
+      "url": "https://communityhealth.org/",
+      "retrieved": "2026-09-29",
+      "published": null,
+      "publisher": "CommunityHealth (source host)"
+    },
+    {
+      "id": "services",
+      "title": "Services and dental wait list",
+      "url": "https://communityhealth.org/services/",
+      "retrieved": "2026-09-29",
+      "published": null,
+      "publisher": "CommunityHealth (source host)"
+    },
+    {
+      "id": "donate",
+      "title": "Recipient giving and EIN",
+      "url": "https://communityhealth.org/ways-to-give/",
+      "retrieved": "2026-09-29",
+      "published": null,
+      "publisher": "CommunityHealth (source host)"
+    },
+    {
+      "id": "trial",
+      "title": "Oregon randomized Medicaid clinical outcomes",
+      "url": "https://doi.org/10.1056/NEJMsa1212321",
+      "retrieved": "2026-09-29",
+      "published": null,
+      "publisher": "New England Journal of Medicine"
+    }
+  ],
+  "model": {
+    "version": "chicago-communityhealth-alpha-v1",
+    "formula": "Q_all=N*a*u*T*b; Q_MSA=Q_all*g; cost=C*f; price10=10*cost/Q_MSA",
+    "costScope": "Full audited recipient costs including recognized donated resources; external hospital resources not included. Recognized pharmaceutical wholesale values and donated-provider billing rates are accounting amounts, not measured opportunity costs.",
+    "counterfactual": "a removes equivalent care elsewhere and ineffective care; b separately removes replacement financing/volunteer capacity. One morbidity pathway avoids double counting.",
+    "geographicAttribution": "Current service sites are in Cook County. g=.98 is judged resident share, not observed; pinned 13-county MSA excludes Kenosha.",
+    "uncertainty": "Central illustrative scenario and favorable/poor bounds are judgments, not calibrated EV or confidence interval. Cross-recipient results cannot be summed without deduplication. These costs are whole-portfolio equivalents, not marginal gift purchase guarantees. Cost numerators use different accounting recognition of donated care; central prices must not be interpreted as a comparable economic-efficiency ranking. Favorable and poor scenarios are illustrative cases, not exhaustive bounds.",
+    "inputs": [
+      {
+        "name": "C",
+        "value": 21453697,
+        "basis": "observed",
+        "rationale": "Whole audited expense, activity statement p7",
+        "sourceIds": [
+          "audit24"
+        ],
+        "unit": "USD"
+      },
+      {
+        "name": "f",
+        "value": 1,
+        "basis": "judgment",
+        "rationale": "Historical annual scale",
+        "sourceIds": [],
+        "unit": "fraction or multiplier"
+      },
+      {
+        "name": "N",
+        "value": 4147,
+        "basis": "observed",
+        "rationale": "Annual patients, not visits",
+        "sourceIds": [
+          "annual"
+        ],
+        "unit": "annual persons/enrollees/visits as specified"
+      },
+      {
+        "name": "a",
+        "value": 0.3,
+        "basis": "judgment",
+        "rationale": "Fraction with incremental meaningful clinical relief beyond other care",
+        "sourceIds": [],
+        "unit": "fraction or multiplier"
+      },
+      {
+        "name": "u",
+        "value": 0.05,
+        "basis": "judgment",
+        "rationale": "Average utility gain among additional responders; not measured",
+        "sourceIds": [],
+        "unit": "fraction or multiplier"
+      },
+      {
+        "name": "T",
+        "value": 0.5,
+        "basis": "judgment",
+        "rationale": "Six-month cap; no later benefit",
+        "sourceIds": [],
+        "unit": "years"
+      },
+      {
+        "name": "b",
+        "value": 0.4,
+        "basis": "judgment",
+        "rationale": "Additional usable capacity from gifts after substitute funding and clinician constraints",
+        "sourceIds": [],
+        "unit": "fraction or multiplier"
+      },
+      {
+        "name": "g",
+        "value": 0.98,
+        "basis": "judgment",
+        "rationale": "MSA resident share inferred from local sites",
+        "sourceIds": [
+          "geo"
+        ],
+        "unit": "fraction or multiplier"
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "central",
+        "label": "central",
+        "costUSD": 21453697,
+        "allPopulationQalys": 12.441,
+        "editionQalys": 12.19218,
+        "assumptions": "{\"C\":21453697,\"f\":1,\"N\":4147,\"a\":0.3,\"u\":0.05,\"T\":0.5,\"b\":0.4,\"g\":0.98}"
+      },
+      {
+        "id": "favorable",
+        "label": "favorable",
+        "costUSD": 21453697,
+        "allPopulationQalys": 174.17399999999998,
+        "editionQalys": 174.17399999999998,
+        "assumptions": "{\"C\":21453697,\"f\":1,\"N\":4147,\"a\":0.6,\"u\":0.1,\"T\":1,\"b\":0.7,\"g\":1}"
+      },
+      {
+        "id": "poor",
+        "label": "poor",
+        "costUSD": 25744436.4,
+        "allPopulationQalys": 0.08294000000000001,
+        "editionQalys": 0.07464600000000002,
+        "assumptions": "{\"C\":21453697,\"f\":1.2,\"N\":4147,\"a\":0.1,\"u\":0.02,\"T\":0.1,\"b\":0.1,\"g\":0.9}"
+      },
+      {
+        "id": "zero",
+        "label": "zero",
+        "costUSD": 21453697,
+        "allPopulationQalys": 0,
+        "editionQalys": 0,
+        "assumptions": "{\"C\":21453697,\"f\":1,\"N\":4147,\"a\":0,\"u\":0.05,\"T\":0.5,\"b\":0.4,\"g\":0.98}"
+      },
+      {
+        "id": "cash-like",
+        "label": "cash-like",
+        "costUSD": 4551644,
+        "allPopulationQalys": 12.441,
+        "editionQalys": 12.19218,
+        "assumptions": "{\"C\":4551644,\"f\":1,\"N\":4147,\"a\":0.3,\"u\":0.05,\"T\":0.5,\"b\":0.4,\"g\":0.98}"
+      }
+    ],
+    "sensitivity": [
+      "Cash-like numerator excludes recognized in-kind expense but must not be confused with full resource cost.",
+      "A zero benefit scenario permits no additional clinical gain.",
+      "Pharmaceutical wholesale accounting values do not measure medicine utility or economic opportunity cost."
+    ],
+    "missingInputs": [
+      "Current marginal expansion budget and volunteer capacity",
+      "Recipient causal clinical response and utility",
+      "Residence, alternative care, persistence and overlap"
+    ],
+    "nativeOutcomes": "Additional bounded morbidity relief; utility and duration are judgments, not measured QALYs. No mortality credit.",
+    "attribution": "Whole-recipient gift health discounted for alternative care and substitute finance; no separate health credits for overlapping service lines."
+  },
+  "annualExpenses": [
+    {
+      "year": 2024,
+      "amount": 21453697,
+      "currency": "USD",
+      "periodMonths": 12,
+      "comparable": true,
+      "entity": "CommunityHealth NFP",
+      "accountingBasis": "GAAP audited full expense including in-kind",
+      "sourceId": "audit24"
+    },
+    {
+      "year": 2023,
+      "amount": 20918068,
+      "currency": "USD",
+      "periodMonths": 12,
+      "comparable": true,
+      "entity": "CommunityHealth NFP",
+      "accountingBasis": "GAAP audited full expense including in-kind",
+      "sourceId": "audit24"
+    }
+  ],
+  "timeCoverage": "partial",
+  "sessionIds": [
+    "c6e8d9dd-4a91-4841-83b4-a1a3e9b09110"
+  ]
+}
+
+

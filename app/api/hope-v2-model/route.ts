@@ -1,3 +1,4 @@
-import {calculate,diagnostics,modelVersion,currentEvidence} from '@/lib/hope-v2-model.mjs';
+import {withImpactDisplay} from '@/lib/impact-metric.mjs';
+import {calculate,diagnostics,modelVersion,currentEvidence} from '@/lib/hope-calibrated-model.mjs';
 import sources from '@/data/san-francisco/hope-v2-sources.json';
-export function GET(){return Response.json({modelVersion,currentEvidence,evaluated:calculate(),diagnostics:diagnostics(),sources,verifiedMarginalFundingOffer:null,historicalEndpoint:'/api/hope-pacifica-model'});}
+export function GET(){return Response.json(withImpactDisplay({modelVersion,currentEvidence,evaluated:calculate(),diagnostics:diagnostics(),sources,verifiedMarginalFundingOffer:null,historicalEndpoint:'/api/hope-pacifica-model'}));}

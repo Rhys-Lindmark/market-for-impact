@@ -1,4 +1,4 @@
-import CharityResearchReport,{type CharityReportContent} from '@/components/CharityResearchReport';
-import report from '@/data/san-francisco/ymca-portfolio-report.json';
+import LongFormResearchReport from '@/components/LongFormResearchReport';
+import {markdown,sources,modelVersion} from '@/lib/ymca-current-report.mjs';
 export const metadata={title:'YMCA of Greater San Francisco — GiveBetter research'};
-export default function Page(){const content:CharityReportContent={...report,nutshell:{...report.nutshell,body:<>{report.nutshell.body} <a href="/api/ymca-portfolio-model">Inspect the whole-gift model</a>. <a href="/api/sf-ymca-model">Earlier diabetes-prevention-only model</a>.</>}};return <CharityResearchReport content={content}/>;}
+export default function Page(){return <LongFormResearchReport organization="YMCA of Greater San Francisco" program="Community health and family services" markdown={markdown} sources={sources} donationUrl="https://www.ymcasf.org/donate/" modelVersion={modelVersion} modelUrl="/api/ymca-portfolio-model" calibrationDate="2026-10-04" minutes={0} modelLabel="GPT-6.1 Sol" legacyMinutesAlreadyRecorded/>;}

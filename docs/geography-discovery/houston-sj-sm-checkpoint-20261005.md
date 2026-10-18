@@ -1,0 +1,13 @@
+# Houston initial San Jose / Santa Maria checkpoint
+
+Scope: one bounded batch of two initial reports; no deep review or featured selection is counted. Seven active editions remain CA, USA, NYC, LA, Chicago, Houston and Denver. SF retained; Seattle, Boston, Atlanta and Detroit deferred. P0 accepted cohort 40/40 + legacy 11/11; jobs/growth protocol is in the holistic pipeline.
+
+Frozen author packet plus independent challenge: [root evidence](houston-sj-sm-initial-20261005/root-evidence.md). Root accepted the initial conditional models after original-source and independent arithmetic checks. San Jose Clinic $64.942M; Santa Maria Hostel $110.994M per ten combined healthy-year welfare equivalents. Both assess signed net household resources and clinical effects. These are judgment-led partial-channel references using whole annual recipient costs, not complete portfolio expected values or marginal-gift offers.
+
+Portable tests: 286 arithmetic checks / 46 scenarios, including clinical-null with resources retained, financial-only, signed adverse/null/zero/unknown and counterparty losses. Current registry dry-run passed. Focused publication/provenance/scope tests: 25 passed. Responsive and production/live gates are recorded in the publication receipt, not assumed from this checkpoint.
+
+Recorded organization research: San Jose 322.402 seconds (~5 min), Santa Maria 189.740 seconds (~3 min), each GPT-6.1 Sol. Author totaled 371.582 seconds; closed root source/model intervals totaled 140.560 seconds. Additional untimed source checks, tests, integration and release are excluded, not backfilled. This bounded batch started at 23:09:54Z; final elapsed duration is recorded with the publication receipt. No unexplained execution gap over five minutes was observed during source/model handoff.
+
+Houston accepted for this release: 4/25 initial, 0/10 deep, 0/4 featured. Denver: 2/25 initial, 0/10 deep, 0/4 featured. CA25/10/4, USA28/13/4, NYC25/10/4, LA25/10/4 and Chicago25/10/4 are complete. Remaining: Houston21 + Denver23 = 44 initials and 20 deep reviews; 44×5 +20×15 = 520 planned research minutes, excluding review, selection and release. Existing discovery pools are reused.
+
+Next bounded batch: Christ Clinic and Rebuilding Together Houston initial reports. Inspect current progress and live usage first; at most one isolated author and no overlapping runs. No new research at or below 25% remaining or when usage unavailable; preserve 20%, never reset credits. Latest check: 85% remaining. Root alone accepts/imports/releases; one deep or up to two initials and one combined release per turn. End the turn after checkpoint, not idle overnight.

@@ -1,0 +1,3 @@
+# Root acceptance: Denver CHN and Jefferson initials
+
+Accepted after independent current original-source checks and 470 direct arithmetic checks across93scenarios,580portable checks and production-registry validation in memory. CHN prevention efficacy/resource dependency corrected once; frozen initial diagnostics preserved. Clinical patients separate from resource household units; full netted-event annual costs and dated native counts checked. Partial clinical mechanisms are not whole-portfolio or unrestricted marginal-gift EV; judgment inputs and omitted channels explicit. Root CHN interrupted interval entirely excluded. Jefferson two actual dedicated root source intervals imported. Current list/report prices must agree after integration; publication still pending.

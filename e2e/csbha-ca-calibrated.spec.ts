@@ -1,0 +1,20 @@
+import {test,expect} from '@playwright/test';
+test('school-health report, header, API and list share the recalibrated estimate',async({page,request})=>{
+ await page.route('https://market-for-impact.rhyslindmark.chatgpt.site/_next/**',async route=>{const u=new URL(route.request().url());await route.fulfill({response:await request.get(u.pathname+u.search)});});
+ await page.goto('/california/charities/california-school-based-health-alliance');
+ await expect(page.getByRole('heading',{level:1,name:'California School-Based Health Alliance',exact:true})).toBeVisible();
+ await expect(page.locator('.report-research-effort summary')).toContainText('~7 min on GPT-6 Astra Light + ~23 min on GPT-6.1 Sol');
+ await expect(page.locator('#cost')).toContainText('$112M');
+ await expect(page.locator('#cost')).toContainText('$26.9M');
+ await expect(page.locator('#cost')).toContainText('net paid travel');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+ const response=await request.get('/api/geography-reports/california/california-school-based-health-alliance');expect(response.ok()).toBe(true);
+ const report=await response.json(),central=report.model.scenarios.find((s:any)=>s.id==='central');
+ expect(central.editionQalys).toBeCloseTo(.007874208579798939,12);
+ expect(central.costPer10Qalys).toBeCloseTo(111720543.62069258,5);
+ expect(central.incomePathways.length).toBe(4);
+ await page.goto('/california/all');
+ const row=page.locator('[data-research-table] tbody tr').filter({hasText:'California School-Based Health Alliance'});
+ await expect(row.locator('td').nth(0)).toContainText('$111.7M');await expect(row.locator('td').nth(1)).toContainText('$2.1M');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+});

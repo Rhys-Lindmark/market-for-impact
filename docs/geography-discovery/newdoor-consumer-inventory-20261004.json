@@ -1,0 +1,119 @@
+{
+  "capturedAt": "2026-10-04T20:24:36.767Z",
+  "basis": "Root integration consumer inventory, not scientific acceptance",
+  "consumers": [
+    {
+      "path": "app/charities/new-door-ventures/page.tsx",
+      "relevantLines": [
+        {
+          "line": 2,
+          "text": "import report from '@/data/san-francisco/newdoor-portfolio-report.json';"
+        },
+        {
+          "line": 3,
+          "text": "export const metadata={title:'New Door Ventures — GiveBetter research',description:'Whole-gift youth employment, education and career support; conditional health estimates for SF and the Bay Area.'};"
+        },
+        {
+          "line": 4,
+          "text": "export default function Page(){const content:CharityReportContent={...report,nutshell:{...report.nutshell,body:<>{report.nutshell.body} <a href=\"/api/newdoor-portfolio-model\">Inspect the whole-gift model</a>.</>}};return <CharityResearchReport content={content}/>;}"
+        }
+      ]
+    },
+    {
+      "path": "app/api/newdoor-portfolio-model/route.ts",
+      "relevantLines": [
+        {
+          "line": 1,
+          "text": "import data from '@/data/san-francisco/newdoor-portfolio-v1.json';"
+        },
+        {
+          "line": 2,
+          "text": "import {calculate} from '@/lib/newdoor-portfolio-model.mjs';"
+        }
+      ]
+    },
+    {
+      "path": "app/api/sf-newdoor-model/route.ts",
+      "relevantLines": [
+        {
+          "line": 1,
+          "text": "import model from '@/data/san-francisco/newdoor-health-cea-v1.json';import{supportiveHealthModel}from'@/lib/supportive-health-model.mjs';export function GET(){return Response.json({...model,evaluatedScenarios:model.scenarios.map(s=>({...s,...supportiveHealthModel(s)}))});}"
+        }
+      ]
+    },
+    {
+      "path": "lib/research-cost-ranking.mjs",
+      "relevantLines": [
+        {
+          "line": 37,
+          "text": "import newdoor from '../data/san-francisco/newdoor-portfolio-v1.json' with {type:'json'};"
+        },
+        {
+          "line": 38,
+          "text": "import {calculate as newdoorPortfolioModel} from './newdoor-portfolio-model.mjs';"
+        },
+        {
+          "line": 73,
+          "text": "  ...registry.rows.filter(r=>!['new-door-ventures','glide','compass-family-services','hamilton-families','friends-of-the-urban-forest'].includes(r.slug)),"
+        },
+        {
+          "line": 78,
+          "text": "  scenarioRow('new-door-ventures',{organization:newdoor.organization,scenarios:newdoor.scenarios.map(s=>({...s,name:s.id}))},s=>({costPerTenQalys:newdoorPortfolioModel(s,newdoor.giftUsd).sfUsdPer10Qaly,bayCostPerTenQalys:newdoorPortfolioModel(s,newdoor.giftUsd).bayUsdPer10Qaly})),"
+        }
+      ]
+    },
+    {
+      "path": "lib/sf-research-index.ts",
+      "relevantLines": [
+        {
+          "line": 37,
+          "text": "  { organization: 'New Door Ventures', program: 'Whole-gift employment, education and career support', overview: 'All gift costs retained; short-term employment health quantified, wider opportunity benefits unquantified.', price: '$100,000', unit: 'hypothetical unrestricted gift', betterLifePrice: '', bridgeState: 'Conditional partial-health portfolio estimate', evidence: 'Audited whole-organization expenses; judgmental future allocation and health', detail: 'Central $508M/10 SF QALYs and $229M/10 Bay QALYs; local share and marginal use are priors, not a verified offer.', href: '/charities/new-door-ventures' },"
+        }
+      ]
+    },
+    {
+      "path": "data/research-expenses.json",
+      "relevantLines": [
+        {
+          "line": 1465,
+          "text": "    \"new-door-ventures\": {"
+        },
+        {
+          "line": 1466,
+          "text": "      \"entity\": \"New Door Ventures\","
+        }
+      ]
+    },
+    {
+      "path": "data/research-effort.json",
+      "relevantLines": []
+    },
+    {
+      "path": "data/report-summary-editorial.json",
+      "relevantLines": []
+    },
+    {
+      "path": "data/report-contents-map.json",
+      "relevantLines": []
+    },
+    {
+      "path": "e2e/sf-newdoor.spec.ts",
+      "relevantLines": [
+        {
+          "line": 1,
+          "text": "import{test,expect}from'@playwright/test';test('New Door separates whole-gift partial health from economic mobility',async({page,request})=>{await page.goto('/charities/new-door-ventures');await expect(page.getByRole('heading',{name:'New Door Ventures',exact:true})).toBeVisible();await expect(page.locator('body')).toContainText('$508 million');await expect(page.locator('body')).toContainText('entire unrestricted gift');const r=await request.get('/api/newdoor-portfolio-model');expect(r.ok()).toBeTruthy();const d=await r.json();expect(d.evaluated).toHaveLength(8);expect(d.evaluated[0].sfUsdPer10Qaly).toBeCloseTo(507936507.9365,2);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();});"
+        }
+      ]
+    }
+  ],
+  "releaseGates": [
+    "current model source/math and health-income independent acceptance",
+    "report/API/list SF and Bay price parity",
+    "preserved portfolio and earlier employment-only history",
+    "original legal-entity financial appendix",
+    "actual closed per-model provenance",
+    "six grouped contents and summary",
+    "phone/tablet rendering",
+    "verified Sites release and tracker"
+  ]
+}

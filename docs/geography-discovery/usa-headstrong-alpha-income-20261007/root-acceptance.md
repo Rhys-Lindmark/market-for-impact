@@ -1,0 +1,5 @@
+# Independent root acceptance
+
+Accepted scoped health-first resource assessment, not a complete combined valuation or proven90%health share. Root independently opened current official get-help/about;30cost-free sessions, unspecified extended copay,20–30min intake; selected/completer outcomes are not a work/resource counterfactual. Reconstructed central geometric clinical sum and $2,003,612.5376435877 reference, zeroadditionality. Author validator reconstructs all5 original clinical/cost worlds and exact diagnostic preservation. Existing illustrative $1000 nominal episode resource cost is numerator-only, never duplicated as a household denominator loss. Full signed burdens remain distinct from clinicalresponse; no inventedretailcare/survivorwages.
+
+Author56.778seconds + rootsource14.242 + rootmodel12.431 =83.451seconds. Conservatively reserve30seconds for preclock original metadata/formula lookup, not invented measuredprovenance: max113.451seconds under300. All researchclockclosed beforetesting/admin; GPT6.1Sol confirmed. Rootsoleintegration/publication; publicationcounts unchanged until liveQA.

@@ -1,0 +1,12 @@
+# Root acceptance — Tri City Health Partnership
+
+Accepted conditional alpha correction, pending release. Independent original-source audit in root-source-note.md reconciles FY2024 ScheduleD auditedexpense1,379,104 minus donatedservices/usefacilities441,010 to return938,094. Original IRS990 PartVIII netted event6552 is restored for grossannual cost1,385,656; no-addback and cashlike sensitivities remain separate. Accounting costs are not measured resource opportunity costs. PartIII580unique patients are not summed with3390medicalvisits/607dentalvisits/3546medications.
+
+Root independently reconstructs clinical health=.995*(580*.3*.05*.5-.01)=4.3183; signed resources=.5*.995*[139.2 ln(20025/20000)+324.8 ln(19975/20000)]=-.1156004040. Current10-unitprice13,856,560/4.2026995960=$3,297,061.72985, versus original$8,003,558.01998. Main change removes extra giftfinancing.4 factor from annual-work boundary. This is not empirical proof of clinical improvement or a next-gift offer.
+
+Financial protection is independently additional to clinical response, householdgrouping applies only resources. Conditionalcash100/baseline20000/accesscost25 are explicit hypotheses after alternatives, not recipient controlled outcomes or retail donatedcare. Allnegative access costs persist; positive-only overlap does not discard losses. Earnings0 central is stated uncertainty/judgment with positive and negative network scenarios. Distinctprovider/payer sensitivities do not doublecount donatedresources already inC. Income equivalents are welfare comparators, not measured clinicalQALYs.
+
+Current eligibility permits live OR WORK in CentralKaneCounty; .995 residence share remains judgment, not measuredlocal share. Original Oregon lottery Table4 financialprotection is mechanisms evidence with major freeclinic/population transport limits, not a direct TriCity saving coefficient. Unquantified dental/prevention/otherportfolio effects and true resource opportunity cost remain unknown; chosen morbidityreference is not a bound.
+
+222portablechecks/36cases and actual production schema in memory pass. Root separately reconstructs central values, checks negativefinancial/no-cash and unknownresource nullprice, deepcompares complete originalreport/fiveworlddiagnostic. Alpha/HOLD and counts unchanged. Author86.809s/root82.904s actual GPT-6.1Sol intervals are closed; metadata/tests/integration excluded and historical coverage partial. Noworker/researchclocklive. Rootaloneintegration/publication follows; do not claim publication before native and both-host checks.
+

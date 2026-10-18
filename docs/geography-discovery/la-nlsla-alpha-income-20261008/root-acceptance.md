@@ -1,0 +1,9 @@
+# Independent NLSLA initial-income assessment
+
+Root independently opened healthcare/tenant services and December2025 priorities, plus original2024 Form990 hosted by NLSLA, ScheduleO pages44–45. The return reports over1million client debt relief and over80000 badmedicaldebt recovered; closedhealth1893 and benefits1162 are cases, not successful unique cash households. District1 relief pays providers directly. Debt face value is not actual collections avoided; recovery wording does not establish household refund recipients or disjointness from relief.
+
+One material correction removes the additive diagnostic pool. Collection-relief and refund-recovery now remain separate positive one-time sensitivities with null combined pool and welfare equivalence; no annual recurrence, no clinical-success multiplier, no arbitrary baseline. Full household travel/hearing/work/time costs, taxes/benefits, alternative payments, finite timing and public/provider financing still require independent incidence. Signed central targetedunknown is accepted, not zero income and not complete portfolio welfare. MissingRCT is not the reason. Five original clinical worlds preserved; root calculator inspection matches health2.1462330097087383 and clinicalprice193497811.33799565 from annualcost41529139.
+
+Actual closed author69.003sec; root source/model/review separately recorded. Author disclosed10sec conservative untimed correction planning allowance, retained separately rather than forged intervals. Combined actual plus conservative allowance remains below300sec initial cap. Portable/schema tests and publication separate administrative gates.
+
+Sources: https://nlsla.org/services/healthcare/ ; https://nlsla.org/services/housing/tenant-services/ ; https://nlsla.org/wp-content/uploads/2025/12/December-2025-Review-of-Priorities.pdf ; https://nlsla.org/wp-content/uploads/2025/11/2024-Form-990.pdf . ProPublica ScheduleO URL retrieval failed, original recipient PDF succeeded.

@@ -1,3 +1,4 @@
+import {impactNode} from '@/components/ImpactMetric';
 import type {Metadata} from 'next';
 import CharityResearchReport,{type CharityReportContent} from '@/components/CharityResearchReport';
 import model from '@/data/san-francisco/lyon-earlier-care-cea-v1.json';
@@ -15,4 +16,4 @@ const content:CharityReportContent={
  evidence:[{key:'rct',design:'Randomized secondary analysis; Australia',population:'64 adults enrolled; 62 completed, 31 per arm',result:'Baseline-adjusted EQ-5D-5L difference 0.07 at three months; reported 95% CI −0.07 to 0.21, nonsignificant.',transfer:'Open-label, short follow-up and UK utility tariff. EQ-VAS is not preference-based utility; symptom changes are not deaths prevented. Published interval and P value are retained without deriving a probability distribution.'}],
  reservations:['Local wait duration and accelerated-start count are unknown.','Cost and additionality are judgments, not observed Lyon-Martin economics.','The utility interval includes harm; positive scenarios alone do not establish effectiveness.','No long-term or mortality benefit is credited.'],excludedBenefits:model.excluded,sources:model.sources,
 };
-export default function LyonMartinReport(){return <CharityResearchReport content={content}/>;}
+export default function LyonMartinReport(){return impactNode(<CharityResearchReport content={content}/>);}

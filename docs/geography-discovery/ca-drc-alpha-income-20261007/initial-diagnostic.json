@@ -1,0 +1,48 @@
+{
+  "originalVersion": "ca-drc-conditional-individual-health-access-v2",
+  "originalScenarios": [
+    {
+      "id": "central",
+      "label": "Conditional individual care-access health channel, not portfolio return",
+      "costUSD": 100000,
+      "allPopulationQalys": 0.015428615622571185,
+      "editionQalys": 0.015428615622571185,
+      "assumptions": "E=46894183, R=22297, d=0.6, h=0.15, m=0.5, a=0.25, du=0.02, s=0.5, T=2, r=0.03, H=0. All recipient costs retained; unmodeled pathways are excluded, not assumed valueless."
+    },
+    {
+      "id": "favorable",
+      "label": "Favorable partial-channel stress test",
+      "costUSD": 100000,
+      "allPopulationQalys": 1.977572769106161,
+      "editionQalys": 1.977572769106161,
+      "assumptions": "E=46894183, R=22297, d=0.8, h=0.3, m=1, a=0.75, du=0.1, s=0.8, T=3, r=0.03, H=0. All recipient costs retained; unmodeled pathways are excluded, not assumed valueless."
+    },
+    {
+      "id": "pessimistic",
+      "label": "Low additionality and small health change",
+      "costUSD": 100000,
+      "allPopulationQalys": 0.000002769755832897311,
+      "editionQalys": 0.000002769755832897311,
+      "assumptions": "E=46894183, R=22297, d=0.3, h=0.02, m=0.1, a=0.05, du=0.002, s=0, T=1, r=0.03, H=0. All recipient costs retained; unmodeled pathways are excluded, not assumed valueless."
+    },
+    {
+      "id": "zero",
+      "label": "No incremental health benefit",
+      "costUSD": 100000,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "assumptions": "E=46894183, R=22297, d=0.6, h=0.15, m=0, a=0.25, du=0.02, s=0.5, T=2, r=0.03, H=0. All recipient costs retained; unmodeled pathways are excluded, not assumed valueless."
+    },
+    {
+      "id": "harm",
+      "label": "Possible net harm",
+      "costUSD": 100000,
+      "allPopulationQalys": -0.004571384377428815,
+      "editionQalys": -0.004571384377428815,
+      "assumptions": "E=46894183, R=22297, d=0.6, h=0.15, m=0.5, a=0.25, du=0.02, s=0.5, T=2, r=0.03, H=0.02. All recipient costs retained; unmodeled pathways are excluded, not assumed valueless."
+    }
+  ],
+  "originalReport": "fulloriginal-report.json",
+  "healthCoefficientsUnchanged": true,
+  "originalPrice10": 64814629.1581117
+}

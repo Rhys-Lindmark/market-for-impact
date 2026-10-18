@@ -1,3 +1,4 @@
+import {impactNode} from '@/components/ImpactMetric';
 import type { Metadata } from 'next';
 import CharityResearchReport, { type CharityReportContent } from '@/components/CharityResearchReport';
 import review from '@/data/san-francisco/institute-on-aging-review-v1.json';
@@ -83,5 +84,5 @@ const content: CharityReportContent = {
 };
 
 export default function InstituteOnAgingResearchPage() {
-  return <CharityResearchReport content={content} />;
+  return impactNode(<CharityResearchReport content={content} />);
 }

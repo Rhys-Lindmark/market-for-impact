@@ -1,11 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-const d=JSON.parse(fs.readFileSync(new URL('../data/geography-reports.json',import.meta.url)));
-test('HRS beta23 scenarios preserve finite survival and added resource costs',()=>{
-const r=d.reports.find(r=>r.edition==='california'&&r.slug==='harm-reduction-services');
-assert.equal(r.model.scenarios.length,23);
-for(const s of r.model.scenarios){
+const model=JSON.parse(fs.readFileSync(new URL('../data/california/hrs-ca-pre-recalibration-model.json',import.meta.url)));
+test('HRS frozen prior23 scenarios preserve finite survival and added resource costs',()=>{
+assert.equal(model.scenarios.length,23);
+for(const s of model.scenarios){
  const p=JSON.parse(s.assumptions.slice(0,s.assumptions.indexOf('}')+1));
  const A=(k,z)=>Math.abs(k)<1e-12?z:-Math.expm1(-k*z)/k;
  const h=p.lambda+p.mu,H=Math.max(0,p.T-p.delay),b=Math.min(p.tau,H),N=Math.min(p.C/p.E*p.Y*p.d*p.m*p.x*p.network,p.K);

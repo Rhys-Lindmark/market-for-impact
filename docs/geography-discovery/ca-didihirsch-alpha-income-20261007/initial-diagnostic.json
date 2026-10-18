@@ -1,0 +1,65 @@
+{
+  "originalReport": "original-report.json",
+  "originalVersion": "ca-didi-depression-component-v2",
+  "originalScenarios": [
+    {
+      "id": "central",
+      "label": "Conditional depression component, not whole portfolio",
+      "costUSD": 80043834,
+      "allPopulationQalys": 3.6510990291262138,
+      "editionQalys": 3.6145880388349516,
+      "assumptions": "N=5498,s=.6,p=.32,e=.5,q=.057,t=.5,b=.25,gCA=.99,d=.03,H=0. A continuation-scale proportional funding model, not a claim that all existing patients depend on a new gift."
+    },
+    {
+      "id": "low",
+      "label": "Weak component delivery and funding response",
+      "costUSD": 80043834,
+      "allPopulationQalys": 0.014604396116504853,
+      "editionQalys": 0.013874176310679609,
+      "assumptions": "s=.3,e=.1,t=.1,b=.05,gCA=.95; other positive-case inputs unchanged."
+    },
+    {
+      "id": "high",
+      "label": "Favorable component assumptions",
+      "costUSD": 80043834,
+      "allPopulationQalys": 46.73406757281555,
+      "editionQalys": 46.73406757281555,
+      "assumptions": "s=.8,e=.8,t=1,b=.75,gCA=1; not a confidence bound."
+    },
+    {
+      "id": "gross-form990-cost",
+      "label": "Component excluding donated-service valuation",
+      "costUSD": 79560968,
+      "allPopulationQalys": 3.6510990291262138,
+      "editionQalys": 3.6145880388349516,
+      "assumptions": "Same clinical assumptions; use gross Form 990 accrual expense, not cash flows."
+    },
+    {
+      "id": "zero",
+      "label": "No additional component health",
+      "costUSD": 80043834,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "assumptions": "b=0 or t=0,H=0; other portfolio value is not implied zero."
+    },
+    {
+      "id": "adverse",
+      "label": "Illustrative adverse component",
+      "costUSD": 80043834,
+      "allPopulationQalys": -1,
+      "editionQalys": -1,
+      "assumptions": "No benefit and H=1 California QALY; magnitude is a stress test, not an empirical harm estimate."
+    },
+    {
+      "id": "portfolio-unknown",
+      "label": "Whole-portfolio health remains unestimated",
+      "costUSD": 80043834,
+      "allPopulationQalys": null,
+      "editionQalys": null,
+      "assumptions": "Q_other_CA is unknown; do not substitute the component price for a full-recipient ranking."
+    }
+  ],
+  "originalPrice10": 221446629.98940152,
+  "clinicalCoefficientsUnchanged": true,
+  "authorSeconds": 88.882
+}

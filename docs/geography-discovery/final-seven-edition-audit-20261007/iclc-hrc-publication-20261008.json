@@ -1,0 +1,76 @@
+{
+  "verifiedAt": "2026-10-08T01:46:47.320Z",
+  "source": {
+    "project_id": "appgprj_6a938448e31c81918e35da08d93d95fd",
+    "checkout_path": "/Users/rhyslindmark/Documents/Codex/2026-08-29/okay-you-re-gonna-make-this/work/market-for-impact-california-six-surgery-beta",
+    "commit_sha": "7aed93dca9d77ccaa89026af99dde139b8ca1c73",
+    "archive": "/Users/rhyslindmark/Documents/Codex/2026-08-29/okay-you-re-gonna-make-this/work/final-seven-edition-audit-20261007/iclc-hrc-deploy.tar.gz"
+  },
+  "version": {
+    "id": "appgprj_6a938448e31c81918e35da08d93d95fd~appgver_60eee5ff638c8191a4cb4e647a9762ac",
+    "project_id": "appgprj_6a938448e31c81918e35da08d93d95fd",
+    "version_number": 510,
+    "source": {
+      "commit_sha": "7aed93dca9d77ccaa89026af99dde139b8ca1c73"
+    },
+    "archive_storage": {
+      "archive_format": "tar",
+      "sediment_file_id": "file_000000003d808230b1ee205c73e696ba",
+      "content_hash": "sha256:3e6bc4da5c1189dab612d4f9ea4994c016cd1c0d7fbdf650a9f5f5d33d8929e5",
+      "size_bytes": 45813760,
+      "file_count": 605
+    },
+    "screenshot_url": null,
+    "deployment_id": null
+  },
+  "deployment": {
+    "id": "appgdep_6ac6f5ce2cdc81919786901fe6e49202",
+    "project_id": "appgprj_6a938448e31c81918e35da08d93d95fd",
+    "title": "Market for Impact",
+    "version_id": "appgprj_6a938448e31c81918e35da08d93d95fd~appgver_60eee5ff638c8191a4cb4e647a9762ac",
+    "type": "publish",
+    "status": "succeeded",
+    "url": "https://market-for-impact.rhyslindmark.chatgpt.site",
+    "has_mcp": false,
+    "screenshot_asset_pointer": null,
+    "provider_deployment_id": "site---6a938448e31c81918e35da08d93d95fd",
+    "failure_message": null,
+    "env_set_revision": 0,
+    "updated_at": "2026-10-08T01:46:03.649746+00:00"
+  },
+  "focusedTests": 72,
+  "unrelatedReportsUnchanged": 181,
+  "live": {
+    "chunk_id": "9bc650",
+    "wall_time_seconds": 1.002071375,
+    "session_id": 6521,
+    "original_token_count": 0,
+    "output": ""
+  },
+  "firstLiveFailure": {
+    "chunk_id": "74f6d8",
+    "wall_time_seconds": 0.000006291,
+    "exit_code": 1,
+    "original_token_count": 474,
+    "output": "file:///Users/rhyslindmark/Documents/Codex/2026-08-29/okay-you-re-gonna-make-this/work/final-seven-edition-audit-20261007/iclc-hrc-live.mjs:24\n const api=await Promise.all(bases.flatMap(base=>cases.map(async c=>{const res=await fetch(base+'/api/geography-reports/'+c.edition+'/'+c.slug,{signal:AbortSignal.timeout(25000)});assert.equal(res.status,200);const r=await res.json();if(c.price===null)assert.equal(reportPrice(r),null);else assert(Math.abs(reportPrice(r)-c.price)<1e-6);assert.equal(r.acceptance.status,'accepted');assert(r.acceptance.evidence.endsWith('/root-acceptance.md'));if(c.unknown)assert.equal(r.model.incomeAssessment.status,'assessed-unknown');else assert(r.model.scenarios.find(s=>s.id==='central').incomePathways.length>0);const unknown=r.model.scenarios.find(s=>s.id==='combined-income-unknown');if(unknown)assert.equal(unknown.incomeUnknown,true);else assert.equal(r.model.scenarios.find(s=>s.id==='central').editionQalys,null);return{base,slug:c.slug,price:reportPrice(r),pass:true};})));\n                                                                                                                                                                                                                                                                                                                                                                           ^\n\nTypeError: Cannot read properties of undefined (reading 'status')\n    at file:///Users/rhyslindmark/Documents/Codex/2026-08-29/okay-you-re-gonna-make-this/work/final-seven-edition-audit-20261007/iclc-hrc-live.mjs:24:364\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async Promise.all (index 2)\n    at async file:///Users/rhyslindmark/Documents/Codex/2026-08-29/okay-you-re-gonna-make-this/work/final-seven-edition-audit-20261007/iclc-hrc-live.mjs:24:12\n\nNode.js v24.18.0\n"
+  },
+  "allSeven": {
+    "chunk_id": "680c33",
+    "wall_time_seconds": 0.000004959,
+    "exit_code": 0,
+    "original_token_count": 415,
+    "output": "{\"verifiedAt\":\"2026-10-08T01:46:22.225Z\",\"checks\":14,\"results\":[{\"base\":\"https://ai.rhyslindmark.com/givebetter\",\"id\":\"california\",\"reportRows\":25,\"featured\":4,\"pass\":true},{\"base\":\"https://ai.rhyslindmark.com/givebetter\",\"id\":\"usa\",\"reportRows\":28,\"featured\":4,\"pass\":true},{\"base\":\"https://ai.rhyslindmark.com/givebetter\",\"id\":\"new-york-city\",\"reportRows\":25,\"featured\":4,\"pass\":true},{\"base\":\"https://ai.rhyslindmark.com/givebetter\",\"id\":\"los-angeles\",\"reportRows\":25,\"featured\":4,\"pass\":true},{\"base\":\"https://ai.rhyslindmark.com/givebetter\",\"id\":\"chicago\",\"reportRows\":25,\"featured\":4,\"pass\":true},{\"base\":\"https://ai.rhyslindmark.com/givebetter\",\"id\":\"houston\",\"reportRows\":25,\"featured\":4,\"pass\":true},{\"base\":\"https://ai.rhyslindmark.com/givebetter\",\"id\":\"denver\",\"reportRows\":25,\"featured\":4,\"pass\":true},{\"base\":\"https://market-for-impact.rhyslindmark.chatgpt.site\",\"id\":\"california\",\"reportRows\":25,\"featured\":4,\"pass\":true},{\"base\":\"https://market-for-impact.rhyslindmark.chatgpt.site\",\"id\":\"usa\",\"reportRows\":28,\"featured\":4,\"pass\":true},{\"base\":\"https://market-for-impact.rhyslindmark.chatgpt.site\",\"id\":\"new-york-city\",\"reportRows\":25,\"featured\":4,\"pass\":true},{\"base\":\"https://market-for-impact.rhyslindmark.chatgpt.site\",\"id\":\"los-angeles\",\"reportRows\":25,\"featured\":4,\"pass\":true},{\"base\":\"https://market-for-impact.rhyslindmark.chatgpt.site\",\"id\":\"chicago\",\"reportRows\":25,\"featured\":4,\"pass\":true},{\"base\":\"https://market-for-impact.rhyslindmark.chatgpt.site\",\"id\":\"houston\",\"reportRows\":25,\"featured\":4,\"pass\":true},{\"base\":\"https://market-for-impact.rhyslindmark.chatgpt.site\",\"id\":\"denver\",\"reportRows\":25,\"featured\":4,\"pass\":true}]}\n"
+  },
+  "responsive": {
+    "chunk_id": "93b94a",
+    "wall_time_seconds": 0.000008167,
+    "exit_code": 0,
+    "original_token_count": 151,
+    "output": "{\"verifiedAt\":\"2026-10-08T01:46:25.240Z\",\"checks\":8,\"results\":[{\"width\":390,\"path\":\"/all\",\"pass\":true},{\"width\":390,\"path\":\"/los-angeles/all\",\"pass\":true},{\"width\":390,\"path\":\"/los-angeles/charities/inner-city-law-center\",\"pass\":true},{\"width\":390,\"path\":\"/los-angeles/charities/housing-rights-center\",\"pass\":true},{\"width\":768,\"path\":\"/all\",\"pass\":true},{\"width\":768,\"path\":\"/los-angeles/all\",\"pass\":true},{\"width\":768,\"path\":\"/los-angeles/charities/inner-city-law-center\",\"pass\":true},{\"width\":768,\"path\":\"/los-angeles/charities/housing-rights-center\",\"pass\":true}],\"structuredBrowserTeardown\":true}\n"
+  },
+  "research": {
+    "iclcSeconds": 163.914,
+    "hrcSeconds": 140.956
+  },
+  "next": "Sites510 published and verified 2026-10-08T01:46:47.320Z; source7aed93dca9d77ccaa89026af99dde139b8ca1c73.56 published assessment dispositions=24 numerical amendments+32 assessed-unknown scopes, not56 complete joint valuations.13olderinitials remain. CA15/15,USA14/15,NYC14/15,LA4/15. ICLC conditional131158894.73275024→21459462.002290174 with2.4975728155339807clinicalQALYs+12.767436622495753signedresource-equivalents anchored to20.545Mreportedrecoveries, allconversion/baseline/burdenjudgments explicit and ordinary-gift expectedvalueunknown. Sixoriginalworlds and13newresourceworlds retained, fullnegativecosts onallresponsivehouseholds. HRC94665647.34469165clinical referenceunchanged/6worlds; ESAfee andrental/utilityresources targetedunknown, outsideVentura settlementnotcredited, inconsistentgrantfieldnotretainedcash. CombinedresearchICLC163.914sec/HRC140.956sec within300initialcap.72focusedtests,181unrelatedreportsunchanged,8bothhostHTML+4exactAPI,14allsevenprices/top4,8phone/tabletchecks passed; browserclosed. FirstAPItest assumedtop-levelacceptance notinpublicAPI projection; correctedtest toactualpublicmodelshape, rerunpassed,no productchange/redeploy. Credentialexpired renewedbeforebuild; firstHRCdurablecopyoutputtruncated beforemutation, per-filecopy succeeded. FRAC/VOCAL-NY heldwithoutnewallowance. NextLA targeted Downtown Women's Center thenIllumination Health+Home; remainingoriginalmateriality4targeted/5conditional/4health-first. Usage92%remaining20%floor/resetsuntouched. Noactiveauthor/science/helper/browserhandles. Sevenactive/fourdeferredscope; goalincomplete. Previousturnclassifiedprogress:Sites509verifiedpublication. Lidbaseline01:33:15Z remains; actualSites509 and510verifiedafterbaseline, no inference oflidstate."
+}

@@ -1,0 +1,9 @@
+# Denver Bicycle Colorado / Thriving Families initial packet
+
+Frozen author proposal, pending root independent acceptance. Both full initial report diagnostics preserved byte-identical to their first report drafts; portable calculators and scenario overrides reproduce signed health/income components.
+
+Bicycle: FY2025 full annual $1,545,869; conditional delayed transport-policy health 1.5343857852 and signed resource welfare 0.2789515791 = 1.8133373643 equivalent years; $8,524,993.92 per ten combined years. A hypothetical 5,000 residents is not observed infrastructure delivery; participation burden cohort50 is separate. Regulatory permissions do not imply implemented safety. Whole annual cost includes statewide work/DBA Denver Streets Partnership; program-cost sensitivities are not gift prices. Donation intake not validated, so null.
+
+Thriving: FY2024 full annual $1,929,744; hypothetical prevention channel health 0.3720554965 and signed resources −0.0388752848 = 0.3331802117; $57,918,925.91. Historical FY2023 enrolled567 participants are not unique completed2024 families. Original ROSE RCT six-month15-point depression risk difference informs only a judged compatible subgroup; current local LaLuz format/coverage differs. Utility, completion, additionality and resources remain judgments. Other preterm/counseling effects unknown; no marketing55% used.
+
+Read bicycle-evidence.md and thriving-evidence.md for source boundaries. receipts.json records successful retrievals and blocked claims. selftest.mjs passes449 checks/73 cases, including clinical-null, full failures, truezero, positive-only overlap, distinct payer incidence, adverse resources and policy same-period netting. schema.mjs validates prospective reports/sessions/progress in memory against actual production registry. Author closed intervals147.920sec and214.322sec are partial, not padded five-minute claims. No checkout, Git, Sites, dependency or process writes.

@@ -1,0 +1,28 @@
+{
+  "status": "Arithmetic-only interim review; scientific acceptance pending",
+  "scope": "One conditional donor support comparison, not measured patient response or donation capacity",
+  "centralIndependentCheck": {
+    "offeredPatientEquivalents": 1.1536379229794893,
+    "effectiveNewCare": 0.46145516919179574,
+    "physicalResponders": 0.07825847898574315,
+    "mentalResponders": 0.03508138713154003,
+    "health": 0.0037604600563497527,
+    "combined": 0.0034029339116723387,
+    "donorPricePerBetterLife": 29386406.728908814
+  },
+  "formula": "Independently compute offered=gift/cashLikeCost*patients*funding; new=offered*completion*(1-purchasers-otherFree); physical and mental assigned disjoint observed count shares; health=(physical*physicalUtility*.75+mental*mentalUtility*1-new*treatmentHarm-offered*offerHarm)/(1+discount)^.5. No mortality or lifetime earnings bonus.",
+  "passedSafeguards": [
+    "own-key rejection",
+    "unknown reach is not zero",
+    "genuine zero gift/funding",
+    "known absent pay routes",
+    "raw-pay versus cash-baseline knowledge separation"
+  ],
+  "signedLedgerVerification": "All 24 candidate cases independently checked against shared incomeHealthyYearEquivalent; known ledgers sum to resourcesNYC within 1e-12, unknown resource aggregates return null ledger. Representation verification only, not source-rationale acceptance.",
+  "pending": [
+    "Full source rationale review",
+    "Independent scientific reviewer",
+    "Integration and publication"
+  ],
+  "researchTimeCredited": 0
+}

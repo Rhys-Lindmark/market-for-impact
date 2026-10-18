@@ -1,3 +1,4 @@
+import {impactNode} from '@/components/ImpactMetric';
 import CharityResearchReport,{type CharityReportContent} from './CharityResearchReport';
 import notes from '@/data/international/calibration-v2-notes.json';
 import {calculate,scenarios,data} from '@/lib/harmonized-calibration.mjs';
@@ -32,5 +33,5 @@ export default function CalibratedGlobalReport({id,legacy}:{id:'amf'|'ni';legacy
  excludedBenefits:['No additional morbidity, income or education multiplier is added to this mortality calibration.','No direct SF/Bay health is credited; unknown indirect effects are not assumed impossible.'],
  sources:[...legacy.sources,...notes.sources.map(s=>({publisher:'GiveWell',title:s.title,url:s.url,published:'Mixed-vintage technical analysis; see linked source and model',retrieved:'8 September 2026',sourceType:'Primary evaluator analysis; independent QALY conversion'}))]
  };
- return <CharityResearchReport content={content}/>;
+ return impactNode(<CharityResearchReport content={content}/>);
 }

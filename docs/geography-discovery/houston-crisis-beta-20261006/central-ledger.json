@@ -1,0 +1,77 @@
+{
+  "inputs": {
+    "C": 181993,
+    "N": 35812,
+    "clinicalN": 35812,
+    "clinicalResponse": 0.3,
+    "unique": 0.2,
+    "b": 0.15,
+    "q": 0.02,
+    "T": 0.02,
+    "g": 0.9,
+    "delay": 0.01,
+    "discount": 0.03,
+    "success": 0.05,
+    "medicalGain": 0,
+    "workGain": 100,
+    "transferGain": 0,
+    "overlap": 0.5,
+    "cost": 2,
+    "baseline": 20000,
+    "harm": 0.00001,
+    "payerLoss": 0,
+    "payerPeople": 100,
+    "payerBaseline": 50000,
+    "externalCost": 0,
+    "resourceYears": 1
+  },
+  "costUSD": 181993,
+  "exposed": 7162.400000000001,
+  "union": 1074.3600000000001,
+  "clinicalPeople": 322.30800000000005,
+  "allPopulationQalys": 0.05728226554572026,
+  "editionQalys": 0.051554038991148236,
+  "incomePathways": [
+    {
+      "id": "changed-households",
+      "people": 53.71800000000001,
+      "annualIncomeBeforeUSD": 20000,
+      "annualIncomeGainUSD": 48,
+      "years": 1,
+      "editionShare": 0.9,
+      "delayYears": 0.01,
+      "discountRate": 0.03,
+      "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+      "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+      "sourceIds": [
+        "services",
+        "finance",
+        "cg-cost"
+      ]
+    },
+    {
+      "id": "other-exposed",
+      "people": 7108.682000000001,
+      "annualIncomeBeforeUSD": 20000,
+      "annualIncomeGainUSD": -2,
+      "years": 1,
+      "editionShare": 0.9,
+      "delayYears": 0.01,
+      "discountRate": 0.03,
+      "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+      "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+      "sourceIds": [
+        "services",
+        "finance",
+        "cg-cost"
+      ]
+    }
+  ],
+  "incomeEquivalent": -0.26188333192136937,
+  "incomeUnknown": false,
+  "totalEquivalent": -0.21032929293022112,
+  "price10": null,
+  "costPer10Qalys": null,
+  "incomeEquivalentYears": -0.26188333192136937,
+  "combinedEquivalentYears": -0.21032929293022112
+}

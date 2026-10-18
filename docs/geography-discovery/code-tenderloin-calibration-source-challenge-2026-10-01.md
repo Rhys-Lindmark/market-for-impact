@@ -1,0 +1,40 @@
+# Code Tenderloin: independent source and boundary challenge
+
+October 1, 2026. Source phase, not model/publication acceptance. The frozen engine, report and current rank were inspected; a new model has not yet been accepted. The prior published model counts only a prospective peer overdose-response channel of a general gift. It is not a complete estimate of employment and other community benefits.
+
+## Current operations and employment evidence
+
+The [official ambassador page](https://www.codetenderloin.org/community-ambassador-program) currently describes paid on-the-job training at about $27/hour, case-manager and career-counselor support, and assistance during drug-related health emergencies. This establishes a real paid-work mechanism, not actual paid weekly hours, tenure, unique job count, counterfactual wages or causal long-run earnings. Reported progression into other jobs must not be treated as an experimental placement effect. Ordinary staff payroll is not automatically an incremental household gain.
+
+The [community health worker page](https://www.codetenderloin.org/community-health-worker-1) describes a twelve-week certificate with 90 instruction hours and paid internships after graduation. Instruction hours are not paid job hours or internship tenure. The [current homepage](https://www.codetenderloin.org/) and [Bridge to Stability instructions](https://www.codetenderloin.org/btsintake) support ongoing barrier-removal, housing and employment services; they do not establish a priced additional tranche or a causal income/health coefficient. The annual-report landing page offers a 2024 report through Issuu; that external document failed native browser retrieval in this check. Do not claim its detailed contents were independently verified here.
+
+## Identity and accounting
+
+The [current IRS-derived index](https://projects.propublica.org/nonprofits/organizations/933030657) names Code Tenderloin Inc, EIN 93-3030657, and exemption beginning July 2024, but supplies no standalone financial return data in this retrieval. Index absence does not prove nonfiling, zero expense or inactivity. Former sponsor Center for New Music is a different legal entity. Its total accounts, or a named Code project line, can provide dated historical context but cannot become a three-year standalone Code expense mean. Current city contracting, fiscal sponsorship transfers and restrictions require explicit reconciliation.
+
+## Separate the two outcome ledgers without spending the gift twice
+
+Paid peer hours may simultaneously support response for a reached population and temporary net resources for workers. The same funded hours can enter both mechanisms, but the same gift must not be separately spent a second time on invented jobs. Worker income and reached-person survival involve distinct recipients; any additional worker mental-health or financial-distress benefit needs an explicit nonoverlap argument. Household welfare requires net wages relative to alternative work, taxes, benefit withdrawal and work costs, plus a stated resource baseline and finite exposure window. Log-resource welfare depends on distribution across people, not just total payroll dollars. One-off assistance, temporary wages and durable postprogram earnings must use their actual different timing; unidentified later earnings are not proven zero, but cannot be assigned measured positive values.
+
+## Clinical and counterfactual boundaries
+
+The old peer engine reduces overdose hazard only during one service year, then lets both groups face the same recurrent-overdose and competing hazards. Its finite survival-curve difference avoids awarding a fresh lifetime for each reversal. New source evidence can challenge hazards, response coverage and duration; absence of such evidence is not a reason to invent an updated causal effect. Keep residual existing rescue coverage separate from funding response, and assign the same rescue episode to a combined portfolio once. Service/calendar lag, signed harms and no-additional-funding cases require independent tests.
+
+An applicant or worker burden can persist after unsuccessful extra activity if that exposure was gift-induced. Unchanged baseline pickup, training or payroll must not be charged to the donor as a new harm. Geographic shares for health and income must be independently adjustable and nested, with SF included within Bay rather than added to it. Donor cost must remain unchanged when geographic attribution shrinks. No probability weights or favorable-only price should substitute for the central transparent judgment.
+
+## Provenance and handoff
+
+### New sponsor original and independent arithmetic
+
+The native web reader could not open the new original return, so the root fetched the exact [FY2025 sponsor Form 990](https://projects.propublica.org/nonprofits/full_text/202622259349300932/IRS990) directly. HTTP200; 521,050 bytes; SHA-256 `561fdd9849638b837e2acf615c661defe151bb7b7e9ea779f6154e617964f894`, matching the implementer's receipt. Current-year sponsor revenue $3,860,429, expense $4,184,831, assets $1,222,002, liabilities $650,823 and net assets $571,179 are distinct from the prior-year comparison column. Part III names Code Tenderloin with $3,841,331 project expense and $12,075 program revenue. The program revenue line is not allocated contribution revenue or total independent Code income. The original is signed August 13, 2026. Sponsor assets and liabilities are not Code's current unrestricted balance sheet.
+
+Root independently recomputed the candidate paid-hours income bridge before viewing a new implementation: existing clinical all-US years 0.564257250864699; funded peer hours 416.6667; 50% additional hours 208.3333; assumed 1,000 paid hours per worker-year gives 0.208333 worker-year equivalents. Net hourly increment is $27 × .8 − $10 × .8 − $3 benefit offset − $2 work cost = $8.60. With an assumed $25,000 annual resource baseline and a one-year window, 0.208333 × .5 × ln(1 + 8,600 / 25,000) / 1.03^.75 = 0.030121672852722974 income-equivalent years. The .75-year midpoint includes a .25-year start lag once. Income and job-window values other than the advertised $27 wage are assumptions, not measured participant results. Combined all-US 0.594378923717422 gives $1,716,763.7050172826 per ten Bay years when both attribution shares are .98, or $1,869,364.923241041 per ten SF years with .90. This is independent arithmetic, not acceptance of the later model. Burden, negative net wage, shorter tenure and other incidence cases remain required.
+
+Dedicated root source-audit interval: 2026-10-01T20:51:06.203Z to 2026-10-01T20:52:38.407Z, 92.204 seconds, user-confirmed inherited GPT-6.1 Sol. Registry import occurs only with substantive integration. No idle, build, deployment or other-organization time is included. The source implementer continues its finite evidence/model proposal; root will challenge the actual new equations, not assume a required direction of price change. Current accepted checkpoint remains 11/40, with 29 published-cohort recalibrations remaining.
+
+The additional dedicated original-return and arithmetic check ran 2026-10-01T20:54:08.734Z to 2026-10-01T20:54:58.260Z, 49.526 seconds on the same user-confirmed model. It was closed before implementation or waiting.
+# Final source checks
+
+Root independently opened the current official About page: its undated 87% placement and 46% same-job-at-12-month claims have no causal comparison or verified current cohort denominator. They are not incremental-gift placement probabilities or measured paid tenure. The EIN agrees with current Code identity.
+
+Root directly fetched the Recreation and Parks announcement (HTTP200): posted February18,2026, updated February20, it identifies $500,000 for Code Tenderloin Inc’s workforce and wellness hub. This is a dated federal public-funding announcement, not a confirmed remaining private gap. Dedicated source-audit interval21:05:07.857–21:05:32.730UTC,24.873seconds; closed before integration/testing.

@@ -1,31 +1,32 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { researchCostRanking as rows } from '../lib/research-cost-ranking.mjs';
-import sfaf from '../data/san-francisco/sfaf-portfolio-model-v1.json' with {type:'json'};
-import phc from '../data/san-francisco/phc-portfolio-model-v1.json' with {type:'json'};
-import {calculate as sfafModel} from '../lib/sfaf-portfolio-model.mjs';
-import {calculate as phcModel,inputsFor} from '../lib/phc-portfolio-model.mjs';
+import {calculate as sfafModel,scenarios as sfafScenarios} from '../lib/sfaf-calibrated-model.mjs';
+import {calculate as phcModel,scenarios as phcScenarios} from '../lib/phc-calibrated-model.mjs';
+import {calculate as pvfModel,scenarios as pvfScenarios} from '../lib/pvf-calibrated-model.mjs';
 
-test('whole-gift positive ranges use every positive scenario, not the central value alone',()=>{
+test('current calibrated positive ranges use every positive scenario, not historical engines',()=>{
   for(const [slug,values] of [
-    ['san-francisco-aids-foundation',sfaf.scenarios.map(s=>sfafModel(s.inputs).sf.donor_per_10q)],
-    ['project-homeless-connect',phc.scenarios.map(s=>phcModel(inputsFor(phc,s)).donor_sf_per_10q)]
+    ['san-francisco-aids-foundation',sfafScenarios().map(s=>sfafModel(s.overrides).sfUsdPerBetterLife)],
+    ['project-homeless-connect',phcScenarios.map(s=>phcModel(s.inputs,s.resources).donor_sf_per_10q)]
   ]){
     const positive=values.filter(x=>Number.isFinite(x)&&x>0);
     assert.deepEqual(rows.find(r=>r.slug===slug).positiveEffectRangeUsd,{low:Math.min(...positive),high:Math.max(...positive)});
   }
 });
 
-test('all 50 SF reviews have unique, ascending central 10-QALY estimates', () => {
-  assert.equal(rows.length, 50);
-  assert.equal(new Set(rows.map(r => r.slug)).size, 50);
+test('all 51 SF ranking entries have unique, ascending conditional prices with nulls last', () => {
+  assert.equal(rows.length, 51);
+  assert.equal(new Set(rows.map(r => r.slug)).size, 51);
   rows.forEach((r, i) => {
     assert.ok(r.centralUsdPerTenQalys===null || (Number.isFinite(r.centralUsdPerTenQalys) && r.centralUsdPerTenQalys > 0));
     if (i) assert.ok((rows[i - 1].centralUsdPerTenQalys??Infinity) <= (r.centralUsdPerTenQalys??Infinity));
   });
-  assert.equal(rows.at(-1).slug,'north-east-medical-services');
-  assert.equal(rows.at(-1).centralUsdPerTenQalys,null);
-  assert.ok(Math.abs(rows.find(r=>r.slug==='pacific-vision-foundation').bayUsdPerTenQalys-7936507.936507935)<.000001);
-  assert.ok(Math.abs(rows.find(r=>r.slug==='san-francisco-aids-foundation').centralUsdPerTenQalys - 2018525) < 1);
-  assert.ok(Math.abs(rows.find(r=>r.slug==='project-homeless-connect').centralUsdPerTenQalys - 798863.340389) < .001);
+  assert.equal(rows.find(r=>r.slug==='north-east-medical-services').centralUsdPerTenQalys,null);
+  assert.equal(rows.find(r=>r.slug==='new-door-ventures').centralUsdPerTenQalys,null);
+  assert.equal(rows.find(r=>r.slug==='new-door-ventures').estimateStatus,'conditional-net-harm');
+  assert.equal(rows.find(r=>r.slug==='pacific-vision-foundation').bayUsdPerTenQalys,pvfModel(pvfScenarios.central).regions.bay.donorPrice10);
+  assert.equal(rows.find(r=>r.slug==='san-francisco-aids-foundation').centralUsdPerTenQalys,sfafModel(sfafScenarios().find(s=>/central/i.test(s.name)).overrides).sfUsdPerBetterLife);
+  const phcCenter=phcScenarios.find(s=>/central/i.test(s.name));
+  assert.equal(rows.find(r=>r.slug==='project-homeless-connect').centralUsdPerTenQalys,phcModel(phcCenter.inputs,phcCenter.resources).donor_sf_per_10q);
 });

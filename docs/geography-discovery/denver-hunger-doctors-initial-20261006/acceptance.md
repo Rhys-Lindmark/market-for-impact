@@ -1,0 +1,7 @@
+# Independently accepted Denver initial pair
+
+Hunger Free Colorado and Doctors Care accepted as initial reports, not deep reviews or features. Root checked fresh original IRS/current service/legal donor pages, independently reconstructed316quantities across77cases using direct discount/log equations, and reran478portablechecks. Health and signed net household resources counted once; full payer losses retained for public benefit transfers and burdens/harms retained on all exposed households. Conditional partial-service annual references, not full-portfolio empirical EV or marginal donation prices.
+
+HungerFY2025full5,030,480 includes22,889netted events; HFC-plus-partner17,357applicationhouseholds notuniqueapproved/HFConly. Price4,716,794.06568761. DoctorsFY2025full3,393,823 and2,569clinicclients;7,920visits/898coverageclients/6,000touchpointsnotadded. Currentage64/fees reflected. Price9,780,164.58941876. IncomepositiveforHunger,negativeforDoctors afterfullpatientcopay/time assumptions. Unknown causal coefficients explicitjudgments, not calibrated clinical data.
+
+Root corrected currentC/Ninput evidence metadata: originalobserved financial/nativeenvelopes separated from judgment household conversion/additionality/utility. Full frozeninitialdiagnostics/models unchanged; numericcurrentinputs/results unchanged. Author corrected Doctors misleadingscenario label only. Actual closed partialauthor/rootclocks retained; additional untimed checks/tests/integration/release not inferred.

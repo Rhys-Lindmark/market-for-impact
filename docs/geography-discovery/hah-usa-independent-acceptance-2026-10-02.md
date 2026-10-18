@@ -1,0 +1,37 @@
+# Help America Hear — independent USA acceptance
+
+Conditional ACCEPT as a partial planning forecast, with one required public counterfactual clarification below. No numerical/domain blocker identified. Untimed read-only packet review and finite Node24 calculation, not new organization research or donor-readiness approval.
+
+## Independent arithmetic and cases
+
+Annual work fraction `10000/303522` = **.03294654094266643**; manufacturer midpoint125 aids /2 gives **62.5 potential paired opportunities per work-year**, not observed fittings. Scaled potential opportunities **2.059158808916652**, direct completion contrast .8−.6 yields **.41183176178333053** additional HAH completions; .75 unmet split gives **.3088738213374979** newly accessed-care households and **.10295794044583263** otherwise-equivalent-care households.
+
+For each year1–3, independently sum `added * health[y] * .98^(y−.5) * 1.03^−(1/3+y−.5) * geography`, with no additional clinical use factor. Gross health **.03465505911179009**; fitting-date harm **.00040779393546654737**; central credited health **.034247265176323545**.
+
+Resources are separately logged per household before aggregation: upfront unmet-care−320 versus otherwise-equivalent-care net250 at fitting; then working/nonworking net cash after maintenance at year midpoints. Central working cash49/42/−25 and nonworking−35/−30/−25 are distinct household log terms, not a log of mean cash. Initial resources **−.0014628356853135741**, annual resources **−.00028706561440920074**, total **−.001749901299722775**. Combined **.03249736387660077**; price **$3,077,172.670980967 per10 USA combined-equivalent years**; health-only **$2,919,941.183190705**.
+
+Independently rebuilt **all37** scenarios; maximum health difference **3.469446951953614e−18**, resource difference **0**. Embedded assertions and correction assertions pass. Strict own-key/plain-object/finite bounds, horizons≤3, capacity≤1 and convex effective completion probabilities hold. Geography applies once to ordinary health/resources, not again through income pathways. Independent gift-induced harms remain separate at zero work response; unknown branches prevent a combined price; signed fewer-care counterfactuals remain signed, not negative actual patients.
+
+Full overlap removes **.007313421589524992** positive working-recipient clinical credit only in years with positive **net** working cash after maintenance; no removal for worker gain10 versus maintenance50, unknown/zero-duration economic channel, adverse clinical contrast or fitting/independent harms. Otherwise-equivalent care receives no gross clinical increment and no aid-book-value income. Historical central separately reproduces **.14511181107982615 health years / $689,123.7815575873**; withdrawn beta remains unknown history, not zero.
+
+## Required counterfactual clarification
+
+`fittingHarm=.001` currently applies to **all additional HAH completions**, including recipients who otherwise get equivalent care. Alternative care also requires fitting/acclimation. Therefore this parameter must explicitly mean **net additional HAH-specific burden relative to the recipient’s actual alternative**, not the full burden of fitting itself. Otherwise identical fitting burdens would be counted only on the HAH side.
+
+The otherwiseSameCare diagnostic correctly has gross clinical health0 but **net health−.00040779393546654737** under the present parameter; public copy must not call its total health exactly0. Retain the central if .001 is transparently an elicited *net* burden for both strata. If it instead represents generic fitting burden, restrict it to the no-equivalent-care stratum and regenerate affected cases. This is a counterfactual labeling/parameter interpretation gate, not a request to force a price change.
+
+**Root resolution selected:** do not relabel generic harm to preserve the center. Production will apply ordinary .001 fitting/acclimation harm only to newly accessed care, and introduce separate `equivalentFittingHarm` central0 for genuinely HAH-specific net burden versus equivalent alternatives, with explicit positive stress cases. Central otherwise-equivalent health will then be exactly0 and its cash saving stays net. The immutable author packet remains unchanged; amended production arithmetic and scope require a subsequent finite acceptance. This memo's original numbers document the reviewed author packet, not the corrected production center.
+
+## Scientific and finance gates retained
+
+The .20 completion lift is a large explicit elicitation relative to an unmeasured fixed donated-device opportunity. FAQ matching friction supports the mechanism, not .8/.6 rates or available inventory/provider slots. Reserve/replacement/provider/manufacturer limits belong inside that direct contrast once; do not add favorable financing multipliers.125/2 is a forward paired-slot benchmark, not unique observedFY2025 patients or marginal manufacturer donations. Full303522 accounting-proxy normalization funds broad portfolio work; illustrative coordination hours/rate are not a priced tranche or marginal cost.
+
+The .06/.04/.02 health profile is own-use/transport adjusted judgment. Three-month hearing HUI evidence does not measure three-year local utility, adherence, wages, dementia or mortality. Keep generic-null and short-duration alternatives. Because .75 already partitions recipients by otherwise-equivalent-care availability over the modeled period, describe later utility decline as conditional cohort benefit/use uncertainty—not another identical subtraction for those same alternative-care recipients.
+
+Resource use .7/.6/.5 is a separate maintenance/earnings exposure assumption, not another health-retention factor. Baseline25K is a household resource prior, not the eligibility income ceiling. Worker120/year for two years is an explicitly weak net-paid-income judgment after offsets, not a demonstrated employment effect or shadow-time conversion. Retired/nonworking recipients do not receive wage gains. Deposit/refund incidence, exclusions, travel, evaluation and otherwise-paid250 cash remain unmeasured net-resource priors; no duplicate application fee, permanent charge for refunded balances, device retail value or public/insurer reimbursement is household income.
+
+Financial gross386116/436995/426522 and exact mean **416544.3333333333** retain prior original-receipt lineage. Fresh index functional expenses and failed original retrieval are distinct, not newly audited gross figures. Latest303522 excludes123000 donated-aid book expense from restored gross426522; it is a non-in-kind accounting proxy, not actual cash flow or complete societal resource cost. Direct event expense is not silently discarded, and clinician/device resource opportunity costs remain unknown. Legal-payee, inventory, provider capacity, current restrictions and an uncovered workplan remain donor-readiness gaps, not findings of misconduct or no benefit.
+
+## Provenance
+
+Three closed author sessions total **361.722 seconds** (205.325 source,105.081 initial modeling,51.316 correction). Raw session model fields remain null; separate inherited/user-assigned GPT-6.1 Sol testimony is not runtime verification. Historical identity stays historical. This acceptance, calculations and drafting add zero research minutes and perform no fresh full-text/hash audit. Root owns public integration, counterfactual wording, tests and publication.

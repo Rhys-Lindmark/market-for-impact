@@ -1,0 +1,15 @@
+# Independent root source check — October 7
+
+Actual dedicated source interval 16:24:33.731Z–16:26:00.208Z (86.477 seconds), GPT-6.1 Sol. Clock closed before waiting for author and tests/integration; later elapsed time is not research.
+
+Fresh own 2025 impact PDF retrieved by curl/pypdf in memory, 4,176,280 bytes, 28 pages. Financial page explicitly unaudited: $7,844,806 whole expenses; equipment/facilities includes depreciation, staffing/direct care plus administration/fundraising included. Its 3,219 dental visits remain inconsistent with narrower HRSA dental clinic series; not reconciled. No portfolio output/funded job gain proven.
+
+Fresh original HRSA2025 workbook in memory: 29,059,572 bytes; SHA256 1f8a7503f54892163a32083ec46c59f4695c9ad6c0e37a9c458fc88f7111fbfb. Table5 BE788=1499 dental clinic visits, BG788=595 dental patients. Table6B AY788=659 screening/follow-up, AZ788=55 depression-remission cohort, BB788='--' suppressed. Screening is not treated depression/remission.
+
+Current homepage confirms free care, no insurance requirement. Care-locations dental section includes preventive/restorative/extraction services and requires medical exam, indicating access/time burdens; current care coordination links resources/job training, but does not measure causal earnings. Project Access is no-charge transportation, not demonstrated economic gain per patient. Household access/opportunity costs and otherwise-paid care are conditional judgments; retail fees or all clinic patients cannot be used as observed cash savings. Other free providers/public coverage matter.
+
+Fresh sources: https://www.homeless-healthcare.org/s/FINAL-2025-Impact-Report.pdf ; https://data.hrsa.gov/DataDownload/StaticDocuments/H80-2025.xlsx ; https://www.homeless-healthcare.org/ ; https://www.homeless-healthcare.org/care-locations ; https://www.homeless-healthcare.org/financials . Coefficient Giving comparison freshly confirms joint log utility and healthy-year conversion; income equivalents are not clinical QALYs.
+
+Supplemental original2024audit retrieval completed after the source-clock closure; no added duration claimed. In-memory PDF 1,949,404bytes SHA25615012a8a7fd4682c5c757cc314a9dcb020d1908c26a490f6ad37c51b7d9c4a3a freshly confirms going-concern doubt/vendor payables and staffing-contract termination August31,2025. Specialist donated services recognized only under stated accounting criteria; other volunteer time unrecognized, so full reported expenditure is not verified full social resource cost. Primary audit: https://www.homeless-healthcare.org/s/Healthcare-for-the-Homeless-Houston-Single-Audit-2024-ISSUED.pdf .
+
+Independent root arithmetic (not retrospectively timed): health=(min(595,1499/3)×.5×.5×.08×.25−.1)×.98=2.350366666666667. Resource=.5×476×log(1−10/10000)×.98=−.23335669780502355. Combined2.1170099688616433 yields $37,056,065.46679751 for ten equivalents. .6cashResponse removed from annual work, not measured gift response. 595patient clinical bound is separate from judged .8household grouping; initial clinical coefficients remain judgments.

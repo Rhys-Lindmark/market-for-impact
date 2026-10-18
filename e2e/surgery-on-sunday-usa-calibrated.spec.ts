@@ -1,0 +1,21 @@
+import {test,expect} from '@playwright/test';
+test('Surgery on Sunday corrected price, signed resources, history and clocks match the USA list',async({page,request})=>{
+ await page.route('https://market-for-impact.rhyslindmark.chatgpt.site/_next/**',async route=>{const u=new URL(route.request().url());await route.fulfill({response:await request.get(u.pathname+u.search)});});
+ await page.goto('/usa/charities/surgery-on-sunday');
+ await expect(page.getByRole('heading',{level:1,name:'Surgery on Sunday',exact:true})).toBeVisible();
+ await expect(page.locator('.report-research-effort summary')).toContainText('~5 min on GPT-6 Astra Light + ~14 min on GPT-6 Astra Medium + ~6 min on GPT-6.1 Sol');
+ await expect(page.locator('#summary')).toContainText('$1.2M');
+ await expect(page.locator('#cost')).toContainText('1.67 additional patient equivalents');
+ await expect(page.locator('#cost')).toContainText('−0.003239');
+ await expect(page.locator('#cost')).toContainText('$405K');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+ const response=await request.get('/api/geography-reports/usa/surgery-on-sunday');expect(response.ok()).toBe(true);
+ const r=await response.json(),c=r.model.scenarios.find((s:any)=>s.id==='central');
+ expect(c.nativeOutputs.combinedDonationPricePer10USD).toBeCloseTo(1235136.175867155,5);
+ expect(c.incomePathways.length).toBe(5);expect(r.model.scenarios.length).toBe(39);
+ expect(r.model.scenarios.some((s:any)=>s.id==='historical-beta-central')).toBe(true);
+ await page.goto('/usa/all');
+ const row=page.locator('[data-research-table] tbody tr').filter({hasText:'Surgery on Sunday'});
+ await expect(row.locator('td').nth(0)).toContainText('$1.2M');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+});

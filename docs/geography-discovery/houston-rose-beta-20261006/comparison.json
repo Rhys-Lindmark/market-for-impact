@@ -1,0 +1,130 @@
+{
+  "organization": "The Rose",
+  "initial": {
+    "health": 4.008925251521974,
+    "income": -0.2041265583489199,
+    "price10": 42016012.64393857
+  },
+  "current": {
+    "health": 3.3009497450200898,
+    "income": -2.630090194287169,
+    "total": 0.6708595507329207,
+    "price10": 238294990.099416
+  },
+  "burdenOnly": {
+    "id": "burden-accounting-only",
+    "label": "burden accounting only",
+    "overrides": {
+      "clinicalN": 187
+    },
+    "costUSD": 15986247,
+    "exposed": 8142.45,
+    "union": 2035.6125,
+    "clinicalPeople": 13.32375,
+    "allPopulationQalys": 4.404968951438593,
+    "editionQalys": 3.5239751611508745,
+    "incomePathways": [
+      {
+        "id": "changed-households",
+        "people": 203.56125,
+        "annualIncomeBeforeUSD": 20000,
+        "annualIncomeGainUSD": 130,
+        "years": 1,
+        "editionShare": 0.8,
+        "delayYears": 0.25,
+        "discountRate": 0.03,
+        "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+        "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+        "sourceIds": [
+          "services",
+          "finance",
+          "cg-cost"
+        ]
+      },
+      {
+        "id": "other-exposed",
+        "people": 7938.88875,
+        "annualIncomeBeforeUSD": 20000,
+        "annualIncomeGainUSD": -20,
+        "years": 1,
+        "editionShare": 0.8,
+        "delayYears": 0.25,
+        "discountRate": 0.03,
+        "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+        "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+        "sourceIds": [
+          "services",
+          "finance",
+          "cg-cost"
+        ]
+      }
+    ],
+    "incomeEquivalent": -2.630090194287169,
+    "incomeUnknown": false,
+    "totalEquivalent": 0.8938849668637054,
+    "price10": 178840092.32294756,
+    "costPer10Qalys": 178840092.32294756,
+    "incomeEquivalentYears": -2.630090194287169,
+    "combinedEquivalentYears": 0.8938849668637054,
+    "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+  },
+  "costAllocationSensitivity": {
+    "id": "uninsured-program-share-cost-hypothesis",
+    "label": "uninsured program share cost hypothesis",
+    "overrides": {
+      "C": 2741672.4009614917
+    },
+    "costUSD": 2741672.4009614917,
+    "exposed": 8142.45,
+    "union": 2035.6125,
+    "clinicalPeople": 12.61125,
+    "allPopulationQalys": 4.126187181275112,
+    "editionQalys": 3.3009497450200898,
+    "incomePathways": [
+      {
+        "id": "changed-households",
+        "people": 203.56125,
+        "annualIncomeBeforeUSD": 20000,
+        "annualIncomeGainUSD": 130,
+        "years": 1,
+        "editionShare": 0.8,
+        "delayYears": 0.25,
+        "discountRate": 0.03,
+        "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+        "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+        "sourceIds": [
+          "services",
+          "finance",
+          "cg-cost"
+        ]
+      },
+      {
+        "id": "other-exposed",
+        "people": 7938.88875,
+        "annualIncomeBeforeUSD": 20000,
+        "annualIncomeGainUSD": -20,
+        "years": 1,
+        "editionShare": 0.8,
+        "delayYears": 0.25,
+        "discountRate": 0.03,
+        "rationale": "One joint household log; positive components overlap-adjusted, all costs and negative gains full.",
+        "counterfactual": "Existing public, charity and family assistance retained; only incremental otherwise-paid costs or net work resources count.",
+        "sourceIds": [
+          "services",
+          "finance",
+          "cg-cost"
+        ]
+      }
+    ],
+    "incomeEquivalent": -2.630090194287169,
+    "incomeUnknown": false,
+    "totalEquivalent": 0.6708595507329207,
+    "price10": 40868053.49892072,
+    "costPer10Qalys": 40868053.49892072,
+    "incomeEquivalentYears": -2.630090194287169,
+    "combinedEquivalentYears": 0.6708595507329207,
+    "assumptions": "Conditional finite annual channel; full portfolio, current cost and marginal gift unknown."
+  },
+  "change": "Full exposure negative costs and harms plus original-return mapping of177uninsured navigations replace the187mixed subgroup; larger price is a partial conditional accounting/scope refinement, not measured whole-portfolio deterioration.",
+  "actualAuthorMinutes": 2.8442666666666665
+}

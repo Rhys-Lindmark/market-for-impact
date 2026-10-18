@@ -1,0 +1,288 @@
+{
+  "edition": "chicago",
+  "boundaryVersion": "OMB-23-01-2023-07-21",
+  "organizationId": "ein:36-3145764",
+  "slug": "the-night-ministry",
+  "organization": "The Night Ministry",
+  "program": "Street health outreach and youth housing",
+  "published": "2026-09-29",
+  "updated": "2026-09-29",
+  "stage": "alpha",
+  "donationUrl": "https://thenightministry.org/give/",
+  "acceptance": {
+    "status": "accepted",
+    "evidence": "Independent GPT-6 Astra Medium acceptance audit, 2026-09-29: original financial statements, service geography, clinical-source interpretation and model arithmetic checked. Accepted only as an explicitly judgment-driven alpha scenario, not measured marginal effectiveness."
+  },
+  "summary": {
+    "what": [
+      "The Night Ministry delivers street health care and youth housing in Chicago.",
+      "The model values temporary symptom relief and a small additional housing-related health benefit without counting claimed ER savings as QALYs.",
+      "The central cost is $11,598,227, including the recipient's event costs netted from reported revenue."
+    ],
+    "strengths": [
+      "Current Chicago outreach locations establish a local operating footprint.",
+      "Annual report provides service counts and a recent original audit.",
+      "Separate health and housing pathways explicitly reduce overlapping benefit."
+    ],
+    "reservations": [
+      "Assessments and stable housing are not measured incremental health outcomes.",
+      "External housing trials do not establish a transferable utility gain for these clients.",
+      "Marginal gift capacity and alternative shelter or medical access remain unmeasured."
+    ]
+  },
+  "sections": {
+    "what": "Street care and youth housing operate locally. Pilsen, New City, South Shore, Howard and Forest Park are current outreach anchors inside the 13-county Chicago MSA. [Schedule](https://thenightministry.org/get-help/)",
+    "monitoring": "FY2025 reports 3,631 assessments and 216 people moving to or maintaining safer stable housing. The 983 claimed avoided ER visits are not verified QALYs or deaths prevented. Track distinct treated conditions, resolution, duration and utility, plus sustained housing against alternatives. [Annual report](https://thenightministry.org/wp-content/uploads/2026/05/The-Night-Ministry_FY2025-Annual-Report.pdf)",
+    "qualitative": "Housing has substantial nonhealth value, but health is not proportional to bed nights. A Toronto randomized trial found improved housing without significant physical-health or mental-symptom treatment-by-time interactions; its adult population differs from this youth program. Positive central housing utility remains a modest judgment, with zero-effect sensitivity. [Original trial](https://pmc.ncbi.nlm.nih.gov/articles/PMC4503775/)",
+    "cost": "Audit consolidating statement gives TNM-only expense $11,424,900 versus consolidated $11,392,210. Use actual donation recipient TNM, adding $173,327 direct event costs netted from revenue: $11,598,227. This retains internal rent/support costs and does not add subsidiary expense again. Central symptom pathway is 3,631 assessments × 0.6 distinct actionable episodes × 0.2 improvement beyond alternative care × 0.05 utility × 0.1 year. Housing pathway is 216 outcomes × 0.5 additional × 0.03 utility × 0.5 year × 0.5 nonoverlap. Both receive gift 0.3 and MSA 0.98 factors. No mortality credit. A $1,000 whole-portfolio equivalent is 0.313 assessments and 0.019 housing outcomes before discounts, not a marginal unit price. [Original audit](https://thenightministry.org/wp-content/uploads/2026/06/The-Night-Ministry-AUD-06302025-FINAL.pdf)",
+    "funding": "FY2025 TNM-only revenue is $11,841,571 and ending net assets $12,594,087; $3,636,346 is restricted. Consolidation includes its controlled asset-management organization and eliminates internal flows. The gift model assigns unrestricted gifts proportionately to the whole portfolio with 30% additional usable capacity, allowing for public funding, substitutes and reserves; no specific unfunded expansion was priced. [Audit](https://thenightministry.org/wp-content/uploads/2026/06/The-Night-Ministry-AUD-06302025-FINAL.pdf) [Donate](https://thenightministry.org/give/)"
+  },
+  "sources": [
+    {
+      "id": "audit25",
+      "title": "Original FY2025 consolidated and consolidating audit",
+      "url": "https://thenightministry.org/wp-content/uploads/2026/06/The-Night-Ministry-AUD-06302025-FINAL.pdf",
+      "publisher": "The Night Ministry",
+      "published": null,
+      "retrieved": "2026-09-29"
+    },
+    {
+      "id": "annual",
+      "title": "FY2025 annual report",
+      "url": "https://thenightministry.org/wp-content/uploads/2026/05/The-Night-Ministry_FY2025-Annual-Report.pdf",
+      "publisher": "The Night Ministry",
+      "published": null,
+      "retrieved": "2026-09-29"
+    },
+    {
+      "id": "geo",
+      "title": "Current service schedule",
+      "url": "https://thenightministry.org/get-help/",
+      "publisher": "The Night Ministry",
+      "published": null,
+      "retrieved": "2026-09-29"
+    },
+    {
+      "id": "trial",
+      "title": "Toronto Housing First randomized trial",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4503775/",
+      "publisher": "Original trial investigators / PLOS ONE",
+      "published": null,
+      "retrieved": "2026-09-29"
+    },
+    {
+      "id": "donate",
+      "title": "Giving",
+      "url": "https://thenightministry.org/give/",
+      "publisher": "The Night Ministry",
+      "published": null,
+      "retrieved": "2026-09-29"
+    }
+  ],
+  "model": {
+    "version": "chicago-night-alpha-v1",
+    "costScope": "TNM-only whole expense plus netted direct event costs; controlled subsidiary not added again.",
+    "geographicAttribution": "g=.98 judged MSA share based on local service anchors; no national spillover credited.",
+    "formula": "Q_all=(N*k*a*u*T+H*h*w*D*o)*b; Q_MSA=g*Q_all; cost=(C+E)*f; price10=10*cost/Q_MSA.",
+    "counterfactual": "Medical care and housing alternatives removed separately by a and h; b removes replacement finance.",
+    "attribution": "No monetary ER savings converted to health; overlapping housing morbidity reduced by o; all other portfolio net health provisionally zero, not established lower bound.",
+    "uncertainty": "Weak clinical calibration. Utility and duration are judgments; trial supports housing but cautions against assuming clinical benefit. The central estimate is an illustrative scenario, not a calibrated expected value; favorable/poor scenarios are not statistical confidence bounds. Service location establishes eligibility, while modeled MSA residency shares remain unmeasured.",
+    "nativeOutcomes": "Additional actionable episodes and housing outcomes converted only to bounded morbidity gains; mortality zero.",
+    "inputs": [
+      {
+        "name": "C",
+        "value": 11424900,
+        "unit": "USD TNM-only expense",
+        "basis": "observed",
+        "rationale": "Consolidating activity statement, not consolidated organization plus subsidiary.",
+        "sourceIds": [
+          "audit25"
+        ]
+      },
+      {
+        "name": "E",
+        "value": 173327,
+        "unit": "USD netted event costs",
+        "basis": "observed",
+        "rationale": "Restore direct event costs omitted from expense numerator.",
+        "sourceIds": [
+          "audit25"
+        ]
+      },
+      {
+        "name": "f",
+        "value": 1,
+        "unit": "forward expense multiplier",
+        "basis": "judgment",
+        "rationale": "Historical scale retained.",
+        "sourceIds": []
+      },
+      {
+        "name": "N",
+        "value": 3631,
+        "unit": "annual assessments",
+        "basis": "observed",
+        "rationale": "FY2025 activity, not unique patients.",
+        "sourceIds": [
+          "annual"
+        ]
+      },
+      {
+        "name": "k",
+        "value": 0.6,
+        "unit": "distinct actionable episode fraction",
+        "basis": "judgment",
+        "rationale": "Removes repeat and non-actionable assessments.",
+        "sourceIds": []
+      },
+      {
+        "name": "a",
+        "value": 0.2,
+        "unit": "episode share improved beyond alternative care",
+        "basis": "judgment",
+        "rationale": "20% receive additional clinical relief rather than equivalent care elsewhere.",
+        "sourceIds": []
+      },
+      {
+        "name": "u",
+        "value": 0.05,
+        "unit": "symptom utility gain",
+        "basis": "judgment",
+        "rationale": "Illustrative .05 utility; no recipient utility study.",
+        "sourceIds": []
+      },
+      {
+        "name": "T",
+        "value": 0.1,
+        "unit": "years symptom relief",
+        "basis": "judgment",
+        "rationale": "Hard .1-year cap, roughly five weeks.",
+        "sourceIds": []
+      },
+      {
+        "name": "H",
+        "value": 216,
+        "unit": "stable housing outcomes",
+        "basis": "observed",
+        "rationale": "Transitions or maintenance; not all new placements.",
+        "sourceIds": [
+          "annual"
+        ]
+      },
+      {
+        "name": "h",
+        "value": 0.5,
+        "unit": "housing outcomes additional to alternatives",
+        "basis": "judgment",
+        "rationale": "Half would lack equivalent housing without recipient.",
+        "sourceIds": []
+      },
+      {
+        "name": "w",
+        "value": 0.03,
+        "unit": "housing-related utility improvement",
+        "basis": "judgment",
+        "rationale": "Modest .03, uncertain given null clinical trial effects.",
+        "sourceIds": [
+          "trial"
+        ]
+      },
+      {
+        "name": "D",
+        "value": 0.5,
+        "unit": "years housing health benefit",
+        "basis": "judgment",
+        "rationale": "Half-year maximum, not lifelong tenancy.",
+        "sourceIds": []
+      },
+      {
+        "name": "o",
+        "value": 0.5,
+        "unit": "nonoverlapping housing health fraction",
+        "basis": "judgment",
+        "rationale": "Halves housing benefit for overlapping symptom relief.",
+        "sourceIds": []
+      },
+      {
+        "name": "b",
+        "value": 0.3,
+        "unit": "gift financing additionality",
+        "basis": "judgment",
+        "rationale": "30% extra capacity after substitute finance.",
+        "sourceIds": []
+      },
+      {
+        "name": "g",
+        "value": 0.98,
+        "unit": "Chicago MSA health fraction",
+        "basis": "judgment",
+        "rationale": "98% local footprint with mobility leakage.",
+        "sourceIds": [
+          "geo"
+        ]
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "central",
+        "label": "Central",
+        "costUSD": 11598227,
+        "allPopulationQalys": 0.89658,
+        "editionQalys": 0.8786484,
+        "assumptions": "{\"C\":11424900,\"E\":173327,\"f\":1,\"N\":3631,\"k\":0.6,\"a\":0.2,\"u\":0.05,\"T\":0.1,\"H\":216,\"h\":0.5,\"w\":0.03,\"D\":0.5,\"o\":0.5,\"b\":0.3,\"g\":0.98}"
+      },
+      {
+        "id": "favorable",
+        "label": "Stronger clinical access and duration",
+        "costUSD": 11598227,
+        "allPopulationQalys": 21.0576,
+        "editionQalys": 21.0576,
+        "assumptions": "{\"C\":11424900,\"E\":173327,\"f\":1,\"N\":3631,\"k\":0.8,\"a\":0.4,\"u\":0.1,\"T\":0.25,\"H\":216,\"h\":0.7,\"w\":0.05,\"D\":1,\"o\":0.8,\"b\":0.6,\"g\":1}"
+      },
+      {
+        "id": "poor",
+        "label": "Weak relief and no housing health",
+        "costUSD": 13917872.4,
+        "allPopulationQalys": 0.0032679000000000007,
+        "editionQalys": 0.0029411100000000007,
+        "assumptions": "{\"C\":11424900,\"E\":173327,\"f\":1.2,\"N\":3631,\"k\":0.3,\"a\":0.05,\"u\":0.02,\"T\":0.03,\"H\":216,\"h\":0.5,\"w\":0,\"D\":0.5,\"o\":0.5,\"b\":0.1,\"g\":0.9}"
+      },
+      {
+        "id": "zero",
+        "label": "No additional care or housing",
+        "costUSD": 11598227,
+        "allPopulationQalys": 0,
+        "editionQalys": 0,
+        "assumptions": "{\"C\":11424900,\"E\":173327,\"f\":1,\"N\":3631,\"k\":0.6,\"a\":0,\"u\":0.05,\"T\":0.1,\"H\":216,\"h\":0,\"w\":0.03,\"D\":0.5,\"o\":0.5,\"b\":0.3,\"g\":0.98}"
+      }
+    ],
+    "sensitivity": [
+      "w=0 removes housing-related health but preserves its nonhealth value outside QALYs.",
+      "o from0 to1 tests complete overlap to disjoint health.",
+      "Zero additional care and housing gives zero health.",
+      "Cross-organization outcomes are not additive: the same person may receive services from several organizations. Alternative-service factors are judgments and do not establish deduplication across this edition."
+    ],
+    "missingInputs": [
+      "Deduplicated conditions, measured symptom relief and utility.",
+      "Counterfactual housing stability and health follow-up.",
+      "Gift-funded expansion budget, restrictions and service elasticity.",
+      "Residence and overlap between outreach and housing cohorts."
+    ]
+  },
+  "annualExpenses": [
+    {
+      "year": 2025,
+      "amount": 11424900,
+      "currency": "USD",
+      "periodMonths": 12,
+      "comparable": false,
+      "entity": "The Night Ministry only (excluding separate AMO)",
+      "accountingBasis": "Accrual audited consolidating activity; model adds173327 netted event costs",
+      "sourceId": "audit25"
+    }
+  ],
+  "timeCoverage": "partial",
+  "sessionIds": [
+    "e1327d29-ec13-4ca3-ac4c-68de76ab6603"
+  ]
+}

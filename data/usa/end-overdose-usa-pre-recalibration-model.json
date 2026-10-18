@@ -1,0 +1,619 @@
+{
+  "frozenFromCommit": "9c2f13592cd513ed05269bf60a7ed24389297e32",
+  "edition": "usa",
+  "slug": "end-overdose",
+  "model": {
+    "version": "usa-end-overdose-2026-09-14",
+    "costScope": "Whole ordinary general-fund gift from the donor's perspective. All G remains in the denominator; a is an explicitly hypothetical marginal program allocation, not the Form 990 program share. Cash cost c includes paid staff, overhead, fundraising allocation, training, stock where purchased, and fulfillment. No restriction or current $100,000 capacity is assumed. Nominal-activity resource envelopes separately add contributed medicines, unpaid support, recipient cash and emergency response. Future medical care, recipient time, exact postage receipts, opportunity costs and unpriced portfolio effects remain unknown; no full societal return is claimed.",
+    "geographicAttribution": "USA means residents of the 50 states and DC. Domestic program and partner records support a predominantly domestic footprint but do not measure patient residence. All scenario shares g, including reference 0.99, are analyst judgments. Territorial and international attendee benefits fall outside edition QALYs and are not separately identified. No California, Bay Area or population-share allocation is inherited. Do not sum this report with nested state or metro benefits.",
+    "formula": "N=G*a/c nominal offered packages. A=N*b additional offers after funding replacement. D=A*q additional completed delivered two-dose kits; doses=2*D. R=D*e*k*t*d additional timely administrations with unique-patient credit. Z=R*f additional three-day survivors. S(0)=1; S(1)=1-m1; S(y)=S(y-1)*(1-m) thereafter. L=sum(y=1..T)[u*(S(y-1)+S(y))/2/(1.03^(y-0.5+delay))]. Q_all=Z*L-R*h; Q_USA=g*Q_all. Donor price for ten USA QALYs=10*G/Q_USA only when Q_USA>0. Resource envelope=G+N*(stock+unpaid+recipientCash)+R*ems, with omitted future net care and time explicitly unknown.",
+    "counterfactual": "Without the gift, existing End Overdose funding, already funded cabinets, manufacturer and public stock, other distributors, trained witnesses and EMS remain. b represents the share of nominal offers made additional by the gift, after replacement funding. q represents actual completed delivery; k usable access at the opportunity; t clinical timing beyond other available response. These are distinct counterfactual steps. Public stock may enable donor-funded last-mile work rather than make it redundant, but the current overlap is unmeasured.",
+    "attribution": "Doses, packages, trainees, witnessed events, administrations and unique patients are separate units. d is only a scenario proxy for shared-scene and repeat-patient overlap, not a substitute for linked records. f is an absolute three-day survival advantage from an added credited administration, never the observed fraction surviving after naloxone. m1 applies after the modeled three-day endpoint, avoiding inclusion of early deaths in both f and later survival. Repeat rescues cannot each earn an independent lifetime gain; subsequent rescue and competing mortality are reflected in the finite survival schedule. No intervention-caused treatment retention or normal lifespan is assumed.",
+    "uncertainty": "The central naloxone-pathway estimate is a subjective best guess, not a whole-portfolio expected return. Its inputs and joint stress tests are not probability-weighted estimates, confidence intervals or bounds. Older EMS and ED survivor cohorts do not identify the survival of otherwise-fatal cases rescued by this organization in 2026; future hazards and utility are explicit judgments. Endpoints, cohort composition and annual rates versus risks differ. Capacity constraints may make the linear gift model fail. Unpriced portfolio effects can be positive or negative, so the naloxone pathway is not a proven lower bound on the whole organization's value.",
+    "nativeOutcomes": "Nominal training-and-kit offers; additional offers; completed delivered two-dose kits; doses; timely usable access; unique witnessed overdose opportunities; additional timely administrations with unique-patient credit; additional three-day survivors; finite retained health. Reference per $1,000 of total gift: 15 nominal offers, 6 additional delivered kits, 12 doses and 0.00375 additional credited administrations. These are conditional model outputs, not measured services per dollar.",
+    "inputs": [
+      {
+        "name": "FY2022 recipient spending",
+        "value": 516362,
+        "unit": "USD per calendar year",
+        "basis": "observed",
+        "rationale": "Original 2022 Part IX; same EIN, 12 months, cash accounting.",
+        "sourceIds": [
+          "eo-99022"
+        ]
+      },
+      {
+        "name": "FY2023 recipient spending",
+        "value": 942519,
+        "unit": "USD per calendar year",
+        "basis": "observed",
+        "rationale": "Original 2023 Part IX; same EIN, 12 months, cash accounting.",
+        "sourceIds": [
+          "eo-99023"
+        ]
+      },
+      {
+        "name": "FY2024 recipient spending",
+        "value": 970440,
+        "unit": "USD per calendar year",
+        "basis": "observed",
+        "rationale": "Original 2024 Parts I and IX agree. Part III is not used for program allocation.",
+        "sourceIds": [
+          "eo-99024"
+        ]
+      },
+      {
+        "name": "Kit content",
+        "value": 2,
+        "unit": "intranasal doses per national store kit",
+        "basis": "observed",
+        "rationale": "Not a definition of the campaign's manufacturer units or all bulk order packaging.",
+        "sourceIds": [
+          "eo-kit",
+          "eo-bulk"
+        ]
+      },
+      {
+        "name": "Current remaining usable inventory",
+        "value": null,
+        "unit": "doses, by source and expiry",
+        "basis": "unknown",
+        "rationale": "Campaign reports a past contribution; current stock-flow and fulfillment capacity are not published.",
+        "sourceIds": [
+          "eo-campaign",
+          "eo-kit"
+        ]
+      },
+      {
+        "name": "CalRx acquisition benchmark",
+        "value": 19,
+        "unit": "USD per twin-pack",
+        "basis": "observed",
+        "rationale": "Current California procurement benchmark. It is neither an End Overdose invoice nor the opportunity cost of a donated medicine.",
+        "sourceIds": [
+          "calrx-price"
+        ]
+      },
+      {
+        "name": "Actual additional completed delivery per gift",
+        "value": null,
+        "unit": "kits per USD",
+        "basis": "unknown",
+        "rationale": "Requires allocation, funding replacement, inventory and labor constraints, shipment completion and recipient charges.",
+        "sourceIds": [
+          "eo-bulk",
+          "eo-ors"
+        ]
+      },
+      {
+        "name": "G",
+        "value": 100000,
+        "unit": "USD hypothetical ordinary gift",
+        "basis": "judgment",
+        "rationale": "An arithmetic scale, not verified funding room or a requested transaction.",
+        "sourceIds": []
+      },
+      {
+        "name": "a",
+        "value": 0.75,
+        "unit": "share of hypothetical gift",
+        "basis": "judgment",
+        "rationale": "Assumed marginal allocation to the modeled pathway; all other spending remains in G. Do not infer it from the Part IX program ratio.",
+        "sourceIds": []
+      },
+      {
+        "name": "c",
+        "value": 50,
+        "unit": "cash USD per nominal offered package",
+        "basis": "judgment",
+        "rationale": "Illustrative comprehensive paid-delivery budget; $31 with contributed stock is a sensitivity, not an observed marginal cost.",
+        "sourceIds": []
+      },
+      {
+        "name": "b",
+        "value": 0.5,
+        "unit": "share of nominal offers additional to other funding",
+        "basis": "judgment",
+        "rationale": "Current partnerships and funded activity demonstrate a relevant replacement counterfactual; they do not identify this fraction.",
+        "sourceIds": [
+          "eo-ors",
+          "eo-arkansas"
+        ]
+      },
+      {
+        "name": "q",
+        "value": 0.8,
+        "unit": "additional offers yielding completed kit delivery",
+        "basis": "judgment",
+        "rationale": "Explicit completion stage; certification alone is not receipt.",
+        "sourceIds": [
+          "eo-kit",
+          "eo-bulk"
+        ]
+      },
+      {
+        "name": "e",
+        "value": 0.005,
+        "unit": "one-year overdose-opportunity probability per additional delivered kit",
+        "basis": "judgment",
+        "rationale": "Broad-audience reference. Neither lifetime festival experience nor six-month jail-visitor events establishes this rate.",
+        "sourceIds": [
+          "naloxone-festival",
+          "naloxone-rikers"
+        ]
+      },
+      {
+        "name": "k",
+        "value": 0.5,
+        "unit": "probability of timely usable access conditional on opportunity",
+        "basis": "judgment",
+        "rationale": "Combines retention, carriage or accessible storage, correct use and product usability. Do not apply another adherence factor.",
+        "sourceIds": [
+          "naloxone-festival"
+        ]
+      },
+      {
+        "name": "t",
+        "value": 0.5,
+        "unit": "share of potential responses adding timely help beyond other responders",
+        "basis": "judgment",
+        "rationale": "Clinical counterfactual distinct from replacing money or medicines; remains unmeasured.",
+        "sourceIds": [
+          "naloxone-zang"
+        ]
+      },
+      {
+        "name": "d",
+        "value": 0.5,
+        "unit": "unique-patient credit per additional response",
+        "basis": "judgment",
+        "rationale": "Overlap proxy for repeat witnesses, scenes and patients. Actual deduplication data are missing.",
+        "sourceIds": [
+          "naloxone-rikers",
+          "naloxone-king-survival"
+        ]
+      },
+      {
+        "name": "f",
+        "value": 0.2,
+        "unit": "absolute probability of three-day survival gained per credited administration",
+        "basis": "judgment",
+        "rationale": "Not the survival fraction among treated people. This cannot be estimated from reported reversals.",
+        "sourceIds": []
+      },
+      {
+        "name": "Observed EMS survivor mortality benchmark",
+        "value": 0.075,
+        "unit": "risk of death by one year conditional on three-day survival",
+        "basis": "observed",
+        "rationale": "Massachusetts 2013–15 cohort: 668 deaths among 8,927 three-day survivors, rounded. Not an End Overdose parameter.",
+        "sourceIds": [
+          "naloxone-ems-survival"
+        ]
+      },
+      {
+        "name": "m1",
+        "value": 0.075,
+        "unit": "first post-rescue year mortality risk",
+        "basis": "judgment",
+        "rationale": "Transfers the EMS benchmark illustratively to additional survivors; f already covers early three-day outcome.",
+        "sourceIds": [
+          "naloxone-ems-survival",
+          "naloxone-ed-survival",
+          "naloxone-king-survival"
+        ]
+      },
+      {
+        "name": "m",
+        "value": 0.04,
+        "unit": "annual mortality after year one",
+        "basis": "judgment",
+        "rationale": "Long-term extrapolation including recurrent overdose and other mortality; not identified by one-year cohorts.",
+        "sourceIds": []
+      },
+      {
+        "name": "T",
+        "value": 20,
+        "unit": "post-rescue years",
+        "basis": "judgment",
+        "rationale": "Finite reference horizon, with 10 and 30 years tested. Does not assert a 20-year life expectancy.",
+        "sourceIds": []
+      },
+      {
+        "name": "u",
+        "value": 0.75,
+        "unit": "health utility while alive",
+        "basis": "judgment",
+        "rationale": "Not measured in additional survivors. Patient-reported OUD research provides context but not a constant applicable to this population.",
+        "sourceIds": [
+          "oud-utility"
+        ]
+      },
+      {
+        "name": "g",
+        "value": 0.99,
+        "unit": "share of health for residents of 50 states and DC",
+        "basis": "judgment",
+        "rationale": "Domestic footprint supports predominant USA reach but exact residence remains unmeasured.",
+        "sourceIds": [
+          "eo-quarter",
+          "eo-ors"
+        ]
+      },
+      {
+        "name": "delay",
+        "value": 0.5,
+        "unit": "years from gift to rescue",
+        "basis": "judgment",
+        "rationale": "Midyear rescue assumption; post-rescue annual-cycle health uses half-cycle survival and discounting.",
+        "sourceIds": []
+      },
+      {
+        "name": "h",
+        "value": 0,
+        "unit": "gift-time present-value QALYs lost per added administration",
+        "basis": "judgment",
+        "rationale": "Reference leaves acute harm unquantified; harm-only scenario uses 0.001. Neither is an observed harm estimate.",
+        "sourceIds": [
+          "naloxone-harms"
+        ]
+      },
+      {
+        "name": "unpaid",
+        "value": 10,
+        "unit": "resource USD per nominal offered package",
+        "basis": "judgment",
+        "rationale": "Diagnostic unpaid labor/support value; not observed opportunity cost.",
+        "sourceIds": []
+      },
+      {
+        "name": "stock",
+        "value": 0,
+        "unit": "contributed-stock resource USD per nominal offered package",
+        "basis": "judgment",
+        "rationale": "Zero means purchased stock is already inside c; donated-stock scenario adds $19 separately.",
+        "sourceIds": [
+          "calrx-price"
+        ]
+      },
+      {
+        "name": "recipientCash",
+        "value": 0,
+        "unit": "recipient USD per nominal offered package",
+        "basis": "judgment",
+        "rationale": "Reference assumes no extra receipts outside its paid fulfillment budget. Actual recipient shipping and time need reconciliation.",
+        "sourceIds": [
+          "eo-kit",
+          "eo-bulk"
+        ]
+      },
+      {
+        "name": "ems",
+        "value": 1000,
+        "unit": "resource USD per additional credited administration",
+        "basis": "judgment",
+        "rationale": "Diagnostic emergency-response allowance, not an observed incremental transport/hospital cost.",
+        "sourceIds": []
+      },
+      {
+        "name": "Unpriced downstream net costs",
+        "value": null,
+        "unit": "USD",
+        "basis": "unknown",
+        "rationale": "Patient time, future net medical costs, alternative uses of contributed stock and other portfolio consequences remain unmeasured.",
+        "sourceIds": []
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "central",
+        "label": "Conditional naloxone-pathway best guess",
+        "costUSD": 100000,
+        "allPopulationQalys": 0.5740891517996344,
+        "editionQalys": 0.568348260281638,
+        "assumptions": "{\"G\":100000,\"a\":0.75,\"c\":50,\"b\":0.5,\"q\":0.8,\"e\":0.005,\"k\":0.5,\"t\":0.5,\"d\":0.5,\"f\":0.2,\"m1\":0.075,\"m\":0.04,\"T\":20,\"u\":0.75,\"g\":0.99,\"delay\":0.5,\"h\":0,\"stock\":0,\"unpaid\":10,\"recipientCash\":0,\"ems\":1000}",
+        "parameters": {
+          "G": 100000,
+          "a": 0.75,
+          "c": 50,
+          "b": 0.5,
+          "q": 0.8,
+          "e": 0.005,
+          "k": 0.5,
+          "t": 0.5,
+          "d": 0.5,
+          "f": 0.2,
+          "m1": 0.075,
+          "m": 0.04,
+          "T": 20,
+          "u": 0.75,
+          "g": 0.99,
+          "delay": 0.5,
+          "h": 0,
+          "stock": 0,
+          "unpaid": 10,
+          "recipientCash": 0,
+          "ems": 1000
+        },
+        "nativeOutputs": {
+          "offered": 1500,
+          "additionalOffers": 750,
+          "delivered": 600,
+          "doses": 1200,
+          "additionalAdministrations": 0.375,
+          "additionalThreeDaySurvivors": 0.07500000000000001,
+          "discountedQalysPerAdditionalThreeDaySurvivor": 7.654522023995123,
+          "allPopulationQalys": 0.5740891517996344,
+          "editionQalys": 0.568348260281638,
+          "donorCostPerAdditionalDeliveredKit": 166.66666666666666,
+          "donorCostPerAdditionalDose": 83.33333333333333,
+          "donorCostPerAdditionalAdministration": 266666.6666666667,
+          "donorCostPerTenUsaQalys": 1759484.5799377698,
+          "nominalActivityResourceEnvelopeUSD": 115375
+        }
+      },
+      {
+        "id": "donated-stock",
+        "label": "Available donated stock; otherwise the reference assumptions",
+        "costUSD": 100000,
+        "allPopulationQalys": 0.9259502448381199,
+        "editionQalys": 0.9166907423897387,
+        "assumptions": "{\"G\":100000,\"a\":0.75,\"c\":31,\"b\":0.5,\"q\":0.8,\"e\":0.005,\"k\":0.5,\"t\":0.5,\"d\":0.5,\"f\":0.2,\"m1\":0.075,\"m\":0.04,\"T\":20,\"u\":0.75,\"g\":0.99,\"delay\":0.5,\"h\":0,\"stock\":19,\"unpaid\":10,\"recipientCash\":0,\"ems\":1000}",
+        "parameters": {
+          "G": 100000,
+          "a": 0.75,
+          "c": 31,
+          "b": 0.5,
+          "q": 0.8,
+          "e": 0.005,
+          "k": 0.5,
+          "t": 0.5,
+          "d": 0.5,
+          "f": 0.2,
+          "m1": 0.075,
+          "m": 0.04,
+          "T": 20,
+          "u": 0.75,
+          "g": 0.99,
+          "delay": 0.5,
+          "h": 0,
+          "stock": 19,
+          "unpaid": 10,
+          "recipientCash": 0,
+          "ems": 1000
+        },
+        "nativeOutputs": {
+          "offered": 2419.3548387096776,
+          "additionalOffers": 1209.6774193548388,
+          "delivered": 967.7419354838711,
+          "doses": 1935.4838709677422,
+          "additionalAdministrations": 0.6048387096774195,
+          "additionalThreeDaySurvivors": 0.1209677419354839,
+          "discountedQalysPerAdditionalThreeDaySurvivor": 7.654522023995123,
+          "allPopulationQalys": 0.9259502448381199,
+          "editionQalys": 0.9166907423897387,
+          "donorCostPerAdditionalDeliveredKit": 103.33333333333331,
+          "donorCostPerAdditionalDose": 51.66666666666666,
+          "donorCostPerAdditionalAdministration": 165333.33333333328,
+          "donorCostPerTenUsaQalys": 1090880.439561417,
+          "nominalActivityResourceEnvelopeUSD": 170766.1290322581
+        }
+      },
+      {
+        "id": "higher-risk",
+        "label": "Added delivery reaches higher-risk witnesses",
+        "costUSD": 100000,
+        "allPopulationQalys": 15.500407098590124,
+        "editionQalys": 15.345403027604222,
+        "assumptions": "{\"G\":100000,\"a\":0.75,\"c\":50,\"b\":0.8,\"q\":0.9,\"e\":0.05,\"k\":0.5,\"t\":0.75,\"d\":0.5,\"f\":0.2,\"m1\":0.075,\"m\":0.04,\"T\":20,\"u\":0.75,\"g\":0.99,\"delay\":0.5,\"h\":0,\"stock\":0,\"unpaid\":10,\"recipientCash\":0,\"ems\":1000}",
+        "parameters": {
+          "G": 100000,
+          "a": 0.75,
+          "c": 50,
+          "b": 0.8,
+          "q": 0.9,
+          "e": 0.05,
+          "k": 0.5,
+          "t": 0.75,
+          "d": 0.5,
+          "f": 0.2,
+          "m1": 0.075,
+          "m": 0.04,
+          "T": 20,
+          "u": 0.75,
+          "g": 0.99,
+          "delay": 0.5,
+          "h": 0,
+          "stock": 0,
+          "unpaid": 10,
+          "recipientCash": 0,
+          "ems": 1000
+        },
+        "nativeOutputs": {
+          "offered": 1500,
+          "additionalOffers": 1200,
+          "delivered": 1080,
+          "doses": 2160,
+          "additionalAdministrations": 10.125,
+          "additionalThreeDaySurvivors": 2.025,
+          "discountedQalysPerAdditionalThreeDaySurvivor": 7.654522023995123,
+          "allPopulationQalys": 15.500407098590124,
+          "editionQalys": 15.345403027604222,
+          "donorCostPerAdditionalDeliveredKit": 92.5925925925926,
+          "donorCostPerAdditionalDose": 46.2962962962963,
+          "donorCostPerAdditionalAdministration": 9876.543209876543,
+          "donorCostPerTenUsaQalys": 65166.09555325074,
+          "nominalActivityResourceEnvelopeUSD": 125125
+        }
+      },
+      {
+        "id": "low-benefit",
+        "label": "Weak targeting, delivery and funding additionality",
+        "costUSD": 100000,
+        "allPopulationQalys": 0.00002939496065916404,
+        "editionQalys": 0.000027925212626205838,
+        "assumptions": "{\"G\":100000,\"a\":0.5,\"c\":100,\"b\":0.1,\"q\":0.5,\"e\":0.001,\"k\":0.25,\"t\":0.1,\"d\":0.25,\"f\":0.05,\"m1\":0.1,\"m\":0.08,\"T\":10,\"u\":0.65,\"g\":0.95,\"delay\":0.5,\"h\":0,\"stock\":0,\"unpaid\":10,\"recipientCash\":0,\"ems\":1000}",
+        "parameters": {
+          "G": 100000,
+          "a": 0.5,
+          "c": 100,
+          "b": 0.1,
+          "q": 0.5,
+          "e": 0.001,
+          "k": 0.25,
+          "t": 0.1,
+          "d": 0.25,
+          "f": 0.05,
+          "m1": 0.1,
+          "m": 0.08,
+          "T": 10,
+          "u": 0.65,
+          "g": 0.95,
+          "delay": 0.5,
+          "h": 0,
+          "stock": 0,
+          "unpaid": 10,
+          "recipientCash": 0,
+          "ems": 1000
+        },
+        "nativeOutputs": {
+          "offered": 500,
+          "additionalOffers": 50,
+          "delivered": 25,
+          "doses": 50,
+          "additionalAdministrations": 0.00015625000000000003,
+          "additionalThreeDaySurvivors": 0.000007812500000000002,
+          "discountedQalysPerAdditionalThreeDaySurvivor": 3.7625549643729963,
+          "allPopulationQalys": 0.00002939496065916404,
+          "editionQalys": 0.000027925212626205838,
+          "donorCostPerAdditionalDeliveredKit": 4000,
+          "donorCostPerAdditionalDose": 2000,
+          "donorCostPerAdditionalAdministration": 639999999.9999999,
+          "donorCostPerTenUsaQalys": 35809933245.112366,
+          "nominalActivityResourceEnvelopeUSD": 105000.15625
+        }
+      },
+      {
+        "id": "no-additionality",
+        "label": "Gift replaces funding and adds no delivery",
+        "costUSD": 100000,
+        "allPopulationQalys": 0,
+        "editionQalys": 0,
+        "assumptions": "{\"G\":100000,\"a\":0.75,\"c\":50,\"b\":0,\"q\":0.8,\"e\":0.005,\"k\":0.5,\"t\":0.5,\"d\":0.5,\"f\":0.2,\"m1\":0.075,\"m\":0.04,\"T\":20,\"u\":0.75,\"g\":0.99,\"delay\":0.5,\"h\":0,\"stock\":0,\"unpaid\":10,\"recipientCash\":0,\"ems\":1000}",
+        "parameters": {
+          "G": 100000,
+          "a": 0.75,
+          "c": 50,
+          "b": 0,
+          "q": 0.8,
+          "e": 0.005,
+          "k": 0.5,
+          "t": 0.5,
+          "d": 0.5,
+          "f": 0.2,
+          "m1": 0.075,
+          "m": 0.04,
+          "T": 20,
+          "u": 0.75,
+          "g": 0.99,
+          "delay": 0.5,
+          "h": 0,
+          "stock": 0,
+          "unpaid": 10,
+          "recipientCash": 0,
+          "ems": 1000
+        },
+        "nativeOutputs": {
+          "offered": 1500,
+          "additionalOffers": 0,
+          "delivered": 0,
+          "doses": 0,
+          "additionalAdministrations": 0,
+          "additionalThreeDaySurvivors": 0,
+          "discountedQalysPerAdditionalThreeDaySurvivor": 7.654522023995123,
+          "allPopulationQalys": 0,
+          "editionQalys": 0,
+          "donorCostPerAdditionalDeliveredKit": null,
+          "donorCostPerAdditionalDose": null,
+          "donorCostPerAdditionalAdministration": null,
+          "donorCostPerTenUsaQalys": null,
+          "nominalActivityResourceEnvelopeUSD": 115000
+        }
+      },
+      {
+        "id": "harm-only",
+        "label": "No survival gain and a small acute harm burden",
+        "costUSD": 100000,
+        "allPopulationQalys": -0.000375,
+        "editionQalys": -0.00037125,
+        "assumptions": "{\"G\":100000,\"a\":0.75,\"c\":50,\"b\":0.5,\"q\":0.8,\"e\":0.005,\"k\":0.5,\"t\":0.5,\"d\":0.5,\"f\":0,\"m1\":0.075,\"m\":0.04,\"T\":20,\"u\":0.75,\"g\":0.99,\"delay\":0.5,\"h\":0.001,\"stock\":0,\"unpaid\":10,\"recipientCash\":0,\"ems\":1000}",
+        "parameters": {
+          "G": 100000,
+          "a": 0.75,
+          "c": 50,
+          "b": 0.5,
+          "q": 0.8,
+          "e": 0.005,
+          "k": 0.5,
+          "t": 0.5,
+          "d": 0.5,
+          "f": 0,
+          "m1": 0.075,
+          "m": 0.04,
+          "T": 20,
+          "u": 0.75,
+          "g": 0.99,
+          "delay": 0.5,
+          "h": 0.001,
+          "stock": 0,
+          "unpaid": 10,
+          "recipientCash": 0,
+          "ems": 1000
+        },
+        "nativeOutputs": {
+          "offered": 1500,
+          "additionalOffers": 750,
+          "delivered": 600,
+          "doses": 1200,
+          "additionalAdministrations": 0.375,
+          "additionalThreeDaySurvivors": 0,
+          "discountedQalysPerAdditionalThreeDaySurvivor": 7.654522023995123,
+          "allPopulationQalys": -0.000375,
+          "editionQalys": -0.00037125,
+          "donorCostPerAdditionalDeliveredKit": 166.66666666666666,
+          "donorCostPerAdditionalDose": 83.33333333333333,
+          "donorCostPerAdditionalAdministration": 266666.6666666667,
+          "donorCostPerTenUsaQalys": null,
+          "nominalActivityResourceEnvelopeUSD": 115375
+        }
+      },
+      {
+        "id": "unpriced-portfolio",
+        "label": "Other portfolio effects: not estimated",
+        "costUSD": 100000,
+        "allPopulationQalys": null,
+        "editionQalys": null,
+        "assumptions": "Education, referrals, test strips and other program effects are not identified. The central calculation values only the modeled naloxone pathway while charging full donation cost; it is not a proven lower bound."
+      }
+    ],
+    "sensitivity": [
+      "Conditional naloxone-pathway best guess: $1,759,485 per ten USA QALYs. Holding the reference assumptions fixed, a $1 million price requires annual opportunity e=0.8797%; a $100,000 price requires e=8.7974%. No source establishes either threshold for marginal recipients.",
+      "Changing e from 0.5% to 5% reduces the reference price tenfold. Halving b, q, k, t, d or f separately doubles it; these are not six independent empirically estimated effects.",
+      "The donated-stock scenario lowers the donor-cash price to $1,090,880 per ten, but adds the medicine to the resource envelope. A historical donation does not establish recurring free inventory.",
+      "With all other reference inputs fixed, horizon, health utility and first-year mortality alter retained health; the accompanying calculation artifact reports the exact one-way sensitivities. A 30-year horizon is a scenario rather than normal life expectancy.",
+      "The joint higher-risk scenario changes e to 5%, t to 75%, b to 80% and q to 90%, producing $65,166 per ten. It requires a different implemented delivery channel; no probability is attached.",
+      "Zero added delivery or zero added clinical help produces zero quantified benefit. A negative net health scenario has no positive cost-effectiveness price. Very large finite downside prices are an arithmetic warning about approaching zero benefit, not an upper confidence bound.",
+      "USA share 95% rather than 99% changes a positive price by about 4.2%; geographic uncertainty is smaller than unmeasured targeting, completed delivery and rescue additionality in these examples."
+    ],
+    "missingInputs": [
+      "Costed, currently unfunded capacity and the share of unrestricted next dollars allocated to added high-risk delivery.",
+      "Manufacturer/public/purchased inventory reconciliation by dose, package, expiry, remaining stock, restrictions and distribution channel.",
+      "Actual fulfillment completion, recipient shipping receipts, paid and unpaid labor, and current workload constraints.",
+      "Marginal recipient exposure, usable access and other available witnesses or EMS; linked unique scene and patient follow-up.",
+      "Additional survival probability versus no added response, subsequent mortality, utility, adverse effects and future net costs.",
+      "USA-resident outcomes separated from territorial and foreign attendee spillovers.",
+      "Reconciled 2022–24 program totals and 2022–23 net-asset roll-forwards; current management accounts, debt, restrictions and funding commitments.",
+      "Effects of education, test strips, stigma, referrals and other portfolio activity, including possible harms; no whole-organization lower bound is established."
+    ]
+  }
+}

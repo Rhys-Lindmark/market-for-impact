@@ -1,0 +1,22 @@
+import {test,expect} from '@playwright/test';
+test('New Door signed reference/report/history/time/finance agree responsively',async({page})=>{
+ test.setTimeout(60000);
+ await page.goto('/san-francisco/all');
+ const row=page.locator('[data-research-slug="new-door-ventures"]');
+ await expect(row).toContainText('Conditional reference: net harm');
+ await expect(row).toContainText('Conditional partial model; ordinary-donation EV unknown.');
+ expect(await row.getAttribute('data-cost-per-ten-qalys')).toBeNull();
+ await row.locator('a').first().click();
+ await expect(page.getByRole('heading',{level:1})).toHaveText('New Door Ventures');
+ await expect(page.locator('#research-summary')).toContainText('not evidence of observed causal harm');
+ await expect(page.locator('article')).toContainText('$228,571,429');
+ await expect(page.locator('article')).toContainText('$507,936,508');
+ await expect(page.locator('nav.report-contents [data-toc-primary]')).toHaveCount(7);
+ await expect(page.locator('.report-research-effort summary')).toContainText('GPT-6.1 Sol');
+ await expect(page.locator('[data-expense-appendix]')).toHaveAttribute('data-average-expenses',String(5922522.666666667));
+ const d=await(await page.request.get('/api/newdoor-portfolio-model')).json();
+ expect(d.cases).toHaveLength(13);expect(d.reference.result.bayIncludingSfCombinedHealthyYearEquivalent).toBeCloseTo(-.06496831924402403,12);
+ expect(d.reference.result.bayUsdPer10ConditionalCombinedHealthyYearEquivalent).toBeNull();expect(d.ordinaryDonation.result.ordinaryDonationExpectedValue).toBeNull();
+ expect(d.historicalPortfolio).toBeTruthy();expect(d.earlierEmploymentOnlyDiagnostic).toBeTruthy();
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+});

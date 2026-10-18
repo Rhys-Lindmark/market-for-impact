@@ -1,0 +1,9 @@
+# Downtown Women's Center — independent acceptance
+
+Accepted conditional paid-work/health reference, not an empirically calibrated unrestricted-gift expected value. Root checked the original 2025 annual report, employment and MADE by DWC pages: 46 paid transitional workers, 9,231 hours and $164,404 earned. The separate 88 placements are not added; conflicting growth percentages are not used.
+
+Independent arithmetic: full annual resources $30,935,472; unchanged 1.8731796116504853 LA clinical QALYs plus 0.14827211033324042 signed resource equivalents gives $153,035,918.01659194 per ten healthy-year equivalents, versus initial $165,149,523.34305152. Household aggregation, alternative-work additionality, funding response, tax/benefit retention, positive overlap, resource baseline and incremental work/access burden are explicit conditional judgments. One-year paid resources are not perpetual wages. Provider-paid wages are already in annual cost, not counted twice. Broader portfolio, placement earnings and unrestricted-gift effects remain unknown.
+
+Root independently reproduced clinical-null income, zero capacity, negative alternative-work and adverse work-cost worlds. Negative costs apply to all responsive participants and survive positive-overlap and clinical nulls. Full frozen original report and all original scenarios are preserved, with the original central diagnostic renamed but numerically unchanged. Portable shared-schema checks reproduce the conditional central price and scenarios; integration/release tests are separate acceptance gates.
+
+Actual substantive time: author original121.979sec (1.979sec allocation overrun disclosed), continuation67.211sec; root original-source16.698sec and independent model39.807sec. Combined245.695sec, within300sec initial cap. No idle/admin/serialization/testing time counted. All sessions use user-confirmed GPT-6.1 Sol; partial historical coverage remains partial.

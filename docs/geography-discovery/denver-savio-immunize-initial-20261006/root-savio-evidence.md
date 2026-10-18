@@ -1,0 +1,7 @@
+# Original-source challenge: Savio
+
+Current https://www.saviohouse.org/make-a-referral verifies EIN84-0570279 and current in-home clinical programs, Medicaid eligibility variable, named statewide counties and finite MST3–5months/FFT3–4months/otherlongercourses. Website generalgiving route /general-donation; no transaction. Recipient is not employee medical trustEIN72-1553094.
+
+Original IRS https://projects.propublica.org/nonprofits/full_text/202602089349301020/IRS990 HTTP200 has period12-31-2025 and fullfunctional14,274,461.2024id202511429349300521 full14,220,405;2023id202401919349300020 full12,655,502. No direct fundraising/gaming/inventory expensefields.2025return describes520MST clients/298FFT/59PSB/147trauma,207familywellnessplus47ChildFirst/58Core/157Prevention; do not sum into unique completedhouseholds.
+
+Own2025annual https://www.saviohouse.org/s/2025-Savio-Annual-Report-web.pdf downloaded/extracted via existingpypdf afterwebredirectmiss:page1states1800families statewide;page2expense13,906,047 versusIRS14,274,461 discrepancyunreconciled. Prefer explicit IRSrecipientboundary with matchedIRScohort ratherthan blending annualreportexpensesorassuming excessmarginalcost.99%receivefreecare doesnotprove otherwise-paidretailcashsavings; childrenwages/avoidedstateplacementcost notautomatic householdincome. Nativeprogram accomplishments lack causalresponse/control; mainclinical/resourceparameters remainjudgments. Publiccontractand alternativeproviders baseline, charity attribution notprovenmarginalgiftreturn.

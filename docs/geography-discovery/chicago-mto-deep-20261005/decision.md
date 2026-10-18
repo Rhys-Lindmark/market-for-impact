@@ -1,0 +1,9 @@
+MTO resumed calculator checkpoint: pending root acceptance.
+
+Verified originals: FY25 IRS990 https://projects.propublica.org/nonprofits/full_text/202611319349300201/IRS990 (EIN 36-3351193; expense $980,346; July 2024–June 2025). FY24 https://projects.propublica.org/nonprofits/full_text/202501059349302825/IRS990 ($866,384). FY23 https://projects.propublica.org/nonprofits/full_text/202441319349301004/IRS990 ($795,803). Schedule D matched these totals; no additional recognized expense identified, not proof that external resources cost zero.
+
+Current city original: https://cityofevanston.civicweb.net/document/433690/Approval%20of%20Renewal%20Contract%20for%20Landlord-Tenan.pdf?handle=DBDA1DA8F2DE463292734FA4523F6758 . Retained city26.pdf; SHA256 bb0d75fb263dffbbada28b10e0ab876b403b372820e716b3274d434ab975f3a6. Page 2 reports 365 issues January–October 1, 2025, not annual unique tenants or successful outcomes. Approximately 21 text cases may overlap. Page 5 repeats historical 2023 eviction outcomes, not current causal outcomes. Proposed joint 2026 contract $91,600 is not MTO's annual expense or confirmed marginal funding gap.
+
+Decision: narrow conditional reference using partial-year issues without extrapolation; tenant share, uniqueness, annual response, clinical utility, resource success and dollar gains are judgments. All resource gains and process costs are one-off; net work resources $200 is a hypothetical finite gain, not observed wages or recurring earnings. Clinical cohort is a subset of the resource-exposed union. Deposit gains have a matched landlord-loss stress. Whole annual recipient cost is charged against this narrow channel; unmodeled portfolio and marginal donor response remain unknown.
+
+Prior source interval 78.837 seconds is preserved. Prior unsupported open modeling interval is excluded entirely. Fresh resumed modeling is separately recorded; testing and packet formatting are untimed.

@@ -1,3 +1,4 @@
+import {impactNode} from '@/components/ImpactMetric';
 import CharityResearchReport,{type CharityReportContent} from '@/components/CharityResearchReport';
 import respite from '@/data/san-francisco/cfsf-respite-cea-v1.json';
 import wound from '@/data/san-francisco/sfccc-wound-cea-v1.json';
@@ -61,5 +62,5 @@ export default function ClinicalPathwayReport({kind}:{kind:'respite'|'wound'}){
  excludedBenefits:['Healthcare savings as donor cash','Unmodeled mortality reduction','Independent housing and substance-use benefits','Unpriced public or volunteered resources'],
  sources:data.sources,
  };
- return <CharityResearchReport content={{...content, donationUrl:isRespite ? undefined : 'https://www.sfccc.org/donate'}}/>;
+ return impactNode(<CharityResearchReport content={{...content, donationUrl:isRespite ? undefined : 'https://www.sfccc.org/donate'}}/>);
 }

@@ -1,0 +1,789 @@
+{
+  "version": "oa-ca-20261002-donor-health-resources-judgment-v1",
+  "historical": {
+    "q": 0.5311504596954826,
+    "price10": 1882705.7037158862
+  },
+  "central": {
+    "params": {
+      "gift": 100000,
+      "funding": 0.3,
+      "cap": 100,
+      "costPerService": 1479.0745585349903,
+      "baselineConsumption": 30000,
+      "medicationAnnual": 60,
+      "cystNetRecoveredPaidDays": 5,
+      "netPayPerRecoveredDay": 100,
+      "paidWorkShare": 0.5,
+      "ctsExtraLostPaidDays": 0.3,
+      "patientNetCashPerService": 25,
+      "overlap": 0,
+      "resourcesScale": 1,
+      "healthIndependentHarm": 0,
+      "incomeIndependentHarm": 0,
+      "healthNull": false,
+      "incomeNull": false,
+      "healthZero": false,
+      "incomeZero": false
+    },
+    "observed": {
+      "services": 1529,
+      "people": 1130,
+      "expense2025": 2261505,
+      "expenseSeries": [
+        2658742,
+        2678152,
+        2261505
+      ],
+      "expenseMean": 2532800,
+      "plannedBudget2026": 1900000
+    },
+    "nominalServices": 67.60984388714596,
+    "additionalServices": 20.282953166143788,
+    "additionalPeople": 14.990017709445702,
+    "grossHealthYears": 0.3566964048655985,
+    "proceduralHealthHarm": 0.0543032263849125,
+    "healthYears": 0.30239317848068603,
+    "incomeEquivalentYears": -0.0009156069848009217,
+    "totalEquivalentYears": 0.3014775714958851,
+    "price10": 3316996.335873858,
+    "healthOnlyPrice10": 3306952.9049044685,
+    "incomeOnlyPrice10": null,
+    "healthPaths": [
+      {
+        "id": "gi_symptom_diagnosis",
+        "name": "Non-FIT GI investigation → benign treatable dyspepsia/dysphagia management",
+        "nominal_services": 12.712773131167076,
+        "unique_people": 2.818593912011536,
+        "gross_q": 0.03642962806441921,
+        "harm_q": 0.002818593912011536,
+        "net_q": 0.033611034152407675
+      },
+      {
+        "id": "general_cyst",
+        "name": "Painful cyst/lipoma excision",
+        "nominal_services": 1.9997744864592388,
+        "unique_people": 0.44337707711555396,
+        "gross_q": 0.010147829274140258,
+        "harm_q": 0.0008867541542311079,
+        "net_q": 0.00926107511990915
+      },
+      {
+        "id": "anorectal",
+        "name": "Symptomatic haemorrhoid/fissure treatment",
+        "nominal_services": 1.0665463927782606,
+        "unique_people": 0.23646777446162875,
+        "gross_q": 0.010187624683058456,
+        "harm_q": 0.000945871097846515,
+        "net_q": 0.009241753585211942
+      },
+      {
+        "id": "gallstone",
+        "name": "Uncomplicated symptomatic gallstone surgery",
+        "nominal_services": 0.5777126294215579,
+        "unique_people": 0.12808671116671558,
+        "gross_q": 0,
+        "harm_q": 0.0006404335558335779,
+        "net_q": -0.0006404335558335779
+      },
+      {
+        "id": "breast_diagnostic",
+        "name": "Breast lesion diagnostic assessment and linked benign symptom treatment",
+        "nominal_services": 1.244304124907971,
+        "unique_people": 0.2758790702052336,
+        "gross_q": 0.0007428476331396792,
+        "harm_q": 0.00027587907020523364,
+        "net_q": 0.00046696856293444554
+      },
+      {
+        "id": "aub",
+        "name": "Refractory abnormal uterine bleeding → definitive outpatient treatment",
+        "nominal_services": 4.828642872777199,
+        "unique_people": 1.0705754963188168,
+        "gross_q": 0.06457230769261926,
+        "harm_q": 0.016058632444782252,
+        "net_q": 0.04851367524783701
+      },
+      {
+        "id": "pelvic",
+        "name": "Symptomatic pelvic prolapse/incontinence treatment",
+        "nominal_services": 1.857170335683538,
+        "unique_people": 0.41175980627646785,
+        "gross_q": 0.02173106508886224,
+        "harm_q": 0.004117598062764679,
+        "net_q": 0.017613467026097562
+      },
+      {
+        "id": "gyne_diagnostic",
+        "name": "Gynaecologic diagnostic workup → nonmalignant symptom management",
+        "nominal_services": 0.7428681342734152,
+        "unique_people": 0.16470392251058716,
+        "gross_q": 0.0010643786982299874,
+        "harm_q": 0.00032940784502117433,
+        "net_q": 0.0007349708532088131
+      },
+      {
+        "id": "cts",
+        "name": "Carpal tunnel decompression for symptomatic confirmed CTS",
+        "nominal_services": 2.4452742753166583,
+        "unique_people": 0.5421504115973493,
+        "gross_q": 0.014014319526694833,
+        "harm_q": 0.0021686016463893973,
+        "net_q": 0.011845717880305435
+      },
+      {
+        "id": "foot_tendon",
+        "name": "Painful foot deformity / tendon or trigger-finger intervention",
+        "nominal_services": 3.1439240682642753,
+        "unique_people": 0.6970505291965922,
+        "gross_q": 0.033784520287567905,
+        "harm_q": 0.003485252645982961,
+        "net_q": 0.030299267641584943
+      },
+      {
+        "id": "degenerative_knee",
+        "name": "Degenerative knee arthroscopy without acute mechanical indication",
+        "nominal_services": 1.3972995858952335,
+        "unique_people": 0.3098002351984854,
+        "gross_q": 0,
+        "harm_q": 0.0018588014111909123,
+        "net_q": -0.0018588014111909123
+      },
+      {
+        "id": "nasal",
+        "name": "Septal nasal obstruction surgery versus nasal medical therapy",
+        "nominal_services": 3.931010543863489,
+        "unique_people": 0.8715582566185238,
+        "gross_q": 0.030039132150046315,
+        "harm_q": 0.0034862330264740955,
+        "net_q": 0.02655289912357222
+      },
+      {
+        "id": "ear",
+        "name": "Conductive ear disease treatment",
+        "nominal_services": 1.6847188045129238,
+        "unique_people": 0.37352496712222444,
+        "gross_q": 0.008448505917200524,
+        "harm_q": 0.0011205749013666734,
+        "net_q": 0.007327931015833851
+      },
+      {
+        "id": "bph",
+        "name": "Bothersome BPH/outlet obstruction treatment",
+        "nominal_services": 2.009723613257543,
+        "unique_people": 0.4455829332206064,
+        "gross_q": 0.023036196111691873,
+        "harm_q": 0.0026734975993236384,
+        "net_q": 0.020362698512368233
+      },
+      {
+        "id": "stone",
+        "name": "Symptomatic urinary stone treatment",
+        "nominal_services": 1.5631183658669778,
+        "unique_people": 0.34656450361602714,
+        "gross_q": 0.013997688609534993,
+        "harm_q": 0.0017328225180801358,
+        "net_q": 0.012264866091454857
+      },
+      {
+        "id": "scrotal",
+        "name": "Symptomatic benign scrotal/hydrocele treatment",
+        "nominal_services": 0.8932104947811302,
+        "unique_people": 0.19803685920915837,
+        "gross_q": 0.003999339602724284,
+        "harm_q": 0.0007921474368366335,
+        "net_q": 0.00320719216588765
+      },
+      {
+        "id": "derm_cyst",
+        "name": "Symptomatic benign skin cyst/lesion treatment",
+        "nominal_services": 2.8299738448511054,
+        "unique_people": 0.6274435143260463,
+        "gross_q": 0.01081273598201892,
+        "harm_q": 0.0012548870286520925,
+        "net_q": 0.009557848953366827
+      },
+      {
+        "id": "skin_lesion",
+        "name": "Localized skin lesion diagnosis and treatment",
+        "nominal_services": 0.7074934612127763,
+        "unique_people": 0.15686087858151157,
+        "gross_q": 0.0030410819949428206,
+        "harm_q": 0.0004705826357445347,
+        "net_q": 0.002570499359198286
+      },
+      {
+        "id": "veins",
+        "name": "Symptomatic uncomplicated varicose vein treatment",
+        "nominal_services": 2.5646637968963146,
+        "unique_people": 0.5686206848579796,
+        "gross_q": 0.019598083967409294,
+        "harm_q": 0.0017058620545739387,
+        "net_q": 0.017892221912835356
+      },
+      {
+        "id": "pterygium",
+        "name": "Symptomatic pterygium treatment",
+        "nominal_services": 0.6964388758813267,
+        "unique_people": 0.15440992735367545,
+        "gross_q": 0.0033261834319687116,
+        "harm_q": 0.00046322978206102635,
+        "net_q": 0.002862953649907685
+      },
+      {
+        "id": "other_assessment",
+        "name": "Specialty assessment without established diagnosis-changing intervention",
+        "nominal_services": 0.7074934612127765,
+        "unique_people": 0.1568608785815116,
+        "gross_q": 0,
+        "harm_q": 0.0000784304392907558,
+        "net_q": -0.0000784304392907558
+      }
+    ],
+    "foundation": {
+      "gift_usd": 100000,
+      "nominal_services": 67.60984388714596,
+      "additional_services": 20.282953166143788,
+      "activity_factor": 0.3,
+      "crc_nominal_selected_services": 12.712773131167076,
+      "crc_unique_people": 2.818593912011536,
+      "crc_gross_q_per_person": 0.0009529934316619033,
+      "crc_gross_q": 0.0026861014846692225,
+      "crc_harm_q": 0.002818593912011536,
+      "crc_net_q": -0.00013249242734231356,
+      "eye_nominal_selected_services": 1.293386483779607,
+      "eye_unique_people": 0.2867612936568259,
+      "eye_gross_q_per_person": 0.041690776518095864,
+      "eye_gross_q": 0.01195530100788679,
+      "eye_harm_q": 0.0005735225873136518,
+      "eye_net_q": 0.011381778420573137,
+      "hernia_nominal_selected_services": 3.9995489729184777,
+      "hernia_unique_people": 0.8867541542311079,
+      "hernia_gross_q_per_person": 0.037306319343333096,
+      "hernia_gross_q": 0.03308153365677296,
+      "hernia_harm_q": 0.0035470166169244317,
+      "hernia_net_q": 0.029534517039848527,
+      "total_harm_q": 0.006939133116249619,
+      "us_q": 0.04078380303307935,
+      "overall_q": 0.04078380303307935,
+      "bay_q": 0.02447028181984761,
+      "sf_q": 0.0032627042426463483,
+      "nominal_uncredited_services": 49.6041352992808,
+      "external_clinical_resource_usd": 243333.53231586926,
+      "external_support_usd": 4056.5906332287573,
+      "patient_time_usd": 6760.984388714595,
+      "crc_downstream_resource_usd": 19069.159696750612,
+      "gross_resource_usd": 373220.26703456324,
+      "donor_us_per_10q": 24519537.797613174,
+      "resource_us_per_10q": 91511884.44389255,
+      "donor_bay_per_10q": 40865896.32935529,
+      "resource_bay_per_10q": 152519807.4064876,
+      "donor_sf_per_10q": 306494222.47016466,
+      "resource_sf_per_10q": 1143898555.548657,
+      "status": "positive"
+    },
+    "resourceLedger": [
+      {
+        "id": "gi_symptom_diagnosis",
+        "people": 2.818593912011536,
+        "annualMedicationNet": 0,
+        "annualWorkNet": 0,
+        "annualCtsLoss": 0,
+        "firstYearExtraCash": -33.82743362831858,
+        "flowEquivalent": 0,
+        "burdenEquivalent": -0.0015551323563769027,
+        "incomeEquivalent": -0.0015551323563769027
+      },
+      {
+        "id": "general_cyst",
+        "people": 0.44337707711555396,
+        "annualMedicationNet": 51,
+        "annualWorkNet": 212.5,
+        "annualCtsLoss": 0,
+        "firstYearExtraCash": -33.82743362831858,
+        "flowEquivalent": 0.001896157261816813,
+        "burdenEquivalent": -0.0002424979389053191,
+        "incomeEquivalent": 0.0016536593229114938
+      },
+      {
+        "id": "anorectal",
+        "people": 0.23646777446162875,
+        "annualMedicationNet": 48,
+        "annualWorkNet": 0,
+        "annualCtsLoss": 0,
+        "firstYearExtraCash": -33.82743362831858,
+        "flowEquivalent": 0.00018487867853861294,
+        "burdenEquivalent": -0.0001302603091466187,
+        "incomeEquivalent": 0.000054618369391994245
+      },
+      {
+        "id": "gallstone",
+        "people": 0.12808671116671558,
+        "annualMedicationNet": 0,
+        "annualWorkNet": 0,
+        "annualCtsLoss": 0,
+        "firstYearExtraCash": -33.82743362831858,
+        "flowEquivalent": 0,
+        "burdenEquivalent": -0.00007067062342978865,
+        "incomeEquivalent": -0.00007067062342978865
+      },
+      {
+        "id": "breast_diagnostic",
+        "people": 0.2758790702052336,
+        "annualMedicationNet": 0,
+        "annualWorkNet": 0,
+        "annualCtsLoss": 0,
+        "firstYearExtraCash": -33.82743362831858,
+        "flowEquivalent": 0,
+        "burdenEquivalent": -0.0001522136504641602,
+        "incomeEquivalent": -0.0001522136504641602
+      },
+      {
+        "id": "aub",
+        "people": 1.0705754963188168,
+        "annualMedicationNet": 48,
+        "annualWorkNet": 0,
+        "annualCtsLoss": 0,
+        "firstYearExtraCash": -33.82743362831858,
+        "flowEquivalent": 0.0008370129227370038,
+        "burdenEquivalent": -0.0005897357279772289,
+        "incomeEquivalent": 0.00024727719475977494
+      },
+      {
+        "id": "pelvic",
+        "people": 0.41175980627646785,
+        "annualMedicationNet": 42,
+        "annualWorkNet": 0,
+        "annualCtsLoss": 0,
+        "firstYearExtraCash": -33.82743362831858,
+        "flowEquivalent": 0.0002817151762514792,
+        "burdenEquivalent": -0.00022686676023140056,
+        "incomeEquivalent": 0.00005484841602007867
+      },
+      {
+        "id": "gyne_diagnostic",
+        "people": 0.16470392251058716,
+        "annualMedicationNet": 0,
+        "annualWorkNet": 0,
+        "annualCtsLoss": 0,
+        "firstYearExtraCash": -33.82743362831858,
+        "flowEquivalent": 0,
+        "burdenEquivalent": -0.00009087382117263293,
+        "incomeEquivalent": -0.00009087382117263293
+      },
+      {
+        "id": "cts",
+        "people": 0.5421504115973493,
+        "annualMedicationNet": 48,
+        "annualWorkNet": 0,
+        "annualCtsLoss": 30,
+        "firstYearExtraCash": -63.82743362831858,
+        "flowEquivalent": 0.0004238719288219441,
+        "burdenEquivalent": -0.0005637873911573284,
+        "incomeEquivalent": -0.00013991546233538434
+      },
+      {
+        "id": "foot_tendon",
+        "people": 0.6970505291965922,
+        "annualMedicationNet": 45,
+        "annualWorkNet": 0,
+        "annualCtsLoss": 0,
+        "firstYearExtraCash": -33.82743362831858,
+        "flowEquivalent": 0.000510942570601282,
+        "burdenEquivalent": -0.0003840146461466915,
+        "incomeEquivalent": 0.00012692792445459047
+      },
+      {
+        "id": "degenerative_knee",
+        "people": 0.3098002351984854,
+        "annualMedicationNet": 0,
+        "annualWorkNet": 0,
+        "annualCtsLoss": 0,
+        "firstYearExtraCash": -33.82743362831858,
+        "flowEquivalent": 0,
+        "burdenEquivalent": -0.00017092933030090477,
+        "incomeEquivalent": -0.00017092933030090477
+      },
+      {
+        "id": "nasal",
+        "people": 0.8715582566185238,
+        "annualMedicationNet": 48,
+        "annualWorkNet": 0,
+        "annualCtsLoss": 0,
+        "firstYearExtraCash": -33.82743362831858,
+        "flowEquivalent": 0.0006814143665871762,
+        "burdenEquivalent": -0.00048010536828915426,
+        "incomeEquivalent": 0.00020130899829802192
+      },
+      {
+        "id": "ear",
+        "people": 0.37352496712222444,
+        "annualMedicationNet": 42,
+        "annualWorkNet": 0,
+        "annualCtsLoss": 0,
+        "firstYearExtraCash": -33.82743362831858,
+        "flowEquivalent": 0.00025555590988527046,
+        "burdenEquivalent": -0.00020580056106705625,
+        "incomeEquivalent": 0.000049755348818214216
+      },
+      {
+        "id": "bph",
+        "people": 0.4455829332206064,
+        "annualMedicationNet": 48,
+        "annualWorkNet": 0,
+        "annualCtsLoss": 0,
+        "firstYearExtraCash": -33.82743362831858,
+        "flowEquivalent": 0.00034837213679850563,
+        "burdenEquivalent": -0.0002454531944740389,
+        "incomeEquivalent": 0.00010291894232446675
+      },
+      {
+        "id": "stone",
+        "people": 0.34656450361602714,
+        "annualMedicationNet": 45,
+        "annualWorkNet": 0,
+        "annualCtsLoss": 0,
+        "firstYearExtraCash": -33.82743362831858,
+        "flowEquivalent": 0.0002540340347504263,
+        "burdenEquivalent": -0.00019092711309824949,
+        "incomeEquivalent": 0.00006310692165217682
+      },
+      {
+        "id": "scrotal",
+        "people": 0.19803685920915837,
+        "annualMedicationNet": 45,
+        "annualWorkNet": 0,
+        "annualCtsLoss": 0,
+        "firstYearExtraCash": -33.82743362831858,
+        "flowEquivalent": 0.0001451623055716722,
+        "burdenEquivalent": -0.000109101207484714,
+        "incomeEquivalent": 0.000036061098086958185
+      },
+      {
+        "id": "derm_cyst",
+        "people": 0.6274435143260463,
+        "annualMedicationNet": 48,
+        "annualWorkNet": 0,
+        "annualCtsLoss": 0,
+        "firstYearExtraCash": -33.82743362831858,
+        "flowEquivalent": 0.0004905570243147274,
+        "burdenEquivalent": -0.0003456326610855553,
+        "incomeEquivalent": 0.0001449243632291721
+      },
+      {
+        "id": "skin_lesion",
+        "people": 0.15686087858151157,
+        "annualMedicationNet": 0,
+        "annualWorkNet": 0,
+        "annualCtsLoss": 0,
+        "firstYearExtraCash": -33.82743362831858,
+        "flowEquivalent": 0,
+        "burdenEquivalent": -0.0000865464963548885,
+        "incomeEquivalent": -0.0000865464963548885
+      },
+      {
+        "id": "veins",
+        "people": 0.5686206848579796,
+        "annualMedicationNet": 48,
+        "annualWorkNet": 0,
+        "annualCtsLoss": 0,
+        "firstYearExtraCash": -33.82743362831858,
+        "flowEquivalent": 0.0004445673032852218,
+        "burdenEquivalent": -0.00031322959910878455,
+        "incomeEquivalent": 0.00013133770417643725
+      },
+      {
+        "id": "pterygium",
+        "people": 0.15440992735367545,
+        "annualMedicationNet": 48,
+        "annualWorkNet": 0,
+        "annualCtsLoss": 0,
+        "firstYearExtraCash": -33.82743362831858,
+        "flowEquivalent": 0.00012072301770245245,
+        "burdenEquivalent": -0.00008505803768902337,
+        "incomeEquivalent": 0.000035664980013429074
+      },
+      {
+        "id": "other_assessment",
+        "people": 0.1568608785815116,
+        "annualMedicationNet": 0,
+        "annualWorkNet": 0,
+        "annualCtsLoss": 0,
+        "firstYearExtraCash": -33.82743362831858,
+        "flowEquivalent": 0,
+        "burdenEquivalent": -0.00008654649635488851,
+        "incomeEquivalent": -0.00008654649635488851
+      },
+      {
+        "id": "eye",
+        "people": 0.2867612936568259,
+        "annualMedicationNet": 0,
+        "annualWorkNet": 0,
+        "annualCtsLoss": 0,
+        "firstYearExtraCash": -33.82743362831858,
+        "flowEquivalent": 0,
+        "burdenEquivalent": -0.00015821781364878053,
+        "incomeEquivalent": -0.00015821781364878053
+      },
+      {
+        "id": "hernia",
+        "people": 0.8867541542311079,
+        "annualMedicationNet": 51,
+        "annualWorkNet": 0,
+        "annualCtsLoss": 0,
+        "firstYearExtraCash": -33.82743362831858,
+        "flowEquivalent": 0.0007365892049892101,
+        "burdenEquivalent": -0.0004884273671117065,
+        "incomeEquivalent": 0.0002481618378775036
+      },
+      {
+        "id": "crc",
+        "people": 2.818593912011536,
+        "annualMedicationNet": 0,
+        "annualWorkNet": 0,
+        "annualCtsLoss": 0,
+        "firstYearExtraCash": -33.82743362831858,
+        "flowEquivalent": 0,
+        "burdenEquivalent": -0.0015551323563769027,
+        "incomeEquivalent": -0.0015551323563769027
+      }
+    ]
+  },
+  "cases": {
+    "central": {
+      "nominalServices": 67.60984388714596,
+      "additionalServices": 20.282953166143788,
+      "additionalPeople": 14.990017709445702,
+      "healthYears": 0.30239317848068603,
+      "incomeEquivalentYears": -0.0009156069848009217,
+      "totalEquivalentYears": 0.3014775714958851,
+      "price10": 3316996.335873858
+    },
+    "retainedFundingHalf": {
+      "nominalServices": 67.60984388714596,
+      "additionalServices": 33.80492194357298,
+      "additionalPeople": 24.98336284907617,
+      "healthYears": 0.5039886308011433,
+      "incomeEquivalentYears": -0.0015260116413348688,
+      "totalEquivalentYears": 0.5024626191598084,
+      "price10": 1990197.8015243155
+    },
+    "lowFunding": {
+      "nominalServices": 67.60984388714596,
+      "additionalServices": 6.760984388714596,
+      "additionalPeople": 4.996672569815234,
+      "healthYears": 0.10079772616022874,
+      "incomeEquivalentYears": -0.000305202328266974,
+      "totalEquivalentYears": 0.10049252383196176,
+      "price10": 9950989.007621568
+    },
+    "highFunding": {
+      "nominalServices": 67.60984388714596,
+      "additionalServices": 54.08787510971677,
+      "additionalPeople": 39.973380558521875,
+      "healthYears": 0.8063818092818299,
+      "incomeEquivalentYears": -0.002441618626135792,
+      "totalEquivalentYears": 0.8039401906556941,
+      "price10": 1243873.625952696
+    },
+    "completeReplacement": {
+      "nominalServices": 67.60984388714596,
+      "additionalServices": 0,
+      "additionalPeople": 0,
+      "healthYears": 0,
+      "incomeEquivalentYears": 0,
+      "totalEquivalentYears": 0,
+      "price10": null
+    },
+    "fiveSlots": {
+      "nominalServices": 67.60984388714596,
+      "additionalServices": 5,
+      "additionalPeople": 3.695225637671681,
+      "healthYears": 0.07454367616088556,
+      "incomeEquivalentYears": -0.00022570849947266288,
+      "totalEquivalentYears": 0.0743179676614129,
+      "price10": 13455696.266559996
+    },
+    "cost2026BudgetSameOutput": {
+      "nominalServices": 80.47368421052633,
+      "additionalServices": 24.142105263157898,
+      "additionalPeople": 17.842105263157897,
+      "healthYears": 0.35992825531577055,
+      "incomeEquivalentYears": -0.0010898156706116893,
+      "totalEquivalentYears": 0.3588384396451589,
+      "price10": 2786769.446965772
+    },
+    "costThreeYearMeanSameOutput": {
+      "nominalServices": 60.367972204674665,
+      "additionalServices": 18.1103916614024,
+      "additionalPeople": 13.384396715097914,
+      "healthYears": 0.2700030342308764,
+      "incomeEquivalentYears": -0.0008175338653514733,
+      "totalEquivalentYears": 0.26918550036552497,
+      "price10": 3714910.344881532
+    },
+    "aubLegacyUtility": {
+      "nominalServices": 67.60984388714596,
+      "additionalServices": 20.282953166143788,
+      "additionalPeople": 14.990017709445702,
+      "healthYears": 0.33006702463466575,
+      "incomeEquivalentYears": -0.0009156069848009217,
+      "totalEquivalentYears": 0.32915141764986483,
+      "price10": 3038115.427665425
+    },
+    "aubNoUtility": {
+      "nominalServices": 67.60984388714596,
+      "additionalServices": 20.282953166143788,
+      "additionalPeople": 14.990017709445702,
+      "healthYears": 0.2378208707880668,
+      "incomeEquivalentYears": -0.0009156069848009217,
+      "totalEquivalentYears": 0.23690526380326585,
+      "price10": 4221096.5849641645
+    },
+    "fastOtherCare": {
+      "nominalServices": 67.60984388714596,
+      "additionalServices": 20.282953166143788,
+      "additionalPeople": 14.990017709445702,
+      "healthYears": 0.024564046162997104,
+      "incomeEquivalentYears": -0.0009156069848009217,
+      "totalEquivalentYears": 0.023648439178196187,
+      "price10": 42286088.839300565
+    },
+    "incomeNull": {
+      "nominalServices": 67.60984388714596,
+      "additionalServices": 20.282953166143788,
+      "additionalPeople": 14.990017709445702,
+      "healthYears": 0.30239317848068603,
+      "incomeEquivalentYears": null,
+      "totalEquivalentYears": null,
+      "price10": null
+    },
+    "healthNull": {
+      "nominalServices": 67.60984388714596,
+      "additionalServices": 20.282953166143788,
+      "additionalPeople": 14.990017709445702,
+      "healthYears": null,
+      "incomeEquivalentYears": -0.0009156069848009217,
+      "totalEquivalentYears": null,
+      "price10": null
+    },
+    "allNull": {
+      "nominalServices": 67.60984388714596,
+      "additionalServices": 20.282953166143788,
+      "additionalPeople": 14.990017709445702,
+      "healthYears": null,
+      "incomeEquivalentYears": null,
+      "totalEquivalentYears": null,
+      "price10": null
+    },
+    "incomeZero": {
+      "nominalServices": 67.60984388714596,
+      "additionalServices": 20.282953166143788,
+      "additionalPeople": 14.990017709445702,
+      "healthYears": 0.30239317848068603,
+      "incomeEquivalentYears": 0,
+      "totalEquivalentYears": 0.30239317848068603,
+      "price10": 3306952.9049044685
+    },
+    "healthBenefitZeroHarmsRetained": {
+      "nominalServices": 67.60984388714596,
+      "additionalServices": 20.282953166143788,
+      "additionalPeople": 14.990017709445702,
+      "healthYears": -0.0543032263849125,
+      "incomeEquivalentYears": -0.0009156069848009217,
+      "totalEquivalentYears": -0.05521883336971342,
+      "price10": null
+    },
+    "resourceSignedHarm": {
+      "nominalServices": 67.60984388714596,
+      "additionalServices": 20.282953166143788,
+      "additionalPeople": 14.990017709445702,
+      "healthYears": 0.30239317848068603,
+      "incomeEquivalentYears": -0.10013732699829168,
+      "totalEquivalentYears": 0.20225585148239433,
+      "price10": 4944232.726374527
+    },
+    "independentHealthHarm": {
+      "nominalServices": 67.60984388714596,
+      "additionalServices": 20.282953166143788,
+      "additionalPeople": 14.990017709445702,
+      "healthYears": -0.697606821519314,
+      "incomeEquivalentYears": -0.0009156069848009217,
+      "totalEquivalentYears": -0.698522428504115,
+      "price10": null
+    },
+    "independentIncomeHarm": {
+      "nominalServices": 67.60984388714596,
+      "additionalServices": 20.282953166143788,
+      "additionalPeople": 14.990017709445702,
+      "healthYears": 0.30239317848068603,
+      "incomeEquivalentYears": -1.0009156069848009,
+      "totalEquivalentYears": -0.6985224285041148,
+      "price10": null
+    },
+    "halfOverlap": {
+      "nominalServices": 67.60984388714596,
+      "additionalServices": 20.282953166143788,
+      "additionalPeople": 14.990017709445702,
+      "healthYears": 0.30239317848068603,
+      "incomeEquivalentYears": -0.0009156069848009217,
+      "totalEquivalentYears": 0.12312936906308583,
+      "price10": 8121539.220164817
+    },
+    "fullOverlap": {
+      "nominalServices": 67.60984388714596,
+      "additionalServices": 20.282953166143788,
+      "additionalPeople": 14.990017709445702,
+      "healthYears": 0.30239317848068603,
+      "incomeEquivalentYears": -0.0009156069848009217,
+      "totalEquivalentYears": -0.05521883336971342,
+      "price10": null
+    },
+    "consumption15000": {
+      "nominalServices": 67.60984388714596,
+      "additionalServices": 20.282953166143788,
+      "additionalPeople": 14.990017709445702,
+      "healthYears": 0.30239317848068603,
+      "incomeEquivalentYears": -0.0018489268879411597,
+      "totalEquivalentYears": 0.3005442515927449,
+      "price10": 3327297.0442803833
+    },
+    "consumption60000": {
+      "nominalServices": 67.60984388714596,
+      "additionalServices": 20.282953166143788,
+      "additionalPeople": 14.990017709445702,
+      "healthYears": 0.30239317848068603,
+      "incomeEquivalentYears": -0.00045557804651885414,
+      "totalEquivalentYears": 0.3019376004341672,
+      "price10": 3311942.595298046
+    },
+    "noMedicationSavings": {
+      "nominalServices": 67.60984388714596,
+      "additionalServices": 20.282953166143788,
+      "additionalPeople": 14.990017709445702,
+      "healthYears": 0.30239317848068603,
+      "incomeEquivalentYears": -0.007003991195537273,
+      "totalEquivalentYears": 0.29538918728514874,
+      "price10": 3385364.268715319
+    },
+    "workRecoveryNull": {
+      "nominalServices": 67.60984388714596,
+      "additionalServices": 20.282953166143788,
+      "additionalPeople": 14.990017709445702,
+      "healthYears": 0.30239317848068603,
+      "incomeEquivalentYears": -0.0024451853887736638,
+      "totalEquivalentYears": 0.2999479930919124,
+      "price10": 3333911.288059768
+    },
+    "netTwentyCystDays": {
+      "nominalServices": 67.60984388714596,
+      "additionalServices": 20.282953166143788,
+      "additionalPeople": 14.990017709445702,
+      "healthYears": 0.30239317848068603,
+      "incomeEquivalentYears": 0.0036094336483349556,
+      "totalEquivalentYears": 0.30600261212902097,
+      "price10": 3267945.959815423
+    }
+  },
+  "noEmpiricalScenarioWeights": true
+}

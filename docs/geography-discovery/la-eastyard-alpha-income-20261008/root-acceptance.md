@@ -1,0 +1,7 @@
+# Independent acceptance — East Yard
+
+Accepted 2026-10-08 as a targeted assessed-unknown resource scope, not a complete joint valuation or zero income. Root independently checked original garden and campaign pages; first web garden retrieval failed, direct original-page retrieval succeeded. Produce exchange/garden builds, tenant workshops and utility policy are real mechanisms, but no checked source establishes marginal unique households, actual purchases/rent/bills displaced or full growing/access/time costs. Campaign status text is partly historical; the future resilience hub is not delivered savings.
+
+Arithmetic challenge: analytic survival integral correctly separates exposure and post-exposure periods and discounts over a finite horizon. Portable validation reproduces six unchanged original worlds within explicit quadrature tolerance; central analytic 0.25494742204174065 versus historical 0.25494743599414343 QALYs, not a substantive calibration change. Full three-year cost4687530 remains. Original clinical price183862606.09844613 retained. Resources, overlap, producer/public incidence, delay and unavoidable negative costs remain unidentified rather than forced favorable. Clinical-null and zero-expansion arithmetic checked. Initial diagnostics preserved.
+
+Author45.721sec; independent root original-source26.579sec; independent modeling11.586sec; combined83.886sec, below300sec initial cap. Validation, serialization, integration and publication are overhead, not research. Model GPT-6.1 Sol, actual closed intervals retained.

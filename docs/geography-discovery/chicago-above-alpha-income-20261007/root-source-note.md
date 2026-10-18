@@ -1,0 +1,7 @@
+# Independent source audit — October 7
+
+Fresh original audit retrieved in memory through the signed inline PDF URL in https://projects.propublica.org/nonprofits/display_audit/2024-12-GSAFAC-0000386319 . Ordinary download and unsigned S3 URL returned403; signed inline link succeeded,31pages. No signed credential retained. Physical p6: cash1,892,947; netassets2,355,942; deferredCHMC585,104; note850,000. Physicalp7: expense4,296,413=program3,231,072+admin756,564+fundraising308,777; programfees2,390,278; in-kind572,432; revenue5,078,619; transferassetloss50,786 is netted revenue, not recurring expense. Opinion July9,2025.
+
+Fresh own annual snapshot https://aboveandbeyondfrc.org/donate/annual-report/ reports2023 group1058,41759hours,undefined42.9% recovered,employment assistance62/five successful jobs/three joboffers/19housingplacements. Offers not added to jobs; housing and employment not independent extra clinical people. Free patient services do not exclude external reimbursement. Clinical and employment causal factors remain judgments;2024expense/2023capacity is conditional historical annual reference, not measured current marginal donation productivity.
+
+Earlier root-start.json spans the intervening Mac-settings conversation and is excluded, not imported as dedicated research. Only the separately recorded resumed source interval is measured. Earlier unmeasured analysis is partial history, not retrospectively reconstructed minutes.

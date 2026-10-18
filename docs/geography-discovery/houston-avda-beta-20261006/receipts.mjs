@@ -1,0 +1,3 @@
+import crypto from 'node:crypto';
+const urls=['https://www.impact100houston.org/past_grant_recipients.php','https://pubmed.ncbi.nlm.nih.gov/7942642/','https://pubmed.ncbi.nlm.nih.gov/10028208/','https://www.ojp.gov/pdffiles1/nij/grants/249879.pdf','https://doi.org/10.1111/lasr.12572','https://avda.org/about/our-clients/'];
+console.log(JSON.stringify(await Promise.all(urls.map(async url=>{try{const r=await fetch(url,{signal:AbortSignal.timeout(12000)}),body=Buffer.from(await r.arrayBuffer());return {url,finalUrl:r.url,status:r.status,bytes:body.length,sha256:crypto.createHash('sha256').update(body).digest('hex'),retrievedAt:new Date().toISOString()};}catch(e){return {url,error:String(e),retrievedAt:new Date().toISOString()};}}))));

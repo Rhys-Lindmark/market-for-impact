@@ -1,34 +1,29 @@
-# Pacific Hearing Connection: whole-gift hearing-health assessment
+# Pacific Hearing Connection
 
-V2 evidence review, September 11, 2026. Legal recipient: Pacific Hearing Connection, EIN 81-2591375. This is a hypothetical ordinary $10,000 gift evaluated against whole reported FY2024 expense, not a verified offer to purchase treatment. The quantified outcome is partial hearing-related health. Current marginal cost and complete societal resource cost remain unknown.
+Updated: 3 October 2026. Legal recipient: Pacific Hearing Connection, EIN 81-2591375.
 
 ## Summary
 
-**What do they do?** Pacific Hearing Connection provides reduced-fee hearing care in the Bay Area, including assessment, hearing aids and follow-up, alongside outreach and education. Donated devices, professional time and office space help support the service. Its clinical-access mechanism is plausible: an appropriately fitted aid can improve communication for someone who would otherwise remain untreated. But an appointment, screening, donated device or grant-funded training session is not itself a completed additional treatment course. The public record does not establish annual unique fitted patients or the number another unrestricted donation would add. [More](#1-organization-and-current-delivery)
+**What do they do?** Pacific Hearing Connection offers reduced-fee hearing assessments, hearing aids and follow-up in the Bay Area. Donated devices, professional time and space help support access. It also provides outreach and education.
 
-**Reasons to investigate:**
+**Why this approach interests us**
 
-- Whole reported expense is relatively small for a clinical organization, although it excludes an unknown amount of donated clinical resources and is not a current cash budget.
-- The organization has an operating service, named clinical leadership, an explicit local mission and support from identifiable funders.
-- Controlled hearing research supports communication benefit. The uncertainty is how much incremental, sustained, preference-valued health this particular delivery system creates per whole gift—not whether hearing care can matter.
+- Appropriately fitted hearing aids can improve communication for people without equivalent treatment alternatives.
+- Reused devices and donated clinical resources can make specialist care more accessible.
+- An operating local service provides a practical route from referral to fitting and follow-up.
 
-**Reservations:**
+**Our main reservations**
 
-- The modeled annual 30/75/150 person-course offers are explicit judgments, not counts recovered from filings, screening targets or inventory.
-- The weighted estimate depends heavily on the favorable world: its 10% subjective weight produces 91.8% of expected signed Bay health.
-- Short-term hearing-sensitive utility evidence and longer communication outcomes do not establish a two-year local utility trajectory.
-- Historical grants and a current giving page do not establish spendable additional capacity. Existing funding may already cover the next screening, fitting or staff hour.
-- Costs of donated space, professional labor, devices, patient payments and required service time are incompletely reconciled. The reported-cost estimate is not a complete-resource estimate.
+- Additional offers, completed fittings, continued use and equivalent-care alternatives are not established by a reconciled patient ledger.
+- The clinical estimate depends on utility measurement, discontinuation, later alternative treatment and donor responsiveness.
+- Sliding-scale fees, access costs and maintenance can offset household savings; complete external costs and additional funding capacity remain unknown.
 
-**Cost-effectiveness.** The retained probability-weighted result is **$937,721 per 10 modeled Bay QALYs**, versus **$2,199,018 in the central world**. These figures are unchanged from the historical model; V2 has not found evidence that identifies better local coefficients. They are not confidence bounds or a guaranteed return. A $10,000 gift produces 0.10664 expected Bay QALYs in the selected-world mixture, but only 0.04547 in the central world. Removing and renormalizing away the favorable world gives about $10.28 million per 10. A one-year effective-duration cap gives $1.73 million; a lower generic-utility branch gives $12.50 million. [More](#4-model-and-results)
+**What do you get for your dollar?** The current planning model estimates about $9.72M per better life in the Bay Area, including health and signed household-resource benefits. A $10,000 comparison produces about 1.43 additional paired-person offers, 1.13 fittings and 0.55 initial useful users without equivalent alternative care. Hearing gains improve communication, but fees and maintenance reduce the combined benefit. These delivery figures are judgments, not a current treatment quote. [More](#4-model-and-results)
 
-**How we evaluated spending.** Original FY2022, FY2023 and FY2024 returns report expenses of $88,147, $125,230 and $184,099. FY2024 includes a $45,900 inventory-cost adjustment, which remains in the denominator. Removing it is only a diagnostic: the remainder is not verified cash spending or a prospective budget. Salaries and benefits, contractors, outreach, devices, administration and unsuccessful service attempts all belong in the whole-gift boundary. Later awards cannot simply be added to an older annual expense total, nor counted as money a new donor causes. [More](#2-three-years-of-finances)
+**What information has the organization shared?** Original annual returns provide expense and asset data; current program pages explain eligibility, sliding-scale fees and donated resources. They support a real operating service, but do not establish current unique fitting totals, treatment retention or a marginal expansion budget. [More](#6-funding-and-monitoring)
 
-**Monitoring and funding.** The highest-value next evidence is a reconciled annual patient funnel and a dated incremental budget. We would ask how many distinct patients were offered and completed fitting, how many were still using an appropriate aid at follow-up, and what alternative care was available. Then we would ask what an additional $10,000 changes after existing grants, fees, reserves, stock and donated staff time. Public sources checked here do not answer those questions. We have not contacted the organization, and a general donation route should not be presented as an audited tranche. [More](#6-funding-and-monitoring)
+**Our qualitative assessment** The service has a plausible local mechanism and identifiable leadership. A reconciled delivery ledger, actual recipient-cost data and a priced expansion plan would materially strengthen the evidence for donations. [More](#7-what-would-change-our-view)
 
-**Qualitative assessment.** This remains a reasonable exploratory hearing-access candidate, not a verified cost-effective giving recommendation. Screening and education may help patients reach care, and respectful access may have benefits outside our narrow health model. Those possibilities are not quantified as extra QALYs. Equally, the existence of Medi-Cal, children's hearing coverage and over-the-counter devices does not prove that every applicant has timely equivalent access. Both optimistic and skeptical claims require patient-level information. The useful conclusion is therefore conditional: local delivery could be valuable, but the favorable numerical ranking is fragile and current additional funding capacity is unverified. [More](#7-what-would-change-our-view)
-
-**What changed in V2?** The numerical answer did not change. We added three original annual spending breakdowns, distinguished inventory expense from cash requirements, checked current grant and service descriptions, and made the alternative-care and clinical-instrument issues more explicit. The correct grant publisher is the Santa Clara County Health Authority / Santa Clara Family Health Plan, not the Housing Authority. A general giving route exists, but there is still no verified marginal offer. The central threshold is useful for diligence: roughly 4.5 additional person-course offers per $10,000 would be needed to reach $1 million per 10 Bay QALYs under the retained clinical assumptions.
 
 ## 1. Organization and current delivery
 
@@ -128,6 +123,67 @@ Nonuse is primarily forgone benefit, not automatically harm. A separate signed h
 
 ## 4. Model and results
 
+### Current health and household-resource estimate
+
+We estimate approximately **$9.72 million per better life**: ten combined health and household-resource-equivalent years benefiting Bay Area residents. The health-only comparison is approximately **$7.26 million per ten QALYs**. These are conditional planning estimates, not measured local outcomes or a priced offer of additional treatment. Income/resource equivalents use the Coefficient Giving reference welfare convention; they are not clinical QALYs.
+
+For a $10,000 comparison, the model funds about **1.43 additional paired-person hearing-care offers**, **1.13 completed fittings**, and **0.79 completed fittings for people without equivalent alternative care**. About **0.55 people initially use the aids in that unmet-care group**. A pair of aids is one person's treatment, not two beneficiaries. The apparent cost is high because the comparison retains the organization's whole historical accounting expense, assumes limited additional delivery from a donation, and does not assign additional hearing gains to people who would obtain equivalent care elsewhere.
+
+The model generates 0.01377 net Bay QALYs and subtracts 0.00348 household-resource-equivalent years, leaving 0.01029 combined years per $10,000. Reduced-fee care can improve communication and make hearing treatment accessible, but it still involves fees, travel and maintenance. Some recipients avoid a purchase they would otherwise make; many do not. Counting a donated device's retail value as everybody's saved spending would overstate that benefit.
+
+| Component per $10,000 | Current modeled result |
+| --- | ---: |
+| Additional paired-person offers | 1.426 |
+| Completed fittings | 1.129 |
+| Completed fittings without equivalent alternative care | 0.790 |
+| Initial useful users in that unmet-care group | 0.553 |
+| Net Bay health years | 0.01377 |
+| Signed Bay household-resource equivalents | −0.00348 |
+| Combined Bay equivalents | 0.01029 |
+| Donor dollars per better life | $9.72M |
+
+### Why the estimate changed
+
+The historical central estimate was **$2.20 million per ten Bay QALYs**. A separate subjective weighted illustration was **$938,000**, with about 92% of its signed expected benefit coming from the favorable scenario. Neither is the current combined-benefit headline. All six historical worlds and thirteen diagnostic calculations remain available in the downloadable model.
+
+The reassessment independently rebuilds the treatment pathway rather than adding income to a fixed old benefit total. It changes the hearing-utility judgment from 0.12 to 0.06, keeps a separate 50% clinical transfer adjustment, assumes 35% funding responsiveness rather than 50%, and explicitly separates purchased alternatives, equivalent free care and otherwise unmet need. Initial use, gradual benefit onset, discontinuation and later alternative treatment are modeled separately. Household costs then reduce the combined benefit further. The whole $184,099 historical expense denominator is unchanged; the revision is not produced by removing inventory costs.
+
+### Clinical benefit: onset, continued use and alternatives
+
+The clinical evidence supports a plausible communication benefit, but the utility instrument matters. The Kaur study's three-month HUI3 improvement of about 0.12 is a hearing-sensitive endpoint, not a directly observed lifetime QALY gain. Other instruments and studies suggest smaller changes. We use 0.06 as a judgment between those results, then apply a distinct 50% population/service transfer assumption. Neither coefficient is a measured Pacific Hearing Connection effect.
+
+The central course lasts two calendar years after fitting. Benefit ramps over three months, then declines with judged annual discontinuation and alternative-care catch-up hazards of 0.2 and 0.5. Mortality is 4% annually and discounting 3%; survival and discount apply through the treatment delay as well as afterward. These are explicit finite assumptions, not an estimated local prognosis. The previous model's bundled half-year effective exposure is not multiplied into this new curve.
+
+The modeled annual anchor is 75 paired-person offers, a retained judgment because a reconciled unique-patient delivery ledger was not available. It is not 75 observed fitted patients. Completion is 80%, initial use 70%, and completed patients are partitioned into 10% otherwise purchasing equivalent care, 20% otherwise receiving timely equivalent free care and 70% lacking an equivalent alternative. Those shares require validation. Purchased/free alternatives receive no additional hearing utility; comparison with no treatment applies only to the unmet group.
+
+Sensitivity cases vary utility, offers, use, completion, funding, clinical duration and catch-up separately. They are unweighted judgments, not confidence intervals or newly calibrated probabilities. The calculator also retains clinical-null, adverse-health and unknown-input cases. A numeric zero used as a placeholder does not establish that an unmeasured clinical effect is absent.
+
+### Household income, savings and costs
+
+The official FAQ describes sliding-scale fees, not universally free devices, and a community-service expectation with substitution for people unable to participate. The central model assumes $150 at fitting, $20 incremental travel per attempted course and $20 actual disposable-pay loss for 20% of attempts. These amounts are weak judgments, not quoted fees or observed work records. Volunteer hours are not automatically converted to wages.
+
+Otherwise purchasers avoid a judged $500 payment for equivalent care but still pay the modeled fee. Someone who would use free care or forgo a purchase has no such saved bill. Unmet-care users incur $30 a year of incremental maintenance while alive and using the aids; maintenance that equivalent-care recipients would incur anyway cancels. Fitting fees and access costs do not disappear simply because clinical benefit is small or zero.
+
+The central additional earnings effect is zero because a local causal earnings estimate was not established. This does not assert that communication improvements have no economic value. Separate positive and negative $500 annual net-pay scenarios apply to 20% of common-alive unmet-care users. The model does not credit ordinary wages simply because a person survives, or infer employment gains from receipt of a device.
+
+Each household's cash changes are valued first, with pay evaluated against the resulting resource baseline. The reference is $25,000 annual disposable household resources, not observed patient income. Positive cash/pay benefits receive a 50% independent-benefit adjustment for possible overlap with health-related wellbeing; negative costs are fully debited. Raw household dollar flows are kept separate from charity expenses and welfare equivalents. Central all-region discounted cash changes are about −$157 and actual pay changes −$6 per $10,000 comparison.
+
+Clinical integration is continuous and exact within the stated model. Monetary maintenance and pay use annual or fractional-period midpoint approximations. The final fractional period uses its actual midpoint, not a date beyond the clinical horizon. This is an annual resource-accounting convention, not a measured daily liquidity or debt trajectory.
+
+### Costs, geography and what remains unknown
+
+The denominator is FY2024 accrual expense of **$184,099**, including the **$45,900 inventory adjustment** reported in Schedule O. It includes unsuccessful, outreach and administrative work; it is neither a verified current cash requirement nor a marginal treatment quote. Original returns show expenses of $88,147 in 2022 and $125,230 in 2023. Current fees are not silently netted from the denominator. Removing inventory expense in a diagnostic holds physical output fixed rather than creating more patients from accounting.
+
+Bay attribution is 95%, a judgment consistent with the reported service area. SF-specific residence shares remain unknown, so there is no invented SF price. Current websites support ongoing activity; the most recent located indexed return is FY2024. That does not establish that a later filing does not exist. Grant-supported education or screening is not proof of additional hearing-aid fittings.
+
+The captured accounting-resource envelope is distinguished from comprehensive societal costs. Unbooked professional time, space, device stock, other clinical services and remaining education/outreach benefits are not fully valued. Unknown comprehensive costs and whole-portfolio value remain unknown rather than being set to zero. The hard $10,000 comparison limit is a calculator scope boundary, not verified funding room.
+
+The most useful next evidence would be a dated unique-person offer/fitting/use ledger; actual fees, maintenance and alternatives; and a priced plan showing what an additional donation would change. Those would improve both the treatment denominator and the signed resource estimate. Until then, the estimate supports comparison and further investigation, not a confident claim that a large donation can buy the modeled outcomes.
+
+### Historical clinical-only analysis
+
+The following original model discussion is retained for comparison. Its prices, subjective probabilities and bundled exposure assumptions are historical, not the current estimate.
+
 The historical executable model is preserved. V2 adds a wrapper, financial data, source mapping, diagnostics and validation without changing its preferred coefficients or saved output. The equation is:
 
 `Bay QALYs = gift / whole expense × annual person-course offers × funding response × (utility × clinical transfer × completion × effective incremental years − harm per offer) × Bay share`.
@@ -180,6 +236,12 @@ These thresholds are useful questions for the organization. They are not targets
 
 ## 5. Whole resources and the ordinary gift
 
+Current comparison retains whole FY2024 accrual expense, including inventory, with no invented current marginal budget. The captured accounting envelope is not comprehensive societal cost. Household-resource effects are modeled separately in the preceding section.
+
+### Historical resource discussion
+
+The original discussion below explains the former clinical-only comparison, not the current combined estimate.
+
 The reported denominator includes unsuccessful assessment, outreach and nonmodeled activities. This is deliberately broader than a device-price calculation. A refurbished pair is not a whole treatment course, and an advertised contribution amount is not a guaranteed incremental outcome. The official donation examples include maintenance, tests, molds, refurbished aids and portable equipment. Those categories explain possible uses, not a contract specifying what the next gift buys.
 
 The service also depends on resources outside the accounting denominator: donated professional time and space, device stock, patient contributions, travel and potentially other funders' work. Some devices may already be represented in inventory expense. Complete resource accounting would identify what is booked, what is unbooked, whether donated inputs have an opportunity cost, and whether incremental scale requires replacing free capacity with paid capacity. The illustrative 50% allowance is deliberately not called a measured societal estimate.
@@ -225,6 +287,10 @@ The prior-driven base remains unchanged because the new evidence does not unique
 We retain partial health scope. Education, community connection, ear-wax treatment, pediatric development, employment and partner effects are not assigned separate health credit. Their omission can matter, but unspecified benefits are not a reason to assume an excellent total return. Current donor capacity and full-resource cost remain explicitly null in structured data. The selected-world expectation is one transparent lens, not the organization's total value.
 
 ## 8. Research provenance and model boundary
+
+The October 2026 reassessment records 112.787 seconds of source research and 1,609.804 seconds of modeling/writing, plus 55.680 seconds of independent source/packet audit and 65.922 seconds of independent scientific synthesis. The total is 1,844.193 seconds, approximately 31 minutes on user-confirmed GPT-6.1 Sol. Runtime identity and reasoning effort were not independently introspected. Earlier recorded Astra research remains separate. Deterministic testing, numerical QA, integration, waiting and publication are excluded.
+
+The current model is an unweighted conditional Bay health/resource comparison. All six original worlds and thirteen historical diagnostics remain available separately; their subjective weights are not new empirical probabilities. SF attribution, complete societal resources, whole-portfolio value and current funding capacity remain unresolved. Independent numerical review found and corrected near-zero-decay cancellation; exact central output was unaffected.
 
 This assessment was reviewed September 11, 2026 using public sources. We did not contact the organization or review private monitoring records.
 

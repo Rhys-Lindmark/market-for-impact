@@ -1,3 +1,4 @@
+import {impactNode} from '@/components/ImpactMetric';
 import CharityResearchReport,{type CharityReportContent} from '@/components/CharityResearchReport';
 import programs from '@/data/san-francisco/large-bay-programs-v1.json';
 import {foodAccessModel,benefitAccessModel,foodPharmacyModel} from '@/lib/large-bay-impact-model.mjs';
@@ -29,5 +30,5 @@ export default function LargeBayProgramReport({slug}:{slug:string}){
  evidence:[{key:'evidence',design:'External studies and local program disclosures',population:data.unit,result:data.evidence,transfer:'No local randomized QALY estimate. All local transfer and donor additionality coefficients are explicit judgments.'}],
  reservations:['Food access, dignity and purchasing power have value not fully captured by this narrow health ledger.','Do not add food-bank and downstream partner effects for the same household.','The favorable case does not establish an available or cost-effective marginal gift.'],
  excludedBenefits:['Unmodeled child development and mortality','Public benefits converted directly into QALYs','Whole-organization reach','Unverified healthcare savings'],sources:data.sources};
- return <CharityResearchReport content={content}/>;
+ return impactNode(<CharityResearchReport content={content}/>);
 }

@@ -1,3 +1,4 @@
+import {impactNode} from '@/components/ImpactMetric';
 /* eslint-disable @next/next/no-html-link-for-pages -- Native anchors avoid a confirmed Vinext production prefetch runtime error under the canonical /donate base path. */
 import '@/app/givebetter.css';
 import '@/app/report-reading.css';
@@ -8,6 +9,7 @@ import {researchEffortSummary} from '@/lib/research-effort.mjs';
 import DonorReadiness from './DonorReadiness';
 import ReportExpenseAppendix from './ReportExpenseAppendix';
 import TopTenSummary,{hasTopTenSummary} from './TopTenSummary';
+import {impactText,impactMetric,impactUnitExplanation,impactEquation} from '@/lib/impact-metric.mjs';
 
 export type CharityEvidence = {
   key: string;
@@ -34,6 +36,10 @@ export type CharityReportContent = {
   donationNote?: string;
   published: string;
   modelVersion: string;
+  calibrationDate?: string;
+  summaryReasons?: string[];
+  summaryReservations?: string[];
+  fundingAppendix?: React.ReactNode;
   nutshell: {
     headline: string;
     body: React.ReactNode;
@@ -57,6 +63,8 @@ export type CharityReportContent = {
     sensitivity: Array<{ case: string; headline: string; detail: string }>;
     uncertaintyBoundary?: string;
     fundingBoundary: string;
+    incomeLedger?: {paragraphs:string[];scenarios:Array<{case:string;headline:string;detail:string}>};
+    comparisonUnit?: string;
   };
   comparisonBridge?: {
     headline: string;
@@ -81,16 +89,27 @@ export type CharityReportContent = {
 };
 
 function Assumptions({ inputs }: { inputs: CharityReportContent['model']['inputs'] }) {
-  return <dl className="report-assumptions">{inputs.map(input => <div key={input.key}>
+  return impactNode(<dl className="report-assumptions">{inputs.map(input => <div key={input.key}>
     <dt>{input.label}</dt><dd><strong>{input.best}</strong> (range: {input.range}). {input.basis} <em>{input.confidence}.</em></dd>
-  </div>)}</dl>;
+  </div>)}</dl>);
 }
 function Scenarios({ rows }: { rows: CharityReportContent['model']['sensitivity'] }) {
-  return <ul className="report-scenarios">{rows.map(row => <li key={row.case}><strong>{row.case}: {row.headline}.</strong> {row.detail}</li>)}</ul>;
+  return impactNode(<ul className="report-scenarios">{rows.map(row => <li key={row.case}><strong>{row.case}: {impactText(row.headline,{priceOnly:true})}.</strong> {row.detail}</li>)}</ul>);
 }
 export default function CharityResearchReport({ content }: { content: CharityReportContent }) {
+  content={...content,
+    nutshell:{...content.nutshell,body:impactNode(content.nutshell.body)},
+    summary:content.summary.map(item=>({...item,value:impactText(item.value,{priceOnly:/per (?:10|ten)|USD\/10|best guess|positive scenarios|cost per better|central estimate|central scenario|our best guess|positive stress|positive central|global health/i.test(item.label+' '+item.detail)&&!/native|course cost|donor cost per|gift size/i.test(item.label)}),detail:impactText(item.detail)})),
+    model:{...content.model,headline:impactText(content.model.headline),
+      equation:impactEquation(content.model.equation),
+    },
+    ...(content.comparisonBridge?{comparisonBridge:{...content.comparisonBridge,equation:impactEquation(content.comparisonBridge.equation)}}:{}),
+  };
   const donationUrl = content.donationUrl?.trim();
   const effort = researchEffortSummary(researchEffort,content.organization,{...historicalEffort,...assignedEffort});
+  const earlier=content.calibrationDate?researchEffortSummary({...researchEffort,organizations:{...researchEffort.organizations,[content.organization]:{coverage:'partial',sessions:(researchEffort.organizations[content.organization]?.sessions??[]).filter(s=>Date.parse(s.startedAt)<Date.parse(content.calibrationDate!))}}},content.organization,{...historicalEffort,...assignedEffort}):null;
+  const effortLabel=earlier?.estimated&&effort.recorded?earlier.label+' + '+effort.label.replace('Research time: ',''):effort.label;
+  const phaseBullets=earlier?.estimated&&effort.recorded?['v1: ~'+Math.round(earlier.minutes!)+' min on '+historicalEffort.model.name+'; estimated before tracking.',...effort.bullets]:effort.bullets;
   const headings = [
     ['summary', 'Summary'],
     ['program', '1. What do they do?'],
@@ -100,14 +119,14 @@ export default function CharityResearchReport({ content }: { content: CharityRep
     ['funding', '5. Funding and previous grants'],
     ['sources', '6. Sources'],
   ];
-  return (
+  return impactNode((
     <main className="givebetter charity-report">
       <header className="givebetter-masthead"><a href="/san-francisco">Give<span>Better</span> <small>x SF</small></a></header>
       <div className="report-reading-column">
         <header className="report-heading">
           <h1>{content.organization}</h1><p className="report-program">{content.program}</p>
-          <details className="report-research-effort" data-research-effort={effort.recorded?'recorded':effort.estimated?'estimated':'not-recorded'}><summary>{effort.label}</summary><ul aria-label="Research phases">{effort.bullets.map(bullet=><li key={bullet}>{bullet}</li>)}</ul></details>
-          <p className="report-date">Published: {content.published}.</p>
+          <details className="report-research-effort" data-research-effort={effort.recorded?'recorded':effort.estimated?'estimated':'not-recorded'}><summary>{effortLabel}</summary><ul aria-label="Research phases">{phaseBullets.map(bullet=><li key={bullet}>{bullet}</li>)}</ul></details>
+          <p className="report-date">{content.calibrationDate?'Updated: '+content.calibrationDate:'Published: '+content.published}.</p>
           <a className="report-donate" href={donationUrl || '#funding'} {...(donationUrl ? {target:'_blank',rel:'noreferrer'} : {})}>{donationUrl ? 'Donate' : 'Funding limitations'}</a>
         </header>
         <nav className="report-contents" aria-label="Table of Contents">
@@ -120,9 +139,9 @@ export default function CharityResearchReport({ content }: { content: CharityRep
             {hasTopTenSummary(content.organization)?<TopTenSummary organization={content.organization}/>:<>
             <p><strong>What do they do?</strong> {content.programSection.body} <a href="#program">More</a></p>
             <p><strong>Why this approach interests us</strong></p>
-            <ul><li>{content.nutshell.whyItMayWork}</li></ul>
+            <ul>{(content.summaryReasons??[content.nutshell.whyItMayWork]).map(reason=><li key={reason}>{reason}</li>)}</ul>
             <p><strong>Our main reservations</strong></p>
-            <ul><li>{content.nutshell.whyWeAreCautious}</li></ul>
+            <ul>{(content.summaryReservations??[content.nutshell.whyWeAreCautious]).map(reason=><li key={reason}>{reason}</li>)}</ul>
             <p><strong>What do you get for your dollar?</strong></p>
             <p>{content.nutshell.body}</p>
             <dl className="report-summary">{content.summary.map(item => <div key={item.label}><dt>{item.label.toLowerCase()}</dt><dd><strong>{item.value}</strong> — {item.detail}</dd></div>)}</dl>
@@ -146,12 +165,13 @@ export default function CharityResearchReport({ content }: { content: CharityRep
           <section id="cost-effectiveness">
             <h2>4. What do you get for your dollar?</h2>
             <p><strong>{content.model.headline}</strong></p><p>{content.model.body}</p>
-            <p>A better life is our comparison unit of 10 additional quality-adjusted life years (QALYs), potentially spread across people. These are uncertain estimates, not measured returns or verified donation offers.</p>
+            <p>{impactMetric().years===1?impactUnitExplanation:'A better life is ten modeled health and income-equivalent years, potentially spread across people.'} These are uncertain estimates, not measured returns or verified donation offers.</p>
             <h3>How we calculate the estimate</h3>
             <p className="report-equation"><strong>{content.model.equation.label}:</strong> {content.model.equation.expression}<br /><strong>{content.model.equation.result}</strong></p>
             <details className="report-method"><summary>Model inputs and assumptions</summary><Assumptions inputs={content.model.inputs}/></details>
             <h3>{content.model.giftHeading}</h3><Scenarios rows={content.model.sensitivity}/>
             {content.model.uncertaintyBoundary && <p><strong>Uncertainty.</strong> {content.model.uncertaintyBoundary}</p>}
+            {content.model.incomeLedger&&<div><h3>Health and income effects</h3>{content.model.incomeLedger.paragraphs.map(p=><p key={p}>{p}</p>)}<Scenarios rows={content.model.incomeLedger.scenarios}/></div>}
             {content.comparisonBridge && <div className="report-qaly-bridge">
               <h3>{content.comparisonBridge.headline}</h3><p>{content.comparisonBridge.body}</p>
               <p className="report-equation"><strong>{content.comparisonBridge.equation.label}:</strong> {content.comparisonBridge.equation.expression}<br /><strong>{content.comparisonBridge.equation.result}</strong></p>
@@ -172,6 +192,7 @@ export default function CharityResearchReport({ content }: { content: CharityRep
             <DonorReadiness organization={content.organization}/>
             <p>{content.nutshell.recommendationBlocker}</p>
             <p>{content.model.fundingBoundary}</p>
+            {content.fundingAppendix}
             <p>This review does not establish a verified marginal funding offer or a complete history of grants.</p>
             {donationUrl ? <><p><a className="report-donate" href={donationUrl} target="_blank" rel="noreferrer">Donate</a></p><p className="report-donation-note">{content.donationNote || 'Opens the organization’s giving page. A general donation may not fund the specific activity modeled here; confirm allocation with the recipient.'}</p></> : <p>We have not verified a suitable donation route for this reviewed activity. Confirm the legal recipient and intended allocation before donating.</p>}
           </section>
@@ -183,5 +204,5 @@ export default function CharityResearchReport({ content }: { content: CharityRep
         <footer className="report-footer"><p className="report-model-version">Cost-effectiveness model: {content.modelVersion}.</p><a href="/san-francisco/all">All research</a> · <a href="/san-francisco">Our top charities</a><p>GiveBetter x SF is not affiliated with GiveWell or the organizations reviewed.</p></footer>
       </div>
     </main>
-  );
+  ));
 }

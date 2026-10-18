@@ -1,0 +1,9 @@
+# Independent source/model challenge
+
+Root substantive source57.593sec and modeling13.136sec closed independently. Shared incomeHealthyYearEquivalent independently reproduces0.26527047306490414 signed household equivalents:225 attributed people,20000 baseline,10 net resources, five years3% discounted. Clinical0.241461481251107 unchanged; conditional price382369728.9063537 versus original802443… health-only (exact original diagnostic retained). All household dollars remain explicit judgments, not current causal data or whole-portfolio EV.
+
+Material challenge: source evidence is monitors/EIR corrections, not demonstrated delivered exposure or jobs. Preserve p/a/b/g and cost boundary as marginal unrestricted-support capacity proxy; annual b1 diagnostic asks a different question. Original $40 positive spending savings overlap-discounted50%, full $10 behavioral/time burden subtracted afterward. Negative40/fullnegative50 probes survive positive overlap. Financial-only positive survives clinical-null. No-success/no-capacity financialzero; unknown is unknown rather than assumed absent. Ordinary extra survivor earnings excluded.
+
+Disjoint taxpayer loss1000people×10/year/50000 baseline gives aggregate resource−.20648654449056913, price5.539937B; real1M mitigation resource cost is an alternative convention, never same incidence booked twice. Actual payer/provider/energy-delay job losses remain unquantified, central0 conditional not observed no harm. Other workforce/asthma/relief/energy portfolio pathways assessed as unknown, not manufactured salaries.
+
+Scientific decision accepted conditional partial-component model; administrative serialization/schema/original-diagnostic/provenance verification required before root integration and publication. Stagealpha unchanged, no deep count promotion. No forced favorable price; adverse worlds remain.

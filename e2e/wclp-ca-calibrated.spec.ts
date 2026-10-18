@@ -1,0 +1,21 @@
+import {test,expect} from '@playwright/test';
+test('WCLP health-and-income report, API and list remain aligned',async({page,request})=>{
+ await page.route('https://market-for-impact.rhyslindmark.chatgpt.site/_next/**',async route=>{const u=new URL(route.request().url());await route.fulfill({response:await request.get(u.pathname+u.search)});});
+ await page.goto('/california/charities/western-center-on-law-and-poverty');
+ await expect(page.getByRole('heading',{level:1,name:'Western Center on Law & Poverty',exact:true})).toBeVisible();
+ await expect(page.locator('.report-research-effort summary')).toContainText('GPT-6.1 Sol');
+ await expect(page.locator('#cost')).toContainText('$54.4 million');
+ await expect(page.locator('#cost')).toContainText('$77.1 million');
+ await expect(page.locator('#cost')).toContainText('household');
+ await expect(page.locator('#cost')).toContainText('not a verified offer');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+ const response=await request.get('/api/geography-reports/california/western-center-on-law-and-poverty');expect(response.ok()).toBe(true);
+ const report=await response.json(),central=report.model.scenarios.find((s:any)=>s.id==='central');
+ expect(central.editionQalys).toBeCloseTo(1.0784557079987278,12);
+ expect(central.incomePathways.length).toBe(1);
+ expect(central.costPer10Qalys).toBeCloseTo(54391316.714552514,5);
+ await page.goto('/california/all');
+ const row=page.locator('[data-research-table] tbody tr').filter({hasText:'Western Center on Law & Poverty'});
+ await expect(row.locator('td').nth(0)).toContainText('$54.4M');await expect(row.locator('td').nth(1)).toContainText('$7.1M');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+});

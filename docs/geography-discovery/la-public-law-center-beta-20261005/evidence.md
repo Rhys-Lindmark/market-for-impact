@@ -1,0 +1,31 @@
+# Public Law Center — LA deep review, pending root acceptance
+
+This bounded packet preserves the complete initial report/model/scenarios and original sessions in initial-diagnostic.json and report.historical. The report is not published or accepted by this author. User-confirmed assignment: GPT-6.1 Sol.
+
+## Source and mechanism findings
+
+Public Law Center, EIN95-3709253, directly serves low-income Orange County clients inside the LA metro. Official pages describe representation, insurance appeals, medical billing, housing/safety work and hospital/family-resource-center partnerships. The homepage's nearly3,800 cases is an undated approximate matter count, not unique clients or a causal outcome series. Clinic schedules, promotional work value and attorney hours are not health outcomes or household cash.
+
+Fresh current official financial index revealed a2025 audit beyond the initial2024 evidence. Its originalPDF fetchedHTTP200;255452bytes;SHA256329548a1ae254d13ee12a93f0717c935c4e98ecef693f4c4962f5c3443a91a25. Existing bundled pypdf extracted it in memory; no file/cache/install created. Statement of activities expense22,061,260 plus Note10 netted event costs163,247 yields22,224,507. Contributed services12,343,512 remain in full recognized resources; non-donated9,880,995 is a different perspective, not next-dollar cash cost. Original2022–24 IRS990 hashes/field excerpts are recorded separately. Current2025 opinion is unmodified; issue dateJune29,2026. General financial assets available3,373,519 and restrictednetassets1,796,796 do not prove a marginal donor funding gap. Prior comparative2023 audit evidence is reused, not claimed newly fetched.
+
+Fresh original PubMed MLP abstract reports mixed stress/anxiety and care-use outcomes, no directly transferable QALYs. Fresh publisher HIV study abstract has202people, only two matched randomized service sites,3monthOR2.42(1.06–5.49) and6monthOR2.28(.79–6.57). No durable mortality conversion is inferred. Original START and fellowship remain historical mechanism evidence, not an additional imported treatment credit. Full HIV publisher text was restricted; abstract limitation is explicit.
+
+## Conditional ledger and scope
+
+Clinical alpha prior is retained exactly:3.0675311056650014 QALYs, finite two years, one trajectory per changedcase. Case mix, additional implementation, utility and funded-work response are judgments, not measured PLC effects. b=.25 is a conditional response of the FULL annual resource package relative to continuing alternative assistance; not an extra discount on observed incremental work and not a confirmed marginal donor conversion. b=1 annual-work sensitivity is serialized. Full annual denominator remains22,224,507.
+
+Resource exposure is independent of clinical success:3800×.8uniqueHH×.25response=760 distinct household units, each ONE modeled welfareperson; unobserved family spillovers unpriced. Half financial relevance and.25 additional resource-changing resolution imply95 financial households. A$1500 ONE-TIME net gain is a hypothesis after taxes, benefits, alternative assistance, work and relocation offsets. Half positive gain retained for health overlap; full$100 process burden yields$650 net in those95HH. Other665HH lose$100 whether or not they resolve anything clinically. Joint gain/cost precedes log; negative changes never get positive overlap discount. At$20k household annual baseline, one household-year, delay1,3%discount, .5×[95log1.0325+665log.995]/1.03=−.1431800760277302 healthy-year welfare equivalents. Portable helper is production-identical and production parity tested.
+
+Combined2.924351029637271 gives$75,998,082.22324346 per ten combined healthy-year welfare equivalents, versus initial$69,672,884.36 per ten clinicalQALYs. This change primarily reflects current cost and explicit signed household incidence; numerical improvement was not forced. No survivor lifetime earnings, gross aid, promotional lawyer value or routine salary is converted into clinicalQALYs. No extra invented foregone volunteer earnings duplicates already recognized legal time inC.
+
+Matched local creditor/public-payer and external-provider cost cases show full signed opportunity incidence on a distinct payer cohort. Central0 payer fields are UNKNOWN-NEUTRAL references, not observedzero. Creditor face-value writeoff is not necessarily recoverable revenue; nonlocal incidence, institutional burdens and broad systemic litigation remain unpriced. This is a conditional partial-world component, NOT complete portfolioEV. Two-year resources is a distinct recurrent-benefit hypothesis, not two copies of one-time collection. Clinical-null and financial-only retain all resource burdens; zero expansion retains full annual cost but no incremental effects; complete-unknown remains null rather than zero.
+
+## Gates and exact timing
+
+37 serialized cases reproduce from portable model.mjs; selftest confirms complete frozen history, sign/null guards, finite exposures, clinical-null resources, matched payer loss, exact headline arithmetic and production income helper parity. Actual validateEditionReports passes in memory with candidate historical/new sessions and beta progress membership. Only that validation clone is accepted; durable packet status remains pending-root. Root independently reported726 arithmetic checks over37cases; independent acceptance/integration remains root-owned.
+
+Dedicated author research2cf5bac5:15:27:02.420Z–15:32:05.982Z=303.562s. Dedicated modelingeb3d7dd2:15:32:06.097Z–15:35:50.277Z=224.180s. Total527.742s=8.7957minutes, partial time coverage, no padded fifteen-minute claim. Clocks closed before testing, packet formatting and handoff. No excluded gap identified within these bounded intervals; unsupported earlier capacity sessions for OTHER organizations remain excluded and are not reused here.
+
+## Most material unresolved donor questions
+
+Dated unique client mix and actual implemented health/resource resolutions; net enforceable collections and household taxes/benefits; client process/time burdens; payer/provider incidence and geography; funded alternatives, volunteer conversion and a concrete additional staffing tranche. All conversions remain conditional until these are answered.

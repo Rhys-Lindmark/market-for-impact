@@ -1,0 +1,51 @@
+{
+  "session": {
+    "organization": "North West Housing Partnership",
+    "session": {
+      "id": "63016a84-48ca-47da-b2b3-e291fa5abc02",
+      "workerId": "root-chicago-nwhp-source",
+      "phase": "source-audit",
+      "startedAt": "2026-10-05T18:56:26.059Z",
+      "endedAt": "2026-10-05T18:57:00.273Z",
+      "model": {
+        "id": "gpt-6.1-sol",
+        "name": "GPT-6.1 Sol",
+        "evidence": "Human confirmed GPT-6.1 Sol for this task; current root runtime"
+      },
+      "evidence": "docs/geography-discovery/chicago-nwhp-root-source-20261005.json"
+    }
+  },
+  "finance": {
+    "url": "https://projects.propublica.org/nonprofits/full_text/202610999349301436/IRS990",
+    "status": 200,
+    "sha256": "416b0775501aeccf579f2ea8f48106d40d8f48df33054afe02b6feecd3d25b45",
+    "fields": [
+      "TaxPeriodBeginDt[1]\">10-01-2024</span></span>\n        , and ending         \n              <span id=\"/AppData/SubmissionHeaderAndDocument/ReturnHeader[1]/TaxPeriodEndDt[1]\">09-30-2025</span>\n</div>\n<div style=\"width:187mm;\">\n<d",
+      "EINDateAssets\" style=\"width:50mm;height:17mm;border-top-width:1px; padding-top:1mm\">\n<span class=\"styBoldText\">D Employer identification number</span><br><br><span class=\"styEINFld\" style=\"padding-left:2mm;font-si",
+      "EIN[1]\">36-3715417</span></span>\n</div>\n<div class=\"styEINDateAssets\" style=\"width:50mm;height:10mm; padding-top:1mm;\">\n<span class=\"styNormalText\">E Telephone number</span><br><br><span style=\"padding-left:2mm;fo",
+      "EINDateAssets\" style=\"width:50mm;height:9mm;float:right;\">\n<span class=\"styBoldText\" style=\"padding-top:5mm;\">G</span> Gross receipts $\n            <span style=\"color:darkblue;\" id=\"/AppData/SubmissionHeaderAndDoc",
+      "CYProgramServiceRevenueAmt[1]\">313,935</span></td>\n</tr>\n<tr>\n<td class=\"styLNLeftNumBox\" style=\"width:5mm;height:4.5mm;\">10</td>\n<td class=\"styLNDesc\" style=\"padding-left:1.5mm;width:110mm;height:auto;\" colspan=\"2\">\n  Investment income",
+      "CYTotalExpensesAmt[1]\">642,680</span></td>\n</tr>\n<tr>\n<td class=\"styLNLeftNumBox\" style=\"width:5mm;height:4.5mm;border-style: solid; border-color: black; border-left-width: 0px; border-right-width: 0px; border-top-width: 0px; bo",
+      "EIN\n                <span style=\"width:4px;\"></span><span id=\"/AppData/SubmissionHeaderAndDocument/ReturnHeader[1]/PreparerFirmGrp[1]/PreparerFirmEIN[1]\">36-3321958</span>\n</div>\n</div>\n<div style=\"width:164mm;flo",
+      "TotalFunctionalExpensesGrp[1]/TotalAmt[1]\">642,680</span></td>\n<td class=\"styLNAmountBoxSmall\" style=\"width:25.8mm;height:4.5mm;vertical-align:bottom;padding-right:0.75mm;\"><span style=\"color:darkblue;\" id=\"/AppData/SubmissionHeaderAndD",
+      "TotalFunctionalExpensesGrp[1]/ProgramServicesAmt[1]\">518,077</span></td>\n<td class=\"styLNAmountBoxSmall\" style=\"width:25.8mm;height:4.5mm;vertical-align:bottom;padding-right:0.75mm;\"><span style=\"color:darkblue;\" id=\"/AppData/Submission",
+      "TotalFunctionalExpensesGrp[1]/ManagementAndGeneralAmt[1]\">124,603</span></td>\n<td class=\"styLNAmountBoxSmall\" style=\"width:25.8mm;height:4.5mm;vertical-align:bottom;padding-right:0.75mm;\"><span style=\"color:darkblue;\" id=\"/AppData/Submi",
+      "TotalFunctionalExpensesGrp[1]/FundraisingAmt[1]\">0</span></td>\n</tr>\n<tr>\n<td class=\"styLNLeftNumBox\" style=\"width:6mm;height:auto;\">26</td>\n<td class=\"styIRS990LNDescBB\" style=\"width:77mm;height:15mm;font-size:7pt;padding-bottom:0;bord",
+      "TotalFunctionalExpensesGrp[1]/TotalAmt[1]\">642,680</span></div>\n</div>\n</div>\n<div style=\"width:187mm;\">\n<div class=\"styLNLeftNumBoxSD\" style=\"height:4.5mm;\">3</div>\n<div class=\"styLNDesc\" style=\"width:139mm;height:4.5mm;\"> Revenue less"
+    ]
+  },
+  "primaryChecks": [
+    {
+      "url": "https://nwhp.net/older-adult-home-modification-program/",
+      "finding": "HUD funded free OT/RN-guided modifications for eligible62+ residents; multiple suburban counties; annual unique cohort not established."
+    },
+    {
+      "url": "https://nwhp.net/handyman-program/",
+      "finding": "Senior minor repairs funded in whole/part through AgeOptions public grants; municipalities/townships listed."
+    },
+    {
+      "url": "https://nwhp.net/support-nwhp/",
+      "finding": "Explicit own financial-support solicitation; transactional checkout not verified."
+    }
+  ]
+}

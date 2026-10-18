@@ -1,0 +1,446 @@
+{
+  "inputs": {
+    "giftUSD": 1000,
+    "annualCashExpenseUSD": 40000,
+    "annualTwoDevicePacks": 1500,
+    "readyShare": 0.5,
+    "packsPerUniqueHolder": 3,
+    "riskNetworkShare": 0.5,
+    "fundingResponse": 0.5,
+    "purchaserShare": 0.05,
+    "netPurchaserSavingUSD": 19,
+    "baselineAnnualResourcesUSD": 50000,
+    "annualOverdoseEvents": 0.5,
+    "fatalityWithoutRescue": 0.1,
+    "baselineEffectiveRescue": 0.8,
+    "rescueIncrement": 0.04,
+    "otherMortalityHazard": 0.06,
+    "postHazard": 0.07,
+    "activeYears": 1,
+    "horizonYears": 10,
+    "utility": 0.65,
+    "discount": 0.03,
+    "serviceDelayYears": 0,
+    "harmPerAddedRiskPerson": 0.00002,
+    "incomeReceiptYear": 0.5,
+    "healthBayShare": 0.95,
+    "incomeBayShare": 0.95,
+    "burdenBayShare": 0.95,
+    "inducedBurdenExposure": 0,
+    "burdenUSD": 5,
+    "burdenReceiptYear": 0,
+    "portfolioShare": 1
+  },
+  "formulas": {
+    "holderEquivalents": "M=D/annualCashExpense*packs*ready/repeats*funding",
+    "riskEquivalents": "N=M*(1-purchaserShare)*riskNetworkShare",
+    "health": "N*(finite-survival-integral*utility-harm)",
+    "income": "M*purchaserShare*.5*log1p(netSavings/Y)/(1+r)^incomeReceiptYear",
+    "burden": "D/annualCashExpense*packs*ready/repeats*inducedExposure*.5*log1p(-B/Y)/(1+r)^burdenReceiptYear",
+    "portfolio": "k once on all signed health/income/burden effects",
+    "price": "10*D/bayEquivalentYears if positive else null"
+  },
+  "cases": [
+    {
+      "name": "independentcentral",
+      "overrides": {},
+      "baselineHazard": 0.06999999999999999,
+      "netHazardGain": 0.002,
+      "activeSurvivalYears": 0.0009366601313346434,
+      "postSupportSurvivalYears": 0.010772863703680401,
+      "qPerPerson": 0.0076111904927597795,
+      "readyUniqueHolderEquivalents": 3.125,
+      "healthRiskPersonEquivalents": 1.484375,
+      "healthYears": 0.011268173387690298,
+      "incomeEquivalentYears": 0.000029246406480136135,
+      "recipientBurdenYears": 0,
+      "totalEquivalentYears": 0.011297419794170434,
+      "bayEquivalentYears": 0.01073254880446191,
+      "bayPrice": 931745.122448699
+    },
+    {
+      "name": "oldrisk.8",
+      "overrides": {
+        "riskNetworkShare": 0.8
+      },
+      "baselineHazard": 0.06999999999999999,
+      "netHazardGain": 0.002,
+      "activeSurvivalYears": 0.0009366601313346434,
+      "postSupportSurvivalYears": 0.010772863703680401,
+      "qPerPerson": 0.0076111904927597795,
+      "readyUniqueHolderEquivalents": 3.125,
+      "healthRiskPersonEquivalents": 2.375,
+      "healthYears": 0.018029077420304476,
+      "incomeEquivalentYears": 0.000029246406480136135,
+      "recipientBurdenYears": 0,
+      "totalEquivalentYears": 0.01805832382678461,
+      "bayEquivalentYears": 0.01715540763544538,
+      "bayPrice": 582906.5803915177
+    },
+    {
+      "name": "no purchaser",
+      "overrides": {
+        "purchaserShare": 0
+      },
+      "baselineHazard": 0.06999999999999999,
+      "netHazardGain": 0.002,
+      "activeSurvivalYears": 0.0009366601313346434,
+      "postSupportSurvivalYears": 0.010772863703680401,
+      "qPerPerson": 0.0076111904927597795,
+      "readyUniqueHolderEquivalents": 3.125,
+      "healthRiskPersonEquivalents": 1.5625,
+      "healthYears": 0.011861235144937156,
+      "incomeEquivalentYears": 0,
+      "recipientBurdenYears": 0,
+      "totalEquivalentYears": 0.011861235144937156,
+      "bayEquivalentYears": 0.011268173387690298,
+      "bayPrice": 887455.2827634256
+    },
+    {
+      "name": "purchaser.2",
+      "overrides": {
+        "purchaserShare": 0.2
+      },
+      "baselineHazard": 0.06999999999999999,
+      "netHazardGain": 0.002,
+      "activeSurvivalYears": 0.0009366601313346434,
+      "postSupportSurvivalYears": 0.010772863703680401,
+      "qPerPerson": 0.0076111904927597795,
+      "readyUniqueHolderEquivalents": 3.125,
+      "healthRiskPersonEquivalents": 1.25,
+      "healthYears": 0.009488988115949724,
+      "incomeEquivalentYears": 0.00011698562592054454,
+      "recipientBurdenYears": 0,
+      "totalEquivalentYears": 0.009605973741870269,
+      "bayEquivalentYears": 0.009125675054776756,
+      "bayPrice": 1095809.344511515
+    },
+    {
+      "name": "risk.25",
+      "overrides": {
+        "riskNetworkShare": 0.25
+      },
+      "baselineHazard": 0.06999999999999999,
+      "netHazardGain": 0.002,
+      "activeSurvivalYears": 0.0009366601313346434,
+      "postSupportSurvivalYears": 0.010772863703680401,
+      "qPerPerson": 0.0076111904927597795,
+      "readyUniqueHolderEquivalents": 3.125,
+      "healthRiskPersonEquivalents": 0.7421875,
+      "healthYears": 0.005634086693845149,
+      "incomeEquivalentYears": 0.000029246406480136135,
+      "recipientBurdenYears": 0,
+      "totalEquivalentYears": 0.005663333100325285,
+      "bayEquivalentYears": 0.00538016644530902,
+      "bayPrice": 1858678.5560731161
+    },
+    {
+      "name": "risk.8purchase0",
+      "overrides": {
+        "riskNetworkShare": 0.8,
+        "purchaserShare": 0
+      },
+      "baselineHazard": 0.06999999999999999,
+      "netHazardGain": 0.002,
+      "activeSurvivalYears": 0.0009366601313346434,
+      "postSupportSurvivalYears": 0.010772863703680401,
+      "qPerPerson": 0.0076111904927597795,
+      "readyUniqueHolderEquivalents": 3.125,
+      "healthRiskPersonEquivalents": 2.5,
+      "healthYears": 0.018977976231899448,
+      "incomeEquivalentYears": 0,
+      "recipientBurdenYears": 0,
+      "totalEquivalentYears": 0.018977976231899448,
+      "bayEquivalentYears": 0.018029077420304476,
+      "bayPrice": 554659.551727141
+    },
+    {
+      "name": "one-year",
+      "overrides": {
+        "horizonYears": 1
+      },
+      "baselineHazard": 0.06999999999999999,
+      "netHazardGain": 0.002,
+      "activeSurvivalYears": 0.0009366601313346434,
+      "postSupportSurvivalYears": 0,
+      "qPerPerson": 0.0006088290853675183,
+      "readyUniqueHolderEquivalents": 3.125,
+      "healthRiskPersonEquivalents": 1.484375,
+      "healthYears": 0.0008740431735924098,
+      "incomeEquivalentYears": 0.000029246406480136135,
+      "recipientBurdenYears": 0,
+      "totalEquivalentYears": 0.0009032895800725459,
+      "bayEquivalentYears": 0.0008581251010689186,
+      "bayPrice": 11653312.538630506
+    },
+    {
+      "name": "horizon5",
+      "overrides": {
+        "horizonYears": 5
+      },
+      "baselineHazard": 0.06999999999999999,
+      "netHazardGain": 0.002,
+      "activeSurvivalYears": 0.0009366601313346434,
+      "postSupportSurvivalYears": 0.005979665085088283,
+      "qPerPerson": 0.004495611390674902,
+      "readyUniqueHolderEquivalents": 3.125,
+      "healthRiskPersonEquivalents": 1.484375,
+      "healthYears": 0.006643485658033058,
+      "incomeEquivalentYears": 0.000029246406480136135,
+      "recipientBurdenYears": 0,
+      "totalEquivalentYears": 0.006672732064513194,
+      "bayEquivalentYears": 0.0063390954612875345,
+      "bayPrice": 1577512.1326172454
+    },
+    {
+      "name": "horizon20",
+      "overrides": {
+        "horizonYears": 20
+      },
+      "baselineHazard": 0.06999999999999999,
+      "netHazardGain": 0.002,
+      "activeSurvivalYears": 0.0009366601313346434,
+      "postSupportSurvivalYears": 0.015457622143357278,
+      "qPerPerson": 0.01065628347854975,
+      "readyUniqueHolderEquivalents": 3.125,
+      "healthRiskPersonEquivalents": 1.484375,
+      "healthYears": 0.015788233288472286,
+      "incomeEquivalentYears": 0.000029246406480136135,
+      "recipientBurdenYears": 0,
+      "totalEquivalentYears": 0.01581747969495242,
+      "bayEquivalentYears": 0.0150266057102048,
+      "bayPrice": 665486.2843182773
+    },
+    {
+      "name": "halfrescue",
+      "overrides": {
+        "rescueIncrement": 0.02
+      },
+      "baselineHazard": 0.06999999999999999,
+      "netHazardGain": 0.001,
+      "activeSurvivalYears": 0.0004681752461723754,
+      "postSupportSurvivalYears": 0.005383738636138646,
+      "qPerPerson": 0.003803744023502164,
+      "readyUniqueHolderEquivalents": 3.125,
+      "healthRiskPersonEquivalents": 1.484375,
+      "healthYears": 0.005616495034886025,
+      "incomeEquivalentYears": 0.000029246406480136135,
+      "recipientBurdenYears": 0,
+      "totalEquivalentYears": 0.005645741441366161,
+      "bayEquivalentYears": 0.005363454369297853,
+      "bayPrice": 1864470.0432697318
+    },
+    {
+      "name": "nohealthpositivecash",
+      "overrides": {
+        "rescueIncrement": 0,
+        "harmPerAddedRiskPerson": 0
+      },
+      "baselineHazard": 0.06999999999999999,
+      "netHazardGain": 0,
+      "activeSurvivalYears": 0,
+      "postSupportSurvivalYears": 0,
+      "qPerPerson": 0,
+      "readyUniqueHolderEquivalents": 3.125,
+      "healthRiskPersonEquivalents": 1.484375,
+      "healthYears": 0,
+      "incomeEquivalentYears": 0.000029246406480136135,
+      "recipientBurdenYears": 0,
+      "totalEquivalentYears": 0.000029246406480136135,
+      "bayEquivalentYears": 0.000027784086156129327,
+      "bayPrice": 359918261.9794009
+    },
+    {
+      "name": "nochange",
+      "overrides": {
+        "fundingResponse": 0
+      },
+      "baselineHazard": 0.06999999999999999,
+      "netHazardGain": 0.002,
+      "activeSurvivalYears": 0.0009366601313346434,
+      "postSupportSurvivalYears": 0.010772863703680401,
+      "qPerPerson": 0.0076111904927597795,
+      "readyUniqueHolderEquivalents": 0,
+      "healthRiskPersonEquivalents": 0,
+      "healthYears": 0,
+      "incomeEquivalentYears": 0,
+      "recipientBurdenYears": 0,
+      "totalEquivalentYears": 0,
+      "bayEquivalentYears": 0,
+      "bayPrice": null
+    },
+    {
+      "name": "failed induced exposure",
+      "overrides": {
+        "fundingResponse": 0,
+        "inducedBurdenExposure": 1
+      },
+      "baselineHazard": 0.06999999999999999,
+      "netHazardGain": 0.002,
+      "activeSurvivalYears": 0.0009366601313346434,
+      "postSupportSurvivalYears": 0.010772863703680401,
+      "qPerPerson": 0.0076111904927597795,
+      "readyUniqueHolderEquivalents": 0,
+      "healthRiskPersonEquivalents": 0,
+      "healthYears": 0,
+      "incomeEquivalentYears": 0,
+      "recipientBurdenYears": -0.00031251562604174484,
+      "totalEquivalentYears": -0.00031251562604174484,
+      "bayEquivalentYears": -0.00029688984473965756,
+      "bayPrice": null
+    },
+    {
+      "name": "burden5",
+      "overrides": {
+        "inducedBurdenExposure": 1
+      },
+      "baselineHazard": 0.06999999999999999,
+      "netHazardGain": 0.002,
+      "activeSurvivalYears": 0.0009366601313346434,
+      "postSupportSurvivalYears": 0.010772863703680401,
+      "qPerPerson": 0.0076111904927597795,
+      "readyUniqueHolderEquivalents": 3.125,
+      "healthRiskPersonEquivalents": 1.484375,
+      "healthYears": 0.011268173387690298,
+      "incomeEquivalentYears": 0.000029246406480136135,
+      "recipientBurdenYears": -0.00031251562604174484,
+      "totalEquivalentYears": 0.010984904168128688,
+      "bayEquivalentYears": 0.010435658959722252,
+      "bayPrice": 958252.8557704183
+    },
+    {
+      "name": "assignment0",
+      "overrides": {
+        "portfolioShare": 0
+      },
+      "baselineHazard": 0.06999999999999999,
+      "netHazardGain": 0.002,
+      "activeSurvivalYears": 0.0009366601313346434,
+      "postSupportSurvivalYears": 0.010772863703680401,
+      "qPerPerson": 0.0076111904927597795,
+      "readyUniqueHolderEquivalents": 3.125,
+      "healthRiskPersonEquivalents": 1.484375,
+      "healthYears": 0,
+      "incomeEquivalentYears": 0,
+      "recipientBurdenYears": 0,
+      "totalEquivalentYears": 0,
+      "bayEquivalentYears": 0,
+      "bayPrice": null
+    },
+    {
+      "name": "expense100K",
+      "overrides": {
+        "annualCashExpenseUSD": 100000
+      },
+      "baselineHazard": 0.06999999999999999,
+      "netHazardGain": 0.002,
+      "activeSurvivalYears": 0.0009366601313346434,
+      "postSupportSurvivalYears": 0.010772863703680401,
+      "qPerPerson": 0.0076111904927597795,
+      "readyUniqueHolderEquivalents": 1.25,
+      "healthRiskPersonEquivalents": 0.59375,
+      "healthYears": 0.004507269355076119,
+      "incomeEquivalentYears": 0.000011698562592054454,
+      "recipientBurdenYears": 0,
+      "totalEquivalentYears": 0.004518967917668174,
+      "bayEquivalentYears": 0.004293019521784764,
+      "bayPrice": 2329362.8061217475
+    },
+    {
+      "name": "funding.25",
+      "overrides": {
+        "fundingResponse": 0.25
+      },
+      "baselineHazard": 0.06999999999999999,
+      "netHazardGain": 0.002,
+      "activeSurvivalYears": 0.0009366601313346434,
+      "postSupportSurvivalYears": 0.010772863703680401,
+      "qPerPerson": 0.0076111904927597795,
+      "readyUniqueHolderEquivalents": 1.5625,
+      "healthRiskPersonEquivalents": 0.7421875,
+      "healthYears": 0.005634086693845149,
+      "incomeEquivalentYears": 0.000014623203240068067,
+      "recipientBurdenYears": 0,
+      "totalEquivalentYears": 0.005648709897085217,
+      "bayEquivalentYears": 0.005366274402230955,
+      "bayPrice": 1863490.244897398
+    },
+    {
+      "name": "adverserescue",
+      "overrides": {
+        "rescueIncrement": -0.01
+      },
+      "baselineHazard": 0.06999999999999999,
+      "netHazardGain": -0.0005,
+      "activeSurvivalYears": -0.00023397158065441293,
+      "postSupportSurvivalYears": -0.002689851088922153,
+      "qPerPerson": -0.001900484735224768,
+      "readyUniqueHolderEquivalents": 3.125,
+      "healthRiskPersonEquivalents": 1.484375,
+      "healthYears": -0.002850719528849265,
+      "incomeEquivalentYears": 0.000029246406480136135,
+      "recipientBurdenYears": 0,
+      "totalEquivalentYears": -0.002821473122369129,
+      "bayEquivalentYears": -0.002680399466250672,
+      "bayPrice": null
+    },
+    {
+      "name": "negative cash",
+      "overrides": {
+        "netPurchaserSavingUSD": -5
+      },
+      "baselineHazard": 0.06999999999999999,
+      "netHazardGain": 0.002,
+      "activeSurvivalYears": 0.0009366601313346434,
+      "postSupportSurvivalYears": 0.010772863703680401,
+      "qPerPerson": 0.0076111904927597795,
+      "readyUniqueHolderEquivalents": 3.125,
+      "healthRiskPersonEquivalents": 1.484375,
+      "healthYears": 0.011268173387690298,
+      "incomeEquivalentYears": -0.000007698269905569364,
+      "recipientBurdenYears": 0,
+      "totalEquivalentYears": 0.011260475117784729,
+      "bayEquivalentYears": 0.010697451361895491,
+      "bayPrice": 934802.1002105394
+    },
+    {
+      "name": "quarter-year active",
+      "overrides": {
+        "activeYears": 0.25
+      },
+      "baselineHazard": 0.06999999999999999,
+      "netHazardGain": 0.002,
+      "activeSurvivalYears": 0.00006148277028750204,
+      "postSupportSurvivalYears": 0.0030437433997378355,
+      "qPerPerson": 0.0020183970105164695,
+      "readyUniqueHolderEquivalents": 3.125,
+      "healthRiskPersonEquivalents": 1.484375,
+      "healthYears": 0.0029663705624853845,
+      "incomeEquivalentYears": 0.000029246406480136135,
+      "recipientBurdenYears": 0,
+      "totalEquivalentYears": 0.0029956169689655207,
+      "bayEquivalentYears": 0.0028458361205172446,
+      "bayPrice": 3513905.782523574
+    },
+    {
+      "name": "six-month service lag",
+      "overrides": {
+        "serviceDelayYears": 0.5,
+        "incomeReceiptYear": 1
+      },
+      "baselineHazard": 0.06999999999999999,
+      "netHazardGain": 0.002,
+      "activeSurvivalYears": 0.0009366601313346434,
+      "postSupportSurvivalYears": 0.010772863703680401,
+      "qPerPerson": 0.007499528834201924,
+      "readyUniqueHolderEquivalents": 3.125,
+      "healthRiskPersonEquivalents": 1.484375,
+      "healthYears": 0.01110242561326848,
+      "incomeEquivalentYears": 0.000028817340585972042,
+      "recipientBurdenYears": 0,
+      "totalEquivalentYears": 0.011131242953854452,
+      "bayEquivalentYears": 0.010574680806161729,
+      "bayPrice": 945655.0210171005
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+# LA Coalition for Clean Air independent review
+
+Status pending author packet, not accepted or published. Root source clock1720c095-5d1e-44b4-8dd1-cdca39e8b55d closed separately from the unexplained earlier clock gap.
+
+Fresh original FY2025 return confirms PartIX2,452,895 and separately netted event42,017, full recipient2,494,912. ScheduleD reports no extra current donated-service expense; do not double-count reconciliation or label recipient cost complete social cost. [Original return](https://www.ccair.org/wp-content/uploads/2026/05/2024-2025-CCA-Form-990.pdf)
+
+Fresh official AQMD material shows the executed agreement/addendum and planned2027–29 infrastructure stages. The existing40Mregional investment, implementation process and enforcement are baseline, not gifts toCCA. Extra advocacy can affect future implementation, but source activity does not identify its probability, beneficiary share or marginal funding room. The physical location of ports is not the geographic incidence of pollution or household costs. [Original agency material](https://www.aqmd.gov/home/air-quality/air-quality-management-plans/air-quality-mgt-plan/facility-based-mobile-source-measures/comm-ports-wkng-grp/potential-cooperative-agreement-with-the-ports-of-long-beach-and-los-angeles)
+
+California's accepted regulatory model does not identify LA mortality exposure. LA retains a separately judged future older-adult cohort and local causal contrast. Require original alpha diagnostics exact, finite competing-survival integration, timing-only versus lasting implementation, policy-conditioned household income and disjoint full negative incidence. No gross insurer saving, committed infrastructure, unchanged baseline earnings or survivor income should be added. Clinical-null and failed-policy engagement burdens must remain independent; normative income equivalents are not clinicalQALYs. Root will challenge actual serialized calculations before acceptance.

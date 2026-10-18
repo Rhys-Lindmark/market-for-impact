@@ -1,0 +1,3 @@
+# Independent corrected model accepted
+
+All thirteen portable worlds reproduced shared resource bridge. Corrected medical-cash group=25households*.5avoideduninsurance*.25saver=3.125, allother21.875 retain paperwork effects/full costs. u=0 medicalSaving100 world income equals u=0 no-medical world; no clinical response preserves signed resources. Positive-overlap0 retains full negative costs. Clinical .9288687842434569 unchanged within floating precision of original .928868784243457; income .00348299672268889; oldprice160729957.26904434→160129516.6136665. No scope/scientific issue remains. One material cohort correction accepted within budget. Unknown portfolio and full original diagnostics required in final serialization.

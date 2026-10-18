@@ -1,0 +1,5 @@
+# Independent PPRM source audit
+
+Current original IRS2024 return202531819349300843 for EIN84-0404253 confirms over56Kclients across21CO/NV/NMcenters and24%abortionservicepatientshare; notappointments or nationalPPFA. Totalexpense66,931,878 plus130,471netted fundraisingdirectexpense yields67,062,349. OriginalFY2023return202412259349300996:65,148,258+160,225=65,308,483. OriginalFY2022return202302279349303655:54,840,283+160,095=55,000,378. Threefull-yearmean62,457,070. Delineate historicalNVcostsfromcurrentCO/NM/WYfootprint and Denverresidentgeoshare fromclinicpresence/outofstatevisitors.
+
+OriginalTurnawaystudyPMID29345993:813womenfollowed5years; deniedabortionandgivingbirthassociatedwithpoverty/fulltimeemployment/publicassistancedifferencesfor4years. It grounds economic direction, not a precise net dollar effect for PPRM. Resource gains must be after tax/withdrawnbenefits/workandtravelcosts with clinicaloverlap and provider alternatives explicit. No intrinsic newbirth/unbornwelfare or grosssalaryconversion. Ownwebpages/PDFattempts403blocked; originalIRSoutcome body offers primary dated nativeenvelope. Finalcalculator and scenarios awaitindependentacceptance.

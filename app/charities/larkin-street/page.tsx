@@ -1,3 +1,4 @@
+import {impactNode} from '@/components/ImpactMetric';
 import type { Metadata } from 'next';
 import CharityResearchReport, { type CharityReportContent } from '@/components/CharityResearchReport';
 import model from '@/data/san-francisco/larkin-cash-housing-cea-v1.json';
@@ -16,4 +17,4 @@ const content:CharityReportContent={
  evidence:[{key:'sf-design',design:'Primary SF study design',population:'85 young adults; 45 TYI and 40 usual-care enrollment groups',result:'Three initially randomized invitees were reassigned after nonresponse.',transfer:'Enrollment-group comparisons are not clean intention-to-treat estimates. Severe untreated mental-health/substance-use conditions were excluded.'},{key:'sf-results',design:'Conference abstract and organization summary',population:'SF pilot participants',result:'The abstract uses paired baseline-to-month-18 tests; the organization reports 86% permanently housed at 24 months.',transfer:'Neither result supplies the cumulative causal housing-days used by this model. The 86% denominator/comparator is not supplied in the announcement.'},{key:'nyc',design:'External cash-plus analogue',population:'NYC young adults; different dose and housing system',result:'Published enrollment-group trajectories suggest benefit but include reassignment and differential response.',transfer:'A difference in any homelessness during one month is not the same as additional housed years. Not used as a numeric effect input.'}],
  reservations:['Housing-to-health utility is subjective and correlated with other housing models.','Causal housing duration and missing follow-ups remain unresolved.','Whole-organization financial pressure is not program-specific funding room.','AIM and other prevention programs could have different economics.'],excludedBenefits:model.excluded,sources:model.sources,
 };
-export default function LarkinReport(){return <CharityResearchReport content={content}/>;}
+export default function LarkinReport(){return impactNode(<CharityResearchReport content={content}/>);}

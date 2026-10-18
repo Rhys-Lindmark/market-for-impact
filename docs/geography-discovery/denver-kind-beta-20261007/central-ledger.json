@@ -1,0 +1,113 @@
+{
+  "before": {
+    "productionPrice": null,
+    "illustrativeSealantOnlyPrice": 8179702.255502215,
+    "health": 1.8789253593750004,
+    "income": "not assessed"
+  },
+  "current": {
+    "inputs": {
+      "C": 1879713,
+      "S": 8920,
+      "schoolN": 6246,
+      "clinicN": 967,
+      "D": 0.00159,
+      "T": 0.75,
+      "A": 0.75,
+      "K": 1,
+      "g": 0.9,
+      "symptomatic": 0.5,
+      "clinicAdded": 0.5,
+      "q": 0.012,
+      "years": 0.25,
+      "healthOverlap": 0.8,
+      "schoolHarm": 0.00001,
+      "clinicHarm": 0.0001,
+      "unique": 0.8,
+      "baseline": 20000,
+      "clinicGain": 50,
+      "schoolGain": 0,
+      "positiveOverlap": 0.5,
+      "clinicCost": 30,
+      "schoolCost": 1,
+      "payerLossFraction": 0,
+      "externalCost": 0,
+      "payerPeople": 10000,
+      "payerBaseline": 50000,
+      "r": 0.03,
+      "delay": 0,
+      "resourceOverlap": true
+    },
+    "costUSD": 1879713,
+    "clinicalExposed": {
+      "school": 6246,
+      "clinic": 967
+    },
+    "sealantClinical": 1.99445625,
+    "clinicClinical": 0.5802,
+    "clinicChanged": 241.75,
+    "harms": 0.15916000000000002,
+    "editionQalys": 2.1739466250000006,
+    "allPopulationQalys": 2.4154962500000003,
+    "incomePathways": [
+      {
+        "id": "joint-school-clinic-changed",
+        "people": 193.4,
+        "annualIncomeBeforeUSD": 20000,
+        "annualIncomeGainUSD": -6,
+        "years": 1,
+        "editionShare": 0.9,
+        "delayYears": 0,
+        "discountRate": 0.03,
+        "rationale": "Joint net otherwise-paid dental/access consumption and after-tax caregiver resources minus full time/travel/fees; child wages and retail treatment value excluded.",
+        "counterfactual": "Medicaid, CHP+, insurance, other clinics, usual prevention and household spending without KIND. No gross charges converted automatically to cash.",
+        "sourceIds": [
+          "clinic",
+          "native24",
+          "cg-cost"
+        ]
+      },
+      {
+        "id": "joint-school-clinic-other",
+        "people": 580.2,
+        "annualIncomeBeforeUSD": 20000,
+        "annualIncomeGainUSD": -31,
+        "years": 1,
+        "editionShare": 0.9,
+        "delayYears": 0,
+        "discountRate": 0.03,
+        "rationale": "Joint net otherwise-paid dental/access consumption and after-tax caregiver resources minus full time/travel/fees; child wages and retail treatment value excluded.",
+        "counterfactual": "Medicaid, CHP+, insurance, other clinics, usual prevention and household spending without KIND. No gross charges converted automatically to cash.",
+        "sourceIds": [
+          "clinic",
+          "native24",
+          "cg-cost"
+        ]
+      },
+      {
+        "id": "school-only",
+        "people": 4223.2,
+        "annualIncomeBeforeUSD": 20000,
+        "annualIncomeGainUSD": -1,
+        "years": 1,
+        "editionShare": 0.9,
+        "delayYears": 0,
+        "discountRate": 0.03,
+        "rationale": "Joint net otherwise-paid dental/access consumption and after-tax caregiver resources minus full time/travel/fees; child wages and retail treatment value excluded.",
+        "counterfactual": "Medicaid, CHP+, insurance, other clinics, usual prevention and household spending without KIND. No gross charges converted automatically to cash.",
+        "sourceIds": [
+          "clinic",
+          "native24",
+          "cg-cost"
+        ]
+      }
+    ],
+    "incomeUnknown": false,
+    "incomeEquivalent": -0.5261407515911967,
+    "totalEquivalent": 1.647805873408804,
+    "price10": 11407369.219478818,
+    "pricePer10Qalys": 11407369.219478818
+  },
+  "cases": 41,
+  "change": "Matched2024 costs and activity, added finite clinic symptom-relief hypothesis and signed caregiver/access resources, retained explicitly unvalidated sealant health equivalence; not an observed effectiveness decline or calibrated portfolio EV."
+}

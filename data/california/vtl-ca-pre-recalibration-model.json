@@ -1,0 +1,312 @@
+{
+  "version": "ca-vtl-supported-correction-beta-v2-audited",
+  "costScope": "Full ordinary national-recipient gift G retained; f allocates modeled delivery without shrinking denominator. Donated inputs/public leverage disclosed separately. Reuses prior data/us/vision-to-learn-v2.json structure, with fresh original accounts and independently scoped California allocation. Course cost covers core delivery; the 20% outside that allocation covers other recipient activities/support, avoiding a second charge for the same overhead.",
+  "geographicAttribution": "g is the share of marginal net health benefit accruing to California residents, not office location, cumulative pairs or restricted-program scope. Central .4, favorable .6, adverse .2 are judgment scenarios. Actual g may be 0–1. Multiplying courses by g assumes equal modeled per-course net benefit across regions; regional severity, cost or wear differences would require separate California inputs.",
+  "formula": "N=G*f/c; k=ln(1+r)+fade; D=(1-exp(-k*T))/k, or T if k=0; L=(1+r)^(-d); q=(p*w*u*D-h)*L; Q_all=(N+M/c)*a*q; Q_CA=(N*g+M/c)*a*q; Price10=10G/Q_CA when positive. ResourceCost=G+M+(N+M/c)*(inkind+school), counting only resources absent from cash c. All finite horizons. fade=0 centrally.",
+  "counterfactual": "Other donors or reimbursement may fund the same capacity (a); children may obtain adequate correction elsewhere even if the gift adds capacity (p). The finite period ends the modeled advantage over alternative care. These are distinct funding and patient-care counterfactuals.",
+  "attribution": "Count unique additional delivered child courses, not screenings, exams, multiple pairs or lifetime educational stories. Wear enters once as effective corrected time. No automatic Medicaid matching or causally unmeasured education QALYs.",
+  "uncertainty": "Conditional model with explicitly judgment-based joint scenarios, not empirically bounded confidence interval. Child utility, marginal California mix and funding additionality dominate. Zero/negative net benefit cannot be ruled out.",
+  "nativeOutcomes": "Additional unique children receiving a needed correction course; Additional effectively corrected child-years versus alternative care; Measured visual acuity change, distinct from preference-weighted health utility.",
+  "inputs": [
+    {
+      "name": "G",
+      "value": 100000,
+      "unit": "USD",
+      "basis": "judgment",
+      "rationale": "Calculation normalization, not recommended gift.",
+      "sourceIds": []
+    },
+    {
+      "name": "f",
+      "value": 0.8,
+      "unit": "core delivery cash allocation fraction",
+      "basis": "judgment",
+      "rationale": "Remaining 20% retained in full gift denominator for support/other activity; not a restricted gift.",
+      "sourceIds": [
+        "99025"
+      ]
+    },
+    {
+      "name": "c",
+      "value": 225,
+      "unit": "cash USD per delivered unique-child care course",
+      "basis": "judgment",
+      "rationale": "Not advertised $150 nor accounting expense per pair. Includes delivery/follow-up assumption; $150–400 scenarios.",
+      "sourceIds": [
+        "home",
+        "99025"
+      ]
+    },
+    {
+      "name": "a",
+      "value": 0.5,
+      "unit": "financial additionality fraction",
+      "basis": "judgment",
+      "rationale": "Half of financed capacity additional after substitute donors/public funding, not measured.",
+      "sourceIds": [
+        "mosfaq"
+      ]
+    },
+    {
+      "name": "p",
+      "value": 0.6,
+      "unit": "fraction with counterfactual correction gap",
+      "basis": "judgment",
+      "rationale": "Absent adequate alternative correction during horizon; historical Medicaid nonuse is not this probability.",
+      "sourceIds": [
+        "mos"
+      ]
+    },
+    {
+      "name": "w",
+      "value": 0.6,
+      "unit": "fraction of correction time used effectively",
+      "basis": "judgment",
+      "rationale": "Central .6 is constant effective corrected time. In the decay stress .6 is the starting effective-use level, falling exponentially; it is not a measured horizon-average subsequently discounted twice.",
+      "sourceIds": [
+        "wear"
+      ]
+    },
+    {
+      "name": "u",
+      "value": 0.02,
+      "unit": "utility gain during effective correction",
+      "basis": "judgment",
+      "rationale": "Preference-weighted child utility is missing; 0.005–0.04 sensitivity, not clinical bounds.",
+      "sourceIds": [
+        "acuity"
+      ]
+    },
+    {
+      "name": "T",
+      "value": 1,
+      "unit": "years",
+      "basis": "judgment",
+      "rationale": "Finite incremental correction period before alternative care/refractive change; no lifetime tail.",
+      "sourceIds": [
+        "rct"
+      ]
+    },
+    {
+      "name": "r",
+      "value": 0.03,
+      "unit": "annual discount rate",
+      "basis": "judgment",
+      "rationale": "Continuous integral using ln(1+r).",
+      "sourceIds": []
+    },
+    {
+      "name": "d",
+      "value": 0.125,
+      "unit": "years before dispensing",
+      "basis": "judgment",
+      "rationale": "Illustrative 0.125-year funding-to-benefit delay, approximately 6.5 weeks.",
+      "sourceIds": []
+    },
+    {
+      "name": "h",
+      "value": 0.00005,
+      "unit": "QALYs lost per additional course",
+      "basis": "judgment",
+      "rationale": "Small allowance for burden/inappropriate correction; could be wrong.",
+      "sourceIds": []
+    },
+    {
+      "name": "g",
+      "value": 0.4,
+      "unit": "California share of marginal net health benefit",
+      "basis": "judgment",
+      "rationale": "Cumulative California glasses share about44% is context, not marginal evidence. 20–60% cases are analyst scenarios, not bounds.",
+      "sourceIds": [
+        "annual25"
+      ]
+    },
+    {
+      "name": "inkind",
+      "value": 40,
+      "unit": "additional donated-resource USD per course",
+      "basis": "judgment",
+      "rationale": "Separate gross resource sensitivity, not deducted from gift.",
+      "sourceIds": [
+        "annual25"
+      ]
+    },
+    {
+      "name": "M",
+      "value": 0,
+      "unit": "hypothetical gross public USD before additionality adjustment",
+      "basis": "judgment",
+      "rationale": "Hypothetical gross public receipts attributed to the gift before the shared a adjustment for financial substitution; not already net-additional money. No automatic match is assumed. If evidence identifies net additional funded courses directly, do not apply the same substitution adjustment again.",
+      "sourceIds": [
+        "mosdonor"
+      ]
+    },
+    {
+      "name": "fade",
+      "value": 0,
+      "unit": "annual effective-correction exponential decay rate",
+      "basis": "judgment",
+      "rationale": "Central 0. Stress ln(2) assumes effective correction begins at .6 and halves over one year; this replaces the constant-use trajectory rather than adding decay to an empirically averaged wear estimate.",
+      "sourceIds": [
+        "breds-wear"
+      ]
+    },
+    {
+      "name": "school",
+      "value": 0,
+      "unit": "additional unpriced school resource USD/course",
+      "basis": "judgment",
+      "rationale": "Unknown centrally; $50 gross-resource stress, only if absent from cash course cost.",
+      "sourceIds": []
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "central",
+      "label": "Retained conditional central",
+      "costUSD": 100000,
+      "allPopulationQalys": 1.2477596896818623,
+      "editionQalys": 0.49910387587274496,
+      "assumptions": "{\"G\":100000,\"f\":0.8,\"c\":225,\"a\":0.5,\"p\":0.6,\"w\":0.6,\"u\":0.02,\"T\":1,\"r\":0.03,\"d\":0.125,\"h\":0.00005,\"g\":0.4,\"fade\":0,\"M\":0,\"inkind\":40,\"school\":0}; financed unique-child courses 355.55555555555554; additional CA course-equivalents 71.11111111111111; discounted effective CA child-years 25.132315921153673; gross resource cost 114222.22222222222; gross resource price/10Q 2288546.087174549. Assumption scenarios, not confidence intervals or offers."
+    },
+    {
+      "id": "replacement-extra",
+      "label": "Replacement cost omitted from $225 stress",
+      "costUSD": 100000,
+      "allPopulationQalys": 1.0881625200713916,
+      "editionQalys": 0.4352650080285566,
+      "assumptions": "{\"G\":100000,\"f\":0.8,\"c\":258,\"a\":0.5,\"p\":0.6,\"w\":0.6,\"u\":0.02,\"T\":1,\"r\":0.03,\"d\":0.125,\"h\":0.00005,\"g\":0.4,\"fade\":0,\"M\":0,\"inkind\":40,\"school\":0}; financed unique-child courses 310.07751937984494; additional CA course-equivalents 62.01550387596899; discounted effective CA child-years 21.91771737309913; gross resource cost 112403.1007751938; gross resource price/10Q 2582406.090586067. Assumption scenarios, not confidence intervals or offers."
+    },
+    {
+      "id": "replacement-intensive",
+      "label": "Replacement and reassessment omitted stress",
+      "costUSD": 100000,
+      "allPopulationQalys": 0.8233018480305543,
+      "editionQalys": 0.32932073921222177,
+      "assumptions": "{\"G\":100000,\"f\":0.8,\"c\":341,\"a\":0.5,\"p\":0.6,\"w\":0.6,\"u\":0.02,\"T\":1,\"r\":0.03,\"d\":0.125,\"h\":0.00005,\"g\":0.4,\"fade\":0,\"M\":0,\"inkind\":40,\"school\":0}; financed unique-child courses 234.6041055718475; additional CA course-equivalents 46.9208211143695; discounted effective CA child-years 16.5829063995882; gross resource cost 109384.1642228739; gross resource price/10Q 3321508.523408975. Assumption scenarios, not confidence intervals or offers."
+    },
+    {
+      "id": "wear-decay",
+      "label": "50% annual decay of effective correction",
+      "costUSD": 100000,
+      "allPopulationQalys": 0.8991364986113928,
+      "editionQalys": 0.35965459944455713,
+      "assumptions": "{\"G\":100000,\"f\":0.8,\"c\":225,\"a\":0.5,\"p\":0.6,\"w\":0.6,\"u\":0.02,\"T\":1,\"r\":0.03,\"d\":0.125,\"h\":0.00005,\"g\":0.4,\"fade\":0.6931471805599453,\"M\":0,\"inkind\":40,\"school\":0}; financed unique-child courses 355.55555555555554; additional CA course-equivalents 71.11111111111111; discounted effective CA child-years 18.15985209974428; gross resource cost 114222.22222222222; gross resource price/10Q 3175886.597825374. Assumption scenarios, not confidence intervals or offers."
+    },
+    {
+      "id": "low-utility",
+      "label": "Low child utility",
+      "costUSD": 100000,
+      "allPopulationQalys": 0.30529784263859955,
+      "editionQalys": 0.12211913705543984,
+      "assumptions": "{\"G\":100000,\"f\":0.8,\"c\":225,\"a\":0.5,\"p\":0.6,\"w\":0.6,\"u\":0.005,\"T\":1,\"r\":0.03,\"d\":0.125,\"h\":0.00005,\"g\":0.4,\"fade\":0,\"M\":0,\"inkind\":40,\"school\":0}; financed unique-child courses 355.55555555555554; additional CA course-equivalents 71.11111111111111; discounted effective CA child-years 25.132315921153673; gross resource cost 114222.22222222222; gross resource price/10Q 9353343.380601145. Assumption scenarios, not confidence intervals or offers."
+    },
+    {
+      "id": "half-utility",
+      "label": "Half central child utility",
+      "costUSD": 100000,
+      "allPopulationQalys": 0.6194517916530204,
+      "editionQalys": 0.2477807166612082,
+      "assumptions": "{\"G\":100000,\"f\":0.8,\"c\":225,\"a\":0.5,\"p\":0.6,\"w\":0.6,\"u\":0.01,\"T\":1,\"r\":0.03,\"d\":0.125,\"h\":0.00005,\"g\":0.4,\"fade\":0,\"M\":0,\"inkind\":40,\"school\":0}; financed unique-child courses 355.55555555555554; additional CA course-equivalents 71.11111111111111; discounted effective CA child-years 25.132315921153673; gross resource cost 114222.22222222222; gross resource price/10Q 4609810.7940497575. Assumption scenarios, not confidence intervals or offers."
+    },
+    {
+      "id": "higher-utility",
+      "label": "Higher child utility",
+      "costUSD": 100000,
+      "allPopulationQalys": 2.504375485739546,
+      "editionQalys": 1.0017501942958185,
+      "assumptions": "{\"G\":100000,\"f\":0.8,\"c\":225,\"a\":0.5,\"p\":0.6,\"w\":0.6,\"u\":0.04,\"T\":1,\"r\":0.03,\"d\":0.125,\"h\":0.00005,\"g\":0.4,\"fade\":0,\"M\":0,\"inkind\":40,\"school\":0}; financed unique-child courses 355.55555555555554; additional CA course-equivalents 71.11111111111111; discounted effective CA child-years 25.132315921153673; gross resource cost 114222.22222222222; gross resource price/10Q 1140226.6041237444. Assumption scenarios, not confidence intervals or offers."
+    },
+    {
+      "id": "favorable",
+      "label": "Favorable joint assumptions",
+      "costUSD": 100000,
+      "allPopulationQalys": 26.771002951157193,
+      "editionQalys": 16.062601770694318,
+      "assumptions": "{\"G\":100000,\"f\":0.9,\"c\":150,\"a\":0.8,\"p\":0.9,\"w\":0.8,\"u\":0.04,\"T\":2,\"r\":0.03,\"d\":0.08333333333333333,\"h\":0.00002,\"g\":0.6,\"fade\":0,\"M\":0,\"inkind\":40,\"school\":0}; financed unique-child courses 600; additional CA course-equivalents 288; discounted effective CA child-years 401.708689998234; gross resource cost 124000; gross resource price/10Q 77197.95445980232. Assumption scenarios, not confidence intervals or offers. The $150 cash course must cover the full assumed two-year supported correction period, including replacements and follow-up. This very favorable package is unverified."
+    },
+    {
+      "id": "adverse-positive",
+      "label": "Adverse positive joint assumptions",
+      "costUSD": 100000,
+      "allPopulationQalys": 0.0055922499272406685,
+      "editionQalys": 0.0011184499854481338,
+      "assumptions": "{\"G\":100000,\"f\":0.65,\"c\":400,\"a\":0.2,\"p\":0.3,\"w\":0.3,\"u\":0.005,\"T\":0.5,\"r\":0.03,\"d\":0.25,\"h\":0.00005,\"g\":0.2,\"fade\":0,\"M\":0,\"inkind\":40,\"school\":0}; financed unique-child courses 162.5; additional CA course-equivalents 6.5; discounted effective CA child-years 0.2882114369390608; gross resource cost 106500; gross resource price/10Q 952210661.0545328. Assumption scenarios, not confidence intervals or offers."
+    },
+    {
+      "id": "zero-additionality",
+      "label": "Complete funding substitution",
+      "costUSD": 100000,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "assumptions": "{\"G\":100000,\"f\":0.8,\"c\":225,\"a\":0,\"p\":0.6,\"w\":0.6,\"u\":0.02,\"T\":1,\"r\":0.03,\"d\":0.125,\"h\":0.00005,\"g\":0.4,\"fade\":0,\"M\":0,\"inkind\":40,\"school\":0}; financed unique-child courses 355.55555555555554; additional CA course-equivalents 0; discounted effective CA child-years 0; gross resource cost 114222.22222222222; gross resource price/10Q null. Assumption scenarios, not confidence intervals or offers."
+    },
+    {
+      "id": "zero-california",
+      "label": "No marginal California benefit",
+      "costUSD": 100000,
+      "allPopulationQalys": 1.2477596896818623,
+      "editionQalys": 0,
+      "assumptions": "{\"G\":100000,\"f\":0.8,\"c\":225,\"a\":0.5,\"p\":0.6,\"w\":0.6,\"u\":0.02,\"T\":1,\"r\":0.03,\"d\":0.125,\"h\":0.00005,\"g\":0,\"fade\":0,\"M\":0,\"inkind\":40,\"school\":0}; financed unique-child courses 355.55555555555554; additional CA course-equivalents 0; discounted effective CA child-years 0; gross resource cost 114222.22222222222; gross resource price/10Q null. Assumption scenarios, not confidence intervals or offers."
+    },
+    {
+      "id": "net-harm",
+      "label": "No utility benefit but course burdens",
+      "costUSD": 100000,
+      "allPopulationQalys": -0.00885610637582131,
+      "editionQalys": -0.0035424425503285248,
+      "assumptions": "{\"G\":100000,\"f\":0.8,\"c\":225,\"a\":0.5,\"p\":0.6,\"w\":0.6,\"u\":0,\"T\":1,\"r\":0.03,\"d\":0.125,\"h\":0.00005,\"g\":0.4,\"fade\":0,\"M\":0,\"inkind\":40,\"school\":0}; financed unique-child courses 355.55555555555554; additional CA course-equivalents 71.11111111111111; discounted effective CA child-years 25.132315921153673; gross resource cost 114222.22222222222; gross resource price/10Q null. Assumption scenarios, not confidence intervals or offers."
+    },
+    {
+      "id": "public-match-diagnostic",
+      "label": "Unverified gross $32000 CA-only payment before additionality",
+      "costUSD": 100000,
+      "allPopulationQalys": 1.7468635655546072,
+      "editionQalys": 0.9982077517454899,
+      "assumptions": "{\"G\":100000,\"f\":0.8,\"c\":225,\"a\":0.5,\"p\":0.6,\"w\":0.6,\"u\":0.02,\"T\":1,\"r\":0.03,\"d\":0.125,\"h\":0.00005,\"g\":0.4,\"fade\":0,\"M\":32000,\"inkind\":40,\"school\":0}; financed unique-child courses 355.55555555555554; additional CA course-equivalents 142.22222222222223; discounted effective CA child-years 50.264631842307345; gross resource cost 151911.11111111112; gross resource price/10Q 1521838.623728134. Assumption scenarios, not confidence intervals or offers."
+    },
+    {
+      "id": "partner-resources",
+      "label": "Unpriced school resources $50/course",
+      "costUSD": 100000,
+      "allPopulationQalys": 1.2477596896818623,
+      "editionQalys": 0.49910387587274496,
+      "assumptions": "{\"G\":100000,\"f\":0.8,\"c\":225,\"a\":0.5,\"p\":0.6,\"w\":0.6,\"u\":0.02,\"T\":1,\"r\":0.03,\"d\":0.125,\"h\":0.00005,\"g\":0.4,\"fade\":0,\"M\":0,\"inkind\":40,\"school\":50}; financed unique-child courses 355.55555555555554; additional CA course-equivalents 71.11111111111111; discounted effective CA child-years 25.132315921153673; gross resource cost 132000; gross resource price/10Q 2644740.0307036615. Assumption scenarios, not confidence intervals or offers."
+    },
+    {
+      "id": "restricted-ca-diagnostic",
+      "label": "Unverified completely CA-restricted allocation",
+      "costUSD": 100000,
+      "allPopulationQalys": 1.2477596896818623,
+      "editionQalys": 1.2477596896818623,
+      "assumptions": "{\"G\":100000,\"f\":0.8,\"c\":225,\"a\":0.5,\"p\":0.6,\"w\":0.6,\"u\":0.02,\"T\":1,\"r\":0.03,\"d\":0.125,\"h\":0.00005,\"g\":1,\"fade\":0,\"M\":0,\"inkind\":40,\"school\":0}; financed unique-child courses 355.55555555555554; additional CA course-equivalents 177.77777777777777; discounted effective CA child-years 62.830789802884176; gross resource cost 114222.22222222222; gross resource price/10Q 915418.4348698197. Assumption scenarios, not confidence intervals or offers."
+    },
+    {
+      "id": "two-year-renewal",
+      "label": "Two-year support with annualized doubled course cash cost",
+      "costUSD": 100000,
+      "allPopulationQalys": 1.233887512830098,
+      "editionQalys": 0.4935550051320392,
+      "assumptions": "{\"G\":100000,\"f\":0.8,\"c\":450,\"a\":0.5,\"p\":0.6,\"w\":0.6,\"u\":0.02,\"T\":2,\"r\":0.03,\"d\":0.125,\"h\":0.00005,\"g\":0.4,\"fade\":0,\"M\":0,\"inkind\":40,\"school\":0}; financed unique-child courses 177.77777777777777; additional CA course-equivalents 35.55555555555556; discounted effective CA child-years 24.766311320360174; gross resource cost 107111.11111111111; gross resource price/10Q 2170196.026731732. Assumption scenarios, not confidence intervals or offers. The single $40 in-kind allowance is held fixed for comparability; if renewal also consumes another $40 of donated inputs, gross resource cost increases by another $7,111.11. This does not alter the cash-gift price."
+    }
+  ],
+  "sensitivity": [
+    "g alone at .2 or .6 changes central price to about $4.01m or $1.34m; cumulative reach does not resolve it.",
+    "p, w and u multiply; sustained correction and child utility dominate alongside funding additionality.",
+    "Holding remaining central values, one-year break-even utility for $1m/10Q is approximately .040 and for $100k/10Q approximately .398; solve exact formula including h.",
+    "If two pairs per child inflate output counts, inferred unit costs must rise; the model's c is per unique child course.",
+    "No public leverage in central. Public payments, donated lenses and shared school resources must not be claimed as free full-resource cost.",
+    "Replacement-extra assumes a cost omitted from central c; if central course already includes replacement, use central and do not add it again. The66% transfer is a stress, not CA forecast.",
+    "If effective time decays50% annually, central price rises to about$2.78m. Utility.005/.01/.04 gives about$8.19m/$4.04m/$1.00m.",
+    "No marginal California allocation, complete financial substitution and net harm are explicitly reproduced.",
+    "Positive scenario range cannot establish positive expected impact or donor readiness; no fitted probability distribution is claimed."
+  ],
+  "missingInputs": [
+    "Actual next-dollar recipient allocation and California delivery mix.",
+    "Current core delivery cash cost per unique additional child, including replacements and referral completion, reconciled with separately charged support costs.",
+    "Funding substitution, restricted-grant capacity and qualified incremental MOS claims.",
+    "Current counterfactual correction gap and observed effective wear over finite follow-up.",
+    "Child preference-weighted utility by severity; not adult impairment utility or test-score conversion.",
+    "Latest original audit findings and remediation: attempted ProPublica audit download returned security HTML, so no audit conclusion asserted."
+  ]
+}

@@ -1,3 +1,4 @@
+import {impactNode} from '@/components/ImpactMetric';
 import type { Metadata } from 'next';
 import CharityResearchReport, { type CharityReportContent } from '@/components/CharityResearchReport';
 import review from '@/data/san-francisco/sf-lgbt-center-employment-review-v1.json';
@@ -87,4 +88,4 @@ const content: CharityReportContent = {
   sources: [...review.sources, ...bridge.sources.filter((source) => !review.sources.some((existing) => existing.url === source.url))],
 };
 
-export default function SfLgbtCenterResearchPage() { return <CharityResearchReport content={content} />; }
+export default function SfLgbtCenterResearchPage() { return impactNode(<CharityResearchReport content={content} />); }

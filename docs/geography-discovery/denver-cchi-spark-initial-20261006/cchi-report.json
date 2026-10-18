@@ -1,0 +1,3426 @@
+{
+  "edition": "denver",
+  "boundaryVersion": "OMB-23-01-2023-07-21",
+  "organizationId": "org:colorado-consumer-health",
+  "slug": "colorado-consumer-health",
+  "organization": "Colorado Consumer Health Initiative",
+  "program": "Medical-bill navigation and consumer health policy",
+  "published": "2026-10-06",
+  "updated": "2026-10-06",
+  "stage": "alpha",
+  "donationUrl": "https://cohealthinitiative.org/donate/",
+  "acceptance": {
+    "status": "accepted",
+    "evidence": "docs/geography-discovery/denver-cchi-spark-initial-20261006/acceptance.md"
+  },
+  "priceScope": "Historical matched FY2023 full annual recipient cost against a partial assistance channel; current productivity and policy benefits unknown, not zero, and not a marginal-gift offer.",
+  "summary": {
+    "what": [
+      "Free Consumer Assistance Program helps people contest bills, denied coverage and eligibility barriers; it does not pay their medical bills.",
+      "The charity also advocates for consumer protection and implementation of Colorado health policy with agencies and coalitions.",
+      "This historical numerical reference pairs FY2023 costs with 777 annual clients; it is not current productivity, cumulative bills saved or whole-policy expected value."
+    ],
+    "strengths": [
+      "Current recipient, free-service route and linked donation intake are identified.",
+      "Original three-year IRS costs are checked, including netted fundraising costs.",
+      "Actual cash avoidance and full provider/insurer incidence are distinguished from nominal charges written off."
+    ],
+    "reservations": [
+      "The observed 777 annual clients are historical and not unique households or causal outcomes; current cohort, local share and utility remain uncertain.",
+      "Bills saved are not necessarily otherwise-paid consumption, and the counterparty can lose the same collectible cash.",
+      "Whole annual costs fund policy and organizing too; their implemented health and resource effects remain unmeasured rather than assumed zero."
+    ]
+  },
+  "sections": {
+    "what": "CAP supports billing appeals and applications while policy work addresses affordability, coverage and consumer protections.\n\nCurrent cumulative counters differ across the same page; neither is used as annual delivered cases.",
+    "monitoring": "Seek annual unique clients, actual collected cash avoided, completed appeals and recipients inside the ten-county Denver boundary.\n\nMeasure implemented policy changes against agency obligations and alternatives, not only legislation or coalition participation.",
+    "qualitative": "Self-appeals, legally required hospital assistance, insurers and other advocates form the counterfactual. Staffing limits can delay responses.\n\nHistorical Axis work in southwest Colorado is outside this edition; headquarters do not establish beneficiary geography.",
+    "cost": "Matched FY2023 full annual cost is $1,536,690: functional expenses $1,523,080 plus $13,610 netted event costs. Latest FY2024 full cost is $1,801,425 and is a mismatched-vintage sensitivity.\n\nThe historical 2023 model uses 777 observed clients, judged 90% unique households, 50% Denver share and 40% additionality. A $2,000 nominal bill reduction × 25% otherwise-paid collection fraction implies $500 cash avoided, not medical retail value.\n\nPositive gains receive a 50% overlap adjustment; $25 access costs and process harms apply to all exposed households. A full $500 provider/insurer loss per changed household is retained without overlap discount.\n\nPolicy implementation, attribution, finite duration and delay are missing causal inputs; they are not assigned statewide population benefits. Latest-cost and annual-mean scenarios are sensitivities, not CAP allocations or marginal costs.",
+    "funding": "Own donation page links a working EveryAction intake; no transaction was made. Free CAP access is not conditional on giving.\n\nCurrent grants or appeals do not prove capacity to convert the next unrestricted dollar into incremental completed assistance."
+  },
+  "sources": [
+    {
+      "id": "services",
+      "title": "Current CAP assistance and cumulative counters",
+      "url": "https://cohealthinitiative.org/cap/",
+      "publisher": "Colorado Consumer Health Initiative",
+      "published": null,
+      "retrieved": "2026-10-06"
+    },
+    {
+      "id": "policy",
+      "title": "Current policy and agency implementation priorities",
+      "url": "https://cohealthinitiative.org/policy-page/",
+      "publisher": "Colorado Consumer Health Initiative",
+      "published": null,
+      "retrieved": "2026-10-06"
+    },
+    {
+      "id": "donor",
+      "title": "Recipient donation page and linked EveryAction route",
+      "url": "https://cohealthinitiative.org/donate/",
+      "publisher": "Colorado Consumer Health Initiative",
+      "published": null,
+      "retrieved": "2026-10-06"
+    },
+    {
+      "id": "finance",
+      "title": "FY2024 original IRS full filing",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202533219349309813/IRS990",
+      "publisher": "IRS original filing",
+      "published": null,
+      "retrieved": "2026-10-06"
+    },
+    {
+      "id": "finance-2023",
+      "title": "FY2023 original IRS full filing",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202423209349306147/IRS990",
+      "publisher": "IRS original filing",
+      "published": null,
+      "retrieved": "2026-10-06"
+    },
+    {
+      "id": "finance-2022",
+      "title": "FY2022 original IRS full filing",
+      "url": "https://projects.propublica.org/nonprofits/full_text/202331359349317958/IRS990",
+      "publisher": "IRS original filing",
+      "published": null,
+      "retrieved": "2026-10-06"
+    },
+    {
+      "id": "cg-cost",
+      "title": "Health and income cost-effectiveness framework",
+      "url": "https://coefficientgiving.org/research/cost-effectiveness/",
+      "publisher": "Coefficient Giving",
+      "published": null,
+      "retrieved": "2026-10-06"
+    },
+    {
+      "id": "annual",
+      "title": "Original 2023 annual report: 777 clients and more than $2M nominal savings",
+      "url": "https://cohealthinitiative.org/wp-content/uploads/2025/09/2023-Annual-Report.pdf",
+      "publisher": "Colorado Consumer Health Initiative",
+      "published": null,
+      "retrieved": "2026-10-06"
+    }
+  ],
+  "model": {
+    "version": "colorado-consumer-health-initial-20261006",
+    "costScope": "Matched historical FY2023 full annual recipient cost against observed 777 assistance clients; latest FY2024 costs shown as mismatched-vintage sensitivity, not current productivity.",
+    "geographicAttribution": "Judged 0.5 Denver beneficiary share within CBSA19740; statewide work and southwest Colorado pilot are not all local.",
+    "formula": "Health = (N × unique × b × eligible × completion × response × q × finite discounted duration − all-exposed process harm) × Denver share. Signed resources jointly log changed and other exposed households, with full distinct provider/insurer loss and geography once; price = 10 × C / combined equivalents.",
+    "counterfactual": "Mandated hospital assistance, public eligibility, insurers, self-appeals, other navigators and agency implementation would continue without CCHI.",
+    "attribution": "b=.4 and successful cash recovery=.6 are conditional judgments, not local trial estimates. Wider policy implementation and causal contribution remain unknown.",
+    "uncertainty": "Annual unique cohort, collectibility, utility, local share and policy effects are not empirically calibrated; null, adverse, payer and cost-boundary scenarios expose this.",
+    "nativeOutcomes": "Original 2023 annual report states 777 clients and more than $2M nominal bill savings that year across 48 counties. Annual clients are not deduplicated households or incremental successes. Current and IRS cumulative counters are not annual outcomes.",
+    "inputs": [
+      {
+        "name": "C",
+        "value": 1536690,
+        "unit": "USD annual",
+        "basis": "observed",
+        "rationale": "Observed FY2023 original IRS functional expenses $1,523,080 plus $13,610 netted direct event costs, matched to 2023 annual client envelope.",
+        "sourceIds": [
+          "finance-2023"
+        ]
+      },
+      {
+        "name": "N",
+        "value": 777,
+        "unit": "annual clients (historical 2023 envelope)",
+        "basis": "observed",
+        "rationale": "Observed historical 2023 annual report envelope of 777 clients; unique households, local share and incremental outcomes remain judgments, not observed current clients.",
+        "sourceIds": [
+          "annual"
+        ]
+      },
+      {
+        "name": "unique",
+        "value": 0.9,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "Explicit conditional judgment, not a measured causal recipient coefficient; adverse and null scenarios test this assumption.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "eligible",
+        "value": 1,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "Explicit conditional judgment, not a measured causal recipient coefficient; adverse and null scenarios test this assumption.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "completion",
+        "value": 1,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "Explicit conditional judgment, not a measured causal recipient coefficient; adverse and null scenarios test this assumption.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "b",
+        "value": 0.4,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "Explicit conditional judgment, not a measured causal recipient coefficient; adverse and null scenarios test this assumption.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "response",
+        "value": 0.3,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "Explicit conditional judgment, not a measured causal recipient coefficient; adverse and null scenarios test this assumption.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "q",
+        "value": 0.01,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "Explicit conditional judgment, not a measured causal recipient coefficient; adverse and null scenarios test this assumption.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "T",
+        "value": 1,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "Explicit conditional judgment, not a measured causal recipient coefficient; adverse and null scenarios test this assumption.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "g",
+        "value": 0.5,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "Explicit conditional judgment, not a measured causal recipient coefficient; adverse and null scenarios test this assumption.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "delay",
+        "value": 0.1,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "Judged .1-year engagement start for both assistance effects and access resources; not immediate costs capitalized into later years.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "r",
+        "value": 0.03,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "Explicit conditional judgment, not a measured causal recipient coefficient; adverse and null scenarios test this assumption.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "harm",
+        "value": 0.0001,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "Explicit conditional judgment, not a measured causal recipient coefficient; adverse and null scenarios test this assumption.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "success",
+        "value": 0.6,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "Explicit conditional judgment, not a measured causal recipient coefficient; adverse and null scenarios test this assumption.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "workGain",
+        "value": 0,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "Explicit conditional judgment, not a measured causal recipient coefficient; adverse and null scenarios test this assumption.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "medicalGain",
+        "value": 500,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "Judged otherwise-paid cash avoidance: $2,000 nominal charge reduction × .25 collectibility = $500; not gross write-off or medical retail value.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "overlap",
+        "value": 0.5,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "Explicit conditional judgment, not a measured causal recipient coefficient; adverse and null scenarios test this assumption.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "cost",
+        "value": 25,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "Judged $25 participation/access resource loss per all-exposed household, including unsuccessful cases.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "baseline",
+        "value": 20000,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "Explicit conditional judgment, not a measured causal recipient coefficient; adverse and null scenarios test this assumption.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "payerLoss",
+        "value": 500,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "Full same $500 actual collectible cash forgone by distinct provider/insurer counterparties per changed household; no positive overlap discount.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "externalCost",
+        "value": 0,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "Explicit conditional judgment, not a measured causal recipient coefficient; adverse and null scenarios test this assumption.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "payerPeople",
+        "value": 10000,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "Explicit conditional judgment, not a measured causal recipient coefficient; adverse and null scenarios test this assumption.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      },
+      {
+        "name": "payerBaseline",
+        "value": 50000,
+        "unit": "model parameter",
+        "basis": "judgment",
+        "rationale": "Explicit conditional judgment, not a measured causal recipient coefficient; adverse and null scenarios test this assumption.",
+        "sourceIds": [
+          "services",
+          "cg-cost"
+        ]
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "central",
+        "label": "central",
+        "overrides": {},
+        "costUSD": 1536690,
+        "exposed": 699.3000000000001,
+        "union": 279.72,
+        "clinicalPeople": 83.91600000000001,
+        "editionQalys": 0.38347980270773985,
+        "allPopulationQalys": 0.7669596054154797,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 167.83200000000002,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 225,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 531.4680000000001,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 10000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -4.195800000000001,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -0.11604961595946472,
+        "incomeUnknown": false,
+        "totalEquivalent": 0.2674301867482751,
+        "price10": 57461351.64039822,
+        "costPer10Qalys": 57461351.64039822,
+        "incomeEquivalentYears": -0.11604961595946472,
+        "combinedEquivalentYears": 0.2674301867482751,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "clinical-null",
+        "label": "clinical null",
+        "overrides": {
+          "q": 0
+        },
+        "costUSD": 1536690,
+        "exposed": 699.3000000000001,
+        "union": 279.72,
+        "clinicalPeople": 83.91600000000001,
+        "editionQalys": -0.034861800246158176,
+        "allPopulationQalys": -0.06972360049231635,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 167.83200000000002,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 225,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 531.4680000000001,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 10000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -4.195800000000001,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -0.11604961595946472,
+        "incomeUnknown": false,
+        "totalEquivalent": -0.1509114162056229,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": -0.11604961595946472,
+        "combinedEquivalentYears": -0.1509114162056229,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "financial-only",
+        "label": "financial only",
+        "overrides": {
+          "q": 0,
+          "harm": 0
+        },
+        "costUSD": 1536690,
+        "exposed": 699.3000000000001,
+        "union": 279.72,
+        "clinicalPeople": 83.91600000000001,
+        "editionQalys": 0,
+        "allPopulationQalys": 0,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 167.83200000000002,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 225,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 531.4680000000001,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 10000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -4.195800000000001,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -0.11604961595946472,
+        "incomeUnknown": false,
+        "totalEquivalent": -0.11604961595946472,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": -0.11604961595946472,
+        "combinedEquivalentYears": -0.11604961595946472,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "zero-benefit-full-burdens",
+        "label": "zero benefit full burdens",
+        "overrides": {
+          "b": 0
+        },
+        "costUSD": 1536690,
+        "exposed": 699.3000000000001,
+        "union": 0,
+        "clinicalPeople": 0,
+        "editionQalys": -0.034861800246158176,
+        "allPopulationQalys": -0.06972360049231635,
+        "incomePathways": [
+          {
+            "id": "other-exposed-households",
+            "people": 699.3000000000001,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 10000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": 0,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -0.21802254403461901,
+        "incomeUnknown": false,
+        "totalEquivalent": -0.2528843442807772,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": -0.21802254403461901,
+        "combinedEquivalentYears": -0.2528843442807772,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "no-exposure",
+        "label": "no exposure",
+        "overrides": {
+          "N": 0
+        },
+        "costUSD": 1536690,
+        "exposed": 0,
+        "union": 0,
+        "clinicalPeople": 0,
+        "editionQalys": 0,
+        "allPopulationQalys": 0,
+        "incomePathways": [],
+        "incomeEquivalent": 0,
+        "incomeUnknown": false,
+        "totalEquivalent": 0,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": 0,
+        "combinedEquivalentYears": 0,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "no-gift-no-exposure",
+        "label": "no gift no exposure",
+        "overrides": {
+          "N": 0,
+          "C": 0
+        },
+        "costUSD": 0,
+        "exposed": 0,
+        "union": 0,
+        "clinicalPeople": 0,
+        "editionQalys": 0,
+        "allPopulationQalys": 0,
+        "incomePathways": [],
+        "incomeEquivalent": 0,
+        "incomeUnknown": false,
+        "totalEquivalent": 0,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": 0,
+        "combinedEquivalentYears": 0,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "adverse",
+        "label": "adverse",
+        "overrides": {
+          "q": -0.02,
+          "workGain": -500,
+          "harm": 0.005
+        },
+        "costUSD": 1536690,
+        "exposed": 699.3000000000001,
+        "union": 279.72,
+        "clinicalPeople": 83.91600000000001,
+        "editionQalys": -2.579773218215705,
+        "allPopulationQalys": -5.15954643643141,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 167.83200000000002,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -275,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 531.4680000000001,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 10000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -4.195800000000001,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -1.163267258527871,
+        "incomeUnknown": false,
+        "totalEquivalent": -3.743040476743576,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": -1.163267258527871,
+        "combinedEquivalentYears": -3.743040476743576,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "unknown",
+        "label": "unknown",
+        "overrides": {
+          "clinicalUnknown": true,
+          "incomeUnknown": true,
+          "costUnknown": true
+        },
+        "costUSD": null,
+        "exposed": 699.3000000000001,
+        "union": 279.72,
+        "clinicalPeople": 83.91600000000001,
+        "editionQalys": null,
+        "allPopulationQalys": null,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 167.83200000000002,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 225,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 531.4680000000001,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 10000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -4.195800000000001,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -0.11604961595946472,
+        "incomeUnknown": true,
+        "totalEquivalent": null,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": -0.11604961595946472,
+        "combinedEquivalentYears": null,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "no-recipient-resources-full-payer-loss",
+        "label": "no recipient resources full payer loss",
+        "overrides": {
+          "workGain": 0,
+          "medicalGain": 0
+        },
+        "costUSD": 1536690,
+        "exposed": 699.3000000000001,
+        "union": 279.72,
+        "clinicalPeople": 83.91600000000001,
+        "editionQalys": 0.38347980270773985,
+        "allPopulationQalys": 0.7669596054154797,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 167.83200000000002,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 531.4680000000001,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 10000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -4.195800000000001,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -0.6363817007475283,
+        "incomeUnknown": false,
+        "totalEquivalent": -0.25290189803978846,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": -0.6363817007475283,
+        "combinedEquivalentYears": -0.25290189803978846,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "clinical-response-null",
+        "label": "clinical response null",
+        "overrides": {
+          "response": 0
+        },
+        "costUSD": 1536690,
+        "exposed": 699.3000000000001,
+        "union": 279.72,
+        "clinicalPeople": 0,
+        "editionQalys": -0.034861800246158176,
+        "allPopulationQalys": -0.06972360049231635,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 167.83200000000002,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 225,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 531.4680000000001,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 10000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -4.195800000000001,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -0.11604961595946472,
+        "incomeUnknown": false,
+        "totalEquivalent": -0.1509114162056229,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": -0.11604961595946472,
+        "combinedEquivalentYears": -0.1509114162056229,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "short-health",
+        "label": "short health",
+        "overrides": {
+          "T": 0.25
+        },
+        "costUSD": 1536690,
+        "exposed": 699.3000000000001,
+        "union": 279.72,
+        "clinicalPeople": 83.91600000000001,
+        "editionQalys": 0.06972360049231634,
+        "allPopulationQalys": 0.13944720098463267,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 167.83200000000002,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 225,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 531.4680000000001,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 10000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -4.195800000000001,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -0.11604961595946472,
+        "incomeUnknown": false,
+        "totalEquivalent": -0.04632601546714839,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": -0.11604961595946472,
+        "combinedEquivalentYears": -0.04632601546714839,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "one-year-health",
+        "label": "one year health",
+        "overrides": {
+          "T": 1
+        },
+        "costUSD": 1536690,
+        "exposed": 699.3000000000001,
+        "union": 279.72,
+        "clinicalPeople": 83.91600000000001,
+        "editionQalys": 0.38347980270773985,
+        "allPopulationQalys": 0.7669596054154797,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 167.83200000000002,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 225,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 531.4680000000001,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 10000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -4.195800000000001,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -0.11604961595946472,
+        "incomeUnknown": false,
+        "totalEquivalent": 0.2674301867482751,
+        "price10": 57461351.64039822,
+        "costPer10Qalys": 57461351.64039822,
+        "incomeEquivalentYears": -0.11604961595946472,
+        "combinedEquivalentYears": 0.2674301867482751,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "low-additionality",
+        "label": "low additionality",
+        "overrides": {
+          "b": 0.1
+        },
+        "costUSD": 1536690,
+        "exposed": 699.3000000000001,
+        "union": 69.93,
+        "clinicalPeople": 20.979000000000003,
+        "editionQalys": 0.06972360049231634,
+        "allPopulationQalys": 0.13944720098463267,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 41.958000000000006,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 225,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 657.3420000000001,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 10000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -1.0489500000000003,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -0.1925260206399823,
+        "incomeUnknown": false,
+        "totalEquivalent": -0.12280242014766597,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": -0.1925260206399823,
+        "combinedEquivalentYears": -0.12280242014766597,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "all-additionality",
+        "label": "all additionality",
+        "overrides": {
+          "b": 1
+        },
+        "costUSD": 1536690,
+        "exposed": 699.3000000000001,
+        "union": 699.3000000000001,
+        "clinicalPeople": 209.79000000000002,
+        "editionQalys": 1.0109922071385868,
+        "allPopulationQalys": 2.0219844142771737,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 419.58000000000004,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 225,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 279.72,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 10000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -10.489500000000001,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": 0.03684394034895444,
+        "incomeUnknown": false,
+        "totalEquivalent": 1.0478361474875413,
+        "price10": 14665365.416955814,
+        "costPer10Qalys": 14665365.416955814,
+        "incomeEquivalentYears": 0.03684394034895444,
+        "combinedEquivalentYears": 1.0478361474875413,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "half-geography",
+        "label": "half geography",
+        "overrides": {
+          "g": 0.5
+        },
+        "costUSD": 1536690,
+        "exposed": 699.3000000000001,
+        "union": 279.72,
+        "clinicalPeople": 83.91600000000001,
+        "editionQalys": 0.38347980270773985,
+        "allPopulationQalys": 0.7669596054154797,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 167.83200000000002,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 225,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 531.4680000000001,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 10000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -4.195800000000001,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -0.11604961595946472,
+        "incomeUnknown": false,
+        "totalEquivalent": 0.2674301867482751,
+        "price10": 57461351.64039822,
+        "costPer10Qalys": 57461351.64039822,
+        "incomeEquivalentYears": -0.11604961595946472,
+        "combinedEquivalentYears": 0.2674301867482751,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "no-local-share",
+        "label": "no local share",
+        "overrides": {
+          "g": 0
+        },
+        "costUSD": 1536690,
+        "exposed": 699.3000000000001,
+        "union": 279.72,
+        "clinicalPeople": 83.91600000000001,
+        "editionQalys": 0,
+        "allPopulationQalys": 0,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 167.83200000000002,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 225,
+            "years": 1,
+            "editionShare": 0,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 531.4680000000001,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 10000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": 0,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": 0,
+        "incomeUnknown": false,
+        "totalEquivalent": 0,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": 0,
+        "combinedEquivalentYears": 0,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "no-positive-overlap",
+        "label": "no positive overlap",
+        "overrides": {
+          "overlap": 0
+        },
+        "costUSD": 1536690,
+        "exposed": 699.3000000000001,
+        "union": 279.72,
+        "clinicalPeople": 83.91600000000001,
+        "editionQalys": 0.38347980270773985,
+        "allPopulationQalys": 0.7669596054154797,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 167.83200000000002,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 531.4680000000001,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 10000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -4.195800000000001,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -0.6363817007475283,
+        "incomeUnknown": false,
+        "totalEquivalent": -0.25290189803978846,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": -0.6363817007475283,
+        "combinedEquivalentYears": -0.25290189803978846,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "full-positive-overlap",
+        "label": "full positive overlap",
+        "overrides": {
+          "overlap": 1
+        },
+        "costUSD": 1536690,
+        "exposed": 699.3000000000001,
+        "union": 279.72,
+        "clinicalPeople": 83.91600000000001,
+        "editionQalys": 0.38347980270773985,
+        "allPopulationQalys": 0.7669596054154797,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 167.83200000000002,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 475,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 531.4680000000001,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 10000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -4.195800000000001,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": 0.3978900209805004,
+        "incomeUnknown": false,
+        "totalEquivalent": 0.7813698236882403,
+        "price10": 19666615.64617993,
+        "costPer10Qalys": 19666615.64617993,
+        "incomeEquivalentYears": 0.3978900209805004,
+        "combinedEquivalentYears": 0.7813698236882403,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "negative-overlap-zero",
+        "label": "negative overlap zero",
+        "overrides": {
+          "workGain": -500,
+          "overlap": 0
+        },
+        "costUSD": 1536690,
+        "exposed": 699.3000000000001,
+        "union": 279.72,
+        "clinicalPeople": 83.91600000000001,
+        "editionQalys": 0.38347980270773985,
+        "allPopulationQalys": 0.7669596054154797,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 167.83200000000002,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -525,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 531.4680000000001,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 10000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -4.195800000000001,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -1.6968734764490652,
+        "incomeUnknown": false,
+        "totalEquivalent": -1.3133936737413254,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": -1.6968734764490652,
+        "combinedEquivalentYears": -1.3133936737413254,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "negative-overlap-one",
+        "label": "negative overlap one",
+        "overrides": {
+          "workGain": -500,
+          "overlap": 1
+        },
+        "costUSD": 1536690,
+        "exposed": 699.3000000000001,
+        "union": 279.72,
+        "clinicalPeople": 83.91600000000001,
+        "editionQalys": 0.38347980270773985,
+        "allPopulationQalys": 0.7669596054154797,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 167.83200000000002,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 531.4680000000001,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 10000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -4.195800000000001,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -0.6363817007475283,
+        "incomeUnknown": false,
+        "totalEquivalent": -0.25290189803978846,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": -0.6363817007475283,
+        "combinedEquivalentYears": -0.25290189803978846,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "mixed-resources",
+        "label": "mixed resources",
+        "overrides": {
+          "medicalGain": 300,
+          "workGain": -300
+        },
+        "costUSD": 1536690,
+        "exposed": 699.3000000000001,
+        "union": 279.72,
+        "clinicalPeople": 83.91600000000001,
+        "editionQalys": 0.38347980270773985,
+        "allPopulationQalys": 0.7669596054154797,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 167.83200000000002,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -175,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 531.4680000000001,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 10000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -4.195800000000001,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -0.9517160603240601,
+        "incomeUnknown": false,
+        "totalEquivalent": -0.5682362576163202,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": -0.9517160603240601,
+        "combinedEquivalentYears": -0.5682362576163202,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "no-access-cost",
+        "label": "no access cost",
+        "overrides": {
+          "cost": 0
+        },
+        "costUSD": 1536690,
+        "exposed": 699.3000000000001,
+        "union": 279.72,
+        "clinicalPeople": 83.91600000000001,
+        "editionQalys": 0.38347980270773985,
+        "allPopulationQalys": 0.7669596054154797,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 167.83200000000002,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 250,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 531.4680000000001,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 0,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 10000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -4.195800000000001,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": 0.10132653617941634,
+        "incomeUnknown": false,
+        "totalEquivalent": 0.4848063388871562,
+        "price10": 31696986.54368628,
+        "costPer10Qalys": 31696986.54368628,
+        "incomeEquivalentYears": 0.10132653617941634,
+        "combinedEquivalentYears": 0.4848063388871562,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "high-access-cost",
+        "label": "high access cost",
+        "overrides": {
+          "cost": 200
+        },
+        "costUSD": 1536690,
+        "exposed": 699.3000000000001,
+        "union": 279.72,
+        "clinicalPeople": 83.91600000000001,
+        "editionQalys": 0.38347980270773985,
+        "allPopulationQalys": 0.7669596054154797,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 167.83200000000002,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 50,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 531.4680000000001,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -200,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 10000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -4.195800000000001,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -1.6453209137867892,
+        "incomeUnknown": false,
+        "totalEquivalent": -1.2618411110790495,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": -1.6453209137867892,
+        "combinedEquivalentYears": -1.2618411110790495,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "higher-payer-incidence",
+        "label": "higher payer incidence",
+        "overrides": {
+          "payerLoss": 4000
+        },
+        "costUSD": 1536690,
+        "exposed": 699.3000000000001,
+        "union": 279.72,
+        "clinicalPeople": 83.91600000000001,
+        "editionQalys": 0.38347980270773985,
+        "allPopulationQalys": 0.7669596054154797,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 167.83200000000002,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 225,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 531.4680000000001,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 10000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -33.56640000000001,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -3.0455471636274796,
+        "incomeUnknown": false,
+        "totalEquivalent": -2.66206736091974,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": -3.0455471636274796,
+        "combinedEquivalentYears": -2.66206736091974,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "external-care-cost",
+        "label": "external care cost",
+        "overrides": {
+          "externalCost": 100
+        },
+        "costUSD": 1536690,
+        "exposed": 699.3000000000001,
+        "union": 279.72,
+        "clinicalPeople": 83.91600000000001,
+        "editionQalys": 0.38347980270773985,
+        "allPopulationQalys": 0.7669596054154797,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 167.83200000000002,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 225,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 531.4680000000001,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 10000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -7.6923,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -0.46470906754741204,
+        "incomeUnknown": false,
+        "totalEquivalent": -0.08122926483967219,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": -0.46470906754741204,
+        "combinedEquivalentYears": -0.08122926483967219,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "double-cost",
+        "label": "double cost",
+        "overrides": {
+          "C": 3073380
+        },
+        "costUSD": 3073380,
+        "exposed": 699.3000000000001,
+        "union": 279.72,
+        "clinicalPeople": 83.91600000000001,
+        "editionQalys": 0.38347980270773985,
+        "allPopulationQalys": 0.7669596054154797,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 167.83200000000002,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 225,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 531.4680000000001,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 10000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -4.195800000000001,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -0.11604961595946472,
+        "incomeUnknown": false,
+        "totalEquivalent": 0.2674301867482751,
+        "price10": 114922703.28079644,
+        "costPer10Qalys": 114922703.28079644,
+        "incomeEquivalentYears": -0.11604961595946472,
+        "combinedEquivalentYears": 0.2674301867482751,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "latest-FY2024-cost-mismatched-vintage",
+        "label": "latest FY2024 cost mismatched vintage",
+        "overrides": {
+          "C": 1801425
+        },
+        "costUSD": 1801425,
+        "exposed": 699.3000000000001,
+        "union": 279.72,
+        "clinicalPeople": 83.91600000000001,
+        "editionQalys": 0.38347980270773985,
+        "allPopulationQalys": 0.7669596054154797,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 167.83200000000002,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 225,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 531.4680000000001,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 10000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -4.195800000000001,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -0.11604961595946472,
+        "incomeUnknown": false,
+        "totalEquivalent": 0.2674301867482751,
+        "price10": 67360570.69337626,
+        "costPer10Qalys": 67360570.69337626,
+        "incomeEquivalentYears": -0.11604961595946472,
+        "combinedEquivalentYears": 0.2674301867482751,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "half-cohort",
+        "label": "half cohort",
+        "overrides": {
+          "N": 388.5
+        },
+        "costUSD": 1536690,
+        "exposed": 349.65000000000003,
+        "union": 139.86,
+        "clinicalPeople": 41.958000000000006,
+        "editionQalys": 0.19173990135386992,
+        "allPopulationQalys": 0.38347980270773985,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 83.91600000000001,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 225,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 265.73400000000004,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 10000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -2.0979000000000005,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -0.058020419417221414,
+        "incomeUnknown": false,
+        "totalEquivalent": 0.1337194819366485,
+        "price10": 114918931.61297384,
+        "costPer10Qalys": 114918931.61297384,
+        "incomeEquivalentYears": -0.058020419417221414,
+        "combinedEquivalentYears": 0.1337194819366485,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "undated-growth-envelope",
+        "label": "undated growth envelope",
+        "overrides": {
+          "N": 2000
+        },
+        "costUSD": 1536690,
+        "exposed": 1800,
+        "union": 720,
+        "clinicalPeople": 216,
+        "editionQalys": 0.9870779992477218,
+        "allPopulationQalys": 1.9741559984954435,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 432,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 225,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 1368,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 10000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -10.8,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -0.29878313925527733,
+        "incomeUnknown": false,
+        "totalEquivalent": 0.6882948599924444,
+        "price10": 22326042.068901524,
+        "costPer10Qalys": 22326042.068901524,
+        "incomeEquivalentYears": -0.29878313925527733,
+        "combinedEquivalentYears": 0.6882948599924444,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "household-deduplication",
+        "label": "household deduplication",
+        "overrides": {
+          "unique": 0.7
+        },
+        "costUSD": 1536690,
+        "exposed": 543.9,
+        "union": 217.56,
+        "clinicalPeople": 65.268,
+        "editionQalys": 0.2982620687726865,
+        "allPopulationQalys": 0.596524137545373,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 130.536,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 225,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 413.364,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 10000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -3.2634,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -0.09025777829785583,
+        "incomeUnknown": false,
+        "totalEquivalent": 0.20800429047483068,
+        "price10": 73877803.02473834,
+        "costPer10Qalys": 73877803.02473834,
+        "incomeEquivalentYears": -0.09025777829785583,
+        "combinedEquivalentYears": 0.20800429047483068,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "no-net-work-gain",
+        "label": "no net work gain",
+        "overrides": {
+          "workGain": 0
+        },
+        "costUSD": 1536690,
+        "exposed": 699.3000000000001,
+        "union": 279.72,
+        "clinicalPeople": 83.91600000000001,
+        "editionQalys": 0.38347980270773985,
+        "allPopulationQalys": 0.7669596054154797,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 167.83200000000002,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 225,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 531.4680000000001,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 10000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -4.195800000000001,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -0.11604961595946472,
+        "incomeUnknown": false,
+        "totalEquivalent": 0.2674301867482751,
+        "price10": 57461351.64039822,
+        "costPer10Qalys": 57461351.64039822,
+        "incomeEquivalentYears": -0.11604961595946472,
+        "combinedEquivalentYears": 0.2674301867482751,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "higher-actually-paid-collection",
+        "label": "higher actually paid collection",
+        "overrides": {
+          "medicalGain": 1000,
+          "payerLoss": 1000
+        },
+        "costUSD": 1536690,
+        "exposed": 699.3000000000001,
+        "union": 279.72,
+        "clinicalPeople": 83.91600000000001,
+        "editionQalys": 0.38347980270773985,
+        "allPopulationQalys": 0.7669596054154797,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 167.83200000000002,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 475,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 531.4680000000001,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 10000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -8.391600000000002,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -0.020504247179063073,
+        "incomeUnknown": false,
+        "totalEquivalent": 0.3629755555286768,
+        "price10": 42335908.757321104,
+        "costPer10Qalys": 42335908.757321104,
+        "incomeEquivalentYears": -0.020504247179063073,
+        "combinedEquivalentYears": 0.3629755555286768,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "no-eligible-subgroup",
+        "label": "no eligible subgroup",
+        "overrides": {
+          "eligible": 0
+        },
+        "costUSD": 1536690,
+        "exposed": 699.3000000000001,
+        "union": 279.72,
+        "clinicalPeople": 0,
+        "editionQalys": -0.034861800246158176,
+        "allPopulationQalys": -0.06972360049231635,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 167.83200000000002,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 225,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 531.4680000000001,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 10000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -4.195800000000001,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -0.11604961595946472,
+        "incomeUnknown": false,
+        "totalEquivalent": -0.1509114162056229,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": -0.11604961595946472,
+        "combinedEquivalentYears": -0.1509114162056229,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "no-completed-dose",
+        "label": "no completed dose",
+        "overrides": {
+          "completion": 0
+        },
+        "costUSD": 1536690,
+        "exposed": 699.3000000000001,
+        "union": 279.72,
+        "clinicalPeople": 0,
+        "editionQalys": -0.034861800246158176,
+        "allPopulationQalys": -0.06972360049231635,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 167.83200000000002,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 225,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 531.4680000000001,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 10000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -4.195800000000001,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -0.11604961595946472,
+        "incomeUnknown": false,
+        "totalEquivalent": -0.1509114162056229,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": -0.11604961595946472,
+        "combinedEquivalentYears": -0.1509114162056229,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "low-health-access-response",
+        "label": "low health access response",
+        "overrides": {
+          "response": 0.05
+        },
+        "costUSD": 1536690,
+        "exposed": 699.3000000000001,
+        "union": 279.72,
+        "clinicalPeople": 13.986000000000002,
+        "editionQalys": 0.034861800246158176,
+        "allPopulationQalys": 0.06972360049231635,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 167.83200000000002,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 225,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 531.4680000000001,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 10000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -4.195800000000001,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -0.11604961595946472,
+        "incomeUnknown": false,
+        "totalEquivalent": -0.08118781571330655,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": -0.11604961595946472,
+        "combinedEquivalentYears": -0.08118781571330655,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "public-transfer-null",
+        "label": "public transfer null",
+        "overrides": {
+          "medicalGain": 0,
+          "payerLoss": 0
+        },
+        "costUSD": 1536690,
+        "exposed": 699.3000000000001,
+        "union": 279.72,
+        "clinicalPeople": 83.91600000000001,
+        "editionQalys": 0.38347980270773985,
+        "allPopulationQalys": 0.7669596054154797,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 167.83200000000002,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 531.4680000000001,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -0.2180225440346191,
+        "incomeUnknown": false,
+        "totalEquivalent": 0.16545725867312075,
+        "price10": 92875345.10866654,
+        "costPer10Qalys": 92875345.10866654,
+        "incomeEquivalentYears": -0.2180225440346191,
+        "combinedEquivalentYears": 0.16545725867312075,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "withdrawal-and-fees",
+        "label": "withdrawal and fees",
+        "overrides": {
+          "medicalGain": -500,
+          "payerLoss": 0
+        },
+        "costUSD": 1536690,
+        "exposed": 699.3000000000001,
+        "union": 279.72,
+        "clinicalPeople": 83.91600000000001,
+        "editionQalys": 0.38347980270773985,
+        "allPopulationQalys": 0.7669596054154797,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 167.83200000000002,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -525,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 531.4680000000001,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -1.278514319736156,
+        "incomeUnknown": false,
+        "totalEquivalent": -0.8950345170284161,
+        "price10": null,
+        "costPer10Qalys": null,
+        "incomeEquivalentYears": -1.278514319736156,
+        "combinedEquivalentYears": -0.8950345170284161,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "three-full-year-mean-cost",
+        "label": "three full year mean cost",
+        "overrides": {
+          "C": 1628929.3333333333
+        },
+        "costUSD": 1628929.3333333333,
+        "exposed": 699.3000000000001,
+        "union": 279.72,
+        "clinicalPeople": 83.91600000000001,
+        "editionQalys": 0.38347980270773985,
+        "allPopulationQalys": 0.7669596054154797,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 167.83200000000002,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 225,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 531.4680000000001,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 10000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -4.195800000000001,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -0.11604961595946472,
+        "incomeUnknown": false,
+        "totalEquivalent": 0.2674301867482751,
+        "price10": 60910451.17754791,
+        "costPer10Qalys": 60910451.17754791,
+        "incomeEquivalentYears": -0.11604961595946472,
+        "combinedEquivalentYears": 0.2674301867482751,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "no-otherwise-paid-collection",
+        "label": "no otherwise paid collection",
+        "overrides": {
+          "medicalGain": 0,
+          "payerLoss": 0
+        },
+        "costUSD": 1536690,
+        "exposed": 699.3000000000001,
+        "union": 279.72,
+        "clinicalPeople": 83.91600000000001,
+        "editionQalys": 0.38347980270773985,
+        "allPopulationQalys": 0.7669596054154797,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 167.83200000000002,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 531.4680000000001,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -0.2180225440346191,
+        "incomeUnknown": false,
+        "totalEquivalent": 0.16545725867312075,
+        "price10": 92875345.10866654,
+        "costPer10Qalys": 92875345.10866654,
+        "incomeEquivalentYears": -0.2180225440346191,
+        "combinedEquivalentYears": 0.16545725867312075,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "id": "lower-otherwise-paid-collection",
+        "label": "lower otherwise paid collection",
+        "overrides": {
+          "medicalGain": 100,
+          "payerLoss": 100
+        },
+        "costUSD": 1536690,
+        "exposed": 699.3000000000001,
+        "union": 279.72,
+        "clinicalPeople": 83.91600000000001,
+        "editionQalys": 0.38347980270773985,
+        "allPopulationQalys": 0.7669596054154797,
+        "incomePathways": [
+          {
+            "id": "changed-households",
+            "people": 167.83200000000002,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": 25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "other-exposed-households",
+            "people": 531.4680000000001,
+            "annualIncomeBeforeUSD": 20000,
+            "annualIncomeGainUSD": -25,
+            "years": 1,
+            "editionShare": 0.5,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          },
+          {
+            "id": "distinct-payer-provider-households",
+            "people": 10000,
+            "annualIncomeBeforeUSD": 50000,
+            "annualIncomeGainUSD": -0.83916,
+            "years": 1,
+            "editionShare": 1,
+            "delayYears": 0.1,
+            "discountRate": 0.03,
+            "rationale": "Same household net resources jointly logged; positive-only overlap adjustment, full access costs and negative earnings retained.",
+            "counterfactual": "Hospital mandated financial-assistance screening, insurers, self-appeals and other navigators without CCHI.",
+            "sourceIds": [
+              "services",
+              "finance",
+              "cg-cost"
+            ]
+          }
+        ],
+        "incomeEquivalent": -0.19710611153424515,
+        "incomeUnknown": false,
+        "totalEquivalent": 0.1863736911734947,
+        "price10": 82452088.07768367,
+        "costPer10Qalys": 82452088.07768367,
+        "incomeEquivalentYears": -0.19710611153424515,
+        "combinedEquivalentYears": 0.1863736911734947,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      }
+    ],
+    "sensitivity": [
+      {
+        "label": "clinical null",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "financial only",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "zero benefit full burdens",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "no exposure",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "no gift no exposure",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "adverse",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "unknown",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "no recipient resources full payer loss",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "clinical response null",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "short health",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "one year health",
+        "pricePer10Qalys": 57461351.64039822,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "low additionality",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "all additionality",
+        "pricePer10Qalys": 14665365.416955814,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "half geography",
+        "pricePer10Qalys": 57461351.64039822,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "no local share",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "no positive overlap",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "full positive overlap",
+        "pricePer10Qalys": 19666615.64617993,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "negative overlap zero",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "negative overlap one",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "mixed resources",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "no access cost",
+        "pricePer10Qalys": 31696986.54368628,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "high access cost",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "higher payer incidence",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "external care cost",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "double cost",
+        "pricePer10Qalys": 114922703.28079644,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "latest FY2024 cost mismatched vintage",
+        "pricePer10Qalys": 67360570.69337626,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "half cohort",
+        "pricePer10Qalys": 114918931.61297384,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "undated growth envelope",
+        "pricePer10Qalys": 22326042.068901524,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "household deduplication",
+        "pricePer10Qalys": 73877803.02473834,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "no net work gain",
+        "pricePer10Qalys": 57461351.64039822,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "higher actually paid collection",
+        "pricePer10Qalys": 42335908.757321104,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "no eligible subgroup",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "no completed dose",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "low health access response",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "public transfer null",
+        "pricePer10Qalys": 92875345.10866654,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "withdrawal and fees",
+        "pricePer10Qalys": null,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "three full year mean cost",
+        "pricePer10Qalys": 60910451.17754791,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "no otherwise paid collection",
+        "pricePer10Qalys": 92875345.10866654,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      },
+      {
+        "label": "lower otherwise paid collection",
+        "pricePer10Qalys": 82452088.07768367,
+        "assumptions": "Conditional finite medical-bill assistance reference using matched FY2023 full recipient cost and 777 observed annual clients; unique households and causal effects remain judgments; cumulativebillwriteoffs notnetcashbenefits, actualcollectionfraction/payerloss/localutilityjudged."
+      }
+    ],
+    "missingInputs": [
+      "Unique current annual clients and household overlap",
+      "Collectible cash avoided versus nominal debt reductions",
+      "Local causal clinical utility and income effects",
+      "Implemented policy exposure/population and recipient attribution",
+      "Current marginal capacity and allocated CAP costs"
+    ]
+  },
+  "annualExpenses": [
+    {
+      "year": 2024,
+      "amount": 1801425,
+      "sourceId": "finance",
+      "comparable": true,
+      "currency": "USD",
+      "periodMonths": 12,
+      "entity": "org:colorado-consumer-health",
+      "accountingBasis": "IRS full functional expenses plus netted direct event expenses"
+    },
+    {
+      "year": 2023,
+      "amount": 1536690,
+      "sourceId": "finance-2023",
+      "comparable": true,
+      "currency": "USD",
+      "periodMonths": 12,
+      "entity": "org:colorado-consumer-health",
+      "accountingBasis": "IRS full functional expenses plus netted direct event expenses"
+    },
+    {
+      "year": 2022,
+      "amount": 1548673,
+      "sourceId": "finance-2022",
+      "comparable": true,
+      "currency": "USD",
+      "periodMonths": 12,
+      "entity": "org:colorado-consumer-health",
+      "accountingBasis": "IRS full functional expenses plus netted direct event expenses"
+    }
+  ],
+  "timeCoverage": "partial",
+  "sessionIds": [
+    "3d12c5ae-2777-49f5-a66b-9a507207c043",
+    "7b9c5a3d-bda6-4405-b204-7a68749943e8"
+  ],
+  "authorWorkerIds": [
+    "denver-cchi-author"
+  ],
+  "excludedResearchSessions": [
+    {
+      "id": "32573428-38a8-4b38-acb5-ae31fac19b67",
+      "workerId": "denver-cchi-author",
+      "phase": "research",
+      "status": "excluded",
+      "reason": "Original open interval includes an unsupported 22:46–22:57 UTC gap and is excluded completely."
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+import {impactNode} from '@/components/ImpactMetric';
 import type { Metadata } from 'next';
 import CharityResearchReport, { type CharityReportContent } from '@/components/CharityResearchReport';
 import review from '@/data/san-francisco/glide-review-v1.json';
@@ -92,5 +93,5 @@ const content: CharityReportContent = {
 };
 
 export default function GlideResearchPage() {
-  return <CharityResearchReport content={content} />;
+  return impactNode(<CharityResearchReport content={content} />);
 }

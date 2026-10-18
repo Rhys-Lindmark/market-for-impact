@@ -1,0 +1,9 @@
+# Lone Star deep review — verified publication
+
+Previous goal turn: progress; Santa Maria Sites442 accepted and live-verified. This turn: one Lone Star deep review accepted and publishedSites443, terminal success2026-10-06T19:58:29.928638Z andsixnative/canonicalchecks19:58:36.202Z. Source df662eba672136c8b43098c7fde0970305eb58d5 pushed toSite andGitHub. Exact receipt houston-lone-star-beta-publication-20261006.json.
+
+Houston25initial/4deep/0features. Next Crisis Intervention ofHouston under savedten-review selection, thenDaya,MealsMontgomery,Rose,AirAlliance,Bayou. Otherfiveactiveeditions finished; Denver2initial/0deep needs23initial/10deep/fourfeatures. Remaining23initial+16deep=355plannedresearchminutes, review/release/comparativefeatures separately. Seattle,Boston,Atlanta,Detroit remain deferred; preserveSF. Overallgoal incomplete.
+
+LoneStar initial22.50348M→burden-only59.16678M→current90.04709Mperbetterlife. Health6.513049298QALYs+signedresources−1.690934961equivalents. Controlled evidence constrains alternative assistance but revisedb.2,clinicalutility,persistence,geography andresourceeffects remain conditionaljudgments,not measuredLSLAdeterioration. Originalreport/oldcalculator/allunrelatedprovenance preserved;234portable checks37cases,154independent reconstructionchecks,25focusedtests,2responsivechecks. No features credited prematurely.
+
+Author actualclosedsource/model3.3763minutes; rootclosedaudit partial only; otheruntimedchecks andadministration aren'tadded. Sourcecredential expired beforebuild;renewed throughsupportedtool, firsthelper terminal before retry, nooverlappingbuild. Finitepreview exitedandport3107empty. Onlycurrentreleasearchive disposable aftersave/live/push. Usage82%remainingatend,noresetcredits. Hourlyexistingheartbeat updatedtonextCrisisIntervention/355minutes; underlyingruntime/scheduler fault remains unresolved.

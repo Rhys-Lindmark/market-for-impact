@@ -1,0 +1,7 @@
+# NCST signed-resource assessment — 2026-10-08
+
+Fresh original source opened: https://www.newarkcommunitystreetteam.org/what-we-do/ . It states access up to $200 hardship assistance per participant, document assistance, free legal support, victim-compensation applications and employment referrals. Trauma Recovery Center offers free mental-health services in Essex and Hudson counties. These are operational resource mechanisms, not observed retained household income or average payments.
+
+The assistance ceiling does not establish actual paid amounts, unique current households, alternative funded assistance or marginal gift response. Compensation applications do not establish awards; job referrals do not establish incremental net earnings. Free therapy may replace private payment or otherwise forgone/free treatment. Participant travel, time and administration may impose costs independent of symptom response. No cash amount is manufactured from retail care or ordinary survivor earnings.
+
+Disposition: targeted assessed-unknown. Preserve all original clinical assumptions and ten worlds as a valid partial clinical reference, not zero resources or a measured 90% health share. Required inputs are realized retained assistance/compensation or private-payment displacement for deduplicated funding-responsive households, alternative services, net baseline, taxes/benefit withdrawals, full access/work costs and finite timing. Public/provider and household incidence must remain separate. Independent root acceptance is pending.

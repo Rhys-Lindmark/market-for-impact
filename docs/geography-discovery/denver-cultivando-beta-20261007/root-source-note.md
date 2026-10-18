@@ -1,0 +1,10 @@
+# Cultivando independent source audit — resumed
+
+Original Colorado Secretary of State directory, retrieved 2026-10-07, resolves Regulation 30 ruleId 3464 to current version 12561, adopted April 17, 2026 and effective June 14, 2026. Directory: https://www.sos.state.co.us/CCR/DisplayRule.do?action=ruleinfo&ruleId=3464 . Original 108-page PDF: https://www.sos.state.co.us/CCR/GenerateRulePdf.do?ruleVersionId=12561&fileName=5%20CCR%201001-34 . Curl retrieved 780,732 bytes; original text extracted in memory with pypdf. Web retrieval and urllib returned errors; no bulk PDF retained.
+
+Page 3 delegates benzene refinery controls to Regulation 24 equipment-leak provisions. Page 84 states the April 2026 action establishes emission controls and reports, separately from the January 2025 pollutant identification. Page 91 documents more stringent refinery leak detection and repair standards, not automatic refinery closure. Page 92 describes additional chromium fugitive-emission controls. Some chromium requirements commence June 2028 and ethylene-oxide requirements April 2028. The old statements on pages 71/81 that identification/benchmarks do not directly reduce pollution concern earlier rulemaking, not the entire current control regime.
+
+This strengthens the documented monitoring/advocacy-to-controls pathway, but does not establish achieved local exposure reductions, a clinical QALY coefficient, unique affected residents, or Cultivando's incremental causal contribution relative to mandated public regulation, other coalition members and EPA enforcement. Initial 10,000 potential residents and benefit coefficients remain explicit conditional judgments. No empirical coefficient or favorable numerical revision is forced.
+
+Root resumed source-audit session 145ed3a8-1f16-4ca5-a62b-27c2fd6f87c6: 05:30:39.438–05:31:54.206 UTC, 74.768 dedicated seconds on GPT-6.1 Sol. Earlier unreliable interval remains excluded. Arithmetic/acceptance and release checks occur after this closed source session and are not silently added to research time.
+

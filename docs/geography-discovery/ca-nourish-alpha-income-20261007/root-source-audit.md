@@ -1,0 +1,5 @@
+# Independent original-source audit
+
+Fresh CDSS pilot page says October1restart/$20millionalreadyfundedbaseline; no new retail-site expansion. Earnedmatch benefits are usable anywhereCalFreshEBT accepted, up to60monthly; no enrollment forms. These are household consumption resources, not gross earnings, but actual additional receipt vsfundedbaseline, nutritionutility overlap, foodpurchase fungibility and shopping/time costs need judgment coefficients. Current original source does not establish donor-caused incremental unique household receipt or average redemption. Original30monthly6months remains a hypothetical amount belowcap, not measured average.
+
+Fresh official AB1049history showsSeptember18GovernorVETO, superseding historical August campaign/enrolled status. Preserve initial narrative asdiagnostic, update currentsections/source; no priced immigrantCFAPeffect or newenactmentclaim. Sponsor-deemedincome isn't actual household income. Fruitincentive/CFAP distinct pathways cannot automatically addboth. Publictransfer consumption incidence/realcost alternatives separate. Broader jobs and benefit portfolio remain unknown, notzero.

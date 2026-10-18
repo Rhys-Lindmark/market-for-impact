@@ -1,0 +1,242 @@
+{
+  "version": "usa-beta-cribs-for-kids-20260930-withdrawn-central",
+  "costScope": "Whole ordinary unrestricted national-recipient support. G is only normalization. Historical gross accounting costs restore COGS and direct event expenses but do not represent consolidated all-resource costs. Diagnostic c is a full-support allowance, not an audited cost per unique donated recipient. Partner staff, volunteer/caregiver time and donated freight remain unmeasured; subsidiary transactions require consolidation eliminations. No retail-sales or medical-savings offset is credited.",
+  "geographicAttribution": "Local donated cribs are reported in Pennsylvania and national grants target US communities. Hospital certification also reaches overseas sites. US military affiliation is not USA-50-states-DC residence. Retained g=.99 (.95–1 stress range) is an unmeasured outcome-weighted assumption and not a beta central.",
+  "formula": "N = (G×a/c)×b. Δdeaths = N×u×r×e. Q_all = Δdeaths×L. Q_USA = Q_all×g. Price per10 =10G/Q_USA. u is the incremental full-risk-period-equivalent transition to safer sleep, already discounting alternative crib access, partial use and delayed provision; r is the remaining sleep-related mortality risk of infants whose behavior changes, and e is the causal fraction removed by that change. L is discounted QALYs per prevented infant death. No separate education effect is added to the same infant.",
+  "counterfactual": "b discounts for sales-funded provision, reserves, other donors and partner capacity. u separately discounts households that would obtain a crib anyway, follow safe sleep without the intervention, continue unsafe practices or receive equipment after much of the risk period. r is not the mortality risk of every child reached; it applies to the higher-risk behavior-changing subgroup. A crib that replaces another safe surface has no modeled mortality benefit.",
+  "attribution": "All numeric causal inputs are retained alpha diagnostic judgments. New money's allocation and additional capacity are unresolved; partner purchases, existing stock, funded grants and public/hospital campaigns are baseline activities. Education embodied in a package must not be credited twice. A restricted local grant or retail purchase is a separate decision from the ordinary national donation.",
+  "uncertainty": "Central withdrawn: a,c,b,u,r,e and outcome-weighted geography are not calibrated for the next ordinary unrestricted gift. The six numerical alpha cases are diagnostics only, not a posterior, confidence interval, favorable bound or whole-recipient estimate. Unknown is distinct from zero. Unmeasured education/system benefits and adverse sleep substitution remain possible.",
+  "nativeOutcomes": "Return-reported donated cribs: FY2023 1456 local +1641 partner-associated; FY2024 1375+2638; FY2025 1421 local +1600 via 40 Building Blocks awardees. These are not a reconciled gift-funded unique cohort. The launch planned 400 kits; delivery timing and expansion to the return's count are unverified. Hospital and ambassador reach is not safe-sleep behavior or deaths prevented.",
+  "inputs": [
+    {
+      "name": "G",
+      "value": 10000,
+      "unit": "USD normalization",
+      "basis": "judgment",
+      "rationale": "Retained alpha diagnostic only; no beta central calibrated. Arithmetic only; not a confirmed funding tranche.",
+      "sourceIds": []
+    },
+    {
+      "name": "FY2025 functional expense",
+      "value": 2633922,
+      "unit": "USD",
+      "basis": "observed",
+      "rationale": "Form990 PartIX, excludes COGS and direct event costs.",
+      "sourceIds": [
+        "cfk-99025"
+      ]
+    },
+    {
+      "name": "FY2025 COGS",
+      "value": 9231646,
+      "unit": "USD",
+      "basis": "observed",
+      "rationale": "PartVIII line10b; must restore for gross costs.",
+      "sourceIds": [
+        "cfk-99025"
+      ]
+    },
+    {
+      "name": "FY2025 direct event costs",
+      "value": 49675,
+      "unit": "USD",
+      "basis": "observed",
+      "rationale": "PartVIII line8b, separate from functional fundraising expense.",
+      "sourceIds": [
+        "cfk-99025"
+      ]
+    },
+    {
+      "name": "FY2025 gross accounting expense",
+      "value": 11915243,
+      "unit": "USD",
+      "basis": "observed",
+      "rationale": "2633922+9231646+49675; not annual cash outflow or marginal cost.",
+      "sourceIds": [
+        "cfk-99025"
+      ]
+    },
+    {
+      "name": "a",
+      "value": 0.5,
+      "unit": "material-pathway allocation",
+      "basis": "judgment",
+      "rationale": "Retained alpha diagnostic only; no beta central calibrated. Material-resource functional expense1277796 is48.5% of2633922, but commercial mix prevents a direct allocation inference. Use.5 prior, range.2–.8; other pathways' health remains unquantified.",
+      "sourceIds": [
+        "cfk-99025",
+        "cfk-faq"
+      ]
+    },
+    {
+      "name": "c",
+      "value": 500,
+      "unit": "USD/supported material package",
+      "basis": "judgment",
+      "rationale": "Retained alpha diagnostic only; no beta central calibrated. No current quote. Broad full-support allowance for crib/accessories, freight, teaching and support, range175–1000. Does not use net operating expense/partner shipments. A current unit-cost and allocation budget is decisive.",
+      "sourceIds": [
+        "cfk-catalog",
+        "cfk-building",
+        "cfk-99025"
+      ]
+    },
+    {
+      "name": "b",
+      "value": 0.5,
+      "unit": "funding/capacity additionality",
+      "basis": "judgment",
+      "rationale": "Retained alpha diagnostic only; no beta central calibrated. Sales profits, inventories/reserves and grant commitments could finance the same work; range.2–.9 and zero.",
+      "sourceIds": [
+        "cfk-99025",
+        "cfk-faq"
+      ]
+    },
+    {
+      "name": "u",
+      "value": 0.2,
+      "unit": "incremental risk-period-equivalent safer-sleep share",
+      "basis": "judgment",
+      "rationale": "Retained alpha diagnostic only; no beta central calibrated. Well below observed crib use; multisite study finds most would otherwise use recommended surfaces, selective follow-up and practice decline. Includes replacement access, inconsistent use and late delivery; range.05–.6.",
+      "sourceIds": [
+        "cfk-multisite",
+        "cfk-homevisit",
+        "cfk-qual26",
+        "sleep-mobile-rct"
+      ]
+    },
+    {
+      "name": "r",
+      "value": 0.002,
+      "unit": "remaining sleep-related death risk/behavior-changing infant",
+      "basis": "judgment",
+      "rationale": "Retained alpha diagnostic only; no beta central calibrated. Two per1000 for targeted unsafe-sleep subgroup, not national mean. National SUID burden about3400 deaths in2024 supplies scale, not this subgroup rate. Range.001–.004.",
+      "sourceIds": [
+        "sleep-cdc",
+        "sleep-risk-pooled",
+        "sleep-risk-context"
+      ]
+    },
+    {
+      "name": "e",
+      "value": 0.5,
+      "unit": "causal risk fraction removed",
+      "basis": "judgment",
+      "rationale": "Retained alpha diagnostic only; no beta central calibrated. Conservative relative reduction for genuinely changed hazardous sleep conditions; cannot prevent every SUID mechanism. Range.2–.7, plus zero; no case-control odds ratio directly treated as intervention efficacy.",
+      "sourceIds": [
+        "sleep-aap",
+        "sleep-risk-pooled",
+        "sleep-risk-context"
+      ]
+    },
+    {
+      "name": "L",
+      "value": 27,
+      "unit": "discounted QALYs/prevented infant death",
+      "basis": "judgment",
+      "rationale": "Retained diagnostic value 27. .9 utility over 80 end-of-year periods at 3% is27.1807 before competing mortality. Rounding is not an explicit survival adjustment. An illustrative constant0.5% annual hazard yields23.9756, itself an uncalibrated sensitivity. An age-specific survival/utility model is required. The75 undiscounted case is distinct from.9×80=72.",
+      "sourceIds": []
+    },
+    {
+      "name": "g",
+      "value": 0.99,
+      "unit": "USA resident health share",
+      "basis": "judgment",
+      "rationale": "Retained alpha diagnostic only; no beta central calibrated. Core domestic distribution, with explicit foreign/military hospital reach. Outcome-weighted share unknown; range.95–1.",
+      "sourceIds": [
+        "cfk-99025"
+      ]
+    },
+    {
+      "name": "Hospital/system pathway incremental health",
+      "value": null,
+      "unit": "QALYs/USD",
+      "basis": "unknown",
+      "rationale": "Need newly improved births attributable to national funding, durable practice change and appropriate risk bridge. Births reached and ecological mortality decline cannot identify it.",
+      "sourceIds": [
+        "cfk-99025",
+        "sleep-hospital25",
+        "sleep-prams25"
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "central",
+      "label": "Unrestricted-gift central not estimable",
+      "costUSD": 10000,
+      "allPopulationQalys": null,
+      "editionQalys": null,
+      "assumptions": "No linked gift-to-additional-provision-to-sustained-safe-sleep-to-mortality bridge; full downstream resources and risk subgroup unresolved. Unknown, not zero."
+    },
+    {
+      "id": "alpha-retained-diagnostic",
+      "label": "Diagnostic only: Cautious material-provision pathway",
+      "costUSD": 10000,
+      "allPopulationQalys": 0.027,
+      "editionQalys": 0.02673,
+      "assumptions": "a=0.5; c=500; b=0.5; u=0.2; r=0.002; e=0.5; L=27; g=0.99; additional packages=5; prevented deaths=0.001. Judgment-only material pathway; other health mechanisms unquantified. Retained alpha illustration, not a beta estimate."
+    },
+    {
+      "id": "favorable",
+      "label": "Diagnostic only: Low-cost provision reaching otherwise unsafe high-risk sleep",
+      "costUSD": 10000,
+      "allPopulationQalys": 2.0736,
+      "editionQalys": 2.0736,
+      "assumptions": "a=0.8; c=175; b=0.9; u=0.6; r=0.004; e=0.7; L=30; g=1; additional packages=41.142857142857146; prevented deaths=0.06912. Judgment-only material pathway; other health mechanisms unquantified. Retained alpha illustration, not a beta estimate."
+    },
+    {
+      "id": "pessimistic",
+      "label": "Diagnostic only: Limited allocation, behavior change and preventable risk",
+      "costUSD": 10000,
+      "allPopulationQalys": 0.00008800000000000004,
+      "editionQalys": 0.00008360000000000003,
+      "assumptions": "a=0.2; c=1000; b=0.2; u=0.05; r=0.001; e=0.2; L=22; g=0.95; additional packages=0.4; prevented deaths=0.0000040000000000000015. Judgment-only material pathway; other health mechanisms unquantified. Retained alpha illustration, not a beta estimate."
+    },
+    {
+      "id": "zero-additionality",
+      "label": "Diagnostic only: Existing resources or alternative equipment fully substitute",
+      "costUSD": 10000,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "assumptions": "b=0 or u=0; no additional safe sleep or mortality benefit. Retained alpha illustration, not a beta estimate."
+    },
+    {
+      "id": "low-hazard-risk",
+      "label": "Diagnostic only: Behavior changes mainly among low-hazard families",
+      "costUSD": 10000,
+      "allPopulationQalys": 0.00405,
+      "editionQalys": 0.0040095,
+      "assumptions": "Central inputs but r×e=.00015 instead of.001, resembling a low absolute risk difference from external case-control modeling. Not a directly transferable effect. Retained alpha illustration, not a beta estimate."
+    },
+    {
+      "id": "undiscounted-life",
+      "label": "Diagnostic only: Central with undiscounted lifetime benefit",
+      "costUSD": 10000,
+      "allPopulationQalys": 0.075,
+      "editionQalys": 0.07425,
+      "assumptions": "L=75 undiscounted QALYs; central otherwise. Contrasts the consequence of discounting, not an extra outcome. Retained alpha illustration, not a beta estimate."
+    }
+  ],
+  "sensitivity": [
+    "Conditional alpha diagnostic: At central a,b,u,L,g and c=$500, meeting$100,000 per10 requires a per-changed-infant risk difference r×e≥.03741; meeting$1million requires≥.003741. Central r×e=.001 meets neither; these required differences exceed central total risk.",
+    "Conditional alpha diagnostic: At central health and additionality assumptions, maximum c is about$13.37 for$100,000 per10 and$133.65 for$1million. A bare product quote is not a supported-package cost.",
+    "Conditional alpha diagnostic: Reducing b from.5 to.1 raises the central price fivefold. An organization with a positive sales margin may have plenty of inventory but still need specific last-mile delivery funding; an actual marginal budget would distinguish these cases.",
+    "Conditional alpha diagnostic: Crib-use rates over90% cannot substitute for u=.2. Partial bed-sharing, added soft items and provision after peak risk materially reduce effective coverage.",
+    "Conditional alpha diagnostic: With r×e=.00015, central price is about$24.9million per10. Low-hazard bed-sharing risk is debated; high relative odds do not imply large absolute benefits for every family.",
+    "Conditional alpha diagnostic: Crediting the unmodeled education/system pathway would lower the price if it truly adds health. At a$1million threshold, it must add at least.07327 USA QALY per calculation unit beyond this central material pathway; that is a testable funding-to-outcome gap, not an assumed benefit.",
+    "Conditional alpha diagnostic: At central settings, undiscounted75-QALY life valuation yields about$1.35million per10, compared with$3.74million under27 discounted QALYs.",
+    "Conditional alpha diagnostic: Any adverse change in sleep arrangements or equipment misuse could erase benefit. CPSC guidance requires appropriate products and setup; no mortality reduction is inferred from distribution alone.",
+    "Conditional alpha diagnostic: In the PRAMS study, Cribs for Kids designation aORs were1.16(.86–1.56) for back sleep,1.06(.86–1.30) for separate surface,1.07(.87–1.31) for no soft bedding and.91(.75–1.12) for room sharing without bed sharing. These are observational conditional associations, not zero-effect proof; none supports a precise positive mortality conversion."
+  ],
+  "missingInputs": [
+    "A current national unrestricted marginal budget separating extra donated packages, sales-funded operating costs, education/certification expansion and reserves.",
+    "Current package procurement, shipping, instruction, follow-up and support cost; price list is unavailable publicly because of tariffs.",
+    "A linked recipient cohort with pre-existing safe surface, actual alternative purchase/support, delivery age and repeated observed or validated sleep practice through the risk period.",
+    "Baseline remaining sleep-related mortality risk for the behavior-changing subgroup, including smoking/substance exposure and infant age, not only demographic averages.",
+    "Causal risk reduction from this actual intervention, with competing causes, unsafe substitution and adverse product-use behavior included.",
+    "Additional hospital births whose sleep practices improve because of national unrestricted funding, net of hospital/public requirements and other campaigns.",
+    "Outcome-weighted50states/DC residence share for domestic and overseas activities.",
+    "Reconciliation of fiscal-year versus calendar-year accomplishment dates and grant launch/award counts; do not treat all return narrative counts as contemporaneous completed deliveries.",
+    "Consolidated parent/subsidiary marginal resource ledger with intercompany eliminations and partner/in-kind opportunity costs.",
+    "Explicit age-specific survival and utility for infants whose deaths would be averted; alpha's rounded27 QALYs is not a competing-risk life table."
+  ]
+}

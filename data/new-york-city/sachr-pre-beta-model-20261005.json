@@ -1,0 +1,269 @@
+{
+  "version": "nyc-sachr-integrated-health-v1",
+  "costScope": "All recipient gross annual operating expense, including recognized noncash and separately netted events; external medical and volunteer resource sensitivities retained.",
+  "geographicAttribution": "g=.98 is a subjective local-residence share for a South Bronx/neighboring-borough cohort. NYC lies entirely within the official 22-county MSA; no headquarters-based statewide benefit assignment.",
+  "formula": "k=ln(1+d); F(v,t)=(1-exp(-v*t))/v; B=u*[F(m-delta+k,1)-F(m+k,1)+(exp(-(m-delta))-exp(-m))*exp(-k)*F(m+k,T-1)]; M=p*v*[z*F(m-delta+k,1)+(1-z)*F(m+k,1)]; Qall=N*f*a*b*(z*B+M)-h; QMSA=g*Qall; price10=10*C/QMSA when positive.",
+  "counterfactual": "Existing public grants, other harm-reduction services and medical care continue. a discounts replacement by alternative services; b separately discounts whether unrestricted funding changes the supported scale. Neither is reapplied per mechanism.",
+  "attribution": "One unique cohort and a combined mortality effect prevent repeat-rescue and overlapping-service lifetime double counting. Mortality and short-lived utility changes are distinct terms on the same survival curve.",
+  "uncertainty": "Reasoned integrated clinical scenario, not a measured program effect or comprehensive social return. No source-calibrated probability is claimed; broad alternatives, complete substitution and adverse outcomes are explicit.",
+  "nativeOutcomes": "Unique participants -> additional integrated harm-reduction/clinical engagement -> one-year mortality-hazard and utility changes -> finite survival-adjusted QALYs. Central annual normalization transfers 2,816 older participants to 2,252.8 current-equivalent participants; after care and funding additionality, 281.6 integrated-engagement equivalents remain, including 168.96 higher-risk equivalents. Whole-recipient cost per additional engagement is $18705.50 and per local equivalent $19087.25. These are judgment-based native units, not observed retained buprenorphine patients or additional rescues. Mortality and morbidity components contribute 1.9876 and 2.0022 all-population QALYs.",
+  "inputs": [
+    {
+      "name": "C",
+      "value": 5267469,
+      "unit": "USD annual gross resources",
+      "basis": "observed",
+      "rationale": "Latest original full-recipient cost plus event addback.",
+      "sourceIds": [
+        "return2025",
+        "schedule2025"
+      ]
+    },
+    {
+      "name": "N",
+      "value": 2816,
+      "unit": "older unique participants",
+      "basis": "observed",
+      "rationale": "Older annual-impact unique-person count; f prevents presenting it as current observed capacity.",
+      "sourceIds": [
+        "impact",
+        "report"
+      ]
+    },
+    {
+      "name": "f",
+      "value": 0.8,
+      "unit": "current reach transfer fraction",
+      "basis": "judgment",
+      "rationale": "Explicit prior, not a measured local rate; clinical evidence supports mechanism, not the assigned magnitude.",
+      "sourceIds": [
+        "programs",
+        "clinical",
+        "heal"
+      ]
+    },
+    {
+      "name": "z",
+      "value": 0.6,
+      "unit": "higher-risk cohort fraction",
+      "basis": "judgment",
+      "rationale": "Explicit prior, not a measured local rate; clinical evidence supports mechanism, not the assigned magnitude.",
+      "sourceIds": [
+        "programs",
+        "clinical",
+        "heal"
+      ]
+    },
+    {
+      "name": "delta",
+      "value": 0.003,
+      "unit": "one-year combined mortality-hazard reduction",
+      "basis": "judgment",
+      "rationale": "Explicit prior, not a measured local rate; clinical evidence supports mechanism, not the assigned magnitude.",
+      "sourceIds": [
+        "programs",
+        "clinical",
+        "heal"
+      ]
+    },
+    {
+      "name": "a",
+      "value": 0.5,
+      "unit": "service additionality fraction",
+      "basis": "judgment",
+      "rationale": "Explicit prior, not a measured local rate; clinical evidence supports mechanism, not the assigned magnitude.",
+      "sourceIds": [
+        "programs",
+        "clinical",
+        "heal"
+      ]
+    },
+    {
+      "name": "b",
+      "value": 0.25,
+      "unit": "funding-response fraction",
+      "basis": "judgment",
+      "rationale": "Explicit prior, not a measured local rate; clinical evidence supports mechanism, not the assigned magnitude.",
+      "sourceIds": [
+        "programs",
+        "clinical",
+        "heal"
+      ]
+    },
+    {
+      "name": "u",
+      "value": 0.7,
+      "unit": "baseline health utility",
+      "basis": "judgment",
+      "rationale": "Explicit prior, not a measured local rate; clinical evidence supports mechanism, not the assigned magnitude.",
+      "sourceIds": [
+        "programs",
+        "clinical",
+        "heal"
+      ]
+    },
+    {
+      "name": "m",
+      "value": 0.08,
+      "unit": "annual competing mortality hazard",
+      "basis": "judgment",
+      "rationale": "Explicit prior, not a measured local rate; clinical evidence supports mechanism, not the assigned magnitude.",
+      "sourceIds": [
+        "programs",
+        "clinical",
+        "heal"
+      ]
+    },
+    {
+      "name": "T",
+      "value": 10,
+      "unit": "maximum survival years",
+      "basis": "judgment",
+      "rationale": "Explicit prior, not a measured local rate; clinical evidence supports mechanism, not the assigned magnitude.",
+      "sourceIds": [
+        "programs",
+        "clinical",
+        "heal"
+      ]
+    },
+    {
+      "name": "p",
+      "value": 0.15,
+      "unit": "clinical utility response fraction",
+      "basis": "judgment",
+      "rationale": "Explicit prior, not a measured local rate; clinical evidence supports mechanism, not the assigned magnitude.",
+      "sourceIds": [
+        "programs",
+        "clinical",
+        "heal"
+      ]
+    },
+    {
+      "name": "v",
+      "value": 0.05,
+      "unit": "one-year utility gain among responders",
+      "basis": "judgment",
+      "rationale": "Explicit prior, not a measured local rate; clinical evidence supports mechanism, not the assigned magnitude.",
+      "sourceIds": [
+        "programs",
+        "clinical",
+        "heal"
+      ]
+    },
+    {
+      "name": "g",
+      "value": 0.98,
+      "unit": "MSA residence fraction",
+      "basis": "judgment",
+      "rationale": "Explicit prior, not a measured local rate; clinical evidence supports mechanism, not the assigned magnitude.",
+      "sourceIds": [
+        "programs",
+        "clinical",
+        "heal"
+      ]
+    },
+    {
+      "name": "h",
+      "value": 0,
+      "unit": "net adverse QALYs",
+      "basis": "judgment",
+      "rationale": "Explicit prior, not a measured local rate; clinical evidence supports mechanism, not the assigned magnitude.",
+      "sourceIds": [
+        "programs",
+        "clinical",
+        "heal"
+      ]
+    },
+    {
+      "name": "d",
+      "value": 0.03,
+      "unit": "annual discount rate",
+      "basis": "judgment",
+      "rationale": "Explicit prior, not a measured local rate; clinical evidence supports mechanism, not the assigned magnitude.",
+      "sourceIds": [
+        "programs",
+        "clinical",
+        "heal"
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "central",
+      "label": "Integrated health-hub conditional scenario",
+      "costUSD": 5267469,
+      "allPopulationQalys": 3.9897701715322205,
+      "editionQalys": 3.909974768101576,
+      "pricePer10Qalys": 13471874.660095397,
+      "assumptions": "{\"C\":5267469,\"N\":2816,\"f\":0.8,\"z\":0.6,\"delta\":0.003,\"a\":0.5,\"b\":0.25,\"u\":0.7,\"m\":0.08,\"T\":10,\"p\":0.15,\"v\":0.05,\"g\":0.98,\"h\":0,\"d\":0.03}"
+    },
+    {
+      "id": "low",
+      "label": "Small clinical effect and substantial substitution",
+      "costUSD": 5267469,
+      "allPopulationQalys": 0.03485568043906217,
+      "editionQalys": 0.03415856683028092,
+      "pricePer10Qalys": 1542063818.4768598,
+      "assumptions": "{\"C\":5267469,\"N\":2816,\"f\":0.5,\"z\":0.4,\"delta\":0.0005,\"a\":0.2,\"b\":0.1,\"u\":0.7,\"m\":0.08,\"T\":3,\"p\":0.05,\"v\":0.02,\"g\":0.98,\"h\":0,\"d\":0.03}"
+    },
+    {
+      "id": "high",
+      "label": "Stronger sustained clinical engagement",
+      "costUSD": 5267469,
+      "allPopulationQalys": 71.01369899110196,
+      "editionQalys": 69.59342501127992,
+      "pricePer10Qalys": 756891.7608446821,
+      "assumptions": "{\"C\":5267469,\"N\":2816,\"f\":1,\"z\":0.8,\"delta\":0.01,\"a\":0.75,\"b\":0.5,\"u\":0.7,\"m\":0.08,\"T\":15,\"p\":0.3,\"v\":0.1,\"g\":0.98,\"h\":0,\"d\":0.03}"
+    },
+    {
+      "id": "zero",
+      "label": "Complete funding substitution",
+      "costUSD": 5267469,
+      "allPopulationQalys": 0,
+      "editionQalys": 0,
+      "pricePer10Qalys": null,
+      "assumptions": "{\"C\":5267469,\"N\":2816,\"f\":0.8,\"z\":0.6,\"delta\":0.003,\"a\":0.5,\"b\":0,\"u\":0.7,\"m\":0.08,\"T\":10,\"p\":0.15,\"v\":0.05,\"g\":0.98,\"h\":0,\"d\":0.03}"
+    },
+    {
+      "id": "adverse",
+      "label": "No clinical benefit and one net QALY lost",
+      "costUSD": 5267469,
+      "allPopulationQalys": -1,
+      "editionQalys": -0.98,
+      "pricePer10Qalys": null,
+      "assumptions": "{\"C\":5267469,\"N\":2816,\"f\":0.8,\"z\":0.6,\"delta\":0,\"a\":0.5,\"b\":0.25,\"u\":0.7,\"m\":0.08,\"T\":10,\"p\":0,\"v\":0.05,\"g\":0.98,\"h\":1,\"d\":0.03}"
+    },
+    {
+      "id": "resources",
+      "label": "Unrecognized resources increase cost 25%",
+      "costUSD": 6584336.25,
+      "allPopulationQalys": 3.9897701715322205,
+      "editionQalys": 3.909974768101576,
+      "pricePer10Qalys": 16839843.325119246,
+      "assumptions": "{\"C\":6584336.25,\"N\":2816,\"f\":0.8,\"z\":0.6,\"delta\":0.003,\"a\":0.5,\"b\":0.25,\"u\":0.7,\"m\":0.08,\"T\":10,\"p\":0.15,\"v\":0.05,\"g\":0.98,\"h\":0,\"d\":0.03}"
+    },
+    {
+      "id": "referral-cost",
+      "label": "Additional medication and referral resources",
+      "costUSD": 5830669,
+      "allPopulationQalys": 3.9897701715322205,
+      "editionQalys": 3.909974768101576,
+      "pricePer10Qalys": 14912293.16252336,
+      "assumptions": "{\"C\":5830669,\"N\":2816,\"f\":0.8,\"z\":0.6,\"delta\":0.003,\"a\":0.5,\"b\":0.25,\"u\":0.7,\"m\":0.08,\"T\":10,\"p\":0.15,\"v\":0.05,\"g\":0.98,\"h\":0,\"d\":0.03}"
+    }
+  ],
+  "missingInputs": [
+    "Current unique participants and NYC-MSA residence distribution.",
+    "Buprenorphine enrollment, duration, discontinuation and alternative-provider substitution.",
+    "Incremental overdose mortality, infection outcomes and sustained clinical utility relative to comparable participants.",
+    "Unrestricted gift allocation, public renewal commitments and external medication/volunteer costs."
+  ],
+  "sensitivity": [
+    "Small clinical effect and substantial substitution: 1542063818 USD per 10 MSA QALYs.",
+    "Stronger sustained clinical engagement: 756892 USD per 10 MSA QALYs.",
+    "Complete funding substitution: no finite positive-benefit price.",
+    "No clinical benefit and one net QALY lost: no finite positive-benefit price.",
+    "Unrecognized resources increase cost 25%: 16839843 USD per 10 MSA QALYs.",
+    "Additional medication and referral resources: 14912293 USD per 10 MSA QALYs."
+  ]
+}

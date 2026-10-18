@@ -1,0 +1,20 @@
+import {test,expect} from '@playwright/test';
+test('trucking report, header, API and list share the revised partial forecast',async({page,request})=>{
+ await page.route('https://market-for-impact.rhyslindmark.chatgpt.site/_next/**',async route=>{const u=new URL(route.request().url());await route.fulfill({response:await request.get(u.pathname+u.search)});});
+ await page.goto('/usa/charities/institute-for-safer-trucking');
+ await expect(page.getByRole('heading',{level:1,name:'Institute for Safer Trucking',exact:true})).toBeVisible();
+ await expect(page.locator('.report-research-effort summary')).toContainText('~5 min on GPT-6 Astra Light + ~36 min on GPT-6.1 Sol');
+ await expect(page.locator('#cost')).toContainText('$1.74M');
+ await expect(page.locator('#cost')).toContainText('once-only $500 net saving');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+ const response=await request.get('/api/geography-reports/usa/institute-for-safer-trucking');
+ expect(response.ok()).toBe(true);
+ const report=await response.json(),central=report.model.scenarios.find((s:any)=>s.id==='central');
+ expect(central.editionQalys).toBeCloseTo(.5700128002529878,12);
+ expect(central.costPer10Qalys).toBeCloseTo(1744391.9287411897,5);
+ expect(central.incomePathways.length).toBe(1);
+ await page.goto('/usa/all');
+ const row=page.locator('[data-research-table] tbody tr').filter({hasText:'Institute for Safer Trucking'});
+ await expect(row.locator('td').nth(0)).toContainText('$1.7M');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+});

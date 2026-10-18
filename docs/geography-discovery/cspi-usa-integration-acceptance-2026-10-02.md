@@ -1,0 +1,3 @@
+# CSPI final integration — accepted
+
+Conditional scientific acceptance is archived separately. Independent final integration review accepted all54 current diagnostic scenarios, separate original model/price and511.098 actual newresearch seconds imported once. All18 focused tests and2 phone/tablet checks pass. The complete independent memo is retained in `cspi-usa-final-integration-review-2026-10-02.md`. Acceptance does not empirically validate unidentified policy, transport or cash-incidence priors. Build and native publication remain separate gates; published P0 remains24/40 until deployment succeeds. No new organization or deep-review count is claimed.

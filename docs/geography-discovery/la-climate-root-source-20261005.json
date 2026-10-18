@@ -1,0 +1,50 @@
+{
+  "organization": "Climate Resolve",
+  "session": {
+    "id": "e58beffa-9d25-4acb-980c-b948a8738619",
+    "workerId": "root-climate-source-sol-20261005",
+    "phase": "source-audit",
+    "startedAt": "2026-10-05T12:27:15.234Z",
+    "endedAt": "2026-10-05T12:28:36.865Z",
+    "model": {
+      "id": "gpt-6.1-sol",
+      "name": "GPT-6.1 Sol",
+      "evidence": "User-selected GPT-6.1 Sol; root runtime task attribution"
+    },
+    "evidence": "docs/geography-discovery/la-climate-root-source-20261005.json"
+  },
+  "checks": [
+    {
+      "url": "https://projects.propublica.org/nonprofits/full_text/202620709349301592/IRS990",
+      "status": 200,
+      "sha256": "e9b5447b4ea78f2d56993f79e083929bdcaa2227a659bc9e8b92be618ab07cf3",
+      "finding": "Original FY2025 Part IX3,582,432 plus separately netted event expense162,661 gives3,745,093 gross recipient annual resources. Netassets906,954;restricted603,069. No observed marginal cooling tranche."
+    },
+    {
+      "url": "https://lindseyhorvath.lacounty.gov/indoor-heat-protections/",
+      "finding": "Official Aug24/Sept8 county statement: enforcement begins January1,2027 in unincorporated rentals,82F standard; current county support and300-dollar AC rebate are counterfactual provisions."
+    },
+    {
+      "url": "https://cityclerk.lacity.org/onlinedocs/2025/25-1036_CA.pdf",
+      "finding": "Council February17 action adopted amended reports exploring ordinance options, not a final LA City indoor-temperature ordinance. Do not extend county rental denominator to incorporated City."
+    },
+    {
+      "url": "https://climateresolve.org/winds-of-change/",
+      "finding": "2025 self-report40+roofs and25solar systems. Watts/Wilmington projected300K savings not identified by horizon or roof-only allocation; not annual observed income, no duplicate health-dollar conversion."
+    },
+    {
+      "url": "https://climateresolve.org/shine-on-initiative/",
+      "finding": "Historic mandate and global partner collaboration not all current donor-attributable LA effects; direct roof projects with income-qualified owners distinct from unincorporated policy households."
+    },
+    {
+      "url": "https://climateresolve.org/climate-jobs/",
+      "finding": "Vacancy listing page, not evidence of attributable placements or net earnings."
+    },
+    {
+      "url": "https://publichealth.lacounty.gov/eh/docs/about/indoor-temperature-requirements-en.pdf",
+      "status": "web extractor redirect loop",
+      "finding": "Not used as freshly checked; official county statement corroborates timing/scope."
+    }
+  ],
+  "challenge": "Require separate policy renter/landlord joint capital-rent-energy ledger, roof household savings ledger, financial costs even thermal-null, finite policy baseline catchup, disjoint geography, attribution/ordinary-gift response. Complete portfolio unknown; numerical conditional reference not posterior."
+}

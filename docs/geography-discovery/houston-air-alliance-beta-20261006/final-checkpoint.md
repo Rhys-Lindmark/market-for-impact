@@ -1,0 +1,11 @@
+# Air Alliance Houston beta — frozen
+
+Complete exact accepted initial report/calculator preserved, including signed income: $21,369,599.59. Revised conditional reference $20,561,425.41: health1.1650563624 plus resources0.0969135394 =1.2619699018 equivalent healthy years. Not empirically measured effectiveness change, portfolio EV or next-gift offer.
+
+One material independent challenge corrected the cohort mechanism. Potential pollution-benefit residents10,000 are not automatically advocates. Independent100 engaged proxies are explicit judgment, not verified100 bus-attendee households; full $10/time and .0001 participation-stress harm remain when policy fails. Exact assumed overlap partitions1.5 changed-engaged,148.5 changed-nonparticipants and98.5 unchanged-engaged household proxies before logs. No averaging cost across allresidents; fullresident burden is adverse scenario only. Distinct worker losses occur conditional on additional implemented policy b; b0 retains participation burdens and removes implemented worker loss.
+
+Original current IRS, campaigns/monitoring and annual relevant spans checked. Sensor/notification counts, weather-driven changes, two permit holds and cancelledgrant not pollution-effect or delivered-capacity proof. Original Chay/Greenstone primary abstract and Hanna/Oliva author-paper abstract/introduction/identification discussion support mechanism only; no localQALY or disposableincome coefficient imported. Root independently checked originals.
+
+Advocacy plus research recognized $558,209 partial scope sensitivity is $4,423,314.69; it excludes overhead, fundraising and regulator/industry resources and is not observed individual campaign or marginal cost. Current whole annual cost against the partial hypothesis remains explicit. Unknown other portfolio benefits are not zero.
+
+Portable261 checks /40cases and real production-schema validation passed in memory. Root independently passed167checks across40cases, accepted material correction, no further scientific correction. Dedicated author source/model/report/correction intervals closed: 3.533983minutes GPT-6.1Sol. Receipt/validation/wait time excluded. No app edits, publications or accepted-count change by author.

@@ -1,0 +1,9 @@
+# Struggle of Love: source checkpoint
+
+Read the original 2024 annual report body (23 pages): https://www.struggleoflovefoundation.org/_files/ugd/808b5a_912bdbd6086f4c5ea401c53fe9c8fb02.pdf . It reports 105 shooting incidents responded to, 30 therapy completions/discharges, 25 employed concession workers ages 14–24 and 10 additional publicly supported youth placements. These are different, potentially overlapping units. Food pounds, community encounters and STAR referrals are not causal health outcomes.
+
+Fresh original IRS returns: FY2024 202512959349302271 full expense $3,006,875; FY2023 202403169349306655 $1,425,565; FY2022 202341299349301614 $1,096,283. No populated netted fundraising/gaming/inventory expense fields found. Legal EIN 84-1566888. Own giving link points to ColoradoGives StruggleOfLoveFoundation; no transaction performed.
+
+Original Snider pilot RCT https://pubmed.ncbi.nlm.nih.gov/31645229/ randomized 130 injured youth: one-year repeat injury 13.7% versus 24.1%, p=.15. It does not establish a causal SOL injury effect. Hospital case management differs from incident response. A conservative finite injury-risk hypothesis and null/adverse scenarios are therefore explicit judgments, not trial-calibrated local efficacy.
+
+Central references the 105 incident envelope with one exposed person per incident as a hypothesis, not 105 measured unique patients. Separately, 25 paid concession placements are a resource cohort; ten public DYEP placements are not presumed additional. Household net gain $500 after taxes, withdrawals and ordinary work costs is a judgment, not reported wages. Access/opportunity costs persist on all participants. Therapy, food and broader violence/STAR contributions remain unquantified, not zero. Full annual cost against these partial channels is not whole-portfolio EV or marginal-gift productivity.

@@ -1,3 +1,4 @@
+import {impactNode} from '@/components/ImpactMetric';
 import type { Metadata } from 'next';
 import CharityResearchReport, { type CharityReportContent } from '@/components/CharityResearchReport';
 import model from '@/data/san-francisco/healthright-moud-cea-v1.json';
@@ -68,4 +69,4 @@ const content: CharityReportContent = {
   excludedBenefits: ['Nonfatal benefits outside the explicitly modeled 0.03 utility increment', 'Family welfare, income and criminal-legal outcomes', 'Effects of naltrexone and other medications', 'Healthcare cost offsets and patient time'],
   sources: model.sources,
 };
-export default function HealthrightResearchPage() { return <CharityResearchReport content={content} />; }
+export default function HealthrightResearchPage() { return impactNode(<CharityResearchReport content={content} />); }

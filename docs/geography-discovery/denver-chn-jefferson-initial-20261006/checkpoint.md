@@ -1,0 +1,7 @@
+# Denver twenty-report checkpoint
+
+Sites460 sourcea3064de5dea34ed15e7515a1269fbb5f9f3fb957 deployed and eight live checks passed2026-10-06T23:53:48.304Z. Denver20/25 initial,0/10 deep,0/4features. Six other active editions complete. Five initial and ten deep reviews remain,175plannedresearchminutes plus actual review/release/feature overhead. Four cut cities stay deferred, SF preserved.
+
+CHN and Jefferson accepted: original fiscal costs/outcomes, clinical-patient versus household units, partial-channel scope, health and signed resources; one CHN efficacy/resource dependency correction, unchanged central estimate and frozen originaldiagnostic.470independent arithmetic checks/93scenarios,580portable,30focused/scope,2responsive,8live passed.176oldreports/639sessions/154effortrecords preserved. Four new closed sessions imported. Interrupted rootCHN interval entirely excluded; no invented minutes. Author terminal; no pending research or deployment handles. No tool/service stall detected this batch; underlying scheduler/watchdog fault remains unfixed.
+
+Next phase: Tepeyac and selected ein:84-6129064 (verify legal name from existing discovery), about5min each substantive initial research, same health-and-income protocol, one isolated reused author, independent challenge, one release. Do not repeat completed discovery or count waiting as research. Check usage before dispatch; latest78%remaining,20%reserve.

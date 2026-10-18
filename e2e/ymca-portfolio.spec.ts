@@ -1,17 +1,24 @@
-import {EXPECTED_RESEARCH_COUNT} from './research-contract';
 import {test,expect} from '@playwright/test';
-test('YMCA research ranks the whole gift and preserves program history',async({page})=>{
- await page.goto('/research');
- await expect(page.locator('[data-research-slug]')).toHaveCount(EXPECTED_RESEARCH_COUNT);
+test('YMCA current report, Bay list and preserved history agree',async({page})=>{
+ test.setTimeout(60000);
+ await page.goto('/san-francisco/all');
  const row=page.locator('[data-research-slug="ymca-greater-sf"]');
- await expect(row).toContainText('$6.2M');
+ await expect(row).toContainText('$12.9M');
  await row.locator('a').first().click();
- await expect(page.locator('article')).toContainText('30%');
- await expect(page.locator('article')).toContainText('assuming distinct health increments');
- await expect(page.locator('article')).not.toContainText('favorable scenario reaches about $80,000');
+ await expect(page.getByRole('heading',{level:1})).toHaveText('YMCA of Greater San Francisco');
+ await expect(page.locator('#research-summary')).toContainText('$12.88M');
+ await expect(page.locator('#research-summary')).toContainText('$19.82M');
+ await expect(page.locator('article')).toContainText('explicit distinct-increment hypotheses');
+ await expect(page.locator('article')).toContainText('$6,177,370');
  const d=await(await page.request.get('/api/ymca-portfolio-model')).json();
- expect(d.evaluated).toHaveLength(7);
- expect(d.evaluated[0].sfUsdPer10Qaly).toBeCloseTo(9503646.58971805,2);
- expect(d.evaluated[5].bayIncludingSfNetQaly).toBeLessThan(0);
+ expect(d.evaluated).toHaveLength(27);
+ expect(d.current.geography.sf.donorUSDPer10CombinedEquivalentYears).toBeCloseTo(19816367.060606007,6);
+ expect(d.current.geography.bayIncludingSF.donorUSDPer10CombinedEquivalentYears).toBeCloseTo(12880638.589393906,6);
+ expect(d.current.grossResourceUSD).toBeNull();expect(d.current.ordinaryGiftExpectedValue).toBeNull();
+ expect(d.historical).toBeTruthy();expect(d.earlierDiabetesOnly).toBeTruthy();
+ await expect(page.locator('nav.report-contents [data-toc-primary]')).toHaveCount(7);
+ await expect(page.locator('.report-research-effort summary')).toContainText('GPT-6.1 Sol');
+ await expect(page.locator('.report-research-effort summary')).toContainText('GPT-5.6 Sol');
+ await expect(page.locator('[data-expense-appendix]')).toHaveAttribute('data-average-expenses',String(111533308.66666667));
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 });

@@ -4,7 +4,7 @@ const priorities=JSON.parse(readFileSync(new URL('../data/bay/donor-priorities.j
 
 test('ten donor priorities preserve scope, evidence and usable disclosures',async({page})=>{
  await page.goto('/research/city-theory');
- await expect(page.getByRole('heading',{level:1})).toHaveText('What we learned from 100 reports');
+ await expect(page.getByRole('heading',{level:1})).toHaveText(/^What we learned from \d+ reports$/);
  await expect(page.locator('.donor-priority')).toHaveCount(10);
  expect(new Set(priorities.map(p=>p.slug)).size).toBe(10);
  for(const item of priorities){

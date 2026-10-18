@@ -16,8 +16,9 @@ const git = (...a) => execFileSync('git', a, { encoding: 'utf8', maxBuffer: 256 
 const blob = (sha, path) => { try { return git('show', `${sha}:${path}`); } catch { return null; } };
 const readJson = (p) => JSON.parse(readFileSync(p, 'utf8'));
 const MAX_FILE = 400_000;
-// Keep PR-controlled text from pinging people or closing our markdown.
-export const inert = (s, max = 4000) => String(s ?? '').slice(0, max).replace(/@/g, '@​').replace(/<!--|-->/g, '');
+// Keep PR-controlled text from pinging people or injecting HTML (including comment markers).
+export const inert = (s, max = 4000) => String(s ?? '').slice(0, max).replace(/@/g, '@\u200b').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const cell = (s, max) => inert(s, max).replace(/\\/g, '\\\\').replace(/\|/g, '\\|').replace(/[\r\n]+/g, ' ');
 
 export function bundle(prPath, classPath, out) {
   const pr = readJson(prPath), c = readJson(classPath);
@@ -58,7 +59,7 @@ export function verdict(raw, headSha) {
 
 export function reviewBody({ verdict: final, headSha, problems, review }) {
   const r = review ?? {};
-  const rows = (r.findings ?? []).map((f) => `| ${f.severity === 'blocking' ? '**blocking**' : 'note'} | \`${inert(f.file, 200).replace(/\|/g, "\\|")}\` | ${inert(f.issue, 1000).replace(/\|/g, '\\|').replace(/\n/g, ' ')} | ${inert(f.evidence, 1000).replace(/\|/g, '\\|').replace(/\n/g, ' ')} |`);
+  const rows = (r.findings ?? []).map((f) => `| ${f.severity === 'blocking' ? '**blocking**' : 'note'} | ${cell(f.file, 200)} | ${cell(f.issue, 1000)} | ${cell(f.evidence, 1000)} |`);
   const sources = (r.sourcesChecked ?? []).map((s) => `- ${s.matches ? '✅' : '❌'} ${inert(s.url, 500)}: ${inert(s.note, 500)}`);
   return [
     `<!-- pr-triage-review ${headSha} -->`,

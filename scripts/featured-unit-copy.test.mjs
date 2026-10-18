@@ -23,6 +23,18 @@ const module={exports:{}},require=createRequire(import.meta.url);
 vm.runInNewContext('(function(module,exports,require){'+compiled.outputText+'})')(module,module.exports,id=>id==='@/lib/annual-budget-supplements.mjs'?budgets:id==='@/lib/featured-unit-costs.mjs'?units:id==='@/lib/impact-metric.mjs'?metric:require(id));
 const Component=module.exports.default;
 
+test('regional homepages keep footer navigation without bottom research panels',()=>{
+ const regional=read('components/EditionDonorHome.tsx');
+ const sf=read('app/san-francisco/page.tsx');
+ for(const page of [regional,sf]){
+  assert.doesNotMatch(page,/Current research|Research progress|Detailed research and geographic scope|gb-edition-current/);
+  assert.match(page,/className="sf-home-footer"/);
+  assert.match(page,/All cities and regions/);
+ }
+ assert.match(regional,/All \{label\} research/);
+ assert.match(sf,/All San Francisco research/);
+});
+
 test('all 29 native descriptions are concise, concrete and free of modeling jargon',()=>{
   const native=Object.values(config.entries).filter(e=>e.kind!=='unknown');
   assert.equal(native.length,29);

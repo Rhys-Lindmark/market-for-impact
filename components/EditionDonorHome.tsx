@@ -1,5 +1,4 @@
 import {impactNode} from '@/components/ImpactMetric';
-import {impactMetric,impactUnitExplanation} from '@/lib/impact-metric.mjs';
 /* eslint-disable @next/next/no-img-element -- Reuse the existing editorial illustrations. */
 import type {EditionReport} from '@/lib/published-geography-reports';
 import {canonicalBase,editionPath} from '@/lib/geography-editions.mjs';
@@ -12,7 +11,7 @@ import {featuredOrganizationBudget} from '@/lib/annual-budget-supplements.mjs';
 import GivingIllustration from '@/components/GivingIllustration';
 import '@/app/sf-home.css';
 
-export default function EditionDonorHome({id,label,reports,discovery,alpha,beta}:{id:string;label:string;reports:EditionReport[];discovery:number;alpha:number;beta:number}){
+export default function EditionDonorHome({id,label,reports}:{id:string;label:string;reports:EditionReport[];discovery:number;alpha:number;beta:number}){
  const path=editionPath(id);
  const photos=highlights as Record<string,{image:string;source:string;caption:string;logo?:boolean}>;
  const picks=featuredReports(reports,id);
@@ -47,18 +46,6 @@ export default function EditionDonorHome({id,label,reports,discovery,alpha,beta}
      </div>
     </article>);
    })}</section>}
-   <section className="gb-edition-current" aria-labelledby="current-research">
-    <h2 id="current-research">Current research</h2>
-    <p>Estimated {impactMetric().priceLabel} in {label}. {impactUnitExplanation} Estimates are uncertain; these are research reports, not verified donation offers.</p>
-    {id==='usa'&&<p>For example, better housing policy in major U.S. cities could <a href="https://diegopuga.org/papers/Duranton_Puga_ECMA_2023.pdf">help millions of people find higher-paying jobs</a>. We include income alongside health using an <a href={canonicalBase+'/methodology/income'}>explicit welfare comparison</a>.</p>}
-    <p><a href={canonicalBase+path+'/all'}>Read all {reports.length} {label} reports</a></p>
-   </section>
-   <details className="sf-home-selection">
-    <summary>Research progress</summary>
-    <p>{discovery}/100 candidates screened · {alpha}/25 initial reports · {beta}/10 in-depth reviews.</p>
-    <p>{picks.length===4?'These are the first four positive modeled prices in the full research list, in the same order. Initial reviews and retained historical references are included and labeled. These are research comparisons, not confirmed offers to purchase additional impact.':'We are developing best estimates from costs, outcomes and explicit assumptions.'}</p>
-    <a href={canonicalBase+path+'/all'}>Detailed research and geographic scope</a>
-   </details>
    <footer className="sf-home-footer"><a href={canonicalBase+path+'/all'}>All {label} research</a><span className="sf-footer-separator" aria-hidden="true">·</span><a href={canonicalBase+'/all'}>All cities and regions</a></footer>
   </main>
  </div>);

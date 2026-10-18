@@ -11,7 +11,8 @@ test('NYC first three selected reports preserve model and author provenance',()=
   assert.ok(['alpha','beta'].includes(r.stage));assert.equal(r.acceptance.status,'accepted');assert.ok(r.priceScope);
   const ids=new Set(r.sources.map(s=>s.id));
   for(const p of r.model.inputs)for(const id of p.sourceIds)assert.ok(ids.has(id));
-  for(const id of r.sessionIds){const s=d.sessions.find(s=>s.id===id);assert.ok(s);assert.equal(s.organizationId,r.organizationId);assert.equal(s.model.reasoningEffort,s.phase==='research'&&s.stage==='alpha'?'low':'medium');}
+  for(const id of r.sessionIds){const s=d.sessions.find(s=>s.id===id);assert.ok(s);assert.equal(s.organizationId,r.organizationId);// Only gpt-6-astra sessions record reasoningEffort; GPT-6.1 Sol sessions omit it (rule since 2026-09-30, lib/geography-reports.mjs).
+  if(s.model?.id==='gpt-6-astra')assert.equal(s.model.reasoningEffort,s.phase==='research'&&s.stage==='alpha'?'low':'medium');}
   assert.ok(r.model.scenarios.some(s=>s.editionQalys===0));assert.ok(r.model.scenarios.some(s=>s.editionQalys<0));
  }
 });
@@ -47,6 +48,7 @@ test('OnPoint merger-period mean and uncredited TA interruption remain explicit'
  assert.equal(ta.timeCoverage,'partial');
  assert.equal(ta.stage,'alpha');
  assert.equal(reportPrice(ta),null);
- assert.equal(formatEditionReportPrice(ta),'Estimate withdrawn');
+ // The list now shows the preserved original estimate instead of the old 'Estimate withdrawn' label (researchListPrice).
+ assert.match(formatEditionReportPrice(ta),/^\$7\.1M$/);
  assert.ok(ta.model.scenarios.some(s=>s.id==='alpha-central-diagnostic'&&s.pricePer10Qalys>0));
 });

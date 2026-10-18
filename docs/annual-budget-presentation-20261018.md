@@ -1,0 +1,7 @@
+# Annual budget presentation
+
+User-directed presentation-only change: all research-list table headers now say “Annual budget”, without the three-year parenthetical. Removed the small budget-basis labels from both regional tables and SF budget cells, including historical-contract fallback labels. Amounts, approximation marks, classifications, source data and links to each report's annual-expenses section are unchanged. The corresponding AnnualBudgetDisclosure and historical-contract sections already retain every qualification, period and source; these disclosures remain in the actual reports, not table-cell tooltips.
+
+Verification:21 focused checks pass, including rendering all SF expense records and all regional report rows, checking amount-only cells, the two table headers, all eight supplemental report disclosures, unchanged budgets, provenance and deployment guards. No new organization research or analytical revision.
+
+Space Saver:16GiB RAM,32GiB disk free, compressor5.2GiB, stable swap0.77GiB, Codex family3.82GiB RSS (lower bound), largest process1.06GiB; pressure reports52% free. Below current intervention budgets. Reused compatible dependencies in one isolated worktree, with no install, local build, server or browser. Publication uses the existing GitHub main/Cloudflare pipeline. Remove only the task's isolated worktree and dependency symlink after verified publication; preserve shared dependencies and other checkouts.

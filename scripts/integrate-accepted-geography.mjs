@@ -51,7 +51,7 @@ for(const file of files){
  }
  for(const session of newSessions){
   if(session.phase==='review'||session.phase==='acceptance')session.phase='source-audit';
-  if(!session.model.reasoningEffort&&session.model.id!=='gpt-6.1-sol'){
+  if(!session.model.reasoningEffort&&session.model.id!=='gpt-6.1-sol'&&session.model.id!=='claude-opus-5-5'){
    const effort=session.model.name==='GPT-6 Astra Light'?'low':session.model.name==='GPT-6 Astra Medium'?'medium':null;
    if(!effort||!session.model.evidence?.includes('dispatch')&&!session.model.evidence?.includes('runtime assignment'))throw Error(`Unknown model effort: ${session.id}`);
    session.model.reasoningEffort=effort;

@@ -7,8 +7,9 @@ const data=read('data/geography-reports.json'),progress=read('docs/geography-pro
 validateEditionReports(data,progress);
 const usa=progress.editions.find(e=>e.id==='usa');
 assert.equal(usa.selectedAlphaIds.length,25);
-assert.equal(usa.supplementalAlphaIds.length,3);
-assert.equal(usa.alphaPublished,28);
+// Three abundance/growth reviews plus the Year Up United jobs review (2026-10-18).
+assert.equal(usa.supplementalAlphaIds.length,4);
+assert.equal(usa.alphaPublished,29);
 const expected=[
  ['institute-for-progress',3597698,100000*.1*.25*.25*.079*.5*.1*.9/1.03**10.5,3079238,8.4375],
  ['1day-sooner',2424138,100000*.1*.25*.25*.079*.5*.15*.4/1.03**10.5,2424138,7.5],
@@ -46,8 +47,8 @@ for(const [slug,cost,q,oldCost,oldQ] of expected){
   assert.ok(Date.parse(s.endedAt)>Date.parse(s.startedAt));
  }
 }
-assert.equal(usa.betaAcceptedPublished,13);
-assert.equal(usa.supplementalBetaIds.length,3);
+assert.equal(usa.betaAcceptedPublished,14);
+assert.equal(usa.supplementalBetaIds.length,4);
 for(const slug of expected.map(([slug])=>slug)){
  const r=data.reports.find(r=>r.edition==='usa'&&r.slug===slug);
  assert.ok(r.sources.filter(s=>/990/.test(s.title)).length>=3,'Three original annual returns cited');

@@ -6,16 +6,20 @@ import {incomeHealthyYearEquivalent} from '../../../lib/income-health-equivalenc
 
 export const inputs={
  cohort:100,
- totalExpenseFY2023:27184992, // Saga Innovations (EIN 47-2168942), FY ending June 2023
+ totalExpenseFY2025:25426248, // Saga Innovations (EIN 47-2168942), FY ending June 2025 (same year as student counts)
  directStudentsFY2025:3083,    // Direct Services students, 2024-25 annual report
+ widespreadStudentsFY2025:15000, // Widespread program reach (district-employed tutors), 2024-25
+ widespreadWeight:0.1,         // judgment: Widespread student = 0.1 Direct-student cost equivalent
+ cofounderCostPerStudent2020:3100, // co-founder statement, Hechinger Report, January 2020
+ cpi2020to2025:1.25,           // judgment
  researchCostPerStudent2015:3800, // authors' best estimate, 2013-15 study period
  cpi2015to2025:1.37,           // judgment: approximate CPI-U change
  persistentEffectSD:0.22,      // pooled TOT math effect in 11th grade, 1-2 years after tutoring
  percentilesPerSD:6/0.16,      // study 1: 0.16 SD = 6 percentile points
  earningsPerPercentile2010:150,// Chetty et al. (2011): $ annual earnings at age 27 per 8th-grade percentile
  cpi2010to2025:1.47,           // judgment: approximate CPI-U change
- causalScoreToEarnings:0.5,    // judgment: share of the cross-sectional score-earnings link that is causal for tutoring gains
- transferToCurrentProgram:0.8, // judgment: current Direct model vs 2013-15 trial; later trials found 0.19-0.23 SD
+ causalScoreToEarnings:0.5,    // judgment: Chetty-Friedman-Rockoff quasi-experimental value-added implies ~11% earnings per SD (0.47 of this mapping); fadeout meta-analyses find weak, non-robust links
+ transferToCurrentProgram:0.6, // judgment: current Chicago Direct students average ~70 tutoring hours vs ~120 in the daily trial model; later trials found 0.19-0.23 SD
  nonDisplacement:0.9,          // judgment: skill gains are mostly not zero-sum
  editionShare:0.8,             // judgment: share of adult years lived in the Chicago metro
  netWelfareShare:0.6,          // judgment: share of gross earnings left after taxes and lost benefits
@@ -24,7 +28,9 @@ export const inputs={
  discountRate:0.03,
 };
 export const derived={
- wholeCostPerDirectStudent:inputs.totalExpenseFY2023/inputs.directStudentsFY2025,
+ wholeCostPerDirectStudent:inputs.totalExpenseFY2025/inputs.directStudentsFY2025,
+ allocatedCostPerDirectStudent:inputs.totalExpenseFY2025/(inputs.directStudentsFY2025+inputs.widespreadWeight*inputs.widespreadStudentsFY2025),
+ cofounderCost2025:inputs.cofounderCostPerStudent2020*inputs.cpi2020to2025,
  researchCost2025:inputs.researchCostPerStudent2015*inputs.cpi2015to2025,
  grossEarningsGain:inputs.persistentEffectSD*inputs.percentilesPerSD*inputs.earningsPerPercentile2010*inputs.cpi2010to2025,
 };
@@ -38,15 +44,19 @@ function pathway(o={}){
   counterfactual:'The randomized control group received the regular CPS schedule (often double-dose Algebra); the effect is net of that alternative.'};
 }
 const defs=[
- ['central','Whole-organization cost per Direct student, causal half of the score-earnings link',{},()=>derived.wholeCostPerDirectStudent,'FY2023 total expense over 2024-25 Direct students (all Widespread and technology work charged to Direct students); persistent 0.22 SD gain; half the Chetty association treated as causal; 0.8 transfer; 0.9 non-displacement; 0.8 Chicago residence; 60% net welfare.'],
+ ['central','Allocated FY2025 cost per Direct student, causal half of the score-earnings link',{},()=>derived.allocatedCostPerDirectStudent,'FY2025 total expense over 2024-25 Direct students plus Widespread students at 0.1 weight; persistent 0.22 SD gain; half the Chetty association treated as causal; 0.6 transfer for lower current dose; 0.9 non-displacement; 0.8 Chicago residence; 60% net welfare.'],
+ ['whole-cost-to-direct','Whole FY2025 expense charged to Direct students',{},()=>derived.wholeCostPerDirectStudent,'All Widespread and technology work treated as overhead of the Direct program.'],
+ ['cofounder-cost','Published per-student cost',{},()=>derived.cofounderCost2025,'Co-founder\u2019s $3,100 per student (2020), inflated to 2025.'],
+ ['trial-dose-transfer','Current program as effective as the trials',{transferToCurrentProgram:0.8},()=>derived.allocatedCostPerDirectStudent,'Prior review\u2019s transfer factor; ignores the lower current dose.'],
  ['research-cost','Program cost as measured in the trials',{},()=>derived.researchCost2025,'Central benefits at the authors’ $3,800 per-student cost, inflated to 2025.'],
- ['full-association','Full score-earnings association is causal',{causalScoreToEarnings:1},()=>derived.wholeCostPerDirectStudent,'As the trial authors assume.'],
- ['quarter-association','Only a quarter of the association is causal',{causalScoreToEarnings:0.25},()=>derived.wholeCostPerDirectStudent,'Stronger fade-out or weaker causal link from test scores to earnings.'],
- ['study1-only','Smaller study-1 immediate effect only',{grossEarningsGain:0.16*inputs.percentilesPerSD*inputs.earningsPerPercentile2010*inputs.cpi2010to2025},()=>derived.wholeCostPerDirectStudent,'Uses 0.16 SD instead of the pooled persistent 0.22 SD.'],
- ['low-transfer','Current program half as effective as the trials',{transferToCurrentProgram:0.4},()=>derived.wholeCostPerDirectStudent,'Scale-up or implementation drift halves the transferred effect.'],
- ['all-local','All adult years in the Chicago metro',{editionShare:1},()=>derived.wholeCostPerDirectStudent,'No out-migration discount.'],
- ['discount-5pct','5% discount rate',{discountRate:0.05},()=>derived.wholeCostPerDirectStudent,'As in the authors’ benefit-cost calculation.'],
- ['no-earnings-effect','Test-score gains do not change adult earnings',{causalScoreToEarnings:0},()=>derived.wholeCostPerDirectStudent,'Full fade-out of any earnings effect.'],
+ ['previous-review-20261018','First in-depth review, 18 October 2026 (superseded)',{transferToCurrentProgram:0.8},()=>27184992/3083,'FY2023 expense over 2024-25 Direct students with 0.8 transfer; retained for comparison.'],
+ ['full-association','Full score-earnings association is causal',{causalScoreToEarnings:1},()=>derived.allocatedCostPerDirectStudent,'As the trial authors assume.'],
+ ['quarter-association','Only a quarter of the association is causal',{causalScoreToEarnings:0.25},()=>derived.allocatedCostPerDirectStudent,'Stronger fade-out or weaker causal link from test scores to earnings.'],
+ ['study1-only','Smaller study-1 immediate effect only',{grossEarningsGain:0.16*inputs.percentilesPerSD*inputs.earningsPerPercentile2010*inputs.cpi2010to2025},()=>derived.allocatedCostPerDirectStudent,'Uses 0.16 SD instead of the pooled persistent 0.22 SD.'],
+ ['low-transfer','Current program much less effective than the trials',{transferToCurrentProgram:0.3},()=>derived.allocatedCostPerDirectStudent,'Scale-up or implementation drift halves the transferred effect.'],
+ ['all-local','All adult years in the Chicago metro',{editionShare:1},()=>derived.allocatedCostPerDirectStudent,'No out-migration discount.'],
+ ['discount-5pct','5% discount rate',{discountRate:0.05},()=>derived.allocatedCostPerDirectStudent,'As in the authors’ benefit-cost calculation.'],
+ ['no-earnings-effect','Test-score gains do not change adult earnings',{causalScoreToEarnings:0},()=>derived.allocatedCostPerDirectStudent,'Full fade-out of any earnings effect.'],
 ];
 export function scenarios(){return defs.map(([id,label,o,cost,assumptions])=>{const p=pathway(o);return {id,label,costUSD:cost()*inputs.cohort,allPopulationQalys:0,editionQalys:0,assumptions,incomePathways:p.causalShare>0?[p]:[]};});}
 export const hye=ps=>ps.reduce((s,p)=>s+incomeHealthyYearEquivalent(p),0);

@@ -28,5 +28,6 @@ export default function EditionsPage(){
  <div className="gb-home-progress gb-edition">
  <div className="gb-agent-box"><span>Point your agent here</span><a className="gb-agent-url" href={canonicalBase+'/llms.txt'}>{canonicalBase}/llms.txt</a><p>Estimates as JSON and MCP, plus an open repository agents can contribute to. <a href={canonicalBase+'/agents'}>Agent docs</a></p></div>
  <nav aria-label="Explore the research"><a href={canonicalBase+'/compare/cities'}>Compare cities</a><a href={canonicalBase+'/research/city-theory'}>What we learned across all reports</a><a id="research-time" href={canonicalBase+'/research-time'}>Research time and progress</a></nav>
+ <footer className="gb-home-credit">A project from <a href="https://www.rhyslindmark.com/">Rhys Lindmark</a></footer>
  </div></main></div>;
 }

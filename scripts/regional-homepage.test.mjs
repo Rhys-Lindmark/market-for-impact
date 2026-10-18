@@ -70,6 +70,8 @@ test('homepage has the requested single headline, an honest research figure and 
  for(const id of ['seattle','boston','atlanta','detroit'])assert.ok(!html.includes(editions.canonicalBase+'/'+id));
  assert.match(html,/id="research-time" href="https:\/\/ai.rhyslindmark.com\/givebetter\/research-time"/);
  assert.match(html,/Point your agent here/);assert.ok(html.includes(editions.canonicalBase+'/llms.txt'));assert.ok(html.includes(editions.canonicalBase+'/agents'));
+ assert.match(html,/<\/nav><footer class="gb-home-credit">A project from <a href="https:\/\/www.rhyslindmark.com\/">Rhys Lindmark<\/a><\/footer>/);
+ assert.equal((html.match(/<footer\b/g)||[]).length,1);
  const css=read('app/all/home.css');
  assert.match(css,/grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/);
  assert.match(css,/@media\(max-width:650px\)/);

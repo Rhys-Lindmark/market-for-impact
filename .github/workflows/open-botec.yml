@@ -1,0 +1,27 @@
+name: Open BOTEC repository
+
+on:
+  pull_request:
+    paths:
+      - 'docs/open-botec/**'
+      - 'lib/open-botec.ts'
+      - 'app/api/open-botec/**'
+      - 'app/api/mcp/**'
+      - '.github/workflows/open-botec.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: node --test docs/open-botec/tools/check.test.mjs

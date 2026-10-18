@@ -1,0 +1,831 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://ai.rhyslindmark.com/givebetter/open-botec/botec.schema.json",
+  "title": "Open BOTEC estimate record",
+  "description": "One back-of-the-envelope cost-effectiveness estimate for one (organization, program, intervention archetype, geography, year, model version). Native outcomes are primary. The QALY conversion is a separate, versioned layer that can be absent, disputed, or replaced without touching the native-unit estimate. Every numeric input is a distribution with a cited basis. Draft design, 2026-10-18; not yet used by the GiveBetter site.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "key",
+    "status",
+    "template",
+    "scope",
+    "inputs",
+    "nativeOutcome",
+    "cost",
+    "margin",
+    "fundingRoom",
+    "provenance",
+    "conflictOfInterest",
+    "nullBoundary"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "open-botec/0.1"
+    },
+    "id": {
+      "type": "string",
+      "description": "Stable ID derived from the key: <orgId>/<programSlug>/<archetypeId>/<geoId>/<year>/<modelVersion>. Never reused for a different key.",
+      "pattern": "^[a-z0-9-]+(:[a-z0-9-]+)?/[a-z0-9-]+/[a-z0-9-]+/[a-z0-9-]+/[0-9]{4}/v[0-9]+(\\.[0-9]+)*$"
+    },
+    "key": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "org",
+        "program",
+        "archetypeId",
+        "geography",
+        "year",
+        "modelVersion"
+      ],
+      "properties": {
+        "org": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "orgId"
+          ],
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "orgId": {
+              "type": "string",
+              "description": "Registry ID. Prefer us-ein:<9 digits, no dash> once the EIN is verified from IRS/ProPublica; otherwise slug:<org-name>. Never guess an EIN."
+            },
+            "ein": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^[0-9]{2}-[0-9]{7}$"
+            },
+            "fiscalSponsorEin": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "When the program is fiscally sponsored, the EIN that actually receives gifts."
+            }
+          }
+        },
+        "program": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "slug",
+            "name"
+          ],
+          "properties": {
+            "slug": {
+              "type": "string",
+              "pattern": "^[a-z0-9-]+$"
+            },
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            }
+          }
+        },
+        "archetypeId": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$",
+          "description": "ID of an intervention template under templates/. Use 'bespoke' only when no template fits; bespoke records must explain why in scope.templateFitNote."
+        },
+        "geography": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "geoId",
+            "name",
+            "beneficiaryBasis"
+          ],
+          "properties": {
+            "geoId": {
+              "type": "string",
+              "pattern": "^[a-z0-9-]+$",
+              "description": "e.g. us-ca-san-francisco, us-il-chicago. Matches a parameters/<geoId>/ directory."
+            },
+            "name": {
+              "type": "string"
+            },
+            "fips": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "beneficiaryBasis": {
+              "enum": [
+                "residence",
+                "service-location",
+                "mixed-judged",
+                "unknown"
+              ],
+              "description": "Whether the geography describes where beneficiaries live or only where services are delivered."
+            },
+            "residenceShare": {
+              "$ref": "#/$defs/distribution",
+              "description": "Optional share of modeled benefit going to residents of this geography."
+            }
+          }
+        },
+        "year": {
+          "type": "integer",
+          "minimum": 2000,
+          "maximum": 2100,
+          "description": "Price year and service year of the modeled marginal gift."
+        },
+        "modelVersion": {
+          "type": "string",
+          "pattern": "^v[0-9]+(\\.[0-9]+)*$"
+        }
+      }
+    },
+    "status": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tier",
+        "since"
+      ],
+      "properties": {
+        "tier": {
+          "enum": [
+            "draft",
+            "agent-reviewed",
+            "human-reviewed",
+            "retracted"
+          ],
+          "description": "draft: CI-valid only. agent-reviewed: at least one independent adversarial agent audit passed with no unresolved blocking finding. human-reviewed: a named human reviewer without a conflict accepted it. retracted: kept for history; excluded from search and allocation."
+        },
+        "since": {
+          "type": "string",
+          "format": "date"
+        },
+        "supersedes": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "ID of the record this one replaces."
+        },
+        "confidence": {
+          "enum": [
+            "very-low",
+            "low",
+            "moderate",
+            "high"
+          ]
+        }
+      }
+    },
+    "template": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "archetypeId",
+        "templateVersion"
+      ],
+      "properties": {
+        "archetypeId": {
+          "type": "string"
+        },
+        "templateVersion": {
+          "type": "string"
+        },
+        "parameterSets": {
+          "type": "array",
+          "description": "Local parameter files consumed, in precedence order (later overrides earlier).",
+          "items": {
+            "type": "string"
+          }
+        },
+        "overrides": {
+          "type": "array",
+          "description": "Template parameters (universal or local) this record replaced, with a reason. Overriding a universal parameter blocks promotion past draft until an auditor accepts the reason.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "parameter",
+              "reason"
+            ],
+            "properties": {
+              "parameter": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "counterfactual"
+      ],
+      "properties": {
+        "counterfactual": {
+          "type": "string",
+          "description": "What happens without the marginal gift."
+        },
+        "included": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "excluded": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "templateFitNote": {
+          "type": "string"
+        }
+      }
+    },
+    "inputs": {
+      "type": "object",
+      "description": "Resolved values for every parameter the template formula needs, keyed by parameter name.",
+      "minProperties": 1,
+      "additionalProperties": {
+        "$ref": "#/$defs/input"
+      }
+    },
+    "nativeOutcome": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unit",
+        "perUnitCost",
+        "costPerOutcome"
+      ],
+      "properties": {
+        "unit": {
+          "type": "string",
+          "description": "Native outcome unit, e.g. 'additional opioid-overdose deaths averted', 'kg of sustained weight loss-year', 'participant completing a 24-week balance course'."
+        },
+        "perUnitCost": {
+          "type": "string",
+          "description": "What the cost denominator counts, e.g. 'naloxone dose distributed'."
+        },
+        "outcomesPer10kUsd": {
+          "$ref": "#/$defs/distribution"
+        },
+        "costPerOutcome": {
+          "$ref": "#/$defs/distribution"
+        },
+        "formula": {
+          "type": "string"
+        },
+        "centralPoint": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Formula evaluated with every input at its p50. Differs from the simulated p50 because the formula is nonlinear."
+        }
+      }
+    },
+    "cost": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "currency",
+        "boundary"
+      ],
+      "properties": {
+        "currency": {
+          "const": "USD"
+        },
+        "priceYear": {
+          "type": "integer"
+        },
+        "boundary": {
+          "enum": [
+            "marginal-program",
+            "average-program",
+            "whole-recipient",
+            "unit-cost-judgment"
+          ],
+          "description": "Which costs are counted. unit-cost-judgment means an analyst allowance, not executed accounts."
+        },
+        "excludedCosts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "qalyLayer": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "Optional. A versioned conversion from native outcomes to QALYs. Absent means no conversion is claimed. Readers can swap in a different bridge without changing the native estimate.",
+      "additionalProperties": false,
+      "required": [
+        "bridgeId",
+        "bridgeVersion",
+        "qalysPerNativeOutcome",
+        "pricePer10Qalys"
+      ],
+      "properties": {
+        "bridgeId": {
+          "type": "string",
+          "description": "e.g. opioid-death-averted-to-qaly."
+        },
+        "bridgeVersion": {
+          "type": "string"
+        },
+        "qalysPerNativeOutcome": {
+          "$ref": "#/$defs/distribution"
+        },
+        "pricePer10Qalys": {
+          "$ref": "#/$defs/distribution",
+          "description": "USD per 10 incremental QALYs. Null quantiles mean no finite price at that quantile (non-positive benefit)."
+        },
+        "probabilityNonPositive": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "auditStatus": {
+          "enum": [
+            "unaudited",
+            "agent-audited",
+            "human-audited",
+            "disputed"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        },
+        "centralPointPricePer10Qalys": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Formula evaluated with every input at its p50. Differs from the simulated p50 because the formula is nonlinear."
+        }
+      }
+    },
+    "margin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "basis"
+      ],
+      "properties": {
+        "basis": {
+          "enum": [
+            "marginal",
+            "average",
+            "average-adjusted-to-marginal"
+          ],
+          "description": "marginal: estimate for the next donated dollar. average: historical spending divided by historical outputs. average-adjusted-to-marginal: average with explicit retention/additionality discounts."
+        },
+        "adjustments": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Names of inputs that move average toward marginal, e.g. marginalYieldRetention, fundingAdditionality."
+        }
+      }
+    },
+    "fundingRoom": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "verified",
+            "org-stated",
+            "estimated",
+            "unverified",
+            "none"
+          ]
+        },
+        "usd": {
+          "$ref": "#/$defs/distribution"
+        },
+        "horizonMonths": {
+          "type": "integer"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/citation"
+          }
+        },
+        "nextEvidence": {
+          "type": "string"
+        }
+      }
+    },
+    "nullBoundary": {
+      "type": "string",
+      "description": "Conditions under which benefit is zero or negative, so no finite price exists."
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sessions"
+      ],
+      "properties": {
+        "sessions": {
+          "type": "array",
+          "minItems": 1,
+          "description": "Closed, organization-specific research intervals, mirroring data/research-effort.json. Missing intervals stay missing; never apportion a batch duration.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "sessionId",
+              "workerId",
+              "role",
+              "startedAt",
+              "endedAt",
+              "model"
+            ],
+            "properties": {
+              "sessionId": {
+                "type": "string"
+              },
+              "workerId": {
+                "type": "string"
+              },
+              "role": {
+                "enum": [
+                  "author",
+                  "modeling",
+                  "source-audit",
+                  "adversarial-audit",
+                  "human-review",
+                  "localization"
+                ]
+              },
+              "startedAt": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date-time"
+              },
+              "endedAt": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date-time"
+              },
+              "model": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "description": "Verified runtime AI model. Null when unverified; never inferred from UI settings or another worker.",
+                "additionalProperties": false,
+                "required": [
+                  "id",
+                  "name",
+                  "evidence"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "evidence": {
+                    "type": "string"
+                  }
+                }
+              },
+              "human": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Public handle of a human reviewer, if any."
+              },
+              "evidence": {
+                "type": "string",
+                "description": "Publishable artifact reference; no private logs or credentials."
+              }
+            }
+          }
+        },
+        "audits": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "auditorId",
+              "independent",
+              "verdict",
+              "date"
+            ],
+            "properties": {
+              "auditorId": {
+                "type": "string"
+              },
+              "independent": {
+                "type": "boolean",
+                "description": "True only when the auditor did not author or model this record and had no access to the author's private reasoning beyond the record itself."
+              },
+              "verdict": {
+                "enum": [
+                  "pass",
+                  "pass-with-notes",
+                  "blocking-findings",
+                  "fail"
+                ]
+              },
+              "date": {
+                "type": "string",
+                "format": "date"
+              },
+              "findingsRef": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "conflictOfInterest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "declared"
+      ],
+      "properties": {
+        "declared": {
+          "type": "boolean",
+          "description": "True if any author, reviewer or the agent's principal has a financial, employment, board, grant or family relationship with the organization or a direct competitor for the same funds."
+        },
+        "authorRelationship": {
+          "enum": [
+            "none",
+            "self-submitted-by-org",
+            "funder",
+            "grantee-competitor",
+            "employee-or-board",
+            "other"
+          ]
+        },
+        "details": {
+          "type": "string"
+        },
+        "selfSubmitted": {
+          "type": "boolean",
+          "description": "Organization (or its agent) authored this record about itself. Self-submitted records are capped at 'draft' until independently re-derived."
+        }
+      }
+    },
+    "links": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "humanReport": {
+          "type": "string",
+          "format": "uri"
+        },
+        "legacyModel": {
+          "type": "string",
+          "description": "Repository path of the pre-template model this record was factored from."
+        }
+      }
+    },
+    "simulation": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "How distributions were propagated.",
+      "properties": {
+        "method": {
+          "enum": [
+            "monte-carlo-independent",
+            "monte-carlo-correlated",
+            "scenario-corners",
+            "none"
+          ]
+        },
+        "samples": {
+          "type": "integer"
+        },
+        "seed": {
+          "type": "integer"
+        },
+        "tool": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "distribution": {
+      "type": "object",
+      "description": "Three quantiles. When basis is 'analyst-scenarios', p10/p90 are pessimistic/optimistic analyst scenarios, not calibrated quantiles; readers must not treat them as an 80% interval.",
+      "additionalProperties": false,
+      "required": [
+        "p10",
+        "p50",
+        "p90"
+      ],
+      "properties": {
+        "p10": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "p50": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "p90": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "unit": {
+          "type": "string"
+        },
+        "shape": {
+          "enum": [
+            "two-piece-lognormal",
+            "two-piece-logit",
+            "fixed",
+            "empirical"
+          ],
+          "description": "How a simulator should interpolate between quantiles. fixed means p10=p50=p90 (a convention)."
+        },
+        "basis": {
+          "enum": [
+            "calibrated-quantiles",
+            "analyst-scenarios",
+            "simulated",
+            "convention"
+          ]
+        }
+      }
+    },
+    "citation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "url",
+        "retrieved"
+      ],
+      "properties": {
+        "publisher": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "published": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "retrieved": {
+          "type": "string",
+          "format": "date"
+        },
+        "locator": {
+          "type": "string",
+          "description": "Page, table or quoted figure supporting the value."
+        },
+        "sourceType": {
+          "type": "string"
+        }
+      }
+    },
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "scope",
+        "basis"
+      ],
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "value": {
+          "$ref": "#/$defs/distribution"
+        },
+        "scope": {
+          "enum": [
+            "universal",
+            "local",
+            "org",
+            "convention"
+          ],
+          "description": "universal: literature effect size reused across geographies. local: geography-specific (costs, baseline rates, population). org: specific to this organization's own reported data. convention: modeling choice such as a discount rate."
+        },
+        "basis": {
+          "enum": [
+            "observed",
+            "derived",
+            "transferred",
+            "judgment",
+            "convention"
+          ]
+        },
+        "rationale": {
+          "type": "string"
+        },
+        "from": {
+          "type": "string",
+          "description": "Template or parameter file path supplying this value, when inherited."
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/citation"
+          }
+        },
+        "overrideReason": {
+          "type": "string",
+          "description": "Required in practice when a parameter file or recipe replaces a template default; the evaluator copies it to template.overrides."
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "basis": {
+                "enum": [
+                  "observed",
+                  "derived",
+                  "transferred"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "sources"
+            ],
+            "properties": {
+              "sources": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "basis": {
+                "const": "judgment"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "rationale"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

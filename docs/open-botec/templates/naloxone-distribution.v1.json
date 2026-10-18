@@ -1,0 +1,122 @@
+{
+  "schemaVersion": "open-botec-template/0.1",
+  "archetypeId": "naloxone-distribution",
+  "version": "v1",
+  "name": "Community naloxone distribution and overdose-response outreach",
+  "causeArea": "overdose",
+  "appliesWhen": [
+    "The marginal gift buys additional naloxone doses delivered to people likely to witness or experience opioid overdose (street outreach, syringe services, drop-in, mail-based distribution).",
+    "The organization reports doses distributed and reversals reported for a recent period."
+  ],
+  "doesNotApplyWhen": [
+    "Funding pays for overdose prevention sites, treatment (use medications-for-opioid-use-disorder), or policy advocacy.",
+    "The organization reports people reached but neither doses nor reversals; use a population-reach variant instead (see localization-test.md, Chicago Recovery Alliance)."
+  ],
+  "nativeOutcome": {
+    "unit": "additional opioid-overdose deaths averted",
+    "notes": "Counts acute survivals that would not otherwise have occurred. Reported reversals are an output, not this outcome."
+  },
+  "costDenominator": { "unit": "additional naloxone dose distributed", "costParameter": "costPerDose" },
+  "derived": {
+    "reversalsPerDose": "reportedReversals / reportedDoses",
+    "k": "annualHazard + log(1 + discountRate)"
+  },
+  "formulas": {
+    "nativeOutcomesPerUnit": "reversalsPerDose * marginalYieldRetention * additionalSurvivalPerReversal",
+    "qalyBridge": {
+      "bridgeId": "opioid-death-averted-to-qaly",
+      "version": "v1",
+      "qalysPerNativeOutcome": "utility * (1 - exp(-k * horizonYears)) / k",
+      "notes": "Continuous-time discounted survival with a constant all-cause hazard, truncated at horizonYears. Swap this bridge to test different survivor-life assumptions without touching the native estimate."
+    }
+  },
+  "parameters": {
+    "costPerDose": {
+      "scope": "local",
+      "label": "Donor cost per additional dose delivered",
+      "unit": "USD per dose",
+      "lookup": {
+        "preferredSources": ["Public contract or grant budget with dose targets for this organization", "State or county naloxone program budget divided by doses", "Executed program expense divided by doses (average, then adjust upward for expansion)"],
+        "fallback": "Wholesale price of the dominant formulation plus outreach labor, labeled judgment.",
+        "judgmentGuide": "SF central $20 = roughly 2x a $9.61 planned bundle/target-dose benchmark, allowing extra outreach effort and shortfalls. If the state supplies drug free, cost is outreach labor only."
+      }
+    },
+    "reportedReversals": {
+      "scope": "org",
+      "label": "Reversals reported by the organization in the reference year",
+      "unit": "reversals per year",
+      "lookup": { "preferredSources": ["Organization annual report or service page", "State overdose-education and naloxone-distribution (OEND) program reports"], "fallback": "None. Without a reversal count, this template does not apply." }
+    },
+    "reportedDoses": {
+      "scope": "org",
+      "label": "Doses distributed by the organization in the same year",
+      "unit": "doses per year",
+      "lookup": { "preferredSources": ["Same document as reportedReversals, same year"], "fallback": "None. Do not mix years between numerator and denominator." }
+    },
+    "marginalYieldRetention": {
+      "scope": "local",
+      "label": "Share of reported reversal yield retained at the margin",
+      "unit": "fraction",
+      "lookup": {
+        "preferredSources": ["Local saturation evidence: doses per person who uses opioids, public distribution volume, number of competing distributors"],
+        "fallback": "Copy the SF distribution and flag as transferred judgment.",
+        "judgmentGuide": "SF 0.25/0.5/0.75 combines harder-to-reach expansion, displacement, reporting mismatch and repeat recipients. Lower it where public distribution is already saturated."
+      }
+    },
+    "additionalSurvivalPerReversal": {
+      "scope": "local",
+      "label": "Additional acute survivals per retained reversal",
+      "unit": "fraction",
+      "lookup": {
+        "preferredSources": ["Local EMS response times and bystander-naloxone prevalence", "Local fentanyl share of overdose deaths"],
+        "fallback": "Copy SF distribution, flag as transferred judgment.",
+        "judgmentGuide": "SF 0.005/0.02/0.05: most reported reversals are assumed not to be lives saved because of spontaneous survival and alternative rescue."
+      }
+    },
+    "utility": {
+      "scope": "universal",
+      "label": "Health utility of survivors",
+      "unit": "QALY weight",
+      "default": {
+        "value": { "p10": 0.6, "p50": 0.7, "p90": 0.8, "shape": "two-piece-logit", "basis": "analyst-scenarios" },
+        "scope": "universal",
+        "basis": "transferred",
+        "rationale": "Downward transfer from 0.799 for HIV-negative daily heroin injection, allowing comorbidity and population differences.",
+        "sources": [{ "publisher": "Patton et al., Quality of Life Research", "title": "Analyzing quality of life among people with opioid use disorder from the NIDA Data Share initiative", "url": "https://link.springer.com/article/10.1007/s11136-024-03729-6", "published": "2024-08-08", "retrieved": "2026-09-07" }]
+      }
+    },
+    "annualHazard": {
+      "scope": "universal",
+      "label": "Annual all-cause mortality hazard after a nonfatal overdose",
+      "unit": "per person-year",
+      "default": {
+        "value": { "p10": 0.055, "p50": 0.08, "p90": 0.15, "shape": "two-piece-lognormal", "basis": "analyst-scenarios" },
+        "scope": "universal",
+        "basis": "transferred",
+        "rationale": "Central informed by 778.3 deaths per 10,000 person-years in a US overdose-survivor cohort. Note: a higher hazard lowers QALYs, so p90 here is the pessimistic case.",
+        "sources": [
+          { "publisher": "Olfson et al., JAMA Psychiatry", "title": "Causes of Death After Nonfatal Opioid Overdose", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6143082/", "published": "2018", "retrieved": "2026-09-07" },
+          { "publisher": "Weiner et al., Annals of Emergency Medicine", "title": "One-Year Mortality of Patients After Emergency Department Treatment for Nonfatal Opioid Overdose", "url": "https://pubmed.ncbi.nlm.nih.gov/31229387/", "published": "2020", "retrieved": "2026-09-07" }
+        ]
+      }
+    },
+    "horizonYears": {
+      "scope": "convention",
+      "label": "Credited survival horizon",
+      "unit": "years",
+      "default": { "value": { "p10": 10, "p50": 15, "p90": 20, "shape": "two-piece-lognormal", "basis": "analyst-scenarios" }, "scope": "convention", "basis": "judgment", "rationale": "Truncates benefits because recipient ages and long-term outcomes are unknown; not a life expectancy." }
+    },
+    "discountRate": {
+      "scope": "convention",
+      "label": "Annual QALY discount rate",
+      "unit": "per year",
+      "default": { "value": { "p10": 0.03, "p50": 0.03, "p90": 0.03, "shape": "fixed", "basis": "convention" }, "scope": "convention", "basis": "convention", "rationale": "Project-wide 3% convention." }
+    }
+  },
+  "excludedEffects": ["Nonfatal brain-injury prevention", "Benefits to families", "Treatment-navigation health gains", "Downstream healthcare costs", "Drug supplied free by public programs (counted only if the gift pays for it)"],
+  "nullBoundary": "If the gift replaces existing provision or reaches no otherwise-fatal events, deaths averted are zero and there is no finite price.",
+  "origin": {
+    "factoredFrom": "data/san-francisco/sfaf-naloxone-cea-v1.json",
+    "reproduces": "At all p50 inputs with SFAF 2025 reported reversals/doses, reproduces the SF central $56,328 per 10 QALYs exactly. Change: the three joint scenarios become per-parameter p10/p50/p90, so the simulator mixes them independently instead of as fixed corners."
+  }
+}

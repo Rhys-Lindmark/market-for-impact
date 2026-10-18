@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "open-botec-params/0.1",
+  "geoId": "us-ca-san-francisco",
+  "geoName": "San Francisco, California",
+  "archetypeId": "tai-chi-fall-prevention",
+  "templateVersion": "v1",
+  "values": {
+    "instructorHourlyCost": {
+      "value": {
+        "p10": 30,
+        "p50": 60,
+        "p90": 120,
+        "shape": "two-piece-lognormal",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "judgment",
+      "rationale": "SF assumed $60/hour paid preparation and delivery; spread is analyst judgment, not wage data."
+    },
+    "supportCostPerParticipant": {
+      "value": {
+        "p10": 100,
+        "p50": 200,
+        "p90": 400,
+        "shape": "two-piece-lognormal",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "judgment",
+      "rationale": "Licensing, room and screening allowance; not priced."
+    },
+    "localTransfer": {
+      "value": {
+        "p10": 0.25,
+        "p50": 0.5,
+        "p90": 0.75,
+        "shape": "two-piece-logit",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "judgment",
+      "rationale": "Proposed curriculum, high-risk recruitment and realistic local alternatives; reference is stretching."
+    },
+    "additionality": {
+      "value": {
+        "p10": 0.25,
+        "p50": 0.5,
+        "p90": 0.75,
+        "shape": "two-piece-logit",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "judgment",
+      "rationale": "Assumed net added places after replacement funding; no verified offer."
+    }
+  },
+  "provenance": {
+    "author": "Factored from legacy SF models by Claude Opus 5.5 (open-botec design session)",
+    "date": "2026-10-18",
+    "lookupMinutes": null,
+    "notes": "Values copied from the legacy SF model; no new research. Original research intervals live in data/research-effort.json."
+  }
+}

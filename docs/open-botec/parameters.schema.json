@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://ai.rhyslindmark.com/givebetter/open-botec/parameters.schema.json",
+  "title": "Open BOTEC local parameter file",
+  "description": "Local (and, rarely, overriding universal) values for one archetype in one geography. Shared by every organization in that geography that uses the archetype. Org-specific values go in the estimate recipe instead.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "geoId", "geoName", "archetypeId", "templateVersion", "values", "provenance"],
+  "properties": {
+    "schemaVersion": { "const": "open-botec-params/0.1" },
+    "geoId": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "geoName": { "type": "string" },
+    "archetypeId": { "type": "string" },
+    "templateVersion": { "type": "string" },
+    "values": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "allOf": [
+          { "$ref": "botec.schema.json#/$defs/input" }
+        ]
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["author", "date"],
+      "properties": {
+        "author": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "lookupMinutes": { "type": ["number", "null"] },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

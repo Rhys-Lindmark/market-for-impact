@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "open-botec-params/0.1",
+  "geoId": "us-il-chicago",
+  "geoName": "Chicago, Illinois",
+  "archetypeId": "naloxone-distribution",
+  "templateVersion": "v1",
+  "values": {
+    "costPerDose": {
+      "value": {
+        "p10": 30,
+        "p50": 55,
+        "p90": 110,
+        "shape": "two-piece-lognormal",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "derived",
+      "rationale": "$250,000 / 4,541 kits = $55 per kit (2017, city-funded, CRA). Unit is a kit, which may hold more than one dose; template expects doses. Kept per-kit and paired with per-kit reversals so the ratio is consistent. Not inflated to 2026.",
+      "sources": [
+        {
+          "publisher": "City of Chicago, Office of the Mayor",
+          "title": "Press release on opioid treatment and naloxone funding (July 20, 2017)",
+          "url": "https://chicago.gov/city/en/depts/mayor/press_room/press_releases/2017/july/OpioidAddictionTreatment.html",
+          "published": "2017-07-20",
+          "retrieved": "2026-10-18",
+          "locator": "$250,000 city investment; 4,541 kits distributed; 1,544 reversals in the past year. Seen only in a search-result summary; direct fetch returned HTTP 403, so the figures are unverified.",
+          "sourceType": "Government press release; stale"
+        }
+      ]
+    },
+    "marginalYieldRetention": {
+      "value": {
+        "p10": 0.25,
+        "p50": 0.5,
+        "p90": 0.75,
+        "shape": "two-piece-logit",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "judgment",
+      "rationale": "Transferred unchanged from SF; no Chicago saturation lookup found."
+    },
+    "additionalSurvivalPerReversal": {
+      "value": {
+        "p10": 0.005,
+        "p50": 0.02,
+        "p90": 0.05,
+        "shape": "two-piece-logit",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "judgment",
+      "rationale": "Transferred unchanged from SF; Chicago EMS response and bystander-naloxone prevalence not looked up."
+    }
+  },
+  "provenance": {
+    "author": "Claude Opus 5.5 localization test (open-botec design session)",
+    "date": "2026-10-18",
+    "lookupMinutes": 0.8,
+    "notes": "Web-search lookups only, 18:37:21Z–18:38:10Z. See localization-test.md for what failed."
+  }
+}

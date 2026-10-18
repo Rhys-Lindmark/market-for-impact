@@ -1,0 +1,314 @@
+{
+  "schemaVersion": "open-botec/0.1",
+  "id": "slug:sf-aids-foundation/naloxone-outreach/naloxone-distribution/us-ca-san-francisco/2025/v1",
+  "key": {
+    "org": {
+      "name": "San Francisco AIDS Foundation",
+      "orgId": "slug:sf-aids-foundation",
+      "ein": null
+    },
+    "program": {
+      "slug": "naloxone-outreach",
+      "name": "Additional targeted overdose-prevention outreach and naloxone distribution"
+    },
+    "geography": {
+      "geoId": "us-ca-san-francisco",
+      "name": "San Francisco, California",
+      "beneficiaryBasis": "service-location"
+    },
+    "year": 2025,
+    "modelVersion": "v1",
+    "archetypeId": "naloxone-distribution"
+  },
+  "status": {
+    "tier": "draft",
+    "since": "2026-10-18",
+    "confidence": "very-low"
+  },
+  "template": {
+    "archetypeId": "naloxone-distribution",
+    "templateVersion": "v1",
+    "parameterSets": [
+      "parameters/us-ca-san-francisco/naloxone-distribution.json"
+    ],
+    "overrides": []
+  },
+  "scope": {
+    "counterfactual": "Existing SF public naloxone supply and other distributors continue; the gift funds additional outreach doses.",
+    "excluded": [
+      "Nonfatal brain injury",
+      "Family benefits",
+      "Treatment navigation"
+    ]
+  },
+  "inputs": {
+    "utility": {
+      "label": "Health utility of survivors",
+      "value": {
+        "p10": 0.6,
+        "p50": 0.7,
+        "p90": 0.8,
+        "shape": "two-piece-logit",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "universal",
+      "basis": "transferred",
+      "rationale": "Downward transfer from 0.799 for HIV-negative daily heroin injection, allowing comorbidity and population differences.",
+      "sources": [
+        {
+          "publisher": "Patton et al., Quality of Life Research",
+          "title": "Analyzing quality of life among people with opioid use disorder from the NIDA Data Share initiative",
+          "url": "https://link.springer.com/article/10.1007/s11136-024-03729-6",
+          "published": "2024-08-08",
+          "retrieved": "2026-09-07"
+        }
+      ],
+      "from": "templates/naloxone-distribution.v1.json"
+    },
+    "annualHazard": {
+      "label": "Annual all-cause mortality hazard after a nonfatal overdose",
+      "value": {
+        "p10": 0.055,
+        "p50": 0.08,
+        "p90": 0.15,
+        "shape": "two-piece-lognormal",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "universal",
+      "basis": "transferred",
+      "rationale": "Central informed by 778.3 deaths per 10,000 person-years in a US overdose-survivor cohort. Note: a higher hazard lowers QALYs, so p90 here is the pessimistic case.",
+      "sources": [
+        {
+          "publisher": "Olfson et al., JAMA Psychiatry",
+          "title": "Causes of Death After Nonfatal Opioid Overdose",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6143082/",
+          "published": "2018",
+          "retrieved": "2026-09-07"
+        },
+        {
+          "publisher": "Weiner et al., Annals of Emergency Medicine",
+          "title": "One-Year Mortality of Patients After Emergency Department Treatment for Nonfatal Opioid Overdose",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31229387/",
+          "published": "2020",
+          "retrieved": "2026-09-07"
+        }
+      ],
+      "from": "templates/naloxone-distribution.v1.json"
+    },
+    "horizonYears": {
+      "label": "Credited survival horizon",
+      "value": {
+        "p10": 10,
+        "p50": 15,
+        "p90": 20,
+        "shape": "two-piece-lognormal",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "convention",
+      "basis": "judgment",
+      "rationale": "Truncates benefits because recipient ages and long-term outcomes are unknown; not a life expectancy.",
+      "from": "templates/naloxone-distribution.v1.json"
+    },
+    "discountRate": {
+      "label": "Annual QALY discount rate",
+      "value": {
+        "p10": 0.03,
+        "p50": 0.03,
+        "p90": 0.03,
+        "shape": "fixed",
+        "basis": "convention"
+      },
+      "scope": "convention",
+      "basis": "convention",
+      "rationale": "Project-wide 3% convention.",
+      "from": "templates/naloxone-distribution.v1.json"
+    },
+    "costPerDose": {
+      "label": "Donor cost per additional dose delivered",
+      "value": {
+        "p10": 10,
+        "p50": 20,
+        "p90": 40,
+        "shape": "two-piece-lognormal",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "judgment",
+      "rationale": "About 2x the $9.61 planned bundle/target-dose benchmark, rounded, allowing extra outreach effort and delivery shortfalls. Not an SFAF quote.",
+      "sources": [
+        {
+          "publisher": "SF Health Commission",
+          "title": "Proposed SFAF agreement 1000032060",
+          "url": "https://www.sf.gov/sites/default/files/2024-05/HC%20Memo%20Memo%20-%20%20SFAF%2032060%20Final.pdf",
+          "published": "2024-06-04",
+          "retrieved": "2026-09-07",
+          "locator": "$250,000 annual budget, 26,016 target doses = $9.61 per target dose"
+        }
+      ],
+      "from": "parameters/us-ca-san-francisco/naloxone-distribution.json"
+    },
+    "marginalYieldRetention": {
+      "label": "Share of reported reversal yield retained at the margin",
+      "value": {
+        "p10": 0.25,
+        "p50": 0.5,
+        "p90": 0.75,
+        "shape": "two-piece-logit",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "judgment",
+      "rationale": "Aggregate judgment for harder-to-reach expansion, displacement, reporting mismatch and repeat recipients in a heavily supplied SF market.",
+      "from": "parameters/us-ca-san-francisco/naloxone-distribution.json"
+    },
+    "additionalSurvivalPerReversal": {
+      "label": "Additional acute survivals per retained reversal",
+      "value": {
+        "p10": 0.005,
+        "p50": 0.02,
+        "p90": 0.05,
+        "shape": "two-piece-logit",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "judgment",
+      "rationale": "Credits one additional acute survivor per 50 retained reported reversals; spontaneous survival and alternative rescue are common in SF.",
+      "from": "parameters/us-ca-san-francisco/naloxone-distribution.json"
+    },
+    "reportedReversals": {
+      "label": "Reversals reported by the organization in the reference year",
+      "value": {
+        "p10": 2852,
+        "p50": 2852,
+        "p90": 2852,
+        "shape": "fixed",
+        "basis": "convention"
+      },
+      "scope": "org",
+      "basis": "observed",
+      "sources": [
+        {
+          "publisher": "San Francisco AIDS Foundation",
+          "title": "Overdose prevention and response; 2025 service reporting",
+          "url": "https://www.sfaf.org/health-services/overdose-prevention-response/",
+          "retrieved": "2026-09-07",
+          "locator": "2,852 reversals reported, 2025"
+        }
+      ],
+      "from": "estimates/us-ca-san-francisco/sfaf-naloxone.recipe.json"
+    },
+    "reportedDoses": {
+      "label": "Doses distributed by the organization in the same year",
+      "value": {
+        "p10": 41399,
+        "p50": 41399,
+        "p90": 41399,
+        "shape": "fixed",
+        "basis": "convention"
+      },
+      "scope": "org",
+      "basis": "observed",
+      "sources": [
+        {
+          "publisher": "San Francisco AIDS Foundation",
+          "title": "Overdose prevention and response; 2025 service reporting",
+          "url": "https://www.sfaf.org/health-services/overdose-prevention-response/",
+          "retrieved": "2026-09-07",
+          "locator": "41,399 doses distributed, 2025"
+        }
+      ],
+      "from": "estimates/us-ca-san-francisco/sfaf-naloxone.recipe.json"
+    }
+  },
+  "nativeOutcome": {
+    "unit": "additional opioid-overdose deaths averted",
+    "perUnitCost": "additional naloxone dose distributed",
+    "outcomesPer10kUsd": {
+      "p10": 0.06049,
+      "p50": 0.2941,
+      "p90": 1.122,
+      "unit": "additional opioid-overdose deaths averted per $10,000",
+      "shape": "empirical",
+      "basis": "simulated"
+    },
+    "costPerOutcome": {
+      "p10": 8914,
+      "p50": 34010,
+      "p90": 165400,
+      "unit": "USD per additional opioid-overdose deaths averted",
+      "shape": "empirical",
+      "basis": "simulated"
+    },
+    "centralPoint": 29030,
+    "formula": "reversalsPerDose * marginalYieldRetention * additionalSurvivalPerReversal"
+  },
+  "cost": {
+    "currency": "USD",
+    "priceYear": 2025,
+    "boundary": "unit-cost-judgment"
+  },
+  "qalyLayer": {
+    "bridgeId": "opioid-death-averted-to-qaly",
+    "bridgeVersion": "v1",
+    "qalysPerNativeOutcome": {
+      "p10": 3.325,
+      "p50": 4.8,
+      "p90": 6.357,
+      "unit": "QALYs per additional opioid-overdose deaths averted",
+      "shape": "empirical",
+      "basis": "simulated"
+    },
+    "pricePer10Qalys": {
+      "p10": 18570,
+      "p50": 73390,
+      "p90": 362400,
+      "unit": "USD per 10 QALYs",
+      "shape": "empirical",
+      "basis": "simulated"
+    },
+    "centralPointPricePer10Qalys": 56330,
+    "probabilityNonPositive": 0,
+    "auditStatus": "unaudited",
+    "notes": "probabilityNonPositive is 0 by construction: v1 input distributions are strictly positive, so the null case lives only in nullBoundary."
+  },
+  "simulation": {
+    "method": "monte-carlo-independent",
+    "samples": 20000,
+    "seed": 20261018,
+    "tool": "docs/open-botec/tools/evaluate.mjs",
+    "notes": "Inputs drawn independently. Legacy SF scenarios were joint corners; independent draws give a narrower price spread than those corners."
+  },
+  "margin": {
+    "basis": "average-adjusted-to-marginal",
+    "adjustments": [
+      "marginalYieldRetention"
+    ]
+  },
+  "fundingRoom": {
+    "status": "unverified",
+    "nextEvidence": "Current additional outreach plan, executed costs, unmet coverage and recipient-linked rescue records."
+  },
+  "nullBoundary": "If the gift replaces existing provision or reaches no otherwise-fatal events, deaths averted are zero and there is no finite price.",
+  "provenance": {
+    "sessions": [
+      {
+        "sessionId": "legacy-unrecorded",
+        "workerId": "unknown",
+        "role": "author",
+        "startedAt": null,
+        "endedAt": null,
+        "model": null,
+        "evidence": "Legacy model data/san-francisco/sfaf-naloxone-cea-v1.json; interval not recorded in data/research-effort.json. Factoring into this template: open-botec design session 2026-10-18."
+      }
+    ],
+    "audits": []
+  },
+  "conflictOfInterest": {
+    "declared": false,
+    "authorRelationship": "none",
+    "selfSubmitted": false
+  },
+  "links": {
+    "legacyModel": "data/san-francisco/sfaf-naloxone-cea-v1.json"
+  }
+}

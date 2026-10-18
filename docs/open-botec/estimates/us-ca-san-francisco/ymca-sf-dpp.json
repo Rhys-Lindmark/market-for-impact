@@ -1,0 +1,257 @@
+{
+  "schemaVersion": "open-botec/0.1",
+  "id": "slug:ymca-greater-sf/diabetes-prevention/lifestyle-diabetes-prevention/us-ca-san-francisco/2026/v1",
+  "key": {
+    "org": {
+      "name": "YMCA of Greater San Francisco",
+      "orgId": "slug:ymca-greater-sf",
+      "ein": null
+    },
+    "program": {
+      "slug": "diabetes-prevention",
+      "name": "Additional SF diabetes-prevention offers"
+    },
+    "geography": {
+      "geoId": "us-ca-san-francisco",
+      "name": "San Francisco, California",
+      "beneficiaryBasis": "service-location"
+    },
+    "year": 2026,
+    "modelVersion": "v1",
+    "archetypeId": "lifestyle-diabetes-prevention"
+  },
+  "status": {
+    "tier": "draft",
+    "since": "2026-10-18",
+    "confidence": "very-low"
+  },
+  "template": {
+    "archetypeId": "lifestyle-diabetes-prevention",
+    "templateVersion": "v1",
+    "parameterSets": [
+      "parameters/us-ca-san-francisco/lifestyle-diabetes-prevention.json"
+    ],
+    "overrides": []
+  },
+  "scope": {
+    "counterfactual": "Medi-Cal and SFHSS-funded cohorts continue; the gift funds additional adult cohorts."
+  },
+  "inputs": {
+    "extraKg": {
+      "label": "Additional weight loss versus offer-only control",
+      "value": {
+        "p10": 1.1,
+        "p50": 2.3,
+        "p90": 3.4,
+        "shape": "two-piece-lognormal",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "universal",
+      "basis": "transferred",
+      "rationale": "Randomized YMCA offer trial, with scenario spread.",
+      "sources": [
+        {
+          "publisher": "American Journal of Public Health",
+          "title": "Ackermann et al.: randomized YMCA offer trial",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26378828/",
+          "published": "2015-09-17",
+          "retrieved": "2026-09-07"
+        }
+      ],
+      "from": "templates/lifestyle-diabetes-prevention.v1.json"
+    },
+    "discountedRetentionYears": {
+      "label": "Discounted years over which the weight difference persists",
+      "value": {
+        "p10": 0.48549,
+        "p50": 2.3713,
+        "p90": 4.58021,
+        "shape": "two-piece-lognormal",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "universal",
+      "basis": "derived",
+      "rationale": "Sum over years t of retention[t]/1.03^(t+0.5) for the SF retention profiles [0.25,0.25], [0.5,1,0.75,0.25] and [0.5,1,1,1,1,0.5]. Embeds the 3% discount convention; a v2 template should split persistence from discounting.",
+      "sources": [
+        {
+          "publisher": "Diabetes Care",
+          "title": "Kuo et al.: prospective NDPP cost and QALY analysis",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12178621/",
+          "published": "2024-11-20",
+          "retrieved": "2026-09-07"
+        }
+      ],
+      "from": "templates/lifestyle-diabetes-prevention.v1.json"
+    },
+    "utilityPerKg": {
+      "label": "QALY weight gain per kg of weight loss per year",
+      "value": {
+        "p10": 0.0007,
+        "p50": 0.0014,
+        "p90": 0.002,
+        "shape": "two-piece-lognormal",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "universal",
+      "basis": "transferred",
+      "rationale": "Observational utility association.",
+      "sources": [
+        {
+          "publisher": "Obesity",
+          "title": "Ackermann et al.: weight change and health utility",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1038/oby.2009.114",
+          "published": "2009",
+          "retrieved": "2026-09-07"
+        }
+      ],
+      "from": "templates/lifestyle-diabetes-prevention.v1.json"
+    },
+    "costPerParticipant": {
+      "label": "Donor cost per additional enrolled participant",
+      "value": {
+        "p10": 200,
+        "p50": 600,
+        "p90": 1200,
+        "shape": "two-piece-lognormal",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "judgment",
+      "rationale": "Analyst allowance; not a YMCA quote.",
+      "from": "parameters/us-ca-san-francisco/lifestyle-diabetes-prevention.json"
+    },
+    "fundingAdditionality": {
+      "label": "Share of donor-funded enrollment that would not otherwise be funded",
+      "value": {
+        "p10": 0.2,
+        "p50": 0.5,
+        "p90": 0.8,
+        "shape": "two-piece-logit",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "judgment",
+      "rationale": "Medi-Cal covers DPP and SF Health Service System already funds YMCA cohorts, so donor-funded seats partly displace payer-funded ones.",
+      "sources": [
+        {
+          "publisher": "DHCS",
+          "title": "Medi-Cal diabetes prevention benefit",
+          "url": "https://www.dhcs.ca.gov/services/medi-cal-resources/diabetes-prevention-program-diabetes-prevention-program/",
+          "retrieved": "2026-09-07"
+        },
+        {
+          "publisher": "SF Health Service System",
+          "title": "YMCA partnership and existing funded cohorts",
+          "url": "https://sfhss.org/dpp",
+          "retrieved": "2026-09-07"
+        }
+      ],
+      "from": "parameters/us-ca-san-francisco/lifestyle-diabetes-prevention.json"
+    },
+    "transfer": {
+      "label": "Retention of trial effect in the local population and provider",
+      "value": {
+        "p10": 0.25,
+        "p50": 0.75,
+        "p90": 1,
+        "shape": "two-piece-logit",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "judgment",
+      "rationale": "Retention of the YMCA trial effect for SF cohorts.",
+      "from": "parameters/us-ca-san-francisco/lifestyle-diabetes-prevention.json"
+    }
+  },
+  "nativeOutcome": {
+    "unit": "discounted kg-years of incremental weight loss",
+    "perUnitCost": "additional enrolled participant offer",
+    "outcomesPer10kUsd": {
+      "p10": 2.425,
+      "p50": 20.2,
+      "p90": 113.6,
+      "unit": "discounted kg-years of incremental weight loss per $10,000",
+      "shape": "empirical",
+      "basis": "simulated"
+    },
+    "costPerOutcome": {
+      "p10": 88.08,
+      "p50": 495.2,
+      "p90": 4124,
+      "unit": "USD per discounted kg-years of incremental weight loss",
+      "shape": "empirical",
+      "basis": "simulated"
+    },
+    "centralPoint": 293.4,
+    "formula": "fundingAdditionality * extraKg * transfer * discountedRetentionYears"
+  },
+  "cost": {
+    "currency": "USD",
+    "priceYear": 2026,
+    "boundary": "unit-cost-judgment"
+  },
+  "qalyLayer": {
+    "bridgeId": "weight-loss-kg-year-to-qaly",
+    "bridgeVersion": "v1",
+    "qalysPerNativeOutcome": {
+      "p10": 0.0006893,
+      "p50": 0.001395,
+      "p90": 0.001984,
+      "unit": "QALYs per discounted kg-years of incremental weight loss",
+      "shape": "empirical",
+      "basis": "simulated"
+    },
+    "pricePer10Qalys": {
+      "p10": 649100,
+      "p50": 4000000,
+      "p90": 35650000,
+      "unit": "USD per 10 QALYs",
+      "shape": "empirical",
+      "basis": "simulated"
+    },
+    "centralPointPricePer10Qalys": 2095000,
+    "probabilityNonPositive": 0,
+    "auditStatus": "unaudited",
+    "notes": "probabilityNonPositive is 0 by construction: v1 input distributions are strictly positive, so the null case lives only in nullBoundary."
+  },
+  "simulation": {
+    "method": "monte-carlo-independent",
+    "samples": 20000,
+    "seed": 20261018,
+    "tool": "docs/open-botec/tools/evaluate.mjs",
+    "notes": "Inputs drawn independently. Legacy SF scenarios were joint corners; independent draws give a narrower price spread than those corners."
+  },
+  "margin": {
+    "basis": "marginal",
+    "adjustments": [
+      "fundingAdditionality"
+    ]
+  },
+  "fundingRoom": {
+    "status": "unverified",
+    "nextEvidence": "Verified unfunded cohort with per-participant budget."
+  },
+  "nullBoundary": "If the cohort would have been funded anyway or weight loss does not persist, benefit is zero and there is no finite price.",
+  "provenance": {
+    "sessions": [
+      {
+        "sessionId": "legacy-unrecorded",
+        "workerId": "unknown",
+        "role": "author",
+        "startedAt": null,
+        "endedAt": null,
+        "model": null,
+        "evidence": "Legacy model data/san-francisco/ymca-dpp-cea-v1.json; interval not recorded in data/research-effort.json. Factoring into this template: open-botec design session 2026-10-18."
+      }
+    ],
+    "audits": []
+  },
+  "conflictOfInterest": {
+    "declared": false,
+    "authorRelationship": "none",
+    "selfSubmitted": false
+  },
+  "links": {
+    "legacyModel": "data/san-francisco/ymca-dpp-cea-v1.json"
+  }
+}

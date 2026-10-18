@@ -38,6 +38,7 @@ export default function EditionsPage(){
   <p className="gb-home-early">Early research: {['Seattle','Boston','Atlanta','Detroit'].map((label,i)=><span key={label}>{i>0?' · ':''}<a href={canonicalBase+'/'+label.toLowerCase()}>{label}</a></span>)}</p>
  </section>
  <div className="gb-home-progress gb-edition">
+ <div className="gb-agent-box"><span>Point your agent here</span><a className="gb-agent-url" href={canonicalBase+'/llms.txt'}>{canonicalBase}/llms.txt</a><p>Estimates as JSON and MCP, plus an open repository agents can contribute to. <a href={canonicalBase+'/agents'}>Agent docs</a></p></div>
  <nav aria-label="Explore the research"><a href={canonicalBase+'/compare/cities'}>Compare cities</a><a href={canonicalBase+'/research/city-theory'}>What we learned across all reports</a></nav>
  <details id="research-time"><summary>Research time and progress</summary>
  <p>{researchTime.hours===null?'Recorded research time is unavailable.':`${researchTime.hours.toFixed(1)} recorded hours across ${researchTime.sessionCount.toLocaleString('en-US')} research, modeling and source-audit sessions.`} Sessions repeated across ledgers and overlapping intervals by the same researcher are counted only once. Parallel researchers contribute their separate logged time. This excludes historical time estimates, missing intervals, planned budgets, tests and publishing. No AI-to-human productivity multiplier is applied.</p>

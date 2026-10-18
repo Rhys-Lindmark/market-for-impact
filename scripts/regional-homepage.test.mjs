@@ -64,6 +64,7 @@ test('homepage has the requested single headline, an honest research figure and 
  for(const region of time.homepageRegions){assert.ok(grid.includes(editions.canonicalBase+'/'+region.id));assert.ok(grid.includes(region.label));}
  for(const id of ['seattle','boston','atlanta','detroit'])assert.ok(html.includes(editions.canonicalBase+'/'+id));
  assert.match(html,/id="research-time"/);assert.match(html,/Health and income assessment flags/);
+ assert.match(html,/Point your agent here/);assert.ok(html.includes(editions.canonicalBase+'/llms.txt'));assert.ok(html.includes(editions.canonicalBase+'/agents'));
  const css=read('app/all/home.css');
  assert.match(css,/grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/);
  assert.match(css,/@media\(max-width:650px\)/);

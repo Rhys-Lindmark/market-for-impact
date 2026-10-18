@@ -1,0 +1,72 @@
+{
+  "key": {
+    "org": {
+      "name": "YMCA of Metropolitan Chicago",
+      "orgId": "slug:ymca-metropolitan-chicago",
+      "ein": null
+    },
+    "program": {
+      "slug": "diabetes-prevention",
+      "name": "National DPP lifestyle program"
+    },
+    "geography": {
+      "geoId": "us-il-chicago",
+      "name": "Chicago, Illinois",
+      "beneficiaryBasis": "service-location"
+    },
+    "year": 2026,
+    "modelVersion": "v1"
+  },
+  "status": {
+    "tier": "draft",
+    "since": "2026-10-18",
+    "confidence": "very-low"
+  },
+  "template": "templates/lifestyle-diabetes-prevention.v1.json",
+  "parameterSets": [
+    "parameters/us-il-chicago/lifestyle-diabetes-prevention.json"
+  ],
+  "inputs": {},
+  "scope": {
+    "counterfactual": "Illinois Medicaid and other payers continue to fund eligible enrollees.",
+    "templateFitNote": "Org attachment is nominal: YMCA of Metropolitan Chicago's own DPP price and status were not found."
+  },
+  "cost": {
+    "currency": "USD",
+    "priceYear": 2026,
+    "boundary": "unit-cost-judgment"
+  },
+  "margin": {
+    "basis": "marginal",
+    "adjustments": [
+      "fundingAdditionality"
+    ]
+  },
+  "fundingRoom": {
+    "status": "unverified",
+    "nextEvidence": "Whether YMCA of Metro Chicago runs a CDC-recognized DPP now, its price, and unfunded seats."
+  },
+  "provenance": {
+    "sessions": [
+      {
+        "sessionId": "open-botec-localization-20261018",
+        "workerId": "claude-opus-open-botec-design",
+        "role": "localization",
+        "startedAt": "2026-10-18T18:37:21Z",
+        "endedAt": "2026-10-18T18:38:10Z",
+        "model": {
+          "id": "claude-opus-5-5",
+          "name": "Claude Opus 5.5",
+          "evidence": "Runtime system prompt of the open-botec design session"
+        },
+        "evidence": "docs/open-botec/localization-test.md"
+      }
+    ],
+    "audits": []
+  },
+  "conflictOfInterest": {
+    "declared": false,
+    "authorRelationship": "none",
+    "selfSubmitted": false
+  }
+}

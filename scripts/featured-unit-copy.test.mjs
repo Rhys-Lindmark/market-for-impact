@@ -57,7 +57,8 @@ test('32 card renderings use one body paragraph, money-only emphasis and report 
     assert.match(html,/data-daly-comparison/);
     assert.match(html,/Impact-estimate source and assumptions/);
     assert.equal(html.includes('data-native-unit'),estimate.priceUSD!==null);
-    assert.match(html,/<br\/><span data-organization-budget=/);
+    assert.doesNotMatch(html,/<br\s*\/?\s*>/);
+    assert.match(html,/<\/sup> <span data-organization-budget=/);
     assert.match(html,/href="\/report#annual-expenses"/);
     assert.match(html,/Annual-budget source and scope/);
   }

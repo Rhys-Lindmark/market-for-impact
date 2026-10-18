@@ -38,7 +38,7 @@ export default function EditionDonorHome({id,label,reports}:{id:string;label:str
      <div><p className="sf-home-eyebrow">RESEARCH LEAD {i+1} OF 4</p><h2>{report.organization}</h2>
       <div className="sf-home-charity-body">
        <section><h3>Overview</h3><p>{report.summary.what.join(' ')}</p></section>
-       <section><h3>Cost-effectiveness</h3><NativeUnitCost estimate={nativeUnitForReport(report)} reportHref={canonicalBase+editionReportPath(report)} comparisonPrice={formatEditionReportPrice(report)} budget={featuredOrganizationBudget(report)}/><p>{report.stage==='alpha'?'Initial review.':'In-depth review.'}{reportPrice(report)===null?' Retained historical reference; a current combined estimate is unavailable.':''}</p></section>
+       <section><h3>Cost-effectiveness</h3><NativeUnitCost estimate={nativeUnitForReport(report)} reportHref={canonicalBase+editionReportPath(report)} comparisonPrice={formatEditionReportPrice(report)} budget={featuredOrganizationBudget(report)}/>{(report.stage==='alpha'||reportPrice(report)===null)&&<p>{report.stage==='alpha'?'Initial review.':''}{reportPrice(report)===null?' Retained historical reference; a current combined estimate is unavailable.':''}</p>}</section>
        <section><h3>Why investigate</h3><p>{report.summary.strengths[0]}</p></section>
        <section><h3>Main reservation</h3><p>{report.summary.reservations[0]}</p></section>
        <section><h3>Organization and research</h3><div className="sf-home-org-card"><h4>{report.organization}</h4><a className="sf-home-report" href={canonicalBase+editionReportPath(report)}>Full research report</a></div></section>

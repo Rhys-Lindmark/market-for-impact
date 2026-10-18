@@ -12,7 +12,8 @@ test('ten complete summaries use the requested structure and evidence links',()=
   assert.ok(row.monitoring.length>100&&row.qualitative.length>100);
   assert.ok(row.cost.join(' ').includes('$'));
   assert.ok(row.sources.length>=2&&row.sources.every(url=>new URL(url).protocol==='https:'));
-  assert.doesNotMatch(JSON.stringify(row),/\$100,000|whole-gift/);
+  // Since 2026-10-01 some summaries state per-$100,000 results explicitly as illustrative scaling; they must never read as a gift offer.
+  assert.doesNotMatch(JSON.stringify(row).replaceAll('illustrative $100,000',''),/\$100,000|whole-gift/);
  }
 });
 test('ReCARES service ratios and conditional benefit are not device promises',()=>{

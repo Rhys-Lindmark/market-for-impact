@@ -23,7 +23,8 @@ test('Self-Help single ranking adapter is conditional SF-resident course, not or
  assert.match(read('app/charities/self-help-for-the-elderly/page.tsx'),/selfhelp-current-report/);
  assert.match(read('app/san-francisco/page.tsx'),/self-help-for-the-elderly/);assert.match(read('app/san-francisco/page.tsx'),/ordinary-donation expected value unknown/);
  assert.match(read('app/san-francisco/all/page.tsx'),/researchListDescription/);
- assert.match(read('app/san-francisco/all/page.tsx'),/impactUnitExplanation/);
+ // The unit explanation moved into the shared ResearchListIntro when the city lists were unified (4d0e56b, 2026-10-18).
+ assert.match(read('app/san-francisco/all/page.tsx'),/ResearchListIntro/);assert.match(read('components/ResearchListIntro.tsx'),/impactUnitExplanation/);
 });
 test('Self-Help finances and actual closed timing retain evidence limits, no abandoned-time credit',()=>{
  const record=JSON.parse(read('data/research-expenses.json')).organizations['self-help-for-the-elderly'];assert.equal(expenseSummary(record).average,32376728.333333332);assert.match(record.note,/not original-return verified/);

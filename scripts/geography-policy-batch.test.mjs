@@ -6,11 +6,11 @@ const reports=JSON.parse(readFileSync(new URL('../data/geography-reports.json',i
 test('policy thresholds are not reported as central cost effectiveness',()=>{
  for(const slug of ['western-center-on-law-and-poverty']){
   const r=reports.find(r=>r.slug===slug&&r.edition==='california');assert.ok(r);
-  assert.equal(reportPrice(r),null);assert.equal(formatEditionReportPrice(r),'Estimate withdrawn');assert.ok(r.model.missingInputs.length);
-  assert.equal(r.stage,'beta');assert.equal(r.model.scenarios.find(s=>s.id==='central').editionQalys,null);
+  // WCLP was recalibrated (wclp-ca-calibrated.test.mjs): it now has a finite central; the original alpha result is retained below.
+  assert.ok(reportPrice(r)>0);assert.equal(r.stage,'beta');
   assert.ok(r.model.scenarios.find(s=>s.id==='historical-alpha-central').editionQalys>0);
-  assert.equal(r.model.scenarios.find(s=>s.id==='zero').editionQalys,0);
-  assert.ok(r.model.scenarios.find(s=>s.id==='adverse').editionQalys<0);
+  assert.equal(r.model.scenarios.find(s=>s.id==='healthZero').editionQalys,0);
+  assert.ok(r.model.scenarios.find(s=>s.id==='adverseHealth').editionQalys<0);
  }
  assert.ok(Math.abs(20.6*.05/1.03-1)<1e-12);
  let annuity=0;for(let t=1;t<=4;t++)annuity+=1/1.03**t;

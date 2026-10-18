@@ -8,10 +8,10 @@ Manager/integrator: root. Implementer: native_unit_catalog (read-only extraction
 
 - [x] 1. Scope and evidence: 32/32 card entries reviewed. 29 have reproducible numerator, denominator, boundary and report/source reference. Human explicitly chose existing DALY-only for the three unsupported native outputs (Cultivando, Air Alliance Houston, LA CCA); no invented native denominator.
 - [x] 2. Implementation: shared backend calculation/formatting and reusable cost-line component on both homepage renderers; original DALY values remain intact. Separate observed delivery averages from modeled service/event equivalents.
-- [ ] 3. Verification: selection coverage, exact arithmetic, invalid/missing/zero controls, unchanged scientific inputs, all eight routes, mobile/tablet layout and production build.
-- [ ] 4. Release: published version, live 8/8 route verification, GitHub/local main integration preserving concurrent work; owned server/worktree/archive cleaned.
+- [x] 3. Verification: selection coverage, exact arithmetic, invalid/missing/zero controls, unchanged scientific inputs, all eight routes, mobile/tablet layout and production build.
+- [x] 4. Release: published version, live 8/8 route verification, GitHub/local main integration preserving concurrent work; owned server/worktree/archive cleaned.
 
-Current phase: 3. Verification. No new organization research or model calibration.
+Current phase: complete. No new organization research or model calibration.
 
 ## Evidence and progress
 
@@ -26,4 +26,8 @@ Current phase: 3. Verification. No new organization research or model calibratio
 - Preview: isolated release, port3107, retained execution session78032, `npm run dev -- --port3107`; graceful shutdown via session interrupt before release cleanup. Disk phase check:122MB task worktree, about21GiB free, shared dependencies unchanged.
 - Final console review caught one duplicate CA CCA source link/key, removed before packaging and covered by a source-ID uniqueness assertion. The first build was interrupted before commit/publication to apply that correction; the final build must use corrected source.
 
-Remaining: production build, publication/live verification and teardown. Original report research provenance/counts/prices remain unchanged; this feature's extraction/testing is not represented as recovered or additional research time in reports.
+- Production build passed. Published Sites525 from source5b90cef15611326e9cfde9dfe0974fb7c642d53c; deployment succeeded2026-10-18T16:50:06Z. Live custom-domain verification: all eight pages HTTP200, four featured cards each,29 numeric native-unit lines total, all32 card-specific DALY comparisons retained, no captions. The three DALY-only fallbacks are Denver Cultivando, Houston Air Alliance Houston and LA CCA, per direct human direction.
+- Live verification checks individual card price text after stripping SSR comment markers rather than counting raw whole-page `per DALY` substrings (source titles can also contain the phrase). All eight card-level checks passed.
+- Integration preserved the separately committed city-theory work on main. Temporary release worktree/build and roughly46MB deployment archive removed after verified source push/publication; shared dependency symlink target retained. Preview session stopped and port3107 no longer listening. Visual verification screenshots retained in task temp storage. Completion log is a docs-only main commit after the immutable deployed source.
+
+Remaining: none for this feature. Original report research provenance/counts/prices remain unchanged; this feature's extraction/testing is not represented as recovered or additional research time in reports. The paused research project remains untouched.

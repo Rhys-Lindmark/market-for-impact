@@ -1,16 +1,11 @@
-type Estimate={key:string;line:string;basis:string;scope:string;priceUSD:number|null;costUSD:number|null;units:number|null;denominatorLabel?:string;sources:{id:string;title:string;url:string}[]};
-const money=(n:number)=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:2}).format(n);
-const count=(n:number)=>new Intl.NumberFormat('en-US',{maximumSignificantDigits:6}).format(n);
+import {impactMetric} from '@/lib/impact-metric.mjs';
+import {formatNativeUnitMoney} from '@/lib/featured-unit-costs.mjs';
 
-export default function NativeUnitCost({estimate,reportHref}:{estimate:Estimate;reportHref:string}){
-  // Keep only the existing DALY line when no defensible native denominator exists.
-  if(estimate.priceUSD===null)return null;
-  return <div className="sf-home-native-unit" data-native-unit={estimate.key} data-native-price={estimate.priceUSD??undefined}>
-    <p><strong>{estimate.line}</strong><span className="sf-home-native-basis">{estimate.basis}</span></p>
-    <details><summary>Calculation and scope</summary>
-      {estimate.costUSD!==null&&estimate.units!==null&&estimate.priceUSD!==null&&<p data-native-calculation>{money(estimate.costUSD)} ÷ {count(estimate.units)} {estimate.denominatorLabel} ≈ {money(estimate.priceUSD)} per unit, before headline rounding.</p>}
-      <p>{estimate.scope}</p>
-      <p><a href={reportHref}>Report assumptions</a>{estimate.sources.map(source=><span key={source.id}> · <a href={source.url}>{source.title}</a></span>)}</p>
-    </details>
-  </div>;
+type Estimate={key:string;lead?:string;unit?:string;scope:string;priceUSD:number|null};
+export default function NativeUnitCost({estimate,reportHref,comparisonPrice}:{estimate:Estimate;reportHref:string;comparisonPrice:string}){
+  const hasNative=estimate.priceUSD!==null;
+  return <p className="sf-home-cost-effectiveness" data-cost-effectiveness>
+    {hasNative&&<><span data-native-unit={estimate.key} data-native-price={estimate.priceUSD}>{estimate.lead??'About'} <strong>{formatNativeUnitMoney(estimate.priceUSD!)}</strong> {estimate.unit}{estimate.unit?.endsWith('.')?'':'.'}</span><sup><a href={reportHref} title={estimate.scope} aria-label="Service-cost source and assumptions">[1]</a></sup>{' '}</>}
+    <span data-daly-comparison>We estimate <strong>{comparisonPrice}</strong> per {impactMetric().label}.</span><sup><a href={reportHref} aria-label="Impact-estimate source and assumptions">[{hasNative?'2':'1'}]</a></sup>
+  </p>;
 }

@@ -1,0 +1,37 @@
+name: Cloudflare migration build
+
+on:
+  pull_request:
+    paths:
+      - 'app/**'
+      - 'components/**'
+      - 'lib/**'
+      - 'db/**'
+      - 'data/**'
+      - 'drizzle/**'
+      - '*config*'
+      - 'package*.json'
+      - 'scripts/cloudflare*'
+      - '.github/workflows/cloudflare-build.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cloudflare-build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: node --test scripts/research-effort.test.mjs scripts/cloudflare.test.mjs
+      - run: npm run build:cloudflare

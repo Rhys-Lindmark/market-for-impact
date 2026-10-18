@@ -101,7 +101,7 @@ export default function SanFranciscoHome(){
         <div><p className="sf-home-eyebrow">RESEARCH LEAD {i+1} OF 4</p><h2>{pick.program}</h2>
           <div className="sf-home-charity-body">
             <section><h3>Overview</h3><p>{pick.overview}</p></section>
-            <section><h3>Cost-effectiveness</h3><NativeUnitCost estimate={nativeUnitForSF(pick.slug)} reportHref={`${root}/charities/${pick.slug}`}/><p><strong>{formatImpactPrice(pick.price)} per {impactMetric().label}</strong>, modeled.</p><p className="sf-home-scope">{pick.scope}</p></section>
+            <section><h3>Cost-effectiveness</h3><NativeUnitCost estimate={nativeUnitForSF(pick.slug)} reportHref={`${root}/charities/${pick.slug}`} comparisonPrice={formatImpactPrice(pick.price)}/></section>
             <section><h3>Why investigate</h3><p>{pick.evidence}</p></section>
             <section><h3>Before recommending a grant</h3><p>{pick.next}</p></section>
             <section><h3>Organization and research</h3><div className="sf-home-org-card"><h4>{pick.name}</h4><a className="sf-home-report" href={`${root}/charities/${pick.slug}`}>Full research report</a></div></section>

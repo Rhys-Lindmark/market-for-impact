@@ -17,20 +17,18 @@ for(const [edition,estimates]of Object.entries(expected)){
     for(let i=0;i<estimates.length;i++){
       const estimate=estimates[i],card=cards.nth(i),unit=card.locator('[data-native-unit]');
       if(estimate.priceUSD===null){await expect(unit).toHaveCount(0);await expect(card).toContainText('per DALY');continue;}
-      await expect(unit.locator('strong')).toHaveText(estimate.line);
+      await expect(unit).toHaveText(estimate.line+(estimate.line.endsWith('.')?'':'.'));
       await expect(unit).toHaveAttribute('data-native-price',String(estimate.priceUSD));
-      await expect(unit).toContainText(estimate.basis);
-      await unit.locator('summary').click();
-      await expect(unit.locator('[data-native-calculation]')).toContainText('÷');
-      const calculation=await unit.locator('[data-native-calculation]').textContent();
-      const displayedUnits=calculation!.match(/÷\s+([\d,.]+)/)![1];
-      expect(Number(displayedUnits.replaceAll(',',''))).toBeGreaterThan(0);
-      await expect(unit).toContainText(estimate.scope);
-      await expect(unit.getByRole('link',{name:'Report assumptions'})).toHaveAttribute('href',/^https:\/\/ai\.rhyslindmark\.com\/givebetter\//);
-      await unit.locator('summary').click();
+      const cost=card.locator('[data-cost-effectiveness]');
+      await expect(cost.locator('details, summary')).toHaveCount(0);
+      await expect(cost).not.toContainText(estimate.basis);
+      await expect(cost.getByRole('link',{name:'Service-cost source and assumptions'})).toHaveAttribute('href',/^https:\/\/ai\.rhyslindmark\.com\/givebetter\//);
+      const bodySize=await card.locator('.sf-home-charity-body section').first().locator('p').evaluate(el=>getComputedStyle(el).fontSize);
+      expect(await cost.evaluate(el=>getComputedStyle(el).fontSize)).toBe(bodySize);
+      expect(await unit.locator('strong').evaluate(el=>getComputedStyle(el).fontSize)).toBe(bodySize);
       if(edition!=='san-francisco'){
         const report=reports.reports.find(r=>r.edition+'/'+r.slug===estimate.key)!;
-        await expect(card).toContainText(formatImpactPrice(reportPrice(report))+' per DALY');
+        await expect(card.locator('[data-daly-comparison]')).toHaveText('We estimate '+formatImpactPrice(reportPrice(report))+' per DALY.');
       }
     }
     expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);

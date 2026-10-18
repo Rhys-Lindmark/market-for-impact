@@ -1,5 +1,7 @@
 # Market for Impact
 
+Claude Opus and Codex may push reviewed changes. See [publishing](docs/publishing.md) for the Cloudflare migration, deployment commands, and current public GiveBetter address.
+
 Market for Impact is a source-traceable market of philanthropic opportunities and funding flows. It starts with a donor question: **what can the next dollar accomplish?**
 
 The product connects evaluator recommendations to disclosed grants while preserving evidence, native impact metrics, marginal funding room, model versions, uncertainty, and source freshness. The intended audience includes individual donors, foundation staff, researchers, and people at AI companies deciding where to give.

@@ -1,0 +1,85 @@
+{
+  "key": {
+    "org": {
+      "name": "Unassigned Chicago TJQMBB provider",
+      "orgId": "slug:unassigned-chicago-tjqmbb",
+      "ein": null
+    },
+    "program": {
+      "slug": "tjqmbb-course",
+      "name": "Hypothetical 24-week TJQMBB course"
+    },
+    "geography": {
+      "geoId": "us-il-chicago",
+      "name": "Chicago, Illinois",
+      "beneficiaryBasis": "service-location"
+    },
+    "year": 2026,
+    "modelVersion": "v1"
+  },
+  "status": {
+    "tier": "draft",
+    "since": "2026-10-18",
+    "confidence": "very-low"
+  },
+  "template": "templates/tai-chi-fall-prevention.v1.json",
+  "parameterSets": [
+    "parameters/us-il-chicago/tai-chi-fall-prevention.json"
+  ],
+  "inputs": {
+    "participantsPerCourse": {
+      "value": {
+        "p10": 15,
+        "p50": 15,
+        "p90": 15,
+        "shape": "fixed",
+        "basis": "convention"
+      },
+      "scope": "org",
+      "basis": "judgment",
+      "rationale": "No provider found; SF occupancy assumed."
+    }
+  },
+  "scope": {
+    "counterfactual": "No identified Chicago TJQMBB course; general senior exercise continues.",
+    "templateFitNote": "Geography-level price for the archetype. No organization was found, so this is not a giving recommendation."
+  },
+  "cost": {
+    "currency": "USD",
+    "priceYear": 2026,
+    "boundary": "unit-cost-judgment"
+  },
+  "margin": {
+    "basis": "marginal",
+    "adjustments": [
+      "additionality"
+    ]
+  },
+  "fundingRoom": {
+    "status": "none",
+    "nextEvidence": "Find a Chicago provider (Chicago DFSS senior centers, AgeOptions for suburban Cook)."
+  },
+  "provenance": {
+    "sessions": [
+      {
+        "sessionId": "open-botec-localization-20261018",
+        "workerId": "claude-opus-open-botec-design",
+        "role": "localization",
+        "startedAt": "2026-10-18T18:37:21Z",
+        "endedAt": "2026-10-18T18:38:10Z",
+        "model": {
+          "id": "claude-opus-5-5",
+          "name": "Claude Opus 5.5",
+          "evidence": "Runtime system prompt of the open-botec design session"
+        },
+        "evidence": "docs/open-botec/localization-test.md"
+      }
+    ],
+    "audits": []
+  },
+  "conflictOfInterest": {
+    "declared": false,
+    "authorRelationship": "none",
+    "selfSubmitted": false
+  }
+}

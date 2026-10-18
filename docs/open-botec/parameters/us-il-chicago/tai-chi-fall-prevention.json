@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "open-botec-params/0.1",
+  "geoId": "us-il-chicago",
+  "geoName": "Chicago, Illinois",
+  "archetypeId": "tai-chi-fall-prevention",
+  "templateVersion": "v1",
+  "values": {
+    "instructorHourlyCost": {
+      "value": {
+        "p10": 28,
+        "p50": 40,
+        "p90": 70,
+        "shape": "two-piece-lognormal",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "derived",
+      "rationale": "BLS OEWS May 2022 Chicago-Naperville-Elgin mean wage for fitness trainers and instructors $26.05/hour x about 1.3 benefits/overhead x about 1.15 wage growth to 2026 = about $39, rounded to $40. Upper bound allows a certified-instructor premium. SF's $60 was an assumption, not OEWS, so the SF-to-Chicago gap mixes method and place.",
+      "sources": [
+        {
+          "publisher": "US Bureau of Labor Statistics",
+          "title": "OEWS May 2022: 39-9031 Fitness Trainers and Aerobics Instructors",
+          "url": "https://www.bls.gov/oes/2022/may/oes399031.htm",
+          "published": "2023",
+          "retrieved": "2026-10-18",
+          "locator": "Chicago-Naperville-Elgin, IL-IN-WI mean hourly $26.05"
+        }
+      ]
+    },
+    "supportCostPerParticipant": {
+      "value": {
+        "p10": 100,
+        "p50": 200,
+        "p90": 400,
+        "shape": "two-piece-lognormal",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "judgment",
+      "rationale": "Transferred unchanged from SF; no Chicago room/licensing lookup."
+    },
+    "localTransfer": {
+      "value": {
+        "p10": 0.25,
+        "p50": 0.5,
+        "p90": 0.75,
+        "shape": "two-piece-logit",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "judgment",
+      "rationale": "Transferred unchanged from SF."
+    },
+    "additionality": {
+      "value": {
+        "p10": 0.25,
+        "p50": 0.5,
+        "p90": 0.75,
+        "shape": "two-piece-logit",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "judgment",
+      "rationale": "Transferred unchanged from SF; Title III-D funding through the Chicago Area Agency on Aging not looked up."
+    }
+  },
+  "provenance": {
+    "author": "Claude Opus 5.5 localization test (open-botec design session)",
+    "date": "2026-10-18",
+    "lookupMinutes": 0.8,
+    "notes": "Web-search lookups only, 18:37:21Z–18:38:10Z. See localization-test.md for what failed."
+  }
+}

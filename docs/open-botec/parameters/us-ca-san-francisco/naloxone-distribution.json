@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "open-botec-params/0.1",
+  "geoId": "us-ca-san-francisco",
+  "geoName": "San Francisco, California",
+  "archetypeId": "naloxone-distribution",
+  "templateVersion": "v1",
+  "values": {
+    "costPerDose": {
+      "value": {
+        "p10": 10,
+        "p50": 20,
+        "p90": 40,
+        "shape": "two-piece-lognormal",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "judgment",
+      "rationale": "About 2x the $9.61 planned bundle/target-dose benchmark, rounded, allowing extra outreach effort and delivery shortfalls. Not an SFAF quote.",
+      "sources": [
+        {
+          "publisher": "SF Health Commission",
+          "title": "Proposed SFAF agreement 1000032060",
+          "url": "https://www.sf.gov/sites/default/files/2024-05/HC%20Memo%20Memo%20-%20%20SFAF%2032060%20Final.pdf",
+          "published": "2024-06-04",
+          "retrieved": "2026-09-07",
+          "locator": "$250,000 annual budget, 26,016 target doses = $9.61 per target dose"
+        }
+      ]
+    },
+    "marginalYieldRetention": {
+      "value": {
+        "p10": 0.25,
+        "p50": 0.5,
+        "p90": 0.75,
+        "shape": "two-piece-logit",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "judgment",
+      "rationale": "Aggregate judgment for harder-to-reach expansion, displacement, reporting mismatch and repeat recipients in a heavily supplied SF market."
+    },
+    "additionalSurvivalPerReversal": {
+      "value": {
+        "p10": 0.005,
+        "p50": 0.02,
+        "p90": 0.05,
+        "shape": "two-piece-logit",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "judgment",
+      "rationale": "Credits one additional acute survivor per 50 retained reported reversals; spontaneous survival and alternative rescue are common in SF."
+    }
+  },
+  "provenance": {
+    "author": "Factored from legacy SF models by Claude Opus 5.5 (open-botec design session)",
+    "date": "2026-10-18",
+    "lookupMinutes": null,
+    "notes": "Values copied from the legacy SF model; no new research. Original research intervals live in data/research-effort.json."
+  }
+}

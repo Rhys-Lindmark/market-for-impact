@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "open-botec-params/0.1",
+  "geoId": "us-il-chicago",
+  "geoName": "Chicago, Illinois",
+  "archetypeId": "lifestyle-diabetes-prevention",
+  "templateVersion": "v1",
+  "values": {
+    "costPerParticipant": {
+      "value": {
+        "p10": 250,
+        "p50": 475,
+        "p90": 950,
+        "shape": "two-piece-lognormal",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "observed",
+      "rationale": "Central = a Berwyn, IL YMCA flyer price of $475 per year (undated, a different Y association than YMCA of Metro Chicago). Price, not cost; bounds are judgment.",
+      "sources": [
+        {
+          "publisher": "YMCA (Berwyn, IL) via sportscarnival.com",
+          "title": "DPP Flyer 2023",
+          "url": "https://sportscarnival.com/userfiles/35/files/DPP%20Flyer%202023.pdf",
+          "retrieved": "2026-10-18",
+          "locator": "$475 for the year (search-result summary)"
+        }
+      ]
+    },
+    "fundingAdditionality": {
+      "value": {
+        "p10": 0.2,
+        "p50": 0.5,
+        "p90": 0.8,
+        "shape": "two-piece-logit",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "judgment",
+      "rationale": "Illinois Medicaid covers National DPP (coverage from 2021; fee-for-service claims opened Aug 2024) for members aged 18 to 64, similar to Medi-Cal in SF, so the SF distribution is kept.",
+      "sources": [
+        {
+          "publisher": "Illinois HFS",
+          "title": "Provider notice: diabetes prevention and DSMES claims",
+          "url": "https://hfs.illinois.gov/medicalproviders/notices/notice.prn240805c.html",
+          "published": "2024-08-05",
+          "retrieved": "2026-10-18"
+        }
+      ]
+    },
+    "transfer": {
+      "value": {
+        "p10": 0.25,
+        "p50": 0.75,
+        "p90": 1.0,
+        "shape": "two-piece-logit",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "judgment",
+      "rationale": "Transferred unchanged from SF; provider recognition status not looked up."
+    }
+  },
+  "provenance": {
+    "author": "Claude Opus 5.5 localization test (open-botec design session)",
+    "date": "2026-10-18",
+    "lookupMinutes": 0.8,
+    "notes": "Web-search lookups only, 18:37:21Z–18:38:10Z. See localization-test.md for what failed."
+  }
+}

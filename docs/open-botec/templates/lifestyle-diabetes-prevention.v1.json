@@ -1,0 +1,103 @@
+{
+  "schemaVersion": "open-botec-template/0.1",
+  "archetypeId": "lifestyle-diabetes-prevention",
+  "version": "v1",
+  "name": "CDC-recognized lifestyle-change diabetes prevention program (National DPP) for adults with prediabetes",
+  "causeArea": "chronic-disease",
+  "appliesWhen": [
+    "The marginal gift funds additional enrolled adults in a year-long group lifestyle program following the CDC National DPP curriculum (YMCA, community health centers, health departments).",
+    "Participants are adults with prediabetes or high risk; not children."
+  ],
+  "doesNotApplyWhen": [
+    "The program is a one-off nutrition class, food distribution, or diabetes self-management education for people who already have diabetes.",
+    "The gift funds a cohort an insurer (Medicare MDPP, Medicaid, employer plan) would otherwise pay for, unless fundingAdditionality reflects that."
+  ],
+  "nativeOutcome": {
+    "unit": "discounted kg-years of incremental weight loss",
+    "notes": "Weight loss relative to an offer-only control, summed over the years it persists. Diabetes cases averted would be a better native unit; v1 keeps the SF model's weight pathway."
+  },
+  "costDenominator": { "unit": "additional enrolled participant offer", "costParameter": "costPerParticipant" },
+  "formulas": {
+    "nativeOutcomesPerUnit": "fundingAdditionality * extraKg * transfer * discountedRetentionYears",
+    "qalyBridge": {
+      "bridgeId": "weight-loss-kg-year-to-qaly",
+      "version": "v1",
+      "qalysPerNativeOutcome": "utilityPerKg",
+      "notes": "Observational association of weight change with EQ-5D utility. Excludes diabetes-avoidance QALYs beyond what utility captures, so likely conservative for high-risk cohorts and generous for low-risk ones."
+    }
+  },
+  "parameters": {
+    "costPerParticipant": {
+      "scope": "local",
+      "label": "Donor cost per additional enrolled participant",
+      "unit": "USD per participant",
+      "lookup": {
+        "preferredSources": ["Provider's per-participant price or grant budget", "Medicare MDPP performance-payment schedule for the price year (an upper-bound reimbursement anchor, not cost)", "State Medicaid DPP fee schedule"],
+        "fallback": "SF distribution scaled by the local/SF BLS wage ratio for health educators, labeled transferred judgment.",
+        "judgmentGuide": "SF $200/$600/$1,200; central $600 is a judgment, not a YMCA quote."
+      }
+    },
+    "fundingAdditionality": {
+      "scope": "local",
+      "label": "Share of donor-funded enrollment that would not otherwise be funded",
+      "unit": "fraction",
+      "lookup": {
+        "preferredSources": ["Whether the state Medicaid program covers National DPP", "Whether the dominant local public employer/insurer pays the provider", "Provider waitlist or unfunded-cohort statement"],
+        "fallback": "SF distribution, flagged as transferred.",
+        "judgmentGuide": "SF 0.2/0.5/0.8 reflected Medi-Cal DPP coverage and an SF Health Service System YMCA partnership. Lower it where coverage is broad; raise it where payers do not cover DPP."
+      }
+    },
+    "transfer": {
+      "scope": "local",
+      "label": "Retention of trial effect in the local population and provider",
+      "unit": "fraction",
+      "lookup": {
+        "preferredSources": ["Provider's CDC DPRP recognition status (full plus vs pending)", "Local cohort completion and weight-loss outcomes"],
+        "fallback": "SF distribution, flagged as transferred.",
+        "judgmentGuide": "SF 0.25/0.75/1.0."
+      }
+    },
+    "extraKg": {
+      "scope": "universal",
+      "label": "Additional weight loss versus offer-only control",
+      "unit": "kg",
+      "default": {
+        "value": { "p10": 1.1, "p50": 2.3, "p90": 3.4, "shape": "two-piece-lognormal", "basis": "analyst-scenarios" },
+        "scope": "universal",
+        "basis": "transferred",
+        "rationale": "Randomized YMCA offer trial, with scenario spread.",
+        "sources": [{ "publisher": "American Journal of Public Health", "title": "Ackermann et al.: randomized YMCA offer trial", "url": "https://pubmed.ncbi.nlm.nih.gov/26378828/", "published": "2015-09-17", "retrieved": "2026-09-07" }]
+      }
+    },
+    "discountedRetentionYears": {
+      "scope": "universal",
+      "label": "Discounted years over which the weight difference persists",
+      "unit": "discounted years",
+      "default": {
+        "value": { "p10": 0.48549, "p50": 2.3713, "p90": 4.58021, "shape": "two-piece-lognormal", "basis": "analyst-scenarios" },
+        "scope": "universal",
+        "basis": "derived",
+        "rationale": "Sum over years t of retention[t]/1.03^(t+0.5) for the SF retention profiles [0.25,0.25], [0.5,1,0.75,0.25] and [0.5,1,1,1,1,0.5]. Embeds the 3% discount convention; a v2 template should split persistence from discounting.",
+        "sources": [{ "publisher": "Diabetes Care", "title": "Kuo et al.: prospective NDPP cost and QALY analysis", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12178621/", "published": "2024-11-20", "retrieved": "2026-09-07" }]
+      }
+    },
+    "utilityPerKg": {
+      "scope": "universal",
+      "label": "QALY weight gain per kg of weight loss per year",
+      "unit": "QALY per kg-year",
+      "default": {
+        "value": { "p10": 0.0007, "p50": 0.0014, "p90": 0.002, "shape": "two-piece-lognormal", "basis": "analyst-scenarios" },
+        "scope": "universal",
+        "basis": "transferred",
+        "rationale": "Observational utility association.",
+        "sources": [{ "publisher": "Obesity", "title": "Ackermann et al.: weight change and health utility", "url": "https://onlinelibrary.wiley.com/doi/10.1038/oby.2009.114", "published": "2009", "retrieved": "2026-09-07" }]
+      }
+    }
+  },
+  "excludedEffects": ["Diabetes cases averted beyond the utility association", "Healthcare savings", "Program harms (set to zero in SF)"],
+  "nullBoundary": "If the cohort would have been funded anyway or weight loss does not persist, benefit is zero and there is no finite price.",
+  "origin": {
+    "factoredFrom": "data/san-francisco/ymca-dpp-cea-v1.json",
+    "reproduces": "At all p50 inputs, reproduces the SF central $2,095,452 per 10 QALYs. Change: the variable-length retention arrays become one derived scalar, and harmQalys (0 in every SF scenario) is dropped."
+  }
+}

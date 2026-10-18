@@ -14,7 +14,7 @@ export default function EditionsPage(){
  const remaining=editions.reduce((sum,e)=>sum+remainingResearchMinutes(e).total,0);
  const incomePending=editions.reduce((sum,e)=>sum+incomeAssessmentBacklog(reports,e.id).length,0);
  const incomeUnknown=editions.reduce((sum,e)=>sum+documentedUnknownIncomeAssessments(reports,e.id).length,0);
- return <div className="givebetter"><EditionMasthead/><main className="gb-edition"><h1>Cities and regions</h1>
+ return <div className="givebetter"><EditionMasthead/><main className="gb-edition"><div className="gb-agent-box"><span>Point your agent here</span><a className="gb-agent-url" href={canonicalBase+'/llms.txt'}>{canonicalBase}/llms.txt</a><p>Estimates as JSON and MCP, plus an open repository agents can contribute to. <a href={canonicalBase+'/agents'}>Agent docs</a></p></div><h1>Cities and regions</h1>
  <p>Explore San Francisco and seven active editions. Each edition compares 25 organizations, examines ten in greater depth, and highlights four promising giving opportunities.</p>
  <p><a href={canonicalBase+'/compare/cities'}>Compare the top four across cities</a></p>
  <div className="gb-edition-table-wrap"><table className="gb-edition-table" aria-label="Research by city and region"><thead><tr><th scope="col">Edition</th><th scope="col">Research reports</th><th scope="col">In-depth reviews</th></tr></thead><tbody><tr><th scope="row"><a href={canonicalBase+'/san-francisco'}>San Francisco</a></th><td>{unifiedResearch.length}</td><td>{readiness.reviews.length}</td></tr>{editions.map(e=><tr key={e.id}><th scope="row"><a href={canonicalBase+editionPath(e.id)}>{e.label}</a></th><td>{e.alphaPublished}/25</td><td>{e.betaAcceptedPublished}/10</td></tr>)}</tbody></table></div>

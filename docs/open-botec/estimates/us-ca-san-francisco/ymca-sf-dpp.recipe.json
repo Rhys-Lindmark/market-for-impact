@@ -1,0 +1,70 @@
+{
+  "key": {
+    "org": {
+      "name": "YMCA of Greater San Francisco",
+      "orgId": "slug:ymca-greater-sf",
+      "ein": null
+    },
+    "program": {
+      "slug": "diabetes-prevention",
+      "name": "Additional SF diabetes-prevention offers"
+    },
+    "geography": {
+      "geoId": "us-ca-san-francisco",
+      "name": "San Francisco, California",
+      "beneficiaryBasis": "service-location"
+    },
+    "year": 2026,
+    "modelVersion": "v1"
+  },
+  "status": {
+    "tier": "draft",
+    "since": "2026-10-18",
+    "confidence": "very-low"
+  },
+  "template": "templates/lifestyle-diabetes-prevention.v1.json",
+  "parameterSets": [
+    "parameters/us-ca-san-francisco/lifestyle-diabetes-prevention.json"
+  ],
+  "inputs": {},
+  "scope": {
+    "counterfactual": "Medi-Cal and SFHSS-funded cohorts continue; the gift funds additional adult cohorts."
+  },
+  "cost": {
+    "currency": "USD",
+    "priceYear": 2026,
+    "boundary": "unit-cost-judgment"
+  },
+  "margin": {
+    "basis": "marginal",
+    "adjustments": [
+      "fundingAdditionality"
+    ]
+  },
+  "fundingRoom": {
+    "status": "unverified",
+    "nextEvidence": "Verified unfunded cohort with per-participant budget."
+  },
+  "provenance": {
+    "sessions": [
+      {
+        "sessionId": "legacy-unrecorded",
+        "workerId": "unknown",
+        "role": "author",
+        "startedAt": null,
+        "endedAt": null,
+        "model": null,
+        "evidence": "Legacy model data/san-francisco/ymca-dpp-cea-v1.json; interval not recorded in data/research-effort.json. Factoring into this template: open-botec design session 2026-10-18."
+      }
+    ],
+    "audits": []
+  },
+  "conflictOfInterest": {
+    "declared": false,
+    "authorRelationship": "none",
+    "selfSubmitted": false
+  },
+  "links": {
+    "legacyModel": "data/san-francisco/ymca-dpp-cea-v1.json"
+  }
+}

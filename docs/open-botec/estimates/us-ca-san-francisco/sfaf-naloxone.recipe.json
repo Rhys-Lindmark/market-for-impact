@@ -1,0 +1,116 @@
+{
+  "key": {
+    "org": {
+      "name": "San Francisco AIDS Foundation",
+      "orgId": "slug:sf-aids-foundation",
+      "ein": null
+    },
+    "program": {
+      "slug": "naloxone-outreach",
+      "name": "Additional targeted overdose-prevention outreach and naloxone distribution"
+    },
+    "geography": {
+      "geoId": "us-ca-san-francisco",
+      "name": "San Francisco, California",
+      "beneficiaryBasis": "service-location"
+    },
+    "year": 2025,
+    "modelVersion": "v1"
+  },
+  "status": {
+    "tier": "draft",
+    "since": "2026-10-18",
+    "confidence": "very-low"
+  },
+  "template": "templates/naloxone-distribution.v1.json",
+  "parameterSets": [
+    "parameters/us-ca-san-francisco/naloxone-distribution.json"
+  ],
+  "inputs": {
+    "reportedReversals": {
+      "value": {
+        "p10": 2852,
+        "p50": 2852,
+        "p90": 2852,
+        "shape": "fixed",
+        "basis": "convention"
+      },
+      "scope": "org",
+      "basis": "observed",
+      "sources": [
+        {
+          "publisher": "San Francisco AIDS Foundation",
+          "title": "Overdose prevention and response; 2025 service reporting",
+          "url": "https://www.sfaf.org/health-services/overdose-prevention-response/",
+          "retrieved": "2026-09-07",
+          "locator": "2,852 reversals reported, 2025"
+        }
+      ]
+    },
+    "reportedDoses": {
+      "value": {
+        "p10": 41399,
+        "p50": 41399,
+        "p90": 41399,
+        "shape": "fixed",
+        "basis": "convention"
+      },
+      "scope": "org",
+      "basis": "observed",
+      "sources": [
+        {
+          "publisher": "San Francisco AIDS Foundation",
+          "title": "Overdose prevention and response; 2025 service reporting",
+          "url": "https://www.sfaf.org/health-services/overdose-prevention-response/",
+          "retrieved": "2026-09-07",
+          "locator": "41,399 doses distributed, 2025"
+        }
+      ]
+    }
+  },
+  "scope": {
+    "counterfactual": "Existing SF public naloxone supply and other distributors continue; the gift funds additional outreach doses.",
+    "excluded": [
+      "Nonfatal brain injury",
+      "Family benefits",
+      "Treatment navigation"
+    ]
+  },
+  "cost": {
+    "currency": "USD",
+    "priceYear": 2025,
+    "boundary": "unit-cost-judgment"
+  },
+  "margin": {
+    "basis": "average-adjusted-to-marginal",
+    "adjustments": [
+      "marginalYieldRetention"
+    ]
+  },
+  "fundingRoom": {
+    "status": "unverified",
+    "nextEvidence": "Current additional outreach plan, executed costs, unmet coverage and recipient-linked rescue records."
+  },
+  "provenance": {
+    "sessions": [
+      {
+        "sessionId": "legacy-unrecorded",
+        "workerId": "unknown",
+        "role": "author",
+        "startedAt": null,
+        "endedAt": null,
+        "model": null,
+        "evidence": "Legacy model data/san-francisco/sfaf-naloxone-cea-v1.json; interval not recorded in data/research-effort.json. Factoring into this template: open-botec design session 2026-10-18."
+      }
+    ],
+    "audits": []
+  },
+  "conflictOfInterest": {
+    "declared": false,
+    "authorRelationship": "none",
+    "selfSubmitted": false
+  },
+  "links": {
+    "legacyModel": "data/san-francisco/sfaf-naloxone-cea-v1.json"
+  }
+}

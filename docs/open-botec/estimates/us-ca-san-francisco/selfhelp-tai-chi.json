@@ -1,0 +1,290 @@
+{
+  "schemaVersion": "open-botec/0.1",
+  "id": "slug:self-help-for-the-elderly/tjqmbb-course/tai-chi-fall-prevention/us-ca-san-francisco/2026/v1",
+  "key": {
+    "org": {
+      "name": "Self-Help for the Elderly",
+      "orgId": "slug:self-help-for-the-elderly",
+      "ein": null
+    },
+    "program": {
+      "slug": "tjqmbb-course",
+      "name": "Proposed therapeutic tai chi fall-prevention course"
+    },
+    "geography": {
+      "geoId": "us-ca-san-francisco",
+      "name": "San Francisco, California",
+      "beneficiaryBasis": "service-location"
+    },
+    "year": 2026,
+    "modelVersion": "v1",
+    "archetypeId": "tai-chi-fall-prevention"
+  },
+  "status": {
+    "tier": "draft",
+    "since": "2026-10-18",
+    "confidence": "very-low"
+  },
+  "template": {
+    "archetypeId": "tai-chi-fall-prevention",
+    "templateVersion": "v1",
+    "parameterSets": [
+      "parameters/us-ca-san-francisco/tai-chi-fall-prevention.json"
+    ],
+    "overrides": []
+  },
+  "scope": {
+    "counterfactual": "Existing six-week Sun-style classes continue; the gift funds a new 24-week TJQMBB course."
+  },
+  "inputs": {
+    "classesPerCourse": {
+      "label": "Classes per course",
+      "value": {
+        "p10": 48,
+        "p50": 48,
+        "p90": 48,
+        "shape": "fixed",
+        "basis": "convention"
+      },
+      "scope": "universal",
+      "basis": "transferred",
+      "rationale": "24 weeks x 2 classes, per the trial protocol.",
+      "sources": [
+        {
+          "publisher": "Li et al.",
+          "title": "Therapeutic tai ji quan randomized trial",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30208396/",
+          "published": "2018",
+          "retrieved": "2026-09-07"
+        }
+      ],
+      "from": "templates/tai-chi-fall-prevention.v1.json"
+    },
+    "paidHoursPerClass": {
+      "label": "Paid instructor preparation and delivery hours per class",
+      "value": {
+        "p10": 2,
+        "p50": 2,
+        "p90": 2,
+        "shape": "fixed",
+        "basis": "convention"
+      },
+      "scope": "universal",
+      "basis": "judgment",
+      "rationale": "SF planning assumption: one hour delivery plus one hour preparation/travel.",
+      "from": "templates/tai-chi-fall-prevention.v1.json"
+    },
+    "hypothesizedEndpointUtility": {
+      "label": "Hypothesized endpoint utility gain versus stretching",
+      "value": {
+        "p10": 0.01,
+        "p50": 0.04,
+        "p90": 0.06,
+        "shape": "two-piece-lognormal",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "universal",
+      "basis": "judgment",
+      "rationale": "Independent calibration of .04. The source table labels .04 as incremental QALYs while its prose describes a utility difference; reading it as integrated QALYs would lower the price 4x. Unit ambiguity is unresolved.",
+      "sources": [
+        {
+          "publisher": "Li and Harmer et al.",
+          "title": "Trial economic evaluation",
+          "url": "https://academic.oup.com/biomedgerontology/article/74/9/1504/5284888",
+          "published": "2019-01-10",
+          "retrieved": "2026-09-07"
+        }
+      ],
+      "from": "templates/tai-chi-fall-prevention.v1.json"
+    },
+    "horizonYears": {
+      "label": "Modeled follow-up horizon",
+      "value": {
+        "p10": 0.5,
+        "p50": 0.5,
+        "p90": 0.5,
+        "shape": "fixed",
+        "basis": "convention"
+      },
+      "scope": "universal",
+      "basis": "judgment",
+      "rationale": "Rounded six-month horizon; no persistence beyond follow-up.",
+      "from": "templates/tai-chi-fall-prevention.v1.json"
+    },
+    "onsetFraction": {
+      "label": "Average fraction of endpoint benefit realized over follow-up",
+      "value": {
+        "p10": 0.25,
+        "p50": 0.5,
+        "p90": 0.5,
+        "shape": "two-piece-logit",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "universal",
+      "basis": "judgment",
+      "rationale": "0.5 assumes linear growth from zero to endpoint.",
+      "from": "templates/tai-chi-fall-prevention.v1.json"
+    },
+    "instructorHourlyCost": {
+      "label": "Loaded instructor cost per paid hour",
+      "value": {
+        "p10": 30,
+        "p50": 60,
+        "p90": 120,
+        "shape": "two-piece-lognormal",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "judgment",
+      "rationale": "SF assumed $60/hour paid preparation and delivery; spread is analyst judgment, not wage data.",
+      "from": "parameters/us-ca-san-francisco/tai-chi-fall-prevention.json"
+    },
+    "supportCostPerParticipant": {
+      "label": "Licensing, room, outreach and screening cost per participant",
+      "value": {
+        "p10": 100,
+        "p50": 200,
+        "p90": 400,
+        "shape": "two-piece-lognormal",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "judgment",
+      "rationale": "Licensing, room and screening allowance; not priced.",
+      "from": "parameters/us-ca-san-francisco/tai-chi-fall-prevention.json"
+    },
+    "localTransfer": {
+      "label": "Local fidelity and population retention of the trial effect",
+      "value": {
+        "p10": 0.25,
+        "p50": 0.5,
+        "p90": 0.75,
+        "shape": "two-piece-logit",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "judgment",
+      "rationale": "Proposed curriculum, high-risk recruitment and realistic local alternatives; reference is stretching.",
+      "from": "parameters/us-ca-san-francisco/tai-chi-fall-prevention.json"
+    },
+    "additionality": {
+      "label": "Share of funded places that are net-new capacity",
+      "value": {
+        "p10": 0.25,
+        "p50": 0.5,
+        "p90": 0.75,
+        "shape": "two-piece-logit",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "judgment",
+      "rationale": "Assumed net added places after replacement funding; no verified offer.",
+      "from": "parameters/us-ca-san-francisco/tai-chi-fall-prevention.json"
+    },
+    "participantsPerCourse": {
+      "label": "Enrolled participants per course",
+      "value": {
+        "p10": 15,
+        "p50": 15,
+        "p90": 15,
+        "shape": "fixed",
+        "basis": "convention"
+      },
+      "scope": "org",
+      "basis": "judgment",
+      "rationale": "SF assumed occupancy; no provider cap verified.",
+      "from": "estimates/us-ca-san-francisco/selfhelp-tai-chi.recipe.json"
+    }
+  },
+  "nativeOutcome": {
+    "unit": "additional fidelity-equivalent high-risk participants completing a 24-week course",
+    "perUnitCost": "additional funded course place",
+    "outcomesPer10kUsd": {
+      "p10": 1.248,
+      "p50": 3.579,
+      "p90": 8.473,
+      "unit": "additional fidelity-equivalent high-risk participants completing a 24-week course per $10,000",
+      "shape": "empirical",
+      "basis": "simulated"
+    },
+    "costPerOutcome": {
+      "p10": 1180,
+      "p50": 2794,
+      "p90": 8017,
+      "unit": "USD per additional fidelity-equivalent high-risk participants completing a 24-week course",
+      "shape": "empirical",
+      "basis": "simulated"
+    },
+    "centralPoint": 2336,
+    "formula": "additionality * localTransfer"
+  },
+  "cost": {
+    "currency": "USD",
+    "priceYear": 2026,
+    "boundary": "unit-cost-judgment"
+  },
+  "qalyLayer": {
+    "bridgeId": "tjqmbb-course-to-qaly",
+    "bridgeVersion": "v1",
+    "qalysPerNativeOutcome": {
+      "p10": 0.001878,
+      "p50": 0.007225,
+      "p90": 0.01373,
+      "unit": "QALYs per additional fidelity-equivalent high-risk participants completing a 24-week course",
+      "shape": "empirical",
+      "basis": "simulated"
+    },
+    "pricePer10Qalys": {
+      "p10": 1319000,
+      "p50": 4446000,
+      "p90": 21670000,
+      "unit": "USD per 10 QALYs",
+      "shape": "empirical",
+      "basis": "simulated"
+    },
+    "centralPointPricePer10Qalys": 2336000,
+    "probabilityNonPositive": 0,
+    "auditStatus": "unaudited",
+    "notes": "probabilityNonPositive is 0 by construction: v1 input distributions are strictly positive, so the null case lives only in nullBoundary."
+  },
+  "simulation": {
+    "method": "monte-carlo-independent",
+    "samples": 20000,
+    "seed": 20261018,
+    "tool": "docs/open-botec/tools/evaluate.mjs",
+    "notes": "Inputs drawn independently. Legacy SF scenarios were joint corners; independent draws give a narrower price spread than those corners."
+  },
+  "margin": {
+    "basis": "marginal",
+    "adjustments": [
+      "additionality"
+    ]
+  },
+  "fundingRoom": {
+    "status": "unverified",
+    "nextEvidence": "Named curriculum, qualified instructors, high-risk eligibility and an active cohort budget."
+  },
+  "nullBoundary": "Null or harm remains possible. Zero additionality or a non-fidelity course gives no finite price.",
+  "provenance": {
+    "sessions": [
+      {
+        "sessionId": "legacy-unrecorded",
+        "workerId": "unknown",
+        "role": "author",
+        "startedAt": null,
+        "endedAt": null,
+        "model": null,
+        "evidence": "Legacy model data/san-francisco/selfhelp-falls-cea-v1.json; interval not recorded in data/research-effort.json. Factoring into this template: open-botec design session 2026-10-18."
+      }
+    ],
+    "audits": []
+  },
+  "conflictOfInterest": {
+    "declared": false,
+    "authorRelationship": "none",
+    "selfSubmitted": false
+  },
+  "links": {
+    "legacyModel": "data/san-francisco/selfhelp-falls-cea-v1.json"
+  }
+}

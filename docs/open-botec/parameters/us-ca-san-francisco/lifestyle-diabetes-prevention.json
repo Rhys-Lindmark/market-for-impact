@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "open-botec-params/0.1",
+  "geoId": "us-ca-san-francisco",
+  "geoName": "San Francisco, California",
+  "archetypeId": "lifestyle-diabetes-prevention",
+  "templateVersion": "v1",
+  "values": {
+    "costPerParticipant": {
+      "value": {
+        "p10": 200,
+        "p50": 600,
+        "p90": 1200,
+        "shape": "two-piece-lognormal",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "judgment",
+      "rationale": "Analyst allowance; not a YMCA quote."
+    },
+    "fundingAdditionality": {
+      "value": {
+        "p10": 0.2,
+        "p50": 0.5,
+        "p90": 0.8,
+        "shape": "two-piece-logit",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "judgment",
+      "rationale": "Medi-Cal covers DPP and SF Health Service System already funds YMCA cohorts, so donor-funded seats partly displace payer-funded ones.",
+      "sources": [
+        {
+          "publisher": "DHCS",
+          "title": "Medi-Cal diabetes prevention benefit",
+          "url": "https://www.dhcs.ca.gov/services/medi-cal-resources/diabetes-prevention-program-diabetes-prevention-program/",
+          "retrieved": "2026-09-07"
+        },
+        {
+          "publisher": "SF Health Service System",
+          "title": "YMCA partnership and existing funded cohorts",
+          "url": "https://sfhss.org/dpp",
+          "retrieved": "2026-09-07"
+        }
+      ]
+    },
+    "transfer": {
+      "value": {
+        "p10": 0.25,
+        "p50": 0.75,
+        "p90": 1.0,
+        "shape": "two-piece-logit",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "judgment",
+      "rationale": "Retention of the YMCA trial effect for SF cohorts."
+    }
+  },
+  "provenance": {
+    "author": "Factored from legacy SF models by Claude Opus 5.5 (open-botec design session)",
+    "date": "2026-10-18",
+    "lookupMinutes": null,
+    "notes": "Values copied from the legacy SF model; no new research. Original research intervals live in data/research-effort.json."
+  }
+}

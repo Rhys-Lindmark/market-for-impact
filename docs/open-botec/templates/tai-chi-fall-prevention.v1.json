@@ -1,0 +1,117 @@
+{
+  "schemaVersion": "open-botec-template/0.1",
+  "archetypeId": "tai-chi-fall-prevention",
+  "version": "v1",
+  "name": "Therapeutic tai chi (Tai Ji Quan: Moving for Better Balance) course for high-fall-risk older adults",
+  "causeArea": "healthy-aging",
+  "appliesWhen": [
+    "The marginal gift funds additional places in a fidelity-specified 24-week, twice-weekly TJQMBB course for older adults at high fall risk."
+  ],
+  "doesNotApplyWhen": [
+    "The course is shorter general tai chi (e.g. six-week Sun-style) or recruits relatively well older adults; Day et al. 2015 found no benefit there.",
+    "The program is a falls-risk home-modification or medication-review service."
+  ],
+  "nativeOutcome": {
+    "unit": "additional fidelity-equivalent high-risk participants completing a 24-week course",
+    "notes": "Falls averted would be the better native unit (Li et al. 2018 reports fall incidence vs stretching). v1 keeps the SF utility pathway, so native outcome is a quality-weighted output, not a health outcome."
+  },
+  "costDenominator": { "unit": "additional funded course place", "costParameter": "courseCost" },
+  "derived": {
+    "courseCost": "classesPerCourse * paidHoursPerClass * instructorHourlyCost / participantsPerCourse + supportCostPerParticipant"
+  },
+  "formulas": {
+    "nativeOutcomesPerUnit": "additionality * localTransfer",
+    "qalyBridge": {
+      "bridgeId": "tjqmbb-course-to-qaly",
+      "version": "v1",
+      "qalysPerNativeOutcome": "hypothesizedEndpointUtility * horizonYears * onsetFraction",
+      "notes": "Linear onset to an endpoint utility gain over a six-month horizon, with no persistence. The endpoint coefficient is ambiguous in the source (see origin)."
+    }
+  },
+  "parameters": {
+    "classesPerCourse": {
+      "scope": "universal",
+      "label": "Classes per course",
+      "unit": "classes",
+      "default": { "value": { "p10": 48, "p50": 48, "p90": 48, "shape": "fixed", "basis": "convention" }, "scope": "universal", "basis": "transferred", "rationale": "24 weeks x 2 classes, per the trial protocol.", "sources": [{ "publisher": "Li et al.", "title": "Therapeutic tai ji quan randomized trial", "url": "https://pubmed.ncbi.nlm.nih.gov/30208396/", "published": "2018", "retrieved": "2026-09-07" }] }
+    },
+    "paidHoursPerClass": {
+      "scope": "universal",
+      "label": "Paid instructor preparation and delivery hours per class",
+      "unit": "hours",
+      "default": { "value": { "p10": 2, "p50": 2, "p90": 2, "shape": "fixed", "basis": "convention" }, "scope": "universal", "basis": "judgment", "rationale": "SF planning assumption: one hour delivery plus one hour preparation/travel." }
+    },
+    "instructorHourlyCost": {
+      "scope": "local",
+      "label": "Loaded instructor cost per paid hour",
+      "unit": "USD per hour",
+      "lookup": {
+        "preferredSources": ["Provider's instructor pay rate", "BLS OEWS metro-area wage for Fitness Trainers and Instructors (39-9031), times a benefits/overhead load"],
+        "fallback": "None; this is the main local cost lookup.",
+        "judgmentGuide": "SF used $60/hour, an assumed wage, not a quote."
+      }
+    },
+    "participantsPerCourse": {
+      "scope": "org",
+      "label": "Enrolled participants per course",
+      "unit": "people",
+      "lookup": { "preferredSources": ["Provider class-size cap"], "fallback": "15 (SF assumed occupancy), flagged as transferred." }
+    },
+    "supportCostPerParticipant": {
+      "scope": "local",
+      "label": "Licensing, room, outreach and screening cost per participant",
+      "unit": "USD per participant",
+      "lookup": { "preferredSources": ["Provider budget line items"], "fallback": "SF $200 scaled by local/SF cost ratio, flagged as transferred judgment." }
+    },
+    "localTransfer": {
+      "scope": "local",
+      "label": "Local fidelity and population retention of the trial effect",
+      "unit": "fraction",
+      "lookup": {
+        "preferredSources": ["Whether instructors are certified TJQMBB trainers", "High-risk eligibility screening in recruitment", "Availability of comparable free classes (the trial control was stretching, not nothing)"],
+        "fallback": "SF distribution, flagged as transferred.",
+        "judgmentGuide": "SF 0.25/0.5/0.75."
+      }
+    },
+    "additionality": {
+      "scope": "local",
+      "label": "Share of funded places that are net-new capacity",
+      "unit": "fraction",
+      "lookup": {
+        "preferredSources": ["Older Americans Act Title III-D evidence-based program funding through the local Area Agency on Aging", "Provider waitlist"],
+        "fallback": "SF distribution, flagged as transferred.",
+        "judgmentGuide": "SF 0.25/0.5/0.75; no verified offer."
+      }
+    },
+    "hypothesizedEndpointUtility": {
+      "scope": "universal",
+      "label": "Hypothesized endpoint utility gain versus stretching",
+      "unit": "QALY weight",
+      "default": {
+        "value": { "p10": 0.01, "p50": 0.04, "p90": 0.06, "shape": "two-piece-lognormal", "basis": "analyst-scenarios" },
+        "scope": "universal",
+        "basis": "judgment",
+        "rationale": "Independent calibration of .04. The source table labels .04 as incremental QALYs while its prose describes a utility difference; reading it as integrated QALYs would lower the price 4x. Unit ambiguity is unresolved.",
+        "sources": [{ "publisher": "Li and Harmer et al.", "title": "Trial economic evaluation", "url": "https://academic.oup.com/biomedgerontology/article/74/9/1504/5284888", "published": "2019-01-10", "retrieved": "2026-09-07" }]
+      }
+    },
+    "horizonYears": {
+      "scope": "universal",
+      "label": "Modeled follow-up horizon",
+      "unit": "years",
+      "default": { "value": { "p10": 0.5, "p50": 0.5, "p90": 0.5, "shape": "fixed", "basis": "convention" }, "scope": "universal", "basis": "judgment", "rationale": "Rounded six-month horizon; no persistence beyond follow-up." }
+    },
+    "onsetFraction": {
+      "scope": "universal",
+      "label": "Average fraction of endpoint benefit realized over follow-up",
+      "unit": "fraction",
+      "default": { "value": { "p10": 0.25, "p50": 0.5, "p90": 0.5, "shape": "two-piece-logit", "basis": "analyst-scenarios" }, "scope": "universal", "basis": "judgment", "rationale": "0.5 assumes linear growth from zero to endpoint." }
+    }
+  },
+  "excludedEffects": ["Fall injuries, mortality and healthcare savings on top of utility", "Six-week Sun-style courses treated as the 24-week trial"],
+  "nullBoundary": "Null or harm remains possible. Zero additionality or a non-fidelity course gives no finite price.",
+  "origin": {
+    "factoredFrom": "data/san-francisco/selfhelp-falls-cea-v1.json",
+    "reproduces": "The SF $600 course cost is the rounded output of the derived courseCost formula ($584 at $60/hour, 15 participants, $200 support). With courseCost fixed at $600 and all other p50 inputs, reproduces the SF central $2,400,000 per 10 QALYs; the unrounded formula gives $2,336,000. Change: the SF scenarios varied courseCost $300 to $1,200 as one judgment, which the template splits into wage, class size and support lookups."
+  }
+}

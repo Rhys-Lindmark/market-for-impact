@@ -1,0 +1,263 @@
+{
+  "schemaVersion": "open-botec/0.1",
+  "id": "slug:ymca-metropolitan-chicago/diabetes-prevention/lifestyle-diabetes-prevention/us-il-chicago/2026/v1",
+  "key": {
+    "org": {
+      "name": "YMCA of Metropolitan Chicago",
+      "orgId": "slug:ymca-metropolitan-chicago",
+      "ein": null
+    },
+    "program": {
+      "slug": "diabetes-prevention",
+      "name": "National DPP lifestyle program"
+    },
+    "geography": {
+      "geoId": "us-il-chicago",
+      "name": "Chicago, Illinois",
+      "beneficiaryBasis": "service-location"
+    },
+    "year": 2026,
+    "modelVersion": "v1",
+    "archetypeId": "lifestyle-diabetes-prevention"
+  },
+  "status": {
+    "tier": "draft",
+    "since": "2026-10-18",
+    "confidence": "very-low"
+  },
+  "template": {
+    "archetypeId": "lifestyle-diabetes-prevention",
+    "templateVersion": "v1",
+    "parameterSets": [
+      "parameters/us-il-chicago/lifestyle-diabetes-prevention.json"
+    ],
+    "overrides": []
+  },
+  "scope": {
+    "counterfactual": "Illinois Medicaid and other payers continue to fund eligible enrollees.",
+    "templateFitNote": "Org attachment is nominal: YMCA of Metropolitan Chicago's own DPP price and status were not found."
+  },
+  "inputs": {
+    "extraKg": {
+      "label": "Additional weight loss versus offer-only control",
+      "value": {
+        "p10": 1.1,
+        "p50": 2.3,
+        "p90": 3.4,
+        "shape": "two-piece-lognormal",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "universal",
+      "basis": "transferred",
+      "rationale": "Randomized YMCA offer trial, with scenario spread.",
+      "sources": [
+        {
+          "publisher": "American Journal of Public Health",
+          "title": "Ackermann et al.: randomized YMCA offer trial",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26378828/",
+          "published": "2015-09-17",
+          "retrieved": "2026-09-07"
+        }
+      ],
+      "from": "templates/lifestyle-diabetes-prevention.v1.json"
+    },
+    "discountedRetentionYears": {
+      "label": "Discounted years over which the weight difference persists",
+      "value": {
+        "p10": 0.48549,
+        "p50": 2.3713,
+        "p90": 4.58021,
+        "shape": "two-piece-lognormal",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "universal",
+      "basis": "derived",
+      "rationale": "Sum over years t of retention[t]/1.03^(t+0.5) for the SF retention profiles [0.25,0.25], [0.5,1,0.75,0.25] and [0.5,1,1,1,1,0.5]. Embeds the 3% discount convention; a v2 template should split persistence from discounting.",
+      "sources": [
+        {
+          "publisher": "Diabetes Care",
+          "title": "Kuo et al.: prospective NDPP cost and QALY analysis",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12178621/",
+          "published": "2024-11-20",
+          "retrieved": "2026-09-07"
+        }
+      ],
+      "from": "templates/lifestyle-diabetes-prevention.v1.json"
+    },
+    "utilityPerKg": {
+      "label": "QALY weight gain per kg of weight loss per year",
+      "value": {
+        "p10": 0.0007,
+        "p50": 0.0014,
+        "p90": 0.002,
+        "shape": "two-piece-lognormal",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "universal",
+      "basis": "transferred",
+      "rationale": "Observational utility association.",
+      "sources": [
+        {
+          "publisher": "Obesity",
+          "title": "Ackermann et al.: weight change and health utility",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1038/oby.2009.114",
+          "published": "2009",
+          "retrieved": "2026-09-07"
+        }
+      ],
+      "from": "templates/lifestyle-diabetes-prevention.v1.json"
+    },
+    "costPerParticipant": {
+      "label": "Donor cost per additional enrolled participant",
+      "value": {
+        "p10": 250,
+        "p50": 475,
+        "p90": 950,
+        "shape": "two-piece-lognormal",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "observed",
+      "rationale": "Central = a Berwyn, IL YMCA flyer price of $475 per year (undated, a different Y association than YMCA of Metro Chicago). Price, not cost; bounds are judgment.",
+      "sources": [
+        {
+          "publisher": "YMCA (Berwyn, IL) via sportscarnival.com",
+          "title": "DPP Flyer 2023",
+          "url": "https://sportscarnival.com/userfiles/35/files/DPP%20Flyer%202023.pdf",
+          "retrieved": "2026-10-18",
+          "locator": "$475 for the year (search-result summary)"
+        }
+      ],
+      "from": "parameters/us-il-chicago/lifestyle-diabetes-prevention.json"
+    },
+    "fundingAdditionality": {
+      "label": "Share of donor-funded enrollment that would not otherwise be funded",
+      "value": {
+        "p10": 0.2,
+        "p50": 0.5,
+        "p90": 0.8,
+        "shape": "two-piece-logit",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "judgment",
+      "rationale": "Illinois Medicaid covers National DPP (coverage from 2021; fee-for-service claims opened Aug 2024) for members aged 18 to 64, similar to Medi-Cal in SF, so the SF distribution is kept.",
+      "sources": [
+        {
+          "publisher": "Illinois HFS",
+          "title": "Provider notice: diabetes prevention and DSMES claims",
+          "url": "https://hfs.illinois.gov/medicalproviders/notices/notice.prn240805c.html",
+          "published": "2024-08-05",
+          "retrieved": "2026-10-18"
+        }
+      ],
+      "from": "parameters/us-il-chicago/lifestyle-diabetes-prevention.json"
+    },
+    "transfer": {
+      "label": "Retention of trial effect in the local population and provider",
+      "value": {
+        "p10": 0.25,
+        "p50": 0.75,
+        "p90": 1,
+        "shape": "two-piece-logit",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "judgment",
+      "rationale": "Transferred unchanged from SF; provider recognition status not looked up.",
+      "from": "parameters/us-il-chicago/lifestyle-diabetes-prevention.json"
+    }
+  },
+  "nativeOutcome": {
+    "unit": "discounted kg-years of incremental weight loss",
+    "perUnitCost": "additional enrolled participant offer",
+    "outcomesPer10kUsd": {
+      "p10": 2.868,
+      "p50": 22.8,
+      "p90": 112,
+      "unit": "discounted kg-years of incremental weight loss per $10,000",
+      "shape": "empirical",
+      "basis": "simulated"
+    },
+    "costPerOutcome": {
+      "p10": 89.38,
+      "p50": 438.6,
+      "p90": 3487,
+      "unit": "USD per discounted kg-years of incremental weight loss",
+      "shape": "empirical",
+      "basis": "simulated"
+    },
+    "centralPoint": 232.2,
+    "formula": "fundingAdditionality * extraKg * transfer * discountedRetentionYears"
+  },
+  "cost": {
+    "currency": "USD",
+    "priceYear": 2026,
+    "boundary": "unit-cost-judgment"
+  },
+  "qalyLayer": {
+    "bridgeId": "weight-loss-kg-year-to-qaly",
+    "bridgeVersion": "v1",
+    "qalysPerNativeOutcome": {
+      "p10": 0.0006893,
+      "p50": 0.001395,
+      "p90": 0.001984,
+      "unit": "QALYs per discounted kg-years of incremental weight loss",
+      "shape": "empirical",
+      "basis": "simulated"
+    },
+    "pricePer10Qalys": {
+      "p10": 658800,
+      "p50": 3576000,
+      "p90": 29920000,
+      "unit": "USD per 10 QALYs",
+      "shape": "empirical",
+      "basis": "simulated"
+    },
+    "centralPointPricePer10Qalys": 1659000,
+    "probabilityNonPositive": 0,
+    "auditStatus": "unaudited",
+    "notes": "probabilityNonPositive is 0 by construction: v1 input distributions are strictly positive, so the null case lives only in nullBoundary."
+  },
+  "simulation": {
+    "method": "monte-carlo-independent",
+    "samples": 20000,
+    "seed": 20261018,
+    "tool": "docs/open-botec/tools/evaluate.mjs",
+    "notes": "Inputs drawn independently. Legacy SF scenarios were joint corners; independent draws give a narrower price spread than those corners."
+  },
+  "margin": {
+    "basis": "marginal",
+    "adjustments": [
+      "fundingAdditionality"
+    ]
+  },
+  "fundingRoom": {
+    "status": "unverified",
+    "nextEvidence": "Whether YMCA of Metro Chicago runs a CDC-recognized DPP now, its price, and unfunded seats."
+  },
+  "nullBoundary": "If the cohort would have been funded anyway or weight loss does not persist, benefit is zero and there is no finite price.",
+  "provenance": {
+    "sessions": [
+      {
+        "sessionId": "open-botec-localization-20261018",
+        "workerId": "claude-opus-open-botec-design",
+        "role": "localization",
+        "startedAt": "2026-10-18T18:37:21Z",
+        "endedAt": "2026-10-18T18:38:10Z",
+        "model": {
+          "id": "claude-opus-5-5",
+          "name": "Claude Opus 5.5",
+          "evidence": "Runtime system prompt of the open-botec design session"
+        },
+        "evidence": "docs/open-botec/localization-test.md"
+      }
+    ],
+    "audits": []
+  },
+  "conflictOfInterest": {
+    "declared": false,
+    "authorRelationship": "none",
+    "selfSubmitted": false
+  }
+}

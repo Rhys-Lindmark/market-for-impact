@@ -1,0 +1,83 @@
+{
+  "key": {
+    "org": {
+      "name": "Self-Help for the Elderly",
+      "orgId": "slug:self-help-for-the-elderly",
+      "ein": null
+    },
+    "program": {
+      "slug": "tjqmbb-course",
+      "name": "Proposed therapeutic tai chi fall-prevention course"
+    },
+    "geography": {
+      "geoId": "us-ca-san-francisco",
+      "name": "San Francisco, California",
+      "beneficiaryBasis": "service-location"
+    },
+    "year": 2026,
+    "modelVersion": "v1"
+  },
+  "status": {
+    "tier": "draft",
+    "since": "2026-10-18",
+    "confidence": "very-low"
+  },
+  "template": "templates/tai-chi-fall-prevention.v1.json",
+  "parameterSets": [
+    "parameters/us-ca-san-francisco/tai-chi-fall-prevention.json"
+  ],
+  "inputs": {
+    "participantsPerCourse": {
+      "value": {
+        "p10": 15,
+        "p50": 15,
+        "p90": 15,
+        "shape": "fixed",
+        "basis": "convention"
+      },
+      "scope": "org",
+      "basis": "judgment",
+      "rationale": "SF assumed occupancy; no provider cap verified."
+    }
+  },
+  "scope": {
+    "counterfactual": "Existing six-week Sun-style classes continue; the gift funds a new 24-week TJQMBB course."
+  },
+  "cost": {
+    "currency": "USD",
+    "priceYear": 2026,
+    "boundary": "unit-cost-judgment"
+  },
+  "margin": {
+    "basis": "marginal",
+    "adjustments": [
+      "additionality"
+    ]
+  },
+  "fundingRoom": {
+    "status": "unverified",
+    "nextEvidence": "Named curriculum, qualified instructors, high-risk eligibility and an active cohort budget."
+  },
+  "provenance": {
+    "sessions": [
+      {
+        "sessionId": "legacy-unrecorded",
+        "workerId": "unknown",
+        "role": "author",
+        "startedAt": null,
+        "endedAt": null,
+        "model": null,
+        "evidence": "Legacy model data/san-francisco/selfhelp-falls-cea-v1.json; interval not recorded in data/research-effort.json. Factoring into this template: open-botec design session 2026-10-18."
+      }
+    ],
+    "audits": []
+  },
+  "conflictOfInterest": {
+    "declared": false,
+    "authorRelationship": "none",
+    "selfSubmitted": false
+  },
+  "links": {
+    "legacyModel": "data/san-francisco/selfhelp-falls-cea-v1.json"
+  }
+}

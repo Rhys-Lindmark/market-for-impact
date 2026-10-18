@@ -1,0 +1,119 @@
+{
+  "key": {
+    "org": {
+      "name": "Chicago Recovery Alliance",
+      "orgId": "slug:chicago-recovery-alliance",
+      "ein": null
+    },
+    "program": {
+      "slug": "naloxone-distribution",
+      "name": "Peer naloxone distribution"
+    },
+    "geography": {
+      "geoId": "us-il-chicago",
+      "name": "Chicago, Illinois",
+      "beneficiaryBasis": "service-location"
+    },
+    "year": 2017,
+    "modelVersion": "v1"
+  },
+  "status": {
+    "tier": "draft",
+    "since": "2026-10-18",
+    "confidence": "very-low"
+  },
+  "template": "templates/naloxone-distribution.v1.json",
+  "parameterSets": [
+    "parameters/us-il-chicago/naloxone-distribution.json"
+  ],
+  "inputs": {
+    "reportedReversals": {
+      "value": {
+        "p10": 1544,
+        "p50": 1544,
+        "p90": 1544,
+        "shape": "fixed",
+        "basis": "convention"
+      },
+      "scope": "org",
+      "basis": "observed",
+      "rationale": "Reversals reported in the year the $250,000 city investment covered. Self-reported peer reversals; possibly not all from city-funded kits.",
+      "sources": [
+        {
+          "publisher": "City of Chicago, Office of the Mayor",
+          "title": "Press release on opioid treatment and naloxone funding (July 20, 2017)",
+          "url": "https://chicago.gov/city/en/depts/mayor/press_room/press_releases/2017/july/OpioidAddictionTreatment.html",
+          "published": "2017-07-20",
+          "retrieved": "2026-10-18",
+          "locator": "$250,000 city investment; 4,541 kits distributed; 1,544 reversals in the past year. Seen only in a search-result summary; direct fetch returned HTTP 403, so the figures are unverified.",
+          "sourceType": "Government press release; stale"
+        }
+      ]
+    },
+    "reportedDoses": {
+      "value": {
+        "p10": 4541,
+        "p50": 4541,
+        "p90": 4541,
+        "shape": "fixed",
+        "basis": "convention"
+      },
+      "scope": "org",
+      "basis": "observed",
+      "rationale": "Kits, not doses. Kept as kits so it matches the per-kit cost.",
+      "sources": [
+        {
+          "publisher": "City of Chicago, Office of the Mayor",
+          "title": "Press release on opioid treatment and naloxone funding (July 20, 2017)",
+          "url": "https://chicago.gov/city/en/depts/mayor/press_room/press_releases/2017/july/OpioidAddictionTreatment.html",
+          "published": "2017-07-20",
+          "retrieved": "2026-10-18",
+          "locator": "$250,000 city investment; 4,541 kits distributed; 1,544 reversals in the past year. Seen only in a search-result summary; direct fetch returned HTTP 403, so the figures are unverified.",
+          "sourceType": "Government press release; stale"
+        }
+      ]
+    }
+  },
+  "scope": {
+    "counterfactual": "Other Chicago distributors, CDPH outreach and EMS continue.",
+    "templateFitNote": "Kit-based; 2017 data. The repo's existing CRA model (data/chicago/cra-pre-recalibration-model.json) uses a population-reach structure instead and is not comparable."
+  },
+  "cost": {
+    "currency": "USD",
+    "priceYear": 2017,
+    "boundary": "average-program"
+  },
+  "margin": {
+    "basis": "average-adjusted-to-marginal",
+    "adjustments": [
+      "marginalYieldRetention"
+    ]
+  },
+  "fundingRoom": {
+    "status": "unverified",
+    "nextEvidence": "Current CRA doses, reversals, budget and unfunded expansion plan."
+  },
+  "provenance": {
+    "sessions": [
+      {
+        "sessionId": "open-botec-localization-20261018",
+        "workerId": "claude-opus-open-botec-design",
+        "role": "localization",
+        "startedAt": "2026-10-18T18:37:21Z",
+        "endedAt": "2026-10-18T18:38:10Z",
+        "model": {
+          "id": "claude-opus-5-5",
+          "name": "Claude Opus 5.5",
+          "evidence": "Runtime system prompt of the open-botec design session"
+        },
+        "evidence": "docs/open-botec/localization-test.md"
+      }
+    ],
+    "audits": []
+  },
+  "conflictOfInterest": {
+    "declared": false,
+    "authorRelationship": "none",
+    "selfSubmitted": false
+  }
+}

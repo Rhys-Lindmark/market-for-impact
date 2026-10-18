@@ -1,0 +1,302 @@
+{
+  "schemaVersion": "open-botec/0.1",
+  "id": "slug:unassigned-chicago-tjqmbb/tjqmbb-course/tai-chi-fall-prevention/us-il-chicago/2026/v1",
+  "key": {
+    "org": {
+      "name": "Unassigned Chicago TJQMBB provider",
+      "orgId": "slug:unassigned-chicago-tjqmbb",
+      "ein": null
+    },
+    "program": {
+      "slug": "tjqmbb-course",
+      "name": "Hypothetical 24-week TJQMBB course"
+    },
+    "geography": {
+      "geoId": "us-il-chicago",
+      "name": "Chicago, Illinois",
+      "beneficiaryBasis": "service-location"
+    },
+    "year": 2026,
+    "modelVersion": "v1",
+    "archetypeId": "tai-chi-fall-prevention"
+  },
+  "status": {
+    "tier": "draft",
+    "since": "2026-10-18",
+    "confidence": "very-low"
+  },
+  "template": {
+    "archetypeId": "tai-chi-fall-prevention",
+    "templateVersion": "v1",
+    "parameterSets": [
+      "parameters/us-il-chicago/tai-chi-fall-prevention.json"
+    ],
+    "overrides": []
+  },
+  "scope": {
+    "counterfactual": "No identified Chicago TJQMBB course; general senior exercise continues.",
+    "templateFitNote": "Geography-level price for the archetype. No organization was found, so this is not a giving recommendation."
+  },
+  "inputs": {
+    "classesPerCourse": {
+      "label": "Classes per course",
+      "value": {
+        "p10": 48,
+        "p50": 48,
+        "p90": 48,
+        "shape": "fixed",
+        "basis": "convention"
+      },
+      "scope": "universal",
+      "basis": "transferred",
+      "rationale": "24 weeks x 2 classes, per the trial protocol.",
+      "sources": [
+        {
+          "publisher": "Li et al.",
+          "title": "Therapeutic tai ji quan randomized trial",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30208396/",
+          "published": "2018",
+          "retrieved": "2026-09-07"
+        }
+      ],
+      "from": "templates/tai-chi-fall-prevention.v1.json"
+    },
+    "paidHoursPerClass": {
+      "label": "Paid instructor preparation and delivery hours per class",
+      "value": {
+        "p10": 2,
+        "p50": 2,
+        "p90": 2,
+        "shape": "fixed",
+        "basis": "convention"
+      },
+      "scope": "universal",
+      "basis": "judgment",
+      "rationale": "SF planning assumption: one hour delivery plus one hour preparation/travel.",
+      "from": "templates/tai-chi-fall-prevention.v1.json"
+    },
+    "hypothesizedEndpointUtility": {
+      "label": "Hypothesized endpoint utility gain versus stretching",
+      "value": {
+        "p10": 0.01,
+        "p50": 0.04,
+        "p90": 0.06,
+        "shape": "two-piece-lognormal",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "universal",
+      "basis": "judgment",
+      "rationale": "Independent calibration of .04. The source table labels .04 as incremental QALYs while its prose describes a utility difference; reading it as integrated QALYs would lower the price 4x. Unit ambiguity is unresolved.",
+      "sources": [
+        {
+          "publisher": "Li and Harmer et al.",
+          "title": "Trial economic evaluation",
+          "url": "https://academic.oup.com/biomedgerontology/article/74/9/1504/5284888",
+          "published": "2019-01-10",
+          "retrieved": "2026-09-07"
+        }
+      ],
+      "from": "templates/tai-chi-fall-prevention.v1.json"
+    },
+    "horizonYears": {
+      "label": "Modeled follow-up horizon",
+      "value": {
+        "p10": 0.5,
+        "p50": 0.5,
+        "p90": 0.5,
+        "shape": "fixed",
+        "basis": "convention"
+      },
+      "scope": "universal",
+      "basis": "judgment",
+      "rationale": "Rounded six-month horizon; no persistence beyond follow-up.",
+      "from": "templates/tai-chi-fall-prevention.v1.json"
+    },
+    "onsetFraction": {
+      "label": "Average fraction of endpoint benefit realized over follow-up",
+      "value": {
+        "p10": 0.25,
+        "p50": 0.5,
+        "p90": 0.5,
+        "shape": "two-piece-logit",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "universal",
+      "basis": "judgment",
+      "rationale": "0.5 assumes linear growth from zero to endpoint.",
+      "from": "templates/tai-chi-fall-prevention.v1.json"
+    },
+    "instructorHourlyCost": {
+      "label": "Loaded instructor cost per paid hour",
+      "value": {
+        "p10": 28,
+        "p50": 40,
+        "p90": 70,
+        "shape": "two-piece-lognormal",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "derived",
+      "rationale": "BLS OEWS May 2022 Chicago-Naperville-Elgin mean wage for fitness trainers and instructors $26.05/hour x about 1.3 benefits/overhead x about 1.15 wage growth to 2026 = about $39, rounded to $40. Upper bound allows a certified-instructor premium. SF's $60 was an assumption, not OEWS, so the SF-to-Chicago gap mixes method and place.",
+      "sources": [
+        {
+          "publisher": "US Bureau of Labor Statistics",
+          "title": "OEWS May 2022: 39-9031 Fitness Trainers and Aerobics Instructors",
+          "url": "https://www.bls.gov/oes/2022/may/oes399031.htm",
+          "published": "2023",
+          "retrieved": "2026-10-18",
+          "locator": "Chicago-Naperville-Elgin, IL-IN-WI mean hourly $26.05"
+        }
+      ],
+      "from": "parameters/us-il-chicago/tai-chi-fall-prevention.json"
+    },
+    "supportCostPerParticipant": {
+      "label": "Licensing, room, outreach and screening cost per participant",
+      "value": {
+        "p10": 100,
+        "p50": 200,
+        "p90": 400,
+        "shape": "two-piece-lognormal",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "judgment",
+      "rationale": "Transferred unchanged from SF; no Chicago room/licensing lookup.",
+      "from": "parameters/us-il-chicago/tai-chi-fall-prevention.json"
+    },
+    "localTransfer": {
+      "label": "Local fidelity and population retention of the trial effect",
+      "value": {
+        "p10": 0.25,
+        "p50": 0.5,
+        "p90": 0.75,
+        "shape": "two-piece-logit",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "judgment",
+      "rationale": "Transferred unchanged from SF.",
+      "from": "parameters/us-il-chicago/tai-chi-fall-prevention.json"
+    },
+    "additionality": {
+      "label": "Share of funded places that are net-new capacity",
+      "value": {
+        "p10": 0.25,
+        "p50": 0.5,
+        "p90": 0.75,
+        "shape": "two-piece-logit",
+        "basis": "analyst-scenarios"
+      },
+      "scope": "local",
+      "basis": "judgment",
+      "rationale": "Transferred unchanged from SF; Title III-D funding through the Chicago Area Agency on Aging not looked up.",
+      "from": "parameters/us-il-chicago/tai-chi-fall-prevention.json"
+    },
+    "participantsPerCourse": {
+      "label": "Enrolled participants per course",
+      "value": {
+        "p10": 15,
+        "p50": 15,
+        "p90": 15,
+        "shape": "fixed",
+        "basis": "convention"
+      },
+      "scope": "org",
+      "basis": "judgment",
+      "rationale": "No provider found; SF occupancy assumed.",
+      "from": "estimates/us-il-chicago/unassigned-tai-chi.recipe.json"
+    }
+  },
+  "nativeOutcome": {
+    "unit": "additional fidelity-equivalent high-risk participants completing a 24-week course",
+    "perUnitCost": "additional funded course place",
+    "outcomesPer10kUsd": {
+      "p10": 1.651,
+      "p50": 4.524,
+      "p90": 9.891,
+      "unit": "additional fidelity-equivalent high-risk participants completing a 24-week course per $10,000",
+      "shape": "empirical",
+      "basis": "simulated"
+    },
+    "costPerOutcome": {
+      "p10": 1011,
+      "p50": 2211,
+      "p90": 6057,
+      "unit": "USD per additional fidelity-equivalent high-risk participants completing a 24-week course",
+      "shape": "empirical",
+      "basis": "simulated"
+    },
+    "centralPoint": 1824,
+    "formula": "additionality * localTransfer"
+  },
+  "cost": {
+    "currency": "USD",
+    "priceYear": 2026,
+    "boundary": "unit-cost-judgment"
+  },
+  "qalyLayer": {
+    "bridgeId": "tjqmbb-course-to-qaly",
+    "bridgeVersion": "v1",
+    "qalysPerNativeOutcome": {
+      "p10": 0.001878,
+      "p50": 0.007225,
+      "p90": 0.01373,
+      "unit": "QALYs per additional fidelity-equivalent high-risk participants completing a 24-week course",
+      "shape": "empirical",
+      "basis": "simulated"
+    },
+    "pricePer10Qalys": {
+      "p10": 1100000,
+      "p50": 3531000,
+      "p90": 16900000,
+      "unit": "USD per 10 QALYs",
+      "shape": "empirical",
+      "basis": "simulated"
+    },
+    "centralPointPricePer10Qalys": 1824000,
+    "probabilityNonPositive": 0,
+    "auditStatus": "unaudited",
+    "notes": "probabilityNonPositive is 0 by construction: v1 input distributions are strictly positive, so the null case lives only in nullBoundary."
+  },
+  "simulation": {
+    "method": "monte-carlo-independent",
+    "samples": 20000,
+    "seed": 20261018,
+    "tool": "docs/open-botec/tools/evaluate.mjs",
+    "notes": "Inputs drawn independently. Legacy SF scenarios were joint corners; independent draws give a narrower price spread than those corners."
+  },
+  "margin": {
+    "basis": "marginal",
+    "adjustments": [
+      "additionality"
+    ]
+  },
+  "fundingRoom": {
+    "status": "none",
+    "nextEvidence": "Find a Chicago provider (Chicago DFSS senior centers, AgeOptions for suburban Cook)."
+  },
+  "nullBoundary": "Null or harm remains possible. Zero additionality or a non-fidelity course gives no finite price.",
+  "provenance": {
+    "sessions": [
+      {
+        "sessionId": "open-botec-localization-20261018",
+        "workerId": "claude-opus-open-botec-design",
+        "role": "localization",
+        "startedAt": "2026-10-18T18:37:21Z",
+        "endedAt": "2026-10-18T18:38:10Z",
+        "model": {
+          "id": "claude-opus-5-5",
+          "name": "Claude Opus 5.5",
+          "evidence": "Runtime system prompt of the open-botec design session"
+        },
+        "evidence": "docs/open-botec/localization-test.md"
+      }
+    ],
+    "audits": []
+  },
+  "conflictOfInterest": {
+    "declared": false,
+    "authorRelationship": "none",
+    "selfSubmitted": false
+  }
+}

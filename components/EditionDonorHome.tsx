@@ -6,6 +6,8 @@ import {canonicalBase,editionPath} from '@/lib/geography-editions.mjs';
 import {editionReportPath,formatEditionMoney,reportPrice} from '@/lib/geography-reports.mjs';
 import highlights from '@/data/edition-highlights.json';
 import {featuredReports} from '@/lib/edition-featured.mjs';
+import {nativeUnitForReport} from '@/lib/featured-unit-costs.mjs';
+import NativeUnitCost from '@/components/NativeUnitCost';
 import '@/app/sf-home.css';
 
 export default function EditionDonorHome({id,label,reports,discovery,alpha,beta}:{id:string;label:string;reports:EditionReport[];discovery:number;alpha:number;beta:number}){
@@ -36,7 +38,7 @@ export default function EditionDonorHome({id,label,reports,discovery,alpha,beta}
      <div><p className="sf-home-eyebrow">RESEARCH LEAD {i+1} OF 4</p><h2>{report.organization}</h2>
       <div className="sf-home-charity-body">
        <section><h3>Overview</h3><p>{report.summary.what.join(' ')}</p></section>
-       <section><h3>Cost-effectiveness</h3><p><strong>{formatImpactPrice(reportPrice(report))} per {impactMetric().label}</strong>, modeled in {label}.</p></section>
+       <section><h3>Cost-effectiveness</h3><NativeUnitCost estimate={nativeUnitForReport(report)} reportHref={canonicalBase+editionReportPath(report)}/><p><strong>{formatImpactPrice(reportPrice(report))} per {impactMetric().label}</strong>, modeled in {label}.</p></section>
        <section><h3>Why investigate</h3><p>{report.summary.strengths[0]}</p></section>
        <section><h3>Main reservation</h3><p>{report.summary.reservations[0]}</p></section>
        <section><h3>Organization and research</h3><div className="sf-home-org-card"><h4>{report.organization}</h4><a className="sf-home-report" href={canonicalBase+editionReportPath(report)}>Full research report</a></div></section>

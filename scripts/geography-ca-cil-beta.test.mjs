@@ -21,7 +21,7 @@ test('Frozen CIL repair diagnostic independently reconstructs support, completed
 test('CIL historical withdrawn review preserves diagnostic math without constraining later recalibration',()=>{
  assert.equal(report.stage,'beta');assert.equal(report.acceptance.status,'accepted');
  const historicalReport={...report,model:historicalModel};
- assert.equal(reportPrice(historicalReport),null);assert.equal(formatEditionReportPrice(historicalReport),'$59.2M');
+ assert.equal(reportPrice(historicalReport),null);assert.equal(formatEditionReportPrice(historicalReport),'$5.9M'); // stored $59.2M per 10 DALYs; displayed per DALY since 2026-10-12
  const central=historicalModel.scenarios.find(s=>s.id==='central');
  assert.equal(central.editionQalys,null);assert.equal(central.allPopulationQalys,null);
  const legacy=historicalModel.scenarios.find(s=>s.id==='historical-alpha-central');

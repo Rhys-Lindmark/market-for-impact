@@ -10,11 +10,10 @@ const report = data.reports.find(r => r.edition === 'california' && r.slug === '
 test('Walk SF in-depth review withdraws uncalibrated donor price but retains diagnostic', () => {
   assert.equal(report.stage, 'beta');
   assert.equal(report.acceptance.status, 'accepted');
-  assert.equal(reportPrice(report), null);
-  assert.match(report.priceScope, /withdrawn.*HOLD/i);
-  const diagnostic = report.model.scenarios.find(s => s.id === 'historical-alpha-central');
+  // Walk SF was later recalibrated to a finite central (walk-ca-calibrated.test.mjs); the withdrawn-price state and
+  // its null central no longer apply, but the original diagnostic is still preserved below.
+  const diagnostic = report.model.scenarios.find(s => s.id === 'historical-prior-health-central');
   assert.ok(Math.abs(diagnostic.editionQalys - 0.22533298087679837) < 1e-12);
-  assert.equal(report.model.scenarios.find(s => s.id === 'central').editionQalys, null);
   assert.equal(report.sources.find(s => s.id === 'folsom-funding').publisher, 'SFMTA');
   const ca = progress.editions.find(e => e.id === 'california');
   assert.equal(ca.betaAcceptedPublished, ca.betaIds.length);

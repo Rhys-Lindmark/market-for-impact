@@ -20,6 +20,8 @@ test('Historical hearing aid scenarios retain use, mortality, alternatives and h
 test('Medication access benchmarks use a secondary ITT effect only once',()=>{
  const r=get('rx-outreach');close(r.model.scenarios[0].editionQalys,0.015925);
  for(const s of r.model.scenarios){
+  // 2026-10-07: 'combined-income-unknown' (prose assumptions) restates the central clinical reference with household resources unknown.
+  if(s.id==='combined-income-unknown'){close(s.editionQalys,r.model.scenarios[0].editionQalys);assert.equal(s.incomeUnknown,true);continue;}
   const p=params(s),q=s.costUSD/p.c*p.b*(p.f*p.e*p.t*p.q+p.z-p.h);
   close(q,s.allPopulationQalys);close(q*p.g,s.editionQalys);
  }
@@ -30,7 +32,7 @@ test('Local clinical thresholds are not estimated recipient yields',()=>{
  close((2.1/14)*.1,.015);
  assert.ok(get('comite-civico-del-valle').model.scenarios[0].editionQalys>0);
  // CIL now has an independently reviewed partial repair model, tested separately.
- assert.match(get('center-for-independent-living').priceScope,/other benefits unestimated/);
+ assert.match(get('center-for-independent-living').priceScope,/other CIL services not quantified|other benefits unestimated/);
  assert.equal(get('comite-civico-del-valle').donationUrl,null);
  assert.match(get('comite-civico-del-valle').sections.qualitative,/no statistically detected effect/);
 });

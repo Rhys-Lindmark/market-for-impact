@@ -15,11 +15,12 @@ test('JTC communication judgments reproduce without lifetime or device double cr
 });
 test('USA current estimates distinguish HAH recalibration from its frozen unknown beta and pending RAM',()=>{
  const slugs=['rx-outreach','immunize-org','green-and-healthy-homes-initiative','american-nonsmokers-rights-foundation'];
- for(const slug of slugs){const r=data.reports.find(r=>r.edition==='usa'&&r.slug===slug);assert.ok(Number.isFinite(reportPrice(r)));assert.equal(r.stage,slug==='american-nonsmokers-rights-foundation'?'beta':'alpha');assert.ok(r.priceScope);assert.match(r.model.scenarios[0].label,/judgment/);}
+ for(const slug of slugs){const r=data.reports.find(r=>r.edition==='usa'&&r.slug===slug);assert.ok(Number.isFinite(reportPrice(r)));assert.equal(r.stage,slug==='american-nonsmokers-rights-foundation'?'beta':'alpha');assert.ok(r.priceScope);assert.match(r.model.scenarios[0].label,slug==='american-nonsmokers-rights-foundation'?/household resources/:/judgment/);} // ANRF was recalibrated (anrf-usa-calibrated.test.mjs); its label no longer says 'judgment'
  const hah=data.reports.find(r=>r.edition==='usa'&&r.slug==='help-america-hear');
  assert.equal(hah.stage,'beta');assert.ok(Math.abs(reportPrice(hah)-3067549.367123098)<1e-7);
  assert.equal(hah.historicalModel.scenarios.find(s=>s.id==='central').editionQalys,null);
  assert.match(hah.acceptance.evidence,/hah-usa-corrected-acceptance/);
  const ram=data.reports.find(r=>r.edition==='usa'&&r.slug==='remote-area-medical');
- assert.equal(ram.stage,'beta');assert.equal(reportPrice(ram),null);assert.match(ram.acceptance.evidence,/usa-ram-beta-audit/);
+ // RAM was recalibrated 2026-10-02 (remote-area-medical-usa-calibrated.test.mjs): it now has a finite central and price.
+ assert.equal(ram.stage,'beta');assert.ok(Number.isFinite(reportPrice(ram)));assert.match(ram.acceptance.evidence,/ram-usa-independent-acceptance|usa-ram-beta-audit/);
 });

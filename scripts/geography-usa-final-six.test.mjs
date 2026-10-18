@@ -32,6 +32,8 @@ function parameters(s) {
 function checkScenarios(r, calculate, expectedCost) {
   let zero = false, adverse = false;
   for (const s of r.model.scenarios) {
+    // 2026-10-07 'combined-income-unknown': prose assumptions restating the central clinical reference.
+    if (s.id === 'combined-income-unknown') { close(s.editionQalys, r.model.scenarios.find(c => c.id === 'central').editionQalys, `${r.slug}/${s.id}`); assert.equal(s.incomeUnknown, true); continue; }
     const p = parameters(s);
     const q = calculate(p);
     close(s.costUSD, expectedCost(p,s), `${r.slug}/${s.id} cost`);

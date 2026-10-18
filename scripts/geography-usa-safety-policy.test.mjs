@@ -3,10 +3,13 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 const data=JSON.parse(readFileSync(new URL('../data/geography-reports.json',import.meta.url)));
 const near=(a,b)=>assert.ok(Math.abs(a-b)<1e-8,`${a} != ${b}`);
-for(const slug of ['institute-for-safer-trucking','us-alcohol-policy-alliance'])test(`${slug}: all policy scenarios reproduce`,()=>{
+// Institute for Safer Trucking was recalibrated (ist-usa-calibrated.test.mjs); its original scenarios are reproduced
+// by geography-usa-ist-historical.test.mjs, so only the alcohol-policy report remains here.
+for(const slug of ['us-alcohol-policy-alliance'])test(`${slug}: all policy scenarios reproduce`,()=>{
  const r=data.reports.find(r=>r.edition==='usa'&&r.slug===slug);
  for(const s of r.model.scenarios){
   if(s.id==='central'&&s.editionQalys===null){assert.match(r.priceScope,/withdrawn/i);continue;}
+  if(s.id==='combined-income-unknown'){near(s.editionQalys,r.model.scenarios.find(c=>c.id==='central').editionQalys);continue;} // 2026-10-07 prose scenario
   const parameters=s.assumptions.match(/Parameters (\{.*?\})/);
   assert.ok(parameters,`Missing diagnostic parameters for ${slug}/${s.id}`);
   const p=JSON.parse(parameters[1]);let A=0,H;

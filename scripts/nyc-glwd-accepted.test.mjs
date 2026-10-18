@@ -12,7 +12,8 @@ test('GLWD current acceptance preserves null, signed burdens, complete history a
  const zero=r.model.scenarios.find(s=>s.id==='consumption-zero');assert.equal(zero.editionQalys,0);assert.ok(zero.incomeEquivalentHealthyYears<0);assert.equal(zero.pricePer10Qalys,null);
  const overlap=r.model.scenarios.find(s=>s.id==='complete-overlap');assert.ok(overlap.incomeEquivalentHealthyYears<0);
  const data=read('data/geography-reports.json'),p=read('docs/geography-progress.json');validateEditionReports(data,p);
- assert.equal(p.editions.find(e=>e.id==='new-york-city').betaAcceptedPublished,10);
+ // Ten original NYC in-depth reviews plus the supplemental Bottom Line review (2026-10-18).
+ assert.equal(p.editions.find(e=>e.id==='new-york-city').betaAcceptedPublished,11);
  for(const id of r.sessionIds){const s=data.sessions.find(s=>s.id===id);assert.ok(s.endedAt);assert.equal(s.organizationId,r.organizationId);}
  const fy25=r.annualExpenses.find(x=>x.year===2025);assert.equal(fy25.amount,51256141);assert.equal(fy25.comparable,false);assert.match(fy25.accountingBasis,/excludes depreciation/);
 });

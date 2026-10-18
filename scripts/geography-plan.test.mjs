@@ -157,7 +157,7 @@ assert.ok(nycProgress.acceptedDiscoveryIds.includes('org:zufall-health-foundatio
 assert.ok(!nycProgress.acceptedDiscoveryIds.includes('org:zufall-health'));
 assert.equal(nycProgress.alphaPublished,reports.reports.filter(r=>r.edition==='new-york-city').length);
 assert.equal(nycProgress.betaAcceptedPublished,reports.reports.filter(r=>r.edition==='new-york-city'&&r.stage==='beta').length);
-for(const id of nycProgress.alphaCohortIds)assert.ok(nycProgress.selectedAlphaIds.includes(id));
+for(const id of nycProgress.alphaCohortIds)assert.ok(nycProgress.selectedAlphaIds.includes(id)||nycProgress.supplementalAlphaIds?.includes(id));
 for(const city of ['denver','chicago','houston','boston','atlanta','detroit']){
  const row=p.editions.find(e=>e.id===city);
  const packet=read('geography-discovery/'+(city==='denver'?'denver-independent-acceptance.json':city+'-cohort-final.json'));

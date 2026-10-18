@@ -13,6 +13,7 @@ const reportAliases:Record<string,string>={
  [normalize('Ear of the Lion Foundation of California–Nevada')]:'ear-of-lion',
  [normalize('HIV Education and Prevention Project of Alameda County (HEPPAC)')]:'heppac',
  [normalize('HOPE: Healing, Overdose Prevention, and Education')]:'hope-pacifica',
+ [normalize('Self-Help for the Elderly')]:'self-help-for-the-elderly',
  [normalize('HOPE Pacifica')]:'hope-pacifica',
  [normalize('Richmond Area Multi-Services (RAMS)')]:'rams',
  [normalize('Bayview Hunters Point Foundation for Community Improvement')]:'bayview-hunters-point-foundation',

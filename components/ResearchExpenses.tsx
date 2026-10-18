@@ -6,7 +6,8 @@ export default function ResearchExpenses({slug}:{slug:string}) {
  const recordSlug=slug==='ear-of-the-lion'?'ear-of-lion':slug;
  const record=data.organizations[recordSlug as keyof typeof data.organizations];
  const {average}=expenseSummary(record);
- const supplement=average===null?annualBudgetSupplement('san-francisco',slug):null;
+ const candidate=annualBudgetSupplement('san-francisco',slug);
+ const supplement=average===null||candidate?.overridesOrganizationAverage?candidate:null;
  if(supplement)return <a href={'/charities/'+slug+'#annual-expenses'} data-annual-budget={supplement.amountUSD} data-budget-kind={supplement.kind} title={[supplement.label,supplement.period,supplement.note].join('. ')}>{annualBudgetLabel(supplement)}<small>{supplement.label}</small></a>;
  const historical=historicalContractExpenseSummary(record);
  const useHistorical=average===null&&historical.average!==null;

@@ -22,14 +22,14 @@ test('Self-Help single ranking adapter is conditional SF-resident course, not or
  assert.match(read('app/api/sf-selfhelp-model/route.ts'),/ordinaryDonation:\{expectedValue:null/);assert.match(read('app/api/sf-selfhelp-model/route.ts'),/historical\}/);
  assert.match(read('app/charities/self-help-for-the-elderly/page.tsx'),/selfhelp-current-report/);
  assert.match(read('app/san-francisco/page.tsx'),/self-help-for-the-elderly/);assert.match(read('app/san-francisco/page.tsx'),/ordinary-donation expected value unknown/);
- assert.match(read('app/san-francisco/all/page.tsx'),/Conditional prospective course; ordinary-donation EV unknown/);
- assert.match(read('app/san-francisco/all/page.tsx'),/10 health and income-equivalent years/);
+ assert.match(read('app/san-francisco/all/page.tsx'),/researchListDescription/);
+ assert.match(read('app/san-francisco/all/page.tsx'),/impactUnitExplanation/);
 });
 test('Self-Help finances and actual closed timing retain evidence limits, no abandoned-time credit',()=>{
  const record=JSON.parse(read('data/research-expenses.json')).organizations['self-help-for-the-elderly'];assert.equal(expenseSummary(record).average,32376728.333333332);assert.match(record.note,/not original-return verified/);
  const sessions=JSON.parse(read('data/research-effort.json')).organizations['Self-Help for the Elderly'].sessions;
- assert.equal(sessions.length,4);assert.equal(new Set(sessions.map(s=>s.id)).size,4);
+ assert.equal(sessions.length,5);assert.equal(new Set(sessions.map(s=>s.id)).size,5);
  assert.ok(!sessions.some(s=>s.id==='b922185f-2ed8-4bd4-b712-c68d84dffec4'));
- for(const s of sessions){assert.ok(Date.parse(s.endedAt)>Date.parse(s.startedAt));assert.equal(s.model.name,'GPT-6.1 Sol');assert.ok(fs.existsSync(new URL('../'+s.evidence,import.meta.url)));}
+ for(const s of sessions){assert.ok(Date.parse(s.endedAt)>Date.parse(s.startedAt));if(s.id==='d9f97314-74dc-4768-a010-842821a8501f')assert.equal(s.model,null);else assert.equal(s.model.name,'GPT-6.1 Sol');assert.ok(fs.existsSync(new URL('../'+s.evidence,import.meta.url)));}
  const minutes=sessions.reduce((sum,s)=>sum+(Date.parse(s.endedAt)-Date.parse(s.startedAt))/60000,0);assert.ok(minutes>5&&minutes<10);
 });

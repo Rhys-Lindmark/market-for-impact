@@ -5,8 +5,7 @@ import {publishedEditionReports} from '@/lib/published-geography-reports';
 import {reportsForEdition,researchListPrice,editionReportPath} from '@/lib/geography-reports.mjs';
 import {unifiedResearch} from '@/lib/unified-research-index';
 import expenses from '@/data/research-expenses.json';
-import {expenseSummary} from '@/lib/research-expenses.mjs';
-import {annualBudgetSupplement,editionAnnualBudget} from '@/lib/annual-budget-supplements.mjs';
+import {sfAnnualBudget,editionAnnualBudget} from '@/lib/annual-budget-supplements.mjs';
 import {canonicalBase} from '@/lib/geography-editions.mjs';
 import '../../givebetter.css';
 import './city-comparison.css';
@@ -18,7 +17,7 @@ export default function CityComparisonPage(){
  for(const [city,cityLabel] of cities){
   if(city==='san-francisco'){
    const picks=unifiedResearch.filter(r=>r.localUsdPerTenQalys!==null&&r.localUsdPerTenQalys>0).slice(0,4);
-   for(const r of picks){const slug=r.href.split('/').at(-1)!;const record=(expenses.organizations as Record<string,unknown>)[slug];const {average}=expenseSummary(record);const budget=average!==null?{amountUSD:average,kind:'average',label:'Three-year average',period:'Three consecutive full fiscal years',note:'Reported organization expenses.'}:annualBudgetSupplement(city,slug);rows.push({key:city+'/'+slug,city,cityLabel,organization:r.organization,href:r.href,costPerDaly:r.localUsdPerTenQalys!/10,budget:budget?.amountUSD??null,budgetKind:budget?.kind??'unknown',budgetLabel:budget?.label??'Unavailable',budgetNote:budget?.note??'',period:budget?.period??''});}
+   for(const r of picks){const slug=r.href.split('/').at(-1)!;const record=(expenses.organizations as Record<string,unknown>)[slug];const budget=sfAnnualBudget(slug,record);rows.push({key:city+'/'+slug,city,cityLabel,organization:budget?.program?`${r.organization} — tai chi`:r.organization,href:r.href,costPerDaly:r.localUsdPerTenQalys!/10,budget:budget?.amountUSD??null,budgetKind:budget?.kind??'unknown',budgetLabel:budget?.label??'Unavailable',budgetNote:budget?.note??'',period:budget?.period??''});}
   }else{
    const picks=reportsForEdition({reports:publishedEditionReports},city).filter(r=>researchListPrice(r)>0).slice(0,4);
    for(const r of picks){const budget=editionAnnualBudget(r);rows.push({key:city+'/'+r.slug,city,cityLabel,organization:r.organization,href:canonicalBase+editionReportPath(r),costPerDaly:researchListPrice(r)/10,budget:budget?.amountUSD??null,budgetKind:budget?.kind??'unknown',budgetLabel:budget?.label??'Unavailable',budgetNote:budget?.note??'',period:budget?.period??''});}

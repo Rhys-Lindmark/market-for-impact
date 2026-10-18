@@ -2,12 +2,12 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import data from '../data/annual-budget-supplements.json' with {type:'json'};
 import reports from '../data/geography-reports.json' with {type:'json'};
-import {annualBudgetSupplement,editionAnnualBudget,annualBudgetLabel} from '../lib/annual-budget-supplements.mjs';
+import {annualBudgetSupplement,editionAnnualBudget,annualBudgetLabel,sfAnnualBudget} from '../lib/annual-budget-supplements.mjs';
 import {expenseAverage,validateEditionReports} from '../lib/geography-reports.mjs';
 import progress from '../docs/geography-progress.json' with {type:'json'};
 
-test('all seven missing chart widths have finite, sourced, explicitly classified supplements',()=>{
- assert.equal(Object.keys(data.entries).length,7);
+test('all missing chart widths and program overrides have finite, sourced, explicitly classified supplements',()=>{
+ assert.equal(Object.keys(data.entries).length,8);
  for(const [key,budget] of Object.entries(data.entries)){
   assert.ok(Number.isFinite(budget.amountUSD)&&budget.amountUSD>0,key);
   assert.ok(['reported','estimate','historical-proxy'].includes(budget.kind));
@@ -41,4 +41,11 @@ test('new financial-header sessions satisfy the publication registry and provena
  const sessions=reports.sessions.filter(s=>s.evidence.startsWith('docs/budget-supplement-20261018/'));
  assert.equal(sessions.length,5);
  for(const session of sessions){assert.equal(session.model,null);assert.ok(session.endedAt>session.startedAt);}
+});
+
+test('Self-Help course scope overrides the institutional average without rewriting reported accounts',()=>{
+ const b=sfAnnualBudget('self-help-for-the-elderly',{years:[2023,2024,2025].map(year=>({year,expenses:32000000}))});
+ assert.equal(b.amountUSD,33282597*.1);assert.equal(b.scope,'program');assert.equal(b.kind,'estimate');
+ assert.equal(b.overridesOrganizationAverage,true);assert.match(b.note,/not verified/);
+ assert.equal(sfAnnualBudget('ordinary',{years:[2023,2024,2025].map(year=>({year,expenses:100}))}).amountUSD,100);
 });

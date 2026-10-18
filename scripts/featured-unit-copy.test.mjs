@@ -11,13 +11,16 @@ import reports from '../data/geography-reports.json' with {type:'json'};
 import selection from '../data/edition-featured.json' with {type:'json'};
 import * as units from '../lib/featured-unit-costs.mjs';
 import * as metric from '../lib/impact-metric.mjs';
-import {reportPrice} from '../lib/geography-reports.mjs';
+import {formatEditionReportPrice} from '../lib/geography-reports.mjs';
+import * as budgets from '../lib/annual-budget-supplements.mjs';
+import expenses from '../data/research-expenses.json' with {type:'json'};
+import {featuredReports} from '../lib/edition-featured.mjs';
 const read=file=>fs.readFileSync(new URL('../'+file,import.meta.url),'utf8');
 const source=read('components/NativeUnitCost.tsx');
 const compiled=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX},reportDiagnostics:true});
 assert.equal(compiled.diagnostics?.length,0);
 const module={exports:{}},require=createRequire(import.meta.url);
-vm.runInNewContext('(function(module,exports,require){'+compiled.outputText+'})')(module,module.exports,id=>id==='@/lib/featured-unit-costs.mjs'?units:id==='@/lib/impact-metric.mjs'?metric:require(id));
+vm.runInNewContext('(function(module,exports,require){'+compiled.outputText+'})')(module,module.exports,id=>id==='@/lib/annual-budget-supplements.mjs'?budgets:id==='@/lib/featured-unit-costs.mjs'?units:id==='@/lib/impact-metric.mjs'?metric:require(id));
 const Component=module.exports.default;
 
 test('all 29 native descriptions are concise, concrete and free of modeling jargon',()=>{
@@ -28,21 +31,41 @@ test('all 29 native descriptions are concise, concrete and free of modeling jarg
   assert.match(units.nativeUnitForSF('recares').line,/crutches|walker/);
 });
 test('32 card renderings use one body paragraph, money-only emphasis and report footnotes, never dropdowns or extra labels',()=>{
-  const estimates=reports.reports.filter(r=>selection.editions[r.edition]?.slugs.includes(r.slug)).map(r=>[units.nativeUnitForReport(r),metric.formatImpactPrice(reportPrice(r))]);
-  for(const slug of ['recares','self-help-for-the-elderly','hope-pacifica','project-homeless-connect'])estimates.push([units.nativeUnitForSF(slug),'$64K']);
+  const estimates=Object.keys(selection.editions).flatMap(id=>featuredReports(reports.reports,id)).map(r=>[units.nativeUnitForReport(r),formatEditionReportPrice(r),budgets.featuredOrganizationBudget(r)]);
+  for(const slug of ['recares','self-help-for-the-elderly','hope-pacifica','project-homeless-connect'])estimates.push([units.nativeUnitForSF(slug),'$64K',budgets.sfOrganizationBudget(slug,expenses.organizations[slug])]);
   assert.equal(estimates.length,32);
-  for(const [estimate,price]of estimates){
-    const html=renderToStaticMarkup(React.createElement(Component,{estimate,reportHref:'/report',comparisonPrice:price}));
+  for(const [estimate,price,budget]of estimates){
+    assert.ok(budget,'Every featured card has an existing financial figure');
+    const html=renderToStaticMarkup(React.createElement(Component,{estimate,reportHref:'/report',comparisonPrice:price,budget}));
     assert.equal((html.match(/<p\b/g)||[]).length,1);
     assert.doesNotMatch(html,/<details|<summary|Calculation and scope|sf-home-native-basis/);
     const strong=[...html.matchAll(/<strong>(.*?)<\/strong>/g)].map(m=>m[1]);
-    assert.equal(strong.length,estimate.priceUSD===null?1:2);
+    assert.equal(strong.length,estimate.priceUSD===null?2:3);
     for(const amount of strong)assert.match(amount,/^\$[\d,.]+[KMBT]?$/);
     assert.match(html,/data-daly-comparison/);
     assert.match(html,/Impact-estimate source and assumptions/);
     assert.equal(html.includes('data-native-unit'),estimate.priceUSD!==null);
+    assert.match(html,/<br\/><span data-organization-budget=/);
+    assert.match(html,/href="\/report#annual-expenses"/);
+    assert.match(html,/Annual-budget source and scope/);
   }
   const css=read('app/sf-home.css');
   assert.match(css,/\.sf-home-cost-effectiveness \{ font:inherit; color:inherit; \}/);
   assert.doesNotMatch(css,/sf-home-native-unit|sf-home-native-basis/);
+});
+test('nonprofit size is not a hypothetical program allocation or a falsely current budget',()=>{
+ const sf=budgets.sfOrganizationBudget('self-help-for-the-elderly',expenses.organizations['self-help-for-the-elderly']);
+ assert.equal(sf.kind,'average');assert.ok(sf.amountUSD>30000000);
+ const render=budget=>renderToStaticMarkup(React.createElement(Component,{estimate:units.nativeUnitForSF('recares'),reportHref:'/report',comparisonPrice:'$26K',budget}));
+ assert.match(render(sf),/Nonprofit yearly budget is /);
+ assert.match(render(budgets.annualBudgetSupplement('san-francisco','hope-pacifica')),/Estimated nonprofit yearly budget is /);
+ assert.match(render(budgets.annualBudgetSupplement('san-francisco','project-homeless-connect')),/Historical program budget was /);
+ assert.match(render(null),/Nonprofit yearly budget is not available/);
+ const surgery=reports.reports.find(r=>r.edition==='usa'&&r.slug==='surgery-on-sunday');
+ assert.equal(budgets.editionAnnualBudget(surgery),null);
+ const latest=budgets.featuredOrganizationBudget(surgery);
+ assert.equal(latest.amountUSD,262813);assert.equal(latest.year,2024);
+ assert.match(render(latest),/Nonprofit yearly budget was <strong>\$263K<\/strong> \(2024\)/);
+ assert.match(read('components/EditionDonorHome.tsx'),/budget=\{featuredOrganizationBudget\(report\)\}/);
+ assert.match(read('app/san-francisco/page.tsx'),/budget=\{sfOrganizationBudget\(pick.slug/);
 });

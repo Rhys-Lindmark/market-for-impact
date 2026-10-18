@@ -1,0 +1,13 @@
+# Generic city illustration
+
+User requested replacing the SF-specific “Look for meaningful impact” image across all eight Top4 pages. Shared components/GivingIllustration.tsx uses public/images/givebetter-city.webp for the first panel. Books and charity-choice panels keep the original sprite, positions, dimensions and alternative text. The new city alternative text is geographic-neutral. No research, calculations or selection changes.
+
+Created with the built-in image generation tool, using public/images/givebetter-principles.png as a style reference. Selected output was visually inspected, then optimized to a600×600 WebP for a200×200 display. Original sprite is retained because the other two panels still use it.
+
+Final generation prompt:
+
+> Create ONE standalone square website illustration to replace the leftmost city illustration in the reference. Use case: illustration-story. Reference image is STYLE REFERENCE ONLY: match its soft textured editorial watercolor/paper-cut style, muted blue, sage green, cream and warm pale sun, quiet friendly mood. Subject: a GENERIC city neighborhood and modest skyline, with varied simple rectangular mid-rise buildings, a few taller rectangular buildings, leafy trees and a small green park in foreground, pale blue sky, subtle clouds and warm sun. The entire scene is contained in one centered circular vignette, diameter about78 percent of the square canvas, on a pure white surrounding background. No recognizable city landmarks, no suspension bridges, no Golden Gate Bridge, no pointed pyramids, no San Francisco references. Do NOT reproduce the books or browser panel from the style reference. No text, logos, watermarks, or borders. Keep city details simple and legible at200×200 pixels. Deliver only the square illustration.
+
+Checks: three focused illustration checks verify the generic asset, display dimensions, optimized file size, preserved sprite crops and both homepage consumers. Two Cloudflare deployment guards also pass. Production uses GitHub main and automatic Cloudflare builds; Sites is rollback-only.
+
+Space Saver baseline:16GiB RAM,32GiB disk free, compressor5.5GiB, stable swap0.78GiB, Codex family2.45GiB RSS (lower bound), largest process0.98GiB. These are below the current7.2GiB compressor/4GiB swap/10GiB family limits. Reused compatible source/node_modules in one isolated worktree; no local build, server or browser was launched. Remote generation and the existing hosted build avoid extra persistent local workloads. Remove only this task's worktree and dependency link after verification; preserve other checkouts and original assets.

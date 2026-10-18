@@ -8,6 +8,7 @@ import highlights from '@/data/edition-highlights.json';
 import {featuredReports} from '@/lib/edition-featured.mjs';
 import {nativeUnitForReport} from '@/lib/featured-unit-costs.mjs';
 import NativeUnitCost from '@/components/NativeUnitCost';
+import GivingIllustration from '@/components/GivingIllustration';
 import '@/app/sf-home.css';
 
 export default function EditionDonorHome({id,label,reports,discovery,alpha,beta}:{id:string;label:string;reports:EditionReport[];discovery:number;alpha:number;beta:number}){
@@ -28,7 +29,7 @@ export default function EditionDonorHome({id,label,reports,discovery,alpha,beta}
     {picks.length===0&&<small>Our four-charity shortlist is being researched. Explore the full research list.</small>}
    </section>
    <section className="sf-home-principles" aria-label="How to give better">
-    {principles.map(([title,copy,alt],i)=><div key={title}><div className="sf-home-illustration"><img src={canonicalBase+'/images/givebetter-principles.png'} alt={alt} width="600" height="200" style={{transform:`translateX(-${i*100/3}%)`}}/></div><h2>{title}</h2><p>{copy}</p></div>)}
+    {principles.map(([title,copy,alt],i)=><div key={title}><GivingIllustration index={i} label={alt}/><h2>{title}</h2><p>{copy}</p></div>)}
    </section>
    {picks.length===4&&<section aria-label="Four research leads">{picks.map((report,i)=>{
     const photo=photos[report.edition+'/'+report.slug];

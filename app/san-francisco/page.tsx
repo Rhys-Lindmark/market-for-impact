@@ -4,6 +4,7 @@ import type {Metadata} from 'next';
 import {topFourResearch} from '@/lib/unified-research-index';
 import {nativeUnitForSF} from '@/lib/featured-unit-costs.mjs';
 import NativeUnitCost from '@/components/NativeUnitCost';
+import GivingIllustration from '@/components/GivingIllustration';
 import '../sf-home.css';
 import '../givebetter.css';
 /* eslint-disable @next/next/no-img-element -- Sourced editorial photographs with reserved dimensions. */
@@ -15,9 +16,6 @@ export const metadata:Metadata={
 };
 const root='https://ai.rhyslindmark.com/givebetter';
 const money=(value:number)=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',notation:'compact',minimumFractionDigits:value>=1e6?1:0,maximumFractionDigits:value>=1e6?1:0}).format(value);
-function GivingIllustration({index,label}:{index:number;label:string}){
-  return impactNode(<div className="sf-home-illustration"><img src={root+'/images/givebetter-principles.png'} alt={label} width="600" height="200" style={{transform:`translateX(-${index*100/3}%)`}}/></div>);
-}
 const editorial:Record<string,{name:string;program:string;overview:string;scope:string;evidence:string;next:string;photo:string;caption:string;source:string}>={
   'self-help-for-the-elderly':{
     name:'Self-Help for the Elderly',program:'Investigate trial-matched fall prevention',
@@ -92,7 +90,7 @@ export default function SanFranciscoHome(){
         <details className="sf-home-selection"><summary>What this shortlist means</summary><p>The same four organizations appear first in <a href={root+'/san-francisco/all'}>the full research list</a>, in the same order. These are research leads, not fully vetted grant recommendations. Low modeled cost does not establish financial transparency, a verified recipient or room for more funding.</p><p>HOPE Pacifica’s annual financials remain unverified. The Hearing and Speech Center’s charitable-recipient status needs resolution before a direct gift. Those concerns are retained in the reports and do not change the ranking.</p></details>
       </section>
       <section className="sf-home-principles" aria-label="How to give better">
-        <div><GivingIllustration index={0} label="Illustration of San Francisco Bay"/><h2>Look for meaningful impact</h2><p>Compare how a donation could improve health in the Bay Area.</p></div>
+        <div><GivingIllustration index={0} label="Illustration of a city neighborhood and park"/><h2>Look for meaningful impact</h2><p>Compare how a donation could improve health in the Bay Area.</p></div>
         <div><GivingIllustration index={1} label="Illustration of research books"/><h2>Follow the evidence</h2><p>Separate promising estimates from verified results and additional funding needs.</p></div>
         <div><GivingIllustration index={2} label="Illustration of choosing a charity"/><h2>Choose with care</h2><p>Read the report and confirm what your gift would fund before donating.</p></div>
       </section>

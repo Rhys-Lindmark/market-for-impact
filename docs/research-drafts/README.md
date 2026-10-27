@@ -2,6 +2,8 @@
 
 These are research drafts, not published charity reviews or verified funding offers. The owner must verify sources, reconcile overlap, implement and test each model, and inspect its dedicated report before changing public rankings. Favorable scenarios are not central estimates.
 
+- [The Salvation Army (U.S. national), October 18](salvation-army-20261018/research.md): user-requested national evidence screen; unpriced, funding room unverified, and pending recipient/allocation, program-cost and causal-outcome evidence. No ranked estimate or accepted report.
+
 The user's explicit request to parallelize the backlog supersedes serial evidence collection. Integration remains one coherent review at a time.
 
 - `mechanisms/`: six remaining mechanism-first leads plus a broader vaccine screen. The proposed shingles assistance pathway is conditional, not a verified SFFC service or a central sub-$100K result.

@@ -48,7 +48,8 @@ export async function ensureAllCoefficientSnapshot() {
   const current = await env.DB.prepare('SELECT id, content_hash, retrieved_at FROM sources WHERE url = ?')
     .bind(sourceUrl).first<{ id: number; content_hash: string | null; retrieved_at: number }>();
   if (current?.content_hash === marketSummary.source.contentHash) {
-    await ensureCoefficientOrganizationGraph(current.id);
+    // The content hash is committed only after import and graph validation.
+    // Unchanged snapshots need no relationship/alias counts on page requests.
     return { sourceId: current.id, retrievedAt: current.retrieved_at };
   }
 
